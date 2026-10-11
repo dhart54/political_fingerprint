@@ -8,13 +8,13 @@
     "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
-    "scripts/prepare_immigration_shared_candidate.py": "0267756505693bda5c2f6dbf836818e1b41d267bd4e37176905f5cb0f509eae9"
+    "scripts/prepare_immigration_shared_candidate.py": "c826a5b7db5d1f251a16a11f2ac4fca56766bfe2353897ede223ab631ec6b6b0"
   },
-  "input_sha256": "34544a19f17cfd0100289f013364a5f117669b91d6625b11754799fab61f05db",
-  "source_capture_sha256": "2f532c820f921f1578f8867bea28d9e50bdc5b472a54142281ce644494cfbc79",
-  "core_sha256": "1893ea49de1470bc6fc237a8e602cb660d434cfcc131f3efaf852d91b9082e2a",
-  "compiled_sha256": "9ecc6320035f203d6dc1d9dfebc434b9b9e80d08e4335d23b8be0a50686e8a52",
-  "readable_sha256": "61452cc4d7d26b8c19c5d33a007aae077880872df1520b6f84a3214cb6feefc9",
+  "input_sha256": "0adc726bc94485fee158cef53e7b00e596b59b4bef982ed1cd910ee9dafeb0c1",
+  "source_capture_sha256": "38aa4fd5a3f1feca3994f1c11d50e1dfa3e08f6725fe300e42572b6debb16d40",
+  "core_sha256": "436fe883f0eeada6b65173984ecd251b433f5e708217492b2f44094fd0b0c00f",
+  "compiled_sha256": "c3c99c71d4b14819d83e5b971d07a6c1ed9a6d89c773c44646c2fab4215f7152",
+  "readable_sha256": "f81d5a996f5cbec55eb03f34807b54c6856a7e8c5f491d6427e283d182219b89",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -614,6 +614,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.3486 with its specified entry/reentry penalty increases and qualified mandatory-minimum provisions",
           "source_id": "clerk:119:1:264"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:299",
+      "shared_sha256": "43b3bdcf85ede8213b5803b4ef509fc7ba189a885abef9bb0546f83b3f07f77d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that whole package; no separate component position or preferred alternative is established",
+          "source_id": "clerk:119:1:299"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole D.C. repeal-and-restoration package with its specified applicant-criteria and distribution-authority changes and A/Sexceptions; no separate component position is established",
+          "source_id": "clerk:119:1:299"
         }
       ]
     },

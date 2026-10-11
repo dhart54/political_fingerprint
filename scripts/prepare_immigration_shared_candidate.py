@@ -1,7 +1,9 @@
 """Immigration-only candidate source binding over the established Semantic IR V1.
 
-The common adapter and frozen Health proof remain unchanged. This module admits
-only explicitly bound unamended or whole-replacement deemed concurrence. It
+The common adapter and canonical V1 contracts remain unchanged. Historical proof
+receipts are preserved. Ordinary shared-core reuse binds a sealed candidate
+identity; deemed concurrence admits only explicitly bound unamended or whole
+replacement choices. It
 invents no House question, member observation, legislative meaning, acceptance
 or publication authority.
 """
@@ -168,6 +170,47 @@ def _action_source_constraints(authoring):
     return constraints
 
 
+def _prepare_reused_action(authoring, capture, proposed, member_ids):
+    """Bind an ordinary candidate to an existing, sealed V1 core identity."""
+    ref = proposed['shared_core_reuse']
+    required = {'artifact_ref', 'artifact_id', 'action_id', 'action_meaning_ref', 'action_core_sha256'}
+    if (not isinstance(ref, dict) or set(ref) != required
+            or ref['action_id'] != proposed['action_id'] or _extended(proposed)):
+        raise ValueError('invalid shared-core reuse reference')
+    relative = Path(ref['artifact_ref'])
+    target = (ROOT / relative).resolve()
+    if (relative.is_absolute() or target.name != 'shared_action_core.json'
+            or not target.is_relative_to((ROOT / 'docs/editorial/shared_candidates').resolve())):
+        raise ValueError('shared-core reuse must reference a repository candidate corpus')
+    provider = json.loads(target.read_text(encoding='utf-8'))
+    if (provider['schema_version'] != 'shared_action_core_v1'
+            or provider['review_state'] != CANDIDATE
+            or provider['authoritative_for_new_editorial_work']
+            or provider['artifact_id'] != ref['artifact_id']
+            or provider['corpus_sha256'] != digest(provider['actions'])):
+        raise ValueError('invalid shared-core reuse corpus')
+    rows = [a for a in provider['actions'] if a['action_id'] == ref['action_id']]
+    if len(rows) != 1:
+        raise ValueError('shared-core reuse requires one exact action')
+    canonical = rows[0]
+    if (canonical['action_core_sha256'] != ref['action_core_sha256']
+            or canonical['action_meaning_ref'] != ref['action_meaning_ref']
+            or canonical['action_core_sha256'] != sealed_digest(canonical, 'action_core_sha256')):
+        raise ValueError('stale shared-core reuse reference')
+    suffix = ':' + proposed['action_id'] + ':candidate-v1'
+    meaning_ref = canonical['action_meaning_ref']
+    if not meaning_ref.endswith(suffix) or not meaning_ref[:-len(suffix)]:
+        raise ValueError('unsupported shared-core reuse meaning identity')
+    subset = copy.deepcopy(authoring)
+    subset['snapshot_id'] = meaning_ref[:-len(suffix)]
+    subset['actions'] = [copy.deepcopy(proposed)]
+    subset['blocked_episode_ids'] = []
+    prepared = common.prepare(subset, capture, member_ids)
+    if prepared[0]['actions'] != [canonical]:
+        raise ValueError('shared-core reuse input or governed sources differ from canonical core')
+    return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]
+
+
 def prepare(authoring, capture, member_ids):
     if authoring.get("domain_id") != "IMMIGRATION_BORDER":
         raise ValueError("Immigration candidate adapter cannot prepare another domain")
@@ -186,12 +229,22 @@ def prepare(authoring, capture, member_ids):
                 or (version == "EH" and proposed["stage"] in {"concurrence", "suspension_and_concurrence"})):
             raise ValueError("primary bill version differs from exact legislative stage")
     additions = [a for a in authoring["actions"] if _extended(a)]
+    reuse_additions = [a for a in authoring["actions"] if "shared_core_reuse" in a]
     ordinary = copy.deepcopy(authoring)
-    ordinary["actions"] = [a for a in ordinary["actions"] if not _extended(a)]
+    ordinary["actions"] = [a for a in ordinary["actions"] if not _extended(a) and "shared_core_reuse" not in a]
     ordinary_episodes = {a["episode_id"] for a in ordinary["actions"]}
     ordinary["blocked_episode_ids"] = [e for e in ordinary["blocked_episode_ids"] if e in ordinary_episodes]
     core, mapping, projections, inputs, result = common.prepare(ordinary, capture, member_ids)
-    if not additions:
+    for proposed in reuse_additions:
+        reused, row, episode = _prepare_reused_action(authoring, capture, proposed, member_ids)
+        core["actions"].append(reused)
+        mapping["action_mappings"].append(row)
+        existing = next((e for e in mapping["episodes"] if e["episode_id"] == episode["episode_id"]), None)
+        if existing is None:
+            mapping["episodes"].append(episode)
+        else:
+            existing["action_ids"].extend(episode["action_ids"])
+    if not additions and not reuse_additions:
         if action_constraints:
             mapping["source_render_constraints"].extend(action_constraints)
             mapping["mapping_sha256"] = sealed_digest(mapping, "mapping_sha256")

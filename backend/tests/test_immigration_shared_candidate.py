@@ -18,6 +18,49 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr5107_immigration_reuses_one_corrected_cross_domain_core(self):
+        from scripts.prepare_shared_domain_candidate import prepare as prepare_shared
+        health = DATA.parent / 'house_119_health_20260916'
+        ha = json.loads((health / 'authoring.json').read_text(encoding='utf-8'))
+        hc = json.loads((health / 'sources.json').read_text(encoding='utf-8'))
+        hp = prepare_shared(ha, hc, ['F000477', 'M001184'])
+        aid = 'house:119:1:299'
+        shared = next(a for a in hp[0]['actions'] if a['action_id'] == aid)
+        reused = next(a for a in self.products[0]['actions'] if a['action_id'] == aid)
+        self.assertEqual(shared, reused)
+        source_input = next(a for a in ha['actions'] if a['action_id'] == aid)
+        mirror = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+        self.assertEqual(source_input, {k: v for k, v in mirror.items() if k not in ['source_render_constraints', 'shared_core_reuse']})
+        self.assertNotIn(chr(92), mirror['shared_core_reuse']['artifact_ref'])
+        self.assertIn('at the time of application', shared['candidate_exact_action_meaning'])
+        self.assertIn('SubtitleG is outside', shared['candidate_exact_action_meaning'])
+        for domain in [hp[2], self.products[2]]:
+            for member in domain:
+                observed = next(a for a in member['actions'] if a['action_id'] == aid)
+                self.assertEqual(observed['action_core_sha256'], shared['action_core_sha256'])
+                self.assertEqual(observed['official_status'], 'Nay' if member['member_id'] == 'F000477' else 'Yea')
+        boundary = mirror['source_render_constraints'][0]
+        self.assertEqual(boundary['action_ids'], [aid])
+        self.assertEqual(boundary['semantic_effect'], 'bounds_cross_domain_attribution')
+        self.assertIn(boundary, self.products[1]['source_render_constraints'])
+        health_rows = json.loads((health / 'universe_proposal.json').read_text(encoding='utf-8'))['candidate_dispositions']
+        self.assertEqual(next(r for r in health_rows if r['action_id'] == aid)['disposition'], 'interpreted_substantive_directional')
+        for kind in ['stale', 'divergent', 'outside']:
+            altered = copy.deepcopy(self.values[0])
+            action = next(a for a in altered['actions'] if a['action_id'] == aid)
+            if kind == 'stale':
+                action['shared_core_reuse']['action_core_sha256'] = '0' * 64
+                message = 'stale shared-core reuse reference'
+            elif kind == 'divergent':
+                action['meaning'] += ' A contradictory independently authored interpretation.'
+                message = 'input or governed sources differ from canonical core'
+            else:
+                action['shared_core_reuse']['artifact_ref'] = '../../outside/shared_action_core.json'
+                message = 'repository candidate corpus'
+            with self.subTest(rejected=kind), self.assertRaisesRegex(ValueError, message):
+                prepare(altered, self.values[1], ['F000477', 'M001184'])
+        self.assertFalse(readable_candidates(self.values[0], self.products[0], self.products[2], self.products[-1])['production_eligible'])
+
     def test_hr7008_investment_exclusions_preserve_fund_conjunct_and_any_member_scope(self):
         aid = 'house:119:2:280'
         fund = ('widely held AND (publicly traded OR widely diversified) AND '

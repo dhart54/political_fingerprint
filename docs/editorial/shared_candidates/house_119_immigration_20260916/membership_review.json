@@ -36227,7 +36227,137 @@
         }
       ],
       "episode_candidate_id": "episode:hr7008:119"
+    },
+    {
+      "action_id": "house:119:1:299",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Exact whole H.R.5107 repeal/restoration includes titleI subtitleG111(c)(1), outside A/Sexceptions, reversing the explicit added citizen/national/lawful-permanent-resident MPD application criterion under the existing direct personal-status inclusion rule. Dated5-107.04corroborates status at application and independent minimum/denial/training qualifications. Existing whole core needed a minimal source-bound completeness augmentation before this domain mapping; canonical corrected input authored once and reused with identical identity/digest across domains. No Health membership change, agency/title/complaint-demographics inference, automatic discharge/individual denial, enactment or exhaustive later-law reconstruction. Wholepackage candidate only, pending independent shared/domain/projection review; no editorial acceptance/publication.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:299",
+          "url": "https://clerk.house.gov/evs/2025/roll299.xml",
+          "raw_sha256": "1d2f685b06de6af58b7b9aef7c07c1b4f78ffc368eb9a9a939adf077e0e7445a",
+          "governed_bytes_sha256": "ac005bcf035803933d2e9245ea33cac1ef066594c502f49cb1e000b40c026e5b"
+        },
+        {
+          "source_id": "govinfo:hr5107eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5107eh/html/BILLS-119hr5107eh.htm",
+          "raw_sha256": "553e430a35817da6410e32d6bf9d7753fc770c041556f50d26ec615b48d8508d",
+          "governed_bytes_sha256": "d10868eeba6326c02499053a7c6a267503052541086faaa6e6e4e32f5e4f767f"
+        },
+        {
+          "source_id": "dc-council:law24-345",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/main/us/dc/council/periods/24/laws/24-345.xml",
+          "raw_sha256": "c0e55f4548f97bad2bf4ad6e144cb2e8c50dc37a52895f6f864e9868a395e0d7",
+          "governed_bytes_sha256": "114dbb051712d436fd39eba1ed3aa9a28ce253ee18ce0110080eacbff0c29313"
+        },
+        {
+          "source_id": "dc-council:48-1103-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/master/us/dc/council/code/sections/48-1103.html",
+          "raw_sha256": "d1e14a43a3e7c37fd9815c6665e819c9545cf1c0e876f50d6b50dc07813128c7",
+          "governed_bytes_sha256": "fd9dee1e4350c27b30c55df27896e1d032974a237f0f012145f16e58402ae881"
+        },
+        {
+          "source_id": "dc-council:48-1103-01-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/master/us/dc/council/code/sections/48-1103.01.html",
+          "raw_sha256": "5b9c4da3aa4365956fd3aa8cda44627adefbd3deebac10460aebd33896b5204a",
+          "governed_bytes_sha256": "77a8b4d37619da7aa24824e07cb184e2091bfa5df5845f51137f612787b69642"
+        },
+        {
+          "source_id": "dc-council:48-1101-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/master/us/dc/council/code/sections/48-1101.html",
+          "raw_sha256": "f3cf1fda3c763ea0cbfc03f356b6686025243d10352172ff10aa9ec33f7d222e",
+          "governed_bytes_sha256": "bae6df2c7d14bfcddf1f7a03226b180df00cff26d1d350779365217b5542c9c4"
+        },
+        {
+          "source_id": "dc-council:7-404-community-definition",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/master/us/dc/council/code/sections/7-404.html",
+          "raw_sha256": "a08253d69996eef410fa7d8338527d32e601e2a76f9d070cfcec5170e4164441",
+          "governed_bytes_sha256": "e6f713a95be35fd21b9d3f73095f01ff2e8457b32973cf47187d3664cc25538e"
+        },
+        {
+          "source_id": "dc-council:law25-50-material-policing",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/main/us/dc/council/periods/25/laws/25-50.xml",
+          "raw_sha256": "306c438bfb1c31e6048b82bd85329a29564e83b376e985d4bbd5165c913bf90a",
+          "governed_bytes_sha256": "77469b82bb39f2bf714b9c7e35de7d3fa3f3ab72cf5e84363a75116407f0a1e8"
+        },
+        {
+          "source_id": "dc-council:law25-175-material-policing",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/main/us/dc/council/periods/25/laws/25-175.xml",
+          "raw_sha256": "07926a2c9b56a7f2d1315010a942cef5b1162d72e6d55534d0b29e7655c1c72d",
+          "governed_bytes_sha256": "7296f7eeffc147825a897046625053c6bc4af386492e0ceed28fee6a1448e697"
+        },
+        {
+          "source_id": "govinfo:hr5107rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5107rh/html/BILLS-119hr5107rh.htm",
+          "raw_sha256": "26f65d5a861e76cdb9b6cbd621e7daec3f89845049c2de93893690a90070f91b",
+          "governed_bytes_sha256": "2950ba5e19123bb51bb101e2adc6b9334435fbb8df3f84c23b46bc81251161b2"
+        },
+        {
+          "source_id": "govinfo:hres879eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm",
+          "raw_sha256": "923d471b2e72f6b4789c9253eeb8fe71a085d71d8ef1c39d9da42cf65c4ea145",
+          "governed_bytes_sha256": "8c0660cfd90e1cb881cfaf7441e05216133fcefc05436a054fd63afb91c115f5"
+        },
+        {
+          "source_id": "immigration:roll299-operative180",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-19/pdf/CREC-2025-11-19-house.pdf",
+          "raw_sha256": "9f1813a37b55bf65f5f80045f328f88544c2c1cdda103ce4a541cd0c9b308746",
+          "governed_bytes_sha256": "99bf5d267629b857942dab32b149aa7444de7388dccd06b3a8725466b608420e"
+        },
+        {
+          "source_id": "immigration:roll299-recorded180",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-19/pdf/CREC-2025-11-19-house.pdf",
+          "raw_sha256": "9f1813a37b55bf65f5f80045f328f88544c2c1cdda103ce4a541cd0c9b308746",
+          "governed_bytes_sha256": "df6d09bade6f9a3ec72486938a63a0460dd2313f6922e8122b692cf691327857"
+        },
+        {
+          "source_id": "dc-council:code5-10704-20251113-180",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/5-107.04.html",
+          "raw_sha256": "8d39354e4c40d90bed446ddc15e6ec4096e96726c7ae2aceee86dfb612b6f7f8",
+          "governed_bytes_sha256": "87f4b92a7437c0ab483f9866f07e3fe511b6085117cb40b6093543d2606818e2"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "dc-council:law24-345",
+          "locator": "TitleI subtitleG111(c)(1); exact existing-source interval 53511:53945",
+          "passage": "(c) Section 205(a) (D.C. Official Code § 5-107.04(a)) is amended as follows: (1) Paragraph (1) is amended by striking the phrase \"a citizen of the United States\" and inserting the phrase \"a citizen or national of, or person lawfully admitted for permanent residence in, the United States\" in its place. a citizen of the United States a citizen or national of, or person lawfully admitted for permanent residence in, the United States "
+        },
+        {
+          "source_id": "dc-council:code5-10704-20251113-180",
+          "locator": "Dated5-107.04(a)(1) minimum criterion 455:750",
+          "passage": "(a) The Board shall establish minimum application and appointment criteria for the Metropolitan Police Department that include the following: (1) That an applicant be a citizen or national of, or person lawfully admitted for permanent residence in, the United States at the time of application; "
+        },
+        {
+          "source_id": "govinfo:hr5107rh",
+          "locator": "Retained exact reported/rule/own operative or question-voice-demand-order-postponed-recorded passage witness; declared scope only",
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5107 Reported in House (RH)] <DOC> Union Calendar No. 271 119th CONGRESS 1st Session H. R. 5107 [Report No. 119-317] To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES September 3, 2025 Mr. Clyde (for himself, Mr. Higgins of Louisiana, Mr. Stauber, Mr. Carter of Georgia, Mrs. Luna, Mr. Crane, Ms. Boebert, Mr. Roy, Mrs. Miller of Illinois, Mrs. Biggs of South Carolina, Mrs. Harshbarger, Mr. Donalds, Mr. Gill of Texas, Mr. Amodei of Nevada, Mr. Nehls, Ms. Van Duyne, Mr. Burchett, Mr. Davidson, Mr. Bean of Florida, Mr. Moore of Alabama, Mr. Brecheen, Mr. Burlison, Mr. Gosar, Mr. Biggs of Arizona, Mr. Self, Mr. Begich, Mr. Ogles, Mr. Cuellar, and Mr. Arrington) introduced the following bill; which was referred to the Committee on Oversight and Government Reform September 30, 2025 Additional sponsor: Mrs. Hinson September 30, 2025 Reported with an amendment, committed to the Committee of the Whole House on the State of the Union, and ordered to be printed [Strike out all after the enacting clause and insert the part printed in italic] [For text of introduced bill, see copy of bill as introduced on September 3, 2025] _______________________________________________________________________ A BILL To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Common-Sense Law Enforcement and Accountability Now in DC Act of 2025'' or the ``CLEAN DC Act of 2025''. SEC. 2. REPEAL OF CERTAIN PROVISIONS OF COMPREHENSIVE POLICING AND JUSTICE REFORM AMENDMENT ACT OF 2022. (a) In General.--Except as provided in subsection (b), the Comprehensive Policing and Justice Reform Amendment Act of 2022 (D.C. Law 24-345) is hereby repealed, and any provision of law amended or repealed by such Act is restored or revived as if such Act had not been enacted into law. (b) Exception.--The repeal under subsection (a) shall not apply with respect to-- (1) subtitle S of title I of such Act (sec. 5-365.01 et seq., D.C. Official Code); and (2) subtitle A of title I of such Act (sec. 5-125.01 et seq. and sec. 5-302, D.C. Official Code). Union Calendar No. 271 119th CONGRESS 1st Session H. R. 5107 [Report No. 119-317] _______________________________________________________________________ A BILL To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council. _______________________________________________________________________ September 30, 2025 Reported with an amendment, committed to the Committee of the Whole House on the State of the Union, and ordered to be printed"
+        },
+        {
+          "source_id": "govinfo:hres879eh",
+          "locator": "Retained exact reported/rule/own operative or question-voice-demand-order-postponed-recorded passage witness; declared scope only",
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 879 Engrossed in House (EH)] <DOC> H. Res. 879 In the House of Representatives, U. S., November 18, 2025. Resolved, That upon adoption of this resolution it shall be in order to consider in the House any joint resolution specified in section 2 of this resolution. All points of order against consideration of each such joint resolution are waived. Each such joint resolution shall be considered as read. All points of order against provisions in each such joint resolution are waived. The previous question shall be considered as ordered on each such joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Natural Resources or their respective designees; and (2) one motion to recommit (or commit, as the case may be). Sec. 2. The joint resolutions referred to in the first section of this resolution are as follows: (a) The joint resolution (S.J. Res. 80) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision''. (b) The joint resolution (H.J. Res. 130) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment''. (c) The joint resolution (H.J. Res. 131) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Coastal Plain Oil and Gas Leasing Program Record of Decision''. Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the concurrent resolution (H. Con. Res. 58) denouncing the horrors of socialism. All points of order against consideration of the concurrent resolution are waived. The concurrent resolution shall be considered as read. All points of order against provisions in the concurrent resolution are waived. The previous question shall be considered as ordered on the concurrent resolution and preamble to adoption without intervening motion except one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Financial Services or their respective designees. Sec. 4. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 1949) to repeal restrictions on the export and import of natural gas. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 5. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 3109) to require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 6. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 5107) to repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Oversight and Government Reform now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees; and (2) one motion to recommit. Sec. 7. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 5214) to require mandatory pretrial and post conviction detention for crimes of violence and dangerous crimes and require mandatory cash bail for certain offenses that pose a threat to public safety or order in the District of Columbia, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Oversight and Government Reform now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees; and (2) one motion to recommit. Sec. 8. Upon transmission to the Senate of a message that the House has passed H.R. 4405, House Resolution 581 shall be laid on the table. Attest: Clerk."
+        },
+        {
+          "source_id": "immigration:roll299-operative180",
+          "locator": "Retained exact reported/rule/own operative or question-voice-demand-order-postponed-recorded passage witness; declared scope only",
+          "passage": "The Clerk read the title of the bill. \nThe SPEAKER pro tempore. Pursu-\nant to House Resolution 879, the \namendment in the nature of a sub-\nstitute recommended by the Com-\nmittee on Oversight and Government \nReform, printed in the bill, is adopted, \nand the bill, as amended, is considered \nread. \nThe text of the bill, as amended, is as \nfollows: \nH.R. 5107 \nBe it enacted by the Senate and House of Rep-\nresentatives of the United States of America in \nCongress assembled, \nSECTION 1. SHORT TITLE. \nThis Act may be cited as the ‘‘Common-Sense \nLaw Enforcement and Accountability Now in \nDC Act of 2025’’ or the ‘‘CLEAN DC Act of \n2025’’. \nSEC. 2. REPEAL OF CERTAIN PROVISIONS OF \nCOMPREHENSIVE POLICING AND \nJUSTICE REFORM AMENDMENT ACT \nOF 2022. \n(a) I N GENERAL.—Except as provided in sub-\nsection (b), the Comprehensive Policing and Jus-\ntice Reform Amendment Act of 2022 (D.C. Law \n24–345) is hereby repealed, and any provision of \nlaw amended or repealed by such Act is restored \nor revived as if such Act had not been enacted \ninto law. \n(b) E\nXCEPTION.—The repeal under subsection \n(a) shall not apply with respect to— \n(1) subtitle S of title I of such Act (sec. 5– \n365.01 et seq., D.C. Official Code); and \nVerDate Sep 11 2014 08:36 Nov 20, 2025 Jkt 069060 PO 00000 Frm 00028 Fmt 7634 Sfmt 6333 E:\\CR\\FM\\K19NO7.054 H19NOPT1DMwilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSE H4801 November 19, 2025 \n(2) subtitle A of title I of such Act (sec. 5– \n125.01 et seq. and sec. 5–302, D.C. Official Code). \n"
+        },
+        {
+          "source_id": "immigration:roll299-recorded180",
+          "locator": "Retained exact reported/rule/own operative or question-voice-demand-order-postponed-recorded passage witness; declared scope only",
+          "passage": "The SPEAKER pro tempore. All time \nfor debate has expired. \nPursuant to House Resolution 879, \nthe previous question is ordered on the \nbill, as amended. \nThe question is on the engrossment \nand third reading of the bill. \nThe bill was ordered to be engrossed \nand read a third time, and was read the \nthird time. \nThe SPEAKER pro tempore. The \nquestion is on passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMr. CLYDE. Mr. Speaker, on that I \ndemand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, further pro-\nceedings on this question will be post-\nponed.\n\nThe SPEAKER pro tempore (Mr. \nW\nITTMAN). Pursuant to clause 8 of rule \nXX, the unfinished business is the vote \non passage of the bill (H.R. 5107) to re-\npeal the Comprehensive Policing and \nJustice Reform Amendment Act of 2022 \nenacted by the District of Columbia \nCouncil, on which the yeas and nays \nwere ordered. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 233, nays \n190, not voting 10, as follows: \n[Roll No. 299]\n\nSo the bill was passed. \nThe result of the vote was announced \nas above recorded."
+        }
+      ],
+      "episode_candidate_id": "episode:hr5107:119"
     }
   ],
-  "review_sha256": "be24d5982cb3f5341dd4c87f15c182c05dbf40b1f8e0cf88b8a37a0c3e7a5d3b"
+  "review_sha256": "b9768ca3dc9c3b1821f8120a6742ccfa540f16a8cff29f8e3adf51ddab2725a6"
 }

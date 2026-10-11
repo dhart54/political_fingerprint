@@ -1,6 +1,6 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 1178,
+  "source_count": 1182,
   "sources": [
     {
       "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
@@ -9425,6 +9425,54 @@
       "governed_bytes_sha256": "d233e5317e6fa7bc6f66e7b019ec0cb6c4d371830ebcae6638508ca94776558b",
       "text_sha256": "2c95a6dcad7499ff1382ad88c13735c2688d8b670e977fbf018d5471dde89432",
       "text_length": 1238
+    },
+    {
+      "source_id": "dc-council:48-1103-operative",
+      "url": "https://raw.githubusercontent.com/DCCouncil/law-html/master/us/dc/council/code/sections/48-1103.html",
+      "raw_sha256": "d1e14a43a3e7c37fd9815c6665e819c9545cf1c0e876f50d6b50dc07813128c7",
+      "governed_bytes_sha256": "fd9dee1e4350c27b30c55df27896e1d032974a237f0f012145f16e58402ae881",
+      "text_sha256": "aae89b959d8cbdec139599bf9874d7b54488889da947f219904579ec3f7b1105",
+      "text_length": 6365,
+      "immutable_governed_source_reuse": true,
+      "source_artifact_ref": "docs\\editorial\\shared_candidates\\house_119_health_20260916\\sources.json",
+      "declared_scope": "Council Code 48-1103; complete operative section and dated amendment history only; last amendment2023/2021 predates November2025vote",
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "dc-council:48-1103-01-operative",
+      "url": "https://raw.githubusercontent.com/DCCouncil/law-html/master/us/dc/council/code/sections/48-1103.01.html",
+      "raw_sha256": "5b9c4da3aa4365956fd3aa8cda44627adefbd3deebac10460aebd33896b5204a",
+      "governed_bytes_sha256": "77a8b4d37619da7aa24824e07cb184e2091bfa5df5845f51137f612787b69642",
+      "text_sha256": "971a953da7027f6598d544351450a695eaf1e611a22acfa13bdf401db4b1d0d0",
+      "text_length": 6209,
+      "immutable_governed_source_reuse": true,
+      "source_artifact_ref": "docs\\editorial\\shared_candidates\\house_119_health_20260916\\sources.json",
+      "declared_scope": "Council Code 48-1103.01; complete operative section and dated amendment history only; last amendment2023/2021 predates November2025vote",
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "dc-council:48-1101-operative",
+      "url": "https://raw.githubusercontent.com/DCCouncil/law-html/master/us/dc/council/code/sections/48-1101.html",
+      "raw_sha256": "f3cf1fda3c763ea0cbfc03f356b6686025243d10352172ff10aa9ec33f7d222e",
+      "governed_bytes_sha256": "bae6df2c7d14bfcddf1f7a03226b180df00cff26d1d350779365217b5542c9c4",
+      "text_sha256": "8e11b40d2f8d66c5237695f1f4a7bd5723c290d20a5db18242cb71e1b81c30d2",
+      "text_length": 4811,
+      "immutable_governed_source_reuse": true,
+      "source_artifact_ref": "docs\\editorial\\shared_candidates\\house_119_health_20260916\\sources.json",
+      "declared_scope": "Council Code 48-1101; complete operative section and dated amendment history only; last amendment2023/2021 predates November2025vote",
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "dc-council:7-404-community-definition",
+      "url": "https://raw.githubusercontent.com/DCCouncil/law-html/master/us/dc/council/code/sections/7-404.html",
+      "raw_sha256": "a08253d69996eef410fa7d8338527d32e601e2a76f9d070cfcec5170e4164441",
+      "governed_bytes_sha256": "e6f713a95be35fd21b9d3f73095f01ff2e8457b32973cf47187d3664cc25538e",
+      "text_sha256": "06cbd4122cdcbf5541854d952d7db1974f858f547d470e00e836f54c914db3c7",
+      "text_length": 437,
+      "immutable_governed_source_reuse": true,
+      "source_artifact_ref": "docs\\editorial\\shared_candidates\\house_119_health_20260916\\sources.json",
+      "declared_scope": "Council Code7-404(a)(1) only; community-based service organisation definition, not wholesaleopioid-program interpretation",
+      "fresh_parent_raw_replay": false
     }
   ],
   "rejected_responses_are_not_evidence": true

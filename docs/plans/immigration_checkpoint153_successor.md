@@ -2560,3 +2560,109 @@ minimal shared-core completeness correction before application, reuse the same
 meaning/digest across domains, and change no Health membership/methodology. No
 source conflict is forced closed. Sole ownership retained; no new approval gate,
 deadline, merge/deploy/publication/acceptance/production/schema/security/config.
+
+
+## Checkpoint201 preread: one necessary roll299 shared-core augmentation
+
+Select H.R.5107 House119 session1/299 from the actual retained-source inventory.
+Its current shared core binds whole repeal/restoration and the complete24-345law
+but omits subtitleG111(c)(1)'s citizen/national/permanent-residence consequence.
+That omission blocks faithful new Immigration use; a mapping cannot add meaning
+absent from the shared core. Existing Health membership/care interpretation is
+not reversed. Under the original plan's preserve-objects/document-before-necessary-
+minimal-correction rule, document this completeness defect before correcting one
+current issue-neutral core and its deterministic witnesses. No new architecture,
+methodology or Health membership decision. Canonical corrected input is authored
+once in the existing core's Health authoring record, then mechanically reused in
+Immigration; a cross-domain regression must prove identical meaning/digest for299.
+
+Expected about25candidate/test/report files: one Health authoring input, reuse of
+three already-governed source objects in that catalog, seven Health derived files
+and only its live generated review-packet region plus revision note; Immigration
+single membership row/authoring49th action/seven products; bounded receipts/audit/
+plan/regression. All114other Health meanings, current Health universe/membership,
+earlier frozen receipts and historical review history remain intact. Preserve
+original Health current witnesses in the private checkpoint201 snapshot and Git
+history. No rewriting source text or adapting a second member's meaning.
+
+Read retained exact111(c)(1), dated5-107.04(a)(1), own adopted-substitute/voiceayes/
+Clyde demand/order/postponement/electronic passage and233/190/10 Clerk outcome.
+SubtitleG is outside A/S exceptions; law13-160history stub is not full baseline,
+but explicit authoritative strike/insert supplies the narrow old/new criterion.
+Whole-package candidate only; no automatic discharge/appointment denial, enactment,
+universal applicant classification or exhaustive independent-later-law reconciliation.
+Previously read complete24-345/25-50/25-175 material scopes retained; no parent
+recapture. A failed assumed XML heading and truncated-output recovery are acknowledged
+before the timer; no reacquisition. Timer begins after preselection inspection.
+
+Definition of done: source-qualified candidate membership under existing direct
+personal-status rule, identical corrected299core and four member projections across
+both domains, unchanged Health membership/other cores, fail-closed candidate outputs,
+focused Immigration/shared-domain/source tests, semantic validation,14byte-exact
+replays, bounded diff and exact-headCI. Do not push while200CI remains unobserved;
+carry200actualCI and bounded base receipts in the next substantive delivery. No
+new routine benchmark average or performance pass; FAIL781.087seconds remains.
+
+
+Checkpoint201 implementation and validation: the existing snapshots named the
+same meaning differently. An in-memory equality guard stopped before candidate
+writes; an inadvertently launched339-test baseline run(55.501s) and its replays
+are retained but excluded from201 validation. Add only an Immigration-adapter
+reference binding over the existing sealedV1core: repository-candidate path,
+provider/corpus/action hashes, canonical meaning identity and exact mirrored
+input/governed-source comparison. Reuse the provider's identity/digest; reject
+stale, divergent and outside-corpus references. Common adapter and canonical
+schemas remain unchanged. No new semantic architecture or methodology.
+
+The corrected299input is authored once in the existing current candidate and
+mechanically mirrored/bound in Immigration. Current Health clinical membership,
+universe, all158propositions/compiledIR and issue mapping remain byte-exact;
+all114other Health cores and228other projection rows are exact. All48previous
+Immigration cores,96 projection rows and82propositions are exact;299adds one
+whole-package proposition per member. All four299projections reference core
+43b3bdcf85ede8213b5803b4ef509fc7ba189a885abef9bb0546f83b3f07f77d,
+with FousheeNay/opposition and MassieYea/support. The candidate receipt is
+e5e2b660a3d3665459ad20116f0e16d0866a7ff3b7b2789ffde669fa5ccb660d. Only one current Health core/witness revision is applied;
+frozen prior receipts/Git witnesses and both unrelated notes survive.
+
+Reuse four existing Health care-context objects in the Immigration catalog to
+carry the entire shared core, and three already-governed own-stage/criterion
+objects in Health. No new primary acquisition or globally new governed source.
+Dsource prefix2288 and Hprefix2063 exact; catalogs2292/2066, Immigration capture
+registrations1182, private primary pool exact. Partial7-404definition and older
+Council care scopes remain their declared scopes, not newly certified full
+parents/currentlaw/rawreplays.392frozen blobs preserved. Canonical70questions/
+3packages and genuine source-conflict holds unchanged.
+
+340focused tests(63.456s),7semantic checks, accepted IR validation and14byte-exact
+replays pass. Final portable forward-slash artifact reference is also guarded;
+a narrow rerun(4.380s) and final7Immigration replays pass after that metadata-only
+correction. Windows path/native helper mismatch, baseline/debug/output recovery
+and all validation are included after the timer. Existing five literalpredicate
+scopes cover whole repeal, exact criterion, Board/application dates, A/Sexceptions
+and own adopted-substitute/voiceayes/demand/order/postponed/direct recorded outcome.
+
+200CI38167249263 closed with9freshattempt1 successes,5feature/3synthetic/1mixed
+contexts,4conditional guards unexecuted. Actualsyntheticbaseca530c4 differs later
+direct-main observations; no latest-main integration claim. Receipts copied forward.
+616reviewed/60pending(29ordinary/31holds),49meanings/84propositions. Independent201
+shared-core/domain/binding/projection review and exact-headCI pending at this note.
+Prior200narrow independent correction review remains pending;199domain support and
+both historicalP3links preserved. No editorial clearance/publication inferred.
+
+Measured source/domain/authoring endpoint913.845seconds; localvalidation endpoint
+1753.421seconds from19:20:40.413045UTC,
+with initial preselection source/core inspection explicitly unmeasured. Git/CI/
+report overhead follows. This necessary existing-core/binding closure supplies
+no comparable routine sample; benchmark remains FAIL781.087seconds vs600ceiling/
+240target. No performance pass/reset/cherry-picking. The expected30changed-file fanout is
+explained by two current source catalogs and both deterministic witness sets,
+plus the necessary binding/helper regression; no release-loop scope expansion.
+Sole owner retained; no new deadline/approval gate, merge, deploy, publication,
+editorial acceptance, production, schema, security, secrets or configuration change.
+
+Independent200 closure received before201delivery: both prior P3s CLOSED at8e36be9,
+423.134seconds;35preservation checks/7replays/exact regression/18negative cases,
+including two coherent valid-hash regenerations, reported pass. No new defect or
+held-package conclusion. This clears the bounded corrections, not editorial
+acceptance or201shared-core/binding review. Received receipt4c2e0428486e98e4c413933637a72d250a2986369ad62eebb0c651387db1af9a.
