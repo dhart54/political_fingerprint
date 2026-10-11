@@ -33,6 +33,8 @@ async function expectEmptyBuddJustice(page) {
   await expect(page.locator("#issue-summary")).toContainText("Justice & Public Safety");
   await expect(page.locator("#issue-summary")).toContainText("0 recorded actions currently visible");
   await expect(page.locator("#issue-summary")).toContainText("No issue summary for this scope");
+  await expect(page.locator("#issue-summary")).toContainText("No vote receipts are available in this scope.");
+  await expect(page.locator("#issue-summary")).not.toContainText("Vote receipts remain available");
   await expect(page.locator("#vote-record")).toContainText("No recorded actions are available for this issue in the selected scope.");
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(0);
   await expect(page.getByTestId("reviewed-analysis")).toHaveCount(0);
@@ -45,6 +47,7 @@ test("selected zero-evidence issue survives keyboard scope changes and browser h
   await installBuddJusticeRoutes(page);
   await page.goto("/?representative=leg_ted_budd&scope=119&issue=JUSTICE_PUBLIC_SAFETY");
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(2);
+  await expect(page.locator("#issue-summary")).toContainText("Vote receipts remain available");
   const scope118 = page.getByRole("button", { name: "118th Congress", exact: true });
   await scope118.focus(); await page.keyboard.press("Enter");
   await expectEmptyBuddJustice(page);

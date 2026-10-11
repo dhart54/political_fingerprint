@@ -29,7 +29,27 @@ publication, configuration, merge or manual deployment. Code rollback is a rever
 - [x] Reproduced pre-fix disappearance; repaired selection and empty ledger copy.
 - [x] Keyboard 119->118, Back/Forward, direct URL, focus/anchors and refresh.
 - [x] 4 focused browser checks, 28 units, targeted lint and diff review pass.
-- [ ] Draft PR and exact-head hosted CI.
+- [x] Draft PR205 at cc06995: hosted 168 units / 96 browser checks, lint/build and
+  required backend checks pass.
+
+## Narrow independent-review correction
+
+Parent review found that the newly reachable zero-row summary cell still claimed
+"Vote receipts remain available". The new direct118 assertion reproduced that
+contradiction against the reviewed head. Make only the no-interpretation coverage
+description conditional on actual supplied receipt rows. Reviewed accounting and
+summary ready/unavailable distinctions remain unchanged; nonempty unreviewed119
+retains the existing availability description.
+
+- [x] Add zero-row presence/contradiction assertions to both existing Budd checks
+  and nonempty119 fallback assertion before scope switch.
+- [x] Both focused browser checks pass (scope/history/refresh plus direct URL);
+  targeted lint and diff checks pass.
+- [ ] Fresh exact-head hosted checks.
+PR205 remains uncleared for merge; parent must independently review its fresh head.
+PR203/204/206 now have explicit clean-merge integration authority; keep their
+reviewed feature heads unchanged. PR207/208 remain isolated drafts with hosted
+checks passed; no activation or merge authority for them.
 
 ## Workstream resume
 
