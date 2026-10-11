@@ -130,7 +130,9 @@ export default function IssueDetail({
             <ScopeCell
               description={selectedIssue.interpretation
                 ? issueSummaryAccounting(selectedIssue.interpretation)
-                : "Vote receipts remain available"}
+                : state.rows.length
+                  ? "Vote receipts remain available"
+                  : "No vote receipts are available in this scope."}
               icon="summary"
               label="Issue summary covers"
               value={selectedIssue.interpretation?.congressLabel || (presentationStatus === "ready" ? "No issue summary for this scope" : "Issue summary unavailable")}

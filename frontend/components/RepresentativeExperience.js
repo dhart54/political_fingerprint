@@ -127,7 +127,8 @@ export default function RepresentativeExperience({
     () => sortAndFilterIssues(overviewRows, mode),
     [mode, overviewRows],
   );
-  const selectedRow = overviewRows.find((row) => row.domain === selectedIssue);
+  // Discovery hides empty domains; an explicitly selected supplied domain stays navigable.
+  const selectedRow = state.positions?.positions?.find((row) => row.domain === selectedIssue);
   const selectedPresentation = getEditorialPresentation(
     state.presentations,
     selectedIssue,

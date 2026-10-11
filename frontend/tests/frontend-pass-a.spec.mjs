@@ -16,6 +16,74 @@ test.beforeEach(async ({ page }, testInfo) => {
   });
 });
 
+const buddJustice = JSON.parse(fs.readFileSync(new URL("./fixtures/budd-justice-empty-scope.json", import.meta.url)));
+async function installBuddJusticeRoutes(page) {
+  await page.route("http://localhost:8000/legislators/leg_ted_budd/**", async (route) => {
+    const url = new URL(route.request().url());
+    const scope = url.searchParams.get("scope") || "119";
+    const resource = url.pathname.endsWith("/profile") ? "profile"
+      : url.pathname.endsWith("/editorial-presentations") ? "editorial"
+        : url.pathname.endsWith("/evidence") ? "evidence" : "positions";
+    const body = resource === "profile" ? buddJustice.profile : buddJustice.scopes[scope]?.[resource];
+    if (!body) throw Error(`Unexpected Budd fixture request: ${url}`);
+    await route.fulfill({ json: body });
+  });
+}
+async function expectEmptyBuddJustice(page) {
+  await expect(page.locator("#issue-summary")).toContainText("Justice & Public Safety");
+  await expect(page.locator("#issue-summary")).toContainText("0 recorded actions currently visible");
+  await expect(page.locator("#issue-summary")).toContainText("No issue summary for this scope");
+  await expect(page.locator("#issue-summary")).toContainText("No vote receipts are available in this scope.");
+  await expect(page.locator("#issue-summary")).not.toContainText("Vote receipts remain available");
+  await expect(page.locator("#vote-record")).toContainText("No recorded actions are available for this issue in the selected scope.");
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(0);
+  await expect(page.getByTestId("reviewed-analysis")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Browse vote record for Justice & Public Safety" })).toHaveCount(0);
+  await expect(page).toHaveURL(/scope=118.*issue=JUSTICE_PUBLIC_SAFETY|issue=JUSTICE_PUBLIC_SAFETY.*scope=118/);
+}
+
+test("selected zero-evidence issue survives keyboard scope changes and browser history", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await installBuddJusticeRoutes(page);
+  await page.goto("/?representative=leg_ted_budd&scope=119&issue=JUSTICE_PUBLIC_SAFETY");
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(2);
+  await expect(page.locator("#issue-summary")).toContainText("Vote receipts remain available");
+  const scope118 = page.getByRole("button", { name: "118th Congress", exact: true });
+  await scope118.focus(); await page.keyboard.press("Enter");
+  await expectEmptyBuddJustice(page);
+  await expect(scope118).toBeFocused();
+  await page.goBack();
+  await expect(page).toHaveURL(/scope=119/);
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(2);
+  await expect(page.getByText("No recorded actions are available for this issue in the selected scope.")).toHaveCount(0);
+  await page.goForward();
+  await expectEmptyBuddJustice(page);
+  const nav = page.getByRole("navigation", { name: "Selected issue sections" });
+  for (const [name, id] of [["Issue summary", "issue-summary"], ["Vote record", "vote-record"]]) {
+    const link = nav.getByRole("link", { name, exact: true });
+    await expect(link).toHaveAttribute("href", `#${id}`);
+    await link.focus(); await page.keyboard.press("Enter");
+    await expect(page.locator(`#${id}`)).toBeInViewport();
+  }
+  await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+  await page.reload();
+  await expectEmptyBuddJustice(page);
+  await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+});
+
+test("direct empty selected-issue URL retains its heading, focus and valid anchors", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await installBuddJusticeRoutes(page);
+  await page.goto("/?representative=leg_ted_budd&scope=118&issue=JUSTICE_PUBLIC_SAFETY");
+  await expectEmptyBuddJustice(page);
+  await expect(page.locator("#selected-issue-heading")).toBeFocused();
+  const nav = page.getByRole("navigation", { name: "Selected issue sections" });
+  for (const name of ["Issue summary", "Vote record"]) {
+    const id = (await nav.getByRole("link", { name, exact: true }).getAttribute("href")).slice(1);
+    await expect(page.locator(`#${id}`)).toHaveCount(1);
+  }
+});
+
 test("finder, compact selected header, issue URL state, and browser history work together", async ({ page }) => {
   await page.goto("/");
   await page.getByLabel("Search by ZIP").fill("27701");
