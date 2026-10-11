@@ -8,6 +8,10 @@ the matching Foushee/shared rows and relationships from the already-public
 after-Justice artifact graph. Other members' historical artifact rows are omitted
 because their legislators are absent from this one-member fixture; foreign-key
 constraints remain enforced. It refuses an occupied database.
+Preparation audits contain the persisted immutable graph and pre-activation
+registry rows. The fixture's active registry comes from the separate executed
+after-Justice audit, which binds Education245/Environment239/NS248/Justice251.
+This preserves the distinction between a prepared graph and executed publication.
 No source bodies, live data or production credentials are acquired.
 
 `backend/scripts/education79_locator_preparation.py` is a pure exact-packet

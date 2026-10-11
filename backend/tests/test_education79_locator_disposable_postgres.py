@@ -37,6 +37,13 @@ def seed_fixture(database_url):
     fixture = read_gzip(prep.ROOT / 'docs/editorial/publication_replacements/m15b_green_authorization/disposable_baseline.json.gz')
     current = read_gzip(prep.ROOT / 'docs/editorial/publication_replacements/m15b_green_activation/production_audits.json.gz')['after-justice']
     tables = {**fixture['tables'], **current['editorial_rows']}
+    # Preparation audits contain the persisted graph before registry replacement.
+    # Replay the separately recorded executed registry, not that historical row.
+    executed = read_gzip(prep.ROOT / 'docs/editorial/publication_replacements/m15b_green_activation_execution/production_audits.json.gz')['after-justice']
+    tables['editorial_publication_registry'] = executed['registry']
+    assert {row['issue_id']: row['artifact_id'] for row in executed['registry']} == {
+        'EDUCATION_WORKFORCE': 245, 'ENVIRONMENT_ENERGY': 239,
+        'NATIONAL_SECURITY_FOREIGN': 248, 'JUSTICE_PUBLIC_SAFETY': 251}
     # The normalized vote fixture contains Foushee only. Keep that same member
     # boundary for the historical artifact graph instead of inventing profiles.
     tables['editorial_artifact_versions'] = [row for row in tables['editorial_artifact_versions']
