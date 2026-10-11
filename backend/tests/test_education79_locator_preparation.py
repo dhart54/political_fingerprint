@@ -71,3 +71,50 @@ def test_conflicting_bundle_fails_before_persistence():
     altered['artifacts'][0]['editorial_status'] = 'human_approval_pending'
     with pytest.raises(StoreSafetyError, match='bundle differs'):
         prep.validate_bundle(altered)
+
+
+@pytest.mark.parametrize('hostaddr', ['203.0.113.4', '2001:db8::1', '', None, 'localhost'])
+@pytest.mark.parametrize('operation', ['persist', 'bind'])
+def test_actual_remote_or_unknown_address_is_rejected_before_any_sql(hostaddr, operation):
+    conn = Mock()
+    conn.info.dbname = prep.FIXTURE_DATABASE
+    conn.info.host = '127.0.0.1'
+    conn.info.port = 5432
+    conn.info.hostaddr = hostaddr
+    conn.autocommit = False
+    url = 'postgresql://fixture@127.0.0.1/' + prep.FIXTURE_DATABASE
+    with pytest.raises(StoreSafetyError, match='address'):
+        if operation == 'persist':
+            prep.persist_disposable(conn, {}, database_url=url)
+        else:
+            prep.bind_write_set(conn, {}, database_url=url,
+                                target_identity_sha256='0' * 64, runtime_manifest_binding={})
+    conn.execute.assert_not_called()
+
+
+@pytest.mark.parametrize('hostaddr', ['127.0.0.1', '::1'])
+def test_connected_loopback_endpoint_is_accepted_without_sql(hostaddr):
+    conn = Mock()
+    conn.info.dbname = prep.FIXTURE_DATABASE
+    conn.info.host = 'localhost'
+    conn.info.port = 5432
+    conn.info.hostaddr = hostaddr
+    prep.require_fixture_endpoint(conn, 'postgresql://fixture@localhost/' + prep.FIXTURE_DATABASE)
+    conn.execute.assert_not_called()
+
+
+@pytest.mark.parametrize('hostaddr', ['203.0.113.4', '2001:db8::1', '', None, 'localhost'])
+def test_seeder_rejects_remote_or_unknown_hostaddr_before_first_sql(monkeypatch, hostaddr):
+    import test_education79_locator_disposable_postgres as proof
+    conn = Mock()
+    conn.info.dbname = prep.FIXTURE_DATABASE
+    conn.info.host = '127.0.0.1'
+    conn.info.port = 5432
+    conn.info.hostaddr = hostaddr
+    connection = Mock()
+    connection.__enter__ = Mock(return_value=conn)
+    connection.__exit__ = Mock(return_value=False)
+    monkeypatch.setattr(proof, '_connect', Mock(return_value=connection))
+    with pytest.raises(StoreSafetyError, match='address'):
+        proof.seed_fixture('postgresql://fixture@127.0.0.1/' + prep.FIXTURE_DATABASE)
+    conn.execute.assert_not_called()

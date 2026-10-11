@@ -69,14 +69,29 @@ Run only with a freshly created dedicated fixture database:
 $env:DATABASE_URL='postgresql://invalid'
 $env:EDUCATION79_DISPOSABLE_DATABASE_URL='postgresql://postgres:postgres@127.0.0.1:5432/pf_education79_locator'
 $env:EDUCATION79_PROOF_DIR='education79-proof'
-python -m pytest -q backend/tests/test_education79_locator_preparation.py backend/tests/test_education79_locator_disposable_postgres.py
+python -m pytest -q backend/tests/test_education79_locator_preparation.py backend/tests/test_education79_locator_workflow.py backend/tests/test_education79_locator_disposable_postgres.py
 node scripts/prove_education79_disposable_card.mjs education79-proof
 ```
 
-Local Docker's Linux daemon was unavailable during preparation; local offline
-contracts pass, but actual PostgreSQL/card proof is pending hosted execution.
-Treat the first hosted report as evidence only if the exact tested head, all
-assertions, synthetic boundaries and retained outputs pass. A passing fixture
+Local Docker's Linux daemon was unavailable during preparation. The actual
+PostgreSQL/card proof passed at `a4cc5787bcb2f4c1a2e22d33d4f301468bd2e2e7`
+in hosted run `38166019002`: 13 contracts and the Node card proof. Its earlier
+foreign-key and obsolete-registry failures remain preserved. Independent review
+then identified two preparation defects; that earlier success does not validate
+their corrections. Fresh exact-head hosted proof and review are required.
+
+The fixture guard now verifies libpq's actual numeric `conn.info.hostaddr`,
+as well as the requested host, database and port, before SQL in the seeder,
+persistence and ID resolver. Fake connections prove remote and unknown addresses
+fail before any SQL; these negative tests never connect to a remote database.
+Both automatic workflow events cover the actual imported module graph and
+read inputs, including the frontend card selector/content, migrations, fixture
+archives, shared core, source bytes and imported lifecycle helpers. The module
+list includes API startup dependencies because the existing public-read helper
+imports `app.main`; unrelated Immigration files are excluded. Path tests cover
+both events and these exclusions. No broad manual rerun is needed.
+
+A passing fixture
 does not prove fresh deployed runtime identities, current production preflight
 or current official response-body bytes. The source byte proof remains the
 governed cache/previously permitted retained body plus a HEAD availability check.

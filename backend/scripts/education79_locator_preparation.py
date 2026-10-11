@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import copy
 from datetime import datetime, timezone
+import ipaddress
 import json
 import re
 import runpy
@@ -122,11 +123,20 @@ def validate_bundle(bundle):
             'exact approved bundle differs')
 
 
-def require_fixture_connection(conn, database_url):
+def require_fixture_endpoint(conn, database_url):
     parsed = urlsplit(require_exact_loopback_postgres_url(database_url))
     require(parsed.path == '/' + FIXTURE_DATABASE and conn.info.dbname == FIXTURE_DATABASE
             and conn.info.host == parsed.hostname and conn.info.port == (parsed.port or 5432),
             'dedicated loopback Education fixture connection required')
+    try:
+        address = ipaddress.ip_address(conn.info.hostaddr)
+    except (AttributeError, TypeError, ValueError) as exc:
+        raise store.StoreSafetyError('known numeric loopback fixture address required') from exc
+    require(address.is_loopback, 'actual fixture connection address must be loopback')
+
+
+def require_fixture_connection(conn, database_url):
+    require_fixture_endpoint(conn, database_url)
     require(not conn.autocommit, 'owned fixture transaction required')
 
 

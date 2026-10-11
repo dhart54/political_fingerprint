@@ -54,6 +54,7 @@ def seed_fixture(database_url):
                                                  and row['child_artifact_id'] in artifact_ids]
     assert all(row['artifact_id'] in artifact_ids for row in tables['editorial_publication_registry'])
     with _connect(database_url, autocommit=True) as conn:
+        prep.require_fixture_endpoint(conn, database_url)
         assert conn.info.dbname == prep.FIXTURE_DATABASE
         assert conn.execute('SHOW server_version_num').fetchone()['server_version_num'].startswith('17')
         # Refuse an occupied database; never drop/reset a caller's schema.
