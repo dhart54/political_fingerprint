@@ -1,5 +1,7 @@
 """Reserved decisions fail before connections or SQL; no real positive approval."""
 import copy
+import hashlib
+import re
 from datetime import datetime, timedelta, timezone
 from unittest.mock import Mock
 
@@ -248,3 +250,127 @@ def test_operation_budget_exhaustion_prevents_insert(monkeypatch):
     with pytest.raises(StoreSafetyError, match='budget'):
         operator.persist(conn, bundle, baseline, authority, confirm=True, fixture_url=FIXTURE_URL)
     insert.assert_not_called()
+
+
+class ScanConnection:
+    """Lazy server pages model transport latency, without a real connection."""
+    def __init__(self, tables, clock=None):
+        self.tables = tables;self.clock = clock;self.pages = 0;self.statements = []
+
+    def execute(self, statement):
+        assert statement == "SELECT tablename FROM pg_tables WHERE schemaname='public' ORDER BY tablename"
+        result = Mock()
+        result.fetchall.return_value = [{'tablename': t} for t in sorted(self.tables)]
+        return result
+
+    def cursor(self, **kwargs):
+        connection = self
+        class Cursor:
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def execute(self, statement, params):
+                text = statement.as_string();connection.statements.append((text, params))
+                self.table = re.search(r'FROM "([^"]+)" t', text).group(1)
+            def __iter__(self):
+                source = connection.tables[self.table]
+                for index, text in enumerate(source):
+                    if index % self.itersize == 0:
+                        connection.pages += 1
+                        if connection.clock is not None: connection.clock[0] += 0.04
+                    yield {'row_text': text}
+        return Cursor()
+
+
+def reference_fingerprint(rows):
+    checksum = hashlib.sha256()
+    for text in rows:
+        checksum.update((text + '\n').encode('utf-8'))
+    return {'count': len(rows), 'sha256': checksum.hexdigest()}
+
+
+@pytest.mark.parametrize('count', [0, 1, 128, 129, 4095, 4096, 4097, 8192, 8193])
+def test_complete_hash_stream_unchanged_across_batch_boundaries(monkeypatch, count):
+    rows = sorted(['{"n": null, "text": "é雪\\n\\\""}', '{"duplicate": true}',
+                   '{"wide": "' + 'ø' * 8192 + '"}'][i % 3] for i in range(count))
+    conn = ScanConnection({'empty': [], 'rows': rows}); timings = []
+    monkeypatch.setattr(operator, 'PROTECTED_FETCH_ROWS', 128)
+    old = operator.protected_state(conn)
+    old_statements = list(conn.statements);conn.statements.clear()
+    monkeypatch.setattr(operator, 'PROTECTED_FETCH_ROWS', 4096)
+    current = operator.protected_state(conn, scan_timings=timings)
+    assert old == current == {'empty': reference_fingerprint([]), 'rows': reference_fingerprint(rows)}
+    assert conn.statements == old_statements
+    assert all(set(t) == {'table','fetch_rows','excludes_owned_batch','rows','utf8_bytes',
+                         'query_seconds','fetch_seconds','hash_seconds','status','elapsed_seconds'} for t in timings)
+    assert sum(t['rows'] for t in timings) == count
+    assert all(t['status'] == 'COMPLETE' for t in timings)
+
+
+@pytest.mark.parametrize('excluded', [None, 17])
+def test_transport_does_not_change_owned_batch_exclusion_predicates(monkeypatch, excluded):
+    conn = ScanConnection({t: [] for t in ('editorial_artifact_batches','editorial_artifact_versions',
+                                          'editorial_artifact_relationships','unrelated')})
+    monkeypatch.setattr(operator, 'PROTECTED_FETCH_ROWS', 128)
+    old = operator.protected_state(conn, exclude_batch_id=excluded)
+    statements = list(conn.statements);conn.statements.clear()
+    monkeypatch.setattr(operator, 'PROTECTED_FETCH_ROWS', 4096)
+    assert operator.protected_state(conn, exclude_batch_id=excluded) == old
+    assert conn.statements == statements
+    assert all('ORDER BY row_text' in q and 'LIMIT' not in q and 'OFFSET' not in q for q, _ in statements)
+    assert all('WHERE' not in q or 'batch_id' in q for q, _ in statements)
+
+
+def test_deadline_inside_a_large_page_keeps_partial_trace_outside_state(monkeypatch):
+    clock = [0.0];conn = ScanConnection({'rows': ['same'] * 4097}, clock)
+    monkeypatch.setattr(operator, 'monotonic', lambda: clock[0])
+    timings = []
+    with pytest.raises(StoreSafetyError, match='budget'):
+        operator.protected_state(conn, deadline=0.06, scan_timings=timings)
+    assert timings[0]['status'] == 'FAILED' and timings[0]['rows'] == 4096
+    assert 'same' not in str(timings)
+
+
+def test_timing_sidecar_cannot_change_preflight_envelope_or_stable_hash(monkeypatch):
+    conn = fake_fixture_connection();bundle = fixture_bundle()
+    now = datetime.now(timezone.utc);monkeypatch.setattr(operator, 'utc_now', lambda: now)
+    def state(*args, scan_timings=None, **kwargs):
+        if scan_timings is not None: scan_timings.append({'seconds': 99, 'rows': 123})
+        return {'owned_state': None, 'public_tables': {}, 'registry_row': bundle['prior_registry_row']}
+    monkeypatch.setattr(operator, 'current_state', state)
+    plain = operator.capture_preflight(conn, bundle, fixture_url=FIXTURE_URL)
+    timings = []
+    measured = operator.capture_preflight(conn, bundle, fixture_url=FIXTURE_URL, scan_timings=timings)
+    assert measured == plain and timings
+    assert measured['stable_preflight_sha256'] == digest(measured['state'])
+
+
+def test_drift_after_last_full_page_changes_complete_fingerprint():
+    rows = ['duplicate'] * 8193
+    original = operator.protected_state(ScanConnection({'rows': rows}))
+    rows[-1] = 'changed final row'
+    changed = operator.protected_state(ScanConnection({'rows': rows}))
+    assert original['rows']['count'] == changed['rows']['count'] == 8193
+    assert original['rows']['sha256'] != changed['rows']['sha256']
+
+
+@pytest.mark.parametrize('expiry', ['budget','freshness'])
+def test_post_insert_scan_cannot_reset_operation_budget_or_evidence_age(monkeypatch, expiry):
+    conn = fake_fixture_connection();bundle = fixture_bundle();baseline = fixture_preflight(bundle)
+    authority = fixture_authority(bundle, baseline);clock = [0]
+    utc_clock = [datetime.now(timezone.utc)]
+    monkeypatch.setattr(operator, 'monotonic', lambda: clock[0])
+    monkeypatch.setattr(operator, 'utc_now', lambda: utc_clock[0])
+    monkeypatch.setattr(operator, 'current_state', Mock(return_value=baseline['state']))
+    monkeypatch.setattr(prep, 'registry_row', Mock(return_value=bundle['prior_registry_row']))
+    monkeypatch.setattr(prep, 'owned_state', Mock(return_value={'batch_id':17,'artifact_ids':{}}))
+    insert = Mock(return_value={'artifacts_inserted':3,'artifacts_idempotent':0,'relationships_inserted':2})
+    monkeypatch.setattr(operator.store, 'insert_bundle', insert)
+    def after(*args, **kwargs):
+        assert kwargs['deadline'] == operator.LIMITS['observation_budget_seconds']
+        if expiry == 'budget': clock[0] = 121
+        else: utc_clock[0] += timedelta(seconds=1801)
+        return baseline['state']['public_tables']
+    monkeypatch.setattr(operator, 'protected_state', after)
+    with pytest.raises(StoreSafetyError, match='budget|fresh persistence'):
+        operator.persist(conn, bundle, baseline, authority, confirm=True, fixture_url=FIXTURE_URL, scan_timings=[])
+    insert.assert_called_once()  # Fake write only; caller must abort instead of commit.

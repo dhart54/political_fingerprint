@@ -1,0 +1,239 @@
+{
+  "completed_at_utc": "2026-10-11T21:15:51.202573+00:00",
+  "cooperative_budget_seconds": 45,
+  "data_writes": 0,
+  "diagnostic_only_not_execution_preflight": true,
+  "elapsed_seconds": 5.95303,
+  "error_class": "QueryCanceled",
+  "lock_timeout_seconds": 2,
+  "median_single_round_trip_seconds": 0.029993,
+  "operator_head": "577ce1ffeb8b9dfbcf323a937fa8ff69cb5f1426",
+  "public_table_estimates": [
+    {
+      "estimated_rows": 977,
+      "table_name": "bills",
+      "total_bytes": 376832
+    },
+    {
+      "estimated_rows": 6,
+      "table_name": "candidate_evidence",
+      "total_bytes": 65536
+    },
+    {
+      "estimated_rows": 144,
+      "table_name": "chamber_medians",
+      "total_bytes": 73728
+    },
+    {
+      "estimated_rows": 1737,
+      "table_name": "drift_scores",
+      "total_bytes": 466944
+    },
+    {
+      "estimated_rows": 10,
+      "table_name": "editorial_artifact_batches",
+      "total_bytes": 49152
+    },
+    {
+      "estimated_rows": 171,
+      "table_name": "editorial_artifact_relationships",
+      "total_bytes": 73728
+    },
+    {
+      "estimated_rows": 164,
+      "table_name": "editorial_artifact_versions",
+      "total_bytes": 1105920
+    },
+    {
+      "estimated_rows": 4,
+      "table_name": "editorial_publication_registry",
+      "total_bytes": 139264
+    },
+    {
+      "estimated_rows": 13896,
+      "table_name": "fingerprints",
+      "total_bytes": 2842624
+    },
+    {
+      "estimated_rows": 486,
+      "table_name": "house_member_metadata_snapshot_artifacts",
+      "total_bytes": 245760
+    },
+    {
+      "estimated_rows": 1,
+      "table_name": "house_member_metadata_snapshots",
+      "total_bytes": 32768
+    },
+    {
+      "estimated_rows": 437,
+      "table_name": "house_member_service_evidence",
+      "total_bytes": 417792
+    },
+    {
+      "estimated_rows": 874,
+      "table_name": "house_member_service_evidence_artifacts",
+      "total_bytes": 286720
+    },
+    {
+      "estimated_rows": 441,
+      "table_name": "house_seat_status_evidence",
+      "total_bytes": 352256
+    },
+    {
+      "estimated_rows": 882,
+      "table_name": "house_seat_status_evidence_artifacts",
+      "total_bytes": 278528
+    },
+    {
+      "estimated_rows": 3,
+      "table_name": "legislator_contacts",
+      "total_bytes": 49152
+    },
+    {
+      "estimated_rows": 637,
+      "table_name": "legislators",
+      "total_bytes": 155648
+    },
+    {
+      "estimated_rows": 3973,
+      "table_name": "race_candidates",
+      "total_bytes": 1826816
+    },
+    {
+      "estimated_rows": 2298,
+      "table_name": "roll_calls",
+      "total_bytes": 2113536
+    },
+    {
+      "estimated_rows": 112,
+      "table_name": "senate_amendment_references",
+      "total_bytes": 114688
+    },
+    {
+      "estimated_rows": 1737,
+      "table_name": "summaries",
+      "total_bytes": 835584
+    },
+    {
+      "estimated_rows": 504,
+      "table_name": "upcoming_races",
+      "total_bytes": 253952
+    },
+    {
+      "estimated_rows": 2110,
+      "table_name": "vote_classifications",
+      "total_bytes": 434176
+    },
+    {
+      "estimated_rows": 814963,
+      "table_name": "vote_context_members",
+      "total_bytes": 100302848
+    },
+    {
+      "estimated_rows": 1758,
+      "table_name": "vote_interpretations",
+      "total_bytes": 1490944
+    },
+    {
+      "estimated_rows": 814963,
+      "table_name": "votes_cast",
+      "total_bytes": 105668608
+    },
+    {
+      "estimated_rows": 4,
+      "table_name": "zip_district_map",
+      "total_bytes": 32768
+    },
+    {
+      "estimated_rows": 0,
+      "table_name": "zip_district_mappings",
+      "total_bytes": 65536
+    }
+  ],
+  "queries": [
+    {
+      "phase": "readonly",
+      "seconds": 0.032259
+    },
+    {
+      "phase": "public_table_estimates",
+      "seconds": 0.079817
+    },
+    {
+      "phase": "single_round_trip_0",
+      "seconds": 0.028144
+    },
+    {
+      "phase": "single_round_trip_1",
+      "seconds": 0.029993
+    },
+    {
+      "phase": "single_round_trip_2",
+      "seconds": 0.027989
+    },
+    {
+      "phase": "single_round_trip_3",
+      "seconds": 0.033675
+    },
+    {
+      "phase": "single_round_trip_4",
+      "seconds": 0.030313
+    },
+    {
+      "phase": "explain_not_analyze",
+      "seconds": 0.03006
+    }
+  ],
+  "query_plan_without_execution": [
+    {
+      "QUERY PLAN": [
+        {
+          "Plan": {
+            "Async Capable": false,
+            "Node Type": "Sort",
+            "Parallel Aware": false,
+            "Plan Rows": 814963,
+            "Plan Width": 32,
+            "Plans": [
+              {
+                "Alias": "t",
+                "Async Capable": false,
+                "Node Type": "Seq Scan",
+                "Parallel Aware": false,
+                "Parent Relationship": "Outer",
+                "Plan Rows": 814963,
+                "Plan Width": 32,
+                "Relation Name": "vote_context_members",
+                "Startup Cost": 0.0,
+                "Total Cost": 21941.85
+              }
+            ],
+            "Sort Key": [
+              "((to_jsonb(t.*))::text)"
+            ],
+            "Startup Cost": 124801.65,
+            "Total Cost": 126839.06
+          }
+        }
+      ]
+    }
+  ],
+  "read_only": true,
+  "read_only_metadata": {
+    "transaction_read_only": "on"
+  },
+  "result": "BOUNDED_DIAGNOSTIC_STOPPED",
+  "sample_table": "vote_context_members",
+  "samples": [
+    {
+      "declare_seconds": 0.06187,
+      "fetch_rows": 128,
+      "fetches": [],
+      "row_data_recorded": false,
+      "table": "vote_context_members"
+    }
+  ],
+  "sanitized_error": "canceling statement due to statement timeout",
+  "started_at_utc": "2026-10-11T21:15:45.249550+00:00",
+  "statement_timeout_seconds": 5
+}
