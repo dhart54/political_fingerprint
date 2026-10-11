@@ -64676,6 +64676,42 @@
       ],
       "text_extraction_method": "PC pypdf page.extract_text joined doubleLF without word repair; literal interval without repair",
       "governed_bytes_sha256": "a60101db5ec635dba4b5da625f7449702a82fc6253b424b063f87859627a6a8e"
+    },
+    {
+      "source_id": "immigration:roll200-initial-corrected193",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+      "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+      "text": "The bill was ordered to be read a \nthird time, and was read the third \ntime. \nThe SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMs. WATERS. Mr. Speaker, on that I \ndemand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, further pro-\nceedings on this question will be post-\nponed. \n",
+      "text_version": "Corrected own S.1582 initial passage, Waters demand/order/postponement; full final LF; historical wrong HR1919 witness retained",
+      "captured_full_text_sha256": "233d60db8aaf4c2c2d4f2606ed0db8be80374f575fb58a2859b9afc430bc2e79",
+      "source_text_extents": [
+        {
+          "start": 578298,
+          "end": 578764,
+          "total": 1020725
+        }
+      ],
+      "text_extraction_method": "PC pypdf page.extract_text joined doubleLF without word repair; literal interval without repair",
+      "governed_bytes_sha256": "1e389de59399217ddb056623efcce0e149fedd92ace3960ec6b55d150698cf4f"
+    },
+    {
+      "source_id": "immigration:roll200-next-action-boundary193",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+      "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+      "text": "f \nANTI-CBDC SURVEILLANCE STATE \nACT \nMr. HILL of Arkansas. Mr. Speaker, \npursuant to House Resolution 580, I \ncall up the bill (H.R. 1919) to amend the \nFederal Reserve Act to prohibit the \nFederal reserve banks from offering \ncertain products or services directly to \nan individual, to prohibit the use of \ncentral bank digital currency for mon-\netary policy, and for other purposes, \nand ask for its immediate consider-\nation in the House. \nThe Clerk read the title of the bill.",
+      "text_version": "Immediately following distinct HR1919 callup bounds preceding S.1582 initial passage; not operative or domain evidence",
+      "captured_full_text_sha256": "233d60db8aaf4c2c2d4f2606ed0db8be80374f575fb58a2859b9afc430bc2e79",
+      "source_text_extents": [
+        {
+          "start": 578764,
+          "end": 579245,
+          "total": 1020725
+        }
+      ],
+      "text_extraction_method": "PC pypdf page.extract_text joined doubleLF without word repair; literal interval without repair",
+      "governed_bytes_sha256": "8efd8687a40d7f575b3d18abfec02fae0600d278b0dd21f8941e042e4a46eb21"
     }
   ]
 }

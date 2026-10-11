@@ -47,3 +47,63 @@ def require_exact_bill_operative(text: str, bill: str) -> str:
     if identity is None or compact(identity[1]) != expected:
         raise ValueError('offered operative bill identity differs from exact action')
     return expected
+
+
+def require_same_action_passage_stages(declaration: dict, initial: dict,
+                                      next_action: dict, recorded: dict,
+                                      bill: str, roll: int) -> str:
+    """Bind explicitly scoped passage stages to one declared bill and parent.
+
+    The caller must verify that next_action is the next offered-bill callup in
+    the parent. Literal text order alone cannot establish legislative identity.
+    This bounded check grants no semantic, source-completeness or review clearance.
+    """
+    compact = lambda value: re.sub(r'\s+', '', value).upper()
+    expected = compact(bill)
+    if not re.fullmatch(r'(?:S\.|H\.R\.)[1-9][0-9]*', expected):
+        raise ValueError('explicit Senate or House bill identity required')
+    if isinstance(roll, bool) or not isinstance(roll, int) or roll < 1:
+        raise ValueError('explicit positive roll required')
+    parent = tuple(declaration.get(key) for key in
+                   ('url', 'raw_sha256', 'captured_full_text_sha256'))
+    if not all(parent):
+        raise ValueError('governed common source parent required')
+    extents = []
+    for source in (declaration, initial, next_action, recorded):
+        if tuple(source.get(key) for key in
+                 ('url', 'raw_sha256', 'captured_full_text_sha256')) != parent:
+            raise ValueError('passage stages must share the exact source parent')
+        ranges = source.get('source_text_extents', [])
+        if len(ranges) != 1:
+            raise ValueError('one literal source interval per stage required')
+        extent = ranges[0]
+        start, end, total = (extent.get(key) for key in ('start', 'end', 'total'))
+        if (any(type(value) is not int for value in (start, end, total)) or
+                not 0 <= start < end <= total or
+                end - start != len(source['text'])):
+            raise ValueError('literal stage interval differs from source text')
+        extents.append((start, end, total))
+    if len({extent[2] for extent in extents}) != 1:
+        raise ValueError('passage stages must share the exact parent extent')
+    callup = r'call up the bill\s*\(((?:S\.|H\.\s*R\.)\s*[1-9][0-9]*)\)'
+    identities = re.findall(callup, normalized_source_text(declaration['text']))
+    following = re.findall(callup, normalized_source_text(next_action['text']))
+    if len(identities) != 1 or compact(identities[0]) != expected:
+        raise ValueError('offered declaration differs from exact action')
+    if len(following) != 1 or compact(following[0]) == expected:
+        raise ValueError('explicit distinct next-action callup required')
+    if not (extents[0][1] <= extents[1][0] < extents[1][1] <= extents[2][0]
+            and extents[2][1] <= extents[3][0]):
+        raise ValueError('initial passage is outside the declared action boundary')
+    require_source_sequence(initial['text'], ['question is on', 'ayes appeared',
+                            'demand the yeas and nays', 'yeas and nays were ordered',
+                            'proceedings on this question will be postponed'])
+    result = normalized_source_text(recorded['text'])
+    resume = re.search(r'unfinished business is the vote on passage of the bill\s*'
+                       r'\(((?:S\.|H\.\s*R\.)\s*[1-9][0-9]*)\)', result)
+    if resume is None or compact(resume[1]) != expected:
+        raise ValueError('recorded resumption differs from exact action')
+    require_source_sequence(result, ['unfinished business', 'question is on the passage',
+                            'vote was taken by electronic', f'[Roll No. {roll}]',
+                            'So the bill was passed'])
+    return expected

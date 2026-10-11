@@ -1,0 +1,326 @@
+{
+  "checkpoint": 192,
+  "head": "c75e3fec20396615e3bcc1786a5dcdc26cca0249",
+  "run": 38108405378,
+  "run_attempt": 2,
+  "conclusion": "success",
+  "observed_utc": "2026-10-11T15:08:47.410077+00:00",
+  "successful_jobs_at_final_state": 9,
+  "original_first_attempt": {
+    "successes": 8,
+    "failures": 1,
+    "synthetic_merge_sha": "933dc69d20ea98c89c65dae2e6ef9666f443af80"
+  },
+  "recovery": {
+    "failed_job_only": true,
+    "job_id": 114499759095,
+    "new_successful_executions": 1,
+    "carried_successes": 8,
+    "new_executions_in_attempt2": 1,
+    "retries_requested": 1,
+    "original_failure_retained": true,
+    "root_cause": "Not established; possible readiness race. First pg_isready accepted, immediate second returned no response/exit2 before createdb/normalized pytest. Single retry passed.",
+    "no_workflow_config_security_credentials_or_production_changes": true
+  },
+  "actual_distinct_executions": 10,
+  "jobs": [
+    {
+      "job_id": 114378690374,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:26:53Z",
+      "completed_at": "2026-10-11T03:27:23Z",
+      "checkout_log_shas": [
+        "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\m14e-exact-head-114378690374.log",
+      "log_sha256": "e9bad29834d8ca44442d1bbec747d5755c7ee673a71af950b8af62dc44a8df8e",
+      "log_bytes": 44400,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:27:21.6862311Z 22 passed, 55 subtests passed in 0.29s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ]
+    },
+    {
+      "job_id": 114378690487,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:26:54Z",
+      "completed_at": "2026-10-11T03:28:57Z",
+      "checkout_log_shas": [
+        "933dc69d20ea98c89c65dae2e6ef9666f443af80"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\publication-activation-postgres-114378690487.log",
+      "log_sha256": "d15111cb319204c4065b3043b0e3cd27a7d340bbfc35ae0fd53756caaed5f8b0",
+      "log_bytes": 180790,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:27:56.9641833Z 23 passed, 1 warning in 15.10s",
+        "2026-10-11T03:28:00.8838364Z 58 passed, 1 warning in 3.63s",
+        "2026-10-11T03:28:03.8229983Z 1 passed in 1.56s",
+        "2026-10-11T03:28:08.4333943Z 1 passed, 1 warning in 3.25s",
+        "2026-10-11T03:28:12.7046715Z 1 passed in 2.88s",
+        "2026-10-11T03:28:16.9974929Z 2 passed in 2.95s",
+        "2026-10-11T03:28:20.0507440Z 14 passed in 1.67s"
+      ],
+      "skipped_steps": []
+    },
+    {
+      "job_id": 114378690493,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:26:54Z",
+      "completed_at": "2026-10-11T03:31:28Z",
+      "checkout_log_shas": [
+        "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\m14h-exact-head-114378690493.log",
+      "log_sha256": "a34c566a3402ac7f802b7c32b815340091697a82a00b5467a0f3d83ae3d94e94",
+      "log_bytes": 138339,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:28:05.8620464Z 95 passed, 1 warning in 2.48s",
+        "2026-10-11T03:29:41.1125381Z 316 passed in 94.12s (0:01:34)",
+        "2026-10-11T03:29:46.1072252Z 1 passed in 3.56s",
+        "2026-10-11T03:29:48.2418825Z 74 passed, 1 warning in 1.67s",
+        "2026-10-11T03:30:28.6945111Z   2 passed (12.8s)",
+        "2026-10-11T03:31:11.0752920Z   23 passed (16.8s)",
+        "2026-10-11T03:31:11.6888825Z 15 passed in 0.20s",
+        "2026-10-11T03:31:20.5050562Z   1 passed (7.5s)",
+        "2026-10-11T03:31:24.2255789Z 25 passed in 3.27s"
+      ],
+      "skipped_steps": []
+    },
+    {
+      "job_id": 114378690509,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:26:54Z",
+      "completed_at": "2026-10-11T03:30:08Z",
+      "checkout_log_shas": [
+        "933dc69d20ea98c89c65dae2e6ef9666f443af80"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\foushee-full-record-benchmark-114378690509.log",
+      "log_sha256": "6976d8192a53948544cfd3ad34ba29abf80d40a30e0e6fb24f3f1f2f727ec7d5",
+      "log_bytes": 1504871,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:27:24.1277053Z 15 passed in 0.39s",
+        "2026-10-11T03:27:25.2883163Z 19 passed in 0.84s",
+        "2026-10-11T03:27:27.6806252Z 27 passed in 2.03s",
+        "2026-10-11T03:30:05.7063995Z 639 passed, 1 warning in 56.68s"
+      ],
+      "skipped_steps": []
+    },
+    {
+      "job_id": 114378690524,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:26:54Z",
+      "completed_at": "2026-10-11T03:27:28Z",
+      "checkout_log_shas": [
+        "933dc69d20ea98c89c65dae2e6ef9666f443af80"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\amendment-evidence-contracts-114378690524.log",
+      "log_sha256": "3881229d6c2e5951a6bccdc1e3014367c5aa8a5b0f7a5e033c6f5569a131b247",
+      "log_bytes": 28727,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:27:26.1616873Z ============================== 87 passed in 1.19s =============================="
+      ],
+      "skipped_steps": []
+    },
+    {
+      "job_id": 114378690526,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:26:53Z",
+      "completed_at": "2026-10-11T03:27:20Z",
+      "checkout_log_shas": [
+        "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\m14f-exact-head-114378690526.log",
+      "log_sha256": "9a9ec14db9604efb3e6a1043d9e868cabce65f1609c0b0cef323e9e972d25ab7",
+      "log_bytes": 43974,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:27:18.5939520Z 29 passed, 40 subtests passed in 0.27s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ]
+    },
+    {
+      "job_id": 114378690556,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:26:53Z",
+      "completed_at": "2026-10-11T03:27:27Z",
+      "checkout_log_shas": [
+        "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\m14g-exact-head-114378690556.log",
+      "log_sha256": "7cb5ef44476dcff684bb269d9b64946015703d1502a86a84bc51ebd4c5d21f42",
+      "log_bytes": 62466,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:27:20.5188834Z 15 passed, 1 warning in 0.34s",
+        "2026-10-11T03:27:20.8502428Z 10 passed in 0.17s",
+        "2026-10-11T03:27:21.1682382Z 3 passed in 0.19s",
+        "2026-10-11T03:27:24.9302197Z 96 passed in 2.03s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ]
+    },
+    {
+      "job_id": 114378690559,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:26:53Z",
+      "completed_at": "2026-10-11T03:27:24Z",
+      "checkout_log_shas": [
+        "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\m14d-exact-head-114378690559.log",
+      "log_sha256": "0403ebabba27403d1b60c4a438063667382f0abb8b310bbf7215e3694433f767",
+      "log_bytes": 43477,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:27:22.7069361Z 18 passed, 34 subtests passed in 0.71s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ]
+    },
+    {
+      "job_id": 114378690583,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "failure",
+      "started_at": "2026-10-11T03:26:53Z",
+      "completed_at": "2026-10-11T03:30:04Z",
+      "checkout_log_shas": [
+        "933dc69d20ea98c89c65dae2e6ef9666f443af80",
+        "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\receipt-evidence-repair-postgres-114378690583.log",
+      "log_sha256": "73161bbe7d2175fcc9ff501fc4a7db8c48901f2c5b5f416dbf18bebb9b50778a",
+      "log_bytes": 79531,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:27:45.7580748Z 6 passed in 2.00s",
+        "2026-10-11T03:29:28.8184865Z 38 passed, 1 warning in 101.74s (0:01:41)"
+      ],
+      "skipped_steps": [
+        "Prove actual green M15B persistence and owned V2R lifecycle",
+        "Post Run actions/setup-python@v5"
+      ]
+    },
+    {
+      "job_id": 114499759095,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 2,
+      "conclusion": "success",
+      "started_at": "2026-10-11T15:00:33Z",
+      "completed_at": "2026-10-11T15:07:00Z",
+      "checkout_log_shas": [
+        "933dc69d20ea98c89c65dae2e6ef9666f443af80",
+        "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+      ],
+      "log_path": ".tmp\\ci_successor_checkpoint192\\receipt-evidence-repair-postgres-114499759095.log",
+      "log_sha256": "5757d0e21389e4ddc5784d66a7a3ce3ce74ab1e8a2c9af8b4e9c08c12ee140c4",
+      "log_bytes": 137764,
+      "log_encoding": "PC gh API decoded response bytes, not archive bytes",
+      "pytest_counts": [
+        "2026-10-11T15:01:28.6422067Z 6 passed in 1.73s",
+        "2026-10-11T15:03:47.2345844Z 38 passed, 1 warning in 137.23s (0:02:17)",
+        "2026-10-11T15:06:17.2017670Z 13 passed in 133.31s (0:02:13)",
+        "2026-10-11T15:06:57.6814458Z 20 passed in 37.82s"
+      ],
+      "skipped_steps": []
+    }
+  ],
+  "carried_job_metadata": [
+    {
+      "name": "m14g-exact-head",
+      "copy_job_id": 114499760030,
+      "original_job_id": 114378690556,
+      "original_started_at": "2026-10-11T03:26:53Z",
+      "conclusion": "success"
+    },
+    {
+      "name": "m14f-exact-head",
+      "copy_job_id": 114499760705,
+      "original_job_id": 114378690526,
+      "original_started_at": "2026-10-11T03:26:53Z",
+      "conclusion": "success"
+    },
+    {
+      "name": "m14d-exact-head",
+      "copy_job_id": 114499778720,
+      "original_job_id": 114378690559,
+      "original_started_at": "2026-10-11T03:26:53Z",
+      "conclusion": "success"
+    },
+    {
+      "name": "m14e-exact-head",
+      "copy_job_id": 114499780738,
+      "original_job_id": 114378690374,
+      "original_started_at": "2026-10-11T03:26:53Z",
+      "conclusion": "success"
+    },
+    {
+      "name": "foushee-full-record-benchmark",
+      "copy_job_id": 114499783964,
+      "original_job_id": 114378690509,
+      "original_started_at": "2026-10-11T03:26:54Z",
+      "conclusion": "success"
+    },
+    {
+      "name": "amendment-evidence-contracts",
+      "copy_job_id": 114499787055,
+      "original_job_id": 114378690524,
+      "original_started_at": "2026-10-11T03:26:54Z",
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-activation-postgres",
+      "copy_job_id": 114499793775,
+      "original_job_id": 114378690487,
+      "original_started_at": "2026-10-11T03:26:54Z",
+      "conclusion": "success"
+    },
+    {
+      "name": "m14h-exact-head",
+      "copy_job_id": 114499797484,
+      "original_job_id": 114378690493,
+      "original_started_at": "2026-10-11T03:26:54Z",
+      "conclusion": "success"
+    }
+  ],
+  "fresh_retry_checkout_log_shas": [
+    "933dc69d20ea98c89c65dae2e6ef9666f443af80",
+    "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+  ],
+  "synthetic_merge_same_on_retry": true,
+  "first_attempt_coverage_limitations_preserved": true,
+  "retry_normalized_and_M15B_steps_actually_succeeded": true,
+  "all_current_main_integration_claim": false,
+  "URL": "https://github.com/dhart54/political_fingerprint/actions/runs/38108405378",
+  "independent_semantic_review_not_implied": true,
+  "publication_authorized": false,
+  "editorially_accepted": false,
+  "receipt_sha256": "34ad1e861db985d1209d95c457307af830c14385c399657ecfea43b725e7ac41"
+}

@@ -2102,3 +2102,81 @@ security/configuration write, merge, deployment or hold release.
 Evidence: fraud_enforcement_screening_checkpoint192.json 45f334ecec853b9aa0804b0b0c4bc2c4fd3dc4e1eb03e43ba4eb14874cd1bb90;
 delivery192 validation 9034e3989e2119170a741221c059c87867635ea1948db52f2ed780ac9d81e76e; exact191 CI and base qualification;
 audit and unchanged canonical/shared core artifacts. Continue coherent research.
+
+
+## Explicit resume and checkpoint 193 source identity correction
+
+Dylan explicitly resumed at 2026-10-11 14:57 UTC. Same sole Windows owner,
+DESKTOP-1CQBHTJ, existing .w/ib, local/remote c75e3fec reconciled with tracked
+worktree clean. Both untracked shutdown notes and all 48 private inventoried files
+match. Overnight stop is historical; no new deadline. A separate frontend owner
+works outside this worktree and has no Immigration ownership.
+
+Parent independent 191/192 review confirmed P2: roll200 initial191 quotes the later
+H.R.1919 action on H3434 rather than S.1582 on H3427. Ordering-only checks had
+accepted the wrong passage. The retained exact 1,020,725-character parent verifies
+correct [578298,578764), 466 characters including final LF, question578406;
+wrong [637984,638459), 475 characters. S.1582 callup353150 precedes the correct
+initial; next distinct H.R.1919 callup578875 bounds it. Recorded roll200 remains
+a separate S.1582 resumption with unchanged result/member statuses.
+
+Two new immutable derivative identities provide the corrected initial stage and
+the following action boundary. Original wrong witness/capture remain exact;
+original 191 receipt and validation are archived byte-exact. Active 191 claim,
+derivative, refs, row200 refs and seals are repaired. Historical 191 validation
+is not source-identity clearance. One bounded same-parent/declared-action guard
+and real-source regression preserve correct S.1582 declaration/result and change
+only the wrong initial witness; it fails even though ordinary source order passes.
+Explicit next-callup selection remains caller-owned; this is not a universal
+legislative parser or semantic clearance.
+
+Independent review summary records42 preservation checks/seven replays, supported
+2/309 candidate exclusion and retained1/199,1/200,2/157,2/310 holds. No acceptance.
+Counts remain607/69,47 meanings/80 propositions/70 questions/three partials;
+source catalog now2158 and capture registrations1048. No new screening completion,
+meaning or proposition. All607 memberships, prior source/capture/private prefixes,
+121 frozen blobs and six semantic products remain exact; authorized active191
+receipt exception is preserved in immutable history. Full raw parent PC extraction
+replays exactly, without claiming whole daily parent owner reading.
+
+Validation204 focused tests22.026s, seven semantic checks, IR references and seven
+byte-exact generated replays pass. Diff and source identity behavior inspected.
+No frontend, browser, database or full-population local validation was triggered.
+New correction independent review and its hosted CI remain pending at this note.
+
+192 CI failed before normalized pytest: postgres17 accepted then immediately
+reported no response/exit2 under bash-e. Possible readiness race, no proven root
+cause. One explicitly authorized failed-job-only rerun was requested; attempt2
+contains one fresh job and eight carried successes with overnight start times.
+Do not call those eight fresh executions. First failed log remains intact; no
+workflow/config/credential/production change. Recovery is still being observed.
+
+The preserved193 June10 pair217/218 has two attempts/zero completions and remains
+private, unmodified research. Continue from exact saved read limits after this
+coherent correction, not fresh duplicate acquisition. Local correction timing
+retains pause/resume, predecessor CI overlap and one-time inherited repair; prior
+comparable FAIL781.087s remains. No new benchmark/average or silent scaling.
+Candidate branch only; all existing publication/acceptance/merge/deploy/production,
+security/schema/config/methodology and hold-release boundaries persist.
+
+
+Final193 diff also found199's broad shared source-bank list retaining the wrong200
+initial witness. That active reference is corrected; proposed/canonical199 rows
+match, with own199 stages and held states unchanged. The refinement journal keeps
+prior private seals. Final source/row/seal/replay checks follow; unchanged code and
+literal sources do not require repeating the complete204-test run.
+
+192 recovery completed: one fresh successful job114499759095, eight carried
+successes, ten distinct executions across both attempts. Original failed log is
+retained. Fresh retry used actual synthetic933dc69d20ea98c89c65dae2e6ef9666f443af80
+then exactc75e3fec; normalized storage13 tests and previously skipped M15B20 tests
+actually passed. First suites6/38 also passed, one warning retained. Retry root
+cause remains unproven. Recovery receipt34ad1e861db985d1209d95c457307af830c14385c399657ecfea43b725e7ac41.
+No config/security/production change or broad rerun. Candidate correction delivery
+can proceed after final diff checks; continue existing research and await bounded
+independent correction review without granting acceptance.
+
+Final193 semantic recheck first lacked established NODE_PATH and could not locate
+AJV. Restoring the existing dependency path passes seven checks; no installation,
+config or security change. Output replay/seals/proposed canonical row equality and
+diff checks pass after reference refinement. Failure/recovery overhead retained.

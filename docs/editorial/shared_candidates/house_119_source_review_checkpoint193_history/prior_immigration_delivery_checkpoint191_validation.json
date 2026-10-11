@@ -1,0 +1,158 @@
+{
+  "checkpoint": 191,
+  "base_head": "2a9797fd360d37c0d7fdb67fa0af4efca7b54366",
+  "candidate_receipt_sha256": "fa0111e46419dfb8d21a45cdbd161513f5ecf539a320b6cc8d8793c5b5bcd183",
+  "focused_tests": {
+    "passed": 203,
+    "seconds": 25.097,
+    "log": ".tmp/tests191-after-boundaries.log"
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4,
+    "new_acceptance": false
+  },
+  "preservation": {
+    "changed_universe_rows": [
+      "house:119:1:199",
+      "house:119:1:200"
+    ],
+    "preserved_membership_records": 606,
+    "unchanged_authoring_and_membership": true,
+    "unchanged_accounting_and_pending_set": true,
+    "literal_claim_checks": 19,
+    "raw_parent_replays": 6,
+    "PDF_parent_replays": 2,
+    "HTML_parent_replays": 2,
+    "fresh_Clerk_replays": 2,
+    "new_exact_derivatives": 10,
+    "immutable_reused_sources": 5,
+    "original_selected_page_witness_byte_replay": true,
+    "adopted_operators_qualified": true,
+    "initial_postponement_and_recorded_resumption_separate": true,
+    "old_sources_registrations_pool_aliases_preserved": true,
+    "frozen_git_blobs": 113,
+    "existing_shared_cores_unchanged": true,
+    "prior190_CI_and_independent_review_preserved": true,
+    "base_snapshot_disagreement_explicit": true,
+    "source_count": 2131,
+    "registrations": 1021,
+    "counts": {
+      "reviewed": 606,
+      "pending": 70,
+      "ordinary_unscreened": 49,
+      "researched_holds": 21,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    }
+  },
+  "byte_exact_generated_replays": 7,
+  "unchanged_semantic_products": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "source_count": 2131,
+  "registrations": 1021,
+  "counts": {
+    "reviewed": 606,
+    "pending": 70,
+    "ordinary_unscreened": 49,
+    "researched_holds": 21,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "attempted_actions": 2,
+  "completed_screenings": 0,
+  "held_actions": 2,
+  "timing": {
+    "checkpoint": 191,
+    "base_head": "2a9797fd360d37c0d7fdb67fa0af4efca7b54366",
+    "started_utc": "2026-10-11T02:39:58.975344+00:00",
+    "research_scope": "Coherent July17 financial passage group: exact July version and own-stage witnesses first; independently bound Immigration operators",
+    "attempted_action_ids": [
+      "house:119:1:199",
+      "house:119:1:200"
+    ],
+    "special_benchmark_round": false,
+    "prior_comparable_performance": "FAIL781.087seconds",
+    "one_time_resume_excluded": false,
+    "predecessor190_CI_and_report_overlap_retained": true,
+    "source_and_authoring_completed_utc": "2026-10-11T03:01:48.359294+00:00",
+    "source_and_authoring_endpoint_seconds": 1309.38395,
+    "attempted_actions": 2,
+    "completed_screenings": 0,
+    "held_actions": 2,
+    "all_source_output_helper_and_private_write_correction_overhead_retained": true,
+    "local_validation_completed_utc": "2026-10-11T03:07:01.409053+00:00",
+    "local_validation_endpoint_seconds": 1622.433709,
+    "focused_validation_and_replay_complete": true,
+    "initial203_tests_seconds": 25.316,
+    "final203_tests_seconds": 25.097,
+    "repeated_tests_due_to_new_witness_bound_correction": true,
+    "initial_source_and_authoring_endpoint_seconds": 1309.38395,
+    "new_witness_boundary_correction_file_timestamp_utc": "2026-10-11T03:04:57.654952+00:00",
+    "new_witness_boundary_correction_endpoint_seconds": 1498.679608,
+    "file_timestamp_basis": "PC candidate receipt last-write timestamp after pre-delivery witness-bound correction; not inferred fresh process duration"
+  },
+  "rendered_source_checks": [
+    {
+      "path": ".tmp/rcp191-selfcustody.png",
+      "raw_path": ".tmp/capture191-rcp1196.raw",
+      "pdf_page_1based": 251,
+      "printed_page": "251",
+      "image_sha256": "9949a39ac7f3de2f5c4ed5edf91fea1f895a68e1976fc8b2046915a398813f82",
+      "raw_sha256": "1731334b4df7d292425d19a8a0936a3c891051358241c45bb78fe82a9967b7a6",
+      "owner_visually_checked": true,
+      "independent_human_approval": false
+    },
+    {
+      "path": ".tmp/record191-passage-079.png",
+      "raw_path": ".tmp/capture191-recordJuly17.raw",
+      "pdf_page_1based": 79,
+      "printed_page": "H3449",
+      "image_sha256": "1dba372617681b8e0ec894a22c4910c919479787e4be0ca6c2f1a071d4b219c4",
+      "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+      "owner_visually_checked": true,
+      "independent_human_approval": false
+    },
+    {
+      "path": ".tmp/record191-passage-080.png",
+      "raw_path": ".tmp/capture191-recordJuly17.raw",
+      "pdf_page_1based": 80,
+      "printed_page": "H3450",
+      "image_sha256": "02a49efa44d51ab60d4a4f62c4a79ab7dc5ec3cbda9ee5ccbc8b0d2e87346d4f",
+      "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+      "owner_visually_checked": true,
+      "independent_human_approval": false
+    }
+  ],
+  "native_render_warning_qualification": "Poppler emitted ligature-name parse warnings for Record pages; resulting rendered text and declared stage/member boundaries visually checked. No warning-free claim.",
+  "prior190_review_receipt_sha256": "85b5f123f962e3f05b3c36e004ba934c6e42766a7bb0c42ca38aeb61f8209f12",
+  "prior190_review_seconds": 411.817,
+  "prior190_CI_receipt_sha256": "fa60e9b2ce05f7bb6a09a50e2ef4cf0bb9d2e48264ea75f269d47cd44110f04e",
+  "prior190_CI_first_attempt_successful_jobs": 9,
+  "prior190_CI_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "prior190_CI_base_qualification_receipt_sha256": "3fca295f50bf65e1e0e40f481c538de4838c7524fc1c5d75fac665522400290a",
+  "prior190_CI_snapshot_disagreement_explicit": true,
+  "prior190_final_PR_CI_endpoint_seconds": 1643.43948,
+  "performance_status": "FAIL at prior comparable781.087seconds. Two held financial-package attempts have zero completions and supply no new average; no special benchmark or silent scale increase.",
+  "independent191_review_pending": true,
+  "hosted191_CI_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "2030f66363519218d6252771ca982f92e60d1c39d5e473174e6101380e76bd54"
+}

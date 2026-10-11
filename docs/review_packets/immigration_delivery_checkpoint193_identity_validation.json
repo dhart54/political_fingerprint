@@ -1,0 +1,116 @@
+{
+  "checkpoint": 193,
+  "scope": "roll200 source identity correction; resumed research still incomplete",
+  "base_head": "c75e3fec20396615e3bcc1786a5dcdc26cca0249",
+  "candidate_correction_receipt_sha256": "282bb605a9a7c6f96b0dab981171b468cbfa76b6cfdb8a4ac50afca07301f0eb",
+  "focused_tests": {
+    "passed": 204,
+    "seconds": 22.026,
+    "log": ".tmp/tests193-identity.log"
+  },
+  "semantic_checks": 7,
+  "IR_references": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4,
+    "new_acceptance": false
+  },
+  "same_action_positive_and_negative_source_regression_passed": true,
+  "ordering_alone_explicitly_insufficient": true,
+  "seven_generated_outputs_byte_exact_replay": true,
+  "unchanged_semantic_products": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "preservation": {
+    "old_catalog_manifest_pool_prefix_exact": true,
+    "source_seals": 2158,
+    "literal_active191_claims": 20,
+    "changed_universe_rows": [
+      "house:119:1:199",
+      "house:119:1:200"
+    ],
+    "memberships_preserved": 607,
+    "unchanged_frozen_blobs": 121,
+    "authorized_history_preserved_exception": [
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/financial_package_source_qualification_checkpoint191.json"
+    ],
+    "old191_history_byte_exact": true
+  },
+  "raw_parent_replay": {
+    "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+    "parent_text_sha256": "233d60db8aaf4c2c2d4f2606ed0db8be80374f575fb58a2859b9afc430bc2e79",
+    "characters": 1020725,
+    "pages": 108,
+    "PC_pypdf_replay_exact": true,
+    "whole_parent_owner_read": false,
+    "correct_initial_chars": 466,
+    "correct_initial_page": "H3427",
+    "historical_wrong_initial_page": "H3434",
+    "question_start": 578406
+  },
+  "counts": {
+    "reviewed": 607,
+    "pending": 69,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3,
+    "sources": 2158,
+    "captures": 1048
+  },
+  "new_screening_completions": 0,
+  "held_dispositions_unchanged": true,
+  "original191_validation_is_historical_not_identity_clearance": true,
+  "original191_validation_history_path": "docs/editorial/shared_candidates/house_119_source_review_checkpoint193_history/prior_immigration_delivery_checkpoint191_validation.json",
+  "resume_record": {
+    "resumed_utc": "2026-10-11T14:59:37.929002+00:00",
+    "explicit_user_resume_utc": "2026-10-11T14:57:00Z",
+    "paused_since_utc": "2026-10-11T03:37:13.635346+00:00",
+    "base_head": "c75e3fec20396615e3bcc1786a5dcdc26cca0249",
+    "sole_writer_resumed": true,
+    "preserved_inventory_files": 48,
+    "new_benchmark": false,
+    "original_timers_unchanged": true,
+    "correction_scope": "Confirmed roll200 initial witness identity, same-action negative regression, bounded CI diagnosis/recovery; preserve held states and incomplete research"
+  },
+  "shutdown_pause_excluded": true,
+  "prior_193_active_elapsed_to_shutdown_seconds": 472.993034,
+  "local_correction_report_utc": "2026-10-11T15:07:37.087337+00:00",
+  "resumed_elapsed_seconds": 479.158335,
+  "pre_resume_record_inspection_overhead_not_individually_measured": true,
+  "original_timer_unchanged": true,
+  "overlapping_192_CI_recovery_not_added": true,
+  "prior_comparable_benchmark": {
+    "status": "FAIL",
+    "seconds": 781.087,
+    "ceiling_seconds": 600,
+    "target_seconds": 240
+  },
+  "special_benchmark_round": false,
+  "new_comparable_average": false,
+  "independent_correction_review_pending": true,
+  "hosted_correction_CI_pending": true,
+  "hosted192_recovery_pending": false,
+  "publication_authorized": false,
+  "editorially_accepted": false,
+  "receipt_sha256": "acff30e9843f5233cfe6495eb9a04808789b12feac5e4be49e89ecd457ea0829",
+  "final_shared_source_reference_refinement": "Also repair wrong200 initial source-bank reference in active199 row; align proposed/canonical rows. Source bytes, guard and regression unchanged; final seals/row preservation/replay rechecked.",
+  "hosted192_recovery_receipt_sha256": "34ad1e861db985d1209d95c457307af830c14385c399657ecfea43b725e7ac41",
+  "final_refinement_seals_and_proposed_canonical_row_equality_checked": true,
+  "final_refinement_seven_output_replay": ".tmp\\immigration_checkpoint193_identity_final_replay",
+  "final_semantic_environment_recovery": {
+    "prior_check_failed_before_semantic_execution": "NODE_PATH omitted; AJV module lookup failed",
+    "established_NODE_PATH_restored": true,
+    "no_install_config_or_security_change": true,
+    "checks_passed": 7,
+    "log": ".tmp\\semantic193-identity-final-environment-recovery.log",
+    "overhead_retained": true
+  },
+  "final_local_report_utc": "2026-10-11T15:12:55.987978+00:00",
+  "final_resumed_elapsed_seconds": 798.058976
+}

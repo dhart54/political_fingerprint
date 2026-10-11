@@ -1,5 +1,5 @@
 import unittest
-from scripts.validate_source_sequence import require_source_sequence, require_exact_bill_operative
+from scripts.validate_source_sequence import require_source_sequence, require_exact_bill_operative, require_same_action_passage_stages
 
 class SourceSequenceTests(unittest.TestCase):
     def test_source_order_with_printed_line_wraps(self):
@@ -121,3 +121,26 @@ class SourceSequenceTests(unittest.TestCase):
         for action in mapping['action_mappings']:
             with self.subTest(mapping=action['action_id']):
                 self.assertIn(required, action['structural_metadata']['source_ids'])
+
+    def test_roll200_wrong_initial_stage_rejected_with_other_stages_unchanged(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        catalog = json.loads((root / 'docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json').read_text(encoding='utf-8-sig'))
+        by_id = {source['source_id']: source for source in catalog['sources']}
+        declaration = by_id['immigration:roll200-identity191']
+        correct = by_id['immigration:roll200-initial-corrected193']
+        following = by_id['immigration:roll200-next-action-boundary193']
+        result = by_id['immigration:roll200-recorded191']
+        wrong = by_id['immigration:roll200-initial191']
+        self.assertEqual(require_same_action_passage_stages(
+            declaration, correct, following, result, 'S.1582', 200), 'S.1582')
+        # Both real witnesses pass the earlier ordering-only check. Only the
+        # initial source is substituted; S.1582 declaration/result stay exact.
+        for source in (correct, wrong):
+            require_source_sequence(source['text'], ['question is on', 'ayes appeared',
+                'demand the yeas and nays', 'yeas and nays were ordered',
+                'proceedings on this question will be postponed'])
+        with self.assertRaisesRegex(ValueError, 'outside the declared action boundary'):
+            require_same_action_passage_stages(
+                declaration, wrong, following, result, 'S.1582', 200)
