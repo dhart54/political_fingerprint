@@ -28335,7 +28335,7 @@
   },
   "student_aid_fraud_screening_checkpoint194": {
     "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\student_aid_fraud_screening_checkpoint194.json",
-    "receipt_sha256": "8de1f3ed7c0e87af3697e017a2c5bb9aec2882a3fa88fa35371f1375900b5d8a",
+    "receipt_sha256": "4ff1a4c51389320e4690dab9e8996595571435bc3aa2810e754411df3b17e227",
     "attempted": 2,
     "completed": 1,
     "held": 1,
@@ -28353,6 +28353,34 @@
     "registrations": 1078,
     "publication_authorized": false,
     "validation_path": "docs\\review_packets\\immigration_delivery_checkpoint194_validation.json",
-    "validation_sha256": "7d038a3eaf22f76136f3e84496df9087161a2657430bef81e28ec09e8a5b14f9"
+    "validation_sha256": "8dc1ba50d6aecaccb4737789a9ea1d675e5c8f976ab21da5c14232c32e840b51",
+    "precision_correction_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\fraud_package_precision_correction_checkpoint195.json",
+    "precision_correction_sha256": "08d2e73b6843169f94c20af53b51ec4565c20e4dc3c7743a53244864ebd21639"
+  },
+  "september_midmonth_screening_checkpoint195": {
+    "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\september_midmonth_screening_checkpoint195.json",
+    "receipt_sha256": "96d5fac63c1df6c96dd29bbf3d7c14d7b3db359f6a0035826739a3e0df1587f5",
+    "attempted": 5,
+    "completed": 3,
+    "held": 2,
+    "counts": {
+      "reviewed": 611,
+      "pending": 65,
+      "ordinary_unscreened": 39,
+      "researched_holds": 26,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "source_count": 2216,
+    "registrations": 1106,
+    "precision_correction_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\fraud_package_precision_correction_checkpoint195.json",
+    "precision_correction_sha256": "08d2e73b6843169f94c20af53b51ec4565c20e4dc3c7743a53244864ebd21639",
+    "independent194_review_path": "docs\\review_packets\\immigration_bounded_review_checkpoint194_received195.json",
+    "independent194_review_sha256": "7211f7210252f94f90be99583d8071c3ecdac8e419affd5c1f23ca1c87a4715c",
+    "publication_authorized": false,
+    "validation_path": "docs\\review_packets\\immigration_delivery_checkpoint195_validation.json",
+    "validation_sha256": "6924599f7c93ed7d1e736d387a032146932f34bdcbac663f71560510ccce233c"
   }
 }

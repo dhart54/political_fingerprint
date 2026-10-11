@@ -2212,3 +2212,50 @@ and the one-time193 inherited repair. All continuation helpers/source recovery,
 P3 correction, tests/priorCI/report overhead included; held attempt notcompletion.
 Candidate-only bounds persist. Checkpoint is a resume point, no routine approval
 handoff; no merge/deploy/publication/editorial acceptance/production changes.
+
+
+Checkpoint 195 screens all five remaining ordinary September 15–16 pending
+choices in roll order: 301 H.R.2978, 302 H.R.8278 and 312 H.R.9340 receive
+candidate functional exclusions; 308 H.R.5334 Senate concurrence and 313
+H.R.9497 remain researched, noncounting holds. Counts: 611 reviewed / 65 pending,
+39 ordinary / 26 researched holds; 47 meanings / 80 propositions / 70 questions /
+3 partial packages. No new shared meaning or component stance.
+
+Whole short EH texts match exact own floor text under the declared formatting
+comparison. Utility standards retain consideration and possible nonimplementation;
+three historical PURPA scopes are read. H.R.5334 is a sanctions package with
+potential visa/admission consequences, beyond its educator title; whole original
+House and Senate texts are read, but material incorporation/application is held.
+Two placeholder glyph differences remain recorded. WRDA only has its first 2,500
+EH characters read: whole operative/baseline review and the 11-character normalized
+comparison difference remain unfinished. Holds are not completed screenings.
+
+Independent 194 supports 217, retains 218 and closes the prior roll200 locator.
+Its two P3 precision findings are corrected: 317(l)(2) has 13 listed categories
+under (A), plus (B)–(D), and four reviewed-scope labels now correctly identify
+218's own June10 witnesses. Only prose/labels and necessary seals/bindings change;
+hold218, underlying source bytes, memberships and meaning identities remain.
+Prior194 screening/validation receipts are archived with exact normalized Git
+bytes. Received review remains an attributed summary; NIST403, unverified reviewer
+PL11921 parent replay and excluded reviewer extra acquisition remain qualified.
+
+205 focused tests (19.198s), 7 semantic checks, IR references and 7 exact replays
+pass. 33 literal claims, 5 HTML / 3 PDF parent replays (2 fresh, 1 reused), 5
+immutable governed Clerk metadata/two-member reuses (no fresh XML claim), 608 prior
+memberships, 127 frozen blobs, both untracked notes and 6 semantic products verify.
+28 new registrations yield 2,216 sources / 1,106 captures; only proof source digest
+changes. Guessed utility error pages are excluded, not evidence of source absence.
+
+194 CI has 9 fresh first-attempt successes with 5 feature / 3 synthetic / 1 mixed
+contexts; actual synthetic base d916dd6 is qualified independently of later main.
+195 independent review and exact-head CI remain pending. Prior comparable benchmark
+remains FAIL 781.087 seconds, exceeding 600-second ceiling and 240-second target.
+This mixed five-attempt batch took 1404.072 seconds through local validation,
+including failed selectors, output recovery, baseline discovery, authoring,
+inherited194 precision fixes and validation/preparation. That aggregate is not a
+new routine mean; no reset, hold-count substitution or silent scaling. Acquisition
+and validation phases are retained, with Git/CI/report overhead to follow.
+
+Candidate branch only; no merge/deploy/publication/editorial acceptance/compiler
+or hold release/production/configuration/methodology changes. Resume point, no
+routine approval gate or new deadline. Sole implementation ownership retained.
