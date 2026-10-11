@@ -3022,3 +3022,88 @@ claimed. Prior205source/preselection/prototype work is separately measured
 benchmark FAIL781.087s unchanged. Independent204complete/P2verification and206
 shared-source/helper/domain review remain pending. Candidate only; no acceptance,
 merge, publication or production authority.
+
+
+## Checkpoint 207: retain legacy ambiguity and bind separate current ES evidence
+
+Parent reports complete204source review already finished: submitted question,
+FISA meaning, domain and both Nays supported;38 mechanics/93 overlapping
+projection checks,14exact replays/four new tests passed. Only the question-helper
+P2 remained open.205fix/206qualification independent verification is underway.
+Reconcile this reported completed-source status, preserve historical receipts
+and clearly retain pending P2 verification rather than treating source review
+as absent. Carry206CI/base evidence with the next substantive delivery.
+
+Parent authorizes safe next work, including155if exact source/version identity
+is executable. Frozen155XML has110S4465ES title while its structured119S4465
+fields, current119ES and ownRecord agree. Frozen/current complete operative
+bodies match under declared alphanumeric/case formatting normalization; both
+Clerk metadata/party totals/member Nays match. Preserve frozen accepted core,
+original identifiers, full accepted prefix including its ambiguity statement,
+and limitations. A current candidate may bind separately governed119ES/own
+Record while explicitly retaining the frozen-title ambiguity as a historical
+accepted-source limitation. No repaired/reclassified XML or acceptance claim.
+
+Implement only a bounded ES qualification under the existing legacy FISA path.
+Explicitly bind the exact original title/seal and separate currentES/own offered/
+recorded source roles; require the historical qualification in meaning/limits.
+Retain complete-body and literal operators/effective clause, full Clerk question,
+all source identities and both observations. Existing CDH and205question guards
+stay exact in behavior. Use already governed April30baseline (PL11984) and
+retained403/404b/RISAA19/24/definitions/target-query witnesses. Do not use later
+PL11987 as a pre-vote baseline or infer enactment from House passage.
+
+Candidate only; route new source/helper/domain binding to independent review.
+Expected621reviewed/55pending,53meanings/92props,70questions/threepartialpackages
+if the guarded current candidate safely compiles. Keep prior52cores/90props,
+620reviews/other675rows, allHealth and source catalog/manifest/pool exact.
+Focused validation/14replays/final diff/CI retained. Reuse governed sources and
+existing construction helpers; no new acquisitions or duplicated source reading.
+This is complex legacy-source work, zero routine samples; benchmark FAIL781.087s
+remains. Initial two read-only inspection commands precede the new timer and are
+unmeasured; all later construction/recovery/tests/Git/CI/report time is included.
+No new methodology, canonical schema, editorial acceptance, production, merge
+or deployment authority.
+
+207scope recentered before roll155reuse: parent independently found206P2 for
+provider-only resealed component boundary/source-ID loss.155attempt rejected an
+outcome witness in operative claim map before provider/input writes; its ESdraft
+is private and155remains held. Audit all30typed wrapper fields. One complete
+comparison now checks legacy and adjacent imported source-review paths, retaining
+ordered additional ownRecord sources. Legacy boundary matches complete generated
+Clerk-bound boundary; source-review's established customwhole-substitute boundary
+and sourcecontract bind to unchanged sealed182provider, not incorrectly replaced
+by generic generated metadata. Original142/221 cores, meanings, IDs andsources
+stay exact;205fullquestion guard remains. Only142wrapper-reference metadata,
+active boundary51->52, presentation scope/provenance, helper/tests and review
+records change. Counts620/56,52meanings90props unchanged. Complete204source review
+and later205P2verification are reported returned, preserving before-fix history;
+new207wrapper verification remains pending. Carry206CI/base receipts.
+Initial wrapper negatives passed; positive test used nonexistent compiler ledger
+key, corrected to shared_semantics/actions/source_ids; both tests then passed.
+All construction/recovery costs stay measured, no routine samples or benchmark
+pass. No new acceptance/production/methodology authority.
+
+207final validation:358tests pass in161.648s,7semantic checks,
+12accepted/4accepted-held-out/4held-out IR cases and14byte-exact replays. Three
+new tests cover13bounded negatives:9resealed provider changes across both
+qualified paths and4stale/missing/self wrapper-reference cases. Complete30field
+comparison binds typed boundaries, every governed/source-role identity, contract
+labels and seals. Legacy compiler IDs include all ordered outcome+operative
+sources including both ownRecord witnesses; source-review preserves its complete
+operative-only compiler list and both member outcome bindings. Its original
+customwhole-substitute boundary/source/meaning contracts bind to unchanged182
+provider. No legitimate142/221core, meaning or source list changes.
+All52cores/90props, member projections, compiler input,676rows/620reviews,
+Health, sources/manifest/pool,1,060protected blobs and both notes exact. Only
+active scope boundary51->52 and scope/provenance seals change.205question guard
+AST exact. Current204source/P2review status is reconciled prospectively; historical
+before-fix receipts remain intact. New207wrapper review pending;155held.
+Validation seal 442b480c61249f4d94c9b32b1adb4975f87146426d4254b06e1f4672a2d97068.
+Local delivery preparation endpoint 1636.815s.
+Includes early155claim-map failure, role-convention guard rejection, scope-count
+assertion recovery before writes, initial positive-test ledgerKeyError,177test
+setup failure, firstsuccessful358suite127.090s and final label-binding/full
+validation. First two read-only inspections beforetimer unmeasured. All later
+costs included; Git/CI/report overhead follows. Zero routine samples; prior
+benchmarkFAIL781.087s unchanged. No editorial acceptance/merge/production.

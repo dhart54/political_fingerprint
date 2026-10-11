@@ -8595,7 +8595,7 @@
     },
     {
       "action_id": "house:119:2:142",
-      "audit_state": "source_qualified_identity_preserving_candidate_pending_independent_review",
+      "audit_state": "source_review_complete_and_question_P2_independently_verified_candidate_only",
       "severity": null,
       "finding_id": null,
       "exact_identity": {
@@ -8725,11 +8725,13 @@
           "governed_bytes_sha256": "3ad3264031dbbab2391340381914f9a914645ab8f9c46286849b36b017fbd805"
         }
       ],
-      "finding": "Qualified current candidate successor and domain relationship; independent shared-core/domain/projection review pending, not editorial acceptance.",
-      "corrected_authoring_action_sha256": "33a6d7e307e705a0fe73ce6f023a75a8ce3d0b546f4d030ecff987f04302d18a",
+      "finding": "Parent reports complete204source review supports submitted question/meaning/domain/bothNays; later205questionP2fix independently verified. New complete-wrapper correction awaits its own verification. Candidate only, no editorial acceptance.",
+      "corrected_authoring_action_sha256": "06a7f399fe9b97f90903f108e444a07156e4a8f90d23b139d9a50c09482de2a2",
       "corrected_review_record_sha256": "61b9432af561a8f5558000fbc81e2373b1b988f0817e066739fce5cdbf7072df",
-      "independent_review_pending": true,
-      "not_counted_in_independent_severity_assessments": true
+      "independent_review_pending": false,
+      "not_counted_in_independent_severity_assessments": true,
+      "independent_review_receipt_path": "docs/review_packets/immigration_bounded_review_checkpoint204_complete_and_P2_verified_received207.json",
+      "independent_review_receipt_sha256": "67b2c559ec0f572e0b832f3beb886b6c2657b34bb6f5359bbac545721f3fee4b"
     },
     {
       "action_id": "house:119:2:221",
@@ -22697,7 +22699,6 @@
   },
   "unaudited_current_substantive_action_ids": [
     "house:119:2:280",
-    "house:119:2:142",
     "house:119:2:221"
   ],
   "required_noncounting_sample": {
@@ -29654,7 +29655,7 @@
       "application_questions": 70,
       "partial_packages": 3
     },
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "new_head_CI_pending": false,
     "publication_authorized": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint204_validation.json",
@@ -29666,21 +29667,27 @@
     "CI_path": "docs/review_packets/immigration_delivery_checkpoint204_ci.json",
     "CI_sha256": "e554f47c1d6f6f9d4aaa1760945fdce0a9e546e74fe54313e6083f781fc81d25",
     "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint204_ci_base_qualification.json",
-    "CI_base_qualification_sha256": "4d0cb9e1dd7fc122b91346b593e4631c051b22b2c0d33c72c36dce3b9b65ce9b"
+    "CI_base_qualification_sha256": "4d0cb9e1dd7fc122b91346b593e4631c051b22b2c0d33c72c36dce3b9b65ce9b",
+    "complete_source_review_reported": true,
+    "complete_source_review_path": "docs/review_packets/immigration_bounded_review_checkpoint204_complete_and_P2_verified_received207.json",
+    "complete_source_review_sha256": "67b2c559ec0f572e0b832f3beb886b6c2657b34bb6f5359bbac545721f3fee4b",
+    "helper_P2_independently_verified_corrected": true
   },
   "source_review_full_question_correction_checkpoint205": {
     "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/source_review_full_question_correction_checkpoint205.json",
     "receipt_sha256": "1d0bbc0f7bed9c54d110a794490a0ef8cb0f5f9b153204420ec37b6e0726520a",
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "new_head_CI_pending": false,
     "publication_authorized": false,
-    "reported204_P2_pending_correction_review": true,
+    "reported204_P2_pending_correction_review": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint205_validation.json",
     "validation_sha256": "1106c82e05bcb7ebb50eb92587709d3c2616f78fea098ef9d5105aad0821bfd8",
     "CI_path": "docs/review_packets/immigration_delivery_checkpoint205_ci.json",
     "CI_sha256": "94b363e7b4a934b0cc578d5e7fa8fcc26e500796facc5f22d17de7fca232c2fd",
     "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint205_ci_base_qualification.json",
-    "CI_base_qualification_sha256": "4e76a68cf8a44ca0fef72ed7dcf8b5eba2d21dd282feb71436e382f704073239"
+    "CI_base_qualification_sha256": "4e76a68cf8a44ca0fef72ed7dcf8b5eba2d21dd282feb71436e382f704073239",
+    "independent_verification_path": "docs/review_packets/immigration_bounded_review_checkpoint204_complete_and_P2_verified_received207.json",
+    "independent_verification_sha256": "67b2c559ec0f572e0b832f3beb886b6c2657b34bb6f5359bbac545721f3fee4b"
   },
   "legacy_fisa_source_qualification_checkpoint206": {
     "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_fisa_source_qualification_checkpoint206.json",
@@ -29696,11 +29703,31 @@
       "partial_packages": 3
     },
     "independent_review_pending": true,
-    "new_head_CI_pending": true,
+    "new_head_CI_pending": false,
     "publication_authorized": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint206_validation.json",
     "validation_sha256": "d220a08b6f12017c620eb7b1b3f4075bedcc9efbe40f9e18a8e479ff9558e65d",
     "focused_tests_passed": 355,
+    "semantic_checks_passed": 7,
+    "exact_replays": 14,
+    "CI_path": "docs/review_packets/immigration_delivery_checkpoint206_ci.json",
+    "CI_sha256": "adb6e73b7755e53393df16e5023e68961a5f361cd4a85bb8c98ca83e6bc0815f",
+    "confirmed_wrapper_P2_path": "docs/review_packets/immigration_bounded_review_checkpoint206_wrapper_P2_received207.json",
+    "confirmed_wrapper_P2_sha256": "2edc102099228d20b9ccc674a456b2c656c6c59d07ba43d04ce21f8614f1a043",
+    "wrapper_correction_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/qualified_core_full_wrapper_correction_checkpoint207.json",
+    "wrapper_correction_sha256": "0b61bf3285312f2b7cd712f571f0947c09e43601bbe3e3266875b6cb0142267a",
+    "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint206_ci_base_qualification.json",
+    "CI_base_qualification_sha256": "4cdc28bc00d5996669918e02944dcb85ad65a35aeb8c83cd848f043ffe7ec0a6"
+  },
+  "qualified_core_full_wrapper_correction_checkpoint207": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/qualified_core_full_wrapper_correction_checkpoint207.json",
+    "receipt_sha256": "0b61bf3285312f2b7cd712f571f0947c09e43601bbe3e3266875b6cb0142267a",
+    "independent_review_pending": true,
+    "new_head_CI_pending": true,
+    "publication_authorized": false,
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint207_validation.json",
+    "validation_sha256": "442b480c61249f4d94c9b32b1adb4975f87146426d4254b06e1f4672a2d97068",
+    "focused_tests_passed": 358,
     "semantic_checks_passed": 7,
     "exact_replays": 14
   }

@@ -18,6 +18,87 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_qualified_wrappers_reject_resealed_component_and_compiler_source_changes(self):
+        from pathlib import Path
+        from unittest.mock import patch
+        original_read = Path.read_text
+        for aid, provider_folder in [('house:119:2:221', 'house_119_legacy_fisa_qualification_checkpoint206'),
+                                     ('house:119:2:142', 'house_119_source_review_checkpoint204')]:
+            path = (DATA.parent / provider_folder / 'shared_action_core_proposal.json').resolve()
+            cases = ['wrong component', 'Clerk-only sources', 'missing own Record sources', 'reordered sources']
+            if aid.endswith(':142'):
+                cases.append('wrong meaning contract')
+            for case in cases:
+                with self.subTest(action=aid, case=case):
+                    provider = json.loads(original_read(path, encoding='utf-8'))
+                    current = provider['actions'][0]
+                    authoring = copy.deepcopy(self.values[0])
+                    row = next(r for r in authoring['actions'] if r['action_id'] == aid)
+                    if case == 'wrong component':
+                        current['package_component_boundary']['boundary_type'] = 'exact_amendment'
+                        rejected_field = 'package_component_boundary'
+                    elif case == 'Clerk-only sources':
+                        current['semantic_ir_source_ids'] = ['clerk:' + aid.removeprefix('house:')]
+                        rejected_field = 'semantic_ir_source_ids'
+                    elif case == 'missing own Record sources':
+                        current['semantic_ir_source_ids'] = (
+                            [sid for sid in current['semantic_ir_source_ids']
+                             if sid not in row['additional_action_outcome_source_ids']]
+                            if aid.endswith(':221') else current['semantic_ir_source_ids'][1:])
+                        rejected_field = 'semantic_ir_source_ids'
+                    elif case == 'wrong meaning contract':
+                        current['meaning_contract_version'] = 'source_review184_unbound_contract_v99'
+                        rejected_field = 'meaning_contract_version'
+                    else:
+                        current['semantic_ir_source_ids'].reverse()
+                        rejected_field = 'semantic_ir_source_ids'
+                    current['action_core_sha256'] = sealed_digest(current, 'action_core_sha256')
+                    provider['corpus_sha256'] = digest(provider['actions'])
+                    row['shared_core_reuse']['action_core_sha256'] = current['action_core_sha256']
+                    def read_provider(target, *args, **kwargs):
+                        return json.dumps(provider) if target.resolve() == path else original_read(target, *args, **kwargs)
+                    with patch.object(Path, 'read_text', new=read_provider):
+                        with self.assertRaisesRegex(ValueError, 'complete exact Clerk-bound wrapper: ' + rejected_field):
+                            prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
+    def test_qualified_wrappers_retain_all_bound_own_Record_compiler_sources(self):
+        for aid, expected_boundary in [('house:119:2:221', 'whole_measure'),
+                                       ('house:119:2:142', 'whole_FISA_substitute_before_separate_rule8_engrossment_addition')]:
+            with self.subTest(action=aid):
+                row = next(r for r in self.values[0]['actions'] if r['action_id'] == aid)
+                current = next(a for a in self.products[0]['actions'] if a['action_id'] == aid)
+                outcome_ids = ['clerk:' + aid.removeprefix('house:'), *row['additional_action_outcome_source_ids']]
+                operative_ids = [row['source_id'], *row['additional_source_ids']]
+                expected = [*outcome_ids, *operative_ids] if aid.endswith(':221') else operative_ids
+                self.assertEqual(current['semantic_ir_source_ids'], expected)
+                self.assertEqual([s['source_id'] for s in current['governed_source_identities']],
+                                 [*outcome_ids, *operative_ids])
+                self.assertEqual(current['package_component_boundary']['boundary_type'], expected_boundary)
+                compiler_action = next(a for a in self.products[3]['shared_semantics']['actions']
+                                       if a['action_id'] == aid)
+                self.assertEqual(compiler_action['source_ids'], expected)
+                for member in self.products[2]:
+                    projection = next(a for a in member['actions'] if a['action_id'] == aid)
+                    self.assertEqual(projection['action_core_sha256'], current['action_core_sha256'])
+                    self.assertEqual(projection['member_action_source_identities'], current['action_outcome_source_identities'])
+
+    def test_source_review_preserved_wrapper_binding_rejects_missing_stale_or_self_reference(self):
+        for case in ['missing', 'wrong seal', 'wrong artifact', 'self reference']:
+            with self.subTest(case=case):
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == 'house:119:2:142')
+                if case == 'missing':
+                    row.pop('source_review_wrapper_binding')
+                elif case == 'wrong seal':
+                    row['source_review_wrapper_binding']['action_core_sha256'] = '0' * 64
+                elif case == 'wrong artifact':
+                    row['source_review_wrapper_binding']['artifact_id'] = 'shared-action-core:house:119:v1'
+                else:
+                    row['source_review_wrapper_binding'] = {k: row['shared_core_reuse'][k]
+                                                           for k in ['artifact_ref', 'artifact_id', 'action_core_sha256']}
+                with self.assertRaisesRegex(ValueError, 'typed.wrapper|typed-wrapper'):
+                    prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
     def test_legacy_fisa_qualification_preserves_identity_and_shares_one_current_core(self):
         original = json.loads((DATA.parents[1] / 'shared_corpora/house_119_v2/shared_action_core.json').read_text(encoding='utf-8'))
         old = next(a for a in original['actions'] if a['action_id'] == 'house:119:2:221')

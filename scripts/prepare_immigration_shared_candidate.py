@@ -203,6 +203,28 @@ def _source_bound_substitute_question(authoring, proposed, sources):
             f"adopted under H.Res.{header[1]} section{binding['section']}.")
 
 
+def _require_complete_candidate_wrapper(canonical, generated, sources, outcome_ids, identity_overrides,
+                                        compiler_source_identities=None):
+    """Bind every typed wrapper field, preserving explicitly governed outcomes."""
+    expected = copy.deepcopy(generated)
+    expected.update(identity_overrides)
+    expected['action_outcome_source_identities'] = [identity(sources[sid]) for sid in outcome_ids]
+    expected['governed_source_identities'] = [*expected['action_outcome_source_identities'],
+                                              *expected['operative_meaning_source_identities']]
+    expected['governed_source_identity_sha256'] = digest(expected['governed_source_identities'])
+    compiler_sources = (expected['governed_source_identities'] if compiler_source_identities is None
+                        else compiler_source_identities)
+    expected['semantic_ir_source_ids'] = [s['source_id'] for s in compiler_sources]
+    expected['action_core_sha256'] = sealed_digest(expected, 'action_core_sha256')
+    if set(canonical) != set(expected):
+        raise ValueError('candidate wrapper field set differs from exact generated action')
+    for field in sorted(set(expected) - {'action_core_sha256'}):
+        if canonical[field] != expected[field]:
+            raise ValueError('candidate differs from complete exact Clerk-bound wrapper: ' + field)
+    if canonical['action_core_sha256'] != expected['action_core_sha256']:
+        raise ValueError('candidate wrapper seal differs from exact generated action')
+
+
 def _prepare_source_review_reuse(authoring, capture, proposed, canonical, member_ids):
     """Copy a qualified V1 candidate after binding its source-review wrapper."""
     aid = proposed['action_id']
@@ -227,20 +249,39 @@ def _prepare_source_review_reuse(authoring, capture, proposed, canonical, member
     subset['blocked_episode_ids'] = []
     prepared = common.prepare(subset, capture, member_ids)
     generated = prepared[0]['actions'][0]
-    for field in ['action_id', 'chamber', 'congress', 'session', 'roll',
-                  'legislative_stage', 'action_date', 'chamber_outcome', 'enactment_status',
-                  'candidate_exact_action_meaning', 'candidate_short_description',
-                  'candidate_compact_description', 'candidate_shared_limitations',
-                  'compact_source_refs', 'choice_meanings', 'claim_source_map',
-                  'operative_meaning_source_identities']:
-        if canonical[field] != generated[field]:
-            raise ValueError('source-review input differs from canonical core: ' + field)
     expected_measure = f"{authoring['congress']}:{proposed.get('bill_type', 'hr')}:{proposed['bill_number']}"
     if (canonical['exact_action_identity'] != expected_measure
             or ''.join(canonical['exact_question'].split()).casefold()
             != ''.join(_source_bound_substitute_question(authoring, proposed, sources).split()).casefold()
             or canonical['mechanism'] not in [canonical['candidate_exact_action_meaning'], canonical['candidate_short_description']]):
         raise ValueError('source-review exact-action wrapper differs from Clerk-bound input')
+    wrapper_binding = proposed.get('source_review_wrapper_binding')
+    if (not isinstance(wrapper_binding, dict)
+            or set(wrapper_binding) != {'artifact_ref', 'artifact_id', 'action_core_sha256'}):
+        raise ValueError('source-review lacks its preserved typed-wrapper binding')
+    wrapper_path = (ROOT / wrapper_binding['artifact_ref']).resolve()
+    if (wrapper_path.name != 'shared_action_core_proposal.json'
+            or not wrapper_path.is_relative_to((ROOT / 'docs/editorial/shared_candidates').resolve())
+            or wrapper_path == (ROOT / proposed['shared_core_reuse']['artifact_ref']).resolve()):
+        raise ValueError('source-review typed wrapper must bind a distinct preserved provider')
+    wrapper_provider = json.loads(wrapper_path.read_text(encoding='utf-8'))
+    validate_shared_action_core(ROOT, wrapper_provider)
+    prior = next((a for a in wrapper_provider['actions'] if a['action_id'] == aid), None)
+    if (wrapper_provider['artifact_id'] != wrapper_binding['artifact_id'] or prior is None
+            or prior['action_core_sha256'] != wrapper_binding['action_core_sha256']
+            or prior['action_meaning_ref'] != canonical['action_meaning_ref']
+            or prior['exact_action_identity'] != expected_measure):
+        raise ValueError('source-review preserved typed-wrapper identity or seal differs')
+    _require_complete_candidate_wrapper(canonical, generated, sources, outcome_ids, dict(
+        exact_action_identity=expected_measure,
+        exact_question=canonical['exact_question'],
+        action_meaning_ref=canonical['action_meaning_ref'],
+        meaning_contract_version=prior['meaning_contract_version'],
+        package_component_boundary=copy.deepcopy(prior['package_component_boundary']),
+        source_contract_version=prior['source_contract_version'],
+        mechanism_availability='candidate_source_grounded_pending_external_semantic_review',
+        mechanism=canonical['mechanism'],
+    ), compiler_source_identities=generated['operative_meaning_source_identities'])
     return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]
 
 
@@ -351,14 +392,13 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
     subset['blocked_episode_ids'] = []
     prepared = common.prepare(subset, capture, member_ids)
     generated = prepared[0]['actions'][0]
-    for field in ['action_id', 'chamber', 'congress', 'session', 'roll', 'legislative_stage',
-                  'action_date', 'exact_question', 'chamber_outcome', 'enactment_status',
-                  'candidate_exact_action_meaning', 'candidate_short_description',
-                  'candidate_compact_description', 'candidate_shared_limitations',
-                  'compact_source_refs', 'choice_meanings', 'claim_source_map',
-                  'operative_meaning_source_identities', 'source_contract_version']:
-        if canonical[field] != generated[field]:
-            raise ValueError('legacy candidate differs from exact Clerk-bound input: ' + field)
+    _require_complete_candidate_wrapper(canonical, generated, sources, outcome_ids, dict(
+        exact_action_identity=original['exact_action_identity'],
+        action_meaning_ref=original['action_meaning_ref'],
+        meaning_contract_version='source_qualified_legacy_fisa_extension_v1',
+        mechanism_availability='candidate_source_grounded_pending_external_semantic_review',
+        mechanism=canonical['mechanism'],
+    ))
     for field in ['action_id', 'chamber', 'congress', 'session', 'roll', 'action_date', 'chamber_outcome', 'enactment_status']:
         if canonical[field] != original[field]:
             raise ValueError('legacy candidate changes frozen exact-action metadata: ' + field)
