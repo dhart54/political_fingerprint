@@ -3,8 +3,11 @@
 This follow-up leaves PR210 head `c651519ecd944382cd432cbc59678490e1a7902d`
 unchanged. It has no production operator, connection, persistence or activation
 entry point. A standalone hosted fixture job uses one dedicated empty loopback
-PostgreSQL17 database, the already-public normalized M15B vote fixture and
-already-public after-Justice artifact graph. It refuses an occupied database.
+PostgreSQL17 database, the already-public normalized M15B Foushee vote fixture and
+the matching Foushee/shared rows and relationships from the already-public
+after-Justice artifact graph. Other members' historical artifact rows are omitted
+because their legislators are absent from this one-member fixture; foreign-key
+constraints remain enforced. It refuses an occupied database.
 No source bodies, live data or production credentials are acquired.
 
 `backend/scripts/education79_locator_preparation.py` is a pure exact-packet

@@ -37,6 +37,15 @@ def seed_fixture(database_url):
     fixture = read_gzip(prep.ROOT / 'docs/editorial/publication_replacements/m15b_green_authorization/disposable_baseline.json.gz')
     current = read_gzip(prep.ROOT / 'docs/editorial/publication_replacements/m15b_green_activation/production_audits.json.gz')['after-justice']
     tables = {**fixture['tables'], **current['editorial_rows']}
+    # The normalized vote fixture contains Foushee only. Keep that same member
+    # boundary for the historical artifact graph instead of inventing profiles.
+    tables['editorial_artifact_versions'] = [row for row in tables['editorial_artifact_versions']
+                                            if row['member_bioguide_id'] in (None, 'F000477')]
+    artifact_ids = {row['artifact_id'] for row in tables['editorial_artifact_versions']}
+    tables['editorial_artifact_relationships'] = [row for row in tables['editorial_artifact_relationships']
+                                                 if row['parent_artifact_id'] in artifact_ids
+                                                 and row['child_artifact_id'] in artifact_ids]
+    assert all(row['artifact_id'] in artifact_ids for row in tables['editorial_publication_registry'])
     with _connect(database_url, autocommit=True) as conn:
         assert conn.info.dbname == prep.FIXTURE_DATABASE
         assert conn.execute('SHOW server_version_num').fetchone()['server_version_num'].startswith('17')
