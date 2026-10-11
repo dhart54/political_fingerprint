@@ -2512,3 +2512,51 @@ note. Sole writer retained; no new deadline, routine approval gate, merge,
 deployment, publication, editorial acceptance, production, schema, security,
 configuration or methodology changes. Next ready source-complete candidates are
 H.R.5214 session1/298 and H.R.5107 session1/299; no repeat source acquisition.
+
+
+## Checkpoint200: two H.R.7008 investment-exclusion P3 corrections
+
+Independent199 review at457721bac06f8b44243797639a98882b5fca46b6 supports the
+bounded domain membership and both whole-package member projections. It found
+two contextual P3 prose defects: the historical13104(f)(8) fund formula omitted
+widely held, and the trust exclusion narrowed the EH relationship scope to the
+associated Member. Correct to widely held AND(publicly traded OR widely
+diversified) AND neither control nor ability to control; trustee must not be
+spouse/child/parent/sibling of a Member of Congress. Exact quoted passages were
+already intact. No executable fund/trust classifier or domain/direction reversal.
+
+Regenerate one shared meaning and both member text through the normal adapter.
+Preserve delivered199 receipt/input and owner audit binding as historical review
+evidence; new correction receipt883691a3d63a27da5e6a26802302257a13e2246d73f3ca32ce23c08c8139d876 governs the corrected
+input. Separate lightweight predicate receipt checks9scopes, including both
+missing qualifications. Narrow regression checks source slices and all current
+shared/compiler/member/receipt text. All prior47 meanings,94 projection rows,
+82 propositions, compiledIR, issue mapping,615 membership records, universe,
+sources, capture manifest and private pool remain exact.386 frozen blobs and two
+unrelated notes are preserved. Two distinct P3 findings add one distinct-action
+Minor assessment; broader source/domain support does not equal editorial clearance.
+
+206focused tests(24.531s),7semantic checks, accepted IR validation and7exact
+replays pass. Final independent199 review reports511.887seconds,43preservation
+and73overlapping projection checks/7replays at the uncorrected199head. It supports
+the domain/whole-package directions and retains child/spouse/adoption/tax-residence
+limits; source/current-law/privateparent/acquisition limits remain. Corrected200
+meaning awaits narrow independent re-review. Actual199CI9freshattempt1 executions,
+5feature/3synthetic/1mixed contexts and4unexecuted conditional guards copied forward.
+Onlysyntheticbasef895f1c was tested; laterdirectmainca530c4 and separatePRmetadata
+are bounded, not proof of latest-main integration. No repeated acquisition.
+
+615/61,48meanings/82propositions,70questions/3packages unchanged. No new completed
+screening or routine benchmark sample. Benchmark remains FAIL781.087seconds vs
+600ceiling/240target. Timing begins after initial correction/source inspection and
+snapshot setup, which are explicitly unmeasured; measured localvalidation endpoint
+241.132seconds. No end-to-end performance
+pass inferred. Git/CI/report overhead follows. Smaller material correction delivery
+is appropriate while199is independently reviewed. Before the correction, read-only
+selection compared298/299and252/241:299has the clearest retained direct personal
+nationality/permanent-residence criterion. Both298/299reference existing Health
+cores; any next augmentation must preserve frozen receipts, document a necessary
+minimal shared-core completeness correction before application, reuse the same
+meaning/digest across domains, and change no Health membership/methodology. No
+source conflict is forced closed. Sole ownership retained; no new approval gate,
+deadline, merge/deploy/publication/acceptance/production/schema/security/config.

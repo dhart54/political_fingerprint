@@ -18,6 +18,53 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr7008_investment_exclusions_preserve_fund_conjunct_and_any_member_scope(self):
+        aid = 'house:119:2:280'
+        fund = ('widely held AND (publicly traded OR widely diversified) AND '
+                'neither control nor ability to control underlying financial interests')
+        trustee = ('AND a trustee who is not the spouse, child, parent or sibling '
+                   'of a Member of Congress')
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        self.assertEqual(sources['govinfo:5usc13104f8-fund198']['text'][121:148],
+                         'widely held investment fund')
+        self.assertIn('sibling of a Member of Congress', sources['govinfo:hr7008eh']['text'][2424:2509])
+        core, _, projections, inputs, result = self.products
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+        shared = next(a for a in core['actions'] if a['action_id'] == aid)
+        receipt = json.loads((DATA / 'hr7008_investment_exclusion_precision_correction_checkpoint200.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(receipt['new_action_input'], action)
+        self.assertEqual(receipt['new_shared_core_sha256'], shared['action_core_sha256'])
+        def meaning_texts(value):
+            if isinstance(value, str):
+                if 'The historical13104(f)(8) comparator retains' in value:
+                    yield value
+            elif isinstance(value, dict):
+                for item in value.values():
+                    yield from meaning_texts(item)
+            elif isinstance(value, list):
+                for item in value:
+                    yield from meaning_texts(item)
+        readable = readable_candidates(self.values[0], core, projections, result)
+        for name, value in [('authoring', action), ('shared_core', shared),
+                            ('compiler_input', inputs), ('readable', readable),
+                            ('current_receipt', receipt['new_action_input'])]:
+            texts = list(meaning_texts(value))
+            self.assertTrue(texts, name)
+            for text in texts:
+                with self.subTest(product=name):
+                    self.assertIn(fund, text)
+                    self.assertIn(trustee, text)
+                    self.assertNotIn("trustee who is not the Member's", text)
+        for member in readable['members']:
+            finding = next(f for f in member['findings'] if aid in f['action_ids'])
+            text = json.dumps(finding)
+            self.assertIn(fund, text)
+            self.assertIn(trustee, text)
+            observed = next(o for o in finding['action_observations'] if o['action_id'] == aid)
+            self.assertEqual(observed['direction'], 'opposition' if member['member_id'] == 'F000477' else 'support')
+        self.assertFalse(readable['production_eligible'])
+
     def test_state_passage_pending_package_keeps_engrossed_division_and_prior_hold(self):
         receipt = json.loads((DATA / 'state_passage_source_boundaries_checkpoint177.json').read_text(encoding='utf-8'))
         self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
