@@ -229,7 +229,7 @@ export default function ChronologicalActionLedger({
         </div>
       ) : (
         <p className="mt-5 rounded-xl border border-stone-200 bg-stone-50 p-4 text-base text-stone-700">
-          No recorded actions match these filters.
+          {ordered.length ? "No recorded actions match these filters." : "No recorded actions are available for this issue in the selected scope."}
         </p>
       )}
 
