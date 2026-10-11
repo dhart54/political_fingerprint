@@ -1,0 +1,268 @@
+name: Education locator preparation
+
+on:
+  pull_request:
+    paths:
+      # Exact imported proof/API modules and read inputs; no repository-wide globs.
+      - ".github/workflows/education79-locator-preparation.yml"
+      - "backend/app/__init__.py"
+      - "backend/app/analysis/__init__.py"
+      - "backend/app/analysis/house_comparable_families.py"
+      - "backend/app/analysis/house_comparable_family_legislator.py"
+      - "backend/app/analysis/house_record_across_congresses.py"
+      - "backend/app/analysis/house_record_across_congresses_transport.py"
+      - "backend/app/api/alignment.py"
+      - "backend/app/api/compare.py"
+      - "backend/app/api/contact.py"
+      - "backend/app/api/drift.py"
+      - "backend/app/api/editorial_presentations.py"
+      - "backend/app/api/fingerprint.py"
+      - "backend/app/api/internal_record_across.py"
+      - "backend/app/api/lookup.py"
+      - "backend/app/api/m14g_preview.py"
+      - "backend/app/api/metadata.py"
+      - "backend/app/api/name_search.py"
+      - "backend/app/api/positions.py"
+      - "backend/app/api/precomputed.py"
+      - "backend/app/api/public_data.py"
+      - "backend/app/api/search.py"
+      - "backend/app/api/summary.py"
+      - "backend/app/classification/classifier.py"
+      - "backend/app/classification/eligibility.py"
+      - "backend/app/db.py"
+      - "backend/app/editorial_artifacts/__init__.py"
+      - "backend/app/editorial_artifacts/bundle.py"
+      - "backend/app/editorial_artifacts/migration.py"
+      - "backend/app/editorial_artifacts/repository.py"
+      - "backend/app/editorial_presentations/__init__.py"
+      - "backend/app/editorial_presentations/compiler.py"
+      - "backend/app/editorial_presentations/education_workforce_integration_candidate.py"
+      - "backend/app/editorial_presentations/education_workforce_m14g_integration_candidate.py"
+      - "backend/app/editorial_presentations/environment_integration_candidate.py"
+      - "backend/app/editorial_presentations/integration_candidate.py"
+      - "backend/app/editorial_presentations/limitation_treatment.py"
+      - "backend/app/editorial_presentations/public_review_state_catalog_v1.json"
+      - "backend/app/editorial_presentations/publication_replacement_governance_v2.py"
+      - "backend/app/editorial_presentations/publication_replacement_runtime_v2r.py"
+      - "backend/app/editorial_presentations/publication_replacement_store_v2r.py"
+      - "backend/app/editorial_presentations/receipt_projection.py"
+      - "backend/app/editorial_presentations/review_state_catalog.py"
+      - "backend/app/editorial_presentations/reviewed_record.py"
+      - "backend/app/editorial_presentations/selector.py"
+      - "backend/app/editorial_presentations/site_publication.py"
+      - "backend/app/editorial_presentations/validation.py"
+      - "backend/app/etl/__init__.py"
+      - "backend/app/etl/classify.py"
+      - "backend/app/etl/compute.py"
+      - "backend/app/etl/congress_adapter.py"
+      - "backend/app/etl/fetch_sources.py"
+      - "backend/app/etl/house_clerk_adapter.py"
+      - "backend/app/etl/ingest.py"
+      - "backend/app/etl/interpret.py"
+      - "backend/app/etl/senate_xml_adapter.py"
+      - "backend/app/etl/types.py"
+      - "backend/app/etl/vote_context.py"
+      - "backend/app/internal_auth.py"
+      - "backend/app/main.py"
+      - "backend/app/metrics/drift.py"
+      - "backend/app/metrics/fingerprint.py"
+      - "backend/app/summaries/cache.py"
+      - "backend/fixtures/bills.json"
+      - "backend/fixtures/legislators.json"
+      - "backend/fixtures/roll_calls.json"
+      - "backend/fixtures/vote_subject_tags.json"
+      - "backend/fixtures/votes_cast.json"
+      - "backend/fixtures/zip_district_map.json"
+      - "backend/migrations/*.sql"
+      - "backend/migrations/staged/normalize_vote_storage.sql"
+      - "backend/requirements.txt"
+      - "backend/scripts/disposable_database_url.py"
+      - "backend/scripts/editorial_artifact_store.py"
+      - "backend/scripts/education79_locator_preparation.py"
+      - "backend/scripts/foushee_justice_receipt_evidence_repair.py"
+      - "backend/scripts/foushee_m15a2_core_repair.py"
+      - "backend/scripts/green_production_target.py"
+      - "backend/scripts/m15b_persistence_preparation.py"
+      - "backend/tests/conftest.py"
+      - "backend/tests/test_education79_locator_*.py"
+      - "backend/tests/test_education79_locator_disposable_postgres.py"
+      - "backend/tests/test_education79_locator_preparation.py"
+      - "backend/tests/test_m15b_actual_persistence.py"
+      - "backend/tests/test_reusable_publication_replacement_v2r.py"
+      - "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json"
+      - "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/evidence/eaafafb53de434c894f475a864a1cd951118a32f2f98e1e487109f7ef71f5b32.html"
+      - "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/source_catalog.json"
+      - "docs/editorial/publication_replacements/m15b_green_activation/production_audits.json.gz"
+      - "docs/editorial/publication_replacements/m15b_green_activation_execution/production_audits.json.gz"
+      - "docs/editorial/publication_replacements/m15b_green_authorization/disposable_baseline.json.gz"
+      - "docs/editorial/shared_corpora/house_119_v2/member_projections/f000477.json"
+      - "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json"
+      - "docs/review_packets/education79_locator_v1/**"
+      - "frontend/lib/editorialPresentation.mjs"
+      - "frontend/lib/issueEvidenceCoverage.mjs"
+      - "frontend/lib/recordCard.mjs"
+      - "frontend/lib/recordCardContent.json"
+      - "scripts/prepare_education79_locator_release.py"
+      - "scripts/prove_education79_disposable_card.mjs"
+  push:
+    branches: [main]
+    paths:
+      # Exact imported proof/API modules and read inputs; no repository-wide globs.
+      - ".github/workflows/education79-locator-preparation.yml"
+      - "backend/app/__init__.py"
+      - "backend/app/analysis/__init__.py"
+      - "backend/app/analysis/house_comparable_families.py"
+      - "backend/app/analysis/house_comparable_family_legislator.py"
+      - "backend/app/analysis/house_record_across_congresses.py"
+      - "backend/app/analysis/house_record_across_congresses_transport.py"
+      - "backend/app/api/alignment.py"
+      - "backend/app/api/compare.py"
+      - "backend/app/api/contact.py"
+      - "backend/app/api/drift.py"
+      - "backend/app/api/editorial_presentations.py"
+      - "backend/app/api/fingerprint.py"
+      - "backend/app/api/internal_record_across.py"
+      - "backend/app/api/lookup.py"
+      - "backend/app/api/m14g_preview.py"
+      - "backend/app/api/metadata.py"
+      - "backend/app/api/name_search.py"
+      - "backend/app/api/positions.py"
+      - "backend/app/api/precomputed.py"
+      - "backend/app/api/public_data.py"
+      - "backend/app/api/search.py"
+      - "backend/app/api/summary.py"
+      - "backend/app/classification/classifier.py"
+      - "backend/app/classification/eligibility.py"
+      - "backend/app/db.py"
+      - "backend/app/editorial_artifacts/__init__.py"
+      - "backend/app/editorial_artifacts/bundle.py"
+      - "backend/app/editorial_artifacts/migration.py"
+      - "backend/app/editorial_artifacts/repository.py"
+      - "backend/app/editorial_presentations/__init__.py"
+      - "backend/app/editorial_presentations/compiler.py"
+      - "backend/app/editorial_presentations/education_workforce_integration_candidate.py"
+      - "backend/app/editorial_presentations/education_workforce_m14g_integration_candidate.py"
+      - "backend/app/editorial_presentations/environment_integration_candidate.py"
+      - "backend/app/editorial_presentations/integration_candidate.py"
+      - "backend/app/editorial_presentations/limitation_treatment.py"
+      - "backend/app/editorial_presentations/public_review_state_catalog_v1.json"
+      - "backend/app/editorial_presentations/publication_replacement_governance_v2.py"
+      - "backend/app/editorial_presentations/publication_replacement_runtime_v2r.py"
+      - "backend/app/editorial_presentations/publication_replacement_store_v2r.py"
+      - "backend/app/editorial_presentations/receipt_projection.py"
+      - "backend/app/editorial_presentations/review_state_catalog.py"
+      - "backend/app/editorial_presentations/reviewed_record.py"
+      - "backend/app/editorial_presentations/selector.py"
+      - "backend/app/editorial_presentations/site_publication.py"
+      - "backend/app/editorial_presentations/validation.py"
+      - "backend/app/etl/__init__.py"
+      - "backend/app/etl/classify.py"
+      - "backend/app/etl/compute.py"
+      - "backend/app/etl/congress_adapter.py"
+      - "backend/app/etl/fetch_sources.py"
+      - "backend/app/etl/house_clerk_adapter.py"
+      - "backend/app/etl/ingest.py"
+      - "backend/app/etl/interpret.py"
+      - "backend/app/etl/senate_xml_adapter.py"
+      - "backend/app/etl/types.py"
+      - "backend/app/etl/vote_context.py"
+      - "backend/app/internal_auth.py"
+      - "backend/app/main.py"
+      - "backend/app/metrics/drift.py"
+      - "backend/app/metrics/fingerprint.py"
+      - "backend/app/summaries/cache.py"
+      - "backend/fixtures/bills.json"
+      - "backend/fixtures/legislators.json"
+      - "backend/fixtures/roll_calls.json"
+      - "backend/fixtures/vote_subject_tags.json"
+      - "backend/fixtures/votes_cast.json"
+      - "backend/fixtures/zip_district_map.json"
+      - "backend/migrations/*.sql"
+      - "backend/migrations/staged/normalize_vote_storage.sql"
+      - "backend/requirements.txt"
+      - "backend/scripts/disposable_database_url.py"
+      - "backend/scripts/editorial_artifact_store.py"
+      - "backend/scripts/education79_locator_preparation.py"
+      - "backend/scripts/foushee_justice_receipt_evidence_repair.py"
+      - "backend/scripts/foushee_m15a2_core_repair.py"
+      - "backend/scripts/green_production_target.py"
+      - "backend/scripts/m15b_persistence_preparation.py"
+      - "backend/tests/conftest.py"
+      - "backend/tests/test_education79_locator_*.py"
+      - "backend/tests/test_education79_locator_disposable_postgres.py"
+      - "backend/tests/test_education79_locator_preparation.py"
+      - "backend/tests/test_m15b_actual_persistence.py"
+      - "backend/tests/test_reusable_publication_replacement_v2r.py"
+      - "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json"
+      - "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/evidence/eaafafb53de434c894f475a864a1cd951118a32f2f98e1e487109f7ef71f5b32.html"
+      - "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/source_catalog.json"
+      - "docs/editorial/publication_replacements/m15b_green_activation/production_audits.json.gz"
+      - "docs/editorial/publication_replacements/m15b_green_activation_execution/production_audits.json.gz"
+      - "docs/editorial/publication_replacements/m15b_green_authorization/disposable_baseline.json.gz"
+      - "docs/editorial/shared_corpora/house_119_v2/member_projections/f000477.json"
+      - "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json"
+      - "docs/review_packets/education79_locator_v1/**"
+      - "frontend/lib/editorialPresentation.mjs"
+      - "frontend/lib/issueEvidenceCoverage.mjs"
+      - "frontend/lib/recordCard.mjs"
+      - "frontend/lib/recordCardContent.json"
+      - "scripts/prepare_education79_locator_release.py"
+      - "scripts/prove_education79_disposable_card.mjs"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: education79-preparation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  education79-locator-disposable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://invalid
+      EDUCATION79_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_education79_locator
+      EDUCATION79_PROOF_DIR: education79-proof
+      PGPASSWORD: postgres
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Prove exact inert Education locator lifecycle and card bindings
+        run: |
+          git rev-parse HEAD
+          python -m pip install -r backend/requirements.txt httpx
+          createdb -h 127.0.0.1 -U postgres pf_education79_locator
+          python -m pytest -q \
+            backend/tests/test_education79_locator_preparation.py \
+            backend/tests/test_education79_locator_workflow.py \
+            backend/tests/test_education79_locator_disposable_postgres.py -rs
+          node scripts/prove_education79_disposable_card.mjs education79-proof
+      - name: Retain visibly synthetic disposable evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: education79-disposable-${{ github.event.pull_request.head.sha || github.sha }}
+          path: education79-proof/
+          if-no-files-found: warn
+          retention-days: 7
