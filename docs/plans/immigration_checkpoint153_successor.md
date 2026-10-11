@@ -2318,3 +2318,75 @@ validation and later Git/CI/report overhead retained; holds are not completions.
 Candidate bounds and sole writer ownership persist; resume point, no routine approval
 handoff/new deadline/merge/deploy/editorial acceptance/publication/hold or compiler
 release/production/schema/security/configuration/methodology changes.
+
+
+Checkpoint 197 screens the fixed five most recent remaining ordinary pending
+choices before the completed July22–September3 cohort, in chronological roll order:
+229H.R.7128,271H.R.6955,272H.R.9770,278H.R.8800,280H.R.7008. One completed
+candidate functional exclusion229, four researched noncounting holds. Counts614
+reviewed/62pending,29ordinary/33holds;47meanings/80propositions/70questions/3partial.
+No new meaning, component stance, compiler/hold release or editorial acceptance.
+
+WholeTRIA EH read with historical102/103a,103e7E(i),104h,108a-c literal scopes.
+Secretary meansTreasury; DHS/AttorneyGeneral consultation and NAIC alien-insurer
+eligibility are insurance context, not individual Immigration status. New thresholds,
+30day notice/90day review, qualified365day-from-damage extension, timely irrevocable
+public certification, no required noncertification determination, biennial report
+addition for preceding-year noticed acts, recoupment dates and program-name
+corrections retained. Exact whole suspension-as-amended floor body matches EH;
+initial question/demand namesHill, callup/resumed question namesFlood. Literal
+stage labels are not collapsed or repaired. No actual claim/payment/terrorism verdict,
+immigrant-impact absence, individual entry/removal/status rule or enactment inferred.
+
+Banking6955 only first3500 of151645characters read; eight-title table and partial
+101imported ROAD-pilot predicate cannot complete the whole choice. Mechanical full
+floor/EH comparison passes without claiming owner reading of the remaining body.
+Whole9770 CR17,863characters read, but twelve FY2026 appropriations/other benefit
+source chains and current Immigration application remain unfinished;106earliest-of
+alternatives retainDecember4,2026 as one qualified end, not universal duration.
+NDAA8800 only first2500 of2978639private governed EH characters read; raw parent
+not retained/replayed here, full adopted rule/amendment/floor binding unfinished.
+Printed four-divisions sentence and five-item list includingSAVE America retained;
+no whole package or separately counted SAVE stance. Whole7008 EH14,741characters
+read: stock restrictions AND federal-election photoID rules, not title-only stocks.
+HAVA/provisional/absent-uniformed-services/accessibility/ethics imports and bounded
+Immigration domain screening remain held. No citizenship proof inferred from every
+photoID or automatic domain eligibility from a passport example.
+
+229/272 have initial voice/demand/order/postponement and later resumed votes.
+271/278/280 passage goes directly from own passage question to voice/demand/order/
+recorded result after separate recommittal; no passage postponement/resumption
+invented.271 has270yea/155nay/1Present/5NotVoting; Present stays non-directional.
+FiveClerk metadata/party/two-member reuses are governed immutable objects, not
+freshXML or complete-other-member comparison. New predicate pass covers five
+retained literal scopes; whole-source review is not replaced, holds not completions.
+
+205focused tests(25.224s),7semantic checks,IR references and7exact replays pass.
+35literal claims/5predicate passages,1freshHTML and3PDF parent replays(2fresh,
+1reusedJuly22),26derivatives,4governed whole-proposal reuses without freshraw claim,
+NDAA private-prefix identity and explicit uncertified raw-parent boundary verify.
+613prior memberships,146frozen blobs,prior source/capture/private prefixes and both
+untracked notes exact;6semantic products exact,proof source digest only.30new
+registrations yield2277sources/1167captures. No frozen receipt exceptions.
+
+Independent196 has no new actionable defect in reviewed scope, supports281/295,
+retains283/286/292 and closes allthree195P3s.46preservation/189correction-history
+checks,7replays and9first-attemptCI jobs verified. Eight-entry predicate check is
+faithful in this sample, not universal semantic proof;205tests owner-attributed.
+Reviewer automaticapproval cancelled a freshGET batch forSeptember3Record,
+PL113296 and2024title50chapter58 before anybytes arrived; fresh-parent checks
+remain uncertified. Governed text supports295. No retry/alternate route or new
+acquisition on behalf of that review; owner parent checks remain separately stated.
+196CI38158887078 has5feature/3synthetic/1mixed actual checkout contexts, parents
+f494324f03514291e7f767b5f8a857515fe656a0 and9725a02f match bounded direct-main
+reads, not broad current-main integration or editorial approval.
+
+Prior comparable benchmark remains FAIL781.087sec against600ceiling/240target.
+Source/read/authoring endpoint660.933sec; local validation/preparation endpoint
+995.508sec includes failed private heading,
+search/output recovery, wording refinement and received196review recording.
+Five attempts/one completion/four complex holds are not a new routine average or
+reset. Acquisition/validation phases retained; Git/CI/final report overhead follows.
+197independentreview/exact-headCI pending at this note. Candidate-only boundaries
+and sole ownership persist; no routine approval handoff/new deadline/merge/deploy/
+publication/editorial acceptance/production/schema/security/config/methodology change.
