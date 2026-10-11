@@ -1,0 +1,101 @@
+{
+  "client_hash_seconds_two_big_tables": 0.9032858875289094,
+  "combined_sort_transfer_decode_seconds_two_big_tables": 66.12706950231222,
+  "cursor_declaration_seconds_two_big_tables": 0.11328260001027957,
+  "disposable_investigation_only": true,
+  "earlier_context_first_page_samples_seconds": [
+    18.434086,
+    16.019354
+  ],
+  "earlier_context_later_4096_pages_seconds": [
+    0.123956,
+    0.137186
+  ],
+  "first_row_sort_cannot_be_isolated_from_existing_complete_sidecar": true,
+  "fixed_batch_patch_recommended": false,
+  "fixture_data_preserved": true,
+  "larger_fixed_batch_rtt_only_models": [
+    {
+      "estimated_two_observations_plus_reserve_seconds": 145.959388,
+      "estimated_two_protected_scans_seconds": 133.69605059994257,
+      "pages": 200,
+      "rows_per_fetch": 8192,
+      "single_pass_rtt_only_saving_seconds": 5.938613999999999
+    },
+    {
+      "estimated_two_observations_plus_reserve_seconds": 139.96078799999998,
+      "estimated_two_protected_scans_seconds": 127.69745059994257,
+      "pages": 100,
+      "rows_per_fetch": 16384,
+      "single_pass_rtt_only_saving_seconds": 8.937914
+    },
+    {
+      "estimated_two_observations_plus_reserve_seconds": 136.96148799999997,
+      "estimated_two_protected_scans_seconds": 124.69815059994257,
+      "pages": 50,
+      "rows_per_fetch": 32768,
+      "single_pass_rtt_only_saving_seconds": 10.437564
+    },
+    {
+      "estimated_two_observations_plus_reserve_seconds": 135.52182399999998,
+      "estimated_two_protected_scans_seconds": 123.25848659994257,
+      "pages": 26,
+      "rows_per_fetch": 65536,
+      "single_pass_rtt_only_saving_seconds": 11.157396
+    },
+    {
+      "estimated_two_observations_plus_reserve_seconds": 134.80199199999998,
+      "estimated_two_protected_scans_seconds": 122.53865459994256,
+      "pages": 14,
+      "rows_per_fetch": 131072,
+      "single_pass_rtt_only_saving_seconds": 11.517312
+    }
+  ],
+  "limitations": [
+    "Fixture server-sort time and locale/hardware differ from production.",
+    "Bandwidth/latency is a model inferred from bounded page samples; no production streaming test occurred.",
+    "Named-page model charges stop-and-wait transfer; streaming model paces an ongoing flow and can overlap CPU.",
+    "Statement_timeout now applies to one whole table query in a prospective stream implementation; retain60s and test cancellation.",
+    "No new production feasibility clearance, source authority, caps or rollback permission follows from this research."
+  ],
+  "minimum_two_full_size_context_buffer_bytes_estimate": 513663498,
+  "one_disposable_comparison": {
+    "actual_serializable_two_scan_inserts_then_rollback_verified": true,
+    "bandwidth_bytes_per_second": 12000000,
+    "batch_decoded_page_bytes_estimate": 35155114,
+    "batch_two_scan_seconds": 117.97467019999749,
+    "both_complete_count_hash_equivalent": true,
+    "final_complete_protected_state_unchanged": true,
+    "fixture_rows": 1648295,
+    "interrupted_cleanup_connection_usable": true,
+    "libpq": 160009,
+    "memory_limits": "Late stream/cleanup samples contain cumulative earlier-mode peaks; one client and one session backend only, not all worker/system memory.",
+    "modeled_payload_bytes_per_full_scan": 379493362,
+    "native_fixture_stream_bytes": 454678626,
+    "rtt_seconds": 0.029993,
+    "sampled_client_cumulative_peak_working_set_bytes": 184414208,
+    "sampled_session_backend_cumulative_peak_working_set_bytes": 139517952,
+    "stream_remaining_guard_budget_seconds": 42.07047750000493,
+    "stream_single_decoded_object_bytes_estimate": 964875,
+    "stream_size": 1,
+    "stream_two_scan_seconds": 77.92952249999507
+  },
+  "production_code_head": "7794e8226d935bc08ae673e7aec447e7fe7f40f1",
+  "production_operator_or_contract_changed": false,
+  "production_persistence_or_activation_performed": false,
+  "production_probes_added": false,
+  "proof_file_sha256": {
+    "comparison-result.json": "2eadcf53694beff8ec82e776de1ce90f9c28c05b4bf3ab4a52f6ab15118ec885",
+    "memory-sidecar.json": "eabc57fdc49a0800b3116658f9ab31bad3577c85b116fbd1e2d284cc08b8de2f"
+  },
+  "recommended_bounded_approach": "Scoped independently reviewed libpq16 Cursor.stream(size=1) implementation with same ordered SELECT/UTF8+LF hash, explicit closing/cancel/drain, unchanged120s/60s limits and guarded transaction flow; then fresh actual complete preflight and BOTH-scan feasibility assessment before any inert persistence.",
+  "recorded_at_utc": "2026-10-11T22:40:16.013146+00:00",
+  "sensitivity_not_prediction": {
+    "assumes_same_unmodeled_overhead_in_both_methods": true,
+    "production_minus_modeled_batch_observation_seconds": 14.212695500005537,
+    "stream_two_scan_plus_twice_that_gap_seconds": 106.35491350000615
+  },
+  "server_aggregate_exactness_does_not_prove_bounded_memory": true,
+  "server_ordered_string_agg_not_run_or_recommended": true,
+  "temporary_cluster_stopped": true
+}

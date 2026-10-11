@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import argparse
 import copy
-from contextlib import contextmanager
+from contextlib import closing, contextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -37,7 +37,6 @@ ROUTING_ENV = ('PGHOSTADDR', 'PGSERVICE', 'PGSERVICEFILE', 'PGOPTIONS')
 LIMITS = {'connect_timeout_seconds': 10, 'lock_timeout_seconds': 5,
           'statement_timeout_seconds': 60, 'observation_budget_seconds': 120,
           'preflight_freshness_seconds': 1800}
-PROTECTED_FETCH_ROWS = 4096  # Named-cursor transport only; libpq16-compatible.
 
 
 def utc_now():
@@ -187,31 +186,35 @@ def protected_state(conn, *, exclude_batch_id=None, deadline=None, scan_timings=
                 params = (exclude_batch_id, exclude_batch_id)
         statement = sql.SQL('SELECT to_jsonb(t)::text AS row_text FROM {} t{} ORDER BY row_text').format(sql.Identifier(table), condition)
         checksum = hashlib.sha256(); count = 0
-        timing = {'table': table, 'fetch_rows': PROTECTED_FETCH_ROWS,
+        timing = {'table': table, 'stream_size': 1,
                   'excludes_owned_batch': exclude_batch_id is not None, 'rows': 0,
-                  'utf8_bytes': 0, 'query_seconds': 0.0, 'fetch_seconds': 0.0,
+                  'utf8_bytes': 0, 'query_setup_seconds': 0.0, 'first_row_seconds': None, 'fetch_seconds': 0.0,
                   'hash_seconds': 0.0, 'status': 'STARTED'} if scan_timings is not None else None
         began = monotonic()
         if timing is not None:
             scan_timings.append(timing)  # Sidecar only; never part of the state/digest.
         try:
-            with conn.cursor(name='education79_protected_rows') as cursor:
-                cursor.itersize = PROTECTED_FETCH_ROWS
+            with conn.cursor() as cursor:
                 query_started = monotonic()
-                cursor.execute(statement, params)
-                if timing is not None:
-                    timing['query_seconds'] = monotonic() - query_started
-                for item in timed_rows(cursor, timing) if timing is not None else cursor:
-                    require_budget(deadline)
-                    hash_started = monotonic() if timing is not None else None
-                    encoded = item['row_text'].encode('utf-8')
-                    checksum.update(encoded)
-                    checksum.update(b'\n')
-                    count += 1
+                # size=1 works with libpq16. The query sends lazily on first next().
+                # Closing also cancels/drains an interrupted stream before rollback
+                # or any subsequent command; Cursor.__exit__ alone is insufficient.
+                with closing(cursor.stream(statement, params, size=1)) as rows:
                     if timing is not None:
-                        timing['rows'] = count
-                        timing['utf8_bytes'] += len(encoded) + 1
-                        timing['hash_seconds'] += monotonic() - hash_started
+                        timing['query_setup_seconds'] = monotonic() - query_started
+                    for item in timed_rows(rows, timing) if timing is not None else rows:
+                        if timing is not None and count == 0:
+                            timing['first_row_seconds'] = monotonic() - began
+                        require_budget(deadline)
+                        hash_started = monotonic() if timing is not None else None
+                        encoded = item['row_text'].encode('utf-8')
+                        checksum.update(encoded)
+                        checksum.update(b'\n')
+                        count += 1
+                        if timing is not None:
+                            timing['rows'] = count
+                            timing['utf8_bytes'] += len(encoded) + 1
+                            timing['hash_seconds'] += monotonic() - hash_started
             require_budget(deadline)
             if timing is not None:
                 timing['status'] = 'COMPLETE'

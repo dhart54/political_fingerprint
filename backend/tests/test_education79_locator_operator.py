@@ -253,9 +253,10 @@ def test_operation_budget_exhaustion_prevents_insert(monkeypatch):
 
 
 class ScanConnection:
-    """Lazy server pages model transport latency, without a real connection."""
-    def __init__(self, tables, clock=None):
-        self.tables = tables;self.clock = clock;self.pages = 0;self.statements = []
+    """Active lazy stream detects missing close(), without a real connection."""
+    def __init__(self, tables, clock=None, error_at=None, error=None):
+        self.tables = tables;self.clock = clock;self.statements = [];self.streams = []
+        self.active = False;self.error_at = error_at;self.error = error
 
     def execute(self, statement):
         assert statement == "SELECT tablename FROM pg_tables WHERE schemaname='public' ORDER BY tablename"
@@ -264,20 +265,31 @@ class ScanConnection:
         return result
 
     def cursor(self, **kwargs):
+        assert kwargs == {}  # Single-row streaming uses an ordinary cursor.
         connection = self
         class Cursor:
             def __enter__(self): return self
             def __exit__(self, *args): pass
-            def execute(self, statement, params):
+            def stream(self, statement, params, *, size):
+                assert size == 1  # Never invoke libpq17-only chunked mode.
                 text = statement.as_string();connection.statements.append((text, params))
-                self.table = re.search(r'FROM "([^"]+)" t', text).group(1)
-            def __iter__(self):
-                source = connection.tables[self.table]
-                for index, text in enumerate(source):
-                    if index % self.itersize == 0:
-                        connection.pages += 1
-                        if connection.clock is not None: connection.clock[0] += 0.04
-                    yield {'row_text': text}
+                table = re.search(r'FROM "([^"]+)" t', text).group(1)
+                class Stream:
+                    index = 0
+                    closed = False
+                    def __iter__(self): return self
+                    def __next__(self):
+                        assert not connection.active or self.index > 0
+                        connection.active = True
+                        if self.index == connection.error_at: raise connection.error
+                        if self.index == len(connection.tables[table]): raise StopIteration
+                        if connection.clock is not None: connection.clock[0] += 0.01
+                        value = connection.tables[table][self.index];self.index += 1
+                        return {'row_text': value}
+                    def close(self):
+                        self.closed = True;connection.active = False
+                result = Stream();connection.streams.append(result)
+                return result
         return Cursor()
 
 
@@ -289,45 +301,61 @@ def reference_fingerprint(rows):
 
 
 @pytest.mark.parametrize('count', [0, 1, 128, 129, 4095, 4096, 4097, 8192, 8193])
-def test_complete_hash_stream_unchanged_across_batch_boundaries(monkeypatch, count):
+def test_complete_stream_matches_independent_fingerprint_at_old_batch_boundaries(count):
     rows = sorted(['{"n": null, "text": "é雪\\n\\\""}', '{"duplicate": true}',
                    '{"wide": "' + 'ø' * 8192 + '"}'][i % 3] for i in range(count))
     conn = ScanConnection({'empty': [], 'rows': rows}); timings = []
-    monkeypatch.setattr(operator, 'PROTECTED_FETCH_ROWS', 128)
-    old = operator.protected_state(conn)
-    old_statements = list(conn.statements);conn.statements.clear()
-    monkeypatch.setattr(operator, 'PROTECTED_FETCH_ROWS', 4096)
     current = operator.protected_state(conn, scan_timings=timings)
-    assert old == current == {'empty': reference_fingerprint([]), 'rows': reference_fingerprint(rows)}
-    assert conn.statements == old_statements
-    assert all(set(t) == {'table','fetch_rows','excludes_owned_batch','rows','utf8_bytes',
-                         'query_seconds','fetch_seconds','hash_seconds','status','elapsed_seconds'} for t in timings)
+    assert current == {'empty': reference_fingerprint([]), 'rows': reference_fingerprint(rows)}
+    assert all(set(t) == {'table','stream_size','excludes_owned_batch','rows','utf8_bytes',
+                         'query_setup_seconds','first_row_seconds','fetch_seconds','hash_seconds','status','elapsed_seconds'} for t in timings)
     assert sum(t['rows'] for t in timings) == count
     assert all(t['status'] == 'COMPLETE' for t in timings)
+    assert all(s.closed for s in conn.streams) and not conn.active
+    assert timings[0]['first_row_seconds'] is None
 
 
 @pytest.mark.parametrize('excluded', [None, 17])
-def test_transport_does_not_change_owned_batch_exclusion_predicates(monkeypatch, excluded):
+def test_stream_retains_exact_owned_batch_exclusion_predicates(excluded):
     conn = ScanConnection({t: [] for t in ('editorial_artifact_batches','editorial_artifact_versions',
                                           'editorial_artifact_relationships','unrelated')})
-    monkeypatch.setattr(operator, 'PROTECTED_FETCH_ROWS', 128)
-    old = operator.protected_state(conn, exclude_batch_id=excluded)
-    statements = list(conn.statements);conn.statements.clear()
-    monkeypatch.setattr(operator, 'PROTECTED_FETCH_ROWS', 4096)
-    assert operator.protected_state(conn, exclude_batch_id=excluded) == old
-    assert conn.statements == statements
+    operator.protected_state(conn, exclude_batch_id=excluded)
+    statements = conn.statements
+    assert [params for q,params in statements] == ([(),(),(),()] if excluded is None
+                                                  else [(excluded,),(excluded,excluded),(excluded,),()])
+    assert all(s.closed for s in conn.streams) and not conn.active
     assert all('ORDER BY row_text' in q and 'LIMIT' not in q and 'OFFSET' not in q for q, _ in statements)
     assert all('WHERE' not in q or 'batch_id' in q for q, _ in statements)
 
 
-def test_deadline_inside_a_large_page_keeps_partial_trace_outside_state(monkeypatch):
+def test_deadline_between_individual_rows_closes_active_stream(monkeypatch):
     clock = [0.0];conn = ScanConnection({'rows': ['same'] * 4097}, clock)
     monkeypatch.setattr(operator, 'monotonic', lambda: clock[0])
     timings = []
     with pytest.raises(StoreSafetyError, match='budget'):
-        operator.protected_state(conn, deadline=0.06, scan_timings=timings)
-    assert timings[0]['status'] == 'FAILED' and timings[0]['rows'] == 4096
+        operator.protected_state(conn, deadline=0.045, scan_timings=timings)
+    assert timings[0]['status'] == 'FAILED' and timings[0]['rows'] == 4
     assert 'same' not in str(timings)
+    assert conn.streams[0].closed and not conn.active
+
+
+@pytest.mark.parametrize('error', [StoreSafetyError('hash rejected'),ConnectionError('network interrupted'),
+                                 RuntimeError('SQL failed'),KeyboardInterrupt()])
+def test_all_read_failures_or_early_interruptions_close_the_active_stream(error):
+    conn = ScanConnection({'rows':['same']*100},error_at=3,error=error);timings=[]
+    with pytest.raises(type(error)):
+        operator.protected_state(conn,scan_timings=timings)
+    assert conn.streams[0].closed and not conn.active
+    assert timings[0]['status']=='FAILED' and timings[0]['rows']==3
+
+
+def test_rejection_during_hashing_closes_stream(monkeypatch):
+    class RejectedText(str):
+        def encode(self,*args,**kwargs):raise StoreSafetyError('hash rejected')
+    conn=ScanConnection({'rows':['first',RejectedText('second'),'third']})
+    with pytest.raises(StoreSafetyError,match='hash rejected'):
+        operator.protected_state(conn)
+    assert conn.streams[0].closed and not conn.active
 
 
 def test_timing_sidecar_cannot_change_preflight_envelope_or_stable_hash(monkeypatch):

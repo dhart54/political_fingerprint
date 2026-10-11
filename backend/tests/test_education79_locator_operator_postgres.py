@@ -4,11 +4,12 @@ import hashlib
 import os
 from pathlib import Path
 import subprocess
-import sys
-from time import monotonic, sleep
+from contextlib import closing
+from time import monotonic
 
 import pytest
-from psycopg import ServerCursor, sql
+import psycopg
+from psycopg import Cursor, sql
 
 from scripts import education79_locator_operator as operator
 from scripts import education79_locator_preparation as prep
@@ -17,6 +18,7 @@ from test_education79_locator_preparation import synthetic_candidate_approval
 from test_education79_locator_operator import fixture_authority
 from test_education79_locator_disposable_postgres import seed_fixture, public
 from test_reusable_publication_replacement_v2r import runtime
+from test_education79_locator_stream_model import model_cursor,table_scales,RTT_SECONDS,PAYLOAD_BYTES_PER_SECOND,TOTAL_STREAM_BYTES
 
 DSN = os.getenv('EDUCATION79_OPERATOR_DATABASE_URL')
 pytestmark = pytest.mark.skipif(not DSN, reason='separate dedicated PostgreSQL17 operator fixture required')
@@ -68,22 +70,15 @@ def prove_volume_transport(conn, bundle, monkeypatch):
             (g % 637)::bigint AS legislator_id,'Yea'::text AS position,
             '2026-01-01T00:00:00Z'::timestamptz AS created_at
             FROM generate_series(1,815000) g''')
-    metrics = {'fetch_calls': 0, 'peak_decoded_batch_bytes': 0, 'max_rows_per_fetch': 0}
-    class LatencyCursor(ServerCursor):
-        def _fetch_gen(self, num):
-            sleep(0.04)  # Measured remote page RTT is40–86ms; no bandwidth emulation.
-            rows = yield from super()._fetch_gen(num)
-            metrics['fetch_calls'] += 1
-            metrics['max_rows_per_fetch'] = max(metrics['max_rows_per_fetch'], len(rows))
-            decoded_bytes = sys.getsizeof(rows) + sum(sys.getsizeof(r) + sum(
-                sys.getsizeof(k) + sys.getsizeof(v) for k, v in r.items()) for r in rows)
-            metrics['peak_decoded_batch_bytes'] = max(metrics['peak_decoded_batch_bytes'], decoded_bytes)
-            return rows
-    previous_factory = conn.server_cursor_factory
+    metrics = {'modeled_bytes':0.0,'largest_decoded_object_bytes_estimate':0}
+    previous_factory = conn.cursor_factory
     proof = {'disposable_only': True, 'production_execution_authorized': False,
              'synthetic_row_counts': dict(zip(tables, (815000,815000,8193))),
              'wide_payload_characters': 4096, 'synthetic_tables': list(tables),
-             'injected_fetch_latency_seconds': 0.04, 'bandwidth_emulated': False,
+             'client_libpq_version':psycopg.pq.version(),'stream_size':1,
+             'modeled_rtt_seconds':RTT_SECONDS,'modeled_payload_bytes_per_second':PAYLOAD_BYTES_PER_SECOND,
+             'modeled_payload_bytes_per_full_scan':TOTAL_STREAM_BYTES,'bandwidth_emulated':True,
+             'model_is_not_production_clearance':True,
              'execution_limits': operator.LIMITS, 'scan_timings_are_sidecar_only': True}
     try:
         conn.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
@@ -91,7 +86,12 @@ def prove_volume_transport(conn, bundle, monkeypatch):
             patch.setattr(operator, 'protected_state', legacy_protected_state)
             old = operator.capture_preflight(conn, bundle, fixture_url=DSN)
         conn.rollback()
-        conn.server_cursor_factory = LatencyCursor
+        conn.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
+        unmodeled_timings=[]
+        unmodeled=operator.capture_preflight(conn,bundle,fixture_url=DSN,scan_timings=unmodeled_timings)
+        assert old['state']==unmodeled['state']
+        conn.rollback()
+        conn.cursor_factory = model_cursor(table_scales(unmodeled_timings),metrics)
         conn.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
         timings = []; started = monotonic()
         baseline = operator.capture_preflight(conn, bundle, fixture_url=DSN, scan_timings=timings)
@@ -117,8 +117,7 @@ def prove_volume_transport(conn, bundle, monkeypatch):
         assert len(persistence_timings) == 2 * len(baseline['state']['public_tables'])
         assert sum(t['rows'] for t in persistence_timings if t['table'] in tables) == 2 * sum(proof['synthetic_row_counts'].values())
         assert {t['excludes_owned_batch'] for t in persistence_timings} == {False, True}
-        assert metrics['max_rows_per_fetch'] <= operator.PROTECTED_FETCH_ROWS
-        assert metrics['peak_decoded_batch_bytes'] < 64 * 1024 * 1024
+        assert metrics['largest_decoded_object_bytes_estimate'] < 16 * 1024 * 1024
         proof.update({'persistence_scan_timings': persistence_timings, 'transport_metrics': metrics,
                       'serializable_two_scan_rollback_verified': True, 'actual_guarded_insert_caps': operator.CAPS,
                       'status': 'PROVED_COMPLETE_TWO_SCAN_ROLLBACK'})
@@ -126,7 +125,7 @@ def prove_volume_transport(conn, bundle, monkeypatch):
             proof['process_peak_resident_memory'] = next(line for line in Path('/proc/self/status').read_text().splitlines()
                                                        if line.startswith('VmHWM:'))
     finally:
-        conn.server_cursor_factory = previous_factory
+        conn.cursor_factory = previous_factory
         conn.rollback()
         # This cleanup is guarded loopback fixture DDL, never a production path.
         prep.require_fixture_endpoint(conn, DSN)
@@ -135,6 +134,89 @@ def prove_volume_transport(conn, bundle, monkeypatch):
         if folder := os.getenv('EDUCATION79_OPERATOR_PROOF_DIR'):
             path = Path(folder);path.mkdir(parents=True, exist_ok=True)
             (path / 'scan-transport-proof.json').write_text(json.dumps(proof, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+
+
+def prove_stream_failures(conn,bundle,baseline,authority,monkeypatch):
+    """Actual stream cancellation/rollback; every target is the named loopback fixture."""
+    prep.require_fixture_connection(conn,DSN)
+    original_factory=conn.cursor_factory;events=[]
+    class RejectedText(str):
+        def encode(self,*args,**kwargs):raise StoreSafetyError('injected hash rejection')
+    class FailureCursor(Cursor):
+        failure='hash'
+        def stream(self,statement,params=None,*,size=1,**kwargs):
+            assert size==1
+            text=statement.as_string()
+            if self.failure=='sql':
+                # Guaranteed real SQL failure, only inside this disposable adapter.
+                yield from super().stream('SELECT 1/0 AS row_text',size=1)
+                return
+            if self.failure=='timeout':
+                yield from super().stream('SELECT pg_sleep(1)::text AS row_text',size=1)
+                return
+            with closing(super().stream(statement,params,size=1,**kwargs)) as rows:
+                for row in rows:
+                    if self.failure=='hash' and ' WHERE batch_id <> %s' in text:
+                        yield {'row_text':RejectedText(row['row_text'])}
+                    elif self.failure=='interrupt':raise KeyboardInterrupt()
+                    elif self.failure=='deadline':
+                        clock[0]+=0.01;yield row
+                    else:yield row
+    try:
+        conn.rollback();conn.cursor_factory=FailureCursor
+        # Rejection during the post-insert scan must unwind the active result and
+        # abort all3 artifacts/2 relationships, never reach a successful commit.
+        with pytest.raises(StoreSafetyError,match='hash rejection'):
+            with conn.transaction():
+                conn.execute('SET TRANSACTION ISOLATION LEVEL SERIALIZABLE')
+                operator.persist(conn,bundle,baseline,authority,confirm=True,fixture_url=DSN,scan_timings=events)
+        assert conn.pgconn.transaction_status!=psycopg.pq.TransactionStatus.ACTIVE
+        assert conn.execute('SELECT 1 AS n').fetchone()['n']==1
+        assert prep.owned_state(conn,bundle) is None
+        conn.rollback()
+        for failure,error in (('sql',psycopg.errors.DivisionByZero),('timeout',psycopg.errors.QueryCanceled),
+                              ('interrupt',KeyboardInterrupt),('deadline',StoreSafetyError)):
+            FailureCursor.failure=failure;clock=[0.0]
+            if failure=='timeout':conn.execute("SET LOCAL statement_timeout='10ms'")  # Negative fixture only.
+            with monkeypatch.context() as patch:
+                if failure=='deadline':patch.setattr(operator,'monotonic',lambda:clock[0])
+                with pytest.raises(error):
+                    operator.protected_state(conn,deadline=0.025 if failure=='deadline' else None)
+            assert conn.pgconn.transaction_status!=psycopg.pq.TransactionStatus.ACTIVE
+            conn.rollback();assert conn.execute('SELECT 1 AS n').fetchone()['n']==1;conn.rollback()
+    finally:
+        conn.cursor_factory=original_factory;conn.rollback()
+
+    # Terminate ONLY the test connection's own backend to emulate a real lost
+    # socket after INSERT. An unusable connection is closed; a new handle checks
+    # that the server aborted its transaction and retained the prior graph.
+    with _connect(DSN,autocommit=True) as control:
+        prep.require_fixture_endpoint(control,DSN)
+        class LostSocketCursor(Cursor):
+            def stream(self,statement,params=None,*,size=1,**kwargs):
+                with closing(super().stream(statement,params,size=1,**kwargs)) as rows:
+                    for row in rows:
+                        if ' WHERE batch_id <> %s' in statement.as_string():
+                            control.execute('SELECT pg_terminate_backend(%s)',(self.connection.info.backend_pid,))
+                            raise psycopg.OperationalError('injected fixture socket loss')
+                        yield row
+        broken=_connect(DSN,autocommit=False)
+        try:
+            prep.require_fixture_connection(broken,DSN)
+            with pytest.raises(psycopg.OperationalError):
+                with broken:
+                    broken.cursor_factory=LostSocketCursor
+                    broken.execute('SET TRANSACTION ISOLATION LEVEL SERIALIZABLE')
+                    broken.execute("SET LOCAL timezone='UTC'")
+                    operator.persist(broken,bundle,baseline,authority,confirm=True,fixture_url=DSN)
+        finally:broken.close()
+        assert broken.closed
+    assert prep.owned_state(conn,bundle) is None
+    assert prep.registry_row(conn,bundle['registry_key'])==bundle['prior_registry_row']
+    conn.rollback()
+    return {'deadline_between_real_rows_cleanup':True,'hash_rejection_after_insert_rollback':True,
+            'sql_error_cleanup':True,'whole_statement_timeout_cleanup':True,'early_interrupt_cleanup':True,
+            'lost_socket_connection_closed_transaction_aborted':True,'connection_reusable_after_nonfatal_rollback':True}
 
 
 def test_candidate_bounded_persistence_capture_drift_idempotency_and_failed_transaction(monkeypatch):
@@ -169,6 +251,7 @@ def test_candidate_bounded_persistence_capture_drift_idempotency_and_failed_tran
             with pytest.raises(StoreSafetyError, match='registry drift'):
                 operator.persist(conn, bundle, baseline, authority, confirm=True, fixture_url=DSN)
         prove_volume_transport(conn, bundle, monkeypatch)
+        failures=prove_stream_failures(conn,bundle,baseline,authority,monkeypatch)
         result = operator.persist(conn, bundle, baseline, authority, confirm=True, fixture_url=DSN)
         assert result['writes'] == operator.CAPS and result['registry_unchanged'] is True
         assert operator.protected_state(conn, exclude_batch_id=result['batch_id']) == initial
@@ -193,6 +276,8 @@ def test_candidate_bounded_persistence_capture_drift_idempotency_and_failed_tran
                  'registry_unchanged': True, 'failed_transaction_rollback': True,
                  'synthetic_default_rejected': True, 'execution_limits': operator.LIMITS,
                  'observation_window_preserved': True, 'transaction_wait_limits_verified': True}
+        proof['stream_failure_cleanup']=failures
+        proof['client_libpq_version']=psycopg.pq.version()
         if folder := os.getenv('EDUCATION79_OPERATOR_PROOF_DIR'):
             path = Path(folder);path.mkdir(parents=True, exist_ok=True)
             (path / 'operator-proof.json').write_text(json.dumps(proof, sort_keys=True, indent=2) + '\n', encoding='utf-8')
