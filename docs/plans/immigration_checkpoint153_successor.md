@@ -2390,3 +2390,70 @@ reset. Acquisition/validation phases retained; Git/CI/final report overhead foll
 197independentreview/exact-headCI pending at this note. Candidate-only boundaries
 and sole ownership persist; no routine approval handoff/new deadline/merge/deploy/
 publication/editorial acceptance/production/schema/security/config/methodology change.
+
+
+Checkpoint 198 closes the declared H.R.7008 source/version-reading gap for
+previously held House2/280 and routes a concrete existing-rule domain candidate.
+It is one source-chain closure, zero completed screenings.614reviews/62pending,
+29ordinary/33holds and47meanings/80propositions/70canonical questions/3partial
+remain unchanged. One universe hold row changes only reason/rationale/remaining
+work/source references; membership progress, dispositions and authoring stay exact.
+
+Whole14-page Rules Print11938, whole adopted report119755PartB and HRes1438
+section8 bind. PartB adds an OR compensation/fiduciary/occupational alternative
+to the existing spouse/dependent occupational exception. Declared PDF page/footer/
+margin-number and case/punctuation/whitespace/Section-symbol normalization, plus
+that unique literal amendment, yields whole normalized EH equality10863characters.
+No literal sources repaired or legal-punctuation equivalence inferred. Whole EH
+stock restrictions AND Federal-electionID remain one passage choice; separate
+recommittal is not passage postponement. Prior own floor/Clerk and two members
+are immutable reuses, not fresh XML/whole-other-member comparisons.
+
+HAVA302/303/311/401 and named absentee/accessibility exceptions are read in
+retained operative scope. Provisional physicalID OR religious-photoaffidavit cure
+within3days, non-in-person IDcopy OR (last4SSN AND reasonable-effort affidavit)
+OR notarial personalmarking, five IDs, two exceptions and90/180day distinctions
+remain. A passport alternative does not prove a universal new citizenship rule.
+Existing citizen checkbox is retained, not claimed erased by new photoID provision.
+
+Declared historical13101/13106,13104f8,152,632a1 and78c(a10)/78l(a,g1)
+comparators read. Dependent-child family coverage has distinct (unmarried AND
+under21 AND household) OR tax-dependent alternatives.152b3 citizenship/nationality
+OR US/contiguous-country residence, and adopted-child exception, apply to the
+second alternative, not automatically firstalternative/spouses. Tax residence
+is not inferred lawful Immigration status. The new Member-family investment
+regime's incorporation of that condition is a concrete qualified shared-domain
+application candidate under the existing inclusion rule. Retain source_unresolved,
+noncounting/uncompiled until that application is safely resolved; no automatic
+functional exclusion/inclusion, individual outcome or new methodology/user gate.
+All current intervening securities/tax/SBA/campaign rules and individual cases
+remain uncertified; the full1.2million-character report and whole statutory
+parents are not claimed read. Private78c rawparent replay remains uncertified.
+
+Independent197 reports no new defect, supports229 and retains four held choices
+at its reviewed head;46preservation/7replay/9freshCI checks reported,205tests
+owner-attributed. NDAA private replay, partial bank reading and all prior cancelled/
+denied acquisition boundaries remain qualified.197CI38160843981 has actual
+5feature/3synthetic/1mixed contexts and bounded direct-main/synthetic-parent
+qualification forf895f1c plus06255ecc; no broad current-main integration claim.
+Original197 receipts remain frozen; received summary and priorCI copied forward.
+
+205focused tests(19.295s),7semantic checks, accepted IR checks and7exact
+replays pass.25literal claims/5predicate scopes,8freshHTML/1freshPDF parent
+replays,11derivatives,374frozen blobs,614membership reviews and bothuntracked
+notes pass. Six semantic products exact; proof source digest only changes.
+2288sources/1178capture registrations. Previous source/capture/private prefixes
+and private errors unchanged. Two saved HTML metadata records recovered after
+unrelated heading assertion; first request starts unretained.78l freshresponse
+reacquired after failed literal-heading assertion lost unsaved originalresponse.
+Incomplete PDF margin normalization and truncated-output recoveries included.
+No previously denied/cancelled acquisition was retried or bypassed.
+
+Prior comparable performance remains FAIL781.087seconds against600ceiling and
+240target. Source/read/authoring endpoint712.497seconds; localvalidation/preparation
+endpoint952.069seconds. This complex held-package
+source closure is not a completed routine cycle or new average; no benchmark
+reset/cherry-picking. Git/CI/report overhead to follow.198independent review and
+exact-headCI pending at this note. Candidate-only scope/sole ownership persist;
+no routine approval gate, new deadline, merge/deploy/publication/editorial
+acceptance/compiler release/production/schema/security/config/methodology change.

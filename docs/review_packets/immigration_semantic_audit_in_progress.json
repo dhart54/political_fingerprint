@@ -28451,7 +28451,43 @@
     "focused_tests": 205,
     "semantic_checks": 7,
     "byte_exact_output_replays": 7,
+    "new_head_CI_pending": false,
+    "independent_review_pending": false,
+    "independent_review_path": "docs\\review_packets\\immigration_bounded_review_checkpoint197_received198.json",
+    "independent_review_sha256": "9cddb6cd50bba2eac2fd7af6cb47c502165e190ba125a6d6001cd30f1d58d262",
+    "CI_path": "docs\\review_packets\\immigration_delivery_checkpoint197_ci.json",
+    "CI_sha256": "f3a8c467f8646d139c2a6f07bc2b0dc7a3a7d6f9f4c6e830cf17baae14b4823b",
+    "CI_base_qualification_path": "docs\\review_packets\\immigration_delivery_checkpoint197_ci_base_qualification.json",
+    "CI_base_qualification_sha256": "8a8c8e3dc5fc1c04cb3e51a3a0a11459c9f74a852ada990dd1f603402a132508"
+  },
+  "held_hr7008_source_chain_checkpoint198": {
+    "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\held_hr7008_source_chain_checkpoint198.json",
+    "receipt_sha256": "7fa4c6c1a3b5ceb68efbd8141f17365acf56abc033b1e4b84e375242218c2cee",
+    "attempted": 1,
+    "completed": 0,
+    "held": 1,
+    "source_chain_closures": 1,
+    "counts": {
+      "reviewed": 614,
+      "pending": 62,
+      "ordinary_unscreened": 29,
+      "researched_holds": 33,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "source_count": 2288,
+    "registrations": 1178,
+    "literal_predicate_check_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\literal_predicate_authoring_check_checkpoint198.json",
+    "literal_predicate_check_sha256": "7398dbd4b414ba691ab9cf5b03d4d605eae6755d9b95e559a47e87ac2ded8ed2",
+    "independent_review_pending": true,
     "new_head_CI_pending": true,
-    "independent_review_pending": true
+    "publication_authorized": false,
+    "validation_path": "docs\\review_packets\\immigration_delivery_checkpoint198_validation.json",
+    "validation_sha256": "f5bac30b2037eda4c4ff29ffc413b95f0f99624f1c844cab0cc558b61ff9cdd9",
+    "focused_tests": 205,
+    "semantic_checks": 7,
+    "byte_exact_output_replays": 7
   }
 }
