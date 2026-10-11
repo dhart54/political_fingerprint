@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import copy
 from datetime import datetime, timezone
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -102,7 +103,7 @@ def validate_authority(bundle, baseline, authority, *, fixture=False, now=None):
 
 
 def protected_state(conn, *, exclude_batch_id=None):
-    """Established full-table checksum comparison, excluding only owned inserts."""
+    """Stream full-table SHA256 comparison, excluding only owned inserts."""
     result = {}
     for row in conn.execute("SELECT tablename FROM pg_tables WHERE schemaname='public' ORDER BY tablename").fetchall():
         table = row['tablename']
@@ -116,8 +117,16 @@ def protected_state(conn, *, exclude_batch_id=None):
             elif table == 'editorial_artifact_relationships':
                 condition = sql.SQL(' WHERE parent_artifact_id NOT IN (SELECT artifact_id FROM editorial_artifact_versions WHERE batch_id=%s) AND child_artifact_id NOT IN (SELECT artifact_id FROM editorial_artifact_versions WHERE batch_id=%s)')
                 params = (exclude_batch_id, exclude_batch_id)
-        statement = sql.SQL("SELECT COUNT(*) AS count, md5(COALESCE(string_agg(to_jsonb(t)::text, chr(10) ORDER BY to_jsonb(t)::text), '')) AS checksum FROM {} t{}").format(sql.Identifier(table), condition)
-        result[table] = dict(conn.execute(statement, params).fetchone())
+        statement = sql.SQL('SELECT to_jsonb(t)::text AS row_text FROM {} t{} ORDER BY row_text').format(sql.Identifier(table), condition)
+        checksum = hashlib.sha256(); count = 0
+        with conn.cursor(name='education79_protected_rows') as cursor:
+            cursor.itersize = 128
+            cursor.execute(statement, params)
+            for item in cursor:
+                checksum.update(item['row_text'].encode('utf-8'))
+                checksum.update(b'\n')
+                count += 1
+        result[table] = {'count': count, 'sha256': checksum.hexdigest()}
     return result
 
 
