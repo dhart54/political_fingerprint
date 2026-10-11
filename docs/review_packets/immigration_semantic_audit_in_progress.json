@@ -8726,7 +8726,7 @@
         }
       ],
       "finding": "Qualified current candidate successor and domain relationship; independent shared-core/domain/projection review pending, not editorial acceptance.",
-      "corrected_authoring_action_sha256": "60cb0276187a7792f9f8842a2171632e4f600496de770f5f6d0494904d724cec",
+      "corrected_authoring_action_sha256": "33a6d7e307e705a0fe73ce6f023a75a8ce3d0b546f4d030ecff987f04302d18a",
       "corrected_review_record_sha256": "61b9432af561a8f5558000fbc81e2373b1b988f0817e066739fce5cdbf7072df",
       "independent_review_pending": true,
       "not_counted_in_independent_severity_assessments": true
@@ -29526,9 +29526,27 @@
       "partial_packages": 3
     },
     "independent_review_pending": true,
-    "new_head_CI_pending": true,
+    "new_head_CI_pending": false,
     "publication_authorized": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint204_validation.json",
-    "validation_sha256": "aeabff35bf8fe3249f90979f5ea4410367e2a52e883e71d93757d02a41a4e12f"
+    "validation_sha256": "aeabff35bf8fe3249f90979f5ea4410367e2a52e883e71d93757d02a41a4e12f",
+    "independent_partial_finding_path": "docs/review_packets/immigration_bounded_review_checkpoint204_partial_received205.json",
+    "independent_partial_finding_sha256": "8dfefa94cf0bb41eec9f417f2a98cdc8af7308e1faf7182f65d1f0bf03555e8d",
+    "question_guard_correction_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/source_review_full_question_correction_checkpoint205.json",
+    "question_guard_correction_sha256": "1d0bbc0f7bed9c54d110a794490a0ef8cb0f5f9b153204420ec37b6e0726520a",
+    "CI_path": "docs/review_packets/immigration_delivery_checkpoint204_ci.json",
+    "CI_sha256": "e554f47c1d6f6f9d4aaa1760945fdce0a9e546e74fe54313e6083f781fc81d25",
+    "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint204_ci_base_qualification.json",
+    "CI_base_qualification_sha256": "4d0cb9e1dd7fc122b91346b593e4631c051b22b2c0d33c72c36dce3b9b65ce9b"
+  },
+  "source_review_full_question_correction_checkpoint205": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/source_review_full_question_correction_checkpoint205.json",
+    "receipt_sha256": "1d0bbc0f7bed9c54d110a794490a0ef8cb0f5f9b153204420ec37b6e0726520a",
+    "independent_review_pending": true,
+    "new_head_CI_pending": true,
+    "publication_authorized": false,
+    "reported204_P2_pending_correction_review": true,
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint205_validation.json",
+    "validation_sha256": "1106c82e05bcb7ebb50eb92587709d3c2616f78fea098ef9d5105aad0821bfd8"
   }
 }

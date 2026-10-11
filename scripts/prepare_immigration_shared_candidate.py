@@ -170,6 +170,39 @@ def _action_source_constraints(authoring):
     return constraints
 
 
+def _source_bound_substitute_question(authoring, proposed, sources):
+    """Reconstruct the full whole-passage label from its adopted rule section."""
+    binding = proposed.get('source_review_question_binding')
+    if (not isinstance(binding, dict)
+            or set(binding) != {'source_id', 'section', 'kind'}
+            or binding['kind'] != 'adopted_substitute_passage'
+            or type(binding['section']) is not int or binding['section'] <= 0
+            or proposed['stage'] != 'final_passage'):
+        raise ValueError('source-review question requires an exact adopted-substitute binding')
+    source = sources.get(binding['source_id'])
+    if (source is None or source['source_type'] != 'official_bill_text'
+            or source['text_version'] != 'EH'
+            or binding['source_id'] not in proposed.get('additional_source_ids', [])):
+        raise ValueError('source-review question lacks a governed engrossed rule')
+    header = re.search(r'\[H\. Res\. ([1-9][0-9]*) Engrossed in House \(EH\)\]', source['text'])
+    section = re.search(r'Sec\. ' + str(binding['section'])
+                        + r'\. (.*?)(?=Sec\. [0-9]+\.|$)', source['text'], re.S)
+    bill = {'s': 'S.', 'hr': 'H.R.'}.get(proposed.get('bill_type', 'hr'))
+    if not header or not section or bill is None:
+        raise ValueError('source-review question lacks its exact rule section')
+    clause = section[0].rstrip()
+    if (f"bill ({bill} {proposed['bill_number']})" not in clause
+            or not re.search(r'An amendment in the nature of a substitute consisting of the text of Rules Committee Print '
+                             + str(authoring['congress'])
+                             + r'-\s*[0-9]+, modified by the amendment printed in part [A-Z] of the report of the Committee on Rules accompanying this resolution, shall be considered as adopted\.', clause)
+            or 'on the bill, as amended, and on any further amendment thereto, to final passage' not in clause
+            or not any(c['source_id'] == source['source_id'] and clause in c['passage']
+                       for c in proposed['claim_source_map'])):
+        raise ValueError('source-review question does not bind whole adopted-substitute passage')
+    return (f"On passage of {bill}{proposed['bill_number']} as amended by the substitute "
+            f"adopted under H.Res.{header[1]} section{binding['section']}.")
+
+
 def _prepare_source_review_reuse(authoring, capture, proposed, canonical, member_ids):
     """Copy a qualified V1 candidate after binding its source-review wrapper."""
     aid = proposed['action_id']
@@ -204,7 +237,8 @@ def _prepare_source_review_reuse(authoring, capture, proposed, canonical, member
             raise ValueError('source-review input differs from canonical core: ' + field)
     expected_measure = f"{authoring['congress']}:{proposed.get('bill_type', 'hr')}:{proposed['bill_number']}"
     if (canonical['exact_action_identity'] != expected_measure
-            or not canonical['exact_question'].casefold().startswith(generated['exact_question'].casefold())
+            or ''.join(canonical['exact_question'].split()).casefold()
+            != ''.join(_source_bound_substitute_question(authoring, proposed, sources).split()).casefold()
             or canonical['mechanism'] not in [canonical['candidate_exact_action_meaning'], canonical['candidate_short_description']]):
         raise ValueError('source-review exact-action wrapper differs from Clerk-bound input')
     return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]

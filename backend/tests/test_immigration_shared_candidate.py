@@ -18,6 +18,55 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_source_review_question_rejects_coherently_resealed_wrong_whole_choice(self):
+        from pathlib import Path
+        from unittest.mock import patch
+        original_read = Path.read_text
+        path = (DATA.parent / 'house_119_source_review_checkpoint204/shared_action_core_proposal.json').resolve()
+        for question in [
+                'On passage of H.R.4465 as amended by the substitute adopted under H.Res.1224 section7.',
+                'On passage of the amendment to S.1318 only.',
+                'On passage of S.1318 as amended by the substitute adopted under H.Res.1224 section8.']:
+            with self.subTest(question=question):
+                provider = json.loads(original_read(path, encoding='utf-8'))
+                core = provider['actions'][0]
+                core['exact_question'] = question
+                core['action_core_sha256'] = sealed_digest(core, 'action_core_sha256')
+                provider['corpus_sha256'] = digest(provider['actions'])
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == core['action_id'])
+                row['shared_core_reuse']['action_core_sha256'] = core['action_core_sha256']
+                def read_provider(target, *args, **kwargs):
+                    return json.dumps(provider) if target.resolve() == path else original_read(target, *args, **kwargs)
+                with patch.object(Path, 'read_text', new=read_provider):
+                    with self.assertRaisesRegex(ValueError, 'exact-action wrapper'):
+                        prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
+    def test_source_review_question_binds_rule_section_and_normalizes_labels(self):
+        from pathlib import Path
+        from unittest.mock import patch
+        original_read = Path.read_text
+        path = (DATA.parent / 'house_119_source_review_checkpoint204/shared_action_core_proposal.json').resolve()
+        provider = json.loads(original_read(path, encoding='utf-8'))
+        core = provider['actions'][0]
+        core['exact_question'] = '  ON PASSAGE OF S. 1318 as amended by the substitute adopted under H. Res. 1224 section 7.  '
+        core['action_core_sha256'] = sealed_digest(core, 'action_core_sha256')
+        provider['corpus_sha256'] = digest(provider['actions'])
+        authoring = copy.deepcopy(self.values[0])
+        row = next(r for r in authoring['actions'] if r['action_id'] == core['action_id'])
+        row['shared_core_reuse']['action_core_sha256'] = core['action_core_sha256']
+        def read_provider(target, *args, **kwargs):
+            return json.dumps(provider) if target.resolve() == path else original_read(target, *args, **kwargs)
+        with patch.object(Path, 'read_text', new=read_provider):
+            result = prepare(authoring, self.values[1], ['F000477', 'M001184'])
+        self.assertEqual(next(r for r in result[0]['actions'] if r['action_id'] == core['action_id']), core)
+        for section in [8, 6]:
+            authoring = copy.deepcopy(self.values[0])
+            row = next(r for r in authoring['actions'] if r['action_id'] == core['action_id'])
+            row['source_review_question_binding']['section'] = section
+            with self.assertRaises(ValueError):
+                prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
     def test_source_review_reuse_preserves_one_qualified_fisa_identity_and_outcome_set(self):
         aid = 'house:119:2:142'
         original = json.loads((DATA.parent / 'house_119_source_review_checkpoint182/shared_action_core_proposal.json').read_text(encoding='utf-8'))['actions'][0]

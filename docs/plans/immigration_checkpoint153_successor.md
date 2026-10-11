@@ -2895,3 +2895,55 @@ shape and no-postponement comparison correction, compaction and final fixture
 read adjustment are included. Initial commentary/dispatch unmeasured. Git, CI
 and final report overhead follow; zero new comparable routine samples, prior
 benchmark FAIL at 781.087s remains. No acceptance or reserved-boundary authority.
+
+
+## Checkpoint 205: exact source-bound whole-passage question
+
+Confirmed independent 204 P2 is blocking: a fully resealed wrong-bill or
+amendment-only label passes the On Passage prefix comparison. Current submitted
+142 meaning/question/domain/directions remain supported and preserved. Replace
+the prefix with a complete label derived from exact engrossed-rule header, own
+section/bill, adopted-substitute and whole final-passage instructions, all bound
+to the existing governed claim. Permit case/whitespace normalization only.
+Exercise valid-hash wrong-bill/component/section counterexamples through full
+preparation, plus supported label normalization and wrong source-section checks.
+No canonical schema, common adapter, meaning, count, acceptance or methodology
+change. Historical 204 provider/receipts untouched. Regenerate provenance proof
+only; 13 semantic/rendered outputs, all membership and Health inputs stay exact.
+Run focused suite, semantic checks, 14 replays, final diff and exact-head CI.
+Expected 11 files: helper/tests, authoring/proof, correction/review/validation,
+audit/plan and copied 204 CI/base receipts. Independent P2 correction review
+remains pending; raw counts are not clearance.
+
+Source preselection separately confirms legacy roll 221 frozen XML and retained
+CDH/offered body agree on H.R.9238, both June 12-to-July 2 edits and earlier
+enactment/June 11 effectiveness. Old/new Clerk metadata and both Nays agree;
+June 10 question/voice/demand/order/postponement precede June 11 resumed 198-218/15
+rejection. Source versions and old seals stay explicit. Legacy accepted-core
+qualification compatibility remains separate next work; no competing meaning
+or 155 XML conflict erasure. Retail roll 157 has an express INA section 1956 predicate chain
+under existing incorporated-definition precedents, so generic-crime exclusion
+is not inferred; complete center/confidentiality chain still needs research.
+Timer starts 21:32:58.532793UTC, includes all preselection and private snapshot
+key recovery. Initial commentary/dispatch unmeasured. No new comparable routine
+sample; benchmark FAIL at 781.087s remains against 600s ceiling / 240s target.
+
+Initial 350-test run passed 349 and exposed one stale current authoring audit
+digest. The metadata addition changed that authoring hash while meaning/core
+remained exact. Update only the current audit digest, preserving the prior hash
+and failed log in the correction receipt; repeat focused validation. The private
+snapshot key mismatch, initial suite failure and all recovery time remain measured.
+
+Final local validation: 350 focused tests pass (118.731s native), seven semantic
+checks, IR references and 14 byte-exact replays. Prior meanings, projections,
+all membership/universe rows and sources remain exact. Current audit authoring
+hash is updated; other substantive audit records remain exact. 1,051 protected
+blobs and two shutdown notes checked. Only generated provenance proof changes
+its authoring/helper hashes; the other 13 outputs remain exact.
+Correction seal 1d0bbc0f7bed9c54d110a794490a0ef8cb0f5f9b153204420ec37b6e0726520a;
+validation seal 1106c82e05bcb7ebb50eb92587709d3c2616f78fea098ef9d5105aad0821bfd8.
+Measured local delivery preparation endpoint 1124.712s,
+including the failed 350-test run (112.797s), safe audit correction and full
+rerun. Git/CI/report overhead follows; no new routine sample or benchmark pass.
+Independent P2 correction and complete 204 review remain pending. No merge,
+publication, production or new methodology authority.

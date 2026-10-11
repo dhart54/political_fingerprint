@@ -1,0 +1,55 @@
+{
+  "checkpoint": 205,
+  "base_head": "255cd9a1f2a42f83336526e6784a3931c962be3e",
+  "scope": "Replace permissive whole-passage question prefix with exact source-bound adopted-substitute contract",
+  "independent_P2_finding_path": "docs/review_packets/immigration_bounded_review_checkpoint204_partial_received205.json",
+  "independent_P2_finding_sha256": "8dfefa94cf0bb41eec9f417f2a98cdc8af7308e1faf7182f65d1f0bf03555e8d",
+  "action_id": "house:119:2:142",
+  "actual_question_preserved": "On passage of S.1318 as amended by the substitute adopted under H.Res.1224 section7.",
+  "question_contract": "Derive bill from Clerk-bound authoring; require engrossed rule header, selected rule section declaring that bill, adopted substitute and whole final-passage instruction, all within governed claim passage. Compare complete reconstructed label after case/whitespace normalization, retaining punctuation.",
+  "full_prepare_valid_hash_negatives": [
+    "wrong bill H.R.4465",
+    "amendment-only choice",
+    "wrong rule section8"
+  ],
+  "binding_negatives": [
+    "source-bound section8 lacks adopted substitute passage",
+    "section6 lacks own-bill whole passage"
+  ],
+  "legitimate_case_and_spacing_normalization_positive": true,
+  "initial_two_tests_native_runner_seconds": 9.594,
+  "current_meanings_identifiers_sources_membership_and_member_projections_preserved": true,
+  "prior204_provider_and_receipts_preserved": true,
+  "counts_after": {
+    "reviewed": 619,
+    "pending": 57,
+    "ordinary_unscreened": 29,
+    "researched_holds": 28,
+    "meanings": 51,
+    "propositions": 88,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "new_comparable_routine_samples": 0,
+  "prior_benchmark_result": "FAIL",
+  "prior_benchmark_mean_seconds": 781.087,
+  "new_acquisitions": 0,
+  "independent_correction_review_pending": true,
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_eligible": false,
+  "receipt_sha256": "1d0bbc0f7bed9c54d110a794490a0ef8cb0f5f9b153204420ec37b6e0726520a",
+  "prior_current_authoring_audit_digest": "60cb0276187a7792f9f8842a2171632e4f600496de770f5f6d0494904d724cec",
+  "corrected_current_authoring_audit_digest": "33a6d7e307e705a0fe73ce6f023a75a8ce3d0b546f4d030ecff987f04302d18a",
+  "initial_focused_validation": {
+    "tests_run": 350,
+    "passed": 349,
+    "failures": 1,
+    "native_runner_seconds": 112.797,
+    "log_path": ".tmp/tests205.log",
+    "log_sha256": "a7433e3a2b7477dbed1e3fe10d463890c81673cebae5cc9d6c3525d7f5570449",
+    "failure": "Current audit authoring digest stale after addition of question-binding metadata; source meaning/core unchanged",
+    "safe_correction": "Update current audit digest; preserve original digest here and all204 historical receipts"
+  }
+}
