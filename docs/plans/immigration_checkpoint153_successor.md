@@ -2180,3 +2180,35 @@ Final193 semantic recheck first lacked established NODE_PATH and could not locat
 AJV. Restoring the existing dependency path passes seven checks; no installation,
 config or security change. Output replay/seals/proposed canonical row equality and
 diff checks pass after reference refinement. Failure/recovery overhead retained.
+
+
+Checkpoint194 continues the preserved193 June9/10 pair217/218: one candidate
+functional exclusion217, one researched hold218;608 reviewed/68 pending,
+44ordinary/24researched holds,47meanings/80propositions/70questions/3partial.
+Canonical217/218 shared meaning identities remain exact, not regenerated.
+Complete own operative floor/EH formatting comparison and separate initial/resumed
+stages pass;217 initial June9 and recorded June10 use different daily parents.
+218 literal317(n)/317(l), CARES15010/15US9053 and covered-funds/current-integration
+boundaries remain held. No title/agency-based domain inference or hold release.
+
+Independent193 review narrowly closed the originalP2; residual active locatorP3
+638106 is corrected to literal578406 with a consistency regression, refreshed
+active191/correction193/audit seals and archived frozen prior receipts. Original
+wrong witness and193 history remain exact. Received review is attributed summary,
+not raw report clearance.205focused tests,7semantic checks/7byte-exact replays,
+18HTML/2PDF replays,2Clerk reconciliations/35literal claims,124frozen blobs,
+607prior memberships and bothuntracked notes pass;6semantic products unchanged.
+2188sources/1078captures,30new immutable registrations (2reused Health sources,
+28literal scoped derivatives). Windows CRLF archive check uses original path
+Git normalization; failed private shape/heading/helper attempts retained.
+
+193 CI confirms9fresh first-attempt successes,5feature/3synthetic/1mixed;
+actual synthetic base7a8c6ee differs later live maind916dd6 andPR/run snapshots
+862b290c. Qualification retained; no current-main integration.194 review/new-head
+CI pending. Prior comparable FAIL781.087seconds remains; no new average/reset.
+Original pre-stop472.993034 seconds plus current continuation local-validation
+endpoint2744.646seconds are retained separately from overnight pause
+and the one-time193 inherited repair. All continuation helpers/source recovery,
+P3 correction, tests/priorCI/report overhead included; held attempt notcompletion.
+Candidate-only bounds persist. Checkpoint is a resume point, no routine approval
+handoff; no merge/deploy/publication/editorial acceptance/production changes.

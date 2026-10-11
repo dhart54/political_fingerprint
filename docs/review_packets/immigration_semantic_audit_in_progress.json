@@ -28284,7 +28284,7 @@
   },
   "financial_package_source_qualification_checkpoint191": {
     "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\financial_package_source_qualification_checkpoint191.json",
-    "receipt_sha256": "51ba504e3d1dbb1956a52b8cb2ef672befffd17bb972abea4a90be65b4d557e7",
+    "receipt_sha256": "f2d4d8a58ddac6fc6a59cbb33f7d961c7b0a78344d9d5c091650751afd1ff57b",
     "held_action_ids": [
       "house:119:1:199",
       "house:119:1:200"
@@ -28326,10 +28326,33 @@
   },
   "roll200_stage_identity_correction_checkpoint193": {
     "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\roll200_stage_identity_correction_checkpoint193.json",
-    "receipt_sha256": "282bb605a9a7c6f96b0dab981171b468cbfa76b6cfdb8a4ac50afca07301f0eb",
+    "receipt_sha256": "b78b41b1d5c375ffa76976d0def93da7ad48ad50e1b8a8a91c976ad989860386",
     "disposition": "source_unresolved",
     "new_screening_completions": 0,
-    "independent_review_pending": true,
-    "publication_authorized": false
+    "independent_review_pending": false,
+    "publication_authorized": false,
+    "residual_active_locator_recheck_pending194": true
+  },
+  "student_aid_fraud_screening_checkpoint194": {
+    "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\student_aid_fraud_screening_checkpoint194.json",
+    "receipt_sha256": "8de1f3ed7c0e87af3697e017a2c5bb9aec2882a3fa88fa35371f1375900b5d8a",
+    "attempted": 2,
+    "completed": 1,
+    "held": 1,
+    "counts": {
+      "reviewed": 608,
+      "pending": 68,
+      "ordinary_unscreened": 44,
+      "researched_holds": 24,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "source_count": 2188,
+    "registrations": 1078,
+    "publication_authorized": false,
+    "validation_path": "docs\\review_packets\\immigration_delivery_checkpoint194_validation.json",
+    "validation_sha256": "7d038a3eaf22f76136f3e84496df9087161a2657430bef81e28ec09e8a5b14f9"
   }
 }

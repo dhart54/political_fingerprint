@@ -144,3 +144,24 @@ class SourceSequenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'outside the declared action boundary'):
             require_same_action_passage_stages(
                 declaration, wrong, following, result, 'S.1582', 200)
+
+    def test_roll200_active_question_locator_matches_corrected_literal_source(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        directory = root / 'docs/editorial/shared_candidates/house_119_immigration_20260916'
+        load = lambda name: json.loads((directory / name).read_text(encoding='utf-8-sig'))
+        receipt = load('financial_package_source_qualification_checkpoint191.json')
+        correction = load('roll200_stage_identity_correction_checkpoint193.json')
+        catalog = load('sources.json')
+        source = next(item for item in catalog['sources']
+                      if item['source_id'] == correction['active_corrected_source_id'])
+        question = source['source_text_extents'][0]['start'] + source['text'].index('question is on')
+        self.assertEqual(correction['question_start'], question)
+        self.assertEqual(receipt['read_progress']['own_initial_passage_sequence_positions']['roll200'], question)
+        # A locally valid question in the historical witness belongs to another
+        # action and must not supply this action's active locator.
+        historical = next(item for item in catalog['sources']
+                          if item['source_id'] == correction['historical_wrong_source_id'])
+        historical_question = historical['source_text_extents'][0]['start'] + historical['text'].index('question is on')
+        self.assertNotEqual(historical_question, question)
