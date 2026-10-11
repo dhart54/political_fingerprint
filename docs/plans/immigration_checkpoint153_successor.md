@@ -2666,3 +2666,96 @@ Independent200 closure received before201delivery: both prior P3s CLOSED at8e36b
 including two coherent valid-hash regenerations, reported pass. No new defect or
 held-package conclusion. This clears the bounded corrections, not editorial
 acceptance or201shared-core/binding review. Received receipt4c2e0428486e98e4c413933637a72d250a2986369ad62eebb0c651387db1af9a.
+
+
+## Checkpoint202 preread: roll298 document-offense detention chain
+
+Select retained-source H.R.5214 final passage, House119 session1/298. The current
+shared core binds whole detention/release/bond changes and23-1331 but omits the
+original18-239sections105/107(b) document felony incorporated by23-1331(3)(I).
+That narrow omission blocks faithful Immigration reuse. Document the necessary
+minimal current-core completeness augmentation before application; preserve
+Health membership/universe,158propositions/compiledIR/issue mapping and all114
+other Health cores, including299currently under independent201review. Author the
+corrected input once in its existing Health record, mechanically mirror it with
+the existing sealed-core reuse binding. No helper/schema/methodology change.
+
+The proposed mandatory criminal detention reaches the existing felony involving
+knowing document destruction/concealment/removal/confiscation/possession, including
+passports or immigration documents, to restrict or attempt to restrict travel
+without lawful authority to maintain labor/services. Original105/107(b), dated
+22-1835/1837 and23-1331supply the chain; original monetary fine and later fine
+reference remain separate. Generic trafficking, citizenship of a defendant/victim,
+agency labels and111statistical reporting do not establish this membership. No
+new document offense, immigration-status detention/removal, universal passport
+possession offense, component stance or individual detention/outcome is inferred.
+Keep existing whole package, treatment-option, secured-not-only-cash bond, printed
+cross-reference/date defects,30-day enactment applicability and dated sunset
+limits. Own adopted substitute/question/voiceayes/Garcia demand/order/postponed/
+resumed electronic237-179/17passage and member labels govern exact choice.
+
+Expected about29files from two catalogs and two deterministic witness sets, one
+focused regression plus bounded receipts/audit/plan. Reuse already-governed
+objects; no source acquisition or denied source retry. Definition of done: one
+qualified candidate hold closed, identical core/identity across both domains and
+four member projections, other current/frozen objects preserved, focused semantic
+validation and14exact replays, finaldiff and exact-headCI. Checkpoint201head
+49251e9 remains immutable in Git/private snapshots for its independent review.
+Copy201CI/base-qualified receipts in this substantive delivery; qualify its
+superseded draft seal in the plan without rewriting historical candidate receipts.
+
+Timer starts20:03:04.035709UTC after initial preselection/workflow reads, which
+are unmeasured. Subsequent overbroad-output recovery/snapshot/authoring/test/Git/
+CI/report overhead included. This complex held-core closure supplies no new
+comparable routine sample; benchmark remains FAIL781.087seconds,600ceiling/240target.
+Sole ownership retained; no routine approval gate or merge/deploy/publication/
+acceptance/production/security/secrets/configuration authority.
+
+Independent201 P3 received during202preparation: the inherited299aid paraphrase
+loses the actual officer-observes-another-officer/prohibited-technique/immediate
+aid trigger in24-345[4155:4610). Explicit delegated correction authority permits
+this narrow contextual correction alongside298closure. Preserve immutable201
+receipt/before-input/Git head; supersede current299input in a separate202correction
+receipt, propagate one corrected canonical meaning through both domains and
+add actor/trigger regression. No domain reclassification or direction change.
+Preservation exceptions are now only298and299current cores/witnesses:113other
+Healthcores and48previous Immigrationcores exact; all prior conclusions retained.
+Private author-script construction failed on nested quotes before any candidate
+write; recovery time included, no baseline validation credited.
+
+
+Checkpoint202 local closure:617reviewed/59pending(29ordinary/30holds),50meanings/
+86propositions;70questions/3partialpackages unchanged. Original105/107(b),
+dated1835/1837, retained3(I), wholeEH and own237-179/17sequence support one
+bounded criminal-document-detention candidate. Reuse existing canonical identity
+and core across both domains/four projections. Health membership/universe, all158
+propositions/compiledIR/issue mapping exact;113other Healthcores and48previous
+Immigrationcores/84propositions/616membershiprecords exact. Only298completion
+and expressly delegated299contextual P3 revise current cores/witnesses. Original
+fine<=5000 and later statutory fine reference stay distinct. Dcatalog2292 and
+manifest1182/pool byte-exact; Hcatalog2071 retains2066prefix plus5immutable reused
+objects. Zero acquisitions or globally new sources.398frozen blobs/two notes exact.
+
+342focused tests(66.520s),7semantic checks/IR validation and14replays pass. Final
+wording refinement removes a duplicated clause;3narrow regressions(1.755s) and
+final14replays also pass. Private sequence-anchor normalization and final runner
+path substitution were corrected without weakening canonical contracts; original
+failed runner retained and all recovery included. No unrelated local release loop.
+Independent201 final review supports domain/whole-package directions;39mechanics/
+65overlapping projections/14replays/18negative cases,821.747s. Its sole contextual
+P3 is recorded once as one Minor finding/action assessment; observer/another-officer/
+prohibited-technique/immediate-aid predicates restored. Corrected202re-review and
+new298shared/domain review pending. Historical201receipt/before-input preserved;
+new202correction governs currentmeaning. The201plan draftseal e5e2b660... is
+superseded by final201artifactseal77cdb985..., recorded in final201delivery/PR.
+
+Candidate receipt e061b84eb056e6cd27bac452b7662de404a30b2edad51ae655b4342c0e94db9c;
+trigger correction 7b3dd8874cff84a9443eb66f1c42034873dc74d171972e0ff5977bb7523c21d8;
+validation e595db774032b55867635bb8bc2d20bdcfcb355b646a7fb6ca69a5f6dad687d1.
+201CI/base-qualified receipts copied forward:9freshattempt1,5feature/3synthetic/
+1mixed,4conditional guards unexecuted; actualbase1cd9d124plus201head. Bounded
+observations, no latest-main integration claim. Source/authoring endpoint
+451.42seconds; localvalidation endpoint
+910.907seconds, initialpreselection unmeasured; Git/CI/report overhead follows.
+No new routine sample or performance pass; FAIL781.087seconds remains. Solewriter
+retained; no new deadline/approval gate/merge/deploy/publication/acceptance/production.

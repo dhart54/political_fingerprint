@@ -8301,8 +8301,8 @@
     {
       "action_id": "house:119:1:299",
       "audit_state": "existing_shared_core_minimal_augmentation_candidate_pending_independent_review",
-      "severity": null,
-      "finding_id": null,
+      "severity": "Minor",
+      "finding_id": "independent201-P3-observing-officer-prohibited-technique-immediate-aid",
       "exact_identity": {
         "majority": "R",
         "congress": "119",
@@ -8332,8 +8332,8 @@
         }
       },
       "primary_reconstruction": "Exact whole H.R.5107 repeal/restoration includes titleI subtitleG111(c)(1), outside A/Sexceptions, reversing the explicit added citizen/national/lawful-permanent-resident MPD application criterion under the existing direct personal-status inclusion rule. Dated5-107.04corroborates status at application and independent minimum/denial/training qualifications. Existing whole core needed a minimal source-bound completeness augmentation before this domain mapping; canonical corrected input authored once and reused with identical identity/digest across domains. No Health membership change, agency/title/complaint-demographics inference, automatic discharge/individual denial, enactment or exhaustive later-law reconstruction. Wholepackage candidate only, pending independent shared/domain/projection review; no editorial acceptance/publication.",
-      "finding": "Owner completeness/domain candidate only; independent shared-core/domain/projection review pending.",
-      "corrected_authoring_action_sha256": "58cf3b8b2cc40f3c9eaa5b063f0772fca0677cbf239d7a9b8f32504589d8a7f0",
+      "finding": "Independent201 contextual P3 corrected; observer/another-officer/prohibited-technique/immediate-aid predicates restored. Independent correction re-review pending.",
+      "corrected_authoring_action_sha256": "e2cde70781dcb9584323cca6938d26f3c3378e9cf48a719f07954738b45168ee",
       "corrected_review_record_sha256": "cfca1419984ead6b3a581e3b8c7ef16f1d7f8b007f9988713c772f4e2a3964bf",
       "primary_evidence": [
         {
@@ -8421,6 +8421,171 @@
           "governed_bytes_sha256": "87f4b92a7437c0ab483f9866f07e3fe511b6085117cb40b6093543d2606818e2"
         }
       ],
+      "independent_review_pending": true,
+      "not_counted_in_independent_severity_assessments": false,
+      "priority": "P3",
+      "independent201_partial_finding_path": "docs/review_packets/immigration_bounded_review_checkpoint201_partial_received202.json",
+      "independent201_partial_finding_sha256": "9da239cad92f4acc94b2dbbfdd6b8e8c1454c9726c0cd103e4b7068dd7099a8f",
+      "correction_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5107_emergency_aid_trigger_correction_checkpoint202.json",
+      "correction_receipt_sha256": "7b3dd8874cff84a9443eb66f1c42034873dc74d171972e0ff5977bb7523c21d8",
+      "previous_owner_record_preserved_in_snapshot": true,
+      "independent201_review_path": "docs/review_packets/immigration_bounded_review_checkpoint201_received202.json",
+      "independent201_review_sha256": "3a57d2a029b7c041f3fa48c137c93d70ff6418f16d6113bb2d27a40ab136b79c",
+      "corrected202_independent_review_pending": true
+    },
+    {
+      "action_id": "house:119:1:298",
+      "audit_state": "existing_shared_core_minimal_augmentation_candidate_pending_independent_review",
+      "severity": null,
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "298",
+        "legis-num": "H R 5214",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "19-Nov-2025",
+        "action-time": "8:39 PM",
+        "vote-desc": "District of Columbia Cash Bail Reform Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Whole H.R.5214 changes criminal detention/release for the retained23-1331(3)(I) felony category. Original18-239sections105/107(b), dated22-1835/1837 and unchanged3(I) bind the specific knowing passport/immigration-document offense with unlawful-authority/travel/labor-purpose predicates, supporting bounded existing documentation/detention rule application. No generic-trafficking/title/citizenship-statistics inference, new offense, immigration-status detention/removal or individual result. Canonical core completeness correction authored once and mechanically reused across domains; Health conclusions unchanged. Own adopted-substitute and question/voiceayes/Garcia demand/order/postponed/resumed237-179/17passage retained. Whole-package candidate pending independent shared/domain/projection review; no editorial acceptance/publication.",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:298",
+          "url": "https://clerk.house.gov/evs/2025/roll298.xml",
+          "raw_sha256": "a9ae200372594e6f9c228a951f34fe662ba9a25cb321a27b56e8b584ef9cd7e9",
+          "governed_bytes_sha256": "56f1fc546f888bde2c385e81bbaa70faf6ef9e63a37b92c64186c6349461d476"
+        },
+        {
+          "source_id": "govinfo:hr5214eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5214eh/html/BILLS-119hr5214eh.htm",
+          "raw_sha256": "48de0b6d60c35e60eef84e81cd163c1dbf9ec5062ccda79530a53809748546a8",
+          "governed_bytes_sha256": "50f64c3e054a984b492b5af719652c1bc1a208652c197a0901353651655af60f"
+        },
+        {
+          "source_id": "dc-council:code-23-1321-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1321.html",
+          "raw_sha256": "be972d7e08e6d0cdf7cda1eb92a0f2d2c6fc87f45b2ddcf22b09f74f3f5296fb",
+          "governed_bytes_sha256": "a7868bcaa9d44a0a4f9bb3ab0047fd15ccf0f283112070ff0c35858d62cd8606"
+        },
+        {
+          "source_id": "dc-council:code-23-1322-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1322.html",
+          "raw_sha256": "5034dcd642c06d1c1169dd8c54d9eb4df3df140aea05f8728226195255fe85af",
+          "governed_bytes_sha256": "5f0250c6ade72116a68ac3dde7cee5223abfc2d96cbded0d73804900fd97f486"
+        },
+        {
+          "source_id": "dc-council:code-23-1325-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1325.html",
+          "raw_sha256": "9d7bb922aad3c2dff0084d15772aa122bd203a0bfc23db6842be16fca88d1688",
+          "governed_bytes_sha256": "14139ea5c32adec7d4a3630a08946307917f27d3f68a34165288d607be9209a6"
+        },
+        {
+          "source_id": "dc-council:code-23-1331-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1331.html",
+          "raw_sha256": "fee338b0383d540b991f5a1750c414eae3cfd6e15d07fb54fd0c45cfe5587b73",
+          "governed_bytes_sha256": "c9ca4a4f7f59748d98945c17214be6e59d05d53eae76555a3aa7a8fb4253869b"
+        },
+        {
+          "source_id": "dc-council:code-23-1324-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1324.html",
+          "raw_sha256": "729e58e36dc9b6fb7d19512d4b68e549c3e4326fac79ce141495d0d1e08b0ebd",
+          "governed_bytes_sha256": "ea39aa7d18f6d15ab822cbb5b759b85af6e19073b89f5531f0f45173f660ff3a"
+        },
+        {
+          "source_id": "dc-council:code-22-4502-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4502.html",
+          "raw_sha256": "ab1d738f5eda6cac696dcd4860cfe394feba3280aa8bbb7151b6b3e2827d090b",
+          "governed_bytes_sha256": "998b8be80d5624122ea5a79684bdc9e970a2d4619bc27f6cc4a58f8353c2c810"
+        },
+        {
+          "source_id": "dc-council:code-22-4503-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4503.html",
+          "raw_sha256": "01c1808af892b689af91239e58697bd1f20bc606d24cc90990fcb5f8e0187993",
+          "governed_bytes_sha256": "9078268403a0cfee1498286adb0e9f2c0fda0c5e3753dc125afe8f15ba3cd3e4"
+        },
+        {
+          "source_id": "dc-council:code-22-4504-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4504.html",
+          "raw_sha256": "09e8a805cb689a88857aa61927d83613c0d52a89d1688d87c5e406ca6ffabebc",
+          "governed_bytes_sha256": "c9457e663117aa9a7f20cf348ec4d982f9ab108c8360f7098b59f059d31e7f4a"
+        },
+        {
+          "source_id": "dc-council:code-7-2508.01-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/7-2508.01.html",
+          "raw_sha256": "c3cdc3fe43022cca1cc6dfa1da08c78b45a6fb9e4681c465457e59cc40e0fcf6",
+          "governed_bytes_sha256": "4ddc9d9ee55e60d82fcff2a3749d04cdf6d4bb473740b7025e05bfcef7c6cff6"
+        },
+        {
+          "source_id": "olrc:criminal-rule46-2024",
+          "url": "https://uscode.house.gov/download/annualhistoricalarchives/pdf/2024/2024usc18a.pdf",
+          "raw_sha256": "22f9491aa5e2c2251115f6f8e945b0fef8d0eac1f7425aad68f52124a2bdb60a",
+          "governed_bytes_sha256": "2fab2251868088d01c3235d91780a90423b62a30d849349945ec8386f62f578b"
+        },
+        {
+          "source_id": "govinfo:hres879eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm",
+          "raw_sha256": "923d471b2e72f6b4789c9253eeb8fe71a085d71d8ef1c39d9da42cf65c4ea145",
+          "governed_bytes_sha256": "8c0660cfd90e1cb881cfaf7441e05216133fcefc05436a054fd63afb91c115f5"
+        },
+        {
+          "source_id": "govinfo:hr5214rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5214rh/html/BILLS-119hr5214rh.htm",
+          "raw_sha256": "8b77570c52fa0c2053cf65b4bcbb9e4ab73fad9ca480686dcb2d80e62da018ea",
+          "governed_bytes_sha256": "21986b75513add28c56a1a594c5c64cac01f28522935729349e264212157d23c"
+        },
+        {
+          "source_id": "dc-council:law18-239-original180",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/main/us/dc/council/periods/18/laws/18-239.xml",
+          "raw_sha256": "d1031f8cb63c16891d5a4afcd4d8a49c44ef3f3b1948716befb41ac6c0b5b6ae",
+          "governed_bytes_sha256": "204ef03cd0465facf57ee76063bcec4d3721c94df0044a304ba2a0ac190fc94f"
+        },
+        {
+          "source_id": "dc-council:code22-1835-20251113-180",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-1835.html",
+          "raw_sha256": "98222153074b3f86b22da85bab093fe00e0f02b852ba886c0eb57a3cfce5c3d3",
+          "governed_bytes_sha256": "d9e7254019d691f0d8a594bb13d82ab24576a09e0385ba59c209ed2aa2d9d9fd"
+        },
+        {
+          "source_id": "dc-council:code22-1837-20251113-180",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-1837.html",
+          "raw_sha256": "acb37edfb8e335003c78e68af8c7dd0353df811b24db9cfeb73073739ffe90e0",
+          "governed_bytes_sha256": "138dd2540e21e618c104785e8f10e370eab43224a280f5f3dd2745335eedc48c"
+        },
+        {
+          "source_id": "immigration:roll298-operative180",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-19/pdf/CREC-2025-11-19-house.pdf",
+          "raw_sha256": "9f1813a37b55bf65f5f80045f328f88544c2c1cdda103ce4a541cd0c9b308746",
+          "governed_bytes_sha256": "1d24ff9b832ba55e009357e6bc0b458b24aae3f51d6d85e31c09883c53b522c8"
+        },
+        {
+          "source_id": "immigration:roll298-recorded180",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-19/pdf/CREC-2025-11-19-house.pdf",
+          "raw_sha256": "9f1813a37b55bf65f5f80045f328f88544c2c1cdda103ce4a541cd0c9b308746",
+          "governed_bytes_sha256": "917eb838961d932d52c166e0f26e5ba1c42a92eb6edc22d79fd5dc41863df8de"
+        }
+      ],
+      "finding": "Owner completeness/domain candidate only; independent shared-core/domain/projection review pending.",
+      "corrected_authoring_action_sha256": "ac43e205a065e2a7e543ed00b04fc98b36527341d878c9e50f496e1182e0eb5a",
+      "corrected_review_record_sha256": "f294433d3c210725bc60a819b28b81be3e4f2cf163d66b971ed70d3a052878b8",
       "independent_review_pending": true,
       "not_counted_in_independent_severity_assessments": true
     }
@@ -22251,18 +22416,19 @@
   ],
   "action_assessment_counts": {
     "No Defect": 211,
-    "Minor": 14,
+    "Minor": 15,
     "Major": 13,
     "Critical": 1
   },
   "distinct_finding_counts": {
     "Critical": 1,
     "Major": 6,
-    "Minor": 12
+    "Minor": 13
   },
   "unaudited_current_substantive_action_ids": [
     "house:119:2:280",
-    "house:119:1:299"
+    "house:119:1:299",
+    "house:119:1:298"
   ],
   "required_noncounting_sample": {
     "exclusions": 12,
@@ -29115,10 +29281,56 @@
     },
     "shared_core_identical_across_domains": true,
     "Health_membership_unchanged": true,
+    "independent_review_pending": false,
+    "new_head_CI_pending": false,
+    "publication_authorized": false,
+    "validation_path": "docs\\review_packets\\immigration_delivery_checkpoint201_validation.json",
+    "validation_sha256": "762d6841d1cf909f46bbb76411ded34491cb3f42028659b3bad1ea31f4ba49ba",
+    "CI_path": "docs/review_packets/immigration_delivery_checkpoint201_ci.json",
+    "CI_sha256": "8d329ea7688a77f4e22f86a699d2cab7561ff2126daecfc82de448637ddbb184",
+    "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint201_ci_base_qualification.json",
+    "CI_base_qualification_sha256": "57097cbb779b01a7c20848c8870680ca8a0da63e04754e8fb00782d7687c649e",
+    "independent201_review_received": true,
+    "independent201_review_path": "docs/review_packets/immigration_bounded_review_checkpoint201_received202.json",
+    "independent201_review_sha256": "3a57d2a029b7c041f3fa48c137c93d70ff6418f16d6113bb2d27a40ab136b79c",
+    "current_core_superseded_by_trigger_correction_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5107_emergency_aid_trigger_correction_checkpoint202.json",
+    "current_core_superseded_by_trigger_correction_sha256": "7b3dd8874cff84a9443eb66f1c42034873dc74d171972e0ff5977bb7523c21d8",
+    "reviewed_domain_and_directions_supported": true,
+    "whole_package_acceptance": false
+  },
+  "hr5214_qualified_shared_core_augmentation_checkpoint202": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5214_qualified_shared_core_augmentation_checkpoint202.json",
+    "receipt_sha256": "e061b84eb056e6cd27bac452b7662de404a30b2edad51ae655b4342c0e94db9c",
+    "completed": 1,
+    "counts": {
+      "reviewed": 617,
+      "pending": 59,
+      "ordinary_unscreened": 29,
+      "researched_holds": 30,
+      "meanings": 50,
+      "propositions": 86,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "shared_core_identical_across_domains": true,
+    "Health_membership_unchanged": true,
     "independent_review_pending": true,
     "new_head_CI_pending": true,
     "publication_authorized": false,
-    "validation_path": "docs\\review_packets\\immigration_delivery_checkpoint201_validation.json",
-    "validation_sha256": "762d6841d1cf909f46bbb76411ded34491cb3f42028659b3bad1ea31f4ba49ba"
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint202_validation.json",
+    "validation_sha256": "e595db774032b55867635bb8bc2d20bdcfcb355b646a7fb6ca69a5f6dad687d1"
+  },
+  "hr5107_emergency_aid_trigger_correction_checkpoint202": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5107_emergency_aid_trigger_correction_checkpoint202.json",
+    "receipt_sha256": "7b3dd8874cff84a9443eb66f1c42034873dc74d171972e0ff5977bb7523c21d8",
+    "independent_review_pending": true,
+    "new_head_CI_pending": true,
+    "publication_authorized": false,
+    "independent201_partial_finding_path": "docs/review_packets/immigration_bounded_review_checkpoint201_partial_received202.json",
+    "independent201_partial_finding_sha256": "9da239cad92f4acc94b2dbbfdd6b8e8c1454c9726c0cd103e4b7068dd7099a8f",
+    "independent201_review_path": "docs/review_packets/immigration_bounded_review_checkpoint201_received202.json",
+    "independent201_review_sha256": "3a57d2a029b7c041f3fa48c137c93d70ff6418f16d6113bb2d27a40ab136b79c",
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint202_validation.json",
+    "validation_sha256": "e595db774032b55867635bb8bc2d20bdcfcb355b646a7fb6ca69a5f6dad687d1"
   }
 }

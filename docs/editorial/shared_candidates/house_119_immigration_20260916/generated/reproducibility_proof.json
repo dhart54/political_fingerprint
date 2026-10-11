@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "c826a5b7db5d1f251a16a11f2ac4fca56766bfe2353897ede223ab631ec6b6b0"
   },
-  "input_sha256": "0adc726bc94485fee158cef53e7b00e596b59b4bef982ed1cd910ee9dafeb0c1",
+  "input_sha256": "bd27b6b6a19ea381fcea82a90c151303fa714edce1c065d98410eb846380d167",
   "source_capture_sha256": "38aa4fd5a3f1feca3994f1c11d50e1dfa3e08f6725fe300e42572b6debb16d40",
-  "core_sha256": "436fe883f0eeada6b65173984ecd251b433f5e708217492b2f44094fd0b0c00f",
-  "compiled_sha256": "c3c99c71d4b14819d83e5b971d07a6c1ed9a6d89c773c44646c2fab4215f7152",
-  "readable_sha256": "f81d5a996f5cbec55eb03f34807b54c6856a7e8c5f491d6427e283d182219b89",
+  "core_sha256": "ab4a8a27842c0af78a02752d7124657ccb203076d2277821f3a0d472e115351c",
+  "compiled_sha256": "ce35f6d524877ec338fda01736ad2fa373dff773e50367435ff0ce9870613f69",
+  "readable_sha256": "c84f6cf46bd9072beadc05d0bc9ba56584ab8f21ccb1caf47b0caea9a08769e6",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -618,8 +618,28 @@
       ]
     },
     {
+      "action_id": "house:119:1:298",
+      "shared_sha256": "ae23121493899dddda9c6752ad5c8b713546315929c7658acd10d9db569ad91f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options",
+          "source_id": "clerk:119:1:298"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options",
+          "source_id": "clerk:119:1:298"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:299",
-      "shared_sha256": "43b3bdcf85ede8213b5803b4ef509fc7ba189a885abef9bb0546f83b3f07f77d",
+      "shared_sha256": "a6c790acdadc2682a6ef5c7eee4c6608bd1be95d5881c642efadd22b0d2dd0b0",
       "choices": [
         {
           "member_id": "F000477",

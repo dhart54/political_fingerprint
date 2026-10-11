@@ -18,6 +18,67 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr5214_document_offense_chain_reuses_the_whole_shared_choice(self):
+        health = DATA.parent / 'house_119_health_20260916'
+        provider = json.loads((health / 'generated/shared_action_core.json').read_text(encoding='utf-8'))
+        aid = 'house:119:1:298'
+        shared = next(a for a in provider['actions'] if a['action_id'] == aid)
+        reused = next(a for a in self.products[0]['actions'] if a['action_id'] == aid)
+        self.assertEqual(shared, reused)
+        text = reused['candidate_exact_action_meaning']
+        for phrase in ['23-1331(3)(I)', 'knowingly to destroy, conceal, remove, confiscate, or possess',
+                       'actual or purported', 'passport or other immigration document',
+                       'prevent or restrict, or attempt to prevent or restrict', 'without lawful authority',
+                       'in order to maintain', 'five years', 'later 22-3571.01 fine reference',
+                       'do not create a new document offense', 'immigration-status detention or removal']:
+            self.assertIn(phrase, text)
+        source = next(s['text'] for s in self.values[1]['sources']
+                      if s['source_id'] == 'dc-council:law18-239-original180')
+        document = source[source.index('Sec. 105.'):source.index('Sec. 106.')]
+        self.assertIn('including a passport or other immigration document', document)
+        self.assertIn('without lawful authority', document)
+        self.assertIn('in order to maintain the labor or services', document)
+        self.assertIn(document, [c['passage'] for c in shared['claim_source_map']])
+        for domain in [self.products[2], json.loads((health / 'generated/member_projections.json').read_text(encoding='utf-8'))]:
+            for member in domain:
+                row = next(a for a in member['actions'] if a['action_id'] == aid)
+                self.assertEqual(row['action_core_sha256'], shared['action_core_sha256'])
+                self.assertEqual(row['official_status'], 'Nay' if member['member_id'] == 'F000477' else 'Yea')
+        mirror = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+        self.assertIn(mirror['source_render_constraints'][0], self.products[1]['source_render_constraints'])
+        self.assertEqual(mirror['source_render_constraints'][0]['semantic_effect'], 'bounds_cross_domain_attribution')
+
+    def test_hr5107_emergency_aid_preserves_observer_actor_trigger_and_immediacy(self):
+        aid = 'house:119:1:299'
+        health = DATA.parent / 'house_119_health_20260916'
+        canonical = next(a for a in json.loads((health / 'authoring.json').read_text(encoding='utf-8'))['actions']
+                         if a['action_id'] == aid)
+        source = next(s['text'] for s in self.values[1]['sources'] if s['source_id'] == 'dc-council:law24-345')
+        trigger = source[4155:4610]
+        self.assertIn("observes another law enforcement officer's use of a prohibited technique", trigger)
+        self.assertIn('to fail to immediately', trigger)
+        def assert_trigger(text):
+            self.assertIn('when a law enforcement officer observes another law enforcement officer use a prohibited technique', text)
+            self.assertIn('immediately render or cause to be rendered first aid or request emergency medical services', text)
+            self.assertIn('for the person on whom the technique was used', text)
+            self.assertNotIn('after excessive force', text)
+        mirror = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+        shared = next(a for a in self.products[0]['actions'] if a['action_id'] == aid)
+        for text in [canonical['meaning'], mirror['meaning'], shared['candidate_exact_action_meaning']]:
+            assert_trigger(text)
+        for old, new in [('observes another law enforcement officer', 'uses force'),
+                         ('prohibited technique', 'excessive force'),
+                         ('immediately render', 'render')]:
+            with self.subTest(omission=old), self.assertRaises(AssertionError):
+                assert_trigger(canonical['meaning'].replace(old, new))
+        receipt = json.loads((DATA / 'hr5107_emergency_aid_trigger_correction_checkpoint202.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(receipt['literal_passage'], trigger)
+        self.assertIn('after excessive force', receipt['before_canonical_input']['meaning'])
+        self.assertEqual(receipt['corrected_canonical_input'], canonical)
+        self.assertEqual(receipt['corrected_Immigration_mirror'], mirror)
+        self.assertEqual(receipt['corrected_core_sha256'], shared['action_core_sha256'])
+
     def test_hr5107_immigration_reuses_one_corrected_cross_domain_core(self):
         from scripts.prepare_shared_domain_candidate import prepare as prepare_shared
         health = DATA.parent / 'house_119_health_20260916'
