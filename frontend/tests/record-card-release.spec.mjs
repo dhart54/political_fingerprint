@@ -10,6 +10,7 @@ const education = candidate.entries.find((e) => e.issue_id === "EDUCATION_WORKFO
 const profiles = [
   { id: "leg_valerie_p_foushee", bioguide_id: "F000477", name_display: "Valerie P. Foushee", chamber: "house", state: "NC", district: "04", party: "D" },
   { id: "leg_thomas_massie", bioguide_id: "M001184", name_display: "Thomas Massie", chamber: "house", state: "KY", district: "04", party: "R" },
+  { id: "leg_angela_d_alsobrooks", bioguide_id: "A000381", name_display: "Angela D. Alsobrooks", chamber: "senate", state: "MD", party: "D" },
 ];
 
 // Test-only responses at the real read-interface URLs. The ordinary app must
@@ -175,6 +176,69 @@ for (const surface of ["ordinary", "review"]) test.describe(surface, () => {
       await expect(page.locator("[data-canonical-action-id]")).toHaveCount(entry.action_ids.length);
       expect(await page.locator("[data-canonical-action-id]").evaluateAll((els) => els.map((el) => el.dataset.canonicalActionId).sort())).toEqual([...entry.action_ids].sort());
       expect(new URL(page.url()).pathname).toBe(routePath);
+    }
+  });
+
+  for (const scope of ["all", "119"]) test(`header Vote record opens exact finding receipts in ${scope} scope`, async ({ page }) => {
+    test.setTimeout(60_000);
+    for (const [index, entry] of candidate.entries.entries()) {
+      await page.goto(`${routePath}?representative=leg_valerie_p_foushee&scope=${scope}`);
+      await page.locator(`#${entry.id}`).click();
+      await expect(page.getByTestId("card-finding-detail")).toBeVisible();
+      await expect(page.locator("#vote-record")).toHaveCount(0);
+      const before = new URL(page.url());
+      const headerLink = page.getByRole("navigation", { name: "Selected issue sections" }).getByRole("link", { name: "Vote record", exact: true });
+      const findingLink = page.getByRole("link", { name: `See ${entry.action_ids.length} House votes: ${entry.headline}` });
+      await expect(headerLink).toHaveAttribute("href", await findingLink.getAttribute("href"));
+      if (index % 2) { await headerLink.focus(); await page.keyboard.press("Enter"); }
+      else await headerLink.click();
+      const after = new URL(page.url());
+      for (const key of ["representative", "scope", "issue", "finding", "source"]) expect(after.searchParams.get(key)).toBe(before.searchParams.get(key));
+      expect(after.pathname).toBe(routePath);
+      expect(after.searchParams.get("view")).toBe("receipts");
+      expect(after.hash).toBe("#vote-record");
+      await expect(page.locator("[data-canonical-action-id]")).toHaveCount(entry.action_ids.length);
+      expect(await page.locator("[data-canonical-action-id]").evaluateAll((els) => els.map((el) => el.dataset.canonicalActionId).sort())).toEqual([...entry.action_ids].sort());
+      await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+      if (entry.finding_id === "wording:synthesis:war-powers") {
+        await page.reload();
+        await expect(page.locator("[data-canonical-action-id]")).toHaveCount(entry.action_ids.length);
+        await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+        await page.goBack();
+        await expect(page).not.toHaveURL(/view=receipts/);
+        await expect(page.locator("#vote-record")).toHaveCount(0);
+        await expect(page.locator("#finding-detail-heading")).toBeFocused();
+        await page.goForward();
+        await expect(page.locator("[data-canonical-action-id]")).toHaveCount(entry.action_ids.length);
+        await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+      }
+    }
+  });
+
+  test("header anchors preserve full reviewed and receipts-only issue routes", async ({ page }) => {
+    for (const [member, scope, issue] of [
+      ["leg_valerie_p_foushee", "119", "ENVIRONMENT_ENERGY"],
+      ["leg_valerie_p_foushee", "118", "JUSTICE_PUBLIC_SAFETY"],
+      ["leg_thomas_massie", "119", "ECONOMY_TAXES"],
+      ...(surface === "ordinary" ? [["leg_angela_d_alsobrooks", "119", "EDUCATION_WORKFORCE"]] : []),
+    ]) {
+      await page.goto(`${routePath}?representative=${member}&scope=${scope}&issue=${issue}`);
+      const ledger = page.locator("#vote-record");
+      await expect(ledger).toContainText("recorded");
+      const headerLink = page.getByRole("navigation", { name: "Selected issue sections" }).getByRole("link", { name: "Vote record", exact: true });
+      await expect(headerLink).toHaveAttribute("href", "#vote-record");
+      await headerLink.focus(); await page.keyboard.press("Enter");
+      await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+      const url = new URL(page.url());
+      expect(url.searchParams.get("representative")).toBe(member);
+      expect(url.searchParams.get("scope")).toBe(scope);
+      expect(url.searchParams.get("issue")).toBe(issue);
+      expect(url.searchParams.has("finding")).toBe(false);
+      expect(url.searchParams.has("view")).toBe(false);
+      if (member === "leg_angela_d_alsobrooks") await expect(page.locator("[data-canonical-action-id]")).toHaveCount(1);
+      await page.reload();
+      await expect(ledger).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
     }
   });
 
