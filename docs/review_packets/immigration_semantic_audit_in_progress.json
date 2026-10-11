@@ -8730,6 +8730,134 @@
       "corrected_review_record_sha256": "61b9432af561a8f5558000fbc81e2373b1b988f0817e066739fce5cdbf7072df",
       "independent_review_pending": true,
       "not_counted_in_independent_severity_assessments": true
+    },
+    {
+      "action_id": "house:119:2:221",
+      "audit_state": "source_qualified_identity_preserving_legacy_candidate_pending_independent_review",
+      "severity": null,
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "221",
+        "legis-num": "H R 9238",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Failed",
+        "action-date": "11-Jun-2026",
+        "action-time": "10:34 AM",
+        "vote-desc": "To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Whole H.R.9238 suspension-passage proposal changes both qualified TitleVII repeal references from June12 to July2,2026, effective earlier enactment or June11. The retained702(f)(6)/RISAA24 travel-vetting procedure supplies the existing direct vetting/entry-function domain boundary: Attorney General consultingDNI ensures procedures enable vetting all non-US persons processed for travelUS with non-US-person terms. No universal individual query duty, admission/removal/status result or unauthorized-immigrant equivalence. Dated definitions, acquisition/query distinction, separate technical/conforming/repeal branches, continuing orders/directives, litigation/information/reporting and original2008transition remain qualified. Full frozen CDH XML and current captured CDH/own offered body bind the exact bill/version and both literal operators; old/current Clerk metadata, party totals and both Nays bind. June10 question/voice2/3ayes/Raskin demand/order/postponement precede June11 resumption/electronic198-218/15 rejection; no enactment inferred. One source-qualified unapproved successor retains action/measure/meaning identifiers and accepted meaning prefix/limitations; originalV2core/source seals remain historical and unchanged. Legacy suspension_passage is the same exact motion represented by candidate suspension_and_passage; no new action/stage type or method. New current source identities are explicitly different, with complete frozen/current body comparison rather than false raw-hash equivalence. Whole extension only, no component preference/cross-bill trajectory, actual agency conduct/current-order or individual legal ruling. Named dated baseline is not exhaustive current/intervening-law certification. Both members reuse one core/seal. Candidate only, pending independent shared-source/helper/domain review; no editorial acceptance or publication.",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:221",
+          "url": "https://clerk.house.gov/evs/2026/roll221.xml",
+          "raw_sha256": "96fc4098df1eac778be24a68de21dcece73cfef7d7c13bc8ecd671192bd560f9",
+          "governed_bytes_sha256": "21d62f8ab5152286bcc302a21929fad925a4a877b011ca0b27951345c74d0fdc"
+        },
+        {
+          "source_id": "govinfo:hr9238cdh-qualified182",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9238cdh/html/BILLS-119hr9238cdh.htm",
+          "raw_sha256": "08fb87e430aee94458a4da7edcfb06185a25af68aa17a994a43f5b6bab126d0e",
+          "governed_bytes_sha256": "299529bf9bfc585a6f8c7024487535a75e00235c6f714b9fae437d6036d28142"
+        },
+        {
+          "source_id": "immigration:roll221-operative182",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10-house.pdf",
+          "raw_sha256": "a5b906713d9c217a31068b01b8ced5dbb4dee2c3d32fb4a2c5b94fa1ee96fcd4",
+          "governed_bytes_sha256": "d3a943e4cde1fcab787733468c0cafeae23c23f7710268984e9163f5f2af3053"
+        },
+        {
+          "source_id": "govinfo:pl110261-section403-182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-110publ261/html/PLAW-110publ261.htm",
+          "raw_sha256": "421d1aef919b79bcbf4719ab08b8905d8b68ba1bbf9bdea9090d56f5fad5713c",
+          "governed_bytes_sha256": "2d9b6002b67fd93f2430098c77bcc6fb3fcff8a9f6d829d8ecdd44cc12839136"
+        },
+        {
+          "source_id": "govinfo:pl110261-section404b-182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-110publ261/html/PLAW-110publ261.htm",
+          "raw_sha256": "421d1aef919b79bcbf4719ab08b8905d8b68ba1bbf9bdea9090d56f5fad5713c",
+          "governed_bytes_sha256": "b769dc31caba5867e3fa76e8c07138296e7779e431a495e8677d76e38c47001d"
+        },
+        {
+          "source_id": "govinfo:pl11849-section19-182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm",
+          "raw_sha256": "1f9c965c35c512369ab7338c8acc8395b7ca44fa094db013d2bde2c3df39817e",
+          "governed_bytes_sha256": "859ef51218ecc8a1f61bdd648300c9954a34f9c728c3192b84c5c0dd19146468"
+        },
+        {
+          "source_id": "govinfo:pl11849-section24-182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm",
+          "raw_sha256": "1f9c965c35c512369ab7338c8acc8395b7ca44fa094db013d2bde2c3df39817e",
+          "governed_bytes_sha256": "d5938de41c0a110731486a9c60893c88532834883f70de67584170447c75f1d0"
+        },
+        {
+          "source_id": "govinfo:pl11984-qualified182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ84/html/PLAW-119publ84.htm",
+          "raw_sha256": "3b6cee5138a8dcb34525837d82520d47f4ffd24c8eac3ac6f2d3054f4ec92867",
+          "governed_bytes_sha256": "4bf897f11e12ced202b14ba967486e52da6280de5b96cd9bcada9f8e422d8fff"
+        },
+        {
+          "source_id": "govinfo:pl11987-qualified182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ87/html/PLAW-119publ87.htm",
+          "raw_sha256": "151bdb6285c272b8314e63f7425e5bee26fc23385c532dedaa826e1709f1de8e",
+          "governed_bytes_sha256": "38f13e38bb85c92628c9d9690c3ec204704f31519e537c94a4ee307b273a68dd"
+        },
+        {
+          "source_id": "govinfo:50usc1881-services181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapVI-sec1881.htm",
+          "raw_sha256": "cf56b7b1319f71fe60ce2e003f2aa419f97f759b0727d41716f44794235990df",
+          "governed_bytes_sha256": "3ad3264031dbbab2391340381914f9a914645ab8f9c46286849b36b017fbd805"
+        },
+        {
+          "source_id": "govinfo:50usc1801-operative181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapI-sec1801.htm",
+          "raw_sha256": "6a05ebea3e8e1df21d76aece1f47dacd1e445791874ac17d843adb0a7c7dd96c",
+          "governed_bytes_sha256": "78d8d1566fc6eb2eb529e128eac3f7e310af27e2daeb1a2a404307587dd80830"
+        },
+        {
+          "source_id": "govinfo:50usc1881a-target-query181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapVI-sec1881a.htm",
+          "raw_sha256": "dec42f5a62019ab833c9ffc74a75a6a17183f514adc2e09579027a10cc898c3c",
+          "governed_bytes_sha256": "23be36cb6a203de9bc767f89199b5834aad789d4cea78ecb44a6245165b3a02b"
+        },
+        {
+          "source_id": "immigration:roll221-initial182",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10-house.pdf",
+          "raw_sha256": "a5b906713d9c217a31068b01b8ced5dbb4dee2c3d32fb4a2c5b94fa1ee96fcd4",
+          "governed_bytes_sha256": "ace1591b499db07b3ddfce2a785b11c016358609543d58988548e94cefe18a1e"
+        },
+        {
+          "source_id": "immigration:roll221-recorded182",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-11/pdf/CREC-2026-06-11-house.pdf",
+          "raw_sha256": "4b6ac8a712b7c5582f27f18a9c3fe2c613ef88988ed3744a58636e972f689773",
+          "governed_bytes_sha256": "90a53806082cc4eff06b583c0f6d22d8f941c2cd60c8e63a34a33aa2e17bad75"
+        }
+      ],
+      "authoring_action_sha256": "9330eb57debf921c12333595eb8b1f675852aa34232aaee3d1cf365e7f674f9e",
+      "corrected_authoring_action_sha256": "9330eb57debf921c12333595eb8b1f675852aa34232aaee3d1cf365e7f674f9e",
+      "current_action_core_sha256": "8f9d8efd09c5dbce01043e3c0dc610fb9e1709b1a1c1c5132a4c055a7a6d8a1b",
+      "membership_review_record_sha256": "2a37b7a7ce90e125ff9187fc677b51af4705fa749d6a49e25b5a4a4a57579f02",
+      "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_fisa_source_qualification_checkpoint206.json",
+      "source_qualification_receipt_sha256": "76e2ea631de14b656e319705e84dc85fedad298a533e5e172455bb0926f3caff",
+      "independent_review_pending": true
     }
   ],
   "noncounting_actions": [
@@ -22569,7 +22697,8 @@
   },
   "unaudited_current_substantive_action_ids": [
     "house:119:2:280",
-    "house:119:2:142"
+    "house:119:2:142",
+    "house:119:2:221"
   ],
   "required_noncounting_sample": {
     "exclusions": 12,
@@ -29543,10 +29672,36 @@
     "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/source_review_full_question_correction_checkpoint205.json",
     "receipt_sha256": "1d0bbc0f7bed9c54d110a794490a0ef8cb0f5f9b153204420ec37b6e0726520a",
     "independent_review_pending": true,
-    "new_head_CI_pending": true,
+    "new_head_CI_pending": false,
     "publication_authorized": false,
     "reported204_P2_pending_correction_review": true,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint205_validation.json",
-    "validation_sha256": "1106c82e05bcb7ebb50eb92587709d3c2616f78fea098ef9d5105aad0821bfd8"
+    "validation_sha256": "1106c82e05bcb7ebb50eb92587709d3c2616f78fea098ef9d5105aad0821bfd8",
+    "CI_path": "docs/review_packets/immigration_delivery_checkpoint205_ci.json",
+    "CI_sha256": "94b363e7b4a934b0cc578d5e7fa8fcc26e500796facc5f22d17de7fca232c2fd",
+    "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint205_ci_base_qualification.json",
+    "CI_base_qualification_sha256": "4e76a68cf8a44ca0fef72ed7dcf8b5eba2d21dd282feb71436e382f704073239"
+  },
+  "legacy_fisa_source_qualification_checkpoint206": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_fisa_source_qualification_checkpoint206.json",
+    "receipt_sha256": "76e2ea631de14b656e319705e84dc85fedad298a533e5e172455bb0926f3caff",
+    "counts": {
+      "reviewed": 620,
+      "pending": 56,
+      "ordinary_unscreened": 29,
+      "researched_holds": 27,
+      "meanings": 52,
+      "propositions": 90,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "independent_review_pending": true,
+    "new_head_CI_pending": true,
+    "publication_authorized": false,
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint206_validation.json",
+    "validation_sha256": "d220a08b6f12017c620eb7b1b3f4075bedcc9efbe40f9e18a8e479ff9558e65d",
+    "focused_tests_passed": 355,
+    "semantic_checks_passed": 7,
+    "exact_replays": 14
   }
 }

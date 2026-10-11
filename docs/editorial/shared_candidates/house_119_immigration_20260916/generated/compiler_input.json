@@ -301,6 +301,12 @@
           "status": "Nay"
         },
         {
+          "action_id": "house:119:2:221",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:2:244",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -611,6 +617,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:221",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         },
         {
           "action_id": "house:119:2:244",
@@ -2411,6 +2423,38 @@
         }
       },
       {
+        "action_id": "house:119:2:221",
+        "action_meaning_ref": "action-interpretation-decision-implementation:house:119:2:221:v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The House choice was whether to pass H.R. 9238, extending two Title VII FISA sunset references from June 12, 2026, to July 2, 2026. The extension would take effect on the earlier of enactment or June 11, 2026. This is the whole suspension-and-passage motion offered on June 10 and resumed on June 11, not a separate component choice. Both edits concern section 403(b)(1) and the chapeau of 403(b)(2), with retained exceptions and technical/conforming branches. The named pre-vote PL11987 supplies the June 12 baseline; PL11984 and RISAA section 19 preserve the amended repeal-date and continuing-order/directive, litigation, information-use and reporting distinctions under section 404(b). The original 404(b)(5) ninety-day transition is tied to 2008 enactment, not a new 2026 deadline. The extension retains the express 702(f)(6)/RISAA section 24 procedure: for one or more agencies under (f)(1)(A), the Attorney General, consulting the DNI, shall ensure that procedures enable vetting all non-US persons being processed for travel to the United States using terms that do not qualify as US-person query terms. This is procedural enablement, not a mandate to conduct every individual query or an admission, denial, status or removal result. Section 1881(a) imports 1801 definitions except as specifically provided; 1801(i) includes citizens, lawful permanent residents and specified associations/corporations with foreign-power exclusions. Non-US-person is not equivalent to unauthorized immigrant. Querying acquired information differs from acquisition targeting under 702(b). The June 10 initial question, voice two-thirds ayes, Raskin demand, order and postponement precede the June 11 resumed electronic 198 Yea/218 Nay/15 Not Voting rejected motion. The failed House choice establishes no enactment, actual agency query, current orders/certifications or individual legal application. The named dated statutory comparison is not an exhaustive certification of intervening or current law.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr9238:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:221",
+          "immigration:roll221-initial182",
+          "immigration:roll221-recorded182",
+          "govinfo:hr9238cdh-qualified182",
+          "immigration:roll221-operative182",
+          "govinfo:pl110261-section403-182",
+          "govinfo:pl110261-section404b-182",
+          "govinfo:pl11849-section19-182",
+          "govinfo:pl11849-section24-182",
+          "govinfo:pl11984-qualified182",
+          "govinfo:pl11987-qualified182",
+          "govinfo:50usc1881-services181",
+          "govinfo:50usc1801-operative181",
+          "govinfo:50usc1881a-target-query181"
+        ],
+        "structural_metadata": {
+          "stage_order": 20221
+        }
+      },
+      {
         "action_id": "house:119:2:244",
         "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:244:candidate-v1",
         "eligibility": {
@@ -2841,6 +2885,14 @@
         "policy_family_id": null
       },
       {
+        "episode_id": "episode:hr9238:119",
+        "action_ids": [
+          "house:119:2:221"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
         "episode_id": "episode:hr8595:119",
         "action_ids": [
           "house:119:2:244"
@@ -2925,6 +2977,14 @@
         "constraint_id": "source:house119-session2-roll142-fisa-immigration-attribution",
         "semantic_effect": "bounds_cross_domain_attribution",
         "detail": "Whole adopted FISA-substitute choice; bounded Immigration attribution is the retained702(f)(6) non-US-person travel-vetting procedural enablement under the qualified TitleVII extension. No separate vetting/CBDC choice, per-person query duty, admission/denial/removal result or citizenship-only/unauthorized-immigrant equivalence. Conditional waiver, threat exception and dated transition limits remain."
+      },
+      {
+        "action_ids": [
+          "house:119:2:221"
+        ],
+        "constraint_id": "source:house119-session2-roll221-qualified-fisa-immigration-attribution",
+        "semantic_effect": "bounds_cross_domain_attribution",
+        "detail": "Whole two-reference suspension-passage choice, with earlier-enactment/June11 effectiveness and retained transition limits. Immigration attribution is the retained702(f)(6) travel-vetting procedural enablement, not a component vote, individual query duty, admission/removal/status result or unauthorized-immigrant equivalence. Failed motion is not enactment; no actual agency conduct or current orders certified."
       }
     ],
     "trait_relationships": []

@@ -244,6 +244,131 @@ def _prepare_source_review_reuse(authoring, capture, proposed, canonical, member
     return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]
 
 
+def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_ids):
+    """Qualify a frozen CDH FISA extension without rewriting its accepted core."""
+    import hashlib
+    import xml.etree.ElementTree as ET
+    witness = proposed.get('legacy_core_qualification')
+    if (not isinstance(witness, dict)
+            or set(witness) != {'artifact_ref', 'artifact_id', 'action_core_sha256', 'source_bindings'}
+            or canonical['meaning_contract_version'] != 'source_qualified_legacy_fisa_extension_v1'
+            or canonical['mechanism_availability'] != 'candidate_source_grounded_pending_external_semantic_review'):
+        raise ValueError('invalid legacy FISA qualification contract')
+    target = (ROOT / witness['artifact_ref']).resolve()
+    if (target.name != 'shared_action_core.json'
+            or not target.is_relative_to((ROOT / 'docs/editorial/shared_corpora').resolve())):
+        raise ValueError('legacy qualification must reference a frozen shared corpus')
+    provider = json.loads(target.read_text(encoding='utf-8'))
+    validate_shared_action_core(ROOT, provider)
+    original = next((a for a in provider['actions'] if a['action_id'] == proposed['action_id']), None)
+    if (provider['authoritative_for_new_editorial_work'] is not True
+            or provider['artifact_id'] != witness['artifact_id'] or original is None
+            or original['action_core_sha256'] != witness['action_core_sha256']
+            or canonical['action_meaning_ref'] != original['action_meaning_ref']
+            or canonical['exact_action_identity'] != original['exact_action_identity']
+            or not canonical['candidate_exact_action_meaning'].startswith(original['accepted_exact_action_meaning'])
+            or not set(original['accepted_shared_limitations']) <= set(canonical['candidate_shared_limitations'])
+            or original['legislative_stage'] != 'suspension_passage'
+            or proposed['stage'] != 'suspension_and_passage' or proposed.get('bill_type') != 'hr'):
+        raise ValueError('legacy qualification changes the frozen identity or accepted basis')
+    sources = {s['source_id']: s for s in capture['sources']}
+    clerk_id = 'clerk:' + proposed['action_id'].removeprefix('house:')
+    bindings = witness['source_bindings']
+    if (not isinstance(bindings, list) or len(bindings) != 2
+            or any(not isinstance(b, dict) or set(b) != {'source_id', 'raw_ref'} for b in bindings)
+            or {b['source_id'] for b in bindings} != {s['source_id'] for s in original['governed_source_identities']}):
+        raise ValueError('legacy qualification lacks the complete frozen source set')
+    primary = sources[proposed['source_id']]
+    for binding in bindings:
+        old_source = next(s for s in original['governed_source_identities'] if s['source_id'] == binding['source_id'])
+        path = (ROOT / binding['raw_ref']).resolve()
+        if (path.suffix != '.xml'
+                or not path.is_relative_to((ROOT / 'docs/editorial/full_record_reviews/source_readiness/evidence').resolve())):
+            raise ValueError('legacy witness must reference frozen evidence XML')
+        raw = path.read_bytes()
+        if (hashlib.sha256(raw).hexdigest() != old_source['raw_sha256']
+                or old_source['governed_bytes_sha256'] != old_source['raw_sha256']):
+            raise ValueError('legacy frozen witness bytes differ')
+        root = ET.fromstring(raw)
+        if old_source['source_id'] == clerk_id:
+            meta = root.find('vote-metadata')
+            if (root.tag != 'rollcall-vote' or meta is None
+                    or {e.tag: e.text for e in meta if e.tag != 'vote-totals'} != sources[clerk_id]['metadata']):
+                raise ValueError('legacy Clerk source version changes exact action metadata')
+            totals = [{e.tag: e.text for e in p} for p in meta.findall('vote-totals/totals-by-party')]
+            if totals != sources[clerk_id]['party_totals']:
+                raise ValueError('legacy Clerk party totals differ from capture')
+            observed = {v.find('legislator').attrib['name-id']: v.findtext('vote')
+                        for v in root.findall('vote-data/recorded-vote')}
+            for mid in member_ids:
+                if observed.get(mid) != sources[clerk_id]['member_records'][mid]['official_label']:
+                    raise ValueError('legacy Clerk member observation differs')
+        else:
+            title = root.findtext('metadata/dublinCore/{http://purl.org/dc/elements/1.1/}title', '')
+            expected = f"{authoring['congress']} HR {proposed['bill_number']} :"
+            if (root.tag != 'bill' or root.attrib.get('bill-stage') != 'Committee-Discharged-House'
+                    or not title.startswith(expected)
+                    or root.findtext('form/congress') != f"{authoring['congress']}th CONGRESS"
+                    or root.findtext('form/legis-num') != f"H. R. {proposed['bill_number']}"
+                    or f"[H.R. {proposed['bill_number']} Committee Discharged House (CDH)]" not in primary['text']
+                    or not primary['text'].endswith(' <all>')):
+                raise ValueError('legacy bill source identity or CDH version differs')
+            body = root.find('legis-body')
+            if body is None or len(body.findall('section')) != 1:
+                raise ValueError('legacy extension lacks its complete one-section body')
+            paragraphs = body.findall('section/subsection/paragraph')
+            if ([p.findtext('enum') for p in paragraphs] != ['(1)', '(2)']
+                    or any(len(p.findall('text/quote')) != 2 for p in paragraphs)):
+                raise ValueError('legacy extension lacks the two exact repeal operators')
+            pairs = [[q.text for q in p.findall('text/quote')] for p in paragraphs]
+            for number, pair in enumerate(pairs, 1):
+                target_note = ('(50 U.S.C. 1881 note)' if number == 1
+                               else '(18 U.S.C. 2511 note) in the matter preceding subparagraph (A)')
+                operator = (f"in paragraph ({number}) {target_note}, by striking ``{pair[0]}'' "
+                            f"and inserting ``{pair[1]}''")
+                if operator not in primary['text']:
+                    raise ValueError('captured extension changes a literal repeal operator')
+            effective = next((p for p in body.findall('section/subsection')
+                              if p.findtext('enum') == '(b)'), None)
+            if effective is None or effective.find('text') is None:
+                raise ValueError('legacy extension lacks the effective-date clause')
+            effective_text = ' '.join(effective.find('text').itertext()).strip()
+            if effective_text not in primary['text']:
+                raise ValueError('captured extension changes literal effective-date clause')
+            normalized = lambda text: re.sub(r'[^a-z0-9]', '', text.casefold())
+            text = primary['text'][primary['text'].index('SECTION 1.'):-len(' <all>')].removeprefix('SECTION ')
+            if normalized(' '.join(body.itertext())) != normalized(text):
+                raise ValueError('legacy and captured complete operative bodies differ')
+    outcome_ids = [clerk_id, *proposed.get('additional_action_outcome_source_ids', [])]
+    if (len(outcome_ids) != len(set(outcome_ids))
+            or [s['source_id'] for s in canonical['action_outcome_source_identities']] != outcome_ids):
+        raise ValueError('legacy candidate outcome witness roles differ')
+    for s in canonical['governed_source_identities']:
+        if s['source_id'] not in sources or identity(sources[s['source_id']]) != s:
+            raise ValueError('legacy candidate source version differs from capture')
+    subset = copy.deepcopy(authoring)
+    subset['actions'] = [copy.deepcopy(proposed)]
+    subset['blocked_episode_ids'] = []
+    prepared = common.prepare(subset, capture, member_ids)
+    generated = prepared[0]['actions'][0]
+    for field in ['action_id', 'chamber', 'congress', 'session', 'roll', 'legislative_stage',
+                  'action_date', 'exact_question', 'chamber_outcome', 'enactment_status',
+                  'candidate_exact_action_meaning', 'candidate_short_description',
+                  'candidate_compact_description', 'candidate_shared_limitations',
+                  'compact_source_refs', 'choice_meanings', 'claim_source_map',
+                  'operative_meaning_source_identities', 'source_contract_version']:
+        if canonical[field] != generated[field]:
+            raise ValueError('legacy candidate differs from exact Clerk-bound input: ' + field)
+    for field in ['action_id', 'chamber', 'congress', 'session', 'roll', 'action_date', 'chamber_outcome', 'enactment_status']:
+        if canonical[field] != original[field]:
+            raise ValueError('legacy candidate changes frozen exact-action metadata: ' + field)
+    if (canonical['exact_action_identity'] != f"{authoring['congress']}:hr:{proposed['bill_number']}"
+            or canonical['mechanism'] not in [canonical['candidate_exact_action_meaning'], canonical['candidate_short_description']]):
+        raise ValueError('legacy candidate exact measure or mechanism differs')
+    return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]
+
+
+
 def _prepare_reused_action(authoring, capture, proposed, member_ids):
     """Bind an ordinary candidate to an existing, sealed V1 core identity."""
     ref = proposed['shared_core_reuse']
@@ -273,6 +398,8 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
         raise ValueError('stale shared-core reuse reference')
     if target.name == 'shared_action_core_proposal.json':
         validate_shared_action_core(ROOT, provider)
+        if proposed.get('legacy_core_qualification'):
+            return _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_ids)
         return _prepare_source_review_reuse(authoring, capture, proposed, canonical, member_ids)
     if proposed.get('additional_action_outcome_source_ids'):
         raise ValueError('additional outcome witnesses require a source-review candidate')

@@ -697,6 +697,20 @@
       "mapping_sha256": "84ceed2f876089902416e78177406ee6972bb83e8325314e4c1c3938f241ac9b"
     },
     {
+      "action_id": "house:119:2:221",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr9238:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20221
+      },
+      "mapping_sha256": "86cd3385de5d39b11634e1b386116397d3ea7964b13cecedb9c357367f6f9ca5"
+    },
+    {
       "action_id": "house:119:2:244",
       "eligibility": {
         "decision": "proposed",
@@ -1084,6 +1098,14 @@
       "policy_family_id": null
     },
     {
+      "episode_id": "episode:hr9238:119",
+      "action_ids": [
+        "house:119:2:221"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
       "episode_id": "episode:hr8595:119",
       "action_ids": [
         "house:119:2:244"
@@ -1169,7 +1191,15 @@
       "constraint_id": "source:house119-session2-roll142-fisa-immigration-attribution",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Whole adopted FISA-substitute choice; bounded Immigration attribution is the retained702(f)(6) non-US-person travel-vetting procedural enablement under the qualified TitleVII extension. No separate vetting/CBDC choice, per-person query duty, admission/denial/removal result or citizenship-only/unauthorized-immigrant equivalence. Conditional waiver, threat exception and dated transition limits remain."
+    },
+    {
+      "action_ids": [
+        "house:119:2:221"
+      ],
+      "constraint_id": "source:house119-session2-roll221-qualified-fisa-immigration-attribution",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Whole two-reference suspension-passage choice, with earlier-enactment/June11 effectiveness and retained transition limits. Immigration attribution is the retained702(f)(6) travel-vetting procedural enablement, not a component vote, individual query duty, admission/removal/status result or unauthorized-immigrant equivalence. Failed motion is not enactment; no actual agency conduct or current orders certified."
     }
   ],
-  "mapping_sha256": "cf63560e772ca230b91ad8a09b8239c88b2adbfc978e9ce19275e61de34dbf51"
+  "mapping_sha256": "4ef3d6b111694e429b42ded88237bf17074c17f280038f71c742a6eaf2e860c3"
 }

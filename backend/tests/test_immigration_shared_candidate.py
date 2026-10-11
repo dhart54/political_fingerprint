@@ -18,6 +18,137 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_legacy_fisa_qualification_preserves_identity_and_shares_one_current_core(self):
+        original = json.loads((DATA.parents[1] / 'shared_corpora/house_119_v2/shared_action_core.json').read_text(encoding='utf-8'))
+        old = next(a for a in original['actions'] if a['action_id'] == 'house:119:2:221')
+        current = next(a for a in self.products[0]['actions'] if a['action_id'] == old['action_id'])
+        self.assertEqual(old['action_core_sha256'], 'a751b1593c5dbbeca206cf27f4c1fba8918829bb219adf97e3a059bc6aa74a42')
+        self.assertEqual(current['action_meaning_ref'], old['action_meaning_ref'])
+        self.assertEqual(current['exact_action_identity'], old['exact_action_identity'])
+        self.assertTrue(current['candidate_exact_action_meaning'].startswith(old['accepted_exact_action_meaning']))
+        self.assertTrue(set(old['accepted_shared_limitations']) <= set(current['candidate_shared_limitations']))
+        self.assertNotEqual(current['action_core_sha256'], old['action_core_sha256'])
+        self.assertNotEqual(current['governed_source_identity_sha256'], old['governed_source_identity_sha256'])
+        self.assertEqual(current['exact_question'], 'On Motion to Suspend the Rules and Pass')
+        self.assertEqual(current['chamber_outcome'], 'Failed')
+        self.assertEqual(current['legislative_stage'], 'suspension_and_passage')
+        for member in self.products[2]:
+            row = next(r for r in member['actions'] if r['action_id'] == old['action_id'])
+            self.assertEqual(row['official_status'], 'Nay')
+            self.assertEqual(row['action_core_sha256'], current['action_core_sha256'])
+            self.assertEqual(row['member_action_source_identities'], current['action_outcome_source_identities'])
+            self.assertEqual(len(row['member_action_source_identities']), 3)
+        self.assertFalse(self.products[0]['authoritative_for_new_editorial_work'])
+
+    def test_legacy_fisa_qualification_rejects_changed_original_and_role_bindings(self):
+        for case in ['old seal', 'old artifact', 'missing frozen source', 'wrong raw XML',
+                     'missing own outcome', 'wrong stage']:
+            with self.subTest(case=case):
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == 'house:119:2:221')
+                binding = row['legacy_core_qualification']
+                if case == 'old seal':
+                    binding['action_core_sha256'] = '0' * 64
+                elif case == 'old artifact':
+                    binding['artifact_id'] = 'shared-action-core:house:119:v1'
+                elif case == 'missing frozen source':
+                    binding['source_bindings'].pop()
+                elif case == 'wrong raw XML':
+                    binding['source_bindings'][1]['raw_ref'] = binding['source_bindings'][0]['raw_ref']
+                elif case == 'missing own outcome':
+                    row['additional_action_outcome_source_ids'] = []
+                else:
+                    row['stage'] = 'final_passage'
+                with self.assertRaises(ValueError):
+                    prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
+    def test_legacy_fisa_qualification_rejects_resealed_question_version_and_basis_changes(self):
+        from pathlib import Path
+        from unittest.mock import patch
+        original_read = Path.read_text
+        path = (DATA.parent / 'house_119_legacy_fisa_qualification_checkpoint206/shared_action_core_proposal.json').resolve()
+        for case in ['wrong bill question', 'component question', 'source version', 'accepted prefix']:
+            with self.subTest(case=case):
+                provider = json.loads(original_read(path, encoding='utf-8'))
+                current = provider['actions'][0]
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == current['action_id'])
+                if case == 'wrong bill question':
+                    current['exact_question'] = 'On Motion to Suspend the Rules and Pass H.R.4465'
+                elif case == 'component question':
+                    current['exact_question'] = 'On Motion to Suspend the Rules and Pass only paragraph (1) of H.R.9238'
+                elif case == 'source version':
+                    for field in ['governed_source_identities', 'operative_meaning_source_identities']:
+                        next(s for s in current[field] if s['source_id'] == row['source_id'])['text_version'] = 'unreviewed EH version'
+                    current['governed_source_identity_sha256'] = digest(current['governed_source_identities'])
+                else:
+                    current['candidate_exact_action_meaning'] = current['candidate_exact_action_meaning'].replace('July 2, 2026', 'July 3, 2026', 1)
+                    current['mechanism'] = current['candidate_exact_action_meaning']
+                    row['meaning'] = current['candidate_exact_action_meaning']
+                current['action_core_sha256'] = sealed_digest(current, 'action_core_sha256')
+                provider['corpus_sha256'] = digest(provider['actions'])
+                row['shared_core_reuse']['action_core_sha256'] = current['action_core_sha256']
+                def read_provider(target, *args, **kwargs):
+                    return json.dumps(provider) if target.resolve() == path else original_read(target, *args, **kwargs)
+                with patch.object(Path, 'read_text', new=read_provider):
+                    with self.assertRaises(ValueError):
+                        prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
+    def test_legacy_fisa_qualification_rejects_resealed_capture_operator_and_total_drift(self):
+        from pathlib import Path
+        from unittest.mock import patch
+        from scripts.prepare_shared_domain_candidate import identity
+        original_read = Path.read_text
+        path = (DATA.parent / 'house_119_legacy_fisa_qualification_checkpoint206/shared_action_core_proposal.json').resolve()
+        for case in ['repeal operator', 'party total']:
+            with self.subTest(case=case):
+                provider = json.loads(original_read(path, encoding='utf-8'))
+                current = provider['actions'][0]
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == current['action_id'])
+                capture = copy.deepcopy(self.values[1])
+                sid = row['source_id'] if case == 'repeal operator' else 'clerk:119:2:221'
+                source = next(s for s in capture['sources'] if s['source_id'] == sid)
+                if case == 'repeal operator':
+                    source['text'] = source['text'].replace('July 2, 2026', 'August 2, 2026')
+                    for claim in current['claim_source_map']:
+                        if claim['source_id'] == sid:
+                            claim['passage'] = source['text']
+                    row['claim_source_map'] = copy.deepcopy(current['claim_source_map'])
+                else:
+                    source['party_totals'][0]['yea-total'] = '191'
+                source['governed_bytes_sha256'] = digest({k: v for k, v in source.items() if k != 'governed_bytes_sha256'})
+                for field in ['governed_source_identities', 'operative_meaning_source_identities', 'action_outcome_source_identities']:
+                    current[field] = [identity(source) if s['source_id'] == sid else s for s in current[field]]
+                current['governed_source_identity_sha256'] = digest(current['governed_source_identities'])
+                current['action_core_sha256'] = sealed_digest(current, 'action_core_sha256')
+                provider['corpus_sha256'] = digest(provider['actions'])
+                row['shared_core_reuse']['action_core_sha256'] = current['action_core_sha256']
+                def read_provider(target, *args, **kwargs):
+                    return json.dumps(provider) if target.resolve() == path else original_read(target, *args, **kwargs)
+                with patch.object(Path, 'read_text', new=read_provider):
+                    with self.assertRaisesRegex(ValueError, 'literal repeal operator|party totals differ'):
+                        prepare(authoring, capture, ['F000477', 'M001184'])
+
+    def test_legacy_fisa_qualified_choice_retains_vetting_and_failed_whole_motion_limits(self):
+        from scripts.validate_source_sequence import require_source_sequence
+        row = next(r for r in self.values[0]['actions'] if r['action_id'] == 'house:119:2:221')
+        for text in ['procedures enable vetting all non-US persons',
+                     'not a mandate to conduct every individual query',
+                     'Non-US-person is not equivalent to unauthorized immigrant',
+                     'ninety-day transition is tied to 2008 enactment',
+                     'failed House choice establishes no enactment']:
+            self.assertIn(text, row['meaning'])
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        require_source_sequence(sources['immigration:roll221-initial182']['text'],
+                                ['question is on the motion', 'The question was taken',
+                                 'two-thirds being in the affirmative', 'demand the yeas and nays',
+                                 'The yeas and nays were ordered', 'will be postponed'])
+        require_source_sequence(sources['immigration:roll221-recorded182']['text'],
+                                ['unfinished business', 'question is on the motion',
+                                 'vote was taken by electronic device',
+                                 'yeas 198, nays 218, not voting 15', 'motion was rejected'])
+
     def test_source_review_question_rejects_coherently_resealed_wrong_whole_choice(self):
         from pathlib import Path
         from unittest.mock import patch

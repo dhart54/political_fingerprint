@@ -2947,3 +2947,78 @@ including the failed 350-test run (112.797s), safe audit correction and full
 rerun. Git/CI/report overhead follows; no new routine sample or benchmark pass.
 Independent P2 correction and complete 204 review remain pending. No merge,
 publication, production or new methodology authority.
+
+
+## Checkpoint 206: qualified legacy H.R.9238 source reuse
+
+The independently checked frozen CDH/Clerk XML and current captured CDH/own
+Record bind roll 221: whole suspension-passage proposal, both June12-to-July2
+repeal-reference edits, earlier enactment/June11 effectiveness, June10 initial
+question/voice/Raskin demand/order/postponement and June11 resumed198-218/15
+rejection. Both recorded Nays are exact. Current candidates may reuse the legacy
+meaning identifier under existing V1 contracts without accepting new semantics: a
+private source-qualified prototype passed canonical core/mapping/projection/IR
+validation and preserves the original accepted meaning as its literal prefix.
+
+Create one unapproved qualified successor at a new candidate path, preserving
+original action/measure/meaning identifiers, accepted prefix and limitations.
+Original V2 core/source seals and all history stay untouched. Current governed
+source identities differ explicitly: preserve both versions and bind them by
+whole frozen/current metadata and CDH-body comparisons, exact literal two
+operators/effectiveness, not falsely asserting raw hashes are identical. Legacy
+suspension_passage is the same own choice as candidate suspension_and_passage;
+record this existing label normalization, preserving the original object.
+
+Add an independent narrow legacy-CDH FISA qualification path to the Immigration
+helper. Validate the original accepted corpus/ref/seal; raw XML hashes/path
+bounds; exact original/current Clerk metadata and both observations; bill/CDH
+header and complete one-section body plus literal operators; exact full Clerk
+question, all current witness identities and all candidate semantic input. The
+205 adopted-substitute question correction remains unchanged. No prefix-only
+comparison, accepted-core rewrite, canonical schema/common adapter/pipeline
+change, new method/type or acceptance. Legacy155 title conflict remains held;
+its ES witness does not enter this CDH qualification path.
+
+Use complete retained repeal/transition, named pre-vote law, definition and
+702(f)(6) travel-vetting witnesses to qualify one whole extension. Enablement
+is distinct from individual query mandate/admission/removal; non-US-person is
+not unauthorized-immigrant status. Failed motion is not enactment, actual
+orders/certifications/agency conduct are unverified, original2008 transition
+stays dated. New core is shared by both members; no component preference or
+cross-bill trajectory. 620 reviewed /56 pending expected,52meanings/90props;
+70 questions and three partial packages remain. Retain prior51cores/88props,
+other675rows/all619priorreviews, allHealth, sources/manifest/pool/protected blobs.
+
+Expected about21files: new provider, helper/tests, authoring/membership/universe,
+seven generated witnesses, qualified/literal/validation records, audit/plan
+and carried205CI/base receipts. Focused tests/semantic checks/14exact replays,
+final diff and exact-headCI; independent shared-source/domain review pending.
+The new timer starts at the verified205closure22:00:34.058463UTC. Source
+preselection/raw comparison/private prototype preparation (including two
+prototype recoveries) is already measured in205's1655.526s window and reported
+separately, not hidden as free source work. Further guard design/validation and
+all implementation/delivery overhead are in206. Zero comparable routine
+samples; prior benchmark FAIL781.087s remains. No new shutdown/deadline or
+reserved-boundary authority.
+
+Checkpoint206 local validation complete: 355 focused tests pass (112.926s),
+seven semantic checks, 12 accepted/4 accepted-held-out/4 held-out IR cases,
+14 byte-exact replays and 16 literal source scopes. Twelve new bounded legacy
+negative cases pass in five tests; they do not certify complete semantics.
+All prior51cores/88props, member rows/findings/questions,619reviews and other675
+universe rows remain exact. AllHealth inputs/7outputs, sources/manifest/pool,
+1,054 protected blobs and both shutdown notes are exact. All previous helper
+functions except the narrow reuse dispatch are structurally identical;205
+source-bound whole-question correction is unchanged. Original142/155/221
+cores/seals and155title conflict remain preserved.
+Validation seal d220a08b6f12017c620eb7b1b3f4075bedcc9efbe40f9e18a8e479ff9558e65d.
+Local delivery preparation endpoint 1525.753s,
+including private literal-locator recovery and missing-action_id rejection before
+input writes. The initial five-test tool output was unavailable; the recovery
+command used the wrong test class and failed before execution, with failed log
+retained. The complete355suite has saved native output; no unavailable pass is
+claimed. Prior205source/preselection/prototype work is separately measured
+1655.526s, not free. Git/CI/report overhead follows. Zero routine samples;
+benchmark FAIL781.087s unchanged. Independent204complete/P2verification and206
+shared-source/helper/domain review remain pending. Candidate only; no acceptance,
+merge, publication or production authority.
