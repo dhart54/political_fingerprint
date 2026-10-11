@@ -3,6 +3,33 @@ import test from "node:test";
 
 import { buildPublicReceipt } from "./publicReceipt.mjs";
 
+test("Congress API description and action records are labeled honestly with direct-access limits", () => {
+  const amendment = "https://api.congress.gov/v3/amendment/119/hamdt/252?format=json";
+  const actions = "https://api.congress.gov/v3/bill/119/hconres/68/actions";
+  const sources = buildPublicReceipt({ source_basis: [amendment, actions] }).actionSources;
+  assert.deepEqual(sources.map((source) => source.url), [amendment, actions]);
+  assert.deepEqual(sources.map((source) => source.label), ["Amendment description (Congress API)", "Legislative actions (Congress API)"]);
+  for (const source of sources) assert.equal(source.accessNote, "This Congress API link requires an API key and may not open directly in your browser.");
+});
+
+test("public XML and explicit governed labels stay authoritative without inventing access limits", () => {
+  const xml = "https://www.congress.gov/119/bills/hconres68/BILLS-119hconres68ih.xml";
+  const api = "https://api.congress.gov/v3/bill/119/hconres/68/actions";
+  const row = { governed_receipt_projection: { exact_action_meaning: "Accepted wording remains unchanged.", member_action: "Nay", action_meaning_sources: [
+    { url: xml, source_id: "same-version", source_sha256: "a".repeat(64) },
+    { url: api, public_label: "Official report", source_id: "same-source" },
+  ] } };
+  const before = structuredClone(row);
+  const receipt = buildPublicReceipt(row);
+  assert.deepEqual(receipt.actionSources[0], { url: xml, label: "Bill or amendment text" });
+  assert.equal(receipt.actionSources[1].label, "Official report");
+  assert.ok(receipt.actionSources[1].accessNote);
+  assert.equal(receipt.exactActionMeaning, before.governed_receipt_projection.exact_action_meaning);
+  assert.equal(receipt.representativeVote, "Nay");
+  assert.deepEqual(row, before);
+  for (const url of ["https://api.congress.gov.example.org/v3/amendment/119/hamdt/252", "https://www.congress.gov/?source=api.congress.gov"]) assert.equal(buildPublicReceipt({ source_basis: [url] }).actionSources[0].accessNote, undefined);
+});
+
 test("explicit governed public copy is authoritative regardless of process words", () => {
   for (const publicCopy of ["Official amendment text is incomplete.", "The reviewed candidate exception is absent from the available text."]) {
     const projection = {
