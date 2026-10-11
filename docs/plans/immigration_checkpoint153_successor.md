@@ -1752,3 +1752,76 @@ fresh benchmark average. Source/authoring took 283.014 seconds; later endpoints
 include tests, delivery, CI and predecessor reconciliation overhead. No silent
 scaling or new average. Continue coherent candidate source work without a routine
 approval gate or writer release.
+
+
+## Checkpoint 189: resumed coherent health-program screening
+
+Dylan's explicit Resume authorization continues the same sole implementation
+owner on DESKTOP-1CQBHTJ in .w/ib, from local/remote
+83c1ef5f11bbe650b3441967cd7e419306bdfc58 on
+codex/foushee-immigration-border-shared. Original189 timer/pause artifacts and the
+unrelated untracked170 shutdown note retain their hashes. Power-off time is
+excluded; post-resume corrections, source reading, tests and delivery remain timed.
+
+Four complete EH texts are read: 1/151 H.R. 2483 addiction services, 1/349 H.R. 6703
+coverage arrangements, 1/351 H.R. 3492 criminal law and 1/362 H.R. 498 Medicaid payments.
+Fresh bill bytes match established captures. Four own printed declarations and
+passage sequences are bounded, with question before voice ayes and demand/order.
+Four passage pages are visually checked. Fresh Clerk metadata, both governed
+members and all party totals agree; raw hashes differ and old identities remain.
+Other members and all parent PDF pages are not certified.
+
+Two candidate functional Immigration exclusions are added. H.R. 3492 retains its
+defined offenses, purpose/jurisdiction, exceptions and recipient protection;
+foreign commerce and an old parent immigration statute cannot establish domain
+fit. Amendment 1 of Report 119-411 was expressly not offered. Existing canonical 351
+core 976897eacf3ee9eb208d054597e408bee840864d3e4c79b19394f648f2353b93 and all
+Health candidate meanings stay unchanged and referenced; no duplicate meaning.
+H.R. 498 changes specified federal payments, related administration and managed-care
+application. Historical 2024 complete 1903(i)/(v) distinguish retained status rules
+from procedure-payment restrictions. Its consent-bound exceptions and literal
+cross-reference/defined-term differences remain; no current-law, individual
+eligibility, clinical, motive or predicted-outcome certificate.
+
+Two researched holds remain noncounting. H.R. 2483 needs original recovery-housing,
+CDBG, individual workforce-loan and material program/beneficiary baselines; failed
+roll 150 is not imported. H.R. 6703's optional class requires nonresident-alien tax
+status AND no employer US-source earned income. Original 2019 HRA (d) already names
+a comparable class, with its own class-size/combination/new-hire/student rules.
+Definition-reference differences, qualified no-inference and conforming rules
+remain. Existing HR1 HRA scope review reserves bounded domain application; no
+blanket noncitizen rule, first-ever permission or automatic fit. Whole coverage
+baselines and upstream core adequacy remain qualified. Holds are executable
+research/review, not unavailable evidence or completions. Prior 247/FISA/childcare
+and all other holds remain unchanged.
+
+All 604 prior membership records and 35 frozen artifact blobs are preserved.
+Counts: 606 reviewed / 70 pending (51 ordinary, 19 researched holds), 47 meanings,
+80 propositions, 70 questions, 3 partial packages. Eighteen sources/registrations
+and 13 private derivatives bring inventories to 2109 / 999. Validation: 203 focused
+tests in 20.773 seconds, 7 semantic checks, mechanical IR references,
+19 literal claims,6 HTML + 3 PDF raw-parent replays, 4 Clerk checks, 13 derivatives,
+4 offered identities and 4 passage chronologies. Six semantic products are unchanged;
+all 7 files byte-replay, with only proof inventory metadata changing. Independent 189
+review is pending. Two completions out of four attempts retain both holds.
+
+Bounded 186/187/188 review outcomes from the Resume delegation are folded into this
+substantive batch. Vessel/forest exclusions are supported, childcare regulatory
+qualification is supported and 198 remains held. All 3 waiver-linkage mutation gaps
+are closed. Combined 187/188 review closed 2026-10-09T23:44:44Z with 774 reviewer
+seconds; no 186 close time was supplied. Exact 188 delivery/shutdown CI receipts
+verify 9 fresh first-attempt jobs each: 5 feature, 3 synthetic, 1 mixed. No editorial
+acceptance, compiler release, hold release or performance pass. Temporary grazing
+permits cannot inherit expired term-permit citizenship guidance; printed grant
+reference mismatch remains literal.
+
+Performance remains FAIL at prior comparable 781.087seconds (13m01s), above the
+600-second ceiling and 240-second target. Cumulative active endpoints: initial
+authoring 1051.237 s;complete source-boundary
+correction 1125.714 s;local validation
+and report 1326.266 s. Repeated source output,
+private-helper corrections, predecessor CI collection and replay overhead remain
+included. Pre-shutdown metadata has a separate 30.534742 s upper bound. This mixed
+batch is not a fresh special benchmark, comparable average or permission to scale.
+Continue bounded candidate work without a routine approval gate, merge, acceptance,
+publication, production, schema/security/configuration change or deployment.

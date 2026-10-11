@@ -79,8 +79,8 @@
     "counts": {
       "procedural_context": 228,
       "interpreted_substantive_directional": 47,
-      "exact_action_ineligible": 327,
-      "source_unresolved": 72,
+      "exact_action_ineligible": 329,
+      "source_unresolved": 70,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -95,8 +95,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 228,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 327,
-    "unresolved_boundary_cases": 72,
+    "exact_action_ineligible_actions": 329,
+    "unresolved_boundary_cases": 70,
     "independent_episode_count": 42,
     "multi_action_episode_count": 5,
     "mechanism_types": [
@@ -581,12 +581,14 @@
         "house:119:1:345",
         "house:119:1:346",
         "house:119:1:347",
+        "house:119:1:351",
         "house:119:1:352",
         "house:119:1:353",
         "house:119:1:354",
         "house:119:1:356",
         "house:119:1:358",
         "house:119:1:360",
+        "house:119:1:362",
         "house:119:2:8",
         "house:119:2:9",
         "house:119:2:11",
@@ -741,8 +743,6 @@
         "house:119:1:299",
         "house:119:1:320",
         "house:119:1:349",
-        "house:119:1:351",
-        "house:119:1:362",
         "house:119:2:5",
         "house:119:2:6",
         "house:119:2:7",
@@ -1147,7 +1147,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "f84205a3f7cbf67d7c73f1023480d4b015bcd2dec9df8ccdd09fb5787f1454cf",
+  "universe_subject_sha256": "eac24d4169bffa5aa06e292fa0cbdcf7c720d00f14ef7060e163b4efc08266a6",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -11392,7 +11392,7 @@
       "measure": "H R 2483",
       "question": "On Passage",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "The complete 58,652-character H.R. 2483 EH and own identity, committee report/en-gros amendments, engrossment and recorded passage are read. The package extends and revises addiction prevention/treatment/recovery programs, replaces the FASD part with its stated institutional grant eligibility and services, changes specified program/application/record/reporting requirements, extends recovery-housing authority and provides limited transportation uses within CAREER grants. The failed roll 150 Medicaid-demonstration amendment is not imported into this passed package. Material original recovery-housing/CDBG, individual workforce-loan and affected program/provider/beneficiary eligibility baselines remain to be bounded; generic public-health purpose, culturally/linguistically informed services, institutional eligibility or the absence of immigration words cannot establish that all underlying benefits are status-neutral. This is executable research remaining, not unavailable evidence or authoritative conflict. Keep the exact action unresolved/noncounting pending those baselines and bounded Immigration application review; do not infer universal coverage or release from Health membership. The existing Health core/ref/digests are preserved unchanged. Own passage question precedes voice ayes and Pallone demand/order; recorded 366–57 with 9 Not Voting, Foushee Yea and Massie Nay. No new Immigration meaning, proposition, component stance, enactment/current-implementation claim or acceptance.",
       "source": {
         "source_id": "clerk:119:1:151",
         "url": "https://clerk.house.gov/evs/2025/roll151.xml",
@@ -11411,15 +11411,38 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "The complete 58,652-character H.R. 2483 EH and own identity, committee report/en-gros amendments, engrossment and recorded passage are read. The package extends and revises addiction prevention/treatment/recovery programs, replaces the FASD part with its stated institutional grant eligibility and services, changes specified program/application/record/reporting requirements, extends recovery-housing authority and provides limited transportation uses within CAREER grants. The failed roll 150 Medicaid-demonstration amendment is not imported into this passed package. Material original recovery-housing/CDBG, individual workforce-loan and affected program/provider/beneficiary eligibility baselines remain to be bounded; generic public-health purpose, culturally/linguistically informed services, institutional eligibility or the absence of immigration words cannot establish that all underlying benefits are status-neutral. This is executable research remaining, not unavailable evidence or authoritative conflict. Keep the exact action unresolved/noncounting pending those baselines and bounded Immigration application review; do not infer universal coverage or release from Health membership. The existing Health core/ref/digests are preserved unchanged. Own passage question precedes voice ayes and Pallone demand/order; recorded 366–57 with 9 Not Voting, Foushee Yea and Massie Nay. No new Immigration meaning, proposition, component stance, enactment/current-implementation claim or acceptance.",
+      "unresolved_reason": "pending_health_program_benefit_baselines",
       "sources": [
         {
           "source_id": "clerk:119:1:151",
           "url": "https://clerk.house.gov/evs/2025/roll151.xml",
           "raw_sha256": "28bcf66fe1902d0f8b6cbcfe4b4feb10837d11b91e70191fb1c62995fc3cc0b9",
-          "governed_bytes_sha256": "6d779476595703791eb8ec842bb5b203bace43fec0f2ddb530c589ba895be309",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "6d779476595703791eb8ec842bb5b203bace43fec0f2ddb530c589ba895be309"
+        },
+        {
+          "source_id": "govinfo:hr2483eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2483eh/html/BILLS-119hr2483eh.htm",
+          "raw_sha256": "1f4e9ee30e4baf98fb5938fd905f469f49fc4c5e91f1f0b3e8ea06c8b441e856",
+          "governed_bytes_sha256": "f0a38a8b151b63d984d49c0ee8e86cea8444c5a5b058d266cee484de1db7b4c2"
+        },
+        {
+          "source_id": "immigration:roll151-identity189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+          "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+          "governed_bytes_sha256": "6826958f31a4140bbeead97e03e2aacfacb12a09c6acaa2e9661e1154d295698"
+        },
+        {
+          "source_id": "immigration:roll151-passage189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+          "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+          "governed_bytes_sha256": "c84a07df59c39a31bd683de293e9e74f2f9f3168763789f4a22d64b15ec6fc2a"
+        },
+        {
+          "source_id": "immigration:roll151-engrossment189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+          "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+          "governed_bytes_sha256": "367da2d949ef90c8ff13717262fc6947c5be95b1091fe816f657a3940345d5d5"
         }
       ],
       "exact_action_source_binding": null,
@@ -24243,7 +24266,7 @@
       "measure": "H R 6703",
       "question": "On Passage",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "The complete 104,445-character H.R. 6703 EH and own declaration/recorded passage are read. Section 103 permits designation of an employee class requiring nonresident-alien tax status AND no earned income from that employer constituting US-source income, within the arrangement's same-terms, coverage, substantiation and notice conditions. This is an optional conjunctive employee class, not all noncitizens, unlawful presence, work authorization, mandatory denial or observed employer action. The original 2019 complete HRA class rule already names a comparable non-resident/no-US-based-income class and retains its class-size/combination/new-hire/student structure. Its reference to 1.105-11(c)(2)(iii)(E) is not silently replaced with the bill's911(d)(2); no first-ever permission or identical legal application is claimed. Existing HR1 HRA scope review reserves this tax/employee-class mechanism for bounded domain review rather than inferring Immigration fit from nonresident wording. The bill's no-inference rule is qualified by consistency with its amendments and requires conforming rules. Current/full integration, tax-definition, Medicare/exchange and cost-sharing beneficiary baselines and exact upstream shared-core adequacy for any domain proposition remain qualified. Keep the action unresolved/noncounting pending the existing bounded domain application and material baseline/source-chain review; do not automatically exclude or include. Association-plan, stop-loss, pharmacy reporting and cost-sharing funding operators remain part of one package. Existing Health core/ref/digests are unchanged. Own passage question precedes voice ayes and Latta demand/order; recorded 216–211 with 6 Not Voting, Foushee Nay and Massie Nay. No new Immigration proposition, interpretation of the shared core, component stance, first-ever status eligibility change, enactment, current implementation or acceptance.",
       "source": {
         "source_id": "clerk:119:1:349",
         "url": "https://clerk.house.gov/evs/2025/roll349.xml",
@@ -24262,15 +24285,38 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "The complete 104,445-character H.R. 6703 EH and own declaration/recorded passage are read. Section 103 permits designation of an employee class requiring nonresident-alien tax status AND no earned income from that employer constituting US-source income, within the arrangement's same-terms, coverage, substantiation and notice conditions. This is an optional conjunctive employee class, not all noncitizens, unlawful presence, work authorization, mandatory denial or observed employer action. The original 2019 complete HRA class rule already names a comparable non-resident/no-US-based-income class and retains its class-size/combination/new-hire/student structure. Its reference to 1.105-11(c)(2)(iii)(E) is not silently replaced with the bill's911(d)(2); no first-ever permission or identical legal application is claimed. Existing HR1 HRA scope review reserves this tax/employee-class mechanism for bounded domain review rather than inferring Immigration fit from nonresident wording. The bill's no-inference rule is qualified by consistency with its amendments and requires conforming rules. Current/full integration, tax-definition, Medicare/exchange and cost-sharing beneficiary baselines and exact upstream shared-core adequacy for any domain proposition remain qualified. Keep the action unresolved/noncounting pending the existing bounded domain application and material baseline/source-chain review; do not automatically exclude or include. Association-plan, stop-loss, pharmacy reporting and cost-sharing funding operators remain part of one package. Existing Health core/ref/digests are unchanged. Own passage question precedes voice ayes and Latta demand/order; recorded 216–211 with 6 Not Voting, Foushee Nay and Massie Nay. No new Immigration proposition, interpretation of the shared core, component stance, first-ever status eligibility change, enactment, current implementation or acceptance.",
+      "unresolved_reason": "pending_HRA_bounded_domain_and_material_baseline_review",
       "sources": [
         {
           "source_id": "clerk:119:1:349",
           "url": "https://clerk.house.gov/evs/2025/roll349.xml",
           "raw_sha256": "fc6032823894ed0c5ed02196d6b2db6e3025643484329f0686b324f0c46ffbf9",
-          "governed_bytes_sha256": "bae9df8a906ef2902bd0eba0b486840a2ecb37bc8b380061a2236f0885f9c828",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "bae9df8a906ef2902bd0eba0b486840a2ecb37bc8b380061a2236f0885f9c828"
+        },
+        {
+          "source_id": "govinfo:hr6703eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6703eh/html/BILLS-119hr6703eh.htm",
+          "raw_sha256": "070b7513914602e692cc566f8493bbdfbfb665f02dfa1d36db08f65f83b5ff43",
+          "governed_bytes_sha256": "e5872d0754ef999e115c85914ac09883409803ffaa9c99cfe957a9672f96dbd6"
+        },
+        {
+          "source_id": "immigration:roll349-identity189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+          "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+          "governed_bytes_sha256": "952f1c6a6ad20d3f410affd85fcd936418b8090cf317fef5b2bf4fc91462aa02"
+        },
+        {
+          "source_id": "immigration:roll349-passage189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+          "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+          "governed_bytes_sha256": "142b86420f778b3b3c06101ffb8e42997050d718cbce0f30905511e76bbf5bbd"
+        },
+        {
+          "source_id": "govinfo:fr2019-12571-hra-classes189",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2019-06-20/html/2019-12571.htm",
+          "raw_sha256": "a9fc15ee52ba0aa41a4d713277066cfa793486dc6dfa5822a01ffb0198f61a2d",
+          "governed_bytes_sha256": "88ba42f6418472b423fcb9022e6eded464d73b88507e3ac02d4d6d582d8576bf"
         }
       ],
       "exact_action_source_binding": null,
@@ -24335,8 +24381,8 @@
       "date": "2025-12-17",
       "measure": "bill_119_hr_3492",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact choice is House passage of the complete H.R. 3492 EH criminal-law package, following the adopted committee substitute under H.Res. 953. The full proposed replacement of 18 U.S.C. 116 defines knowingly performing or attempting specified purpose-limited surgeries, providing specified medications, and facilitating/consenting to/transporting a minor for the separately defined FGM conduct. The defined purpose, under 18 condition, jurisdictional circumstances, licensed-practitioner/labor exceptions, specified physical-condition exemptions, health exception's exclusion of mental/behavioral/emotional distress, and protection of the recipient from prosecution remain part of this whole choice. Interstate/foreign commerce, travel and territorial jurisdiction are offense predicates, not migrant admission or status categories. The full proposed replacement contains no migrant admission, visa, asylum, removal, immigration-documentation or status-governed benefit operator. The existing 2024 18 U.S.C. 116 baseline is a historical comparator; its original enactment within a wider immigration statute cannot establish Immigration eligibility for this exact replacement. The printed subsection(c)/(d) mismatch remains literal and is not resolved into a legal ruling. Report 119-411 amendment 1 was expressly not offered, and separately proposed recommittal instructions are not in the EH. Candidate functional Immigration exclusion only, noncounting and pending independent domain review. Passage question precedes voice ayes and Balint demand/order; recorded passage is 216–211 with 6 Not Voting. Foushee Nay and Massie Yea concern the whole exact criminal-law package, not component positions or clinical judgments. No enacted-law result, current implementation, motive, clinical outcome, broad identity judgment or preferred alternative is inferred.",
       "source": {
         "source_id": "clerk:119:1:351",
         "url": "https://clerk.house.gov/evs/2025/roll351.xml",
@@ -24353,25 +24399,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact choice is House passage of the complete H.R. 3492 EH criminal-law package, following the adopted committee substitute under H.Res. 953. The full proposed replacement of 18 U.S.C. 116 defines knowingly performing or attempting specified purpose-limited surgeries, providing specified medications, and facilitating/consenting to/transporting a minor for the separately defined FGM conduct. The defined purpose, under 18 condition, jurisdictional circumstances, licensed-practitioner/labor exceptions, specified physical-condition exemptions, health exception's exclusion of mental/behavioral/emotional distress, and protection of the recipient from prosecution remain part of this whole choice. Interstate/foreign commerce, travel and territorial jurisdiction are offense predicates, not migrant admission or status categories. The full proposed replacement contains no migrant admission, visa, asylum, removal, immigration-documentation or status-governed benefit operator. The existing 2024 18 U.S.C. 116 baseline is a historical comparator; its original enactment within a wider immigration statute cannot establish Immigration eligibility for this exact replacement. The printed subsection(c)/(d) mismatch remains literal and is not resolved into a legal ruling. Report 119-411 amendment 1 was expressly not offered, and separately proposed recommittal instructions are not in the EH. Candidate functional Immigration exclusion only, noncounting and pending independent domain review. Passage question precedes voice ayes and Balint demand/order; recorded passage is 216–211 with 6 Not Voting. Foushee Nay and Massie Yea concern the whole exact criminal-law package, not component positions or clinical judgments. No enacted-law result, current implementation, motive, clinical outcome, broad identity judgment or preferred alternative is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:351",
           "url": "https://clerk.house.gov/evs/2025/roll351.xml",
           "raw_sha256": "1eb17ba0064304be6972f7d1672596e3df8d42a1489a1d75ac05de9cbdd0a17a",
-          "governed_bytes_sha256": "1078f2f9ba3b1364ab51eba7d9b9bed5e10048c95c7a03fdbb4c065d6ab0240a",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "1078f2f9ba3b1364ab51eba7d9b9bed5e10048c95c7a03fdbb4c065d6ab0240a"
+        },
+        {
+          "source_id": "govinfo:hr3492eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3492eh/html/BILLS-119hr3492eh.htm",
+          "raw_sha256": "343036cf67330644a75f565bd2adcdb52542802eff6b4b35f96ca8688c69f39b",
+          "governed_bytes_sha256": "ae73b78f5683cd9ce8c026e844aa93e1670ba792dd32745d69d771278fc66e13"
+        },
+        {
+          "source_id": "immigration:roll351-identity189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+          "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+          "governed_bytes_sha256": "b410c02fd24fdc1ea283b7b0b26c57f9736d0cae9bab61847be27a011fe45d95"
+        },
+        {
+          "source_id": "immigration:roll351-passage189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+          "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+          "governed_bytes_sha256": "9d86041046d7986e41a5001dc1b51a9cac45bbe3f35ef9306bb4616b0d18b8c0"
+        },
+        {
+          "source_id": "immigration:roll351-unoffered-engrossment189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+          "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+          "governed_bytes_sha256": "094fcb1a4485f0edeb6a6c87773d908d82fe4525fa4916357c436018e9e9c2f5"
+        },
+        {
+          "source_id": "govinfo:18usc116-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap7-sec116.htm",
+          "raw_sha256": "1037b971789a2663aba09856571e8b7578010c6336a2a5fdc7159db676bf0a00",
+          "governed_bytes_sha256": "7667ec515a3fe6904fae9244d768aab408ec202cf5dd996cd434c36d96b533f9"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b113da107a2ff85f4e56eb51de2c76926fb11e55184db5b602bac09a8ddb02a5"
       },
       "historical_raw_hash_matches": true
     },
@@ -25059,8 +25135,8 @@
       "date": "2025-12-18",
       "measure": "H R 498",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact choice is House passage of the complete H.R. 498 EH Medicaid-payment restriction, under H.Res. 953 after engrossment and the separately rejected recommittal. It adds a proposed 1903(i)(28) restriction for amounts expended for specified procedures to an individual under 18 enrolled in a State plan or waiver, including the stated related State-program administration, and adds (28) to the flush-left managed-care application list. The full definition is purpose-limited and retains parent/legal-guardian consent for the enumerated exceptions concerning precocious puberty, specified sex-development/hormone findings, complications/serious physical conditions and restoration. It changes federal payment for specified procedures, not general Medicaid enrolment or an immigration-status eligibility category. The complete historical 2024(i) target separately retains (22)'s citizenship-documentation condition and the historical(v) alien-payment/emergency/State-option provisions; the bill does not amend those status provisions. This does not assert that every Medicaid applicant is eligible or certify all intervening enacted law, State coverage, individual application or December2025 implementation. Printed(kk)/(KK), specified-gender-procedures/defined-term wording and prosetheses remain literal; no legal repair or universal applicability ruling. Candidate functional Immigration exclusion only, noncounting and pending independent domain review. Passage question precedes voice ayes and Pallone demand/order; recorded passage is 215–201 with 17 Not Voting. Foushee Nay and Massie Yea concern this whole Medicaid-payment choice, separately from H.R. 3492 criminal law. No enacted-law result, clinical judgment, individual status, component stance, motive, preferred alternative or predicted health effect is inferred.",
       "source": {
         "source_id": "clerk:119:1:362",
         "url": "https://clerk.house.gov/evs/2025/roll362.xml",
@@ -25078,25 +25154,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact choice is House passage of the complete H.R. 498 EH Medicaid-payment restriction, under H.Res. 953 after engrossment and the separately rejected recommittal. It adds a proposed 1903(i)(28) restriction for amounts expended for specified procedures to an individual under 18 enrolled in a State plan or waiver, including the stated related State-program administration, and adds (28) to the flush-left managed-care application list. The full definition is purpose-limited and retains parent/legal-guardian consent for the enumerated exceptions concerning precocious puberty, specified sex-development/hormone findings, complications/serious physical conditions and restoration. It changes federal payment for specified procedures, not general Medicaid enrolment or an immigration-status eligibility category. The complete historical 2024(i) target separately retains (22)'s citizenship-documentation condition and the historical(v) alien-payment/emergency/State-option provisions; the bill does not amend those status provisions. This does not assert that every Medicaid applicant is eligible or certify all intervening enacted law, State coverage, individual application or December2025 implementation. Printed(kk)/(KK), specified-gender-procedures/defined-term wording and prosetheses remain literal; no legal repair or universal applicability ruling. Candidate functional Immigration exclusion only, noncounting and pending independent domain review. Passage question precedes voice ayes and Pallone demand/order; recorded passage is 215–201 with 17 Not Voting. Foushee Nay and Massie Yea concern this whole Medicaid-payment choice, separately from H.R. 3492 criminal law. No enacted-law result, clinical judgment, individual status, component stance, motive, preferred alternative or predicted health effect is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:362",
           "url": "https://clerk.house.gov/evs/2025/roll362.xml",
           "raw_sha256": "a89a0d142eea6b9a884f6256a0879b1e6f88776ccc04de77bcc360268fa49369",
-          "governed_bytes_sha256": "b42823c14cce908ab25408709351681faab2d93a0ca89de2d118618f165a169e",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "b42823c14cce908ab25408709351681faab2d93a0ca89de2d118618f165a169e"
+        },
+        {
+          "source_id": "govinfo:hr498eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr498eh/html/BILLS-119hr498eh.htm",
+          "raw_sha256": "04683a35dec963f41f76246e9e01f91bd20d355180e8372f91518f702022a885",
+          "governed_bytes_sha256": "87b545f446a78b99fc92063d4be2da8f617304dc0915195d1a4cd54982b70c1c"
+        },
+        {
+          "source_id": "immigration:roll362-identity189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-18/pdf/CREC-2025-12-18-house.pdf",
+          "raw_sha256": "26663dd170d2b029a0cd6ceda5a3bacae230c0bea57c712799f918071ed4e2ab",
+          "governed_bytes_sha256": "f9407d68aedadb7cae7d72703369f5739d258d442ce4f905d963295428a5af35"
+        },
+        {
+          "source_id": "immigration:roll362-passage189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-18/pdf/CREC-2025-12-18-house.pdf",
+          "raw_sha256": "26663dd170d2b029a0cd6ceda5a3bacae230c0bea57c712799f918071ed4e2ab",
+          "governed_bytes_sha256": "6f66c29f2f02344c4236dee449567a52d996a710e80185bcfbf4fc9c1709a562"
+        },
+        {
+          "source_id": "immigration:roll362-engrossment189",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-18/pdf/CREC-2025-12-18-house.pdf",
+          "raw_sha256": "26663dd170d2b029a0cd6ceda5a3bacae230c0bea57c712799f918071ed4e2ab",
+          "governed_bytes_sha256": "97ea0d7eae0726a760fc669ffa5ba49913e5638447449f448fa9c8fe457ec387"
+        },
+        {
+          "source_id": "govinfo:42usc1396bi-complete189",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXIX-sec1396b.htm",
+          "raw_sha256": "895791c5c79565df5513b62660a4fa6ba3c13c2ba6b7e7bd1f218dc2072ac2ef",
+          "governed_bytes_sha256": "dc52e882d0b774a657c608e8d52c5d9ad601042e9896837302ea46a12b793a7d"
+        },
+        {
+          "source_id": "govinfo:42usc1396bv-2024-alien-payment",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXIX-sec1396b.htm",
+          "raw_sha256": "895791c5c79565df5513b62660a4fa6ba3c13c2ba6b7e7bd1f218dc2072ac2ef",
+          "governed_bytes_sha256": "6a7f0f32c12de481657b62a5f6ce3476a241c9e022b4b393a0021ca71f78510a"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "35e5342c7fa51d20494bd1f4f6267ccae24f7d351099043dc7c41882b5479be9"
       }
     },
     {
@@ -45133,8 +45245,6 @@
     "house:119:1:299",
     "house:119:1:320",
     "house:119:1:349",
-    "house:119:1:351",
-    "house:119:1:362",
     "house:119:2:5",
     "house:119:2:6",
     "house:119:2:7",
@@ -45205,6 +45315,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "7482874d9f54ce6b1e325ddf85eb6bc132c9d54b12bb9805d7a7b63fb00b0dab",
-  "membership_review_sha256": "e5224b7508d20671571daea63e4970543199605e646bb12cf7dd940634b79891"
+  "proposal_sha256": "603b7c580de7a5725ff36298215ba8f7583c03da0c50cb15d854de3f024c78c5",
+  "membership_review_sha256": "8cc94b9a35b4545cb8c2ac891aa6abca46593a16c08bb475d64ec3d9b543d92c"
 }
