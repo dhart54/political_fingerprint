@@ -1,0 +1,66 @@
+{
+  "accepted": false,
+  "artifact_id": null,
+  "immutable": true,
+  "schema_version": "education79_locator_candidate_approval_v1",
+  "sealed": false,
+  "subject": {
+    "candidate": {
+      "artifact_version": 1,
+      "content_sha256": "dde91335f2a125463024275930e173afb562df0746fe00c394452d7759bcb698",
+      "natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1",
+      "source_manifest_sha256": "705045ad350cf8d52da973ffb8a4612e49e364f83664d084218bddfd0d379d31",
+      "supersedes_artifact_id": 245
+    },
+    "decision": "approve_exact_locator_candidate_for_immutable_persistence",
+    "decision_recorded_at_utc": null,
+    "expected_old": {
+      "artifact_id": 245,
+      "artifact_version": 1,
+      "content_sha256": "76d06a43beb51c164a199c576c3d0aa539b6c05da2f8e4eff8fe54845547e4ec",
+      "natural_key": "site-integration-candidate:f000477:education_workforce:m14g:v1"
+    },
+    "final_eligible_statuses": {
+      "benchmark_status": "gold_benchmark",
+      "editorial_status": "human_approved",
+      "production_eligible": true
+    },
+    "production_execution_authorized": false,
+    "provenance": [
+      {
+        "artifact_type": "issue_public_presentation",
+        "artifact_version": 1,
+        "content_sha256": "dde91335f2a125463024275930e173afb562df0746fe00c394452d7759bcb698",
+        "natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1",
+        "payload_file": "candidate-projection.json"
+      },
+      {
+        "artifact_type": "source_manifest",
+        "artifact_version": 1,
+        "content_sha256": "705045ad350cf8d52da973ffb8a4612e49e364f83664d084218bddfd0d379d31",
+        "natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1:source",
+        "payload_file": "candidate-source-manifest.json"
+      },
+      {
+        "artifact_type": "standardization_validation_result",
+        "artifact_version": 1,
+        "content_sha256": "4e59a9bbb1173cf33043f6a585fcf864b3ffbccde4e9eb2dcd3e81c4b50c99cf",
+        "natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1:validation",
+        "payload_file": "candidate-validation.json"
+      }
+    ],
+    "registry_key": {
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477"
+    },
+    "reviewer": null,
+    "source_locator": {
+      "catalog_file": "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/source_catalog.json",
+      "catalog_file_sha256": "2296b4f9c3215a4d959482149342d363d48a650dee5344435de23e21aa340e84",
+      "governed_bytes_sha256": "eaafafb53de434c894f475a864a1cd951118a32f2f98e1e487109f7ef71f5b32",
+      "source_id": "govinfo:CREC-2025-03-25-pt1-PgH1241:amendment-3",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/html/CREC-2025-03-25-pt1-PgH1241.htm"
+    }
+  },
+  "subject_sha256": "6bc227c65fed440ea72909c94d552cb2b1a2ff6072ab0e3e2ee24749a72bff3b"
+}

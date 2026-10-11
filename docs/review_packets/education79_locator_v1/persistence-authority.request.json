@@ -1,0 +1,32 @@
+{
+  "accepted": false,
+  "artifact_id": null,
+  "immutable": true,
+  "schema_version": "education79_locator_persistence_authority_v1",
+  "sealed": false,
+  "subject": {
+    "authorizations": {
+      "delete_persisted_graph": false,
+      "persist_exact_immutable_graph": true,
+      "production_database_write": true,
+      "publication_activation": false
+    },
+    "bundle_manifest_sha256": null,
+    "candidate_approval_binding": null,
+    "decision": "persist_exact_education79_locator_immutable_graph",
+    "decision_recorded_at_utc": null,
+    "mutation_caps": {
+      "artifacts": 3,
+      "batches": 1,
+      "other_writes": 0,
+      "registry_updates": 0,
+      "relationships": 2
+    },
+    "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+    "reviewer": null,
+    "rollback_policy": "rollback_failed_transaction; retain_committed_inert_graph; registry_unchanged",
+    "source_commit_sha": null,
+    "stable_preflight_sha256": null
+  },
+  "subject_sha256": "86d39872936ea81722baa65b2c6c28fc9f79c0f5cb35bb6ca343b639b04760f0"
+}
