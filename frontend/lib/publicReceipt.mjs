@@ -154,6 +154,7 @@ function normalizeSource(source, kind) {
   return {
     label: kind === "vote" ? "Official vote" : publicActionSourceLabel(source, url),
     url,
+    ...(congressApiUrl(url) ? { accessNote: "This Congress API link requires an API key and may not open directly in your browser." } : {}),
   };
 }
 
@@ -167,6 +168,12 @@ function publicActionSourceLabel(source, url) {
 }
 
 function actionSourceLabel(url) {
+  const api = congressApiUrl(url);
+  if (api) {
+    if (/\/actions\/?$/i.test(api.pathname)) return "Legislative actions (Congress API)";
+    if (/^\/v3\/amendment\/\d+\/(?:hamdt|samdt|suamdt)\/\d+\/?$/i.test(api.pathname)) return "Amendment description (Congress API)";
+    return "Congress API record";
+  }
   const normalized = url.toLowerCase();
   if (normalized.includes("cbo.gov")) {
     return "Official cost estimate";
@@ -188,4 +195,13 @@ function actionSourceLabel(url) {
     return "Official law text";
   }
   return "Bill or amendment text";
+}
+
+function congressApiUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.hostname.toLowerCase() === "api.congress.gov" ? url : null;
+  } catch {
+    return null;
+  }
 }

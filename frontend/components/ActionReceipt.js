@@ -1,3 +1,4 @@
+import { useId } from "react";
 import {
   actionReceiptId,
   canonicalActionId,
@@ -186,6 +187,7 @@ function ContextSection({ values }) {
 }
 
 function SourcesSection({ sources }) {
+  const sourceId = useId();
   if (!sources.length) {
     return null;
   }
@@ -194,19 +196,22 @@ function SourcesSection({ sources }) {
       <h4 className="text-sm font-semibold text-stone-950">Official sources</h4>
       <div className="mt-2 flex flex-col items-start gap-3">
         {sources.map((source, index) => (
-          <a
-            className="source-link inline-flex items-center gap-2 text-sm"
-            href={source.url}
-            key={`${source.url}-${index}`}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <SemanticIcon
-              className="h-5 w-5 shrink-0"
-              kind={source.label === "Official vote" ? "vote-source" : "document-source"}
-            />
-            <span>{source.label}</span>
-          </a>
+          <div key={`${source.url}-${index}`}>
+            <a
+              aria-describedby={source.accessNote ? `${sourceId}-${index}` : undefined}
+              className="source-link inline-flex items-center gap-2 text-sm"
+              href={source.url}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <SemanticIcon
+                className="h-5 w-5 shrink-0"
+                kind={source.label === "Official vote" ? "vote-source" : "document-source"}
+              />
+              <span>{source.label}</span>
+            </a>
+            {source.accessNote ? <p className="mt-1 text-sm leading-6 text-stone-600" id={`${sourceId}-${index}`}>{source.accessNote}</p> : null}
+          </div>
         ))}
       </div>
     </section>

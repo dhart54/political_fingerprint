@@ -1,9 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
+import { gunzipSync } from "node:zlib";
 import { expect, test } from "@playwright/test";
 
 const landing = "/review/record-card?representative=leg_valerie_p_foushee&scope=119";
 const candidate = JSON.parse(fs.readFileSync(path.resolve("../docs/review_packets/record_at_a_glance_v1/candidate.json"), "utf8"));
+const sourceSnapshot = JSON.parse(gunzipSync(fs.readFileSync(path.resolve("..", candidate.source_snapshot))));
 test.beforeEach(async ({ page }) => { await page.emulateMedia({ reducedMotion: "reduce" }); });
 
 test("complete candidate, lazy ledgers, specific finding, receipts, history, refresh and return", async ({ page }) => {
@@ -187,4 +189,44 @@ test("review packet captures finding, paired receipts, complete record, sparse a
   await page.goto(landing);
   await expect(page.getByText(/Reviewed findings are unavailable right now/)).toBeVisible();
   await page.screenshot({ path: path.join(output, "mobile-unavailable.png") });
+});
+
+test("API-only amendment source has an accessible disclosure and preserves accepted receipt text", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  const row = sourceSnapshot["leg_valerie_p_foushee:119:NATIONAL_SECURITY_FOREIGN"].body.evidence.find((r) => r.canonical_action_id === "house:119:2:264");
+  const url = row.governed_receipt_projection.action_meaning_sources[0].url;
+  // Fault response reproduces unauthenticated navigation without accessing credentials.
+  await page.context().route("https://api.congress.gov/**", (route) => route.fulfill({ status: 403, json: { error: { code: "API_KEY_MISSING" } } }));
+  await page.goto(`${landing}&issue=NATIONAL_SECURITY_FOREIGN#action-receipt-house-119-2-264`);
+  const receipt = page.locator('[data-canonical-action-id="house:119:2:264"]');
+  await expect(receipt.getByText(row.governed_receipt_projection.exact_action_meaning, { exact: true })).toBeVisible();
+  const link = receipt.getByRole("link", { name: "Amendment description (Congress API)", exact: true });
+  const note = "This Congress API link requires an API key and may not open directly in your browser.";
+  await expect(link).toHaveAttribute("href", url);
+  await expect(link).toHaveAccessibleDescription(note);
+  await expect(receipt.getByText(note, { exact: true })).toBeVisible();
+  await expect(receipt.getByRole("link", { name: "Bill or amendment text", exact: true })).toHaveCount(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  const devPortal = page.locator("nextjs-portal");
+  if (await devPortal.count()) await devPortal.evaluate((element) => element.remove());
+  await receipt.locator("section").filter({ has: page.getByRole("heading", { name: "Official sources", exact: true }) }).screenshot({ path: "test-results/source-access-mobile.png" });
+  await link.focus();
+  const popupPromise = page.waitForEvent("popup");
+  await page.keyboard.press("Enter");
+  const popup = await popupPromise;
+  await expect(popup).toHaveURL(url);
+  await popup.close();
+  await expect(receipt.getByText(row.governed_receipt_projection.exact_action_meaning, { exact: true })).toBeVisible();
+});
+
+test("API legislative actions and public version XML retain distinct labels and access notes", async ({ page }) => {
+  await page.goto(`${landing}&issue=NATIONAL_SECURITY_FOREIGN#action-receipt-house-119-2-48`);
+  const receipt = page.locator('[data-canonical-action-id="house:119:2:48"]');
+  const actions = receipt.getByRole("link", { name: "Legislative actions (Congress API)", exact: true });
+  const xml = receipt.getByRole("link", { name: "Bill or amendment text", exact: true });
+  await expect(actions).toHaveAttribute("href", "https://api.congress.gov/v3/bill/119/hconres/68/actions");
+  await expect(actions).toHaveAccessibleDescription(/requires an API key/);
+  await expect(xml).toHaveAttribute("href", "https://www.congress.gov/119/bills/hconres68/BILLS-119hconres68ih.xml");
+  await expect(xml).not.toHaveAttribute("aria-describedby");
+  await expect(receipt.getByText(/This Congress API link requires/)).toHaveCount(1);
 });
