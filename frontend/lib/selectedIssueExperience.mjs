@@ -167,8 +167,13 @@ export function completeVisibleRows(rows = [], requestedCount = 12) {
 
 export function getActionPresentation(row = {}) {
   const projection = row.governed_receipt_projection || null;
+  // Reviewed overlays supply the accepted display type while retaining raw context.
   const actionType = formatActionType(
-    row.vote_context?.vote_type || row.vote_type,
+    firstText(
+      row.interpretation_review_state === "reviewed_interpretation" ? row.vote_type : null,
+      row.vote_context?.vote_type,
+      row.vote_type,
+    ),
   );
   const billTitle = firstText(
     row.bill_title,

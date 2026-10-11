@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import fs from "node:fs";
+import { gunzipSync } from "node:zlib";
+import { filterActionsByDimensions } from "./frontendPassA.mjs";
 
 import {
   buildLedgerItems,
@@ -129,6 +132,38 @@ test("compact action presentation uses amendment purpose and preserves parent me
   assert.equal(compact.title, "Limit military speed-camera funding");
   assert.equal(compact.parentMeasure, "National Defense Authorization Act for Fiscal Year 2027");
   assert.equal(compact.status, "");
+});
+
+test("reviewed Environment passage receipts prefer accepted types over retained raw rule context", () => {
+  const candidate = JSON.parse(fs.readFileSync(new URL("../../docs/review_packets/record_at_a_glance_v1/candidate.json", import.meta.url)));
+  const snapshot = JSON.parse(gunzipSync(fs.readFileSync(new URL(`../../${candidate.source_snapshot}`, import.meta.url))));
+  for (const scope of ["119", "all"]) {
+    const evidence = snapshot[`leg_valerie_p_foushee:${scope}:ENVIRONMENT_ENERGY`].body.evidence;
+    const rows = evidence.filter((row) => ["house:119:1:112", "house:119:1:114"].includes(row.canonical_action_id));
+    assert.equal(rows.length, 2);
+    const before = structuredClone(rows);
+    const filterMembership = ["substantive", "procedural_context"].map((type) => filterActionsByDimensions(rows, { type }));
+    for (const row of rows) {
+      assert.equal(row.interpretation_review_state, "reviewed_interpretation");
+      assert.equal(row.vote_type, "final_passage_or_suspension_passage");
+      assert.equal(row.vote_context.vote_type, "rule");
+      assert.equal(getActionPresentation(row).actionType, "Final passage or suspension passage");
+      assert.equal(getActionPresentation(row).status, "");
+    }
+    assert.deepEqual(rows, before);
+    assert.deepEqual(["substantive", "procedural_context"].map((type) => filterActionsByDimensions(rows, { type })), filterMembership);
+  }
+});
+
+test("action type retains raw fallback for unreviewed and missing accepted classifications", () => {
+  for (const interpretation_review_state of [undefined, "not_yet_in_reviewed_interpretation"]) {
+    assert.equal(getActionPresentation({ interpretation_review_state, vote_type: "final_passage", vote_context: { vote_type: "rule" } }).actionType, "Rule");
+  }
+  for (const vote_type of [undefined, null, "", "   "]) {
+    assert.equal(getActionPresentation({ interpretation_review_state: "reviewed_interpretation", vote_type, vote_context: { vote_type: "amendment" } }).actionType, "Amendment");
+  }
+  assert.equal(getActionPresentation({ vote_type: "motion" }).actionType, "Motion");
+  assert.equal(getActionPresentation({}).actionType, "");
 });
 
 test("exceptional action statuses have distinct stable semantic treatments", () => {
