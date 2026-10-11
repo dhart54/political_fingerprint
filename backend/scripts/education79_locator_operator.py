@@ -37,6 +37,7 @@ ROUTING_ENV = ('PGHOSTADDR', 'PGSERVICE', 'PGSERVICEFILE', 'PGOPTIONS')
 LIMITS = {'connect_timeout_seconds': 10, 'lock_timeout_seconds': 5,
           'statement_timeout_seconds': 60, 'observation_budget_seconds': 120,
           'preflight_freshness_seconds': 1800}
+PROTECTED_FETCH_ROWS = 4096  # Named-cursor transport only; libpq16-compatible.
 
 
 def utc_now():
@@ -154,7 +155,21 @@ def validate_authority(bundle, baseline, authority, *, fixture=False, now=None):
     require(0 <= age <= LIMITS['preflight_freshness_seconds'], 'fresh persistence preflight required')
 
 
-def protected_state(conn, *, exclude_batch_id=None, deadline=None):
+def timed_rows(cursor, timing):
+    """Measure retrieval separately without retaining or logging row contents."""
+    iterator = iter(cursor)
+    while True:
+        started = monotonic()
+        try:
+            row = next(iterator)
+        except StopIteration:
+            return
+        finally:
+            timing['fetch_seconds'] += monotonic() - started
+        yield row
+
+
+def protected_state(conn, *, exclude_batch_id=None, deadline=None, scan_timings=None):
     """Stream full-table SHA256 comparison, excluding only owned inserts."""
     result = {}
     for row in conn.execute("SELECT tablename FROM pg_tables WHERE schemaname='public' ORDER BY tablename").fetchall():
@@ -172,19 +187,44 @@ def protected_state(conn, *, exclude_batch_id=None, deadline=None):
                 params = (exclude_batch_id, exclude_batch_id)
         statement = sql.SQL('SELECT to_jsonb(t)::text AS row_text FROM {} t{} ORDER BY row_text').format(sql.Identifier(table), condition)
         checksum = hashlib.sha256(); count = 0
-        with conn.cursor(name='education79_protected_rows') as cursor:
-            cursor.itersize = 128
-            cursor.execute(statement, params)
-            for item in cursor:
-                require_budget(deadline)
-                checksum.update(item['row_text'].encode('utf-8'))
-                checksum.update(b'\n')
-                count += 1
+        timing = {'table': table, 'fetch_rows': PROTECTED_FETCH_ROWS,
+                  'excludes_owned_batch': exclude_batch_id is not None, 'rows': 0,
+                  'utf8_bytes': 0, 'query_seconds': 0.0, 'fetch_seconds': 0.0,
+                  'hash_seconds': 0.0, 'status': 'STARTED'} if scan_timings is not None else None
+        began = monotonic()
+        if timing is not None:
+            scan_timings.append(timing)  # Sidecar only; never part of the state/digest.
+        try:
+            with conn.cursor(name='education79_protected_rows') as cursor:
+                cursor.itersize = PROTECTED_FETCH_ROWS
+                query_started = monotonic()
+                cursor.execute(statement, params)
+                if timing is not None:
+                    timing['query_seconds'] = monotonic() - query_started
+                for item in timed_rows(cursor, timing) if timing is not None else cursor:
+                    require_budget(deadline)
+                    hash_started = monotonic() if timing is not None else None
+                    encoded = item['row_text'].encode('utf-8')
+                    checksum.update(encoded)
+                    checksum.update(b'\n')
+                    count += 1
+                    if timing is not None:
+                        timing['rows'] = count
+                        timing['utf8_bytes'] += len(encoded) + 1
+                        timing['hash_seconds'] += monotonic() - hash_started
+            require_budget(deadline)
+            if timing is not None:
+                timing['status'] = 'COMPLETE'
+        finally:
+            if timing is not None:
+                timing['elapsed_seconds'] = monotonic() - began
+                if timing['status'] != 'COMPLETE':
+                    timing['status'] = 'FAILED'
         result[table] = {'count': count, 'sha256': checksum.hexdigest()}
     return result
 
 
-def current_state(conn, bundle, *, deadline=None):
+def current_state(conn, bundle, *, deadline=None, scan_timings=None):
     require_budget(deadline)
     store.live_schema_contract(conn)
     require(conn.execute("SELECT relkind FROM pg_class WHERE oid='public.vote_contexts'::regclass").fetchone()['relkind'] == 'v',
@@ -200,10 +240,10 @@ def current_state(conn, bundle, *, deadline=None):
     require_budget(deadline)
     return {'normalized_schema_sha256': schema_digest(schema_state(conn)),
             'registry_row': row, 'owned_state': prep.owned_state(conn, bundle),
-            'public_tables': protected_state(conn, deadline=deadline)}
+            'public_tables': protected_state(conn, deadline=deadline, scan_timings=scan_timings)}
 
 
-def capture_preflight(conn, bundle, *, fixture_url=None):
+def capture_preflight(conn, bundle, *, fixture_url=None, scan_timings=None):
     fixture = fixture_url is not None
     if fixture:
         prep.require_fixture_connection(conn, fixture_url)
@@ -215,7 +255,7 @@ def capture_preflight(conn, bundle, *, fixture_url=None):
     set_wait_limits(conn)
     require(conn.execute('SHOW transaction_read_only').fetchone()['transaction_read_only'] == 'on',
             'preflight must run read-only')
-    state = current_state(conn, bundle, deadline=deadline)
+    state = current_state(conn, bundle, deadline=deadline, scan_timings=scan_timings)
     require_budget(deadline)
     completed = utc_now()
     require(0 <= (completed - started).total_seconds() <= LIMITS['observation_budget_seconds'],
@@ -231,7 +271,7 @@ def capture_preflight(conn, bundle, *, fixture_url=None):
     return report
 
 
-def persist(conn, bundle, baseline, authority, *, confirm=False, fixture_url=None, fault_after=False):
+def persist(conn, bundle, baseline, authority, *, confirm=False, fixture_url=None, fault_after=False, scan_timings=None):
     require(confirm, 'explicit bounded production persistence confirmation required')
     fixture = fixture_url is not None
     if fixture:
@@ -246,10 +286,10 @@ def persist(conn, bundle, baseline, authority, *, confirm=False, fixture_url=Non
     set_wait_limits(conn)
     conn.execute('SELECT pg_advisory_xact_lock(hashtext(%s))', (bundle['deterministic_batch_key'],))
     prep.registry_row(conn, bundle['registry_key'], lock=True)
-    before = current_state(conn, bundle, deadline=deadline)
+    before = current_state(conn, bundle, deadline=deadline, scan_timings=scan_timings)
     if before['owned_state'] is not None:
         without_owned = copy.deepcopy(before)
-        without_owned['public_tables'] = protected_state(conn, exclude_batch_id=before['owned_state']['batch_id'], deadline=deadline)
+        without_owned['public_tables'] = protected_state(conn, exclude_batch_id=before['owned_state']['batch_id'], deadline=deadline, scan_timings=scan_timings)
         without_owned['owned_state'] = None
         require(before == baseline['state'] or without_owned == baseline['state'], 'fresh persistence baseline drift')
         require_budget(deadline)
@@ -263,7 +303,7 @@ def persist(conn, bundle, baseline, authority, *, confirm=False, fixture_url=Non
     require(result['artifacts_inserted'] == 3 and result['artifacts_idempotent'] == 0
             and result['relationships_inserted'] == 2, 'persistence insert counts differ')
     owned = prep.owned_state(conn, bundle)
-    require(owned is not None and protected_state(conn, exclude_batch_id=owned['batch_id'], deadline=deadline) == before['public_tables'],
+    require(owned is not None and protected_state(conn, exclude_batch_id=owned['batch_id'], deadline=deadline, scan_timings=scan_timings) == before['public_tables'],
             'protected tables or prior rows changed')
     require(prep.registry_row(conn, bundle['registry_key']) == bundle['prior_registry_row'], 'registry changed during persistence')
     require_budget(deadline)

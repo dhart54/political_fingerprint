@@ -1,0 +1,93 @@
+{
+  "completed_at_utc": "2026-10-11T21:18:26.189575+00:00",
+  "cooperative_budget_seconds": 45,
+  "data_writes": 0,
+  "diagnostic_only_not_execution_preflight": true,
+  "elapsed_seconds": 35.971631,
+  "lock_timeout_seconds": 2,
+  "operator_head": "577ce1ffeb8b9dfbcf323a937fa8ff69cb5f1426",
+  "read_only": true,
+  "result": "BOUNDED_FETCH_DIAGNOSTIC_COMPLETED",
+  "row_contents_recorded": false,
+  "samples": [
+    {
+      "declare_seconds": 0.080783,
+      "fetch_rows": 128,
+      "fetches": [
+        {
+          "fetch_number": 1,
+          "hash_seconds": 6.5e-05,
+          "rows": 128,
+          "total_seconds": 18.434086,
+          "utf8_bytes": 40069
+        },
+        {
+          "fetch_number": 2,
+          "hash_seconds": 6.5e-05,
+          "rows": 128,
+          "total_seconds": 0.085907,
+          "utf8_bytes": 40067
+        },
+        {
+          "fetch_number": 3,
+          "hash_seconds": 6.3e-05,
+          "rows": 128,
+          "total_seconds": 0.043326,
+          "utf8_bytes": 40188
+        },
+        {
+          "fetch_number": 4,
+          "hash_seconds": 6.2e-05,
+          "rows": 128,
+          "total_seconds": 0.040062,
+          "utf8_bytes": 40193
+        },
+        {
+          "fetch_number": 5,
+          "hash_seconds": 6.3e-05,
+          "rows": 128,
+          "total_seconds": 0.042102,
+          "utf8_bytes": 40159
+        },
+        {
+          "fetch_number": 6,
+          "hash_seconds": 5.6e-05,
+          "rows": 128,
+          "total_seconds": 0.043841,
+          "utf8_bytes": 40317
+        }
+      ],
+      "table": "vote_context_members"
+    },
+    {
+      "declare_seconds": 0.078174,
+      "fetch_rows": 4096,
+      "fetches": [
+        {
+          "fetch_number": 1,
+          "hash_seconds": 0.001978,
+          "rows": 4096,
+          "total_seconds": 16.019354,
+          "utf8_bytes": 1287670
+        },
+        {
+          "fetch_number": 2,
+          "hash_seconds": 0.001823,
+          "rows": 4096,
+          "total_seconds": 0.123956,
+          "utf8_bytes": 1287898
+        },
+        {
+          "fetch_number": 3,
+          "hash_seconds": 0.001859,
+          "rows": 4096,
+          "total_seconds": 0.137186,
+          "utf8_bytes": 1289044
+        }
+      ],
+      "table": "vote_context_members"
+    }
+  ],
+  "started_at_utc": "2026-10-11T21:17:50.217965+00:00",
+  "statement_timeout_seconds": 20
+}
