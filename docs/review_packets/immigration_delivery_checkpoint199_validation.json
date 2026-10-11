@@ -1,0 +1,259 @@
+{
+  "checkpoint": 199,
+  "base_head": "3cbf25d1fb98c0f57c023f86e7a7d4ab1be058fd",
+  "candidate_receipt_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\hr7008_qualified_domain_candidate_checkpoint199.json",
+  "candidate_receipt_sha256": "56924a023076e3374bcb2b5afb5953290b5e5b278327a08c0649c9d9cf1f37b3",
+  "candidate_only": true,
+  "completed_screenings": 1,
+  "previously_held_action_completed": true,
+  "new_comparable_routine_samples": 0,
+  "counts": {
+    "reviewed": 615,
+    "pending": 61,
+    "ordinary_unscreened": 29,
+    "researched_holds": 32,
+    "meanings": 48,
+    "propositions": 82,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "focused_tests": 205,
+  "focused_test_runner_seconds": 23.14,
+  "semantic_checks": 7,
+  "accepted_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out_references": 4,
+    "held_out": 4
+  },
+  "byte_exact_output_replays": 7,
+  "preservation_and_source_checks": {
+    "changed_universe_rows": 1,
+    "prior_shared_meanings_preserved": 47,
+    "prior_authoring_inputs_preserved": 47,
+    "prior_membership_records_preserved": 614,
+    "prior_member_projection_rows_preserved": 94,
+    "prior_propositions_preserved": 80,
+    "new_shared_meanings": 1,
+    "new_propositions": 2,
+    "new_whole_package_observations_per_member": 1,
+    "member_statuses": {
+      "F000477": "Nay",
+      "M001184": "Yea"
+    },
+    "single_member_preparation_core_identical": true,
+    "new_cross_domain_attribution_constraint_only": true,
+    "no279_component_control_counting": true,
+    "sources_capture_manifest_private_pool_byte_exact": true,
+    "new_acquisitions": 0,
+    "new_sources": 0,
+    "frozen_blobs_preserved": 380,
+    "untracked_notes_preserved": 2,
+    "literal_claims": 26,
+    "literal_predicate_scopes": 7,
+    "candidate_only": true,
+    "partial_packages_unchanged": 3,
+    "canonical_application_questions_unchanged": 70,
+    "independent198_no_new_defect_received": true,
+    "CI198_actual_nine_first_attempt_executions_retained": true,
+    "CI198_four_conditional_guards_unexecuted_qualified": true
+  },
+  "phase_logs": [
+    {
+      "log": ".tmp\\tests199_retry1.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence"
+      ],
+      "started_utc": "2026-10-11T18:52:26.293236+00:00",
+      "completed_utc": "2026-10-11T18:52:49.613837+00:00",
+      "elapsed_seconds": 23.32071490000817,
+      "exit_code": 0,
+      "log_sha256": "cb9363e0f223ffcc0ebc54d85008de30ba8c56bb3d95907b2faedd5cf6119692"
+    },
+    {
+      "log": ".tmp\\semantic199.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-11T18:52:49.618462+00:00",
+      "completed_utc": "2026-10-11T18:52:51.570353+00:00",
+      "elapsed_seconds": 1.9519027000060305,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir199.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-11T18:52:51.575420+00:00",
+      "completed_utc": "2026-10-11T18:52:51.646490+00:00",
+      "elapsed_seconds": 0.0710747999837622,
+      "exit_code": 0,
+      "log_sha256": "751b66b86e78a8b46f29f1c53866a5e238ac5780f57e2851289952cd8a53b149"
+    },
+    {
+      "phase": "byte_exact_output_replay",
+      "started_utc": "2026-10-11T18:52:51.650497+00:00",
+      "completed_utc": "2026-10-11T18:52:57.557164+00:00",
+      "elapsed_seconds": 5.906699699989986,
+      "outputs": 7
+    }
+  ],
+  "source_count": 2288,
+  "capture_count": 1178,
+  "new_acquisitions": 0,
+  "new_sources": 0,
+  "literal_predicate_authoring_check": {
+    "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\literal_predicate_authoring_check_checkpoint199.json",
+    "receipt_sha256": "85ab3cde2953ec5a1392819bc35aa7d3619d52d5f85ebc6fbe55252aebb7f9e0",
+    "checked_actions": 1,
+    "predicate_scopes": 7,
+    "whole_source_review_not_replaced": true
+  },
+  "independent198_review": {
+    "path": "docs\\review_packets\\immigration_bounded_review_checkpoint198_received199.json",
+    "receipt_sha256": "cf7609e1f39a4f6019201e62b9539afc5350770e14d51177c8133bc38abdb66e",
+    "reviewed_head": "3cbf25d1fb98c0f57c023f86e7a7d4ab1be058fd",
+    "no_new_actionable_defect_in_reviewed_scope": true,
+    "source_chain_only_not_new199_meaning_clearance": true,
+    "conditional_guards_unexecuted": 4
+  },
+  "CI198": {
+    "path": "docs\\review_packets\\immigration_delivery_checkpoint198_ci.json",
+    "receipt_sha256": "1b3cfd3250f81754080269913c76aa973deefb7ea769c3a48c201f75aad69b12",
+    "actual_first_attempt_successes": 9,
+    "actual_contexts": {
+      "feature": 5,
+      "synthetic": 3,
+      "mixed": 1
+    },
+    "base_qualification_path": "docs\\review_packets\\immigration_delivery_checkpoint198_ci_base_qualification.json",
+    "base_qualification_sha256": "2c8d82477a2f3bcb4cd052a5e66312760bdbe018fc79bfbdb9c103dfbcddc589",
+    "current_main_integration_claim": false
+  },
+  "first_test_attempt": {
+    "focused_tests": 205,
+    "failures": 1,
+    "runner_seconds": 23.923,
+    "log_sha256": "50533721e2cd533b6cfcc8d810e04b15dfa6291b74fe2802b94617f6fb176d60",
+    "cause": "Missing owner integrity binding for newly compiled action; added explicitly pending independent review, independent severity counts unchanged",
+    "test_contract_not_weakened": true
+  },
+  "independent199_review_pending": true,
+  "new_head_CI_pending": true,
+  "timing": {
+    "checkpoint": 199,
+    "started_utc": "2026-10-11T18:31:40.476546+00:00",
+    "selection": "Finish existing held H.R.7008 source-grounded domain/shared-core application; no reacquisition, no routine benchmark sample",
+    "preselection_comparator_discovery_unmeasured": true,
+    "prior_comparable_result": "FAIL",
+    "prior_comparable_mean_seconds": 781.087,
+    "special_benchmark_round": false,
+    "new_average_inferred": false,
+    "source_review_authoring_completed_utc": "2026-10-11T18:43:24.456779+00:00",
+    "source_review_authoring_endpoint_seconds": 703.980233,
+    "new_acquisitions": 0,
+    "retained_source_reuse": true,
+    "comparator_scope_core_inspection_heading_output_recovery_failed_nested_heredoc_and_authoring_included": true,
+    "local_validation_completed_utc": "2026-10-11T18:54:02.906638+00:00",
+    "elapsed_through_local_validation_seconds": 1342.430092,
+    "validation_phases": [
+      {
+        "log": ".tmp\\tests199_retry1.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate",
+          "backend.tests.test_editorial_semantic_ir",
+          "backend.tests.test_source_sequence"
+        ],
+        "started_utc": "2026-10-11T18:52:26.293236+00:00",
+        "completed_utc": "2026-10-11T18:52:49.613837+00:00",
+        "elapsed_seconds": 23.32071490000817,
+        "exit_code": 0,
+        "log_sha256": "cb9363e0f223ffcc0ebc54d85008de30ba8c56bb3d95907b2faedd5cf6119692"
+      },
+      {
+        "log": ".tmp\\semantic199.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/run_editorial_pipeline.py",
+          "validate",
+          "--tier",
+          "semantic"
+        ],
+        "started_utc": "2026-10-11T18:52:49.618462+00:00",
+        "completed_utc": "2026-10-11T18:52:51.570353+00:00",
+        "elapsed_seconds": 1.9519027000060305,
+        "exit_code": 0,
+        "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+      },
+      {
+        "log": ".tmp\\ir199.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/validate_editorial_semantic_ir.py"
+        ],
+        "started_utc": "2026-10-11T18:52:51.575420+00:00",
+        "completed_utc": "2026-10-11T18:52:51.646490+00:00",
+        "elapsed_seconds": 0.0710747999837622,
+        "exit_code": 0,
+        "log_sha256": "751b66b86e78a8b46f29f1c53866a5e238ac5780f57e2851289952cd8a53b149"
+      },
+      {
+        "phase": "byte_exact_output_replay",
+        "started_utc": "2026-10-11T18:52:51.650497+00:00",
+        "completed_utc": "2026-10-11T18:52:57.557164+00:00",
+        "elapsed_seconds": 5.906699699989986,
+        "outputs": 7
+      }
+    ],
+    "post_initial_authoring_wording_refinement_included": true,
+    "context_recovery_and_truncated_output_recovery_included": true,
+    "failed_focused_test_attempt_included": true,
+    "failed_tests_runner_seconds": 23.923,
+    "failed_tests_log_sha256": "50533721e2cd533b6cfcc8d810e04b15dfa6291b74fe2802b94617f6fb176d60",
+    "failure": "Missing owner integrity binding for newly compiled action; added explicitly pending independent review, independent severity counts unchanged",
+    "private_verifier_field_name_correction_included": true
+  },
+  "benchmark": {
+    "result": "FAIL",
+    "mean_seconds": 781.087,
+    "ceiling_seconds": 600,
+    "target_seconds": 240,
+    "no_new_average": true
+  },
+  "editorially_accepted": false,
+  "production_eligible": false,
+  "publication_authorized": false,
+  "receipt_sha256": "e2bbabfdbb307357458f03c310c73c1c0ce53114e07f774ad34158b3a44119f4"
+}

@@ -63,7 +63,8 @@
     "house:119:2:214",
     "house:119:2:244",
     "house:119:1:79",
-    "house:119:1:83"
+    "house:119:1:83",
+    "house:119:2:280"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Membership requires an exact operative Immigration & Border mechanism: status/presence, admission, visas/asylum/refugees/parole, removal, detention/release, naturalization/citizenship, immigration documentation/verification/adjudication, direct border entry/inspection/enforcement, immigration-specific standards/cooperation, or eligibility directly governed by immigration status. Titles, policy labels, rhetoric, keywords and other-domain interpretations are leads only. Procedural/expressive controls remain noncounting.",
@@ -78,9 +79,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 228,
-      "interpreted_substantive_directional": 47,
+      "interpreted_substantive_directional": 48,
       "exact_action_ineligible": 337,
-      "source_unresolved": 62,
+      "source_unresolved": 61,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -90,14 +91,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 47,
-    "directional_substantive_actions": 47,
+    "substantive_eligible_actions": 48,
+    "directional_substantive_actions": 48,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 228,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 337,
-    "unresolved_boundary_cases": 62,
-    "independent_episode_count": 42,
+    "unresolved_boundary_cases": 61,
+    "independent_episode_count": 43,
     "multi_action_episode_count": 5,
     "mechanism_types": [
       "amendment",
@@ -107,8 +108,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 47,
-      "substantive_actions": 47,
+      "ready_substantive_actions": 48,
+      "substantive_actions": 48,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -392,7 +393,8 @@
         "house:119:2:120",
         "house:119:2:169",
         "house:119:2:214",
-        "house:119:2:244"
+        "house:119:2:244",
+        "house:119:2:280"
       ],
       "exact_action_ineligible": [
         "house:119:1:8",
@@ -789,7 +791,6 @@
         "house:119:2:271",
         "house:119:2:272",
         "house:119:2:278",
-        "house:119:2:280",
         "house:119:2:283",
         "house:119:2:286",
         "house:119:2:292",
@@ -1059,6 +1060,12 @@
           "house:119:1:79",
           "house:119:1:83"
         ]
+      },
+      {
+        "episode_candidate_id": "episode:hr7008:119",
+        "action_ids": [
+          "house:119:2:280"
+        ]
       }
     ],
     "multi_action_episodes": [
@@ -1143,11 +1150,11 @@
         "legal_application_questions": "Separate queue now includes one bounded G102-105 printed-date/general-continuance question; no personal eligibility or FY2025 quota application accepted."
       }
     ],
-    "interpreted_action_count_qualification": "47 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
+    "interpreted_action_count_qualification": "48 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "1eef31e08820de66a3f012051ea90f15002269459e8e90fec447a1ded2fed3e7",
+  "universe_subject_sha256": "8ee7a904d35cc6bac532754793633314ec263c57f16c124360d226ce29a79b8e",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -43723,8 +43730,8 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_7008",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "H.R.7008 whole House EH and own passage-floor body were read/bound in197. In198 the complete14-page RCP11938 and whole adopted PartB are read; literal PartB adds a compensation OR fiduciary/occupational alternative to the spouse/dependent occupational exception, and amended complete print matches the complete EH under declared formatting comparison. Stock restrictions AND Federal-election photoID rules remain one whole passage choice. Retained HAVA302/303/311/401, absent-uniformed-services and accessibility exceptions are read; current individual voter eligibility, every State law and all intervening enactments are not certified. The new ID mechanism retains in-person provisional3day ID OR religious-photoaffidavit cure, non-in-person copy OR last4SSN AND reasonable-effort affidavit OR notarial personalmarking alternatives, five named IDs and two imported ballot exceptions. An ID alternative such as a USpassport is not by itself a new citizenship-proof requirement for all voters. Ethics coverage imports5US13101 dependentchild: son/daughter/stepchild AND either unmarried-under21-household OR IRC152dependent. The second alternative incorporates152 citizenship/nationality OR US/contiguous-country residence qualification, including the adopted-child sameabode/household AND taxpayercitizen/national exception; it does not govern the separate firstalternative or spouse scope, and tax residence is not assumed lawful Immigration status. Historical13104f8 fund exception,13106 enforcement,152 operative dependency rules,632a1 general business and78c(a10)/78l(a,g1) defined securities comparator scopes are read. The citizenship/residence-conditioned family coverage in this newly proposed financial-conduct regime is a concrete existing-rule domain application candidate, not safely dismissed as keyword-only nor accepted as a general new Immigration eligibility rule. Broad unread-source hold becomes a precise pending qualified shared-domain review of that source-mapped coverage relationship. Keep source_unresolved, noncounting and uncompiled; no completed screening, new sharedmeaning, component stance, individual trade/vote/citizenship/admission/removal determination or editorial acceptance. Own passage question/voiceayes/Steil demand/order/direct232-198-1result remains distinct from separately postponed recommittal; governed Clerk/member records remain unchanged. All current securities/tax/SBA/campaign-fund rules and individual legal applications are not certified.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Existing source-bound personal-financial comparator candidates support routine qualified inclusion under the unchanged exact-operative Immigration rule. H.R.7008 proposes covered-investment purchase/sale/enforcement restrictions for a defined Member-family class.13101 requires a son/daughter/stepchild AND ((unmarried AND under21 AND household) OR dependencyunder152). The second path incorporates152b3 citizen/national OR US/contiguous-country residence, with the adopted-child sameabode/household AND taxpayercitizen/national exception, lawful adoption placement and other dependency qualifications. It does not condition the separate firstchild path or spouses on152b3 or equate tax residence with lawful Immigration status. This is a concrete definition-to-new-personal-conduct-consequence chain consistent with the retained foreign-tax treatment/donor credit/remote natural-person comparators, rather than a keyword or agency/title inference. No admission power or new methodology decision is needed for a bounded candidate. Whole stock AND Federal-electionID choice, adopted RCP/PartB, EH/floor and own direct passage are retained; ID alternatives/old citizen checkbox remain context, not automatic citizenship-proof meaning. Fee prohibition retains exactFECA301(8)/52US30101(8) reference for contributions acceptedascandidate and separate officeholder-support-donation branch, without independently paraphrasing the unread definition. Historical3302b comparator is bound with its printed exception/redesignation note. Candidate substantive membership/compilation only, pending independent semantic review; no editorial/publication acceptance, separate component stance or individual outcome. Current-law integration/private78c replay limits retained.",
       "source": {
         "source_id": "clerk:119:2:280",
         "url": "https://clerk.house.gov/evs/2026/roll280.xml",
@@ -43732,7 +43739,7 @@
         "governed_bytes_sha256": "df59ef6affe744c9b46f4e96e5cb8020d39bc00080ea6f3d95093791274a2742",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr7008:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_7008",
       "member_action": "nay",
@@ -43741,9 +43748,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "H.R.7008 whole House EH and own passage-floor body were read/bound in197. In198 the complete14-page RCP11938 and whole adopted PartB are read; literal PartB adds a compensation OR fiduciary/occupational alternative to the spouse/dependent occupational exception, and amended complete print matches the complete EH under declared formatting comparison. Stock restrictions AND Federal-election photoID rules remain one whole passage choice. Retained HAVA302/303/311/401, absent-uniformed-services and accessibility exceptions are read; current individual voter eligibility, every State law and all intervening enactments are not certified. The new ID mechanism retains in-person provisional3day ID OR religious-photoaffidavit cure, non-in-person copy OR last4SSN AND reasonable-effort affidavit OR notarial personalmarking alternatives, five named IDs and two imported ballot exceptions. An ID alternative such as a USpassport is not by itself a new citizenship-proof requirement for all voters. Ethics coverage imports5US13101 dependentchild: son/daughter/stepchild AND either unmarried-under21-household OR IRC152dependent. The second alternative incorporates152 citizenship/nationality OR US/contiguous-country residence qualification, including the adopted-child sameabode/household AND taxpayercitizen/national exception; it does not govern the separate firstalternative or spouse scope, and tax residence is not assumed lawful Immigration status. Historical13104f8 fund exception,13106 enforcement,152 operative dependency rules,632a1 general business and78c(a10)/78l(a,g1) defined securities comparator scopes are read. The citizenship/residence-conditioned family coverage in this newly proposed financial-conduct regime is a concrete existing-rule domain application candidate, not safely dismissed as keyword-only nor accepted as a general new Immigration eligibility rule. Broad unread-source hold becomes a precise pending qualified shared-domain review of that source-mapped coverage relationship. Keep source_unresolved, noncounting and uncompiled; no completed screening, new sharedmeaning, component stance, individual trade/vote/citizenship/admission/removal determination or editorial acceptance. Own passage question/voiceayes/Steil demand/order/direct232-198-1result remains distinct from separately postponed recommittal; governed Clerk/member records remain unchanged. All current securities/tax/SBA/campaign-fund rules and individual legal applications are not certified.",
-      "unresolved_reason": "pending_qualified_shared_domain_review_of_source_mapped_family_coverage198",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Existing source-bound personal-financial comparator candidates support routine qualified inclusion under the unchanged exact-operative Immigration rule. H.R.7008 proposes covered-investment purchase/sale/enforcement restrictions for a defined Member-family class.13101 requires a son/daughter/stepchild AND ((unmarried AND under21 AND household) OR dependencyunder152). The second path incorporates152b3 citizen/national OR US/contiguous-country residence, with the adopted-child sameabode/household AND taxpayercitizen/national exception, lawful adoption placement and other dependency qualifications. It does not condition the separate firstchild path or spouses on152b3 or equate tax residence with lawful Immigration status. This is a concrete definition-to-new-personal-conduct-consequence chain consistent with the retained foreign-tax treatment/donor credit/remote natural-person comparators, rather than a keyword or agency/title inference. No admission power or new methodology decision is needed for a bounded candidate. Whole stock AND Federal-electionID choice, adopted RCP/PartB, EH/floor and own direct passage are retained; ID alternatives/old citizen checkbox remain context, not automatic citizenship-proof meaning. Fee prohibition retains exactFECA301(8)/52US30101(8) reference for contributions acceptedascandidate and separate officeholder-support-donation branch, without independently paraphrasing the unread definition. Historical3302b comparator is bound with its printed exception/redesignation note. Candidate substantive membership/compilation only, pending independent semantic review; no editorial/publication acceptance, separate component stance or individual outcome. Current-law integration/private78c replay limits retained.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "govinfo:hr7008eh",
@@ -43894,15 +43901,22 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2B-sec78c.htm",
           "raw_sha256": "b6730c5c897a72eb711bd564b5496918ff087209d4abaa7efb90f4e7fc61b035",
           "governed_bytes_sha256": "d233e5317e6fa7bc6f66e7b019ec0cb6c4d371830ebcae6638508ca94776558b"
+        },
+        {
+          "source_id": "govinfo:31usc3302b-2024-deposit-exception",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap33-subchapI-sec3302.htm",
+          "raw_sha256": "cef6daf403a1d461b3b4f4589616a8e2ac4c8f182a731381ac1665e57f44a2d1",
+          "governed_bytes_sha256": "4cba90d6dd622c915305486a8176ce91ef682948baea8884988d851007d01dad"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d50887a78caa201c18c8e4725812698fce87b40d7326c74fa352c577a5313f5b"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:280",
@@ -46363,7 +46377,8 @@
     "house:119:2:214",
     "house:119:2:244",
     "house:119:1:79",
-    "house:119:1:83"
+    "house:119:1:83",
+    "house:119:2:280"
   ],
   "unresolved_action_ids": [
     "house:119:1:151",
@@ -46421,7 +46436,6 @@
     "house:119:2:271",
     "house:119:2:272",
     "house:119:2:278",
-    "house:119:2:280",
     "house:119:2:283",
     "house:119:2:286",
     "house:119:2:292",
@@ -46445,6 +46459,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "42ee575c10532d1afeb38b624e099702250364e34c27f8122cdbee6bbf87b65c",
-  "membership_review_sha256": "8049f2acf62d6ea613bd23910690eb9eb6df48a3635ee25dc8d84424f59e5662"
+  "proposal_sha256": "312be80f5fd246bb14dbf32d7e2014ecb31d812bfcaa3af6d31032735ba3db8a",
+  "membership_review_sha256": "be24d5982cb3f5341dd4c87f15c182c05dbf40b1f8e0cf88b8a37a0c3e7a5d3b"
 }

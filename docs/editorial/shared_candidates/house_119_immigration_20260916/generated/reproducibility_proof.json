@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "0267756505693bda5c2f6dbf836818e1b41d267bd4e37176905f5cb0f509eae9"
   },
-  "input_sha256": "76b5492ecfec52e389f9364b08bebce020382ede4a3eb1104332c1a8810b2087",
+  "input_sha256": "383f4af3f87519f0fcb08b9329b64c8e0dd5d30e7e96daee3ea26a0b8e32207b",
   "source_capture_sha256": "2f532c820f921f1578f8867bea28d9e50bdc5b472a54142281ce644494cfbc79",
-  "core_sha256": "5f4cd005dde59c1e746b503e3208aca27a3e55594aa9c8397c5583dcc54e79c5",
-  "compiled_sha256": "d01bee22f2175687be2bca2caab0ad6961b82b061d8ea6f86df32ee0bff0d8a0",
-  "readable_sha256": "c5a761fbf209ce885d8649cb6254c755509cee0dc432ac986110fa8247de4526",
+  "core_sha256": "c106f70d5b01aa2f342be010723b383aef4bd2a0f3f852579d221d3f26701221",
+  "compiled_sha256": "9ecc6320035f203d6dc1d9dfebc434b9b9e80d08e4335d23b8be0a50686e8a52",
+  "readable_sha256": "f2cbc009acee63c19ee0853333f514457b1621be4b8c5a5855f5bd85992f5fe8",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -954,6 +954,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported adopting the combined Jordan funding prohibition and all eight specified account reductions, including the $50 million emergency refugee and migration fund reduction, subject to the stated application limits",
           "source_id": "clerk:119:2:244"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:280",
+      "shared_sha256": "c64d04619fbf12f60f513ed1cfda65ec1dce96bf6bf6650e7b8608dd614129a5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete package; no separate component position, motive or preferred alternative is established",
+          "source_id": "clerk:119:2:280"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R.7008 Member-family investment and Federal-election photoID package; no separate component position is established",
+          "source_id": "clerk:119:2:280"
         }
       ]
     }

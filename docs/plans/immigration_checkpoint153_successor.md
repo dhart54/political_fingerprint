@@ -2457,3 +2457,58 @@ reset/cherry-picking. Git/CI/report overhead to follow.198independent review and
 exact-headCI pending at this note. Candidate-only scope/sole ownership persist;
 no routine approval gate, new deadline, merge/deploy/publication/editorial
 acceptance/compiler release/production/schema/security/config/methodology change.
+
+
+## Checkpoint199: H.R.7008 qualified shared candidate
+
+Complete the existing House119 session2 roll280 hold using the retained source
+chain and existing case-specific personal-coverage standard. No source reacquisition
+or methodology change. The new Member-family investment restrictions incorporate
+citizenship/nationality/residence through the second tax-dependent child path.
+The separate under21 household path and spouses retain their own predicates;
+tax residence does not establish lawful Immigration status. Existing qualified
+financial-treatment/donor-credit/remote-access candidates support this bounded
+application; they are not accepted ontology. Election-photoID remains whole-package
+context and does not establish universal citizenship proof.
+
+One shared whole-passage meaning now serves Foushee Nay and Massie Yea. Both
+recorded labels were checked against the retained own Record lists and Clerk
+records. Whole RCP/PartB/EH, direct question/voice/demand/order/recorded sequence,
+investment exclusions, dividend purchase exception, fee arithmetic, separate
+prohibited payment-source branches, and election alternatives remain qualified.
+The exact FECA defined-contribution reference is retained without paraphrasing
+its unread definition. The historical3302b comparator and printed exception/
+redesignation note remain literal. Current-law integration, individual legal
+application and private78c rawparent replay remain uncertified. Roll279 stays
+procedural context; no separate component stance or publication acceptance.
+
+615 reviewed/61 pending:29 ordinary and32 researched holds.48 sharedmeanings,
+82 propositions,70 canonical questions and3 partial packages. Sources2288 and
+capture registrations1178 unchanged; zero new acquisitions. All previous47
+shared meanings/authoring inputs,94 projection rows,80 propositions,614 membership
+records and380 frozen Git blobs survive exactly; two unrelated untracked shutdown
+notes remain untouched. A new cross-domain attribution boundary is typed and
+candidate-only. Owner audit binding is recorded with independent review pending;
+prior independent severity counts remain unchanged.
+
+Independent198 source-chain review at3cbf25d reports no new actionable defect,
+44 preservation checks and7 replays; it does not clear the new199 meaning.
+Its9 actual first-attempt CI executions and synthetic-base qualification are
+copied forward;4 conditional guards unexecuted remain qualified. The first199
+focused run exposed a missing owner integrity binding (1/205 failed,23.923s).
+After the bounded binding correction,205 tests pass(23.140s),7 semantic checks,
+accepted IR validation and7 byte-exact replays pass. No test contract was weakened.
+Private verifier field correction and truncated-output/context recovery are
+included in timing; original failure log retained. Literal26 claims/7 predicate
+scopes verified. Validation receipte2bbabfdbb307357458f03c310c73c1c0ce53114e07f774ad34158b3a44119f4.
+
+Source/domain/initial authoring endpoint703.980seconds; local validation endpoint
+1342.430seconds from18:31:40.476546UTC,
+including later wording refinements and recoveries. Git/CI/report overhead follows.
+This is one complex held-action completion, not a comparable routine sample or
+new performance average. Existing benchmark remains FAIL781.087seconds against
+600ceiling/240target. Independent199 review and exact-headCI are pending at this
+note. Sole writer retained; no new deadline, routine approval gate, merge,
+deployment, publication, editorial acceptance, production, schema, security,
+configuration or methodology changes. Next ready source-complete candidates are
+H.R.5214 session1/298 and H.R.5107 session1/299; no repeat source acquisition.
