@@ -42,6 +42,11 @@ observations and rollback inputs, **not new authority or execution preflight**.
 Existing runtime eligibility and canonical payload hash pass.
 The final read-only identity observation confirms all four publication roots
 245/239/251/248 and absence of all three proposed natural keys.
+`prepared/public-input-equivalence.json` independently proves every captured
+artifact245/registry field and both provenance artifacts/relationships duplicate
+already-published Git evidence, plus all nine anonymous public response bodies.
+Only timezone-aware timestamp separator formatting differs; no database or API
+payload is newly disclosed by this packet.
 
 Accepted M14D/M14F/M14G meanings, authority receipts, candidate bytes, shared core,
 member projection, source catalog and raw source evidence are not rewritten.
@@ -160,6 +165,7 @@ Safe offline replay:
 python scripts/prepare_education79_locator_release.py --check
 python -m pytest -q -p no:cacheprovider scripts/tests/test_education79_locator_release.py backend/tests/test_m14g_education_workforce_site_integration.py
 node scripts/validate_education79_locator_card.mjs --check
+python scripts/verify_education79_packet_public_inputs.py
 python backend/scripts/build_m14g_education_workforce_site_integration.py --check
 ```
 
