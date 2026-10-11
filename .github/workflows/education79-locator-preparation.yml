@@ -1,0 +1,90 @@
+name: Education locator preparation
+
+on:
+  pull_request:
+    paths:
+      - "backend/scripts/education79_locator_preparation.py"
+      - "backend/scripts/editorial_artifact_store.py"
+      - "backend/tests/test_education79_locator_*.py"
+      - "backend/app/editorial_presentations/publication_replacement*.py"
+      - "backend/app/api/positions.py"
+      - "backend/app/api/editorial_presentations.py"
+      - "scripts/prepare_education79_locator_release.py"
+      - "scripts/prove_education79_disposable_card.mjs"
+      - "docs/review_packets/education79_locator_v1/**"
+      - "docs/editorial/publication_replacements/m15b_green_authorization/disposable_baseline.json.gz"
+      - "docs/editorial/publication_replacements/m15b_green_activation/production_audits.json.gz"
+      - ".github/workflows/education79-locator-preparation.yml"
+  push:
+    branches: [main]
+    paths:
+      - "backend/scripts/education79_locator_preparation.py"
+      - "backend/scripts/editorial_artifact_store.py"
+      - "backend/tests/test_education79_locator_*.py"
+      - "backend/app/editorial_presentations/publication_replacement*.py"
+      - "backend/app/api/positions.py"
+      - "backend/app/api/editorial_presentations.py"
+      - "scripts/prepare_education79_locator_release.py"
+      - "scripts/prove_education79_disposable_card.mjs"
+      - "docs/review_packets/education79_locator_v1/**"
+      - "docs/editorial/publication_replacements/m15b_green_authorization/disposable_baseline.json.gz"
+      - "docs/editorial/publication_replacements/m15b_green_activation/production_audits.json.gz"
+      - ".github/workflows/education79-locator-preparation.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: education79-preparation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  education79-locator-disposable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://invalid
+      EDUCATION79_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_education79_locator
+      EDUCATION79_PROOF_DIR: education79-proof
+      PGPASSWORD: postgres
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Prove exact inert Education locator lifecycle and card bindings
+        run: |
+          git rev-parse HEAD
+          python -m pip install -r backend/requirements.txt httpx
+          createdb -h 127.0.0.1 -U postgres pf_education79_locator
+          python -m pytest -q \
+            backend/tests/test_education79_locator_preparation.py \
+            backend/tests/test_education79_locator_disposable_postgres.py -rs
+          node scripts/prove_education79_disposable_card.mjs education79-proof
+      - name: Retain visibly synthetic disposable evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: education79-disposable-${{ github.event.pull_request.head.sha || github.sha }}
+          path: education79-proof/
+          if-no-files-found: warn
+          retention-days: 7
+
