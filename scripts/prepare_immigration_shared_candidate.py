@@ -21,7 +21,7 @@ from scripts import prepare_shared_domain_candidate as common
 from scripts.prepare_shared_domain_candidate import identity, readable_candidates, review_text, write_json
 from backend.app.semantic_ir.shared_corpus import (
     adapt_to_semantic_ir_input, candidate_update_impact, choice_effect, digest,
-    sealed_digest, validate_member_projection, SharedCorpusValidationError,
+    sealed_digest, validate_member_projection, validate_shared_action_core, SharedCorpusValidationError,
 )
 from backend.app.semantic_ir.pipeline import run_editorial_pipeline
 CANDIDATE = common.CANDIDATE
@@ -170,6 +170,46 @@ def _action_source_constraints(authoring):
     return constraints
 
 
+def _prepare_source_review_reuse(authoring, capture, proposed, canonical, member_ids):
+    """Copy a qualified V1 candidate after binding its source-review wrapper."""
+    aid = proposed['action_id']
+    if (not canonical['meaning_contract_version'].startswith('source_review')
+            or not re.fullmatch(re.escape('candidate-exact-action:' + aid)
+                                + r':source-review\d+:v\d+', canonical['action_meaning_ref'])
+            or canonical['mechanism_availability'] != 'candidate_source_grounded_pending_external_semantic_review'):
+        raise ValueError('unsupported source-review candidate identity')
+    sources = {s['source_id']: s for s in capture['sources']}
+    clerk_id = 'clerk:' + aid.removeprefix('house:')
+    outcome_ids = [clerk_id, *proposed.get('additional_action_outcome_source_ids', [])]
+    if (len(outcome_ids) != len(set(outcome_ids))
+            or [s['source_id'] for s in canonical['action_outcome_source_identities']] != outcome_ids):
+        raise ValueError('source-review outcome witness roles differ')
+    # Every role, version and seal must bind the supplied capture, including the
+    # additional own Record witness that ordinary preparation does not partition.
+    for witness in canonical['governed_source_identities']:
+        if witness['source_id'] not in sources or identity(sources[witness['source_id']]) != witness:
+            raise ValueError('source-review governed witness differs from capture')
+    subset = copy.deepcopy(authoring)
+    subset['actions'] = [copy.deepcopy(proposed)]
+    subset['blocked_episode_ids'] = []
+    prepared = common.prepare(subset, capture, member_ids)
+    generated = prepared[0]['actions'][0]
+    for field in ['action_id', 'chamber', 'congress', 'session', 'roll',
+                  'legislative_stage', 'action_date', 'chamber_outcome', 'enactment_status',
+                  'candidate_exact_action_meaning', 'candidate_short_description',
+                  'candidate_compact_description', 'candidate_shared_limitations',
+                  'compact_source_refs', 'choice_meanings', 'claim_source_map',
+                  'operative_meaning_source_identities']:
+        if canonical[field] != generated[field]:
+            raise ValueError('source-review input differs from canonical core: ' + field)
+    expected_measure = f"{authoring['congress']}:{proposed.get('bill_type', 'hr')}:{proposed['bill_number']}"
+    if (canonical['exact_action_identity'] != expected_measure
+            or not canonical['exact_question'].casefold().startswith(generated['exact_question'].casefold())
+            or canonical['mechanism'] not in [canonical['candidate_exact_action_meaning'], canonical['candidate_short_description']]):
+        raise ValueError('source-review exact-action wrapper differs from Clerk-bound input')
+    return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]
+
+
 def _prepare_reused_action(authoring, capture, proposed, member_ids):
     """Bind an ordinary candidate to an existing, sealed V1 core identity."""
     ref = proposed['shared_core_reuse']
@@ -179,7 +219,7 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
         raise ValueError('invalid shared-core reuse reference')
     relative = Path(ref['artifact_ref'])
     target = (ROOT / relative).resolve()
-    if (relative.is_absolute() or target.name != 'shared_action_core.json'
+    if (relative.is_absolute() or target.name not in {'shared_action_core.json', 'shared_action_core_proposal.json'}
             or not target.is_relative_to((ROOT / 'docs/editorial/shared_candidates').resolve())):
         raise ValueError('shared-core reuse must reference a repository candidate corpus')
     provider = json.loads(target.read_text(encoding='utf-8'))
@@ -197,6 +237,11 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
             or canonical['action_meaning_ref'] != ref['action_meaning_ref']
             or canonical['action_core_sha256'] != sealed_digest(canonical, 'action_core_sha256')):
         raise ValueError('stale shared-core reuse reference')
+    if target.name == 'shared_action_core_proposal.json':
+        validate_shared_action_core(ROOT, provider)
+        return _prepare_source_review_reuse(authoring, capture, proposed, canonical, member_ids)
+    if proposed.get('additional_action_outcome_source_ids'):
+        raise ValueError('additional outcome witnesses require a source-review candidate')
     suffix = ':' + proposed['action_id'] + ':candidate-v1'
     meaning_ref = canonical['action_meaning_ref']
     if not meaning_ref.endswith(suffix) or not meaning_ref[:-len(suffix)]:
@@ -337,10 +382,11 @@ def prepare(authoring, capture, member_ids):
                 raise ValueError(f"source does not contain member {projection['member_id']}: {action['action_id']}")
             status = {"Aye": "Yea", "No": "Nay"}.get(official["official_label"], official["official_label"])
             names.add(official["name"]); parties.add(official["party"])
+            member_sources = copy.deepcopy(action["action_outcome_source_identities"])
             rows.append({"action_id": action["action_id"], "action_core_sha256": action["action_core_sha256"],
                 "official_status": status, "service_status": "in_service", "evidence_status": "official_record_resolved",
-                "exact_choice_effect": choice_effect(status), "member_action_source_identities": [identity(source)],
-                "member_action_source_identity_sha256": digest([identity(source)])})
+                "exact_choice_effect": choice_effect(status), "member_action_source_identities": member_sources,
+                "member_action_source_identity_sha256": digest(member_sources)})
         projection["actions"] = rows; projection["party"] = "/".join(sorted(parties))
         projection["context_metadata"]["display_name"] = "/".join(sorted(names))
         projection["projection_sha256"] = sealed_digest(projection, "projection_sha256")

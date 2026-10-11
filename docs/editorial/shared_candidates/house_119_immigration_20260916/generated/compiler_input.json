@@ -283,6 +283,12 @@
           "status": "Yea"
         },
         {
+          "action_id": "house:119:2:142",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:2:169",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -584,6 +590,12 @@
         },
         {
           "action_id": "house:119:2:120",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:142",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
@@ -2310,6 +2322,38 @@
         }
       },
       {
+        "action_id": "house:119:2:142",
+        "action_meaning_ref": "candidate-exact-action:house:119:2:142:source-review184:v2",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "Pass the complete Foreign Intelligence Accountability Act substitute adopted under H.Res.1224 section7 (Print119-27 modified by Report119-628 partC): monthly FBI US-person query-statement submission and civil-liberties review/referral, Inspector General determinations, knowing/willful query-violation or falsification penalties up to five years, explicit section702 US-person targeting prohibition with other authorized order routes, replacement member/staff court attendance procedures within60days, attorney rather than supervisor query approval, GAO targeting audit/report withinone year, and extension of both TitleVII repeal references from April30,2026 to April30,2029 effective earlier enactment or April29,2026. The monthly submission clause (D)(iv) is within the expanded FISC waiver range: section2 renumbers the existing waiver from (D)(v) to (D)(vi) and extends its covered requirements from clauses (i)-(iv) to (i)-(v), including the newly inserted monthly-submission clause (iv) and redesignated storage clause (v). The FISC waiver applies only upon the Court's finding that the querying procedures include measures reasonably expected to result in similar compliance outcomes as the measures specified in clauses (i)-(v); the Court may then waive one or more covered requirements. This does not expressly waive the separately added civil-liberties review/referral text in (E), or resolve its operation when submissions are waived. The attorney-prior-approval change preserves (A)(ii): a covered FBI US-person query may be conducted without prior approval only if the person conducting it has a reasonable belief that the query could assist in mitigating or eliminating a threat to life or serious bodily harm. No generic discretionary exemption or universal prior-approval rule is inferred. Section3 adds two distinct offenses: proposed709(a)(2) requires serving as an FBI employee or officer AND knowingly and willfully violating querying procedures adopted under702(f)(1)(A) relating to US-person queries; proposed709(a)(3) separately requires knowingly and willfully falsifying or materially misrepresenting compliance with procedures or requirements for querying information acquired under702(a). For either new(2)/(3) offense, proposed709(b)(2) provides a title18 fine, imprisonment for not more than five years, or both. Existing709(a)(1) classified-disclosure conduct and its eight-year maximum remain separate. Existing709(c) is unchanged and provides Federal jurisdiction if the person committing the offense was a United States officer or employee at the time; no universal person scope, automatic guilt or individual prosecution is inferred. The qualified TitleVII repeal-date extension retains702(f)(6), added by RISAAsection24: for procedures for one or more agencies adopted under(f)(1)(A), the Attorney General, in consultation with the DNI, shall ensure that the procedures enable vetting all non-US persons being processed for travel to the United States using terms that do not qualify as US-person query terms. This is procedural enablement for travel vetting, not a mandate to conduct every individual query or an admission, denial, status or removal result.1881(a) imports1801 definitions except as specifically provided in the subchapter;1801(i) US-person includes a citizen, an alien lawfully admitted for permanent residence under1101(a)(20), specified unincorporated associations and US-incorporated corporations, with the named foreign-power exclusions. Non-US-person is not equivalent to unauthorized immigrant. Querying acquired information remains distinct from intentional acquisition targeting under702(b). The proposed section8 changes both403(b)(1)/(2) repeal references from April30,2026 to April30,2029, effective earlier enactment or April29,2026; retained404(b), RISAA19 and PL11984 preserve continuing-order/directive, litigation, information-use and reporting distinctions, rather than terminating everything on one date. The original404(b)(5) ninety-day overseas-authorization transition is tied to2008enactment, not a new2026deadline. Actual current orders, certifications and implementation are not verified. Under new702(f)(3)(E), CLPO reviews each submitted written query statement for compliance with the(f)(1) procedures and refers a query if it did not meet those standards OR possible abuses of civil liberties and privacy exist; IG determines violation of law, rules or regulations OR abuse of authority. Retained3033(f) DNI national-security restriction and(h) coordination remain; no precedence resolution or individual investigation outcome is inferred. Section5 requires revocation of AG attendance procedures issued on or before December31,2025 and replacement within60days of enactment, preserving the specified RISAA5(d) congressional leadership and committee chair/ranking-member access cohort and designation of at most two staff on their behalf under AG procedures established in consultation with DNI. It does not promise access to every Member or unlimited staff. Section7 requires a targeting-procedure audit, including technical implementation/operations, and a report withinone year with the stated non-US-person/outside-US targeting analysis; no actual audit result or agency conduct is inferred.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:s1318:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "immigration:roll142-operative-corrected182",
+          "govinfo:hres1224eh",
+          "govinfo:pl110261-section403-182",
+          "govinfo:pl110261-section404b-182",
+          "govinfo:pl11849-section19-182",
+          "govinfo:pl11849-section24-182",
+          "govinfo:pl11984-qualified182",
+          "govinfo:50usc1801-operative181",
+          "govinfo:50usc1881a-target-query181",
+          "govinfo:50usc3029-qualified182",
+          "govinfo:50usc1881h-qualified182",
+          "govinfo:50usc3033-f-g3a-h-182",
+          "govinfo:pl11849-section5d-182",
+          "govinfo:50usc1881-services181"
+        ],
+        "structural_metadata": {
+          "stage_order": 20142
+        }
+      },
+      {
         "action_id": "house:119:2:169",
         "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:169:candidate-v1",
         "eligibility": {
@@ -2773,6 +2817,14 @@
         "policy_family_id": null
       },
       {
+        "episode_id": "episode:s1318:119",
+        "action_ids": [
+          "house:119:2:142"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
         "episode_id": "episode:hr6260:119",
         "action_ids": [
           "house:119:2:169"
@@ -2865,6 +2917,14 @@
         "constraint_id": "source:house119-session1-roll298-immigration-attribution",
         "semantic_effect": "bounds_cross_domain_attribution",
         "detail": "Limit Immigration attribution to changed criminal detention/release for the specifically incorporated knowing document felony, including passports/immigration documents, with unlawful-authority/travel/labor-purpose qualifications. Other treatment/bond/offense provisions remain whole-package context; no component stance, immigration-status detention/removal, new offense or individual outcome."
+      },
+      {
+        "action_ids": [
+          "house:119:2:142"
+        ],
+        "constraint_id": "source:house119-session2-roll142-fisa-immigration-attribution",
+        "semantic_effect": "bounds_cross_domain_attribution",
+        "detail": "Whole adopted FISA-substitute choice; bounded Immigration attribution is the retained702(f)(6) non-US-person travel-vetting procedural enablement under the qualified TitleVII extension. No separate vetting/CBDC choice, per-person query duty, admission/denial/removal result or citizenship-only/unauthorized-immigrant equivalence. Conditional waiver, threat exception and dated transition limits remain."
       }
     ],
     "trait_relationships": []

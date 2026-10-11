@@ -2830,3 +2830,68 @@ Git/CI/report follows. No new comparable routine sample or performance pass;
 FAIL781.087s remains. Current FISA identity compatibility is explicit follow-up,
 legacy/conflict objects untouched. Solewriter retained; no new approval gate,
 merge/deploy/publication/editorialacceptance/production/methodology authority.
+
+
+## Checkpoint204 preread: S.1318 source-review identity binding
+
+Select House119 session2/142 retained whole FISA substitute. H.Res.1224 section7
+adopts Print119-27 modified by Report119-628 PartC; section8 separately adds
+already-passed H.R.1919 at engrossment. Own passage question/voice ayes/Himes
+demand/order/direct235-191/4 passage is retained; no invented postponement or
+separate CBDC stance. Direct retained702(f)(6)/RISAA24 travel-vetting enablement
+supports the existing domain rule, not generic non-US-person attribution.
+
+Preserve the old corrected182/184 proposal, all legacy155/221 cores and XML
+conflict artifacts byte-for-byte. Create one qualified successor core at a new
+candidate path: retain exact-action and meaning identifiers, all existing source
+identities and qualifiers, add literal FBI actor/knowledge/offense/penalty and
+retained jurisdiction predicates, submitted-statement referral alternatives,
+specified member/staff access and direct vetting/definition/transition details.
+The new seal documents a coherent source-qualified augmentation; the old seal
+remains historical. Replace the old uncompiled-state caption only in the new
+candidate wrapper; no acceptance/counting/publication authority. Both members
+reuse the same current core and seal; no per-member meaning generation.
+
+Extend only the Immigration reuse helper to accept this sealed V1 source-review
+candidate shape. Keep ordinary reuse strict. Validate the provider through the
+canonical V1 validator, bind every outcome/operative witness to unchanged capture
+identities, enforce exact Clerk stage/date/measure/outcome and semantic input
+parity, then copy the canonical core unchanged through the existing adapter.
+No legacy accepted-core reuse/rewrite, canonical schema/common adapter change or
+new methodology/type. Add meaningful stale/authority/source/semantic/stage/role
+negative checks and literal predicates.155/221 remain held rather than inventing
+competing accepted meanings or erasing the old title conflict.
+
+Expected about20files: new candidate core, helper/regression, authoring/membership/
+universe, seven generated witnesses, bounded predicate/review/validation records,
+audit/plan and copied203CI/base receipts. Sources/manifest/private pool and all
+Health files exact. Semantic validation, two-member projections, final diff,
+14byte-exact replays and exact-headCI establish the executable candidate; pending
+independent shared/domain review is not editorial acceptance. No source acquisition.
+Timer21:00:57.474754UTC includes preselection/identity design/read-locator recovery;
+initial commentary/dispatch unmeasured. Complex closure adds zero comparable
+routine samples; prior benchmark stays FAIL781.087s versus600ceiling/240target.
+Solewriter retained; no deadline, shutdown, merge/deploy/publication/production/
+security/secrets/configuration or methodology authority change.
+
+
+Checkpoint 204 local closure: 348 focused tests pass (81.807s native runner),
+seven semantic checks, IR references and 14 byte-exact replays. Final four
+regressions pass (11.273s) after explicit UTF-8 fixture reads; executable inputs
+unchanged. 23 literal predicate scopes and 14 bounded negative cases are checked,
+without claiming complete semantic proof. Prior 50 cores, 86 propositions,
+618 membership records, other 675 universe rows, all Health inputs/outputs,
+sources/manifest/private pool, 516 frozen blobs and two shutdown notes preserved.
+Current candidate inventory: 619 reviewed / 57 pending (29 ordinary, 28 holds),
+51 meanings / 88 propositions / 70 questions / three partial packages. Both
+members bind the qualified core 7aa77dcdcdfb5c3ce129f2769dc529ce07b7c681cc8f162d52f49b29f4213eb5
+and the complete two-witness outcome set. Old 142 proposal and legacy 155/221
+cores/title conflict remain historical and unchanged. Independent 203 review
+received with no new actionable finding; independent 204 review is pending.
+Validation seal: aeabff35bf8fe3249f90979f5ea4410367e2a52e883e71d93757d02a41a4e12f.
+Measured local delivery preparation endpoint 1521.340s.
+Schema-id rejection, full-outcome projection rejection/recovery, private count
+shape and no-postponement comparison correction, compaction and final fixture
+read adjustment are included. Initial commentary/dispatch unmeasured. Git, CI
+and final report overhead follow; zero new comparable routine samples, prior
+benchmark FAIL at 781.087s remains. No acceptance or reserved-boundary authority.

@@ -8,13 +8,13 @@
     "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
-    "scripts/prepare_immigration_shared_candidate.py": "c826a5b7db5d1f251a16a11f2ac4fca56766bfe2353897ede223ab631ec6b6b0"
+    "scripts/prepare_immigration_shared_candidate.py": "ed27049d7a8a8cfe6ef47ec3ffcfa4e4190edfc7408d5fc3bf1a8e97ffc21a2a"
   },
-  "input_sha256": "bd27b6b6a19ea381fcea82a90c151303fa714edce1c065d98410eb846380d167",
+  "input_sha256": "bdac2308970648a2cbae2c82683697923890ce2407c52872c873d59f668faa1b",
   "source_capture_sha256": "38aa4fd5a3f1feca3994f1c11d50e1dfa3e08f6725fe300e42572b6debb16d40",
-  "core_sha256": "ab4a8a27842c0af78a02752d7124657ccb203076d2277821f3a0d472e115351c",
-  "compiled_sha256": "ce35f6d524877ec338fda01736ad2fa373dff773e50367435ff0ce9870613f69",
-  "readable_sha256": "c84f6cf46bd9072beadc05d0bc9ba56584ab8f21ccb1caf47b0caea9a08769e6",
+  "core_sha256": "f255ed0e53f4c26c8631d41de19a6acc6c30016b9ca43e3fbd4e12a0636fe21d",
+  "compiled_sha256": "97886bc5610f0fe432c7578e3eb14cca36bc519cbb855fe255a268135d1e9436",
+  "readable_sha256": "43d879ec9c6ec741954fede13f3cca757e80bf053fb650049195f949706c45d7",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -934,6 +934,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of H.R.1689 with that designation mandate; no preferred alternative is established",
           "source_id": "clerk:119:2:120"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:142",
+      "shared_sha256": "7aa77dcdcdfb5c3ce129f2769dc529ce07b7c681cc8f162d52f49b29f4213eb5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "Oppose passing the whole adopted FISA substitute on this question; no alternative or motive inferred.",
+          "source_id": "clerk:119:2:142"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "Oppose passing the whole adopted FISA substitute on this question; no alternative or motive inferred.",
+          "source_id": "clerk:119:2:142"
         }
       ]
     },

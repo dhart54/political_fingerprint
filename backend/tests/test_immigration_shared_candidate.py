@@ -18,6 +18,111 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_source_review_reuse_preserves_one_qualified_fisa_identity_and_outcome_set(self):
+        aid = 'house:119:2:142'
+        original = json.loads((DATA.parent / 'house_119_source_review_checkpoint182/shared_action_core_proposal.json').read_text(encoding='utf-8'))['actions'][0]
+        current = json.loads((DATA.parent / 'house_119_source_review_checkpoint204/shared_action_core_proposal.json').read_text(encoding='utf-8'))['actions'][0]
+        actual = next(a for a in self.products[0]['actions'] if a['action_id'] == aid)
+        self.assertEqual(actual, current)
+        self.assertEqual(current['action_meaning_ref'], original['action_meaning_ref'])
+        self.assertEqual(current['exact_action_identity'], original['exact_action_identity'])
+        self.assertEqual(current['governed_source_identity_sha256'], original['governed_source_identity_sha256'])
+        self.assertNotEqual(current['action_core_sha256'], original['action_core_sha256'])
+        self.assertEqual(original['action_core_sha256'], '6a8446c7a300280620c971039b7234c073185a2be8f61eff858fdb722276342a')
+        for member in self.products[2]:
+            row = next(r for r in member['actions'] if r['action_id'] == aid)
+            self.assertEqual(row['official_status'], 'Nay')
+            self.assertEqual(row['action_core_sha256'], current['action_core_sha256'])
+            self.assertEqual(row['member_action_source_identities'], current['action_outcome_source_identities'])
+            self.assertEqual([s['source_id'] for s in row['member_action_source_identities']],
+                             ['clerk:119:2:142', 'immigration:roll142-recorded181'])
+        mapping = next(r for r in self.products[1]['action_mappings'] if r['action_id'] == aid)
+        self.assertEqual(mapping['eligibility']['decision'], 'proposed')
+        self.assertFalse(self.products[0]['authoritative_for_new_editorial_work'])
+
+    def test_source_review_reuse_rejects_stale_or_changed_candidate_input(self):
+        aid = 'house:119:2:142'
+        for label in ['stale seal', 'missing outcome', 'wrong outcome role', 'changed meaning', 'wrong stage']:
+            with self.subTest(case=label):
+                a = copy.deepcopy(self.values[0])
+                row = next(r for r in a['actions'] if r['action_id'] == aid)
+                if label == 'stale seal':
+                    row['shared_core_reuse']['action_core_sha256'] = '0' * 64
+                elif label == 'missing outcome':
+                    row['additional_action_outcome_source_ids'] = []
+                elif label == 'wrong outcome role':
+                    row['additional_action_outcome_source_ids'] = [row['source_id']]
+                elif label == 'changed meaning':
+                    row['meaning'] += ' Every traveler must be queried.'
+                else:
+                    row['stage'] = 'suspension_and_passage'
+                with self.assertRaises(ValueError):
+                    prepare(a, self.values[1], ['F000477', 'M001184'])
+
+    def test_source_review_reuse_rejects_resealed_authority_source_and_question_changes(self):
+        from pathlib import Path
+        from unittest.mock import patch
+        aid = 'house:119:2:142'
+        original_read = Path.read_text
+        path = (DATA.parent / 'house_119_source_review_checkpoint204/shared_action_core_proposal.json').resolve()
+        for label in ['authority', 'source version', 'measure', 'question']:
+            with self.subTest(case=label):
+                provider = json.loads(original_read(path, encoding='utf-8'))
+                current = provider['actions'][0]
+                a = copy.deepcopy(self.values[0])
+                row = next(r for r in a['actions'] if r['action_id'] == aid)
+                if label == 'authority':
+                    provider['authoritative_for_new_editorial_work'] = True
+                elif label == 'source version':
+                    for field in ['governed_source_identities', 'operative_meaning_source_identities']:
+                        next(s for s in current[field] if s['source_id'] == row['source_id'])['text_version'] = 'unreviewed substitute version'
+                    current['governed_source_identity_sha256'] = digest(current['governed_source_identities'])
+                elif label == 'measure':
+                    current['exact_action_identity'] = '119:s:4465'
+                else:
+                    current['exact_question'] = 'On Agreeing to the Amendment'
+                current['action_core_sha256'] = sealed_digest(current, 'action_core_sha256')
+                provider['corpus_sha256'] = digest(provider['actions'])
+                row['shared_core_reuse']['action_core_sha256'] = current['action_core_sha256']
+                def read_provider(target, *args, **kwargs):
+                    return json.dumps(provider) if target.resolve() == path else original_read(target, *args, **kwargs)
+                with patch.object(Path, 'read_text', new=read_provider):
+                    with self.assertRaises(ValueError):
+                        prepare(a, self.values[1], ['F000477', 'M001184'])
+
+    def test_fisa142_penalty_and_vetting_predicates_cannot_borrow_other_branches(self):
+        aid = 'house:119:2:142'
+        text = next(a['candidate_exact_action_meaning'] for a in self.products[0]['actions'] if a['action_id'] == aid)
+        def check_penalty(candidate):
+            branch = candidate[candidate.index('Section3 adds two distinct offenses:'):candidate.index('The qualified TitleVII repeal-date extension')]
+            for phrase in ['FBI employee or officer AND knowingly and willfully',
+                           'relating to US-person queries', 'proposed709(a)(3) separately',
+                           'knowingly and willfully falsifying or materially misrepresenting',
+                           'not more than five years, or both', 'eight-year maximum remain separate',
+                           'was a United States officer or employee at the time']:
+                self.assertIn(phrase, branch)
+        check_penalty(text)
+        for fragment in ['FBI employee or officer AND ', 'knowingly and willfully violating',
+                         'or materially misrepresenting', 'eight-year maximum remain separate',
+                         'was a United States officer or employee at the time']:
+            with self.subTest(removed=fragment):
+                self.assertIn(fragment, text)
+                with self.assertRaises(AssertionError):
+                    check_penalty(text.replace(fragment, '', 1))
+        for phrase in ['procedures enable vetting all non-US persons',
+                       'terms that do not qualify as US-person query terms',
+                       'not a mandate to conduct every individual query',
+                       'alien lawfully admitted for permanent residence',
+                       'Non-US-person is not equivalent to unauthorized immigrant',
+                       'possible abuses of civil liberties and privacy exist',
+                       'at most two staff on their behalf', 'April30,2029']:
+            self.assertIn(phrase, text)
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        self.assertIn('shall ensure that the procedures enable the vetting of all',
+                      sources['govinfo:pl11849-section24-182']['text'])
+        self.assertIn('only if the person conducting the United States person query has a reasonable belief',
+                      sources['govinfo:50usc1881a-target-query181']['text'])
+
     def test_fulbright_amendment_deletes_minimum_without_cutting_exchange_total(self):
         aid = 'house:119:2:241'
         sources = {s['source_id']: s for s in self.values[1]['sources']}
