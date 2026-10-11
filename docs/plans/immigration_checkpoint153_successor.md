@@ -2759,3 +2759,74 @@ observations, no latest-main integration claim. Source/authoring endpoint
 910.907seconds, initialpreselection unmeasured; Git/CI/report overhead follows.
 No new routine sample or performance pass; FAIL781.087seconds remains. Solewriter
 retained; no new deadline/approval gate/merge/deploy/publication/acceptance/production.
+
+
+## Checkpoint203 preread: Fulbright PartA1 exact-function closure
+
+Select retained-source House119 session2/241. The own PartA1 operative deletes
+only the $287.8m Fulbright minimum from the $647m educational/cultural exchange
+account; availability and allocation/modification consultation remain. Rule1423
+sections2/3 and Report749 PartA1 bind RH page4; own initial question/voice noes/
+Boebert demand/postponement precede resumed recorded order/79-348/9 rejection.
+Clerk FousheeNay/MassieYea retained, no component or motive inference.
+
+2456(a)(1) connects Board selection to2452(a)(1), supervision also to(b)(4)/(6);
+2452(a)(1) expressly distinguishes American/foreign citizens/nationals in
+educational activities, with2454(e) grants including travel/tuition. Preserve
+that beneficiary context. The separate2452(b)(10)/2454(g) currency-exchange
+visa/permanent-residence assurances cannot be imported as the Fulbright minimum's
+operative scope. Candidate functional exclusion follows removal of an educational
+funding minimum without changing admission/visas/status/naturalization or an
+immigration-status qualification; international travel and citizenship labels
+alone do not establish the exact Immigration operator. Independent bounded
+program/domain review remains required before acceptance. No programme abolition,
+account-total cut, individual eligibility/current agency clearance or recipient
+outcome. Apply existing rule only, no new methodology.
+
+Expected about11files; membership/universe and bounded review/validation records,
+audit/plan and focused source-predicate regression. No authoring/source/generated
+changes, new meaning/proposition, source acquisition or FISA identity adapter work.
+FISA142 existing corrected proposal and155/221 legacy authoritative cores remain
+frozen: current candidate helper cannot bind those identity/wrapper shapes without
+an explicit compatibility increment. No new competing meaning, legacy rewrite or
+source-conflict erasure. This constraint is reported, not silently worked around.
+
+Snapshot exact202head/private inputs/frozen blobs/two shutdown notes before edits.
+Copy202CI/base receipts and received independent202review with no new actionable
+finding and201P3 independently closed. Definition of done: one qualified hold
+closed, all other rows/IR/source/history exact, focused semantic/accounting checks,
+14byte-exact replays, inspected diff and exact-headCI. Start20:32:44.853946UTC
+includes FISA preselection and output-recovery overhead; initial commentary/dispatch
+unmeasured. Complex held closure provides zero comparable routine samples;
+benchmark remains FAIL781.087s vs600ceiling/240target. Solewriter; candidate-only,
+no approval/publication/production/merge/deploy authority or new deadline.
+
+
+Checkpoint203 local closure:618reviewed/58pending(29ordinary/29holds),50meanings/
+86propositions;70questions/3partialpackages unchanged. Fulbright PartA1 is a
+bounded functional exclusion candidate, requiring independent program/domain
+review.15predicate scopes/12bound sources retain purpose/appropriations, Board
+and beneficiary routes and distinguish separate currency visa assurances.
+344focused tests(68.330s),7semantic checks/IR validation and14replays pass.
+Final purpose/financing context reconciliation has full membership validation,
+2narrow regressions(1.584s) and final preservation checks; unchanged authoring/
+sources/14generated outputs require no regeneration.617previous membership
+records/675other universe rows, complete Health candidate,398frozen blobs and
+two shutdown notes exact. No acquisition/new meaning/proposition/schema/helper.
+
+Independent202review received with no new actionable finding;201aidP3 closed,
+39mechanics/249overlapping projections/14replays/2added tests/9bounded negatives,
+464.970s.342suite owner-attributed.202CI9freshfirstattempt,5feature/3synthetic/
+1mixed/4conditionalguardsunexecuted; actualbase577ce1ff plus exact202head,
+no latest-main integration claim.202receipts copied forward without rewriting
+history or inferring editorial clearance from raw assessment counts.
+
+Final candidate sealb76de1bf98450f2ca4de3af100540b26f85115526d2d4fad37b1d45af0d4e02a; validation seal7680529e490e5eb0fae2eeb42ed133ee06571ab7baf6462bc8b15cd666a008c4.
+First authoring endpoint713.918s;
+local validation endpoint997.358s
+from20:32:44.853946UTC; initial commentary/dispatch unmeasured, FISA identity
+inspection/output recovery/final context and all subsequent overhead included.
+Git/CI/report follows. No new comparable routine sample or performance pass;
+FAIL781.087s remains. Current FISA identity compatibility is explicit follow-up,
+legacy/conflict objects untouched. Solewriter retained; no new approval gate,
+merge/deploy/publication/editorialacceptance/production/methodology authority.

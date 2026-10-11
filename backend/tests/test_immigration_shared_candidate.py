@@ -18,6 +18,53 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_fulbright_amendment_deletes_minimum_without_cutting_exchange_total(self):
+        aid = 'house:119:2:241'
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        operative = sources['congressional-record:pending241-operative168']['text']
+        self.assertIn('strike', operative)
+        self.assertIn('not less than $287,800,000', operative)
+        account = sources['state:rh-exchange169']['text']
+        # Apply only the printed deletion, allowing the PDF's line numbering.
+        import re
+        match = re.search(r', of which not less than\s+24\s+\$287,800,000 shall be for the Fulbright Program', account)
+        self.assertIsNotNone(match)
+        changed = account[:match.start()] + account[match.end():]
+        self.assertIn('$647,000,000', changed)
+        self.assertNotIn('$287,800,000', changed)
+        for phrase in ['until expended', '30 days', 'eligibility criteria', 'regular notification procedures']:
+            self.assertIn(phrase, changed)
+        clerk = sources['clerk:119:2:241']
+        self.assertEqual(clerk['metadata']['amendment-author'], 'Boebert of Colorado Part A Amendment No. 1')
+        self.assertEqual(clerk['metadata']['vote-result'], 'Failed')
+        self.assertEqual(clerk['member_records']['F000477']['official_label'], 'No')
+        self.assertEqual(clerk['member_records']['M001184']['official_label'], 'Aye')
+        self.assertNotIn(aid, [a['action_id'] for a in self.products[0]['actions']])
+        record = next(r for r in self.values[3]['records'] if r['action_id'] == aid)
+        self.assertEqual(record['disposition'], 'exact_action_ineligible')
+        self.assertEqual(record['review_state'], 'candidate_pending_external_semantic_review')
+
+    def test_fulbright_board_and_currency_exchange_routes_remain_distinct(self):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        board = sources['govinfo:22usc2456-operative2024-176']['text']
+        board_selection = board[board.index('(1) For the purpose'):board.index('(2) In the selection')]
+        self.assertIn('section 2452(a)(1)', board_selection)
+        self.assertIn('section 2452(b)(4) and (6)', board_selection)
+        self.assertNotIn('2452(b)(10)', board_selection)
+        activities = sources['govinfo:22usc2452-exchange-operative169']['text']
+        education = activities[activities.index('(1) educational exchanges'):activities.index('(2) cultural exchanges')]
+        for phrase in ['American citizens and nationals', 'citizens and nationals of foreign countries', 'visits and interchanges']:
+            self.assertIn(phrase, education)
+        administration = sources['govinfo:22usc2454-operative2024-176']['text']
+        grants = administration[administration.index('(e) Grants;'):administration.index('(f) Repealed.')]
+        currency = administration[administration.index('(g) Currency exchange'):]
+        self.assertIn('tuition', grants)
+        self.assertIn('travel expenses', grants)
+        self.assertNotIn('will not apply for an immigrant visa', grants)
+        self.assertIn('only if he gives satisfactory assurances', currency)
+        self.assertIn('will not apply for an immigrant visa or for permanent residence', currency)
+        self.assertIn('under section 2452(b)(10)', currency)
+
     def test_hr5214_document_offense_chain_reuses_the_whole_shared_choice(self):
         health = DATA.parent / 'house_119_health_20260916'
         provider = json.loads((health / 'generated/shared_action_core.json').read_text(encoding='utf-8'))

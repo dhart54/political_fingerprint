@@ -8332,7 +8332,7 @@
         }
       },
       "primary_reconstruction": "Exact whole H.R.5107 repeal/restoration includes titleI subtitleG111(c)(1), outside A/Sexceptions, reversing the explicit added citizen/national/lawful-permanent-resident MPD application criterion under the existing direct personal-status inclusion rule. Dated5-107.04corroborates status at application and independent minimum/denial/training qualifications. Existing whole core needed a minimal source-bound completeness augmentation before this domain mapping; canonical corrected input authored once and reused with identical identity/digest across domains. No Health membership change, agency/title/complaint-demographics inference, automatic discharge/individual denial, enactment or exhaustive later-law reconstruction. Wholepackage candidate only, pending independent shared/domain/projection review; no editorial acceptance/publication.",
-      "finding": "Independent201 contextual P3 corrected; observer/another-officer/prohibited-technique/immediate-aid predicates restored. Independent correction re-review pending.",
+      "finding": "Independent201 contextual P3 corrected; observer/another-officer/prohibited-technique/immediate-aid predicates restored and independently closed at exact202head with history preserved. Not editorial acceptance.",
       "corrected_authoring_action_sha256": "e2cde70781dcb9584323cca6938d26f3c3378e9cf48a719f07954738b45168ee",
       "corrected_review_record_sha256": "cfca1419984ead6b3a581e3b8c7ef16f1d7f8b007f9988713c772f4e2a3964bf",
       "primary_evidence": [
@@ -8421,7 +8421,7 @@
           "governed_bytes_sha256": "87f4b92a7437c0ab483f9866f07e3fe511b6085117cb40b6093543d2606818e2"
         }
       ],
-      "independent_review_pending": true,
+      "independent_review_pending": false,
       "not_counted_in_independent_severity_assessments": false,
       "priority": "P3",
       "independent201_partial_finding_path": "docs/review_packets/immigration_bounded_review_checkpoint201_partial_received202.json",
@@ -8431,11 +8431,13 @@
       "previous_owner_record_preserved_in_snapshot": true,
       "independent201_review_path": "docs/review_packets/immigration_bounded_review_checkpoint201_received202.json",
       "independent201_review_sha256": "3a57d2a029b7c041f3fa48c137c93d70ff6418f16d6113bb2d27a40ab136b79c",
-      "corrected202_independent_review_pending": true
+      "corrected202_independent_review_pending": false,
+      "bounded_review_receipt_path": "docs/review_packets/immigration_bounded_review_checkpoint202_received203.json",
+      "bounded_review_receipt_sha256": "c60ead7d92a205d14855eceb4fbd8302ae046fea549983c007f8a47a7884febe"
     },
     {
       "action_id": "house:119:1:298",
-      "audit_state": "existing_shared_core_minimal_augmentation_candidate_pending_independent_review",
+      "audit_state": "source_qualified_candidate_bounded_independent_review_complete",
       "severity": null,
       "finding_id": null,
       "exact_identity": {
@@ -8583,11 +8585,13 @@
           "governed_bytes_sha256": "917eb838961d932d52c166e0f26e5ba1c42a92eb6edc22d79fd5dc41863df8de"
         }
       ],
-      "finding": "Owner completeness/domain candidate only; independent shared-core/domain/projection review pending.",
+      "finding": "Owner completeness/domain candidate independently reviewed at exact202head; no new actionable finding. Bounded support excludes generic trafficking and immigration-status detention. Not editorial acceptance.",
       "corrected_authoring_action_sha256": "ac43e205a065e2a7e543ed00b04fc98b36527341d878c9e50f496e1182e0eb5a",
       "corrected_review_record_sha256": "f294433d3c210725bc60a819b28b81be3e4f2cf163d66b971ed70d3a052878b8",
-      "independent_review_pending": true,
-      "not_counted_in_independent_severity_assessments": true
+      "independent_review_pending": false,
+      "not_counted_in_independent_severity_assessments": true,
+      "bounded_review_receipt_path": "docs/review_packets/immigration_bounded_review_checkpoint202_received203.json",
+      "bounded_review_receipt_sha256": "c60ead7d92a205d14855eceb4fbd8302ae046fea549983c007f8a47a7884febe"
     }
   ],
   "noncounting_actions": [
@@ -22426,9 +22430,7 @@
     "Minor": 13
   },
   "unaudited_current_substantive_action_ids": [
-    "house:119:2:280",
-    "house:119:1:299",
-    "house:119:1:298"
+    "house:119:2:280"
   ],
   "required_noncounting_sample": {
     "exclusions": 12,
@@ -29314,23 +29316,55 @@
     },
     "shared_core_identical_across_domains": true,
     "Health_membership_unchanged": true,
-    "independent_review_pending": true,
-    "new_head_CI_pending": true,
+    "independent_review_pending": false,
+    "new_head_CI_pending": false,
     "publication_authorized": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint202_validation.json",
-    "validation_sha256": "e595db774032b55867635bb8bc2d20bdcfcb355b646a7fb6ca69a5f6dad687d1"
+    "validation_sha256": "e595db774032b55867635bb8bc2d20bdcfcb355b646a7fb6ca69a5f6dad687d1",
+    "independent_review_path": "docs/review_packets/immigration_bounded_review_checkpoint202_received203.json",
+    "independent_review_sha256": "c60ead7d92a205d14855eceb4fbd8302ae046fea549983c007f8a47a7884febe",
+    "CI_path": "docs/review_packets/immigration_delivery_checkpoint202_ci.json",
+    "CI_sha256": "ec6d4d46e4b5f071d9579667739dcbe5122e776ad09bd7cdb0000bf41de11649",
+    "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint202_ci_base_qualification.json",
+    "CI_base_qualification_sha256": "2e023270525761f5b9398ee33ddb0f3e9e71d24a88346a4d025816972913a235"
   },
   "hr5107_emergency_aid_trigger_correction_checkpoint202": {
     "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5107_emergency_aid_trigger_correction_checkpoint202.json",
     "receipt_sha256": "7b3dd8874cff84a9443eb66f1c42034873dc74d171972e0ff5977bb7523c21d8",
-    "independent_review_pending": true,
-    "new_head_CI_pending": true,
+    "independent_review_pending": false,
+    "new_head_CI_pending": false,
     "publication_authorized": false,
     "independent201_partial_finding_path": "docs/review_packets/immigration_bounded_review_checkpoint201_partial_received202.json",
     "independent201_partial_finding_sha256": "9da239cad92f4acc94b2dbbfdd6b8e8c1454c9726c0cd103e4b7068dd7099a8f",
     "independent201_review_path": "docs/review_packets/immigration_bounded_review_checkpoint201_received202.json",
     "independent201_review_sha256": "3a57d2a029b7c041f3fa48c137c93d70ff6418f16d6113bb2d27a40ab136b79c",
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint202_validation.json",
-    "validation_sha256": "e595db774032b55867635bb8bc2d20bdcfcb355b646a7fb6ca69a5f6dad687d1"
+    "validation_sha256": "e595db774032b55867635bb8bc2d20bdcfcb355b646a7fb6ca69a5f6dad687d1",
+    "independent_review_path": "docs/review_packets/immigration_bounded_review_checkpoint202_received203.json",
+    "independent_review_sha256": "c60ead7d92a205d14855eceb4fbd8302ae046fea549983c007f8a47a7884febe",
+    "CI_path": "docs/review_packets/immigration_delivery_checkpoint202_ci.json",
+    "CI_sha256": "ec6d4d46e4b5f071d9579667739dcbe5122e776ad09bd7cdb0000bf41de11649",
+    "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint202_ci_base_qualification.json",
+    "CI_base_qualification_sha256": "2e023270525761f5b9398ee33ddb0f3e9e71d24a88346a4d025816972913a235"
+  },
+  "fulbright_exact_function_closure_checkpoint203": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fulbright_exact_function_closure_checkpoint203.json",
+    "receipt_sha256": "b76de1bf98450f2ca4de3af100540b26f85115526d2d4fad37b1d45af0d4e02a",
+    "completed": 1,
+    "counts": {
+      "reviewed": 618,
+      "pending": 58,
+      "ordinary_unscreened": 29,
+      "researched_holds": 29,
+      "meanings": 50,
+      "propositions": 86,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "independent_review_pending": true,
+    "new_head_CI_pending": true,
+    "publication_authorized": false,
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint203_validation.json",
+    "validation_sha256": "7680529e490e5eb0fae2eeb42ed133ee06571ab7baf6462bc8b15cd666a008c4"
   }
 }
