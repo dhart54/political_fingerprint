@@ -2010,3 +2010,95 @@ received 190 review 85b5f123f962e3f05b3c36e004ba934c6e42766a7bb0c42ca38aeb61f820
 The owner continues coherent bounded candidate research after delivery.
 
 The new witness-bound correction endpoint is 1498.680 seconds, based on the PC candidate receipt last-write timestamp after correction; it remains inside the local endpoint, not an added duration.
+
+
+## Checkpoint 192: fraud-enforcement exact-action screening
+
+The same sole Windows owner continues from 47a828d284f9f7100b955f0f77b94267f88fd800 in .w/ib,
+without an ownership transfer or checkpoint approval gate. Three coherent fraud
+actions were attempted: 2/157 H.R. 2853, 2/309 H.R. 9576 and 2/310 H.R. 10326.
+309 is a candidate functional Immigration exclusion; 157 and 310 remain held,
+unresolved and noncounting. One completed candidate screening is not acceptance.
+
+309's full exact House proposal creates a DOJ division with section 506 appointment
+and Attorney General-prescribed duties and inserts the division into the qualified
+section 7323(b)(3) employee political-activity restriction. Full 2024 sections 506,
+7322 and 7323 are compared, preserving Senate/President appointment exception,
+voting/opinion rights and separate employee categories. No Immigration operator is
+inferred from agency structure or general fraud duties. No new appointment count,
+individual eligibility, enactment or actual enforcement outcome is claimed.
+
+157's whole exact proposal and full 2024 operative forfeiture, laundering,
+stolen-property and RICO-definition bodies are read. Section 1956(c)(7)(A) already
+incorporates section 1961 predicates naming felonious section 659 and sections
+2314/2315; proposed additions to (D) are not labeled first-ever predicates. Qualified
+aggregation, knowledge/intent, existing extraterritorial citizen/noncitizen rules
+and distinct section 982(a)(6) immigration forfeiture remain separate. Existing
+INA aggravated-felony conditions remain qualified; no automatic removal result.
+Migrant assertions in findings and agency names do not establish domain fit.
+Material offense application and center/confidentiality references remain work.
+Canonical accepted 157 core/ref/digests stay authoritative and unchanged.
+
+310's full exact proposal retains written fraud requests, specified records,
+qualified HIPAA/Privacy Act compliance, security/deletion and fraud-only federal
+use. The whole 2024 Privacy Act operative body and complete quoted Judicial
+Redress Act note are read. Citizen/LPR individual definition is distinct from
+qualified covered-country/person/record/agency remedies and from the bill's own
+information safeguards. No universal identical privacy coverage or absolute bar
+to all other persons' remedies is claimed. Program/status and HIPAA integration
+and bounded Immigration application remain work. Existing Health 310 candidate
+core/ref/digests are unchanged comparators; no duplicate meaning is authored.
+
+Each full own floor bill matches the EH under declared formatting normalization.
+Each own initial question precedes voice result, recorded demand/order and
+postponement; each later recorded resumption remains distinct. Knott demands 157;
+Raskin demands 309/310. Recorded totals are 348-60/21 Not Voting, 352-72/9 Not Voting
+and 217-207/9 Not Voting. Foushee Nay on all; Massie Yea on 157/309 and Nay on 310.
+157 hypothetical stated-for intentions and all adjacent choices remain excluded.
+Fresh Clerk 157 raw matches; 309/310 raw drift while all governed metadata, party
+totals and two member records match. No all-other-member comparison is claimed.
+
+Twenty-five registrations add 24 literal derivatives and one immutable Health
+source copy. Counts are 607 reviewed / 69 pending (46 ordinary / 23 researched
+holds), 47 meanings / 80 propositions, 70 questions and three partial packages;
+2,156 sources / 1,046 captures. All 606 prior memberships, 118 frozen blobs,
+old source/capture/private aliases and unrelated untracked shutdown note remain.
+Only three universe rows change, with one new candidate membership record.
+Six semantic products stay byte-identical; proof source-capture digest alone changes.
+Whole daily Record parents and all historical Code notes are not wholly read;
+no current-law/designation, individual application, motive or guilt claim.
+
+Validation passes 203 focused tests in 23.057s, seven semantic checks,
+mechanical IR references, 27 literal claims, 18 raw captures (13 HTML replays,
+two PDF replays and three Clerk reconciliations), three full floor/EH comparisons
+and seven byte-exact output replays. Three own recorded-stage pages are visually
+checked; Poppler ligature warnings remain qualified. Private pre-authoring witness
+bounds were corrected and retained in a journal. Subsequent spacing-only new prose
+is resealed and replay-checked without repeating unaffected tests.
+
+Automatic review initially rejected candidate preparation after reading the
+compiler-release bound as an execution ban. Read-only checks of explicit final
+replay authorization, plan lines 28/145/255 and candidate-only output contracts
+supported reconsideration of the same command, which was accepted. No workaround,
+editorial/compiler release or unresolved authorization blocker. Overhead retained.
+
+Exact 191 CI 38107408487 has nine fresh first-attempt successes, actual 5 feature /
+3 synthetic / 1 mixed, with four conditional guards skipped. Actual synthetic
+parents match both direct main-ref reads; PR/run snapshots show a different base,
+explicitly preserved without a broad integration claim. Independent 191/192
+reviews and exact hosted 192 CI remain pending. Prior final 191 PR/CI endpoint
+2178.311s includes 192 overlap and is not added.
+
+Performance remains FAIL at prior comparable 781.087s (ceiling 600, target 240).
+Source/authoring endpoint 498.292s;
+new prose-spacing correction endpoint 726.332s;
+local validation/report endpoint 793.345s.
+All reading, output recovery, bound correction, approval reconsideration, tests,
+predecessor CI/report and delivery overhead stay attributed. This mixed group has
+one completion and two holds, no new comparable average or special benchmark.
+Candidate feature branch only; no publication, promotion, production/schema/
+security/configuration write, merge, deployment or hold release.
+
+Evidence: fraud_enforcement_screening_checkpoint192.json 45f334ecec853b9aa0804b0b0c4bc2c4fd3dc4e1eb03e43ba4eb14874cd1bb90;
+delivery192 validation 9034e3989e2119170a741221c059c87867635ea1948db52f2ed780ac9d81e76e; exact191 CI and base qualification;
+audit and unchanged canonical/shared core artifacts. Continue coherent research.
