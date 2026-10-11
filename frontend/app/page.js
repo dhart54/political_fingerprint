@@ -6,9 +6,11 @@ import Link from "next/link";
 import RepresentativeExperience from "../components/RepresentativeExperience";
 import RepresentativeFinder from "../components/RepresentativeFinder";
 import RepresentativeHeader from "../components/RepresentativeHeader";
+import { followRecordLink } from "../components/RecordCardFinding";
 import ScopeControl from "../components/ScopeControl";
 import { fetchLegislatorProfile } from "../lib/api";
 import recordCardContent from "../lib/recordCardContent.json";
+import { recordCardUrl } from "../lib/recordCard.mjs";
 import {
   buildPassAUrl,
   parsePassARouteState,
@@ -131,6 +133,15 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
       <SiteHeader
         representativeName={legislator?.name_display}
         selectedIssue={route.issue}
+        voteRecordHref={route.findingId ? recordCardUrl(routePath, {
+          legislatorId: route.legislatorId,
+          scope: route.scope,
+          issue: route.issue,
+          findingId: route.findingId,
+          sourceHash: route.findingSource,
+          view: "receipts",
+          hash: "vote-record",
+        }) : "#vote-record"}
       />
 
       {reviewCandidate ? <p className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs font-semibold text-amber-950">Local release review · recorded snapshot, no live data</p> : null}
@@ -214,7 +225,7 @@ function ReviewProfilePicker({ profiles, onSelect }) {
   return <div className="flex flex-wrap gap-3" aria-label="Review representatives">{profiles.map((profile) => <button className="secondary-button" key={profile.id} onClick={() => onSelect(profile)} type="button">{profile.name_display}</button>)}</div>;
 }
 
-function SiteHeader({ representativeName, selectedIssue }) {
+function SiteHeader({ representativeName, selectedIssue, voteRecordHref = "#vote-record" }) {
   const showSelectedIssueNavigation = Boolean(representativeName && selectedIssue);
   return (
     <header className="sticky top-0 z-30 border-b border-stone-200/90 bg-[#fbf8f1]/95 backdrop-blur">
@@ -234,7 +245,8 @@ function SiteHeader({ representativeName, selectedIssue }) {
             ].map(([id, label]) => (
               <a
                 className="min-h-11 shrink-0 border-b-2 border-transparent px-3 py-3 text-sm font-semibold text-stone-700 hover:border-teal-700 hover:text-teal-900 focus-visible:border-teal-700"
-                href={`#${id}`}
+                href={id === "vote-record" ? voteRecordHref : `#${id}`}
+                onClick={id === "vote-record" && voteRecordHref !== "#vote-record" ? followRecordLink : undefined}
                 key={id}
               >
                 {label}
