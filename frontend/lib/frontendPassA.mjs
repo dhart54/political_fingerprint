@@ -211,12 +211,17 @@ export function resolveExactActionRequest(rows = [], requestedIds = []) {
     };
   }
   const highlightedIds = matchingRows.map(canonicalActionId);
+  const requested = new Set(requestedIds);
+  const available = new Set(highlightedIds);
+  const missingCount = [...requested].filter((id) => !available.has(id)).length;
   return {
     filter: "highlighted",
     highlightedIds,
     expandedId: highlightedIds[0],
     matchingRows,
-    notice: "",
+    notice: missingCount
+      ? `Showing ${available.size} of ${requested.size} linked vote receipts. The remaining linked ${missingCount === 1 ? "receipt is" : "receipts are"} unavailable in this response.`
+      : "",
   };
 }
 

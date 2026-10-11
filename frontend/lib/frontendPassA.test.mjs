@@ -283,6 +283,19 @@ test("exact-action resolution safely preserves the complete ledger for zero matc
   assert.match(resolution.notice, /complete chronological record remains available/);
 });
 
+test("partial exact-action resolution discloses missing receipts without changing filtering", () => {
+  const rows = [{ canonical_action_id: "house:119:1:79", vote_date: "2025-03-25" }];
+  const resolution = resolveExactActionRequest(rows, ["house:119:1:79", "house:119:1:83"]);
+  assert.equal(resolution.filter, "highlighted");
+  assert.deepEqual(resolution.highlightedIds, ["house:119:1:79"]);
+  assert.equal(resolution.expandedId, "house:119:1:79");
+  assert.equal(resolution.notice, "Showing 1 of 2 linked vote receipts. The remaining linked receipt is unavailable in this response.");
+  assert.deepEqual(rows, [{ canonical_action_id: "house:119:1:79", vote_date: "2025-03-25" }]);
+  const plural = resolveExactActionRequest(rows, ["house:119:1:79", "house:119:1:79", "house:119:1:83", "house:119:1:84"]);
+  assert.equal(plural.notice, "Showing 1 of 3 linked vote receipts. The remaining linked receipts are unavailable in this response.");
+  assert.equal(resolveExactActionRequest(rows, ["house:119:1:79"]).notice, "");
+});
+
 for (const count of [1, 2, 3]) {
   test(`exact-action resolution exposes and opens ${count} matched action${count === 1 ? "" : "s"}`, () => {
     const actionRows = exactActionRows();
