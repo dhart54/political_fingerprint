@@ -208,4 +208,38 @@ for (const surface of ["ordinary", "review"]) test.describe(surface, () => {
       }
     }
   });
+
+  test("partial receipt response discloses missing linked votes without changing the finding", async ({ page }) => {
+    const evidenceUrl = surface === "ordinary" ? "**/positions/EDUCATION_WORKFORCE/evidence*" : "**/api/review/record-card?resource=evidence*";
+    await page.route(evidenceUrl, async (route) => {
+      const url = new URL(route.request().url());
+      if (surface === "review" && url.searchParams.get("domain") !== "EDUCATION_WORKFORCE") return route.fallback();
+      const body = structuredClone(snapshot["leg_valerie_p_foushee:119:EDUCATION_WORKFORCE"].body);
+      body.evidence = body.evidence.filter((row) => row.canonical_action_id !== "house:119:1:83");
+      await route.fulfill({ json: body });
+    });
+    await page.goto(landing);
+    await page.locator(`#${education.id}`).click();
+    const detail = page.getByTestId("card-finding-detail");
+    await expect(detail).toContainText(education.evidence_label);
+    await expect(detail).toContainText("The final vote does not identify which part she opposed.");
+    await page.getByRole("link", { name: /^See 2 House votes:/ }).click();
+    const notice = page.getByRole("status").filter({ hasText: "Showing 1 of 2 linked vote receipts." });
+    await expect(notice).toBeVisible();
+    await expect(notice).toContainText("The remaining linked receipt is unavailable in this response.");
+    await expect(page.locator("[data-canonical-action-id]")).toHaveCount(1);
+    await expect(page.locator("[data-canonical-action-id]")).toHaveAttribute("data-canonical-action-id", "house:119:1:79");
+    await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+    await expect(detail).toContainText(education.evidence_label);
+    await expect(detail).toContainText("The final vote does not identify which part she opposed.");
+    await page.reload();
+    await expect(notice).toBeVisible();
+    await page.goBack();
+    await expect(page.locator("#finding-detail-heading")).toBeFocused();
+    await page.goForward();
+    await expect(notice).toBeVisible();
+    await page.getByRole("link", { name: "Complete issue record / all votes" }).click();
+    await expect(notice).toHaveCount(0);
+    await expect(page.locator("#vote-record")).toContainText("24 recorded actions");
+  });
 });
