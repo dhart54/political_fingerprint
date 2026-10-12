@@ -106,6 +106,8 @@ on:
       - "frontend/lib/recordCardContent.json"
       - "scripts/prepare_education79_locator_release.py"
       - "scripts/prove_education79_disposable_card.mjs"
+      - "scripts/education79_card_proof.mjs"
+      - "scripts/validate_education79_locator_card.mjs"
   push:
     branches: [main]
     paths:
@@ -212,6 +214,8 @@ on:
       - "frontend/lib/recordCardContent.json"
       - "scripts/prepare_education79_locator_release.py"
       - "scripts/prove_education79_disposable_card.mjs"
+      - "scripts/education79_card_proof.mjs"
+      - "scripts/validate_education79_locator_card.mjs"
 
 permissions:
   contents: read
@@ -262,6 +266,7 @@ jobs:
             backend/tests/test_education79_locator_workflow.py \
             backend/tests/test_education79_locator_disposable_postgres.py -rs
           node scripts/prove_education79_disposable_card.mjs education79-proof
+          node scripts/validate_education79_locator_card.mjs --check
       - name: Retain visibly synthetic disposable evidence
         if: always()
         uses: actions/upload-artifact@v4

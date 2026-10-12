@@ -27,6 +27,7 @@ def matches(path, patterns):
 @pytest.mark.parametrize('path', [
     'frontend/lib/recordCard.mjs', 'frontend/lib/recordCardContent.json',
     'frontend/lib/issueEvidenceCoverage.mjs', 'frontend/lib/editorialPresentation.mjs',
+    'scripts/education79_card_proof.mjs', 'scripts/validate_education79_locator_card.mjs',
     'backend/requirements.txt', 'backend/migrations/0012_editorial_artifacts.sql',
     'backend/migrations/staged/normalize_vote_storage.sql',
     'backend/scripts/disposable_database_url.py',
