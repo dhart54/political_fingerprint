@@ -3474,3 +3474,50 @@ and frozen212-215receipts preserved; oneoldsource descriptor metadata only.
 phase1780.082seconds initially; laterfrontmatter/conservation/delivery overhead
 retained separately, no invented per-case/routine mean. Independent216review
 and exactnewheadCI pending; priorFAILunchanged.
+
+
+## Checkpoint217: independent whole H.R.6938 passage
+
+Bind own engrossment, third reading, passage question, ordered recorded vote,
+397/28/6 result and final vote changes from two unchanged governed floor spans.
+Both A and B/C were retained before that sequence; retain the whole package,
+universal sections1-5, final statement precedence and source-specific limits.
+Final FousheeYea/MassieNay are independent observations, with no inferred
+component objection or cross-vote trajectory. Reuse original whole Health
+meaning prefix,48 identities and limits; no Health membership inheritance.
+
+One final-passage candidate gives627 reviewed/49 pending,57 shared meanings
+and96 behavioral propositions. Existing two H.R.6938 member propositions
+now have three distinct observations. H.R.4553 and H.R.5371 remain pending.
+Correct B/C deadline wording prospectively: only House reporting requirements
+reset to60days; the separate final-statement15-day Corps briefing is retained.
+Original216 evidence/receipts remain frozen. Final216 bounded review reports
+34 preservation checks,7 independent Immigration replays and no newP2.
+Historical patent/IHS and additional workforce import completeness remain
+unverified limits. Reported669 review seconds are separate owner-attributed
+receipt data; full report bytes were not received or independently recomputed.
+
+Source-authoring measured626.622seconds, zero acquisitions; earlier inspection
+was unstamped. Prior benchmarkFAIL unchanged and zero comparable routine-cycle
+credit. Targeted tests, final replay, conservation and fresh-head CI follow.
+Candidate review remains pending; no editorial acceptance or publication.
+
+217 initial366-test run exposed one shared-prose member-name violation after
+241.540seconds. Correct the new whole meaning and its limitation to neutral
+final observations; named detail remains governed evidence/member projection.
+Rebuild the complete wrapper, including dependent package-boundary fields;
+test/rule unchanged. The failed phase and pre-correction artifacts are retained.
+Private correction helper signature/seal/wrapper errors were safely recovered
+with exact prewrite/current-state guards; their overhead stays in delivery time.
+Final189 affected candidate tests plus semantic checks and replay follow.
+Prevalidation conservation passes all prior source objects,55othercores,
+625otherreviews,674otherrows,94otherpropositions/readablefindings, Health
+and frozen216private artifacts.
+
+217 final validation:189 affected candidate tests pass in207.321seconds,
+seven semantic checks, IR references and seven byte-exact Immigration CLI
+outputs pass. Conservation receipt confirms all stated preservation boundaries
+and both prior observations, with the whole third choice separately bound.
+Tracked changes remain confined to candidate, audit, review receipts and plan.
+Fresh feature-head CI and independent217 review remain pending; priorFAIL
+unchanged and no new comparable routine-cycle mean is claimed.

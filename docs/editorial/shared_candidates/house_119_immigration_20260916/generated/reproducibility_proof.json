@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "87a0fbcb4171e46a3b090312f4fe1f7e87d181902cfadc4d43b7899c62d43b6a",
-  "source_capture_sha256": "70f4e613f0e0f39cc3153c95c42b74ef2c9e4a0cb2fc3e1a92e2bd6286355f34",
-  "core_sha256": "369a8595ed8f68bfd7f7e4b76f8e2953f040a88b94f83124004d501560621e7a",
-  "compiled_sha256": "a1da878e993117515077cddeda6dfde52bc530cca2751f5391d007a84e3c23d8",
-  "readable_sha256": "87a8456c87d36fbd5a9862edb5e1fee0776b0a655f0c327ecb6e7c339a1cd2a4",
+  "input_sha256": "f9e16a394bc02d56b04547cdcc6bfb9b562973f0796edda397e2d163700c1702",
+  "source_capture_sha256": "931095391b1dc0cbb80d6be968ac64ee500486a1af751aeb941af1005becdb7e",
+  "core_sha256": "58ea0b35ab2b9c8aa6031e839d0b34eb1a8c4ed66ee721edf5aa1abefd49a1fc",
+  "compiled_sha256": "cf0263ee15d8843d7e256435f6d45f2141bb0f32ab2784a3437363cdac693dfd",
+  "readable_sha256": "a37768666c38babb7246b40ce705a7c3e2239f8099527805425e2c3dd159a305",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -699,7 +699,7 @@
     },
     {
       "action_id": "house:119:2:6",
-      "shared_sha256": "4e8fd368e1da371bc7dcd5090849e9bb69137796b0affacda6df41a44a0fdac7",
+      "shared_sha256": "e41fca517b85b22cd92a0b64c1dc9cfd154f2a23241e7fbc1fa7d18227626402",
       "choices": [
         {
           "member_id": "F000477",
@@ -714,6 +714,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed retaining the whole combined Divisions B and C with their qualified programme, status and funding conditions",
           "source_id": "clerk:119:2:6"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:7",
+      "shared_sha256": "24660a6d8c08ecc7ee8a77e135355746f9401493f8483a9d0c2caf0389a24397",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole three-division bill with its qualified programme, status, access and funding conditions",
+          "source_id": "clerk:119:2:7"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole three-division bill with its qualified programme, status, access and funding conditions",
+          "source_id": "clerk:119:2:7"
         }
       ]
     },

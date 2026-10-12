@@ -5,11 +5,11 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 56,
+        "eligible_substantive_actions": 57,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 56,
-        "resolved_eligible_actions": 56,
-        "directional_yes_no_positions": 56,
+        "in_service_eligible_actions": 57,
+        "resolved_eligible_actions": 57,
+        "directional_yes_no_positions": 57,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
@@ -135,13 +135,14 @@
             }
           },
           {
-            "proposition_id": "prop:27598e5c35d3d7dd",
+            "proposition_id": "prop:c4f57cf7706af167",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
             "direction": "support",
             "evidence_action_ids": [
               "house:119:2:5",
-              "house:119:2:6"
+              "house:119:2:6",
+              "house:119:2:7"
             ],
             "evidence_episode_ids": [
               "episode:hr6938:119"
@@ -160,6 +161,14 @@
               {
                 "action_id": "house:119:2:6",
                 "action_meaning_ref": "house119-through-2026-09-16:house:119:2:6:candidate-v1",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "support"
+              },
+              {
+                "action_id": "house:119:2:7",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:2:7:candidate-v1",
                 "status": "Yea",
                 "service_status": "in_service",
                 "evidence_status": "official_record_resolved",
@@ -1058,7 +1067,7 @@
             "prop:3e335a2413ee0d6d",
             "prop:dbac429a6872b3da",
             "prop:7b396e7130a53470",
-            "prop:27598e5c35d3d7dd",
+            "prop:c4f57cf7706af167",
             "prop:63c9a9214977ee99",
             "prop:1221d8ef96b8d89a",
             "prop:3657b46370498990",
@@ -1160,6 +1169,7 @@
           "house:119:2:6",
           "house:119:2:65",
           "house:119:2:69",
+          "house:119:2:7",
           "house:119:2:70",
           "house:119:2:82",
           "house:119:2:87",
@@ -1185,11 +1195,11 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 56,
+        "eligible_substantive_actions": 57,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 56,
-        "resolved_eligible_actions": 56,
-        "directional_yes_no_positions": 54,
+        "in_service_eligible_actions": 57,
+        "resolved_eligible_actions": 57,
+        "directional_yes_no_positions": 55,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
@@ -1315,13 +1325,14 @@
             }
           },
           {
-            "proposition_id": "prop:88454f89888afaa8",
+            "proposition_id": "prop:746e3b29a3a824c5",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
             "direction": "opposition",
             "evidence_action_ids": [
               "house:119:2:5",
-              "house:119:2:6"
+              "house:119:2:6",
+              "house:119:2:7"
             ],
             "evidence_episode_ids": [
               "episode:hr6938:119"
@@ -1340,6 +1351,14 @@
               {
                 "action_id": "house:119:2:6",
                 "action_meaning_ref": "house119-through-2026-09-16:house:119:2:6:candidate-v1",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "opposition"
+              },
+              {
+                "action_id": "house:119:2:7",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:2:7:candidate-v1",
                 "status": "Nay",
                 "service_status": "in_service",
                 "evidence_status": "official_record_resolved",
@@ -2200,7 +2219,7 @@
             "prop:3e335a2413ee0d6d",
             "prop:50adc7387f8075f1",
             "prop:299a30f6d60968cc",
-            "prop:88454f89888afaa8",
+            "prop:746e3b29a3a824c5",
             "prop:04efcea511ec7dbe",
             "prop:7b401ea0a7d3d888",
             "prop:74a9a53d91141d9a",
@@ -2317,6 +2336,7 @@
           "house:119:2:6",
           "house:119:2:65",
           "house:119:2:69",
+          "house:119:2:7",
           "house:119:2:70",
           "house:119:2:82",
           "house:119:2:87",
@@ -2454,6 +2474,14 @@
       "constraint_id": "source:house119-session2-roll6-BC-qualified",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Combined B/C only. Scheme-specific status/access/funding conditions and exact final imports retained; patent1994compliance/IHS1987implementation, allproject/enrollee/current-law determinations and migrant-purpose spending not inferred. No A/passage/component/motive/enactment projection."
+    },
+    {
+      "action_ids": [
+        "house:119:2:7"
+      ],
+      "constraint_id": "source:house119-session2-roll7-whole-qualified",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "WholeA-Cpassage bound independently, with separate priorretention observations. Componenttruth and precise final/division/date/status/amount exceptions apply at their ownscope. No percomponent stance, preliminaryvote substitution, historical/individual/currentlaw implementation, enactment/outcome or editorialacceptance."
     }
   ]
 }

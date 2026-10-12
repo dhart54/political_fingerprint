@@ -631,7 +631,7 @@
       },
       {
         "action_id": "house:119:2:6",
-        "action_core_sha256": "4e8fd368e1da371bc7dcd5090849e9bb69137796b0affacda6df41a44a0fdac7",
+        "action_core_sha256": "e41fca517b85b22cd92a0b64c1dc9cfd154f2a23241e7fbc1fa7d18227626402",
         "official_status": "Yea",
         "service_status": "in_service",
         "evidence_status": "official_record_resolved",
@@ -653,6 +653,31 @@
           }
         ],
         "member_action_source_identity_sha256": "677581a2898132da9d1d0b238d2fc79253f870c75e2d58fda199fb8018cc91dc"
+      },
+      {
+        "action_id": "house:119:2:7",
+        "action_core_sha256": "24660a6d8c08ecc7ee8a77e135355746f9401493f8483a9d0c2caf0389a24397",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:7",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "25964a5b8d8b39fed88673c69e89aa17a9f9c504369fe56ed32ef6d283016fe9",
+            "governed_bytes_sha256": "da79b2d622fc3f17fd4850262d4d003ea9ee57709870057abfc0bc8c31b3858c"
+          },
+          {
+            "source_id": "immigration:hr6938-roll7-whole-choice217",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Only finalengrossment/thirdreading,ownpassagequestion/orderedyeas/nays,electronic397/28/6Roll7table/finalvotechanges/passage/result/reconsideration. Two literal governed page-parent spans; no retention outcome substituted, laterMiccosukee vote excluded, no fresh fullPDF replay.",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "2bc4050007c63ff8e22d591d292ddc6bfdb7f73d043d7519dc96cd49fa03c4ec"
+          }
+        ],
+        "member_action_source_identity_sha256": "576b28cd0f37b4c71d9add0e17bfb21d130c84328496bb7541205f4616d851c9"
       },
       {
         "action_id": "house:119:2:13",
@@ -1068,7 +1093,7 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "8a000d3d8d2970988910f596a118dac389deeadf2cfba03a470a32b9f686b2e2"
+    "projection_sha256": "a4e4e10616bc54e19fb1febae75873f112d924d8f44be06a3eac2f5dc2ed2281"
   },
   {
     "schema_version": "member_action_projection_v1",
@@ -1702,7 +1727,7 @@
       },
       {
         "action_id": "house:119:2:6",
-        "action_core_sha256": "4e8fd368e1da371bc7dcd5090849e9bb69137796b0affacda6df41a44a0fdac7",
+        "action_core_sha256": "e41fca517b85b22cd92a0b64c1dc9cfd154f2a23241e7fbc1fa7d18227626402",
         "official_status": "Nay",
         "service_status": "in_service",
         "evidence_status": "official_record_resolved",
@@ -1724,6 +1749,31 @@
           }
         ],
         "member_action_source_identity_sha256": "677581a2898132da9d1d0b238d2fc79253f870c75e2d58fda199fb8018cc91dc"
+      },
+      {
+        "action_id": "house:119:2:7",
+        "action_core_sha256": "24660a6d8c08ecc7ee8a77e135355746f9401493f8483a9d0c2caf0389a24397",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:7",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "25964a5b8d8b39fed88673c69e89aa17a9f9c504369fe56ed32ef6d283016fe9",
+            "governed_bytes_sha256": "da79b2d622fc3f17fd4850262d4d003ea9ee57709870057abfc0bc8c31b3858c"
+          },
+          {
+            "source_id": "immigration:hr6938-roll7-whole-choice217",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Only finalengrossment/thirdreading,ownpassagequestion/orderedyeas/nays,electronic397/28/6Roll7table/finalvotechanges/passage/result/reconsideration. Two literal governed page-parent spans; no retention outcome substituted, laterMiccosukee vote excluded, no fresh fullPDF replay.",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "2bc4050007c63ff8e22d591d292ddc6bfdb7f73d043d7519dc96cd49fa03c4ec"
+          }
+        ],
+        "member_action_source_identity_sha256": "576b28cd0f37b4c71d9add0e17bfb21d130c84328496bb7541205f4616d851c9"
       },
       {
         "action_id": "house:119:2:13",
@@ -2139,6 +2189,6 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "dffaad071ea766ab4a3105b66ea8774081c882979d86782470340651ade7d2af"
+    "projection_sha256": "99899a3053207b0fa3ee273c48d61779be11dc584d03e906c35e552f43671ef2"
   }
 ]

@@ -1,6 +1,6 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 1282,
+  "source_count": 1284,
   "sources": [
     {
       "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
@@ -10982,6 +10982,55 @@
       ],
       "fresh_parent_raw_replay": false,
       "declared_scope": "Complete EHsections1-5only: title/contents,division-specificreference rule,Chairstatementon-or-aboutJan7conferenceallocation/implementationeffect forA-C,FY2026appropriationstatement. NoDivisionAprogrammeprojectionontoB/C."
+    },
+    {
+      "source_id": "congressional-record:2026-01-08-6938-passage-result",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+      "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+      "governed_bytes_sha256": "bc920de8f75266a3ff6d74186bd0497ec13e69467db1d122c8b9360f29a7e1c0",
+      "text_sha256": "e93276e1412ec5deb45b535c1cd41d5f6759fda1f8b218ede0dd1455df9fce02",
+      "text_length": 8093,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "immigration:hr6938-roll7-whole-choice217",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+      "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+      "governed_bytes_sha256": "2bc4050007c63ff8e22d591d292ddc6bfdb7f73d043d7519dc96cd49fa03c4ec",
+      "governed_parent_spans": [
+        {
+          "parent_source_id": "congressional-record:2026-01-08-6938-retention",
+          "parent_source_identity": {
+            "source_id": "congressional-record:2026-01-08-6938-retention",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Official PDF pages 69,73,74",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "9d08027010aa921ae73896edbba045d4e725b2739b064886141fe82d1c716b6a"
+          },
+          "start": 23225,
+          "end": 23822,
+          "total": 23822
+        },
+        {
+          "parent_source_id": "congressional-record:2026-01-08-6938-passage-result",
+          "parent_source_identity": {
+            "source_id": "congressional-record:2026-01-08-6938-passage-result",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Official PDF pages 75",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "bc920de8f75266a3ff6d74186bd0497ec13e69467db1d122c8b9360f29a7e1c0"
+          },
+          "start": 0,
+          "end": 4567,
+          "total": 8093
+        }
+      ],
+      "text_sha256": "4f0e079bff6dcc4efb16aeac61c31437e07a07b1d16325844116eb771f7fb3d4",
+      "text_length": 5166,
+      "fresh_parent_raw_replay": false,
+      "declared_scope": "Only finalengrossment/thirdreading,ownpassagequestion/orderedyeas/nays,electronic397/28/6Roll7table/finalvotechanges/passage/result/reconsideration. Two literal governed page-parent spans; no retention outcome substituted, laterMiccosukee vote excluded, no fresh fullPDF replay."
     }
   ],
   "rejected_responses_are_not_evidence": true
