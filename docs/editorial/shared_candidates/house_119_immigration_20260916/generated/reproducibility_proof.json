@@ -8,13 +8,13 @@
     "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
-    "scripts/prepare_immigration_shared_candidate.py": "354a58846c4f94cdc85dc971154a9a621b1f207570a29d340a6d609cddee3de2"
+    "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "ace02df5873d972d256e009684418db534bf331c4674a7e8c0b5cb632bf5b34d",
+  "input_sha256": "17d487d811c1b527dff9848609e61d3842db87b081bff37ff6d4343090c51f75",
   "source_capture_sha256": "38aa4fd5a3f1feca3994f1c11d50e1dfa3e08f6725fe300e42572b6debb16d40",
-  "core_sha256": "1ec0ab6caafc14d389d908820dc93ca1f717181c12ef00f3a6a642342e0f526e",
-  "compiled_sha256": "d2a20fb3b5bb27bfd74a8634c98c68cf2f9eefb76b85f6648995b4ce728bc29f",
-  "readable_sha256": "a36f91ff49e5e24e7b8c2efea28369d0bae5166a53099f0e6a9ebe011c10db40",
+  "core_sha256": "1ef13c67382b3c16bc42d59d8d59b1beac5e41724ca3ded4da1d309fbeb38b25",
+  "compiled_sha256": "3fc1cfa428ca2b7b1c5c02ea8f02d91d7b2a8093fef2872f49c051b46c5c3970",
+  "readable_sha256": "322aabc7e46282ff47db20978eec5f830af8e8f00708e14385a117ecf511d744",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -994,6 +994,26 @@
           "effect": "resolved_non_directional",
           "selected_meaning": null,
           "source_id": "clerk:119:2:169"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:198",
+      "shared_sha256": "4f6662ef69539c99ad0fdca6753cb1de7632ac05ac547911d49bcdf62c40a0a1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 7726 as put to the chamber",
+          "source_id": "clerk:119:2:198"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 7726 as put to the chamber",
+          "source_id": "clerk:119:2:198"
         }
       ]
     },

@@ -451,6 +451,65 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
 
 
 
+def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical, member_ids):
+    """Qualify an existing unapproved candidate without rewriting its meaning."""
+    binding = proposed.get('candidate_core_qualification')
+    if (not isinstance(binding, dict)
+            or set(binding) != {'artifact_ref', 'artifact_id', 'action_core_sha256'}
+            or canonical['meaning_contract_version'] != 'source_qualified_candidate_augmentation_v1'
+            or canonical['mechanism_availability'] != 'candidate_source_grounded_pending_external_semantic_review'):
+        raise ValueError('invalid candidate-core qualification contract')
+    path = (ROOT / binding['artifact_ref']).resolve()
+    if (path.name != 'shared_action_core.json'
+            or not path.is_relative_to((ROOT / 'docs/editorial/shared_candidates').resolve())):
+        raise ValueError('candidate qualification must bind an existing shared candidate')
+    provider = json.loads(path.read_text(encoding='utf-8'))
+    validate_shared_action_core(ROOT, provider)
+    original = next((a for a in provider['actions'] if a['action_id'] == proposed['action_id']), None)
+    if (provider['authoritative_for_new_editorial_work'] is not False
+            or provider['artifact_id'] != binding['artifact_id'] or original is None
+            or original['action_core_sha256'] != binding['action_core_sha256']
+            or 'candidate_exact_action_meaning' not in original
+            or canonical['action_meaning_ref'] != original['action_meaning_ref']
+            or canonical['exact_action_identity'] != original['exact_action_identity']
+            or not canonical['candidate_exact_action_meaning'].startswith(original['candidate_exact_action_meaning'])
+            or not set(original['candidate_shared_limitations']) <= set(canonical['candidate_shared_limitations'])):
+        raise ValueError('candidate qualification changes original identity or meaning basis')
+    sources = {s['source_id']: s for s in capture['sources']}
+    if proposed['source_id'] != original['operative_meaning_source_identities'][0]['source_id']:
+        raise ValueError('candidate qualification changes original primary source')
+    for witness in original['governed_source_identities']:
+        if (witness['source_id'] not in sources or identity(sources[witness['source_id']]) != witness
+                or witness not in canonical['governed_source_identities']):
+            raise ValueError('candidate qualification changes an original governed source identity')
+    for witness in canonical['governed_source_identities']:
+        if witness['source_id'] not in sources or identity(sources[witness['source_id']]) != witness:
+            raise ValueError('candidate qualification source differs from actual capture')
+    clerk_id = 'clerk:' + proposed['action_id'].removeprefix('house:')
+    outcome_ids = [clerk_id, *proposed.get('additional_action_outcome_source_ids', [])]
+    if len(outcome_ids) != len(set(outcome_ids)):
+        raise ValueError('candidate qualification repeats an outcome witness')
+    subset = copy.deepcopy(authoring)
+    subset['actions'] = [copy.deepcopy(proposed)]
+    subset['blocked_episode_ids'] = []
+    prepared = common.prepare(subset, capture, member_ids)
+    generated = prepared[0]['actions'][0]
+    for field in ['action_id', 'chamber', 'congress', 'session', 'roll', 'legislative_stage',
+                  'action_date', 'exact_question', 'chamber_outcome', 'enactment_status']:
+        if generated[field] != original[field]:
+            raise ValueError('candidate qualification changes original exact action metadata: ' + field)
+    if canonical['mechanism'] not in [canonical['candidate_exact_action_meaning'], canonical['candidate_short_description']]:
+        raise ValueError('candidate qualification mechanism differs from current meaning')
+    _require_complete_candidate_wrapper(canonical, generated, sources, outcome_ids, dict(
+        exact_action_identity=original['exact_action_identity'],
+        action_meaning_ref=original['action_meaning_ref'],
+        meaning_contract_version='source_qualified_candidate_augmentation_v1',
+        mechanism_availability='candidate_source_grounded_pending_external_semantic_review',
+        mechanism=canonical['mechanism'],
+    ))
+    return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]
+
+
 def _prepare_reused_action(authoring, capture, proposed, member_ids):
     """Bind an ordinary candidate to an existing, sealed V1 core identity."""
     ref = proposed['shared_core_reuse']
@@ -480,6 +539,8 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
         raise ValueError('stale shared-core reuse reference')
     if target.name == 'shared_action_core_proposal.json':
         validate_shared_action_core(ROOT, provider)
+        if proposed.get('candidate_core_qualification'):
+            return _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical, member_ids)
         if proposed.get('legacy_core_qualification'):
             return _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_ids)
         return _prepare_source_review_reuse(authoring, capture, proposed, canonical, member_ids)

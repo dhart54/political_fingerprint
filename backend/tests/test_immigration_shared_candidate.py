@@ -18,6 +18,80 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_modern_candidate_qualification_preserves_Health_core_and_whole_CCDF_boundaries(self):
+        from pathlib import Path
+        original = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
+        old = next(a for a in original['actions'] if a['action_id'] == 'house:119:2:198')
+        current = next(a for a in self.products[0]['actions'] if a['action_id'] == old['action_id'])
+        self.assertEqual(old['action_core_sha256'], 'ee36a3279d5424a837efe5251202b1e5c050cc2963e0b6e45ce93155103b8702')
+        self.assertEqual(current['action_meaning_ref'], old['action_meaning_ref'])
+        self.assertEqual(current['exact_action_identity'], old['exact_action_identity'])
+        self.assertTrue(current['candidate_exact_action_meaning'].startswith(old['candidate_exact_action_meaning']))
+        self.assertTrue(set(old['candidate_shared_limitations']) <= set(current['candidate_shared_limitations']))
+        for text in ['description of existing eligibility-documentation and verification procedures',
+                     'not substantive benefit-eligibility clearance', 'does not formally revise',
+                     'No new citizenship criterion', 'not a separate verification component stance']:
+            self.assertIn(text, current['candidate_exact_action_meaning'])
+        self.assertEqual(current['semantic_ir_source_ids'], [s['source_id'] for s in current['governed_source_identities']])
+        self.assertEqual(current['package_component_boundary']['boundary_type'], 'whole_measure')
+        expected = {'F000477': 'Nay', 'M001184': 'Yea'}
+        for member in self.products[2]:
+            row = next(a for a in member['actions'] if a['action_id'] == old['action_id'])
+            self.assertEqual(row['official_status'], expected[member['member_id']])
+            self.assertEqual(row['action_core_sha256'], current['action_core_sha256'])
+            self.assertEqual(row['member_action_source_identities'], current['action_outcome_source_identities'])
+
+    def test_modern_candidate_qualification_rejects_missing_stale_or_changed_original_bindings(self):
+        for case in ['missing', 'wrong seal', 'wrong artifact', 'wrong primary', 'original limit removed']:
+            with self.subTest(case=case):
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == 'house:119:2:198')
+                if case == 'missing':
+                    row.pop('candidate_core_qualification')
+                elif case == 'wrong seal':
+                    row['candidate_core_qualification']['action_core_sha256'] = '0' * 64
+                elif case == 'wrong artifact':
+                    row['candidate_core_qualification']['artifact_id'] = 'shared-action-core:house:119:v1'
+                elif case == 'wrong primary':
+                    row['source_id'] = 'govinfo:hr5334eh'
+                else:
+                    row['limitations'].pop(0)
+                with self.assertRaises(ValueError):
+                    prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
+    def test_modern_candidate_qualification_rejects_fully_resealed_wrapper_and_basis_drift(self):
+        from pathlib import Path
+        from unittest.mock import patch
+        original_read = Path.read_text
+        path = (DATA.parent / 'house_119_ccdf_qualification_checkpoint209/shared_action_core_proposal.json').resolve()
+        for case in ['component', 'compiler sources', 'original prefix', 'meaning reference', 'question']:
+            with self.subTest(case=case):
+                provider = json.loads(original_read(path, encoding='utf-8'))
+                current = provider['actions'][0]
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == current['action_id'])
+                if case == 'component':
+                    current['package_component_boundary']['boundary_type'] = 'exact_amendment'
+                elif case == 'compiler sources':
+                    current['semantic_ir_source_ids'] = ['clerk:119:2:198']
+                elif case == 'original prefix':
+                    current['candidate_exact_action_meaning'] = current['candidate_exact_action_meaning'].replace('covered child-care block-grant withholding authority mandatory', 'all benefits automatically inaccessible', 1)
+                    current['mechanism'] = current['candidate_exact_action_meaning']
+                    row['meaning'] = current['candidate_exact_action_meaning']
+                elif case == 'meaning reference':
+                    current['action_meaning_ref'] = 'unreviewed:replacement:house:119:2:198:v9'
+                    row['shared_core_reuse']['action_meaning_ref'] = current['action_meaning_ref']
+                else:
+                    current['exact_question'] = 'On Passage of the verification clause only'
+                current['action_core_sha256'] = sealed_digest(current, 'action_core_sha256')
+                provider['corpus_sha256'] = digest(provider['actions'])
+                row['shared_core_reuse']['action_core_sha256'] = current['action_core_sha256']
+                def read_provider(target, *args, **kwargs):
+                    return json.dumps(provider) if target.resolve() == path else original_read(target, *args, **kwargs)
+                with patch.object(Path, 'read_text', new=read_provider):
+                    with self.assertRaises(ValueError):
+                        prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
     def test_legacy_ES_candidate_preserves_frozen_ambiguity_and_binds_separate_current_sources(self):
         from pathlib import Path
         original = json.loads((DATA.parents[1] / 'shared_corpora/house_119_v2/shared_action_core.json').read_text(encoding='utf-8'))

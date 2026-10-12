@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 53,
+        "eligible_substantive_actions": 54,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 53,
-        "resolved_eligible_actions": 53,
-        "directional_yes_no_positions": 53,
+        "in_service_eligible_actions": 54,
+        "resolved_eligible_actions": 54,
+        "directional_yes_no_positions": 54,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 48,
+        "complete_episodes": 49,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -781,6 +781,25 @@
             }
           },
           {
+            "proposition_id": "prop:7c348782365dca1c",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:198"
+            ],
+            "evidence_episode_ids": [
+              "house:119:hr7726"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:10a347b9c7236fff",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -1034,6 +1053,7 @@
             "prop:3bf57a26338dc654",
             "prop:5cd30fee85ac5da1",
             "prop:ec7301e401593196",
+            "prop:7c348782365dca1c",
             "prop:10a347b9c7236fff",
             "prop:27252af571282f01",
             "prop:4654a7f3030b2604",
@@ -1091,6 +1111,7 @@
           "house:119:2:142",
           "house:119:2:155",
           "house:119:2:169",
+          "house:119:2:198",
           "house:119:2:214",
           "house:119:2:221",
           "house:119:2:244",
@@ -1123,17 +1144,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 53,
+        "eligible_substantive_actions": 54,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 53,
-        "resolved_eligible_actions": 53,
-        "directional_yes_no_positions": 51,
+        "in_service_eligible_actions": 54,
+        "resolved_eligible_actions": 54,
+        "directional_yes_no_positions": 52,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 48,
+        "complete_episodes": 49,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1861,6 +1882,25 @@
             }
           },
           {
+            "proposition_id": "prop:77b8ad61ca4e2f80",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:198"
+            ],
+            "evidence_episode_ids": [
+              "house:119:hr7726"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:ab993a839535a775",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -2112,6 +2152,7 @@
             "prop:97ffb4da3756a020",
             "prop:3bf57a26338dc654",
             "prop:5cd30fee85ac5da1",
+            "prop:77b8ad61ca4e2f80",
             "prop:ab993a839535a775",
             "prop:27252af571282f01",
             "prop:d7344a953f10e445",
@@ -2186,6 +2227,7 @@
           "house:119:2:13",
           "house:119:2:142",
           "house:119:2:155",
+          "house:119:2:198",
           "house:119:2:214",
           "house:119:2:221",
           "house:119:2:244",
@@ -2306,6 +2348,14 @@
       "constraint_id": "source:house119-session2-roll155-qualified-es-fisa-immigration-attribution",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Whole two-reference suspension-passage choice, with earlier-enactment/April29 effectiveness and retained transition limits. Separately governed119ES/ownRecord bind the candidate while frozen110/119title ambiguity remains historical. Immigration attribution is retained702(f)(6) travel-vetting procedural enablement, not a component vote, individual query duty, admission/removal/status result or unauthorized-immigrant equivalence. House passage is not enactment; no actual agency conduct or current orders certified."
+    },
+    {
+      "action_ids": [
+        "house:119:2:198"
+      ],
+      "constraint_id": "source:house119-session2-roll198-ccdf-status-plan-qualified",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Whole child-care package; Immigration relationship is new plan(W)description of existing CCDF eligibility-doc/verification procedures with qualified dated HHS/1642 program/status rules, not newcitizenshipcriteria/universalparentcheck/benefitdenial/immigrationenforcement or componentstance. Preserve service/nonprofitverification exceptions, definition-vsverification, continuity/provider/child-food distinctions and literalprinted defects; current implementation unverified."
     }
   ]
 }

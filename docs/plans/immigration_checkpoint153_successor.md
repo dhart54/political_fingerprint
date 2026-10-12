@@ -3163,3 +3163,76 @@ Zero routine samples; priorFAIL781.087s remains. Independent208legacyambiguity/
 ESsource/helper/domain review pending, no acceptance/production/merge. Separate
 PR217fourTCPreadyflags passed9fresh firstattempt jobs,13cardinality20lifecycle
 checks onlive-main918c054base; independentengineering review/merge pending.
+
+
+## Checkpoint209: source-ready CCDF eligibility-plan closure
+
+Parent requests highest-value executable held closure and concise remaining-work
+categories. Roll198H.R.7726 has exact whole EH/own adopted body, all material
+CCDF/child-food targets, program-specific1998/2025HHS notices and dated1642
+verification authority already governed. Qualify existing Health candidateee36
+without changing it or itsIDs/digest. Preserve complete originalmeanprefix/limits,
+whole package, literalprinted9858lg/659J/high-risk defects and review/appeal/fraud
+vsimproperpayment distinctions. Add only qualified CCDFState-plan(W)eligibility
+documentation description relationship to existing program/statusverification;
+no newcitizenshipcriterion, allservice restriction, newmandatoryindividualcheck,
+parentdenial, child-food citizenship rule or currentHHS/court implementation claim.
+2025notice definition is distinct from verification and doesnotformallyrevise
+1998verification; nonprofit verification exemption is notsubstantiveeligibility
+clearance. State-plan(N)-(V)continuity/paymentprotections and datedchild-food
+1615neither-prohibits-nor-requires distinction remain. No freshacquisition.
+
+Use narrow modern-candidate augmentation over existingV1 and complete207wrapper
+comparison: bind originalsealedcandidate, identicalprimary/capture identities,
+oldprefix/limits/metadata; build full exactClerk-bound currentwrapper with all
+newsource roles. No acceptedcorpus/schema/commonadapter/pipeline change or
+reinterpretinglaterlayers. Newmember-neutralcore shared by bothmembers; candidate
+only, independent source/helper/domain review pending. Expected54cores94props,
+622reviews54pending if closure compiles. Prior53cores92props/621reviews/other675
+rows, allHealth/catalog/manifest/pool and1,074protected blobs preserved.
+Classify remainingqueue by routine/executableheld/source-material-access/source
+conflict/legal-productdecision with reasons; counts are not readiness clearance.
+
+208independent review complete00:48:13UTC,no newmaterialfinding,53conservation/
+14replays/3newtests/42EScases/14retainedguards pass,361suite ownerattributed.
+Roll155frozenambiguity/IDs/limits remain. Preserve boundedreturn prospectively.
+PR217independent engineeringpassed and was explicitlyauthorizedordinarymerged
+to18298e6,treeequals098a938; only.w/pgr updated. Mainworkflow/autodeploy verification
+continues independently; do not integrate main into Immigration. BenchmarkFAIL
+781.087s remains,zero routine samples; all209source selection/helper/tests/Git/CI
+report costs measured afterpreread,timer initialinventory unmeasured. No candidate
+merge/editorialacceptance/publication/production or methodologychange authority.
+
+209current categories after proposed198closure:29routine screens,21source
+material/access holds (including historically restored196despitegenericpending
+label),3authoritative operator conflicts (210may/be,237$50k,247reduction-only/
+pairedoperator),1country-restriction/refugee-notwithstanding legalapplication
+hold243. No furtherheld action certified executable inthis boundedinventory;
+notclaiming nonecanclose. No newproduct/methodologydecision yetidentified; do
+not relabelsourcework asapproval. UN245access remainsunavailable,no deniedretry.
+Category counts routingonly,not readiness/completion/editorialclearance.
+208boundedreview return preserved:53conservation14replays3tests42EScases14guards,
+361suite ownerattributed,no newmaterial finding/legislativeacquisition/acceptance.
+CI217ordinarymerge18298e6treeequalsreviewed098a938; ninefresh integratedmain
+jobs at18298e6,13cardinality20lifecycle andexistingautoVercel succeeded. Only
+.w/pgr updated; no Immigrationmainintegration or manualdeploy/configchange.
+
+209local validation:364tests pass in233.484s,7semantic checks,
+12accepted/4accepted-held-out/4held-out references,14byte-exact replays,16literal
+source scopes. Three modernaugmentation tests cover10bounded negatives plus
+positive same-core reuse/differentmemberlabels, notexhaustivesemanticproof.
+Prior53cores92props/memberrows,621reviews/other675rows,allHealth/catalog/manifest/
+pool/1,074protected blobs/twonotes exact. Existing207completewrapper,205question
+and208EShelper ASTs intact; onlynewaugmentationfunction/reused-actiondispatch.
+OriginalHealthee36core/ref/meanprefix/limits/sources unchanged; qualifiednewcore
+4f6662ef69539c99ad0fdca6753cb1de7632ac05ac547911d49bcdf62c40a0a1. Counts622/54,54meanings94props,70questions/three
+partialpackages. Remainingcategories29routine/21material-access/3sourceconflicts/
+1legalapplication, noadditionalheldcertifiedexecutable ornewmethoddecision.
+Categoryrouter initially found30genericpendinglabels;196isretained162source
+chainhold, explicitlyclassifiedviahistorywithoutsource rowchange/deniedretry.
+Validationseal8fcf46e2d46d057016f7ecd50d82f1d15edc8e214a0ee62078e34e353440ef03. Localdeliveryprep endpoint
+1992.453s includes sourceselection,
+material checks/helper/authoring/categorydiagnosis/fulltests/replays. Initial
+inventory beforetimer unmeasured; Git/CI/report follows. Zerocomparableroutine
+samples,FAIL781.087s remains. Independent209qualification reviewpending, no
+editorialacceptance/production/candidate198merge.

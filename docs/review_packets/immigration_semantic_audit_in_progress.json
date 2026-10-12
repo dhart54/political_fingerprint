@@ -8867,7 +8867,7 @@
     },
     {
       "action_id": "house:119:2:155",
-      "audit_state": "separately_bound_ES_candidate_preserving_frozen_title_ambiguity_pending_independent_review",
+      "audit_state": "independently_supported_separate_ES_candidate_frozen_ambiguity_preserved",
       "severity": null,
       "finding_id": null,
       "exact_identity": {
@@ -8979,6 +8979,154 @@
       "membership_review_record_sha256": "98a18059078748c6f668f77ca95079d53fc99840cd25afb47c5b932d3aed7164",
       "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_es_fisa_source_qualification_checkpoint208.json",
       "source_qualification_receipt_sha256": "4e4da818f3aa746b2d1877d393202a7f134637e846fb499b28508124901c5a63",
+      "independent_review_pending": false,
+      "independent_review_path": "docs/review_packets/immigration_bounded_review_checkpoint208_received209.json",
+      "independent_review_sha256": "f51a59ca37633e6eb1a78a25552ad703a03faa65f05d6069dcb85293bd888828"
+    },
+    {
+      "action_id": "house:119:2:198",
+      "audit_state": "CCDF_existing_core_qualification_candidate_pending_independent_review",
+      "severity": null,
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "198",
+        "legis-num": "H R 7726",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "3-Jun-2026",
+        "action-time": "5:08 PM",
+        "vote-desc": "No Funds for Repeat Child Care Violations Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Whole H.R.7726 child-care integrity passage; newState-plan(W)description includes eligibility documentation/verification. Specific datedHHS notices nameCCDFasprovidingFederalpublicbenefits; with1642(a)-(b) this supplies a qualified program/status-verification relationship, not newcitizenshipcriterion/universalparentcheck/inevitabledenial. Notallprogramservicesrequireverification; nonprofitverification exemption isnot substantiveeligibility clearance.2025definition notice doesnotformallyrevise1998verification; policyexhortation/currentHHS-courtimplementation unverified. Existing qualifiedchildcontinuity/providerpayments and distinctchild/providerfraud processes remain; noHHS-to-childfoodstatus transfer, childnutrition1615neither-prohibits-nor-requires rule distinct. Full datedmaterialtargets, originalHealthcore/meaningprefix/limitations/sourceIDs preserved; one unapproved qualifiedsuccessor. Literal9858lg/659J/high-risk defects unrepaired. Ownquestion/voiceayes/demand/order/direct217-207/6passed, no postponement/enactment. ActualFousheeNay/MassieYea bindonewholechoice, not separatecomponentstance/motive. Candidateonly pendingindependentupstreamqualification/domain review.",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:198",
+          "url": "https://clerk.house.gov/evs/2026/roll198.xml",
+          "raw_sha256": "79d58d074cfd005d11a9fd6d9407df9f76a5ed4786df71be6bae39a6459c6a2c",
+          "governed_bytes_sha256": "bf5b916d82dc9c0bcb02960304f45e8417cb02241dc5f83d8fe869352295f195"
+        },
+        {
+          "source_id": "govinfo:hr7726eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7726eh/html/BILLS-119hr7726eh.htm",
+          "raw_sha256": "d3c34e889f63e5518d4ac22b6e678f24084616eabb0fa7fb3c3cc85cdbd2125d",
+          "governed_bytes_sha256": "db0bae0e6086af3a16ed4ab829ecdddeea03693dab9a0b50209c28cdb717b5ca"
+        },
+        {
+          "source_id": "immigration:roll198-operative-corrected182",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-03/pdf/CREC-2026-06-03-house.pdf",
+          "raw_sha256": "db062681428ac97141d2304293aadfd3ac3524d1157540807161853df216947c",
+          "governed_bytes_sha256": "8b46d25814ea44e250b0f8cd6b0700a60248c6bb85a3f9809e92d656dacc46e9"
+        },
+        {
+          "source_id": "govinfo:42usc9858c-plan-intro181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap105-subchapII-B-sec9858c.htm",
+          "raw_sha256": "cfc34d7443539bdc64474ac91d7c066329dc05b504642d03f69a153d1a95daf2",
+          "governed_bytes_sha256": "b1cab3d408e44d65438095d2acc032da5e97b3b357b809672dd04b0ca4554f8b"
+        },
+        {
+          "source_id": "govinfo:42usc9858c-plan-N-V185",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap105-subchapII-B-sec9858c.htm",
+          "raw_sha256": "cfc34d7443539bdc64474ac91d7c066329dc05b504642d03f69a153d1a95daf2",
+          "governed_bytes_sha256": "a6bf41def57b893acfa32110a066325fa10c659db9a964ff4c7d48681a9f24c0"
+        },
+        {
+          "source_id": "govinfo:42usc9858g-operative181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap105-subchapII-B-sec9858g.htm",
+          "raw_sha256": "c8894246ac119883295974ad0041621f0dda8b45ccdf79683470975ddb360dc3",
+          "governed_bytes_sha256": "28031f0c4ddafaff161efc1e1382cfd424c7b3aa212fc97766145502c3b27aff"
+        },
+        {
+          "source_id": "govinfo:42usc9858h-operative181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap105-subchapII-B-sec9858h.htm",
+          "raw_sha256": "7df9cc346eed8bb4d749aed8016b88df6dce5f7d65c80a8f206c980f02024837",
+          "governed_bytes_sha256": "760b5a89da5ee7e3a238c32241c851a4ee467b2e688b2762b4275dbbe27a3edd"
+        },
+        {
+          "source_id": "govinfo:42usc9858i-operative181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap105-subchapII-B-sec9858i.htm",
+          "raw_sha256": "ca7ecbaf8f6b9f3605a090bfe088ad542f8f0ec92aeb0c42d632954e2f346eb4",
+          "governed_bytes_sha256": "50ed2b494a6b514cbe4c58495b14c31d4e1dcae935256d3e1ebc0e400a80a198"
+        },
+        {
+          "source_id": "govinfo:42usc9858n-2024-childcare",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap105-subchapII-B-sec9858n.htm",
+          "raw_sha256": "fcdb2df125d186833db05da36edcbbc1d897b8cfbfa327f2b7f272f210106daa",
+          "governed_bytes_sha256": "f20e3c7f63a8c1a07886ff906f38b98ace9734555177b8c6ce317f7c997ff056"
+        },
+        {
+          "source_id": "govinfo:42usc1766-participation-a185",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap13-sec1766.htm",
+          "raw_sha256": "c4938961dee8802bfb5c63c9b696064a784e814d558dcc85d835b6803c770eab",
+          "governed_bytes_sha256": "61ab6069b28b3e73ca062ace6f3f1bdd1845b6816add5a251601c7af72b0a4ff"
+        },
+        {
+          "source_id": "govinfo:42usc1766-d5-e185",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap13-sec1766.htm",
+          "raw_sha256": "c4938961dee8802bfb5c63c9b696064a784e814d558dcc85d835b6803c770eab",
+          "governed_bytes_sha256": "9561187d86ee38012953d854cdadfaf45ee6a7a74d0dc5af7d1b77ff8bdb21e9"
+        },
+        {
+          "source_id": "govinfo:8usc1615-childnutrition185",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapI-sec1615.htm",
+          "raw_sha256": "6aeb8a8a37740cf014b4a67b14d91b6b09014ab43268facfdfcee749b412b552",
+          "governed_bytes_sha256": "ab5d5358574b6a4ffdfdea3d8cd7022d3a561a722485f0caa0ae4d3f1d904084"
+        },
+        {
+          "source_id": "govinfo:8usc1611-2024-benefit-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapI-sec1611.htm",
+          "raw_sha256": "594019cae13f1ed838b032a911b156119c095d197586e3c8bdd6e40046b64966",
+          "governed_bytes_sha256": "c8ef21bb11777c4f4ce50a782dc5873aa212b9a36d4f4a5d18ec34e72ba98f2f"
+        },
+        {
+          "source_id": "govinfo:8usc1642-services181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapIV-sec1642.htm",
+          "raw_sha256": "c0fcf43a29aedcef43b1c5e10e9e57a59316143711344e783726bc6eabb6e186",
+          "governed_bytes_sha256": "571c0fd93a266d59e2df9956e0ac31d1d431c38558501925738006ee518be174"
+        },
+        {
+          "source_id": "govinfo:hhs-fr1998-ccdf-III-IV-183",
+          "url": "https://www.govinfo.gov/content/pkg/FR-1998-08-04/html/98-20491.htm",
+          "raw_sha256": "c81abfa3d605279162af4d57c56522f490a71cb66c7917640af7d450e35748ad",
+          "governed_bytes_sha256": "f09e17666e222d8580b21850841e1a1dcd6186426f5b67d54fe367c79bc757ba"
+        },
+        {
+          "source_id": "govinfo:hhs-fr2025-ccdf-III-IV-183",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-07-14/html/2025-13118.htm",
+          "raw_sha256": "804cb3354e4cf3c515411355c08c430f666c1e031bf1fe5b9bca7adac1e89c1d",
+          "governed_bytes_sha256": "4effbca4b216aa7226a90f5f29f0ff6ed00563e15ea4a2241f6af5b8b394110d"
+        },
+        {
+          "source_id": "immigration:roll198-recorded181",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-03/pdf/CREC-2026-06-03-house.pdf",
+          "raw_sha256": "db062681428ac97141d2304293aadfd3ac3524d1157540807161853df216947c",
+          "governed_bytes_sha256": "a42ee92b94c483080937f73aec57aecdf34bee7ebe3aa1156ac7716ac4ada291"
+        }
+      ],
+      "authoring_action_sha256": "afeae1cdcda708eb470a10729102770cb91adf4955b9c0326000dfd345366b31",
+      "corrected_authoring_action_sha256": "afeae1cdcda708eb470a10729102770cb91adf4955b9c0326000dfd345366b31",
+      "current_action_core_sha256": "4f6662ef69539c99ad0fdca6753cb1de7632ac05ac547911d49bcdf62c40a0a1",
+      "membership_review_record_sha256": "a416f545260c13fba13f38f1f7e0124a12b6979e2d2eb82d5540905a9f68c51b",
+      "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_source_qualification_checkpoint209.json",
+      "source_qualification_receipt_sha256": "e08287f063a75fc021fb6ee61bcf310f6fcd8550315e1656e0a84abafcd38d8a",
       "independent_review_pending": true
     }
   ],
@@ -22819,7 +22967,7 @@
   },
   "unaudited_current_substantive_action_ids": [
     "house:119:2:280",
-    "house:119:2:155"
+    "house:119:2:198"
   ],
   "required_noncounting_sample": {
     "exclusions": 12,
@@ -29873,12 +30021,41 @@
       "application_questions": 70,
       "partial_packages": 3
     },
-    "independent_review_pending": true,
-    "new_head_CI_pending": true,
+    "independent_review_pending": false,
+    "new_head_CI_pending": false,
     "publication_authorized": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint208_validation.json",
     "validation_sha256": "dc26398d07538e20bad5ee43cfa0865aa37a739603e3243b2242b304c96df344",
     "focused_tests_passed": 361,
+    "exact_replays": 14,
+    "independent_review_path": "docs/review_packets/immigration_bounded_review_checkpoint208_received209.json",
+    "independent_review_sha256": "f51a59ca37633e6eb1a78a25552ad703a03faa65f05d6069dcb85293bd888828",
+    "CI_path": "docs/review_packets/immigration_delivery_checkpoint208_ci.json",
+    "CI_sha256": "cb0d6555bbc11ceb23a3168a556c8d1125d772a2083e6cb7abf45207456ea36e",
+    "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint208_ci_base_qualification.json",
+    "CI_base_qualification_sha256": "208c072d636082843f422d2c496ed96bf52b2724c31669db8e5ea378814dad59"
+  },
+  "CCDF_source_qualification_checkpoint209": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_source_qualification_checkpoint209.json",
+    "receipt_sha256": "e08287f063a75fc021fb6ee61bcf310f6fcd8550315e1656e0a84abafcd38d8a",
+    "counts": {
+      "reviewed": 622,
+      "pending": 54,
+      "ordinary_unscreened": 29,
+      "researched_holds": 25,
+      "meanings": 54,
+      "propositions": 94,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "independent_review_pending": true,
+    "new_head_CI_pending": true,
+    "publication_authorized": false,
+    "remaining_work_categories_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/remaining_work_categories_checkpoint209.json",
+    "remaining_work_categories_sha256": "164cf6829d27272e0f16a1ce46a4e06adf63b4af6003cfff6724a020b8783e02",
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint209_validation.json",
+    "validation_sha256": "8fcf46e2d46d057016f7ecd50d82f1d15edc8e214a0ee62078e34e353440ef03",
+    "focused_tests_passed": 364,
     "exact_replays": 14
   }
 }

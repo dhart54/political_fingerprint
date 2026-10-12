@@ -301,6 +301,12 @@
           "status": "Nay"
         },
         {
+          "action_id": "house:119:2:198",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:2:214",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -623,6 +629,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Not Voting"
+        },
+        {
+          "action_id": "house:119:2:198",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         },
         {
           "action_id": "house:119:2:214",
@@ -2430,6 +2442,41 @@
         }
       },
       {
+        "action_id": "house:119:2:198",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:2:198:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The bill would make the covered child-care block-grant withholding authority mandatory, require state fraud-control and eligibility-verification plans, and permanently exclude providers after final fraud determinations, including reciprocal exclusions with the Child and Adult Care Food Program. States with improper-payment rates above 5 percent would need corrective plans; after two consecutive years above that threshold, continued funding would depend on satisfying the Secretary about reduction or significant progress. It also requires monitoring and reports and removes the covered authority to waive sanctions. Section 3 appends State-plan clause (W), requiring a description of existing eligibility-documentation and verification procedures, alongside internal controls, fraud investigation/recovery and client/provider sanctions. Its data-use description concerns State/local agencies overseeing child-care providers serving assisted children; it is not unrestricted immigration-enforcement access. Dated HHS 1998 and 2025 notices expressly identify CCDF as providing Federal public benefits, while distinguishing program listing from all benefits/services requiring verification. Read with dated 8 USC 1642(a)-(b), this gives the new general plan-description operator a specific program/status-verification relationship where the Federal-public-benefit limitations apply. The 18-month/90-day statutory deadlines are tied to 1996/1997, not new enactment deadlines. Section 1642(d) exempts nonprofit charitable providers from this chapter verification duties, subject to (a); this is not substantive benefit-eligibility clearance. The 2025 notice states definition and verification are conceptually distinct and does not formally revise the 1998 verification requirements; policy exhortations are not a new statutory individual-check mandate. No new citizenship criterion, universal parent check or inevitable benefit denial is established. Dated plan (N) preserves qualified twelve-month child-eligibility continuity/redetermination protections and (S) provider-payment protections; eligible children and eligible providers are separate definitions. Reciprocal provider debarment requires the printed final fraud determination and exhausted/waived review rights; provider fraud eligibility is distinct from child status eligibility. Dated 8 USC 1615 separately preserves the school lunch/breakfast rule and neither-prohibits-nor-requires treatment of covered other child-nutrition programs; HHS CCDF classification is not transferred to the separate child-food program. Printed 9858lg/659J/high-risk-subsection defects remain literal; no technical legal correction or exhaustive current/intervening-law, HHS/court-order or State implementation determination is made. This is the whole adopted H.R.7726 passage choice, not a separate verification component stance; own question/voice ayes/demand/order/direct electronic 217 Yea/207 Nay/6 Not Voting passage, no postponement or enactment inferred.",
+          "parent_context_used": false
+        },
+        "episode_id": "house:119:hr7726",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:198",
+          "immigration:roll198-recorded181",
+          "govinfo:hr7726eh",
+          "immigration:roll198-operative-corrected182",
+          "govinfo:42usc9858c-plan-intro181",
+          "govinfo:42usc9858c-plan-N-V185",
+          "govinfo:42usc9858g-operative181",
+          "govinfo:42usc9858h-operative181",
+          "govinfo:42usc9858i-operative181",
+          "govinfo:42usc9858n-2024-childcare",
+          "govinfo:42usc1766-participation-a185",
+          "govinfo:42usc1766-d5-e185",
+          "govinfo:8usc1615-childnutrition185",
+          "govinfo:8usc1611-2024-benefit-definition",
+          "govinfo:8usc1642-services181",
+          "govinfo:hhs-fr1998-ccdf-III-IV-183",
+          "govinfo:hhs-fr2025-ccdf-III-IV-183"
+        ],
+        "structural_metadata": {
+          "stage_order": 20198
+        }
+      },
+      {
         "action_id": "house:119:2:214",
         "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:214:candidate-v1",
         "eligibility": {
@@ -2927,6 +2974,14 @@
         "policy_family_id": null
       },
       {
+        "episode_id": "house:119:hr7726",
+        "action_ids": [
+          "house:119:2:198"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
         "episode_id": "episode:s2:119",
         "action_ids": [
           "house:119:2:214"
@@ -3043,6 +3098,14 @@
         "constraint_id": "source:house119-session2-roll155-qualified-es-fisa-immigration-attribution",
         "semantic_effect": "bounds_cross_domain_attribution",
         "detail": "Whole two-reference suspension-passage choice, with earlier-enactment/April29 effectiveness and retained transition limits. Separately governed119ES/ownRecord bind the candidate while frozen110/119title ambiguity remains historical. Immigration attribution is retained702(f)(6) travel-vetting procedural enablement, not a component vote, individual query duty, admission/removal/status result or unauthorized-immigrant equivalence. House passage is not enactment; no actual agency conduct or current orders certified."
+      },
+      {
+        "action_ids": [
+          "house:119:2:198"
+        ],
+        "constraint_id": "source:house119-session2-roll198-ccdf-status-plan-qualified",
+        "semantic_effect": "bounds_cross_domain_attribution",
+        "detail": "Whole child-care package; Immigration relationship is new plan(W)description of existing CCDF eligibility-doc/verification procedures with qualified dated HHS/1642 program/status rules, not newcitizenshipcriteria/universalparentcheck/benefitdenial/immigrationenforcement or componentstance. Preserve service/nonprofitverification exceptions, definition-vsverification, continuity/provider/child-food distinctions and literalprinted defects; current implementation unverified."
       }
     ],
     "trait_relationships": []

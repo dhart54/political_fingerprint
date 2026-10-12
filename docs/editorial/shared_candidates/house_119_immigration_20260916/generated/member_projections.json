@@ -907,6 +907,31 @@
         "member_action_source_identity_sha256": "566523d86fbe33fc6d89c2e326c97eb772c8ecc4bddce05cc5bbe78010b669ec"
       },
       {
+        "action_id": "house:119:2:198",
+        "action_core_sha256": "4f6662ef69539c99ad0fdca6753cb1de7632ac05ac547911d49bcdf62c40a0a1",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:198",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "79d58d074cfd005d11a9fd6d9407df9f76a5ed4786df71be6bae39a6459c6a2c",
+            "governed_bytes_sha256": "bf5b916d82dc9c0bcb02960304f45e8417cb02241dc5f83d8fe869352295f195"
+          },
+          {
+            "source_id": "immigration:roll198-recorded181",
+            "source_type": "official_primary_text",
+            "text_version": "Own question/voice disposition/demand/order, postponement/resumption if applicable, totals and outcome; prior motions/member lists excluded",
+            "raw_sha256": "db062681428ac97141d2304293aadfd3ac3524d1157540807161853df216947c",
+            "governed_bytes_sha256": "a42ee92b94c483080937f73aec57aecdf34bee7ebe3aa1156ac7716ac4ada291"
+          }
+        ],
+        "member_action_source_identity_sha256": "e3607f2b3e3063e108786d8aa245ff95073468f33f1a4b5049cb2d17f693f49b"
+      },
+      {
         "action_id": "house:119:2:214",
         "action_core_sha256": "171ede2232ab7f1ae7d6d9ea80202ad647fb4d014a860aee080fa5720fcbcb2c",
         "official_status": "Nay",
@@ -993,7 +1018,7 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "5ab0b9f13c3d8e8f5353c8cf2efdb981f9d67101d0765fbf61aa9016f26a0b3b"
+    "projection_sha256": "5d51e8fe539fde9b820786c9893faf50b397672aedf3970b66d377a88fb16182"
   },
   {
     "schema_version": "member_action_projection_v1",
@@ -1903,6 +1928,31 @@
         "member_action_source_identity_sha256": "566523d86fbe33fc6d89c2e326c97eb772c8ecc4bddce05cc5bbe78010b669ec"
       },
       {
+        "action_id": "house:119:2:198",
+        "action_core_sha256": "4f6662ef69539c99ad0fdca6753cb1de7632ac05ac547911d49bcdf62c40a0a1",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:198",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "79d58d074cfd005d11a9fd6d9407df9f76a5ed4786df71be6bae39a6459c6a2c",
+            "governed_bytes_sha256": "bf5b916d82dc9c0bcb02960304f45e8417cb02241dc5f83d8fe869352295f195"
+          },
+          {
+            "source_id": "immigration:roll198-recorded181",
+            "source_type": "official_primary_text",
+            "text_version": "Own question/voice disposition/demand/order, postponement/resumption if applicable, totals and outcome; prior motions/member lists excluded",
+            "raw_sha256": "db062681428ac97141d2304293aadfd3ac3524d1157540807161853df216947c",
+            "governed_bytes_sha256": "a42ee92b94c483080937f73aec57aecdf34bee7ebe3aa1156ac7716ac4ada291"
+          }
+        ],
+        "member_action_source_identity_sha256": "e3607f2b3e3063e108786d8aa245ff95073468f33f1a4b5049cb2d17f693f49b"
+      },
+      {
         "action_id": "house:119:2:214",
         "action_core_sha256": "171ede2232ab7f1ae7d6d9ea80202ad647fb4d014a860aee080fa5720fcbcb2c",
         "official_status": "Yea",
@@ -1989,6 +2039,6 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "b8677ebb6d40affe60a599ed3c28f5e669901955471dad0d2adc2d327e0143b9"
+    "projection_sha256": "9d9e83f9899d5524d674b189012f8e5000544fe531dec2b257b58cd28742f3ef"
   }
 ]
