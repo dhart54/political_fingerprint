@@ -216,6 +216,7 @@ for (const reject of [false, true]) {
     await held.pending;
     await finder(page).getByRole("button", { name: "Close", exact: true }).click();
     await expect(finder(page)).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Switch representative" })).toBeFocused();
     await page.getByRole("button", { name: "Switch representative" }).click();
     await submit(page, "name", "Bean");
     await expect(choice(page, bean)).toBeVisible();
@@ -298,5 +299,6 @@ for (const width of [320, 390, 1440]) {
     await finder(page).getByRole("button", { name: "Close", exact: true }).focus();
     await page.keyboard.press("Enter");
     await expect(finder(page)).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Switch representative" })).toBeFocused();
   });
 }

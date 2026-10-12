@@ -28,6 +28,56 @@ async function liveInterfaceResponses(page) {
   });
 }
 
+for (const width of [390, 1440]) test(`explicit Close returns keyboard focus without changing the released journey at width ${width}`, async ({ page }) => {
+  await page.setViewportSize({ width, height: 900 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await liveInterfaceResponses(page);
+  const trigger = page.getByRole("button", { name: "Switch representative", exact: true });
+  const cards = page.getByTestId("record-card-entry");
+  const readCards = () => cards.evaluateAll((nodes) => nodes.map((node) => ({
+    id: node.querySelector("a[id]").id,
+    href: node.querySelector("a[id]").getAttribute("href"),
+    text: node.textContent,
+  })));
+  async function closeWithKeyboard() {
+    const url = page.url();
+    const historyLength = await page.evaluate(() => history.length);
+    await trigger.focus();
+    await trigger.press("Enter");
+    const finder = page.getByTestId("representative-finder");
+    await expect(finder).toBeVisible();
+    await page.keyboard.press("Tab");
+    await expect(finder.getByRole("button", { name: "Close", exact: true })).toBeFocused();
+    await page.keyboard.press("Enter");
+    await expect(finder).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+    expect(page.url()).toBe(url);
+    expect(await page.evaluate(() => history.length)).toBe(historyLength);
+    await expect(page.locator("#representative-name")).toHaveText("Valerie P. Foushee");
+  }
+  for (const scope of ["all", "119"]) {
+    await page.goto(`/?representative=leg_valerie_p_foushee&scope=${scope}`);
+    await expect(cards).toHaveCount(6);
+    const before = await readCards();
+    expect(before.map((entry) => entry.id).sort()).toEqual(candidate.entries.map((entry) => entry.id).sort());
+    await closeWithKeyboard();
+    expect(await readCards()).toEqual(before);
+    await page.keyboard.press("Tab");
+    await expect(page.getByRole("button", { name: "All available Congresses", exact: true })).toBeFocused();
+    // Close is not navigation, including when a finding/source is selected.
+    await page.locator(`#${assistance.id}`).click();
+    await expect(page.locator("#finding-detail-heading")).toBeFocused();
+    const detailUrl = page.url();
+    await closeWithKeyboard();
+    await page.goBack();
+    await expect(cards).toHaveCount(6);
+    expect(await readCards()).toEqual(before);
+    await page.goForward();
+    await expect(page).toHaveURL(detailUrl);
+    await expect(page.locator("#finding-detail-heading")).toBeVisible();
+  }
+});
+
 async function holdInitialIssueFocus(page) {
   await page.addInitScript(() => {
     const scroll = Element.prototype.scrollIntoView;

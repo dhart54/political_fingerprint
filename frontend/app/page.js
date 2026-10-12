@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 import RepresentativeExperience from "../components/RepresentativeExperience";
@@ -33,6 +33,7 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
     error: null,
   });
   const [finderOpen, setFinderOpen] = useState(false);
+  const switchTrigger = useRef(null);
   const [routePath, setRoutePath] = useState("/");
 
   useEffect(() => {
@@ -100,6 +101,11 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
     window.history[replace ? "replaceState" : "pushState"]({}, "", url);
     setRoute(resolved);
     setRouteNavigation("user");
+  }
+
+  function closeFinder() {
+    setFinderOpen(false);
+    if (switchTrigger.current?.isConnected) switchTrigger.current.focus();
   }
 
   function selectRepresentative(legislator) {
@@ -183,14 +189,17 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
             <RepresentativeHeader
               compact={compactOpening}
               legislator={legislator}
-              onSwitch={() => setFinderOpen(true)}
+              onSwitch={(event) => {
+                switchTrigger.current = event.currentTarget;
+                setFinderOpen(true);
+              }}
               scope={route.scope}
             />
             {finderOpen ? (
               <div className="my-5" role="region" aria-label="Switch representative">
                 {reviewProfiles ? <ReviewProfilePicker profiles={reviewProfiles} onSelect={selectRepresentative} /> : <RepresentativeFinder
                   compact
-                  onCancel={() => setFinderOpen(false)}
+                  onCancel={closeFinder}
                   onSelect={selectRepresentative}
                 />}
               </div>
