@@ -3107,3 +3107,59 @@ setup failure, firstsuccessful358suite127.090s and final label-binding/full
 validation. First two read-only inspections beforetimer unmeasured. All later
 costs included; Git/CI/report overhead follows. Zero routine samples; prior
 benchmarkFAIL781.087s unchanged. No editorial acceptance/merge/production.
+
+
+## Checkpoint 208: separately governed ES legacy source qualification
+
+207correction independently verified at284b11c: both206typed-wrapper findings
+closed,30wrapper/8question probes,3new regressions/14replays,all52cores90props
+and sources/IDs unchanged.358suite owner-attributed. OriginalCI failure remains;
+authorized failed-job-only retry yielded8carried plus1fresh success with13
+cardinality/20lifecycle checks. Testedbase7794differsnewmain918c054. Preserve
+bounded review/retry/first-failure evidence prospectively with this delivery.
+Separate bounded CI maintenance authorized by Dylan, isolated.w/pgr/draftPR217
+at098a938 from918c054, onlyfourTCPreadyhost flags, no test semantics/production
+change. Hosted review remains separate and does not block safe Immigration.
+
+Reuse already checked roll155 frozen/current metadata,completeES/ownbody and
+new literal operators/effectiveness/ownquestion mechanics. Private208prototype
+passes corrected30fieldwrapper, existingV1/core/mapping/projection/IR contracts
+and bothNays with53cores92props; canonicalinputs unmodified by prototype.
+Install only that bounded ES path into existinglegacy helper. Pin original155
+core/seal/title conflict and require separate119ES/ownoffered/recorded identities,
+acceptedprefix including ambiguity plus explicit historical qualification in
+meaning/limits. Complete currentbody and exact literal two operators/effectiveness
+bind; currentClerk metadata/totals/Nays exact. No generic title override or XML
+repair/reclassification. Keep207fullwrapper/205fullquestion guards intact.
+Use pre-votePL11984April18 baseline; exclude laterPL11987 as pre-vote source.
+Retained403/404b/RISAA19/24/definitions/target-query witnesses stay governed,
+with enablement vsindividualduty, non-US vsunauthorizedstatus, original2008
+transition and wholechoice/noenactment qualifications. Newcandidate unapproved;
+route newES/legacyambiguity/source/helper/domain binding for independent review.
+
+Expected621reviewed/55pending,53meanings92props,70questions/threepartialpackages.
+Prior52cores90props/memberrows,620reviews/other675rows,allHealth/catalog/manifest/
+pool and1,066protected blobs/twonotes exact. Activeboundary52->53 explicitly.
+Focused newESnegative cases,complete suite/7checks/14replays/diff/CI. No new
+legislative acquisitions or routine samples;benchmarkFAIL781.087s remains.
+Prior207preselection/prototype/predicate costs measured in2585.365s window;
+authorizedretry/CImaintenance separatelyrecorded,notfree.208timerbegins after
+verified207andmaintenancePRpreservation. No merge/editorialacceptance/production.
+
+208local validation:361focused tests pass in146.794s,7semantic checks,
+12accepted/4accepted-held-out/4held-out references,14byte-exact replays and14
+literal source scopes. Three newES tests cover11bounded negatives; no exhaustive
+semantic proof. Initial361suite passed360 and found selected-member name in
+shared prose (186.865s). Removed demander name from shared meaning; exactactor
+retained in immutable source/review provenance. Beforef07969d935b594133c2378426c038611a7288bc0650049e464fa88f4e6ca68a7
+toe2793239c93d7d3cb1a01513cc93427c6dbf14e56f58f8ec0a3e4d1ea0543126; originalacceptedcore/prefix/ambiguity unchanged.
+Prior52cores90props/memberrows,620reviews/other675rows,allHealth/catalog/manifest/
+pool,1,066protected blobs/twonotes exact.207fullwrapper/205question guards AST
+exact; onlylegacyESextension changes. Counts621/55,53meanings92props,70questions/
+threepartialpackages. Validationsealdc26398d07538e20bad5ee43cfa0865aa37a739603e3243b2242b304c96df344.
+Local delivery prep endpoint1062.183s
+includes failedsuite/safe member-neutral repair/fullrerun. Git/CI/report follows.
+Zero routine samples; priorFAIL781.087s remains. Independent208legacyambiguity/
+ESsource/helper/domain review pending, no acceptance/production/merge. Separate
+PR217fourTCPreadyflags passed9fresh firstattempt jobs,13cardinality20lifecycle
+checks onlive-main918c054base; independentengineering review/merge pending.

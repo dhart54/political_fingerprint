@@ -18,6 +18,93 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_legacy_ES_candidate_preserves_frozen_ambiguity_and_binds_separate_current_sources(self):
+        from pathlib import Path
+        original = json.loads((DATA.parents[1] / 'shared_corpora/house_119_v2/shared_action_core.json').read_text(encoding='utf-8'))
+        old = next(a for a in original['actions'] if a['action_id'] == 'house:119:2:155')
+        current = next(a for a in self.products[0]['actions'] if a['action_id'] == old['action_id'])
+        row = next(r for r in self.values[0]['actions'] if r['action_id'] == old['action_id'])
+        conflict = row['legacy_core_qualification']['preserved_metadata_conflict']
+        self.assertEqual(old['action_core_sha256'], '980d0ab08ded521f6976b4109e35f041a41943080920e0a2b668d3b682eaa3a0')
+        self.assertEqual(current['action_meaning_ref'], old['action_meaning_ref'])
+        self.assertEqual(current['exact_action_identity'], '119:s:4465')
+        self.assertTrue(current['candidate_exact_action_meaning'].startswith(old['accepted_exact_action_meaning']))
+        self.assertIn('kept ambiguous', current['candidate_exact_action_meaning'])
+        self.assertTrue(conflict['original_title'].startswith('110 S4465 ES:'))
+        self.assertIn(conflict['qualification'], current['candidate_exact_action_meaning'])
+        self.assertIn(conflict['qualification'], current['candidate_shared_limitations'])
+        self.assertEqual(current['chamber_outcome'], 'Passed')
+        self.assertEqual(current['enactment_status'], 'not_inferred_from_house_outcome')
+        self.assertNotIn('govinfo:pl11987-qualified182', current['semantic_ir_source_ids'])
+        self.assertEqual(current['semantic_ir_source_ids'], [s['source_id'] for s in current['governed_source_identities']])
+        self.assertEqual([s['source_id'] for s in current['action_outcome_source_identities']],
+                         ['clerk:119:2:155', 'immigration:roll155-recorded182'])
+        for member in self.products[2]:
+            projection = next(a for a in member['actions'] if a['action_id'] == old['action_id'])
+            self.assertEqual(projection['official_status'], 'Nay')
+            self.assertEqual(projection['action_core_sha256'], current['action_core_sha256'])
+            self.assertEqual(projection['member_action_source_identities'], current['action_outcome_source_identities'])
+
+    def test_legacy_ES_candidate_rejects_missing_conflict_or_separate_source_bindings(self):
+        for case in ['missing conflict', 'wrong title', 'wrong qualification', 'missing offered', 'missing recorded']:
+            with self.subTest(case=case):
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == 'house:119:2:155')
+                binding = row['legacy_core_qualification']
+                if case == 'missing conflict':
+                    binding.pop('preserved_metadata_conflict')
+                elif case == 'wrong title':
+                    binding['preserved_metadata_conflict']['original_title'] = '119 S4465 ES: repaired title'
+                elif case == 'wrong qualification':
+                    binding['preserved_metadata_conflict']['qualification'] = 'Old ambiguity resolved automatically.'
+                elif case == 'missing offered':
+                    row['additional_source_ids'].remove('immigration:roll155-operative182')
+                else:
+                    row['additional_action_outcome_source_ids'] = []
+                with self.assertRaises(ValueError):
+                    prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
+    def test_legacy_ES_candidate_rejects_fully_resealed_qualification_and_wrapper_drift(self):
+        from pathlib import Path
+        from unittest.mock import patch
+        original_read = Path.read_text
+        path = (DATA.parent / 'house_119_legacy_es_fisa_qualification_checkpoint208/shared_action_core_proposal.json').resolve()
+        for case in ['accepted prefix', 'historical qualification', 'component', 'compiler sources', 'question', 'version']:
+            with self.subTest(case=case):
+                provider = json.loads(original_read(path, encoding='utf-8'))
+                current = provider['actions'][0]
+                authoring = copy.deepcopy(self.values[0])
+                row = next(r for r in authoring['actions'] if r['action_id'] == current['action_id'])
+                if case == 'accepted prefix':
+                    current['candidate_exact_action_meaning'] = current['candidate_exact_action_meaning'].replace('The action is kept ambiguous', 'The action is automatically cleared', 1)
+                    current['mechanism'] = current['candidate_exact_action_meaning']
+                    row['meaning'] = current['candidate_exact_action_meaning']
+                elif case == 'historical qualification':
+                    qualification = row['legacy_core_qualification']['preserved_metadata_conflict']['qualification']
+                    current['candidate_exact_action_meaning'] = current['candidate_exact_action_meaning'].replace(qualification, '')
+                    current['candidate_shared_limitations'].remove(qualification)
+                    current['mechanism'] = current['candidate_exact_action_meaning']
+                    row['meaning'] = current['candidate_exact_action_meaning']
+                    row['limitations'] = current['candidate_shared_limitations']
+                elif case == 'component':
+                    current['package_component_boundary']['boundary_type'] = 'exact_amendment'
+                elif case == 'compiler sources':
+                    current['semantic_ir_source_ids'] = ['clerk:119:2:155']
+                elif case == 'question':
+                    current['exact_question'] = 'On Motion to Suspend the Rules and Pass paragraph (1) only'
+                else:
+                    for field in ['governed_source_identities', 'operative_meaning_source_identities']:
+                        next(s for s in current[field] if s['source_id'] == row['source_id'])['text_version'] = 'EH'
+                    current['governed_source_identity_sha256'] = digest(current['governed_source_identities'])
+                current['action_core_sha256'] = sealed_digest(current, 'action_core_sha256')
+                provider['corpus_sha256'] = digest(provider['actions'])
+                row['shared_core_reuse']['action_core_sha256'] = current['action_core_sha256']
+                def read_provider(target, *args, **kwargs):
+                    return json.dumps(provider) if target.resolve() == path else original_read(target, *args, **kwargs)
+                with patch.object(Path, 'read_text', new=read_provider):
+                    with self.assertRaises(ValueError):
+                        prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
     def test_qualified_wrappers_reject_resealed_component_and_compiler_source_changes(self):
         from pathlib import Path
         from unittest.mock import patch

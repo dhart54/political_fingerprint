@@ -286,12 +286,13 @@ def _prepare_source_review_reuse(authoring, capture, proposed, canonical, member
 
 
 def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_ids):
-    """Qualify a frozen CDH FISA extension without rewriting its accepted core."""
+    """Qualify a frozen FISA extension without rewriting its accepted core."""
     import hashlib
     import xml.etree.ElementTree as ET
     witness = proposed.get('legacy_core_qualification')
     if (not isinstance(witness, dict)
-            or set(witness) != {'artifact_ref', 'artifact_id', 'action_core_sha256', 'source_bindings'}
+            or set(witness) not in ({'artifact_ref', 'artifact_id', 'action_core_sha256', 'source_bindings'},
+                                   {'artifact_ref', 'artifact_id', 'action_core_sha256', 'source_bindings', 'preserved_metadata_conflict'})
             or canonical['meaning_contract_version'] != 'source_qualified_legacy_fisa_extension_v1'
             or canonical['mechanism_availability'] != 'candidate_source_grounded_pending_external_semantic_review'):
         raise ValueError('invalid legacy FISA qualification contract')
@@ -310,7 +311,7 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
             or not canonical['candidate_exact_action_meaning'].startswith(original['accepted_exact_action_meaning'])
             or not set(original['accepted_shared_limitations']) <= set(canonical['candidate_shared_limitations'])
             or original['legislative_stage'] != 'suspension_passage'
-            or proposed['stage'] != 'suspension_and_passage' or proposed.get('bill_type') != 'hr'):
+            or proposed['stage'] != 'suspension_and_passage' or proposed.get('bill_type') not in {'hr', 's'}):
         raise ValueError('legacy qualification changes the frozen identity or accepted basis')
     sources = {s['source_id']: s for s in capture['sources']}
     clerk_id = 'clerk:' + proposed['action_id'].removeprefix('house:')
@@ -346,14 +347,48 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
                     raise ValueError('legacy Clerk member observation differs')
         else:
             title = root.findtext('metadata/dublinCore/{http://purl.org/dc/elements/1.1/}title', '')
-            expected = f"{authoring['congress']} HR {proposed['bill_number']} :"
-            if (root.tag != 'bill' or root.attrib.get('bill-stage') != 'Committee-Discharged-House'
-                    or not title.startswith(expected)
+            is_es = proposed['bill_type'] == 's'
+            conflict = witness.get('preserved_metadata_conflict')
+            if is_es:
+                qualification = ('The frozen 110/119 title ambiguity remains in the historical accepted record; '
+                                 'this unapproved candidate binds separately governed 119th-Congress ES and own '
+                                 'House Record without repairing or reclassifying that XML.')
+                independent_ids = ['govinfo:s4465es', 'immigration:roll155-operative182',
+                                   'immigration:roll155-recorded182']
+                if (proposed['action_id'] != 'house:119:2:155'
+                        or original['action_core_sha256'] != '980d0ab08ded521f6976b4109e35f041a41943080920e0a2b668d3b682eaa3a0'
+                        or not title.startswith('110 S4465 ES:')
+                        or not isinstance(conflict, dict)
+                        or set(conflict) != {'original_title', 'separate_binding_source_ids', 'qualification'}
+                        or conflict['original_title'] != title
+                        or conflict['separate_binding_source_ids'] != independent_ids
+                        or conflict['qualification'] != qualification
+                        or qualification not in canonical['candidate_exact_action_meaning']
+                        or qualification not in canonical['candidate_shared_limitations']
+                        or proposed['source_id'] != independent_ids[0]
+                        or independent_ids[1] not in proposed.get('additional_source_ids', [])
+                        or proposed.get('additional_action_outcome_source_ids') != independent_ids[2:]):
+                    raise ValueError('legacy ES title conflict lacks its preserved separate-source qualification')
+                from scripts.validate_source_sequence import require_exact_bill_operative
+                require_exact_bill_operative(sources[independent_ids[1]]['text'], 'S.4465')
+                expected_stage = 'Engrossed-in-Senate'
+                expected_form = f"S. {proposed['bill_number']}"
+                expected_header = f"[S. {proposed['bill_number']} Engrossed in Senate (ES)]"
+                complete_extent = (' Passed the Senate April 30, 2026. Attest: Secretary.' in primary['text']
+                                   and primary.get('text_version') == 'ES')
+            else:
+                if conflict is not None or not title.startswith(f"{authoring['congress']} HR {proposed['bill_number']} :"):
+                    raise ValueError('legacy CDH title differs or attempts a metadata exception')
+                expected_stage = 'Committee-Discharged-House'
+                expected_form = f"H. R. {proposed['bill_number']}"
+                expected_header = f"[H.R. {proposed['bill_number']} Committee Discharged House (CDH)]"
+                complete_extent = primary['text'].endswith(' <all>')
+            if (root.tag != 'bill' or root.attrib.get('bill-stage') != expected_stage
                     or root.findtext('form/congress') != f"{authoring['congress']}th CONGRESS"
-                    or root.findtext('form/legis-num') != f"H. R. {proposed['bill_number']}"
-                    or f"[H.R. {proposed['bill_number']} Committee Discharged House (CDH)]" not in primary['text']
-                    or not primary['text'].endswith(' <all>')):
-                raise ValueError('legacy bill source identity or CDH version differs')
+                    or root.findtext('form/legis-num') != expected_form
+                    or f"[Congressional Bills {authoring['congress']}th Congress]" not in primary['text']
+                    or expected_header not in primary['text'] or not complete_extent):
+                raise ValueError('legacy bill source identity or exact ES/CDH version differs')
             body = root.find('legis-body')
             if body is None or len(body.findall('section')) != 1:
                 raise ValueError('legacy extension lacks its complete one-section body')
@@ -364,7 +399,8 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
             pairs = [[q.text for q in p.findall('text/quote')] for p in paragraphs]
             for number, pair in enumerate(pairs, 1):
                 target_note = ('(50 U.S.C. 1881 note)' if number == 1
-                               else '(18 U.S.C. 2511 note) in the matter preceding subparagraph (A)')
+                               else '(18 U.S.C. 2511 note)' + (', ' if is_es else ' ')
+                               + 'in the matter preceding subparagraph (A)')
                 operator = (f"in paragraph ({number}) {target_note}, by striking ``{pair[0]}'' "
                             f"and inserting ``{pair[1]}''")
                 if operator not in primary['text']:
@@ -377,9 +413,15 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
             if effective_text not in primary['text']:
                 raise ValueError('captured extension changes literal effective-date clause')
             normalized = lambda text: re.sub(r'[^a-z0-9]', '', text.casefold())
-            text = primary['text'][primary['text'].index('SECTION 1.'):-len(' <all>')].removeprefix('SECTION ')
+            end = primary['text'].index(' Passed the Senate ') if is_es else -len(' <all>')
+            text = primary['text'][primary['text'].index('SECTION 1.'):end].removeprefix('SECTION ')
             if normalized(' '.join(body.itertext())) != normalized(text):
                 raise ValueError('legacy and captured complete operative bodies differ')
+            if is_es:
+                own = sources[independent_ids[1]]['text']
+                own_body = own[own.index('SECTION 1.'):own.index('The SPEAKER pro tempore.')].removeprefix('SECTION ')
+                if normalized(' '.join(body.itertext())) != normalized(own_body):
+                    raise ValueError('separate own Record complete operative body differs')
     outcome_ids = [clerk_id, *proposed.get('additional_action_outcome_source_ids', [])]
     if (len(outcome_ids) != len(set(outcome_ids))
             or [s['source_id'] for s in canonical['action_outcome_source_identities']] != outcome_ids):
@@ -402,7 +444,7 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
     for field in ['action_id', 'chamber', 'congress', 'session', 'roll', 'action_date', 'chamber_outcome', 'enactment_status']:
         if canonical[field] != original[field]:
             raise ValueError('legacy candidate changes frozen exact-action metadata: ' + field)
-    if (canonical['exact_action_identity'] != f"{authoring['congress']}:hr:{proposed['bill_number']}"
+    if (canonical['exact_action_identity'] != f"{authoring['congress']}:{proposed['bill_type']}:{proposed['bill_number']}"
             or canonical['mechanism'] not in [canonical['candidate_exact_action_meaning'], canonical['candidate_short_description']]):
         raise ValueError('legacy candidate exact measure or mechanism differs')
     return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]

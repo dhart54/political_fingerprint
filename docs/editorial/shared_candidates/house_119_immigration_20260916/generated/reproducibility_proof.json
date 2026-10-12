@@ -8,13 +8,13 @@
     "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
-    "scripts/prepare_immigration_shared_candidate.py": "5fc302433c3003678b9e77875419a1fea17daea3d91ab295d1c7a779ba35b21b"
+    "scripts/prepare_immigration_shared_candidate.py": "354a58846c4f94cdc85dc971154a9a621b1f207570a29d340a6d609cddee3de2"
   },
-  "input_sha256": "8a30d126cc57c344f7e933ffece0c5560c01617fc477b2e133073187e4bcd053",
+  "input_sha256": "ace02df5873d972d256e009684418db534bf331c4674a7e8c0b5cb632bf5b34d",
   "source_capture_sha256": "38aa4fd5a3f1feca3994f1c11d50e1dfa3e08f6725fe300e42572b6debb16d40",
-  "core_sha256": "5e38bd21a7c11420b8a659100afecca89bddf0c56e780b92d8f961e498997b30",
-  "compiled_sha256": "cedfb1812c74a3fe87e6676791a134295618dae0a388c7b778af6191c53b2e38",
-  "readable_sha256": "d520ecb286e2d6c71e8c0e07e4b4e7e7d0657950f8847bf50d4d6837656ccc57",
+  "core_sha256": "1ec0ab6caafc14d389d908820dc93ca1f717181c12ef00f3a6a642342e0f526e",
+  "compiled_sha256": "d2a20fb3b5bb27bfd74a8634c98c68cf2f9eefb76b85f6648995b4ce728bc29f",
+  "readable_sha256": "a36f91ff49e5e24e7b8c2efea28369d0bae5166a53099f0e6a9ebe011c10db40",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -954,6 +954,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "Oppose passing the whole adopted FISA substitute on this question; no alternative or motive inferred.",
           "source_id": "clerk:119:2:142"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:155",
+      "shared_sha256": "e2793239c93d7d3cb1a01513cc93427c6dbf14e56f58f8ec0a3e4d1ea0543126",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "Oppose this suspension-and-passage motion; no alternative or motive inferred.",
+          "source_id": "clerk:119:2:155"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "Oppose this suspension-and-passage motion; no alternative or motive inferred.",
+          "source_id": "clerk:119:2:155"
         }
       ]
     },

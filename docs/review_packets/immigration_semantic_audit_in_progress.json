@@ -8595,7 +8595,7 @@
     },
     {
       "action_id": "house:119:2:142",
-      "audit_state": "source_review_complete_and_question_P2_independently_verified_candidate_only",
+      "audit_state": "independently_supported_candidate_question_and_complete_wrapper_P2_fixes_verified",
       "severity": null,
       "finding_id": null,
       "exact_identity": {
@@ -8725,17 +8725,19 @@
           "governed_bytes_sha256": "3ad3264031dbbab2391340381914f9a914645ab8f9c46286849b36b017fbd805"
         }
       ],
-      "finding": "Parent reports complete204source review supports submitted question/meaning/domain/bothNays; later205questionP2fix independently verified. New complete-wrapper correction awaits its own verification. Candidate only, no editorial acceptance.",
+      "finding": "Completed204source review supports question/meaning/domain/bothNays;205questionP2fix and207complete-wrapper correction independently verified. Candidate only, no editorial acceptance.",
       "corrected_authoring_action_sha256": "06a7f399fe9b97f90903f108e444a07156e4a8f90d23b139d9a50c09482de2a2",
       "corrected_review_record_sha256": "61b9432af561a8f5558000fbc81e2373b1b988f0817e066739fce5cdbf7072df",
       "independent_review_pending": false,
       "not_counted_in_independent_severity_assessments": true,
       "independent_review_receipt_path": "docs/review_packets/immigration_bounded_review_checkpoint204_complete_and_P2_verified_received207.json",
-      "independent_review_receipt_sha256": "67b2c559ec0f572e0b832f3beb886b6c2657b34bb6f5359bbac545721f3fee4b"
+      "independent_review_receipt_sha256": "67b2c559ec0f572e0b832f3beb886b6c2657b34bb6f5359bbac545721f3fee4b",
+      "independent207_review_path": "docs/review_packets/immigration_bounded_review_checkpoint207_received208.json",
+      "independent207_review_sha256": "a71b7e367378bdddb373335ec12e6cc8c8c2f4cbdcf2cb2e3018dd99aaff61cd"
     },
     {
       "action_id": "house:119:2:221",
-      "audit_state": "source_qualified_identity_preserving_legacy_candidate_pending_independent_review",
+      "audit_state": "independently_supported_candidate_full_wrapper_P2_corrected_and_verified",
       "severity": null,
       "finding_id": null,
       "exact_identity": {
@@ -8859,6 +8861,124 @@
       "membership_review_record_sha256": "2a37b7a7ce90e125ff9187fc677b51af4705fa749d6a49e25b5a4a4a57579f02",
       "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_fisa_source_qualification_checkpoint206.json",
       "source_qualification_receipt_sha256": "76e2ea631de14b656e319705e84dc85fedad298a533e5e172455bb0926f3caff",
+      "independent_review_pending": false,
+      "independent_review_path": "docs/review_packets/immigration_bounded_review_checkpoint207_received208.json",
+      "independent_review_sha256": "a71b7e367378bdddb373335ec12e6cc8c8c2f4cbdcf2cb2e3018dd99aaff61cd"
+    },
+    {
+      "action_id": "house:119:2:155",
+      "audit_state": "separately_bound_ES_candidate_preserving_frozen_title_ambiguity_pending_independent_review",
+      "severity": null,
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "155",
+        "legis-num": "S 4465",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "30-Apr-2026",
+        "action-time": "4:43 PM",
+        "vote-desc": "To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Whole S.4465 suspension-passage proposal changes both qualified TitleVII repeal references from April30 to June12,2026, effective earlier enactment or April29. Pre-vote PL11984 approvedApril18 supplies the April30baseline and dated transition changes; laterPL11987 is not a pre-vote baseline or House-enactment inference. Retained702(f)(6)/RISAA24 enables travel vetting of non-US persons with non-US-person terms; no universal individual query duty, admission/removal/status result, unauthorized-immigrant equivalence or component stance. Dated definitions, acquisition/query distinction, continuing orders/directives, litigation/information/reporting and original2008transition remain qualified. Frozen/current Clerk metadata/totals/bothNays match. FrozenES XML/current119ES/ownoffered complete bodies and both literal operators/effectiveness bind the separate current candidate. FrozenXML110title vsstructured119identity and the entire accepted ambiguity statement remain unchanged and explicitly historical; no XMLrepair/reclassification or accepted-source rewrite. Original action/measure/meaning identifiers and accepted prefix/limitations retained; currentsource identities differ. Own question/voice2/3ayes/Massiedemand/order/directelectronic261-111/58passage; no postponement. House passage establishes no enactment, actualagency conduct/currentorders or individual application. Candidate only pending independent ES-source/helper/legacyambiguity/domain review; no editorial acceptance/publication.",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:155",
+          "url": "https://clerk.house.gov/evs/2026/roll155.xml",
+          "raw_sha256": "2b025b6c6ebca8f881e36fe1506a1ef70d7f5fc32dd771c09a49d60df1197c60",
+          "governed_bytes_sha256": "bdb0a8e26e98571cb2221afb912edd693d8e9e373ed5980b6cacaa2d611496bd"
+        },
+        {
+          "source_id": "govinfo:s4465es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s4465es/html/BILLS-119s4465es.htm",
+          "raw_sha256": "4fdbc85223356a1f0a86e28d87df53bd1d0345b3c4577f40b2607177431704fa",
+          "governed_bytes_sha256": "bd89961795495cb6e6dd6eda502feb15a5b9c7fe159cfc07503f5501f217479d"
+        },
+        {
+          "source_id": "immigration:roll155-operative182",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "4a2809fb4752e794894218b355f9a3eea370044fe1f2b9aebabbfc271f8d4d95"
+        },
+        {
+          "source_id": "govinfo:pl110261-section403-182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-110publ261/html/PLAW-110publ261.htm",
+          "raw_sha256": "421d1aef919b79bcbf4719ab08b8905d8b68ba1bbf9bdea9090d56f5fad5713c",
+          "governed_bytes_sha256": "2d9b6002b67fd93f2430098c77bcc6fb3fcff8a9f6d829d8ecdd44cc12839136"
+        },
+        {
+          "source_id": "govinfo:pl110261-section404b-182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-110publ261/html/PLAW-110publ261.htm",
+          "raw_sha256": "421d1aef919b79bcbf4719ab08b8905d8b68ba1bbf9bdea9090d56f5fad5713c",
+          "governed_bytes_sha256": "b769dc31caba5867e3fa76e8c07138296e7779e431a495e8677d76e38c47001d"
+        },
+        {
+          "source_id": "govinfo:pl11849-section19-182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm",
+          "raw_sha256": "1f9c965c35c512369ab7338c8acc8395b7ca44fa094db013d2bde2c3df39817e",
+          "governed_bytes_sha256": "859ef51218ecc8a1f61bdd648300c9954a34f9c728c3192b84c5c0dd19146468"
+        },
+        {
+          "source_id": "govinfo:pl11849-section24-182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ49/html/PLAW-118publ49.htm",
+          "raw_sha256": "1f9c965c35c512369ab7338c8acc8395b7ca44fa094db013d2bde2c3df39817e",
+          "governed_bytes_sha256": "d5938de41c0a110731486a9c60893c88532834883f70de67584170447c75f1d0"
+        },
+        {
+          "source_id": "govinfo:pl11984-qualified182",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ84/html/PLAW-119publ84.htm",
+          "raw_sha256": "3b6cee5138a8dcb34525837d82520d47f4ffd24c8eac3ac6f2d3054f4ec92867",
+          "governed_bytes_sha256": "4bf897f11e12ced202b14ba967486e52da6280de5b96cd9bcada9f8e422d8fff"
+        },
+        {
+          "source_id": "govinfo:50usc1881-services181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapVI-sec1881.htm",
+          "raw_sha256": "cf56b7b1319f71fe60ce2e003f2aa419f97f759b0727d41716f44794235990df",
+          "governed_bytes_sha256": "3ad3264031dbbab2391340381914f9a914645ab8f9c46286849b36b017fbd805"
+        },
+        {
+          "source_id": "govinfo:50usc1801-operative181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapI-sec1801.htm",
+          "raw_sha256": "6a05ebea3e8e1df21d76aece1f47dacd1e445791874ac17d843adb0a7c7dd96c",
+          "governed_bytes_sha256": "78d8d1566fc6eb2eb529e128eac3f7e310af27e2daeb1a2a404307587dd80830"
+        },
+        {
+          "source_id": "govinfo:50usc1881a-target-query181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapVI-sec1881a.htm",
+          "raw_sha256": "dec42f5a62019ab833c9ffc74a75a6a17183f514adc2e09579027a10cc898c3c",
+          "governed_bytes_sha256": "23be36cb6a203de9bc767f89199b5834aad789d4cea78ecb44a6245165b3a02b"
+        },
+        {
+          "source_id": "immigration:roll155-recorded182",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "60d2a694914ebcd7166bb78e4475b04a50cf5f7160369c524c878f0149712da2"
+        }
+      ],
+      "authoring_action_sha256": "d095365277069756cca8130a92bf243efe6073078e169163decbce06175c6905",
+      "corrected_authoring_action_sha256": "d095365277069756cca8130a92bf243efe6073078e169163decbce06175c6905",
+      "current_action_core_sha256": "e2793239c93d7d3cb1a01513cc93427c6dbf14e56f58f8ec0a3e4d1ea0543126",
+      "membership_review_record_sha256": "98a18059078748c6f668f77ca95079d53fc99840cd25afb47c5b932d3aed7164",
+      "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_es_fisa_source_qualification_checkpoint208.json",
+      "source_qualification_receipt_sha256": "4e4da818f3aa746b2d1877d393202a7f134637e846fb499b28508124901c5a63",
       "independent_review_pending": true
     }
   ],
@@ -22699,7 +22819,7 @@
   },
   "unaudited_current_substantive_action_ids": [
     "house:119:2:280",
-    "house:119:2:221"
+    "house:119:2:155"
   ],
   "required_noncounting_sample": {
     "exclusions": 12,
@@ -29702,7 +29822,7 @@
       "application_questions": 70,
       "partial_packages": 3
     },
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "new_head_CI_pending": false,
     "publication_authorized": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint206_validation.json",
@@ -29717,18 +29837,48 @@
     "wrapper_correction_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/qualified_core_full_wrapper_correction_checkpoint207.json",
     "wrapper_correction_sha256": "0b61bf3285312f2b7cd712f571f0947c09e43601bbe3e3266875b6cb0142267a",
     "CI_base_qualification_path": "docs/review_packets/immigration_delivery_checkpoint206_ci_base_qualification.json",
-    "CI_base_qualification_sha256": "4cdc28bc00d5996669918e02944dcb85ad65a35aeb8c83cd848f043ffe7ec0a6"
+    "CI_base_qualification_sha256": "4cdc28bc00d5996669918e02944dcb85ad65a35aeb8c83cd848f043ffe7ec0a6",
+    "typed_wrapper_P2_independently_verified_corrected": true,
+    "independent207_review_path": "docs/review_packets/immigration_bounded_review_checkpoint207_received208.json",
+    "independent207_review_sha256": "a71b7e367378bdddb373335ec12e6cc8c8c2f4cbdcf2cb2e3018dd99aaff61cd"
   },
   "qualified_core_full_wrapper_correction_checkpoint207": {
     "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/qualified_core_full_wrapper_correction_checkpoint207.json",
     "receipt_sha256": "0b61bf3285312f2b7cd712f571f0947c09e43601bbe3e3266875b6cb0142267a",
-    "independent_review_pending": true,
-    "new_head_CI_pending": true,
+    "independent_review_pending": false,
+    "new_head_CI_pending": false,
     "publication_authorized": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint207_validation.json",
     "validation_sha256": "442b480c61249f4d94c9b32b1adb4975f87146426d4254b06e1f4672a2d97068",
     "focused_tests_passed": 358,
     "semantic_checks_passed": 7,
+    "exact_replays": 14,
+    "independent_review_path": "docs/review_packets/immigration_bounded_review_checkpoint207_received208.json",
+    "independent_review_sha256": "a71b7e367378bdddb373335ec12e6cc8c8c2f4cbdcf2cb2e3018dd99aaff61cd",
+    "CI_retry_path": "docs/review_packets/immigration_delivery_checkpoint207_ci_failed_job_retry.json",
+    "CI_retry_sha256": "86a4c582dd5d0cf1621f3dd55233316d96b9c1c294a7b726fc8aa533fca1cbad",
+    "fresh_retry_jobs": 1,
+    "carried_successes": 8
+  },
+  "legacy_es_fisa_source_qualification_checkpoint208": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_es_fisa_source_qualification_checkpoint208.json",
+    "receipt_sha256": "4e4da818f3aa746b2d1877d393202a7f134637e846fb499b28508124901c5a63",
+    "counts": {
+      "reviewed": 621,
+      "pending": 55,
+      "ordinary_unscreened": 29,
+      "researched_holds": 26,
+      "meanings": 53,
+      "propositions": 92,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "independent_review_pending": true,
+    "new_head_CI_pending": true,
+    "publication_authorized": false,
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint208_validation.json",
+    "validation_sha256": "dc26398d07538e20bad5ee43cfa0865aa37a739603e3243b2242b304c96df344",
+    "focused_tests_passed": 361,
     "exact_replays": 14
   }
 }

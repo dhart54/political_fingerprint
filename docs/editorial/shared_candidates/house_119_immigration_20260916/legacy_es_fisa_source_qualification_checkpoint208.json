@@ -1,0 +1,280 @@
+{
+  "checkpoint": 208,
+  "base_head": "284b11c3b009e15972f61172954195e0e6ccdb6d",
+  "completed_action_ids": [
+    "house:119:2:155"
+  ],
+  "completed_screenings": 1,
+  "prior_pending_row": {
+    "action_id": "house:119:2:155",
+    "session": 2,
+    "roll": 155,
+    "date": "2026-04-30",
+    "measure": "bill_119_s_4465",
+    "question": "On Motion to Suspend the Rules and Pass",
+    "disposition": "source_unresolved",
+    "reason": "Whole suspension-passage choice extends both TitleVII repeal references from April30 to June12,2026, effective earlier enactment or April29. Record offered body and119thCongress ES/law agree; existing core XML title ambiguity is preserved pending reviewed source resolution. Held for shared-core source qualification and Immigration domain review; noncounting and not compiled.",
+    "source": {
+      "source_id": "clerk:119:2:155",
+      "url": "https://clerk.house.gov/evs/2026/roll155.xml",
+      "raw_sha256": "2b025b6c6ebca8f881e36fe1506a1ef70d7f5fc32dd771c09a49d60df1197c60",
+      "governed_bytes_sha256": "bdb0a8e26e98571cb2221afb912edd693d8e9e373ed5980b6cacaa2d611496bd",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_s_4465",
+    "member_action": "nay",
+    "house_action_stage": "On Motion to Suspend the Rules and Pass",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Whole suspension-passage choice extends both TitleVII repeal references from April30 to June12,2026, effective earlier enactment or April29. Record offered body and119thCongress ES/law agree; existing core XML title ambiguity is preserved pending reviewed source resolution. Held for shared-core source qualification and Immigration domain review; noncounting and not compiled.",
+    "unresolved_reason": "pending_shared_core_and_qualified_domain_review",
+    "sources": [
+      {
+        "source_id": "clerk:119:2:155",
+        "url": "https://clerk.house.gov/evs/2026/roll155.xml",
+        "raw_sha256": "2b025b6c6ebca8f881e36fe1506a1ef70d7f5fc32dd771c09a49d60df1197c60",
+        "governed_bytes_sha256": "bdb0a8e26e98571cb2221afb912edd693d8e9e373ed5980b6cacaa2d611496bd",
+        "verification": "unchanged_governed_source_reuse"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_clerk_source_identity": {
+      "source_id": "clerk:119:2:155",
+      "url": "https://clerk.house.gov/evs/2026/roll155.xml",
+      "raw_sha256": "5c5763bb89f86d92a86dbb09c6ce916d40f14db699bf5f180b68f06be3b3a8c9",
+      "verification": "historical_source_identity_not_recaptured_this_increment"
+    }
+  },
+  "original_accepted_core": {
+    "accepted_exact_action_meaning": "The House choice was whether to pass S. 4465, whose operative body would extend two Title VII FISA sunset references from April 30, 2026, to June 12, 2026, effective on the earlier of enactment or April 29, 2026. The action is kept ambiguous because the governed XML's Dublin Core title identifies the 110th Congress while its structured fields and governed action identify the 119th Congress and S. 4465.",
+    "accepted_shared_limitations": [
+      "Take effect on the earlier of enactment or April 29, 2026."
+    ],
+    "action_core_sha256": "980d0ab08ded521f6976b4109e35f041a41943080920e0a2b668d3b682eaa3a0",
+    "action_date": "2026-04-30",
+    "action_id": "house:119:2:155",
+    "action_meaning_ref": "action-interpretation-decision-implementation:house:119:2:155:v1",
+    "action_outcome_source_identities": [
+      {
+        "governed_bytes_sha256": "5c5763bb89f86d92a86dbb09c6ce916d40f14db699bf5f180b68f06be3b3a8c9",
+        "raw_sha256": "5c5763bb89f86d92a86dbb09c6ce916d40f14db699bf5f180b68f06be3b3a8c9",
+        "source_id": "clerk:119:2:155",
+        "source_type": "house_clerk_roll_call",
+        "text_version": "2026-04-30"
+      }
+    ],
+    "chamber": "house",
+    "chamber_outcome": "Passed",
+    "congress": 119,
+    "enactment_status": "not_inferred_from_house_outcome",
+    "exact_action_identity": "119:s:4465",
+    "governed_source_identities": [
+      {
+        "governed_bytes_sha256": "5c5763bb89f86d92a86dbb09c6ce916d40f14db699bf5f180b68f06be3b3a8c9",
+        "raw_sha256": "5c5763bb89f86d92a86dbb09c6ce916d40f14db699bf5f180b68f06be3b3a8c9",
+        "source_id": "clerk:119:2:155",
+        "source_type": "house_clerk_roll_call",
+        "text_version": "2026-04-30"
+      },
+      {
+        "governed_bytes_sha256": "56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106",
+        "raw_sha256": "56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106",
+        "source_id": "govinfo_text_119_s4465_es",
+        "source_type": "govinfo_bill_text",
+        "text_version": "es"
+      }
+    ],
+    "governed_source_identity_sha256": "b5095cc72f7d93a728238bc8b5d08b3c8dc4a902d502a68a0f484b3414ccb28a",
+    "legislative_stage": "suspension_passage",
+    "meaning_contract_version": "action_interpretation_decision_implementation_record_v1",
+    "mechanism": null,
+    "mechanism_availability": "unavailable_in_legacy_accepted_projection",
+    "operative_meaning_source_identities": [
+      {
+        "governed_bytes_sha256": "56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106",
+        "raw_sha256": "56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106",
+        "source_id": "govinfo_text_119_s4465_es",
+        "source_type": "govinfo_bill_text",
+        "text_version": "es"
+      }
+    ],
+    "package_component_boundary": {
+      "basis": "governed exact action stage and accepted limitations",
+      "boundary_type": "whole_measure_exact_action",
+      "parent_package_meaning_projected": false
+    },
+    "roll": 155,
+    "semantic_ir_source_ids": [
+      "clerk:119:2:155",
+      "govinfo_text_119_s4465_es"
+    ],
+    "session": 2,
+    "source_contract_version": "evidence_maps_v4"
+  },
+  "qualified_candidate_provider_path": "docs/editorial/shared_candidates/house_119_legacy_es_fisa_qualification_checkpoint208/shared_action_core_proposal.json",
+  "qualified_core_sha256": "e2793239c93d7d3cb1a01513cc93427c6dbf14e56f58f8ec0a3e4d1ea0543126",
+  "original_action_measure_meaning_identifiers_accepted_prefix_and_limitations_preserved": true,
+  "original_core_source_seals_and_XML_title_ambiguity_unchanged": true,
+  "current_source_identities_explicitly_different": true,
+  "current_identity_basis": "Separate governed119ES/ownoffered/recorded witnesses and complete old/current body/metadata/totals/member comparisons; frozen110/119title conflict remains a historical accepted-source limitation, no XMLrepair/reclassification or acceptance.",
+  "legacy_source_qualification_binding": {
+    "artifact_ref": "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json",
+    "artifact_id": "shared-action-core:house:119:v2",
+    "action_core_sha256": "980d0ab08ded521f6976b4109e35f041a41943080920e0a2b668d3b682eaa3a0",
+    "source_bindings": [
+      {
+        "source_id": "clerk:119:2:155",
+        "raw_ref": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_155.xml"
+      },
+      {
+        "source_id": "govinfo_text_119_s4465_es",
+        "raw_ref": "docs/editorial/full_record_reviews/source_readiness/evidence/56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106.xml"
+      }
+    ],
+    "preserved_metadata_conflict": {
+      "original_title": "110 S4465 ES: To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes.",
+      "separate_binding_source_ids": [
+        "govinfo:s4465es",
+        "immigration:roll155-operative182",
+        "immigration:roll155-recorded182"
+      ],
+      "qualification": "The frozen 110/119 title ambiguity remains in the historical accepted record; this unapproved candidate binds separately governed 119th-Congress ES and own House Record without repairing or reclassifying that XML."
+    }
+  },
+  "current_source_role_identities": [
+    {
+      "source_id": "clerk:119:2:155",
+      "source_type": "house_clerk_roll_call",
+      "text_version": null,
+      "raw_sha256": "2b025b6c6ebca8f881e36fe1506a1ef70d7f5fc32dd771c09a49d60df1197c60",
+      "governed_bytes_sha256": "bdb0a8e26e98571cb2221afb912edd693d8e9e373ed5980b6cacaa2d611496bd"
+    },
+    {
+      "source_id": "immigration:roll155-recorded182",
+      "source_type": "official_primary_text",
+      "text_version": "Own question,voice ayes,Massie demand/order,recorded totals261/111/58 and passed outcome only; debate/member lists excluded",
+      "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+      "governed_bytes_sha256": "60d2a694914ebcd7166bb78e4475b04a50cf5f7160369c524c878f0149712da2"
+    },
+    {
+      "source_id": "govinfo:s4465es",
+      "source_type": "official_bill_text",
+      "text_version": "ES",
+      "raw_sha256": "4fdbc85223356a1f0a86e28d87df53bd1d0345b3c4577f40b2607177431704fa",
+      "governed_bytes_sha256": "bd89961795495cb6e6dd6eda502feb15a5b9c7fe159cfc07503f5501f217479d"
+    },
+    {
+      "source_id": "immigration:roll155-operative182",
+      "source_type": "official_primary_text",
+      "text_version": "Own complete offered extension operative before debate; exact declared bill identity checked",
+      "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+      "governed_bytes_sha256": "4a2809fb4752e794894218b355f9a3eea370044fe1f2b9aebabbfc271f8d4d95"
+    },
+    {
+      "source_id": "govinfo:pl110261-section403-182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete original section403 repeal/operator only; dated then amended",
+      "raw_sha256": "421d1aef919b79bcbf4719ab08b8905d8b68ba1bbf9bdea9090d56f5fad5713c",
+      "governed_bytes_sha256": "2d9b6002b67fd93f2430098c77bcc6fb3fcff8a9f6d829d8ecdd44cc12839136"
+    },
+    {
+      "source_id": "govinfo:pl110261-section404b-182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete original section404(b) transition through parent end; preceding404(a) not certified; dated then amended",
+      "raw_sha256": "421d1aef919b79bcbf4719ab08b8905d8b68ba1bbf9bdea9090d56f5fad5713c",
+      "governed_bytes_sha256": "b769dc31caba5867e3fa76e8c07138296e7779e431a495e8677d76e38c47001d"
+    },
+    {
+      "source_id": "govinfo:pl11849-section19-182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete section19 sunset/transition amendment only",
+      "raw_sha256": "1f9c965c35c512369ab7338c8acc8395b7ca44fa094db013d2bde2c3df39817e",
+      "governed_bytes_sha256": "859ef51218ecc8a1f61bdd648300c9954a34f9c728c3192b84c5c0dd19146468"
+    },
+    {
+      "source_id": "govinfo:pl11849-section24-182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete section24 enabling non-US-person travel-vetting querying procedures only",
+      "raw_sha256": "1f9c965c35c512369ab7338c8acc8395b7ca44fa094db013d2bde2c3df39817e",
+      "governed_bytes_sha256": "d5938de41c0a110731486a9c60893c88532834883f70de67584170447c75f1d0"
+    },
+    {
+      "source_id": "govinfo:pl11984-qualified182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete named primary law/bill/dated section; no individual current application",
+      "raw_sha256": "3b6cee5138a8dcb34525837d82520d47f4ffd24c8eac3ac6f2d3054f4ec92867",
+      "governed_bytes_sha256": "4bf897f11e12ced202b14ba967486e52da6280de5b96cd9bcada9f8e422d8fff"
+    },
+    {
+      "source_id": "govinfo:50usc1881-services181",
+      "source_type": "official_primary_text",
+      "text_version": "Complete dated 2024 named section including notes; no current individual application or later-law clearance",
+      "raw_sha256": "cf56b7b1319f71fe60ce2e003f2aa419f97f759b0727d41716f44794235990df",
+      "governed_bytes_sha256": "3ad3264031dbbab2391340381914f9a914645ab8f9c46286849b36b017fbd805"
+    },
+    {
+      "source_id": "govinfo:50usc1801-operative181",
+      "source_type": "official_primary_text",
+      "text_version": "Complete dated 2024 operative before Editorial Notes; remaining notes not claimed read",
+      "raw_sha256": "6a05ebea3e8e1df21d76aece1f47dacd1e445791874ac17d843adb0a7c7dd96c",
+      "governed_bytes_sha256": "78d8d1566fc6eb2eb529e128eac3f7e310af27e2daeb1a2a404307587dd80830"
+    },
+    {
+      "source_id": "govinfo:50usc1881a-target-query181",
+      "source_type": "official_primary_text",
+      "text_version": "Dated targeting authorization/limitations and complete querying subsection including travel vetting; other702 portions not claimed read",
+      "raw_sha256": "dec42f5a62019ab833c9ffc74a75a6a17183f514adc2e09579027a10cc898c3c",
+      "governed_bytes_sha256": "23be36cb6a203de9bc767f89199b5834aad789d4cea78ecb44a6245165b3a02b"
+    }
+  ],
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_legacy_es_fisa_check_checkpoint208.json",
+  "source_quality_sha256": "a50b4bcbc869e7e5cbf59f83c4f0d5aecc645845b8070f4ab463bdafe8ac259a",
+  "counts_after": {
+    "reviewed": 621,
+    "pending": 55,
+    "ordinary_unscreened": 29,
+    "researched_holds": 26,
+    "meanings": 53,
+    "propositions": 92,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "prior52cores_and90propositions_preserved": true,
+  "checkpoint207_complete_wrapper_guard_preserved": true,
+  "checkpoint205_full_question_guard_preserved": true,
+  "Health_unchanged": true,
+  "new_legislative_source_acquisitions": 0,
+  "new_comparable_routine_samples": 0,
+  "benchmark_result": "FAIL",
+  "benchmark_mean_seconds": 781.087,
+  "independent208_ES_source_helper_legacy_ambiguity_domain_review_pending": true,
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_eligible": false,
+  "receipt_sha256": "4e4da818f3aa746b2d1877d393202a7f134637e846fb499b28508124901c5a63",
+  "member_neutral_shared_prose_correction": {
+    "before_core_sha256": "f07969d935b594133c2378426c038611a7288bc0650049e464fa88f4e6ca68a7",
+    "after_core_sha256": "e2793239c93d7d3cb1a01513cc93427c6dbf14e56f58f8ec0a3e4d1ea0543126",
+    "before_authoring_action_sha256": "2207c8ee4df4ebbdc95b0a60cbfc3afa2dd1f8535d9cedd0956cd39460614107",
+    "after_authoring_action_sha256": "d095365277069756cca8130a92bf243efe6073078e169163decbce06175c6905",
+    "change": "Remove selected-member demander name from shared meaning; exact procedural actor retained in source witness/review provenance",
+    "initial_suite_tests": 361,
+    "initial_suite_failures": 1,
+    "initial_suite_native_seconds": 186.865,
+    "failed_log_path": ".tmp/tests208.log",
+    "original_frozen_core_and_accepted_prefix_unchanged": true
+  }
+}
