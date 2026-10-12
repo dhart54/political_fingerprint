@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import {contentHash, projectRecordCard, canonicalJson} from '../frontend/lib/recordCard.mjs';
+import {bindCompleteEducationScopes, proveEducationCardStates} from './education79_card_proof.mjs';
 
 const output = path.resolve(process.argv[2]);
 const report = JSON.parse(fs.readFileSync(path.join(output, 'disposable-proof.json'), 'utf8'));
@@ -11,7 +11,8 @@ assert.equal(report.production_execution_authorized, false);
 assert.equal(report.activation_authority.test_only_synthetic, true);
 const root = path.resolve(import.meta.dirname, '..');
 const current = JSON.parse(fs.readFileSync(path.join(root, 'frontend/lib/recordCardContent.json'), 'utf8'));
-const derived = structuredClone(current);
+const afterByScope = Object.fromEntries(['119', 'all'].map(scope => [scope, report.after[`leg_valerie_p_foushee:${scope}:editorial`]]));
+const derived = await bindCompleteEducationScopes(current, afterByScope);
 const source = derived.sources.find(s => s.issue_id === 'EDUCATION_WORKFORCE');
 const identity = report.write_set.subject.proposed_new;
 source.published_artifact_id = identity.artifact_id;
@@ -25,20 +26,9 @@ const proof = {disposable_only: true, production_execution_authorized: false,
 for (const scope of ['119', 'all']) {
   const key = `leg_valerie_p_foushee:${scope}:editorial`;
   const before = report.before[key], after = report.after[key];
-  const args = {legislatorId: 'leg_valerie_p_foushee', memberBioguideId: 'F000477', scope};
-  const old = await projectRecordCard({candidate: current, payload: before, ...args});
-  assert.equal(old.status, 'ready');
-  const mismatched = await projectRecordCard({candidate: current, payload: after, ...args});
-  assert.equal(mismatched.status, 'source_mismatch');
-  source.presentation_sha256[scope] = await contentHash(after.presentations.find(p => p.issue_id === 'EDUCATION_WORKFORCE'));
-  const prepared = await projectRecordCard({candidate: derived, payload: after, ...args});
-  assert.equal(prepared.status, 'ready');
-  assert.equal(prepared.entries.length, 6);
-  assert.equal(canonicalJson(prepared.entries.map(e => e.sourceFinding)), canonicalJson(old.entries.map(e => e.sourceFinding)));
-  assert.equal(canonicalJson(derived.entries), canonicalJson(current.entries));
-  proof.scopes[scope] = {old_manifest_after: mismatched.status, derived_manifest_after: prepared.status,
-    new_presentation_sha256: source.presentation_sha256[scope]};
+  const states = await proveEducationCardStates({current, derived, before, after, scope});
+  proof.scopes[scope] = {...states, new_presentation_sha256: source.presentation_sha256[scope]};
 }
 fs.writeFileSync(path.join(output, 'record-card-content.disposable.json'), JSON.stringify(derived, null, 2) + '\n');
 fs.writeFileSync(path.join(output, 'card-runtime-proof.json'), JSON.stringify(proof, null, 2) + '\n');
-console.log('PASS actual fixture runtime: resolved IDs, both-scope card ready, all six findings unchanged.');
+console.log('PASS actual fixture: historical clients reject new source; bridge and complete derived bindings retain six findings through activation/rollback; mixed and unknown states reject.');

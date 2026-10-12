@@ -7,6 +7,7 @@ on:
       - ".github/workflows/frontend-tests.yml"
       # Checked-in inputs consumed by frontend units and fixture-backed browsers.
       - "docs/review_packets/record_at_a_glance_v1/**"
+      - "docs/review_packets/education79_locator_v1/prepared/expected-public-after.json.gz"
       - "docs/review_packets/record_across_congresses_frontend_copy_guardrails.json"
       - "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json"
       - "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/accepted_public_copy.json"
@@ -23,6 +24,7 @@ on:
       - "frontend/**"
       - ".github/workflows/frontend-tests.yml"
       - "docs/review_packets/record_at_a_glance_v1/**"
+      - "docs/review_packets/education79_locator_v1/prepared/expected-public-after.json.gz"
       - "docs/review_packets/record_across_congresses_frontend_copy_guardrails.json"
       - "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json"
       - "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/accepted_public_copy.json"
@@ -112,6 +114,7 @@ jobs:
             tests/public-record-integrity.spec.mjs \
             tests/record-card.spec.mjs \
             tests/record-card-release.spec.mjs \
+            tests/education79-card-compatibility.spec.mjs \
             --workers=2 --retries=0 --forbid-only \
             --trace=retain-on-failure --reporter=line,json,html \
             2>&1 | tee ci-results/browsers.log

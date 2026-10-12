@@ -27,6 +27,9 @@ def matches(path, patterns):
 @pytest.mark.parametrize('path', [
     'frontend/lib/recordCard.mjs', 'frontend/lib/recordCardContent.json',
     'frontend/lib/issueEvidenceCoverage.mjs', 'frontend/lib/editorialPresentation.mjs',
+    'scripts/education79_card_proof.mjs', 'scripts/validate_education79_locator_card.mjs',
+    'docs/review_packets/record_at_a_glance_v1/candidate.json',
+    'docs/editorial/publication_replacements/m15b_green_activation_execution/after-justice-live.json.gz',
     'backend/requirements.txt', 'backend/migrations/0012_editorial_artifacts.sql',
     'backend/migrations/staged/normalize_vote_storage.sql',
     'backend/scripts/disposable_database_url.py',

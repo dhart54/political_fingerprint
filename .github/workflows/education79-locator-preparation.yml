@@ -96,16 +96,20 @@ on:
       - "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/source_catalog.json"
       - "docs/editorial/publication_replacements/m15b_green_activation/production_audits.json.gz"
       - "docs/editorial/publication_replacements/m15b_green_activation_execution/production_audits.json.gz"
+      - "docs/editorial/publication_replacements/m15b_green_activation_execution/after-justice-live.json.gz"
       - "docs/editorial/publication_replacements/m15b_green_authorization/disposable_baseline.json.gz"
       - "docs/editorial/shared_corpora/house_119_v2/member_projections/f000477.json"
       - "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json"
       - "docs/review_packets/education79_locator_v1/**"
+      - "docs/review_packets/record_at_a_glance_v1/candidate.json"
       - "frontend/lib/editorialPresentation.mjs"
       - "frontend/lib/issueEvidenceCoverage.mjs"
       - "frontend/lib/recordCard.mjs"
       - "frontend/lib/recordCardContent.json"
       - "scripts/prepare_education79_locator_release.py"
       - "scripts/prove_education79_disposable_card.mjs"
+      - "scripts/education79_card_proof.mjs"
+      - "scripts/validate_education79_locator_card.mjs"
   push:
     branches: [main]
     paths:
@@ -202,16 +206,20 @@ on:
       - "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/source_catalog.json"
       - "docs/editorial/publication_replacements/m15b_green_activation/production_audits.json.gz"
       - "docs/editorial/publication_replacements/m15b_green_activation_execution/production_audits.json.gz"
+      - "docs/editorial/publication_replacements/m15b_green_activation_execution/after-justice-live.json.gz"
       - "docs/editorial/publication_replacements/m15b_green_authorization/disposable_baseline.json.gz"
       - "docs/editorial/shared_corpora/house_119_v2/member_projections/f000477.json"
       - "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json"
       - "docs/review_packets/education79_locator_v1/**"
+      - "docs/review_packets/record_at_a_glance_v1/candidate.json"
       - "frontend/lib/editorialPresentation.mjs"
       - "frontend/lib/issueEvidenceCoverage.mjs"
       - "frontend/lib/recordCard.mjs"
       - "frontend/lib/recordCardContent.json"
       - "scripts/prepare_education79_locator_release.py"
       - "scripts/prove_education79_disposable_card.mjs"
+      - "scripts/education79_card_proof.mjs"
+      - "scripts/validate_education79_locator_card.mjs"
 
 permissions:
   contents: read
@@ -262,6 +270,7 @@ jobs:
             backend/tests/test_education79_locator_workflow.py \
             backend/tests/test_education79_locator_disposable_postgres.py -rs
           node scripts/prove_education79_disposable_card.mjs education79-proof
+          node scripts/validate_education79_locator_card.mjs --check
       - name: Retain visibly synthetic disposable evidence
         if: always()
         uses: actions/upload-artifact@v4
