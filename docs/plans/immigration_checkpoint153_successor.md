@@ -3417,3 +3417,25 @@ chronologically inserts newA; oldrelativeorder/objects remain identical. Qualifi
 historical deadline/reference/evidence limits explicit. No newmethod or benchmark
 pass; independent214source/domain review and exact-new-headCI remain pending.
 Fanout21files,including seven generatedproducts and one qualified-provider file.
+
+
+## Checkpoint215: source-binding correction and reusable funding ledger
+
+Preserve exact214head805c203 and prior timing/receipts. Bounded214review
+reports38conservation checks,14byte-exact independent replays and two
+resealed counterexample rejections; reported673seconds remain separate.
+OneP3Senate29m comparison removed from active meaning. Complete saved Senate
+EOIRaccount and recovered matching-raw House account map surviving/replaced
+directives, with narrow2024appraisal import and exact final precedence.
+Both7105full-text hashes reconstruct from same preserved raw/text: historical
+JSON-string digest versus literalUTF8text digest. No historical normalization.
+
+One corrected sharedAcore binds39witnesses;55cores96props and625/51 remain.
+Allfourfundingcases remain pending. B/C ledger verifies15raw/text captures,
+precise clause groups and fixed remaining gaps; no keyword-only closure.
+Reuse whole governed source objects/extents and generate exact claim maps;
+source-authoring, not measured request service or focused validation, dominates
+214timing. Residualauthoring subphases unavailable, not guessed. PriorFAIL
+unchanged, no newroutinecycle credit or scaling. Focused semantic checks and
+changedImmigrationreplay follow; unchangedHealthverifiedbybytes. No merge,
+publication, editorial acceptance or current-main integration claim.

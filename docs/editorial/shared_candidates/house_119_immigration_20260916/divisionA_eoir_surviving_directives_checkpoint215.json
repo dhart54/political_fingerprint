@@ -1,0 +1,215 @@
+{
+  "checkpoint": 215,
+  "base_review_head": "805c2032db7e1088aafa3f88a567843f48e0c8ea",
+  "scope": "Complete House/Senate EOIR account surviving/replaced map; precise final2026 precedence",
+  "action_id": "house:119:2:5",
+  "source_evidence": [
+    {
+      "source_id": "govinfo:hrpt119272-eoir-complete-directives215",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm",
+      "raw_path": ".tmp/hrpt119272_eoir215.response",
+      "full_text_path": ".tmp/hrpt119272_eoir215.txt",
+      "raw_sha256": "78c5f1238f1ece6a0671958ddd2a3bd0b2eedd32c1e0646e5369c778da580319",
+      "governed_bytes_sha256": "e2061fb4cc659729dec0a7142e341b8910aebf19bbd1b7036164012fc5329ec0",
+      "text_sha256": "dc8e3e9187e0190beb8c16df44466bacea6bf04d3d038c6da7150d552631f95c",
+      "text_length": 1309,
+      "captured_full_text_sha256": "3be4e3d44e47b13a59478e225fed81cd7e299f535b89803dbc173ea12293cc9f",
+      "source_text_extents": [
+        {
+          "start": 128860,
+          "end": 130169,
+          "total": 792218
+        }
+      ],
+      "declared_scope": "Complete House EOIR account narrative and backlog directives. House funding recommendation is superseded; performance-appraisal directive survives, attendance directive is replaced by final2026 disposition clause. Other House accounts excluded."
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm",
+      "raw_path": ".tmp/srpt11944_eoir214.response",
+      "full_text_path": ".tmp/srpt11944_eoir214.txt",
+      "raw_sha256": "64039cc0e6f52eb377046ac0bc5315785c31ed0d1a0cbf322cce88c9b385732f",
+      "governed_bytes_sha256": "a16cde21fc3a5fd1f5496b22e22388987bd8b6e4d6bb9006e7da04aa3f3791be",
+      "text_sha256": "d427139ca529c532a088d8a00c6601a6fd2c965a398ae6331c0940612b3f7d9a",
+      "text_length": 7941,
+      "captured_full_text_sha256": "4e5ac3eb24500fd60929521a7bcd8438e4b41f51c81711a45cd821301c2b6be5",
+      "source_text_extents": [
+        {
+          "start": 256999,
+          "end": 264940,
+          "total": 693398
+        }
+      ],
+      "declared_scope": "Complete Senate EOIR account narrative and all nine directive captions. Final2026 allocation and exact transparency/training/LOP replacements control; staffing is expressly adopted, other ECAS/VTC/referral/children directives survive. Older Senate LOP amount is contextual superseded recommendation, not current floor."
+    },
+    {
+      "source_id": "congressional-record:2024-eoir-backlog-appraisal215",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2024-03-05/html/CREC-2024-03-05-pt1-PgS1223.htm",
+      "raw_path": ".tmp/eoir2024_statement214.response",
+      "full_text_path": ".tmp/eoir2024_statement214.txt",
+      "raw_sha256": "a1eb8c89e8ef6916a3a5c65182747cae2b7fd4de6e497b0a99f73aff6516ce2d",
+      "governed_bytes_sha256": "c49421c029594c217792e36d1a5cdb69837f67c8a7ba8bde8772135286d2cbb4",
+      "text_sha256": "9223ad63260b893064f488c3e466c91e04007041624241f6597a82dae6d7ea11",
+      "text_length": 1568,
+      "captured_full_text_sha256": "66c8aba395c65727f3ed69363623f9e49ccbbae5668d2b9830daa2cc54b10f8c",
+      "source_text_extents": [
+        {
+          "start": 278442,
+          "end": 280010,
+          "total": 845674
+        }
+      ],
+      "declared_scope": "Complete2024 backlog caption supplies the named performance-appraisal program imported by surviving House2025 directive. Other2024 hiring/dashboard/docket clauses retained as context, not automatically imported by that narrower House cross-reference; no restarted historical deadline or observed backlog outcome."
+    }
+  ],
+  "clause_map": [
+    {
+      "source_id": "govinfo:hrpt119272-eoir-complete-directives215",
+      "governed_start": 0,
+      "governed_end": 393,
+      "passage": "Executive Office For Immigration Review (INCLUDING TRANSFER OF FUNDS) The recommendation includes $844,000,000 for the Executive Office for Immigration Review (EOIR), of which $10,000,000 is derived by transfer from the U.S. Citizenship and Immigration Services Immigration Examinations Fee Account. The recommendation is $6,000,000 below fiscal year 2025 and equal to the OMB Budget request. ",
+      "passage_utf8_sha256": "c91e1b7bf061a123288813c2571cc3830fb53ac4b9598a0a7df0ed33e63eaccd",
+      "status": "superseded_allocation",
+      "claim": "Earlier House account recommendation does not set final2026 amount.",
+      "final_override": "Final statement800m including10mfee transfer; operative bill controls."
+    },
+    {
+      "source_id": "govinfo:hrpt119272-eoir-complete-directives215",
+      "governed_start": 393,
+      "governed_end": 1050,
+      "passage": "Immigration Case Backlog.--EOIR's current, untenable immigration case backlog surpassed 3 million cases in November 2023, a 135 percent increase from March 2021. Such an extreme backlog delays justice and due process--for years, in many instances--for those who have a valid claim to immigration benefits. The Committee directs the Department to implement performance metrics for Immigration Judges, Assistant Chief Immigration Judges, and Appellate Immigration Judges that are linked to the performance appraisal program directive contained in the Joint Explanatory Statement accompanying Public Law 118- 42 under the heading ``Immigration Case Backlog.'' ",
+      "passage_utf8_sha256": "27254ca38f4654c288281008fdfa79950b738848f402e6e33c1c0c039e24c41f",
+      "status": "survives",
+      "claim": "Performance metrics linked to the named2024 performance-appraisal program; descriptive backlog statistics remain attributed report context.",
+      "final_override": null
+    },
+    {
+      "source_id": "govinfo:hrpt119272-eoir-complete-directives215",
+      "governed_start": 1050,
+      "governed_end": 1309,
+      "passage": "The Committee further directs EOIR to develop and implement a function in EOIR's existing case management system that records respondents' appearance or absence at each court hearing, detailing whether the absence was due to a waiver or for any other reason. ",
+      "passage_utf8_sha256": "aa753ab8ec316a4d0dd29327823521499b21e6a1aad82c961440d90f1e01fbfe",
+      "status": "replaced",
+      "claim": "House attendance recording directive is replaced, not adopted.",
+      "final_override": "Final2026 Disposition of EOIR Adjudications imports named2024 disposition directives for FY2026 cases."
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 0,
+      "governed_end": 837,
+      "passage": "EXECUTIVE OFFICE FOR IMMIGRATION REVIEW (INCLUDING TRANSFER OF FUNDS) Appropriations, 2025.................................... $844,000,000 Committee recommendation................................ 804,000,000 The Committee's recommendation provides $804,000,000 for the Executive Office for Immigration Review [EOIR], of which $10,000,000 is a transfer from the U.S. Citizenship and Immigration Services Immigration Examinations Fee account. The recommendation is $40,000,000 below the fiscal year 2025 enacted level. This account funds EOIR, including the Board of Immigration Appeals [BIA], immigration judges, and administrative law judges who decide through administrative hearings whether to admit or exclude aliens seeking to enter the country and whether to deport or adjust the status of aliens whose status has been challenged. ",
+      "passage_utf8_sha256": "419c30b2b8e0b309fcabff073ac386266f667e241c9b452851f561c8fa642951",
+      "status": "superseded_allocation",
+      "claim": "Senate account recommendation does not set final2026 amount.",
+      "final_override": "Final statement and operative bill allocation control."
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 837,
+      "governed_end": 2410,
+      "passage": "Staffing Levels for Immigration Judges and Support Teams.-- The Committee remains deeply concerned by the extraordinary backlog of cases in our immigration courts. 3.9 million cases were pending in fiscal year 2024-almost six times the amount of cases that were pending in fiscal year 2015. The Committee recognizes that addressing the backlog will require an IJ corps and associated support teams that are sufficiently staffed, well-trained, and properly equipped-whether through information technology, efficient case management systems, or courtroom space. The Committee has had substantial engagement with EOIR over many years, seeking improved clarity and accuracy in EOIR's estimates for the IJ team costs module, as well as hiring rates, staffing levels, and workforce distribution. The Committee reiterates its longstanding monthly and quarterly reporting requirements and directs that EOIR continue to provide these monthly and quarterly reports at no less than the level of detail provided in fiscal year 2024. These reports should further include breakdowns of hiring and separation data, including for on-boarding (e.g., advertisement posted, tentative offer, entry on duty), and cause of separations (e.g., retirement, reduction-in-force, voluntary early retirement, termination). The Committee further directs continued submission of the monthly or quarterly reports on caseloads, performance measure reporting, information technology improvements, expanded courtroom space, and interpreter resources, and temporary assignments outside of assigned locations. ",
+      "passage_utf8_sha256": "b47755bc1a19af82ab976705bae91c36652390c79b9f5fb2271a9520d4f1081b",
+      "status": "expressly_adopted_and_augmented",
+      "claim": "Monthly/quarterly staffing/resource reports retained; final statement adds quarterly detailee accounting and briefings.",
+      "final_override": null
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 2410,
+      "governed_end": 2793,
+      "passage": "Operational and Adjudicatory Transparency.--To ensure transparency and promote public confidence in the immigration courts, EOIR is directed to publish all adjudicatory statistics; operational, adjudicatory, and policy documents; court information; and hiring processes on its public website, and is further directed to update its website within 30 days in the event of any changes. ",
+      "passage_utf8_sha256": "6daedd1fb02736e88e8d3e290c6a01695cf61c49649840afa4a9e2a6d37940a0",
+      "status": "replaced",
+      "claim": "Public website publication/update directive replaced by final disposition clause.",
+      "final_override": "Exact final2026 same-caption replacement"
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 2793,
+      "governed_end": 3301,
+      "passage": "Immigration Judge Training.--The Committee directs EOIR to review its training, to retrain all judges currently on a probationary period, and to increase the frequency and availability of training for IJs outside the probationary period. The Committee directs the Department to ensure IJ training emphasizes due process, humanitarian protections, and cultural sensitivity and includes diverse training faculty, including from the private bar, the non-governmental organization [NGO] community, and academia. ",
+      "passage_utf8_sha256": "680d742c5c2be3b9974d4c0a0e7513d3bfb1f3452026ebc797c90e712074e306",
+      "status": "replaced",
+      "claim": "Senate training scope replaced by final training and case-incentive clause.",
+      "final_override": "Exact final2026 same-caption replacement"
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 3301,
+      "governed_end": 3679,
+      "passage": "EOIR Technology Improvements.--The Committee strongly supports EOIR's efforts to improve efficiency through information technology improvements, including implementation of its electronic case management system [ECAS] and the digitization of older paper records. EOIR is directed to continue to provide quarterly updates to the Committee on its ongoing development of the ECAS. ",
+      "passage_utf8_sha256": "174229a7ff9dfc28a5d8d5e133fcde30c98b338297a38cf78f01b6851efe71c2",
+      "status": "survives",
+      "claim": "Quarterly ECAS development updates remain.",
+      "final_override": null
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 3679,
+      "governed_end": 4667,
+      "passage": "Video Teleconferencing [VTC] Data and Reporting.--The Committee continues to direct EOIR to collect real-time data indicating each time a master calendar or individual merits hearing is conducted via VTC, to allow for better statistical data collection and to help determine whether VTC has an outcome determinative impact. This information is to be provided in the quarterly reports submitted to the Committee and should include the number and type of hearings conducted by VTC, including data on appeals cases related to the use of VTC, and the number of in-person hearing motions filed. The Committee further directs EOIR to make all policies and procedures related to EOIR's use of VTC, including EOIR's immigration adjudication centers and temporary facilities, as well as a list of locations where IJs are stationed and detailed, the corresponding docket location, type of docket, and policies for public and media access for locations using VTC, publicly available on its website. ",
+      "passage_utf8_sha256": "165c6b60d0f06ebce218b5bfe21fa82059446d05ef44d55672e8e09f93b1b38b",
+      "status": "survives",
+      "claim": "Real-time hearing/VTC and appeals/motions data in quarterly reports and public VTC procedures, locations, dockets and access information remain.",
+      "final_override": null
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 4667,
+      "governed_end": 6118,
+      "passage": "Legal Orientation Program [LOP].--The Committee has long supported the LOP, which, since its inception in 2003, has been operated by non-profit NGOs with demonstrated immigration law expertise. LOP does not provide legal representation to individuals in immigration proceedings; instead, LOP is intended to enhance informed decision-making through basic educational orientation as to EOIR legal processes. The Committee provides no less than $29,000,000 for LOP, including the fiscal year 2025 enacted level for the Immigration Court Helpdesk, and adopts the Committee's prior-year direction regarding its operations. The Committee directs EOIR to promptly and consistently facilitate LOP providers' immigration court records requests on behalf of immigrants who are detained and pro se nationwide pursuant to EOIR Policy Manual section 1.5(c) and BIA Practice Manual section 1.5(e). The Committee notes EOIR has provided incomplete, inconsistent, and even contradictory information regarding LOP operations, and has attempted to terminate the program by issuing stop-work orders to LOP providers despite continued appropriations for LOP in fiscal year 2025. As EOIR has declined to respond to requests for information from Committee, the Committee directs EOIR to provide an in-person briefing, within 30 days of the enactment of this act, on its implementation of the LOP program and to provide timely and complete responses to Committee inquiries. ",
+      "passage_utf8_sha256": "64cd3b932f8cae6d81972435fe081eb0c432fb6761bb200f9bbeec5c72b17eef",
+      "status": "replaced",
+      "claim": "Entire Senate LOP caption replaced: its29mamount, records facilitation and30daybriefing are not carried from this caption.",
+      "final_override": "Exact final2026 same-caption replacement"
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 6118,
+      "governed_end": 6595,
+      "passage": "Referral and Review.--EOIR is directed to provide, within 30 days of enactment of this act, a briefing on the Attorney General's authorities under the referral and review power. The briefing shall assess the statutory, regulatory, and procedural framework for the referral and review power; the history of its application including frequency and an analysis of the referring entity; and policy considerations that would merit consideration of formal guidelines or regulations. ",
+      "passage_utf8_sha256": "35837b3fa20c65659adb878c03cd893b500ae05dc62362218d012309bb5cdc0d",
+      "status": "survives",
+      "claim": "30day referral/review authority briefing remains, with statutory/regulatory/procedural framework, history and policy considerations.",
+      "final_override": null
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "governed_start": 6595,
+      "governed_end": 7941,
+      "passage": "Children's Cases in Immigration Court.--The Committee supports efforts to improve the fairness and efficiency in immigration adjudications involving children, given the particular vulnerability of child respondents. The Committees notes that, to provide guidance on children's cases and juvenile dockets in immigration court, on December 21, 2023, the EOIR Director issued Director's Memorandum [DM] 24-01. This memorandum rescinded Operating Policies and Procedures Memorandum Policy Memorandum [OPPM] 17-03, entitled ``Guidelines for Immigration Court Cases Involving Juveniles, Including Unaccompanied Alien Children''. Subsequently, on January 29, 2025, the EOIR Director rescinded and cancelled DM 24-01 and reinstated OPPM 17-03. The Committee directs EOIR, within 180 days of enactment of this act, to provide an assessment of the policy and procedural differences between [DM] 24-01 and [OPPM] 17-03. This assessment shall include the agency's view of the merits and faults of each of the differences. Further, the assessment shall evaluate whether any elements of [DM] 24-01 that are not currently embodied in [OPPM] 17-03 should be included in current EOIR operating policies and procedures. EOIR is directed to explain why any element from [DM] 24-01 should or should not be included in current EOIR operating policies and procedures. ",
+      "passage_utf8_sha256": "6fcbc3ac5803b7eed941a2cfa4b757a4c65f7048235b2270d60bea5ed4aa6928",
+      "status": "survives",
+      "claim": "180day assessment of differences between DM24-01 and OPPM17-03 remains, including reasons for inclusion/exclusion of elements; no assertion about current memorandum implementation.",
+      "final_override": null
+    },
+    {
+      "source_id": "congressional-record:2024-eoir-backlog-appraisal215",
+      "governed_start": 0,
+      "governed_end": 1568,
+      "passage": "Immigration Case Backlog.--In addition to the directives under ``Case Backlog and Reporting Requirements'' in the Senate report, the agreement directs EOIR to report to the Committees where and when the hiring procedures referred to in the directive have been posted. The agreement further directs EOIR to provide, no later than 120 days after the enactment of this act, and monthly thereafter throughout fiscal year 2024, all data from the IJ performance dashboard from fiscal years 2020 through 2024. The agreement also notes that EOIR's backlog of cases delays due process and justice-- in many cases, for years--for those who have a valid claim to immigration benefits. Given the impact of the current backlog of over 2,300,000 cases on EOIR's workforce, the agreement directs EOIR to implement a performance appraisal program for IJs, Assistant Chief IJs, and Appellate IJs, consistent with recommendations made by the Government Accountability Office (GAO-23-105431) with respect to workforce planning and management best practices and OPM guidance. EOIR shall submit a report to the Committees on the results of the performance appraisal program and any modifications made following the evaluation. Additionally, to assist with the backlog reduction effort, the agreement directs EOIR to utilize Assistant Chief IJs in the same capacity as IJs for the purposes of maintaining a docket for master and individual hearing cases, and further directs the Attorney General to ensure that IJs hired in fiscal year 2024 will adjudicate cases as their primary function. ",
+      "passage_utf8_sha256": "9223ad63260b893064f488c3e466c91e04007041624241f6597a82dae6d7ea11",
+      "status": "narrow_import",
+      "claim": "Only named performance-appraisal program is imported through the surviving House sentence. Other2024 backlog/hiring/dashboard/docket directives are not automatically imported.",
+      "final_override": null
+    }
+  ],
+  "final_statement_source_id": "congressional-record:2026-01-08-6938-explanation-a",
+  "final_statement_precedence_literal": "The joint explanatory statement accom-\npanying this division is approved and indi-\ncates congressional intent. Unless otherwise \nnoted, the language set forth in House Re-\nport 119–272 (‘‘the House report’’) and the \nSenate Report 119–44 (‘‘the Senate report’’) \ncarries the same weight as language included \nin this joint explanatory statement and \nshould be complied with unless specifically \naddressed to the contrary in this joint ex-\nplanatory statement or the act. While some \nlanguage is repeated for emphasis, it is not \nintended to negate the language referred to \nabove unless expressly provided herein. In \ncases where the House report and the Senate \nreport direct the submission of a report, such \nreport is to be submitted to both the House \nand Senate Committees on Appropriations \n(‘‘the Committees’’). \n",
+  "final_EOIR_literal": "TIVE OFFICE FOR IMMIGRATION REVIEW \n(INCLUDING TRANSFER OF FUNDS)  \nThe agreement includes $800,000,000 for the \nExecutive Office for Immigration Review \n(EOIR), of which $10,000,000 is derived by a \ntransfer from the U.S. Citizenship and Immi-\ngration Services Immigration Examinations \nFee Account. \nDisposition of EOIR Adjudications. —In lieu \nof the directive pertaining to respondents’ \nattendance at each court hearing contained \nin the caption ‘‘Immigration Case Backlog’’ \nin the House report, and the directive con-\ntained in the caption ‘‘Operational and Adju-\ndicatory Transparency’’ in the Senate re-\nport, the agreement adopts the directives \nunder the heading ‘‘Disposition of EOIR Ad-\njudications’’ for cases in fiscal year 2026 con-\ntained in the Joint Explanatory Statement \naccompanying Public Law 118–42. \nCase Adjudication and Immigration Judge \nTraining.—In lieu of Section 554 of the House \nbill and the directives contained under the \ncaption ‘‘Immigration Judge Training,’’ in \nthe Senate report, the agreement directs \nEOIR to refrain from incentivizing any im-\nmigration judge (IJ) to close or dismiss any \ncase without adjudicating the merits of the \ncase; directs EOIR to review its training, to \nretrain all judges currently on a proba-\ntionary period or on detail to EOIR, and to \nincrease the frequency and availability of \ntraining for IJs outside the probationary pe-\nriod; and further directs EOIR to ensure IJ \ntraining emphasizes due process and humani-\ntarian protections. \nStaffing Levels for Immigration Judges and \nSupport Teams. —The agreement adopts the \nlongstanding directives in the Senate report \nunder this caption. The agreement further \ndirects EOIR to include a full quarterly ac-\ncounting of all detailees serving as IJs, in-\ncluding the number; duration; home agency, \ndepartment, bureau and PPA; and source of \nfunds—reimbursable or not—for each such \ndetailee. These reports shall be accompanied \nby quarterly briefings to the Committees \ncovering all such topics. \nLegal Orientation Program (LOP).—In lieu of \nthe Senate language under this caption, the \nagreement provides no less than $27,500,000 \nfor services provided by LOP. The agreement \nincorporates the directive continued under \nthis caption in the Joint Explanatory State-\nment accompanying Public Law 118–42. \nTranslation Services. —The agreement sup-\nports EOIR’s ‘‘commitment to providing pro-\nfessional interpretive services in all appro-\npriate cases,’’ as noted in the Director’s \nMemorandum 25–20 of February 6, 2025, and \ntherefore encourages EOIR to offer trans-\nlation services so that the respondents can \nfully comprehend and partic",
+  "saved_Senate_parent_reused": true,
+  "House_parent_missing_in_available_saved_capture_paths": true,
+  "House_parent_recovered_raw_matches_original_Health": true,
+  "source_access_denials": [],
+  "historical214_records_unchanged": true,
+  "certification": "Full EOIR account captions mapped; no exhaustive rest-of-DivisionA/current-law or individual implementation certification",
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "b618ba25fa67dd1bf5ba0a1a8d7c9098da9ea3b34fa99721c49338922c43e4e1",
+  "final_statement_precedence_extent": {
+    "start": 1957,
+    "end": 2777,
+    "total": 145290
+  }
+}

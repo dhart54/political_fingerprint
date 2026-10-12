@@ -1,6 +1,6 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 1232,
+  "source_count": 1235,
   "sources": [
     {
       "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
@@ -10227,6 +10227,63 @@
       "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
       "fresh_parent_raw_replay": false,
       "declared_scope": "Only own initial question/rule-ordered yeas/nays/postponement and resumed roll5/375-47-9/affirmative retention/result/reconsideration; neighboring veto/B-C/passage excluded. Original Divison spelling/line extraction retained. Literal scopes in governed23822-character parent, not fresh fullPDF replay."
+    },
+    {
+      "source_id": "govinfo:hrpt119272-eoir-complete-directives215",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm",
+      "raw_path": ".tmp/hrpt119272_eoir215.response",
+      "full_text_path": ".tmp/hrpt119272_eoir215.txt",
+      "raw_sha256": "78c5f1238f1ece6a0671958ddd2a3bd0b2eedd32c1e0646e5369c778da580319",
+      "governed_bytes_sha256": "e2061fb4cc659729dec0a7142e341b8910aebf19bbd1b7036164012fc5329ec0",
+      "text_sha256": "dc8e3e9187e0190beb8c16df44466bacea6bf04d3d038c6da7150d552631f95c",
+      "text_length": 1309,
+      "captured_full_text_sha256": "3be4e3d44e47b13a59478e225fed81cd7e299f535b89803dbc173ea12293cc9f",
+      "source_text_extents": [
+        {
+          "start": 128860,
+          "end": 130169,
+          "total": 792218
+        }
+      ],
+      "declared_scope": "Complete House EOIR account narrative and backlog directives. House funding recommendation is superseded; performance-appraisal directive survives, attendance directive is replaced by final2026 disposition clause. Other House accounts excluded."
+    },
+    {
+      "source_id": "govinfo:srpt11944-eoir-complete-directives215",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm",
+      "raw_path": ".tmp/srpt11944_eoir214.response",
+      "full_text_path": ".tmp/srpt11944_eoir214.txt",
+      "raw_sha256": "64039cc0e6f52eb377046ac0bc5315785c31ed0d1a0cbf322cce88c9b385732f",
+      "governed_bytes_sha256": "a16cde21fc3a5fd1f5496b22e22388987bd8b6e4d6bb9006e7da04aa3f3791be",
+      "text_sha256": "d427139ca529c532a088d8a00c6601a6fd2c965a398ae6331c0940612b3f7d9a",
+      "text_length": 7941,
+      "captured_full_text_sha256": "4e5ac3eb24500fd60929521a7bcd8438e4b41f51c81711a45cd821301c2b6be5",
+      "source_text_extents": [
+        {
+          "start": 256999,
+          "end": 264940,
+          "total": 693398
+        }
+      ],
+      "declared_scope": "Complete Senate EOIR account narrative and all nine directive captions. Final2026 allocation and exact transparency/training/LOP replacements control; staffing is expressly adopted, other ECAS/VTC/referral/children directives survive. Older Senate LOP amount is contextual superseded recommendation, not current floor."
+    },
+    {
+      "source_id": "congressional-record:2024-eoir-backlog-appraisal215",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2024-03-05/html/CREC-2024-03-05-pt1-PgS1223.htm",
+      "raw_path": ".tmp/eoir2024_statement214.response",
+      "full_text_path": ".tmp/eoir2024_statement214.txt",
+      "raw_sha256": "a1eb8c89e8ef6916a3a5c65182747cae2b7fd4de6e497b0a99f73aff6516ce2d",
+      "governed_bytes_sha256": "c49421c029594c217792e36d1a5cdb69837f67c8a7ba8bde8772135286d2cbb4",
+      "text_sha256": "9223ad63260b893064f488c3e466c91e04007041624241f6597a82dae6d7ea11",
+      "text_length": 1568,
+      "captured_full_text_sha256": "66c8aba395c65727f3ed69363623f9e49ccbbae5668d2b9830daa2cc54b10f8c",
+      "source_text_extents": [
+        {
+          "start": 278442,
+          "end": 280010,
+          "total": 845674
+        }
+      ],
+      "declared_scope": "Complete2024 backlog caption supplies the named performance-appraisal program imported by surviving House2025 directive. Other2024 hiring/dashboard/docket clauses retained as context, not automatically imported by that narrower House cross-reference; no restarted historical deadline or observed backlog outcome."
     }
   ],
   "rejected_responses_are_not_evidence": true
