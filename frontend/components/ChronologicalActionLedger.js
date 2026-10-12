@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import ActionReceipt from "./ActionReceipt";
 import SemanticIcon from "./SemanticIcon";
+import { filterLoadedReceipts, normalizeLocalRecordQuery } from "../lib/localRecordFilter.mjs";
 import {
   canonicalActionId,
   actionReceiptId,
@@ -44,13 +45,15 @@ export default function ChronologicalActionLedger({
   const [activeHighlightedIds, setActiveHighlightedIds] = useState([]);
   const [patternActive, setPatternActive] = useState(false);
   const [linkedActionNotice, setLinkedActionNotice] = useState("");
+  const [textQuery, setTextQuery] = useState("");
+  const filterRef = useRef(null);
   const headingRef = useRef(null);
   const ordered = useMemo(() => chronologicalActions(rows), [rows]);
   const requestedHighlightedIds = useMemo(
     () => highlightedFinding?.actionIds || [],
     [highlightedFinding?.actionIds],
   );
-  const filtered = useMemo(
+  const selected = useMemo(
     () => patternActive
       ? filterActions(ordered, "highlighted", activeHighlightedIds)
       : filterActionsByDimensions(ordered, {
@@ -59,13 +62,22 @@ export default function ChronologicalActionLedger({
         }),
     [activeHighlightedIds, ordered, patternActive, typeFilter, voteFilter],
   );
+  const filtered = useMemo(() => filterLoadedReceipts(selected, textQuery), [selected, textQuery]);
+  const hasTextFilter = Boolean(normalizeLocalRecordQuery(textQuery));
+  // Keep an existing related group mounted when text leaves only one matching
+  // receipt, preserving that receipt's open disclosure and component identity.
+  const retainedGroupIds = useMemo(
+    () => buildLedgerItems(selected, { groupRelated: !patternActive })
+      .filter((item) => item.type === "group").map((item) => item.id),
+    [patternActive, selected],
+  );
   const visible = useMemo(
     () => completeVisibleRows(filtered, visibleCount),
     [filtered, visibleCount],
   );
   const ledgerItems = useMemo(
-    () => buildLedgerItems(visible, { groupRelated: !patternActive }),
-    [patternActive, visible],
+    () => buildLedgerItems(visible, { groupRelated: !patternActive, retainedGroupIds }),
+    [patternActive, retainedGroupIds, visible],
   );
 
   useEffect(() => {
@@ -78,6 +90,7 @@ export default function ChronologicalActionLedger({
     );
     setVoteFilter("all");
     setTypeFilter("all");
+    setTextQuery("");
     setVisibleCount(INITIAL_BATCH);
     setActiveHighlightedIds(resolution.highlightedIds);
     setPatternActive(resolution.filter === "highlighted");
@@ -102,6 +115,7 @@ export default function ChronologicalActionLedger({
       if (index < 0 && id !== "vote-record") return;
       if (index >= 0) {
         setVoteFilter("all"); setTypeFilter("all");
+        setTextQuery("");
         setVisibleCount(Math.max(INITIAL_BATCH, index + 1));
         setExpandedId(canonicalActionId(ordered[index]));
       }
@@ -146,6 +160,15 @@ export default function ChronologicalActionLedger({
     setLinkedActionNotice("");
   }
 
+  function updateTextQuery(value) {
+    const nextRows = filterLoadedReceipts(selected, value);
+    const expandedIndex = nextRows.findIndex((row) => canonicalActionId(row) === expandedId);
+    setTextQuery(value);
+    // Retaining a deep receipt reveals a real prefix. Commit that budget so
+    // collapse cannot remove its trigger and Show more advances immediately.
+    setVisibleCount((count) => Math.max(count, expandedIndex + 1));
+  }
+
   return (
     <section className="scroll-mt-24 border-t border-stone-200 py-8 sm:py-10" id="vote-record">
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -186,16 +209,31 @@ export default function ChronologicalActionLedger({
         />
       </div>
 
+      <div className="mt-4 max-w-2xl">
+        <label className="text-sm font-semibold text-stone-950" htmlFor="local-record-filter">Filter loaded receipts by measure, roll or title</label>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <input aria-describedby="local-record-filter-help" className="min-h-11 min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-3 text-base text-stone-950" id="local-record-filter" maxLength={160} onChange={(event) => updateTextQuery(event.target.value)} placeholder="H.R. 1, roll 32, or title words" ref={filterRef} type="search" value={textQuery} />
+          {textQuery ? <button className="secondary-button" onClick={() => { updateTextQuery(""); filterRef.current?.focus(); }} type="button">Clear text filter</button> : null}
+        </div>
+        <p className="mt-2 text-sm leading-6 text-stone-600" id="local-record-filter-help">
+          {patternActive
+            ? `Filters the ${selected.length} loaded linked receipts for this finding.`
+            : `Filters the ${ordered.length} receipts loaded for this issue and scope, including those not yet shown. Combines with Vote and Type filters.`}
+          {" "}Reviewed coverage is unchanged.
+        </p>
+      </div>
+
       {patternActive ? (
         <SelectedPatternStrip
           finding={highlightedFinding}
-          matchCount={filtered.length}
+          matchCount={selected.length}
           onClear={clearPattern}
           total={ordered.length}
         />
       ) : null}
 
-      <p aria-live="polite" className="mt-4 text-sm text-stone-600" role="status">
+      <p aria-live="polite" className="mt-4 text-sm text-stone-600" data-testid="local-record-filter-status" role="status">
+        {hasTextFilter ? `Text filter matches ${filtered.length} of ${selected.length} loaded ${patternActive ? "linked " : ""}receipts${patternActive ? ". " : " after Vote/Type filters. "}` : null}
         {patternActive
           ? `Showing ${visible.length} of ${filtered.length} matching votes.`
           : visible.length < filtered.length
@@ -232,14 +270,14 @@ export default function ChronologicalActionLedger({
         </div>
       ) : (
         <p className="mt-5 rounded-xl border border-stone-200 bg-stone-50 p-4 text-base text-stone-700">
-          {ordered.length ? "No recorded actions match these filters." : "No recorded actions are available for this issue in the selected scope."}
+          {ordered.length ? (hasTextFilter ? "No loaded receipts match this text and the current filters." : "No recorded actions match these filters.") : "No recorded actions are available for this issue in the selected scope."}
         </p>
       )}
 
       {visible.length < filtered.length ? (
         <button
           className="secondary-button mt-6"
-          onClick={() => setVisibleCount((count) => count + INITIAL_BATCH)}
+          onClick={() => setVisibleCount((count) => Math.max(count, visible.length) + INITIAL_BATCH)}
           type="button"
         >
           Show more votes
@@ -321,7 +359,7 @@ function RelatedActionGroup({
       <header className="border-b border-stone-200 bg-stone-50 px-4 py-3 sm:px-5">
         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
           <h4 className="text-base font-semibold leading-6 text-stone-950">{item.label}</h4>
-          <span className="text-sm text-stone-600">· {item.rows.length} votes</span>
+          <span className="text-sm text-stone-600">· {item.rows.length} {item.rows.length === 1 ? "vote" : "votes"}</span>
         </div>
         <p className="mt-1 text-sm leading-6 text-stone-600">
           {composition}

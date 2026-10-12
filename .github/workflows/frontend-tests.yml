@@ -107,6 +107,7 @@ jobs:
           npx --no-install playwright test \
             tests/representative-finder.spec.mjs \
             tests/official-contact.spec.mjs \
+            tests/local-record-filter.spec.mjs \
             tests/frontend-pass-a.spec.mjs \
             tests/zip-lookup-state.spec.mjs \
             tests/editorial-cutover.spec.mjs \
