@@ -3321,3 +3321,34 @@ conditionalcompletioncount1and5held. Nativeexclusive restoration interval
 13.471s excludes preparation/reviewreturn reconciliation; residualcost remains
 unallocated shared overhead, no claimofcleanisolatedroutine timing. Resume
 fivepredeclaredfunding attempts, norepeatedapproval/deniedroute retry.
+
+
+## Checkpoint212: resumed funding research; speed threshold failed
+
+Resume verified f9f8c165 on the PC, all 77 private hashes and both original
+shutdown notes. Exact checkpoint211 CI38196540288 passed nine fresh jobs
+(5 feature, 3 synthetic, 1 mixed); four conditional guards did not execute.
+The bounded 28-check restoration review was received, without corpus acceptance.
+PR198 was reconciled prospectively.
+
+Keep the five checkpoint211 funding cases fixed. Complete Division A/B-C and
+rule reads, material H.R.4553 sections309-310, H.R.5371 incorporation language
+and five dated LSC witnesses are source-bound. The first two whole bills and
+material implementing, definition and explanatory chains remain incomplete.
+All five cases stay pending, with zero completion credit. Counts:623 reviewed,
+53 pending,54 cores,94 propositions. The routine queue has18 ordinary cases and
+35 material holds; raw pending_research19 includes the previously reserved
+roll196 hold. That row and every prior semantic object remain unchanged.
+
+The inclusive active lower bound already exceeds600 seconds per attempt.
+Benchmark FAIL; zero completed routine cycles means no completed-cycle average
+or comparable five-cycle sample. Only the estimated PC-off interval is excluded;
+resume, testing and delivery costs remain included. Old correction preparation
+was not falsely isolated. Final validation, Git and exact-head CI follow.
+Do not automatically scale to a larger batch.
+
+212 owner validation complete:366 tests in195.865s,7 semantic checks and14
+byte-exact replays. Final conservation verifies623 prior reviews,671 other
+universe rows,1094 static blobs,77 private artifacts and both original notes.
+Only the generated source-capture hash changes. Independent212 source/domain
+review remains pending; feature delivery/exact-head CI next.
