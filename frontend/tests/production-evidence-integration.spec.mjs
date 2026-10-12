@@ -186,8 +186,8 @@ test("every pattern action resolves its exact canonical identities", async ({ pa
 test("ordinary Nay expansion and Nay filtering never create Opposition state", async ({ page }) => {
   await page.goto(`${selectedPath}&scope=119`);
   const roll240 = page.locator('[data-canonical-action-id="house:119:2:240"]');
-  await roll240.getByRole("button").click();
-  await expect(roll240.getByRole("button")).toHaveAttribute("aria-expanded", "true");
+  await roll240.locator(":scope > button").click();
+  await expect(roll240.locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
   await expect(page.locator(".pattern-strip")).toHaveCount(0);
 
   const voteFilters = page.getByRole("group", { name: "Vote" });
@@ -230,7 +230,7 @@ test("related actions use a non-collapsible parent and keep every child independ
   await expect(group.locator("[data-canonical-action-id]")).toHaveCount(5);
 
   for (const receipt of await group.locator("[data-canonical-action-id]").all()) {
-    const button = receipt.getByRole("button");
+    const button = receipt.locator(":scope > button");
     await button.focus();
     await expect(button).toBeFocused();
     await page.keyboard.press("Enter");
@@ -357,9 +357,9 @@ test("keyboard, reduced motion, mobile reflow, and 200 percent zoom remain bound
   await assertNoHorizontalOverflow(page);
 
   const roll275 = page.locator('[data-canonical-action-id="house:119:2:275"]');
-  await roll275.getByRole("button").focus();
+  await roll275.locator(":scope > button").focus();
   await page.keyboard.press("Enter");
-  await expect(roll275.getByRole("button")).toHaveAttribute("aria-expanded", "true");
+  await expect(roll275.locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
   await expect(roll275.getByRole("link", { name: "Official vote" })).toBeVisible();
   await assertNoHorizontalOverflow(page);
 

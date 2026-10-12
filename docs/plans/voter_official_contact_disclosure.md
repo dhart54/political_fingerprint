@@ -28,6 +28,7 @@ PR193 retains its reserved shared-card work at a1ea303; exact owned paths do not
 - Lint passes with8 existing unrelated Hook warnings; no new warning.
 - Coherent focused run:25/25 Chromium tests pass (31.1 seconds, no retries/skips), including22 contact cases and3 affected existing receipt regressions. After the final source-family guard, all7 affected metadata-state cases pass separately (9.0 seconds). 320/390/1440 screenshots captured; narrow/desktop results visually inspected. Exact vote/source markup and six card IDs/links/text are compared, with history/source hash unchanged. Phone/site/form/source navigation is optional; the outbound browser case is intercepted and proves no referrer/query propagation.
 - After coherent focused completion, use the established full release gate in hosted exact-head CI (units/lint/production build/11 fixture-backed suites/screenshot exports), avoiding a duplicate local full run. Deliver draft PR and actual evidence for independent review; no merge yet.
+- First hosted head c6ef8fb:259 units/lint/build pass and141/145 browsers pass, including all22 contact cases. Four existing receipt selectors in production-evidence/public-record suites became ambiguous with the new optional button. Backend M14H failed the same public-record selector; the other8 jobs passed. Narrowed only those expansion-control locators, retained every original assertion, and all5 affected cases pass locally (7.6 seconds). Runtime is unchanged; successor exact-head CI must complete before review readiness.
 
 ## Production, rollback and next step
 
