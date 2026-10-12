@@ -72,8 +72,8 @@ export default function ChronologicalActionLedger({
     [patternActive, selected],
   );
   const visible = useMemo(
-    () => completeVisibleRows(filtered, Math.max(visibleCount, filtered.findIndex((row) => canonicalActionId(row) === expandedId) + 1)),
-    [expandedId, filtered, visibleCount],
+    () => completeVisibleRows(filtered, visibleCount),
+    [filtered, visibleCount],
   );
   const ledgerItems = useMemo(
     () => buildLedgerItems(visible, { groupRelated: !patternActive, retainedGroupIds }),
@@ -160,6 +160,15 @@ export default function ChronologicalActionLedger({
     setLinkedActionNotice("");
   }
 
+  function updateTextQuery(value) {
+    const nextRows = filterLoadedReceipts(selected, value);
+    const expandedIndex = nextRows.findIndex((row) => canonicalActionId(row) === expandedId);
+    setTextQuery(value);
+    // Retaining a deep receipt reveals a real prefix. Commit that budget so
+    // collapse cannot remove its trigger and Show more advances immediately.
+    setVisibleCount((count) => Math.max(count, expandedIndex + 1));
+  }
+
   return (
     <section className="scroll-mt-24 border-t border-stone-200 py-8 sm:py-10" id="vote-record">
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -203,8 +212,8 @@ export default function ChronologicalActionLedger({
       <div className="mt-4 max-w-2xl">
         <label className="text-sm font-semibold text-stone-950" htmlFor="local-record-filter">Filter loaded receipts by measure, roll or title</label>
         <div className="mt-2 flex flex-wrap items-center gap-2">
-          <input aria-describedby="local-record-filter-help" className="min-h-11 min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-3 text-base text-stone-950" id="local-record-filter" maxLength={160} onChange={(event) => setTextQuery(event.target.value)} placeholder="H.R. 1, roll 32, or title words" ref={filterRef} type="search" value={textQuery} />
-          {textQuery ? <button className="secondary-button" onClick={() => { setTextQuery(""); filterRef.current?.focus(); }} type="button">Clear text filter</button> : null}
+          <input aria-describedby="local-record-filter-help" className="min-h-11 min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-3 text-base text-stone-950" id="local-record-filter" maxLength={160} onChange={(event) => updateTextQuery(event.target.value)} placeholder="H.R. 1, roll 32, or title words" ref={filterRef} type="search" value={textQuery} />
+          {textQuery ? <button className="secondary-button" onClick={() => { updateTextQuery(""); filterRef.current?.focus(); }} type="button">Clear text filter</button> : null}
         </div>
         <p className="mt-2 text-sm leading-6 text-stone-600" id="local-record-filter-help">
           {patternActive
@@ -268,7 +277,7 @@ export default function ChronologicalActionLedger({
       {visible.length < filtered.length ? (
         <button
           className="secondary-button mt-6"
-          onClick={() => setVisibleCount((count) => count + INITIAL_BATCH)}
+          onClick={() => setVisibleCount((count) => Math.max(count, visible.length) + INITIAL_BATCH)}
           type="button"
         >
           Show more votes

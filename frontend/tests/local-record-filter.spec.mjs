@@ -93,6 +93,53 @@ test("a selected unrevealed receipt stays expanded when clearing text", async ({
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(13);
 });
 
+for (const operation of ["show more", "collapse"]) test(`retained deep receipt commits the reveal budget before ${operation}`, async ({ page }, testInfo) => {
+  const rows = Array.from({ length: 48 }, (_, index) => ({
+    ...available[0],
+    canonical_action_id: `house:119:1:${800 + index}`,
+    roll_call_id: `house:119:1:${800 + index}`,
+    rollcall_number: 800 + index,
+    bill_id: `hr${800 + index}-119`,
+    bill_title: `H.R. ${800 + index}`,
+    action_label: `Budget record ${800 + index}`,
+    vote_date: new Date(Date.UTC(2025, 0, index + 1)).toISOString().slice(0, 10),
+  }));
+  await installPassARoutes(page, { evidenceOverrides: { ECONOMY_TAXES: rows } });
+  const requests = [];
+  page.on("request", (request) => { if (request.url().startsWith("http://localhost:8000")) requests.push(request.url()); });
+  await page.goto(economyUrl);
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(12);
+  const url = page.url(), historyLength = await page.evaluate(() => history.length), initialRequests = [...requests];
+  const chronologicalIds = [...rows].reverse().map((row) => row.canonical_action_id);
+  const target = receipt(page, 817); // Index30 in the unfiltered48-row ledger.
+  await filter(page).fill("roll817");
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(1);
+  await target.locator(":scope > button").click();
+  const sources = await target.locator("div.grid").innerHTML();
+  await page.getByRole("button", { name: "Clear text filter", exact: true }).click();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(31);
+  expect(await receiptIds(page)).toEqual(chronologicalIds.slice(0, 31));
+  expect(await target.locator("div.grid").innerHTML()).toBe(sources);
+  if (operation === "show more") await page.getByRole("button", { name: "Show more votes", exact: true }).click();
+  else await target.locator(":scope > button").click();
+  const observedIds = await receiptIds(page);
+  await testInfo.attach("deep-receipt-reveal-state", {
+    contentType: "application/json",
+    body: Buffer.from(JSON.stringify({ loaded: 48, selectedIndex: 30, afterClear: 31, operation, afterOperation: observedIds.length, selectedReceiptMounted: observedIds.includes("house:119:1:817"), ids: observedIds })),
+  });
+  expect(observedIds).toEqual(chronologicalIds.slice(0, operation === "show more" ? 43 : 31));
+  if (operation === "show more") {
+    expect(await target.locator("div.grid").innerHTML()).toBe(sources);
+    await target.locator(":scope > button").click();
+    expect(await receiptIds(page)).toEqual(chronologicalIds.slice(0, 43));
+  }
+  await expect(target.locator(":scope > button")).toHaveAttribute("aria-expanded", "false");
+  await expect(target.locator(":scope > button")).toBeFocused();
+  expect(requests).toEqual(initialRequests);
+  expect(page.url()).toBe(url);
+  expect(await page.evaluate(() => history.length)).toBe(historyLength);
+});
+
 test("matching text preserves an open contact disclosure when a related group shrinks to one", async ({ page }) => {
   await installPassARoutes(page, { evidenceOverrides: { ECONOMY_TAXES: available.slice(0, 2).map((row) => ({ ...row, bill_id: "hr27-119", bill_title: "H.R. 27" })) } });
   let contactReads = 0;
@@ -259,11 +306,34 @@ for (const width of [320, 390, 1440]) test(`local text filter supports keyboard 
   await page.keyboard.press("Tab");
   await expect(page.getByRole("button", { name: "Clear text filter", exact: true })).toBeFocused();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.locator("#vote-record").screenshot({ path: testInfo.outputPath(`local-filter-${width}.png`) });
+  if (width === 320) {
+    await page.evaluate(() => {
+      const group = document.getElementById("local-record-filter").parentElement.parentElement;
+      const header = document.querySelector("header.sticky");
+      window.scrollBy({ top: group.getBoundingClientRect().top - header.getBoundingClientRect().bottom - 16, behavior: "instant" });
+    });
+    await expectFilterUnobscured(page);
+    await expect(page.getByRole("button", { name: "Clear text filter", exact: true })).toBeFocused();
+    await page.screenshot({ path: testInfo.outputPath("local-filter-320.png") });
+  } else await page.locator("#vote-record").screenshot({ path: testInfo.outputPath(`local-filter-${width}.png`) });
   await page.keyboard.press("Enter"); await expect(filter(page)).toBeFocused();
   await expect(filter(page)).toHaveValue("");
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(12);
+  if (width === 320) await expectFilterUnobscured(page);
 });
+
+async function expectFilterUnobscured(page) {
+  for (const target of [filter(page), page.locator("#local-record-filter-help"), page.getByTestId("local-record-filter-status")]) {
+    await expect(target).toBeInViewport({ ratio: 1 });
+    const visibility = await target.evaluate((node) => {
+      const rect = node.getBoundingClientRect(), header = document.querySelector("header.sticky").getBoundingClientRect();
+      const covering = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      return { top: rect.top, headerBottom: header.bottom, unobscured: node === covering || node.contains(covering) };
+    });
+    expect(visibility.top).toBeGreaterThanOrEqual(visibility.headerBottom);
+    expect(visibility.unobscured).toBe(true);
+  }
+}
 
 test("local filter reaches an unrevealed exact identifier without remote search or history changes", async ({ page }) => {
   const requests = [];
