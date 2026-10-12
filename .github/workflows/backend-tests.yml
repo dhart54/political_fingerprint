@@ -711,10 +711,10 @@ jobs:
           container="$(docker run --detach --rm --publish 127.0.0.1:55432:5432 --env POSTGRES_PASSWORD=postgres postgres:17)"
           trap 'docker stop "$container" >/dev/null' EXIT
           for attempt in $(seq 1 30); do
-            if docker exec "$container" pg_isready -U postgres; then break; fi
+            if docker exec "$container" pg_isready -h 127.0.0.1 -U postgres; then break; fi
             sleep 1
           done
-          docker exec "$container" pg_isready -U postgres
+          docker exec "$container" pg_isready -h 127.0.0.1 -U postgres
           createdb -h 127.0.0.1 -p 55432 -U postgres pf_normalized_storage
           python -m pytest -q -s backend/tests/test_normalized_vote_storage.py backend/tests/test_normalized_vote_storage_postgres.py backend/tests/test_green_vote_storage.py -rs
 
@@ -728,10 +728,10 @@ jobs:
           container="$(docker run --detach --rm --publish 127.0.0.1:55434:5432 --env POSTGRES_PASSWORD=postgres postgres:17)"
           trap 'docker stop "$container" >/dev/null' EXIT
           for attempt in $(seq 1 30); do
-            if docker exec "$container" pg_isready -U postgres; then break; fi
+            if docker exec "$container" pg_isready -h 127.0.0.1 -U postgres; then break; fi
             sleep 1
           done
-          docker exec "$container" pg_isready -U postgres
+          docker exec "$container" pg_isready -h 127.0.0.1 -U postgres
           createdb -h 127.0.0.1 -p 55434 -U postgres pf_m15b_green
           python backend/scripts/m15b_persistence_preparation.py check
           python -m pytest -q -s backend/tests/test_green_production_target.py backend/tests/test_m15b_actual_persistence.py backend/tests/test_m15b_production_id_activation.py -rs
