@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import fs from "node:fs";
 import { gunzipSync } from "node:zlib";
-import { economyEvidence, foushee, installPassARoutes } from "./pass-a-fixtures.mjs";
+import { economyEvidence, foushee, installPassARoutes, justiceEvidence } from "./pass-a-fixtures.mjs";
 
 const available = economyEvidence.map((row, index) => ({
   ...row,
@@ -206,7 +206,21 @@ test("explicit receipt anchor clears an excluding query and reaches the exact re
 });
 
 test("new finding navigation clears text while filtering retains accepted linked accounting", async ({ page }) => {
+  let requested;
+  let release;
+  const pendingEvidence = new Promise((resolve) => { requested = resolve; });
+  const evidenceGate = new Promise((resolve) => { release = resolve; });
+  await page.route("**/positions/JUSTICE_PUBLIC_SAFETY/evidence*", async (route) => {
+    requested();
+    await evidenceGate;
+    await route.fulfill({ json: { domain: "JUSTICE_PUBLIC_SAFETY", evidence: justiceEvidence } });
+  });
   await page.goto(`/?representative=${foushee.id}&scope=119&issue=JUSTICE_PUBLIC_SAFETY`);
+  await pendingEvidence;
+  await expect(page.locator("#issue-summary")).not.toContainText("7 recorded actions currently visible");
+  release();
+  await expect(page.locator("#issue-summary")).toContainText("7 recorded actions currently visible");
+  await expect(page.locator("#issue-summary")).toContainText("7 recorded actions in scope");
   const coverage = await page.locator("#issue-summary").innerText();
   await filter(page).fill("unmatched");
   await page.getByRole("button", { name: /View 3 votes for Certification, fentanyl research provisions/ }).click();
