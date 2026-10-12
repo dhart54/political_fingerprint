@@ -3352,3 +3352,30 @@ byte-exact replays. Final conservation verifies623 prior reviews,671 other
 universe rows,1094 static blobs,77 private artifacts and both original notes.
 Only the generated source-capture hash changes. Independent212 source/domain
 review remains pending; feature delivery/exact-head CI next.
+
+
+## Checkpoint213: one ALERT110 source-chain closure
+
+Parent directs one finite closure before more breadth. Complete ALERT EH work
+is preserved; minimum gap was49USC46101(c). No governed witness existed. The
+permitted GovInfo link service resolved the2024PDF; own complete section with
+(c)(1)/(2), notes and2024addition is now bound. Two PageNotFound responses and
+the wrong-media derivation are rejected, preserved and not evidence.
+
+Mechanically replace only the literal FAA subject with the broader officials.
+Preserve the noncriminal/exclusive-data threshold and later-use rule; this is a
+real generic cross-agency investigation restriction, not merely revenue or FAA-only.
+Propose a corrected functional Immigration exclusion under existing boundaries,
+with independent source/domain application review pending. No assertion that
+immigration officials are exempt/unaffected or current implementation is certified.
+Only110 changes;624/52,54cores94props unchanged. The five212funding holds and
+original failed timing/zero credits remain frozen. One inherited candidate closure
+is not a new routine benchmark or methodology change. Focused checks/conservation,
+replay and feature delivery/CI follow.
+
+213 owner validation complete:366 tests in216.967s,7 semantic checks and14
+exact replays. Preserve623 prior reviews,675 other inventory rows,1100 static
+blobs,77 old private artifacts,six frozen212timing/CI records and both original
+notes. Only the generated source-capture hash changes. Parent212bounded29check
+review/CI receipts now received without corpus acceptance. Independent213source/
+domain application review and exact-new-head CI remain pending.

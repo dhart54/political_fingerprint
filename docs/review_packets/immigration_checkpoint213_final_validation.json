@@ -1,0 +1,113 @@
+{
+  "checkpoint": 213,
+  "verified_utc": "2026-10-12T19:44:17.589580+00:00",
+  "base_head": "772175ad6405cfb2250882e53a7d134097123e4b",
+  "inventory_validation": {
+    "authority": "Mechanical integrity only; no semantic acceptance or publication",
+    "inventory_count": 676,
+    "ordered_action_ids_sha256": "e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25",
+    "governed_review_count": 624,
+    "unfinished_screenings": 52,
+    "queue_count": 52,
+    "disposition_counts": {
+      "procedural_context": 228,
+      "interpreted_substantive_directional": 54,
+      "exact_action_ineligible": 340,
+      "source_unresolved": 52,
+      "expressive_nonbinding_context": 2
+    },
+    "unfinished_component_reviews": 3
+  },
+  "prior623_membership_records_exact": true,
+  "other675_universe_rows_exact": true,
+  "five212_funding_holds_unchanged": true,
+  "single110_candidate_exclusion_not_accepted": true,
+  "source_catalogs_old_objects_exact_and_one_append": true,
+  "one_source_literal_raw_bound": true,
+  "operator_reconstruction_subject_only": true,
+  "criminal_exclusion_exclusive_data_and_later_use_preserved": true,
+  "original54cores94propositions6semantic_products_exact": true,
+  "allHealth_inputs_outputs_and_helper_exact": true,
+  "protected_static_blobs_exact": 1100,
+  "two_old_source_catalogs_append_only": true,
+  "all77_saved_private_artifacts_exact": true,
+  "two_original_untracked_notes_exact": true,
+  "all_six_frozen212_private_receipts_timing_exact": true,
+  "new_comparable_routine_samples": 0,
+  "new_benchmark_completion_credit": 0,
+  "independent213_source_domain_review_pending": true,
+  "owner_verification_only": true,
+  "focused_validation_phases": [
+    {
+      "log": ".tmp\\tests213.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-12T19:39:09.950211+00:00",
+      "completed_utc": "2026-10-12T19:42:47.141684+00:00",
+      "elapsed_seconds": 217.18155139998998,
+      "exit_code": 0,
+      "log_sha256": "d1d71c856a3952c7108756ac7388c35d58064079c749b2055e730964d583a132"
+    },
+    {
+      "log": ".tmp\\semantic213.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-12T19:42:47.146594+00:00",
+      "completed_utc": "2026-10-12T19:42:49.114028+00:00",
+      "elapsed_seconds": 1.9673483000078704,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir213.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-12T19:42:49.115168+00:00",
+      "completed_utc": "2026-10-12T19:42:49.185232+00:00",
+      "elapsed_seconds": 0.07006440000259317,
+      "exit_code": 0,
+      "log_sha256": "5f7af870c30fa9344ad6e3bac3b3239624114f7906d9833d44e5520890ce8687"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-12T19:42:49.189696+00:00",
+      "completed_utc": "2026-10-12T19:43:04.734427+00:00",
+      "elapsed_seconds": 15.544025599985616,
+      "outputs": 7
+    },
+    {
+      "phase": "health_byte_exact_output_replay",
+      "started_utc": "2026-10-12T19:43:04.734898+00:00",
+      "completed_utc": "2026-10-12T19:43:10.745916+00:00",
+      "elapsed_seconds": 6.010748300002888,
+      "outputs": 7
+    }
+  ],
+  "focused_tests_passed": 366,
+  "semantic_checks_passed": 7,
+  "exact_replays": 14,
+  "receipt_sha256": "861da52cb154bf6cb52533fe8bbe213fa17241d33e0ee7997695c69f585b398b"
+}

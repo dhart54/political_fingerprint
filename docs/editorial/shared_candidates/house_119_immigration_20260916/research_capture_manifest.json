@@ -1,6 +1,6 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 1209,
+  "source_count": 1210,
   "sources": [
     {
       "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
@@ -9862,6 +9862,30 @@
       "started_utc": "2026-10-12T18:39:46.831807+00:00",
       "completed_utc": "2026-10-12T18:39:47.189207+00:00",
       "no_denied_source_route_retry": true
+    },
+    {
+      "source_id": "govinfo:49usc46101-2024-adsb-baseline213",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/pdf/USCODE-2024-title49-subtitleVII-partA-subpartiv-chap461-sec46101.pdf",
+      "resolved_from": "https://www.govinfo.gov/link/uscode/49/46101?year=2024",
+      "raw_path": ".tmp/49usc46101_link2024_213.html",
+      "text_path": ".tmp/49usc46101_2024_pdf213.txt",
+      "raw_sha256": "f769f0914fd5b403e2a84c24fdfe53ba15ea3ad843b96515fa6adab1ec24e585",
+      "governed_bytes_sha256": "fdc9f62aaea375e53dc0a02d6b36dba194beb08948cd077da6b3b87c5c40ace7",
+      "text_sha256": "382305de35e40be3f5ea23fbc8b76159cf0511fc2dad4322a9b1a118ba3c4dac",
+      "text_length": 10755,
+      "captured_full_text_sha256": "2a15a563f1cb73607a9340ffdfa9e30ae27239d58bec9bb5265e697302360232",
+      "source_text_extents": [
+        {
+          "start": 3759,
+          "end": 14514,
+          "total": 19359
+        }
+      ],
+      "raw_media_type": "application/pdf",
+      "declared_scope": "Complete own49USC46101(a)-(c), revision/amendment and statutory notes in2024annualCode;2024(c)addition retained. Neighboring45305/45306 and46102operative excluded; page furniture unchanged. Not complete vote-date/intervening law or agency/court implementation certification.",
+      "new_source_acquisition": true,
+      "neighboring_material_excluded": true,
+      "prior_wrong_media_derivation_rejected": true
     }
   ],
   "rejected_responses_are_not_evidence": true
