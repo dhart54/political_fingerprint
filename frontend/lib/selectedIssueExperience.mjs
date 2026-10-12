@@ -103,7 +103,7 @@ export function buildFindingIndex(
   });
 }
 
-export function buildLedgerItems(rows = [], { groupRelated = true } = {}) {
+export function buildLedgerItems(rows = [], { groupRelated = true, retainedGroupIds = [] } = {}) {
   if (!groupRelated) {
     return rows.map((row) => ({
       id: canonicalActionId(row),
@@ -137,7 +137,7 @@ export function buildLedgerItems(rows = [], { groupRelated = true } = {}) {
     bucket.rows.push(row);
   });
   return sequence.flatMap((item) => {
-    if (item.type !== "group" || item.rows.length < 2) {
+    if (item.type !== "group" || (item.rows.length < 2 && !retainedGroupIds.includes(item.id))) {
       const row = item.type === "group" ? item.rows[0] : item.row;
       return [{ id: canonicalActionId(row), type: "action", row }];
     }
