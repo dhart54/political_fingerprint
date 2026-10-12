@@ -3276,3 +3276,48 @@ per-actionwall attributionunavailable dueinterleaving, nofabricatedtimes. Earlie
 781.087sFAIL was2functionalcompletions/mixedscreenings, notfivecomparablecycles.
 Localdeliveryprep1600.183s; Git/CI/reportfollows.
 Validationsealb53ba871d0a237cadf9f16d836b877e9ca769f3c7860be3e63e284c577f8b82a. No candidate198merge/acceptance/publication.
+
+
+## Checkpoint211: source-coherent FY2026 funding choices
+
+Parent authorizes next routine batch while210independent review proceeds. Five
+predeclared attempts:1:239HR4553passage,1:281HR5371passage,2:5/6/7HR6938
+DivisionAretention/DivisionsB-Cretention/wholepassage. Reuse complete governed
+Healthprimarytexts and proven tooling; no inheritedHealthmembership or title-only
+classification. Read material Immigration operators and all adopted exact scopes,
+respect finalstatement overrides/appropriation imports and distinct stage/outcome
+binding. Whole packages may contain unresolved components; keep those held and
+noncounting, no held completion credit. Preserve oldHealth/sharedmeanings and
+source identities, originalcandidatehistory and1,092protected blobs/twonotes.
+
+Startfresh211timer with allselection/source/orchestration/validation/Git/CI costs;
+source/deliveryphase endpoints separately recorded. If210review returns a required
+correction, use exclusive correction intervals with routine research paused, so
+no guessed subtraction or artificial per-action deliveries. Queue case mix is
+mostly large appropriations/authorization packages, unlike standalone210; allfive
+cases stay in ledger.210ownerendpoint37m39s=6m17/attempt and12m33/completion,
+FAIL; independentreviewpending and its cost unavailable. No benchmark success,
+scaling, publication/production/methodology change or candidate198merge claim.
+
+211inherited correction:independent210review returned twoP2source gaps.110EH
+105(b) broadens46101(c)(1) official scope, underlyingprohibition/exceptions absent;
+193whollyreplaces1371(b) butdeletedbaseline/AlaskaNativepersonalclass absent.
+Restoreboth toresearchedpending/noncounting withnoacquisition, deniedretry or
+automaticinclusion.72ROTORsupported; nofinalCCDFcorrection dispositionreturned.
+Historical210records/timing/receipts/source banks retained; newreceipt preserves
+oldrow copies and revisescompletioncredit prospectively from3to1(5heldof6).
+623reviewed53pending=23routine30held;54cores94props70questions unchanged.
+Original210owner2259.353s now2259.353s/currentlysource-supportedcompletion,FAIL;
+notchangedhistoricalreceipt or anewsample. Exclusivecorrection interval
+13.471s withroutine researchpaused. Receiptdfad12111e4d8e805ed4f5073080ecb15d67f588c03b7509e0b318ce28e4644e.
+
+211independent return update:CCDF209P2boundedsource recheck at210closed,2new
+tests7.768s(historicalomission+6deletions),14exactreplays56.018s, originalHealth/
+historical209provider/receipts exactGitblobs. Widernegative matrix/finalcomplete
+conservation interrupted byreviewerscratchreset; no vanishedpaths linked/no
+claimthosecomplete. Onlytwoopen210P2s110/193nowpending.210CIownerendpoint
+2257.697s/376.283perattempt retained alongside finalreport2259.353s/376.559;
+conditionalcompletioncount1and5held. Nativeexclusive restoration interval
+13.471s excludes preparation/reviewreturn reconciliation; residualcost remains
+unallocated shared overhead, no claimofcleanisolatedroutine timing. Resume
+fivepredeclaredfunding attempts, norepeatedapproval/deniedroute retry.

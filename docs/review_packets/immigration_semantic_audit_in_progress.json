@@ -8985,8 +8985,8 @@
     },
     {
       "action_id": "house:119:2:198",
-      "audit_state": "CCDF_209_P2_corrected_candidate_pending_independent_review",
-      "severity": "P2",
+      "audit_state": "CCDF209_P2_bounded_source_correction_independently_closed_at210",
+      "severity": null,
       "finding_id": "209-retained-CFR-baseline-omission",
       "exact_identity": {
         "majority": "R",
@@ -9151,7 +9151,10 @@
       "membership_review_record_sha256": "e63d5a582f1ae034967e17f1d2010275b2e477f5411e289e14e518dfb89066e0",
       "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_baseline_correction_checkpoint210.json",
       "source_qualification_receipt_sha256": "6169730cb217be2f759d050c94d16ace7e136657f86c12a70c1bbe8ec9c35bdc",
-      "independent_review_pending": true
+      "independent_review_pending": false,
+      "source_finding_status": "closed",
+      "comprehensive_review_complete": false,
+      "review_scope_limit": "Widernegative matrix/finalcomprehensiveconservation interrupted; bounded source recheck only. No editorial acceptance."
     }
   ],
   "noncounting_actions": [
@@ -30085,7 +30088,7 @@
   "CCDF_baseline_correction_checkpoint210": {
     "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_baseline_correction_checkpoint210.json",
     "receipt_sha256": "6169730cb217be2f759d050c94d16ace7e136657f86c12a70c1bbe8ec9c35bdc",
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint210_validation.json",
     "validation_sha256": "b53ba871d0a237cadf9f16d836b877e9ca769f3c7860be3e63e284c577f8b82a"
   },
@@ -30108,5 +30111,41 @@
     "independent_review_pending": true,
     "validation_path": "docs/review_packets/immigration_delivery_checkpoint210_validation.json",
     "validation_sha256": "b53ba871d0a237cadf9f16d836b877e9ca769f3c7860be3e63e284c577f8b82a"
+  },
+  "premature_exclusions_restored_checkpoint211": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/premature_exclusions_restored_checkpoint211.json",
+    "receipt_sha256": "b403ee323ec71450820e925989ee20c65ede411ede3a0623ff0b656169b2e7a8",
+    "restored_action_ids": [
+      "house:119:2:110",
+      "house:119:2:193"
+    ],
+    "counts": {
+      "reviewed": 623,
+      "pending": 53,
+      "ordinary_unscreened": 23,
+      "researched_holds": 30,
+      "meanings": 54,
+      "propositions": 94,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "benchmark_credit_revision": {
+      "historical210_attempts": 6,
+      "historical210_claimed_completions": 3,
+      "currently_source_supported_routine_completions": 1,
+      "currently_held_attempts": 5,
+      "original210_owner_elapsed_seconds": 2259.352742,
+      "original210_timing_preserved": true,
+      "prospective_owner_throughput_with_revised_credit_seconds": 2259.352742,
+      "independent_review_cost_not_yet_available": true,
+      "benchmark_status": "FAIL; corrected completion credit worsens throughput, no new benchmark sample/acceptance"
+    }
+  },
+  "independent210_bounded_review_return": {
+    "path": "docs/review_packets/immigration_bounded_review_checkpoint210_received211.json",
+    "receipt_sha256": "04bf7647db4905fa9d2370f9c193241891c63da77792a3bb48d36b0c3d06d689",
+    "CCDF_source_P2_closed": true,
+    "wider_review_incomplete": true,
+    "ALERT_ARTIST_pending": true
   }
 }
