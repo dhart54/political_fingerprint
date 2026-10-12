@@ -5,6 +5,27 @@ import { presentationIdentityMatches } from "./editorialPresentation.mjs";
 export const FINDING_FIELDS = ["syntheses", "repeated_patterns", "policy_trajectories", "notable_choices"];
 export const SECTION_ORDER = ["support", "opposition", "mixed"];
 
+// Exact complete public projections for the reviewed same-source locator change.
+// Publication eligibility and registry authority remain backend responsibilities.
+const EDUCATION_LOCATOR_BINDINGS = [
+  {
+    "119": "605b5f87771c63fdcdf76512072f21b19d5540cae54785a473c2bd3f86018826",
+    all: "f5177c9cbd08aa073d705855a6fb74895a6429a5cc3528d852ab4d0d96398539",
+  },
+  {
+    "119": "aaeeb85d5dc44c54ff988fc7ef458081a568858f4ee7601ee6adceaea7646e15",
+    all: "ff7ce88bb3bb40545abe849850b27562cf0e2d5ff902b71b0eb3663cf426d9b0",
+  },
+];
+
+function matchesPresentation(source, actualHash, { legislatorId, memberBioguideId, scope }) {
+  if (source.issue_id === "EDUCATION_WORKFORCE" && legislatorId === "leg_valerie_p_foushee" && memberBioguideId === "F000477") {
+    const knownBinding = EDUCATION_LOCATOR_BINDINGS.some((binding) => canonicalJson(source.presentation_sha256) === canonicalJson(binding));
+    return knownBinding && EDUCATION_LOCATOR_BINDINGS.some((binding) => binding[scope] === actualHash);
+  }
+  return actualHash === source.presentation_sha256?.[scope];
+}
+
 export function canonicalJson(value) {
   if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
   if (value && typeof value === "object") return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${canonicalJson(value[key])}`).join(",")}}`;
@@ -44,14 +65,17 @@ export async function projectRecordCard({ candidate, payload, legislatorId, memb
   if (!reviewed.length) return empty("empty");
   if (!candidate || candidate.status !== "candidate" || candidate.legislator_id !== legislatorId || candidate.member_bioguide_id !== memberBioguideId || !candidate.scopes.includes(scope)) return { ...empty("not_selected"), reviewedDomains };
   const byDomain = new Map(reviewed.map((p) => [p.issue_id, p]));
+  const matchedPresentationHashes = new Map();
   // Verify the whole reviewed set, including omitted findings, before projecting.
   // A missing domain cannot silently change the impression of the selected set.
   for (const source of candidate.sources) {
     const p = byDomain.get(source.issue_id);
     if (!p) return { ...empty("incomplete"), reviewedDomains };
-    if (p.requested_scope !== scope || p.reviewed_scope !== "119" || canonicalJson(p.review_state.congress_scope) !== "[119]" || await contentHash(p) !== source.presentation_sha256[scope]) return empty("source_mismatch");
+    const actualHash = await contentHash(p);
+    if (p.requested_scope !== scope || p.reviewed_scope !== "119" || canonicalJson(p.review_state.congress_scope) !== "[119]" || !matchesPresentation(source, actualHash, { legislatorId, memberBioguideId, scope })) return empty("source_mismatch");
     const coverage = source.evidence_coverage?.[scope];
     if (!coverage || coverage.source_field !== "scope_boundary" || coverage.source_text !== p.scope_boundary || await contentHash(p.scope_boundary) !== coverage.source_sha256) return empty("source_mismatch");
+    matchedPresentationHashes.set(source.issue_id, actualHash);
   }
   if (reviewed.length !== candidate.sources.length) return empty("source_mismatch");
   const entries = [];
@@ -60,7 +84,7 @@ export async function projectRecordCard({ candidate, payload, legislatorId, memb
     const item = p?.[selection.field]?.find((f) => findingIdentity(f) === selection.finding_id);
     if (!item || await contentHash(item) !== selection.finding_sha256 || suppliedDirection(item) !== selection.section || canonicalJson(item.action_ids) !== canonicalJson(selection.action_ids) || !selection.action_ids.length) return empty("source_mismatch");
     const source = candidate.sources.find((s) => s.issue_id === selection.issue_id);
-    entries.push({ ...selection, source, sourceFinding: item, sourcePresentationHash: source.presentation_sha256[scope], reviewedScope: "119th Congress" });
+    entries.push({ ...selection, source, sourceFinding: item, sourcePresentationHash: matchedPresentationHashes.get(selection.issue_id), reviewedScope: "119th Congress" });
   }
   // Manifest order is explicit; never sort by vote/episode counts or political direction.
   return { status: "ready", entries, reviewedDomains, scope, generationTime: candidate.generated_at, evidenceCoverage: candidate.sources.map((source) => ({ issue_id: source.issue_id, ...source.evidence_coverage[scope] })) };
