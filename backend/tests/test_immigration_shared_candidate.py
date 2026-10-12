@@ -41,6 +41,60 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             self.assertEqual(row['action_core_sha256'], current['action_core_sha256'])
             self.assertEqual(row['member_action_source_identities'], current['action_outcome_source_identities'])
 
+    def _assert_CCDF_retained_source_to_claim_boundaries(self, core, authoring):
+        sources = {r['source_id']: r for r in self.values[1]['sources']}
+        required = ['govinfo:45cfr98-20-2025-187', 'govinfo:45cfr98-68-2025-187',
+                    'ecfr:45cfr98-20-version-history187', 'ecfr:45cfr98-68-version-history187']
+        from scripts.prepare_shared_domain_candidate import identity
+        for sid in required:
+            self.assertIn(identity(sources[sid]), core['operative_meaning_source_identities'])
+            self.assertIn(sid, core['semantic_ir_source_ids'])
+            self.assertTrue(any(c['source_id'] == sid and c['passage'] == sources[sid]['text']
+                                for c in core['claim_source_map']))
+        for text in ["only the child's citizenship and immigration status is relevant",
+                     "may not condition the child's eligibility for services under 98.50",
+                     "parent's citizenship or immigration status or provision of any information",
+                     '98.68 already requires analogous Plan descriptions',
+                     'not errors or improper payments because of family-circumstance changes',
+                     'amounts owed to providers under payment agreements',
+                     'annual edition is dated October 1, 2025',
+                     'Requested June 3, 2026 XML snapshots returned HTTP 406']:
+            self.assertIn(text, core['candidate_exact_action_meaning'])
+            self.assertIn(text, authoring['source_render_constraints'][0]['detail'])
+
+    def test_CCDF_current_candidate_retains_complete_regulatory_source_claim_and_typed_bounds(self):
+        action = next(r for r in self.values[0]['actions'] if r['action_id'] == 'house:119:2:198')
+        core = next(r for r in self.products[0]['actions'] if r['action_id'] == action['action_id'])
+        self._assert_CCDF_retained_source_to_claim_boundaries(core, action)
+        constraints = self.products[3]['shared_semantics']['source_render_constraints']
+        self.assertIn(action['source_render_constraints'][0], constraints)
+        self.assertEqual(len(core['governed_source_identities']), 21)
+
+    def test_CCDF_source_to_claim_regression_detects_historical209_and_each_missing_boundary(self):
+        from pathlib import Path
+        old = json.loads((DATA.parent / 'house_119_ccdf_qualification_checkpoint209/shared_action_core_proposal.json').read_text(encoding='utf-8'))['actions'][0]
+        action = next(r for r in self.values[0]['actions'] if r['action_id'] == old['action_id'])
+        with self.assertRaises(AssertionError):
+            self._assert_CCDF_retained_source_to_claim_boundaries(old, action)
+        current = next(r for r in self.products[0]['actions'] if r['action_id'] == old['action_id'])
+        for case in ['full section', 'history', 'claim map', 'parent information', 'existing plan', 'typed constraint']:
+            with self.subTest(case=case):
+                core, row = copy.deepcopy(current), copy.deepcopy(action)
+                if case == 'full section':
+                    core['operative_meaning_source_identities'] = [r for r in core['operative_meaning_source_identities'] if r['source_id'] != 'govinfo:45cfr98-20-2025-187']
+                elif case == 'history':
+                    core['semantic_ir_source_ids'].remove('ecfr:45cfr98-68-version-history187')
+                elif case == 'claim map':
+                    core['claim_source_map'] = [r for r in core['claim_source_map'] if r['source_id'] != 'govinfo:45cfr98-68-2025-187']
+                elif case == 'parent information':
+                    core['candidate_exact_action_meaning'] = core['candidate_exact_action_meaning'].replace('or provision of any information about that status', '')
+                elif case == 'existing plan':
+                    core['candidate_exact_action_meaning'] = core['candidate_exact_action_meaning'].replace('98.68 already requires analogous Plan descriptions', 'new unspecified descriptions')
+                else:
+                    row['source_render_constraints'][0]['detail'] = 'No universal parent check.'
+                with self.assertRaises(AssertionError):
+                    self._assert_CCDF_retained_source_to_claim_boundaries(core, row)
+
     def test_modern_candidate_qualification_rejects_missing_stale_or_changed_original_bindings(self):
         for case in ['missing', 'wrong seal', 'wrong artifact', 'wrong primary', 'original limit removed']:
             with self.subTest(case=case):
@@ -63,7 +117,8 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         from pathlib import Path
         from unittest.mock import patch
         original_read = Path.read_text
-        path = (DATA.parent / 'house_119_ccdf_qualification_checkpoint209/shared_action_core_proposal.json').resolve()
+        binding = next(r for r in self.values[0]['actions'] if r['action_id'] == 'house:119:2:198')['shared_core_reuse']
+        path = Path(binding['artifact_ref']).resolve()
         for case in ['component', 'compiler sources', 'original prefix', 'meaning reference', 'question']:
             with self.subTest(case=case):
                 provider = json.loads(original_read(path, encoding='utf-8'))

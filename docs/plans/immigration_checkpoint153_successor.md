@@ -3236,3 +3236,43 @@ material checks/helper/authoring/categorydiagnosis/fulltests/replays. Initial
 inventory beforetimer unmeasured; Git/CI/report follows. Zerocomparableroutine
 samples,FAIL781.087s remains. Independent209qualification reviewpending, no
 editorialacceptance/production/candidate198merge.
+
+
+## Checkpoint210: six predeclared routine attempts and inherited CCDF P2
+
+Predeclare55/72/89/110/191/193, source-coherent standalone sectoral measures
+using already governed Health texts. All six attempted cases and orchestration,
+validation, Git/CI/delivery costs retained, including held outcomes. Threshold
+600s per attempt, target240s; prior FAIL781.087s unchanged until measured delivery.
+Inherited209 independent P2 takes correction priority: retain complete unchanged
+98.20/98.68 and annual/history baseline, explicit child-only/parent-status and
+parent-information prohibition, already analogous plan descriptions and payment/
+continuity protections. Create a qualified successor provider preserving original
+Health meaning prefix/IDs/sources and historical209provider/receipts/prior heldrow.
+New source-to-claim regression must detect old omission; regenerate all current
+products. Separate inherited correction time, report inclusive overhead as well.
+No fresh acquisition, denied routes untouched, no candidate merge/publication.
+Preserve1083 blobs, both shutdown notes, all Health and prior non198 outputs.
+
+210local validation:366tests pass173.078s,7semanticchecks,14exact
+D/Hreplays. New2source-to-claim tests reject historical209omission and6bounded
+deletions; notexhaustiveproof or a new runtimecontract. NewCCDF21source core
+9c3b8944733b2af3b5b1e8469b84bd6ffbab7eea876d9c1a52224d2055f3a427 preserves oldHealthprefix/IDs/limits.
+Historical209provider/receipts unchanged, correctedtypedconstraint/membership/
+universe/current products carry child-only status and parent-information ban,
+existing98.68analogousplans/paymentcontinuity and datedannual/historyqualification.
+No acquisition or originalraw freshness claim. Independentcorrectionreviewpending.
+Six attempts:72/110/193candidateexclusions;55MiningLawcitizenship/permitmapping,
+89foreignperson/due-diligenceimports,191loanclass/statusbaseline remain material
+work, notinaccessible.625reviews51pending=23routine28held;54cores94props70questions.
+OnlyUN245accessflagtrue. No automatic escalation ofremaining23materialholds.
+1081protected blobs exact; twoauthorized append-onlysource catalogs preserve
+alloldobjects and add16exactHealthobjects. Poololdentries, allHealth andhelper
+bytes,53non198cores,621non198reviews,669otheruniverse rows/twonotes preserved.
+Initialsnapshotassumed Healthmanifest andmisnamed priorCIreceipt, safelyrecovered
+privatecopies; privateauthor-script syntax andnewtestnestedfieldpath corrected.
+Alltime retained. Currentrunhas3completions/3holds, notsixcompletedroutinecycles;
+per-actionwall attributionunavailable dueinterleaving, nofabricatedtimes. Earlier
+781.087sFAIL was2functionalcompletions/mixedscreenings, notfivecomparablecycles.
+Localdeliveryprep1600.183s; Git/CI/reportfollows.
+Validationsealb53ba871d0a237cadf9f16d836b877e9ca769f3c7860be3e63e284c577f8b82a. No candidate198merge/acceptance/publication.

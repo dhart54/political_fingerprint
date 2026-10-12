@@ -8985,9 +8985,9 @@
     },
     {
       "action_id": "house:119:2:198",
-      "audit_state": "CCDF_existing_core_qualification_candidate_pending_independent_review",
-      "severity": null,
-      "finding_id": null,
+      "audit_state": "CCDF_209_P2_corrected_candidate_pending_independent_review",
+      "severity": "P2",
+      "finding_id": "209-retained-CFR-baseline-omission",
       "exact_identity": {
         "majority": "R",
         "congress": "119",
@@ -9016,7 +9016,7 @@
           "state": "KY"
         }
       },
-      "primary_reconstruction": "Whole H.R.7726 child-care integrity passage; newState-plan(W)description includes eligibility documentation/verification. Specific datedHHS notices nameCCDFasprovidingFederalpublicbenefits; with1642(a)-(b) this supplies a qualified program/status-verification relationship, not newcitizenshipcriterion/universalparentcheck/inevitabledenial. Notallprogramservicesrequireverification; nonprofitverification exemption isnot substantiveeligibility clearance.2025definition notice doesnotformallyrevise1998verification; policyexhortation/currentHHS-courtimplementation unverified. Existing qualifiedchildcontinuity/providerpayments and distinctchild/providerfraud processes remain; noHHS-to-childfoodstatus transfer, childnutrition1615neither-prohibits-nor-requires rule distinct. Full datedmaterialtargets, originalHealthcore/meaningprefix/limitations/sourceIDs preserved; one unapproved qualifiedsuccessor. Literal9858lg/659J/high-risk defects unrepaired. Ownquestion/voiceayes/demand/order/direct217-207/6passed, no postponement/enactment. ActualFousheeNay/MassieYea bindonewholechoice, not separatecomponentstance/motive. Candidateonly pendingindependentupstreamqualification/domain review.",
+      "primary_reconstruction": "Whole H.R.7726 child-care integrity passage; newState-plan(W)description includes eligibility documentation/verification. Specific datedHHS notices nameCCDFasprovidingFederalpublicbenefits; with1642(a)-(b) this supplies a qualified program/status-verification relationship, not newcitizenshipcriterion/universalparentcheck/inevitabledenial. Notallprogramservicesrequireverification; nonprofitverification exemption isnot substantiveeligibility clearance.2025definition notice doesnotformallyrevise1998verification; policyexhortation/currentHHS-courtimplementation unverified. Existing qualifiedchildcontinuity/providerpayments and distinctchild/providerfraud processes remain; noHHS-to-childfoodstatus transfer, childnutrition1615neither-prohibits-nor-requires rule distinct. Full datedmaterialtargets, originalHealthcore/meaningprefix/limitations/sourceIDs preserved; one unapproved qualifiedsuccessor. Literal9858lg/659J/high-risk defects unrepaired. Ownquestion/voiceayes/demand/order/direct217-207/6passed, no postponement/enactment. ActualFousheeNay/MassieYea bindonewholechoice, not separatecomponentstance/motive. Candidateonly pendingindependentupstreamqualification/domain review. Under the qualified 2025 annual 45 CFR 98.20(c) baseline, only the child's citizenship and immigration status is relevant for the cited PRWORA citizenship-eligibility verification requirements, because the child is the primary CCDF beneficiary. A Lead Agency or other administering agency may not condition the child's eligibility for services under 98.50 on the parent's citizenship or immigration status or provision of any information about that status. This is not a universal prohibition on other eligibility documentation, a universal SSN rule, a provider-fraud exemption or an interpretation of every service. Complete 98.68 already requires analogous Plan descriptions of effective internal controls while maintaining service continuity, fraud identification/investigation/recovery and client/provider sanctions, and child-eligibility documentation/verification at determination and redetermination. Record matching and database linkages are possible fraud-identification methods, not mandatory individual queries. Its complete second-page (c)(2) continuation preserves that payments for children considered eligible between redeterminations are not errors or improper payments because of family-circumstance changes under 98.21(a); amounts owed to providers under payment agreements or service authorizations must be paid. The bill adds statutory plan clause (W) alongside these existing regulatory requirements; it does not establish that operational verification was absent before the bill or that the statutory addition has no legal effect. The annual edition is dated October 1, 2025, with PDF production footer March 30, 2026. Unchanged official section-history responses report latest amendments December 30, 2016, latest 98.20 issue September 9, 2017 and latest 98.68 issue December 30, 2016. Requested June 3, 2026 XML snapshots returned HTTP 406 and were not obtained; annual text plus reported history is the qualified baseline, not a fetched vote-date XML snapshot or exhaustive current implementation/court clearance.",
       "primary_evidence": [
         {
           "source_id": "clerk:119:2:198",
@@ -9119,14 +9119,38 @@
           "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-03/pdf/CREC-2026-06-03-house.pdf",
           "raw_sha256": "db062681428ac97141d2304293aadfd3ac3524d1157540807161853df216947c",
           "governed_bytes_sha256": "a42ee92b94c483080937f73aec57aecdf34bee7ebe3aa1156ac7716ac4ada291"
+        },
+        {
+          "source_id": "govinfo:45cfr98-20-2025-187",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol1/pdf/CFR-2025-title45-vol1-sec98-20.pdf",
+          "raw_sha256": "3fa5af3dea9ee3dd925653b09ddd83bb353e2169887e0638d32f6147cf53ce7a",
+          "governed_bytes_sha256": "ecb1163607ce2d65895b5818c58cebbc04e1b38328771a73c1c4f9f7b2d68bd0"
+        },
+        {
+          "source_id": "govinfo:45cfr98-68-2025-187",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol1/pdf/CFR-2025-title45-vol1-sec98-68.pdf",
+          "raw_sha256": "313e9badb474325221bda0050a083db9cd86edd8b2b037fdd243d618b51f1507",
+          "governed_bytes_sha256": "abb4c3c12fdf0ac49d88675fef3acacd511fd64add445e6903894053840cdaec"
+        },
+        {
+          "source_id": "ecfr:45cfr98-20-version-history187",
+          "url": "https://www.ecfr.gov/api/versioner/v1/versions/title-45.json?part=98&section=98.20",
+          "raw_sha256": "abc529ac2d16defba7402b4044ce92d7b8293100d4ffac83158bae3c7ae5c151",
+          "governed_bytes_sha256": "b193da4524203e6fa7627df736678b4708d986d704d9a1c34f4c41aceb3f6e1c"
+        },
+        {
+          "source_id": "ecfr:45cfr98-68-version-history187",
+          "url": "https://www.ecfr.gov/api/versioner/v1/versions/title-45.json?part=98&section=98.68",
+          "raw_sha256": "d366e545d015893083520cb67bf951250385a20a97667ecef82dc3d54cf77b0e",
+          "governed_bytes_sha256": "b2fe03f1ed52a2d457a5eeba0299ac331989f26b3f16cb52998400aea3f37fdb"
         }
       ],
       "authoring_action_sha256": "afeae1cdcda708eb470a10729102770cb91adf4955b9c0326000dfd345366b31",
-      "corrected_authoring_action_sha256": "afeae1cdcda708eb470a10729102770cb91adf4955b9c0326000dfd345366b31",
-      "current_action_core_sha256": "4f6662ef69539c99ad0fdca6753cb1de7632ac05ac547911d49bcdf62c40a0a1",
-      "membership_review_record_sha256": "a416f545260c13fba13f38f1f7e0124a12b6979e2d2eb82d5540905a9f68c51b",
-      "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_source_qualification_checkpoint209.json",
-      "source_qualification_receipt_sha256": "e08287f063a75fc021fb6ee61bcf310f6fcd8550315e1656e0a84abafcd38d8a",
+      "corrected_authoring_action_sha256": "4fc25c949d4e3b654903a5afb48b1e42205f107b89e72203bf7170d2db27e459",
+      "current_action_core_sha256": "9c3b8944733b2af3b5b1e8469b84bd6ffbab7eea876d9c1a52224d2055f3a427",
+      "membership_review_record_sha256": "e63d5a582f1ae034967e17f1d2010275b2e477f5411e289e14e518dfb89066e0",
+      "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_baseline_correction_checkpoint210.json",
+      "source_qualification_receipt_sha256": "6169730cb217be2f759d050c94d16ace7e136657f86c12a70c1bbe8ec9c35bdc",
       "independent_review_pending": true
     }
   ],
@@ -30057,5 +30081,32 @@
     "validation_sha256": "8fcf46e2d46d057016f7ecd50d82f1d15edc8e214a0ee62078e34e353440ef03",
     "focused_tests_passed": 364,
     "exact_replays": 14
+  },
+  "CCDF_baseline_correction_checkpoint210": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_baseline_correction_checkpoint210.json",
+    "receipt_sha256": "6169730cb217be2f759d050c94d16ace7e136657f86c12a70c1bbe8ec9c35bdc",
+    "independent_review_pending": true,
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint210_validation.json",
+    "validation_sha256": "b53ba871d0a237cadf9f16d836b877e9ca769f3c7860be3e63e284c577f8b82a"
+  },
+  "routine_screenings_checkpoint210": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/routine_screenings_checkpoint210.json",
+    "receipt_sha256": "938f83eb5d936e181fc4b2d3bc8ea8a4d7d1618271ca3770d6336ba9491fea1d",
+    "attempts": 6,
+    "complete": 3,
+    "held": 3,
+    "counts": {
+      "reviewed": 625,
+      "pending": 51,
+      "ordinary_unscreened": 23,
+      "researched_holds": 28,
+      "meanings": 54,
+      "propositions": 94,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "independent_review_pending": true,
+    "validation_path": "docs/review_packets/immigration_delivery_checkpoint210_validation.json",
+    "validation_sha256": "b53ba871d0a237cadf9f16d836b877e9ca769f3c7860be3e63e284c577f8b82a"
   }
 }
