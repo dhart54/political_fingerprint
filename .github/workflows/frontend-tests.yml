@@ -112,6 +112,7 @@ jobs:
             tests/public-record-integrity.spec.mjs \
             tests/record-card.spec.mjs \
             tests/record-card-release.spec.mjs \
+            tests/education79-card-compatibility.spec.mjs \
             --workers=2 --retries=0 --forbid-only \
             --trace=retain-on-failure --reporter=line,json,html \
             2>&1 | tee ci-results/browsers.log
