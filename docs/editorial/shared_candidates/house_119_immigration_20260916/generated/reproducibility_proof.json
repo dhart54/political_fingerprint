@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "575b14fa7cb33dc04257852743de177c205df7ab0522a4a05a9a75bc72384cca",
-  "source_capture_sha256": "aa643d33e99b746dbdaaf45ec3cf25a282d1da8aac003d9e6a279d5547d02938",
-  "core_sha256": "fbbb1469b16514c95e0e6833f8fa1a437e83bc0d5d30271db3493bb35b270dac",
-  "compiled_sha256": "df4c766f2465af27251cbf02fa9f5356b1bc004fb4307384da1de306c98143b6",
-  "readable_sha256": "a7e0df9fb80af040c1eae9798307cc6bae0e3ec62aa1ce46b962d022238da3bb",
+  "input_sha256": "7132aa4a9aee2b139118b161c965bcf06b0cf3e682717d7721526c87e165c446",
+  "source_capture_sha256": "79fb8de0fd904b9d3e62a24c81edd55b56b860222d66cc6f1f2c47f97fa5fa2c",
+  "core_sha256": "609f332b6b9212c6f676876d3b8eff0b060a389f6068abe5a1cddfd41798e459",
+  "compiled_sha256": "81b7b97553753716d1b937da57cf001b59b88c3928a982227861b64ebd59a341",
+  "readable_sha256": "87bf5a1baa87ceff2d6018090cec24e45d9b8de3f396b6b5a3f55d79916bbfc7",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -674,6 +674,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.4371 as a whole with its child-placement, sponsor and household-information provisions",
           "source_id": "clerk:119:1:340"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:5",
+      "shared_sha256": "1aa528e052f2fbb73170f29eecaf2107e79416b38059a7b4a174d452e4889efd",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported retaining the whole Division A, including its qualified immigration-court, SCAAP and legal-assistance funding among the wider appropriation and restrictions",
+          "source_id": "clerk:119:2:5"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed retaining the whole Division A, including its qualified immigration-court, SCAAP and legal-assistance funding among the wider appropriation and restrictions",
+          "source_id": "clerk:119:2:5"
         }
       ]
     },

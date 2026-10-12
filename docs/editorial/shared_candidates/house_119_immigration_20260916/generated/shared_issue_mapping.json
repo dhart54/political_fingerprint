@@ -3,7 +3,7 @@
   "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
   "domain_id": "IMMIGRATION_BORDER",
   "scope_boundaries": [
-    "54 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
+    "55 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -471,6 +471,20 @@
         "stage_order": 10340
       },
       "mapping_sha256": "41473fd25dbb6c1664cbfc95845297ef3031312fce9ac02db0bd529eed7c4cb6"
+    },
+    {
+      "action_id": "house:119:2:5",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr6938:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20005
+      },
+      "mapping_sha256": "32b3474b2dbea1fe39386705c84a318eacbfb2df86fda03765fb63c350d4a6d0"
     },
     {
       "action_id": "house:119:2:13",
@@ -1005,6 +1019,14 @@
       "policy_family_id": null
     },
     {
+      "episode_id": "episode:hr6938:119",
+      "action_ids": [
+        "house:119:2:5"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
       "episode_id": "episode:hr2683:119",
       "action_ids": [
         "house:119:2:13"
@@ -1259,7 +1281,15 @@
       "constraint_id": "source:house119-session2-roll198-ccdf-status-plan-qualified",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Whole child-care package; Immigration relationship is new plan(W)description of existing CCDF eligibility-doc/verification procedures with qualified dated HHS/1642 program/status rules, not newcitizenshipcriteria/universalparentcheck/benefitdenial/immigrationenforcement or componentstance. Preserve service/nonprofitverification exceptions, definition-vsverification, continuity/provider/child-food distinctions and literalprinted defects; current implementation unverified. Under the qualified 2025 annual 45 CFR 98.20(c) baseline, only the child's citizenship and immigration status is relevant for the cited PRWORA citizenship-eligibility verification requirements, because the child is the primary CCDF beneficiary. A Lead Agency or other administering agency may not condition the child's eligibility for services under 98.50 on the parent's citizenship or immigration status or provision of any information about that status. This is not a universal prohibition on other eligibility documentation, a universal SSN rule, a provider-fraud exemption or an interpretation of every service. Complete 98.68 already requires analogous Plan descriptions of effective internal controls while maintaining service continuity, fraud identification/investigation/recovery and client/provider sanctions, and child-eligibility documentation/verification at determination and redetermination. Record matching and database linkages are possible fraud-identification methods, not mandatory individual queries. Its complete second-page (c)(2) continuation preserves that payments for children considered eligible between redeterminations are not errors or improper payments because of family-circumstance changes under 98.21(a); amounts owed to providers under payment agreements or service authorizations must be paid. The bill adds statutory plan clause (W) alongside these existing regulatory requirements; it does not establish that operational verification was absent before the bill or that the statutory addition has no legal effect. The annual edition is dated October 1, 2025, with PDF production footer March 30, 2026. Unchanged official section-history responses report latest amendments December 30, 2016, latest 98.20 issue September 9, 2017 and latest 98.68 issue December 30, 2016. Requested June 3, 2026 XML snapshots returned HTTP 406 and were not obtained; annual text plus reported history is the qualified baseline, not a fetched vote-date XML snapshot or exhaustive current implementation/court clearance."
+    },
+    {
+      "action_ids": [
+        "house:119:2:5"
+      ],
+      "constraint_id": "source:house119-session2-roll5-divisionA-immigration-qualified",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Whole DivisionAretention; programme amounts/roles/status exceptions and source hierarchy as in qualified meaning. Included amounts not additive; court incentives are not universal merits/removal commands. Named2024/2023directions preserve dated words without fabricated new deadlines. LSC-specific evidence/seeker rules not universal7105certification;2000definition/H2Bforestry limits and other eligibility conditions retained. No per-component stance, individual entitlement, current implementation, B/C/final passage or editorial acceptance. Original meaning/IDs/limits/sources preserved."
     }
   ],
-  "mapping_sha256": "e64caf1beef0a34f12d938e258f161163e89b5d2b7b413f98e3369cacbef77fe"
+  "mapping_sha256": "8d199d291dff99a9d6727d6aebc37a085141a7a64b72da8efa5b73291a3873cb"
 }

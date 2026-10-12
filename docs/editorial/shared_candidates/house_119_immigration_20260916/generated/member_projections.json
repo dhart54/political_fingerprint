@@ -605,6 +605,31 @@
         "member_action_source_identity_sha256": "39eece5de49d0d388d831c5a3ce432c57f1a2bbe005d33d46959ad1d2e5ced80"
       },
       {
+        "action_id": "house:119:2:5",
+        "action_core_sha256": "1aa528e052f2fbb73170f29eecaf2107e79416b38059a7b4a174d452e4889efd",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:5",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "241456f0eed2349bcbaa1b47eb3fbc14cbf597914b988e9df50520d8993eb5e3",
+            "governed_bytes_sha256": "ffd6d14101c8758243cb68db897b3b189ed84e694b5dc10d084a3ee6de97e845"
+          },
+          {
+            "source_id": "immigration:divisionA-roll5-own-record214",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Only own initial question/rule-ordered yeas/nays/postponement and resumed roll5/375-47-9/affirmative retention/result/reconsideration; neighboring veto/B-C/passage excluded. Original Divison spelling/line extraction retained. Literal scopes in governed23822-character parent, not fresh fullPDF replay.",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "3321ae89a1fb46533ccfff6e0f8647ad2fcc5b86198499a380b2ac7b15fdbde8"
+          }
+        ],
+        "member_action_source_identity_sha256": "2226ecd1e6e72714006156d2e0391d3506bf6a3b595eb9d77f40974302050787"
+      },
+      {
         "action_id": "house:119:2:13",
         "action_core_sha256": "05a7491d413a6877e39ed4038958cb019f6623bca8fe4a7bf7628ebc47e86048",
         "official_status": "Yea",
@@ -1018,7 +1043,7 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "b61b0520b788e929ec8e5448fce5a48baee7bab0b040912f6c879fdc51e31ad4"
+    "projection_sha256": "487fc93c28858b693a735d7a343a0c6858f2bccf25c6774ff9917d402b0e2b98"
   },
   {
     "schema_version": "member_action_projection_v1",
@@ -1626,6 +1651,31 @@
         "member_action_source_identity_sha256": "39eece5de49d0d388d831c5a3ce432c57f1a2bbe005d33d46959ad1d2e5ced80"
       },
       {
+        "action_id": "house:119:2:5",
+        "action_core_sha256": "1aa528e052f2fbb73170f29eecaf2107e79416b38059a7b4a174d452e4889efd",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:5",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "241456f0eed2349bcbaa1b47eb3fbc14cbf597914b988e9df50520d8993eb5e3",
+            "governed_bytes_sha256": "ffd6d14101c8758243cb68db897b3b189ed84e694b5dc10d084a3ee6de97e845"
+          },
+          {
+            "source_id": "immigration:divisionA-roll5-own-record214",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Only own initial question/rule-ordered yeas/nays/postponement and resumed roll5/375-47-9/affirmative retention/result/reconsideration; neighboring veto/B-C/passage excluded. Original Divison spelling/line extraction retained. Literal scopes in governed23822-character parent, not fresh fullPDF replay.",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "3321ae89a1fb46533ccfff6e0f8647ad2fcc5b86198499a380b2ac7b15fdbde8"
+          }
+        ],
+        "member_action_source_identity_sha256": "2226ecd1e6e72714006156d2e0391d3506bf6a3b595eb9d77f40974302050787"
+      },
+      {
         "action_id": "house:119:2:13",
         "action_core_sha256": "05a7491d413a6877e39ed4038958cb019f6623bca8fe4a7bf7628ebc47e86048",
         "official_status": "Nay",
@@ -2039,6 +2089,6 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "220afded6b364a2dc97853ad612643d643b4ecaa986a834058ad24aa05a23c14"
+    "projection_sha256": "4e7c4e3fb0085137dd8931484acf1c6b6735cad4a4173839124f0d37c03e921d"
   }
 ]
