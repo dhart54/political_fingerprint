@@ -3439,3 +3439,38 @@ source-authoring, not measured request service or focused validation, dominates
 unchanged, no newroutinecycle credit or scaling. Focused semantic checks and
 changedImmigrationreplay follow; unchangedHealthverifiedbybytes. No merge,
 publication, editorial acceptance or current-main integration claim.
+
+
+## Checkpoint216: one qualified B/C retention candidate
+
+Reuse15saved statutory captures,31originalHealth witnesses and one matching
+sharedB/Cstatement parent. Originaloperatives differ only by IHpublisher
+allmarker; storedtexts unchanged. Boundown419/6/6retention andFousheeYea/
+MassieNay; no projection fromA/passage. ExactB/Cfinalreport precedence and
+material adoptedsecurity/Insular/Corps directions bound. Historicalpatent1994
+compliance/IHS1987implementation remain qualified rather than inferred.
+
+One qualifiedBCcore binds56witnesses;56meanings/626reviewed50pending,96
+behavioralpropositions. ExistingH6938episode now contains two separateaction
+observations:50independentepisodes,6multiactionepisodes. No duplicatebehavior
+count or fullpassage claim. Threeotherfixedfundingcases remain pending.
+CurrentAmeaning loses stale research-state wording andeightcaption descriptor
+is corrected prospectively; original215provider/receipts remain frozen.
+
+Bounded215review reports39checks and7independentImmigrationreplays;7prior
+Healthreplays still match. P3/specificEOIRmap gap closed; private7105raw/full
+reconstruction remains owner-supported. Reported435reviewseconds separate.
+No acceptance/benchmarkpass or methodologychange. Local targetedvalidation,
+conservation, changedreplay and exactnewheadCI follow.
+
+216 validation:366prefinal focused tests passed in239.741seconds. One
+universalfrontmatter source added after that suite; final189candidate tests
+passed in188.438seconds,sevensemanticchecks/IRvalidation/sevenexactImmigration
+replays pass. Conservation verifies54othercores624otherreviews674otherrows,
+94otherbehavioralprops and94otherreadablefindings exact. Only twoH6938props
+now bind both separatechoices;96totalunchanged. Health/oldsourceobjects/notes
+and frozen212-215receipts preserved; oneoldsource descriptor metadata only.
+47sources append:27Health-identical and20literal scoped witnesses. Source
+phase1780.082seconds initially; laterfrontmatter/conservation/delivery overhead
+retained separately, no invented per-case/routine mean. Independent216review
+and exactnewheadCI pending; priorFAILunchanged.

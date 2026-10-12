@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "4a70ebf779993b5fd10ed749e48617a581339ff1c53f66ea4d247b46f47983ce",
-  "source_capture_sha256": "689c8e3eb6824f2a51c651c10f47f60f0d4b74f53d97bc2490bb7ed6b9e980d3",
-  "core_sha256": "230aacb93635f90bb8bc8bc035f24aef51a0561d499d15d8c0ca681f06728c21",
-  "compiled_sha256": "81b7b97553753716d1b937da57cf001b59b88c3928a982227861b64ebd59a341",
-  "readable_sha256": "88d2a9627738e0a1918ba533a8ef4f400ee3518b6f4c6a4647b6cad03338ba10",
+  "input_sha256": "87a0fbcb4171e46a3b090312f4fe1f7e87d181902cfadc4d43b7899c62d43b6a",
+  "source_capture_sha256": "70f4e613f0e0f39cc3153c95c42b74ef2c9e4a0cb2fc3e1a92e2bd6286355f34",
+  "core_sha256": "369a8595ed8f68bfd7f7e4b76f8e2953f040a88b94f83124004d501560621e7a",
+  "compiled_sha256": "a1da878e993117515077cddeda6dfde52bc530cca2751f5391d007a84e3c23d8",
+  "readable_sha256": "87a8456c87d36fbd5a9862edb5e1fee0776b0a655f0c327ecb6e7c339a1cd2a4",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -679,7 +679,7 @@
     },
     {
       "action_id": "house:119:2:5",
-      "shared_sha256": "f9b4c94f3075e9680595eefb08450bad0a4961d4d57d774de23349fe135cb872",
+      "shared_sha256": "34fc1a9e371637ffeeabdb739b1eb83d86044d74517527a53df07d23ea5d8d0b",
       "choices": [
         {
           "member_id": "F000477",
@@ -694,6 +694,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed retaining the whole Division A, including its qualified immigration-court, SCAAP and legal-assistance funding among the wider appropriation and restrictions",
           "source_id": "clerk:119:2:5"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:6",
+      "shared_sha256": "4e8fd368e1da371bc7dcd5090849e9bb69137796b0affacda6df41a44a0fdac7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported retaining the whole combined Divisions B and C with their qualified programme, status and funding conditions",
+          "source_id": "clerk:119:2:6"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed retaining the whole combined Divisions B and C with their qualified programme, status and funding conditions",
+          "source_id": "clerk:119:2:6"
         }
       ]
     },

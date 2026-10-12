@@ -5,11 +5,11 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 55,
+        "eligible_substantive_actions": 56,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 55,
-        "resolved_eligible_actions": 55,
-        "directional_yes_no_positions": 55,
+        "in_service_eligible_actions": 56,
+        "resolved_eligible_actions": 56,
+        "directional_yes_no_positions": 56,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
@@ -126,6 +126,44 @@
                 "service_status": "in_service",
                 "evidence_status": "official_record_resolved",
                 "direction": "opposition"
+              }
+            ],
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:27598e5c35d3d7dd",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:5",
+              "house:119:2:6"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr6938:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "action_observations": [
+              {
+                "action_id": "house:119:2:5",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:2:5:candidate-v1",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "support"
+              },
+              {
+                "action_id": "house:119:2:6",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:2:6:candidate-v1",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "support"
               }
             ],
             "conclusion_relevance": "supporting",
@@ -876,25 +914,6 @@
             }
           },
           {
-            "proposition_id": "prop:899289a35e9b690b",
-            "semantic_role": "behavioral",
-            "proposition_type": "notable_choice",
-            "direction": "support",
-            "evidence_action_ids": [
-              "house:119:2:5"
-            ],
-            "evidence_episode_ids": [
-              "episode:hr6938:119"
-            ],
-            "mechanism_or_trait_refs": [],
-            "presentation_target": "other_notable_choices",
-            "conclusion_relevance": "supporting",
-            "relationships": {
-              "supported_by": [],
-              "limited_by": []
-            }
-          },
-          {
             "proposition_id": "prop:1ac7367e2078225a",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -1039,6 +1058,7 @@
             "prop:3e335a2413ee0d6d",
             "prop:dbac429a6872b3da",
             "prop:7b396e7130a53470",
+            "prop:27598e5c35d3d7dd",
             "prop:63c9a9214977ee99",
             "prop:1221d8ef96b8d89a",
             "prop:3657b46370498990",
@@ -1077,7 +1097,6 @@
             "prop:27252af571282f01",
             "prop:4654a7f3030b2604",
             "prop:2a14cc57ee3fdd18",
-            "prop:899289a35e9b690b",
             "prop:1ac7367e2078225a",
             "prop:3e75ebd5cb9e1504",
             "prop:60ef86dfbe2d2eec",
@@ -1138,6 +1157,7 @@
           "house:119:2:280",
           "house:119:2:42",
           "house:119:2:5",
+          "house:119:2:6",
           "house:119:2:65",
           "house:119:2:69",
           "house:119:2:70",
@@ -1165,11 +1185,11 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 55,
+        "eligible_substantive_actions": 56,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 55,
-        "resolved_eligible_actions": 55,
-        "directional_yes_no_positions": 53,
+        "in_service_eligible_actions": 56,
+        "resolved_eligible_actions": 56,
+        "directional_yes_no_positions": 54,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
@@ -1286,6 +1306,44 @@
                 "service_status": "in_service",
                 "evidence_status": "official_record_resolved",
                 "direction": "support"
+              }
+            ],
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:88454f89888afaa8",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:5",
+              "house:119:2:6"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr6938:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "action_observations": [
+              {
+                "action_id": "house:119:2:5",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:2:5:candidate-v1",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "opposition"
+              },
+              {
+                "action_id": "house:119:2:6",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:2:6:candidate-v1",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "opposition"
               }
             ],
             "conclusion_relevance": "supporting",
@@ -1998,25 +2056,6 @@
             }
           },
           {
-            "proposition_id": "prop:d898493fe739ddd8",
-            "semantic_role": "behavioral",
-            "proposition_type": "notable_choice",
-            "direction": "opposition",
-            "evidence_action_ids": [
-              "house:119:2:5"
-            ],
-            "evidence_episode_ids": [
-              "episode:hr6938:119"
-            ],
-            "mechanism_or_trait_refs": [],
-            "presentation_target": "other_notable_choices",
-            "conclusion_relevance": "supporting",
-            "relationships": {
-              "supported_by": [],
-              "limited_by": []
-            }
-          },
-          {
             "proposition_id": "prop:1ac7367e2078225a",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -2161,6 +2200,7 @@
             "prop:3e335a2413ee0d6d",
             "prop:50adc7387f8075f1",
             "prop:299a30f6d60968cc",
+            "prop:88454f89888afaa8",
             "prop:04efcea511ec7dbe",
             "prop:7b401ea0a7d3d888",
             "prop:74a9a53d91141d9a",
@@ -2197,7 +2237,6 @@
             "prop:27252af571282f01",
             "prop:d7344a953f10e445",
             "prop:50199276087bcfad",
-            "prop:d898493fe739ddd8",
             "prop:1ac7367e2078225a",
             "prop:4a5a978a77983c8a",
             "prop:31ae09bdd7ab03bc",
@@ -2275,6 +2314,7 @@
           "house:119:2:280",
           "house:119:2:42",
           "house:119:2:5",
+          "house:119:2:6",
           "house:119:2:65",
           "house:119:2:69",
           "house:119:2:70",
@@ -2406,6 +2446,14 @@
       "constraint_id": "source:house119-session2-roll5-divisionA-immigration-qualified",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Whole DivisionAretention; programme amounts/roles/status exceptions and source hierarchy as in qualified meaning. Included amounts not additive; court incentives are not universal merits/removal commands. Named2024/2023directions preserve dated words without fabricated new deadlines. LSC-specific evidence/seeker rules not universal7105certification;2000definition/H2Bforestry limits and other eligibility conditions retained. No per-component stance, individual entitlement, current implementation, B/C/final passage or editorial acceptance. Original meaning/IDs/limits/sources preserved."
+    },
+    {
+      "action_ids": [
+        "house:119:2:6"
+      ],
+      "constraint_id": "source:house119-session2-roll6-BC-qualified",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Combined B/C only. Scheme-specific status/access/funding conditions and exact final imports retained; patent1994compliance/IHS1987implementation, allproject/enrollee/current-law determinations and migrant-purpose spending not inferred. No A/passage/component/motive/enactment projection."
     }
   ]
 }

@@ -606,7 +606,7 @@
       },
       {
         "action_id": "house:119:2:5",
-        "action_core_sha256": "f9b4c94f3075e9680595eefb08450bad0a4961d4d57d774de23349fe135cb872",
+        "action_core_sha256": "34fc1a9e371637ffeeabdb739b1eb83d86044d74517527a53df07d23ea5d8d0b",
         "official_status": "Yea",
         "service_status": "in_service",
         "evidence_status": "official_record_resolved",
@@ -628,6 +628,31 @@
           }
         ],
         "member_action_source_identity_sha256": "2226ecd1e6e72714006156d2e0391d3506bf6a3b595eb9d77f40974302050787"
+      },
+      {
+        "action_id": "house:119:2:6",
+        "action_core_sha256": "4e8fd368e1da371bc7dcd5090849e9bb69137796b0affacda6df41a44a0fdac7",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:6",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "ef542fa3e1f3b7239d41fa0b02b8db34d1ed7a96283934eb1342140eb5c72752",
+            "governed_bytes_sha256": "ec41e1f8e37916b950cffa0debc60b42528beeb7a30ebfd10e79b26cf5dc0b6c"
+          },
+          {
+            "source_id": "immigration:divisionsBC-roll6-own-record216",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Only ownB/Cquestion,rule-orderedyeas/nays,electronic419/6/6table andaffirmativeretention/result/reconsideration. A/engrossment/third-reading/passage excluded; literal governed parent, not fresh raw replay.",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "6bb06e018baac1bce20904608b0e9690b1a89450c08c2f4bac074de365ccd7fe"
+          }
+        ],
+        "member_action_source_identity_sha256": "677581a2898132da9d1d0b238d2fc79253f870c75e2d58fda199fb8018cc91dc"
       },
       {
         "action_id": "house:119:2:13",
@@ -1043,7 +1068,7 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "be792acdcce6b29805e6c618f8624796c4b62a0ae71f5e85efa23ad000bf7863"
+    "projection_sha256": "8a000d3d8d2970988910f596a118dac389deeadf2cfba03a470a32b9f686b2e2"
   },
   {
     "schema_version": "member_action_projection_v1",
@@ -1652,7 +1677,7 @@
       },
       {
         "action_id": "house:119:2:5",
-        "action_core_sha256": "f9b4c94f3075e9680595eefb08450bad0a4961d4d57d774de23349fe135cb872",
+        "action_core_sha256": "34fc1a9e371637ffeeabdb739b1eb83d86044d74517527a53df07d23ea5d8d0b",
         "official_status": "Nay",
         "service_status": "in_service",
         "evidence_status": "official_record_resolved",
@@ -1674,6 +1699,31 @@
           }
         ],
         "member_action_source_identity_sha256": "2226ecd1e6e72714006156d2e0391d3506bf6a3b595eb9d77f40974302050787"
+      },
+      {
+        "action_id": "house:119:2:6",
+        "action_core_sha256": "4e8fd368e1da371bc7dcd5090849e9bb69137796b0affacda6df41a44a0fdac7",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:6",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "ef542fa3e1f3b7239d41fa0b02b8db34d1ed7a96283934eb1342140eb5c72752",
+            "governed_bytes_sha256": "ec41e1f8e37916b950cffa0debc60b42528beeb7a30ebfd10e79b26cf5dc0b6c"
+          },
+          {
+            "source_id": "immigration:divisionsBC-roll6-own-record216",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Only ownB/Cquestion,rule-orderedyeas/nays,electronic419/6/6table andaffirmativeretention/result/reconsideration. A/engrossment/third-reading/passage excluded; literal governed parent, not fresh raw replay.",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "6bb06e018baac1bce20904608b0e9690b1a89450c08c2f4bac074de365ccd7fe"
+          }
+        ],
+        "member_action_source_identity_sha256": "677581a2898132da9d1d0b238d2fc79253f870c75e2d58fda199fb8018cc91dc"
       },
       {
         "action_id": "house:119:2:13",
@@ -2089,6 +2139,6 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "a556eb2450adf6f994bad84151d602f5763dc0485b880ea14e90b2c8cc587d69"
+    "projection_sha256": "dffaad071ea766ab4a3105b66ea8774081c882979d86782470340651ade7d2af"
   }
 ]

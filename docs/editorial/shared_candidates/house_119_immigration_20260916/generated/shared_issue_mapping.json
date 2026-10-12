@@ -3,7 +3,7 @@
   "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
   "domain_id": "IMMIGRATION_BORDER",
   "scope_boundaries": [
-    "55 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
+    "56 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -485,6 +485,20 @@
         "stage_order": 20005
       },
       "mapping_sha256": "32b3474b2dbea1fe39386705c84a318eacbfb2df86fda03765fb63c350d4a6d0"
+    },
+    {
+      "action_id": "house:119:2:6",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr6938:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20006
+      },
+      "mapping_sha256": "0396d66a158a25918968fc7c93c8a9b6054d1df98cc26fac5ddaa718e2a0135a"
     },
     {
       "action_id": "house:119:2:13",
@@ -1021,7 +1035,8 @@
     {
       "episode_id": "episode:hr6938:119",
       "action_ids": [
-        "house:119:2:5"
+        "house:119:2:5",
+        "house:119:2:6"
       ],
       "method_boundary_types": [],
       "policy_family_id": null
@@ -1289,7 +1304,15 @@
       "constraint_id": "source:house119-session2-roll5-divisionA-immigration-qualified",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Whole DivisionAretention; programme amounts/roles/status exceptions and source hierarchy as in qualified meaning. Included amounts not additive; court incentives are not universal merits/removal commands. Named2024/2023directions preserve dated words without fabricated new deadlines. LSC-specific evidence/seeker rules not universal7105certification;2000definition/H2Bforestry limits and other eligibility conditions retained. No per-component stance, individual entitlement, current implementation, B/C/final passage or editorial acceptance. Original meaning/IDs/limits/sources preserved."
+    },
+    {
+      "action_ids": [
+        "house:119:2:6"
+      ],
+      "constraint_id": "source:house119-session2-roll6-BC-qualified",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Combined B/C only. Scheme-specific status/access/funding conditions and exact final imports retained; patent1994compliance/IHS1987implementation, allproject/enrollee/current-law determinations and migrant-purpose spending not inferred. No A/passage/component/motive/enactment projection."
     }
   ],
-  "mapping_sha256": "8d199d291dff99a9d6727d6aebc37a085141a7a64b72da8efa5b73291a3873cb"
+  "mapping_sha256": "6c6dbb41a9468a962689ad443995be9c8e93de7c2aa83f704dd5f7d201ebf6c8"
 }

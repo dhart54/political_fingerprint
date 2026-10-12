@@ -1,6 +1,6 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 1235,
+  "source_count": 1282,
   "sources": [
     {
       "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
@@ -10253,7 +10253,7 @@
       "raw_path": ".tmp/srpt11944_eoir214.response",
       "full_text_path": ".tmp/srpt11944_eoir214.txt",
       "raw_sha256": "64039cc0e6f52eb377046ac0bc5315785c31ed0d1a0cbf322cce88c9b385732f",
-      "governed_bytes_sha256": "a16cde21fc3a5fd1f5496b22e22388987bd8b6e4d6bb9006e7da04aa3f3791be",
+      "governed_bytes_sha256": "f2e9e588a669b94a1ed0ddc9026a559827946b8f35b8f5f30613e1374e8a4c80",
       "text_sha256": "d427139ca529c532a088d8a00c6601a6fd2c965a398ae6331c0940612b3f7d9a",
       "text_length": 7941,
       "captured_full_text_sha256": "4e5ac3eb24500fd60929521a7bcd8438e4b41f51c81711a45cd821301c2b6be5",
@@ -10264,7 +10264,7 @@
           "total": 693398
         }
       ],
-      "declared_scope": "Complete Senate EOIR account narrative and all nine directive captions. Final2026 allocation and exact transparency/training/LOP replacements control; staffing is expressly adopted, other ECAS/VTC/referral/children directives survive. Older Senate LOP amount is contextual superseded recommendation, not current floor."
+      "declared_scope": "Complete Senate EOIR account: eight directive captions plus the account narrative. Final2026 allocation and exact transparency/training/LOP replacements control; staffing is expressly adopted, other ECAS/VTC/referral/children directives survive. Older Senate LOP amount is contextual superseded recommendation, not current floor."
     },
     {
       "source_id": "congressional-record:2024-eoir-backlog-appraisal215",
@@ -10284,6 +10284,704 @@
         }
       ],
       "declared_scope": "Complete2024 backlog caption supplies the named performance-appraisal program imported by surviving House2025 directive. Other2024 hiring/dashboard/docket clauses retained as context, not automatically imported by that narrower House cross-reference; no restarted historical deadline or observed backlog outcome."
+    },
+    {
+      "source_id": "govinfo:hr6938ih-divisions-b-c",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm",
+      "raw_sha256": "608ea1b09e392979f172c69916afacf612ffe03b8b18038ad35a53b99d45c645",
+      "governed_bytes_sha256": "44771f2c5827363ea259b52f2863efe18f18b6a0465f612ae05eaf0fac4354e8",
+      "text_sha256": "91666086b3c41aefa3e49ce3ad4fec016d3ad36ab3c10da6d3d24a086801d458",
+      "text_length": 334356,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "congressional-record:2026-01-08-6938-explanation-b-health",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+      "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+      "governed_bytes_sha256": "7e20234a08d7b86833d439e54fb2234ade1c6549c2d0a066458eb754ca115e42",
+      "text_sha256": "40cfef9fceebe3c654807146b896b2b9da53449d67bc335642adfd92d9201956",
+      "text_length": 48978,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "congressional-record:2026-01-08-6938-explanation-c-health",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+      "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+      "governed_bytes_sha256": "43816d0a8e50154d1e5b239265319ae2fc0ac6fd31d3140fa36992c757443011",
+      "text_sha256": "621c01670e00ca1b10a3530a7c4c4fb8f933fdb0877cc471c5595473ebc82899",
+      "text_length": 52833,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "congressional-record:2026-01-08-6938-ihs-final-allocation-tables",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+      "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+      "governed_bytes_sha256": "eec05a0deaec88d3bd0c30bc65e838dff68692ab3fd1b28902fe9b54faaec52c",
+      "text_sha256": "5eb22886864de85efd14f18dc468db32b8009960a9d3013e7e330d77402c9fcd",
+      "text_length": 4288,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "congressional-record:2026-01-08-6938-doe-final-allocation",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+      "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+      "governed_bytes_sha256": "1434f1aa82481cb28bc58ef0db54ecff9b3813ad9b55edf255e78d5e71136cab",
+      "text_sha256": "b01c7eae960e5a05095609c206b8418e407dd020d47a86644742effb3d9c8094",
+      "text_length": 970,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl113-76-regional-health424",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-113publ76/html/PLAW-113publ76.htm",
+      "raw_sha256": "4e889e97514c5f197aac26681107a935f8735cd3f11734a8b78e7d905f701fe3",
+      "governed_bytes_sha256": "479ef86b9db162521fa2bdc12b4f03092ffad5fd22fc26fe9893c44acee8d572",
+      "text_sha256": "0226f6859188cebe2357193d7e4f11ab8fbbbc875a0dd1f4449054c2760c5245",
+      "text_length": 980,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl113-235-contract-support405-406",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-113publ235/html/PLAW-113publ235.htm",
+      "raw_sha256": "96ab7ed1d845c8e5bedf6d2db62362589365e7989c11d81d5741118aa482fa15",
+      "governed_bytes_sha256": "ef38d26434b7dee800654e4fc239934cc58bded44771168d8a54b9d631aecd2c",
+      "text_sha256": "49c87b1c9e55cba585c900359b8492a7670da47ba6bf30e4aaac9cd889ca1571",
+      "text_length": 2120,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl116-9-national-park-medical2404",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ9/html/PLAW-116publ9.htm",
+      "raw_sha256": "0afcc380925392067d11614088222c05d86c77f06746794f98cca9cc3be9282f",
+      "governed_bytes_sha256": "3d84abaaa2e95aa780bfde6cd26b87cb14106543a26ffd68331076ef59a4817d",
+      "text_sha256": "394563db2e3bad3d05f447f2ea244951fbd5309296cc2f3de8f456a9876022ea",
+      "text_length": 1431,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:hrpt119-215-ihs-niehs-atsdr",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm",
+      "raw_sha256": "e58109112201814e5e78b6f390cce7926bef9d0ff492e62f21926ce74e67b440",
+      "governed_bytes_sha256": "08953d7943d3b4b597a4e34cbce7ee1d7d2868f001dc190fa53ff69e03ffe8ac",
+      "text_sha256": "494cd7dc0abace7e893d88e3b47daf03ada7b2bf44b951331bd0f3f4a7504aac",
+      "text_length": 17625,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:srpt119-46-ihs-niehs-atsdr",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm",
+      "raw_sha256": "1383b686deda451d6bf03bdc3c92a3f634d059d7a029cee081130a2b4b5c50ed",
+      "governed_bytes_sha256": "b697a9ea51e5534ab07c68997d05c045720801d53a28e338e99253bc410aed63",
+      "text_sha256": "92904e386f931b973344fb3c23d672cf5cff6c9af08659da5a49f23a89150a60",
+      "text_length": 25406,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:srpt119-46-regional-health-current-law",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm",
+      "raw_sha256": "1383b686deda451d6bf03bdc3c92a3f634d059d7a029cee081130a2b4b5c50ed",
+      "governed_bytes_sha256": "c58c78eb2a00aec63153f434ee6c8686984f8907327039341dad5777d0772c98",
+      "text_sha256": "d73bbdd6b7b83ae9577a9b13c092b7c543472ff3eab49bbe8ce59f6c58ef9f11",
+      "text_length": 411,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:40usc-appalachian-health-2024",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm",
+      "raw_sha256": "9df9d8accd7725411821750454574b8bfb8c979d56fe980c78baf4bf017c596f",
+      "governed_bytes_sha256": "07769d91259b06b349100294c02df7fd4448d38ff1d6e304123ca131229ac32d",
+      "text_sha256": "8d31abb076c2079c5d789bcf51e0415a2e263e778ece21b24cb54f0dceff1d56",
+      "text_length": 62133,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:42usc3121-denali-2024",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm",
+      "raw_sha256": "e0a6ead09c8178607e25eed3d5313d5d13c0b75b8bc9ec6b4b7a4c825db1f202",
+      "governed_bytes_sha256": "7653675cb295592470cd1037ee84473229029971c18f439494649f4853972611",
+      "text_sha256": "601f9e1c0a1d5106900a1ffbd644ea1e6594602ed720173acccae11519a566a2",
+      "text_length": 31713,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:7usc-delta-2024",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm",
+      "raw_sha256": "19936b6473fa72673591dedafe69fe10d97214d174ac7a853e33c1ed05b84afa",
+      "governed_bytes_sha256": "2547a9d1f0d7533aa6cb66bbf621ad940b8b18405e89eac75b8f17286a88804a",
+      "text_sha256": "e2b8d90aaf114c37fe83dceb0aa92ee6fc59ceb0c57bb9ac94bc3e2f97dbb370",
+      "text_length": 35016,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:40usc-subtitleV-2024",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+      "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+      "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67",
+      "text_sha256": "8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5",
+      "text_length": 82620,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "energy:fy2026-oda-health-programs",
+      "url": "https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf",
+      "raw_sha256": "30ae8b7cb04a42f612929be38e37b76c291740ec2ff3ddc2ddd3f57a410e9670",
+      "governed_bytes_sha256": "06e091db2c4945381cd32aa7de0bc307c2461b109ed48b8fe07e88095e016eee",
+      "text_sha256": "16d034e693131676c125507567440ad8405b2180bfbb4d79eb69c28e3536ed62",
+      "text_length": 18644,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:hrpt119-213-passage-health",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+      "raw_sha256": "9e2abb5f78c3a9e9befeb93f4e4a9afc6267319c23758e9c8feb8f53b30f4ef6",
+      "governed_bytes_sha256": "170cc3709875e43038a6446e463b51b90ce2244bf7f1735b86bf1f17c842cc44",
+      "text_sha256": "c8791715f0159cab5e86ee788cbe4054b345d1b5f26be8e3126660c238a0d6c8",
+      "text_length": 42871,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:42usc10364-2024-6938-water",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10364&num=0&edition=2024",
+      "raw_sha256": "f18771df4034d4382e0309798f5c464e61f31741cfca6999f2e1ee4f5a2bc3d4",
+      "governed_bytes_sha256": "93a683371cc8f2270a17a9eef922e8302642ac257547ad288fc97229d686bbfc",
+      "text_sha256": "2506f70df28c0db63ba3fc3b5c16fcf961682949f3d7a2651d807bdc4e4a1057",
+      "text_length": 9642,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:42usc10363-2024-6938-water",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10363&num=0&edition=2024",
+      "raw_sha256": "d39267aa421d3a005e183f2671a3f905d2d3b966ff658c0fa2394bca9e0f16dd",
+      "governed_bytes_sha256": "14ef618399cb6c31a0f325778d58bfbc99b9b3757797251671eedd32da2e4479",
+      "text_sha256": "fd961863208080a67c354d6f326e809912504b944f101d9529ddc9f35083d31f",
+      "text_length": 5973,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:43usc2241-2024-6938-water",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section2241&num=0&edition=2024",
+      "raw_sha256": "e2df1eb3053b705cf2ee8ac028d07e9160f43dbbe3d8fab4c2090859130774d9",
+      "governed_bytes_sha256": "7eb63398cdf067112e5d3fed346f2f2878ffee4ff9802e7c1763ea0571dd6649",
+      "text_sha256": "3d479965b0ecbf9bbcf2dbad84dfcd70c1f7937b8c03e1f3dc01f6948899f175",
+      "text_length": 293,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:43usc510b-2024-6938-water",
+      "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section510b&num=0&edition=2024",
+      "raw_sha256": "e900e7787e742c2b9a8ed720c35f4226c02cbb6895de01d7b827e540265e6dc1",
+      "governed_bytes_sha256": "afac99ea6b63e999c731428d5de40c0c2922410f2d24eb80c685fe3806edf728",
+      "text_sha256": "1d1c90ac7c00ee673bf83faf22b18c1caf57c8ab69c4f1d869921ca76d80293e",
+      "text_length": 10170,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl108-361-calfed-management",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-108publ361/html/PLAW-108publ361.htm",
+      "raw_sha256": "a12789240f5215815ab8ef9a8b0c4358cb11ff0f0fbe9bf1de3909e0f563b531",
+      "governed_bytes_sha256": "758f248135eeefb0e611e06ee76201d9bdec166e1f808808310753d035da80ec",
+      "text_sha256": "26a53211a0529b8cad3a892c87e215445f111dacb21147ceac782d86e701b1d8",
+      "text_length": 1241,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl111-11-rio-grande9106",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+      "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+      "governed_bytes_sha256": "8848b18c4e51a1921ce03199537a77ebdb16304ee881c3faddfd9a8bc9a5fb30",
+      "text_sha256": "99ba1c21c84a51ca0e7653104b4f62bb70f63842d84fe084c88588fef9cfd202",
+      "text_length": 13485,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl111-11-gallup-contract",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+      "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+      "governed_bytes_sha256": "4644724000e694aa45093d3721471247d92c7d1b01eb05d54f8978a8c189a713",
+      "text_sha256": "72f97705773b12e9f8e3206d7b06792495e90a9a23278b082524f027e4c50a1d",
+      "text_length": 3443,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl111-11-navajo-gallup-authorization",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+      "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+      "governed_bytes_sha256": "d6494ca46af79fa39af1ace335831ad56ec07c5bed59a3bf9b52c814ba35b697",
+      "text_sha256": "74197b498dcb3d90d2477a3ee957344102c4dbe750235cfd128741d6207bb34f",
+      "text_length": 1132,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl106-554-dakota-water607",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+      "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+      "governed_bytes_sha256": "0f393c44dcb516d885b50189749ff6e90e6cbb8f323ac30388d95745563fe7c6",
+      "text_sha256": "4c2b682fdf237193ff320639bc650e1ec2274f0add6591a26d9c4e93c54e2d4e",
+      "text_length": 490,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:pl106-554-dakota-water610",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+      "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+      "governed_bytes_sha256": "ed37db70599e6b62c1661cf86ec89033f9cb971b49b6f182e80cd9ebf0669296",
+      "text_sha256": "b877420704f1834cd41b5aa3eeec19797270a5f848390ad3e67b026be0b03ad1",
+      "text_length": 628179,
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "immutable_governed_source_reuse": true,
+      "fresh_parent_raw_replay": false
+    },
+    {
+      "source_id": "govinfo:50usc2501-production-facilities216",
+      "url": "https://www.govinfo.gov/link/uscode/50/2501?year=2024",
+      "raw_path": ".tmp/50usc2501_baseline215.response",
+      "full_text_path": ".tmp/50usc2501_baseline215.txt",
+      "raw_sha256": "137f41fbe850a05e8bcb030195f5559cc34bf2fbfad8bf93c5b5f461c434bacb",
+      "governed_bytes_sha256": "2364799fd945bc899badd1b0adeabea3c20893903ab4c1e77d17995d9c7d062c",
+      "text_sha256": "18a0069f87259662bcd9b0df6ed1c15d40f469ed5271d4f1d7753a133bf72b3e",
+      "text_length": 2426,
+      "captured_full_text_sha256": "f51c210b88fd12ac4b7934cfe96744c7f4468bf16e949dc81668e004c473d8eb",
+      "source_text_extents": [
+        {
+          "start": 2758,
+          "end": 5184,
+          "total": 12050
+        }
+      ],
+      "declared_scope": "Complete2024section2501definitions, including enumerated production facilities and Secretary/Administrator/Congress residual facility branch; not all DOE property."
+    },
+    {
+      "source_id": "govinfo:20usc4441-culture-grants216",
+      "url": "https://www.govinfo.gov/link/uscode/20/4441?year=2024",
+      "raw_path": ".tmp/20usc4441_baseline215.response",
+      "full_text_path": ".tmp/20usc4441_baseline215.txt",
+      "raw_sha256": "d3d0bb2b20164e2d5d5765c4d204c35e4b6509cb931fad09dff53a2a2f5b5cfb",
+      "governed_bytes_sha256": "2b57ca5924d16a0239222350dab5ca274cbae1ae5d4f6eeb48bc2e30ef3473f3",
+      "text_sha256": "c3640534da41c265d6eafbf153e95b62d843c2662d7eb716006c3961ae758177",
+      "text_length": 2506,
+      "captured_full_text_sha256": "251adfaf2e09f1bfd251de4ac5c2bd8a2dc2d7081aff0b6f0c419e7b5fd0ad54",
+      "source_text_extents": [
+        {
+          "start": 4066,
+          "end": 6572,
+          "total": 11469
+        }
+      ],
+      "declared_scope": "Complete2024culture-grant baseline: nonprofit/recognition/programme/board conditions, read with exactC128 edits; Native ancestry/representation not equated with citizenship or immigrant status."
+    },
+    {
+      "source_id": "govinfo:16usc1722-corps-definitions216",
+      "url": "https://www.govinfo.gov/link/uscode/16/1722?year=2024",
+      "raw_path": ".tmp/16usc1722_baseline215.response",
+      "full_text_path": ".tmp/16usc1722_baseline215.txt",
+      "raw_sha256": "080d57321bc1fe5838820c1ffd890c39d722359f8747d43217c80bc281af0536",
+      "governed_bytes_sha256": "3e3a94f40dae8840e32f1fae7511468062f4254db67be24a931dd0b428e71c34",
+      "text_sha256": "4939feceb8f8910e0cf4ef41177488e5cdbde57c9a2d13b9853a23691c9bd462",
+      "text_length": 6111,
+      "captured_full_text_sha256": "2fb506809a66aa0ed074afb744e4fe7d6bf03a21017ea2fee0f8f04301042a43",
+      "source_text_extents": [
+        {
+          "start": 39,
+          "end": 6150,
+          "total": 11044
+        }
+      ],
+      "declared_scope": "Complete2024PublicLandsCorpsdefinitions; qualifiedyouth/project/service-land categories retained, not actual immigration or enrollment determinations."
+    },
+    {
+      "source_id": "govinfo:16usc1723-corps-participants216",
+      "url": "https://www.govinfo.gov/link/uscode/16/1723?year=2024",
+      "raw_path": ".tmp/16usc1723_baseline215.response",
+      "full_text_path": ".tmp/16usc1723_baseline215.txt",
+      "raw_sha256": "5d92afa87770adbd6c2b86ab49f491566e1eaec8b695f5a367a0da663a12d849",
+      "governed_bytes_sha256": "ded07a40a983e843084c1b23e22836ea930d767555c965636ba3f93f6cc99c40",
+      "text_sha256": "24340e2d7020e00e6946bbbbe0843db6ec72feb62d0afee1082957241bc4a043",
+      "text_length": 4323,
+      "captured_full_text_sha256": "61b5e456cfbb2f090dadd245033986f2ab8f4efab718dc4ab2b384ea123e1743",
+      "source_text_extents": [
+        {
+          "start": 4263,
+          "end": 8586,
+          "total": 11924
+        }
+      ],
+      "declared_scope": "Complete2024PLCprogramme: ages16-30/veterans35orunder and only12591(a)(1)(2)(4)(5), not(a)(3); project/contract/preference/approval conditions retained. Not automatically allYCCparticipants."
+    },
+    {
+      "source_id": "govinfo:42usc12591-national-service-criteria216",
+      "url": "https://www.govinfo.gov/link/uscode/42/12591?year=2024",
+      "raw_path": ".tmp/42usc12591_criteria215.response",
+      "full_text_path": ".tmp/42usc12591_criteria215.txt",
+      "raw_sha256": "f2a3cd4f48e771e41bb320e0b0655e95e78c05b70c00eee95c06317efeaaaf86",
+      "governed_bytes_sha256": "6a66d6f4537471377341e8613c7fc3b7d4d542ff9f0ce58efc618f8987258832",
+      "text_sha256": "ec0d06ca2167f2a1164dd6eb5eb0eadec69adc1ac683d302fc171afa6a62128c",
+      "text_length": 1992,
+      "captured_full_text_sha256": "4b8ed72a228d1742bfaecd238b4e16b31814c4fc109f3269ae815e8b1fe0d6d7",
+      "source_text_extents": [
+        {
+          "start": 3168,
+          "end": 5160,
+          "total": 11886
+        }
+      ],
+      "declared_scope": "Complete2024national-service criterion section; PLCimports1/2/4/5, including UScitizen/national/LPR and qualified educational/selection conditions. National-service(a3)age17 and separate(b)age16-25 not substituted forPLCages."
+    },
+    {
+      "source_id": "govinfo:25usc1680c-other-patient-conditions216",
+      "url": "https://www.govinfo.gov/link/uscode/25/1680c?year=2024",
+      "raw_path": ".tmp/25usc1680c_baseline215.response",
+      "full_text_path": ".tmp/25usc1680c_baseline215.txt",
+      "raw_sha256": "5b6a328cec2d3cc5b6614bfe510eac4b0e1b97b66f461fe972156193ca345730",
+      "governed_bytes_sha256": "729d422798cde93775251d69a5ed5c4784acde75b8520a9dcff3abc8615a4a41",
+      "text_sha256": "39c05e668185a84262fc4ee100bffe69ccc14fc07051a0d22db6276941a65273",
+      "text_length": 8216,
+      "captured_full_text_sha256": "be3cea1826e1d2306e21380b23ebddcb515baaa573671d0ad84f3e161f601079",
+      "source_text_extents": [
+        {
+          "start": 5257,
+          "end": 13473,
+          "total": 17352
+        }
+      ],
+      "declared_scope": "Complete2024IHSexceptions(a)-(f): children/spouses/tribal resolutions/non-diminution/charges/reimbursement/publichealth/emergency/pregnancy/family/provider conditions. Non-Indian not immigration-status synonym; no all-person entitlement."
+    },
+    {
+      "source_id": "govinfo:30usc181-mineral-leasing-classes216",
+      "url": "https://www.govinfo.gov/link/uscode/30/181?year=2024",
+      "raw_path": ".tmp/30usc181_baseline215.response",
+      "full_text_path": ".tmp/30usc181_baseline215.txt",
+      "raw_sha256": "a3333910a11c2aa0e9ec2ae0efa804a9883436947e1ea9af09038b09976705eb",
+      "governed_bytes_sha256": "abed3136e1c288748b9cf0d64fd7ffccd44e005625178ad966eb68ae8b4b93f8",
+      "text_sha256": "5a3d81562c06d59d83749251e182e5445efc7abeffc99e9c97f2d0a56cfea4f4",
+      "text_length": 2576,
+      "captured_full_text_sha256": "ac1a83d2d1a2ae1363f7d3b1120113d03310d5f8201fb12ba8979855d9833b31",
+      "source_text_extents": [
+        {
+          "start": 1690,
+          "end": 4266,
+          "total": 13560
+        }
+      ],
+      "declared_scope": "Complete2024MineralLeasingAct opening class/corporation/reciprocity/resource rules; distinct from MiningLawpatent processing and no general immigration/admission rule."
+    },
+    {
+      "source_id": "govinfo:16usc1702-1703-youth-corps216",
+      "url": "https://www.govinfo.gov/link/uscode/16/1703?year=2024",
+      "raw_path": ".tmp/16usc1703_baseline215.response",
+      "full_text_path": ".tmp/16usc1703_baseline215.txt",
+      "raw_sha256": "23dcb3763f6ed4c15430d49226a8d02717c57d82731319a9a88bbfb15c3a693e",
+      "governed_bytes_sha256": "8d898baac01fe4d9e40d6f9639651e35756962fcadb799eca977bfa2cf5aba8c",
+      "text_sha256": "0943ba6276b05a3a76456ff2f2a0f3ecde625b6b4df72f69a743ed4dbac1ab77",
+      "text_length": 4095,
+      "captured_full_text_sha256": "3508eb40b6e45cb1052864f5a6566f6d30c81caaf97ea55eac01dc225838be19",
+      "source_text_extents": [
+        {
+          "start": 1149,
+          "end": 2364,
+          "total": 12163
+        },
+        {
+          "start": 4169,
+          "end": 7048,
+          "total": 12163
+        }
+      ],
+      "declared_scope": "Complete2024YCC1702/1703: permanent-residence geography,15-through18age/90dayterm/compensation and Secretarial employment/project rules. Printed permanent-residence phrase not silently equated with INA-LPR-only; PLCscheme is separate."
+    },
+    {
+      "source_id": "govinfo:23usc202b1-inventory216",
+      "url": "https://www.govinfo.gov/link/uscode/23/202?year=2024",
+      "raw_path": ".tmp/23usc202_baseline215.response",
+      "full_text_path": ".tmp/23usc202_baseline215.txt",
+      "raw_sha256": "080e1f67ce13db850a390a67cd9a6217a402e4e650cc650c6c3814b1f7c5eec5",
+      "governed_bytes_sha256": "4bc4030b2af85e4c178808b63b14e192e2e6118dfab50d5061a28a72c4eb1e30",
+      "text_sha256": "b22f4ddb3a9f855c94479c8d0cce39eaf4a02172cff3594b47d139ebdbd24eab",
+      "text_length": 2951,
+      "captured_full_text_sha256": "6718fcbdf240de1cb1908da0caf2004f7c24fee29297b5dd274cb8e856efee7d",
+      "source_text_extents": [
+        {
+          "start": 11628,
+          "end": 14579,
+          "total": 69490
+        }
+      ],
+      "declared_scope": "Complete2024(b)(1)(A)-(E)inventory categories/primary-access/additional-facility/bridge rules. Bill CBPtransfer clause selects BIA-owned inventory roads, not every inventory road or guaranteed border operation."
+    },
+    {
+      "source_id": "govinfo:48usc1921ce-dated-impact216",
+      "url": "https://www.govinfo.gov/link/uscode/48/1921c?year=2024",
+      "raw_path": ".tmp/48usc1921c_compact215.response",
+      "full_text_path": ".tmp/48usc1921c_compact215.txt",
+      "raw_sha256": "11cd91f4bb4ce8d85f378fd7b68ed8be6158a3996c6d685ffe452fd60c103354",
+      "governed_bytes_sha256": "da35a6cd2ae52638f85e8bdebfc5907858d3c63eb635d5262c554b5f6ac5128f",
+      "text_sha256": "7671aeb1d79a143ba8a443e9c6ca239c2f4036808caf2dc0530ecb22446fc961",
+      "text_length": 9352,
+      "captured_full_text_sha256": "31b3a7686c685d26da72d95011dae8e901c03abca01c83d4218325a1d9186f1e",
+      "source_text_extents": [
+        {
+          "start": 10375,
+          "end": 19727,
+          "total": 37105
+        }
+      ],
+      "declared_scope": "Complete2024dated(e), including affectedjurisdictions/qualifiednonimmigrant/residence,2004-2023grant years/until-expended money,updatedtime-bounded enumeration,allocation/services/health/DOD/notification and expired historicalwaiver. Not fresh2026 30mgrant, zero-current-funds determination or newadmission/benefit status."
+    },
+    {
+      "source_id": "govinfo:pl117167-10114-entities216",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ167/html/PLAW-117publ167.htm",
+      "raw_path": ".tmp/pl117167_entity215.response",
+      "full_text_path": ".tmp/pl117167_entity215.txt",
+      "raw_sha256": "92fec394ce471eddaf306267366644bd70f27ecc385774b2bf0f5e2c0878db2d",
+      "governed_bytes_sha256": "fb809aa6e64561e636a260c6c5c0b2a9436ec03fcafe1c5c23b387c1ae25cf08",
+      "text_sha256": "4072f39be15a6acdd21f7038a165d7332c56d6b4c4d64cc3921a368a013d1c65",
+      "text_length": 7957,
+      "captured_full_text_sha256": "e5d9c0e787ad22986e10293c08c5f225bfffa7468690a606d349c2a5588ecd4d",
+      "source_text_extents": [
+        {
+          "start": 290601,
+          "end": 298558,
+          "total": 1114099
+        }
+      ],
+      "declared_scope": "Complete original10114definition and separatecovered-support/risk/waiver/penalty/report rules. NewB307imports entity definition, not automatic waivers or alloriginal mechanisms; general national is not USnational-only and nationality alone is insufficient forlisting/threat predicates."
+    },
+    {
+      "source_id": "govinfo:30usc29-30-dated-patent-context216",
+      "url": "https://www.govinfo.gov/link/uscode/30/29?year=2024",
+      "raw_path": ".tmp/30usc29_baseline215.response",
+      "full_text_path": ".tmp/30usc29_baseline215.txt",
+      "raw_sha256": "c4e5b518b311cb7f6565a823325f93a050e62fd2b06694ae20094f9135cc6115",
+      "governed_bytes_sha256": "e5a63997f75b0c040c2c7bcabe6f35c4b55c243b04be2f3c890ba2fd091bdff1",
+      "text_sha256": "79d0527e8be123a1c0d5fb045ff1eaf1c67504b965b496e196ed952397e73d2e",
+      "text_length": 6629,
+      "captured_full_text_sha256": "cff6263275b779cd5e0578174f7176e366af569fb1e7ee38052c4adca3a43832",
+      "source_text_extents": [
+        {
+          "start": 273,
+          "end": 4110,
+          "total": 13234
+        },
+        {
+          "start": 6903,
+          "end": 9694,
+          "total": 13234
+        }
+      ],
+      "declared_scope": "Complete2024patent/adverse-claim baseline; C404retains ownSep30,1994 filing/full-compliance exception and all printed otherRScitations. CurrentCode not proof of historical applicant compliance, eligibility or actual patent award; MineralLeasingAct remains separate."
+    },
+    {
+      "source_id": "govinfo:8usc1101a21a33-national-residence216",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+      "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+      "governed_bytes_sha256": "567b275d7c819486124a10a3675ba58e57aa67632ff4c3d41ba41b5d1f5d177b",
+      "governed_parent_source_identity": {
+        "source_id": "govinfo:8usc1101-2024-complete",
+        "source_type": "official_statutory_text",
+        "text_version": "2024 United States Code; pre-2025 baseline",
+        "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+        "governed_bytes_sha256": "02035006378ecca7d1f819f33e9fbb0222b4abebf9c107a0a0dc9f9914d055e0"
+      },
+      "fresh_parent_raw_replay": false,
+      "source_text_extents": [
+        {
+          "start": 32000,
+          "end": 32079,
+          "total": 353001
+        },
+        {
+          "start": 44676,
+          "end": 44853,
+          "total": 353001
+        }
+      ],
+      "declared_scope": "Only complete saved2024(a21)generalnational and(a33)residence definitions; generalnational not USnational-only, residenceprincipalactualdwelling without intent. Originalfull-parent JSON-string digest verified, no fresh raw-byte replay claimed."
+    },
+    {
+      "source_id": "immigration:divisionsBC-roll6-own-record216",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+      "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+      "governed_bytes_sha256": "6bb06e018baac1bce20904608b0e9690b1a89450c08c2f4bac074de365ccd7fe",
+      "source_text_extents": [
+        {
+          "start": 18238,
+          "end": 23225,
+          "total": 23822
+        }
+      ],
+      "fresh_parent_raw_replay": false,
+      "declared_scope": "Only ownB/Cquestion,rule-orderedyeas/nays,electronic419/6/6table andaffirmativeretention/result/reconsideration. A/engrossment/third-reading/passage excluded; literal governed parent, not fresh raw replay."
+    },
+    {
+      "source_id": "congressional-record:6938-finalBC-precedence216",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+      "raw_path": ".tmp/hr6938_explanatory_book3_216.pdf",
+      "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+      "governed_bytes_sha256": "f23c065326c67ec8fab34e01d95f75c377ffa23cd90d4713a84d0d610140e285",
+      "pages_path": ".tmp/hr6938_book3_pages216.json",
+      "selected_pdf_pages": [
+        76,
+        145,
+        217,
+        222,
+        223,
+        224,
+        225,
+        228,
+        229,
+        230
+      ],
+      "text_sha256": "1ea6ae07b2d6fce26fcb364d7d850341f1609a8dc14b01e3dcf68cdbfc78ffd7",
+      "text_length": 103628,
+      "declared_scope": "Full selected finalB/Cpages: division-specific import/replacement/report deadline hierarchy,actualprogramme/territorialtotals,source-boundpublicsafety/Corps/environment/IHScontext. Imageprojecttables not treated as extracted text or current immigration allocations; original Health final visual entries retained separately."
+    },
+    {
+      "source_id": "govinfo:hrpt119213-foreignentities216",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/html/CRPT-119hrpt213.htm",
+      "raw_path": ".tmp/hrpt119213_imports216.response",
+      "full_text_path": ".tmp/hrpt119213_imports216.txt",
+      "raw_sha256": "1ee20586fb499b0d7f1713646622a8d3cc1e7cc30b09dfa8e4062e45e435ee00",
+      "governed_bytes_sha256": "ed03e787096b138b84ae2a01ee4733d329fc43c0a17cfebaa448b5cded2e8533",
+      "text_sha256": "0d71afd320b596551fd21926c2f06a83798ca19c304748e235175ada79493f0e",
+      "text_length": 2297,
+      "captured_full_text_sha256": "7587e79ef9ccf2212c0f6642760e06eaedb999961f251335a4c227a97a1c684c",
+      "source_text_extents": [
+        {
+          "start": 150667,
+          "end": 152964,
+          "total": 461484
+        }
+      ],
+      "declared_scope": "Complete adopted House foreign-entities caption: report180dayAI/infrastructure and90daymagnet directions,attributed concerns not established conduct. FinalBdeadline/replacement rules and current bill control; no general entry ban."
+    },
+    {
+      "source_id": "govinfo:hrpt119215-insular216",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm",
+      "raw_path": ".tmp/hrpt119215_imports216.response",
+      "full_text_path": ".tmp/hrpt119215_imports216.txt",
+      "raw_sha256": "e58109112201814e5e78b6f390cce7926bef9d0ff492e62f21926ce74e67b440",
+      "governed_bytes_sha256": "f06fe302bee4eb70449e7fa0ef5f49e2ff3e508afe0939b6b6b97ac30208563e",
+      "text_sha256": "12be44109524cf39bcf566cf2f84adf23bae2133b09955543bf4ad4ddaec1774",
+      "text_length": 4353,
+      "captured_full_text_sha256": "f80ff78b68794a68a5afd112dc4eabb6992ce69525c755267512233055b9e480",
+      "source_text_extents": [
+        {
+          "start": 154408,
+          "end": 158761,
+          "total": 757508
+        }
+      ],
+      "declared_scope": "Complete adopted House Insular/Compact narrative/directions; earlier recommendations subordinate to final totals/table,geographic/fundingcontext not all migrant-service money."
+    },
+    {
+      "source_id": "govinfo:srpt11946-insular216",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm",
+      "raw_path": ".tmp/srpt11946_imports216.response",
+      "full_text_path": ".tmp/srpt11946_imports216.txt",
+      "raw_sha256": "1383b686deda451d6bf03bdc3c92a3f634d059d7a029cee081130a2b4b5c50ed",
+      "governed_bytes_sha256": "5e9d8346d59e45906f2a61a0e831dddc6a66ac5c2c5aa0e3ad95f381b9e95394",
+      "text_sha256": "8b9e734bb4bc97a1cb413a820f78e31111bfd09efef4ee2b3724d6b1523de178",
+      "text_length": 4523,
+      "captured_full_text_sha256": "297513f9afa5f460a9ec0bc2435ce928e8e863b86921b16f92c54dd45018f977",
+      "source_text_extents": [
+        {
+          "start": 252024,
+          "end": 256547,
+          "total": 653770
+        }
+      ],
+      "declared_scope": "Complete adopted Senate Insular/Compact narrative/directions; earlier recommendation/suballocation context and reported2043economic-assistance horizon not freshindividualbenefits or current class determination."
+    },
+    {
+      "source_id": "govinfo:srpt11946-corps-workforce216",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm",
+      "raw_path": ".tmp/srpt11946_imports216.response",
+      "full_text_path": ".tmp/srpt11946_imports216.txt",
+      "raw_sha256": "1383b686deda451d6bf03bdc3c92a3f634d059d7a029cee081130a2b4b5c50ed",
+      "governed_bytes_sha256": "d79796490674626877c0747f5af48739852799f2d6dcc24c8ceca0c74939536a",
+      "text_sha256": "c10158b37d806c471ddbc455c49a09e00eb66f7e365ecf0cbb417d311d392605",
+      "text_length": 822,
+      "captured_full_text_sha256": "297513f9afa5f460a9ec0bc2435ce928e8e863b86921b16f92c54dd45018f977",
+      "source_text_extents": [
+        {
+          "start": 356228,
+          "end": 357050,
+          "total": 653770
+        }
+      ],
+      "declared_scope": "Complete adopted Senate workforce caption: programmeportfolio andadvancedwildfire training direction; no new citizenship/age/status class or conflation of distinct corps."
+    },
+    {
+      "source_id": "govinfo:hr6938eh-universal-frontmatter216",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+      "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+      "governed_bytes_sha256": "89d8ddee2965ba58cfa92585156b2abcea48b5dc5a209080f4966dc96262816a",
+      "governed_parent_source_identity": {
+        "source_id": "govinfo:hr6938eh-division-a",
+        "source_type": "official_bill_text",
+        "text_version": "EH sections1–5 and complete DivisionA; operative IH/EH texts match",
+        "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+        "governed_bytes_sha256": "1085a34b729ea81e3e7ca81f4dfc8ccdcf5aa5c42abc86775e4e9ea3301ef256"
+      },
+      "source_text_extents": [
+        {
+          "start": 0,
+          "end": 1870,
+          "total": 174034
+        }
+      ],
+      "fresh_parent_raw_replay": false,
+      "declared_scope": "Complete EHsections1-5only: title/contents,division-specificreference rule,Chairstatementon-or-aboutJan7conferenceallocation/implementationeffect forA-C,FY2026appropriationstatement. NoDivisionAprogrammeprojectionontoB/C."
     }
   ],
   "rejected_responses_are_not_evidence": true
