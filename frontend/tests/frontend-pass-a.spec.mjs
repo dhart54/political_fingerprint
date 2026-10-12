@@ -156,8 +156,8 @@ test("chronological ledger filters, progressive reveal, and single receipt expan
   await expect(receipts.first()).toHaveAttribute("data-canonical-action-id", "house:119:1:412");
   await page.getByRole("button", { name: "Show more votes" }).click();
   await expect(receipts).toHaveCount(13);
-  const first = receipts.nth(0).getByRole("button");
-  const second = receipts.nth(1).getByRole("button");
+  const first = receipts.nth(0).locator(":scope > button");
+  const second = receipts.nth(1).locator(":scope > button");
   await first.click();
   await expect(first).toHaveAttribute("aria-expanded", "true");
   await expect(receipts.nth(0)).toContainText("How Valerie P. Foushee voted");
@@ -196,7 +196,7 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
     "data-canonical-action-id",
     "house:119:1:166",
   );
-  await expect(receipts.first().getByRole("button")).toHaveAttribute(
+  await expect(receipts.first().locator(":scope > button")).toHaveAttribute(
     "aria-expanded",
     "true",
   );
@@ -204,7 +204,7 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
   const roll32 = page.locator(
     '[data-canonical-action-id="house:119:1:32"]',
   );
-  await roll32.getByRole("button").click();
+  await roll32.locator(":scope > button").click();
   await expect(roll32).toContainText("overdose-reduction certification");
   await expect(roll32).toContainText("Official vote");
   await expect(roll32).toContainText("Bill or amendment text");

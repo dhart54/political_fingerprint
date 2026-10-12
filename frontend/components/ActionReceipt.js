@@ -14,8 +14,10 @@ import {
   publicActionStatusKind,
 } from "../lib/selectedIssueExperience.mjs";
 import SemanticIcon from "./SemanticIcon";
+import OfficialContactDisclosure from "./OfficialContactDisclosure";
 
 export default function ActionReceipt({
+  contactContext = null,
   expanded,
   highlighted,
   onToggle,
@@ -77,7 +79,7 @@ export default function ActionReceipt({
         </span>
       </button>
       {expanded ? (
-        <ExpandedReceipt representativeName={representativeName} row={row} />
+        <ExpandedReceipt contactContext={contactContext} representativeName={representativeName} row={row} />
       ) : null}
     </article>
   );
@@ -99,7 +101,7 @@ function ActionStatus({ label }) {
   );
 }
 
-function ExpandedReceipt({ representativeName, row }) {
+function ExpandedReceipt({ contactContext, representativeName, row }) {
   const receipt = buildPublicReceipt(row);
   const limitations = receipt.limitations.length
     ? receipt.limitations
@@ -132,6 +134,11 @@ function ExpandedReceipt({ representativeName, row }) {
         <ContextSection values={limitations} />
         <SourcesSection sources={sources} />
       </div>
+      {contactContext?.legislatorId ? <OfficialContactDisclosure
+        key={contactContext.identity}
+        legislatorId={contactContext.legislatorId}
+        representativeName={representativeName}
+      /> : null}
     </div>
   );
 }

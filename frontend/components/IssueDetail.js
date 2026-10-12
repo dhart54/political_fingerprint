@@ -167,6 +167,7 @@ export default function IssueDetail({
       ) : null}
       {state.status === "ready" && (!cardFinding || cardFindingView === "receipts") ? (
         <ChronologicalActionLedger
+          contactContext={routePath === "/" ? { legislatorId, identity: `${legislatorId}:${issue}:${scope}` } : null}
           key={linkedFinding?.requestedAt || "all"}
           highlightedFinding={linkedFinding || highlightedFinding}
           onClearFinding={cardFinding ? () => {

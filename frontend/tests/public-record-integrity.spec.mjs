@@ -48,8 +48,8 @@ for (const additional of [false, true]) {
       await expect(page.locator("#issue-summary")).toContainText("1 additional recorded action is available below");
       const receipt = page.locator('article[data-canonical-action-id="house:119:2:9999"]');
       await expect(receipt).toContainText("Not yet included in the reviewed interpretation");
-      await receipt.getByRole("button").click();
-      await expect(receipt.getByRole("button")).toHaveAttribute("aria-expanded", "true");
+      await receipt.locator(":scope > button").click();
+      await expect(receipt.locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
       await expect(receipt).toContainText("Official sources");
       await expect(analysis).not.toContainText("Additional education action");
       await receipt.scrollIntoViewIfNeeded();
