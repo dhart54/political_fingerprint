@@ -7,6 +7,7 @@ import {
   fetchZipLookup,
 } from "../lib/api";
 import { classifyZipLookupState } from "../lib/zipLookupState.mjs";
+import OfficialSiteHandoff from "./OfficialSiteHandoff";
 
 export default function RepresentativeFinder({
   compact = false,
@@ -239,6 +240,10 @@ export default function RepresentativeFinder({
         >
           Search by representative name
         </button>
+      ) : null}
+
+      {state.status === "ready" && state.mode === "zip" && state.lookup ? (
+        <OfficialSiteHandoff purpose="verify-representation" />
       ) : null}
 
       {state.results.length ? (

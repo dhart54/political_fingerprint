@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { fetchLegislatorContact } from "../lib/api";
 import { buildContactDetails } from "../lib/officialContact.mjs";
+import OfficialSiteHandoff from "./OfficialSiteHandoff";
 
 export default function OfficialContactDisclosure({ legislatorId, representativeName }) {
   const [open, setOpen] = useState(false);
@@ -51,7 +52,10 @@ export default function OfficialContactDisclosure({ legislatorId, representative
 }
 
 function ContactDetails({ details }) {
-  if (details.status === "missing") return <p className="mt-2" role="status">Contact details are not loaded for this record.</p>;
+  if (details.status === "missing") return <>
+    <p className="mt-2" role="status">Contact details are not loaded for this record.</p>
+    <OfficialSiteHandoff purpose="find-member" />
+  </>;
   const hasContact = details.phone || details.websiteUrl || details.formUrl;
   return <>
     <p className="mt-2">{ORIGINS[details.origin]}</p>

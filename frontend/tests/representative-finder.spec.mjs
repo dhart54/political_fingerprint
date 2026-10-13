@@ -46,6 +46,11 @@ test.beforeEach(async ({ page }) => {
 });
 
 const finder = (page) => page.getByTestId("representative-finder");
+const handoff = (page) => finder(page).getByRole("group", { name: "Verify representation on official sites", exact: true });
+const officialLinks = [
+  ["Open official House finder", "https://www.house.gov/representatives/find-your-representative"],
+  ["Open official Senate directory", "https://www.senate.gov/senators/index.htm"],
+];
 const choice = (page, member) => finder(page).getByRole("button", { name: `Select ${member.name_display}`, exact: false });
 
 async function submit(page, mode, query) {
@@ -70,6 +75,16 @@ for (const [label, payload, state] of cases) {
     await expect(status).toContainText(classification.message);
     for (const caveat of classification.caveats) await expect(status).toContainText(caveat);
     await expect(status).not.toContainText("federal representatives for");
+    await expect(status.getByRole("link")).toHaveCount(0);
+    await expect(handoff(page)).toContainText("Enter any location details there yourself");
+    await expect(handoff(page).getByRole("link")).toHaveCount(2);
+    for (const [label, url] of officialLinks) {
+      const link = handoff(page).getByRole("link", { name: label, exact: true });
+      await expect(link).toHaveAttribute("href", url);
+      await expect(link).toHaveAttribute("target", "_blank");
+      await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+      await expect(link).toHaveAttribute("referrerpolicy", "no-referrer");
+    }
     await expect(page).toHaveURL(/\/$/);
     await expect(page.locator("#representative-name")).toHaveCount(0);
     if (payload.house_rep) {
@@ -91,11 +106,15 @@ test("404 unsupported lookup keeps name fallback usable; server errors remain er
   await page.goto("/");
   await submit(page, "zip", "27701");
   await expect(finder(page).getByRole("status")).toHaveAttribute("data-lookup-state", "unsupported_zip");
+  await expect(handoff(page)).toBeVisible();
   await finder(page).getByRole("button", { name: "Search by representative name", exact: true }).click();
   await expect(page.getByLabel("Search by name", { exact: true })).toBeFocused();
   await submit(page, "zip", "99999");
   await expect(finder(page).getByRole("alert")).toContainText("Try a name search");
+  await expect(handoff(page)).toHaveCount(0);
   await submit(page, "name", "Deborah Ross");
+  await expect(choice(page, ross)).toBeVisible();
+  await expect(handoff(page)).toHaveCount(0);
   await choice(page, ross).click();
   await expect(page.locator("#representative-name")).toHaveText(ross.name_display);
 });
@@ -165,12 +184,14 @@ for (const [oldMode, newMode] of [["zip", "name"], ["name", "zip"], ["zip", "zip
     await submit(page, oldMode, oldMode === "zip" ? "27701" : "Foushee");
     await held.pending;
     await expect(finder(page).getByRole("status")).toContainText(oldMode === "zip" ? "Looking up representatives" : "Searching representative records");
+    await expect(handoff(page)).toHaveCount(0);
     await submit(page, newMode, newMode === "zip" ? "32003" : "Ross");
     const member = newMode === "zip" ? bean : ross;
     await expect(choice(page, member)).toBeVisible();
     await held.finish();
     await expect(choice(page, member)).toBeVisible();
     await expect(choice(page, foushee)).toHaveCount(0);
+    await expect(handoff(page)).toHaveCount(newMode === "zip" ? 1 : 0);
     await expect(page).toHaveURL(/\/$/);
   });
 }
@@ -203,6 +224,7 @@ for (const mode of ["zip", "name"]) {
     await held.finish();
     await expect(finder(page).getByRole("alert")).toBeVisible();
     await expect(finder(page).getByRole("list")).toHaveCount(0);
+    await expect(handoff(page)).toHaveCount(0);
   });
 }
 
@@ -266,7 +288,7 @@ test("Back unmounts a pending switch lookup; Forward restores the selected recor
   await expect(page.locator("#representative-name")).toHaveText(foushee.name_display);
 });
 
-for (const width of [320, 390, 1440]) {
+for (const width of [320, 390, 768, 1440]) {
   test(`keyboard lookup, status and qualified selection fit width ${width}`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 });
     const payload = cases[1][1];
@@ -287,6 +309,16 @@ for (const width of [320, 390, 1440]) {
     await page.keyboard.press("Tab");
     await page.keyboard.press("Tab");
     await expect(fallback).toBeFocused();
+    await page.keyboard.press("Tab");
+    const house = handoff(page).getByRole("link", { name: officialLinks[0][0], exact: true });
+    await expect(house).toBeFocused();
+    expect(await house.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe("none");
+    await page.keyboard.press("Tab");
+    await expect(handoff(page).getByRole("link", { name: officialLinks[1][0], exact: true })).toBeFocused();
+    await page.keyboard.press("Shift+Tab");
+    await handoff(page).screenshot({ path: testInfo.outputPath(`finder-link-focus-${width}.png`) });
+    await page.keyboard.press("Shift+Tab");
+    await expect(fallback).toBeFocused();
     await page.keyboard.press("Enter");
     await expect(finder(page).getByLabel("Search by name", { exact: true })).toBeFocused();
     await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -295,6 +327,7 @@ for (const width of [320, 390, 1440]) {
     await page.keyboard.press("Enter");
     await expect(page.locator("#representative-name")).toBeFocused();
     await page.getByRole("button", { name: "Switch representative" }).click();
+    await expect(handoff(page)).toHaveCount(0);
     await expect.poll(() => finder(page).evaluate((node) => node.scrollWidth <= node.clientWidth)).toBe(true);
     await finder(page).getByRole("button", { name: "Close", exact: true }).focus();
     await page.keyboard.press("Enter");
@@ -302,3 +335,28 @@ for (const width of [320, 390, 1440]) {
     await expect(page.getByRole("button", { name: "Switch representative" })).toBeFocused();
   });
 }
+
+test("official ZIP handoff opens only on activation with literal URLs, no referrer and no opener", async ({ page, context }) => {
+  const outbound = [];
+  await context.route(/^https:\/\/.*(?:house|senate)\.gov\//, (route) => {
+    outbound.push({ url: route.request().url(), method: route.request().method(), referrer: route.request().headers().referer });
+    return route.fulfill({ contentType: "text/html", body: "<p>Intercepted official navigation</p>" });
+  });
+  await page.route("**/lookup/zip/27701", (route) => route.fulfill({ json: cases[1][1] }));
+  await page.goto("/"); await expect(handoff(page)).toHaveCount(0);
+  await submit(page, "zip", "27701"); await expect(handoff(page)).toBeVisible();
+  const url = page.url(), historyLength = await page.evaluate(() => history.length);
+  for (const [index, [label, destination]] of officialLinks.entries()) {
+    const link = handoff(page).getByRole("link", { name: label, exact: true });
+    await link.hover(); await link.focus(); expect(outbound).toHaveLength(index);
+    const popupEvent = page.waitForEvent("popup");
+    if (index === 0) await link.press("Enter"); else await link.click();
+    const popup = await popupEvent; await popup.waitForLoadState();
+    expect(outbound[index]).toEqual({ url: destination, method: "GET", referrer: undefined });
+    expect(await popup.evaluate(() => window.opener === null && document.referrer === "")).toBe(true);
+    await popup.close();
+    expect(page.url()).toBe(url); expect(await page.evaluate(() => history.length)).toBe(historyLength);
+    await expect(page.locator("#representative-name")).toHaveCount(0);
+  }
+  expect(outbound).toHaveLength(2);
+});
