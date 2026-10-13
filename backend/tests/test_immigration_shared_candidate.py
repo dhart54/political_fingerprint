@@ -3616,6 +3616,8 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         for witness in previous['governed_source_identities']:
             self.assertIn(witness, core['governed_source_identities'])
         text = core['candidate_exact_action_meaning']
+        self.assertIn('47-1806.04(f)(1)(D)', text)
+        self.assertNotIn('47-1806.04(f-1)(1)(D)', text)
         for term in ['same amounts and extent', 'taxresidency', 'An ITIN is not proof of immigration status',
                      'not separately vote on noncitizens', 'separate untargeted emergency26-214law']:
             self.assertIn(term, text)
@@ -3634,9 +3636,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         reviews = {row['action_id']: row for row in self.values[3]['records']}
         core_ids = {row['action_id'] for row in self.products[0]['actions']}
         for roll, required in [(55, 'govinfo:30usc24-proof221'),
-                               (89, 'govinfo:15usc638-operative-body221'),
-                               (191, 'govinfo:8usc1612-2024-complete'),
-                               (193, 'govinfo:16usc1371b-deleted-baseline221')]:
+                               (191, 'govinfo:8usc1612-2024-complete')]:
             aid = f'house:119:2:{roll}'
             with self.subTest(action=aid):
                 row = reviews[aid]
@@ -3646,7 +3646,37 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertIn(required, {s['source_id'] for s in row['sources']})
                 self.assertNotIn(aid, core_ids)
         self.assertIn('resolved nondirectional', reviews['house:119:2:191']['rationale'])
-        self.assertIn('nor is the new undefined AlaskaNative statutory term automatically equated', reviews['house:119:2:193']['rationale'])
+
+
+    def test_unresolved_imported_status_relationships_withdraw_completion_credit(self):
+        from pathlib import Path
+        universe = self.values[2]
+        reviews = {row['action_id']: row for row in self.values[3]['records']}
+        bank = {row['source_id']: row for row in self.values[1]['sources']}
+        receipt = json.loads((DATA / 'programme_status_screening_checkpoint221.json').read_text(encoding='utf-8'))
+        original = json.loads((DATA / 'programme_status_original_completion_checkpoint221_preserved222.json').read_text(encoding='utf-8'))
+        for roll, witness in [(89, 'govinfo:13cfr121702-2025-ownership221'),
+                              (193, 'govinfo:50cfr18-3-2025-native221')]:
+            aid = f'house:119:2:{roll}'
+            with self.subTest(action=aid):
+                row = next(row for row in universe['candidate_dispositions'] if row['action_id'] == aid)
+                self.assertEqual(row['disposition'], 'source_unresolved')
+                self.assertFalse(row['review_progress']['substantive_review_performed'])
+                self.assertTrue(row['review_progress']['source_application_relationship_unresolved'])
+                self.assertFalse(row['review_progress']['required_evidence_unavailable'])
+                self.assertIn(witness, {source['source_id'] for source in row['sources']})
+                self.assertNotIn(aid, reviews)
+                self.assertNotIn(aid, receipt['completed_action_ids'])
+                self.assertNotIn(aid, receipt['completed_researched_holds'])
+                self.assertIn(aid, original['completed_action_ids'])
+                self.assertIn(aid, universe['unresolved_action_ids'])
+        self.assertIn('PhaseII', next(row['reason'] for row in universe['candidate_dispositions']
+                                     if row['action_id'] == 'house:119:2:89'))
+        self.assertIn('citizenship', next(row['reason'] for row in universe['candidate_dispositions']
+                                         if row['action_id'] == 'house:119:2:193'))
+        self.assertIn('on or afterSeptember11,2001', reviews['house:119:2:191']['rationale'])
+        self.assertEqual(bank['govinfo:hr6047eh']['text'][6230:6404],
+                         reviews['house:119:2:191']['claim_source_map'][-1]['passage'])
 
     def _assert_HR5371_whole_qualified_core(self, core):
         self.assertEqual(core['legislative_stage'], 'final_passage')

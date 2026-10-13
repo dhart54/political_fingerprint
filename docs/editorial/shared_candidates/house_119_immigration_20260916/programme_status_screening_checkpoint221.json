@@ -4,21 +4,19 @@
   "completed_action_ids": [
     "house:119:2:55",
     "house:119:2:56",
-    "house:119:2:89",
-    "house:119:2:191",
-    "house:119:2:193"
+    "house:119:2:191"
   ],
   "new_source_qualified_action_id": "house:119:2:56",
   "correction_action_id": "house:119:1:281",
   "original_Health_core_sha256": "bbf3ba47e9e687258790712c975046346755387da99690de28159143c1ff6d32",
   "original_Health_prefix_identity18witnesses_limits_preserved": true,
-  "new_DC_core_sha256": "c8a081e41e9dcb380eb6dac21ef246f5f65a2b8f42c7ceda723479d321a565d5",
+  "new_DC_core_sha256": "8d71ce7f95000b9c09fa0b3c72959f11ce1c3dfea91f2f3ddf2ca95e52a3269d",
   "corrected_HR5371_core_sha256": "41949341027d8a25e18339add7c98799138c08628b5f384fd574e080acfe8cbe",
   "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_source_quality_checkpoint221.json",
   "source_quality_sha256": "d5523386b08e1a155c92ed9d7d43268ae961f6799e654380c101616aa3f9f071",
   "counts_after": {
-    "reviewed": 634,
-    "pending": 42,
+    "reviewed": 632,
+    "pending": 44,
     "meanings": 60,
     "behavioral_propositions": 102,
     "independent_episodes": 53,
@@ -26,7 +24,7 @@
     "application_questions": 70,
     "partial_packages": 3,
     "ordinary_pending": 17,
-    "researched_holds_pending": 25
+    "researched_holds_pending": 27
   },
   "prior_pending_rows": {
     "house:119:2:55": {
@@ -353,9 +351,7 @@
   ],
   "completed_researched_holds": [
     "house:119:2:55",
-    "house:119:2:89",
-    "house:119:2:191",
-    "house:119:2:193"
+    "house:119:2:191"
   ],
   "H_R_2860_generic_pending_enum_reconciled_as_existing_researched_hold": true,
   "all_history_Health_sources_and_frozen_notes_preserved": true,
@@ -369,6 +365,13 @@
   "editorial_acceptance": false,
   "publication_authorized": false,
   "benchmark": "FAIL unchanged; four inherited holds plus one ordinary case and inherited correction are not five comparable routine cycles; all elapsed overhead retained",
-  "receipt_sha256": "1095431240bd47ee9c418b0bd7ee1cd41f4d303287182059bb3b7deba2c3ec33",
-  "all_other58cores628reviews670rows98props_expected_exact": true
+  "receipt_sha256": "c6404eb092fde07a65e4b83106102d04417be779a1b8b76303af269b18c9901d",
+  "all_other58cores628reviews670rows98props_expected_exact": true,
+  "withdrawn_completed_candidate_action_ids": [
+    "house:119:2:89",
+    "house:119:2:193"
+  ],
+  "original221_completion_receipt_preserved_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_original_completion_checkpoint221_preserved222.json",
+  "completion_credit_corrected_after_independent_review222": true,
+  "original_new_DC_core_sha256": "c8a081e41e9dcb380eb6dac21ef246f5f65a2b8f42c7ceda723479d321a565d5"
 }

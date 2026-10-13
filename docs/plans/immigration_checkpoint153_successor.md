@@ -3770,3 +3770,71 @@ all declared historical boundaries. New-head hostedCI and independent221review
 remain pending; feature-only delivery continues. No new research batch is started
 after this delivery because observed selected-action throughput exceeds the
 10minute ceiling and the original routine benchmark remainsFAIL.
+
+### Checkpoint222 independent-review correction
+
+Pinned221head4c3aa8bd44b8d6c5ad97af46ff67adfd86fa7a9c. Independent221final report
+identity is reportedSHA2cd4ffd45360a39a6d7268bf7497a5bdf9828eb2c9c18bcc6fe2d2fec3646a93,
+824seconds,51conservation checks,seven CLI outputs,15tests and17resealed negative
+assertions. Full report bytes were not locally received or rehashed. All three220
+P3fixes close.55and191exclusions and56relationship are otherwise supported.
+
+Two221P2s require completion-credit withdrawal.89creates a strategic allocation
+expressly calledPhaseII, while boundSBA121.702applies citizen/LPR or other specified
+ownership/control eligibility at PhaseI/IIaward time. Absence of a novel status
+class cannot dispose of that existing criterion's application.193replaces
+Indian/Aleut/Eskimo with undefinedAlaskaNative while boundFWS/NOAAdefinitions
+include citizenship; that unresolved statutory relationship prevents completed
+screening even after baseline capture. Both are restored researched-pending,
+noncounting, without automatic inclusion or legal/editorial judgment. Original221
+records/rationales and exact completion receipt are retained as historical evidence;
+active221receipt withdraws both credits. TwoP3s also correct56's(f)(1)(D)locator
+and191's on-or-afterSeptember11,2001date. NewV18core corrects only56locator, leaving
+its originalHealthprefix/identity/witnesses/limits exact; originalV17provider stays.
+
+Counts632reviewed/44pending,60cores/102propositions,53episodes/sixmulti-action,
+70questions/threepartialpackages. Queue17ordinary/27researched holds; three
+authoritative conflicts, one recorded primary-access hold and23material
+source/stage/application holds.2860remains researched despite genericpending enum.
+No new source acquisition or canonical source/manifest/privatepool modification.
+Three targeted regressions pass in7.482seconds; complete focusedsemantic gate,
+seven-byte replay and correction conservation follow. Tests must not rubber-stamp
+unresolved applications as exclusions. No new completed-screening credit.
+
+CI38435734815is genuinely failed:8jobs succeeded and355candidate tests passed in
+531.71seconds before the accepted-regression pytest invocation requested missing
+backend/tests/test_measure_reference.py. Syntheticworkflow5cdf93490666b896929d19cac3c9ab7c22a3aba9
+(blob26428f0ee7aa1d9ad920dcafe00c96b1193234c6)combines main's test addition and
+this branch's candidate checks, but m14hcheckout explicitly used featurehead221.
+Four subsequent substantive steps are unvalidated, distinct from four other
+branch-conditional guards and two skipped setup-tool post steps. Actual checkout
+contexts5feature/3synthetic/1mixed, successfulcontexts4feature/3synthetic/1mixed.
+Failed run/logs and111m12send-to-end batch timing remain immutable. BenchmarkFAIL.
+
+Recommended isolated workflow-only maintenance onmain moves only the new
+measure-reference regression into a mandatory explicitgithub.sha synthetic-merge
+job, retaining existing feature-headcandidate/acceptedM14Htests. Copying one missing
+test into this branch is insufficient; its main implementation/helper dependencies
+are absent. No missing-file skip, weakened coverage, main merge or candidate CI
+edit. Earlier whole-M14Hdual-tree private proposal was unapplied and superseded by
+this narrower recommendation. Parent assigns maintenance ownership separately.
+
+Separable next-batch inventory only:2:308/2:207foreign sanction/admission mechanisms,
+1:252narrow designated-area security,2:157retail investigative powers and2:310fraud
+information-use constraints. Existing source identities and literal locator leads
+are saved privately; no whole-review/completion credit or numeric-order choice.
+Hold restorations/corrections take priority over further screenings.
+
+222final local gate:378focused tests in296.746seconds (201candidate included),
+seven semantic checks, IR and seven byte-exact CLI replay pass. Full conservation
+verifies other59cores/630reviews/672rows/100propositions/readable findings exact;
+all source/manifest/private bytes and Health/history/V17providers, original221
+completion evidence, failedCI logs/timing and notes remain exact. Two private
+verifier assumptions (keyword syntax and pre221-versus221 comparison boundary)
+were corrected without candidate changes; failed verifier retained.
+
+Prepare one local correction commit for the four material review findings. Push
+is held for parent-assigned isolatedCImaintenance readiness, avoiding another
+known workflow/checkout failure. CI38435734815remainsfailed; no new-head hosted
+CI or independent222correction review is claimed. No routine user approval gate,
+new research batch, main merge, workflow edit, publication or production change.
