@@ -14,6 +14,86 @@ const contact = {
 const trigger = (receipt) => receipt.getByRole("button", { name: "Official contact information", exact: true });
 const panel = (receipt) => receipt.getByRole("region", { name: "Official contact information", exact: true });
 const close = (receipt) => panel(receipt).getByRole("button", { name: "Close contact information", exact: true });
+const missing = { legislator_id: foushee.id, contact_status: "not_loaded", data_source: "none" };
+const handoff = (receipt) => panel(receipt).getByRole("group", { name: "Find this member in official directories", exact: true });
+const officialDirectories = [
+  ["Open official House directory", "https://www.house.gov/representatives"],
+  ["Open official Senate directory", "https://www.senate.gov/senators/index.htm"],
+];
+
+for (const width of [320, 390, 768, 1440]) test(`missing-contact directories support repeated keyboard open/close and fit ${width}px`, async ({ page }, testInfo) => {
+  await page.setViewportSize({ width, height: 900 });
+  await page.route("**/legislators/*/contact", (route) => route.fulfill({ json: missing }));
+  const receipt = await selectedReceipt(page);
+  for (let cycle = 0; cycle < 2; cycle++) {
+    await trigger(receipt).focus(); await page.keyboard.press("Enter");
+    await expect(handoff(receipt)).toContainText("Look for this member by name");
+    await expect(handoff(receipt)).toContainText("Current directories may not include former members");
+    await expect(panel(receipt)).not.toContainText(/Retrieved:|Stored contact|Curated fallback|your representative/i);
+    await expect(panel(receipt).getByRole("link")).toHaveCount(2);
+    await page.keyboard.press("Tab"); await expect(close(receipt)).toBeFocused();
+    for (const [label, url] of officialDirectories) {
+      await page.keyboard.press("Tab");
+      const link = handoff(receipt).getByRole("link", { name: label, exact: true });
+      await expect(link).toBeFocused();
+      await expect(link).toHaveAttribute("href", url);
+      await expect(link).toHaveAttribute("target", "_blank");
+      await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+      await expect(link).toHaveAttribute("referrerpolicy", "no-referrer");
+      expect(await link.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe("none");
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    expect(await handoff(receipt).evaluate((node) => node.scrollWidth <= node.clientWidth)).toBe(true);
+    if (cycle === 0) await receipt.screenshot({ path: testInfo.outputPath(`missing-contact-${width}.png`) });
+    await page.keyboard.press("Shift+Tab"); await page.keyboard.press("Shift+Tab");
+    await expect(close(receipt)).toBeFocused(); await page.keyboard.press("Enter");
+    await expect(panel(receipt)).toHaveCount(0); await expect(trigger(receipt)).toBeFocused();
+  }
+});
+
+test("missing-contact directory activation preserves receipt/history and sends no record context", async ({ page, context }) => {
+  const outbound = [], requests = [];
+  await page.route("**/legislators/*/contact", (route) => {
+    requests.push({ method: route.request().method(), url: route.request().url() });
+    return route.fulfill({ json: missing });
+  });
+  await context.route(/^https:\/\/.*(?:house|senate)\.gov\//, (route) => {
+    outbound.push({ url: route.request().url(), method: route.request().method(), referrer: route.request().headers().referer });
+    return route.fulfill({ contentType: "text/html", body: "<p>Intercepted official navigation</p>" });
+  });
+  const receipt = await selectedReceipt(page);
+  const before = await receipt.locator("div.grid").innerHTML(), url = page.url();
+  const historyLength = await page.evaluate(() => history.length);
+  expect(requests).toEqual([]); expect(outbound).toEqual([]);
+  await trigger(receipt).press("Enter"); await expect(handoff(receipt)).toBeVisible();
+  expect(requests).toEqual([{ method: "GET", url: `http://localhost:8000/legislators/${foushee.id}/contact` }]);
+  for (const [index, [label, destination]] of officialDirectories.entries()) {
+    const link = handoff(receipt).getByRole("link", { name: label, exact: true });
+    await link.hover(); await link.focus(); expect(outbound).toHaveLength(index);
+    const popupEvent = page.waitForEvent("popup");
+    if (index === 0) await link.click(); else await link.press("Enter");
+    const popup = await popupEvent; await popup.waitForLoadState();
+    expect(outbound[index]).toEqual({ url: destination, method: "GET", referrer: undefined });
+    expect(await popup.evaluate(() => window.opener === null && document.referrer === "")).toBe(true);
+    await popup.close();
+    expect(await receipt.locator("div.grid").innerHTML()).toBe(before);
+    expect(page.url()).toBe(url); expect(await page.evaluate(() => history.length)).toBe(historyLength);
+  }
+  expect(outbound).toHaveLength(2);
+  await close(receipt).click(); await expect(trigger(receipt)).toBeFocused();
+});
+
+for (const change of ["issue", "scope"]) test(`ready missing-contact handoff resets after ${change} change`, async ({ page }) => {
+  await page.route("**/legislators/*/contact", (route) => route.fulfill({ json: missing }));
+  const receipt = await selectedReceipt(page);
+  await trigger(receipt).click(); await expect(handoff(receipt)).toBeVisible();
+  if (change === "scope") await page.getByRole("button", { name: "All available Congresses", exact: true }).click();
+  else await page.getByRole("button", { name: "Browse vote record for Economy & Taxes", exact: true }).click();
+  await expect(page.getByRole("group", { name: "Find this member in official directories", exact: true })).toHaveCount(0);
+  const next = page.locator("[data-canonical-action-id]").first();
+  await next.locator(":scope > button").click(); await trigger(next).click();
+  await expect(handoff(next)).toBeVisible();
+});
 
 test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -36,7 +116,10 @@ for (const width of [320, 390, 1440]) test(`optional contact keyboard flow resto
 
 const states = [
   ["curated fallback", { ...contact, data_source: "curated_fallback" }, "Curated fallback contact details", 4],
-  ["missing", { legislator_id: foushee.id, contact_status: "not_loaded", data_source: "none" }, "Contact details are not loaded", 0],
+  ["missing", missing, "Contact details are not loaded", 2],
+  ["missing with stray fields", { ...contact, contact_status: "not_loaded" }, "Contact details are not loaded", 2],
+  ["loaded empty", { legislator_id: foushee.id, contact_status: "loaded" }, "Contact details are not available in this response", 0],
+  ["wrong-member missing", { ...missing, legislator_id: "leg_thomas_massie" }, "Contact information is unavailable right now", 0],
   ["partial", { legislator_id: foushee.id, contact_status: "loaded", phone: contact.phone }, "Retrieval date not supplied", 1],
   ["unsafe", { ...contact, phone: "2022251784;ext=99", official_website_url: "javascript:alert(1)", contact_form_url: "https://foushee.house.gov/contact?vote=32", source_url: "https://foushee.house.gov.evil.example/" }, "Some supplied contact details could not be displayed", 0],
   ["wrong member", { ...contact, legislator_id: "leg_thomas_massie" }, "Contact information is unavailable right now", 0],
@@ -49,6 +132,7 @@ for (const [name, payload, message, linkCount, status = 200] of states) test(`co
   const before = await receipt.locator("div.grid").innerHTML();
   await trigger(receipt).click(); await expect(panel(receipt)).toContainText(message);
   await expect(panel(receipt).getByRole("link")).toHaveCount(linkCount);
+  await expect(handoff(receipt)).toHaveCount(name.startsWith("missing") ? 1 : 0);
   await expect(panel(receipt)).not.toContainText(/verified today|your representative|currently serves/i);
   expect(await receipt.locator("div.grid").innerHTML()).toBe(before);
   await close(receipt).click(); await expect(trigger(receipt)).toBeFocused();
@@ -157,10 +241,10 @@ test("member switching cannot render late contact details in another member's re
   await expect(panel(next)).toContainText("Thomas Massie");
 });
 
-test("contact preserves all six cards, finding/source hash, history and exact source markup in both scopes", async ({ page }) => {
+for (const [stateName, response, message] of [["loaded", contact, "Stored contact details"], ["missing", missing, "Contact details are not loaded"]]) test(`${stateName} contact preserves all six cards, finding/source hash, history and exact source markup in both scopes`, async ({ page }) => {
   test.setTimeout(60_000);
   await releasedResponses(page);
-  await page.route("**/legislators/*/contact", (route) => route.fulfill({ json: contact }));
+  await page.route("**/legislators/*/contact", (route) => route.fulfill({ json: response }));
   for (const scope of ["all", "119"]) {
     await page.goto(`/?representative=${foushee.id}&scope=${scope}`);
     const cards = page.getByTestId("record-card-entry"); await expect(cards).toHaveCount(6);
@@ -174,7 +258,7 @@ test("contact preserves all six cards, finding/source hash, history and exact so
     const receipt = page.locator("[data-canonical-action-id]").first();
     await expect(receipt.locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
     const before = await receipt.locator("div.grid").innerHTML(), url = page.url();
-    await trigger(receipt).click(); await expect(panel(receipt)).toContainText("Stored contact details");
+    await trigger(receipt).click(); await expect(panel(receipt)).toContainText(message);
     await close(receipt).click(); expect(page.url()).toBe(url);
     expect(await receipt.locator("div.grid").innerHTML()).toBe(before);
     await page.goBack(); await expect(page).toHaveURL(detailUrl);
@@ -203,7 +287,8 @@ test("a sparse Senate receipt has the same optional honest missing-contact discl
   await page.goto(`/?representative=${senator.id}&scope=119&issue=EDUCATION_WORKFORCE`);
   const receipt = page.locator("[data-canonical-action-id]").first(); await receipt.locator(":scope > button").click();
   await trigger(receipt).click(); await expect(panel(receipt)).toContainText("Contact details are not loaded");
-  await expect(panel(receipt)).toContainText(senator.name_display); await expect(panel(receipt).getByRole("link")).toHaveCount(0);
+  await expect(panel(receipt)).toContainText(senator.name_display); await expect(panel(receipt).getByRole("link")).toHaveCount(2);
+  await expect(handoff(receipt)).toContainText("Current directories may not include former members");
 });
 
 test("the recorded-snapshot review route stays isolated from live contact metadata", async ({ page }) => {
