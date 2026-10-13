@@ -3558,6 +3558,30 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 with self.assertRaises(AssertionError):
                     self._assert_precise_Dakota_section(row, parent, number)
 
+    def _assert_HR4553_section108_direct_rule(self, core):
+        meaning = core['candidate_exact_action_meaning']
+        for text in ['Secretary of the Army', 'As of enactment and each fiscal year thereafter',
+                     'not to promulgate or enforce a regulation', '36CFR327.0as in effect at enactment',
+                     'not otherwise prohibited by law',
+                     'AND possession complies with the law of the State']:
+            self.assertIn(text, meaning)
+        self.assertNotIn('firearm funding/enforcement restriction', meaning)
+        bank = {r['source_id']: r for r in self.values[1]['sources']}
+        actual = bank['govinfo:hr4553eh']['text'][17189:17836]
+        self.assertTrue(any(r['source_id'] == 'govinfo:hr4553eh' and r['passage'] == actual
+                            for r in core['claim_source_map']))
+
+    def test_HR4553_section108_keeps_direct_actor_continuing_scope_and_both_conditions(self):
+        core = next(r for r in self.products[0]['actions'] if r['action_id'] == 'house:119:1:239')
+        self._assert_HR4553_section108_direct_rule(core)
+
+    def test_HR4553_section108_regression_detects_historical_funding_label(self):
+        old = json.loads((DATA.parent / 'house_119_energy_qualification_checkpoint218' /
+                          'shared_action_core_proposal.json').read_text(encoding='utf-8'))
+        core = next(r for r in old['actions'] if r['action_id'] == 'house:119:1:239')
+        with self.assertRaises(AssertionError):
+            self._assert_HR4553_section108_direct_rule(core)
+
     def test_funding_shared_prose_excludes_joined_member_name_tokens(self):
         for aid in ['house:119:1:239', 'house:119:2:6', 'house:119:2:7']:
             action = next(r for r in self.values[0]['actions'] if r['action_id'] == aid)

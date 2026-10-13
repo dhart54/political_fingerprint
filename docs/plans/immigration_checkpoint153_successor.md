@@ -3601,3 +3601,40 @@ gates. Cheap postguidance semantic check initially omitted harnessNODE_PATH;
 failedphase preserved, existing path reused without installs/config changes.
 Finalresolved sevenchecks pass; allother finalgates remain. No API-throttling
 attribution, causalspeedup, comparablecycle credit or benchmarkacceptance.
+
+
+## Checkpoint219 bounded correction and shutdown pause
+
+Dylan requested PC shutdown around02:02UTC13October2026 and quiescence by
+01:55UTC. Scope expansion stopped; await explicit Resume before further work.
+H.R.4553section108 now states the continuing Secretary-of-the-Army regulatory
+prohibition, dated project boundary and both otherwise-lawful/State-law conditions.
+Seven selected claim excerpts bind already-governed EH operators. All28existing
+witnesses, Health prefix/limits and member outcomes remain; other57cores,
+627reviews,675inventory rows and96propositions/readable findings are unchanged.
+Counts remain628reviewed/48pending,58meanings/98behavioral propositions.
+
+Five targeted tests pass (reported30.117seconds), seven semantic checks and IR
+validation pass. Seven generated outputs pass JSON-object replay equivalence;
+this is not a fresh CLI byte replay. Full194candidate/371focused suites, fresh
+CLI replay, final-head CI and independent219review remain outstanding after Resume.
+Conservation helper originally assumed49propositions per member; actual preserved
+member counts are50/48. Failed helper retained privately; corrected guard verifies
+both individual counts and all96unchanged propositions, without artifact changes.
+Final218review was received: reported639seconds,39checks,7CLIreplays,4tests,
+noP2; the oneP3 and selected claim-map precision are addressed in219. Report hash
+is received metadata; full report bytes were not received or locally rehashed.
+
+H.R.5371SeptemberHouse281 remains pending. Complete EH and PL119-4 reads,
+exact incorporation exceptions and source-chain notes are saved in the partial
+research receipt. One publicGovInfo PL117-43 capture (HTTP200,0.435seconds)
+is saved privately with raw/text hashes. Section144's referenced DivisionB1701
+is the wildland-fire premium-pay cap; the initial Afghan namespace assumption
+was corrected before authoring. No H.R.5371 candidate or disposition was changed.
+Resume from the saved exact-source chain, never substitute later EAS/PL119-37.
+
+BenchmarkFAIL unchanged; partial research/inherited correction earns no comparable
+routine-cycle completion credit. Preserve both earlier untracked shutdown notes,
+original sources, capture pool, historical providers and frozen218private evidence.
+Post-delivery exact head/remoteCI/process/ownership state goes in a new219shutdown
+note. No merge, deployment, publication, editorial acceptance or production change.
