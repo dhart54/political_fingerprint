@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 58,
+        "eligible_substantive_actions": 59,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 58,
-        "resolved_eligible_actions": 58,
-        "directional_yes_no_positions": 58,
+        "in_service_eligible_actions": 59,
+        "resolved_eligible_actions": 59,
+        "directional_yes_no_positions": 59,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 51,
+        "complete_episodes": 52,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -533,6 +533,25 @@
             ],
             "evidence_episode_ids": [
               "episode:hr3486:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:9a0a256081e97874",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:281"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr5371:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -1105,6 +1124,7 @@
             "prop:1ce3bdaff418d660",
             "prop:4c7d1ec52257e1f5",
             "prop:bece0fc78218887e",
+            "prop:9a0a256081e97874",
             "prop:de287b6e79b417ea",
             "prop:42201bf4e2ad1ed7",
             "prop:7de756514299e478",
@@ -1161,6 +1181,7 @@
           "house:119:1:23",
           "house:119:1:239",
           "house:119:1:264",
+          "house:119:1:281",
           "house:119:1:298",
           "house:119:1:299",
           "house:119:1:32",
@@ -1216,17 +1237,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 58,
+        "eligible_substantive_actions": 59,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 58,
-        "resolved_eligible_actions": 58,
-        "directional_yes_no_positions": 56,
+        "in_service_eligible_actions": 59,
+        "resolved_eligible_actions": 59,
+        "directional_yes_no_positions": 57,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 51,
+        "complete_episodes": 52,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1744,6 +1765,25 @@
             ],
             "evidence_episode_ids": [
               "episode:hr3486:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:9a0a256081e97874",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:281"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr5371:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -2278,6 +2318,7 @@
             "prop:c9ed961f9ee13bd6",
             "prop:4c7d1ec52257e1f5",
             "prop:4dc6a405be8d5d4d",
+            "prop:9a0a256081e97874",
             "prop:b34441eb4c463db8",
             "prop:e0ad2713154e482b",
             "prop:6d4c9fef6727ca52",
@@ -2351,6 +2392,7 @@
           "house:119:1:23",
           "house:119:1:239",
           "house:119:1:264",
+          "house:119:1:281",
           "house:119:1:298",
           "house:119:1:299",
           "house:119:1:32",
@@ -2548,6 +2590,14 @@
       "constraint_id": "source:house119-roll239-whole-qualified",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Own whole passage; preserve Act-versus-otherActs/fiscal2025/date/report scopes, exact status/facility/list/threat and lawful-possession exceptions. Printed USperson is not silently FISA/citizen-only. No component stance, individual current-law benefit, enactment, acceptance or publication. Section108is the Secretary of the Army continuing regulatory prohibition asof enactment/eachlaterfiscalyear, with dated36CFR327.0boundary and both lawful/State conditions."
+    },
+    {
+      "action_ids": [
+        "house:119:1:281"
+      ],
+      "constraint_id": "source:house119-roll281-whole-qualified",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Whole SeptemberHousechoice; retain PL1194FY2025import/PL11842-11847exceptions, rates not full-year cash, qualified status/visa/care/report/facility limits, jurisdictionalbase grants, correctwildfire namespace and separateprogramme durations. No component stance, individual/currentlaw or acceptance inferred."
     }
   ]
 }

@@ -3638,3 +3638,66 @@ routine-cycle completion credit. Preserve both earlier untracked shutdown notes,
 original sources, capture pool, historical providers and frozen218private evidence.
 Post-delivery exact head/remoteCI/process/ownership state goes in a new219shutdown
 note. No merge, deployment, publication, editorial acceptance or production change.
+
+
+## Resume and coherent H.R.5371 qualification: checkpoint220
+
+Dylan explicitly resumed on13October2026. Native Windows DESKTOP-1CQBHTJ and
+existing .w/ib reconcile to45d3caed, clean tracked/index state, all three original
+untracked shutdown notes and frozen219evidence exact. No checkout duplicated.
+At that exact head371owner-local tests (including194candidate tests) passed in
+254.734seconds; seven semantic checks, IR validation and seven fresh CLI byte
+replays passed. Actual219CI38333913418 has nine fresh first-attempt successes,
+5feature/3synthetic/1mixed checkouts and four unrun conditional guards. Reported
+cloud-only219review closed the108P3:30checks, preserved98propositions/28identities,
+seven selected excerpts,562seconds. Full report bytes were not locally received.
+Resume validation and received-review receipts preserve actual versus reported scope.
+The transient capacity retry continued from these completed results without reruns.
+
+H.R.5371September19House281 now has a source-qualified candidate:629reviews,
+47pending,59cores,100behavioral propositions,52episodes/sixmulti-action episodes.
+Both own recorded Nays yield opposition to one mixed whole choice; no component
+stance. Original Health two-witness identity, meaning prefix and limits remain.
+Direct continued DHS/EOIR/SCAAP/care/status mechanisms establish the proposed
+Immigration relationship independently from title or Health membership.
+
+Twelve source appends reuse saved whole-law parents and the hashed219PL11743
+capture; one fresh publicGovInfo House Record acquisition took0.357seconds,
+HTTP200, no retries. Own rejectedrecommit/H5450 and stated-for declarations remain
+separate from passage217/212/3. Exact1194DivisionA/11842-11847exceptions and rates,
+qualified LSC/employment/entity/facility conditions, HeadStart jurisdictional base
+grants, wildland-fire1701amendment chain and independentFDA/VA/grain/fee/loan dates
+are preserved. All37witness identities and55literalclaim mappings are verified.
+
+Cheap preflight caught TOC/body scope and compact/claim outcome-layer placement
+before any provider writes. Outcome evidence remains in outcome identities and
+review-record traceability; operative claims use their established layer. Three
+selected excerpts were completed at clause boundaries before the full gate,
+with the initial draft preserved. Manifest own count corrected to1311entries.
+Private verifier assumptions about opposition enum and capture-versus-source-bank
+counts failed and were corrected without semantic changes. Failure helpers retained.
+Conservation preflight3.553seconds verifies all other58cores/628reviews/675rows/
+98propositions and readable findings exact, all Health/history/providers and prior
+source/manifest/capture prefixes exact, all original notes/private219evidence exact.
+No full220gate had run at that preflight; targeted regression coverage adds two
+whole-choice/source-layer tests. Full373focused tests (196candidate included),
+semantic/IR and seven-byte CLI replay, finalheadCI and independent220review remain
+required. No frontend/database/release loop is introduced for candidate authoring.
+
+Amendment33saved report/floor/image discrepancy was rechecked before the gate:
+report1,114,784,219.49 versus floor1,114,734,219.49, difference50,000. The prior
+meeting-image transcription agrees with floor but is not a verified formal
+correction. No established rule resolving authoritative variance was identified;
+the pending row and all versions remain exact. Controlling operative version or
+correction and all targets are still needed. This does not block separate5371work.
+
+Initial220source-authoring interval1295.268seconds excludes earlier219carryover,
+Resume validation and later complete-claim/verification/delivery work; retain all
+phase timings. BenchmarkFAIL unchanged, no new comparable routine-cycle credit,
+no five-cycle passing average, acceptance, publication or production effect.
+
+220final local gate passes:373focused tests in267.472seconds (196candidate
+included), seven semantic checks, IR and seven fresh CLI byte replays. Final
+conservation confirms all stated boundaries after complete-claim correction.
+Candidate source/domain independent220review and actual new-head CI remain pending;
+commit/push/draftPR preparation continues within the feature-only envelope.

@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "a20048636470e50fe33f576b833c561418efe029733cebb8dbb9c4fd8ff9cefc",
-  "source_capture_sha256": "0528a5db0ac72bd1ccfc274b3a20cab13eb6e754ee85165ea47d7486d9fbbb94",
-  "core_sha256": "a07638ed4c8506c880b3cd550d22d2c742592d042ef52ad06c55c04590ba3620",
-  "compiled_sha256": "32461831c9177ef28441a73a5eba22af65e76d92dcd7b551561603f359b35256",
-  "readable_sha256": "008f5cc2167756394096095b19b48eed8b973efcd182d68992b12469e3f7690c",
+  "input_sha256": "fbab5acc7cc9705440fbfdb7a36f08d8f26087f85734b2157592cb718a33c013",
+  "source_capture_sha256": "de580d98e3de36f202a605204f1ecc4e59b2e0c42b0893e3ebb51c74c2ee2835",
+  "core_sha256": "13fe8fc7c3fab9099ac4a2ea58a57fbc0d4e543e810213dcb04d17f5839fdda1",
+  "compiled_sha256": "5e2fc967a855accb0ea4d5b19a51ab1a58becc7dac13418ff05cd3efdbd70734",
+  "readable_sha256": "81686d9e47cde7b6697fb91f55d6ace53264372e844afc92e682ccc28fbb1c7f",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -634,6 +634,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.3486 with its specified entry/reentry penalty increases and qualified mandatory-minimum provisions",
           "source_id": "clerk:119:1:264"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:281",
+      "shared_sha256": "aec05217597069158f417bb87dda42ff5f8c1f2907b069f41fc771348b560dcb",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole House continuing-funding and extensions package with its qualified Immigration-related provisions",
+          "source_id": "clerk:119:1:281"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole House continuing-funding and extensions package with its qualified Immigration-related provisions",
+          "source_id": "clerk:119:1:281"
         }
       ]
     },

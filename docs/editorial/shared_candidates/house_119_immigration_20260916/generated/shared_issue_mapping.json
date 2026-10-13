@@ -3,7 +3,7 @@
   "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
   "domain_id": "IMMIGRATION_BORDER",
   "scope_boundaries": [
-    "58 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
+    "59 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -443,6 +443,20 @@
         "stage_order": 10264
       },
       "mapping_sha256": "55448c75ba273f01a24a2f4a5590d22da03aa79a3d2c96c99681fcdd701df2df"
+    },
+    {
+      "action_id": "house:119:1:281",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr5371:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10281
+      },
+      "mapping_sha256": "cfc92f0e710349e3ec5e611643289f950105debaeb2f43c399cd7b4e61abc841"
     },
     {
       "action_id": "house:119:1:298",
@@ -1045,6 +1059,14 @@
       "policy_family_id": null
     },
     {
+      "episode_id": "episode:hr5371:119",
+      "action_ids": [
+        "house:119:1:281"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
       "episode_id": "episode:hr5214:119",
       "action_ids": [
         "house:119:1:298"
@@ -1381,7 +1403,15 @@
       "constraint_id": "source:house119-roll239-whole-qualified",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Own whole passage; preserve Act-versus-otherActs/fiscal2025/date/report scopes, exact status/facility/list/threat and lawful-possession exceptions. Printed USperson is not silently FISA/citizen-only. No component stance, individual current-law benefit, enactment, acceptance or publication. Section108is the Secretary of the Army continuing regulatory prohibition asof enactment/eachlaterfiscalyear, with dated36CFR327.0boundary and both lawful/State conditions."
+    },
+    {
+      "action_ids": [
+        "house:119:1:281"
+      ],
+      "constraint_id": "source:house119-roll281-whole-qualified",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Whole SeptemberHousechoice; retain PL1194FY2025import/PL11842-11847exceptions, rates not full-year cash, qualified status/visa/care/report/facility limits, jurisdictionalbase grants, correctwildfire namespace and separateprogramme durations. No component stance, individual/currentlaw or acceptance inferred."
     }
   ],
-  "mapping_sha256": "c06ae6bd8fc028ca547295466d2b5522214273f36e2742c32de7f659c01d8fbc"
+  "mapping_sha256": "1caa73063e415db17a7e57e3e49cd7975936ab761f4262591dcadde83960a903"
 }

@@ -3558,6 +3558,43 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 with self.assertRaises(AssertionError):
                     self._assert_precise_Dakota_section(row, parent, number)
 
+    def _assert_HR5371_whole_qualified_core(self, core):
+        self.assertEqual(core['legislative_stage'], 'final_passage')
+        self.assertEqual(core['action_date'], '2025-09-19')
+        self.assertEqual(core['exact_question'], 'On Passage')
+        operative = {w['source_id'] for w in core['operative_meaning_source_identities']}
+        self.assertTrue({'govinfo:hr5371eh', 'govinfo:pl119-4',
+                         'govinfo:pl118-47-complete-dhs-division-c',
+                         'govinfo:pl11842-compact-headstart-formula220',
+                         'govinfo:pl11743-divisionB1701-research219',
+                         'govinfo:pl117328-wildfire-pay440-220'} <= operative)
+        self.assertNotIn('govinfo:hr5371eas', operative)
+        own = 'immigration:hr5371-roll281-whole-choice220'
+        self.assertIn(own, {w['source_id'] for w in core['action_outcome_source_identities']})
+        self.assertNotIn(own, operative)
+        bank = {r['source_id']: r for r in self.values[1]['sources']}
+        self.assertIn('yeas 217, nays 212, not voting 3', bank[own]['text'])
+        self.assertIn('level II of the Executive Schedule',
+                      bank['govinfo:pl11743-divisionB1701-research219']['text'])
+        self.assertIn('if a base grant has been established through appropriations',
+                      bank['govinfo:pl11842-compact-headstart-formula220']['text'])
+        meaning = core['candidate_exact_action_meaning']
+        for boundary in ['operating-rate/account baselines', 'two jurisdictional grant baselines',
+                         'not a general30-dayextension', 'authorization endingOctober1,2030',
+                         'reporting endingJanuary31,2031']:
+            self.assertIn(boundary, meaning)
+
+    def test_HR5371_whole_choice_binds_exact_stage_and_material_source_chain(self):
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == 'house:119:1:281')
+        self._assert_HR5371_whole_qualified_core(core)
+
+    def test_HR5371_inherited_Health_core_alone_cannot_pass_Immigration_qualification(self):
+        old = json.loads((DATA.parent / 'house_119_health_20260916' / 'generated' /
+                          'shared_action_core.json').read_text(encoding='utf-8'))
+        core = next(c for c in old['actions'] if c['action_id'] == 'house:119:1:281')
+        with self.assertRaises(AssertionError):
+            self._assert_HR5371_whole_qualified_core(core)
+
     def _assert_HR4553_section108_direct_rule(self, core):
         meaning = core['candidate_exact_action_meaning']
         for text in ['Secretary of the Army', 'As of enactment and each fiscal year thereafter',
