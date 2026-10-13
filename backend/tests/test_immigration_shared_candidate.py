@@ -18,6 +18,79 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def _assert_wilson252_source_scope(self, core):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        memo = 'whitehouse:NSPM4-border-military20250411-223'
+        self.assertIn(memo, {s['source_id'] for s in core['operative_meaning_source_identities']})
+        self.assertTrue(any(c['source_id'] == memo and c['passage'] == sources[memo]['text']
+                            for c in core['claim_source_map']))
+        for text in ['50 U.S.C. 797', '18 U.S.C. 1382', 'excluding Federal Indian Reservations',
+                     'in accordance with applicable law', 'availability of appropriations']:
+            self.assertIn(text, sources[memo]['text'])
+        self.assertEqual(core['legislative_stage'], 'amendment')
+        self.assertEqual(core['package_component_boundary']['boundary_type'], 'exact_amendment')
+        self.assertEqual(core['exact_question'], 'On Agreeing to the Amendment')
+        for text in ['six months to two years', 'prohibited by law or lawful regulation',
+                     'Secretary-designated', "Existing(a)'s willful misdemeanor",
+                     'qualifying nonborder military property', 'not proof of final enactment']:
+            self.assertIn(text, core['candidate_exact_action_meaning'])
+        self.assertEqual([s['source_id'] for s in core['action_outcome_source_identities']],
+                         ['clerk:119:1:252'])
+        self.assertFalse(any(s['source_id'].startswith('immigration:wilson252-initial') or
+                             s['source_id'].startswith('immigration:wilson252-resumed')
+                             for s in core['operative_meaning_source_identities']))
+
+    def test_wilson252_binds_the_exact_changed_authorities_and_preserves_conditions(self):
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == 'house:119:1:252')
+        self._assert_wilson252_source_scope(core)
+        for member in self.products[2]:
+            row = next(a for a in member['actions'] if a['action_id'] == core['action_id'])
+            self.assertEqual(row['official_status'], {'F000477': 'Nay', 'M001184': 'Yea'}[member['member_id']])
+            source = next(s for s in self.values[1]['sources'] if s['source_id'] == 'clerk:119:1:252')
+            self.assertEqual(source['member_records'][member['member_id']]['official_label'],
+                             {'F000477': 'No', 'M001184': 'Aye'}[member['member_id']])
+            self.assertEqual(row['action_core_sha256'], core['action_core_sha256'])
+        for defect in ['unbound memorandum', 'omitted claim', 'whole-passage stage', 'dropped lawful predicate']:
+            bad = copy.deepcopy(core)
+            if defect == 'unbound memorandum':
+                bad['operative_meaning_source_identities'] = [w for w in bad['operative_meaning_source_identities']
+                    if w['source_id'] != 'whitehouse:NSPM4-border-military20250411-223']
+            elif defect == 'omitted claim':
+                bad['claim_source_map'] = [c for c in bad['claim_source_map']
+                    if c['source_id'] != 'whitehouse:NSPM4-border-military20250411-223']
+            elif defect == 'whole-passage stage':
+                bad['legislative_stage'] = 'final_passage'
+            else:
+                bad['candidate_exact_action_meaning'] = bad['candidate_exact_action_meaning'].replace(
+                    'prohibited by law or lawful regulation', 'for any purpose')
+            with self.subTest(defect=defect), self.assertRaises(AssertionError):
+                self._assert_wilson252_source_scope(bad)
+
+    def test_wilson252_two_day_sequence_and_four_open_cases_are_preserved(self):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        initial = sources['immigration:wilson252-initial-question223']['text']
+        self.assertLess(initial.index('question was taken'), initial.index('ayes'))
+        self.assertLess(initial.index('ayes'), initial.index('I demand a recorded vote'))
+        self.assertLess(initial.index('I demand a recorded vote'), initial.index('will be postponed'))
+        self.assertNotIn('recorded vote was ordered', initial)
+        resumed = sources['immigration:wilson252-resumed-recorded223']['text']
+        self.assertIn('A recorded vote was ordered', resumed)
+        self.assertIn('[Roll No. 252]', resumed)
+        report = sources['govinfo:hrpt119-255-amend11']['text']
+        offered = sources['immigration:wilson252-offered-body223']['text']
+        normalize = lambda t: re.sub(r'[^a-z0-9]', '', re.sub(r'SEC\.\s*17\s*(?:_+|l+)',
+            'SEC.17PLACEHOLDER', t).casefold())
+        self.assertEqual(normalize(report[report.index('At the end of'):]), normalize(offered))
+        receipt = json.loads((DATA / 'security_status_source_preparation_checkpoint223.json').read_text())
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(receipt['completed_action_ids'], ['house:119:1:252'])
+        records = {r['action_id']: r for r in self.values[3]['records']}
+        rows = {r['action_id']: r for r in self.values[2]['candidate_dispositions']}
+        for item in receipt['remaining_selected_actions']:
+            self.assertEqual(item['completion_credit'], 0)
+            self.assertNotIn(item['action_id'], records)
+            self.assertEqual(rows[item['action_id']]['disposition'], 'source_unresolved')
+
     def test_modern_candidate_qualification_preserves_Health_core_and_whole_CCDF_boundaries(self):
         from pathlib import Path
         original = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))

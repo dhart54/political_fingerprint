@@ -3838,3 +3838,49 @@ is held for parent-assigned isolatedCImaintenance readiness, avoiding another
 known workflow/checkout failure. CI38435734815remainsfailed; no new-head hosted
 CI or independent222correction review is claimed. No routine user approval gate,
 new research batch, main merge, workflow edit, publication or production change.
+
+
+### Checkpoint223 — bounded Wilson amendment candidate and source preparation
+
+222 was pushed as f9a7398a5d4c1719b37045335992f5c9b964bb38. Independent222
+review reports43conservation checks,12tests and7CLIbyte replays in324seconds;
+metadata is retained in the received223 receipt, without pretending the full
+report was locally received or rehashed.89/193 remain reopened pending cases.
+
+The selected source cohort was2:308,2:207,1:252,2:157,2:310. Only1:252 is
+completed: Wilson PartA11 changes18US1382 and50US797, independently linked to
+NSPM4's qualified southern-border military programme by its explicit citation
+of both statutes. Preserve lawful authority/designation, nonborder application,
+retained misdemeanor/NASA/posting rules and separate2672authority/penalties.
+Full report and own offered statute match after declared formatting normalization.
+September9question/voiceayes/demand/postponement is separate from September10
+recorded order/result; no initial recorded-order claim or whole-NDAA stance.
+
+Other four receive zero completion credit:308whole EAS/import treatment remains
+incomplete;207literal malformed references unresolved;157accepted identity/core
+must be reused but existing legacy qualification is FISA-specific;310qualified
+programme/beneficiary/privacy application remains unresolved. No silent source
+repair, legacy adapter expansion, duplicate accepted meaning or blanket exclusion.
+
+Counts633reviewed/43pending,61meanings/104behavioral propositions,54episodes/
+6multi,70questions/3partial; queue17ordinary/26researched holds.23append-only
+source entries retain all prior canonical/manifest/private prefixes. Preflight
+conserves other60cores/632reviews/675rows/102propositions and readable findings,
+Health, accepted legacy corpus, historical providers, failed221/222CI/timing and
+three untracked notes. Complete focused semantic gate and sevenCLIreplays follow.
+
+CI maintenance is separate: PR226 merged9337ed516621875709f6bb33ca4f9fb20c4ef2b7.
+Its main run does not qualify PR198. Deliver one real coherent feature increment,
+then inspect fresh event workflow/parents, feature-headcandidate/M14Hcheckout,
+explicitgithub.sha synthetic measure-reference job and all downstream stages.
+No candidate workflow edit, main merge or old-run retry. BenchmarkFAIL unchanged;
+this source cohort is not five comparable routine completions. Preserve all
+source, authoring, failed-helper, test and delivery elapsed overhead.
+
+223final local gate:380focused tests (203candidate included) pass in277.626seconds;
+seven semantic checks, IR and seven actualCLIbyte replays pass. Independent223
+source/domain review remains pending. Actual222CI38442164659 is independently
+confirmed failed at f9a7398:8jobs pass and M14Hfails, no retry requested. Existing
+221failure logs and222local timing are preserved; the new compact222API snapshot
+records the actual job/step conclusions. The isolated repair's fresh feature-event
+qualification follows the real223push. No green inherited run or acceptance claim.

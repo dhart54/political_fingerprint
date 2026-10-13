@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "e2e157f30746479193fb5f3338453b9d6a136b5ae81f63d89ad9aad2620a68f9",
-  "source_capture_sha256": "305b9c19c221d2bbf0784bf946b54d7f90e16bc9db08eaa46920569daf3b7ed3",
-  "core_sha256": "cd9b31cfb3e1f2f53f9b41c714e96ddffef4e3c7321a4976a5f1987b734a77b9",
-  "compiled_sha256": "369ba2ff7affee308ada35006fe89b539b0a4e6239c95ffa4407432939bb368d",
-  "readable_sha256": "73e6b283d91bf00fe48fa9ecf911dac3f88c0f850dbb6a26a00ef3d77ccdd35e",
+  "input_sha256": "160d19948b18bfa96bb4746990336b2eaf83028ea42a38c2c98ae73776ba8eb4",
+  "source_capture_sha256": "8d93f30932beca36fec07d028417da10dba6544226d5c3dba0ff4ed0799ba055",
+  "core_sha256": "e6e95f9bdf17485d8719aca31dbade6f88bd893fdcb6fc4aa64958ca3504ad8c",
+  "compiled_sha256": "a18c3e58db8f34d92b108046abb083379f2e2bb906c96e8e38c8de839bedb110",
+  "readable_sha256": "dca03fd298acb16253e98868822c4a5b466bff1f0a99636c973b45744a389c59",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -614,6 +614,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of the whole Energy and Water package with its qualified facility-access and award conditions",
           "source_id": "clerk:119:1:239"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:252",
+      "shared_sha256": "09995089fcff2b33f4981461efa5895c5058387135bf4f632e0e40402f36e0e8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting that entire amendment; no whole-bill or separate-clause preference is inferred",
+          "source_id": "clerk:119:1:252"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting the entire military-property and designated-defense-area security amendment",
+          "source_id": "clerk:119:1:252"
         }
       ]
     },
