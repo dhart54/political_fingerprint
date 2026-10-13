@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "fbab5acc7cc9705440fbfdb7a36f08d8f26087f85734b2157592cb718a33c013",
-  "source_capture_sha256": "de580d98e3de36f202a605204f1ecc4e59b2e0c42b0893e3ebb51c74c2ee2835",
-  "core_sha256": "13fe8fc7c3fab9099ac4a2ea58a57fbc0d4e543e810213dcb04d17f5839fdda1",
-  "compiled_sha256": "5e2fc967a855accb0ea4d5b19a51ab1a58becc7dac13418ff05cd3efdbd70734",
-  "readable_sha256": "81686d9e47cde7b6697fb91f55d6ace53264372e844afc92e682ccc28fbb1c7f",
+  "input_sha256": "412c0acbc0917e8cf8ab43e4e1571b38bb986e008c97b45f8496411a9c694196",
+  "source_capture_sha256": "305b9c19c221d2bbf0784bf946b54d7f90e16bc9db08eaa46920569daf3b7ed3",
+  "core_sha256": "cd870b291c84a04ae50c7f0080408bc46c9f7e3c9411aaa27b727479e6fdc1f3",
+  "compiled_sha256": "369ba2ff7affee308ada35006fe89b539b0a4e6239c95ffa4407432939bb368d",
+  "readable_sha256": "1cf266490787e46c3c73ec7f0659915ad7ec36d36d5e7b41f316af962f3c0ca1",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -639,7 +639,7 @@
     },
     {
       "action_id": "house:119:1:281",
-      "shared_sha256": "aec05217597069158f417bb87dda42ff5f8c1f2907b069f41fc771348b560dcb",
+      "shared_sha256": "41949341027d8a25e18339add7c98799138c08628b5f384fd574e080acfe8cbe",
       "choices": [
         {
           "member_id": "F000477",
@@ -814,6 +814,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of the whole exact H.R. 7147 annual DHS funding proposal; no preferred funding or immigration alternative is established",
           "source_id": "clerk:119:2:42"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:56",
+      "shared_sha256": "c8a081e41e9dcb380eb6dac21ef246f5f65a2b8f42c7ceda723479d321a565d5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed disapproving the entire named D.C. temporary tax package with its qualified credit-access context",
+          "source_id": "clerk:119:2:56"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported disapproving the entire named D.C. temporary tax package with its qualified credit-access context",
+          "source_id": "clerk:119:2:56"
         }
       ]
     },

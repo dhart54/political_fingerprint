@@ -3558,6 +3558,96 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 with self.assertRaises(AssertionError):
                     self._assert_precise_Dakota_section(row, parent, number)
 
+
+    def _assert_HR5371_review221_precision(self, core):
+        text = core['candidate_exact_action_meaning']
+        for term in ['rejected motion to recommit and the separately supplied H.R.5450',
+                     'Sections212and213restrict use of ICE Operations and Support funds',
+                     'two most recent overall evaluations received by the contracted facility',
+                     '1110emergency/disaster designation provisions',
+                     '1113spending/expenditure/operating-plan requirements',
+                     '1114monthly obligation reports', '1708FEMAtransfer',
+                     '1808HistoricPreservationFund availability solely to liquidate valid fiscal2018-2019obligations throughfiscal2026']:
+            self.assertIn(term, text)
+        self.assertNotIn('two consecutive overall', text)
+        bank = {row['source_id']: row for row in self.values[1]['sources']}
+        for sid, start, end in [
+                ('govinfo:pl118-47-complete-dhs-division-c', 30259, 30733),
+                ('govinfo:pl118-47-complete-dhs-division-c', 30733, 31340),
+                ('govinfo:pl119-4', 13185, 14270),
+                ('govinfo:pl119-4', 15256, 18260),
+                ('govinfo:pl119-4', 18260, 18854),
+                ('govinfo:pl119-4', 65144, 66144)]:
+            self.assertTrue(any(row['source_id'] == sid and
+                                row['passage'] == bank[sid]['text'][start:end]
+                                for row in core['claim_source_map']))
+
+    def test_HR5371_review221_precise_actor_time_and_excluded_authorities(self):
+        core = next(row for row in self.products[0]['actions']
+                    if row['action_id'] == 'house:119:1:281')
+        self._assert_HR5371_review221_precision(core)
+
+    def test_HR5371_review221_detects_the_actual_historical_P3_errors(self):
+        old = json.loads((DATA.parent / 'house_119_continuing_funding_qualification_checkpoint220' /
+                          'shared_action_core_proposal.json').read_text(encoding='utf-8'))['actions'][0]
+        with self.assertRaises(AssertionError):
+            self._assert_HR5371_review221_precision(old)
+        current = next(row for row in self.products[0]['actions']
+                       if row['action_id'] == 'house:119:1:281')
+        for correct, incorrect in [
+                ('rejected motion to recommit and the separately supplied H.R.5450', 'rejected H.R.5450'),
+                ('ICE Operations and Support funds', 'all DHS funds'),
+                ('two most recent overall evaluations received by the contracted facility', 'any historical consecutive pair'),
+                ('1110emergency/disaster designation provisions', '1110spending provisions'),
+                ('1808HistoricPreservationFund availability solely to liquidate valid fiscal2018-2019obligations throughfiscal2026', '1808transfers')]:
+            with self.subTest(boundary=correct):
+                core = copy.deepcopy(current)
+                core['candidate_exact_action_meaning'] = core['candidate_exact_action_meaning'].replace(correct, incorrect)
+                with self.assertRaises(AssertionError):
+                    self._assert_HR5371_review221_precision(core)
+
+    def test_DC_credit_routes_preserve_shared_whole_choice_and_personal_status_limits(self):
+        old = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
+        previous = next(row for row in old['actions'] if row['action_id'] == 'house:119:2:56')
+        core = next(row for row in self.products[0]['actions'] if row['action_id'] == previous['action_id'])
+        self.assertEqual(core['exact_action_identity'], previous['exact_action_identity'])
+        self.assertEqual(core['action_meaning_ref'], previous['action_meaning_ref'])
+        self.assertTrue(core['candidate_exact_action_meaning'].startswith(previous['candidate_exact_action_meaning']))
+        for witness in previous['governed_source_identities']:
+            self.assertIn(witness, core['governed_source_identities'])
+        text = core['candidate_exact_action_meaning']
+        for term in ['same amounts and extent', 'taxresidency', 'An ITIN is not proof of immigration status',
+                     'not separately vote on noncitizens', 'separate untargeted emergency26-214law']:
+            self.assertIn(term, text)
+        bank = {row['source_id']: row for row in self.values[1]['sources']}
+        s = bank['dc-council:47-1806.04-permanent-care-earned']['text']
+        self.assertTrue(any(row['source_id'] == 'dc-council:47-1806.04-permanent-care-earned'
+                            and 'not a citizen or resident alien' in row['passage']
+                            and 'individual taxpayer identification number' in row['passage']
+                            and row['passage'] in s for row in core['claim_source_map']))
+        for member in self.products[2]:
+            row = next(row for row in member['actions'] if row['action_id'] == core['action_id'])
+            self.assertEqual(row['action_core_sha256'], core['action_core_sha256'])
+            self.assertEqual(row['official_status'], 'Nay' if member['member_id'] == 'F000477' else 'Yea')
+
+    def test_programme_screenings_are_noncounting_without_erasing_retained_status_predicates(self):
+        reviews = {row['action_id']: row for row in self.values[3]['records']}
+        core_ids = {row['action_id'] for row in self.products[0]['actions']}
+        for roll, required in [(55, 'govinfo:30usc24-proof221'),
+                               (89, 'govinfo:15usc638-operative-body221'),
+                               (191, 'govinfo:8usc1612-2024-complete'),
+                               (193, 'govinfo:16usc1371b-deleted-baseline221')]:
+            aid = f'house:119:2:{roll}'
+            with self.subTest(action=aid):
+                row = reviews[aid]
+                self.assertEqual(row['disposition'], 'exact_action_ineligible')
+                self.assertTrue(row['substantive_review_performed'])
+                self.assertFalse(row['required_evidence_unavailable'])
+                self.assertIn(required, {s['source_id'] for s in row['sources']})
+                self.assertNotIn(aid, core_ids)
+        self.assertIn('resolved nondirectional', reviews['house:119:2:191']['rationale'])
+        self.assertIn('nor is the new undefined AlaskaNative statutory term automatically equated', reviews['house:119:2:193']['rationale'])
+
     def _assert_HR5371_whole_qualified_core(self, core):
         self.assertEqual(core['legislative_stage'], 'final_passage')
         self.assertEqual(core['action_date'], '2025-09-19')

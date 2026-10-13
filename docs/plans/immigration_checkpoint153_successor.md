@@ -3701,3 +3701,72 @@ included), seven semantic checks, IR and seven fresh CLI byte replays. Final
 conservation confirms all stated boundaries after complete-claim correction.
 Candidate source/domain independent220review and actual new-head CI remain pending;
 commit/push/draftPR preparation continues within the feature-only envelope.
+
+### Checkpoint221 programme/status batch
+
+Continue the existing Windows .w/ib feature branch from4a37e845; no task or
+checkout duplication. Selected five related programme/status cases: House119
+session2 rolls55,56,89,191,193. The actual starting queue is18ordinary/29researched
+holds; H.R.2860/roll196 remains a researched1998baseline hold despite its generic
+pending_research enum. Four selected cases were inherited holds, not fresh routine
+benchmark samples. No new methodology, main integration or publication authority.
+
+Received independent220review reports45conservation/sealchecks, seven CLI replays,
+seven targeted tests and two fully resealed later-stage probes, with threeP3s and
+noP1/P2/domain reversal. Reported elapsed1038seconds and reportSHA
+1fc631c8ee760a7ea5ca87e9362f010e90e24a1033379afafd620394f57b9211
+are provenance metadata; full report bytes were not received locally. All three
+P3s are corrected in221: motion to recommit distinguished from separately supplied
+H.R.5450text; ICE Operations and Support funds and facility's two most recent OPR
+evaluations bounded precisely;1110designations/1113plans/1114reports and1708FEMA
+transfer distinguished from1808HPF liquidation availability. Original220provider
+and evidence remain unchanged. Corrected535core uses newV17provider.
+
+Four functional exclusion candidates close mining4090, SBIR/STTR3971, veterans6047
+and marine crafts254 after affirmative citizenship/residency/service/ownership
+predicates are traced, without erasing them or automatically inheriting membership.
+VA Chapter37definitions do not rewrite Title8exceptions; NotVoting remains resolved
+and nondirectional. Marine programme definitions and the undefined replacement term
+remain distinct; FWS's literal1603(b)reference is preserved alongside NOAA1602(b).
+No current personal entitlement, award, loan, permit or rights is certified.
+
+D.C.142 qualifies one independent Immigration candidate: whole temporary26-217
+disapproval includes the changed EIC amount linked to existing explicit noncitizen
+and ITIN routes. Those routes are not newly created/repealed, ITIN does not certify
+status/workauthorization, and taxresidency is not immigration presence. Original
+Health exact identity, meaning prefix,18witnesses and limits remain; emergency26-214
+is a separate law, later OAG opinion remains attributed, and House passage alone
+is not nullification or a refund. Domain membership remains review-pending.
+
+Source bank/manifest append49objects with exact inherited prefixes; private pool
+appends44 with original duplicate IDs preserved. Twelve fresh registered captures
+have saved raw/text hashes and literal extents. Public invalid-route/error-HTML
+responses and bibliographic metadata are preserved privately and not registered as
+substantive evidence. A transient PC transport disconnect before process creation
+was reconciled on the same host/cwd/head; no duplicate writes or cloud fallback.
+Source-authoring and analysis overhead remains in elapsed accounting.
+
+Light preflight passes four new regressions in7.138seconds. Conservation verifies
+other58cores/628reviews/670rows/98props and readable findings exact, allHealth and
+historical providers, source/manifest/private prefixes, original three notes and
+frozen219/220private evidence exact. Receipt-only arithmetic was corrected from671
+to670untouched rows before final validation; no semantic change. Complete g/o638
+denial-baseline claim maps were added before the full gate. Current counts are
+634reviewed/42pending,60cores/102behavioral propositions,53episodes/sixmulti-action
+episodes,70applicationquestions/threepartialpackages; pending queue17ordinary/
+25researched holds. Amendment33floor/report $50,000conflict and other existing
+conflict/access rows are exact. Counts do not confer editorial clearance.
+
+The full focused semantic gate, seven byte-exact CLI replay and actual new-head
+CI remain required for delivery. BenchmarkFAIL unchanged: the measured batch
+interval already exceeds80minutes before delivery, above10minutes per selected
+action. This mixed inherited-hold batch is not five comparable fresh routine cycles;
+report its actual total and phases without a passing-average claim or hidden scaling.
+
+221final local gate passes377focused tests in288.316seconds (200candidate tests
+included), seven semantic checks, IR validation and seven byte-exact native CLI
+replays. Full conservation confirms other58cores/628reviews/670rows/98props and
+all declared historical boundaries. New-head hostedCI and independent221review
+remain pending; feature-only delivery continues. No new research batch is started
+after this delivery because observed selected-action throughput exceeds the
+10minute ceiling and the original routine benchmark remainsFAIL.

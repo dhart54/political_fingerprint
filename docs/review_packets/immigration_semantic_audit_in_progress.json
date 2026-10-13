@@ -10902,11 +10902,182 @@
         }
       ],
       "authoring_action_sha256": "2ef8adbb350eaf5b90d11038a6ede02fcc06cd026fc73c70af1a5832ba72fbe5",
-      "corrected_authoring_action_sha256": "2ef8adbb350eaf5b90d11038a6ede02fcc06cd026fc73c70af1a5832ba72fbe5",
-      "current_action_core_sha256": "aec05217597069158f417bb87dda42ff5f8c1f2907b069f41fc771348b560dcb",
-      "membership_review_record_sha256": "9d8fe75cb818ab4ab2b52a9b8e0c7272880f589b6288118b9b66267f26a088c5",
-      "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5371_meaning_qualification_checkpoint220.json",
-      "source_qualification_receipt_sha256": "66b47ed6ada4724011df9082926b2eeeb18efbd4aa5eb114045e56e831eeecf9",
+      "corrected_authoring_action_sha256": "42bc83668ea8d398b39d18d67dfc105b146bd8a3ffadd2724191ee250b004d15",
+      "current_action_core_sha256": "41949341027d8a25e18339add7c98799138c08628b5f384fd574e080acfe8cbe",
+      "membership_review_record_sha256": "bfc22aee0a3c4541111fb28f40c505f7e476eac6a39e9b46bc8f7af0203d8552",
+      "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5371_P3_precision_checkpoint221.json",
+      "source_qualification_receipt_sha256": "e16546843c8fc7510981e149c274c2f05ac7988c2960ad1558c4b189769ae044",
+      "independent_review_pending": true,
+      "received220P3s_corrected221": true
+    },
+    {
+      "action_id": "house:119:2:56",
+      "audit_state": "QualifiedwholeDCtemporarytaxdisapproval_candidate_pending_independent_source_domain_review221",
+      "severity": null,
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "56",
+        "legis-num": "H J RES 142",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "4-Feb-2026",
+        "action-time": "4:13 PM",
+        "vote-desc": "Disapproving the action of the District of Columbia Council in approving the D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact House passage of H.J.Res.142 disapproves whole temporary D.C.Act26-217, not separately enacted emergency26-214. The targeted law changes local earned-income-credit multiplier85to100percent after2024 and deletes the later2028schedule. Permanent47-1806.04(f-1)(1)(D)(i)extends same amounts/extent to otherwise-qualified District residents neither UScitizens nor federal taxresident aliens; (D)(ii)allows otherwise-qualified federal32(m)-excluded taxpayers to use ITINs for taxpayer/spouse/child. These explicit personal-status/documentation routes bind a proposed Immigration relationship to the changed amount, not generic immigrant-beneficiary rhetoric or inherited Health membership. Existing access criteria are not newly created/repealed. Federal32(c)(1)(D),6013(g)/(h),7701(b)and405(c)(2)(B)(i)qualify the nonresident tax/election/valid-SSN chain. Taxresidency is not immigration presence, ITIN is not status/workauthorization, and individual/currentlaw qualification is not certified. Original whole Health identity, meaning prefix,18witnesses and limits are preserved, including child dependency/residence/age, care-credit gap, broader tax provisions,225dayduration and attributed laterOAG opinion. House passage alone is not nullification or an issued refund. FousheeNay/MassieYea bind whole disapproval, no separate stance on noncitizens or any tax component. Candidate substantive relationship pending independent exact-source/domain review; no acceptance, counting clearance or publication.",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:56",
+          "url": "https://clerk.house.gov/evs/2026/roll056.xml",
+          "raw_sha256": "880fe8002612736a48412a7f79586b999e58a3054196c2726b631417e7697054",
+          "governed_bytes_sha256": "189a891b67f118958183d902bfb5b18bde07fbc821f320603d80ff65962ed6cd"
+        },
+        {
+          "source_id": "govinfo:hjres142eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres142eh/html/BILLS-119hjres142eh.htm",
+          "raw_sha256": "01e7c3681864a785649a58b4e6fd5ae3c08af51927ad185abce789324b48c15f",
+          "governed_bytes_sha256": "d628a8546ea6359f6f29132f6d2b15a33a51735aed5ee0ccc5e83d2769fec7f1"
+        },
+        {
+          "source_id": "dc-council:act26-217-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-89.xml",
+          "raw_sha256": "4adeaceeff68f3ab27eff2edb642bae71f1845bf7525097194f52b8d355ff502",
+          "governed_bytes_sha256": "763661148cd72ecab0ae05344342503c97666f23d0771594bd7db787f8846585"
+        },
+        {
+          "source_id": "dc-council:1-206.02c-disapproval",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/code/titles/1/sections/1-206.02.xml",
+          "raw_sha256": "a82b3bc7d09a91d4312fc02b62198479136ad2ddc4b0af5686135b72ed16aec8",
+          "governed_bytes_sha256": "e68c3e6f7dc7634e222d11f41c47f246de89360958eb87ccdae282a764a4c318"
+        },
+        {
+          "source_id": "dc-council:47-1806.04-permanent-care-earned",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/code/titles/99/47-1806.04(Perm).xml",
+          "raw_sha256": "5d384e1360efe1a0b7143970f1b2b570d98c308b80d05819becb171de84a24fa",
+          "governed_bytes_sha256": "f2f01f14ddc263d2a63d2b4b43090429321379396e70b62353dfff49c97bde2c"
+        },
+        {
+          "source_id": "dc-council:dc26-55-child-credit-repeal",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-55.xml",
+          "raw_sha256": "1bfe37cf8bef3c77f5ec5a0cdbe3e88bd718c38495ebec198b2af6a2f6a7c791",
+          "governed_bytes_sha256": "870544e86999b70fb5e8e21cc1c205f803d0e981528d9ff691eed809f5a69b52"
+        },
+        {
+          "source_id": "dc-council:dc26-146-child-credit-repeal",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-146.xml",
+          "raw_sha256": "31c55f8543f7816ca99a7db6dc076128fdec08a53ca94e62ae175d23fe033a97",
+          "governed_bytes_sha256": "e4ad0fb543cd6f4af16862ecb9e26f20e1f592cea3b7c6207571ed7c2a15e59c"
+        },
+        {
+          "source_id": "dc-council:dc26-210-child-credit-repeal",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-210.xml",
+          "raw_sha256": "401aa3c768836bc6dd7c4e4cc2cd998bd96921cc48defb5487b7ad4a9838b6b3",
+          "governed_bytes_sha256": "d3d4b6eb38a8858a510b230bb7229414d821a9b406ddd07e8b58658037fc6583"
+        },
+        {
+          "source_id": "govinfo:26usc21-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartA-sec21.htm",
+          "raw_sha256": "f91d2d9f9063fea7c391748fe23647f2bf29e37fe4c74de00c129176ae5f7394",
+          "governed_bytes_sha256": "859b4548c3a9e358037d8e43401b71670e9ffb2f807ff16ad687dc0d21a88ab9"
+        },
+        {
+          "source_id": "govinfo:26usc151-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partV-sec151.htm",
+          "raw_sha256": "67f5c514483a2c3384081e407e474be2b7ba510c5f10d90b224bbc2f274f87a1",
+          "governed_bytes_sha256": "3130ce62ffbf9ff04ba1d7e848d1655dda2aa740b4908b5ffda26e26c1f0550a"
+        },
+        {
+          "source_id": "govinfo:26usc152-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partV-sec152.htm",
+          "raw_sha256": "331bb028ae1c71f709ec0350b62b28fedac0172d48733f55a7eccd171155c35b",
+          "governed_bytes_sha256": "2489f70488ee20878efd6f0b8193c8527a3f98cfad6440545f41e2fdbc1be410"
+        },
+        {
+          "source_id": "govinfo:26usc213-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partVII-sec213.htm",
+          "raw_sha256": "f39c934bbab7f0801cf0b98b028389fe664b37677bafe55355970fc61cb4ad38",
+          "governed_bytes_sha256": "526750f4510162ce7195b7ce7edef0fadf7b275982326f3ec629a56352300b3d"
+        },
+        {
+          "source_id": "govinfo:26usc63-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partI-sec63.htm",
+          "raw_sha256": "1f095b810947b437cbac8e1e2b2321a8257697a377645a837f036d69eb1e470d",
+          "governed_bytes_sha256": "99b6c1b5f2a242431641e9c862e7af03bda2e9d62c1e2d28450f3cf64d9d4604"
+        },
+        {
+          "source_id": "govinfo:26usc32a-m-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec32.htm",
+          "raw_sha256": "42e930c67ef3cfa773aeef74f283012d9c1f81551e069741ca58408541343960",
+          "governed_bytes_sha256": "1e05400e8d4994236cc38c33f8e0c3f511e0008650102268e873f10769c2a780"
+        },
+        {
+          "source_id": "govinfo:pl119-21-standard-senior-care",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "616181aa9b25b6b35ef67f2f53fddddea209855a0d2e99ec52e3d188f31889f4"
+        },
+        {
+          "source_id": "dc-council:act26-214-core",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-214.xml",
+          "raw_sha256": "74fe1741149f9131f68080d6294f5a28b35431b597b623d7c4490d7ac2f7de42",
+          "governed_bytes_sha256": "db67f3dcc10e7e76c75f68ee80e69c27366e268c0291cbf100184abee29ca6f1"
+        },
+        {
+          "source_id": "congressional-record:2026-02-04-dc-tax-contrast",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-04/pdf/CREC-2026-02-04-house.pdf",
+          "raw_sha256": "79a49bf7644ea8a5caab2dd40417c5cdc81612208084626210a2d10aa4c42150",
+          "governed_bytes_sha256": "c5e8c2da1339217f42a8832ba5dc1a59164667d68b453c5db04e29939aa5c636"
+        },
+        {
+          "source_id": "dc-oag:2026-02-24-tax-opinion-boundary",
+          "url": "https://oag.dc.gov/sites/default/files/2026-02/AG-Opinion-Decoupling-Retroactivity-and-Validity-.pdf",
+          "raw_sha256": "79bc51e95d4cc6269867acac27d6550c7c103abadcb7b2de43c379f283d02ceb",
+          "governed_bytes_sha256": "dc12b90d1e58b7407514bae5f9a63bcb76e4951bd07e33342915646807976a83"
+        },
+        {
+          "source_id": "govinfo:26usc6013g-h-elections221",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap61-subchapA-partII-subpartB-sec6013.htm",
+          "raw_sha256": "6729ff4db15b3827ee42f32632df040bc1a726324a8b3e2875506c28f4af50fc",
+          "governed_bytes_sha256": "61e780af05e24f3c1dca2ba269d2978a849fe91532d4f1127a6b560b0c672d5c"
+        },
+        {
+          "source_id": "govinfo:26usc7701b-tax-residence221",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap79-sec7701.htm",
+          "raw_sha256": "3b6813827417be7d1c15c0c53337e2a73e9616d46d17a775950dc5813eca6afb",
+          "governed_bytes_sha256": "46df83b60c7c6b5eacb15dce9ecbc9fe5688a185df6190a2801e64fd55dd811c"
+        },
+        {
+          "source_id": "govinfo:42usc405c2B-SSN221",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec405.htm",
+          "raw_sha256": "04105905919624c53b2c0b898b3e0ef697e7bc2c88b65c511c2c5874bd29bdbb",
+          "governed_bytes_sha256": "ac2040bf6e7bb4e738501e757158fbc1dd3b089c2afa7d6b14eb6bdc7d7a5545"
+        }
+      ],
+      "authoring_action_sha256": "7823c16116ae76e02eae4beeb8c21e08a9a0425284db157fa01c05b059349b31",
+      "corrected_authoring_action_sha256": "7823c16116ae76e02eae4beeb8c21e08a9a0425284db157fa01c05b059349b31",
+      "current_action_core_sha256": "c8a081e41e9dcb380eb6dac21ef246f5f65a2b8f42c7ceda723479d321a565d5",
+      "membership_review_record_sha256": "7030bffee356758b5e4dcbca827ff393f475418c6ab780908b08277420e1794c",
+      "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_screening_checkpoint221.json",
+      "source_qualification_receipt_sha256": "1095431240bd47ee9c418b0bd7ee1cd41f4d303287182059bb3b7deba2c3ec33",
       "independent_review_pending": true
     }
   ],
@@ -24752,7 +24923,8 @@
     "house:119:2:6",
     "house:119:2:7",
     "house:119:1:239",
-    "house:119:1:281"
+    "house:119:1:281",
+    "house:119:2:56"
   ],
   "required_noncounting_sample": {
     "exclusions": 12,
@@ -32061,5 +32233,31 @@
     "exact_head": "45d3caedcf11f7560d82c5337b1d1fdb2aba287e",
     "reported_independent_P3_closed": true,
     "publication_authorized": false
+  },
+  "checkpoint221_received220_P3correction": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5371_P3_precision_checkpoint221.json",
+    "receipt_sha256": "e16546843c8fc7510981e149c274c2f05ac7988c2960ad1558c4b189769ae044",
+    "independent_review_pending": true,
+    "source_bank_no_change_from_P3": true
+  },
+  "checkpoint221_programme_status_batch": {
+    "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_screening_checkpoint221.json",
+    "receipt_sha256": "1095431240bd47ee9c418b0bd7ee1cd41f4d303287182059bb3b7deba2c3ec33",
+    "counts": {
+      "reviewed": 634,
+      "pending": 42,
+      "meanings": 60,
+      "behavioral_propositions": 102,
+      "independent_episodes": 53,
+      "multi_action_episodes": 6,
+      "application_questions": 70,
+      "partial_packages": 3,
+      "ordinary_pending": 17,
+      "researched_holds_pending": 25
+    },
+    "review_pending": true,
+    "HR5371corrections_in_generated_outputs": true,
+    "new_head_CI_pending": true,
+    "benchmarkFAILunchanged": true
   }
 }
