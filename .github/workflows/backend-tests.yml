@@ -17,6 +17,35 @@ on:
       - ".github/workflows/backend-tests.yml"
 
 jobs:
+  measure-reference-integration:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://invalid
+    steps:
+      # PRs need the synthetic merge tree's test, implementation, and helper.
+      # On main pushes, github.sha identifies the pushed main commit.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.sha }}
+
+      - name: Verify integration checkout identity
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          git show --no-patch --format='checkout=%H parents=%P'
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install measure-reference regression dependencies
+        run: python -m pip install -r backend/requirements.txt httpx
+
+      - name: Run measure-reference regressions on integration tree
+        run: python -m pytest -q backend/tests/test_measure_reference.py
+
   m14h-exact-head:
     runs-on: ubuntu-latest
     services:
@@ -86,7 +115,6 @@ jobs:
             backend/tests/test_m14g_education_workforce_site_integration.py \
             backend/tests/test_m14g_site_integration_acceptance.py \
             backend/tests/test_public_record_integrity.py \
-            backend/tests/test_measure_reference.py \
             backend/tests/test_governed_receipt_projection.py
           cd frontend
           node --test \
