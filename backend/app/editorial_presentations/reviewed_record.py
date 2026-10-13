@@ -5,7 +5,7 @@ from __future__ import annotations
 import copy
 import re
 from typing import Any
-from app.measure_reference import validate_measure_reference
+from ..measure_reference import validate_measure_reference
 
 REVIEWED = "reviewed_interpretation"
 UNREVIEWED = "not_yet_in_reviewed_interpretation"

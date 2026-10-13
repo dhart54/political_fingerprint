@@ -27,6 +27,44 @@ def same_public(actual,expected,path='public'):
         raise AssertionError('Exact public mismatch at '+path+': '+repr(actual)[:180]+' != '+repr(expected)[:180])
 
 
+def historical_public_with_verified_measure_facts(actual, conn):
+    """Keep frozen captures exact; verify only the additive evidence FK facts."""
+    references = {}
+    rows = conn.execute("""
+        SELECT rc.chamber, rc.congress, rc.session, rc.rollcall_number,
+               b.congress AS measure_congress, b.bill_type AS measure_type,
+               b.bill_number AS measure_number
+        FROM roll_calls rc LEFT JOIN bills b ON b.id = rc.bill_id
+    """).fetchall()
+    types = {'hr', 's', 'hres', 'sres', 'hjres', 'sjres', 'hconres', 'sconres'}
+    for row in rows:
+        identity = ':'.join(str(row[key]) for key in ('chamber', 'congress', 'session', 'rollcall_number'))
+        assert identity not in references
+        congress, kind, number = (row[key] for key in ('measure_congress', 'measure_type', 'measure_number'))
+        valid = (type(congress) is int and 0 < congress < 2**53 and congress == row['congress']
+                 and type(number) is int and 0 < number < 2**53
+                 and isinstance(kind, str) and kind.strip().lower() in types)
+        references[identity] = {'congress': congress, 'type': kind.strip().lower(), 'number': number} if valid else None
+
+    result = copy.deepcopy(actual)
+
+    def verify_and_remove(row, identity, required=False):
+        assert row.get('canonical_action_id', identity) == identity
+        assert identity in references
+        if required:
+            assert 'measure_reference' in row
+        if 'measure_reference' in row:
+            assert row.pop('measure_reference') == references[identity], 'measure reference differs from existing FK'
+        if isinstance(row.get('raw_evidence'), dict):
+            verify_and_remove(row['raw_evidence'], identity)
+
+    for scope in result.values():
+        for detail in scope['details'].values():
+            for row in detail['evidence']:
+                verify_and_remove(row, row['canonical_action_id'], required=True)
+    return result
+
+
 def test_historical_store_defaults_remain_bound_at_call_time(monkeypatch):
     from unittest.mock import MagicMock
     from scripts import editorial_artifact_store as store
@@ -128,7 +166,7 @@ def test_actual_persistence_publication_and_owned_recovery(monkeypatch):
     with _connect(dsn,autocommit=False) as conn:
         conn.execute("SET timezone='UTC'");conn.execute('SET extra_float_digits=0')
         initial=snapshot(conn);before=public(conn)
-        same_public(before,json.loads(gzip.decompress((prep.OUT/'public_before.json.gz').read_bytes())))
+        same_public(historical_public_with_verified_measure_facts(before,conn),json.loads(gzip.decompress((prep.OUT/'public_before.json.gz').read_bytes())))
         original_rows={i:registry_row(conn,b['registry_key']) for i,b in package['replacements'].items()}
         unrelated=select_public_presentations(EditorialArtifactRepository(conn).publication_selector(),member_bioguide_id='UNRELATED',legislator_id='unrelated',scope='119')
         operations=[]

@@ -1,5 +1,9 @@
 """Existing FK facts become additive evidence identity, never reviewed meaning."""
 import copy
+import os
+from pathlib import Path
+import subprocess
+import sys
 
 import pytest
 
@@ -12,6 +16,16 @@ from app.api import positions
 from scripts.prepare_m15b_replacement_artifacts import build, current_receipt_rows
 
 REFERENCE = {"congress": 119, "type": "hconres", "number": 89}
+
+
+def test_standalone_builder_import_without_pytest_path_setup():
+    root = Path(__file__).resolve().parents[2]
+    result = subprocess.run(
+        [sys.executable, "-c", "from backend.app.editorial_presentations.reviewed_record import union_database_actions; print(union_database_actions([], []))"],
+        cwd=root, env={**os.environ, "PYTHONPATH": ""}, capture_output=True, text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.strip() == "[]"
 
 
 def db_row(**changes):
@@ -164,3 +178,25 @@ def test_published_overlay_changes_only_measure_reference_fields(monkeypatch, sc
     assert result["measure_reference"] == result["raw_evidence"]["measure_reference"] == REFERENCE
     assert after["review_accounting"] == before["review_accounting"]
     assert candidate == untouched  # Includes all presentations, finding IDs and provenance hashes.
+
+
+def test_frozen_capture_comparison_verifies_fk_and_still_rejects_unrelated_changes():
+    from unittest.mock import MagicMock
+    from test_m15b_actual_persistence import historical_public_with_verified_measure_facts, same_public
+    row = precomputed._serialize_evidence_row(db_row())
+    old = {key: value for key, value in row.items() if key != 'measure_reference'}
+    expected = {'119': {'details': {'NATIONAL_SECURITY_FOREIGN': {'evidence': [old]}}}}
+    actual = copy.deepcopy(expected)
+    actual['119']['details']['NATIONAL_SECURITY_FOREIGN']['evidence'][0]['measure_reference'] = REFERENCE
+    conn = MagicMock(); conn.execute.return_value.fetchall.return_value = [db_row()]
+    original = copy.deepcopy(actual)
+    same_public(historical_public_with_verified_measure_facts(actual, conn), expected)
+    assert actual == original
+    wrong = copy.deepcopy(actual)
+    wrong['119']['details']['NATIONAL_SECURITY_FOREIGN']['evidence'][0]['measure_reference'] = {**REFERENCE, 'number': 90}
+    with pytest.raises(AssertionError, match='existing FK'):
+        historical_public_with_verified_measure_facts(wrong, conn)
+    extra = copy.deepcopy(actual)
+    extra['119']['details']['NATIONAL_SECURITY_FOREIGN']['evidence'][0]['unexpected_field'] = 'must fail'
+    with pytest.raises(AssertionError, match='Exact public mismatch'):
+        same_public(historical_public_with_verified_measure_facts(extra, conn), expected)

@@ -13,7 +13,7 @@ from app.etl.compute import run_etl
 from app.etl.ingest import run_ingest
 from app.etl.interpret import run_interpretation
 from app.etl.vote_context import build_vote_contexts
-from app.measure_reference import measure_reference
+from ..measure_reference import measure_reference
 
 
 FIXTURE_AS_OF_DATE = date(2026, 3, 12)
