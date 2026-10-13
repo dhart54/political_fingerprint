@@ -15,6 +15,7 @@ import {
 } from "../lib/selectedIssueExperience.mjs";
 import SemanticIcon from "./SemanticIcon";
 import OfficialContactDisclosure from "./OfficialContactDisclosure";
+import { measureReferenceLabel } from "../lib/measureReference.mjs";
 
 export default function ActionReceipt({
   contactContext = null,
@@ -28,6 +29,7 @@ export default function ActionReceipt({
   const id = actionReceiptId(row);
   const actionId = canonicalActionId(row);
   const action = getActionPresentation(row);
+  const measureLabel = measureReferenceLabel(row);
   const position = formatPosition(action.vote || row.position);
   return (
     <article
@@ -40,7 +42,7 @@ export default function ActionReceipt({
     >
       <button
         aria-expanded={expanded}
-        aria-label={`${expanded ? "Collapse" : "Expand"} ${action.title}, ${formatDate(row.vote_date)}, ${position}`}
+        aria-label={`${expanded ? "Collapse" : "Expand"} ${action.title}${measureLabel ? `, associated measure ${measureLabel}` : ""}, ${formatDate(row.vote_date)}, ${position}`}
         className="grid min-h-16 w-full grid-cols-[minmax(0,1fr)_auto_auto] items-start gap-x-3 gap-y-1 px-3 py-3 text-left sm:grid-cols-[7.5rem_minmax(0,1fr)_auto_auto] sm:px-4"
         onClick={onToggle}
         type="button"
@@ -57,6 +59,9 @@ export default function ActionReceipt({
               Parent measure: {action.parentMeasure}
             </span>
           ) : null}
+          {measureLabel ? <span className="mt-0.5 block text-sm leading-5 text-stone-600">
+            Associated measure: {measureLabel}
+          </span> : null}
           <span className="mt-0.5 block text-sm leading-5 text-stone-600">
             {formatChamber(row.chamber)} · Roll {row.rollcall_number || "not supplied"}
             {action.actionType ? ` · ${action.actionType}` : ""}

@@ -17,7 +17,7 @@ from scripts.foushee_m15a2_core_repair import insert_row
 from scripts.disposable_database_url import require_exact_loopback_postgres_url
 from scripts import m15b_persistence_preparation as prep
 from scripts.prepare_m15b_green_activation import OUT, load, build_write_sets
-from test_m15b_actual_persistence import prepare_normalized_database, public, same_public, snapshot
+from test_m15b_actual_persistence import prepare_normalized_database, public, same_public, snapshot, historical_public_with_verified_measure_facts
 from test_reusable_publication_replacement_v2r import seal
 
 
@@ -125,7 +125,7 @@ def test_actual_production_id_activation_and_owned_rollback(monkeypatch):
             assert not expected.exists()
             expected.write_bytes(gzip.compress(json.dumps(after, sort_keys=True).encode(), mtime=0))
         else:
-            same_public(after, json.loads(gzip.decompress(expected.read_bytes())))
+            same_public(historical_public_with_verified_measure_facts(after, conn), json.loads(gzip.decompress(expected.read_bytes())))
         for issue in ('JUSTICE_PUBLIC_SAFETY', 'NATIONAL_SECURITY_FOREIGN'):
             ws = writes[issue]
             assert replace_publication(conn, ws, authorities[issue], runtime_evidence=None, production_preflight=None,

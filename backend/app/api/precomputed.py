@@ -13,6 +13,7 @@ from app.etl.compute import run_etl
 from app.etl.ingest import run_ingest
 from app.etl.interpret import run_interpretation
 from app.etl.vote_context import build_vote_contexts
+from ..measure_reference import measure_reference
 
 
 FIXTURE_AS_OF_DATE = date(2026, 3, 12)
@@ -1304,6 +1305,9 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str,
                 "description": str(roll_call["description"]),
                 "bill_title": str(bill["title"]) if bill is not None else None,
                 "bill_summary": str(bill["summary"]) if bill is not None else None,
+                "measure_congress": bill.get("congress") if bill is not None else None,
+                "measure_type": bill.get("bill_type") if bill is not None else None,
+                "measure_number": bill.get("bill_number") if bill is not None else None,
                 "classification_reason": str(classified.eligibility_reason),
                 "score_breakdown": classified.score_breakdown,
                 "source_url": roll_call.get("source_url"),
@@ -1809,6 +1813,9 @@ def _get_db_position_evidence_rows(
             rc.description,
             b.title AS bill_title,
             b.summary AS bill_summary,
+            b.congress AS measure_congress,
+            b.bill_type AS measure_type,
+            b.bill_number AS measure_number,
             vcf.eligibility_reason AS classification_reason,
             vcf.score_breakdown,
             rc.source_url,
@@ -1893,6 +1900,9 @@ def _get_db_scoped_position_evidence_rows(
             rc.description,
             b.title AS bill_title,
             b.summary AS bill_summary,
+            b.congress AS measure_congress,
+            b.bill_type AS measure_type,
+            b.bill_number AS measure_number,
             vcf.eligibility_reason AS classification_reason,
             vcf.score_breakdown,
             rc.source_url,
@@ -1995,6 +2005,9 @@ def _get_db_governed_position_evidence_rows(
             rc.description,
             b.title AS bill_title,
             b.summary AS bill_summary,
+            b.congress AS measure_congress,
+            b.bill_type AS measure_type,
+            b.bill_number AS measure_number,
             COALESCE(vcf.eligibility_reason, 'governed_publication_evidence')
               AS classification_reason,
             COALESCE(vcf.score_breakdown, '{{}}'::jsonb) AS score_breakdown,
@@ -2495,6 +2508,10 @@ def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
         "description": str(row["description"]),
         "bill_title": None if row.get("bill_title") is None else str(row["bill_title"]),
         "bill_summary": None if row.get("bill_summary") is None else str(row["bill_summary"]),
+        "measure_reference": measure_reference(
+            row.get("measure_congress"), row.get("measure_type"), row.get("measure_number"),
+            action_congress=row["congress"],
+        ),
         "classification_reason": str(row["classification_reason"]),
         "score_breakdown": row.get("score_breakdown") or {},
         "source_url": row.get("source_url"),

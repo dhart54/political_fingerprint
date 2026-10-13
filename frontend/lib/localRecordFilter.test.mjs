@@ -50,6 +50,22 @@ test("blank/punctuation-only queries preserve original array and row identity", 
   for (const query of ["", "  \t ", ". , :"]) assert.equal(filterLoadedReceipts(rows, query), rows);
 });
 
+test("an authoritative associated-measure label finds the descriptive Roll282 receipt without grouping aliases", () => {
+  const target = row(282, "Removing United States Armed Forces from hostilities with Iran", {
+    congress: 119, session: 2, canonical_action_id: "house:119:2:282",
+    measure_reference: { congress: 119, type: "hconres", number: 89 },
+  });
+  const otherType = { ...target, rollcall_number: 281, canonical_action_id: "house:119:2:281", measure_reference: { congress: 119, type: "hres", number: 89 } };
+  const prior = { ...target, congress: 118, canonical_action_id: "house:118:2:282", measure_reference: { congress: 118, type: "hconres", number: 89 } };
+  const rows = Object.freeze([Object.freeze(prior), Object.freeze(otherType), Object.freeze(target)]);
+  const groups = buildLedgerItems(rows);
+  for (const query of ["H.Con.Res. 89", "hconres89", "h con res 89"]) assert.deepEqual(filterLoadedReceipts(rows, query), [prior, target]);
+  assert.deepEqual(filterLoadedReceipts(rows, "hconres89 119"), [target]);
+  assert.deepEqual(filterLoadedReceipts(rows, "hres89"), [otherType]);
+  assert.deepEqual(buildLedgerItems(rows), groups);
+  assert.equal(filterLoadedReceipts(rows, "roll282").at(-1), target);
+});
+
 test("matches retain the supplied order and do not mutate records or infer direction", () => {
   const a = Object.freeze(row(5, "Shared title", { position: "present" }));
   const b = Object.freeze(row(2, "Shared title", { position: "not_voting" }));
