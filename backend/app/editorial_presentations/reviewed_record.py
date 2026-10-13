@@ -5,6 +5,7 @@ from __future__ import annotations
 import copy
 import re
 from typing import Any
+from app.measure_reference import validate_measure_reference
 
 REVIEWED = "reviewed_interpretation"
 UNREVIEWED = "not_yet_in_reviewed_interpretation"
@@ -12,7 +13,7 @@ _IDENTITY = re.compile(r"(house|senate):([1-9][0-9]*):([12]):([1-9][0-9]*)\Z")
 _RAW_FIELDS = {
     "roll_call_id", "canonical_action_id", "chamber", "congress", "session",
     "rollcall_number", "vote_date", "position", "issue_domain", "vote_context",
-    "final_result", "current_status", "raw_evidence",
+    "final_result", "current_status", "raw_evidence", "measure_reference",
 }
 
 
@@ -38,12 +39,34 @@ def index_actions(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     indexed = {}
     for row in rows:
         identity = canonical_action_id(row)
+        _validated_measure_reference(row)
         if identity is None:
             continue
         if identity in indexed:
             raise GovernedReceiptProjectionError(f"{identity}: repeated canonical action")
         indexed[identity] = row
     return indexed
+
+
+def _validated_measure_reference(row: dict[str, Any]) -> dict[str, Any] | None:
+    value = row.get("measure_reference")
+    if value is None:
+        return None
+    identity = canonical_action_id(row)
+    congress = row.get("congress")
+    if congress is None and identity:
+        congress = int(identity.split(":")[1])
+    reference = validate_measure_reference(value, action_congress=congress)
+    if reference is None:
+        raise GovernedReceiptProjectionError("invalid measure reference for action")
+    return reference
+
+
+def _require_compatible_measure_references(first: dict[str, Any], second: dict[str, Any]) -> None:
+    original = _validated_measure_reference(first)
+    supplied = _validated_measure_reference(second)
+    if original is not None and supplied is not None and original != supplied:
+        raise GovernedReceiptProjectionError("conflicting same-action measure reference")
 
 
 def union_database_actions(raw: list[dict[str, Any]], reviewed_query: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -53,6 +76,7 @@ def union_database_actions(raw: list[dict[str, Any]], reviewed_query: list[dict[
     additional = index_actions(reviewed_query)
     for identity, row in additional.items():
         if identity in existing:
+            _require_compatible_measure_references(existing[identity], row)
             for key in ("position", "vote_date", "roll_call_id"):
                 if str(existing[identity].get(key)).lower() != str(row.get(key)).lower():
                     raise GovernedReceiptProjectionError(f"{identity}: conflicting database {key}")
@@ -87,9 +111,13 @@ def overlay_reviewed_actions(response: dict[str, Any], reviewed_rows: list[dict[
         row["interpretation_review_state"] = REVIEWED if projection else UNREVIEWED
         if projection is None:
             continue
+        _require_compatible_measure_references(row, projection)
         if str(row.get("position", "")).lower().replace(" ", "_") != str(projection.get("position", "")).lower().replace(" ", "_"):
             raise GovernedReceiptProjectionError(f"{identity}: raw member action conflicts with governed receipt")
         raw_evidence = copy.deepcopy(row.get("raw_evidence", row))
+        _require_compatible_measure_references(row, {**row, "measure_reference": raw_evidence.get("measure_reference")})
+        if "measure_reference" in row:
+            raw_evidence.setdefault("measure_reference", copy.deepcopy(row["measure_reference"]))
         row.update(copy.deepcopy({key: value for key, value in projection.items() if key not in _RAW_FIELDS and key != "interpretation_review_state"}))
         row["canonical_action_id"] = identity
         row["raw_evidence"] = raw_evidence

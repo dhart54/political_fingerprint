@@ -11,6 +11,19 @@ const available = economyEvidence.map((row, index) => ({
 const filter = (page) => page.getByRole("searchbox", { name: "Filter loaded receipts by measure, roll or title", exact: true });
 const receiptIds = (page) => page.locator("[data-canonical-action-id]").evaluateAll((nodes) => nodes.map((node) => node.dataset.canonicalActionId));
 const receipt = (page, roll) => page.locator(`[data-canonical-action-id="house:119:1:${roll}"]`);
+const stableReceiptHtml = (target) => target.locator("div.grid").evaluate(element => {
+  const clone = element.cloneNode(true);
+  // Keyboard prefixes can legitimately exclude/remount a row. Normalize only
+  // React-generated note IDs, while requiring each actual link/note binding.
+  [...clone.querySelectorAll("a[aria-describedby]")].forEach((link, index) => {
+    const supplied = link.getAttribute("aria-describedby");
+    const note = [...clone.querySelectorAll("[id]")].find(node => node.id === supplied);
+    if (!note) throw Error("Missing receipt source access-note binding");
+    const id = `bound-source-note-${index}`;
+    link.setAttribute("aria-describedby", id); note.id = id;
+  });
+  return clone.innerHTML;
+});
 const economyUrl = `/?representative=${foushee.id}&scope=119&issue=ECONOMY_TAXES`;
 const contact = { legislator_id: foushee.id, contact_status: "loaded", data_source: "database", phone: "(202) 225-1784", source_retrieved_at: "2026-05-19" };
 
@@ -251,17 +264,95 @@ const snapshot = JSON.parse(gunzipSync(fs.readFileSync(`../${candidate.source_sn
 const warPowers = candidate.entries.find((entry) => entry.finding_id.includes("war-powers"));
 const massie = { id: "leg_thomas_massie", name_display: "Thomas Massie", chamber: "house", state: "KY", district: "04", party: "R", bioguide_id: "M001184" };
 const senator = { id: "leg_angela_d_alsobrooks", name_display: "Angela D. Alsobrooks", chamber: "senate", state: "MD", party: "D", bioguide_id: "A000382" };
-async function releasedResponses(page, { omit = null } = {}) {
+async function releasedResponses(page, { omit = null, measureReferences = false } = {}) {
   await page.route("http://localhost:8000/**", (route) => {
     const url = new URL(route.request().url()), member = url.pathname.split("/")[2];
     if (url.pathname.endsWith("/profile")) return route.fulfill({ json: [foushee, massie, senator].find((profile) => profile.id === member) });
     const resource = url.pathname.endsWith("/editorial-presentations") ? "editorial" : url.pathname.endsWith("/evidence") ? url.pathname.split("/")[4] : "positions";
     const supplied = snapshot[`${member}:${url.searchParams.get("scope") || "all"}:${resource}`];
     if (!supplied) throw Error(`Unexpected fixture read: ${url.pathname}`);
-    const body = supplied.body.evidence && omit ? { ...supplied.body, evidence: supplied.body.evidence.filter((row) => row.canonical_action_id !== omit) } : supplied.body;
+    let body = supplied.body.evidence && omit ? { ...supplied.body, evidence: supplied.body.evidence.filter((row) => row.canonical_action_id !== omit) } : supplied.body;
+    if (measureReferences && body.evidence) {
+      body = { ...body, evidence: body.evidence.map((row) => {
+        const target = row.canonical_action_id === "house:119:2:282";
+        if (target) expect(row.source_url).toBe("https://clerk.house.gov/evs/2026/roll282.xml");
+        // Add the independently verified existing FK fact to a response copy;
+        // the historical snapshot/presentation/finding hashes stay untouched.
+        return { ...row, measure_reference: target ? { congress: 119, type: "hconres", number: 89 } : null };
+      }) };
+    }
     return route.fulfill({ status: supplied.status, json: body });
   });
 }
+
+for (const width of [320, 390, 768, 1440]) test(`sourced H.Con.Res.89 finds the released Roll282 receipt at ${width}px without changing evidence or history`, async ({ page }, testInfo) => {
+  await page.setViewportSize({ width, height: 900 });
+  await releasedResponses(page, { measureReferences: true });
+  await page.route("**/legislators/*/contact", route => route.fulfill({ json: contact }));
+  await page.goto(`/?representative=${foushee.id}&scope=119`);
+  await expect(page.locator(`#${warPowers.id}`)).toBeVisible();
+  const cards = await page.getByTestId("record-card-entry").evaluateAll(nodes => nodes.map(node => ({ id: node.id, href: node.getAttribute("href"), text: node.textContent })));
+  await page.locator(`#${warPowers.id}`).click();
+  await page.getByRole("navigation", { name: "Selected issue sections" }).getByRole("link", { name: "Vote record", exact: true }).click();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(9);
+  const target = page.locator('[data-canonical-action-id="house:119:2:282"]');
+  await expect(target).toContainText("Associated measure: H.Con.Res. 89 (Congress 119)");
+  await expect(target.locator(":scope > button")).toHaveAccessibleName(/associated measure H\.Con\.Res\. 89/);
+  if (await target.locator(":scope > button").getAttribute("aria-expanded") !== "true") await target.locator(":scope > button").click();
+  const sources = await stableReceiptHtml(target);
+  const ids = await receiptIds(page), accounting = await page.locator(".pattern-strip").innerText();
+  const coverage = await page.locator("#issue-summary").innerText();
+  const url = page.url(), historyLength = await page.evaluate(() => history.length);
+  const requests = [];
+  page.on("request", request => requests.push(request.url()));
+  await filter(page).focus();
+  await page.keyboard.type("H.Con.Res. 89");
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(1);
+  expect(await receiptIds(page)).toEqual(["house:119:2:282"]);
+  await expect(filter(page)).toBeFocused();
+  await expect(page.getByTestId("local-record-filter-status")).toContainText("1 of 9 loaded linked receipts");
+  expect(await stableReceiptHtml(target)).toBe(sources);
+  expect(await page.locator(".pattern-strip").innerText()).toBe(accounting);
+  expect(await page.locator("#issue-summary").innerText()).toBe(coverage);
+  expect(page.url()).toBe(url); expect(await page.evaluate(() => history.length)).toBe(historyLength);
+  expect(requests).toEqual([]);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.getByRole("button", { name: "Clear text filter", exact: true }).click();
+  expect(await receiptIds(page)).toEqual(ids);
+  await target.getByRole("button", { name: "Official contact information", exact: true }).click();
+  await expect(target.getByRole("region", { name: "Official contact information", exact: true })).toContainText("Stored contact details");
+  await filter(page).fill("hconres89");
+  await expect(target.getByRole("region", { name: "Official contact information", exact: true })).toBeVisible();
+  await target.screenshot({ path: testInfo.outputPath(`measure-reference-${width}.png`) });
+  await page.reload(); await expect(filter(page)).toHaveValue("");
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(9);
+  await expect(target).toContainText("Associated measure: H.Con.Res. 89 (Congress 119)");
+  expect(page.url()).toBe(url);
+  await page.goBack(); await expect(page.getByTestId("card-finding-detail")).toBeVisible();
+  await page.goForward(); await expect(page.locator("[data-canonical-action-id]")).toHaveCount(9);
+  await page.goto(`/?representative=${foushee.id}&scope=119`);
+  await expect(page.locator(`#${warPowers.id}`)).toBeVisible();
+  expect(await page.getByTestId("record-card-entry").evaluateAll(nodes => nodes.map(node => ({ id: node.id, href: node.getAttribute("href"), text: node.textContent })))).toEqual(cards);
+});
+
+test("amendment receipt keeps its exact action and meaning beside its associated measure", async ({ page }) => {
+  const amendment = { ...available[0], action_label: "Exact reporting deadline amendment", vote_type: "amendment",
+    vote_context: { ...available[0].vote_context, vote_type: "amendment" },
+    plain_english_summary: "Only the stated reporting deadlines would change.",
+    measure_reference: { congress: 119, type: "hr", number: 7148 } };
+  await installPassARoutes(page, { evidenceOverrides: { ECONOMY_TAXES: [amendment] } });
+  await page.goto(economyUrl);
+  const target = receipt(page, amendment.rollcall_number);
+  await expect(target).toContainText("Exact reporting deadline amendment");
+  await expect(target).toContainText("Associated measure: H.R. 7148 (Congress 119)");
+  await expect(target).toContainText("Amendment");
+  await target.locator(":scope > button").click();
+  await expect(target).toContainText("Only the stated reporting deadlines would change.");
+  const sources = await target.locator("div.grid").innerHTML();
+  await filter(page).fill("hr7148");
+  await expect(target).toBeVisible();
+  expect(await target.locator("div.grid").innerHTML()).toBe(sources);
+});
 
 for (const partial of [false, true]) test(`released finding ${partial ? "partial" : "complete"} response keeps source identity, coverage and history`, async ({ page }) => {
   await releasedResponses(page, { omit: partial ? warPowers.action_ids[0] : null });

@@ -1,4 +1,5 @@
 import { getActionPresentation } from "./selectedIssueExperience.mjs";
+import { measureReferenceLabel } from "./measureReference.mjs";
 
 const IDENTIFIERS = [
   ["hconres", /\bh\s*\.?\s*con\s*\.?\s*res\s*\.?\s*(\d+)\b/g],
@@ -31,7 +32,7 @@ export function filterLoadedReceipts(rows = [], query = "") {
   const words = normalized.replace(IDENTIFIER_QUERY, " ").split(/\s+/).filter(Boolean);
   return rows.filter((row) => {
     const action = getActionPresentation(row);
-    const fields = [action.title, action.parentMeasure, `${row.chamber || "chamber"} Roll ${row.rollcall_number || "not supplied"}`]
+    const fields = [action.title, action.parentMeasure, measureReferenceLabel(row), `${row.chamber || "chamber"} Roll ${row.rollcall_number || "not supplied"}`]
       .map(normalizeLocalRecordQuery);
     return identifiers.every((identifier) => fields.some((field) => ` ${field} `.includes(` ${identifier} `)))
       && words.every((word) => fields.some((field) => /^\d+$/.test(word) || PREFIXES.has(word)

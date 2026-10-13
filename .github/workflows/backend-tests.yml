@@ -86,6 +86,7 @@ jobs:
             backend/tests/test_m14g_education_workforce_site_integration.py \
             backend/tests/test_m14g_site_integration_acceptance.py \
             backend/tests/test_public_record_integrity.py \
+            backend/tests/test_measure_reference.py \
             backend/tests/test_governed_receipt_projection.py
           cd frontend
           node --test \
