@@ -1,0 +1,39 @@
+{
+  "codeBase": "d81eec08e3a4d195ac1676c8ceddbe0c91401d81",
+  "evidenceUrl": "https://political-fingerprint.onrender.com/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119",
+  "officialVoteUrl": "https://clerk.house.gov/evs/2026/roll282.xml",
+  "loadedCount": 93,
+  "targetId": "house:119:2:282",
+  "targetIdentityFields": [],
+  "printedMatcherInputs": {
+    "actionType": "Resolution adoption",
+    "parentMeasure": "",
+    "status": "",
+    "title": "Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran",
+    "vote": "Yea"
+  },
+  "chamberRollInput": "house Roll 282",
+  "normalizedMeasureQuery": "hconres 89",
+  "measureMatches": [],
+  "rollMatches": [
+    "house:119:2:282"
+  ],
+  "conclusion": "Structured measure identity is absent from the loaded response; normalization works. No frontend ID is inferred from prose or URLs."
+}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Desired regression: H.Con.Res. 89 must find the already loaded house:119:2:282 receipt
+    at file:///C:/Users/Dylan/Documents/Data%20Science/political_fingerprint/.w/ls/docs/audits/voter-comprehension-20261013/reproduce-measure-lookup.mjs:64:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
+
+Node.js v22.16.0
