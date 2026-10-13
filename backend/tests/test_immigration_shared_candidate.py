@@ -38,7 +38,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertTrue(all(w in after['governed_source_identities'] for w in before['governed_source_identities']))
                 self.assertTrue(set(before['candidate_shared_limitations']) <= set(after['candidate_shared_limitations']))
                 self.assertEqual(action['candidate_core_qualification']['action_core_sha256'], before['action_core_sha256'])
-                self.assertEqual(action['shared_core_reuse']['artifact_id'], 'shared-action-core:house:119:v19')
+                self.assertEqual(action['shared_core_reuse']['artifact_id'], 'shared-action-core:house:119:v20')
                 self.assertEqual(after['meaning_contract_version'], 'source_qualified_candidate_augmentation_v1')
                 self.assertEqual(after['action_core_sha256'], sealed_digest(after, 'action_core_sha256'))
                 self.assertEqual(after['legislative_stage'], 'final_passage')
@@ -50,10 +50,10 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
 
     def _assert_spending224_material_predicates(self, records):
         required = {
-            'house:119:1:182': ['Act-funded ANY SERVICES', 'BOTH unlawfully present', 'AND not eligible for healthcare', 'this Act,not all federal funds', 'onJune24,2009'],
-            'house:119:2:175': ['does NOT contain', 'FY2026H.R.3944section259', 'COLLECTING AND USING', 'onJune24,2009'],
+            'house:119:1:182': ['Act-funded ANY SERVICES', 'BOTH unlawfully present', 'AND not eligible for healthcare', 'this Act,not all federal funds', 'asofJune24,2009'],
+            'house:119:2:175': ['does NOT contain', 'FY2026H.R.3944section259', 'COLLECTING AND USING', 'asofJune24,2009'],
             'house:119:1:212': ['HIGHER of', 'whole section does not apply', 'employees inTurkey', '180days after enactment', "President's not-necessary/appropriate determination AND", "Secretary's report within30days", 'on-or-afterJune24,2009'],
-            'house:119:2:205': ['funds under THAT HEADING', 'or create a new affidavit requirement for everySNAPrecipient', 'US-residence requirement AND', 'lawfulCOFA-resident alternatives', '45day nonresponse', '10year limitation', 'not silently treated as unchanged consolidated law']}
+            'house:119:2:205': ['funds under THAT HEADING', 'or create a new affidavit requirement for everySNAPrecipient', 'US-residence requirement AND', 'lawfulCOFA-resident alternatives', '45day nonresponse', '10year window', 'not silently treated as unchanged consolidated law']}
         for aid, fragments in required.items():
             for fragment in fragments:
                 self.assertIn(fragment, records[aid]['rationale'])
@@ -93,6 +93,84 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(len(receipt['completed_action_ids']), 5)
         self.assertEqual(receipt['counts_after']['pending'], 38)
         self.assertTrue(receipt['independent224_source_domain_review_pending'])
+
+    def _assert_section412_printed_linkage225(self, text):
+        for fragment in ['Section412(a)', 'Department of Defense IN THIS ACT',
+                         'Subsection(b) expressly excepts', 'THIS SUBSECTION',
+                         '(a)does not expressly refer to(c)', 'asofJune24,2009',
+                         'do not definitively limit(a)to(c)']:
+            self.assertIn(fragment, text)
+        self.assertNotIn('Section412 separately restricts Act/otherwise-available', text)
+
+    def test_section412_distinct_subsections_and_funding_scope_survive_resealed_prose(self):
+        records = {r['action_id']: r for r in self.values[3]['records']}
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        for aid, sid in [('house:119:1:182', 'govinfo:hr3944eh'), ('house:119:2:175', 'govinfo:hr8469eh')]:
+            source = sources[sid]['text'];lo = source.index('Sec. 412.');body = source[lo:source.index('Sec. 413.', lo)]
+            self.assertIn('to the Department of Defense in this Act', body)
+            self.assertIn('prohibition in subsection (a)', body)
+            self.assertIn('An individual described in this subsection', body)
+            self.assertNotIn('individual described in subsection (c)', body)
+            self._assert_section412_printed_linkage225(records[aid]['rationale'])
+            for old, wrong in [('Department of Defense IN THIS ACT', 'all available Department of Defense funds'),
+                               ('THIS SUBSECTION', 'THIS SECTION'),
+                               ('(a)does not expressly refer to(c)', '(a)is limited to(c)')]:
+                with self.subTest(action=aid, dropped=old), self.assertRaises(AssertionError):
+                    self._assert_section412_printed_linkage225(records[aid]['rationale'].replace(old, wrong))
+
+    def _assert_8132_incorporated_sources225(self, core):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        ids = ['govinfo:pl114-92-transfer-1034-225', 'govinfo:pl115-232-transfer-1035-225']
+        for sid in ids:
+            self.assertIn(sid, {w['source_id'] for w in core['operative_meaning_source_identities']})
+            self.assertTrue(any(c['source_id'] == sid and c['passage'] == sources[sid]['text']
+                                for c in core['claim_source_map']))
+        for fragment in ['BOTH PL11492section1034 AND PL115232section1035',
+                         'lawful UScourt/competent-tribunal-order exception', 'at least30days',
+                         'asofOCTOBER1,2009', 'December31,2016', 'December31,2019',
+                         'no silent date extension,revived country ban']:
+            self.assertIn(fragment, core['candidate_exact_action_meaning'])
+
+    def test_8132_requires_both_exact_incorporated_bodies_and_retains_dates_exceptions(self):
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == 'house:119:1:212')
+        self._assert_8132_incorporated_sources225(core)
+        for sid in ['govinfo:pl114-92-transfer-1034-225', 'govinfo:pl115-232-transfer-1035-225']:
+            bad = copy.deepcopy(core)
+            bad['operative_meaning_source_identities'] = [w for w in bad['operative_meaning_source_identities'] if w['source_id'] != sid]
+            bad['claim_source_map'] = [c for c in bad['claim_source_map'] if c['source_id'] != sid]
+            bad['action_core_sha256'] = sealed_digest(bad, 'action_core_sha256')
+            with self.subTest(missing=sid), self.assertRaises(AssertionError):
+                self._assert_8132_incorporated_sources225(bad)
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        self.assertIn('not later than 30 days before', sources['govinfo:pl114-92-transfer-1034-225']['text'])
+        self.assertIn('Except as provided in paragraph (2)', sources['govinfo:pl114-92-transfer-1034-225']['text'])
+        self.assertIn('ending on December 31, 2019', sources['govinfo:pl115-232-transfer-1035-225']['text'])
+        receipt = json.loads((DATA / 'review_corrections_checkpoint225.json').read_text())
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertTrue(receipt['previous224premature212completion_explicitly_superseded'])
+        self.assertTrue(receipt['no_new_ordinary_completion'])
+
+    def test_sponsor_benefit_coverage_is_distinct_from_reimbursement_action_window(self):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        source = sources['govinfo:8usc1183a-2024-sponsor-affidavit']['text']
+        self.assertIn('enforceable with respect to benefits provided', source)
+        self.assertIn('10 years after the date on which the sponsored alien last received', source)
+        text = next(r['rationale'] for r in self.values[3]['records'] if r['action_id'] == 'house:119:2:205')
+        def assert_coverage(candidate):
+            for phrase in ['benefits PROVIDED BEFORE', 'qualified(a)(3)forty-quarter termination date',
+                           'accrued reimbursement claims are extinguished at naturalization',
+                           'separate10year window measured from the last covered means-tested benefit,not from naturalization']:
+                self.assertIn(phrase, candidate)
+            self.assertIn('do not turn this benefit-coverage boundary into a conclusion', candidate)
+            self.assertNotIn('Enforceability ends at naturalization', candidate)
+        assert_coverage(text)
+        wrong = text.replace('do not turn this benefit-coverage boundary into a conclusion',
+                             'this benefit-coverage boundary establishes')
+        with self.assertRaises(AssertionError):
+            assert_coverage(wrong)
+        wrong = text.replace('last covered means-tested benefit,not from naturalization', 'naturalization')
+        with self.assertRaises(AssertionError):
+            assert_coverage(wrong)
 
     def _assert_wilson252_source_scope(self, core):
         sources = {s['source_id']: s for s in self.values[1]['sources']}

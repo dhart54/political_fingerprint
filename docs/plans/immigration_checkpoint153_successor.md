@@ -3928,3 +3928,50 @@ checks original61cores633reviews670rows104propositions/readable findings exact,
 all original source prefixes, Health/history/accepted artifacts and frozen notes.
 One coherent candidate increment follows; fresh CI and independent224review
 remain pending. No extra validation/checkpoint cycle or expanded research batch.
+
+
+### Checkpoint225 - three independent224findings corrected together
+
+Four existing candidate actions corrected; no new ordinary completion.182/175
+retain412(a)DoD-by-this-Act facility funding prohibition,(b)Guantanamo modification
+exception,and(c)dated class separately. Literal this-subsection wording lacks
+express(a)-to-(c)linkage; reserve that uncertainty and do not expand fund scope.
+205bounds benefits provided before naturalization/earlier qualified40-quarter
+date,retaining separate reimbursement/action limits and no accrued-claim
+extinguishment implication.
+
+212whole-action completion was premature on224. CompletePL11492section1034 and
+PL115232section1035are now independently acquired/read/bound,with adjacent1033
+and dated1189/8541definitions. Preserve court-order exception,certification/report
+requirements,distinctOctober1,2009class and printed2016/2019country-ban end dates.
+No silent expiry extension,current-transfer legality or recipient designation
+certificate. Verified8002/8118and whole-vote direction remain. Current candidate
+completion is revalidated only after225binding/correction; original224receipt
+remains immutable historical evidence and is explicitly superseded on this claim.
+
+V20qualifies all four original Health candidates without changing their exact
+identity/reference/meaning prefix/witnesses/limits. V19provider,224source/
+screening/deliveryCI/timingreceipts and original findings remain exact.638reviews/
+38pending,65cores/112propositions,58episodes/sixmulti,11ordinary/27researched
+holds remain. Five new selected cases remain research-only pending.
+
+Cancelled operation: read-only local Python inspection of clerk119:2:228metadata
+and bounded2026June29kidsfloor contexts in the Immigration/Health source banks.
+Tool reported abortedbyuserafter4.4s,no additional reason. It and alternate
+routes were not retried; cancellation boundary is preserved privately and in
+validation receipt. New-case completion credit remains zero. No approval gate
+is imposed on unaffected corrections; parent explicitly authorized continuation.
+
+Source-backed regressions test printed412linkage/funding, both incorporated
+8132bodies and their exceptions/dates, and distinct sponsor benefit/action
+coverage. Lightweight preflight passes; one full required semantic gate and
+sevenCLIbyte replays follow. This inherited correction increment is not a new
+routine-screening benchmark; priorFAIL and all interleaving/pause/helper/test/
+delivery overhead remain recorded. Independent225review remains pending.
+
+225local gate:386focused tests (209candidate included) pass; actual process duration is retained in the phase receipt;
+seven semantic checks, IR and seven actualCLIbyte replays pass. Conservation
+checks other61cores634reviews672rows104propositions/readable findings exact,
+all original source prefixes, Health/history/accepted artifacts and frozen notes.
+One coherent candidate increment follows; fresh CI and independent225review
+remain pending. No extra validation/checkpoint cycle or expanded research batch.
