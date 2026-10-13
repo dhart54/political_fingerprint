@@ -3507,6 +3507,64 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'disposition identity accounting differs'):
             validate(author, capture, universe, membership)
 
+    def _assert_precise_Dakota_section(self, row, parent, number):
+        title = {'607': 'SEC. 607. MUNICIPAL, RURAL, AND INDUSTRIAL WATER SERVICE.',
+                 '610': 'SEC. 610. AUTHORIZATION OF APPROPRIATIONS.'}[number]
+        self.assertTrue(row['text'].startswith(title), 'Same section number is not the same Act clause')
+        self.assertNotIn('Assets for Independence Act', row['text'])
+        self.assertEqual(row['governed_parent_source_identity']['source_id'], parent['source_id'])
+        extent, = row['source_text_extents']
+        self.assertEqual(extent['total'], len(parent['text']))
+        self.assertEqual(row['text'], parent['text'][extent['start']:extent['end']])
+        self.assertEqual(row['raw_sha256'], parent['raw_sha256'])
+        if number == '607':
+            for text in ['State of North Dakota', 'Indian Municipal Rural and Industrial Water Supply',
+                         'Fort Berthold', 'Standing Rock', 'Turtle Mountain', 'Fort Totten']:
+                self.assertIn(text, row['text'])
+        else:
+            for text in ['Statewide', 'Indian municipal, rural, and industrial', 'Indexing']:
+                self.assertIn(text, row['text'])
+
+    def test_Dakota_provenance_repair_binds_own_Act_sections_and_preserves_history(self):
+        bank = {r['source_id']: r for r in self.values[1]['sources']}
+        parent = bank['govinfo:pl106-554-dakota-water610']
+        self.assertIn('Assets for Independence Act', bank['govinfo:pl106-554-dakota-water607']['text'])
+        for number in ['607', '610']:
+            sid = f'govinfo:pl106554-dakota-sec{number}-precise218'
+            self._assert_precise_Dakota_section(bank[sid], parent, number)
+            for aid in ['house:119:2:6', 'house:119:2:7']:
+                core = next(r for r in self.products[0]['actions'] if r['action_id'] == aid)
+                self.assertIn(sid, core['semantic_ir_source_ids'])
+                self.assertTrue(any(r['source_id'] == sid and r['passage'] == bank[sid]['text']
+                                    for r in core['claim_source_map']))
+                self.assertIn('Assets for Independence Act', core['candidate_exact_action_meaning'])
+                original = next(r for r in core['claim_source_map']
+                                if r['source_id'] == 'govinfo:pl106-554-dakota-water607')
+                self.assertIn('not positive Dakota support', original['locator'])
+                broad = next(r for r in core['claim_source_map']
+                             if r['source_id'] == parent['source_id'])
+                self.assertEqual(broad['passage'], parent['text'][609877:628179])
+                self.assertNotIn('Assets for Independence Act', broad['passage'])
+
+    def test_Dakota_regression_rejects_both_historical_same_number_false_matches(self):
+        bank = {r['source_id']: r for r in self.values[1]['sources']}
+        parent = bank['govinfo:pl106-554-dakota-water610']
+        for number in ['607', '610']:
+            with self.subTest(section=number):
+                row = copy.deepcopy(bank[f'govinfo:pl106554-dakota-sec{number}-precise218'])
+                row['text'] = (bank['govinfo:pl106-554-dakota-water607']['text'] if number == '607'
+                               else parent['text'][:len(row['text'])])
+                row['governed_bytes_sha256'] = sealed_digest(row, 'governed_bytes_sha256')
+                with self.assertRaises(AssertionError):
+                    self._assert_precise_Dakota_section(row, parent, number)
+
+    def test_funding_shared_prose_excludes_joined_member_name_tokens(self):
+        for aid in ['house:119:1:239', 'house:119:2:6', 'house:119:2:7']:
+            action = next(r for r in self.values[0]['actions'] if r['action_id'] == aid)
+            prose = json.dumps([action[key] for key in ['short_description', 'compact_description',
+                'meaning', 'limitations', 'choice_meanings']])
+            self.assertIsNone(re.search(r'Foushee|Massie|F000477|M001184', prose))
+
     def test_shared_prose_cannot_contain_observed_member_behavior(self):
         for action in self.values[0]['actions']:
             prose = json.dumps([action[key] for key in ['short_description', 'compact_description',

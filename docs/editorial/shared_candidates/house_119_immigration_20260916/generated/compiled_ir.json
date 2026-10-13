@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 57,
+        "eligible_substantive_actions": 58,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 57,
-        "resolved_eligible_actions": 57,
-        "directional_yes_no_positions": 57,
+        "in_service_eligible_actions": 58,
+        "resolved_eligible_actions": 58,
+        "directional_yes_no_positions": 58,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 50,
+        "complete_episodes": 51,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -495,6 +495,25 @@
             ],
             "evidence_episode_ids": [
               "episode:s5:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:4c7d1ec52257e1f5",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:239"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr4553:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -1084,6 +1103,7 @@
             "prop:6a21d31882068baa",
             "prop:7caab7435f0b241c",
             "prop:1ce3bdaff418d660",
+            "prop:4c7d1ec52257e1f5",
             "prop:bece0fc78218887e",
             "prop:de287b6e79b417ea",
             "prop:42201bf4e2ad1ed7",
@@ -1139,6 +1159,7 @@
           "house:119:1:203",
           "house:119:1:220",
           "house:119:1:23",
+          "house:119:1:239",
           "house:119:1:264",
           "house:119:1:298",
           "house:119:1:299",
@@ -1195,17 +1216,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 57,
+        "eligible_substantive_actions": 58,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 57,
-        "resolved_eligible_actions": 57,
-        "directional_yes_no_positions": 55,
+        "in_service_eligible_actions": 58,
+        "resolved_eligible_actions": 58,
+        "directional_yes_no_positions": 56,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 50,
+        "complete_episodes": 51,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1685,6 +1706,25 @@
             ],
             "evidence_episode_ids": [
               "episode:s5:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:4c7d1ec52257e1f5",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:239"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr4553:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -2236,6 +2276,7 @@
             "prop:180c0141078a25a9",
             "prop:7caab7435f0b241c",
             "prop:c9ed961f9ee13bd6",
+            "prop:4c7d1ec52257e1f5",
             "prop:4dc6a405be8d5d4d",
             "prop:b34441eb4c463db8",
             "prop:e0ad2713154e482b",
@@ -2308,6 +2349,7 @@
           "house:119:1:203",
           "house:119:1:220",
           "house:119:1:23",
+          "house:119:1:239",
           "house:119:1:264",
           "house:119:1:298",
           "house:119:1:299",
@@ -2477,11 +2519,35 @@
     },
     {
       "action_ids": [
+        "house:119:2:6"
+      ],
+      "constraint_id": "source:dakota-namespace:house:119:2:6",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "The original607AssetsforIndependence misselection is historical. Dakota607/610support binds exact named-Act clauses from unchanged broad610parent; same-number matches cannot substitute. Preserve State-versus-Tribal separation and no individual/current-law application. Broad610claim passage is limited to exactDakota[609877:628179), with full historical source identity retained."
+    },
+    {
+      "action_ids": [
         "house:119:2:7"
       ],
       "constraint_id": "source:house119-session2-roll7-whole-qualified",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "WholeA-Cpassage bound independently, with separate priorretention observations. Componenttruth and precise final/division/date/status/amount exceptions apply at their ownscope. No percomponent stance, preliminaryvote substitution, historical/individual/currentlaw implementation, enactment/outcome or editorialacceptance."
+    },
+    {
+      "action_ids": [
+        "house:119:2:7"
+      ],
+      "constraint_id": "source:dakota-namespace:house:119:2:7",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "The original607AssetsforIndependence misselection is historical. Dakota607/610support binds exact named-Act clauses from unchanged broad610parent; same-number matches cannot substitute. Preserve State-versus-Tribal separation and no individual/current-law application. Broad610claim passage is limited to exactDakota[609877:628179), with full historical source identity retained."
+    },
+    {
+      "action_ids": [
+        "house:119:1:239"
+      ],
+      "constraint_id": "source:house119-roll239-whole-qualified",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Own whole passage; preserve Act-versus-otherActs/fiscal2025/date/report scopes, exact status/facility/list/threat and lawful-possession exceptions. Printed USperson is not silently FISA/citizen-only. No component stance, individual current-law benefit, enactment, acceptance or publication."
     }
   ]
 }

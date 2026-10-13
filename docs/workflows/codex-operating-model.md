@@ -361,3 +361,25 @@ measured; workflow speed never authorizes weaker source or publication gates.
   review remains a distinct quality check; these timings do not establish quality
   equivalence, a precise overhead share, or a causal speedup. Canonical receipts
   preserve the source qualifications and validation evidence for comparison.
+
+- **Check drafts before expensive validation (observed, checkpoint218).** Before
+  the full gate, check shared prose for member names, including joined tokens;
+  compare exact measure, version, stage, own question and outcome to governed
+  sources; recompute each defined seal and regenerate the complete typed wrapper;
+  verify material predicate exceptions, dates, funds scope and literal claim
+  intervals. Repeated section numbers require the correct Act/title and clause
+  scope. Keep each batch's source/predicate checks explicit; keywords and titles
+  cannot decide eligibility. Use cheap read-only checks to catch obvious failures
+  before the suite, preserving drafts and reproducible failure evidence. Complete
+  known coherent source/correction work before final validation, then run every
+  required test, replay, CI and independent review gate. Material changes after
+  validation require the affected gate again. Preflight is not semantic acceptance
+  or permission to weaken a check. Reuse unchanged governed witnesses only with
+  their identity, raw/text, scope and version boundaries preserved.
+  In218, lightweight checks of three proposed cores took0.209seconds;
+  the reusable receipt was added while the already-started gate ran, so no
+  retroactive before-gate timing is claimed. Neutrality/stage/wrapper/source
+  checks had run during authoring. Narrowing two positive Dakota claims from
+  628,179 to18,302 characters retained full sources and removed3,656,168 bytes from
+  four generated files. File-size reduction does not establish a speed gain.
+  Repeat corrective validation and recovery remain measured overhead.

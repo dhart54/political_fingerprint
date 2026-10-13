@@ -73,7 +73,8 @@
     "house:119:2:198",
     "house:119:2:5",
     "house:119:2:6",
-    "house:119:2:7"
+    "house:119:2:7",
+    "house:119:1:239"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Membership requires an exact operative Immigration & Border mechanism: status/presence, admission, visas/asylum/refugees/parole, removal, detention/release, naturalization/citizenship, immigration documentation/verification/adjudication, direct border entry/inspection/enforcement, immigration-specific standards/cooperation, or eligibility directly governed by immigration status. Titles, policy labels, rhetoric, keywords and other-domain interpretations are leads only. Procedural/expressive controls remain noncounting.",
@@ -88,9 +89,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 228,
-      "interpreted_substantive_directional": 57,
+      "interpreted_substantive_directional": 58,
       "exact_action_ineligible": 340,
-      "source_unresolved": 49,
+      "source_unresolved": 48,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -100,14 +101,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 57,
-    "directional_substantive_actions": 57,
+    "substantive_eligible_actions": 58,
+    "directional_substantive_actions": 58,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 228,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 340,
-    "unresolved_boundary_cases": 49,
-    "independent_episode_count": 50,
+    "unresolved_boundary_cases": 48,
+    "independent_episode_count": 51,
     "multi_action_episode_count": 6,
     "mechanism_types": [
       "amendment",
@@ -117,8 +118,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 57,
-      "substantive_actions": 57,
+      "ready_substantive_actions": 58,
+      "substantive_actions": 58,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -385,6 +386,7 @@
         "house:119:1:190",
         "house:119:1:203",
         "house:119:1:220",
+        "house:119:1:239",
         "house:119:1:264",
         "house:119:1:298",
         "house:119:1:299",
@@ -765,7 +767,6 @@
         "house:119:1:212",
         "house:119:1:218",
         "house:119:1:237",
-        "house:119:1:239",
         "house:119:1:252",
         "house:119:1:262",
         "house:119:1:281",
@@ -1119,6 +1120,12 @@
           "house:119:2:6",
           "house:119:2:7"
         ]
+      },
+      {
+        "episode_candidate_id": "episode:hr4553:119",
+        "action_ids": [
+          "house:119:1:239"
+        ]
       }
     ],
     "multi_action_episodes": [
@@ -1211,11 +1218,11 @@
         "legal_application_questions": "Separate queue now includes one bounded G102-105 printed-date/general-continuance question; no personal eligibility or FY2025 quota application accepted."
       }
     ],
-    "interpreted_action_count_qualification": "57 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
+    "interpreted_action_count_qualification": "58 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "bd5bcae46a47e7193ee71c418ee851376c03a118de082ce23d205a41fa13b227",
+  "universe_subject_sha256": "104d9310f71c6fcb7adb7f00b6f592ffb70f51a1aa48dea8fb2699375c8e77bd",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -17784,8 +17791,8 @@
       "date": "2025-09-04",
       "measure": "bill_119_hr_4553",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "H.R. 4553 EH whole passage remains pending. Sections 309-310 restrict DOE awards of at least $10 million to an entity of concern defined in PL 117-167, Division B, section 10114, and funded access by a non-US citizen from Russia or China to a nuclear weapons production facility defined in 50 USC 2501. The latter has a public-area exception and a 30-day advance committee-notification exception. Facility admittance does not establish admission to the United States; entity nationality or control does not automatically establish an immigration rule. The definitions, adopted report/allocations and remaining whole-package predicates need reconstruction. Only EH characters [66400,70400) of 89253 were read in this batch. Research hold only: no inclusion/exclusion, completion credit, inherited Health membership, component stance, enactment or individual legal eligibility is inferred. Further source work is executable; this is not established inaccessible evidence or a new methodology decision.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "CompleteH.R.4553EHand own214/213/4finalpassage separatelybound from recommit/amendments. Wholepackage proposed Immigration relationship rests on direct qualifiednonUScitizenfacilityaccess and national/entityawards; exactdefinitions/exceptions/lawfulpossession/report/table/Act/date/USperson limits preserved. Original18-witness wholeHealthprefix/identity/limits preserved without membershipinheritance. Committee narrative is context, not January2026finalstatementforce. Failedamendment33and individual/currentlaw/image/implementation determinations remainqualified. Candidate only, pending independent exactsource/domain review.",
       "source": {
         "source_id": "clerk:119:1:239",
         "url": "https://clerk.house.gov/evs/2025/roll239.xml",
@@ -17793,7 +17800,7 @@
         "governed_bytes_sha256": "6d43a927d4ae1b04407b80480c1d0261003f5f8854d89ee96f9b09abb7cbd61b",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -17802,9 +17809,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "H.R. 4553 EH whole passage remains pending. Sections 309-310 restrict DOE awards of at least $10 million to an entity of concern defined in PL 117-167, Division B, section 10114, and funded access by a non-US citizen from Russia or China to a nuclear weapons production facility defined in 50 USC 2501. The latter has a public-area exception and a 30-day advance committee-notification exception. Facility admittance does not establish admission to the United States; entity nationality or control does not automatically establish an immigration rule. The definitions, adopted report/allocations and remaining whole-package predicates need reconstruction. Only EH characters [66400,70400) of 89253 were read in this batch. Research hold only: no inclusion/exclusion, completion credit, inherited Health membership, component stance, enactment or individual legal eligibility is inferred. Further source work is executable; this is not established inaccessible evidence or a new methodology decision.",
-      "unresolved_reason": "pending_material_exact_predicate_review",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "CompleteH.R.4553EHand own214/213/4finalpassage separatelybound from recommit/amendments. Wholepackage proposed Immigration relationship rests on direct qualifiednonUScitizenfacilityaccess and national/entityawards; exactdefinitions/exceptions/lawfulpossession/report/table/Act/date/USperson limits preserved. Original18-witness wholeHealthprefix/identity/limits preserved without membershipinheritance. Committee narrative is context, not January2026finalstatementforce. Failedamendment33and individual/currentlaw/image/implementation determinations remainqualified. Candidate only, pending independent exactsource/domain review.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:239",
@@ -17813,19 +17820,176 @@
           "governed_bytes_sha256": "6d43a927d4ae1b04407b80480c1d0261003f5f8854d89ee96f9b09abb7cbd61b"
         },
         {
+          "source_id": "immigration:hr4553-roll239-whole-choice218",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+          "governed_bytes_sha256": "2c936e9c81d73d862780f22a7f22c75274eae657501e3361a9def2fd1afb44b0"
+        },
+        {
           "source_id": "govinfo:hr4553eh",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm",
           "raw_sha256": "d1992d7f333b69c9066024074bcca5ee41008fe39e63830b165d8aa7dedbc204",
           "governed_bytes_sha256": "78b1bda19b231d6ae32c5909fe942b554b16d150016ca4f5efcc3a36cb4d0e09"
+        },
+        {
+          "source_id": "govinfo:hrpt119-213-eere",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+          "raw_sha256": "9e2abb5f78c3a9e9befeb93f4e4a9afc6267319c23758e9c8feb8f53b30f4ef6",
+          "governed_bytes_sha256": "d5c1c69205f56f440071a04851655d3f35c81877da9634fccd2dec5ef86367e4"
+        },
+        {
+          "source_id": "govinfo:hrpt119-213-passage-health",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+          "raw_sha256": "9e2abb5f78c3a9e9befeb93f4e4a9afc6267319c23758e9c8feb8f53b30f4ef6",
+          "governed_bytes_sha256": "170cc3709875e43038a6446e463b51b90ce2244bf7f1735b86bf1f17c842cc44"
+        },
+        {
+          "source_id": "energy:fy2026-oda-health-programs",
+          "url": "https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf",
+          "raw_sha256": "30ae8b7cb04a42f612929be38e37b76c291740ec2ff3ddc2ddd3f57a410e9670",
+          "governed_bytes_sha256": "06e091db2c4945381cd32aa7de0bc307c2461b109ed48b8fe07e88095e016eee"
+        },
+        {
+          "source_id": "govinfo:42usc18649-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap161-subchapIII-sec18649.htm",
+          "raw_sha256": "3feeb3154ac0b40e8bea36fca2bb4c771cc5ddb1c8be29d40b24dd3ae58e26e5",
+          "governed_bytes_sha256": "fd7fff2783e1840de677ab665fac3015ca5954c1ce613c9eb01f8135f4cd9358"
+        },
+        {
+          "source_id": "govinfo:40usc-appalachian-health-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm",
+          "raw_sha256": "9df9d8accd7725411821750454574b8bfb8c979d56fe980c78baf4bf017c596f",
+          "governed_bytes_sha256": "07769d91259b06b349100294c02df7fd4448d38ff1d6e304123ca131229ac32d"
+        },
+        {
+          "source_id": "govinfo:42usc3121-denali-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm",
+          "raw_sha256": "e0a6ead09c8178607e25eed3d5313d5d13c0b75b8bc9ec6b4b7a4c825db1f202",
+          "governed_bytes_sha256": "7653675cb295592470cd1037ee84473229029971c18f439494649f4853972611"
+        },
+        {
+          "source_id": "govinfo:7usc-delta-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm",
+          "raw_sha256": "19936b6473fa72673591dedafe69fe10d97214d174ac7a853e33c1ed05b84afa",
+          "governed_bytes_sha256": "2547a9d1f0d7533aa6cb66bbf621ad940b8b18405e89eac75b8f17286a88804a"
+        },
+        {
+          "source_id": "govinfo:40usc-subtitleV-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+          "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+        },
+        {
+          "source_id": "govinfo:pl118-272-regional-commissions",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+          "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+        },
+        {
+          "source_id": "govinfo:pl117-58-4553-transfer-programs",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ58/html/PLAW-117publ58.htm",
+          "raw_sha256": "499a9de0f18d77beb514ceb245a78e84afb8f398418d189c78c466ba72708d83",
+          "governed_bytes_sha256": "ef6ac2e341f01de12ee2f8b0b5fc03ea93648aa22c648d0dab7cfb54e0eb46ba"
+        },
+        {
+          "source_id": "govinfo:1usc7-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title1/html/USCODE-2024-title1-chap1-sec7.htm",
+          "raw_sha256": "5dea9d089cb1ef96e8cd286b88f2c064028944b7c278755a7f080ff4df5339c0",
+          "governed_bytes_sha256": "66bb3a33a8237e0a464e6bf88df81215e4495b64922d31be849706f218e0a87b"
+        },
+        {
+          "source_id": "govinfo:28usc1738C-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partV-chap115-sec1738C.htm",
+          "raw_sha256": "9aa19a76676e63f3913a515ac5292dae43a140cf53139cf0058bdd688c84f6ba",
+          "governed_bytes_sha256": "41e6be7333604705b25c2b32276055f68afd7c489968274a8e8a0e661b2bcd9a"
+        },
+        {
+          "source_id": "govinfo:5usc804-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec804.htm",
+          "raw_sha256": "be39dd302c2bd2d7061fc3880218038a65a168ec0a2376d1b80ac4f0acbab3a2",
+          "governed_bytes_sha256": "452612814637640130893d2000c3e6ac7a4b720ca94c4ad7b9e8ede8d377b105"
+        },
+        {
+          "source_id": "congressional-record:2025-09-04-4553-passage",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+          "governed_bytes_sha256": "4811d9e3e5e3450f46415665052f5fe22acbf0c1ff973f6baa0d282eeb324b88"
+        },
+        {
+          "source_id": "govinfo:42usc6863-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6863.htm",
+          "raw_sha256": "29f3a4cda73c79088625d96a6e31a200773c6fe5e546a979aa6d7e63513e093d",
+          "governed_bytes_sha256": "0d18a113ceaf59ada4cf43d234e538803fd286e78890f3293bcc28e227477277"
+        },
+        {
+          "source_id": "govinfo:42usc6865-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6865.htm",
+          "raw_sha256": "07223db356b1c46746c45cb1ee93f16e326d451873322b6040bffe90dbd70078",
+          "governed_bytes_sha256": "dbe5b00a0b01ea305db9d9d18800673308d378687cfdf563bf92e1bea36bfdee"
+        },
+        {
+          "source_id": "govinfo:hres672eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres672eh/html/BILLS-119hres672eh.htm",
+          "raw_sha256": "22c9a2bf27b4dec32d8e83063449ea3eec7955f343ce4921e739a332e4e8b7e1",
+          "governed_bytes_sha256": "5cbcfbfd4048e3c66bc1c3b1825b030a18d4a9c6715a99f95b52c3ade6c373d8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hrpt119213-house-context218",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/html/CRPT-119hrpt213.htm",
+          "raw_sha256": "1ee20586fb499b0d7f1713646622a8d3cc1e7cc30b09dfa8e4062e45e435ee00",
+          "governed_bytes_sha256": "ba0e253b7a708eac49431ae294064f27d8d9ef721afc6df85428611a5c28442d"
+        },
+        {
+          "source_id": "govinfo:pl117167-10114-entities216",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ167/html/PLAW-117publ167.htm",
+          "raw_sha256": "92fec394ce471eddaf306267366644bd70f27ecc385774b2bf0f5e2c0878db2d",
+          "governed_bytes_sha256": "fb809aa6e64561e636a260c6c5c0b2a9436ec03fcafe1c5c23b387c1ae25cf08"
+        },
+        {
+          "source_id": "govinfo:50usc2501-production-facilities216",
+          "url": "https://www.govinfo.gov/link/uscode/50/2501?year=2024",
+          "raw_sha256": "137f41fbe850a05e8bcb030195f5559cc34bf2fbfad8bf93c5b5f461c434bacb",
+          "governed_bytes_sha256": "2364799fd945bc899badd1b0adeabea3c20893903ab4c1e77d17995d9c7d062c"
+        },
+        {
+          "source_id": "govinfo:8usc1101a21a33-national-residence216",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "567b275d7c819486124a10a3675ba58e57aa67632ff4c3d41ba41b5d1f5d177b"
+        },
+        {
+          "source_id": "govinfo:18usc922-2024-alien-firearm-status",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap44-sec922.htm",
+          "raw_sha256": "356a34ff5f27e88346489a3c6a9c0d33f1f4d95c6fc88bd7b883aa8d63d3b2c3",
+          "governed_bytes_sha256": "3d95a75d4520ab136eca9cd13962410ffb840d748f60ef833832db3863fb1947"
+        },
+        {
+          "source_id": "govinfo:8usc1101a3-alien-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cd54105b7e87d0809dfa230c3a9fea397883076c508ba1859cea00a9193fb4b6"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-nonimmigrant-visa-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "11605ff42af5298fe96106259a674479b16be9d1bb66a93976e3bab072853b9a"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "571aecdf993c1b8c419e22496894d3059bedbb911631c18626a1ea839347c1ad"
       },
       "historical_raw_hash_matches": true
     },
@@ -25930,7 +26094,7 @@
       "measure": "bill_119_hr_6938",
       "question": "On Retaining Divisions B and C",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Exact roll6 retains combinedB/C, distinctA/passage. One qualified originalHealthcore preserves IDs/prefix/limits/all31sources; no Health membership inheritance. Source-bound programme/status participation and limitedCBPfund-transfer acceptance support the proposed Immigration relationship. PreciseDOEentity/10m/production-facility exceptions, separateYCC/PLC/currentnational-service criteria and actualterritorial/Compact totals remain qualified. Nationality or nativeancestry/geography alone, genericproperty/agencyterms, immigrationadmission and allproject/enrollee predicates are not inferred. Datedpatent1994compliance/IHS1987rule implementation not determined; literal conditions retained rather than invented application. ExactfinalB/Cimport/replacement/report deadlines and namedadoptedsecurity/Insular/workforce directives are governed. Own419/6/6retention/FousheeYea/MassieNay is onewholechoice. Candidate pending independent source/domain application review; no acceptance, benchmark pass or exhaustivecomponent/current-law certification. UniversalEHsections1-5areexplicitlysource-bound fordivisionreferences/conferenceallocationimplementation,withnoAprogrammeprojection. Prospective217P3precision: onlyHouse reporting requirements receive specified60dayreset; finalstatement15dayCorpsbriefing retained.",
+      "reason": "Exact roll6 retains combinedB/C, distinctA/passage. One qualified originalHealthcore preserves IDs/prefix/limits/all31sources; no Health membership inheritance. Source-bound programme/status participation and limitedCBPfund-transfer acceptance support the proposed Immigration relationship. PreciseDOEentity/10m/production-facility exceptions, separateYCC/PLC/currentnational-service criteria and actualterritorial/Compact totals remain qualified. Nationality or nativeancestry/geography alone, genericproperty/agencyterms, immigrationadmission and allproject/enrollee predicates are not inferred. Datedpatent1994compliance/IHS1987rule implementation not determined; literal conditions retained rather than invented application. ExactfinalB/Cimport/replacement/report deadlines and namedadoptedsecurity/Insular/workforce directives are governed. Own419/6/6retention/FousheeYea/MassieNay is onewholechoice. Candidate pending independent source/domain application review; no acceptance, benchmark pass or exhaustivecomponent/current-law certification. UniversalEHsections1-5areexplicitlysource-bound fordivisionreferences/conferenceallocationimplementation,withnoAprogrammeprojection. Prospective217P3precision: onlyHouse reporting requirements receive specified60dayreset; finalstatement15dayCorpsbriefing retained. Dakota provenance repaired prospectively using exact607/610derivatives; original wrong607and broad610identities/history preserved, no direction or domain reversal. Positive broad610claim support is limited to the exactDakota607-610interval; original fullsource/identity preserved.",
       "source": {
         "source_id": "clerk:119:2:6",
         "url": "https://clerk.house.gov/evs/2026/roll006.xml",
@@ -25948,7 +26112,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Exact roll6 retains combinedB/C, distinctA/passage. One qualified originalHealthcore preserves IDs/prefix/limits/all31sources; no Health membership inheritance. Source-bound programme/status participation and limitedCBPfund-transfer acceptance support the proposed Immigration relationship. PreciseDOEentity/10m/production-facility exceptions, separateYCC/PLC/currentnational-service criteria and actualterritorial/Compact totals remain qualified. Nationality or nativeancestry/geography alone, genericproperty/agencyterms, immigrationadmission and allproject/enrollee predicates are not inferred. Datedpatent1994compliance/IHS1987rule implementation not determined; literal conditions retained rather than invented application. ExactfinalB/Cimport/replacement/report deadlines and namedadoptedsecurity/Insular/workforce directives are governed. Own419/6/6retention/FousheeYea/MassieNay is onewholechoice. Candidate pending independent source/domain application review; no acceptance, benchmark pass or exhaustivecomponent/current-law certification. UniversalEHsections1-5areexplicitlysource-bound fordivisionreferences/conferenceallocationimplementation,withnoAprogrammeprojection. Prospective217P3precision: onlyHouse reporting requirements receive specified60dayreset; finalstatement15dayCorpsbriefing retained.",
+      "rationale": "Exact roll6 retains combinedB/C, distinctA/passage. One qualified originalHealthcore preserves IDs/prefix/limits/all31sources; no Health membership inheritance. Source-bound programme/status participation and limitedCBPfund-transfer acceptance support the proposed Immigration relationship. PreciseDOEentity/10m/production-facility exceptions, separateYCC/PLC/currentnational-service criteria and actualterritorial/Compact totals remain qualified. Nationality or nativeancestry/geography alone, genericproperty/agencyterms, immigrationadmission and allproject/enrollee predicates are not inferred. Datedpatent1994compliance/IHS1987rule implementation not determined; literal conditions retained rather than invented application. ExactfinalB/Cimport/replacement/report deadlines and namedadoptedsecurity/Insular/workforce directives are governed. Own419/6/6retention/FousheeYea/MassieNay is onewholechoice. Candidate pending independent source/domain application review; no acceptance, benchmark pass or exhaustivecomponent/current-law certification. UniversalEHsections1-5areexplicitlysource-bound fordivisionreferences/conferenceallocationimplementation,withnoAprogrammeprojection. Prospective217P3precision: onlyHouse reporting requirements receive specified60dayreset; finalstatement15dayCorpsbriefing retained. Dakota provenance repaired prospectively using exact607/610derivatives; original wrong607and broad610identities/history preserved, no direction or domain reversal. Positive broad610claim support is limited to the exactDakota607-610interval; original fullsource/identity preserved.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -26286,6 +26450,18 @@
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
           "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
           "governed_bytes_sha256": "89d8ddee2965ba58cfa92585156b2abcea48b5dc5a209080f4966dc96262816a"
+        },
+        {
+          "source_id": "govinfo:pl106554-dakota-sec607-precise218",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "bac429e28bae873be18947f7665407dca10f9248a86f9afdbff5a31d11c32c61"
+        },
+        {
+          "source_id": "govinfo:pl106554-dakota-sec610-precise218",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "9964b88f59c9574b4add320f5fc63a20628b8a56220f7af11ab616476e7ebb46"
         }
       ],
       "exact_action_source_binding": null,
@@ -26295,7 +26471,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "81b0ffce2df4a37f9be938565e571721761f50b1a6424f2546bdc56bd4583b04"
+        "shared_review_record_sha256": "05204381c881a5a87da04c46c563a212e2900eaa01efbd2172c415da1c227890"
       },
       "historical_raw_hash_matches": true
     },
@@ -26307,7 +26483,7 @@
       "measure": "bill_119_hr_6938",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Own roll7final397/28/6passage and finalFousheeYea/MassieNay, includingrecordedpreliminaryvotechange, are bound independently from retentions. AllA-Cremain after bothretentions/engrossment/thirdreading; completegovernedEHparts and universalfrontmatter/currentdivision-specific finalimports supportthiswholepackage. One qualifiedoriginalwholeHealthcore preserves48sourceidentities/prefix/limits; exactAandBCsource-qualified functions/status/financial/access conditions reusedwiththeirscope, notHealthmembership/retentionpositions. No newly addedoperativecomponent inboundssequence isidentified. Historicalpatent/IHS, individualproject/currentlaw/application/imageallocation limits retained; no componentendorsement/enactment/motive/trajectory. Candidate wholepassage relationship pending independent exactsource/domain review; no acceptance or benchmarkpass.",
+      "reason": "Own roll7final397/28/6passage and finalFousheeYea/MassieNay, includingrecordedpreliminaryvotechange, are bound independently from retentions. AllA-Cremain after bothretentions/engrossment/thirdreading; completegovernedEHparts and universalfrontmatter/currentdivision-specific finalimports supportthiswholepackage. One qualifiedoriginalwholeHealthcore preserves48sourceidentities/prefix/limits; exactAandBCsource-qualified functions/status/financial/access conditions reusedwiththeirscope, notHealthmembership/retentionpositions. No newly addedoperativecomponent inboundssequence isidentified. Historicalpatent/IHS, individualproject/currentlaw/application/imageallocation limits retained; no componentendorsement/enactment/motive/trajectory. Candidate wholepassage relationship pending independent exactsource/domain review; no acceptance or benchmarkpass. Dakota provenance repaired prospectively using exact607/610derivatives; original wrong607and broad610identities/history preserved, no direction or domain reversal. Positive broad610claim support is limited to the exactDakota607-610interval; original fullsource/identity preserved.",
       "source": {
         "source_id": "clerk:119:2:7",
         "url": "https://clerk.house.gov/evs/2026/roll007.xml",
@@ -26325,7 +26501,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Own roll7final397/28/6passage and finalFousheeYea/MassieNay, includingrecordedpreliminaryvotechange, are bound independently from retentions. AllA-Cremain after bothretentions/engrossment/thirdreading; completegovernedEHparts and universalfrontmatter/currentdivision-specific finalimports supportthiswholepackage. One qualifiedoriginalwholeHealthcore preserves48sourceidentities/prefix/limits; exactAandBCsource-qualified functions/status/financial/access conditions reusedwiththeirscope, notHealthmembership/retentionpositions. No newly addedoperativecomponent inboundssequence isidentified. Historicalpatent/IHS, individualproject/currentlaw/application/imageallocation limits retained; no componentendorsement/enactment/motive/trajectory. Candidate wholepassage relationship pending independent exactsource/domain review; no acceptance or benchmarkpass.",
+      "rationale": "Own roll7final397/28/6passage and finalFousheeYea/MassieNay, includingrecordedpreliminaryvotechange, are bound independently from retentions. AllA-Cremain after bothretentions/engrossment/thirdreading; completegovernedEHparts and universalfrontmatter/currentdivision-specific finalimports supportthiswholepackage. One qualifiedoriginalwholeHealthcore preserves48sourceidentities/prefix/limits; exactAandBCsource-qualified functions/status/financial/access conditions reusedwiththeirscope, notHealthmembership/retentionpositions. No newly addedoperativecomponent inboundssequence isidentified. Historicalpatent/IHS, individualproject/currentlaw/application/imageallocation limits retained; no componentendorsement/enactment/motive/trajectory. Candidate wholepassage relationship pending independent exactsource/domain review; no acceptance or benchmarkpass. Dakota provenance repaired prospectively using exact607/610derivatives; original wrong607and broad610identities/history preserved, no direction or domain reversal. Positive broad610claim support is limited to the exactDakota607-610interval; original fullsource/identity preserved.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -26873,6 +27049,18 @@
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
           "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
           "governed_bytes_sha256": "89d8ddee2965ba58cfa92585156b2abcea48b5dc5a209080f4966dc96262816a"
+        },
+        {
+          "source_id": "govinfo:pl106554-dakota-sec607-precise218",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "bac429e28bae873be18947f7665407dca10f9248a86f9afdbff5a31d11c32c61"
+        },
+        {
+          "source_id": "govinfo:pl106554-dakota-sec610-precise218",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "9964b88f59c9574b4add320f5fc63a20628b8a56220f7af11ab616476e7ebb46"
         }
       ],
       "exact_action_source_binding": null,
@@ -26882,7 +27070,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "d27b496a8550c97450110f50f403597f4047f37fe64f3e296d5e92dfe37b91a2"
+        "shared_review_record_sha256": "d5db592f075272a636fcf4a2fe99931b9313a7f8cb2cd6b1c5f5d364c7069c99"
       },
       "historical_raw_hash_matches": true
     },
@@ -48069,7 +48257,8 @@
     "house:119:2:198",
     "house:119:2:5",
     "house:119:2:6",
-    "house:119:2:7"
+    "house:119:2:7",
+    "house:119:1:239"
   ],
   "unresolved_action_ids": [
     "house:119:1:151",
@@ -48080,7 +48269,6 @@
     "house:119:1:212",
     "house:119:1:218",
     "house:119:1:237",
-    "house:119:1:239",
     "house:119:1:252",
     "house:119:1:262",
     "house:119:1:281",
@@ -48138,6 +48326,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "b5177aeab364094eb85439e787e335c2028d4b50a1bec9e22f627fe58706bbf6",
-  "membership_review_sha256": "3b2dde8e652de7ff49e61d6718bb17afd0e8f9c1e8b37a2cb8dbd874dbb83dbd"
+  "proposal_sha256": "d8e5baf3b905eeceac92ab69024881baf1e55e83419bd2bb388c6d10e4bfe8f1",
+  "membership_review_sha256": "a6086c46bc4196e817dae3b47a6eab335537d22ec2829faccaf2d956b653be0d"
 }

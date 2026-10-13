@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "f9e16a394bc02d56b04547cdcc6bfb9b562973f0796edda397e2d163700c1702",
-  "source_capture_sha256": "931095391b1dc0cbb80d6be968ac64ee500486a1af751aeb941af1005becdb7e",
-  "core_sha256": "58ea0b35ab2b9c8aa6031e839d0b34eb1a8c4ed66ee721edf5aa1abefd49a1fc",
-  "compiled_sha256": "cf0263ee15d8843d7e256435f6d45f2141bb0f32ab2784a3437363cdac693dfd",
-  "readable_sha256": "a37768666c38babb7246b40ce705a7c3e2239f8099527805425e2c3dd159a305",
+  "input_sha256": "0d2da9487c6f5dbaad5dbdc552fd49fdfe4e958bd2d45185eff19d7910a3b917",
+  "source_capture_sha256": "0528a5db0ac72bd1ccfc274b3a20cab13eb6e754ee85165ea47d7486d9fbbb94",
+  "core_sha256": "a0dd4d5fca4df254b1a18e8cdbf22307fbc379f3594042b59a99e30a675e59a6",
+  "compiled_sha256": "a629906064dc737c8fb2f7d2a2e4112a56af913aab545b966ec73b1f3d30c37b",
+  "readable_sha256": "1d2ba00e8be3e33ec76759a21b7feae31678482fa016936aa45b8e81755c6afb",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -598,6 +598,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:239",
+      "shared_sha256": "1142f764f161b46aace0867ecbc82ab4572e4b368316bbeed8ab20d5c7e8257e",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole Energy and Water package with its qualified facility-access and award conditions",
+          "source_id": "clerk:119:1:239"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole Energy and Water package with its qualified facility-access and award conditions",
+          "source_id": "clerk:119:1:239"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:264",
       "shared_sha256": "61422deb67c15b97a683be55c252d3c2fb3dfacb8525119321e9f08e41b58db1",
       "choices": [
@@ -699,7 +719,7 @@
     },
     {
       "action_id": "house:119:2:6",
-      "shared_sha256": "e41fca517b85b22cd92a0b64c1dc9cfd154f2a23241e7fbc1fa7d18227626402",
+      "shared_sha256": "05747f471de4e0f9fcff31349d6a9ea21e5cc86a52287eef96e1667507170c0b",
       "choices": [
         {
           "member_id": "F000477",
@@ -719,7 +739,7 @@
     },
     {
       "action_id": "house:119:2:7",
-      "shared_sha256": "24660a6d8c08ecc7ee8a77e135355746f9401493f8483a9d0c2caf0389a24397",
+      "shared_sha256": "9aaafa3bf48bd5f96dabe3874ce4bb26e8c606043491a1b09af8885a280a4416",
       "choices": [
         {
           "member_id": "F000477",

@@ -3521,3 +3521,83 @@ and both prior observations, with the whole third choice separately bound.
 Tracked changes remain confined to candidate, audit, review receipts and plan.
 Fresh feature-head CI and independent217 review remain pending; priorFAIL
 unchanged and no new comparable routine-cycle mean is claimed.
+
+
+## Next coherent funding increment: H.R.4553 whole passage
+
+Select1:239 from the two remaining cases because DOE309-310share governed
+PL117-167section10114and50USC2501chains with H.R.6938. H.R.5371requires
+broader whole-government incorporation work. Both remain pending until exact
+whole-choice qualification. Preserve217 originals and its independent review.
+Complete the unchanged89,253-character H.R.4553EHread and original whole
+Health meaning/ownfloor read. Eight of18original witnesses are already exact;
+ten exactHealth imports remain available without reacquisition.
+
+Remaining work: own214/213/4roll239question/order/result separate from prior
+roll238recommit and amendments; structuredrule672/report119232actual adoption;
+material report119213allocation/transfer/security scopes using September2025
+precedence rather than January2026finalB; printed section510USperson scope
+without unrelated statutory-definition substitution; section108other-law/State
+conditions and UnitedStatespower-customer geography. Preserve original meaning
+prefix/limits/identities and full generated wrapper before any membership change.
+Neutrality preflight runs before provider writing/full suite; use established
+actions-digest seal and actual wrapper regeneration, not copied seal shortcuts.
+
+Expected bounded fanout about19-22candidate/receipt/plan files including seven
+generated outputs. Focused candidate/semantic tests, changed replay, preservation,
+actual-head CI and independent review remain required. Source/correction/delivery
+time stays measured; no new routine credit or scaling of failed benchmark.
+
+218 authored:628reviewed48pending,58meanings98behavioral propositions,
+51independentepisodes/sixmultiactionepisodes. H.R.5371remains pending.
+H.R.4553whole-core28witnesses retain original18Healthprefix/identity/limits.
+B/C58andwholeH.R.6938at93witnesses add preciseDakota607/610source scopes.
+Original607selects AssetsforIndependence, broad610starts at another610but
+contains correctDakota clauses; originalsource/Health/history identities remain.
+Positive broad610claims narrow to literalDakota[609877:628179), retaining
+the full628179-character source. The originalwrong607is explicitly historical.
+Joinedmember-name tokens inB/Cprose are neutralized with observations unchanged.
+
+15canonical sources append:11exactHealthimports and fourliteral derivatives.
+Two namespace false-match probes reject the historicalwrong607andbroad610
+starts before writing. Three source/neutrality regressions are added; original
+neutralitytest unchanged. Received final217review reports34checks,7actualCLI
+replays,109literalbindings/91identities,noP2or reversal, reported566seconds.
+Two217receipts now reconcile review-state fields only; originalversions/private
+receipts/providers are preserved. Independent218review remains pending.
+
+369prefinal focused tests pass in319.996seconds,sevensemanticchecks/IR/seven
+exactImmigrationreplays pass. Final broad-positive-claim scoping then requires
+192affected candidate tests/checks/replay; prefinal timing and artifacts remain.
+Initial source-authoring measured1162.071seconds; initialcasecomparison unstamped
+and later scope/correction/diagnostic/conservation/delivery costs remain in total.
+Source helper false-match assumption, universe-seal omission and private verifier
+direction-word assumption failed safely and were corrected with exact guards.
+
+Requested bounded throttling diagnostic used61existing root receipts, no fresh
+authenticated request or benchmark. Recordedfresh214-216captures are GovInfo;
+Clerk/LSC/Healthreuse and zero217/218acquisitions rule out CongressAPIthrottling
+for thoseincrements. No429/retry/backoff recorded; quota/retryheaders and full
+request-level timing were notretained. Captureintervals0.27-1.33seconds are not
+pure/exhaustive networktimes.217CIjobspan617seconds. Reading/reasoning/helper
+split unknown. Correction-driven repeatedvalidation is the largest directly
+timedavoidable overhead; neutrality/seal preflight and finishingcorrections before
+finalsuite are safe changes. Boundedpositiveclaims remove3656168bytes from four
+generatedfiles; causal speedup notestablished. BenchmarkFAILunchanged.
+
+218finalscope:192affected candidate tests pass in290.804seconds,sevensemantic
+checks/IR/sevenexactImmigration outputs pass. Final211literalclaim bindings
+verified; other55cores625reviews673rows94props/readables, allthreeprior
+observations, Health, oldsourceobjects/providers and frozen217private preserved.
+Captureprefix unchanged:1341entries/1338uniqueIDs, three duplicate-ID entries
+retained transparently rather than historical normalization. Conservation seal
+2251df2c5edc387f0ffdac73ab6947a9c38252fa4e6db27f8144e87ded5e8129.
+
+User-authorized earlypreflight/coherent-correction practice recorded in durable
+operatingmodel within this same commit. Lightweight checks took0.209seconds,
+then0.252seconds with direct Clerkoutcome comparison, while finalgate was already
+running; no retroactive timing claim. Earlier authoring guards ran before full
+gates. Cheap postguidance semantic check initially omitted harnessNODE_PATH;
+failedphase preserved, existing path reused without installs/config changes.
+Finalresolved sevenchecks pass; allother finalgates remain. No API-throttling
+attribution, causalspeedup, comparablecycle credit or benchmarkacceptance.
