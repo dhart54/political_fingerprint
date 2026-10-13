@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "160d19948b18bfa96bb4746990336b2eaf83028ea42a38c2c98ae73776ba8eb4",
-  "source_capture_sha256": "8d93f30932beca36fec07d028417da10dba6544226d5c3dba0ff4ed0799ba055",
-  "core_sha256": "e6e95f9bdf17485d8719aca31dbade6f88bd893fdcb6fc4aa64958ca3504ad8c",
-  "compiled_sha256": "a18c3e58db8f34d92b108046abb083379f2e2bb906c96e8e38c8de839bedb110",
-  "readable_sha256": "dca03fd298acb16253e98868822c4a5b466bff1f0a99636c973b45744a389c59",
+  "input_sha256": "8102d88c13a79b5563ad39dc1c7dbed8bdfdc53580223072f9bcfcfbbca6fd59",
+  "source_capture_sha256": "c3baa13df49f9448ffcdcf66902174446b7a7830f7f11084fe03405e809bf7cd",
+  "core_sha256": "51a19d7d076065191fe687995e05ad45ed8e0c2da802edb2582206b311a021f1",
+  "compiled_sha256": "4314a50d202382aeeeff72f3c054fec988dfc30191676ab020d29192c693c3e8",
+  "readable_sha256": "67bc5639a0f711e51b75e65e475c271a5996dfa216d484b5e99fe4a8883d6654",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -498,6 +498,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:182",
+      "shared_sha256": "3d4bdfcabef4caad838d884702c72e3388776736efdf38e294aaafe3caa91242",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing that entire exact mixed package; no separate component stance or preferred alternative is inferred",
+          "source_id": "clerk:119:1:182"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the entire exact mixed appropriations package, including its qualified status/programme conditions",
+          "source_id": "clerk:119:1:182"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:183",
       "shared_sha256": "dd21e41e4a513b8c2e30b3ab7c3befc370549ca9395fc7f038d82bf77ba1c53f",
       "choices": [
@@ -574,6 +594,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported the direct H.R.4 Senate-amendment concurrence and its complete rescission package",
           "source_id": "clerk:119:1:203"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:212",
+      "shared_sha256": "e804fc8eb4f31197ab16f74bc25cee9fb628c9bc522f635c65c7e85a8e0c5eb0",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing that entire exact mixed package; no separate component stance or preferred alternative is inferred",
+          "source_id": "clerk:119:1:212"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing that entire exact mixed package; no separate component stance or preferred alternative is inferred",
+          "source_id": "clerk:119:1:212"
         }
       ]
     },
@@ -1138,6 +1178,26 @@
       ]
     },
     {
+      "action_id": "house:119:2:175",
+      "shared_sha256": "fac9f910a9a57801accd0f3cb072cb531d658db68b766be3f90d30926e01c273",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the entire exact mixed appropriations package, including its qualified status/programme conditions",
+          "source_id": "clerk:119:2:175"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the entire exact mixed appropriations package, including its qualified status/programme conditions",
+          "source_id": "clerk:119:2:175"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:2:198",
       "shared_sha256": "9c3b8944733b2af3b5b1e8469b84bd6ffbab7eea876d9c1a52224d2055f3a427",
       "choices": [
@@ -1154,6 +1214,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported House passage of H.R. 7726 as put to the chamber",
           "source_id": "clerk:119:2:198"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:205",
+      "shared_sha256": "0a14ae390579b2a9156802228675fd3e5ecc20a1f1f5f4237d9d5cb7e1d81d67",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing that entire exact mixed package; no separate component stance or preferred alternative is inferred",
+          "source_id": "clerk:119:2:205"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing that entire exact mixed package; no separate component stance or preferred alternative is inferred",
+          "source_id": "clerk:119:2:205"
         }
       ]
     },

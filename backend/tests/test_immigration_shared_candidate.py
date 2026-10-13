@@ -18,6 +18,82 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_spending224_qualification_conserves_shared_health_truth(self):
+        old = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text())
+        originals = {c['action_id']: c for c in old['actions']}
+        cores = {c['action_id']: c for c in self.products[0]['actions']}
+        actions = {a['action_id']: a for a in self.values[0]['actions']}
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        witnesses = {
+            'house:119:1:182': ['govinfo:EO12989-consolidated2024-224', 'govinfo:48cfr221802-policy2024-224', 'govinfo:48cfr221803-prescription2024-224', 'govinfo:48cfr5222254-verification2024-224'],
+            'house:119:2:175': ['govinfo:EO12989-consolidated2024-224', 'govinfo:48cfr221803-prescription2024-224'],
+            'house:119:1:212': ['govinfo:eo14167-asissued2025-224', 'govinfo:5usc5332-GS2024-224', 'govinfo:eo12333-qualified-part2-defs2024-224'],
+            'house:119:2:205': ['govinfo:8usc1183a-2024-sponsor-affidavit', 'govinfo:pl119-21-farm-nutrition-current-law']}
+        for aid, ids in witnesses.items():
+            with self.subTest(action=aid):
+                before, after, action = originals[aid], cores[aid], actions[aid]
+                self.assertEqual(before['exact_action_identity'], after['exact_action_identity'])
+                self.assertEqual(before['action_meaning_ref'], after['action_meaning_ref'])
+                self.assertTrue(after['candidate_exact_action_meaning'].startswith(before['candidate_exact_action_meaning']))
+                self.assertTrue(all(w in after['governed_source_identities'] for w in before['governed_source_identities']))
+                self.assertTrue(set(before['candidate_shared_limitations']) <= set(after['candidate_shared_limitations']))
+                self.assertEqual(action['candidate_core_qualification']['action_core_sha256'], before['action_core_sha256'])
+                self.assertEqual(action['shared_core_reuse']['artifact_id'], 'shared-action-core:house:119:v19')
+                self.assertEqual(after['meaning_contract_version'], 'source_qualified_candidate_augmentation_v1')
+                self.assertEqual(after['action_core_sha256'], sealed_digest(after, 'action_core_sha256'))
+                self.assertEqual(after['legislative_stage'], 'final_passage')
+                self.assertEqual(after['package_component_boundary']['boundary_type'], 'whole_measure')
+                self.assertFalse(re.search(r'Foushee|Massie|F000477|M001184', after['candidate_exact_action_meaning']))
+                for sid in ids:
+                    self.assertIn(sid, {w['source_id'] for w in after['governed_source_identities']})
+                    self.assertTrue(any(c['source_id'] == sid and c['passage'] == sources[sid]['text'] for c in after['claim_source_map']))
+
+    def _assert_spending224_material_predicates(self, records):
+        required = {
+            'house:119:1:182': ['Act-funded ANY SERVICES', 'BOTH unlawfully present', 'AND not eligible for healthcare', 'this Act,not all federal funds', 'onJune24,2009'],
+            'house:119:2:175': ['does NOT contain', 'FY2026H.R.3944section259', 'COLLECTING AND USING', 'onJune24,2009'],
+            'house:119:1:212': ['HIGHER of', 'whole section does not apply', 'employees inTurkey', '180days after enactment', "President's not-necessary/appropriate determination AND", "Secretary's report within30days", 'on-or-afterJune24,2009'],
+            'house:119:2:205': ['funds under THAT HEADING', 'or create a new affidavit requirement for everySNAPrecipient', 'US-residence requirement AND', 'lawfulCOFA-resident alternatives', '45day nonresponse', '10year limitation', 'not silently treated as unchanged consolidated law']}
+        for aid, fragments in required.items():
+            for fragment in fragments:
+                self.assertIn(fragment, records[aid]['rationale'])
+        for aid in ['house:119:1:182', 'house:119:2:175']:
+            for fragment in ['exceeding$150,000', 'less-than120day', 'COTS', 'nondelegable contracting-head waivers', 'assigned-worker-only', 'HSPD12 exemptions', 'exceed$3,500', 'interim excusal', 'not automatic guilt', 'permanent residence OR authorization']:
+                self.assertIn(fragment, records[aid]['rationale'])
+
+    def test_spending224_rejects_lost_scope_and_conjunctive_predicates(self):
+        records = {r['action_id']: r for r in self.values[3]['records']}
+        self._assert_spending224_material_predicates(records)
+        for aid, before, after in [
+            ('house:119:1:182', 'AND not eligible for healthcare', 'OR not eligible for healthcare'),
+            ('house:119:2:175', 'does NOT contain', 'contains'),
+            ('house:119:2:175', 'nondelegable contracting-head waivers', 'universal verification'),
+            ('house:119:1:212', 'HIGHER of', 'LOWER of'),
+            ('house:119:1:212', "Secretary's report within30days", 'automatic reassignment'),
+            ('house:119:2:205', 'funds under THAT HEADING', 'all appropriated funds'),
+            ('house:119:2:205', 'US-residence requirement AND', 'US-residence requirement OR')]:
+            with self.subTest(action=aid, lost=before):
+                wrong = copy.deepcopy(records)
+                wrong[aid]['rationale'] = wrong[aid]['rationale'].replace(before, after)
+                with self.assertRaises(AssertionError):
+                    self._assert_spending224_material_predicates(wrong)
+
+    def test_spending224_budget_noncounting_and_reconciled207_has_no_credit(self):
+        rows = {r['action_id']: r for r in self.values[2]['candidate_dispositions']}
+        records = {r['action_id']: r for r in self.values[3]['records']}
+        self.assertEqual(records['house:119:2:143']['disposition'], 'procedural_context')
+        self.assertTrue(records['house:119:2:143']['substantive_review_performed'])
+        self.assertNotIn('house:119:2:143', {a['action_id'] for a in self.values[0]['actions']})
+        self.assertIn('not a$70billion immigration appropriation', records['house:119:2:143']['rationale'])
+        self.assertEqual(rows['house:119:2:207']['disposition'], 'source_unresolved')
+        self.assertNotIn('house:119:2:207', records)
+        self.assertTrue(rows['house:119:2:207']['review_progress']['source_application_relationship_unresolved'])
+        receipt = json.loads((DATA / 'ordinary_spending_screening_checkpoint224.json').read_text())
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(len(receipt['completed_action_ids']), 5)
+        self.assertEqual(receipt['counts_after']['pending'], 38)
+        self.assertTrue(receipt['independent224_source_domain_review_pending'])
+
     def _assert_wilson252_source_scope(self, core):
         sources = {s['source_id']: s for s in self.values[1]['sources']}
         memo = 'whitehouse:NSPM4-border-military20250411-223'

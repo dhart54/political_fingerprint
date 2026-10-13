@@ -1,0 +1,100 @@
+{
+  "checkpoint": 224,
+  "base_head": "f09ad90bda0df6314ee7771974217bcaeba4fabf",
+  "other61cores633reviews670rows104props_and_readable_findings_exact": true,
+  "all_Health_accepted_legacy_corpus_historical_providers_and_completion_evidence_preserved": true,
+  "source_bank_manifest_private_pool_prior_prefixes_exact": true,
+  "new_canonical_sources": 89,
+  "new_manifest_sources": 89,
+  "new_private_sources": 88,
+  "source_quality_receipt_sha256": "bdf5476828d8c87470b450ee3ae6b0a30f2c1244fdcb9323baf8388f434d72c5",
+  "original_notes_existing221_failure_logs_and222_local_timing_frozen": true,
+  "all_five_selected_completed_four_substantive_one_procedural": true,
+  "prior207_research_reconciled_no_credit": true,
+  "active_counts": {
+    "reviewed": 638,
+    "pending": 38,
+    "cores": 65,
+    "behavioral_propositions": 112,
+    "episodes": 58,
+    "multi_action_episodes": 6,
+    "ordinary": 11,
+    "researched_holds": 27
+  },
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "CIfailed221_and222_not_green": true,
+  "CIworkflow_untouched": true,
+  "benchmarkFAILunchanged": true,
+  "full_gate_completed": true,
+  "focused_tests": 383,
+  "semantic_checks": 7,
+  "IRvalidation": true,
+  "CLI_byte_exact_outputs": 7,
+  "validation_phases": [
+    {
+      "log": ".tmp/tests224.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-13T20:31:19.220921+00:00",
+      "completed_utc": "2026-10-13T20:37:33.670439+00:00",
+      "elapsed_seconds": 374.4495954000158,
+      "exit_code": 0,
+      "log_sha256": "f58946375830c81d0e0fcc8515d184eaea21f0ee26cc78686dea3094e7aeac9a"
+    },
+    {
+      "log": ".tmp/semantic224.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-13T20:37:33.675674+00:00",
+      "completed_utc": "2026-10-13T20:37:37.381794+00:00",
+      "elapsed_seconds": 3.7061243999633007,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp/ir224.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-13T20:37:37.382919+00:00",
+      "completed_utc": "2026-10-13T20:37:37.451372+00:00",
+      "elapsed_seconds": 0.06845609995070845,
+      "exit_code": 0,
+      "log_sha256": "5d476de483df140913578ea01c6760b66dedb6db33bf59407fff688b7d75bfbf"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-13T20:37:37.455558+00:00",
+      "completed_utc": "2026-10-13T20:38:29.875547+00:00",
+      "elapsed_seconds": 52.42000420001568,
+      "outputs": 7
+    }
+  ],
+  "independent224_source_domain_review_pending": true,
+  "elapsed_seconds": 4.11876740003936,
+  "completed_utc": "2026-10-13T20:39:19.061795+00:00",
+  "receipt_sha256": "c6883f8ded0f937a601c2358c8f73541d46fcf28058a6b5c16b9c3f2b15a3418"
+}

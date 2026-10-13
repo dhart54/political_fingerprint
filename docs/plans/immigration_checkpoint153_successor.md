@@ -3884,3 +3884,47 @@ confirmed failed at f9a7398:8jobs pass and M14Hfails, no retry requested. Existi
 221failure logs and222local timing are preserved; the new compact222API snapshot
 records the actual job/step conclusions. The isolated repair's fresh feature-event
 qualification follows the real223push. No green inherited run or acceptance claim.
+
+
+### Checkpoint224 - five ordinary spending screenings
+
+Fixed cohort1:182/1:212/2:143/2:175/2:205: whole public operative texts
+owner-read (650585characters), governed evidence reused, material status and
+programme predicates traced before classification. Four proposed substantive
+meanings qualify modern Health cores through v19, preserving original exact
+identity, meaning reference/prefix, witnesses and limitations. No accepted or
+legacy provider changes. S.Con.Res.33 receives procedural, noncounting review: its
+future reserves/reconciliation limits do not enact immigration appropriations.
+
+Retain joint unlawful-presence AND VA-eligibility predicate for182 and its absence
+in175; dated contractor thresholds/exemptions/waivers and interim MOU excusal;
+212higher-of salary cap and two-predicate reassignment exception;205SNAP-heading
+fund scope and current-to-vote10108status alternatives. Preserve whole-package
+choices and source-specific detention/USperson definitions. No individual status,
+implementation, enactment or component-position inference.
+
+638reviewed/38pending,65cores/112propositions,58episodes/sixmulti,70questions/
+threepartialpackages.207alreadyresearched is reconciled to a source/application
+hold without new review/meaning/credit:11ordinary and27researched holds remain.
+89canonical/manifest append entries and88private entries preserve prior prefixes.
+Prior223independent review reports41conservation checks,142hold assertions,17tests,
+7CLIoutputs and2resealed rejection probes, no material defect; its received224
+metadata receipt is bounded support, not acceptance or locally rehashed report bytes.
+
+Efficiency: reuse source identities and known material excerpts; classify actual
+queue before selecting; use lightweight source/stage/neutrality/predicate checks
+before one full required gate and one coherent delivery. Source retrieval/parser
+failures and tool-output recoveries remain in elapsed timing. Complete public
+reading and linked application still dominate; no skipped predicates or artificial
+per-case timers. Five ordinary closures are batch work, not five independently
+timed comparable cycles. The greater-than10minute failure threshold and4minute
+target remain; benchmarkFAIL already established, no silent scaling. Full focused
+gate, seven actualCLIbyte replays, final conservation and fresh feature CI follow.
+Independent224source/domain review remains required before any acceptance.
+
+224local gate:383focused tests (206candidate included) pass in374.217seconds;
+seven semantic checks, IR and seven actualCLIbyte replays pass. Conservation
+checks original61cores633reviews670rows104propositions/readable findings exact,
+all original source prefixes, Health/history/accepted artifacts and frozen notes.
+One coherent candidate increment follows; fresh CI and independent224review
+remain pending. No extra validation/checkpoint cycle or expanded research batch.

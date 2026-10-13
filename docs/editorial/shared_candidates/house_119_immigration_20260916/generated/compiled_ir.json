@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 61,
+        "eligible_substantive_actions": 65,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 61,
-        "resolved_eligible_actions": 61,
-        "directional_yes_no_positions": 61,
+        "in_service_eligible_actions": 65,
+        "resolved_eligible_actions": 65,
+        "directional_yes_no_positions": 65,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 54,
+        "complete_episodes": 58,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -429,6 +429,25 @@
             }
           },
           {
+            "proposition_id": "prop:17fbda2f3918b3a0",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:182"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr3944:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:557144ff8dd5575d",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -457,6 +476,25 @@
             ],
             "evidence_episode_ids": [
               "episode:hr275:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:1ee91ad82e980e05",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:212"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr4016:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -885,6 +923,25 @@
             }
           },
           {
+            "proposition_id": "prop:d789b64e573f7123",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:175"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr8469:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:7c348782365dca1c",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -894,6 +951,25 @@
             ],
             "evidence_episode_ids": [
               "house:119:hr7726"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:a14c01bfd3b72459",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:205"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr8646:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -1156,8 +1232,10 @@
             "prop:c4a52ddd5c236892",
             "prop:025057881bfdaa58",
             "prop:ed0e0c7e7c732192",
+            "prop:17fbda2f3918b3a0",
             "prop:557144ff8dd5575d",
             "prop:6a21d31882068baa",
+            "prop:1ee91ad82e980e05",
             "prop:7caab7435f0b241c",
             "prop:1ce3bdaff418d660",
             "prop:4c7d1ec52257e1f5",
@@ -1180,7 +1258,9 @@
             "prop:3bf57a26338dc654",
             "prop:5cd30fee85ac5da1",
             "prop:ec7301e401593196",
+            "prop:d789b64e573f7123",
             "prop:7c348782365dca1c",
+            "prop:a14c01bfd3b72459",
             "prop:10a347b9c7236fff",
             "prop:27252af571282f01",
             "prop:4654a7f3030b2604",
@@ -1213,10 +1293,12 @@
           "house:119:1:17",
           "house:119:1:171",
           "house:119:1:172",
+          "house:119:1:182",
           "house:119:1:183",
           "house:119:1:184",
           "house:119:1:190",
           "house:119:1:203",
+          "house:119:1:212",
           "house:119:1:220",
           "house:119:1:23",
           "house:119:1:239",
@@ -1242,7 +1324,9 @@
           "house:119:2:142",
           "house:119:2:155",
           "house:119:2:169",
+          "house:119:2:175",
           "house:119:2:198",
+          "house:119:2:205",
           "house:119:2:214",
           "house:119:2:221",
           "house:119:2:244",
@@ -1279,17 +1363,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 61,
+        "eligible_substantive_actions": 65,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 61,
-        "resolved_eligible_actions": 61,
-        "directional_yes_no_positions": 59,
+        "in_service_eligible_actions": 65,
+        "resolved_eligible_actions": 65,
+        "directional_yes_no_positions": 63,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 54,
+        "complete_episodes": 58,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1703,6 +1787,25 @@
             }
           },
           {
+            "proposition_id": "prop:4a4e7c7d09402d41",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:1:182"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr3944:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:4571d99bead2df6f",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -1731,6 +1834,25 @@
             ],
             "evidence_episode_ids": [
               "episode:hr275:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:1ee91ad82e980e05",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:212"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr4016:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -2121,6 +2243,25 @@
             }
           },
           {
+            "proposition_id": "prop:d789b64e573f7123",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:175"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr8469:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:77b8ad61ca4e2f80",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -2130,6 +2271,25 @@
             ],
             "evidence_episode_ids": [
               "house:119:hr7726"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:a14c01bfd3b72459",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:205"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr8646:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -2392,8 +2552,10 @@
             "prop:127d1ea93d8d97fa",
             "prop:a77e5c1d91a2748f",
             "prop:14db2b07a762c07f",
+            "prop:4a4e7c7d09402d41",
             "prop:4571d99bead2df6f",
             "prop:180c0141078a25a9",
+            "prop:1ee91ad82e980e05",
             "prop:7caab7435f0b241c",
             "prop:c9ed961f9ee13bd6",
             "prop:4c7d1ec52257e1f5",
@@ -2414,7 +2576,9 @@
             "prop:97ffb4da3756a020",
             "prop:3bf57a26338dc654",
             "prop:5cd30fee85ac5da1",
+            "prop:d789b64e573f7123",
             "prop:77b8ad61ca4e2f80",
+            "prop:a14c01bfd3b72459",
             "prop:ab993a839535a775",
             "prop:27252af571282f01",
             "prop:d7344a953f10e445",
@@ -2466,10 +2630,12 @@
           "house:119:1:17",
           "house:119:1:171",
           "house:119:1:172",
+          "house:119:1:182",
           "house:119:1:183",
           "house:119:1:184",
           "house:119:1:190",
           "house:119:1:203",
+          "house:119:1:212",
           "house:119:1:220",
           "house:119:1:23",
           "house:119:1:239",
@@ -2493,7 +2659,9 @@
           "house:119:2:13",
           "house:119:2:142",
           "house:119:2:155",
+          "house:119:2:175",
           "house:119:2:198",
+          "house:119:2:205",
           "house:119:2:214",
           "house:119:2:221",
           "house:119:2:244",
@@ -2690,6 +2858,38 @@
       "constraint_id": "source:dc142-whole-qualified221",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Whole temporary26-217disapproval, unchanged noncitizen/ITIN routes linked to amount change; no new status, universal access, component stance, taxresidency equivalence or individual/current-law/outcome certification."
+    },
+    {
+      "action_ids": [
+        "house:119:1:182"
+      ],
+      "constraint_id": "source:ordinary-spending-qualified224:house:119:1:182",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Pass the whole FY2026military/VA package, including the joint unlawful-presence AND VA-healthcare-ineligibility condition on Act-funded services, qualified contractor employment-verification and defined military-detention facility limits. No blanket noncitizen-service prohibition or individual eligibility finding. Whole qualified source/version/predicate boundaries remain; no individual or component finding."
+    },
+    {
+      "action_ids": [
+        "house:119:1:212"
+      ],
+      "constraint_id": "source:ordinary-spending-qualified224:house:119:1:212",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Pass the whole FY2026Defense package, including temporary DoDnoncitizen pay/employment-bar exceptions and qualified Mexico command/border-mission,non-refoulement and security conditions. No automatic enlistment,immigration status,command reassignment or individual outcome. Whole qualified source/version/predicate boundaries remain; no individual or component finding."
+    },
+    {
+      "action_ids": [
+        "house:119:2:175"
+      ],
+      "constraint_id": "source:ordinary-spending-qualified224:house:119:2:175",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Pass the whole FY2027military/VA package with qualified contractor employment-verification and defined military-detention facility conditions. The similar FY2026unlawful-presence service rider is absent; no blanket workforce verification or individual status/benefit finding. Whole qualified source/version/predicate boundaries remain; no individual or component finding."
+    },
+    {
+      "action_ids": [
+        "house:119:2:205"
+      ],
+      "constraint_id": "source:ordinary-spending-qualified224:house:119:2:205",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Pass the whole FY2027agriculture/rural-development/FDA package, including the SNAP-heading prohibition on spending contrary to INA213Asponsor-affidavit law. It is not a new affidavit rule for every recipient or an automatic current-benefit/status determination. Whole qualified source/version/predicate boundaries remain; no individual or component finding."
     }
   ]
 }

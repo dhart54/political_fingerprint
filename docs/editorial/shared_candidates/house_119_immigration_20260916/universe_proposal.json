@@ -77,7 +77,11 @@
     "house:119:1:239",
     "house:119:1:281",
     "house:119:2:56",
-    "house:119:1:252"
+    "house:119:1:252",
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:175",
+    "house:119:2:205"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Membership requires an exact operative Immigration & Border mechanism: status/presence, admission, visas/asylum/refugees/parole, removal, detention/release, naturalization/citizenship, immigration documentation/verification/adjudication, direct border entry/inspection/enforcement, immigration-specific standards/cooperation, or eligibility directly governed by immigration status. Titles, policy labels, rhetoric, keywords and other-domain interpretations are leads only. Procedural/expressive controls remain noncounting.",
@@ -91,10 +95,10 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 228,
-      "interpreted_substantive_directional": 61,
+      "procedural_context": 229,
+      "interpreted_substantive_directional": 65,
       "exact_action_ineligible": 342,
-      "source_unresolved": 43,
+      "source_unresolved": 38,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -104,14 +108,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 61,
-    "directional_substantive_actions": 61,
+    "substantive_eligible_actions": 65,
+    "directional_substantive_actions": 65,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 228,
+    "procedural_context_actions": 229,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 342,
-    "unresolved_boundary_cases": 43,
-    "independent_episode_count": 54,
+    "unresolved_boundary_cases": 38,
+    "independent_episode_count": 58,
     "multi_action_episode_count": 6,
     "mechanism_types": [
       "amendment",
@@ -121,8 +125,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 61,
-      "substantive_actions": 61,
+      "ready_substantive_actions": 65,
+      "substantive_actions": 65,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -313,6 +317,7 @@
         "house:119:2:135",
         "house:119:2:140",
         "house:119:2:141",
+        "house:119:2:143",
         "house:119:2:153",
         "house:119:2:158",
         "house:119:2:159",
@@ -384,10 +389,12 @@
         "house:119:1:168",
         "house:119:1:171",
         "house:119:1:172",
+        "house:119:1:182",
         "house:119:1:183",
         "house:119:1:184",
         "house:119:1:190",
         "house:119:1:203",
+        "house:119:1:212",
         "house:119:1:220",
         "house:119:1:239",
         "house:119:1:252",
@@ -416,7 +423,9 @@
         "house:119:2:142",
         "house:119:2:155",
         "house:119:2:169",
+        "house:119:2:175",
         "house:119:2:198",
+        "house:119:2:205",
         "house:119:2:214",
         "house:119:2:221",
         "house:119:2:244",
@@ -768,11 +777,9 @@
       ],
       "source_unresolved": [
         "house:119:1:151",
-        "house:119:1:182",
         "house:119:1:199",
         "house:119:1:200",
         "house:119:1:210",
-        "house:119:1:212",
         "house:119:1:218",
         "house:119:1:237",
         "house:119:1:262",
@@ -786,14 +793,11 @@
         "house:119:2:53",
         "house:119:2:57",
         "house:119:2:89",
-        "house:119:2:143",
         "house:119:2:154",
         "house:119:2:157",
-        "house:119:2:175",
         "house:119:2:176",
         "house:119:2:193",
         "house:119:2:196",
-        "house:119:2:205",
         "house:119:2:207",
         "house:119:2:218",
         "house:119:2:224",
@@ -1147,6 +1151,30 @@
         "action_ids": [
           "house:119:1:252"
         ]
+      },
+      {
+        "episode_candidate_id": "episode:hr3944:119",
+        "action_ids": [
+          "house:119:1:182"
+        ]
+      },
+      {
+        "episode_candidate_id": "episode:hr4016:119",
+        "action_ids": [
+          "house:119:1:212"
+        ]
+      },
+      {
+        "episode_candidate_id": "episode:hr8469:119",
+        "action_ids": [
+          "house:119:2:175"
+        ]
+      },
+      {
+        "episode_candidate_id": "episode:hr8646:119",
+        "action_ids": [
+          "house:119:2:205"
+        ]
       }
     ],
     "multi_action_episodes": [
@@ -1239,11 +1267,11 @@
         "legal_application_questions": "Separate queue now includes one bounded G102-105 printed-date/general-continuance question; no personal eligibility or FY2025 quota application accepted."
       }
     ],
-    "interpreted_action_count_qualification": "61 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
+    "interpreted_action_count_qualification": "65 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "344b157a0bfeaa86d1eb6143fc27161eec44f3b36f904296076afa067fd6396b",
+  "universe_subject_sha256": "3f8a8f85172a78e93d04547caa3dfb34b0bce76c9b7a6b1d35cce3dc449b9bfd",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -13448,8 +13476,8 @@
       "date": "2025-06-25",
       "measure": "bill_119_hr_3944",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Source-qualified whole-action addition: section259 prohibits Act-funded ANY SERVICES to an individual who is BOTH unlawfully present in the United States AND not eligible for healthcare under laws administered by the VASecretary. The eligibility predicate is retained; this is not a blanket prohibition on all noncitizens,all unlawfully present persons or all government services. The funding scope is this Act,not all federal funds. No individual presence or VA-eligibility finding is made. The existing clinical and other benefit conditions remain; this rider does not establish a new personal admission/removal rule or revoke all veteran healthcare rights.\n\nSection410 bars using funds made available by THIS ACT to execute a contract for goods or services, including construction, where the contractor has not complied with ExecutiveOrder12989. This is a source-traced employment/immigration verification funding condition, not an inference from military or VA agency names. The dated2024consolidated order's section1 refers to INA274A(a)(1)(A)/(a)(2)'s knowing unauthorized-alien hiring/continued-employment rules; section5 requires agreement to use the DHS-designated electronic employment-eligibility system for specified US hires and assigned workers. Unauthorized employment at a particular time is distinct from immigration presence, nationality or lawful permanent residence alone:1324a(h)(3) retains permanent residence OR authorization to be so employed. Antidiscrimination obligations remain. Contractor underFAR9.403 includes an individual or legal entity, affiliates and the specified bidding/contract/subcontract/agency relationships, not a citizen-only ownership class.\n\nThe dated2024FAR implementation is bounded.22.1803 prescribes52.222-54 for contracts exceeding$150,000, with outside-US-only work,less-than120day and specifiedCOTS/bulk-cargo/associated-service exceptions.22.1802 allows exceptional nondelegable contracting-head waivers.52.222-54 defines assigned workers by direct US contract work and post-November6,1986 hire (post-November27,2009 inCNMI); indirect/overhead work without substantial contract duties is excluded. It distinguishes general new US hires from optional assigned-worker-only verification for higher-education,State/local/recognized-Tribal government or takeover-surety contractors. Electing verification of other existing employees is optional and has its own180day timing. Enrollment/verification periods and prior-verification,active-clearance/HSPD12 exemptions remain; qualifying services/construction subcontracts must exceed$3,500 and involve US work. MOU termination produces referral and interim excusal pending a suspension/debarment decision, not automatic guilt or exclusion. The order's investigation/hearing/agency determination and generally offending-unit debarment scope,one-year/continued-violation extensions remain. No individual employment authorization,current contract/MOU/waiver,all-workforce mandate,actual debarment or workforce-performance claim is certified. The bill does not first create or rewrite these underlying programmes; the2024sources are a dated qualified baseline,not a certificate of current implementation.\n\nSection412 separately restricts Act/otherwise-available DoD funds for constructing,renovating or expanding domestic/territorial/possession facilities for the described military-detention class located atGuantanamo onJune24,2009,not a UScitizen or ArmedForces member and within the printed custody/control/detention alternatives. Modification atGuantanamo is excepted. This military-detention class is not every immigration detainee or an actual transfer/removal finding.236 discontinues USE of SSNs for authentication bySeptember30,2026 and separately permits necessary identification in four stated cases in accordance with552a; it is not a universal new SSN/immigration-document eligibility demand. The PrivacyAct's citizen/LPR individual definition and separate qualified redress remain distinct from this bill's all-individuals authentication wording.238 protects the FilipinoVeteransEquityCompensationFund against inter-account transfer; no new citizenship or beneficiary determination is inferred.417's UnitedStatesperson communications wording is retained without importing a definition from FISA,tax or employment law. Whole public proposal,existing qualified care context and literal date discrepancies remain. Yea/Nay concern the whole FY2026mixed package,not any separate rider. House passage does not establish enactment,implementation,services denied,contracts rejected or individual outcomes.",
       "source": {
         "source_id": "clerk:119:1:182",
         "url": "https://clerk.house.gov/evs/2025/roll182.xml",
@@ -13457,7 +13485,7 @@
         "governed_bytes_sha256": "448caadc445db96e41e2c4e1e6458f47d4b9a6720e3a34c4207416cfd099b858",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3944:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3944",
       "member_action": "nay",
@@ -13466,25 +13494,145 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Source-qualified whole-action addition: section259 prohibits Act-funded ANY SERVICES to an individual who is BOTH unlawfully present in the United States AND not eligible for healthcare under laws administered by the VASecretary. The eligibility predicate is retained; this is not a blanket prohibition on all noncitizens,all unlawfully present persons or all government services. The funding scope is this Act,not all federal funds. No individual presence or VA-eligibility finding is made. The existing clinical and other benefit conditions remain; this rider does not establish a new personal admission/removal rule or revoke all veteran healthcare rights.\n\nSection410 bars using funds made available by THIS ACT to execute a contract for goods or services, including construction, where the contractor has not complied with ExecutiveOrder12989. This is a source-traced employment/immigration verification funding condition, not an inference from military or VA agency names. The dated2024consolidated order's section1 refers to INA274A(a)(1)(A)/(a)(2)'s knowing unauthorized-alien hiring/continued-employment rules; section5 requires agreement to use the DHS-designated electronic employment-eligibility system for specified US hires and assigned workers. Unauthorized employment at a particular time is distinct from immigration presence, nationality or lawful permanent residence alone:1324a(h)(3) retains permanent residence OR authorization to be so employed. Antidiscrimination obligations remain. Contractor underFAR9.403 includes an individual or legal entity, affiliates and the specified bidding/contract/subcontract/agency relationships, not a citizen-only ownership class.\n\nThe dated2024FAR implementation is bounded.22.1803 prescribes52.222-54 for contracts exceeding$150,000, with outside-US-only work,less-than120day and specifiedCOTS/bulk-cargo/associated-service exceptions.22.1802 allows exceptional nondelegable contracting-head waivers.52.222-54 defines assigned workers by direct US contract work and post-November6,1986 hire (post-November27,2009 inCNMI); indirect/overhead work without substantial contract duties is excluded. It distinguishes general new US hires from optional assigned-worker-only verification for higher-education,State/local/recognized-Tribal government or takeover-surety contractors. Electing verification of other existing employees is optional and has its own180day timing. Enrollment/verification periods and prior-verification,active-clearance/HSPD12 exemptions remain; qualifying services/construction subcontracts must exceed$3,500 and involve US work. MOU termination produces referral and interim excusal pending a suspension/debarment decision, not automatic guilt or exclusion. The order's investigation/hearing/agency determination and generally offending-unit debarment scope,one-year/continued-violation extensions remain. No individual employment authorization,current contract/MOU/waiver,all-workforce mandate,actual debarment or workforce-performance claim is certified. The bill does not first create or rewrite these underlying programmes; the2024sources are a dated qualified baseline,not a certificate of current implementation.\n\nSection412 separately restricts Act/otherwise-available DoD funds for constructing,renovating or expanding domestic/territorial/possession facilities for the described military-detention class located atGuantanamo onJune24,2009,not a UScitizen or ArmedForces member and within the printed custody/control/detention alternatives. Modification atGuantanamo is excepted. This military-detention class is not every immigration detainee or an actual transfer/removal finding.236 discontinues USE of SSNs for authentication bySeptember30,2026 and separately permits necessary identification in four stated cases in accordance with552a; it is not a universal new SSN/immigration-document eligibility demand. The PrivacyAct's citizen/LPR individual definition and separate qualified redress remain distinct from this bill's all-individuals authentication wording.238 protects the FilipinoVeteransEquityCompensationFund against inter-account transfer; no new citizenship or beneficiary determination is inferred.417's UnitedStatesperson communications wording is retained without importing a definition from FISA,tax or employment law. Whole public proposal,existing qualified care context and literal date discrepancies remain. Yea/Nay concern the whole FY2026mixed package,not any separate rider. House passage does not establish enactment,implementation,services denied,contracts rejected or individual outcomes.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:182",
           "url": "https://clerk.house.gov/evs/2025/roll182.xml",
           "raw_sha256": "77b207cad25a6673555d015427c5a65acf0f78cc60aebb5cfc5e29f085207ba2",
-          "governed_bytes_sha256": "448caadc445db96e41e2c4e1e6458f47d4b9a6720e3a34c4207416cfd099b858",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "448caadc445db96e41e2c4e1e6458f47d4b9a6720e3a34c4207416cfd099b858"
+        },
+        {
+          "source_id": "govinfo:hr3944eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3944eh/html/BILLS-119hr3944eh.htm",
+          "raw_sha256": "3bb75a3b9173dea14bed28b8d60a1127b23890f3dd1cfe993183d360bf11e2d2",
+          "governed_bytes_sha256": "dfbdd32827acf45f22ac7eaee1f165961550dc36a4a3c1dcb899a43b78ffa58f"
+        },
+        {
+          "source_id": "govinfo:pl114-223",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ223/html/PLAW-114publ223.htm",
+          "raw_sha256": "7303a1cb14b57092785a4265f7c395c833a2b856d7d965eb8dbbd92b48f0c587",
+          "governed_bytes_sha256": "3489d6379b4f80b3b4a113d86cf24d93cf45fc3e27830da98a4a152ab6e4c4bd"
+        },
+        {
+          "source_id": "govinfo:pl115-141",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ141/html/PLAW-115publ141.htm",
+          "raw_sha256": "12b165f1b76f830aa5e5a0e9fd3cd1d2921314830efa7f7a2af6b0e5ab58d762",
+          "governed_bytes_sha256": "eb59a13206ff223f78c667aaa947ed7ed5f8e9b5cc937e05c2121a39de56dd88"
+        },
+        {
+          "source_id": "govinfo:pl111-163",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ163/html/PLAW-111publ163.htm",
+          "raw_sha256": "63e0746156b92b20a5cce347666990c09a9ef2078caf18cb263c5f65766e2d22",
+          "governed_bytes_sha256": "043a1d2d1ccd6d1571323d1a6907988448e2b2a683a39c7759e6aa3f41d26d3c"
+        },
+        {
+          "source_id": "govinfo:pl118-42",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ42/html/PLAW-118publ42.htm",
+          "raw_sha256": "818fd40a2df73633a2f9245deda6f8fc3a54730e2161e8a707c9fa09947b3d25",
+          "governed_bytes_sha256": "97ab501ad96c30e7bc0c855d5189805185703c0aa0ebc4462916d8e4e979cfb9"
+        },
+        {
+          "source_id": "govinfo:fr2022-19239",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2022-09-09/html/2022-19239.htm",
+          "raw_sha256": "721d66596fc2833d132b79875d6660857359e8586b1b9299776fbfbee5c852c5",
+          "governed_bytes_sha256": "2ec305361d3ec2d9d394a3a3fedba94cee903024e81ebf68c74e512d4678e7f7"
+        },
+        {
+          "source_id": "govinfo:fr2023-03013",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-02-16/html/2023-03013.htm",
+          "raw_sha256": "0f4afc9ccd03315a2c05b8befff402cb56f3a8ca51b9ee9cc424ef34323eabb0",
+          "governed_bytes_sha256": "f5f1b93c9419ddaa74f3fbbfb3ba224be5b8251a8c64bf4641b892e4f667792f"
+        },
+        {
+          "source_id": "govinfo:fr2024-07040",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm",
+          "raw_sha256": "1f6d17761256dee20a28a5174d31ad43c3a807f58fe42481b5480e67a6e7f0e3",
+          "governed_bytes_sha256": "89d9f3ef45323814c9ca372a83448e2309f1d1d4a2053b14d9c72579b987cc64"
+        },
+        {
+          "source_id": "govinfo:fr2019-26751",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2019-12-13/html/2019-26751.htm",
+          "raw_sha256": "b8badfe4df3057257a509f9c9ba7bc0d20be1352756f43862f32de94f1503b74",
+          "governed_bytes_sha256": "aab64b5c36493299791bab0b6ca2a30b610d90503710f8633f22288fe7220a25"
+        },
+        {
+          "source_id": "govinfo:transport-court2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca13-24-01104/pdf/USCOURTS-ca13-24-01104-0.pdf",
+          "raw_sha256": "1d6c788e2580ac545af16fb72a8df002115d3b96d10a66c6f014d48902df18a3",
+          "governed_bytes_sha256": "fc117eee066657fa0cd92cf4a82baa75d28169c28a597c66410d7c6870337fbc"
+        },
+        {
+          "source_id": "congressional-record:2025-06-25",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf",
+          "raw_sha256": "f7408fc92908be3ddc2138b091a1849cf386677eabc81ac3f05c97db4afb3710",
+          "governed_bytes_sha256": "e382828324b1dd9c723f9d1341caac6596901e2a3d48242bb700008b3c315b84"
+        },
+        {
+          "source_id": "govinfo:EO12989-consolidated2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "71f0af18baca1b39fa7cd59f11759145d32ca87ca64dc1d3b742bf96bdd97376"
+        },
+        {
+          "source_id": "govinfo:48cfr9403-contractor2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol1/xml/CFR-2024-title48-vol1-sec9-403.xml",
+          "raw_sha256": "a04cc4dbac28a90317716315c601b74ccf25742193567c08bc26af2e6e65b2f9",
+          "governed_bytes_sha256": "6294754cfea96fc3aa328a8d0888a6159123061ae9eebdd76ee141e235d249b1"
+        },
+        {
+          "source_id": "govinfo:48cfr221802-policy2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol1/xml/CFR-2024-title48-vol1-sec22-1802.xml",
+          "raw_sha256": "9156745938f953f2b579d67d4c9483d0f127a29af3aa658fc61a6973e120a09a",
+          "governed_bytes_sha256": "478b37102aeb4078f39f63682f9138a3713224d4c0244b498e7394b5613994db"
+        },
+        {
+          "source_id": "govinfo:48cfr221803-prescription2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol1/xml/CFR-2024-title48-vol1-sec22-1803.xml",
+          "raw_sha256": "53c239e70dd5732d5e48ad2e77897ee7fd4be6aaa4ef7eafefa57c6777d02d8a",
+          "governed_bytes_sha256": "de28b37c2e48cbb62a9ce1d994531d2c3325e78deb61ca699f7b10fd07db67b1"
+        },
+        {
+          "source_id": "govinfo:48cfr5222254-verification2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol2/xml/CFR-2024-title48-vol2-sec52-222-54.xml",
+          "raw_sha256": "bd5bf546d9589759cf517dad262813e695f1795ad8d1a4f808276165bb6a30a5",
+          "governed_bytes_sha256": "44b02b7300b0504b31c9ddae41829ebf87cb560a40062c6c5694eb7508d779fa"
+        },
+        {
+          "source_id": "govinfo:8usc1324a-a1a2-employment2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "0771305e39cacc3176e28d7dd7951974eaa139cb8bdb107931cf8a92556e504d"
+        },
+        {
+          "source_id": "govinfo:8usc1324ah3-unauthorized-employment-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "92f7ad836156b49422b1708563d75f31a9b18989d5e9366c8323975d5b0f01fa"
+        },
+        {
+          "source_id": "govinfo:5usc552a-2024-operative192",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552a.htm",
+          "raw_sha256": "19223e13c8d0413721b379ffab44ea26f39fdb00101b7afe691dc8098a254df6",
+          "governed_bytes_sha256": "f4c28a3c37ba30ffd4cb7aaf83e8b12041993ba006396355245eb0f548268c75"
+        },
+        {
+          "source_id": "govinfo:5usc552a-note-judicial-redress192",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552a.htm",
+          "raw_sha256": "19223e13c8d0413721b379ffab44ea26f39fdb00101b7afe691dc8098a254df6",
+          "governed_bytes_sha256": "8f5079103286f427d7167be7b935748b43776ee1116e13dd76f92cf981e52da1"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "e3a129c3dbebfe83ecfb135c60154346cb47c42d684300e5b5b898eb7cb7bef1"
       },
       "historical_raw_hash_matches": true
     },
@@ -16075,8 +16223,8 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Source-qualified whole-action addition:8002 provides that, during the Act's fiscal year, provisions of law prohibiting compensation to or employment of a person who is not a UScitizen shall not apply to DoDpersonnel. It does not assert that every otherwise-applicable pay law was citizen-only,make every noncitizen eligible for enlistment/work,or grant a visa or lawful presence. Direct/indirect-hire foreign-national salary increases are capped at the HIGHER of the percentage increase authorized for the referenced UScivilian employees paid under5US5332 or that supplied by the host nation. The whole section does not apply to DoDforeign-service-national employees at USdiplomatic missions whose pay is set byState under the1980ForeignServiceAct; printed limitations do not apply to DoDforeign-national employees inTurkey. Dated5332identifies the GeneralSchedule and adjustment reference,not a current pay award. These personal-citizenship employment/pay terms,not a defense title,ground the proposed relationship.\n\n8118 starts180days after enactment,restricting NORTHCOMMexico activities except those directly related to planning/operational requirements underEO14167or a successor. Unobligated affected funds would move toSOUTHCOMforMexico activities consistently with law and subject to President-approved revisedUCP. Both the President's not-necessary/appropriate determination AND the Secretary's report within30days retain the exception to reassignment; Commander-in-Chief authority remains. Complete as-issuedJanuary20,2025EO14167directs border-mission/UCP/planning action with lawfulauthority/appropriations savings. This is not immediate elimination of allNORTHCOMMexico roles,a source-certified current command plan or adoption of the order's threat rhetoric as fact.\n\n8100 bars Actfunds contravening the named anti-torture laws/regulations,includingFARRA2242's policy against expulsion/extradition/other involuntary return to a torture-danger country regardless of USpresence,with treaty reservations/qualified regulatory exclusions,review and retained detention authority. No automatic protection/removal decision for an individual is made.8075qualified intelligence handling underEO12333 and8088specifiedNSA/FISAfunding restrictions preserve source-specific USperson boundaries. DatedFISA1801(i) includes citizens,LPRs and qualified entities; EO12333uses agency-known permanent-resident aliens and its own association/corporation exceptions. Its materialPart2 contains qualified lawful collection,AttorneyGeneral-approved procedures,technique limits and exceptions,not blanket immunity. Undefined USperson wording in8140is not automatically assigned either definition. These appropriations conditions do not revive expired authority or certify current programme/lawful-surveillance scope.\n\n8131domestic transfer/release and8133facility funding restrictions retain their printed Guantanamo noncitizen/non-ArmedForces and on-or-afterJune24,2009/custody predicates.8132foreign transfers remain subject to the two expressly named2016/2019statutory conditions,not a new blanket immigration removal rule; no individual detention,guilt,transfer or lawful-presence determination follows. Public personnel/operations/procurement/research/health/security context and reductions remain one whole choice. Classified-annex details are not claimed. No stance on any individual rider,preferred alternative,motive,enactment or actual operational/financial outcome is inferred.",
       "source": {
         "source_id": "clerk:119:1:212",
         "url": "https://clerk.house.gov/evs/2025/roll212.xml",
@@ -16084,7 +16232,7 @@
         "governed_bytes_sha256": "255f3ccdfbc81230dc939ee240523cd8d6b63c466d0ab453039aedbad0b61caa",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4016:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4016",
       "member_action": "nay",
@@ -16093,25 +16241,121 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Source-qualified whole-action addition:8002 provides that, during the Act's fiscal year, provisions of law prohibiting compensation to or employment of a person who is not a UScitizen shall not apply to DoDpersonnel. It does not assert that every otherwise-applicable pay law was citizen-only,make every noncitizen eligible for enlistment/work,or grant a visa or lawful presence. Direct/indirect-hire foreign-national salary increases are capped at the HIGHER of the percentage increase authorized for the referenced UScivilian employees paid under5US5332 or that supplied by the host nation. The whole section does not apply to DoDforeign-service-national employees at USdiplomatic missions whose pay is set byState under the1980ForeignServiceAct; printed limitations do not apply to DoDforeign-national employees inTurkey. Dated5332identifies the GeneralSchedule and adjustment reference,not a current pay award. These personal-citizenship employment/pay terms,not a defense title,ground the proposed relationship.\n\n8118 starts180days after enactment,restricting NORTHCOMMexico activities except those directly related to planning/operational requirements underEO14167or a successor. Unobligated affected funds would move toSOUTHCOMforMexico activities consistently with law and subject to President-approved revisedUCP. Both the President's not-necessary/appropriate determination AND the Secretary's report within30days retain the exception to reassignment; Commander-in-Chief authority remains. Complete as-issuedJanuary20,2025EO14167directs border-mission/UCP/planning action with lawfulauthority/appropriations savings. This is not immediate elimination of allNORTHCOMMexico roles,a source-certified current command plan or adoption of the order's threat rhetoric as fact.\n\n8100 bars Actfunds contravening the named anti-torture laws/regulations,includingFARRA2242's policy against expulsion/extradition/other involuntary return to a torture-danger country regardless of USpresence,with treaty reservations/qualified regulatory exclusions,review and retained detention authority. No automatic protection/removal decision for an individual is made.8075qualified intelligence handling underEO12333 and8088specifiedNSA/FISAfunding restrictions preserve source-specific USperson boundaries. DatedFISA1801(i) includes citizens,LPRs and qualified entities; EO12333uses agency-known permanent-resident aliens and its own association/corporation exceptions. Its materialPart2 contains qualified lawful collection,AttorneyGeneral-approved procedures,technique limits and exceptions,not blanket immunity. Undefined USperson wording in8140is not automatically assigned either definition. These appropriations conditions do not revive expired authority or certify current programme/lawful-surveillance scope.\n\n8131domestic transfer/release and8133facility funding restrictions retain their printed Guantanamo noncitizen/non-ArmedForces and on-or-afterJune24,2009/custody predicates.8132foreign transfers remain subject to the two expressly named2016/2019statutory conditions,not a new blanket immigration removal rule; no individual detention,guilt,transfer or lawful-presence determination follows. Public personnel/operations/procurement/research/health/security context and reductions remain one whole choice. Classified-annex details are not claimed. No stance on any individual rider,preferred alternative,motive,enactment or actual operational/financial outcome is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:212",
           "url": "https://clerk.house.gov/evs/2025/roll212.xml",
           "raw_sha256": "cbb05d1542d80297df8080d6e104646225eea308e05e34d5c4f6f24cfb74709f",
-          "governed_bytes_sha256": "255f3ccdfbc81230dc939ee240523cd8d6b63c466d0ab453039aedbad0b61caa",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "255f3ccdfbc81230dc939ee240523cd8d6b63c466d0ab453039aedbad0b61caa"
+        },
+        {
+          "source_id": "govinfo:hr4016eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm",
+          "raw_sha256": "9ce2b64a299854a87fec9ae8233ffb608ff1c3ec0ad6fd7a55b2227c20cf3340",
+          "governed_bytes_sha256": "6729ee41a472f97561aa455a2df895ee480d67772aba3fd424177fe9e792cfb2"
+        },
+        {
+          "source_id": "govinfo:10usc2493-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap147-subchapIII-sec2493.htm",
+          "raw_sha256": "16ae1f1241241ada61e7ed10fb2bc7d1b2f8d09719cae0ff973e5b6463bbaaf1",
+          "governed_bytes_sha256": "f920ff9a93a8c0e944a14d8c687b344424edbaaaacca289ad95a728c87d1473d"
+        },
+        {
+          "source_id": "govinfo:pl111-84",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ84/html/PLAW-111publ84.htm",
+          "raw_sha256": "1eb8dfbf72393619e4306596f8d110af26e9a16e92b6c4abe7576a9064a1448f",
+          "governed_bytes_sha256": "926d031f8077576c77f747f6399ef0cfebe671ed741d08afb3ff07bc0bafd545"
+        },
+        {
+          "source_id": "govinfo:pl110-417",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-110publ417/html/PLAW-110publ417.htm",
+          "raw_sha256": "a262053e9f59add8c34e750b9e2cf9007e83f06b2efbb7035a5009ec3411157d",
+          "governed_bytes_sha256": "a9ea94d3720d5ff4582c93dbc02fca7184f8f99ac8789e49d82d89f4d6c0a31c"
+        },
+        {
+          "source_id": "dod:art-2012-guidance-public-exhibit",
+          "url": "https://law.yale.edu/sites/default/files/area/clinic/document/exhibit_a_vlsc.pdf",
+          "raw_sha256": "a43047d473302198bcca40ffd45aac5a6e69d2bdc810d93e2d626c5a6a630f3f",
+          "governed_bytes_sha256": "0164e3a73e3a80d3de19e319b2f875d0e20ada91dd415f97c9ce6ae5b5198199"
+        },
+        {
+          "source_id": "govinfo:fr2024-07040",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm",
+          "raw_sha256": "1f6d17761256dee20a28a5174d31ad43c3a807f58fe42481b5480e67a6e7f0e3",
+          "governed_bytes_sha256": "89d9f3ef45323814c9ca372a83448e2309f1d1d4a2053b14d9c72579b987cc64"
+        },
+        {
+          "source_id": "dod:reproductive-care-2022-10-20",
+          "url": "https://health.mil/Reference-Center/Policies/2022/10/20/Ensuring-Access-to-Reproductive-Health-Care",
+          "raw_sha256": "9e60a24ea41a25bb4ee6ceda747df01a928fbc922faca08d58816f32c3f36ce5",
+          "governed_bytes_sha256": "8227408d3456a23ee85ac3c28dd92e35f4a87bc489f5e628a1baf8b39902806e"
+        },
+        {
+          "source_id": "govinfo:hrpt162-health-page-binding",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt162/pdf/CRPT-119hrpt162.pdf",
+          "raw_sha256": "b4950ecdf43a57150c741e9b18c16475ed564dbb0e147f4c6059d6c9a3267563",
+          "governed_bytes_sha256": "540dcd029410e18ee014064c1f0aeca3fceb48510da66a151a98040e7947bbaa"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
+        },
+        {
+          "source_id": "congressional-record:2025-07-16",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf",
+          "raw_sha256": "0feba16337bfea3173a19d80a0ead10cb7f3a30fdcd3f0c6a3c45308168193e4",
+          "governed_bytes_sha256": "9fbd40e2234f8a30d03f3e7c8473087782182af829201b6778f29f05cf3af67f"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
+        },
+        {
+          "source_id": "govinfo:5usc5332-GS2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartD-chap53-subchapIII-sec5332.htm",
+          "raw_sha256": "16b957cff14687f08cdb166a01bab3ba5945f52346ece437301b90d051bba91c",
+          "governed_bytes_sha256": "d35a52cbd56959c749456c190f0909a3d76d8f9cef7779b38e68a7d4eec02c20"
+        },
+        {
+          "source_id": "govinfo:eo14167-asissued2025-224",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-30/pdf/2025-02089.pdf",
+          "raw_sha256": "bab65071fdd1bd693afffc0c8be914dea6349ffe05e3a915a52d4fe9a50de4c7",
+          "governed_bytes_sha256": "7b84ae7d30ec2c94a0c2c6a252e22d1fe1a016b757a9c33dbf3d11588d8c62da"
+        },
+        {
+          "source_id": "govinfo:farra2242-1998-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
+          "raw_sha256": "23ae8560271aa0f174cbfce54eb3c95543d6c82e26d96550db6e1f6b4cc50286",
+          "governed_bytes_sha256": "de25eb6ff0a1daa6c0f0ebebf3e984c7cf80dc4a7044a17c583034d29fe1346d"
+        },
+        {
+          "source_id": "govinfo:eo12333-qualified-part2-defs2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap44-sec3001.htm",
+          "raw_sha256": "b09a5b603409fd77331b55dde00cd31ec1fcd18a855163555eb72642afd40f6d",
+          "governed_bytes_sha256": "c15b5086d2b25a1b5bf966eb097a952ced888c311f057894009a6ece7faef55a"
+        },
+        {
+          "source_id": "govinfo:50usc1801-operative181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapI-sec1801.htm",
+          "raw_sha256": "6a05ebea3e8e1df21d76aece1f47dacd1e445791874ac17d843adb0a7c7dd96c",
+          "governed_bytes_sha256": "78d8d1566fc6eb2eb529e128eac3f7e310af27e2daeb1a2a404307587dd80830"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "975ee0bd929e299ce516f4cef1615506f31f306870a97a67de6e3cab5e8ab907"
       },
       "historical_raw_hash_matches": true
     },
@@ -36319,8 +36563,8 @@
       "date": "2026-04-29",
       "measure": "bill_119_sconres_33",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Complete S.Con.Res.33ES and adoptedH.Res.1224section6 bind the exact April29Houseagreement to this concurrent budget resolution,215-211 with1Present/3NotVoting,FousheeNay/MassieYea. Whole FY2026-35recommended aggregates/functions,SenateSocialSecurity/USPSadministrative levels,four named House/Senatecommittee reconciliation instructions byMay15,2026 and internal budget enforcement are read. Each committee's not-more-than$70billion deficit-increase instruction is a reconciliation limit for the stated period,not a$70billion immigration appropriation or additive funding across Houses.3001permits qualified Chair revisions/PAYGOadjustments for conforming later legislation,with chamber-specific determinations and named short/longterm-point exceptions.3002/3003specify conditional deficit-neutral reserve revisions for later immigration/border policy and describedICE/apprehension/detention/deportation legislation; their actual operator is budget adjustment authority,not present appropriations,new admissibility/removal grounds,implementeddetention or individual guilt.4103adjustments apply during consideration,take effect upon enactment and are published; other allocation/estimate/baseline/emergency/rulemaking conditions remain. Existing complete dated2US632/633/641 distinguish resolution/recommendations/allocations from subsequent legislation and preserve their procedural conditions. Established budget-resolution treatment supports procedural_context,noncounting for this whole exact action,not automatic ineligibility from a title. No support/opposition to a future component,enactedfunding,actual cut/disbursement,detention/removal,outcome or motive is inferred. Present remains resolved nondirectional. Source-qualified candidate pending independent review,no editorial acceptance.",
       "source": {
         "source_id": "clerk:119:2:143",
         "url": "https://clerk.house.gov/evs/2026/roll143.xml",
@@ -36337,25 +36581,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Complete S.Con.Res.33ES and adoptedH.Res.1224section6 bind the exact April29Houseagreement to this concurrent budget resolution,215-211 with1Present/3NotVoting,FousheeNay/MassieYea. Whole FY2026-35recommended aggregates/functions,SenateSocialSecurity/USPSadministrative levels,four named House/Senatecommittee reconciliation instructions byMay15,2026 and internal budget enforcement are read. Each committee's not-more-than$70billion deficit-increase instruction is a reconciliation limit for the stated period,not a$70billion immigration appropriation or additive funding across Houses.3001permits qualified Chair revisions/PAYGOadjustments for conforming later legislation,with chamber-specific determinations and named short/longterm-point exceptions.3002/3003specify conditional deficit-neutral reserve revisions for later immigration/border policy and describedICE/apprehension/detention/deportation legislation; their actual operator is budget adjustment authority,not present appropriations,new admissibility/removal grounds,implementeddetention or individual guilt.4103adjustments apply during consideration,take effect upon enactment and are published; other allocation/estimate/baseline/emergency/rulemaking conditions remain. Existing complete dated2US632/633/641 distinguish resolution/recommendations/allocations from subsequent legislation and preserve their procedural conditions. Established budget-resolution treatment supports procedural_context,noncounting for this whole exact action,not automatic ineligibility from a title. No support/opposition to a future component,enactedfunding,actual cut/disbursement,detention/removal,outcome or motive is inferred. Present remains resolved nondirectional. Source-qualified candidate pending independent review,no editorial acceptance.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:143",
           "url": "https://clerk.house.gov/evs/2026/roll143.xml",
           "raw_sha256": "0dedef47be7b80342ccff1b1c44d743ef0d12d2d6499320a38235fa5c42020fb",
-          "governed_bytes_sha256": "c04c610b8cf76c4bfb56e96562128450af301767c6e800f713e81b1a58d1b962",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "c04c610b8cf76c4bfb56e96562128450af301767c6e800f713e81b1a58d1b962"
+        },
+        {
+          "source_id": "govinfo:sconres33es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119sconres33es/html/BILLS-119sconres33es.htm",
+          "raw_sha256": "b9c8732c69ac3937d142deba5e1cd33b123acc317dc486e97aedb75af01c8880",
+          "governed_bytes_sha256": "86ff373d0d696f8b55082074bce17c1f9a953434602da71b7106895b62db5f86"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "govinfo:2usc632-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec632.htm",
+          "raw_sha256": "5993c42bff633faffad93b8ba939fef34f31e2638c2df37c67bcabba4d14c0c6",
+          "governed_bytes_sha256": "7901fdab9dfb6b677ba069bbfd465314cb861a07ba8a92db16eb5076d53b5cbc"
+        },
+        {
+          "source_id": "govinfo:2usc633-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec633.htm",
+          "raw_sha256": "bcd745f4984ea9527d49f2c90cbe534dda02c13cce9f6627295f47a8dd80779d",
+          "governed_bytes_sha256": "7e9db1d10e4c412461d390b82d876d0a8f7381dec8716feec50dea8e5b85b38c"
+        },
+        {
+          "source_id": "govinfo:2usc641-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec641.htm",
+          "raw_sha256": "3587f0267ce0d59b34acd3d9b6f3ce3e04eec08c41fa876c2b352b0363c939aa",
+          "governed_bytes_sha256": "880911623d77eab76df1cc19d02dc5a0a3abac13baebb611d5ec93c048f97a4a"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a33ec414ac467f079835a9061a1b7ff5a1705e537f9741977d8f5f021c679cc6"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:143",
@@ -38588,8 +38862,8 @@
       "date": "2026-05-15",
       "measure": "bill_119_hr_8469",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Source-qualified whole-action addition: Section410 bars using funds made available by THIS ACT to execute a contract for goods or services, including construction, where the contractor has not complied with ExecutiveOrder12989. This is a source-traced employment/immigration verification funding condition, not an inference from military or VA agency names. The dated2024consolidated order's section1 refers to INA274A(a)(1)(A)/(a)(2)'s knowing unauthorized-alien hiring/continued-employment rules; section5 requires agreement to use the DHS-designated electronic employment-eligibility system for specified US hires and assigned workers. Unauthorized employment at a particular time is distinct from immigration presence, nationality or lawful permanent residence alone:1324a(h)(3) retains permanent residence OR authorization to be so employed. Antidiscrimination obligations remain. Contractor underFAR9.403 includes an individual or legal entity, affiliates and the specified bidding/contract/subcontract/agency relationships, not a citizen-only ownership class.\n\nThe dated2024FAR implementation is bounded.22.1803 prescribes52.222-54 for contracts exceeding$150,000, with outside-US-only work,less-than120day and specifiedCOTS/bulk-cargo/associated-service exceptions.22.1802 allows exceptional nondelegable contracting-head waivers.52.222-54 defines assigned workers by direct US contract work and post-November6,1986 hire (post-November27,2009 inCNMI); indirect/overhead work without substantial contract duties is excluded. It distinguishes general new US hires from optional assigned-worker-only verification for higher-education,State/local/recognized-Tribal government or takeover-surety contractors. Electing verification of other existing employees is optional and has its own180day timing. Enrollment/verification periods and prior-verification,active-clearance/HSPD12 exemptions remain; qualifying services/construction subcontracts must exceed$3,500 and involve US work. MOU termination produces referral and interim excusal pending a suspension/debarment decision, not automatic guilt or exclusion. The order's investigation/hearing/agency determination and generally offending-unit debarment scope,one-year/continued-violation extensions remain. No individual employment authorization,current contract/MOU/waiver,all-workforce mandate,actual debarment or workforce-performance claim is certified. The bill does not first create or rewrite these underlying programmes; the2024sources are a dated qualified baseline,not a certificate of current implementation.\n\nSection412 separately restricts Act/otherwise-available DoD funds for constructing,renovating or expanding domestic/territorial/possession military-detention facilities for the printed class located atGuantanamo onJune24,2009,not a UScitizen or ArmedForces member and within the printed custody/control/detention alternatives; modifications atGuantanamo remain excepted. It is not all noncitizens or civil immigration detention. This FY2027EH does NOT contain the FY2026H.R.3944section259 unlawful-presence/VA-healthcare-eligibility service restriction; its259 instead directs staffing toward claims125day/statutory-regulatory care goals. No omitted earlier rider is carried forward from the similar title.\n\n237 discontinues COLLECTING AND USING SSNs for authentication bySeptember30,2027 and preserves four necessary-identification cases in accordance with552a. Its literal divisionA/PL11937supersession mismatch remains as already qualified; no earlier deadline repair/postponement is inferred. PrivacyAct citizen/LPR individual-remedy scope is distinct from the bill's all-individuals authentication requirement.239protects the FilipinoVeteransEquityCompensationFund from transfer,without determining any person's citizenship or benefit eligibility. Whole clinical/funding restrictions,dated baselines and original qualified limitations remain. Yea/Nay bind one whole FY2027appropriations package,not a component employment,detention,care or identity-document stance; no enacted,current-contract,individual-status or delivered-service outcome is inferred.",
       "source": {
         "source_id": "clerk:119:2:175",
         "url": "https://clerk.house.gov/evs/2026/roll175.xml",
@@ -38597,7 +38871,7 @@
         "governed_bytes_sha256": "99d0efb04354dc310c08470863e37c687c0abec80552e5fda557eeda445de49b",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr8469:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_8469",
       "member_action": "yea",
@@ -38606,25 +38880,235 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Source-qualified whole-action addition: Section410 bars using funds made available by THIS ACT to execute a contract for goods or services, including construction, where the contractor has not complied with ExecutiveOrder12989. This is a source-traced employment/immigration verification funding condition, not an inference from military or VA agency names. The dated2024consolidated order's section1 refers to INA274A(a)(1)(A)/(a)(2)'s knowing unauthorized-alien hiring/continued-employment rules; section5 requires agreement to use the DHS-designated electronic employment-eligibility system for specified US hires and assigned workers. Unauthorized employment at a particular time is distinct from immigration presence, nationality or lawful permanent residence alone:1324a(h)(3) retains permanent residence OR authorization to be so employed. Antidiscrimination obligations remain. Contractor underFAR9.403 includes an individual or legal entity, affiliates and the specified bidding/contract/subcontract/agency relationships, not a citizen-only ownership class.\n\nThe dated2024FAR implementation is bounded.22.1803 prescribes52.222-54 for contracts exceeding$150,000, with outside-US-only work,less-than120day and specifiedCOTS/bulk-cargo/associated-service exceptions.22.1802 allows exceptional nondelegable contracting-head waivers.52.222-54 defines assigned workers by direct US contract work and post-November6,1986 hire (post-November27,2009 inCNMI); indirect/overhead work without substantial contract duties is excluded. It distinguishes general new US hires from optional assigned-worker-only verification for higher-education,State/local/recognized-Tribal government or takeover-surety contractors. Electing verification of other existing employees is optional and has its own180day timing. Enrollment/verification periods and prior-verification,active-clearance/HSPD12 exemptions remain; qualifying services/construction subcontracts must exceed$3,500 and involve US work. MOU termination produces referral and interim excusal pending a suspension/debarment decision, not automatic guilt or exclusion. The order's investigation/hearing/agency determination and generally offending-unit debarment scope,one-year/continued-violation extensions remain. No individual employment authorization,current contract/MOU/waiver,all-workforce mandate,actual debarment or workforce-performance claim is certified. The bill does not first create or rewrite these underlying programmes; the2024sources are a dated qualified baseline,not a certificate of current implementation.\n\nSection412 separately restricts Act/otherwise-available DoD funds for constructing,renovating or expanding domestic/territorial/possession military-detention facilities for the printed class located atGuantanamo onJune24,2009,not a UScitizen or ArmedForces member and within the printed custody/control/detention alternatives; modifications atGuantanamo remain excepted. It is not all noncitizens or civil immigration detention. This FY2027EH does NOT contain the FY2026H.R.3944section259 unlawful-presence/VA-healthcare-eligibility service restriction; its259 instead directs staffing toward claims125day/statutory-regulatory care goals. No omitted earlier rider is carried forward from the similar title.\n\n237 discontinues COLLECTING AND USING SSNs for authentication bySeptember30,2027 and preserves four necessary-identification cases in accordance with552a. Its literal divisionA/PL11937supersession mismatch remains as already qualified; no earlier deadline repair/postponement is inferred. PrivacyAct citizen/LPR individual-remedy scope is distinct from the bill's all-individuals authentication requirement.239protects the FilipinoVeteransEquityCompensationFund from transfer,without determining any person's citizenship or benefit eligibility. Whole clinical/funding restrictions,dated baselines and original qualified limitations remain. Yea/Nay bind one whole FY2027appropriations package,not a component employment,detention,care or identity-document stance; no enacted,current-contract,individual-status or delivered-service outcome is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:175",
           "url": "https://clerk.house.gov/evs/2026/roll175.xml",
           "raw_sha256": "83b3498925048a9574acd008cbf0d745bd2c65d4a094316577a28cab7ab9b628",
-          "governed_bytes_sha256": "99d0efb04354dc310c08470863e37c687c0abec80552e5fda557eeda445de49b",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "99d0efb04354dc310c08470863e37c687c0abec80552e5fda557eeda445de49b"
+        },
+        {
+          "source_id": "govinfo:hr8469eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8469eh/html/BILLS-119hr8469eh.htm",
+          "raw_sha256": "73fb2b64897888645b1870855a61311e7cde1f3bf53ec1cd45af8b2447ad3dd5",
+          "governed_bytes_sha256": "312bfdd79c366c2efb3fea49a6027615050df5207804b8c1c182073dea1207b3"
+        },
+        {
+          "source_id": "govinfo:hr8469rh-exact-amendment-pages",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8469rh/pdf/BILLS-119hr8469rh.pdf",
+          "raw_sha256": "c36ab5a28b5e223b0847fd3f91cafd8e23389ae10f3ff74c3766171c41c28202",
+          "governed_bytes_sha256": "2f9bfcc7c6e84944af3319a620304d4158c85b625583085e54467cc6d0159a94"
+        },
+        {
+          "source_id": "govinfo:hrpt119-648-material-va-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt648/pdf/CRPT-119hrpt648.pdf",
+          "raw_sha256": "5a04c46d7a8bade2231dba8aa3307b21bd190315b38567be8fd776d4d05d5757",
+          "governed_bytes_sha256": "34b19a2d4db7ce7ccf8bef7872466093c7e00be2883798936fc134a0e6fbc0ae"
+        },
+        {
+          "source_id": "congressional-record:2026-05-15-hr8469",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-15/pdf/CREC-2026-05-15-house.pdf",
+          "raw_sha256": "2155796c7c631e19deb2e80e02316e5e96be80eb9d13d576db617768986431a5",
+          "governed_bytes_sha256": "22fef1147fd22709987441d5762a95800321b61237f41a3a516192f88d43e113"
+        },
+        {
+          "source_id": "congressional-record:2026-05-14-hr8469-general-debate",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-14/pdf/CREC-2026-05-14-house.pdf",
+          "raw_sha256": "a27a8233caad07b1a00a7b14ff7257d1c0ed8f9fa0705463f6d834bfcbc08d85",
+          "governed_bytes_sha256": "682bfddb36261d2952dd78e38a42a87e14625f0759467b68f85ff1f300f96011"
+        },
+        {
+          "source_id": "govinfo:38usc1729-2024-third-party",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap17-subchapIII-sec1729.htm",
+          "raw_sha256": "2f7ed92f1ce1be7c66e22a3702a18708435aa1b0c2d97afd816fc128f5343819",
+          "governed_bytes_sha256": "a4a7b1bd5279255596160007946fd6dd0443162d7476f8dd65a4a0f791e3b573"
+        },
+        {
+          "source_id": "govinfo:38usc8110-2024-contracting",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partVI-chap81-subchapI-sec8110.htm",
+          "raw_sha256": "09d7bbb29e1c01ee3df6c77a7219f4b608d836eb83a28981310ec0bcb29e916a",
+          "governed_bytes_sha256": "add9885dc3204ddf959adc64452137f9789b283bbd38241f25393a8985b56885"
+        },
+        {
+          "source_id": "govinfo:38usc1720F-2024-suicide",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap17-subchapII-sec1720F.htm",
+          "raw_sha256": "2979659c59bba40140a59212016ddb544bd922a443527883699ac254d3408ff2",
+          "governed_bytes_sha256": "9a0e68bb88dfec3ac9bba9f80dcffa2434a7fe282babcfb79677594af77f6fba"
+        },
+        {
+          "source_id": "govinfo:38usc324-2024-toxic-fund",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap3-sec324.htm",
+          "raw_sha256": "c040bab5625f9e80d66d272c3b91490996a7c6115c8718e45d40cf93bf60178e",
+          "governed_bytes_sha256": "2fd8b69d5c033a90dbe80ee4553fa7aaf288b11d8521c314902d75a9513a63ed"
+        },
+        {
+          "source_id": "govinfo:38usc8111-2024-sharing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partVI-chap81-subchapI-sec8111.htm",
+          "raw_sha256": "ab93cea474d4e450b4ee4208b4692f17fc253e18686482d2858239f751416156",
+          "governed_bytes_sha256": "aacaa174a2c415217600656cec614b8985decae2a93ad36e9ee78755a22d5f12"
+        },
+        {
+          "source_id": "govinfo:pl109-115-va-contracting",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-109publ115/html/PLAW-109publ115.htm",
+          "raw_sha256": "2a9b62f51a2c3741881fa0ba73560dbdc3e4130d74ee9ce4ad0114874378ea8b",
+          "governed_bytes_sha256": "9a8287e5695fd0ae2ba4c5bc42f4bbb521fff1cf9514018b9be07a057ad5e21c"
+        },
+        {
+          "source_id": "govinfo:fr2023-03013-transportation",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-02-16/html/2023-03013.htm",
+          "raw_sha256": "0f4afc9ccd03315a2c05b8befff402cb56f3a8ca51b9ee9cc424ef34323eabb0",
+          "governed_bytes_sha256": "0b633810c91d5f3d7ef54bb33e563444859ce1285b7169f00ce0c9cb3686e543"
+        },
+        {
+          "source_id": "govinfo:fr2024-07040-ivf",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm",
+          "raw_sha256": "1f6d17761256dee20a28a5174d31ad43c3a807f58fe42481b5480e67a6e7f0e3",
+          "governed_bytes_sha256": "8e4f27b2aa78e52497a6b824e939192e961ae8cd176ae64e41c635d69800f772"
+        },
+        {
+          "source_id": "govinfo:38cfr17-4040-2025-specialty",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title38-vol1/pdf/CFR-2025-title38-vol1-sec17-4040.pdf",
+          "raw_sha256": "8108cf68a65769b6db2624b5608ee6769018dfd89baa04dcb62bf91ce0db4bcc",
+          "governed_bytes_sha256": "275b37d26c1a6bc0f37ca44d19f99cd115185b5978c17a1459aa99a51e8b86eb"
+        },
+        {
+          "source_id": "govinfo:38cfr17-390-2025-adoption",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title38-vol1/pdf/CFR-2025-title38-vol1-sec17-390.pdf",
+          "raw_sha256": "22c5aefceb2333285a0d0015dfbaccb16b96b0b18c3c273739c9e98c0e8d2923",
+          "governed_bytes_sha256": "4fca23ba8ad556b532dc362879b9cc9f0293ce50ae0437715d714eb630995ebd"
+        },
+        {
+          "source_id": "vha:1315-2023",
+          "url": "https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=11394",
+          "raw_sha256": "4558978efaf700316235c204c2ae32ca1efc4dffbfdb2e5f1e82a30ae592daad",
+          "governed_bytes_sha256": "fd527594b82d47c0e5859cfdf42dcd8356d96df5713f41cdf7cfa24e6f756b1a"
+        },
+        {
+          "source_id": "vha:1085-01-2019",
+          "url": "https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=8424",
+          "raw_sha256": "ce233705b801ff0ac7ebb9e9f1a7bbe43c8795b4561e7e0070d2036d3f40ae25",
+          "governed_bytes_sha256": "ddf3d283d439b523fb64770c8af98ec8537b86e3c104433342ede02ee05f1cae"
+        },
+        {
+          "source_id": "vha:1334-2024-fertility-material",
+          "url": "https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=9205",
+          "raw_sha256": "0948d137951252b9a3e46ad947d81f1ee92727650887d2c56140f733bc0bff0f",
+          "governed_bytes_sha256": "170dd6956ba4a9bb873d896a11ffd56ab2d532fdab8081d19edc5127b9c49ed4"
+        },
+        {
+          "source_id": "va:breast-screening-2017-announcement",
+          "url": "https://www.va.gov/opa/pressrel/includes/viewPDF.cfm?id=2899",
+          "raw_sha256": "bfc4e20af4ebc7cf740b72c399d60c2ec1871741f3af3bddc1584b63a411dfbb",
+          "governed_bytes_sha256": "279cf95a5399a02e5ecc7f5fcc45d37293e456eeaa5b69d01c24144bfa484a28"
+        },
+        {
+          "source_id": "govinfo:hrpt119-622-material-va-context",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt622/pdf/CRPT-119hrpt622.pdf",
+          "raw_sha256": "18fd288810aebe29d3003bda713f5cbe4e6bdcd1ae50217344590ffa86f99456",
+          "governed_bytes_sha256": "d48e3709122df3dc7e64b85f97439b217a2d1364cc67f24b28792ad8b584bb2a"
+        },
+        {
+          "source_id": "govinfo:hres1275eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1275eh/html/BILLS-119hres1275eh.htm",
+          "raw_sha256": "9889d55d7b3ff8c93c192f523ffd961103b36efcc74129b13c352bf78e1bebfa",
+          "governed_bytes_sha256": "033b17ac95eb53d5dcb8370fe98ac6c2884346bb0e116d1b0ef675bfe252dbcc"
+        },
+        {
+          "source_id": "govinfo:pl119-37",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "6274a5ee9549780a84d8bb12590f593722b1f52c9c93a57ecb7cac1d2c9078aa"
+        },
+        {
+          "source_id": "govinfo:pl114-223",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ223/html/PLAW-114publ223.htm",
+          "raw_sha256": "7303a1cb14b57092785a4265f7c395c833a2b856d7d965eb8dbbd92b48f0c587",
+          "governed_bytes_sha256": "3489d6379b4f80b3b4a113d86cf24d93cf45fc3e27830da98a4a152ab6e4c4bd"
+        },
+        {
+          "source_id": "govinfo:pl111-163",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ163/html/PLAW-111publ163.htm",
+          "raw_sha256": "63e0746156b92b20a5cce347666990c09a9ef2078caf18cb263c5f65766e2d22",
+          "governed_bytes_sha256": "043a1d2d1ccd6d1571323d1a6907988448e2b2a683a39c7759e6aa3f41d26d3c"
+        },
+        {
+          "source_id": "govinfo:pl115-141",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ141/html/PLAW-115publ141.htm",
+          "raw_sha256": "12b165f1b76f830aa5e5a0e9fd3cd1d2921314830efa7f7a2af6b0e5ab58d762",
+          "governed_bytes_sha256": "eb59a13206ff223f78c667aaa947ed7ed5f8e9b5cc937e05c2121a39de56dd88"
+        },
+        {
+          "source_id": "govinfo:38usc3104-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3104.htm",
+          "raw_sha256": "35141128c9be9963dcf902d7f98d7cf5a4190001eac2e303482f1fbe1ee6f02e",
+          "governed_bytes_sha256": "3abe5d9d040d15021c980a79b9505052242a206c9d4b2f8b6dd0617742ca7329"
+        },
+        {
+          "source_id": "govinfo:EO12989-consolidated2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "71f0af18baca1b39fa7cd59f11759145d32ca87ca64dc1d3b742bf96bdd97376"
+        },
+        {
+          "source_id": "govinfo:48cfr9403-contractor2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol1/xml/CFR-2024-title48-vol1-sec9-403.xml",
+          "raw_sha256": "a04cc4dbac28a90317716315c601b74ccf25742193567c08bc26af2e6e65b2f9",
+          "governed_bytes_sha256": "6294754cfea96fc3aa328a8d0888a6159123061ae9eebdd76ee141e235d249b1"
+        },
+        {
+          "source_id": "govinfo:48cfr221802-policy2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol1/xml/CFR-2024-title48-vol1-sec22-1802.xml",
+          "raw_sha256": "9156745938f953f2b579d67d4c9483d0f127a29af3aa658fc61a6973e120a09a",
+          "governed_bytes_sha256": "478b37102aeb4078f39f63682f9138a3713224d4c0244b498e7394b5613994db"
+        },
+        {
+          "source_id": "govinfo:48cfr221803-prescription2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol1/xml/CFR-2024-title48-vol1-sec22-1803.xml",
+          "raw_sha256": "53c239e70dd5732d5e48ad2e77897ee7fd4be6aaa4ef7eafefa57c6777d02d8a",
+          "governed_bytes_sha256": "de28b37c2e48cbb62a9ce1d994531d2c3325e78deb61ca699f7b10fd07db67b1"
+        },
+        {
+          "source_id": "govinfo:48cfr5222254-verification2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol2/xml/CFR-2024-title48-vol2-sec52-222-54.xml",
+          "raw_sha256": "bd5bf546d9589759cf517dad262813e695f1795ad8d1a4f808276165bb6a30a5",
+          "governed_bytes_sha256": "44b02b7300b0504b31c9ddae41829ebf87cb560a40062c6c5694eb7508d779fa"
+        },
+        {
+          "source_id": "govinfo:8usc1324a-a1a2-employment2024-224",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "0771305e39cacc3176e28d7dd7951974eaa139cb8bdb107931cf8a92556e504d"
+        },
+        {
+          "source_id": "govinfo:8usc1324ah3-unauthorized-employment-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "92f7ad836156b49422b1708563d75f31a9b18989d5e9366c8323975d5b0f01fa"
+        },
+        {
+          "source_id": "govinfo:5usc552a-2024-operative192",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552a.htm",
+          "raw_sha256": "19223e13c8d0413721b379ffab44ea26f39fdb00101b7afe691dc8098a254df6",
+          "governed_bytes_sha256": "f4c28a3c37ba30ffd4cb7aaf83e8b12041993ba006396355245eb0f548268c75"
+        },
+        {
+          "source_id": "govinfo:5usc552a-note-judicial-redress192",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552a.htm",
+          "raw_sha256": "19223e13c8d0413721b379ffab44ea26f39fdb00101b7afe691dc8098a254df6",
+          "governed_bytes_sha256": "8f5079103286f427d7167be7b935748b43776ee1116e13dd76f92cf981e52da1"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "eb504a024a2c4af98d2437feff90eae623f5e2d55eceb532452ee0926b04c698"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:175",
@@ -40708,8 +41192,8 @@
       "date": "2026-06-04",
       "measure": "bill_119_hr_8646",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Source-qualified whole-action addition: the SupplementalNutritionAssistanceProgram heading prohibits obligation or expenditure of funds under THAT HEADING in contravention of INA213A/8US1183a. It does not apply that rider to allWIC,school meals,rural housing orFDAappropriations,or create a new affidavit requirement for everySNAPrecipient or every noncitizen. The complete dated1183aoperative source traces covered support contracts,qualified sponsors,means-tested-benefit reimbursement and enforcement. Sponsors generally must be citizen/national/LPR,at least18,domiciled in the specified USareas and petitioning with125percent poverty-line means,with separately printed joint-liability,active-duty spouse/child100percent,employment-relative and humanitarian/surviving-relative alternatives. Enforceability ends at naturalization or the qualified40-quarter alternative,with post1996benefit-credit limits and parent/spouse credit conditions. Reimbursement requests and civil actions retain notification,45day nonresponse,repayment and10year limitation predicates. No automatic sponsor debt,recovery,benefit denial,poverty-income or individual immigration finding is certified. The source's literal subsection references and numbered alternatives remain,no invented universal definition or corrected source wording.\n\nThe actual fundedSNAPprogramme remains subject to other applicable law. Current-to-votePL11921section10108replaces6(f) with a US-residence requirement AND the printed citizen/national,LPR,Cuban-Haitian-entrant or lawfulCOFA-resident alternatives; temporary visitors/tourists/diplomats/students are excluded in theLPRbranch. Ineligible-member income/resources still count subject to the printed State pro-rata option. This House appropriations vote does not itself enact or repeal that earlier status classification,restore2024eligibility groups or certify every listed person's qualification. Existing work/income/household and other programme requirements remain; old2024definitions are not silently treated as unchanged consolidated law.\n\nWhole farm-credit/rural-housing/infrastructure and domestic/foreign nutrition,FDA/food/pet-policy/general-provision mechanisms remain the broader mixed package. The sponsor condition and actual bound personal-status source chain support the independent proposed relationship,not generic immigrant-beneficiary,title,agency or foreign-goods rhetoric. Rural programme andCFIUS/foreign-asset/trade clauses do not by themselves determine an individual's immigration status or universal personal-benefit eligibility. Newwater-cost/loan/recipient andfunding conditions retain their own scope; they are not rewritten as visa/admission criteria. This is one entire June4Housepassage choice with its amendedEH/rule binding. Yea/Nay do not isolate one recipient class or provision,forecast aid/health outcomes,or prove enactment or current beneficiary/agency implementation.",
       "source": {
         "source_id": "clerk:119:2:205",
         "url": "https://clerk.house.gov/evs/2026/roll205.xml",
@@ -40717,7 +41201,7 @@
         "governed_bytes_sha256": "e1b815fde928e2a3ef325b437df061b415032d40c138878b02a17d2f4c878421",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr8646:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_8646",
       "member_action": "nay",
@@ -40726,25 +41210,265 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Source-qualified whole-action addition: the SupplementalNutritionAssistanceProgram heading prohibits obligation or expenditure of funds under THAT HEADING in contravention of INA213A/8US1183a. It does not apply that rider to allWIC,school meals,rural housing orFDAappropriations,or create a new affidavit requirement for everySNAPrecipient or every noncitizen. The complete dated1183aoperative source traces covered support contracts,qualified sponsors,means-tested-benefit reimbursement and enforcement. Sponsors generally must be citizen/national/LPR,at least18,domiciled in the specified USareas and petitioning with125percent poverty-line means,with separately printed joint-liability,active-duty spouse/child100percent,employment-relative and humanitarian/surviving-relative alternatives. Enforceability ends at naturalization or the qualified40-quarter alternative,with post1996benefit-credit limits and parent/spouse credit conditions. Reimbursement requests and civil actions retain notification,45day nonresponse,repayment and10year limitation predicates. No automatic sponsor debt,recovery,benefit denial,poverty-income or individual immigration finding is certified. The source's literal subsection references and numbered alternatives remain,no invented universal definition or corrected source wording.\n\nThe actual fundedSNAPprogramme remains subject to other applicable law. Current-to-votePL11921section10108replaces6(f) with a US-residence requirement AND the printed citizen/national,LPR,Cuban-Haitian-entrant or lawfulCOFA-resident alternatives; temporary visitors/tourists/diplomats/students are excluded in theLPRbranch. Ineligible-member income/resources still count subject to the printed State pro-rata option. This House appropriations vote does not itself enact or repeal that earlier status classification,restore2024eligibility groups or certify every listed person's qualification. Existing work/income/household and other programme requirements remain; old2024definitions are not silently treated as unchanged consolidated law.\n\nWhole farm-credit/rural-housing/infrastructure and domestic/foreign nutrition,FDA/food/pet-policy/general-provision mechanisms remain the broader mixed package. The sponsor condition and actual bound personal-status source chain support the independent proposed relationship,not generic immigrant-beneficiary,title,agency or foreign-goods rhetoric. Rural programme andCFIUS/foreign-asset/trade clauses do not by themselves determine an individual's immigration status or universal personal-benefit eligibility. Newwater-cost/loan/recipient andfunding conditions retain their own scope; they are not rewritten as visa/admission criteria. This is one entire June4Housepassage choice with its amendedEH/rule binding. Yea/Nay do not isolate one recipient class or provision,forecast aid/health outcomes,or prove enactment or current beneficiary/agency implementation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:205",
           "url": "https://clerk.house.gov/evs/2026/roll205.xml",
           "raw_sha256": "0219f24604a532812765ac29273877d4d65381f407d146e1ea8bab7efb0021cb",
-          "governed_bytes_sha256": "e1b815fde928e2a3ef325b437df061b415032d40c138878b02a17d2f4c878421",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "e1b815fde928e2a3ef325b437df061b415032d40c138878b02a17d2f4c878421"
+        },
+        {
+          "source_id": "govinfo:hr8646eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8646eh/html/BILLS-119hr8646eh.htm",
+          "raw_sha256": "6f6cb7f8ec47a8774fa03b8089b98e97bbf7a872e4c56498d91d2d299d0b1165",
+          "governed_bytes_sha256": "b61dab3486fcb0766af4d0bebbd94a43016afbffc2a82280a8fbc3e3e9577af2"
+        },
+        {
+          "source_id": "govinfo:7cfr24610-2025-wic-packages",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title7-vol4/pdf/CFR-2025-title7-vol4-sec246-10.pdf",
+          "raw_sha256": "1fabaacd50992a08fab956e5eeb0dd4e6bd1f27cb4a43e32e45e16c63e2d4962",
+          "governed_bytes_sha256": "515a4668d93dd21c1b5d175b94b8fa035993ad36b89e24834c6178613181b66a"
+        },
+        {
+          "source_id": "govinfo:7cfr24612-2025-wic-vendors",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title7-vol4/pdf/CFR-2025-title7-vol4-sec246-12.pdf",
+          "raw_sha256": "f40cdd104004a3fd0a2eca6ffacc7ce2820a70991991e73bc9be6302086d8f61",
+          "governed_bytes_sha256": "ecfbfd1e575d79a47ac7f7f4d1e743fd8168d0135966b238ec478daf97e8c983"
+        },
+        {
+          "source_id": "govinfo:42usc1786-2024-wic",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap13A-sec1786.htm",
+          "raw_sha256": "1fe196f2fbfe9ccc47ebb224c212088b56517926353931014c316d142faa127d",
+          "governed_bytes_sha256": "1cef8483529845698223e8e6cae5afdcdae67568c40c044634df8cb1d2ef43de"
+        },
+        {
+          "source_id": "govinfo:42usc1758-2024-food-safety",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap13-sec1758.htm",
+          "raw_sha256": "afed57da280a41b7d505cec61537f04ed0179c883ac63dfc34c1a83ba3ac1193",
+          "governed_bytes_sha256": "1d551006a82290f47214c0ee1b2b3a0e787587a336d7e22ba36b141f67265969"
+        },
+        {
+          "source_id": "govinfo:42usc1769g-2024-clearinghouse",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap13-sec1769g.htm",
+          "raw_sha256": "6b0372245a9663053ddf80e66c67e4c955edd54b7ca81302f5c19bd6cda9838b",
+          "governed_bytes_sha256": "604056f9241a5a62cd07432e1ce4300e267c3a8ee224236912302002bef6d52f"
+        },
+        {
+          "source_id": "govinfo:7usc2025-2024-snap-administration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2025.htm",
+          "raw_sha256": "a7fc94a3929e716aa486059b59b75e45242ae7d8f07f13215c7678bd2efe12a9",
+          "governed_bytes_sha256": "77c05906e9fef508926cc38fb136a715e54eb093ef339c51a7dace2762793ff3"
+        },
+        {
+          "source_id": "govinfo:8usc1183a-2024-sponsor-affidavit",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1183a.htm",
+          "raw_sha256": "3d36783935a09dd04102c494d7fd18459c32aceb93c5bd2bba3964bfd5693f20",
+          "governed_bytes_sha256": "93d41260bdf2fe926cd340004052e79d18e27fb00f9437f1d6423d99253c78ce"
+        },
+        {
+          "source_id": "govinfo:21usc356c-2024-drug-shortage",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap9-subchapV-partA-sec356c.htm",
+          "raw_sha256": "1365983ef46d8c62c97c6914b4671d69f6c34398eaed1998ce9cbc6303921b31",
+          "governed_bytes_sha256": "a634c3d97f5ea67cedee4784d33242258895bb93f88f295c97d006ca8821336d"
+        },
+        {
+          "source_id": "govinfo:hr8646rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8646rh/html/BILLS-119hr8646rh.htm",
+          "raw_sha256": "64064b6cac28007745f5d3a900f1738c0c5afba93f1be84faff089c61898758c",
+          "governed_bytes_sha256": "76bcf65c6736d0e129915022cbe6f383ff3c94ae17613f8c4a26c95158193f7d"
+        },
+        {
+          "source_id": "govinfo:pl119-37-agri-current-law",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "c819ff531a41bc2951f4e133d4b0599eb3f218adc661d9d84a6263487a5331d7"
+        },
+        {
+          "source_id": "govinfo:fr2024-07437-wic-packages",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-04-18/pdf/2024-07437.pdf",
+          "raw_sha256": "c0d5ace6a7236b9a8608d979a650baea2128b4815b4cd14043e3e50297a9794c",
+          "governed_bytes_sha256": "0856c873c48d23aaa76ec921390c6e9bd8dd8aed95376f1cee15af79e4ec222c"
+        },
+        {
+          "source_id": "govinfo:hrpt119-632-agriculture",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt632/html/CRPT-119hrpt632.htm",
+          "raw_sha256": "fbab1ae183414cd0e447cf43ce150f83255186d4069a4a95dda28d1786351868",
+          "governed_bytes_sha256": "b7fa5be084641a5049133299d242d791ba2c80e7c574f556a6839bd095dc6fc0"
+        },
+        {
+          "source_id": "usda:2025-2030-dietary-guidelines-infants",
+          "url": "https://cdn.realfood.gov/DGA.pdf",
+          "raw_sha256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
+          "governed_bytes_sha256": "d55977c1c575948d7a9419a4ea280d51cceff374283dc38ce24297283d48a858"
+        },
+        {
+          "source_id": "senate:2026-pn655-loan-limit-letter",
+          "url": "https://www.king.senate.gov/newsroom/press-releases/king-curtis-lead-bipartisan-letter-urging-administration-to-reverse-course-on-new-policy-limiting-path-to-homeownership",
+          "raw_sha256": "ca1540cdb15419eb341c921192b8d14a778da348562bda36b4a82e1f6fb4ab3b",
+          "governed_bytes_sha256": "bda95556c1a8a541b251403843ccfdc4761e42a2c05b1b5f3d68b96aa83c513e"
+        },
+        {
+          "source_id": "congressional-record:2026-06-04-agri-loan-clause",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-04/pdf/CREC-2026-06-04-house.pdf",
+          "raw_sha256": "2a439952598898eab7dcaad1a59eba65d4aca01701d2d84df0128aa999fe71e5",
+          "governed_bytes_sha256": "afd8601541121c935e0d8d2dcbd417a49ff32001783e4d72eb070fa67400ed78"
+        },
+        {
+          "source_id": "congressional-record:2026-06-04-health-controls",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-04/pdf/CREC-2026-06-04-house.pdf",
+          "raw_sha256": "2a439952598898eab7dcaad1a59eba65d4aca01701d2d84df0128aa999fe71e5",
+          "governed_bytes_sha256": "4492fd71896b2f4ba690e6e4fa6ff8ce16490545b568c7a011706cd9819c8785"
+        },
+        {
+          "source_id": "govinfo:7usc1926-2024-community-facilities",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapI-sec1926.htm",
+          "raw_sha256": "3d641ec4b5ed40ae81c5dbdc6d17da18661d7c0d59070ded6d9e0a07cdc671c0",
+          "governed_bytes_sha256": "9a5a061520db08f143cff47783aab8366a6b09a35635f51ab8e302514540f507"
+        },
+        {
+          "source_id": "govinfo:7usc1922-2024-rural-credit-eligibility",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapI-sec1922.htm",
+          "raw_sha256": "0cbe449d15c5f52836ce1bffcda65c382c1b39ec6f34e488901a3e5210072a59",
+          "governed_bytes_sha256": "6b4b1005dcca5d6829cc25e614c92afea1d141d8799c70ebf502fafbfa67cebf"
+        },
+        {
+          "source_id": "govinfo:7usc1990a-2024-rural-refinancing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap50-subchapIV-sec1990a.pdf",
+          "raw_sha256": "5b26760801e2d5855e35a46801c5ece9ba2f9b603dd8d00ebda24ca2645fc0c7",
+          "governed_bytes_sha256": "effcd60b0c00cbaffcef608b5a845cb640630708807e01d29df5b0bcc2d52cc9"
+        },
+        {
+          "source_id": "govinfo:7usc1991-2024-rural-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap50-subchapIV-sec1991.pdf",
+          "raw_sha256": "ab991633f27601858ffadd42068681f53601137807f2ac379a83233bd23b06cf",
+          "governed_bytes_sha256": "0aad23fcf7194a67800f510b284daa1dda77e9c62e82349906a09fb7e9c79ef4"
+        },
+        {
+          "source_id": "govinfo:7usc3175-2024-nutrition-education",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap64-subchapIV-sec3175.pdf",
+          "raw_sha256": "135631bb2951ce46b525ed0b1e4a81642ad626fcfc6c306820f244620dcd61ae",
+          "governed_bytes_sha256": "3c4da73b7b8142476a8bf7658ac7039522957bb1771137d889884bbcc8b75219"
+        },
+        {
+          "source_id": "govinfo:7usc3007-2024-senior-nutrition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap63-sec3007.pdf",
+          "raw_sha256": "882cb048ef561575ee0f28d5d2fe9668dcd257b47884df535f084723945aa4fd",
+          "governed_bytes_sha256": "176a51030274dc3df25730d6ebad24bb386236b4c7ce9c74fa723cc805f1639a"
+        },
+        {
+          "source_id": "govinfo:7usc1722-2024-international-food-aid",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap41-subchapIII-sec1722.pdf",
+          "raw_sha256": "a513fddbf3dfcccd6d0ebc5ea0247b2b7c771e9f43cee22fddcc65ca8571d2d4",
+          "governed_bytes_sha256": "6101c466c45521ecf9afe122032a45d79a4df53eabd48e56895c5104d1b55d4f"
+        },
+        {
+          "source_id": "govinfo:7usc1724-2024-minimum-food-assistance",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap41-subchapIII-sec1724.pdf",
+          "raw_sha256": "9ab877c1b90eb996ab16a58dc7bf6f5ca56050b7c42ba5fdf7ba3807421a8dc5",
+          "governed_bytes_sha256": "8db0c76307be9b5deac9d770dd60e8908929eb4b824b73f15d02d43c6c5e61fd"
+        },
+        {
+          "source_id": "govinfo:7usc1736o-1-2024-mcgovern-dole",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap41-subchapIV-sec1736o-1.pdf",
+          "raw_sha256": "0edacda7d3e598d73d686f143f483b51281b6b7fd0585bf6f9644607bbbbc5f9",
+          "governed_bytes_sha256": "c7904792a828a12dad81733da8a33be66375a3f3561628318ccf4f4a7cc8cac4"
+        },
+        {
+          "source_id": "govinfo:7usc7515-2024-emergency-food-allocation",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap102-sec7515.pdf",
+          "raw_sha256": "87312e5c3d208bdef03048a1b652fe6b18f32401a6d012b25732f336677b9dfc",
+          "governed_bytes_sha256": "4d5350b1ebb69d0c4e08b33b3a4a39062904b86e9dce33b239cc088c4e607295"
+        },
+        {
+          "source_id": "govinfo:34usc20127-2024-victim-pet-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/pdf/USCODE-2024-title34-subtitleII-chap201-subchapII-sec20127.pdf",
+          "raw_sha256": "d6a459277a91df07312646cdfc388eedd015aee8a6979fce3ec05cbf2a27623a",
+          "governed_bytes_sha256": "c97e375d73e2157017165011bccd4207004b2336e0fc8c13dcacdc8a4115ad10"
+        },
+        {
+          "source_id": "govinfo:7usc1736f-2024-nonemergency-food-assistance",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap41-subchapIV-sec1736f.pdf",
+          "raw_sha256": "88f0f4ddb602c501afcb3029029901b0677fc638e42d7366abc7666995ab3286",
+          "governed_bytes_sha256": "e8a655fe2fff317a76cab7dcba9fc32596874b9933f4ef9e4cedf9e1b3d55031"
+        },
+        {
+          "source_id": "govinfo:7usc2008u-2024-rural-care",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapIV-sec2008u.htm",
+          "raw_sha256": "95d3015d819c767028273b765deb46e31d8dcf5cf1be10e42622a7323907a78e",
+          "governed_bytes_sha256": "c43c87dba06b3e93bfdbd1f9f261e175c5764d6c2baf0da22552c44e07dbe5f6"
+        },
+        {
+          "source_id": "govinfo:7usc5936-2024-farm-stress",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap88-subchapVII-sec5936.htm",
+          "raw_sha256": "afe55b644d905be50585671b84eabd4b2c6b75a5f559903648f77b227141f1be",
+          "governed_bytes_sha256": "0e0b10cda8f1069c0d98ce6195f03929eba86af68022fc3a32339aa49d55083b"
+        },
+        {
+          "source_id": "govinfo:42usc1760-2024-school-food-rules",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/pdf/USCODE-2024-title42-chap13-sec1760.pdf",
+          "raw_sha256": "c7bfe2609ddce2ad0d1c247848324dbbca74a6d50fdcbb5b7f1c8ff08a2dcd6b",
+          "governed_bytes_sha256": "47f5e13a182aef8f38c9cba7a3aa4cd926651dec8eda2399fa70bd6e04eeff92"
+        },
+        {
+          "source_id": "govinfo:42usc1758-2024-school-milk-rules",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/pdf/USCODE-2024-title42-chap13-sec1758.pdf",
+          "raw_sha256": "84d15a6418e53404c2fbada009f7b9f0d909bb9a370ea629482816db799ebb3a",
+          "governed_bytes_sha256": "3b9cb078206e3403dc854e91f5fb5cbaa979f82321c05c8480dbc8f65cde5ab1"
+        },
+        {
+          "source_id": "govinfo:pl119-69-school-milk",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ69/html/PLAW-119publ69.htm",
+          "raw_sha256": "156d9ef8846aad48896484ee1c29b58adb2ba8ecc6c523c9da546633a83860b6",
+          "governed_bytes_sha256": "d7fa9b6b1e51437249cf0048c7bee27b22fd0d6c0f183c3d1957e8fc90b6c23e"
+        },
+        {
+          "source_id": "govinfo:pl119-21-farm-nutrition-current-law",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "250f5952e27107203273d16f0037df3a081421236e48629f97f8303f0143ecc5"
+        },
+        {
+          "source_id": "govinfo:42usc1490r-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap8A-subchapIII-sec1490r.htm",
+          "raw_sha256": "a288811e5d7fefcc160489a686efcf8009728f7f9f100e04d414f8944857ce85",
+          "governed_bytes_sha256": "042da20883cb4bb3ad5a5037e65237fa046d790cbc5c3a0109406b5a39e44040"
+        },
+        {
+          "source_id": "govinfo:42usc1490a-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap8A-subchapIII-sec1490a.htm",
+          "raw_sha256": "f9effb7b6b4c650879e00820177c7a16f2187df531fc4001741a8ee61217327b",
+          "governed_bytes_sha256": "3bbaf0d45c987b3525b59be7479339065a7f2910e142d002927b3fa5c6040d00"
+        },
+        {
+          "source_id": "govinfo:1usc7-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title1/html/USCODE-2024-title1-chap1-sec7.htm",
+          "raw_sha256": "5dea9d089cb1ef96e8cd286b88f2c064028944b7c278755a7f080ff4df5339c0",
+          "governed_bytes_sha256": "66bb3a33a8237e0a464e6bf88df81215e4495b64922d31be849706f218e0a87b"
+        },
+        {
+          "source_id": "govinfo:28usc1738C-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partV-chap115-sec1738C.htm",
+          "raw_sha256": "9aa19a76676e63f3913a515ac5292dae43a140cf53139cf0058bdd688c84f6ba",
+          "governed_bytes_sha256": "41e6be7333604705b25c2b32276055f68afd7c489968274a8e8a0e661b2bcd9a"
+        },
+        {
+          "source_id": "govinfo:hres1333eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1333eh/html/BILLS-119hres1333eh.htm",
+          "raw_sha256": "8b4a77c81a229cd897a2210b07a24150e62222f0001729fd02a9a05f4d2989d6",
+          "governed_bytes_sha256": "f01662cde9950fd237df4a535f0cda160925266b1d406695c9ee40ee1f220d50"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "4c4276c31b6419bfaf9b45c6636e165435e9d144febe4f1c2b228d43fa54ff56"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:205",
@@ -40819,7 +41543,7 @@
       "measure": "bill_119_hr_2913",
       "question": "On Passage",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Carry forward checkpoint223whole H.R.2913EH and material source preparation: literal cross-references (including302/304to310ratherthan317,andother internal operators) remain unresolved,with full bounded programme/status application and exact governing-source chain unfinished. Do not silently repair the source,inherit Health membership,claim evidence unavailable or confer completion. This already researched case is reclassified from the generic ordinary queue label to a researched source/application hold; no new review or meaning.",
       "source": {
         "source_id": "clerk:119:2:207",
         "url": "https://clerk.house.gov/evs/2026/roll207.xml",
@@ -40837,8 +41561,8 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Carry forward checkpoint223whole H.R.2913EH and material source preparation: literal cross-references (including302/304to310ratherthan317,andother internal operators) remain unresolved,with full bounded programme/status application and exact governing-source chain unfinished. Do not silently repair the source,inherit Health membership,claim evidence unavailable or confer completion. This already researched case is reclassified from the generic ordinary queue label to a researched source/application hold; no new review or meaning.",
+      "unresolved_reason": "pending_Ukraine_literal_crossrefs_and_exact_Immigration_application224",
       "sources": [
         {
           "source_id": "clerk:119:2:207",
@@ -40846,6 +41570,12 @@
           "raw_sha256": "96d6c3c655cc041b1751458e44a0743935b5796d1732422d4f1779bd5a33caff",
           "governed_bytes_sha256": "13549763aee50bd4a5a24a81e85cbd7c2b9a62ec2ae8730dbcccdf2e53b7e01b",
           "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:hr2913eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2913eh/html/BILLS-119hr2913eh.htm",
+          "raw_sha256": "1f145d6514d798e61723d2fda12454f7aebee01094ab9b359831d84e62472553",
+          "governed_bytes_sha256": "089f0d937dd3a099e435af5c8055b283207c9422ccdf96a6dd0d7feb6b1ed313"
         }
       ],
       "exact_action_source_binding": null,
@@ -40854,7 +41584,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "source_application_relationship_unresolved": true
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:207",
@@ -48849,15 +49580,17 @@
     "house:119:1:239",
     "house:119:1:281",
     "house:119:2:56",
-    "house:119:1:252"
+    "house:119:1:252",
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:175",
+    "house:119:2:205"
   ],
   "unresolved_action_ids": [
     "house:119:1:151",
-    "house:119:1:182",
     "house:119:1:199",
     "house:119:1:200",
     "house:119:1:210",
-    "house:119:1:212",
     "house:119:1:218",
     "house:119:1:237",
     "house:119:1:262",
@@ -48871,14 +49604,11 @@
     "house:119:2:53",
     "house:119:2:57",
     "house:119:2:89",
-    "house:119:2:143",
     "house:119:2:154",
     "house:119:2:157",
-    "house:119:2:175",
     "house:119:2:176",
     "house:119:2:193",
     "house:119:2:196",
-    "house:119:2:205",
     "house:119:2:207",
     "house:119:2:218",
     "house:119:2:224",
@@ -48912,6 +49642,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "f425ee98d0c065443046adf2c84a048664749d065ae610983d717ced76b440f1",
-  "membership_review_sha256": "43a23ec82cf6002dcf5d5698a9979557aa0458ade0db4fe3f9bc57bade0a0f7a"
+  "proposal_sha256": "54a507b58c8a7a2183b668fb2ec9264a25db1c82e221aecc94205c6afd163d89",
+  "membership_review_sha256": "e1abe8599955cfbfcde8d47e01d55b047eb2a5d8a5da088a74cf894c36351bb7"
 }
