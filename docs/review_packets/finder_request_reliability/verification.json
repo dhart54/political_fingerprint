@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-10-14",
+  "base_sha": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+  "branch": "codex/finder-request-reliability",
+  "environment": {
+    "node": "22.16.0",
+    "next": "15.5.12",
+    "playwright": "1.61.1",
+    "os": "Windows",
+    "api_base": "http://localhost:8000",
+    "production_build": true,
+    "controlled_local_fixtures": true
+  },
+  "baseline": [
+    {
+      "base": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "elapsedMs": 15000,
+      "message": "Looking up representatives…",
+      "requestCount": 3,
+      "cancelCount": 0,
+      "signals": [
+        false,
+        false,
+        false
+      ],
+      "mode": "zip"
+    },
+    {
+      "base": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "elapsedMs": 15000,
+      "message": "Searching representative records…",
+      "requestCount": 3,
+      "cancelCount": 0,
+      "signals": [
+        false,
+        false,
+        false
+      ],
+      "mode": "name"
+    }
+  ],
+  "commands": {
+    "units": "node --test lib/*.test.mjs",
+    "lint": "npm run lint",
+    "build": "npm run build",
+    "finder": "npx --no-install playwright test tests/representative-finder.spec.mjs --workers=2 --retries=0 --forbid-only --reporter=line,json",
+    "release": "npx --no-install playwright test tests/representative-finder.spec.mjs tests/official-contact.spec.mjs tests/local-record-filter.spec.mjs tests/frontend-pass-a.spec.mjs tests/zip-lookup-state.spec.mjs tests/editorial-cutover.spec.mjs tests/ir-presentation.spec.mjs tests/production-evidence-integration.spec.mjs tests/public-record-integrity.spec.mjs tests/record-card.spec.mjs tests/record-card-release.spec.mjs tests/education79-card-compatibility.spec.mjs --workers=2 --retries=0 --forbid-only --trace=retain-on-failure --reporter=line,json"
+  },
+  "units": {
+    "passed": 279,
+    "failed": 0,
+    "log_sha256": "b687ecaf98cbaa840b113417656d42e8697825f88bff1d1ae5a953d1f8d05326"
+  },
+  "lint": {
+    "passed": true,
+    "errors": 0,
+    "existing_warnings_in_untouched_components": 8
+  },
+  "build": {
+    "passed": true
+  },
+  "browsers": {
+    "finder": {
+      "stats": {
+        "startTime": "2026-10-14T20:33:56.253Z",
+        "duration": 18699.845,
+        "expected": 48,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "2bfc78af6d61495a9ae142e1378ab74df5190ca4039607b1fc7570d921f54f68"
+    },
+    "release": {
+      "stats": {
+        "startTime": "2026-10-14T20:34:33.705Z",
+        "duration": 76813.606,
+        "expected": 213,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "75d7f33606e10ffc007be9518b30ec04537288c5a4b6a18e316ed829dca6dbdf"
+    }
+  },
+  "code_sha256_normalized_lf": {
+    "frontend/components/RepresentativeFinder.js": "ad2f2a62381f19a700961243529e68a4c970b0fbe8f30fcbad94c0e62182abb4",
+    "frontend/lib/api.js": "8a013fcc1024ace1d6ef97f4622dc512a9659e4162dad9361331996af5501ec2",
+    "frontend/tests/representative-finder.spec.mjs": "ee3727a2304782f229602bed0a555f9c01b5e45e78a5419c42d82123a24c7bb8"
+  },
+  "acceptance": {
+    "held_search": "ZIP/name at 320/390/768/1440: initial loading; guidance at 8 seconds, still pending after another 60 seconds; exactly one GET despite same-turn duplicate submits; eventual success removes guidance and Cancel.",
+    "cancellation": "Actual browser fetch rejects with AbortError for ZIP/name Cancel and switch Close/history Back. Inputs and URL/history are retained; explicit same-query resubmit issues exactly one new GET.",
+    "stale_callbacks": "Transport ignoring abort permits forced late success/network/503 errors; sequence guards reject them after superseding/invalid search, Cancel/resubmit, Close, selection, remount and history. Forced obsolete timer callback is inert during cancelled, newer loading and newer ready states.",
+    "semantics": "All established ZIP-state qualifications, 404 versus server errors, empty name versus network failure, explicit selection and literal official link activation tests pass.",
+    "keyboard": "Tab reaches Cancel with visible outline at 320/390/768/1440; Enter cancels and returns focus to the active input; existing qualified-selection keyboard tests pass without horizontal overflow."
+  },
+  "captures": [
+    {
+      "path": "baseline-zip.png",
+      "sha256": "392187fcb65ed0a6f7fbafc2143a0041063fdf7d53f81a3902b50316b8febc36",
+      "bytes": 26506
+    },
+    {
+      "path": "slow-zip-desktop.png",
+      "sha256": "79d77d06ca6a4e80857828cbded783fec4eeeeb3768e38d9ea9bfd5819fae363",
+      "bytes": 31514
+    },
+    {
+      "path": "slow-name-mobile.png",
+      "sha256": "2d06a850cc6da7364b0c507182e41dd6945039e31a8e930313bd5c78159c8066",
+      "bytes": 32301
+    },
+    {
+      "path": "slow-name-320.png",
+      "sha256": "a07ef9d55dcb3895a4ef14cbb667f07905d69438cb3c5ad0b05e9ab286842c38",
+      "bytes": 31719
+    },
+    {
+      "path": "completed-zip-desktop.png",
+      "sha256": "dc5a614d5d756891724a72460c2700ea53d1b708714203315e8368994c0faef9",
+      "bytes": 59536
+    },
+    {
+      "path": "cancelled-name.png",
+      "sha256": "a656d2da54dc25f8e864307d4e91d4514d84faf36a659e4053c565936537dba1",
+      "bytes": 26947
+    }
+  ],
+  "production_writes": false,
+  "limitations": [
+    "Controlled local production-build tests, not a claim about a live incident or the cause of elapsed time.",
+    "Browser ARIA/keyboard assertions do not constitute assistive-technology or physical-device testing.",
+    "Fresh exact-head hosted CI is reported by the draft PR checks after push."
+  ]
+}
