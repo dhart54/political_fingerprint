@@ -101,6 +101,9 @@ class _HealthProviderValidation:
                 shared_corpus.sealed_digest, shared_corpus.digest, shared_corpus.canonical_bytes,
                 shared_corpus._identity_set, shared_corpus.Draft202012Validator, shared_corpus.FormatChecker,
                 frozenset(shared_corpus.MEMBER_FIELDS),
+                shared_corpus.Draft202012Validator.TYPE_CHECKER,
+                shared_corpus.Draft202012Validator.ID_OF,
+                shared_corpus.Draft202012Validator._APPLICABLE_VALIDATORS,
                 tuple(shared_corpus.Draft202012Validator.VALIDATORS.items()),
                 tuple((name, checker, tuple(raises) if isinstance(raises, (list, tuple)) else raises)
                       for name, (checker, raises) in shared_corpus.FormatChecker.checkers.items()),

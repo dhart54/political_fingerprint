@@ -217,6 +217,19 @@ class HealthProviderRegistryDifferential(unittest.TestCase):
         self.assert_same_session_rejection(
             shared_corpus.Draft202012Validator.VALIDATORS, 'type', reject_type)
 
+    def test_changed_type_checker_matches_direct_and_fresh_rejection(self):
+        session = adapter._HealthProviderValidation()
+        session.validate(ROOT, HEALTH, self.provider_text, self.provider)
+        checker = shared_corpus.Draft202012Validator.TYPE_CHECKER.redefine(
+            'integer', lambda checker, value: False)
+        with patch.object(shared_corpus.Draft202012Validator, 'TYPE_CHECKER', checker):
+            direct = rejection(lambda: shared_corpus.validate_shared_action_core(ROOT, self.provider))
+            fresh = rejection(lambda: adapter._HealthProviderValidation().validate(
+                ROOT, HEALTH, self.provider_text, self.provider))
+            self.assertEqual(fresh, direct)
+            self.assertEqual(rejection(lambda: session.validate(
+                ROOT, HEALTH, self.provider_text, self.provider)), direct)
+
 
 class HealthProviderPrepareIntegration(unittest.TestCase):
     @classmethod
