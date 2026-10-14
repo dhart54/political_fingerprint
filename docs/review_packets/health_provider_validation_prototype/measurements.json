@@ -1,7 +1,8 @@
 {
   "frozen_base": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
-  "normalization": "Profile library roots/proof-read paths normalized; repeated unchanged manifests deduplicated. No timing/hash value changed.",
-  "final_adapter_text_binding": "cf084f210afa6a416263fb08d2db8d34d67efd429760b44d77363a220c038d73",
+  "tested_source_head": "b606500f4e61848b2b15e3e510ff1641742f661d",
+  "normalization": "Library roots/proof-read paths normalized; repeated unchanged manifests deduplicated. No timing/hash value changed.",
+  "final_adapter_text_binding": "8809b7be8503290a992a1a292576ab34c597c6b5cb2c130b885112e3c31b71a1",
   "historical_proof_valid_for_changed_adapter": false,
   "actual_six_serialized_outputs_byte_equal": true,
   "original_364_case_identities_unchanged": true,
@@ -18,6 +19,7 @@
     "backend/tests/test_shared_candidate_research.py": "f335fd3b07d4075862913ae8dc941114c27c1432bc4100188cd011e7409532a1",
     "backend/tests/test_shared_domain_candidate.py": "5ba539957dd0590e0fd04bdc573dca573b62c08da0ce61187acec5e64704d9d2",
     "backend/tests/test_shared_legislative_corpus.py": "74b4b4cfcde7788836371e396e28867bde8a7ff9fc4bf9cc20827fd7b47bbcac",
+    "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
     "docs/editorial/shared_candidates/house_119_immigration_20260916/ALERT_data_scope_closure_checkpoint213.json": "cb1a7a85871ba9b85e0eb0593fb3335e771a0ed7a91e000538ab58663d5953bc",
     "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_baseline_correction_checkpoint210.json": "92edb9232b0a1c5bbbb5a4b427b5b39887ca2503c3fb92bb396ec563e4e8de69",
     "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_source_qualification_checkpoint209.json": "8d3946659c2819bcc68ec332f59d374919bd46a31c3699c56cef7285add610fa",
@@ -297,20 +299,171 @@
     "scripts/prepare_shared_domain_candidate.py": "720b213d38e49d9826ad09930b123f5f06c2c733e4798d83f7d23e6bbc103fe8"
   },
   "code_files": {
-    "scripts/prepare_immigration_shared_candidate.py": "a53aa9a81f890b33bd54a043127f72da50d7281a358b6da9e1411d4e3769df54",
-    "backend/tests/test_health_provider_validation_prototype.py": "168ac0227dcfc5491d27baa4047cb645dba77189b5514aef56545e35eba72261",
-    "docs/review_packets/health_provider_validation_prototype/run_prototype.py": "38d44df8861ffbf3662abc9d1f13f2ad26a708f1b35a9e467b02e162fc925002"
+    "scripts/prepare_immigration_shared_candidate.py": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+    "backend/tests/test_health_provider_validation_prototype.py": "6de05735d58181c8548ca04b220010099e592116a6e5783735411f1417063e6a",
+    "docs/review_packets/health_provider_validation_prototype/run_prototype.py": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883"
+  },
+  "code_bindings": {
+    "scripts/prepare_immigration_shared_candidate.py": {
+      "worktree_raw_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+      "git_blob_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+      "git_blob_object_id": "7fc00bdf7039a3ff004da7e37b5a37f998e967dd",
+      "worktree_filtered_object_id": "7fc00bdf7039a3ff004da7e37b5a37f998e967dd",
+      "crlf_count": 0,
+      "lone_lf_count": 921
+    },
+    "backend/tests/test_health_provider_validation_prototype.py": {
+      "worktree_raw_sha256": "6de05735d58181c8548ca04b220010099e592116a6e5783735411f1417063e6a",
+      "git_blob_sha256": "6de05735d58181c8548ca04b220010099e592116a6e5783735411f1417063e6a",
+      "git_blob_object_id": "2b10f6e39be33efdfc22df392865eb620a1a4ae4",
+      "worktree_filtered_object_id": "2b10f6e39be33efdfc22df392865eb620a1a4ae4",
+      "crlf_count": 0,
+      "lone_lf_count": 298
+    },
+    "docs/review_packets/health_provider_validation_prototype/run_prototype.py": {
+      "worktree_raw_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "worktree_filtered_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "crlf_count": 0,
+      "lone_lf_count": 221
+    }
   },
   "patches": {
-    "adapter.patch": "67159f308dca09843f84519b544abf52213d14f009dc18b132ae4af9334df0aa",
-    "controls.patch": "f6a170108e87b0461d39799849e480040e30d04211fe54829dc901c7dbc1c312"
+    "adapter.patch": "1fca3178850ae54aa2c3253436d8d013d997b8a8e36ba3c135806150a660eac9",
+    "controls.patch": "09e12632763747cfa3be186a0d4f34998e6ebda4e8456ad9d93d0e1a6a39932e"
   },
   "reductions": [
-    0.5244434863550769,
-    0.4140349401617277
+    0.3971227027419309,
+    0.4314767586119776
   ],
+  "prior_receipt_byte_limitation": {
+    "head": "c30f790c6d053acd93dc9add9c4a07a66aec4e88",
+    "recorded_worktree_adapter_sha256": "a53aa9a81f890b33bd54a043127f72da50d7281a358b6da9e1411d4e3769df54",
+    "committed_adapter_blob_sha256": "9a79a040df79836c7a4f70bd38156199ca63ec8fdef5fe18d7a03923b83913ee",
+    "limitation": "Prior adapter SHA256 described mixed-newline working bytes, not its Git blob. Corrected evidence binds exact LF blob bytes."
+  },
+  "review_regressions": {
+    "registry-before": {
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "2",
+        "skipped": "0",
+        "tests": "2",
+        "time": "3.469",
+        "timestamp": "2026-10-13T21:03:13.574233-04:00",
+        "hostname": "DESKTOP-1CQBHTJ"
+      },
+      "by_class": {
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderRegistryDifferential": {
+          "tests": 2,
+          "seconds": 3.235,
+          "failures": 2
+        }
+      },
+      "failures": [
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderRegistryDifferential::test_in_place_format_checker_change_matches_direct_and_fresh_rejection",
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderRegistryDifferential::test_in_place_keyword_registry_change_matches_direct_and_fresh_rejection"
+      ],
+      "raw_xml_sha256": "0b27ca1b069b4937a0dedd89bb0c9b40beac05a6e84655ed05bb909f67edc25f",
+      "raw_log_sha256": "2ea75a06b7cbf7231900796403f01f7d734d130c00d9576cd74839cd67efaecc"
+    },
+    "order-before": {
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "1",
+        "skipped": "0",
+        "tests": "1",
+        "time": "0.302",
+        "timestamp": "2026-10-13T21:11:08.893270-04:00",
+        "hostname": "DESKTOP-1CQBHTJ"
+      },
+      "by_class": {
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderReuseControls": {
+          "tests": 1,
+          "seconds": 0.086,
+          "failures": 1
+        }
+      },
+      "failures": [
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderReuseControls::test_changed_validator_dispatch_precedes_schema_denial"
+      ],
+      "raw_xml_sha256": "80107f0f2cc79b5edef829508a8a97d9cefb595981d2d78afd6183aa6e3980e7",
+      "raw_log_sha256": "19b43b8588a01a4befe7c0c668cb9d5094b08e11ea7dd72ffb1f081cc37c196a"
+    },
+    "review-correction-controls": {
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "18",
+        "time": "28.389",
+        "timestamp": "2026-10-13T21:14:12.778922-04:00",
+        "hostname": "DESKTOP-1CQBHTJ"
+      },
+      "by_class": {
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderReuseControls": {
+          "tests": 13,
+          "seconds": 0.152,
+          "failures": 0
+        },
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderRegistryDifferential": {
+          "tests": 2,
+          "seconds": 4.044,
+          "failures": 0
+        },
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderPrepareIntegration": {
+          "tests": 3,
+          "seconds": 24.014,
+          "failures": 0
+        }
+      },
+      "failures": [],
+      "raw_xml_sha256": "41b63bc00172421112c55d680665772d0e49c67c4cc6bfdfa7d4cbf93c73ea24",
+      "raw_log_sha256": "8e39e5fda216142be68359e398578657320e6283c7d1b5f0dd07ca569ac4ac0a"
+    },
+    "final-controls": {
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "19",
+        "time": "24.496",
+        "timestamp": "2026-10-13T21:34:32.606035-04:00",
+        "hostname": "DESKTOP-1CQBHTJ"
+      },
+      "by_class": {
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderReuseControls": {
+          "tests": 13,
+          "seconds": 0.144,
+          "failures": 0
+        },
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderRegistryDifferential": {
+          "tests": 3,
+          "seconds": 5.371,
+          "failures": 0
+        },
+        "backend.tests.test_health_provider_validation_prototype.HealthProviderPrepareIntegration": {
+          "tests": 3,
+          "seconds": 18.815,
+          "failures": 0
+        }
+      },
+      "failures": [],
+      "raw_xml_sha256": "182e82068a57f5350b18640a8bdceae2a5d22d9f4745d24a70716aa4492817b5",
+      "raw_log_sha256": "e6cd1cc1125202c3d2b1409032f7dfa8968eeb1f5fd524bc193dc02c07b149cc"
+    }
+  },
+  "additional_type_checker_probe": {
+    "raw_receipt_sha256": "958ff6f0384b041ab56bf28bc5a7cdf4eecbd23303b95167d8659559ed5eec88",
+    "observation": "Direct and fresh sessions rejected; warm session accepted after TYPE_CHECKER replacement. Real-provider regression now rejects identically."
+  },
   "baseline": {
-    "started_at_utc": "2026-10-14T00:40:58.439793+00:00",
+    "started_at_utc": "2026-10-14T01:38:08.440857+00:00",
     "head": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
     "frozen_base": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
     "variant": "baseline",
@@ -326,19 +479,37 @@
     "adapter_current_text_binding": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6",
     "historical_proof_valid_for_changed_adapter": false,
     "initial_tracked_diff": [],
+    "code_bindings": {
+      "scripts/prepare_immigration_shared_candidate.py": {
+        "worktree_raw_sha256": "1e4a4b908e17ac36ff35b7a37e46da0467edbf4acd371b82950d0439d719a1ba",
+        "git_blob_sha256": "1e4f101ec28dbfc2b92a89253055b74f1fd4ca58a2bdb8cd4dd5d61cfd1f2ecb",
+        "git_blob_object_id": "d96d9d477b195411b351f3038d7224a610bd5a01",
+        "worktree_filtered_object_id": "d96d9d477b195411b351f3038d7224a610bd5a01",
+        "crlf_count": 799,
+        "lone_lf_count": 0
+      }
+    },
+    "driver_binding": {
+      "worktree_raw_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "worktree_filtered_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "crlf_count": 0,
+      "lone_lf_count": 221
+    },
     "conditions": "One benchmark process; fresh-process first call/warm repeats; OS cache not cleared.",
     "historical_packet_matches_current_renderer": false,
     "historical_packet_limit": "Frozen Markdown retains44-input generation; current JSON/renderer has65. Preserve old bytes and compare baseline/prototype renderer output exactly.",
     "measurements": [
       {
         "condition": "fresh_process_first_call",
-        "wall_seconds": 13.027748799999245,
-        "cpu_seconds": 13.0
+        "wall_seconds": 11.119768699980341,
+        "cpu_seconds": 11.09375
       },
       {
         "condition": "same_process_warm_call",
-        "wall_seconds": 14.604924400046002,
-        "cpu_seconds": 14.5625
+        "wall_seconds": 11.170267699984834,
+        "cpu_seconds": 11.15625
       }
     ],
     "all_generated_output_digests": {
@@ -358,7 +529,7 @@
       "readable_candidates_serialized_bytes": "e8f8981ac33c2fa7d95b9eaf991ad11826b18f6b46811dec0e11f89a86e051de"
     },
     "profile": {
-      "wall_seconds": 23.738171499979217,
+      "wall_seconds": 17.207107099995483,
       "functions": [
         {
           "file": "$CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
@@ -366,8 +537,8 @@
           "function": "prepare",
           "primitive_calls": 1,
           "total_calls": 1,
-          "exclusive_seconds": 0.0122848,
-          "cumulative_seconds": 23.734918800000003
+          "exclusive_seconds": 0.0093522,
+          "cumulative_seconds": 17.2043794
         },
         {
           "file": "$CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
@@ -375,8 +546,8 @@
           "function": "_prepare_reused_action",
           "primitive_calls": 16,
           "total_calls": 16,
-          "exclusive_seconds": 0.054556400000000005,
-          "cumulative_seconds": 20.841701200000003
+          "exclusive_seconds": 0.0434391,
+          "cumulative_seconds": 15.113156300000002
         },
         {
           "file": "$CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
@@ -384,8 +555,8 @@
           "function": "_prepare_candidate_core_augmentation",
           "primitive_calls": 11,
           "total_calls": 11,
-          "exclusive_seconds": 0.040365700000000004,
-          "cumulative_seconds": 17.5601711
+          "exclusive_seconds": 0.029519300000000002,
+          "cumulative_seconds": 12.6569091
         },
         {
           "file": "$CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
@@ -393,8 +564,8 @@
           "function": "validate_shared_action_core",
           "primitive_calls": 46,
           "total_calls": 46,
-          "exclusive_seconds": 0.0366543,
-          "cumulative_seconds": 17.3380027
+          "exclusive_seconds": 0.0274538,
+          "cumulative_seconds": 12.4075836
         },
         {
           "file": "$CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
@@ -402,8 +573,8 @@
           "function": "_validate_schema",
           "primitive_calls": 100,
           "total_calls": 100,
-          "exclusive_seconds": 0.001085,
-          "cumulative_seconds": 13.4706275
+          "exclusive_seconds": 0.0009257,
+          "cumulative_seconds": 9.446257000000001
         },
         {
           "file": "$CHECKOUT/scripts/prepare_shared_domain_candidate.py",
@@ -411,8 +582,8 @@
           "function": "prepare",
           "primitive_calls": 17,
           "total_calls": 17,
-          "exclusive_seconds": 0.043337400000000005,
-          "cumulative_seconds": 4.8186232
+          "exclusive_seconds": 0.0335622,
+          "cumulative_seconds": 3.5206962
         },
         {
           "file": "$CHECKOUT/scripts/prepare_shared_domain_candidate.py",
@@ -420,18 +591,18 @@
           "function": "validate_sources",
           "primitive_calls": 17,
           "total_calls": 17,
-          "exclusive_seconds": 0.0211872,
-          "cumulative_seconds": 3.0863741
+          "exclusive_seconds": 0.0122643,
+          "cumulative_seconds": 2.2724754000000003
         }
       ]
     },
     "protected_bytes_unchanged": true,
-    "raw_receipt_sha256": "777e0aecaa546577ee08b9a7961da0e22c62ffbec3d5f31dd812cdb1b296de53",
-    "protected_manifest_canonical_sha256": "f3e6d79340d2490a52b50109737d88e3f7d35f748363b5fb132be67345d9c48c"
+    "raw_receipt_sha256": "fd09af05ab4ba7a09ae2993e35bc85d0fc8debc1556a861ac0b85e4cd4900516",
+    "protected_manifest_canonical_sha256": "c0458959e320d2d65c38d16c90a38d5f28071348f71a9b42094197daafa1aaca"
   },
   "prototype": {
-    "started_at_utc": "2026-10-14T00:43:14.949162+00:00",
-    "head": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
+    "started_at_utc": "2026-10-14T01:39:33.391673+00:00",
+    "head": "b606500f4e61848b2b15e3e510ff1641742f661d",
     "frozen_base": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
     "variant": "prototype",
     "mode": "measure",
@@ -441,27 +612,59 @@
     "logical_cpus": 16,
     "jsonschema": "4.26.0",
     "pytest": "8.3.5",
-    "adapter_raw_sha256": "a53aa9a81f890b33bd54a043127f72da50d7281a358b6da9e1411d4e3769df54",
+    "adapter_raw_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
     "adapter_old_text_binding": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6",
-    "adapter_current_text_binding": "cf084f210afa6a416263fb08d2db8d34d67efd429760b44d77363a220c038d73",
+    "adapter_current_text_binding": "8809b7be8503290a992a1a292576ab34c597c6b5cb2c130b885112e3c31b71a1",
     "historical_proof_valid_for_changed_adapter": false,
     "initial_tracked_diff": [
       "backend/tests/test_health_provider_validation_prototype.py",
+      "docs/plans/health_provider_validation_prototype.md",
+      "docs/review_packets/health_provider_validation_prototype/adapter.patch",
+      "docs/review_packets/health_provider_validation_prototype/controls.patch",
+      "docs/review_packets/health_provider_validation_prototype/measurements.json",
+      "docs/review_packets/health_provider_validation_prototype/report.md",
+      "docs/review_packets/health_provider_validation_prototype/run_prototype.py",
       "scripts/prepare_immigration_shared_candidate.py"
     ],
+    "code_bindings": {
+      "scripts/prepare_immigration_shared_candidate.py": {
+        "worktree_raw_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+        "git_blob_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+        "git_blob_object_id": "7fc00bdf7039a3ff004da7e37b5a37f998e967dd",
+        "worktree_filtered_object_id": "7fc00bdf7039a3ff004da7e37b5a37f998e967dd",
+        "crlf_count": 0,
+        "lone_lf_count": 921
+      },
+      "backend/tests/test_health_provider_validation_prototype.py": {
+        "worktree_raw_sha256": "6de05735d58181c8548ca04b220010099e592116a6e5783735411f1417063e6a",
+        "git_blob_sha256": "6de05735d58181c8548ca04b220010099e592116a6e5783735411f1417063e6a",
+        "git_blob_object_id": "2b10f6e39be33efdfc22df392865eb620a1a4ae4",
+        "worktree_filtered_object_id": "2b10f6e39be33efdfc22df392865eb620a1a4ae4",
+        "crlf_count": 0,
+        "lone_lf_count": 298
+      }
+    },
+    "driver_binding": {
+      "worktree_raw_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "worktree_filtered_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "crlf_count": 0,
+      "lone_lf_count": 221
+    },
     "conditions": "One benchmark process; fresh-process first call/warm repeats; OS cache not cleared.",
     "historical_packet_matches_current_renderer": false,
     "historical_packet_limit": "Frozen Markdown retains44-input generation; current JSON/renderer has65. Preserve old bytes and compare baseline/prototype renderer output exactly.",
     "measurements": [
       {
         "condition": "fresh_process_first_call",
-        "wall_seconds": 6.195430799969472,
-        "cpu_seconds": 6.171875
+        "wall_seconds": 6.703856099979021,
+        "cpu_seconds": 6.65625
       },
       {
         "condition": "same_process_warm_call",
-        "wall_seconds": 8.557975400006399,
-        "cpu_seconds": 8.5625
+        "wall_seconds": 6.350556799967308,
+        "cpu_seconds": 6.34375
       }
     ],
     "all_generated_output_digests": {
@@ -481,34 +684,34 @@
       "readable_candidates_serialized_bytes": "e8f8981ac33c2fa7d95b9eaf991ad11826b18f6b46811dec0e11f89a86e051de"
     },
     "profile": {
-      "wall_seconds": 11.284341599966865,
+      "wall_seconds": 8.777823899989016,
       "functions": [
         {
           "file": "$CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
-          "line": 645,
+          "line": 684,
           "function": "prepare",
           "primitive_calls": 1,
           "total_calls": 1,
-          "exclusive_seconds": 0.0147837,
-          "cumulative_seconds": 11.277453300000001
+          "exclusive_seconds": 0.0113091,
+          "cumulative_seconds": 8.7703465
         },
         {
           "file": "$CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
-          "line": 595,
+          "line": 634,
           "function": "_prepare_reused_action",
           "primitive_calls": 16,
           "total_calls": 16,
-          "exclusive_seconds": 0.06544660000000001,
-          "cumulative_seconds": 8.6348065
+          "exclusive_seconds": 0.055745600000000006,
+          "cumulative_seconds": 6.7299873
         },
         {
           "file": "$CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
-          "line": 532,
+          "line": 571,
           "function": "_prepare_candidate_core_augmentation",
           "primitive_calls": 11,
           "total_calls": 11,
-          "exclusive_seconds": 0.0085857,
-          "cumulative_seconds": 5.4152754000000005
+          "exclusive_seconds": 0.006991700000000001,
+          "cumulative_seconds": 4.3108639
         },
         {
           "file": "$CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
@@ -516,8 +719,8 @@
           "function": "validate_shared_action_core",
           "primitive_calls": 36,
           "total_calls": 36,
-          "exclusive_seconds": 0.009832200000000001,
-          "cumulative_seconds": 4.7777289000000005
+          "exclusive_seconds": 0.0072817,
+          "cumulative_seconds": 3.6475475000000004
         },
         {
           "file": "$CHECKOUT/scripts/prepare_shared_domain_candidate.py",
@@ -525,8 +728,8 @@
           "function": "prepare",
           "primitive_calls": 17,
           "total_calls": 17,
-          "exclusive_seconds": 0.0422118,
-          "cumulative_seconds": 4.5351017
+          "exclusive_seconds": 0.0311551,
+          "cumulative_seconds": 3.4509205
         },
         {
           "file": "$CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
@@ -534,8 +737,8 @@
           "function": "_validate_schema",
           "primitive_calls": 90,
           "total_calls": 90,
-          "exclusive_seconds": 0.0008876000000000001,
-          "cumulative_seconds": 3.8344374
+          "exclusive_seconds": 0.0007278,
+          "cumulative_seconds": 2.8861811000000004
         },
         {
           "file": "$CHECKOUT/scripts/prepare_shared_domain_candidate.py",
@@ -543,36 +746,36 @@
           "function": "validate_sources",
           "primitive_calls": 17,
           "total_calls": 17,
-          "exclusive_seconds": 0.0182858,
-          "cumulative_seconds": 2.8343514
+          "exclusive_seconds": 0.011499500000000001,
+          "cumulative_seconds": 2.2131189
         },
         {
           "file": "$CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
-          "line": 89,
+          "line": 115,
           "function": "validate",
           "primitive_calls": 11,
           "total_calls": 11,
-          "exclusive_seconds": 0.0238561,
-          "cumulative_seconds": 1.7248799000000001
+          "exclusive_seconds": 0.021962500000000003,
+          "cumulative_seconds": 1.2775194
         },
         {
           "file": "$CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
-          "line": 34,
+          "line": 35,
           "function": "_same_json",
           "primitive_calls": 10,
           "total_calls": 276530,
-          "exclusive_seconds": 0.20561520000000003,
-          "cumulative_seconds": 0.4263544
+          "exclusive_seconds": 0.1586292,
+          "cumulative_seconds": 0.3268722
         }
       ]
     },
     "protected_bytes_unchanged": true,
-    "raw_receipt_sha256": "f03241087ce389ec9d752451217fba3cc901117c90a8b52ea7ac91b03ab598e1",
-    "protected_manifest_canonical_sha256": "9affa7faa8ec2c45d461d1a8d91ded49df9e8140bf242f86a42c93bfacabc02a"
+    "raw_receipt_sha256": "eea8e16d666d57388ca94d40b29f1a442e6a0b090339111e4eca899f531e94bd",
+    "protected_manifest_canonical_sha256": "812bcf1f809240d514ae90b5d6a0ba2687c552251fc474d703bdb21d69b0e0c6"
   },
   "raw_suite": {
-    "started_at_utc": "2026-10-14T00:28:11.783618+00:00",
-    "head": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
+    "started_at_utc": "2026-10-14T01:40:49.298017+00:00",
+    "head": "b606500f4e61848b2b15e3e510ff1641742f661d",
     "frozen_base": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
     "variant": "prototype",
     "mode": "suite-raw",
@@ -582,63 +785,87 @@
     "logical_cpus": 16,
     "jsonschema": "4.26.0",
     "pytest": "8.3.5",
-    "adapter_raw_sha256": "a53aa9a81f890b33bd54a043127f72da50d7281a358b6da9e1411d4e3769df54",
+    "adapter_raw_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
     "adapter_old_text_binding": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6",
-    "adapter_current_text_binding": "cf084f210afa6a416263fb08d2db8d34d67efd429760b44d77363a220c038d73",
+    "adapter_current_text_binding": "8809b7be8503290a992a1a292576ab34c597c6b5cb2c130b885112e3c31b71a1",
     "historical_proof_valid_for_changed_adapter": false,
     "initial_tracked_diff": [
       "backend/tests/test_health_provider_validation_prototype.py",
+      "docs/plans/health_provider_validation_prototype.md",
+      "docs/review_packets/health_provider_validation_prototype/adapter.patch",
+      "docs/review_packets/health_provider_validation_prototype/controls.patch",
+      "docs/review_packets/health_provider_validation_prototype/measurements.json",
+      "docs/review_packets/health_provider_validation_prototype/report.md",
+      "docs/review_packets/health_provider_validation_prototype/run_prototype.py",
       "scripts/prepare_immigration_shared_candidate.py"
     ],
+    "code_bindings": {
+      "scripts/prepare_immigration_shared_candidate.py": {
+        "worktree_raw_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+        "git_blob_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+        "git_blob_object_id": "7fc00bdf7039a3ff004da7e37b5a37f998e967dd",
+        "worktree_filtered_object_id": "7fc00bdf7039a3ff004da7e37b5a37f998e967dd",
+        "crlf_count": 0,
+        "lone_lf_count": 921
+      }
+    },
+    "driver_binding": {
+      "worktree_raw_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "worktree_filtered_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "crlf_count": 0,
+      "lone_lf_count": 221
+    },
     "conditions": "One benchmark process; fresh-process first call/warm repeats; OS cache not cleared.",
     "exit_code": 1,
     "proof_adjusted_reads": 0,
     "proof_accommodation": "None; historical binding mismatch remains visible.",
     "protected_bytes_unchanged": true,
-    "raw_receipt_sha256": "94408fa926362db3ae8f065418945e490c9dad688f747de232d810eb1cc98c2b",
+    "raw_receipt_sha256": "5adecebdd651660f9e698b769daf297fd9bc51b4ae588765f1b37f7c872d1eaa",
     "suite": {
       "name": "pytest",
       "errors": "0",
       "failures": "1",
       "skipped": "0",
       "tests": "364",
-      "time": "315.460",
-      "timestamp": "2026-10-13T20:28:12.127732-04:00",
+      "time": "295.770",
+      "timestamp": "2026-10-13T21:40:49.624921-04:00",
       "hostname": "DESKTOP-1CQBHTJ"
     },
     "by_class": {
       "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests": {
         "tests": 133,
-        "seconds": 36.32,
+        "seconds": 35.084,
         "failures": 0
       },
       "backend.tests.test_shared_legislative_corpus.SharedLegislativeCorpusTests": {
         "tests": 15,
-        "seconds": 0.291,
+        "seconds": 0.251,
         "failures": 0
       },
       "backend.tests.test_shared_candidate_research.SharedCandidateResearchTests": {
         "tests": 7,
-        "seconds": 0.002,
+        "seconds": 0.001,
         "failures": 0
       },
       "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests": {
         "tests": 209,
-        "seconds": 278.383,
+        "seconds": 259.988,
         "failures": 1
       }
     },
     "failures": [
       "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_all_checked_in_generated_outputs_match_an_independent_replay"
     ],
-    "raw_xml_sha256": "1a6395b04b32e4434086f837e69cb28ee9102eb2195b26700b8a1ed0dfc6fdc3",
-    "raw_log_sha256": "e43d9ebe068f7c57d94fe98d10dd9436d2779df5e62fa4db3c968a5cb2ba4fd3",
+    "raw_xml_sha256": "5660620a15f7d85f21bbe16f80badf7f032797d3d7feaa5afb8e2a813fa418a9",
+    "raw_log_sha256": "92c18bc0e378a722e7c9da160a399757de1ab5c2975e5249c5b6ee5cb94ddd92",
     "test_identity_sha256": "59c66c79d71bcd7de035f6d9e704df2e9e06b423eeb0a457f21ee04f102ccec7",
-    "protected_manifest_canonical_sha256": "9affa7faa8ec2c45d461d1a8d91ded49df9e8140bf242f86a42c93bfacabc02a"
+    "protected_manifest_canonical_sha256": "812bcf1f809240d514ae90b5d6a0ba2687c552251fc474d703bdb21d69b0e0c6"
   },
   "normalized_suite": {
-    "started_at_utc": "2026-10-14T00:33:43.937639+00:00",
-    "head": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
+    "started_at_utc": "2026-10-14T01:45:46.435287+00:00",
+    "head": "b606500f4e61848b2b15e3e510ff1641742f661d",
     "frozen_base": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
     "variant": "prototype",
     "mode": "suite-normalized",
@@ -648,66 +875,103 @@
     "logical_cpus": 16,
     "jsonschema": "4.26.0",
     "pytest": "8.3.5",
-    "adapter_raw_sha256": "a53aa9a81f890b33bd54a043127f72da50d7281a358b6da9e1411d4e3769df54",
+    "adapter_raw_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
     "adapter_old_text_binding": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6",
-    "adapter_current_text_binding": "cf084f210afa6a416263fb08d2db8d34d67efd429760b44d77363a220c038d73",
+    "adapter_current_text_binding": "8809b7be8503290a992a1a292576ab34c597c6b5cb2c130b885112e3c31b71a1",
     "historical_proof_valid_for_changed_adapter": false,
     "initial_tracked_diff": [
       "backend/tests/test_health_provider_validation_prototype.py",
+      "docs/plans/health_provider_validation_prototype.md",
+      "docs/review_packets/health_provider_validation_prototype/adapter.patch",
+      "docs/review_packets/health_provider_validation_prototype/controls.patch",
+      "docs/review_packets/health_provider_validation_prototype/measurements.json",
+      "docs/review_packets/health_provider_validation_prototype/report.md",
+      "docs/review_packets/health_provider_validation_prototype/run_prototype.py",
       "scripts/prepare_immigration_shared_candidate.py"
     ],
+    "code_bindings": {
+      "scripts/prepare_immigration_shared_candidate.py": {
+        "worktree_raw_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+        "git_blob_sha256": "5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396",
+        "git_blob_object_id": "7fc00bdf7039a3ff004da7e37b5a37f998e967dd",
+        "worktree_filtered_object_id": "7fc00bdf7039a3ff004da7e37b5a37f998e967dd",
+        "crlf_count": 0,
+        "lone_lf_count": 921
+      },
+      "backend/tests/test_health_provider_validation_prototype.py": {
+        "worktree_raw_sha256": "6de05735d58181c8548ca04b220010099e592116a6e5783735411f1417063e6a",
+        "git_blob_sha256": "6de05735d58181c8548ca04b220010099e592116a6e5783735411f1417063e6a",
+        "git_blob_object_id": "2b10f6e39be33efdfc22df392865eb620a1a4ae4",
+        "worktree_filtered_object_id": "2b10f6e39be33efdfc22df392865eb620a1a4ae4",
+        "crlf_count": 0,
+        "lone_lf_count": 298
+      }
+    },
+    "driver_binding": {
+      "worktree_raw_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_sha256": "43c6573602dc29adc8315a34ef0346445de10c069bef7ae82779482f78dc0883",
+      "git_blob_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "worktree_filtered_object_id": "51c42ba5e87365e495cca31a6bb27fdbe4605b89",
+      "crlf_count": 0,
+      "lone_lf_count": 221
+    },
     "conditions": "One benchmark process; fresh-process first call/warm repeats; OS cache not cleared.",
     "exit_code": 0,
     "proof_adjusted_reads": 1,
     "proof_accommodation": "Only the expected adapter hash on the exact proof read; no disk write. This run establishes conditional structural equivalence, not historical proof validity.",
     "protected_bytes_unchanged": true,
-    "raw_receipt_sha256": "74c76164b26dd9c4fa82ea03ff68cb00198c7f558f2b95bf579a1a9037174349",
+    "raw_receipt_sha256": "98a86ef1aa6630c58248b46de4de4f2f306c38586ede7d1eb995d1fe901dda77",
     "suite": {
       "name": "pytest",
       "errors": "0",
       "failures": "0",
       "skipped": "0",
-      "tests": "379",
-      "time": "368.253",
-      "timestamp": "2026-10-13T20:33:44.337207-04:00",
+      "tests": "383",
+      "time": "293.199",
+      "timestamp": "2026-10-13T21:45:46.707341-04:00",
       "hostname": "DESKTOP-1CQBHTJ"
     },
     "by_class": {
       "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests": {
         "tests": 133,
-        "seconds": 39.617,
+        "seconds": 32.426,
         "failures": 0
       },
       "backend.tests.test_shared_legislative_corpus.SharedLegislativeCorpusTests": {
         "tests": 15,
-        "seconds": 0.292,
+        "seconds": 0.282,
         "failures": 0
       },
       "backend.tests.test_shared_candidate_research.SharedCandidateResearchTests": {
         "tests": 7,
-        "seconds": 0.007,
+        "seconds": 0.001,
         "failures": 0
       },
       "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests": {
         "tests": 209,
-        "seconds": 306.089,
+        "seconds": 237.839,
         "failures": 0
       },
       "backend.tests.test_health_provider_validation_prototype.HealthProviderReuseControls": {
-        "tests": 12,
-        "seconds": 0.191,
+        "tests": 13,
+        "seconds": 0.133,
+        "failures": 0
+      },
+      "backend.tests.test_health_provider_validation_prototype.HealthProviderRegistryDifferential": {
+        "tests": 3,
+        "seconds": 5.06,
         "failures": 0
       },
       "backend.tests.test_health_provider_validation_prototype.HealthProviderPrepareIntegration": {
         "tests": 3,
-        "seconds": 21.648,
+        "seconds": 17.102,
         "failures": 0
       }
     },
     "failures": [],
-    "raw_xml_sha256": "715f1a314e29df5f40060c3898c55607e341d145b6199318e171586e0ce459bb",
-    "raw_log_sha256": "4605df018b0bcf76c763ac85fc51c5b1887099bd8da76758df2f3ce093b75268",
-    "test_identity_sha256": "09874713950d8cdcbe3a568f7f7f3919bf93472f221b8a097f11956a37138cd3",
-    "protected_manifest_canonical_sha256": "9affa7faa8ec2c45d461d1a8d91ded49df9e8140bf242f86a42c93bfacabc02a"
+    "raw_xml_sha256": "b8dbfd2ed9f9df4682e7b00385f139216ba2864a1d56a0271464920a0486d552",
+    "raw_log_sha256": "30048dd77c36d121c1eade27c04d9e79af0defd25062b5510e77d1ca2ac2c70e",
+    "test_identity_sha256": "e8ef1dae5ba4d3b7eab073144f6cca6b9cf7ca6ce3bb17d7bec02eadbdfba2cd",
+    "protected_manifest_canonical_sha256": "812bcf1f809240d514ae90b5d6a0ba2687c552251fc474d703bdb21d69b0e0c6"
   }
 }

@@ -1,175 +1,168 @@
-# Isolated repeated Health-provider validation prototype
+# Corrected isolated Health-provider validation prototype
 
-This is an engineering prototype for independent review, based on frozen
-`eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea`. The adapter-only patch reduces direct
-prepare latency by 41.4–52.4% in the final paired sample, while preserving all
-six semantic output files byte for byte. It is not integrated into PR198 or main.
-The sole Immigration owner must apply a reviewed, current-head-aware patch at a
-future coherent checkpoint and generate the newly bound proof.
+The corrected prototype reduces direct prepare time by 39.7–43.1% in the final
+paired desktop sample and preserves all six semantic output files byte for byte.
+It is based on frozen `eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea`, with tested
+source at `b606500f4e61848b2b15e3e510ff1641742f661d`. Independent review is
+required before the sole Immigration owner integrates a current-head-aware
+patch and generates a newly bound proof.
 
-## Deliverables and boundaries
+## Deliverables and scope
 
-- [Adapter-only patch](adapter.patch): only repeated Health-provider validation
-  in `scripts/prepare_immigration_shared_candidate.py`.
-- [Mutation-control patch](controls.patch):15 new controls; no existing test edit.
-- [Reproduction harness](run_prototype.py), [measurements](measurements.json)
-  and the living plan under `docs/plans/health_provider_validation_prototype.md`.
+- [Adapter patch](adapter.patch): only repeated Health-provider qualification
+  validation in `scripts/prepare_immigration_shared_candidate.py`; 128 added,
+  six removed lines relative to the frozen head.
+- [Control patch](controls.patch): 19 new controls; no original test changes.
+- [Harness](run_prototype.py), [measurements](measurements.json) and
+  [living plan](../../plans/health_provider_validation_prototype.md).
 
-Worktree `.w/cvo`, branch `codex/health-provider-validation-prototype`, separate
-from diagnostic PR227 and protected `.w/ib`. Canonical source/candidate/proof
-artifacts, generic helpers, schemas, full-source checks and CI gates have zero
-diff. No editorial acceptance, publication, production or deployment effect.
+Branch `codex/health-provider-validation-prototype`, worktree `.w/cvo`.
+Generic helpers, schemas, full-source checks, existing tests, canonical
+source/candidate/proof artifacts and CI gates have zero diff. Root checkout,
+`.w/ib`, PR198 and PR193 were not edited. Diagnostic draft PR227 remains separate
+at `d9809414605a099abe3da31cf81f810d90f2b504`. No acceptance, publication,
+production, deployment, merge or candidate integration occurred.
 
-## Design and observations
+## Corrections prompted by independent review
 
-Each `prepare()` creates one private successful validation record. Only the
-existing Health-provider qualification path can use it. Every occurrence still
-reads and parses the provider and freshly observes its schema at the original
-validation boundary. Reuse requires equal provider text, complete type-strict
-parsed payload, observed schema text, root identity/path, resolved provider path,
-known validator/helper identities and member-field policy. Boolean/number and
-signed-zero differences cannot borrow validation; NaN is never reused.
+Review of `c30f790c6d053acd93dc9add9c4a07a66aec4e88` found two correctness gaps.
+Both were reproduced before correction:
 
-The cached payload is a private deep copy made only after successful validation.
-The record retains the root object and compares identity, so numeric object-ID
-reuse after collection cannot borrow an earlier validation.
-There is no failure memoization, cross-invocation state, cached compilation,
-source-validation reuse, path/mtime-only key, or altered per-action guard.
-Changed authoring/capture continue through their original validation paths.
+1. In-place changes to the date format checker or type keyword validator allowed
+   a warm session to borrow an earlier success, while direct and fresh validation
+   rejected the real 115-action Health provider. Two differential tests failed.
+   The prototype now snapshots both mutable registries. Changed or unobservable
+   dependency configuration disables reuse for that invocation and calls the
+   existing validator with the actual root.
+2. A changed validator raising ValueError combined with a denied schema read
+   surfaced PermissionError first. The combined regression failed. Cold
+   validation now observes the schema lazily inside validator dispatch. Changed
+   dependencies dispatch before eager schema observation. Cold and warm error
+   class/message and absence of premature schema reads are tested.
 
-On a miss, the existing generic validator receives a narrow path facade that
-returns the already freshly observed schema, without reading it a second time.
-All other path access delegates to the real root/path. Review must preserve the
-current generic contract: its schema read is UTF-8 at the named path. This is a
-private prototype mechanism, not standing authority to bypass generic checks
-or to assume future helper dependencies are unchanged.
+A subsequent real-provider probe found that replacing TYPE_CHECKER also let a
+warm session accept input rejected by direct/fresh validation. Observe TYPE_CHECKER,
+ID_OF and the applicable-keyword dispatch configuration as dependencies. The new
+real-provider type-checker regression compares identical rejection class/messages.
+All 19 controls pass in the focused correction run (24.65s). The final labelled383 suite also passes on the exact committed source blobs.
 
-## Final matched benchmark
+Each prepare invocation owns one private deep-copied successful observation.
+Every provider occurrence is still read and parsed; every qualification boundary
+still observes its schema once. Reuse requires unchanged provider text, complete
+type-strict payload, schema text, retained root identity/path, provider path,
+known helper identities, member-field policy and mutable registry snapshots.
+Booleans/numbers/signed zero cannot borrow a different validation; NaN is not
+reused. Failures and separate invocations do not share results. All action guards
+and 17 full-source passes remain.
 
-Windows desktop, AMD64 Family 25 Model 97 Stepping 2 / AuthenticAMD, 16 logical CPUs;
-Python 3.13.3, jsonschema 4.26.0, pytest 8.3.5. One benchmark process at a time,
-identical frozen inputs and unchanged generic rules. First means fresh Python
-process; OS cache was not cleared. Warm means second call in that process, with
-a fresh invocation-local record. Desktop load was uncontrolled.
+## Measured behavior
 
-| Condition | Baseline seconds | Prototype seconds | Observed reduction |
+Windows desktop, AMD64 Family 25 Model 97 Stepping 2 / AuthenticAMD, 16 logical
+CPUs; Python 3.13.3, jsonschema 4.26.0, pytest 8.3.5. Baseline and prototype run
+serially with identical frozen inputs and generic rules. First means the first
+prepare in a fresh Python process; OS cache was not cleared. Warm means the
+second prepare in that process, with a fresh invocation-local observation.
+Desktop load was uncontrolled.
+
+| Condition | Baseline seconds | Corrected seconds | Observed reduction |
 | --- | ---: | ---: | ---: |
-| First call | 13.0277 | 6.1954 | 52.45% |
-| Warm call | 14.6049 | 8.5580 | 41.40% |
+| First call | 11.1198 | 6.7039 | 39.71% |
+| Warm call | 11.1703 | 6.3506 | 43.15% |
 
-These are two paired calls, not a population/CI estimate. Earlier paired samples
-were11.096/11.820s versus5.973/8.099s before signed-zero hardening, and
-10.169/10.483s versus5.666/5.835s before final root-lifetime hardening. They are
-retained as preliminary evidence, not the final code result. Profiling adds overhead and
-is not used to estimate the speedup.
-
-| Validation work per complete prepare | Baseline | Prototype |
+| Work per complete prepare | Baseline | Corrected |
 | --- | ---: | ---: |
-| Shared-core validations | 46 | 36 |
+| Shared-core validation calls | 46 | 36 |
 | Schema traversals | 100 | 90 |
-| Full-source validations | 17 | 17 |
-| Health-provider actual reads per invocation | 13 | 13 |
-| Health qualification-provider validations | 11 | 1 |
+| Full-source validation calls | 17 | 17 |
+| Health-provider actual reads | 13 | 13 |
+| Health qualification validations | 11 | 1 |
 
-All17 full2,587-source capture validations remain. Fresh schema observations
-remain at every original boundary, including reuse hits. Integration controls
-verify26 real Health-provider reads,34 full-source passes and two full Health
-qualification validations across two distinct prepare calls.
+All six disposable JSON files produced by the actual serializer are byte-equal.
+All six semantic values equal frozen generated JSON; current rendered packet
+digests match; historical packet bytes remain unchanged. Two-call integration
+controls verify 26 actual provider reads, 34 full-source passes and two full
+Health qualification validations. These are two measured prepare calls, not a
+CI estimate or an under-10-minute research/review guarantee.
 
-Six actual disposable serialization outputs—core, mapping, projections, compiler
-input, compiled IR and readable candidates—are byte-identical before/after.
-All six semantic values equal the frozen checked-in JSON. Current generated
-packet text and the unchanged historical packet digest also match before/after.
-Repeated and profiled calls produce identical results and do not mutate inputs.
+## Exact source bytes and prior receipt correction
 
-## Existing assertions and proof accommodation
+Prior c30f790 evidence recorded mixed-line-ending worktree adapter SHA256
+`a53aa9a81f890b33bd54a043127f72da50d7281a358b6da9e1411d4e3769df54`.
+Its Git blob SHA256 was
+`9a79a040df79836c7a4f70bd38156199ca63ec8fdef5fe18d7a03923b83913ee`.
+That raw working-byte receipt must not be described as an exact Git-blob binding.
 
-The raw prototype run executes all 364 original cases unchanged:
-**363 pass; one expected historical adapter-binding failure; 315.46s**. It is
-`test_all_checked_in_generated_outputs_match_an_independent_replay`, with the
-old/new adapter hash mismatch. No expected value is adjusted in this run.
+Corrected validation explicitly materializes adapter, controls and driver from
+the source commit's Git blobs as LF bytes. Their worktree SHA256 and Git-blob
+SHA256 match; the harness verifies the filtered Git object IDs before and after
+execution and records newline counts. The corrected adapter raw/blob SHA256 is
+`5528ed497033e6be14871c57d9b9dda88683bf262513899bf2378054db03c396`.
+No Git configuration or attributes were changed. A future Windows checkout may
+materialize CRLF; use the separately recorded raw and filtered identities.
 
-The separately labelled run executes the same 364 cases plus all 15 new controls:
-**379 pass in 368.26s, zero skips/warnings**. It changes only one in-memory read
-of the exact historical Immigration proof's expected adapter hash. The harness
-first verifies the proof's frozen text and old binding, substitutes exactly that
-field and delegates every other read unchanged. Exactly one read is adjusted.
-The original assertions remain intact. All other proof fields compare exactly.
+Measurements retain exact source-head bindings, raw receipt/XML/log hashes,
+before-correction failures and corrected results, including explicit immutable
+Health-provider SHA256. All 287 common protected file hashes match across fixtures. The final evidence commit
+may update documentation, patches and receipts while these tested source blobs
+remain identical.
 
-This establishes conditional structural equivalence, **not validity of the
-historical proof for the changed adapter**. No proof file is overwritten,
-normalized on disk, or regenerated for candidate integration. Whole-suite
-timings include different failure/normalization/control work and are not used
-as a speedup claim. Diagnostic-stage baseline:364 pass/374.24s on this desktop.
-No under-10-minute per-review research or CI savings claim follows.
+## Full validation and historical proof boundary
 
-The controls cover repeated fresh schema observation, provider text/parsed
-mutation, private-copy isolation, booleans/numbers/signed zero/NaN, changed and
-malformed schemas, permission errors with failure-order/message parity, changing
-root/path/validator/member policy (including forced object-ID collision), non-caching of failures, separate sessions,
-real prepare invocations, provider changes after a hit and full-source rejection
-of changed unused capture rows after a hit.
+Final sourceb606500f raw suite: 363 pass, one historical binding failure,
+295.77s; no normalization. Final labelled suite: all 383 cases pass in 293.20s
+(364 unchanged originals plus 19 controls), zero errors/skips/pytest warnings.
+Exactly one expected proof hash read is adjusted in memory; all other proof
+fields remain equal. All original364 case identities and protected bytes match.
+Earlier source6bcd9339 labelled382 pass/318.66s preceded type-checker hardening.
 
-## Sole expected proof delta
+The labelled run preserves all original assertions and test identities. Only
+one read of the exact frozen Immigration proof substitutes the expected old
+adapter hash with the corrected hash in memory. All other proof fields compare
+exactly. No proof is written or regenerated. This establishes conditional
+structural equivalence; it does not make the historical proof valid for changed
+code or replace the canonical exact-head/synthetic-checkout CI contract.
 
-The exact old binding appears in only this current frozen JSON proof:
-
-`docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json`
-
-Expected future change:
+Sole expected rule-file binding change in the current frozen Immigration proof:
 
 ```text
 rule_files_sha256["scripts/prepare_immigration_shared_candidate.py"]
-old: d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6
-prototype: cf084f210afa6a416263fb08d2db8d34d67efd429760b44d77363a220c038d73
+old:       d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6
+corrected: 8809b7be8503290a992a1a292576ab34c597c6b5cb2c130b885112e3c31b71a1
 ```
 
-These are canonical text digests, not raw-file SHA256. All other rule, input,
-core, mapping/projection/compiler/compiled/readable and controlled-proof values
-remain equal. Health's generic-rule proof binding is unchanged. Preserve every
-historical checkpoint proof. The owner must inventory the then-current head,
-review any intervening adapter changes and generate a separately identified
-newly bound proof; this prototype binding cannot be copied blindly into a later
-checkpoint or used as approval.
+These are canonical text digests, distinct from raw-file SHA256. Every historical
+proof is preserved. Health's generic proof binding is unaffected.
 
-## Reproduction
+## Reproduction and remaining boundary
 
-From `.w/cvo`, choose fresh output paths. Initial working prototype measurements
-were frozen-head plus the recorded adapter diff; delivered head and script
-hashes are preserved in the final resume receipt. After checkout, use its exact
-head in `--expected-head`; frozen baseline remains the exact eb9d70ab snapshot.
+Choose fresh output paths and use the exact selected commit as expected head:
 
 ```powershell
 python -X utf8 docs/review_packets/health_provider_validation_prototype/run_prototype.py --root ../cvb --expected-head eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea --variant baseline --repeats 2 --profile --output .local/baseline-new.json
-python -X utf8 docs/review_packets/health_provider_validation_prototype/run_prototype.py --root . --expected-head <delivered-head> --variant prototype --repeats 2 --profile --output .local/prototype-new.json
-python -X utf8 docs/review_packets/health_provider_validation_prototype/run_prototype.py --root . --expected-head <delivered-head> --variant prototype --mode suite-raw --output .local/raw-new.json
-python -X utf8 docs/review_packets/health_provider_validation_prototype/run_prototype.py --root . --expected-head <delivered-head> --variant prototype --mode suite-normalized --include-controls --output .local/normalized-new.json
+python -X utf8 docs/review_packets/health_provider_validation_prototype/run_prototype.py --root . --expected-head <selected-exact-head> --variant prototype --repeats 2 --profile --include-controls --output .local/prototype-new.json
+python -X utf8 docs/review_packets/health_provider_validation_prototype/run_prototype.py --root . --expected-head <selected-exact-head> --variant prototype --mode suite-raw --output .local/raw-new.json
+python -X utf8 docs/review_packets/health_provider_validation_prototype/run_prototype.py --root . --expected-head <selected-exact-head> --variant prototype --mode suite-normalized --include-controls --output .local/normalized-new.json
 ```
 
-The harness refuses unexpected head/scope/variant/proof changes and protected or
-existing output destinations. It verifies input/rule/test/proof bytes before and
-after execution and retains raw test XML/logs. Normalize only the explicitly
-described expected adapter hash; never alter production or canonical evidence.
+The frozen Markdown packet retains an older 44-input generation while frozen
+JSON/current renderer has 65; preserve it as historical/follow-up. Initial
+Windows cache-write denials remain in prior evidence. Full suites used reviewed
+execution under the Windows runbook; no access bypass or approval rejection.
 
-## Preserved adjacent findings and access
+Adapter/control patches pass strict read-only apply checks against the frozen
+baseline. Last read-only owner head was
+`e50514114857e1fde3fd3f2d5d9863cd95179c0c`; no adapter/generic/shared-corpus/CI
+change from frozen head was observed then. The owner must reconcile its actual
+current head before applying a reviewed patch and generating a new proof at an
+authorized checkpoint. Stop for independent review here. No prototype CI-gate
+adjustment, integration PR, current-head application or editorial approval.
 
-The frozen Markdown packet contains an older 44-input generation; frozen JSON
-and the renderer contain 65. This stopped an initial new harness assertion on
-the unchanged baseline. Preserve the old bytes as historical/follow-up; do not
-repair the packet in this optimization lane. Actual baseline/prototype current
-renderers are equal and all six frozen JSON outputs match.
+## Shutdown checkpoint
 
-The initial15-control run passed in20.28s but emitted two Windows cache-write
-access denials under `.w/cvo/.local/pytest-cache-files-*`. Full suites used reviewed
-execution as instructed by the Windows runbook and emitted no warnings. No
-automatic approval rejection occurred. An initial redirect failed before tests
-because `.local` was absent; corrected by creating the ignored diagnostic folder.
-
-## Review and integration stop
-
-Stop here for independent review. No candidate integration PR, CI-gate change or
-current-head application is performed. Raw canonical-proof CI would still reject
-the old adapter binding; the normalized local run must not replace that gate.
-The sole Immigration owner applies a reviewed, current-head-aware patch and
-regenerates a new proof at an authorized future checkpoint. Diagnostic PR227,
-PR198, PR193, root checkout and `.w/ib` remain separate and unchanged.
+The already-running final suites finished before the requested01:55UTC writer
+stop. No further research or long validation began after the shutdown boundary.
+Local operations stop after saving/pushing this evidence increment; no automatic
+resume. Independent review remains pending. On explicit resume, review this
+exact source/packet and reconcile the owner's then-current head before any
+authorized integration or new proof. Canonical proof CI remains expected to
+reject the old binding; no prototype CI success is claimed.

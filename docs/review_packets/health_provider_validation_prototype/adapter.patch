@@ -1,8 +1,8 @@
 diff --git a/scripts/prepare_immigration_shared_candidate.py b/scripts/prepare_immigration_shared_candidate.py
-index d96d9d47..3f1f049b 100644
+index d96d9d47..7fc00bdf 100644
 --- a/scripts/prepare_immigration_shared_candidate.py
 +++ b/scripts/prepare_immigration_shared_candidate.py
-@@ -24,8 +24,86 @@ from backend.app.semantic_ir.shared_corpus import (
+@@ -24,8 +24,125 @@ from backend.app.semantic_ir.shared_corpus import (
      sealed_digest, validate_member_projection, validate_shared_action_core, SharedCorpusValidationError,
  )
  from backend.app.semantic_ir.pipeline import run_editorial_pipeline
@@ -11,6 +11,7 @@ index d96d9d47..3f1f049b 100644
 
 +_HEALTH_PROVIDER = Path("docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json")
 +_SHARED_SCHEMA = "docs/semantic_ir/shared_legislative_corpus_v1.schema.json"
++_UNOBSERVED = object()
 +
 +
 +def _same_json(left, right):
@@ -27,11 +28,15 @@ index d96d9d47..3f1f049b 100644
 +
 +
 +class _ObservedSchemaPath:
-+    def __init__(self, path, text):
-+        self.path, self.text = path, text
++    def __init__(self, path, observation):
++        self.path, self.observation = path, observation
 +
 +    def read_text(self, *args, **kwargs):
-+        return self.text
++        if self.observation.text is _UNOBSERVED:
++            text = self.path.read_text(*args, **kwargs)
++            self.observation.reads.append(text)
++            return text
++        return self.observation.text
 +
 +    def __fspath__(self):
 +        return str(self.path)
@@ -45,12 +50,13 @@ index d96d9d47..3f1f049b 100644
 +
 +class _ObservedSchemaRoot:
 +    """Give the existing validator its exact fresh read without reading twice."""
-+    def __init__(self, root, text):
++    def __init__(self, root, text=_UNOBSERVED):
 +        self.root, self.text = root, text
++        self.reads = []
 +
 +    def __truediv__(self, name):
 +        path = self.root / name
-+        return _ObservedSchemaPath(path, self.text) if name == _SHARED_SCHEMA else path
++        return _ObservedSchemaPath(path, self) if name == _SHARED_SCHEMA else path
 +
 +    def __fspath__(self):
 +        return str(self.root)
@@ -67,29 +73,62 @@ index d96d9d47..3f1f049b 100644
 +    def __init__(self):
 +        self.observation = None
 +        self.root = None
++        self.dependencies_changed = False
++
++    @staticmethod
++    def _dependencies():
++        try:
++            return (
++                validate_shared_action_core, shared_corpus._validate_schema, shared_corpus._walk_keys,
++                shared_corpus.sealed_digest, shared_corpus.digest, shared_corpus.canonical_bytes,
++                shared_corpus._identity_set, shared_corpus.Draft202012Validator, shared_corpus.FormatChecker,
++                frozenset(shared_corpus.MEMBER_FIELDS),
++                shared_corpus.Draft202012Validator.TYPE_CHECKER,
++                shared_corpus.Draft202012Validator.ID_OF,
++                shared_corpus.Draft202012Validator._APPLICABLE_VALIDATORS,
++                tuple(shared_corpus.Draft202012Validator.VALIDATORS.items()),
++                tuple((name, checker, tuple(raises) if isinstance(raises, (list, tuple)) else raises)
++                      for name, (checker, raises) in shared_corpus.FormatChecker.checkers.items()),
++            )
++        except (AttributeError, TypeError, ValueError, RuntimeError):
++            # Unsupported or changing registry configuration takes original dispatch.
++            return None
 +
 +    def validate(self, root, path, provider_text, provider):
-+        # Read at the original schema-validation boundary, even on a reuse hit.
++        validator = validate_shared_action_core
++        dependencies = self._dependencies()
++        if (self.dependencies_changed or dependencies is None
++                or self.observation is not None and dependencies != self.observation[0][-1]):
++            self.dependencies_changed = True
++            return validator(root, provider)
++        if self.observation is None:
++            observed_root = _ObservedSchemaRoot(root)
++            validator(observed_root, provider)
++            if len(observed_root.reads) == 1 and dependencies == self._dependencies():
++                key = (id(root), str(root), path, provider_text, observed_root.reads[0], dependencies)
++                self.observation = (key, copy.deepcopy(provider))
++                self.root = root
++            else:
++                self.dependencies_changed = True
++            return
++        # Only unchanged established dispatch may observe before deciding reuse.
 +        schema_text = (root / _SHARED_SCHEMA).read_text(encoding="utf-8")
-+        dependencies = (
-+            validate_shared_action_core, shared_corpus._validate_schema, shared_corpus._walk_keys,
-+            shared_corpus.sealed_digest, shared_corpus.digest, shared_corpus.canonical_bytes,
-+            shared_corpus._identity_set, shared_corpus.Draft202012Validator, shared_corpus.FormatChecker,
-+            frozenset(shared_corpus.MEMBER_FIELDS),
-+        )
 +        key = (id(root), str(root), path, provider_text, schema_text, dependencies)
-+        if self.observation is not None:
-+            prior_key, prior_provider = self.observation
-+            if root is self.root and key == prior_key and _same_json(provider, prior_provider):
-+                return
-+        validate_shared_action_core(_ObservedSchemaRoot(root, schema_text), provider)
-+        self.observation = (key, copy.deepcopy(provider))
-+        self.root = root
++        prior_key, prior_provider = self.observation
++        if (dependencies == self._dependencies() and root is self.root
++                and key == prior_key and _same_json(provider, prior_provider)):
++            return
++        validator(_ObservedSchemaRoot(root, schema_text), provider)
++        if dependencies == self._dependencies():
++            self.observation = (key, copy.deepcopy(provider))
++            self.root = root
++        else:
++            self.dependencies_changed = True
 +
  def _extended(action):
      witness = action.get("deemed_concurrence")
      return (isinstance(witness, dict) and "senate_amendment_source_id" in witness
-@@ -451,7 +529,7 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
+@@ -451,7 +568,7 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
 
 
 
@@ -98,7 +137,7 @@ index d96d9d47..3f1f049b 100644
      """Qualify an existing unapproved candidate without rewriting its meaning."""
      binding = proposed.get('candidate_core_qualification')
      if (not isinstance(binding, dict)
-@@ -463,8 +541,12 @@ def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical
+@@ -463,8 +580,12 @@ def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical
      if (path.name != 'shared_action_core.json'
              or not path.is_relative_to((ROOT / 'docs/editorial/shared_candidates').resolve())):
          raise ValueError('candidate qualification must bind an existing shared candidate')
@@ -113,7 +152,7 @@ index d96d9d47..3f1f049b 100644
      original = next((a for a in provider['actions'] if a['action_id'] == proposed['action_id']), None)
      if (provider['authoritative_for_new_editorial_work'] is not False
              or provider['artifact_id'] != binding['artifact_id'] or original is None
-@@ -510,7 +592,7 @@ def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical
+@@ -510,7 +631,7 @@ def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical
      return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]
 
 
@@ -122,7 +161,7 @@ index d96d9d47..3f1f049b 100644
      """Bind an ordinary candidate to an existing, sealed V1 core identity."""
      ref = proposed['shared_core_reuse']
      required = {'artifact_ref', 'artifact_id', 'action_id', 'action_meaning_ref', 'action_core_sha256'}
-@@ -540,7 +622,7 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
+@@ -540,7 +661,7 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
      if target.name == 'shared_action_core_proposal.json':
          validate_shared_action_core(ROOT, provider)
          if proposed.get('candidate_core_qualification'):
@@ -131,7 +170,7 @@ index d96d9d47..3f1f049b 100644
          if proposed.get('legacy_core_qualification'):
              return _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_ids)
          return _prepare_source_review_reuse(authoring, capture, proposed, canonical, member_ids)
-@@ -563,6 +645,7 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
+@@ -563,6 +684,7 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
  def prepare(authoring, capture, member_ids):
      if authoring.get("domain_id") != "IMMIGRATION_BORDER":
          raise ValueError("Immigration candidate adapter cannot prepare another domain")
@@ -139,7 +178,7 @@ index d96d9d47..3f1f049b 100644
      action_constraints = _action_source_constraints(authoring)
      sources = {s["source_id"]: s for s in capture["sources"]}
      for proposed in authoring["actions"]:
-@@ -585,7 +668,7 @@ def prepare(authoring, capture, member_ids):
+@@ -585,7 +707,7 @@ def prepare(authoring, capture, member_ids):
      ordinary["blocked_episode_ids"] = [e for e in ordinary["blocked_episode_ids"] if e in ordinary_episodes]
      core, mapping, projections, inputs, result = common.prepare(ordinary, capture, member_ids)
      for proposed in reuse_additions:
