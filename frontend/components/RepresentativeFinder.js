@@ -23,6 +23,7 @@ export default function RepresentativeFinder({
   const pendingRequest = useRef(null);
   const zipInput = useRef(null);
   const nameInput = useRef(null);
+  const cancelButton = useRef(null);
   useEffect(() => () => {
     requestSequence.current += 1;
     const pending = pendingRequest.current;
@@ -70,7 +71,12 @@ export default function RepresentativeFinder({
 
   function finishRequest(request) {
     clearTimeout(request.timer);
-    if (pendingRequest.current === request) pendingRequest.current = null;
+    if (pendingRequest.current !== request) return;
+    pendingRequest.current = null;
+    // Restore focus before the settled state removes Cancel, only while owned.
+    if (request.sequence === requestSequence.current && document.activeElement === cancelButton.current) {
+      (request.mode === "zip" ? zipInput : nameInput).current?.focus();
+    }
   }
 
   async function searchZip(event) {
@@ -289,7 +295,7 @@ export default function RepresentativeFinder({
       </div>
 
       {state.status === "loading" ? (
-        <button className="secondary-button mt-3" onClick={cancelSearch} type="button">
+        <button className="secondary-button mt-3" onClick={cancelSearch} ref={cancelButton} type="button">
           Cancel search
         </button>
       ) : null}

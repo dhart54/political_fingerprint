@@ -76,10 +76,44 @@ corrected them to traverse with Tab and expanded narrow checks before the final
 passing suites. No application correction beyond the authorized finder/API scope,
 automatic-review denial, production write, merge or manual deploy occurred.
 
-## Final reconciliation
+## Initial handoff at 701d89fe
 
 Implementation and local validation are complete; final diff contains the three
 authorized frontend files, this plan and bounded evidence. Root/reserved tracked
 work is unchanged. No product blocker remains. Commit/push/draft PR and fresh
 exact-head hosted CI are the next steps; their result will be recorded in the PR
 and task handoff. Independent review and merge remain reserved to the parent.
+
+## Independent review correction: asynchronous completion focus
+
+The first draft head `701d89fef38d25d4459c4ab1b658de13b52ea7ad` passed its
+recorded local and hosted gates (279 units / 213 browsers), but independent review
+found an omitted focus assertion. On that unchanged production build, keyboard
+focus on Cancel followed by successful ZIP completion fell to `BODY` when Cancel
+disappeared. The added assertion fails before correction; its JSON attachment
+records `{ "tag": "BODY", "id": "" }`. This is a confirmed regression in the
+new control, not an unrelated baseline finding.
+
+Add a Cancel button ref. Existing completion cleanup restores the submitted
+search input only when the request still owns the pending identity/sequence and
+Cancel is the active element, immediately before the settled render removes it.
+Moved focus remains where the reader placed it; obsolete completion cleanup
+cannot restore an old input or move focus from a newer Cancel. Explicit Cancel,
+Close, superseding/invalid search and unmount retain their existing guards.
+No API, result, qualification, error, input, URL/history or selection change.
+
+- [x] Reproduce loss of focus at exact first draft head before changing runtime.
+- [x] Implement the scoped focus correction and regression coverage.
+- [x] 279 units, lint (eight existing warnings), production build and 68 finder
+  checks pass, including 16 success/network/503/empty/404 focus ownership cases,
+  four cross-mode superseded success/error cases and all eight slow-search success
+  checks with focus asserted after completion at 320/390/768/1440.
+- [x] Full applicable production browser lane passes 233/233, zero skips/flakes.
+  Inspected completion/error focus captures at 390/1440; refreshed evidence binds
+  final code, actual report stats, eight captures and the before/after focus
+  observations. All eight held-success cases report the correct active input.
+- [ ] Commit/push same draft PR and verify fresh exact-head CI; no merge.
+
+Local correction is complete with no blocker. Same draft PR remains held for
+independent review. Hosted results for the correction head will be recorded on
+the PR and in the task handoff rather than inferred from the first draft's CI.

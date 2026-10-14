@@ -176,12 +176,12 @@ async function holdLookup(page, mode, { honorAbort = false } = {}) {
       const url = (await pending).request().url();
       await expect.poll(() => page.evaluate((url) => window.__finderSignals.some((entry) => entry.url === url && entry.signal?.aborted), url)).toBe(true);
     },
-    async finish({ reject = false, status = 200, index = 0 } = {}) {
+    async finish({ reject = false, status = 200, index = 0, json = mode === "zip" ? ready : { results: [foushee] } } = {}) {
       await pending;
       const route = requests[index];
       const url = route.request().url();
       if (reject) await route.abort("failed");
-      else await route.fulfill({ status, json: mode === "zip" ? ready : { results: [foushee] } });
+      else await route.fulfill({ status, json });
       await page.waitForFunction((value) => window.__finderCompletions.includes(value), url);
       await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     },
@@ -191,6 +191,86 @@ async function holdLookup(page, mode, { honorAbort = false } = {}) {
 const slowGuidance = "This search is taking longer than expected. You can keep waiting, cancel it, or try a different search.";
 const searchInput = (page, mode) => finder(page).getByLabel(mode === "zip" ? "Search by ZIP" : "Search by name", { exact: true });
 const queryFor = (mode) => mode === "zip" ? "27701" : "Foushee";
+
+async function focusCancelWithKeyboard(page) {
+  await searchInput(page, "name").focus();
+  await page.keyboard.press("Tab");
+  await expect(finder(page).getByRole("button", { name: "Search names", exact: true })).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(finder(page).getByRole("button", { name: "Cancel search", exact: true })).toBeFocused();
+}
+
+const settlementCases = [
+  ["zip", "success", {}], ["name", "success", {}],
+  ["zip", "404", { status: 404 }], ["name", "empty", { json: { results: [] } }],
+  ["zip", "network", { reject: true }], ["name", "network", { reject: true }],
+  ["zip", "503", { status: 503 }], ["name", "503", { status: 503 }],
+];
+
+for (const [mode, outcome, options] of settlementCases) {
+  for (const moved of [false, true]) {
+    test(`settled ${mode} ${outcome} ${moved ? "preserves moved focus" : "restores owned Cancel focus"}`, async ({ page }, testInfo) => {
+      await page.setViewportSize({ width: mode === "zip" ? 390 : 1440, height: 900 });
+      const held = await holdLookup(page, mode, { honorAbort: true });
+      await page.goto("/");
+      const url = page.url(), historyLength = await page.evaluate(() => history.length);
+      await submit(page, mode, queryFor(mode)); await held.pending;
+      await focusCancelWithKeyboard(page);
+      // Move away using Shift+Tab to a stable submit control.
+      const otherButton = finder(page).getByRole("button", { name: "Search names", exact: true });
+      if (moved) {
+        await page.keyboard.press("Shift+Tab");
+        await expect(otherButton).toBeFocused();
+      }
+      await held.finish(options);
+      await expect(finder(page).getByRole("button", { name: "Cancel search", exact: true })).toHaveCount(0);
+      await expect(moved ? otherButton : searchInput(page, mode)).toBeFocused();
+      if (outcome === "network" || outcome === "503") {
+        await expect(finder(page).getByRole("alert")).toContainText("unavailable right now");
+        await expect(handoff(page)).toHaveCount(0);
+      } else if (outcome === "404") {
+        await expect(finder(page).getByRole("status")).toHaveAttribute("data-lookup-state", "unsupported_zip");
+        await expect(handoff(page)).toBeVisible();
+        await expect(finder(page).getByRole("list")).toHaveCount(0);
+      } else if (outcome === "empty") {
+        await expect(finder(page).getByRole("status")).toContainText("No representatives matched");
+        await expect(finder(page).getByRole("list")).toHaveCount(0);
+      } else await expect(choice(page, foushee)).toBeVisible();
+      await expect(searchInput(page, mode)).toHaveValue(queryFor(mode));
+      expect(page.url()).toBe(url);
+      expect(await page.evaluate(() => history.length)).toBe(historyLength);
+      expect(held.requests).toHaveLength(1);
+      if (!moved && (outcome === "success" || outcome === "network")) {
+        await finder(page).screenshot({ path: testInfo.outputPath(`settled-${mode}-${outcome}-focus.png`) });
+      }
+    });
+  }
+}
+
+for (const [mode, reject] of [["zip", false], ["zip", true], ["name", false], ["name", true]]) {
+  test(`superseded ${mode} late ${reject ? "error" : "success"} cannot move newer Cancel focus`, async ({ page }) => {
+    const held = await holdLookup(page, mode);
+    const newMode = mode === "zip" ? "name" : "zip";
+    let newRoute;
+    await page.route(newMode === "zip" ? "**/lookup/zip/32003" : "**/legislators/search?q=Bean", (route) => { newRoute = route; });
+    await page.goto("/");
+    await submit(page, mode, queryFor(mode)); await held.pending;
+    await focusCancelWithKeyboard(page);
+    await submit(page, newMode, newMode === "zip" ? "32003" : "Bean");
+    await expect.poll(() => Boolean(newRoute)).toBe(true);
+    await held.aborted();
+    await focusCancelWithKeyboard(page);
+    await held.finish({ reject });
+    await expect(finder(page).getByRole("button", { name: "Cancel search", exact: true })).toBeFocused();
+    await newRoute.fulfill({ json: newMode === "zip" ? {
+      ...ready, zip: "32003", state: "FL", district_mappings: [{ state: "FL", district: "04" }], house_rep: bean, senators: [],
+    } : { results: [bean] } });
+    await expect(searchInput(page, newMode)).toBeFocused();
+    await expect(choice(page, bean)).toBeVisible();
+    expect(held.requests).toHaveLength(1);
+    expect(await page.evaluate(() => window.__finderSignals.length)).toBe(2);
+  });
+}
 
 for (const mode of ["zip", "name"]) {
   for (const width of [320, 390, 768, 1440]) {
@@ -219,11 +299,7 @@ for (const mode of ["zip", "name"]) {
       expect(held.requests).toHaveLength(1);
       expect(held.requests[0].request().method()).toBe("GET");
       const cancel = finder(page).getByRole("button", { name: "Cancel search", exact: true });
-      await searchInput(page, "name").focus();
-      await page.keyboard.press("Tab");
-      await expect(finder(page).getByRole("button", { name: "Search names", exact: true })).toBeFocused();
-      await page.keyboard.press("Tab");
-      await expect(cancel).toBeFocused();
+      await focusCancelWithKeyboard(page);
       expect(await cancel.evaluate((node) => getComputedStyle(node).outlineStyle)).not.toBe("none");
       await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       await finder(page).screenshot({ path: testInfo.outputPath(`slow-${mode}-${width}.png`) });
@@ -231,6 +307,11 @@ for (const mode of ["zip", "name"]) {
       await expect(choice(page, foushee)).toBeVisible();
       await expect(status).not.toContainText(slowGuidance);
       await expect(cancel).toHaveCount(0);
+      await testInfo.attach("finder-completion-focus", {
+        body: JSON.stringify(await page.evaluate(() => ({ tag: document.activeElement.tagName, id: document.activeElement.id }))),
+        contentType: "application/json",
+      });
+      await expect(searchInput(page, mode)).toBeFocused();
       await page.clock.fastForward(60_000);
       await expect(choice(page, foushee)).toBeVisible();
       expect(page.url()).toBe(url);
