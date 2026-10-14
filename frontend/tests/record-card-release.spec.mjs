@@ -28,6 +28,106 @@ async function liveInterfaceResponses(page) {
   });
 }
 
+async function readExactReceiptJourney(page) {
+  const rows = page.locator("[data-canonical-action-id]");
+  const ledger = await page.locator("#vote-record").innerText();
+  const filters = await page.locator("#vote-record [aria-pressed]").evaluateAll((nodes) => nodes.map((node) => [node.textContent, node.getAttribute("aria-pressed")]));
+  const receipts = [];
+  for (const row of await rows.all()) {
+    const button = row.locator(":scope > button");
+    if (await button.getAttribute("aria-expanded") !== "true") await button.click();
+    await expect(button).toHaveAttribute("aria-expanded", "true");
+    receipts.push(await row.evaluate((node) => ({
+      id: node.dataset.canonicalActionId,
+      text: node.innerText,
+      links: [...node.querySelectorAll("a")].map((link) => [link.textContent, link.getAttribute("href")]),
+    })));
+    await button.click();
+  }
+  return { ledger, filters, receipts, finding: await page.getByTestId("card-finding-detail").innerText() };
+}
+
+for (const width of [390, 1440]) for (const failure of ["503", "network"]) test(`receipt retry recovers the unchanged finding journey after ${failure} at width ${width}`, async ({ page }, testInfo) => {
+  await page.setViewportSize({ width, height: 900 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await liveInterfaceResponses(page);
+  const landing = "/?representative=leg_valerie_p_foushee&scope=119";
+  async function openReceipts() {
+    await page.goto(landing);
+    await page.locator(`#${assistance.id}`).click();
+    await page.getByRole("link", { name: /^See 8 House votes:/ }).click();
+  }
+  await openReceipts();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(8);
+  const baseline = await readExactReceiptJourney(page);
+  let attempts = 0;
+  const requestUrls = [];
+  let release;
+  const gate = new Promise((resolve) => { release = resolve; });
+  await page.route("**/positions/NATIONAL_SECURITY_FOREIGN/evidence*", async (route) => {
+    attempts += 1;
+    requestUrls.push(route.request().url());
+    if (attempts === 1) return failure === "503" ? route.fulfill({ status: 503, body: "unavailable" }) : route.abort("failed");
+    await gate;
+    await route.fallback();
+  });
+  try {
+    await openReceipts();
+    const unavailable = page.getByRole("alert").filter({ hasText: "The exact vote receipts" });
+    await expect(unavailable).toBeVisible();
+    await expect(page.locator("[data-canonical-action-id]")).toHaveCount(0);
+    const retry = page.getByRole("button", { name: "Retry vote receipts", exact: true });
+    await expect(retry).toBeVisible();
+    const url = page.url();
+    const historyBefore = await page.evaluate(() => ({ length: history.length, state: history.state }));
+    await retry.focus();
+    if (process.env.RECORD_CARD_RELEASE_SCREENSHOT_DIR) {
+      fs.mkdirSync(process.env.RECORD_CARD_RELEASE_SCREENSHOT_DIR, { recursive: true });
+      await page.screenshot({ path: path.join(process.env.RECORD_CARD_RELEASE_SCREENSHOT_DIR, `retry-${failure}-${width}-error.png`) });
+    }
+    await page.keyboard.press("Enter");
+    await expect(page.locator("#receipt-load-status")).toHaveText("Retrying chronological vote receipts.");
+    await expect(retry).toHaveAttribute("aria-disabled", "true");
+    await expect(retry).toBeFocused();
+    // Repeated keyboard and synchronous click events cannot queue an attempt.
+    await page.keyboard.press("Enter");
+    await page.keyboard.press("Space");
+    await retry.evaluate((button) => { button.click(); button.click(); });
+    await expect.poll(() => attempts).toBe(2);
+    expect(requestUrls[1]).toBe(requestUrls[0]);
+    expect(page.url()).toBe(url);
+    expect(await page.evaluate(() => ({ length: history.length, state: history.state }))).toEqual(historyBefore);
+    const otherControl = page.getByRole("button", { name: "119th Congress", exact: true });
+    if (failure === "network") await otherControl.focus();
+    release();
+    await expect(page.locator("[data-canonical-action-id]")).toHaveCount(8);
+    await expect(unavailable).toHaveCount(0);
+    await expect(retry).toHaveCount(0);
+    await expect(page.locator("#receipt-load-status")).toHaveText("Vote receipts loaded.");
+    await expect(failure === "network" ? otherControl : page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+    expect(page.url()).toBe(url);
+    expect(await page.evaluate(() => ({ length: history.length, state: history.state }))).toEqual(historyBefore);
+    expect(await readExactReceiptJourney(page)).toEqual(baseline);
+    expect(attempts).toBe(2);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+    await testInfo.attach("receipt-retry-parity", { contentType: "application/json", body: JSON.stringify({ width, failure, attempts, requestUrls, url, historyBefore, baseline }) });
+    if (process.env.RECORD_CARD_RELEASE_SCREENSHOT_DIR) {
+      await page.locator("#vote-record h3").scrollIntoViewIfNeeded();
+      await page.screenshot({ path: path.join(process.env.RECORD_CARD_RELEASE_SCREENSHOT_DIR, `retry-${failure}-${width}-recovered.png`) });
+    }
+    await page.goBack();
+    await expect(page.locator("#finding-detail-heading")).toBeFocused();
+    await page.goForward();
+    await expect(page).toHaveURL(url);
+    await expect(page.locator("[data-canonical-action-id]")).toHaveCount(8);
+    await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+    expect(attempts).toBe(2);
+    await page.getByRole("link", { name: "Complete issue record / all votes" }).click();
+    await expect(page).not.toHaveURL(/finding=/);
+    await expect(page.locator("#vote-record")).toContainText("recorded actions");
+  } finally { release(); }
+});
+
 for (const width of [390, 1440]) test(`explicit Close returns keyboard focus without changing the released journey at width ${width}`, async ({ page }) => {
   await page.setViewportSize({ width, height: 900 });
   await page.emulateMedia({ reducedMotion: "reduce" });
