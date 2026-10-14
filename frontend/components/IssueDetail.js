@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import ChronologicalActionLedger from "./ChronologicalActionLedger";
 import PolicyEpisodeSection from "./PolicyEpisodeSection";
@@ -33,6 +33,12 @@ export default function IssueDetail({
     error: null,
   });
   const [highlightedFinding, setHighlightedFinding] = useState(null);
+  const [retryAttempt, setRetryAttempt] = useState(0);
+  const requestPending = useRef(false);
+  const retryButton = useRef(null);
+  const receiptStatus = useRef(null);
+  const issueSection = useRef(null);
+  const restoreRetryFocus = useRef(false);
   const selectedIssue = useMemo(() => buildSelectedIssueModel({
     presentation,
     rows: state.rows,
@@ -40,8 +46,13 @@ export default function IssueDetail({
   }), [presentation, scope, state.rows]);
 
   useEffect(() => {
-    let active = true;
     setHighlightedFinding(null);
+  }, [fetchEvidence, fixtureEvidence, issue, legislatorId, scope]);
+
+  useEffect(() => {
+    let active = true;
+    requestPending.current = true;
+    restoreRetryFocus.current = false;
     setState({ status: "loading", rows: [], error: null });
     async function load() {
       try {
@@ -49,14 +60,18 @@ export default function IssueDetail({
           || await fetchEvidence({ legislatorId, domain: issue, scope });
         if ((payload?.legislator_id && payload.legislator_id !== legislatorId) || (payload?.domain && payload.domain !== issue) || (payload?.scope && payload.scope !== scope) || !Array.isArray(payload?.evidence)) throw new Error("Receipt identity or shape mismatch");
         if (active) {
+          requestPending.current = false;
+          restoreRetryFocus.current = retryAttempt > 0 && document.activeElement === retryButton.current;
           setState({
             status: "ready",
             rows: payload?.evidence || [],
             error: null,
+            focusOnArrival: retryAttempt === 0 || restoreRetryFocus.current,
           });
         }
       } catch {
         if (active) {
+          requestPending.current = false;
           setState({
             status: "error",
             rows: [],
@@ -69,7 +84,29 @@ export default function IssueDetail({
     return () => {
       active = false;
     };
-  }, [fetchEvidence, fixtureEvidence, issue, legislatorId, scope]);
+  }, [fetchEvidence, fixtureEvidence, issue, legislatorId, retryAttempt, scope]);
+
+  useEffect(() => {
+    if (state.status !== "ready") return;
+    // The ledger captures this option when it mounts. Consume it even when
+    // receipts are hidden, so a later explicit navigation gets normal focus.
+    setState((current) => current.status === "ready" && current.focusOnArrival === false
+      ? { ...current, focusOnArrival: true } : current);
+    if (!restoreRetryFocus.current) return;
+    restoreRetryFocus.current = false;
+    // The retry control disappears on success. Move its focus only if the
+    // reader was still on that control when the current request completed.
+    const target = issueSection.current?.querySelector("#vote-record h3")
+      || issueSection.current?.querySelector("#finding-detail-heading");
+    (target || receiptStatus.current)?.focus({ preventScroll: true });
+  }, [state.status]);
+
+  function retryReceipts() {
+    if (state.status !== "error" || requestPending.current) return;
+    // Guard synchronously, before React commits the loading announcement.
+    requestPending.current = true;
+    setRetryAttempt((attempt) => attempt + 1);
+  }
 
   useEffect(() => {
     if (!cardFinding || cardFindingView === "receipts") return;
@@ -105,6 +142,7 @@ export default function IssueDetail({
       className="mt-10 border-t border-stone-300"
       data-testid="issue-detail"
       id="issue-detail"
+      ref={issueSection}
     >
       <header className={`scroll-mt-24 ${cardFindingRequested ? "py-5" : "py-10 sm:py-12"}`} id="issue-summary">
         <p className="eyebrow">Selected issue</p>
@@ -155,18 +193,39 @@ export default function IssueDetail({
       /> : null}
       {!cardFinding ? <PolicyEpisodeSection episodes={presentation?.policy_episodes || []} /> : null}
 
-      {state.status === "loading" ? (
-        <p className="border-t border-stone-200 py-10 text-base text-stone-700" role="status">
-          Loading chronological vote receipts…
-        </p>
-      ) : null}
+      <p
+        aria-atomic="true"
+        aria-live="polite"
+        className={state.status === "loading" ? "border-t border-stone-200 py-10 text-base text-stone-700" : "sr-only"}
+        id="receipt-load-status"
+        ref={receiptStatus}
+        role="status"
+        tabIndex="-1"
+      >
+        {state.status === "loading" ? retryAttempt ? "Retrying chronological vote receipts." : "Loading chronological vote receipts…" : state.status === "ready" && retryAttempt ? "Vote receipts loaded." : ""}
+      </p>
       {state.status === "error" ? (
-        <p className="border-t border-stone-200 py-10 text-base text-rose-800" role="alert">
+        <p className="border-t border-stone-200 pt-10 text-base text-rose-800" role="alert">
           {state.error}
         </p>
       ) : null}
+      {state.status === "error" || (state.status === "loading" && retryAttempt > 0) ? (
+        <div className="pb-10 pt-4">
+          <button
+            aria-describedby="receipt-load-status"
+            aria-disabled={state.status === "loading"}
+            className="secondary-button"
+            onClick={retryReceipts}
+            ref={retryButton}
+            type="button"
+          >
+            Retry vote receipts
+          </button>
+        </div>
+      ) : null}
       {state.status === "ready" && (!cardFinding || cardFindingView === "receipts") ? (
         <ChronologicalActionLedger
+          focusOnArrival={state.focusOnArrival}
           contactContext={routePath === "/" ? { legislatorId, identity: `${legislatorId}:${issue}:${scope}` } : null}
           key={linkedFinding?.requestedAt || "all"}
           highlightedFinding={linkedFinding || highlightedFinding}

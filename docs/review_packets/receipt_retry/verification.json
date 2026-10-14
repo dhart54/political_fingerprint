@@ -1,0 +1,880 @@
+{
+  "schema_version": "receipt_retry_verification_v1",
+  "base_sha": "9337ed516621875709f6bb33ca4f9fb20c4ef2b7",
+  "local_environment": {
+    "node": "v22.16.0",
+    "next": "15.5.12",
+    "playwright": "1.61.1",
+    "platform": "win32",
+    "browser": "Chromium",
+    "production_build": true
+  },
+  "code_sha256_lf": {
+    "frontend/components/IssueDetail.js": "a8fd33b5994a6e511e7eec7375941ed17a94c46af2dbb372caf5eea10345fe7b",
+    "frontend/components/ChronologicalActionLedger.js": "40d7be9427e30b449b75b7530299f4079a9de694917a40c92ffd02339115d030",
+    "frontend/tests/production-evidence-integration.spec.mjs": "e6d666dd09a6c70e36e4d39986babfd57a1079a3a555797df272bfc6e355ad82",
+    "frontend/tests/record-card-release.spec.mjs": "b04a18ea5cf875157edf9b869e8ba6b0fa6d10cbe0b6c12b680b81ab9baa9213"
+  },
+  "reproduction": [
+    {
+      "failure": "503",
+      "failedRequests": 2,
+      "requests": 2,
+      "url": "http://127.0.0.1:3111/?representative=leg_valerie_p_foushee&scope=119&issue=NATIONAL_SECURITY_FOREIGN&finding=wording%3Asynthesis%3Asecurity-assistance&source=4efd82dad8ce77dd267d152e57634e1a41a4a1fdaa1ca466511539438351bc04&view=receipts#vote-record",
+      "sameUrl": true,
+      "alerts": [
+        "The exact vote receipts for this issue are unavailable right now.",
+        ""
+      ],
+      "retryButtons": 0,
+      "actions": 0
+    },
+    {
+      "failure": "network",
+      "failedRequests": 2,
+      "requests": 2,
+      "url": "http://127.0.0.1:3111/?representative=leg_valerie_p_foushee&scope=119&issue=NATIONAL_SECURITY_FOREIGN&finding=wording%3Asynthesis%3Asecurity-assistance&source=4efd82dad8ce77dd267d152e57634e1a41a4a1fdaa1ca466511539438351bc04&view=receipts#vote-record",
+      "sameUrl": true,
+      "alerts": [
+        "The exact vote receipts for this issue are unavailable right now.",
+        ""
+      ],
+      "retryButtons": 0,
+      "actions": 0
+    }
+  ],
+  "release_stats": {
+    "startTime": "2026-10-14T19:49:26.045Z",
+    "duration": 70542.07900000001,
+    "expected": 195,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "retry_checks": [
+    {
+      "title": "receipt retry survives repeated failure and preserves a pending exact-action selection",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry completion preserves focus moved to another control",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry rejects member mismatch and accepts a legitimate empty result",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry rejects issue mismatch and accepts a legitimate empty result",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry rejects scope mismatch and accepts a legitimate empty result",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry rejects shape mismatch and accepts a legitimate empty result",
+      "status": "passed"
+    },
+    {
+      "title": "a late receipt retry cannot restore the previous scope context",
+      "status": "passed"
+    },
+    {
+      "title": "a late receipt retry cannot restore the previous issue context",
+      "status": "passed"
+    },
+    {
+      "title": "a late receipt retry cannot restore the previous member context",
+      "status": "passed"
+    },
+    {
+      "title": "a late receipt retry cannot restore the previous unmount context",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry recovers the unchanged finding journey after 503 at width 390",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry recovers the unchanged finding journey after network at width 390",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry recovers the unchanged finding journey after 503 at width 1440",
+      "status": "passed"
+    },
+    {
+      "title": "receipt retry recovers the unchanged finding journey after network at width 1440",
+      "status": "passed"
+    }
+  ],
+  "parity_cases": [
+    {
+      "title": "receipt retry recovers the unchanged finding journey after 503 at width 390",
+      "status": "passed",
+      "width": 390,
+      "failure": "503",
+      "attempts": 2,
+      "request_urls": [
+        "http://localhost:8000/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119",
+        "http://localhost:8000/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119"
+      ],
+      "url": "http://127.0.0.1:3100/?representative=leg_valerie_p_foushee&scope=119&issue=NATIONAL_SECURITY_FOREIGN&finding=wording%3Asynthesis%3Asecurity-assistance&source=4efd82dad8ce77dd267d152e57634e1a41a4a1fdaa1ca466511539438351bc04&view=receipts#vote-record",
+      "history": {
+        "length": 7,
+        "state": {
+          "__NA": true,
+          "__PRIVATE_NEXTJS_INTERNALS_TREE": [
+            "",
+            {
+              "children": [
+                "__PAGE__",
+                {},
+                "/?representative=leg_valerie_p_foushee&scope=119",
+                "refresh"
+              ]
+            },
+            null,
+            null,
+            true
+          ]
+        }
+      },
+      "filter_states": [
+        [
+          "All",
+          "true"
+        ],
+        [
+          "Yea",
+          "false"
+        ],
+        [
+          "Nay",
+          "false"
+        ],
+        [
+          "Present / Not voting",
+          "false"
+        ],
+        [
+          "All actions",
+          "true"
+        ],
+        [
+          "Substantive",
+          "false"
+        ],
+        [
+          "Procedural / context",
+          "false"
+        ]
+      ],
+      "ledger_text_sha256": "ba357e12c7a24be133b390d98a07672b13bd0019e502c727360c9d78a8130ee2",
+      "finding_text_sha256": "7ff42bbebf173b95aea04aca455966bb8430e6967a04b07724a32a4cd9081d5c",
+      "receipts": [
+        {
+          "action_id": "house:119:2:264",
+          "expanded_text_sha256": "371acbe8112d8d36b3850be87ae5cc009ebd6404fe0d2ac9baf6fdd271c16329",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll264.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/252?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:244",
+          "expanded_text_sha256": "7a302f8a543edcbd3e74f32ca51242c7559cc4e8719fe1b197365e41c61eb100",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll244.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/236?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:243",
+          "expanded_text_sha256": "68c96a0a5748326dc1dbe8e53d6098353776dc2916d21ba376ddc54d294c7dcc",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll243.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/235?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:207",
+          "expanded_text_sha256": "10808034ff95f2e06ed14c1a14994378b0d5e9d51f9cc87b9565d7d2e4213626",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll207.xml"
+            ],
+            [
+              "Legislative actions (Congress API)",
+              "https://api.congress.gov/v3/bill/119/hr/2913/actions"
+            ],
+            [
+              "Bill or amendment text",
+              "https://www.congress.gov/119/bills/hr2913/BILLS-119hr2913eh.xml"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:257",
+          "expanded_text_sha256": "e40b821ea8cd39905fca8fa83793ea6d98738fec6d2f224dc49b1aaef625a722",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll257.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/95?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:255",
+          "expanded_text_sha256": "60294db32a156bb57f806ad616646afd49019e463fd47c636b7d290c24fa620d",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll255.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/93?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:209",
+          "expanded_text_sha256": "57f7ace84a3339f5d45b80f7cb7359f67e1bcf24fdda3d9510f7d3c266ddf046",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll209.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/57?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:208",
+          "expanded_text_sha256": "03e1f9557be3c45baf78e4b38bc1df34a1af9f3d42a0765c0cb9d2d6b4810dd7",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll208.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/56?format=json"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "receipt retry recovers the unchanged finding journey after network at width 390",
+      "status": "passed",
+      "width": 390,
+      "failure": "network",
+      "attempts": 2,
+      "request_urls": [
+        "http://localhost:8000/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119",
+        "http://localhost:8000/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119"
+      ],
+      "url": "http://127.0.0.1:3100/?representative=leg_valerie_p_foushee&scope=119&issue=NATIONAL_SECURITY_FOREIGN&finding=wording%3Asynthesis%3Asecurity-assistance&source=4efd82dad8ce77dd267d152e57634e1a41a4a1fdaa1ca466511539438351bc04&view=receipts#vote-record",
+      "history": {
+        "length": 7,
+        "state": {
+          "__NA": true,
+          "__PRIVATE_NEXTJS_INTERNALS_TREE": [
+            "",
+            {
+              "children": [
+                "__PAGE__",
+                {},
+                "/?representative=leg_valerie_p_foushee&scope=119",
+                "refresh"
+              ]
+            },
+            null,
+            null,
+            true
+          ]
+        }
+      },
+      "filter_states": [
+        [
+          "All",
+          "true"
+        ],
+        [
+          "Yea",
+          "false"
+        ],
+        [
+          "Nay",
+          "false"
+        ],
+        [
+          "Present / Not voting",
+          "false"
+        ],
+        [
+          "All actions",
+          "true"
+        ],
+        [
+          "Substantive",
+          "false"
+        ],
+        [
+          "Procedural / context",
+          "false"
+        ]
+      ],
+      "ledger_text_sha256": "ba357e12c7a24be133b390d98a07672b13bd0019e502c727360c9d78a8130ee2",
+      "finding_text_sha256": "7ff42bbebf173b95aea04aca455966bb8430e6967a04b07724a32a4cd9081d5c",
+      "receipts": [
+        {
+          "action_id": "house:119:2:264",
+          "expanded_text_sha256": "371acbe8112d8d36b3850be87ae5cc009ebd6404fe0d2ac9baf6fdd271c16329",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll264.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/252?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:244",
+          "expanded_text_sha256": "7a302f8a543edcbd3e74f32ca51242c7559cc4e8719fe1b197365e41c61eb100",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll244.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/236?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:243",
+          "expanded_text_sha256": "68c96a0a5748326dc1dbe8e53d6098353776dc2916d21ba376ddc54d294c7dcc",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll243.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/235?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:207",
+          "expanded_text_sha256": "10808034ff95f2e06ed14c1a14994378b0d5e9d51f9cc87b9565d7d2e4213626",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll207.xml"
+            ],
+            [
+              "Legislative actions (Congress API)",
+              "https://api.congress.gov/v3/bill/119/hr/2913/actions"
+            ],
+            [
+              "Bill or amendment text",
+              "https://www.congress.gov/119/bills/hr2913/BILLS-119hr2913eh.xml"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:257",
+          "expanded_text_sha256": "e40b821ea8cd39905fca8fa83793ea6d98738fec6d2f224dc49b1aaef625a722",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll257.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/95?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:255",
+          "expanded_text_sha256": "60294db32a156bb57f806ad616646afd49019e463fd47c636b7d290c24fa620d",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll255.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/93?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:209",
+          "expanded_text_sha256": "57f7ace84a3339f5d45b80f7cb7359f67e1bcf24fdda3d9510f7d3c266ddf046",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll209.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/57?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:208",
+          "expanded_text_sha256": "03e1f9557be3c45baf78e4b38bc1df34a1af9f3d42a0765c0cb9d2d6b4810dd7",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll208.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/56?format=json"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "receipt retry recovers the unchanged finding journey after 503 at width 1440",
+      "status": "passed",
+      "width": 1440,
+      "failure": "503",
+      "attempts": 2,
+      "request_urls": [
+        "http://localhost:8000/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119",
+        "http://localhost:8000/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119"
+      ],
+      "url": "http://127.0.0.1:3100/?representative=leg_valerie_p_foushee&scope=119&issue=NATIONAL_SECURITY_FOREIGN&finding=wording%3Asynthesis%3Asecurity-assistance&source=4efd82dad8ce77dd267d152e57634e1a41a4a1fdaa1ca466511539438351bc04&view=receipts#vote-record",
+      "history": {
+        "length": 7,
+        "state": {
+          "__NA": true,
+          "__PRIVATE_NEXTJS_INTERNALS_TREE": [
+            "",
+            {
+              "children": [
+                "__PAGE__",
+                {},
+                "/?representative=leg_valerie_p_foushee&scope=119",
+                "refresh"
+              ]
+            },
+            null,
+            null,
+            true
+          ]
+        }
+      },
+      "filter_states": [
+        [
+          "All",
+          "true"
+        ],
+        [
+          "Yea",
+          "false"
+        ],
+        [
+          "Nay",
+          "false"
+        ],
+        [
+          "Present / Not voting",
+          "false"
+        ],
+        [
+          "All actions",
+          "true"
+        ],
+        [
+          "Substantive",
+          "false"
+        ],
+        [
+          "Procedural / context",
+          "false"
+        ]
+      ],
+      "ledger_text_sha256": "ba357e12c7a24be133b390d98a07672b13bd0019e502c727360c9d78a8130ee2",
+      "finding_text_sha256": "7ff42bbebf173b95aea04aca455966bb8430e6967a04b07724a32a4cd9081d5c",
+      "receipts": [
+        {
+          "action_id": "house:119:2:264",
+          "expanded_text_sha256": "371acbe8112d8d36b3850be87ae5cc009ebd6404fe0d2ac9baf6fdd271c16329",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll264.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/252?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:244",
+          "expanded_text_sha256": "7a302f8a543edcbd3e74f32ca51242c7559cc4e8719fe1b197365e41c61eb100",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll244.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/236?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:243",
+          "expanded_text_sha256": "68c96a0a5748326dc1dbe8e53d6098353776dc2916d21ba376ddc54d294c7dcc",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll243.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/235?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:207",
+          "expanded_text_sha256": "10808034ff95f2e06ed14c1a14994378b0d5e9d51f9cc87b9565d7d2e4213626",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll207.xml"
+            ],
+            [
+              "Legislative actions (Congress API)",
+              "https://api.congress.gov/v3/bill/119/hr/2913/actions"
+            ],
+            [
+              "Bill or amendment text",
+              "https://www.congress.gov/119/bills/hr2913/BILLS-119hr2913eh.xml"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:257",
+          "expanded_text_sha256": "e40b821ea8cd39905fca8fa83793ea6d98738fec6d2f224dc49b1aaef625a722",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll257.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/95?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:255",
+          "expanded_text_sha256": "60294db32a156bb57f806ad616646afd49019e463fd47c636b7d290c24fa620d",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll255.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/93?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:209",
+          "expanded_text_sha256": "57f7ace84a3339f5d45b80f7cb7359f67e1bcf24fdda3d9510f7d3c266ddf046",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll209.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/57?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:208",
+          "expanded_text_sha256": "03e1f9557be3c45baf78e4b38bc1df34a1af9f3d42a0765c0cb9d2d6b4810dd7",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll208.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/56?format=json"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "receipt retry recovers the unchanged finding journey after network at width 1440",
+      "status": "passed",
+      "width": 1440,
+      "failure": "network",
+      "attempts": 2,
+      "request_urls": [
+        "http://localhost:8000/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119",
+        "http://localhost:8000/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence?scope=119"
+      ],
+      "url": "http://127.0.0.1:3100/?representative=leg_valerie_p_foushee&scope=119&issue=NATIONAL_SECURITY_FOREIGN&finding=wording%3Asynthesis%3Asecurity-assistance&source=4efd82dad8ce77dd267d152e57634e1a41a4a1fdaa1ca466511539438351bc04&view=receipts#vote-record",
+      "history": {
+        "length": 7,
+        "state": {
+          "__NA": true,
+          "__PRIVATE_NEXTJS_INTERNALS_TREE": [
+            "",
+            {
+              "children": [
+                "__PAGE__",
+                {},
+                "/?representative=leg_valerie_p_foushee&scope=119",
+                "refresh"
+              ]
+            },
+            null,
+            null,
+            true
+          ]
+        }
+      },
+      "filter_states": [
+        [
+          "All",
+          "true"
+        ],
+        [
+          "Yea",
+          "false"
+        ],
+        [
+          "Nay",
+          "false"
+        ],
+        [
+          "Present / Not voting",
+          "false"
+        ],
+        [
+          "All actions",
+          "true"
+        ],
+        [
+          "Substantive",
+          "false"
+        ],
+        [
+          "Procedural / context",
+          "false"
+        ]
+      ],
+      "ledger_text_sha256": "ba357e12c7a24be133b390d98a07672b13bd0019e502c727360c9d78a8130ee2",
+      "finding_text_sha256": "7ff42bbebf173b95aea04aca455966bb8430e6967a04b07724a32a4cd9081d5c",
+      "receipts": [
+        {
+          "action_id": "house:119:2:264",
+          "expanded_text_sha256": "371acbe8112d8d36b3850be87ae5cc009ebd6404fe0d2ac9baf6fdd271c16329",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll264.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/252?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:244",
+          "expanded_text_sha256": "7a302f8a543edcbd3e74f32ca51242c7559cc4e8719fe1b197365e41c61eb100",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll244.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/236?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:243",
+          "expanded_text_sha256": "68c96a0a5748326dc1dbe8e53d6098353776dc2916d21ba376ddc54d294c7dcc",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll243.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/235?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:2:207",
+          "expanded_text_sha256": "10808034ff95f2e06ed14c1a14994378b0d5e9d51f9cc87b9565d7d2e4213626",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2026/roll207.xml"
+            ],
+            [
+              "Legislative actions (Congress API)",
+              "https://api.congress.gov/v3/bill/119/hr/2913/actions"
+            ],
+            [
+              "Bill or amendment text",
+              "https://www.congress.gov/119/bills/hr2913/BILLS-119hr2913eh.xml"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:257",
+          "expanded_text_sha256": "e40b821ea8cd39905fca8fa83793ea6d98738fec6d2f224dc49b1aaef625a722",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll257.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/95?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:255",
+          "expanded_text_sha256": "60294db32a156bb57f806ad616646afd49019e463fd47c636b7d290c24fa620d",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll255.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/93?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:209",
+          "expanded_text_sha256": "57f7ace84a3339f5d45b80f7cb7359f67e1bcf24fdda3d9510f7d3c266ddf046",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll209.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/57?format=json"
+            ]
+          ]
+        },
+        {
+          "action_id": "house:119:1:208",
+          "expanded_text_sha256": "03e1f9557be3c45baf78e4b38bc1df34a1af9f3d42a0765c0cb9d2d6b4810dd7",
+          "links": [
+            [
+              "Official vote",
+              "https://clerk.house.gov/evs/2025/roll208.xml"
+            ],
+            [
+              "Amendment description (Congress API)",
+              "https://api.congress.gov/v3/amendment/119/hamdt/56?format=json"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "file": "before-desktop-503.png",
+      "sha256": "99030ac35a9595176966897432dd0dfac441d7c9f0f8d921a5f2627f7d0b7987",
+      "bytes": 314548
+    },
+    {
+      "file": "before-mobile-network.png",
+      "sha256": "3a437edb786be862860460130e4daf0fb791add7f0d7a4450a92a3496a823b52",
+      "bytes": 355727
+    },
+    {
+      "file": "retry-desktop-error.png",
+      "sha256": "2d4967ef28eb891a31dd3e16a5afa7d9a70baeceef1de4794565bf4cbe1965c5",
+      "bytes": 72497
+    },
+    {
+      "file": "retry-desktop-recovered.png",
+      "sha256": "8515893792497460db66e9ec8536f644098bef8b114b2a3af5c3a31a0010586f",
+      "bytes": 82925
+    },
+    {
+      "file": "retry-mobile-error.png",
+      "sha256": "7a92ab53bd740ea67a383517e6904ac4337716af0710318852142374ea8d47fa",
+      "bytes": 41840
+    },
+    {
+      "file": "retry-mobile-recovered.png",
+      "sha256": "2e45c5c18e8ceb6da0222aae32865f78047df2e97100b10cfa0453fc5a6a5e9e",
+      "bytes": 47674
+    }
+  ],
+  "limitations": [
+    "Fixture-backed local production build; no live service incident claimed.",
+    "Chromium only; no screen reader, Safari/Firefox or physical-device verification.",
+    "Hosted exact-head CI is recorded on the draft PR after commit.",
+    "Eight existing lint hook warnings in untouched components."
+  ]
+}

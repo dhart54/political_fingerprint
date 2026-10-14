@@ -33,6 +33,7 @@ const TYPE_FILTERS = [
 
 export default function ChronologicalActionLedger({
   contactContext = null,
+  focusOnArrival = true,
   highlightedFinding,
   representativeName,
   rows = [],
@@ -48,6 +49,9 @@ export default function ChronologicalActionLedger({
   const [textQuery, setTextQuery] = useState("");
   const filterRef = useRef(null);
   const headingRef = useRef(null);
+  // A retry may finish after the reader moved to another control. Suppress only
+  // that arrival's focus; subsequent finding and anchor navigation stays active.
+  const initialFocusAllowed = useRef(focusOnArrival);
   const ordered = useMemo(() => chronologicalActions(rows), [rows]);
   const requestedHighlightedIds = useMemo(
     () => highlightedFinding?.actionIds || [],
@@ -96,6 +100,10 @@ export default function ChronologicalActionLedger({
     setPatternActive(resolution.filter === "highlighted");
     setExpandedId(resolution.expandedId);
     setLinkedActionNotice(resolution.notice);
+    if (!initialFocusAllowed.current) {
+      initialFocusAllowed.current = true;
+      return;
+    }
     window.requestAnimationFrame(() => {
       document.getElementById("vote-record")?.scrollIntoView({
         behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
@@ -110,6 +118,8 @@ export default function ChronologicalActionLedger({
   useEffect(() => {
     if (highlightedFinding) return;
     function honorReceiptAnchor() {
+      const allowFocus = initialFocusAllowed.current;
+      initialFocusAllowed.current = true;
       const id = window.location.hash.slice(1);
       const index = ordered.findIndex((row) => actionReceiptId(row) === id);
       if (index < 0 && id !== "vote-record") return;
@@ -119,6 +129,7 @@ export default function ChronologicalActionLedger({
         setVisibleCount(Math.max(INITIAL_BATCH, index + 1));
         setExpandedId(canonicalActionId(ordered[index]));
       }
+      if (!allowFocus) return;
       requestAnimationFrame(() => requestAnimationFrame(() => {
         const target = document.getElementById(id);
         target?.scrollIntoView({ behavior: "auto", block: "start" });

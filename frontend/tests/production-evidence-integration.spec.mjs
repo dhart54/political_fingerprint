@@ -13,12 +13,147 @@ import {
 } from "./selected-issue-fixtures.mjs";
 
 const selectedPath = "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY";
+const receiptEndpoint = "**/positions/JUSTICE_PUBLIC_SAFETY/evidence*";
+const retryLabel = { name: "Retry vote receipts", exact: true };
 
 test.beforeEach(async ({ page }) => {
   await installPassARoutes(page, {
     justiceEvidenceOverride: evidenceForScope,
     justicePresentationOverride: fixture.presentation,
   });
+});
+
+test("receipt retry survives repeated failure and preserves a pending exact-action selection", async ({ page }) => {
+  let attempts = 0;
+  let release;
+  const gate = new Promise((resolve) => { release = resolve; });
+  await page.route(receiptEndpoint, async (route) => {
+    attempts += 1;
+    if (attempts === 1) return route.fulfill({ status: 503, body: "unavailable" });
+    if (attempts === 2) { await gate; return route.abort("failed"); }
+    return route.fallback();
+  });
+  try {
+    await page.goto(`${selectedPath}&scope=119`);
+    const error = page.getByRole("alert").filter({ hasText: "The exact vote receipts" });
+    await expect(error).toBeVisible();
+    // Select an established finding even while its transport is unavailable.
+    await page.getByRole("button", { name: "View 3 votes for Opposition to reducing firearm-access barriers" }).click();
+    const retry = page.getByRole("button", retryLabel);
+    await retry.focus();
+    await page.keyboard.press("Enter");
+    await expect(retry).toHaveAttribute("aria-disabled", "true");
+    await expect(page.locator("#receipt-load-status")).toHaveAttribute("aria-live", "polite");
+    release();
+    await expect(error).toBeVisible();
+    await expect(retry).toHaveAttribute("aria-disabled", "false");
+    await expect(retry).toBeFocused();
+    await page.keyboard.press("Space");
+    await expect(page.locator(".pattern-strip")).toContainText("reducing firearm-access barriers");
+    await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
+    const expected = fixture.presentation.repeated_patterns.find((pattern) => pattern.heading === "Opposition to reducing firearm-access barriers").action_ids;
+    expect(await page.locator("[data-canonical-action-id]").evaluateAll((nodes) => nodes.map((node) => node.dataset.canonicalActionId).sort())).toEqual([...expected].sort());
+    await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+    expect(attempts).toBe(3);
+  } finally { release(); }
+});
+
+test("receipt retry completion preserves focus moved to another control", async ({ page }) => {
+  let attempts = 0;
+  let release;
+  const gate = new Promise((resolve) => { release = resolve; });
+  await page.route(receiptEndpoint, async (route) => {
+    attempts += 1;
+    if (attempts === 1) return route.fulfill({ status: 503, body: "unavailable" });
+    await gate;
+    return route.fallback();
+  });
+  try {
+    await page.goto(`${selectedPath}&scope=119`);
+    await page.getByRole("button", retryLabel).evaluate((button) => { button.focus(); button.click(); button.click(); });
+    await expect(page.locator("#receipt-load-status")).toContainText("Retrying");
+    const otherControl = page.getByRole("button", { name: "119th Congress", exact: true });
+    await otherControl.focus();
+    release();
+    await expect(page.locator("#vote-record")).toContainText("37 recorded actions");
+    await expect(otherControl).toBeFocused();
+    expect(attempts).toBe(2);
+  } finally { release(); }
+});
+
+for (const mismatch of ["member", "issue", "scope", "shape"]) test(`receipt retry rejects ${mismatch} mismatch and accepts a legitimate empty result`, async ({ page }) => {
+  let attempts = 0;
+  await page.route(receiptEndpoint, async (route) => {
+    attempts += 1;
+    if (attempts === 1) return route.fulfill({ status: 503, body: "unavailable" });
+    const body = { legislator_id: "leg_valerie_p_foushee", domain: "JUSTICE_PUBLIC_SAFETY", scope: "119", evidence: evidence119 };
+    if (attempts === 2) {
+      if (mismatch === "member") body.legislator_id = "wrong-member";
+      if (mismatch === "issue") body.domain = "ECONOMY_TAXES";
+      if (mismatch === "scope") body.scope = "118";
+      if (mismatch === "shape") body.evidence = {};
+    } else body.evidence = [];
+    await route.fulfill({ json: body });
+  });
+  await page.goto(`${selectedPath}&scope=119`);
+  const error = page.getByRole("alert").filter({ hasText: "The exact vote receipts" });
+  await expect(error).toBeVisible();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(0);
+  await page.getByRole("button", retryLabel).click();
+  await expect(error).toBeVisible();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(0);
+  await page.getByRole("button", retryLabel).click();
+  await expect(error).toHaveCount(0);
+  await expect(page.getByRole("button", retryLabel)).toHaveCount(0);
+  await expect(page.locator("#vote-record")).toContainText("No recorded actions are available for this issue in the selected scope.");
+  await expect(page.locator("#receipt-load-status")).toHaveText("Vote receipts loaded.");
+  expect(attempts).toBe(3);
+});
+
+for (const navigation of ["scope", "issue", "member", "unmount"]) test(`a late receipt retry cannot restore the previous ${navigation} context`, async ({ page }) => {
+  let attempts = 0;
+  let release;
+  const gate = new Promise((resolve) => { release = resolve; });
+  const originalRequest = (url) => url.pathname.includes("/leg_valerie_p_foushee/") && url.searchParams.get("scope") === "119";
+  await page.route(receiptEndpoint, async (route) => {
+    const url = new URL(route.request().url());
+    if (!originalRequest(url)) return route.fallback();
+    attempts += 1;
+    if (attempts === 1) return route.fulfill({ status: 503, body: "unavailable" });
+    await gate;
+    const obsolete = structuredClone(evidence119);
+    obsolete[0].description = "Obsolete retry response must never be rendered";
+    await route.fulfill({ json: { legislator_id: "leg_valerie_p_foushee", domain: "JUSTICE_PUBLIC_SAFETY", scope: "119", evidence: obsolete } });
+  });
+  try {
+    await page.goto(`${selectedPath}&scope=119`);
+    await page.getByRole("button", retryLabel).click();
+    await expect.poll(() => attempts).toBe(2);
+    if (navigation === "scope") await page.getByRole("button", { name: "118th Congress", exact: true }).click();
+    else if (navigation === "issue") await page.getByRole("button", { name: "Browse vote record for Economy & Taxes", exact: true }).click();
+    else await page.evaluate((change) => {
+      const url = new URL(location.href);
+      if (change === "member") url.searchParams.set("representative", "leg_aaron_bean");
+      else url.searchParams.delete("issue");
+      url.hash = "";
+      history.pushState({}, "", url);
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    }, navigation);
+    if (navigation === "unmount") await expect(page.getByTestId("issue-detail")).toHaveCount(0);
+    else await expect(page.locator("#vote-record")).toContainText("recorded actions");
+    const currentRows = await page.locator("[data-canonical-action-id]").evaluateAll((nodes) => nodes.map((node) => [node.dataset.canonicalActionId, node.textContent]));
+    const currentUrl = page.url();
+    const response = page.waitForResponse((res) => res.url().includes("/positions/JUSTICE_PUBLIC_SAFETY/evidence") && originalRequest(new URL(res.url())));
+    release();
+    await (await response).finished();
+    // Allow response parsing and React effects to run, without a timing sleep.
+    await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    expect(await page.locator("[data-canonical-action-id]").evaluateAll((nodes) => nodes.map((node) => [node.dataset.canonicalActionId, node.textContent]))).toEqual(currentRows);
+    expect(page.url()).toBe(currentUrl);
+    await expect(page.getByText("Obsolete retry response must never be rendered", { exact: true })).toHaveCount(0);
+    await expect(page.getByRole("button", retryLabel)).toHaveCount(0);
+    if (navigation === "unmount") await expect(page.getByTestId("issue-detail")).toHaveCount(0);
+  } finally { release(); }
 });
 
 test("header and scope strip preserve one bounded selected-issue hierarchy", async ({ page }) => {
