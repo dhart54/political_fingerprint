@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-10-14",
+  "base_sha": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+  "branch": "codex/finder-request-reliability",
+  "environment": {
+    "node": "22.16.0",
+    "next": "15.5.12",
+    "playwright": "1.61.1",
+    "os": "Windows",
+    "api_base": "http://localhost:8000",
+    "production_build": true,
+    "controlled_local_fixtures": true
+  },
+  "baseline": [
+    {
+      "base": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "elapsedMs": 15000,
+      "message": "Looking up representatives…",
+      "requestCount": 3,
+      "cancelCount": 0,
+      "signals": [
+        false,
+        false,
+        false
+      ],
+      "mode": "zip"
+    },
+    {
+      "base": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "elapsedMs": 15000,
+      "message": "Searching representative records…",
+      "requestCount": 3,
+      "cancelCount": 0,
+      "signals": [
+        false,
+        false,
+        false
+      ],
+      "mode": "name"
+    }
+  ],
+  "commands": {
+    "units": "node --test lib/*.test.mjs",
+    "lint": "npm run lint",
+    "build": "npm run build",
+    "finder": "npx --no-install playwright test tests/representative-finder.spec.mjs --workers=2 --retries=0 --forbid-only --reporter=line,json",
+    "release": "npx --no-install playwright test tests/representative-finder.spec.mjs tests/official-contact.spec.mjs tests/local-record-filter.spec.mjs tests/frontend-pass-a.spec.mjs tests/zip-lookup-state.spec.mjs tests/editorial-cutover.spec.mjs tests/ir-presentation.spec.mjs tests/production-evidence-integration.spec.mjs tests/public-record-integrity.spec.mjs tests/record-card.spec.mjs tests/record-card-release.spec.mjs tests/education79-card-compatibility.spec.mjs --workers=2 --retries=0 --forbid-only --trace=retain-on-failure --reporter=line,json"
+  },
+  "units": {
+    "passed": 279,
+    "failed": 0,
+    "log_sha256": "053d50e4aa8a90bf3b9dc74c08d41aff1bfe644bc25c962e8d6dd4676b6c1f61"
+  },
+  "lint": {
+    "passed": true,
+    "errors": 0,
+    "existing_warnings_in_untouched_components": 8
+  },
+  "build": {
+    "passed": true
+  },
+  "browsers": {
+    "finder": {
+      "stats": {
+        "startTime": "2026-10-14T20:49:46.489Z",
+        "duration": 23435.698,
+        "expected": 68,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "51303795c75cd2f856fff1df54d13109130349aa3957c1b33733d5fd202eae74"
+    },
+    "release": {
+      "stats": {
+        "startTime": "2026-10-14T20:50:33.481Z",
+        "duration": 83357.507,
+        "expected": 233,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report_sha256": "e12e31dff2654cd55b7f2ccd8683a5fad7f227d8633662db93d2587df0b143b5"
+    }
+  },
+  "code_sha256_normalized_lf": {
+    "frontend/components/RepresentativeFinder.js": "15c800e42e1203c867d526b846b566ea0f763b4cd03af5e5782fa166b454ac6e",
+    "frontend/lib/api.js": "8a013fcc1024ace1d6ef97f4622dc512a9659e4162dad9361331996af5501ec2",
+    "frontend/tests/representative-finder.spec.mjs": "b98c6e557ff26da24e97b86fd22f9cb65e926bc2fa895a359a91d6239f35ce21"
+  },
+  "acceptance": {
+    "held_search": "ZIP/name at 320/390/768/1440: initial loading; guidance at 8 seconds, still pending after another 60 seconds; exactly one GET despite same-turn duplicate submits; eventual success removes guidance and Cancel.",
+    "cancellation": "Actual browser fetch rejects with AbortError for ZIP/name Cancel and switch Close/history Back. Inputs and URL/history are retained; explicit same-query resubmit issues exactly one new GET.",
+    "stale_callbacks": "Transport ignoring abort permits forced late success/network/503 errors; sequence guards reject them after superseding/invalid search, Cancel/resubmit, Close, selection, remount and history. Forced obsolete timer callback is inert during cancelled, newer loading and newer ready states.",
+    "semantics": "All established ZIP-state qualifications, 404 versus server errors, empty name versus network failure, explicit selection and literal official link activation tests pass.",
+    "keyboard": "Tab reaches Cancel with visible outline at 320/390/768/1440; Enter cancels and returns focus to the active input; existing qualified-selection keyboard tests pass without horizontal overflow.",
+    "completion_focus": "16 ZIP/name success, network, 503, ZIP404 and empty-name cases restore owned focus or preserve moved focus; four cross-mode stale success/error cases preserve newer Cancel then restore only its input."
+  },
+  "captures": [
+    {
+      "path": "baseline-zip.png",
+      "sha256": "392187fcb65ed0a6f7fbafc2143a0041063fdf7d53f81a3902b50316b8febc36",
+      "bytes": 26506
+    },
+    {
+      "path": "cancelled-name.png",
+      "sha256": "a656d2da54dc25f8e864307d4e91d4514d84faf36a659e4053c565936537dba1",
+      "bytes": 26947
+    },
+    {
+      "path": "completed-name-focus.png",
+      "sha256": "56296f83510e401c7894e2609a6e94eee167ddde6581eab552b502b8c2cb1ee8",
+      "bytes": 30113
+    },
+    {
+      "path": "completed-zip-desktop.png",
+      "sha256": "9bbb6336b1396bc442dfe08c2fecfc7964aa1ecef12dd426fa62233437a9f966",
+      "bytes": 64890
+    },
+    {
+      "path": "failed-zip-focus-mobile.png",
+      "sha256": "b9d7b13f1efe63e1790a2faaf381a60eb4a0f3ec8448e4c1f180bff346b3540d",
+      "bytes": 28510
+    },
+    {
+      "path": "slow-name-320.png",
+      "sha256": "a07ef9d55dcb3895a4ef14cbb667f07905d69438cb3c5ad0b05e9ab286842c38",
+      "bytes": 31719
+    },
+    {
+      "path": "slow-name-mobile.png",
+      "sha256": "2d06a850cc6da7364b0c507182e41dd6945039e31a8e930313bd5c78159c8066",
+      "bytes": 32301
+    },
+    {
+      "path": "slow-zip-desktop.png",
+      "sha256": "7e87b8a35d2f7fe9ca9f3fc8169b2220bbe98e6bd4ee1f439ed28ee85612ac28",
+      "bytes": 31520
+    }
+  ],
+  "production_writes": false,
+  "limitations": [
+    "Controlled local production-build tests, not a claim about a live incident or the cause of elapsed time.",
+    "Browser ARIA/keyboard assertions do not constitute assistive-technology or physical-device testing.",
+    "Fresh exact-head hosted CI is reported by the draft PR checks after push."
+  ],
+  "focus_review_correction": {
+    "reproduction_runtime_head": "701d89fef38d25d4459c4ab1b658de13b52ea7ad",
+    "reproduction_stats": {
+      "startTime": "2026-10-14T20:47:46.813Z",
+      "duration": 12513.210000000001,
+      "expected": 0,
+      "skipped": 0,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "reproduction_report_sha256": "b9b5c946896456a3a07fe57b366f506ec30909c435a2eca007aa64326dfa05f9",
+    "before": [
+      {
+        "test": "held zip at 390 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "BODY",
+          "id": ""
+        }
+      }
+    ],
+    "after": [
+      {
+        "test": "held zip at 320 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "INPUT",
+          "id": "pass-a-zip"
+        }
+      },
+      {
+        "test": "held zip at 390 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "INPUT",
+          "id": "pass-a-zip"
+        }
+      },
+      {
+        "test": "held zip at 768 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "INPUT",
+          "id": "pass-a-zip"
+        }
+      },
+      {
+        "test": "held zip at 1440 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "INPUT",
+          "id": "pass-a-zip"
+        }
+      },
+      {
+        "test": "held name at 320 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "INPUT",
+          "id": "pass-a-name"
+        }
+      },
+      {
+        "test": "held name at 390 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "INPUT",
+          "id": "pass-a-name"
+        }
+      },
+      {
+        "test": "held name at 768 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "INPUT",
+          "id": "pass-a-name"
+        }
+      },
+      {
+        "test": "held name at 1440 offers guidance with one GET and eventually succeeds",
+        "focus": {
+          "tag": "INPUT",
+          "id": "pass-a-name"
+        }
+      }
+    ],
+    "decision": "On completion, restore submitted input focus before Cancel disappears only if the request owns pending identity/sequence and Cancel is document.activeElement. Preserve moved focus; stale completions cannot move newer Cancel focus.",
+    "coverage": "16 ZIP/name success, network, 503, ZIP404 and empty-name cases restore owned focus or preserve moved focus; four cross-mode stale success/error cases preserve newer Cancel then restore only its input."
+  }
+}
