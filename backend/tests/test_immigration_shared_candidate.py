@@ -4426,5 +4426,103 @@ class SharedCoreIncrementConservationTests(unittest.TestCase):
                 self.check(self.previous, rows, self.additions)
 
 
+
+class Checkpoint229ReviewCorrectionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.author = json.loads((DATA / 'authoring.json').read_text(encoding='utf-8'))
+        cls.actions = {row['action_id']: row for row in cls.author['actions']}
+        cls.sources = {row['source_id']: row for row in json.loads(
+            (DATA / 'sources.json').read_text(encoding='utf-8'))['sources']}
+        cls.old_provider = json.loads((DATA.parent /
+            'house_119_appropriations_cohort_checkpoint228' /
+            'shared_action_core_proposal.json').read_text(encoding='utf-8'))
+        cls.old_actions = {row['action_id']: row for row in cls.old_provider['actions']}
+
+    def _assert_eight_divisions(self, meaning):
+        source = self.sources['govinfo:hr5371eas']['text']
+        table = source[:source.index('SEC. 3. REFERENCES.')]
+        self.assertEqual(re.findall(r'\bDIVISION ([A-H])--', table), list('ABCDEFGH'))
+        self.assertIn('complete eight-division package', meaning)
+        self.assertNotIn('complete six-division package', meaning)
+
+    def _assert_complete_8002(self, meaning):
+        for fragment in [
+            'Division A section 8002', 'for the current fiscal year',
+            'provisions of law prohibiting payment of compensation to, or employment of, '
+            'any person not a citizen of the United States',
+            'direct and indirect hire foreign-national DoD employees funded by this Act',
+            'higher of', '5 U.S.C. 5332', 'appropriate host nation to its own employees',
+            'The entire section excludes DoD foreign service national employees',
+            'United States diplomatic missions',
+            'pay is set by the Department of State under the Foreign Service Act of 1980',
+            'Its limitations exclude DoD foreign-national employees in the Republic of Turkey',
+            'does not determine admission', "an individual's work authorization or eligibility"]:
+            self.assertIn(fragment, meaning)
+
+    def test_november_count_matches_the_governed_eight_division_structure(self):
+        self._assert_eight_divisions(self.actions['house:119:1:285']['meaning'])
+        with self.assertRaises(AssertionError):
+            self._assert_eight_divisions(
+                self.old_actions['house:119:1:285']['candidate_exact_action_meaning'])
+
+    def test_8002_retains_suspension_ceiling_scopes_and_both_exceptions(self):
+        source = self.sources['govinfo:hr7148ih-complete-ordinary228']['text']
+        operator = source[55112:56236]
+        self.assertTrue(operator.startswith('Sec. 8002. During the current fiscal year'))
+        for fragment in ['payment of compensation to, or employment of',
+                         'not a citizen of the United States', 'funded by this Act',
+                         'whichever is higher', 'United States diplomatic missions',
+                         'pay is set by the Department of State', 'Foreign Service Act of 1980',
+                         'limitations of this provision', 'Republic of Turkey']:
+            self.assertIn(fragment, operator)
+        meaning = self.actions['house:119:2:45']['meaning']
+        self._assert_complete_8002(meaning)
+        old = self.old_actions['house:119:2:45']['candidate_exact_action_meaning']
+        variants = [old, old.replace('section 8001', 'section 8002'),
+                    meaning.replace('higher of', 'lower of'),
+                    meaning.replace('funded by this Act', 'regardless of funding source'),
+                    meaning.replace('Republic of Turkey', 'every host nation'),
+                    meaning.replace('provisions of law prohibiting payment of compensation to, '
+                                    'or employment of, any person not a citizen of the United States',
+                                    'a salary-increase rule')]
+        for wrong in variants:
+            with self.subTest(defect=wrong[-120:]), self.assertRaises(AssertionError):
+                self._assert_complete_8002(wrong)
+
+    def test_active_copies_do_not_keep_the_old_incomplete_qualifications(self):
+        paths = [DATA / name for name in ['authoring.json', 'membership_review.json',
+                                         'universe_proposal.json']]
+        paths += list((DATA / 'generated').glob('*.json'))
+        paths += [DATA.parents[2] / 'review_packets' /
+                  'immigration_semantic_audit_in_progress.json']
+        provider = self.actions['house:119:1:285']['shared_core_reuse']['artifact_ref']
+        paths += [DATA.parents[3] / provider]
+        old_sentence = "Division A section 8001's foreign-national Defense-employee wage-increase cap"
+        for path in paths:
+            with self.subTest(active_copy=path.name):
+                text = path.read_text(encoding='utf-8')
+                self.assertNotIn('complete six-division package', text)
+                self.assertNotIn(old_sentence, text)
+
+    def _assert_pending_summary_consistent(self, audit):
+        pending = audit['unaudited_current_substantive_action_ids']
+        records = {row['action_id']: row for row in audit['substantive_actions']}
+        self.assertEqual(len(pending), len(set(pending)))
+        self.assertTrue(set(pending) <= records.keys())
+        explicit = {row['action_id'] for row in records.values()
+                    if row.get('independent_review_pending')}
+        self.assertTrue(explicit <= set(pending))
+
+    def test_audit_pending_summary_includes_every_explicit_pending_record(self):
+        audit = json.loads((DATA.parents[2] / 'review_packets' /
+            'immigration_semantic_audit_in_progress.json').read_text(encoding='utf-8'))
+        self._assert_pending_summary_consistent(audit)
+        missing = copy.deepcopy(audit)
+        missing['unaudited_current_substantive_action_ids'].remove('house:119:1:285')
+        with self.assertRaises(AssertionError):
+            self._assert_pending_summary_consistent(missing)
+
+
 if __name__ == '__main__':
     unittest.main()
