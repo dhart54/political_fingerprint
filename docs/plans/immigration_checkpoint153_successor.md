@@ -4019,3 +4019,52 @@ IR and seven actualCLIbyte replays pass. Full preservation checks all prior
 65cores638reviews672rows112propositions, projections/readable/audit exactly.
 Original Health/history/accepted/V19/V20/224/225 evidence and three notes remain
 exact. Fresh226CI and independent review follow; benchmarkFAIL remains.
+
+
+### Checkpoint227 - resumed housing scope repair and exact funding concurrence
+
+Explicit user Resume authority supersedes the historical shutdown boundary.
+Native Windows host/cwd, exact local/remotee50514114857e1fde3fd3f2d5d9863cd95179c0c,
+47saved/live snapshot hashes, protected files,154prior private/notes and index
+are reconciled. All four shutdown notes remain exact and uncommitted. The
+conservative cohort clock stays00:28:54.725024UTC; the62389.874025second shutdown
+gap is separately visible. No fresh deadline or automatic acceptance applies.
+
+The coherent ready increment contains source-verified504(a)/(c)precision repair
+for57/176and one newly authored53concurrence candidate. V22preserves original
+Health identities, meaning references/prefixes, witnesses and limits. V21and
+226source/screening/CI/timing artifacts stay immutable. No failed226identity or
+domain basis was reported; full raw reviewer report is not received/rehashed.
+
+53uses the actual enacted November101exceptions and106earliest ending events,
+qualified1341(c)employee/lapse pay and ratification, and direct continuing DHS
+programme conditions. It does not import September-only exceptions, guarantee
+every activity funding untilFebruary13, pay every contractor, or infer component
+preferences.151is DivisionBTitleVIIwildfire pay, not DivisionCAfghan assistance.
+Two member Nay observations remain exact. Native typo repair changes authored
+ratification spelling only; all source quotes remain exact.
+
+Working642/34,69cores/118behavioral propositions,61episodes/sevenmulti. Other
+selected285/28/45remain research-only, zero completion credit. November primary
+coverage is preserved, but material application is unfinished;7006/7148private
+acquisitions and exact body comparisons remain pending future research. No
+replacement or comparable five-cycle mean; benchmarkFAIL stays. June224/PIH403
+and blocked228reads/alternate routes are not retried.
+
+Source-backed grant-scope, exact incorporation/cutoff and lapse-pay/ratification
+regressions accompany one required semantic gate, actualseven-file CLI replay,
+conservation and final diff before bounded feature delivery. Optimization
+2ddb0660bce7900ae0046cebef2ab9e41dd1999a is now independently cleared, but will
+be integrated separately only after this research increment is preserved.
+Only reviewed adapter/control patches, newly bound proof, all19new controls
+locally and hosted, full raw tests without hash substitution, semantic-output
+equality and fresh feature/synthetic/late-gate CI are authorized; no frozen
+prototype corpus import or end-to-end speed claim.
+
+227local gate:393 focused tests (216 Immigration included), seven semantic
+checks, IR and seven actual CLI byte replays pass. Conservation verifies66
+unaffected cores,639 reviews,673 inventory rows and114 propositions, plus
+projections/readable/audit entries and original source prefixes. All historical
+Health/V21/226 evidence, saved private artifacts and four shutdown notes remain
+exact. Fresh227 CI and independent source/domain review remain required.
+BenchmarkFAIL and the original cohort clock/shutdown-gap accounting remain.

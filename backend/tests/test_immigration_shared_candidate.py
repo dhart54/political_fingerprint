@@ -18,6 +18,90 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def _assert_housing_grant_scope227(self, core):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        sid = 'govinfo:42usc1474-2024-housing'
+        statute = sources[sid]['text']
+        self.assertIn('a loan, grant, or combined loan and grant to an eligible very low-income applicant', statute)
+        self.assertIn('Such grants shall be made to low-income families', statute[statute.index('(c) Weatherization'):])
+        text = core['candidate_exact_action_meaning']
+        self.assertIn('grants under section504(a) retain the existing very-low-income scope', text)
+        self.assertIn('separate section504(c) weatherization authority is unchanged', text)
+        self.assertNotIn('204leaves504grants within the existing very-low-income scope', text)
+        self.assertNotIn('LOANincome eligibility while504grants retain their existing very-low-income scope', text)
+        self.assertTrue(any(c['source_id'] == sid and '(c) Weatherization' in c['passage']
+                            and 'Such grants shall be made to low-income families' in c['passage']
+                            for c in core['claim_source_map']))
+
+    def test_housing227_repair_grants_do_not_erase_weatherization_authority(self):
+        actions = {a['action_id']: a for a in self.values[0]['actions']}
+        records = {r['action_id']: r for r in self.values[3]['records']}
+        cores = {c['action_id']: c for c in self.products[0]['actions']}
+        for aid in ['house:119:2:57', 'house:119:2:176']:
+            self._assert_housing_grant_scope227(cores[aid])
+            for text in [actions[aid]['meaning'], records[aid]['rationale'], cores[aid]['mechanism']]:
+                self.assertIn('grants under section504(a) retain', text)
+                self.assertIn('separate section504(c) weatherization authority is unchanged', text)
+            for defect in ['all grants', 'unbound weatherization body']:
+                bad = copy.deepcopy(cores[aid])
+                if defect == 'all grants':
+                    bad['candidate_exact_action_meaning'] = bad['candidate_exact_action_meaning'].replace(
+                        'grants under section504(a)', 'all504grants')
+                else:
+                    bad['claim_source_map'] = [c for c in bad['claim_source_map']
+                        if not (c['source_id'] == 'govinfo:42usc1474-2024-housing' and '(c) Weatherization' in c['passage'])]
+                bad['action_core_sha256'] = sealed_digest(bad, 'action_core_sha256')
+                with self.subTest(action=aid, defect=defect), self.assertRaises(AssertionError):
+                    self._assert_housing_grant_scope227(bad)
+
+    def test_concurrence227_uses_enacted_continuation_exceptions_and_earliest_end(self):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        sid = 'govinfo:pl11937-divisionA-complete227'
+        body = sources[sid]['text']
+        parent = sources['govinfo:pl119-37']['text']
+        self.assertEqual(body, parent[:42026])
+        actual101 = body[body.index('Sec. 101.'):body.index('Sec. 102.')]
+        self.assertNotIn('and 1207', actual101)
+        self.assertNotIn('11104 shall', actual101)
+        self.assertNotIn('774 and 778', actual101)
+        self.assertIn('whichever of the following first occurs', body)
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == 'house:119:2:53')
+        self.assertEqual(core['legislative_stage'], 'concurrence')
+        self.assertEqual(core['package_component_boundary']['boundary_type'], 'whole_measure')
+        self.assertTrue(any(c['source_id'] == sid and c['passage'] == body for c in core['claim_source_map']))
+        def check(text):
+            for phrase in ['February13,2026', 'earliest replacement appropriation',
+                           'SeptemberH.R.5371EH', 'not silently substituted',
+                           'DivisionBTitleVII1701wildland-fire pay', 'not DivisionCAfghan-assistance1701',
+                           'not automatically carried']:
+                self.assertIn(phrase, text)
+        check(core['candidate_exact_action_meaning'])
+        for phrase in ['earliest replacement appropriation', 'not silently substituted']:
+            with self.subTest(predicate=phrase), self.assertRaises(AssertionError):
+                check(core['candidate_exact_action_meaning'].replace(phrase, 'unconditional continuation'))
+        for member in self.products[2]:
+            row = next(a for a in member['actions'] if a['action_id'] == core['action_id'])
+            self.assertEqual(row['official_status'], 'Nay')
+            self.assertEqual(row['exact_choice_effect'], 'opposes_exact_choice')
+
+    def test_concurrence227_lapse_pay_and_ratification_retain_qualified_predicates(self):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        pay = sources['govinfo:31usc1341-2024-backpay']['text']
+        self.assertIn('furloughed as a result of a covered lapse', pay)
+        self.assertIn('each excepted employee who is required to perform work', pay)
+        self.assertIn('subject to the enactment of appropriations Acts ending the lapse', pay)
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == 'house:119:2:53')
+        def check(text):
+            for phrase in ['not pay to every contractor', 'earliest possible payment after the lapse ends',
+                           'only if otherwise in accord', 'not a waiver of every unlawful obligation']:
+                self.assertIn(phrase, text)
+        check(core['candidate_exact_action_meaning'])
+        self.assertTrue(any(c['source_id'] == 'govinfo:31usc1341-2024-backpay' and c['passage'] == pay
+                            for c in core['claim_source_map']))
+        for phrase in ['not pay to every contractor', 'only if otherwise in accord']:
+            with self.subTest(predicate=phrase), self.assertRaises(AssertionError):
+                check(core['candidate_exact_action_meaning'].replace(phrase, 'universal entitlement'))
+
     def test_housing226_status_scope_follows_named_programmes_not_all_housing(self):
         sources = {s['source_id']: s for s in self.values[1]['sources']}
         statute = sources['govinfo:42usc1436a-operative2024-housing226']['text']
