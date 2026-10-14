@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "a0500b549210f9d1017549fb049e8ebe0dc68705e5b66099511344764e1935ac",
-  "source_capture_sha256": "d5c7325129009e3d0b930673cc3bb110876fd41e4654bbeee3851cd5aeec02f1",
-  "core_sha256": "35ba439deeded9565f06224e67d769b9e5723553e1f1f19ad7462844b562f043",
-  "compiled_sha256": "a72530fa0f3e07c530f506f5eab0eaf2259a80c441579f873618590d2b2eacdb",
-  "readable_sha256": "569f4a1e73009e1cc70d20453005b04fc83affe11bd0b3704d0b638f0f52a77e",
+  "input_sha256": "fbd364fc48518c2f0fdb92a1fc7617abc8a8555d49bd36c34110e19429125d91",
+  "source_capture_sha256": "413fc6b8ad720c4dd42e5ddc6a5675e57a95845ba2e80855daacf0b9cf09bc70",
+  "core_sha256": "0c7b6a89e93d0c547f62e760e69a6ff8b94cbd1867513c333e03490309934a76",
+  "compiled_sha256": "fcefbdeb1423c2f12994f307beb8092250c22c419010dd65f1e7e27008c7973e",
+  "readable_sha256": "47923e72a43c5bebb396820e3ca9f0c64610ac8c4f9bc3db4db83c970912eb4f",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -738,6 +738,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:285",
+      "shared_sha256": "778eb210000463f441550388fb4a8719254f647cf79ff2c97f3d1e823c47e9eb",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed that entire exact concurrence; no separate component preference, preferred alternative or motive inferred",
+          "source_id": "clerk:119:1:285"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed that entire exact concurrence; no separate component preference, preferred alternative or motive inferred",
+          "source_id": "clerk:119:1:285"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:298",
       "shared_sha256": "ae23121493899dddda9c6752ad5c8b713546315929c7658acd10d9db569ad91f",
       "choices": [
@@ -878,6 +898,26 @@
       ]
     },
     {
+      "action_id": "house:119:2:28",
+      "shared_sha256": "9e3b4a9d3eb24e4b494830fe0c3143a8acc25df23a5b5cea7a1f1fd76f186189",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the whole exactJanuary14passage; no separate component preference,preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:28"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the whole exactJanuary14passage; no separate component preference,preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:28"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:2:42",
       "shared_sha256": "9238e7e5f73c10ff03cc79303fe8a57eda93b35f406003b7f29dd3c476cb649c",
       "choices": [
@@ -894,6 +934,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of the whole exact H.R. 7147 annual DHS funding proposal; no preferred funding or immigration alternative is established",
           "source_id": "clerk:119:2:42"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:45",
+      "shared_sha256": "60a30c6d724cb3a04b1c4057af149f295dc813b3322d3038d545bd65439b88d4",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the whole exact January 22 passage; no independent component preference, alternative or motive inferred",
+          "source_id": "clerk:119:2:45"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the whole exact January 22 passage; no independent component preference, alternative or motive inferred",
+          "source_id": "clerk:119:2:45"
         }
       ]
     },

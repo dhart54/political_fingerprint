@@ -4068,3 +4068,61 @@ projections/readable/audit entries and original source prefixes. All historical
 Health/V21/226 evidence, saved private artifacts and four shutdown notes remain
 exact. Fresh227 CI and independent source/domain review remain required.
 BenchmarkFAIL and the original cohort clock/shutdown-gap accounting remain.
+
+
+### Checkpoint228 — source-qualified November and January package increment
+
+The resumed increment adds actions 1:285, 2:28 and 2:45 as candidates.
+V23 preserves original Health identities, meaning references and prefixes,
+witnesses and limitations. November 101(e)(8), January28 divisionJ7030(b),
+and January45's original1035 country-reference temporal uncertainty remain
+explicit. No judgment repair, automatic old-baseline inclusion, universal
+individual eligibility, component vote or current-law certificate is inferred.
+January45 uses IH plus adopted PartA; later7006/7147 assembly and Senate DHS
+replacement remain separate choices. Shared prose is member-neutral.
+
+Both January primary bodies are completely covered through mapped literal
+reuse and physically read new/changed ranges. Huge statutory parents remain
+bounded to selected material. The42new source rows preserve all three old
+source prefixes. The7US1639o extraction label names802(16); its exact2655char
+body/version/raw binding and metadata imprecision are explicitly disclosed.
+Four historical shutdown notes remain untouched.
+
+The first application stopped before main corpus writes because it assumed
+old cores remain a contiguous prefix. Compiler ordering is by session/roll.
+The correction checks uniqueness, ordering, exact intended additions and
+complete prior objects by stable identity. Nested arrays stay exact.
+Four regressions prove insertion succeeds while changed/missing/duplicate
+old cores, unexpected/missing/changed additions, nested array reordering
+and wrong compiler ordering fail. All69prior cores are conserved.
+Working645/31,72cores/120behavioral propositions,62episodes/ninemulti.
+
+The97m16.136scoordination phase remains benchmarkFAIL. Primary reading and
+material application, private authoring/controls, truncation/transport/path
+recovery and failed helper/conservation attempts remain in elapsed wall time.
+Original00:28:54.725024cohort clock and62389.874025shutdown gap are retained.
+No five-comparable-routine mean or throughput improvement is claimed.
+Resumed application took85.1827183s. Required raw owner tests, semantic/IR
+checks, actualseven-outputCLIreplay, broader conservation and fresh new-head
+CI remain delivery gates.
+
+The227review is a trusted received report: reported housingP3closed and no
+new blocker. Full raw report/receipt were not received/rehashed. It is not
+228review, fresh raw/PDF/assembledEH/current-law review or inspected227CI.
+Cancelled77500/observe_ci227/adapter.patch and denied224/228targets remain
+excluded. Optimization stays unapplied pending explicit clarification,
+superseding earlier integration intent. No editorial acceptance or production.
+
+228 first full gate:397 tests in525.857s, three errors for missing audit
+contract field corrected_authoring_action_sha256 on the three new actions.
+The already recorded exact authoring digests are now bound under that field;
+no source, meaning or test contract changed. Failed log/timing remain private.
+A fresh full gate and separate replay follow; failure time remains in elapsed.
+
+228 local gate:397 tests (220 Immigration included), seven semantic checks,
+IR and seven actual CLI byte outputs pass. Full conservation verifies all69
+prior core objects,642reviews,673inventory rows and114unaffected propositions,
+plus projections/mappings/readable/audit entries and all old source prefixes.
+The four new strict conservation regressions remain in the raw full suite.
+No source/domain acceptance or benchmark improvement follows from test counts.
+Fresh228CI and independent228review remain required; excluded227reads untouched.

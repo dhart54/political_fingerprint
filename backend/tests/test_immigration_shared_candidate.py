@@ -4376,5 +4376,55 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertTrue(expressive <= {c['action_id'] for c in sample})
 
 
+
+
+class SharedCoreIncrementConservationTests(unittest.TestCase):
+    def setUp(self):
+        from scripts.check_shared_core_conservation import check_core_conservation
+        self.check = check_core_conservation
+        def core(session, roll):
+            return {"action_id": f"house:119:{session}:{roll}", "session": session,
+                    "roll": roll, "candidate_exact_action_meaning": "qualified whole choice",
+                    "claim_source_map": [{"passage": "condition"}, {"passage": "exception"}]}
+        self.previous = [core(1, 10), core(2, 53)]
+        self.additions = [core(2, 28)]
+        self.current = [self.previous[0], self.additions[0], self.previous[1]]
+
+    def test_sorted_insertion_passes_without_requiring_an_old_contiguous_prefix(self):
+        before = copy.deepcopy([self.previous, self.current, self.additions])
+        self.assertNotEqual(self.current[:len(self.previous)], self.previous)
+        self.assertEqual(self.check(self.previous, self.current, self.additions),
+                         {"conserved": 2, "added": 1, "current": 3})
+        self.assertEqual([self.previous, self.current, self.additions], before)
+
+    def test_altered_old_core_or_reordered_nested_evidence_array_fails(self):
+        for defect in ["meaning", "nested array"]:
+            changed = copy.deepcopy(self.current)
+            if defect == "meaning":
+                changed[-1]["candidate_exact_action_meaning"] = "unqualified choice"
+            else:
+                changed[-1]["claim_source_map"].reverse()
+            with self.subTest(defect=defect), self.assertRaisesRegex(ValueError, "previous core changed"):
+                self.check(self.previous, changed, self.additions)
+
+    def test_missing_old_core_duplicate_or_unexpected_addition_fails(self):
+        variants = {"missing old": self.current[:-1],
+                    "duplicate": self.current + [self.current[-1]],
+                    "unexpected": self.current + [{"action_id": "house:119:2:99",
+                        "session": 2, "roll": 99}]}
+        for defect, changed in variants.items():
+            with self.subTest(defect=defect), self.assertRaises(ValueError):
+                self.check(self.previous, changed, self.additions)
+
+    def test_wrong_compiler_order_missing_or_changed_intended_addition_fails(self):
+        changed = copy.deepcopy(self.current)
+        changed[1]["claim_source_map"][0]["passage"] = "different condition"
+        for defect, rows in {"order": list(reversed(self.current)),
+                             "missing addition": self.previous,
+                             "changed addition": changed}.items():
+            with self.subTest(defect=defect), self.assertRaises(ValueError):
+                self.check(self.previous, rows, self.additions)
+
+
 if __name__ == '__main__':
     unittest.main()
