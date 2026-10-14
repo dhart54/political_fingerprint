@@ -29,6 +29,7 @@ CANDIDATE = common.CANDIDATE
 
 _HEALTH_PROVIDER = Path("docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json")
 _SHARED_SCHEMA = "docs/semantic_ir/shared_legislative_corpus_v1.schema.json"
+_UNOBSERVED = object()
 
 
 def _same_json(left, right):
@@ -45,11 +46,15 @@ def _same_json(left, right):
 
 
 class _ObservedSchemaPath:
-    def __init__(self, path, text):
-        self.path, self.text = path, text
+    def __init__(self, path, observation):
+        self.path, self.observation = path, observation
 
     def read_text(self, *args, **kwargs):
-        return self.text
+        if self.observation.text is _UNOBSERVED:
+            text = self.path.read_text(*args, **kwargs)
+            self.observation.reads.append(text)
+            return text
+        return self.observation.text
 
     def __fspath__(self):
         return str(self.path)
@@ -63,12 +68,13 @@ class _ObservedSchemaPath:
 
 class _ObservedSchemaRoot:
     """Give the existing validator its exact fresh read without reading twice."""
-    def __init__(self, root, text):
+    def __init__(self, root, text=_UNOBSERVED):
         self.root, self.text = root, text
+        self.reads = []
 
     def __truediv__(self, name):
         path = self.root / name
-        return _ObservedSchemaPath(path, self.text) if name == _SHARED_SCHEMA else path
+        return _ObservedSchemaPath(path, self) if name == _SHARED_SCHEMA else path
 
     def __fspath__(self):
         return str(self.root)
@@ -85,24 +91,54 @@ class _HealthProviderValidation:
     def __init__(self):
         self.observation = None
         self.root = None
+        self.dependencies_changed = False
+
+    @staticmethod
+    def _dependencies():
+        try:
+            return (
+                validate_shared_action_core, shared_corpus._validate_schema, shared_corpus._walk_keys,
+                shared_corpus.sealed_digest, shared_corpus.digest, shared_corpus.canonical_bytes,
+                shared_corpus._identity_set, shared_corpus.Draft202012Validator, shared_corpus.FormatChecker,
+                frozenset(shared_corpus.MEMBER_FIELDS),
+                tuple(shared_corpus.Draft202012Validator.VALIDATORS.items()),
+                tuple((name, checker, tuple(raises) if isinstance(raises, (list, tuple)) else raises)
+                      for name, (checker, raises) in shared_corpus.FormatChecker.checkers.items()),
+            )
+        except (AttributeError, TypeError, ValueError, RuntimeError):
+            # Unsupported or changing registry configuration takes original dispatch.
+            return None
 
     def validate(self, root, path, provider_text, provider):
-        # Read at the original schema-validation boundary, even on a reuse hit.
+        validator = validate_shared_action_core
+        dependencies = self._dependencies()
+        if (self.dependencies_changed or dependencies is None
+                or self.observation is not None and dependencies != self.observation[0][-1]):
+            self.dependencies_changed = True
+            return validator(root, provider)
+        if self.observation is None:
+            observed_root = _ObservedSchemaRoot(root)
+            validator(observed_root, provider)
+            if len(observed_root.reads) == 1 and dependencies == self._dependencies():
+                key = (id(root), str(root), path, provider_text, observed_root.reads[0], dependencies)
+                self.observation = (key, copy.deepcopy(provider))
+                self.root = root
+            else:
+                self.dependencies_changed = True
+            return
+        # Only unchanged established dispatch may observe before deciding reuse.
         schema_text = (root / _SHARED_SCHEMA).read_text(encoding="utf-8")
-        dependencies = (
-            validate_shared_action_core, shared_corpus._validate_schema, shared_corpus._walk_keys,
-            shared_corpus.sealed_digest, shared_corpus.digest, shared_corpus.canonical_bytes,
-            shared_corpus._identity_set, shared_corpus.Draft202012Validator, shared_corpus.FormatChecker,
-            frozenset(shared_corpus.MEMBER_FIELDS),
-        )
         key = (id(root), str(root), path, provider_text, schema_text, dependencies)
-        if self.observation is not None:
-            prior_key, prior_provider = self.observation
-            if root is self.root and key == prior_key and _same_json(provider, prior_provider):
-                return
-        validate_shared_action_core(_ObservedSchemaRoot(root, schema_text), provider)
-        self.observation = (key, copy.deepcopy(provider))
-        self.root = root
+        prior_key, prior_provider = self.observation
+        if (dependencies == self._dependencies() and root is self.root
+                and key == prior_key and _same_json(provider, prior_provider)):
+            return
+        validator(_ObservedSchemaRoot(root, schema_text), provider)
+        if dependencies == self._dependencies():
+            self.observation = (key, copy.deepcopy(provider))
+            self.root = root
+        else:
+            self.dependencies_changed = True
 
 def _extended(action):
     witness = action.get("deemed_concurrence")

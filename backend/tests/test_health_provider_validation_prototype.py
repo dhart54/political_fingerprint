@@ -154,6 +154,24 @@ class HealthProviderReuseControls(unittest.TestCase):
             self.assertEqual(rejection(self.validate), rejection(
                 lambda: shared_corpus.validate_shared_action_core(ROOT, self.provider)))
 
+    def test_changed_validator_dispatch_precedes_schema_denial(self):
+        original_read = Path.read_text
+        for warm in [True, False]:
+            self.session = adapter._HealthProviderValidation()
+            if warm:
+                self.validate()
+            schema_reads = []
+            def denied(path, *args, **kwargs):
+                if path == SCHEMA:
+                    schema_reads.append(path)
+                    raise PermissionError('controlled schema denial')
+                return original_read(path, *args, **kwargs)
+            with self.subTest(warm=warm), patch.object(adapter, 'validate_shared_action_core',
+                    side_effect=ValueError('new validator')), patch.object(Path, 'read_text', new=denied):
+                direct = rejection(lambda: adapter.validate_shared_action_core(ROOT, self.provider))
+                self.assertEqual(rejection(self.validate), direct)
+                self.assertEqual(schema_reads, [])
+
     def test_validation_failures_are_never_memoized(self):
         bad = copy.deepcopy(self.provider)
         bad['corpus_sha256'] = '0' * 64
@@ -169,6 +187,35 @@ class HealthProviderReuseControls(unittest.TestCase):
             self.session = adapter._HealthProviderValidation()
             self.validate()
             self.assertEqual(validate.call_count, 2)
+
+
+class HealthProviderRegistryDifferential(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.provider_text = HEALTH.read_text(encoding='utf-8')
+        cls.provider = json.loads(cls.provider_text)
+
+    def assert_same_session_rejection(self, registry, keyword, replacement):
+        session = adapter._HealthProviderValidation()
+        session.validate(ROOT, HEALTH, self.provider_text, self.provider)
+        with patch.dict(registry, {keyword: replacement}):
+            direct = rejection(lambda: shared_corpus.validate_shared_action_core(ROOT, self.provider))
+            fresh = rejection(lambda: adapter._HealthProviderValidation().validate(
+                ROOT, HEALTH, self.provider_text, self.provider))
+            cached = rejection(lambda: session.validate(ROOT, HEALTH, self.provider_text, self.provider))
+            self.assertEqual(fresh, direct)
+            self.assertEqual(cached, direct)
+
+    def test_in_place_format_checker_change_matches_direct_and_fresh_rejection(self):
+        self.assert_same_session_rejection(
+            shared_corpus.FormatChecker.checkers, 'date', (lambda value: False, ()))
+
+    def test_in_place_keyword_registry_change_matches_direct_and_fresh_rejection(self):
+        from jsonschema import ValidationError
+        def reject_type(validator, expected_type, instance, schema):
+            yield ValidationError('controlled keyword-registry rejection')
+        self.assert_same_session_rejection(
+            shared_corpus.Draft202012Validator.VALIDATORS, 'type', reject_type)
 
 
 class HealthProviderPrepareIntegration(unittest.TestCase):

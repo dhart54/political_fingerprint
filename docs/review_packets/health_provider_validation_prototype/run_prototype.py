@@ -38,6 +38,20 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def code_binding(root, name):
+    """Distinguish tested worktree bytes from Git's newline-filtered blob."""
+    raw = (root / name).read_bytes()
+    blob = subprocess.check_output(['git', '-C', str(root), 'show', 'HEAD:' + name])
+    committed = git(root, 'rev-parse', 'HEAD:' + name)
+    filtered = git(root, 'hash-object', '--path=' + name, str(root / name))
+    if committed != filtered:
+        raise AssertionError('validation requires committed source: ' + name)
+    return dict(worktree_raw_sha256=hashlib.sha256(raw).hexdigest(),
+                git_blob_sha256=hashlib.sha256(blob).hexdigest(), git_blob_object_id=committed,
+                worktree_filtered_object_id=filtered, crlf_count=raw.count(b'\r\n'),
+                lone_lf_count=raw.count(b'\n') - raw.count(b'\r\n'))
+
+
 def frozen_text(root, name):
     return subprocess.check_output(['git', '-C', str(root), 'show', FROZEN + ':' + name]).decode('utf-8').replace('\r\n', '\n')
 
@@ -69,6 +83,12 @@ def main():
     current_script = (root / SCRIPT).read_text(encoding='utf-8')
     if (current_script == baseline_script) != (args.variant == 'baseline'):
         parser.error('variant label does not match observed adapter bytes')
+    code_names = [SCRIPT] + (['backend/tests/test_health_provider_validation_prototype.py']
+                            if args.include_controls else [])
+    code_bindings = {name: code_binding(root, name) for name in code_names}
+    driver_root = Path(__file__).resolve().parents[3]
+    driver_name = str(Path(__file__).resolve().relative_to(driver_root)).replace('\\', '/')
+    driver_binding = code_binding(driver_root, driver_name)
     sys.path.insert(0, str(root))
     os.chdir(root)
     adapter = importlib.import_module('scripts.prepare_immigration_shared_candidate')
@@ -95,6 +115,7 @@ def main():
                    adapter_raw_sha256=hashes[SCRIPT], adapter_old_text_binding=old_binding,
                    adapter_current_text_binding=new_binding, historical_proof_valid_for_changed_adapter=False,
                    protected_hashes=hashes, initial_tracked_diff=changed,
+                   code_bindings=code_bindings, driver_binding=driver_binding,
                    conditions='One benchmark process; fresh-process first call/warm repeats; OS cache not cleared.')
     if args.mode == 'measure':
         author = json.loads((data / 'authoring.json').read_text(encoding='utf-8'))
@@ -181,6 +202,9 @@ def main():
         raise AssertionError('adapter, tests, input/rules or historical evidence changed during execution')
     if git(root, 'diff', '--name-only', FROZEN).splitlines() != changed:
         raise AssertionError('tracked diff changed during execution')
+    if ({name: code_binding(root, name) for name in code_names} != code_bindings
+            or code_binding(driver_root, driver_name) != driver_binding):
+        raise AssertionError('tested source or driver bytes changed during execution')
     receipt['protected_bytes_unchanged'] = True
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open('x', encoding='utf-8') as file:
