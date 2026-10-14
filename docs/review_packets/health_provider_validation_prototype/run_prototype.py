@@ -95,6 +95,7 @@ def main():
     data = root / 'docs/editorial/shared_candidates/house_119_immigration_20260916'
     generated = data / 'generated'
     fixed = [SCRIPT, *TESTS, PROOF, 'docs/review_packets/foushee_immigration_shared_candidate.md', 'scripts/prepare_shared_domain_candidate.py',
+             'docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json',
              'backend/app/semantic_ir/shared_corpus.py', 'backend/app/semantic_ir/compiler.py',
              'backend/app/semantic_ir/pipeline.py', 'backend/app/semantic_ir/adapters.py',
              'backend/app/semantic_ir/validation.py', 'docs/semantic_ir/shared_legislative_corpus_v1.schema.json']
