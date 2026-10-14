@@ -1,0 +1,238 @@
+"""Isolated prototype controls; no canonical input or proof writes."""
+import copy
+import json
+from pathlib import Path
+import unittest
+from unittest.mock import patch
+
+from scripts import prepare_immigration_shared_candidate as adapter
+from backend.app.semantic_ir import shared_corpus
+
+ROOT = Path(__file__).resolve().parents[2]
+DATA = ROOT / 'docs/editorial/shared_candidates/house_119_immigration_20260916'
+HEALTH = ROOT / adapter._HEALTH_PROVIDER
+SCHEMA = ROOT / adapter._SHARED_SCHEMA
+
+
+def rejection(function):
+    try:
+        function()
+    except Exception as error:
+        return type(error), str(error)
+    raise AssertionError('invalid input was accepted')
+
+
+class HealthProviderReuseControls(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.provider = json.loads(HEALTH.read_text(encoding='utf-8'))
+        cls.provider['actions'] = cls.provider['actions'][:1]
+        cls.provider['corpus_sha256'] = shared_corpus.digest(cls.provider['actions'])
+        cls.schema_text = SCHEMA.read_text(encoding='utf-8')
+
+    def setUp(self):
+        self.provider = copy.deepcopy(type(self).provider)
+        self.text = json.dumps(self.provider)
+        self.session = adapter._HealthProviderValidation()
+
+    def validate(self, provider=None, text=None, root=None, path=None):
+        self.session.validate(ROOT if root is None else root, HEALTH if path is None else path,
+                              self.text if text is None else text,
+                              self.provider if provider is None else provider)
+
+    def test_identical_payload_reuses_only_after_fresh_schema_observation(self):
+        original_read = Path.read_text
+        schema_reads = []
+        def read(path, *args, **kwargs):
+            if path == SCHEMA:
+                schema_reads.append(path)
+            return original_read(path, *args, **kwargs)
+        with patch.object(Path, 'read_text', new=read), patch.object(
+                adapter, 'validate_shared_action_core', wraps=shared_corpus.validate_shared_action_core) as validate:
+            self.validate()
+            self.validate(provider=copy.deepcopy(self.provider))
+            self.assertEqual(validate.call_count, 1)
+            self.assertEqual(schema_reads, [SCHEMA, SCHEMA])
+
+    def test_changed_parsed_provider_with_same_text_rejects_without_stale_reuse(self):
+        self.validate()
+        changed = copy.deepcopy(self.provider)
+        changed['actions'][0]['party'] = 'D'
+        expected = rejection(lambda: shared_corpus.validate_shared_action_core(ROOT, changed))
+        self.assertEqual(rejection(lambda: self.validate(provider=changed)), expected)
+
+    def test_python_equal_boolean_number_drift_still_rejects(self):
+        self.validate()
+        changed = copy.deepcopy(self.provider)
+        changed['actions'][0]['session'] = True
+        self.assertEqual(self.provider, changed)  # Ordinary Python equality would accept this drift.
+        self.assertEqual(rejection(lambda: self.validate(provider=changed)),
+                         rejection(lambda: shared_corpus.validate_shared_action_core(ROOT, changed)))
+        self.assertFalse(adapter._same_json({'value': 1}, {'value': True}))
+        self.assertFalse(adapter._same_json({'value': [1]}, {'value': [1.0]}))
+        self.assertFalse(adapter._same_json({'value': 0.0}, {'value': -0.0}))
+        self.assertFalse(adapter._same_json({'value': float('nan')}, {'value': float('nan')}))
+
+    def test_private_copy_does_not_follow_later_provider_mutation(self):
+        self.validate()
+        self.provider['actions'][0]['action_core_sha256'] = '0' * 64
+        self.assertEqual(rejection(self.validate), rejection(
+            lambda: shared_corpus.validate_shared_action_core(ROOT, self.provider)))
+
+    def test_changed_provider_text_even_with_same_payload_requires_validation(self):
+        with patch.object(adapter, 'validate_shared_action_core', wraps=shared_corpus.validate_shared_action_core) as validate:
+            self.validate()
+            self.validate(text=self.text + '\n')
+            self.assertEqual(validate.call_count, 2)
+
+    def test_changed_schema_rejects_with_original_failure_and_one_read(self):
+        self.validate()
+        changed_schema = json.loads(self.schema_text)
+        changed_schema['$defs']['sharedActionCoreArtifact']['properties']['artifact_id'] = {'const': 'wrong'}
+        altered = json.dumps(changed_schema)
+        original_read = Path.read_text
+        def read(path, *args, **kwargs):
+            return altered if path == SCHEMA else original_read(path, *args, **kwargs)
+        with patch.object(Path, 'read_text', new=read):
+            expected = rejection(lambda: shared_corpus.validate_shared_action_core(ROOT, self.provider))
+            self.assertEqual(rejection(self.validate), expected)
+
+    def test_malformed_schema_and_read_error_preserve_exception_messages(self):
+        self.validate()
+        self.provider['actions'][0]['party'] = 'D'  # Schema/read failure must still precede provider failure.
+        original_read = Path.read_text
+        for value in ['{broken', PermissionError('controlled schema denial')]:
+            def read(path, *args, **kwargs):
+                if path != SCHEMA:
+                    return original_read(path, *args, **kwargs)
+                if isinstance(value, Exception):
+                    raise value
+                return value
+            with self.subTest(value=str(value)), patch.object(Path, 'read_text', new=read):
+                self.assertEqual(rejection(self.validate), rejection(
+                    lambda: shared_corpus.validate_shared_action_core(ROOT, self.provider)))
+
+    def test_schema_sequence_is_not_observed_twice_on_a_miss(self):
+        original_read = Path.read_text
+        reads = []
+        def read(path, *args, **kwargs):
+            if path == SCHEMA:
+                reads.append(path)
+                return self.schema_text if len(reads) == 1 else '{changed second observation'
+            return original_read(path, *args, **kwargs)
+        with patch.object(Path, 'read_text', new=read):
+            self.validate()
+            self.assertEqual(reads, [SCHEMA])
+            self.assertEqual(rejection(self.validate)[0], json.JSONDecodeError)
+            self.assertEqual(reads, [SCHEMA, SCHEMA])
+
+    def test_root_and_provider_path_changes_force_fresh_validation(self):
+        alternative = ROOT / '.local/other-root'
+        original_read = Path.read_text
+        def read(path, *args, **kwargs):
+            if path == alternative / adapter._SHARED_SCHEMA:
+                return self.schema_text
+            return original_read(path, *args, **kwargs)
+        with patch.object(Path, 'read_text', new=read), patch.object(
+                adapter, 'validate_shared_action_core', wraps=shared_corpus.validate_shared_action_core) as validate:
+            self.validate()
+            self.validate(root=alternative)
+            self.validate(root=alternative, path=alternative / adapter._HEALTH_PROVIDER)
+            self.assertEqual(validate.call_count, 3)
+        self.session = adapter._HealthProviderValidation()
+        with patch.object(adapter, 'id', return_value=42, create=True), patch.object(
+                adapter, 'validate_shared_action_core', wraps=shared_corpus.validate_shared_action_core) as validate:
+            self.validate(root=ROOT)
+            self.validate(root=Path(str(ROOT)))
+            self.assertEqual(validate.call_count, 2)  # Retain root identity even if object IDs are reused.
+
+    def test_validator_dependency_and_member_field_changes_are_not_reused(self):
+        self.validate()
+        with patch.object(adapter, 'validate_shared_action_core', side_effect=ValueError('new validator')):
+            self.assertEqual(rejection(self.validate), (ValueError, 'new validator'))
+        with patch.object(shared_corpus, 'MEMBER_FIELDS', shared_corpus.MEMBER_FIELDS | {'mechanism'}):
+            self.assertEqual(rejection(self.validate), rejection(
+                lambda: shared_corpus.validate_shared_action_core(ROOT, self.provider)))
+
+    def test_validation_failures_are_never_memoized(self):
+        bad = copy.deepcopy(self.provider)
+        bad['corpus_sha256'] = '0' * 64
+        with patch.object(adapter, 'validate_shared_action_core', wraps=shared_corpus.validate_shared_action_core) as validate:
+            first = rejection(lambda: self.validate(provider=bad))
+            self.assertEqual(rejection(lambda: self.validate(provider=bad)), first)
+            self.assertEqual(validate.call_count, 2)
+            self.assertIsNone(self.session.observation)
+
+    def test_new_session_does_not_reuse_a_previous_success(self):
+        with patch.object(adapter, 'validate_shared_action_core', wraps=shared_corpus.validate_shared_action_core) as validate:
+            self.validate()
+            self.session = adapter._HealthProviderValidation()
+            self.validate()
+            self.assertEqual(validate.call_count, 2)
+
+
+class HealthProviderPrepareIntegration(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.author = json.loads((DATA / 'authoring.json').read_text(encoding='utf-8'))
+        cls.capture = json.loads((DATA / 'sources.json').read_text(encoding='utf-8'))
+
+    def test_whole_prepare_observes_all_providers_sources_and_fresh_invocations(self):
+        original_read = Path.read_text
+        original_validate = shared_corpus.validate_shared_action_core
+        reads, checks = [], []
+        def read(path, *args, **kwargs):
+            if path == HEALTH:
+                reads.append(path)
+            return original_read(path, *args, **kwargs)
+        def validate(root, provider):
+            if len(provider['actions']) == 115:
+                checks.append(provider['artifact_id'])
+            return original_validate(root, provider)
+        with patch.object(Path, 'read_text', new=read), patch.object(adapter, 'validate_shared_action_core', new=validate), patch.object(
+                adapter.common, 'validate_sources', wraps=adapter.common.validate_sources) as sources:
+            first = adapter.prepare(self.author, self.capture, ['F000477', 'M001184'])
+            second = adapter.prepare(self.author, self.capture, ['F000477', 'M001184'])
+            self.assertEqual(len(reads), 26)  # 13 real provider reads per invocation.
+            self.assertEqual(len(checks), 2)  # No reuse across prepare invocations.
+            self.assertEqual(sources.call_count, 34)  # All 17 full captures per invocation remain.
+        self.assertEqual(first[:4], second[:4])
+        self.assertEqual(first[-1].compiled_ir, second[-1].compiled_ir)
+
+    def test_changed_unused_capture_source_after_a_hit_is_still_rejected(self):
+        capture = copy.deepcopy(self.capture)
+        original_read = Path.read_text
+        reads = 0
+        def read(path, *args, **kwargs):
+            nonlocal reads
+            if path == HEALTH:
+                reads += 1
+                if reads == 4:
+                    capture['sources'][-1]['raw_sha256'] = '0' * 64
+            return original_read(path, *args, **kwargs)
+        with patch.object(Path, 'read_text', new=read):
+            error = rejection(lambda: adapter.prepare(self.author, capture, ['F000477', 'M001184']))
+        self.assertEqual(error[0], ValueError)
+        self.assertTrue(error[1].startswith('governed source changed: '))
+
+    def test_changed_provider_after_a_hit_cannot_borrow_validation(self):
+        original_read = Path.read_text
+        reads = 0
+        def read(path, *args, **kwargs):
+            nonlocal reads
+            text = original_read(path, *args, **kwargs)
+            if path == HEALTH:
+                reads += 1
+                if reads >= 4:
+                    provider = json.loads(text)
+                    provider['actions'][0]['party'] = 'D'
+                    return json.dumps(provider)
+            return text
+        with patch.object(Path, 'read_text', new=read):
+            error = rejection(lambda: adapter.prepare(self.author, self.capture, ['F000477', 'M001184']))
+        self.assertEqual(error[0], shared_corpus.SharedCorpusValidationError)
+        self.assertIn('schema failure', error[1])
+
+
+if __name__ == '__main__':
+    unittest.main()

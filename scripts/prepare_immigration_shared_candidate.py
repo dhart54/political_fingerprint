@@ -24,7 +24,85 @@ from backend.app.semantic_ir.shared_corpus import (
     sealed_digest, validate_member_projection, validate_shared_action_core, SharedCorpusValidationError,
 )
 from backend.app.semantic_ir.pipeline import run_editorial_pipeline
+from backend.app.semantic_ir import shared_corpus
 CANDIDATE = common.CANDIDATE
+
+_HEALTH_PROVIDER = Path("docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json")
+_SHARED_SCHEMA = "docs/semantic_ir/shared_legislative_corpus_v1.schema.json"
+
+
+def _same_json(left, right):
+    """Python equality alone conflates JSON booleans and numbers."""
+    if type(left) is not type(right):
+        return False
+    if isinstance(left, dict):
+        return left.keys() == right.keys() and all(_same_json(left[key], right[key]) for key in left)
+    if isinstance(left, list):
+        return len(left) == len(right) and all(_same_json(a, b) for a, b in zip(left, right))
+    if isinstance(left, float):
+        return left == right and left.hex() == right.hex()
+    return left == right
+
+
+class _ObservedSchemaPath:
+    def __init__(self, path, text):
+        self.path, self.text = path, text
+
+    def read_text(self, *args, **kwargs):
+        return self.text
+
+    def __fspath__(self):
+        return str(self.path)
+
+    def __str__(self):
+        return str(self.path)
+
+    def __getattr__(self, name):
+        return getattr(self.path, name)
+
+
+class _ObservedSchemaRoot:
+    """Give the existing validator its exact fresh read without reading twice."""
+    def __init__(self, root, text):
+        self.root, self.text = root, text
+
+    def __truediv__(self, name):
+        path = self.root / name
+        return _ObservedSchemaPath(path, self.text) if name == _SHARED_SCHEMA else path
+
+    def __fspath__(self):
+        return str(self.root)
+
+    def __str__(self):
+        return str(self.root)
+
+    def __getattr__(self, name):
+        return getattr(self.root, name)
+
+
+class _HealthProviderValidation:
+    """One successful value, private to a single Immigration prepare call."""
+    def __init__(self):
+        self.observation = None
+        self.root = None
+
+    def validate(self, root, path, provider_text, provider):
+        # Read at the original schema-validation boundary, even on a reuse hit.
+        schema_text = (root / _SHARED_SCHEMA).read_text(encoding="utf-8")
+        dependencies = (
+            validate_shared_action_core, shared_corpus._validate_schema, shared_corpus._walk_keys,
+            shared_corpus.sealed_digest, shared_corpus.digest, shared_corpus.canonical_bytes,
+            shared_corpus._identity_set, shared_corpus.Draft202012Validator, shared_corpus.FormatChecker,
+            frozenset(shared_corpus.MEMBER_FIELDS),
+        )
+        key = (id(root), str(root), path, provider_text, schema_text, dependencies)
+        if self.observation is not None:
+            prior_key, prior_provider = self.observation
+            if root is self.root and key == prior_key and _same_json(provider, prior_provider):
+                return
+        validate_shared_action_core(_ObservedSchemaRoot(root, schema_text), provider)
+        self.observation = (key, copy.deepcopy(provider))
+        self.root = root
 
 def _extended(action):
     witness = action.get("deemed_concurrence")
@@ -451,7 +529,7 @@ def _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_i
 
 
 
-def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical, member_ids):
+def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical, member_ids, health_validation=None):
     """Qualify an existing unapproved candidate without rewriting its meaning."""
     binding = proposed.get('candidate_core_qualification')
     if (not isinstance(binding, dict)
@@ -463,8 +541,12 @@ def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical
     if (path.name != 'shared_action_core.json'
             or not path.is_relative_to((ROOT / 'docs/editorial/shared_candidates').resolve())):
         raise ValueError('candidate qualification must bind an existing shared candidate')
-    provider = json.loads(path.read_text(encoding='utf-8'))
-    validate_shared_action_core(ROOT, provider)
+    provider_text = path.read_text(encoding='utf-8')
+    provider = json.loads(provider_text)
+    if health_validation is not None and Path(binding['artifact_ref']) == _HEALTH_PROVIDER:
+        health_validation.validate(ROOT, path, provider_text, provider)
+    else:
+        validate_shared_action_core(ROOT, provider)
     original = next((a for a in provider['actions'] if a['action_id'] == proposed['action_id']), None)
     if (provider['authoritative_for_new_editorial_work'] is not False
             or provider['artifact_id'] != binding['artifact_id'] or original is None
@@ -510,7 +592,7 @@ def _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical
     return copy.deepcopy(canonical), prepared[1]['action_mappings'][0], prepared[1]['episodes'][0]
 
 
-def _prepare_reused_action(authoring, capture, proposed, member_ids):
+def _prepare_reused_action(authoring, capture, proposed, member_ids, health_validation=None):
     """Bind an ordinary candidate to an existing, sealed V1 core identity."""
     ref = proposed['shared_core_reuse']
     required = {'artifact_ref', 'artifact_id', 'action_id', 'action_meaning_ref', 'action_core_sha256'}
@@ -540,7 +622,7 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
     if target.name == 'shared_action_core_proposal.json':
         validate_shared_action_core(ROOT, provider)
         if proposed.get('candidate_core_qualification'):
-            return _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical, member_ids)
+            return _prepare_candidate_core_augmentation(authoring, capture, proposed, canonical, member_ids, health_validation)
         if proposed.get('legacy_core_qualification'):
             return _prepare_legacy_fisa_reuse(authoring, capture, proposed, canonical, member_ids)
         return _prepare_source_review_reuse(authoring, capture, proposed, canonical, member_ids)
@@ -563,6 +645,7 @@ def _prepare_reused_action(authoring, capture, proposed, member_ids):
 def prepare(authoring, capture, member_ids):
     if authoring.get("domain_id") != "IMMIGRATION_BORDER":
         raise ValueError("Immigration candidate adapter cannot prepare another domain")
+    health_validation = _HealthProviderValidation()
     action_constraints = _action_source_constraints(authoring)
     sources = {s["source_id"]: s for s in capture["sources"]}
     for proposed in authoring["actions"]:
@@ -585,7 +668,7 @@ def prepare(authoring, capture, member_ids):
     ordinary["blocked_episode_ids"] = [e for e in ordinary["blocked_episode_ids"] if e in ordinary_episodes]
     core, mapping, projections, inputs, result = common.prepare(ordinary, capture, member_ids)
     for proposed in reuse_additions:
-        reused, row, episode = _prepare_reused_action(authoring, capture, proposed, member_ids)
+        reused, row, episode = _prepare_reused_action(authoring, capture, proposed, member_ids, health_validation)
         core["actions"].append(reused)
         mapping["action_mappings"].append(row)
         existing = next((e for e in mapping["episodes"] if e["episode_id"] == episode["episode_id"]), None)
