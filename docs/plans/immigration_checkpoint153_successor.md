@@ -3975,3 +3975,47 @@ checks other61cores634reviews672rows104propositions/readable findings exact,
 all original source prefixes, Health/history/accepted artifacts and frozen notes.
 One coherent candidate increment follows; fresh CI and independent225review
 remain pending. No extra validation/checkpoint cycle or expanded research batch.
+
+
+### Checkpoint226 - three housing/Coast Guard candidate screenings
+
+The fixed five-case cohort remains visible:57,176,224,218 and blocked228.
+57February and176May whole housing packages have independently proposed
+programme-specific Immigration relationships: USHA/USDA504 status predicates
+are traced without transplanting them to HOME TitleII or every HUD programme.
+May covered-family definition and80percent escrow bar remain separate; pilot
+establishment is discretionary, yearly recertification retains alternative-rent
+exception, and tenyear programme termination differs from account duration.
+Massie NotVoting on176 remains nondirectional.
+
+218reuses the original governed whole Coast Guard context and separately reads
+its complete new material operators and incorporated baselines. No new whole
+444258character owner-reading claim is made. Existing citizen requirements,
+defined-vessel alien crew percentage/time bounds and nationality categories
+remain qualified. The7304plural-citizens/singular-citizen anchor mismatch is
+explicitly reserved rather than repaired; other direct operators support the
+candidate. Original Health meaning prefixes, exact identities and limits remain.
+
+June224full primary coverage and material research are preserved, but required
+PIH2011-45 guidance returned HTTP403. This source-server refusal was not retried
+or routed around. June remains pending with zero completion credit. The
+previously cancelled228reads and alternate routes remain unattempted; no swap.
+
+Local counts641reviews/35pending,68cores/116behavioral propositions,60episodes/
+sevenmulti,7ordinary/28researched holds. Delivery and independent226review
+remain pending; published progress638/38 stays until then. Independent225
+review receipt is received without rewriting its frozen timing closure.
+
+The clock starts2026-10-13T22:09:54.666663UTC and includes all pauses, source
+application, output recovery, helper failures, reconciliation, validation and
+delivery overhead. This broad cohort is not five comparable routine completions;
+prior benchmarkFAIL remains and no new passing mean is claimed. One full
+semantic gate, actual seven-file CLI replay and conservation check follow.
+
+226local gate:390focused cases (213candidate included), with three missing audit
+digest fields repaired and the audit/four new source tests rechecked (five pass).
+Original failed suite and repair time remain recorded. Seven semantic checks,
+IR and seven actualCLIbyte replays pass. Full preservation checks all prior
+65cores638reviews672rows112propositions, projections/readable/audit exactly.
+Original Health/history/accepted/V19/V20/224/225 evidence and three notes remain
+exact. Fresh226CI and independent review follow; benchmarkFAIL remains.

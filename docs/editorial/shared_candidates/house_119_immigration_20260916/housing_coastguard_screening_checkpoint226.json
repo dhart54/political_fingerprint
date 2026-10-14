@@ -1,0 +1,284 @@
+{
+  "checkpoint": 226,
+  "base_head": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
+  "fixed_five_action_cohort": [
+    "house:119:2:57",
+    "house:119:2:176",
+    "house:119:2:224",
+    "house:119:1:218",
+    "house:119:2:228"
+  ],
+  "completed_candidate_action_ids": [
+    "house:119:2:57",
+    "house:119:2:176",
+    "house:119:1:218"
+  ],
+  "held_required_source_action_ids": [
+    "house:119:2:224"
+  ],
+  "blocked_action_ids": [
+    "house:119:2:228"
+  ],
+  "replacement_actions": [],
+  "prior_universe_rows": {
+    "house:119:2:57": {
+      "action_id": "house:119:2:57",
+      "session": 2,
+      "roll": 57,
+      "date": "2026-02-09",
+      "measure": "bill_119_hr_6644",
+      "question": "On Motion to Suspend the Rules and Pass, as Amended",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:2:57",
+        "url": "https://clerk.house.gov/evs/2026/roll057.xml",
+        "raw_sha256": "8b88f025d5c22380c3a466136ec27921e4313d52eca482d8aa9b54c29f6886de",
+        "governed_bytes_sha256": "d928045f6ffca46a31bd9641dd1cc0452441517996361eb81eb8517e2c78effb",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_6644",
+      "member_action": "yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Pass, as Amended",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:57",
+          "url": "https://clerk.house.gov/evs/2026/roll057.xml",
+          "raw_sha256": "8b88f025d5c22380c3a466136ec27921e4313d52eca482d8aa9b54c29f6886de",
+          "governed_bytes_sha256": "d928045f6ffca46a31bd9641dd1cc0452441517996361eb81eb8517e2c78effb",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_raw_hash_matches": true
+    },
+    "house:119:2:176": {
+      "action_id": "house:119:2:176",
+      "session": 2,
+      "roll": 176,
+      "date": "2026-05-20",
+      "measure": "bill_119_hres_1299",
+      "question": "On Motion to Suspend the Rules and Agree",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:2:176",
+        "url": "https://clerk.house.gov/evs/2026/roll176.xml",
+        "raw_sha256": "d8144acb9a26747d25704607a577bfcb62ab844c56364ebace6a93470c067fea",
+        "governed_bytes_sha256": "23eae212d00234d0b68ea9dfc3d3d3b5a89ab2d87acefa65aaceb7248852e0ca",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hres_1299",
+      "member_action": "yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Agree",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:176",
+          "url": "https://clerk.house.gov/evs/2026/roll176.xml",
+          "raw_sha256": "d8144acb9a26747d25704607a577bfcb62ab844c56364ebace6a93470c067fea",
+          "governed_bytes_sha256": "23eae212d00234d0b68ea9dfc3d3d3b5a89ab2d87acefa65aaceb7248852e0ca",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:176",
+        "url": "https://clerk.house.gov/evs/2026/roll176.xml",
+        "raw_sha256": "4307ef20fed7bd7c1f5b64d268ace36199659f3b097a2698cdd38e78742f2c0d",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    },
+    "house:119:1:218": {
+      "action_id": "house:119:1:218",
+      "session": 1,
+      "roll": 218,
+      "date": "2025-07-23",
+      "measure": "bill_119_hr_4275",
+      "question": "On Motion to Suspend the Rules and Pass, as Amended",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:1:218",
+        "url": "https://clerk.house.gov/evs/2025/roll218.xml",
+        "raw_sha256": "40ae1d197decba854fc471c514294e634cd442e10705008d0bda20b48a31f57e",
+        "governed_bytes_sha256": "f98c83293b338c6cac8772ad372e9d67b2767a6184d5a78499bce80543f82c72",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_4275",
+      "member_action": "yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Pass, as Amended",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:1:218",
+          "url": "https://clerk.house.gov/evs/2025/roll218.xml",
+          "raw_sha256": "40ae1d197decba854fc471c514294e634cd442e10705008d0bda20b48a31f57e",
+          "governed_bytes_sha256": "f98c83293b338c6cac8772ad372e9d67b2767a6184d5a78499bce80543f82c72",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_raw_hash_matches": true
+    },
+    "house:119:2:224": {
+      "action_id": "house:119:2:224",
+      "session": 2,
+      "roll": 224,
+      "date": "2026-06-23",
+      "measure": "bill_119_hr_6644",
+      "question": "On Motion to Suspend the Rules and Concur in Senate Adt to House Adt to Senate Adt",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:2:224",
+        "url": "https://clerk.house.gov/evs/2026/roll224.xml",
+        "raw_sha256": "91f2fbd3220bc997b37600b56595aea7950468b8e6817f41dde89cb0824e2aa7",
+        "governed_bytes_sha256": "c0ac032252babbd56d526dab56ca48ec7f2fc54d9d72a72f91fd2816bba883fd",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_6644",
+      "member_action": "yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Concur in Senate Adt to House Adt to Senate Adt",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:224",
+          "url": "https://clerk.house.gov/evs/2026/roll224.xml",
+          "raw_sha256": "91f2fbd3220bc997b37600b56595aea7950468b8e6817f41dde89cb0824e2aa7",
+          "governed_bytes_sha256": "c0ac032252babbd56d526dab56ca48ec7f2fc54d9d72a72f91fd2816bba883fd",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:224",
+        "url": "https://clerk.house.gov/evs/2026/roll224.xml",
+        "raw_sha256": "b7c68690dcb905d0ee2c8cc73372098aa9ae03df6a3d7c0adeb7780908d99a95",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    }
+  },
+  "counts": {
+    "reviewed": 641,
+    "pending": 35,
+    "cores": 68,
+    "behavioral_propositions": 116,
+    "episodes": 60,
+    "multi_action_episodes": 7,
+    "ordinary": 7,
+    "researched_holds": 28
+  },
+  "new_shared_core_provider": "docs/editorial/shared_candidates/house_119_housing_coastguard_checkpoint226/shared_action_core_proposal.json",
+  "action_core_sha256": {
+    "house:119:1:218": "51414d525f5b222c60f3b5347e4828bb09782e00429fa168804cd8b5b1c962c5",
+    "house:119:2:57": "dc476822ec6e4ec0eb4d0a43bf9374e718546fce5c71ef405def3147a33a3ec8",
+    "house:119:2:176": "c295dca1fd0bc0512f642cd811a941cac0d93061388fb95cfa3650928e3e7d36"
+  },
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/housing_coastguard_source_quality_checkpoint226.json",
+  "source_quality_sha256": "c0125a425caaae2cb81c913960abcd0e63ec6fd4784b7bc013f52b4f787b088c",
+  "independent_domain_membership_not_inherited_from_Health": true,
+  "original_exact_identity_meaning_prefix_witnesses_and_limits_preserved": true,
+  "not_voting_resolved_nondirectional": true,
+  "June_required_PIH201145_source_unavailable": true,
+  "June_not_reviewed_or_credited": true,
+  "blocked228_not_read_retried_or_credited": true,
+  "prior_benchmark_result": "FAIL",
+  "benchmark": {
+    "status": "FAIL retained; this broad cohort is not five comparable routine completions",
+    "target_seconds": 240,
+    "failure_threshold_mean_seconds": 600,
+    "started_utc": "2026-10-13T22:09:54.666663+00:00",
+    "receipt_observed_utc": "2026-10-13T23:57:59.109208+00:00",
+    "elapsed_seconds_at_receipt": 6484.442545,
+    "completed_candidate_count": 3,
+    "held_count": 1,
+    "blocked_count": 1,
+    "comparable_five_completion_average": null,
+    "all_source_and_material_application_overhead_included": true,
+    "turn_pauses_output_recovery_and_reconciliation_included": true,
+    "validation_delivery_CI_independent_review_pending": true,
+    "clock_continues_until_delivery_and_review": true
+  },
+  "case_phase_intervals": [
+    {
+      "action_id": "house:119:2:57",
+      "phase": "whole_primary_and_material_source_application",
+      "started_utc": "2026-10-13T22:10:56.967692+00:00",
+      "source_id": "govinfo:hr6644eh",
+      "source_length": 194884,
+      "governed_bytes_sha256": "dcb4bb0698c380c4a03766fbd84a2172ffd2d82c42805573cbfe2e732f4794ef",
+      "raw_sha256": "24bf788c91da07ab2f461f808e4109b1488b20144f34f202f82594dbcb7d8949",
+      "whole_primary_owner_read": true
+    }
+  ],
+  "independent226_review_pending": true,
+  "received225review_path": "docs/review_packets/immigration_bounded_review_checkpoint225_received226.json",
+  "received225review_sha256": "a37a490f744daaf320384c1037a2ef31bcb862aa27f6e292b116cea97b0d9f26",
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "created_utc": "2026-10-13T23:57:59.109208+00:00",
+  "receipt_sha256": "437e4cf79252901541f0285641c58e9d3650ac650ad378e55bbaf78932c1a61f",
+  "source_registration_timestamp_labels_corrected_without_clock_reset": true
+}

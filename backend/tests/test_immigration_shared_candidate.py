@@ -18,6 +18,82 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_housing226_status_scope_follows_named_programmes_not_all_housing(self):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        statute = sources['govinfo:42usc1436a-operative2024-housing226']['text']
+        self.assertIn('United States Housing Act of 1937', statute)
+        self.assertIn('1474, 1490a(a)(2)(A)', statute)
+        self.assertIn('subtitle A of title III', statute)
+        self.assertNotIn('subtitle A of title II of', statute)
+        records = {r['action_id']: r for r in self.values[3]['records']}
+        for aid in ['house:119:2:57', 'house:119:2:176']:
+            text = records[aid]['rationale']
+            self.assertIn('HOME TitleII', text)
+            self.assertIn('not an individual', text)
+            core = next(c for c in self.products[0]['actions'] if c['action_id'] == aid)
+            sid = 'govinfo:42usc1436a-operative2024-housing226'
+            self.assertIn(sid, {s['source_id'] for s in core['operative_meaning_source_identities']})
+            self.assertTrue(any(c['source_id'] == sid and c['passage'] == statute for c in core['claim_source_map']))
+
+    def test_may226_escrow_admission_and_rent_exception_remain_separate(self):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        body = sources['govinfo:hres1299eh-full-housing']['text']
+        self.assertIn('may not escrow any amounts for any covered family whose adjusted income exceeds 80 percent', body)
+        self.assertIn('unless the eligible entity has established an alternative rent structure', body)
+        text = next(r['rationale'] for r in self.values[3]['records'] if r['action_id'] == 'house:119:2:176')
+        def check(candidate):
+            for phrase in ['bars ESCROWING AMOUNTS', 'not an invented blanket definition of family admission eligibility',
+                           'Secretary MAY establish', 'UNLESS an approved alternative rent structure',
+                           'TENyearprogramme termination', 'ceasing narrowly defined cash-welfare assistance AND']:
+                self.assertIn(phrase, candidate)
+        check(text)
+        for phrase in ['bars ESCROWING AMOUNTS', 'UNLESS an approved alternative rent structure', 'Secretary MAY establish']:
+            with self.subTest(predicate=phrase), self.assertRaises(AssertionError):
+                check(text.replace(phrase, 'universal admission rule'))
+        massie = next(m for m in self.products[2] if m['member_id'] == 'M001184')
+        row = next(a for a in massie['actions'] if a['action_id'] == 'house:119:2:176')
+        self.assertEqual(row['official_status'], 'Not Voting')
+        self.assertEqual(row['exact_choice_effect'], 'resolved_non_directional')
+
+    def test_coastguard226_literal_anchor_and_vessel_crew_scope_survive(self):
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        primary = sources['govinfo:hr4275eh']['text']
+        code = sources['govinfo:46usc7304-operative2024-cg226']['text']
+        self.assertIn('a citizen of the United States', code)
+        self.assertIn('not more than 50 percent of the unlicensed seamen', primary)
+        self.assertIn('ending on December 31, 2065', primary)
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == 'house:119:1:218')
+        def check(candidate):
+            text = candidate['candidate_exact_action_meaning']
+            for phrase in ['plural citizens', 'singular citizen', 'not first creation',
+                           'not a first-ever citizen-only rule', 'ONLY to the defined large-passenger-vessel',
+                           'throughDecember31,2065', 'EXISTING≤36month', 'not every LPR']:
+                self.assertIn(phrase, text)
+        check(core)
+        for phrase in ['singular citizen', 'ONLY to the defined large-passenger-vessel', 'EXISTING≤36month']:
+            bad = copy.deepcopy(core)
+            bad['candidate_exact_action_meaning'] = bad['candidate_exact_action_meaning'].replace(phrase, 'all vessel crews')
+            bad['action_core_sha256'] = sealed_digest(bad, 'action_core_sha256')
+            with self.subTest(predicate=phrase), self.assertRaises(AssertionError):
+                check(bad)
+
+    def test_housing226_required_source_hold_never_becomes_completion(self):
+        rows = {r['action_id']: r for r in self.values[2]['candidate_dispositions']}
+        reviewed = {r['action_id'] for r in self.values[3]['records']}
+        authored = {a['action_id'] for a in self.values[0]['actions']}
+        june = rows['house:119:2:224']
+        self.assertEqual(june['disposition'], 'source_unresolved')
+        self.assertTrue(june['review_progress']['required_evidence_unavailable'])
+        self.assertFalse(june['review_progress']['substantive_review_performed'])
+        self.assertNotIn(june['action_id'], reviewed | authored)
+        receipt = json.loads((DATA / 'housing_coastguard_screening_checkpoint226.json').read_text())
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(receipt['replacement_actions'], [])
+        self.assertNotIn(june['action_id'], receipt['completed_candidate_action_ids'])
+        self.assertEqual(receipt['blocked_action_ids'], ['house:119:2:228'])
+        self.assertNotIn('house:119:2:228', reviewed | authored)
+        self.assertIsNone(receipt['benchmark']['comparable_five_completion_average'])
+
     def test_spending224_qualification_conserves_shared_health_truth(self):
         old = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text())
         originals = {c['action_id']: c for c in old['actions']}

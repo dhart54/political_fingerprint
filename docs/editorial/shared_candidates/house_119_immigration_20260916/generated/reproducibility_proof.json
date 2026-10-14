@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "3c16756322aff864736efc83a3d58b8e3d40c4cdfa81a263545569d5389ac834",
-  "source_capture_sha256": "43dffc643b2f53f6acfc3020bb083c2f7a84a6f13c8b1f41aef09bea64fe6cc4",
-  "core_sha256": "47c2006517fba094f152206b1d0451f9c00da7b96ed2c40fe327fe477ae0a92d",
-  "compiled_sha256": "780f143fe32a2e42a086e3d243717f0ec552015e7c4592ea73d28402b29153eb",
-  "readable_sha256": "1574cf8d84c841a6c28bd2d9a80c2025b4c3f9bfb831b59be348c417c3ea2d86",
+  "input_sha256": "709d73d25094581acbe18c75ae363cb0c91b19d015e2160d2c0613d8a341ffad",
+  "source_capture_sha256": "82e1fca70ac32e820c5f8e3cfd4ea566bc612a482da8b975909dd9c6b5ebef7c",
+  "core_sha256": "09623fafd29fb5ae087a06f9b159cd2e740386fab278c8e23e73becda2e5fe64",
+  "compiled_sha256": "b91a0eeb759582af8e315e566320b985d0d6d2bd4c77de2063fdeef75fbde5c3",
+  "readable_sha256": "8c901994ec4d919dcef6b04616ed2cc6081f087e41ce4ea76e86aacec8cb3fd8",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -618,6 +618,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:218",
+      "shared_sha256": "51414d525f5b222c60f3b5347e4828bb09782e00429fa168804cd8b5b1c962c5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the entire exact package, including its qualified status/programme conditions",
+          "source_id": "clerk:119:1:218"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing that entire exact mixed package; no separate component stance or preferred alternative is inferred",
+          "source_id": "clerk:119:1:218"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:220",
       "shared_sha256": "b091a004a53c107db7aec4d2f11813954243fc8505cf25dc832ac0df98dea565",
       "choices": [
@@ -894,6 +914,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported disapproving the entire named D.C. temporary tax package with its qualified credit-access context",
           "source_id": "clerk:119:2:56"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:57",
+      "shared_sha256": "dc476822ec6e4ec0eb4d0a43bf9374e718546fce5c71ef405def3147a33a3ec8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the entire exact housing and banking package, including its qualified status/programme conditions",
+          "source_id": "clerk:119:2:57"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing that entire exact mixed package; no separate component stance or preferred alternative is inferred",
+          "source_id": "clerk:119:2:57"
         }
       ]
     },
@@ -1194,6 +1234,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passing the entire exact mixed appropriations package, including its qualified status/programme conditions",
           "source_id": "clerk:119:2:175"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:176",
+      "shared_sha256": "c295dca1fd0bc0512f642cd811a941cac0d93061388fb95cfa3650928e3e7d36",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the entire exact package, including its qualified status/programme conditions",
+          "source_id": "clerk:119:2:176"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:176"
         }
       ]
     },

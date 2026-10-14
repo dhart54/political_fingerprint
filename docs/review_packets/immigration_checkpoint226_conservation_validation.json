@@ -1,0 +1,160 @@
+{
+  "checkpoint": 226,
+  "base_head": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
+  "new_candidate_actions": [
+    "house:119:1:218",
+    "house:119:2:176",
+    "house:119:2:57"
+  ],
+  "held_required_source_actions": [
+    "house:119:2:224"
+  ],
+  "blocked_actions": [
+    "house:119:2:228"
+  ],
+  "other65cores638reviews672rows112props_projections_readable_and_audit_exact": true,
+  "all_original_Health_accepted_history_V19_V20_224_225_completion_CI_timing_and_notes_exact": true,
+  "all_previous_source_bank_manifest_private_pool_prefixes_exact": true,
+  "new_canonical_sources": 103,
+  "new_manifest_sources": 103,
+  "new_private_sources": 103,
+  "new_material_bodies": 27,
+  "unchanged_governed_imports": 76,
+  "active_counts": {
+    "reviewed": 641,
+    "pending": 35,
+    "cores": 68,
+    "behavioral_propositions": 116,
+    "episodes": 60,
+    "multi_action_episodes": 7,
+    "ordinary": 7,
+    "researched_holds": 28
+  },
+  "source_quality_sha256": "c0125a425caaae2cb81c913960abcd0e63ec6fd4784b7bc013f52b4f787b088c",
+  "screening_receipt_sha256": "437e4cf79252901541f0285641c58e9d3650ac650ad378e55bbaf78932c1a61f",
+  "refused_source_and_cancelled_operation_not_retried_or_rerouted": true,
+  "original_shared_neutral_meaning_prefix_and_exact_identity_retained": true,
+  "CG_new_material_operators_read_original_whole_context_reused": true,
+  "new_whole_CG_primary_read_claim": false,
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "independent226_review_pending": true,
+  "benchmarkFAILunchanged": true,
+  "full_gate_completed": true,
+  "focused_tests": 390,
+  "candidate_tests_included": 213,
+  "targeted_repair_rechecks": 5,
+  "initial_missing_audit_digest_errors": 3,
+  "original_failed_suite_preserved": true,
+  "semantic_checks": 7,
+  "IRvalidation": true,
+  "CLI_byte_exact_outputs": 7,
+  "validation_phases": [
+    {
+      "log": ".tmp/tests226.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-14T00:00:53.705495+00:00",
+      "completed_utc": "2026-10-14T00:12:10.780844+00:00",
+      "elapsed_seconds": 653.8638948999578,
+      "exit_code": 0,
+      "log_sha256": "a41938fd2170d12d7a450e329064aaf4a14adda55de160190264f4a8b63a98a1",
+      "initial_failed_attempt": {
+        "log": ".tmp/tests226.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate",
+          "backend.tests.test_editorial_semantic_ir",
+          "backend.tests.test_source_sequence",
+          "backend.tests.test_shared_domain_candidate"
+        ],
+        "started_utc": "2026-10-14T00:00:53.705495+00:00",
+        "completed_utc": "2026-10-14T00:11:30.538435+00:00",
+        "elapsed_seconds": 636.8164098999696,
+        "exit_code": 1,
+        "log_sha256": "a41938fd2170d12d7a450e329064aaf4a14adda55de160190264f4a8b63a98a1"
+      },
+      "gate_status": "All390test cases covered after repair:389 passed initially, audit binding passed targeted; four new source regressions also rechecked",
+      "targeted_repair": {
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_recorded_audit_binds_current_meanings_sources_and_observations",
+          "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_housing226_status_scope_follows_named_programmes_not_all_housing",
+          "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_may226_escrow_admission_and_rent_exception_remain_separate",
+          "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_coastguard226_literal_anchor_and_vessel_crew_scope_survive",
+          "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_housing226_required_source_hold_never_becomes_completion"
+        ],
+        "started_utc": "2026-10-14T00:11:53.733024+00:00",
+        "completed_utc": "2026-10-14T00:12:10.780844+00:00",
+        "elapsed_seconds": 17.047484999988228,
+        "exit_code": 0,
+        "log": ".tmp/tests226_repair.log",
+        "log_sha256": "da986c0513c4268b53747698308b1d64fd43850b7861230c56c845a556faa329"
+      },
+      "original_failure_log_preserved": true
+    },
+    {
+      "log": ".tmp/semantic226.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-14T00:12:10.785098+00:00",
+      "completed_utc": "2026-10-14T00:12:12.739315+00:00",
+      "elapsed_seconds": 1.9541809000074863,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp/ir226.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-14T00:12:12.740815+00:00",
+      "completed_utc": "2026-10-14T00:12:12.816536+00:00",
+      "elapsed_seconds": 0.07572650001384318,
+      "exit_code": 0,
+      "log_sha256": "c685b96081a679524028caab1b8863edfc97f4a8ce1241c10bc0442a915980de"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-14T00:12:12.822405+00:00",
+      "completed_utc": "2026-10-14T00:13:27.726934+00:00",
+      "elapsed_seconds": 74.9030523999827,
+      "outputs": 7
+    }
+  ],
+  "elapsed_seconds": 5.015377799980342,
+  "completed_utc": "2026-10-14T00:14:03.586976+00:00",
+  "receipt_sha256": "9dfffc858709d6cf088f91f90cedeb0091e14dd92080252fea73d12da3b0471f"
+}
