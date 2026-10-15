@@ -440,7 +440,10 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(rows[aid]['disposition'], 'interpreted_substantive_directional')
         self.assertEqual(rows[aid]['review_progress']['shared_review_record_sha256'], digest(records[aid]))
         core = next(c for c in self.products[0]['actions'] if c['action_id'] == aid)
-        self.assertEqual(core['action_core_sha256'], closure['new_core_sha256'])
+        precision = json.loads((DATA / 'ukraine_precision_checkpoint234.json').read_text(encoding='utf-8'))
+        self.assertEqual(precision['receipt_sha256'], sealed_digest(precision, 'receipt_sha256'))
+        self.assertEqual(precision['prior_core_sha256'], closure['new_core_sha256'])
+        self.assertEqual(core['action_core_sha256'], precision['new_core_sha256'])
 
     def test_ukraine233_preserves_original_shared_identity_prefix_and_observations(self):
         old = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
@@ -496,6 +499,52 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
                     prepare(author, self.values[1], ['F000477','M001184'])
 
+    def _assert_ukraine234_precision(self, text):
+        for fragment in ['318(a) permits the President to exercise',
+                         '318(b) requires the President to issue',
+                         'necessary to carry out the title',
+                         'passing both Houses in accordance with 321(c)',
+                         '12 calendar days after the date of passage',
+                         'passes both Houses under 321(c) and the President vetoes it',
+                         "10 calendar days after the date of the President's veto",
+                         'not automatically cumulative extensions',
+                         'during review absent an enacted approval resolution',
+                         'enacted disapproval prohibits the action']:
+            self.assertIn(fragment, text)
+        self.assertNotIn('passed disapproval adds12calendar days', text)
+        self.assertNotIn('powers, regulations, licences and orders and imports', text)
+
+    def test_ukraine234_318and321_precision_binds_exact_operatives(self):
+        aid = 'house:119:2:207'
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == aid)
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+        review = next(r for r in self.values[3]['records'] if r['action_id'] == aid)
+        for text in [core['candidate_exact_action_meaning'], core['mechanism'], action['meaning'], review['rationale']]:
+            self._assert_ukraine234_precision(text)
+        receipt = json.loads((DATA / 'ukraine_precision_checkpoint234.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(receipt['review_comment'], 6194802797)
+        self.assertEqual(receipt['reviewed_head'], 'd3bef950fcd4e26e145909198288c3e1389ed50b')
+        source = next(s for s in self.values[1]['sources'] if s['source_id'] == 'govinfo:hr2913eh')['text']
+        for point in receipt['source_points']:
+            self.assertEqual(point['passage'], source[point['start']:point['end']])
+            self.assertTrue(any(point['passage'] in c['passage'] for c in core['claim_source_map'] if c['source_id'] == point['source_id']))
+        self.assertIn('may exercise', receipt['source_points'][0]['passage'])
+        self.assertIn('shall issue', receipt['source_points'][1]['passage'])
+        for point in receipt['source_points'][2:]:
+            self.assertIn('both Houses', point['passage'])
+        self.assertFalse(receipt['editorial_acceptance'])
+        self.assertFalse(receipt['publication_authorized'])
+
+    def test_ukraine234_discretion_chambers_and_clocks_cannot_be_flattened(self):
+        text = next(c['candidate_exact_action_meaning'] for c in self.products[0]['actions'] if c['action_id'] == 'house:119:2:207')
+        for before,after in [('318(b) requires', '318(b) permits'),
+                             ('passing both Houses in accordance with 321(c)', 'passing one House'),
+                             ('12 calendar days after the date of passage', '12 additional days after initial review'),
+                             ("10 calendar days after the date of the President's veto", '10 additional days after the12dayperiod')]:
+            with self.subTest(predicate=before), self.assertRaises(AssertionError):
+                self._assert_ukraine234_precision(text.replace(before, after))
+
     def test_wrda233_source_progress_does_not_close_version_or_material_holds(self):
         receipt = json.loads((DATA / 'wrda_research_checkpoint233.json').read_text(encoding='utf-8'))
         self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
@@ -505,10 +554,70 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(extents[-1][1], 375169)
         self.assertTrue(all(a[1] == b[0] for a,b in zip(extents, extents[1:])))
         row = next(r for r in self.values[2]['candidate_dispositions'] if r['action_id'] == receipt['action_id'])
-        self.assertEqual(row['disposition'], 'source_unresolved')
+        closure = json.loads((DATA / 'wrda_qualification_checkpoint234.json').read_text(encoding='utf-8'))
+        self.assertEqual(closure['receipt_sha256'], sealed_digest(closure, 'receipt_sha256'))
+        self.assertEqual(closure['prior_pending_row']['disposition'], 'source_unresolved')
+        self.assertEqual(closure['prior_pending_row']['action_id'], receipt['action_id'])
+        self.assertEqual(row['disposition'], 'exact_action_ineligible')
         self.assertNotIn(receipt['action_id'], {a['action_id'] for a in self.values[0]['actions']})
         support = json.loads((DATA.parents[2] / 'review_packets/immigration_support_batch2_received233.json').read_text(encoding='utf-8'))
         self.assertFalse(support['new_resume_verification_of_six_cancelled_binaries'])
+
+    def test_wrda234_exact_choice_has_no_directional_or_component_credit(self):
+        aid = 'house:119:2:313'
+        row = next(r for r in self.values[2]['candidate_dispositions'] if r['action_id'] == aid)
+        review = next(r for r in self.values[3]['records'] if r['action_id'] == aid)
+        self.assertEqual(row['disposition'], 'exact_action_ineligible')
+        self.assertEqual(row['review_progress']['shared_review_record_sha256'], digest(review))
+        self.assertEqual(review['review_state'], 'candidate_pending_external_semantic_review')
+        self.assertNotIn(aid, {c['action_id'] for c in self.products[0]['actions']})
+        for member in self.products[2]:
+            self.assertNotIn(aid, {c['action_id'] for c in member['actions']})
+        clerk = next(s for s in self.values[1]['sources'] if s['source_id'] == 'clerk:119:2:313')
+        self.assertEqual(clerk['metadata']['vote-question'], 'On Motion to Suspend the Rules and Pass, as Amended')
+        self.assertEqual(clerk['metadata']['vote-type'], '2/3 YEA-AND-NAY')
+        self.assertEqual({k:v['official_label'] for k,v in clerk['member_records'].items()}, {'F000477':'Yea','M001184':'Yea'})
+
+    def test_wrda234_authorization_and_version_comparison_remain_bounded(self):
+        closure = json.loads((DATA / 'wrda_qualification_checkpoint234.json').read_text(encoding='utf-8'))
+        self.assertEqual(closure['receipt_sha256'], sealed_digest(closure, 'receipt_sha256'))
+        visual = closure['version_visual_comparison']
+        self.assertEqual(visual['receipt_sha256'], sealed_digest(visual, 'receipt_sha256'))
+        self.assertEqual(visual['authorization']['user_answer'], 'Allow these six artifacts')
+        self.assertEqual(len(visual['authorized_delivered_blobs']), 6)
+        self.assertEqual(visual['table_rows_compared'], 14)
+        self.assertEqual(len(visual['glyph_locations']), 11)
+        self.assertEqual(visual['mechanical_comparison']['ascii_lengths'], [294110,294121])
+        self.assertEqual(visual['mechanical_comparison']['unicode_lengths'], [294121,294121])
+        self.assertFalse(visual['mechanical_comparison']['section401_linear_sequence_equal'])
+        self.assertFalse(visual['whole_Record_parent_owner_read'])
+        self.assertFalse(closure['editorial_acceptance'])
+        self.assertFalse(closure['publication_authorized'])
+        sources = {s['source_id']:s for s in self.values[1]['sources']}
+        self.assertTrue(sources['govinfo:hr9497eh-complete234']['text'].startswith(sources['govinfo:hr9497eh-prefix195']['text']))
+        self.assertEqual(len(sources['govinfo:hr9497eh-complete234']['text']), 375169)
+        table = sources['immigration:roll313-floor401-234']['text']
+        for fragment in ['substantially in accordance with', 'subject to the conditions', 'Renourishment Federal', '$244,633,000', '$255,811,000']:
+            self.assertIn(fragment, table)
+
+    def test_wrda234_unbound_repaired_operator_is_rejected(self):
+        for before,after in [('by striking ``2\'\' and inserting ``7\'\'', 'by granting unrestricted benefits'),
+                             ('subject to the conditions', 'without any report conditions')]:
+            with self.subTest(predicate=before):
+                membership = copy.deepcopy(self.values[3])
+                row = next(r for r in membership['records'] if r['action_id'] == 'house:119:2:313')
+                claim = next(c for c in row['claim_source_map'] if c['source_id'] == 'govinfo:hr9497eh-complete234')
+                self.assertIn(before, claim['passage'])
+                claim['passage'] = claim['passage'].replace(before, after)
+                membership['review_sha256'] = sealed_digest(membership, 'review_sha256')
+                universe = copy.deepcopy(self.values[2])
+                candidate = next(r for r in universe['candidate_dispositions'] if r['action_id'] == row['action_id'])
+                candidate['review_progress']['shared_review_record_sha256'] = digest(row)
+                universe['membership_review_sha256'] = membership['review_sha256']
+                universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'], cutoff=universe['cutoff'], candidate_records=universe['candidate_dispositions']))
+                universe['proposal_sha256'] = sealed_digest(universe, 'proposal_sha256')
+                with self.assertRaisesRegex(ValueError, 'membership claim absent from bound source'):
+                    validate(self.values[0], self.values[1], universe, membership)
 
     def test_modern_candidate_qualification_preserves_Health_core_and_whole_CCDF_boundaries(self):
         from pathlib import Path

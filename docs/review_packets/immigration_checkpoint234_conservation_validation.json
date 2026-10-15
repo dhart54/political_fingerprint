@@ -1,0 +1,792 @@
+{
+  "checkpoint": 234,
+  "base_head": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+  "received_utc": "2026-10-15T15:12:45.713699+00:00",
+  "completed_action_ids": [
+    "house:119:2:313"
+  ],
+  "complex_actions_completed": 1,
+  "source_precision_corrections": [
+    {
+      "action_id": "house:119:2:207",
+      "review_comment": 6194802797,
+      "corrections": 2,
+      "new_screening_credit": 0
+    }
+  ],
+  "ordinary_routine_samples": 0,
+  "counts": {
+    "reviewed": 651,
+    "pending": 25,
+    "cores": 75,
+    "behavioral_propositions": 126,
+    "episodes": 65,
+    "multi_action_episodes": 9
+  },
+  "WRDA_qualification_receipt_sha256": "791465e0bb53bed9977a26ab4302e5efbb8f8f37c2de627bfb1e9eb29e7c84a0",
+  "Ukraine_precision_receipt_sha256": "db79ee15073b40c2ad6d6aea4034ea4c9a4637bfbc0a5c5463a166eafadb24f6",
+  "validation": {
+    "final_gate": {
+      "started_utc": "2026-10-15T15:01:16.679850+00:00",
+      "completed_utc": "2026-10-15T15:11:44.332993+00:00",
+      "wall_seconds": 627.6838285999838,
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-15T15:01:16.680448+00:00",
+          "PID": 17888,
+          "completed_utc": "2026-10-15T15:11:44.326873+00:00",
+          "elapsed_seconds": 627.677125700051,
+          "exit_code": 0,
+          "log": ".tmp/full_gate234_final/owner.log",
+          "log_sha256": "400455b33d4e21d4f8de635b3008747531ff719a8c9161a3d95ae5df066246e2"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-15T15:01:16.680715+00:00",
+          "PID": 29976,
+          "completed_utc": "2026-10-15T15:01:16.763987+00:00",
+          "elapsed_seconds": 0.08328469999833032,
+          "exit_code": 0,
+          "log": ".tmp/full_gate234_final/IR.log",
+          "log_sha256": "8eed4c63f2770461643386e92f773113054e4bebd19299758b387b732346ddb9"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-15T15:01:16.680605+00:00",
+          "PID": 30412,
+          "completed_utc": "2026-10-15T15:01:18.728753+00:00",
+          "elapsed_seconds": 2.0482549000298604,
+          "exit_code": 0,
+          "log": ".tmp/full_gate234_final/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate234_final\\replay"
+          ],
+          "started_utc": "2026-10-15T15:01:16.681104+00:00",
+          "PID": 25320,
+          "completed_utc": "2026-10-15T15:02:55.231162+00:00",
+          "elapsed_seconds": 98.55488100001821,
+          "exit_code": 0,
+          "log": ".tmp/full_gate234_final/replay.log",
+          "log_sha256": "47be227799004b165bcc054d9a494520db40cdbf831ad63fc6a30e03672d23e5",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "d58a8a028ad7690b7b791fbb6b5155c8c20cfee6a1177e4b6219c229cf90b116",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "bf943ca791c4429a296d58de8e67dc1d5be31803c46608a24801ac73ad271f2c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "2f89ce58b933ec2be9c6fbf3f4b6f30c9e33cd00944b48da6cd91c97f2b199ca",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "9157255547e6ec3c3b8d6b8220f0f0ba5f686ff7433847a0679ed8a8fceb7f02",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "365f596bd0f0609132d52304a6d37ebfd5c2ad287d37d7c01cc0eb96010158ca",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "88cdfc001a99c50168f9204e08b1fd73bad083dc8c2cd15ed68aad8d29d1d168",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "567a1cb95159180757035754e9d2a7ae29a607fc7cbabf6da7e64c9be8c7f779",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "73f27c31f0a61e38ccb2f17137838a9fb29a6d3c08974201e5a8a04886dc5834",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "1686edf9c438d86735993625bb93a7d445d79922956eaeb3c64e4894dbb92e4e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "0171e3de38082fb37ab8ddc2465c90d8183dd329ad93d524a27d97afba78a4a0",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "fce9c0c333702909abb192dd142b60c6b084f20a9907b763123b024ead6f0f84",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "7c2a5a18e1f5f44834ca7860c6ce6a96dbf244d9103e8a8f5b593ce0083d0b1e",
+        "backend/tests/test_immigration_shared_candidate.py": "abac6778e038291db9c20d8863691efead8bcd1a8677b5349d756b2f9b325d0d",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/wrda_qualification_checkpoint234.json": "a793ee702a3af9c93701e70087e395527d4b8b5fc7f947f0a4c6d850f00ddd7f",
+        "docs/review_packets/immigration_checkpoint233_ci_received234.json": "4cde85b0e98afc022803897590e89e328bff903ead4237bb50acbbdf2abb4386",
+        "docs/review_packets/immigration_support_reviews_received234.json": "8276cd12778484c6f182e7d0de7fc395009e8b9c727a50c642c457e4131dad37",
+        "docs/plans/immigration_checkpoint234_remaining.md": "444549d95287b2a9620d1feab184f4c4ed2192157d1b468f40e1c698f2a6c321",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/ukraine_precision_checkpoint234.json": "8c9bf79279d37e0072707b3f7486073abfe189d89493a4c3e82587ed4a02eea5",
+        "docs/editorial/shared_candidates/house_119_ukraine_precision_checkpoint234/shared_action_core_proposal.json": "952a4eb785750f4097750aee9175505f547165527c91188cb6779e144912a810",
+        "docs/editorial/shared_candidates/house_119_ukraine_precision_checkpoint234/README.md": "5fd8ba562f98d536f01d302b1e0cfe4caff52d1420a32b5394feed8f81e32fb7",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "da976ecae93714251a1954aeb940222625f5a8e964605cedbe96f27846d8991c"
+      },
+      "input_hashes_unchanged": true
+    },
+    "owner_tests": 428,
+    "Immigration_tests": 251,
+    "semantic_checks": 7,
+    "actual_CLI_outputs_byte_exact": 7,
+    "final_changed_input_gate_ran_once": true,
+    "full_gate_runs_this_batch": 2,
+    "pre_correction_gate": {
+      "started_utc": "2026-10-15T14:45:17.068788+00:00",
+      "completed_utc": "2026-10-15T14:55:50.915245+00:00",
+      "wall_seconds": 633.889804699982,
+      "phases": [
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-15T14:45:17.069482+00:00",
+          "PID": 21660,
+          "completed_utc": "2026-10-15T14:45:19.114988+00:00",
+          "elapsed_seconds": 2.045650000043679,
+          "exit_code": 0,
+          "log": ".tmp/full_gate234/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-15T14:45:17.069320+00:00",
+          "PID": 17104,
+          "completed_utc": "2026-10-15T14:55:50.909124+00:00",
+          "elapsed_seconds": 633.8831647000043,
+          "exit_code": 0,
+          "log": ".tmp/full_gate234/owner.log",
+          "log_sha256": "26d90ff6cc7b68cbc9e6ce76366151121f89e8d245d74e40f8b3e5ada0c33f4e"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-15T14:45:17.069698+00:00",
+          "PID": 3400,
+          "completed_utc": "2026-10-15T14:45:17.156053+00:00",
+          "elapsed_seconds": 0.0863656000001356,
+          "exit_code": 0,
+          "log": ".tmp/full_gate234/IR.log",
+          "log_sha256": "7a489c234db968575160cfb88681585e7f200f6ee206e4e9025f15482d12f8f0"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate234\\replay"
+          ],
+          "started_utc": "2026-10-15T14:45:17.070122+00:00",
+          "PID": 19412,
+          "completed_utc": "2026-10-15T14:47:03.768213+00:00",
+          "elapsed_seconds": 106.70539519999875,
+          "exit_code": 0,
+          "log": ".tmp/full_gate234/replay.log",
+          "log_sha256": "a7a9e25d02f71119c43e4b246968120ba294f6ee88bbbceb74b283caba14882d",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "926d43967585c5b0d58e20c8050ae016c57f0aa8dd709306ea1e226f88c505b9",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "7ee7bf9a79b1aed39a6b1627908c164d232480d56e85782cbdc2466528029df6",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "38017bd0d12af20cc37d8317a42f546b39ad7e104598db600882d250fb32882b",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "9157255547e6ec3c3b8d6b8220f0f0ba5f686ff7433847a0679ed8a8fceb7f02",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "365f596bd0f0609132d52304a6d37ebfd5c2ad287d37d7c01cc0eb96010158ca",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "88cdfc001a99c50168f9204e08b1fd73bad083dc8c2cd15ed68aad8d29d1d168",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "4cd6d72e0bdd8ed8766942635cdb7ccfad1317cb354c11ba6db1486eaebf9415",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "3d9d5a14038057fa479ee70fd2b8c05978018b89ac35ee528366d0d556a6f91c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "c31d8a8b621c8a8df9b945eb92d336cb26a8a15f8e66fc8929622f3b5259a04b",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "fd607e1c0cda1bee45eac2dacf0cfe538628789bd9882ee19c77ed65d8c89a81",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "1745225c7577c08752e29ae7972ee95c1b6f0d76dc8b4b7e283b93d36193c57f",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "7c2a5a18e1f5f44834ca7860c6ce6a96dbf244d9103e8a8f5b593ce0083d0b1e",
+        "backend/tests/test_immigration_shared_candidate.py": "79165c4d326d30223f4890e2c32daca41221641ff2b69e47387ab8376c7b7df1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/wrda_qualification_checkpoint234.json": "a793ee702a3af9c93701e70087e395527d4b8b5fc7f947f0a4c6d850f00ddd7f",
+        "docs/review_packets/immigration_checkpoint233_ci_received234.json": "4cde85b0e98afc022803897590e89e328bff903ead4237bb50acbbdf2abb4386",
+        "docs/review_packets/immigration_support_reviews_received234.json": "8276cd12778484c6f182e7d0de7fc395009e8b9c727a50c642c457e4131dad37",
+        "docs/plans/immigration_checkpoint234_remaining.md": "801d81f68811bddc71b2109b262c44adaaa6f466996be90225a68a6cc7052ce6"
+      },
+      "input_hashes_unchanged": true
+    },
+    "reason_for_second_gate": "Fresh6194802797review arrived while the first full gate ran. Source-confirmed318may/shall and321two-chamber/event-clock P3repairs changed active meaning/provider, so final changed inputs require validation. No unchanged status rerun.",
+    "initial_focused": {
+      "started_utc": "2026-10-15T14:42:18.350434+00:00",
+      "completed_utc": "2026-10-15T14:42:37.092225+00:00",
+      "elapsed_seconds": 18.743586600001436,
+      "exit_code": 0,
+      "tests": [
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda233_source_progress_does_not_close_version_or_material_holds",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda234_exact_choice_has_no_directional_or_component_credit",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda234_authorization_and_version_comparison_remain_bounded",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda234_unbound_repaired_operator_is_rejected"
+      ],
+      "log_sha256": "badefbfa31136ab3caf43bd0b3f8926cfd9b05304b2b3214c818dad10a2d1ed6"
+    },
+    "initial_historical_proof": {
+      "checked_utc": "2026-10-15T14:42:38.423444+00:00",
+      "immutable_head": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+      "original_method_source_git_blob_sha256": "b4576642ee91c634eb7bb3e9c54169c475fb2835c7a0c6d6de1364214f49ee10",
+      "five_fixture_git_blob_sha256": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "5f7deca458c7f2d4fbc22fcb7360275585cc7c9fb4e4b5ab54fbcb8fe9c6c846",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "a1faba5afbe2e64a2ade2c3904884fad0c534a2161b101c75051363f535d63fa",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "fa6237b53ae2101b23e1ba3403f5e085689d4c74223007eac4c91ee34c0678a1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "272b9c6c928bfd0988f524a6fc524c78c120df59bc1a974ccdf76bb082bff8f8",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "aeda244dc7b4be6c0b5b7421f18813420869f1471fdfd5942781d07316e1518c"
+      },
+      "unchanged_historical_method": "test_wrda233_source_progress_does_not_close_version_or_material_holds",
+      "passed": true,
+      "elapsed_seconds": 1.3258645000169054,
+      "receipt_sha256": "66ce4d331405509439fc3a42ede779dc5b45ca93bcd5fbd0e2c06467dc462df4"
+    },
+    "final_focused": {
+      "started_utc": "2026-10-15T14:59:36.002097+00:00",
+      "completed_utc": "2026-10-15T14:59:55.044551+00:00",
+      "elapsed_seconds": 19.043530500028282,
+      "exit_code": 0,
+      "tests": [
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda233_source_progress_does_not_close_version_or_material_holds",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda234_exact_choice_has_no_directional_or_component_credit",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda234_authorization_and_version_comparison_remain_bounded",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda234_unbound_repaired_operator_is_rejected",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine233_preserves_original_shared_identity_prefix_and_observations",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine233_direct_routes_and_malformed_imports_bind_operatives",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine234_318and321_precision_binds_exact_operatives",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine234_discretion_chambers_and_clocks_cannot_be_flattened"
+      ],
+      "log_sha256": "0dbc07f33141f9ede36381e1151e3a21f4aeac055c0ac9732127c302c8c06a0a"
+    },
+    "unchanged_three_historical_methods": {
+      "checked_utc": "2026-10-15T14:59:56.436317+00:00",
+      "immutable_head": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+      "original_method_source_git_blob_sha256": "b4576642ee91c634eb7bb3e9c54169c475fb2835c7a0c6d6de1364214f49ee10",
+      "five_fixture_git_blob_sha256": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "5f7deca458c7f2d4fbc22fcb7360275585cc7c9fb4e4b5ab54fbcb8fe9c6c846",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "a1faba5afbe2e64a2ade2c3904884fad0c534a2161b101c75051363f535d63fa",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "fa6237b53ae2101b23e1ba3403f5e085689d4c74223007eac4c91ee34c0678a1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "272b9c6c928bfd0988f524a6fc524c78c120df59bc1a974ccdf76bb082bff8f8",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "aeda244dc7b4be6c0b5b7421f18813420869f1471fdfd5942781d07316e1518c"
+      },
+      "unchanged_historical_methods": [
+        "test_spending224_budget_noncounting_and_reconciled207_has_no_credit",
+        "test_wilson252_two_day_sequence_and_four_open_cases_are_preserved",
+        "test_wrda233_source_progress_does_not_close_version_or_material_holds"
+      ],
+      "unchanged_historical_helper": "_assert_ukraine233_closure",
+      "passed": true,
+      "elapsed_seconds": 1.3871710999519564,
+      "receipt_sha256": "62abbf9546d253f33ad5a929bcc6123c714124094887dbe4df2cd83317070f51"
+    },
+    "all_final_held_inputs_still_exact": true
+  },
+  "conservation": {
+    "checkpoint": 234,
+    "base_head": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+    "checked_utc": "2026-10-15T15:00:37.062377+00:00",
+    "all74unmodified_prior_cores_exact": true,
+    "Ukraine207two_source_P3corrections": "db79ee15073b40c2ad6d6aea4034ea4c9a4637bfbc0a5c5463a166eafadb24f6",
+    "all649unmodified_prior_reviews_exact": true,
+    "all674unaffected_inventory_rows_exact": true,
+    "all126prior_behavioral_propositions_exact": true,
+    "all150official_status_and_exact_choice_observations_exact": true,
+    "Ukraine_all64prior_claim_bindings_witnesses_limits_and_shared_identity_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "ten_qualified_source_appends": true,
+    "all_Health_historical_providers_receipts_and_inherited230P3repairs_exact": true,
+    "all_other_pending_and_reserved_holds_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3603,
+    "frozen_private_notes_exact": 326,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 651,
+      "pending": 25,
+      "cores": 75,
+      "behavioral_propositions": 126,
+      "episodes": 65,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 5.801677700015716,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "2822ba370c342ee87bd0db87e64a5d9fadac1fa3f6442a149d337ea8ab1c0f57"
+  },
+  "pre_correction_conservation": {
+    "checkpoint": 234,
+    "base_head": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+    "checked_utc": "2026-10-15T14:45:16.805226+00:00",
+    "all75prior_cores_exact": true,
+    "all650prior_reviews_exact": true,
+    "all675unaffected_inventory_rows_exact": true,
+    "all126prior_behavioral_propositions_exact": true,
+    "all150prior_member_action_observations_exact": true,
+    "authoring_and_six_generated_products_byte_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "ten_qualified_source_appends": true,
+    "all_Health_historical_providers_receipts_and_prior_P3repairs_exact": true,
+    "all_other_pending_and_reserved_holds_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3604,
+    "frozen_private_notes_exact": 326,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 651,
+      "pending": 25,
+      "cores": 75,
+      "behavioral_propositions": 126,
+      "episodes": 65,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 4.626475600001868,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "40e278d78a0d6b1a2622c581976f0387e60333c1f83c6b5a7420747c72a08df8"
+  },
+  "timing": {
+    "conservative_first_work_bound_utc": "2026-10-15T13:54:40.607024+00:00",
+    "required_final_gate_completed_utc": "2026-10-15T15:11:44.332993+00:00",
+    "gross_batch_seconds_through_gate": 4623.725969,
+    "seconds_per_completed_complex_action_through_gate": 4623.725969,
+    "receipt_completed_utc": "2026-10-15T15:12:45.713699+00:00",
+    "gross_seconds_through_receipt": 4685.106675,
+    "scope": "Gross conservative resumed234bound includes WRDA material review and CRinspection overlapping233gate/delivery. One completed complex package and two precision corrections, not inflated routine completion. Earlier wholeEHreading/historical work is additional/unisolated, not zero.",
+    "observed_settings": {
+      "base_model_identity": "GPT-6",
+      "selected_variant": "unexposed",
+      "reasoning_effort": "unexposed",
+      "speed_service_tier": "unexposed",
+      "no_settings_changed": true
+    },
+    "snapshot": 1.9315156000084244,
+    "six_artifact_replay": {
+      "started_utc": "2026-10-15T14:33:33.006297+00:00",
+      "completed_utc": "2026-10-15T14:33:35.468866+00:00",
+      "elapsed_seconds": 2.4628047999576665,
+      "support_head": "8c4a7288c9f1158b337a48229ad4f1557e89efb2",
+      "snapshot": "4565bc7eb91a23f5b3c164294b8aa9a7765cd54c",
+      "delivered_blobs_verified": 12,
+      "source_identities_verified": 11,
+      "old_pinpoints_verified": 13,
+      "fresh_parent_pinpoints_verified": 2,
+      "raw_parents_verified": 2,
+      "all_11glyphs_verified": 11,
+      "whole_source_human_read": false,
+      "visual_table_comparison_independently_done": false,
+      "legal_or_domain_clearance": false,
+      "candidate_changes": false,
+      "research_for_next_batch": true,
+      "canonical233gate_inputs_untouched": true,
+      "receipt_sha256": "7bdd66e1f080b1b1ca80760f305206e0e65a0ab35aa2f13096d89d543ec5d376"
+    },
+    "material_capture_windows": [
+      {
+        "started_utc": "2026-10-15T13:57:28.559796+00:00",
+        "completed_utc": "2026-10-15T13:57:28.851708+00:00",
+        "elapsed_seconds": 0.2919584999908693,
+        "sources": [
+          {
+            "name": "dam_program2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap9-subchapVII.htm",
+            "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap9-subchapVII.htm",
+            "http_status": 200,
+            "raw_sha256": "100aa4e92163a9c28200fd706a180a6af16915fab5db8b2ee6f4df259f967266",
+            "raw_bytes": 132801,
+            "text_sha256": "4351fe09e771c5b0e1e14510c4a1b472868e0b2d55ca8ac7ba64bc8180976a77",
+            "text_length": 87010,
+            "read_or_governed": false,
+            "not_a_current_law_certificate": true,
+            "started_utc": "2026-10-15T13:57:28.559972+00:00",
+            "completed_utc": "2026-10-15T13:57:28.771613+00:00",
+            "elapsed_seconds": 0.21168170002056286
+          },
+          {
+            "name": "property_screen2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap159-sec2696.htm",
+            "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap159-sec2696.htm",
+            "http_status": 200,
+            "raw_sha256": "43008e227a671cd59aa80ed99e4176b43612d6c1e43fc2fdaefd1dda8c3decbc",
+            "raw_bytes": 16281,
+            "text_sha256": "85a3dc486c4c91666a3f09f81607a3248a55afd8586eafd5d7a513f8fc0d1853",
+            "text_length": 11635,
+            "read_or_governed": false,
+            "not_a_current_law_certificate": true,
+            "started_utc": "2026-10-15T13:57:28.771707+00:00",
+            "completed_utc": "2026-10-15T13:57:28.851672+00:00",
+            "elapsed_seconds": 0.07998139999108389
+          }
+        ],
+        "scope": "New independent material baselines only, no cancelled six-binary replay or canonical233mutation.",
+        "prior_failed_commands": [
+          {
+            "reason": "Python313bs4missing; failure before any fetch",
+            "seconds": 0.4561056
+          },
+          {
+            "reason": "Sandbox proxy connection refused before an HTTP response; not a government-source refusal",
+            "seconds": 2.5058399
+          }
+        ],
+        "parser": "stdlibHTMLParser, script/style omitted, entity conversion and whitespace collapse; raw responses unchanged."
+      },
+      {
+        "started_utc": "2026-10-15T13:59:32.283480+00:00",
+        "completed_utc": "2026-10-15T13:59:32.560437+00:00",
+        "elapsed_seconds": 0.27699919999577105,
+        "sources": [
+          {
+            "name": "emergency5196_2016",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2016-title42/html/USCODE-2016-title42-chap68-subchapIV-B-sec5196.htm",
+            "final_url": "https://www.govinfo.gov/error",
+            "http_status": 200,
+            "raw_sha256": "ab214ce9f7a706cc4ee93703502f950222090c2547e47fafd75a299545919743",
+            "raw_bytes": 44172,
+            "text_sha256": "6641513bd7bd492a12722b92e9c788a944cff94da3bac8e5697517d246a2898d",
+            "text_length": 1501,
+            "read_or_governed": false,
+            "not_a_current_law_certificate": true,
+            "started_utc": "2026-10-15T13:59:32.283596+00:00",
+            "completed_utc": "2026-10-15T13:59:32.560384+00:00",
+            "elapsed_seconds": 0.27684500004397705
+          }
+        ],
+        "scope": "New independent material baselines only, no cancelled six-binary replay or canonical233mutation.",
+        "prior_failed_commands": [
+          {
+            "reason": "Python313bs4missing; failure before any fetch",
+            "seconds": 0.4561056
+          },
+          {
+            "reason": "Sandbox proxy connection refused before an HTTP response; not a government-source refusal",
+            "seconds": 2.5058399
+          }
+        ],
+        "parser": "stdlibHTMLParser, script/style omitted, entity conversion and whitespace collapse; raw responses unchanged."
+      },
+      {
+        "started_utc": "2026-10-15T14:00:14.564516+00:00",
+        "completed_utc": "2026-10-15T14:00:14.805050+00:00",
+        "elapsed_seconds": 0.24057010002434254,
+        "sources": [
+          {
+            "name": "emergency5196_2016_correct",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2016-title42/html/USCODE-2016-title42-chap68-subchapIV-B-partA-sec5196.htm",
+            "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2016-title42/html/USCODE-2016-title42-chap68-subchapIV-B-partA-sec5196.htm",
+            "http_status": 200,
+            "raw_sha256": "5b19d0f60c7f9e1a1239abf5c55724f215ba36991c8a0e39c6efe0851eed10c3",
+            "raw_bytes": 33358,
+            "text_sha256": "834ad1ab6cb97ce0afad8fc2471d67abdd573bf5f7be3723b6eedb36649ab1bb",
+            "text_length": 26316,
+            "read_or_governed": false,
+            "not_a_current_law_certificate": true,
+            "started_utc": "2026-10-15T14:00:14.564655+00:00",
+            "completed_utc": "2026-10-15T14:00:14.805005+00:00",
+            "elapsed_seconds": 0.2403995000058785
+          }
+        ],
+        "scope": "New independent material baselines only, no cancelled six-binary replay or canonical233mutation.",
+        "prior_failed_commands": [
+          {
+            "reason": "Python313bs4missing; failure before any fetch",
+            "seconds": 0.4561056
+          },
+          {
+            "reason": "Sandbox proxy connection refused before an HTTP response; not a government-source refusal",
+            "seconds": 2.5058399
+          }
+        ],
+        "parser": "stdlibHTMLParser, script/style omitted, entity conversion and whitespace collapse; raw responses unchanged."
+      },
+      {
+        "started_utc": "2026-10-15T14:35:17.959353+00:00",
+        "completed_utc": "2026-10-15T14:35:18.473374+00:00",
+        "elapsed_seconds": 0.5140643999911845,
+        "sources": [
+          {
+            "name": "nonfederal2201_2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap36-subchapI-sec2201.htm",
+            "final_url": "https://www.govinfo.gov/error",
+            "http_status": 200,
+            "raw_sha256": "ab214ce9f7a706cc4ee93703502f950222090c2547e47fafd75a299545919743",
+            "raw_bytes": 44172,
+            "text_sha256": "6641513bd7bd492a12722b92e9c788a944cff94da3bac8e5697517d246a2898d",
+            "text_length": 1501,
+            "read_or_governed": false,
+            "not_a_current_law_certificate": true,
+            "started_utc": "2026-10-15T14:35:17.959459+00:00",
+            "completed_utc": "2026-10-15T14:35:18.256813+00:00",
+            "elapsed_seconds": 0.2973888999549672
+          },
+          {
+            "name": "agreements1962d5b_2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap19B-sec1962d-5b.htm",
+            "final_url": "https://www.govinfo.gov/error",
+            "http_status": 200,
+            "raw_sha256": "ab214ce9f7a706cc4ee93703502f950222090c2547e47fafd75a299545919743",
+            "raw_bytes": 44172,
+            "text_sha256": "6641513bd7bd492a12722b92e9c788a944cff94da3bac8e5697517d246a2898d",
+            "text_length": 1501,
+            "read_or_governed": false,
+            "not_a_current_law_certificate": true,
+            "started_utc": "2026-10-15T14:35:18.256917+00:00",
+            "completed_utc": "2026-10-15T14:35:18.386548+00:00",
+            "elapsed_seconds": 0.12964949995512143
+          },
+          {
+            "name": "reports2282d_2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap36-subchapV-sec2282d.htm",
+            "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap36-subchapV-sec2282d.htm",
+            "http_status": 200,
+            "raw_sha256": "9dbd9296759d2b550f42389456528567c321ea1527fde0ebc37de6c1aff5ee2d",
+            "raw_bytes": 29767,
+            "text_sha256": "741d8d6c54bdd68d89fee4ce3a4a90d39327000fd3b77d002f124ba3f4c6bf65",
+            "text_length": 21403,
+            "read_or_governed": false,
+            "not_a_current_law_certificate": true,
+            "started_utc": "2026-10-15T14:35:18.386657+00:00",
+            "completed_utc": "2026-10-15T14:35:18.473329+00:00",
+            "elapsed_seconds": 0.08668599999509752
+          }
+        ],
+        "scope": "New independent material baselines only, no cancelled six-binary replay or canonical233mutation.",
+        "prior_failed_commands": [
+          {
+            "reason": "Python313bs4missing; failure before any fetch",
+            "seconds": 0.4561056
+          },
+          {
+            "reason": "Sandbox proxy connection refused before an HTTP response; not a government-source refusal",
+            "seconds": 2.5058399
+          }
+        ],
+        "parser": "stdlibHTMLParser, script/style omitted, entity conversion and whitespace collapse; raw responses unchanged."
+      },
+      {
+        "started_utc": "2026-10-15T14:35:40.822616+00:00",
+        "completed_utc": "2026-10-15T14:35:41.028256+00:00",
+        "elapsed_seconds": 0.20565389998955652,
+        "sources": [
+          {
+            "name": "agreements1962d5b_2024_correct",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap19B-subchapIV-sec1962d-5b.htm",
+            "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap19B-subchapIV-sec1962d-5b.htm",
+            "http_status": 200,
+            "raw_sha256": "2a46daccc1ae59128bafa089192596324d8ce42a0c2b4902d150c8bba046eb29",
+            "raw_bytes": 38040,
+            "text_sha256": "e619b8e0d633acbdc92fb40312ba8fe2ce22469a2ac0f8212d21b9e07e17c179",
+            "text_length": 30158,
+            "read_or_governed": false,
+            "not_a_current_law_certificate": true,
+            "started_utc": "2026-10-15T14:35:40.822711+00:00",
+            "completed_utc": "2026-10-15T14:35:41.028204+00:00",
+            "elapsed_seconds": 0.20551880000857636
+          }
+        ],
+        "scope": "New independent material baselines only, no cancelled six-binary replay or canonical233mutation.",
+        "prior_failed_commands": [
+          {
+            "reason": "Python313bs4missing; failure before any fetch",
+            "seconds": 0.4561056
+          },
+          {
+            "reason": "Sandbox proxy connection refused before an HTTP response; not a government-source refusal",
+            "seconds": 2.5058399
+          }
+        ],
+        "parser": "stdlibHTMLParser, script/style omitted, entity conversion and whitespace collapse; raw responses unchanged."
+      }
+    ],
+    "initial_authoring_command_wall_seconds": 0.6994508,
+    "metadata_refinement_script_seconds": 0.3506360999890603,
+    "WRDA_application": {
+      "started_utc": "2026-10-15T14:40:31.504928+00:00",
+      "completed_utc": "2026-10-15T14:42:03.281797+00:00",
+      "elapsed_seconds": 91.7856353999814,
+      "counts": {
+        "reviewed": 651,
+        "pending": 25,
+        "cores": 75,
+        "behavioral_propositions": 126,
+        "episodes": 65,
+        "multi_action_episodes": 9
+      },
+      "qualification_receipt_sha256": "791465e0bb53bed9977a26ab4302e5efbb8f8f37c2de627bfb1e9eb29e7c84a0",
+      "source_appends": 10,
+      "full_gate_pending": true
+    },
+    "Ukraine_precision_application": {
+      "started_utc": "2026-10-15T14:56:48.972883+00:00",
+      "completed_utc": "2026-10-15T14:58:19.599212+00:00",
+      "elapsed_seconds": 90.63252959999954,
+      "review_comment": 6194802797,
+      "source_points": 4,
+      "changes": 2,
+      "new_core_sha256": "4045dd13913a392cad39c6ab6af0dbfa73095e744ce33d9154dcb68d5956d7d9",
+      "receipt_sha256": "db79ee15073b40c2ad6d6aea4034ea4c9a4637bfbc0a5c5463a166eafadb24f6",
+      "pre_correction_gate_record": ".tmp/full_gate234/result.json",
+      "final_changed_input_gate_pending": true
+    },
+    "initial_focused_seconds": 18.743586600001436,
+    "final_focused_seconds": 19.043530500028282,
+    "historical_proof_seconds": [
+      1.3258645000169054,
+      1.3871710999519564
+    ],
+    "failed_conservation_command_wall_seconds": 1.8369937,
+    "conservation_seconds": [
+      4.626475600001868,
+      5.801677700015716
+    ],
+    "full_gate_wall_seconds": [
+      633.889804699982,
+      627.6838285999838
+    ],
+    "research_time": "Reading, images, source/legal reconciliation, drafting, tool/approval waits and command overhead interleave; no exclusive research/model timer. Unallocated costs stay in gross wall, not guessed latency/idle.",
+    "rework": "Retained wrong-pathHTTP200wrappers, missing-bs4/proxy failures, cp1252inspection failure, oversized source search and guessed-file failures. Duplicate-target patch rejected before mutation; conservation initially left target row in prior comparison and was corrected; one nested-quoting receipt-helper command failed before mutation. New review triggered two source P3repairs and final changed-input gate. Both complete gate costs retained; no gate failure or weakened rule.",
+    "overlap": "234research/CRinspection overlaps233gate/delivery/CI. Four read-only validation processes overlap in each gate; process times are not additive exclusive labor. Private235CRdrafting during234gate changes no234input and is included in gross elapsed window.",
+    "reused_historical_cost": "WholeEHreading began before shutdown and completed at233. All195/232/233, original Health/CR, support2and raw/text history retains attributed costs; all-history exclusive case cost is not isolated. Old cancelled cloud operation remains historical; only six exact artifacts were newly authorized.",
+    "CI233": {
+      "first_actual_job_started_utc": "2026-10-15T14:10:11Z",
+      "last_actual_job_completed_utc": "2026-10-15T14:31:35Z",
+      "completion_observed_utc": "2026-10-15T14:34:13.974419+00:00",
+      "job_windows": [
+        {
+          "name": "m14f-exact-head",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:11:06Z"
+        },
+        {
+          "name": "m14g-exact-head",
+          "started_at": "2026-10-15T14:10:11Z",
+          "completed_at": "2026-10-15T14:11:25Z"
+        },
+        {
+          "name": "m14e-exact-head",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:11:10Z"
+        },
+        {
+          "name": "foushee-full-record-benchmark",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:15:01Z"
+        },
+        {
+          "name": "m14h-exact-head",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:31:35Z"
+        },
+        {
+          "name": "amendment-evidence-contracts",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:10:54Z"
+        },
+        {
+          "name": "receipt-evidence-repair-postgres",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:16:57Z"
+        },
+        {
+          "name": "publication-activation-postgres",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:13:52Z"
+        },
+        {
+          "name": "m14d-exact-head",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:11:07Z"
+        },
+        {
+          "name": "measure-reference-integration",
+          "started_at": "2026-10-15T14:10:12Z",
+          "completed_at": "2026-10-15T14:11:25Z"
+        }
+      ],
+      "scope": "Ten first-attempt actual execution windows overlap; no rerun or exclusive labor claim."
+    },
+    "delivery_and_new_CI": "Commit/push/PR and234CI follow this receipt, measured separately and not assumed zero.",
+    "routine_target_seconds": 600,
+    "benchmarkFAILretained": true,
+    "no_comparable_routine_improvement_claim": true,
+    "failed_final_gate_launcher_command_wall_seconds": 0.2134933,
+    "failed_receipt_helper_shell_command_wall_seconds": 0.2787211,
+    "failed_launcher_scope": "Unknown encoding alias utf8-sig corrected to utf-8-sig; failure before validation started, not a third gate."
+  },
+  "boundary_review": {
+    "received_comments": [
+      6194407911,
+      6194605289,
+      6194802797,
+      6194907777
+    ],
+    "reviewed_candidate_head": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+    "P3_findings_handled": "318implementation discretionary versus necessary regulations required;321both-Houses predicate and separate12/10dayevent periods. Qualified317membership retained;233history unchanged.",
+    "WRDA_review_context": "Reviewer313hold applied to exact233and did not replay restricted binaries. Later explicit user approval and234version/material evidence are separate prospective work, no retroactive image certification.",
+    "support_scope": "44table-location review/triage attributed to196c68a8/cd49d5f3, no fiscal/domain ruling;6194907777is a read-only44currency diagnostic claim, not candidate authority.",
+    "arbitrary_comments_not_authority": true,
+    "final_delivery_comments": [
+      6195355985,
+      6195413165
+    ],
+    "exact_currency_support_head": "f366acb95736102f75420237dac63c7b750ced92",
+    "currency_support_scope": "Bounded independent review supports24source-image transcriptions and four reconciled sums; literal extraction stays separate,965other amounts mechanically carried. No writer replay or recipient/fiscal/legal/Immigration judgment. Consume at natural later boundary, no234canonical source/candidate delta."
+  },
+  "behavior_and_diff_review": "WRDA313review/disposition and ten source appends plus two Ukraine207source P3precisions in a new successor. All74other cores/649other reviews/674other rows/126propositions/150official status-and-choice observations exact. All64Ukraineclaim bindings/witnesses/limits/shared identity and original Health prefix exact. Historical233provider/receipts and inherited230P3s unchanged. No new directional Immigration core or proposition.",
+  "worktree_hashes_not_Git_blob_hashes": true,
+  "raw_logs_and_captures_local_owner_attributed": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "receipt_sha256": "0893770171cbbe020f20159dedc53ede917845362d9ab5aa78bca90d7158dafc"
+}
