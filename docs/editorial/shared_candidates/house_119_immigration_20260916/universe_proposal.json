@@ -97,7 +97,9 @@
     "house:119:2:154",
     "house:119:1:199",
     "house:119:1:349",
-    "house:119:2:271"
+    "house:119:2:271",
+    "house:119:2:218",
+    "house:119:2:283"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Membership requires an exact operative Immigration & Border mechanism: status/presence, admission, visas/asylum/refugees/parole, removal, detention/release, naturalization/citizenship, immigration documentation/verification/adjudication, direct border entry/inspection/enforcement, immigration-specific standards/cooperation, or eligibility directly governed by immigration status. Titles, policy labels, rhetoric, keywords and other-domain interpretations are leads only. Procedural/expressive controls remain noncounting.",
@@ -112,9 +114,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 229,
-      "interpreted_substantive_directional": 81,
-      "exact_action_ineligible": 347,
-      "source_unresolved": 17,
+      "interpreted_substantive_directional": 83,
+      "exact_action_ineligible": 348,
+      "source_unresolved": 14,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -124,14 +126,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 81,
-    "directional_substantive_actions": 81,
+    "substantive_eligible_actions": 83,
+    "directional_substantive_actions": 83,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 229,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 347,
-    "unresolved_boundary_cases": 17,
-    "independent_episode_count": 71,
+    "exact_action_ineligible_actions": 348,
+    "unresolved_boundary_cases": 14,
+    "independent_episode_count": 73,
     "multi_action_episode_count": 9,
     "mechanism_types": [
       "amendment",
@@ -141,8 +143,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 81,
-      "substantive_actions": 81,
+      "ready_substantive_actions": 83,
+      "substantive_actions": 83,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -455,11 +457,13 @@
         "house:119:2:205",
         "house:119:2:207",
         "house:119:2:214",
+        "house:119:2:218",
         "house:119:2:221",
         "house:119:2:244",
         "house:119:2:271",
         "house:119:2:272",
         "house:119:2:280",
+        "house:119:2:283",
         "house:119:2:286",
         "house:119:2:308"
       ],
@@ -544,6 +548,7 @@
         "house:119:1:146",
         "house:119:1:147",
         "house:119:1:150",
+        "house:119:1:151",
         "house:119:1:155",
         "house:119:1:157",
         "house:119:1:158",
@@ -813,7 +818,6 @@
         "house:119:2:314"
       ],
       "source_unresolved": [
-        "house:119:1:151",
         "house:119:1:210",
         "house:119:1:237",
         "house:119:1:262",
@@ -822,14 +826,12 @@
         "house:119:2:157",
         "house:119:2:193",
         "house:119:2:196",
-        "house:119:2:218",
         "house:119:2:224",
         "house:119:2:228",
         "house:119:2:243",
         "house:119:2:245",
         "house:119:2:247",
-        "house:119:2:278",
-        "house:119:2:283"
+        "house:119:2:278"
       ],
       "expressive_nonbinding_context": [
         "house:119:2:102",
@@ -1272,6 +1274,18 @@
         "action_ids": [
           "house:119:2:271"
         ]
+      },
+      {
+        "episode_candidate_id": "house:119:hr8312",
+        "action_ids": [
+          "house:119:2:218"
+        ]
+      },
+      {
+        "episode_candidate_id": "house:119:hr8884",
+        "action_ids": [
+          "house:119:2:283"
+        ]
       }
     ],
     "multi_action_episodes": [
@@ -1385,11 +1399,11 @@
         "legal_application_questions": "Separate queue now includes one bounded G102-105 printed-date/general-continuance question; no personal eligibility or FY2025 quota application accepted."
       }
     ],
-    "interpreted_action_count_qualification": "81 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
+    "interpreted_action_count_qualification": "83 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "83f1ea1b3044395b62af9a4a88a8150d831546460c02fdf133cf952a9388ea45",
+  "universe_subject_sha256": "d92e4da5b64ff99ee15587fcd389e7c539220735e629ef89a315aa8d835b53bc",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -11633,8 +11647,8 @@
       "date": "2025-06-04",
       "measure": "H R 2483",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Checkpoint 190 bounds original recovery-housing section 8071(a)-(g), complete 2020 notice II.D-E/K-M and the complete 2021 update, complete 2024 workforce-loan section 295h and CAREER section 290ee-8, and omitted expired FASD Part O. Exact EH section 305(b) removes only the Secretary technical-assistance subsection (f) two-year window, retaining its 2% cap; waiver subsection (e), notice restrictions and per-person housing limits are distinct. The HUD grantee 3% technical-assistance allowance is a separate rule, and RHP waivers do not cover separately used CDBG funds. EH section 204 changes only loan authorization subsection (j); additional criteria subsection (g), service/loan conditions and the migrant-health-center worksite identity remain. EH section 104 replaces expired Part O with its new institutional grant/service text; old eligibility is not inherited as live law. These material source chains are available and bounded, without certifying all intervening law, beneficiary citizenship/status, HRSA guidance or project implementation. The HRSA program page returned 403 once and was not retried; other authoritative routes/program application remain research, without proving evidence unavailable. Keep action 151 unresolved/noncounting pending remaining materially affected program/beneficiary conditions, institutional versus individual benefit application and bounded Immigration review. Do not infer automatic fit/exclusion or universal coverage. The whole EH and own declaration/engrossment/passage witnesses from checkpoint 189 remain; failed roll 150 is not imported. The existing Health core/ref/digests are unchanged. Own passage question precedes voice ayes and Pallone demand/order: 366-57 with 9 Not Voting, Foushee Yea and Massie Nay. No new meaning, proposition, component stance, enacted/current-law claim or acceptance.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact June 4, 2025 House passage is complete H.R. 2483 EH, the four-title SUPPORT reauthorization package. Its own declaration, engrossment and passage witnesses remain distinct from the failed roll 150 amendment. The complete 58,652-character EH was freshly read in six contiguous intervals, with the earlier whole-reading and material-baseline history retained. Whole-package Health eligibility is not inherited as Immigration membership. Authorizations, research, public-health surveillance, institutional grants, clinical services, professional training, data safeguards and conditional agency action are not silently personal admission, status or border-enforcement rules.\n\nTitle I updates specified prevention authorizations and overdose surveillance, expands the stated substance/risk contexts and provides the new FASD education, identification, intervention, capacity and service framework. FASD grant/cooperative-agreement/contract eligibility is stated for institutional entities under the new provisions; culturally and linguistically appropriate services do not establish a patient's citizenship or immigration status. The former expired Part O is not treated as an unqualified live benefit programme that the bill simply extends. The new lifeline cybersecurity duties, reasonable-time notices, oversight allocation, other-law savings and 180-day GAO study/report remain programme-security measures. The fentanyl work group's public-health coordination and recommendations are not a new migrant admission/removal or direct border-inspection authority, and legislative findings are not personal wrongdoing findings.\n\nTitle II addresses treatment, workforce education, patient-record training and coordinated care. Section 204 changes only the authorization in 42 U.S.C. 295h(j), from the printed $25 million for fiscal years 2019–2023 to $40 million for fiscal years 2026–2030. It does not itself rewrite subsection (g)'s additional Secretary criteria, the eligible-loan/service terms, the $250,000 individual payment limit or the no-double-benefit/breach rules. A migrant health center is one listed worksite in the dated treatment-employment definition, not a rule making every borrower a migrant or determining a patient's or worker's immigration status. Actual beneficiary qualification, additional HRSA criteria and current implementation remain unqualified. The prior HRSA programme-page 403 is retained and was not retried or replaced with a disguised copy. The authorization is not an appropriation, a known payment or a finding that all noncitizens qualify or are barred.\n\nThe bill's conditional review of buprenorphine/naloxone scheduling is not itself a rescheduling or a personal immigration determination: the Secretary reviews data and, if appropriate, requests proceedings; the Attorney General separately decides whether to initiate proceedings under the cited Controlled Substances Act criteria. Drug approval, distribution, public-health geography, institutional location and a possible later agency action do not automatically establish an Immigration operator in this exact proposal. Credential/training-provider changes and named United States educational institutions are not silently a citizenship or lawful-presence test. Existing other-law and individual professional-licensing applications remain legal questions rather than universal eligibility findings.\n\nTitle III's recovery/workforce grants and recovery-housing provisions retain distinct actors and limits. The HHS CAREER changes include the specified 2018–2022 average indicators, qualified transportation use capped at five percent, reporting and separate authorization. The HUD Recovery Housing Pilot amendments extend the programme's printed authorization period and update the allocation direction. Removing the two-year window in original section 8071(f) concerns Secretary technical assistance and leaves its two-percent cap; it does not remove the separate waiver subsection (e), the notice restrictions or the per-person housing limits. The grantee's three-percent technical-assistance allowance is a different rule. RHP waivers do not silently waive separately used CDBG funds. The complete declared original provision and selected 2020/2021 notices remain dated witnesses, not a certificate of current projects, beneficiary status or all intervening law. The SAMHSA funding-information meeting, website improvements and reports do not decide who receives a benefit.\n\nTitle IV changes the specified pharmacy-to-practitioner controlled-substance delivery conditions and recognized training/curriculum pathways, with its printed December 29, 2022 as-if-enacted effective-date clause. It does not itself create a visa, naturalization, asylum, removal, immigration-documentation or direct border-enforcement mechanism. The qualification is a functional screening of the exact proposed operators, not a claim that no programme, profession or future agency action can ever interact with other immigration or public-benefit law. Institutional/service/loan/credential rules and unresolved individual applications remain explicit; no generic Health, funding, migrant-worksite or foreign-drug label supplies Immigration membership.\n\nCandidate functional Immigration exclusion, noncounting and pending independent source/domain review. The original unapproved Health candidate and all historical evidence, withdrawals, denied/cancelled-source restrictions and earlier research remain unchanged. Own passage proceeds from voice ayes through Pallone's demand/order to recorded passage 366–57 with nine Not Voting; official member observations retained separately; no failed-amendment or invented postponement/resumption meaning is imported. A Yea supports and a Nay opposes the whole exact package, without a separate component stance, preferred alternative or motive. No enactment, programme outcome, immigration status, actual fraud/guilt, personal eligibility, editorial acceptance or publication authorization is inferred.",
       "source": {
         "source_id": "clerk:119:1:151",
         "url": "https://clerk.house.gov/evs/2025/roll151.xml",
@@ -11652,9 +11666,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Checkpoint 190 bounds original recovery-housing section 8071(a)-(g), complete 2020 notice II.D-E/K-M and the complete 2021 update, complete 2024 workforce-loan section 295h and CAREER section 290ee-8, and omitted expired FASD Part O. Exact EH section 305(b) removes only the Secretary technical-assistance subsection (f) two-year window, retaining its 2% cap; waiver subsection (e), notice restrictions and per-person housing limits are distinct. The HUD grantee 3% technical-assistance allowance is a separate rule, and RHP waivers do not cover separately used CDBG funds. EH section 204 changes only loan authorization subsection (j); additional criteria subsection (g), service/loan conditions and the migrant-health-center worksite identity remain. EH section 104 replaces expired Part O with its new institutional grant/service text; old eligibility is not inherited as live law. These material source chains are available and bounded, without certifying all intervening law, beneficiary citizenship/status, HRSA guidance or project implementation. The HRSA program page returned 403 once and was not retried; other authoritative routes/program application remain research, without proving evidence unavailable. Keep action 151 unresolved/noncounting pending remaining materially affected program/beneficiary conditions, institutional versus individual benefit application and bounded Immigration review. Do not infer automatic fit/exclusion or universal coverage. The whole EH and own declaration/engrossment/passage witnesses from checkpoint 189 remain; failed roll 150 is not imported. The existing Health core/ref/digests are unchanged. Own passage question precedes voice ayes and Pallone demand/order: 366-57 with 9 Not Voting, Foushee Yea and Massie Nay. No new meaning, proposition, component stance, enacted/current-law claim or acceptance.",
-      "unresolved_reason": "pending_health_program_beneficiary_application_after_material_baselines190",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact June 4, 2025 House passage is complete H.R. 2483 EH, the four-title SUPPORT reauthorization package. Its own declaration, engrossment and passage witnesses remain distinct from the failed roll 150 amendment. The complete 58,652-character EH was freshly read in six contiguous intervals, with the earlier whole-reading and material-baseline history retained. Whole-package Health eligibility is not inherited as Immigration membership. Authorizations, research, public-health surveillance, institutional grants, clinical services, professional training, data safeguards and conditional agency action are not silently personal admission, status or border-enforcement rules.\n\nTitle I updates specified prevention authorizations and overdose surveillance, expands the stated substance/risk contexts and provides the new FASD education, identification, intervention, capacity and service framework. FASD grant/cooperative-agreement/contract eligibility is stated for institutional entities under the new provisions; culturally and linguistically appropriate services do not establish a patient's citizenship or immigration status. The former expired Part O is not treated as an unqualified live benefit programme that the bill simply extends. The new lifeline cybersecurity duties, reasonable-time notices, oversight allocation, other-law savings and 180-day GAO study/report remain programme-security measures. The fentanyl work group's public-health coordination and recommendations are not a new migrant admission/removal or direct border-inspection authority, and legislative findings are not personal wrongdoing findings.\n\nTitle II addresses treatment, workforce education, patient-record training and coordinated care. Section 204 changes only the authorization in 42 U.S.C. 295h(j), from the printed $25 million for fiscal years 2019–2023 to $40 million for fiscal years 2026–2030. It does not itself rewrite subsection (g)'s additional Secretary criteria, the eligible-loan/service terms, the $250,000 individual payment limit or the no-double-benefit/breach rules. A migrant health center is one listed worksite in the dated treatment-employment definition, not a rule making every borrower a migrant or determining a patient's or worker's immigration status. Actual beneficiary qualification, additional HRSA criteria and current implementation remain unqualified. The prior HRSA programme-page 403 is retained and was not retried or replaced with a disguised copy. The authorization is not an appropriation, a known payment or a finding that all noncitizens qualify or are barred.\n\nThe bill's conditional review of buprenorphine/naloxone scheduling is not itself a rescheduling or a personal immigration determination: the Secretary reviews data and, if appropriate, requests proceedings; the Attorney General separately decides whether to initiate proceedings under the cited Controlled Substances Act criteria. Drug approval, distribution, public-health geography, institutional location and a possible later agency action do not automatically establish an Immigration operator in this exact proposal. Credential/training-provider changes and named United States educational institutions are not silently a citizenship or lawful-presence test. Existing other-law and individual professional-licensing applications remain legal questions rather than universal eligibility findings.\n\nTitle III's recovery/workforce grants and recovery-housing provisions retain distinct actors and limits. The HHS CAREER changes include the specified 2018–2022 average indicators, qualified transportation use capped at five percent, reporting and separate authorization. The HUD Recovery Housing Pilot amendments extend the programme's printed authorization period and update the allocation direction. Removing the two-year window in original section 8071(f) concerns Secretary technical assistance and leaves its two-percent cap; it does not remove the separate waiver subsection (e), the notice restrictions or the per-person housing limits. The grantee's three-percent technical-assistance allowance is a different rule. RHP waivers do not silently waive separately used CDBG funds. The complete declared original provision and selected 2020/2021 notices remain dated witnesses, not a certificate of current projects, beneficiary status or all intervening law. The SAMHSA funding-information meeting, website improvements and reports do not decide who receives a benefit.\n\nTitle IV changes the specified pharmacy-to-practitioner controlled-substance delivery conditions and recognized training/curriculum pathways, with its printed December 29, 2022 as-if-enacted effective-date clause. It does not itself create a visa, naturalization, asylum, removal, immigration-documentation or direct border-enforcement mechanism. The qualification is a functional screening of the exact proposed operators, not a claim that no programme, profession or future agency action can ever interact with other immigration or public-benefit law. Institutional/service/loan/credential rules and unresolved individual applications remain explicit; no generic Health, funding, migrant-worksite or foreign-drug label supplies Immigration membership.\n\nCandidate functional Immigration exclusion, noncounting and pending independent source/domain review. The original unapproved Health candidate and all historical evidence, withdrawals, denied/cancelled-source restrictions and earlier research remain unchanged. Own passage proceeds from voice ayes through Pallone's demand/order to recorded passage 366–57 with nine Not Voting; official member observations retained separately; no failed-amendment or invented postponement/resumption meaning is imported. A Yea supports and a Nay opposes the whole exact package, without a separate component stance, preferred alternative or motive. No enactment, programme outcome, immigration status, actual fraud/guilt, personal eligibility, editorial acceptance or publication authorization is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:151",
@@ -11732,10 +11746,11 @@
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "6e61562f2f10d0724daeed7b7a1ddc2a0bba860e52c99bcb359459a73d17adae"
       }
     },
     {
@@ -44771,8 +44786,8 @@
       "date": "2026-06-10",
       "measure": "bill_119_hr_8312",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Complete H.R.8312 EH and own full floor reproduction are read and match under declared formatting comparison, with the substitute adopted under H.Res.1345 section1. Fiscal Service fraud/payment-integrity functions are noninvestigative/nonlaw-enforcement, qualified financial-loss analytics rather than policy enforcement; permanent IG powers are separate. DNP applicable-law and Privacy Act limits, voluntary State/local/tribal services and bulk/realtime sharing agreements remain qualified. DATA Act inserted FFATA6(c)(1) may-to-shall change is separate. New section 317 IG oversight covers the 13 listed categories in 317(l)(2)(A), including SBA loans under multiple laws, unemployment compensation and whole PL11921, plus (B) Federal awards of at least $50,000, (C) intramural research payments and (D) emergency disaster-relief or economic-recovery spending; current PRAC also gained thisAct coverage through enacted90102, which changed original2025 termination to2034. Original completeCARES15010 and literal90102 are read; intervening covered-fund Acts/current integration remain research. The bill section5 targets CARES15010(k) but parenthetical15US9053 identifiesSIGPR/CARES4018, and section3(b) literally cites317(n) while definitions are317(l); Recovery/Prevention transition title mismatch and undefined center remain literal, not repaired. IG406(f3) treatment waives initialAGdetermination only; guidelines/rescission/review safeguards remain. Rendered403/406 baselines retain material Amendments Not Shown qualifications; transition notwithstanding403 andVacanciesAct is not asserted as unrestricted permanent appointment. Qualified staffing and annuitant paragraphs, audit standards, disclosure/privacy exclusions, agency responses, independence/funding bounds retained. December31,2028 effective date differs FY2035 annual10m authorization; assets/unobligated funds transfer with original-purpose exception, not unlimited current spending. Keep unresolved/noncounting pending exact cross-reference/integration and bounded Immigration application of covered funds. No automatic inclusion/exclusion from titles/agencies or wholeAct context, individual criminal/benefit-status ruling, existing core reinterpretation or hold release. Initial question precedes voice ayes, Walkinshaw demand/order and postponement; recorded240-181 with10NotVoting, Foushee Nay/Massie Yea; Rouzer hypothetical stated intention excluded.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "The exact June 10, 2026 House passage choice is the whole H.R. 8312 EH, not an individual fraud allegation, a separate appointment or a vote on a particular database. Section 2 assigns the Fiscal Service financial-integrity, spending-transparency and improper-payment functions and expressly excludes an investigative or law-enforcement function. Its voluntary data-analysis services are for detecting fraud and preventing improper payments resulting in financial loss to government, not policy analysis or enforcement. State, local and Tribal participation, written agreements, applicable privacy/security law and the stated purpose limits remain. Its identity, eligibility, account and vital-event tools do not automatically become immigration-document adjudication or a mandatory immigration database. The dated complete 31 U.S.C. 3354 lists its own required databases, designation procedures and matching/access safeguards; it recognizes that law may require a payment even when a recipient is identified as potentially ineligible. Actual database designations, eligibility decisions or programme implementation are not supplied by this candidate.\n\nSection 3 creates a separate Treasury Office of Inspector General for Fraud, Accountability, and Recovery. Its oversight, audits, investigations, analytical support and coordination concern the defined covered funds, not all public spending without conditions. The definition includes thirteen enumerated funding categories, including the whole named Public Law 119-21; a separate Federal-award branch uses the section 7501 definition and not-less-than-$50,000 threshold, alongside separate intramural-research and emergency-spending branches. Current PRAC already received thisAct coverage and a2034termination change through enacted PublicLaw119-21section90102; this bill is not described as the first addition of that coverage. Underlying programme law and actual award or beneficiary qualification are not reconstructed from that list. Oversight and investigative activities are treated as civil or criminal law-enforcement activities under the printed clauses, distinct from the Fiscal Service's express non-investigative role. Cooperation with DOJ or other inspectors general does not become an unrestricted immigration-enforcement power or a finding that a person committed fraud.\n\nThe bounded Immigration intersection is the express personnel-rule substitution in proposed 31 U.S.C. 317(e)(1). Notwithstanding 5 U.S.C. 406(a)(7), the Inspector General may use 5 U.S.C. 3161(b) through (i), without subsections (a) or (b)(2), as if the Office were a temporary organization, to appoint necessary personnel and carry out its functions. The dated 406(a)(7) ordinarily makes appointment subject to competitive-service and specified classification/pay provisions; dated 3161(b)(3) identifies the positions as excepted service. The three-year appointment period and possible two-year extension in 3161(b)(2) are expressly carved out, not silently imposed on the new Office. Dated sections 2102/2103 distinguish service classifications. The separately dated competitive-appointment nationality rules and their limited exceptions, already qualified in this corpus, are not silently applied to every excepted-service position or treated as repealed for all Federal employment. This is a source-qualified appointment/nationality-framework relationship, not a finding that every noncitizen may be hired, that every citizenship/appropriation/work-authorization requirement is waived, or that a particular person gains immigration status. Transfer of existing PRAC employees preserves substantively the same terms and conditions under the printed clause; no individual appointment, new visa or adverse employment result is inferred. Other-law, appropriation, classification and individual eligibility applications remain unresolved.\n\nThe new Inspector General is appointed by the President with Senate advice and consent, without regard to political affiliation and under the stated ability criteria. Removal, acting service and information access remain distinct from personal immigration status. The recodification's October 19, 2021 cutoff and Public Law 117-286 section 5(b) preserve the correspondence of the selected December 23, 2022 source amendments; the selected before/amendment/after display is not official current consolidated law. The amendments add detailed removal/non-duty communications and inquiry findings, qualified fifteen/thirty-day notice branches, acting-service qualifications and the separate ninety-of-365-day conditions. The bill's own outer section 3(c) transition is separate: its printed notwithstanding clauses and PRAC-chair/Executive-Director fallback are not replaced by an assumed general acting-officer rule. The chapter-definition syntax and old/new numbering differences are retained without manufacturing technical text. The incorporated threat predicates are four alternatives: threat to the employee or others, destruction of investigation-relevant evidence, loss of or damage to Government property, or otherwise jeopardizing legitimate Government interests. The underlying6329b rule says may while the403caller says poses; its exclusion of the Inspector General from employee differs from the procedures for OIGemployees. This does not import all general leave machinery into403 or resolve the express caller. The dated3346text preserves the sickness exception, initial210day and first/second nomination-pending branches, separate210day periods after rejected/withdrawn/returned nominations, and the sine-die adjournment rule beginning the subsection(a)period when the Senate first reconvenes. It does not toll every recess or imply unlimited service. The historical1998effective-date/already-vacant/renomination transitions differ from the December23,2022amendment applicability and30day delay for already-acting IGpositions. Outer bill3(c)literally ends at3349, not3349d. Subsequent-law, broaderFVRA and actual officeholder applications remain for review.\n\nProposed 317(d)(2) treats the Office as described in 406(f)(3) and exempts only an initial Attorney General determination under (f)(2). It does not erase guidelines, possible rescission/suspension, nonreviewability, periodic external review or the original November 25, 2002 memorandum-of-understanding anchor. The distinct 406(f)(9) definition, the new section 317 appointment and their interaction are not silently repaired. General criminal arrest/search powers are not an immigration removal order. The 2022 information-refusal amendment's thirty-day congressional notice differs from the grand-jury fifteen-day determination/thirty-day denial-statement clocks. The already-absent Government strike and old section 12(3)/new 401(4) definition-position discrepancy remain disclosed rather than forced into a false match.\n\nThe bill's records clauses invoke the specified Privacy Act law-enforcement purposes and state that records may constitute investigative material; this is not a blanket automatic exemption from every privacy or disclosure rule. Required agreements, protected information, redactions and public-report limits remain. Section 4's data-sharing permissions are bounded by existing law, appropriate privacy protections and reimbursement conditions, with separate future recommendations and governmentwide guidance. Section 3 takes effect December 31, 2028; annual $10 million funding authorization begins in fiscal year 2035, not an immediate appropriation. The asset/obligation transfer and expressly permitted use of transferred unspent balances remain distinct. Printed section 317(n) versus definitions in (l), the transition office-name variation, the inside-title disclosure references and the CARES section 15010/15 U.S.C. 9053 parentheticals remain unresolved references, not silently rewritten. No enactment, funding availability, fraud recovery or individual legal result is asserted.\n\nThe own floor sequence proceeds from voice ayes through a demand/order and postponement to recorded passage240–181with10NotVoting; later stated hypothetical intentions are not official votes. A Yea supports and a Nay opposes the whole exact package, without a separate staffing, privacy or covered-fund stance, preferred alternative or motive. Present and Not Voting remain non-directional. The qualified candidate relationship is routed for independent source/domain review under the existing contract; it is not an accepted methodology decision, a personal nationality finding, editorial acceptance or publication authority.",
       "source": {
         "source_id": "clerk:119:2:218",
         "url": "https://clerk.house.gov/evs/2026/roll218.xml",
@@ -44780,7 +44795,7 @@
         "governed_bytes_sha256": "5688bf733bda2a36145d18bb0f615a9bec9283f18629d8e9df620a8cbaa3dc59",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "house:119:hr8312",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_8312",
       "member_action": "nay",
@@ -44789,10 +44804,16 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Complete H.R.8312 EH and own full floor reproduction are read and match under declared formatting comparison, with the substitute adopted under H.Res.1345 section1. Fiscal Service fraud/payment-integrity functions are noninvestigative/nonlaw-enforcement, qualified financial-loss analytics rather than policy enforcement; permanent IG powers are separate. DNP applicable-law and Privacy Act limits, voluntary State/local/tribal services and bulk/realtime sharing agreements remain qualified. DATA Act inserted FFATA6(c)(1) may-to-shall change is separate. New section 317 IG oversight covers the 13 listed categories in 317(l)(2)(A), including SBA loans under multiple laws, unemployment compensation and whole PL11921, plus (B) Federal awards of at least $50,000, (C) intramural research payments and (D) emergency disaster-relief or economic-recovery spending; current PRAC also gained thisAct coverage through enacted90102, which changed original2025 termination to2034. Original completeCARES15010 and literal90102 are read; intervening covered-fund Acts/current integration remain research. The bill section5 targets CARES15010(k) but parenthetical15US9053 identifiesSIGPR/CARES4018, and section3(b) literally cites317(n) while definitions are317(l); Recovery/Prevention transition title mismatch and undefined center remain literal, not repaired. IG406(f3) treatment waives initialAGdetermination only; guidelines/rescission/review safeguards remain. Rendered403/406 baselines retain material Amendments Not Shown qualifications; transition notwithstanding403 andVacanciesAct is not asserted as unrestricted permanent appointment. Qualified staffing and annuitant paragraphs, audit standards, disclosure/privacy exclusions, agency responses, independence/funding bounds retained. December31,2028 effective date differs FY2035 annual10m authorization; assets/unobligated funds transfer with original-purpose exception, not unlimited current spending. Keep unresolved/noncounting pending exact cross-reference/integration and bounded Immigration application of covered funds. No automatic inclusion/exclusion from titles/agencies or wholeAct context, individual criminal/benefit-status ruling, existing core reinterpretation or hold release. Initial question precedes voice ayes, Walkinshaw demand/order and postponement; recorded240-181 with10NotVoting, Foushee Nay/Massie Yea; Rouzer hypothetical stated intention excluded.",
-      "unresolved_reason": "pending_fraud_package_literal_crossreferences_and_Immigration_application194",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "The exact June 10, 2026 House passage choice is the whole H.R. 8312 EH, not an individual fraud allegation, a separate appointment or a vote on a particular database. Section 2 assigns the Fiscal Service financial-integrity, spending-transparency and improper-payment functions and expressly excludes an investigative or law-enforcement function. Its voluntary data-analysis services are for detecting fraud and preventing improper payments resulting in financial loss to government, not policy analysis or enforcement. State, local and Tribal participation, written agreements, applicable privacy/security law and the stated purpose limits remain. Its identity, eligibility, account and vital-event tools do not automatically become immigration-document adjudication or a mandatory immigration database. The dated complete 31 U.S.C. 3354 lists its own required databases, designation procedures and matching/access safeguards; it recognizes that law may require a payment even when a recipient is identified as potentially ineligible. Actual database designations, eligibility decisions or programme implementation are not supplied by this candidate.\n\nSection 3 creates a separate Treasury Office of Inspector General for Fraud, Accountability, and Recovery. Its oversight, audits, investigations, analytical support and coordination concern the defined covered funds, not all public spending without conditions. The definition includes thirteen enumerated funding categories, including the whole named Public Law 119-21; a separate Federal-award branch uses the section 7501 definition and not-less-than-$50,000 threshold, alongside separate intramural-research and emergency-spending branches. Current PRAC already received thisAct coverage and a2034termination change through enacted PublicLaw119-21section90102; this bill is not described as the first addition of that coverage. Underlying programme law and actual award or beneficiary qualification are not reconstructed from that list. Oversight and investigative activities are treated as civil or criminal law-enforcement activities under the printed clauses, distinct from the Fiscal Service's express non-investigative role. Cooperation with DOJ or other inspectors general does not become an unrestricted immigration-enforcement power or a finding that a person committed fraud.\n\nThe bounded Immigration intersection is the express personnel-rule substitution in proposed 31 U.S.C. 317(e)(1). Notwithstanding 5 U.S.C. 406(a)(7), the Inspector General may use 5 U.S.C. 3161(b) through (i), without subsections (a) or (b)(2), as if the Office were a temporary organization, to appoint necessary personnel and carry out its functions. The dated 406(a)(7) ordinarily makes appointment subject to competitive-service and specified classification/pay provisions; dated 3161(b)(3) identifies the positions as excepted service. The three-year appointment period and possible two-year extension in 3161(b)(2) are expressly carved out, not silently imposed on the new Office. Dated sections 2102/2103 distinguish service classifications. The separately dated competitive-appointment nationality rules and their limited exceptions, already qualified in this corpus, are not silently applied to every excepted-service position or treated as repealed for all Federal employment. This is a source-qualified appointment/nationality-framework relationship, not a finding that every noncitizen may be hired, that every citizenship/appropriation/work-authorization requirement is waived, or that a particular person gains immigration status. Transfer of existing PRAC employees preserves substantively the same terms and conditions under the printed clause; no individual appointment, new visa or adverse employment result is inferred. Other-law, appropriation, classification and individual eligibility applications remain unresolved.\n\nThe new Inspector General is appointed by the President with Senate advice and consent, without regard to political affiliation and under the stated ability criteria. Removal, acting service and information access remain distinct from personal immigration status. The recodification's October 19, 2021 cutoff and Public Law 117-286 section 5(b) preserve the correspondence of the selected December 23, 2022 source amendments; the selected before/amendment/after display is not official current consolidated law. The amendments add detailed removal/non-duty communications and inquiry findings, qualified fifteen/thirty-day notice branches, acting-service qualifications and the separate ninety-of-365-day conditions. The bill's own outer section 3(c) transition is separate: its printed notwithstanding clauses and PRAC-chair/Executive-Director fallback are not replaced by an assumed general acting-officer rule. The chapter-definition syntax and old/new numbering differences are retained without manufacturing technical text. The incorporated threat predicates are four alternatives: threat to the employee or others, destruction of investigation-relevant evidence, loss of or damage to Government property, or otherwise jeopardizing legitimate Government interests. The underlying6329b rule says may while the403caller says poses; its exclusion of the Inspector General from employee differs from the procedures for OIGemployees. This does not import all general leave machinery into403 or resolve the express caller. The dated3346text preserves the sickness exception, initial210day and first/second nomination-pending branches, separate210day periods after rejected/withdrawn/returned nominations, and the sine-die adjournment rule beginning the subsection(a)period when the Senate first reconvenes. It does not toll every recess or imply unlimited service. The historical1998effective-date/already-vacant/renomination transitions differ from the December23,2022amendment applicability and30day delay for already-acting IGpositions. Outer bill3(c)literally ends at3349, not3349d. Subsequent-law, broaderFVRA and actual officeholder applications remain for review.\n\nProposed 317(d)(2) treats the Office as described in 406(f)(3) and exempts only an initial Attorney General determination under (f)(2). It does not erase guidelines, possible rescission/suspension, nonreviewability, periodic external review or the original November 25, 2002 memorandum-of-understanding anchor. The distinct 406(f)(9) definition, the new section 317 appointment and their interaction are not silently repaired. General criminal arrest/search powers are not an immigration removal order. The 2022 information-refusal amendment's thirty-day congressional notice differs from the grand-jury fifteen-day determination/thirty-day denial-statement clocks. The already-absent Government strike and old section 12(3)/new 401(4) definition-position discrepancy remain disclosed rather than forced into a false match.\n\nThe bill's records clauses invoke the specified Privacy Act law-enforcement purposes and state that records may constitute investigative material; this is not a blanket automatic exemption from every privacy or disclosure rule. Required agreements, protected information, redactions and public-report limits remain. Section 4's data-sharing permissions are bounded by existing law, appropriate privacy protections and reimbursement conditions, with separate future recommendations and governmentwide guidance. Section 3 takes effect December 31, 2028; annual $10 million funding authorization begins in fiscal year 2035, not an immediate appropriation. The asset/obligation transfer and expressly permitted use of transferred unspent balances remain distinct. Printed section 317(n) versus definitions in (l), the transition office-name variation, the inside-title disclosure references and the CARES section 15010/15 U.S.C. 9053 parentheticals remain unresolved references, not silently rewritten. No enactment, funding availability, fraud recovery or individual legal result is asserted.\n\nThe own floor sequence proceeds from voice ayes through a demand/order and postponement to recorded passage240–181with10NotVoting; later stated hypothetical intentions are not official votes. A Yea supports and a Nay opposes the whole exact package, without a separate staffing, privacy or covered-fund stance, preferred alternative or motive. Present and Not Voting remain non-directional. The qualified candidate relationship is routed for independent source/domain review under the existing contract; it is not an accepted methodology decision, a personal nationality finding, editorial acceptance or publication authority.",
+      "unresolved_reason": null,
       "sources": [
+        {
+          "source_id": "clerk:119:2:218",
+          "url": "https://clerk.house.gov/evs/2026/roll218.xml",
+          "raw_sha256": "92f055b53cf47c6cdba07d53541eedf7b117c9f04e5b87c11c9965547a9b71a9",
+          "governed_bytes_sha256": "5688bf733bda2a36145d18bb0f615a9bec9283f18629d8e9df620a8cbaa3dc59"
+        },
         {
           "source_id": "govinfo:hr8312eh",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8312eh/html/BILLS-119hr8312eh.htm",
@@ -44924,15 +44945,166 @@
           "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10-house.pdf",
           "raw_sha256": "a5b906713d9c217a31068b01b8ced5dbb4dee2c3d32fb4a2c5b94fa1ee96fcd4",
           "governed_bytes_sha256": "aac57c4b2b1d050d4c0c3ce83992adc591b69c7800f816f549cea0175f0f242b"
+        },
+        {
+          "source_id": "govinfo:5usc2102-2024-fin237",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartA-chap21-sec2102.htm",
+          "raw_sha256": "a84525440f9e9bbed7fc9988b876923ca769f7ab4239534ab69b38bcc72ff871",
+          "governed_bytes_sha256": "7ccfa506f82dc4e69a58c8e298c327cfcbbe18792288e1952e51c33dd68e6d59"
+        },
+        {
+          "source_id": "govinfo:5usc2103-2024-fin237",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartA-chap21-sec2103.htm",
+          "raw_sha256": "518d03256d308a49b3b62a647548b3544092f515061f95dcc55856e699569d89",
+          "governed_bytes_sha256": "881e657dc14bf1cec7395ad9d8e786f52b300bbb0ac09cd7278b96bedb0dfb5e"
+        },
+        {
+          "source_id": "govinfo:5cfr7-3-2025-fin237",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title5-vol1/pdf/CFR-2025-title5-vol1-sec7-3.pdf",
+          "raw_sha256": "f93362cdeca83d1147df24c0757d220fa0c80271c7e1afb77c748da034a5b45d",
+          "governed_bytes_sha256": "186d4febcd84797c493e055e62c1987d3dd700b1f23d935821d92a19c94ab03a"
+        },
+        {
+          "source_id": "govinfo:5cfr338-101-2025-fin237",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title5-vol1/pdf/CFR-2025-title5-vol1-sec338-101.pdf",
+          "raw_sha256": "1bb2746e34407027ac8df2c335f20700f1030398ee0108e57d8a368912c9dcc0",
+          "governed_bytes_sha256": "f61b4e8f2d8ccda573ee0550013d555a11544069ef07815f56abb8aad4d99e47"
+        },
+        {
+          "source_id": "govinfo:5cfr316-601-2025-fin237",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title5-vol1/pdf/CFR-2025-title5-vol1-sec316-601.pdf",
+          "raw_sha256": "38f6b92a35a0bf77128d1f6b7782bae5f18431e81cb027fce8cb2a6c72b9c375",
+          "governed_bytes_sha256": "ebb58c7a2699cede9f35979eae989e27574b67fe0309df12011f680879079c55"
+        },
+        {
+          "source_id": "govinfo:ig218-recod401-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ286/html/PLAW-117publ286.htm",
+          "raw_sha256": "6a43e5d24d06a264dc3b403b6f16d0dd4fea80eb378eb9fb0700049b6b5f17d6",
+          "governed_bytes_sha256": "03b678f3c344f67a8ec84e0fe8e42410335a5de56b5fbab697562d4a82379458"
+        },
+        {
+          "source_id": "govinfo:ig218-recod403-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ286/html/PLAW-117publ286.htm",
+          "raw_sha256": "6a43e5d24d06a264dc3b403b6f16d0dd4fea80eb378eb9fb0700049b6b5f17d6",
+          "governed_bytes_sha256": "d1abbbd5ea89929865dbd4667394d34a144eab4eb60ebaa420f3057b99bcc441"
+        },
+        {
+          "source_id": "govinfo:ig218-recod406-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ286/html/PLAW-117publ286.htm",
+          "raw_sha256": "6a43e5d24d06a264dc3b403b6f16d0dd4fea80eb378eb9fb0700049b6b5f17d6",
+          "governed_bytes_sha256": "e7451b5a46c9fc6e608241de7719af3f9eb6d8d4f26e2785b7537d2a8ea5459a"
+        },
+        {
+          "source_id": "govinfo:ig218-5202a1-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "c06809f9f35c626518599e8cfd4040be7e692c91a199cfadbf3b8911b2e4af3b"
+        },
+        {
+          "source_id": "govinfo:ig218-5202b-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "8340419f20fdb0537ba6638592f53eb22999869a132d041cfc8b0b3372d49519"
+        },
+        {
+          "source_id": "govinfo:ig218-5203a-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "aaef1ebb30b700754ebd2d143fac745cf8e15988561633cdfd4475a224cf7b39"
+        },
+        {
+          "source_id": "govinfo:ig218-5203de-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "4626196d45f29a47944b9d5d4b0ae100500a2d25df8e8a7b500e38b6264f2d31"
+        },
+        {
+          "source_id": "govinfo:ig218-5204a-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "5350316dff8b8ba469a789248f58bac61a8a10810e156f33d8fd9333c8da8123"
+        },
+        {
+          "source_id": "govinfo:ig218-5261-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "0496392288db8ad6b50295033c6cc2abd90f48e7674b0219f769f1378bf41058"
+        },
+        {
+          "source_id": "govinfo:ig218-5272p2-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "8802059d25883a638668a39399744516df3dac9906c501108f2956702ec9b780"
+        },
+        {
+          "source_id": "govinfo:ig218-5272p10-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "fae4120eff465f0d86acf7a43143ce66f7c6168f1d6e0acd2e0bd676a5420b8a"
+        },
+        {
+          "source_id": "govinfo:ig218-pdf166-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ286/pdf/PLAW-117publ286.pdf",
+          "raw_sha256": "5f83f34db70fa9ddd380fdc8d210e4fb62f160803b65b4253cffd10317d813cf",
+          "governed_bytes_sha256": "6fad06c2142a5794e289b4958a0df316b56caee938649a7075476f5b3e49837f"
+        },
+        {
+          "source_id": "govinfo:ig218-pdf167-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ286/pdf/PLAW-117publ286.pdf",
+          "raw_sha256": "5f83f34db70fa9ddd380fdc8d210e4fb62f160803b65b4253cffd10317d813cf",
+          "governed_bytes_sha256": "ce3b7ae63c8c592f4a26d2ac18958fcd181de36f58b90ea820cb281be9d5e3a3"
+        },
+        {
+          "source_id": "govinfo:ig218-pdf168-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ286/pdf/PLAW-117publ286.pdf",
+          "raw_sha256": "5f83f34db70fa9ddd380fdc8d210e4fb62f160803b65b4253cffd10317d813cf",
+          "governed_bytes_sha256": "f627d05598ea5e47e11d542bbe78aeaf646017c6996c1199e3624b1745a80c7d"
+        },
+        {
+          "source_id": "govinfo:ig218-code401_note-239",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap4-sec401.htm",
+          "raw_sha256": "b82aac1ff9fd62504f60070c4f33e73378441e3a67509416f1ce426adc81f032",
+          "governed_bytes_sha256": "a00eac5bc6f8a473fc47aef63025386643a4945ad8bd016c5a26bb38f2b121f4"
+        },
+        {
+          "source_id": "govinfo:ig218-pl117263-identity-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "75c45f1b3789bc028789944a5c095075719562f196142a66907738ae2133c863"
+        },
+        {
+          "source_id": "govinfo:ig218-pl117263-approval-239",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "86fdf57f2586e99dede22cc24b9965be43bfd0f5d63d68d2802cd5656778a19a"
+        },
+        {
+          "source_id": "govinfo:ig218-6329b-complete-display-239",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartE-chap63-subchapII-sec6329b.htm",
+          "raw_sha256": "2d15ef42f0b248506a6ee96001926093ca90e48b8f89f49376fcc505f4bb01f6",
+          "governed_bytes_sha256": "feed0691211288053aa9a890eeb3733d99382e0794361902cf45afb996178673"
+        },
+        {
+          "source_id": "govinfo:ig218-3346-complete-display-239",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartB-chap33-subchapIII-sec3346.htm",
+          "raw_sha256": "d897c56850b117a13db99e5bb79d8648f13d483fef67dc88596ee32c731e94db",
+          "governed_bytes_sha256": "9b65bc85295c83480a66b03c6120fae2873b677643a05ca250a4c70555714bee"
+        },
+        {
+          "source_id": "govinfo:ig218-3345-effective-note-239",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartB-chap33-subchapIII-sec3345.htm",
+          "raw_sha256": "2d9ef5cedd845d08870d5f3e3f772c5646fe8335f7f312559715090ba93da54a",
+          "governed_bytes_sha256": "913fb379373308a5a7757e5d784a8060b3dd9bffd8b34f70f5e33d6c6ad40cbd"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "014a643628ada3c032f4df6368c8d7e09de0f806dd134c9a4f7d821a86a9faff"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:218",
@@ -49835,8 +50007,8 @@
       "date": "2026-07-23",
       "measure": "H R 8884",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Whole H.R.8884 EH and exact own floor proposal match under declared formatting comparison. The proposal extends initiation authority to December31,2030 and project operation to December31,2031; in434(c) it changes the initiation cutoff to December31,2030 and notice period90 to120 days, adds evaluation metrics to the report, rewrites401(k) to distinguish administrative funds and benefit Trust Funds, adds protection against reducing total income because of participation, makes a technical correction and strikes434(f), effective January1,2027. Whole historical434 operative body including broad benefit-waiver authority is read, along with literal401(k). The Commissioner may waive TitleII benefit requirements and related1320b19 requirements, and the Secretary may upon request waive TitleXVIII benefit requirements insofar as necessary for evaluation; voluntary consent/revocation and statistical-result requirements remain in434(e). Material current-law chain and bounded application to immigration-related benefit requirements remain unfinished; do not exclude from a work/disability title or automatically include from broad benefit context. Keep researched source_unresolved noncounting hold, no shared meaning, individual eligibility ruling, waiver implementation, benefit outcome or component stance. Own initial voice ayes, Chu demand/order/postponement and resumed passage232-188 with11NotVoting are distinct; stated hypothetical intentions excluded.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "The bill would reopen disability-insurance demonstration authority through December 31, 2030, allow projects to run through December 31, 2031, and extend related authority to waive benefit requirements. It would lengthen advance notice from 90 to 120 days and require evaluation metrics. Administrative costs would use program-administration funds and benefits the appropriate Social Security trust fund. Participation could not reduce a person’s total income. The amendments would take effect January 1, 2027.\n\nThe exact July 23, 2026 passage is the complete H.R. 8884 EH, not a particular experiment, waiver or individual benefit award. Its two termination dates are distinct: initiation through December 31, 2030 and carrying out projects through December 31, 2031. Section 2(b) separately changes the waiver-project initiation cutoff from December 30, 2021 to December 31, 2030, lengthens the advance congressional notice from ninety to 120 days and adds evaluation metrics. The original Health description of reopening relates to the supplied dated baseline and printed operators, not a certificate that no intervening law changed those authorities. Existing notices, periodic reports and the final report within ninety days after a project's termination remain separate from the bill's 120-day advance notice. The amendments take effect January 1, 2027, not on the House vote or an assumed enactment date.\n\nThe bounded Immigration relationship is the extension of discretionary benefit-requirement waiver authority within a Title II disability-insurance framework containing express alien/payment conditions. Dated 42 U.S.C. 434(c) permits the Commissioner to waive compliance with Title II benefit requirements and the Ticket to Work requirements as they relate to Title II; the Secretary may, upon the Commissioner's request, waive Title XVIII benefit requirements under the printed necessary-for-evaluation qualification. That language does not itself establish that a particular immigration-related restriction can be waived. Section 402(y) separately says notwithstanding any other provision of law that no monthly Title II benefit is payable to an alien in the United States for a month in which the alien is not lawfully present, as determined by the Attorney General. That overriding language is preserved. This candidate does not resolve whether the broad demonstration authority reaches it, override it or certify any individual lawful presence, entitlement or waiver.\n\nThe distinct Title 8 framework also remains: 8 U.S.C. 1611(a) generally bars Federal public benefits to an alien who is not a qualified alien, subject to its express exceptions. Its Title II branch separately preserves lawful-presence, international-agreement, section 402(t) and pre-September-1996 application alternatives. Qualified-alien classification and lawful presence are not interchangeable, and neither is inferred for a named person. Section 402(t)'s outside-the-United-States payment framework retains its six-consecutive-month rule, return/continuity conditions and qualified treaty, residence, coverage and historical exceptions; it is not silently replaced by section 402(y)'s in-country rule. Section 433 permits bounded totalization arrangements and specified foreign-residence payments; no actual agreement, country coverage or individual result is asserted. Section 1611(b)(3)'s Medicare exception has its own lawful-presence and, for Part A, work-authorized-wage conditions. The proposal is not characterized as granting every alien, or excluding every noncitizen from, Social Security or Medicare. No waiver of Title 8 is inferred from a Title II citation.\n\nThe dated section 434 demonstration population concerns disability beneficiaries and the permitted impaired-applicant expansion, not every retirement, SSI or Medicare beneficiary. Work incentives, benefit offsets and changes to specified work/hospital-insurance conditions remain experiments with evaluation and voluntary-participation requirements, not a proven financial outcome. Ticket to Work's definitions distinguish Title II and Title XVI beneficiaries; the bill's cross-reference is limited to its relation to Title II. Informed written consent, revocation of the voluntary agreement at any time and expected statistical significance remain. The new requirement to ensure that total income is not reduced due to participation is a statutory safeguard, not evidence of actual unchanged income. Striking the separate promoting-opportunity subsection (f) does not reimpose its former $1-for-$2 offset, five-year schedule or ninety-three-month insurance continuation as universal rules for the renewed general authority.\n\nAdministrative expenses use funds made available for administering Title II, while benefits payable by reason of participation use the appropriate named Social Security trust fund as determined by the Commissioner. These are different expenditure sources, not an appropriation of an asserted new sum. The technical subsection-to-section correction in the annual interim report is distinct from the deletion of subsection (f). The interpretation retains the original unapproved shared identity, complete Health meaning prefix, witnesses and limits. A Yea supports and a Nay opposes the whole proposal; no component stance, motive, actual experiment, benefit reduction, immigration-status decision or enactment is inferred. Broad-waiver versus overriding-payment/Title-8 interactions and dated/current individual applications remain explicit legal questions for independent review. The proposed source-qualified relationship confers neither editorial acceptance nor publication authority.",
       "source": {
         "source_id": "clerk:119:2:283",
         "url": "https://clerk.house.gov/evs/2026/roll283.xml",
@@ -49844,7 +50016,7 @@
         "governed_bytes_sha256": "f9939d8dddc151c37b6e19fd362468b5d3156c3dcc32b7eb48ff778146b2f9cc",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "house:119:hr8884",
       "after_historical_july23_boundary": false,
       "historical_raw_hash_matches": true,
       "bill_ref": "H R 8884",
@@ -49854,10 +50026,16 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Whole H.R.8884 EH and exact own floor proposal match under declared formatting comparison. The proposal extends initiation authority to December31,2030 and project operation to December31,2031; in434(c) it changes the initiation cutoff to December31,2030 and notice period90 to120 days, adds evaluation metrics to the report, rewrites401(k) to distinguish administrative funds and benefit Trust Funds, adds protection against reducing total income because of participation, makes a technical correction and strikes434(f), effective January1,2027. Whole historical434 operative body including broad benefit-waiver authority is read, along with literal401(k). The Commissioner may waive TitleII benefit requirements and related1320b19 requirements, and the Secretary may upon request waive TitleXVIII benefit requirements insofar as necessary for evaluation; voluntary consent/revocation and statistical-result requirements remain in434(e). Material current-law chain and bounded application to immigration-related benefit requirements remain unfinished; do not exclude from a work/disability title or automatically include from broad benefit context. Keep researched source_unresolved noncounting hold, no shared meaning, individual eligibility ruling, waiver implementation, benefit outcome or component stance. Own initial voice ayes, Chu demand/order/postponement and resumed passage232-188 with11NotVoting are distinct; stated hypothetical intentions excluded.",
-      "unresolved_reason": "pending_disability_demonstration_waiver_Immigration_chain196",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "The bill would reopen disability-insurance demonstration authority through December 31, 2030, allow projects to run through December 31, 2031, and extend related authority to waive benefit requirements. It would lengthen advance notice from 90 to 120 days and require evaluation metrics. Administrative costs would use program-administration funds and benefits the appropriate Social Security trust fund. Participation could not reduce a person’s total income. The amendments would take effect January 1, 2027.\n\nThe exact July 23, 2026 passage is the complete H.R. 8884 EH, not a particular experiment, waiver or individual benefit award. Its two termination dates are distinct: initiation through December 31, 2030 and carrying out projects through December 31, 2031. Section 2(b) separately changes the waiver-project initiation cutoff from December 30, 2021 to December 31, 2030, lengthens the advance congressional notice from ninety to 120 days and adds evaluation metrics. The original Health description of reopening relates to the supplied dated baseline and printed operators, not a certificate that no intervening law changed those authorities. Existing notices, periodic reports and the final report within ninety days after a project's termination remain separate from the bill's 120-day advance notice. The amendments take effect January 1, 2027, not on the House vote or an assumed enactment date.\n\nThe bounded Immigration relationship is the extension of discretionary benefit-requirement waiver authority within a Title II disability-insurance framework containing express alien/payment conditions. Dated 42 U.S.C. 434(c) permits the Commissioner to waive compliance with Title II benefit requirements and the Ticket to Work requirements as they relate to Title II; the Secretary may, upon the Commissioner's request, waive Title XVIII benefit requirements under the printed necessary-for-evaluation qualification. That language does not itself establish that a particular immigration-related restriction can be waived. Section 402(y) separately says notwithstanding any other provision of law that no monthly Title II benefit is payable to an alien in the United States for a month in which the alien is not lawfully present, as determined by the Attorney General. That overriding language is preserved. This candidate does not resolve whether the broad demonstration authority reaches it, override it or certify any individual lawful presence, entitlement or waiver.\n\nThe distinct Title 8 framework also remains: 8 U.S.C. 1611(a) generally bars Federal public benefits to an alien who is not a qualified alien, subject to its express exceptions. Its Title II branch separately preserves lawful-presence, international-agreement, section 402(t) and pre-September-1996 application alternatives. Qualified-alien classification and lawful presence are not interchangeable, and neither is inferred for a named person. Section 402(t)'s outside-the-United-States payment framework retains its six-consecutive-month rule, return/continuity conditions and qualified treaty, residence, coverage and historical exceptions; it is not silently replaced by section 402(y)'s in-country rule. Section 433 permits bounded totalization arrangements and specified foreign-residence payments; no actual agreement, country coverage or individual result is asserted. Section 1611(b)(3)'s Medicare exception has its own lawful-presence and, for Part A, work-authorized-wage conditions. The proposal is not characterized as granting every alien, or excluding every noncitizen from, Social Security or Medicare. No waiver of Title 8 is inferred from a Title II citation.\n\nThe dated section 434 demonstration population concerns disability beneficiaries and the permitted impaired-applicant expansion, not every retirement, SSI or Medicare beneficiary. Work incentives, benefit offsets and changes to specified work/hospital-insurance conditions remain experiments with evaluation and voluntary-participation requirements, not a proven financial outcome. Ticket to Work's definitions distinguish Title II and Title XVI beneficiaries; the bill's cross-reference is limited to its relation to Title II. Informed written consent, revocation of the voluntary agreement at any time and expected statistical significance remain. The new requirement to ensure that total income is not reduced due to participation is a statutory safeguard, not evidence of actual unchanged income. Striking the separate promoting-opportunity subsection (f) does not reimpose its former $1-for-$2 offset, five-year schedule or ninety-three-month insurance continuation as universal rules for the renewed general authority.\n\nAdministrative expenses use funds made available for administering Title II, while benefits payable by reason of participation use the appropriate named Social Security trust fund as determined by the Commissioner. These are different expenditure sources, not an appropriation of an asserted new sum. The technical subsection-to-section correction in the annual interim report is distinct from the deletion of subsection (f). The interpretation retains the original unapproved shared identity, complete Health meaning prefix, witnesses and limits. A Yea supports and a Nay opposes the whole proposal; no component stance, motive, actual experiment, benefit reduction, immigration-status decision or enactment is inferred. Broad-waiver versus overriding-payment/Title-8 interactions and dated/current individual applications remain explicit legal questions for independent review. The proposed source-qualified relationship confers neither editorial acceptance nor publication authority.",
+      "unresolved_reason": null,
       "sources": [
+        {
+          "source_id": "clerk:119:2:283",
+          "url": "https://clerk.house.gov/evs/2026/roll283.xml",
+          "raw_sha256": "a01817dc8413dd3d8fe331600fbe1b9c7b9e44c7e26257e87760a1d10c932f81",
+          "governed_bytes_sha256": "f9939d8dddc151c37b6e19fd362468b5d3156c3dcc32b7eb48ff778146b2f9cc"
+        },
         {
           "source_id": "govinfo:hr8884eh",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8884eh/html/BILLS-119hr8884eh.htm",
@@ -49901,19 +50079,50 @@
           "governed_bytes_sha256": "d8c7494ef1613ab27b788ab2f21f9d6fa6039ee47f7e916f6d4c34ff8f31d3d8"
         },
         {
-          "source_id": "clerk:119:2:283",
-          "url": "https://clerk.house.gov/evs/2026/roll283.xml",
-          "raw_sha256": "a01817dc8413dd3d8fe331600fbe1b9c7b9e44c7e26257e87760a1d10c932f81",
-          "governed_bytes_sha256": "f9939d8dddc151c37b6e19fd362468b5d3156c3dcc32b7eb48ff778146b2f9cc"
+          "source_id": "govinfo:42usc1320b-19-2024-operative239",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1320b-19.htm",
+          "raw_sha256": "1e25e574a8c42c6f76f8be425a5a186ab7632ac888ed93a4e4aad8ca2ec1c74c",
+          "governed_bytes_sha256": "47e84839033db7ce972089704704ad2b43f6879a3656ba9e1b63b933c9757a8f"
+        },
+        {
+          "source_id": "govinfo:42usc433-2024-operative239",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec433.htm",
+          "raw_sha256": "ba95efad3939857200c1313ec08b7ddf36cb4603f327e0b68784297e5d8d0d5b",
+          "governed_bytes_sha256": "cd8795bc5e97c508d065b4c7d91be4f0f4e53b6eee31f8ae30ebb47df72cc057"
+        },
+        {
+          "source_id": "govinfo:42usc402t-2024-complete239",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec402.htm",
+          "raw_sha256": "1af74442e1b2b920f70fe761c61c956493fe263125dfbd772c2e52efcee3063f",
+          "governed_bytes_sha256": "b97553f3f4c68104e67cebd8148cab31a8dd596f8c2baf3b454c0ee05c8afa85"
+        },
+        {
+          "source_id": "govinfo:42usc402y-2024-alien-nonpayment232",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec402.htm",
+          "raw_sha256": "1af74442e1b2b920f70fe761c61c956493fe263125dfbd772c2e52efcee3063f",
+          "governed_bytes_sha256": "6bb3b76682cf6823ea13cfa3a0a7d14f43e552f86f53888749bc2e226c1568b0"
+        },
+        {
+          "source_id": "govinfo:8usc1611-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapI-sec1611.htm",
+          "raw_sha256": "594019cae13f1ed838b032a911b156119c095d197586e3c8bdd6e40046b64966",
+          "governed_bytes_sha256": "ea5b4bb4776f114656011f11058ce9c9a88d4dfac7a6e7e0336e398025b11dee"
+        },
+        {
+          "source_id": "govinfo:8usc1641-2024-snap-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapIV-sec1641.htm",
+          "raw_sha256": "ba0142a41887aa953a47f875cb2faa5862f816d8b58894335a522e78876a5676",
+          "governed_bytes_sha256": "9a628362376d55334256f454ae25cefb60a981f78bb299f5b5e961571af7c06e"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "7a691a290b6dd1646b3085cf4bbfea067354c9666ec04bd25ed32836a68c1e22"
       }
     },
     {
@@ -52389,10 +52598,11 @@
     "house:119:2:154",
     "house:119:1:199",
     "house:119:1:349",
-    "house:119:2:271"
+    "house:119:2:271",
+    "house:119:2:218",
+    "house:119:2:283"
   ],
   "unresolved_action_ids": [
-    "house:119:1:151",
     "house:119:1:210",
     "house:119:1:237",
     "house:119:1:262",
@@ -52401,14 +52611,12 @@
     "house:119:2:157",
     "house:119:2:193",
     "house:119:2:196",
-    "house:119:2:218",
     "house:119:2:224",
     "house:119:2:228",
     "house:119:2:243",
     "house:119:2:245",
     "house:119:2:247",
-    "house:119:2:278",
-    "house:119:2:283"
+    "house:119:2:278"
   ],
   "cross_domain_boundary_review": {
     "state": "pending_independent_operative_review",
@@ -52426,6 +52634,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "fab4e47cde238a87f60c9c876203420b96b6efdebf3cacb4732a7a0ec7d6b5e7",
-  "membership_review_sha256": "ebe2f5e27a33f54c9b0f7b456a974fae2ae369a143aec8cc1dc7ac5bb006780c"
+  "proposal_sha256": "3d12ad478e3de7df4104d77ac4f56b5ed65f413eb82de63d1f7e8cd27de1ffa5",
+  "membership_review_sha256": "0fc323e1836a3b46854d92d01be5ae04adbffbdbd2b6c3358687d6f6366b6591"
 }

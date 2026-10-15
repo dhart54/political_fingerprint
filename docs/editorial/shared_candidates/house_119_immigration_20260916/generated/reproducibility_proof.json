@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "586a790557e3bb1998f0dfe50ea7cb41736c61ea8e0dc7c6f47a11ae84eb8490",
-  "source_capture_sha256": "11d8779b4f47839628801d7aa7b11f9bf2089dcb1d7e95c0a37448ee7a2e0f8d",
-  "core_sha256": "296d2f35105acffe2e44b588429c7929b4a27c97b4067b30179da668dc7506af",
-  "compiled_sha256": "14afa14d37c5ca021bd2be9bbe492db15daaeedff85419705ebf310e4880b70b",
-  "readable_sha256": "e68ba3b77837d2cb542847a1f6874b56073379b4b04a7799157344861d1fbe03",
+  "input_sha256": "493cbfefcb5c0af3c223cccdc6590741cf16e011625c35a0c8c9e7101ac98e66",
+  "source_capture_sha256": "84d9178eb1131bee113d920283128cdac12715fde011cd66493e586f6fa4bac0",
+  "core_sha256": "63968870895116ac1d76e9267b2d4cf252f50b386458accf4e1dcb9fa30eb767",
+  "compiled_sha256": "595d993c434a9cead8b76aaa280569d4e0d62225766d9ef292fd6aee0742fb67",
+  "readable_sha256": "555c1814a170c85d43b898ebf3160ac26ea58153a709bbde9bea6e11f8e9974f",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1498,6 +1498,26 @@
       ]
     },
     {
+      "action_id": "house:119:2:218",
+      "shared_sha256": "8aabe7bf5e4cb87b0e8e15765d2c39896b638605439122ce8535e0d0dcb8a8ec",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact package; no component stance, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:218"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole exact package; no separate component endorsement inferred",
+          "source_id": "clerk:119:2:218"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:2:221",
       "shared_sha256": "8f9d8efd09c5dbce01043e3c0dc610fb9e1709b1a1c1c5132a4c055a7a6d8a1b",
       "choices": [
@@ -1594,6 +1614,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of the complete H.R.7008 Member-family investment and Federal-election photoID package; no separate component position is established",
           "source_id": "clerk:119:2:280"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:283",
+      "shared_sha256": "438aa36f00bc54cbeccf599c03eb7621bc8791f423cfa7cd487f3cb9c45b9add",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact package; no component stance, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:283"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole exact package; no separate component endorsement inferred",
+          "source_id": "clerk:119:2:283"
         }
       ]
     },

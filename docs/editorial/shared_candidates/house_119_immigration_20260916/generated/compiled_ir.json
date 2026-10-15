@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 81,
+        "eligible_substantive_actions": 83,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 81,
-        "resolved_eligible_actions": 81,
-        "directional_yes_no_positions": 81,
+        "in_service_eligible_actions": 83,
+        "resolved_eligible_actions": 83,
+        "directional_yes_no_positions": 83,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 71,
+        "complete_episodes": 73,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1189,6 +1189,25 @@
             }
           },
           {
+            "proposition_id": "prop:357b6c0b4ddd6ae0",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:218"
+            ],
+            "evidence_episode_ids": [
+              "house:119:hr8312"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:27252af571282f01",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -1293,6 +1312,25 @@
             ],
             "evidence_episode_ids": [
               "episode:hr7008:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:494145752c7bd0ac",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:283"
+            ],
+            "evidence_episode_ids": [
+              "house:119:hr8884"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -1573,12 +1611,14 @@
             "prop:a14c01bfd3b72459",
             "prop:68f01859e870ae28",
             "prop:10a347b9c7236fff",
+            "prop:357b6c0b4ddd6ae0",
             "prop:27252af571282f01",
             "prop:4654a7f3030b2604",
             "prop:eed31f5aa4542e3b",
             "prop:f403018f6db2faba",
             "prop:3d74ac78009a6e76",
             "prop:2a14cc57ee3fdd18",
+            "prop:494145752c7bd0ac",
             "prop:693f907399128b0a",
             "prop:b159c206481bdd00",
             "prop:a40c9c5e0b6bf9b9",
@@ -1652,12 +1692,14 @@
           "house:119:2:205",
           "house:119:2:207",
           "house:119:2:214",
+          "house:119:2:218",
           "house:119:2:221",
           "house:119:2:244",
           "house:119:2:271",
           "house:119:2:272",
           "house:119:2:28",
           "house:119:2:280",
+          "house:119:2:283",
           "house:119:2:286",
           "house:119:2:308",
           "house:119:2:42",
@@ -1696,17 +1738,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 81,
+        "eligible_substantive_actions": 83,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 81,
-        "resolved_eligible_actions": 81,
-        "directional_yes_no_positions": 77,
+        "in_service_eligible_actions": 83,
+        "resolved_eligible_actions": 83,
+        "directional_yes_no_positions": 79,
         "present_actions": 1,
         "not_voting_actions": 3,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 71,
+        "complete_episodes": 73,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -2822,6 +2864,25 @@
             }
           },
           {
+            "proposition_id": "prop:4c16eb61e2a7864a",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:218"
+            ],
+            "evidence_episode_ids": [
+              "house:119:hr8312"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:27252af571282f01",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -2926,6 +2987,25 @@
             ],
             "evidence_episode_ids": [
               "episode:hr7008:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:f74fe0482b8f5547",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:283"
+            ],
+            "evidence_episode_ids": [
+              "house:119:hr8884"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -3203,12 +3283,14 @@
             "prop:a14c01bfd3b72459",
             "prop:4a65147488158852",
             "prop:ab993a839535a775",
+            "prop:4c16eb61e2a7864a",
             "prop:27252af571282f01",
             "prop:d7344a953f10e445",
             "prop:eed31f5aa4542e3b",
             "prop:f403018f6db2faba",
             "prop:3d74ac78009a6e76",
             "prop:50199276087bcfad",
+            "prop:f74fe0482b8f5547",
             "prop:981ab4ce2f11b7c9",
             "prop:b159c206481bdd00",
             "prop:5d89a712ad309313",
@@ -3299,12 +3381,14 @@
           "house:119:2:205",
           "house:119:2:207",
           "house:119:2:214",
+          "house:119:2:218",
           "house:119:2:221",
           "house:119:2:244",
           "house:119:2:271",
           "house:119:2:272",
           "house:119:2:28",
           "house:119:2:280",
+          "house:119:2:283",
           "house:119:2:286",
           "house:119:2:308",
           "house:119:2:42",
@@ -3681,6 +3765,22 @@
       "constraint_id": "source:house119-roll271-banking-qualified238",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Carried citizenship condition versus added separate experience/appointed-term/aggregate-service limits; whole package, dated/enacted witness boundaries and unresolved legal/individual application, not inherited Health membership."
+    },
+    {
+      "action_ids": [
+        "house:119:2:218"
+      ],
+      "constraint_id": "source:house119-roll218-qualified-personnel239",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Qualified personnel/nationality-framework relationship only; no unconditional citizenship waiver, personal hiring/status result, whole funding-domain inheritance or resolved printed/legal interaction."
+    },
+    {
+      "action_ids": [
+        "house:119:2:283"
+      ],
+      "constraint_id": "source:house119-roll283-qualified-benefit-waiver239",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "Discretionary demonstration-waiver relationship to separately stated alien-payment law, with legal reach unresolved; noTitle8waiver, individual entitlement or inherited Health membership."
     }
   ]
 }
