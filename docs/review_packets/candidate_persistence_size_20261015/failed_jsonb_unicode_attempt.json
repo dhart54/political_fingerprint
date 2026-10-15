@@ -1,0 +1,1958 @@
+{
+  "started_utc": "2026-10-15T19:57:26.650196+00:00",
+  "host": "local",
+  "source_code": [
+    {
+      "path": "backend/scripts/editorial_artifact_store.py",
+      "git_blob_oid": "aec7a25647fa39714cd6cd249e14fc1de67a27ea",
+      "sha256": "68a7999343df7eed1710266a298e11911863cf41fdca98bdd3506c7b7c15c5f5"
+    },
+    {
+      "path": "backend/app/editorial_artifacts/bundle.py",
+      "git_blob_oid": "afc5342c56395f60bfe15a47c0f46f3b68c33aed",
+      "sha256": "cdfaf878d9fc5ebf9aa676cd6eadf7338af1b5d62a3a9dbd06087b1b49157750"
+    },
+    {
+      "path": "backend/app/editorial_artifacts/migration.py",
+      "git_blob_oid": "ac48a2ee74053cd376ff3c735ae1680d728b6b05",
+      "sha256": "45d403a55faf20eb8996d5206d646e320d5de3a85094224427d88bfda7184508"
+    },
+    {
+      "path": "backend/app/semantic_ir/adapters.py",
+      "git_blob_oid": "6eb887ba9ba1208d7187a225f37bfaa621e12fb1",
+      "sha256": "60c36267d625e8122d16319839cf30c8e9a51b5089e3b1f70562c04eafc22b7e"
+    },
+    {
+      "path": "backend/app/semantic_ir/pipeline.py",
+      "git_blob_oid": "0857d81e797cf8eabe2751a38a655888c9ad03df",
+      "sha256": "a8446422b53ceb244fb8a200fc14de9da3772a0f5807c64268cf908f0eb78f2b"
+    },
+    {
+      "path": "backend/migrations/0016_editorial_artifact_persistence.sql",
+      "git_blob_oid": "42960cde622a9537ae9816b41870dd969e4ab5d7",
+      "sha256": "bfb654b7fbcb1adc4052e31ca019d9808d8c1c35819c4a687a10cd40974ca163"
+    }
+  ],
+  "method": "hypothetical-granular-generated-review-mirror-v1",
+  "production_connections": 0,
+  "production_writes": 0,
+  "server": {
+    "data_directory": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\cps\\.local\\capacity-pg-20261015T195726\\data",
+    "port": 61408,
+    "version": "PostgreSQL 17.5 on x86_64-windows, compiled by msvc-19.43.34808, 64-bit",
+    "block_size": "8192",
+    "default_toast_compression": "pglz",
+    "lc_collate": "C",
+    "system_identifier": 7696986181622222748,
+    "stopped": true
+  },
+  "stages": {},
+  "inputs": {
+    "immigration": {
+      "domain": "immigration",
+      "snapshot": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+      "members": [
+        "F000477",
+        "M001184"
+      ],
+      "records": [
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+          "snapshot": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+          "git_blob_oid": "cb246cbc8e3aa55c72ff64f13023333a0d256fde",
+          "raw_git_bytes": 29719108,
+          "raw_sha256": "b3e141966de6b497bd1f681710586b935438f2f6b6b00af3c3a4b0d6a2643ae1",
+          "canonical_json_bytes": 29219769,
+          "canonical_sha256": "6039f1dd2cd37c5ed784847322ba1bf3790a4d076b8af2c79ad305dec1de0dab"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json",
+          "snapshot": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+          "git_blob_oid": "2102e7dd519ff7c086a06aefcd423f43c9389f46",
+          "raw_git_bytes": 73742,
+          "raw_sha256": "0dc8c5dca1624793f383e17d9f3df9100a077c2ceaf89e62a1154a03efeb3c46",
+          "canonical_json_bytes": 58212,
+          "canonical_sha256": "79b1e7b98dc7abe60205b919e8809357288edb6a2515643695f705a21c15cb91"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+          "snapshot": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+          "git_blob_oid": "88c9942f6ebb23976d261b30e0d3efab5272aa52",
+          "raw_git_bytes": 152138,
+          "raw_sha256": "59023d77f1442038a64ad87cab23190a5e8b65cda9df9af440a5e6ed0da37127",
+          "canonical_json_bytes": 118546,
+          "canonical_sha256": "c58c8fb6ec001c1670af780af5aba5c37de516fee3b0242e9d9301f036f54ac3"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+          "snapshot": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+          "git_blob_oid": "684aeba0d2dd9dd076c3886a5324d30ff240de48",
+          "raw_git_bytes": 142810,
+          "raw_sha256": "115d3a96994753dee51e2d98641156a64262f812fd9f6b76e45f80d63e2a8877",
+          "canonical_json_bytes": 94033,
+          "canonical_sha256": "14afa14d37c5ca021bd2be9bbe492db15daaeedff85419705ebf310e4880b70b"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "snapshot": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+          "git_blob_oid": "35ceeaea773e96f2b9dce315cdccbf93b08ca605",
+          "raw_git_bytes": 56731426,
+          "raw_sha256": "54037374109e7832ad8a6d837bce3c3804242c88058f0953f851c629afdc9ac5",
+          "canonical_json_bytes": 56022168,
+          "canonical_sha256": "e68ba3b77837d2cb542847a1f6874b56073379b4b04a7799157344861d1fbe03"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+          "snapshot": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+          "git_blob_oid": "25c40575f7e80c77c4f4387cef1e13afb3a99016",
+          "raw_git_bytes": 1358542,
+          "raw_sha256": "aea75c2c6051c35116671f726d6c410491e1b8dcfdcc11e33c9aa6e8bb14c81e",
+          "canonical_json_bytes": 1304220,
+          "canonical_sha256": "b8712804660b9af05d6fd0e7dacacdb0b9c8e679253623f1922a7bf2ef8dac77"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json",
+          "snapshot": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+          "git_blob_oid": "8bb0d08cd84d6f6863e20a27cb7c450907798267",
+          "raw_git_bytes": 66859,
+          "raw_sha256": "49aa13f76be752c99875bd49bb33a04061a5f394d856a1a100aef1f08eec3776",
+          "canonical_json_bytes": 50387,
+          "canonical_sha256": "e3fcb09b23c0cf823a40dbf3eac7eb1301f291bcb03ded901ce925e5ffe20268"
+        }
+      ],
+      "inventory": [
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ALERT_data_scope_closure_checkpoint213.json",
+          "git_blob_oid": "0aefe5100a67f0a81d9e94a1dd0013576e9d5d79",
+          "bytes": 15231,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_baseline_correction_checkpoint210.json",
+          "git_blob_oid": "330cfa7208b144eb95ad7251ca1c83ddab7f355f",
+          "bytes": 1300,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_source_qualification_checkpoint209.json",
+          "git_blob_oid": "8da254bad589da8a1a0f3b5e8b8ee10d8f0d3cce",
+          "bytes": 30216,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/HRA_precision_checkpoint238.json",
+          "git_blob_oid": "de31d12f01f48bdde84befc297750bcbd2b23919",
+          "bytes": 2955,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/addiction_program_baseline_qualification_checkpoint190.json",
+          "git_blob_oid": "29777f0454978bb47ae95c62c2b8df6903a93252",
+          "bytes": 65640,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/administration_qualified_issue_mapping180.json",
+          "git_blob_oid": "692121aaf1b3ff9de9da779681aabe3784d02571",
+          "bytes": 39684,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/administration_qualified_research_checkpoint180.json",
+          "git_blob_oid": "7f1fc8440b4f14d17d666ebb0d2e7142967cc11c",
+          "bytes": 92968,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/appropriations_cohort_checkpoint228.json",
+          "git_blob_oid": "4330e0796733dce132cb38bb8eb2ea158ffb1ed4",
+          "bytes": 51789,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/appropriations_source_quality_checkpoint228.json",
+          "git_blob_oid": "c3778a366172814112547bb83dd0b592577da4cb",
+          "bytes": 92587,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json",
+          "git_blob_oid": "43911f4834e652d6c46a538b06746ee4fcddbda9",
+          "bytes": 27046222,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/banking_qualification_checkpoint238.json",
+          "git_blob_oid": "bb7ddcf66a2dad8c33e959f6624dcd3197cb0db5",
+          "bytes": 26794,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/canonical_constraint_repair170.json",
+          "git_blob_oid": "ba446e168d85dab935c718e8ea3fe1c718928a21",
+          "bytes": 4659,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/censure_qualification_checkpoint232.json",
+          "git_blob_oid": "6d4cf40f99ea9aaec837bc50e6dcde61a3452c97",
+          "bytes": 15927,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint140_pending_flag_correction_checkpoint143.json",
+          "git_blob_oid": "f4f5d6d1e98d2e9e0355e035a81814e91eedee0c",
+          "bytes": 243473,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint140_precision_correction_checkpoint141.json",
+          "git_blob_oid": "aaad76cfeb0b27c4606e476781a7b139e4e9cb03",
+          "bytes": 181964,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint149_RH_page_count_correction_checkpoint150.json",
+          "git_blob_oid": "d4307407e6248e87ea170d2a0922960f9bfaf6ad",
+          "bytes": 2422,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint165_permit_qualifier_correction166.json",
+          "git_blob_oid": "5fde52a2ef9586d986a76ff00be4f5977f406b55",
+          "bytes": 84677,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint167_agarda_attribution_correction168.json",
+          "git_blob_oid": "cda1af69bcaf6e53fabc0ef7d16359bc5bc9641a",
+          "bytes": 58639,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint167_source_bindings_correction168.json",
+          "git_blob_oid": "5c4ae067be6500a22eb152ee51d07e9756ba71a1",
+          "bytes": 25523,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/childcare_baseline_issue_mapping185.json",
+          "git_blob_oid": "6290281f1f697b973ec625d4bb6af6cd86027ac2",
+          "bytes": 9177,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/childcare_baseline_qualification_checkpoint185.json",
+          "git_blob_oid": "2282a955402e401d47f477579638eb8e89aceadc",
+          "bytes": 111988,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/childcare_qualified_issue_mapping183.json",
+          "git_blob_oid": "a90eaa656ecbc53ff65c66ed66c97ea599c28367",
+          "bytes": 6486,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/childcare_qualified_research_checkpoint183.json",
+          "git_blob_oid": "c50fbb435e4d9f0ff082d16280b7f681719cd069",
+          "bytes": 79310,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/childcare_regulatory_baseline_checkpoint187.json",
+          "git_blob_oid": "1ae9eca222b43783e5153579dad3b5b2432fd3a5",
+          "bytes": 129404,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/childcare_regulatory_issue_mapping187.json",
+          "git_blob_oid": "e5c52c85886963ccb6cf91b400f7259ac581576d",
+          "bytes": 13040,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/concurrence_precision_checkpoint232.json",
+          "git_blob_oid": "4a06b8e506b9455eb5a53332b97ce2e2a483922c",
+          "bytes": 2527,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/concurrence_qualification_checkpoint231.json",
+          "git_blob_oid": "4c3daac9c7eefff0ff27e70f5fdd35d044d2c1eb",
+          "bytes": 18252,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/continuing_appropriations_precision_checkpoint236.json",
+          "git_blob_oid": "a038b3ed881b33ff88a0106235841859d9c9e7a9",
+          "bytes": 6949,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/continuing_appropriations_qualification_checkpoint235.json",
+          "git_blob_oid": "ecc5f76e979a9ba314e61c67a99bb959c45568b0",
+          "bytes": 26747,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/dhs_retained_287g_reporter_scope_correction.json",
+          "git_blob_oid": "fa677d6cdca9f0b0c26d11db5face596dfaa5430",
+          "bytes": 11541,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/disclosure_branch_correction_checkpoint130.json",
+          "git_blob_oid": "31b18e1085ec189814077707fe3aa93faa249256",
+          "bytes": 14583,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/discovery_version_audit.json",
+          "git_blob_oid": "161c55bb2c1ea114fbcbebdf4abe12d085124eb7",
+          "bytes": 66156,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/divisionA_correction_checkpoint215.json",
+          "git_blob_oid": "1b307fcd5fc7d3307245ca00289f4a2969eb6039",
+          "bytes": 1615,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/divisionA_eoir_surviving_directives_checkpoint215.json",
+          "git_blob_oid": "d7ee51a49f65d84a4c98fd5b4e3acf2b671d1782",
+          "bytes": 25138,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/divisionA_meaning_qualification_checkpoint214.json",
+          "git_blob_oid": "636619f9b323d5bf25b9cbe5e4178eb611f7d65b",
+          "bytes": 11005,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/divisionA_source_chain_checkpoint214.json",
+          "git_blob_oid": "15a42f42a4f9d951e8a7baee1c76bba5a222e7ff",
+          "bytes": 44727,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/divisionsBC_meaning_qualification_checkpoint216.json",
+          "git_blob_oid": "5093b157d7bed57c92f23925941b644b7e62df82",
+          "bytes": 6563,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/divisionsBC_source_qualification_checkpoint216.json",
+          "git_blob_oid": "99c43a7a43eb9195f7c27a768f04decfb9de5813",
+          "bytes": 25779,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/farm_precision_checkpoint237.json",
+          "git_blob_oid": "52c6db73b26cf62473cf3eb13f126cf306b75c74",
+          "bytes": 4693,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/farm_qualification_checkpoint236.json",
+          "git_blob_oid": "45d3dce5628105b79eeaa10ac5428a7982c2cd43",
+          "bytes": 70543,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_boundary_followup_checkpoint126.json",
+          "git_blob_oid": "fa4e8b069aeea0716aae2241d73cc3ef456dce03",
+          "bytes": 5654,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_candidate_checkpoint130.json",
+          "git_blob_oid": "d26a5b0f6c557368eb09049231df961cd3a18909",
+          "bytes": 231659,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_domain_reservation_checkpoint124.json",
+          "git_blob_oid": "82893c53aa34a4221fde6fee974b28f0ccf61610",
+          "bytes": 23914,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_supervisor_direction_checkpoint126.json",
+          "git_blob_oid": "439f68b01ed4d379bfbac43fec77f4aa4f48173c",
+          "bytes": 7496,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_supervisor_direction_checkpoint130.json",
+          "git_blob_oid": "3e463617b3f62e561ced15e462e7756fda68ac48",
+          "bytes": 1475,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_temporal_comparison_checkpoint127.json",
+          "git_blob_oid": "a3bb727ebd62d649ddf02a5927c1fda40c0a0b34",
+          "bytes": 68938,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/financial_employment_qualification_checkpoint237.json",
+          "git_blob_oid": "b0602ae292541687dcb07a4c82052a7839fbbc96",
+          "bytes": 52426,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/financial_package_source_qualification_checkpoint191.json",
+          "git_blob_oid": "689c219fa4e8d13525a44aec81c92fc227dade90",
+          "bytes": 100748,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fisa_precision_correction_checkpoint184.json",
+          "git_blob_oid": "5f4a3f8485f43b1650d20b1392a1c3ef02dcda78",
+          "bytes": 207455,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fisa_qualified_issue_mapping182.json",
+          "git_blob_oid": "de0345570df70a6a1f67deba0a1e598be02e49ca",
+          "bytes": 16444,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fisa_qualified_research_checkpoint182.json",
+          "git_blob_oid": "e75c7338cd34ebf269dfbd1690db094ae4447ec5",
+          "bytes": 250277,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fisa_source_review_binding_checkpoint204.json",
+          "git_blob_oid": "ab91592839ad82e8bb779bafe07ca3f0bb6371f3",
+          "bytes": 227432,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/forest_package_screening_checkpoint188.json",
+          "git_blob_oid": "f15023481b2ff4af5bbbac8cf8a7aa63c626cc50",
+          "bytes": 142005,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/forestry_research_hold_checkpoint138.json",
+          "git_blob_oid": "94bb5397d3447ddeb35e43e3b5d7e49dc02de1fd",
+          "bytes": 19872,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/forestry_research_in_progress_checkpoint125.json",
+          "git_blob_oid": "194b5ee0f5168387d122c3efbe898144eb06c1ab",
+          "bytes": 16988,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/forestry_research_in_progress_checkpoint126.json",
+          "git_blob_oid": "35f9f9ec3e9f81acb34b8f462783ac97b2cda939",
+          "bytes": 40512,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fraud_enforcement_screening_checkpoint192.json",
+          "git_blob_oid": "91be5aac098e42ee5b22a0779802da4002418612",
+          "bytes": 547432,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fraud_package_precision_correction_checkpoint195.json",
+          "git_blob_oid": "5a7876875a99cb3c39a8113342b200b979908729",
+          "bytes": 5218,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fulbright_exact_function_closure_checkpoint203.json",
+          "git_blob_oid": "fac15e77a4903c4a79175522d36bbd640fd9896f",
+          "bytes": 66894,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/funding_package_source_reuse_checkpoint215.json",
+          "git_blob_oid": "bca7d75531ff15b54bc1a67a1ee1aa523938c666",
+          "bytes": 27155,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/funding_research_holds_checkpoint212.json",
+          "git_blob_oid": "85cf047f365d40789838d3e36b615bf5be43c81c",
+          "bytes": 38941,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+          "git_blob_oid": "684aeba0d2dd9dd076c3886a5324d30ff240de48",
+          "bytes": 142810,
+          "selected_generated": true
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+          "git_blob_oid": "25c40575f7e80c77c4f4387cef1e13afb3a99016",
+          "bytes": 1358542,
+          "selected_generated": true
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+          "git_blob_oid": "88c9942f6ebb23976d261b30e0d3efab5272aa52",
+          "bytes": 152138,
+          "selected_generated": true
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "git_blob_oid": "35ceeaea773e96f2b9dce315cdccbf93b08ca605",
+          "bytes": 56731426,
+          "selected_generated": true
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json",
+          "git_blob_oid": "8bb0d08cd84d6f6863e20a27cb7c450907798267",
+          "bytes": 66859,
+          "selected_generated": true
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+          "git_blob_oid": "cb246cbc8e3aa55c72ff64f13023333a0d256fde",
+          "bytes": 29719108,
+          "selected_generated": true
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json",
+          "git_blob_oid": "2102e7dd519ff7c086a06aefcd423f43c9389f46",
+          "bytes": 73742,
+          "selected_generated": true
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/health_program_screening_checkpoint189.json",
+          "git_blob_oid": "07c1e42d2474e30d52191a7433dc3eb098cae4fb",
+          "bytes": 294616,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/held_hr7008_source_chain_checkpoint198.json",
+          "git_blob_oid": "9bf74fd9cb5432149ffb518d4493c394d860308e",
+          "bytes": 229960,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/historical_seed_reconciliation.json",
+          "git_blob_oid": "3a73e8ac102713234595938df51a5a4678805b9f",
+          "bytes": 18139,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/housing_coastguard_screening_checkpoint226.json",
+          "git_blob_oid": "2c3b559b5188343806899f5c79423b5c63622b03",
+          "bytes": 12533,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/housing_coastguard_source_quality_checkpoint226.json",
+          "git_blob_oid": "2f679c147ffdd5521cfd215f8f78de8d7cea2a1b",
+          "bytes": 174488,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/housing_scope_concurrence_checkpoint227.json",
+          "git_blob_oid": "8af1c7d0e6c49ed6cfb516814688b6f3f2e1e0a0",
+          "bytes": 70348,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/housing_scope_concurrence_source_quality_checkpoint227.json",
+          "git_blob_oid": "68e333bffa3e389779b1ca90687a6611b7d3f30a",
+          "bytes": 4735,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_blue_campaign_scope_review.json",
+          "git_blob_oid": "85552e5395383c924f3ab79a6ee4c0ef92f8319f",
+          "bytes": 35058,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_child_trafficking_grant_review.json",
+          "git_blob_oid": "8fbaeeabed8ab4ed475524615b9abab1c9d9a6e0",
+          "bytes": 50809,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_citizen_lpr_trafficking_program_review.json",
+          "git_blob_oid": "33cf3f98b42fd52b322f619b234cddfc869bd37c",
+          "bytes": 42314,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_dhs_funding_controls_scope_review.json",
+          "git_blob_oid": "950f8e6cf743bb1b3cc2766ded80c406898aec2c",
+          "bytes": 14551,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_dhs_oath_employment_scope_review.json",
+          "git_blob_oid": "c7583bbfbe2f33a4554d3fdb6a7b262bf2fcb6f9",
+          "bytes": 18718,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_dhs_reporting_scope_review.json",
+          "git_blob_oid": "26bd384b5c7c1762f3402b701f51ae21ed73b16f",
+          "bytes": 22584,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_dhs_sponsor_family_scope_review.json",
+          "git_blob_oid": "ac2d6c22a7d3c7750c799980b02d7bc05a85d667",
+          "bytes": 39680,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_division_g_scope_review.json",
+          "git_blob_oid": "596e6e01ad42cd1320c35995174285f8f9592ea0",
+          "bytes": 62362,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_eoir_court_funding_review.json",
+          "git_blob_oid": "17ed43cc607d244651ec2956bdb31850ec14a806",
+          "bytes": 20062,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_health_availability_disclosure_review.json",
+          "git_blob_oid": "0b29cc32b114495bcf35329e7d852892f1cbaad2",
+          "bytes": 52859,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_health_conditions_reference_chain_review.json",
+          "git_blob_oid": "2e39ffc3f87d4c111f0dd886698e13cbbb7e0f89",
+          "bytes": 50553,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_health_publicity_lobbying_review.json",
+          "git_blob_oid": "1ad5b7eb786848fbc4646fe425ceb2a42f16e233",
+          "bytes": 71149,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_health_transfer_financing_review.json",
+          "git_blob_oid": "d43b07efd15ba6887062ddf720ea481c80259731",
+          "bytes": 38943,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_health_transfer_reprogramming_review.json",
+          "git_blob_oid": "8c6cdac1959fbabf0a800cbe43e0c33868468fe5",
+          "bytes": 75103,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_health_transfer_source_precision_review.json",
+          "git_blob_oid": "49411a319601f8acd94adb3d17a7810991173457",
+          "bytes": 15600,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_healthcare_limits_requirements_review.json",
+          "git_blob_oid": "16d6585b44457a7c52f279c32c3c4d0d48231d1c",
+          "bytes": 54604,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_icac_grant_authority_review.json",
+          "git_blob_oid": "34ffc8ae4bbe65a75b6db3791984d2830c7f1513",
+          "bytes": 63031,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_local_center_accountability_review.json",
+          "git_blob_oid": "98ddb75971dc470b5a36bd257c9a4e675fc5a6ae",
+          "bytes": 103575,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_marshals_transportation_scope_review.json",
+          "git_blob_oid": "2c4426450fc4fddc7fc447b834ebdef3dfe5477c",
+          "bytes": 41116,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_medical_grants_child_services_review.json",
+          "git_blob_oid": "b3d8defbd763c100e4701edefb1f612e3ddb188a",
+          "bytes": 98061,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_minor_trafficking_grant_review.json",
+          "git_blob_oid": "1d7917de2b450fa16b1da61ba7abaa75b208ea9a",
+          "bytes": 73056,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_needle_program_conditions_review.json",
+          "git_blob_oid": "264ca6a0aa98f8d0a58780e1a563025c5450552b",
+          "bytes": 44856,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_refugee_allocation_scope_correction.json",
+          "git_blob_oid": "0d2ff635ccd04449f361c0b39050d6da138946b1",
+          "bytes": 14872,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_regional_center_authorization_review.json",
+          "git_blob_oid": "f17761d49bc6cb6d0c7c55c14a4d96f451f73c42",
+          "bytes": 46976,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_restitution_duration_precision_correction.json",
+          "git_blob_oid": "2e54385b13266a88e9ea3152d29ad760fd48c687",
+          "bytes": 4270,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_scaap_funding_scope_review.json",
+          "git_blob_oid": "2d05fee502b32dcb9b0fdb5ce8b7a5d6dba4de85",
+          "bytes": 21598,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_selected_dhs_scope_review.json",
+          "git_blob_oid": "c7aef7f2b333f4949414bc9c239810b7da6da11a",
+          "bytes": 43079,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_selected_refugee_scope_review.json",
+          "git_blob_oid": "1a33ee549932bc841d7a8eef7c8aca2473b78000",
+          "bytes": 34988,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_special_assessment_scope_review.json",
+          "git_blob_oid": "2dbfbd796f4492ba85594b3ffb66729d55686000",
+          "bytes": 51808,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_state_local_trafficking_grant_review.json",
+          "git_blob_oid": "545fdb5c2402408dd11f55f35d0b843a6289c558",
+          "bytes": 29892,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_trafficking_grant_branch_review.json",
+          "git_blob_oid": "b540a666245ceeb9232d2a8e17c59225b84bcfb4",
+          "bytes": 26249,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_uscis_operational_riders_review.json",
+          "git_blob_oid": "d9210367a08c25fbbb60bfd0aca54dff0fd34064",
+          "bytes": 19676,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_1994_agreement_acquisition_followup.json",
+          "git_blob_oid": "446b1c1937ae115578b45f170adedf4cb28b27f5",
+          "bytes": 2395,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_aca_filing_extension_dependency_review.json",
+          "git_blob_oid": "4d4404d8ef77903f5982203619b9bf9affffdb19",
+          "bytes": 9034,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_aca_status_income_review.json",
+          "git_blob_oid": "bf4793e93a6949bba3dd6c4de389c0ad0310169a",
+          "bytes": 12867,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_account_pilot_eligibility_review.json",
+          "git_blob_oid": "53055ed2156667670ecd458e9d9dec1ac9875810",
+          "bytes": 273452,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_cbp_operations_funding_review.json",
+          "git_blob_oid": "78e1fea7e2e797ce559f2092fd645e21df749605",
+          "bytes": 11912,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_child_credit_condition_date_correction.json",
+          "git_blob_oid": "64f348017fe52af2000ea8b58965c95137cfbcc9",
+          "bytes": 103628,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_child_credit_identification_review.json",
+          "git_blob_oid": "80814e1d28f990b456afd0b10ff4fbc56981a880",
+          "bytes": 10223,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_child_family_funding_review.json",
+          "git_blob_oid": "e3b9496ac8c1bacf5de47f836a24a1e45a2c9d1b",
+          "bytes": 11183,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_coast_guard_funding_review.json",
+          "git_blob_oid": "44d6024ae010ab02b0208555e2f067900472af22",
+          "bytes": 385344,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_continuance_diversity_fee_review.json",
+          "git_blob_oid": "7027f4ee1a3dea6609314b7af0eac7d6e6a07d0f",
+          "bytes": 4108,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_cross_case_domain_application_review.json",
+          "git_blob_oid": "cecd7dc99094230115751f21a413f90c8131dede",
+          "bytes": 79917,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_current_student_aid_review.json",
+          "git_blob_oid": "d61c7adde4b787110d7b9e9895c27212217e4f1f",
+          "bytes": 7540,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_customs_shipment_scope_review.json",
+          "git_blob_oid": "f75fbfb1c110cc90174c6f3e4da2d215b1f61bb3",
+          "bytes": 62029,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_daca_original_policy_review.json",
+          "git_blob_oid": "25dea1ad9e2f3658374aee624dcacf9bdfda27d9",
+          "bytes": 9423,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_dod_border_support_review.json",
+          "git_blob_oid": "2702a5b26ff40ba37a3ab571dc4d9d2a6739e1f6",
+          "bytes": 79489,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_doj_prosecution_reimbursement_review.json",
+          "git_blob_oid": "c670ebaa91eb6340bf5a7202ce06451c6a15d153",
+          "bytes": 10138,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_duplicate_enrollment_scope_review.json",
+          "git_blob_oid": "2b88baca40016586a9d65b6cb17938203b5f6bdf",
+          "bytes": 209622,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_education_identification_review.json",
+          "git_blob_oid": "0eb550ea8031a766a5eb0db24212d08a9d7c5bd4",
+          "bytes": 22856,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_eitc_number_definition_review.json",
+          "git_blob_oid": "68850f58d16932e437a61b8ba3fac71c376c5a07",
+          "bytes": 70615,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_electricity_personal_status_candidate_review.json",
+          "git_blob_oid": "62e469e2b85035132fad87ef525b627862afc727",
+          "bytes": 132092,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_employment_authorization_review.json",
+          "git_blob_oid": "e458056b10824e58173441a69d8e5c7c15bcd78e",
+          "bytes": 5172,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_eoir_fee_review.json",
+          "git_blob_oid": "357b94c573730028d3980c22707e7a9975fd1024",
+          "bytes": 9583,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_eoir_incarceration_funding_review.json",
+          "git_blob_oid": "21077d61558cc2e17c8eb51c3ab8c8a94d24d72b",
+          "bytes": 8244,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_exact_version_review.json",
+          "git_blob_oid": "4d99c19382da850aff0e79e195287d22424ec187",
+          "bytes": 14954,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_exchange_verification_review.json",
+          "git_blob_oid": "37a7d149709637aebf2c922669a051f96745a26a",
+          "bytes": 9729,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_fingerprint_dna_funding_review.json",
+          "git_blob_oid": "f97caa5df184d481a8acca955f778ef8576871c7",
+          "bytes": 42941,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_fletc_training_actor_scope_correction.json",
+          "git_blob_oid": "c51449939b289f925fd6e107f40f823c3ebc730c",
+          "bytes": 4174,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_foreign_entity_electricity_scope_review.json",
+          "git_blob_oid": "e8e0535f4c94f8dd23ec70257d18961f73c0933a",
+          "bytes": 299171,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_foreign_tax_date_precision_correction.json",
+          "git_blob_oid": "f2706815b8406ccdc833a4815a7282db07d2600a",
+          "bytes": 9569,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_foreign_tax_personal_coverage_candidate_review.json",
+          "git_blob_oid": "2da615667fcef281b8e225365e0ec17c653b25c1",
+          "bytes": 143709,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_foreign_tax_remedy_scope_review.json",
+          "git_blob_oid": "95ef96e45a1e06680ac1dbe7019aa792189874a8",
+          "bytes": 185128,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_full_package_coverage_reconciliation.json",
+          "git_blob_oid": "8e6a5c6c31e7572eaeb37eebcbf679e3b3288167",
+          "bytes": 1196660,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_house_stonegarden_review.json",
+          "git_blob_oid": "d9cffa46e10ea8a60b3186af99071b40b1c32fd1",
+          "bytes": 42352,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_hra_employee_class_scope_review.json",
+          "git_blob_oid": "9d9cd49b0cad1a5d3b472ee45a7485c9a498c0bb",
+          "bytes": 120847,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_ice_bonus_condition_scope_correction.json",
+          "git_blob_oid": "738258fbe5102de82c9d7efcbf483a8901769d57",
+          "bytes": 6867,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_ice_operations_funding_review.json",
+          "git_blob_oid": "5a92b60029c96572b7631d3e176cb33363496555",
+          "bytes": 14291,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_loan_discharge_exclusion_review.json",
+          "git_blob_oid": "5cf5d6fa2c826120c736a391a85045458b4838dd",
+          "bytes": 100858,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_medicaid_fmap_review.json",
+          "git_blob_oid": "865b38843d35e01ca7ef8df9529f7ea5259058b3",
+          "bytes": 8528,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_medicaid_verification_status_review.json",
+          "git_blob_oid": "d1d2cc2ad49e9c99d1fe23ea2784990138b2904e",
+          "bytes": 9481,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_medicare_status_transition_review.json",
+          "git_blob_oid": "f68ae17956e20d54ebcb246075cbdad7f981f9f4",
+          "bytes": 10185,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_reimbursement_transport_geography_correction.json",
+          "git_blob_oid": "dfcfc41fe850d5e2ca60637270af6a90e3dd3ee2",
+          "bytes": 48288,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_remaining_component_reconciliation.json",
+          "git_blob_oid": "51125bfd7ecc85360480c6fe2d3744be9c38eadd",
+          "bytes": 494107,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_remaining_dhs_funding_review.json",
+          "git_blob_oid": "bccdca5a79340464d6e5062996c5fc0a6df8d988",
+          "bytes": 57301,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_remittance_review.json",
+          "git_blob_oid": "5d3b466ee2513d08c7a8941a295de09e57acaecf",
+          "bytes": 11442,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_removal_funding_procedural_boundary_review.json",
+          "git_blob_oid": "4ef5445c10318fd2d643cc7c9cedf6838e3d14f5",
+          "bytes": 20559,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_scholarship_donor_scope_review.json",
+          "git_blob_oid": "eeef2586dbe5690b3effbde0c0e76f8de0db7838",
+          "bytes": 257511,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_senate_child_withdrawal_examination_review.json",
+          "git_blob_oid": "b1d4391cf73040cb179bedd6ec524e7cdb1843cf",
+          "bytes": 42708,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_senate_sponsor_vetting_review.json",
+          "git_blob_oid": "b46238eb52ce37e8b95f4b16b077ad326ce5c927",
+          "bytes": 119906,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_senior_age_branch_correction.json",
+          "git_blob_oid": "89b662bc5f758d80cfb3b2965bf8e1cdd9d5ad2d",
+          "bytes": 5551,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_senior_identification_review.json",
+          "git_blob_oid": "bf747c9fd07da545703b8d368e4eba3014aac4f2",
+          "bytes": 12290,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_snap_eligibility_review.json",
+          "git_blob_oid": "3b4cf279eab5b13bf503013bba973d9df1bfa0fd",
+          "bytes": 9158,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_sponsor_removal_fee_review.json",
+          "git_blob_oid": "dc3d852494efcadbd61f4fa17c33719426ca2da0",
+          "bytes": 5326,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_state_border_fund_review.json",
+          "git_blob_oid": "7e7b3be2d8894d6f8b3f2c8d950ef499a2fc491a",
+          "bytes": 68664,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_status_specific_fee_review.json",
+          "git_blob_oid": "e7f41fdf4b86a6d22ddd980cd036ac9bd8c6603e",
+          "bytes": 4407,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_stonegarden_program_review.json",
+          "git_blob_oid": "00a68fee2c80e32524a4a66550f3f00193a9186a",
+          "bytes": 40250,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_tips_overtime_ssn_review.json",
+          "git_blob_oid": "e739f01330de690d5cb972417edf4509a8a1ea45",
+          "bytes": 334977,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_travel_inspection_fee_review.json",
+          "git_blob_oid": "5c019f5039a55379222ac75f924f354af24545b1",
+          "bytes": 13407,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_visa_i94_fee_review.json",
+          "git_blob_oid": "9335c5ca00de33f81540cd679815ff5531800bd0",
+          "bytes": 4334,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr4553_amend33_reconciliation_checkpoint220.json",
+          "git_blob_oid": "e1f4d1b95b446b6cec873b681d4627f732c4a156",
+          "bytes": 6163,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr4553_and_dakota_source_qualification_checkpoint218.json",
+          "git_blob_oid": "6a6cad1fb005a31ee63929cc9cec72ef25e0202b",
+          "bytes": 5774,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr4553_direct_rule_precision_checkpoint219.json",
+          "git_blob_oid": "91fdf3513ee7064c94a0b042db6efae41b738bce",
+          "bytes": 2080,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr4553_meaning_qualification_checkpoint218.json",
+          "git_blob_oid": "5a039ff46dfeff1a4773f68478d7e1232e7ee99b",
+          "bytes": 6216,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5107_emergency_aid_trigger_correction_checkpoint202.json",
+          "git_blob_oid": "5e17806adcdf352a97e366c0d973a7fda2d42fb6",
+          "bytes": 248010,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5107_qualified_shared_core_augmentation_checkpoint201.json",
+          "git_blob_oid": "2f34b91971aca42ca6f6b3507c06115beef7a45d",
+          "bytes": 148025,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5214_qualified_shared_core_augmentation_checkpoint202.json",
+          "git_blob_oid": "a5a4186d684ef05e58b1cd148f7b901c7bbe086d",
+          "bytes": 268030,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5371_P3_precision_checkpoint221.json",
+          "git_blob_oid": "762a788eecda381902e0c72967cd5dfcae88e984",
+          "bytes": 1047,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5371_meaning_qualification_checkpoint220.json",
+          "git_blob_oid": "dd6c76d0a76a2380dbff7b51403f18b1f2674166",
+          "bytes": 6105,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5371_partial_source_chain_checkpoint219.json",
+          "git_blob_oid": "968da3050fe64dc5a78f322296491bd084acbff7",
+          "bytes": 9672,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr5371_source_quality_checkpoint220.json",
+          "git_blob_oid": "69dc589ac1b1b033111d2d6c3b14923ce50b15c4",
+          "bytes": 11160,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr6938_whole_passage_meaning_qualification_checkpoint217.json",
+          "git_blob_oid": "e59cb7eb6c39252b125c1a95f38dc5140dec33de",
+          "bytes": 9153,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr6938_whole_passage_source_chain_checkpoint217.json",
+          "git_blob_oid": "28deebd196a062bc82ea5e045f666eafdbc79b43",
+          "bytes": 9517,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr7008_investment_exclusion_precision_correction_checkpoint200.json",
+          "git_blob_oid": "9ddcfcfb3670487d9a5eb86348281e95379c5f14",
+          "bytes": 127772,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr7008_qualified_domain_candidate_checkpoint199.json",
+          "git_blob_oid": "d9c05cac230ed9b67dd926631f50a4f17eb903dd",
+          "bytes": 295230,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/israeli_program_agreement_research_hold_checkpoint152.json",
+          "git_blob_oid": "eaa3bfdd569c4d97b9d58102ddb3b203022e7a28",
+          "bytes": 2239,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/july_september_screening_checkpoint196.json",
+          "git_blob_oid": "08021b44c3bb0b522787864247da79c471cce370",
+          "bytes": 457501,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/june_july_screening_checkpoint197.json",
+          "git_blob_oid": "c19be938e5ad6244cc9117c57afca815f8853adf",
+          "bytes": 313049,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_es_fisa_source_qualification_checkpoint208.json",
+          "git_blob_oid": "956c466ba923ae38ef2bbb2f1e46c1fe334c4cf2",
+          "bytes": 15119,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_fisa_source_qualification_checkpoint206.json",
+          "git_blob_oid": "548b1432b39b8c2c7a3682cfd52966f87eb36600",
+          "bytes": 14994,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_CCDF_check_checkpoint209.json",
+          "git_blob_oid": "2a518bea5ba10ee51503a30b0fb2f1ffdf0cee0f",
+          "bytes": 102718,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_CCDF_correction_checkpoint210.json",
+          "git_blob_oid": "5680f856d55e77d65751630f38f25b0a0c59bc90",
+          "bytes": 12426,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_authoring_check_checkpoint196.json",
+          "git_blob_oid": "40001a1a67472dc016cafa8a3c2c367d109c4863",
+          "bytes": 24160,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_authoring_check_checkpoint197.json",
+          "git_blob_oid": "41455982903eb50ae6431d4cd3bbf2c2005fe3c5",
+          "bytes": 21126,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_authoring_check_checkpoint198.json",
+          "git_blob_oid": "2293f951a9031be0840435c5730e1c66daea46ce",
+          "bytes": 15259,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_authoring_check_checkpoint199.json",
+          "git_blob_oid": "a9822531dd80926f2c5583cb09fcac6e22ec1943",
+          "bytes": 20376,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_authoring_check_checkpoint200.json",
+          "git_blob_oid": "851e33a942568949b4c1d2b3408f82ee840abb4c",
+          "bytes": 22509,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_authoring_check_checkpoint201.json",
+          "git_blob_oid": "d6aaa5942211a3628854b8b7f2fe65eda874be35",
+          "bytes": 11269,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_authoring_check_checkpoint202.json",
+          "git_blob_oid": "fac1c5635ed939a920fab8ffbeea3fc985429ded",
+          "bytes": 25996,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_authoring_check_checkpoint204.json",
+          "git_blob_oid": "64bac7daf679075f15444cae3324297355aec039",
+          "bytes": 48222,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_legacy_es_fisa_check_checkpoint208.json",
+          "git_blob_oid": "e6cb40be7f391898e88c9c4240664520ce1697fd",
+          "bytes": 55692,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_legacy_fisa_check_checkpoint206.json",
+          "git_blob_oid": "22b854da6735c83930898eebdd34e2804f6bb0ba",
+          "bytes": 57872,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json",
+          "git_blob_oid": "5460a13b3beefa1f5d2c1446c7691697f30d023d",
+          "bytes": 20582635,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/northwest_straits_capture_correction169.json",
+          "git_blob_oid": "e6c7744ec3611639e5e4a8cba706159cd2260d64",
+          "bytes": 9760,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/northwest_straits_membership_research_hold_checkpoint145.json",
+          "git_blob_oid": "04403f3e822514b639f29eb1b1d87c82b2122bb5",
+          "bytes": 4356,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/northwest_straits_membership_source_reconstruction168.json",
+          "git_blob_oid": "3df122ffa160e7f3d45ffb033b49f53cbb9ca90e",
+          "bytes": 37321,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/operative_predicate_precision_correction_checkpoint196.json",
+          "git_blob_oid": "8a8bf48e9b8e4247489400f836ece3564be72b02",
+          "bytes": 107550,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint120.json",
+          "git_blob_oid": "5f62fa6e1c769b78f0f7ce4f243db1fe57de3416",
+          "bytes": 16640,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint121.json",
+          "git_blob_oid": "e6ef2a05f615fcd752777dbb7702d5d1f0c5035b",
+          "bytes": 213541,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint123.json",
+          "git_blob_oid": "2a7797b28bde2b3c5de854c595bcdcc7509ab3a9",
+          "bytes": 81730,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint124.json",
+          "git_blob_oid": "1cab260d15332fa22df733fb78a78f8892d65a6e",
+          "bytes": 71056,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint125.json",
+          "git_blob_oid": "a0f4f56f220217fa3839cdbf9eb0dec2f35c3a66",
+          "bytes": 82752,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint126.json",
+          "git_blob_oid": "8daf75180bc59396096bfbfe8901f7b8f90405b1",
+          "bytes": 33735,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint127.json",
+          "git_blob_oid": "78977d60785892acc786521f9f5ff36aadd2a659",
+          "bytes": 29712,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint128.json",
+          "git_blob_oid": "4001d221cc594fbfee4a6dc0deb94a8f93b7e6af",
+          "bytes": 35819,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint129.json",
+          "git_blob_oid": "a4eb6a295499dd8f089a5cc38dcfd9f9b6a9d49c",
+          "bytes": 37937,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint131.json",
+          "git_blob_oid": "b15b5ef3159008143a49c4a6a245522214487b99",
+          "bytes": 52297,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint132.json",
+          "git_blob_oid": "2e1ca5540ceb6a6d1bc4023ec3d4487108d310e2",
+          "bytes": 47147,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint133.json",
+          "git_blob_oid": "ff1dffa543448c2c8eac26b38103a40614c6815f",
+          "bytes": 102353,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint134.json",
+          "git_blob_oid": "09b5d1187e58defa44065d846e90091972845a71",
+          "bytes": 73492,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint136.json",
+          "git_blob_oid": "463660ea454e3b0adaefc99b101aea42ee0823e1",
+          "bytes": 34048,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint138.json",
+          "git_blob_oid": "f7d50ac81c24a667d258b836e7bd879c3528dd5f",
+          "bytes": 87749,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint139.json",
+          "git_blob_oid": "b64d0ca5e519cab4fe5b29b41c7ecde453c7139a",
+          "bytes": 139895,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint140.json",
+          "git_blob_oid": "eb6355e5f64ef0a48c4c5c4dacef1b0726238930",
+          "bytes": 56542,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint142.json",
+          "git_blob_oid": "cfc734951556960323800a662fc15bf70164ac33",
+          "bytes": 87762,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint143.json",
+          "git_blob_oid": "344b2b3771b45baaedd0bc2ea5516f059d39166f",
+          "bytes": 20991,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint144.json",
+          "git_blob_oid": "9be94f77ce343547db1b92bcb81942d00c601aaa",
+          "bytes": 61011,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint145.json",
+          "git_blob_oid": "5cd37d1fbcd7b607972397fe14d99e87dff2fcce",
+          "bytes": 114595,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint146.json",
+          "git_blob_oid": "039f056fb4169d43e2bf8b4c566ceb46ebff8fbf",
+          "bytes": 77954,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint148.json",
+          "git_blob_oid": "71ecd6727d26c6369851fe687820d22a2f000351",
+          "bytes": 262358,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint149.json",
+          "git_blob_oid": "b6687c734857621dfaadc9fbf57f130b566e1c96",
+          "bytes": 99250,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint150.json",
+          "git_blob_oid": "0b0e8225523c8ce23b2804a98042761cecf184c6",
+          "bytes": 158323,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint151.json",
+          "git_blob_oid": "7d500f18e1cc5ed04eb4722ae21582f4e4f9f89b",
+          "bytes": 82675,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint152.json",
+          "git_blob_oid": "eb344f912950e20911ca77e42a3336bc16c9a7d1",
+          "bytes": 24162,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint154.json",
+          "git_blob_oid": "b5a90f2d4cdbf7fbc6a975e87386f9a578bb4660",
+          "bytes": 78965,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint155.json",
+          "git_blob_oid": "ad49e0392df0498d37a4e37328d8eb2b82cb01e8",
+          "bytes": 39685,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint156.json",
+          "git_blob_oid": "2c08cceb31d0682104a16d794f7e5f511dab15a1",
+          "bytes": 49506,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint157.json",
+          "git_blob_oid": "59680c99c594e91a7d0f60e9379c297c7cfd8ca4",
+          "bytes": 24387,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint158.json",
+          "git_blob_oid": "42ca90c3cab39d2b960b5dd9f69cad544ad43b26",
+          "bytes": 141088,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint159.json",
+          "git_blob_oid": "d00d7545b623363562a707694d076021173afb42",
+          "bytes": 43566,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint160.json",
+          "git_blob_oid": "f5f95862734989015e790817dde0c3c1d99b3f7f",
+          "bytes": 43812,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint161.json",
+          "git_blob_oid": "195699ede2da630db9bbfa35de2b3d2460c3c06e",
+          "bytes": 41930,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint162.json",
+          "git_blob_oid": "66c2c477825c7777cc3600c18212bcc6944e333e",
+          "bytes": 42530,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint163.json",
+          "git_blob_oid": "d5386b98bae57b4a0212db6408c20d111035abdf",
+          "bytes": 44202,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint164.json",
+          "git_blob_oid": "ffa3e31e0c50f22110ecb2519b551cb4117c6e2b",
+          "bytes": 46849,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint165.json",
+          "git_blob_oid": "884a0e3b6d1c11c94ae9492e0524226c164f4734",
+          "bytes": 42402,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint166.json",
+          "git_blob_oid": "7ecdeb2bf98c140c6078950673e95bc33edcb3e3",
+          "bytes": 54424,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint167.json",
+          "git_blob_oid": "63d40f6782d9ee32276acd10d89a5437f269ec13",
+          "bytes": 56957,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint171.json",
+          "git_blob_oid": "bcc037fee12c69395c37cd6a1059002a344f805b",
+          "bytes": 78769,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint174.json",
+          "git_blob_oid": "7f25bf6b05ba28d741d4e1fb9f3bdbd3e076904f",
+          "bytes": 86378,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint179.json",
+          "git_blob_oid": "a0e2ae5e5e208e2ab491698c77fc5b80128858a6",
+          "bytes": 114546,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint80.json",
+          "git_blob_oid": "4ea105f2500d743ba1c6959532a488a9784befd6",
+          "bytes": 27537,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint80_capture_reconciliation.json",
+          "git_blob_oid": "a51f18f0cf62fa9509bb09374488bc69b6bcc800",
+          "bytes": 1818,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint91.json",
+          "git_blob_oid": "4cb4bc4cf3e56f59755c42d62589b68ac4f95217",
+          "bytes": 30657,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint99.json",
+          "git_blob_oid": "2fbd4407c049e5814bfbb3b237bd8d61fc4442a6",
+          "bytes": 33711,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_spending_screening_checkpoint224.json",
+          "git_blob_oid": "b4dfff0d834000e4c09582e1633006b7d913f8da",
+          "bytes": 16959,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_spending_source_quality_checkpoint224.json",
+          "git_blob_oid": "046fdf32fc4c3b5b2ae81cff957d9e4aca2af3f7",
+          "bytes": 30708,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/passage_package_candidate175.json",
+          "git_blob_oid": "ba13cc0aa1054c3ac5b3c5bdd4652d964b906d22",
+          "bytes": 29496,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/premature_exclusions_restored_checkpoint211.json",
+          "git_blob_oid": "9fc2548632eeb6ee8a551c9b045783229af4d2c6",
+          "bytes": 206538,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/program_and_photoid_research_hold_checkpoint141.json",
+          "git_blob_oid": "a0fada3d88cda20d364b7549332c6b4630c53428",
+          "bytes": 29975,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_precision_corrections_checkpoint231.json",
+          "git_blob_oid": "7002a0f58b77eb865e5834b5526ac6f1bb30281d",
+          "bytes": 2806,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_qualified_research_checkpoint230.json",
+          "git_blob_oid": "0d76b10774e9e4751a90318c2581ff3fa182026c",
+          "bytes": 15503,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_source_quality_checkpoint230.json",
+          "git_blob_oid": "d3ed3733e0de956f45646f8488d4a285b49e643c",
+          "bytes": 13992,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_original_completion_checkpoint221_preserved222.json",
+          "git_blob_oid": "e02697f723652269a4627c3a23ba1cdc6034b1f5",
+          "bytes": 25799,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_review_corrections_checkpoint222.json",
+          "git_blob_oid": "afd46942efd9876b6928b223da3263f09704ed0e",
+          "bytes": 711062,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_screening_checkpoint221.json",
+          "git_blob_oid": "01ad47156af7430125d74ece10c364a121080f70",
+          "bytes": 26161,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_source_quality_checkpoint221.json",
+          "git_blob_oid": "7bce96aad81c1119c96d4e467cdaec4dcac8428d",
+          "bytes": 18220,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/qualified_core_full_wrapper_correction_checkpoint207.json",
+          "git_blob_oid": "6dd9421c26beee884a120a6413c7c6cee2fe85d8",
+          "bytes": 8628,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/records_functional_qualification_checkpoint238.json",
+          "git_blob_oid": "dc9d5dd38a8249ac2f4d7855475ba33168bc4318",
+          "bytes": 18979,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/remaining_research_checkpoint232.json",
+          "git_blob_oid": "7fd4be72298b2640868bbf8f3f9a23b3689a16fa",
+          "bytes": 7717,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/remaining_work_categories_checkpoint209.json",
+          "git_blob_oid": "1b21569aae4450bc714eadafb49e914284ca62bf",
+          "bytes": 9226,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/remaining_work_categories_checkpoint210.json",
+          "git_blob_oid": "a057449c5a3bbfcd75dbd5e9ede43ee16e59eede",
+          "bytes": 9419,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json",
+          "git_blob_oid": "37fba51680bfbd918e267362a66f692feb9ace09",
+          "bytes": 1046770,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/review_corrections_checkpoint225.json",
+          "git_blob_oid": "8a7fd3c2a902a0f667db2aace816e762b71abf9d",
+          "bytes": 40374,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/review_corrections_checkpoint229.json",
+          "git_blob_oid": "867db695e5a52bf585ec69eb5fed3fe54c128a90",
+          "bytes": 5122,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/roll200_stage_identity_correction_checkpoint193.json",
+          "git_blob_oid": "f7ce70533e18bb02ee7d498af17fa5e1042ecdf2",
+          "bytes": 35173,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/routine_screenings_checkpoint210.json",
+          "git_blob_oid": "4ffe653493130d30166297d8eeef3ad929e45839",
+          "bytes": 398855,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/s331_candidate_reclassification_checkpoint137.json",
+          "git_blob_oid": "7c7e31fc922c9084bbed5c48554f047869456b17",
+          "bytes": 34182,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/s331_june_candidate_checkpoint135.json",
+          "git_blob_oid": "855d839df013cdc825a96ba6a524f0241c968f5c",
+          "bytes": 90954,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/s331_supervisor_direction_checkpoint136.json",
+          "git_blob_oid": "3a904713b6ef3295d8b492455f239c5ee9b6ad78",
+          "bytes": 1263,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/security_status_source_preparation_checkpoint223.json",
+          "git_blob_oid": "9e99a0be9dc1b70a9d0f912d5da0767013312930",
+          "bytes": 6544,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/security_status_source_quality_checkpoint223.json",
+          "git_blob_oid": "5b50ed7ab5bbe60c0fd6ef5c02d7605e7067af36",
+          "bytes": 14544,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/september_midmonth_screening_checkpoint195.json",
+          "git_blob_oid": "3d65717cc56c005619ee870bc5a98952c0502153",
+          "bytes": 447573,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/services_qualified_research_checkpoint181.json",
+          "git_blob_oid": "474ed10f12d1d061e63746e71a8998260d9ee693",
+          "bytes": 1601109,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/source_review_full_question_correction_checkpoint205.json",
+          "git_blob_oid": "7000f9596cdfb585f11527b2cef7fac1d19927fb",
+          "bytes": 2788,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+          "git_blob_oid": "7b8264d83ea43bfc1fb86f363149591119105a19",
+          "bytes": 43032903,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/stablecoin_functional_qualification_checkpoint237.json",
+          "git_blob_oid": "3610dcaf7d6464486c78008cf6961d547507d2a6",
+          "bytes": 15374,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/state_funding_source_reconstruction169.json",
+          "git_blob_oid": "aed062715caf3d9bc916ed5bea80c40ed301b3c2",
+          "bytes": 110081,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/state_jordan_refugee_candidate169.json",
+          "git_blob_oid": "eae2fac2ab1c7f22c8736cfdf3fc77cfd77d30f4",
+          "bytes": 33053,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/state_passage_qualified_research_checkpoint178.json",
+          "git_blob_oid": "abd670f9f9ba08d6447136e3c76a32fd94fb74ea",
+          "bytes": 3460802,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/state_passage_source_boundaries_checkpoint177.json",
+          "git_blob_oid": "03430e6973a8219843914d821786041aaf014504",
+          "bytes": 70919,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/state_source_boundaries_checkpoint176.json",
+          "git_blob_oid": "2295bcb9baebfca3ef92a555232b6bff53aac367",
+          "bytes": 292987,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/student_aid_fraud_screening_checkpoint194.json",
+          "git_blob_oid": "57671bc293db2464c6acd46b1611de4cade21ea1",
+          "bytes": 864462,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/successor_checkpoint164_review_correction.json",
+          "git_blob_oid": "604b71a13ab5df3c22a3088f2348d31438d1d3ae",
+          "bytes": 105985,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/successor_source_correction_checkpoint168.json",
+          "git_blob_oid": "0132882bd2d4b45092c1c49491828904bf68f501",
+          "bytes": 4262,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/taiwan_tax_personal_status_checkpoint122.json",
+          "git_blob_oid": "dd9045b4650abe889d5a6ad7a632aaecee93e831",
+          "bytes": 34651,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/trafficking_chapeau_correction_checkpoint132.json",
+          "git_blob_oid": "a39a87370f855ac3bb1c673b673418af77359796",
+          "bytes": 43917,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/transfer_condition_source_quality_checkpoint225.json",
+          "git_blob_oid": "01aad8a0f1e1442278ecc961e79d2f7071435444",
+          "bytes": 5681,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/translator_qualification_candidate173.json",
+          "git_blob_oid": "392075fe21135123ef61c5056118ba1113bd65b2",
+          "bytes": 35747,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/translator_qualification_pending_restoration172.json",
+          "git_blob_oid": "edca34a8a70f4252428178d3d50a273ce560f6d1",
+          "bytes": 71666,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ukraine_precision_checkpoint234.json",
+          "git_blob_oid": "e2df9db9bd1330f728d7840cdbe6e6458be82e24",
+          "bytes": 4655,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ukraine_qualification_checkpoint233.json",
+          "git_blob_oid": "6cde331df211e75aef30608c0be94e7e9491de56",
+          "bytes": 9969,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json",
+          "git_blob_oid": "78a9200e7de9dc8522ab62b1663c11529ee4733b",
+          "bytes": 3966261,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/vessel_property_screening_checkpoint186.json",
+          "git_blob_oid": "8de00da9a8cf9cd5825327cfcdd6c2b28f5ccf19",
+          "bytes": 38380,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/wrda_qualification_checkpoint234.json",
+          "git_blob_oid": "e1632597962d060d1c667f87e07a2a6c29d61941",
+          "bytes": 20059,
+          "selected_generated": false
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/wrda_research_checkpoint233.json",
+          "git_blob_oid": "cb35df69e7ac697436b1277d462fbef006ab2e56",
+          "bytes": 3774,
+          "selected_generated": false
+        }
+      ],
+      "row_count": 90,
+      "relationship_count": 89,
+      "shared_actions": 81,
+      "canonical_payload_bytes": 86903928,
+      "package_manifest_sha256": "dbc511e2801011509e679766e9571fc8414dd7917616c825e036b46fcbd059e6",
+      "gate_check": "unchanged candidate rejected by real persistence adapter"
+    }
+  },
+  "commands": [
+    {
+      "label": "initdb",
+      "seconds": 4.054487299988978,
+      "exit_code": 0
+    },
+    {
+      "label": "start",
+      "seconds": 0.14813570003025234,
+      "exit_code": 0
+    },
+    {
+      "label": "stop",
+      "seconds": 1.014602500014007,
+      "exit_code": 0
+    }
+  ],
+  "error": "UntranslatableCharacter(\"unsupported Unicode escape sequence\\nDETAIL:  \\\\u0000 cannot be converted to text.\\nCONTEXT:  JSON data, line 1: ...ce [ www.gpo.gov ] [FR Doc No: 2025-01948] \\\\u0000...\\nunnamed portal parameter $5 = '...'\")",
+  "finished_utc": "2026-10-15T19:57:35.094103+00:00"
+}

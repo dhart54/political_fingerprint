@@ -1,0 +1,30 @@
+{
+  "fetched": [
+    {
+      "url": "https://supabase.com/changelog.md",
+      "status": 200,
+      "bytes": 102319,
+      "sha256": "15b3d0d1a7dc3b3f2c0af4788e49acfdf2d2edbd2613f22de0705fa43b1cf58b",
+      "seconds": 0.2867917999974452
+    },
+    {
+      "url": "https://supabase.com/docs/guides/platform/manage-your-usage/database-size.md",
+      "status": 200,
+      "bytes": 12505,
+      "sha256": "309c52364e7a2ab970aa19f7779f8f4b895871d41323c2812175b48056cd72d4",
+      "seconds": 0.420884599967394
+    }
+  ],
+  "quota_facts": {
+    "source": "https://supabase.com/docs/guides/platform/manage-your-usage/database-size",
+    "free_project_database_quota_mb": 500,
+    "metric": "Sum of pg_database_size across databases includes data/indexes/materialized views; distinct from disk/WAL and object Storage.",
+    "unit_policy": "Use conservative decimalMB for planning, provider internal conversion unverified.",
+    "scope": "Green database sizing only, not all account/projects/egress/service quotas."
+  },
+  "changelog_review": "Relevant2026-09-25PG15.19/17.11minor warning followed; ltree/pgcrypto/btree_gist/customoperators not used in this local ordinaryJSONB/BtreeDDL rehearsal. Native17.5differs; Greenruntime version/compression/indexstate unverified.",
+  "postgres_sources": [
+    "https://www.postgresql.org/docs/17/functions-admin.html#FUNCTIONS-ADMIN-DBSIZE",
+    "https://www.postgresql.org/docs/17/storage-toast.html"
+  ]
+}
