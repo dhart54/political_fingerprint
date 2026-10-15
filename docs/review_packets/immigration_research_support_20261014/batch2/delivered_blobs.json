@@ -1,0 +1,90 @@
+{
+  "basis": "Final Git index blob bytes; verify these exact object IDs and SHA256 values at delivered commit. This receipt excludes itself to avoid recursive hashing.",
+  "previous_documentation_head": "853b93cadff5be993b6fc3aab268d40c1f747d80",
+  "snapshot": "4565bc7eb91a23f5b3c164294b8aa9a7765cd54c",
+  "files": {
+    "README.md": {
+      "git_blob_oid": "5f6a575940e24204db13771905b2046e1ca4ccea",
+      "sha256": "a440345f737d3d50dd01d3350e37b9ce5c7fb622e7d1c77c1253988f6994dd70",
+      "bytes": 8131
+    },
+    "roll_2_207.md": {
+      "git_blob_oid": "c91abe1809bc3d2a03b9eb7d8b1c2b82ea4a48df",
+      "sha256": "4df48e515c45d9459a5e195fb2354250054e5014bf2a55503330f2e7c01f039e",
+      "bytes": 6302
+    },
+    "roll_2_207_sources.json": {
+      "git_blob_oid": "de3b57d566f4b083fea443fc50ebe6819eadecf2",
+      "sha256": "1294c3b9176f6588abf713fbb66c27cb26dc29534d0898807a30d87488765ff1",
+      "bytes": 36457
+    },
+    "roll_2_313.md": {
+      "git_blob_oid": "16da73c2861a404b1b2b8f3ba207b50de882f481",
+      "sha256": "9fad2d3ae70b375c20989f6a6f303dd209f462e764f9ffb1e7a5e4ed14a43519",
+      "bytes": 5616
+    },
+    "roll_2_313_evidence.json": {
+      "git_blob_oid": "5893e5c60f89e8a5b1f0f0209a0be4a350f805ec",
+      "sha256": "c72e8a7eb2fe7cca65788be5a3098372e655259017df4aace4cdea6c09463ca1",
+      "bytes": 19752
+    },
+    "roll_2_313_source_parents.zip": {
+      "git_blob_oid": "7c159080ac0f92630af8c6482656c57f9935d695",
+      "sha256": "ee199999751515433d298b7a19cc444606e4eecffcb2536169ad84d0cc6e5040",
+      "bytes": 1280252
+    },
+    "source_views/record-028.png": {
+      "git_blob_oid": "24b2169e175b669a8ee4294a2df0856f0faed4cd",
+      "sha256": "725ebe10161b20f405530b56b68f900b47534d694167375136985877cb4b0420",
+      "bytes": 759233
+    },
+    "source_views/record-029.png": {
+      "git_blob_oid": "ca288276386ed37d63c3ef3263a6e763237ece98",
+      "sha256": "12799ed7ea211c60da37dd12d8d9d1f6a136c15dfc5bca4611e47d0ab05ca527",
+      "bytes": 766471
+    },
+    "source_views/record-050.png": {
+      "git_blob_oid": "0a03aac512e06b74fc7ad6c30a4a513f919bd3f1",
+      "sha256": "99e196667ccb43da194d213d5a9b6dd76001108afa763233e24266fdc28bb835",
+      "bytes": 793382
+    },
+    "source_views/record-052.png": {
+      "git_blob_oid": "ed4f8e5cc7594b0fe875c5ed340c1973d8019077",
+      "sha256": "80f7de3d98b18db484f812962869942c8612d71687c5fc0bff3b865ed4f7edbd",
+      "bytes": 378443
+    },
+    "source_views/record-053.png": {
+      "git_blob_oid": "b5de6738ea99a8f5385dab5848dc7a583dfdd810",
+      "sha256": "90d3488dcf292632ba838319ab1fa66bdb8a63d2923047e671328a97955eda4e",
+      "bytes": 433986
+    },
+    "timing_and_validation_scope.json": {
+      "git_blob_oid": "1a82c82f1fc2d9f7ef0a85baadb21cf9e8ecb77c",
+      "sha256": "609f4454d87e130b7ce4bf98b0580d1d45a150d1f23cdb99d78bb82aaf957e61",
+      "bytes": 1486
+    }
+  },
+  "focused_precommit_verification": {
+    "head": "staged index",
+    "snapshot": "4565bc7eb91a23f5b3c164294b8aa9a7765cd54c",
+    "verified_utc": "2026-10-15T03:40:37.944408+00:00",
+    "delivered_git_blobs": 12,
+    "existing_source_identities_and_seals": 11,
+    "existing_literal_passages": 13,
+    "fresh_parent_passages": 2,
+    "raw_parents": 2,
+    "pdf_pages_mechanically_replayed": 151,
+    "glyph_locations": 11,
+    "links": 17,
+    "prior_batch_files_unchanged": 8,
+    "table_review": "14 rows visually checked; not an automatic semantic test",
+    "full_candidate_suite_run": false
+  },
+  "extraction_environment": {
+    "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+    "pypdf": "6.10.0",
+    "html_parser": "Python standard-library HTMLParser; default convert_charrefs=True",
+    "extraction_join": "two newline characters between PDF pages"
+  },
+  "verification_limit": "Precommit result above is tied to these exact blob IDs. Final committed-head recheck and push are reported on PR230; no semantic/candidate gate is implied."
+}
