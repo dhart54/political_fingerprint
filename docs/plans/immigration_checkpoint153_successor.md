@@ -4126,3 +4126,8 @@ plus projections/mappings/readable/audit entries and all old source prefixes.
 The four new strict conservation regressions remain in the raw full suite.
 No source/domain acceptance or benchmark improvement follows from test counts.
 Fresh228CI and independent228review remain required; excluded227reads untouched.
+
+
+### Checkpoint230 - programme funding and exact democracy deletion
+
+See `immigration_checkpoint230_remaining.md` and the programme source-quality/research receipts. Candidate647/29,73cores/122behavioral propositions; two researched holds, no routine benchmark credit. All72prior cores are exact. New89uses existing ordinary authoring; unsupported reuse and ordering-guard failures remain private history. Exact229bounded review received;8002verb regression strengthened with this natural test touch. Full final gates/CI/independent230review are pending; no editorial acceptance or production. Continue2:308and19safe remaining research items within unchanged bounds.

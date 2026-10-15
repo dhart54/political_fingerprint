@@ -1036,6 +1036,24 @@
         "member_action_source_identity_sha256": "82ad52d581d966ad05064122c071cb1394fc132356f80a7d2a07be330165e6e1"
       },
       {
+        "action_id": "house:119:2:89",
+        "action_core_sha256": "df86ad6cb4fb6b6b668da581a688c5e61c3b62bd8f8ec1bb77a6f2879aba4668",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:89",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "82c9d716f7e317437c3f024067c4e6637b7cc8e41c98bbcbbb2b977141307d47",
+            "governed_bytes_sha256": "532a227c192566cc61af8df3d930614100bf2f285399c4110ade959ea743ae69"
+          }
+        ],
+        "member_action_source_identity_sha256": "b922d5ddf9c225985b32879677dae66133a221344aa292d844fe5ddb0f9e894a"
+      },
+      {
         "action_id": "house:119:2:94",
         "action_core_sha256": "e85d0b56f0aacee5e348a3771cff29f25f3402050a6d9b7f1f8bb2a799013bfd",
         "official_status": "Nay",
@@ -1377,7 +1395,7 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "bc2520c979508435e0d2ffe3a6c0883eee1acd397128bcedb5163470d06cca6a"
+    "projection_sha256": "1079c8a40af13588f97707678352b4b97c43e528365f06108c2928bc15b4fb89"
   },
   {
     "schema_version": "member_action_projection_v1",
@@ -2416,6 +2434,24 @@
         "member_action_source_identity_sha256": "82ad52d581d966ad05064122c071cb1394fc132356f80a7d2a07be330165e6e1"
       },
       {
+        "action_id": "house:119:2:89",
+        "action_core_sha256": "df86ad6cb4fb6b6b668da581a688c5e61c3b62bd8f8ec1bb77a6f2879aba4668",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:89",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "82c9d716f7e317437c3f024067c4e6637b7cc8e41c98bbcbbb2b977141307d47",
+            "governed_bytes_sha256": "532a227c192566cc61af8df3d930614100bf2f285399c4110ade959ea743ae69"
+          }
+        ],
+        "member_action_source_identity_sha256": "b922d5ddf9c225985b32879677dae66133a221344aa292d844fe5ddb0f9e894a"
+      },
+      {
         "action_id": "house:119:2:94",
         "action_core_sha256": "e85d0b56f0aacee5e348a3771cff29f25f3402050a6d9b7f1f8bb2a799013bfd",
         "official_status": "Yea",
@@ -2757,6 +2793,6 @@
         "member_action_source_identity_sha256": "83fc9accc367d3b31c021b28f436ac76d9f3cf4e20e0169bcd49eef9d2c096b6"
       }
     ],
-    "projection_sha256": "9927737de3078388d54c79eb5b36a039fb02b38afa09121b88b8005017718162"
+    "projection_sha256": "e25244be99e69c5ab4a33f17f14d59b8310d25d81b6d78e4aaabc31d506f6d5f"
   }
 ]

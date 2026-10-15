@@ -4035,32 +4035,49 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('resolved nondirectional', reviews['house:119:2:191']['rationale'])
 
 
-    def test_unresolved_imported_status_relationships_withdraw_completion_credit(self):
-        from pathlib import Path
+    def test_withdrawn_status_history_and_source_qualified89_closure_stay_separate(self):
+        from backend.app.semantic_ir.shared_corpus import digest, sealed_digest
         universe = self.values[2]
         reviews = {row['action_id']: row for row in self.values[3]['records']}
         bank = {row['source_id']: row for row in self.values[1]['sources']}
         receipt = json.loads((DATA / 'programme_status_screening_checkpoint221.json').read_text(encoding='utf-8'))
         original = json.loads((DATA / 'programme_status_original_completion_checkpoint221_preserved222.json').read_text(encoding='utf-8'))
+        closure = json.loads((DATA / 'programme_qualified_research_checkpoint230.json').read_text(encoding='utf-8'))
+        self.assertEqual(closure['receipt_sha256'], sealed_digest(closure, 'receipt_sha256'))
         for roll, witness in [(89, 'govinfo:13cfr121702-2025-ownership221'),
                               (193, 'govinfo:50cfr18-3-2025-native221')]:
             aid = f'house:119:2:{roll}'
-            with self.subTest(action=aid):
-                row = next(row for row in universe['candidate_dispositions'] if row['action_id'] == aid)
-                self.assertEqual(row['disposition'], 'source_unresolved')
-                self.assertFalse(row['review_progress']['substantive_review_performed'])
-                self.assertTrue(row['review_progress']['source_application_relationship_unresolved'])
-                self.assertFalse(row['review_progress']['required_evidence_unavailable'])
-                self.assertIn(witness, {source['source_id'] for source in row['sources']})
-                self.assertNotIn(aid, reviews)
+            with self.subTest(historical_withdrawal=aid):
+                historical = (closure['prior_pending_rows'][aid] if roll == 89 else
+                              next(row for row in universe['candidate_dispositions'] if row['action_id'] == aid))
+                self.assertEqual(historical['disposition'], 'source_unresolved')
+                self.assertFalse(historical['review_progress']['substantive_review_performed'])
+                self.assertTrue(historical['review_progress']['source_application_relationship_unresolved'])
+                self.assertFalse(historical['review_progress']['required_evidence_unavailable'])
+                self.assertIn(witness, {source['source_id'] for source in historical['sources']})
                 self.assertNotIn(aid, receipt['completed_action_ids'])
                 self.assertNotIn(aid, receipt['completed_researched_holds'])
+                self.assertIn(aid, receipt['withdrawn_completed_candidate_action_ids'])
                 self.assertIn(aid, original['completed_action_ids'])
-                self.assertIn(aid, universe['unresolved_action_ids'])
-        self.assertIn('PhaseII', next(row['reason'] for row in universe['candidate_dispositions']
-                                     if row['action_id'] == 'house:119:2:89'))
+        held = 'house:119:2:193'
+        self.assertIn(held, universe['unresolved_action_ids'])
+        self.assertNotIn(held, reviews)
+        self.assertNotIn(held, closure['completed_researched_hold_ids'])
         self.assertIn('citizenship', next(row['reason'] for row in universe['candidate_dispositions']
-                                         if row['action_id'] == 'house:119:2:193'))
+                                         if row['action_id'] == held))
+        resolved = 'house:119:2:89'
+        self.assertIn(resolved, closure['completed_researched_hold_ids'])
+        self.assertNotIn(resolved, universe['unresolved_action_ids'])
+        current = next(row for row in universe['candidate_dispositions'] if row['action_id'] == resolved)
+        self.assertEqual(current['disposition'], 'interpreted_substantive_directional')
+        self.assertTrue(current['review_progress']['substantive_review_performed'])
+        self.assertEqual(current['review_progress']['shared_review_record_sha256'], digest(reviews[resolved]))
+        self.assertEqual(reviews[resolved]['review_state'], 'candidate_pending_external_semantic_review')
+        core = next(row for row in self.products[0]['actions'] if row['action_id'] == resolved)
+        self.assertEqual(core['action_core_sha256'], closure['new_core_sha256'])
+        self.assertIn('Phase II', current['reason'])
+        self.assertTrue(closure['independent230_source_domain_review_pending'])
+        self.assertFalse(closure['editorial_acceptance'])
         self.assertIn('on or afterSeptember11,2001', reviews['house:119:2:191']['rationale'])
         self.assertEqual(bank['govinfo:hr6047eh']['text'][6230:6404],
                          reviews['house:119:2:191']['claim_source_map'][-1]['passage'])
@@ -4448,7 +4465,7 @@ class Checkpoint229ReviewCorrectionTests(unittest.TestCase):
 
     def _assert_complete_8002(self, meaning):
         for fragment in [
-            'Division A section 8002', 'for the current fiscal year',
+            'Division A section 8002 suspends', 'for the current fiscal year',
             'provisions of law prohibiting payment of compensation to, or employment of, '
             'any person not a citizen of the United States',
             'direct and indirect hire foreign-national DoD employees funded by this Act',
@@ -4471,6 +4488,7 @@ class Checkpoint229ReviewCorrectionTests(unittest.TestCase):
         operator = source[55112:56236]
         self.assertTrue(operator.startswith('Sec. 8002. During the current fiscal year'))
         for fragment in ['payment of compensation to, or employment of',
+                         'shall not apply to personnel of the Department of Defense',
                          'not a citizen of the United States', 'funded by this Act',
                          'whichever is higher', 'United States diplomatic missions',
                          'pay is set by the Department of State', 'Foreign Service Act of 1980',
@@ -4480,6 +4498,7 @@ class Checkpoint229ReviewCorrectionTests(unittest.TestCase):
         self._assert_complete_8002(meaning)
         old = self.old_actions['house:119:2:45']['candidate_exact_action_meaning']
         variants = [old, old.replace('section 8001', 'section 8002'),
+                    meaning.replace('suspends', 'reaffirms'),
                     meaning.replace('higher of', 'lower of'),
                     meaning.replace('funded by this Act', 'regardless of funding source'),
                     meaning.replace('Republic of Turkey', 'every host nation'),
@@ -4522,6 +4541,107 @@ class Checkpoint229ReviewCorrectionTests(unittest.TestCase):
         missing['unaudited_current_substantive_action_ids'].remove('house:119:1:285')
         with self.assertRaises(AssertionError):
             self._assert_pending_summary_consistent(missing)
+
+
+class Checkpoint230ProgrammeQualificationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.author = json.loads((DATA / 'authoring.json').read_text(encoding='utf-8'))
+        cls.actions = {row['action_id']: row for row in cls.author['actions']}
+        cls.sources = {row['source_id']: row for row in json.loads(
+            (DATA / 'sources.json').read_text(encoding='utf-8'))['sources']}
+        cls.reviews = {row['action_id']: row for row in json.loads(
+            (DATA / 'membership_review.json').read_text(encoding='utf-8'))['records']}
+
+    def _assert_phaseii_ownership_boundary(self, meaning):
+        for fragment in ['general funding-agreement permission in new (ff)(3)(B)',
+                         'expressly described Phase II agreements in (C)',
+                         'more than 50 percent direct ownership AND control',
+                         'multiple venture-capital operating companies',
+                         "STTR branch does not acquire SBIR's multiple-venture-fund alternative",
+                         'including its affiliates', '48 months',
+                         'at least 100 percent matching', 'at least 20 percent',
+                         'not every programme eligibility rule']:
+            self.assertIn(fragment, meaning)
+
+    def test_strategic_phaseii_keeps_conditional_and_alternative_ownership_routes(self):
+        source = self.sources['govinfo:s3971es']['text']
+        self.assertIn('(C) Fund parameters.--In the case of a Phase II agreement', source)
+        rule = self.sources['govinfo:13cfr121702-2025-ownership221']['text']
+        self.assertIn('more than 50% directly owned and controlled', rule)
+        self.assertIn('permanent resident aliens', rule)
+        self.assertIn('multiple venture capital', rule)
+        meaning = self.actions['house:119:2:89']['meaning']
+        self._assert_phaseii_ownership_boundary(meaning)
+        for wrong in [meaning.replace('ownership AND control', 'ownership OR control'),
+                      meaning.replace('at least 100 percent matching', 'no matching requirement'),
+                      meaning.replace('expressly described Phase II agreements in (C)',
+                                      'all funding permissions are universally Phase II')]:
+            with self.assertRaises(AssertionError):
+                self._assert_phaseii_ownership_boundary(wrong)
+
+    def test_known_c7_rule_and_two_distinct_GAO_clocks_are_source_bound(self):
+        rule = self.sources['govinfo:fr121702c7-final-effective2025-230']['text']
+        self.assertIn('16, 2025.', rule)
+        self.assertIn('prime and any small business', rule)
+        self.assertIn('comply individually', rule)
+        self.assertIn('ownership and control requirements', rule)
+        annual = self.sources['govinfo:pl117183-gao4b4-230']['text']
+        self.assertIn('1 year', annual)
+        self.assertIn('3 years', annual)
+        triennial = self.sources['govinfo:15usc638a-GAO2024-230']['text']
+        self.assertIn('every 3 years', triennial)
+        meaning = self.actions['house:119:2:89']['meaning']
+        self.assertIn('without changing its initial one-year deadline', meaning)
+        self.assertIn('separately repeals the triennial', meaning)
+
+    def test_phase_flexibility_preserves_substantive_phaseI_determination(self):
+        source = self.sources['govinfo:s3971es']['text']
+        self.assertIn('the Department of Energy, the National Aeronautics and Space Administration', source)
+        self.assertIn('or STTR program', source)
+        meaning = self.actions['house:119:2:89']['meaning']
+        for fragment in ['Phase II solicitations under subsection (cc)',
+                         'completed the substantive Phase I determinations',
+                         'adds Energy and NASA to NIH, Defense and Education',
+                         'adds STTR alongside SBIR', 'at least 90 days before',
+                         'deletes the old (y)(3) written military-secretary certification']:
+            self.assertIn(fragment, meaning)
+
+    def test_crane_whole_targets_and_report_are_functionally_screened(self):
+        rec = self.reviews['house:119:2:27']
+        self.assertEqual(rec['disposition'], 'exact_action_ineligible')
+        self.assertNotIn('house:119:2:27', self.actions)
+        operative = self.sources['immigration:session2-roll27-report174']['text']
+        for fragment in ['Page 205, strike line 20', 'line 7 on page 206',
+                         'Page 318, strike line 11', 'line 21 on page 320']:
+            self.assertIn(fragment, operative)
+        explanation = self.sources['congressional-record:2026-01-14-7006-democracy-230']['text']
+        self.assertIn('Section 7032.', explanation)
+        self.assertIn('forced organ harvesting', explanation)
+        rationale = rec['rationale']
+        for fragment in ['entire $315,000,000', 'whole7032democracy-program section',
+                         "$2,175,000,000", "is a 'should' allocation",
+                         'organ-trafficking human-rights assessment',
+                         'not a source-defined UScitizen/LPR beneficiary test',
+                         'not a rule excluding every foreign-aid,democracy or trafficking measure']:
+            self.assertIn(fragment, rationale)
+        for claim in rec['claim_source_map']:
+            self.assertIn(claim['passage'], self.sources[claim['source_id']]['text'])
+
+    def test_candidate_is_unaccepted_and_member_observations_share_one_core(self):
+        receipt = json.loads((DATA / 'programme_qualified_research_checkpoint230.json').read_text())
+        self.assertTrue(receipt['independent230_source_domain_review_pending'])
+        self.assertFalse(receipt['editorial_acceptance'])
+        self.assertFalse(receipt['publication_authorized'])
+        self.assertEqual(receipt['ordinary_routine_sample_count'], 0)
+        core = json.loads((DATA / 'generated/shared_action_core.json').read_text())
+        selected = [row for row in core['actions'] if row['action_id'] == 'house:119:2:89']
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(selected[0]['action_core_sha256'], receipt['new_core_sha256'])
+        projections = json.loads((DATA / 'generated/member_projections.json').read_text())
+        observed = {p['member_id']: next(row['official_status'] for row in p['actions']
+                    if row['action_id'] == 'house:119:2:89') for p in projections}
+        self.assertEqual(observed, {'F000477': 'Yea', 'M001184': 'Nay'})
 
 
 if __name__ == '__main__':

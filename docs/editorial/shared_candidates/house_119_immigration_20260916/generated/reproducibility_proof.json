@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "c99afc05d7d7754b03e089e67a85bd40c07413b66a410780d3dee2f74afd2235",
-  "source_capture_sha256": "413fc6b8ad720c4dd42e5ddc6a5675e57a95845ba2e80855daacf0b9cf09bc70",
-  "core_sha256": "678819f6d686d6923282ebfeee3db548eb723a1400c50510c833b5cf98308e19",
-  "compiled_sha256": "fcefbdeb1423c2f12994f307beb8092250c22c419010dd65f1e7e27008c7973e",
-  "readable_sha256": "d49221812713e33d8bd8a09bf60b20d4032273d4fee1d37392f50e17763f02fa",
+  "input_sha256": "1fc8c010d3370ea73049578e341796ce7e6db15b0eae3c40c62aeb4c9f1ec1a2",
+  "source_capture_sha256": "2eb30ad0465d9b037ee235e42653475a319a5136b763fbabca561fd6de768210",
+  "core_sha256": "1a676265776a193e4eaffbce9b162024693c886e32e245f531e828795c0203b7",
+  "compiled_sha256": "185c5ae3af8b46e3b616b8ac5635e53f8f259201706907413fe001443662fd1b",
+  "readable_sha256": "5788b3559fa4a6bc78bf1d0cd74265f8db63fc3b49c0221dde022761af9db33b",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1114,6 +1114,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of the whole exact H.R. 7744 annual DHS funding proposal",
           "source_id": "clerk:119:2:87"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:89",
+      "shared_sha256": "df86ad6cb4fb6b6b668da581a688c5e61c3b62bd8f8ec1bb77a6f2879aba4668",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "Support passage of the whole exact package, including its conditional funding and programme-specific eligibility; no separate component endorsement.",
+          "source_id": "clerk:119:2:89"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "Oppose passage of the whole exact package; no preferred alternative or separate opposition to each component inferred.",
+          "source_id": "clerk:119:2:89"
         }
       ]
     },
