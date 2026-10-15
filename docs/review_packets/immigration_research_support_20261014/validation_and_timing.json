@@ -75,7 +75,7 @@
     }
   ],
   "time_limits": "Focused per-action windows include research/drafting, not exclusive CPU. Shared selection/source discovery, cross-packet supplement, validation, rework and GitHub delivery remain in gross total; final delivery follows this documentation cutoff.",
-  "packet_file_hashes": {
+  "historical_reported_packet_file_hashes": {
     "README.md": "575e2b878484a3a5432a8633d2535c16d8bb6a26b2cc9924f7e8afe3c48bfeb5",
     "roll_2_272.md": "3d5243ad95dcd418e8d00c8b8feaba48090b37ea928657d1531dbfaf6a895d4c",
     "roll_2_272_sources.json": "0d2da49bb158d656b6cbabffbc1289c683b1f5b6b94c22340a5ee50960340964",
@@ -83,5 +83,49 @@
     "roll_2_286_sources.json": "2a83ec1a97e9b06c081d9f2c6ef61f73a53260e137b546713d9b3a70e1351a93",
     "roll_2_310.md": "b8feedbacc22854fdddf8f525042fcaa0630e8a9bc1e3e540dc8167319abc5a0",
     "roll_2_310_sources.json": "345dd5daf65379e7a431b60151ee7d5ee8007b5f14f51e3956611b1b20a90669"
-  }
+  },
+  "historical_packet_file_hashes_limitations": {
+    "reported_at_head": "a34980ea6e7d6ab99a5cbb3c7630d45e9d8acef6",
+    "review_comment": "https://github.com/dhart54/political_fingerprint/pull/230#issuecomment-6183565048",
+    "status": "Historical reported values only; these did not certify the delivered Git blob bytes.",
+    "independent_review_observation": "Six matched CRLF worktree serialization; README matched neither delivered LF nor CRLF serialization. Preserve these values without relabeling the earlier checks as delivered-blob verification."
+  },
+  "delivered_packet_blobs": {
+    "README.md": {
+      "git_blob_oid": "8ec7d5a6f1196fe0c23a168d57fcedc61ec86e2a",
+      "sha256": "55a3b9b956a587cb49407741cd49c1006c6c4eb8c4de24fca559b9f97bd2a449",
+      "bytes": 7696
+    },
+    "roll_2_272.md": {
+      "git_blob_oid": "b9a8a2382f85c60f7f7aaa8da82db09657bcbb23",
+      "sha256": "4301c05f0064edb5392f1ce1b5fe3c9991676e91f396f242c17b8779cb5be10c",
+      "bytes": 6151
+    },
+    "roll_2_272_sources.json": {
+      "git_blob_oid": "25c4ed1f1b45d00ff8f5c8534fcdfb54212860cd",
+      "sha256": "e96df98204f7e99807e343358828c7f035f3ac29d4901b6c7a988662adaf9a1f",
+      "bytes": 39427
+    },
+    "roll_2_286.md": {
+      "git_blob_oid": "a14feb0419736ed3c4e02b1b5b06a5e470bf3cc9",
+      "sha256": "4ae62b1fff9df85be0e7c3ccb1228e04c25abcd68662586e130fa092d75735a1",
+      "bytes": 6889
+    },
+    "roll_2_286_sources.json": {
+      "git_blob_oid": "3b7531c41b11f55f0febdf2edcfffb394b0ea4fa",
+      "sha256": "74421d6389764de2c228a77289c4398d8aeb23b76ac3eff502fbd3a845dce559",
+      "bytes": 20105
+    },
+    "roll_2_310.md": {
+      "git_blob_oid": "3a5f92500b0c06e1c35984b2efd4cdb812eae5e8",
+      "sha256": "1092cbc65371789cdd79c9874d1b3e89a326f7ec5a718ae6d91e2a3830477e54",
+      "bytes": 7617
+    },
+    "roll_2_310_sources.json": {
+      "git_blob_oid": "f951041fb7c44688a2ad53810efeddaf3b858694",
+      "sha256": "83ce6c629aa134e7fbb51b5717ee9261a8ca2e6aa476f1c6fdc2f72b9b2ac360",
+      "bytes": 40975
+    }
+  },
+  "delivered_packet_blobs_basis": "Authoritative Git index blob contents after the final Markdown/link correction; these exact blobs are included in the correction commit. Verify against committed blobs at the delivered head. This receipt is excluded from its own map to avoid recursive hashing; historical source/timing limits remain unchanged."
 }

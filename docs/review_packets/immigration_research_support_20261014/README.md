@@ -53,6 +53,16 @@ claims. Recorded raw identities were not recertified against fresh remote
 bytes. No whole-source, current-law, complete-chain or editorial clearance is
 claimed beyond the stated reviewed extents.
 
+Checksum correction following [independent review](https://github.com/dhart54/political_fingerprint/pull/230#issuecomment-6183565048):
+the original packet-file hashes did not certify delivered Git blob bytes. They
+remain in the receipt as historical reported values with that limitation; six
+matched CRLF worktree serialization and the README value matched neither
+delivered LF nor CRLF bytes. The corrected `delivered_packet_blobs` map binds the
+seven final packet/index files by Git object ID and SHA256 of their Git blob
+contents. The receipt excludes itself to avoid recursive hashing. The roll310
+checkpoint192 provenance filename is also corrected; source passage receipts
+and the original timing/verification limits remain unchanged.
+
 Some material baseline sources were not located by bounded source-ID/URL index
 queries. This means a handoff gap, not evidence unavailability. The packets
 preserve those gaps and distinguish historical comparators from vote-date
