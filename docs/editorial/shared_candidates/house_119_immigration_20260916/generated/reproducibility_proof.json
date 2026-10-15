@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "04bdc840ad17593a659e49ee3f11c507cdf11c1e7b8be502fe753c88a3477844",
-  "source_capture_sha256": "05f39e2d5d2f08e25a86cf56d4999d34ffe84dd4b4150e6feb3601cf1ea87fad",
-  "core_sha256": "548fd367f3553d3c2338af21dc7980880fe51ac019c61b73bb9c1ce454df641c",
-  "compiled_sha256": "864c9974d9a6be76c1d8046d39bcae3b7d05f17745fb101e4719005fea38c08d",
-  "readable_sha256": "c3fd6df12c395786eccce5ece6cb5ea797741f6c1c6f90de2b65a0b7a5b5c29b",
+  "input_sha256": "586a790557e3bb1998f0dfe50ea7cb41736c61ea8e0dc7c6f47a11ae84eb8490",
+  "source_capture_sha256": "11d8779b4f47839628801d7aa7b11f9bf2089dcb1d7e95c0a37448ee7a2e0f8d",
+  "core_sha256": "296d2f35105acffe2e44b588429c7929b4a27c97b4067b30179da668dc7506af",
+  "compiled_sha256": "14afa14d37c5ca021bd2be9bbe492db15daaeedff85419705ebf310e4880b70b",
+  "readable_sha256": "e68ba3b77837d2cb542847a1f6874b56073379b4b04a7799157344861d1fbe03",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -839,7 +839,7 @@
     },
     {
       "action_id": "house:119:1:349",
-      "shared_sha256": "0d80fde64642664c19aecbd8dfdd909c68c7f82f60ed1277f1c9c1d64b43778c",
+      "shared_sha256": "6ec42eabd73915269cbc80ca87f916cdb2c93414b78cd69a5064b30304a2cabd",
       "choices": [
         {
           "member_id": "F000477",
@@ -1534,6 +1534,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported adopting the combined Jordan funding prohibition and all eight specified account reductions, including the $50 million emergency refugee and migration fund reduction, subject to the stated application limits",
           "source_id": "clerk:119:2:244"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:271",
+      "shared_sha256": "fbf7e0c59821338ef721d1cddd993c97a557551f5f25c4209a7799c9cf415fc9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact banking package; no component opposition, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:271"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact banking package; no component opposition, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:271"
         }
       ]
     },

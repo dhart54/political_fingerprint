@@ -424,7 +424,23 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             if item['action_id'] == 'house:119:2:207':
                 self._assert_ukraine233_closure(rows, records)
                 continue
-            self.assertNotIn(item['action_id'], records)
+            if item['action_id'] == 'house:119:2:310':
+                closure = json.loads((DATA / 'records_functional_qualification_checkpoint238.json').read_text(encoding='utf-8'))
+                self.assertEqual(closure['receipt_sha256'], sealed_digest(closure, 'receipt_sha256'))
+                self.assertEqual(closure['action_id'], item['action_id'])
+                self.assertEqual(closure['prior_pending_row']['disposition'], 'source_unresolved')
+                self.assertEqual(closure['membership_record_sha256'], digest(records[item['action_id']]))
+                self.assertEqual(rows[item['action_id']]['disposition'], 'exact_action_ineligible')
+                self.assertEqual(rows[item['action_id']]['review_progress']['shared_review_record_sha256'], digest(records[item['action_id']]))
+                self.assertEqual(closure['new_core_count'], 0)
+                self.assertEqual(closure['new_proposition_count'], 0)
+                self.assertTrue(closure['privacy_remedy_HIPAA_and_individual_applications_retained'])
+                self.assertTrue(closure['independent_source_domain_review_pending'])
+                self.assertFalse(closure['editorial_acceptance'])
+                self.assertFalse(closure['publication_authorized'])
+                self.assertNotIn(item['action_id'], [c['action_id'] for c in self.products[0]['actions']])
+                continue
+            self.assertFalse(item['action_id'] in records, item['action_id'])
             self.assertEqual(rows[item['action_id']]['disposition'], 'source_unresolved')
 
     def _assert_ukraine233_closure(self, rows, records):
@@ -498,6 +514,123 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 claim['passage'] = claim['passage'].replace(before, after)
                 with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
                     prepare(author, self.values[1], ['F000477','M001184'])
+
+    def test_HRA238_same_terms_is_conditional_and_within_the_specified_class(self):
+        aid = 'house:119:1:349'
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        text = bank['govinfo:hr6703eh']['text']
+        source = text[14014:14792]
+        self.assertIn('offering such arrangement to an employee within a specified class', source)
+        self.assertIn('all employees within such specified class on the same terms', source)
+        self.assertTrue(text[14193:].startswith('offers such arrangement to '))
+        self.assertTrue(text[14220:].startswith('all employees within such specified class'))
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+        self.assertIn('if an employer offers the arrangement to an employee within a specified class', action['meaning'])
+        self.assertIn('all employees within that specified class on the same terms', action['meaning'])
+        self.assertNotIn('to all its employees on the same terms', action['meaning'])
+        receipt = json.loads((DATA / 'HRA_precision_checkpoint238.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['review_comment'], 6199231809)
+        self.assertEqual(receipt['reviewed_head'], 'a2f13b483f7ce6ff4ee1d1cf0fc8c2cb2dc17543')
+        self.assertEqual(receipt['source_point']['passage'], source)
+        self.assertTrue(receipt['source_witnesses_and_claim_bindings_unchanged'])
+        self.assertTrue(receipt['frozen237provider_and_qualification_unchanged'])
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        author = copy.deepcopy(self.values[0])
+        target = next(a for a in author['actions'] if a['action_id'] == aid)
+        claim = next(c for c in target['claim_source_map'] if c['source_id'] == 'govinfo:hr6703eh' and 'all employees within such specified class' in c['passage'])
+        claim['passage'] = claim['passage'].replace('all employees within such specified class', 'all its employees', 1)
+        seed = next(a for a in author['actions'] if 'shared_core_reuse' not in a)
+        author['actions'] = [seed, target]
+        author['blocked_episode_ids'] = []
+        with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+            prepare(author, self.values[1], ['F000477', 'M001184'])
+
+    def test_banking238_preserves_original_health_and_whole_choice(self):
+        aid = 'house:119:2:271'
+        health = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
+        old = next(c for c in health['actions'] if c['action_id'] == aid)
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == aid)
+        self.assertEqual(old['action_core_sha256'], '80eb86154312c499b38b611c78cac99c21d512ee9b03bb7615993517aca50b56')
+        self.assertEqual(core['exact_action_identity'], old['exact_action_identity'])
+        self.assertEqual(core['action_meaning_ref'], old['action_meaning_ref'])
+        self.assertTrue(core['candidate_exact_action_meaning'].startswith(old['candidate_exact_action_meaning']))
+        self.assertTrue(all(w in core['governed_source_identities'] for w in old['governed_source_identities']))
+        self.assertTrue(set(old['candidate_shared_limitations']) <= set(core['candidate_shared_limitations']))
+        for member in self.products[2]:
+            row = next(a for a in member['actions'] if a['action_id'] == aid)
+            self.assertEqual(row['official_status'], 'Nay')
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+        self.assertIn('Later same-bill recommittal context is separate', action['meaning'])
+        self.assertIn('onePresent/fiveNotVoting', action['meaning'])
+
+    def test_banking238_carried_citizenship_and_distinct_tenure_limits(self):
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        baseline = bank['govinfo:12usc1812-2024-bank238']['text']
+        self.assertIn('citizens of the United States', baseline)
+        self.assertIn('State bank supervisory experience', baseline)
+        self.assertIn('term of 6 years', baseline)
+        self.assertIn('term of 5 years', baseline)
+        self.assertIn('until a successor has been appointed and qualified', baseline)
+        self.assertNotIn('more than twelve years', baseline)
+        bill = bank['govinfo:hr6955eh']['text']
+        self.assertIn('more than two terms', bill)
+        self.assertIn('more than twelve years in total', bill)
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:271')
+        for phrase in ['already contains that citizenship requirement', 'separately, one member',
+                       'no individual may be appointed as a member for more than two terms',
+                       'no person shall serve as a member for more than twelve years in total',
+                       'not decided for a particular officeholder', 'minimum generally PERMITTED']:
+            self.assertIn(phrase, action['meaning'])
+
+    def test_banking238_enacted_baseline_keeps_clock_and_branch_distinctions(self):
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        baseline = ' '.join(bank['govinfo:pl119-101-section908-bank238']['text'].split())
+        self.assertIn('180-day period', baseline)
+        self.assertIn('within the 90- day period', baseline)
+        footer = ' '.join(bank['govinfo:pl119-101-OFR-enactment-bank238']['text'].split())
+        self.assertIn('without his signature on July 11, 2026', footer)
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:271')
+        for phrase in ['MAY make', 'UNLESS they do so', 'SHALL be permanent',
+                       'insured before the determination', 'conditional proposal comparison',
+                       'not official/current law', 'Section203', 'not later than one year after enactment']:
+            self.assertIn(phrase, action['meaning'])
+
+    def test_records238_qualified_functional_exclusion_preserves_privacy_questions(self):
+        aid = 'house:119:2:310'
+        row = next(r for r in self.values[3]['records'] if r['action_id'] == aid)
+        self.assertEqual(row['disposition'], 'exact_action_ineligible')
+        self.assertFalse(row['required_evidence_unavailable'])
+        self.assertFalse(row['authoritative_source_conflict'])
+        self.assertNotIn(aid, [c['action_id'] for c in self.products[0]['actions']])
+        for phrase in ['WHEREAPPLICABLE', 'unchanged citizenship/LPR scope',
+                       'No all-other-noncitizen absolute remedy exclusion',
+                       'remain legal questions, not findings', 'fraud-law-enforcement-only',
+                       'identity verification', 'not silently immigration-document verification']:
+            self.assertIn(phrase.lower(), row['rationale'].lower())
+        receipt = json.loads((DATA / 'records_functional_qualification_checkpoint238.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['new_core_count'], 0)
+        self.assertEqual(receipt['new_proposition_count'], 0)
+        self.assertEqual(receipt['prior_pending_row']['disposition'], 'source_unresolved')
+        self.assertTrue(receipt['privacy_remedy_HIPAA_and_individual_applications_retained'])
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+
+    def test_banking238_corrupted_source_predicates_reject(self):
+        for sid, before, after in [
+                ('govinfo:12usc1812-2024-bank238', 'citizens of the United States', 'any resident'),
+                ('govinfo:hr6955eh', 'more than two terms', 'more than three terms'),
+                ('govinfo:hr6955eh', 'more than twelve years', 'more than eighteen years'),
+                ('govinfo:pl119-101-section908-bank238', '180-day', '90-day'),
+                ('govinfo:pl119-101-OFR-enactment-bank238', 'without his signature', 'with his signature')]:
+            with self.subTest(source=sid):
+                author = copy.deepcopy(self.values[0])
+                action = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:271')
+                claim = next(c for c in action['claim_source_map'] if c['source_id'] == sid and before in c['passage'])
+                claim['passage'] = claim['passage'].replace(before, after, 1)
+                seed = next(a for a in author['actions'] if 'shared_core_reuse' not in a)
+                author['actions'] = [seed, action]
+                author['blocked_episode_ids'] = []
+                with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+                    prepare(author, self.values[1], ['F000477', 'M001184'])
 
     def test_financial237_shared_history_and_NotVoting_remain_distinct(self):
         health = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
@@ -5433,6 +5566,8 @@ class Checkpoint232SourceRelationshipAndScreeningTests(unittest.TestCase):
         u = json.loads((DATA / 'universe_proposal.json').read_text())
         closure = json.loads((DATA / 'continuing_appropriations_qualification_checkpoint235.json').read_text(encoding='utf-8'))
         self.assertEqual(closure['receipt_sha256'], sealed_digest(closure, 'receipt_sha256'))
+        records_closure = json.loads((DATA / 'records_functional_qualification_checkpoint238.json').read_text(encoding='utf-8'))
+        self.assertEqual(records_closure['receipt_sha256'], sealed_digest(records_closure, 'receipt_sha256'))
         for action in r['actions']:
             row = next(x for x in u['candidate_dispositions'] if x['action_id'] == action['action_id'])
             if action['action_id'] in closure['action_ids']:
@@ -5443,6 +5578,17 @@ class Checkpoint232SourceRelationshipAndScreeningTests(unittest.TestCase):
                 self.assertTrue(closure['legal_applications_unresolved'])
                 self.assertFalse(closure['editorial_acceptance'])
                 self.assertFalse(closure['publication_authorized'])
+                continue
+            if action['action_id'] == records_closure['action_id']:
+                self.assertEqual(records_closure['prior_pending_row']['disposition'], 'source_unresolved')
+                self.assertEqual(row['disposition'], 'exact_action_ineligible')
+                self.assertNotIn(action['action_id'], u['unresolved_action_ids'])
+                self.assertEqual(records_closure['new_core_count'], 0)
+                self.assertEqual(records_closure['new_proposition_count'], 0)
+                self.assertTrue(records_closure['privacy_remedy_HIPAA_and_individual_applications_retained'])
+                self.assertTrue(records_closure['independent_source_domain_review_pending'])
+                self.assertFalse(records_closure['editorial_acceptance'])
+                self.assertFalse(records_closure['publication_authorized'])
                 continue
             self.assertEqual(row['disposition'], 'source_unresolved')
             self.assertIn(action['action_id'], u['unresolved_action_ids'])
