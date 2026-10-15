@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "9734b1ee5f61306dbe73b88ed813a24c8c3daa4ba4a1699e159449ff3bfb7cfa",
-  "source_capture_sha256": "28487ad3f531c997d11667dc4749b69796335e52ecd406503548a1174367a2e4",
-  "core_sha256": "36cf0fcddbf8a02f4767b0c9f63d2b82346f926af3ee4a29a1bfc79a7b1bee17",
-  "compiled_sha256": "fa3d3f7ba55a56005ec4810a0cf61f145f8d8c81f3b3a35135d7de257376c7aa",
-  "readable_sha256": "2fd70f424b21fb947f4cbe5f9aa1a602eb07765d57387d4be90a86777df3a382",
+  "input_sha256": "77809c8fe230b1c189f5805453ad10a02eada240702b36fa4c53f27197d5d63e",
+  "source_capture_sha256": "59e7621e5f8ff6f553ab6755f9ae63369b7867ed744338144845d43dc7810e2a",
+  "core_sha256": "9d5aa9417ec558c97c5149a4ee2397eac6fb90a363c57520bffe3426ff9bc334",
+  "compiled_sha256": "39ad067125440c23ac297d1d33b6f901932c69fa2f4101f3fab99fad2175979c",
+  "readable_sha256": "39fbc7d6d0cbc365a0771de358a9f307b9dd5f3e6cc75b5003cd3c35d473279d",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1394,6 +1394,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passing that entire exact mixed package; no separate component stance or preferred alternative is inferred",
           "source_id": "clerk:119:2:205"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:207",
+      "shared_sha256": "2a47f6130e0042658070aba0811f4fff2a3e231979cb3cdaec6df85e46858179",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole exact Ukraine security, assistance and sanctions package; no separate component endorsement inferred",
+          "source_id": "clerk:119:2:207"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing that whole exact package; no separate component opposition, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:207"
         }
       ]
     },

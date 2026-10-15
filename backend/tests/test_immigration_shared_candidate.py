@@ -245,14 +245,17 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertTrue(records['house:119:2:143']['substantive_review_performed'])
         self.assertNotIn('house:119:2:143', {a['action_id'] for a in self.values[0]['actions']})
         self.assertIn('not a$70billion immigration appropriation', records['house:119:2:143']['rationale'])
-        self.assertEqual(rows['house:119:2:207']['disposition'], 'source_unresolved')
-        self.assertNotIn('house:119:2:207', records)
-        self.assertTrue(rows['house:119:2:207']['review_progress']['source_application_relationship_unresolved'])
+        # The224source-only reconciliation remains uncredited in its sealed history;
+        #233separately records the qualified direct317candidate without repairing imports.
+        self._assert_ukraine233_closure(rows, records)
         receipt = json.loads((DATA / 'ordinary_spending_screening_checkpoint224.json').read_text())
         self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
         self.assertEqual(len(receipt['completed_action_ids']), 5)
         self.assertEqual(receipt['counts_after']['pending'], 38)
         self.assertTrue(receipt['independent224_source_domain_review_pending'])
+        self.assertTrue(receipt['prior223_207_research_reconciled_no_new_credit'])
+        self.assertNotIn('house:119:2:207', receipt['completed_action_ids'])
+        self.assertEqual(receipt['prior207_generic_pending_row']['disposition'], 'source_unresolved')
 
     def _assert_section412_printed_linkage225(self, text):
         for fragment in ['Section412(a)', 'Department of Defense IN THIS ACT',
@@ -418,8 +421,94 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertEqual(correction['prior_core_sha256'], closure['new_core_sha256'])
                 self.assertEqual(core['action_core_sha256'], correction['new_core_sha256'])
                 continue
+            if item['action_id'] == 'house:119:2:207':
+                self._assert_ukraine233_closure(rows, records)
+                continue
             self.assertNotIn(item['action_id'], records)
             self.assertEqual(rows[item['action_id']]['disposition'], 'source_unresolved')
+
+    def _assert_ukraine233_closure(self, rows, records):
+        closure = json.loads((DATA / 'ukraine_qualification_checkpoint233.json').read_text(encoding='utf-8'))
+        self.assertEqual(closure['receipt_sha256'], sealed_digest(closure, 'receipt_sha256'))
+        aid = 'house:119:2:207'
+        self.assertEqual(closure['action_id'], aid)
+        self.assertEqual(closure['prior_pending_row']['disposition'], 'source_unresolved')
+        self.assertTrue(closure['prior_pending_row']['review_progress']['source_application_relationship_unresolved'])
+        self.assertFalse(closure['editorial_acceptance'])
+        self.assertFalse(closure['publication_authorized'])
+        self.assertEqual(records[aid]['review_state'], 'candidate_pending_external_semantic_review')
+        self.assertEqual(rows[aid]['disposition'], 'interpreted_substantive_directional')
+        self.assertEqual(rows[aid]['review_progress']['shared_review_record_sha256'], digest(records[aid]))
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == aid)
+        self.assertEqual(core['action_core_sha256'], closure['new_core_sha256'])
+
+    def test_ukraine233_preserves_original_shared_identity_prefix_and_observations(self):
+        old = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
+        old = next(c for c in old['actions'] if c['action_id'] == 'house:119:2:207')
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == old['action_id'])
+        self.assertEqual(old['action_core_sha256'], '5b38191374ea2bcac0c24544eacbc070c62b2fc492e4a8575e1af892dabd46d8')
+        self.assertEqual(core['exact_action_identity'], old['exact_action_identity'])
+        self.assertEqual(core['action_meaning_ref'], old['action_meaning_ref'])
+        self.assertTrue(core['candidate_exact_action_meaning'].startswith(old['candidate_exact_action_meaning']))
+        self.assertTrue(set(old['candidate_shared_limitations']) <= set(core['candidate_shared_limitations']))
+        for witness in old['governed_source_identities']:
+            self.assertIn(witness, core['governed_source_identities'])
+        self.assertEqual(core['legislative_stage'], 'final_passage')
+        self.assertEqual(core['package_component_boundary']['boundary_type'], 'whole_measure')
+        for projection in self.products[2]:
+            row = next(c for c in projection['actions'] if c['action_id'] == core['action_id'])
+            self.assertEqual(row['official_status'], {'F000477':'Yea', 'M001184':'Nay'}[projection['member_id']])
+            self.assertEqual(row['action_core_sha256'], core['action_core_sha256'])
+        for member in ['Foushee', 'Massie', 'F000477', 'M001184']:
+            self.assertNotIn(member, core['candidate_exact_action_meaning'])
+
+    def test_ukraine233_direct_routes_and_malformed_imports_bind_operatives(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:207')
+        text = action['meaning']
+        for fragment in ['section317(2)', 'three or more', 'ownership OR operation',
+                         'AND the presidential national-security determination',
+                         "'section310(a)(1)'", "'under section302', not301",
+                         'NOT LESS THAN500percent', 'with respect to admission',
+                         'admitting OR paroling', 'at least15days before',
+                         'ordinarily30calendar days', 'no three-fifths threshold',
+                         'OR financial transactions relating to humanitarian assistance',
+                         'not a blanket financial-transaction exemption']:
+            self.assertIn(fragment.casefold(), text.casefold())
+        sources = {s['source_id']:s for s in self.values[1]['sources']}
+        for n in range(301,323):
+            claim = next(c for c in action['claim_source_map'] if c['locator'].startswith(f'Complete operative section{n};'))
+            self.assertIn(claim['passage'], sources[claim['source_id']]['text'])
+            self.assertTrue(claim['passage'].startswith(f'SEC. {n}.'))
+        for sid in ['immigration:roll207-initial171', 'immigration:roll207-recorded171', 'immigration:roll207-report171']:
+            self.assertNotIn(sid, action['additional_source_ids'])
+            self.assertNotIn(sid, {c['source_id'] for c in action['claim_source_map']})
+
+    def test_ukraine233_repaired_or_unconditional_source_passages_are_rejected(self):
+        for n, before, after in [(302, 'section 310(a)(1)', 'section 317(a)(1)'),
+                                  (310, 'under section 302', 'under section 301'),
+                                  (319, 'if admitting or paroling the alien into the United States is necessary', 'for every alien without conditions')]:
+            with self.subTest(section=n):
+                author = copy.deepcopy(self.values[0])
+                action = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:207')
+                claim = next(c for c in action['claim_source_map'] if c['locator'].startswith(f'Complete operative section{n};'))
+                self.assertIn(before, claim['passage'])
+                claim['passage'] = claim['passage'].replace(before, after)
+                with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+                    prepare(author, self.values[1], ['F000477','M001184'])
+
+    def test_wrda233_source_progress_does_not_close_version_or_material_holds(self):
+        receipt = json.loads((DATA / 'wrda_research_checkpoint233.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(receipt['completion_credit'], 0)
+        extents = receipt['owner_read']['owner_read_extents']
+        self.assertEqual(extents[0][0], 0)
+        self.assertEqual(extents[-1][1], 375169)
+        self.assertTrue(all(a[1] == b[0] for a,b in zip(extents, extents[1:])))
+        row = next(r for r in self.values[2]['candidate_dispositions'] if r['action_id'] == receipt['action_id'])
+        self.assertEqual(row['disposition'], 'source_unresolved')
+        self.assertNotIn(receipt['action_id'], {a['action_id'] for a in self.values[0]['actions']})
+        support = json.loads((DATA.parents[2] / 'review_packets/immigration_support_batch2_received233.json').read_text(encoding='utf-8'))
+        self.assertFalse(support['new_resume_verification_of_six_cancelled_binaries'])
 
     def test_modern_candidate_qualification_preserves_Health_core_and_whole_CCDF_boundaries(self):
         from pathlib import Path

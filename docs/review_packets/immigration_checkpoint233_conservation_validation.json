@@ -1,0 +1,403 @@
+{
+  "checkpoint": 233,
+  "base_head": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+  "received_utc": "2026-10-15T14:08:17.153872+00:00",
+  "completed_action_ids": [
+    "house:119:2:207"
+  ],
+  "complex_actions_completed": 1,
+  "ordinary_routine_samples": 0,
+  "WRDA313completion_credit": 0,
+  "counts": {
+    "reviewed": 650,
+    "pending": 26,
+    "cores": 75,
+    "behavioral_propositions": 126,
+    "episodes": 65,
+    "multi_action_episodes": 9
+  },
+  "validation": {
+    "full_gate": {
+      "started_utc": "2026-10-15T13:54:40.607024+00:00",
+      "completed_utc": "2026-10-15T14:04:46.873104+00:00",
+      "wall_seconds": 606.3791441999492,
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-15T13:54:40.607540+00:00",
+          "PID": 20924,
+          "completed_utc": "2026-10-15T14:04:46.867021+00:00",
+          "elapsed_seconds": 606.372555000009,
+          "exit_code": 0,
+          "log": ".tmp/full_gate233/owner.log",
+          "log_sha256": "4f216e8933181f1e8b310523f668ccb2fd3833fe333141cd4e749548c328566e"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-15T13:54:40.608027+00:00",
+          "PID": 11220,
+          "completed_utc": "2026-10-15T13:54:40.692817+00:00",
+          "elapsed_seconds": 0.08481110003776848,
+          "exit_code": 0,
+          "log": ".tmp/full_gate233/IR.log",
+          "log_sha256": "c685b96081a679524028caab1b8863edfc97f4a8ce1241c10bc0442a915980de"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-15T13:54:40.607748+00:00",
+          "PID": 12152,
+          "completed_utc": "2026-10-15T13:54:43.306976+00:00",
+          "elapsed_seconds": 2.699736899987329,
+          "exit_code": 0,
+          "log": ".tmp/full_gate233/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate233\\replay"
+          ],
+          "started_utc": "2026-10-15T13:54:40.608417+00:00",
+          "PID": 20860,
+          "completed_utc": "2026-10-15T13:56:11.091983+00:00",
+          "elapsed_seconds": 90.50044839998009,
+          "exit_code": 0,
+          "log": ".tmp/full_gate233/replay.log",
+          "log_sha256": "a7a9e25d02f71119c43e4b246968120ba294f6ee88bbbceb74b283caba14882d",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "926d43967585c5b0d58e20c8050ae016c57f0aa8dd709306ea1e226f88c505b9",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "6853070b39f350efffb0202448054af27186bdeebe85fb89f6c90a597fc9f7b5",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "4244ebdfab77e62351e0dca6d4385d9f98d400132cb0ea2aaa8c7a68a79d9f94",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "fd2f50f062236c31862120c97df916d4e93e6d5e62e7d3ebfa648932bbd7cb15",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "266e25e8797e105fa1c56642dbe1aebf69bb595efb5571229b7a6243c518a002",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "88cdfc001a99c50168f9204e08b1fd73bad083dc8c2cd15ed68aad8d29d1d168",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "4cd6d72e0bdd8ed8766942635cdb7ccfad1317cb354c11ba6db1486eaebf9415",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "3d9d5a14038057fa479ee70fd2b8c05978018b89ac35ee528366d0d556a6f91c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "c31d8a8b621c8a8df9b945eb92d336cb26a8a15f8e66fc8929622f3b5259a04b",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "6e29a477e3a9881b73c3aaf1ae502648bb23600c6ee2f29956c4d67f28b3522b",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "1745225c7577c08752e29ae7972ee95c1b6f0d76dc8b4b7e283b93d36193c57f",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "7c2a5a18e1f5f44834ca7860c6ce6a96dbf244d9103e8a8f5b593ce0083d0b1e",
+        "backend/tests/test_immigration_shared_candidate.py": "0f0ca4fb3573fb0137c292b3e0471e964422720b44a30039502e93e756cf05e4",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "0a818004207355661fddd3a91171b25757bc33514596dff9ce9bea0e836dd7c2",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/ukraine_qualification_checkpoint233.json": "c6a07fbb37d6c1793fe887753021b7ad92b0c6be056dd5554a1c0b4a5dc82e2c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/wrda_research_checkpoint233.json": "e2d6af72478120e802df2e13317916a218ff4cde88a989e97c7cd77e6fb774dd",
+        "docs/editorial/shared_candidates/house_119_ukraine_qualification_checkpoint233/shared_action_core_proposal.json": "fa317af50e52be02e1f67bceb5035484a39c7dd687a85f018a0362608b791dc7",
+        "docs/review_packets/immigration_support_batch2_received233.json": "afdbed9745fd0a52c063f5b7145d46f109df05b8bb32e3aace9c920e72b85e4f",
+        "docs/review_packets/immigration_review232_received233.json": "2b433a79b2b3a5f785792bae5c3424ab60c8e51439ef728a1ebf3c798e172ccb",
+        "docs/review_packets/immigration_shutdown232_ci_received233.json": "24274320852452ed7d44cabec08da04e2fa91f3e6e34543a414e9dd604f6f5af"
+      },
+      "input_hashes_unchanged": true
+    },
+    "owner_tests": 423,
+    "Immigration_tests": 246,
+    "semantic_checks": 7,
+    "actual_CLI_outputs_byte_exact": 7,
+    "final_gate_ran_once": true,
+    "focused_initial_failed": {
+      "started_utc": "2026-10-15T13:48:49.374138+00:00",
+      "completed_utc": "2026-10-15T13:49:43.190072+00:00",
+      "elapsed_seconds": 53.82996950001689,
+      "exit_code": 1,
+      "tests": [
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_spending224_budget_noncounting_and_reconciled207_has_no_credit",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wilson252_two_day_sequence_and_four_open_cases_are_preserved",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine233_preserves_original_shared_identity_prefix_and_observations",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine233_direct_routes_and_malformed_imports_bind_operatives",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine233_repaired_or_unconditional_source_passages_are_rejected",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda233_source_progress_does_not_close_version_or_material_holds",
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests.test_agriculture_and_ukraine_votes_project_only_whole_package_choices",
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests.test_new_package_current_law_and_exception_sources_are_required",
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests.test_package_claims_cannot_replace_operative_waiver_with_unbound_generalization",
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests.test_water_energy_and_land_exclusions_retain_exact_health_adjacent_limits"
+      ],
+      "log_sha256": "879b9641181fc82d4f421510c4b939311ec468a14e8e4a347e942d75e8f51cb2"
+    },
+    "focused_corrected": {
+      "started_utc": "2026-10-15T13:49:57.594189+00:00",
+      "completed_utc": "2026-10-15T13:51:08.542539+00:00",
+      "elapsed_seconds": 70.9668494000216,
+      "exit_code": 0,
+      "tests": [
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_spending224_budget_noncounting_and_reconciled207_has_no_credit",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wilson252_two_day_sequence_and_four_open_cases_are_preserved",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine233_preserves_original_shared_identity_prefix_and_observations",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine233_direct_routes_and_malformed_imports_bind_operatives",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine233_repaired_or_unconditional_source_passages_are_rejected",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wrda233_source_progress_does_not_close_version_or_material_holds",
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests.test_agriculture_and_ukraine_votes_project_only_whole_package_choices",
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests.test_new_package_current_law_and_exception_sources_are_required",
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests.test_package_claims_cannot_replace_operative_waiver_with_unbound_generalization",
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests.test_water_energy_and_land_exclusions_retain_exact_health_adjacent_limits"
+      ],
+      "log_sha256": "4b4f0d844361bf03697c64ca2c9a1bde8d963813823265a878cf6e00963a9ae6"
+    },
+    "unchanged_two_historical_methods": {
+      "checked_utc": "2026-10-15T13:51:09.857874+00:00",
+      "immutable_head": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+      "original_method_source_git_blob_sha256": "648235a1f764379e58c24883e04f146a306e67d5d043eeda646d18753b9876b3",
+      "five_fixture_git_blob_sha256": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "3547282eaecbceabc203e913f64968542b61338c47326372e54d44da666f8d81",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "d947ade0352bff8e68e720b6f8be83b76546132b885fdfdb3b0c5f25d6e90303",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "a06a86950b8764c3f73c901cb4d3604e5ba401100fb39d32813459a1daad8317",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "176252f0ac6a07f6306fa3b2fde1a3d49ba025d5cfd50761b392554acc9bb8b7",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "baaebd690a295af01d7300688af2a75dec8681a2731ad9be23ce7396c4c6e1ee"
+      },
+      "unchanged_historical_methods": [
+        "test_spending224_budget_noncounting_and_reconciled207_has_no_credit",
+        "test_wilson252_two_day_sequence_and_four_open_cases_are_preserved"
+      ],
+      "both_pass": true,
+      "elapsed_seconds": 1.3105626000324264,
+      "receipt_sha256": "8a5d828998b3c15b9e85a763ce6192a67bde4032207391a99ec060bc962a19a8"
+    },
+    "final_precision_focused": {
+      "started_utc": "2026-10-15T13:53:49.002092+00:00",
+      "completed_utc": "2026-10-15T13:54:06.885978+00:00",
+      "elapsed_seconds": 17.88723370002117,
+      "exit_code": 0,
+      "scope": "One source/operator regression after the final319financing-branch precision refinement; previous10testpreflightandimmutable817proof preserved."
+    },
+    "twenty_held_inputs_still_exact": true
+  },
+  "conservation": {
+    "checkpoint": 233,
+    "base_head": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+    "checked_utc": "2026-10-15T13:54:04.943019+00:00",
+    "all74prior_cores_exact": true,
+    "all649prior_reviews_exact": true,
+    "all675unaffected_inventory_rows_exact": true,
+    "all124prior_behavioral_propositions_exact": true,
+    "all148prior_member_action_observations_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "two_unchanged_Health_source_appends": true,
+    "all_Health_and_historical_providers_receipts_exact": true,
+    "WRDA_and_all_reserved_holds_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3594,
+    "frozen_private_notes_exact": 283,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 650,
+      "pending": 26,
+      "cores": 75,
+      "behavioral_propositions": 126,
+      "episodes": 65,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 5.6679919000016525,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "8ee726a76fcd33bb68660b4260489ba16d9c67ad2b5da8e78ffbd996a1f20e60"
+  },
+  "prior_conservation_pass1": {
+    "checkpoint": 233,
+    "base_head": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+    "checked_utc": "2026-10-15T13:49:45.192532+00:00",
+    "all74prior_cores_exact": true,
+    "all649prior_reviews_exact": true,
+    "all675unaffected_inventory_rows_exact": true,
+    "all124prior_behavioral_propositions_exact": true,
+    "all148prior_member_action_observations_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "two_unchanged_Health_source_appends": true,
+    "all_Health_and_historical_providers_receipts_exact": true,
+    "WRDA_and_all_reserved_holds_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3594,
+    "frozen_private_notes_exact": 283,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 650,
+      "pending": 26,
+      "cores": 75,
+      "behavioral_propositions": 126,
+      "episodes": 65,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 5.685229900002014,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "0da002e73528029f5b1de89ed448deef47a43db1d8e31357b562322f6b728f1d"
+  },
+  "prior_conservation_pass1_provenance": "Exact sealed body recovered from the observed tool record; not a rerun or raw independent replay.",
+  "candidate_qualification_receipt_sha256": "94d4ccde15cf1e3f8715a76ba28b47a0067d7495dff9982a14eddb94d35687bc",
+  "authoring_and_refinement": [
+    {
+      "started_utc": "2026-10-15T13:44:55.247778+00:00",
+      "completed_utc": "2026-10-15T13:44:56.147475+00:00",
+      "elapsed_seconds": 0.8999470000271685,
+      "original_Health_core_sha256": "5b38191374ea2bcac0c24544eacbc070c62b2fc492e4a8575e1af892dabd46d8",
+      "new_core_sha256": "edbb881083961f649a0b2b87cbfc90977de0f8ea18d5f170ba6200b82f378062",
+      "source_imports": [
+        "govinfo:22usc9612-2024-ukraine",
+        "congressional-record:2026-06-04-ukraine-debate"
+      ],
+      "new_primary_acquisitions": 0,
+      "material_scope": "Direct conditional317alien mechanism can be represented without repairing malformed imports or deciding individual/treaty/current-law application.",
+      "new_whole_EH_read_claim": false,
+      "prior_whole_EH_preparation": "security_status_source_preparation_checkpoint223.json",
+      "new_literal_material_read": [
+        "301-322; direct and malformed routes separately",
+        "INA/IEEPA bounded baselines",
+        "preserved3905characterHealth9612witness",
+        "floor56551:61934; original debate claims retained/attributed, not fresh whole67621read"
+      ],
+      "unused_sources": [
+        "immigration:roll207-initial171",
+        "immigration:roll207-recorded171",
+        "immigration:roll207-report171"
+      ],
+      "unused_source_reason": "Those witnesses concern a Greene amendment with6ayes422noes, not the June4session2Ukraine final-passage question; historical sources are preserved and never used for this action.",
+      "whole_Health_provider_untouched": true,
+      "independent_review_pending": true,
+      "editorial_acceptance": false,
+      "publication_authorized": false,
+      "receipt_sha256": "50798513371117a9354fa0cbd0eefdbeae962d72703852a22252691dc61d7245"
+    },
+    {
+      "started_utc": "2026-10-15T13:46:36.161852+00:00",
+      "completed_utc": "2026-10-15T13:48:06.900689+00:00",
+      "elapsed_seconds": 90.76249190000817,
+      "counts": {
+        "reviewed": 650,
+        "pending": 26,
+        "cores": 75,
+        "behavioral_propositions": 126,
+        "episodes": 65,
+        "multi_action_episodes": 9
+      },
+      "qualification_receipt_sha256": "7043eea1405e0b6aee20288cdf7def301ce309dc74af339dab7086aebf68ab30",
+      "canonical_inputs_written": true,
+      "full_gate_pending": true
+    },
+    {
+      "started_utc": "2026-10-15T13:52:00.347086+00:00",
+      "completed_utc": "2026-10-15T13:53:31.189631+00:00",
+      "elapsed_seconds": 90.85949810000602,
+      "refinement": {
+        "prior_draft_core_sha256": "edbb881083961f649a0b2b87cbfc90977de0f8ea18d5f170ba6200b82f378062",
+        "new_core_sha256": "2a47f6130e0042658070aba0811f4fff2a3e231979cb3cdaec6df85e46858179",
+        "old_phrase": "Separate319(a)(2) humanitarian/food/medicine/device transactions and related financing, and319(a)(3) authorized intelligence, law-enforcement or national-security activities retain their distinct scopes.",
+        "new_phrase": "Section319(a)(2) separately bars TitleIII sanctions on transactions or their facilitation for the sale of agricultural commodities, food, medicine or medical devices; OR provision of humanitarian assistance; OR financial transactions relating to humanitarian assistance. The last financing branch is expressly tied to humanitarian assistance, not a blanket financial-transaction exemption. Section319(a)(3) separately excepts authorized US intelligence, law-enforcement or national-security activities.",
+        "source": "govinfo:hr2913eh complete319operative",
+        "scope": "Clarifies the separate humanitarian-financing branch during pre-gate review; no source, original Health prefix, membership or member-observation change."
+      },
+      "final_qualification_receipt_sha256": "94d4ccde15cf1e3f8715a76ba28b47a0067d7495dff9982a14eddb94d35687bc"
+    }
+  ],
+  "timing": {
+    "first_clock_observation_utc": "2026-10-15T13:29:43+00:00",
+    "first_preread_and_reconciliation_before_clock_unmeasured": true,
+    "unmeasured_initial_overhead_not_claimed_zero": true,
+    "completion_through_required_gate_utc": "2026-10-15T14:04:46.873104+00:00",
+    "gross_resumed_seconds_through_gate": 2103.873104,
+    "seconds_per_completed_complex_action_through_gate": 2103.873104,
+    "completion_through_this_receipt_utc": "2026-10-15T14:08:17.153872+00:00",
+    "gross_resumed_seconds_through_receipt": 2314.153872,
+    "scope": "Observed resumed work window only. Initial overhead and reused historical research are additional/unisolated, not zero. Explicit PC-off pause is historical and excluded; its exact ending before the first clock is unknown.",
+    "observed_settings": {
+      "observed_base_identity": "GPT-6",
+      "selected_variant": null,
+      "effort": null,
+      "speed": null
+    },
+    "initial_snapshot_seconds": 19.523282500042114,
+    "shutdown_research_verification_seconds": 0.5808391000027768,
+    "authoring_seconds": 0.8999470000271685,
+    "application_seconds": 90.76249190000817,
+    "precision_refinement_and_regeneration_seconds": 90.85949810000602,
+    "focused_failed_seconds": 53.82996950001689,
+    "focused_corrected_seconds": 70.9668494000216,
+    "historical_fixture_proof_seconds": 1.3105626000324264,
+    "final_precision_focused_seconds": 17.88723370002117,
+    "conservation_pass_seconds": [
+      5.685229900002014,
+      5.6679919000016525
+    ],
+    "full_gate_wall_seconds": 606.3791441999492,
+    "research_time": "Source reading and legal/source reconciliation are interleaved with authoring, inspection, tool waits and validation. No exclusive research timer was maintained; unallocated overhead remains in gross wall. This is not model latency/idle.",
+    "rework": "One failed narrow test omitted literal words in the319negative fixture;53.830s retained. One pre-gate319financing precision refinement/regeneration90.859s and subsequent17.887sfocused check retained. Wrong-key/encoding inspections and large-output truncations remain in gross wall, not discarded.",
+    "overlap": "Four read-only final validations overlap. Next WRDA material-baseline research overlaps this gate and delivery preparation; durations must not be summed as exclusive labor.",
+    "reused_research": "Checkpoint223wholeEH/dated witnesses and original Health evidence retained. Pre-shutdown233WRDAwork and support2mechanical check were charged/reported in232; support2time1224.386s is attributed and overlaps prior work. Exclusive all-history207research cost is not isolated, so this resumed rate is not an end-to-end case-cost claim.",
+    "next_research": "WRDA234private capture/read progress in.tmp/wrda234_baselines. Three successful new public statutory parents plus one unusable error wrapper,0.456sdependency and2.506sproxy failures, approvals/search/reading are included in this gross overlapping window; zero233screening credit.",
+    "CI": "Shutdown817CI independently decoded on resume, ten fresh attempt1jobs and four late stages passed, receipt9e7f050b retained. No jobs rerun. New233CI cannot be observed before push and is not yet claimed or assigned zero elapsed cost.",
+    "delivery": "Commit/push/PR-update timings follow this receipt and will be recorded separately; not included in gate-completion cutoff.",
+    "routine_target_seconds": 600,
+    "benchmarkFAILretained": true,
+    "no_comparable_five_cycle_improvement_claim": true
+  },
+  "boundary_review": {
+    "last_reviewed_comment": 6193868316,
+    "review6184358584_applies_to": "Exact7ebimplementation, with817doc-only successor; bounded232support and closed108P3 retained, not acceptance.",
+    "new_comments": [
+      {
+        "id": 6193686880,
+        "exact_support_head": "513281bda5b7117f2e88115e1705e0dc6265380b",
+        "snapshot": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+        "application": "Research-only199/200/44handoff received; no writer replay or credit claimed yet."
+      },
+      {
+        "id": 6193800917,
+        "application": "Independent bounded verification of that support head is attributed; remaining application/recipient-table questions stay pending. Consume at next natural boundary."
+      },
+      {
+        "id": 6193868316,
+        "application": "Follow-up44table research claim only, no authoritative candidate change or delivery to consume yet."
+      }
+    ],
+    "no_new233correction_present": true,
+    "all_reserved_actions_unchanged": true,
+    "arbitrary_comments_not_authority": true
+  },
+  "behavior_and_diff_review": "Scoped14tracked-file diff and new provider/readme/receipts inspected. Both new projections retain officialYea/Nay whole-choice directions. Original74cores/649reviews/124propositions/148observations and source/private/history prefixes conserved. New full operative bindings supplement old heading citations; no Greeneroll207source reused for Ukraine.",
+  "worktree_file_hashes_not_Git_blob_hashes": true,
+  "raw_logs_and_captures_local_owner_attributed": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "receipt_sha256": "1289ac6f2156b8278abeead7f4b78e86e4f412559eb43fdffccdc6e356f2071b"
+}
