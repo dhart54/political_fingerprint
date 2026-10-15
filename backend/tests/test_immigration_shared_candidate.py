@@ -499,6 +499,146 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
                     prepare(author, self.values[1], ['F000477','M001184'])
 
+    def test_financial237_shared_history_and_NotVoting_remain_distinct(self):
+        health = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
+        health_author = json.loads((DATA.parent / 'house_119_health_20260916/authoring.json').read_text(encoding='utf-8'))
+        for aid, expected in [('house:119:1:199', '8688d4bdd19efd2627255ecc66de5e1d97ea05ef0da590f1157f1c7c2e4cbe8c'),
+                              ('house:119:1:349', '213057305a6ab314f40e796aac3508c3a2d653f9ef7d54cdcac8e8896cb788fd')]:
+            old = next(c for c in health['actions'] if c['action_id'] == aid)
+            core = next(c for c in self.products[0]['actions'] if c['action_id'] == aid)
+            prior_action = next(a for a in health_author['actions'] if a['action_id'] == aid)
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            self.assertEqual(old['action_core_sha256'], expected)
+            self.assertEqual(core['exact_action_identity'], old['exact_action_identity'])
+            self.assertEqual(core['action_meaning_ref'], old['action_meaning_ref'])
+            self.assertTrue(core['candidate_exact_action_meaning'].startswith(old['candidate_exact_action_meaning']))
+            self.assertTrue(all(w in core['governed_source_identities'] for w in old['governed_source_identities']))
+            self.assertTrue(set(old['candidate_shared_limitations']) <= set(core['candidate_shared_limitations']))
+            self.assertEqual(action['claim_source_map'][:len(prior_action['claim_source_map'])], prior_action['claim_source_map'])
+        massie = next(m for m in self.products[2] if m['member_id'] == 'M001184')
+        observation = next(a for a in massie['actions'] if a['action_id'] == 'house:119:1:199')
+        self.assertEqual(observation['official_status'], 'Not Voting')
+        self.assertEqual(observation['exact_choice_effect'], 'resolved_non_directional')
+        graph = next(m for m in self.products[4].compiled_ir['members'] if m['member_id'] == 'M001184')['proposition_graph']
+        self.assertFalse(any('house:119:1:199' in p['evidence_action_ids'] for p in graph['propositions'] if p['semantic_role'] == 'behavioral'))
+
+    def test_financial237_appointment_rule_qualifications_and_section_sunset(self):
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        nationality = ' '.join(bank['govinfo:5cfr7-3-2025-fin237']['text'].split())
+        self.assertIn('citizen or national', nationality)
+        self.assertIn('OPM may, as an exception', nationality)
+        self.assertIn('to the extent permitted by law', nationality)
+        rare = ' '.join(bank['govinfo:5cfr316-601-2025-fin237']['text'].split())
+        self.assertIn('all applicable qualification', rare)
+        self.assertIn('specifically authorized by the Office', rare)
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:199')
+        for phrase in ['without regard to those governing competitive-service appointments',
+                       'does not convert the position into the excepted service',
+                       'fourth fiscal year beginning after enactment',
+                       'printed section6(a)', 'other statutes, appropriations and individual eligibility remains',
+                       'not silently replaced by citizen, resident, lawful status or everyone']:
+            self.assertIn(phrase, action['meaning'])
+        claim = next(c for c in action['claim_source_map'] if c['locator'].startswith('Complete July print outer410'))
+        self.assertIn(claim['passage'], bank['govinfo:rcp1196-complete191']['text'])
+
+    def test_financial237_HRA_conjunction_and_different_income_references(self):
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        bill = bank['govinfo:hr6703eh']['text']
+        self.assertIn('who are nonresident aliens and who receive no earned income', bill)
+        self.assertIn('within the meaning of section 911(d)(2)', bill)
+        regulation = bank['govinfo:26cfr1-105-11c2-2025-fin237']['text']
+        self.assertIn('911(b)', regulation)
+        self.assertNotIn('911(d)(2)', regulation)
+        self.assertIn('30 percent', bank['govinfo:26usc911d2-2024-fin237']['text'])
+        self.assertIn('90 days', bank['govinfo:26usc861a3-2024-fin237']['text'])
+        self.assertIn('$3,000', bank['govinfo:26usc861a3-2024-fin237']['text'])
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:349')
+        for phrase in ['optional conjunctive class', 'Both references are preserved literally',
+                       'Tax residence is not silently equated with a single immigration status',
+                       '300percent OF the lowest maximum', 'no-inference clause applies only to the extent not inconsistent']:
+            self.assertIn(phrase, action['meaning'])
+
+    def test_financial237_stablecoin_functional_screening_does_not_add_a_core(self):
+        aid = 'house:119:1:200'
+        record = next(r for r in self.values[3]['records'] if r['action_id'] == aid)
+        self.assertEqual(record['disposition'], 'exact_action_ineligible')
+        self.assertFalse(record['required_evidence_unavailable'])
+        self.assertFalse(record['authoritative_source_conflict'])
+        self.assertNotIn(aid, [c['action_id'] for c in self.products[0]['actions']])
+        receipt = json.loads((DATA / 'stablecoin_functional_qualification_checkpoint237.json').read_text(encoding='utf-8'))
+        self.assertTrue(receipt['undefined_and_individual_current_law_applications_retained'])
+        for phrase in ['not synonymous with any noncitizen or nonresident human',
+                       'revocation of financial approval, not an immigration-removal order',
+                       'They waive the specified financial trading restrictions, not a visa',
+                       'No actual organization, issuer or customer']:
+            self.assertIn(phrase, record['rationale'])
+        self.assertEqual(receipt['new_core_count'], 0)
+        self.assertEqual(receipt['new_proposition_count'], 0)
+        self.assertEqual(receipt['prior_pending_row']['disposition'], 'source_unresolved')
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertFalse(receipt['editorial_acceptance'])
+        self.assertFalse(receipt['publication_authorized'])
+
+    def test_financial237_corrupted_nationality_tax_and_conjunction_claims_reject(self):
+        for aid, sid, before, after in [
+                ('house:119:1:199', 'govinfo:5cfr7-3-2025-fin237', 'citizen or national', 'any resident'),
+                ('house:119:1:199', 'govinfo:5cfr338-101-2025-fin237', 'permanent allegiance', 'temporary presence'),
+                ('house:119:1:199', 'govinfo:5cfr316-601-2025-fin237', 'all applicable', 'no applicable'),
+                ('house:119:1:349', 'govinfo:hr6703eh', 'who are nonresident aliens and who receive no earned income', 'who are nonresident aliens or who receive no earned income'),
+                ('house:119:1:349', 'govinfo:26usc911d2-2024-fin237', '30 percent', '100 percent'),
+                ('house:119:1:349', 'govinfo:26usc861a3-2024-fin237', '90 days', '365 days'),
+                ('house:119:1:349', 'govinfo:26cfr1-105-11c2-2025-fin237', '911(b)', '911(d)(2)'),
+                ('house:119:1:349', 'govinfo:26usc7701b-tax-residence221', 'neither a citizen of the United States nor a resident', 'not a lawful permanent resident')]:
+            with self.subTest(source=sid):
+                author = copy.deepcopy(self.values[0])
+                action = next(a for a in author['actions'] if a['action_id'] == aid)
+                claim = next(c for c in action['claim_source_map'] if c['source_id'] == sid and before in c['passage'])
+                claim['passage'] = claim['passage'].replace(before, after, 1)
+                seed = next(a for a in author['actions'] if 'shared_core_reuse' not in a)
+                author['actions'] = [seed, action]
+                author['blocked_episode_ids'] = []
+                with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+                    prepare(author, self.values[1], ['F000477', 'M001184'])
+
+    def test_farm237_exchange_duration_preserves_literal_disjunction(self):
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        literal = 'for at least 2 months or up to 6 months'
+        self.assertIn(literal, bank['govinfo:hr7567eh']['text'][216055:216094])
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:154')
+        self.assertIn(literal, action['meaning'])
+        self.assertIn('whose application remains unresolved', action['meaning'])
+        self.assertNotIn('printed two-to-six-month period', action['meaning'])
+        self.assertIn('it does not simply import all four outgoing conditions', action['meaning'])
+        author = copy.deepcopy(self.values[0])
+        target = next(a for a in author['actions'] if a['action_id'] == action['action_id'])
+        claim = next(c for c in target['claim_source_map'] if c['source_id'] == 'govinfo:hr7567eh' and literal in c['passage'])
+        claim['passage'] = claim['passage'].replace(literal, 'for at least 2 months and up to 6 months', 1)
+        seed = next(a for a in author['actions'] if 'shared_core_reuse' not in a)
+        author['actions'] = [seed, target]
+        author['blocked_episode_ids'] = []
+        with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+            prepare(author, self.values[1], ['F000477', 'M001184'])
+
+    def test_farm237_outer_inserted_locator_and_bound_research_provenance(self):
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        text = bank['govinfo:hr7567eh']['text']
+        self.assertIn('(i) Provision of Assistance', text[114012:114069])
+        self.assertIn('greatest extent practicable', text[117574:117884])
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:154')
+        self.assertIn('EH2502(i) (inserting Food Security Act1242(l)(3)(B))', action['meaning'])
+        self.assertNotIn('native-language producer assistance in2502(l)', action['meaning'])
+        self.assertIn('provisions in the dated19231-19237 comparator', action['meaning'])
+        self.assertNotIn('The preserved original subtitle and dated19231-19237 comparator', action['meaning'])
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == action['action_id'])
+        self.assertIn('govinfo:42usc19231-19237-2024-research-security121', [s['source_id'] for s in core['governed_source_identities']])
+        correction = json.loads((DATA / 'farm_precision_checkpoint237.json').read_text(encoding='utf-8'))
+        self.assertEqual(correction['reviewed_head'], '433f24f9a54276d77d2a22c73e19f7c88e1f49f6')
+        self.assertTrue(correction['historical_owner_note_prospective_annotation']['original_unchanged'])
+        self.assertEqual(correction['receipt_sha256'], sealed_digest(correction, 'receipt_sha256'))
+        history = json.loads((DATA / 'farm_qualification_checkpoint236.json').read_text(encoding='utf-8'))
+        self.assertIn('2502(l)(3)(B)native-language', json.dumps(history['whole_EH_reading']))
+        self.assertIn('prepared2-6months', json.dumps(history['whole_EH_reading']))
+
     def test_farm236_preserves_health_core_and_whole_recorded_choice(self):
         aid = 'house:119:2:154'
         original = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))

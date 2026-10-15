@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "3c1345942171d9d5874796694aaea030fb447c09af41404202a1823ed0f0b70d",
-  "source_capture_sha256": "a0999bf50a4db3407ef76616f3f6ba6d1aecca2353bb85fd5720b94f0082cee4",
-  "core_sha256": "b48df5a39788db348116e855af834ca2baedb8825d267fa70bce9e2d0f0c6a41",
-  "compiled_sha256": "5af1d28affd8f2edb9386f79a88ee47cd76bb0836fa2fb1cbc87deedce680f40",
-  "readable_sha256": "5a684371a060a9621dea9d803a70f39c816e4571f37567c24438c96fa2749fed",
+  "input_sha256": "04bdc840ad17593a659e49ee3f11c507cdf11c1e7b8be502fe753c88a3477844",
+  "source_capture_sha256": "05f39e2d5d2f08e25a86cf56d4999d34ffe84dd4b4150e6feb3601cf1ea87fad",
+  "core_sha256": "548fd367f3553d3c2338af21dc7980880fe51ac019c61b73bb9c1ce454df641c",
+  "compiled_sha256": "864c9974d9a6be76c1d8046d39bcae3b7d05f17745fb101e4719005fea38c08d",
+  "readable_sha256": "c3fd6df12c395786eccce5ece6cb5ea797741f6c1c6f90de2b65a0b7a5b5c29b",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -578,6 +578,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:199",
+      "shared_sha256": "8344dc4064e69bbe24d85f57e4d28454234eb458b367c5c608186d33641f8e48",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact package; no component opposition, preferred alternative or motive inferred",
+          "source_id": "clerk:119:1:199"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:199"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:203",
       "shared_sha256": "99eb0a9071568f9038989e90f43852e0b65ea33292db28effbb1b714d54ecb2a",
       "choices": [
@@ -814,6 +834,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.4371 as a whole with its child-placement, sponsor and household-information provisions",
           "source_id": "clerk:119:1:340"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:349",
+      "shared_sha256": "0d80fde64642664c19aecbd8dfdd909c68c7f82f60ed1277f1c9c1d64b43778c",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact package; no component opposition, preferred alternative or motive inferred",
+          "source_id": "clerk:119:1:349"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact package; no component opposition, preferred alternative or motive inferred",
+          "source_id": "clerk:119:1:349"
         }
       ]
     },
@@ -1279,7 +1319,7 @@
     },
     {
       "action_id": "house:119:2:154",
-      "shared_sha256": "b89eff9fba52397451ebf156f23cb9fd2f5d2ed2039ea80b3a231a4d14690fbb",
+      "shared_sha256": "4378f8b0f386b12b717bd6c20865a3e13874ed0641a8fe6cbef0343f5354a760",
       "choices": [
         {
           "member_id": "F000477",
