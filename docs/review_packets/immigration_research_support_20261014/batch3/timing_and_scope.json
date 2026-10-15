@@ -1,0 +1,56 @@
+{
+  "first_tool_utc": "2026-10-15T13:30:46+00:00",
+  "claim_posted_utc": "2026-10-15T13:32:37+00:00",
+  "documentation_cutoff_utc": "2026-10-15T13:46:35.785829+00:00",
+  "documentation_elapsed_seconds": 949.785829,
+  "per_action_inclusive_claim_to_packet_seconds": {
+    "house:119:1:199": 820.464623,
+    "house:119:1:200": 820.504748,
+    "house:119:2:44": 820.567725
+  },
+  "allocation": "All three windows intentionally share the same research-only claim start and overlap: source inspection/drafting was interleaved. They include shared work and are NOT exclusive labor/CPU, comparable routine action throughput or completed candidate times. Per-action exclusive time was not instrumented. Shared verification/delivery follows packet assembly; final delivery cutoff is reported separately in PR198 handoff.",
+  "settings": {
+    "user_requested_ui": "Sol High; preserve speed tiers",
+    "verified_local_config": {
+      "model": "gpt-6.1-sol",
+      "model_reasoning_effort": "high",
+      "service_tier": "default"
+    },
+    "effective_request_model_effort_tier": "Not exposed by these read-only tools; configuration is not proof of runtime overrides",
+    "settings_changed": false
+  },
+  "command_wall_seconds_observed": {
+    "current_main_and_PR230_read": 1.9216656,
+    "current_PR198_claim_conflict_and_config_read": 2.6376449,
+    "first_packet_build": 0.4808435,
+    "revised_packet_build": 0.5622081,
+    "source_inspections": "Individual reported shell durations approximately0.31\u20130.40s; not an exhaustive instrumented per-command ledger",
+    "source_bank_key_probe": 0.3146369,
+    "unicode_console_failure_prior": 0.3991129,
+    "unicode_console_failure_ends": 0.3454497,
+    "first_staged_source_link_validation": 1.1120244,
+    "final_packet_rebuild": 0.4875993,
+    "prior_map_inventory_reads": [
+      0.0734845,
+      0.078762,
+      0.0900039,
+      0.0839965
+    ]
+  },
+  "build_internal_seconds": 0.4098342999932356,
+  "failed_or_reworked_attempts": [
+    "Initial source-bank probe found top-level dictionary rather than list; corrected helper to use sources member.",
+    "Two read-only console inspections failed with Windows cp1252 UnicodeEncodeError; output encoding changed to UTF-8 and bounded reads completed.",
+    "Several overbroad source/progress outputs were truncated; follow-up reads narrowed output. No missing output was treated as verified evidence.",
+    "B2 excerpt reduced to designation/notice/assets/effective-period branch; no claim of a fresh whole statutory-source read.",
+    "One local helper apply_patch failed its expected-line match without changing files; corrected the patch. Final review explicitly distinguished reused191 passages from the new105(c),4(a)(5),1189 and IH228 pointers."
+  ],
+  "overhead": "Preread, branch/ownership reconciliation, reviews, source inspection, drafting, verification, quoting/encoding recovery and Git delivery are included in gross elapsed. Residual unallocated time is not labeled model latency or idle time.",
+  "runtime_change_seconds": 0,
+  "raw_acquisition_seconds": 0,
+  "new_raw_downloads": 0,
+  "full_candidate_test_suite": "not run: documentation/source-map only",
+  "restricted_prior_binary_replay": "Not attempted; previous author verification remains attributed, six batch2 binaries outside cancelled cloud certification.",
+  "concurrency": "Supported read-only writer progress observed resumed313/207 research/authoring. No profiling, competing writer, background monitor or candidate gate run in this lane.",
+  "cache": "Existing Git objects and committed source captures reused; no cold-cache or speed-comparison claim."
+}
