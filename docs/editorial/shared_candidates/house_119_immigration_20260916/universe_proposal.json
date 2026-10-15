@@ -91,7 +91,9 @@
     "house:119:2:45",
     "house:119:2:89",
     "house:119:2:308",
-    "house:119:2:207"
+    "house:119:2:207",
+    "house:119:2:272",
+    "house:119:2:286"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Membership requires an exact operative Immigration & Border mechanism: status/presence, admission, visas/asylum/refugees/parole, removal, detention/release, naturalization/citizenship, immigration documentation/verification/adjudication, direct border entry/inspection/enforcement, immigration-specific standards/cooperation, or eligibility directly governed by immigration status. Titles, policy labels, rhetoric, keywords and other-domain interpretations are leads only. Procedural/expressive controls remain noncounting.",
@@ -106,9 +108,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 229,
-      "interpreted_substantive_directional": 75,
+      "interpreted_substantive_directional": 77,
       "exact_action_ineligible": 345,
-      "source_unresolved": 25,
+      "source_unresolved": 23,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -118,14 +120,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 75,
-    "directional_substantive_actions": 75,
+    "substantive_eligible_actions": 77,
+    "directional_substantive_actions": 77,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 229,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 345,
-    "unresolved_boundary_cases": 25,
-    "independent_episode_count": 65,
+    "unresolved_boundary_cases": 23,
+    "independent_episode_count": 67,
     "multi_action_episode_count": 9,
     "mechanism_types": [
       "amendment",
@@ -135,8 +137,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 75,
-      "substantive_actions": 75,
+      "ready_substantive_actions": 77,
+      "substantive_actions": 77,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -448,7 +450,9 @@
         "house:119:2:214",
         "house:119:2:221",
         "house:119:2:244",
+        "house:119:2:272",
         "house:119:2:280",
+        "house:119:2:286",
         "house:119:2:308"
       ],
       "exact_action_ineligible": [
@@ -819,10 +823,8 @@
         "house:119:2:245",
         "house:119:2:247",
         "house:119:2:271",
-        "house:119:2:272",
         "house:119:2:278",
         "house:119:2:283",
-        "house:119:2:286",
         "house:119:2:310"
       ],
       "expressive_nonbinding_context": [
@@ -1230,6 +1232,18 @@
         "action_ids": [
           "house:119:2:207"
         ]
+      },
+      {
+        "episode_candidate_id": "episode:hr9770:119",
+        "action_ids": [
+          "house:119:2:272"
+        ]
+      },
+      {
+        "episode_candidate_id": "episode:hr6500:119",
+        "action_ids": [
+          "house:119:2:286"
+        ]
       }
     ],
     "multi_action_episodes": [
@@ -1343,11 +1357,11 @@
         "legal_application_questions": "Separate queue now includes one bounded G102-105 printed-date/general-continuance question; no personal eligibility or FY2025 quota application accepted."
       }
     ],
-    "interpreted_action_count_qualification": "75 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
+    "interpreted_action_count_qualification": "77 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "4d51cc41c1ece646f2d78450de63c9a77e2de8dd5ba3b549d5ba045b667a7127",
+  "universe_subject_sha256": "223ed1262bfc8689e073062baaeb7eba7f3f38b81a45262821d915f9c49e6ea3",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -48354,8 +48368,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_9770",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Whole H.R.9770 EH read and its complete own floor body matches under declared formatting comparison. Section101 imports twelve FY2026 appropriations sources, including HomelandSecurity divisionA PL11986; funds continue under qualified rates/authority/conditions, not a universally unchanged agency budget. Section106 ends authority at the earliest applicable project appropriation enactment OR applicable act without the project OR December4,2026, unless otherwise provided;111 has its printed mandatory-payment provisions and exceptions. The remaining read sections through128 include discretionary rescission accounting, qualified apportionment, SBA/FEMA/IHS and statutory-date adjustments, DC local funds and SSA partA/titleIV extension with its stated exceptions, as well as named survivor payments and congressional COLA restriction. Material appropriations/benefit/imported authority/current-integration Immigration application remains unfinished; reading a whole short CR does not finish its twelve source chains. Keep researched source_unresolved noncounting hold without automatic agency/title inclusion/exclusion, funding outcome, individual benefit/immigration determination or isolated component stance. Initial passage voice ayes, DeLauro demand/order/postponement and resumed passage220-205 with6NotVoting are distinct. No new shared meaning or editorial acceptance.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "The exact July 21 final-passage proposition is the whole H.R. 9770 continuing-appropriations package for FY 2027. Section 101 continues otherwise unprovided FY 2026 projects/activities, including direct-loan/guarantee costs, at the prior operational rates and under the incorporated authorities and conditions from twelve specified appropriations divisions. These include HHS, Interior/IHS, Agriculture/FDA, VA and HUD alongside defense, homeland-security, diplomatic and other appropriations. The direct clinical/social funding nexus is established by the referenced medical-care appropriations and the bill's explicit IHS, WIC, mandatory-benefit and TANF mechanisms, not by assuming every federal operation is healthcare. This is a whole-package vote, not separate positions on each incorporated program or rider.\n\nUnless otherwise provided, the ordinary availability ends at the earliest of a project appropriation's enactment, a relevant FY 2027 Act omitting it, or December 4, 2026. The bill preserves conditions of the pertinent Acts, restricts new/unfunded activities and certain defense production/procurement, limits high initial distributions and requires only the most limited continuation funding action. Expenditures are charged to later applicable enacted appropriations. The apportionment-timing waiver does not waive every apportionment law. Rescissions/cancellations continue with specified account/rate treatment and the lesser-of-stated-amount/October 1 balances limit, not an invented universal cancellation. Emergency/disaster designations are budget treatment, not independent benefit eligibility.\n\nSection 111 continues covered entitlements/mandatory payments and Food and Nutrition Act activities at current-law program levels and applicable FY 2026 conditions through December 4. Its separately stated authority for mandatory payments due on/about the first day of a month after October 2026 and not later than 30 days after December 4 does not extend every discretionary account by 30 days or create SNAP eligibility. Section 116 permits WIC apportionment at the rate needed to maintain participation; that is an operational authority, not an expansion of eligibility or guarantee against every disruption. Sections 112/122/125 permit qualified personnel, FEMAdisaster-response/recovery and wildfire operational apportionment; the personnel authority follows necessary nonpersonnel expense reductions and is not a promise of no furloughs.\n\nSection 123 adds IHS operational rates of 75.774 million for services and 8.296 million for facilities to staff/operate facilities opened, renovated or expanded in FY 2022, 2026 or 2027, with permitted necessary apportionment. These are rates during the CR window, not proof of a full 83-million disbursement or new entitlement. Existing PL 119-74 already provides separate FY 2027 IHS advance appropriations with specified availability, use and administrative conditions. PL 119-75 also already supplies first-quarter FY 2027 Medicaid authority. Those existing advances must not be represented as newly created by this CR or added again to its two specified IHS rates.\n\nSection 126 continues SSA part A/title IV activities, except 403(c) and 418, and 1108(b) territorial activities in the FY 2026 manner through December 4, appropriating necessary sums. Existing PL 119-75 section 6304 already continues the specified TANF activities through December 31, 2026. This CR does not expressly repeal or shorten that later existing authority. The cited 403(c) is pandemic emergency assistance under the governed 2024 Code, not the ordinary 403(b) Contingency Fund. Section 418 is separately appropriated childcare assistance; excluding it from this particular extension is not a repeal of all childcare funding or a universal claim that the ordinary TANF contingency fund ends. The dated pandemic assistance has its own use/expenditure boundaries, not a new FY 2027 pandemic allocation.\n\nIncorporated existing HHSconditions include the qualified abortion/coverage funding restrictions with rape, incest and physician-certified life-endangerment exceptions; separate State/local/private funds and Medicaid-match limits; defined health-entity nondiscrimination terms; embryo-research restrictions and defined clinical-evidence/trial exceptions to the drug-legalization promotion restriction. Title Xvoluntary-family-planning funds retain nondirective pregnancy counseling and their own abortion-use restriction. Continuation is not unrestricted new health spending or repeal of these conditions.\n\nOther exact provisions retain their scopes. Section 124 extends the application of specified wildland-firefighter premium-pay treatment to calendar years 2021 through 2026; PL 117-43 title VII 1701 is not Afghan refugee eligibility. Its aggregate executive pay cap and exclusion from basic-pay retirement/leave calculations remain. Section 120 modifies the referenced political-appointee pay limitation, not a universal freeze for medical staff. The DCclause permits local-fund spending at its specified local-budget rate; it is not a new Federal medical appropriation. Flood-insurance date changes retain their immediate/retroactive effective condition. Agricultural market reporting, SBA financing, Congress pay and specified survivor payments remain package components. H. Res. 1438's conditional SAVE engrossment applies to H.R. 8800, not this CR; no election division is invented here.\n\nSupporters described continuity and avoidance of disruption; opponents disputed the package's sufficiency, missing housing/utility adjustments and DHS provisions. These arguments are attributed rather than treated as proof of uninterrupted services, wrongdoing, actual funding transfers or voters' reasons. Yea supports this exact temporary combined package and Nay opposes it. Neither supplies independent positions on every healthcare, nutrition, housing or enforcement component, a preferred alternative, an implemented shutdown outcome or enactment.\n\nThis is ordinary final passage of the complete H.R.9770EH, not suspension, a vote on H.R.8800, or a separately adopted SAVE division. The own callup/initial voice-aye/demand-order/postponement/resumed vote remains bound, with220-205and6NotVoting. H.Res1438's conditional SAVE treatment belongs to8800, not9770. Section106(3)'s ordinary backstop is December4,2026;111(b)'s first-of-month payments remain separately qualified. Section101(6) names ONLY divisionA of PL11986. It does not expressly add5013-5016of PL11975, and the broader H.R.6500Senate language is not substituted into this earlier House choice. The direct DHS continuing-funding mechanisms above, subject to the literal divisionA and permanent-law conditions, support Immigration candidate membership without a claim of unrestricted programme extension or resolved annual-date/application questions.\n\nThe complete original Health account remains: IHS operational rates are distinct from existing advances, WIC participation apportionment is qualified, and section126's TANF December4window does not expressly repeal the already specified December31authority. Its exceptions are403(c)pandemic assistance and418childcare, not all contingency/childcare support. Section124's1701reference is wildfire-worker premium pay, not refugee eligibility. The preserved twelve-appropriation list, no-new-activity conditions, rescissions and authority limits remain; no complete current-law or guaranteed-services certificate is inferred. Yea supports and Nay opposes passing this whole exact CR, without a separate immigration, health, fiscal or preferred-alternative position.\n\nThe Immigration relationship rests on the literal temporary-funding operators and the imported, directly identified immigration administration and border activities, not the generic title or an inference that every department programme has an Immigration purpose. Section101 continues only qualifying projects/activities conducted in fiscal2026, at the specified operational rates and under the referenced authority and conditions, unless otherwise provided. Sections102-104 retain defence/new-activity restrictions;103 retains the extent/manner of the pertinent appropriation. Section106 ends ordinary availability at the earliest applicable replacement appropriation, applicable fiscal2027Act omitting the project/activity, or the specified December date, unless otherwise provided. Sections108-110 concern apportionment timing, restrictions on early distributions/grants impinging on final funding prerogatives, and the most limited permissible funding action. Section108 does not waive other apportionment law. Section111's distinct mandatory first-of-month payment timing is not a uniform extra30days for every agency, project or entitlement. Section112's personnel apportionment requires necessary non-personnel expense reductions/deferrals first; actual furloughs, sufficient funding or service continuity are not established.\n\nThe complete preserved PL11986 witness separates its preliminary section4, divisionA's direct DHS appropriations and divisionB. Its explanatory-statement exception covers contents under ICE and CBP Border Security Operations and the corresponding amounts in the specified FinalBill column entries; it does not zero all CBP appropriations or all immigration funding. The candidate relies on the literal direct appropriation/operator branches and retains the distinction between divisionA-only incorporation and the broader outer-Act reference. It does not certify every explanatory-table allocation, reset every fiscal2026date or resolve all preliminary/inside-division cross-reference applications. A baseline annual amount is a rate reference, not a new full annual payment or a second copy of an existing advance.\n\nDirect DHS branches include CBP Operations and Support's necessary expenses including transport of unaccompanied alien children, qualified air/marine law-enforcement support and discretionary humanitarian expenses; USCIS Operations and Support's122.941million annual baseline INCLUDING E-Verify, not a122.941million earmark solely for E-Verify, additive to other funds without a required8USC1356(m)fee reduction; and the specified immigration-officer competition and supervised biometrics provisions. They do not make every DHS dollar an immigration-enforcement dollar or grant anyone admission, work permission or a benefit. Section204's land-border fee prohibition concerns new crossing fees and the specified studies for pedestrians, cyclists, drivers or passengers in private vehicles at northern/southern land ports; it is not a ban on every passport, air or maritime fee. Baseline527retains specific pregnancy/post-delivery custody/transport restraint conditions, exceptions, least-restrictive/medical safeguards and absolute labour/delivery restraints; this vote does not supply a medical finding or authorize unrestricted restraint.\n\nSections537and538retain monthly planning estimates and independent validation rather than findings of actual arrivals, guilt, detention or removals. Their current/following-fiscal-year, demographic, budget/reporting and503reprogramming-suspension conditions remain.537shares arrival estimates with HHS, Attorney General, State and appropriators;538's printed recipients are Attorney General, State and appropriators, without importing HHS into that separate clause. Specific DHS budget and legislative conditions remain distinct from personal immigration classification. No rule that every funded benefit programme ignores its permanent eligibility statutes, or that all noncitizens qualify or are excluded, is proposed.\n\nThe whole multi-domain choice retains all original unapproved Health shared identity, meaning prefix, source witnesses and limitations. Those qualified Health mechanisms and original source readings are preserved and attributed, not newly recertified as every underlying agency law. Immigration augmentation establishes a defensible source-grounded candidate from the direct mechanisms while reserving full fiscal/current-law integration, explanatory/recipient-table and individual/legal applications. No separate component stance, motive, enactment, implementation, editorial acceptance or publication follows from House passage. Independent source/domain review remains pending.",
       "source": {
         "source_id": "clerk:119:2:272",
         "url": "https://clerk.house.gov/evs/2026/roll272.xml",
@@ -48363,7 +48377,7 @@
         "governed_bytes_sha256": "9841f339886da67df4cd6aeacbbf5535b5e803bcf4c67f8c6a28bc58662835a9",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr9770:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_9770",
       "member_action": "nay",
@@ -48372,15 +48386,75 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Whole H.R.9770 EH read and its complete own floor body matches under declared formatting comparison. Section101 imports twelve FY2026 appropriations sources, including HomelandSecurity divisionA PL11986; funds continue under qualified rates/authority/conditions, not a universally unchanged agency budget. Section106 ends authority at the earliest applicable project appropriation enactment OR applicable act without the project OR December4,2026, unless otherwise provided;111 has its printed mandatory-payment provisions and exceptions. The remaining read sections through128 include discretionary rescission accounting, qualified apportionment, SBA/FEMA/IHS and statutory-date adjustments, DC local funds and SSA partA/titleIV extension with its stated exceptions, as well as named survivor payments and congressional COLA restriction. Material appropriations/benefit/imported authority/current-integration Immigration application remains unfinished; reading a whole short CR does not finish its twelve source chains. Keep researched source_unresolved noncounting hold without automatic agency/title inclusion/exclusion, funding outcome, individual benefit/immigration determination or isolated component stance. Initial passage voice ayes, DeLauro demand/order/postponement and resumed passage220-205 with6NotVoting are distinct. No new shared meaning or editorial acceptance.",
-      "unresolved_reason": "pending_whole_CR_appropriations_imports_Immigration_chain197",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "The exact July 21 final-passage proposition is the whole H.R. 9770 continuing-appropriations package for FY 2027. Section 101 continues otherwise unprovided FY 2026 projects/activities, including direct-loan/guarantee costs, at the prior operational rates and under the incorporated authorities and conditions from twelve specified appropriations divisions. These include HHS, Interior/IHS, Agriculture/FDA, VA and HUD alongside defense, homeland-security, diplomatic and other appropriations. The direct clinical/social funding nexus is established by the referenced medical-care appropriations and the bill's explicit IHS, WIC, mandatory-benefit and TANF mechanisms, not by assuming every federal operation is healthcare. This is a whole-package vote, not separate positions on each incorporated program or rider.\n\nUnless otherwise provided, the ordinary availability ends at the earliest of a project appropriation's enactment, a relevant FY 2027 Act omitting it, or December 4, 2026. The bill preserves conditions of the pertinent Acts, restricts new/unfunded activities and certain defense production/procurement, limits high initial distributions and requires only the most limited continuation funding action. Expenditures are charged to later applicable enacted appropriations. The apportionment-timing waiver does not waive every apportionment law. Rescissions/cancellations continue with specified account/rate treatment and the lesser-of-stated-amount/October 1 balances limit, not an invented universal cancellation. Emergency/disaster designations are budget treatment, not independent benefit eligibility.\n\nSection 111 continues covered entitlements/mandatory payments and Food and Nutrition Act activities at current-law program levels and applicable FY 2026 conditions through December 4. Its separately stated authority for mandatory payments due on/about the first day of a month after October 2026 and not later than 30 days after December 4 does not extend every discretionary account by 30 days or create SNAP eligibility. Section 116 permits WIC apportionment at the rate needed to maintain participation; that is an operational authority, not an expansion of eligibility or guarantee against every disruption. Sections 112/122/125 permit qualified personnel, FEMAdisaster-response/recovery and wildfire operational apportionment; the personnel authority follows necessary nonpersonnel expense reductions and is not a promise of no furloughs.\n\nSection 123 adds IHS operational rates of 75.774 million for services and 8.296 million for facilities to staff/operate facilities opened, renovated or expanded in FY 2022, 2026 or 2027, with permitted necessary apportionment. These are rates during the CR window, not proof of a full 83-million disbursement or new entitlement. Existing PL 119-74 already provides separate FY 2027 IHS advance appropriations with specified availability, use and administrative conditions. PL 119-75 also already supplies first-quarter FY 2027 Medicaid authority. Those existing advances must not be represented as newly created by this CR or added again to its two specified IHS rates.\n\nSection 126 continues SSA part A/title IV activities, except 403(c) and 418, and 1108(b) territorial activities in the FY 2026 manner through December 4, appropriating necessary sums. Existing PL 119-75 section 6304 already continues the specified TANF activities through December 31, 2026. This CR does not expressly repeal or shorten that later existing authority. The cited 403(c) is pandemic emergency assistance under the governed 2024 Code, not the ordinary 403(b) Contingency Fund. Section 418 is separately appropriated childcare assistance; excluding it from this particular extension is not a repeal of all childcare funding or a universal claim that the ordinary TANF contingency fund ends. The dated pandemic assistance has its own use/expenditure boundaries, not a new FY 2027 pandemic allocation.\n\nIncorporated existing HHSconditions include the qualified abortion/coverage funding restrictions with rape, incest and physician-certified life-endangerment exceptions; separate State/local/private funds and Medicaid-match limits; defined health-entity nondiscrimination terms; embryo-research restrictions and defined clinical-evidence/trial exceptions to the drug-legalization promotion restriction. Title Xvoluntary-family-planning funds retain nondirective pregnancy counseling and their own abortion-use restriction. Continuation is not unrestricted new health spending or repeal of these conditions.\n\nOther exact provisions retain their scopes. Section 124 extends the application of specified wildland-firefighter premium-pay treatment to calendar years 2021 through 2026; PL 117-43 title VII 1701 is not Afghan refugee eligibility. Its aggregate executive pay cap and exclusion from basic-pay retirement/leave calculations remain. Section 120 modifies the referenced political-appointee pay limitation, not a universal freeze for medical staff. The DCclause permits local-fund spending at its specified local-budget rate; it is not a new Federal medical appropriation. Flood-insurance date changes retain their immediate/retroactive effective condition. Agricultural market reporting, SBA financing, Congress pay and specified survivor payments remain package components. H. Res. 1438's conditional SAVE engrossment applies to H.R. 8800, not this CR; no election division is invented here.\n\nSupporters described continuity and avoidance of disruption; opponents disputed the package's sufficiency, missing housing/utility adjustments and DHS provisions. These arguments are attributed rather than treated as proof of uninterrupted services, wrongdoing, actual funding transfers or voters' reasons. Yea supports this exact temporary combined package and Nay opposes it. Neither supplies independent positions on every healthcare, nutrition, housing or enforcement component, a preferred alternative, an implemented shutdown outcome or enactment.\n\nThis is ordinary final passage of the complete H.R.9770EH, not suspension, a vote on H.R.8800, or a separately adopted SAVE division. The own callup/initial voice-aye/demand-order/postponement/resumed vote remains bound, with220-205and6NotVoting. H.Res1438's conditional SAVE treatment belongs to8800, not9770. Section106(3)'s ordinary backstop is December4,2026;111(b)'s first-of-month payments remain separately qualified. Section101(6) names ONLY divisionA of PL11986. It does not expressly add5013-5016of PL11975, and the broader H.R.6500Senate language is not substituted into this earlier House choice. The direct DHS continuing-funding mechanisms above, subject to the literal divisionA and permanent-law conditions, support Immigration candidate membership without a claim of unrestricted programme extension or resolved annual-date/application questions.\n\nThe complete original Health account remains: IHS operational rates are distinct from existing advances, WIC participation apportionment is qualified, and section126's TANF December4window does not expressly repeal the already specified December31authority. Its exceptions are403(c)pandemic assistance and418childcare, not all contingency/childcare support. Section124's1701reference is wildfire-worker premium pay, not refugee eligibility. The preserved twelve-appropriation list, no-new-activity conditions, rescissions and authority limits remain; no complete current-law or guaranteed-services certificate is inferred. Yea supports and Nay opposes passing this whole exact CR, without a separate immigration, health, fiscal or preferred-alternative position.\n\nThe Immigration relationship rests on the literal temporary-funding operators and the imported, directly identified immigration administration and border activities, not the generic title or an inference that every department programme has an Immigration purpose. Section101 continues only qualifying projects/activities conducted in fiscal2026, at the specified operational rates and under the referenced authority and conditions, unless otherwise provided. Sections102-104 retain defence/new-activity restrictions;103 retains the extent/manner of the pertinent appropriation. Section106 ends ordinary availability at the earliest applicable replacement appropriation, applicable fiscal2027Act omitting the project/activity, or the specified December date, unless otherwise provided. Sections108-110 concern apportionment timing, restrictions on early distributions/grants impinging on final funding prerogatives, and the most limited permissible funding action. Section108 does not waive other apportionment law. Section111's distinct mandatory first-of-month payment timing is not a uniform extra30days for every agency, project or entitlement. Section112's personnel apportionment requires necessary non-personnel expense reductions/deferrals first; actual furloughs, sufficient funding or service continuity are not established.\n\nThe complete preserved PL11986 witness separates its preliminary section4, divisionA's direct DHS appropriations and divisionB. Its explanatory-statement exception covers contents under ICE and CBP Border Security Operations and the corresponding amounts in the specified FinalBill column entries; it does not zero all CBP appropriations or all immigration funding. The candidate relies on the literal direct appropriation/operator branches and retains the distinction between divisionA-only incorporation and the broader outer-Act reference. It does not certify every explanatory-table allocation, reset every fiscal2026date or resolve all preliminary/inside-division cross-reference applications. A baseline annual amount is a rate reference, not a new full annual payment or a second copy of an existing advance.\n\nDirect DHS branches include CBP Operations and Support's necessary expenses including transport of unaccompanied alien children, qualified air/marine law-enforcement support and discretionary humanitarian expenses; USCIS Operations and Support's122.941million annual baseline INCLUDING E-Verify, not a122.941million earmark solely for E-Verify, additive to other funds without a required8USC1356(m)fee reduction; and the specified immigration-officer competition and supervised biometrics provisions. They do not make every DHS dollar an immigration-enforcement dollar or grant anyone admission, work permission or a benefit. Section204's land-border fee prohibition concerns new crossing fees and the specified studies for pedestrians, cyclists, drivers or passengers in private vehicles at northern/southern land ports; it is not a ban on every passport, air or maritime fee. Baseline527retains specific pregnancy/post-delivery custody/transport restraint conditions, exceptions, least-restrictive/medical safeguards and absolute labour/delivery restraints; this vote does not supply a medical finding or authorize unrestricted restraint.\n\nSections537and538retain monthly planning estimates and independent validation rather than findings of actual arrivals, guilt, detention or removals. Their current/following-fiscal-year, demographic, budget/reporting and503reprogramming-suspension conditions remain.537shares arrival estimates with HHS, Attorney General, State and appropriators;538's printed recipients are Attorney General, State and appropriators, without importing HHS into that separate clause. Specific DHS budget and legislative conditions remain distinct from personal immigration classification. No rule that every funded benefit programme ignores its permanent eligibility statutes, or that all noncitizens qualify or are excluded, is proposed.\n\nThe whole multi-domain choice retains all original unapproved Health shared identity, meaning prefix, source witnesses and limitations. Those qualified Health mechanisms and original source readings are preserved and attributed, not newly recertified as every underlying agency law. Immigration augmentation establishes a defensible source-grounded candidate from the direct mechanisms while reserving full fiscal/current-law integration, explanatory/recipient-table and individual/legal applications. No separate component stance, motive, enactment, implementation, editorial acceptance or publication follows from House passage. Independent source/domain review remains pending.",
+      "unresolved_reason": null,
       "sources": [
+        {
+          "source_id": "clerk:119:2:272",
+          "url": "https://clerk.house.gov/evs/2026/roll272.xml",
+          "raw_sha256": "c1104ec5fd295cb5fe8f4c6166bdb7d6810924c146bbba209e6bf05dfd3fee8b",
+          "governed_bytes_sha256": "9841f339886da67df4cd6aeacbbf5535b5e803bcf4c67f8c6a28bc58662835a9"
+        },
         {
           "source_id": "govinfo:hr9770eh",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9770eh/html/BILLS-119hr9770eh.htm",
           "raw_sha256": "eb469f38452dfa23b4f9dd469cfd136c2ec35c77d1dd0d52b12febb0f5fdc23d",
           "governed_bytes_sha256": "f4059f8707e26b5b465662ca917eb82eb07f1162f5867dde38c74d263fd02fc3"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:pl119-37",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "6274a5ee9549780a84d8bb12590f593722b1f52c9c93a57ecb7cac1d2c9078aa"
+        },
+        {
+          "source_id": "govinfo:pl119-74-cr-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ74/html/PLAW-119publ74.htm",
+          "raw_sha256": "817c5dedc636cf63f2c3b162d8971fd890cd1984a8591a2455b20a9a0afa81e2",
+          "governed_bytes_sha256": "f22a527c22bd6416de12fadc19f65990596ac75b0e930f9660a8d13d90dc27f3"
+        },
+        {
+          "source_id": "govinfo:pl119-75-cr-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+          "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+          "governed_bytes_sha256": "a8a1684e77dd53f12f332bf197e7f872d4e7afc27dfbb3f13fef52f170379694"
+        },
+        {
+          "source_id": "govinfo:42usc603-2024-pandemic-exception",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapIV-partA-sec603.htm",
+          "raw_sha256": "e43c374b1f15ef610c5cf253c5dc2b49f3904058020f736b2aad4ea61d57562f",
+          "governed_bytes_sha256": "10b016c060c2a49a9a4245af46970dabf9ce16e2b1eaa3d560cb4e8e0e3f2ac8"
+        },
+        {
+          "source_id": "govinfo:42usc618-2024-childcare",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapIV-partA-sec618.htm",
+          "raw_sha256": "27f6270c531232385fba44a39612edf68e4be267c80e59bf94f7e1f04ad1e0c2",
+          "governed_bytes_sha256": "0d6afa799ada724c9c79edc6def657b764ae1add429ae69802cd7b5ec9382c67"
+        },
+        {
+          "source_id": "govinfo:pl117-43-wildfire1701",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ43/html/PLAW-117publ43.htm",
+          "raw_sha256": "b0b404f97be512a0910f0a360c51e6ac3d3f08d5df8bcd297a6e012e8f68539a",
+          "governed_bytes_sha256": "0e8a6feb42a9c10a9b5572a63b308e1b5f7ba02233a2d9ac0f41ceccf9bd3216"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-bank-cr",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "1049611d5e769c13e7a0c284eb09faddd0fc5548c2b44fa82e1de472c0ad52e0"
+        },
+        {
+          "source_id": "govinfo:pl11986-complete232",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ86/html/PLAW-119publ86.htm",
+          "raw_sha256": "e4c61a74bb04d41b1a2e26149cf7acbae94eef6903e2baa1b5932fb3300191b8",
+          "governed_bytes_sha256": "66e7bc2af223ca0a2e4e08c480ab08e64dba25beddbcd9d2806cb1d761bc8bf9"
         },
         {
           "source_id": "immigration:roll272-identity197",
@@ -48405,21 +48479,16 @@
           "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
           "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
           "governed_bytes_sha256": "08e61a85103ed3b0e6aa6341e09dfc294c3037f365dd221adb44a34e56e73dfc"
-        },
-        {
-          "source_id": "clerk:119:2:272",
-          "url": "https://clerk.house.gov/evs/2026/roll272.xml",
-          "raw_sha256": "c1104ec5fd295cb5fe8f4c6166bdb7d6810924c146bbba209e6bf05dfd3fee8b",
-          "governed_bytes_sha256": "9841f339886da67df4cd6aeacbbf5535b5e803bcf4c67f8c6a28bc58662835a9"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "bb2f224c4ca240492dfa410745fccda349354a1d0357fa5c6f59bcc741782e50"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:272",
@@ -49484,8 +49553,8 @@
       "date": "2026-09-01",
       "measure": "H R 6500",
       "question": "On Motion to Suspend the Rules and Concur in the Senate Amendments",
-      "disposition": "source_unresolved",
-      "reason": "Exact House choice is suspension and concurrence in the Senate amendments to H.R.6500, not a vote only on the original AGOA title. Whole64,001-character EAS read and full own floor reproduction matches under declared formatting comparison. It replaces everything after the enacting clause with Continuing Appropriations and Extensions Act2027, changes the title, and contains four divisions; division references stay division-specific unless expressly provided. DivisionA continues twelve specified FY2026 appropriations sources at qualified rates/authority/conditions with named exceptions, no-new-project and limited-funding rules and the section106 earliest-of termination alternatives, one of which is December11,2026. DivisionB includes AGOA/customs extensions, joint-task-force sunset substitution in2013 and Western-Hemisphere passport-fee authority substitution in2017; these precise imports may bear on Immigration but do not establish the whole adopted package meaning or stance without the material source chain. Homeland-Security funding imports and relevant appropriations/authorization/current-integration application remain research. DivisionsC/D surface-transportation and VA extensions retained as whole-choice context, no isolated component stance or automatic Immigration exclusion/inclusion. Keep researched source_unresolved noncounting hold; no funding outcome, individual passport/benefit determination, enactment, new shared meaning or editorial acceptance. Initial voice ayes, Cole demand/order/postponement precede resumed concurrence370-48 with14NotVoting.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "The Senate amendments replaced H.R.6500’s earlier trade-extension text with a multi-domain continuing-appropriations and extensions package. DivisionA generally continued specified fiscal 2026 activities at prior rates until the earliest applicable appropriation event or December 11, 2026, subject to its restrictions and exceptions. DivisionD extended certain veterans’ nursing-home, mental-health, suicide-prevention, ambulance-reimbursement and other care authorities to December 11, 2026, with specified funding amounts and separate housing/benefits provisions. Section 2007 reduced the Medicare Improvement Fund amount from $2.062 billion to $2.041 billion. The package also included authorizing, trade and surface-transportation extensions. The question combined suspension of the rules with concurrence in the complete Senate replacement.\n\nThis is the whole Senate replacement for H.R.6500, with four divisions, under suspension and concurrence in Senate amendments and its two-thirds procedure. The Senate strikes the House text after the enacting clause and replaces its title; the old House trade-only proposal is not substituted for the recorded choice. The own motion, initial voice result/demand/order/postponement and resumed370-48with14NotVoting remain separate. Section3normally makes 'this Act' division-local unless expressly otherwise provided. DivisionA106(3)uses December11,2026, not the earlier9770December4endpoint.101(6)names PL11986 EXCEPT divisionB and expressly includes PL11975divisionI5013-5016, unlike9770's divisionA-only reference. Literal scope and preliminary-section4applications remain qualified, not silently homogenized.\n\nThe referenced5013-5015say to apply their specified printed2015dates as September30,2026for the J-physician220(c), IIRIRA401(b)and non-minister religious-worker101(a)(27)(C)(ii)routes. The dated1182(e)/1184(l), IIRIRA401-405and complete selected27(C)witnesses retain their programme predicates. J-physician hardship/persecution/agency recommendation, public-interest and applicable service/State-number conditions are not a universal waiver. IIRIRA's printed pilot-program structure and voluntary-election exceptions are not proof that all three historical pilots are currently operating or that every employer is newly mandated.27(C)'s denomination membership and continuous work periods, bona fide/nonprofit organization, specified vocation/occupation and accompanying/following spouse/children conditions remain, while its minister branch lacks those two printed non-minister sunset dates. No individual affiliation, petition, job or immigration status is decided. Including the fiscal2026clauses in101does not itself establish a newly rewritten December11date for each permanent-law sunset; those annual/current-law applications remain unresolved rather than silently repaired.\n\n5016requires the DHS Secretary, AFTER consultation with Labor AND a determination that fiscal2026US-business needs cannot be met by willing, qualified and able US workers, and says MAY increase H-2Bnumbers by NOT MORE THAN the highest number of returning-worker programme participants in any year when they were cap-exempt. The underlying g(1)(B)66,000principal cap, family distinction and other g/lconditions remain. This is not an automatic unlimited increase, a selected2021-2025returner cohort, a calculated new cap or proof of a fiscal2027increase; the printed fiscal-year and current-application questions stay unresolved.\n\nDivisionB2013expressly applies6USC348(b)(13)with December11,2026in place of September30,2026. The dated(b)(13)says THIS SECTION expires; the scope is not reduced to subsectionb. The baseline provides discretionary joint task forces for the specified land/maritime-border crises, regional operations and other departmental purposes with appointment/personnel/command, Coast Guard/FEMA and oversight/reporting limits. This prolongs the specified section-wide authority on the proposal's terms, not a finding that a task force is established, deployed or effective.2017strikes the printed September30,2010date in22USC214(b)(2)for December11,2026. The dated214witness already notes PL1172639802(a)'s September30,2026application, so this is not described as the first-ever surcharge or proof of a lapse since2010. The discretionary/regulatory, additive fee and consular/border-security-account purposes remain qualified by the witness's amendments/notes; no live fee schedule or individual's actual charge is certified.2016's international religious freedom commission is distinct from5015non-minister visas.\n\nOther divisionBextensions remain in the whole choice: grain/Forest/food assistance, DPA, TSCA fees, NMI Medicaid amount, AGOA/Haiti preferences, customs/merchandise fees, cybersecurity, technology and patent fees, Medicare Fund reduction and scorekeeping rules. Scorecard classification is not zero actual cost.2019until December11limits PL11937divisionB781amendments ONLY to the two specified intermediate/final-product categories containing cannabinoids not capable of natural production by Cannabis sativa L.; it does not cancel every hemp amendment or equate natural production with all safety/legality. The existing complete781witness retains its own365-day effective date, other exclusions, amounts and definitions. No immigration/drug-inadmissibility classification is decided from that product clause.\n\nDivisionC's covered-law extension applies to provisions that otherwise expire September30,2026, with its defined October1-December11period and day/365fraction. Highway/MassTransitTrust amounts are EQUAL to that fraction; specified general/other funding is NOT LESS THAN it. It does not renew every transportation or licensing rule indiscriminately.3104's selected unobligated funds remain available through September30,2027, while3201's trust-fund expenditure date is December12, notDecember11. DivisionDretains the complete VA care, benefits, housing and other extenders, with their authorizations, conditions and date exceptions; plot-allowance timing likewise uses December12. Neither division makes new universal veteran, housing, nationality or personal-benefit findings. Yea supports and Nay opposes this whole replacement/suspension-concurrence choice, not separate component choices.\n\nThe Immigration relationship rests on the literal temporary-funding operators and the imported, directly identified immigration administration and border activities, not the generic title or an inference that every department programme has an Immigration purpose. Section101 continues only qualifying projects/activities conducted in fiscal2026, at the specified operational rates and under the referenced authority and conditions, unless otherwise provided. Sections102-104 retain defence/new-activity restrictions;103 retains the extent/manner of the pertinent appropriation. Section106 ends ordinary availability at the earliest applicable replacement appropriation, applicable fiscal2027Act omitting the project/activity, or the specified December date, unless otherwise provided. Sections108-110 concern apportionment timing, restrictions on early distributions/grants impinging on final funding prerogatives, and the most limited permissible funding action. Section108 does not waive other apportionment law. Section111's distinct mandatory first-of-month payment timing is not a uniform extra30days for every agency, project or entitlement. Section112's personnel apportionment requires necessary non-personnel expense reductions/deferrals first; actual furloughs, sufficient funding or service continuity are not established.\n\nThe complete preserved PL11986 witness separates its preliminary section4, divisionA's direct DHS appropriations and divisionB. Its explanatory-statement exception covers contents under ICE and CBP Border Security Operations and the corresponding amounts in the specified FinalBill column entries; it does not zero all CBP appropriations or all immigration funding. The candidate relies on the literal direct appropriation/operator branches and retains the distinction between divisionA-only incorporation and the broader outer-Act reference. It does not certify every explanatory-table allocation, reset every fiscal2026date or resolve all preliminary/inside-division cross-reference applications. A baseline annual amount is a rate reference, not a new full annual payment or a second copy of an existing advance.\n\nDirect DHS branches include CBP Operations and Support's necessary expenses including transport of unaccompanied alien children, qualified air/marine law-enforcement support and discretionary humanitarian expenses; USCIS Operations and Support's122.941million annual baseline INCLUDING E-Verify, not a122.941million earmark solely for E-Verify, additive to other funds without a required8USC1356(m)fee reduction; and the specified immigration-officer competition and supervised biometrics provisions. They do not make every DHS dollar an immigration-enforcement dollar or grant anyone admission, work permission or a benefit. Section204's land-border fee prohibition concerns new crossing fees and the specified studies for pedestrians, cyclists, drivers or passengers in private vehicles at northern/southern land ports; it is not a ban on every passport, air or maritime fee. Baseline527retains specific pregnancy/post-delivery custody/transport restraint conditions, exceptions, least-restrictive/medical safeguards and absolute labour/delivery restraints; this vote does not supply a medical finding or authorize unrestricted restraint.\n\nSections537and538retain monthly planning estimates and independent validation rather than findings of actual arrivals, guilt, detention or removals. Their current/following-fiscal-year, demographic, budget/reporting and503reprogramming-suspension conditions remain.537shares arrival estimates with HHS, Attorney General, State and appropriators;538's printed recipients are Attorney General, State and appropriators, without importing HHS into that separate clause. Specific DHS budget and legislative conditions remain distinct from personal immigration classification. No rule that every funded benefit programme ignores its permanent eligibility statutes, or that all noncitizens qualify or are excluded, is proposed.\n\nThe whole multi-domain choice retains all original unapproved Health shared identity, meaning prefix, source witnesses and limitations. Those qualified Health mechanisms and original source readings are preserved and attributed, not newly recertified as every underlying agency law. Immigration augmentation establishes a defensible source-grounded candidate from the direct mechanisms while reserving full fiscal/current-law integration, explanatory/recipient-table and individual/legal applications. No separate component stance, motive, enactment, implementation, editorial acceptance or publication follows from House passage. Independent source/domain review remains pending.",
       "source": {
         "source_id": "clerk:119:2:286",
         "url": "https://clerk.house.gov/evs/2026/roll286.xml",
@@ -49493,7 +49562,7 @@
         "governed_bytes_sha256": "dd937bdc17f4cbb5753729496469e5dda26a566f5d557fa76a0c9d3448a146b6",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr6500:119",
       "after_historical_july23_boundary": true,
       "bill_ref": "H R 6500",
       "member_action": "Yea",
@@ -49502,15 +49571,27 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact House choice is suspension and concurrence in the Senate amendments to H.R.6500, not a vote only on the original AGOA title. Whole64,001-character EAS read and full own floor reproduction matches under declared formatting comparison. It replaces everything after the enacting clause with Continuing Appropriations and Extensions Act2027, changes the title, and contains four divisions; division references stay division-specific unless expressly provided. DivisionA continues twelve specified FY2026 appropriations sources at qualified rates/authority/conditions with named exceptions, no-new-project and limited-funding rules and the section106 earliest-of termination alternatives, one of which is December11,2026. DivisionB includes AGOA/customs extensions, joint-task-force sunset substitution in2013 and Western-Hemisphere passport-fee authority substitution in2017; these precise imports may bear on Immigration but do not establish the whole adopted package meaning or stance without the material source chain. Homeland-Security funding imports and relevant appropriations/authorization/current-integration application remain research. DivisionsC/D surface-transportation and VA extensions retained as whole-choice context, no isolated component stance or automatic Immigration exclusion/inclusion. Keep researched source_unresolved noncounting hold; no funding outcome, individual passport/benefit determination, enactment, new shared meaning or editorial acceptance. Initial voice ayes, Cole demand/order/postponement precede resumed concurrence370-48 with14NotVoting.",
-      "unresolved_reason": "pending_whole_continuing_appropriations_imports_Immigration_chain196",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "The Senate amendments replaced H.R.6500’s earlier trade-extension text with a multi-domain continuing-appropriations and extensions package. DivisionA generally continued specified fiscal 2026 activities at prior rates until the earliest applicable appropriation event or December 11, 2026, subject to its restrictions and exceptions. DivisionD extended certain veterans’ nursing-home, mental-health, suicide-prevention, ambulance-reimbursement and other care authorities to December 11, 2026, with specified funding amounts and separate housing/benefits provisions. Section 2007 reduced the Medicare Improvement Fund amount from $2.062 billion to $2.041 billion. The package also included authorizing, trade and surface-transportation extensions. The question combined suspension of the rules with concurrence in the complete Senate replacement.\n\nThis is the whole Senate replacement for H.R.6500, with four divisions, under suspension and concurrence in Senate amendments and its two-thirds procedure. The Senate strikes the House text after the enacting clause and replaces its title; the old House trade-only proposal is not substituted for the recorded choice. The own motion, initial voice result/demand/order/postponement and resumed370-48with14NotVoting remain separate. Section3normally makes 'this Act' division-local unless expressly otherwise provided. DivisionA106(3)uses December11,2026, not the earlier9770December4endpoint.101(6)names PL11986 EXCEPT divisionB and expressly includes PL11975divisionI5013-5016, unlike9770's divisionA-only reference. Literal scope and preliminary-section4applications remain qualified, not silently homogenized.\n\nThe referenced5013-5015say to apply their specified printed2015dates as September30,2026for the J-physician220(c), IIRIRA401(b)and non-minister religious-worker101(a)(27)(C)(ii)routes. The dated1182(e)/1184(l), IIRIRA401-405and complete selected27(C)witnesses retain their programme predicates. J-physician hardship/persecution/agency recommendation, public-interest and applicable service/State-number conditions are not a universal waiver. IIRIRA's printed pilot-program structure and voluntary-election exceptions are not proof that all three historical pilots are currently operating or that every employer is newly mandated.27(C)'s denomination membership and continuous work periods, bona fide/nonprofit organization, specified vocation/occupation and accompanying/following spouse/children conditions remain, while its minister branch lacks those two printed non-minister sunset dates. No individual affiliation, petition, job or immigration status is decided. Including the fiscal2026clauses in101does not itself establish a newly rewritten December11date for each permanent-law sunset; those annual/current-law applications remain unresolved rather than silently repaired.\n\n5016requires the DHS Secretary, AFTER consultation with Labor AND a determination that fiscal2026US-business needs cannot be met by willing, qualified and able US workers, and says MAY increase H-2Bnumbers by NOT MORE THAN the highest number of returning-worker programme participants in any year when they were cap-exempt. The underlying g(1)(B)66,000principal cap, family distinction and other g/lconditions remain. This is not an automatic unlimited increase, a selected2021-2025returner cohort, a calculated new cap or proof of a fiscal2027increase; the printed fiscal-year and current-application questions stay unresolved.\n\nDivisionB2013expressly applies6USC348(b)(13)with December11,2026in place of September30,2026. The dated(b)(13)says THIS SECTION expires; the scope is not reduced to subsectionb. The baseline provides discretionary joint task forces for the specified land/maritime-border crises, regional operations and other departmental purposes with appointment/personnel/command, Coast Guard/FEMA and oversight/reporting limits. This prolongs the specified section-wide authority on the proposal's terms, not a finding that a task force is established, deployed or effective.2017strikes the printed September30,2010date in22USC214(b)(2)for December11,2026. The dated214witness already notes PL1172639802(a)'s September30,2026application, so this is not described as the first-ever surcharge or proof of a lapse since2010. The discretionary/regulatory, additive fee and consular/border-security-account purposes remain qualified by the witness's amendments/notes; no live fee schedule or individual's actual charge is certified.2016's international religious freedom commission is distinct from5015non-minister visas.\n\nOther divisionBextensions remain in the whole choice: grain/Forest/food assistance, DPA, TSCA fees, NMI Medicaid amount, AGOA/Haiti preferences, customs/merchandise fees, cybersecurity, technology and patent fees, Medicare Fund reduction and scorekeeping rules. Scorecard classification is not zero actual cost.2019until December11limits PL11937divisionB781amendments ONLY to the two specified intermediate/final-product categories containing cannabinoids not capable of natural production by Cannabis sativa L.; it does not cancel every hemp amendment or equate natural production with all safety/legality. The existing complete781witness retains its own365-day effective date, other exclusions, amounts and definitions. No immigration/drug-inadmissibility classification is decided from that product clause.\n\nDivisionC's covered-law extension applies to provisions that otherwise expire September30,2026, with its defined October1-December11period and day/365fraction. Highway/MassTransitTrust amounts are EQUAL to that fraction; specified general/other funding is NOT LESS THAN it. It does not renew every transportation or licensing rule indiscriminately.3104's selected unobligated funds remain available through September30,2027, while3201's trust-fund expenditure date is December12, notDecember11. DivisionDretains the complete VA care, benefits, housing and other extenders, with their authorizations, conditions and date exceptions; plot-allowance timing likewise uses December12. Neither division makes new universal veteran, housing, nationality or personal-benefit findings. Yea supports and Nay opposes this whole replacement/suspension-concurrence choice, not separate component choices.\n\nThe Immigration relationship rests on the literal temporary-funding operators and the imported, directly identified immigration administration and border activities, not the generic title or an inference that every department programme has an Immigration purpose. Section101 continues only qualifying projects/activities conducted in fiscal2026, at the specified operational rates and under the referenced authority and conditions, unless otherwise provided. Sections102-104 retain defence/new-activity restrictions;103 retains the extent/manner of the pertinent appropriation. Section106 ends ordinary availability at the earliest applicable replacement appropriation, applicable fiscal2027Act omitting the project/activity, or the specified December date, unless otherwise provided. Sections108-110 concern apportionment timing, restrictions on early distributions/grants impinging on final funding prerogatives, and the most limited permissible funding action. Section108 does not waive other apportionment law. Section111's distinct mandatory first-of-month payment timing is not a uniform extra30days for every agency, project or entitlement. Section112's personnel apportionment requires necessary non-personnel expense reductions/deferrals first; actual furloughs, sufficient funding or service continuity are not established.\n\nThe complete preserved PL11986 witness separates its preliminary section4, divisionA's direct DHS appropriations and divisionB. Its explanatory-statement exception covers contents under ICE and CBP Border Security Operations and the corresponding amounts in the specified FinalBill column entries; it does not zero all CBP appropriations or all immigration funding. The candidate relies on the literal direct appropriation/operator branches and retains the distinction between divisionA-only incorporation and the broader outer-Act reference. It does not certify every explanatory-table allocation, reset every fiscal2026date or resolve all preliminary/inside-division cross-reference applications. A baseline annual amount is a rate reference, not a new full annual payment or a second copy of an existing advance.\n\nDirect DHS branches include CBP Operations and Support's necessary expenses including transport of unaccompanied alien children, qualified air/marine law-enforcement support and discretionary humanitarian expenses; USCIS Operations and Support's122.941million annual baseline INCLUDING E-Verify, not a122.941million earmark solely for E-Verify, additive to other funds without a required8USC1356(m)fee reduction; and the specified immigration-officer competition and supervised biometrics provisions. They do not make every DHS dollar an immigration-enforcement dollar or grant anyone admission, work permission or a benefit. Section204's land-border fee prohibition concerns new crossing fees and the specified studies for pedestrians, cyclists, drivers or passengers in private vehicles at northern/southern land ports; it is not a ban on every passport, air or maritime fee. Baseline527retains specific pregnancy/post-delivery custody/transport restraint conditions, exceptions, least-restrictive/medical safeguards and absolute labour/delivery restraints; this vote does not supply a medical finding or authorize unrestricted restraint.\n\nSections537and538retain monthly planning estimates and independent validation rather than findings of actual arrivals, guilt, detention or removals. Their current/following-fiscal-year, demographic, budget/reporting and503reprogramming-suspension conditions remain.537shares arrival estimates with HHS, Attorney General, State and appropriators;538's printed recipients are Attorney General, State and appropriators, without importing HHS into that separate clause. Specific DHS budget and legislative conditions remain distinct from personal immigration classification. No rule that every funded benefit programme ignores its permanent eligibility statutes, or that all noncitizens qualify or are excluded, is proposed.\n\nThe whole multi-domain choice retains all original unapproved Health shared identity, meaning prefix, source witnesses and limitations. Those qualified Health mechanisms and original source readings are preserved and attributed, not newly recertified as every underlying agency law. Immigration augmentation establishes a defensible source-grounded candidate from the direct mechanisms while reserving full fiscal/current-law integration, explanatory/recipient-table and individual/legal applications. No separate component stance, motive, enactment, implementation, editorial acceptance or publication follows from House passage. Independent source/domain review remains pending.",
+      "unresolved_reason": null,
       "sources": [
+        {
+          "source_id": "clerk:119:2:286",
+          "url": "https://clerk.house.gov/evs/2026/roll286.xml",
+          "raw_sha256": "65aec5da8a8d26f236942d55358ddf798e6e0c5ead81bf9c31f723db86db651a",
+          "governed_bytes_sha256": "dd937bdc17f4cbb5753729496469e5dda26a566f5d557fa76a0c9d3448a146b6"
+        },
         {
           "source_id": "govinfo:hr6500eas",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eas/html/BILLS-119hr6500eas.htm",
           "raw_sha256": "828941bae852dc7b3e9fe362cb59be251a4483f42b5f42d2beba15e0a5abc149",
           "governed_bytes_sha256": "fc5916bbc9b78b7dee3feac7b42bf325886b4b0dbb1d2c26e65b21b57ae3e3ca"
+        },
+        {
+          "source_id": "govinfo:pl11986-complete232",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ86/html/PLAW-119publ86.htm",
+          "raw_sha256": "e4c61a74bb04d41b1a2e26149cf7acbae94eef6903e2baa1b5932fb3300191b8",
+          "governed_bytes_sha256": "66e7bc2af223ca0a2e4e08c480ab08e64dba25beddbcd9d2806cb1d761bc8bf9"
         },
         {
           "source_id": "immigration:roll286-identity196",
@@ -49537,20 +49618,63 @@
           "governed_bytes_sha256": "458ea81a58abe406536c022f01c8a89c247cd5166b6cac6e75075e8d5a0ebd65"
         },
         {
-          "source_id": "clerk:119:2:286",
-          "url": "https://clerk.house.gov/evs/2026/roll286.xml",
-          "raw_sha256": "65aec5da8a8d26f236942d55358ddf798e6e0c5ead81bf9c31f723db86db651a",
-          "governed_bytes_sha256": "dd937bdc17f4cbb5753729496469e5dda26a566f5d557fa76a0c9d3448a146b6"
+          "source_id": "govinfo:pl11975-divisionI5013-5016-232",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+          "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+          "governed_bytes_sha256": "c221ecbb8b5b30be730f0bd9e70af61562dc3b0a662e671f4d5cb26b50d25c92"
+        },
+        {
+          "source_id": "govinfo:6usc348-2024-complete232",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapVII-sec348.htm",
+          "raw_sha256": "4a7a07306252e162f5233b47485273ed3cdf04cdef219f5cbfe7ae81dc092e4d",
+          "governed_bytes_sha256": "aa76e7fc5f59eb97d17f2210dda52fefa25c8f39915ccef646f06b6d4350f23d"
+        },
+        {
+          "source_id": "govinfo:22usc214-2024-178",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec214.htm",
+          "raw_sha256": "f507ab2d40dfad5013c056bc4c677e3fcec2d1adb620cfa36088f46ce68854e0",
+          "governed_bytes_sha256": "f52f02f41502986fdf75ac62695c0dcf3b285960d6742690343211cbc9afbd08"
+        },
+        {
+          "source_id": "govinfo:8usc1184g-l-2024-hr1968",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1184.htm",
+          "raw_sha256": "2193512ace1f5dc4451ef76f587eb798e4e5e1a96ed161f54c4f58950cd48520",
+          "governed_bytes_sha256": "29c3a063d1a7c7a35e78f03609668298ca1ecb86858dfee24210ff4c6d7210bc"
+        },
+        {
+          "source_id": "govinfo:8usc1182e-220c-2024-hr1968",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "385a15b5145d48edc24aeec0f2445e15f7550b1a28fdbeff8b84d30b6b72d4fb"
+        },
+        {
+          "source_id": "govinfo:iirira401-405-2024-hr1968",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "e216631760d664b81c25f3ebac4a4beec658b925d154210b13a3bbee5920bc44"
+        },
+        {
+          "source_id": "govinfo:8usc1101a27C-2024-cr235",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "67fa720c252d9cf6571cae2dc0bd6015712ebc675ee3d97328d30a37f5ddeb37"
+        },
+        {
+          "source_id": "govinfo:pl119-37",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "6274a5ee9549780a84d8bb12590f593722b1f52c9c93a57ecb7cac1d2c9078aa"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "472a97cb895be2640fe3bba19ca58bcd5a37f5ac54a566aae205923daa60f289"
       }
     },
     {
@@ -51740,7 +51864,9 @@
     "house:119:2:45",
     "house:119:2:89",
     "house:119:2:308",
-    "house:119:2:207"
+    "house:119:2:207",
+    "house:119:2:272",
+    "house:119:2:286"
   ],
   "unresolved_action_ids": [
     "house:119:1:151",
@@ -51763,10 +51889,8 @@
     "house:119:2:245",
     "house:119:2:247",
     "house:119:2:271",
-    "house:119:2:272",
     "house:119:2:278",
     "house:119:2:283",
-    "house:119:2:286",
     "house:119:2:310"
   ],
   "cross_domain_boundary_review": {
@@ -51785,6 +51909,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "eb6ba841b462e285e66e7ba2928d17407c260934ee7e0710044d8515a0c16a7c",
-  "membership_review_sha256": "9fc7ffe840c89de2937ae04199a260dc4d3fc6efc73685b6d9f24778f1fdf4fb"
+  "proposal_sha256": "67bcaa008929d1feee4e8f62098a158b5d804a71de161ec4335cd1551ec630f6",
+  "membership_review_sha256": "bf1edafbfdd1947ed1d5ce98401f879b3c7df16a2f4c66efb2783d34668bb140"
 }
