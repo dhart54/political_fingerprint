@@ -19,3 +19,5 @@ Timing: conservative batch work starts 2026-10-15T02:50:07.302748 UTC, overlappi
 Definition of done: only supported screening credited; source/claim bindings, official observations and version limits inspected; source gaps and legal questions remain explicit; essential evidence committed for cloud review; final inputs validated; unrelated work preserved. Private raw logs/captures remain local and their results are owner-attributed.
 
 Restrictions remain: reserved 193/196/243, 157 accepted-core/stage adapter, conflicts 1:210/1:237/2:247; excluded 224/228 operations and 245 access failures; no retry or alternate route for refused HRSA, PIH2011-45, cancelled Clerk228/KIDS, adapter.patch, observe_ci227.py or session77500 operations. Existing rollback is Git history; no force push or historical rewriting.
+
+Shutdown: Dylan requested a PC-off checkpoint. Writer stopped; see `docs/plans/immigration_checkpoint232_shutdown.md`. Resume only on request.
