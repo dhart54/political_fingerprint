@@ -33,6 +33,31 @@ def git_blob(ref, path):
     return subprocess.check_output(['git', 'show', spec])
 
 
+def validate_guide_rule(documents, raw_bank, rule):
+    """Guard a reviewed wording distinction against its actual captured clauses.
+
+    Required/forbidden phrases are narrow editorial regression contracts, not a
+    general legal parser. The clauses are compared to actual snapshot text.
+    """
+    source = next(x['text'] for x in json.loads(raw_bank)['sources']
+                  if x['source_id'] == SOURCE_ID)
+    clauses = rule['source_passages']
+    for passage in clauses:
+        assert passage['source_id'] == SOURCE_ID
+        actual = source[passage['start']:passage['end']]
+        assert actual == passage['text']
+        assert digest(actual.encode()) == passage['passage_utf8_sha256']
+    quoted = '\n'.join(p['text'] for p in clauses)
+    assert all(phrase in quoted for phrase in rule['source_required'])
+    for target in rule['targets']:
+        value = documents[target['file']]
+        for component in target['path']:
+            value = value[component]
+        assert isinstance(value,str)
+        assert all(phrase in value for phrase in rule['required']), rule['id']
+        assert all(phrase not in value for phrase in rule['forbidden']), rule['id']
+
+
 def validate(documents, raw_bank):
     identities = documents['source_identities.json']
     ledger = documents['section_ledger.json']
@@ -77,9 +102,10 @@ def validate(documents, raw_bank):
         elif isinstance(value,list):
             for child in value:
                 walk(child)
-    for document in [ledger,imports]:
+    review = documents['guide_review.json']
+    for document in [ledger,imports,review]:
         walk(document)
-    for value in [ledger,imports,reading]:
+    for value in [ledger,imports,reading,review]:
         assert value['source_snapshot'] == SNAPSHOT
     assert ledger['action_id'] == 'house:119:2:271'
     rows = ledger['sections']
@@ -119,9 +145,14 @@ def validate(documents, raw_bank):
     assert len(imports['stage_witnesses']) == 3
     for witness in imports['qualified_bounded_witnesses']+imports['stage_witnesses']:
         assert witness['identity'] in identities['sources']
+    assert len(review['rules']) == 9
+    assert [r['section'] for r in review['sibling_guide_audit']] == OUTER
+    for rule in review['rules']:
+        validate_guide_rule(documents,raw_bank,rule)
     return {'outer_sections':len(rows),'inserted_locators':len(nested),
             'bound_passages':count,'source_identities':len(verified_ids),
-            'complete_captured_characters':len(text)}
+            'complete_captured_characters':len(text),
+            'source_backed_guide_rules':len(review['rules'])}
 
 
 def main():
@@ -131,7 +162,8 @@ def main():
     repo = Path(subprocess.check_output(['git','rev-parse','--show-toplevel'],text=True).strip())
     def load_bytes(name):
         return git_blob(args.ref,BASE+name) if args.ref else (repo/BASE/name).read_bytes()
-    names = ['source_identities.json','section_ledger.json','imports.json','read_receipt.json']
+    names = ['source_identities.json','section_ledger.json','imports.json',
+             'read_receipt.json','guide_review.json']
     docs = {name:json.loads(load_bytes(name))for name in names}
     raw_bank = git_blob(SNAPSHOT,BANK)
     result = validate(docs,raw_bank)
@@ -153,7 +185,11 @@ def main():
     probe('wrong snapshot',lambda d:d['read_receipt.json'].__setitem__('source_snapshot','0'*40))
     receipt = json.loads(load_bytes('delivered_blobs.json'))
     for name, expected in receipt['sha256'].items():
-        assert digest(load_bytes(name)) == expected, name
+        delivered = load_bytes(name)
+        assert digest(delivered) == expected, name
+        assert len(delivered) == receipt['bytes'][name], name
+        oid = subprocess.check_output(['git','hash-object','--stdin'],input=delivered).decode().strip()
+        assert oid == receipt['git_blob_oid'][name], name
     result.update({'negative_probes_rejected':probes,'delivered_blobs_checked':len(receipt['sha256']),
                    'reading_and_legal_meaning':'Reading receipt is attributed to author; these mechanical checks cannot certify actual reading, legal meaning, import sufficiency or candidate integration.'})
     print(json.dumps(result,indent=2))

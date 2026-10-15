@@ -73,7 +73,7 @@ must independently validate anything it uses.
 | 501–502 | Discount-window review/remediation/conditional repeal; reciprocal-deposit criteria, discretionary waiver and study |
 | 601–604 | Three limited competition lanes; separate GAO/IG studies; three initial-submission decision clocks, completeness tests and tolling |
 | 701–703 | Conditional least-cost alternative, assessments/reports; shelf-charter studies and exact historical documents; distinct default/concentration/qualified-bid exceptions |
-| 801–803 | Merchant-investment period measured from initial investment; separate partnership studies; explicit September 1, 2036 surplus-cap effect |
+| 801–803 | Minimum permitted merchant-investment holding period; for already-held investments measured from initial investment, without mandatory investor retention; separate partnership studies/report deadlines; explicit September 1, 2036 surplus-cap effect |
 
 ## Qualified witnesses and remaining evidence boundaries
 
@@ -99,7 +99,8 @@ remain **unqualified in this packet**. This is not a repository-wide absence
 finding or an evidence-unavailable adjudication. A same-number Medicare, DC Code
 or different-title source cannot substitute for the named banking authority.
 §702's exact **FDIC November26,2008 press release** and **OCC October2017
-Cumulative Activities Permissible** edition remain unqualified. No acquisition,
+Activities Permissible for National Banks and Federal Savings Associations,
+Cumulative** edition remain unqualified. No acquisition,
 denied-source retry, mirror or alternate-copy access was attempted.
 
 Literal review flags have exact passages in `imports.json`: §178's June30,2026
@@ -110,6 +111,40 @@ definition import and redesignation operators; §603's report-(a)/(b) reference;
 These are **preserved source facts, not resolved legal/editorial judgments**.
 Missing baselines must not be papered over using the proposal comparator.
 
+## Correction after independent guide review
+
+[Independent review of the original packet](https://github.com/dhart54/political_fingerprint/pull/230#issuecomment-6196416018)
+found five authored-guide errors at `c3c108a0`; its literal evidence was correct.
+This successor corrects the duplicated ledger/import/receipt notes together:
+
+- §301's second well-managed baseline is **Revised Statutes §5136A(g)(6)(A),
+  12 USC24a(g)(6)(A)**. The earlier HOLA/1467a route was wrong.
+- §801 specifies a **minimum permitted holding period** of 15 years, including
+  the initial-investment-date rule for already-held investments. It does not
+  require investors to retain their investments for 15 years.
+- §203's first adjustment is **not later than one year after enactment**, and
+  every five years thereafter; the earlier "after one year" wording was wrong.
+- §302 amends existing **FFIEC §§1003/1004/1005**; the unsupported1006 entry is
+  removed. Inserted §§1013–1016 remain distinct.
+- §702 names the exact October2017 OCC report **Activities Permissible for
+  National Banks and Federal Savings Associations, Cumulative**.
+
+The sibling guide check covered all28 authored section notes, with targeted
+source-clause rereads. It also clarifies upper-bound deadlines versus fixed
+dates (including §§204/501/604), required studies versus report deadlines
+(§§502/802), agency duties versus permission (§§104/201/303), the literal §403
+cadence substitution, and the §701 assessment-payment period. This is not a
+second whole-source read or general legal-language certification.
+
+[guide_review.json](guide_review.json) records the review, exact supporting
+clauses, all28 sibling checks, nine narrow regression contracts and correction
+timing. [test_guide_regressions.py](test_guide_regressions.py) provides source-backed
+positive and negative cases plus duplicate-note, historical-preservation and
+mutation-isolation checks. The original read timestamps, windows, attribution,
+source identities and timing file remain unchanged. Receipt notes explicitly
+attribute this later correction; original erroneous guides remain at the prior
+immutable commit. No claim that the first review was error-free is retained.
+
 ## Reproduction, scope and timing
 
 Run the delivered read-only binding check from this repository, at the delivered
@@ -117,12 +152,15 @@ commit or with the same committed packet files:
 
 ```powershell
 python -X utf8 docs/review_packets/immigration_research_support_20261014/roll271/verify_packet.py --ref HEAD
+python -X utf8 docs/review_packets/immigration_research_support_20261014/roll271/test_guide_regressions.py --ref HEAD
 ```
 
 It verifies all literal slices against the exact source snapshot, canonical row
 seals, source-bank Git/SHA256 identity, full-section/read-window coverage,
 28 outer sections/seven inserted locators, delivered Git-blob hashes and six
 negative probes (literal, gap, missing section, nested-as-outer, seal, snapshot).
+It also checks the nine source-backed guide contracts. The focused regression
+suite has21tests; it is separate from any candidate gate.
 It cannot verify that an agent actually read text or certify legal meaning.
 The explicit author reading acknowledgement is in [read_receipt.json](read_receipt.json).
 The checker has no candidate/runtime/compiler imports or writes; no full candidate
