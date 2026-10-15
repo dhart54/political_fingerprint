@@ -6,6 +6,10 @@ unless the user's current milestone request gives a more specific instruction.
 Detailed execution guidance belongs in referenced workflow documents rather than
 being duplicated here.
 
+Autonomous project agents should read `docs/DOT_OPERATING_BRIEF.md` for durable
+operating guidance and `docs/CURRENT_STATE.md` for the latest committed snapshot,
+then reconcile both against live repository/application state.
+
 ## Product identity
 
 Political Fingerprint is a curiosity-led, trust-anchored civic analytics
