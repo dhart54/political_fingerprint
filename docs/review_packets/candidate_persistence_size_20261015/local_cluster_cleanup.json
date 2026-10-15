@@ -1,0 +1,43 @@
+{
+  "created_clusters": [
+    {
+      "data_directory": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\cps\\.local\\capacity-pg-20261015T195332\\data",
+      "postmaster_root_pid": null,
+      "postmaster_pid_file_exists": false,
+      "last_log_excerpt": ""
+    },
+    {
+      "data_directory": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\cps\\.local\\capacity-pg-20261015T195401\\data",
+      "postmaster_root_pid": 9300,
+      "postmaster_pid_file_exists": true,
+      "last_log_excerpt": "[9300] LOG:  listening on IPv4 address \"127.0.0.1\", port 61329\n2026-10-15 15:54:05.779 EDT [18324] LOG:  database system was shut down at 2026-10-15 15:54:03 EDT\n2026-10-15 15:54:05.795 EDT [9300] LOG:  database system is ready to accept connections\n"
+    },
+    {
+      "data_directory": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\cps\\.local\\capacity-pg-20261015T195630\\data",
+      "postmaster_root_pid": 13880,
+      "postmaster_pid_file_exists": false,
+      "last_log_excerpt": "0 removed, 0 recycled; write=0.001 s, sync=0.005 s, total=0.019 s; sync files=2, longest=0.003 s, average=0.003 s; distance=0 kB, estimate=0 kB; lsn=0/15684B8, redo lsn=0/15684B8\n2026-10-15 15:56:35.004 EDT [13880] LOG:  database system is shut down\n"
+    },
+    {
+      "data_directory": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\cps\\.local\\capacity-pg-20261015T195726\\data",
+      "postmaster_root_pid": 3272,
+      "postmaster_pid_file_exists": false,
+      "last_log_excerpt": ", 1 recycled; write=0.061 s, sync=0.566 s, total=0.646 s; sync files=345, longest=0.004 s, average=0.002 s; distance=13344 kB, estimate=13344 kB; lsn=0/2270500, redo lsn=0/2270500\n2026-10-15 15:57:35.079 EDT [3272] LOG:  database system is shut down\n"
+    },
+    {
+      "data_directory": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\cps\\.local\\capacity-pg-20261015T200023\\data",
+      "postmaster_root_pid": 13324,
+      "postmaster_pid_file_exists": false,
+      "last_log_excerpt": "5 recycled; write=0.027 s, sync=0.836 s, total=0.896 s; sync files=1019, longest=0.014 s, average=0.001 s; distance=80255 kB, estimate=80255 kB; lsn=0/63C8228, redo lsn=0/63C8228\n2026-10-15 16:00:52.745 EDT [13324] LOG:  database system is shut down\n"
+    }
+  ],
+  "scope": "Only newly created capacity-pg directories; no existing cluster/data deletion or service change. Root process liveness verified separately.",
+  "verified_utc": "2026-10-15T20:07:37.776594+00:00",
+  "method": "Read-only Win32_Process query of postgres.exe ProcessId/ParentProcessId/CreationDate; all17observed processes started2026-10-09, before this task. None of9300,13880,3272,13324or their descendants was present. Existing services were not connected to or altered.",
+  "owned_roots_live": [],
+  "stale_pid_file_retained": {
+    "pid": 9300,
+    "process_absent": true,
+    "reason": "Unified-session interruption left own new file; native process query confirms root gone. Failed explicit stop and PID-file observation remain historical, not overwritten."
+  }
+}

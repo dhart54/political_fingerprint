@@ -1,0 +1,222 @@
+{
+  "baseline": {
+    "source": "User/lead-supplied read-only Green measurement; not reconnected or independently remeasured by this task",
+    "at_utc": "2026-10-15T19:08:41Z",
+    "all_databases_bytes": 247552821,
+    "application_database_bytes": 232279187,
+    "object_storage_bytes": 0,
+    "published_editorial_table_approx_mb": 1.16,
+    "health_and_immigration_persisted": false
+  },
+  "budget_units": "Conservative decimalMB=1000000bytes; not a claim about provider internal unit conversion",
+  "thresholds_bytes": {
+    "reassess": 350000000,
+    "capacity_decision": 400000000,
+    "free_plan": 500000000
+  },
+  "current_headroom_bytes": {
+    "350000000": 102447179,
+    "400000000": 152447179,
+    "500000000": 252447179
+  },
+  "measured_compatible_subset": {
+    "immigration": {
+      "artifact_table_delta_bytes": 13156352,
+      "database_delta_bytes": 13172736,
+      "artifact_rows": 86,
+      "relationships": 85,
+      "registry_rows": 0,
+      "delta_components": {
+        "heap_main_bytes": 65536,
+        "table_including_toast_bytes": 13049856,
+        "direct_index_bytes": 106496,
+        "toast_heap_main_bytes": 12779520,
+        "toast_index_bytes": 155648,
+        "toast_total_bytes": 12959744
+      }
+    },
+    "health": {
+      "artifact_table_delta_bytes": 8945664,
+      "database_delta_bytes": 8962048,
+      "artifact_rows": 121,
+      "relationships": 120,
+      "registry_rows": 0,
+      "delta_components": {
+        "heap_main_bytes": 90112,
+        "table_including_toast_bytes": 8773632,
+        "direct_index_bytes": 172032,
+        "toast_heap_main_bytes": 8503296,
+        "toast_index_bytes": 106496,
+        "toast_total_bytes": 8634368
+      }
+    },
+    "combined": {
+      "artifact_table_delta_bytes": 21962752,
+      "database_delta_bytes": 21979136,
+      "artifact_rows": 207,
+      "relationships": 205,
+      "registry_rows": 0,
+      "delta_components": {
+        "heap_main_bytes": 139264,
+        "table_including_toast_bytes": 21733376,
+        "direct_index_bytes": 229376,
+        "toast_heap_main_bytes": 21274624,
+        "toast_index_bytes": 245760,
+        "toast_total_bytes": 21544960
+      }
+    }
+  },
+  "full_generated_inventory": {
+    "immigration": {
+      "git_file_bytes": 88244625,
+      "canonical_json_bytes": 86867335,
+      "nul_occurrences": 99,
+      "incompatible_whole_artifacts": [
+        {
+          "natural_key": "capacity-only:immigration:action:house:119:2:65",
+          "canonical_payload_bytes": 59145,
+          "content_sha256": "fce958a826d7eae06be049340ba1f88aba5d4e4f6c1e6a3c094b92b0e6639e7e",
+          "nul_count": 24
+        },
+        {
+          "natural_key": "capacity-only:immigration:action:house:119:2:101",
+          "canonical_payload_bytes": 29544,
+          "content_sha256": "10f20ea3a2fd0125aeda07fdaaf1d8b82bcf8598907787d3a22f8e20682c6932",
+          "nul_count": 9
+        },
+        {
+          "natural_key": "capacity-only:immigration:readable:F000477",
+          "canonical_payload_bytes": 28095533,
+          "content_sha256": "b44ef9d8299258ca439c83c077cf989d87ddff0b38d79ebbafee4fff0f8d19d0",
+          "nul_count": 33
+        },
+        {
+          "natural_key": "capacity-only:immigration:readable:M001184",
+          "canonical_payload_bytes": 27926786,
+          "content_sha256": "0335c7e9e53ece3e521db9aa76e639f1097ae69160a22aa2f5e51d45d9eaaea5",
+          "nul_count": 33
+        }
+      ],
+      "omitted_canonical_payload_bytes": 56111008,
+      "measured_subset_payload_bytes": 30793825,
+      "excluded_source_bank_metadata": [
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+          "git_blob_oid": "7b8264d83ea43bfc1fb86f363149591119105a19",
+          "bytes": 43032903,
+          "selected_generated": false
+        }
+      ],
+      "all_directory_tracked_bytes": 210157195,
+      "all_directory_file_count": 301
+    },
+    "health": {
+      "git_file_bytes": 57412345,
+      "canonical_json_bytes": 56368897,
+      "nul_occurrences": 27,
+      "incompatible_whole_artifacts": [
+        {
+          "natural_key": "capacity-only:health:action:house:119:2:266",
+          "canonical_payload_bytes": 108792,
+          "content_sha256": "f7d645e5abc468b5f1c41c427050e1f9a3f0e638ec005268d9883c6e66cb8d79",
+          "nul_count": 9
+        },
+        {
+          "natural_key": "capacity-only:health:readable:F000477",
+          "canonical_payload_bytes": 18498646,
+          "content_sha256": "9b8c189b9e274d674dd5e76ef5a5f100935a038c3823ee3f97a03c0ee7a57816",
+          "nul_count": 9
+        },
+        {
+          "natural_key": "capacity-only:health:readable:M001184",
+          "canonical_payload_bytes": 18051890,
+          "content_sha256": "2c03f9e1fd4d0fa3b82887808a348f6277b240471256322bf56d01d99183d225",
+          "nul_count": 9
+        }
+      ],
+      "omitted_canonical_payload_bytes": 36659328,
+      "measured_subset_payload_bytes": 19760820,
+      "excluded_source_bank_metadata": [
+        {
+          "path": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+          "git_blob_oid": "72619a608fa1e73482d83cf8f803586932e6f746",
+          "bytes": 36967545,
+          "selected_generated": false
+        }
+      ],
+      "all_directory_tracked_bytes": 126728582,
+      "all_directory_file_count": 13
+    }
+  },
+  "full_package_size_measured": false,
+  "current_authorized_candidate_growth_bytes": 0,
+  "complete_selected_package_boundary": "Candidates fail the real persistence-proposal guard; a hypothetical full generated review mirror also fails PostgreSQL JSONB U+0000 handling. No typed full-package byte measurement exists. No source was stripped or repaired.",
+  "scenarios": [
+    {
+      "kind": "Measured-compatible-subset package-copy sensitivity ONLY",
+      "copies": 1,
+      "increment_bytes": 21979136,
+      "project_total_bytes": 269531957,
+      "complete_candidate_forecast": false,
+      "assumption": "Repeats the measured two-domain/two-member subset footprint, duplicating shared data; not a reuse-aware member forecast."
+    },
+    {
+      "kind": "Measured-compatible-subset package-copy sensitivity ONLY",
+      "copies": 2,
+      "increment_bytes": 43958272,
+      "project_total_bytes": 291511093,
+      "complete_candidate_forecast": false,
+      "assumption": "Repeats the measured two-domain/two-member subset footprint, duplicating shared data; not a reuse-aware member forecast."
+    },
+    {
+      "kind": "Measured-compatible-subset package-copy sensitivity ONLY",
+      "copies": 5,
+      "increment_bytes": 109895680,
+      "project_total_bytes": 357448501,
+      "complete_candidate_forecast": false,
+      "assumption": "Repeats the measured two-domain/two-member subset footprint, duplicating shared data; not a reuse-aware member forecast."
+    },
+    {
+      "kind": "Measured-compatible-subset package-copy sensitivity ONLY",
+      "copies": 10,
+      "increment_bytes": 219791360,
+      "project_total_bytes": 467344181,
+      "complete_candidate_forecast": false,
+      "assumption": "Repeats the measured two-domain/two-member subset footprint, duplicating shared data; not a reuse-aware member forecast."
+    },
+    {
+      "kind": "Full-generated canonical-byte budget sensitivity, NOT physical SQL measurement or upper bound",
+      "retained_copies": 1,
+      "byte_factor": 1.0,
+      "increment_bytes": 143236232,
+      "project_total_bytes": 390789053,
+      "complete_candidate_forecast": false,
+      "assumption": "Uses immutable canonicalJSON byte count as a reserve, with optional25percentfactor; ignores actualJSONBrepresentation/compression and the incompatibility. Does not assert importability."
+    },
+    {
+      "kind": "Full-generated canonical-byte budget sensitivity, NOT physical SQL measurement or upper bound",
+      "retained_copies": 1,
+      "byte_factor": 1.25,
+      "increment_bytes": 179045290,
+      "project_total_bytes": 426598111,
+      "complete_candidate_forecast": false,
+      "assumption": "Uses immutable canonicalJSON byte count as a reserve, with optional25percentfactor; ignores actualJSONBrepresentation/compression and the incompatibility. Does not assert importability."
+    },
+    {
+      "kind": "Full-generated canonical-byte budget sensitivity, NOT physical SQL measurement or upper bound",
+      "retained_copies": 2,
+      "byte_factor": 1.0,
+      "increment_bytes": 286472464,
+      "project_total_bytes": 534025285,
+      "complete_candidate_forecast": false,
+      "assumption": "Uses immutable canonicalJSON byte count as a reserve, with optional25percentfactor; ignores actualJSONBrepresentation/compression and the incompatibility. Does not assert importability."
+    }
+  ],
+  "measured_retained_identical_v2": {
+    "artifact_table_total_delta_bytes": 43720704,
+    "additional_revision_table_bytes": 21757952,
+    "database_total_delta_bytes": 43737088,
+    "rows": 414,
+    "scope": "Identical full-copy revision of compatible subset only, with new versions and supersedes links; no cross-row TOAST dedup assumed, not a prediction of future changed content."
+  }
+}
