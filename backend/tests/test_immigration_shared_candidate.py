@@ -5725,5 +5725,124 @@ class Checkpoint239PersonnelBenefitsAndSupportTests(unittest.TestCase):
             self.assertEqual(source['governed_bytes_sha256'], sealed_digest(source, 'governed_bytes_sha256'))
 
 
+class Checkpoint240AppropriationExceptionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.a, cls.s, cls.u, cls.m = [json.loads((DATA / (n + '.json')).read_text(encoding='utf-8'))
+                                     for n in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
+        cls.bank = {s['source_id']: s for s in cls.s['sources']}
+        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:2:44')
+        cls.record = next(r for r in cls.m['records'] if r['action_id'] == cls.action['action_id'])
+        cls.core = next(c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions'] if c['action_id'] == cls.action['action_id'])
+        cls.receipt = json.loads((DATA / 'appropriation_exception_qualification_checkpoint240.json').read_text())
+
+    def test_qualified_closure_retains_exact_amendment_and_direct_appropriation_question(self):
+        r = self.receipt
+        self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
+        self.assertEqual(r['base_head'], '94f72fb4df505f829e14fc4f7047994cddeaf0c1')
+        self.assertEqual(r['prior_pending_row']['disposition'], 'source_unresolved')
+        self.assertEqual(r['membership_record_sha256'], digest(self.record))
+        self.assertEqual(r['new_core_sha256'], self.core['action_core_sha256'])
+        self.assertEqual(self.core['legislative_stage'], 'amendment')
+        self.assertTrue(r['legal_questions_preserved'])
+        self.assertTrue(r['independent_source_domain_review_pending'])
+        self.assertFalse(r['editorial_acceptance'])
+        self.assertFalse(r['publication_authorized'])
+        meaning = self.action['meaning']
+        self.assertIn('Seven direct DivisionBappropriation branches remain', meaning)
+        self.assertIn('This proposed amendment does not literally strike that command', meaning)
+        self.assertIn('precise interaction, enforceability and fiscal implementation remain legal/application questions', meaning)
+        self.assertIn('not itself a separate sentence cancelling every named appropriation', meaning)
+
+    def test_immigration_relationship_is_literal_project_purpose_not_recipient_name(self):
+        sid = 'govinfo:roll44-CPF-H1615240'
+        point = self.receipt['private_authoring']['Whitewater_material_source']
+        self.assertEqual(point['source_id'], sid)
+        self.assertEqual(self.bank[sid]['text'][point['start']:point['end']], point['passage'])
+        self.assertIn('City of Whitewater, WI, to reduce poverty through an immigrant liaison 85,000 Bald win S', point['passage'])
+        self.assertEqual(point['amount_dollars'], 85000)
+        self.assertTrue(point['actual_selected_visual_read'])
+        self.assertIn('not a recipient', self.action['meaning'])
+        self.assertIn('does not establish any person', self.action['meaning'])
+        for claim in self.record['claim_source_map']:
+            self.assertIn(claim['passage'], self.bank[claim['source_id']]['text'], claim['source_id'])
+        self.assertEqual(len(self.action['claim_source_map']), 20)
+
+    def test_page_units_and_manual_header_do_not_become_native_or_all_row_certificate(self):
+        for n, sid in [(238, 'govinfo:roll44-divisionB-preface240'),
+                       (247, 'govinfo:roll44-CPF-disclosure-start240'), (263, 'govinfo:roll44-CPF-H1615240')]:
+            s = self.bank[sid]
+            self.assertEqual(s['physical_page_1based'], n)
+            self.assertEqual(s['raw_document_pages'], 563)
+            self.assertEqual(s['source_text_extents'], [dict(start=0, end=len(s['text']), total=len(s['text']))])
+        visual = self.bank['govinfo:roll44-finalbill-header-visual240']
+        self.assertEqual(visual['text'], '(Amounts in thousands)\nFINAL\nBILL')
+        self.assertNotIn('source_text_extents', visual)
+        self.assertIn('not native PDF extraction', visual['text_extraction_method'])
+        self.assertIn('Amount', self.bank['govinfo:roll44-CPF-H1615240']['text'])
+        self.assertFalse(self.receipt['native_currency_verification']['all_rows_or_fiscal_legal_domain_certificate'])
+        self.assertEqual(self.receipt['actual_selected_visual_reading']['target_amount_cells_actual_writer_viewed'], 24)
+        self.assertIn('remaining964', ''.join(self.action['limitations']))
+
+    def test_own_recorded_amendment_and_raw_labels_remain_distinct_from_package_votes(self):
+        raw = self.bank['clerk:119:2:44']
+        self.assertEqual(raw['metadata']['vote-question'], 'On Agreeing to the Amendment')
+        self.assertEqual(raw['metadata']['vote-result'], 'Failed')
+        self.assertEqual(raw['member_records']['F000477']['official_label'], 'No')
+        self.assertEqual(raw['member_records']['M001184']['official_label'], 'Aye')
+        initial = self.bank['immigration:session2-roll44-initial174']['text']
+        resumed = self.bank['immigration:session2-roll44-recorded174']['text']
+        self.assertLess(initial.index('ayes'), initial.index('postponed'))
+        self.assertLess(resumed.index('postponed'), resumed.index('recorded vote was ordered'))
+        self.assertIn('136, noes 291', resumed)
+        self.assertEqual(self.action['episode_id'], 'episode:hr7148:119')
+        episode = next(e for e in self.u['accounting']['episodes'] if e['episode_candidate_id'] == self.action['episode_id'])
+        self.assertEqual(set(episode['action_ids']), {'house:119:2:44', 'house:119:2:45', 'house:119:2:53'})
+        projections = json.loads((DATA / 'generated/member_projections.json').read_text())
+        for member in projections:
+            own = next(a for a in member['actions'] if a['action_id'] == self.action['action_id'])
+            self.assertEqual(own['official_status'], 'Nay' if member['member_id'] == 'F000477' else 'Yea')
+        for n in ['Foushee', 'Massie', 'F000477', 'M001184']:
+            self.assertNotIn(n, self.action['meaning'])
+
+    def test_changed_purpose_or_direct_funding_operand_is_rejected_by_real_source_guard(self):
+        from scripts import prepare_shared_domain_candidate as common
+        original = copy.deepcopy(self.a)
+        for sid, before, after in [('govinfo:roll44-CPF-H1615240', 'immigrant liaison', 'veteran liaison'),
+                                   ('govinfo:hr7148ih-complete-ordinary228', '$40,801,000 shall be used', '$40,801,000 may be used')]:
+            bad = copy.deepcopy(self.a)
+            bad['actions'] = [copy.deepcopy(self.action)]
+            bad['blocked_episode_ids'] = []
+            claim = next(c for c in bad['actions'][0]['claim_source_map'] if c['source_id'] == sid and before in c['passage'])
+            claim['passage'] = claim['passage'].replace(before, after, 1)
+            with self.subTest(source=sid), self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+                common.prepare(bad, self.s, ['F000477', 'M001184'])
+        self.assertEqual(self.a, original)
+
+
+    def test_existing_episode_aggregation_preserves_individual_votes_without_trajectory(self):
+        compiled = json.loads((DATA / 'generated/compiled_ir.json').read_text())
+        self.assertEqual(self.a['blocked_episode_ids'], ['episode:hr1048:119'])
+        self.assertEqual(self.receipt['new_behavioral_proposition_count'], 0)
+        self.assertEqual(self.receipt['extended_existing_episode_proposition_count'], 2)
+        self.assertEqual(sum(p['semantic_role'] == 'behavioral' for m in compiled['members']
+                             for p in m['proposition_graph']['propositions']), 141)
+        for member in compiled['members']:
+            own = [p for p in member['proposition_graph']['propositions']
+                   if p['semantic_role'] == 'behavioral' and 'episode:hr7148:119' in p['evidence_episode_ids']]
+            self.assertEqual(len(own), 1)
+            proposition = own[0]
+            self.assertEqual(proposition['proposition_type'], 'notable_choice')
+            self.assertEqual(proposition['direction'], 'opposition' if member['member_id'] == 'F000477' else 'mixed')
+            self.assertEqual(proposition['evidence_action_ids'], ['house:119:2:44', 'house:119:2:45', 'house:119:2:53'])
+            observations = {o['action_id']: o for o in proposition['action_observations']}
+            self.assertEqual(observations['house:119:2:44']['status'], 'Nay' if member['member_id'] == 'F000477' else 'Yea')
+            for aid in ['house:119:2:45', 'house:119:2:53']:
+                self.assertEqual(observations[aid]['status'], 'Nay')
+                self.assertEqual(observations[aid]['direction'], 'opposition')
+            self.assertFalse(any(p['proposition_type'] == 'trajectory' and 'episode:hr7148:119' in p['evidence_episode_ids']
+                                 for p in member['proposition_graph']['propositions']))
+
+
 if __name__ == '__main__':
     unittest.main()

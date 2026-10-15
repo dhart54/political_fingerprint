@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "493cbfefcb5c0af3c223cccdc6590741cf16e011625c35a0c8c9e7101ac98e66",
-  "source_capture_sha256": "84d9178eb1131bee113d920283128cdac12715fde011cd66493e586f6fa4bac0",
-  "core_sha256": "63968870895116ac1d76e9267b2d4cf252f50b386458accf4e1dcb9fa30eb767",
-  "compiled_sha256": "595d993c434a9cead8b76aaa280569d4e0d62225766d9ef292fd6aee0742fb67",
-  "readable_sha256": "555c1814a170c85d43b898ebf3160ac26ea58153a709bbde9bea6e11f8e9974f",
+  "input_sha256": "055212eb696711b2ba9f2c96fd54e82d7442f627b30cfc813b1dd94fbde077ed",
+  "source_capture_sha256": "e39d8e3e031f1b59fd173177bbd6ec4153fd5787e57a59aa5b9290e35817878e",
+  "core_sha256": "e99ddbd7663c344905b7e0417b0b89c0f615cb96a0972579389968463036a481",
+  "compiled_sha256": "b3700bee84fdbfbd320f7653e7b1bf2cfa8b9f3d1386464ee47cc9755f8c9317",
+  "readable_sha256": "7a49cfab7c9a1857022e50e7689803259dd1412231c7d1bc7430aec8e68b0d9d",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -974,6 +974,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of the whole exact H.R. 7147 annual DHS funding proposal; no preferred funding or immigration alternative is established",
           "source_id": "clerk:119:2:42"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:44",
+      "shared_sha256": "190ab7c6b874104b3f670fdeb1bb2c5ea5fa0d3d3559f08a5e1bcc727a73d561",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adding that whole exact exception; no separate project/beneficiary/bill stance, preferred alternative, motive or proved funding outcome",
+          "source_id": "clerk:119:2:44"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding the whole exact DivisionBCPF/CDSexception to the explanatory-statement-effect clause; no separate project/beneficiary/bill stance or proved funding removal",
+          "source_id": "clerk:119:2:44"
         }
       ]
     },
