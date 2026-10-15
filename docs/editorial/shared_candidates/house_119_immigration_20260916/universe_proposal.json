@@ -101,7 +101,8 @@
     "house:119:2:218",
     "house:119:2:283",
     "house:119:2:44",
-    "house:119:1:262"
+    "house:119:1:262",
+    "house:119:1:320"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Membership requires an exact operative Immigration & Border mechanism: status/presence, admission, visas/asylum/refugees/parole, removal, detention/release, naturalization/citizenship, immigration documentation/verification/adjudication, direct border entry/inspection/enforcement, immigration-specific standards/cooperation, or eligibility directly governed by immigration status. Titles, policy labels, rhetoric, keywords and other-domain interpretations are leads only. Procedural/expressive controls remain noncounting.",
@@ -116,9 +117,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 229,
-      "interpreted_substantive_directional": 85,
+      "interpreted_substantive_directional": 86,
       "exact_action_ineligible": 348,
-      "source_unresolved": 12,
+      "source_unresolved": 11,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -128,14 +129,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 85,
-    "directional_substantive_actions": 85,
+    "substantive_eligible_actions": 86,
+    "directional_substantive_actions": 86,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 229,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 348,
-    "unresolved_boundary_cases": 12,
-    "independent_episode_count": 73,
+    "unresolved_boundary_cases": 11,
+    "independent_episode_count": 74,
     "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
@@ -145,8 +146,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 85,
-      "substantive_actions": 85,
+      "ready_substantive_actions": 86,
+      "substantive_actions": 86,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -426,6 +427,7 @@
         "house:119:1:285",
         "house:119:1:298",
         "house:119:1:299",
+        "house:119:1:320",
         "house:119:1:340",
         "house:119:1:349",
         "house:119:2:5",
@@ -824,7 +826,6 @@
       "source_unresolved": [
         "house:119:1:210",
         "house:119:1:237",
-        "house:119:1:320",
         "house:119:2:157",
         "house:119:2:193",
         "house:119:2:196",
@@ -1290,6 +1291,12 @@
         "action_ids": [
           "house:119:2:283"
         ]
+      },
+      {
+        "episode_candidate_id": "episode:s1071:119",
+        "action_ids": [
+          "house:119:1:320"
+        ]
       }
     ],
     "multi_action_episodes": [
@@ -1403,11 +1410,11 @@
         "legal_application_questions": "Separate queue now includes one bounded G102-105 printed-date/general-continuance question; no personal eligibility or FY2025 quota application accepted."
       }
     ],
-    "interpreted_action_count_qualification": "85 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
+    "interpreted_action_count_qualification": "86 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "ceaaf876b9a7bbe6e99833acd52753f8408aaf03e1b4419934c83024ff328e39",
+  "universe_subject_sha256": "71fd97c285627eaada73754aa6b7dd7b554851aabd3d6bb8fc8dfbe18681a84e",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -24388,8 +24395,8 @@
       "date": "2025-12-10",
       "measure": "bill_119_s_1071",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "The VA vehicle title does not describe the adopted choice. The floor adopts Rules Print 119-16 as FY 2026 NDAA. Complete captured EAH has 3,491,744 characters/eight divisions; only introductory scope and own passage sequence are reviewed here. Existing Health core covers limited named care provisions and cannot establish Immigration meaning or full package coverage. Held: pending_whole_package_and_exact_material_chains. Candidate only, no domain clearance or counting.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Roll320 is the December10,2025 final-passage choice on S.1071 as replaced by the FY2026 NDAA substitute. The House passed it312-112, with nine NotVoting. H.Res.936section6 deems RCP119-16adopted before passage, and its closed consideration permits debate and one motion to commit, not a separate recorded vote on every component. The Clerk's original VA-disinterment vehicle title does not describe the operative package. The December7primary print and December10EAHcare provisions agree on the reviewed701/702/712mechanisms. This is distinct from SeptemberH.R.3838 and FY2027H.R.8800; prior bill benefits, prohibitions, pilot durations and amendment outcomes cannot be imported wholesale.\n\nSection701 changes1074i's specialty-referral travel threshold for active-duty members and their dependents from more than100miles to more than75miles, not an at-least75mile rule for every retiree or civilian. The existing primary-care-physician referral and distance from the primary-care provider's location remain. Travel/transportation allowances follow the incorporated regulations; necessary adult accompaniment remains limited to a parent/guardian or qualifying family member at least21. Exceptional-circumstance authority remains distinct. Dental specialists are included in the statutory specialty-provider definition. The bill requires an implementation briefing; it does not prove that reimbursements were paid or specify an invented allowance amount.\n\nSection702 requires the Secretary to authorize DoD medical personnel to provide nonreimbursable sexual-assault medical forensic examinations in military treatment facilities for otherwise ineligible individuals who report an offense for which a DefenseCriminalInvestigativeOrganization may initiate an investigation and who meet the prescribed examination regulations. Those conditions do not establish universal civilian military health coverage or prove an investigation, examination or criminal charge occurred. Regulations may address kit handling, storage and transfer to law enforcement.\n\nSection712 adds a military-civilian medical-surge program under1096, in collaboration withHHS, to support military medical facilities and NDMSresponse capacity. Partnerships use operationally relevant transport/logistics locations, at least eight with discretionary additional sites, and qualified public/private/nonprofit medical organisations. Mobilization is tied to the listed national/public-health emergencies, war, contingency, WarPowersaction or President-declared emergency/major disaster; it is not an unconditional everyday-care promise. Staffing, specialized training, patient movement/care and interagency coordination are required. The express construction clause does not give DoD control overHHSleadership/administration, staffing or resource allocation. These direct care-access and delivery mechanisms support bounded membership in the whole substituted defense/State/intelligence/CoastGuard/other-matters package.\n\nOnly these reviewed mechanisms establish this candidate. No exhaustive3086page/package or incorporated-authority review is claimed, and the broader320completeness follow-up remains explicit. House passage is not enactment, implementation, a prediction of patient outcomes or a separate member position on each component. Yea supports the exact whole proposition; Nay opposes it without identifying a preferred alternative. This candidate remains subject to external semantic review before acceptance or publication.\n\nProspective Immigration qualification of the whole December House choice follows. The preceding 3,498 characters and four bindings are the unchanged, historically bounded Health candidate; its earlier completeness disclaimer is not erased or retroactively revalidated. New primary reading covers all 3,491,744 characters of this exact S.1071 EAH, including all eight public divisions. The separately qualified sources below extend the candidate meaning prospectively. They do not establish enactment, every incorporated authority's current application, classified schedules, every table's visual or arithmetic accuracy, or a preference on individual components. H.Res.936 section6 and the December10 own-floor sequence bind the adopted RCP119-16 substitute to roll320, distinct from the rejected motion319, the VA vehicle, September H.R.3838 and July2026 H.R.8800. The official result is312 Yea,112 Nay,9 Not Voting; Recorded votes remain controlling over later explanations of intended votes. Section3(1) states that IN divisions A–D, the term “this Act” refers to divisions A–D; that rule is not silently applied to references in divisions E–H.\n\nSection372 would add10US2653 permitting agreements for evacuation of family pets of United States citizens already evacuated by DoD, and contract working dogs, from the foreign country. It does not authorize agreements for new human evacuation. Animal evacuation cannot reduce the number of individuals otherwise evacuated; veterinary nonresponsibility by reason of evacuation is not a blanket prohibition on care under other authority. The vehicle operator may refuse animal evacuation if it would create a safety risk to other passengers or personnel. Section377's limited Fly America exception addresses transportation of specified military/DoD civilian pets on foreign routes when no covered carrier is willing and able, with its animal-number and cost conditions. Neither provision independently changes human admission, animal import or quarantine law. Border counter-contraband waste-disposal support in380 is distinct from an authority directed at immigrants or every border resident.\n\nSection504's citizenship condition concerns applicants in the specified funded/unfunded chaplain education program, with the funded cap, detail limits, commissioning qualifications, service agreements and failure provisions. Section710 changes the Secretary's inactivation timing authority and specified service obligations; the printed failure cross-reference remains unresolved. Section532 concerns recruiter information to denied applicants, not a general waiver of10US504's nationality/enlistment rules. Section823's DCTC provisions concern eligible program participants, qualifying appointments, capped graduate numbers, pay/service obligations and termination; they do not waive citizenship rules for all federal jobs. Section716 distinguishes a license issued by an agency of a named foreign country or another Secretary-designated country from the separate non-US-national overseas-care branch of1094; a licensing jurisdiction is not the practitioner's nationality.\n\nSection535 replaces the entire50US3802, including its former(a)/(b), with automatic registration of male United States citizens and other male residents aged18–25, retaining the printed lawful-nonimmigrant/title exception and other conditions. The regulations MAY require listed personal data, necessary disclosure, and notice with a correction opportunity; no new mandatory Director rulemaking duty is invented. The printed effective date is one year after enactment of “this Act”; section3's explicit A–D definition is retained. Dated3809(b)(1) authorizes the President. Actual delegation, regulations, the printed “this section(a)” reference, surviving references elsewhere in the Act and constitutional or individual applications remain open. Registration is distinct from induction, immigration status, work permission and benefit eligibility. Section573 amends existing570F information sharing for individuals retiring or separating from the Armed Forces: transmittal through a State veterans agency defaults to sharing unless the individual opts out, agreements must comply with privacy/personally identifiable information and cybersecurity requirements, and State use is limited to connecting veterans to the benefits/services described in subsection(a). This is not creation of all570Fauthority, the September567 voluntary scheme, or entitlement to benefits.\n\nSections1010,1043 and1044 respectively address a284 notice provision, visible military service/name identification while supporting civilian law enforcement, and specified contract categories supporting assistance under the referenced border provision. These amendments do not supply unrestricted military arrest or civilian immigration authority. Sections1031–1035 print replacements extending specified Guantanamo detention, transfer or facility restrictions, including1031's2027→2032 operand and annual2025→2026 replacements. Those are exact printed target provisions, not a certification that every target/reference or intervening amendment has been legally reconciled. Section1053 requires reports on military-aircraft removal operations and detention-facility use, with timing, costs, destinations, non-DoD persons and Guantanamo information; the referenced request-for-assistance reporting amendment does not itself confer new removal or detention authority. “Alien” is the statutory term, not a claim that every covered person has the same status or conduct.\n\nSection1064 changes the retained2022 southwest-border briefing provision as amended in2024 to December2026. Section1070 requires briefings on the specified southwest-border operations, readiness, expenditures, force-use policies and operational challenges until the printed proclamation/executive-order termination conditions. The printed “100886” and title variation are retained rather than repaired. Those reports are not proof that a particular deployment, removal, detention or use of force occurred. Section1229A's Syria-detention report includes security, nationalities, repatriation to home/third countries and non-refoulement concerns; it creates no admission entitlement. Section1274's Mexico training report likewise does not establish a new general enforcement power.\n\nSection1085's AUKUS export-control changes retain the material22CFR120.64/126.18 regular-employee and dual/third-country-national conditions. They do not create blanket visa or export permission. Sections841 and867 concern specified retail/industrial-base procurement and reliability requirements, with country, entity, operating, activity, waiver, funding and sunset predicates. The841 exception combines United States organization AND citizen operation AND products outside the covered-country condition;867's reliable-source categories distinguish citizens from qualifying organized entities and the named country frameworks. None is an across-the-board exclusion of immigrants from employment. Section1692, unlike September1616, uses physical location in a covered nation for its access restriction, including separately defined direct/indirect, cloud/logical, workload and nonpublic-technology access, with its accredited-cloud, software/open-source and public-company administration qualifications. Country location, citizenship, nationality, incorporation, ownership and government control are not interchangeable predicates.\n\nSection1703 permits an otherwise qualified alien to SEEK H-2B admission for up to three years for the specified Wake Island military construction, repairs or renovations, notwithstanding the temporariness requirement, without counting against1184(g)'s numerical limits. It provides cancellation if the person enters a US area outside Wake, Guam, CNMI or a Pacific US Minor Outlying Island; permits the specified Guam/CNMI1806(b)(1) workers to perform that Wake work notwithstanding other law; and permits seeking admission from enactment through December31,2030. Dated1806(b)'s cap exemption, distinct location restriction and otherwise-qualified conditions, and1184(g)'s H-2B cap, are material baselines. This is not unconditional admission, automatic issuance, every category of CNMI worker, or a waiver of all labor/admissibility rules. Section1707 changes130i's counter-UAS program, including trained contractors, particular criminal-law exceptions, privacy/retention/disclosure conditions, claims and sunset provisions; its specified actions are not general immigration-arrest powers.\n\nDivisionC section3111 prints a large codification and related transfers, repeals, coordination and savings provisions. New6222 includes background review before nonpublic NNSA-mission-facility access for a citizen OR agent of a covered nation OR a country on the sensitive list, and a separate covered-nation nonpublic-access prohibition. Its waiver requires certification30 days before access of all four printed conditions: national-security interest, no classified/restricted data revealed, consultation to mitigate risks, and no previously unreported covered-nation military/intelligence affiliation uncovered in background review. The15-day language is a sense of Congress, not an unconditional statutory review deadline. The citizen/LPR, IAEA inspection, legally grounded exchange and non-mission-area construction provisions remain. The printed April15,2025 date is retained. Already retained2024 law3112 enacted most of these features. It does not reproduce all old2652(b), so the complete historical section and legal novelty are not certified; the closed OLRC routes are not retried.\n\nPrinted new6224(b)(4) permits regulations in a counterintelligence investigation to include an employee or contractor requiring classified access who is a dual United States AND foreign NATIONAL. It is not a mandatory polygraph rule for every foreign citizen, every dual citizen or every laboratory visitor. Printed6253's fellowship concerns United States citizens doing specified graduate/postdoctoral science or engineering work related to the nuclear-security enterprise, educational/research assistance at the named facilities and a written service agreement of at least one year IF employment is offered. That condition does not spread to all6252 student employment. The full predecessor polygraph/fellowship and codification chains remain legal-novelty questions; these descriptions report the whole printed provisions and do not label them wholly new admission or nationality policy. Savings provisions do not establish a blanket certificate that every codification is nonsubstantive.\n\nSections5118–5119 address the Assistant Secretary for Consular Affairs' immigration, passport, visa, citizenship/nationality responsibilities and the Bureau's functions under the Under Secretary for Management. Dated2651a already establishes the Bureau and Assistant Secretary; sequential reorganization is not creation of a previously nonexistent Bureau or a new entitlement to visas. The Secretary's dated exception for expressly assigned consular-officer authority is not silently erased. Section5157's Haitian Affairs office and5605's Mongolia locally employed staff/diaspora reports concern consular/diplomatic operations, not new immigration categories. Sections5161–5162 concern advocacy for US-citizen employment at international organizations, with support for a non-US leadership candidate only absent a US nominee AND a national-interest determination. Section5502 adds Management consultation to the regulation clause for2709's existing special-agent authorities; it does not newly grant all passport, visa, trafficking or arrest powers.\n\nSections6522–6523 require watchlisting-policy notification and reporting on known/presumed US persons. The imported50US1801(i) definition includes the specified LPR, association and corporation categories, not citizens alone; the no-fly/selectee and reasonable-suspicion exceptions remain. Section6718 instead uses3039's US-person definition for the duty-to-warn provision, with its distinct known-permanent-resident and entity wording and construction preserving existing duties. These reports do not establish a new substantive watchlisting or surveillance rule. Sections6614–6615 and6703 address biological data, synthetic DNA/RNA procurement and intelligence-community biotechnology contracting with specifically defined foreign entities, jurisdictions, control, relationship or country-of-production predicates and their waivers/exceptions.19221(a)(2)'s five alternative foreign-entity-of-concern predicates are not a universal foreign-national designation. The overseas-care/public-multiomic exceptions and written case-specific essential-national-interest/no-alternative/risk waiver in6703 remain.\n\nSection6712 replaces the specified old subsection in the diplomatic-reciprocity provision and requires consultation/reporting concerning harmful intelligence activities AND excess reciprocal numbers, status, immunities, travel or facilities; the entire prior subsection has not been certified from its heading. Section6715 concerns declassification about foreign officials helping their citizens/nationals leave the US while subject to investigation, trial or sentencing after the specified date; it is not a new removal authority. Section7201(j) transfers specified existing Coast Guard duties;7202 transfers the drug/person-interdiction public-information provision, including unaccompanied minors and geography, while expressly declining to require collection or release of confidential, classified or law-enforcement-sensitive information. Section7207 reorganizes the forfeiture-fund statute and authorizes specified uses; the dated statute already includes Coast Guard funding and law-enforcement uses, so this is not creation of all forfeiture power. Section7218's maritime surveillance, border/data-integration and DoD-property studies retain needs/appropriation and adverse-national-security-impact qualifications. Section7228's time-limited critical-shortage direct hiring and Unalaska command sponsorship do not create general immigrant visa sponsorship.\n\nSection7301(b) adds noncitizen nationals under8US1408 to the specified merchant-mariner credential, crew and vessel-documentation provisions. Noncitizen nationals are not all noncitizens or all foreign nationals. The8103(k)(2)(B) change permits the specified large passenger vessels' defined alien crew category to reach50 percent of unlicensed seamen through December2065 instead of the dated25-percent condition; it does not change every vessel or the separate fishing-vessel rule. The existing relevant lawful-status, prior same-employer service, disciplinary/security/background/country, steward-department, no-watch/navigation and credential conditions remain.7102/7304/12131/12135 changes concern their particular branches, not unrestricted naturalization or employment. Section7315's employment-harassment requirements include national origin and the printed severe/pervasive standards; they are not admission rules.\n\nSection7321 adds specified waterfront cyber/transnational-crime/foreign-state protection powers; bars visits by a REPRESENTATIVE OF A GOVERNMENT designated under22US2371 at a facility subject to a70103(c) security plan; changes Seaway delegation exceptions; and adds the printed trigger to70051's vessel-control provision. The government-representative/facility bar is not an entry ban for every national of that country. Dated2371 requires the Secretary's terrorism-support determination and publication, not an inferred designation of every named country. Dated70051 already contains national-emergency and mass-migration vessel powers. Section7324 removes70503's opening onboard phrase while adding particular paragraph predicates; its covered-vessel, US-citizen/resident-alien other-vessel branch, nonapplication and jurisdiction conditions are not replaced with unlimited offboard or extraterritorial enforcement. Section7606's named border-station infrastructure GAO study creates no new general arrest power.\n\nDivisionH's real-estate/issuer-disclosure provisions in8102–8103 concern review or disclosure by defined parties, not immigration eligibility. The TOC/operative8001/8101 numbering difference remains printed. Section8304 concerns US positions on Taiwan's IMF admission and nationals' employment, with its time-limited waiver and admission-or-ten-year endpoint, not a US visa category. Sections8314–8316 amend the Fentanyl Sanctions Act: the discretionary PRC-entity branch requires the President's production/activity AND pattern-of-failing-credible-steps predicates; the senior-official branch requires regulatory/law-enforcement responsibilities AND aiding/abetting; shipment-identification priority reaches the defined PRC citizens/nationals/entities involved in the stated shipments until certification; new sanction predicates require the specified knowing pattern/material contribution/support, ownership/control/direction or agency relationship. Dated2312's entity/individual numbers of selected sanctions,2313's discretionary officer visa/exclusion determination and applicable exceptions, and2314's conditional waivers remain. These are not sanctions on every PRC national.8317 separately permits sanctions against a determined foreign-government subdivision/agency/instrumentality for the specified knowing conduct and property sanctions for specified senior officials, with its five-year sunset. Printed8314's double “means,”8315's committee wording and8316's BUST-enactment reference are retained legal questions.\n\nWhole8319 requires Haiti-related reporting and targeted sanctions for the specified gang and political/economic-link conduct and findings. Its foreign-person definition excludes US citizens, LPRs and US-organized entities; financial sanctions differ for the specified economic categories, while the printed alien visa/admission/parole/INA-benefit bars and immediate revocation remain. Humanitarian, international-obligation, licensing,15-day vital-interest waiver, no-import and five-year sunset limits remain. Whole8335 concerns presidential determinations of specified Western Balkans conduct, not nationality alone, with its visa/parole/benefit consequences, two-part termination,180-day renewable national-security waiver/notice, humanitarian/UN/Vienna/other-agreement, law-enforcement/intelligence/import exceptions, preservation of other sanctions and eight-year sunset.8337–8338's exchanges and defined18–35 fellowship applicants are not unconditional visas.8320 expressly declines authorization of military force.\n\nSections8352–8354 permit country designation under the specified wrongful-detention alternatives, require consultation/reports and a REVIEW OF EXISTING sanction authorities, and permit termination on the printed alternative conditions. The list of countries discussed is not proof of an actual designation or automatic countrywide visa ban; US citizens' travel construction remains.8361's Korean-American reunion registry keeps personal-data consent AND confidentiality conditions and does not grant admission.8363's child-recovery assistance,8365's Mexico/TCO strategy and8366's civil-nuclear cooperation restrictions do not create a general new US immigration or arrest power; the Mexico clause expressly disclaims military-force authorization, and8366 retains its country/associated-individual definitions, exclusions, Atomic Energy Act/NRC savings and sunset.\n\nSection8369 REPEALS the named Caesar Syria Civilian Protection Act title, whose dated text includes targeted alien visa, admission, parole and INA-benefit sanctions as well as financial sanctions, exceptions, suspensions and waivers. Retained2024 section5123 confirms its2029 sunset amendment. Repealing that named title is not repeal of every Syria sanction or every generally applicable inadmissibility rule. The new reporting criteria and two consecutive failed-report periods permit CONSIDERATION of targeted sanctions under EXISTING authorities, not automatic restoration of the repealed Act. The import-of-goods exception remains. This repeal and the separate Haiti/Balkans/fentanyl mechanisms must not be collapsed into a single directional “more restrictive” immigration description.\n\nSections8511–8531 use distinct PRC/six-country/leadership and ownership definitions for specified investment, DPA and reporting restrictions; US persons may include LPRs, US entities or persons in the US as expressly defined. Discretionary prohibitions differ from mandatory notification regulations and transaction deadlines; knowledge, technology thresholds, exclusions, national-interest/intelligence exceptions and seven-year sunset remain. They are not blanket entry or employment bans for all foreign nationals. Whole8602–8606 expands6US124n's counter-UAS framework. The federal purposes are necessary law enforcement OR public protection OR credible-threat mitigation; SLTT authority instead requires its credible-threat/training/certification/authorized-technology conditions. Oversight,48-hour mitigation notification, privacy, necessary retention/disclosure rules, defined criminal correctional facilities, separate2031 sunsets and the specified Coast Guard outside-US criminal-law exceptions remain. RetainedNovember2025 law145/106(3) qualifies the dated termination baseline, not all current-law application. The aircraft actions, grants and penalty provisions are not general immigration-arrest authority.\n\nSection8732's DFC internship requires all three conditions: US citizenship; at-least-half-time enrollment at EITHER a higher-education institution as defined by20US1002(a) OR an institution based outside the US as determined by the Secretary of State; AND the other qualifications established by the Chief Executive Officer. housing assistance for the qualifying distant permanent address is discretionary, while the printed travel provision differs. This is not a citizenship bar on all DFC employment.8758's project/state-enterprise restrictions and project-specific national-interest waiver concern their defined country/control predicates.8803's recognition of enrolled Lumbee membership, roll verification, needs and service/funding qualifications is not US naturalization.8805's FAS-veteran care implementation briefings do not independently create entry or care entitlement. The complete public funding tables were read as text, with their printed thousands/request/authorization labels; geographic border or surveillance labels alone do not establish a personal-status restriction. No classified annex, all-table visual/arithmetic or actual appropriation/expenditure certificate is claimed.\n\nTaken together, these source-mapped mechanisms support a candidate Immigration & Border interpretation of this one whole final-passage action. Yea supports passage of the whole exact December package; Nay opposes that passage. Neither selects an independent view on any component, statutory interpretation, alternative package, immigration population, motive, ideology, future conduct or implementation outcome. Present/Not Voting remain resolved non-directional statuses. Historical withdrawals, earlier holds and independent-review limits remain historical evidence. This candidate is routed for external semantic/domain review; editorial acceptance, publication, registries, deployment and production persistence remain reserved.",
       "source": {
         "source_id": "clerk:119:1:320",
         "url": "https://clerk.house.gov/evs/2025/roll320.xml",
@@ -24397,7 +24404,7 @@
         "governed_bytes_sha256": "24631bd2f22181024a3922a389acd74f2349a6b2689d7f2e7e5d2e452206e12c",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:s1071:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_s_1071",
       "member_action": "nay",
@@ -24406,25 +24413,421 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "The VA vehicle title does not describe the adopted choice. The floor adopts Rules Print 119-16 as FY 2026 NDAA. Complete captured EAH has 3,491,744 characters/eight divisions; only introductory scope and own passage sequence are reviewed here. Existing Health core covers limited named care provisions and cannot establish Immigration meaning or full package coverage. Held: pending_whole_package_and_exact_material_chains. Candidate only, no domain clearance or counting.",
-      "unresolved_reason": "pending_whole_package_and_exact_material_chains",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Roll320 is the December10,2025 final-passage choice on S.1071 as replaced by the FY2026 NDAA substitute. The House passed it312-112, with nine NotVoting. H.Res.936section6 deems RCP119-16adopted before passage, and its closed consideration permits debate and one motion to commit, not a separate recorded vote on every component. The Clerk's original VA-disinterment vehicle title does not describe the operative package. The December7primary print and December10EAHcare provisions agree on the reviewed701/702/712mechanisms. This is distinct from SeptemberH.R.3838 and FY2027H.R.8800; prior bill benefits, prohibitions, pilot durations and amendment outcomes cannot be imported wholesale.\n\nSection701 changes1074i's specialty-referral travel threshold for active-duty members and their dependents from more than100miles to more than75miles, not an at-least75mile rule for every retiree or civilian. The existing primary-care-physician referral and distance from the primary-care provider's location remain. Travel/transportation allowances follow the incorporated regulations; necessary adult accompaniment remains limited to a parent/guardian or qualifying family member at least21. Exceptional-circumstance authority remains distinct. Dental specialists are included in the statutory specialty-provider definition. The bill requires an implementation briefing; it does not prove that reimbursements were paid or specify an invented allowance amount.\n\nSection702 requires the Secretary to authorize DoD medical personnel to provide nonreimbursable sexual-assault medical forensic examinations in military treatment facilities for otherwise ineligible individuals who report an offense for which a DefenseCriminalInvestigativeOrganization may initiate an investigation and who meet the prescribed examination regulations. Those conditions do not establish universal civilian military health coverage or prove an investigation, examination or criminal charge occurred. Regulations may address kit handling, storage and transfer to law enforcement.\n\nSection712 adds a military-civilian medical-surge program under1096, in collaboration withHHS, to support military medical facilities and NDMSresponse capacity. Partnerships use operationally relevant transport/logistics locations, at least eight with discretionary additional sites, and qualified public/private/nonprofit medical organisations. Mobilization is tied to the listed national/public-health emergencies, war, contingency, WarPowersaction or President-declared emergency/major disaster; it is not an unconditional everyday-care promise. Staffing, specialized training, patient movement/care and interagency coordination are required. The express construction clause does not give DoD control overHHSleadership/administration, staffing or resource allocation. These direct care-access and delivery mechanisms support bounded membership in the whole substituted defense/State/intelligence/CoastGuard/other-matters package.\n\nOnly these reviewed mechanisms establish this candidate. No exhaustive3086page/package or incorporated-authority review is claimed, and the broader320completeness follow-up remains explicit. House passage is not enactment, implementation, a prediction of patient outcomes or a separate member position on each component. Yea supports the exact whole proposition; Nay opposes it without identifying a preferred alternative. This candidate remains subject to external semantic review before acceptance or publication.\n\nProspective Immigration qualification of the whole December House choice follows. The preceding 3,498 characters and four bindings are the unchanged, historically bounded Health candidate; its earlier completeness disclaimer is not erased or retroactively revalidated. New primary reading covers all 3,491,744 characters of this exact S.1071 EAH, including all eight public divisions. The separately qualified sources below extend the candidate meaning prospectively. They do not establish enactment, every incorporated authority's current application, classified schedules, every table's visual or arithmetic accuracy, or a preference on individual components. H.Res.936 section6 and the December10 own-floor sequence bind the adopted RCP119-16 substitute to roll320, distinct from the rejected motion319, the VA vehicle, September H.R.3838 and July2026 H.R.8800. The official result is312 Yea,112 Nay,9 Not Voting; Recorded votes remain controlling over later explanations of intended votes. Section3(1) states that IN divisions A–D, the term “this Act” refers to divisions A–D; that rule is not silently applied to references in divisions E–H.\n\nSection372 would add10US2653 permitting agreements for evacuation of family pets of United States citizens already evacuated by DoD, and contract working dogs, from the foreign country. It does not authorize agreements for new human evacuation. Animal evacuation cannot reduce the number of individuals otherwise evacuated; veterinary nonresponsibility by reason of evacuation is not a blanket prohibition on care under other authority. The vehicle operator may refuse animal evacuation if it would create a safety risk to other passengers or personnel. Section377's limited Fly America exception addresses transportation of specified military/DoD civilian pets on foreign routes when no covered carrier is willing and able, with its animal-number and cost conditions. Neither provision independently changes human admission, animal import or quarantine law. Border counter-contraband waste-disposal support in380 is distinct from an authority directed at immigrants or every border resident.\n\nSection504's citizenship condition concerns applicants in the specified funded/unfunded chaplain education program, with the funded cap, detail limits, commissioning qualifications, service agreements and failure provisions. Section710 changes the Secretary's inactivation timing authority and specified service obligations; the printed failure cross-reference remains unresolved. Section532 concerns recruiter information to denied applicants, not a general waiver of10US504's nationality/enlistment rules. Section823's DCTC provisions concern eligible program participants, qualifying appointments, capped graduate numbers, pay/service obligations and termination; they do not waive citizenship rules for all federal jobs. Section716 distinguishes a license issued by an agency of a named foreign country or another Secretary-designated country from the separate non-US-national overseas-care branch of1094; a licensing jurisdiction is not the practitioner's nationality.\n\nSection535 replaces the entire50US3802, including its former(a)/(b), with automatic registration of male United States citizens and other male residents aged18–25, retaining the printed lawful-nonimmigrant/title exception and other conditions. The regulations MAY require listed personal data, necessary disclosure, and notice with a correction opportunity; no new mandatory Director rulemaking duty is invented. The printed effective date is one year after enactment of “this Act”; section3's explicit A–D definition is retained. Dated3809(b)(1) authorizes the President. Actual delegation, regulations, the printed “this section(a)” reference, surviving references elsewhere in the Act and constitutional or individual applications remain open. Registration is distinct from induction, immigration status, work permission and benefit eligibility. Section573 amends existing570F information sharing for individuals retiring or separating from the Armed Forces: transmittal through a State veterans agency defaults to sharing unless the individual opts out, agreements must comply with privacy/personally identifiable information and cybersecurity requirements, and State use is limited to connecting veterans to the benefits/services described in subsection(a). This is not creation of all570Fauthority, the September567 voluntary scheme, or entitlement to benefits.\n\nSections1010,1043 and1044 respectively address a284 notice provision, visible military service/name identification while supporting civilian law enforcement, and specified contract categories supporting assistance under the referenced border provision. These amendments do not supply unrestricted military arrest or civilian immigration authority. Sections1031–1035 print replacements extending specified Guantanamo detention, transfer or facility restrictions, including1031's2027→2032 operand and annual2025→2026 replacements. Those are exact printed target provisions, not a certification that every target/reference or intervening amendment has been legally reconciled. Section1053 requires reports on military-aircraft removal operations and detention-facility use, with timing, costs, destinations, non-DoD persons and Guantanamo information; the referenced request-for-assistance reporting amendment does not itself confer new removal or detention authority. “Alien” is the statutory term, not a claim that every covered person has the same status or conduct.\n\nSection1064 changes the retained2022 southwest-border briefing provision as amended in2024 to December2026. Section1070 requires briefings on the specified southwest-border operations, readiness, expenditures, force-use policies and operational challenges until the printed proclamation/executive-order termination conditions. The printed “100886” and title variation are retained rather than repaired. Those reports are not proof that a particular deployment, removal, detention or use of force occurred. Section1229A's Syria-detention report includes security, nationalities, repatriation to home/third countries and non-refoulement concerns; it creates no admission entitlement. Section1274's Mexico training report likewise does not establish a new general enforcement power.\n\nSection1085's AUKUS export-control changes retain the material22CFR120.64/126.18 regular-employee and dual/third-country-national conditions. They do not create blanket visa or export permission. Sections841 and867 concern specified retail/industrial-base procurement and reliability requirements, with country, entity, operating, activity, waiver, funding and sunset predicates. The841 exception combines United States organization AND citizen operation AND products outside the covered-country condition;867's reliable-source categories distinguish citizens from qualifying organized entities and the named country frameworks. None is an across-the-board exclusion of immigrants from employment. Section1692, unlike September1616, uses physical location in a covered nation for its access restriction, including separately defined direct/indirect, cloud/logical, workload and nonpublic-technology access, with its accredited-cloud, software/open-source and public-company administration qualifications. Country location, citizenship, nationality, incorporation, ownership and government control are not interchangeable predicates.\n\nSection1703 permits an otherwise qualified alien to SEEK H-2B admission for up to three years for the specified Wake Island military construction, repairs or renovations, notwithstanding the temporariness requirement, without counting against1184(g)'s numerical limits. It provides cancellation if the person enters a US area outside Wake, Guam, CNMI or a Pacific US Minor Outlying Island; permits the specified Guam/CNMI1806(b)(1) workers to perform that Wake work notwithstanding other law; and permits seeking admission from enactment through December31,2030. Dated1806(b)'s cap exemption, distinct location restriction and otherwise-qualified conditions, and1184(g)'s H-2B cap, are material baselines. This is not unconditional admission, automatic issuance, every category of CNMI worker, or a waiver of all labor/admissibility rules. Section1707 changes130i's counter-UAS program, including trained contractors, particular criminal-law exceptions, privacy/retention/disclosure conditions, claims and sunset provisions; its specified actions are not general immigration-arrest powers.\n\nDivisionC section3111 prints a large codification and related transfers, repeals, coordination and savings provisions. New6222 includes background review before nonpublic NNSA-mission-facility access for a citizen OR agent of a covered nation OR a country on the sensitive list, and a separate covered-nation nonpublic-access prohibition. Its waiver requires certification30 days before access of all four printed conditions: national-security interest, no classified/restricted data revealed, consultation to mitigate risks, and no previously unreported covered-nation military/intelligence affiliation uncovered in background review. The15-day language is a sense of Congress, not an unconditional statutory review deadline. The citizen/LPR, IAEA inspection, legally grounded exchange and non-mission-area construction provisions remain. The printed April15,2025 date is retained. Already retained2024 law3112 enacted most of these features. It does not reproduce all old2652(b), so the complete historical section and legal novelty are not certified; the closed OLRC routes are not retried.\n\nPrinted new6224(b)(4) permits regulations in a counterintelligence investigation to include an employee or contractor requiring classified access who is a dual United States AND foreign NATIONAL. It is not a mandatory polygraph rule for every foreign citizen, every dual citizen or every laboratory visitor. Printed6253's fellowship concerns United States citizens doing specified graduate/postdoctoral science or engineering work related to the nuclear-security enterprise, educational/research assistance at the named facilities and a written service agreement of at least one year IF employment is offered. That condition does not spread to all6252 student employment. The full predecessor polygraph/fellowship and codification chains remain legal-novelty questions; these descriptions report the whole printed provisions and do not label them wholly new admission or nationality policy. Savings provisions do not establish a blanket certificate that every codification is nonsubstantive.\n\nSections5118–5119 address the Assistant Secretary for Consular Affairs' immigration, passport, visa, citizenship/nationality responsibilities and the Bureau's functions under the Under Secretary for Management. Dated2651a already establishes the Bureau and Assistant Secretary; sequential reorganization is not creation of a previously nonexistent Bureau or a new entitlement to visas. The Secretary's dated exception for expressly assigned consular-officer authority is not silently erased. Section5157's Haitian Affairs office and5605's Mongolia locally employed staff/diaspora reports concern consular/diplomatic operations, not new immigration categories. Sections5161–5162 concern advocacy for US-citizen employment at international organizations, with support for a non-US leadership candidate only absent a US nominee AND a national-interest determination. Section5502 adds Management consultation to the regulation clause for2709's existing special-agent authorities; it does not newly grant all passport, visa, trafficking or arrest powers.\n\nSections6522–6523 require watchlisting-policy notification and reporting on known/presumed US persons. The imported50US1801(i) definition includes the specified LPR, association and corporation categories, not citizens alone; the no-fly/selectee and reasonable-suspicion exceptions remain. Section6718 instead uses3039's US-person definition for the duty-to-warn provision, with its distinct known-permanent-resident and entity wording and construction preserving existing duties. These reports do not establish a new substantive watchlisting or surveillance rule. Sections6614–6615 and6703 address biological data, synthetic DNA/RNA procurement and intelligence-community biotechnology contracting with specifically defined foreign entities, jurisdictions, control, relationship or country-of-production predicates and their waivers/exceptions.19221(a)(2)'s five alternative foreign-entity-of-concern predicates are not a universal foreign-national designation. The overseas-care/public-multiomic exceptions and written case-specific essential-national-interest/no-alternative/risk waiver in6703 remain.\n\nSection6712 replaces the specified old subsection in the diplomatic-reciprocity provision and requires consultation/reporting concerning harmful intelligence activities AND excess reciprocal numbers, status, immunities, travel or facilities; the entire prior subsection has not been certified from its heading. Section6715 concerns declassification about foreign officials helping their citizens/nationals leave the US while subject to investigation, trial or sentencing after the specified date; it is not a new removal authority. Section7201(j) transfers specified existing Coast Guard duties;7202 transfers the drug/person-interdiction public-information provision, including unaccompanied minors and geography, while expressly declining to require collection or release of confidential, classified or law-enforcement-sensitive information. Section7207 reorganizes the forfeiture-fund statute and authorizes specified uses; the dated statute already includes Coast Guard funding and law-enforcement uses, so this is not creation of all forfeiture power. Section7218's maritime surveillance, border/data-integration and DoD-property studies retain needs/appropriation and adverse-national-security-impact qualifications. Section7228's time-limited critical-shortage direct hiring and Unalaska command sponsorship do not create general immigrant visa sponsorship.\n\nSection7301(b) adds noncitizen nationals under8US1408 to the specified merchant-mariner credential, crew and vessel-documentation provisions. Noncitizen nationals are not all noncitizens or all foreign nationals. The8103(k)(2)(B) change permits the specified large passenger vessels' defined alien crew category to reach50 percent of unlicensed seamen through December2065 instead of the dated25-percent condition; it does not change every vessel or the separate fishing-vessel rule. The existing relevant lawful-status, prior same-employer service, disciplinary/security/background/country, steward-department, no-watch/navigation and credential conditions remain.7102/7304/12131/12135 changes concern their particular branches, not unrestricted naturalization or employment. Section7315's employment-harassment requirements include national origin and the printed severe/pervasive standards; they are not admission rules.\n\nSection7321 adds specified waterfront cyber/transnational-crime/foreign-state protection powers; bars visits by a REPRESENTATIVE OF A GOVERNMENT designated under22US2371 at a facility subject to a70103(c) security plan; changes Seaway delegation exceptions; and adds the printed trigger to70051's vessel-control provision. The government-representative/facility bar is not an entry ban for every national of that country. Dated2371 requires the Secretary's terrorism-support determination and publication, not an inferred designation of every named country. Dated70051 already contains national-emergency and mass-migration vessel powers. Section7324 removes70503's opening onboard phrase while adding particular paragraph predicates; its covered-vessel, US-citizen/resident-alien other-vessel branch, nonapplication and jurisdiction conditions are not replaced with unlimited offboard or extraterritorial enforcement. Section7606's named border-station infrastructure GAO study creates no new general arrest power.\n\nDivisionH's real-estate/issuer-disclosure provisions in8102–8103 concern review or disclosure by defined parties, not immigration eligibility. The TOC/operative8001/8101 numbering difference remains printed. Section8304 concerns US positions on Taiwan's IMF admission and nationals' employment, with its time-limited waiver and admission-or-ten-year endpoint, not a US visa category. Sections8314–8316 amend the Fentanyl Sanctions Act: the discretionary PRC-entity branch requires the President's production/activity AND pattern-of-failing-credible-steps predicates; the senior-official branch requires regulatory/law-enforcement responsibilities AND aiding/abetting; shipment-identification priority reaches the defined PRC citizens/nationals/entities involved in the stated shipments until certification; new sanction predicates require the specified knowing pattern/material contribution/support, ownership/control/direction or agency relationship. Dated2312's entity/individual numbers of selected sanctions,2313's discretionary officer visa/exclusion determination and applicable exceptions, and2314's conditional waivers remain. These are not sanctions on every PRC national.8317 separately permits sanctions against a determined foreign-government subdivision/agency/instrumentality for the specified knowing conduct and property sanctions for specified senior officials, with its five-year sunset. Printed8314's double “means,”8315's committee wording and8316's BUST-enactment reference are retained legal questions.\n\nWhole8319 requires Haiti-related reporting and targeted sanctions for the specified gang and political/economic-link conduct and findings. Its foreign-person definition excludes US citizens, LPRs and US-organized entities; financial sanctions differ for the specified economic categories, while the printed alien visa/admission/parole/INA-benefit bars and immediate revocation remain. Humanitarian, international-obligation, licensing,15-day vital-interest waiver, no-import and five-year sunset limits remain. Whole8335 concerns presidential determinations of specified Western Balkans conduct, not nationality alone, with its visa/parole/benefit consequences, two-part termination,180-day renewable national-security waiver/notice, humanitarian/UN/Vienna/other-agreement, law-enforcement/intelligence/import exceptions, preservation of other sanctions and eight-year sunset.8337–8338's exchanges and defined18–35 fellowship applicants are not unconditional visas.8320 expressly declines authorization of military force.\n\nSections8352–8354 permit country designation under the specified wrongful-detention alternatives, require consultation/reports and a REVIEW OF EXISTING sanction authorities, and permit termination on the printed alternative conditions. The list of countries discussed is not proof of an actual designation or automatic countrywide visa ban; US citizens' travel construction remains.8361's Korean-American reunion registry keeps personal-data consent AND confidentiality conditions and does not grant admission.8363's child-recovery assistance,8365's Mexico/TCO strategy and8366's civil-nuclear cooperation restrictions do not create a general new US immigration or arrest power; the Mexico clause expressly disclaims military-force authorization, and8366 retains its country/associated-individual definitions, exclusions, Atomic Energy Act/NRC savings and sunset.\n\nSection8369 REPEALS the named Caesar Syria Civilian Protection Act title, whose dated text includes targeted alien visa, admission, parole and INA-benefit sanctions as well as financial sanctions, exceptions, suspensions and waivers. Retained2024 section5123 confirms its2029 sunset amendment. Repealing that named title is not repeal of every Syria sanction or every generally applicable inadmissibility rule. The new reporting criteria and two consecutive failed-report periods permit CONSIDERATION of targeted sanctions under EXISTING authorities, not automatic restoration of the repealed Act. The import-of-goods exception remains. This repeal and the separate Haiti/Balkans/fentanyl mechanisms must not be collapsed into a single directional “more restrictive” immigration description.\n\nSections8511–8531 use distinct PRC/six-country/leadership and ownership definitions for specified investment, DPA and reporting restrictions; US persons may include LPRs, US entities or persons in the US as expressly defined. Discretionary prohibitions differ from mandatory notification regulations and transaction deadlines; knowledge, technology thresholds, exclusions, national-interest/intelligence exceptions and seven-year sunset remain. They are not blanket entry or employment bans for all foreign nationals. Whole8602–8606 expands6US124n's counter-UAS framework. The federal purposes are necessary law enforcement OR public protection OR credible-threat mitigation; SLTT authority instead requires its credible-threat/training/certification/authorized-technology conditions. Oversight,48-hour mitigation notification, privacy, necessary retention/disclosure rules, defined criminal correctional facilities, separate2031 sunsets and the specified Coast Guard outside-US criminal-law exceptions remain. RetainedNovember2025 law145/106(3) qualifies the dated termination baseline, not all current-law application. The aircraft actions, grants and penalty provisions are not general immigration-arrest authority.\n\nSection8732's DFC internship requires all three conditions: US citizenship; at-least-half-time enrollment at EITHER a higher-education institution as defined by20US1002(a) OR an institution based outside the US as determined by the Secretary of State; AND the other qualifications established by the Chief Executive Officer. housing assistance for the qualifying distant permanent address is discretionary, while the printed travel provision differs. This is not a citizenship bar on all DFC employment.8758's project/state-enterprise restrictions and project-specific national-interest waiver concern their defined country/control predicates.8803's recognition of enrolled Lumbee membership, roll verification, needs and service/funding qualifications is not US naturalization.8805's FAS-veteran care implementation briefings do not independently create entry or care entitlement. The complete public funding tables were read as text, with their printed thousands/request/authorization labels; geographic border or surveillance labels alone do not establish a personal-status restriction. No classified annex, all-table visual/arithmetic or actual appropriation/expenditure certificate is claimed.\n\nTaken together, these source-mapped mechanisms support a candidate Immigration & Border interpretation of this one whole final-passage action. Yea supports passage of the whole exact December package; Nay opposes that passage. Neither selects an independent view on any component, statutory interpretation, alternative package, immigration population, motive, ideology, future conduct or implementation outcome. Present/Not Voting remain resolved non-directional statuses. Historical withdrawals, earlier holds and independent-review limits remain historical evidence. This candidate is routed for external semantic/domain review; editorial acceptance, publication, registries, deployment and production persistence remain reserved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:320",
           "url": "https://clerk.house.gov/evs/2025/roll320.xml",
           "raw_sha256": "899d6da1204573bd6c924a898841ec0baa316642f6e459013a3543ddba501d08",
-          "governed_bytes_sha256": "24631bd2f22181024a3922a389acd74f2349a6b2689d7f2e7e5d2e452206e12c",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "24631bd2f22181024a3922a389acd74f2349a6b2689d7f2e7e5d2e452206e12c"
+        },
+        {
+          "source_id": "govinfo:s1071eah-reviewed-care",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1071eah/html/BILLS-119s1071eah.htm",
+          "raw_sha256": "2d75c9445d4bae496abe7ffb9fb3bcafaed034008f9f7e8f4f7d2801029e9898",
+          "governed_bytes_sha256": "a95b8df300e2862ed13dc2276d02b7b39d7f3816bb8861495ae4cf04ec1cf3b2"
+        },
+        {
+          "source_id": "govinfo:hres936eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+          "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+          "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
+        },
+        {
+          "source_id": "rules:rcp119-16-reviewed-care",
+          "url": "https://docs.house.gov/billsthisweek/20251208/RCP_xml%5B2%5D.pdf",
+          "raw_sha256": "757c1e7307b49effa3d0f71697427558637a966df24d7adfb5ecc3d60c354785",
+          "governed_bytes_sha256": "7d4d3b435216a5515377e91a8ce217e7ce70607f4a6fa3c081c899bfe60529ba"
+        },
+        {
+          "source_id": "govinfo:10usc1074i-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1074i.htm",
+          "raw_sha256": "4bcef6a72370dc63f4de90d935403a97687db25bdd935bf4562eb808de4a8288",
+          "governed_bytes_sha256": "b536e3d2956e7e33e7e085181dd758c078e2d3e766af5a367304f82d8ad0b614"
+        },
+        {
+          "source_id": "govinfo:s1071eah-immigration-complete",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1071eah/html/BILLS-119s1071eah.htm",
+          "raw_sha256": "2d75c9445d4bae496abe7ffb9fb3bcafaed034008f9f7e8f4f7d2801029e9898",
+          "governed_bytes_sha256": "098381eb495526b276796c88fb64a96282a480e0229d76320e8f138a479e9607"
+        },
+        {
+          "source_id": "govinfo:10usc4872-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm",
+          "raw_sha256": "2765677d90e12aa1d50f3f6375c80f8b55f3c9d46fe31983ed58625874707104",
+          "governed_bytes_sha256": "1b378e7e8f8e8fc85bfd3299e97742f2d054761362b9010961b0ae13197356d9"
+        },
+        {
+          "source_id": "govinfo:8usc1101a15a20a22-2024-snap-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "01d20ec31fc5f254245d87fe764c8ab81fdf71b6db68ebccc4a3e517dff94375"
+        },
+        {
+          "source_id": "govinfo:50usc1801-operative181",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap36-subchapI-sec1801.htm",
+          "raw_sha256": "6a05ebea3e8e1df21d76aece1f47dacd1e445791874ac17d843adb0a7c7dd96c",
+          "governed_bytes_sha256": "78d8d1566fc6eb2eb529e128eac3f7e310af27e2daeb1a2a404307587dd80830"
+        },
+        {
+          "source_id": "govinfo:southwest-briefing-1070-2022-241",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "b4601bb42e3e27f92553dbc8c10a7422d559bf5445aa28f2f3acf5e8a3ed20e4"
+        },
+        {
+          "source_id": "govinfo:southwest-briefing-1063-2024-241",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "8df538ccbf168707be31078c4eec8c72cfdc178ee135956368ae89a5ca4aa31d"
+        },
+        {
+          "source_id": "govinfo:10usc1094-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1094.htm",
+          "raw_sha256": "6353f536ed90f08c640b0d41bfa40c4abae1cb873cfa6f1c4987737f4e247243",
+          "governed_bytes_sha256": "cc3f0c60b7df90401e307ec4b90571f42f1b8e03f675fa9c08d8eae459d88456"
+        },
+        {
+          "source_id": "govinfo:10usc504-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap31-sec504.htm",
+          "raw_sha256": "b6900a863ddc0220b091d877dd023b95858f00f1a1d07de754bc405a2280c20d",
+          "governed_bytes_sha256": "8a96e67775475542df3287cdd548ae191ee5322b5c5a4fb11f90faf1d7ddbbbb"
+        },
+        {
+          "source_id": "govinfo:50usc3802-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap49-sec3802.htm",
+          "raw_sha256": "59ea4720f26e78e7e6b554e251678b20d199ad708f5a99206f8b63c3c9701ead",
+          "governed_bytes_sha256": "71d8a886a0208b39fefc011246f78cbefa1b1ebd742eddd94041f4607736df98"
+        },
+        {
+          "source_id": "govinfo:50usc3803-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap49-sec3803.htm",
+          "raw_sha256": "6e6b9793442d39cc9e61081bc4d49565175773dee2133d8b2f65f14b0776da0f",
+          "governed_bytes_sha256": "add9528e8f88ce0e161ee5ef99ed360d80cc87afcde7431d328c44988953c013"
+        },
+        {
+          "source_id": "govinfo:50usc3806-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap49-sec3806.htm",
+          "raw_sha256": "9b3923a459a07244c234ec4bbad3c03f8c6ed5eabf0ccd4324eb404962c63975",
+          "governed_bytes_sha256": "d982d00cfa2d25d74cb2f862e002daaf02645d2b2d32e7b890c694a58be1c3f7"
+        },
+        {
+          "source_id": "govinfo:50usc3809-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap49-sec3809.htm",
+          "raw_sha256": "215666edb3ff709a04a51af5e727a3e515d030092ba4b6dfcd1b17ae120580a4",
+          "governed_bytes_sha256": "bb60001931df8a38a42615474318537b2b55b6241705134180d84ae508c97722"
+        },
+        {
+          "source_id": "govinfo:50usc3811-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap49-sec3811.htm",
+          "raw_sha256": "5ee9a2f353203ba8de02629b131fd29d0e7edd87533fec9802bba9ad7b2dc7c4",
+          "governed_bytes_sha256": "d307da932e2f5a20746bdd822ec2faeedbf8c2eef37e050b59f7caf3e2b70020"
+        },
+        {
+          "source_id": "govinfo:50usc3813-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap49-sec3813.htm",
+          "raw_sha256": "8c085dfb6e43e48894e98584e2f5d950878eafe8683ed64f948863290bc95d08",
+          "governed_bytes_sha256": "f5b00e257f4e5469af5b5260efc656aee619f5db6930405893b5d977ec0ea229"
+        },
+        {
+          "source_id": "govinfo:18usc1382-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap67-sec1382.htm",
+          "raw_sha256": "3e08389c079ddf408637fa132878dccf36cd1b2072afcf199207b58e321e1de5",
+          "governed_bytes_sha256": "66e29efbbed0b734d622f28b88442f42f1c54c5fed1779d929017e31dd10be3b"
+        },
+        {
+          "source_id": "govinfo:50usc797-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap23-subchapI-sec797.htm",
+          "raw_sha256": "9aaf9b0989b88063798504996b1740ddd2ee0afec67828d27e543ca97adaf008",
+          "governed_bytes_sha256": "a65372888c345a9f86d9a096afbfc3ef9fc54331f74a79efa41b64c9eda2b927"
+        },
+        {
+          "source_id": "govinfo:10usc271-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap15-sec271.htm",
+          "raw_sha256": "1cac23340a003f37e21986321595b22c796402b7590e8ef833e966d8d3388348",
+          "governed_bytes_sha256": "92f3b491746f6cad1e183c46883760e395a5fc29c9529f3c6b58276e71ff5089"
+        },
+        {
+          "source_id": "govinfo:10usc284-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap15-sec284.htm",
+          "raw_sha256": "fd8e08e77f2b0a767bfcd2a3bdedb35c170a2409f595346d1dc97a5f3a4de4fb",
+          "governed_bytes_sha256": "c74a492d711be5ca90cb4e32328c509fcee0c7b4b34db9e6b91b9ae37130538f"
+        },
+        {
+          "source_id": "govinfo:10usc2200g-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIII-chap113-sec2200g.htm",
+          "raw_sha256": "303b6f75b750506eba6840888894b36de3a498cbe4efb165c105b899ac5e030e",
+          "governed_bytes_sha256": "10bfcd6bf95585b769a65e752435235a9221356c0ba27c8e2f0aeaee31574e99"
+        },
+        {
+          "source_id": "govinfo:10usc2200h-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIII-chap113-sec2200h.htm",
+          "raw_sha256": "dbc66ecdb1f02993f32a476187ed0ca7ea6d7ddd9dfdd3c1f7638a7b9fb40399",
+          "governed_bytes_sha256": "530abdf93738aa30728b6e6ce0f5f7d586482398867dd230d65cf1f35be4acbf"
+        },
+        {
+          "source_id": "govinfo:10usc2387-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap141-sec2387.htm",
+          "raw_sha256": "fecaff9af78402e301320b376a1c358f83d5e3a563020364080daea3045ecbff",
+          "governed_bytes_sha256": "cf708811e0b3b8c7485b084fe82ec19a87141b8ce3a46a68638af1c73111cb8d"
+        },
+        {
+          "source_id": "govinfo:10usc4801-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap381-sec4801.htm",
+          "raw_sha256": "6e3d9c1f56ce677ee95777303aefb9ab032f71d3477516f406b3906350bfbea2",
+          "governed_bytes_sha256": "1832fdf0d2649cd499a6c4ffba1134d89a0fafed4f0df84572499bcb0f2ec130"
+        },
+        {
+          "source_id": "govinfo:10usc4817-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap382-sec4817.htm",
+          "raw_sha256": "6128350deebc16b6f861ff102268d23475ff347e78bce592250f6a31476188af",
+          "governed_bytes_sha256": "b7711c25b6916317769a871c4351b2c03eb49166fc3374f8fea236e080682ddb"
+        },
+        {
+          "source_id": "govinfo:10usc710-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec710.htm",
+          "raw_sha256": "8b2fe56d71c1de5a2246bc84d0d73117c905624d9279683ffc2e49b62c2621a2",
+          "governed_bytes_sha256": "3e3dbc16d28f317b3a56fb4eb4716ce715e59e5b4b9c2ca6ed75c92389f5dd58"
+        },
+        {
+          "source_id": "govinfo:50usc3815-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap49-sec3815.htm",
+          "raw_sha256": "bd705d0618060fecb916f6b76a8e176f0b10e3430e2ddb0031c3fadf5484c7ba",
+          "governed_bytes_sha256": "25e8ea5e0be2605f4ba07958f57736acb424b04af40c24c220d208eb414bbe88"
+        },
+        {
+          "source_id": "govinfo:48cfr225.003-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol3/xml/CFR-2024-title48-vol3-sec225-003.xml",
+          "raw_sha256": "76366bd22480da066af5dd20cea88ed309028d1504940b7fc01f34688577a6cf",
+          "governed_bytes_sha256": "d212f927b25a51f5fe1dcdf5c1f1120e0d9f76b74b807dadbdbb261521465c78"
+        },
+        {
+          "source_id": "govinfo:48cfr239.7601-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol3/xml/CFR-2024-title48-vol3-sec239-7601.xml",
+          "raw_sha256": "f4b73a6d6ad85f1eb84c3fac7f90550d743439e1f862e665e39982a99350a033",
+          "governed_bytes_sha256": "bce082136d54dbf10f20b47f4188d5d08e392637ce463310490aca7b1a1e2c1f"
+        },
+        {
+          "source_id": "govinfo:48cfr252.225-7058-2024-material241",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title48-vol3/xml/CFR-2024-title48-vol3-sec252-225-7058.xml",
+          "raw_sha256": "1fd4994b67551851a792c918af5409f5b4889ccb263be2f9305b627c1023ebb2",
+          "governed_bytes_sha256": "8b8f2574183b16486ec68435e1b7140af04060fa59884a6075502b20c0e16273"
+        },
+        {
+          "source_id": "govinfo:46usc12131-operative2024-cg226",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partH-chap121-subchapIII-sec12131.htm",
+          "raw_sha256": "bd687270dfc5eaca7470246ee8706210bc6a621706103a9efbca01068e058175",
+          "governed_bytes_sha256": "b5e47b1f4e8d8dde02a10953ea503032cbde87cfc794a34f01f8aae08b8797d7"
+        },
+        {
+          "source_id": "govinfo:46usc12135-correct-operative2024-cg226",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partH-chap121-subchapIII-sec12135.htm",
+          "raw_sha256": "af21f12b7601e6346f9a3e2b1d2f6ff148c7fd080ffc33f8266f83e9ff3bf9c2",
+          "governed_bytes_sha256": "cc8d765bfc3487a6bc1515a31428d75222ca7d13b846ad7eb1e23c4b99deb5a8"
+        },
+        {
+          "source_id": "govinfo:46usc7102-operative2024-cg226",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partE-chap71-sec7102.htm",
+          "raw_sha256": "b7f498bc9906e18e2ba6468862a2e90a42726c0c2d816eadb18596cabeef3213",
+          "governed_bytes_sha256": "6fec6601a6b713881c3ecb7ec31ebb3acb5194ca36a92d2f7cc941debfa4d931"
+        },
+        {
+          "source_id": "govinfo:46usc7304-operative2024-cg226",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partE-chap73-sec7304.htm",
+          "raw_sha256": "e850273c0840eb9d63d13fce1761b956c4a017da85b4b50a0e9bd06e5b752e84",
+          "governed_bytes_sha256": "4a350094716440c936780734f32df3de04f118d7077ba269d05b31973f73c160"
+        },
+        {
+          "source_id": "govinfo:46usc8103-operative2024-cg226",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partF-chap81-sec8103.htm",
+          "raw_sha256": "7d1574f90c9e29c0674fec9246917436e11840a384d5c7fcbc609d16092ac958",
+          "governed_bytes_sha256": "901cdea0830a0e91d158d6cab98321e3d4ce316fa4d8eff45b6d3b6e0b063353"
+        },
+        {
+          "source_id": "govinfo:8usc1408-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partI-sec1408.htm",
+          "raw_sha256": "b27fca9d8aaa6056dc728960ac7dd98502f54739b546779bc066dbcd100e0c11",
+          "governed_bytes_sha256": "c15224822086e04dbe3b160653a9db6a08aaaef0b42d7588100bc4a9e1b7cc41"
+        },
+        {
+          "source_id": "official:21usc2302-2024-material243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28-sec2302.htm",
+          "raw_sha256": "804ecd0ec78de9e167524dec49f1361643715d8cf27b6f736c3bc099bf2001d0",
+          "governed_bytes_sha256": "934f1b6ec7bfff024082e8f8737dd98acc08d5e7e79506261719e2e1a276022f"
+        },
+        {
+          "source_id": "official:21usc2311-2024-material243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28-subchapI-sec2311.htm",
+          "raw_sha256": "651bcbca3ba56c2e5318ea904bbe1f99f0fff45f424dcbbb22c2c43c0db31dc7",
+          "governed_bytes_sha256": "99f5a1a2003c2c438ec596d09fcd9e96fb9f9c7e3a4d4d6d2d66ebf90d8df0c9"
+        },
+        {
+          "source_id": "official:21usc2312-2024-material243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28-subchapI-sec2312.htm",
+          "raw_sha256": "3b5fad692587b5c4cf7fb320a8458b461de27dfde576a1b293e2337130edef0d",
+          "governed_bytes_sha256": "860475a96dc86ceba58ab6e15157801050c2ac421e4339cb5e41707d00008cda"
+        },
+        {
+          "source_id": "official:21usc2313-2024-material243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28-subchapI-sec2313.htm",
+          "raw_sha256": "1d2bd9537e8ee66afdfed49782841b7f7569edbc14c24ed13bf22a58a9424e32",
+          "governed_bytes_sha256": "f769494289d5d00ccf839243313f4c8aa6504ec0db9def015e83161ac6df8b81"
+        },
+        {
+          "source_id": "official:6usc124n-2024-material243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapII-partA-sec124n.htm",
+          "raw_sha256": "99fa7853d5c1b6c3d7850d949f27c124e54e8d79e5923bc3edffb1f928445165",
+          "governed_bytes_sha256": "152d8505be0905e0cdb1464a6347ac761a3b28cd3ab74cc94ec69d8a8a8c1b86"
+        },
+        {
+          "source_id": "govinfo:22usc2709-2024-additional243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2709.htm",
+          "raw_sha256": "7a4cd0980d9e56fcff0bb8091eb5f1d042d5484d2cfac0a6636fb59a4fa1e538",
+          "governed_bytes_sha256": "f53c7c703d9b031c7fa788359c22179be270a064cea0c6da6eebf7e0bdc5cfe0"
+        },
+        {
+          "source_id": "govinfo:50usc3039-2024-additional243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap44-subchapI-sec3039.htm",
+          "raw_sha256": "373a855a91ea9889c5d1ff7aa328876214c700d0b846fadbd0b2f585038aae2f",
+          "governed_bytes_sha256": "e4dc16dcc150ff7a9ba943abc80bb9becbca7ddf27ddc04b12a599d6df72c100"
+        },
+        {
+          "source_id": "govinfo:42usc19221-2024-additional243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partB-sec19221.htm",
+          "raw_sha256": "9110c4c8cf8957124a98b621e563273ca97a824fe01b9dbd2f2c20ac70bbaa58",
+          "governed_bytes_sha256": "342265dd11b5a2c6c2e0097be2b39df950aafc95e037e6720246294fd3acd395"
+        },
+        {
+          "source_id": "govinfo:21usc2314-2024-additional243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28-subchapI-sec2314.htm",
+          "raw_sha256": "ffe3a136d3dc6c2cfd78ae4f5d227b5cee7e14ace73ee93a1fe21bbbff421ec6",
+          "governed_bytes_sha256": "edfbea04a321e7c74ed781f0726d17a3102510f48ded44010f781ee3a673e79e"
+        },
+        {
+          "source_id": "govinfo:21usc2315-2024-additional243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28-subchapI-sec2315.htm",
+          "raw_sha256": "965424cc843f1ca18967a1832f8db35985e57604f0d11018f70ca90cd786307e",
+          "governed_bytes_sha256": "6de014cf77589eeb7647698654aa270d07f9f70f8905134dea47567be333de67"
+        },
+        {
+          "source_id": "govinfo:21usc2316-2024-additional243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28-subchapI-sec2316.htm",
+          "raw_sha256": "fedb9e22d8251429eb337a374c2db54e25dc66807c1e2615e9d239eb1ddf4f35",
+          "governed_bytes_sha256": "e9d652269e85230f467638357ed5cab37d811bce6e30c0e28cf9b33bd1b463da"
+        },
+        {
+          "source_id": "govinfo:22usc8791-selected2024-243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap94-subchapVII-sec8791.htm",
+          "raw_sha256": "4356d5733a61cbf8c06a544cbb7c9064ec8b2a8b56224bd74a6c018e51cb995e",
+          "governed_bytes_sha256": "f8bc8533a6729613efb30cac3040b93ba1f945bd0da06c5f5b43cafe2de80559"
+        },
+        {
+          "source_id": "govinfo:31usc9705-selected2024-243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleVI-chap97-sec9705.htm",
+          "raw_sha256": "01fcace706de3aa97cb53fc43ed2676143e81358b40b4eedc705e0023d712613",
+          "governed_bytes_sha256": "fa2c28d81a7960a71d351a31b3c2347d115bc91447a409f7872ada2c16ff6449"
+        },
+        {
+          "source_id": "govinfo:22usc2371-2024-third243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapIII-partI-sec2371.htm",
+          "raw_sha256": "49638eeae99661618447bb1ddf888a67f947468fb82bbfea57b4757a14e409cb",
+          "governed_bytes_sha256": "bea12c74241fda1662feb185398f937acd62248170c47575cdf5e3b8820b703b"
+        },
+        {
+          "source_id": "govinfo:46usc70503-2024-third243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleVII-chap705-sec70503.htm",
+          "raw_sha256": "3afa0c4ed0bd53d88680f422ba30eed7003833a9abda3aedcce4747395dc2c64",
+          "governed_bytes_sha256": "95eae95612ee27e56d856d132570f2422af13830ef1a9247ade322fe3806a8ea"
+        },
+        {
+          "source_id": "govinfo:48usc1806-selected2024-243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title48/html/USCODE-2024-title48-chap17-subchapI-sec1806.htm",
+          "raw_sha256": "047cf6cd90cf54864889f858e9b58138001ef890c3117971cb610c955c624132",
+          "governed_bytes_sha256": "2411fd7a60dde80b07a3c1ba0b98bc24cc238b9b1e11dcc48cabc89daea1e5fb"
+        },
+        {
+          "source_id": "govinfo:46usc70011-2024-fourth243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleVII-chap700-subchapII-sec70011.htm",
+          "raw_sha256": "668d74e8aa175b50dfb202ff56de53e4a9cd3ef5d3265b5dd03c8f7fea249378",
+          "governed_bytes_sha256": "a4f7fd25986bdb3df44e71082638d0a61253fb05f635c3dbc128a6cf0dc2acbe"
+        },
+        {
+          "source_id": "govinfo:46usc70032-2024-fourth243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleVII-chap700-subchapIV-sec70032.htm",
+          "raw_sha256": "f76c9e4c3687a6928d193026f73f924fc8f447368babc1e50f04e1d4bcda9c83",
+          "governed_bytes_sha256": "7699c239946b459d178900c70323c00b79167c954eed69743b7f8658504842cc"
+        },
+        {
+          "source_id": "govinfo:46usc70051-selected2024-243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleVII-chap700-subchapVI-sec70051.htm",
+          "raw_sha256": "2baba913e5e49ca7f58fe225f1c27bcec312e3afa29a873bcbee754cc2885369",
+          "governed_bytes_sha256": "4cfc9b64f99ae522adfc981df435676b875d33aec87408c701b3fced35671953"
+        },
+        {
+          "source_id": "govinfo:8usc1184g-selected243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1184.htm",
+          "raw_sha256": "2193512ace1f5dc4451ef76f587eb798e4e5e1a96ed161f54c4f58950cd48520",
+          "governed_bytes_sha256": "de75fc2dd23f5cad8c60283c5137bb3715ee84ea6cc8f09057affea2d3df1a0e"
+        },
+        {
+          "source_id": "govinfo:pl118159_5123-selected243",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "6babafd91eb4443e38fb4d7a246632cc66720d9c351db2554348dd0732a2d2b8"
+        },
+        {
+          "source_id": "govinfo:pl11937_106-selected243",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "2d84165e45a7dd765a65fb1c1ddaaf81e3df5a1530e0ec723f7dfdf199a97f5c"
+        },
+        {
+          "source_id": "govinfo:pl11937_145-selected243",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "d616cab17043ae1740af89eb6c793f8a8ed4566b20b30f0ed22e89dc9ce6559c"
+        },
+        {
+          "source_id": "govinfo:pl118159-3112-selected243",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "5aa4d48a98888dd3c75355bb51456b1551840d761af4f1533dbc3206a1a0c246"
+        },
+        {
+          "source_id": "govinfo:22usc2651a-operative2024-243",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2651a.htm",
+          "raw_sha256": "51ba8573001a3c4d1f0db16828514d6bea88b0546946ac6e3507196177bb0a6d",
+          "governed_bytes_sha256": "9aa7ad1c1de418f8a35511fefa8d3770322e77faad5765554b24d1ec450ab95d"
+        },
+        {
+          "source_id": "congressional-record:s1071-passage320-native243",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-house.pdf",
+          "raw_sha256": "3c3387e5d97d8ffb1880958547f6d73279b5cec9e0d49f1ed1f60e3f1beb4a62",
+          "governed_bytes_sha256": "80012b600a8289f457f0925cd63242089234478924f0938618c6179a2056f96d"
+        },
+        {
+          "source_id": "immigration:roll320-recorded181",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-house.pdf",
+          "raw_sha256": "3c3387e5d97d8ffb1880958547f6d73279b5cec9e0d49f1ed1f60e3f1beb4a62",
+          "governed_bytes_sha256": "afc1a8cb118221a6a8cd231c26c06890f9e7c785742cae9782514eea898e197a"
+        },
+        {
+          "source_id": "immigration:roll320-adopted-package181",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-house.pdf",
+          "raw_sha256": "3c3387e5d97d8ffb1880958547f6d73279b5cec9e0d49f1ed1f60e3f1beb4a62",
+          "governed_bytes_sha256": "e211dfd57725c79c0f9fe320927dff0613de1e9fd5ae690ca3f92b02bcd0ff2a"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "4851a7b7e079cf42d3a5248b3fdba76310e6ec535fedde1d69e2a4243ff61639"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:1:320",
@@ -52858,12 +53261,12 @@
     "house:119:2:218",
     "house:119:2:283",
     "house:119:2:44",
-    "house:119:1:262"
+    "house:119:1:262",
+    "house:119:1:320"
   ],
   "unresolved_action_ids": [
     "house:119:1:210",
     "house:119:1:237",
-    "house:119:1:320",
     "house:119:2:157",
     "house:119:2:193",
     "house:119:2:196",
@@ -52890,6 +53293,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "ec9e71d99a0adfed6bee075eb49d1d33b4bec58cb9a4f6d80fe4bb063859502e",
-  "membership_review_sha256": "92e645bf2c731fa59744dce93c03be891b46d4472851746668793cb375eea74d"
+  "proposal_sha256": "70e201ace46f06f2df5e3026dad9957871bd04d0ef5e77270468b95a76fd4b8e",
+  "membership_review_sha256": "726b06550c4d3a17484a3a6e46ca49dc203a451dfb14244003cc9333ede2b232"
 }
