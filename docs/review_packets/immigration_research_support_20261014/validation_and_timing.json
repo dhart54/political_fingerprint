@@ -1,0 +1,87 @@
+{
+  "snapshot": "78b4728cc732488a2e1a0e1a0ef8132e36bcc537",
+  "packets": 3,
+  "exact_passages_verified": 53,
+  "source_identities_and_governed_seals_verified": 24,
+  "clerk_metadata_verified": 3,
+  "prior_packet_hashes_verified": 3,
+  "prior_timing_artifact_hashes_unchanged": 30,
+  "no_candidate_runtime_or_workflow_change": true,
+  "raw_remote_bytes_reacquired": false,
+  "timings": {
+    "272": {
+      "started_utc": "2026-10-15T02:58:54+00:00",
+      "packet_ready_utc": "2026-10-15T03:01:20.369512+00:00",
+      "elapsed_research_drafting_seconds": 146.369512,
+      "scope": "Focused research/drafting window; prior discovery/claim, shared preparation and final delivery overhead retained in total task timing. Not exclusive CPU/research time."
+    },
+    "286": {
+      "started_utc": "2026-10-15T03:01:20+00:00",
+      "packet_ready_utc": "2026-10-15T03:02:38.742589+00:00",
+      "elapsed_research_drafting_seconds": 78.742589,
+      "scope": "Focused research/drafting window; prior discovery/claim, shared preparation and final delivery overhead retained in total task timing. Not exclusive CPU/research time.",
+      "supplemental_baseline_verification_utc": "2026-10-15T03:05:16.683292+00:00",
+      "supplemental_timing_note": "Two surrounding passport notes inspected during shared final verification; included in gross task elapsed, not claimed within the initial focused interval."
+    },
+    "310": {
+      "started_utc": "2026-10-15T03:02:38+00:00",
+      "packet_ready_utc": "2026-10-15T03:04:19.870556+00:00",
+      "elapsed_research_drafting_seconds": 101.870556,
+      "scope": "Focused research/drafting window; prior discovery/claim, shared preparation and final delivery overhead retained in total task timing. Not exclusive CPU/research time."
+    }
+  },
+  "first_tool_utc": "2026-10-15T02:56:29+00:00",
+  "documentation_ready_utc": "2026-10-15T03:07:55.034293+00:00",
+  "total_elapsed_seconds_to_documentation_ready": 686.034293,
+  "base_main": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+  "claim_url": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6183369423",
+  "writer_task": "01a13d6d-e460-72e2-8c82-df56a2374cbf",
+  "excluded_writer_claims": [
+    "house:119:2:308",
+    "house:119:2:283",
+    "house:119:2:292"
+  ],
+  "writer_public_acknowledgement_observed": true,
+  "settings": {
+    "user_selected": "Sol High",
+    "observed_config_file_model": "gpt-6.1-sol",
+    "observed_config_file_effort": "high",
+    "observed_config_file_service_tier": "default",
+    "effective_request_overrides_independently_verified": false,
+    "changed": false
+  },
+  "validation": {
+    "all_exact_passages_match": true,
+    "governed_seals_recomputed": true,
+    "relative_packet_links_resolve": true,
+    "git_diff_check": "passed",
+    "full_candidate_suite": "not run; documentation-only scope",
+    "candidate_source_regeneration": "not run",
+    "production_changes": false
+  },
+  "failed_attempts": [
+    {
+      "kind": "metadata inspection",
+      "cause": "null text_version in source-index expression",
+      "command_wall_seconds": 0.3558894,
+      "candidate_effects": false
+    },
+    {
+      "kind": "pinpoint packet assembly",
+      "cause": "literal Privacy Act subsection(l)(1) header differed from assumed(l) header",
+      "command_wall_seconds": 0.3934206,
+      "packet_written_before_failure": false,
+      "candidate_effects": false
+    }
+  ],
+  "time_limits": "Focused per-action windows include research/drafting, not exclusive CPU. Shared selection/source discovery, cross-packet supplement, validation, rework and GitHub delivery remain in gross total; final delivery follows this documentation cutoff.",
+  "packet_file_hashes": {
+    "README.md": "575e2b878484a3a5432a8633d2535c16d8bb6a26b2cc9924f7e8afe3c48bfeb5",
+    "roll_2_272.md": "3d5243ad95dcd418e8d00c8b8feaba48090b37ea928657d1531dbfaf6a895d4c",
+    "roll_2_272_sources.json": "0d2da49bb158d656b6cbabffbc1289c683b1f5b6b94c22340a5ee50960340964",
+    "roll_2_286.md": "16700e3253872690f9f73283ee462a2c93120c78a2ca8cf3e1e553b68a231085",
+    "roll_2_286_sources.json": "2a83ec1a97e9b06c081d9f2c6ef61f73a53260e137b546713d9b3a70e1351a93",
+    "roll_2_310.md": "b8feedbacc22854fdddf8f525042fcaa0630e8a9bc1e3e540dc8167319abc5a0",
+    "roll_2_310_sources.json": "345dd5daf65379e7a431b60151ee7d5ee8007b5f14f51e3956611b1b20a90669"
+  }
+}
