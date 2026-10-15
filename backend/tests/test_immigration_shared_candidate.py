@@ -402,6 +402,19 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         rows = {r['action_id']: r for r in self.values[2]['candidate_dispositions']}
         for item in receipt['remaining_selected_actions']:
             self.assertEqual(item['completion_credit'], 0)
+            if item['action_id'] == 'house:119:2:308':
+                closure = json.loads((DATA / 'concurrence_qualification_checkpoint231.json').read_text())
+                self.assertEqual(closure['receipt_sha256'], sealed_digest(closure, 'receipt_sha256'))
+                self.assertEqual(closure['action_id'], item['action_id'])
+                self.assertEqual(closure['prior_pending_row']['disposition'], 'source_unresolved')
+                self.assertFalse(closure['editorial_acceptance'])
+                self.assertEqual(records[item['action_id']]['review_state'], 'candidate_pending_external_semantic_review')
+                self.assertEqual(rows[item['action_id']]['disposition'], 'interpreted_substantive_directional')
+                self.assertEqual(rows[item['action_id']]['review_progress']['shared_review_record_sha256'],
+                                 digest(records[item['action_id']]))
+                core = next(c for c in self.products[0]['actions'] if c['action_id'] == item['action_id'])
+                self.assertEqual(core['action_core_sha256'], closure['new_core_sha256'])
+                continue
             self.assertNotIn(item['action_id'], records)
             self.assertEqual(rows[item['action_id']]['disposition'], 'source_unresolved')
 
@@ -4074,7 +4087,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(current['review_progress']['shared_review_record_sha256'], digest(reviews[resolved]))
         self.assertEqual(reviews[resolved]['review_state'], 'candidate_pending_external_semantic_review')
         core = next(row for row in self.products[0]['actions'] if row['action_id'] == resolved)
-        self.assertEqual(core['action_core_sha256'], closure['new_core_sha256'])
+        self.assertEqual(core['action_core_sha256'], active_programme89_core_sha(closure))
         self.assertIn('Phase II', current['reason'])
         self.assertTrue(closure['independent230_source_domain_review_pending'])
         self.assertFalse(closure['editorial_acceptance'])
@@ -4543,6 +4556,21 @@ class Checkpoint229ReviewCorrectionTests(unittest.TestCase):
             self._assert_pending_summary_consistent(missing)
 
 
+def active_programme89_core_sha(original_receipt):
+    """Bind a later precision repair to the preserved original closure."""
+    from backend.app.semantic_ir.shared_corpus import sealed_digest
+    path = DATA / 'programme_precision_corrections_checkpoint231.json'
+    if not path.exists():
+        return original_receipt['new_core_sha256']
+    correction = json.loads(path.read_text(encoding='utf-8'))
+    if (correction['receipt_sha256'] != sealed_digest(correction, 'receipt_sha256')
+            or correction['action_id'] != 'house:119:2:89'
+            or correction['prior_core_sha256'] != original_receipt['new_core_sha256']
+            or correction['original230_research_receipt_sha256'] != original_receipt['receipt_sha256']):
+        raise AssertionError('precision repair must bind its preserved original closure')
+    return correction['current_core_sha256']
+
+
 class Checkpoint230ProgrammeQualificationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -4637,11 +4665,182 @@ class Checkpoint230ProgrammeQualificationTests(unittest.TestCase):
         core = json.loads((DATA / 'generated/shared_action_core.json').read_text())
         selected = [row for row in core['actions'] if row['action_id'] == 'house:119:2:89']
         self.assertEqual(len(selected), 1)
-        self.assertEqual(selected[0]['action_core_sha256'], receipt['new_core_sha256'])
+        self.assertEqual(selected[0]['action_core_sha256'], active_programme89_core_sha(receipt))
         projections = json.loads((DATA / 'generated/member_projections.json').read_text())
         observed = {p['member_id']: next(row['official_status'] for row in p['actions']
                     if row['action_id'] == 'house:119:2:89') for p in projections}
         self.assertEqual(observed, {'F000477': 'Yea', 'M001184': 'Nay'})
+
+
+class Checkpoint231ProgrammePrecisionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.act = next(row for row in json.loads((DATA / 'authoring.json').read_text())['actions']
+                       if row['action_id'] == 'house:119:2:89')
+        cls.source = next(row['text'] for row in json.loads((DATA / 'sources.json').read_text())['sources']
+                          if row['source_id'] == 'govinfo:s3971es')
+        cls.correction = json.loads((DATA / 'programme_precision_corrections_checkpoint231.json').read_text())
+
+    def _assert_three_DoD_predicates(self, meaning):
+        for fragment in ['product, process, or technology that meets a necessary level of readiness',
+                         'commitment for inclusion in a programme objective memorandum',
+                         'rank of programme acquisition executive or higher in a DoD acquisition organisation',
+                         'product, process, or technology that will meet high priority requirements or operational needs of a military department through a successful transition and into the acquisition process',
+                         'at least 20 percent of the required matching funds',
+                         'new DoD funding under a programme other than Phase I or II of SBIR or STTR',
+                         'as a result of an award using the strategic breakthrough allocation']:
+            self.assertIn(fragment, meaning)
+
+    def test_DoD_alternative_and_surrounding_conjunctive_conditions_match_source(self):
+        point = self.correction['source_point']
+        self.assertEqual(point['passage'], self.source[12581:13545])
+        for fragment in ['high priority requirements or operational needs', '``(aa)', '``(bb)', '``(cc)',
+                         'and into the acquisition process', 'not less than 20 percent']:
+            self.assertIn(fragment, point['passage'])
+        self._assert_three_DoD_predicates(self.act['meaning'])
+        for wrong in [self.act['meaning'].replace(' or operational needs', ''),
+                      self.act['meaning'].replace('requirements or operational needs', 'requirements and operational needs'),
+                      self.act['meaning'].replace(' and into the acquisition process', ''),
+                      self.act['meaning'].replace('at least 20 percent', 'at least 2 percent')]:
+            with self.assertRaises(AssertionError):
+                self._assert_three_DoD_predicates(wrong)
+
+    def test_active_candidate_credit_is_distinct_from_preserved_private_history(self):
+        from backend.app.semantic_ir.shared_corpus import sealed_digest
+        r = self.correction
+        self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
+        self.assertEqual(r['counts_unchanged'], {'reviewed': 647, 'pending': 29, 'cores': 73,
+                                               'behavioral_propositions': 122})
+        self.assertTrue(r['private230_draft_receipts_preserved'])
+        self.assertFalse(r['editorial_acceptance'])
+        self.assertFalse(r['publication_authorized'])
+        joined = ' '.join(self.act['limitations'])
+        self.assertIn('Candidate screening is recorded', joined)
+        self.assertIn('independent source/domain review and editorial acceptance remain pending', joined)
+        self.assertIn('No publication authorization', joined)
+        self.assertNotIn('Private source-qualified candidate; no completion credit', joined)
+        original = json.loads((DATA / 'programme_qualified_research_checkpoint230.json').read_text())
+        self.assertEqual(original['private89_draft_receipt']['completion_credit'], 0)
+        self.assertEqual(original['new_core_sha256'], r['prior_core_sha256'])
+
+
+class Checkpoint231ConcurrenceQualificationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.authoring = json.loads((DATA / 'authoring.json').read_text(encoding='utf-8'))
+        cls.act = next(a for a in cls.authoring['actions'] if a['action_id'] == 'house:119:2:308')
+        cls.bank = {s['source_id']: s for s in json.loads((DATA / 'sources.json').read_text(encoding='utf-8'))['sources']}
+        cls.core = next(c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text(encoding='utf-8'))['actions']
+                        if c['action_id'] == cls.act['action_id'])
+        cls.receipt = json.loads((DATA / 'concurrence_qualification_checkpoint231.json').read_text(encoding='utf-8'))
+
+    def test_existing_unapproved_identity_and_meaning_basis_are_preserved(self):
+        from backend.app.semantic_ir.shared_corpus import validate_shared_action_core
+        binding = self.act['candidate_core_qualification']
+        root = DATA.parents[3]
+        original_provider = json.loads((root / binding['artifact_ref']).read_text(encoding='utf-8'))
+        original = next(c for c in original_provider['actions'] if c['action_id'] == self.act['action_id'])
+        self.assertFalse(original_provider['authoritative_for_new_editorial_work'])
+        self.assertEqual(binding['action_core_sha256'], original['action_core_sha256'])
+        self.assertEqual(self.core['action_meaning_ref'], original['action_meaning_ref'])
+        self.assertEqual(self.core['exact_action_identity'], original['exact_action_identity'])
+        self.assertTrue(self.core['candidate_exact_action_meaning'].startswith(original['candidate_exact_action_meaning']))
+        self.assertTrue(set(original['candidate_shared_limitations']) <= set(self.core['candidate_shared_limitations']))
+        self.assertTrue(all(w in self.core['governed_source_identities'] for w in original['governed_source_identities']))
+        validate_shared_action_core(root, original_provider)
+
+    def test_direct_immigration_operator_and_scoped_treaty_exception_are_bound(self):
+        text = self.bank['govinfo:hr5334eas']['text']
+        for n in [101, 102, 103, 108, 111, 114, 115, 117]:
+            lo = text.rfind(f'SEC. {n}.')
+            hi = text.find('SEC. ', lo + 1)
+            self.assertTrue(any(c['source_id'] == 'govinfo:hr5334eas' and c['passage'] == text[lo:hi]
+                                for c in self.core['claim_source_map']), n)
+        operative = text[text.rfind('SEC. 102.'):text.rfind('SEC. 103.')]
+        for phrase in ['An alien described in subsection (b)', 'ineligible to be admitted or paroled',
+                       'take effect immediately', 'automatically cancel any other valid visa']:
+            self.assertIn(phrase, operative)
+        exception = text[text.rfind('SEC. 114.'):text.rfind('SEC. 115.')]
+        self.assertIn('if such admission or parole is necessary to comply', exception)
+        self.assertIn('or other international obligations', exception)
+
+    def _assert_scoped_meaning(self, text):
+        for phrase in ['neither a US citizen nor a US national', 'alien and foreign person are not interchangeable',
+                       'necessary to comply with US obligations', 'does not expressly turn this exception into a general exemption',
+                       'Treaty reservations, amendments, US-specific treaty applicability',
+                       "without silently rewriting 102(e)'s own 'alien described in subsection (b)' text",
+                       'selecting a menu does not establish that every optional visa sanction is imposed',
+                       'not a complete current or future enactment-day inventory']:
+            self.assertIn(phrase, text)
+
+    def test_status_treaty_and_imported_subject_boundaries_reject_overstatements(self):
+        text = self.core['candidate_exact_action_meaning']
+        self._assert_scoped_meaning(text)
+        for before, after in [('neither a US citizen nor a US national', 'not a US citizen'),
+                              ('necessary to comply with US obligations', 'always required'),
+                              ('does not expressly turn this exception into a general exemption', 'exempts every visa consequence'),
+                              ('selecting a menu does not establish that every optional visa sanction is imposed', 'every optional visa sanction is imposed')]:
+            with self.subTest(defect=before), self.assertRaises(AssertionError):
+                self._assert_scoped_meaning(text.replace(before, after))
+
+    def test_waiver_review_and_separate_sunsets_retain_conditions(self):
+        text = self.core['candidate_exact_action_meaning']
+        for phrase in ['written national-interest certification and explanatory report before issuance',
+                       "does not negate 113(b)'s written determination or 113(g)(1)'s report",
+                       'July 10 through September 7 inclusive', 'disapproval must be enacted',
+                       'January 1, 2028', 'December 31, 2040',
+                       'exempted from the separate five-year Division A sunset']:
+            self.assertIn(phrase, text)
+        self.assertIn('rate greater than zero and up to 100 percent', text)
+        self.assertIn("US Trade Representative's written determination", text)
+
+    def test_literal_blank_differences_and_sources_remain_unmodified(self):
+        r = self.receipt['private_literal_placeholder_reconciliation']
+        self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
+        for point in r['literal_contexts']:
+            self.assertEqual(point['literal_text'], self.bank[point['source_id']]['text'][point['start']:point['end']])
+        self.assertIn("section '__' versus extracted 'll'", self.core['candidate_exact_action_meaning'])
+        self.assertIn("date '___' versus 'lll'", self.core['candidate_exact_action_meaning'])
+
+    def test_shared_meaning_is_member_neutral_and_actual_nays_stay_in_projections(self):
+        text = self.core['candidate_exact_action_meaning']
+        for word in ['Foushee', 'Massie', 'F000477', 'M001184', 'Both members', 'private draft', 'no completion credit']:
+            self.assertNotIn(word, text)
+        self.assertEqual(self.core['legislative_stage'], 'concurrence')
+        self.assertEqual(self.core['package_component_boundary']['boundary_type'], 'whole_measure')
+        projections = json.loads((DATA / 'generated/member_projections.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(projections), 2)
+        for member in projections:
+            action = next(a for a in member['actions'] if a['action_id'] == self.act['action_id'])
+            self.assertEqual(action['official_status'], 'Nay')
+            self.assertEqual(action['exact_choice_effect'], 'opposes_exact_choice')
+            self.assertEqual(action['action_core_sha256'], self.core['action_core_sha256'])
+
+    def test_candidate_receipt_and_reuse_binding_are_exact_without_acceptance(self):
+        r = self.receipt
+        self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
+        self.assertEqual(r['new_core_sha256'], self.core['action_core_sha256'])
+        self.assertEqual(self.act['shared_core_reuse']['action_core_sha256'], self.core['action_core_sha256'])
+        self.assertTrue(r['candidate_screening_recorded'])
+        self.assertTrue(r['independent231_source_domain_review_pending'])
+        self.assertFalse(r['editorial_acceptance'])
+        self.assertFalse(r['publication_authorized'])
+        self.assertEqual(r['ordinary_routine_sample_count'], 0)
+        self.assertEqual(r['counts']['reviewed'], 648)
+        self.assertEqual(r['counts']['pending'], 28)
+        self.assertEqual(r['counts']['cores'], 74)
+        self.assertEqual(len(r['legal_applications_unresolved']), 3)
+
+    def test_imported_health_witness_is_reused_without_new_acquisition_claim(self):
+        r = self.receipt
+        self.assertEqual(r['fresh_acquisitions'], 0)
+        self.assertEqual(len(r['source_imports']), 1)
+        imp = r['source_imports'][0]
+        self.assertFalse(imp['fresh_acquisition'])
+        self.assertFalse(imp['whole_parent_fresh_owner_read'])
+        source = self.bank[imp['source_id']]
+        self.assertEqual(imp['governed_bytes_sha256'], source['governed_bytes_sha256'])
+        self.assertEqual(source['governed_bytes_sha256'], sealed_digest(source, 'governed_bytes_sha256'))
 
 
 if __name__ == '__main__':

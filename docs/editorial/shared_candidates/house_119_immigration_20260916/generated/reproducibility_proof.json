@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "1fc8c010d3370ea73049578e341796ce7e6db15b0eae3c40c62aeb4c9f1ec1a2",
-  "source_capture_sha256": "2eb30ad0465d9b037ee235e42653475a319a5136b763fbabca561fd6de768210",
-  "core_sha256": "1a676265776a193e4eaffbce9b162024693c886e32e245f531e828795c0203b7",
-  "compiled_sha256": "185c5ae3af8b46e3b616b8ac5635e53f8f259201706907413fe001443662fd1b",
-  "readable_sha256": "5788b3559fa4a6bc78bf1d0cd74265f8db63fc3b49c0221dde022761af9db33b",
+  "input_sha256": "546b0cec6c98f3bf53f69df5e9bf5dacbc927431d1572acf6a955768145d7e32",
+  "source_capture_sha256": "b6e34d6ca6871ee6f7f532641a472a138ba450187da97e556b71cf7cff23676c",
+  "core_sha256": "3a62fa3624df959f4b3939ab48510570b279dc75face4591051678daa1cbe2e0",
+  "compiled_sha256": "fa3d3f7ba55a56005ec4810a0cf61f145f8d8c81f3b3a35135d7de257376c7aa",
+  "readable_sha256": "31cf8c4dfaf85abf2d778632129e273c01d60d54e278a554be598c51bb54ddc9",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1119,7 +1119,7 @@
     },
     {
       "action_id": "house:119:2:89",
-      "shared_sha256": "df86ad6cb4fb6b6b668da581a688c5e61c3b62bd8f8ec1bb77a6f2879aba4668",
+      "shared_sha256": "e3fefc4bbc9cfcbdd2710f5240ae7743ef1a7b1dce346c29088fbddcee41925b",
       "choices": [
         {
           "member_id": "F000477",
@@ -1474,6 +1474,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of the complete H.R.7008 Member-family investment and Federal-election photoID package; no separate component position is established",
           "source_id": "clerk:119:2:280"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:308",
+      "shared_sha256": "feab746dd28e36df3acd0abcf357dcf630011e6828f1f1c1b581f2aa056eeca7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in that whole package; no separate component opposition, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:308"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in that whole package; no separate component opposition, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:308"
         }
       ]
     }
