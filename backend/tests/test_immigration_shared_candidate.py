@@ -499,6 +499,81 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
                     prepare(author, self.values[1], ['F000477','M001184'])
 
+    def test_farm236_preserves_health_core_and_whole_recorded_choice(self):
+        aid = 'house:119:2:154'
+        original = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
+        old = next(c for c in original['actions'] if c['action_id'] == aid)
+        core = next(c for c in self.products[0]['actions'] if c['action_id'] == aid)
+        self.assertEqual(old['action_core_sha256'], '85f77f1e41f34e418fe878f3c471f65efdf7d36c5730a3dd60bfa90d55a58f9d')
+        self.assertEqual(core['exact_action_identity'], old['exact_action_identity'])
+        self.assertEqual(core['action_meaning_ref'], old['action_meaning_ref'])
+        self.assertTrue(core['candidate_exact_action_meaning'].startswith(old['candidate_exact_action_meaning']))
+        self.assertTrue(set(old['candidate_shared_limitations']) <= set(core['candidate_shared_limitations']))
+        self.assertTrue(all(w in core['governed_source_identities'] for w in old['governed_source_identities']))
+        self.assertEqual(core['legislative_stage'], 'final_passage')
+        self.assertEqual(core['package_component_boundary']['boundary_type'], 'whole_measure')
+        for member in self.products[2]:
+            row = next(a for a in member['actions'] if a['action_id'] == aid)
+            self.assertEqual(row['official_status'], 'Nay' if member['member_id'] == 'F000477' else 'Yea')
+            self.assertEqual(row['action_core_sha256'], core['action_core_sha256'])
+        for name in ['Foushee','Massie','F000477','M001184']:
+            self.assertNotIn(name, core['candidate_exact_action_meaning'])
+
+    def test_farm236_literal_loan_predicates_and_dated_regulations_stay_distinct(self):
+        bank = {s['source_id']:s for s in self.values[1]['sources']}
+        for n in [1922,1941,1961]:
+            text = bank[f'govinfo:7usc{n}-2024-farm236']['text']
+            self.assertIn('citizens of the United States', text)
+            self.assertIn('a majority', text)
+        text = bank['govinfo:7cfr762-120-2024-farm236']['text']
+        self.assertIn('qualified alien', text)
+        self.assertIn('non-citizen', text)
+        act = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:154')
+        for n in [5101,5201,5301]:
+            claim = next(c for c in act['claim_source_map'] if c['locator'].startswith(f'Complete operative EH outersection{n};'))
+            self.assertIn('at least a 50 percent', claim['passage'])
+            self.assertIn(claim['passage'], bank[claim['source_id']]['text'])
+        self.assertIn('it is not a conclusion that a particular noncitizen becomes eligible', act['meaning'])
+        self.assertIn('dated regulatory comparators', act['meaning'])
+        self.assertIn('their legal application unresolved', act['meaning'])
+        closure = json.loads((DATA / 'farm_qualification_checkpoint236.json').read_text(encoding='utf-8'))
+        self.assertEqual(closure['receipt_sha256'], sealed_digest(closure, 'receipt_sha256'))
+        self.assertTrue(closure['whole_EH_reading']['whole_owner_read'])
+        self.assertEqual(closure['whole_EH_reading']['confirmed_through_character'], 959629)
+        self.assertEqual(closure['prior_pending_rows']['house:119:2:154']['disposition'], 'source_unresolved')
+        self.assertFalse(closure['editorial_acceptance'])
+        self.assertFalse(closure['publication_authorized'])
+
+    def test_farm236_source_corruptions_are_rejected_without_normalizing_legal_words(self):
+        for sid,locator,before,after in [
+                ('govinfo:7usc1922-2024-farm236',None,'be citizens of the United States','be persons of any citizenship'),
+                ('govinfo:7cfr762-120-2024-farm236',None,'qualified alien','any alien'),
+                ('govinfo:7usc3508-2024-farm236',None,'; or (iii)','; and (iii)'),
+                ('govinfo:hr7567eh','outersection12003','the Secretary may','the Secretary shall')]:
+            with self.subTest(source=sid):
+                author = copy.deepcopy(self.values[0])
+                act = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:154')
+                claim = next(c for c in act['claim_source_map'] if c['source_id'] == sid and before in c['passage'] and (locator is None or locator in c['locator']))
+                claim['passage'] = claim['passage'].replace(before,after,1)
+                seed = next(a for a in author['actions'] if 'shared_core_reuse' not in a)
+                author['actions'] = [seed,act]
+                author['blocked_episode_ids'] = []
+                with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+                    prepare(author,self.values[1],['F000477','M001184'])
+
+    def test_farm236_animal_plant_and_exchange_subjects_remain_scoped(self):
+        act = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:154')
+        bank = {s['source_id']:s for s in self.values[1]['sources']}
+        for n in [3306,12003,12005,12405]:
+            claim = next(c for c in act['claim_source_map'] if c['locator'].startswith(f'Complete operative EH outersection{n};'))
+            self.assertIn(claim['passage'], bank[claim['source_id']]['text'])
+        self.assertIn('not the admission or removal of people', act['meaning'])
+        self.assertIn("eligibility word 'resident' into 'citizen'", act['meaning'])
+        self.assertIn('duties necessary to safeguard domestic', bank['govinfo:pl118-191-farm236']['text'].replace('agri-\ncultural','agricultural'))
+        self.assertIn('current-law', act['meaning'])
+        self.assertIn('prospective-engrossment', act['meaning'])
+
+
     def test_continuing235_preserves_original_shared_identity_and_distinct_whole_choices(self):
         original = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text(encoding='utf-8'))
         hashes = {'house:119:2:272':'8a916feb12bbb560554a96a430bdb1c1d42c891ca488c2cc33b70d70606177a7',
@@ -552,7 +627,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                          'not an automatic unlimited increase', 'a calculated new cap', 'THIS SECTION expires',
                          'not described as the first-ever surcharge', 'minister branch lacks those two printed non-minister sunset dates',
                          '2016\'s international religious freedom commission is distinct from5015non-minister visas',
-                         'does not itself establish a newly rewritten December11date', 'EQUAL to that fraction', 'NOT LESS THAN it']:
+                         'does not itself establish a newly rewritten December11or fiscal2027application', 'EQUAL to that fraction', 'NOT LESS THAN it']:
             self.assertIn(fragment, text)
         self.assertIn('This section expires', sources['govinfo:6usc348-2024-complete232']['text'])
         self.assertIn('after consultation with the Secretary of Labor', sources['govinfo:pl11975-divisionI5013-5016-232']['text'])
@@ -565,6 +640,52 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('September 30, 2010', passport)
         self.assertIn('September 30, 2026', passport)
         self.assertIn('9802', passport)
+
+    def test_continuing236_task_force_purposes_are_distinct_from_director_duties(self):
+        source = next(s['text'] for s in self.values[1]['sources'] if s['source_id'] == 'govinfo:6usc348-2024-complete232')
+        establishment = source[856:1344]
+        for phrase in ['are or relate to', 'Securing the land and maritime borders',
+                       'Homeland security crises', 'Establishing regionally-based operations']:
+            self.assertIn(phrase, establishment)
+        self.assertNotIn('other duties', establishment)
+        self.assertIn('other duties and powers', source[5356:5432])
+        text = next(c['candidate_exact_action_meaning'] for c in self.products[0]['actions'] if c['action_id'] == 'house:119:2:286')
+        for phrase in ['purposes that are or relate to securing the land and maritime borders, homeland-security crises, or establishing regionally-based operations',
+                       'separate other-duties clause concerns the Director',
+                       'Stafford/FEMA-response restriction and its stated conditions']:
+            self.assertIn(phrase, text)
+        self.assertNotIn('other departmental purposes', text)
+
+    def test_continuing236_CBP_support_keeps_both_recipient_and_modality_branches(self):
+        source = next(s['text'] for s in self.values[1]['sources'] if s['source_id'] == 'govinfo:pl11986-complete232')[17572:18092]
+        self.assertIn('Federal, State, local, and international agencies', source)
+        self.assertIn('at the discretion of the Secretary of Homeland Security', source)
+        self.assertIn('such support to Federal, State, and local agencies', source)
+        self.assertIn('emergency humanitarian efforts', source)
+        for aid in ['house:119:2:272', 'house:119:2:286']:
+            with self.subTest(action=aid):
+                text = next(c['candidate_exact_action_meaning'] for c in self.products[0]['actions'] if c['action_id'] == aid)
+                for phrase in ['transportation of unaccompanied alien minors',
+                               'air and marine support to Federal, State, local and international agencies in the enforcement or administration of laws enforced by DHS',
+                               "at the Secretary's discretion, such air and marine support to Federal, State and local agencies in other law-enforcement and emergency humanitarian efforts"]:
+                    self.assertIn(phrase, text)
+                self.assertNotIn('discretionary humanitarian expenses', text)
+
+    def test_continuing236_three_date_events_and_H2B_J_conditions_stay_distinct(self):
+        source = next(s['text'] for s in self.values[1]['sources'] if s['source_id'] == 'govinfo:8usc1182e-220c-2024-hr1968')[3037:3441]
+        self.assertIn('aliens admitted to the United States', source)
+        self.assertIn('or acquiring such status after admission', source)
+        self.assertIn('before September 30, 2015', source)
+        text = next(c['candidate_exact_action_meaning'] for c in self.products[0]['actions'] if c['action_id'] == 'house:119:2:286')
+        for phrase in ['220(c)concerns admission in J status or acquisition of that status after admission',
+                       'IIRIRA401(b)concerns programme termination',
+                       '27(C)(ii)(II)-(III)concern the specified non-minister entry before the applicable date',
+                       'not a universal expiration of previously granted waivers',
+                       'December11or fiscal2027application for those different events',
+                       "remain separate from1184(l)'s J-physician waiver, service, State-number and related conditions"]:
+            self.assertIn(phrase, text)
+        self.assertNotIn('each permanent-law sunset', text)
+        self.assertNotIn('other g/lconditions', text)
 
     def test_continuing235_swapped_or_unconditional_claims_are_rejected(self):
         for aid,sid,before,after in [
