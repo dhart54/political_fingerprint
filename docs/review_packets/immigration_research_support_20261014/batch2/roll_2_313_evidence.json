@@ -1,0 +1,248 @@
+{
+  "role": "research_support_only",
+  "snapshot": "4565bc7eb91a23f5b3c164294b8aa9a7765cd54c",
+  "action_id": "house:119:2:313",
+  "candidate_mutation": false,
+  "screening_credit_assigned": false,
+  "source_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+  "source_artifact_sha256": "bb977a6bd046e9c877764314f69c85d07e0097e89bec9bb58d3b26602d4745db",
+  "existing_source_identities": {
+    "govinfo:hr9497eh-prefix195": {
+      "source_id": "govinfo:hr9497eh-prefix195",
+      "source_type": "official_legislative_text_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9497eh/html/BILLS-119hr9497eh.htm",
+      "text_version": "Only first2500 characters read; header and table of contents, no whole material text or domain exclusion claim",
+      "raw_sha256": "d6b73fac01c0f7fd51b754652f59aa2105cdec269cd351076555ff2ab114bd1c",
+      "governed_bytes_sha256": "bd438f4249dff419b21d6d77073211c13b259a7adc800859c0ddf79bda5ab44c",
+      "row_index": 2193,
+      "text_characters": 2500
+    },
+    "clerk:119:2:313": {
+      "source_id": "clerk:119:2:313",
+      "source_type": "house_clerk_roll_call",
+      "url": "https://clerk.house.gov/evs/2026/roll313.xml",
+      "text_version": null,
+      "raw_sha256": "a4fee85008873d549341099bd0f13e0a61eb1d45733f9a0ba119b499ab1393dd",
+      "governed_bytes_sha256": "6fdccaa01711d11001016d9317292ebc5cacb1eebf9a62b68835b4cd3cbe9a8c",
+      "row_index": 674,
+      "text_characters": 0
+    },
+    "immigration:roll313-identity195": {
+      "source_id": "immigration:roll313-identity195",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+      "text_version": "Own H.R.9497 literal identity witness; initial 2026-09-16, recorded 2026-09-16; initial question before voice result and demand/order/postponement; recorded resumed choice separate. No adjacent choice or stated intention.",
+      "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+      "governed_bytes_sha256": "d827458f546626a19c53b0d2e4a0aca3493a58be7fcee4838d341567c1fd96e9",
+      "row_index": 2213,
+      "text_characters": 412
+    },
+    "immigration:roll313-initial195": {
+      "source_id": "immigration:roll313-initial195",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+      "text_version": "Own H.R.9497 literal initial witness; initial 2026-09-16, recorded 2026-09-16; initial question before voice result and demand/order/postponement; recorded resumed choice separate. No adjacent choice or stated intention.",
+      "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+      "governed_bytes_sha256": "9590314feb446a28839f778e4d6e28abe9df5367b3a61ed974dc955c0116163a",
+      "row_index": 2214,
+      "text_characters": 539
+    },
+    "immigration:roll313-recorded195": {
+      "source_id": "immigration:roll313-recorded195",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+      "text_version": "Own H.R.9497 literal recorded witness; initial 2026-09-16, recorded 2026-09-16; initial question before voice result and demand/order/postponement; recorded resumed choice separate. No adjacent choice or stated intention.",
+      "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+      "governed_bytes_sha256": "83a93df2bb3220b0ddd37db5cce4d07e9427134e5437496d5ef43fbdc12d3f8c",
+      "row_index": 2215,
+      "text_characters": 5571
+    }
+  },
+  "raw_parents": {
+    "eh": {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9497eh/html/BILLS-119hr9497eh.htm",
+      "requested_utc": "2026-10-15T03:26:47.094203+00:00",
+      "completed_utc": "2026-10-15T03:26:47.575842+00:00",
+      "status": 200,
+      "raw_bytes": 461852,
+      "raw_sha256": "d6b73fac01c0f7fd51b754652f59aa2105cdec269cd351076555ff2ab114bd1c",
+      "text_characters": 375169,
+      "text_utf8_sha256": "b088dddeeb7a486c4198af99188f263611338233fc45da8788f0308e09b96d8a",
+      "elapsed_seconds": 0.4821890000021085,
+      "method": "HTMLParser all data, whitespace-only join/split; no text repair"
+    },
+    "record": {
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+      "started_utc": "2026-10-15T03:27:49.690236+00:00",
+      "completed_utc": "2026-10-15T03:27:50.275007+00:00",
+      "status": 200,
+      "raw_bytes": 1274166,
+      "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+      "historical_raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+      "elapsed_seconds": 0.585324399988167
+    }
+  },
+  "raw_parent_archive": "roll_2_313_source_parents.zip",
+  "raw_archive_sha256": "ee199999751515433d298b7a19cc444606e4eecffcb2536169ad84d0cc6e5040",
+  "eh_normalized_text_characters": 375169,
+  "eh_normalized_text_utf8_sha256": "b088dddeeb7a486c4198af99188f263611338233fc45da8788f0308e09b96d8a",
+  "eh_canonical_json_string_sha256": "9a04e33c2b0958fbc96491cbdd4fddbe112629a96cbb61f259aef082b8b4c92b",
+  "historical_eh_text_digest_match": true,
+  "record_pdf_pages": 151,
+  "record_extraction": "pypdf extract_text per page; join with two newline characters; no glyph repair",
+  "record_text_characters": 1395544,
+  "record_canonical_json_string_sha256": "68b4ddb74989eebb83b33b70d1aac2b259b17645e3ee1d3da3314fef9a261502",
+  "historical_record_text_digest_match": true,
+  "record_floor_extent": [
+    138970,
+    532067
+  ],
+  "comparison_floor_body_start": 139018,
+  "eh_body_extent": [
+    420,
+    374803
+  ],
+  "metadata_line_exclusion_prefixes": [
+    "VerDate ",
+    "CONGRESSIONAL RECORD"
+  ],
+  "diagnostic_normalization": "Replace section symbol with Sec.; casefold; keep Unicode alphanumeric characters. Additional explicitly declared dotless-U+0131-to-i fold only for locating non-table comparison equality; not a legal-equivalence or source-edit rule.",
+  "unicode_normalized_lengths": [
+    294121,
+    294121
+  ],
+  "ascii_only_lengths": [
+    294110,
+    294121
+  ],
+  "dotless_glyphs": [
+    {
+      "pdf_page": 28,
+      "page_text_start": 8843,
+      "page_text_end": 8844,
+      "character": "ı",
+      "context": "e erosion \nprotection, in the vicinity of the Waikı ¯kı¯ \nNatatorium War Memorial, Kaimana and \nWaikı¯kı¯ beach"
+    },
+    {
+      "pdf_page": 28,
+      "page_text_start": 8847,
+      "page_text_end": 8848,
+      "character": "ı",
+      "context": "osion \nprotection, in the vicinity of the Waikı ¯kı¯ \nNatatorium War Memorial, Kaimana and \nWaikı¯kı¯ beaches, "
+    },
+    {
+      "pdf_page": 28,
+      "page_text_start": 8893,
+      "page_text_end": 8894,
+      "character": "ı",
+      "context": "ı ¯kı¯ \nNatatorium War Memorial, Kaimana and \nWaikı¯kı¯ beaches, City and County of Hono-\nlulu, Hawaii. \n(35) P"
+    },
+    {
+      "pdf_page": 28,
+      "page_text_start": 8896,
+      "page_text_end": 8897,
+      "character": "ı",
+      "context": "kı¯ \nNatatorium War Memorial, Kaimana and \nWaikı¯kı¯ beaches, City and County of Hono-\nlulu, Hawaii. \n(35) P\nOR"
+    },
+    {
+      "pdf_page": 29,
+      "page_text_start": 7591,
+      "page_text_end": 7592,
+      "character": "ı",
+      "context": "ion and mitigation, and \necosystem restoration, Loı´za, Puerto Rico. \n(86) N\nAGUABO, PUERTO RICO .—Project for "
+    },
+    {
+      "pdf_page": 29,
+      "page_text_start": 7903,
+      "page_text_end": 7904,
+      "character": "ı",
+      "context": " management and ecosystem \nrestoration along the Rı´o Anto´n Ruı´z and ad-\njacent levees in Humacao, Puerto Ric"
+    },
+    {
+      "pdf_page": 29,
+      "page_text_start": 7916,
+      "page_text_end": 7917,
+      "character": "ı",
+      "context": "nd ecosystem \nrestoration along the Rı´o Anto´n Ruı´z and ad-\njacent levees in Humacao, Puerto Rico. \n(88) V\nEG"
+    },
+    {
+      "pdf_page": 29,
+      "page_text_start": 8147,
+      "page_text_end": 8148,
+      "character": "ı",
+      "context": "ement, Puerto Nuevo Lagoon (also known \nas ‘‘Quintı ´n Valle Lagoon’’), Vega Baja, \nPuerto Rico. \n(89) Y\nABUCOA"
+    },
+    {
+      "pdf_page": 50,
+      "page_text_start": 8390,
+      "page_text_end": 8391,
+      "character": "ı",
+      "context": "sidered are— \n(1) Contract No. 4 for the Central Rı ´o \nPiedras and Las Ame´ricas Bridges; \n(2) Contract No. 5A"
+    },
+    {
+      "pdf_page": 50,
+      "page_text_start": 8516,
+      "page_text_end": 8517,
+      "character": "ı",
+      "context": "Dame \nBridge; \n(3) Contract No. 6A for the Upper Rı ´o \nPiedras; \n(4) Contract No. 6B for Quebrada Buena \nVista"
+    },
+    {
+      "pdf_page": 53,
+      "page_text_start": 4163,
+      "page_text_end": 4164,
+      "character": "ı",
+      "context": "he following areas: \n(A) El Corazo´n de los Tres Rı´os del Norte, \nPima County, Arizona. \n(B) North Haven, Conn"
+    }
+  ],
+  "operative401_normalized_spans": {
+    "record": [
+      284888,
+      287450
+    ],
+    "eh": [
+      284888,
+      287450
+    ]
+  },
+  "non401_sequence_match_with_declared_glyph_fold": true,
+  "section401_linear_sequence_equal": false,
+  "table_review": {
+    "pdf_pages": [
+      52,
+      53
+    ],
+    "printed_pages": [
+      "H5886",
+      "H5887"
+    ],
+    "rows_visually_compared_to_raw_eh": 14,
+    "fields": [
+      "group/row/state",
+      "project label",
+      "report/decision date",
+      "qualified estimated-cost entries"
+    ],
+    "scope": "Visual row/field comparison, not byte equality, legal equivalence, financial outcome or whole-proposal owner review."
+  },
+  "fresh_parent_passages": [
+    {
+      "label": "EH401",
+      "parent": "eh_text",
+      "start": 360962,
+      "end": 366153,
+      "passage": "SEC. 401. PROJECT AUTHORIZATIONS. The following projects for water resources development and conservation and other purposes, as identified in the reports titled ``Report to Congress on Future Water Resources Development'' submitted to Congress pursuant to section 7001 of the Water Resources Reform and Development Act of 2014 (33 U.S.C. 2282d) or otherwise reviewed by Congress, are authorized to be carried out by the Secretary substantially in accordance with the plans, and subject to the conditions, described in the respective reports or decision documents designated in this section: (1) Navigation.-- ------------------------------------------------------------------------ C. Date of Report of A. State B. Name Chief of D. Estimated Costs Engineers ------------------------------------------------------------------------ 1. MS Gulfport Harbor, June 23, 2026 Federal: $411,114,000 Gulfport, Deep Non-Federal: $137,102,000 Draft Navigation Total: $548,216,000 ------------------------------------------------------------------------ 2. WA & Columbia River September 26, Federal: $16,408,000 OR Turning Basins 2025 Non-Federal: $5,489,000 Navigation Total: $21,897,000 Improvements ------------------------------------------------------------------------ (2) Flood risk management.-- ------------------------------------------------------------------------ C. Date of Report of A. State B. Name Chief of D. Estimated Costs Engineers ------------------------------------------------------------------------ 1. KY Kentucky River, March 24, Federal: $7,979,000 Beattyville Flood 2026 Non-Federal: $4,562,000 Risk Management Total: $12,541,000 Project, Lee County ------------------------------------------------------------------------ 2. NY, New York-New July 6, 2026 Federal: $180,916,000 NJ Jersey Harbor and Non-Federal: $97,417,000 Tributaries Total: $278,333,000 Study, East Riser, New Jersey Actionable Element ------------------------------------------------------------------------ (3) Ecosystem restoration.-- ------------------------------------------------------------------------ C. Date of Report of A. State B. Name Chief of D. Estimated Costs Engineers ------------------------------------------------------------------------ 1. MO Lower Osage River July 6, 2026 Federal: $95,334,000 Basin, Miller, Non-Federal: $51,333,000 Osage, and Cole Total: $146,667,000 Counties, Aquatic Ecosystem Restoration ------------------------------------------------------------------------ 2. WY Little Goose June 4, 2026 Federal: $45,333,000 Creek, Sheridan Non-Federal: $35,601,000 Total: $80,934,000 ------------------------------------------------------------------------ (4) Hurricane and storm damage risk reduction.-- ------------------------------------------------------------------------ C. Date of Report of A. State B. Name Chief of D. Estimated Costs Engineers ------------------------------------------------------------------------ 1. NC Surf City, Onslow July 15, 2025 Initial Federal: and Pender $121,750,000 Counties, North Initial Non-Federal: Carolina, Coastal $76,863,000 Storm Risk Total: $198,613,000 Management Renourishment Federal: $171,007,000 Renourishment Non-Federal: $191,297,000 Renourishment Total: $362,304,000 ------------------------------------------------------------------------ (5) Modifications and other projects.-- ------------------------------------------------------------------------ C. Date of A. State B. Name Decision D. Estimated Costs Document ------------------------------------------------------------------------ 1. AZ Rio de Flag, June 12, 2026 ........................... Flagstaff ........................... Total: $244,633,000 ------------------------------------------------------------------------ 2. CA Port of Long Beach June 11, 2026 ........................... Deep Draft ........................... Navigation Total: $255,811,000 project, Los Angeles County ------------------------------------------------------------------------ 3. FL Central and October 14, Federal: $477,280,500 Southern Florida, 2025 Non-Federal: $477,280,500 Canal 111 (C-111) Total: $954,561,000 South Dade Project ------------------------------------------------------------------------ 4. FL Comprehensive June 16, 2026 Federal: $6,160,809,000 Everglades Non-Federal: $6,160,809,000 Restoration Plan, Total: $12,321,618,000 Central Everglades Planning Project ------------------------------------------------------------------------ 5. KY Kentucky Lock June 11, 2026 Federal: $2,056,161,750 Addition, Lower Non-Federal: $685,387,250 Cumberland and Total: $2,741,549,000 Tennessee Rivers ------------------------------------------------------------------------ 6. MS Memphis March 10, Federal: $47,341,000 Metropolitan 2026 Non-Federal: $25,491,000 Stormwater - Total: $72,832,000 North DeSoto County Feasibility Study, DeSoto County ------------------------------------------------------------------------ 7. TN Chickamauga Lock June 11, 2026 Federal: $1,175,090,250 Replacement Non-Federal: $391,696,750 Project, Total: $1,566,787,000 Chickamauga Lake, Hamilton County ------------------------------------------------------------------------ ",
+      "passage_utf8_sha256": "617147daae55b5efea87607f94ce0b210ec158f59f5aeaf5d48ef9a8b7b02688"
+    },
+    {
+      "label": "RECORD401",
+      "parent": "record_text",
+      "start": 519233,
+      "end": 522929,
+      "passage": "SEC. 401. PROJECT AUTHORIZATIONS. \nThe following projects for water resources \ndevelopment and conservation and other pur-\nposes, as identified in the reports titled ‘‘Re-\nport to Congress on Future Water Resources \nDevelopment’’ submitted to Congress pursu-\nant to section 7001 of the Water Resources \nReform and Development Act of 2014 (33 \nU.S.C. 2282d) or otherwise reviewed by Con-\ngress, are authorized to be carried out by the \nSecretary substantially in accordance with \nthe plans, and subject to the conditions, de-\nscribed in the respective reports or decision \ndocuments designated in this section: \n(1) N\nAVIGATION.— \nA. State B. \nName \nC. \nDate of \nReport of \nChief of Engi-\nneers \nD. \nEstimated \nCosts \n1. MS Gulfport Harbor, Gulfport, Deep \nDraft Navigation \nJune 23, 2026 Federal: $411,114,000 \nNon-Federal: $137,102,000 \nTotal: $548,216,000 \n2. WA & OR Columbia River Turning Basins \nNavigation Improvements \nSeptember 26, 2025 Federal: $16,408,000 \nNon-Federal: $5,489,000 \nTotal: $21,897,000 \n(2) FLOOD RISK MANAGEMENT.— \nA. State B. \nName \nC. \nDate of \nReport of \nChief of Engi-\nneers \nD. \nEstimated \nCosts \n1. KY Kentucky River, Beattyville Flood \nRisk Management Project, Lee \nCounty \nMarch 24, 2026 Federal: $7,979,000 \nNon-Federal: $4,562,000 \nTotal: $12,541,000 \n2. NY, NJ New York–New Jersey Harbor and \nTributaries Study, East Riser, \nNew Jersey Actionable Element \nJuly 6, 2026 Federal: $180,916,000 \nNon-Federal: $97,417,000 \nTotal: $278,333,000 \n(3) ECOSYSTEM RESTORATION.— \nA. State B. \nName \nC. \nDate of \nReport of \nChief of Engi-\nneers \nD. \nEstimated \nCosts \n1. MO Lower Osage River Basin, Miller, \nOsage, and Cole Counties, Aquat-\nic Ecosystem Restoration \nJuly 6, 2026 Federal: $95,334,000 \nNon-Federal: $51,333,000 \nTotal: $146,667,000 \n2. WY Little Goose Creek, Sheridan June 4, 2026 Federal: $45,333,000 \nNon-Federal: $35,601,000 \nTotal: $80,934,000 \n(4) HURRICANE AND STORM DAMAGE RISK RE -\nDUCTION.— \nVerDate Sep 11 2014 07:01 Sep 22, 2026 Jkt 069060 PO 00000 Frm 00052 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\A16SE7.005 H16SEPT1dmwilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSE H5887 September 16, 2026 \nA. State B. \nName \nC. \nDate of \nReport of \nChief of \nEngineers \nD. \nEstimated \nCosts \n1. NC Surf City, Onslow and Pender \nCounties, North Carolina, Coast-\nal Storm Risk Management \nJuly 15, 2025 Initial Federal: $121,750,000 \nInitial Non-Federal: $76,863,000 \nTotal: $198,613,000 \nRenourishment Federal: $171,007,000 \nRenourishment Non-Federal: $191,297,000 \nRenourishment Total: $362,304,000 \n(5) MODIFICATIONS AND OTHER PROJECTS .— \nA. State B. \nName \nC. \nDate of \nDecision \nDocument \nD. \nEstimated \nCosts \n1. AZ Rio de Flag, Flagstaff June 12, 2026 \nTotal: $244,633,000 \n2. CA Port of Long Beach Deep Draft \nNavigation project, Los Angeles \nCounty \nJune 11, 2026 \nTotal: $255,811,000 \n3. FL Central and Southern Florida, \nCanal 111 (C-111) South Dade \nProject \nOctober 14, 2025 Federal: $477,280,500 \nNon-Federal: $477,280,500 \nTotal: $954,561,000 \n4. FL Comprehensive Everglades Res-\ntoration Plan, Central Ever-\nglades Planning Project \nJune 16, 2026 Federal: $6,160,809,000 \nNon-Federal: $6,160,809,000 \nTotal: $12,321,618,000 \n5. KY Kentucky Lock Addition, Lower \nCumberland and Tennessee Riv-\ners \nJune 11, 2026 Federal: $2,056,161,750 \nNon-Federal: $685,387,250 \nTotal: $2,741,549,000 \n6. MS Memphis Metropolitan Stormwater \n– North DeSoto County Feasi-\nbility Study, DeSoto County \nMarch 10, 2026 Federal: $47,341,000 \nNon-Federal: $25,491,000 \nTotal: $72,832,000 \n7. TN Chickamauga Lock Replacement \nProject, Chickamauga Lake, \nHamilton County \nJune 11, 2026 Federal: $1,175,090,250 \nNon-Federal: $391,696,750 \nTotal: $1,566,787,000 \n",
+      "passage_utf8_sha256": "6d1db87c263d63512f4a9acb801ff0626b804353c9575f1911148fcddf3aa091"
+    }
+  ],
+  "packet_ready_utc": "2026-10-15T03:35:19.854156+00:00",
+  "focused_window_start_utc": "2026-10-15T03:26:47.094203+00:00",
+  "limits": "Neither source was edited. No candidate source-bank registration. Whole legislative meaning, material reports/baselines, domain judgment and independent writer validation remain pending."
+}

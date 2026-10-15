@@ -1,0 +1,114 @@
+{
+  "scope": "Failed/incomplete diagnostic preserved, NOT governing evidence or a table-total finding",
+  "matched_row_start_spans": 989,
+  "recipe": "Diagnostic only: one comma-grouped integer per literal row span; internal whitespace in that integer removed for arithmetic; no rewrite to raw source, no policy or recipient eligibility inference; ambiguous or missing currency rows retained unresolved.",
+  "unknown_account_rows": [],
+  "ambiguous_currency_rows": [
+    {
+      "pdf_page": 252,
+      "start": 4992,
+      "currency_candidates": [],
+      "prefix": "HHS Health Resources and Services Administration Community Dental, ME, for facilities and equipment to expand dental services 2 ,334,000 King S \n"
+    },
+    {
+      "pdf_page": 252,
+      "start": 6203,
+      "currency_candidates": [],
+      "prefix": "HHS Health Resources and Services Administration Conway Medical Center, SC, for acquisition of Emergency Department equipment 1 ,410,000 Graham S \n"
+    },
+    {
+      "pdf_page": 254,
+      "start": 779,
+      "currency_candidates": [],
+      "prefix": "HHS Health Resources and Services Administration Grant County Courthouse, WV, for equipment for purchase of new ambulance 310,0 00 Capito, \nJustice \nS \n"
+    },
+    {
+      "pdf_page": 254,
+      "start": 1891,
+      "currency_candidates": [],
+      "prefix": "HHS Health Resources and Services Administration Hale Makua Health Services, HI, for equipment to replace patient beds 1,850,00 0 Hirono, Schatz S \n"
+    },
+    {
+      "pdf_page": 254,
+      "start": 4845,
+      "currency_candidates": [],
+      "prefix": "HHS Health Resources and Services Administration Illinois Eye Institute, IL, for equipment to improve optometry services 750,00 0 Duckworth S \n"
+    },
+    {
+      "pdf_page": 254,
+      "start": 6249,
+      "currency_candidates": [],
+      "prefix": "HHS Health Resources and Services Administration Ketchikan Gateway Borough, AK, for equipment for purchase of new ambulance 347 ,000 Murkowski S \n"
+    },
+    {
+      "pdf_page": 263,
+      "start": 6659,
+      "currency_candidates": [],
+      "prefix": "HHS Administration for Children and Families So What Else, Inc., MD, for a hunger relief program for at-risk individuals 750,00 0 Alsobrooks, \nVan Hollen \nS \n"
+    },
+    {
+      "pdf_page": 264,
+      "start": 2367,
+      "currency_candidates": [],
+      "prefix": "HHS Administration for Children and Families Westbay Community Action, RI, to support low income families, including food 100,0 00 Reed, \nWhitehouse \nS \n"
+    },
+    {
+      "pdf_page": 268,
+      "start": 1151,
+      "currency_candidates": [],
+      "prefix": "ED Innovation and Improvement Rhode Island Marine Trade Association, RI, for workforce training for high school students 480,00 0 Whitehouse S \n"
+    }
+  ],
+  "account_diagnostics": [
+    {
+      "branch": "P1",
+      "matched_row_starts": 108,
+      "diagnostic_total": 95301000,
+      "unresolved_amount_rows": 0
+    },
+    {
+      "branch": "P2",
+      "matched_row_starts": 386,
+      "diagnostic_total": 830224000,
+      "unresolved_amount_rows": 6
+    },
+    {
+      "branch": "P3",
+      "matched_row_starts": 79,
+      "diagnostic_total": 54311000,
+      "unresolved_amount_rows": 0
+    },
+    {
+      "branch": "P4",
+      "matched_row_starts": 63,
+      "diagnostic_total": 38851000,
+      "unresolved_amount_rows": 2
+    },
+    {
+      "branch": "P5",
+      "matched_row_starts": 36,
+      "diagnostic_total": 12148000,
+      "unresolved_amount_rows": 0
+    },
+    {
+      "branch": "P6",
+      "matched_row_starts": 156,
+      "diagnostic_total": 99667000,
+      "unresolved_amount_rows": 1
+    },
+    {
+      "branch": "P7",
+      "matched_row_starts": 161,
+      "diagnostic_total": 224377000,
+      "unresolved_amount_rows": 0
+    }
+  ],
+  "not_reconciled_to_prior_IH_branch_amounts": [
+    "P1",
+    "P2",
+    "P4",
+    "P5"
+  ],
+  "no_legal_or_source_conflict_inferred": true,
+  "no_source_text_normalized_or_repaired": true
+}

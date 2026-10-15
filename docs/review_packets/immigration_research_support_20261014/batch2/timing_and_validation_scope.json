@@ -1,0 +1,32 @@
+{
+  "first_tool_utc": "2026-10-15T03:22:32+00:00",
+  "documentation_cutoff_utc": "2026-10-15T03:39:06.750003+00:00",
+  "total_elapsed_seconds_to_cutoff": 994.750003,
+  "windows": {
+    "207_literal_map_start": "2026-10-15T03:31:20+00:00",
+    "207_source_map_and_draft_ready": "2026-10-15T03:35:19.728150+00:00",
+    "207_window_seconds": 239.72815,
+    "313_version_research_start": "2026-10-15T03:26:47.094203+00:00",
+    "313_evidence_ready": "2026-10-15T03:35:19.854156+00:00",
+    "313_packet_documentation_ready": "2026-10-15T03:39:06.750003+00:00",
+    "313_inclusive_window_seconds": 739.6558
+  },
+  "time_limits": "Overlapping research/drafting/assembly windows, not exclusive CPU or routine throughput; shared selection, old-packet review, inspection failures, verification and delivery remain gross time.349/218 exclusive research time not separately measurable.",
+  "fresh_raw_acquisition_seconds": {
+    "EH": 0.4821890000021085,
+    "Record": 0.585324399988167
+  },
+  "reused_existing_actions": [
+    "house:119:1:349",
+    "house:119:2:218"
+  ],
+  "new_research_packets": [
+    "house:119:2:207",
+    "house:119:2:313"
+  ],
+  "candidate_count_delta": 0,
+  "candidate_mutation": false,
+  "full_candidate_suite_run": false,
+  "model_or_speed_settings_changed": false,
+  "limits": "Documentation cutoff precedes exact-head verification/push/handoff. Final delivery wall time is recorded in the PR and local receipt; no unmeasured gaps labeled model latency or idle time."
+}

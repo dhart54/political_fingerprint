@@ -1,0 +1,60 @@
+{
+  "basis": "Final staged Git blob bytes; authoritative at exact delivered HEAD. Receipt excludes itself.",
+  "previous_documentation_head": "8c4a7288c9f1158b337a48229ad4f1557e89efb2",
+  "base_main": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+  "candidate_source_snapshot": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+  "files": {
+    "README.md": {
+      "git_blob_oid": "b073c4bf55efa604fe818342ee95debac0d9f4c2",
+      "sha256": "dde6e8bde126339a265b43d0b6045a0edc0b7b47168487582f2e15f34989667b",
+      "bytes": 5846
+    },
+    "roll_1_199.md": {
+      "git_blob_oid": "065a7529eef62a2de5871e609a75cf5e50754232",
+      "sha256": "ebd2bd492b21b6d1a582fd57246329fc89f81a1bc271f7f28060f065bf5a9f67",
+      "bytes": 5462
+    },
+    "roll_1_199_sources.json": {
+      "git_blob_oid": "8e191e2f18987e3ca86224743f29bed6a57cb943",
+      "sha256": "074e476fc873ba1840ac20a34c2b821addff12b9f16bb74b0759bca447aa8237",
+      "bytes": 25640
+    },
+    "roll_1_200.md": {
+      "git_blob_oid": "1c53fe31d9be5a77c6ee694d2b3268332c701be7",
+      "sha256": "082f399a9119a8e5c9dce72aa570e042f9cdf20d277a20bfa1fb934fc6ce28f3",
+      "bytes": 7225
+    },
+    "roll_1_200_sources.json": {
+      "git_blob_oid": "6052bdcd7ec127ec048802075bae6a9f0699f867",
+      "sha256": "ccd550b8f24c968d1333fea9755644e43ff8fbb94bfd0487196b1a4b180f5619",
+      "bytes": 36671
+    },
+    "roll_2_44.md": {
+      "git_blob_oid": "0e07e6cf6ccb07786c7eb2bf576b15f0313bf186",
+      "sha256": "062c89ad7adc08ee0986873bbfe8488a5f9948c4542a551d5accadccf419ada1",
+      "bytes": 6398
+    },
+    "roll_2_44_sources.json": {
+      "git_blob_oid": "a8332614c4bda77068b3945e2ae388dc62247e75",
+      "sha256": "456b75649d7f948d9bb1229474d41622edd44a3f36f22d6b84ed599e33143c4b",
+      "bytes": 35559
+    },
+    "timing_and_scope.json": {
+      "git_blob_oid": "ca9f944bfb465dc5027307fed9e7e154db740cf3",
+      "sha256": "08b7281f7df87b9f473a11a1a29e4d673059ae486f0174a54f3cfd63d6db8ad9",
+      "bytes": 3638
+    }
+  },
+  "staged_validation": {
+    "basis": "index",
+    "new_document_blobs": 8,
+    "source_identities": 18,
+    "passages": 32,
+    "links": 13,
+    "seconds": 0.7510959000210278
+  },
+  "required_exact_head_validation": "python -X utf8 .local/verify_batch3.py HEAD; git diff --check; check remote exact head and CI once after push",
+  "prior_artifact_preservation": "No paths outside batch3 added/modified/deleted against previous documentation HEAD; tree/diff metadata checked. No restricted prior binary content read.",
+  "candidate_validation": "Not run; no candidate/runtime/source-bank changes",
+  "independent_review_status": "New batch3 not independently reviewed at delivery. Prior batch2 text review and six-binary cancellation limits unchanged."
+}
