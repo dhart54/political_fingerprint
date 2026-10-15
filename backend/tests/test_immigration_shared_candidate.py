@@ -5725,6 +5725,69 @@ class Checkpoint239PersonnelBenefitsAndSupportTests(unittest.TestCase):
             self.assertEqual(source['governed_bytes_sha256'], sealed_digest(source, 'governed_bytes_sha256'))
 
 
+class Checkpoint242PetEvacuationScopeTests(unittest.TestCase):
+    def test_entire_registration_section_and_independent_cloud_about_operator_remain_literal(self):
+        r = json.loads((DATA / 'pet_scope_qualification_checkpoint242.json').read_text())
+        act = next(a for a in json.loads((DATA / 'authoring.json').read_text())['actions'] if a['action_id'] == 'house:119:1:262')
+        scope = r['registration_whole_section_scope_correction']
+        self.assertIn(scope['current_phrase'], act['meaning'])
+        self.assertNotIn('replaces50USC3802(a)', act['meaning'])
+        primary = r['registration_rulemaking_correction']['bound_primary_claim']['passage']
+        self.assertIn('striking section 3 (50 U.S.C. 3802)', primary)
+        cloud = r['cloud_about_operator_correction']
+        self.assertIn('receive information about, or directly access or indirectly access', cloud['bound_primary_claim']['passage'])
+        self.assertIn('means to obtain, receive, collect, or derive information from', cloud['bound_primary_claim']['passage'])
+        self.assertIn(cloud['current_phrase'], act['meaning'])
+        self.assertIn('Receiving information ABOUT is a distinct operator', act['meaning'])
+        self.assertNotIn(cloud['prior_phrase'], act['meaning'])
+        self.assertEqual(r['independent241review']['id'], 6203001716)
+        self.assertEqual(r['independent241review']['reviewed_head'], 'defebb9e8799a77ac94f0cd06f7739a2108d23d8')
+        self.assertTrue(cloud['about_independent_operator_distinct_from_from_in_indirect_definition'])
+
+    def test_registration_regulatory_items_are_discretionary_without_invented_Director_duty(self):
+        r = json.loads((DATA / 'pet_scope_qualification_checkpoint242.json').read_text())
+        act = next(a for a in json.loads((DATA / 'authoring.json').read_text())['actions'] if a['action_id'] == 'house:119:1:262')
+        point = r['registration_rulemaking_correction']
+        self.assertNotIn('The Director shall prescribe rules', act['meaning'])
+        self.assertIn(point['current_phrase'], act['meaning'])
+        self.assertIn('Regulations prescribed pursuant to this section (a) may require', point['bound_primary_claim']['passage'])
+        self.assertIn('The President is authorized to undertake the following: (1) To prescribe the necessary rules and regulations', point['dated_baseline_full_claim']['passage'])
+        self.assertIn('actual delegations and implementation are not resolved here', act['meaning'])
+        self.assertTrue(point['printed_this_section_a_retained'])
+        self.assertTrue(point['actual_delegation_current_law_or_implementation_unresolved'])
+        self.assertEqual(r['quality_corrections_completed'], 3)
+
+    def test_authorized_objects_are_pets_of_citizens_already_evacuated_and_contract_dogs(self):
+        from backend.app.semantic_ir.shared_corpus import sealed_digest
+        a = json.loads((DATA / 'authoring.json').read_text())
+        act = next(a for a in a['actions'] if a['action_id'] == 'house:119:1:262')
+        r = json.loads((DATA / 'pet_scope_qualification_checkpoint242.json').read_text())
+        self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
+        self.assertEqual(r['base_head'], 'defebb9e8799a77ac94f0cd06f7739a2108d23d8')
+        self.assertEqual(act['meaning'].count(r['replacement_exact_phrase']), 1)
+        self.assertNotIn(r['replaced_exact_phrase'], act['meaning'])
+        source = r['bound_source_claim']['passage']
+        self.assertIn('the family pets of citizens of the United States who are evacuated by the Department', source)
+        self.assertIn('contract working dogs located in such country', source)
+        self.assertIn('reduction in the number of individuals who would otherwise be evacuated', source)
+        self.assertIn('not responsible for providing veterinary care', source)
+        self.assertIn('does not itself add authority for nonprofit entities to evacuate citizens or their family members', act['meaning'])
+        self.assertEqual(act['claim_source_map'], r['prior_authoring']['claim_source_map'])
+        self.assertEqual(act['meaning'][:4499], r['prior_authoring']['meaning'][:4499])
+        self.assertEqual(act['choice_meanings'], r['prior_authoring']['choice_meanings'])
+        current = json.loads((DATA.parent / 'house_119_pet_scope_qualification_checkpoint242/shared_action_core_proposal.json').read_text())['actions'][0]
+        self.assertEqual(current['action_core_sha256'], r['current_core_sha256'])
+        self.assertEqual(current['candidate_exact_action_meaning'], act['meaning'])
+        prior = json.loads((DATA.parent / 'house_119_defense_qualification_checkpoint241/shared_action_core_proposal.json').read_text())['actions'][0]
+        self.assertEqual(prior, r['prior_core'])
+        self.assertEqual(r['new_source_bank_manifest_private_pool_records'], 0)
+        self.assertEqual(r['screening_actions_completed'], 0)
+        self.assertEqual(r['quality_corrections_completed'], 3)
+        self.assertTrue(r['independent_source_domain_review_pending'])
+        self.assertFalse(r['editorial_acceptance'])
+        self.assertFalse(r['publication_authorized'])
+
+
 class Checkpoint241WholeSeptemberDefenseTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
