@@ -1,0 +1,89 @@
+{
+  "first_tool_utc": "2026-10-15T13:56:51+00:00",
+  "packet_ready_utc": "2026-10-15T14:06:55.513975+00:00",
+  "gross_elapsed_seconds": 604.513975,
+  "one_action_window": "Inclusive selection/reconciliation, claim, search, source acquisition, mechanical locators, diagnostic failure, bounded visual checks and packet preparation; delivery/validation follow",
+  "action_id": "house:119:2:44",
+  "observed_command_seconds": {
+    "initial_ownership_and_review_read": 2.3029674,
+    "claim": 1.1611976,
+    "record_capture_command": 5.8968747,
+    "capture_http": 5.667744700040203,
+    "sample": 0.3015473,
+    "locate": 0.7866519,
+    "page_read": 0.2337571,
+    "table_extract": 0.601652,
+    "account_probe": 0.1886297,
+    "diagnostic_map": 0.0676426,
+    "render_command": 8.3487979,
+    "first_build_failed": 0.5503098,
+    "corrected_build": 1.0667327,
+    "boundary_claim_head_recheck": 1.9414461,
+    "staged_verify_command": 2.1300238
+  },
+  "render_times": [
+    {
+      "pdf_page": 238,
+      "seconds": 1.8013928000000305,
+      "bytes": 2028203
+    },
+    {
+      "pdf_page": 247,
+      "seconds": 1.1740895000402816,
+      "bytes": 1510299
+    },
+    {
+      "pdf_page": 250,
+      "seconds": 0.7257469000178389,
+      "bytes": 778542
+    },
+    {
+      "pdf_page": 260,
+      "seconds": 0.8184521999792196,
+      "bytes": 750148
+    },
+    {
+      "pdf_page": 262,
+      "seconds": 0.6850905999890529,
+      "bytes": 724550
+    },
+    {
+      "pdf_page": 264,
+      "seconds": 0.8041026000282727,
+      "bytes": 724685
+    },
+    {
+      "pdf_page": 265,
+      "seconds": 0.7775180999888107,
+      "bytes": 688212
+    },
+    {
+      "pdf_page": 269,
+      "seconds": 0.8104871999821626,
+      "bytes": 713505
+    },
+    {
+      "pdf_page": 273,
+      "seconds": 0.25786740001058206,
+      "bytes": 129384
+    },
+    {
+      "pdf_page": 274,
+      "seconds": 0.42229980003321543,
+      "bytes": 153312
+    }
+  ],
+  "failed_or_limited_attempts": [
+    "Rulesbillpage webfetch403; route not retried or mirrored.",
+    "Congressdaily-index page inaccessible through web tool; not retried.",
+    "GPORecord23,075,400bytes exceeded webtool content-length limit; one native direct primary fetch succeeded. This was a transport size limit, not a denied source route.",
+    "Two initial metadata/source listings truncated; narrowed later output, no whole-read claim.",
+    "Native row-currency diagnostic left nine unresolved parses and account sums unreconciled; not corrected or promoted.",
+    "First packet build expected contiguous JOB CORPS but the literal extraction is J/newline/OB CORPS; failed before final packet delivery. Locator corrected to literal split heading; source text unchanged."
+  ],
+  "resource_conditions": "Writer public progress reported full233gate running at start. No heavy profile, candidate suite, monitor or competing writer. Native extraction under1s per command;10page sequential rendering8.35s. Existing disk/Git cache reused; no cold-cache comparison.",
+  "settings": "Native settings unchanged; prior verified local modelgpt-6.1-sol/efforthigh/tierdefault. Effective request overrides unexposed.",
+  "prior_denied_cancelled_operations": "Unchanged; no restricted six-binary replay, Health prototype operation or denied HRSA/PIH/Clerk228/KIDS/UN245 source acquisition.",
+  "residual_time": "Retained in gross elapsed; not model latency or idle time",
+  "runtime_or_candidate_changes": false
+}
