@@ -5725,6 +5725,113 @@ class Checkpoint239PersonnelBenefitsAndSupportTests(unittest.TestCase):
             self.assertEqual(source['governed_bytes_sha256'], sealed_digest(source, 'governed_bytes_sha256'))
 
 
+class Checkpoint241WholeSeptemberDefenseTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.a, cls.s, cls.u, cls.m = [json.loads((DATA / (n + '.json')).read_text(encoding='utf-8'))
+                                     for n in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
+        cls.bank = {s['source_id']: s for s in cls.s['sources']}
+        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:1:262')
+        cls.receipt = json.loads((DATA / 'defense_qualification_checkpoint241.json').read_text())
+        cls.provider_path = DATA.parent / 'house_119_defense_qualification_checkpoint241/shared_action_core_proposal.json'
+        cls.provider = json.loads(cls.provider_path.read_text())
+        cls.core = cls.provider['actions'][0]
+
+    def test_qualified_provider_preserves_original_health_meaning_bindings_and_identity(self):
+        original = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text())
+        old = next(c for c in original['actions'] if c['action_id'] == self.action['action_id'])
+        self.assertEqual(old['action_core_sha256'], '9edcbd4dbbd31c9ce44192e52d91876977020868ee60af45b6708c2d3190c8d6')
+        self.assertEqual(len(old['candidate_exact_action_meaning']), 4499)
+        self.assertTrue(self.action['meaning'].startswith(old['candidate_exact_action_meaning'] + '\n\n'))
+        self.assertEqual(self.core['exact_action_identity'], old['exact_action_identity'])
+        self.assertEqual(self.core['action_meaning_ref'], old['action_meaning_ref'])
+        self.assertEqual(self.core['claim_source_map'][:7], old['claim_source_map'])
+        for witness in old['governed_source_identities']:
+            self.assertIn(witness, self.core['governed_source_identities'])
+        self.assertEqual(self.core['action_core_sha256'], sealed_digest(self.core, 'action_core_sha256'))
+        self.assertEqual(self.receipt['receipt_sha256'], sealed_digest(self.receipt, 'receipt_sha256'))
+        self.assertFalse(self.receipt['editorial_acceptance'])
+        self.assertFalse(self.receipt['publication_authorized'])
+
+    def test_whole_EH_and_material_extents_have_exact_source_bindings(self):
+        source = self.bank['govinfo:hr3838eh-immigration-complete']
+        self.assertEqual(len(source['text']), 2080487)
+        self.assertEqual(source['raw_sha256'], '7a5d6407fda4ddbe271ce5679a4fc8e8d7a6c0392f03802b6c33eb7accfe6658')
+        self.assertEqual(source['governed_bytes_sha256'], 'a98dbc36ed7af95ed618a3e2a0dac3d30f3df1fbfe9b7444d050cc9301dfe349')
+        self.assertEqual(len(self.action['claim_source_map']), 64)
+        for c in self.action['claim_source_map']:
+            self.assertIn(c['passage'], self.bank[c['source_id']]['text'])
+        research = self.receipt['material_reading']
+        self.assertTrue(research['whole_new_source_read'])
+        cursor = 0
+        for row in research['actual_read_intervals']:
+            self.assertEqual(row['start'], cursor)
+            cursor = row['end']
+        self.assertEqual(cursor, len(source['text']))
+        for row in self.receipt['private_authoring']['material_EH_section_extents']:
+            expected = source['text'][row['start']:row['end']]
+            self.assertTrue(expected.startswith('SEC. ' + row['section'] + '. '))
+            self.assertIn(expected, [c['passage'] for c in self.action['claim_source_map']])
+
+    def test_passage_is_not_recommittal_and_member_observations_stay_whole_choices(self):
+        floor = self.bank['congressional-record:3838-passage262-floor241']
+        self.assertEqual(floor['physical_pages_1based'], [60, 61])
+        self.assertEqual(floor['raw_document_pages'], 74)
+        text = floor['text']
+        self.assertLess(text.index('[Roll No. 261]'), text.index('motion to recommit was re-'))
+        self.assertLess(text.index('motion to recommit was re-'), text.index('[Roll No. 262]'))
+        self.assertIn('ayes 231, noes 196', text)
+        self.assertIn('So the bill was passed.', text)
+        self.assertEqual(self.core['legislative_stage'], 'final_passage')
+        episode = next(e for e in self.u['accounting']['episodes'] if e['episode_candidate_id'] == 'episode:hr3838:119')
+        self.assertEqual(set(episode['action_ids']), {'house:119:1:252', 'house:119:1:262'})
+        projections = json.loads((DATA / 'generated/member_projections.json').read_text())
+        for member in projections:
+            self.assertEqual(next(a for a in member['actions'] if a['action_id'] == self.action['action_id'])['official_status'], 'Nay')
+        for name in ['Foushee', 'Massie', 'F000477', 'M001184']:
+            self.assertNotIn(name, self.action['meaning'])
+
+    def test_dated_baselines_do_not_silently_repair_registration_cloud_or_property_operands(self):
+        meaning = self.action['meaning']
+        for phrase in ['Registration is distinct from induction', 'not an unconditional command',
+                       'does not match the dated2024Code note', '2027', 'literal', '4872(d)', 'renumbered to(f)',
+                       'not an exclusion of every noncitizen', 'not a blanket PRC-person employment ban',
+                       'not itself an immediately effective blanket visa ban', 'individual legal applications remain unresolved']:
+            self.assertIn(phrase, meaning)
+        definitions = self.bank['govinfo:15usc4651-2024-complete']['text']
+        self.assertIn('4872(d)', definitions)
+        self.assertIn('qualifying country', self.bank['govinfo:48cfr225.003-2024-material241']['text'].lower())
+        self.assertTrue(self.receipt['legal_questions_preserved'])
+        self.assertTrue(self.receipt['independent_source_domain_review_pending'])
+
+    def test_corrupted_operands_are_rejected_by_real_preparation(self):
+        from scripts import prepare_shared_domain_candidate as common
+        for section, before, after in [('534', 'as a nonimmigrant', 'as an immigrant'),
+                                       ('1616', 'citizen of a foreign country of concern', 'citizen of any foreign country')]:
+            altered = copy.deepcopy(self.a)
+            altered['actions'] = [copy.deepcopy(self.action)]
+            altered['blocked_episode_ids'] = []
+            altered['actions'][0].pop('shared_core_reuse')
+            altered['actions'][0].pop('candidate_core_qualification')
+            c = next(c for c in altered['actions'][0]['claim_source_map'] if c['locator'].startswith('Complete operative EHsection' + section + ';'))
+            c['passage'] = c['passage'].replace(before, after, 1)
+            with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+                common.prepare(altered, self.s, ['F000477', 'M001184'])
+
+    def test_locator_clarification_retains_original_amendment_and_conserves_other_fields(self):
+        loc = self.receipt['locator_clarification']
+        self.assertEqual(loc['review_comment'], 6201902277)
+        self.assertEqual(loc['reviewed_head'], '52d135b1a7f0b9f9521fa756079bcea5f68f781d')
+        current = next(a for a in self.a['actions'] if a['action_id'] == loc['action_id'])
+        old = loc['old_authoring']
+        self.assertEqual({k: v for k, v in old.items() if k != 'meaning'}, {k: v for k, v in current.items() if k != 'meaning'})
+        self.assertIn('amendment’s printed “page3line1” instruction', current['meaning'])
+        self.assertIn('numbered line2', current['meaning'])
+        self.assertIn('On page 3, line 1 after', self.bank['immigration:session2-roll44-initial174']['text'])
+        self.assertIn('and implementation of divisions A through D of this Act 2', self.bank['govinfo:hr7148ih-material-pages174']['text'])
+        self.assertFalse(loc['methodology_or_direction_change'])
+
+
 class Checkpoint240AppropriationExceptionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -5741,8 +5848,13 @@ class Checkpoint240AppropriationExceptionTests(unittest.TestCase):
         self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
         self.assertEqual(r['base_head'], '94f72fb4df505f829e14fc4f7047994cddeaf0c1')
         self.assertEqual(r['prior_pending_row']['disposition'], 'source_unresolved')
-        self.assertEqual(r['membership_record_sha256'], digest(self.record))
-        self.assertEqual(r['new_core_sha256'], self.core['action_core_sha256'])
+        current = json.loads((DATA / 'defense_qualification_checkpoint241.json').read_text())
+        self.assertEqual(current['receipt_sha256'], sealed_digest(current, 'receipt_sha256'))
+        locator = current['locator_clarification']
+        self.assertEqual(r['membership_record_sha256'], digest(locator['old_membership_record']))
+        self.assertEqual(r['new_core_sha256'], locator['old_core']['action_core_sha256'])
+        self.assertEqual(locator['new_membership_record_sha256'], digest(self.record))
+        self.assertEqual(locator['new_core_sha256'], self.core['action_core_sha256'])
         self.assertEqual(self.core['legislative_stage'], 'amendment')
         self.assertTrue(r['legal_questions_preserved'])
         self.assertTrue(r['independent_source_domain_review_pending'])

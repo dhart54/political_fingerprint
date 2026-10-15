@@ -3,7 +3,7 @@
   "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
   "domain_id": "IMMIGRATION_BORDER",
   "scope_boundaries": [
-    "84 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
+    "85 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -499,6 +499,20 @@
         "stage_order": 10252
       },
       "mapping_sha256": "c81129889a1861f32c18bacd06cc0163b494d8d3c72358a648276a0a5dc5c2b5"
+    },
+    {
+      "action_id": "house:119:1:262",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10262
+      },
+      "mapping_sha256": "687c5a604f4a5387cdc64818a978364d240fce9d81912d0d294fbb613fe453ca"
     },
     {
       "action_id": "house:119:1:264",
@@ -1435,7 +1449,8 @@
     {
       "episode_id": "episode:hr3838:119",
       "action_ids": [
-        "house:119:1:252"
+        "house:119:1:252",
+        "house:119:1:262"
       ],
       "method_boundary_types": [],
       "policy_family_id": null
@@ -2133,7 +2148,15 @@
       "constraint_id": "source:house119-roll44-qualified-incorporation-effect240",
       "semantic_effect": "bounds_cross_domain_attribution",
       "detail": "Exactallocation-effect exception plus explicitimmigrant-liaison project, with directappropriation/legal/fiscal interaction unresolved. No blanketrescission, automaticfundingloss, personalstatus or recipient-name inference. Nativeamounts versus separatevisualreadings and tableunits remain distinct."
+    },
+    {
+      "action_ids": [
+        "house:119:1:262"
+      ],
+      "constraint_id": "source:house119-roll262-qualified-whole-september241",
+      "semantic_effect": "bounds_cross_domain_attribution",
+      "detail": "WholeSeptemberstage with source-qualifiedcitizenship/registration/bordersupport/targetedcloud predicates and conservedHealth meaning; dated/printed/legal/application questions unresolved, no component stance or automaticHealthmembership."
     }
   ],
-  "mapping_sha256": "923f9b4ee042d6224511268da0c3126d66dcc9e32de0c0f7620d367c47a2f1f7"
+  "mapping_sha256": "1f17d674d63239de5cce0cdccf8fe2f7494dff95ef6043dd1f993581fc20e8c7"
 }

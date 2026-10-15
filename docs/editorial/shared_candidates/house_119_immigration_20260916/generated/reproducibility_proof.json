@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "055212eb696711b2ba9f2c96fd54e82d7442f627b30cfc813b1dd94fbde077ed",
-  "source_capture_sha256": "e39d8e3e031f1b59fd173177bbd6ec4153fd5787e57a59aa5b9290e35817878e",
-  "core_sha256": "e99ddbd7663c344905b7e0417b0b89c0f615cb96a0972579389968463036a481",
-  "compiled_sha256": "b3700bee84fdbfbd320f7653e7b1bf2cfa8b9f3d1386464ee47cc9755f8c9317",
-  "readable_sha256": "7a49cfab7c9a1857022e50e7689803259dd1412231c7d1bc7430aec8e68b0d9d",
+  "input_sha256": "ed7e6768fa03578dcde28d60c20d80b7996fce6d9aeaff8227242dc9a8aefc85",
+  "source_capture_sha256": "082e111ca712b2e7f444995e00cbf08e8fc86c84ab1ef411f682bb9cd8683123",
+  "core_sha256": "f5cefd34435f84b0994cd523f44910d2ba080142c7c443fd21fdff7be64ef385",
+  "compiled_sha256": "85980fe13e061eb790414edad21fd82f8c0ed980a26975a7f5a0992fa87ffb41",
+  "readable_sha256": "0a429565ed74f26ededdb3e453aa7077196b783c26e3a5b49fc6485c24d7aa79",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -718,6 +718,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:262",
+      "shared_sha256": "4076b977ffe4c3a634d4f6c2538e1e0dfe04feabcac2f0654975465cea4be0db",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact September package; no component stance, preferred alternative or motive inferred",
+          "source_id": "clerk:119:1:262"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact September package; no component stance, preferred alternative or motive inferred",
+          "source_id": "clerk:119:1:262"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:264",
       "shared_sha256": "61422deb67c15b97a683be55c252d3c2fb3dfacb8525119321e9f08e41b58db1",
       "choices": [
@@ -979,7 +999,7 @@
     },
     {
       "action_id": "house:119:2:44",
-      "shared_sha256": "190ab7c6b874104b3f670fdeb1bb2c5ea5fa0d3d3559f08a5e1bcc727a73d561",
+      "shared_sha256": "294fe2ebd47b00ab635ed7cfc788a14858cb17d20307a03c9d694feb58268000",
       "choices": [
         {
           "member_id": "F000477",
