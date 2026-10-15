@@ -1,0 +1,197 @@
+{
+  "checked_utc": "2026-10-15T03:42:28.153739+00:00",
+  "old_handoff_head": "a34980ea6e7d6ab99a5cbb3c7630d45e9d8acef6",
+  "corrected_head": "853b93cadff5be993b6fc3aab268d40c1f747d80",
+  "all_three_source_packets_byte_exact": true,
+  "other_Markdown_byte_exact": true,
+  "roll310link_only_correction": true,
+  "comment6183644993_handled": true,
+  "original_writer_validation": {
+    "support_PR": 230,
+    "exact_handoff_head": "a34980ea6e7d6ab99a5cbb3c7630d45e9d8acef6",
+    "PR_current_head_observed_separately": "853b93cadff5be993b6fc3aab268d40c1f747d80",
+    "candidate_snapshot": "78b4728cc732488a2e1a0e1a0ef8132e36bcc537",
+    "current_writer_head": "4565bc7eb91a23f5b3c164294b8aa9a7765cd54c",
+    "started_utc": "2026-10-15T03:24:00.772703+00:00",
+    "completed_utc": "2026-10-15T03:24:01.431492+00:00",
+    "verification_seconds": 0.6587888000067323,
+    "passages_verified": 53,
+    "source_identities_and_seals_verified": 24,
+    "Clerk_metadata_verified": 3,
+    "prior_research_hashes_verified": 3,
+    "all_cited_old_source_rows_exact_in_current_bank": true,
+    "packets": [
+      {
+        "action_id": "house:119:2:272",
+        "packet_ref": "docs/review_packets/immigration_research_support_20261014/roll_2_272_sources.json",
+        "packet_sha256": "e96df98204f7e99807e343358828c7f035f3ac29d4901b6c7a988662adaf9a1f",
+        "passages": 17,
+        "sources": 8,
+        "prior_research_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/june_july_screening_checkpoint197.json",
+        "prior_research_sha256": "bce0e5bf4488fef8235f3fa2e7750c1d9997079c9c63b1b0819826e291c7115a"
+      },
+      {
+        "action_id": "house:119:2:286",
+        "packet_ref": "docs/review_packets/immigration_research_support_20261014/roll_2_286_sources.json",
+        "packet_sha256": "74421d6389764de2c228a77289c4398d8aeb23b76ac3eff502fbd3a845dce559",
+        "passages": 15,
+        "sources": 6,
+        "prior_research_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/july_september_screening_checkpoint196.json",
+        "prior_research_sha256": "e11befe97cbd91ce196e67ac201faaae661f6ed27b20ae32f542c277d08f0796"
+      },
+      {
+        "action_id": "house:119:2:310",
+        "packet_ref": "docs/review_packets/immigration_research_support_20261014/roll_2_310_sources.json",
+        "packet_sha256": "83ce6c629aa134e7fbb51b5717ee9261a8ca2e6aa476f1c6fdc2f72b9b2ac360",
+        "passages": 21,
+        "sources": 10,
+        "prior_research_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/fraud_enforcement_screening_checkpoint192.json",
+        "prior_research_sha256": "79407107ace6140d083661fa4b34b66f0ad2f7eb978ab54dfa78773817f69319"
+      }
+    ],
+    "raw_remote_bytes_reacquired": false,
+    "whole_source_owner_rereads_claimed": false,
+    "source_support_consumed_for_bounded_research_only": true,
+    "candidate_disposition_or_credit_from_support": false,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "nonblocking_documentation_defect": "310Markdown link inserts a space before192; JSONprior_research_artifact is correct and verified. Receipt follows the correct immutable JSONpath; no packet facts depend on the broken link.",
+    "receipt_sha256": "6a75a74d3bd46b844cfee0b5068131895dcb1b0755bbc2b274de378ca91fba9d"
+  },
+  "corrected_timing_metadata": {
+    "snapshot": "78b4728cc732488a2e1a0e1a0ef8132e36bcc537",
+    "packets": 3,
+    "exact_passages_verified": 53,
+    "source_identities_and_governed_seals_verified": 24,
+    "clerk_metadata_verified": 3,
+    "prior_packet_hashes_verified": 3,
+    "prior_timing_artifact_hashes_unchanged": 30,
+    "no_candidate_runtime_or_workflow_change": true,
+    "raw_remote_bytes_reacquired": false,
+    "timings": {
+      "272": {
+        "started_utc": "2026-10-15T02:58:54+00:00",
+        "packet_ready_utc": "2026-10-15T03:01:20.369512+00:00",
+        "elapsed_research_drafting_seconds": 146.369512,
+        "scope": "Focused research/drafting window; prior discovery/claim, shared preparation and final delivery overhead retained in total task timing. Not exclusive CPU/research time."
+      },
+      "286": {
+        "started_utc": "2026-10-15T03:01:20+00:00",
+        "packet_ready_utc": "2026-10-15T03:02:38.742589+00:00",
+        "elapsed_research_drafting_seconds": 78.742589,
+        "scope": "Focused research/drafting window; prior discovery/claim, shared preparation and final delivery overhead retained in total task timing. Not exclusive CPU/research time.",
+        "supplemental_baseline_verification_utc": "2026-10-15T03:05:16.683292+00:00",
+        "supplemental_timing_note": "Two surrounding passport notes inspected during shared final verification; included in gross task elapsed, not claimed within the initial focused interval."
+      },
+      "310": {
+        "started_utc": "2026-10-15T03:02:38+00:00",
+        "packet_ready_utc": "2026-10-15T03:04:19.870556+00:00",
+        "elapsed_research_drafting_seconds": 101.870556,
+        "scope": "Focused research/drafting window; prior discovery/claim, shared preparation and final delivery overhead retained in total task timing. Not exclusive CPU/research time."
+      }
+    },
+    "first_tool_utc": "2026-10-15T02:56:29+00:00",
+    "documentation_ready_utc": "2026-10-15T03:07:55.034293+00:00",
+    "total_elapsed_seconds_to_documentation_ready": 686.034293,
+    "base_main": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+    "claim_url": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6183369423",
+    "writer_task": "01a13d6d-e460-72e2-8c82-df56a2374cbf",
+    "excluded_writer_claims": [
+      "house:119:2:308",
+      "house:119:2:283",
+      "house:119:2:292"
+    ],
+    "writer_public_acknowledgement_observed": true,
+    "settings": {
+      "user_selected": "Sol High",
+      "observed_config_file_model": "gpt-6.1-sol",
+      "observed_config_file_effort": "high",
+      "observed_config_file_service_tier": "default",
+      "effective_request_overrides_independently_verified": false,
+      "changed": false
+    },
+    "validation": {
+      "all_exact_passages_match": true,
+      "governed_seals_recomputed": true,
+      "relative_packet_links_resolve": true,
+      "git_diff_check": "passed",
+      "full_candidate_suite": "not run; documentation-only scope",
+      "candidate_source_regeneration": "not run",
+      "production_changes": false
+    },
+    "failed_attempts": [
+      {
+        "kind": "metadata inspection",
+        "cause": "null text_version in source-index expression",
+        "command_wall_seconds": 0.3558894,
+        "candidate_effects": false
+      },
+      {
+        "kind": "pinpoint packet assembly",
+        "cause": "literal Privacy Act subsection(l)(1) header differed from assumed(l) header",
+        "command_wall_seconds": 0.3934206,
+        "packet_written_before_failure": false,
+        "candidate_effects": false
+      }
+    ],
+    "time_limits": "Focused per-action windows include research/drafting, not exclusive CPU. Shared selection/source discovery, cross-packet supplement, validation, rework and GitHub delivery remain in gross total; final delivery follows this documentation cutoff.",
+    "historical_reported_packet_file_hashes": {
+      "README.md": "575e2b878484a3a5432a8633d2535c16d8bb6a26b2cc9924f7e8afe3c48bfeb5",
+      "roll_2_272.md": "3d5243ad95dcd418e8d00c8b8feaba48090b37ea928657d1531dbfaf6a895d4c",
+      "roll_2_272_sources.json": "0d2da49bb158d656b6cbabffbc1289c683b1f5b6b94c22340a5ee50960340964",
+      "roll_2_286.md": "16700e3253872690f9f73283ee462a2c93120c78a2ca8cf3e1e553b68a231085",
+      "roll_2_286_sources.json": "2a83ec1a97e9b06c081d9f2c6ef61f73a53260e137b546713d9b3a70e1351a93",
+      "roll_2_310.md": "b8feedbacc22854fdddf8f525042fcaa0630e8a9bc1e3e540dc8167319abc5a0",
+      "roll_2_310_sources.json": "345dd5daf65379e7a431b60151ee7d5ee8007b5f14f51e3956611b1b20a90669"
+    },
+    "historical_packet_file_hashes_limitations": {
+      "reported_at_head": "a34980ea6e7d6ab99a5cbb3c7630d45e9d8acef6",
+      "review_comment": "https://github.com/dhart54/political_fingerprint/pull/230#issuecomment-6183565048",
+      "status": "Historical reported values only; these did not certify the delivered Git blob bytes.",
+      "independent_review_observation": "Six matched CRLF worktree serialization; README matched neither delivered LF nor CRLF serialization. Preserve these values without relabeling the earlier checks as delivered-blob verification."
+    },
+    "delivered_packet_blobs": {
+      "README.md": {
+        "git_blob_oid": "8ec7d5a6f1196fe0c23a168d57fcedc61ec86e2a",
+        "sha256": "55a3b9b956a587cb49407741cd49c1006c6c4eb8c4de24fca559b9f97bd2a449",
+        "bytes": 7696
+      },
+      "roll_2_272.md": {
+        "git_blob_oid": "b9a8a2382f85c60f7f7aaa8da82db09657bcbb23",
+        "sha256": "4301c05f0064edb5392f1ce1b5fe3c9991676e91f396f242c17b8779cb5be10c",
+        "bytes": 6151
+      },
+      "roll_2_272_sources.json": {
+        "git_blob_oid": "25c4ed1f1b45d00ff8f5c8534fcdfb54212860cd",
+        "sha256": "e96df98204f7e99807e343358828c7f035f3ac29d4901b6c7a988662adaf9a1f",
+        "bytes": 39427
+      },
+      "roll_2_286.md": {
+        "git_blob_oid": "a14feb0419736ed3c4e02b1b5b06a5e470bf3cc9",
+        "sha256": "4ae62b1fff9df85be0e7c3ccb1228e04c25abcd68662586e130fa092d75735a1",
+        "bytes": 6889
+      },
+      "roll_2_286_sources.json": {
+        "git_blob_oid": "3b7531c41b11f55f0febdf2edcfffb394b0ea4fa",
+        "sha256": "74421d6389764de2c228a77289c4398d8aeb23b76ac3eff502fbd3a845dce559",
+        "bytes": 20105
+      },
+      "roll_2_310.md": {
+        "git_blob_oid": "3a5f92500b0c06e1c35984b2efd4cdb812eae5e8",
+        "sha256": "1092cbc65371789cdd79c9874d1b3e89a326f7ec5a718ae6d91e2a3830477e54",
+        "bytes": 7617
+      },
+      "roll_2_310_sources.json": {
+        "git_blob_oid": "f951041fb7c44688a2ad53810efeddaf3b858694",
+        "sha256": "83ce6c629aa134e7fbb51b5717ee9261a8ca2e6aa476f1c6fdc2f72b9b2ac360",
+        "bytes": 40975
+      }
+    },
+    "delivered_packet_blobs_basis": "Authoritative Git index blob contents after the final Markdown/link correction; these exact blobs are included in the correction commit. Verify against committed blobs at the delivered head. This receipt is excluded from its own map to avoid recursive hashing; historical source/timing limits remain unchanged."
+  },
+  "screening_credit": 0,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "92bba9a71193e0cdc631e71aaf2266e0df6a184c55f974510d296297ca4de249",
+  "corrected_delivered_blob_receipt_independently_verified": true
+}

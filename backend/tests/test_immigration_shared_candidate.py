@@ -413,7 +413,10 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertEqual(rows[item['action_id']]['review_progress']['shared_review_record_sha256'],
                                  digest(records[item['action_id']]))
                 core = next(c for c in self.products[0]['actions'] if c['action_id'] == item['action_id'])
-                self.assertEqual(core['action_core_sha256'], closure['new_core_sha256'])
+                correction = json.loads((DATA / 'concurrence_precision_checkpoint232.json').read_text())
+                self.assertEqual(correction['receipt_sha256'], sealed_digest(correction, 'receipt_sha256'))
+                self.assertEqual(correction['prior_core_sha256'], closure['new_core_sha256'])
+                self.assertEqual(core['action_core_sha256'], correction['new_core_sha256'])
                 continue
             self.assertNotIn(item['action_id'], records)
             self.assertEqual(rows[item['action_id']]['disposition'], 'source_unresolved')
@@ -4819,7 +4822,10 @@ class Checkpoint231ConcurrenceQualificationTests(unittest.TestCase):
     def test_candidate_receipt_and_reuse_binding_are_exact_without_acceptance(self):
         r = self.receipt
         self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
-        self.assertEqual(r['new_core_sha256'], self.core['action_core_sha256'])
+        correction = json.loads((DATA / 'concurrence_precision_checkpoint232.json').read_text())
+        self.assertEqual(correction['receipt_sha256'], sealed_digest(correction, 'receipt_sha256'))
+        self.assertEqual(r['new_core_sha256'], correction['prior_core_sha256'])
+        self.assertEqual(correction['new_core_sha256'], self.core['action_core_sha256'])
         self.assertEqual(self.act['shared_core_reuse']['action_core_sha256'], self.core['action_core_sha256'])
         self.assertTrue(r['candidate_screening_recorded'])
         self.assertTrue(r['independent231_source_domain_review_pending'])
@@ -4841,6 +4847,57 @@ class Checkpoint231ConcurrenceQualificationTests(unittest.TestCase):
         source = self.bank[imp['source_id']]
         self.assertEqual(imp['governed_bytes_sha256'], source['governed_bytes_sha256'])
         self.assertEqual(source['governed_bytes_sha256'], sealed_digest(source, 'governed_bytes_sha256'))
+
+
+class Checkpoint232SourceRelationshipAndScreeningTests(unittest.TestCase):
+    def test_energy_support_preserves_purpose_relationship_and_presidential_predicate(self):
+        a = json.loads((DATA / 'authoring.json').read_text())
+        act = next(x for x in a['actions'] if x['action_id'] == 'house:119:2:308')
+        r = json.loads((DATA / 'concurrence_precision_checkpoint232.json').read_text())
+        sources = json.loads((DATA / 'sources.json').read_text())['sources']
+        source = next(x for x in sources if x['source_id'] == r['source_point']['source_id'])
+        p = r['source_point']
+        self.assertEqual(source['text'][p['start']:p['end']], p['passage'])
+        self.assertIn('that the President determines knowingly', p['passage'])
+        self.assertIn('for use by any person subject to sanctions under section 102 or 103', p['passage'])
+        self.assertIn(r['new_phrase'], act['meaning'])
+        self.assertNotIn(r['old_phrase'], act['meaning'])
+        self.assertIn("without silently rewriting 102(e)'s own 'alien described in subsection (b)' text", act['meaning'])
+        cores = json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']
+        core = next(x for x in cores if x['action_id'] == act['action_id'])
+        self.assertIn(r['new_phrase'], core['candidate_exact_action_meaning'])
+        self.assertIn(r['new_phrase'], core['mechanism'])
+
+    def test_censure_is_functionally_screened_without_personal_findings_or_directional_core(self):
+        r = json.loads((DATA / 'censure_qualification_checkpoint232.json').read_text())
+        self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
+        review = json.loads((DATA / 'membership_review.json').read_text())
+        rec = next(x for x in review['records'] if x['action_id'] == r['action_id'])
+        self.assertEqual(digest(rec), r['membership_record_sha256'])
+        self.assertEqual(rec['disposition'], 'exact_action_ineligible')
+        self.assertIn('not completely owner-read', rec['rationale'])
+        self.assertIn('not adjudicated', rec['rationale'])
+        self.assertTrue(r['version_recommendation_comparison']['normalized_recommendation_equal'])
+        self.assertFalse(r['version_recommendation_comparison']['whole_committee_pdf_owner_read'])
+        cores = json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']
+        self.assertNotIn(r['action_id'], {x['action_id'] for x in cores})
+        self.assertFalse(r['editorial_acceptance'])
+        self.assertFalse(r['publication_authorized'])
+
+    def test_new_material_evidence_does_not_release_unresolved_legal_or_programme_holds(self):
+        r = json.loads((DATA / 'remaining_research_checkpoint232.json').read_text())
+        self.assertEqual(r['receipt_sha256'], sealed_digest(r, 'receipt_sha256'))
+        u = json.loads((DATA / 'universe_proposal.json').read_text())
+        for action in r['actions']:
+            row = next(x for x in u['candidate_dispositions'] if x['action_id'] == action['action_id'])
+            self.assertEqual(row['disposition'], 'source_unresolved')
+            self.assertIn(action['action_id'], u['unresolved_action_ids'])
+        bank = {x['source_id']: x for x in json.loads((DATA / 'sources.json').read_text())['sources']}
+        self.assertIn('Notwithstanding any other provision of law', bank['govinfo:42usc402y-2024-alien-nonpayment232']['text'])
+        self.assertIn('This section expires', bank['govinfo:6usc348-2024-complete232']['text'])
+        self.assertIn('after consultation with the Secretary of Labor', bank['govinfo:pl11975-divisionI5013-5016-232']['text'])
+        self.assertIn('may increase', bank['govinfo:pl11975-divisionI5013-5016-232']['text'])
+        self.assertEqual(r['new_screening_credit'], 0)
 
 
 if __name__ == '__main__':
