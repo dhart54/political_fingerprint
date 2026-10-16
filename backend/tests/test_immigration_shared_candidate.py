@@ -6042,7 +6042,9 @@ class Checkpoint243DecemberDefenseQualificationTests(unittest.TestCase):
         for limit in old['candidate_shared_limitations']:
             self.assertIn(limit, self.core['candidate_shared_limitations'])
         self.assertEqual(self.action['candidate_core_qualification']['action_core_sha256'], old['action_core_sha256'])
-        self.assertEqual(self.receipt['new_core_sha256'], self.core['action_core_sha256'])
+        historical = json.loads((DATA.parent / 'house_119_december_defense_qualification_checkpoint243/shared_action_core_proposal.json').read_text())
+        historical_core = next(c for c in historical['actions'] if c['action_id'] == self.action['action_id'])
+        self.assertEqual(self.receipt['new_core_sha256'], historical_core['action_core_sha256'])
 
     def test_whole_public_reading_is_contiguous_and_scope_limited(self):
         import hashlib
@@ -6119,6 +6121,100 @@ class Checkpoint243DecemberDefenseQualificationTests(unittest.TestCase):
                     'house:119:2:224', 'house:119:2:228', 'house:119:2:245',
                     'house:119:1:210', 'house:119:1:237', 'house:119:2:247', 'house:119:2:278']:
             self.assertIn(aid, self.u['unresolved_action_ids'])
+
+
+class Checkpoint244DecemberPredicateCorrectionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.a = json.loads((DATA / 'authoring.json').read_text(encoding='utf8'))
+        cls.s = json.loads((DATA / 'sources.json').read_text(encoding='utf8'))
+        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:1:320')
+        cls.q = json.loads((DATA / 'december_predicate_corrections_checkpoint244.json').read_text(encoding='utf8'))
+        cls.core = next(c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']
+                        if c['action_id'] == cls.action['action_id'])
+
+    def test_counterdrug_funding_extension_is_separate_from_guantanamo(self):
+        meaning = self.action['meaning']
+        self.assertIn('endpoint from fiscal2027 to fiscal2032', meaning)
+        self.assertIn('significant relationship to counterdrug-support objectives', meaning)
+        self.assertIn('vital to United States national security interests with prompt written congressional notice', meaning)
+        self.assertIn('Separately, sections1032–1035', meaning)
+        self.assertNotIn('Sections1031–1035 print replacements extending specified Guantanamo', meaning)
+
+    def test_mariner_service_uses_vessel_ownership_or_control_with_certification(self):
+        meaning = self.action['meaning']
+        self.assertIn('employment for at least one year on a passenger vessel under the same common ownership OR control', meaning)
+        self.assertIn('certified to the Secretary by that vessel’s owner or managing operator', meaning)
+        self.assertNotIn('prior same-employer service', meaning)
+        self.assertIn('For the8103(k)(1)(C) category', meaning)
+
+    def test_visit_prohibition_is_an_authorized_discretionary_action(self):
+        meaning = self.action['meaning']
+        self.assertIn('Under retained70011(a), the Secretary MAY take necessary action', meaning)
+        self.assertIn('rather than imposing an automatic visit ban', meaning)
+        self.assertIn('REPRESENTATIVE OF A GOVERNMENT', meaning)
+        self.assertIn('a facility for which a70103(c) security plan is required', meaning)
+        self.assertNotIn('powers; bars visits', meaning)
+
+    def test_distinct_security_waivers_keep_actors_conjunctions_and_objects(self):
+        meaning = self.action['meaning']
+        self.assertIn('Director of National Intelligence MAY establish a waiver process', meaning)
+        self.assertIn('essential for NATIONAL SECURITY AND no reasonable alternative source exists AND appropriate risk-mitigation', meaning)
+        self.assertIn('only to the country-of-concern restriction in(j)(2)(B)', meaning)
+        self.assertIn('BOTH a certification', meaning)
+        self.assertIn('AND a written justification', meaning)
+        self.assertIn('directly counters OR significantly limits', meaning)
+        self.assertNotIn('project-specific national-interest waiver', meaning)
+        self.assertNotIn('essential-national-interest/no-alternative/risk waiver', meaning)
+
+    def test_sibling_conditions_do_not_invent_duties_exemptions_or_automatic_revocations(self):
+        meaning = self.action['meaning']
+        self.assertIn('AND providing that support is in the interest of the United States', meaning)
+        self.assertIn('report categories, not newly created no-fly or selectee exemptions', meaning)
+        self.assertIn('shortage of qualified candidates OR a critical hiring need', meaning)
+        self.assertIn('on request by a Coast Guard member assigned to Unalaska, the Commandant SHALL grant', meaning)
+        self.assertIn('SUBJECT TO revocation; a revocation, once made, takes immediate effect', meaning)
+        self.assertNotIn('the no-fly/selectee and reasonable-suspicion exceptions remain', meaning)
+
+    def test_precise_source_predicate_corruptions_fail_actual_preparation(self):
+        from scripts import prepare_shared_domain_candidate as common
+        cases = [
+            ('govinfo:s1071eah-immigration-complete', 'Complete operative DecemberEAHsection1031;', '``2032', '``2026'),
+            ('govinfo:46usc8103-operative2024-cg226', '', 'under the same common ownership or control', 'for the same employer'),
+            ('govinfo:46usc70011-2024-fourth243', '', 'The Secretary may take', 'The Secretary shall take'),
+            ('govinfo:s1071eah-immigration-complete', 'Complete operative DecemberEAHsection6703;', 'essential for national security and no reasonable alternative', 'essential for national interest or a reasonable alternative'),
+            ('govinfo:s1071eah-immigration-complete', 'Complete operative DecemberEAHsection7228;', 'or a critical hiring need', 'and a critical hiring need'),
+            ('govinfo:s1071eah-immigration-complete', 'Complete operative DecemberEAHsection8319;', 'is subject to revocation', 'shall be automatically revoked'),
+            ('govinfo:s1071eah-immigration-complete', 'Complete operative DecemberEAHsection8758;', 'important to the national security interests', 'important to the national interests'),
+        ]
+        for sid, locator, before, after in cases:
+            bad = copy.deepcopy(self.a)
+            bad['actions'] = [copy.deepcopy(self.action)]
+            bad['blocked_episode_ids'] = []
+            bad['actions'][0].pop('shared_core_reuse')
+            bad['actions'][0].pop('candidate_core_qualification')
+            claim = next(c for c in bad['actions'][0]['claim_source_map']
+                         if c['source_id'] == sid and c['locator'].startswith(locator) and before in c['passage'])
+            claim['passage'] = claim['passage'].replace(before, after, 1)
+            with self.subTest(source=sid, locator=locator), self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+                common.prepare(bad, self.s, ['F000477', 'M001184'])
+
+    def test_frozen_history_and_source_contracts_survive_prospective_repair(self):
+        self.assertEqual(self.q['receipt_sha256'], sealed_digest(self.q, 'receipt_sha256'))
+        self.assertEqual(self.q['base_head'], 'b26137913f3087aee3b46ab5e5f1270011124bfd')
+        self.assertEqual(self.q['quality_corrections_completed'], 9)
+        self.assertEqual(self.q['completed_screening_actions'], 0)
+        self.assertEqual(self.q['new_sources'], 0)
+        self.assertEqual(self.q['current_core_sha256'], self.core['action_core_sha256'])
+        self.assertEqual(self.action['meaning'][:3498], self.q['prior_authoring']['meaning'][:3498])
+        self.assertEqual(self.action['claim_source_map'], self.q['prior_authoring']['claim_source_map'])
+        self.assertEqual(len(self.action['claim_source_map']), 161)
+        self.assertEqual(self.action['candidate_core_qualification'], self.q['prior_authoring']['candidate_core_qualification'])
+        for key in self.core:
+            if key not in ['candidate_exact_action_meaning', 'mechanism', 'action_core_sha256']:
+                self.assertEqual(self.core[key], self.q['prior_core'][key], key)
+        self.assertFalse(self.q['editorial_acceptance'])
+        self.assertFalse(self.q['publication_authorized'])
 
 
 if __name__ == '__main__':
