@@ -6555,7 +6555,9 @@ class Checkpoint247LHHSGeneralConditionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.a = json.loads((DATA / 'authoring.json').read_text(encoding='utf8'))
         cls.s = json.loads((DATA / 'sources.json').read_text(encoding='utf8'))
-        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:1:70')
+        # Historical247 assertions bind the preserved preimage;248 tests bind the current record.
+        lineage = json.loads((DATA / 'hr1968_state_migration_conditions_checkpoint248.json').read_text())
+        cls.action = lineage['prior_authoring']
         cls.q = json.loads((DATA / 'hr1968_general_conditions_checkpoint247.json').read_text(encoding='utf8'))
         cls.new_claims = cls.action['claim_source_map'][157:]
         cls.bank = {s['source_id']: s for s in cls.s['sources']}
@@ -6662,14 +6664,131 @@ class Checkpoint247LHHSGeneralConditionTests(unittest.TestCase):
         projections = json.loads((DATA / 'generated/member_projections.json').read_text())
         for member in projections:
             self.assertEqual(next(a for a in member['actions'] if a['action_id'] == self.action['action_id'])['official_status'], 'Nay')
-        core = next(c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']
-                    if c['action_id'] == self.action['action_id'])
+        core = json.loads((DATA / 'hr1968_state_migration_conditions_checkpoint248.json').read_text())['prior_core']
         self.assertEqual(core['action_core_sha256'], self.q['current_core_sha256'])
         self.assertEqual(self.q['new_screening_completions'], 0)
         self.assertTrue(self.q['all70questions_partial_component_flags_and_Q68_Q70_preserved'])
         self.assertTrue(self.q['independent_source_domain_review_pending'])
         self.assertFalse(self.q['editorial_acceptance'])
         self.assertFalse(self.q['publication_authorized'])
+
+
+class Checkpoint248StateMigrationConditionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.a = json.loads((DATA / 'authoring.json').read_text())
+        cls.s = json.loads((DATA / 'sources.json').read_text())
+        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:1:70')
+        cls.q = json.loads((DATA / 'hr1968_state_migration_conditions_checkpoint248.json').read_text())
+        cls.claims = cls.action['claim_source_map'][181:]
+        cls.addition = cls.action['meaning'][145371:]
+        cls.bank = {s['source_id']: s for s in cls.s['sources']}
+
+    def test_six_selected_parent_extents_and_one_existing_dated_baseline_bind_all_source_views(self):
+        self.assertEqual(self.q['receipt_sha256'], sealed_digest(self.q, 'receipt_sha256'))
+        self.assertEqual(len(self.claims), 8)
+        self.assertEqual(self.q['new_sources'], 7)
+        for row in self.q['source_imports']:
+            reg = row['registration']
+            source = self.bank[reg['source_id']]
+            self.assertEqual(source['governed_bytes_sha256'], sealed_digest(source, 'governed_bytes_sha256'))
+            self.assertEqual(source['parent_source_id'], 'govinfo:pl118-47-dhs-complete')
+            self.assertEqual(len(source['source_text_extents']), 1)
+            self.assertEqual(source['source_text_extents'], reg['source_text_extents'])
+            self.assertEqual(next(c['passage'] for c in self.claims if c['source_id'] == source['source_id']), source['text'])
+        self.assertEqual(self.claims[-1]['source_id'], 'govinfo:22usc2601-2024-refugees')
+        self.assertEqual(self.q['source_identity_counts'], dict(governed=120, operative=119, semantic_IR=120))
+        self.assertIn('Printed FY2024amounts and source-enactment deadlines', self.addition)
+        self.assertFalse(self.q['whole_historical_parent_JES_program_current_individual_legal_certificate'])
+
+    def test_account_levels_emergency_subset_and_erma_unobligated_cap_are_not_interchanged(self):
+        for phrase in ['$3,928,000,000', 'of which$750,000,000', 'not an additional amount on top',
+                       '$5,000,000 shall be made available for refugees resettling in Israel',
+                       'does not require each particular payment to satisfy both mechanisms',
+                       'distinct complete ERMAaccount provides$100,000',
+                       'SHALL be transferred to and merged with MRAfunds',
+                       'new appropriation ADDED TO previously appropriated but NOT YET OBLIGATED amounts',
+                       'not a ceiling on all refugee assistance', 'OUTSIDE THE UNITEDSTATES',
+                       'not made universal conditions for every(b)(1)contribution']:
+            self.assertIn(phrase, self.addition)
+        self.assertIn('President MAY furnish assistance/make contributions', self.addition)
+        self.assertTrue(self.q['reserved_243_country_bar_2601f_and_245_UN_classification_not_adjudicated'])
+
+    def test_allocation_and_monitoring_keep_exceptions_fund_subsets_and_distinct_responsible_officials(self):
+        for phrase in ['ordinary up-to10percent deviation', 'IN WRITING CASE BY CASE',
+                       'DIRECTLY RELATED to USnational-security interest', 'PRIOR CONSULTATION AND regular committee notification',
+                       'only AFTER report submission', 'expired-initial-availability and statutory-minimum exceptions',
+                       'ESFGlobalPrograms5percent/no(b)provisos', 'do NOT count toward country-designated amounts UNLESS',
+                       'proviso names ESFandDemocracyFund, not every MRAgrant',
+                       'FOR MONITORING AND EVALUATION', 'submission AND website-posting',
+                       'not declared an MRA-only set-aside or actual spending']:
+            self.assertIn(phrase, self.addition)
+
+    def test_extradition_exceptions_and_aggregate_pandemic_transfer_preserve_conjunctions_and_notice(self):
+        for phrase in ['CENTRAL GOVERNMENT', 'diplomatic relations AND an extradition treaty AND violation',
+                       'include BOTH MRA AND ERMA', 'case-by-case SecretaryState waiver',
+                       'determination AND report', 'SUSTAINED AND SEVERE AND SPREADING INTERNATIONALLY',
+                       'OR that response to a PublicHealthEmergencyofInternationalConcern',
+                       'not more than$200million AGGREGATE across its nine named accounts',
+                       'not$200million for each account', 'PRIOR CONSULTATION AND regular committee notification']:
+            self.assertIn(phrase, self.addition)
+        c = next(c for c in self.claims if '-7055-' in c['source_id'])
+        self.assertIn('(other than funds provided under the headings', c['passage'])
+        c = next(c for c in self.claims if '-7058-' in c['source_id'])
+        self.assertIn('not to exceed an aggregate total of $200,000,000', c['passage'])
+
+    def test_actual_preparation_rejects_fifteen_source_predicate_corruptions(self):
+        good = copy.deepcopy(self.a)
+        good['actions'] = [copy.deepcopy(self.action)]
+        good['blocked_episode_ids'] = []
+        prepare(good, self.s, ['F000477', 'M001184'])
+        cases = [('MRA-ERMA-accounts', 'of which $750,000,000', 'plus $750,000,000'), ('7019-', 'unless such headings are specifically designated', 'even when such headings are not designated'), ('7019-', 'prior consultation with, and', 'committee approval of, and'), ('7033-', "headings ``Economic Support Fund'' and ``Democracy Fund'' pursuant", "headings ``Migration and Refugee Assistance'' pursuant"), ('7034l-', 'made available for monitoring and evaluation', 'made available for all assistance'), ('7055-', '(other than funds provided under the headings', '(including funds provided under the headings'), ('7058-', 'sustained, severe, and is spreading internationally', 'sustained or severe or is spreading internationally'), ('7058-', 'not to exceed an aggregate total of $200,000,000', 'not less than $200,000,000 per account'), ('7058-', 'prior consultation with, and the regular notification procedures of', 'only subsequent notice to'), ('22usc2601', 'refugees who are outside the United States', 'refugees who are inside the United States'), ('22usc2601', 'but not yet obligated', 'and already obligated'), ('7015-', 'substantial risk to human health or welfare', 'any administrative inconvenience'), ('7015-', 'as early as practicable', 'whenever convenient'), ('7015-', 'in no event later than 3 days after taking the action', 'in no event later than 30 days after taking the action'), ('7015-', 'shall contain an explanation of the emergency circumstances', 'need not contain an explanation of the emergency circumstances')]
+        for token, before, after in cases:
+            i, c = next((i, c) for i, c in enumerate(good['actions'][0]['claim_source_map'])
+                        if i >= 181 and token in c['source_id'])
+            bad = copy.deepcopy(good)
+            self.assertIn(before, c['passage'])
+            bad['actions'][0]['claim_source_map'][i]['passage'] = c['passage'].replace(before, after, 1)
+            with self.subTest(token=token, predicate=before), self.assertRaisesRegex(
+                    ValueError, 'claim passage absent from bound source'):
+                prepare(bad, self.s, ['F000477', 'M001184'])
+        self.assertEqual(len(cases), 15)
+
+    def test_prior181bindings_all_meaning_and_whole_choice_observations_remain_without_new_screening(self):
+        prior = self.q['prior_authoring']
+        self.assertEqual(self.action['meaning'][:145371], prior['meaning'])
+        self.assertEqual(self.action['claim_source_map'][:181], prior['claim_source_map'])
+        self.assertEqual(self.action['limitations'][:-3], prior['limitations'])
+        self.assertEqual(self.action['source_render_constraints'][:-1], prior['source_render_constraints'])
+        for field in ['choice_meanings', 'compact_description', 'compact_source_refs', 'short_description']:
+            self.assertEqual(self.action[field], prior[field])
+        for member in json.loads((DATA / 'generated/member_projections.json').read_text()):
+            own = next(a for a in member['actions'] if a['action_id'] == self.action['action_id'])
+            self.assertEqual(own['official_status'], 'Nay')
+            self.assertEqual(own['action_core_sha256'], self.q['current_core_sha256'])
+        self.assertEqual(self.q['new_screening_completions'], 0)
+        self.assertTrue(self.q['all70questions_partial_component_flags_and_Q68_Q70_preserved'])
+        self.assertTrue(self.q['independent_source_domain_review_pending'])
+        self.assertFalse(self.q['editorial_acceptance'])
+        self.assertFalse(self.q['publication_authorized'])
+
+    def test_regular_notification_keeps_risk_waiver_asap_three_day_and_explanation_without_blanket_mra_rule(self):
+        for phrase in ['MAY BE WAIVED', 'SUBSTANTIAL RISK TO HUMAN HEALTH OR WELFARE',
+                       'AS EARLY AS PRACTICABLE', 'IN NO EVENT LATER THAN3DAYS AFTER TAKING THE ACTION',
+                       'EXPLANATION OF THE EMERGENCY CIRCUMSTANCES',
+                       "MRAis not one of(c)'s listed account headings", 'No blanket15-day requirement for every MRApayment',
+                       'No automatic humanitarian/program exemption',
+                       'not silently generalized to every substantive appropriation restriction']:
+            self.assertIn(phrase, self.addition)
+        claim = next(c for c in self.claims if '-7015-' in c['source_id'])
+        self.assertIn('may be waived if failure to do so would pose a substantial risk to human health or welfare', claim['passage'])
+        self.assertIn('as early as practicable, but in no event later than 3 days after taking the action', claim['passage'])
+        self.assertIn('shall contain an explanation of the emergency circumstances', claim['passage'])
+        scope = claim['passage'].split('(c)', 1)[1].split('(d)', 1)[0]
+        self.assertIn('Global Health Programs', scope)
+        self.assertNotIn('Migration and Refugee Assistance', scope)
+        self.assertTrue(self.q['material7015e_waiver_ASAP_three_day_explanation_and_fund_branch_limits_retained'])
+        self.assertTrue(self.q['no_blanket_MRA_15day_or_universal_substantive_waiver'])
 
 
 if __name__ == '__main__':
