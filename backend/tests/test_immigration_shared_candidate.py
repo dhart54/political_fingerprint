@@ -7151,7 +7151,7 @@ class Checkpoint252EnergyStatusTests(unittest.TestCase):
     def setUpClass(cls):
         cls.q = json.loads((DATA / 'hr1_energy_status_conditions_checkpoint252.json').read_text())
         cls.a = json.loads((DATA / 'authoring.json').read_text())
-        cls.actions = {v['action_id']: v for v in cls.a['actions'] if v['action_id'] in cls.q['actions']}
+        cls.actions = json.loads((DATA / 'hr1_manufacturing_fuel_conditions_checkpoint253.json').read_text())['prior_authoring']
         cls.cap = json.loads((DATA / 'sources.json').read_text())
         cls.bank = {s['source_id']: s for s in cls.cap['sources']}
 
@@ -7161,7 +7161,7 @@ class Checkpoint252EnergyStatusTests(unittest.TestCase):
         self.assertEqual(q['base_head'], 'c0d840ece78b0d27361fa799dc71226239c5d964')
         self.assertTrue(q['private_input_epoch_reconciled_to_committed_parent'])
         audit = json.loads((DATA.parents[2] / 'review_packets/immigration_semantic_audit_in_progress.json').read_text())
-        cores = {v['action_id']: v for v in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']}
+        cores = json.loads((DATA / 'hr1_manufacturing_fuel_conditions_checkpoint253.json').read_text())['prior_cores']
         for aid, act in self.actions.items():
             old = q['prior_authoring'][aid]
             expected_prefix = old['meaning']
@@ -7282,6 +7282,150 @@ class Checkpoint252EnergyStatusTests(unittest.TestCase):
         self.assertTrue(self.q['all70questions_partial_flags_and_Q68_Q70_preserved'])
         self.assertTrue(self.q['all_denied_cancelled_reserved_restrictions_and_withdrawals_retained'])
         self.assertTrue(self.q['House112011_introductory_reference_legal_application_not_adjudicated'])
+        self.assertFalse(self.q['editorial_acceptance'])
+        self.assertFalse(self.q['publication_authorized'])
+
+
+class Checkpoint253ManufacturingFuelTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q = json.loads((DATA / 'hr1_manufacturing_fuel_conditions_checkpoint253.json').read_text())
+        cls.a = json.loads((DATA / 'authoring.json').read_text())
+        cls.actions = {v['action_id']: v for v in cls.a['actions'] if v['action_id'] in cls.q['actions']}
+        cls.cap = json.loads((DATA / 'sources.json').read_text())
+        cls.bank = {s['source_id']: s for s in cls.cap['sources']}
+
+    def passage(self, aid, section):
+        return next(v['passage'] for v in self.actions[aid]['claim_source_map'] if v['locator'] == ('Complete exact vote-time House' if aid.endswith('145') else 'Complete exact Senate') + section)
+
+    def test_preimages_current_cores_neutrality_and_audit_prefixes_are_preserved(self):
+        q = self.q
+        self.assertEqual(q['receipt_sha256'], sealed_digest(q, 'receipt_sha256'))
+        self.assertEqual(q['base_head'], '99b54bcf6999496747787808f66581624b2b0619')
+        self.assertTrue(q['all_prior_member_neutrality_repairs_preserved'])
+        audit = json.loads((DATA.parents[2] / 'review_packets/immigration_semantic_audit_in_progress.json').read_text())
+        cores = {v['action_id']: v for v in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']}
+        for aid, act in self.actions.items():
+            old = q['prior_authoring'][aid]
+            self.assertTrue(act['meaning'].startswith(old['meaning']))
+            for term in ["members' Nay", 'F000477', 'M001184']: self.assertNotIn(term, act['meaning'])
+            self.assertEqual(act['claim_source_map'][:len(old['claim_source_map'])], old['claim_source_map'])
+            self.assertEqual(act['limitations'][:-1], old['limitations'])
+            self.assertEqual(act['source_render_constraints'][:-1], old['source_render_constraints'])
+            for key in ['choice_meanings', 'short_description', 'compact_description', 'compact_source_refs', 'stage', 'episode_id']:
+                self.assertEqual(act[key], old[key])
+            refs = next(v for v in audit['substantive_actions'] if v['action_id'] == aid)['primary_evidence']
+            prefix = q['prior_audit_primary_evidence'][aid]
+            self.assertEqual(refs[:len(prefix)], prefix)
+            self.assertTrue({act['source_id'], *act['additional_source_ids']} <= {v['source_id'] for v in refs})
+            self.assertEqual(cores[aid]['action_core_sha256'], q['current_core_sha256'][aid])
+
+    def test_house_status_allowance_component_category_and_payment_scopes_are_distinct(self):
+        h = self.actions['house:119:1:145']
+        for sec in ['112014', '111112']:
+            t = self.passage(h['action_id'], sec)
+            self.assertIn('No credit determined under subsection (a) shall be allowed under section 38', t)
+            self.assertIn('2 years after', t)
+            self.assertNotIn('without regard to clause (i)(II)', t)
+        t = self.passage(h['action_id'], '112014')
+        for phrase in ['$1,000,000', '5 percent', '15 percent', 'category', 'December 31, 2027']:
+            self.assertIn(phrase, t)
+        for phrase in ['VALUE EXCEEDS$1,000,000', 'IN THE AFFECTED CATEGORY', 'without silently adding a production qualifier', 'UScitizen ORLPRexception']:
+            self.assertIn(phrase, h['meaning'])
+
+    def test_senate_duplicate_paragraph_numbers_and_integrated_sale_predicates_remain(self):
+        a = self.actions['house:119:1:190']; t = self.passage(a['action_id'], '70514')
+        self.assertGreaterEqual(t.count('(4)'), 3)
+        self.assertIn('not less than 65 percent of the total direct material costs', t)
+        for phrase in ['SAME manufacturing facility', 'BOTHprinted(4)labels', 'no new(d)(5)', 'TAXABLE YEARS BEGINNING afterDecember31,2026', 'without the House two-year component delay']:
+            self.assertIn(phrase, a['meaning'])
+        z = self.passage(a['action_id'], '70521')
+        self.assertIn('2 years after', z)
+        self.assertIn('without regard to clause (i)(II)', z)
+        self.assertIn('not imported into the fuel text', a['meaning'])
+
+    def test_written_contract_override_is_narrow_and_original_manufacturing_conditions_bind(self):
+        a = self.actions['house:119:1:190']
+        t = next(v['passage'] for v in a['claim_source_map'] if v['locator'].startswith('Complete existing52(D)(iv)'))
+        for phrase in ['binding written contract', 'June 16, 2025', 'January 1, 2030', 'August 1, 2025']:
+            self.assertIn(phrase, t)
+        self.assertIn('in(D)(iv)(II)(bb)', a['meaning'])
+        self.assertIn("does not replace(aa)'s", a['meaning'])
+        x = self.bank['govinfo:26usc45X-complete-2024-manufacturing-fuel253']['text']
+        for phrase in ['sold by such taxpayer to an unrelated person', 'possession', '100', '2030', '2031', '2032']:
+            self.assertIn(phrase, x)
+        self.assertIn('not a universal definition', a['meaning'])
+
+    def test_fuel_feedstock_and_house_record_eh_numbering_and_transfer_dates_stay_exact(self):
+        h = self.actions['house:119:1:145']; n = self.actions['house:119:1:190']
+        self.assertIn('sold after December 31, 2025', self.passage(h['action_id'], '111112'))
+        self.assertIn('produced after December 31, 2025', self.passage(n['action_id'], '70521'))
+        self.assertIn('laterEHnumbers the caption-matched provision111111', h['meaning'])
+        self.assertTrue(self.q['House_EH_comparison']['comparison_qualified_after_caption_matching'])
+        self.assertNotIn('govinfo:hr1eh', h['additional_source_ids'])
+        self.assertIn('bound112012text contains no6418amendment', h['meaning'])
+        self.assertIn('fuel PRODUCED afterDecember31,2027', h['meaning'])
+        for a in [h, n]:
+            self.assertIn('possession', a['meaning'])
+            self.assertIn('nationality', a['meaning'])
+
+    def test_fuel_negative_emissions_aviation_rates_registration_and_sibling_context_are_qualified(self):
+        h = self.actions['house:119:1:145']; n = self.actions['house:119:1:190']
+        for phrase in ['TAXABLE YEARS BEGINNING afterDecember31,2025', 'INCLUDINGdairy/swine/poultry', 'December31,2031']:
+            self.assertIn(phrase, h['meaning'])
+        for phrase in ['MAYinclude dairy/swine/poultry', 'negative rate notwithstanding', 'December31,2029', '35cent/$1.75aviation substitutions are removed', 'September30,2025sale/use termination targets6426(k), not45Z', 'not a waiver of original45Zregistration-at-production']:
+            self.assertIn(phrase, n['meaning'])
+        z = self.bank['govinfo:26usc45Z-complete-2024-manufacturing-fuel253']['text']
+        self.assertIn('is registered as a producer of clean fuel under section 4101 at the time of production', z)
+        for a in [h, n]:
+            self.assertIn('BOTH(f)(6)wage AND(f)(7)apprenticeship', a['meaning'])
+            self.assertIn('50minus emissions rate', a['meaning'])
+        self.assertFalse(any('6426' in v['source_id'] for v in self.q['actual_reading']))
+        self.assertTrue(self.q['duplicate_Senate_paragraph4_and_House_sequence_legal_application_unresolved'])
+
+    def test_doe_notice_coal_phaseout_and_component_cost_rate_are_source_limited(self):
+        sid = 'govinfo:fr-2025-09607-metcoal-253'; src = self.bank[sid]
+        self.assertEqual(src['source_type'], 'official_federal_register_text')
+        self.assertIn('metallurgical coal used for steelmaking', src['text'])
+        self.assertNotIn(sid, self.actions['house:119:1:145']['additional_source_ids'])
+        self.assertIn(sid, self.actions['house:119:1:190']['additional_source_ids'])
+        t = self.passage('house:119:1:190', '70514')
+        self.assertIn('2.5 percent', t)
+        for phrase in ['PRODUCED AND SOLD afterDecember31,2027', 'coal PRODUCED afterDecember31,2029', 'not2.5percent of sales', 'does not itself amend45X', "linked assessment's application are unresolved"]:
+            self.assertIn(phrase, self.actions['house:119:1:190']['meaning'])
+
+    def test_source_seals_extents_manifest_and_corruptions_bind_current_actions(self):
+        mf = {v['source_id']: v for v in json.loads((DATA / 'research_capture_manifest.json').read_text())['sources']}
+        for read in self.q['actual_reading']:
+            src = self.bank[read['source_id']]
+            self.assertEqual(src['governed_bytes_sha256'], sealed_digest(src, 'governed_bytes_sha256'))
+            self.assertEqual(digest(src['text']), read['text_sha256'])
+            self.assertEqual(src['source_text_extents'][0], {k: read[k] for k in ['start', 'end', 'total']})
+            self.assertEqual(mf[src['source_id']]['governed_bytes_sha256'], src['governed_bytes_sha256'])
+            self.assertEqual(mf[src['parent_source_id']]['raw_sha256'], src['raw_sha256'])
+            for a in self.actions.values():
+                if src['source_type'] != 'official_federal_register_text' or a['action_id'].endswith('190'):
+                    self.assertIn(src['text'], [v['passage'] for v in a['claim_source_map'] if v['source_id'] == src['source_id']])
+        a = copy.deepcopy(self.a); a['actions'] = list(copy.deepcopy(self.actions).values()); a['blocked_episode_ids'] = []
+        cases = [('govinfo:26usc45X-complete-2024-manufacturing-fuel253', 'sold by such taxpayer to an unrelated person', 'sold by such taxpayer to a related person'), ('govinfo:26usc45Z-complete-2024-manufacturing-fuel253', 'is registered as a producer of clean fuel under section 4101 at the time of production', 'need not be registered as a producer of clean fuel under section 4101 at the time of production'), ('govinfo:fr-2025-09607-metcoal-253', 'metallurgical coal used for steelmaking', 'all coal'), ('govinfo:hr1eas', 'not less than 65 percent of the total direct material costs', 'not less than 5 percent of the total direct material costs')]
+        for sid, old, new in cases:
+            for reseal in [False, True]:
+                with self.subTest(source=sid, reseal=reseal):
+                    cap = copy.deepcopy(self.cap); src = next(v for v in cap['sources'] if v['source_id'] == sid)
+                    self.assertIn(old, src['text']); src['text'] = src['text'].replace(old, new, 1)
+                    if reseal: src['governed_bytes_sha256'] = sealed_digest(src, 'governed_bytes_sha256')
+                    with self.assertRaisesRegex(ValueError, 'governed source changed|claim passage absent from bound source'):
+                        prepare(copy.deepcopy(a), cap, ['F000477', 'M001184'])
+
+    def test_accounting_observations_and_reserved_boundaries_remain(self):
+        for member in json.loads((DATA / 'generated/member_projections.json').read_text()):
+            for aid in self.actions: self.assertEqual(next(v for v in member['actions'] if v['action_id'] == aid)['official_status'], 'Nay')
+        self.assertEqual(self.q['counts'], {'reviewed': 666, 'pending': 10, 'cores': 87, 'behavioral_propositions': 145, 'episodes': 75, 'multi_action_episodes': 10})
+        self.assertEqual(self.q['new_claim_bindings'], 10)
+        self.assertEqual(self.q['new_screening_completions'], 0)
+        self.assertTrue(self.q['all70questions_partial_flags_and_Q68_Q70_preserved'])
+        self.assertTrue(self.q['all_denied_cancelled_reserved_restrictions_and_withdrawals_retained'])
+        self.assertTrue(self.q['private_preflight']['all9_fail_closed'])
         self.assertFalse(self.q['editorial_acceptance'])
         self.assertFalse(self.q['publication_authorized'])
 
