@@ -6797,7 +6797,9 @@ class Checkpoint249IncorporatedBaselineTests(unittest.TestCase):
     def setUpClass(cls):
         cls.q = json.loads((DATA / 'hr1_incorporated_baselines_checkpoint249.json').read_text())
         cls.a = json.loads((DATA / 'authoring.json').read_text())
-        cls.actions = {a['action_id']: a for a in cls.a['actions'] if a['action_id'] in cls.q['actions']}
+        history = json.loads((DATA / 'hr1_senate_transfer_conditions_checkpoint250.json').read_text())
+        cls.actions = {a['action_id']: (history['prior_authoring'] if a['action_id'] == history['action_id'] else a)
+                       for a in cls.a['actions'] if a['action_id'] in cls.q['actions']}
         cls.cap = json.loads((DATA / 'sources.json').read_text())
         cls.bank = {s['source_id']: s for s in cls.cap['sources']}
 
@@ -6899,7 +6901,9 @@ class Checkpoint249IncorporatedBaselineTests(unittest.TestCase):
     def test_observations_accounting_and_unresolved_boundaries_are_conserved(self):
         cores = {c['action_id']: c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']}
         for aid, core in self.q['current_core_sha256'].items():
-            self.assertEqual(cores[aid]['action_core_sha256'], core)
+            history = json.loads((DATA / 'hr1_senate_transfer_conditions_checkpoint250.json').read_text())
+            observed = history['prior_core']['action_core_sha256'] if aid == history['action_id'] else cores[aid]['action_core_sha256']
+            self.assertEqual(observed, core)
         for member in json.loads((DATA / 'generated/member_projections.json').read_text()):
             for aid in self.actions:
                 self.assertEqual(next(v for v in member['actions'] if v['action_id'] == aid)['official_status'], 'Nay')
@@ -6909,6 +6913,118 @@ class Checkpoint249IncorporatedBaselineTests(unittest.TestCase):
         self.assertTrue(self.q['whole_counterpart_absence_not_established'])
         self.assertFalse(self.q['editorial_acceptance'])
         self.assertFalse(self.q['publication_authorized'])
+
+
+
+class Checkpoint250SenateTransferTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q = json.loads((DATA / 'hr1_senate_transfer_conditions_checkpoint250.json').read_text())
+        cls.a = json.loads((DATA / 'authoring.json').read_text())
+        cls.action = next(v for v in cls.a['actions'] if v['action_id'] == cls.q['action_id'])
+        cls.cap = json.loads((DATA / 'sources.json').read_text())
+        cls.bank = {s['source_id']: s for s in cls.cap['sources']}
+
+    def test_recipient_condition_keeps_specified_class_and_senate_personal_exceptions(self):
+        h = next(c['passage'] for c in self.action['claim_source_map'] if c['locator'].startswith('Complete exactSenate70512(h)'))
+        self.assertIn('an eligible taxpayer may not elect to transfer any portion', h)
+        self.assertIn('specified foreign entity (as defined in section 7701(a)(51)(B))', h)
+        self.assertNotIn('prohibited foreign entity', h)
+        self.assertIn('recipient of an otherwise qualifying transfer', self.action['meaning'])
+        self.assertIn('US citizen, US national OR lawful permanent resident', self.action['meaning'])
+        self.assertIn('A foreign-influenced entity is not automatically a specified foreign entity', self.action['meaning'])
+
+    def test_six_named_credit_clauses_stay_distinct_from_added_xii_and_its_fuel_date(self):
+        h = next(c['passage'] for c in self.action['claim_source_map'] if c['locator'].startswith('Complete exactSenate70512(h)'))
+        j = next(c['passage'] for c in self.action['claim_source_map'] if c['locator'].startswith('Complete exactSenate70521(j)'))
+        self.assertIn('clause (iii), (iv), (vi), (vii), (viii), or (xi)', h)
+        self.assertNotIn('(xii)', h)
+        self.assertIn('(xii)', j)
+        self.assertIn('fuel sold or used after June 30, 2025', j)
+        for credit in ['45Q carbon-oxide', '45U zero-emission-nuclear', '45X advanced-manufacturing', '45Y clean-electricity', '45Z clean-fuel', '48E clean-electricity']:
+            self.assertIn(credit, self.action['meaning'])
+        self.assertIn('does not establish an exemption from all other', self.action['meaning'])
+
+    def test_original_transfer_elections_keep_cash_year_deadline_and_retransfer_limits(self):
+        t = self.bank['govinfo:26usc6418-operative-2024-transfer250']['text']
+        for phrase in ['shall be required to be paid in cash', 'shall not be includible in gross income', 'shall not be deductible', 'including extensions of time', 'shall be irrevocable', 'No additional transfers', '10-year period', '12-year period', 'shall not include any business credit carryforward']:
+            self.assertIn(phrase, t)
+        self.assertIn('not automatically to all six newly restricted classes', self.action['meaning'])
+
+    def test_excluded_entity_list_does_not_erase_separate_manufacturing_election_bar(self):
+        t = self.bank['govinfo:26usc6417d1-2024-transfer250']['text']
+        for phrase in ['any organization exempt', 'any State or political subdivision', 'Tennessee Valley Authority', 'Indian tribal government', 'Alaska Native Corporation', 'furnishing electric energy to persons in rural areas', 'no election may be made by the taxpayer under section 6418(a)', '4 succeeding taxable years ending before January 1, 2033', 'Any election under this subclause may not be subsequently revoked']:
+            self.assertIn(phrase, t)
+        self.assertIn('does NOT by itself establish', self.action['meaning'])
+        self.assertTrue(self.q['no_reserved193_entity_membership_decision'])
+
+    def test_excessive_transfer_reasonable_cause_and_administration_remain_conditional(self):
+        t = self.bank['govinfo:26usc6418-operative-2024-transfer250']['text']
+        for phrase in ['As a condition of, and prior to', 'Secretary may require', '20 percent of such excessive credit transfer', 'Subparagraph (A)(ii) shall not apply', 'Basis reduction; notification of recapture', 'progress expenditures']:
+            self.assertIn(phrase, t)
+        self.assertIn('applies to the latter addition, not automatic erasure of the excess', self.action['meaning'])
+
+    def test_exact_2024_reference_sequence_keeps_exception_definition_and_printed_terms(self):
+        original = self.bank['govinfo:26usc50a-2024-transfer250']['text']
+        self.assertIn('(5) Subsection not to apply in certain cases', original)
+        self.assertIn('(6) Definitions and special rules', original)
+        self.assertIn('the term "investment credit property"', original)
+        b = next(c['passage'] for c in self.action['claim_source_map'] if c['locator'].startswith('Complete exactSenate70513(b)'))
+        self.assertIn('paragraphs (4) through (6) as paragraphs (5) through (7)', b)
+        self.assertIn('inserting ``section 50(a)(6)', b)
+        self.assertIn('inserting ``subsection (a)(7)', b)
+        self.assertIn('prints the term applicable investment credit property', self.action['meaning'])
+        self.assertIn('not silently repaired or adjudicated', self.action['meaning'])
+        self.assertTrue(self.q['literal_reference_reconciliation']['year2021search_result_only_locator_discovery_not_evidence'])
+
+    def test_current_sources_seals_extents_and_manifest_preserve_parent_identity(self):
+        mf = {s['source_id']: s for s in json.loads((DATA / 'research_capture_manifest.json').read_text())['sources']}
+        for r in self.q['actual_reading']:
+            s = self.bank[r['source_id']]
+            self.assertEqual(s['governed_bytes_sha256'], sealed_digest(s, 'governed_bytes_sha256'))
+            self.assertEqual(digest(s['text']), r['text_sha256'])
+            self.assertEqual(s['source_text_extents'][0], {k: r[k] for k in ['start', 'end', 'total']})
+            self.assertEqual(mf[s['parent_source_id']]['raw_sha256'], s['raw_sha256'])
+            self.assertIn(s['text'], [c['passage'] for c in self.action['claim_source_map'] if c['source_id'] == s['source_id']])
+
+    def test_preimage_audit_prefix_observations_and_current_core_all_reconcile(self):
+        q, act = self.q, self.action
+        self.assertEqual(q['receipt_sha256'], sealed_digest(q, 'receipt_sha256'))
+        self.assertEqual(q['base_head'], 'f8d0fc5898b073ef2a2c877be7b65c6e5a622817')
+        self.assertTrue(act['meaning'].startswith(q['prior_authoring']['meaning']))
+        self.assertEqual(act['claim_source_map'][:220], q['prior_authoring']['claim_source_map'])
+        self.assertEqual(act['limitations'][:-1], q['prior_authoring']['limitations'])
+        for key in ['choice_meanings', 'short_description', 'compact_description', 'compact_source_refs', 'stage', 'episode_id']:
+            self.assertEqual(act[key], q['prior_authoring'][key])
+        audit = json.loads((DATA.parents[2] / 'review_packets/immigration_semantic_audit_in_progress.json').read_text())
+        refs = next(v for v in audit['substantive_actions'] if v['action_id'] == act['action_id'])['primary_evidence']
+        self.assertEqual(refs[:len(q['prior_audit_primary_evidence'])], q['prior_audit_primary_evidence'])
+        self.assertTrue({act['source_id'], *act['additional_source_ids']} <= {r['source_id'] for r in refs})
+        core = next(c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions'] if c['action_id'] == act['action_id'])
+        self.assertEqual(core['action_core_sha256'], q['current_core_sha256'])
+        for member in json.loads((DATA / 'generated/member_projections.json').read_text()):
+            self.assertEqual(next(v for v in member['actions'] if v['action_id'] == act['action_id'])['official_status'], 'Nay')
+        self.assertEqual(q['new_screening_completions'], 0)
+        self.assertTrue(q['all70prior_questions_partial_flags_and_Q68_Q70_preserved'])
+        self.assertFalse(q['editorial_acceptance'])
+        self.assertFalse(q['publication_authorized'])
+
+    def test_current_recipient_list_election_bar_and_definition_corruptions_fail_actual_prepare(self):
+        a = copy.deepcopy(self.a)
+        a['actions'] = [copy.deepcopy(self.action)]
+        a['blocked_episode_ids'] = []
+        cases = [('govinfo:26usc6418-operative-2024-transfer250', 'shall not include any business credit carryforward', 'shall include any business credit carryforward'), ('govinfo:26usc6417d1-2024-transfer250', 'no election may be made by the taxpayer under section 6418(a)', 'an election may be made by the taxpayer under section 6418(a)'), ('govinfo:26usc50a-2024-transfer250', '(6) Definitions and special rules', '(5) Definitions and special rules'), ('govinfo:hr1eas', 'an eligible taxpayer may not elect to transfer any portion of such credit to a taxpayer that is a specified foreign entity', 'an eligible taxpayer may not elect to transfer any portion of such credit to a taxpayer that is a prohibited foreign entity')]
+        for sid, old, new in cases:
+            for reseal in [False, True]:
+                with self.subTest(source=sid, reseal=reseal):
+                    cap = copy.deepcopy(self.cap)
+                    s = next(s for s in cap['sources'] if s['source_id'] == sid)
+                    self.assertIn(old, s['text'])
+                    s['text'] = s['text'].replace(old, new, 1)
+                    if reseal:
+                        s['governed_bytes_sha256'] = sealed_digest(s, 'governed_bytes_sha256')
+                    with self.assertRaisesRegex(ValueError, 'governed source changed|claim passage absent from bound source'):
+                        prepare(copy.deepcopy(a), cap, ['F000477', 'M001184'])
 
 
 if __name__ == '__main__':
