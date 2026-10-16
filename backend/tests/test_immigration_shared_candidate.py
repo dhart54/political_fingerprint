@@ -6246,7 +6246,8 @@ class Checkpoint245JulyDefenseQualificationTests(unittest.TestCase):
         addition = self.action['meaning'][8349:]
         self.assertIn('adds a new exclusion to1077(b) and separately deletes', addition[:2100])
         self.assertIn('It does not delete a universal under-18 limit from both provisions', addition[:2100])
-        self.assertEqual(self.q['new_core_sha256'], self.core['action_core_sha256'])
+        historical = json.loads((DATA.parent / 'house_119_july_defense_qualification_checkpoint245/shared_action_core_proposal.json').read_text())['actions'][0]
+        self.assertEqual(self.q['new_core_sha256'], historical['action_core_sha256'])
         self.assertEqual(self.q['receipt_sha256'], sealed_digest(self.q, 'receipt_sha256'))
 
     def test_complete_eh_read_and_qualified_material_audit_keep_separate_limits(self):
@@ -6267,8 +6268,10 @@ class Checkpoint245JulyDefenseQualificationTests(unittest.TestCase):
         self.assertEqual(audit['receipt_sha256'], sealed_digest(audit, 'receipt_sha256'))
         self.assertEqual(audit['receipt_sha256'], self.q['predicate_audit_sha256'])
         self.assertEqual(len(audit['groups']), 42)
-        self.assertEqual(audit['claim_bindings'], len(self.action['claim_source_map']))
-        self.assertEqual(len(self.action['claim_source_map']), 133)
+        historical = json.loads((DATA.parent / 'house_119_july_defense_qualification_checkpoint245/shared_action_core_proposal.json').read_text())['actions'][0]
+        self.assertEqual(audit['claim_bindings'], len(historical['claim_source_map']))
+        self.assertEqual(len(historical['claim_source_map']), 133)
+        self.assertEqual(self.action['claim_source_map'][:133], historical['claim_source_map'])
         self.assertFalse(self.q['whole_RCP_report_JES_classified_visual_arithmetic_currentlaw_certificate'])
         self.assertTrue(self.q['independent_source_domain_review_pending'])
         self.assertTrue(self.q['separate_DivisionE_S1383_assembly_not_new_component_choice'])
@@ -6294,7 +6297,7 @@ class Checkpoint245JulyDefenseQualificationTests(unittest.TestCase):
         meaning = self.action['meaning']
         for phrase in ['lawful permanent residents are excluded',
                        "The incorporated8512 definition is the People's Republic of China, including Hong Kong and Macau",
-                       'Section3604 has its own printed covered-nation reference AND a Maritime Administrator determination',
+                       'Section3604 separately enumerates a covered-nation category(A)',
                        'BOTH the1260H Chinese-military-company report', 'NATIONAL SECURITY INTEREST',
                        'PRC nationality AND residence in the PRC AND beneficial ownership of MORE THAN25percent',
                        'specified sea service OR qualifying shoreside work',
@@ -6361,7 +6364,8 @@ class Checkpoint245JulyDefenseQualificationTests(unittest.TestCase):
         self.assertEqual(len(self.a['actions']), 87)
         self.assertEqual(len(self.u['unresolved_action_ids']), 10)
         record = next(r for r in self.m['records'] if r['action_id'] == self.action['action_id'])
-        self.assertEqual(self.q['membership_record_sha256'], digest(record))
+        correction = json.loads((DATA / 'july_predicate_corrections_checkpoint246.json').read_text())
+        self.assertEqual(self.q['membership_record_sha256'], correction['prior_membership_record_sha256'])
 
     def test_pending_holds_history_and_unaccepted_candidate_boundary_remain(self):
         self.assertEqual(self.a['blocked_episode_ids'], ['episode:hr1048:119'])
@@ -6424,6 +6428,126 @@ class Checkpoint245AuditAccountingTests(unittest.TestCase):
         self.assertEqual(sorted(null - explicit), receipt['null_only_action_ids'])
         self.assertEqual(sorted(explicit - null), receipt['explicit_list_only_action_ids'])
         self.assertIn('house:119:2:278', null & explicit)
+
+
+class Checkpoint246JulyPredicateRepairTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.a = json.loads((DATA / 'authoring.json').read_text(encoding='utf8'))
+        cls.s = json.loads((DATA / 'sources.json').read_text(encoding='utf8'))
+        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:2:278')
+        cls.q = json.loads((DATA / 'july_predicate_corrections_checkpoint246.json').read_text(encoding='utf8'))
+        cls.core = next(c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']
+                        if c['action_id'] == cls.action['action_id'])
+
+    def test_material_transition_and_complete_h2b_baseline_are_bound_in_every_source_view(self):
+        sid = 'govinfo:48usc1806-selected2024-243'
+        source = next(s for s in self.s['sources'] if s['source_id'] == sid)
+        claims = [c for c in self.action['claim_source_map'] if c['source_id'] == sid]
+        self.assertEqual([c['passage'] for c in claims], [source['text'][979:1483], source['text'][6562:9344]])
+        self.assertIn(sid, self.action['additional_source_ids'])
+        self.assertEqual(self.core['claim_source_map'], self.action['claim_source_map'])
+        for field in ['governed_source_identities', 'operative_meaning_source_identities']:
+            self.assertIn(sid, {s['source_id'] for s in self.core[field]})
+        self.assertIn(sid, self.core['semantic_ir_source_ids'])
+        self.assertEqual(self.q['source_identity_counts'], dict(governed=68, operative=67, semantic_IR=68))
+        self.assertEqual(len(self.action['claim_source_map']), 135)
+        self.assertIn('during the transition program', claims[1]['passage'])
+        self.assertIn('except that this clause shall not be construed to include graduates of medical schools', claims[1]['passage'])
+        self.assertIn('Paragraph (1) does not apply', claims[1]['passage'])
+        self.assertIn('their interaction and any intervening law remain application questions', self.action['meaning'])
+
+    def test_actual_immigration_preparation_rejects_omission_of_either_baseline_extent_or_both(self):
+        sid = 'govinfo:48usc1806-selected2024-243'
+        good = copy.deepcopy(self.a)
+        control = next(a for a in self.a['actions'] if 'shared_core_reuse' not in a)
+        good['actions'] = [copy.deepcopy(control), copy.deepcopy(self.action)]
+        good['blocked_episode_ids'] = []
+        prepare(good, self.s, ['F000477', 'M001184'])
+        for kind in ['all_baseline', 'transition_only', 'subsection_b_only']:
+            bad = copy.deepcopy(good)
+            row = bad['actions'][-1]
+            row['claim_source_map'] = [c for c in row['claim_source_map']
+                                      if not (c['source_id'] == sid and
+                                              (kind == 'all_baseline' or
+                                               kind == 'transition_only' and '(a)(2)' in c['locator'] or
+                                               kind == 'subsection_b_only' and '1806(b)' in c['locator']))]
+            if kind == 'all_baseline':
+                row['additional_source_ids'].remove(sid)
+            with self.subTest(kind=kind), self.assertRaisesRegex(
+                    ValueError, 'candidate differs from complete exact Clerk-bound wrapper: claim_source_map'):
+                prepare(bad, self.s, ['F000477', 'M001184'])
+
+    def test_one_conditional_sourcing_waiver_preserves_conjunctions_alternatives_and_timing(self):
+        meaning = self.action['meaning']
+        for phrase in ['one conditional authority to waive(d) or(e)', 'AND its period AND factual basis',
+                       'NATIONAL SECURITY OR defense production OR readiness OR sustainment OR timely contract performance',
+                       'AND provide a transition plan', 'does not replace the other(g)(1) prerequisites',
+                       'contractor enter binding supplier agreements before expiry that will result in compliance',
+                       'does not cover downstream forms unless it expressly says so',
+                       'up to two years', 'only on a new written determination satisfying paragraph(1)',
+                       'notice and30days, or certified urgent need and7days']:
+            self.assertIn(phrase, meaning)
+        self.assertNotIn('national-security and limited nonavailability waivers', meaning)
+        source = next(s for s in self.s['sources'] if s['source_id'] == 'govinfo:hr8800eh-immigration-complete')
+        claim = next(c for c in self.action['claim_source_map']
+                     if c['locator'].startswith('Complete operative JulyEHsection1803;'))
+        self.assertIn(source['text'][1920459:1923740], claim['passage'])
+
+    def test_country_definitions_enumerate_distinct_categories_and_keep_distinct_officials(self):
+        meaning = self.action['meaning']
+        for phrase in ['category(A), a covered nation', 'category(B), any country the Commerce Secretary determines',
+                       'Section3604 separately enumerates', 'Maritime Administrator',
+                       'AND the Chair of the Federal Maritime Commission',
+                       'not a requirement that a country satisfy both category descriptions',
+                       "Neither definition is silently replaced with3118's China/HongKong/Macau definition",
+                       "Section3569's incorporated-reference and application questions are not resolved"]:
+            self.assertIn(phrase, meaning)
+        self.assertNotIn('Those conjunctions, actors and outdated', meaning)
+        c = next(c for c in self.action['claim_source_map']
+                 if c['locator'].startswith('Complete operative JulyEHsection3604;'))
+        self.assertIn('; and (B) any country that the Maritime Administrator', c['passage'])
+        c = next(c for c in self.action['claim_source_map'] if c['source_id'] == 'govinfo:15usc4651-operative2024-245')
+        self.assertIn('; and (B) any country that the Secretary', c['passage'])
+
+    def test_history_sources_observations_and_accounting_are_conserved_without_new_screening_credit(self):
+        q = self.q
+        self.assertEqual(q['receipt_sha256'], sealed_digest(q, 'receipt_sha256'))
+        self.assertEqual(q['base_head'], '0ced30a835285f9e812ba287b4ecb7aee59cea5e')
+        self.assertEqual(q['current_core_sha256'], self.core['action_core_sha256'])
+        membership = json.loads((DATA / 'membership_review.json').read_text())
+        record = next(r for r in membership['records'] if r['action_id'] == self.action['action_id'])
+        self.assertEqual(q['membership_record_sha256'], digest(record))
+        self.assertEqual(self.action['claim_source_map'][:133], q['prior_authoring']['claim_source_map'])
+        self.assertEqual(self.action['meaning'][:8349], q['prior_authoring']['meaning'][:8349])
+        self.assertEqual(self.action['candidate_core_qualification'], q['prior_authoring']['candidate_core_qualification'])
+        changed = {'mechanism', 'candidate_exact_action_meaning', 'claim_source_map', 'governed_source_identities',
+                   'governed_source_identity_sha256', 'operative_meaning_source_identities', 'semantic_ir_source_ids',
+                   'action_core_sha256'}
+        self.assertEqual(set(self.core), set(q['prior_core']))
+        for key in self.core:
+            if key not in changed:
+                self.assertEqual(self.core[key], q['prior_core'][key], key)
+        self.assertEqual(self.core['governed_source_identities'][:-1],
+                         q['prior_core']['governed_source_identities'])
+        self.assertEqual(self.core['operative_meaning_source_identities'][:-1],
+                         q['prior_core']['operative_meaning_source_identities'])
+        self.assertEqual(self.core['semantic_ir_source_ids'][:-1], q['prior_core']['semantic_ir_source_ids'])
+        self.assertEqual(q['quality_corrections_completed'], 3)
+        self.assertEqual(q['completed_screening_actions'], 0)
+        self.assertEqual(q['new_sources'], 0)
+        self.assertEqual(q['new_claim_bindings'], 2)
+        self.assertEqual(q['counts'], dict(reviewed=666, pending=10, cores=87, behavioral_propositions=145,
+                                         episodes=75, multi_action_episodes=10))
+        self.assertEqual(self.a['blocked_episode_ids'], ['episode:hr1048:119'])
+        projections = json.loads((DATA / 'generated/member_projections.json').read_text())
+        for member in projections:
+            own = next(a for a in member['actions'] if a['action_id'] == self.action['action_id'])
+            self.assertEqual(own['official_status'], 'Nay')
+        self.assertTrue(q['remaining_component_conditions_legal_flags_not_cleared'])
+        self.assertTrue(q['independent_source_domain_review_pending'])
+        self.assertFalse(q['editorial_acceptance'])
+        self.assertFalse(q['publication_authorized'])
 
 
 if __name__ == '__main__':

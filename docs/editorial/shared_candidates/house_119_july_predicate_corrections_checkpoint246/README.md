@@ -1,0 +1,5 @@
+# July H.R.8800 source repairs, checkpoint246
+
+Prospectivev43 repairs review6206395380 at exact0ced30a8/c6bdbeef. Two complete retained48US1806baseline bindings qualify the existing1705explanation; proposed4872(g) is one conditional sourcing waiver, and4651(7)/3604enumerate covered-nation and separately official-determined categories without requiring intersection. Distinct actors, conjunctive waiver prerequisites, adverse-effect alternatives, renewal/notice, printed references and legal/current/individual limits remain.
+
+Current corea9af5388ddd6d7d492c59fa31e3791f799d7bf2c7bbbaaecadd5a43a04c25f57 has135bindings and68governed/67operative/68IRsource identities. Original133bindings, Health8349/23/26, identity/reference/limitations and prior245/v42 remain exact. No sources acquired or changed; zero new screenings. Counts666/10,87cores,145propositions,75episodes/10multi remain. This is candidate correction, not acceptance, publication or whole-domain/current-law clearance. Independent correction review remains pending.

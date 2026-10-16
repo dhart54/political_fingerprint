@@ -1,0 +1,131 @@
+{
+  "checkpoint": 246,
+  "reviewed_base": "0ced30a835285f9e812ba287b4ecb7aee59cea5e",
+  "review_comment": 6206395380,
+  "created_utc": "2026-10-16T02:18:03.724179+00:00",
+  "action_id": "house:119:2:278",
+  "qualified_core_sha256": "a9af5388ddd6d7d492c59fa31e3791f799d7bf2c7bbbaaecadd5a43a04c25f57",
+  "private_authoring_sha256": "f30a2d307fa2d741e0951544bd7b0d6e60ced58bf996bb28f778fbd6054e89d5",
+  "audit_scope": "Three confirmed review repairs only; actual focused rereads plus reused245wholeEH/material reading. Prior24542groupaudit stays immutable history; no new whole-act/current-law/independent-domain certificate.",
+  "prior_audit_ref": "docs/review_packets/immigration_checkpoint245_predicate_audit.json",
+  "prior_audit_receipt_sha256": "df499813ea2b34e9be8f6e9568a796a6af7916b598f858b8e539d46d58f81957",
+  "groups": [
+    {
+      "group": "1705 material retained baseline",
+      "source_claims": [
+        {
+          "source_id": "govinfo:hr8800eh-immigration-complete",
+          "locator": "Complete operative JulyEHsection1705; wholepublictext actuallyread; separateAssembly/currentlaw/printed-application limits retained",
+          "passage_utf8_sha256": "5c275b84bbef77dd3ba911dfb01a21d30098ce112546d710cb4b382c9aff1853"
+        },
+        {
+          "source_id": "govinfo:48usc1806-selected2024-243",
+          "locator": "Complete dated2024 48US1806(a)(2) transition endpoint; source-character extent[979,1483); supports July1705baseline, not a current-law or individual-admission certificate",
+          "passage_utf8_sha256": "c4f552ecf5fffdea14e070a30c4d2334db82fcac1178c4f2bc4d54c827dbf77b"
+        },
+        {
+          "source_id": "govinfo:48usc1806-selected2024-243",
+          "locator": "Complete dated2024 48US1806(b), including H-worker linkage, qualified H2B alternatives, location and report context; source-character extent[6562,9344); supports July1705baseline, not a current-law or individual-admission certificate",
+          "passage_utf8_sha256": "0fc92463f0b620fb72654e50569cc29448ef0d87bfef5f7ee36f7f907e8e0df3"
+        }
+      ],
+      "verified": "Complete dated1806(a)(2) and(b) bind transition endpoint, H-worker link, otherwise-qualified H2B alternatives, priority/healthcare requirements, location and report context. Printed Julydate operand changes onlyb1B. Existing qualifications/intervening-law questions retained; no guaranteed admission or categorical transition resolution."
+    },
+    {
+      "group": "1803 conditional sourcing waiver",
+      "source_claims": [
+        {
+          "source_id": "govinfo:hr8800eh-immigration-complete",
+          "locator": "Complete operative JulyEHsection1803; wholepublictext actuallyread; separateAssembly/currentlaw/printed-application limits retained",
+          "passage_utf8_sha256": "c78edf68299b7cfba65e9fd2ca50dad07f694f29563c82a62253f11b7cde5daf"
+        }
+      ],
+      "verified": "One4872(g) conditional SecretaryDefense waiver: written specificity/period/factualbasis, differentiated nonavailability, adverse-effect determination and transitionplan all required. Adverse-effect objects are alternatives;4863(k) mayinformE, notreplaceD/F. Upstreamnotdownstreamunless express; upto2years, unlimitedrenewalsonlynewwritten1determination; Congressnotice30daysorurgentcertification7days; contractor documentation."
+    },
+    {
+      "group": "3569/3604/4651 enumerated country categories",
+      "source_claims": [
+        {
+          "source_id": "govinfo:hr8800eh-immigration-complete",
+          "locator": "Complete operative JulyEHsection3569; wholepublictext actuallyread; separateAssembly/currentlaw/printed-application limits retained",
+          "passage_utf8_sha256": "53f84c159d5a6e0f8cb80caba4842b5875d7fa83a3a79c53dcff93c787596219"
+        },
+        {
+          "source_id": "govinfo:hr8800eh-immigration-complete",
+          "locator": "Complete operative JulyEHsection3604; wholepublictext actuallyread; separateAssembly/currentlaw/printed-application limits retained",
+          "passage_utf8_sha256": "a96047943f2ba4cd32d836cbd1877b3fc30cfd0f4fcbbd550ad688c6549ae80f"
+        },
+        {
+          "source_id": "govinfo:15usc4651-operative2024-245",
+          "locator": "Complete named dated witness; exact predicates and legal/current/individual limits retained",
+          "passage_utf8_sha256": "8d519e057b1b11bdd78a9412bfff6901abaca486dc734d83ae0422f51d10b010"
+        }
+      ],
+      "verified": "CategoryAcoverednation and separately described officialdetermined categoryB; literal and connector retained withoutimposingintersection. CommerceversusMaritimeactors anddistinct consultationparticipants retained. Printed4872(d) andimported-reference application remain qualified; not3118PRCdefinition orfixeduniversalcountrylist."
+    }
+  ],
+  "group_count": 3,
+  "claim_bindings": 135,
+  "all135claim_passages_mechanically_in_named_sources": true,
+  "actual_focused_read_extents": [
+    {
+      "source_id": "govinfo:48usc1806-selected2024-243",
+      "start": 979,
+      "end": 1483
+    },
+    {
+      "source_id": "govinfo:48usc1806-selected2024-243",
+      "start": 6562,
+      "end": 9344
+    },
+    {
+      "source_id": "govinfo:hr8800eh-immigration-complete",
+      "start": 1920459,
+      "end": 1923740
+    },
+    {
+      "source_id": "govinfo:15usc4651-operative2024-245",
+      "start": 5138,
+      "end": 5546
+    }
+  ],
+  "complete3604_claim_actually_reread": true,
+  "private_omission_guard_preflight": {
+    "started_utc": "2026-10-16T02:16:20.545200+00:00",
+    "completed_utc": "2026-10-16T02:16:24.410061+00:00",
+    "elapsed_seconds": 3.8648673000279814,
+    "private_final_actual_prepare_pass": true,
+    "negative_omission_probes": [
+      {
+        "probe": "all_baseline",
+        "error": "candidate differs from complete exact Clerk-bound wrapper: claim_source_map"
+      },
+      {
+        "probe": "transition_only",
+        "error": "candidate differs from complete exact Clerk-bound wrapper: claim_source_map"
+      },
+      {
+        "probe": "subsection_b_only",
+        "error": "candidate differs from complete exact Clerk-bound wrapper: claim_source_map"
+      }
+    ],
+    "guard_scope": "Actual Immigration qualification-wrapper stage rejects loss of complete bindings against the new sealed provider; private canonical provider path is not written. No fully resealed-provider real-CLI mutation campaign or universal semantic completeness certificate.",
+    "banked_read_receipt_ids_not_in_qualified_source_graph": [],
+    "canonical_changes": false,
+    "new_sources": 0,
+    "new_acquisitions": 0,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "ebc0ecee447262815b8fb5309e2e5da2d9f0e72cc8e2b6b6ca3a3b1d5303f59f"
+  },
+  "banked_actual_read_receipt_source_ids_missing_from_graph": [],
+  "original_Health8349_23_26_and_prior133bindings_preserved": true,
+  "source_bank_manifest_private_pool_unchanged": true,
+  "all_denied_cancelled_reserved_restrictions_retained": true,
+  "quality_corrections": 3,
+  "new_screening_completions": 0,
+  "independent_source_domain_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "7bb9bac6b822e141b2b31184ba94f41ac40e7335a9a57322af709bbd316d00a1"
+}
