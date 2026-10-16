@@ -6791,5 +6791,125 @@ class Checkpoint248StateMigrationConditionTests(unittest.TestCase):
         self.assertTrue(self.q['no_blanket_MRA_15day_or_universal_substantive_waiver'])
 
 
+
+class Checkpoint249IncorporatedBaselineTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q = json.loads((DATA / 'hr1_incorporated_baselines_checkpoint249.json').read_text())
+        cls.a = json.loads((DATA / 'authoring.json').read_text())
+        cls.actions = {a['action_id']: a for a in cls.a['actions'] if a['action_id'] in cls.q['actions']}
+        cls.cap = json.loads((DATA / 'sources.json').read_text())
+        cls.bank = {s['source_id']: s for s in cls.cap['sources']}
+
+    def test_preimages_and_exact_action_boundaries_preserve_prior_work(self):
+        self.assertEqual(self.q['receipt_sha256'], sealed_digest(self.q, 'receipt_sha256'))
+        self.assertEqual(self.q['base_head'], '10f6a2b5e8f716cb5e6ff4146f46fd6ce1f1fa7c')
+        for aid, act in self.actions.items():
+            old = self.q['prior_authoring'][aid]
+            self.assertTrue(act['meaning'].startswith(old['meaning']))
+            self.assertEqual(act['claim_source_map'][:len(old['claim_source_map'])], old['claim_source_map'])
+            self.assertEqual(act['limitations'][:-1], old['limitations'])
+            self.assertEqual(act['source_render_constraints'][:-1], old.get('source_render_constraints', []))
+            for key in ['choice_meanings', 'compact_description', 'compact_source_refs', 'short_description', 'stage', 'episode_id']:
+                self.assertEqual(act[key], old[key])
+            self.assertEqual(act['source_render_constraints'][-1]['action_ids'], [aid])
+            audit = json.loads((DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json').read_text())
+            refs = next(v for v in audit['substantive_actions'] if v['action_id'] == aid)['primary_evidence']
+            prior_refs = self.q['prior_audit_primary_evidence'][aid]
+            self.assertEqual(refs[:len(prior_refs)], prior_refs)
+            self.assertTrue({act['source_id'], *act['additional_source_ids']} <= {s['source_id'] for s in refs})
+
+    def test_coverage_definitions_retain_exclusions_and_separate_deemed_coverage(self):
+        t = self.bank['govinfo:26usc5000Af-2024-coverage249']['text']
+        for phrase in ['Government sponsored programs', 'Eligible employer-sponsored plan', 'Excepted benefits not treated as minimum essential coverage', 'shall not include health insurance coverage', 'a bona fide resident of any possession', '(5) Insurance-related terms']:
+            self.assertIn(phrase, t)
+        for act in self.actions.values():
+            self.assertIn('Separate(f)(3)EXCLUDES', act['meaning'])
+            self.assertIn('does not decide coverage for an individual', act['meaning'])
+
+    def test_qsehra_keeps_funding_proof_equal_terms_and_indexed_prorated_limits(self):
+        t = self.bank['govinfo:26usc9831d-2024-qsehra249']['text']
+        for phrase in ['no salary reduction contributions', 'after the employee provides proof of coverage', '$4,950 ($10,000', 'Amount prorated in certain cases', 'Inflation adjustment', 'rounded to the next lowest multiple of $50', 'not an applicable large employer', 'does not offer a group health plan to any of its employees', 'maximum dollar amount', '(4) Notice']:
+            self.assertIn(phrase, t)
+        for act in self.actions.values():
+            self.assertIn('MAXIMUM amount allowable', act['meaning'])
+            self.assertIn('not actual reimbursement or a guaranteed payment', act['meaning'])
+            self.assertIn('existing proposed individual-coverageHRAcontext-only disposition/domain question reserved', act['meaning'])
+
+    def test_existing_credit_interface_retains_months_actual_enrollment_and_no_double_benefit(self):
+        t = self.bank['govinfo:26usc36Bace-2024-aca-credit']['text']
+        for phrase in ['Employee or family must not be covered under employer plan', 'Denial of double benefit', 'reduced (but not below zero)', 'Coverage for less than entire year', 'section 9831(d)(3)(C)', 'section 9831(d)(2)']:
+            self.assertIn(phrase, t)
+        for act in self.actions.values():
+            self.assertIn('self-only second-lowest-cost-silver premium LESS', act['meaning'])
+            self.assertIn('less-than-full-year substitution', act['meaning'])
+
+    def test_corporate_thresholds_and_layered_rates_do_not_become_personal_coverage(self):
+        t = self.bank['govinfo:26usc59Abe-2024-beat249']['text']
+        for phrase in ['$500,000,000', '3 percent (2 percent', 'a real estate investment trust, or an S corporation', '12.5 percent', '10 percent', 'increased by one percentage point']:
+            self.assertIn(phrase, t)
+        h = self.actions['house:119:1:145']
+        claim = next(c for c in h['claim_source_map'] if 'Complete exact vote-timeHouse111005' in c['locator'])
+        self.assertIn('inserting ``10.1 percent', claim['passage'])
+        self.assertIn('taxable years beginning after December 31, 2025', claim['passage'])
+        self.assertIn('deems the59A(e)(1)(B)AND(C)', h['meaning'])
+        self.assertIn('not silently treated as a direct12.5-for10baseline replacement', h['meaning'])
+        self.assertNotIn('separate corporate branch now retains', self.actions['house:119:1:190']['meaning'])
+
+    def test_corporate_exceptions_and_capitalization_are_scoped_to_printed_overrides(self):
+        t = self.bank['govinfo:26usc59Abe-2024-beat249']['text']
+        for phrase in ['Tax benefits disregarded if tax withheld', 'services cost method', 'total services cost with no markup component', 'Special rule for foreign persons', 'Aggregation rules']:
+            self.assertIn(phrase, t)
+        h = self.actions['house:119:1:145']['meaning']
+        self.assertIn('(c)(2)(B)withholding-related', h)
+        self.assertIn('(c)(4)(B)(ii)services deduction exclusion', h)
+        self.assertIn('(d)(5)eligible-services-cost/no-markup exception', h)
+        self.assertIn('EXCLUDING purchase prices of depreciable/amortizableproperty OR inventory', h)
+        self.assertIn('printed unresolved missing-subparagraph reference remain', h)
+
+    def test_selected_sources_seals_extents_and_bindings_match_manifest(self):
+        mf = json.loads((DATA / 'research_capture_manifest.json').read_text())
+        manifests = {s['source_id']: s for s in mf['sources']}
+        for read in self.q['actual_reading']:
+            s = self.bank[read['source_id']]
+            self.assertEqual(s['governed_bytes_sha256'], sealed_digest(s, 'governed_bytes_sha256'))
+            self.assertEqual(digest(s['text']), read['text_sha256'])
+            self.assertEqual(s['source_text_extents'][0], {k: read[k] for k in ['start', 'end', 'total']})
+            self.assertEqual(manifests[s['source_id']]['governed_bytes_sha256'], s['governed_bytes_sha256'])
+            self.assertEqual(manifests[s['parent_source_id']]['raw_sha256'], s['raw_sha256'])
+            for aid, act in self.actions.items():
+                if s['source_id'] in act['additional_source_ids']:
+                    self.assertIn(s['text'], [c['passage'] for c in act['claim_source_map'] if c['source_id'] == s['source_id']])
+
+    def test_current_source_corruptions_fail_actual_prepare_even_after_source_reseal(self):
+        a = copy.deepcopy(self.a)
+        a['actions'] = list(copy.deepcopy(self.actions).values())
+        a['blocked_episode_ids'] = []
+        for sid, old, new in [('govinfo:26usc5000Af-2024-coverage249', 'shall not include', 'shall include'), ('govinfo:26usc9831d-2024-qsehra249', 'no salary reduction', 'salary reduction'), ('govinfo:26usc59Abe-2024-beat249', '$500,000,000', '$5,000,000')]:
+            for reseal in [False, True]:
+                with self.subTest(source=sid, reseal=reseal):
+                    cap = copy.deepcopy(self.cap)
+                    source = next(s for s in cap['sources'] if s['source_id'] == sid)
+                    source['text'] = source['text'].replace(old, new, 1)
+                    if reseal:
+                        source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+                    with self.assertRaisesRegex(ValueError, 'governed source changed|claim passage absent from bound source'):
+                        prepare(copy.deepcopy(a), cap, ['F000477', 'M001184'])
+
+    def test_observations_accounting_and_unresolved_boundaries_are_conserved(self):
+        cores = {c['action_id']: c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']}
+        for aid, core in self.q['current_core_sha256'].items():
+            self.assertEqual(cores[aid]['action_core_sha256'], core)
+        for member in json.loads((DATA / 'generated/member_projections.json').read_text()):
+            for aid in self.actions:
+                self.assertEqual(next(v for v in member['actions'] if v['action_id'] == aid)['official_status'], 'Nay')
+        self.assertEqual(self.q['counts'], {'reviewed': 666, 'pending': 10, 'cores': 87, 'behavioral_propositions': 145, 'episodes': 75, 'multi_action_episodes': 10})
+        self.assertEqual(self.q['new_screening_completions'], 0)
+        self.assertTrue(self.q['HRA_context_only_domain_question_unchanged'])
+        self.assertTrue(self.q['whole_counterpart_absence_not_established'])
+        self.assertFalse(self.q['editorial_acceptance'])
+        self.assertFalse(self.q['publication_authorized'])
+
+
 if __name__ == '__main__':
     unittest.main()
