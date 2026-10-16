@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "d40f86e686467a23459a2818de7eb3cb044d3600107b65dea4354f88362402e6"
   },
-  "input_sha256": "a6c33e134277a3f311a5cdc6f37b936eb77d44f12f26b118c60aaf182986ed85",
-  "source_capture_sha256": "c268d832da2efc25ceb41f6a6e9f96e5ea5e56060fcb0b62572a4fbf1012b54f",
-  "core_sha256": "2eb6db19e682f84c4ae21836b45aa6c03f287d48e1a20e5778fab28ed10eb64a",
-  "compiled_sha256": "add1a36ed13b554f8de0c3e70e00d95003950a4c28ef5f8fd728be5913085825",
-  "readable_sha256": "71a71da49c8c40b95b2d4eb1bfd7a9f1b36b90549ffc4a035496642e88591d9f",
+  "input_sha256": "a462b8f63125238f2bf823d333d90ed2054d76a0c9d4060f74b69f7fa34a2ffa",
+  "source_capture_sha256": "fe78f6c9f903c3cd702b0c7bd266c95fd672a647e828f7150cf326ce82d86d4b",
+  "core_sha256": "7c8dcdca7bc6ce3d2893bae84f6daf003cd8f19e562ae331f7e5c09723dd8d3c",
+  "compiled_sha256": "d7e7c376947aa9ba5b29dbfbf81efe9785e160f668f988ef477d41a76c86a6ba",
+  "readable_sha256": "ead0eee6990062656aec6cc829481ee9f3779a2fe819895a85e678a267fc8147",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1654,6 +1654,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passing the whole exact H.R.9770CR package; no separate component opposition, preferred alternative or motive inferred",
           "source_id": "clerk:119:2:272"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:278",
+      "shared_sha256": "f7d5f6f499767c25a97d6df3b377165289519f3d83c9f9b25ae75880e32a77e4",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact amended July package; no separate component stance, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:278"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact amended July package; no separate component stance, preferred alternative or motive inferred",
+          "source_id": "clerk:119:2:278"
         }
       ]
     },

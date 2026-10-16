@@ -1,0 +1,1052 @@
+{
+  "checkpoint": 245,
+  "base_head": "c6bdbeef944035387812d35e5cee3645b8974260",
+  "action_id": "house:119:2:278",
+  "created_utc": "2026-10-16T01:51:57.952195+00:00",
+  "counts": {
+    "reviewed": 666,
+    "pending": 10,
+    "cores": 87,
+    "behavioral_propositions": 145,
+    "episodes": 75,
+    "multi_action_episodes": 10
+  },
+  "qualification_receipt_sha256": "71094b2fda99003e0d7c6dd044a05668c04790b71c354fcf447147283f33665c",
+  "qualified_core_sha256": "f7d5f6f499767c25a97d6df3b377165289519f3d83c9f9b25ae75880e32a77e4",
+  "predicate_audit_sha256": "df499813ea2b34e9be8f6e9568a796a6af7916b598f858b8e539d46d58f81957",
+  "audit_accounting_receipt_sha256": "96217121d514ea4cbeeb43291cf76d02486d18d81750cd11f9e63eb7ed853268",
+  "conservation_before": {
+    "checkpoint": 245,
+    "base_head": "c6bdbeef944035387812d35e5cee3645b8974260",
+    "started_utc": "2026-10-16T01:26:57.789272+00:00",
+    "checked_utc": "2026-10-16T01:27:17.748179+00:00",
+    "all86prior_cores_and_authoring_exact": true,
+    "all665prior_membership_reviews_exact": true,
+    "all675other_inventory_rows_exact": true,
+    "all172prior_official_observations_exact": true,
+    "all_prior_projection_rows_exact": true,
+    "all143prior_behavioral_propositions_and_entire_prior_graphs_exact": true,
+    "exact_two_new_own_Nay_observations_and_whole_opposition_propositions": true,
+    "originalHealth8349characters23bindings26witnesses_limits_identity_reference_preserved": true,
+    "source_prefixes_exact": {
+      "sources.json": {
+        "before": 2905,
+        "after": 2950,
+        "appends": 45
+      },
+      "research_capture_manifest.json": {
+        "before": 1792,
+        "after": 1836,
+        "appends": 44
+      },
+      "ib_primary_captures.json": {
+        "before": 1828,
+        "after": 1872,
+        "appends": 44
+      }
+    },
+    "all_prior_audit_rows_histories_findings_sample_coverage_null_and_explicit_list_membership_preserved": true,
+    "only_audit_summary_rederived_under_existing_rule": true,
+    "all10pending_holds_and_hr1048block_retained": true,
+    "all967frozen_private_and_notes_exact": true,
+    "tracked_files_outside_allowlist_exact": 3673,
+    "index_unchanged": true,
+    "prior_test_method_changes": [
+      "Checkpoint240AppropriationExceptionTests.test_existing_episode_aggregation_preserves_individual_votes_without_trajectory",
+      "Checkpoint243DecemberDefenseQualificationTests.test_reserved_sources_and_pending_actions_remain_outside_completion"
+    ],
+    "new_regressions": 8,
+    "counts": {
+      "reviewed": 666,
+      "pending": 10,
+      "cores": 87,
+      "behavioral_propositions": 145,
+      "episodes": 75,
+      "multi_action_episodes": 10
+    },
+    "elapsed_seconds": 19.95903220004402,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "6ad69b76840130e8ef9808f7814c225fb4a9743be71e55d2885fca9313ff359a"
+  },
+  "conservation_after": {
+    "checkpoint": 245,
+    "base_head": "c6bdbeef944035387812d35e5cee3645b8974260",
+    "started_utc": "2026-10-16T01:50:41.378745+00:00",
+    "checked_utc": "2026-10-16T01:51:22.849922+00:00",
+    "all86prior_cores_and_authoring_exact": true,
+    "all665prior_membership_reviews_exact": true,
+    "all675other_inventory_rows_exact": true,
+    "all172prior_official_observations_exact": true,
+    "all_prior_projection_rows_exact": true,
+    "all143prior_behavioral_propositions_and_entire_prior_graphs_exact": true,
+    "exact_two_new_own_Nay_observations_and_whole_opposition_propositions": true,
+    "originalHealth8349characters23bindings26witnesses_limits_identity_reference_preserved": true,
+    "source_prefixes_exact": {
+      "sources.json": {
+        "before": 2905,
+        "after": 2950,
+        "appends": 45
+      },
+      "research_capture_manifest.json": {
+        "before": 1792,
+        "after": 1836,
+        "appends": 44
+      },
+      "ib_primary_captures.json": {
+        "before": 1828,
+        "after": 1872,
+        "appends": 44
+      }
+    },
+    "all_prior_audit_rows_histories_findings_sample_coverage_null_and_explicit_list_membership_preserved": true,
+    "only_audit_summary_rederived_under_existing_rule": true,
+    "all10pending_holds_and_hr1048block_retained": true,
+    "all967frozen_private_and_notes_exact": true,
+    "tracked_files_outside_allowlist_exact": 3673,
+    "index_unchanged": true,
+    "prior_test_method_changes": [
+      "Checkpoint240AppropriationExceptionTests.test_existing_episode_aggregation_preserves_individual_votes_without_trajectory",
+      "Checkpoint243DecemberDefenseQualificationTests.test_reserved_sources_and_pending_actions_remain_outside_completion"
+    ],
+    "new_regressions": 8,
+    "counts": {
+      "reviewed": 666,
+      "pending": 10,
+      "cores": 87,
+      "behavioral_propositions": 145,
+      "episodes": 75,
+      "multi_action_episodes": 10
+    },
+    "elapsed_seconds": 41.47137919999659,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "06473e5e968d9284eb98696cfc186936bda68d9093b89a8e8422c466d72e600d"
+  },
+  "validation": {
+    "owner_tests_passed": 493,
+    "Immigration_tests_in_owner_suite": 316,
+    "new_regressions": 8,
+    "initial_focused_tests": 13,
+    "initial_focused_failed_unit_seconds": 5.474,
+    "initial_focused_failed_command_seconds": 5.9862947,
+    "focused13_pass_unit_seconds": 5.299,
+    "focused13_pass_command_seconds": 5.8221998,
+    "isolated_Health_probe_pass_unit_seconds": 3.069,
+    "isolated_Health_probe_command_seconds": 3.5474298,
+    "semantic_checks_passed": 7,
+    "IR_passed": true,
+    "actual_CLI_byte_exact_outputs": 7,
+    "final_gate": {
+      "started_utc": "2026-10-16T01:27:49.071327+00:00",
+      "completed_utc": "2026-10-16T01:50:32.037104+00:00",
+      "first_gate_wall_seconds": 179.23714550002478,
+      "affected_owner_retry": {
+        "phase": "owner",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate",
+          "backend.tests.test_editorial_semantic_ir",
+          "backend.tests.test_source_sequence",
+          "backend.tests.test_shared_domain_candidate"
+        ],
+        "started_utc": "2026-10-16T01:31:45.847789+00:00",
+        "completed_utc": "2026-10-16T01:50:32.029540+00:00",
+        "elapsed_seconds": 1126.1876715999679,
+        "exit_code": 0,
+        "log": ".tmp/full_gate245_completed/owner.log",
+        "log_sha256": "d23381dce07d880e160d8fd1dd8f336f1116200fabfbad9a159a87963156fbda"
+      },
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-16T01:31:45.847789+00:00",
+          "completed_utc": "2026-10-16T01:50:32.029540+00:00",
+          "elapsed_seconds": 1126.1876715999679,
+          "exit_code": 0,
+          "log": ".tmp/full_gate245_completed/owner.log",
+          "log_sha256": "d23381dce07d880e160d8fd1dd8f336f1116200fabfbad9a159a87963156fbda"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-16T01:27:49.072033+00:00",
+          "PID": 10756,
+          "completed_utc": "2026-10-16T01:27:52.507639+00:00",
+          "elapsed_seconds": 3.4356362000107765,
+          "exit_code": 0,
+          "log": ".tmp/full_gate245_final/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-16T01:27:49.072268+00:00",
+          "PID": 16080,
+          "completed_utc": "2026-10-16T01:27:49.186990+00:00",
+          "elapsed_seconds": 0.11472810001578182,
+          "exit_code": 0,
+          "log": ".tmp/full_gate245_final/IR.log",
+          "log_sha256": "0e08feb5ff6075be07855a23aed9783e76e083677e7597fefe4ed28611704763"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate245_final\\replay"
+          ],
+          "started_utc": "2026-10-16T01:27:49.072573+00:00",
+          "PID": 26204,
+          "completed_utc": "2026-10-16T01:30:48.181858+00:00",
+          "elapsed_seconds": 179.1103524999926,
+          "exit_code": 0,
+          "log": ".tmp/full_gate245_final/replay.log",
+          "log_sha256": "b91088564495a195039a07534b4cf97c7b9d591da9e2fb07186df63f294444bc",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": true,
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "21798da3b110669ddeaae300537e1af77467dc5e1784b70b4d74545e0c87005e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "b0b8841430715ae67d116903065c4c5e128c0311f7d99089fcd368d08e2cb1a3",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "5d696df496fde5eca8ba8e19d7f8d35e8009c6dd89daf8cbe07145059e293291",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "28466672033fccd381345ff2d2470c9d9c2c2a53f6c20945b890bbfd13d4c7da",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "7d1319440a498812404133a985485d3c2c1adc6af6e780e65fe108a90973e420",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "408a070ceb1782cd27981304f71eaa9dd2fb2c38ef4734f3aae9fc60c262eac4",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "eb70684cfb45a8bdaaa3f578b8f8eada1883c24965e74945763bbc18b0d79e84",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "8dab196046d9a72977e3a6f6096b3f77fee61e2ae9fc8d76698f156850e2eac1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "282e74c69ec8090e6a41da9ba9b366c3434ea5d0a633333a367757c3692e6ea3",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "53aab77f14c5cc1d157d83d6b6b6e562ecc10dde2c02390e403eeed81e098666",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "dca502d01546b82cbe7b4ddb4de5b6d900d83390f89c584acd4e53d28b2f2162",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "77dcaf7a55bfaeccc6e8b9ad9939e0fb9cec1323df4e6333b624f126d580d099",
+        "backend/tests/test_immigration_shared_candidate.py": "d3d55c90139aaab8759eb1111cef385a0ed0c20e03d9bcb5d0f236b4f0578327",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "959842c386abd25ee92938f407b50454c9a08a77301e501bb357e707649f2b0c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/july_defense_qualification_checkpoint245.json": "fdcd6ed9f0a4c20d02232e7afd8c9a8c75ad96e0176c12639d0e547354e6e09e",
+        "docs/plans/immigration_checkpoint245_july_defense.md": "7be7659c2078657540b5b7fab3cc161d86ee6238a6610b58ba466550c7e49120",
+        "docs/editorial/shared_candidates/house_119_july_defense_qualification_checkpoint245/shared_action_core_proposal.json": "740c47046d768d1cc3e32fcd241f7cac9521aceaba606eb606d0c8b7ec220e30",
+        "docs/editorial/shared_candidates/house_119_july_defense_qualification_checkpoint245/README.md": "2217e8be5d0bcb27976cb0baf3e477e971548d95ce1bb21f20af5c36db88be8a",
+        "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
+        "docs/review_packets/immigration_checkpoint245_predicate_audit.json": "aa8d6a001ea1aefdd82738a9efcd43e77282021991c98cde382b612de3051de8",
+        "docs/review_packets/immigration_checkpoint245_audit_accounting.json": "d05f70fa3ad760753c9c3982e18ede6cb8df570bdb1bc343578bb75c81d5dffa",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/december_predicate_corrections_checkpoint244.json": "ab1a872a614b4b2c7ad7cdefea7f3130cfa9a64f31b98ff9264578c2e52e3153",
+        "docs/editorial/shared_candidates/house_119_december_predicate_corrections_checkpoint244/shared_action_core_proposal.json": "9b3e6d03e837aa99234c193950a3d35fbc4e959680ac617883cef580a38a6a92"
+      },
+      "input_hashes_unchanged": true,
+      "unchanged_semantic_input_checks_reused": true,
+      "explicit_reuse_scope": "IR, seven semantic checks and seven actual CLI byte-exact outputs were passed before only test-isolation/plan changes; all their semantic inputs verified unchanged. No validation claimed for the stopped initial owner run.",
+      "first_interrupted_owner": {
+        "phase": "owner",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate",
+          "backend.tests.test_editorial_semantic_ir",
+          "backend.tests.test_source_sequence",
+          "backend.tests.test_shared_domain_candidate"
+        ],
+        "started_utc": "2026-10-16T01:27:49.071844+00:00",
+        "PID": 12580,
+        "completed_utc": "2026-10-16T01:29:20.865618+00:00",
+        "elapsed_seconds": 91.79432119999547,
+        "exit_code": 4294967295,
+        "log": ".tmp/full_gate245_final/owner.log",
+        "log_sha256": "3c841274ffdf888ef308f24e07877ef75c982e3841c7af250ace0b7310918ab7"
+      },
+      "first_result_sha256": "280c9ba76d68a22074ff3e6edd44567d6e8db2594f6384fd773c239420ffdc58",
+      "overlap": "Initial IR/semantic/replay and interrupted owner elapsed overlap. Final owner retry sequential; gross batch includes all initial/retry/review/context/observation costs."
+    },
+    "initial_interrupted_gate": {
+      "started_utc": "2026-10-16T01:27:49.071327+00:00",
+      "completed_utc": "2026-10-16T01:30:48.307420+00:00",
+      "wall_seconds": 179.23714550002478,
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-16T01:27:49.071844+00:00",
+          "PID": 12580,
+          "completed_utc": "2026-10-16T01:29:20.865618+00:00",
+          "elapsed_seconds": 91.79432119999547,
+          "exit_code": 4294967295,
+          "log": ".tmp/full_gate245_final/owner.log",
+          "log_sha256": "3c841274ffdf888ef308f24e07877ef75c982e3841c7af250ace0b7310918ab7"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-16T01:27:49.072033+00:00",
+          "PID": 10756,
+          "completed_utc": "2026-10-16T01:27:52.507639+00:00",
+          "elapsed_seconds": 3.4356362000107765,
+          "exit_code": 0,
+          "log": ".tmp/full_gate245_final/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-16T01:27:49.072268+00:00",
+          "PID": 16080,
+          "completed_utc": "2026-10-16T01:27:49.186990+00:00",
+          "elapsed_seconds": 0.11472810001578182,
+          "exit_code": 0,
+          "log": ".tmp/full_gate245_final/IR.log",
+          "log_sha256": "0e08feb5ff6075be07855a23aed9783e76e083677e7597fefe4ed28611704763"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate245_final\\replay"
+          ],
+          "started_utc": "2026-10-16T01:27:49.072573+00:00",
+          "PID": 26204,
+          "completed_utc": "2026-10-16T01:30:48.181858+00:00",
+          "elapsed_seconds": 179.1103524999926,
+          "exit_code": 0,
+          "log": ".tmp/full_gate245_final/replay.log",
+          "log_sha256": "b91088564495a195039a07534b4cf97c7b9d591da9e2fb07186df63f294444bc",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": false,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "21798da3b110669ddeaae300537e1af77467dc5e1784b70b4d74545e0c87005e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "b0b8841430715ae67d116903065c4c5e128c0311f7d99089fcd368d08e2cb1a3",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "5d696df496fde5eca8ba8e19d7f8d35e8009c6dd89daf8cbe07145059e293291",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "28466672033fccd381345ff2d2470c9d9c2c2a53f6c20945b890bbfd13d4c7da",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "7d1319440a498812404133a985485d3c2c1adc6af6e780e65fe108a90973e420",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "408a070ceb1782cd27981304f71eaa9dd2fb2c38ef4734f3aae9fc60c262eac4",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "eb70684cfb45a8bdaaa3f578b8f8eada1883c24965e74945763bbc18b0d79e84",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "8dab196046d9a72977e3a6f6096b3f77fee61e2ae9fc8d76698f156850e2eac1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "282e74c69ec8090e6a41da9ba9b366c3434ea5d0a633333a367757c3692e6ea3",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "53aab77f14c5cc1d157d83d6b6b6e562ecc10dde2c02390e403eeed81e098666",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "dca502d01546b82cbe7b4ddb4de5b6d900d83390f89c584acd4e53d28b2f2162",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "77dcaf7a55bfaeccc6e8b9ad9939e0fb9cec1323df4e6333b624f126d580d099",
+        "backend/tests/test_immigration_shared_candidate.py": "55ed2f01a037654cdab7f6bbb6330434704d2fafe3d0a4503fee18d727b29160",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "959842c386abd25ee92938f407b50454c9a08a77301e501bb357e707649f2b0c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/july_defense_qualification_checkpoint245.json": "fdcd6ed9f0a4c20d02232e7afd8c9a8c75ad96e0176c12639d0e547354e6e09e",
+        "docs/plans/immigration_checkpoint245_july_defense.md": "36abd4e7ea71e7bf064ceda93da26450b2f36576534bce7c84cf6a8ed4636c70",
+        "docs/editorial/shared_candidates/house_119_july_defense_qualification_checkpoint245/shared_action_core_proposal.json": "740c47046d768d1cc3e32fcd241f7cac9521aceaba606eb606d0c8b7ec220e30",
+        "docs/editorial/shared_candidates/house_119_july_defense_qualification_checkpoint245/README.md": "2217e8be5d0bcb27976cb0baf3e477e971548d95ce1bb21f20af5c36db88be8a",
+        "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
+        "docs/review_packets/immigration_checkpoint245_predicate_audit.json": "aa8d6a001ea1aefdd82738a9efcd43e77282021991c98cde382b612de3051de8",
+        "docs/review_packets/immigration_checkpoint245_audit_accounting.json": "d05f70fa3ad760753c9c3982e18ede6cb8df570bdb1bc343578bb75c81d5dffa",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/december_predicate_corrections_checkpoint244.json": "ab1a872a614b4b2c7ad7cdefea7f3130cfa9a64f31b98ff9264578c2e52e3153",
+        "docs/editorial/shared_candidates/house_119_december_predicate_corrections_checkpoint244/shared_action_core_proposal.json": "9b3e6d03e837aa99234c193950a3d35fbc4e959680ac617883cef580a38a6a92"
+      },
+      "input_hashes_unchanged": true
+    },
+    "test_isolation_rework": {
+      "stopped_utc": "2026-10-16T01:29:20.801612+00:00",
+      "owned_PID": 12580,
+      "reason": "Final diff review found new Health negative probe reused the prior corrupted candidate. Stop only this known owned owner-test process before fixing test isolation; no semantic inputs changed.",
+      "other_phases_not_stopped": true,
+      "all_costs_retained": true
+    },
+    "new_fully_resealed_real_CLI_mutation_campaign": false,
+    "structural_tests_not_semantic_acceptance": true
+  },
+  "historical_preservation": {
+    "prior230P3_repairs_delivered231_and_all_prior_candidates_preserved": true,
+    "all_prior86cores665reviews172observations143propositions_exact": true,
+    "original_Health8349char23bindings26witnesses_and_identity_limits_preserved": true,
+    "all_prior_source_objects_prefixes_and_duplicate_private_pool_history_preserved": true,
+    "ten_pending_holds_hr1048_block_withdrawals_and_all_denied_cancelled_reserved_restrictions_retained": true
+  },
+  "review": {
+    "parent244_comment": 6205292721,
+    "parent244_reviewed_head": "c6bdbeef944035387812d35e5cee3645b8974260",
+    "parent244_reviewed_parent": "b26137913f3087aee3b46ab5e5f1270011124bfd",
+    "parent244_scope": "Nine changed-passage repairs closed; no successor/domain/current-law/editorial clearance",
+    "checkpoint245_independent_source_domain_review_pending": true,
+    "hr1048_bounded_review": {
+      "checkpoint": 245,
+      "reviewed_head": "c6bdbeef944035387812d35e5cee3645b8974260",
+      "review_source": {
+        "threadId": "01a13d6e-145c-7ab0-a161-236d73dea248",
+        "threadTitle": "Profile validation harness overhead",
+        "turnId": "01a14245-b1c8-79b0-b266-686fa35b06d5",
+        "startedAt": 1792113226,
+        "completedAt": 1792113731,
+        "durationMs": 505021,
+        "final": "No actionable semantic defect found in the H.R.1048 roll 79/83 pair at checkpoint **`c6bdbeef944035387812d35e5cee3645b8974260`**, within the retained evidence reviewed.\n\n- [Authored meanings](https://github.com/dhart54/political_fingerprint/blob/c6bdbeef944035387812d35e5cee3645b8974260/docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json#L8303) preserve the whole-substitute versus whole-passage distinction, retained English-translation duties, both translator exclusions, citizenship/residence fallbacks and all seven foreign-source categories.\n- The complete retained Scott substitute and engrossed House bill support those descriptions. Material Print provisions, adopted Ogles changes and recorded proceedings support the baseline and amendment sequence.\n- Both members’ projections match retained Clerk observations: **Foushee Aye/Nay; Massie No/Yea** on rolls 79/83.\n- Compiled and readable outputs exclude both actions from behavioral propositions. The paired episode remains held; neither member receives an issue-wide synthesis.\n\nThis is a bounded review, **not acceptance or hold clearance**. Individual citizenship, agency/control, affiliation, designation-list and legal applications remain reserved. I did not independently reacquire original documents or re-read every unrelated Print provision.\n\nNo files changed, tests ran, comments posted or writer contacted. Read-only inspection encountered a missing-path lookup, a root-shape error and oversized diagnostic output; these did not change repository state.\n\nReview elapsed: **7m44s**, first tool **9:13:58 p.m. EDT**, final check **9:21:42 p.m. EDT**. Previously verified configuration: **gpt-6.1-sol / High / default tier**; effective overrides were not exposed."
+      },
+      "action_ids": [
+        "house:119:1:79",
+        "house:119:1:83"
+      ],
+      "intake_scope": "Native completed read-only support turn verified directly; no message or reply sent to another task. No source reacquisition or new independent source rereading by the Immigration writer is claimed.",
+      "hold_reconciliation": {
+        "covered": "Bounded comparison of paired retained-source candidate meanings, complete Scott substitute/EH, material Print/Ogles/proceedings, incorporated categories, separate Clerk observations and both held member outputs. No actionable defect in that scope.",
+        "addresses_existing_conditions": [
+          "The passage83 comparison referenced by roll79's pending-passage constraint.",
+          "Independent paired candidate/package and member-output comparison referenced by roll83's hold, within the support review's expressly bounded material-source scope."
+        ],
+        "not_established": "Independent exhaustive unrelated Print, current-law, designation-list or individual citizenship/agency/control/affiliation/legal application clearance; editorial acceptance or publication.",
+        "remaining": "Record the bounded review in the existing evidence flow and retain the typed hold. Any later proposal to release behavioral counting must explicitly reconcile whether this bounded package scope satisfies the existing review condition and obtain authority for any counting/readiness change. Reserved applications remain qualified limits; this receipt does not require deciding every individual legal application to retain a candidate.",
+        "hold_removed": false,
+        "new_behavioral_propositions": 0,
+        "semantic_inputs_changed": false
+      },
+      "reported_review_seconds": 464,
+      "native_turn_wall_seconds": 505.021,
+      "cost_note": "Support read-only work overlaps the Immigration writer's application, review and gate. Reported review interval and native full-turn time are both preserved; do not add them as exclusive elapsed labor or infer writer model settings from support settings.",
+      "editorial_acceptance": false,
+      "publication_authorized": false,
+      "intake_utc": "2026-10-16T01:37:39.875677+00:00",
+      "receipt_sha256": "f1c6d2ab439f802a842bf428ee747becbc9d0d794c2fd6873b2d2ccbb692de1a",
+      "current_applicability": {
+        "same_prior_pair_authoring_and_cores_and_member_outputs": true,
+        "proof_ref": ".tmp/checkpoint245_conservation_pre_gate.json",
+        "proof_receipt_sha256": "6ad69b76840130e8ef9808f7814c225fb4a9743be71e55d2885fca9313ff359a",
+        "proof_scope": "All86priorcores/authoring,172officialobservations and143priorpropositions/graphs exact against immutablec6 snapshot; new245H8800 is not covered by this support review."
+      }
+    },
+    "audit_summary_independently_reconstructed_using_existing_rule": true,
+    "audit_summary_not_new_semantic_assessment_or_clearance": true
+  },
+  "throughput": {
+    "observed_model": "GPT-6base",
+    "selected_variant_effort_speed_tier": "Unexposed and unchanged; no inferred setting",
+    "action_complexity": "One complex whole July defense package; zero comparable routine screenings",
+    "first_work_bound_utc": "2026-10-15T23:10:35.348145+00:00",
+    "full_EH_actual_read_completed_utc": "2026-10-15T23:52:09.446320+00:00",
+    "bound_to_whole_EH_read_seconds": 2494.098175,
+    "whole_EH_read_scope": "2978639characters/120contiguousintervals; bound includes other work, not isolated reading-only labor",
+    "gate_completed_utc": "2026-10-16T01:50:32.037104+00:00",
+    "gross_seconds_per_batch_and_one_completed_complex_action": 9596.688959,
+    "gross_minutes_per_batch_and_one_completed_complex_action": 159.9448159833333,
+    "completed_complex_actions": 1,
+    "completed_routine_actions": 0,
+    "application": {
+      "started_utc": "2026-10-16T01:16:16.367656+00:00",
+      "completed_utc": "2026-10-16T01:18:49.707825+00:00",
+      "elapsed_seconds": 153.34106609999435,
+      "counts": {
+        "reviewed": 666,
+        "pending": 10,
+        "cores": 87,
+        "behavioral_propositions": 145,
+        "episodes": 75,
+        "multi_action_episodes": 10
+      },
+      "source_appends": 45,
+      "manifest_appends": 44,
+      "private_pool_appends": 44,
+      "qualification_receipt_sha256": "71094b2fda99003e0d7c6dd044a05668c04790b71c354fcf447147283f33665c",
+      "canonical_inputs_written": true,
+      "full_gate_pending": true
+    },
+    "new_probe_isolation_rework": "Reset the Health source probe to a clean candidate, stopped only known owned initial owner process after91.7943212s; final complete owner suite rerun. Three passed unchanged-input checks reused explicitly, not claimed rerun.",
+    "observed_subphase_duration_fields": {
+      "note": "Observed duration fields copied without summation; nested receipts and parent work overlap and may describe the same acquisition/read. Gross first-work-to-terminal delivery includes all model/context/research/commands/tests/rework/Git/PR/CI/observation. Uninstrumented costs remain unisolated, not zero.",
+      "observed_duration_fields": [
+        {
+          "path": "qualification/private_authoring/elapsed_seconds",
+          "seconds": 1.9542319999891333
+        },
+        {
+          "path": "qualification/private_source_preflight/elapsed_seconds",
+          "seconds": 2.3683875999995507
+        },
+        {
+          "path": "qualification/material_reading/elapsed_export_seconds",
+          "seconds": 0.560468600015156
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/0/seconds_before_output",
+          "seconds": 0.0033866000012494624
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/1/seconds_before_output",
+          "seconds": 0.009088499995414168
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/2/seconds_before_output",
+          "seconds": 0.009087099984753877
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/3/seconds_before_output",
+          "seconds": 0.009032999980263412
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/4/seconds_before_output",
+          "seconds": 0.009400300041306764
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/5/seconds_before_output",
+          "seconds": 0.008726399973966181
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/6/seconds_before_output",
+          "seconds": 0.008524500008206815
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/7/seconds_before_output",
+          "seconds": 0.008258899964857846
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/8/seconds_before_output",
+          "seconds": 0.017966600018553436
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/9/seconds_before_output",
+          "seconds": 0.009447100048419088
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/10/seconds_before_output",
+          "seconds": 0.008379000006243587
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/11/seconds_before_output",
+          "seconds": 0.008321400033310056
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/12/seconds_before_output",
+          "seconds": 0.009020700003020465
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/13/seconds_before_output",
+          "seconds": 0.008479399955831468
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/14/seconds_before_output",
+          "seconds": 0.008097999962046742
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/15/seconds_before_output",
+          "seconds": 0.003055199980735779
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/16/seconds_before_output",
+          "seconds": 0.00920649996260181
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/17/seconds_before_output",
+          "seconds": 0.009321700024884194
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/18/seconds_before_output",
+          "seconds": 0.00870139995822683
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/19/seconds_before_output",
+          "seconds": 0.008660499996040016
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/20/seconds_before_output",
+          "seconds": 0.009013500006403774
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/21/seconds_before_output",
+          "seconds": 0.008078100043348968
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/22/seconds_before_output",
+          "seconds": 0.008820899995043874
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/23/seconds_before_output",
+          "seconds": 0.00846149999415502
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/24/seconds_before_output",
+          "seconds": 0.009221599961165339
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/25/seconds_before_output",
+          "seconds": 0.008978899975772947
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/26/seconds_before_output",
+          "seconds": 0.008231099986005574
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/27/seconds_before_output",
+          "seconds": 0.008857899985741824
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/28/seconds_before_output",
+          "seconds": 0.008631500008050352
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/29/seconds_before_output",
+          "seconds": 0.008313599973917007
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/30/seconds_before_output",
+          "seconds": 0.00982749997638166
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/31/seconds_before_output",
+          "seconds": 0.008047600043937564
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/32/seconds_before_output",
+          "seconds": 0.008977700024843216
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/33/seconds_before_output",
+          "seconds": 0.008816400018986315
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/34/seconds_before_output",
+          "seconds": 0.008660099992994219
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/35/seconds_before_output",
+          "seconds": 0.008711599977687001
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/36/seconds_before_output",
+          "seconds": 0.00855019997106865
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/37/seconds_before_output",
+          "seconds": 0.008808700018562376
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/38/seconds_before_output",
+          "seconds": 0.008501300006173551
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/39/seconds_before_output",
+          "seconds": 0.008508400002028793
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/40/seconds_before_output",
+          "seconds": 0.008454900002107024
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/41/seconds_before_output",
+          "seconds": 0.009019599994644523
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/42/seconds_before_output",
+          "seconds": 0.008931400021538138
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/43/seconds_before_output",
+          "seconds": 0.00904819997958839
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/44/seconds_before_output",
+          "seconds": 0.009060500015038997
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/45/seconds_before_output",
+          "seconds": 0.008640799962449819
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/46/seconds_before_output",
+          "seconds": 0.00928220001515001
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/47/seconds_before_output",
+          "seconds": 0.009245800029020756
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/48/seconds_before_output",
+          "seconds": 0.008261199982371181
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/49/seconds_before_output",
+          "seconds": 0.008192099980078638
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/50/seconds_before_output",
+          "seconds": 0.009382500022184104
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/51/seconds_before_output",
+          "seconds": 0.009228100010659546
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/52/seconds_before_output",
+          "seconds": 0.00918140000430867
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/53/seconds_before_output",
+          "seconds": 0.008600200002547354
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/54/seconds_before_output",
+          "seconds": 0.008111100003588945
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/55/seconds_before_output",
+          "seconds": 0.00919919996522367
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/56/seconds_before_output",
+          "seconds": 0.00917410000693053
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/57/seconds_before_output",
+          "seconds": 0.008637199993245304
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/58/seconds_before_output",
+          "seconds": 0.009013599948957562
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/59/seconds_before_output",
+          "seconds": 0.009156700049061328
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/60/seconds_before_output",
+          "seconds": 0.008478500007186085
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/61/seconds_before_output",
+          "seconds": 0.008697799989022315
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/62/seconds_before_output",
+          "seconds": 0.009320500015746802
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/63/seconds_before_output",
+          "seconds": 0.009325599996373057
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/64/seconds_before_output",
+          "seconds": 0.009600499994121492
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/65/seconds_before_output",
+          "seconds": 0.008994400035589933
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/66/seconds_before_output",
+          "seconds": 0.008675800054334104
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/67/seconds_before_output",
+          "seconds": 0.009268500027246773
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/68/seconds_before_output",
+          "seconds": 0.008960400009527802
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/69/seconds_before_output",
+          "seconds": 0.009671300009358674
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/70/seconds_before_output",
+          "seconds": 0.008828200050629675
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/71/seconds_before_output",
+          "seconds": 0.008301699999719858
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/72/seconds_before_output",
+          "seconds": 0.009059800009708852
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/73/seconds_before_output",
+          "seconds": 0.009390700026415288
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/74/seconds_before_output",
+          "seconds": 0.00863930000923574
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/75/seconds_before_output",
+          "seconds": 0.008782799995969981
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/76/seconds_before_output",
+          "seconds": 0.009206099959556013
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/77/seconds_before_output",
+          "seconds": 0.009710999962408096
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/78/seconds_before_output",
+          "seconds": 0.009390200022608042
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/79/seconds_before_output",
+          "seconds": 0.009133199986536056
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/80/seconds_before_output",
+          "seconds": 0.009392999985720962
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/81/seconds_before_output",
+          "seconds": 0.009065799997188151
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/82/seconds_before_output",
+          "seconds": 0.009264699998311698
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/83/seconds_before_output",
+          "seconds": 0.008641500025987625
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/84/seconds_before_output",
+          "seconds": 0.00891330000013113
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/85/seconds_before_output",
+          "seconds": 0.0033306999830529094
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/86/seconds_before_output",
+          "seconds": 0.008709600020665675
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/87/seconds_before_output",
+          "seconds": 0.008724500017706305
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/88/seconds_before_output",
+          "seconds": 0.009375500027090311
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/89/seconds_before_output",
+          "seconds": 0.010844300035387278
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/90/seconds_before_output",
+          "seconds": 0.009991600003559142
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/91/seconds_before_output",
+          "seconds": 0.00904949998948723
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/92/seconds_before_output",
+          "seconds": 0.009638299990911037
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/93/seconds_before_output",
+          "seconds": 0.0091592000098899
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/94/seconds_before_output",
+          "seconds": 0.014603800023905933
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/95/seconds_before_output",
+          "seconds": 0.00885559996822849
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/96/seconds_before_output",
+          "seconds": 0.009747900010552257
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/97/seconds_before_output",
+          "seconds": 0.008615700004156679
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/98/seconds_before_output",
+          "seconds": 0.008891900011803955
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/99/seconds_before_output",
+          "seconds": 0.008989099995233119
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/100/seconds_before_output",
+          "seconds": 0.009404200012795627
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/101/seconds_before_output",
+          "seconds": 0.00945859996136278
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/102/seconds_before_output",
+          "seconds": 0.009590100031346083
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/103/seconds_before_output",
+          "seconds": 0.009735099971294403
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/104/seconds_before_output",
+          "seconds": 0.01168850000249222
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/105/seconds_before_output",
+          "seconds": 0.012378199957311153
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/106/seconds_before_output",
+          "seconds": 0.00899619999108836
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/107/seconds_before_output",
+          "seconds": 0.009534900018479675
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/108/seconds_before_output",
+          "seconds": 0.01099799998337403
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/109/seconds_before_output",
+          "seconds": 0.010950899973977357
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/110/seconds_before_output",
+          "seconds": 0.01073570002336055
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/111/seconds_before_output",
+          "seconds": 0.010725700005423278
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/112/seconds_before_output",
+          "seconds": 0.01243530004285276
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/113/seconds_before_output",
+          "seconds": 0.00839040003484115
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/114/seconds_before_output",
+          "seconds": 0.008160900033544749
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/115/seconds_before_output",
+          "seconds": 0.009361499978695065
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/116/seconds_before_output",
+          "seconds": 0.009866799984592944
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/117/seconds_before_output",
+          "seconds": 0.00943500001449138
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/118/seconds_before_output",
+          "seconds": 0.009593800001312047
+        },
+        {
+          "path": "qualification/material_reading/read_command_costs/119/seconds_before_output",
+          "seconds": 0.009016600030008703
+        },
+        {
+          "path": "qualification/read_scope_receipts/whole_EH_actual_read.json/seal_script_seconds_before_write",
+          "seconds": 0.004277800035197288
+        },
+        {
+          "path": "qualification/read_scope_receipts/fresh_parent_verification.json/elapsed_seconds",
+          "seconds": 0.6089241000008769
+        },
+        {
+          "path": "qualification/whole_public_text_reading/seal_script_seconds_before_write",
+          "seconds": 0.004277800035197288
+        }
+      ]
+    },
+    "cost_boundary": "All model/context/research/read/sourceacquisition/parser/routing/truncation-recovery/authoring/commands/tests/failure/rework/Git/PR/CI/observation delays remain in gross. Uninstrumented work is unisolated, not zero. Earlier197/Health research is additional and unisolated; no silently excluded costs.",
+    "overlap": "Research overlapped243/244 gates, delivery, CI and244 corrections. Initial gate processes overlap; final affected owner retry sequential. Do not sum gross batch intervals or nested observed duration fields as exclusive labor.",
+    "routine_target_seconds": 600,
+    "routine_target_claim": "No comparable routine sample; complex package separately categorized; historical diagnosis230FAIL unchanged",
+    "delivery_costs": "Git/push/PR/new CI and terminal observation occur after this gate receipt and must be measured in later local delivery receipts and PR updates"
+  },
+  "CI": {
+    "successor_status": "Pending push and fresh exact-head attempt1; parent244 green does not transfer",
+    "parent244_all10jobs4late_passed": true,
+    "parent244_CI_receipt_sha256": "fcd17287a9d32ebd96fbecef2868b9992b53554d5626514bc20ee105db407199"
+  },
+  "all_remaining10_held_no_forced_clearance": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "merge_deployment_registry_production_writes": false,
+  "receipt_sha256": "8aa7841255b8b06cf4c754601e86b7ee83f95d89fb50fab2abd6177dc26231f7"
+}

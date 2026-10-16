@@ -6001,7 +6001,7 @@ class Checkpoint240AppropriationExceptionTests(unittest.TestCase):
         self.assertEqual(self.receipt['new_behavioral_proposition_count'], 0)
         self.assertEqual(self.receipt['extended_existing_episode_proposition_count'], 2)
         self.assertEqual(sum(p['semantic_role'] == 'behavioral' for m in compiled['members']
-                             for p in m['proposition_graph']['propositions']), 143)
+                             for p in m['proposition_graph']['propositions']), 145)
         for member in compiled['members']:
             own = [p for p in member['proposition_graph']['propositions']
                    if p['semantic_role'] == 'behavioral' and 'episode:hr7148:119' in p['evidence_episode_ids']]
@@ -6119,7 +6119,7 @@ class Checkpoint243DecemberDefenseQualificationTests(unittest.TestCase):
         self.assertEqual(self.receipt['ordinary_routine_samples'], 0)
         for aid in ['house:119:2:193', 'house:119:2:196', 'house:119:2:243', 'house:119:2:157',
                     'house:119:2:224', 'house:119:2:228', 'house:119:2:245',
-                    'house:119:1:210', 'house:119:1:237', 'house:119:2:247', 'house:119:2:278']:
+                    'house:119:1:210', 'house:119:1:237', 'house:119:2:247']:
             self.assertIn(aid, self.u['unresolved_action_ids'])
 
 
@@ -6215,6 +6215,215 @@ class Checkpoint244DecemberPredicateCorrectionTests(unittest.TestCase):
                 self.assertEqual(self.core[key], self.q['prior_core'][key], key)
         self.assertFalse(self.q['editorial_acceptance'])
         self.assertFalse(self.q['publication_authorized'])
+
+
+class Checkpoint245JulyDefenseQualificationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.a = json.loads((DATA / 'authoring.json').read_text(encoding='utf8'))
+        cls.s = json.loads((DATA / 'sources.json').read_text(encoding='utf8'))
+        cls.u = json.loads((DATA / 'universe_proposal.json').read_text(encoding='utf8'))
+        cls.m = json.loads((DATA / 'membership_review.json').read_text(encoding='utf8'))
+        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:2:278')
+        cls.q = json.loads((DATA / 'july_defense_qualification_checkpoint245.json').read_text(encoding='utf8'))
+        cls.core = next(c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']
+                        if c['action_id'] == cls.action['action_id'])
+
+    def test_original_health_contract_survives_with_explicit_prospective_clarification(self):
+        health = json.loads((DATA.parent / 'house_119_health_20260916/generated/shared_action_core.json').read_text())
+        old = next(c for c in health['actions'] if c['action_id'] == self.action['action_id'])
+        self.assertEqual(old['action_core_sha256'], '3e70666d7bf2de294118d0f9dc7fec67db62d00211e7ab572f8c30a0d0b70684')
+        self.assertEqual(len(old['candidate_exact_action_meaning']), 8349)
+        self.assertEqual(self.action['meaning'][:8349], old['candidate_exact_action_meaning'])
+        self.assertEqual(self.action['claim_source_map'][:23], old['claim_source_map'])
+        self.assertEqual(len(old['governed_source_identities']), 26)
+        for witness in old['governed_source_identities']:
+            self.assertIn(witness, self.core['governed_source_identities'])
+        for limit in old['candidate_shared_limitations']:
+            self.assertIn(limit, self.core['candidate_shared_limitations'])
+        for key in ['action_meaning_ref', 'exact_action_identity']:
+            self.assertEqual(self.core[key], old[key])
+        addition = self.action['meaning'][8349:]
+        self.assertIn('adds a new exclusion to1077(b) and separately deletes', addition[:2100])
+        self.assertIn('It does not delete a universal under-18 limit from both provisions', addition[:2100])
+        self.assertEqual(self.q['new_core_sha256'], self.core['action_core_sha256'])
+        self.assertEqual(self.q['receipt_sha256'], sealed_digest(self.q, 'receipt_sha256'))
+
+    def test_complete_eh_read_and_qualified_material_audit_keep_separate_limits(self):
+        import hashlib
+        r = self.q['material_reading']
+        source = next(s for s in self.s['sources'] if s['source_id'] == 'govinfo:hr8800eh-immigration-complete')
+        self.assertEqual(len(source['text']), 2978639)
+        self.assertEqual(hashlib.sha256(source['text'].encode()).hexdigest(),
+                         '00a0b9fbcd0f277acb644a189365d97bd8d6be0493c559de12d5060ce05145e9')
+        self.assertEqual(len(r['actual_new_read_intervals']), 120)
+        cursor = 0
+        for interval in r['actual_new_read_intervals']:
+            self.assertEqual(interval['start'], cursor)
+            self.assertGreater(interval['end'], cursor)
+            cursor = interval['end']
+        self.assertEqual(cursor, len(source['text']))
+        audit = json.loads((DATA.parents[3] / self.q['predicate_audit_ref']).read_text(encoding='utf8'))
+        self.assertEqual(audit['receipt_sha256'], sealed_digest(audit, 'receipt_sha256'))
+        self.assertEqual(audit['receipt_sha256'], self.q['predicate_audit_sha256'])
+        self.assertEqual(len(audit['groups']), 42)
+        self.assertEqual(audit['claim_bindings'], len(self.action['claim_source_map']))
+        self.assertEqual(len(self.action['claim_source_map']), 133)
+        self.assertFalse(self.q['whole_RCP_report_JES_classified_visual_arithmetic_currentlaw_certificate'])
+        self.assertTrue(self.q['independent_source_domain_review_pending'])
+        self.assertTrue(self.q['separate_DivisionE_S1383_assembly_not_new_component_choice'])
+        self.assertIn('It is not an adopted component of passage278', self.action['meaning'])
+        self.assertIn('Printed disagreement in a debate speaker', self.action['meaning'])
+
+    def test_admission_operand_is_specific_and_prior_amendment_choices_stay_distinct(self):
+        meaning = self.action['meaning']
+        self.assertIn('Section1705 changes only the date in48US1806(b)(1)(B)', meaning)
+        self.assertIn('before December31,2029 to before December31,2035', meaning)
+        self.assertIn('military-realignment-related contractor work OR specified healthcare work', meaning)
+        self.assertIn('excludes medical-school graduates coming to practice medicine', meaning)
+        self.assertIn('otherwise-qualified H-2B workers', meaning)
+        self.assertIn('their interaction and any intervening law remain application questions', meaning)
+        self.assertIn('Academy admission is not INA admission', meaning)
+        for aid in ['house:119:2:256', 'house:119:2:264', 'house:119:2:266', 'house:119:2:267']:
+            row = next(r for r in self.u['candidate_dispositions'] if r['action_id'] == aid)
+            self.assertEqual(row['disposition'], 'exact_action_ineligible')
+        self.assertEqual(self.q['prior_pending_row']['disposition'], 'source_unresolved')
+        self.assertEqual(self.q['prior_pending_row']['action_id'], self.action['action_id'])
+
+    def test_country_waiver_control_and_service_predicates_are_not_interchanged(self):
+        meaning = self.action['meaning']
+        for phrase in ['lawful permanent residents are excluded',
+                       "The incorporated8512 definition is the People's Republic of China, including Hong Kong and Macau",
+                       'Section3604 has its own printed covered-nation reference AND a Maritime Administrator determination',
+                       'BOTH the1260H Chinese-military-company report', 'NATIONAL SECURITY INTEREST',
+                       'PRC nationality AND residence in the PRC AND beneficial ownership of MORE THAN25percent',
+                       'specified sea service OR qualifying shoreside work',
+                       'not on an active-duty call/order exceeding30days']:
+            self.assertIn(phrase, meaning)
+        clause = next(c for c in self.action['claim_source_map']
+                      if c['locator'].startswith('Complete operative JulyEHsection1526;'))
+        self.assertIn('national interest', clause['passage'])
+        self.assertIn('NATIONAL INTEREST', meaning)
+        self.assertIn('printed10,0000gross-register-ton wording is not repaired', meaning)
+        self.assertIn('waive the subsection(a) citizenship condition', meaning)
+
+    def test_real_preparation_rejects_changed_operands_and_original_health_source(self):
+        from scripts import prepare_shared_domain_candidate as common
+        cases = [('519A', 'were lawfully admitted for permanent residence', 'were never lawfully admitted for permanent residence'),
+                 ('1705', 'December 31, 2035', 'December 31, 2030'),
+                 ('3118', 'does not include any lawful permanent resident', 'includes any lawful permanent resident'),
+                 ('1099L', 'national security interest', 'national interest'),
+                 ('1526', 'national interest', 'national security interest'),
+                 ('3564', '; or ``(B) 1 year', '; and ``(B) 1 year'),
+                 ('3604', '; and (B) any country', '; or (B) any country'),
+                 ('513', 'shall not register a person whose name appears', 'shall register a person whose name appears'),
+                 ('1741', 'who resides in the People', 'who need not reside in the People'),
+                 ('653', 'in excess of 30 days', 'of any length')]
+        for section, before, after in cases:
+            bad = copy.deepcopy(self.a)
+            bad['actions'] = [copy.deepcopy(self.action)]
+            bad['blocked_episode_ids'] = []
+            bad['actions'][0].pop('shared_core_reuse')
+            bad['actions'][0].pop('candidate_core_qualification')
+            claim = next(c for c in bad['actions'][0]['claim_source_map']
+                         if c['locator'].startswith('Complete operative JulyEHsection' + section + ';'))
+            self.assertIn(before, claim['passage'])
+            claim['passage'] = claim['passage'].replace(before, after, 1)
+            with self.subTest(section=section), self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+                common.prepare(bad, self.s, ['F000477', 'M001184'])
+        bad = copy.deepcopy(self.a)
+        bad['actions'] = [copy.deepcopy(self.action)]
+        bad['blocked_episode_ids'] = []
+        bad['actions'][0].pop('shared_core_reuse')
+        bad['actions'][0].pop('candidate_core_qualification')
+        bad['actions'][0]['claim_source_map'][0]['passage'] += '\nFabricated unbound permission.'
+        with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+            common.prepare(bad, self.s, ['F000477', 'M001184'])
+
+    def test_own_observations_whole_choice_and_exact_batch_accounting(self):
+        for token in ['Foushee', 'Massie', 'F000477', 'M001184']:
+            self.assertNotIn(token, self.action['meaning'])
+        projections = json.loads((DATA / 'generated/member_projections.json').read_text())
+        compiled = json.loads((DATA / 'generated/compiled_ir.json').read_text())
+        for member in projections:
+            own = next(a for a in member['actions'] if a['action_id'] == self.action['action_id'])
+            self.assertEqual(own['official_status'], 'Nay')
+        for member in compiled['members']:
+            own = [p for p in member['proposition_graph']['propositions']
+                   if p['semantic_role'] == 'behavioral' and 'episode:hr8800:119' in p['evidence_episode_ids']]
+            self.assertEqual(len(own), 1)
+            self.assertEqual(own[0]['direction'], 'opposition')
+            self.assertEqual(own[0]['evidence_action_ids'], [self.action['action_id']])
+            self.assertNotEqual(own[0]['proposition_type'], 'trajectory')
+        self.assertEqual(self.q['counts'], dict(reviewed=666, pending=10, cores=87,
+                                              behavioral_propositions=145, episodes=75, multi_action_episodes=10))
+        self.assertEqual(len(self.m['records']), 666)
+        self.assertEqual(len(self.a['actions']), 87)
+        self.assertEqual(len(self.u['unresolved_action_ids']), 10)
+        record = next(r for r in self.m['records'] if r['action_id'] == self.action['action_id'])
+        self.assertEqual(self.q['membership_record_sha256'], digest(record))
+
+    def test_pending_holds_history_and_unaccepted_candidate_boundary_remain(self):
+        self.assertEqual(self.a['blocked_episode_ids'], ['episode:hr1048:119'])
+        self.assertEqual(set(self.u['unresolved_action_ids']),
+                         {'house:119:1:210', 'house:119:1:237', 'house:119:2:157', 'house:119:2:193',
+                          'house:119:2:196', 'house:119:2:224', 'house:119:2:228', 'house:119:2:243',
+                          'house:119:2:245', 'house:119:2:247'})
+        self.assertTrue(self.q['all_reserved_denied_cancelled_restrictions_retained'])
+        self.assertEqual(self.q['source_bank_new_appends'], 45)
+        self.assertEqual(self.q['manifest_new_appends'], 44)
+        self.assertEqual(self.q['private_pool_new_appends'], 44)
+        self.assertTrue(self.q['private_pool_identical_historical_duplicate_rows_retained'])
+        self.assertFalse(self.q['editorial_acceptance'])
+        self.assertFalse(self.q['publication_authorized'])
+        self.assertEqual(self.q['new_screening_completions'], 1)
+        self.assertEqual(self.q['ordinary_routine_samples'], 0)
+        self.assertTrue(self.q['independent_source_domain_review_pending'])
+
+
+class Checkpoint245AuditAccountingTests(unittest.TestCase):
+    def test_historical_highest_severity_per_distinct_action_is_reconstructed_without_clearance(self):
+        from collections import Counter, defaultdict
+        audit = json.loads((DATA.parents[3] / 'docs/review_packets/immigration_semantic_audit_in_progress.json').read_text())
+        receipt = json.loads((DATA.parents[3] / 'docs/review_packets/immigration_checkpoint245_audit_accounting.json').read_text())
+        rank = {'No Defect': 0, 'Minor': 1, 'Major': 2, 'Critical': 3}
+        def severities(value):
+            if isinstance(value, dict):
+                for key, item in value.items():
+                    if key == 'severity' and isinstance(item, str) and item in rank:
+                        yield item
+                    else:
+                        yield from severities(item)
+            elif isinstance(value, list):
+                for item in value:
+                    yield from severities(item)
+        by_action = defaultdict(list)
+        rows = []
+        for row in audit['substantive_actions'] + audit['noncounting_actions']:
+            found = list(severities(row))
+            if found:
+                by_action[row['action_id']].extend(found)
+                rows.append(row['action_id'])
+        highest = {aid: max(values, key=rank.get) for aid, values in by_action.items()}
+        self.assertEqual(dict(Counter(highest.values())), {'No Defect': 209, 'Minor': 17, 'Major': 14, 'Critical': 1})
+        self.assertEqual(audit['action_assessment_counts'], dict(Counter(highest.values())))
+        self.assertEqual((len(rows), len(highest)), (242, 241))
+        self.assertEqual({aid: n for aid, n in Counter(rows).items() if n > 1}, {'house:119:2:65': 2})
+        for aid, severity in [('house:119:2:65', 'Critical'), ('house:119:1:79', 'Major'),
+                              ('house:119:1:83', 'Major'), ('house:119:2:89', 'Minor')]:
+            self.assertEqual(highest[aid], severity)
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(receipt['new_semantic_assessments'], 0)
+        self.assertFalse(receipt['independent_review_clearance'])
+        self.assertEqual(audit['audit_state'], 'in_progress_partial')
+        self.assertIsNone(audit['final_verdict'])
+        self.assertEqual(audit['distinct_finding_counts'], {'Critical': 1, 'Major': 6, 'Minor': 13})
+        null = {r['action_id'] for r in audit['substantive_actions'] if r.get('severity') is None}
+        explicit = set(audit['unaudited_current_substantive_action_ids'])
+        self.assertEqual((len(null), len(explicit)), (35, 35))
+        self.assertEqual(sorted(null - explicit), receipt['null_only_action_ids'])
+        self.assertEqual(sorted(explicit - null), receipt['explicit_list_only_action_ids'])
+        self.assertIn('house:119:2:278', null & explicit)
 
 
 if __name__ == '__main__':

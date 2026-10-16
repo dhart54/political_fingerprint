@@ -1,0 +1,2029 @@
+{
+  "checkpoint": 245,
+  "base_head": "c6bdbeef944035387812d35e5cee3645b8974260",
+  "prior_audit_git_blob": "684aa7c63e3e561197f174d26fd5a3fef4199e1f",
+  "started_utc": "2026-10-16T01:23:45.589571+00:00",
+  "previous_counts": {
+    "No Defect": 211,
+    "Minor": 15,
+    "Major": 13,
+    "Critical": 1
+  },
+  "reconciled_counts": {
+    "No Defect": 209,
+    "Minor": 17,
+    "Major": 14,
+    "Critical": 1
+  },
+  "rule": "One highest-severity assessment per distinct action; corrected-meaning re-review is recorded separately and does not erase historical finding.",
+  "derivation": "Read only structured severity fields recursively within the two existing root action collections; keep the highest severity for each distinct action, including historical assessments and duplicate root rows. No new semantic assessment.",
+  "severity_bearing_root_rows": 242,
+  "distinct_assessed_actions": 241,
+  "duplicate_assessed_actions": {
+    "house:119:2:65": 2
+  },
+  "historical_traces": {
+    "house:119:2:65": [
+      "No Defect",
+      "Critical"
+    ],
+    "house:119:1:79": [
+      "No Defect",
+      "Major",
+      "No Defect"
+    ],
+    "house:119:1:83": [
+      "No Defect",
+      "Major",
+      "No Defect",
+      "No Defect",
+      "Major",
+      "No Defect"
+    ],
+    "house:119:2:89": [
+      "Minor"
+    ]
+  },
+  "structured_row_provenance": [
+    {
+      "collection": "substantive_actions",
+      "index": 0,
+      "action_id": "house:119:1:6",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 1,
+      "action_id": "house:119:1:23",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 2,
+      "action_id": "house:119:2:120",
+      "declared_historical_severities": [
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 3,
+      "action_id": "house:119:1:17",
+      "declared_historical_severities": [
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 4,
+      "action_id": "house:119:1:42",
+      "declared_historical_severities": [
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 5,
+      "action_id": "house:119:1:183",
+      "declared_historical_severities": [
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 6,
+      "action_id": "house:119:2:94",
+      "declared_historical_severities": [
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 7,
+      "action_id": "house:119:2:96",
+      "declared_historical_severities": [
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 8,
+      "action_id": "house:119:1:7",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 9,
+      "action_id": "house:119:1:63",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 10,
+      "action_id": "house:119:1:65",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 11,
+      "action_id": "house:119:1:171",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 12,
+      "action_id": "house:119:1:184",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 13,
+      "action_id": "house:119:1:264",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 14,
+      "action_id": "house:119:2:214",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 15,
+      "action_id": "house:119:2:65",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 16,
+      "action_id": "house:119:1:153",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 17,
+      "action_id": "house:119:1:156",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 18,
+      "action_id": "house:119:1:102",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 19,
+      "action_id": "house:119:1:163",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 20,
+      "action_id": "house:119:1:116",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 21,
+      "action_id": "house:119:1:119",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 22,
+      "action_id": "house:119:1:172",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 23,
+      "action_id": "house:119:1:220",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 24,
+      "action_id": "house:119:1:340",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 25,
+      "action_id": "house:119:1:168",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 26,
+      "action_id": "house:119:1:203",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 27,
+      "action_id": "house:119:2:82",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 28,
+      "action_id": "house:119:2:70",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 29,
+      "action_id": "house:119:2:101",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 30,
+      "action_id": "house:119:2:169",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 31,
+      "action_id": "house:119:2:108",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 32,
+      "action_id": "house:119:2:42",
+      "declared_historical_severities": [
+        "Major",
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 33,
+      "action_id": "house:119:2:87",
+      "declared_historical_severities": [
+        "Major",
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 34,
+      "action_id": "house:119:2:104",
+      "declared_historical_severities": [
+        "Major",
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 35,
+      "action_id": "house:119:2:69",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 36,
+      "action_id": "house:119:2:13",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 37,
+      "action_id": "house:119:1:145",
+      "declared_historical_severities": [
+        "Major",
+        "No Defect",
+        "Major",
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 38,
+      "action_id": "house:119:1:190",
+      "declared_historical_severities": [
+        "Major",
+        "No Defect",
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 39,
+      "action_id": "house:119:1:70",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 40,
+      "action_id": "house:119:1:15",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 41,
+      "action_id": "house:119:1:32",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 42,
+      "action_id": "house:119:1:33",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 43,
+      "action_id": "house:119:1:166",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 44,
+      "action_id": "house:119:2:244",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 45,
+      "action_id": "house:119:1:79",
+      "declared_historical_severities": [
+        "No Defect",
+        "Major",
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 46,
+      "action_id": "house:119:1:83",
+      "declared_historical_severities": [
+        "No Defect",
+        "Major",
+        "No Defect",
+        "No Defect",
+        "Major",
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 47,
+      "action_id": "house:119:2:280",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 48,
+      "action_id": "house:119:1:299",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 69,
+      "action_id": "house:119:1:285",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 71,
+      "action_id": "house:119:2:45",
+      "declared_historical_severities": [
+        "Major"
+      ]
+    },
+    {
+      "collection": "substantive_actions",
+      "index": 72,
+      "action_id": "house:119:2:89",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 0,
+      "action_id": "house:119:1:12",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 1,
+      "action_id": "house:119:1:27",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 2,
+      "action_id": "house:119:1:22",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 3,
+      "action_id": "house:119:1:24",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 4,
+      "action_id": "house:119:1:43",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 5,
+      "action_id": "house:119:1:49",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 6,
+      "action_id": "house:119:1:64",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 7,
+      "action_id": "house:119:1:59",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 8,
+      "action_id": "house:119:1:61",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 9,
+      "action_id": "house:119:1:277",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 10,
+      "action_id": "house:119:2:15",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 11,
+      "action_id": "house:119:1:55",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 12,
+      "action_id": "house:119:2:65",
+      "declared_historical_severities": [
+        "Critical"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 13,
+      "action_id": "house:119:1:161",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 14,
+      "action_id": "house:119:1:177",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 15,
+      "action_id": "house:119:1:243",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 16,
+      "action_id": "house:119:1:268",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 17,
+      "action_id": "house:119:2:91",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 18,
+      "action_id": "house:119:2:119",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 19,
+      "action_id": "house:119:2:102",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 20,
+      "action_id": "house:119:1:158",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 21,
+      "action_id": "house:119:1:120",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 22,
+      "action_id": "house:119:1:92",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 23,
+      "action_id": "house:119:1:80",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 24,
+      "action_id": "house:119:1:81",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 25,
+      "action_id": "house:119:1:82",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 26,
+      "action_id": "house:119:1:185",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 27,
+      "action_id": "house:119:1:188",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 28,
+      "action_id": "house:119:1:222",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 29,
+      "action_id": "house:119:1:192",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 30,
+      "action_id": "house:119:1:306",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 31,
+      "action_id": "house:119:1:324",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 32,
+      "action_id": "house:119:2:32",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 33,
+      "action_id": "house:119:2:47",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 34,
+      "action_id": "house:119:2:58",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 35,
+      "action_id": "house:119:2:41",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 36,
+      "action_id": "house:119:2:60",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 37,
+      "action_id": "house:119:2:171",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 38,
+      "action_id": "house:119:2:184",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 39,
+      "action_id": "house:119:2:256",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 40,
+      "action_id": "house:119:2:266",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 41,
+      "action_id": "house:119:2:274",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 42,
+      "action_id": "house:119:2:254",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 43,
+      "action_id": "house:119:2:95",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 44,
+      "action_id": "house:119:2:97",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 45,
+      "action_id": "house:119:2:289",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 46,
+      "action_id": "house:119:1:344",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 47,
+      "action_id": "house:119:2:99",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 48,
+      "action_id": "house:119:2:288",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 49,
+      "action_id": "house:119:2:226",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 50,
+      "action_id": "house:119:2:235",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 51,
+      "action_id": "house:119:2:251",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 52,
+      "action_id": "house:119:2:48",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 53,
+      "action_id": "house:119:2:165",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 54,
+      "action_id": "house:119:2:307",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 55,
+      "action_id": "house:119:2:231",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 56,
+      "action_id": "house:119:1:51",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 57,
+      "action_id": "house:119:1:68",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 58,
+      "action_id": "house:119:1:31",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 59,
+      "action_id": "house:119:1:76",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 60,
+      "action_id": "house:119:1:73",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 61,
+      "action_id": "house:119:1:74",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 62,
+      "action_id": "house:119:1:50",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 63,
+      "action_id": "house:119:1:71",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 64,
+      "action_id": "house:119:1:100",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 65,
+      "action_id": "house:119:1:165",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 66,
+      "action_id": "house:119:2:206",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 67,
+      "action_id": "house:119:2:215",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 68,
+      "action_id": "house:119:2:124",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 69,
+      "action_id": "house:119:1:305",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 70,
+      "action_id": "house:119:2:121",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 71,
+      "action_id": "house:119:2:132",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 72,
+      "action_id": "house:119:2:233",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 73,
+      "action_id": "house:119:2:162",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 74,
+      "action_id": "house:119:2:166",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 75,
+      "action_id": "house:119:2:167",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 76,
+      "action_id": "house:119:1:291",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 77,
+      "action_id": "house:119:1:318",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 78,
+      "action_id": "house:119:1:338",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 79,
+      "action_id": "house:119:2:141",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 80,
+      "action_id": "house:119:2:123",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 81,
+      "action_id": "house:119:2:195",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 82,
+      "action_id": "house:119:2:237",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 83,
+      "action_id": "house:119:1:286",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 84,
+      "action_id": "house:119:1:287",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 85,
+      "action_id": "house:119:1:300",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 86,
+      "action_id": "house:119:2:192",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 87,
+      "action_id": "house:119:2:296",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 88,
+      "action_id": "house:119:2:297",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 89,
+      "action_id": "house:119:2:199",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 90,
+      "action_id": "house:119:2:282",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 91,
+      "action_id": "house:119:2:300",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 92,
+      "action_id": "house:119:2:285",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 93,
+      "action_id": "house:119:2:291",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 94,
+      "action_id": "house:119:2:294",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 95,
+      "action_id": "house:119:2:225",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 96,
+      "action_id": "house:119:2:314",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 97,
+      "action_id": "house:119:2:182",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 98,
+      "action_id": "house:119:1:297",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 99,
+      "action_id": "house:119:1:346",
+      "declared_historical_severities": [
+        "Minor"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 100,
+      "action_id": "house:119:2:222",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 101,
+      "action_id": "house:119:2:240",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 102,
+      "action_id": "house:119:2:227",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 103,
+      "action_id": "house:119:2:216",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 104,
+      "action_id": "house:119:2:293",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 105,
+      "action_id": "house:119:2:85",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 106,
+      "action_id": "house:119:2:201",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 107,
+      "action_id": "house:119:2:232",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 108,
+      "action_id": "house:119:2:304",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 109,
+      "action_id": "house:119:2:284",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 110,
+      "action_id": "house:119:1:229",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 111,
+      "action_id": "house:119:1:230",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 112,
+      "action_id": "house:119:1:231",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 113,
+      "action_id": "house:119:1:232",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 114,
+      "action_id": "house:119:1:233",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 115,
+      "action_id": "house:119:1:234",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 116,
+      "action_id": "house:119:1:235",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 117,
+      "action_id": "house:119:1:236",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 118,
+      "action_id": "house:119:1:227",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 119,
+      "action_id": "house:119:1:228",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 120,
+      "action_id": "house:119:1:204",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 121,
+      "action_id": "house:119:1:205",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 122,
+      "action_id": "house:119:1:206",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 123,
+      "action_id": "house:119:1:208",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 124,
+      "action_id": "house:119:1:209",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 125,
+      "action_id": "house:119:1:246",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 126,
+      "action_id": "house:119:1:247",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 127,
+      "action_id": "house:119:1:245",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 128,
+      "action_id": "house:119:1:248",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 129,
+      "action_id": "house:119:1:249",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 130,
+      "action_id": "house:119:1:253",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 131,
+      "action_id": "house:119:1:254",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 132,
+      "action_id": "house:119:1:255",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 133,
+      "action_id": "house:119:1:244",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 134,
+      "action_id": "house:119:1:250",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 135,
+      "action_id": "house:119:1:251",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 136,
+      "action_id": "house:119:1:259",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 137,
+      "action_id": "house:119:1:260",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 138,
+      "action_id": "house:119:1:224",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 139,
+      "action_id": "house:119:1:225",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 140,
+      "action_id": "house:119:1:226",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 141,
+      "action_id": "house:119:1:294",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 142,
+      "action_id": "house:119:1:295",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 143,
+      "action_id": "house:119:1:296",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 144,
+      "action_id": "house:119:1:256",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 145,
+      "action_id": "house:119:1:257",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 146,
+      "action_id": "house:119:1:258",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 147,
+      "action_id": "house:119:2:174",
+      "declared_historical_severities": [
+        "Minor",
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 148,
+      "action_id": "house:119:2:190",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 149,
+      "action_id": "house:119:1:360",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 150,
+      "action_id": "house:119:2:38",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 151,
+      "action_id": "house:119:2:76",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 152,
+      "action_id": "house:119:2:306",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 153,
+      "action_id": "house:119:2:311",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 154,
+      "action_id": "house:119:1:334",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 155,
+      "action_id": "house:119:1:358",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 156,
+      "action_id": "house:119:2:164",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 157,
+      "action_id": "house:119:2:223",
+      "declared_historical_severities": [
+        "Minor",
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 158,
+      "action_id": "house:119:2:208",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 159,
+      "action_id": "house:119:2:209",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 160,
+      "action_id": "house:119:2:220",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 161,
+      "action_id": "house:119:2:303",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 162,
+      "action_id": "house:119:2:305",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 163,
+      "action_id": "house:119:1:325",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 164,
+      "action_id": "house:119:1:327",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 165,
+      "action_id": "house:119:1:328",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 166,
+      "action_id": "house:119:2:29",
+      "declared_historical_severities": [
+        "Minor",
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 167,
+      "action_id": "house:119:2:31",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 168,
+      "action_id": "house:119:1:352",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 169,
+      "action_id": "house:119:1:353",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 170,
+      "action_id": "house:119:1:354",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 171,
+      "action_id": "house:119:1:356",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 172,
+      "action_id": "house:119:1:330",
+      "declared_historical_severities": [
+        "Minor",
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 173,
+      "action_id": "house:119:2:144",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 174,
+      "action_id": "house:119:2:145",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 175,
+      "action_id": "house:119:2:146",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 176,
+      "action_id": "house:119:2:147",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 177,
+      "action_id": "house:119:2:148",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 178,
+      "action_id": "house:119:2:149",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 179,
+      "action_id": "house:119:2:150",
+      "declared_historical_severities": [
+        "Minor",
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 180,
+      "action_id": "house:119:2:151",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 181,
+      "action_id": "house:119:2:152",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 182,
+      "action_id": "house:119:2:242",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 183,
+      "action_id": "house:119:1:150",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 184,
+      "action_id": "house:119:1:180",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 185,
+      "action_id": "house:119:1:207",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 186,
+      "action_id": "house:119:1:326",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 187,
+      "action_id": "house:119:2:26",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 188,
+      "action_id": "house:119:2:40",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    },
+    {
+      "collection": "noncounting_actions",
+      "index": 189,
+      "action_id": "house:119:2:43",
+      "declared_historical_severities": [
+        "No Defect"
+      ]
+    }
+  ],
+  "null_current_substantive_count": 35,
+  "explicit_unaudited_list_count": 35,
+  "null_only_action_ids": [
+    "house:119:1:298",
+    "house:119:2:142",
+    "house:119:2:155",
+    "house:119:2:221"
+  ],
+  "explicit_list_only_action_ids": [
+    "house:119:1:285",
+    "house:119:2:280",
+    "house:119:2:45",
+    "house:119:2:89"
+  ],
+  "coverage_limit": "Neither null severity nor the explicit unaudited list alone certifies independent coverage. Their membership mismatch is preserved, not inferred away. Distinct findings and sample coverage are separate historical accounting.",
+  "all_prior_action_rows_histories_dispositions_and_unaudited_list_unchanged": true,
+  "distinct_finding_counts_and_sample_coverage_unchanged": true,
+  "new_semantic_assessments": 0,
+  "independent_review_clearance": false,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "completed_utc": "2026-10-16T01:23:45.593609+00:00",
+  "elapsed_seconds": 0.004028600000310689,
+  "receipt_sha256": "96217121d514ea4cbeeb43291cf76d02486d18d81750cd11f9e63eb7ed853268"
+}
