@@ -6550,5 +6550,127 @@ class Checkpoint246JulyPredicateRepairTests(unittest.TestCase):
         self.assertFalse(q['publication_authorized'])
 
 
+class Checkpoint247LHHSGeneralConditionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.a = json.loads((DATA / 'authoring.json').read_text(encoding='utf8'))
+        cls.s = json.loads((DATA / 'sources.json').read_text(encoding='utf8'))
+        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:1:70')
+        cls.q = json.loads((DATA / 'hr1968_general_conditions_checkpoint247.json').read_text(encoding='utf8'))
+        cls.new_claims = cls.action['claim_source_map'][157:]
+        cls.bank = {s['source_id']: s for s in cls.s['sources']}
+        cls.addition = cls.action['meaning'][140027:]
+
+    def test_twenty_four_complete_selected_sections_bind_four_distinct_historical_versions(self):
+        self.assertEqual(len(self.new_claims), 24)
+        self.assertEqual(len({c['source_id'] for c in self.new_claims}), 4)
+        self.assertEqual(self.q['receipt_sha256'], sealed_digest(self.q, 'receipt_sha256'))
+        for row in self.q['source_imports']:
+            reg = row['registration']
+            source = self.bank[reg['source_id']]
+            self.assertEqual(source['governed_bytes_sha256'], sealed_digest(source, 'governed_bytes_sha256'))
+            self.assertEqual(source['parent_source_id'], reg['parent_source_id'])
+            self.assertEqual(source['source_text_extents'], reg['source_text_extents'])
+            claims = [c for c in self.new_claims if c['source_id'] == source['source_id']]
+            self.assertEqual(len(claims), 6)
+            self.assertEqual(source['text'], '\n\n'.join(c['passage'] for c in claims))
+            self.assertEqual([int(c['locator'].split('LHHSsection')[1].split(';')[0]) for c in claims],
+                             [508, 509, 510, 511, 515, 518])
+        for phrase in ['own enactment', 'PHSAct330-340', 'does not equate source enactment dates',
+                       'Lexical comparison', 'not a source determination']:
+            self.assertIn(phrase, self.addition)
+        self.assertFalse(self.q['whole_historical_parent_or_current_individual_legal_application_certificate'])
+
+    def test_research_drug_and_identifier_funding_exceptions_and_enacted_approval_remain(self):
+        for phrase in ['research purposes', 'knowingly subjected', '45CFR46.204(b)',
+                       "as of that Act's own enactment", 'normal-and-recognized executive-congressional communications exception',
+                       'SIGNIFICANT medical evidence of therapeutic advantage OR federally sponsored clinical trials',
+                       'FINAL STANDARD', 'employer-or-health-care-provider capacity exception',
+                       'UNTIL LEGISLATION IS ENACTED SPECIFICALLY APPROVING THE STANDARD']:
+            self.assertIn(phrase, self.addition)
+        for c in self.new_claims:
+            if 'LHHSsection509;' in c['locator']:
+                self.assertIn('or that federally sponsored clinical trials are being conducted', c['passage'])
+            if 'LHHSsection510;' in c['locator']:
+                self.assertIn('until legislation is enacted specifically approving the standard', c['passage'])
+
+    def test_contractor_report_conjunction_and_scientific_request_categories_are_distinct(self):
+        for phrase in ['UnitedStates contractor AND subject to38US4212(d)',
+                       'AND has not submitted the required report for the most recent year',
+                       'enter into or renew a contract', 'FEDERAL SCIENTIFIC ADVISORY COMMITTEE',
+                       'not silently transplanted as an exception to the first two request categories',
+                       'Separate515(b)', 'deliberately false or misleading']:
+            self.assertIn(phrase, self.addition)
+        for c in self.new_claims:
+            if 'LHHSsection511;' in c['locator']:
+                self.assertIn('and is subject to the requirement in 38 U.S.C. 4212(d)', c['passage'])
+            if 'LHHSsection515;' in c['locator']:
+                self.assertIn('political affiliation or voting history', c['passage'])
+                self.assertIn('not directly related to and necessary for the work of the committee', c['passage'])
+
+    def test_ssa_quarter_credit_requires_wrong_number_and_claimants_conviction_with_actor_limits(self):
+        for phrase in ['Commissioner of Social Security', 'TITLEIIbenefit payments',
+                       'QUARTER OF COVERAGE', "not the claimant's number AND", 'conviction under208(a)(6)OR(7)',
+                       'A mismatched number alone, a charge without that conviction',
+                       'PHS330-340reference limits', 'current individual claims']:
+            self.assertIn(phrase, self.addition)
+        for c in self.new_claims:
+            if 'LHHSsection518;' in c['locator']:
+                self.assertIn('by the Commissioner of Social Security', c['passage'])
+                self.assertIn('and the performance of such work under such number', c['passage'])
+                self.assertIn('a conviction of the claimant', c['passage'])
+        self.assertTrue(self.q['SSA518_actor_and_TitleII_conjunctive_conviction_not_universal_medical_grant_condition'])
+        constraints = self.action['source_render_constraints']
+        self.assertEqual(constraints[-1]['semantic_effect'], 'bounds_cross_domain_attribution')
+        self.assertIn('not a blanket medicalgrant or immigration-status condition', constraints[-1]['detail'])
+
+    def test_actual_preparation_rejects_material_predicate_corruption_in_each_version(self):
+        good = copy.deepcopy(self.a)
+        good['actions'] = [copy.deepcopy(self.action)]
+        good['blocked_episode_ids'] = []
+        prepare(good, self.s, ['F000477', 'M001184'])
+        cases = [(508, 'for research purposes', 'for any purpose'),
+                 (509, 'or that federally sponsored clinical trials are being conducted',
+                  'and that privately sponsored clinical trials are being conducted'),
+                 (510, 'until legislation is enacted specifically approving the standard',
+                  'until an agency informally approves the standard'),
+                 (511, 'and is subject to the requirement', 'and is exempt from the requirement'),
+                 (515, 'political affiliation or voting history', 'citizenship or immigration status'),
+                 (518, 'and the performance of such work under such number',
+                  'or the performance of such work under such number')]
+        count = 0
+        for section, before, after in cases:
+            for i, c in enumerate(good['actions'][0]['claim_source_map']):
+                if 'conditions247' not in c['source_id'] or 'LHHSsection' + str(section) + ';' not in c['locator']:
+                    continue
+                bad = copy.deepcopy(good)
+                self.assertIn(before, c['passage'])
+                bad['actions'][0]['claim_source_map'][i]['passage'] = c['passage'].replace(before, after, 1)
+                with self.subTest(section=section, source=c['source_id']), self.assertRaisesRegex(
+                        ValueError, 'claim passage absent from bound source'):
+                    prepare(bad, self.s, ['F000477', 'M001184'])
+                count += 1
+        self.assertEqual(count, 24)
+
+    def test_original_meaning_bindings_choices_and_whole_package_observations_are_preserved(self):
+        prior = self.q['prior_authoring']
+        self.assertEqual(self.action['meaning'][:140027], prior['meaning'])
+        self.assertEqual(self.action['claim_source_map'][:157], prior['claim_source_map'])
+        self.assertEqual(self.action['limitations'][:-3], prior['limitations'])
+        for field in ['choice_meanings', 'compact_description', 'compact_source_refs', 'short_description']:
+            self.assertEqual(self.action[field], prior[field])
+        projections = json.loads((DATA / 'generated/member_projections.json').read_text())
+        for member in projections:
+            self.assertEqual(next(a for a in member['actions'] if a['action_id'] == self.action['action_id'])['official_status'], 'Nay')
+        core = next(c for c in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']
+                    if c['action_id'] == self.action['action_id'])
+        self.assertEqual(core['action_core_sha256'], self.q['current_core_sha256'])
+        self.assertEqual(self.q['new_screening_completions'], 0)
+        self.assertTrue(self.q['all70questions_partial_component_flags_and_Q68_Q70_preserved'])
+        self.assertTrue(self.q['independent_source_domain_review_pending'])
+        self.assertFalse(self.q['editorial_acceptance'])
+        self.assertFalse(self.q['publication_authorized'])
+
+
 if __name__ == '__main__':
     unittest.main()
