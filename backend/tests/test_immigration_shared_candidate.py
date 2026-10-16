@@ -7558,7 +7558,7 @@ class Checkpoint255StateGeneralTests(unittest.TestCase):
     def setUpClass(cls):
         cls.q=json.loads((DATA/'hr1968_state_general_conditions_checkpoint255.json').read_text())
         cls.a=json.loads((DATA/'authoring.json').read_text())
-        cls.action=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:70')
+        cls.action=json.loads((DATA/'hr1968_authorization_conditions_checkpoint256.json').read_text())['prior_authoring']['house:119:1:70']
         cls.prior=cls.q['prior_authoring'][cls.action['action_id']]
         cls.cap=json.loads((DATA/'sources.json').read_text())
         cls.bank={v['source_id']:v for v in cls.cap['sources']}
@@ -7594,7 +7594,7 @@ class Checkpoint255StateGeneralTests(unittest.TestCase):
         prefix=q['prior_audit_primary_evidence'][act['action_id']]
         self.assertEqual(refs[:len(prefix)],prefix)
         self.assertTrue({act['source_id'],*act['additional_source_ids']}<={v['source_id'] for v in refs})
-        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==act['action_id'])
+        core=json.loads((DATA/'hr1968_authorization_conditions_checkpoint256.json').read_text())['prior_cores'][act['action_id']]
         self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][act['action_id']])
 
     def test_actual_continuance_binding_and_unselected_authorization_question_remain_qualified(self):
@@ -7672,7 +7672,7 @@ class Checkpoint255StateGeneralTests(unittest.TestCase):
                         prepare(copy.deepcopy(a),cap,['F000477','M001184'])
 
     def test_all_member_observations_and_accounting_stay_unchanged_with_no_new_screening(self):
-        old=self.q['prior_member_projections'];new=json.loads((DATA/'generated/member_projections.json').read_text());aid=self.action['action_id']
+        old=self.q['prior_member_projections'];new=json.loads((DATA/'hr1968_authorization_conditions_checkpoint256.json').read_text())['prior_member_projections'];aid=self.action['action_id']
         for before,after in zip(old,new):
             self.assertEqual(before['member_id'],after['member_id'])
             for prior in before['actions']:
@@ -7689,6 +7689,115 @@ class Checkpoint255StateGeneralTests(unittest.TestCase):
         self.assertTrue(self.q['private_preflight']['all9_fail_closed'])
         self.assertFalse(self.q['editorial_acceptance'])
         self.assertFalse(self.q['publication_authorized'])
+
+
+class Checkpoint256AuthorizationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q=json.loads((DATA/'hr1968_authorization_conditions_checkpoint256.json').read_text())
+        cls.a=json.loads((DATA/'authoring.json').read_text())
+        cls.action=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:70')
+        cls.cap=json.loads((DATA/'sources.json').read_text())
+        cls.bank={v['source_id']:v for v in cls.cap['sources']}
+        cls.prior=cls.q['prior_authoring'][cls.action['action_id']]
+        cls.prefix=cls.prior['meaning']
+        for f in cls.q['source_epoch_correction']['fixes']:
+            if f['field']=='meaning':cls.prefix=cls.prefix.replace(f['before'],f['after'])
+        cls.addition=cls.action['meaning'][len(cls.prefix):]
+
+    def text(self,key):
+        return next(v['text'] for k,v in self.bank.items() if key in k and k.endswith('authorizations256'))
+
+    def test_current_division_and_original_TDA_exception_are_distinct(self):
+        leg=self.q['legislative_actual_reading'][0];src=self.bank[leg['source_id']]
+        self.assertEqual(src['text'][leg['start']:leg['end']],leg['text'])
+        self.assertEqual((leg['start'],leg['end'],leg['total']),(10507,10917,109266))
+        self.assertIn('by this division',leg['text'])
+        self.assertNotIn('Trade and Development Agency',leg['text'])
+        original=self.text('-7022-')
+        self.assertIn('by this Act, except funds appropriated under the heading',original)
+        self.assertIn('Trade and Development Agency',original)
+        for term in ['TDAexception is an exclusion','not a prohibition','actual TDAeligibility','legal-priority/continuation']:self.assertIn(term,self.addition)
+        self.assertIn(leg['text'],[b['passage'] for b in self.action['claim_source_map']])
+
+    def test_governing_reference_rule_retains_express_otherwise_and_division_scope(self):
+        text=self.text('-references-')
+        self.assertIn('Except as expressly provided otherwise',text)
+        self.assertIn('referring only to the provisions of that division',text)
+        for term in ['DivisionFfund scope','DivisionAfund scope','EXCEPTas expressly provided otherwise','not an all-law waiver']:self.assertIn(term,self.addition)
+
+    def test_2412_PDF_boundary_dates_caps_and_subsequent_authorization(self):
+        text=self.text('22usc2412-')
+        for term in ['before January 12, 1971','unless the appropriation thereof','in excess of an amount','legislation enacted after','specifically repeals or modifies','Section was not enacted as part','appro - priations']:self.assertIn(term,text)
+        self.assertNotIn('§ 2413.',text)
+        self.assertNotIn('continuing appropriations',text)
+        q=self.q['original2412_qualification']
+        self.assertEqual(q['raw_reread_sha256'],'b1a1dfa1d150bff533cb184ccb631329401e18910772523bacd390029a302cd7')
+        for term in ['neighboring2413continuing-appropriations exception is NOTa2412exception','authorization prerequisite and amount ceiling','TOEXTENT','physical line-end hyphens']:self.assertIn(term,self.addition)
+
+    def test_2680_dates_scoped_exceptions_and_independent_information_duties(self):
+        text=self.text('22usc2680-')
+        for term in ['before October 26, 1974','on or after July 1, 1972','on or after February 7, 1972','permanent appropriations, trust funds','fully and currently informed','independent establishment']:self.assertIn(term,text)
+        for term in ['TOEXTENT','does not establish','fully and currently informed','cancels all information duties']:self.assertIn(term,self.addition)
+
+    def test_6212_Agency_amount_limit_notes_and_account_exception(self):
+        text=self.text('22usc6212-')
+        for term in ['fiscal year 1994 and for each subsequent fiscal year','in excess of the authorized level','supervision of the Agency','pur poses','could not be executed','permanent appropriations, trust funds']:self.assertIn(term,text)
+        for term in ['do not establish current funding','neither silently restore Board wording','not exceed the authorized level']:self.assertIn(term,self.addition)
+
+    def test_3094_only_a1_and_Congress_both_authorized_and_appropriated(self):
+        text=self.text('50usc3094-')
+        for term in ['both authorized the funds to be appropriated','and appropriated the funds for that activity','although the funds were not formally requested','higher priority','supports an emergent need, improves program effectiveness, or increases efficiency','funds were denied by the Congress','Presidential finding','not appropriated funds']:self.assertIn(term,text)
+        for term in ['Only50USC3094(a)(1), not the whole section','formal budget request alone is insufficient','DIFFERENTactivity','HIGHERPRIORITY AND(emergent need ORimproved effectiveness ORincreased efficiency)AND','No actual MRAprogramme is classified as intelligence']:self.assertIn(term,self.addition)
+
+    def test_three_epoch_carriers_change_only_documented_status_with_preimages(self):
+        q=self.q;old=self.prior;new=self.action
+        self.assertEqual(q['receipt_sha256'],sealed_digest(q,'receipt_sha256'))
+        self.assertEqual(q['base_head'],'ce14b20ce43bc320d3946d4de79a1f47ad9938ca')
+        expected=copy.deepcopy(old)
+        for f in q['source_epoch_correction']['fixes']:
+            value=expected[f['field']]
+            if 'index' in f:value=value[f['index']]
+            if 'key' in f:value=value[f['key']]
+            self.assertEqual(value.count(f['before']),1)
+            value=value.replace(f['before'],f['after'])
+            if 'key' in f:expected[f['field']][f['index']][f['key']]=value
+            elif 'index' in f:expected[f['field']][f['index']]=value
+            else:expected[f['field']]=value
+        self.assertEqual(q['source_epoch_correction']['total_carriers'],3)
+        self.assertTrue(new['meaning'].startswith(expected['meaning']))
+        self.assertEqual(new['limitations'][:-1],expected['limitations'])
+        self.assertEqual(new['source_render_constraints'][:-1],expected['source_render_constraints'])
+        self.assertEqual(new['claim_source_map'][:len(old['claim_source_map'])],old['claim_source_map'])
+        for key in ['choice_meanings','compact_description','compact_source_refs','short_description','stage','episode_id']:self.assertEqual(old[key],new[key])
+        self.assertEqual(len(new['claim_source_map'])-len(old['claim_source_map']),7)
+        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==new['action_id'])
+        self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][new['action_id']])
+
+    def test_sources_stale_or_resealed_fail_closed_and_own_constraint_required(self):
+        a=copy.deepcopy(self.a);a['actions']=[self.action];a['blocked_episode_ids']=[]
+        for sid in [v['source_id'] for v in self.q['actual_reading']]+['govinfo:hr1968eh']:
+            source=self.bank[sid]
+            needle=source['text'] if sid!='govinfo:hr1968eh' else self.q['legislative_actual_reading'][0]['text']
+            for reseal in [False,True]:
+                cap=copy.deepcopy(self.cap);v=next(v for v in cap['sources'] if v['source_id']==sid);v['text']=v['text'].replace(needle,needle.replace('Funds','Money',1) if 'Funds' in needle else needle.replace(needle[:10],'REPLACED',1),1)
+                if reseal:v['governed_bytes_sha256']=sealed_digest(v,'governed_bytes_sha256')
+                with self.assertRaises(ValueError):prepare(copy.deepcopy(a),cap,['F000477','M001184'])
+        wrong=copy.deepcopy(a);wrong['actions'][0]['source_render_constraints'][-1]['action_ids']=['house:119:1:71']
+        with self.assertRaises(ValueError):prepare(wrong,self.cap,['F000477','M001184'])
+
+    def test_observations_entire_graphs_questions_and_no_new_screening_preserved(self):
+        q=self.q;aid=self.action['action_id']
+        for old,new in zip(q['prior_member_projections'],json.loads((DATA/'generated/member_projections.json').read_text())):
+            self.assertEqual(old['member_id'],new['member_id'])
+            for prior in old['actions']:
+                current=next(v for v in new['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set()
+                self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
+        self.assertEqual(q['counts'],dict(reviewed=666,pending=10,cores=87,behavioral_propositions=145,episodes=75,multi_action_episodes=10))
+        self.assertEqual(q['new_screening_completions'],0)
+        self.assertTrue(q['all70questions_partial_flags_and_Q68_Q70_preserved'])
+        self.assertFalse(q['editorial_acceptance']);self.assertFalse(q['publication_authorized'])
+
 
 if __name__ == '__main__':
     unittest.main()
