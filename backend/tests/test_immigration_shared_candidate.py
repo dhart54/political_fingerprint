@@ -6678,7 +6678,7 @@ class Checkpoint248StateMigrationConditionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.a = json.loads((DATA / 'authoring.json').read_text())
         cls.s = json.loads((DATA / 'sources.json').read_text())
-        cls.action = next(a for a in cls.a['actions'] if a['action_id'] == 'house:119:1:70')
+        cls.action = json.loads((DATA / 'hr1968_state_general_conditions_checkpoint255.json').read_text())['prior_authoring']['house:119:1:70']
         cls.q = json.loads((DATA / 'hr1968_state_migration_conditions_checkpoint248.json').read_text())
         cls.claims = cls.action['claim_source_map'][181:]
         cls.addition = cls.action['meaning'][145371:]
@@ -6762,7 +6762,7 @@ class Checkpoint248StateMigrationConditionTests(unittest.TestCase):
         self.assertEqual(self.action['source_render_constraints'][:-1], prior['source_render_constraints'])
         for field in ['choice_meanings', 'compact_description', 'compact_source_refs', 'short_description']:
             self.assertEqual(self.action[field], prior[field])
-        for member in json.loads((DATA / 'generated/member_projections.json').read_text()):
+        for member in json.loads((DATA / 'hr1968_state_general_conditions_checkpoint255.json').read_text())['prior_member_projections']:
             own = next(a for a in member['actions'] if a['action_id'] == self.action['action_id'])
             self.assertEqual(own['official_status'], 'Nay')
             self.assertEqual(own['action_core_sha256'], self.q['current_core_sha256'])
@@ -7549,6 +7549,144 @@ class Checkpoint254ElectricityBaselineTests(unittest.TestCase):
         self.assertTrue(self.q['private_preflight']['all9_fail_closed'])
         for member in json.loads((DATA / 'generated/member_projections.json').read_text()):
             for aid in self.actions:self.assertEqual(next(v for v in member['actions'] if v['action_id']==aid)['official_status'],'Nay')
+        self.assertFalse(self.q['editorial_acceptance'])
+        self.assertFalse(self.q['publication_authorized'])
+
+
+class Checkpoint255StateGeneralTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q=json.loads((DATA/'hr1968_state_general_conditions_checkpoint255.json').read_text())
+        cls.a=json.loads((DATA/'authoring.json').read_text())
+        cls.action=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:70')
+        cls.prior=cls.q['prior_authoring'][cls.action['action_id']]
+        cls.cap=json.loads((DATA/'sources.json').read_text())
+        cls.bank={v['source_id']:v for v in cls.cap['sources']}
+        cls.prefix=cls.prior['meaning']
+        for fix in cls.q['member_neutrality_correction']['fixes']:
+            cls.prefix=cls.prefix.replace(fix['before'],fix['after'])
+        cls.addition=cls.action['meaning'][len(cls.prefix):]
+
+    def source(self,section):
+        return self.bank['govinfo:pl118-47-divisionF-'+str(section)+'-state-general255']['text']
+
+    def test_three_generic_pair_references_only_are_neutralized_with_history_preserved(self):
+        q=self.q;act=self.action;old=self.prior
+        self.assertEqual(q['receipt_sha256'],sealed_digest(q,'receipt_sha256'))
+        self.assertEqual(q['base_head'],'0b1cf80656c99e164531bcdd7d6b7bdf68975da8')
+        correction=q['member_neutrality_correction']
+        self.assertTrue(correction['applied'])
+        self.assertTrue(correction['target_unchanged_through_base'])
+        self.assertTrue(correction['generic_choices_not_actual_vote_values'])
+        self.assertEqual(len(correction['fixes']),3)
+        for fix in correction['fixes']:self.assertEqual(old['meaning'].count(fix['before']),fix['occurrences'])
+        self.assertEqual(sum(v['occurrences'] for v in correction['fixes']),3)
+        self.assertTrue(act['meaning'].startswith(self.prefix))
+        for term in ['both members',"members' nay",'f000477','m001184']:self.assertNotIn(term,act['meaning'].lower())
+        self.assertIn('Yea and Nay describe passage of the whole H.R.1968package',act['meaning'])
+        self.assertEqual(act['claim_source_map'][:len(old['claim_source_map'])],old['claim_source_map'])
+        self.assertEqual(act['limitations'][:-1],old['limitations'])
+        self.assertEqual(act['source_render_constraints'][:-1],old['source_render_constraints'])
+        for key in ['choice_meanings','compact_description','compact_source_refs','short_description','stage','episode_id']:
+            self.assertEqual(act[key],old[key])
+        audit=json.loads((DATA.parents[2]/'review_packets/immigration_semantic_audit_in_progress.json').read_text())
+        refs=next(v for v in audit['substantive_actions'] if v['action_id']==act['action_id'])['primary_evidence']
+        prefix=q['prior_audit_primary_evidence'][act['action_id']]
+        self.assertEqual(refs[:len(prefix)],prefix)
+        self.assertTrue({act['source_id'],*act['additional_source_ids']}<={v['source_id'] for v in refs})
+        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==act['action_id'])
+        self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][act['action_id']])
+
+    def test_actual_continuance_binding_and_unselected_authorization_question_remain_qualified(self):
+        r=self.q['existing_continuance_binding_recheck'];src=self.bank[r['source_id']]
+        passage=src['text'][r['start']:r['end']]
+        self.assertEqual(len(passage),6551)
+        self.assertEqual(digest(passage),r['passage_sha256'])
+        self.assertIn(passage,[c['passage'] for c in self.action['claim_source_map'] if c['source_id']==r['source_id']])
+        self.assertEqual(r['State_incorporation_clause'],'1101(a)(11)')
+        self.assertEqual(r['printed_State_exceptions'],['7074(e)','7075(a)'])
+        self.assertIn('except sections 7074(e) and 7075(a)',passage)
+        self.assertIn('Except as otherwise expressly provided in this division',passage)
+        self.assertIn('September 30, 2025',passage)
+        self.assertIn('no blanket date reset',self.addition)
+        self.assertTrue(self.q['original7022_2412_not_newly_qualified'])
+        self.assertTrue(self.q['no_original_source_unavailability_or_all_programme_certificate'])
+        self.assertFalse(any('2412' in v['source_id'] or '-7022-' in v['source_id'] for v in self.q['source_imports']))
+
+    def test_named_government_direct_financing_bar_is_not_individual_nationality_or_admission(self):
+        t=self.source(7007)
+        for phrase in ['titles III through VI','finance directly any assistance or reparations','governments of Cuba, North Korea, Iran, or Syria','direct loans, credits, insurance, and guarantees','Export-Import Bank or its agents']:
+            self.assertIn(phrase,t)
+        for phrase in ['GOVERNMENTSof Cuba','not personal refugee-admission or nationality findings','not by itself prohibit every transaction','actual MRApayment']:
+            self.assertIn(phrase,self.addition)
+
+    def test_coup_resumption_democracy_and_programme_waiver_conditions_stay_distinct(self):
+        t=self.source(7008)
+        for phrase in ['duly elected head of government','military plays a decisive role','subsequent to the termination of assistance','certifies and reports','support a democratic transition','following consultation with the heads of relevant Federal agencies','on a program-by-program basis','national security interest','prior consultation with, and the regular notification procedures of']:
+            self.assertIn(phrase,t)
+        for phrase in ['PROGRAM BY PROGRAM','FOLLOWING CONSULTATION','NATIONAL SECURITYinterest','NATIONAL INTERESTroute under7021(a)','not universal humanitarian, refugee or nationality exceptions']:
+            self.assertIn(phrase,self.addition)
+
+    def test_ngo_audit_agency_report_exceptions_and_official_record_duties_are_not_interchanged(self):
+        t=self.source(7016)
+        for phrase in ['nongovernmental organization, including any contractor','upon timely request','necessary to the auditing requirements','45 days following the receipt of such report by Congress','determines and reports','proprietary or other privileged information','only after the report has been made available','central location','title I','title II','including senior officials','previous fiscal year']:
+            self.assertIn(phrase,t)
+        for phrase in ['RECEIVING FUNDS MADE AVAILABLE BY THIS ACT','AFTER CONGRESS RECEIVESit','agency employee']:
+            self.assertIn(phrase,self.addition)
+        self.assertIn('a distinct alternative',self.addition)
+        self.assertIn('not every demand for every record at every time',self.addition)
+
+    def test_lethal_equipment_branch_keeps_contract_and_cessation_dates_and_presidential_report(self):
+        t=self.source(7021).split('(b) Bilateral Assistance',1)[0]
+        for phrase in ['lethal military equipment','12 months after that government ceases','contract entered into after October 1, 1997','President determines','important to the national interest','estimated dollar amount']:
+            self.assertIn(phrase,t)
+        self.assertNotIn('15 days',t)
+        for phrase in ['MAY BE FURNISHED IFthe President determines','USNATIONAL INTEREST','AFTEROctober1,1997','12MONTHS AFTER','not a personal terrorism allegation']:
+            self.assertIn(phrase,self.addition)
+
+    def test_bilateral_branch_retains_or_waiver_publication_prior_notice_and_separate_risk_qualification(self):
+        t=self.source(7021).split('(b) Bilateral Assistance',1)[1]
+        for phrase in ['in prior Acts','foreign government which the President determines','grants sanctuary from prosecution','controlled by an organization designated','national security or humanitarian reasons','publish each such waiver in the Federal Register','at least 15 days before the waiver takes effect','including the justification for the waiver']:
+            self.assertIn(phrase,t)
+        for phrase in ['NATIONALSECURITY OR HUMANITARIAN','PUBLISHED IN THE FEDERAL REGISTER','AT LEAST15DAYS BEFORE','ASAP/no-later-than3days-AFTER-action','not silently turned into a blanket substantive or FederalRegister-publication waiver','held243/245institution/country questions']:
+            self.assertIn(phrase,self.addition)
+
+    def test_selected_source_seals_extents_manifest_and_eight_corruptions_bind_current_action(self):
+        mf={v['source_id']:v for v in json.loads((DATA/'research_capture_manifest.json').read_text())['sources']}
+        for read in self.q['actual_reading']:
+            src=self.bank[read['source_id']]
+            self.assertEqual(src['governed_bytes_sha256'],sealed_digest(src,'governed_bytes_sha256'))
+            self.assertEqual(digest(src['text']),read['text_sha256'])
+            self.assertEqual(src['source_text_extents'][0],{k:read[k] for k in ['start','end','total']})
+            self.assertEqual(mf[src['source_id']]['governed_bytes_sha256'],src['governed_bytes_sha256'])
+            self.assertEqual(mf[src['parent_source_id']]['raw_sha256'],src['raw_sha256'])
+            self.assertIn(src['text'],[v['passage'] for v in self.action['claim_source_map'] if v['source_id']==src['source_id']])
+        a=copy.deepcopy(self.a);a['actions']=[copy.deepcopy(self.action)];a['blocked_episode_ids']=[]
+        cases=[(7007,'for the governments of Cuba','for the residents of Cuba'),(7008,'on a program-by-program basis','for all programs automatically'),(7016,'45 days following the receipt of such report by Congress','45 days following the creation of such report'),(7021,'national security or humanitarian reasons','national security and humanitarian reasons')]
+        for section,old,new in cases:
+            for reseal in [False,True]:
+                with self.subTest(section=section,reseal=reseal):
+                    cap=copy.deepcopy(self.cap);src=next(v for v in cap['sources'] if v['source_id']=='govinfo:pl118-47-divisionF-'+str(section)+'-state-general255');self.assertIn(old,src['text']);src['text']=src['text'].replace(old,new,1)
+                    if reseal:src['governed_bytes_sha256']=sealed_digest(src,'governed_bytes_sha256')
+                    with self.assertRaisesRegex(ValueError,'governed source changed|claim passage absent from bound source'):
+                        prepare(copy.deepcopy(a),cap,['F000477','M001184'])
+
+    def test_all_member_observations_and_accounting_stay_unchanged_with_no_new_screening(self):
+        old=self.q['prior_member_projections'];new=json.loads((DATA/'generated/member_projections.json').read_text());aid=self.action['action_id']
+        for before,after in zip(old,new):
+            self.assertEqual(before['member_id'],after['member_id'])
+            for prior in before['actions']:
+                current=next(v for v in after['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set()
+                self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
+                if prior['action_id']==aid:self.assertEqual(current['action_core_sha256'],self.q['current_core_sha256'][aid])
+        self.assertEqual(self.q['counts'],{'reviewed':666,'pending':10,'cores':87,'behavioral_propositions':145,'episodes':75,'multi_action_episodes':10})
+        self.assertEqual(self.q['new_claim_bindings'],4)
+        self.assertEqual(self.q['complex_existing_cores_revised'],1)
+        self.assertEqual(self.q['new_screening_completions'],0)
+        self.assertTrue(self.q['all70questions_partial_flags_and_Q68_Q70_preserved'])
+        self.assertTrue(self.q['all_denied_cancelled_reserved_restrictions_and_withdrawals_retained'])
+        self.assertTrue(self.q['all_prior_HR1_member_neutrality_repairs_preserved'])
+        self.assertTrue(self.q['private_preflight']['all9_fail_closed'])
         self.assertFalse(self.q['editorial_acceptance'])
         self.assertFalse(self.q['publication_authorized'])
 
