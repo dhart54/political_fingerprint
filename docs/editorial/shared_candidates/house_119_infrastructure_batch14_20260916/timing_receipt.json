@@ -1,0 +1,31 @@
+{
+  "owner_source_authoring_phase_start_utc": "2026-10-17T05:57:09.090293+00:00",
+  "owner_phase_end_utc": "2026-10-17T06:04:10.822236+00:00",
+  "owner_phase_wall_seconds": 421.732,
+  "owner_phase_qualification": "Source reading/candidate authoring/access-boundary handling and routine checks/tool I/O; overlaps prior-batch delivery. Not a continuously sampled active-work clock. Final instrumented gates and later delivery are separate.",
+  "measured_final_validation_process_seconds": 21.113,
+  "validation": {
+    "start_utc": "2026-10-17T06:04:10.822236+00:00",
+    "end_utc": "2026-10-17T06:04:31.934914+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 14 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch14_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.044
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 17.943
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.126
+      }
+    ]
+  },
+  "successful_source_acquisitions": 0,
+  "denied_page_lookup_attempts": 1,
+  "retries_or_alternate_routes": 0
+}

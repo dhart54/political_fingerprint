@@ -45,4 +45,7 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         def reading(path):return resume if path==folder(12)/'resume_receipt.json' else original(path)
         with patch.object(delta,'read',side_effect=reading):
             with self.assertRaisesRegex(ValueError,'stale frontier or review-head attribution'):validate(12,check_files=False)
+    def test_private_land_work_cannot_lose_owner_consent(self):
+        v=[read(folder(14)/f'{k}.json') for k in ['authoring','sources','universe_proposal','membership_review']];a=next(a for a in v[0]['actions'] if a['action_id']=='house:119:1:24');a['meaning']=a['meaning'].replace("with private landowners' consent for the private-land work",'with unconditional private-land access')
+        with self.assertRaisesRegex(ValueError,'375consent/continuation/funding boundary differs'):validate(14,v,check_files=False)
 if __name__=='__main__':unittest.main()

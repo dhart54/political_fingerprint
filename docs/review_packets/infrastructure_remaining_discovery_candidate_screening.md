@@ -1,79 +1,101 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: batch13. Batch12corrections remain inherited unchanged. Candidate only; independent review remains in progress
-on the earlier exact head `d2865c36c277c85866ca38935eb11706d63f4313`. This increment
-has no transferred review or acceptance. Owner/worktree: DESKTOP-1CQBHTJ,
-`.w/infra`, branch `codex/infrastructure-candidate-seed`, original main base
-`af6cd6d78d6944d64a68a92653066c4c1625f96b`.
+Current checkpoint: **batch14**, candidate only. Owner DESKTOP-1CQBHTJ,
+`.w/infra`, `codex/infrastructure-candidate-seed`; original main base
+`af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review is
+attributed to exact `d2865c36c277c85866ca38935eb11706d63f4313`; it does not approve
+later corrections, membership leads or this new candidate.
 
-## Corrections, separate from new screening
+The remaining-record phase has examined30additional identities in batches12–14.
+There are106owner-examined identities overall, with **570ordinary unscreened**.
+Evidence units distinguish exact procedural questions, rule effects, complete bill
+bodies, partial operative package leads and access-only investigation. One access
+unit below has **no substantive amendment-body review**. Metadata triage does not
+establish domain eligibility, a body review or a whole-action meaning.
 
-H.R.9436 changes dates only. Its retained PL117-328 divisionJJ section101(a)(3)
-requires an annual report **to Congress**, in consultation with affected States,
-covering actions and plans to implement measures **expected not to exceed Potential
-Biological Removal** by the specified date. The earlier “named committees” and
-“attain” wording was wrong. Current authoring, shared core and readable products
-are regenerated; defective preimages and exact source clauses/hashes remain in the
-[correction receipt](../editorial/shared_candidates/house_119_infrastructure_batch12_20260916/candidate_correction_receipt.json).
-The recipient and expectation/operator have source-backed negative regressions.
+## Current result
 
-The existing failed-recommittal context in H.R.9436 now directly binds retained
-Clerk119:2:290 (H.R.9436, motion to recommit, Failed, September1). H.R.1501's
-separate failed-H.J.Res.1 context binds Clerk119:2:293 (suspension/passage, Failed,
-September2). Both original Clerk objects remain unchanged. Literal metadata-only
-excerpts support direct text claims and retain their governed parent identities;
-no new acquisition, outcome or member interpretation is introduced.
+| State | Count |
+|---|---:|
+| Shared authored candidate meanings | 31 |
+| Procedural controls | 33 |
+| Proposed exact-action exclusions | 15 |
+| Nonbinding expression | 1 |
+| Source/access/version holds | 4 |
+| Ordinary unfinished/review cases | 22 |
+| Ordinary unscreened identities | 570 |
+| **Discovery identities** | **676** |
 
-The new resume fixes stale wording that still called the 38 discovery-delta
-identities unscreened. They were examined through d2865c36, at which there were76
-examined identities and600ordinary remaining. Earlier snapshots stay immutable.
-Counts were valid; this is a prose/provenance correction, not a counting repair.
+The31shared meanings project mechanically to Foushee and Massie. Five original
+authored Not Voting observations remain nondirectional; there are30Foushee and27
+Massie directional findings. No membership, completeness, synthesis or publication
+acceptance follows from these counts.
 
-## Batch12 chronological screening
+Batch14adds one whole-action candidate forH.R.375: continued disease-vector/
+transmission research, agency/State collaboration, financial assistance and staff/
+necessary infrastructure funding at the named forestry institute. It preserves
+private-owner consent for private-land management and does not invent dollar
+appropriations, new-facility requirements, staffing counts, achieved outcomes or
+current biological/agency facts. Both choices concern the whole exact suspension-
+and-passage motion. [Batch14packet](infrastructure_candidate_batch14.md).
 
-| Exact House119 session1 action | Source-backed outcome |
-|---|---|
-| 3,4,5: H.Res.5 | Three noncounting procedural questions. Agreement has actual House-rule effects, including committee electronic-voting permission; section5sets consideration for twelve bills without passing them. No unquoted commit instructions are inferred. |
-| 6: H.R.29 | Proposed exclusion: the complete January7EH changes detention/detainers and State enforcement/standing/injunction rules; it does not establish an infrastructure/ITprogram. Later versions do not transfer. |
-| 7: H.R.23 | Proposed exclusion: ICC-related sanctions and funding provisions. The generic technological-support trigger was examined, but no identified development/deployment/research mechanism is inferred from that phrase. Findings remain attributed claims. |
-| 9: H.R.152 | Ordinary lead: disaster information/website planning, emerging-technology assessment and public machine-readable reporting. Replaced/incorporated material baselines still need review. |
-| 10: H.R.153 | Ordinary lead: disaster-assistance subpage and quarterly machine-readable public project data. FFATAwebsite and assistance-definition baselines remain unfinished. |
-| 11: H.R.28 recommittal | Noncounting exact procedural question, separate from final passage. No instructions or preferred policy inferred. |
-| 12: H.R.28 passage | Withhold membership acceptance: the GAOstudy creates a research-boundary question, with a contrary case that this is athletics/compliance oversight rather than direct research-program governance. Do not assume every study is Infrastructure or adopt its requested findings as actual harms. |
-| 13: H.R.164 | Ordinary lead: electric-utility restoration/mitigation assistance, preserving otherwise-eligible mitigation access. Stafford403/406material baselines remain unfinished. |
+Other new work includes three procedural questions, one proposed clinical-care
+exclusion and four ordinary leads: the forest technology-pilot clause, Alaska
+trust/roadway conditions, the Nutria program's unreviewed underlying scope, and
+controlled-substance research-registration provisions. The forest and drug package
+reads are explicitly partial; no whole-package conclusion is claimed.
 
-Metadata triage selected ten identities but did not establish body review. Evidence
-units are separately recorded: three exact-question procedural reviews, one
-institutional rule-effect review and six complete identified bill-body domain
-screens. No new whole-action meaning was authored. [Evidence-unit receipt](../editorial/shared_candidates/house_119_infrastructure_batch12_20260916/screening_units_receipt.json).
+## Reviewer corrections retained
 
-The batch12partial accounting was30shared meanings +27procedures +11proposed
-exclusions +1nonbinding expression +3source/version holds +14ordinary unfinished/
-review cases +590unscreened =676identities. That was86examined identities, not
-complete-domain screening or accepted membership. Five authored Not Voting
-observations, H.R.2189unaccepted membership, all old source holds and all eight
-old research/two legal-review cases remain explicit and unchanged.
+Batch12correctedH.R.9436's annual recipient to **Congress**, in consultation with
+affected States, and preserved measures **expected not to exceed Potential
+Biological Removal**. The amendment changes dates only. Defective “named committees”
+and “attain” preimages, complete source clauses/hashes and negative regressions
+remain. RetainedClerk290and293directly bind the existing failed-recommittal and
+failedH.J.Res.1context. No vote/outcome changes. All current copies inherit these
+repairs; prior snapshots stay immutable.
 
-54focused tests and seven canonical semantic checks pass.84generated outputs
-replay and215prior candidate files retain exact Git bytes. The compiledIRbytes
-remain unchanged: its compact propositions did not contain the defective9436
-clauses. Current core/explanatory claims are corrected, with renewed review needed.
-The source/correction/authoring phase lasted347.488seconds including normal reads/
-local checks; final instrumented validation took19.001seconds. Delivery is separate.
-No source acquisition or protected-chain retry occurred.
+The stale claim that the38discovery-delta identities were unscreened is repaired
+only in new resume snapshots. At the earlier review head,76were examined and600
+ordinary historical non-leads remained; current totals above reflect later work.
+Historical non-lead labels select research only and never automatically exclude.
 
-[Latest candidate packet](infrastructure_candidate_batch12.md) ·
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch12_20260916/resume_receipt.json) ·
-[Validation](../editorial/shared_candidates/house_119_infrastructure_batch12_20260916/validation_receipt.json) ·
-[Living plan](../plans/infrastructure_remaining_discovery_screening.md)
+[Correction receipt](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/inherited_batch12_correction_receipt.json)
+· [earlier delta handoff](infrastructure_discovery_delta_candidate_increment.md)
+· [batch12](infrastructure_candidate_batch12.md) · [batch13](infrastructure_candidate_batch13.md)
 
-The batch12frontier began session1roll14 with590remaining; the updated batch13resume is below. Continue remaining
-ordinary records in bounded source-backed groups. No editorial acceptance,
+## Access boundary, separate from substantive screening
+
+For **house:119:1:32**, the lookup of
+`https://rules.house.gov/bill/119/hr-27` reported **403Forbidden**. No response body
+was retained or registered as evidence. That acquisition chain is stopped: no retry,
+transport switch or alternate route. The exact amendment text/version remains
+unbound; the parent rule and final bill cannot establish the narrower choice.
+Only Clerk identity and the access/source-binding constraint are reviewed here.
+[Denial/restriction receipt](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/source_denial_restrictions_receipt.json).
+
+The oldH.J.Res.87denial, unclassifiedH.R.4690rejection and cancelledWRDAversion/
+glyph/table chain remain unchanged and were not retried. This new reported403does
+not classify the unrelatedH.R.4690response. Eight original ordinary research cases,
+twoCRAlegal reviews, unacceptedH.R.2189membership and all additional named ordinary
+leads remain explicit. Continue independent records around holds.
+
+## Validation and resume
+
+**55focused tests and seven canonical semantic checks pass** at batch14, including
+private-land consent, report-recipient/PBR, direct-context and frontier regressions.
+98generated outputs replay and257prior snapshot files retain exactGitbytes. Governed
+sources remain member-neutral; denied/error responses are not promoted to evidence.
+Current formal validation processes took21.113seconds; source/authoring and byte/
+delivery overhead are distinguished in the timing receipt. Zero new successful
+source captures and one denied lookup, with no retry or alternate route.
+
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/resume_receipt.json)
+· [evidence units](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/screening_units_receipt.json)
+· [validation](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/validation_receipt.json)
+· [timing](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/timing_receipt.json)
+· [living plan](../plans/infrastructure_remaining_discovery_screening.md)
+
+Next ordinary chronological group begins session1roll34. No editorial acceptance,
 universe closure, publication/registry change, production write, merge or manual
-deployment. H.J.Res.87, H.R.4690 and cancelled WRDAreplay restrictions remain.
-
-## Batch13 continuation
-
-Ten further chronological identities (session1rolls14-23) add3procedures,3proposed exclusions and4ordinary research/boundary leads. The complete waterway geospatial bill is a direct data/navigation lead. Monument siting and tribal utility-right assignment have real operative provisions with material baseline/boundary work remaining. Taiwan tax/crew provisions were read only in declared extents; no whole37587-character package review is claimed. S5is examined as its own Senate version, preserving additions beyondHR29.
-
-Current accounting:30meanings +30procedures +14proposed exclusions +1expression +3holds +18ordinary unfinished/review cases +580unscreened=676;96owner-examined identities. Evidence units remain separate from metadata. Current batch source/accounting/replay validator and7semantic checks pass.54focused correction tests are inherited from81d15d09, not claimed rerun locally for these data-only changes. [Batch13packet](infrastructure_candidate_batch13.md) and its [resume](../editorial/shared_candidates/house_119_infrastructure_batch13_20260916/resume_receipt.json) are the new continuation point. Source acquisition count0; all protected chains and review/publication boundaries remain.
+deployment. The workstream and all proposed domain boundaries remain partial.
