@@ -140,6 +140,8 @@ def validate_inputs(author, capture, universe, membership):
     # The three baseline instruction mismatches must remain visible in meaning,
     # compact and limitations. The legislature's text is never silently repaired.
     hr901 = next(a for a in author["actions"] if a["bill_number"] == 901)
+    require({"govinfo:hr901eh", "govinfo:6usc182-2024-infra"} <= set(hr901["compact_source_refs"]),
+            "DHS compact lacks material baseline provenance")
     require("(13)/(14)" in hr901["meaning"] and "duplicate numbering" in hr901["meaning"] and
             "paragraph (15)" in hr901["meaning"] and
             "amendment instructions conflict" in hr901["compact_description"],

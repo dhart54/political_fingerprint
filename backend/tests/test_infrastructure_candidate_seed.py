@@ -41,6 +41,13 @@ class InfrastructureCandidateSeedTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "instruction qualification lost"):
             validate_inputs(*values)
 
+    def test_dhs_compact_cannot_drop_material_baseline_provenance(self):
+        values = copy.deepcopy(self.values)
+        action = next(a for a in values[0]["actions"] if a["bill_number"] == 901)
+        action["compact_source_refs"].remove("govinfo:6usc182-2024-infra")
+        with self.assertRaisesRegex(ValueError, "compact lacks material baseline provenance"):
+            validate_inputs(*values)
+
     def test_resealed_pending_row_cannot_become_unavailable_evidence(self):
         values = copy.deepcopy(self.values)
         universe = values[2]
