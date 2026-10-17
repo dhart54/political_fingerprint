@@ -1,0 +1,130 @@
+{
+  "campaign_start_utc": "2026-10-17T05:12:18+00:00",
+  "last_authoring_gate_start_utc": "2026-10-17T05:38:42.125181+00:00",
+  "last_authoring_gate_end_utc": "2026-10-17T05:38:54.319316+00:00",
+  "measured_validation_process_seconds": 49.18,
+  "owner_research_authoring_estimate_seconds": 1215,
+  "owner_time_basis": "Approximate owner activity in batch windows, not continuously sampled CPU/activity time; about20m15useful reading/authoring. Validation process durations instrumented separately. Reconciliation, tool/byte checks, source I/O, commits/pushes and PR delivery consume additional wall time and may overlap reading.",
+  "phases": [
+    {
+      "batch": 7,
+      "tests": 43,
+      "semantic_checks": 7,
+      "start_utc": "2026-10-17T05:17:17.483121+00:00",
+      "end_utc": "2026-10-17T05:17:25.452374+00:00",
+      "processes": [
+        {
+          "command": "python scripts/validate_infrastructure_candidate_batch7.py --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch7_20260916\\validation_receipt.json",
+          "returncode": 0,
+          "process_wall_seconds": 0.75
+        },
+        {
+          "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7",
+          "returncode": 0,
+          "process_wall_seconds": 5.04
+        },
+        {
+          "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+          "returncode": 0,
+          "process_wall_seconds": 2.179
+        }
+      ]
+    },
+    {
+      "batch": 8,
+      "tests": 48,
+      "semantic_checks": 7,
+      "start_utc": "2026-10-17T05:27:42.301234+00:00",
+      "end_utc": "2026-10-17T05:27:51.169755+00:00",
+      "processes": [
+        {
+          "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 8 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch8_20260916\\validation_receipt.json",
+          "returncode": 0,
+          "process_wall_seconds": 0.826
+        },
+        {
+          "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+          "returncode": 0,
+          "process_wall_seconds": 6.043
+        },
+        {
+          "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+          "returncode": 0,
+          "process_wall_seconds": 2.0
+        }
+      ]
+    },
+    {
+      "batch": 9,
+      "tests": 48,
+      "semantic_checks": 7,
+      "start_utc": "2026-10-17T05:31:19.941243+00:00",
+      "end_utc": "2026-10-17T05:31:29.416081+00:00",
+      "processes": [
+        {
+          "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 9 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch9_20260916\\validation_receipt.json",
+          "returncode": 0,
+          "process_wall_seconds": 0.913
+        },
+        {
+          "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+          "returncode": 0,
+          "process_wall_seconds": 6.623
+        },
+        {
+          "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+          "returncode": 0,
+          "process_wall_seconds": 1.939
+        }
+      ]
+    },
+    {
+      "batch": 10,
+      "tests": 49,
+      "semantic_checks": 7,
+      "start_utc": "2026-10-17T05:34:50.915079+00:00",
+      "end_utc": "2026-10-17T05:35:01.587563+00:00",
+      "processes": [
+        {
+          "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 10 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch10_20260916\\validation_receipt.json",
+          "returncode": 0,
+          "process_wall_seconds": 0.944
+        },
+        {
+          "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+          "returncode": 0,
+          "process_wall_seconds": 7.819
+        },
+        {
+          "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+          "returncode": 0,
+          "process_wall_seconds": 1.909
+        }
+      ]
+    },
+    {
+      "batch": 11,
+      "tests": 50,
+      "semantic_checks": 7,
+      "start_utc": "2026-10-17T05:38:42.125181+00:00",
+      "end_utc": "2026-10-17T05:38:54.319316+00:00",
+      "processes": [
+        {
+          "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 11 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch11_20260916\\validation_receipt.json",
+          "returncode": 0,
+          "process_wall_seconds": 0.982
+        },
+        {
+          "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+          "returncode": 0,
+          "process_wall_seconds": 9.299
+        },
+        {
+          "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+          "returncode": 0,
+          "process_wall_seconds": 1.914
+        }
+      ]
+    }
+  ]
+}

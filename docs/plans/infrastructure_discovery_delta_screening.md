@@ -16,11 +16,11 @@ No denied/uncertain target retry or alternate acquisition.
 - [x] Reconcile heads and read exact Clerk evidence for seven omissions.
 - [x] Batch7: bind source-grounded quorum/adjournment procedures and Speaker
   election exclusion, preserving Present and named-candidate choices verbatim.
-- [ ] Screen later31in natural groups of roughly5-10, with exact source/version,
+- [x] Screen later31in natural groups of roughly5-10, with exact source/version,
   membership and meaning decisions; continue safe cases around genuine holds.
-- [ ] Validate each coherent group's accounting/source/replay/current-correction
+- [x] Validate each coherent group's accounting/source/replay/current-correction
   invariants, inspect readable behavior/diff, commit/push and update draft PR232.
-- [ ] Report final remotehead, actual counts, validation/CI limits and remaining
+- [x] Report final remotehead, actual counts, validation/CI limits and remaining
   frontier, separating useful owner work from checks/delivery and total elapsed.
 
 Seven exact questions:1:1Call by States,1:2Election of the Speaker,1:138/169/178
@@ -53,4 +53,8 @@ Batch8complete: later284-291screened,2new meanings(S307nine incorporated OIG rec
 
 Batch9complete:292-299screened,2new meanings(HR1501permitting andHR4219database standards),2procedures,2institutional/constitutional exclusions and2ordinary research-governance leads(HR4795/3276).27meanings+22procedures+4exclusions+1expression+2holds+5packages+615unscreened=676.48focused tests and7semantic checks pass; validation0.913+6.623+1.939=9.475s.155prior candidate files unchanged;63generated LF blobs replayed. Useful owner research/authoring approximately2m45within05:28:20-05:31:20wall, plus source/delivery overhead; no protected retry. Complete4219/3276floor/EH comparison; physical Record page26 rendered/inspected for database/owner-request/reporting clauses. Next300-307.
 
-Batch10complete:300-307screened,2new meanings(HR8278assessment/procurement andHR2140diesel authorization),1procedure,3exclusions and2ordinary baseline/legal-review leads(HR2978/CRA210).29meanings+23procedures+7exclusions+1expression+2sourceholds+7ordinary pending packages/reviews+607unscreened=676.49focused tests and7semantic checks pass; validation process seconds=[0.944, 7.819, 1.909].174prior candidate files unchanged;70generated LF blobs replayed. Owner05:32:05-through2026-10-17T05:34:50.915079+00:00; approximately4minutes useful research/authoring with source reuse and bounded comparison, tracked separately from checks/delivery. No acquisition. Initial2978mismatch is literal internal footer/header, explicitly removed for comparison; no substantive mismatch or source edit. Last308-314remain.
+Batch10complete:300-307screened,2new meanings(HR8278assessment/procurement andHR2140diesel authorization),1procedure,3exclusions and2ordinary baseline/legal-review leads(HR2978/CRA210).29meanings+23procedures+7exclusions+1expression+2sourceholds+7ordinary pending packages/reviews+607unscreened=676.49focused tests and7semantic checks pass; validation process seconds=[0.944, 7.819, 1.909].174prior candidate files unchanged;70generated LF blobs replayed. Owner05:32:05-through2026-10-17T05:34:50.915079+00:00; approximately2m30useful research/authoring with source reuse and bounded comparison, tracked separately from checks/delivery. No acquisition. Initial2978mismatch is literal internal footer/header, explicitly removed for comparison; no substantive mismatch or source edit. Last308-314remain.
+
+Batch11complete:308-314screened. One new whole-action candidate(HR9340PURPAconsideration/discretion),2exclusions,3ordinary package/privacy/legal reviews and1retainedWRDAsource-versionhold. Final30meanings+23procedures+9exclusions+1expression+3source/versionholds+10ordinary unfinished/review cases+600unscreened=676. All38discovery-delta identities examined;76owner-screened identities total. No independent completeness/acceptance claim.50focused tests and7semantic checks pass, final processes0.982+9.299+1.914=12.195s. Useful batch11owner work approximately3m10within05:35:20-05:38:42. Campaign useful owner estimate20m15, instrumented validation49.180s; remaining wall is discovery/reconciliation, source I/O, byte checks and feature/PR delivery, with overlaps disclosed. See timing_receipt.json. Final delivery/CI result follows in handoff; all reserved gates remain.
+
+Delivery prepared: final batch11receipts verify193prior files unchanged and77generated LF blobs. The readable cumulative handoff isdocs/review_packets/infrastructure_discovery_delta_candidate_increment.md. Exact final commit/remotehead and fresh CIstate are reported after the feature push and PRupdate; commit hash is not embedded self-referentially. DraftPR232remains the only delivery target.
