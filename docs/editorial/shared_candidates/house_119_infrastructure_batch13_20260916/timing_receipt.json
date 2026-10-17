@@ -1,0 +1,29 @@
+{
+  "owner_source_screening_authoring_phase_start_utc": "2026-10-17T05:52:55.352484+00:00",
+  "owner_phase_end_utc": "2026-10-17T05:56:04.825517+00:00",
+  "owner_phase_wall_seconds": 189.473,
+  "owner_phase_qualification": "Source screening/authoring and routine tool reads/checks, excluding final measured gates and later delivery; not continuously sampled active-work time.",
+  "measured_current_validation_process_seconds": 3.368,
+  "current_validation": {
+    "start_utc": "2026-10-17T05:56:04.825517+00:00",
+    "end_utc": "2026-10-17T05:56:08.193895+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 13 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch13_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.155
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.213
+      }
+    ]
+  },
+  "inherited_focused_suite": {
+    "tests": 54,
+    "head": "81d15d09c047e6c58fbc51b516abfa5ab4d07b6b",
+    "rerun_locally_for_data_only_increment": false
+  },
+  "source_acquisitions": 0
+}

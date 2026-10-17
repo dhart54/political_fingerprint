@@ -1,0 +1,194 @@
+{
+  "identity_count": 676,
+  "new_screenings": 7,
+  "new_meanings": 4,
+  "combined_meanings": 13,
+  "procedural_controls": 4,
+  "ordinary_pending_screenings": 657,
+  "ordinary_pending_interpretation_ids": [
+    "house:119:1:218"
+  ],
+  "protected_examined_hold_ids": [
+    "house:119:1:111"
+  ],
+  "source_count": 112,
+  "member_observations": 26,
+  "finding_counts": {
+    "F000477": 12,
+    "M001184": 10
+  },
+  "not_voting_counts": {
+    "F000477": 1,
+    "M001184": 3
+  },
+  "floor_version_checks": [
+    {
+      "bill": 1608,
+      "source_id": "govinfo:hr1608eh",
+      "floor_source_id": "record:2025-11-17-hr1608-infra3",
+      "pdf_pages": [
+        11,
+        12
+      ],
+      "normalized_body_sha256": "96fc2fdd89b5d608569db66897fd18fe7f20777358b0555892cf3a5aa9b79205",
+      "matched": true
+    },
+    {
+      "bill": 2659,
+      "source_id": "govinfo:hr2659eh",
+      "floor_source_id": "record:2025-11-17-hr2659-infra3",
+      "pdf_pages": [
+        12,
+        13,
+        14
+      ],
+      "normalized_body_sha256": "2ff0973a1eb43d5ebf273aa5b310b2405b26e7140eb88c9cb771057c4ed5551c",
+      "matched": true
+    },
+    {
+      "bill": 2683,
+      "source_id": "govinfo:hr2683eh",
+      "floor_source_id": "congressional-record:2026-01-12-suspension2683-6500-6504",
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "normalized_body_sha256": "1061fc5074d8aa566d45ee26fab315a1b977c2f33c40b9e420a81a19f3ccd578",
+      "matched": true
+    }
+  ],
+  "core_sha256": "ef5a8f7d35a2f95e38589717c527d2df02e7dee78d1643fb6597805750f4e2c8",
+  "compiled_sha256": "244954b4fc2ddac7fca53a87146b3b36da6f01b13fbf9d8ea0632ccb9b91c1aa",
+  "prior_actions_unchanged_except_disclosed_hr1223_qualification": true,
+  "prior_source_objects_unchanged": true,
+  "member_neutral_prose": true,
+  "byte_identical_generated_replay": true,
+  "independent_batch_semantic_review": "pending",
+  "full_issue_universe_closed": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "final_local_checks": [
+    {
+      "command": "python scripts/validate_infrastructure_candidate_batch3.py --receipt docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/validation_receipt.json",
+      "returncode": 0,
+      "process_wall_seconds": 0.636
+    },
+    {
+      "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3",
+      "returncode": 0,
+      "process_wall_seconds": 1.828
+    },
+    {
+      "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+      "returncode": 0,
+      "process_wall_seconds": 1.998
+    }
+  ],
+  "final_tests": {
+    "passed": 21,
+    "unittest_reported_seconds": 1.641
+  },
+  "canonical_semantic_checks_passed": 7,
+  "prior_bytes_preserved_file_count": 50,
+  "new_retained_source_object_origin_matches": 52,
+  "earlier_batch2_ci": {
+    "head": "90cbbb3777fb61d6352926d1c1872a32683bcfab",
+    "run": 39001597073,
+    "conclusion": "success",
+    "does_not_validate_batch3": true
+  },
+  "batch3_hosted_ci": "Not yet dispatched; exact new-head result must be checked after push.",
+  "git_lf_byte_replay": {
+    "generated_blob_count": 21,
+    "unchanged_old_generated_blobs": 14,
+    "new_generated_blobs": 7,
+    "all_byte_identical": true,
+    "blobs": [
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "73283d464e6511ac002e989a48cce2114565691ca82df7ad2d536fdbea62b037"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "71d84e013585cb9a566ec4429b5ae6f3f482457ecfb8c97aff4e52f5b270ba4f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "6c61e8b718db757092b4d7253aabc03c0158a3eb46979084cda57c6b1e0e80d5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "6ab83fac8966f2992c27efb1f4462acad8faf970ce53fc20c91fb43ca9798b5b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "a0b33ad96d3610289bd271edb2abc11b89a0bdff735ee3018b8033888ca91b42"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "e0e0e2881f2337cb710281dda51da96bdb881a8d0608f257d2943d905702542a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "bb71705bac5530009b462f942e1eb94f157bdfd1c935cd108810757ab233b173"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "2001732b42191fc730844f071a7eb8009089aa1babaacc5ecf4fc39943bbf71b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "5e67a487d24c0572bbdc1cbc129877b66e10e2264692e172d26c6b87b216fbb2"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "72358370d318a1bfa1e4b512b9d214b90194d75c095bf12532b7cb9266f615d5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "6b7971c4ab7f9597df0ba77213031f5bdef16ef49f80d87651408c624781aefe"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "9bf7222897fbe001337caeca785d86778b5da77d3d4fd3ae1bd7df6a3de6f70c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "118673f637401234de1395941a97c29cc90aae6c89b97405be19644021c11788"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "c50bf6a66019c18f2d4669c473be94e6ff447a68334a08ea90d2cb54e8c7316d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "3926411ac532a69f046137086a26fe3c94f7ce7d72db3bf4421db2568d9862a6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "8a397b100941ba039301e0a52c2aec6268452957b1cdf6200985139c35a302d6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "94a26a3d369da5c3d441cfe1c69d6f7fee48b8c11721abb97894de18ebdd41a8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "e542db72df41db94855d3c45e340feccaf778c4b1ed4f131e512f2aba68f5496"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "9ee3340b124f191a82fc3171cadc34f3b9d56a2e0b70147419c164ed044c1d2d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "a96ace766222b90f7cb7386fdfd5f3bc15bbbb323a89709fcd6849152828b21c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "a8a2eb72132312ead23acacf44bd99f27295728e780c13fbeba69196cdcc1112"
+      }
+    ]
+  },
+  "scoped_diff_check": "21 staged paths, only new batch3 artifacts/checks/plan/packet plus one CI command extension; git diff --cached --check passed."
+}

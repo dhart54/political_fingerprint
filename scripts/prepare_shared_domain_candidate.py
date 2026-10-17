@@ -137,7 +137,9 @@ def validate_universe_proposal(universe, authoring=None, capture=None, membershi
         raise ValueError("universe disposition accounting differs")
     if authoring is not None:
         authored = {a["action_id"] for a in authoring["actions"]}
-        interpreted = {r["action_id"] for r in rows if r["disposition"] == "interpreted_substantive_directional"}
+        interpreted = {r["action_id"] for r in rows if r["disposition"] in {
+            "interpreted_substantive_directional", "interpreted_substantive_non_directional"
+        }}
         if authored != interpreted or authored != set(universe["interpretation_action_ids"]) or authored != set(universe["proposed_action_ids"]):
             raise ValueError("universe interpretation set differs from shared authoring")
         if universe["interpretation_action_set_cutoff"] != authoring["interpretation_action_set_cutoff"]:
