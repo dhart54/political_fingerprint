@@ -9,6 +9,7 @@ from scripts.prepare_shared_domain_candidate import prepare,readable_candidates,
 from scripts.validate_infrastructure_candidate_seed import assert_neutral,read,require
 CASES={8:dict(rolls=list(range(284,292)),new=[284,291],counts=dict(interpreted_substantive_directional=24,interpreted_substantive_non_directional=1,procedural_context=20,exact_action_ineligible=2,expressive_nonbinding=1,source_unresolved=625,pending_interpretation=3),pending=623)}
 CASES[9]=dict(rolls=list(range(292,300)),new=[294,296],counts=dict(interpreted_substantive_directional=26,interpreted_substantive_non_directional=1,procedural_context=22,exact_action_ineligible=4,expressive_nonbinding=1,source_unresolved=617,pending_interpretation=5),pending=615)
+CASES[10]=dict(rolls=list(range(300,308)),new=[302,304],counts=dict(interpreted_substantive_directional=28,interpreted_substantive_non_directional=1,procedural_context=23,exact_action_ineligible=7,expressive_nonbinding=1,source_unresolved=609,pending_interpretation=7),pending=607)
 def folder(n):return ROOT/f'docs/editorial/shared_candidates/house_119_infrastructure_batch{n}_20260916'
 def validate(n,values=None,*,check_files=True):
     expected=CASES[n];data=folder(n);prior=folder(n-1);author,capture,universe,membership=values or [read(data/f'{k}.json') for k in ['authoring','sources','universe_proposal','membership_review']];validate_universe_proposal(universe,author,capture,membership)
@@ -41,6 +42,13 @@ def validate(n,values=None,*,check_files=True):
         for number,ns in [(4219,[26,27]),(3276,[44,45])]:
             source=ss[f'record:2026-09-14-hr{number}-infra9'];ps=source['page_extracts'];require([p['pdf_page'] for p in ps]==ns,'floor extent differs');text=' '.join('\n'.join(p['text'].splitlines()[1:]).split('VerDate')[0] for p in ps);start=text.index('Be it enacted',text.index(f'H.R. {number}'));body=text[start:text.index('The SPEAKER pro tempore.',start)];eh=ss[f'govinfo:hr{number}eh']['text'];eh=eh[eh.index('Be it enacted'):eh.index('Passed the')];norm=lambda s:re.sub('[^a-z0-9]','',s.lower());require(norm(body)==norm(eh),'complete amended floor/EH body differs')
         require('MORE THAN$200million' in by['house:119:2:294']['meaning'] and '23USC139or33USC2348' in by['house:119:2:294']['meaning'],'covered-project threshold/exclusions lost');require('BOTH identification AND response' in by['house:119:2:296']['meaning'] and 'rather than making those appropriations' in by['house:119:2:296']['meaning'],'owner-request or funding boundary lost');require(ss['clerk:119:2:298']['member_records']['M001184']['official_label']=='Present' and 'house:119:2:298' not in by,'table-motion Present was directionalized')
+    if n==10:
+        for number,roll in [(8278,302),(2978,301)]:
+            text=ss[f'immigration:roll{roll}-floor-complete195']['text'];text=text[text.index('Be it enacted'):]
+            if number==2978:
+                start=text.index('VerDate');end=text.index('(5)',start);text=text[:start]+text[end:]
+            eh=ss[f'govinfo:hr{number}eh']['text'];eh=eh[eh.index('Be it enacted'):eh.index('Passed the')];norm=lambda s:re.sub('[^a-z0-9]','',s.lower());require(norm(text)==norm(eh),'complete retained floor/EH body differs')
+        require('18months AFTER completing' in by['house:119:2:302']['meaning'] and 'WITHIN its existing authority' in by['house:119:2:302']['meaning'],'assessment clock/procurement boundary differs');require('It does not itself make an appropriation.' in by['house:119:2:304']['meaning'] and 'no more than1percent' in by['house:119:2:304']['meaning'],'authorization/appropriation boundary differs');require(rows['house:119:2:306']['disposition']=='pending_interpretation' and not records['house:119:2:306']['required_evidence_unavailable'] and 'CRA does not apply' in records['house:119:2:306']['rationale'],'retained legal boundary became a source denial or accepted meaning')
     products=dict(shared_action_core=core,shared_issue_mapping=mapping,member_projections=projections,compiler_input=inputs,compiled_ir=result.compiled_ir,readable_candidates=readable,reproducibility_proof=proof)
     if check_files:
         for k,v in products.items():require((data/'generated'/f'{k}.json').read_bytes()==(json.dumps(v,ensure_ascii=False,indent=2)+'\n').replace('\n',os.linesep).encode(),f'generated replay differs:{k}')

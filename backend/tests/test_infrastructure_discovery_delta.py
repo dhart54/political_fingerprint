@@ -17,4 +17,7 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
     def test_universe_authority_stays_reserved(self):
         v=[read(folder(8)/f'{k}.json') for k in ['authoring','sources','universe_proposal','membership_review']];v[2]['publication_authorized']=True;v[2]['proposal_sha256']=sealed_digest(v[2],'proposal_sha256')
         with self.assertRaises(ValueError):validate(8,v,check_files=False)
+    def test_authorization_extension_cannot_become_appropriation(self):
+        v=[read(folder(10)/f'{k}.json') for k in ['authoring','sources','universe_proposal','membership_review']];a=next(a for a in v[0]['actions'] if a['action_id']=='house:119:2:304');a['meaning']=a['meaning'].replace('It does not itself make an appropriation.','It appropriates the funds.')
+        with self.assertRaisesRegex(ValueError,'authorization/appropriation boundary differs'):validate(10,v,check_files=False)
 if __name__=='__main__':unittest.main()
