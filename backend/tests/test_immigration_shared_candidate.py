@@ -7807,7 +7807,7 @@ class Checkpoint257AviationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.q=json.loads((DATA/'hr1_aviation_conditions_checkpoint257.json').read_text())
         cls.a=json.loads((DATA/'authoring.json').read_text())
-        cls.act=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:190')
+        cls.act=json.loads((DATA/'hr1_fuel_payment_conditions_checkpoint258.json').read_text())['prior_authoring']['house:119:1:190']
         cls.old=cls.q['prior_authoring'][cls.act['action_id']]
         cls.cap=json.loads((DATA/'sources.json').read_text())
         cls.bank={v['source_id']:v for v in cls.cap['sources']}
@@ -7874,7 +7874,7 @@ class Checkpoint257AviationTests(unittest.TestCase):
         self.assertEqual(act['source_render_constraints'][:-1],old['source_render_constraints'])
         self.assertEqual(act['claim_source_map'][:-4],old['claim_source_map'])
         for k in ['choice_meanings','compact_description','compact_source_refs','short_description','stage','episode_id']:self.assertEqual(act[k],old[k])
-        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==act['action_id'])
+        core=json.loads((DATA/'hr1_fuel_payment_conditions_checkpoint258.json').read_text())['prior_cores'][act['action_id']]
         self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][act['action_id']])
 
     def test_five_source_families_stale_or_resealed_fail_closed_and_constraint_binds_own_action(self):
@@ -7896,6 +7896,110 @@ class Checkpoint257AviationTests(unittest.TestCase):
             for prior in old['actions']:
                 current=next(v for v in new['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set();self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
         self.assertEqual(q['counts'],dict(reviewed=666,pending=10,cores=87,behavioral_propositions=145,episodes=75,multi_action_episodes=10));self.assertEqual(q['new_screening_completions'],0);self.assertEqual(q['new_claim_bindings'],4);self.assertEqual(q['source_mechanism_comparison_groups'],9);self.assertTrue(q['all70questions_partial_flags_and_Q68_Q70_preserved']);self.assertFalse(q['editorial_acceptance']);self.assertFalse(q['publication_authorized'])
+
+
+
+class Checkpoint258FuelPaymentTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q=json.loads((DATA/'hr1_fuel_payment_conditions_checkpoint258.json').read_text())
+        cls.a=json.loads((DATA/'authoring.json').read_text())
+        cls.act=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:190')
+        cls.old=cls.q['prior_authoring'][cls.act['action_id']]
+        cls.cap=json.loads((DATA/'sources.json').read_text())
+        cls.bank={v['source_id']:v for v in cls.cap['sources']}
+
+    def test_selected_extents_and_original2024_capture_identity_are_bound(self):
+        q=self.q;mf={v['source_id']:v for v in json.loads((DATA/'research_capture_manifest.json').read_text())['sources']}
+        self.assertEqual(len(q['actual_reading']),4)
+        for r in q['actual_reading']:
+            source=self.bank[r['source_id']]
+            self.assertEqual(source['governed_bytes_sha256'],sealed_digest(source,'governed_bytes_sha256'))
+            self.assertEqual(digest(source['text']),r['text_sha256'])
+            self.assertEqual(source['source_text_extents'][0],{k:r[k] for k in ['start','end','total']})
+            self.assertEqual(mf[source['parent_source_id']]['raw_sha256'],source['raw_sha256'])
+            self.assertIn(source['text'],[v['passage'] for v in self.act['claim_source_map']])
+        self.assertEqual({v['raw_sha256'] for v in q['source_imports']},{'049725124abda8a51d2a3f6010148ead0761bac2a92d924081aabca1c0a4f6a0','5e6f2f35bb06707a4d5eb99f6f50379c3ad060364cece32e39561d87d04c1855'})
+        self.assertEqual((q['new_canonical_sources'],q['new_private_source_objects'],q['new_claim_bindings']),(4,6,4))
+        self.assertTrue(q['private_input_epoch_reconciled_to_committed_parent'])
+
+    def test_payment_coordination_and_named_registration_USconnection_scopes_remain(self):
+        t=self.bank['govinfo:26usc6427-e-fuelpayment258']['text']
+        for phrase in ['Except as provided in subsection (k)','in such person’s trade or business'.replace('’',chr(39)),'an amount is allowed as a credit under section 6426','any alternative fuel credit or alternative fuel mixture credit','by reason of section 6426(i)']:
+            self.assertIn(phrase,t)
+        self.assertIn('ALLOWED',self.act['meaning'])
+        self.assertTrue(self.q['no_actual_taxclaim_payment_fuel_person_territory_emissions_registration_or_legal_priority_decision'])
+
+    def test_payment_endpoints_and_literal_reference_are_not_silently_repaired(self):
+        t=self.bank['govinfo:26usc6427-e-fuelpayment258']['text']
+        self.assertEqual(t.count('December 31, 2011'),2)
+        self.assertEqual(t.count('December 31, 2024'),3)
+        self.assertIn('sustainable aviation fuel (as defined in section 6426(k)(3))',t)
+        n=self.bank['govinfo:26usc6427-reference-note-fuelpayment258']['text']
+        for phrase in ['probably should be a reference to section 40B','does not define that term','a prior version of the bill']:
+            self.assertIn(phrase,n)
+        self.assertTrue(self.q['literal6427reference_and_probably40B_publisher_note_distinct'])
+
+    def test_special_claim_amount_week_electronic_deadline_and_interest_are_distinct(self):
+        t=self.bank['govinfo:26usc6427-i-k-fuelpayment258']['text']
+        for phrase in ['$200 or more','which is not less than 1 week','without regard to clause (i)','45 days','20 days in the case of an electronic claim','the overpayment rate and method under section 6621','first quarter following the earliest quarter included in the claim','first quarter following the last quarter included in the claim']:
+            self.assertIn(phrase,t)
+        self.assertIn('earliest',self.act['meaning'])
+        self.assertIn('clause(i)',self.act['meaning'].replace(' ',''))
+
+    def test_government_exempt_limit_has_explicit_claim_exceptions_and_procedure(self):
+        t=self.bank['govinfo:26usc6427-i-k-fuelpayment258']['text']
+        for phrase in ['insofar as applicable and not inconsistent with this section','section 7602(a)','other than an organization required to make a return','Paragraph (1) shall not apply to a payment of a claim filed under paragraph (2), (3), or (4) of subsection (i)','see section 34']:
+            self.assertIn(phrase,t)
+        self.assertTrue(self.q['no_all6427_nested_programme_package_domain_or_counterpart_absence_certificate'])
+
+    def test_published_registration_and_probable_intent_note_do_not_formally_correct_Act(self):
+        t=self.bank['govinfo:26usc4101-complete-fuelpayment258']['text']
+        for phrase in ['every person producing a fuel eligible for the clean fuel production credit (pursuant to section 45Z)','was executed by making the insertion after','to reflect the probable intent of Congress','did not appear in the enacted version']:
+            self.assertIn(phrase,t)
+        self.assertTrue(self.q['published2024Code45Zregistration_and_probable_intent_execution_note_retained'])
+        self.assertTrue(self.q['publisher_notes_not_formal_legislative_correction'])
+        self.assertTrue(self.q['captured_published_edition_not_first_appearance_or_prevote_operation_certificate'])
+        self.assertIn('probable',self.act['meaning'])
+
+    def test_registration_physical_zone_ownership_bond_and_reporting_scopes_remain(self):
+        t=self.bank['govinfo:26usc4101-complete-fuelpayment258']['text']
+        for phrase in ['within a foreign trade zone or within a customs bonded storage facility','holds an inventory position','an established securities market','more than 50 percent of ownership interests in, or assets of','persons (or persons related thereto)','give a bond','90 days','25 or more reportable transactions in a month']:
+            self.assertIn(phrase,t)
+        self.assertIn('personal-status',self.act['limitations'][-1])
+        self.assertIn('nationality',self.act['source_render_constraints'][-1]['detail'])
+        self.assertIn('foreign-influence',self.act['source_render_constraints'][-1]['detail'])
+
+    def test_prior_predicates_and_all_observations_are_preserved_without_new_screenings(self):
+        act=self.act;old=self.old;q=self.q;aid=act['action_id']
+        self.assertTrue(act['meaning'].startswith(old['meaning']))
+        for field in ['limitations','source_render_constraints','additional_source_ids','claim_source_map']:
+            self.assertEqual(act[field][:len(old[field])],old[field])
+        changed={'meaning','limitations','source_render_constraints','additional_source_ids','claim_source_map'}
+        self.assertEqual({k:v for k,v in act.items() if k not in changed},{k:v for k,v in old.items() if k not in changed})
+        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==aid)
+        self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][aid])
+        for prior_member,current_member in zip(q['prior_member_projections'],json.loads((DATA/'generated/member_projections.json').read_text())):
+            for prior in prior_member['actions']:
+                current=next(v for v in current_member['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set()
+                self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
+        self.assertEqual(q['counts'],dict(reviewed=666,pending=10,cores=87,behavioral_propositions=145,episodes=75,multi_action_episodes=10))
+        self.assertEqual(q['new_screening_completions'],0)
+        self.assertEqual(q['source_mechanism_comparison_groups'],9)
+        self.assertTrue(q['nwstraits_hold_unchanged_no_admissions_screenings_or_unavailability_claim'])
+        self.assertTrue(q['all70questions_partial_flags_and_Q68_Q70_preserved'])
+        self.assertFalse(q['editorial_acceptance']);self.assertFalse(q['publication_authorized'])
+
+    def test_four_source_families_stale_or_resealed_and_wrong_action_fail_closed(self):
+        a=copy.deepcopy(self.a);a['actions']=[copy.deepcopy(self.act)];a['blocked_episode_ids']=[]
+        cases=[('govinfo:26usc6427-e-fuelpayment258','an amount is allowed as a credit under section 6426','an amount has actually been paid under section 6426'),('govinfo:26usc6427-i-k-fuelpayment258','without regard to clause (i)','without regard to clause (ii)'),('govinfo:26usc6427-reference-note-fuelpayment258','probably should be a reference to section 40B','was formally changed to section 40B'),('govinfo:26usc4101-complete-fuelpayment258','to reflect the probable intent of Congress','by a formal legislative correction')]
+        for sid,old,new in cases:
+            for reseal in [False,True]:
+                cap=copy.deepcopy(self.cap);source=next(v for v in cap['sources'] if v['source_id']==sid);self.assertIn(old,source['text']);source['text']=source['text'].replace(old,new,1)
+                if reseal:source['governed_bytes_sha256']=sealed_digest(source,'governed_bytes_sha256')
+                with self.assertRaises(ValueError):prepare(copy.deepcopy(a),cap,['F000477','M001184'])
+        a['actions'][0]['source_render_constraints'][-1]['action_ids']=['house:119:1:71']
+        with self.assertRaises(ValueError):prepare(a,self.cap,['F000477','M001184'])
 
 
 if __name__ == '__main__':
