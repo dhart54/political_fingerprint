@@ -1,0 +1,925 @@
+{
+  "checkpoint": 259,
+  "base_head": "333a241822b8221531c7421bfc077653c12eccd6",
+  "created_utc": "2026-10-17T01:59:38.557310+00:00",
+  "actions": [
+    "house:119:1:145"
+  ],
+  "counts": {
+    "reviewed": 666,
+    "pending": 10,
+    "cores": 87,
+    "behavioral_propositions": 145,
+    "episodes": 75,
+    "multi_action_episodes": 10
+  },
+  "qualified_core_sha256": {
+    "house:119:1:145": "fd8b15cad9725885fc4778382b7be0150dd58f26fd76c10fed80125b81688b5f"
+  },
+  "qualification_receipt_sha256": "e7389db8bea5a1e97fbe564376493ae3a1c4b3172c6995bb4fc3dd1efe79c885",
+  "complex_existing_cores_revised": 1,
+  "source_mechanism_groups": 9,
+  "new_canonical_sources": 0,
+  "new_parent_objects": 0,
+  "new_private_objects": 0,
+  "new_acquisitions": 0,
+  "reused_canonical_views": 8,
+  "new_claim_bindings": 8,
+  "new_screening_completions": 0,
+  "conservation_before": {
+    "checkpoint": 259,
+    "base_head": "333a241822b8221531c7421bfc077653c12eccd6",
+    "checked_utc": "2026-10-17T01:33:32.388828+00:00",
+    "all86othercores_authoring_665reviews_675inventoryrows_exact": true,
+    "all174observations145propositions_entiregraphs_exact": true,
+    "all_prior_prefixes_and_one_documented_status_limitation_fix_preserved": true,
+    "all_prior_HR1_and_State_member_neutrality_repairs_preserved": true,
+    "all_source_manifest_private_prefixes_duplicates_exact": true,
+    "source_bank_count": 3002,
+    "manifest_count": 1912,
+    "private_pool_count": 1948,
+    "all70priorquestions_flags_accounting_holds_hr1048_exact": true,
+    "all_audit_history_and_prior_target_refs_exact": true,
+    "audit_prefix_counts": {
+      "house:119:1:145": {
+        "prior": 171,
+        "current": 179
+      }
+    },
+    "old_test_method_changes": [
+      "Checkpoint254ElectricityBaselineTests.setUpClass",
+      "Checkpoint254ElectricityBaselineTests.test_preimages_cores_member_neutrality_and_audit_prefixes_are_preserved",
+      "Checkpoint257AviationTests.test_source_extents_observations_and_action_accounting_are_conserved",
+      "Checkpoint258FuelPaymentTests.test_prior_predicates_and_all_observations_are_preserved_without_new_screenings"
+    ],
+    "all_other_old_test_method_bodies_exact": true,
+    "new_test_methods": 9,
+    "tracked_outside_allowlist_exact": 3729,
+    "frozen_private_and_notes_exact": 1961,
+    "index_unchanged": true,
+    "mapping_only_one_new_typed_boundary_and_seal": true,
+    "target_core_changed_fields": {
+      "house:119:1:145": [
+        "action_core_sha256",
+        "candidate_exact_action_meaning",
+        "candidate_shared_limitations",
+        "claim_source_map",
+        "governed_source_identities",
+        "governed_source_identity_sha256",
+        "operative_meaning_source_identities",
+        "package_component_boundary",
+        "semantic_ir_source_ids"
+      ]
+    },
+    "counts": {
+      "reviewed": 666,
+      "pending": 10,
+      "cores": 87,
+      "behavioral_propositions": 145,
+      "episodes": 75,
+      "multi_action_episodes": 10
+    },
+    "command_seconds": 26.58623290000014,
+    "independent_review_pending": true,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "75941b6e67ff5a690b5cba730ca664f2db25e63994f18c58d1c4da13240aad03"
+  },
+  "conservation_after": {
+    "checkpoint": 259,
+    "base_head": "333a241822b8221531c7421bfc077653c12eccd6",
+    "checked_utc": "2026-10-17T01:59:09.432269+00:00",
+    "all86othercores_authoring_665reviews_675inventoryrows_exact": true,
+    "all174observations145propositions_entiregraphs_exact": true,
+    "all_prior_prefixes_and_one_documented_status_limitation_fix_preserved": true,
+    "all_prior_HR1_and_State_member_neutrality_repairs_preserved": true,
+    "all_source_manifest_private_prefixes_duplicates_exact": true,
+    "source_bank_count": 3002,
+    "manifest_count": 1912,
+    "private_pool_count": 1948,
+    "all70priorquestions_flags_accounting_holds_hr1048_exact": true,
+    "all_audit_history_and_prior_target_refs_exact": true,
+    "audit_prefix_counts": {
+      "house:119:1:145": {
+        "prior": 171,
+        "current": 179
+      }
+    },
+    "old_test_method_changes": [
+      "Checkpoint254ElectricityBaselineTests.setUpClass",
+      "Checkpoint254ElectricityBaselineTests.test_preimages_cores_member_neutrality_and_audit_prefixes_are_preserved",
+      "Checkpoint257AviationTests.test_source_extents_observations_and_action_accounting_are_conserved",
+      "Checkpoint258FuelPaymentTests.test_prior_predicates_and_all_observations_are_preserved_without_new_screenings"
+    ],
+    "all_other_old_test_method_bodies_exact": true,
+    "new_test_methods": 9,
+    "tracked_outside_allowlist_exact": 3729,
+    "frozen_private_and_notes_exact": 1982,
+    "index_unchanged": true,
+    "mapping_only_one_new_typed_boundary_and_seal": true,
+    "target_core_changed_fields": {
+      "house:119:1:145": [
+        "action_core_sha256",
+        "candidate_exact_action_meaning",
+        "candidate_shared_limitations",
+        "claim_source_map",
+        "governed_source_identities",
+        "governed_source_identity_sha256",
+        "operative_meaning_source_identities",
+        "package_component_boundary",
+        "semantic_ir_source_ids"
+      ]
+    },
+    "counts": {
+      "reviewed": 666,
+      "pending": 10,
+      "cores": 87,
+      "behavioral_propositions": 145,
+      "episodes": 75,
+      "multi_action_episodes": 10
+    },
+    "command_seconds": 19.766649000000143,
+    "independent_review_pending": true,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "695f2746e58a0891c6bd62ccbf1fb4266c1a745b0a6a97b049402fc8b912a581"
+  },
+  "active_copy_inspection": {
+    "inspected_utc": "2026-10-17T01:33:09.706409+00:00",
+    "rows": [
+      {
+        "action_id": "house:119:1:145",
+        "prior_meaning_characters": 223826,
+        "current_meaning_characters": 232453,
+        "all8active_fullmeaning_copies_exact": true,
+        "all_prior_active_locations_preserved": true,
+        "active_copy_paths": [
+          "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json.actions[14].meaning",
+          "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json.shared_semantics.actions[16].eligibility.exact_action_basis",
+          "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json.members[0].findings[0].detail[1]",
+          "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json.members[0].findings[0].action_observations[0].detail[1]",
+          "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json.members[1].findings[0].detail[1]",
+          "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json.members[1].findings[0].action_observations[0].detail[1]",
+          "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json.actions[16].candidate_exact_action_meaning",
+          "docs/review_packets/immigration_semantic_audit_in_progress.json.substantive_actions[37].primary_reconstruction"
+        ]
+      }
+    ],
+    "all8active_copies_exact": true,
+    "command_seconds": 0.07861750000029133,
+    "receipt_sha256": "5e12006c9730969e42375966f8bcab7d224d6ce6e5e69987886a1b90d20237ae"
+  },
+  "committed_parent_reconciliation": {
+    "started_utc": "2026-10-17T01:23:15.596724+00:00",
+    "completed_utc": "2026-10-17T01:23:19.009373+00:00",
+    "command_seconds": 3.4127228999996078,
+    "committed_parent_head": "333a241822b8221531c7421bfc077653c12eccd6",
+    "private_preparation_git_head": "495ba6dd3fc1cfa60dcf30e065672cecdfa18cc0",
+    "private_prepared_from_258_working_data": true,
+    "now_verified_actual258_commit_tree_and_current_House_authoring_core_qualification_sources": true,
+    "private_authoring_receipt_sha256": "6f58f2b894dcabc7ba3b50087e97c8e75441507ff66e5b474aa57270f7bcb8d2",
+    "qualification258_receipt_sha256": "a6ce166b90af44078493780f3be58140c928c6de349ad8b4d67c00b61b4a8aa7",
+    "committed_blobs": {
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": {
+        "Git_blob": "cecfae744d513c782ce63d01b80f02389131fc1e",
+        "Git_blob_sha256": "a78495197cd8148c0ab18577ec2dfea28329f86eb28ad08ecad8a4d079f817c2"
+      },
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": {
+        "Git_blob": "51af7aa703f39c2eaf70ec12ba204fa167dd3727",
+        "Git_blob_sha256": "51e8bccc703f08d902414145e75ace588629023afe1d9c7468c027e8e6c018f0"
+      },
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": {
+        "Git_blob": "9996e88463558bd21630cf3621e9be770fee9e01",
+        "Git_blob_sha256": "7a19c1311c0ce5780116e058e57c95f56f93ddc345622b45fce1b3d1817e2a97"
+      },
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_fuel_payment_conditions_checkpoint258.json": {
+        "Git_blob": "208a93cf84cbd80fc22b2a196a287f1710f342a7",
+        "Git_blob_sha256": "f243dc3a1ee71c1659798b43ed4de42039e2613094b77677ba457143cee8c19c"
+      },
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": {
+        "Git_blob": "83af59a229a35ca3d701c9841237d04375e06523",
+        "Git_blob_sha256": "5aa0c34e55d15c5dac392a78cc5a40d27beabf31abb8820949d7b5765658ee94"
+      },
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": {
+        "Git_blob": "5c814248f147596d122d2676ba896d78ad4e2129",
+        "Git_blob_sha256": "e98919dd71e1b54043f99bc7dad5051d27714e2a95a96b4b22e272de316b055d"
+      },
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": {
+        "Git_blob": "b058bd6f58aa633a306c95e3b550bf1587433c19",
+        "Git_blob_sha256": "bac43c7db52df287865d94f9baff55ca61713dd32d10964117e11512147c295f"
+      }
+    },
+    "prior_action_sha256": "ab98dadc3f89699d6ef548d7b17765803a30eb3c911351e8b915c4353c65ca1c",
+    "prior_core_sha256": "335cb8ab45c9dcfc366992ae9426ccf6fe3c3eb33d0ebbb8e4d5b36e29f463df",
+    "private_preflight_receipt_sha256": "eb45c5291ec1c30086276f343a372ca46975279c8a9ae490ed54119d6e56a056",
+    "parent258_terminal_CI_ack_still_required_before259commit": true,
+    "receipt_sha256": "5a8d3f106f6332ca5005a4a02b96d611b41b6abce52005c000b9c59416e29901"
+  },
+  "held_queue_reconciliation": {
+    "recorded_utc": "2026-10-17T01:47:12.334545+00:00",
+    "conservative_mixed_work_bound_utc": "2026-10-17T01:35:20.330201+00:00",
+    "base_head": "333a241822b8221531c7421bfc077653c12eccd6",
+    "active259gate_inputs_not_modified": true,
+    "rows": [
+      {
+        "action_id": "house:119:1:210",
+        "date": "2025-07-18",
+        "measure": "bill_119_hr_4016",
+        "stage": "On Agreeing to the Amendment",
+        "row_sha256": "a85d3e02e4b0bdcbb3dcc3993d9af2d5705275c74dd8a97c362be21e9210946c",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "authoritative_operative_discrepancy",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": true,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": true
+        },
+        "required_next_evidence_or_review": "Resolve Report may/floor no-may authoritative discrepancy without automatic ban or exclusion."
+      },
+      {
+        "action_id": "house:119:1:237",
+        "date": "2025-09-04",
+        "measure": "bill_119_hr_4553",
+        "stage": "On Agreeing to the Amendment",
+        "row_sha256": "e5cccdb3034611c70803125ff875985b4abc3ac67e90a1d7c1b6409068c7f8ea",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "authoritative_operative_discrepancy",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": true,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": true
+        },
+        "required_next_evidence_or_review": "Establish authoritative formal correction or governing-source resolution for the50000difference; unidentified Rulesimage is insufficient."
+      },
+      {
+        "action_id": "house:119:2:157",
+        "date": "2026-05-12",
+        "measure": "bill_119_hr_2853",
+        "stage": "On Motion to Suspend the Rules and Pass, as Amended",
+        "row_sha256": "7a341a9386bc0daedbcca4f751c3fedf39c5324c5c1169b31d01c4569eadf3b6",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "pending_retail_crime_Immigration_application_and_center_references192",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false
+        },
+        "required_next_evidence_or_review": "Reserved bounded Immigration application/offense/center/confidentiality framework review; accepted shared identity and member observations remain."
+      },
+      {
+        "action_id": "house:119:2:193",
+        "date": "2026-06-03",
+        "measure": "bill_119_s_254",
+        "stage": "On Motion to Suspend the Rules and Pass",
+        "row_sha256": "351d9257874521cbedcfc6ace8aa418a795e99537bf9cf743dfe7c488142eddd",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "pending_replacement_AlaskaNative_statutory_class_application222",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "material_baseline_research_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "source_application_relationship_unresolved": true,
+          "prior_candidate_completion_withdrawn": true
+        },
+        "required_next_evidence_or_review": "Reserved relationship of undefined statutory AlaskaNative replacement to programme-specific citizen definitions; historical withdrawal retained."
+      },
+      {
+        "action_id": "house:119:2:196",
+        "date": "2026-06-03",
+        "measure": "bill_119_hr_2860",
+        "stage": "On Motion to Suspend the Rules and Pass, as Amended",
+        "row_sha256": "12591714663592515b2607fac0d0e8d9be0f5492a8060836fc5ea06b7b28e488",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "pending_research",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false
+        },
+        "required_next_evidence_or_review": "Verify original-on-file1998edition equivalence and State-citizen meaning; later reprint/search references not sufficient."
+      },
+      {
+        "action_id": "house:119:2:224",
+        "date": "2026-06-23",
+        "measure": "bill_119_hr_6644",
+        "stage": "On Motion to Suspend the Rules and Concur in Senate Adt to House Adt to Senate Adt",
+        "row_sha256": "5cb46845c940bd2ae589754678a66a60646a4d39e93e68b72f1bf4ea52839a88",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "pending_June_MTW_PIH201145_HTTP403_and_material_source_application226",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": true,
+          "authoritative_source_conflict": false,
+          "source_application_relationship_unresolved": true
+        },
+        "required_next_evidence_or_review": "PIH2011-45material chain remains held; no HTTP403retry or alternate route."
+      },
+      {
+        "action_id": "house:119:2:228",
+        "date": "2026-06-29",
+        "measure": "bill_119_hr_7757",
+        "stage": "On Motion to Suspend the Rules and Pass, as Amended",
+        "row_sha256": "26644fa225b83b46ee14446283e3461c3000fee5ac3068f2206348f6645abb64",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "pending_research",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false
+        },
+        "required_next_evidence_or_review": "Exact Immigration source screening remains held under Clerk/KIDScancellation; no alternate-route retry or reading unneeded original228response."
+      },
+      {
+        "action_id": "house:119:2:243",
+        "date": "2026-07-15",
+        "measure": "bill_119_hr_8595",
+        "stage": "On Agreeing to the Amendment",
+        "row_sha256": "8d838342a80cbf4ec41bfeaee022cd8064379d903f135555c3c47b02a9b2435c",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "pending_country_restriction_statutory_exception_application",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": true,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false
+        },
+        "required_next_evidence_or_review": "Resolve country-wide Act-funds prohibition interaction with2601(f)and refugee minimum; do not use independent FMFcut as refugee meaning."
+      },
+      {
+        "action_id": "house:119:2:245",
+        "date": "2026-07-15",
+        "measure": "bill_119_hr_8595",
+        "stage": "On Agreeing to the Amendment",
+        "row_sha256": "662a17e404fc56a44a10af43781335b5befeec9b021dc56516d2a00d92b28638",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "pending_UN_institutional_contribution_scope_primary_access",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": true,
+          "required_evidence_unavailable": true,
+          "authoritative_source_conflict": false
+        },
+        "required_next_evidence_or_review": "BareUnitedNations/UNHCRmaterial institutional contribution scope remains held; no closed403route/reroute or affiliate equivalence."
+      },
+      {
+        "action_id": "house:119:2:247",
+        "date": "2026-07-15",
+        "measure": "bill_119_hr_8595",
+        "stage": "On Passage",
+        "row_sha256": "f33e62aab89043d1f32740fffe6dac00826f76cb6be461d7eb6806f85d9c7ef4",
+        "disposition": "source_unresolved",
+        "unresolved_reason": "pending_authoritative_operator_conflict_and_qualified_application_review",
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": true,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": true
+        },
+        "required_next_evidence_or_review": "Resolve actualRecordreduction-only versus Report/EHpaired operators without invented precedence or duplicate meaning."
+      }
+    ],
+    "groups": {
+      "authoritative_source_conflict": [
+        "house:119:1:210",
+        "house:119:1:237",
+        "house:119:2:247"
+      ],
+      "reserved_application_or_edition": [
+        "house:119:2:157",
+        "house:119:2:193",
+        "house:119:2:196",
+        "house:119:2:243"
+      ],
+      "denied_cancelled_access_chain": [
+        "house:119:2:224",
+        "house:119:2:228",
+        "house:119:2:245"
+      ]
+    },
+    "newly_completed_screenings": 0,
+    "new_sources": 0,
+    "new_acquisitions": 0,
+    "new_admission_or_exclusion_decisions": 0,
+    "routine_samples": 0,
+    "known_historical_baseline_queue": {
+      "earlier248_249_entries": [
+        "5000A(f)",
+        "9831(d)",
+        "59A(b)-(e)"
+      ],
+      "addressed_by249": true,
+      "selected6418_6417_and_credit_baselines_addressed250_through259": true,
+      "wider_programme_package_legal_application_and_absence_certificates_not_established": true
+    },
+    "restriction_metadata_consulted": [
+      {
+        "path": ".tmp/immigration_resume_checkpoint256.md",
+        "line": 15
+      },
+      {
+        "path": ".tmp/checkpoint240_resume.md",
+        "lines": [
+          78,
+          79
+        ]
+      },
+      {
+        "path": ".tmp/checkpoint242_resume.md",
+        "lines": [
+          78,
+          79
+        ]
+      }
+    ],
+    "bounded7757_metadata_probe": "No exactHR7757legislative witness identified in inspected Immigration canonical metadata; only7757substring hit was unrelatedEO14071FR2022-07757. Not a world/all-bank/source-unavailability certificate; no Healthmeaning inherited.",
+    "metadata_search_limitations": "One rgmetadata search encountered protected test directories; those paths were not retried. Later direct known-resume reads supplied the restriction text. Combined wrapper finalexit reflected later Python success, not a complete rgsearch.",
+    "all_cancelled_denied_closed_restrictions_preserved": true,
+    "no_original228response_or_Healthadapter_read_or_hash": true,
+    "no_new_safe_pending_row_closure_identified_within_supplied_evidence_and_authority": true,
+    "nonblocking_wider_context_followups_not_silently_absorbed": true,
+    "not_full_programme_or_domain_completeness": true,
+    "not_source_unavailability_certificate": true,
+    "all_search_reading_model_context_tool_rework_costs_retained_in_mixed_elapsed_window": true,
+    "command_seconds": 0.05596750000040629,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "fa00553c91495399032f4579554ceae41743287fd0a9a26b120660d853c98ef3",
+    "initial_receipt_before_comparison_label_precision": "438e9e7c2df587577a8e56c2ae8e2668bde2f3c1e7efd896f194b65b36633d38",
+    "all10held_rows_and_flags_exact_JSON_values_and_sealed_row_digests_unchanged": true,
+    "comparison_precision": "Exact JSON values plus sealed row digests compared with snapshot; no full universe-file byte-identity claim because259changes145elsewhere."
+  },
+  "source_epoch_correction": {
+    "total_carriers": 1,
+    "fixes": [
+      {
+        "field": "limitations",
+        "index": 59,
+        "before": "6426original not admitted and literal sibling context does not adjudicate underlyingprogramtaxapplication.",
+        "after": "Original6426is source-qualified in the later House baseline addendum; literal sibling context and actual underlyingprogramtaxapplication remain qualified."
+      }
+    ]
+  },
+  "reviewed_head_status_proof": [
+    {
+      "head": "851ef5c8f87a9217888ce9531a91ae084cbf8006",
+      "limitation_index": 59,
+      "limitation_sha256": "b4fe7bd8b9e5145844bbb1fbf706596874fa2d6f51049b0d8f95b366a5e4c982",
+      "only_target_status_carrier_unchanged": true
+    },
+    {
+      "head": "0b1cf80656c99e164531bcdd7d6b7bdf68975da8",
+      "limitation_index": 59,
+      "limitation_sha256": "b4fe7bd8b9e5145844bbb1fbf706596874fa2d6f51049b0d8f95b366a5e4c982",
+      "only_target_status_carrier_unchanged": true
+    },
+    {
+      "head": "ce14b20ce43bc320d3946d4de79a1f47ad9938ca",
+      "limitation_index": 59,
+      "limitation_sha256": "b4fe7bd8b9e5145844bbb1fbf706596874fa2d6f51049b0d8f95b366a5e4c982",
+      "only_target_status_carrier_unchanged": true
+    },
+    {
+      "head": "f58eb12b0295594c03a14cdb49d0e2aec1cd7aee",
+      "limitation_index": 59,
+      "limitation_sha256": "b4fe7bd8b9e5145844bbb1fbf706596874fa2d6f51049b0d8f95b366a5e4c982",
+      "only_target_status_carrier_unchanged": true
+    },
+    {
+      "head": "495ba6dd3fc1cfa60dcf30e065672cecdfa18cc0",
+      "limitation_index": 59,
+      "limitation_sha256": "b4fe7bd8b9e5145844bbb1fbf706596874fa2d6f51049b0d8f95b366a5e4c982",
+      "only_target_status_carrier_unchanged": true
+    }
+  ],
+  "validation": {
+    "owner_tests": 610,
+    "Immigration_tests": 433,
+    "focused_tests": 128,
+    "focused_command_seconds": 64.78946970000015,
+    "new_test_methods": 9,
+    "historical_method_changes": [
+      "Checkpoint254ElectricityBaselineTests.setUpClass",
+      "Checkpoint254ElectricityBaselineTests.test_preimages_cores_member_neutrality_and_audit_prefixes_are_preserved",
+      "Checkpoint257AviationTests.test_source_extents_observations_and_action_accounting_are_conserved",
+      "Checkpoint258FuelPaymentTests.test_prior_predicates_and_all_observations_are_preserved_without_new_screenings"
+    ],
+    "all_other_old_methods_exact": true,
+    "private_fail_closed_cases": 21,
+    "private_positive_source_assertions": 6,
+    "private_positive_not_public_unittest_count": true,
+    "public_source_corruption_cases": 20,
+    "public_wrong_constraint_case": 1,
+    "semantic_checks": 7,
+    "IR_passed": true,
+    "seven_actual_CLI_outputs_byte_exact": true,
+    "full_gate_attempts": 1,
+    "completed_final_owner_gates": 1,
+    "full_gate": {
+      "started_utc": "2026-10-17T01:35:20.330201+00:00",
+      "completed_utc": "2026-10-17T01:57:33.028887+00:00",
+      "wall_seconds": 1332.7166337999997,
+      "phases": [
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate259_final\\replay"
+          ],
+          "started_utc": "2026-10-17T01:35:20.331579+00:00",
+          "PID": 9488,
+          "completed_utc": "2026-10-17T01:39:44.446802+00:00",
+          "elapsed_seconds": 264.1194415,
+          "exit_code": 0,
+          "log": ".tmp/full_gate259_final/replay.log",
+          "log_sha256": "229e12763f576d1bed48918deb550ff5624f02c56b61e33acfa321a618e8134c",
+          "byte_exact_outputs": 7
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-17T01:35:20.331083+00:00",
+          "PID": 21212,
+          "completed_utc": "2026-10-17T01:35:23.425341+00:00",
+          "elapsed_seconds": 3.0943114000001515,
+          "exit_code": 0,
+          "log": ".tmp/full_gate259_final/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-17T01:35:20.331295+00:00",
+          "PID": 29124,
+          "completed_utc": "2026-10-17T01:35:20.468058+00:00",
+          "elapsed_seconds": 0.13677060000009078,
+          "exit_code": 0,
+          "log": ".tmp/full_gate259_final/IR.log",
+          "log_sha256": "1d59ecd8a5c1b4c27b6d13e34629e13261f5e12f5db24fecb6679e5bd882285e"
+        },
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-17T01:35:20.330861+00:00",
+          "PID": 29252,
+          "completed_utc": "2026-10-17T01:57:33.022175+00:00",
+          "elapsed_seconds": 1332.7092872000003,
+          "exit_code": 0,
+          "log": ".tmp/full_gate259_final/owner.log",
+          "log_sha256": "1136b2a4ef19f3a0deb36f73c0bac1c4bd68134ef5219fc9c3bf6542f3986658"
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "b3ba16a20e343a0d0225eb5da0aa3e228aec568411ff4f43d886e8eb94ed9b1a",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "45b959b0aa2f1dc9441cbf0a9e0a84ce87caff3fe8fbedb8976b7905c232df06",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "1a58435013f632c91307fdd45f3626bae291cc04a6e78522ae6d424a8b973618",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "4124cf7952b7180c337605973830bf89870955487073decfa840323622d8a721",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "5daa3baf123d60652c4acd6c7a3d6c7337cd851c30b40e95a08b23ed666b03c8",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "c6af8e63bbc613d0bd84d978fdbfe7d53b3b17e25eccd7afac54acbc52f49b17",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "b364204d020210bd36138fbe6144ffa7a8555b34f8da1f86eb3714bb09908abb",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "7a5b004821745d38ef7afe02b28e3a017d6d150d121693f437d6780c97adc4a5",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "14f904f1b75789440e57cf1417c55f98ea9d098f2a1b7edcc979e9ab9022c164",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "7b58d91ad50f975ee152a3cd2b5048b3d00bf7e9e35d83b940fc1f6642e9ac7e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "0343f91840429f816310083dffce5fd7fd9e8b7530d2ff52932d948fda5a2a79",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "fb74d5569057a44244594bfd4cdfa787ad0b5fd668b439f81f0e13f2fdaec017",
+        "backend/tests/test_immigration_shared_candidate.py": "0a4246bde8f5f3e571d658f18254c4c9e061303bba2ca8d097f3d2d16a196a43",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "5c37602af766e25bee47bc3f9e9b6df4a0b46309b55b750c5eae178fc9e912a7",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_state_migration_conditions_checkpoint248.json": "ced31f645b91838e0248142ac84174d685b77198db35d26c37b13aa191381e6f",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_general_conditions_checkpoint247.json": "4bc23da5e5f2420e581593bf211181cd8832c4370b746b55fe932db17c15d63d",
+        "docs/plans/immigration_checkpoint248_state_migration.md": "1fe1376b456fd36d6d373a406dce58e9e7ab155287c02221db68472e2aece82c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/july_predicate_corrections_checkpoint246.json": "579e04fa3e9e7452a878671965da6098d15b314113e215b169c029998fbeb988",
+        "docs/editorial/shared_candidates/house_119_july_predicate_corrections_checkpoint246/shared_action_core_proposal.json": "a8fbe7a3351a96eb0c660990788d10317b3637d8f77765d0ec8562d0b04cb8af",
+        "docs/editorial/shared_candidates/house_119_july_predicate_corrections_checkpoint246/README.md": "29b4735dec1dbbed915ebc1f6507237fb67b86b437f46d82031166c212aa5a50",
+        "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
+        "docs/review_packets/immigration_checkpoint246_july_predicate_audit.json": "64177ce64f17ce965cc3300a64570b26c3427538b7f85ef26070eeb29c5fdd8e",
+        "docs/review_packets/immigration_checkpoint246_hr1968_bounded_review.json": "a7dcd7e042dfe7a16654fdb179e6b1d847e637f9cf704f5f7afbd44fdc52878b",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/july_defense_qualification_checkpoint245.json": "fdcd6ed9f0a4c20d02232e7afd8c9a8c75ad96e0176c12639d0e547354e6e09e",
+        "docs/editorial/shared_candidates/house_119_july_defense_qualification_checkpoint245/shared_action_core_proposal.json": "740c47046d768d1cc3e32fcd241f7cac9521aceaba606eb606d0c8b7ec220e30",
+        "docs/review_packets/immigration_checkpoint245_predicate_audit.json": "aa8d6a001ea1aefdd82738a9efcd43e77282021991c98cde382b612de3051de8",
+        "docs/review_packets/immigration_checkpoint247_hr1_bounded_review_intake.json": "f4b4ba1f85c8c66af37b1e36a8082e9b9f7514268568d529683ad576914461b2",
+        "docs/review_packets/immigration_checkpoint248_hr1_counterpart_continuation.json": "524120df1b9e8db88585776bdf9d82ccbf36ec4105f8b39ebb076a59d1e268af",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_incorporated_baselines_checkpoint249.json": "39cf60bfcfb6d0ddaf0e76f2c3317b348fad45a98ef6db42c4dfdf85cd26ba62",
+        "docs/review_packets/immigration_checkpoint249_hr1_baseline_intake.json": "1a2b7dc2c71d941fe1a012618cb2d7cae93d74acde36a05ccded79e82e1b467c",
+        "docs/plans/immigration_checkpoint249_hr1_baselines.md": "86ce98f9d8a8236f4d06f4a278d3514d55e41a7e097a21085147d874ed34124a",
+        ".tmp/ib_primary_captures.json": "199ac505bebd16b2dc38fee5ed179d086f7799c7cc19a5bd120ad636b2c8831e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_senate_transfer_conditions_checkpoint250.json": "28fe6620a91eee8dfc0c7a007f82498a26f767f511da440888bcb747d6292337",
+        "docs/plans/immigration_checkpoint250_senate_transfer.md": "c9d015a36aa29091e6d6e1dcaaca48f5d9a3c3e092bab423d4ee897f3de77469",
+        "docs/review_packets/immigration_checkpoint249_conservation_validation.json": "7c05435da3c0f9f1623584bbb80b718fe73dfccb137279c0de65bcb23686d525",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_investment_conditions_checkpoint251.json": "e1e2fb2413ff750044405a45a1d66cb325bdc3200041de2ca727ee7a262d67cb",
+        "docs/plans/immigration_checkpoint251_investment.md": "8b7cdbe0a3cdaef8d331d048d574cac9e035fe8a2f98eb10de8538f33b86077f",
+        "docs/review_packets/immigration_checkpoint250_conservation_validation.json": "7ca70bfa330e25ef9c227b02ac7bdf9f4b4fc0d6431f25f8ad60cc9c0697c8e2",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_energy_status_conditions_checkpoint252.json": "a3bba5b144648274d43ff374b694587fcc640a975da3483fb673b2b220307a20",
+        "docs/plans/immigration_checkpoint252_energy_status.md": "fd483f170c33c9a3141a8ba1c9b76101107c4d00422a691e9736755eb481844f",
+        "docs/review_packets/immigration_checkpoint251_conservation_validation.json": "ec5d5cc18cfb48a9fe797374e617d7c2d27ff31764309c4df3921c6471a5f2cc",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_manufacturing_fuel_conditions_checkpoint253.json": "869a3a4225b5d18192a89f6f80180548989a621244179b9c9241f6a008bea668",
+        "docs/plans/immigration_checkpoint253_manufacturing_fuel.md": "103b79707a89a085f0366129200c4bd96e9e2d5790a0ed46617b1ca398c9281b",
+        "docs/review_packets/immigration_checkpoint252_conservation_validation.json": "cb00c22cbaea528c7b78b31ac336eb689c247509d90ea3a8a726f29032564987",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_electricity_baseline_conditions_checkpoint254.json": "85aef79c4674a7a52da34bec3fdfdfc5b6de0aec0b1687b0f376a11070a196a5",
+        "docs/plans/immigration_checkpoint254_electricity_baseline.md": "c4e32bba5a03ca045a933f780e3a4712334d441b35d3025e3e4ba1d8839f9fce",
+        "docs/review_packets/immigration_checkpoint253_conservation_validation.json": "095246e3646e03245ec788fbbac4625f54a7329b3f4ee272ef665c8b0312b8ae",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_state_general_conditions_checkpoint255.json": "02731154ba7a6e2c5806df9f91a82b1ed2e9715060f53781bf39661c55ecb730",
+        "docs/plans/immigration_checkpoint255_state_general.md": "5f26b6d404c3308598d69ea00ea8b398981ea0135d39dc2a97c0d0c844c7c046",
+        "docs/review_packets/immigration_checkpoint254_conservation_validation.json": "5a9077ee21813fd5f52fb05e923dc690128e77fb4bb4e2008589e82a7f1fed1f",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_authorization_conditions_checkpoint256.json": "0ef77418a5fcce1a32780127a508b2c769a2da1ef712b1babb94b8902b93f4b0",
+        "docs/plans/immigration_checkpoint256_authorizations.md": "c6653eee031b88b55d3fe2f1851f11393e7d13294571dacf9fea7e4f4ad0f7db",
+        "docs/review_packets/immigration_checkpoint255_conservation_validation.json": "1dc032a1db70dc1435d6b066e84d513de3a638186e96b304e4a1c6929c9c08f1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_aviation_conditions_checkpoint257.json": "6ebc16b5c911d54c685996c9c59eadc23ac06c58a12fabf8ed0e98af5450adf5",
+        "docs/plans/immigration_checkpoint257_aviation.md": "0e4a3079d4e3ee2ae7ca587395bb0ea27e49c6dd7c5db8bb17bf824def00af48",
+        "docs/review_packets/immigration_checkpoint256_conservation_validation.json": "36221e3df9bf2eec0c8a1bae9a815e10d860bfa53aae91eea162aa28d587cf58",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_fuel_payment_conditions_checkpoint258.json": "59ab12082e156a9112e2c03a0556b21c2de262332ac1aa39c9c0c77663691f7f",
+        "docs/plans/immigration_checkpoint258_fuel_payment.md": "88f0d3c3f1377c56c565e37cdb9768f51fd76607a7e29139f1d98708758ae4e7",
+        "docs/review_packets/immigration_checkpoint257_conservation_validation.json": "d8dd23f2b4e7fdec4962f4c81569ea9eec44b7c109ca707635fe5d30eb388e10",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_house_fuel_baseline_conditions_checkpoint259.json": "833dfdc1b7fd14735349cfff5a6189cae3d31de977f1e2418e3638aec6af3d78",
+        "docs/plans/immigration_checkpoint259_house_fuel_baseline.md": "1e71ee1e096d02c2064fbc54c2fd82e63c47504480149f248bb2cc97e281acaa",
+        "docs/review_packets/immigration_checkpoint258_conservation_validation.json": "f73f5df94abf5a585556d1803dfe067cb16af23a88eae0eb56c007aa30c19334"
+      },
+      "input_hashes_unchanged": true
+    },
+    "new_fully_resealed_provider_real_CLI_campaign": false,
+    "not_semantic_completeness_or_editorial_acceptance": true
+  },
+  "source_scope": {
+    "exact_House111112_2978chars_and_original45Z_12356chars_reread": true,
+    "actual_reading": [
+      {
+        "source_id": "govinfo:26usc6426-complete-2024-aviation257",
+        "governed_bytes_sha256": "cc3463e20059381c1a3e94b90e6fcfb72a05a472e53eb590961446d99d74c512",
+        "start": 0,
+        "end": 41154,
+        "total": 41154,
+        "text_sha256": "2b6574dc7cc37b2c70944f3681b2512db6ecc867983af1c4c8ec3362d258d29d",
+        "complete_including_notes_actually_read": true,
+        "raw_sha256": "c5c90b7761b11ccb847ce6da62be804d9abeb4d399f2086fbb6d05a3078f87d5"
+      },
+      {
+        "source_id": "govinfo:26usc40B-complete-2024-aviation257",
+        "governed_bytes_sha256": "1f79a3fb7e25f6caf7446411e0ce16b600358310b6e6a422be028139bff5e8b6",
+        "start": 0,
+        "end": 5554,
+        "total": 5554,
+        "text_sha256": "121f4142496d9233e12be1a60f484d99092fa5ff98759a78111315ba114e8da9",
+        "complete_including_notes_actually_read": true,
+        "raw_sha256": "ae9e8ff2173e53992fcbba3773aca0b759f311617fe6cb570f12d53f52eff3de"
+      },
+      {
+        "source_id": "govinfo:pl117169-13203-aviation257",
+        "governed_bytes_sha256": "54a3b0f570430eb443ad6bebbf45252fd0ad683968c401e3bdf2350f0f7bf717",
+        "start": 317768,
+        "end": 326347,
+        "total": 759882,
+        "text_sha256": "2f631268175589729bfe86bdabed21c22682e740ffb70dccfcd8b29961459aec",
+        "selected_extent_actually_read": true
+      },
+      {
+        "source_id": "govinfo:pl117169-13704-aviation257",
+        "governed_bytes_sha256": "f7a1df9698d2eb3294db3be1753533ab070d0845036c6ef99ab1c60c55d8ef62",
+        "start": 495800,
+        "end": 509846,
+        "total": 759882,
+        "text_sha256": "89a0d4cd5f60897af60e12f1560dfedd15dac3aad7a9108f9468c3d9b358c6f6",
+        "selected_extent_actually_read": true
+      },
+      {
+        "source_id": "govinfo:26usc6427-e-fuelpayment258",
+        "start": 5310,
+        "end": 7476,
+        "total": 102651,
+        "text_sha256": "dae7f4fda5ef867fdb9aa3767807cd42180645bdbd1e8b353a1968a28313af4c",
+        "governed_bytes_sha256": "3c80b2759b8ecb2a38158e85d1815ed61df3d0ed79f65d3c1f6882178b305edc",
+        "selected_extent_actually_read": true,
+        "complete_parent_actually_read": false
+      },
+      {
+        "source_id": "govinfo:26usc6427-i-k-fuelpayment258",
+        "start": 8722,
+        "end": 13488,
+        "total": 102651,
+        "text_sha256": "86a98d4c7a15d1df0cab7c7a3c59b37402946d114f1a1e956052f7251e4700b8",
+        "governed_bytes_sha256": "096d1754e4d5db95d42c8628ecc41bb4c05a504a423bf39b7098c45ab214accb",
+        "selected_extent_actually_read": true,
+        "complete_parent_actually_read": false
+      },
+      {
+        "source_id": "govinfo:26usc6427-reference-note-fuelpayment258",
+        "start": 24964,
+        "end": 25756,
+        "total": 102651,
+        "text_sha256": "819708a01bb28f494f09f243cb31805e266ce84677e5d1a2a226bd4503c1ead2",
+        "governed_bytes_sha256": "f3b6af426beb8056a1850d29c6ecb7f704de40b38e9cb9897d4aa4694af8667c",
+        "selected_extent_actually_read": true,
+        "complete_parent_actually_read": false
+      },
+      {
+        "source_id": "govinfo:26usc4101-complete-fuelpayment258",
+        "start": 0,
+        "end": 16420,
+        "total": 16420,
+        "text_sha256": "98912c3047955049a2ef4f4feaf70f12dbf9254285ab1fb0e3ef70cebf3d029f",
+        "governed_bytes_sha256": "1cd8078f54bb7b739d6f341e2a18312e0d1b8d85f5287470406d587a5ecf5e16",
+        "selected_extent_actually_read": true,
+        "complete_parent_actually_read": true
+      }
+    ],
+    "legislative_actual_reading": [
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "section": "111112",
+        "start": 878574,
+        "end": 881552,
+        "governed_source_seal": "de6f13ee9abdba11e444296965169141ee876a1abd99453d1b837b6aca5bc49a",
+        "text": "SEC. 111112. EXTENSION AND MODIFICATION OF CLEAN FUEL PRODUCTION CREDIT. (a) Prohibition on Foreign Feedstocks.-- (1) In general.--Section 45Z(f)(1)(A) is amended-- (A) in clause (i)(II)(bb), by striking ``and'' at the end, (B) in clause (ii), by striking the period at the end and inserting ``, and'', and (C) by adding at the end the following new clause: ``(iii) such fuel is exclusively derived from a feedstock which was produced or grown in the United States, Mexico, or Canada.''. (2) Effective date.--The amendments made by this subsection shall apply to transportation fuel sold after December 31, 2025. (b) Determination of Emissions Rate.-- (1) In general.--Section 45Z(b)(1)(B) is amended by adding at the end the following new clauses: ``(iv) Exclusion of indirect land use changes.-- Notwithstanding clauses (ii) and (iii), the lifecycle greenhouse gas emissions shall be adjusted as necessary to exclude any emissions attributed to indirect land use change. Any such adjustment shall be based on regulations or methodologies determined by the Secretary in consultation with the Administrator of the Environmental Protection Agency and the Secretary of Agriculture. ``(v) Animal manures.--For purposes of the table described in clause (i), with respect to any transportation fuels which are derived from animal manure, a distinct emissions rate shall be provided with respect to each of the specific feedstocks used to such produce such fuel, which shall include dairy manure, swine manure, poultry manure, and such other sources as are determined appropriate by the Secretary.''. (2) Conforming amendment.--Section 45Z(b)(1)(B)(i) is amended by striking ``clauses (ii) and (iii)'' and inserting ``clauses (ii), (iii), (iv), and (v)''. (3) Effective date.--The amendments made by this subsection shall apply to emissions rates published for taxable years beginning after December 31, 2025. (c) Extension of Clean Fuel Production Credit.--Section 45Z(g) is amended by striking ``December 31, 2027'' and inserting ``December 31, 2031''. (d) Restrictions Relating to Prohibited Foreign Entities.-- (1) In general.--Section 45Z(f) is amended by adding at the end the following new paragraph: ``(8) Restrictions relating to prohibited foreign entities.-- ``(A) In general.--No credit determined under subsection (a) shall be allowed under section 38 for any taxable year beginning after the date of enactment of this paragraph if the taxpayer is a specified foreign entity (as defined in section 7701(a)(51)(B)). ``(B) Other prohibited foreign entities.--No credit determined under subsection (a) shall be allowed under section 38 for any taxable year beginning after the date which is 2 years after the date of enactment of this paragraph if the taxpayer is a foreign-influenced entity (as defined in section 7701(a)(51)(D)).''. (2) Effective date.--The amendment made by this subsection shall apply to taxable years beginning after the date of enactment of this Act. ",
+        "text_sha256": "14e00ecabdae7ae441e98e4bd7d02cbd8425799d1d0a550285eebcb8c76e6e06",
+        "actually_reread_in_full": true
+      }
+    ],
+    "original45Z_reread": {
+      "source_id": "govinfo:26usc45Z-complete-2024-manufacturing-fuel253",
+      "text_sha256": "c3101b5b95c2586eb544645ceffa72beb4054c51527f8ffc03cc18902824b482",
+      "text_length": 12356,
+      "complete_including_notes": true,
+      "governed_bytes_sha256": "4764ebb90c9922cd8876cd1751e3a6edf3fac237c7c4ef42c0e0cd7d2a9e8d2d"
+    },
+    "eight_prior257_258_witnesses_reused_with_no_bank_manifest_pool_write": true,
+    "bank3002_manifest1912_private1948_byte_exact": true,
+    "Housebindings308_to316_audit171_to179": true,
+    "one_status_limitation_carrier_updated_with_preimages_not_legal_question_closure": true,
+    "conditional_base_enhanced_SAF_rates_and_absolute_rate_vs_relative_reduction_distinct": true,
+    "paragraph_scoped_geography_and_Housefeedstock_dates_not_personal_status": true,
+    "mixture_vs_production_sale_registration_certification_information_scopes_preserved": true,
+    "original_dates_credit_payment_claim_procedure_and_physical_ownership_conditions_preserved": true,
+    "publisher_notes_not_formal_correction_first_publication_or_prevote_legal_operation_certificate": true,
+    "no_Senate70521_substitution_or_actual_eligibility_legalpriority_full_House_absence_finding": true,
+    "all174observations145entiregraphs70questions_partialflags_holds_history_withdrawals_neutrality_restrictions_preserved": true
+  },
+  "parent258_terminal": {
+    "head": "333a241822b8221531c7421bfc077653c12eccd6",
+    "CI_run": 38990479164,
+    "CI_seconds": 1555.0,
+    "CI_receipt_sha256": "b126ea2def6f372e0f835b6056b9c8c46e787d4589ba5390e2c422c91ab9cc04",
+    "nativeproof": "2747d20612ffc733083ee56562a92ac3569e50ba3d835d6576f0984e7a8f0a26",
+    "ordered_parents": [
+      "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "333a241822b8221531c7421bfc077653c12eccd6"
+    ],
+    "workflow_blob": "081c14aef117867905654d3f67dbde33652f9960",
+    "PR_ack": 6228160150,
+    "terminal_preservation_receipt": "ad0eba6ddcceb1b43976b8be8648dfff59c1bf24c800c7bfdfbb2022125cf0d4",
+    "all10jobs4late_passed": true,
+    "independent_source_reviews_pending": true,
+    "no_success_transfers": true
+  },
+  "throughput": {
+    "conservative_first_work_bound_utc": "2026-10-17T00:54:20.605917+00:00",
+    "bound_basis": "Actual258gate start precedes private259Housecounterpart inspection. Mixed257CI/258gate/delivery/CIand259privatework, not exclusive259labor; no shutdown in this bound, earlier underlying source acquisition/reading retained in257/258receipts.",
+    "gate_completed_utc": "2026-10-17T01:57:33.028887+00:00",
+    "total_elapsed_seconds": 3792.42297,
+    "seconds_per_batch_and_existing_complex_core": 3792.42297,
+    "normalized_seconds_per_nine_groups": 421.38033,
+    "explicit_shutdown_inside_this_bound_seconds": 0,
+    "individual_cycles_not_isolated": true,
+    "completed_new_screenings": 0,
+    "routine_samples": 0,
+    "under600_routine_target_unproven": true,
+    "diagnosis230_FAIL_unchanged": true,
+    "snapshot_seconds": 2.708696200000304,
+    "application": {
+      "started_utc": "2026-10-17T01:27:54.941912+00:00",
+      "completed_utc": "2026-10-17T01:31:10.999667+00:00",
+      "command_seconds": 196.0610961000002,
+      "counts": {
+        "reviewed": 666,
+        "pending": 10,
+        "cores": 87,
+        "behavioral_propositions": 145,
+        "episodes": 75,
+        "multi_action_episodes": 10
+      },
+      "qualified_core_sha256": {
+        "house:119:1:145": "fd8b15cad9725885fc4778382b7be0150dd58f26fd76c10fed80125b81688b5f"
+      },
+      "qualification_receipt_sha256": "e7389db8bea5a1e97fbe564376493ae3a1c4b3172c6995bb4fc3dd1efe79c885",
+      "source_bank_count": 3002,
+      "manifest_count": 1912,
+      "private_pool_count": 1948,
+      "new_screenings": 0,
+      "source_mechanism_groups": 9,
+      "full_gate_pending": true,
+      "parent258_terminal_ack_pending": true,
+      "hold_GitHEAD_and_index_until_parent258_terminal_ack": true
+    },
+    "private_prepare_seconds": 1.1655220000002373,
+    "private_preflight_seconds": 6.341526400000021,
+    "private_positive_checks": {
+      "started_utc": "2026-10-17T01:13:10.647655+00:00",
+      "completed_utc": "2026-10-17T01:13:11.215165+00:00",
+      "command_seconds": 0.5675215000001117,
+      "checks": [
+        {
+          "name": "test_exact_House_dates_and_original_conditional_rates_do_not_borrow_Senate_rules",
+          "passed": true
+        },
+        {
+          "name": "test_absolute_rate_relative_reduction_and_paragraph_geography_are_distinct",
+          "passed": true
+        },
+        {
+          "name": "test_original_credit_channels_mixture_and_production_sale_predicates_remain",
+          "passed": true
+        },
+        {
+          "name": "test_registration_and_publisher_notes_do_not_formally_repair_original_instructions",
+          "passed": true
+        },
+        {
+          "name": "test_payment_dates_coordination_and_probably_reference_remain_qualified",
+          "passed": true
+        },
+        {
+          "name": "test_claim_and_physical_ownership_controls_are_not_personal_status_rules",
+          "passed": true
+        }
+      ],
+      "all6_passed": true,
+      "private_source_condition_assertions_only_not_public_unittest_count": true,
+      "no_class_setup_or_uncommitted_qualification_fabricated": true,
+      "exact_private_House_legislative_reading_and_current_canonical_source_bank_used": true,
+      "no_canonical_or_fixed258input_mutation": true
+    },
+    "focused_command_seconds": 64.78946970000015,
+    "private_draft_and_clock_precision": {
+      "recorded_utc": "2026-10-17T00:59:41.294731+00:00",
+      "metadata_clock_precision": {
+        "before_rounded_lower_bound": "2026-10-17T00:54:20.605000+00:00",
+        "after_observed_phase_start": "2026-10-17T00:54:20.605917+00:00",
+        "phase_start_field_not_guessed": true,
+        "no_change_to_source_action_or_head_proofs": true
+      },
+      "initial_preparation_receipt": "73405d6a9f07211675568b64180313fb14e33a034c8eb8b20045884272e5d1d1",
+      "corrected_preparation_receipt": "7479a69cdeafc99569503919b2568949eb2d7ba43f73f7ea7114b6127054ac1e",
+      "unused_draft_rate_precision": {
+        "before": "The original20cent/$1.00branches require their own wage ANDapprenticeship conditions",
+        "after": "The original20centbase is for a qualifiedfacility that does not satisfy the paragraph(2)(B)enhanced-amount requirements; the $1.00alternative requires BOTH(f)(6)wage AND(f)(7)apprenticeship conditions",
+        "before_termination": "the selected House11111245Z(g)fuel-SOLD-after2031proposal",
+        "after_termination": "the selected House11111245Z(g)termination for fuel SOLDafterDecember31,2031"
+      },
+      "basis": "Read original45Z(a)(2)base versus enhanced amount and exactHouse111112(g)sold endpoint. Clarify before private action preparation; no canonical or prepared candidate changed.",
+      "all_costs_retained_in_mixed_elapsed_window": true
+    },
+    "all_source_search_reading_model_context_tool_command_test_rework_Git_PR_CI_observation_costs_retained": true,
+    "research_analysis_tool_time_not_fully_partitioned": true,
+    "earlier_underlying_source_acquisition_and_reading_retained_in257_258_receipts_not_zeroed": true,
+    "overlap": "259window overlaps257CI/258gate/delivery/CIand259private/application/gate work. No old shutdown subtraction, not exclusive labor; do not sum overlap or count groups as independent actions.",
+    "model_effort_speed": "PreviouslyobservedGPT-6base; currentselectedvariant/effort/speedunexposed,noinferredchange.",
+    "later_Git_PR_own_CI_costs_to_follow": true
+  },
+  "independent_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "8c7b2db0475c41ba527e1d7ca9e2ea9d9ccf3a8665762b0e4f11a17c22682662"
+}

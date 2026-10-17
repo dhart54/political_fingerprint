@@ -7437,6 +7437,7 @@ class Checkpoint254ElectricityBaselineTests(unittest.TestCase):
         cls.a = json.loads((DATA / 'authoring.json').read_text())
         cls.actions = {v['action_id']: v for v in cls.a['actions'] if v['action_id'] in cls.q['actions']}
         cls.actions.update(json.loads((DATA/'hr1_aviation_conditions_checkpoint257.json').read_text())['prior_authoring'])
+        cls.actions.update(json.loads((DATA/'hr1_house_fuel_baseline_conditions_checkpoint259.json').read_text())['prior_authoring'])
         cls.cap = json.loads((DATA / 'sources.json').read_text())
         cls.bank = {s['source_id']: s for s in cls.cap['sources']}
         cls.sid = 'govinfo:26usc45Y-complete-2024-electricity254'
@@ -7449,6 +7450,7 @@ class Checkpoint254ElectricityBaselineTests(unittest.TestCase):
         audit = json.loads((DATA.parents[2] / 'review_packets/immigration_semantic_audit_in_progress.json').read_text())
         cores = {v['action_id']: v for v in json.loads((DATA / 'generated/shared_action_core.json').read_text())['actions']}
         cores.update(json.loads((DATA/'hr1_aviation_conditions_checkpoint257.json').read_text())['prior_cores'])
+        cores.update(json.loads((DATA/'hr1_house_fuel_baseline_conditions_checkpoint259.json').read_text())['prior_cores'])
         for aid, a in self.actions.items():
             old = q['prior_authoring'][aid]
             self.assertTrue(a['meaning'].startswith(old['meaning']))
@@ -7892,7 +7894,7 @@ class Checkpoint257AviationTests(unittest.TestCase):
         q=self.q;aid=self.act['action_id'];mf={s['source_id']:s for s in json.loads((DATA/'research_capture_manifest.json').read_text())['sources']}
         for r in q['actual_reading']:
             s=self.bank[r['source_id']];self.assertEqual(s['governed_bytes_sha256'],sealed_digest(s,'governed_bytes_sha256'));self.assertEqual(digest(s['text']),r['text_sha256']);self.assertEqual(s['source_text_extents'][0],{k:r[k] for k in ['start','end','total']});self.assertEqual(mf[s['parent_source_id']]['raw_sha256'],s['raw_sha256']);self.assertIn(s['text'],[v['passage'] for v in self.act['claim_source_map']])
-        for old,new in zip(q['prior_member_projections'],json.loads((DATA/'generated/member_projections.json').read_text())):
+        for old,new in zip(q['prior_member_projections'],json.loads((DATA/'hr1_house_fuel_baseline_conditions_checkpoint259.json').read_text())['prior_member_projections']):
             for prior in old['actions']:
                 current=next(v for v in new['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set();self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
         self.assertEqual(q['counts'],dict(reviewed=666,pending=10,cores=87,behavioral_propositions=145,episodes=75,multi_action_episodes=10));self.assertEqual(q['new_screening_completions'],0);self.assertEqual(q['new_claim_bindings'],4);self.assertEqual(q['source_mechanism_comparison_groups'],9);self.assertTrue(q['all70questions_partial_flags_and_Q68_Q70_preserved']);self.assertFalse(q['editorial_acceptance']);self.assertFalse(q['publication_authorized'])
@@ -7979,7 +7981,7 @@ class Checkpoint258FuelPaymentTests(unittest.TestCase):
         self.assertEqual({k:v for k,v in act.items() if k not in changed},{k:v for k,v in old.items() if k not in changed})
         core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==aid)
         self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][aid])
-        for prior_member,current_member in zip(q['prior_member_projections'],json.loads((DATA/'generated/member_projections.json').read_text())):
+        for prior_member,current_member in zip(q['prior_member_projections'],json.loads((DATA/'hr1_house_fuel_baseline_conditions_checkpoint259.json').read_text())['prior_member_projections']):
             for prior in prior_member['actions']:
                 current=next(v for v in current_member['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set()
                 self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
@@ -7999,6 +8001,119 @@ class Checkpoint258FuelPaymentTests(unittest.TestCase):
                 if reseal:source['governed_bytes_sha256']=sealed_digest(source,'governed_bytes_sha256')
                 with self.assertRaises(ValueError):prepare(copy.deepcopy(a),cap,['F000477','M001184'])
         a['actions'][0]['source_render_constraints'][-1]['action_ids']=['house:119:1:71']
+        with self.assertRaises(ValueError):prepare(a,self.cap,['F000477','M001184'])
+
+
+
+class Checkpoint259HouseFuelBaselineTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q=json.loads((DATA/'hr1_house_fuel_baseline_conditions_checkpoint259.json').read_text())
+        cls.a=json.loads((DATA/'authoring.json').read_text())
+        cls.act=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:145')
+        cls.old=cls.q['prior_authoring'][cls.act['action_id']]
+        cls.cap=json.loads((DATA/'sources.json').read_text())
+        cls.bank={v['source_id']:v for v in cls.cap['sources']}
+        cls.addition=cls.act['meaning'][len(cls.old['meaning']):]
+
+    def test_eight_prior_qualified_views_are_reused_without_new_source_objects(self):
+        q=self.q;mf={v['source_id']:v for v in json.loads((DATA/'research_capture_manifest.json').read_text())['sources']}
+        self.assertEqual(q['receipt_sha256'],sealed_digest(q,'receipt_sha256'))
+        self.assertEqual((q['new_canonical_sources'],q['new_private_source_objects'],q['new_acquisitions'],q['reused_canonical_views']),(0,0,0,8))
+        self.assertEqual((q['source_bank_count'],q['manifest_count'],q['private_pool_count']),(3002,1912,1948))
+        self.assertEqual(len(q['actual_reading']),8)
+        for r in q['actual_reading']:
+            source=self.bank[r['source_id']]
+            self.assertEqual(source['governed_bytes_sha256'],sealed_digest(source,'governed_bytes_sha256'))
+            self.assertEqual(digest(source['text']),r['text_sha256'])
+            self.assertEqual(source['source_text_extents'][0],{k:r[k] for k in ['start','end','total']})
+            self.assertEqual(mf[source['parent_source_id']]['raw_sha256'],source['raw_sha256'])
+            self.assertIn(source['text'],[v['passage'] for v in self.act['claim_source_map']])
+        self.assertEqual(q['base_head'],q['committed_parent_reconciliation']['committed_parent_head'])
+
+    def test_exact_House_dates_and_original_conditional_rates_do_not_borrow_Senate_rules(self):
+        r=self.q['legislative_actual_reading'][0];parent=self.bank[r['source_id']]
+        self.assertEqual(parent['text'][r['start']:r['end']],r['text']);self.assertEqual(len(r['text']),2978)
+        for phrase in ['exclusively derived from a feedstock','sold after December 31, 2025','emissions rates published for taxable years beginning after December 31, 2025','December 31, 2031','2 years after the date of enactment of this paragraph','shall be allowed under section 38']:
+            self.assertIn(phrase,r['text'])
+        t=self.bank['govinfo:26usc45Z-complete-2024-manufacturing-fuel253']['text']
+        self.assertEqual(len(t),12356)
+        for phrase in ['which does not satisfy the requirements described in subparagraph (B)','requirements under paragraphs (6) and (7) of subsection (f)','35 cents','$1.75']:
+            self.assertIn(phrase,t)
+        for phrase in ['not guaranteed payments','no such deletion is borrowed','not certification of every other House provision']:
+            self.assertIn(phrase,self.addition)
+
+    def test_absolute_rate_relative_reduction_and_paragraph_geography_are_distinct(self):
+        t=self.bank['govinfo:26usc45Z-complete-2024-manufacturing-fuel253']['text'];b=self.bank['govinfo:26usc40B-complete-2024-aviation257']['text']
+        for phrase in ['not greater than 50 kilograms','For purposes of this paragraph','includes any possession of the United States']:
+            self.assertIn(phrase,t)
+        self.assertIn('at least 50 percent',b)
+        for phrase in ['not the same metric','within(f)(1)(A)','without silently extending it to40B,6426or unrelated provisions','individual citizenship/admission']:
+            self.assertIn(phrase,self.addition)
+
+    def test_original_credit_channels_mixture_and_production_sale_predicates_remain(self):
+        t=self.bank['govinfo:26usc6426-complete-2024-aviation257']['text'];b=self.bank['govinfo:26usc40B-complete-2024-aviation257']['text'];z=self.bank['govinfo:26usc45Z-complete-2024-manufacturing-fuel253']['text']
+        for phrase in ['against the tax imposed by section 4081','against the tax imposed by section 4041','rules similar to the rules of section 40B(f)']:
+            self.assertIn(phrase,t)
+        for phrase in ['$0.01 for each percentage point','exceeds 50 percent','exceed $0.50','such mixture is produced by the taxpayer in the United States','ordinary course of a trade or business','transfer of such mixture to the fuel tank']:
+            self.assertIn(phrase,b)
+        for phrase in ['produced by the taxpayer at a qualified facility','sold by the taxpayer to an unrelated person']:
+            self.assertIn(phrase,z)
+        self.assertIn('not a newHouseenactment or cumulative-payment promise',self.addition)
+
+    def test_registration_and_publisher_notes_do_not_formally_repair_original_instructions(self):
+        b=self.bank['govinfo:26usc40B-complete-2024-aviation257']['text'];z=self.bank['govinfo:26usc45Z-complete-2024-manufacturing-fuel253']['text'];c=self.bank['govinfo:26usc4101-complete-fuelpayment258']['text']
+        for phrase in ['producer or importer','from an unrelated party','supply chain traceability','such other information']:
+            self.assertIn(phrase,b)
+        self.assertIn('is registered as a producer of clean fuel under section 4101 at the time of production',z)
+        for phrase in ['was executed by making the insertion after','to reflect the probable intent of Congress','did not appear in the enacted version']:
+            self.assertIn(phrase,c)
+        self.assertIn('after ``section 6426(k)(3)),',self.bank['govinfo:pl117169-13704-aviation257']['text'])
+        self.assertIn('before ``and every person producing second generation biofuel',self.bank['govinfo:pl117169-13203-aviation257']['text'])
+        self.assertIn('not a formal legislative correction',self.addition)
+
+    def test_payment_dates_coordination_and_probably_reference_remain_qualified(self):
+        e=self.bank['govinfo:26usc6427-e-fuelpayment258']['text'];n=self.bank['govinfo:26usc6427-reference-note-fuelpayment258']['text']
+        for phrase in ['Except as provided in subsection (k)','an amount is allowed as a credit under section 6426','by reason of section 6426(i)','as defined in section 6426(k)(3)']:
+            self.assertIn(phrase,e)
+        self.assertEqual(e.count('December 31, 2011'),2);self.assertEqual(e.count('December 31, 2024'),3)
+        self.assertIn('probably should be a reference to section 40B',n)
+        self.assertIn('shall not apply to any sale or use after December 31, 2024',self.bank['govinfo:26usc40B-complete-2024-aviation257']['text'])
+        self.assertIn('Other-amendment coverage, continuation, legal priority',self.addition)
+        self.assertIn('not merely when cash was actually claimed or paid',self.addition)
+
+    def test_claim_and_physical_ownership_controls_are_not_personal_status_rules(self):
+        t=self.bank['govinfo:26usc6427-i-k-fuelpayment258']['text'];c=self.bank['govinfo:26usc4101-complete-fuelpayment258']['text']
+        for phrase in ['which is not less than 1 week','without regard to clause (i)','first quarter following the earliest quarter included in the claim','first quarter following the last quarter included in the claim','45 days','20 days in the case of an electronic claim','Paragraph (1) shall not apply to a payment of a claim filed under paragraph (2), (3), or (4) of subsection (i)','section 7602(a)']:
+            self.assertIn(phrase,t)
+        for phrase in ['within a foreign trade zone or within a customs bonded storage facility','more than 50 percent of ownership interests in, or assets of','persons (or persons related thereto)','an established securities market','25 or more reportable transactions in a month']:
+            self.assertIn(phrase,c)
+        self.assertIn('not a foreign-influence threshold',self.addition)
+
+    def test_only_one_status_limitation_changes_with_preimages_and_actual_observations_preserved(self):
+        q=self.q;act=self.act;old=self.old;aid=act['action_id'];expected=copy.deepcopy(old['limitations']);self.assertEqual(q['source_epoch_correction']['total_carriers'],1)
+        for fix in q['source_epoch_correction']['fixes']:
+            self.assertEqual(fix['field'],'limitations');self.assertEqual(expected[fix['index']].count(fix['before']),1);expected[fix['index']]=expected[fix['index']].replace(fix['before'],fix['after'])
+        self.assertTrue(act['meaning'].startswith(old['meaning']));self.assertEqual(act['limitations'][:-1],expected);self.assertEqual(act['source_render_constraints'][:-1],old['source_render_constraints']);self.assertEqual(act['claim_source_map'][:-8],old['claim_source_map']);self.assertEqual(len(act['claim_source_map']),316)
+        omit={'meaning','limitations','source_render_constraints','claim_source_map','additional_source_ids'}
+        self.assertEqual({k:v for k,v in act.items() if k not in omit},{k:v for k,v in old.items() if k not in omit})
+        self.assertGreaterEqual(len(q['source_epoch_reviewed_head_proof']),5)
+        self.assertTrue(all(r['only_target_status_carrier_unchanged'] for r in q['source_epoch_reviewed_head_proof']))
+        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==aid);self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][aid])
+        for prior_member,current_member in zip(q['prior_member_projections'],json.loads((DATA/'generated/member_projections.json').read_text())):
+            for prior in prior_member['actions']:
+                current=next(v for v in current_member['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set();self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
+        self.assertEqual(q['counts'],dict(reviewed=666,pending=10,cores=87,behavioral_propositions=145,episodes=75,multi_action_episodes=10));self.assertEqual(q['new_screening_completions'],0);self.assertEqual(q['new_claim_bindings'],8);self.assertEqual(q['source_mechanism_comparison_groups'],9);self.assertTrue(q['all70questions_partial_flags_and_Q68_Q70_preserved']);self.assertFalse(q['editorial_acceptance']);self.assertFalse(q['publication_authorized'])
+
+    def test_ten_source_families_stale_or_resealed_and_wrong_action_fail_closed(self):
+        a=copy.deepcopy(self.a);a['actions']=[copy.deepcopy(self.act)];a['blocked_episode_ids']=[];leg=self.q['legislative_actual_reading'][0];house=leg['text']
+        cases=[('govinfo:26usc6426-complete-2024-aviation257','rules similar to the rules of section 40B(f)','no registration rules'),('govinfo:26usc40B-complete-2024-aviation257','in the ordinary course of a trade or business','outside a trade or business'),('govinfo:pl117169-13203-aviation257','shall not apply to any sale or use after December 31, 2024','shall apply to all sales after December 31, 2024'),('govinfo:pl117169-13704-aviation257','after ``section 6426(k)(3)),','before ``section 6426(k)(3)),'),('govinfo:26usc6427-e-fuelpayment258','an amount is allowed as a credit under section 6426','an amount has actually been paid under section 6426'),('govinfo:26usc6427-i-k-fuelpayment258','without regard to clause (i)','without regard to clause (ii)'),('govinfo:26usc6427-reference-note-fuelpayment258','probably should be a reference to section 40B','was formally changed to section 40B'),('govinfo:26usc4101-complete-fuelpayment258','to reflect the probable intent of Congress','by a formal legislative correction'),(leg['source_id'],house,house.replace('December 31, 2031','December 31, 2025')),('govinfo:26usc45Z-complete-2024-manufacturing-fuel253','is registered as a producer of clean fuel under section 4101 at the time of production','may register at any time after production')]
+        for sid,old,new in cases:
+            for reseal in [False,True]:
+                cap=copy.deepcopy(self.cap);source=next(v for v in cap['sources'] if v['source_id']==sid);self.assertEqual(source['text'].count(old),1);source['text']=source['text'].replace(old,new,1)
+                if reseal:source['governed_bytes_sha256']=sealed_digest(source,'governed_bytes_sha256')
+                with self.assertRaises(ValueError):prepare(copy.deepcopy(a),cap,['F000477','M001184'])
+        a['actions'][0]['source_render_constraints'][-1]['action_ids']=['house:119:1:190']
         with self.assertRaises(ValueError):prepare(a,self.cap,['F000477','M001184'])
 
 
