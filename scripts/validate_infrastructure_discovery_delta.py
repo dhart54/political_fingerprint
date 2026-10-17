@@ -1,0 +1,49 @@
+"""Offline conservation/source/replay checks for bounded discovery-delta increments."""
+from __future__ import annotations
+import argparse,json,os,re,sys
+from collections import Counter
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from backend.app.semantic_ir.shared_corpus import digest,sealed_digest
+from scripts.prepare_shared_domain_candidate import prepare,readable_candidates,reproducibility_proof,review_text,validate_universe_proposal
+from scripts.validate_infrastructure_candidate_seed import assert_neutral,read,require
+CASES={8:dict(rolls=list(range(284,292)),new=[284,291],counts=dict(interpreted_substantive_directional=24,interpreted_substantive_non_directional=1,procedural_context=20,exact_action_ineligible=2,expressive_nonbinding=1,source_unresolved=625,pending_interpretation=3),pending=623)}
+def folder(n):return ROOT/f'docs/editorial/shared_candidates/house_119_infrastructure_batch{n}_20260916'
+def validate(n,values=None,*,check_files=True):
+    expected=CASES[n];data=folder(n);prior=folder(n-1);author,capture,universe,membership=values or [read(data/f'{k}.json') for k in ['authoring','sources','universe_proposal','membership_review']];validate_universe_proposal(universe,author,capture,membership)
+    old={k:read(prior/f'{k}.json') for k in ['authoring','sources','universe_proposal','membership_review']};ss={s['source_id']:s for s in capture['sources']};require(len(ss)==len(capture['sources']),'duplicate source identity')
+    for s in old['sources']['sources']:require(ss[s['source_id']]==s,'prior source changed')
+    for s in ss.values():require(sealed_digest(s,'governed_bytes_sha256')==s['governed_bytes_sha256'],'governed source bytes differ');require('unblock.federalregister.gov' not in s['url'] and 'Federal Register :: Request Access' not in s.get('text','') and 'Page Not Found' not in s.get('text',''),'rejected response became evidence')
+    ids={f'house:119:2:{r}' for r in expected['rolls']};new={f'house:119:2:{r}' for r in expected['new']};by={a['action_id']:a for a in author['actions']};require(set(by)=={a['action_id'] for a in old['authoring']['actions']}|new,'authored interpretation set differs')
+    for a in old['authoring']['actions']:require(by[a['action_id']]==a,'prior meaning/correction changed')
+    rows={r['action_id']:r for r in universe['candidate_dispositions']};prev={r['action_id']:r for r in old['universe_proposal']['candidate_dispositions']};fields=['action_id','session','roll','date','measure','question','member_action'];require(len(rows)==676 and [[r[k] for k in fields] for r in universe['candidate_dispositions']]==[[r[k] for k in fields] for r in old['universe_proposal']['candidate_dispositions']],'676identities/raw observations changed')
+    for aid,row in rows.items():
+        if aid not in ids:require(row==prev[aid],'prior/unexamined disposition changed')
+    counts=dict(Counter(r['disposition'] for r in rows.values()));require(counts==expected['counts'] and counts==universe['accounting']['counts'],'conservation differs');require(sum(r['unresolved_reason']=='pending_research' for r in rows.values())==expected['pending'],'ordinary pending count differs');acc=universe['accounting'];require(acc['action_ids_by_disposition']=={k:[r['action_id'] for r in universe['candidate_dispositions'] if r['disposition']==k] for k in counts},'accounting buckets differ')
+    for field,disp in [('directional_substantive_actions','interpreted_substantive_directional'),('non_directional_substantive_actions','interpreted_substantive_non_directional'),('procedural_context_actions','procedural_context'),('expressive_nonbinding_actions','expressive_nonbinding'),('exact_action_ineligible_actions','exact_action_ineligible')]:require(acc[field]==counts.get(disp,0),'aggregate accounting differs')
+    require(acc['substantive_eligible_actions']==acc['independent_episode_count']==len(by) and acc['unresolved_boundary_cases']==counts.get('source_unresolved',0)+counts.get('pending_interpretation',0),'aggregate readiness differs')
+    require(all(not universe[k] for k in ['full_record_claim','synthesis_eligible','full_issue_universe_closed','publication_authorized','publication_changes','production_writes','episode_acceptance_authorized','synthesis_authorized']) and universe['approval_receipt'] is None,'reserved authority changed')
+    records={r['action_id']:r for r in membership['records']};require(set(records)=={r['action_id'] for r in old['membership_review']['records']}|ids,'screened identity set differs')
+    for rec in old['membership_review']['records']:require(records[rec['action_id']]==rec,'prior membership/hold changed')
+    for aid in ids:
+        rec=records[aid];row=rows[aid];require(rec['disposition']==row['disposition'] and rec['rationale']==row['rationale'] and row['review_progress']['shared_review_record_sha256']==digest(rec),'membership binding differs');cl=ss['clerk:119:'+':'.join(aid.split(':')[2:])];require(cl['metadata']['vote-question']==row['question'],'exact question differs')
+        for ref in rec['sources']:require(all(ref[k]==ss[ref['source_id']][k] for k in ['url','raw_sha256','governed_bytes_sha256']),'membership source binding differs')
+        if aid not in new:require(row['episode_candidate_id'] is None and aid not in by,'screening became authored interpretation')
+    assert_neutral(author['actions']);assert_neutral(membership['records']);core,mapping,projections,inputs,result=prepare(author,capture,['F000477','M001184']);assert_neutral(core['actions']);assert_neutral(mapping['action_mappings']);readable=readable_candidates(author,core,projections,result);proof=reproducibility_proof(author,capture,['F000477','M001184'])
+    for member in result.compiled_ir['members']:require(member['coverage']['not_voting_actions']==(1 if member['member_id']=='F000477' else 4),'five inherited authored Not Voting changed')
+    require(read(data/'hr2189_taxonomy_recommendation.json')==read(prior/'hr2189_taxonomy_recommendation.json'),'unaccepted membership recommendation changed');require(read(data/'inherited_corrections_receipt.json')==read(prior/'inherited_corrections_receipt.json'),'inherited corrections changed')
+    # Incorporated report has nine recommendations; current webpage only lists four open.
+    if n==8:
+        report=ss['doj-oig:23-034-recommendations-infra8'];require([p['pdf_page'] for p in report['page_extracts']]==[35,36] and all(re.search(r'\b'+str(i)+r'\.\s',report['text']) for i in range(1,10)),'complete nine recommendation extent differs');require('EACH recommendation' in by['house:119:2:284']['meaning'] and '90days' in by['house:119:2:284']['meaning'],'incorporated report duty differs')
+        rcp=ss['house:rcp119-40-infra8']['text'];body=rcp[rcp.index('SECTION 1.'):rcp.index('◊')];body='\n'.join(re.sub(r'\d+$','',line) for line in body.splitlines());eh=ss['govinfo:hr9436eh']['text'];eh=eh[eh.index('SECTION 1.'):eh.index('Passed the')];norm=lambda t:re.sub('[^a-z0-9]','',t.lower());require(norm(body)==norm(eh),'complete RCP/EH body differs');require('EVERY2028' in by['house:119:2:291']['meaning'] and 'Subsection(b)' in by['house:119:2:291']['meaning'],'temporal baseline/exception lost')
+    products=dict(shared_action_core=core,shared_issue_mapping=mapping,member_projections=projections,compiler_input=inputs,compiled_ir=result.compiled_ir,readable_candidates=readable,reproducibility_proof=proof)
+    if check_files:
+        for k,v in products.items():require((data/'generated'/f'{k}.json').read_bytes()==(json.dumps(v,ensure_ascii=False,indent=2)+'\n').replace('\n',os.linesep).encode(),f'generated replay differs:{k}')
+        packet=(ROOT/f'docs/review_packets/infrastructure_candidate_batch{n}.md').read_text(encoding='utf-8');region=packet.split('<!-- GENERATED CANDIDATE START -->\n',1)[1].split('<!-- GENERATED CANDIDATE END -->',1)[0];require(region==review_text(author,core,projections,result,capture),'readable packet replay differs');receipt=read(data/'screening_receipt.json');require(receipt['expected_counts']==counts and not receipt['protected_targets_retried'] and not receipt['authority_conferred'],'screening receipt boundary differs')
+        for r in receipt['reused_sources']+receipt['new_sources']:require(r['source_object_sha256']==digest(ss[r['source_id']]),'source reuse hash differs')
+    return dict(batch=n,identity_count=676,new_screened=len(ids),new_meanings=len(new),combined_meanings=len(by),counts=counts,ordinary_pending_screenings=expected['pending'],source_count=len(ss),core_sha256=core['corpus_sha256'],compiled_sha256=digest(result.compiled_ir),member_neutral_authoring_and_generated=True,five_authored_not_voting_preserved=True,prior_boundaries_corrections_preserved=True,generated_replay=check_files,independent_review='pending',full_record_claim=False,publication_authorized=False,production_writes=False)
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--batch',type=int,required=True);p.add_argument('--receipt',type=Path);a=p.parse_args();r=validate(a.batch)
+    if a.receipt:a.receipt.write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps(r))
+if __name__=='__main__':main()

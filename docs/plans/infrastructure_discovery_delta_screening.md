@@ -48,3 +48,5 @@ seven semantic checks passed; measured validation processes0.750+5.040+2.179
 05:12:18-05:16:45(4m27wall)includes source reading/authoring and brief targeted
 checks; approximately4minutes useful owner work. Later31research continues during
 delivery; campaign timing is tracked without treating parallel reading as idle.
+
+Batch8complete: later284-291screened,2new meanings(S307nine incorporated OIG recommendations including database changes;HR9436each-place timetable extension),3procedures,1venue exclusion,1expression and1ordinary unfinishedHR6500package.25meanings,20procedures,2exclusions,1expression,2sourceholds,3packages,623unscreened=676.48focused tests and7semantic checks pass; measured validation0.826+6.043+2.000=8.869s.136prior files unchanged;56generated LF blobs replayed. Owner research/authoring05:19:35-05:27:42(~8m07wall, approximately7m50useful, remainder routine checks/source capture/delivery overlap). Two successful official PDF captures; no restricted target retried. Next292-299.
