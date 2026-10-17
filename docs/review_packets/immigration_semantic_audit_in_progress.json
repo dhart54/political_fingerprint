@@ -10091,12 +10091,17 @@
         }
       ],
       "authoring_action_sha256": "ab2b169b4a67082deaf8ace956d9914de1cda50e30110c97aaf6be62840328d1",
-      "corrected_authoring_action_sha256": "ab2b169b4a67082deaf8ace956d9914de1cda50e30110c97aaf6be62840328d1",
-      "current_action_core_sha256": "34fc1a9e371637ffeeabdb739b1eb83d86044d74517527a53df07d23ea5d8d0b",
+      "corrected_authoring_action_sha256": "05517a9838f82990a9b2184c0fdbf99552867fc7af671a3e2c5ada398784b493",
+      "current_action_core_sha256": "d84ef0e00d55c0c209ca2bd03a5b2cd80a111e30603f14c06971ee81be9e46a2",
       "membership_review_record_sha256": "97a53f542e0b5b07cfcff4f328e331c925fd71241af6db482db0a4f5efb247f8",
       "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/divisionA_correction_checkpoint215.json",
       "source_qualification_receipt_sha256": "d4c49a30eb217ec5cdbefbacd43712d167a565005202c8a2720e376b02a530fa",
-      "independent_review_pending": true
+      "independent_review_pending": true,
+      "member_neutrality_correction_checkpoint260": {
+        "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/shared_member_neutrality_correction_checkpoint260.json",
+        "receipt_sha256": "39afd390b2d00fb587a0d2a561988ebaa205e8bfb3aa8e88e9a32dc64b5740a9",
+        "owner_correction_pending_independent_review": true
+      }
     },
     {
       "action_id": "house:119:2:6",
@@ -11086,14 +11091,19 @@
         }
       ],
       "authoring_action_sha256": "e0ac75e811e651c1450ace50d9d1b3b5f6a8329dde5d3eb5eda789b78b15098f",
-      "corrected_authoring_action_sha256": "0bbb70b6f4ef682c1d7a30c09892854fc2d1bc0f5ac3984b889967290eb5d978",
-      "current_action_core_sha256": "9aaafa3bf48bd5f96dabe3874ce4bb26e8c606043491a1b09af8885a280a4416",
+      "corrected_authoring_action_sha256": "1e93074b9e17704783987a57c1cb1141176d631a05f43b3d32be0332af831f41",
+      "current_action_core_sha256": "d279fcbfe7a1dfebcca79714d14e30f8a34e419eda8d567359916b8c0ea5a84a",
       "membership_review_record_sha256": "d5db592f075272a636fcf4a2fe99931b9313a7f8cb2cd6b1c5f5d364c7069c99",
       "source_qualification_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr4553_meaning_qualification_checkpoint218.json",
       "source_qualification_receipt_sha256": "bf7f020573d7122e77878bca3c2b723a6172622a37fdc1bb7979bd4f2a9196ed",
       "independent_review_pending": true,
       "member_neutrality_fix": "Named vote-change detail stays in governed sources and member projections; shared meaning uses neutral final observations.",
-      "Dakota_provenance_repaired218": true
+      "Dakota_provenance_repaired218": true,
+      "member_neutrality_correction_checkpoint260": {
+        "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/shared_member_neutrality_correction_checkpoint260.json",
+        "receipt_sha256": "39afd390b2d00fb587a0d2a561988ebaa205e8bfb3aa8e88e9a32dc64b5740a9",
+        "owner_correction_pending_independent_review": true
+      }
     },
     {
       "action_id": "house:119:1:239",
@@ -40082,5 +40092,10 @@
     "new_screening_completions": 0,
     "component_flags_cleared": false,
     "review_pending": true
+  },
+  "shared_member_neutrality_correction_checkpoint260": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/shared_member_neutrality_correction_checkpoint260.json",
+    "receipt_sha256": "39afd390b2d00fb587a0d2a561988ebaa205e8bfb3aa8e88e9a32dc64b5740a9",
+    "owner_validation_not_independent_acceptance": true
   }
 }

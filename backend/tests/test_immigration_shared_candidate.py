@@ -4872,7 +4872,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             self._assert_HR4553_section108_direct_rule(core)
 
     def test_funding_shared_prose_excludes_joined_member_name_tokens(self):
-        for aid in ['house:119:1:239', 'house:119:2:6', 'house:119:2:7']:
+        for aid in ['house:119:1:239', 'house:119:2:5', 'house:119:2:6', 'house:119:2:7']:
             action = next(r for r in self.values[0]['actions'] if r['action_id'] == aid)
             prose = json.dumps([action[key] for key in ['short_description', 'compact_description',
                 'meaning', 'limitations', 'choice_meanings']])
@@ -4882,7 +4882,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         for action in self.values[0]['actions']:
             prose = json.dumps([action[key] for key in ['short_description', 'compact_description',
                 'meaning', 'limitations', 'choice_meanings']])
-            self.assertIsNone(re.search(r'\b(?:Foushee|Massie|F000477|M001184)\b', prose))
+            self.assertIsNone(re.search(r'Foushee|Massie|F000477|M001184|\bboth members\b', prose, re.IGNORECASE))
 
     def test_laken_parallel_bills_preserve_their_distinct_versions_and_episodes(self):
         author = {a['action_id']: a for a in self.values[0]['actions']}
@@ -8100,7 +8100,7 @@ class Checkpoint259HouseFuelBaselineTests(unittest.TestCase):
         self.assertGreaterEqual(len(q['source_epoch_reviewed_head_proof']),5)
         self.assertTrue(all(r['only_target_status_carrier_unchanged'] for r in q['source_epoch_reviewed_head_proof']))
         core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==aid);self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][aid])
-        for prior_member,current_member in zip(q['prior_member_projections'],json.loads((DATA/'generated/member_projections.json').read_text())):
+        for prior_member,current_member in zip(q['prior_member_projections'],json.loads((DATA/'shared_member_neutrality_correction_checkpoint260.json').read_text())['prior_member_projections']):
             for prior in prior_member['actions']:
                 current=next(v for v in current_member['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set();self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
         self.assertEqual(q['counts'],dict(reviewed=666,pending=10,cores=87,behavioral_propositions=145,episodes=75,multi_action_episodes=10));self.assertEqual(q['new_screening_completions'],0);self.assertEqual(q['new_claim_bindings'],8);self.assertEqual(q['source_mechanism_comparison_groups'],9);self.assertTrue(q['all70questions_partial_flags_and_Q68_Q70_preserved']);self.assertFalse(q['editorial_acceptance']);self.assertFalse(q['publication_authorized'])
@@ -8116,6 +8116,88 @@ class Checkpoint259HouseFuelBaselineTests(unittest.TestCase):
         a['actions'][0]['source_render_constraints'][-1]['action_ids']=['house:119:1:190']
         with self.assertRaises(ValueError):prepare(a,self.cap,['F000477','M001184'])
 
+
+
+class Checkpoint260SharedMemberNeutralityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q = json.loads((DATA / 'shared_member_neutrality_correction_checkpoint260.json').read_text(encoding='utf-8'))
+        cls.author = json.loads((DATA / 'authoring.json').read_text(encoding='utf-8'))
+        cls.core = json.loads((DATA / 'generated/shared_action_core.json').read_text(encoding='utf-8'))
+
+    def assert_member_neutral(self, text):
+        # Joined name/status tokens lack a trailing word boundary (FousheeYea).
+        self.assertIsNone(re.search(r'Foushee|Massie|F000477|M001184|\bboth members\b', text, re.IGNORECASE))
+
+    def test_negative_regression_detects_joined_names_and_review_pair_in_preserved_preimages(self):
+        for fix in self.q['fixes']:
+            with self.subTest(action=fix['action_id']):
+                before = self.q['prior_authoring'][fix['action_id']]['meaning']
+                self.assertIn(fix['before'], before)
+                with self.assertRaises(AssertionError):
+                    self.assert_member_neutral(before)
+                with self.assertRaises(AssertionError):
+                    self.assert_member_neutral(fix['before'])
+
+    def test_exact_two_replacements_and_successor_references_only(self):
+        for fix in self.q['fixes']:
+            aid = fix['action_id']
+            before = self.q['prior_authoring'][aid]
+            after = next(a for a in self.author['actions'] if a['action_id'] == aid)
+            self.assertEqual(before['meaning'].count(fix['before']), 1)
+            self.assertEqual(after['meaning'], before['meaning'].replace(fix['before'], fix['after'], 1))
+            self.assertEqual({k:v for k,v in before.items() if k not in {'meaning', 'shared_core_reuse'}},
+                             {k:v for k,v in after.items() if k not in {'meaning', 'shared_core_reuse'}})
+            self.assertEqual(digest(after), self.q['current_authoring_sha256'][aid])
+            self.assert_member_neutral(after['meaning'])
+
+    def test_all_current_shared_prose_excludes_both_witnessed_defect_classes(self):
+        for action in self.author['actions']:
+            prose = json.dumps([action[k] for k in ['meaning', 'short_description', 'compact_description', 'limitations', 'choice_meanings']])
+            with self.subTest(action=action['action_id']):
+                self.assert_member_neutral(prose)
+        for core in self.core['actions']:
+            self.assert_member_neutral(core['candidate_exact_action_meaning'])
+            self.assert_member_neutral(core['mechanism'])
+
+    def test_successor_preserves_sources_choices_and_original_core_preimages(self):
+        proposal = json.loads((DATA.parents[3] / self.q['successor_proposal_ref']).read_text(encoding='utf-8'))
+        self.assertEqual(proposal['corpus_sha256'], digest(proposal['actions']))
+        self.assertFalse(proposal['authoritative_for_new_editorial_work'])
+        self.assertEqual(proposal['review_state'], 'candidate_pending_external_semantic_review')
+        for fix in self.q['fixes']:
+            aid = fix['action_id']; before = self.q['prior_cores'][aid]
+            after = next(a for a in proposal['actions'] if a['action_id'] == aid)
+            self.assertEqual(after, next(a for a in self.core['actions'] if a['action_id'] == aid))
+            self.assertEqual(after['action_core_sha256'], sealed_digest(after, 'action_core_sha256'))
+            self.assertEqual({k:v for k,v in before.items() if k not in {'mechanism', 'candidate_exact_action_meaning', 'action_core_sha256'}},
+                             {k:v for k,v in after.items() if k not in {'mechanism', 'candidate_exact_action_meaning', 'action_core_sha256'}})
+            self.assertEqual(after['candidate_exact_action_meaning'], after['mechanism'])
+
+    def test_all_member_observations_and_entire_proposition_graphs_preserved(self):
+        projections = json.loads((DATA / 'generated/member_projections.json').read_text(encoding='utf-8'))
+        self.assertEqual(sum(len(p['actions']) for p in projections), 174)
+        for old, new in zip(self.q['prior_member_projections'], projections):
+            self.assertEqual(old['member_id'], new['member_id'])
+            for before, after in zip(old['actions'], new['actions']):
+                omit = {'action_core_sha256'} if before['action_id'] in self.q['actions'] else set()
+                self.assertEqual({k:v for k,v in before.items() if k not in omit},
+                                 {k:v for k,v in after.items() if k not in omit})
+        ir = json.loads((DATA / 'generated/compiled_ir.json').read_text(encoding='utf-8'))
+        self.assertEqual({m['member_id']:digest(m['proposition_graph']) for m in ir['members']}, self.q['prior_proposition_graph_sha256'])
+
+    def test_defect_receipt_and_protected_historical_artifacts_remain_sealed(self):
+        self.assertEqual(self.q['receipt_sha256'], sealed_digest(self.q, 'receipt_sha256'))
+        self.assertEqual(self.q['base_head'], '676ae9e54ecd1192202567738b423ea42b5513c5')
+        for relative, expected in self.q['protected_json_sha256'].items():
+            content = json.loads((DATA.parents[3] / relative).read_text(encoding='utf-8'))
+            self.assertEqual(digest(content), expected)
+        self.assertTrue(self.q['independent_review_pending'])
+        self.assertFalse(self.q['editorial_acceptance'])
+        self.assertFalse(self.q['publication_authorized'])
+        self.assertFalse(self.q['production_writes'])
+        self.assertEqual(self.q['new_sources'], 0)
+        self.assertEqual(self.q['new_screening_completions'], 0)
 
 if __name__ == '__main__':
     unittest.main()
