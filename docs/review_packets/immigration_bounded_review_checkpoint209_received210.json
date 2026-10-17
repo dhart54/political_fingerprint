@@ -1,0 +1,61 @@
+{
+  "checkpoint_reviewed": 209,
+  "received_in_checkpoint": 210,
+  "source": "Direct parent delegated independent review return; full raw reviewer transcript not provided",
+  "received_utc": "2026-10-12T01:47:54.337814+00:00",
+  "source_finding": {
+    "severity": "P2",
+    "action_id": "house:119:2:198",
+    "issue": "Qualification omitted existing governed45CFR98.20(c)/98.68 child-only/parent-information and existing-plan baseline",
+    "literal_extents": {
+      "section9820": [
+        0,
+        3103
+      ],
+      "subsection_c": [
+        2398,
+        3029
+      ],
+      "section9868": [
+        0,
+        2064
+      ],
+      "histories": [
+        [
+          0,
+          676
+        ],
+        [
+          0,
+          391
+        ]
+      ]
+    },
+    "all21_relevant_source_seals_independently_recomputed": true,
+    "no_second_source_finding": true
+  },
+  "reported_checks": {
+    "conservation": 52,
+    "exact_replays": 14,
+    "freshCI_jobs": 9
+  },
+  "checks_do_not_override_source_P2": true,
+  "correction": {
+    "provider_path": "docs/editorial/shared_candidates/house_119_ccdf_qualification_checkpoint210/shared_action_core_proposal.json",
+    "current_core_sha256": "9c3b8944733b2af3b5b1e8469b84bd6ffbab7eea876d9c1a52224d2055f3a427",
+    "independent_review_pending": true
+  },
+  "queue_review": {
+    "unique_pending": 54,
+    "routine": 29,
+    "material_or_access": 21,
+    "source_conflicts": 3,
+    "legal_application": 1,
+    "only_UN245_evidence_unavailable": true,
+    "other20_material_holds_not_automatically_blocked": true
+  },
+  "CI_workflow_qualification": "209 hosted run uses synthetic workflow with PR217 TCP readiness fix even when checkout is feature209;209 feature-tree backend workflow itself still contains old socket probes. No main integration into Immigration.",
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "receipt_sha256": "eb9cebd4ae90063833a9a7400d13af2e5b4ccba79f1eba50c42ecda3616f2eee"
+}

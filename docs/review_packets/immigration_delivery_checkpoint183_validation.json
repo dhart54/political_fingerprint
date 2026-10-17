@@ -1,0 +1,112 @@
+{
+  "checkpoint": 183,
+  "base_head": "919c38a4650f254a30d969defe90c971afb06d7d",
+  "candidate_receipt_sha256": "667d286ef4090ac6356bc730046212aad43b4c4ef0bc0d58c80baf49784539d7",
+  "focused_tests": {
+    "passed": 198,
+    "seconds": 17.734,
+    "log": ".tmp/tests183-final.log"
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4,
+    "semantic_acceptance": false
+  },
+  "preservation": {
+    "literal_claim_checks": 10,
+    "raw_replays": [
+      {
+        "source_id": "govinfo:hhs-fr1998-ccdf-III-IV-183",
+        "raw_sha256": "c81abfa3d605279162af4d57c56522f490a71cb66c7917640af7d450e35748ad",
+        "raw_hash_verified": true,
+        "exact_parent_text_replay": true,
+        "exact_derivative": true,
+        "whole_parent_human_read": false
+      },
+      {
+        "source_id": "govinfo:hhs-fr2025-ccdf-III-IV-183",
+        "raw_sha256": "804cb3354e4cf3c515411355c08c430f666c1e031bf1fe5b9bca7adac1e89c1d",
+        "raw_hash_verified": true,
+        "exact_parent_text_replay": true,
+        "exact_derivative": true,
+        "whole_parent_human_read": false
+      }
+    ],
+    "source_derivative_checks": 2,
+    "unchanged_authoring_and_all602_membership_records": true,
+    "prior_sources": 676,
+    "current_sources": 2075,
+    "prior_registrations": 962,
+    "current_registrations": 964,
+    "prior_private_aliases": 1017,
+    "unchanged_health_canonical_corpus_and182_candidate_core_files": 23,
+    "unchanged_semantic_products": [
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json"
+    ],
+    "only_universe_row_changed": [
+      "house:119:2:198"
+    ],
+    "no_new_shared_meaning": true,
+    "no_compiled_proposition_or_counting_change": true,
+    "rejected_private_requests": 4,
+    "counts": {
+      "reviewed": 602,
+      "pending": 74,
+      "ordinary_unscreened": 57,
+      "researched_holds": 17,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    }
+  },
+  "literal_claim_checks": 10,
+  "raw_parent_text_replays": 2,
+  "source_derivative_checks": 2,
+  "own_bill_identity_check": true,
+  "source_reading_scope": "Complete1998III/IV and2025III/IV only; full captured parents not human-read",
+  "rejected_empty_or403_requests": 4,
+  "unchanged_semantic_products": 6,
+  "byte_exact_generated_replays": 7,
+  "no_new_shared_meanings": true,
+  "no_compiled_proposition_or_counting_change": true,
+  "counts": {
+    "reviewed": 602,
+    "pending": 74,
+    "ordinary_unscreened": 57,
+    "researched_holds": 17,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "timing": {
+    "checkpoint": 183,
+    "base_head": "919c38a4650f254a30d969defe90c971afb06d7d",
+    "started_utc": "2026-10-09T22:08:36.326869+00:00",
+    "attempted_action_ids": [
+      "house:119:2:198"
+    ],
+    "scope": "Existing held childcare eligibility-verification/HHS source chain; no benchmark scaling.",
+    "measurement_limitations": "Prior source-lead lookup not timed; held-source research cannot establish a comparable routine average.",
+    "special_benchmark_round": false,
+    "source_review_and_authoring_utc": "2026-10-09T22:14:21.400487+00:00",
+    "source_review_and_authoring_seconds": 345.073618,
+    "completed_functional_screenings": 0,
+    "routine_average_inferred": false,
+    "local_validation_utc": "2026-10-09T22:17:29.830909+00:00",
+    "local_validation_endpoint_seconds": 533.50404
+  },
+  "performance_status": "FAIL;781.087seconds per prior comparable completion, no new routine average",
+  "independent183_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "fd5b232732f63c3e76a0bed7e9e321b084e7a6c6e7dd7c94b49bba745f304ffc"
+}

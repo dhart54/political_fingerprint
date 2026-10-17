@@ -1,0 +1,457 @@
+{
+  "checkpoint": 181,
+  "base_head": "b52fddb7bf59284d69cb0dafbc9ebf140c144243",
+  "candidate_receipt_sha256": "6d4ea4a170a03892ec0b40447f71730cc2acb6e32b96eb2e839de3b752ac2568",
+  "focused_tests": {
+    "passed": 192,
+    "seconds": 17.38
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": "12 accepted,4 accepted-held,4 held mechanical references; no candidate acceptance",
+  "preservation": {
+    "claims": 36,
+    "derivatives": 32,
+    "clerk": [
+      {
+        "source_id": "clerk:119:1:320",
+        "fresh_raw_sha256": "899d6da1204573bd6c924a898841ec0baa316642f6e459013a3543ddba501d08",
+        "canonical_raw_sha256": "899d6da1204573bd6c924a898841ec0baa316642f6e459013a3543ddba501d08",
+        "raw_bytes_identical": true,
+        "metadata_members_party_totals_equal": true,
+        "canonical_alias_unchanged": true,
+        "official_labels": {
+          "F000477": "Nay",
+          "M001184": "Nay"
+        }
+      },
+      {
+        "source_id": "clerk:119:2:142",
+        "fresh_raw_sha256": "039ece5b04253ee6ff0d7d7cb9e08096529e09daabe78f39d18de3ea3dbd11c7",
+        "canonical_raw_sha256": "039ece5b04253ee6ff0d7d7cb9e08096529e09daabe78f39d18de3ea3dbd11c7",
+        "raw_bytes_identical": true,
+        "metadata_members_party_totals_equal": true,
+        "canonical_alias_unchanged": true,
+        "official_labels": {
+          "F000477": "Nay",
+          "M001184": "Nay"
+        }
+      },
+      {
+        "source_id": "clerk:119:2:188",
+        "fresh_raw_sha256": "9d45b832d5380ca3400ecc465f933d45f88130eb67f92f7c9dd9cb4833390c03",
+        "canonical_raw_sha256": "9d45b832d5380ca3400ecc465f933d45f88130eb67f92f7c9dd9cb4833390c03",
+        "raw_bytes_identical": true,
+        "metadata_members_party_totals_equal": true,
+        "canonical_alias_unchanged": true,
+        "official_labels": {
+          "F000477": "Nay",
+          "M001184": "Not Voting"
+        }
+      },
+      {
+        "source_id": "clerk:119:2:198",
+        "fresh_raw_sha256": "bbf66a422d855560180d71fa028542a574621d257431cba60c9c865bfffbf494",
+        "canonical_raw_sha256": "79d58d074cfd005d11a9fd6d9407df9f76a5ed4786df71be6bae39a6459c6a2c",
+        "raw_bytes_identical": false,
+        "metadata_members_party_totals_equal": true,
+        "canonical_alias_unchanged": true,
+        "official_labels": {
+          "F000477": "Nay",
+          "M001184": "Yea"
+        }
+      },
+      {
+        "source_id": "clerk:119:2:250",
+        "fresh_raw_sha256": "c5e69e108cadea75642b16e95781f0511b7b68546a1fdc57ab3f7a5ebb4ae534",
+        "canonical_raw_sha256": "d9a6589ed874ef64763f312a402abdae4bb9077365646754385b0af716b687f7",
+        "raw_bytes_identical": false,
+        "metadata_members_party_totals_equal": true,
+        "canonical_alias_unchanged": true,
+        "official_labels": {
+          "F000477": "Yea",
+          "M001184": "Not Voting"
+        }
+      }
+    ],
+    "changed": [
+      "house:119:1:320",
+      "house:119:2:142",
+      "house:119:2:188",
+      "house:119:2:198",
+      "house:119:2:250"
+    ],
+    "health": 13,
+    "prior_sources": 2017,
+    "prior_reviews": 600,
+    "prior_registrations": 905,
+    "prior_private_aliases": 966,
+    "current_sources": 2053,
+    "current_registrations": 942,
+    "counts": {
+      "reviewed": 602,
+      "pending": 74,
+      "ordinary_unscreened": 59,
+      "researched_holds": 15,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    }
+  },
+  "raw_replays": [
+    {
+      "key": "clerk:119:1:320",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5962
+    },
+    {
+      "key": "clerk:119:2:142",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5756
+    },
+    {
+      "key": "clerk:119:2:188",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5790
+    },
+    {
+      "key": "clerk:119:2:198",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5758
+    },
+    {
+      "key": "clerk:119:2:250",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5974
+    },
+    {
+      "key": "hr1329rh",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 12648
+    },
+    {
+      "key": "record1210",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 4746247
+    },
+    {
+      "key": "record0429",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 1603550
+    },
+    {
+      "key": "record0521",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 470035
+    },
+    {
+      "key": "record0603",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 468232
+    },
+    {
+      "key": "record0720",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 447603
+    },
+    {
+      "key": "50usc1801",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 40625
+    },
+    {
+      "key": "50usc1881",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5978
+    },
+    {
+      "key": "50usc1881a",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 59407
+    },
+    {
+      "key": "42usc280m",
+      "raw_hash_verified": true,
+      "rejected_response": true,
+      "governed_as_evidence": false
+    },
+    {
+      "key": "42usc300k",
+      "raw_hash_verified": true,
+      "rejected_response": true,
+      "governed_as_evidence": false
+    },
+    {
+      "key": "42usc300m",
+      "raw_hash_verified": true,
+      "rejected_response": true,
+      "governed_as_evidence": false
+    },
+    {
+      "key": "42usc300n4",
+      "raw_hash_verified": true,
+      "rejected_response": true,
+      "governed_as_evidence": false
+    },
+    {
+      "key": "42usc300n5",
+      "raw_hash_verified": true,
+      "rejected_response": true,
+      "governed_as_evidence": false
+    },
+    {
+      "key": "42usc9858c",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 53656
+    },
+    {
+      "key": "42usc9858g",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 10272
+    },
+    {
+      "key": "42usc9858h",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 3147
+    },
+    {
+      "key": "42usc9858i",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 11777
+    },
+    {
+      "key": "42usc280m-correct",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 7905
+    },
+    {
+      "key": "42usc300k-correct",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 9272
+    },
+    {
+      "key": "42usc300m-correct",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 14560
+    },
+    {
+      "key": "42usc300n4-correct",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 4844
+    },
+    {
+      "key": "42usc300n5-correct",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 3088
+    },
+    {
+      "key": "20usc80t-1-gpo",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 1629
+    },
+    {
+      "key": "20usc80t-2-gpo",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 7006
+    },
+    {
+      "key": "20usc80t-5-gpo",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 4360
+    },
+    {
+      "key": "20usc80t-6-gpo",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 1467
+    },
+    {
+      "key": "40usc8902",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5164
+    },
+    {
+      "key": "25usc1603",
+      "raw_hash_verified": true,
+      "rejected_response": true,
+      "governed_as_evidence": false
+    },
+    {
+      "key": "42usc300n",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 6041
+    },
+    {
+      "key": "42usc300n1",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 3073
+    },
+    {
+      "key": "8usc1642",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5046
+    },
+    {
+      "key": "42usc1766",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 131056
+    },
+    {
+      "key": "25usc5304",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 8667
+    },
+    {
+      "key": "25usc1603-parent",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 666336
+    }
+  ],
+  "exact_source_sequence_checks": 5,
+  "unchanged_semantic_products": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "byte_exact_generated_replays": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "reproducibility_proof.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "source_replay_checks": 32,
+  "literal_claim_checks": 36,
+  "no_new_shared_meanings": true,
+  "no_new_compiled_propositions": true,
+  "no_counting_changes": true,
+  "qualified_actions_held": 3,
+  "existing_shared_core_references_preserved": 2,
+  "parked247_preserved": true,
+  "shutdown_file_preserved": true,
+  "counts": {
+    "reviewed": 602,
+    "pending": 74,
+    "ordinary_unscreened": 59,
+    "researched_holds": 15,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "timing": {
+    "checkpoint": 181,
+    "base_head": "b52fddb7bf59284d69cb0dafbc9ebf140c144243",
+    "started_utc": "2026-10-09T21:03:11.937105+00:00",
+    "attempted_action_ids": [
+      "house:119:1:320",
+      "house:119:2:142",
+      "house:119:2:188",
+      "house:119:2:198",
+      "house:119:2:250"
+    ],
+    "scope": "Services/civilian-agency qualification screening; exact package and changed personal baseline first, no special benchmark round.",
+    "special_benchmark_round": false,
+    "parallel_agents": false,
+    "no_overlap_subtraction": true,
+    "source_review_and_authoring_utc": "2026-10-09T21:25:47.266092+00:00",
+    "source_review_and_authoring_seconds": 1355.328987,
+    "completed_action_ids": [
+      "house:119:2:188",
+      "house:119:2:250"
+    ],
+    "qualified_held_actions": 3,
+    "no_routine_average_inferred": true,
+    "local_validation_utc": "2026-10-09T21:33:26.147285+00:00",
+    "local_validation_endpoint_seconds": 1814.21018,
+    "focused_tests": 192,
+    "focused_tests_seconds": 17.38,
+    "earlier_focused_run_seconds": 17.356,
+    "semantic_checks": 7,
+    "source_scope_correction": "NDAA introduction extended to the complete already-read eight-division declaration; final focused suite, preparation and replay repeated after this bounded source-only enrichment.",
+    "invocation_corrections": [
+      "Private author end marker failed before any canonical write; corrected exact next-Speaker body boundary.",
+      "Initial local patch helper could not write; approved PC shell used.",
+      "One bounded read orchestration yielded without output and was terminated; successful smaller reads covered all declared extents."
+    ],
+    "phase_accounting": "Joint actual timestamps, source fixes/local validation included after initial authoring endpoint; no reconstructed per-action phase times or overlap subtraction.",
+    "performance_status": "Prior comparable functional benchmark FAIL remains781.087seconds per completion; no new routine average inferred from two completions and three held attempts.",
+    "measurement_limitations": "Timer began immediately after the initial fixed-five queue inventory. That preceding inventory query and per-action phase intervals were not contemporaneously timed; reported interval is a lower bound for complete increment wall time, not a comparable routine-cycle average."
+  },
+  "independent_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "f5c31b55228795bde0311aae1eece6bd0edce60674076263f39a3cdee0888ab8"
+}

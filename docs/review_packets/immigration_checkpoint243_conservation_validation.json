@@ -1,0 +1,390 @@
+{
+  "checkpoint": 243,
+  "base_head": "35164fc36ffa4ea2690266e9e3c9b33bb668e586",
+  "receipt_completed_utc": "2026-10-15T23:24:13.081416+00:00",
+  "counts": {
+    "reviewed": 665,
+    "pending": 11,
+    "cores": 86,
+    "behavioral_propositions": 143,
+    "episodes": 74,
+    "multi_action_episodes": 10
+  },
+  "completed_screening_action_ids": [
+    "house:119:1:320"
+  ],
+  "complex_screening_actions_completed": 1,
+  "ordinary_routine_samples": 0,
+  "qualification_receipt_sha256": "7ef6da804c9b1c341b898c6419e8bc2ca95b912a6046404078a12f75adc60b63",
+  "qualified_core_sha256": "a621880299551dde365a697894c415cd743a2c1860567979bcee70cbec4b7801",
+  "original_Health_core_sha256": "394f6c11ce49442e2c72de353ba27f7b38078f2447f17c22caf80de471734550",
+  "validation": {
+    "required_final_fixed_input_gate": {
+      "started_utc": "2026-10-15T23:08:59.887970+00:00",
+      "completed_utc": "2026-10-15T23:23:20.673168+00:00",
+      "wall_seconds": 860.8125344000291,
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-15T23:08:59.888472+00:00",
+          "PID": 22952,
+          "completed_utc": "2026-10-15T23:23:20.667561+00:00",
+          "elapsed_seconds": 860.8064478999586,
+          "exit_code": 0,
+          "log": ".tmp/full_gate243/owner.log",
+          "log_sha256": "1616839aa917d9933d941cebdbdbe09a763dd846e4b6e53938f75bbbd2291dfe"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate243\\replay"
+          ],
+          "started_utc": "2026-10-15T23:08:59.889215+00:00",
+          "PID": 15644,
+          "completed_utc": "2026-10-15T23:11:36.431002+00:00",
+          "elapsed_seconds": 156.54764720000094,
+          "exit_code": 0,
+          "log": ".tmp/full_gate243/replay.log",
+          "log_sha256": "9916a9ad0e51b68b2ee030b4e2bb326db926ac0047f474948e55f60ec1bacb19",
+          "byte_exact_outputs": 7
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-15T23:08:59.888850+00:00",
+          "PID": 12644,
+          "completed_utc": "2026-10-15T23:08:59.967972+00:00",
+          "elapsed_seconds": 0.07912569999461994,
+          "exit_code": 0,
+          "log": ".tmp/full_gate243/IR.log",
+          "log_sha256": "5f7af870c30fa9344ad6e3bac3b3239624114f7906d9833d44e5520890ce8687"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-15T23:08:59.888620+00:00",
+          "PID": 28112,
+          "completed_utc": "2026-10-15T23:09:01.980270+00:00",
+          "elapsed_seconds": 2.091732300003059,
+          "exit_code": 0,
+          "log": ".tmp/full_gate243/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "217ea26bbf40acaeab8aa8e3ab6898002f259daefe2e92066bb11411a4070027",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "62d72bcd1bac3f8a975c1c45f91958ad7bcec3314097943c854bba007cbdc2a0",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "a2eb2b0ec590f42c74558ea1d3e95c6e1761879b15e899782edc38d5e4a063c1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "669535d0f9bf7267da0270fe42f0596c886af10af22afa625b9d1a619fb01e20",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "352ea48fd4ce518cf19a7aacea1371f6971e96d9c85b1b7cded5a2a95a67d5a8",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "a1896d39cd7f672b388160ec3040756b37306451f63517b604ecaa16d8680e23",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "4466df8b2b854b5dbc89e19b032315692d488e2b7820fa6ff38c41ddd1f525c5",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "3672f0c8b9cf7b8d52f58894592b12fb0c1b970764a72ab47c2205304f79c4cf",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "c4528662693729ce3444f48b3e2ca1fe0b59ff23d5d06d55173ec549d43121ec",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "dfe8ac459bedc655f27c9e29b66696b20dd81b43c2abc518db635b8510f85ee1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "37d8b8fe977bd83f68cea95764ca2935c60e192fa8cb8d830b95bc3cb2e251c2",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "183daf2eb97a1e752845f278d20c102f26f57876985bc9464da1145709e2012a",
+        "backend/tests/test_immigration_shared_candidate.py": "5577fc5cfd04d18d017cc885d345b231a630342ab6b393aad586481b1eb0f1e8",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "22062fb1feea1c7182ef3921a83f9655d9813e39bc1a2f5f6c996ed7cdf1d02e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/december_defense_qualification_checkpoint243.json": "979c4b849717c3dfa3647e40bd816d264573e4fb815909492f56c0d3598c4107",
+        "docs/plans/immigration_checkpoint243_december_defense.md": "f26aefbfb9d3d3a672cfdcc03994bd54f5c1e070d0821be1ecb6ba6d2501fd05",
+        "docs/editorial/shared_candidates/house_119_december_defense_qualification_checkpoint243/shared_action_core_proposal.json": "9c9a76fa4cebd9ebc6e31d882a2496feef1aaca8209f8387684803f854345fdd",
+        "docs/editorial/shared_candidates/house_119_december_defense_qualification_checkpoint243/README.md": "5d6ebf061808d0378461ea8ecbd086172472af2695dd710ea4fd5fc7ec1b3c2c",
+        "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/pet_scope_qualification_checkpoint242.json": "6c57015a4636859fbb1a67ec77a9bbf01dbe116a2d51ac7bef83aa06c8102e88",
+        "docs/editorial/shared_candidates/house_119_pet_scope_qualification_checkpoint242/shared_action_core_proposal.json": "a96fc5ca7ff1c0f269f20debb286ceb84d770464b00dfcffaca1e48f5e0e6920"
+      },
+      "input_hashes_unchanged": true
+    },
+    "owner_tests": 478,
+    "Immigration_tests": 301,
+    "semantic_checks": 7,
+    "IR_passed": true,
+    "actual_CLI_outputs_byte_exact": 7,
+    "full_gate_launches": 1,
+    "completed_passed_final_gates": 1,
+    "focused": {
+      "test_class": "Checkpoint243DecemberDefenseQualificationTests",
+      "tests": 5,
+      "unittest_seconds": 1.761,
+      "command_seconds": 2.1711487,
+      "all_passed": true
+    },
+    "private_source_preflight": {
+      "started_utc": "2026-10-15T23:01:59.174403+00:00",
+      "completed_utc": "2026-10-15T23:02:00.529065+00:00",
+      "elapsed_seconds": 1.3547053000074811,
+      "claim_source_bindings": 161,
+      "private_candidate_prepare_pass": true,
+      "negative_probes": [
+        {
+          "section": "372",
+          "changed_operand": "other passengers or personnel",
+          "corruption": "animals or passengers",
+          "error": "claim passage absent from bound source: house:119:1:320"
+        },
+        {
+          "section": "535",
+          "changed_operand": "as a nonimmigrant",
+          "corruption": "as an immigrant",
+          "error": "claim passage absent from bound source: house:119:1:320"
+        },
+        {
+          "section": "1692",
+          "changed_operand": "physically located in a covered nation",
+          "corruption": "a citizen of a covered nation",
+          "error": "claim passage absent from bound source: house:119:1:320"
+        },
+        {
+          "section": "7301",
+          "changed_operand": "noncitizen nationals",
+          "corruption": "all noncitizens",
+          "error": "claim passage absent from bound source: house:119:1:320"
+        },
+        {
+          "section": "8314",
+          "changed_operand": "demonstrates a pattern of failing",
+          "corruption": "does not demonstrate a pattern of failing",
+          "error": "claim passage absent from bound source: house:119:1:320"
+        },
+        {
+          "section": "8732",
+          "changed_operand": "is a United States citizen",
+          "corruption": "need not be a United States citizen",
+          "error": "claim passage absent from bound source: house:119:1:320"
+        },
+        {
+          "source": "originalHealthbinding",
+          "error": "claim passage absent from bound source: house:119:1:320"
+        }
+      ],
+      "negative_probes_use_real_prepare": true,
+      "fully_resealed_provider_real_CLI_campaign": false,
+      "structural_checks_not_semantic_acceptance": true,
+      "canonical_changes": false,
+      "candidate_credit": 0,
+      "receipt_sha256": "861b4b6daf6676c471a59433c003465485b2ee5b1ebc8f0eba323548c8db8980"
+    },
+    "fully_resealed_provider_real_CLI_mutation_campaign": false,
+    "structural_checks_not_semantic_acceptance": true,
+    "scope": "Candidate semantic loop; no runtime/frontend/database/persistence/publication change."
+  },
+  "conservation": {
+    "checkpoint": 243,
+    "base_head": "35164fc36ffa4ea2690266e9e3c9b33bb668e586",
+    "checked_utc": "2026-10-15T23:23:54.288600+00:00",
+    "all85prior_authoring_actions_and_cores_exact": true,
+    "all664prior_reviews_exact": true,
+    "all675_other_inventory_rows_exact": true,
+    "all141prior_behavioral_and_all_prior_propositions_exact": true,
+    "all170prior_official_observations_and_projection_rows_exact": true,
+    "new_official_observations": {
+      "F000477": "Nay",
+      "M001184": "Nay"
+    },
+    "new_behavioral_propositions": 2,
+    "all_source_manifest_private_prefixes_exact": true,
+    "source_bank_appends": 30,
+    "manifest_appends": 29,
+    "private_pool_appends": 29,
+    "original_Health_and_all_prior_providers_P3repairs_receipts_withdrawals_and_unrelated_notes_exact": true,
+    "all_other_pending_reserved_denied_cancelled_holds_preserved": true,
+    "tracked_files_outside_allowlist_exact": 3662,
+    "frozen_private_notes_exact": 957,
+    "index_unchanged": true,
+    "existing_test_changes": [
+      "Checkpoint240AppropriationExceptionTests.test_existing_episode_aggregation_preserves_individual_votes_without_trajectory"
+    ],
+    "existing_test_change_scope": "Current corpus count141to143only; allotherpriorclassmethodbodiesexact",
+    "new_test_methods": 5,
+    "counts": {
+      "reviewed": 665,
+      "pending": 11,
+      "cores": 86,
+      "behavioral_propositions": 143,
+      "episodes": 74,
+      "multi_action_episodes": 10
+    },
+    "elapsed_seconds": 10.189709300000686,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "da911328991ac2f2e5d819cb1274264af80de8f7bc87895341649c96040214d9"
+  },
+  "snapshot_receipt_sha256": "9ab9e43034111ca87489f95232c621002bf5c2a76102603661453b4fd9624346",
+  "source_scope": {
+    "new_domain_bank_sources": 30,
+    "new_manifest_private_pool_records": 29,
+    "whole_public_EAH_characters": 3491744,
+    "claim_bindings": 161,
+    "original_Health_meaning_characters": 3498,
+    "original_Health_bindings": 4,
+    "original_Health_witnesses": 5,
+    "selected_floor_physical_pages": [
+      11,
+      22,
+      405,
+      406
+    ],
+    "raw_floor_pages": 455,
+    "whole_public_EAH_reading": {
+      "source_id": "govinfo:s1071eah-immigration-complete",
+      "source_characters": 3491744,
+      "text_utf8_sha256": "367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273",
+      "continuous_read": [
+        0,
+        3491744
+      ],
+      "interval_count": 117,
+      "completed_utc": "2026-10-15T22:30:56.218227+00:00",
+      "canonical_changes": false,
+      "screening_completions": 0,
+      "public_text_only": true,
+      "classified_schedule_or_annex_read": false,
+      "full_visual_or_arithmetic_certificate": false,
+      "legal_chains_pending": true,
+      "support_assignment_still_blocked": true,
+      "historical_handoff_not_modified": true,
+      "receipt_sha256": "ca6648a0342f45c3c8141ed97ad9b8a73b04bb05f7fc07b3274b03bc3df023b2"
+    },
+    "whole_JES_other_statutory_parents_currentlaw_classifiedannex_visual_arithmetic_certificate": false,
+    "closed_OLRC2652_2654_not_retried": true,
+    "printed_codification_not_claimed_wholly_new_policy": true
+  },
+  "behavior_and_diff_review": "One whole December10 S1071EAH/RCP119-16passage320312–112/9NV,notVAvehicle,priorfailedmotion319,September3838orJuly8800. OriginalHealth3498prefix/fourbindings/fivewitnesses/identity/ref/limits exact. Qualifiedautomaticregistrationnotinduction/status,MAYdata/notice,physical-locationcloudpredicate,otherwisequalifiedWakeworker/cap/cancel/transfer/window,noncitizennationalsnotallaliens,conditionaltargetedsanctionsandexceptions,andrepealnamedCaesartitlenotallSyriasanctions. Printed/codification/priornovelty/delegation/constitutional/intervening/current/individualquestionsretained;no newpolicyclaimfromincompleteNNSApredecessors. Sharedmeaningmemberneutral;eachmemberofficialNayaddsoneoppositionwhole-choiceproposition,notcomponentstance/motive/trajectory. All85priorcores/actions,664priorreviews,675otherinventoryrows,170observations,141behavioralandallotherpriorpropositions/sourceprefixes/historyexact. No compiler/counting/eligibility/methodology change.",
+  "prior242_CI_receipt_sha256": "4e6a7424cfa617ba8608529c3979fcf407be540922213000efcaec5d004f4825",
+  "prior242_CI_run": 38815706463,
+  "prior242_CI_synthetic_merge_sha": "41883f2e34a13e081d1bb9fd38bcad6822e093d4",
+  "prior242_CI_ordered_parents": [
+    "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+    "35164fc36ffa4ea2690266e9e3c9b33bb668e586"
+  ],
+  "prior242_CI_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 4,
+    "mixed": 1
+  },
+  "boundary_reviews": {
+    "independent242_comment": 6203457208,
+    "updated_utc": "2026-10-15T22:43:11Z",
+    "reviewed_head": "35164fc36ffa4ea2690266e9e3c9b33bb668e586",
+    "reviewed_parent": "defebb9e8799a77ac94f0cd06f7739a2108d23d8",
+    "applicability": "Allthree242sourcefindingsclosed;unchanged262v39preserved.Thisdoesnotaccept243/wholeNDAA/currentlaw/mutationcampaign/domain/editorial/publication/production.",
+    "source_closure_receipt_sha256": "5eccc7fe220b024e0b80c00fa08e141120438823ab4618a6f78c0eaaba317154",
+    "terminal_owner_acknowledgement_comment": 6203847736,
+    "precommit_refresh_path": ".tmp/checkpoint243_precommit_review_refresh.json"
+  },
+  "throughput": {
+    "observed_model": "GPT-6base observed;selectedvariant/effort/speedtierunexposedandunchanged",
+    "first_work_bound_utc": "2026-10-15T21:18:54.126611+00:00",
+    "first_work_scope": "SuccessorS1071sourceexport;earlier181/Health/otherretainedresearchadditionalunisolated.",
+    "whole_public_text_read_complete_utc": "2026-10-15T22:30:56.218227+00:00",
+    "whole_read_phase_gross_seconds": 4322.091616,
+    "material_reading_and_private_qualification_not_exclusively_timed": true,
+    "private_build_script_seconds": [
+      1.7701478999806568,
+      1.757733599981293
+    ],
+    "private_preflight_script_seconds": [
+      1.355965599999763,
+      1.3547053000074811
+    ],
+    "snapshot_script_seconds": 2.1875634000170976,
+    "application": {
+      "started_utc": "2026-10-15T23:03:51.918144+00:00",
+      "completed_utc": "2026-10-15T23:06:04.764225+00:00",
+      "elapsed_seconds": 132.8510561999865,
+      "counts": {
+        "reviewed": 665,
+        "pending": 11,
+        "cores": 86,
+        "behavioral_propositions": 143,
+        "episodes": 74,
+        "multi_action_episodes": 10
+      },
+      "source_appends": 30,
+      "manifest_appends": 29,
+      "private_pool_appends": 29,
+      "qualification_receipt_sha256": "7ef6da804c9b1c341b898c6419e8bc2ca95b912a6046404078a12f75adc60b63",
+      "canonical_inputs_written": true,
+      "full_gate_pending": true
+    },
+    "focused_unittest_seconds": 1.761,
+    "focused_command_seconds": 2.1711487,
+    "conservation_script_seconds": 10.189709300000686,
+    "full_gate_wall_seconds": 860.8125344000291,
+    "per_phase_costs_overlap_do_not_sum": true,
+    "gross_seconds_per_complex_batch_through_final_gate": 7466.546557,
+    "gross_seconds_per_completed_complex_action_through_final_gate": 7466.546557,
+    "gross_seconds_per_complex_batch_through_validation_receipt": 7518.954805,
+    "research_model_context_tool_wait_command_test_rework_Git_PR_CI_and_delay_included": true,
+    "overlap": "S1071reading/material/authoringoverlaps241and242gates/Git/PR/CIand242sourcecorrections;laterprivateHR8800readingoverlaps243gate. Noexclusive-laborclaimorsubtraction; summingbatchgrossdouble-countsoverlap.",
+    "own_CI_and_postgate_delivery_pending": true,
+    "routine600second_target_and_diagnosis230FAIL_unchanged": true,
+    "comparable_routine_samples": 0,
+    "all_unisolated_costs_retained_in_gross": true,
+    "pre_gate_conservation_script_seconds": 10.558740699954797,
+    "post_gate_conservation_script_seconds": 10.189709300000686,
+    "validation_finalizer_command_seconds": 0.5300661
+  },
+  "rework": {
+    "initial_private_drafts_preserved": true,
+    "corrections_before_canonical_application": "Initialdrafts retained; focusedsourcecheckscorrected372passenger/personnelsafety,535thisActoperand,573existingamendment/noSNAPclaim,8732institution/AND-ORscope,3A-Ddefinitionandmember-neutralmeaning. No erroneousprivateversion claimed as canonical or finalpass.",
+    "failed_routing_artifacts_retained": true,
+    "wrong_granule_PageNotFound_not_denied_source": true,
+    "closed_two_OLRC500_routes_not_retried": true,
+    "targeted_section_extraction_ValueError_command_seconds": 0.0902207,
+    "targeted_section_extraction_StopIteration_command_seconds": 0.0658289,
+    "truncated_overbroad_outputs": "Combined124noutputwastruncatedandreceivednofullreadcredit;recoveredalonebeforesealing. Othertruncatedmetadata/diffsandfocused7301wholeoutputearnnonewreadingcredit;wholeEAH117intervalledgerandfullyvisible7301b/citedscopesgovern. Alltool/model/context/recoverycostsremaingingross.",
+    "further_unisolated_commands_not_excluded": true
+  },
+  "all_reserved_denied_cancelled_source_and_historical_legal_limits_retained": true,
+  "excluded_never_read_or_hashed": "docs/review_packets/health_provider_validation_prototype/adapter.patch",
+  "unrelated_shutdown_notes_preserved": true,
+  "separate_DivisionH_support_assignment_still_blocked": true,
+  "independent_source_domain_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "no_merge_manual_deployment_or_production_writes": true,
+  "receipt_sha256": "3e1758784dd6fbd53e70ca5fe058b545c2af6e0c478d1c606d44818cc2318c30"
+}

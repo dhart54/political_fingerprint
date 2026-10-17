@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "thread_id": "01a13d6e-145c-7ab0-a161-236d73dea248",
+  "title": "Profile validation harness overhead",
+  "turn_id": "01a144ee-ee43-7692-8037-06d5f62f46bc",
+  "status": "completed",
+  "started_epoch": 1792157871,
+  "completed_epoch": 1792158280,
+  "native_duration_ms": 408693,
+  "reviewed_head": "c88e0e23970a4ab3925a2169df6adce4684ed616",
+  "final_report": [
+    "**The §5000A dependency is located and verified. §9831 and §59A remain unlocated in the inspected retained evidence.** No competing owner was visible. Review snapshot: **`c88e0e23970a4ab3925a2169df6adce4684ed616`**.\n\nThe existing primary-capture pool contains **`govinfo:26usc5000A-2024-complete`**, matching its [committed manifest entry](https://github.com/dhart54/political_fingerprint/blob/c88e0e23970a4ab3925a2169df6adce4684ed616/docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json). Its 27,303-character text contains:\n\n| Provision | Exact retained extent |\n|---|---|\n| Complete §5000A(f)(1), minimum-essential-coverage categories | `[12625,14306)` |\n| Complete §5000A(f)(2), eligible employer-sponsored plan | `[14306,14831)` |\n\nVerified identities:\n\n```text\nraw SHA256:       5efe6c477d0af5a26d1011ea147be13506d11bb798be387dbce3e97ac17b9459\ngoverned seal:    79511d07d3e7ad188c22497a18c10c400a9f44b0bcc50347570df8998c83c051\ntext digest:      7f79b41b0d6ae8cac7e9eb0ebbdace97f1e32b35bb18d6239c76de614aa58f93\n```\n\nThe seal and repository-format canonical-JSON text digest recompute correctly. The raw hash agrees with the committed manifest; original HTML bytes were not independently re-read. Full captured text remains local.\n\nThis resolves the literal **§36B(c)(2)→§5000A(f)** definition link. It supplies coverage categories and the employer-plan definition, not an HRA qualification or individual eligibility decision.\n\nLegitimate Health reuse also checks out: `govinfo:26usc36B-2024-operative` contains byte-exact copies of the Immigration witness’s employer-coverage and small-employer HRA passages:\n\n- Immigration `[3265,5324)` → Health `[10786,12845)`.\n- Immigration `[5324,7380)` → Health `[12845,14901)`.\n\nBoth governed seals validate and share raw-source hash `1f653271e597bfa8716491651ee2a47d339d98e2f15f716412e94cc091bc191b`.\n\nThe remaining exact boundaries are:\n\n- **HRA:** complete versioned **§9831(d)(2)** and **(d)(3)(C)**. The retained §36B text references them, but no complete matching source or capture was located in the inspected banks, scope witnesses, Immigration capture records or relevant Health capture files.\n- **Foreign tax:** complete versioned **§59A(b)–(e)**, particularly the House override targets **(e)(1)(B)/(C), (c)(2)(B), (c)(4)(B)(ii) and (d)(5)**. No complete matching retained witness was located. That is not proof the originals are unavailable.\n\nNo new counterpart is established. The §36B/HRA interface remains partly traced; ordinary BEAT remains a near match rather than a demonstrated counterpart to proposed §899. Prior examined-range coverage and whole-body absence limits remain intact.\n\nNo files changed, tests ran or sources were acquired. Elapsed: **6m02s**, **9:38:03–9:44:05 a.m. EDT**. Costs include two absent-directory probes, correction to the repository hash convention and one search encountering protected validation directories; those denied paths were not retried. Host and model/settings were unchanged."
+  ],
+  "scope": "Bounded existing-evidence baseline trace, not HRA domain decision, legal application, counterpart absence, or source/editorial acceptance.",
+  "intake_head": "10f6a2b5e8f716cb5e6ff4146f46fd6ce1f1fa7c",
+  "exact_reviewed_head_applicability": {
+    "house:119:1:145": {
+      "authoring_sha256": "dea1bf9f30bc7ba972af84db8a33e640e7b6eea3f1bc6e2d4fc50850e3cba203",
+      "unchanged_source_count": 151,
+      "all_bound_sources_unchanged": true
+    },
+    "house:119:1:190": {
+      "authoring_sha256": "d548c710e4bd9ade0e134e8b2b07e6409fcc98b6383ed59c37aae089f0b28751",
+      "unchanged_source_count": 130,
+      "all_bound_sources_unchanged": true
+    }
+  },
+  "current_source_appendix_not_independently_reviewed": true,
+  "prior_report_unlocated9831_59A_not_source_unavailability": true,
+  "current249_trace": "Retained5000Afcomplete, officialnew2024Code9831/59Acaptured; only selecteddependencies qualified, no HRA domain/individualapplication/counterpartabsence decision.",
+  "reported_reader_seconds": 362,
+  "native_reader_seconds": 408.693,
+  "reader_durations_distinct_overlap_not_summed": true,
+  "receipt_sha256": "fc19cdc69c026508b2f51556554b7d112e63d81265c3eb2ad7d9a2534855370b"
+}

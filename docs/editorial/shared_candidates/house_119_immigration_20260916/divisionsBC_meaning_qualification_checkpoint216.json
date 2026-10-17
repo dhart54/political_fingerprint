@@ -1,0 +1,96 @@
+{
+  "checkpoint": 216,
+  "base_head": "88df639bdd9a0fa0cf6ea70485572b97caefe3b5",
+  "completed_candidate_action_ids": [
+    "house:119:2:6"
+  ],
+  "original_Health_core_sha256": "f8665faece8d85d0f775ee9768decc0efde01b8c538f783292a154af67b3f913",
+  "original31source_identity_prefix_limits_preserved": true,
+  "new_BC_core_sha256": "4e8fd368e1da371bc7dcd5090849e9bb69137796b0affacda6df41a44a0fdac7",
+  "new_A_core_sha256": "34fc1a9e371637ffeeabdb739b1eb83d86044d74517527a53df07d23ea5d8d0b",
+  "new_provider_path": "docs/editorial/shared_candidates/house_119_funding_qualification_checkpoint216/shared_action_core_proposal.json",
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/divisionsBC_source_qualification_checkpoint216.json",
+  "source_quality_sha256": "8607b1879ace4f785bc4102aaadfe1111cf476638752b19eabfb5b75e7712575",
+  "prior_pending_row": {
+    "action_id": "house:119:2:6",
+    "session": 2,
+    "roll": 6,
+    "date": "2026-01-08",
+    "measure": "bill_119_hr_6938",
+    "question": "On Retaining Divisions B and C",
+    "disposition": "source_unresolved",
+    "reason": "H.R. 6938 Divisions B/C retention remains pending after complete 334350-character operative and H.Res. 977 reads; this is distinct from Division A and passage. Division B sections 307-308 import PL 117-167 section 10114 and 50 USC 2501 definitions for entity/facility restrictions. Division C permits CBP transfers for BIA roads on the 23 USC 202(b)(1) inventory; it does not guarantee a transfer, new CBP appropriation or enforcement outcome. Insular/Compact assistance imports PL 108-188 section 104(e); migrant services cannot be inferred from geography. Mining-patent section 404, Mineral Leasing Act/Mining Law, culture-grant section 128, IHS non-Indian care and its September 1987 rule funding condition, Public Lands Corps and employment/service programmes need material personal-class baselines. Final explanatory programme tables/overrides remain unfinished. Research hold only: no inclusion/exclusion, completion credit, inherited Health membership, component stance, enactment or individual legal eligibility is inferred. Further source work is executable; this is not established inaccessible evidence or a new methodology decision.",
+    "source": {
+      "source_id": "clerk:119:2:6",
+      "url": "https://clerk.house.gov/evs/2026/roll006.xml",
+      "raw_sha256": "ef542fa3e1f3b7239d41fa0b02b8db34d1ed7a96283934eb1342140eb5c72752",
+      "governed_bytes_sha256": "ec41e1f8e37916b950cffa0debc60b42528beeb7a30ebfd10e79b26cf5dc0b6c",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_6938",
+    "member_action": "yea",
+    "house_action_stage": "On Retaining Divisions B and C",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "H.R. 6938 Divisions B/C retention remains pending after complete 334350-character operative and H.Res. 977 reads; this is distinct from Division A and passage. Division B sections 307-308 import PL 117-167 section 10114 and 50 USC 2501 definitions for entity/facility restrictions. Division C permits CBP transfers for BIA roads on the 23 USC 202(b)(1) inventory; it does not guarantee a transfer, new CBP appropriation or enforcement outcome. Insular/Compact assistance imports PL 108-188 section 104(e); migrant services cannot be inferred from geography. Mining-patent section 404, Mineral Leasing Act/Mining Law, culture-grant section 128, IHS non-Indian care and its September 1987 rule funding condition, Public Lands Corps and employment/service programmes need material personal-class baselines. Final explanatory programme tables/overrides remain unfinished. Research hold only: no inclusion/exclusion, completion credit, inherited Health membership, component stance, enactment or individual legal eligibility is inferred. Further source work is executable; this is not established inaccessible evidence or a new methodology decision.",
+    "unresolved_reason": "pending_material_exact_predicate_review",
+    "sources": [
+      {
+        "source_id": "clerk:119:2:6",
+        "url": "https://clerk.house.gov/evs/2026/roll006.xml",
+        "raw_sha256": "ef542fa3e1f3b7239d41fa0b02b8db34d1ed7a96283934eb1342140eb5c72752",
+        "governed_bytes_sha256": "ec41e1f8e37916b950cffa0debc60b42528beeb7a30ebfd10e79b26cf5dc0b6c"
+      },
+      {
+        "source_id": "govinfo:hr6938eh-divisions-b-c",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+        "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+        "governed_bytes_sha256": "7fc197d01096814a5f04a6f54cec4693881c4be2473f10c9662b5ffee056b723"
+      },
+      {
+        "source_id": "govinfo:hres977eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm",
+        "raw_sha256": "7780f346b5f0b9c2020d2a2cc423cc35749209403b775554a0d974c4a301e1c1",
+        "governed_bytes_sha256": "5c61e60033d1ed0380c3be9dc936a0f2486e4db72cd5c04830167b2886010a06"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_raw_hash_matches": true
+  },
+  "counts_after": {
+    "reviewed": 626,
+    "pending": 50,
+    "ordinary": 18,
+    "researched_holds": 32,
+    "meanings": 56,
+    "behavioral_propositions": 96,
+    "application_questions": 70,
+    "partial_packages": 3,
+    "independent_episodes": 50,
+    "multi_action_episodes": 6
+  },
+  "one_source_qualified_wholeBCcandidate_for_both_members": true,
+  "three_remaining_fixed_funding_cases_pending": true,
+  "historical_patent_IHS_and_individual_application_limits_explicit": true,
+  "new_completed_comparable_routine_benchmark_credit": 0,
+  "benchmark": "FAIL unchanged; no five comparable completed routine cycles",
+  "prior215provider_receipts_and_timings_frozen": true,
+  "independent216source_domain_review_pending": true,
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "a0831a50f586440a93f50aa335f4f40d524e7a353909571345bc476fed610b33",
+  "universal_frontmatter_bound": true
+}

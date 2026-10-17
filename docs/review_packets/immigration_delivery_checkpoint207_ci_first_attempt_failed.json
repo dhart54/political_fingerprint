@@ -1,0 +1,334 @@
+{
+  "checkpoint": 207,
+  "head": "284b11c3b009e15972f61172954195e0e6ccdb6d",
+  "run": 38182918430,
+  "run_attempt": 1,
+  "conclusion": "failure",
+  "successful_jobs": 8,
+  "failed_jobs": [
+    {
+      "name": "receipt-evidence-repair-postgres",
+      "id": 114599101364,
+      "failed_steps": [
+        {
+          "name": "Prove normalized storage at actual production cardinality",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 9,
+          "started_at": "2026-10-11T23:07:44Z",
+          "completed_at": "2026-10-11T23:08:20Z"
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": 114599101292,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:05:22Z",
+      "checkout_log_shas": [
+        "284b11c3b009e15972f61172954195e0e6ccdb6d"
+      ],
+      "log_sha256": "b07fa07209a22da3f501d53129910b566a746b1cc84d7cd02f6354c21cff9ab1",
+      "log_bytes": 46181,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:05:20.4976234Z 29 passed, 40 subtests passed in 0.21s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114599101364,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "failure",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:08:22Z",
+      "checkout_log_shas": [
+        "56617e2143e090fe756596ed7de40a6462e685b2",
+        "284b11c3b009e15972f61172954195e0e6ccdb6d"
+      ],
+      "log_sha256": "4732bc7d408526842af0a1f259b9837a2ba55269beb8c651f91e69523e834984",
+      "log_bytes": 82087,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:05:57.1803879Z 6 passed in 2.53s",
+        "2026-10-11T23:07:44.8256408Z 38 passed, 1 warning in 106.29s (0:01:46)"
+      ],
+      "skipped_steps": [
+        "Prove actual green M15B persistence and owned V2R lifecycle",
+        "Post Run actions/setup-python@v5"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114599101390,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:11:34Z",
+      "checkout_log_shas": [
+        "284b11c3b009e15972f61172954195e0e6ccdb6d"
+      ],
+      "log_sha256": "b14089c02041eabe5f4653db098b765b71c0a2da7d47d3ff8c38f3e543bd69b8",
+      "log_bytes": 140591,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:06:12.6826897Z 95 passed, 1 warning in 2.42s",
+        "2026-10-11T23:09:42.6886083Z 336 passed in 208.86s (0:03:28)",
+        "2026-10-11T23:09:47.7347732Z 1 passed in 3.59s",
+        "2026-10-11T23:09:49.7991167Z 74 passed, 1 warning in 1.65s",
+        "2026-10-11T23:10:33.5346592Z   2 passed (14.3s)",
+        "2026-10-11T23:11:17.4469742Z   23 passed (18.4s)",
+        "2026-10-11T23:11:18.0735251Z 15 passed in 0.20s",
+        "2026-10-11T23:11:28.2122049Z   1 passed (8.8s)",
+        "2026-10-11T23:11:31.9889974Z 25 passed in 3.30s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114599101427,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:07:30Z",
+      "checkout_log_shas": [
+        "56617e2143e090fe756596ed7de40a6462e685b2"
+      ],
+      "log_sha256": "62f801ae228f5c96122cbc1dd045857c0ed8bec600624d4b6120e6759f499305",
+      "log_bytes": 1507169,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:05:25.7044812Z 15 passed in 0.28s",
+        "2026-10-11T23:05:26.5690508Z 19 passed in 0.62s",
+        "2026-10-11T23:05:28.3303907Z 27 passed in 1.48s",
+        "2026-10-11T23:07:27.1624965Z 639 passed, 1 warning in 43.65s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114599101447,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:05:41Z",
+      "checkout_log_shas": [
+        "284b11c3b009e15972f61172954195e0e6ccdb6d"
+      ],
+      "log_sha256": "98d3365ea46e29929f50a0f09bcd49be8aa701a6f831b4a8551b631711be2b3d",
+      "log_bytes": 45805,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:05:38.5749744Z 18 passed, 34 subtests passed in 0.78s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114599101469,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:05:32Z",
+      "checkout_log_shas": [
+        "56617e2143e090fe756596ed7de40a6462e685b2"
+      ],
+      "log_sha256": "225201a889c1a2a017564eac8e207085f23665e4e33105daccdca30efc71ae07",
+      "log_bytes": 28535,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:05:30.9786111Z ============================== 87 passed in 1.06s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114599101499,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:05:50Z",
+      "checkout_log_shas": [
+        "284b11c3b009e15972f61172954195e0e6ccdb6d"
+      ],
+      "log_sha256": "a64bf2695f37f884610722e472d233cb99c9846c973ae1e96bc6a0f7d4fcd95f",
+      "log_bytes": 65789,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:05:40.5277452Z 15 passed, 1 warning in 0.67s",
+        "2026-10-11T23:05:41.0842865Z 10 passed in 0.28s",
+        "2026-10-11T23:05:41.6059022Z 3 passed in 0.29s",
+        "2026-10-11T23:05:47.7777811Z 96 passed in 3.67s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114599101507,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:05:43Z",
+      "checkout_log_shas": [
+        "284b11c3b009e15972f61172954195e0e6ccdb6d"
+      ],
+      "log_sha256": "ae2f281b50fa016c11e6b875f898995ec9e44f8dad5767937404a5a969c9a407",
+      "log_bytes": 46674,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:05:39.9874185Z 22 passed, 55 subtests passed in 0.35s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114599101531,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T23:04:58Z",
+      "completed_at": "2026-10-11T23:07:19Z",
+      "checkout_log_shas": [
+        "56617e2143e090fe756596ed7de40a6462e685b2"
+      ],
+      "log_sha256": "a176f32603df0aca467c6f658875ee0b6a238f97328bec1481586b447e77b36f",
+      "log_bytes": 183147,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T23:06:13.4016051Z 23 passed, 1 warning in 18.99s",
+        "2026-10-11T23:06:18.0413475Z 58 passed, 1 warning in 4.22s",
+        "2026-10-11T23:06:21.2729995Z 1 passed in 1.67s",
+        "2026-10-11T23:06:26.1651808Z 1 passed, 1 warning in 3.43s",
+        "2026-10-11T23:06:30.7025223Z 1 passed in 2.97s",
+        "2026-10-11T23:06:35.1935559Z 2 passed in 3.00s",
+        "2026-10-11T23:06:38.2288063Z 14 passed in 1.61s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38182918430",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "actual_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 0
+  },
+  "synthetic_merge_sha": "56617e2143e090fe756596ed7de40a6462e685b2",
+  "no_manual_retry": true,
+  "conditional_guards_unexecuted": [
+    {
+      "job": "m14f-exact-head",
+      "steps": [
+        "Prove exact M14F milestone scope"
+      ]
+    },
+    {
+      "job": "m14d-exact-head",
+      "steps": [
+        "Prove exact M14D milestone scope"
+      ]
+    },
+    {
+      "job": "m14g-exact-head",
+      "steps": [
+        "Enforce milestone-local M14G closure scope"
+      ]
+    },
+    {
+      "job": "m14e-exact-head",
+      "steps": [
+        "Prove exact M14E milestone scope"
+      ]
+    }
+  ],
+  "failure_blocked_steps": [
+    {
+      "job": "receipt-evidence-repair-postgres",
+      "steps": [
+        "Prove actual green M15B persistence and owned V2R lifecycle",
+        "Post Run actions/setup-python@v5"
+      ]
+    }
+  ],
+  "all_skipped_steps": [
+    {
+      "job": "m14f-exact-head",
+      "steps": [
+        "Prove exact M14F milestone scope"
+      ]
+    },
+    {
+      "job": "receipt-evidence-repair-postgres",
+      "steps": [
+        "Prove actual green M15B persistence and owned V2R lifecycle",
+        "Post Run actions/setup-python@v5"
+      ]
+    },
+    {
+      "job": "m14d-exact-head",
+      "steps": [
+        "Prove exact M14D milestone scope"
+      ]
+    },
+    {
+      "job": "m14g-exact-head",
+      "steps": [
+        "Enforce milestone-local M14G closure scope"
+      ]
+    },
+    {
+      "job": "m14e-exact-head",
+      "steps": [
+        "Prove exact M14E milestone scope"
+      ]
+    }
+  ],
+  "failure_analysis": {
+    "source": "official docker-library/postgres entrypoint",
+    "commit": "d588a44673ea9d123c1acb1a6924de10a27fc315",
+    "url": "https://github.com/docker-library/postgres/blob/d588a44673ea9d123c1acb1a6924de10a27fc315/docker-entrypoint.sh",
+    "path": ".tmp/ci207_official_postgres_entrypoint.sh",
+    "sha256": "9c440299ae04a0a79d55b8bf03307036d890a40979d2fb698073c9050d4b20a5",
+    "temporary_init_server_socket_only": true,
+    "CI_observation": "First socket pg_isready returned accepting, immediate next socket probe returned no response; exit2 before createdb/pytest",
+    "cause_inference": "Socket readiness can observe temporary initialization server before its shutdown, rather than final TCP-serving instance",
+    "proposed_configuration_change_not_applied": "Use pg_isready -h127.0.0.1 inside the PG17 containers for both readiness loops/checks",
+    "production_effects": false
+  },
+  "private_readiness_patch_path": ".tmp/ci207_disposable_postgres_tcp_readiness_proposal.patch",
+  "private_readiness_patch_sha256": "b23e95ab633684fbb084649baa2893a788f0c5dd60c2b1f13034de6fe082f662",
+  "patch_apply_check_passed": true,
+  "patch_applied": false,
+  "backend_CI_configuration_unchanged": true,
+  "remaining_gate": "Disposable Postgres17 readiness failure prevents cardinality/green proofs; infrastructure correction outside standing no-config scope. Independent207wrapper verification pending.",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "b2d5f34fd6e2475a32fd20d26325429fee2832cb83509466064c6240e424ea06"
+}

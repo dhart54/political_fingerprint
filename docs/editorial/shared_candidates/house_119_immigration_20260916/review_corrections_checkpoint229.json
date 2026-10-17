@@ -1,0 +1,122 @@
+{
+  "checkpoint": 229,
+  "base_head": "346434f5088dcc9c63a1428750d7c7caabd31695",
+  "received_findings": {
+    "reviewed_head": "346434f5088dcc9c63a1428750d7c7caabd31695",
+    "source_thread_id": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+    "received_findings": [
+      "P3 eight divisions instead of six",
+      "P2 complete annual section8002 compensation/employment suspension and qualified salary cap",
+      "P3 preserve17pending audit IDs and append three explicitly pending actions"
+    ],
+    "full_review_still_pending": true,
+    "not_independently_cleared": true
+  },
+  "corrected_action_ids": [
+    "house:119:1:285",
+    "house:119:2:45"
+  ],
+  "new_provider_path": "docs/editorial/shared_candidates/house_119_appropriations_corrections_checkpoint229/shared_action_core_proposal.json",
+  "new_provider_corpus_sha256": "0700e13a85c509a50443cea6ace4aeb11bafab4c362bb5692bd7f6fe96c63006",
+  "prior_provider_file_sha256": "63fe2fbc8fc5af4568ac66126877f4b0f6126cb13ba80fa3a9cbe15aca30fc6c",
+  "old_pending_ids": [
+    "house:119:2:280",
+    "house:119:2:198",
+    "house:119:2:5",
+    "house:119:2:6",
+    "house:119:2:7",
+    "house:119:1:239",
+    "house:119:1:281",
+    "house:119:2:56",
+    "house:119:1:252",
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:175",
+    "house:119:2:205",
+    "house:119:2:57",
+    "house:119:2:176",
+    "house:119:1:218",
+    "house:119:2:53"
+  ],
+  "new_pending_ids": [
+    "house:119:2:280",
+    "house:119:2:198",
+    "house:119:2:5",
+    "house:119:2:6",
+    "house:119:2:7",
+    "house:119:1:239",
+    "house:119:1:281",
+    "house:119:2:56",
+    "house:119:1:252",
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:175",
+    "house:119:2:205",
+    "house:119:2:57",
+    "house:119:2:176",
+    "house:119:1:218",
+    "house:119:2:53",
+    "house:119:1:285",
+    "house:119:2:28",
+    "house:119:2:45"
+  ],
+  "primary_structure_divisions": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "section8002_source": {
+    "source_id": "govinfo:hr7148ih-complete-ordinary228",
+    "start": 55112,
+    "end": 56236,
+    "passage": "Sec. 8002. During the current fiscal year, provisions of law prohibiting the payment of compensation to, or employment of, any person not a citizen of the United States shall not apply to personnel of the Department of Defense: Provided, That salary increases granted to direct and indirect hire foreign national employees of the Department of Defense funded by this Act shall not be at a rate in excess of the percentage increase authorized by law for civilian employees of the Department of Defense whose pay is computed under the provisions of section 5332 of title 5, United States Code, or at a rate in excess of the percentage increase provided by the appropriate host nation to its own employees, whichever is higher: Provided further, That this section shall not apply to Department of Defense foreign service national employees serving at United States diplomatic missions whose pay is set by the Department of State under the Foreign Service Act of 1980: Provided further, That the limitations of this provision shall not apply to foreign national employees of the Department of Defense in the Republic of Turkey. ",
+    "governed_bytes_sha256": "16b862d402fb6e1403c175f4651b92e29cd05dc4ddf435ac2d3652a5311669fe"
+  },
+  "counts_unchanged": {
+    "reviewed": 645,
+    "pending": 31,
+    "cores": 72,
+    "behavioral_propositions": 120
+  },
+  "source_counts_unchanged": true,
+  "frozen_Health_and_V23_history_preserved": true,
+  "independent_correction_review_pending": true,
+  "benchmarkFAILretained": true,
+  "optimization_unapplied": true,
+  "canonical_regeneration_pending": false,
+  "inputs_corrected_utc": "2026-10-14T22:48:50.025062+00:00",
+  "correction_conservative_start_utc": "2026-10-14T22:45:20.985226+00:00",
+  "canonical_regenerated_utc": "2026-10-14T22:51:41.594191+00:00",
+  "regeneration_phase": {
+    "started_utc": "2026-10-14T22:50:17.698160+00:00",
+    "phase": "Actual CLI regeneration of all active corrected outputs",
+    "exit_code": 0,
+    "completed_utc": "2026-10-14T22:51:41.594191+00:00",
+    "elapsed_seconds": 83.89561129995855,
+    "log_sha256": "fcb6adf3ab80199b5deafc9e8f51efe570d1fccdc3092f918b213c79ec745ff1"
+  },
+  "all7actualCLIoutputs_copied_byte_exact": true,
+  "other70cores_complete_objects_exact": true,
+  "all_member_observations_exact": true,
+  "full_final_gate_pending": true,
+  "receipt_sha256": "4c7deda1bfc67a15b32ca0738cfb3989281fbcd83e764437a323cf6e327e963e",
+  "targeted_regressions": {
+    "tests": 4,
+    "reported_seconds": 0.6,
+    "passed": true,
+    "old_both_qualifications_rejected": true,
+    "number_only8002repair_rejected": true,
+    "changed_cap_funding_Turkey_or_suspension_rejected": true,
+    "missing_pending_audit_entry_rejected": true
+  },
+  "tracked_preservation_outside_allowlist_verified": 3570,
+  "frozen_private_preserved": 186,
+  "other643reviews674inventory_rows_and69audit_rows_exact": true,
+  "completed_working_correction_utc": "2026-10-14T22:53:30.883786+00:00",
+  "tracked_baseline_files": 3582
+}

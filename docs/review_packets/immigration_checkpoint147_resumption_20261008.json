@@ -1,0 +1,34 @@
+{
+  "checkpoint_resumed": 147,
+  "head": "e80079a8c231005fa35810fd284583cdd7e4b34a",
+  "authority": "User explicitly retired expired Political Fingerprint controls and completion markers and authorized continuation from checkpoint147 without a shutdown deadline.",
+  "resumed_at_utc": "2026-10-08T16:43:41.643735+00:00",
+  "active_shutdown_deadline": null,
+  "archive_manifest": ".tmp/retired_shutdown_controls_20261008_164237/manifest.json",
+  "retired_controls": [
+    {
+      "location": "worktree/.codex-shutdown-deadline",
+      "bytes": 271,
+      "raw_sha256": "08c36401079eaec8dcc59b24a1cc21ec18e973e7430b3d5f2818a2bff816fb79"
+    },
+    {
+      "location": "worktree/.codex-task-complete",
+      "bytes": 1167,
+      "raw_sha256": "3750a9c0714a32c9ebc60fe4d840235b682497dc402043d18a259130d9f22872"
+    },
+    {
+      "location": "project_root/.codex-shutdown-deadline",
+      "bytes": 271,
+      "raw_sha256": "08c36401079eaec8dcc59b24a1cc21ec18e973e7430b3d5f2818a2bff816fb79"
+    }
+  ],
+  "other_projects_untouched": true,
+  "historical_shutdown_receipts_preserved": true,
+  "push_scope": "Draft PR198 only; no merge, acceptance, publication, deployment or production writes.",
+  "next_bounded_lane": [
+    "house:119:1:232",
+    "house:119:1:233",
+    "house:119:1:234"
+  ],
+  "receipt_sha256": "069105bcad6961652e5b075427a5d46bf700b26c288b9bd062f93b30aabd259d"
+}

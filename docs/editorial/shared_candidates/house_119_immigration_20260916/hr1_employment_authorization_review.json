@@ -1,0 +1,93 @@
+{
+  "authority": "Candidate-only exact-version EAD component expansion; not independent acceptance or exhaustive package closure",
+  "prior_checkpoint": "e7b2c9c061be1e56643830e2e9d75de79b28b3e0",
+  "prior_authoring_action_sha256": {
+    "house:119:1:145": "8f16af9783fe872e6c79e6d237886ee01196fa2150b0ad37fa570bc2adb29809",
+    "house:119:1:190": "a11dc88a3ee7f6b573314a6cfc71eaa0091c52e2665d664f894ca6a4278b1f75"
+  },
+  "current_authoring_action_sha256": {
+    "house:119:1:145": "2100290669c832120c75b4f729cd29b2a6bd55028be979501ff048a1a48ecf22",
+    "house:119:1:190": "f6b94cc449ac2149cdae5f4b4919951d1c88a5218e6a0d72914b92af84cde098"
+  },
+  "action_claim_bindings": {
+    "house:119:1:145": [
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "Complete exact-version EAD sections70003 through70003: initial/renewal amounts, durations, termination, disposition and printed qualifications",
+        "passage_sha256": "f9a61f825e1f16dce6845725a20f001641e9bbfe5a995a654ef944935fd8cae8",
+        "passage_length": 5064
+      },
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "Complete exact-version EAD sections70012 through70014: initial/renewal amounts, durations, termination, disposition and printed qualifications",
+        "passage_sha256": "58a2f8ff7dc4a934c55f9c442d1f97deadf29b1844c16018af91b5766fbc57a3",
+        "passage_length": 5216
+      },
+      {
+        "source_id": "govinfo:8usc1158d2-2024-hr1-employment-baseline",
+        "locator": "Complete pre-vote1158(d)(2), including no entitlement/regulation permission and180day otherwise-ineligible condition",
+        "passage_sha256": "25913c02127b323439b27324e56440ab67e1e796adc556838b28b7893c621afe",
+        "passage_length": 351
+      },
+      {
+        "source_id": "govinfo:8usc1254a-2024-tps",
+        "locator": "Complete pre-vote1254a(a)(1)-(2), includingTPS qualification/employment authorization and duration",
+        "passage_sha256": "b589d7e122797fce2bc60110d2aea76238cc3111c65fa455f9505b2409114f4f",
+        "passage_length": 897
+      },
+      {
+        "source_id": "govinfo:8usc1182-2024-laken-context",
+        "locator": "Complete pre-vote1182(d)(5)(A)/(B) parole paragraph, including refugee qualification and non-admission",
+        "passage_sha256": "ad87eb8d006921e4cde651fc0ff6151173cc67d4f62d7489c360be7e1191780f",
+        "passage_length": 1111
+      }
+    ],
+    "house:119:1:190": [
+      {
+        "source_id": "govinfo:hr1eas",
+        "locator": "Complete exact-version EAD sections100003 through100003: initial/renewal amounts, durations, termination, disposition and printed qualifications",
+        "passage_sha256": "f20219ff48942092ec3ff0053bc642b6d7156a6a2ecd4227e866c6a9619f3679",
+        "passage_length": 5666
+      },
+      {
+        "source_id": "govinfo:hr1eas",
+        "locator": "Complete exact-version EAD sections100010 through100012: initial/renewal amounts, durations, termination, disposition and printed qualifications",
+        "passage_sha256": "656c20b9adc59f63f1f9e705f98da379358114cb68d08cfee4ab5b1c30a73cd6",
+        "passage_length": 6544
+      },
+      {
+        "source_id": "govinfo:8usc1158d2-2024-hr1-employment-baseline",
+        "locator": "Complete pre-vote1158(d)(2), including no entitlement/regulation permission and180day otherwise-ineligible condition",
+        "passage_sha256": "25913c02127b323439b27324e56440ab67e1e796adc556838b28b7893c621afe",
+        "passage_length": 351
+      },
+      {
+        "source_id": "govinfo:8usc1254a-2024-tps",
+        "locator": "Complete pre-vote1254a(a)(1)-(2), includingTPS qualification/employment authorization and duration",
+        "passage_sha256": "b589d7e122797fce2bc60110d2aea76238cc3111c65fa455f9505b2409114f4f",
+        "passage_length": 897
+      },
+      {
+        "source_id": "govinfo:8usc1182-2024-laken-context",
+        "locator": "Complete pre-vote1182(d)(5)(A)/(B) parole paragraph, including refugee qualification and non-admission",
+        "passage_sha256": "ad87eb8d006921e4cde651fc0ff6151173cc67d4f62d7489c360be7e1191780f",
+        "passage_length": 1111
+      }
+    ]
+  },
+  "house_eh_comparisons": {
+    "70003": {
+      "floor_passage_sha256": "f9a61f825e1f16dce6845725a20f001641e9bbfe5a995a654ef944935fd8cae8",
+      "comparison": "Identical after removing two CongressionalRecord pagination annotations only; floor is controlling",
+      "eh_comparison_sha256": "ada1aeba41c5556cdd61bde34ceb17256e00468f4f4a426e916e0d8a5016f3d0"
+    },
+    "70012": {
+      "floor_passage_sha256": "58a2f8ff7dc4a934c55f9c442d1f97deadf29b1844c16018af91b5766fbc57a3",
+      "comparison": "Identical after removing two CongressionalRecord pagination annotations only; floor is controlling",
+      "eh_comparison_sha256": "b0b8a5022976cf5cad08844e1240b825041b1ac2b6d97bfd45bcf4dbb646f317"
+    }
+  },
+  "scope": "House70003/70012-14 andSenate100003/100010-12 exact whole clauses plus complete material baseline paragraphs; otherpackagecomponents remain tracked",
+  "publication_authorized": false,
+  "receipt_sha256": "303c6c0afa4cfb7d49f08aef92a85f0cfbc25cb76791cd68226480dc649646b5"
+}

@@ -1,0 +1,267 @@
+{
+  "checkpoint": 202,
+  "head": "22fe7899afb4bca14c0a94c95f1a69387b20c24b",
+  "run": 38171741500,
+  "run_attempt": 1,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "failed_jobs": [],
+  "jobs": [
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T20:20:21.6710112Z HEAD is now at 22fe7899 Reuse qualified H.R.5214 core and correct emergency-aid trigger"
+      ],
+      "job_id": 114565598318,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:49Z",
+      "completed_at": "2026-10-11T20:20:30Z",
+      "checkout_log_shas": [
+        "22fe7899afb4bca14c0a94c95f1a69387b20c24b"
+      ],
+      "log_sha256": "a07d55b2a1b767f46b05ac402cf141d479d58ed0e9acb707e271bed0c8631c2f",
+      "log_bytes": 46033,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:20:27.6260302Z 22 passed, 55 subtests passed in 0.25s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114565598379,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:48Z",
+      "completed_at": "2026-10-11T20:22:04Z",
+      "checkout_log_shas": [
+        "c9dae89280480f5b7b2ab992d88096d2cca58146"
+      ],
+      "log_sha256": "d3707beb2670629b88c915b757a4be05a734d7deecc855c97de0bc933b58d495",
+      "log_bytes": 182685,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:21:05.2389775Z 23 passed, 1 warning in 15.07s",
+        "2026-10-11T20:21:09.2077603Z 58 passed, 1 warning in 3.67s",
+        "2026-10-11T20:21:12.1692282Z 1 passed in 1.56s",
+        "2026-10-11T20:21:16.8067139Z 1 passed, 1 warning in 3.28s",
+        "2026-10-11T20:21:21.0915542Z 1 passed in 2.90s",
+        "2026-10-11T20:21:25.3536671Z 2 passed in 2.92s",
+        "2026-10-11T20:21:28.3070410Z 14 passed in 1.59s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T20:20:35.8352620Z HEAD is now at 22fe7899 Reuse qualified H.R.5214 core and correct emergency-aid trigger"
+      ],
+      "job_id": 114565598443,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:48Z",
+      "completed_at": "2026-10-11T20:24:12Z",
+      "checkout_log_shas": [
+        "22fe7899afb4bca14c0a94c95f1a69387b20c24b"
+      ],
+      "log_sha256": "7d0109199b90e77bc68256fbd5c3de991b8cb30d6afd028065a674b0aebc4c1b",
+      "log_bytes": 139721,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:21:00.4183171Z 95 passed, 1 warning in 1.87s",
+        "2026-10-11T20:22:40.9657765Z 320 passed in 99.61s (0:01:39)",
+        "2026-10-11T20:22:45.0146257Z 1 passed in 2.84s",
+        "2026-10-11T20:22:46.6291556Z 74 passed, 1 warning in 1.26s",
+        "2026-10-11T20:23:21.8179658Z   2 passed (12.2s)",
+        "2026-10-11T20:23:56.5673502Z   23 passed (15.8s)",
+        "2026-10-11T20:23:57.0785420Z 15 passed in 0.17s",
+        "2026-10-11T20:24:05.5238828Z   1 passed (7.4s)",
+        "2026-10-11T20:24:08.4847421Z 25 passed in 2.60s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T20:20:16.3947938Z HEAD is now at 22fe7899 Reuse qualified H.R.5214 core and correct emergency-aid trigger"
+      ],
+      "job_id": 114565598452,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:48Z",
+      "completed_at": "2026-10-11T20:20:24Z",
+      "checkout_log_shas": [
+        "22fe7899afb4bca14c0a94c95f1a69387b20c24b"
+      ],
+      "log_sha256": "4e711bbbc4c1a0656dd7715d3ab9b9877d90b2be52a0447ad101eab1c2824cf5",
+      "log_bytes": 45105,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:20:22.4021327Z 29 passed, 40 subtests passed in 0.30s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114565598507,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:49Z",
+      "completed_at": "2026-10-11T20:20:20Z",
+      "checkout_log_shas": [
+        "c9dae89280480f5b7b2ab992d88096d2cca58146"
+      ],
+      "log_sha256": "347231d83583039af873779aab5e5184aaa097538c7627799560bce0cd575fcd",
+      "log_bytes": 28539,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:20:16.7569124Z ============================== 87 passed in 1.09s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114565598533,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:48Z",
+      "completed_at": "2026-10-11T20:24:08Z",
+      "checkout_log_shas": [
+        "c9dae89280480f5b7b2ab992d88096d2cca58146"
+      ],
+      "log_sha256": "3bc8a5c9ee0479772850542c3efa677feff0adccf0eaf8d3a37a014bf55cb8ca",
+      "log_bytes": 1506901,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:20:33.6054802Z 15 passed in 0.59s",
+        "2026-10-11T20:20:35.1760693Z 19 passed in 1.17s",
+        "2026-10-11T20:20:38.2584621Z 27 passed in 2.62s",
+        "2026-10-11T20:24:06.4854023Z 639 passed, 1 warning in 75.79s (0:01:15)"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T20:23:03.7192741Z HEAD is now at 22fe7899 Reuse qualified H.R.5214 core and correct emergency-aid trigger",
+        "2026-10-11T20:25:39.2699774Z HEAD is now at 22fe7899 Reuse qualified H.R.5214 core and correct emergency-aid trigger"
+      ],
+      "job_id": 114565598551,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:48Z",
+      "completed_at": "2026-10-11T20:26:21Z",
+      "checkout_log_shas": [
+        "c9dae89280480f5b7b2ab992d88096d2cca58146",
+        "22fe7899afb4bca14c0a94c95f1a69387b20c24b"
+      ],
+      "log_sha256": "18bf473a35720c937b381388ae47206fe435c718578cbbeb051c8dd694e74411",
+      "log_bytes": 138876,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:20:43.5441468Z 6 passed in 1.77s",
+        "2026-10-11T20:23:03.4107148Z 38 passed, 1 warning in 138.38s (0:02:18)",
+        "2026-10-11T20:25:38.5331640Z 13 passed in 134.64s (0:02:14)",
+        "2026-10-11T20:26:18.6819173Z 20 passed in 37.21s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T20:20:19.7920571Z HEAD is now at 22fe7899 Reuse qualified H.R.5214 core and correct emergency-aid trigger"
+      ],
+      "job_id": 114565598554,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:48Z",
+      "completed_at": "2026-10-11T20:20:28Z",
+      "checkout_log_shas": [
+        "22fe7899afb4bca14c0a94c95f1a69387b20c24b"
+      ],
+      "log_sha256": "c6b1f5c5c1d2cc7032522e1d92a11ceda1c196218849f8380f631edb79c62595",
+      "log_bytes": 45100,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:20:27.3809851Z 18 passed, 34 subtests passed in 0.73s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T20:20:18.8094857Z HEAD is now at 22fe7899 Reuse qualified H.R.5214 core and correct emergency-aid trigger"
+      ],
+      "job_id": 114565598589,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T20:19:48Z",
+      "completed_at": "2026-10-11T20:20:36Z",
+      "checkout_log_shas": [
+        "22fe7899afb4bca14c0a94c95f1a69387b20c24b"
+      ],
+      "log_sha256": "624b3d7e2f325420dcb93d5ebf12841ec25eb9ed0e1268c6c855a8042969ded1",
+      "log_bytes": 65152,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T20:20:28.6713427Z 15 passed, 1 warning in 0.46s",
+        "2026-10-11T20:20:29.0521843Z 10 passed in 0.19s",
+        "2026-10-11T20:20:29.3832216Z 3 passed in 0.18s",
+        "2026-10-11T20:20:33.4358436Z 96 passed in 2.41s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38171741500",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts_verified": [
+    "m14e-exact-head",
+    "publication-activation-postgres",
+    "m14h-exact-head",
+    "m14f-exact-head",
+    "amendment-evidence-contracts",
+    "foushee-full-record-benchmark",
+    "receipt-evidence-repair-postgres",
+    "m14d-exact-head",
+    "m14g-exact-head"
+  ],
+  "synthetic_merge_sha": "c9dae89280480f5b7b2ab992d88096d2cca58146",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [],
+  "remaining_gate": null,
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "ec6d4d46e4b5f071d9579667739dcbe5122e776ad09bd7cdb0000bf41de11649"
+}

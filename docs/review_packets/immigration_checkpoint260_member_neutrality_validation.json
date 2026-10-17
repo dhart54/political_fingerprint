@@ -1,0 +1,365 @@
+{
+  "checkpoint": 260,
+  "base_head": "676ae9e54ecd1192202567738b423ea42b5513c5",
+  "execution_host": "DESKTOP-1CQBHTJ",
+  "repair_started_utc": "2026-10-17T03:17:16+00:00",
+  "recorded_utc": "2026-10-17T03:41:12.017004+00:00",
+  "definition": "Owner validation of two member-neutrality repairs; independent acceptance separately required.",
+  "fixes": [
+    {
+      "action_id": "house:119:2:5",
+      "severity": "P2",
+      "before": "FousheeYea and MassieNay remain whole-DivisionAobservations.",
+      "after": "Member observations concern the whole-DivisionAretention choice.",
+      "offset": 12991
+    },
+    {
+      "action_id": "house:119:2:7",
+      "severity": "P3",
+      "before": "Both members reference this one whole-measure core, while allthree observations remain in the same legislativeepisode.",
+      "after": "Each member projection references this one whole-measure core; the three distinct actions remain in the same legislativeepisode.",
+      "offset": 18963
+    }
+  ],
+  "correction_receipt_sha256": "39afd390b2d00fb587a0d2a561988ebaa205e8bfb3aa8e88e9a32dc64b5740a9",
+  "counts": {
+    "reviewed": 666,
+    "pending": 10,
+    "cores": 87,
+    "observations": 174,
+    "behavioral_propositions": 145,
+    "episodes": 75,
+    "multi_action_episodes": 10
+  },
+  "owner_tests": 439,
+  "initial_gate": {
+    "base_head": "676ae9e54ecd1192202567738b423ea42b5513c5",
+    "started_utc": "2026-10-17T03:22:27.607878+00:00",
+    "completed_utc": "2026-10-17T03:38:50.265039+00:00",
+    "wall_seconds": 982.6571508000001,
+    "phases": [
+      {
+        "phase": "IR",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/validate_editorial_semantic_ir.py"
+        ],
+        "started_utc": "2026-10-17T03:22:27.608838+00:00",
+        "PID": 7968,
+        "exit_code": 0,
+        "completed_utc": "2026-10-17T03:22:27.909508+00:00",
+        "seconds": 0.30067989999997735,
+        "log_sha256": "6887112b6426059a90dd8ee73196df139d467f67116bab9325031801e0f05394"
+      },
+      {
+        "phase": "immigration_owner",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate"
+        ],
+        "started_utc": "2026-10-17T03:22:27.608445+00:00",
+        "PID": 1796,
+        "exit_code": 0,
+        "completed_utc": "2026-10-17T03:38:50.250525+00:00",
+        "seconds": 982.6420981,
+        "log_sha256": "e589a85cc5305759d98704271945910a890da82f3cf5a24fa5c2c7771ac644e5"
+      },
+      {
+        "phase": "semantic",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/run_editorial_pipeline.py",
+          "validate",
+          "--tier",
+          "semantic"
+        ],
+        "started_utc": "2026-10-17T03:22:27.608635+00:00",
+        "PID": 1268,
+        "exit_code": 1,
+        "completed_utc": "2026-10-17T03:22:29.905030+00:00",
+        "seconds": 2.2964026000000786,
+        "log_sha256": "b2d08416fb8904bda148a240ff0e72109c1d71b22fddde271c5e7dd8d47dc5be"
+      },
+      {
+        "phase": "replay",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/prepare_immigration_shared_candidate.py",
+          "--input",
+          "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+          "--member",
+          "F000477",
+          "--member",
+          "M001184",
+          "--output",
+          ".tmp\\full_gate260_final\\replay"
+        ],
+        "started_utc": "2026-10-17T03:22:27.617816+00:00",
+        "PID": 4744,
+        "exit_code": 0,
+        "completed_utc": "2026-10-17T03:25:08.689140+00:00",
+        "seconds": 161.07133039999997,
+        "log_sha256": "3b4ecd098aafa562125da4d1ce45584a496ea3e63d98a3f57feb28118361b2d8",
+        "byte_exact_outputs": 7
+      },
+      {
+        "phase": "inventory",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/validate_immigration_shared_candidate.py"
+        ],
+        "started_utc": "2026-10-17T03:22:27.618225+00:00",
+        "PID": 26308,
+        "exit_code": 0,
+        "completed_utc": "2026-10-17T03:22:29.157157+00:00",
+        "seconds": 1.5389346000000614,
+        "log_sha256": "c9b440e5baadb5edeb4b1be5d67c908446fa188c19126f68de9fe3790acc5c9e"
+      }
+    ],
+    "all_passed": false,
+    "input_hashes": {
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "81a4bdc2fcde6353ff743aaa1054bf111a800d1f5ddc782212f52f24053f03de",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "c6af8e63bbc613d0bd84d978fdbfe7d53b3b17e25eccd7afac54acbc52f49b17",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "6deab7426acc59aa9e77ef1dbc020684b868f34f66d791e4ff46be3a74a449fb",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "0eee1910ee660b5346ad2fccf6e06a7c5fb32bfefdc25719966fc986462b50fb",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "7034571da779cf6ba27a3191a02c547dd959edb05cddb190ff5b896229d3c6f7",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "733d5e33c6afac71f1e09ad171673c0b5d9d5b1b796943f92a7363de06db3eeb",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "88f81168206339a671998be5851d9895a9cbb978435cfe4b07eed66c7e71dd7a",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "fb74d5569057a44244594bfd4cdfa787ad0b5fd668b439f81f0e13f2fdaec017",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/shared_member_neutrality_correction_checkpoint260.json": "5346a01f741417f80e1e54a857f77cfc564d8aae7da8f279bae9242e9837b6b2",
+      "docs/editorial/shared_candidates/house_119_member_neutrality_checkpoint260/shared_action_core_proposal.json": "d65ac02080fd7fba637730fd9494da25e747168fa340d4ff73cff7e9642aa0a4",
+      "backend/tests/test_immigration_shared_candidate.py": "30f90f86bc00cd11f9c207caa00725ec94d5f0cb2b5f0699eaaf2799fcc6beda",
+      "docs/review_packets/immigration_semantic_audit_in_progress.json": "3c01be5cb3dfe9e7995748fba385b6e47120a24a971e2677573a07f27be4fb0a",
+      "docs/plans/immigration_checkpoint260_member_neutrality.md": "e949ccf850b45bc537186a7c2afb738005bd092fa4b45f1fa4d79470576a0942",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "4124cf7952b7180c337605973830bf89870955487073decfa840323622d8a721",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "45b959b0aa2f1dc9441cbf0a9e0a84ce87caff3fe8fbedb8976b7905c232df06",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "1a58435013f632c91307fdd45f3626bae291cc04a6e78522ae6d424a8b973618",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "5daa3baf123d60652c4acd6c7a3d6c7337cd851c30b40e95a08b23ed666b03c8",
+      "docs/editorial/shared_candidates/house_119_funding_qualification_checkpoint216/shared_action_core_proposal.json": "bbb99f7496bc8da8135fd11c52b477496398d4b6e1a7b2e1ec85c4e1d6364cfb",
+      "docs/editorial/shared_candidates/house_119_energy_qualification_checkpoint218/shared_action_core_proposal.json": "b60cc68be3b6f36f182ed2c73518be28fe7dcdb99c3df84d58d1a860d1922325",
+      "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
+      "scripts/prepare_immigration_shared_candidate.py": "1e4a4b908e17ac36ff35b7a37e46da0467edbf4acd371b82950d0439d719a1ba"
+    },
+    "input_hashes_unchanged": true,
+    "strict_conservation_passed": true,
+    "owner_validation_not_independent_acceptance": true
+  },
+  "initial_semantic_failure_retained": true,
+  "initial_semantic_failure_reason": "Windows sandbox denied temporary-directory access in12unrelatedfull-recordtests; no candidate or test change was used to mask the failures.",
+  "corrected_semantic_phase": {
+    "phase": "semantic_corrected_environment",
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-B",
+      "scripts/run_editorial_pipeline.py",
+      "validate",
+      "--tier",
+      "semantic"
+    ],
+    "started_utc": "2026-10-17T03:23:25.775307+00:00",
+    "completed_utc": "2026-10-17T03:23:30.788208+00:00",
+    "seconds": 5.0129044999999905,
+    "exit_code": 0,
+    "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096",
+    "reason": "Original sandboxed phase failed only on Windows temporary-directory permissions; final semantic inputs unchanged.",
+    "temporary_root": "C:\\Users\\Dylan\\AppData\\Local\\Temp\\pf260_semantic_i5rih513"
+  },
+  "effective_all_required_local_phases_passed": true,
+  "final_gate_inputs_unchanged": false,
+  "strict_preservation": {
+    "other85authoring_and_core_rows_exact": true,
+    "all174_observations_exact_except_two_core_digest_links": true,
+    "all_entire145_proposition_graphs_exact": true,
+    "compiled_IR_byte_identical": true,
+    "issue_mapping_byte_identical": true,
+    "protected_source_universe_membership_historical_provider_files_byte_exact": true,
+    "audit_history_preserved_except_two_current_digest_links_and_new_correction_receipt_refs": true
+  },
+  "active_copy_inspection": [
+    {
+      "action_id": "house:119:2:5",
+      "current_portable_phrase_locations": [
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json",
+          "locator": "$.actions[54].meaning"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+          "locator": "$.shared_semantics.actions[44].eligibility.exact_action_basis"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "locator": "$.members[0].findings[6].detail[1]"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "locator": "$.members[0].findings[6].action_observations[0].detail[1]"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "locator": "$.members[1].findings[6].detail[1]"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "locator": "$.members[1].findings[6].action_observations[0].detail[1]"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+          "locator": "$.actions[44].mechanism"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+          "locator": "$.actions[44].candidate_exact_action_meaning"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_member_neutrality_checkpoint260/shared_action_core_proposal.json",
+          "locator": "$.actions[0].mechanism"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_member_neutrality_checkpoint260/shared_action_core_proposal.json",
+          "locator": "$.actions[0].candidate_exact_action_meaning"
+        }
+      ],
+      "old_fragment_absent": true
+    },
+    {
+      "action_id": "house:119:2:7",
+      "current_portable_phrase_locations": [
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json",
+          "locator": "$.actions[56].meaning"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+          "locator": "$.shared_semantics.actions[46].eligibility.exact_action_basis"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "locator": "$.members[0].findings[6].detail[7]"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "locator": "$.members[0].findings[6].action_observations[2].detail[1]"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "locator": "$.members[1].findings[6].detail[7]"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+          "locator": "$.members[1].findings[6].action_observations[2].detail[1]"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+          "locator": "$.actions[46].mechanism"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+          "locator": "$.actions[46].candidate_exact_action_meaning"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_member_neutrality_checkpoint260/shared_action_core_proposal.json",
+          "locator": "$.actions[1].mechanism"
+        },
+        {
+          "path": "docs/editorial/shared_candidates/house_119_member_neutrality_checkpoint260/shared_action_core_proposal.json",
+          "locator": "$.actions[1].candidate_exact_action_meaning"
+        }
+      ],
+      "old_fragment_absent": true
+    }
+  ],
+  "changed_tracked_files": [
+    "backend/tests/test_immigration_shared_candidate.py",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+    "docs/review_packets/immigration_semantic_audit_in_progress.json"
+  ],
+  "new_files": [
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/shared_member_neutrality_correction_checkpoint260.json",
+    "docs/editorial/shared_candidates/house_119_member_neutrality_checkpoint260/shared_action_core_proposal.json",
+    "docs/plans/immigration_checkpoint260_member_neutrality.md",
+    "docs/review_packets/immigration_checkpoint260_member_neutrality_validation.json"
+  ],
+  "changed_existing_test_methods": [
+    "ImmigrationCandidateIntegrityTests.test_funding_shared_prose_excludes_joined_member_name_tokens",
+    "ImmigrationCandidateIntegrityTests.test_shared_prose_cannot_contain_observed_member_behavior",
+    "Checkpoint259HouseFuelBaselineTests.test_only_one_status_limitation_changes_with_preimages_and_actual_observations_preserved"
+  ],
+  "new_regression_tests": 6,
+  "new_sources": 0,
+  "new_screening_completions": 0,
+  "held_actions_unchanged": 10,
+  "full_domain_semantic_pass": false,
+  "independent_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "CI": "New exact-head hostedCIwillbeobservedafterfeature-branchpush;259CIisnottransferred.",
+  "rollback": "Parent676ae9e5andcommittedexactpreimages;nohistoryrewritingorproductioneffects.",
+  "receipt_sha256": "e707c3446a0e790ee33b8277bb608a3b74511d74fe2ebf3dedc9e66cfaf13206",
+  "full_gate_inputs_unchanged_at_completion": true,
+  "all_meaning_sources_and_generated_outputs_unchanged_since439test_run": true,
+  "post_gate_portability_correction": {
+    "reason": "Pre-commit cross-platform guard detected native Windows CRLF byte hashes differ from Git LF blobs. Correct only new regression to canonicalJSONdigests; retain exact observed byte hashes and prior validation receipt.",
+    "changed_gate_inputs": [
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/shared_member_neutrality_correction_checkpoint260.json",
+      "backend/tests/test_immigration_shared_candidate.py",
+      "docs/review_packets/immigration_semantic_audit_in_progress.json"
+    ],
+    "prior_receipt_preserved_at": ".tmp/checkpoint260_before_portability_correction/docs/review_packets/immigration_checkpoint260_member_neutrality_validation.json",
+    "prior_receipt_file_sha256": "0208c25fdad097857285772e2ccff814d9cec2f30bee1bb0e4667fc8794cd7bb",
+    "corrected_protected_content_matches_Git_blobs": true,
+    "final_affected_tests": 10,
+    "test_summary": "..........\n----------------------------------------------------------------------\nRan 10 tests in 34.765s\n\nOK",
+    "test_log_sha256": "beee1ace497892c87e9fe6a8258910b5a155c759fd48ab2d7d5b6ccdc6ed6b37",
+    "source_meaning_generated_files_unchanged": true,
+    "owner_validation_not_independent_acceptance": true
+  },
+  "final_input_file_sha256": {
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "81a4bdc2fcde6353ff743aaa1054bf111a800d1f5ddc782212f52f24053f03de",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "c6af8e63bbc613d0bd84d978fdbfe7d53b3b17e25eccd7afac54acbc52f49b17",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "6deab7426acc59aa9e77ef1dbc020684b868f34f66d791e4ff46be3a74a449fb",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "0eee1910ee660b5346ad2fccf6e06a7c5fb32bfefdc25719966fc986462b50fb",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "7034571da779cf6ba27a3191a02c547dd959edb05cddb190ff5b896229d3c6f7",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "733d5e33c6afac71f1e09ad171673c0b5d9d5b1b796943f92a7363de06db3eeb",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "88f81168206339a671998be5851d9895a9cbb978435cfe4b07eed66c7e71dd7a",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "fb74d5569057a44244594bfd4cdfa787ad0b5fd668b439f81f0e13f2fdaec017",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/shared_member_neutrality_correction_checkpoint260.json": "8242953c4d2b6171f8ad9c65fbc4cfda7d7d70d2abcbe1c441d7bc2e8cfa3fe0",
+    "docs/editorial/shared_candidates/house_119_member_neutrality_checkpoint260/shared_action_core_proposal.json": "d65ac02080fd7fba637730fd9494da25e747168fa340d4ff73cff7e9642aa0a4",
+    "backend/tests/test_immigration_shared_candidate.py": "50681044263b4fdb394d8b99ee07ccd23d2aa7e5f92f19b4098d4323e1445a46",
+    "docs/review_packets/immigration_semantic_audit_in_progress.json": "169814f4b9bde9b29a20ac257c5f23cc5f166af548bd5a0634a36baa87b1c996",
+    "docs/plans/immigration_checkpoint260_member_neutrality.md": "e949ccf850b45bc537186a7c2afb738005bd092fa4b45f1fa4d79470576a0942",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "4124cf7952b7180c337605973830bf89870955487073decfa840323622d8a721",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "45b959b0aa2f1dc9441cbf0a9e0a84ce87caff3fe8fbedb8976b7905c232df06",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "1a58435013f632c91307fdd45f3626bae291cc04a6e78522ae6d424a8b973618",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "5daa3baf123d60652c4acd6c7a3d6c7337cd851c30b40e95a08b23ed666b03c8",
+    "docs/editorial/shared_candidates/house_119_funding_qualification_checkpoint216/shared_action_core_proposal.json": "bbb99f7496bc8da8135fd11c52b477496398d4b6e1a7b2e1ec85c4e1d6364cfb",
+    "docs/editorial/shared_candidates/house_119_energy_qualification_checkpoint218/shared_action_core_proposal.json": "b60cc68be3b6f36f182ed2c73518be28fe7dcdb99c3df84d58d1a860d1922325",
+    "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
+    "scripts/prepare_immigration_shared_candidate.py": "1e4a4b908e17ac36ff35b7a37e46da0467edbf4acd371b82950d0439d719a1ba"
+  }
+}

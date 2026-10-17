@@ -1,0 +1,151 @@
+{
+  "checkpoint": 218,
+  "base_head": "458c7e4e88bc012deb4be83484963c588ac5913b",
+  "selected_action_id": "house:119:1:239",
+  "selected_for_greatest_exact_reuse": true,
+  "original_Health_core_sha256": "6808ec0b78b800a164148c1f783cefb1bc90907077253ba119b7deaacbf3e263",
+  "original18identities_preserved": true,
+  "imports": [
+    "govinfo:hrpt119-213-eere",
+    "govinfo:42usc18649-2024",
+    "govinfo:pl118-272-regional-commissions",
+    "govinfo:pl117-58-4553-transfer-programs",
+    "govinfo:1usc7-2024",
+    "govinfo:28usc1738C-2024",
+    "govinfo:5usc804-2024",
+    "congressional-record:2025-09-04-4553-passage",
+    "govinfo:42usc6863-2024",
+    "govinfo:42usc6865-2024",
+    "govinfo:hrpt119-232"
+  ],
+  "new_source_ids": [
+    "immigration:hr4553-roll239-whole-choice218",
+    "govinfo:hrpt119213-house-context218",
+    "govinfo:pl106554-dakota-sec607-precise218",
+    "govinfo:pl106554-dakota-sec610-precise218"
+  ],
+  "new_source_evidence": [
+    {
+      "source_id": "immigration:hr4553-roll239-whole-choice218",
+      "parent_spans": [
+        {
+          "parent_source_id": "congressional-record:2025-09-04-4553-passage",
+          "parent_source_identity": {
+            "source_id": "congressional-record:2025-09-04-4553-passage",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Official PDF pages 9,10",
+            "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+            "governed_bytes_sha256": "4811d9e3e5e3450f46415665052f5fe22acbf0c1ff973f6baa0d282eeb324b88"
+          },
+          "start": 1268,
+          "end": 2444,
+          "total": 16149
+        },
+        {
+          "parent_source_id": "congressional-record:2025-09-04-4553-passage",
+          "parent_source_identity": {
+            "source_id": "congressional-record:2025-09-04-4553-passage",
+            "source_type": "official_congressional_record_excerpt",
+            "text_version": "Official PDF pages 9,10",
+            "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+            "governed_bytes_sha256": "4811d9e3e5e3450f46415665052f5fe22acbf0c1ff973f6baa0d282eeb324b88"
+          },
+          "start": 7803,
+          "end": 12769,
+          "total": 16149
+        }
+      ]
+    },
+    {
+      "source_id": "govinfo:hrpt119213-house-context218",
+      "full_text_path": ".tmp/hrpt119213_imports216.txt",
+      "raw_path": ".tmp/hrpt119213_imports216.response",
+      "raw_sha256": "1ee20586fb499b0d7f1713646622a8d3cc1e7cc30b09dfa8e4062e45e435ee00",
+      "captured_full_text_sha256": "7587e79ef9ccf2212c0f6642760e06eaedb999961f251335a4c227a97a1c684c",
+      "separator": "\n\n"
+    },
+    {
+      "source_id": "govinfo:pl106554-dakota-sec607-precise218",
+      "governed_parent_source_id": "govinfo:pl106-554-dakota-water610"
+    },
+    {
+      "source_id": "govinfo:pl106554-dakota-sec610-precise218",
+      "governed_parent_source_id": "govinfo:pl106-554-dakota-water610"
+    }
+  ],
+  "primary_complete_read_ranges": [
+    [
+      0,
+      21000
+    ],
+    [
+      21000,
+      44000
+    ],
+    [
+      44000,
+      67000
+    ],
+    [
+      67000,
+      89253
+    ]
+  ],
+  "primary_characters": 89253,
+  "own_final_choice_source_id": "immigration:hr4553-roll239-whole-choice218",
+  "own_source_characters": 6144,
+  "own214_213_4result_not_priorrecommit": true,
+  "rule672_structuredprocess_not_automaticamendmentadoption": true,
+  "House_report_narrative_context_not_January2026_finalstatement_force": true,
+  "Dakota_provenance_repair": {
+    "affected_action_ids": [
+      "house:119:2:6",
+      "house:119:2:7"
+    ],
+    "original607identity": {
+      "source_id": "govinfo:pl106-554-dakota-water607",
+      "source_type": "official_statutory_text",
+      "text_version": "Dakota Water Resources Act section607, amended section7 purposes; keep State water systems distinct from subsection(d) Tribal systems",
+      "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+      "governed_bytes_sha256": "0f393c44dcb516d885b50189749ff6e90e6cbb8f323ac30388d95745563fe7c6"
+    },
+    "original607actually_AssetsforIndependence": true,
+    "broad610identity": {
+      "source_id": "govinfo:pl106-554-dakota-water610",
+      "source_type": "official_statutory_text",
+      "text_version": "Dakota Water Resources Act section610, amended funding and indexing provisions; current bill adds separate50m section7(a) authority",
+      "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+      "governed_bytes_sha256": "ed37db70599e6b62c1661cf86ec89033f9cb971b49b6f182e80cd9ebf0669296"
+    },
+    "broad610supports_correct_clauses": true,
+    "precise_source_ids": [
+      "govinfo:pl106554-dakota-sec607-precise218",
+      "govinfo:pl106554-dakota-sec610-precise218"
+    ],
+    "namespace_falsematch_probes": [
+      {
+        "section": "607",
+        "counterexample_source_id": "govinfo:pl106-554-dakota-water607",
+        "namespace_mismatch_rejected": true,
+        "no_write": true
+      },
+      {
+        "section": "610",
+        "counterexample_source_id": "govinfo:pl106-554-dakota-water610",
+        "namespace_mismatch_rejected": true,
+        "no_write": true
+      }
+    ],
+    "substantive_reversal_not_demonstrated": true,
+    "originalHealth_sourceidentity_history_preserved": true
+  },
+  "new_acquisitions": 0,
+  "new_source_access_denials": [],
+  "both_fixed_cases_pending_at_source_stage": true,
+  "independent217_bounded_review_received": true,
+  "independent218_source_domain_review_pending": true,
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "7f7385141c97f07fb43eff3f0d275f0c1b0670a480720f9ca01d779b6cea6985"
+}

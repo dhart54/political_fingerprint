@@ -1,0 +1,121 @@
+{
+  "checkpoint": 232,
+  "base_head": "4565bc7eb91a23f5b3c164294b8aa9a7765cd54c",
+  "source_witnesses": [
+    {
+      "source_id": "govinfo:42usc402y-2024-alien-nonpayment232",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec402.htm",
+      "raw_sha256": "1af74442e1b2b920f70fe761c61c956493fe263125dfbd772c2e52efcee3063f",
+      "governed_bytes_sha256": "6bb3b76682cf6823ea13cfa3a0a7d14f43e552f86f53888749bc2e226c1568b0",
+      "text_version": "2024 Code complete402(y) only; dated comparator, not vote-date/current integration certificate"
+    },
+    {
+      "source_id": "govinfo:pl11986-complete232",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ86/html/PLAW-119publ86.htm",
+      "raw_sha256": "e4c61a74bb04d41b1a2e26149cf7acbae94eef6903e2baa1b5932fb3300191b8",
+      "governed_bytes_sha256": "66e7bc2af223ca0a2e4e08c480ab08e64dba25beddbcd9d2806cb1d761bc8bf9",
+      "text_version": "Complete enacted PublicLaw11986; whole116085character capture owner-read; incorporated explanatory tables/laws not thereby certified"
+    },
+    {
+      "source_id": "govinfo:6usc348-2024-complete232",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapVII-sec348.htm",
+      "raw_sha256": "4a7a07306252e162f5233b47485273ed3cdf04cdef219f5cbfe7ae81dc092e4d",
+      "governed_bytes_sha256": "aa76e7fc5f59eb97d17f2210dda52fefa25c8f39915ccef646f06b6d4350f23d",
+      "text_version": "Complete dated2024Code348body and notes; whole23360characters read; no vote-date integration or actual taskforce operation certification"
+    },
+    {
+      "source_id": "govinfo:pl11975-divisionI5013-5016-232",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+      "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+      "governed_bytes_sha256": "c221ecbb8b5b30be730f0bd9e70af61562dc3b0a662e671f4d5cb26b50d25c92",
+      "text_version": "Complete literal DivisionI5013through5016 only, preserved parent reuse; unselected parent not wholly owner-read"
+    }
+  ],
+  "support_validation": {
+    "support_PR": 230,
+    "exact_handoff_head": "a34980ea6e7d6ab99a5cbb3c7630d45e9d8acef6",
+    "PR_current_head_observed_separately": "853b93cadff5be993b6fc3aab268d40c1f747d80",
+    "candidate_snapshot": "78b4728cc732488a2e1a0e1a0ef8132e36bcc537",
+    "current_writer_head": "4565bc7eb91a23f5b3c164294b8aa9a7765cd54c",
+    "started_utc": "2026-10-15T03:24:00.772703+00:00",
+    "completed_utc": "2026-10-15T03:24:01.431492+00:00",
+    "verification_seconds": 0.6587888000067323,
+    "passages_verified": 53,
+    "source_identities_and_seals_verified": 24,
+    "Clerk_metadata_verified": 3,
+    "prior_research_hashes_verified": 3,
+    "all_cited_old_source_rows_exact_in_current_bank": true,
+    "packets": [
+      {
+        "action_id": "house:119:2:272",
+        "packet_ref": "docs/review_packets/immigration_research_support_20261014/roll_2_272_sources.json",
+        "packet_sha256": "e96df98204f7e99807e343358828c7f035f3ac29d4901b6c7a988662adaf9a1f",
+        "passages": 17,
+        "sources": 8,
+        "prior_research_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/june_july_screening_checkpoint197.json",
+        "prior_research_sha256": "bce0e5bf4488fef8235f3fa2e7750c1d9997079c9c63b1b0819826e291c7115a"
+      },
+      {
+        "action_id": "house:119:2:286",
+        "packet_ref": "docs/review_packets/immigration_research_support_20261014/roll_2_286_sources.json",
+        "packet_sha256": "74421d6389764de2c228a77289c4398d8aeb23b76ac3eff502fbd3a845dce559",
+        "passages": 15,
+        "sources": 6,
+        "prior_research_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/july_september_screening_checkpoint196.json",
+        "prior_research_sha256": "e11befe97cbd91ce196e67ac201faaae661f6ed27b20ae32f542c277d08f0796"
+      },
+      {
+        "action_id": "house:119:2:310",
+        "packet_ref": "docs/review_packets/immigration_research_support_20261014/roll_2_310_sources.json",
+        "packet_sha256": "83ce6c629aa134e7fbb51b5717ee9261a8ca2e6aa476f1c6fdc2f72b9b2ac360",
+        "passages": 21,
+        "sources": 10,
+        "prior_research_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/fraud_enforcement_screening_checkpoint192.json",
+        "prior_research_sha256": "79407107ace6140d083661fa4b34b66f0ad2f7eb978ab54dfa78773817f69319"
+      }
+    ],
+    "raw_remote_bytes_reacquired": false,
+    "whole_source_owner_rereads_claimed": false,
+    "source_support_consumed_for_bounded_research_only": true,
+    "candidate_disposition_or_credit_from_support": false,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "nonblocking_documentation_defect": "310Markdown link inserts a space before192; JSONprior_research_artifact is correct and verified. Receipt follows the correct immutable JSONpath; no packet facts depend on the broken link.",
+    "receipt_sha256": "6a75a74d3bd46b844cfee0b5068131895dcb1b0755bbc2b274de378ca91fba9d"
+  },
+  "source_reuse_reconciliation": {
+    "parent_governed_bytes_sha256": "86051e2e39339c904dd988959c480f9f179a758da60fd791641e022d34c01d16",
+    "parent_JSON_string_digest": "a668fe465e1d3af2e18229905d23a544f206d5fffc091150ece7132e558cc02c",
+    "parent_UTF8_text_sha256": "e2602bbe50f938f51a9afe5152b7ff1f6a652649cc752b0bcb0ab42c53d8364e",
+    "digest_recipe_difference_not_source_conflict": true,
+    "canonical_H_slice_exact": true
+  },
+  "actions": [
+    {
+      "action_id": "house:119:2:283",
+      "progress": "Complete dated402(y) Notwithstanding nonpayment provision now bound alongside existing434(c) demonstration waiver. No conclusion whether that general waiver can displace402(y), no lawful-presence/beneficiary decision.",
+      "remaining": "Waiver/nonpayment interaction and current-law/application review; existing434fstriking and temporal details retained."
+    },
+    {
+      "action_id": "house:119:2:272",
+      "progress": "Complete PL11986 read; precise DHS appropriations, explanatory-statement ICE/CBPexception and conditional restraint/oversight/reporting mechanisms identified. Existing PR230 whole CR/TANF references independently checked.",
+      "remaining": "Twelve-appropriation/explanatory-table incorporation and material permanent-benefit/current-law application gaps; endpointDec4,2026 not confused with286."
+    },
+    {
+      "action_id": "house:119:2:286",
+      "progress": "Complete PL11986 and dated6USC348 read; preserved5013-5016literal programme extensions and conditional H2B discretionary cap increase now selected.348(b)(13) expires this section, not justsubsectionb; no taskforce operation claim.",
+      "remaining": "Fourdivision/appropriation incorporation and material programme/permanent-law references; endpointDec11,2026; no blanket extension or uniform eligibility."
+    },
+    {
+      "action_id": "house:119:2:310",
+      "progress": "PR23021passages/10governed sources checked, including laterHIPAA160103/164512f references. Written AG alleged-fraud request and separate lawful-handling/security/use limits remain distinct.",
+      "remaining": "Material PrivacyAct/HIPAA164502/programme-law applicability and precise agency holdings. No universal protection/exclusion, automatic Immigration membership or new methodology decision."
+    }
+  ],
+  "all_four_prior_dispositions_retained": true,
+  "new_screening_credit": 0,
+  "independent_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "07df94091311d517369a8684ce3e91f1af3d93748e72919492c4c0da697578f4"
+}

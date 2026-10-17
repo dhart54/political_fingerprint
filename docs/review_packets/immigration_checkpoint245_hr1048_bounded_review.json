@@ -1,0 +1,43 @@
+{
+  "checkpoint": 245,
+  "reviewed_head": "c6bdbeef944035387812d35e5cee3645b8974260",
+  "review_source": {
+    "threadId": "01a13d6e-145c-7ab0-a161-236d73dea248",
+    "threadTitle": "Profile validation harness overhead",
+    "turnId": "01a14245-b1c8-79b0-b266-686fa35b06d5",
+    "startedAt": 1792113226,
+    "completedAt": 1792113731,
+    "durationMs": 505021,
+    "final": "No actionable semantic defect found in the H.R.1048 roll 79/83 pair at checkpoint **`c6bdbeef944035387812d35e5cee3645b8974260`**, within the retained evidence reviewed.\n\n- [Authored meanings](https://github.com/dhart54/political_fingerprint/blob/c6bdbeef944035387812d35e5cee3645b8974260/docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json#L8303) preserve the whole-substitute versus whole-passage distinction, retained English-translation duties, both translator exclusions, citizenship/residence fallbacks and all seven foreign-source categories.\n- The complete retained Scott substitute and engrossed House bill support those descriptions. Material Print provisions, adopted Ogles changes and recorded proceedings support the baseline and amendment sequence.\n- Both members’ projections match retained Clerk observations: **Foushee Aye/Nay; Massie No/Yea** on rolls 79/83.\n- Compiled and readable outputs exclude both actions from behavioral propositions. The paired episode remains held; neither member receives an issue-wide synthesis.\n\nThis is a bounded review, **not acceptance or hold clearance**. Individual citizenship, agency/control, affiliation, designation-list and legal applications remain reserved. I did not independently reacquire original documents or re-read every unrelated Print provision.\n\nNo files changed, tests ran, comments posted or writer contacted. Read-only inspection encountered a missing-path lookup, a root-shape error and oversized diagnostic output; these did not change repository state.\n\nReview elapsed: **7m44s**, first tool **9:13:58 p.m. EDT**, final check **9:21:42 p.m. EDT**. Previously verified configuration: **gpt-6.1-sol / High / default tier**; effective overrides were not exposed."
+  },
+  "action_ids": [
+    "house:119:1:79",
+    "house:119:1:83"
+  ],
+  "intake_scope": "Native completed read-only support turn verified directly; no message or reply sent to another task. No source reacquisition or new independent source rereading by the Immigration writer is claimed.",
+  "hold_reconciliation": {
+    "covered": "Bounded comparison of paired retained-source candidate meanings, complete Scott substitute/EH, material Print/Ogles/proceedings, incorporated categories, separate Clerk observations and both held member outputs. No actionable defect in that scope.",
+    "addresses_existing_conditions": [
+      "The passage83 comparison referenced by roll79's pending-passage constraint.",
+      "Independent paired candidate/package and member-output comparison referenced by roll83's hold, within the support review's expressly bounded material-source scope."
+    ],
+    "not_established": "Independent exhaustive unrelated Print, current-law, designation-list or individual citizenship/agency/control/affiliation/legal application clearance; editorial acceptance or publication.",
+    "remaining": "Record the bounded review in the existing evidence flow and retain the typed hold. Any later proposal to release behavioral counting must explicitly reconcile whether this bounded package scope satisfies the existing review condition and obtain authority for any counting/readiness change. Reserved applications remain qualified limits; this receipt does not require deciding every individual legal application to retain a candidate.",
+    "hold_removed": false,
+    "new_behavioral_propositions": 0,
+    "semantic_inputs_changed": false
+  },
+  "reported_review_seconds": 464,
+  "native_turn_wall_seconds": 505.021,
+  "cost_note": "Support read-only work overlaps the Immigration writer's application, review and gate. Reported review interval and native full-turn time are both preserved; do not add them as exclusive elapsed labor or infer writer model settings from support settings.",
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "intake_utc": "2026-10-16T01:37:39.875677+00:00",
+  "receipt_sha256": "f1c6d2ab439f802a842bf428ee747becbc9d0d794c2fd6873b2d2ccbb692de1a",
+  "current_applicability": {
+    "same_prior_pair_authoring_and_cores_and_member_outputs": true,
+    "proof_ref": ".tmp/checkpoint245_conservation_pre_gate.json",
+    "proof_receipt_sha256": "6ad69b76840130e8ef9808f7814c225fb4a9743be71e55d2885fca9313ff359a",
+    "proof_scope": "All86priorcores/authoring,172officialobservations and143priorpropositions/graphs exact against immutablec6 snapshot; new245H8800 is not covered by this support review."
+  }
+}

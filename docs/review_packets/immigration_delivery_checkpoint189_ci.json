@@ -1,0 +1,267 @@
+{
+  "checkpoint": 189,
+  "head": "494c0274c925e2dc1f412f8760c97f0c499c5361",
+  "run": 38104560198,
+  "run_attempt": 1,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "failed_jobs": [],
+  "jobs": [
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:16:00.2881895Z HEAD is now at 494c0274 Screen clinical restrictions and hold unresolved health-program baselines"
+      ],
+      "job_id": 114367180441,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:31Z",
+      "completed_at": "2026-10-11T02:16:08Z",
+      "checkout_log_shas": [
+        "494c0274c925e2dc1f412f8760c97f0c499c5361"
+      ],
+      "log_sha256": "48e271f050a82bd87c7cf3a6e3b4799537949661516cfca4137e4e94bfab0427",
+      "log_bytes": 44402,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:16:04.8276729Z 22 passed, 55 subtests passed in 0.38s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:18:37.7251178Z HEAD is now at 494c0274 Screen clinical restrictions and hold unresolved health-program baselines",
+        "2026-10-11T02:21:07.5982993Z HEAD is now at 494c0274 Screen clinical restrictions and hold unresolved health-program baselines"
+      ],
+      "job_id": 114367180453,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:31Z",
+      "completed_at": "2026-10-11T02:21:49Z",
+      "checkout_log_shas": [
+        "4589917e84bdaa139990c9092ce674f398b4ca68",
+        "494c0274c925e2dc1f412f8760c97f0c499c5361"
+      ],
+      "log_sha256": "4c946701dd2d8f41e1d0c3a76b7a75839c3fcda2c205188230243aa8f19b6dbf",
+      "log_bytes": 137319,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:16:18.0301309Z 6 passed in 1.68s",
+        "2026-10-11T02:18:37.1066446Z 38 passed, 1 warning in 137.96s (0:02:17)",
+        "2026-10-11T02:21:07.0572200Z 13 passed in 133.43s (0:02:13)",
+        "2026-10-11T02:21:47.2246469Z 20 passed in 37.52s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:15:47.7105867Z HEAD is now at 494c0274 Screen clinical restrictions and hold unresolved health-program baselines"
+      ],
+      "job_id": 114367180497,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:30Z",
+      "completed_at": "2026-10-11T02:16:02Z",
+      "checkout_log_shas": [
+        "494c0274c925e2dc1f412f8760c97f0c499c5361"
+      ],
+      "log_sha256": "390c04311a345cd91a888024c84ec7ab93ed888a9d7fcbedc30b8d62dbb8a791",
+      "log_bytes": 62529,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:15:56.3321739Z 15 passed, 1 warning in 0.35s",
+        "2026-10-11T02:15:56.6722493Z 10 passed in 0.18s",
+        "2026-10-11T02:15:57.0043713Z 3 passed in 0.19s",
+        "2026-10-11T02:16:00.6830029Z 96 passed in 2.03s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:15:56.9989441Z HEAD is now at 494c0274 Screen clinical restrictions and hold unresolved health-program baselines"
+      ],
+      "job_id": 114367180507,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:31Z",
+      "completed_at": "2026-10-11T02:16:04Z",
+      "checkout_log_shas": [
+        "494c0274c925e2dc1f412f8760c97f0c499c5361"
+      ],
+      "log_sha256": "1f60bfb6d00c00592f6dbd69fa4559ccd731f8962ed28df7ffd68ca1c4e23e26",
+      "log_bytes": 44216,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:16:01.4635541Z 29 passed, 40 subtests passed in 0.37s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:15:56.1356600Z HEAD is now at 494c0274 Screen clinical restrictions and hold unresolved health-program baselines"
+      ],
+      "job_id": 114367180512,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:31Z",
+      "completed_at": "2026-10-11T02:16:03Z",
+      "checkout_log_shas": [
+        "494c0274c925e2dc1f412f8760c97f0c499c5361"
+      ],
+      "log_sha256": "f3ba19f9507058f1526b30ebe2eac143f4ea39963e814aaa59acb980dd3caf85",
+      "log_bytes": 43478,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:16:00.5343158Z 18 passed, 34 subtests passed in 0.71s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114367180529,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:30Z",
+      "completed_at": "2026-10-11T02:17:35Z",
+      "checkout_log_shas": [
+        "4589917e84bdaa139990c9092ce674f398b4ca68"
+      ],
+      "log_sha256": "7b6ee7f5e1669cfc6c7162f0d85a03faddf9489b3f9a1d84491fa337c55320dd",
+      "log_bytes": 180787,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:16:34.7903475Z 23 passed, 1 warning in 15.53s",
+        "2026-10-11T02:16:38.8594908Z 58 passed, 1 warning in 3.77s",
+        "2026-10-11T02:16:41.8887674Z 1 passed in 1.60s",
+        "2026-10-11T02:16:46.5983382Z 1 passed, 1 warning in 3.33s",
+        "2026-10-11T02:16:51.0234355Z 1 passed in 2.96s",
+        "2026-10-11T02:16:55.3723694Z 2 passed in 2.93s",
+        "2026-10-11T02:16:58.3496828Z 14 passed in 1.59s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114367180535,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:30Z",
+      "completed_at": "2026-10-11T02:16:05Z",
+      "checkout_log_shas": [
+        "4589917e84bdaa139990c9092ce674f398b4ca68"
+      ],
+      "log_sha256": "4005c311099e9d10a418d551bc82c56892e9788edf892abf0f6f0ea9145927f6",
+      "log_bytes": 27791,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:16:03.2295911Z ============================== 87 passed in 1.04s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114367180547,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:30Z",
+      "completed_at": "2026-10-11T02:18:09Z",
+      "checkout_log_shas": [
+        "4589917e84bdaa139990c9092ce674f398b4ca68"
+      ],
+      "log_sha256": "1633f115a9099e9766af1e6c03bbe09b7ae4974600025a996c13c86323ee53e2",
+      "log_bytes": 1504686,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:15:56.5717896Z 15 passed in 0.29s",
+        "2026-10-11T02:15:57.4554050Z 19 passed in 0.62s",
+        "2026-10-11T02:15:59.3096403Z 27 passed in 1.57s",
+        "2026-10-11T02:18:07.2939585Z 639 passed, 1 warning in 47.12s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:16:10.7839818Z HEAD is now at 494c0274 Screen clinical restrictions and hold unresolved health-program baselines"
+      ],
+      "job_id": 114367180599,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:15:30Z",
+      "completed_at": "2026-10-11T02:20:08Z",
+      "checkout_log_shas": [
+        "494c0274c925e2dc1f412f8760c97f0c499c5361"
+      ],
+      "log_sha256": "3c4c9b7e3c8e8e5e5a8c08f0b663b9ae5e544bb01c02614329a6dc4e3260e4ac",
+      "log_bytes": 138342,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:16:42.4133804Z 95 passed, 1 warning in 2.48s",
+        "2026-10-11T02:18:18.3080288Z 316 passed in 94.83s (0:01:34)",
+        "2026-10-11T02:18:23.4096362Z 1 passed in 3.63s",
+        "2026-10-11T02:18:25.5575934Z 74 passed, 1 warning in 1.72s",
+        "2026-10-11T02:19:02.8370165Z   2 passed (13.2s)",
+        "2026-10-11T02:19:46.2579448Z   23 passed (17.9s)",
+        "2026-10-11T02:19:46.9020636Z 15 passed in 0.21s",
+        "2026-10-11T02:20:01.0407504Z   1 passed (12.7s)",
+        "2026-10-11T02:20:04.8147699Z 25 passed in 3.32s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38104560198",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts_verified": [
+    "m14e-exact-head",
+    "receipt-evidence-repair-postgres",
+    "m14g-exact-head",
+    "m14f-exact-head",
+    "m14d-exact-head",
+    "publication-activation-postgres",
+    "amendment-evidence-contracts",
+    "foushee-full-record-benchmark",
+    "m14h-exact-head"
+  ],
+  "synthetic_merge_sha": "4589917e84bdaa139990c9092ce674f398b4ca68",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [],
+  "remaining_gate": null,
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "f84c69d9c25b167a76dad2ce49564c9610d48aa4a08bc54c9e0b4298aa74ad1b"
+}

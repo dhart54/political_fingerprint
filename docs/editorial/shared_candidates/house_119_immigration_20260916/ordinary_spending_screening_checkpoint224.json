@@ -1,0 +1,383 @@
+{
+  "checkpoint": 224,
+  "base_head": "f09ad90bda0df6314ee7771974217bcaeba4fabf",
+  "selected_action_ids": [
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:143",
+    "house:119:2:175",
+    "house:119:2:205"
+  ],
+  "completed_action_ids": [
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:143",
+    "house:119:2:175",
+    "house:119:2:205"
+  ],
+  "completed_ordinary_actions": [
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:143",
+    "house:119:2:175",
+    "house:119:2:205"
+  ],
+  "new_source_qualified_actions": [
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:175",
+    "house:119:2:205"
+  ],
+  "procedural_noncounting_action": "house:119:2:143",
+  "core_sha256": {
+    "house:119:1:182": "3d4bdfcabef4caad838d884702c72e3388776736efdf38e294aaafe3caa91242",
+    "house:119:1:212": "e804fc8eb4f31197ab16f74bc25cee9fb628c9bc522f635c65c7e85a8e0c5eb0",
+    "house:119:2:175": "fac9f910a9a57801accd0f3cb072cb531d658db68b766be3f90d30926e01c273",
+    "house:119:2:205": "0a14ae390579b2a9156802228675fd3e5ecc20a1f1f5f4237d9d5cb7e1d81d67"
+  },
+  "original_Health_core_sha256": {
+    "house:119:1:182": "7ceba394aeff61d944727c277c606aeb56881882c6a220912d7f320ace0e056a",
+    "house:119:1:212": "347eb74d77ce5e03b1372e3c8fdbdc179acbe83da07a9e7bfecd101739cedf75",
+    "house:119:2:175": "28cf27654aa6d1eabf96fde1ea72591ddb662a6d8a1a6d5a6c0517dd9d6439db",
+    "house:119:2:205": "e73cb7b00579a8573c170bb1b1c8d81dd18a067e88c5a94121b099f0959554ef"
+  },
+  "original_Health_exact_identity_meaning_prefix_witnesses_limits_preserved": true,
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_spending_source_quality_checkpoint224.json",
+  "source_quality_sha256": "bdf5476828d8c87470b450ee3ae6b0a30f2c1244fdcb9323baf8388f434d72c5",
+  "counts_after": {
+    "reviewed": 638,
+    "pending": 38,
+    "meanings": 65,
+    "behavioral_propositions": 112,
+    "independent_episodes": 58,
+    "multi_action_episodes": 6,
+    "application_questions": 70,
+    "partial_packages": 3,
+    "ordinary_pending": 11,
+    "researched_holds_pending": 27
+  },
+  "prior_pending_rows": {
+    "house:119:1:182": {
+      "action_id": "house:119:1:182",
+      "session": 1,
+      "roll": 182,
+      "date": "2025-06-25",
+      "measure": "bill_119_hr_3944",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:1:182",
+        "url": "https://clerk.house.gov/evs/2025/roll182.xml",
+        "raw_sha256": "77b207cad25a6673555d015427c5a65acf0f78cc60aebb5cfc5e29f085207ba2",
+        "governed_bytes_sha256": "448caadc445db96e41e2c4e1e6458f47d4b9a6720e3a34c4207416cfd099b858",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_3944",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:1:182",
+          "url": "https://clerk.house.gov/evs/2025/roll182.xml",
+          "raw_sha256": "77b207cad25a6673555d015427c5a65acf0f78cc60aebb5cfc5e29f085207ba2",
+          "governed_bytes_sha256": "448caadc445db96e41e2c4e1e6458f47d4b9a6720e3a34c4207416cfd099b858",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_raw_hash_matches": true
+    },
+    "house:119:1:212": {
+      "action_id": "house:119:1:212",
+      "session": 1,
+      "roll": 212,
+      "date": "2025-07-18",
+      "measure": "bill_119_hr_4016",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:1:212",
+        "url": "https://clerk.house.gov/evs/2025/roll212.xml",
+        "raw_sha256": "cbb05d1542d80297df8080d6e104646225eea308e05e34d5c4f6f24cfb74709f",
+        "governed_bytes_sha256": "255f3ccdfbc81230dc939ee240523cd8d6b63c466d0ab453039aedbad0b61caa",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_4016",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:1:212",
+          "url": "https://clerk.house.gov/evs/2025/roll212.xml",
+          "raw_sha256": "cbb05d1542d80297df8080d6e104646225eea308e05e34d5c4f6f24cfb74709f",
+          "governed_bytes_sha256": "255f3ccdfbc81230dc939ee240523cd8d6b63c466d0ab453039aedbad0b61caa",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_raw_hash_matches": true
+    },
+    "house:119:2:143": {
+      "action_id": "house:119:2:143",
+      "session": 2,
+      "roll": 143,
+      "date": "2026-04-29",
+      "measure": "bill_119_sconres_33",
+      "question": "On Agreeing to the Resolution",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:2:143",
+        "url": "https://clerk.house.gov/evs/2026/roll143.xml",
+        "raw_sha256": "0dedef47be7b80342ccff1b1c44d743ef0d12d2d6499320a38235fa5c42020fb",
+        "governed_bytes_sha256": "c04c610b8cf76c4bfb56e96562128450af301767c6e800f713e81b1a58d1b962",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_sconres_33",
+      "member_action": "nay",
+      "house_action_stage": "On Agreeing to the Resolution",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:143",
+          "url": "https://clerk.house.gov/evs/2026/roll143.xml",
+          "raw_sha256": "0dedef47be7b80342ccff1b1c44d743ef0d12d2d6499320a38235fa5c42020fb",
+          "governed_bytes_sha256": "c04c610b8cf76c4bfb56e96562128450af301767c6e800f713e81b1a58d1b962",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:143",
+        "url": "https://clerk.house.gov/evs/2026/roll143.xml",
+        "raw_sha256": "f4d7bd9f3be3cf9ec98e0f4ae78a93bf2d737a33629365a29ae8ffb817916a78",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    },
+    "house:119:2:175": {
+      "action_id": "house:119:2:175",
+      "session": 2,
+      "roll": 175,
+      "date": "2026-05-15",
+      "measure": "bill_119_hr_8469",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:2:175",
+        "url": "https://clerk.house.gov/evs/2026/roll175.xml",
+        "raw_sha256": "83b3498925048a9574acd008cbf0d745bd2c65d4a094316577a28cab7ab9b628",
+        "governed_bytes_sha256": "99d0efb04354dc310c08470863e37c687c0abec80552e5fda557eeda445de49b",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_8469",
+      "member_action": "yea",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:175",
+          "url": "https://clerk.house.gov/evs/2026/roll175.xml",
+          "raw_sha256": "83b3498925048a9574acd008cbf0d745bd2c65d4a094316577a28cab7ab9b628",
+          "governed_bytes_sha256": "99d0efb04354dc310c08470863e37c687c0abec80552e5fda557eeda445de49b",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:175",
+        "url": "https://clerk.house.gov/evs/2026/roll175.xml",
+        "raw_sha256": "54cdfd93babaa74433a5428b6b966a61c68654d553ffb604676eeecd99a0cff2",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    },
+    "house:119:2:205": {
+      "action_id": "house:119:2:205",
+      "session": 2,
+      "roll": 205,
+      "date": "2026-06-04",
+      "measure": "bill_119_hr_8646",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:2:205",
+        "url": "https://clerk.house.gov/evs/2026/roll205.xml",
+        "raw_sha256": "0219f24604a532812765ac29273877d4d65381f407d146e1ea8bab7efb0021cb",
+        "governed_bytes_sha256": "e1b815fde928e2a3ef325b437df061b415032d40c138878b02a17d2f4c878421",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_8646",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:205",
+          "url": "https://clerk.house.gov/evs/2026/roll205.xml",
+          "raw_sha256": "0219f24604a532812765ac29273877d4d65381f407d146e1ea8bab7efb0021cb",
+          "governed_bytes_sha256": "e1b815fde928e2a3ef325b437df061b415032d40c138878b02a17d2f4c878421",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:205",
+        "url": "https://clerk.house.gov/evs/2026/roll205.xml",
+        "raw_sha256": "4429432f544e04a24baa82df395b904effba361403c04d3253dff7ac3517da8b",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    }
+  },
+  "prior207_generic_pending_row": {
+    "action_id": "house:119:2:207",
+    "session": 2,
+    "roll": 207,
+    "date": "2026-06-04",
+    "measure": "bill_119_hr_2913",
+    "question": "On Passage",
+    "disposition": "source_unresolved",
+    "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+    "source": {
+      "source_id": "clerk:119:2:207",
+      "url": "https://clerk.house.gov/evs/2026/roll207.xml",
+      "raw_sha256": "96d6c3c655cc041b1751458e44a0743935b5796d1732422d4f1779bd5a33caff",
+      "governed_bytes_sha256": "13549763aee50bd4a5a24a81e85cbd7c2b9a62ec2ae8730dbcccdf2e53b7e01b",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_2913",
+    "member_action": "yea",
+    "house_action_stage": "On Passage",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+    "unresolved_reason": "pending_research",
+    "sources": [
+      {
+        "source_id": "clerk:119:2:207",
+        "url": "https://clerk.house.gov/evs/2026/roll207.xml",
+        "raw_sha256": "96d6c3c655cc041b1751458e44a0743935b5796d1732422d4f1779bd5a33caff",
+        "governed_bytes_sha256": "13549763aee50bd4a5a24a81e85cbd7c2b9a62ec2ae8730dbcccdf2e53b7e01b",
+        "verification": "unchanged_governed_source_reuse"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_clerk_source_identity": {
+      "source_id": "clerk:119:2:207",
+      "url": "https://clerk.house.gov/evs/2026/roll207.xml",
+      "raw_sha256": "c05cb2b99a68a983dc3aa17d56842bcf647f4d85532117db32b092ff9556c877",
+      "verification": "historical_source_identity_not_recaptured_this_increment"
+    }
+  },
+  "prior223_207_research_reconciled_no_new_credit": true,
+  "queue_classification": "Initial17ordinary/26holds;207alreadyresearched reclassified then fiveordinaryclosures =>11ordinary/27researchedholds.196continuesresearched despitegenericenum.",
+  "own_whole_primary_reading_and_material_predicate_checks_complete": true,
+  "public_body_and_visible_operator_limits_no_classified_annex_inventory_claim": true,
+  "all_other61cores633reviews670rows104props_expected_exact": true,
+  "all_Health_history_and_exact223privateCI_timing_evidence_preserved": true,
+  "efficiency_findings": [
+    "Reuse existing governed whole proposals and shared baselines across exact versions; do not reacquire sources solely for a new checkpoint.",
+    "Read chunks of about25000characters to prevent output truncation; recover explicitly detected gaps before whole-read claims.",
+    "Preserve source predicate conjunctions and dated FARexceptions rather than importing a title/agency/memory-based scope.",
+    "Use one full required gate after coherent source/authoring preflight; no additional223test or checkpoint cycle."
+  ],
+  "source_batch_start_utc": "2026-10-13T19:31:53.742179+00:00",
+  "authored_utc": "2026-10-13T20:23:01.679065+00:00",
+  "candidate_only": true,
+  "independent224_source_domain_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "benchmark": "FAIL unchanged; retain all five ordinary cases and all elapsed overhead. Batch-amortized timing is not five independently timed comparable cycles.",
+  "receipt_sha256": "0c6177e8f38264e12513a23931302ef96e37b4f9c52b431010f211b2d2d85a84"
+}

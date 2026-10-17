@@ -1,0 +1,192 @@
+{
+  "checkpoint": 163,
+  "head": "a7ec75d52b9e0aeef6ecc1881a633defb4c2a0a2",
+  "run": 37860576646,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37860576646",
+  "jobs": [
+    {
+      "job_id": 113595053729,
+      "name": "receipt-evidence-repair-postgres",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "0901d4ee267f88415b4246930ca6f684064c398a",
+        "a7ec75d52b9e0aeef6ecc1881a633defb4c2a0a2"
+      ],
+      "log_sha256": "b2f0af407067e430483a3f31b88d4adae13857ffd9f001f0ec6a4eb592aaa2bf",
+      "log_bytes": 135510,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "6 passed in 1.35s",
+        "38 passed, 1 warning in 74.93s (0:01:14)",
+        "13 passed in 83.88s (0:01:23)",
+        "20 passed in 22.29s"
+      ],
+      "skipped_steps": []
+    },
+    {
+      "job_id": 113595053994,
+      "name": "m14d-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "a7ec75d52b9e0aeef6ecc1881a633defb4c2a0a2"
+      ],
+      "log_sha256": "f39123e3ad88c996a24706f8085312e6ad74ca9ef325cfba39d2c595147335c8",
+      "log_bytes": 43223,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "18 passed, 34 subtests passed in 0.83s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ]
+    },
+    {
+      "job_id": 113595054003,
+      "name": "foushee-full-record-benchmark",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "0901d4ee267f88415b4246930ca6f684064c398a"
+      ],
+      "log_sha256": "239a249d0c209c9cf5fb4845cbd918cb67635220f2a7cc0fc9c0f61a33600de7",
+      "log_bytes": 1502385,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "15 passed in 0.30s",
+        "19 passed in 0.66s",
+        "27 passed in 1.57s",
+        "639 passed, 1 warning in 46.63s"
+      ],
+      "skipped_steps": []
+    },
+    {
+      "job_id": 113595054016,
+      "name": "m14e-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "a7ec75d52b9e0aeef6ecc1881a633defb4c2a0a2"
+      ],
+      "log_sha256": "491ec3f834311a7de94a4eea513594d1ea2bd63e9b7016e0316fe886e4370610",
+      "log_bytes": 44155,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "22 passed, 55 subtests passed in 0.29s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ]
+    },
+    {
+      "job_id": 113595054049,
+      "name": "m14h-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "a7ec75d52b9e0aeef6ecc1881a633defb4c2a0a2"
+      ],
+      "log_sha256": "0e6986ff0d9883073ccf3fa3823eb73ff4af0719a1038aa3be48c5ede8e680d1",
+      "log_bytes": 135468,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "95 passed, 1 warning in 1.60s",
+        "308 passed in 56.32s",
+        "1 passed in 2.09s",
+        "74 passed, 1 warning in 1.04s",
+        "  2 passed (8.8s)",
+        "  23 passed (12.4s)",
+        "15 passed in 0.12s",
+        "  1 passed (5.4s)",
+        "25 passed in 1.98s"
+      ],
+      "skipped_steps": []
+    },
+    {
+      "job_id": 113595054055,
+      "name": "m14f-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "a7ec75d52b9e0aeef6ecc1881a633defb4c2a0a2"
+      ],
+      "log_sha256": "43ad3f13d6904ee316600aa358c95492ddc6b9e71027e5aaa5ee28f7979138e1",
+      "log_bytes": 43907,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "29 passed, 40 subtests passed in 0.43s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ]
+    },
+    {
+      "job_id": 113595054087,
+      "name": "m14g-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "a7ec75d52b9e0aeef6ecc1881a633defb4c2a0a2"
+      ],
+      "log_sha256": "26c2733885e85637d74a2d79eafc05065bb36e527508aaf1584f6b677506f3f5",
+      "log_bytes": 61721,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "15 passed, 1 warning in 0.48s",
+        "10 passed in 0.22s",
+        "3 passed in 0.24s",
+        "96 passed in 2.82s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ]
+    },
+    {
+      "job_id": 113595054098,
+      "name": "publication-activation-postgres",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "0901d4ee267f88415b4246930ca6f684064c398a"
+      ],
+      "log_sha256": "ae7f22aae40b5e0efe7776b2c474337f8257758a83d02e16d725c7210301b1fe",
+      "log_bytes": 180601,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "23 passed, 1 warning in 15.27s",
+        "58 passed, 1 warning in 3.68s",
+        "1 passed in 1.55s",
+        "1 passed, 1 warning in 3.28s",
+        "1 passed in 2.90s",
+        "2 passed in 2.96s",
+        "14 passed in 1.55s"
+      ],
+      "skipped_steps": []
+    },
+    {
+      "job_id": 113595054435,
+      "name": "amendment-evidence-contracts",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "0901d4ee267f88415b4246930ca6f684064c398a"
+      ],
+      "log_sha256": "d7f1a32afec85af8b3ef0517fa73f9b63b088777ac0fd0aef9c9fe75b66159ad",
+      "log_bytes": 28537,
+      "log_encoding": "UTF-8 saved decoded connector response, not GitHub archive bytes",
+      "pytest_counts": [
+        "============================== 87 passed in 1.46s =============================="
+      ],
+      "skipped_steps": []
+    }
+  ],
+  "synthetic_merge_sha": "0901d4ee267f88415b4246930ca6f684064c398a",
+  "checkout_contexts": {
+    "feature_pinned_jobs": 5,
+    "synthetic_merge_jobs": 3,
+    "mixed_repair_jobs": 1
+  },
+  "owner_focused_tests": "Checkpoint163179 focused tests in14.781s and2 final audit guards in0.990s; raw replay/six unchanged semantic outputs owner verified. Fourteen fresh officialHTML raw/text acquisitions/thirteen derivatives/sixteen intervals owner verified; no freshPDF/image/wholeparents/latestlaw/individualapplication certification. Owner validations not peer certification. Hosted308 distinct",
+  "no_retry": true,
+  "scope": "Nine successful head-associated jobs: five feature-pinned, three synthetic-merge, one mixed. Decoded logs and checkout transitions inspected; not all feature-only bytes.",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "dc9fd718cf334ad8d5279f95209ea0a9ffe50c7706d54f49e21df1a9a87efc59",
+  "run_attempt": 1,
+  "run_number": 649,
+  "run_metadata_confirmed": true
+}

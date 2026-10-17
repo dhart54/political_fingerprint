@@ -1,0 +1,40 @@
+{
+  "source_commit": "c10bc2546bb3c51cae7d983be0a2fc6201858260",
+  "source_file": "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json",
+  "source_blob_id": "1d1625f249280d18363ec695774b032fa041d869",
+  "extraction_scope": "complete authoring action fields except claim_source_map, supplied losslessly in indexed claim parts",
+  "action": {
+    "action_id": "house:119:1:190",
+    "source_id": "govinfo:hr1eas",
+    "bill_number": 1,
+    "bill_type": "hr",
+    "stage": "concurrence",
+    "episode_id": "episode:hr1:119",
+    "short_description": "H.R.1 Senate replacement: selected border, detention and asylum-fee provisions",
+    "compact_description": "The H.R.1 Senate replacement would fund border infrastructure and adult/family detention capacity and require asylum filing and annual pending-application fees, initially at least $100 each. The concurrence vote covers the whole replacement, with its qualifications.",
+    "compact_source_refs": [
+      "govinfo:hr1eas",
+      "govinfo:8usc1158d3-2024-hr1-fee-baseline"
+    ],
+    "additional_source_ids": [
+      "govinfo:hres566eh",
+      "govinfo:6usc279-2024-operative",
+      "govinfo:8usc1158d3-2024-hr1-fee-baseline",
+      "govinfo:8usc1356mn-fees-immigration",
+      "govinfo:8usc1101-2024-alien-admission-context"
+    ],
+    "meaning": "This July3 House concurrence concerns the Senate's July1 EAS, which strikes all after the first word and replaces the earlier H.R.1 text. It is the complete multi-domain reconciliation replacement, not a second passage of the unchanged House bill or a separate vote on its Immigration components. Selected Immigration highlights here concern border infrastructure, detention and asylum fees; other immigration-related benefits, taxes, employment authorization, child-sponsor, reimbursement and enforcement provisions are not exhaustively described. Section90001 would appropriate an additional $46.55billion for fiscal2025 to CBP, available until September30,2029, for new/replacement primary, waterborne and secondary barriers, access roads, detection attributes and ground preparation for CBP operations and barrier construction/maintenance. The different House60001 accounts are not silently used to define this replacement amount or its purposes. Section90003 would appropriate an additional $45billion for fiscal2025 to ICE, available until September30,2029, for single-adult alien detention and family residential-center capacity. Aliens MAY be detained at family centers pending an INA removal decision and, if ordered removed, until removal. Single-adult detention standards are set in the Secretary's discretion CONSISTENT WITH APPLICABLE LAW. The family-center definition covers apprehended/encountered family units, including children who are not statutorily defined unaccompanied alien children, and does not reproduce the House's express regardless-of-State-licensing clause.6USC279(g)(2) requires no lawful immigration status, under18 age, and no US parent/legal guardian or none available for care/physical custody. Neither the capacity funding nor permission establishes automatic detention/removal of every alien, elimination of all legal constraints or actual operations. Section100002 requires an additional fee upon filing an asylum application. The fiscal2025 amount is the greater of $100 or the amount set by DHS/the Attorney General, as applicable, by rule; it cannot be waived/reduced. From fiscal2026 the prior fiscal-year fee is increased by the printed July-to-July CPI-U increment rounded down to a multiple of $10. Half of Attorney-General-filed receipts go to EOIR; half of DHS-filed receipts go to USCIS's existing Immigration Examinations Fee Account, retained/expended without further appropriation; uncredited receipts go to Treasury. This $100 filing floor differs from the House's $1,000 floor. Section100009 separately requires an additional fee for EACH CALENDAR YEAR an asylum application remains pending. Its fiscal2025 amount is the greater of $100 or a DHS rule amount, followed by the printed CPI-U annual adjustment with the increment rounded DOWN TO THE NEAREST DOLLAR; receipts go to Treasury and the fee cannot be waived/reduced. Do not transfer that rounding to the initial-filing fee or back to the House's differently printed yearly formula. Section100018 changes pre-vote INA208(d)(3)/8USC1158(d)(3) from MAY impose fees to SHALL and replaces the following cost-cap/installment/nonmandatory-fee language with preserved additional adjudication/naturalization-fee authority under286(m). The baseline already authorized asylum-consideration, employment-authorization and asylum-based adjustment fees;1356(m)/(n) govern existing account/cost-recovery context. No first-ever fee authority, new asylum eligibility test from that edit, specific implemented collection rule or actual payment is inferred. The selected description does not resolve legal challenges or every other package mechanism. Support/opposition applies to this complete Senate replacement. Its relationship to the earlier House choice is one underlying legislative episode; chronology alone does not establish comparability, a change of belief or a trajectory.",
+    "limitations": [
+      "Selected Immigration highlights do not inventory every immigration-related benefit, tax, fee, child-sponsor or enforcement provision. This is a whole multi-domain replacement choice; no separate component preference or preferred alternative is established.",
+      "EAS90003 explicitly qualifies single-adult detention standards by applicable law and lacks the House's express State-licensing-independent language. It cannot inherit House70101's exact wording. Permission and funding do not prove universal detention, removal or legal enforceability.",
+      "Listed border and detention appropriations are additional fiscal2025 amounts available until September30,2029. The $46.55billion border account has its own scope; it is not described as every package dollar or an actual expenditure.",
+      "Initial filing and annual pending-application fees are separate charges, each with a fiscal2025 $100 floor, possible higher rule amount and no waiver/reduction. Pending fees trigger for each calendar year pending; their CPI increment rounds down to the nearest dollar, while filing-fee increments round down to $10.",
+      "The existing pre-vote fee paragraph already permits charges; MAY-to-SHALL and replacement of later sentences are the proposed changes. This explanation does not treat the subsequently enacted PublicLaw119-21 or later implementation as the July3baseline.",
+      "Exact Senate EAS controls concurrence, rather than introduced/reported/EH or later ENR/PL versions. Earlier House passage and later Senate-replacement concurrence remain one episode with distinct meanings and ordered observations, without an inferred trajectory."
+    ],
+    "choice_meanings": {
+      "Yea": "supported concurrence in the complete H.R.1 Senate reconciliation replacement, with the described selected Immigration provisions",
+      "Nay": "opposed concurrence in that complete Senate replacement; no preferred alternative or separate component position is established"
+    }
+  }
+}

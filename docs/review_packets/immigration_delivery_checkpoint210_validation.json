@@ -1,0 +1,238 @@
+{
+  "checkpoint": 210,
+  "base_head": "f76dd6e5e1b10cf8b92b3d5aa61f45c3a126600e",
+  "scope": "Correct inherited209P2 retained CCDF baseline and deliver allsix predeclared routine attempts, with three exclusions and three explicit material holds",
+  "correction_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_baseline_correction_checkpoint210.json",
+  "correction_receipt_sha256": "6169730cb217be2f759d050c94d16ace7e136657f86c12a70c1bbe8ec9c35bdc",
+  "corrected_core_sha256": "9c3b8944733b2af3b5b1e8469b84bd6ffbab7eea876d9c1a52224d2055f3a427",
+  "routine_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/routine_screenings_checkpoint210.json",
+  "routine_receipt_sha256": "938f83eb5d936e181fc4b2d3bc8ea8a4d7d1618271ca3770d6336ba9491fea1d",
+  "focused_tests_passed": 366,
+  "focused_native_runner_seconds": 173.078,
+  "new_source_to_claim_tests": 2,
+  "bounded_negatives": 7,
+  "negative_case_limit": "Historical209omission plus6bounded source/meaning/typed-constraint deletions; assertion regressions, not exhaustive semantic proof or a new runtime source-qualification contract",
+  "semantic_checks": 7,
+  "IR_references": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4
+  },
+  "byte_exact_replays": 14,
+  "preservation": {
+    "checkpoint": 210,
+    "completed_utc": "2026-10-12T01:45:57.216080+00:00",
+    "protected_git_blobs_exact": 1081,
+    "authorized_append_only_source_files": 2,
+    "shutdown_notes": 2,
+    "allHealth_inputs_outputs_exact": true,
+    "prior53_non198cores_and92_behavioral_propositions_exact": true,
+    "prior621_non198_membership_records_exact": true,
+    "other669_universe_rows_exact": true,
+    "helper_bytes_exact": true,
+    "original_governed_sources_manifest_pool_preserved": true,
+    "new16_source_objects_equal_governedHealth": true,
+    "historical209_provider_and_receipts_preserved": true,
+    "previous_proposition_records_checked": 94
+  },
+  "counts": {
+    "reviewed": 625,
+    "pending": 51,
+    "ordinary_unscreened": 23,
+    "researched_holds": 28,
+    "meanings": 54,
+    "propositions": 94,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "remaining_categories": {
+    "routine_screenings": 23,
+    "executable_held_closures_verified_in_this_increment": 0,
+    "source_material_or_access_work": 24,
+    "authoritative_source_conflicts": 3,
+    "legal_application_review": 1,
+    "new_product_or_methodology_decisions": 0
+  },
+  "remaining_categories_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/remaining_work_categories_checkpoint210.json",
+  "remaining_categories_sha256": "16c437c4e311274844d71e25982c3f39f08798f0ae3dfc36e933c7704c2801a8",
+  "logs": [
+    {
+      "log": ".tmp\\tests210.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-12T01:44:44.072482+00:00",
+      "completed_utc": "2026-10-12T01:47:37.365767+00:00",
+      "elapsed_seconds": 173.29584230002365,
+      "exit_code": 0,
+      "log_sha256": "13e9101c2fc7cf0aeb89223201d4da9128552cb6c772722b173029f7dfd830e8"
+    },
+    {
+      "log": ".tmp\\semantic210.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-12T01:47:37.370357+00:00",
+      "completed_utc": "2026-10-12T01:47:39.335922+00:00",
+      "elapsed_seconds": 1.9655966999998782,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir210.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-12T01:47:39.340634+00:00",
+      "completed_utc": "2026-10-12T01:47:39.414415+00:00",
+      "elapsed_seconds": 0.07378569999127649,
+      "exit_code": 0,
+      "log_sha256": "7a489c234db968575160cfb88681585e7f200f6ee206e4e9025f15482d12f8f0"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-12T01:47:39.419189+00:00",
+      "completed_utc": "2026-10-12T01:47:52.608088+00:00",
+      "elapsed_seconds": 13.189092200016603,
+      "outputs": 7
+    },
+    {
+      "phase": "health_byte_exact_output_replay",
+      "started_utc": "2026-10-12T01:47:52.608495+00:00",
+      "completed_utc": "2026-10-12T01:47:58.568145+00:00",
+      "elapsed_seconds": 5.959739400015678,
+      "outputs": 7
+    }
+  ],
+  "timing": {
+    "checkpoint": 210,
+    "started_utc": "2026-10-12T01:23:13.295407+00:00",
+    "initial_preread_and_routine_inventory_before_timer_unmeasured": true,
+    "base_head": "f76dd6e5e1b10cf8b92b3d5aa61f45c3a126600e",
+    "scope": "Next coherent5-10routine source-predicate screenings, comparable timing includes orchestration/validation/delivery",
+    "comparable_routine_round": true,
+    "prior_benchmark_result": "FAIL",
+    "prior_benchmark_mean_seconds": 781.087,
+    "predeclared_action_ids": [
+      "house:119:2:55",
+      "house:119:2:72",
+      "house:119:2:89",
+      "house:119:2:110",
+      "house:119:2:191",
+      "house:119:2:193"
+    ],
+    "predeclared_selected_attempts": 6,
+    "selection": "Standalone sectoral regulation/research/benefit measures with existing governed complete bill texts; includes SBIR incorporation complexity, no title-based clearance",
+    "selection_completed_utc": "2026-10-12T01:27:26.286075+00:00",
+    "existing_Health_sources_reused": [
+      {
+        "source_id": "govinfo:hr4090eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090eh/html/BILLS-119hr4090eh.htm",
+        "text_version": "EH",
+        "characters": 9737,
+        "raw_sha256": "375f05e834bbe45d64cae7b5dd75b318e63f6f568395cc827103eca168a106ba",
+        "governed_bytes_sha256": "3f9c126bdaf7bf2561300681bc11d34d7f9a6f57d45d946415ad2b5627f3beb6",
+        "private_read_path": ".tmp/routine210-hr4090eh.txt"
+      },
+      {
+        "source_id": "govinfo:s2503es",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2503es/html/BILLS-119s2503es.htm",
+        "text_version": "ES",
+        "characters": 45768,
+        "raw_sha256": "52b6d0792f5c3d7b96aae56fc371526c9974e0a161a70762abf3570080397fa3",
+        "governed_bytes_sha256": "a165ce695e6fca34f925a233061ea97d4cc6669cbb339b56911a644b945a7db0",
+        "private_read_path": ".tmp/routine210-s2503es.txt"
+      },
+      {
+        "source_id": "govinfo:s3971es",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s3971es/html/BILLS-119s3971es.htm",
+        "text_version": "ES",
+        "characters": 36962,
+        "raw_sha256": "8a73c3e8e431ef23d4f8ec36da9fc4161b00d8af7296d3b0263c358d052070e9",
+        "governed_bytes_sha256": "21c08877224f91673ceebab4b21a1ba702321ca10fa466e6fcd3f80cba59a7d8",
+        "private_read_path": ".tmp/routine210-s3971es.txt"
+      },
+      {
+        "source_id": "govinfo:hr7613eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7613eh/html/BILLS-119hr7613eh.htm",
+        "text_version": "EH",
+        "characters": 139938,
+        "raw_sha256": "9ac641897d5537a55e8d88c789b80e2076243f890934eec4b2eb0892e4855c93",
+        "governed_bytes_sha256": "b8e1316fd382f89bb115a8c884a1a7846dfe934c0c5f1c29a01cd62b89a6c75a",
+        "private_read_path": ".tmp/routine210-hr7613eh.txt"
+      },
+      {
+        "source_id": "govinfo:hr6047eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6047eh/html/BILLS-119hr6047eh.htm",
+        "text_version": "EH",
+        "characters": 8966,
+        "raw_sha256": "b33c75f8a364efec9dbb8d17b46663f57cf78fc0761e1d2184ef0a99b32c089b",
+        "governed_bytes_sha256": "040eb13fadf41ac37922b8f80cb83d32b6d0f0bbf44547dcb92ec700845b245b",
+        "private_read_path": ".tmp/routine210-hr6047eh.txt"
+      },
+      {
+        "source_id": "govinfo:s254es",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s254es/html/BILLS-119s254es.htm",
+        "text_version": "ES",
+        "characters": 5750,
+        "raw_sha256": "9af71331d57e08880139162b106798723801fe091700c87a5a3caf98f1bb0411",
+        "governed_bytes_sha256": "2d8e7066f1694f1d15ddfb1c99ec960e90f39581deca0031ff1f3a2b8d1d8f2c",
+        "private_read_path": ".tmp/routine210-s254es.txt"
+      }
+    ],
+    "all_selected_attempt_costs_retained_even_if_held": true,
+    "no_new_legislative_acquisition_so_far": true,
+    "inherited209_P2_correction_started_utc": "2026-10-12T01:33:40.296360+00:00",
+    "timing_qualification": "Six predeclared attempts retained; inherited209 correction separately timed, shared validation/delivery assigned to routine batch; report inclusive and correction-separated endpoints",
+    "inherited209_P2_source_authoring_completed_utc": "2026-10-12T01:34:56.231377+00:00",
+    "inherited209_P2_source_authoring_seconds": 75.935017,
+    "source_domain_review_completed_utc": "2026-10-12T01:41:34.635521+00:00",
+    "source_domain_endpoint_seconds": 1101.340114,
+    "inherited209_correction_contiguous_interval_includes_interleaved_routine_reading": true,
+    "do_not_subtract_entire_correction_interval_from_primary_benchmark": true,
+    "routine_authoring_completed_utc": "2026-10-12T01:43:56.928048+00:00",
+    "routine_authoring_endpoint_seconds": 1243.632641,
+    "completed_screenings": 3,
+    "held_attempts": 3,
+    "initial_private_snapshot_failures": 2,
+    "initial_new_test_error": "compiler input path corrected;2focused regressions then pass2.508s",
+    "per_action_wall_time_unavailable": true,
+    "local_delivery_preparation_completed_utc": "2026-10-12T01:49:53.478041+00:00",
+    "local_delivery_preparation_seconds": 1600.182634,
+    "final_local_validation_seconds": 194.4840563000471,
+    "prior_benchmark_qualification": "Earlier174 was mixed completions, with2 functional completions; five comparable functional completions were not obtained. FAIL781.087 per functional completion, not a five-completed-cycle benchmark."
+  },
+  "new_legislative_acquisitions": 0,
+  "new_source_objects_reused_exact": 16,
+  "inherited209independent_source_finding": "P2 corrected, independent correction review pending",
+  "original209_receipts_and_provider_preserved": true,
+  "originalHealthcore_ID_prefix_sources_limits_unchanged": true,
+  "all_existing_helper_bytes_unchanged": true,
+  "new_head_CI_pending": true,
+  "CI_workflow_source_distinction": "Featuretree keeps old socket probes; hostedPRsynthetic workflow receives main217TCPfix. No main integration into Immigration.",
+  "benchmark_status": "Prior FAIL retained; sixattempt round has3functional exclusions and3holds, report total/attempt and total/completion with no held completion credit",
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "b53ba871d0a237cadf9f16d836b877e9ca769f3c7860be3e63e284c577f8b82a"
+}

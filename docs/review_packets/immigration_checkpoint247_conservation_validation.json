@@ -1,0 +1,540 @@
+{
+  "checkpoint": 247,
+  "base_head": "c88e0e23970a4ab3925a2169df6adce4684ed616",
+  "action_id": "house:119:1:70",
+  "created_utc": "2026-10-16T13:36:44.685150+00:00",
+  "counts": {
+    "reviewed": 666,
+    "pending": 10,
+    "cores": 87,
+    "behavioral_propositions": 145,
+    "episodes": 75,
+    "multi_action_episodes": 10
+  },
+  "completed_selected_clause_comparisons": 6,
+  "versions_per_clause": 4,
+  "complete_selected_extents": 24,
+  "new_screening_completions": 0,
+  "new_sources": 4,
+  "new_bindings": 24,
+  "new_acquisitions": 0,
+  "qualified_core_sha256": "57075a28646b948e906cb1f667283d1c8b3d4374164b1d7811d9ddcf748f3cf9",
+  "qualification_receipt_sha256": "654fbf09ac21580fcc09fdba0e09b40e3f2be65b9f4a75639edaa2b58f1768ca",
+  "conservation_before": {
+    "checkpoint": 247,
+    "base_head": "c88e0e23970a4ab3925a2169df6adce4684ed616",
+    "checked_utc": "2026-10-16T13:19:18.834314+00:00",
+    "all86othercores_authoring_665reviews_675inventory_rows_exact": true,
+    "all174observations_and_145propositions_entiregraphs_exact": true,
+    "whole70projection_only_core_hash_changed": true,
+    "all_old_source_objects_manifest_rows_private_prefix_exact": true,
+    "new_source_manifest_private_appends": 4,
+    "private_duplicate_rows_preserved": true,
+    "source_bank_count": 2954,
+    "manifest_count": 1840,
+    "private_pool_count": 1876,
+    "all_prior70meaning157bindings_limits_choices_compact_preserved": true,
+    "all70questions_flags_accounting_holds_hr1048_exact": true,
+    "all_other_audit_rows_historical_findings_and_summary_counts_exact": true,
+    "all_old_test_method_bodies_exact": true,
+    "new_test_methods": 6,
+    "tracked_files_outside_allowlist_exact": 3688,
+    "frozen_private_and_notes_exact": 995,
+    "index_unchanged": true,
+    "issue_mapping_only_new_typed_source_boundary_and_seal_changed": true,
+    "initial_conservation_expected_mapping_byte_identity_too_strict": true,
+    "initial_failed_conservation_command_seconds_lower_bound": 10.0046474,
+    "initial_failure_full_process_cost_unisolated_in_gross": true,
+    "counts": {
+      "reviewed": 666,
+      "pending": 10,
+      "cores": 87,
+      "behavioral_propositions": 145,
+      "episodes": 75,
+      "multi_action_episodes": 10
+    },
+    "elapsed_seconds": 12.255628200015053,
+    "independent_review_pending": true,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "6a62c536d97d731a8376bbc81e314ae9df5e914a71d2f65121ab5a63db0f3912"
+  },
+  "conservation_after": {
+    "checkpoint": 247,
+    "base_head": "c88e0e23970a4ab3925a2169df6adce4684ed616",
+    "checked_utc": "2026-10-16T13:36:22.294528+00:00",
+    "all86othercores_authoring_665reviews_675inventory_rows_exact": true,
+    "all174observations_and_145propositions_entiregraphs_exact": true,
+    "whole70projection_only_core_hash_changed": true,
+    "all_old_source_objects_manifest_rows_private_prefix_exact": true,
+    "new_source_manifest_private_appends": 4,
+    "private_duplicate_rows_preserved": true,
+    "source_bank_count": 2954,
+    "manifest_count": 1840,
+    "private_pool_count": 1876,
+    "all_prior70meaning157bindings_limits_choices_compact_preserved": true,
+    "all70questions_flags_accounting_holds_hr1048_exact": true,
+    "all_other_audit_rows_historical_findings_and_summary_counts_exact": true,
+    "all_old_test_method_bodies_exact": true,
+    "new_test_methods": 6,
+    "tracked_files_outside_allowlist_exact": 3688,
+    "frozen_private_and_notes_exact": 995,
+    "index_unchanged": true,
+    "issue_mapping_only_new_typed_source_boundary_and_seal_changed": true,
+    "initial_conservation_expected_mapping_byte_identity_too_strict": true,
+    "initial_failed_conservation_command_seconds_lower_bound": 10.0046474,
+    "initial_failure_full_process_cost_unisolated_in_gross": true,
+    "counts": {
+      "reviewed": 666,
+      "pending": 10,
+      "cores": 87,
+      "behavioral_propositions": 145,
+      "episodes": 75,
+      "multi_action_episodes": 10
+    },
+    "elapsed_seconds": 11.28991930000484,
+    "independent_review_pending": true,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "ae84354be632f1d83b2a53b94cc2c0c06bd59d09de20c6643d9b3f3228230651"
+  },
+  "validation": {
+    "owner_tests": 504,
+    "Immigration_tests": 327,
+    "new_tests": 6,
+    "all_old_test_method_bodies_exact": true,
+    "focused_tests": 16,
+    "focused_unit_seconds": 32.429,
+    "focused_command_seconds": 32.72895229991991,
+    "source_predicate_corruptions_rejected": 24,
+    "positive_actual_Immigration_prepare": true,
+    "semantic_checks": 7,
+    "IR_passed": true,
+    "actual_seven_CLI_outputs_byte_exact": true,
+    "full_gate": {
+      "started_utc": "2026-10-16T13:20:00.610023+00:00",
+      "completed_utc": "2026-10-16T13:34:36.613683+00:00",
+      "wall_seconds": 876.1489754000213,
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-16T13:20:00.610529+00:00",
+          "PID": 700,
+          "completed_utc": "2026-10-16T13:34:36.608544+00:00",
+          "elapsed_seconds": 876.1433538999408,
+          "exit_code": 0,
+          "log": ".tmp/full_gate247_final/owner.log",
+          "log_sha256": "c17c628ababea37706e471f37b4acea3f62f0736fb143c0fcb1ca126a1d6dbb3"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-16T13:20:00.610847+00:00",
+          "PID": 3724,
+          "completed_utc": "2026-10-16T13:20:00.698162+00:00",
+          "elapsed_seconds": 0.08732389996293932,
+          "exit_code": 0,
+          "log": ".tmp/full_gate247_final/IR.log",
+          "log_sha256": "dcaf732ade1daf9fec894940551dc5cd58cadb5510f95e471771317c15f94137"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-16T13:20:00.610712+00:00",
+          "PID": 26264,
+          "completed_utc": "2026-10-16T13:20:03.279075+00:00",
+          "elapsed_seconds": 2.668370999977924,
+          "exit_code": 0,
+          "log": ".tmp/full_gate247_final/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate247_final\\replay"
+          ],
+          "started_utc": "2026-10-16T13:20:00.611410+00:00",
+          "PID": 22668,
+          "completed_utc": "2026-10-16T13:22:19.232515+00:00",
+          "elapsed_seconds": 138.62112599995453,
+          "exit_code": 0,
+          "log": ".tmp/full_gate247_final/replay.log",
+          "log_sha256": "a6599c16fcd33e2dde71113f23cfd76824a70d5345c9659b80fe389c40869af2",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "ac615a12ffea004bea0fd304874cbd24a26ae0993f9e8419d04bf25e9573d8fa",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "3ee05cf7cc8f77fe61f46ddf8cd1d493e835beac1b1bfabc731c8db0e3865ef2",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "1076c70f71f8c64c9a2307d651c078d17f4ce4a136f4265eb7e5cf718e6bb921",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "75c28d265700a31ba943244c03628a818bcd26ff7f9cc888e27eec291b3df179",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "781ce401bbca8b08174c70202984e840ffd1a6ad842a505fa959cf59652a26b6",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "1aa956c2c3a6f512a7958e07d3fd4db232d7423458b4f5dfd8275a8bb57e560d",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "cc9f0b89aa49fb3476d2b3ebbd90323e60957f77a65fa90332d15996197ca0e4",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "1169c6d490e5936b562b7c6404e7c56b60949d02111fffe70bae934695c97a8a",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "9c67cc849241c7619d1d77c04769b0a21356f3e775a16626cc448e4759175f61",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "ba6041b8f1d850847537f72d04c25715fe9cc0991b17d0b34af2e3fc97792838",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "a146a5d6091c2789b5881d426517f3991ac2c825353a76d2a0044e0c9414dcc2",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "0f729fb58aa71c2c2e0f8ac7d00dfc783fc87ef59edd7aa9b2404c2986a7548e",
+        "backend/tests/test_immigration_shared_candidate.py": "5fa2a6947de86da2a891238d401f43a2800c8016575d165ec4ef5c704cced82b",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "b1b41c19cbe9e636751f404d67b6a75eac2472e8e7cef98c8e30e5dd20cea8e7",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_general_conditions_checkpoint247.json": "4bc23da5e5f2420e581593bf211181cd8832c4370b746b55fe932db17c15d63d",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/july_predicate_corrections_checkpoint246.json": "579e04fa3e9e7452a878671965da6098d15b314113e215b169c029998fbeb988",
+        "docs/plans/immigration_checkpoint247_general_conditions.md": "f5cab684f4c7c4e1e8157e48214d3c33217644d830eaa91a7506bff8908dd1f1",
+        "docs/editorial/shared_candidates/house_119_july_predicate_corrections_checkpoint246/shared_action_core_proposal.json": "a8fbe7a3351a96eb0c660990788d10317b3637d8f77765d0ec8562d0b04cb8af",
+        "docs/editorial/shared_candidates/house_119_july_predicate_corrections_checkpoint246/README.md": "29b4735dec1dbbed915ebc1f6507237fb67b86b437f46d82031166c212aa5a50",
+        "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
+        "docs/review_packets/immigration_checkpoint246_july_predicate_audit.json": "64177ce64f17ce965cc3300a64570b26c3427538b7f85ef26070eeb29c5fdd8e",
+        "docs/review_packets/immigration_checkpoint246_hr1968_bounded_review.json": "a7dcd7e042dfe7a16654fdb179e6b1d847e637f9cf704f5f7afbd44fdc52878b",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/july_defense_qualification_checkpoint245.json": "fdcd6ed9f0a4c20d02232e7afd8c9a8c75ad96e0176c12639d0e547354e6e09e",
+        "docs/editorial/shared_candidates/house_119_july_defense_qualification_checkpoint245/shared_action_core_proposal.json": "740c47046d768d1cc3e32fcd241f7cac9521aceaba606eb606d0c8b7ec220e30",
+        "docs/review_packets/immigration_checkpoint245_predicate_audit.json": "aa8d6a001ea1aefdd82738a9efcd43e77282021991c98cde382b612de3051de8"
+      },
+      "input_hashes_unchanged": true
+    },
+    "full_gate_attempts": 1,
+    "new_fully_resealed_provider_real_CLI_campaign": false,
+    "source_binding_tests_not_semantic_completeness_or_acceptance": true
+  },
+  "active_copy_inspection": {
+    "inspected_utc": "2026-10-16T13:31:44.605522+00:00",
+    "meaning_characters": 145371,
+    "core_sha256": "57075a28646b948e906cb1f667283d1c8b3d4374164b1d7811d9ddcf748f3cf9",
+    "active_full_meaning_copies": [
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json/actions/10/meaning",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json/shared_semantics/actions/10/eligibility/exact_action_basis",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json/actions/10/candidate_exact_action_meaning",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json/members/0/findings/40/detail/1",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json/members/0/findings/40/action_observations/0/detail/1",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json/members/1/findings/38/detail/1",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json/members/1/findings/38/action_observations/0/detail/1",
+      "docs/review_packets/immigration_semantic_audit_in_progress.json/substantive_actions/39/primary_reconstruction"
+    ],
+    "active_full_meaning_copy_count": 8,
+    "source_views": {
+      "governed": 112,
+      "operative": 111,
+      "semantic_IR": 112
+    },
+    "original_compact_meaning_source_refs_and_choices_exact": true,
+    "added_meaning_member_neutral": true,
+    "whole_package_observations": [
+      {
+        "member_id": "F000477",
+        "official_status": "Nay",
+        "action_core_sha256": "57075a28646b948e906cb1f667283d1c8b3d4374164b1d7811d9ddcf748f3cf9"
+      },
+      {
+        "member_id": "M001184",
+        "official_status": "Nay",
+        "action_core_sha256": "57075a28646b948e906cb1f667283d1c8b3d4374164b1d7811d9ddcf748f3cf9"
+      }
+    ],
+    "new_claims_match_core_exactly": true,
+    "actual_preparation_negatives24_and_conservation_verified_separately": true,
+    "editorial_acceptance": false,
+    "receipt_sha256": "cd70027e9c89ae8714b0760182595b9d5ef128bc0a33292ee79efc56f80bf2d7"
+  },
+  "source_scope": {
+    "original140027meaning157bindings_all_limits_compact_choices_preserved": true,
+    "all_old_bank2950_manifest1836_private1872objects_and_historical_duplicates_preserved": true,
+    "source_views": {
+      "governed": 112,
+      "operative": 111,
+      "semantic_IR": 112
+    },
+    "four_source_year_divisions_own_enactment_funds_actors_PHS_reference_bounds": true,
+    "SSA518_not_universal_medical_grant_or_status_condition": true,
+    "existing_typed_new_source_boundary_propagates_without_changed_action_mapping_or_graph": true,
+    "all_partial_component_flags_70questions_held_decisions_history_withdrawals_and_source_restrictions_preserved": true,
+    "whole_historical_parent_or_current_individual_legal_application_certificate": false
+  },
+  "bounded_reviews": {
+    "checkpoint246_comment": 6207209752,
+    "reviewed_head": "c88e0e23970a4ab3925a2169df6adce4684ed616",
+    "updated_utc": "2026-10-16T03:35:56Z",
+    "three246corrections_closed_with_terminal_CI": true,
+    "HR1_intake_ref": "docs/review_packets/immigration_checkpoint247_hr1_bounded_review_intake.json",
+    "HR1_intake_sha256": "1910eb6e1bcb87a52e82c7440c92a2efc53c87d64085bb79ca6b72e2a85a6535",
+    "HR1_reviewed_actions_and_sources_conserved_since0ced": true,
+    "HR1_electricity_scope_bounded_counterparts_nonidentification_not_absence": true,
+    "no_package_flags_cleared": true,
+    "current247_independent_source_domain_review_pending": true
+  },
+  "throughput": {
+    "observed_model": "GPT-6base observed previously",
+    "current_selected_variant_effort_speed_tier": "Unexposed; no change requested or inferred",
+    "current_resume_first_work_utc": "2026-10-16T13:11:16+00:00",
+    "gate_completed_utc": "2026-10-16T13:34:36.613683+00:00",
+    "current_resume_gross_seconds_per_batch": 1400.613683,
+    "current_resume_normalized_seconds_per_six_complex_clause_comparisons": 233.43561383333335,
+    "earliest_preparation_first_work_utc": "2026-10-16T02:03:32.640154+00:00",
+    "prior_preparation_shared246_active_window_seconds": 5476.81155,
+    "prior_preparation_not_isolated_from246repairs_gate_delivery": true,
+    "explicit_user_requested_overnight_pause_seconds": 34586.548296,
+    "conservative_combined_shared_prior_and_resume_active_window_seconds": 6877.425233,
+    "conservative_combined_normalized_seconds_per_six_comparisons": 1146.2375388333332,
+    "combined_window_includes_other246work_not_exclusive247labor": true,
+    "individual_action_cycles_not_isolated": true,
+    "completed_new_screenings": 0,
+    "comparable_routine_samples": 0,
+    "complexity": "Six complete historical source-condition comparisons across four versions within an existing whole-package core",
+    "application": {
+      "started_utc": "2026-10-16T13:15:19.485982+00:00",
+      "completed_utc": "2026-10-16T13:17:33.991350+00:00",
+      "elapsed_seconds": 134.50538430002052,
+      "counts": {
+        "reviewed": 666,
+        "pending": 10,
+        "cores": 87,
+        "behavioral_propositions": 145,
+        "episodes": 75,
+        "multi_action_episodes": 10
+      },
+      "source_appends": 4,
+      "manifest_appends": 4,
+      "private_pool_appends": 4,
+      "source_bank_count": 2954,
+      "manifest_count": 1840,
+      "private_pool_count": 1876,
+      "qualification_receipt_sha256": "654fbf09ac21580fcc09fdba0e09b40e3f2be65b9f4a75639edaa2b58f1768ca",
+      "canonical_inputs_written": true,
+      "full_gate_pending": true,
+      "initial_application_prewrite_hash_convention_assertion_failure_command_seconds": 1.3505545,
+      "initial_failure_no_canonical_writes": true,
+      "captured_full_text_sha256_uses_existing_canonical_text_digest_not_raw_UTF8": true
+    },
+    "snapshot_seconds": 16.611398600041866,
+    "private_authoring": {
+      "started_utc": "2026-10-16T02:56:41.290404+00:00",
+      "completed_utc": "2026-10-16T02:56:42.078022+00:00",
+      "elapsed_seconds": 0.7876221999758855,
+      "inspected_git_head": "0ced30a835285f9e812ba287b4ecb7aee59cea5e",
+      "private_context": "Checkpoint246inputs fixed/gate active;70and sourcebank unchanged from0ced. Reconcile final246head and resnapshot before any247canonical application.",
+      "prior_action_sha256": "58ff539967b391bfbe6172e37d089ce505d9663c727c04593e2c38cb8b318bd3",
+      "prospective_action_sha256": "5a2b2d70bb35b034213fdf9180a75761bf257793e78143342578bdc509aefe3e",
+      "prospective_core_sha256": "57075a28646b948e906cb1f667283d1c8b3d4374164b1d7811d9ddcf748f3cf9",
+      "original_meaning_characters": 140027,
+      "new_meaning_characters": 145371,
+      "prior_bindings": 157,
+      "new_bindings": 24,
+      "total_bindings": 181,
+      "new_selected_source_objects": 4,
+      "new_acquisitions": 0,
+      "completed_source_clause_comparisons": 6,
+      "versions_per_clause": 4,
+      "actual_read_receipt_ref": ".tmp/next246_hr1968/all24_actual_reads_and_comparison.json",
+      "all_old_meaning_and157bindings_preserved": true,
+      "private_actual_Immigration_prepare_pass": true,
+      "initial_missing_optional_constraint_key_command_seconds": 0.5792545,
+      "canonical_changes": false,
+      "new_screening_completions": 0,
+      "component_flags_cleared": false,
+      "publication_authorized": false,
+      "editorial_acceptance": false,
+      "receipt_sha256": "6c70470b1107bcb45bd5deec0fe4678320f4bc2a8b469f4cacf00e067cd967bb"
+    },
+    "private_preflight": {
+      "started_utc": "2026-10-16T03:12:22.200621+00:00",
+      "completed_utc": "2026-10-16T03:12:27.598690+00:00",
+      "elapsed_seconds": 5.398090700036846,
+      "actual_Immigration_prepare_positive": true,
+      "source_bank_prospective_count": 2954,
+      "claim_bindings": 181,
+      "negative_cases": [
+        {
+          "section": 508,
+          "source_id": "govinfo:pl113-235-divisionG-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 508,
+          "source_id": "govinfo:pl115-31-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 508,
+          "source_id": "govinfo:pl116-94-divisionA-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 508,
+          "source_id": "govinfo:pl117-328-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 509,
+          "source_id": "govinfo:pl113-235-divisionG-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 509,
+          "source_id": "govinfo:pl115-31-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 509,
+          "source_id": "govinfo:pl116-94-divisionA-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 509,
+          "source_id": "govinfo:pl117-328-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 510,
+          "source_id": "govinfo:pl113-235-divisionG-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 510,
+          "source_id": "govinfo:pl115-31-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 510,
+          "source_id": "govinfo:pl116-94-divisionA-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 510,
+          "source_id": "govinfo:pl117-328-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 511,
+          "source_id": "govinfo:pl113-235-divisionG-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 511,
+          "source_id": "govinfo:pl115-31-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 511,
+          "source_id": "govinfo:pl116-94-divisionA-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 511,
+          "source_id": "govinfo:pl117-328-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 515,
+          "source_id": "govinfo:pl113-235-divisionG-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 515,
+          "source_id": "govinfo:pl115-31-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 515,
+          "source_id": "govinfo:pl116-94-divisionA-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 515,
+          "source_id": "govinfo:pl117-328-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 518,
+          "source_id": "govinfo:pl113-235-divisionG-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 518,
+          "source_id": "govinfo:pl115-31-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 518,
+          "source_id": "govinfo:pl116-94-divisionA-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        },
+        {
+          "section": 518,
+          "source_id": "govinfo:pl117-328-divisionH-sec508-511-515-518-general-conditions247",
+          "error": "claim passage absent from bound source: house:119:1:70"
+        }
+      ],
+      "negative_case_count": 24,
+      "whole_choice_Nay_observations": [
+        "Nay",
+        "Nay"
+      ],
+      "canonical_changes": false,
+      "new_screening_completions": 0,
+      "new_acquisitions": 0,
+      "new_fully_resealed_real_CLI_mutation_campaign": false,
+      "structural_checks_not_semantic_acceptance": true,
+      "receipt_sha256": "52ea9c93a4e3b48d39581d4116d240d023763c9908d5ede8d79629e722648ea3"
+    },
+    "new_prewrite_hash_convention_failure_seconds": 1.3505545,
+    "failed_conservation_runtime_unisolated_in_gross": true,
+    "all_costs_boundary": "All current model/context/research/tool/source/authoring/command/test/failure/rework/Git/PR/CI/observation-delay costs remain in gross. Earlier source/support work additional/unisolated; not zero. User-requested overnight pause excluded explicitly. Git/PR/freshCI occur after this gate receipt and add measured delivery costs. No summing overlapping process durations as exclusive labor.",
+    "overlap": "Private next248State-source research and native HR1intake overlap this final gate. Prior preparation overlaps245CI/246repairs/gate/delivery. Current HR1intake body reports distinct earlier inspection and native-turn costs, not summed.",
+    "routine_target_seconds": 600,
+    "routine_target_demonstrated": false,
+    "historical_diagnosis230_FAIL_unchanged": true
+  },
+  "parent246_CI": {
+    "run": 38843595518,
+    "all10jobs4late_passed": true,
+    "CI_seconds": 1774,
+    "receipt_sha256": "cc7374829e91265ce6acc7d2966b609e7529ede091a4a62ccff0b527afda748b",
+    "native_proof_sha256": "d9a363f2c4e12bc1c5b5fda0d3848d51bdcee2b19660510f4847989a4b497b04"
+  },
+  "successor247_CI": "Pending push/fresh exact-head attempt1; no parent-green transfer",
+  "remaining_package_research_executable": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "merge_manual_deployment_registry_production_writes": false,
+  "receipt_sha256": "5869b7e41543521ba3243b10162a03dcdf5fcd7ede915cdc7e4d3540fc00d065"
+}

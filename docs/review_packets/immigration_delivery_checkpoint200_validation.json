@@ -1,0 +1,225 @@
+{
+  "checkpoint": 200,
+  "base_head": "457721bac06f8b44243797639a98882b5fca46b6",
+  "correction_receipt_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\hr7008_investment_exclusion_precision_correction_checkpoint200.json",
+  "correction_receipt_sha256": "883691a3d63a27da5e6a26802302257a13e2246d73f3ca32ce23c08c8139d876",
+  "corrected_actions": 1,
+  "findings_corrected": 2,
+  "completed_new_screenings": 0,
+  "counts": {
+    "reviewed": 615,
+    "pending": 61,
+    "ordinary_unscreened": 29,
+    "researched_holds": 32,
+    "meanings": 48,
+    "propositions": 82,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "focused_tests": 206,
+  "focused_test_runner_seconds": 24.531,
+  "semantic_checks": 7,
+  "accepted_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out_references": 4,
+    "held_out": 4
+  },
+  "byte_exact_output_replays": 7,
+  "preservation_and_source_checks": {
+    "corrected_actions": 1,
+    "contextual_findings_corrected": 2,
+    "prior_shared_meanings_preserved": 47,
+    "all48_identity_and_membership_decisions_unchanged": true,
+    "prior_member_projection_rows_preserved": 94,
+    "corrected_member_projection_rows": 2,
+    "member_statuses": {
+      "F000477": "Nay",
+      "M001184": "Yea"
+    },
+    "all82_propositions_exact": true,
+    "compiled_IR_byte_exact": true,
+    "issue_mapping_byte_exact": true,
+    "prior_other_readable_findings_exact": true,
+    "all615_membership_reviews_byte_exact": true,
+    "universe_byte_exact": true,
+    "sources_capture_manifest_private_pool_byte_exact": true,
+    "frozen_blobs_preserved": 386,
+    "untracked_notes_preserved": 2,
+    "literal_predicate_scopes": 9,
+    "no_new_acquisitions_or_source_objects": true,
+    "checkpoint199_review_artifacts_preserved": true,
+    "CI199_actual_nine_first_attempt_executions_retained": true,
+    "CI199_four_conditional_guards_unexecuted": true,
+    "CI199_synthetic_base_differs_later_direct_main": true,
+    "current_main_integration_claim": false,
+    "independent_current_meaning_review_pending": true,
+    "candidate_only": true
+  },
+  "phase_logs": [
+    {
+      "log": ".tmp\\tests200.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence"
+      ],
+      "started_utc": "2026-10-11T19:11:29.629769+00:00",
+      "completed_utc": "2026-10-11T19:11:54.367881+00:00",
+      "elapsed_seconds": 24.73819989999174,
+      "exit_code": 0,
+      "log_sha256": "810792266a820f4b5c9b6714aa5c3fd77bc7bc2ae254116152084f5e3d77b505"
+    },
+    {
+      "log": ".tmp\\semantic200.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-11T19:11:54.373086+00:00",
+      "completed_utc": "2026-10-11T19:11:56.320189+00:00",
+      "elapsed_seconds": 1.9471139000088442,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir200.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-11T19:11:56.325711+00:00",
+      "completed_utc": "2026-10-11T19:11:56.393295+00:00",
+      "elapsed_seconds": 0.06758639999316074,
+      "exit_code": 0,
+      "log_sha256": "4941293030174f23ceec5bca86bf80447ef65e9a6d75e8009f96ec6a06fab7dc"
+    },
+    {
+      "phase": "byte_exact_output_replay",
+      "started_utc": "2026-10-11T19:11:56.397589+00:00",
+      "completed_utc": "2026-10-11T19:12:02.180568+00:00",
+      "elapsed_seconds": 5.783004199998686,
+      "outputs": 7
+    }
+  ],
+  "literal_predicate_check_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\literal_predicate_authoring_check_checkpoint200.json",
+  "literal_predicate_check_sha256": "01322f44f784945574a0d706ff31f71345294bdcae0d9696c678f93a8166edb9",
+  "independent199_review_path": "docs\\review_packets\\immigration_bounded_review_checkpoint199_received200.json",
+  "independent199_review_sha256": "27cbf8842f304217539f5a78a6efa29d599850f0a0e25199ab1e2a5083718084",
+  "prior199_contextual_findings_preserved": true,
+  "corrected200_independent_review_pending": true,
+  "CI199_receipt_path": "docs\\review_packets\\immigration_delivery_checkpoint199_ci.json",
+  "CI199_receipt_sha256": "703654eedf45099d233f8f4c6b225a4f96f067f81120cd6e2020d31538cc1d5f",
+  "CI199_base_qualification_path": "docs\\review_packets\\immigration_delivery_checkpoint199_ci_base_qualification.json",
+  "CI199_base_qualification_sha256": "fbbb997482ba2cfdd6a5b325ca2edf1e605ed0ec608f699945d55b50e9ac8b70",
+  "CI199_actual_first_attempt_jobs": 9,
+  "CI199_conditional_guards_unexecuted": 4,
+  "CI199_synthetic_base_differs_later_main": true,
+  "new_head_CI_pending": true,
+  "timing": {
+    "checkpoint": 200,
+    "started_utc": "2026-10-11T19:10:50.427189+00:00",
+    "selection": "Two delegated P3 investment-exclusion corrections to existing roll280 candidate",
+    "initial_source_inspection_before_timer_unmeasured": true,
+    "next_hold_preselection_unmeasured": true,
+    "new_comparable_routine_samples": 0,
+    "new_average_inferred": false,
+    "prior_comparable_mean_seconds": 781.087,
+    "prior_comparable_result": "FAIL",
+    "authoring_completed_utc": "2026-10-11T19:10:55.887583+00:00",
+    "authoring_endpoint_seconds": 5.460394,
+    "local_validation_completed_utc": "2026-10-11T19:14:51.558894+00:00",
+    "elapsed_through_local_validation_seconds": 241.131705,
+    "validation_phases": [
+      {
+        "log": ".tmp\\tests200.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate",
+          "backend.tests.test_editorial_semantic_ir",
+          "backend.tests.test_source_sequence"
+        ],
+        "started_utc": "2026-10-11T19:11:29.629769+00:00",
+        "completed_utc": "2026-10-11T19:11:54.367881+00:00",
+        "elapsed_seconds": 24.73819989999174,
+        "exit_code": 0,
+        "log_sha256": "810792266a820f4b5c9b6714aa5c3fd77bc7bc2ae254116152084f5e3d77b505"
+      },
+      {
+        "log": ".tmp\\semantic200.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/run_editorial_pipeline.py",
+          "validate",
+          "--tier",
+          "semantic"
+        ],
+        "started_utc": "2026-10-11T19:11:54.373086+00:00",
+        "completed_utc": "2026-10-11T19:11:56.320189+00:00",
+        "elapsed_seconds": 1.9471139000088442,
+        "exit_code": 0,
+        "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+      },
+      {
+        "log": ".tmp\\ir200.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/validate_editorial_semantic_ir.py"
+        ],
+        "started_utc": "2026-10-11T19:11:56.325711+00:00",
+        "completed_utc": "2026-10-11T19:11:56.393295+00:00",
+        "elapsed_seconds": 0.06758639999316074,
+        "exit_code": 0,
+        "log_sha256": "4941293030174f23ceec5bca86bf80447ef65e9a6d75e8009f96ec6a06fab7dc"
+      },
+      {
+        "phase": "byte_exact_output_replay",
+        "started_utc": "2026-10-11T19:11:56.397589+00:00",
+        "completed_utc": "2026-10-11T19:12:02.180568+00:00",
+        "elapsed_seconds": 5.783004199998686,
+        "outputs": 7
+      }
+    ],
+    "upfront_snapshot_setup_before_timer_unmeasured": true,
+    "independent199_review_received_during_correction": true,
+    "independent199_review_seconds_not_a_new_routine_average": 511.887
+  },
+  "benchmark": {
+    "result": "FAIL",
+    "mean_seconds": 781.087,
+    "ceiling_seconds": 600,
+    "target_seconds": 240,
+    "new_comparable_samples": 0,
+    "no_new_average": true
+  },
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "production_eligible": false,
+  "publication_authorized": false,
+  "receipt_sha256": "35dfe2d29972355f0889dc57e0f93b9f1a3d4a1ca5db63b11e7a6f073f21e069"
+}

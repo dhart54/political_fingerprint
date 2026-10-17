@@ -1,0 +1,80 @@
+{
+  "checkpoint": 237,
+  "review_comment": 6198041847,
+  "reviewed_head": "433f24f9a54276d77d2a22c73e19f7c88e1f49f6",
+  "reviewed_parent": "770419240bcf0b672c701886f14d5fa8e0d31f82",
+  "action_id": "house:119:2:154",
+  "prior_core_sha256": "b89eff9fba52397451ebf156f23cb9fd2f5d2ed2039ea80b3a231a4d14690fbb",
+  "new_core_sha256": "4378f8b0f386b12b717bd6c20865a3e13874ed0641a8fe6cbef0343f5354a760",
+  "changes": [
+    {
+      "before": "preparation to live in one or more host countries for the printed two-to-six-month period",
+      "after": "preparation to live in one or more host countries under the literal duration wording 'for at least 2 months or up to 6 months', whose application remains unresolved"
+    },
+    {
+      "before": "conditional native-language producer assistance in2502(l)",
+      "after": "conditional native-language producer assistance in EH2502(i) (inserting Food Security Act1242(l)(3)(B))"
+    },
+    {
+      "before": "The preserved original subtitle and dated19231-19237 comparator",
+      "after": "The provisions in the dated19231-19237 comparator"
+    }
+  ],
+  "source_points": [
+    {
+      "source_id": "govinfo:hr7567eh",
+      "start": 216055,
+      "end": 216094,
+      "passage": "for at least 2 months or up to 6 months",
+      "passage_UTF8_sha256": "47168c1897a34f9bcf9063b01e5d6e9b3274416c66ea6cc70080a77c51193344"
+    },
+    {
+      "source_id": "govinfo:hr7567eh",
+      "start": 114012,
+      "end": 114069,
+      "passage": "(i) Provision of Assistance to Farmer-to-farmer Networks.",
+      "passage_UTF8_sha256": "845055cdd6c9fd51b6cee96684923adfe5ee6574a710227b3673a699f55a8406"
+    },
+    {
+      "source_id": "govinfo:hr7567eh",
+      "start": 117574,
+      "end": 117884,
+      "passage": "``(B) Language assistance.--If an eligible entity provides assistance described in subparagraph (A) to a non-English speaking farmer, rancher, or forest owner, the eligible entity shall, to the greatest extent practicable, provide that assistance in the native language of the farmer, rancher, or forest owner.",
+      "passage_UTF8_sha256": "90cd764021c394b0ac0e7666f53258713a72eb33caa90501b6323195227a5e7e"
+    }
+  ],
+  "source_witnesses_and_claim_bindings_unchanged": true,
+  "original_Health_prefix_identity_and_history_preserved": true,
+  "historical_owner_note_prospective_annotation": {
+    "path": ".tmp/farm154_236/owner_read_progress.json",
+    "raw_file_sha256": "a7ad3d010ee2d75ebcd15ba753e74fcf1630ade5b13e237a3b8e96256c0034b6",
+    "original_unchanged": true,
+    "corrections": [
+      {
+        "historical_shorthand": "2502(l)(3)(B)native-language",
+        "prospective_qualification": "EH2502(i) inserts FoodSecurityAct1242(l)(3)(B); preserve conditional greatest-extent-practicable language"
+      },
+      {
+        "historical_shorthand": "prepared2-6months",
+        "prospective_qualification": "Literal 'for at least 2 months or up to 6 months' is disjunctive; no bounded-range adjudication"
+      }
+    ]
+  },
+  "research_source_provenance": "The dated19231-19237 comparator is action-bound and supports the stated predicates. Original subtitle remains preserved corpus-wide; no implication it is action-bound, no new acquisition or normative source gap.",
+  "closed_prior_CR_findings": "Review6198041847 closes all three235P3s at exact236head433; no further CRmeaning/source changes in237.",
+  "independent_review_scope": "Independent150174of959629EHcharacters and42newmaterialwitnesses reviewed;126bindings/56identities/24ownerinputhashes/CLI7 reproduce. Ownercomplete34intervalreading and439/262execution remain attributed; not a whole-EH/raw-image/current-law certificate.",
+  "scope": "Two Farm augmentation P3s plus related provenance wording repaired prospectively; whole-choice membership and official directions unchanged, no pending restoration.",
+  "fresh_acquisitions": 0,
+  "independent237_source_domain_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "17d7a5301e4a69682e356012284509de4d2d81563b8b1dd5f30f3321f4b81545",
+  "pre_final_gate_grammar_refinement": {
+    "before": "The dated19231-19237 comparator distinguish",
+    "after": "The provisions in the dated19231-19237 comparator distinguish",
+    "reason": "Make the single bound comparator sentence grammatical while preserving the plural provisions and their five supported predicates; no source or factual scope change.",
+    "prior_core_sha256": "7c03eb7c933ee8f18548c28666ef6d0cdda58f107eb0f455975ecd3c86f7f8d0",
+    "prior_precision_receipt_sha256": "ddf3979caac44a95a87e85f80781d4f2c44fb31a3ac144a47ccdb6fffd8374a1",
+    "initial_precision_provider_and_receipt_retained": true
+  }
+}

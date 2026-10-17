@@ -1,0 +1,267 @@
+{
+  "checkpoint": 191,
+  "head": "47a828d284f9f7100b955f0f77b94267f88fd800",
+  "run": 38107408487,
+  "run_attempt": 1,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "failed_jobs": [],
+  "jobs": [
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114375725867,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:10Z",
+      "completed_at": "2026-10-11T03:10:47Z",
+      "checkout_log_shas": [
+        "788f6b62315c13b057356c014d7e669d44f4c134"
+      ],
+      "log_sha256": "f50ede1e5c1c11a068bdf5e71cd5241226ef68be5ab9146f043e27d062758b78",
+      "log_bytes": 1504685,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:08:38.1593966Z 15 passed in 0.29s",
+        "2026-10-11T03:08:39.0743359Z 19 passed in 0.66s",
+        "2026-10-11T03:08:40.9629640Z 27 passed in 1.60s",
+        "2026-10-11T03:10:45.1555855Z 639 passed, 1 warning in 45.12s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T03:10:47.0905149Z HEAD is now at 47a828d2 Qualify July financial-package sources and preserve individual-access holds",
+        "2026-10-11T03:13:11.2494203Z HEAD is now at 47a828d2 Qualify July financial-package sources and preserve individual-access holds"
+      ],
+      "job_id": 114375725911,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:10Z",
+      "completed_at": "2026-10-11T03:13:50Z",
+      "checkout_log_shas": [
+        "788f6b62315c13b057356c014d7e669d44f4c134",
+        "47a828d284f9f7100b955f0f77b94267f88fd800"
+      ],
+      "log_sha256": "477cee3af0572607093b39f6a3b4660d9c8fc0073f1cb1f1e9499592af457e21",
+      "log_bytes": 136603,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:09:01.6887277Z 6 passed in 2.90s",
+        "2026-10-11T03:10:46.4499189Z 38 passed, 1 warning in 103.56s (0:01:43)",
+        "2026-10-11T03:13:09.5878600Z 13 passed in 118.46s (0:01:58)",
+        "2026-10-11T03:13:48.3915792Z 20 passed in 34.64s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T03:08:29.1307978Z HEAD is now at 47a828d2 Qualify July financial-package sources and preserve individual-access holds"
+      ],
+      "job_id": 114375726009,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:10Z",
+      "completed_at": "2026-10-11T03:08:45Z",
+      "checkout_log_shas": [
+        "47a828d284f9f7100b955f0f77b94267f88fd800"
+      ],
+      "log_sha256": "69854a60a8d01bd8c463a2e13092c9e251bf71f589705919b63fb46d869219cb",
+      "log_bytes": 63213,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:08:38.5786787Z 15 passed, 1 warning in 0.42s",
+        "2026-10-11T03:08:38.9965443Z 10 passed in 0.18s",
+        "2026-10-11T03:08:39.3619286Z 3 passed in 0.21s",
+        "2026-10-11T03:08:43.0918066Z 96 passed in 2.30s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T03:08:33.8275288Z HEAD is now at 47a828d2 Qualify July financial-package sources and preserve individual-access holds"
+      ],
+      "job_id": 114375726015,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:11Z",
+      "completed_at": "2026-10-11T03:08:39Z",
+      "checkout_log_shas": [
+        "47a828d284f9f7100b955f0f77b94267f88fd800"
+      ],
+      "log_sha256": "fd99c96be0043b73e9c09dd69d3ebef9ca28ce9f6fd9d82f19f20ca972bb27be",
+      "log_bytes": 44157,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:08:37.0717663Z 22 passed, 55 subtests passed in 0.21s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114375726020,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:11Z",
+      "completed_at": "2026-10-11T03:08:40Z",
+      "checkout_log_shas": [
+        "788f6b62315c13b057356c014d7e669d44f4c134"
+      ],
+      "log_sha256": "a95ea5731545789d283b9d20d1fa29de553f387454413489929000ffe45db01d",
+      "log_bytes": 28472,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:08:37.2808702Z ============================== 87 passed in 1.08s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T03:09:00.6835784Z HEAD is now at 47a828d2 Qualify July financial-package sources and preserve individual-access holds"
+      ],
+      "job_id": 114375726039,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:10Z",
+      "completed_at": "2026-10-11T03:12:59Z",
+      "checkout_log_shas": [
+        "47a828d284f9f7100b955f0f77b94267f88fd800"
+      ],
+      "log_sha256": "558b77eec655139570c2b5c8958708196cbb96b5430060552875364fa2cf59ce",
+      "log_bytes": 138467,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:09:31.6660561Z 95 passed, 1 warning in 2.41s",
+        "2026-10-11T03:11:17.8557889Z 316 passed in 105.19s (0:01:45)",
+        "2026-10-11T03:11:22.7189570Z 1 passed in 3.46s",
+        "2026-10-11T03:11:24.6556380Z 74 passed, 1 warning in 1.52s",
+        "2026-10-11T03:12:01.8394930Z   2 passed (13.0s)",
+        "2026-10-11T03:12:43.2158026Z   23 passed (18.3s)",
+        "2026-10-11T03:12:43.8024941Z 15 passed in 0.18s",
+        "2026-10-11T03:12:52.7653991Z   1 passed (7.7s)",
+        "2026-10-11T03:12:56.4661502Z 25 passed in 3.28s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114375726043,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:10Z",
+      "completed_at": "2026-10-11T03:09:54Z",
+      "checkout_log_shas": [
+        "788f6b62315c13b057356c014d7e669d44f4c134"
+      ],
+      "log_sha256": "702ac9e3b57465220b369a8615742189b3c667e6677165ac36a97a3b392c99b9",
+      "log_bytes": 179673,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:09:03.9540454Z 23 passed, 1 warning in 9.29s",
+        "2026-10-11T03:09:06.6473959Z 58 passed, 1 warning in 2.49s",
+        "2026-10-11T03:09:08.4490050Z 1 passed in 0.89s",
+        "2026-10-11T03:09:11.1527437Z 1 passed, 1 warning in 1.84s",
+        "2026-10-11T03:09:13.6942006Z 1 passed in 1.65s",
+        "2026-10-11T03:09:16.2030644Z 2 passed in 1.64s",
+        "2026-10-11T03:09:18.0624346Z 14 passed in 0.91s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T03:08:36.3740573Z HEAD is now at 47a828d2 Qualify July financial-package sources and preserve individual-access holds"
+      ],
+      "job_id": 114375726058,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:11Z",
+      "completed_at": "2026-10-11T03:08:45Z",
+      "checkout_log_shas": [
+        "47a828d284f9f7100b955f0f77b94267f88fd800"
+      ],
+      "log_sha256": "0a028bd35cb3032980707592c340d733ff719c93e96b210c81d9538deb01032c",
+      "log_bytes": 44227,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:08:43.1801681Z 29 passed, 40 subtests passed in 0.44s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T03:08:33.6045026Z HEAD is now at 47a828d2 Qualify July financial-package sources and preserve individual-access holds"
+      ],
+      "job_id": 114375726095,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T03:08:11Z",
+      "completed_at": "2026-10-11T03:08:42Z",
+      "checkout_log_shas": [
+        "47a828d284f9f7100b955f0f77b94267f88fd800"
+      ],
+      "log_sha256": "3255da7d00a9e2cff1933729796e87f56c930c60b681f157556d00dc2824edc9",
+      "log_bytes": 43231,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T03:08:39.8131672Z 18 passed, 34 subtests passed in 0.52s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38107408487",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts_verified": [
+    "foushee-full-record-benchmark",
+    "receipt-evidence-repair-postgres",
+    "m14g-exact-head",
+    "m14e-exact-head",
+    "amendment-evidence-contracts",
+    "m14h-exact-head",
+    "publication-activation-postgres",
+    "m14f-exact-head",
+    "m14d-exact-head"
+  ],
+  "synthetic_merge_sha": "788f6b62315c13b057356c014d7e669d44f4c134",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [],
+  "remaining_gate": null,
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "167fbfefc51c19e78329b7810d7b2dcd02064030422146dd987a7d655f0a0f5b"
+}

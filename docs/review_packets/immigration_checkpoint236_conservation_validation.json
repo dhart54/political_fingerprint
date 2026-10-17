@@ -1,0 +1,420 @@
+{
+  "checkpoint": 236,
+  "base_head": "770419240bcf0b672c701886f14d5fa8e0d31f82",
+  "receipt_completed_utc": "2026-10-15T16:47:14.226175+00:00",
+  "completed_screening_action_ids": [
+    "house:119:2:154"
+  ],
+  "complex_screening_actions_completed": 1,
+  "P3_repairs": 3,
+  "related_clarity_repairs": 1,
+  "ordinary_routine_samples": 0,
+  "counts": {
+    "reviewed": 654,
+    "pending": 22,
+    "cores": 78,
+    "behavioral_propositions": 132,
+    "episodes": 68,
+    "multi_action_episodes": 9
+  },
+  "qualification_receipt_sha256": "8710e99b4c094aece33e1a116695ce06b795eb7ab148fa1733549ab5a0d7b984",
+  "CR_precision_receipt_sha256": "a08f96f51cce93bee31d958486bcc876961246f427b0e7c656b8955411867a43",
+  "validation": {
+    "final_gate": {
+      "started_utc": "2026-10-15T16:35:15.124598+00:00",
+      "completed_utc": "2026-10-15T16:46:56.948751+00:00",
+      "wall_seconds": 701.8298529000022,
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-15T16:35:15.125096+00:00",
+          "PID": 14180,
+          "completed_utc": "2026-10-15T16:46:56.942424+00:00",
+          "elapsed_seconds": 701.8230389999808,
+          "exit_code": 0,
+          "log": ".tmp/full_gate236/owner.log",
+          "log_sha256": "678da860c5e7dc1817c0be5b3588425894ed5db5e7b13cd906c48049ada3d420"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-15T16:35:15.125240+00:00",
+          "PID": 10504,
+          "completed_utc": "2026-10-15T16:35:17.215948+00:00",
+          "elapsed_seconds": 2.090731100004632,
+          "exit_code": 0,
+          "log": ".tmp/full_gate236/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-15T16:35:15.125457+00:00",
+          "PID": 27520,
+          "completed_utc": "2026-10-15T16:35:15.208663+00:00",
+          "elapsed_seconds": 0.08321399998385459,
+          "exit_code": 0,
+          "log": ".tmp/full_gate236/IR.log",
+          "log_sha256": "652fddf10ae16c5d4c4a52c1443c21b19f41342500ddb5e76859ae511594984e"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate236\\replay"
+          ],
+          "started_utc": "2026-10-15T16:35:15.125791+00:00",
+          "PID": 3748,
+          "completed_utc": "2026-10-15T16:37:02.840202+00:00",
+          "elapsed_seconds": 107.71541020000586,
+          "exit_code": 0,
+          "log": ".tmp/full_gate236/replay.log",
+          "log_sha256": "5f55f3820159ce91eb01358865e474c927262924031ec2c8f6415d0dec6c11cb",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "b6418186df30fae0264206e1c9ee25848227c6d9108aad8657f89b9bfa78f2fe",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "61a5b3501c0bb3d3f5d24d9e3f721820451a423b26f14eeef182f0ce0982e02e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "9740743bffc6ade5ca554ddb96cd84c45e0d7d66e5a5bc3129492b24d2e3742e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "7919a5406b8ec28d05c9a626c69883d082f576c4460e1a03878d1430dd69f872",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "90878e4bee01e2275d0ced79719e6d7235d5274de26ac983f42af61f936b498a",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "475132f672e72d48ff7ea364ce8a40f7766d74334aaca66c6c7464996a5ffc55",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "3bd53d9617925080937118dd505b9593131cf130b7754e00d706e53af15aaa09",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "f86daf42d3f31e8f8f43962e4b9c91f1c47e86b398c695f016abd13ca9c456a1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "5668487c780503942583c28a441b5d3812d8fe39fde221a2227e635b2391628c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "226c4966a6b54b26d66594cdb94b2c8c12a88a41791c46783e1e41a733ed1fc7",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "781137af8d4cd36e5bfe9de6e8861d2f9758427d00be8b8c5a6af6c0cc35413c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "226eefc5cfd1e2d6940382cdafa6d545b11844540f7be731a77c56c765dfb5b6",
+        "backend/tests/test_immigration_shared_candidate.py": "9d2f3d93f0204502c923b7d315a7c267cbdc5012b9b861f18acce47e4f42d8d2",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "eb122decd915dc8abbded1669fca25ef492396ba2394a3985bd1a2b1dc5eb9e1",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/continuing_appropriations_qualification_checkpoint235.json": "6398cac4146d6d426d60609e3d11cc9befa385398eeaaf25330d7974aafdf5e1",
+        "docs/editorial/shared_candidates/house_119_continuing_appropriations_qualification_checkpoint235/shared_action_core_proposal.json": "bd072d1974f25a7ac8bb883d3af1028e50655d4f4ccc8747acee08dc74fd8879",
+        "docs/editorial/shared_candidates/house_119_continuing_appropriations_qualification_checkpoint235/README.md": "f835cb875608b3772a027823263aefe6d4db1f5f4652cb68d25b6776fc70faa1",
+        "docs/plans/immigration_checkpoint236_remaining.md": "edfb9d5b98b2604ff9982725ae4cdc21bdf5a412864bfbce28199bdb8740321e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/farm_qualification_checkpoint236.json": "f38a2e1527823c1c9fd6ae674afe963b019f299e6b6cbed6683195d98b4ae76c",
+        "docs/editorial/shared_candidates/house_119_farm_qualification_checkpoint236/shared_action_core_proposal.json": "8b478405fc0a505df25e10c48d3affc20947938008f15dd411e12190d5186117",
+        "docs/editorial/shared_candidates/house_119_farm_qualification_checkpoint236/README.md": "29eede98cfb09b44a067fa5b0adbdfa855f93dfce201670febd75cf6ec7fc5a6",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/continuing_appropriations_precision_checkpoint236.json": "b9eafc69e6360c2b12f21d72ff9f6e24640224122a50cc933a6f070f3c8d4786",
+        "docs/editorial/shared_candidates/house_119_continuing_appropriations_precision_checkpoint236/shared_action_core_proposal.json": "51995dfb36e5dd6993b1585963f1b43fbe70b19d499d28f8b48ff407e95ff665",
+        "docs/editorial/shared_candidates/house_119_continuing_appropriations_precision_checkpoint236/README.md": "6ae5f96e4cc82e46530c31ce8cc918239a540a432708d6676350ae78a88973fd"
+      },
+      "input_hashes_unchanged": true
+    },
+    "owner_tests": 439,
+    "Immigration_tests": 262,
+    "semantic_checks": 7,
+    "IR_passed": true,
+    "actual_CLI_outputs_byte_exact": 7,
+    "full_gate_runs_this_batch": 1,
+    "all24held_inputs_still_exact": true,
+    "initial_Farm_focused": {
+      "started_utc": "2026-10-15T16:25:38.439429+00:00",
+      "completed_utc": "2026-10-15T16:26:02.575736+00:00",
+      "elapsed_seconds": 24.136535199999344,
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_farm236_preserves_health_core_and_whole_recorded_choice",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_farm236_literal_loan_predicates_and_dated_regulations_stay_distinct",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_farm236_source_corruptions_are_rejected_without_normalizing_legal_words",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_farm236_animal_plant_and_exchange_subjects_remain_scoped",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_dates_imports_and_inclusive_USCIS_funding_stay_distinct",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_ukraine234_318and321_precision_binds_exact_operatives",
+        "backend.tests.test_immigration_shared_candidate.Checkpoint232SourceRelationshipAndScreeningTests.test_new_material_evidence_does_not_release_unresolved_legal_or_programme_holds"
+      ],
+      "exit_code": 0,
+      "log": ".tmp/preflight236/focused.log"
+    },
+    "combined_CR_focused": {
+      "started_utc": "2026-10-15T16:33:46.987759+00:00",
+      "completed_utc": "2026-10-15T16:34:11.270028+00:00",
+      "elapsed_seconds": 24.28249670000514,
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing236_task_force_purposes_are_distinct_from_director_duties",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing236_CBP_support_keeps_both_recipient_and_modality_branches",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing236_three_date_events_and_H2B_J_conditions_stay_distinct",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_programme_predicates_and_section_wide_sunset_remain_qualified",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_preserves_original_shared_identity_and_distinct_whole_choices",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_swapped_or_unconditional_claims_are_rejected"
+      ],
+      "exit_code": 0,
+      "log": ".tmp/cr_precision236/focused/focused.log"
+    },
+    "private_Farm_source_preflight_receipt_sha256": "34679cecf16c109d341d7bb2efcb7e077eb31b7e93a12b83c94ed873a2518fb6",
+    "scope": "Candidate semantic loop; no frontend/database/runtime/publication changes. Independent source/domain review remains separate from compiler and hash checks."
+  },
+  "conservation": {
+    "checkpoint": 236,
+    "base_head": "770419240bcf0b672c701886f14d5fa8e0d31f82",
+    "checked_utc": "2026-10-15T16:33:30.587157+00:00",
+    "all75unaffected_prior_cores_exact": true,
+    "all651unaffected_prior_reviews_exact": true,
+    "all673unaffected_inventory_rows_exact": true,
+    "all130prior_behavioral_propositions_exact": true,
+    "all150unaffected_prior_projections_exact": true,
+    "all154prior_member_action_observations_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "fifteen_unchanged_Health_sources_and_twelve_dated_material_selections_appended": true,
+    "all_Health_historical_providers_receipts_and_inherited230P3s_exact": true,
+    "checkpoint232purpose_and234UkraineP3_WRDAscreening_exact": true,
+    "all_other_pending_reserved_holds_and_unrelated_notes_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3616,
+    "frozen_private_notes_exact": 508,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 654,
+      "pending": 22,
+      "cores": 78,
+      "behavioral_propositions": 132,
+      "episodes": 68,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 6.490625499980524,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "65cb716cfa029fe72fe98d4268c2d2798a00e4244ecff45dd9c86ae5a97ce509"
+  },
+  "Farm_only_initial_conservation": {
+    "checkpoint": 236,
+    "base_head": "770419240bcf0b672c701886f14d5fa8e0d31f82",
+    "checked_utc": "2026-10-15T16:25:14.505254+00:00",
+    "all77prior_cores_exact": true,
+    "all653prior_reviews_exact": true,
+    "all675unaffected_inventory_rows_exact": true,
+    "all130prior_behavioral_propositions_exact": true,
+    "all154prior_member_action_observations_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "fifteen_unchanged_Health_sources_and_twelve_dated_material_selections_appended": true,
+    "all_Health_historical_providers_receipts_and_inherited230P3s_exact": true,
+    "checkpoint232purpose_and234UkraineP3_WRDAscreening_exact": true,
+    "all_other_pending_reserved_holds_and_unrelated_notes_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3616,
+    "frozen_private_notes_exact": 508,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 654,
+      "pending": 22,
+      "cores": 78,
+      "behavioral_propositions": 132,
+      "episodes": 68,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 6.332064800022636,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "eb87153c94a15f956c8a06398810003b026648cd21b29ac6777a767582135c36"
+  },
+  "boundary_review": {
+    "review6196706569": {
+      "reviewed_head": "770419240bcf0b672c701886f14d5fa8e0d31f82",
+      "parent": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+      "handled_findings": [
+        "Three task-force purposes versus Director duties",
+        "Both CBP support branches: recipients, air/marine modality, Secretary discretion and emergency predicate",
+        "J admission/status cutoff versus programme termination and non-minister entry dates"
+      ],
+      "related_clarity": "H2B numerical versus J-physician conditions",
+      "new_provider": "v32",
+      "new_independent_review_pending": true
+    },
+    "review6196276947": "Exact234head72b: Ukraine P3s closed and qualified WRDA supported. Independent20of21input hashes; plan unmatched. Owner image/floor reconstruction remains attributed.",
+    "review6196706569_other_scope": "All18checkpoint235input hashes independently matched; compiler checks do not establish paraphrase truth. Both memberships/directions supported; no pending restoration requested.",
+    "corrected_support_271": "Exact4c1439cf, independent6196766067 and handoff6196768012 replace erroneous c3c108a guide. Native writer Git/blob/source/21regression replay succeeded privately; no candidate credit or canonical import. Exact FDIC baseline separately claimed6196825115; do not duplicate.",
+    "arbitrary_comments_not_authority": true
+  },
+  "prior235_CI": {
+    "head": "770419240bcf0b672c701886f14d5fa8e0d31f82",
+    "run": 38762532497,
+    "all10jobs_and4late_stages_passed": true,
+    "contexts": {
+      "feature": 5,
+      "synthetic": 4,
+      "mixed": 1
+    },
+    "synthetic": "450ebfbb8168ea4252f0b4bf346d4d02f9ecb9b5",
+    "ordered_parents": [
+      "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "770419240bcf0b672c701886f14d5fa8e0d31f82"
+    ],
+    "receipt_sha256": "8ee9f8c0398b45a5da382fc1ce842628050820ef2dc256b62760d73a0f9d0b79",
+    "jobs": [
+      {
+        "name": "amendment-evidence-contracts",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T15:42:14Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "receipt-evidence-repair-postgres",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T15:46:12Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14h-exact-head",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T16:04:10Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "measure-reference-integration",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T15:42:18Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14g-exact-head",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T15:42:52Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14e-exact-head",
+        "started_at": "2026-10-15T15:41:29Z",
+        "completed_at": "2026-10-15T15:42:40Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14d-exact-head",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T15:42:44Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "publication-activation-postgres",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T15:44:06Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "foushee-full-record-benchmark",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T15:46:21Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14f-exact-head",
+        "started_at": "2026-10-15T15:41:28Z",
+        "completed_at": "2026-10-15T15:42:25Z",
+        "conclusion": "success"
+      }
+    ],
+    "no_manual_retry": true
+  },
+  "behavior_and_diff_review": "One whole Farm EH final-passage candidate preserves original Health exact identity,15408-character meaning prefix,84bindings,11limits and source witnesses;224-200/6NotVoting,FousheeNay/MassieYea. Literal citizenship-linked loan thresholds and separately dated noncitizen-national/qualified-alien regulations remain distinct; no personal eligibility or current-law adjudication. CR272/286prose repaired prospectively with original Health prefixes, original235provider/history, memberships and official directions preserved. All other676inventory accounting, prior observations/propositions, denied/cancelled restrictions, withdrawals and reserved holds conserved. No component stances or unsupported legal repair.",
+  "timing": {
+    "conservative_first_work_bound_utc": "2026-10-15T15:28:02+00:00",
+    "earlier_research_and_preread_additional_unisolated": true,
+    "required_gate_completed_utc": "2026-10-15T16:46:56.948751+00:00",
+    "gross_batch_seconds_through_gate": 4734.948751,
+    "seconds_per_completed_complex_screening_action_through_gate": 4734.948751,
+    "gross_batch_seconds_through_receipt": 4752.226175,
+    "rate_qualification": "One completed complex screening action; three P3 repairs and related clarity share the batch. No exclusive per-repair allocation or comparable routine average can be inferred.",
+    "observed_settings": {
+      "base_model_identity": "GPT-6",
+      "selected_variant": "unexposed",
+      "reasoning_effort": "unexposed",
+      "speed_service_tier": "unexposed",
+      "no_settings_changed": true
+    },
+    "research": {
+      "Farm_preparation_utc": "2026-10-15T15:51:42.952357+00:00",
+      "whole_EH_read_completed_utc": "2026-10-15T16:07:44.820158+00:00",
+      "characters": 959629,
+      "confirmed_intervals": 34,
+      "read_scope": "Complete governedEH, complete captured rule/PartA/selected final-floor. Statutory operative bodies versus unread historical notes distinguished. Entire PDF extractions are text reading, not image certification.",
+      "usable_new_raw_captures": 12,
+      "unusable_HTTP200_error_wrappers": 5,
+      "request_internal_seconds": [
+        0.4742274,
+        0.382505,
+        0.226509,
+        0.37699
+      ],
+      "capture_command_wall_seconds": [
+        1.0739202,
+        0.975392,
+        0.825336,
+        1.042867
+      ],
+      "exclusive_research_seconds": "Unisolated: reading, reasoning, source discovery, drafting and tool/transport gaps remain in gross. No residual assigned to model latency or idle."
+    },
+    "known_command_process_seconds": {
+      "Farm_authoring": 1.0702706,
+      "Farm_preflight": 1.1851599,
+      "snapshot": 2.3612694,
+      "Farm_application": 107.0686911,
+      "CR_repair_application": 102.9540952,
+      "Farm_initial_conservation": 6.3320648,
+      "combined_conservation": 6.490625499980524,
+      "Farm_focused": 24.136535199999344,
+      "CR_focused": 24.28249670000514,
+      "final_gate_wall": 701.8298529000022
+    },
+    "rework": "Two initial bad JobCorps paths and three unavailable2025CFRXML paths returned200error wrappers, retained unregistered; no access-denied/cancelled retry. Source stdout encoding/truncation and one None metadata print recovered without changing source text. Snapshot Windows-prefix syntax and preflight list/dict failures retained; authoring receipt full-parent flags corrected before canonical application with original retained. One documentation context patch failed before correction; one oversized prior receipt inspection truncated. All overhead remains in gross; these were not failed full gates.",
+    "overlap": "236research begins during235gate/delivery/CI and includes uncredited financial/HRA/support work. Four236read-only validation processes overlap; per-phase sums are not exclusive elapsed. Next237corrected271verification/whole151645-character EH reading, newFDIC5151b3ea19blob/native18test verification and complete dated section/conditional composition/67Title12row reading, plus four fresh237dated statutory captures and bounded readings overlap236gate and stay in gross; no canonical imports or new credit. Capture internal.317588s/command.963244s and nativeFDICverifier1.557311s/tests4.499973s are separately recorded; no exclusive cost partition.",
+    "delivery_and_new_CI": "Commit/push/PRupdate and fresh236CI occur after receipt cutoff, measured separately and reported in PR/private delivery receipts; not zero-cost or preclaimed passed.",
+    "routine_target_seconds": 600,
+    "historical_diagnosis": ".tmp/immigration_throughput_diagnosis230.md",
+    "benchmarkFAILretained": true,
+    "no_comparable_routine_improvement_claim": true
+  },
+  "follow_up": "Push235accepted a51.64MBgenerated readable_candidates.json warning. Artifact growth is nonblocking and separately scoped; no automatic LFS/architecture change.",
+  "worktree_hashes_not_Git_blob_hashes": true,
+  "raw_logs_private_research_owner_attributed": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "receipt_sha256": "21d405a7cf21801d7a7762f1422feaa0a7b9ca9f8449c5091840fc5202d14057"
+}

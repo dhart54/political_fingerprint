@@ -1,0 +1,134 @@
+{
+  "checkpoint": 169,
+  "action_id": "house:119:2:196",
+  "prior_reconstruction_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/northwest_straits_membership_source_reconstruction168.json",
+  "prior_reconstruction_sha256": "f5da863eff77c83e379cc2fb0a31c6eeb8902b3098a7c836e58dcdd664bcf18f",
+  "superseded_source_id": "nwstraits:1998-report-reprint-membership168",
+  "corrected_source_id": "nwstraits:1998-report-reprint-membership-complete169",
+  "prior_pending_row": {
+    "action_id": "house:119:2:196",
+    "session": 2,
+    "roll": 196,
+    "date": "2026-06-03",
+    "measure": "bill_119_hr_2860",
+    "question": "On Motion to Suspend the Rules and Pass, as Amended",
+    "disposition": "source_unresolved",
+    "reason": "Pending historical membership reconstruction. HR 2860 EH strikes original sections 403-405, including mandatory organization and operation according to the August 20, 1998 Report on file with Commerce. It proposes four Governor-appointed Washington residents who are not Federal, State or local government employees, excluding higher-education institutions. The Commission repository supplies a 12-page Report to the Convenors with the 1998 cover date and Reprinted 4/04. Its complete membership paragraphs say the remaining Governor appointees will be citizens of the State of Washington and not official State-agency representatives, within the up-to-five, MRC-minus-one and four-year rotating-term qualifications. MRC representation, the Tribal seat, the Puget Sound Action Team seat and informal Canadian governmental participation remain distinct. This citizens/residents comparison is material to candidate source and domain review; neither restore the old exclusion nor automatically include. The reprint contains a retrospective late-1998 summary and 2000/2004 PDF metadata. Original-on-file edition equivalence and the personal-citizenship meaning of the State-citizen phrase still need verification. No US nationality, noncitizen eligibility, actual appointment or immigration result is inferred. The committee narrative corroborates the historical report reference; its literal 105-483 footnotes and shorthand do not replace PL 105-384 or EH wording. Still pending research, without missing-evidence/conflict adjudication or a completed screening. Exact Foushee Yea/Massie Nay and suspension-and-pass observations retained.",
+    "source": {
+      "source_id": "clerk:119:2:196",
+      "url": "https://clerk.house.gov/evs/2026/roll196.xml",
+      "raw_sha256": "090951171f52fa18a99ffe3089e5d415e935042a41e9513836c4f6b55dc53615",
+      "governed_bytes_sha256": "4405e2f4c06d566ef25c372b7de5899a6ee3468cd65a50982328d6c013438a60",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_2860",
+    "member_action": "yea",
+    "house_action_stage": "On Motion to Suspend the Rules and Pass, as Amended",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Pending historical membership reconstruction. HR 2860 EH strikes original sections 403-405, including mandatory organization and operation according to the August 20, 1998 Report on file with Commerce. It proposes four Governor-appointed Washington residents who are not Federal, State or local government employees, excluding higher-education institutions. The Commission repository supplies a 12-page Report to the Convenors with the 1998 cover date and Reprinted 4/04. Its complete membership paragraphs say the remaining Governor appointees will be citizens of the State of Washington and not official State-agency representatives, within the up-to-five, MRC-minus-one and four-year rotating-term qualifications. MRC representation, the Tribal seat, the Puget Sound Action Team seat and informal Canadian governmental participation remain distinct. This citizens/residents comparison is material to candidate source and domain review; neither restore the old exclusion nor automatically include. The reprint contains a retrospective late-1998 summary and 2000/2004 PDF metadata. Original-on-file edition equivalence and the personal-citizenship meaning of the State-citizen phrase still need verification. No US nationality, noncitizen eligibility, actual appointment or immigration result is inferred. The committee narrative corroborates the historical report reference; its literal 105-483 footnotes and shorthand do not replace PL 105-384 or EH wording. Still pending research, without missing-evidence/conflict adjudication or a completed screening. Exact Foushee Yea/Massie Nay and suspension-and-pass observations retained.",
+    "unresolved_reason": "pending_research",
+    "sources": [
+      {
+        "source_id": "clerk:119:2:196",
+        "url": "https://clerk.house.gov/evs/2026/roll196.xml",
+        "raw_sha256": "090951171f52fa18a99ffe3089e5d415e935042a41e9513836c4f6b55dc53615",
+        "governed_bytes_sha256": "4405e2f4c06d566ef25c372b7de5899a6ee3468cd65a50982328d6c013438a60"
+      },
+      {
+        "source_id": "govinfo:hr2860eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2860eh/html/BILLS-119hr2860eh.htm",
+        "raw_sha256": "d9454d7e9d959399427685915bef788d374c1fc826d7043743af19b71072dac4",
+        "governed_bytes_sha256": "4743c2b61f947252c09b52ce370355ee301b595499b6f340a60e80392b02f16a"
+      },
+      {
+        "source_id": "govinfo:pl105384-titleIV-original162",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-105publ384/html/PLAW-105publ384.htm",
+        "raw_sha256": "3aedfd5ac333495833dbc2b7c43ace6e291619b9d63478a4dc52091625d80abc",
+        "governed_bytes_sha256": "a44f7a2d91075bfb1a870db9cc6a7572fe47d06a4ee6a4372edc75444b1b50a2"
+      },
+      {
+        "source_id": "govinfo:25usc5131-operative162",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title25/html/USCODE-2024-title25-chap45-sec5131.htm",
+        "raw_sha256": "16d22284f7ef08e0df6ca0bbb83f20a8dd90f7d7f9e708399ae2e00c1b396d38",
+        "governed_bytes_sha256": "0b376ce5b1dbcc4dd85736c3bc82304a0cc2aed8fa053f887b0d211f526e52bf"
+      },
+      {
+        "source_id": "nwstraits:1998-report-reprint-membership168",
+        "url": "https://nwstraits.org/sites/default/files/2025-10/nwsc-1998-mm_report.pdf",
+        "raw_sha256": "eb199ef6a26a2b0b0469f7340ae7281ba8dea1f04757ea81e0cf3f6d6d115825",
+        "governed_bytes_sha256": "ee5abd7a0f19caabacda27a220e6afed05184ab910af21fd58c0893412413b70"
+      },
+      {
+        "source_id": "nwstraits:1998-report-reprint-edition168",
+        "url": "https://nwstraits.org/sites/default/files/2025-10/nwsc-1998-mm_report.pdf",
+        "raw_sha256": "eb199ef6a26a2b0b0469f7340ae7281ba8dea1f04757ea81e0cf3f6d6d115825",
+        "governed_bytes_sha256": "1fe926a52111fbb82b57eb49d4b9fe6eea71c9b7f8150c2da719ffd0a5767907"
+      },
+      {
+        "source_id": "nwstraits:history-report-locator168",
+        "url": "https://nwstraits.org/history",
+        "raw_sha256": "75514d9262d2e2f0bf02b800e73a6cb7f902d08a00c09caa4f24031622bbd145",
+        "governed_bytes_sha256": "78ca96fd66a609e5b27aa91177c67abb048730b426634bd4bdf7edc7b81db82a"
+      },
+      {
+        "source_id": "govinfo:119hrpt437-historical-report-narrative168",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt437/html/CRPT-119hrpt437.htm",
+        "raw_sha256": "0b580983ed7b32fa25ddd3dbfc62add68e8d17054eef6daa2891ea15776c832f",
+        "governed_bytes_sha256": "9e872aed938cba74cde410ec214a50c340dd0fb59ef5723ca7f59bc4c3493a77"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_clerk_source_identity": {
+      "source_id": "clerk:119:2:196",
+      "url": "https://clerk.house.gov/evs/2026/roll196.xml",
+      "raw_sha256": "8e1d3c4037456982661487d3b2651174d07d042378e802cfe7007b742cef7d33",
+      "verification": "historical_source_identity_not_recaptured_this_increment"
+    }
+  },
+  "corrected_pending_row_sha256": "12591714663592515b2607fac0d0e8d9be0f5492a8060836fc5ea06b7b28e488",
+  "extension": {
+    "old_end": 16840,
+    "new_end": 17198,
+    "added_characters": 358,
+    "exact_added_text": "Northwest Straits Commission.  Current and future require-\nments of the Endangered Species Act would also provide incentives for establishing an MRC,\nsince the proposed listing of Puget Sound Chinook salmon and potentially other species puts an\nemphasis on the health of estuaries, nearshore habitat, and other marine areas in addition to\nupland watersheds.\n",
+    "second_interval_unchanged": true
+  },
+  "derivative": {
+    "source_id": "nwstraits:1998-report-reprint-membership-complete169",
+    "original_source_id": "primary:nw-report-168",
+    "intervals": [
+      {
+        "start": 15205,
+        "end": 17198,
+        "total": 31010
+      },
+      {
+        "start": 20077,
+        "end": 21561,
+        "total": 31010
+      }
+    ],
+    "full_text_sha256": "bf0f4206e8ecf253e8ddf2763441c134befaed4151dd16b9735bbee6506b1777",
+    "original_governed_bytes_sha256": "f227ec52e5167056c632986bf52bc4f66654bfc2f90b61ce8260938584c01e15"
+  },
+  "old_source_retained": true,
+  "old_receipt_retained": true,
+  "disposition": "source_unresolved",
+  "completed_screening": false,
+  "edition_and_citizenship_unresolved": true,
+  "editorially_accepted": false,
+  "receipt_sha256": "1df52c5e3dacff5b794680b594c0dbe57876985899bcb811f95266d627e986b5"
+}

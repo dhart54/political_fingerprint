@@ -1,0 +1,111 @@
+{
+  "checkpoint": 227,
+  "base_head": "e50514114857e1fde3fd3f2d5d9863cd95179c0c",
+  "registration_receipt": {
+    "checkpoint": 227,
+    "base_head": "e50514114857e1fde3fd3f2d5d9863cd95179c0c",
+    "new_source_ids": [
+      "govinfo:hr7148eas",
+      "govinfo:hr7148eh-page-binding",
+      "govinfo:pl11937-divisionA-complete227"
+    ],
+    "source_quality": [
+      {
+        "source_id": "govinfo:hr7148eas",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148eas/html/BILLS-119hr7148eas.htm",
+        "raw_sha256": "7c0a728f797c11888ffd5ee3602ed9efd359c7280fa75d40c53104196d2b7c01",
+        "governed_bytes_sha256": "36a861639598bfb21c8ce803e48e09a57834763978c7b28c83ca87f2f497f899",
+        "text_length": 2444,
+        "registration_type": "unchanged_governed_source_reuse",
+        "registered_utc": "2026-10-14T01:04:11.387840+00:00",
+        "not_fresh_acquisition": true,
+        "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json"
+      },
+      {
+        "source_id": "govinfo:hr7148eh-page-binding",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/pdf/BILLS-119hr7148eh.pdf",
+        "raw_sha256": "217ca3f2baa093347a34801681673989392833c9f9adaf6f00d8e7d4b1139a53",
+        "governed_bytes_sha256": "a77d774af83e9d0f62376e71f677ec14b84cb260158f6f71ef8225d89cf82481",
+        "text_length": 7325,
+        "registration_type": "unchanged_governed_source_reuse",
+        "registered_utc": "2026-10-14T01:04:11.387979+00:00",
+        "not_fresh_acquisition": true,
+        "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json"
+      },
+      {
+        "source_id": "govinfo:pl11937-divisionA-complete227",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+        "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+        "governed_bytes_sha256": "4a32c23b23a242c63412f1ecbb0b1be1a449f60ba0ee9278490ccbed1983114f",
+        "text_sha256": "319b5eb788d76173e0c7da0a48b2610888dcaa3133e53d3af68aa31841ba761d",
+        "text_length": 42026,
+        "source_text_extents": [
+          {
+            "start": 0,
+            "end": 42026,
+            "total": 489080
+          }
+        ],
+        "parent_source_identity": {
+          "source_id": "govinfo:pl119-37",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "6274a5ee9549780a84d8bb12590f593722b1f52c9c93a57ecb7cac1d2c9078aa",
+          "text_version": "Public Law119-37"
+        },
+        "material_registered_utc": "2026-10-14T01:04:11.388386+00:00",
+        "not_fresh_network_capture": true,
+        "full_selected_material_body_owner_read": true,
+        "whole_parent_owner_read_not_claimed": true
+      }
+    ],
+    "canonical_prefix_count": 2690,
+    "manifest_prefix_count": 1580,
+    "private_prefix_count": 1616,
+    "all_old_prefixes_exact": true,
+    "original_Health_and226_source_receipts_preserved": true,
+    "three_new_primary_acquisitions_remain_private_uncompleted": true,
+    "candidate_only": true,
+    "final_cohort_source_receipt_pending": true,
+    "receipt_sha256": "25e687d76af71af898cc09379ebaf7e38ea3c181b8151e5cd58a25d91bdf3f13"
+  },
+  "old_source_prefixes_exact": true,
+  "registered_source_ids": [
+    "govinfo:hr7148eas",
+    "govinfo:hr7148eh-page-binding",
+    "govinfo:pl11937-divisionA-complete227"
+  ],
+  "source_counts_before": [
+    2690,
+    1580,
+    1616
+  ],
+  "source_counts_after": [
+    2693,
+    1583,
+    1619
+  ],
+  "existing_housing1474_source": {
+    "source_id": "govinfo:42usc1474-2024-housing",
+    "governed_bytes_sha256": "b3149be81c6db1eb7db905d1a0c871d334e63a51598de82590bc250ac2afa675",
+    "complete5932char_owner_read": true,
+    "a_very_low_income_repair_grants_distinct_from_c_low_income_weatherization": true
+  },
+  "concurrence53_source_scope": {
+    "exact2444char_EAS_complete_owner_read": true,
+    "law_intro_and_divisionA_complete42026char_owner_read": true,
+    "whole489080char_law_new_owner_read_claim": false,
+    "actual1341c_and_senate_data213_complete_governed_bodies_read": true,
+    "old281_material_hierarchy_reused": true,
+    "SeptemberEH101_exceptions_not_transplanted": true,
+    "whole_assembledEH1793411char_new_owner_read_claim": false,
+    "unchanged_original_Health_context_reused": true
+  },
+  "other_three_source_research_pending": true,
+  "denied_targets_not_retried_or_bypassed": [
+    "house:119:2:224/PIH2011-45",
+    "house:119:2:228/Clerk-KIDS"
+  ],
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "receipt_sha256": "004bbd017dc7e8d1880c91ab0e84c747a642a11cce1a65267d8424953e449f78"
+}

@@ -1,0 +1,21 @@
+{
+  "checkpoint": 231,
+  "reviewed_head": "78b4728cc732488a2e1a0e1a0ef8132e36bcc537",
+  "comment_url": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6183109697",
+  "comment_id": 6183109697,
+  "comment_created_at": "2026-10-15T02:35:56Z",
+  "body": "Fingerprint independent review — checkpoint 230\n\nReviewed exact head 78b4728cc732488a2e1a0e1a0ef8132e36bcc537. The two candidate dispositions are supported within the bounded review; two P3 wording corrections remain open on this committed head:\n\n1. Action 2:89: restore the complete DoD alternative “high priority requirements or operational needs” and its transition/acquisition condition, retaining the surrounding readiness/POM and matching-funds conditions. Exact governed source: S3971ES[13018:13226).\n2. Replace active private-draft / “no completion credit” wording with accurate candidate screening status. Preserve the separate lack of ordinary-routine benchmark credit, pending editorial acceptance/publication and historical draft receipts. Suggested meaning: candidate screening is recorded; this does not confer ordinary-routine benchmark credit, editorial acceptance or publication.\n\nThe prior sole writer reports both repairs already applied locally in the existing .w/ib worktree, with eight focused checks and conservation passing, but not committed or pushed. Reconcile those local changes rather than duplicate them. Include the repairs in the next coherent batch; do not run a separate broad gate merely to acknowledge this comment. Required repository gates still apply to final changed bytes.\n\nIndependent verification on the committed head: seven byte-exact CLI outputs, 31 focused tests, three resealed CLI rejection probes, 106 conservation assertions, and 49 source/history checks. The unchanged checkpoint222 regression passed against its verified immutable fixture; current tests preserve 2:193’s hold and bind 2:89’s new closure. All 72 prior cores, 120 propositions/readables and 144 member observations remain exact. Counts reconcile to 647 reviewed / 29 pending, 73 cores / 122 propositions. Crane 2:27 adds no core; 2:308 remains pending.\n\nCI run38666512946 completed ten first-attempt jobs, with five feature/four synthetic/one mixed checkout contexts, four executed late stages and four skipped historical guards. Synthetic integration is against af6cd6d plus this exact head. The owner’s full 406-test run and private preservation checks remain attributed, not independently reproduced here. No fresh primary acquisition or excluded reads occurred. This is not full-corpus clearance or editorial acceptance.\n\nReview report SHA256: 7bf40c03c0df53291d10bd91b42fb087a2782c3ecc8af677f6a2f30fc2d4e9ae\nReview receipt SHA256: 8b440ab85216bffead99475461f4e07abe1876a54270e324d187bcc9ab37e19e\n\nNext authorized work: reconcile preserved local repairs and existing H.R.5334 (2:308) research, then continue executable items in the established remaining queue. Retain all denied/cancelled-source restrictions and candidate/publication boundaries. The former writer is stopped for a desktop execution-route handoff; do not create a competing writer. This comment records review evidence and next-work guidance, not a claim that a replacement task has started.",
+  "handling": {
+    "complete_DoD_condition": "Preserved existing local repair and source regression; included in coherent231batch.",
+    "candidate_screening_status": "Preserved existing local repair; historical private receipts and lack of ordinary-routine credit retained.",
+    "source_domain_review_scope": "Supports230two candidate dispositions within bounded review only; no whole-corpus clearance.",
+    "raw_report_and_receipt_received": false,
+    "reported_report_sha256": "7bf40c03c0df53291d10bd91b42fb087a2782c3ecc8af677f6a2f30fc2d4e9ae",
+    "reported_receipt_sha256": "8b440ab85216bffead99475461f4e07abe1876a54270e324d187bcc9ab37e19e",
+    "local_rehash_of_report_or_receipt_claimed": false,
+    "independent231_recheck_pending": true,
+    "editorial_acceptance": false,
+    "publication_authorized": false
+  },
+  "receipt_sha256": "a5d68ae99fa2063afc981879f1b4865aab3b31af67bac0d06e36e1ad3d3fd807"
+}

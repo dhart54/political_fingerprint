@@ -1,0 +1,739 @@
+{
+  "checkpoint": 196,
+  "reviewed_head": "58f9caf63c26c80447f1d6e60c800fa9b363cb51",
+  "prior195_receipt_sha256": "96d5fac63c1df6c96dd29bbf3d7c14d7b3db359f6a0035826739a3e0df1587f5",
+  "corrected195_receipt_sha256": "a0f682635a74331e34771ba787e4bd9271bac7966f584a291533f2cd97338c87",
+  "findings": [
+    {
+      "action_id": "house:119:2:302",
+      "source_id": "govinfo:hr8278eh",
+      "locator": {
+        "start": 7659,
+        "end": 8097,
+        "total": 8391
+      },
+      "retained_literal_passage": "(c) Covered Agency Defined.--In this section, the term ``covered agency'' means the Board of Governors of the Federal Reserve System, the Bureau of Consumer Financial Protection, the Federal Deposit Insurance Corporation, the Department of the Treasury, including the Office of the Comptroller of the Currency and the Financial Crimes Enforcement Network, the Federal Housing Finance Agency, and the National Credit Union Administration. ",
+      "old_phrase": "Treasury through OCC/FinCEN",
+      "corrected_phrase": "Treasury, including OCC and FinCEN",
+      "active_copies": 6,
+      "changed_paths": [
+        "receipt195.reviews[1].rationale",
+        "receipt195.proposed_rows[1].reason",
+        "receipt195.proposed_rows[1].rationale",
+        "membership.records[609].rationale",
+        "universe.candidate_dispositions[663].reason",
+        "universe.candidate_dispositions[663].rationale"
+      ],
+      "disposition_unchanged": true
+    },
+    {
+      "action_id": "house:119:2:312",
+      "source_id": "govinfo:hr9340eh",
+      "locator": {
+        "start": 0,
+        "end": 5486,
+        "total": 5486
+      },
+      "retained_literal_passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 9340 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 9340 _______________________________________________________________________ AN ACT To amend the Public Utility Regulatory Policies Act of 1978 to establish a Federal standard relating to the recovery of the full, incremental costs of upgrades that serve large-load customers, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Ratepayer Protection Act''. SEC. 2. FEDERAL STANDARD RELATING TO LARGE-LOAD CUSTOMERS. (a) Federal Standard Relating to Large-load Customers.--Section 111(d) of the Public Utility Regulatory Policies Act of 1978 (16 U.S.C. 2621(d)) is amended by adding at the end the following: ``(22) Standards for large-load customers.-- ``(A) Recovery of full, incremental cost of upgrades.--A rate charged, or entered into, by an electric utility for providing electric service to a large-load customer shall be designed to recover from the large-load customer the full, incremental cost of any generation, transmission, or distribution upgrade necessary to serve the load of such large-load customer, including in the event of such large-load customer terminating a contract or other agreement with the electric utility pertaining to the sale of electric energy, or otherwise ceasing the purchase of electric energy from the electric utility. ``(B) Financial assurances and contributions.-- Before making any generation, transmission, or distribution upgrade that is necessary to serve the load of a large-load customer, an electric utility shall require the large-load customer provide to the electric utility financial assurances or contributions to cover the cost of such upgrade. ``(C) Large-load customer defined.--In this paragraph, the term `large-load customer' means a non- residential electric consumer that, on or after the date of the enactment of this paragraph, requests to enter into, or enters into, a contract or other agreement pertaining to the sale of electric energy for one or more facilities that-- ``(i) require electric energy primarily to operate information technology infrastructure and related systems pertaining to data storage and computational applications and services; and ``(ii) have, in the aggregate, a peak electric demand of 100 megawatts or more at a single site or campus.''. (b) Conforming Amendments.-- (1) Obligations to consider and determine.--Section 112 of the Public Utility Regulatory Policies Act of 1978 (16 U.S.C. 2622) is amended-- (A) in subsection (b), by adding at the end the following: ``(9)(A) Not later than 1 year after the date of enactment of this paragraph, each State regulatory authority (with respect to each electric utility for which the State has ratemaking authority) and each nonregulated electric utility shall commence consideration under section 111, or set a hearing date for consideration, with respect to the standard established by paragraph (22) of section 111(d). ``(B) Not later than 2 years after the date of enactment of this paragraph, each State regulatory authority (with respect to each electric utility for which the State has ratemaking authority) and each nonregulated electric utility shall complete the consideration and make the determination under section 111 with respect to the standard established by paragraph (22) of section 111(d).''; (B) in subsection (c)-- (i) by striking ``subsection (b)(2)'' and inserting ``subsection (b)''; and (ii) by inserting ``In the case of the standard established by paragraph (22) of section 111(d), the reference contained in this subsection to the date of enactment of this Act shall be deemed to be a reference to the date of enactment of that paragraph (22).'' after ``paragraph (21).''; and (C) by adding at the end the following: ``(i) Other Prior State Actions.--Subsections (b) and (c) shall not apply to the standard established by paragraph (22) of section 111(d) in the case of any electric utility in a State if, before the date of enactment of this subsection-- ``(1) the State has implemented for the electric utility the standard (or a comparable standard); ``(2) the State regulatory authority for the State or the relevant nonregulated electric utility has conducted a proceeding to consider implementation of the standard (or a comparable standard) for the electric utility; or ``(3) the State legislature has voted on the implementation of the standard (or a comparable standard) for the electric utility.''. (2) Prior and pending proceedings.--Section 124 of the Public Utility Regulatory Policies Act of 1978 (16 U.S.C. 2634) is amended by adding at the end the following: ``In the case of the standard established by paragraph (22) of section 111(d), the reference contained in this section to the date of enactment of this Act shall be deemed to be a reference to the date of enactment of that paragraph (22).''. Passed the House of Representatives September 16, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 9340 _______________________________________________________________________ AN ACT To amend the Public Utility Regulatory Policies Act of 1978 to establish a Federal standard relating to the recovery of the full, incremental costs of upgrades that serve large-load customers, and for other purposes.",
+      "old_phrase": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard for full incremental electric-service upgrade costs attributable to a defined nonresidential IT large-load customer with aggregate peak demand of at least100MW at a single site/campus, including termination costs and pre-upgrade financial assurances under a new or modified contract on/after enactment. It requires commencement of consideration within1 year and determination within2 years, with three specified prior State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
+      "corrected_phrase": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard: a rate charged or entered into by an electric utility for electric service to a large-load customer shall be designed to recover from that customer the full incremental cost of generation, transmission or distribution upgrades necessary to serve its load, including when the customer terminates a contract or other agreement or otherwise ceases purchasing electricity. Before such an upgrade the utility shall require financial assurances or contributions to cover its cost. A qualifying large-load customer is a nonresidential electric consumer that, on or after enactment, requests to enter into or enters into an electric-energy contract or other agreement for one or more facilities that require energy primarily for information-technology infrastructure and related data-storage/computational systems and have aggregate peak demand of at least 100MW at a single site or campus. Each State regulatory authority for utilities over which it has ratemaking authority and each nonregulated electric utility must commence consideration or set a hearing date within one year, then complete consideration and make a determination within two years, subject to the three specified prior-State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
+      "active_copies": 6,
+      "changed_paths": [
+        "receipt195.reviews[2].rationale",
+        "receipt195.proposed_rows[3].reason",
+        "receipt195.proposed_rows[3].rationale",
+        "membership.records[610].rationale",
+        "universe.candidate_dispositions[673].reason",
+        "universe.candidate_dispositions[673].rationale"
+      ],
+      "disposition_unchanged": true
+    },
+    {
+      "action_id": "house:119:2:308",
+      "source_id": "govinfo:hr5334eas",
+      "locator": {
+        "start": 47998,
+        "end": 49427,
+        "total": 63323
+      },
+      "retained_literal_passage": "SEC. 115. WAIVER. (a) In General.--The President may, subject to subsection (b), waive the application of any sanctions provision with respect to a foreign person, any restriction with respect to a person, or any duty under this title. (b) Reports Required.-- (1) In general.--Before issuing a waiver under subsection (a), the President shall submit to Congress-- (A) a certification in writing that the issuance of the waiver is in the national interests of the United States; and (B) a report explaining the basis for the certification. (2) Consolidation of reports.--If the President is issuing more than one waiver of a section of this title, the President may include, in one report submitted under paragraph (1), the certifications and explanations required by that paragraph with respect to each such waiver, as long as all of such certifications and explanations relate to a waiver of the same section of this title. (3) Form of report.--Each report required by paragraph (1) shall be submitted in unclassified form but may include a classified annex. (4) Applicability to modifications of certain duty rates.-- The President is not required to submit a report under paragraph (1) for a modification or adjustment of a rate of duty pursuant to section 113(b). This paragraph does not modify or negate the requirement to submit a written determination required by section 113(b) or a report required by section 113(g)(1). ",
+      "old_phrase": "pre-imposition waiver115",
+      "corrected_phrase": "section115 presidential waiver with written national-interest certification and explanatory reporting before issuing a waiver, qualified by its report-consolidation/form provisions and section115(b)(4) duty-rate report exception preserving section113(b) written determination and section113(g)(1) report requirements",
+      "active_copies": 5,
+      "changed_paths": [
+        "receipt195.research_holds[0].rationale",
+        "receipt195.proposed_rows[2].reason",
+        "receipt195.proposed_rows[2].rationale",
+        "universe.candidate_dispositions[669].reason",
+        "universe.candidate_dispositions[669].rationale"
+      ],
+      "disposition_unchanged": true
+    }
+  ],
+  "original_exclusions302_312_and_hold308_preserved": true,
+  "all_governed_source_bytes_unchanged": true,
+  "shared_meanings_unchanged": true,
+  "count_changes": 0,
+  "prior_versions_archived": true,
+  "prior_receipt_archive": "docs\\editorial\\shared_candidates\\house_119_source_review_checkpoint196_history\\prior_september_midmonth_screening_checkpoint195.json",
+  "prior_validation_archive": "docs\\editorial\\shared_candidates\\house_119_source_review_checkpoint196_history\\prior_immigration_delivery_checkpoint195_validation.json",
+  "prior_two_membership_reviews": [
+    {
+      "action_id": "house:119:2:302",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.R.8278 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice requires covered agencies to assess supervisory technologies and procurement within180 days, including available real-time supervision, infrastructure, market-risk data and data security, and jointly report18 months after completing assessments and every5 years thereafter with qualified security protections. Covered agencies are Treasury through OCC/FinCEN, Federal Reserve, CFPB, FDIC, FHFA and NCUA. Procurement streamlining opportunities remain within existing agency authority. Congressional findings are attributed legislative findings, not verified outcomes. Financial supervision/Bank Secrecy Act context does not itself create an immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no claim immigrants cannot be affected or that an agency actually acquires new powers/technology; pending independent domain review and noncounting.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "govinfo:hr8278eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8278eh/html/BILLS-119hr8278eh.htm",
+          "raw_sha256": "f9739145f0227a4334607a52fac29f27e6cec5e390e82590ca1e798a6c47cbe7",
+          "governed_bytes_sha256": "bbd9a896687eb781d52aaaa5cb5a1676711dda60cef088aa62b0f63c9b97d843"
+        },
+        {
+          "source_id": "immigration:roll302-identity195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+          "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+          "governed_bytes_sha256": "4ea801c6f3a5caa019048ba10da3362e61a1d0387b92e67a7153647dfe1cee00"
+        },
+        {
+          "source_id": "immigration:roll302-floor-complete195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+          "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+          "governed_bytes_sha256": "19eb6209259d165e2b2c54485cea75e54d0013c4c4a5bf337b8c401598449ba2"
+        },
+        {
+          "source_id": "immigration:roll302-initial195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+          "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+          "governed_bytes_sha256": "2fba94470ae982692411d62049b6ed346dd8e58d7c10fa78bc6c1b1807666466"
+        },
+        {
+          "source_id": "immigration:roll302-recorded195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+          "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+          "governed_bytes_sha256": "9bba6893189d523081230e75094eaa13ec5aabdb702d02a4f10caf41aa387ee7"
+        },
+        {
+          "source_id": "clerk:119:2:302",
+          "url": "https://clerk.house.gov/evs/2026/roll302.xml",
+          "raw_sha256": "221b15b5895a5009172a68b1a78972fd2c3d812b4bfd4832a7a96e0482c9941b",
+          "governed_bytes_sha256": "d358a42140acce4db77999d9695e6a06e115db23d466e601c87323eb90777b6f"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "claim_id": "302-govinfo:hr8278eh-0",
+          "source_id": "govinfo:hr8278eh",
+          "locator": {
+            "start": 0,
+            "end": 8391,
+            "total": 8391
+          },
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 8278 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 8278 _______________________________________________________________________ AN ACT To require certain supervisory agencies to assess their technological capabilities, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Fostering the Use of Technology to Uphold Regulatory Effectiveness in Supervision Act''. SEC. 2. FINDINGS. Congress finds the following: (1) Banking regulators continue to examine and monitor depository institutions without sufficient access to real-time information. (2) Risk surrounding technology procurement may present challenges for updating supervisory technology. (3) To ensure that prudential supervision is effective and sustainable in the digital age, agencies must leverage new technologies to allow for the financial monitoring necessary to preserve a safe and sound banking system. (4) New technological tools are also necessary in order for agencies to effectively fulfill mandates other than prudential supervision, including their mandates to assure consumer protection and monitor Bank Secrecy Act compliance. (5) Agencies' reliance on outdated technology can create vulnerabilities for the financial system, through-- (A) difficulties in collecting, compiling, and analyzing relevant information about risks and noncompliance at supervised firms; (B) reliance on information that is inaccurate, incomplete, or not timely; (C) reliance on limited and outdated tools for data analysis; (D) difficulties in using data to identify risk trends; (E) difficulties in producing accurate and timely reports; (F) inadequacy of cybersecurity safeguards; and (G) failure to detect illegal activities. (6) The rapid expansion of financial firms' use of artificial intelligence may generate opportunities to improve the financial system while also introducing a range of risks, making it essential that agencies be equipped with the technology, expertise, and skills needed to analyze these opportunities and potential risks. (7) While agencies assess their supervisory capabilities on an ongoing basis, it is imperative that there be a unified goal of enhancing supervisory technologies that ensure effective and sustainable oversight. SEC. 3. TECHNOLOGICAL CAPABILITIES AND PROCUREMENT PRACTICES ASSESSMENT. (a) In General.-- (1) Technological capabilities assessment.--Each covered agency shall, not later than 180 days after the date of the enactment of this section, assess how existing technologies used by the covered agency pose challenges to the covered agency in conducting adequate, real-time supervisory assessments of entities over which the covered agency has supervisory authority. Such technologies include, as applicable-- (A) core information technology infrastructure; (B) technologies used to supervise entities; (C) technologies for monitoring general market risks using reported data and external data; and (D) technologies for data collection, storage, processing, and security. (2) Procurement practices assessment.--Each covered agency shall, not later than 180 days after the date of the enactment of this section-- (A) assess the procurement rules and protocols adhered to by such covered agency when such covered agency acquires or develops new technological systems; and (B) identify any opportunities to further streamline procurement rules and protocols, including an assessment of the impact such rules or protocols have on the ability of the covered agency to test new technological systems, that are within the covered agency's authority to streamline. (b) Report.--Not later than 18 months after the completion of the assessments required under subsection (a), and for every 5 years thereafter, the covered agencies shall coordinate and jointly submit to the Committee on Financial Services of the House of Representatives and the Committee on Banking, Housing, and Urban Affairs of the Senate, in a manner that does not pose a risk to the integrity or security of any technologies, systems, or capabilities of covered agencies, regulated entities, or market participants, a report that includes, as applicable, the following with respect to each covered agency: (1) A general overview of hardware and software used for information gathering and advanced analytics during supervision activities, including categories of technology purchased from vendors and developed by the covered agency or contractors of the covered agency. (2) A description of the procurement practices and protocols of the covered agency, including a description of-- (A) whether such processes are voluntarily adhered to or mandated; and (B) any opportunities to further streamline procurement rules and protocols, including an assessment of the impact such rules or protocols have on the ability of the covered agency to test new technological systems. (3) A general overview of the portion of the workforce of the covered agency that is engaged materially in technology development within the covered agency, including-- (A) an overview of the ability of the covered agency to recruit and retain appropriate technology experts; and (B) a description of the degree to which the covered agency relies on contractors to design, develop, or deploy technology and perform technology- related tasks, and a description of related risk management practices for contractors and third-party technologies. (4) A general description of the processes used by the covered agency to obtain information from entities supervised by the covered agency and any impediments thereto, including regulatory obstacles. (5) General information about market and technology trends and risks in the underlying regulated markets including, specific to the covered agency's jurisdiction-- (A) market developments influenced by the adoption of new technologies; (B) the use of new technologies by supervised entities for compliance and risk management purposes; (C) the impact of new technologies on the collection and analysis of data submitted to the covered agencies by supervised entities as required by regulation, including on data quality, interoperability, and standardization; and (D) potential risks, including risks of illicit activity, related to new technologies. (6) A general description of the ways in which the covered agency shares information or system access with other covered agencies and any impediments thereto, including regulatory obstacles. (7) An estimate of the costs for supervised entities to modify systems to share data with covered agencies, as appropriate. (8) A general description of any plans of the covered agency to implement future upgrades to the technology it uses to supervise entities, including-- (A) the anticipated timeline for any planned upgrades; (B) the costs of any planned upgrades; (C) any impediments to procuring relevant technologies; (D) plans for hiring and training individuals in connection with technological upgrades; (E) any aspects of any planned upgrades that should be addressed on an interagency basis; (F) any anticipated challenges and opportunities associated with entities supervised by the covered agency adapting to the covered agency's reporting process, including-- (i) estimates of transition costs; and (ii) estimates of any potential cost reductions; and (G) as applicable, the covered agency's relationships with other covered agencies in their capacity as delegated examiners. (c) Covered Agency Defined.--In this section, the term ``covered agency'' means the Board of Governors of the Federal Reserve System, the Bureau of Consumer Financial Protection, the Federal Deposit Insurance Corporation, the Department of the Treasury, including the Office of the Comptroller of the Currency and the Financial Crimes Enforcement Network, the Federal Housing Finance Agency, and the National Credit Union Administration. Passed the House of Representatives September 15, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 8278 _______________________________________________________________________ AN ACT To require certain supervisory agencies to assess their technological capabilities, and for other purposes.",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "302-immigration:roll302-identity195-0",
+          "source_id": "immigration:roll302-identity195",
+          "locator": {
+            "start": 0,
+            "end": 396,
+            "total": 396
+          },
+          "passage": "FOSTERING THE USE OF TECH-\nNOLOGY TO UPHOLD REGU-\nLATORY EFFECTIVENESS IN SU-\nPERVISION ACT \nMs. DE LA CRUZ. Mr. Speaker, I \nmove to suspend the rules and pass the \nbill (H.R. 8278) to require certain super-\nvisory agencies to assess their techno-\nlogical capabilities, and for other pur-\nposes, as amended. \nThe Clerk read the title of the bill. \nThe text of the bill is as follows: \nH.R. 8278 \n",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "302-immigration:roll302-floor-complete195-0",
+          "source_id": "immigration:roll302-floor-complete195",
+          "locator": {
+            "start": 0,
+            "end": 8028,
+            "total": 8028
+          },
+          "passage": "The text of the bill is as follows: \nH.R. 8278 \nBe it enacted by the Senate and House of Rep-\nresentatives of the United States of America in \nCongress assembled, \nSECTION 1. SHORT TITLE. \nThis Act may be cited as the ‘‘Fostering the \nUse of Technology to Uphold Regulatory Effec-\ntiveness in Supervision Act’’. \nSEC. 2. FINDINGS. \nCongress finds the following: \n(1) Banking regulators continue to examine \nand monitor depository institutions without suf-\nficient access to real-time information. \n(2) Risk surrounding technology procurement \nmay present challenges for updating supervisory \ntechnology. \n(3) To ensure that prudential supervision is \neffective and sustainable in the digital age, \nagencies must leverage new technologies to \nallow for the financial monitoring necessary to \npreserve a safe and sound banking system. \n(4) New technological tools are also necessary \nin order for agencies to effectively fulfill man-\ndates other than prudential supervision, includ-\ning their mandates to assure consumer protec-\ntion and monitor Bank Secrecy Act compliance. \n(5) Agencies’ reliance on outdated technology \ncan create vulnerabilities for the financial sys-\ntem, through— \n(A) difficulties in collecting, compiling, and \nanalyzing relevant information about risks and \nnoncompliance at supervised firms; \n(B) reliance on information that is inaccurate, \nincomplete, or not timely; \n(C) reliance on limited and outdated tools for \ndata analysis; \n(D) difficulties in using data to identify risk \ntrends; \n(E) difficulties in producing accurate and \ntimely reports; \n(F) inadequacy of cybersecurity safeguards; \nand \n(G) failure to detect illegal activities. \n(6) The rapid expansion of financial firms’ use \nof artificial intelligence may generate opportu-\nnities to improve the financial system while also \nintroducing a range of risks, making it essential \nthat agencies be equipped with the technology, \nexpertise, and skills needed to analyze these op-\nportunities and potential risks. \n(7) While agencies assess their supervisory ca-\npabilities on an ongoing basis, it is imperative \nthat there be a unified goal of enhancing super-\nvisory technologies that ensure effective and \nsustainable oversight. \nSEC. 3. TECHNOLOGICAL CAPABILITIES AND PRO-\nCUREMENT PRACTICES ASSESS-\nMENT. \n(a) IN GENERAL.— \n(1) T ECHNOLOGICAL CAPABILITIES ASSESS -\nMENT.—Each covered agency shall, not later \nthan 180 days after the date of the enactment of \nthis section, assess how existing technologies \nused by the covered agency pose challenges to \nthe covered agency in conducting adequate, \nreal-time supervisory assessments of entities over \nwhich the covered agency has supervisory au-\nthority. Such technologies include, as applica-\nble— \n(A) core information technology infrastruc-\nture; \n(B) technologies used to supervise entities; \n(C) technologies for monitoring general market \nrisks using reported data and external data; and \n(D) technologies for data collection, storage, \nprocessing, and security. \n(2) P\nROCUREMENT PRACTICES ASSESSMENT .— \nEach covered agency shall, not later than 180 \ndays after the date of the enactment of this sec-\ntion— \n(A) assess the procurement rules and protocols \nadhered to by such covered agency when such \ncovered agency acquires or develops new tech-\nnological systems; and \n(B) identify any opportunities to further \nstreamline procurement rules and protocols, in-\ncluding an assessment of the impact such rules \nor protocols have on the ability of the covered \nagency to test new technological systems, that \nare within the covered agency’s authority to \nstreamline. \n(b) R\nEPORT.—Not later than 18 months after \nthe completion of the assessments required \nunder subsection (a), and for every 5 years \nthereafter, the covered agencies shall coordinate \nand jointly submit to the Committee on Finan-\ncial Services of the House of Representatives \nand the Committee on Banking, Housing, and \nUrban Affairs of the Senate, in a manner that \ndoes not pose a risk to the integrity or security \nof any technologies, systems, or capabilities of \ncovered agencies, regulated entities, or market \nparticipants, a report that includes, as applica-\nble, the following with respect to each covered \nagency: \n(1) A general overview of hardware and soft-\nware used for information gathering and ad-\nvanced analytics during supervision activities, \nincluding categories of technology purchased \nfrom vendors and developed by the covered \nagency or contractors of the covered agency. \n(2) A description of the procurement practices \nand protocols of the covered agency, including a \ndescription of— \n(A) whether such processes are voluntarily \nadhered to or mandated; and \n(B) any opportunities to further streamline \nprocurement rules and protocols, including an \nassessment of the impact such rules or protocols \nhave on the ability of the covered agency to test \nnew technological systems. \n(3) A general overview of the portion of the \nworkforce of the covered agency that is engaged \nmaterially in technology development within the \ncovered agency, including— \n(A) an overview of the ability of the covered \nagency to recruit and retain appropriate tech-\nnology experts; and \n(B) a description of the degree to which the \ncovered agency relies on contractors to design, \ndevelop, or deploy technology and perform tech-\nnology-related tasks, and a description of re-\nlated risk management practices for contractors \nand third-party technologies. \n(4) A general description of the processes used \nby the covered agency to obtain information \nfrom entities supervised by the covered agency \nand any impediments thereto, including regu-\nlatory obstacles. \n(5) General information about market and \ntechnology trends and risks in the underlying \nregulated markets including, specific to the cov-\nered agency’s jurisdiction— \n(A) market developments influenced by the \nadoption of new technologies; \n(B) the use of new technologies by supervised \nentities for compliance and risk management \npurposes; \n(C) the impact of new technologies on the col-\nlection and analysis of data submitted to the \ncovered agencies by supervised entities as re-\nquired by regulation, including on data quality, \ninteroperability, and standardization; and \n(D) potential risks, including risks of illicit ac-\ntivity, related to new technologies. \n(6) A general description of the ways in which \nthe covered agency shares information or system \naccess with other covered agencies and any im-\npediments thereto, including regulatory obsta-\ncles. \n(7) An estimate of the costs for supervised en-\ntities to modify systems to share data with cov-\nered agencies, as appropriate. \n(8) A general description of any plans of the \ncovered agency to implement future upgrades to \nthe technology it uses to supervise entities, in-\ncluding— \n(A) the anticipated timeline for any planned \nupgrades; \n(B) the costs of any planned upgrades; \n(C) any impediments to procuring relevant \ntechnologies; \n(D) plans for hiring and training individuals \nin connection with technological upgrades; \n(E) any aspects of any planned upgrades that \nshould be addressed on an interagency basis; \n(F) any anticipated challenges and opportuni-\nties associated with entities supervised by the \ncovered agency adapting to the covered agency’s \nreporting process, including— \n(i) estimates of transition costs; and \n(ii) estimates of any potential cost reductions; \nand \n(G) as applicable, the covered agency’s rela-\ntionships with other covered agencies in their \ncapacity as delegated examiners. \n(c) C\nOVERED AGENCY DEFINED.—In this sec-\ntion, the term ‘‘covered agency’’ means the \nBoard of Governors of the Federal Reserve Sys-\ntem, the Bureau of Consumer Financial Protec-\ntion, the Federal Deposit Insurance Corpora-\ntion, the Department of the Treasury, including \nthe Office of the Comptroller of the Currency \nand the Financial Crimes Enforcement Network, \nthe Federal Housing Finance Agency, and the \nNational Credit Union Administration. \n",
+          "claim": "Complete exact own floor text mechanically compared to whole read bill proposal; not additional independent reading claim; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "302-immigration:roll302-initial195-0",
+          "source_id": "immigration:roll302-initial195",
+          "locator": {
+            "start": 0,
+            "end": 562,
+            "total": 562
+          },
+          "passage": "The SPEAKER pro tempore (Mr. \nS\nIMPSON). The question is on the mo-\ntion offered by the gentlewoman from \nTexas (Ms. D\nE LA CRUZ) that the House \nsuspend the rules and pass the bill, \nH.R. 8278, as amended. \nThe question was taken. \nThe SPEAKER pro tempore. In the \nopinion of the Chair, two-thirds being \nin the affirmative, the ayes have it. \nMs. DE LA CRUZ. Mr. Speaker, on \nthat I demand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, further pro-\nceedings on this motion will be post-\nponed.",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "302-immigration:roll302-recorded195-0",
+          "source_id": "immigration:roll302-recorded195",
+          "locator": {
+            "start": 0,
+            "end": 1150,
+            "total": 5540
+          },
+          "passage": "FOSTERING THE USE OF TECH-\nNOLOGY TO UPHOLD REGU-\nLATORY EFFECTIVENESS IN SU-\nPERVISION ACT \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on the mo-\ntion to suspend the rules and pass the \nbill (H.R. 8278) to require certain super-\nvisory agencies to assess their techno-\nlogical capabilities, and for other pur-\nposes, as amended, on which the yeas \nand nays were ordered. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. The \nquestion is on the motion offered by \nthe gentlewoman from Texas (Ms. D\nE \nLA CRUZ) that the House suspend the \nrules and pass the bill, as amended. \nThis is a 2-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 417, nays 7, \nnot voting 9, as follows: \nVerDate Sep 11 2014 07:04 Sep 17, 2026 Jkt 069060 PO 00000 Frm 00198 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\K15SE7.127 H15SEPT1DMwilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSE H5823 September 15, 2026 \n[Roll No. 302] \nYEAS—417 \nAdams \nAderholt \nAguilar \nAlford \nAmo \nAmodei (NV) \nAnsari \nArrington \nAuchincloss \nBabin \nBacon \nBaird \nBalderson \nBalint \nBarr \nBarraga",
+          "claim": "Own question/tallies and declared result/end read; full intervening member-name list not claimed as owner-read; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "302-immigration:roll302-recorded195-4990",
+          "source_id": "immigration:roll302-recorded195",
+          "locator": {
+            "start": 4990,
+            "end": 5540,
+            "total": 5540
+          },
+          "passage": "(GA) \nWilliams (TX) \nWilson (FL) \nWilson (SC) \nWittman \nYakym \nZinke \nNAYS—7 \nBrecheen \nClyde \nFine \nHarris (MD) \nNorman \nRoy \nSelf \nNOT VOTING—9 \nAllen \nComer \nDonalds \nDunn (FL) \nFedorchak \nGaramendi \nMills \nTiffany \nWomack \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (during \nthe vote). There is 1 minute remaining. \nb 2203 \nSo (two-thirds being in the affirma-\ntive) the rules were suspended and the \nbill was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table.",
+          "claim": "Own question/tallies and declared result/end read; full intervening member-name list not claimed as owner-read; no whole parent/current-law, individual application or editorial clearance"
+        }
+      ],
+      "reviewed_source_extents": [
+        {
+          "source_id": "govinfo:hr8278eh",
+          "start": 0,
+          "end": 8391,
+          "total": 8391,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "immigration:roll302-identity195",
+          "start": 0,
+          "end": 396,
+          "total": 396,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "immigration:roll302-floor-complete195",
+          "start": 0,
+          "end": 8028,
+          "total": 8028,
+          "reviewed_scope": "Complete exact own floor text mechanically compared to whole read bill proposal; not additional independent reading claim"
+        },
+        {
+          "source_id": "immigration:roll302-initial195",
+          "start": 0,
+          "end": 562,
+          "total": 562,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "immigration:roll302-recorded195",
+          "start": 0,
+          "end": 1150,
+          "total": 5540,
+          "reviewed_scope": "Own question/tallies and declared result/end read; full intervening member-name list not claimed as owner-read"
+        },
+        {
+          "source_id": "immigration:roll302-recorded195",
+          "start": 4990,
+          "end": 5540,
+          "total": 5540,
+          "reviewed_scope": "Own question/tallies and declared result/end read; full intervening member-name list not claimed as owner-read"
+        }
+      ],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:2:312",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard for full incremental electric-service upgrade costs attributable to a defined nonresidential IT large-load customer with aggregate peak demand of at least100MW at a single site/campus, including termination costs and pre-upgrade financial assurances under a new or modified contract on/after enactment. It requires commencement of consideration within1 year and determination within2 years, with three specified prior State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "govinfo:hr9340eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9340eh/html/BILLS-119hr9340eh.htm",
+          "raw_sha256": "49fabf0a7b44725dc0ea9f9dd88f7ed15938282bb33836738623000d851a6b83",
+          "governed_bytes_sha256": "a87b9aec7f2fa903058851b89bd414864a816185523e8fe34992c205bd3103da"
+        },
+        {
+          "source_id": "govinfo:16usc-2621abc-2024-195",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46.htm",
+          "raw_sha256": "eb884b57cb95ef0f1243580ad369f5bee9a322a8f3d73ba484125b29f63c87f5",
+          "governed_bytes_sha256": "a9a58cb09faa6a9d35f1723f5cdbbe25f37ee45629b7b5130bc43eb684df1c55"
+        },
+        {
+          "source_id": "govinfo:16usc-2622-2024-195",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46.htm",
+          "raw_sha256": "eb884b57cb95ef0f1243580ad369f5bee9a322a8f3d73ba484125b29f63c87f5",
+          "governed_bytes_sha256": "ec62f462e66b16def047aa7cea751a4a9e8582f7804dbc38d90e5a129eff66d1"
+        },
+        {
+          "source_id": "govinfo:16usc-2634-2024-195",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46.htm",
+          "raw_sha256": "eb884b57cb95ef0f1243580ad369f5bee9a322a8f3d73ba484125b29f63c87f5",
+          "governed_bytes_sha256": "d510c85ebe05c4aacac46c792b6e6b4e87cec9ca26ad11ed7afc143f5f6158bd"
+        },
+        {
+          "source_id": "immigration:roll312-identity195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+          "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+          "governed_bytes_sha256": "5cfd91240b93d141b20aa59dfc4c8196c7a59694fb598eb6f1ccf1af09b56125"
+        },
+        {
+          "source_id": "immigration:roll312-floor-complete195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+          "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+          "governed_bytes_sha256": "fec1f3f243368569bf6420a3032dcf2c203e24dbdf37d8e1bbcc594bfeb28cfc"
+        },
+        {
+          "source_id": "immigration:roll312-initial195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+          "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+          "governed_bytes_sha256": "e6a7217f69e723c356de1940dbc751bbae1797e99024bce992c5085e321cba44"
+        },
+        {
+          "source_id": "immigration:roll312-recorded195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+          "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+          "governed_bytes_sha256": "a3222cd44f71ca1e95cc284edac5780368708a9ad7cb330882dc1c143f91bbe9"
+        },
+        {
+          "source_id": "clerk:119:2:312",
+          "url": "https://clerk.house.gov/evs/2026/roll312.xml",
+          "raw_sha256": "808f0ae52a69ae373e8fa52b523ca3c2fe74e6b9770140ca6d668e54762feef5",
+          "governed_bytes_sha256": "a37ab75f7b3a5dfcd4de1e446985e5714341b90f03394f2ceb65c3588348fbba"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "claim_id": "312-govinfo:hr9340eh-0",
+          "source_id": "govinfo:hr9340eh",
+          "locator": {
+            "start": 0,
+            "end": 5486,
+            "total": 5486
+          },
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 9340 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 9340 _______________________________________________________________________ AN ACT To amend the Public Utility Regulatory Policies Act of 1978 to establish a Federal standard relating to the recovery of the full, incremental costs of upgrades that serve large-load customers, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Ratepayer Protection Act''. SEC. 2. FEDERAL STANDARD RELATING TO LARGE-LOAD CUSTOMERS. (a) Federal Standard Relating to Large-load Customers.--Section 111(d) of the Public Utility Regulatory Policies Act of 1978 (16 U.S.C. 2621(d)) is amended by adding at the end the following: ``(22) Standards for large-load customers.-- ``(A) Recovery of full, incremental cost of upgrades.--A rate charged, or entered into, by an electric utility for providing electric service to a large-load customer shall be designed to recover from the large-load customer the full, incremental cost of any generation, transmission, or distribution upgrade necessary to serve the load of such large-load customer, including in the event of such large-load customer terminating a contract or other agreement with the electric utility pertaining to the sale of electric energy, or otherwise ceasing the purchase of electric energy from the electric utility. ``(B) Financial assurances and contributions.-- Before making any generation, transmission, or distribution upgrade that is necessary to serve the load of a large-load customer, an electric utility shall require the large-load customer provide to the electric utility financial assurances or contributions to cover the cost of such upgrade. ``(C) Large-load customer defined.--In this paragraph, the term `large-load customer' means a non- residential electric consumer that, on or after the date of the enactment of this paragraph, requests to enter into, or enters into, a contract or other agreement pertaining to the sale of electric energy for one or more facilities that-- ``(i) require electric energy primarily to operate information technology infrastructure and related systems pertaining to data storage and computational applications and services; and ``(ii) have, in the aggregate, a peak electric demand of 100 megawatts or more at a single site or campus.''. (b) Conforming Amendments.-- (1) Obligations to consider and determine.--Section 112 of the Public Utility Regulatory Policies Act of 1978 (16 U.S.C. 2622) is amended-- (A) in subsection (b), by adding at the end the following: ``(9)(A) Not later than 1 year after the date of enactment of this paragraph, each State regulatory authority (with respect to each electric utility for which the State has ratemaking authority) and each nonregulated electric utility shall commence consideration under section 111, or set a hearing date for consideration, with respect to the standard established by paragraph (22) of section 111(d). ``(B) Not later than 2 years after the date of enactment of this paragraph, each State regulatory authority (with respect to each electric utility for which the State has ratemaking authority) and each nonregulated electric utility shall complete the consideration and make the determination under section 111 with respect to the standard established by paragraph (22) of section 111(d).''; (B) in subsection (c)-- (i) by striking ``subsection (b)(2)'' and inserting ``subsection (b)''; and (ii) by inserting ``In the case of the standard established by paragraph (22) of section 111(d), the reference contained in this subsection to the date of enactment of this Act shall be deemed to be a reference to the date of enactment of that paragraph (22).'' after ``paragraph (21).''; and (C) by adding at the end the following: ``(i) Other Prior State Actions.--Subsections (b) and (c) shall not apply to the standard established by paragraph (22) of section 111(d) in the case of any electric utility in a State if, before the date of enactment of this subsection-- ``(1) the State has implemented for the electric utility the standard (or a comparable standard); ``(2) the State regulatory authority for the State or the relevant nonregulated electric utility has conducted a proceeding to consider implementation of the standard (or a comparable standard) for the electric utility; or ``(3) the State legislature has voted on the implementation of the standard (or a comparable standard) for the electric utility.''. (2) Prior and pending proceedings.--Section 124 of the Public Utility Regulatory Policies Act of 1978 (16 U.S.C. 2634) is amended by adding at the end the following: ``In the case of the standard established by paragraph (22) of section 111(d), the reference contained in this section to the date of enactment of this Act shall be deemed to be a reference to the date of enactment of that paragraph (22).''. Passed the House of Representatives September 16, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 9340 _______________________________________________________________________ AN ACT To amend the Public Utility Regulatory Policies Act of 1978 to establish a Federal standard relating to the recovery of the full, incremental costs of upgrades that serve large-load customers, and for other purposes.",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "312-govinfo:16usc-2621abc-2024-195-0",
+          "source_id": "govinfo:16usc-2621abc-2024-195",
+          "locator": {
+            "start": 0,
+            "end": 3123,
+            "total": 3123
+          },
+          "passage": "§2621. Consideration and determination respecting certain ratemaking standards (a) Consideration and determination Each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated electric utility shall consider each standard established by subsection (d) and make a determination concerning whether or not it is appropriate to implement such standard to carry out the purposes of this chapter. For purposes of such consideration and determination in accordance with subsections (b) and (c), and for purposes of any review of such consideration and determination in any court in accordance with section 2633 of this title, the purposes of this chapter supple ment otherwise applicable State law. Nothing in this subsection prohibits any State regulatory authority or nonregulated electric utility from making any determination that it is not appropriate to implement any such standard, pursuant to its authority under otherwise applicable State law. (b) Procedural requirements for consideration and determination (1) The consideration referred to in subsection (a) shall be made after public notice and hearing. The determination referred to in subsection (a) shall be— (A) in writing, (B) based upon findings included in such determination and upon the evidence presented at the hearing, and (C) available to the public. (2) Except as otherwise provided in paragraph (1), in the second sentence of section 2622(a) of this title, and in sections 2631 and 2632 of this title, the procedures for the consideration and determination referred to in subsection (a) shall be those established by the State regulatory authority or the nonregulated electric utility. (c) Implementation (1) The State regulatory authority (with respect to each electric utility for which it has ratemaking authority) or nonregulated electric utility may, to the extent consistent with otherwise applicable State law— (A) implement any such standard determined under subsection (a) to be appropriate to carry out the purposes of this chapter, or (B) decline to implement any such standard. (2) If a State regulatory authority (with respect to each electric utility for which it has ratemaking authority) or nonregulated electric utility declines to implement any standard established by subsection (d) which is determined under subsection (a) to be appropriate to carry out the purposes of this chapter, such authority or nonregulated electric utility shall state in writing the reasons therefor. Such statement of reasons shall be available to the public. (3) If a State regulatory authority implements a standard established by subsection (d)(7) or (8), such authority shall— (A) consider the impact that implementation of such standard would have on small businesses engaged in the design, sale, supply, installation or servicing of energy conservation, energy efficiency or other demand side management measures, and (B) implement such standard so as to assure that utility actions would not provide such utilities with unfair competitive advantages over such small businesses. ",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "312-govinfo:16usc-2622-2024-195-0",
+          "source_id": "govinfo:16usc-2622-2024-195",
+          "locator": {
+            "start": 0,
+            "end": 13081,
+            "total": 13081
+          },
+          "passage": "§2622. Obligations to consider and determine (a) Request for consideration and determination Each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated electric utility may undertake the consideration and make the determination referred to in section 2621 of this title with respect to any standard established by section 2621(d) of this title in any proceeding respecting the rates of the electric utility. Any participant or intervenor (including an intervenor referred to in section 2631 of this title) in such a proceeding may request, and shall obtain, such consideration and determination in such proceeding. In undertaking such consideration and making such determination in any such proceeding with respect to the application to any electric utility of any standard established by section 2621(d) of this title, a State regulatory authority (with respect to an electric utility for which it has ratemaking authority) or nonregulated electric utility may take into account in such proceeding— (1) any appropriate prior determination with respect to such standard— (A) which is made in a proceeding which takes place after November 9, 1978, or (B) which was made before such date (or is made in a proceeding pending on such date) and complies, as provided in section 2634 of this title, with the requirements of this chapter; and (2) the evidence upon which such prior determination was based (if such evidence is referenced in such proceeding). (b) Time limitations (1) Not later than 2 years after November 9, 1978 (or after October 24, 1992, in the case of standards under paragraphs (7), (8), and (9) of section 2621(d) of this title), each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated electric utility shall commence the consideration referred to in section 2621 of this title, or set a hearing date for such consideration, with respect to each standard established by section 2621(d) of this title. (2) Not later than three years after November 9, 1978 (or after October 24, 1992, in the case of standards under paragraphs (7), (8), and (9) of section 2621(d) of this title), each State regulatory authority (with respect to each electric utility for which it has ratemaking authority), and each nonregulated electric utility, shall complete the consideration, and shall make the determination, referred to in section 2621 of this title with respect to each standard established by section 2621(d) of this title. (3)(A) Not later than 2 years after August 8, 2005, each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated electric utility shall commence the consideration referred to in section 2621 of this title, or set a hearing date for such consideration, with respect to each standard established by paragraphs (11) through (13) of section 2621(d) of this title. (B) Not later than 3 years after August 8, 2005, each State regulatory authority (with respect to each electric utility for which it has ratemaking authority), and each nonregulated electric utility, shall complete the consideration, and shall make the determination, referred to in section 2621 of this title with respect to each standard established by paragraphs (11) through (13) of section 2621(d) of this title. (4)(A) Not later than 1 year after August 8, 2005, each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated electric utility shall commence the consideration referred to in section 2621 of this title, or set a hearing date for such consideration, with respect to the standard established by paragraph (14) of section 2621(d) of this title. (B) Not later than 2 years after August 8, 2005, each State regulatory authority (with respect to each electric utility for which it has ratemaking authority), and each nonregulated electric utility, shall complete the consideration, and shall make the determination, referred to in section 2621 of this title with respect to the standard established by paragraph (14) of section 2621(d) of this title. (5)(A) Not later than 1 year after August 8, 2005, each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated utility shall commence the consideration referred to in section 2621 of this title, or set a hearing date for consideration, with respect to the standard established by paragraph (15) of section 2621(d) of this title. (B) Not later than two years after August 8, 2005, each State regulatory authority (with respect to each electric utility for which it has ratemaking authority), and each nonregulated electric utility, shall complete the consideration, and shall make the determination, referred to in section 2621 of this title with respect to each standard established by paragraph (15) of section 2621(d) of this title. (6)(A) Not later than 1 year after December 19, 2007, each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated utility shall commence the consideration referred to in section 2621 of this title, or set a hearing date for consideration, with respect to the standards established by paragraphs (16) through (19) of section 2621(d) of this title. (B) Not later than 2 years after December 19, 2007, each State regulatory authority (with respect to each electric utility for which it has ratemaking authority), and each nonregulated electric utility, shall complete the consideration, and shall make the determination, referred to in section 2621 of this title with respect to each standard established by paragraphs (16) through (19) of section 2621(d) of this title. (7)(A) Not later than 1 year after November 15, 2021, each State regulatory authority (with respect to each electric utility for which the State has ratemaking authority) and each nonregulated electric utility shall commence consideration under section 2621 of this title, or set a hearing date for consideration, with respect to the standard established by paragraph (20) of section 2621(d) of this title. (B) Not later than 2 years after November 15, 2021, each State regulatory authority (with respect to each electric utility for which the State has ratemaking authority), and each nonregulated electric utility shall complete the consideration and make the determination under section 2621 of this title with respect to the standard established by paragraph (20) of section 2621(d) of this title. (8)(A) Not later than 1 year after November 15, 2021, each State regulatory authority (with respect to each electric utility for which the State has ratemaking authority) and each nonregulated utility shall commence consideration under section 2621 of this title, or set a hearing date for consideration, with respect to the standard established by paragraph (21) of section 2621(d) of this title. (B) Not later than 2 years after November 15, 2021, each State regulatory authority (with respect to each electric utility for which the State has ratemaking authority), and each nonregulated electric utility shall complete the consideration and make the determination under section 2621 of this title with respect to the standard established by paragraph (21) of section 2621(d) of this title. (c) Failure to comply Each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated electric utility shall undertake the consideration, and make the determination, referred to in section 2621 of this title with respect to each standard established by section 2621(d) of this title in the first rate proceeding commenced after the date three years after November 9, 1978, respecting the rates of such utility if such State regulatory authority or nonregulated electric utility has not, before such date, complied with subsection (b)(2) with respect to such standard. In the case of each standard established by paragraphs (11) through (13) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standard established by paragraph (14) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standard established by paragraph (15) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standards established by paragraphs (16) through (19) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to December 19, 2007. In the case of the standard established by paragraph (20) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to November 15, 2021. In the case of the standard established by paragraph (21) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to November 15, 2021. (d) Prior State actions relating to standard under certain paragraphs of section 2621(d) Subsections (b) and (c) of this section shall not apply to the standards established by paragraphs (11) through (13) and paragraphs (16) through (19) of section 2621(d) of this title in the case of any electric utility in a State if, before August 8, 2005— (1) the State has implemented for such utility the standard concerned (or a comparable standard); (2) the State regulatory authority for such State or relevant nonregulated electric utility has conducted a proceeding to consider implementation of the standard concerned (or a comparable standard) for such utility; or (3) the State legislature has voted on the implementation of such standard (or a comparable standard) for such utility. (e) Prior State actions relating to standard under section 2621(d)(14) Subsections (b) and (c) of this section shall not apply to the standard established by paragraph (14) of section 2621(d) of this title in the case of any electric utility in a State if, before August 8, 2005— (1) the State has implemented for such utility the standard concerned (or a comparable standard); (2) the State regulatory authority for such State or relevant nonregulated electric utility has conducted a proceeding to consider implementation of the standard concerned (or a comparable standard) for such utility within the previous 3 years; or (3) the State legislature has voted on the implementation of such standard (or a comparable standard) for such utility within the previous 3 years. (f) Prior State actions relating to standard under section 2621(d)(15) Subsections (b) and (c) of this section shall not apply to the standard established by paragraph (15) of section 2621(d) of this title in the case of any electric utility in a State if, before August 8, 2005— (1) the State has implemented for such utility the standard concerned (or a comparable standard); (2) the State regulatory authority for such State or relevant nonregulated electric utility has conducted a proceeding to consider implementation of the standard concerned (or a comparable standard) for such utility; or (3) the State legislature has voted on the implementation of such standard (or a comparable standard) for such utility. (g) Prior State actions Subsections (b) and (c) shall not apply to the standard established by paragraph (20) of section 2621(d) of this title in the case of any electric utility in a State if, before November 15, 2021— (1) the State has implemented for the electric utility the standard (or a comparable standard); (2) the State regulatory authority for the State or the relevant nonregulated electric utility has conducted a proceeding to consider implementation of the standard (or a comparable standard) for the electric utility; or (3) the State legislature has voted on the implementation of the standard (or a comparable standard) for the electric utility. (h) Other prior State actions Subsections (b) and (c) shall not apply to the standard established by paragraph (21) of section 2621(d) of this title in the case of any electric utility in a State if, before November 15, 2021— (1) the State has implemented for the electric utility the standard (or a comparable standard); (2) the State regulatory authority for the State or the relevant nonregulated electric utility has conducted a proceeding to consider implementation of the standard (or a comparable standard) for the electric utility; or (3) the State legislature has voted on the implementation of the standard (or a comparable standard) for the electric utility during the 3-year period ending on November 15, 2021. ",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "312-govinfo:16usc-2634-2024-195-0",
+          "source_id": "govinfo:16usc-2634-2024-195",
+          "locator": {
+            "start": 0,
+            "end": 4074,
+            "total": 4074
+          },
+          "passage": "§2634. Prior and pending proceedings For purposes of subchapters I and II, and this subchapter, proceedings commenced by State regulatory authorities (with respect to electric utilities for which it has ratemaking authority) and nonregulated electric utilities before November 9, 1978, and actions taken before such date in such proceedings shall be treated as complying with the requirements of subchapters I and II, and this subchapter if such proceedings and actions substantially conform to such requirements. For purposes of subchapters I and II, and this subchapter, any such proceeding or action commenced before November 9, 1978, but not completed before such date, shall comply with the requirements of subchapters I and II, and this subchapter, to the maximum extent practicable, with respect to so much of such proceeding or action as takes place after such date, except as otherwise provided in section 2631(c) of this title. In the case of each standard established by paragraphs (11) through (13) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standard established by paragraph (14) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of each standard established by paragraph (15) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standard established by paragraph (20) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to November 15, 2021. In the case of the standard established by paragraph (21) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to November 15, 2021. (Pub. L. 95–617, title I, §124, Nov. 9, 1978, 92 Stat. 3131; Pub. L. 109–58, title XII, §§1251(b)(3)(B), 1252(i)(2), 1254(b)(3)(B), Aug. 8, 2005, 119 Stat. 963, 967, 971; Pub. L. 117–58, div. D, title I, §40104(a)(2)(C)(ii), title IV, §40431(b)(3)(B), Nov. 15, 2021, 135 Stat. 932, 1048.) Editorial Notes Amendments 2021 —Pub. L. 117–58, §40431(b)(3)(B), inserted at end \"In the case of the standard established by paragraph (21) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to November 15, 2021.\" Pub. L. 117–58, §40104(a)(2)(C)(ii), substituted \"this section\" for \"this subsection\" wherever appearing and inserted at end \"In the case of the standard established by paragraph (20) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to November 15, 2021.\" 2005 —Pub. L. 109–58, §1254(b)(3)(B), inserted at end \"In the case of each standard established by paragraph (15) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to August 8, 2005.\" Pub. L. 109–58, §1252(i)(2), inserted at end \"In the case of the standard established by paragraph (14) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to August 8, 2005.\" Pub. L. 109–58, §1251(b)(3)(B), inserted at end \"In the case of each standard established by paragraphs (11) through (13) of section 2621(d) of this title, the reference contained in this subsection to November 9, 1978, shall be deemed to be a reference to August 8, 2005.\" Statutory Notes and Related Subsidiaries Wage Rate Requirements For provisions relating to rates of wages to be paid to laborers and mechanics on projects for construction, alteration, or repair work funded under div. D or an amendment by div. D of Pub. L. 117–58, including authority of Secretary of Labor, see section 18851 of Title 42, The Public Health and Welfare. ",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "312-immigration:roll312-identity195-0",
+          "source_id": "immigration:roll312-identity195",
+          "locator": {
+            "start": 0,
+            "end": 436,
+            "total": 436
+          },
+          "passage": "RATEPAYER PROTECTION ACT \nMr. GUTHRIE. Mr. Speaker, I move \nto suspend the rules and pass the bill \n(H.R. 9340) to amend the Public Utility \nRegulatory Policies Act of 1978 to es-\ntablish a Federal standard relating to \nthe recovery of the full, incremental \ncosts of upgrades that serve large-load \ncustomers, and for other purposes, as \namended. \nThe Clerk read the title of the bill. \nThe text of the bill is as follows: \nH.R. 9340 \n",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "312-immigration:roll312-floor-complete195-0",
+          "source_id": "immigration:roll312-floor-complete195",
+          "locator": {
+            "start": 0,
+            "end": 5027,
+            "total": 5027
+          },
+          "passage": "The text of the bill is as follows: \nH.R. 9340 \nBe it enacted by the Senate and House of Rep-\nresentatives of the United States of America in \nCongress assembled, \nSECTION 1. SHORT TITLE. \nThis Act may be cited as the ‘‘Ratepayer Pro-\ntection Act’’. \nSEC. 2. FEDERAL STANDARD RELATING TO \nLARGE-LOAD CUSTOMERS. \n(a) F EDERAL STANDARD RELATING TO LARGE- \nLOAD CUSTOMERS.—Section 111(d) of the Public \nUtility Regulatory Policies Act of 1978 (16 U.S.C. \n2621(d)) is amended by adding at the end the \nfollowing: \n‘‘(22) S\nTANDARDS FOR LARGE -LOAD CUS -\nTOMERS.— \n‘‘(A) R ECOVERY OF FULL , INCREMENTAL COST  \nOF UPGRADES .—A rate charged, or entered into, \nby an electric utility for providing electric serv-\nice to a large-load customer shall be designed to \nrecover from the large-load customer the full, in-\ncremental cost of any generation, transmission, \nor distribution upgrade necessary to serve the \nload of such large-load customer, including in \nthe event of such large-load customer termi-\nnating a contract or other agreement with the \nelectric utility pertaining to the sale of electric \nenergy, or otherwise ceasing the purchase of \nelectric energy from the electric utility. \n‘‘(B) F\nINANCIAL ASSURANCES AND CONTRIBU -\nTIONS.—Before making any generation, trans-\nmission, or distribution upgrade that is nec-\nessary to serve the load of a large-load cus-\ntomer, an electric utility shall require the large- \nload customer provide to the electric utility fi-\nnancial assurances or contributions to cover the \ncost of such upgrade. \n‘‘(C) L\nARGE-LOAD CUSTOMER DEFINED.—In this \nparagraph, the term ‘large-load customer’ means \na non-residential electric consumer that, on or \nafter the date of the enactment of this para-\ngraph, requests to enter into, or enters into, a \ncontract or other agreement pertaining to the \nsale of electric energy for one or more facilities \nthat— \n‘‘(i) require electric energy primarily to oper-\nate information technology infrastructure and \nrelated systems pertaining to data storage and \ncomputational applications and services; and \n‘‘(ii) have, in the aggregate, a peak electric \ndemand of 100 megawatts or more at a single site \nor campus.’’. \n(b) C\nONFORMING AMENDMENTS.— \n(1) O BLIGATIONS TO CONSIDER AND DETER -\nMINE.—Section 112 of the Public Utility Regu-\nlatory Policies Act of 1978 (16 U.S.C. 2622) is \namended— \n(A) in subsection (b), by adding at the end the \nfollowing: \n‘‘(9)(A) Not later than 1 year after the date of \nenactment of this paragraph, each State regu-\nlatory authority (with respect to each electric \nutility for which the State has ratemaking au-\nthority) and each nonregulated electric utility \nshall commence consideration under section 111, \nor set a hearing date for consideration, with re-\nspect to the standard established by paragraph \n(22) of section 111(d). \n‘‘(B) Not later than 2 years after the date of \nenactment of this paragraph, each State regu-\nlatory authority (with respect to each electric \nutility for which the State has ratemaking au-\nthority) and each nonregulated electric utility \nshall complete the consideration and make the \ndetermination under section 111 with respect to \nthe standard established by paragraph (22) of \nsection 111(d).’’; \nVerDate Sep 11 2014 07:04 Sep 17, 2026 Jkt 069060 PO 00000 Frm 00032 Fmt 4634 Sfmt 6333 E:\\CR\\FM\\A15SE7.009 H15SEPT1DMwilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSE H5657 September 15, 2026 \n(B) in subsection (c)— \n(i) by striking ‘‘subsection (b)(2)’’ and insert-\ning ‘‘subsection (b)’’; and \n(ii) by inserting ‘‘In the case of the standard \nestablished by paragraph (22) of section 111(d), \nthe reference contained in this subsection to the \ndate of enactment of this Act shall be deemed to \nbe a reference to the date of enactment of that \nparagraph (22).’’ after ‘‘paragraph (21).’’; and \n(C) by adding at the end the following: \n‘‘(i) O\nTHER PRIOR STATE ACTIONS.—Sub-\nsections (b) and (c) shall not apply to the stand-\nard established by paragraph (22) of section \n111(d) in the case of any electric utility in a \nState if, before the date of enactment of this \nsubsection— \n‘‘(1) the State has implemented for the electric \nutility the standard (or a comparable standard); \n‘‘(2) the State regulatory authority for the \nState or the relevant nonregulated electric util-\nity has conducted a proceeding to consider im-\nplementation of the standard (or a comparable \nstandard) for the electric utility; or \n‘‘(3) the State legislature has voted on the im-\nplementation of the standard (or a comparable \nstandard) for the electric utility.’’. \n(2) P\nRIOR AND PENDING PROCEEDINGS .—Section \n124 of the Public Utility Regulatory Policies Act \nof 1978 (16 U.S.C. 2634) is amended by adding at \nthe end the following: ‘‘In the case of the stand-\nard established by paragraph (22) of section \n111(d), the reference contained in this section to \nthe date of enactment of this Act shall be \ndeemed to be a reference to the date of enact-\nment of that paragraph (22).’’. \n",
+          "claim": "Complete exact own floor text mechanically compared to whole read bill proposal; not additional independent reading claim; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "312-immigration:roll312-initial195-0",
+          "source_id": "immigration:roll312-initial195",
+          "locator": {
+            "start": 0,
+            "end": 570,
+            "total": 570
+          },
+          "passage": "The SPEAKER pro tempore (Mrs. \nM\nILLER of Illinois). The question is on \nthe motion offered by the gentleman \nfrom Kentucky (Mr. G\nUTHRIE) that the \nHouse suspend the rules and pass the \nbill, H.R. 9340, as amended. \nThe question was taken. \nThe SPEAKER pro tempore. In the \nopinion of the Chair, two-thirds being \nin the affirmative, the ayes have it. \nMr. GUTHRIE. Madam Speaker, on \nthat I demand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, further pro-\nceedings on this motion will be post-\nponed.",
+          "claim": "Complete declared source text read; proposal and historical law distinct; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "312-immigration:roll312-recorded195-0",
+          "source_id": "immigration:roll312-recorded195",
+          "locator": {
+            "start": 0,
+            "end": 1150,
+            "total": 5635
+          },
+          "passage": "RATEPAYER PROTECTION ACT \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on the mo-\ntion to suspend the rules and pass the \nbill (H.R. 9340) to amend the Public \nUtility Regulatory Policies Act of 1978 \nto establish a Federal standard relat-\ning to the recovery of the full, incre-\nmental costs of upgrades that serve \nlarge-load customers, and for other \npurposes, as amended, on which the \nyeas and nays were ordered. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. The \nquestion is on the motion offered by \nthe gentleman from Kentucky (Mr. \nG\nUTHRIE) that the House suspend the \nrules and pass the bill, as amended. \nThis is a 2-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 417, nays 3, \nnot voting 12, as follows: \n[Roll No. 312] \nYEAS—417 \nAdams \nAderholt \nAguilar \nAlford \nAllen \nAmo \nVerDate Sep 11 2014 07:01 Sep 22, 2026 Jkt 069060 PO 00000 Frm 00124 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\A16SE7.039 H16SEPT1dmwilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSE H5959 September 16, 2026 \nAmodei (NV) \nAnsari \nArrington \nAuchincloss \nBab",
+          "claim": "Own question/tallies and declared result/end read; full intervening member-name list not claimed as owner-read; no whole parent/current-law, individual application or editorial clearance"
+        },
+        {
+          "claim_id": "312-immigration:roll312-recorded195-5085",
+          "source_id": "immigration:roll312-recorded195",
+          "locator": {
+            "start": 5085,
+            "end": 5635,
+            "total": 5635
+          },
+          "passage": "PA) Ramirez Tlaib \nNOT VOTING—12 \nBiggs (AZ) \nBoyle (PA) \nBuchanan \nDunn (FL) \nGaramendi \nLeger Fernandez \nMills \nPeters \nSalazar \nSmith (WA) \nTiffany \nWomack \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (during \nthe vote). There is 1 minute remaining. \nb 1853 \nMr. COHEN changed his vote from \n‘‘nay’’ to ‘‘yea.’’ \nSo (two-thirds being in the affirma-\ntive) the rules were suspended and the \nbill, as amended, was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table.",
+          "claim": "Own question/tallies and declared result/end read; full intervening member-name list not claimed as owner-read; no whole parent/current-law, individual application or editorial clearance"
+        }
+      ],
+      "reviewed_source_extents": [
+        {
+          "source_id": "govinfo:hr9340eh",
+          "start": 0,
+          "end": 5486,
+          "total": 5486,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "govinfo:16usc-2621abc-2024-195",
+          "start": 0,
+          "end": 3123,
+          "total": 3123,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "govinfo:16usc-2622-2024-195",
+          "start": 0,
+          "end": 13081,
+          "total": 13081,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "govinfo:16usc-2634-2024-195",
+          "start": 0,
+          "end": 4074,
+          "total": 4074,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "immigration:roll312-identity195",
+          "start": 0,
+          "end": 436,
+          "total": 436,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "immigration:roll312-floor-complete195",
+          "start": 0,
+          "end": 5027,
+          "total": 5027,
+          "reviewed_scope": "Complete exact own floor text mechanically compared to whole read bill proposal; not additional independent reading claim"
+        },
+        {
+          "source_id": "immigration:roll312-initial195",
+          "start": 0,
+          "end": 570,
+          "total": 570,
+          "reviewed_scope": "Complete declared source text read; proposal and historical law distinct"
+        },
+        {
+          "source_id": "immigration:roll312-recorded195",
+          "start": 0,
+          "end": 1150,
+          "total": 5635,
+          "reviewed_scope": "Own question/tallies and declared result/end read; full intervening member-name list not claimed as owner-read"
+        },
+        {
+          "source_id": "immigration:roll312-recorded195",
+          "start": 5085,
+          "end": 5635,
+          "total": 5635,
+          "reviewed_scope": "Own question/tallies and declared result/end read; full intervening member-name list not claimed as owner-read"
+        }
+      ],
+      "episode_candidate_id": null
+    }
+  ],
+  "prior_three_universe_rows": [
+    {
+      "action_id": "house:119:2:302",
+      "session": 2,
+      "roll": 302,
+      "date": "2026-09-15",
+      "measure": "H R 8278",
+      "question": "On Motion to Suspend the Rules and Pass, as Amended",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.8278 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice requires covered agencies to assess supervisory technologies and procurement within180 days, including available real-time supervision, infrastructure, market-risk data and data security, and jointly report18 months after completing assessments and every5 years thereafter with qualified security protections. Covered agencies are Treasury through OCC/FinCEN, Federal Reserve, CFPB, FDIC, FHFA and NCUA. Procurement streamlining opportunities remain within existing agency authority. Congressional findings are attributed legislative findings, not verified outcomes. Financial supervision/Bank Secrecy Act context does not itself create an immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no claim immigrants cannot be affected or that an agency actually acquires new powers/technology; pending independent domain review and noncounting.",
+      "source": {
+        "source_id": "clerk:119:2:302",
+        "url": "https://clerk.house.gov/evs/2026/roll302.xml",
+        "raw_sha256": "221b15b5895a5009172a68b1a78972fd2c3d812b4bfd4832a7a96e0482c9941b",
+        "governed_bytes_sha256": "d358a42140acce4db77999d9695e6a06e115db23d466e601c87323eb90777b6f",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": true,
+      "bill_ref": "H R 8278",
+      "member_action": "Yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Pass, as Amended",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.8278 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice requires covered agencies to assess supervisory technologies and procurement within180 days, including available real-time supervision, infrastructure, market-risk data and data security, and jointly report18 months after completing assessments and every5 years thereafter with qualified security protections. Covered agencies are Treasury through OCC/FinCEN, Federal Reserve, CFPB, FDIC, FHFA and NCUA. Procurement streamlining opportunities remain within existing agency authority. Congressional findings are attributed legislative findings, not verified outcomes. Financial supervision/Bank Secrecy Act context does not itself create an immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no claim immigrants cannot be affected or that an agency actually acquires new powers/technology; pending independent domain review and noncounting.",
+      "unresolved_reason": null,
+      "sources": [
+        {
+          "source_id": "govinfo:hr8278eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8278eh/html/BILLS-119hr8278eh.htm",
+          "raw_sha256": "f9739145f0227a4334607a52fac29f27e6cec5e390e82590ca1e798a6c47cbe7",
+          "governed_bytes_sha256": "bbd9a896687eb781d52aaaa5cb5a1676711dda60cef088aa62b0f63c9b97d843"
+        },
+        {
+          "source_id": "immigration:roll302-identity195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+          "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+          "governed_bytes_sha256": "4ea801c6f3a5caa019048ba10da3362e61a1d0387b92e67a7153647dfe1cee00"
+        },
+        {
+          "source_id": "immigration:roll302-floor-complete195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+          "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+          "governed_bytes_sha256": "19eb6209259d165e2b2c54485cea75e54d0013c4c4a5bf337b8c401598449ba2"
+        },
+        {
+          "source_id": "immigration:roll302-initial195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+          "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+          "governed_bytes_sha256": "2fba94470ae982692411d62049b6ed346dd8e58d7c10fa78bc6c1b1807666466"
+        },
+        {
+          "source_id": "immigration:roll302-recorded195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+          "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+          "governed_bytes_sha256": "9bba6893189d523081230e75094eaa13ec5aabdb702d02a4f10caf41aa387ee7"
+        },
+        {
+          "source_id": "clerk:119:2:302",
+          "url": "https://clerk.house.gov/evs/2026/roll302.xml",
+          "raw_sha256": "221b15b5895a5009172a68b1a78972fd2c3d812b4bfd4832a7a96e0482c9941b",
+          "governed_bytes_sha256": "d358a42140acce4db77999d9695e6a06e115db23d466e601c87323eb90777b6f"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "historical_raw_hash_matches": true,
+      "review_progress": {
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a7f0bb78e14fbad07af491965cd9ab0dfe89739b4a45a4e8b35716f29c5943f6"
+      }
+    },
+    {
+      "action_id": "house:119:2:312",
+      "session": 2,
+      "roll": 312,
+      "date": "2026-09-16",
+      "measure": "H R 9340",
+      "question": "On Motion to Suspend the Rules and Pass, as Amended",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard for full incremental electric-service upgrade costs attributable to a defined nonresidential IT large-load customer with aggregate peak demand of at least100MW at a single site/campus, including termination costs and pre-upgrade financial assurances under a new or modified contract on/after enactment. It requires commencement of consideration within1 year and determination within2 years, with three specified prior State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
+      "source": {
+        "source_id": "clerk:119:2:312",
+        "url": "https://clerk.house.gov/evs/2026/roll312.xml",
+        "raw_sha256": "808f0ae52a69ae373e8fa52b523ca3c2fe74e6b9770140ca6d668e54762feef5",
+        "governed_bytes_sha256": "a37ab75f7b3a5dfcd4de1e446985e5714341b90f03394f2ceb65c3588348fbba",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": true,
+      "bill_ref": "H R 9340",
+      "member_action": "Yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Pass, as Amended",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard for full incremental electric-service upgrade costs attributable to a defined nonresidential IT large-load customer with aggregate peak demand of at least100MW at a single site/campus, including termination costs and pre-upgrade financial assurances under a new or modified contract on/after enactment. It requires commencement of consideration within1 year and determination within2 years, with three specified prior State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
+      "unresolved_reason": null,
+      "sources": [
+        {
+          "source_id": "govinfo:hr9340eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9340eh/html/BILLS-119hr9340eh.htm",
+          "raw_sha256": "49fabf0a7b44725dc0ea9f9dd88f7ed15938282bb33836738623000d851a6b83",
+          "governed_bytes_sha256": "a87b9aec7f2fa903058851b89bd414864a816185523e8fe34992c205bd3103da"
+        },
+        {
+          "source_id": "govinfo:16usc-2621abc-2024-195",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46.htm",
+          "raw_sha256": "eb884b57cb95ef0f1243580ad369f5bee9a322a8f3d73ba484125b29f63c87f5",
+          "governed_bytes_sha256": "a9a58cb09faa6a9d35f1723f5cdbbe25f37ee45629b7b5130bc43eb684df1c55"
+        },
+        {
+          "source_id": "govinfo:16usc-2622-2024-195",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46.htm",
+          "raw_sha256": "eb884b57cb95ef0f1243580ad369f5bee9a322a8f3d73ba484125b29f63c87f5",
+          "governed_bytes_sha256": "ec62f462e66b16def047aa7cea751a4a9e8582f7804dbc38d90e5a129eff66d1"
+        },
+        {
+          "source_id": "govinfo:16usc-2634-2024-195",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46.htm",
+          "raw_sha256": "eb884b57cb95ef0f1243580ad369f5bee9a322a8f3d73ba484125b29f63c87f5",
+          "governed_bytes_sha256": "d510c85ebe05c4aacac46c792b6e6b4e87cec9ca26ad11ed7afc143f5f6158bd"
+        },
+        {
+          "source_id": "immigration:roll312-identity195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+          "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+          "governed_bytes_sha256": "5cfd91240b93d141b20aa59dfc4c8196c7a59694fb598eb6f1ccf1af09b56125"
+        },
+        {
+          "source_id": "immigration:roll312-floor-complete195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+          "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+          "governed_bytes_sha256": "fec1f3f243368569bf6420a3032dcf2c203e24dbdf37d8e1bbcc594bfeb28cfc"
+        },
+        {
+          "source_id": "immigration:roll312-initial195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+          "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+          "governed_bytes_sha256": "e6a7217f69e723c356de1940dbc751bbae1797e99024bce992c5085e321cba44"
+        },
+        {
+          "source_id": "immigration:roll312-recorded195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+          "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+          "governed_bytes_sha256": "a3222cd44f71ca1e95cc284edac5780368708a9ad7cb330882dc1c143f91bbe9"
+        },
+        {
+          "source_id": "clerk:119:2:312",
+          "url": "https://clerk.house.gov/evs/2026/roll312.xml",
+          "raw_sha256": "808f0ae52a69ae373e8fa52b523ca3c2fe74e6b9770140ca6d668e54762feef5",
+          "governed_bytes_sha256": "a37ab75f7b3a5dfcd4de1e446985e5714341b90f03394f2ceb65c3588348fbba"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "historical_raw_hash_matches": true,
+      "review_progress": {
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "8f226e1a236ad078ce16bd65dcab6e7f6e850afce731cdfa014b6944b11afde2"
+      }
+    },
+    {
+      "action_id": "house:119:2:308",
+      "session": 2,
+      "roll": 308,
+      "date": "2026-09-16",
+      "measure": "H R 5334",
+      "question": "On Motion to Concur in the Senate Amendments",
+      "disposition": "source_unresolved",
+      "reason": "The exact choice is concurrence in Senate amendments to H.R.5334 under H.Res.1530, not a fresh vote solely on its educator-deduction title. Whole original House EH and Senate EAS are read. EAS strikes original section1, supplies DivisionA Russia/Iran sanctions and a DivisionB heading leaving original educator deduction section2; it also amends the title. Section102(e)(2) proposes visa/admission/parole/INA-benefit ineligibility and existing-visa revocation for covered aliens;103(a)(1)(C),108(b) and111(b) incorporate that consequence, with114 exceptions, pre-imposition waiver115, termination117/congressional review and203 five-year sunset except201 Iran-extension provision. These are source-grounded potential Immigration operators, not title/agency inference, automatic domain inclusion or whole-package component stance. Complete EAS/floor comparison differs only in mechanically located blank-placeholder glyph letters at this stage, with exact literal differences retained for later verification. Material incorporation/current-law chain and full bounded Immigration application remain unfinished; retain researched source_unresolved noncounting hold, no new shared meaning or editorial acceptance. Recorded concurrence262-159 with12NotVoting; both Foushee and Massie Nay.",
+      "source": {
+        "source_id": "clerk:119:2:308",
+        "url": "https://clerk.house.gov/evs/2026/roll308.xml",
+        "raw_sha256": "6d4db5c5924734299c11d3b27a59cfd3804d9d9631fa9710ac68da0885b48ac1",
+        "governed_bytes_sha256": "1910c866972d0fb25d7dd11ea195d7cf694e9143abf26005aad43850bb8ad3dd",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": true,
+      "bill_ref": "H R 5334",
+      "member_action": "Nay",
+      "house_action_stage": "On Motion to Concur in the Senate Amendments",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "The exact choice is concurrence in Senate amendments to H.R.5334 under H.Res.1530, not a fresh vote solely on its educator-deduction title. Whole original House EH and Senate EAS are read. EAS strikes original section1, supplies DivisionA Russia/Iran sanctions and a DivisionB heading leaving original educator deduction section2; it also amends the title. Section102(e)(2) proposes visa/admission/parole/INA-benefit ineligibility and existing-visa revocation for covered aliens;103(a)(1)(C),108(b) and111(b) incorporate that consequence, with114 exceptions, pre-imposition waiver115, termination117/congressional review and203 five-year sunset except201 Iran-extension provision. These are source-grounded potential Immigration operators, not title/agency inference, automatic domain inclusion or whole-package component stance. Complete EAS/floor comparison differs only in mechanically located blank-placeholder glyph letters at this stage, with exact literal differences retained for later verification. Material incorporation/current-law chain and full bounded Immigration application remain unfinished; retain researched source_unresolved noncounting hold, no new shared meaning or editorial acceptance. Recorded concurrence262-159 with12NotVoting; both Foushee and Massie Nay.",
+      "unresolved_reason": "pending_whole_sanctions_Immigration_source_chain195",
+      "sources": [
+        {
+          "source_id": "govinfo:hr5334eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5334eh/html/BILLS-119hr5334eh.htm",
+          "raw_sha256": "a9edabb8fed39c236cb818aea7406b4eb33326186cf0bf4d03e19aca6bf07884",
+          "governed_bytes_sha256": "73a03973cc3874b55fce57fb403b712de12c4966ca582585ed543278e5927406"
+        },
+        {
+          "source_id": "govinfo:hr5334eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5334eas/html/BILLS-119hr5334eas.htm",
+          "raw_sha256": "b618e575f5f6b4c81bec96522d6cd959eb0a5c127960c4ab9bd5d5c72e594188",
+          "governed_bytes_sha256": "3e48c80a324bf97b7c18d0d85bc30a12c8b8e499ea128cee3ac782eebc2402fc"
+        },
+        {
+          "source_id": "immigration:roll308-identity195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+          "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+          "governed_bytes_sha256": "ad3da5e1b5fb5832d12b145d6a9d9cdc38ba3958dd489bdfa5cba64f06165c02"
+        },
+        {
+          "source_id": "immigration:roll308-floor-complete195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+          "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+          "governed_bytes_sha256": "6fda38d63fc75ab9d467f597af033028f9ef8d45c692be2671762e48fafa2713"
+        },
+        {
+          "source_id": "immigration:roll308-initial195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+          "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+          "governed_bytes_sha256": "390f2e1e13ad38a208fc3aec68e7afba8ba0503f74dbd8a303fc6ff41a475e4b"
+        },
+        {
+          "source_id": "immigration:roll308-recorded195",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+          "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+          "governed_bytes_sha256": "1868b86fea17681cfe8ceb6d6be868421b53a17e24d541b77254c12129f7e469"
+        },
+        {
+          "source_id": "clerk:119:2:308",
+          "url": "https://clerk.house.gov/evs/2026/roll308.xml",
+          "raw_sha256": "6d4db5c5924734299c11d3b27a59cfd3804d9d9631fa9710ac68da0885b48ac1",
+          "governed_bytes_sha256": "1910c866972d0fb25d7dd11ea195d7cf694e9143abf26005aad43850bb8ad3dd"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "historical_raw_hash_matches": true,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      }
+    }
+  ],
+  "independent_recheck_pending": true,
+  "authoring_quality_rule": "Compare detailed operative paraphrase with retained literal predicate: actor scope, including/only, modal, AND/OR alternatives, trigger, dates and exceptions; no new acquisition round, whole-source review replacement or broad test gate.",
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "28b307c85be13a286328a0a04307fe33d34773b22ea46cf30e7f238dca2eb07a"
+}

@@ -1,0 +1,49 @@
+{
+  "source": "Independent narrow recheck reported by supervisor source_thread01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+  "verified_head": "5bc5f1dbd5834051b0c75d286231f1f9d6d0f731",
+  "historical_finding_id": "IB-DHS-RETAINED-287G-REPORTER-AND-FIELDS",
+  "historical_severity": "Major",
+  "bounded_state": "resolved",
+  "candidate_correction_receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/dhs_retained_287g_reporter_scope_correction.json",
+  "candidate_correction_receipt_sha256": "3a94745371a0dd9b6dd0fed15d5129d6f21b84a9fd91727de8179a43dd34a677",
+  "affected_actions": [
+    "house:119:2:42",
+    "house:119:2:87",
+    "house:119:2:104"
+  ],
+  "reported_verification": {
+    "fresh_primary_raw_hashes": 4,
+    "incorporation_clauses": 3,
+    "complete_retained_2020_report_extent": true,
+    "only_three_documented_sentence_replacements": true,
+    "choices_compacts_counting_unchanged": true,
+    "preservation_hashes": 12,
+    "windows_crlf_bytes_reproduce_checkpoint84": true,
+    "larger_local_byte_sizes_valid": true,
+    "new_checkpoint85_to87_guards_passed_independently_in_isolation": 5,
+    "controlled_mutations": [
+      {
+        "name": "wrong report actor",
+        "assertion_failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "invented training field",
+        "assertion_failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "report/budget conflation",
+        "assertion_failures": 1,
+        "errors": 0
+      }
+    ]
+  },
+  "limits": {
+    "independent_semantic_clearance_of_all_checkpoint86_to87_additions": false,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "production_eligible": false
+  },
+  "receipt_sha256": "a41b10385c28439756260f0f8c97638242c3c51b57492120a2e0e8a716fbaebb"
+}

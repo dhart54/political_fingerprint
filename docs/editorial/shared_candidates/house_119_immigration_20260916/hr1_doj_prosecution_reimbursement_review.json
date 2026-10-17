@@ -1,0 +1,142 @@
+{
+  "authority": "Same-owner source-first selected exact DOJ prosecution/reimbursement candidate; no individual application or editorial acceptance",
+  "prior_checkpoint": "ff39b32804df3bbb40830f68f46aaf8e842de813",
+  "prior_authoring_action_sha256": {
+    "house:119:1:145": "b4a67d94227ffc29aeec775d7ac1f4a8c9cb1426a5fb299b0c96d2a75440018e",
+    "house:119:1:190": "ad2f6e010cc03617fa5725719b91f53fec6571d60550e2f719329773281a9b31"
+  },
+  "current_authoring_action_sha256": {
+    "house:119:1:145": "05e26bcf90810fd05da1ed8d2c4cadef661dc48abc626ec3a49a6be578296813",
+    "house:119:1:190": "d06f2f04c4e908bffb10dbd4db3e707580f6274b82641055b316906d839535a9"
+  },
+  "action_claim_bindings": {
+    "house:119:1:145": [
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "Complete governing House 70121 through before 70122: exact distinct DOJ fund, dates and full listed purposes",
+        "passage_sha256": "910d5a7081e901b74f06e09f4b0d0a347961b40fd993fdebe10c0968c8319e84",
+        "passage_length": 559
+      },
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "Complete governing House 70122 through before 70123: exact distinct DOJ fund, dates and full listed purposes",
+        "passage_sha256": "3163ce7c635c1681fb09e982f197cbf655462ed33a25c8d471724a4cb2c1d898",
+        "passage_length": 868
+      },
+      {
+        "source_id": "govinfo:18usc611-2024-operative",
+        "locator": "Complete pre-vote611(a)-(c) federal-office voting rule and all mixed-election/parent-residence-belief exception predicates; no actual individual voting judgment",
+        "passage_sha256": "5b8debe9e47194dfaa9a98b773579ab190b49ae386d41f5e9506011487fb81f5",
+        "passage_length": 1385
+      }
+    ],
+    "house:119:1:190": [
+      {
+        "source_id": "govinfo:hr1eas",
+        "locator": "Complete exact Senate 100055 through before100056: own fund, existing-authority, each actor/purpose/crime-plus-presence predicate, ceiling/availability/expense/eligibility/date/distribution rules",
+        "passage_sha256": "653a7b672832df01404d8d4864201c4fb12a7f639c7b5c9d2fa2cc72dd4eacc4",
+        "passage_length": 2578
+      },
+      {
+        "source_id": "govinfo:18usc611-2024-operative",
+        "locator": "Complete pre-vote611(a)-(c) federal-office voting rule and all mixed-election/parent-residence-belief exception predicates; no actual individual voting judgment",
+        "passage_sha256": "5b8debe9e47194dfaa9a98b773579ab190b49ae386d41f5e9506011487fb81f5",
+        "passage_length": 1385
+      }
+    ]
+  },
+  "reused_existing_bindings": [
+    {
+      "action_id": "house:119:1:190",
+      "source_id": "govinfo:hr1eas",
+      "locator": "Complete exact Senate 100054 chapeau and purposes; selected EOIR (1), Byrne/COPS (5), incarceration (7) with full limits, unresolved printed subsection references retained",
+      "passage_sha256": "86305e2a2160dfbddf8b2d4cb1406a8f15e064340318722699876628d539dd18",
+      "passage_length": 5880,
+      "selected_purposes": [
+        2,
+        3
+      ],
+      "reason": "Existing complete100054 binding already covers drug/prosecution purposes; no duplicate claim instance"
+    }
+  ],
+  "source_first_copy_review": [
+    {
+      "action_id": "house:119:1:145",
+      "qualification_sha256": "8e219ad6347bec57374cedc3fcec4d78cbecc72347324a43b5eeedb93df4f9b9",
+      "source_first_checks": "Exact own DOJ purposes/funding/envelope; full611 conditions and literal House/Senate voting distinction. Senate fund own actors, crime-plus-presence only specified purposes, existing-authority, temporary criminal detention, ceiling/2028/inclusiveJan20/qualified-expense/discretionary-eligibility/multi-State boundaries. No actual crime/voting/grant/power/result; compacts unchanged."
+    },
+    {
+      "action_id": "house:119:1:190",
+      "qualification_sha256": "fc6a49661096268e211807cd5180fc2bfb6038afe96cecf8ae203396cd2eee8b",
+      "source_first_checks": "Exact own DOJ purposes/funding/envelope; full611 conditions and literal House/Senate voting distinction. Senate fund own actors, crime-plus-presence only specified purposes, existing-authority, temporary criminal detention, ceiling/2028/inclusiveJan20/qualified-expense/discretionary-eligibility/multi-State boundaries. No actual crime/voting/grant/power/result; compacts unchanged."
+    }
+  ],
+  "house_eh_comparisons": [
+    {
+      "section": 70121,
+      "floor_passage_sha256": "910d5a7081e901b74f06e09f4b0d0a347961b40fd993fdebe10c0968c8319e84",
+      "eh_comparison_sha256": "910d5a7081e901b74f06e09f4b0d0a347961b40fd993fdebe10c0968c8319e84",
+      "original_bytes_equal": true,
+      "comparison_only_normalizations": [
+        "Whitespace and floor pagination only"
+      ],
+      "comparison_text_sha256": "20b22b9202aff6a066e1cf409a635726e3751443af53809c41ac3f2d95c8ec72",
+      "material_wording_equal": true
+    },
+    {
+      "section": 70122,
+      "floor_passage_sha256": "3163ce7c635c1681fb09e982f197cbf655462ed33a25c8d471724a4cb2c1d898",
+      "eh_comparison_sha256": "3163ce7c635c1681fb09e982f197cbf655462ed33a25c8d471724a4cb2c1d898",
+      "original_bytes_equal": true,
+      "comparison_only_normalizations": [
+        "Whitespace and floor pagination only"
+      ],
+      "comparison_text_sha256": "2821ab8921c65163d879ede86d75aa865a7f472bb35ec4e3b85cf0af4ff66ebf",
+      "material_wording_equal": true
+    }
+  ],
+  "correcting_authority": "No492 item targets70121/70122;499 adopts492 without another selected edit. Original floor/EH bytes preserved.",
+  "governed_source_reuse": "Existing complete611 operative source reused; all1286 sources and263 capture bytes unchanged.",
+  "non_highlighted_context": {
+    "section": "Senate100056",
+    "reason": "Generic BOP workforce/facility account is not described as wholly immigration-specific; no domain eligibility inferred from generic institutional spending",
+    "passage": "SEC. 100056. APPROPRIATION FOR THE BUREAU OF PRISONS. (a) Appropriation.--In addition to amounts otherwise available, there is appropriated to the Director of the Bureau of Prisons for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $5,000,000,000, to remain available through September 30, 2029, for the purposes described in subsections (b) and (c). (b) Salaries and Benefits.--Not less than $3,000,000,000 of the amounts made available under subsection (a) shall be for hiring and training of new employees, including correctional officers, medical professionals, and facilities and maintenance employees, the necessary support staff, and for additional funding for salaries and benefits for the current workforce of the Bureau of Prisons. (c) Facilities.--Not more than $2,000,000,000 of the amounts made available under subsection (a) shall be for addressing maintenance and repairs to facilities maintained or operated by the Bureau of Prisons. ",
+    "passage_sha256": "69c200e75c21f82c0f7e63a6f409cf3b5a59acc560c312eab89af0ccab830ef4",
+    "scope": "Context only, no new source/action disposition or count",
+    "source_id": "govinfo:hr1eas"
+  },
+  "compact_review": "Existing selected fee/border/detention compacts unchanged; no full-package preference, exhaustive review, observed crime/grant/expenditure or generic BOP immigration attribution.",
+  "publication_authorized": false,
+  "receipt_sha256": "847c9e88c703918efd9d90ba6c673a60046d613fa160592f47f3b8f0b6bcdae9",
+  "precommit_copy_refinements": [
+    {
+      "field": "meaning",
+      "before": "related court operations; and temporary criminal detention of aliens.",
+      "after": "court operations related to prosecution of crimes committed by aliens or drug and human trafficking crimes, without a repeated within-the-United-States phrase in that separate paragraph; and temporary criminal detention of aliens.",
+      "before_sha256": "4543e4650af0bb6fa0135dbad6ec3cff468630239685444a6a067942b9e3ff94",
+      "after_sha256": "9f650056f29e479faac104b0a001d4b97ae4ebafc7994d558e8b2bb7b37625f4",
+      "reason": "Source-first precommit case-specific scope:100055(b)(4) does not repeat b2/b3 within-US wording. No geographic condition borrowed into court operations."
+    },
+    {
+      "field": "qualification",
+      "before": "Own domestic investigative/crime/trafficking/court purposes and temporary criminal detention remain, not all civil detention or new local powers.",
+      "after": "Investigative-information collection and the listed investigation/prosecution purposes retain their printed within-the-United-States scope. Court operations retain their separate listed prosecution purposes without a borrowed geographic phrase. Temporary criminal detention remains distinct from civil immigration detention or new local powers.",
+      "before_sha256": "a0daf018ec81415c7ab7d955092395007a0df14d44d8e63cc45c68ade1d6bc05",
+      "after_sha256": "988494b96c9c7509d7a23c9e083e0ac7158595c04eb53e5587ad3833879a702e",
+      "reason": "Source-first precommit case-specific scope:100055(b)(4) does not repeat b2/b3 within-US wording. No geographic condition borrowed into court operations."
+    }
+  ],
+  "validation": {
+    "aggregate_tests": 230,
+    "aggregate_runtime_seconds": 41.301,
+    "candidate_focused_tests_in_aggregate": 41,
+    "semantic_checks": 7,
+    "byte_replay_files": 7,
+    "new_binding_instances": 5,
+    "reused_complete_binding_instances": 1,
+    "new_governed_sources": 0,
+    "verified_bounded_extents": 172,
+    "source_first_copy_review": "Complete House70121/70122 raw-equal to EH; no 492/499 selected edit. Complete Senate100054/100055 and full611 operative baseline compared with detailed meaning/qualifications and unchanged compacts. Case-specific actor/crime-plus-presence/geography/criminal-detention/authority/ceiling/qualified-expense/date/discretion/distribution scopes retained. Generic 100056 BOP context not attributed wholly to Immigration.",
+    "limits": "Same-owner candidate comparison, no individual voting/crime/status/grant/expense eligibility, independent acceptance or full-package closure. Existing46 application questions remain reserved."
+  }
+}

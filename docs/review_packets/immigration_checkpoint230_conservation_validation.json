@@ -1,0 +1,166 @@
+{
+  "checkpoint": 230,
+  "base_head": "1d7bf1102bd3013625b7118fb2d79e89f8aeb0a1",
+  "strict_core_conservation": {
+    "conserved": 72,
+    "added": 1,
+    "current": 73
+  },
+  "other645reviews674inventory_rows_and72cores_exact": true,
+  "all_old_member_projection_objects_exact": true,
+  "all_old_mapping_and_episode_objects_exact": true,
+  "unaffected_propositions_exact": 120,
+  "unaffected_readable_findings_exact": true,
+  "prior_substantive_and_noncounting_audit_rows_exact": true,
+  "old20pending_audit_ids_preserved_plus89": true,
+  "old_three_source_prefixes_exact": true,
+  "new_registered_sources": 6,
+  "source_counts": [
+    2741,
+    1631,
+    1667
+  ],
+  "tracked_files_outside_allowlist_exact": 3572,
+  "tracked_baseline_files": 3587,
+  "frozen_private_notes_exact": 188,
+  "private_pool_only_six_appends_allowed": true,
+  "index_unchanged": true,
+  "excluded_file_not_read_or_hashed": true,
+  "counts": {
+    "reviewed": 647,
+    "pending": 29,
+    "cores": 73,
+    "behavioral_propositions": 122,
+    "episodes": 63,
+    "multi_action_episodes": 9
+  },
+  "source_quality_sha256": "262e04de5d473f38ee0b694b67e8f0319edd18cb59a7e804c496c8c74af2b82d",
+  "increment_receipt_sha256": "85dd4d1e55c193dc02dd01187345f4f2f4f8b0b499a6c9c7f03dcae78a60d026",
+  "failed_adapter_and_order_guards_preserved": true,
+  "full_gate_pending": false,
+  "focused_tests": 406,
+  "candidate_tests_included": 229,
+  "semantic_checks": 7,
+  "IRvalidation": true,
+  "CLI_byte_exact_outputs": 7,
+  "validation_phases": [
+    {
+      "log": ".tmp/tests230_recovery.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-15T01:12:36.751851+00:00",
+      "completed_utc": "2026-10-15T01:25:32.300429+00:00",
+      "elapsed_seconds": 775.5485815000138,
+      "exit_code": 0,
+      "log_sha256": "e023fbe9213040d32e3ede4393791149ffd9119dc4c9c79eafa6d883f5e3b74a"
+    },
+    {
+      "log": ".tmp/semantic230_recovery.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-15T01:25:32.318536+00:00",
+      "completed_utc": "2026-10-15T01:25:34.692317+00:00",
+      "elapsed_seconds": 2.3737850999459624,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp/ir230_recovery.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-15T01:25:34.708972+00:00",
+      "completed_utc": "2026-10-15T01:25:34.797323+00:00",
+      "elapsed_seconds": 0.08835420000832528,
+      "exit_code": 0,
+      "log_sha256": "e7b7330e5331e7dcd9a7c235abaafdb0eba4b52ea7a527ecbf00b86c5b04599f"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-15T01:25:34.803480+00:00",
+      "completed_utc": "2026-10-15T01:27:36.741439+00:00",
+      "elapsed_seconds": 121.93796370003838,
+      "outputs": 7
+    }
+  ],
+  "initial_failed_owner_gate": [
+    {
+      "log": ".tmp/tests230.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-15T00:48:33.431599+00:00",
+      "completed_utc": "2026-10-15T00:59:05.371652+00:00",
+      "elapsed_seconds": 631.9400579999783,
+      "exit_code": 1,
+      "log_sha256": "77f7368db89f2be714456f6125c6fd76ec20a2b5ae5da94d84792e56965c2356"
+    }
+  ],
+  "historical_hold_regression_preserved_and_corrected": true,
+  "interrupted_full_gate": {
+    "observed_utc": "2026-10-15T01:12:36.527521+00:00",
+    "lost_tool_session_id": 46282,
+    "tool_error": "Unknown process id",
+    "last_log_sha256": "15ba732dba58c9161e372bc9314f7971d237c09b0ca28e406ab33596265cc1e7",
+    "last_log_bytes": 24,
+    "last_log_modified_utc": "2026-10-15T01:02:07.886846+00:00",
+    "phase_receipt_missing": true,
+    "no_semantic_IR_or_CLI_completion_receipts": true,
+    "native_matching_process_absent": true,
+    "actual_host_reverified": "DESKTOP-1CQBHTJ",
+    "actual_cwd_reverified": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\ib",
+    "outcome": "incomplete; no passing or failing terminal outcome inferred",
+    "all_elapsed_overhead_retained": true,
+    "receipt_sha256": "4a7c97cd70691e10704bcd503e2f4c60d8401afa1483c257985b1c65137e8746"
+  },
+  "recovery_process_record": {
+    "ProcessId": 12916,
+    "Python": "C:\\Program Files\\Python313\\python.exe",
+    "Cwd": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\ib",
+    "StartedUtc": "2026-10-15T01:12:36.6617178Z",
+    "Driver": ".tmp/test230_recovery.py",
+    "Stdout": ".tmp/checkpoint230_recovery_driver_stdout.log",
+    "Stderr": ".tmp/checkpoint230_recovery_driver_stderr.log",
+    "RecoveryCount": 1,
+    "NoConcurrentGate": true
+  },
+  "benchmarkFAILretained": true,
+  "editorial_acceptance": false,
+  "elapsed_seconds": 7.69020620000083,
+  "completed_utc": "2026-10-15T01:29:45.232793+00:00",
+  "receipt_sha256": "5ac87ac1f60a593f113d9e933e69443631659471d4fa6a0a08c133e68ee3d284",
+  "independent230_source_domain_review_pending": true,
+  "publication_authorized": false,
+  "optimization_unapplied": true
+}

@@ -1,0 +1,267 @@
+{
+  "checkpoint": 182,
+  "head": "919c38a4650f254a30d969defe90c971afb06d7d",
+  "run": 37997440200,
+  "run_attempt": 1,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "failed_jobs": [],
+  "jobs": [
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:07:38.3385694Z HEAD is now at 919c38a4 Repair exact-action source bindings and qualify FISA candidate research"
+      ],
+      "job_id": 114046966425,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:16Z",
+      "completed_at": "2026-10-09T22:07:44Z",
+      "checkout_log_shas": [
+        "919c38a4650f254a30d969defe90c971afb06d7d"
+      ],
+      "log_sha256": "7b4c796de880a657cb01f74816f13e43a255573290ed56bdbe52eb9da4801f27",
+      "log_bytes": 44403,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:07:41.7826552Z 22 passed, 55 subtests passed in 0.21s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:10:21.8214154Z HEAD is now at 919c38a4 Repair exact-action source bindings and qualify FISA candidate research",
+        "2026-10-09T22:12:54.0003010Z HEAD is now at 919c38a4 Repair exact-action source bindings and qualify FISA candidate research"
+      ],
+      "job_id": 114046966650,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:16Z",
+      "completed_at": "2026-10-09T22:13:37Z",
+      "checkout_log_shas": [
+        "8d023df87077b537b18b38649c27f02dd8718e20",
+        "919c38a4650f254a30d969defe90c971afb06d7d"
+      ],
+      "log_sha256": "fa956b08eb51d04365d704d01750f37074d143e03067e17b614b1387386a1499",
+      "log_bytes": 137075,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:08:02.3659958Z 6 passed in 1.67s",
+        "2026-10-09T22:10:21.5630127Z 38 passed, 1 warning in 138.13s (0:02:18)",
+        "2026-10-09T22:12:53.4257243Z 13 passed in 135.17s (0:02:15)",
+        "2026-10-09T22:13:33.8746555Z 20 passed in 37.67s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:07:42.7360494Z HEAD is now at 919c38a4 Repair exact-action source bindings and qualify FISA candidate research"
+      ],
+      "job_id": 114046966691,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:17Z",
+      "completed_at": "2026-10-09T22:07:50Z",
+      "checkout_log_shas": [
+        "919c38a4650f254a30d969defe90c971afb06d7d"
+      ],
+      "log_sha256": "ae65e1b19fbbe423421385e15017f9e5fe17f145d8a7d9c5bd813b44b241e027",
+      "log_bytes": 43537,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:07:47.8588007Z 18 passed, 34 subtests passed in 0.69s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114046966706,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:17Z",
+      "completed_at": "2026-10-09T22:09:25Z",
+      "checkout_log_shas": [
+        "8d023df87077b537b18b38649c27f02dd8718e20"
+      ],
+      "log_sha256": "c27d983491b154aed0508604523bd42f43c2621a6ffd38ff99c50bd68f92388e",
+      "log_bytes": 180850,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:08:23.9709633Z 23 passed, 1 warning in 15.18s",
+        "2026-10-09T22:08:27.9209954Z 58 passed, 1 warning in 3.66s",
+        "2026-10-09T22:08:30.8718581Z 1 passed in 1.57s",
+        "2026-10-09T22:08:35.4810736Z 1 passed, 1 warning in 3.26s",
+        "2026-10-09T22:08:39.7137376Z 1 passed in 2.87s",
+        "2026-10-09T22:08:43.9721418Z 2 passed in 2.89s",
+        "2026-10-09T22:08:46.8905104Z 14 passed in 1.56s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114046966728,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:17Z",
+      "completed_at": "2026-10-09T22:11:23Z",
+      "checkout_log_shas": [
+        "8d023df87077b537b18b38649c27f02dd8718e20"
+      ],
+      "log_sha256": "57f7d7ead811aebff4bce2c4f19bc146ee36aa14b264c3406b4b507e16e0781d",
+      "log_bytes": 1505127,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:07:48.5048784Z 15 passed in 0.59s",
+        "2026-10-09T22:07:50.0797374Z 19 passed in 1.17s",
+        "2026-10-09T22:07:53.1339398Z 27 passed in 2.60s",
+        "2026-10-09T22:11:19.4777185Z 639 passed, 1 warning in 74.14s (0:01:14)"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114046966739,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:17Z",
+      "completed_at": "2026-10-09T22:07:46Z",
+      "checkout_log_shas": [
+        "8d023df87077b537b18b38649c27f02dd8718e20"
+      ],
+      "log_sha256": "cadd1eb72f996e24ab3e7a94b3b4debd52e29f5931ba89dd260d168bc30ba16b",
+      "log_bytes": 28411,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:07:44.1448381Z ============================== 87 passed in 1.07s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:07:42.8027665Z HEAD is now at 919c38a4 Repair exact-action source bindings and qualify FISA candidate research"
+      ],
+      "job_id": 114046966750,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:17Z",
+      "completed_at": "2026-10-09T22:07:50Z",
+      "checkout_log_shas": [
+        "919c38a4650f254a30d969defe90c971afb06d7d"
+      ],
+      "log_sha256": "e8b2705c18785de7c60811198b7482f3dc61665f653f7dffa1a24967e6b030cc",
+      "log_bytes": 44215,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:07:47.3179297Z 29 passed, 40 subtests passed in 0.38s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:07:54.3963370Z HEAD is now at 919c38a4 Repair exact-action source bindings and qualify FISA candidate research"
+      ],
+      "job_id": 114046966756,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:16Z",
+      "completed_at": "2026-10-09T22:11:39Z",
+      "checkout_log_shas": [
+        "919c38a4650f254a30d969defe90c971afb06d7d"
+      ],
+      "log_sha256": "11caf6498231d105fa37edfd13bdb4ecf3b2b29c98ccca94f85fbe8a4cbccbfd",
+      "log_bytes": 138341,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:08:24.8766511Z 95 passed, 1 warning in 2.44s",
+        "2026-10-09T22:09:59.8952897Z 316 passed in 93.99s (0:01:33)",
+        "2026-10-09T22:10:04.9793055Z 1 passed in 3.61s",
+        "2026-10-09T22:10:07.0245500Z 74 passed, 1 warning in 1.64s",
+        "2026-10-09T22:10:42.1795847Z   2 passed (12.8s)",
+        "2026-10-09T22:11:23.7115704Z   23 passed (16.6s)",
+        "2026-10-09T22:11:24.3856577Z 15 passed in 0.19s",
+        "2026-10-09T22:11:32.8875273Z   1 passed (7.3s)",
+        "2026-10-09T22:11:36.6183140Z 25 passed in 3.29s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:07:38.7833243Z HEAD is now at 919c38a4 Repair exact-action source bindings and qualify FISA candidate research"
+      ],
+      "job_id": 114046966759,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:07:16Z",
+      "completed_at": "2026-10-09T22:07:58Z",
+      "checkout_log_shas": [
+        "919c38a4650f254a30d969defe90c971afb06d7d"
+      ],
+      "log_sha256": "8fc1ee6efd3c5c0fd045ada854049454225c1a8be5fa453ef50fb413812d9da3",
+      "log_bytes": 63214,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:07:49.8425475Z 15 passed, 1 warning in 0.48s",
+        "2026-10-09T22:07:50.2798982Z 10 passed in 0.22s",
+        "2026-10-09T22:07:50.6851641Z 3 passed in 0.23s",
+        "2026-10-09T22:07:55.6112679Z 96 passed in 2.77s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37997440200",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts_verified": [
+    "m14e-exact-head",
+    "receipt-evidence-repair-postgres",
+    "m14d-exact-head",
+    "publication-activation-postgres",
+    "foushee-full-record-benchmark",
+    "amendment-evidence-contracts",
+    "m14f-exact-head",
+    "m14h-exact-head",
+    "m14g-exact-head"
+  ],
+  "synthetic_merge_sha": "8d023df87077b537b18b38649c27f02dd8718e20",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [],
+  "remaining_gate": null,
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "1d5b53194355fd75166d3b69639099735974020efe98ba0e7abfef4cbcb174fd"
+}

@@ -1,0 +1,283 @@
+{
+  "checkpoint": 206,
+  "base_head": "fad3b49d01fc8967be2d48843d9c55cb477838cd",
+  "completed_action_ids": [
+    "house:119:2:221"
+  ],
+  "completed_screenings": 1,
+  "previously_held_action_completed": true,
+  "prior_pending_row": {
+    "action_id": "house:119:2:221",
+    "session": 2,
+    "roll": 221,
+    "date": "2026-06-11",
+    "measure": "bill_119_hr_9238",
+    "question": "On Motion to Suspend the Rules and Pass",
+    "disposition": "source_unresolved",
+    "reason": "Whole suspension-passage choice would extend both TitleVII repeal references from June12 to July2,2026, effective earlier enactment or June11. Exact CDH andJune10offered body agree; June10initial question/voice/demand/postponement precedeJune11recorded198-218-15failure. Failure does not itself establish enactment or later law. Held for shared-core source qualification and Immigration domain review; noncounting and not compiled.",
+    "source": {
+      "source_id": "clerk:119:2:221",
+      "url": "https://clerk.house.gov/evs/2026/roll221.xml",
+      "raw_sha256": "96fc4098df1eac778be24a68de21dcece73cfef7d7c13bc8ecd671192bd560f9",
+      "governed_bytes_sha256": "21d62f8ab5152286bcc302a21929fad925a4a877b011ca0b27951345c74d0fdc",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_9238",
+    "member_action": "nay",
+    "house_action_stage": "On Motion to Suspend the Rules and Pass",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Whole suspension-passage choice would extend both TitleVII repeal references from June12 to July2,2026, effective earlier enactment or June11. Exact CDH andJune10offered body agree; June10initial question/voice/demand/postponement precedeJune11recorded198-218-15failure. Failure does not itself establish enactment or later law. Held for shared-core source qualification and Immigration domain review; noncounting and not compiled.",
+    "unresolved_reason": "pending_shared_core_and_qualified_domain_review",
+    "sources": [
+      {
+        "source_id": "clerk:119:2:221",
+        "url": "https://clerk.house.gov/evs/2026/roll221.xml",
+        "raw_sha256": "96fc4098df1eac778be24a68de21dcece73cfef7d7c13bc8ecd671192bd560f9",
+        "governed_bytes_sha256": "21d62f8ab5152286bcc302a21929fad925a4a877b011ca0b27951345c74d0fdc",
+        "verification": "unchanged_governed_source_reuse"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_clerk_source_identity": {
+      "source_id": "clerk:119:2:221",
+      "url": "https://clerk.house.gov/evs/2026/roll221.xml",
+      "raw_sha256": "8169dafbd550e5926300a5370f51c1b744640e3b8563c5eb5d1525e9dbb56277",
+      "verification": "historical_source_identity_not_recaptured_this_increment"
+    }
+  },
+  "original_accepted_core": {
+    "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 9238, extending two Title VII FISA sunset references from June 12, 2026, to July 2, 2026. The extension would take effect on the earlier of enactment or June 11, 2026.",
+    "accepted_shared_limitations": [
+      "Take effect on the earlier of enactment or June 11, 2026."
+    ],
+    "action_core_sha256": "a751b1593c5dbbeca206cf27f4c1fba8918829bb219adf97e3a059bc6aa74a42",
+    "action_date": "2026-06-11",
+    "action_id": "house:119:2:221",
+    "action_meaning_ref": "action-interpretation-decision-implementation:house:119:2:221:v1",
+    "action_outcome_source_identities": [
+      {
+        "governed_bytes_sha256": "8169dafbd550e5926300a5370f51c1b744640e3b8563c5eb5d1525e9dbb56277",
+        "raw_sha256": "8169dafbd550e5926300a5370f51c1b744640e3b8563c5eb5d1525e9dbb56277",
+        "source_id": "clerk:119:2:221",
+        "source_type": "house_clerk_roll_call",
+        "text_version": "2026-06-11"
+      }
+    ],
+    "chamber": "house",
+    "chamber_outcome": "Failed",
+    "congress": 119,
+    "enactment_status": "not_inferred_from_house_outcome",
+    "exact_action_identity": "119:hr:9238",
+    "governed_source_identities": [
+      {
+        "governed_bytes_sha256": "8169dafbd550e5926300a5370f51c1b744640e3b8563c5eb5d1525e9dbb56277",
+        "raw_sha256": "8169dafbd550e5926300a5370f51c1b744640e3b8563c5eb5d1525e9dbb56277",
+        "source_id": "clerk:119:2:221",
+        "source_type": "house_clerk_roll_call",
+        "text_version": "2026-06-11"
+      },
+      {
+        "governed_bytes_sha256": "824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5",
+        "raw_sha256": "824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5",
+        "source_id": "govinfo_text_119_hr9238_cdh",
+        "source_type": "govinfo_bill_text",
+        "text_version": "cdh"
+      }
+    ],
+    "governed_source_identity_sha256": "9c0efbf51d9012df676cebaf1fa5588de864802c605e01ea8363d924cfbbf641",
+    "legislative_stage": "suspension_passage",
+    "meaning_contract_version": "action_interpretation_decision_implementation_record_v1",
+    "mechanism": null,
+    "mechanism_availability": "unavailable_in_legacy_accepted_projection",
+    "operative_meaning_source_identities": [
+      {
+        "governed_bytes_sha256": "824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5",
+        "raw_sha256": "824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5",
+        "source_id": "govinfo_text_119_hr9238_cdh",
+        "source_type": "govinfo_bill_text",
+        "text_version": "cdh"
+      }
+    ],
+    "package_component_boundary": {
+      "basis": "governed exact action stage and accepted limitations",
+      "boundary_type": "whole_measure_exact_action",
+      "parent_package_meaning_projected": false
+    },
+    "roll": 221,
+    "semantic_ir_source_ids": [
+      "clerk:119:2:221",
+      "govinfo_text_119_hr9238_cdh"
+    ],
+    "session": 2,
+    "source_contract_version": "evidence_maps_v4"
+  },
+  "original_accepted_provider_path": "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json",
+  "qualified_candidate_provider_path": "docs/editorial/shared_candidates/house_119_legacy_fisa_qualification_checkpoint206/shared_action_core_proposal.json",
+  "qualified_candidate_provider_corpus_sha256": "320b34b89d1b46a977e1aaccac7dffb0a77e66475e0752dd12aad38c909d8ac0",
+  "qualified_core_sha256": "8f9d8efd09c5dbce01043e3c0dc610fb9e1709b1a1c1c5132a4c055a7a6d8a1b",
+  "original_action_measure_meaning_identifiers_preserved": true,
+  "original_accepted_meaning_literal_prefix_and_limitations_preserved": true,
+  "original_core_and_source_seals_unchanged": true,
+  "current_source_identities_explicitly_different": true,
+  "source_version_equivalence_basis": "Complete original XML/current CDH body comparison under declared alphanumeric/case formatting normalization plus literal two operators/effective clause; exact original/current Clerk metadata/party totals/both member labels. No claim raw bytes or all legal application identical.",
+  "legacy_stage_alias": {
+    "original": "suspension_passage",
+    "candidate": "suspension_and_passage",
+    "same_exact_motion": true
+  },
+  "legacy_source_qualification_binding": {
+    "artifact_ref": "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json",
+    "artifact_id": "shared-action-core:house:119:v2",
+    "action_core_sha256": "a751b1593c5dbbeca206cf27f4c1fba8918829bb219adf97e3a059bc6aa74a42",
+    "source_bindings": [
+      {
+        "source_id": "clerk:119:2:221",
+        "raw_ref": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_221.xml"
+      },
+      {
+        "source_id": "govinfo_text_119_hr9238_cdh",
+        "raw_ref": "docs/editorial/full_record_reviews/source_readiness/evidence/824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5.xml"
+      }
+    ]
+  },
+  "current_source_role_identities": [
+    {
+      "source_id": "clerk:119:2:221",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "119:2",
+      "raw_sha256": "96fc4098df1eac778be24a68de21dcece73cfef7d7c13bc8ecd671192bd560f9",
+      "governed_bytes_sha256": "21d62f8ab5152286bcc302a21929fad925a4a877b011ca0b27951345c74d0fdc"
+    },
+    {
+      "source_id": "immigration:roll221-initial182",
+      "source_type": "official_primary_text",
+      "text_version": "Own June10 initial question,voice ayes,Raskin demand/order and postponement only",
+      "raw_sha256": "a5b906713d9c217a31068b01b8ced5dbb4dee2c3d32fb4a2c5b94fa1ee96fcd4",
+      "governed_bytes_sha256": "ace1591b499db07b3ddfce2a785b11c016358609543d58988548e94cefe18a1e"
+    },
+    {
+      "source_id": "immigration:roll221-recorded182",
+      "source_type": "official_primary_text",
+      "text_version": "Own June11 resumption,question,recorded totals198/218/15 and rejected motion only; adjacent H.Res1335 excluded",
+      "raw_sha256": "4b6ac8a712b7c5582f27f18a9c3fe2c613ef88988ed3744a58636e972f689773",
+      "governed_bytes_sha256": "90a53806082cc4eff06b583c0f6d22d8f941c2cd60c8e63a34a33aa2e17bad75"
+    },
+    {
+      "source_id": "govinfo:hr9238cdh-qualified182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete named primary law/bill/dated section; no individual current application",
+      "raw_sha256": "08fb87e430aee94458a4da7edcfb06185a25af68aa17a994a43f5b6bab126d0e",
+      "governed_bytes_sha256": "299529bf9bfc585a6f8c7024487535a75e00235c6f714b9fae437d6036d28142"
+    },
+    {
+      "source_id": "immigration:roll221-operative182",
+      "source_type": "official_primary_text",
+      "text_version": "Own complete offered extension operative before debate; exact declared bill identity checked",
+      "raw_sha256": "a5b906713d9c217a31068b01b8ced5dbb4dee2c3d32fb4a2c5b94fa1ee96fcd4",
+      "governed_bytes_sha256": "d3a943e4cde1fcab787733468c0cafeae23c23f7710268984e9163f5f2af3053"
+    },
+    {
+      "source_id": "govinfo:pl110261-section403-182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete original section403 repeal/operator only; dated then amended",
+      "raw_sha256": "421d1aef919b79bcbf4719ab08b8905d8b68ba1bbf9bdea9090d56f5fad5713c",
+      "governed_bytes_sha256": "2d9b6002b67fd93f2430098c77bcc6fb3fcff8a9f6d829d8ecdd44cc12839136"
+    },
+    {
+      "source_id": "govinfo:pl110261-section404b-182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete original section404(b) transition through parent end; preceding404(a) not certified; dated then amended",
+      "raw_sha256": "421d1aef919b79bcbf4719ab08b8905d8b68ba1bbf9bdea9090d56f5fad5713c",
+      "governed_bytes_sha256": "b769dc31caba5867e3fa76e8c07138296e7779e431a495e8677d76e38c47001d"
+    },
+    {
+      "source_id": "govinfo:pl11849-section19-182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete section19 sunset/transition amendment only",
+      "raw_sha256": "1f9c965c35c512369ab7338c8acc8395b7ca44fa094db013d2bde2c3df39817e",
+      "governed_bytes_sha256": "859ef51218ecc8a1f61bdd648300c9954a34f9c728c3192b84c5c0dd19146468"
+    },
+    {
+      "source_id": "govinfo:pl11849-section24-182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete section24 enabling non-US-person travel-vetting querying procedures only",
+      "raw_sha256": "1f9c965c35c512369ab7338c8acc8395b7ca44fa094db013d2bde2c3df39817e",
+      "governed_bytes_sha256": "d5938de41c0a110731486a9c60893c88532834883f70de67584170447c75f1d0"
+    },
+    {
+      "source_id": "govinfo:pl11984-qualified182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete named primary law/bill/dated section; no individual current application",
+      "raw_sha256": "3b6cee5138a8dcb34525837d82520d47f4ffd24c8eac3ac6f2d3054f4ec92867",
+      "governed_bytes_sha256": "4bf897f11e12ced202b14ba967486e52da6280de5b96cd9bcada9f8e422d8fff"
+    },
+    {
+      "source_id": "govinfo:pl11987-qualified182",
+      "source_type": "official_primary_text",
+      "text_version": "Complete named primary law/bill/dated section; no individual current application",
+      "raw_sha256": "151bdb6285c272b8314e63f7425e5bee26fc23385c532dedaa826e1709f1de8e",
+      "governed_bytes_sha256": "38f13e38bb85c92628c9d9690c3ec204704f31519e537c94a4ee307b273a68dd"
+    },
+    {
+      "source_id": "govinfo:50usc1881-services181",
+      "source_type": "official_primary_text",
+      "text_version": "Complete dated 2024 named section including notes; no current individual application or later-law clearance",
+      "raw_sha256": "cf56b7b1319f71fe60ce2e003f2aa419f97f759b0727d41716f44794235990df",
+      "governed_bytes_sha256": "3ad3264031dbbab2391340381914f9a914645ab8f9c46286849b36b017fbd805"
+    },
+    {
+      "source_id": "govinfo:50usc1801-operative181",
+      "source_type": "official_primary_text",
+      "text_version": "Complete dated 2024 operative before Editorial Notes; remaining notes not claimed read",
+      "raw_sha256": "6a05ebea3e8e1df21d76aece1f47dacd1e445791874ac17d843adb0a7c7dd96c",
+      "governed_bytes_sha256": "78d8d1566fc6eb2eb529e128eac3f7e310af27e2daeb1a2a404307587dd80830"
+    },
+    {
+      "source_id": "govinfo:50usc1881a-target-query181",
+      "source_type": "official_primary_text",
+      "text_version": "Dated targeting authorization/limitations and complete querying subsection including travel vetting; other702 portions not claimed read",
+      "raw_sha256": "dec42f5a62019ab833c9ffc74a75a6a17183f514adc2e09579027a10cc898c3c",
+      "governed_bytes_sha256": "23be36cb6a203de9bc767f89199b5834aad789d4cea78ecb44a6245165b3a02b"
+    }
+  ],
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_legacy_fisa_check_checkpoint206.json",
+  "source_quality_sha256": "1f1e695cee9bc54be0cfb707e7eb5562b9b1d189d27cd844b5224b520c0d1b33",
+  "counts_after": {
+    "reviewed": 620,
+    "pending": 56,
+    "ordinary_unscreened": 29,
+    "researched_holds": 27,
+    "meanings": 52,
+    "propositions": 90,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "prior51_cores_and88_propositions_preserved": true,
+  "legacy155_XML_conflict_preserved": true,
+  "checkpoint205_full_question_guard_preserved": true,
+  "Health_unchanged": true,
+  "canonical_schema_common_adapter_and_pipeline_unchanged": true,
+  "new_acquisitions": 0,
+  "new_comparable_routine_samples": 0,
+  "prior_benchmark_result": "FAIL",
+  "prior_benchmark_mean_seconds": 781.087,
+  "independent206_shared_source_helper_domain_review_pending": true,
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_eligible": false,
+  "receipt_sha256": "76e2ea631de14b656e319705e84dc85fedad298a533e5e172455bb0926f3caff"
+}

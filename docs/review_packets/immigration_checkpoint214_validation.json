@@ -1,0 +1,116 @@
+{
+  "checkpoint": 214,
+  "validated_utc": "2026-10-12T21:14:20.368460+00:00",
+  "base_head": "36acded372c98e11644ca3e251f1f78983ad51ca",
+  "inventory_validation": {
+    "authority": "Mechanical integrity only; no semantic acceptance or publication",
+    "inventory_count": 676,
+    "ordered_action_ids_sha256": "e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25",
+    "governed_review_count": 625,
+    "unfinished_screenings": 51,
+    "queue_count": 51,
+    "disposition_counts": {
+      "procedural_context": 228,
+      "interpreted_substantive_directional": 55,
+      "exact_action_ineligible": 340,
+      "source_unresolved": 51,
+      "expressive_nonbinding_context": 2
+    },
+    "unfinished_component_reviews": 3
+  },
+  "prior624_membership_records_exact": true,
+  "other675_universe_rows_exact": true,
+  "other_four_fixed_funding_holds_exact": true,
+  "original54cores_and94behavioral_propositions_exact": true,
+  "new_shared_core": 1,
+  "new_behavioral_propositions": 2,
+  "original_H_identity_meaning_prefix_limits_all19sources_preserved": true,
+  "qualified_specified_divisions_boundary_valid": true,
+  "allHealth_inputs_outputs_helper_and_history_exact": true,
+  "protected_static_blobs_exact": 1106,
+  "two_source_catalogs_append_only": true,
+  "old_source_pool_objects_preserved_plus22": true,
+  "Health_imports_14_exact": true,
+  "new_literal_scopes_8_raw_or_governed_parent_bound": true,
+  "all77_saved_private_artifacts_exact": true,
+  "two_original_untracked_notes_exact": true,
+  "all_frozen212_213timing_and_CIrecords_exact": true,
+  "focused_validation_phases": [
+    {
+      "log": ".tmp\\tests214.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-12T21:05:23.030802+00:00",
+      "completed_utc": "2026-10-12T21:08:34.332741+00:00",
+      "elapsed_seconds": 191.30029310000828,
+      "exit_code": 0,
+      "log_sha256": "88bf58142ce3cf159b56900f6359993c8f8b910d9cf798b361e04049f240d751"
+    },
+    {
+      "log": ".tmp\\semantic214.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-12T21:08:34.337999+00:00",
+      "completed_utc": "2026-10-12T21:08:38.048298+00:00",
+      "elapsed_seconds": 3.710270900017349,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir214.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-12T21:08:38.052724+00:00",
+      "completed_utc": "2026-10-12T21:08:38.125685+00:00",
+      "elapsed_seconds": 0.07296279998263344,
+      "exit_code": 0,
+      "log_sha256": "b2e9f7bf25b2864325c0ec6ba44a3dd5a8a6058bf3fd32b6040c9688c9a7486a"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-12T21:08:38.129708+00:00",
+      "completed_utc": "2026-10-12T21:08:54.901088+00:00",
+      "elapsed_seconds": 16.77123969999957,
+      "outputs": 7
+    },
+    {
+      "phase": "health_byte_exact_output_replay",
+      "started_utc": "2026-10-12T21:08:54.901448+00:00",
+      "completed_utc": "2026-10-12T21:09:00.873865+00:00",
+      "elapsed_seconds": 5.972369899973273,
+      "outputs": 7
+    }
+  ],
+  "tests_passed": 366,
+  "semantic_checks_passed": 7,
+  "exact_replays": 14,
+  "independent214source_domain_review_pending": true,
+  "previous_benchmark_FAIL_unchanged": true,
+  "not_five_completed_comparable_cycles": true,
+  "owner_validation_only": true,
+  "publication_authorized": false,
+  "receipt_sha256": "faa158ac6f7608b8561f6a4c0be239a2897544e2057c76ea2e5a82489d2f3696"
+}

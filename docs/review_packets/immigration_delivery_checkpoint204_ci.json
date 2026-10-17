@@ -1,0 +1,282 @@
+{
+  "checkpoint": 204,
+  "head": "255cd9a1f2a42f83336526e6784a3931c962be3e",
+  "run": 38176418582,
+  "run_attempt": 1,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "failed_jobs": [],
+  "jobs": [
+    {
+      "job_id": 114579655747,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:27:46Z",
+      "checkout_log_shas": [
+        "255cd9a1f2a42f83336526e6784a3931c962be3e"
+      ],
+      "observed_feature_head_positions": [
+        "2026-10-11T21:27:29.7461065Z HEAD is now at 255cd9a1 Bind qualified S.1318 candidate without changing legacy cores"
+      ],
+      "log_sha256": "d44e81a22ca7970a12065b627630b57976259b429e0a77e8ea4c3c75d7d40f33",
+      "log_bytes": 65148,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:27:39.4497763Z 15 passed, 1 warning in 0.38s",
+        "2026-10-11T21:27:39.7956786Z 10 passed in 0.17s",
+        "2026-10-11T21:27:40.1183533Z 3 passed in 0.19s",
+        "2026-10-11T21:27:43.8631127Z 96 passed in 2.10s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114579655800,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:30:39Z",
+      "checkout_log_shas": [
+        "e2d053d9761ceccfc94759fd9aa68acc5eb8789d"
+      ],
+      "observed_feature_head_positions": [],
+      "log_sha256": "c4f2e284958542d850a654a597d6388a9cfc68d21447edfeb9a7718816c0402f",
+      "log_bytes": 1506901,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:27:47.0096053Z 15 passed in 0.39s",
+        "2026-10-11T21:27:48.1966428Z 19 passed in 0.86s",
+        "2026-10-11T21:27:50.6314216Z 27 passed in 2.06s",
+        "2026-10-11T21:30:36.1200290Z 639 passed, 1 warning in 61.67s (0:01:01)"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114579655812,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:27:48Z",
+      "checkout_log_shas": [
+        "255cd9a1f2a42f83336526e6784a3931c962be3e"
+      ],
+      "observed_feature_head_positions": [
+        "2026-10-11T21:27:35.6950623Z HEAD is now at 255cd9a1 Bind qualified S.1318 candidate without changing legacy cores"
+      ],
+      "log_sha256": "c94414b9e921057002fc63575de4112f30b73e13c3d179dce34fda480ddf9aa2",
+      "log_bytes": 45908,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:27:46.0822236Z 29 passed, 40 subtests passed in 0.60s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114579655818,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:29:16Z",
+      "checkout_log_shas": [
+        "e2d053d9761ceccfc94759fd9aa68acc5eb8789d"
+      ],
+      "observed_feature_head_positions": [],
+      "log_sha256": "7a6ef320f2f34d27f3edb3892b0585e3c94406e691f0de4c1f1d4218db35a269",
+      "log_bytes": 182871,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:28:15.2231589Z 23 passed, 1 warning in 15.31s",
+        "2026-10-11T21:28:19.3690380Z 58 passed, 1 warning in 3.80s",
+        "2026-10-11T21:28:22.3153397Z 1 passed in 1.56s",
+        "2026-10-11T21:28:27.0362985Z 1 passed, 1 warning in 3.35s",
+        "2026-10-11T21:28:31.3642884Z 1 passed in 2.90s",
+        "2026-10-11T21:28:35.6702348Z 2 passed in 2.95s",
+        "2026-10-11T21:28:38.6268469Z 14 passed in 1.60s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114579655841,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:31:21Z",
+      "checkout_log_shas": [
+        "255cd9a1f2a42f83336526e6784a3931c962be3e"
+      ],
+      "observed_feature_head_positions": [
+        "2026-10-11T21:27:50.7997544Z HEAD is now at 255cd9a1 Bind qualified S.1318 candidate without changing legacy cores"
+      ],
+      "log_sha256": "55c247826753380aea2fe2538a0e4ceb2670a94aab038a38eac9ddb30d2491cd",
+      "log_bytes": 139906,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:28:13.4190803Z 95 passed, 1 warning in 1.79s",
+        "2026-10-11T21:29:50.6302161Z 326 passed in 96.36s (0:01:36)",
+        "2026-10-11T21:29:54.0567031Z 1 passed in 2.33s",
+        "2026-10-11T21:29:55.5288044Z 74 passed, 1 warning in 1.13s",
+        "2026-10-11T21:30:34.8835826Z   2 passed (11.1s)",
+        "2026-10-11T21:31:06.5277337Z   23 passed (14.4s)",
+        "2026-10-11T21:31:06.9584456Z 15 passed in 0.13s",
+        "2026-10-11T21:31:14.5341841Z   1 passed (6.7s)",
+        "2026-10-11T21:31:17.2081568Z 25 passed in 2.34s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114579655848,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:27:39Z",
+      "checkout_log_shas": [
+        "e2d053d9761ceccfc94759fd9aa68acc5eb8789d"
+      ],
+      "observed_feature_head_positions": [],
+      "log_sha256": "600c9cc1229ebbea3090a390ec07b0677a63a9a1d65ec671c77acc93c787894d",
+      "log_bytes": 28542,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:27:37.5367224Z ============================== 87 passed in 1.10s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114579655854,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:27:48Z",
+      "checkout_log_shas": [
+        "255cd9a1f2a42f83336526e6784a3931c962be3e"
+      ],
+      "observed_feature_head_positions": [
+        "2026-10-11T21:27:37.2141369Z HEAD is now at 255cd9a1 Bind qualified S.1318 candidate without changing legacy cores"
+      ],
+      "log_sha256": "48a4a1a0758106ef4f12dff76a6edf5103fe292d623111ada89d219f31369dd0",
+      "log_bytes": 45470,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:27:44.9030580Z 18 passed, 34 subtests passed in 0.78s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114579655872,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:31:14Z",
+      "checkout_log_shas": [
+        "e2d053d9761ceccfc94759fd9aa68acc5eb8789d",
+        "255cd9a1f2a42f83336526e6784a3931c962be3e"
+      ],
+      "observed_feature_head_positions": [
+        "2026-10-11T21:29:03.0967761Z HEAD is now at 255cd9a1 Bind qualified S.1318 candidate without changing legacy cores",
+        "2026-10-11T21:30:48.0759026Z HEAD is now at 255cd9a1 Bind qualified S.1318 candidate without changing legacy cores"
+      ],
+      "log_sha256": "0adf6784ed37c93ee110a1c3c53fe41089f1b222adfabd5f2e5681878e4f3c02",
+      "log_bytes": 140023,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:27:50.7831417Z 6 passed in 1.25s",
+        "2026-10-11T21:29:02.9955138Z 38 passed, 1 warning in 70.95s (0:01:10)",
+        "2026-10-11T21:30:46.7454520Z 13 passed in 81.11s (0:01:21)",
+        "2026-10-11T21:31:10.7286572Z 20 passed in 20.71s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114579655950,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T21:27:10Z",
+      "completed_at": "2026-10-11T21:27:44Z",
+      "checkout_log_shas": [
+        "255cd9a1f2a42f83336526e6784a3931c962be3e"
+      ],
+      "observed_feature_head_positions": [
+        "2026-10-11T21:27:36.9103293Z HEAD is now at 255cd9a1 Bind qualified S.1318 candidate without changing legacy cores"
+      ],
+      "log_sha256": "6c69996c77717e47ba77c5fd86e879032e4f9b1e6e9490732b6b821eb95e42f3",
+      "log_bytes": 46343,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T21:27:41.5487126Z 22 passed, 55 subtests passed in 0.30s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38176418582",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts_verified": true,
+  "synthetic_merge_sha": "e2d053d9761ceccfc94759fd9aa68acc5eb8789d",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [
+    {
+      "job": "m14g-exact-head",
+      "steps": [
+        "Enforce milestone-local M14G closure scope"
+      ]
+    },
+    {
+      "job": "m14f-exact-head",
+      "steps": [
+        "Prove exact M14F milestone scope"
+      ]
+    },
+    {
+      "job": "m14d-exact-head",
+      "steps": [
+        "Prove exact M14D milestone scope"
+      ]
+    },
+    {
+      "job": "m14e-exact-head",
+      "steps": [
+        "Prove exact M14E milestone scope"
+      ]
+    }
+  ],
+  "remaining_gate": "Independent bounded checkpoint 204 shared meaning/helper/domain review; no editorial acceptance",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "e554f47c1d6f6f9d4aaa1760945fdce0a9e546e74fe54313e6083f781fc81d25"
+}

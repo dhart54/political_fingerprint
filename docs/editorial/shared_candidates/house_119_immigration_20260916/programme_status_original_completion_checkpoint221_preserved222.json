@@ -1,0 +1,374 @@
+{
+  "checkpoint": 221,
+  "base_head": "4a37e845c0b021009eecda2643902a9eef305644",
+  "completed_action_ids": [
+    "house:119:2:55",
+    "house:119:2:56",
+    "house:119:2:89",
+    "house:119:2:191",
+    "house:119:2:193"
+  ],
+  "new_source_qualified_action_id": "house:119:2:56",
+  "correction_action_id": "house:119:1:281",
+  "original_Health_core_sha256": "bbf3ba47e9e687258790712c975046346755387da99690de28159143c1ff6d32",
+  "original_Health_prefix_identity18witnesses_limits_preserved": true,
+  "new_DC_core_sha256": "c8a081e41e9dcb380eb6dac21ef246f5f65a2b8f42c7ceda723479d321a565d5",
+  "corrected_HR5371_core_sha256": "41949341027d8a25e18339add7c98799138c08628b5f384fd574e080acfe8cbe",
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/programme_status_source_quality_checkpoint221.json",
+  "source_quality_sha256": "d5523386b08e1a155c92ed9d7d43268ae961f6799e654380c101616aa3f9f071",
+  "counts_after": {
+    "reviewed": 634,
+    "pending": 42,
+    "meanings": 60,
+    "behavioral_propositions": 102,
+    "independent_episodes": 53,
+    "multi_action_episodes": 6,
+    "application_questions": 70,
+    "partial_packages": 3,
+    "ordinary_pending": 17,
+    "researched_holds_pending": 25
+  },
+  "prior_pending_rows": {
+    "house:119:2:55": {
+      "action_id": "house:119:2:55",
+      "session": 2,
+      "roll": 55,
+      "date": "2026-02-04",
+      "measure": "bill_119_hr_4090",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Held after full9737-character H.R.4090 EH and retained material mining predicates. Sections4-6 change priority/permitting, land identification and regulatory review rather than expressly rewrite citizenship eligibility. Section5 nevertheless incorporates Mining Law location: complete retained30USC22 restricts occupation/purchase to citizens and those who have declared intention to become citizens;43USC1702 public-land exclusions and30USC601/43USC31l resource/mapping scopes were read. That affirmative personal-status baseline cannot be erased by a mineral title or turned into a new citizenship restriction. Complete whole-package Immigration mapping of expedited project/permitting and regulatory operators against that baseline remains material review, including the governed43CFR3809.5 person predicate already used in prior mining research; no source-unavailable or new decision claim. H.Res.1032 section3 adopts committee substitute; EH is the recorded whole passage, not the separate unadopted foreign-entity recommittal language. FousheeNay/MassieYea are unchanged whole-action observations, no component/motive/counting interpretation.",
+      "source": {
+        "source_id": "clerk:119:2:55",
+        "url": "https://clerk.house.gov/evs/2026/roll055.xml",
+        "raw_sha256": "bdbc0c6af3551403fc6386b4c256f40a4f7d54190bc7b9b89f03e6b92f93d0dc",
+        "governed_bytes_sha256": "757f07dba7f27ca104d8721ae976e0c47aebd1ce59946ffd171a112b49a3aaaa",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_4090",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Held after full9737-character H.R.4090 EH and retained material mining predicates. Sections4-6 change priority/permitting, land identification and regulatory review rather than expressly rewrite citizenship eligibility. Section5 nevertheless incorporates Mining Law location: complete retained30USC22 restricts occupation/purchase to citizens and those who have declared intention to become citizens;43USC1702 public-land exclusions and30USC601/43USC31l resource/mapping scopes were read. That affirmative personal-status baseline cannot be erased by a mineral title or turned into a new citizenship restriction. Complete whole-package Immigration mapping of expedited project/permitting and regulatory operators against that baseline remains material review, including the governed43CFR3809.5 person predicate already used in prior mining research; no source-unavailable or new decision claim. H.Res.1032 section3 adopts committee substitute; EH is the recorded whole passage, not the separate unadopted foreign-entity recommittal language. FousheeNay/MassieYea are unchanged whole-action observations, no component/motive/counting interpretation.",
+      "unresolved_reason": "pending_material_exact_predicate_review",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:55",
+          "url": "https://clerk.house.gov/evs/2026/roll055.xml",
+          "raw_sha256": "bdbc0c6af3551403fc6386b4c256f40a4f7d54190bc7b9b89f03e6b92f93d0dc",
+          "governed_bytes_sha256": "757f07dba7f27ca104d8721ae976e0c47aebd1ce59946ffd171a112b49a3aaaa"
+        },
+        {
+          "source_id": "govinfo:hr4090eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090eh/html/BILLS-119hr4090eh.htm",
+          "raw_sha256": "375f05e834bbe45d64cae7b5dd75b318e63f6f568395cc827103eca168a106ba",
+          "governed_bytes_sha256": "3f9c126bdaf7bf2561300681bc11d34d7f9a6f57d45d946415ad2b5627f3beb6"
+        },
+        {
+          "source_id": "govinfo:hr4090rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090rh/html/BILLS-119hr4090rh.htm",
+          "raw_sha256": "3d0918c87d8a8447bb9048518c14b090337d1c84e6e2f0d2ef22778e96ba335a",
+          "governed_bytes_sha256": "f077ab2c59a24ec502f8eaf31aa7d65dd26d8da6e9a01b30f8b278e637ffe15b"
+        },
+        {
+          "source_id": "govinfo:hres1032eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1032eh/html/BILLS-119hres1032eh.htm",
+          "raw_sha256": "f2d4ba8063ef74a23a086aa0025772ef9d86f3eaa4cbe5e9dba5d56f036db62e",
+          "governed_bytes_sha256": "ae550b87fd36f1129c0e5c87def690cd959dbbd5942ce3900ac40f2ac5c5a3ee"
+        },
+        {
+          "source_id": "govinfo:30usc22-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap2-sec22.htm",
+          "raw_sha256": "8882232e121780f30eddb758ab0d790fd77b358752e419f8d92777b658ee9c57",
+          "governed_bytes_sha256": "7ba076635df5962f897b307f11ef5243306ab17ea4a88748394898cf88418f77"
+        },
+        {
+          "source_id": "govinfo:43usc1702-publiclands",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap35-subchapI-sec1702.htm",
+          "raw_sha256": "2f6f47b53c17ec212002efe56b9a2ddc93f5edcbafeaa41951701ed69d329248",
+          "governed_bytes_sha256": "884913326cd0f375e3de3630a710adc648a6d63d65c1b08ed85789edc9304ecf"
+        },
+        {
+          "source_id": "govinfo:30usc601-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap15-subchapI-sec601.htm",
+          "raw_sha256": "637b68c608c7aafaf2a4598555bc69a84ec5307ef0a8babba2be2fd84e75169d",
+          "governed_bytes_sha256": "f2d76fe2fef76a2a6839982b64f40120a7599a9daf9ad502cfb631d1895ab326"
+        },
+        {
+          "source_id": "govinfo:43usc31l-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap2-sec31l.htm",
+          "raw_sha256": "b977520c9fd5951ca2ce0a1c156125f826d1f2a0d4d2ee524fb62dc057d776e4",
+          "governed_bytes_sha256": "ce5ce4a19af50a33bc68d8bd00ea8d944eb7223b2fd5ba18d44a7e32cc4254e8"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_raw_hash_matches": true
+    },
+    "house:119:2:56": {
+      "action_id": "house:119:2:56",
+      "session": 2,
+      "roll": 56,
+      "date": "2026-02-04",
+      "measure": "bill_119_hjres_142",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "source": {
+        "source_id": "clerk:119:2:56",
+        "url": "https://clerk.house.gov/evs/2026/roll056.xml",
+        "raw_sha256": "880fe8002612736a48412a7f79586b999e58a3054196c2726b631417e7697054",
+        "governed_bytes_sha256": "189a891b67f118958183d902bfb5b18bde07fbc821f320603d80ff65962ed6cd",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hjres_142",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "unresolved_reason": "pending_research",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:56",
+          "url": "https://clerk.house.gov/evs/2026/roll056.xml",
+          "raw_sha256": "880fe8002612736a48412a7f79586b999e58a3054196c2726b631417e7697054",
+          "governed_bytes_sha256": "189a891b67f118958183d902bfb5b18bde07fbc821f320603d80ff65962ed6cd",
+          "verification": "unchanged_governed_source_reuse"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_raw_hash_matches": true
+    },
+    "house:119:2:89": {
+      "action_id": "house:119:2:89",
+      "session": 2,
+      "roll": 89,
+      "date": "2026-03-17",
+      "measure": "bill_119_s_3971",
+      "question": "On Motion to Suspend the Rules and Pass",
+      "disposition": "source_unresolved",
+      "reason": "Held after full36962-character S3971 ES. Sections2/7 change employee analysis, foreign ownership/financial ties to foreign persons/entities, affiliations of covered individuals/key personnel and technology/business relationships, list-based security denial and foreign-involvement screening, along with the complete breakthrough-award/matching/proposal/training/data/extension package. Entity/business security is not automatically immigration law; natural-person definitions/retained15USC638(g)/(o)/(vv) and program eligibility must be examined before safe exclusion or inclusion. Existing governed18007-character15USC638 excerpt covers research/program definitions and NIH pilot but does not contain(vv); it cannot close the changed due-diligence baseline. Further material exact statutory/policy chain work is executable, not proven inaccessible evidence or a request for new methodology. FousheeYea/MassieNay and passed suspension remain retained whole-action observations; no stance on one security component, individual exclusion or grant delivery inferred.",
+      "source": {
+        "source_id": "clerk:119:2:89",
+        "url": "https://clerk.house.gov/evs/2026/roll089.xml",
+        "raw_sha256": "82c9d716f7e317437c3f024067c4e6637b7cc8e41c98bbcbbb2b977141307d47",
+        "governed_bytes_sha256": "532a227c192566cc61af8df3d930614100bf2f285399c4110ade959ea743ae69",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_s_3971",
+      "member_action": "yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Pass",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Held after full36962-character S3971 ES. Sections2/7 change employee analysis, foreign ownership/financial ties to foreign persons/entities, affiliations of covered individuals/key personnel and technology/business relationships, list-based security denial and foreign-involvement screening, along with the complete breakthrough-award/matching/proposal/training/data/extension package. Entity/business security is not automatically immigration law; natural-person definitions/retained15USC638(g)/(o)/(vv) and program eligibility must be examined before safe exclusion or inclusion. Existing governed18007-character15USC638 excerpt covers research/program definitions and NIH pilot but does not contain(vv); it cannot close the changed due-diligence baseline. Further material exact statutory/policy chain work is executable, not proven inaccessible evidence or a request for new methodology. FousheeYea/MassieNay and passed suspension remain retained whole-action observations; no stance on one security component, individual exclusion or grant delivery inferred.",
+      "unresolved_reason": "pending_material_exact_predicate_review",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:89",
+          "url": "https://clerk.house.gov/evs/2026/roll089.xml",
+          "raw_sha256": "82c9d716f7e317437c3f024067c4e6637b7cc8e41c98bbcbbb2b977141307d47",
+          "governed_bytes_sha256": "532a227c192566cc61af8df3d930614100bf2f285399c4110ade959ea743ae69"
+        },
+        {
+          "source_id": "govinfo:s3971es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s3971es/html/BILLS-119s3971es.htm",
+          "raw_sha256": "8a73c3e8e431ef23d4f8ec36da9fc4161b00d8af7296d3b0263c358d052070e9",
+          "governed_bytes_sha256": "21c08877224f91673ceebab4b21a1ba702321ca10fa466e6fcd3f80cba59a7d8"
+        },
+        {
+          "source_id": "govinfo:15usc638-2024-small-research",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec638.htm",
+          "raw_sha256": "24f294ac5ae5a7ec2841052651a9700c9767ac0c97976eb66672364c486e63a9",
+          "governed_bytes_sha256": "eefd0c5c27fecfd89822dc978cdd03ea7e9b633354522472384416b02b11e7cc"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:89",
+        "url": "https://clerk.house.gov/evs/2026/roll089.xml",
+        "raw_sha256": "ff7961bfada9c9904fc0154e2d2bf6325cac43d465770d43015696b9f6c7f4e5",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    },
+    "house:119:2:191": {
+      "action_id": "house:119:2:191",
+      "session": 2,
+      "roll": 191,
+      "date": "2026-05-21",
+      "measure": "bill_119_hr_6047",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Held after complete8966-character HR6047 EH and existing whole Health candidate examined as context, without inheriting its issue membership. In addition to specified veteran aid/attendance and DIC rate changes, section5 creates expanded Reserve/Guard active-duty and14day-plus-training housing-loan eligibility, with defined additional fees; sections3/4 fee/pension changes remain part of the package. This is not rate-only. The program-specific benefit/status baseline and retained eligibility/service/PRWORA exceptions must be checked before excluding or including the new loan class; generic Federal-public-benefit reasoning cannot infer a new immigrant exclusion or exemption. Existing Health statutory/service sources are available for next executable material review; no evidence-unavailable label or blanket user escalation. FousheeNay/MassieNotVoting preserved: NotVoting is resolved nondirectional, not opposition. Whole House passage is not enactment, a delivered loan/payment or a separate stance on the housing component.",
+      "source": {
+        "source_id": "clerk:119:2:191",
+        "url": "https://clerk.house.gov/evs/2026/roll191.xml",
+        "raw_sha256": "b910a7edc72b36e0e17fd3f3ab384a6225d3f24b0d7d52490a5d7acd0c12351e",
+        "governed_bytes_sha256": "88c4accd31d23ea0a291a94c0f6e6db50512679e3ea2c69b517977818cb57fe6",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_6047",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Held after complete8966-character HR6047 EH and existing whole Health candidate examined as context, without inheriting its issue membership. In addition to specified veteran aid/attendance and DIC rate changes, section5 creates expanded Reserve/Guard active-duty and14day-plus-training housing-loan eligibility, with defined additional fees; sections3/4 fee/pension changes remain part of the package. This is not rate-only. The program-specific benefit/status baseline and retained eligibility/service/PRWORA exceptions must be checked before excluding or including the new loan class; generic Federal-public-benefit reasoning cannot infer a new immigrant exclusion or exemption. Existing Health statutory/service sources are available for next executable material review; no evidence-unavailable label or blanket user escalation. FousheeNay/MassieNotVoting preserved: NotVoting is resolved nondirectional, not opposition. Whole House passage is not enactment, a delivered loan/payment or a separate stance on the housing component.",
+      "unresolved_reason": "pending_material_exact_predicate_review",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:191",
+          "url": "https://clerk.house.gov/evs/2026/roll191.xml",
+          "raw_sha256": "b910a7edc72b36e0e17fd3f3ab384a6225d3f24b0d7d52490a5d7acd0c12351e",
+          "governed_bytes_sha256": "88c4accd31d23ea0a291a94c0f6e6db50512679e3ea2c69b517977818cb57fe6"
+        },
+        {
+          "source_id": "govinfo:hr6047eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6047eh/html/BILLS-119hr6047eh.htm",
+          "raw_sha256": "b33c75f8a364efec9dbb8d17b46663f57cf78fc0761e1d2184ef0a99b32c089b",
+          "governed_bytes_sha256": "040eb13fadf41ac37922b8f80cb83d32b6d0f0bbf44547dcb92ec700845b245b"
+        },
+        {
+          "source_id": "congressional-record:2026-05-21-hr6047-material",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-21/pdf/CREC-2026-05-21-house.pdf",
+          "raw_sha256": "69f2b1bf08af58eb29e142c16e2fcc13cf4c8eb5bbdb2d57a210135e372f0238",
+          "governed_bytes_sha256": "ebbd84b318e6f665de9bcf9255e8ed650cab332cbcfd5d3f2b8ff77c1b841203"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:191",
+        "url": "https://clerk.house.gov/evs/2026/roll191.xml",
+        "raw_sha256": "69197106ab533445c516529ee16a47ee7bd575b61a03f8b89cde96858c54ba60",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    },
+    "house:119:2:193": {
+      "action_id": "house:119:2:193",
+      "session": 2,
+      "roll": 193,
+      "date": "2026-06-03",
+      "measure": "bill_119_s_254",
+      "question": "On Motion to Suspend the Rules and Pass",
+      "disposition": "source_unresolved",
+      "reason": "P2: S254ES wholly replaces16USC1371(b), repeatedly conditioning marine-mammal taking/handicraft exemptions on Alaska Native plus Alaska/coastal residence. The deleted subsection and applicable program-specific Alaska Native personal-class definition/imports are absent from both governed banks. The replacement alone cannot establish that citizenship/status content is absent. Do not infer particular citizenship content or automatic Immigration inclusion. Preserve goods importation versus people entry and residence versus immigration-status distinctions while completing the dated baseline. Restored to researched source_unresolved/noncounting after independent210 review. Existing complete replacement/EH and Clerk sources remain governed unchanged; source-chain acquisition/read/application is executable material work, not established inaccessible evidence or a new methodology decision. No source was fetched or denied route retried. Recorded member status, exact question/stage, goods/person distinction and original210history are preserved. No completion credit until the source gap closes.",
+      "source": {
+        "source_id": "clerk:119:2:193",
+        "url": "https://clerk.house.gov/evs/2026/roll193.xml",
+        "raw_sha256": "803adab8147ffec2fd443206e21c3c2b597fa717bf2a3cac5a35b6c4681a336f",
+        "governed_bytes_sha256": "a4fac84f3738aef95fc17bbf23ecf7fe5dd9ac3a8c348e77abc4485ea95d08e9",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_s_254",
+      "member_action": "yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Pass",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "P2: S254ES wholly replaces16USC1371(b), repeatedly conditioning marine-mammal taking/handicraft exemptions on Alaska Native plus Alaska/coastal residence. The deleted subsection and applicable program-specific Alaska Native personal-class definition/imports are absent from both governed banks. The replacement alone cannot establish that citizenship/status content is absent. Do not infer particular citizenship content or automatic Immigration inclusion. Preserve goods importation versus people entry and residence versus immigration-status distinctions while completing the dated baseline. Restored to researched source_unresolved/noncounting after independent210 review. Existing complete replacement/EH and Clerk sources remain governed unchanged; source-chain acquisition/read/application is executable material work, not established inaccessible evidence or a new methodology decision. No source was fetched or denied route retried. Recorded member status, exact question/stage, goods/person distinction and original210history are preserved. No completion credit until the source gap closes.",
+      "unresolved_reason": "pending_material_exact_predicate_review",
+      "sources": [
+        {
+          "source_id": "clerk:119:2:193",
+          "url": "https://clerk.house.gov/evs/2026/roll193.xml",
+          "raw_sha256": "803adab8147ffec2fd443206e21c3c2b597fa717bf2a3cac5a35b6c4681a336f",
+          "governed_bytes_sha256": "a4fac84f3738aef95fc17bbf23ecf7fe5dd9ac3a8c348e77abc4485ea95d08e9"
+        },
+        {
+          "source_id": "govinfo:s254es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s254es/html/BILLS-119s254es.htm",
+          "raw_sha256": "9af71331d57e08880139162b106798723801fe091700c87a5a3caf98f1bb0411",
+          "governed_bytes_sha256": "2d8e7066f1694f1d15ddfb1c99ec960e90f39581deca0031ff1f3a2b8d1d8f2c"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:193",
+        "url": "https://clerk.house.gov/evs/2026/roll193.xml",
+        "raw_sha256": "d6596123e24f8355fd0357722cab13e15353e76c39b7f2e34b3f63a3f86c47f1",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    }
+  },
+  "completed_ordinary_actions": [
+    "house:119:2:56"
+  ],
+  "completed_researched_holds": [
+    "house:119:2:55",
+    "house:119:2:89",
+    "house:119:2:191",
+    "house:119:2:193"
+  ],
+  "H_R_2860_generic_pending_enum_reconciled_as_existing_researched_hold": true,
+  "all_history_Health_sources_and_frozen_notes_preserved": true,
+  "amendment33_floor_report_conflict_remains_pending": true,
+  "independent_checkpoint220_report_path": "docs/review_packets/immigration_bounded_review_checkpoint220_received221.json",
+  "generated_outputs_pending_coherent_batch_regeneration": false,
+  "source_batch_start_utc": "2026-10-13T15:30:03.813269Z",
+  "authored_utc": "2026-10-13T16:51:40.294096+00:00",
+  "candidate_only": true,
+  "independent221_source_domain_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "benchmark": "FAIL unchanged; four inherited holds plus one ordinary case and inherited correction are not five comparable routine cycles; all elapsed overhead retained",
+  "receipt_sha256": "1095431240bd47ee9c418b0bd7ee1cd41f4d303287182059bb3b7deba2c3ec33",
+  "all_other58cores628reviews670rows98props_expected_exact": true
+}

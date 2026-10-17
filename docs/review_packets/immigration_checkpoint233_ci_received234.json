@@ -1,0 +1,965 @@
+{
+  "checkpoint": 234,
+  "received_utc": "2026-10-15T14:42:03.280261+00:00",
+  "independently_observed_ci": {
+    "checkpoint": 233,
+    "head": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+    "run": 38748988248,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38748988248",
+    "jobs": [
+      {
+        "job_id": 116470064454,
+        "name": "m14f-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:11:06Z",
+        "checkout_log_shas": [
+          "d3bef950fcd4e26e145909198288c3e1389ed50b"
+        ],
+        "log_sha256": "7a99cdb86f1cdfd6e5966c893d75e085a3e7d855b3e813df78babe6362667964",
+        "log_bytes": 48809,
+        "pytest_counts": [
+          "2026-10-15T14:11:03.8789116Z 29 passed, 40 subtests passed in 0.35s"
+        ],
+        "skipped_steps": [
+          "Prove exact M14F milestone scope"
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14F offline validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate detached M14F wording and prominence review",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact M14F milestone scope",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470064685,
+        "name": "m14g-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:11Z",
+        "completed_at": "2026-10-15T14:11:25Z",
+        "checkout_log_shas": [
+          "d3bef950fcd4e26e145909198288c3e1389ed50b"
+        ],
+        "log_sha256": "5a6948dc8a7c2b996b8f5e23e72b8adeb066c7782e57c41aae5d6c3d991b6fcc",
+        "log_bytes": 68242,
+        "pytest_counts": [
+          "2026-10-15T14:11:15.4417848Z 15 passed, 1 warning in 0.60s",
+          "2026-10-15T14:11:16.0530423Z 10 passed in 0.31s",
+          "2026-10-15T14:11:16.5730757Z 3 passed in 0.30s",
+          "2026-10-15T14:11:22.2733016Z 96 passed in 3.56s"
+        ],
+        "skipped_steps": [
+          "Enforce milestone-local M14G closure scope"
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14G focused validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate detached M14G candidate and exact receipt semantics",
+            "conclusion": "success"
+          },
+          {
+            "name": "Enforce milestone-local M14G closure scope",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Run required M14A-M14F regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470064782,
+        "name": "m14e-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:11:10Z",
+        "checkout_log_shas": [
+          "d3bef950fcd4e26e145909198288c3e1389ed50b"
+        ],
+        "log_sha256": "45ec5cd996eecb0bb791c7877bbf9302ab4d137a8aa7b2a847c4587700862131",
+        "log_bytes": 49120,
+        "pytest_counts": [
+          "2026-10-15T14:11:07.5355251Z 22 passed, 55 subtests passed in 0.27s"
+        ],
+        "skipped_steps": [
+          "Prove exact M14E milestone scope"
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14E offline validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate detached M14E synthesis and frozen accepted inputs",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate exact user-approved M14E internal synthesis acceptance",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact M14E milestone scope",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470064786,
+        "name": "foushee-full-record-benchmark",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:15:01Z",
+        "checkout_log_shas": [
+          "0cd5dbd2d5c0e44611e0669561aac009843b4ac9"
+        ],
+        "log_sha256": "2c5110424e8df355b3ada479ad1028e6743c62db67b14902a3461f008e63c46e",
+        "log_bytes": 1510078,
+        "pytest_counts": [
+          "2026-10-15T14:11:20.2589712Z 15 passed in 0.52s",
+          "2026-10-15T14:11:21.8396978Z 19 passed in 1.14s",
+          "2026-10-15T14:11:25.0488186Z 27 passed in 2.71s",
+          "2026-10-15T14:14:57.1625016Z 639 passed, 1 warning in 77.77s (0:01:17)"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install backend dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M14A shared corpus boundary",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M14B action interpretability contract",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M14C Education source-hold closure",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate governed M1-M7 chain and layered benchmark",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run full-record integration tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470064822,
+        "name": "m14h-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:31:35Z",
+        "checkout_log_shas": [
+          "d3bef950fcd4e26e145909198288c3e1389ed50b"
+        ],
+        "log_sha256": "f959f67590227442ac59269379b43e1a85868b97c2488df74999f800e310e958",
+        "log_bytes": 145261,
+        "pytest_counts": [
+          "2026-10-15T14:11:46.0336662Z 95 passed, 1 warning in 2.45s",
+          "2026-10-15T14:29:45.2541339Z 401 passed in 1077.32s (0:17:57)",
+          "2026-10-15T14:29:50.3382162Z 1 passed in 3.62s",
+          "2026-10-15T14:29:52.4257815Z 74 passed, 1 warning in 1.65s",
+          "2026-10-15T14:30:32.1330250Z   2 passed (15.5s)",
+          "2026-10-15T14:31:17.3294702Z   23 passed (19.5s)",
+          "2026-10-15T14:31:17.9507993Z 15 passed in 0.20s",
+          "2026-10-15T14:31:29.2127408Z   1 passed (9.9s)",
+          "2026-10-15T14:31:33.0359780Z 25 passed in 3.36s"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Initialize containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14H validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact M14H package and unchanged V2/migration contracts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate shared candidate preparation at exact head",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove disposable M14H apply, idempotency, faults, rollback, and public selector",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run accepted M14G and public-receipt regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run release-tier editorial, frontend, and persistence validation",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify Record at a Glance source bindings and both frontend routes",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M15B comparison semantics and governed limitation rendering",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Stop containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470065047,
+        "name": "amendment-evidence-contracts",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:10:54Z",
+        "checkout_log_shas": [
+          "0cd5dbd2d5c0e44611e0669561aac009843b4ac9"
+        ],
+        "log_sha256": "6ad2155d679fd5447dd41266a1dbc004c8b104d50902ba8f843a45a39ba723f3",
+        "log_bytes": 29162,
+        "pytest_counts": [
+          "2026-10-15T14:10:51.7233156Z ============================== 87 passed in 1.28s =============================="
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install backend dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run amendment evidence backend tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470065060,
+        "name": "receipt-evidence-repair-postgres",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:16:57Z",
+        "checkout_log_shas": [
+          "0cd5dbd2d5c0e44611e0669561aac009843b4ac9",
+          "d3bef950fcd4e26e145909198288c3e1389ed50b"
+        ],
+        "log_sha256": "5de882f02e819e43dca59371fe0e23631982c5e91f5bdb9e81a55f13f123b05a",
+        "log_bytes": 143062,
+        "pytest_counts": [
+          "2026-10-15T14:11:30.1768645Z 6 passed in 1.58s",
+          "2026-10-15T14:13:47.2069392Z 38 passed, 1 warning in 135.77s (0:02:15)",
+          "2026-10-15T14:16:14.1709866Z 13 passed in 130.33s (0:02:10)",
+          "2026-10-15T14:16:53.5782167Z 20 passed in 36.76s"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Initialize containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install backend dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Create dedicated disposable database",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact repair apply, idempotency, drift guard, and rollback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove source-verified M15A.2 core repair and public invariants",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove normalized storage at actual production cardinality",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove actual green M15B persistence and owned V2R lifecycle",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Stop containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470065104,
+        "name": "publication-activation-postgres",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:13:52Z",
+        "checkout_log_shas": [
+          "0cd5dbd2d5c0e44611e0669561aac009843b4ac9"
+        ],
+        "log_sha256": "10768f0af45b8a27584cf086b7287c30d876900c0af21648b0dcb3fdf81562e4",
+        "log_bytes": 185440,
+        "pytest_counts": [
+          "2026-10-15T14:12:45.1090316Z 23 passed, 1 warning in 14.36s",
+          "2026-10-15T14:12:48.7536248Z 58 passed, 1 warning in 3.38s",
+          "2026-10-15T14:12:51.4950422Z 1 passed in 1.49s",
+          "2026-10-15T14:12:55.7714055Z 1 passed, 1 warning in 3.09s",
+          "2026-10-15T14:12:59.7621115Z 1 passed in 2.76s",
+          "2026-10-15T14:13:03.7627297Z 2 passed in 2.78s",
+          "2026-10-15T14:13:06.4316205Z 14 passed in 1.47s"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Initialize containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install backend dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prepare reconciled disposable editorial baseline",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run publication activation PostgreSQL suite without skips",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run row-contract and owned-lifecycle fault tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove M11N authority closure, exact graph, idempotency, drift, and rollback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove M12N preparation graph, isolation, idempotency, drift, and rollback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove M13N-R Education lifecycle, idempotency, drift, and rollback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove governed M13N candidate lifecycle and exact public projections",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove V2 stable authority with fresh read-only execution evidence",
+            "conclusion": "success"
+          },
+          {
+            "name": "Build fresh disposable backup evidence",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run authoritative owned-lifecycle real-Uvicorn proof",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove no owned proof resources remain",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Stop containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470065185,
+        "name": "m14d-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:11:07Z",
+        "checkout_log_shas": [
+          "d3bef950fcd4e26e145909198288c3e1389ed50b"
+        ],
+        "log_sha256": "860a2c8c9f664c38a818edf74e54c57b84c230ebfa792126c1ddc00d1f52d5d6",
+        "log_bytes": 48062,
+        "pytest_counts": [
+          "2026-10-15T14:11:04.6482058Z 18 passed, 34 subtests passed in 0.75s"
+        ],
+        "skipped_steps": [
+          "Prove exact M14D milestone scope"
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14D offline validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M14D promotion, detached candidates, and frozen baseline",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact M14D milestone scope",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116470066915,
+        "name": "measure-reference-integration",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T14:10:12Z",
+        "completed_at": "2026-10-15T14:11:25Z",
+        "checkout_log_shas": [
+          "0cd5dbd2d5c0e44611e0669561aac009843b4ac9"
+        ],
+        "log_sha256": "b4e0af59d62a936c77fa97b62b1e0b518bf27331f44a1b480f32dad158725812",
+        "log_bytes": 54732,
+        "pytest_counts": [
+          "2026-10-15T14:11:23.1070392Z 33 passed in 0.84s"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify integration checkout identity",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install measure-reference regression dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run measure-reference regressions on integration tree",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": [
+          "2026-10-15T14:11:15.1165174Z checkout=0cd5dbd2d5c0e44611e0669561aac009843b4ac9 parents=af6cd6d78d6944d64a68a92653066c4c1625f96b d3bef950fcd4e26e145909198288c3e1389ed50b"
+        ]
+      }
+    ],
+    "run_attempt": 1,
+    "actual_job_executions": 10,
+    "carried_successes": 0,
+    "no_manual_retry": true,
+    "contexts": {
+      "feature": 5,
+      "synthetic": 4,
+      "mixed": 1
+    },
+    "synthetic_merge_sha": "0cd5dbd2d5c0e44611e0669561aac009843b4ac9",
+    "synthetic_parent_shas": [
+      "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "d3bef950fcd4e26e145909198288c3e1389ed50b"
+    ],
+    "resolved_workflow_blob": "081c14aef117867905654d3f67dbde33652f9960",
+    "resolved_workflow_sha256": "e52a857cba4ff9b1e395ab941faace4e355d316024e066c349f1ba9b9aa9b46d",
+    "workflow_ref_not_directly_logged": true,
+    "workflow_resolution_evidence": "Saved synthetic-tree workflow blob and actual executed job commands/checkouts",
+    "measure_explicit_github_sha_checkout": true,
+    "measure_identity_lines": [
+      "2026-10-15T14:11:15.1165174Z checkout=0cd5dbd2d5c0e44611e0669561aac009843b4ac9 parents=af6cd6d78d6944d64a68a92653066c4c1625f96b d3bef950fcd4e26e145909198288c3e1389ed50b"
+    ],
+    "m14h_feature_checkout": true,
+    "late_M14H_steps": [
+      {
+        "name": "Run release-tier editorial, frontend, and persistence validation",
+        "conclusion": "success"
+      },
+      {
+        "name": "Verify Record at a Glance source bindings and both frontend routes",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate M15B comparison semantics and governed limitation rendering",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+        "conclusion": "success"
+      }
+    ],
+    "all_actual_M14H_steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Initialize containers",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install M14H validation dependencies",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove exact M14H package and unchanged V2/migration contracts",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate shared candidate preparation at exact head",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove disposable M14H apply, idempotency, faults, rollback, and public selector",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run accepted M14G and public-receipt regressions",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run release-tier editorial, frontend, and persistence validation",
+        "conclusion": "success"
+      },
+      {
+        "name": "Verify Record at a Glance source bindings and both frontend routes",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate M15B comparison semantics and governed limitation rendering",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Stop containers",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "direct_main_observations": [
+      {
+        "observed_utc": "2026-10-15T14:12:26.119155+00:00",
+        "sha": "af6cd6d78d6944d64a68a92653066c4c1625f96b"
+      },
+      {
+        "observed_utc": "2026-10-15T14:34:13.974419+00:00",
+        "sha": "af6cd6d78d6944d64a68a92653066c4c1625f96b"
+      }
+    ],
+    "current_main_integration_claim": false,
+    "synthetic_base_matches_both_main_observations": true,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "remaining_gate": "Independent checkpoint233 source/domain review",
+    "all10jobs_and4late_M14H_stages_passed": true,
+    "late_M14H_verified_from_complete_job_log": [
+      {
+        "name": "Run release-tier editorial, frontend, and persistence validation",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "f959f67590227442ac59269379b43e1a85868b97c2488df74999f800e310e958",
+        "line_start_1based": 1258,
+        "line_end_exclusive_1based": 1287,
+        "required_command_and_result_markers": [
+          "python scripts/run_editorial_pipeline.py validate --tier release",
+          "--include-frontend --include-persistence",
+          "Editorial pipeline release validation passed: 9 checks"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Run release-tier editorial, frontend, and persistence validation",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Verify Record at a Glance source bindings and both frontend routes",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "f959f67590227442ac59269379b43e1a85868b97c2488df74999f800e310e958",
+        "line_start_1based": 1287,
+        "line_end_exclusive_1based": 1419,
+        "required_command_and_result_markers": [
+          "node scripts/build_record_card_review.mjs --check",
+          "node --test lib/recordCard.test.mjs lib/editorialPresentation.test.mjs",
+          "tests/record-card.spec.mjs tests/record-card-release.spec.mjs",
+          "# tests 20",
+          "# pass 20",
+          "# fail 0",
+          "23 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Verify Record at a Glance source bindings and both frontend routes",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Validate M15B comparison semantics and governed limitation rendering",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "f959f67590227442ac59269379b43e1a85868b97c2488df74999f800e310e958",
+        "line_start_1based": 1419,
+        "line_end_exclusive_1based": 1529,
+        "required_command_and_result_markers": [
+          "python scripts/build_m15b_review.py --check",
+          "backend/tests/test_m15b_interpretive_trust.py",
+          "node --test lib/m15bTrust.test.mjs lib/publicReceipt.test.mjs",
+          "expanded receipts",
+          "15 passed",
+          "# tests 15",
+          "# pass 15",
+          "# fail 0",
+          "1 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Validate M15B comparison semantics and governed limitation rendering",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "f959f67590227442ac59269379b43e1a85868b97c2488df74999f800e310e958",
+        "line_start_1based": 1529,
+        "line_end_exclusive_1based": 1635,
+        "required_command_and_result_markers": [
+          "python scripts/prepare_m15b_replacement_artifacts.py --check",
+          "backend/tests/test_reusable_publication_replacement_v2r.py",
+          "backend/tests/test_reusable_publication_replacement_v2r_postgres.py",
+          "production execution disabled",
+          "25 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      }
+    ],
+    "raw_M14H_step_metadata_inconsistent_with_completed_job_log": false,
+    "raw_pending_step_metadata_not_rewritten": true,
+    "raw_M14H_steps_empty": false,
+    "raw_step_arrays_retained_unmodified": true,
+    "jobs_API_metadata_path": ".tmp/ci233_latest_jobs_metadata.json",
+    "jobs_API_metadata_sha256": "2ee71523c69b512e020cd535e874ccc08d55f20c0d7df14e90a09140d50f0233",
+    "receipt_sha256": "e3667c82446f5152666a6d3662d7fcbdeecfa2d1739ba505d24f43686cc3180a"
+  },
+  "no_jobs_rerun": true,
+  "scope": "Exactd3bef feature and synthetic0cd5db with orderedaf6/d3befparents; actual ten fresh job executions and four positive late stages. No newer-main integration claim.",
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "d502e5ebb84deb5a390c8f8d905ca0fd5c8e7b92040dc94fc5f2033fbc470880"
+}

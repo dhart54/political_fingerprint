@@ -1,0 +1,177 @@
+{
+  "checkpoint": 208,
+  "base_head": "284b11c3b009e15972f61172954195e0e6ccdb6d",
+  "scope": "One independently bound current ES FISA candidate preserving frozen legacy title ambiguity and accepted core",
+  "candidate_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/legacy_es_fisa_source_qualification_checkpoint208.json",
+  "candidate_receipt_sha256": "4e4da818f3aa746b2d1877d393202a7f134637e846fb499b28508124901c5a63",
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_legacy_es_fisa_check_checkpoint208.json",
+  "source_quality_sha256": "a50b4bcbc869e7e5cbf59f83c4f0d5aecc645845b8070f4ab463bdafe8ac259a",
+  "qualified_core_sha256": "e2793239c93d7d3cb1a01513cc93427c6dbf14e56f58f8ec0a3e4d1ea0543126",
+  "focused_tests_passed": 361,
+  "focused_native_runner_seconds": 146.794,
+  "new_tests": 3,
+  "new_bounded_negatives": 11,
+  "negative_cases": {
+    "missing_conflict_or_separate_bindings": 5,
+    "fully_resealed_prefix_qualification_component_source_question_version": 6
+  },
+  "test_coverage_limit": "Bounded full-prepare counterexamples and supported-source positives, not exhaustive semantic proof or editorial acceptance.",
+  "initial_failed_suite": {
+    "tests_run": 361,
+    "failures": 1,
+    "passed": 360,
+    "native_seconds": 186.865,
+    "log_path": ".tmp/tests208.log",
+    "log_sha256": "c7f482d2c37fe1c709ed8301c97fac0d623ad9b7943f9be5d38f7d6a5111f959",
+    "defect": "Selected member named as demander in shared prose; fixed name-neutral procedural description without weakening test",
+    "before_core_sha256": "f07969d935b594133c2378426c038611a7288bc0650049e464fa88f4e6ca68a7",
+    "after_core_sha256": "e2793239c93d7d3cb1a01513cc93427c6dbf14e56f58f8ec0a3e4d1ea0543126",
+    "exact_actor_retained_in_source_provenance": true
+  },
+  "semantic_checks_passed": 7,
+  "IR_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4
+  },
+  "exact_replays": 14,
+  "literal_new_source_scopes": 14,
+  "preservation": {
+    "checkpoint": 208,
+    "completed_utc": "2026-10-12T00:15:35.294370+00:00",
+    "frozen_git_blobs_checked": 1066,
+    "shutdown_notes_checked": 2,
+    "prior52_cores_and90_behavioral_propositions_exact": true,
+    "total_previous_proposition_records_checked": 90,
+    "prior620_membership_records_exact": true,
+    "other675_universe_rows_exact": true,
+    "all_prior_member_projection_rows_exact": true,
+    "all_prior_readable_findings_and_questions_exact": true,
+    "complete_Health_inputs_and7_outputs_exact": true,
+    "sources_manifest_pool_exact": true,
+    "complete207_wrapper_and205_question_guard_AST_exact": true,
+    "checkpoint205_full_question_guard_exact": true,
+    "other_substantive_audit_records_exact_142_221_status_reconciled": true,
+    "legacy142_155_221_original_cores_and_source_seals_preserved": true
+  },
+  "counts": {
+    "reviewed": 621,
+    "pending": 55,
+    "ordinary_unscreened": 29,
+    "researched_holds": 26,
+    "meanings": 53,
+    "propositions": 92,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "original_frozen_core_IDs_source_seals_and_title_conflict_unchanged": true,
+  "accepted_prefix_including_ambiguity_literal_and_explicit_historical_qualification_preserved": true,
+  "complete207_wrapper_and205_question_guards_unchanged": true,
+  "independent207_review_closed_and_retry_received": true,
+  "independent208_ES_helper_legacy_ambiguity_domain_review_pending": true,
+  "CI_maintenance_separate_draft_PR217": {
+    "head": "098a93870dcdac169efd8bb1c07ff90bf302ff6f",
+    "nine_fresh_first_attempt_successes": true,
+    "private_receipt_path": ".tmp/ci_readiness_PR217_validation.json",
+    "independent_review_pending": true,
+    "merge_authorized": false
+  },
+  "logs": [
+    {
+      "log": ".tmp\\tests208_recovered.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-12T00:14:09.072381+00:00",
+      "completed_utc": "2026-10-12T00:16:36.082461+00:00",
+      "elapsed_seconds": 147.02184339999803,
+      "exit_code": 0,
+      "log_sha256": "9c7de04266f8df3667b06381c23fe012a77ea8245d0aa600a25fe5894d93f56e"
+    },
+    {
+      "log": ".tmp\\semantic208_recovered.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-12T00:16:36.102673+00:00",
+      "completed_utc": "2026-10-12T00:16:38.242431+00:00",
+      "elapsed_seconds": 2.139933900005417,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir208_recovered.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-12T00:16:38.246783+00:00",
+      "completed_utc": "2026-10-12T00:16:38.319285+00:00",
+      "elapsed_seconds": 0.07251009999890812,
+      "exit_code": 0,
+      "log_sha256": "a144c4112448fbea7387d06b755a1caaf94f9ebbf44d3ee3872d1698053bf3ed"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-12T00:16:38.324034+00:00",
+      "completed_utc": "2026-10-12T00:16:48.753264+00:00",
+      "elapsed_seconds": 10.430068899993785,
+      "outputs": 7
+    },
+    {
+      "phase": "health_byte_exact_output_replay",
+      "started_utc": "2026-10-12T00:16:48.753722+00:00",
+      "completed_utc": "2026-10-12T00:16:54.843511+00:00",
+      "elapsed_seconds": 6.090280699980212,
+      "outputs": 7
+    }
+  ],
+  "timing_through_local_delivery_preparation": {
+    "checkpoint": 208,
+    "started_utc": "2026-10-12T00:02:02.703349+00:00",
+    "base_head": "284b11c3b009e15972f61172954195e0e6ccdb6d",
+    "selection": "One separately bound legacy ES FISA roll155 candidate with historical110/119title ambiguity explicitly retained",
+    "prior207_preselection_and_private_prototype_predicates_elapsed_seconds": 2585.364923,
+    "prior207_authorized_retry_and_CI_maintenance_separately_recorded": true,
+    "new_comparable_routine_samples": 0,
+    "benchmark_result": "FAIL",
+    "benchmark_mean_seconds": 781.087,
+    "new_legislative_source_acquisitions": 0,
+    "snapshot_and_reused_ES_helper_installed_utc": "2026-10-12T00:02:58.462658+00:00",
+    "authoring_completed_utc": "2026-10-12T00:05:40.836332+00:00",
+    "source_domain_authoring_endpoint_seconds": 218.132983,
+    "member_neutral_defect_safely_corrected_utc": "2026-10-12T00:13:43.341999+00:00",
+    "initial361_suite_one_failure_and_recovery_included": true,
+    "local_validation_completed_utc": "2026-10-12T00:19:44.885904+00:00",
+    "local_delivery_preparation_endpoint_seconds": 1062.182555
+  },
+  "validation_tier": "semantic",
+  "new_head_CI_pending": true,
+  "new_comparable_routine_samples": 0,
+  "benchmark_result": "FAIL",
+  "benchmark_mean_seconds": 781.087,
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_eligible": false,
+  "receipt_sha256": "dc26398d07538e20bad5ee43cfa0865aa37a739603e3243b2242b304c96df344"
+}

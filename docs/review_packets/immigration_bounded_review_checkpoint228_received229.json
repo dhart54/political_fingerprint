@@ -1,0 +1,58 @@
+{
+  "reviewed_checkpoint": 228,
+  "received_checkpoint": 229,
+  "reviewed_head": "346434f5088dcc9c63a1428750d7c7caabd31695",
+  "source_thread_id": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+  "received_utc": "2026-10-14T23:01:18.350514+00:00",
+  "reported_review_complete": true,
+  "reported_report_sha256": "fba8ad6a8f16c9b8d9aabab9dc4c501e6832d2dc2b05bb816a5e1ebeb9db1e5e",
+  "reported_receipt_sha256": "599050653bb9cc4b4fd87ece71e8b9011ea583d7e023faafcee379f0bbee8472",
+  "full_raw_report_or_receipt_received_or_locally_rehashed": false,
+  "reported_checks": {
+    "CLI_byte_exact_outputs": 7,
+    "focused_tests": 22,
+    "resealed_CLI_rejection_probes": 7,
+    "conservation_mutations": 13,
+    "conservation_checks": 97,
+    "all69priorcores_exact": true,
+    "prior_propositions_expanded": 4,
+    "unaffected_propositions_exact": 114,
+    "observations_preserved": true,
+    "first_attempt_CI_jobs": 10,
+    "executed_late_M14H_stages": 4
+  },
+  "owner_full397_tests_attributed_not_independently_reexecuted": true,
+  "private_whole_primary_coverage_intervals_not_independently_certified": true,
+  "fresh_raw_PDF_and_exhaustive_semantics_not_independently_certified": true,
+  "open_findings": [
+    "P2 section8002 complete qualified mechanism on2:45",
+    "P3 eight divisions on1:285",
+    "P3 pending audit summary missing three new rows"
+  ],
+  "CI_base_parent_detail_pending_clarification": false,
+  "independent_correction_recheck_required": true,
+  "whole_corpus_semantic_clearance": false,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "4c4ae05e43e82325b67b30a7d8d4ad8fce7731d83be5600eb0f9887c66a6b1c7",
+  "superseded_reported_hashes": {
+    "report_sha256": "57e0f8aae4e60412730497fda6ae4cfc592ac6edb039c2a500db824df521d407",
+    "receipt_sha256": "7ba0d788f9e92c9a2dcc102fab62385feecb9898f34da5ae3ff737c00d861764",
+    "bounded_received_receipt_sha256": "8fc071532c3523ff15f9178053d7856a8baecb79918a0a066a8efe6d84921cae",
+    "preserved_history": true
+  },
+  "reported_CI_base_clarification": {
+    "recorded_utc": "2026-10-14T22:37:13Z",
+    "clarification_received_utc": "2026-10-14T23:05:45.825742+00:00",
+    "synthetic_merge_sha": "e25e7b83ef59d221924140e84e0943630e6edcd3",
+    "parents": [
+      "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "346434f5088dcc9c63a1428750d7c7caabd31695"
+    ],
+    "known_main_at_run": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+    "four_synthetic_jobs_and_initial_mixed_portion_verified_known_main_integration": true,
+    "historical862b290_only_embedded_run_PR_base_field": true,
+    "no_newer_live_main_observation_or_future_main_claim": true,
+    "findings_unchanged": true
+  }
+}

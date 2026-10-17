@@ -1,0 +1,219 @@
+{
+  "authority": "Same-owner source-first selected travel/inspection-fee continuation; no independent acceptance or package closure",
+  "prior_checkpoint": "c500cb2744bb35c4d6c4c456c0a316ed61e3dc8c",
+  "prior_authoring_action_sha256": {
+    "house:119:1:145": "f79b9f7d1f0738822a778bc08266c32c1f98ab1912b4c91cc473ab38401c0231",
+    "house:119:1:190": "cc7c9c5d4ac45f32b096c4ad31985486bf1ec8c53b733104b9d3207e1d89348b"
+  },
+  "current_authoring_action_sha256": {
+    "house:119:1:145": "6179ee00fbe9d35a9b2c3261f6be4d4abb7ddc9ccdcb25ebaae7819db951f123",
+    "house:119:1:190": "a2eed8f77a82f2aaa68ae07d161ccbd344b997ac2856ebca257f61cb671fb42d"
+  },
+  "action_claim_bindings": {
+    "house:119:1:145": [
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "Complete exact-version 70017-70019: ESTA component/baseline edits, own inspection exceptions where printed, EVUS amount/account/enrollment-versus-payment terms",
+        "passage_sha256": "62b89f1db768053425e5c0bd7685ab40c18356dab2e81bf5b2636c8fd9967772",
+        "passage_length": 5797
+      },
+      {
+        "source_id": "govinfo:8usc1187h3-2024-esta",
+        "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+        "passage_sha256": "e3530a02b8a014919f367f7934e3c5909b229b437d92c79295390a0aa059c24e",
+        "passage_length": 4248
+      },
+      {
+        "source_id": "govinfo:8usc1356deh-2024-inspection-fees",
+        "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+        "passage_sha256": "40220df80c49fa4d83842fe1a5373db5ab027c2dee1ce092d15c70519839723f",
+        "passage_length": 5398
+      }
+    ],
+    "house:119:1:190": [
+      {
+        "source_id": "govinfo:hr1eas",
+        "locator": "Complete exact-version 100014-100015: ESTA component/baseline edits, own inspection exceptions where printed, EVUS amount/account/enrollment-versus-payment terms",
+        "passage_sha256": "0683f9644a118af24d5f7732d7456a56860654214cc29451e1f43f82f147c70a",
+        "passage_length": 4068
+      },
+      {
+        "source_id": "govinfo:8usc1187h3-2024-esta",
+        "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+        "passage_sha256": "e3530a02b8a014919f367f7934e3c5909b229b437d92c79295390a0aa059c24e",
+        "passage_length": 4248
+      },
+      {
+        "source_id": "govinfo:hr1eas-travel-printing-witness",
+        "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+        "passage_sha256": "fcad7ef32de89540719979ba02623cd6e45df5ce05e74f01867242441c805d45",
+        "passage_length": 6179
+      }
+    ]
+  },
+  "house_eh_comparisons": {
+    "70017": {
+      "floor_passage_sha256": "62b89f1db768053425e5c0bd7685ab40c18356dab2e81bf5b2636c8fd9967772",
+      "eh_comparison_sha256": "62b89f1db768053425e5c0bd7685ab40c18356dab2e81bf5b2636c8fd9967772",
+      "comparison": "Complete selected travel clauses byte-identical in normalized governed floor/EH text; floor remains controlling"
+    }
+  },
+  "source_first_copy_review": [
+    {
+      "action_id": "house:119:1:145",
+      "qualification_sha256": "ae7105de43ddab6fef6dfb9ac92845e54f1f9f59774fae7abbd6f672494780e0",
+      "source_first_checks": "Common predicates, each own exception/location/actor/time condition, account share units, minima versus totals and literal unresolved references checked independently from detail",
+      "support_claim_bindings": [
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+          "locator": "Complete exact-version 70017-70019: ESTA component/baseline edits, own inspection exceptions where printed, EVUS amount/account/enrollment-versus-payment terms",
+          "passage_sha256": "62b89f1db768053425e5c0bd7685ab40c18356dab2e81bf5b2636c8fd9967772"
+        },
+        {
+          "source_id": "govinfo:8usc1187h3-2024-esta",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "e3530a02b8a014919f367f7934e3c5909b229b437d92c79295390a0aa059c24e"
+        },
+        {
+          "source_id": "govinfo:8usc1356deh-2024-inspection-fees",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "40220df80c49fa4d83842fe1a5373db5ab027c2dee1ce092d15c70519839723f"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:145",
+      "qualification_sha256": "182335e89a7f7c4d646fb7fb2c3e80510b94c2876492d3ebbfcacd7f391ebf8b",
+      "source_first_checks": "Common predicates, each own exception/location/actor/time condition, account share units, minima versus totals and literal unresolved references checked independently from detail",
+      "support_claim_bindings": [
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+          "locator": "Complete exact-version 70017-70019: ESTA component/baseline edits, own inspection exceptions where printed, EVUS amount/account/enrollment-versus-payment terms",
+          "passage_sha256": "62b89f1db768053425e5c0bd7685ab40c18356dab2e81bf5b2636c8fd9967772"
+        },
+        {
+          "source_id": "govinfo:8usc1187h3-2024-esta",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "e3530a02b8a014919f367f7934e3c5909b229b437d92c79295390a0aa059c24e"
+        },
+        {
+          "source_id": "govinfo:8usc1356deh-2024-inspection-fees",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "40220df80c49fa4d83842fe1a5373db5ab027c2dee1ce092d15c70519839723f"
+        }
+      ],
+      "before_push_precision": "Separate common designated-port condition from each labeled ferry/Great-Lakes branch; transit/no-inspection is its own conjunction. Full source-first predicate grouping inspected before push."
+    },
+    {
+      "action_id": "house:119:1:145",
+      "qualification_sha256": "5a68b0fb3f1d1aa6e5d2f94242034120690fbca7f1196ee2cf7d004ae5c71568",
+      "source_first_checks": "Common predicates, each own exception/location/actor/time condition, account share units, minima versus totals and literal unresolved references checked independently from detail",
+      "support_claim_bindings": [
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+          "locator": "Complete exact-version 70017-70019: ESTA component/baseline edits, own inspection exceptions where printed, EVUS amount/account/enrollment-versus-payment terms",
+          "passage_sha256": "62b89f1db768053425e5c0bd7685ab40c18356dab2e81bf5b2636c8fd9967772"
+        },
+        {
+          "source_id": "govinfo:8usc1187h3-2024-esta",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "e3530a02b8a014919f367f7934e3c5909b229b437d92c79295390a0aa059c24e"
+        },
+        {
+          "source_id": "govinfo:8usc1356deh-2024-inspection-fees",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "40220df80c49fa4d83842fe1a5373db5ab027c2dee1ce092d15c70519839723f"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:190",
+      "qualification_sha256": "ae7105de43ddab6fef6dfb9ac92845e54f1f9f59774fae7abbd6f672494780e0",
+      "source_first_checks": "Common predicates, each own exception/location/actor/time condition, account share units, minima versus totals and literal unresolved references checked independently from detail",
+      "support_claim_bindings": [
+        {
+          "source_id": "govinfo:hr1eas",
+          "locator": "Complete exact-version 100014-100015: ESTA component/baseline edits, own inspection exceptions where printed, EVUS amount/account/enrollment-versus-payment terms",
+          "passage_sha256": "0683f9644a118af24d5f7732d7456a56860654214cc29451e1f43f82f147c70a"
+        },
+        {
+          "source_id": "govinfo:8usc1187h3-2024-esta",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "e3530a02b8a014919f367f7934e3c5909b229b437d92c79295390a0aa059c24e"
+        },
+        {
+          "source_id": "govinfo:hr1eas-travel-printing-witness",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "fcad7ef32de89540719979ba02623cd6e45df5ce05e74f01867242441c805d45"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:190",
+      "qualification_sha256": "182335e89a7f7c4d646fb7fb2c3e80510b94c2876492d3ebbfcacd7f391ebf8b",
+      "source_first_checks": "Common predicates, each own exception/location/actor/time condition, account share units, minima versus totals and literal unresolved references checked independently from detail",
+      "support_claim_bindings": [
+        {
+          "source_id": "govinfo:hr1eas",
+          "locator": "Complete exact-version 100014-100015: ESTA component/baseline edits, own inspection exceptions where printed, EVUS amount/account/enrollment-versus-payment terms",
+          "passage_sha256": "0683f9644a118af24d5f7732d7456a56860654214cc29451e1f43f82f147c70a"
+        },
+        {
+          "source_id": "govinfo:8usc1187h3-2024-esta",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "e3530a02b8a014919f367f7934e3c5909b229b437d92c79295390a0aa059c24e"
+        },
+        {
+          "source_id": "govinfo:hr1eas-travel-printing-witness",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "fcad7ef32de89540719979ba02623cd6e45df5ce05e74f01867242441c805d45"
+        }
+      ],
+      "before_push_precision": "Separate common designated-port condition from each labeled ferry/Great-Lakes branch; transit/no-inspection is its own conjunction. Full source-first predicate grouping inspected before push."
+    },
+    {
+      "action_id": "house:119:1:190",
+      "qualification_sha256": "5a68b0fb3f1d1aa6e5d2f94242034120690fbca7f1196ee2cf7d004ae5c71568",
+      "source_first_checks": "Common predicates, each own exception/location/actor/time condition, account share units, minima versus totals and literal unresolved references checked independently from detail",
+      "support_claim_bindings": [
+        {
+          "source_id": "govinfo:hr1eas",
+          "locator": "Complete exact-version 100014-100015: ESTA component/baseline edits, own inspection exceptions where printed, EVUS amount/account/enrollment-versus-payment terms",
+          "passage_sha256": "0683f9644a118af24d5f7732d7456a56860654214cc29451e1f43f82f147c70a"
+        },
+        {
+          "source_id": "govinfo:8usc1187h3-2024-esta",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "e3530a02b8a014919f367f7934e3c5909b229b437d92c79295390a0aa059c24e"
+        },
+        {
+          "source_id": "govinfo:hr1eas-travel-printing-witness",
+          "locator": "Complete material pre-vote ESTA System/fee/validity or inspection/account paragraphs; complete selected officialPDF printing pages where identified",
+          "passage_sha256": "fcad7ef32de89540719979ba02623cd6e45df5ce05e74f01867242441c805d45"
+        }
+      ]
+    }
+  ],
+  "compact_review": "Both existing selected compact descriptions remain unchanged and nonexhaustive; rechecked border/detention/asylum/EAD quantifiers against prior exact bindings; no implication of travel-fee total/coverage",
+  "printing_witness": {
+    "source_id": "govinfo:hr1eas-travel-printing-witness",
+    "raw_sha256": "4093bdc58acda5da3c425339a504495afa16b5242ead24bb0c0388327ab897d0",
+    "pages": [
+      819,
+      820,
+      821,
+      822,
+      823,
+      824
+    ],
+    "visually_inspected_pages": [
+      819,
+      820,
+      821,
+      823
+    ],
+    "scope": "Specific literal prior-base/ESTA section boundary andEVUSpayment-count; no fullPDF/EOIR/absentia audit"
+  },
+  "publication_authorized": false,
+  "receipt_sha256": "206c73a24f65846ae4e7a5eb778878e8ced69ebed920bffc1a64844b22f05fc1"
+}

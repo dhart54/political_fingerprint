@@ -1,0 +1,64 @@
+{
+  "authority": "Bounded independent checkpoint28 semantic defect plus source-grounded same-owner correction; no acceptance/fullpackagePASS",
+  "reviewed_commit": "d1d146567e17d764b45f1f838afd8da0d2377db4",
+  "source_authoring_blob": "619c013430abef22b33798c338ef2681d7469c0d",
+  "finding_id": "IB-HR1-PAROLE-FUNERAL-LOCATION",
+  "severity": "Major",
+  "scope": "House70004(a)(4)/(5) andSenate100004(b)(4)/(5), shared authoring.meaning and both member generated detail; fee-exemption predicate narrowing, no direction/membership reversal",
+  "cases": [
+    {
+      "action_id": "house:119:1:145",
+      "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+      "source_governed_sha256": "de6f13ee9abdba11e444296965169141ee876a1abd99453d1b837b6aca5bc49a",
+      "before_authoring_action_sha256": "14e8c0466a9838d4af46628f3fd77de7dab30918edc51157ac41d5a8dea5dd01",
+      "corrected_authoring_action_sha256": "81c9b5362cbd403e45ff3010808b1bc0ee7cb70c3fb2b771cb6fd2aa494f047a",
+      "incorrect_clause": "imminent death or a funeral of a close family member IN THE US, with insufficient normal-visa time to see that person alive or attend the funeral respectively;",
+      "corrected_clause": "a close family member in the United States whose death is imminent, when normal visa processing would prevent arriving while that person is alive; or seeking to attend a close family member's funeral, when normal visa processing would prevent arriving in the United States in time for it;",
+      "imminent_death_operative_passage": "(4) the alien has a close family member in the United States whose death is imminent and the alien could not arrive in the United States in time to see such family member alive if the alien were to be admitted to the United States through the normal visa process; ",
+      "funeral_operative_passage": "(5) the alien is seeking to attend the funeral of a close family member and the alien could not arrive in the United States in time to attend such funeral if the alien were to be admitted to the United States through the normal visa process; ",
+      "dying_passage_sha256": "2b41f422fee6bf1062bc6ef2d19ae28364739d9711d74a5e2aeaa1bbd613a160",
+      "funeral_passage_sha256": "f2e53662518e30d1cfc835bde7313f8b3c2a2315ddded54042194f7410c3b082"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "source_id": "govinfo:hr1eas",
+      "source_governed_sha256": "bab290d1cf5edfa935f82f4ad180265f1f0b4d3b5d507235f1660e45c99aaab7",
+      "before_authoring_action_sha256": "1cdff25ee9bbe158ceccd109ce2874bfea5e517a55c583516eccff555fb8c8aa",
+      "corrected_authoring_action_sha256": "c5cd7206203595af478276ff1a9430dc2b9840c4add0f629aa85341b73475fef",
+      "incorrect_clause": "imminent death or a funeral of a close family member IN THE US, with insufficient normal-visa time to see that person alive or attend the funeral respectively;",
+      "corrected_clause": "a close family member in the United States whose death is imminent, when normal visa processing would prevent arriving while that person is alive; or seeking to attend a close family member's funeral, when normal visa processing would prevent arriving in the United States in time for it;",
+      "imminent_death_operative_passage": "(4)(A) the alien has a close family member in the United States whose death is imminent; and (B) the alien could not arrive in the United States in time to see such family member alive if the alien were to be admitted to the United States through the normal visa process; ",
+      "funeral_operative_passage": "(5)(A) the alien is seeking to attend the funeral of a close family member; and (B) the alien could not arrive in the United States in time to attend such funeral if the alien were to be admitted to the United States through the normal visa process; ",
+      "dying_passage_sha256": "bec374b41b261a0b0ea5cf51603406a04dde230463f5376e94dcf0b80413d3b7",
+      "funeral_passage_sha256": "8202fe2426fe7edfe83bfc0b1911ecfbfdf187385e5f204a5b72d1600b6daf88"
+    }
+  ],
+  "independent_source": "Trusted Fingerprint supervisor delegation2026-10-06",
+  "independent_recheck_pending": true,
+  "adjacent_exception_review": {
+    "method": "Re-read all10House/EASexceptions with per-clause predicate matrix; do not distribute location/time/age/agency/conjunction modifiers across siblings",
+    "findings": [
+      "Medical foreign-residence/unavailable-treatment versus life-threatening-insufficient-time alternatives kept separate",
+      "Minor qualifier applies only parent/guardian-of-medical-emergency-alien exception; not organ/adoption/family exceptions",
+      "US-relative location belongs to imminent death only; funeral keeps seeking/normal-visa-arrival-in-time predicate",
+      "Adoption legalcustody/urgenttreatment-beforevisa, lawful245temporaryreturn and235b2Chearing purposes remain distinct",
+      "DistinctHouseCubanprogramconjunction/Sen501egrantedstatus preserved",
+      "PrintedDHS significant-public-benefit determination now explicit alongside assistANDpresenceANDoneeligibility/timealternative"
+    ]
+  },
+  "regression": "Single source-backed negative test covers both shared version objects, not per-representative edits; reproduced Major before correction",
+  "historical_reimbursement_minor_receipt": "docs/review_packets/hr1_checkpoint24_independent_review.json",
+  "full_corpus_verdict": null,
+  "publication_authorized": false,
+  "receipt_sha256": "6a524ca939796b9c2676f8fa8250c8fb573aa75e1379ba6e1040c11a8294239d",
+  "correction_validation": {
+    "focused_tests": 223,
+    "focused_runtime_seconds": 38.526,
+    "semantic_checks": 7,
+    "byte_identical_outputs": 7,
+    "bounded_extent_witnesses_reconstructed": 94,
+    "core_sha256": "8d0075c4c04fd67a34b2c7adfae5ef7075a00d4de0327a46fe1dd46e034bc704",
+    "compiled_sha256": "b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f",
+    "independent_recheck_pending": true
+  }
+}
