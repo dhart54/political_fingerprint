@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: batch12. Candidate only; independent review remains in progress
+Current checkpoint: batch13. Batch12corrections remain inherited unchanged. Candidate only; independent review remains in progress
 on the earlier exact head `d2865c36c277c85866ca38935eb11706d63f4313`. This increment
 has no transferred review or acceptance. Owner/worktree: DESKTOP-1CQBHTJ,
 `.w/infra`, branch `codex/infrastructure-candidate-seed`, original main base
@@ -29,7 +29,7 @@ identities unscreened. They were examined through d2865c36, at which there were7
 examined identities and600ordinary remaining. Earlier snapshots stay immutable.
 Counts were valid; this is a prose/provenance correction, not a counting repair.
 
-## New chronological screening
+## Batch12 chronological screening
 
 | Exact House119 session1 action | Source-backed outcome |
 |---|---|
@@ -47,9 +47,9 @@ units are separately recorded: three exact-question procedural reviews, one
 institutional rule-effect review and six complete identified bill-body domain
 screens. No new whole-action meaning was authored. [Evidence-unit receipt](../editorial/shared_candidates/house_119_infrastructure_batch12_20260916/screening_units_receipt.json).
 
-The current partial accounting is30shared meanings +27procedures +11proposed
+The batch12partial accounting was30shared meanings +27procedures +11proposed
 exclusions +1nonbinding expression +3source/version holds +14ordinary unfinished/
-review cases +590unscreened =676identities. This is86examined identities, not
+review cases +590unscreened =676identities. That was86examined identities, not
 complete-domain screening or accepted membership. Five authored Not Voting
 observations, H.R.2189unaccepted membership, all old source holds and all eight
 old research/two legal-review cases remain explicit and unchanged.
@@ -67,7 +67,13 @@ No source acquisition or protected-chain retry occurred.
 [Validation](../editorial/shared_candidates/house_119_infrastructure_batch12_20260916/validation_receipt.json) ·
 [Living plan](../plans/infrastructure_remaining_discovery_screening.md)
 
-Next chronological frontier begins session1roll14. Continue the remaining590
+The batch12frontier began session1roll14 with590remaining; the updated batch13resume is below. Continue remaining
 ordinary records in bounded source-backed groups. No editorial acceptance,
 universe closure, publication/registry change, production write, merge or manual
 deployment. H.J.Res.87, H.R.4690 and cancelled WRDAreplay restrictions remain.
+
+## Batch13 continuation
+
+Ten further chronological identities (session1rolls14-23) add3procedures,3proposed exclusions and4ordinary research/boundary leads. The complete waterway geospatial bill is a direct data/navigation lead. Monument siting and tribal utility-right assignment have real operative provisions with material baseline/boundary work remaining. Taiwan tax/crew provisions were read only in declared extents; no whole37587-character package review is claimed. S5is examined as its own Senate version, preserving additions beyondHR29.
+
+Current accounting:30meanings +30procedures +14proposed exclusions +1expression +3holds +18ordinary unfinished/review cases +580unscreened=676;96owner-examined identities. Evidence units remain separate from metadata. Current batch source/accounting/replay validator and7semantic checks pass.54focused correction tests are inherited from81d15d09, not claimed rerun locally for these data-only changes. [Batch13packet](infrastructure_candidate_batch13.md) and its [resume](../editorial/shared_candidates/house_119_infrastructure_batch13_20260916/resume_receipt.json) are the new continuation point. Source acquisition count0; all protected chains and review/publication boundaries remain.
