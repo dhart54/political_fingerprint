@@ -95,7 +95,7 @@ jobs:
             backend/tests/test_m13n_education_workforce_ratification_candidate.py
 
       - name: Validate shared candidate preparation at exact head
-        run: python -m pytest -q backend/tests/test_shared_domain_candidate.py backend/tests/test_shared_legislative_corpus.py backend/tests/test_infrastructure_candidate_seed.py backend/tests/test_infrastructure_candidate_batch2.py backend/tests/test_infrastructure_candidate_batch3.py backend/tests/test_infrastructure_candidate_batch4.py backend/tests/test_infrastructure_candidate_batch5.py
+        run: python -m pytest -q backend/tests/test_shared_domain_candidate.py backend/tests/test_shared_legislative_corpus.py backend/tests/test_infrastructure_candidate_seed.py backend/tests/test_infrastructure_candidate_batch2.py backend/tests/test_infrastructure_candidate_batch3.py backend/tests/test_infrastructure_candidate_batch4.py backend/tests/test_infrastructure_candidate_batch5.py backend/tests/test_infrastructure_candidate_batch6.py
 
       - name: Prove disposable M14H apply, idempotency, faults, rollback, and public selector
         run: |
