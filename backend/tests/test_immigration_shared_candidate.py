@@ -7700,7 +7700,7 @@ class Checkpoint256AuthorizationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.q=json.loads((DATA/'hr1968_authorization_conditions_checkpoint256.json').read_text())
         cls.a=json.loads((DATA/'authoring.json').read_text())
-        cls.action=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:70')
+        cls.action=json.loads((DATA/'closure_audit_correction_checkpoint261.json').read_text())['prior_authoring']['house:119:1:70']
         cls.cap=json.loads((DATA/'sources.json').read_text())
         cls.bank={v['source_id']:v for v in cls.cap['sources']}
         cls.prior=cls.q['prior_authoring'][cls.action['action_id']]
@@ -7775,7 +7775,7 @@ class Checkpoint256AuthorizationTests(unittest.TestCase):
         self.assertEqual(new['claim_source_map'][:len(old['claim_source_map'])],old['claim_source_map'])
         for key in ['choice_meanings','compact_description','compact_source_refs','short_description','stage','episode_id']:self.assertEqual(old[key],new[key])
         self.assertEqual(len(new['claim_source_map'])-len(old['claim_source_map']),7)
-        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==new['action_id'])
+        core=json.loads((DATA/'closure_audit_correction_checkpoint261.json').read_text())['prior_cores'][new['action_id']]
         self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][new['action_id']])
 
     def test_sources_stale_or_resealed_fail_closed_and_own_constraint_required(self):
@@ -7906,7 +7906,7 @@ class Checkpoint258FuelPaymentTests(unittest.TestCase):
     def setUpClass(cls):
         cls.q=json.loads((DATA/'hr1_fuel_payment_conditions_checkpoint258.json').read_text())
         cls.a=json.loads((DATA/'authoring.json').read_text())
-        cls.act=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:190')
+        cls.act=json.loads((DATA/'closure_audit_correction_checkpoint261.json').read_text())['prior_authoring']['house:119:1:190']
         cls.old=cls.q['prior_authoring'][cls.act['action_id']]
         cls.cap=json.loads((DATA/'sources.json').read_text())
         cls.bank={v['source_id']:v for v in cls.cap['sources']}
@@ -7979,7 +7979,7 @@ class Checkpoint258FuelPaymentTests(unittest.TestCase):
             self.assertEqual(act[field][:len(old[field])],old[field])
         changed={'meaning','limitations','source_render_constraints','additional_source_ids','claim_source_map'}
         self.assertEqual({k:v for k,v in act.items() if k not in changed},{k:v for k,v in old.items() if k not in changed})
-        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==aid)
+        core=json.loads((DATA/'closure_audit_correction_checkpoint261.json').read_text())['prior_cores'][aid]
         self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][aid])
         for prior_member,current_member in zip(q['prior_member_projections'],json.loads((DATA/'hr1_house_fuel_baseline_conditions_checkpoint259.json').read_text())['prior_member_projections']):
             for prior in prior_member['actions']:
@@ -8010,7 +8010,7 @@ class Checkpoint259HouseFuelBaselineTests(unittest.TestCase):
     def setUpClass(cls):
         cls.q=json.loads((DATA/'hr1_house_fuel_baseline_conditions_checkpoint259.json').read_text())
         cls.a=json.loads((DATA/'authoring.json').read_text())
-        cls.act=next(v for v in cls.a['actions'] if v['action_id']=='house:119:1:145')
+        cls.act=json.loads((DATA/'closure_audit_correction_checkpoint261.json').read_text())['prior_authoring']['house:119:1:145']
         cls.old=cls.q['prior_authoring'][cls.act['action_id']]
         cls.cap=json.loads((DATA/'sources.json').read_text())
         cls.bank={v['source_id']:v for v in cls.cap['sources']}
@@ -8099,7 +8099,7 @@ class Checkpoint259HouseFuelBaselineTests(unittest.TestCase):
         self.assertEqual({k:v for k,v in act.items() if k not in omit},{k:v for k,v in old.items() if k not in omit})
         self.assertGreaterEqual(len(q['source_epoch_reviewed_head_proof']),5)
         self.assertTrue(all(r['only_target_status_carrier_unchanged'] for r in q['source_epoch_reviewed_head_proof']))
-        core=next(v for v in json.loads((DATA/'generated/shared_action_core.json').read_text())['actions'] if v['action_id']==aid);self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][aid])
+        core=json.loads((DATA/'closure_audit_correction_checkpoint261.json').read_text())['prior_cores'][aid];self.assertEqual(core['action_core_sha256'],q['current_core_sha256'][aid])
         for prior_member,current_member in zip(q['prior_member_projections'],json.loads((DATA/'shared_member_neutrality_correction_checkpoint260.json').read_text())['prior_member_projections']):
             for prior in prior_member['actions']:
                 current=next(v for v in current_member['actions'] if v['action_id']==prior['action_id']);omit={'action_core_sha256'} if prior['action_id']==aid else set();self.assertEqual({k:v for k,v in prior.items() if k not in omit},{k:v for k,v in current.items() if k not in omit})
@@ -8175,7 +8175,8 @@ class Checkpoint260SharedMemberNeutralityTests(unittest.TestCase):
             self.assertEqual(after['candidate_exact_action_meaning'], after['mechanism'])
 
     def test_all_member_observations_and_entire_proposition_graphs_preserved(self):
-        projections = json.loads((DATA / 'generated/member_projections.json').read_text(encoding='utf-8'))
+        # Historical260 conservation ends at its sealed pre261 snapshot;261 verifies the live observations below.
+        projections = json.loads((DATA / 'closure_audit_correction_checkpoint261.json').read_text(encoding='utf-8'))['prior_member_projections']
         self.assertEqual(sum(len(p['actions']) for p in projections), 174)
         for old, new in zip(self.q['prior_member_projections'], projections):
             self.assertEqual(old['member_id'], new['member_id'])
@@ -8198,6 +8199,159 @@ class Checkpoint260SharedMemberNeutralityTests(unittest.TestCase):
         self.assertFalse(self.q['production_writes'])
         self.assertEqual(self.q['new_sources'], 0)
         self.assertEqual(self.q['new_screening_completions'], 0)
+
+
+
+class Checkpoint261ClosureCorrectionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.q = json.loads((DATA / 'closure_audit_correction_checkpoint261.json').read_text(encoding='utf-8'))
+        cls.a = json.loads((DATA / 'authoring.json').read_text(encoding='utf-8'))
+        cls.core = json.loads((DATA / 'generated/shared_action_core.json').read_text(encoding='utf-8'))
+        cls.actions = {x['action_id']: x for x in cls.a['actions']}
+        cls.cores = {x['action_id']: x for x in cls.core['actions']}
+        cls.active = {p: json.loads((DATA.parents[3] / p).read_text(encoding='utf-8'))
+                      for p in cls.q['active_copy_files']}
+
+    @staticmethod
+    def at(value, pointer):
+        for part in pointer.split('/')[1:]:
+            value = value[int(part)] if isinstance(value, list) else value[part]
+        return value
+
+    def test_exact_six_replacements_and_one_locator_only(self):
+        self.assertEqual(len(self.q['fixes']), 6)
+        for aid, before in self.q['prior_authoring'].items():
+            expected = copy.deepcopy(before)
+            for fix in self.q['fixes']:
+                if fix['action_id'] != aid:
+                    continue
+                if fix['field'] == 'meaning':
+                    self.assertEqual(expected['meaning'].count(fix['before']), 1)
+                    expected['meaning'] = expected['meaning'].replace(fix['before'], fix['after'], 1)
+                else:
+                    self.assertEqual(expected['limitations'][fix['index']], fix['before'])
+                    expected['limitations'][fix['index']] = fix['after']
+            if aid == self.q['added_claim_binding']['action_id']:
+                expected['claim_source_map'].append(self.q['added_claim_binding']['binding'])
+            self.assertEqual(self.actions[aid], expected)
+            self.assertEqual(digest(expected), self.q['current_authoring_sha256'][aid])
+
+    def test_all_affected_active_string_copies_match_repaired_bytes(self):
+        for row in self.q['active_string_repairs']:
+            with self.subTest(path=row['path'], pointer=row['pointer']):
+                value = self.at(self.active[row['path']], row['pointer'])
+                self.assertEqual(digest(value), row['after_sha256'])
+                for fix in self.q['fixes']:
+                    self.assertNotIn(fix['before'], value)
+        for aid, count in self.q['active_fullmeaning_copy_counts'].items():
+            self.assertEqual(count, 8)
+            self.assertEqual(sum(r['kind'] == 'full_meaning' and r['action_id'] == aid
+                                 for r in self.q['active_string_repairs']), 8)
+
+    def test_original_status_and_pair_defects_are_witnessed_negative_controls(self):
+        for fix in self.q['fixes']:
+            prior = self.q['prior_authoring'][fix['action_id']]
+            text = prior[fix['field']] if fix['field'] == 'meaning' else prior['limitations'][fix['index']]
+            self.assertIn(fix['before'], text)
+            with self.assertRaises(AssertionError):
+                self.assertNotIn(fix['before'], text)
+        for aid in ['house:119:1:145', 'house:119:1:190']:
+            self.assertRegex(self.q['prior_authoring'][aid]['meaning'], r"either member's whole-package vote")
+            self.assertNotRegex(self.actions[aid]['meaning'], r"either member's whole-package vote")
+
+    def test_exact_11205_source_extent_and_narrow_scope(self):
+        bank = {x['source_id']: x for x in json.loads((DATA / 'sources.json').read_text(encoding='utf-8'))['sources']}
+        row = self.q['added_claim_binding']; binding = row['binding']; source = bank[binding['source_id']]
+        self.assertEqual(len(source['text']), 109266)
+        self.assertEqual(source['text'][82570:82807], binding['passage'])
+        self.assertEqual({k: source[k] for k in row['source_identity']}, row['source_identity'])
+        self.assertEqual(source['governed_bytes_sha256'], sealed_digest(source, 'governed_bytes_sha256'))
+        for phrase in ['Notwithstanding section 1101', 'funds appropriated by this Act',
+                       'section 7004(e)', 'section 7034(r)', 'section 7045(l)(2)']:
+            self.assertIn(phrase, binding['passage'])
+        self.assertNotIn('section 7034(l)', binding['passage'])
+        self.assertEqual(self.actions[row['action_id']]['claim_source_map'][row['index']], binding)
+
+    def test_11205_binding_is_present_in_every_active_claim_map_and_original_gap_detected(self):
+        old = self.q['prior_authoring']['house:119:1:70']['claim_source_map']
+        binding = self.q['added_claim_binding']['binding']
+        self.assertFalse(any('11205' in x['locator'] for x in old))
+        with self.assertRaises(AssertionError):
+            self.assertIn(binding, old)
+        self.assertEqual(len(self.q['active_claimmap_repairs']), 4)
+        for row in self.q['active_claimmap_repairs']:
+            value = self.at(self.active[row['path']], row['pointer'])
+            self.assertEqual(value, old + [binding])
+
+    def test_program_and_registered_capture_qualification_retains_application_holds(self):
+        action = self.actions['house:119:1:70']
+        self.assertIn('bounded current 20705 program and original/current mapping are qualified', action['meaning'])
+        self.assertIn('remaining fund and continuing-year applications unresolved', action['meaning'])
+        self.assertIn('remaining PL117-328 conditions and continuing-year/fund applications remain unresolved', action['limitations'][92])
+        self.assertIn('prior 69 questions unchanged and Q68 scope remains fund(e)', action['limitations'][92])
+        manifest = json.loads((DATA / 'research_capture_manifest.json').read_text(encoding='utf-8'))
+        registered = next(s for s in manifest['sources'] if s['source_id'] == 'govinfo:pl117-328-complete-original')
+        self.assertEqual(registered, self.q['status_evidence']['registered_full_original'])
+        self.assertEqual(registered['raw_sha256'], 'a5f090f4e688ffb6d8642a0752d5f05bd63e3e4a0564056f4ae6eba2389cd204')
+
+    def test_all174_official_observations_and_entire145_graphs_preserved(self):
+        current = json.loads((DATA / 'generated/member_projections.json').read_text(encoding='utf-8'))
+        self.assertEqual(sum(len(x['actions']) for x in current), 174)
+        for old, new in zip(self.q['prior_member_projections'], current):
+            self.assertEqual(old['member_id'], new['member_id'])
+            for before, after in zip(old['actions'], new['actions']):
+                omit = {'action_core_sha256'} if before['action_id'] in self.q['actions'] else set()
+                self.assertEqual({k:v for k,v in before.items() if k not in omit},
+                                 {k:v for k,v in after.items() if k not in omit})
+        ir = json.loads((DATA / 'generated/compiled_ir.json').read_text(encoding='utf-8'))
+        self.assertEqual({m['member_id']:digest(m['proposition_graph']) for m in ir['members']},
+                         self.q['prior_proposition_graph_sha256'])
+
+    def test84_other_authoring_and_core_rows_and_all_source_choice_identity_fields_exact(self):
+        for aid, action in self.actions.items():
+            if aid not in self.q['actions']:
+                self.assertEqual(digest(action), self.q['prior_all_authoring_sha256'][aid])
+                self.assertEqual(self.cores[aid]['action_core_sha256'], self.q['prior_all_core_sha256'][aid])
+        for aid, before in self.q['prior_cores'].items():
+            core = self.cores[aid]
+            self.assertEqual(core['action_core_sha256'], sealed_digest(core, 'action_core_sha256'))
+            self.assertEqual(core['action_core_sha256'], self.q['current_core_sha256'][aid])
+            for field in ['exact_action_identity', 'choice_meanings', 'action_meaning_ref',
+                          'governed_source_identities', 'governed_source_identity_sha256',
+                          'action_outcome_source_identities', 'operative_meaning_source_identities']:
+                self.assertEqual(core[field], before[field])
+        self.assertEqual(self.core['corpus_sha256'], digest(self.core['actions']))
+
+    def test_protected_history_sources_questions_holds_and_false_partial_flags_exact(self):
+        self.assertEqual(self.q['receipt_sha256'], sealed_digest(self.q, 'receipt_sha256'))
+        for path, expected in self.q['protected_json_sha256'].items():
+            with self.subTest(path=path):
+                self.assertEqual(digest(json.loads((DATA.parents[3] / path).read_text(encoding='utf-8'))), expected)
+        universe = json.loads((DATA / 'universe_proposal.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(universe['unresolved_action_ids']), 10)
+        self.assertEqual(len(universe['accounting']['partial_component_reviews']), 3)
+        self.assertTrue(all(not x['complete_immigration_component_review']
+                            for x in universe['accounting']['partial_component_reviews']))
+        self.assertEqual(self.q['withdrawn_provisional_concern']['state'], 'withdrawn_not_a_confirmed_defect')
+        self.assertNotIn('HR1-STATE-04', self.q['findings'])
+        self.assertEqual((self.q['new_sources'], self.q['new_acquisitions'], self.q['new_screening_completions']), (0,0,0))
+        for field in ['editorial_acceptance','publication_authorized','production_writes']:
+            self.assertFalse(self.q[field])
+
+    def test_current_audit_mirrors_follow_repairs_without_rewriting_other_history(self):
+        packet = self.active['docs/review_packets/immigration_semantic_audit_in_progress.json']
+        omitted = {'primary_reconstruction','corrected_authoring_action_sha256',
+                   'current_action_core_sha256','closure_audit_correction_checkpoint261'}
+        for row in packet['substantive_actions']:
+            aid = row['action_id']
+            protected = {k:v for k,v in row.items() if not (aid in self.q['actions'] and k in omitted)}
+            self.assertEqual(digest(protected), self.q['prior_audit_protected_row_sha256'][aid])
+            if aid in self.q['actions']:
+                self.assertEqual(row['primary_reconstruction'], self.actions[aid]['meaning'])
+                self.assertEqual(row['current_action_core_sha256'], self.cores[aid]['action_core_sha256'])
+                self.assertEqual(row['corrected_authoring_action_sha256'], digest(self.actions[aid]))
+                self.assertEqual(row['closure_audit_correction_checkpoint261']['receipt_sha256'], self.q['receipt_sha256'])
 
 if __name__ == '__main__':
     unittest.main()
