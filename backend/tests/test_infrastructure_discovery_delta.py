@@ -113,4 +113,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_atvm_administration_boundaries
         action=copy.deepcopy(next(a for a in read(folder(38)/'authoring.json')['actions'] if a['action_id']=='house:119:1:230'));target=next(s for s in read(folder(38)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4553-rh-amend26-account-SRA146');action['compact_description']=action['compact_description'].replace('would not repeal the loan program or cancel existing loans','would repeal the loan program and cancel existing loans')
         with self.assertRaisesRegex(ValueError,'ATVM administrative reduction became program repeal'):validate_atvm_administration_boundaries(action,target)
+    def test_northern_border_administrative_override_is_retained(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_northern_border_appropriation_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(39)/'authoring.json')['actions'] if a['action_id']=='house:119:1:232'));target=next(s for s in read(folder(39)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4553-rh-amend28-account-SRA148');action['meaning']=action['meaning'].replace('administrative expenses notwithstanding section 15751(b) remains unchanged','administrative expenses only within the ordinary cap')
+        with self.assertRaisesRegex(ValueError,'Northern Border administrative exception lost'):validate_northern_border_appropriation_boundaries(action,target)
+    def test_northern_border_grant_share_is_not_whole_account_share(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_northern_border_appropriation_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(39)/'authoring.json')['actions'] if a['action_id']=='house:119:1:232'));target=next(s for s in read(folder(39)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4553-rh-amend28-account-SRA148');action['meaning']=action['meaning'].replace('not 40 percent of this entire appropriation','40 percent of this entire appropriation')
+        with self.assertRaisesRegex(ValueError,'Northern Border grant share became account/project allocation'):validate_northern_border_appropriation_boundaries(action,target)
 if __name__=='__main__':unittest.main()
