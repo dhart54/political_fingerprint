@@ -151,4 +151,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         validate_north_dakota_exception_scope(record,source)
         record['rationale']=record['rationale'].replace('The stated drainage/new-data exceptions apply only to low-development-potential leasing; they are not stated exceptions to the drinking-water source-protection closure','low-potential/drinking-water leasing restrictions have stated drainage/new-data exceptions')
         with self.assertRaisesRegex(ValueError,'North Dakota exceptions improperly cover drinking-water closure'):validate_north_dakota_exception_scope(record,source)
+    def test_refinery_directive_deadline_is_not_completion_deadline(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_refinery_report_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(52)/'authoring.json')['actions'] if a['action_id']=='house:119:1:303'));sources={s['source_id']:s for s in read(folder(52)/'sources.json')['sources']};action['meaning']=action['meaning'].replace('The 90-day deadline is for the Secretary to direct the Council, not an express 90-day deadline for completing the report','The report must be completed within 90 days')
+        with self.assertRaisesRegex(ValueError,'refinery direction deadline became report completion deadline'):validate_refinery_report_boundaries(action,sources['govinfo:hr3109eh'],sources['clerk:119:1:303'],read(folder(52)/'generated/compiled_ir.json'),read(folder(52)/'generated/readable_candidates.json'))
+    def test_refinery_not_voting_cannot_become_directional_finding(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_refinery_report_boundaries
+        action=next(a for a in read(folder(52)/'authoring.json')['actions'] if a['action_id']=='house:119:1:303');sources={s['source_id']:s for s in read(folder(52)/'sources.json')['sources']};readable=copy.deepcopy(read(folder(52)/'generated/readable_candidates.json'));member=next(m for m in readable['members'] if m['member_id']=='M001184');member['findings'][0]['action_ids'].append('house:119:1:303')
+        with self.assertRaisesRegex(ValueError,'refinery Not Voting became directional finding'):validate_refinery_report_boundaries(action,sources['govinfo:hr3109eh'],sources['clerk:119:1:303'],read(folder(52)/'generated/compiled_ir.json'),readable)
 if __name__=='__main__':unittest.main()
