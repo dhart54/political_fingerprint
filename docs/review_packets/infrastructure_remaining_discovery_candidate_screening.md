@@ -1,40 +1,38 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch36**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch37**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
 corrections satisfactory and CI green at `f70fc3023bd69c087be166d16d792065232edf6c`.
 Neither report accepts later work or domain membership.
 
-There are **278owner-examined identities** and **398ordinary unscreened**.
-The remaining-record phase has examined202additional historical non-leads.
+There are **284owner-examined identities** and **392ordinary unscreened**.
+The remaining-record phase has examined208additional historical non-leads.
 Evidence receipts distinguish complete bodies, exact procedural questions, partial
-operative leads and one inherited access-only investigation without child-body review. Batch26 added one identity-only child examination; batch36 now follows that record with its own-body binding and explicitly partial incorporated-guidance review. The historical batch26 snapshot remains unchanged.
+operative leads and one inherited access-only investigation without child-body review. Batch26 added an identity-only child examination; batch36 followed it with its own-body binding and partial incorporated-guidance review, preserving the historical snapshot.
 Titles and historical non-lead labels select research, never automatic exclusion.
 
 | State | Count |
 |---|---:|
 | Shared authored candidate meanings | 38 |
-| Procedural controls | 91 |
+| Procedural controls | 93 |
 | Proposed exact-action exclusions | 36 |
 | Nonbinding expression | 7 |
 | Source/access/version holds | 5 |
-| Ordinary unfinished/review cases | 101 |
-| Ordinary unscreened identities | 398 |
+| Ordinary unfinished/review cases | 105 |
+| Ordinary unscreened identities | 392 |
 | **Discovery identities** | **676** |
 
-All38shared meanings project mechanically to Foushee and Massie. Five original
-authored Not Voting observations remain nondirectional, with37Foushee
+All38shared meanings project mechanically to Foushee and Massie. Six authored
+Not Voting observations remain nondirectional, with37Foushee
 and33Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Five new chronological identities plus two separately accounted prior-record follow-ups. The new cases yield one proposed general-securities exclusion and four ordinary unfinished cases. Prior150now binds its complete own codification clause with explicitly partial CMSguidance review. Prior207adds one whole exact-deletion meaning candidate after binding complete reported section8067; direct technology/R&D membership remains unaccepted pending independent review.
+Six new chronological identities: two distinct procedural questions and four ordinary unfinished cases. H.Res.672 actual adoption of668/605 and tabling598 remain explicit; the institutional package is not reduced to scheduling. Three exact BLM CRA targets are bound to retained decision-page leads with whole-plan, maps, legal and version limits. No new meaning or accepted exclusion is authored.
 
-The single500million-dollar allocation spans specified procurement/R&Dprograms with60/127/40/100/173million suballocations and agreement/law qualifications. Deletion is not an established overall-account reduction or all-assistance ban. Five new identities remain distinct from two earlier follow-ups. All37earlier meanings and all earlier snapshot bytes remain unchanged.
+Fixed676 identities;38 candidate meanings,93 procedures,36 proposed exclusions,7 expressions,5 holds,105 ordinary unfinished and392 ordinary unscreened. Retained excerpts are not whole-plan review; metadata/title is not membership. Preserve all prior candidates, five holds, unaccepted memberships and protected-source restrictions.
 
-Conservation:38meanings+91procedures+36proposed exclusions+7expressions+5holds+101unfinished+398unscreened=676.278examined retains the inherited access-only limit; the earlier150identity-only unit is now followed by own-body review without retroactively changing that snapshot. No acquisition/retry/acceptance/publication/production/merge/deployment.
-
-[Readable batch36 findings](infrastructure_candidate_batch36.md).
+[Readable batch37 findings](infrastructure_candidate_batch37.md).
 
 ## Retained reviewer and access boundaries
 
@@ -44,7 +42,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch36_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch37_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -59,24 +57,23 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**69focused tests, candidate source/conservation/replay checks and seven canonical
-semantic checks pass**. Current shared authoring/generated copies remain member-neutral.
+**Current-batch source/conservation/replay checks and seven canonical semantic checks pass**. The69-focused-test suite passed at `82dad47ec1713681be59cda9801d186f2796b719` and was not repeated for this artifact-only increment. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took37.176seconds; the specification/authoring elapsed window and later byte/delivery
+took3.325seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch36_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch36_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch36_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch36_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch37_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch37_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch37_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch37_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Continue398ordinary identities fromroll221in coherent5-10action increments;roll218was an earlier seed. Preserve38candidate meanings/six authored nondirectional NotVotingobservations, all fiveholds and protected chains/corrections/unacceptedHR144/2189/1263/4016amend114memberships.150now has its own body/source binding while whole CMSguidance/domain review remains pending; earlier identity-only snapshots stay immutable.207new candidate is a single allocation-directive deletion, not an overall-account cut. No denied/cancelled source retry or alternate transport.
+Continue392ordinary identities fromroll227 in coherent5-10action increments. Preserve38candidate meanings/six authored nondirectional NotVoting observations, all fiveholds, all source denials/cancellations and unaccepted memberships.672actual668/605adoption and598tabling remain explicit pending exact pre-adoption/baseline review.224/225/226need whole-target/legal review, not automatic inference from BLM titles or one plan paragraph. No denied/cancelled-source retry or alternate transport.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
 
-The [historical batch31–35 delta export](infrastructure_historical_delta31_35_fffdb8ca/batch31.json) provides five batch manifests and lossless source/passage parts, all below250KB, extracted from exact committed `fffdb8ca4c0b4772380930ae290405e1ee7f3493`. All27new membership records reconstruct exactly. Cumulative record/source hashes and original review extents are retained; export is not completed primary-source review or acceptance.
+The [historical31–35 delta manifests](infrastructure_historical_delta31_35_fffdb8ca/batch31.json) and lossless parts preserve27new records from exact`fffdb8ca`; primary review remains incomplete. Batch36`82dad47ec1713681be59cda9801d186f2796b719`passed69focused tests. Its normal CI run39155333254 was still in progress at the last inspection; no green result is claimed. Exact batch35CI failed in Playwright stdout accumulation after215shared-candidate tests, with no retry or test weakening.
 
-Exact batch35CI at `fffdb8ca` is **failed**, not green:215shared-candidate tests passed, then the acceptedM14G/public-receipt step failed with Playwright stdout accumulation `RangeError: Invalid string length` underNode20.20.2. Later release/frontend steps were skipped. No candidate assertion failure or transient-runner cause is established; no retry or test weakening was performed. [Exact job evidence](../editorial/shared_candidates/house_119_infrastructure_batch36_20260916/ci_batch35_m14h_stdout_failure.json) records a separate engineering follow-up. New-head CI requires its own assessment.
+The initial batch37semantic invocation omitted the needed native-execution permission setting and encountered the known Windows tempfile ACL restriction. Its successful source gate was retained; only the semantic command was rerun with the required setting and passed. The [environment receipt](../editorial/shared_candidates/house_119_infrastructure_batch37_20260916/local_validation_environment_receipt.json) preserves both attempts. Successful gate-process time is3.325seconds; the failed sandbox semantic attempt adds1.163seconds. No protected source was retried.

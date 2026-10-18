@@ -1,0 +1,28 @@
+{
+  "initial_attempt": {
+    "start_utc": "2026-10-18T18:44:37.163004+00:00",
+    "end_utc": "2026-10-18T18:44:39.673953+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 37 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch37_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.348
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 1,
+        "process_wall_seconds": 1.163
+      }
+    ]
+  },
+  "cause": "Known Windows sandbox tempfile PermissionError; initial source/conservation/replay check passed. Semantic-only rerun with approved native execution setting passed.",
+  "semantic_rerun": {
+    "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+    "returncode": 0,
+    "process_wall_seconds": 1.977
+  },
+  "valid_source_gate_repeated": false,
+  "tests_weakened": false,
+  "cleanup_attempted": false,
+  "source_retry": false
+}
