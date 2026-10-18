@@ -121,4 +121,8 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_northern_border_appropriation_boundaries
         action=copy.deepcopy(next(a for a in read(folder(39)/'authoring.json')['actions'] if a['action_id']=='house:119:1:232'));target=next(s for s in read(folder(39)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4553-rh-amend28-account-SRA148');action['meaning']=action['meaning'].replace('not 40 percent of this entire appropriation','40 percent of this entire appropriation')
         with self.assertRaisesRegex(ValueError,'Northern Border grant share became account/project allocation'):validate_northern_border_appropriation_boundaries(action,target)
+    def test_retained_numeric_conflict_cannot_be_cleared(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_retained_numeric_conflict
+        record=copy.deepcopy(next(r for r in read(folder(40)/'membership_review.json')['records'] if r['action_id']=='house:119:1:237'));sources={s['source_id']:s for s in read(folder(40)/'sources.json')['sources']};receipt=read(folder(40)/'retained_numeric_conflict_receipt.json');record['authoritative_source_conflict']=False
+        with self.assertRaisesRegex(ValueError,'retained237numeric conflict cleared or recast'):validate_retained_numeric_conflict(record,sources,receipt)
 if __name__=='__main__':unittest.main()
