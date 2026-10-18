@@ -159,4 +159,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_refinery_report_boundaries
         action=next(a for a in read(folder(52)/'authoring.json')['actions'] if a['action_id']=='house:119:1:303');sources={s['source_id']:s for s in read(folder(52)/'sources.json')['sources']};readable=copy.deepcopy(read(folder(52)/'generated/readable_candidates.json'));member=next(m for m in readable['members'] if m['member_id']=='M001184');member['findings'][0]['action_ids'].append('house:119:1:303')
         with self.assertRaisesRegex(ValueError,'refinery Not Voting became directional finding'):validate_refinery_report_boundaries(action,sources['govinfo:hr3109eh'],sources['clerk:119:1:303'],read(folder(52)/'generated/compiled_ir.json'),readable)
+    def test_state_generation_consideration_is_not_compulsory_implementation(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_state_generation_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(56)/'authoring.json')['actions'] if a['action_id']=='house:119:1:323'));sources={s['source_id']:s for s in read(folder(56)/'sources.json')['sources']};action['meaning']=action['meaning'].replace('it requires consideration and a determination, not automatic adoption or implementation of the standard','it requires every utility to implement the standard automatically')
+        with self.assertRaisesRegex(ValueError,'State consideration became compulsory implementation'):validate_state_generation_boundaries(action,sources['govinfo:hr3628eh'],sources['govinfo:16usc-2621abc-2024-195'])
+    def test_state_generation_fuel_supply_keeps_contractual_alternative(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_state_generation_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(56)/'authoring.json')['actions'] if a['action_id']=='house:119:1:323'));sources={s['source_id']:s for s in read(folder(56)/'sources.json')['sources']};action['meaning']=action['meaning'].replace('on-site fuel or an on-site continuously available energy source, or contractual fuel-supply obligations','only fuel stored on site')
+        with self.assertRaisesRegex(ValueError,'State generation contractual alternative or on-site scope lost'):validate_state_generation_boundaries(action,sources['govinfo:hr3628eh'],sources['govinfo:16usc-2621abc-2024-195'])
 if __name__=='__main__':unittest.main()
