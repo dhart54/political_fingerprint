@@ -1,101 +1,85 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch14**, candidate only. Owner DESKTOP-1CQBHTJ,
-`.w/infra`, `codex/infrastructure-candidate-seed`; original main base
-`af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review is
-attributed to exact `d2865c36c277c85866ca38935eb11706d63f4313`; it does not approve
-later corrections, membership leads or this new candidate.
+Current checkpoint: **batch15**, candidate only. Owner DESKTOP-1CQBHTJ,
+`.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
+`af6cd6d78d6944d64a68a92653066c4c1625f96b`. Prior independent discovery review
+targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports that
+H.R.9436 corrections at `f70fc3023bd69c087be166d16d792065232edf6c` are satisfactory
+and that head's CI is green. Neither report accepts later work or domain membership.
 
-The remaining-record phase has examined30additional identities in batches12–14.
-There are106owner-examined identities overall, with **570ordinary unscreened**.
-Evidence units distinguish exact procedural questions, rule effects, complete bill
-bodies, partial operative package leads and access-only investigation. One access
-unit below has **no substantive amendment-body review**. Metadata triage does not
-establish domain eligibility, a body review or a whole-action meaning.
-
-## Current result
+The remaining-record phase has examined40additional identities in batches12-15.
+There are116owner-examined identities overall and **560ordinary unscreened**.
+Evidence units distinguish exact questions, complete rule/bill bodies, partial
+operative leads and one access-only investigation without amendment-body review.
+Titles and historical non-lead labels select research; they do not establish exclusion.
 
 | State | Count |
 |---|---:|
 | Shared authored candidate meanings | 31 |
-| Procedural controls | 33 |
-| Proposed exact-action exclusions | 15 |
+| Procedural controls | 37 |
+| Proposed exact-action exclusions | 18 |
 | Nonbinding expression | 1 |
 | Source/access/version holds | 4 |
-| Ordinary unfinished/review cases | 22 |
-| Ordinary unscreened identities | 570 |
+| Ordinary unfinished/review cases | 25 |
+| Ordinary unscreened identities | 560 |
 | **Discovery identities** | **676** |
 
 The31shared meanings project mechanically to Foushee and Massie. Five original
-authored Not Voting observations remain nondirectional; there are30Foushee and27
-Massie directional findings. No membership, completeness, synthesis or publication
-acceptance follows from these counts.
+authored Not Voting observations remain nondirectional, leaving30Foushee and27
+Massie directional findings. Batch15does not change the authored behavioral IR.
 
-Batch14adds one whole-action candidate forH.R.375: continued disease-vector/
-transmission research, agency/State collaboration, financial assistance and staff/
-necessary infrastructure funding at the named forestry institute. It preserves
-private-owner consent for private-land management and does not invent dollar
-appropriations, new-facility requirements, staffing counts, achieved outcomes or
-current biological/agency facts. Both choices concern the whole exact suspension-
-and-passage motion. [Batch14packet](infrastructure_candidate_batch14.md).
+Batch15screens session1rolls34-43: four procedural questions, four proposed
+exclusions and two ordinary boundary leads. H.R.26's hydraulic-fracturing moratorium
+constraint and H.R.35's vehicle-flight/criminal/immigration package remain pending.
+H.R.77 passage is a substantive proposed general review-law change; its proposed
+domain exclusion does not turn it into a procedural vote or resolve other CRA cases.
+[Readable batch15 findings](infrastructure_candidate_batch15.md).
 
-Other new work includes three procedural questions, one proposed clinical-care
-exclusion and four ordinary leads: the forest technology-pilot clause, Alaska
-trust/roadway conditions, the Nutria program's unreviewed underlying scope, and
-controlled-substance research-registration provisions. The forest and drug package
-reads are explicitly partial; no whole-package conclusion is claimed.
+## H.R.144 baseline follow-up
 
-## Reviewer corrections retained
+The retained2024Code baseline confirms that the exact displaced span includes the
+annual financial/business report and itemized cost of power at each power station,
+as well as employee information. The old compensation-only exclusion rationale was
+incomplete. H.R.144 now remains **pending interpretation**, with no behavioral episode.
+The complete subsection and reporting-termination note, exact replacement witness,
+old preimages and source hashes are retained. The note identifies certain reports
+terminated effectiveMay15,2000; it prevents a claim that the original report remains
+currently enforceable without integration of the cited provisions.
 
-Batch12correctedH.R.9436's annual recipient to **Congress**, in consultation with
-affected States, and preserved measures **expected not to exceed Potential
-Biological Removal**. The amendment changes dates only. Defective “named committees”
-and “attain” preimages, complete source clauses/hashes and negative regressions
-remain. RetainedClerk290and293directly bind the existing failed-recommittal and
-failedH.J.Res.1context. No vote/outcome changes. All current copies inherit these
-repairs; prior snapshots stay immutable.
+The existing H.R.192 candidate concerns Amtrak public reporting. Both involve public
+operator accountability; the existing rule does not establish a stable distinction
+from H.R.144 merely from report contents or publication channel. Withhold the proposed
+TVA exclusion pending taxonomy and material-baseline integration review. No opposite
+membership decision or change to H.R.192 is accepted.
+[Baseline and boundary receipt](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/hr144_baseline_boundary_review.json).
 
-The stale claim that the38discovery-delta identities were unscreened is repaired
-only in new resume snapshots. At the earlier review head,76were examined and600
-ordinary historical non-leads remained; current totals above reflect later work.
-Historical non-lead labels select research only and never automatically exclude.
+## Retained boundaries and validation
 
-[Correction receipt](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/inherited_batch12_correction_receipt.json)
-· [earlier delta handoff](infrastructure_discovery_delta_candidate_increment.md)
-· [batch12](infrastructure_candidate_batch12.md) · [batch13](infrastructure_candidate_batch13.md)
+H.R.9436's annual recipient remains Congress, in consultation with affected States;
+the measures are expected not to exceed Potential Biological Removal and its
+amendment changes dates only. Direct Clerk context, defective preimages and negative
+regressions remain. H.R.2189 membership is still unaccepted. Prior snapshots stay
+immutable; no completeness, synthesis, publication or universe acceptance follows.
 
-## Access boundary, separate from substantive screening
+The H.R.27 exact-child Rules lookup reported403 and remains stopped without retry,
+transport switch or alternate route. The older H.J.Res.87 denial, unclassified
+H.R.4690 rejection and cancelled WRDA version/glyph/table chain remain unchanged.
+Ordinary package work and two CRA legal reviews remain explicit. Independent cases
+continue around these holds.
 
-For **house:119:1:32**, the lookup of
-`https://rules.house.gov/bill/119/hr-27` reported **403Forbidden**. No response body
-was retained or registered as evidence. That acquisition chain is stopped: no retry,
-transport switch or alternate route. The exact amendment text/version remains
-unbound; the parent rule and final bill cannot establish the narrower choice.
-Only Clerk identity and the access/source-binding constraint are reviewed here.
-[Denial/restriction receipt](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/source_denial_restrictions_receipt.json).
+**57focused tests, candidate source/conservation/replay checks and seven canonical
+semantic checks pass**. All current authoring/generated copies remain member-neutral.
+One new successful primary-source capture bound the TVA baseline; no protected
+acquisition was retried. The timing receipt separates the recovered working window,
+22.826seconds of formal gate processes and later byte/delivery overhead. The prior-day
+host interruption is excluded. Prior/current generated LF hashes are checked against
+actual Git blobs before commit.
 
-The oldH.J.Res.87denial, unclassifiedH.R.4690rejection and cancelledWRDAversion/
-glyph/table chain remain unchanged and were not retried. This new reported403does
-not classify the unrelatedH.R.4690response. Eight original ordinary research cases,
-twoCRAlegal reviews, unacceptedH.R.2189membership and all additional named ordinary
-leads remain explicit. Continue independent records around holds.
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/timing_receipt.json),
+[living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-## Validation and resume
-
-**55focused tests and seven canonical semantic checks pass** at batch14, including
-private-land consent, report-recipient/PBR, direct-context and frontier regressions.
-98generated outputs replay and257prior snapshot files retain exactGitbytes. Governed
-sources remain member-neutral; denied/error responses are not promoted to evidence.
-Current formal validation processes took21.113seconds; source/authoring and byte/
-delivery overhead are distinguished in the timing receipt. Zero new successful
-source captures and one denied lookup, with no retry or alternate route.
-
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/resume_receipt.json)
-· [evidence units](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/screening_units_receipt.json)
-· [validation](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/validation_receipt.json)
-· [timing](../editorial/shared_candidates/house_119_infrastructure_batch14_20260916/timing_receipt.json)
-· [living plan](../plans/infrastructure_remaining_discovery_screening.md)
-
-Next ordinary chronological group begins session1roll34. No editorial acceptance,
-universe closure, publication/registry change, production write, merge or manual
-deployment. The workstream and all proposed domain boundaries remain partial.
+Next ordinary group begins session1roll44. No editorial acceptance, publication,
+registry change, production write, merge or manual deployment. The workstream remains partial.

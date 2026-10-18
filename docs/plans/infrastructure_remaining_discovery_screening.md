@@ -35,7 +35,7 @@ that cancelled chain. Continue independent cases around holds.
   preserving defective preimages and earlier snapshots; fix stale frontier prose
   only in the new snapshot with exact independent-review-head attribution.
 - [x] Validate/review/commit/push batch12 and update the draft PR/resume evidence.
-- [ ] Continue the remaining590 chronological identities in bounded groups.
+- [ ] Continue ordinary historical non-leads chronologically; current counts are in the latest resume receipt.
 
 Batch12 outcome: 30 shared meanings retained; one meaning correction, two direct
 context bindings and one frontier-prose correction are separate from ten new
@@ -62,3 +62,35 @@ Batch12validation:54focused tests and7canonical semantic checks pass. See timing
 Batch13complete: rolls1:14-23,3procedures/3proposed exclusions/4ordinary research-boundary leads.30shared meanings and compiledIR unchanged; batch12correction receipt inherited. Evidence units:6complete identified bill bodies,2complete rule-body reviews,1exact-question review,1explicitly partial Taiwan-tax package lead.30+30+14+1+3+18+580=676;96owner-examined,580ordinary remaining. Current batch source/accounting/generated-replay validator and7semantic checks pass; the54-test correction suite remains attributed to81d15d09, not claimed rerun. Source acquisition count0. See timing receipt for separate source/authoring and final validation windows.
 
 Batch14complete: rolls1:24-33. One new H.R.375research/forest-response candidate,3procedures,1proposed exclusion,4ordinary baseline/partial-package leads and1access/source-binding hold.31+33+15+1+4+22+570=676.106owner-examined includes the access unit without substantive amendment-body review. Metadata/evidence-unit distinction remains explicit. New RulesHR27bill-page lookup reported403; no body retained/registered, no retry or alternate route. Roll32exact child remains unbound; parent rule/EHcannot establish its meaning. This restriction is durable in source_denial_restrictions_receipt.json and resume.protected_actions_current. All other protected chains remain.55focused tests and7semantic checks pass;98generated outputs replay and257prior snapshot files retain exactGitbytes. Timing/source/denial receipts distinguish owner phase, formal gates and delivery. No acceptance/publication/production effects. Continue570ordinary records fromroll34.
+
+
+Recovery on2026-10-18: hostDESKTOP-1CQBHTJconnected; local/remote feature head
+f70fc3023bd69c087be166d16d792065232edf6c and remote main
+ af6cd6d78d6944d64a68a92653066c4c1625f96b confirmed. Only prepared batch15artifacts
+were untracked. NoCASE15catalog entry, completion journal, validator receipt or
+matching surviving validator process was observed. The previously uncertain call
+left no observable catalog/validation result. Prepared bytes were preserved before
+bounded edits; no duplicate or stale process was restarted.
+
+Batch15reviewer follow-up, separate from ten new chronological screens: bind the
+complete2024Code831h(a)and its reporting-termination note. The displaced span
+contains the financial/business report and itemized power cost at each station,
+not only compensation. H.R.192public operator reporting is bound as the comparator.
+The existing inclusion rationale does not supply a stable pay-report/website
+boundary; withhold the earlierH.R.144proposed exclusion pending independent
+boundary and reporting-termination integration review. This does not establish
+opposite accepted membership or changeH.R.192. Preserve earlier snapshots and
+preimage; add focused material-span/pending-state regressions. One successful
+bounded officialCodecapture, no protected target retry.
+
+Batch15proposed accounting:31meanings +37procedures +18proposed exclusions +
+1expression +4source/access/versionholds +25unfinished/review cases +560ordinary
+unscreened=676.116owner-examined includes the inherited access-only child unit.
+Ten new screens (session1rolls34-43) remain distinct from the one earlier-record
+follow-up; all31authoring actions, five authoredNotVotingobservations, protected
+chains, prior corrections and unacceptedH.R.2189membership remain unchanged.
+Validation/delivery results follow; the overnight outage is excluded from useful
+work timing. Parent reports review of9436corrections satisfactory andCIgreen at
+exactf70fc302; no acceptance transfers to these new bytes. Continue while executable.
+
+Batch15validated:57focused tests and7canonical semantic checks pass;105generated outputs replay and279prior snapshot files retain exactGitbytes. Formal gate processes22.826seconds; recovered research/authoring window519.427seconds, excluding overnight interruption and later byte/delivery overhead. Current ordinary frontier beginsroll44.
