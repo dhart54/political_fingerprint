@@ -118,6 +118,7 @@ jobs:
             backend/tests/test_governed_receipt_projection.py
           cd frontend
           node --test \
+            lib/playwrightRunner.test.mjs \
             lib/m14gEducationWorkforce.test.mjs \
             lib/publicReceipt.test.mjs \
             lib/selectedIssueExperience.test.mjs \
