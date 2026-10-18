@@ -1,0 +1,1866 @@
+{
+  "prior_head": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2",
+  "files": [
+    {
+      "path": "backend/tests/test_infrastructure_candidate_batch2.py",
+      "git_blob": "6fa36a71e404eed1d37bec53ec47b81dc36c8ab4",
+      "committed_bytes_sha256": "c91fff89c4793dea22c788c0a228d4c3e598850767d0240a93b9c4bb22aa9b04"
+    },
+    {
+      "path": "backend/tests/test_infrastructure_candidate_batch3.py",
+      "git_blob": "acc6976651354bccb7c7f1b7662ce6d670f62e74",
+      "committed_bytes_sha256": "809c0081cf5351a7970a0a73098aff7bf2928a5c09f0445310ba547672b39fbd"
+    },
+    {
+      "path": "backend/tests/test_infrastructure_candidate_batch4.py",
+      "git_blob": "1d85bc89feff2a5518d4ce31a5edd5269f017ddb",
+      "committed_bytes_sha256": "e7837fc1f85975f9ba01b097a92991cc0f2cdd6e0baf2c77a0a5d0467aed13f9"
+    },
+    {
+      "path": "backend/tests/test_infrastructure_candidate_batch5.py",
+      "git_blob": "e6460cd675286c140f81e67241ee830c343c83d3",
+      "committed_bytes_sha256": "94edf45cc4d72d43e0ee098a7232184a5e8f6e3463706701f137b2d1f35dc3b3"
+    },
+    {
+      "path": "backend/tests/test_infrastructure_candidate_batch6.py",
+      "git_blob": "076c7aaba9bc61de5f4401405036a3dea2dbfbe8",
+      "committed_bytes_sha256": "dece89e393ee4e7f01fb0688e45658847cdcae77c97d83cd3916d4658afc313a"
+    },
+    {
+      "path": "backend/tests/test_infrastructure_candidate_batch7.py",
+      "git_blob": "cff1521fcb242c78e89c7071a65ff7d94bcd07d8",
+      "committed_bytes_sha256": "6d4709023d292d8cad99b198d429cb0a7856444d52afeab97d6371a706fdb775"
+    },
+    {
+      "path": "backend/tests/test_infrastructure_candidate_seed.py",
+      "git_blob": "2e735aa1580320c95b83dc7c930d90002441545a",
+      "committed_bytes_sha256": "704a7a18c7010296359c11eeabef9f16cfeb5760fe18d94264782185c895d10e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/authoring.json",
+      "git_blob": "3e2f0b8b76532818363f7a708aaed2396f6bdc2f",
+      "committed_bytes_sha256": "2edd22708ebb3425ce6b1ae936d1a329ce25af26684d0eb2466b61ce777fe9c8"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/compiled_ir.json",
+      "git_blob": "2fc274f930c7d79c7b72609d517b62a072b76955",
+      "committed_bytes_sha256": "a0b33ad96d3610289bd271edb2abc11b89a0bdff735ee3018b8033888ca91b42"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/compiler_input.json",
+      "git_blob": "25a3a3a44303e314d8e9085df264ec7a706a179b",
+      "committed_bytes_sha256": "6ab83fac8966f2992c27efb1f4462acad8faf970ce53fc20c91fb43ca9798b5b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/member_projections.json",
+      "git_blob": "cf9290d67f305587f84bba8e04738e01096f8619",
+      "committed_bytes_sha256": "6c61e8b718db757092b4d7253aabc03c0158a3eb46979084cda57c6b1e0e80d5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/readable_candidates.json",
+      "git_blob": "e93bf38bc4ce09a992d57046dc1eb814dfb3d868",
+      "committed_bytes_sha256": "e0e0e2881f2337cb710281dda51da96bdb881a8d0608f257d2943d905702542a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/reproducibility_proof.json",
+      "git_blob": "e81e0d702c029b22dd28251b3d9a2849d4c53805",
+      "committed_bytes_sha256": "bb71705bac5530009b462f942e1eb94f157bdfd1c935cd108810757ab233b173"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_action_core.json",
+      "git_blob": "71e5f9e80b8ce73b656070b8b3adf9d6d1dd3bb6",
+      "committed_bytes_sha256": "73283d464e6511ac002e989a48cce2114565691ca82df7ad2d536fdbea62b037"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "59f45921b74ce0649efafe46b6eb5894d3eef7e2",
+      "committed_bytes_sha256": "71d84e013585cb9a566ec4429b5ae6f3f482457ecfb8c97aff4e52f5b270ba4f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/inventory_reconciliation.json",
+      "git_blob": "7b569cda4ef82a0068187a545abae1dec858d2a6",
+      "committed_bytes_sha256": "0be38fa67cd00168fee8004af54c5f244eedd98160845a1cdd41835b3414bab8"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/membership_review.json",
+      "git_blob": "8d5bfc8ecf88c88f363a6cccf70961a6458ab9a6",
+      "committed_bytes_sha256": "f9a6a8e200a1a0899cb86c4349d852f4d6db2df6663bd103bc39ef52b1796386"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/source_reuse_receipt.json",
+      "git_blob": "1c92cf7f1866b268494f89f4bc9f074564337017",
+      "committed_bytes_sha256": "d475e32eadb2325a04a47c432f704ed0d1ce919adcaf2c3f84e5ec2031eeb7b5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/sources.json",
+      "git_blob": "52253a879c1c2107f512310847e8fc1962047464",
+      "committed_bytes_sha256": "d23ee6becf3e63ebf4f442a1472df588b3c93e11b56fba2d0f1b79aaedcf4514"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/universe_proposal.json",
+      "git_blob": "505e246959b76f0581f739e57ca431241dbb009c",
+      "committed_bytes_sha256": "e5af0e446b9ea9dc0aec9d83042b510fdc455f1b7da6ecbb6dc0148a49882518"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/validation_receipt.json",
+      "git_blob": "bd7cf9fadc4493d3ee42ff3757128756b500c2c5",
+      "committed_bytes_sha256": "112b622ff28d51654b3516f72adeca4af6f18a42725fc2264c20f4f799337524"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/authoring.json",
+      "git_blob": "d05569168cde9414299f5dbbaa158b5efcf66a6f",
+      "committed_bytes_sha256": "51cca49bcdf0f7f6c8d769c112d99b30583bcc9b7a61dc2e88502d7183f0f472"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/compiled_ir.json",
+      "git_blob": "18d47cb92910728fc624a5b4e60c87511a00fff3",
+      "committed_bytes_sha256": "5ce8b68df874ade5feda6cda95f5ce7356321334e36d5d13a711c11bfc691de1"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/compiler_input.json",
+      "git_blob": "d5387435660fef948eceedac55194d19dfa55d90",
+      "committed_bytes_sha256": "67e6d3bfc7ffd3c24f3d13e4ce0bb00b9820a7dd888453699a11961b86dc986d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/member_projections.json",
+      "git_blob": "3e52b3d086206ef7cb015c8f9784947cd27983ed",
+      "committed_bytes_sha256": "28cfa4f1ba096ab383933b46d461679ae0f852394f532be494b6e431cc27caa5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/readable_candidates.json",
+      "git_blob": "a52e152dc7291f8213c5897e1c2db2f090b56e57",
+      "committed_bytes_sha256": "edccf74e462dd5c3cd206752750b0171273ff2ebad83e443bee87f87854ecf2e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/reproducibility_proof.json",
+      "git_blob": "3a29ab204e7877ffee49aa455206e80db3aceef1",
+      "committed_bytes_sha256": "c5383d74c24e81496ba998558a34820b1459e924e4c05614b3924eccb3be11ac"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/shared_action_core.json",
+      "git_blob": "6cbc1c3cf99cab22071174821a095ac5c6fd9e2c",
+      "committed_bytes_sha256": "259760f0ef8e28e606fd2e4ccd4bcfd0b942857904a99e8e324bb8d0c767b415"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "1c3c32231c649d19937f8645624d3a92b0b8854e",
+      "committed_bytes_sha256": "a36cc798aa54b13c234ab6b9d85070b2a40806b93f97a196a7dfb81a6eeb0c1c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/membership_review.json",
+      "git_blob": "f3ced94bea955686a17c9855a3f859915bea7092",
+      "committed_bytes_sha256": "efaa3e1c9613a29c81cd2a95ede78c0859d5087318a9b4de63aa019cd87ad542"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/prior_snapshot_preservation.json",
+      "git_blob": "721aa69d2adcff9839b85a7ceec7bdc438f19420",
+      "committed_bytes_sha256": "2d132c459b245b5363ac8f27a500f20ab71a7efa24f1e428446fedd866d20360"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/resume_receipt.json",
+      "git_blob": "cb68b8fd4f906945756e92b3cefc06c64410b163",
+      "committed_bytes_sha256": "4b41e71d76a4a678b568cec2ba09a7eff41f4fb56358eb73440717b1671f3996"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/screening_receipt.json",
+      "git_blob": "06ac9128378ab6b5f0f727daaa65f4448377989e",
+      "committed_bytes_sha256": "8dfb2782f657159c103dcdfd0b856425d93dec2c7e84f025f2ea68a1841a9c10"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/sources.json",
+      "git_blob": "9b99db3b026a016d20f4e0c185802f35f54bca73",
+      "committed_bytes_sha256": "36b169cc465cd12f945370e605091abc017953f65592f11ac0c5faf07e1da3d4"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/universe_proposal.json",
+      "git_blob": "05d62218890fc4735a589e6737e520315ced8c11",
+      "committed_bytes_sha256": "53deddae2cc8200717e79596215594e685d916a9fed75da503ad8caacfb0cf8f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/validation_receipt.json",
+      "git_blob": "9fbfc6c4fd97507f3786f1b293ba97eee046025e",
+      "committed_bytes_sha256": "0f7bcef83371741b74f8835aa0a989c7c070e5460752eee751ce563156723293"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/version_binding_receipt.json",
+      "git_blob": "db9e98df03aba2ca6512a7dc5293e481222fab58",
+      "committed_bytes_sha256": "cda395206c61888aca6c18922d7382676754ec4800ed1b99c72371f9bd7c09e2"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/authoring.json",
+      "git_blob": "04cda5bb0ec8f52db23cf21c97d475ef226b3d21",
+      "committed_bytes_sha256": "d5be32076494958f1a214a8f39ff6848cd6e9f75fc33c9852c3affb99995c1fd"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/compiled_ir.json",
+      "git_blob": "096a123c4fd2b14d059a4f931885fbf892e7b052",
+      "committed_bytes_sha256": "b9b6184c1cc2cf945f82e9975d36f5e97be69753f94f94a27531a8dbd14b3d3d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/compiler_input.json",
+      "git_blob": "77f9058266fe62264e29a947f7efd6f83b23ac2a",
+      "committed_bytes_sha256": "6c01d06bd56647643589901c5e674947faf75e74c1e65a31a75972f4f8929cd3"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/member_projections.json",
+      "git_blob": "415357c3a3b94a7559f35779c3d728beb420de6e",
+      "committed_bytes_sha256": "0297cd7fadc279b587536117152ef48b75f893ae7d03d1ba9d38d1d422698623"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/readable_candidates.json",
+      "git_blob": "dead07ef18373b823a41c8464552c4dfded46230",
+      "committed_bytes_sha256": "865340371a6cfecb69b868e6e1753ff02b21891f3f2e2a1ee6efc4bd744060d5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/reproducibility_proof.json",
+      "git_blob": "aeae6db90ad28826b2a7365a56f21ee32bcca1e7",
+      "committed_bytes_sha256": "8b81e588ad3c2c11e19c0efc10a21736f869f72e41f198708ab5162dc0dbba0d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/shared_action_core.json",
+      "git_blob": "24a1e6b3289d092a01efdd7781cc3fe0a81ee98c",
+      "committed_bytes_sha256": "c7454f9468102464f0a1efab2d09e8ee16a0e5be05f348bdcf71dfceb492ceac"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "99f85e3ccc88a92378015e4a14874d45a4e751f1",
+      "committed_bytes_sha256": "a46c685b719d08789e044cb3c06da6cb67d18003e0d543903706204ff070c3b1"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/membership_review.json",
+      "git_blob": "26b9592d5e8371dbb5133add3868d216510007c6",
+      "committed_bytes_sha256": "198c093150b7606e623fbd2e195b99b334c779ec1009ab924869d98aa2703e24"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/prior_snapshot_preservation.json",
+      "git_blob": "b4bca82f3783c975251d862e438f3bdaf3ee09cd",
+      "committed_bytes_sha256": "71f2744d6198eb2a7a880d71b14582904ded7a150359cbd12b906184d5ff3926"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/resume_receipt.json",
+      "git_blob": "174a1d4f504a359bd39d6fc20ac58c50c15f35af",
+      "committed_bytes_sha256": "a0878d4b606fc2f718351e142a976aa7ddc10432a7183b202ed4a91b8b6fde53"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/screening_receipt.json",
+      "git_blob": "fad68e04b3e13d967cf51e55e500d8676a8950e7",
+      "committed_bytes_sha256": "404711c747ddbd87858d1e47ce983520a1426f7036c483e109809c94d2dc0c1e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/source_restrictions_receipt.json",
+      "git_blob": "945095f319396a51835b016c4c730e0616fcd285",
+      "committed_bytes_sha256": "b70e75ea3a8e0fdf4b196bc5a5767ea50131ba44de72b4e43689d6343211eabf"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/sources.json",
+      "git_blob": "77e4cd9067d1d82a2f08aa65f081df47b8f6f3e0",
+      "committed_bytes_sha256": "905cd8ed6108a549eec2f9e121ca75ffd398765819d1036db4491e4603e5ba73"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/timing_receipt.json",
+      "git_blob": "a40f45af3abcdecbfce3e86279774c219fdcf03d",
+      "committed_bytes_sha256": "df24355b033839a8b2ec1912ebfb2113637b669f8ce99a32db1e2166e8e78817"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/universe_proposal.json",
+      "git_blob": "bcc3de7138f17a1677721f150b9677e6113a149f",
+      "committed_bytes_sha256": "a3921115915261f2740b74a2e22951c45041736fa934932f0224cee038ce91cd"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/validation_receipt.json",
+      "git_blob": "d78405da8d88102301fabb50abc13aea96925352",
+      "committed_bytes_sha256": "3d355fff1597452a0e558b0027c41fffeea1c91c4c4fda9f08dd696a21fbc633"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/version_binding_receipt.json",
+      "git_blob": "19c58242d08aa89438f6e3ca619b0d4fdae74943",
+      "committed_bytes_sha256": "54c839fbffee2479d2287469c42de27ccb77836822d0c639439ecab9635ebd0a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/authoring.json",
+      "git_blob": "f994eb7e25e214cd92c655ad2931d684a787307b",
+      "committed_bytes_sha256": "977732892f4b930ff77f6864c54127dcaa5ef793af821634d52ef824282c343a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/candidate_correction_receipt.json",
+      "git_blob": "571431823d48999b94799a2047aa9d234c4710b0",
+      "committed_bytes_sha256": "a32c5a2eb96733185a70acf5f7ddeb106fe514764b611bf873a7dabd165e6182"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/compiled_ir.json",
+      "git_blob": "096a123c4fd2b14d059a4f931885fbf892e7b052",
+      "committed_bytes_sha256": "b9b6184c1cc2cf945f82e9975d36f5e97be69753f94f94a27531a8dbd14b3d3d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/compiler_input.json",
+      "git_blob": "6e028f87eb51106f7e4ef142475c07ea2904b418",
+      "committed_bytes_sha256": "bc94e804320cecd65e334ada0d61aead8cc7ef51db443f5635ccf0a89088fd1d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/member_projections.json",
+      "git_blob": "b69aa4d92a9d5aadcd1417e43244541756aaa11f",
+      "committed_bytes_sha256": "9e3254f3b333f01a954e62a81ca5ebd33e0f5f5f460264bbfe398ae8eb28fafb"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/readable_candidates.json",
+      "git_blob": "328b7847f042727df77ae2f11f55a472e0d3fbea",
+      "committed_bytes_sha256": "197d733cc35673da9f022cc7154ca0113bbc8d4e8d36c3f050309d283f892cf9"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/reproducibility_proof.json",
+      "git_blob": "7d2162eb64c96ce44e6ab04e978403180e2dea29",
+      "committed_bytes_sha256": "9e3402ec8e3880ede4db9d39791dccb60b5bb3cb1a888880d17b61cd1b02139e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/shared_action_core.json",
+      "git_blob": "6e82ef0f6fb726cd33f34549b9af17b83e2b774d",
+      "committed_bytes_sha256": "0c591b744a9785edee5e0a3bea1059c21f84ca974de517269c8d5a0f1452bc23"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "31ecea861322febccf6e0a70b1915969846e94c4",
+      "committed_bytes_sha256": "4173161db78ca8172a16394f83a6e71046282db58bea433a05860b6f9e253c1d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/membership_review.json",
+      "git_blob": "66569e33ff246511fe64ecec7253fa814af91921",
+      "committed_bytes_sha256": "16ac3aa120550ef41a8cf0960ffe42fce078252d08a53d7177f84254f77c2e31"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/prior_snapshot_preservation.json",
+      "git_blob": "12c201fbd84ecfb4dc350048271050d1a8c11c36",
+      "committed_bytes_sha256": "372a83e89d15d74de5f0f7b8fde767b17d07c997ba7c30d191355bc815bd98d3"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/resume_receipt.json",
+      "git_blob": "ccb913c56676f96262277f21a8bf2067699ccd80",
+      "committed_bytes_sha256": "fcf2f7c30ef8f83f2a9b63c8fae84582f00340edcf9b428cd414f69ae405adc0"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/screening_receipt.json",
+      "git_blob": "ddcbd8b51d9ffef9218b4241b17b90a8cdb5d8f8",
+      "committed_bytes_sha256": "2407be46b107cad10f7f05546a9ea782f11fcb90983d9b9b4faba7e32056e1e5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/screening_units_receipt.json",
+      "git_blob": "075dce5b636588ad8eae4fadb160270c5e40ef65",
+      "committed_bytes_sha256": "658174a04612544586669d497f2d4dbfb380e31732998236606f28fbfcf4044c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/sources.json",
+      "git_blob": "35f44d5673bac11972efe85834bc5eae99676401",
+      "committed_bytes_sha256": "ee35a5a542da925b87f71e58bf32c9a5f82452305a1bc503e29aea2a60e58c2f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/timing_receipt.json",
+      "git_blob": "1b127723c2c027c342eb92787313edb87068f932",
+      "committed_bytes_sha256": "0a70d3499d3a35ed291d2182546c0a538cc3b5fc1b6c1543672f52204532404d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/universe_proposal.json",
+      "git_blob": "685e96a0e3c0071129cb4992d73cfaca05bd2ef8",
+      "committed_bytes_sha256": "57ea04d3a4fa52e0ab7acf1f4b46d01ed290d4138f1d318108d465c3ce72f040"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/validation_receipt.json",
+      "git_blob": "d7c55266b6662d6c0c9919c6151dd759b26022e5",
+      "committed_bytes_sha256": "e00d92a677ae00737e832ca97b2dbda29d2c47c8876e599c7064c85b8d083020"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/authoring.json",
+      "git_blob": "5458ce91b53cdb7f562ae09864715c99b72b965a",
+      "committed_bytes_sha256": "c1bf94bc84d270ec4315e7e29887b03d5a39a8112a1254e5c3654ce6f2c2fabf"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/compiled_ir.json",
+      "git_blob": "096a123c4fd2b14d059a4f931885fbf892e7b052",
+      "committed_bytes_sha256": "b9b6184c1cc2cf945f82e9975d36f5e97be69753f94f94a27531a8dbd14b3d3d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/compiler_input.json",
+      "git_blob": "f8ca418f134190c78225d598de8f67b51772cc0c",
+      "committed_bytes_sha256": "40a6b859600966a71bee5b1361801dff7224b4db54a60e9631e9f8e81a5df7b7"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/member_projections.json",
+      "git_blob": "7eac540acf9ef9c9bfa007394b7bcbe5c65ac450",
+      "committed_bytes_sha256": "622005486eec244bb9c0c53dd926dff44ceb3e0df6963dfa5bf0dd48361ab252"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/readable_candidates.json",
+      "git_blob": "1e58c36c0d1100a083b93b82520ef6961c305b54",
+      "committed_bytes_sha256": "dc64e88c13eae18a6360c5eaddff6940e309b28cb6766951a33c237133642d09"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/reproducibility_proof.json",
+      "git_blob": "edd1fe320f6b52aa758a42bbedf7cb5f0a9d39d7",
+      "committed_bytes_sha256": "57fe9a8ab6b37499575e2be548f196a1fcce140fddd2ca84cfbacbbab08448d4"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/shared_action_core.json",
+      "git_blob": "a08bf966b85ceda06af221a320045b6f8a481f96",
+      "committed_bytes_sha256": "e7a883043cb69c9dbd983d999442949529c9693bdf3a5e4afe2f9e76c6aea73f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "7d72f8327e953d6d76aa453436d1e4dbfd52c0bb",
+      "committed_bytes_sha256": "00c9e419ff5a53ae0c033f347a5b51ab6ece2fcbdd48f9ffbe84dbc56832e561"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/inherited_batch12_correction_receipt.json",
+      "git_blob": "571431823d48999b94799a2047aa9d234c4710b0",
+      "committed_bytes_sha256": "a32c5a2eb96733185a70acf5f7ddeb106fe514764b611bf873a7dabd165e6182"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/membership_review.json",
+      "git_blob": "c43881f26a7b01db8ed7dfaee89a765cb310e0c2",
+      "committed_bytes_sha256": "a002136f1b47c8410d2c674ac6b8dd14e112c7cd24f4c66db955749d4d558afe"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/prior_snapshot_preservation.json",
+      "git_blob": "eb3dd809f264552cf8b957baf4e775d9ce0fbe91",
+      "committed_bytes_sha256": "e919c7c8bc507f83c6fe2d097674e233e788cb7b24ea5331fbe4bb84013a879a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/resume_receipt.json",
+      "git_blob": "8106cd2c2c74c60d66e4d0c2568473bf9583c0bb",
+      "committed_bytes_sha256": "1ae82923e90b54065422baa037536b0b3d6e5332b784521880e1a1cfa59ec548"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/screening_receipt.json",
+      "git_blob": "df7538f487d3ead9b1583db4f3f96c7b02c5a133",
+      "committed_bytes_sha256": "0365c3d2acb1c4a0829ca73f197cedc9c4cc3b844834a526294c8610286076b8"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/screening_units_receipt.json",
+      "git_blob": "7286617226b6fda81fd0dc58bafd23b99bf6b62c",
+      "committed_bytes_sha256": "be23c03a56dca38ba41d69db226d6c9aadc593e0b8d3d1b2b08b313e274d6d51"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/sources.json",
+      "git_blob": "23960dfde501430c13412fdbe6203058a676a3e3",
+      "committed_bytes_sha256": "2fd3fdb8c64a8fdb359525de73411f0fef8ee0655bd9fc099f508ed5a965e108"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/timing_receipt.json",
+      "git_blob": "13511a52dfbe8a8131683fea33189a3a925c882d",
+      "committed_bytes_sha256": "659b7df560d3555bb029eaa22eeddf778b72dc323c05c39dfb29074796a34b7c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/universe_proposal.json",
+      "git_blob": "309c2b639c6043ab1caf0c00fede8d01cefc5b45",
+      "committed_bytes_sha256": "baed20dcf0295f2ac03a147bcb6139c8f1d34b453fb9eb2533d5ec240346ddab"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/validation_receipt.json",
+      "git_blob": "3756b55ddef9e243e1859d618a5c60d148d52b12",
+      "committed_bytes_sha256": "e5163837ec187975b70d9563ab71f1cd7162b87e65c6d4777dc5be64676a6ae2"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/authoring.json",
+      "git_blob": "d9d7a781e6074c444fcae1bb036957b5d3e65f59",
+      "committed_bytes_sha256": "176c71ac9273a29ee64ac454e01b319ae2ee33b85af03ebee6240688c416393f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/compiled_ir.json",
+      "git_blob": "456b6a4af36635b486f1cc53abdcb495879b978e",
+      "committed_bytes_sha256": "a7bac23b84a815d301ae28c3fec4007b360405a82ae043eefe5d4849ba2148a8"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/compiler_input.json",
+      "git_blob": "438d94d34a2200184b2a985cb7e19497ba5adbf5",
+      "committed_bytes_sha256": "469ade7db284e805b08a309eea6baa23ea935965f4c6adccdb440a6f9dfeba74"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/member_projections.json",
+      "git_blob": "c7b3bca4ec77f66e9c792d1b7c17be042fdc5a90",
+      "committed_bytes_sha256": "ca02b11bf533cfd2237986db138cc32ca1353e4e0bb4bbaa5fc738fb95e0b30a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/readable_candidates.json",
+      "git_blob": "b59ddfacf3cdd98bc175e4f406b8838b71f4088d",
+      "committed_bytes_sha256": "0b508f8f161471a4a9238569f74044867989bab57d6a247e45456bc7b17c2b18"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/reproducibility_proof.json",
+      "git_blob": "2884b18799cec1a82b3c8442430a22ee638e3055",
+      "committed_bytes_sha256": "486b2730169c0c34b4b6770bdb8acf32535e6ab3fdefd80a347841f56de26a5e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/shared_action_core.json",
+      "git_blob": "f180dfda0b541dcbbc8796c78036bb93f12fd7e3",
+      "committed_bytes_sha256": "27d580d813cf160c79c6c909a5718c91c9a404bc15aaaef645cdf3033411c1b5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "a56dcd9454f1eff21d7a81e806a61d99f03fe838",
+      "committed_bytes_sha256": "8747d25d295714eca755af689bfc8bceca384f95b05125969817cb28439130ba"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/inherited_batch12_correction_receipt.json",
+      "git_blob": "571431823d48999b94799a2047aa9d234c4710b0",
+      "committed_bytes_sha256": "a32c5a2eb96733185a70acf5f7ddeb106fe514764b611bf873a7dabd165e6182"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/membership_review.json",
+      "git_blob": "022f215e0f7ee294ee172e29f78e2d534a60bf65",
+      "committed_bytes_sha256": "61c5d4dcacb73ab7e24821e96f046030de9af780c494589d630495040bde9fdc"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/prior_snapshot_preservation.json",
+      "git_blob": "54d94ff1dd6d2507a6192ebcfe7a37ef0f38783d",
+      "committed_bytes_sha256": "a910e6108a10f7d48461038306e6b123b102200889c4f4eaedb34566c04e7de6"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/resume_receipt.json",
+      "git_blob": "b90597f4a3ba5518da6a05800d168ef973c9bdff",
+      "committed_bytes_sha256": "1c61727985fabe2a524b5cc60410d38f7935296dadea5f5b6d410d627c267102"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/screening_receipt.json",
+      "git_blob": "e0335c51b975dfe7eaa0f4d014917f1195e26864",
+      "committed_bytes_sha256": "2f3463f7871655c38388715f83f62c98f00d427cfb72e0ebc36eb5dfffabb277"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/screening_units_receipt.json",
+      "git_blob": "09a0b9fee6eb87c3effd3d13941a1b7f8eb3d694",
+      "committed_bytes_sha256": "8872e1646fdd1d2710c3368bccc236cbf6e857078b2007498aead62571d3286c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/source_denial_restrictions_receipt.json",
+      "git_blob": "3865589f416aed956873fa284056ca9c7ad16bc5",
+      "committed_bytes_sha256": "291728a02f843194f5b842a54bdfd1aff3df56a95a987ed2783d7b4a7a6e0663"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/sources.json",
+      "git_blob": "15ebd1d9cd451fabae57c80366745a6e8f932cfd",
+      "committed_bytes_sha256": "fad164cbafac6393cc2b05326b2657072f8b522be8db6a955b4e175397120a74"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/timing_receipt.json",
+      "git_blob": "30be53a84069611ceab99cdd289597c6c1dbfe7f",
+      "committed_bytes_sha256": "c0a53c984f5d407b80b966472e19e484e3f2fbb91d95d00ecdf2c83bfcce27f5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/universe_proposal.json",
+      "git_blob": "36a8a55c928c25a204b19b7d048a179dcbd33d80",
+      "committed_bytes_sha256": "ace704ef8bbaf3ba80bdf2d7ff04245fd310287b03149ac2c2082a51fa25e5ce"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/validation_receipt.json",
+      "git_blob": "24612a23392337c00c6efc14b2020ce440936744",
+      "committed_bytes_sha256": "c410c205d4a3df8d9ea430a6f077913173033887b3b3f7fc9bff70a7eaa73013"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/authoring.json",
+      "git_blob": "06b582fb0691d21d0584419fe2c686ce968ee63c",
+      "committed_bytes_sha256": "f44e18eda8b321166ada397a2be66773354d5e94d75faab43702364fd87ec26a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/compiled_ir.json",
+      "git_blob": "456b6a4af36635b486f1cc53abdcb495879b978e",
+      "committed_bytes_sha256": "a7bac23b84a815d301ae28c3fec4007b360405a82ae043eefe5d4849ba2148a8"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/compiler_input.json",
+      "git_blob": "e0e71da16f23a0cf80dff4194f7b002143f174d9",
+      "committed_bytes_sha256": "000bfff1398d2823e37c223c3e087ca84d3614b0b233c53058662614d2c78015"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/member_projections.json",
+      "git_blob": "f6050e4fb6934dcceb9a54571150bfeda7a1801b",
+      "committed_bytes_sha256": "ddc7bf3778244c16e97869ff96fbfafb6be03effa3b9498933d79801394d0418"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/readable_candidates.json",
+      "git_blob": "a7619cf3ab3f1e67a7e5d5eb468fee6ae6a24d88",
+      "committed_bytes_sha256": "b219751e13467c06f703de7f4dc758a33d485aaf5288113ee35c5e3640a214d9"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/reproducibility_proof.json",
+      "git_blob": "6f4a37fb5d66eb3b20f7c1cf289abf0a8f7d9f61",
+      "committed_bytes_sha256": "e2aacb2955780e01abe65d5a2bda4bb53e419965a6f1adb73c506cecaba35659"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/shared_action_core.json",
+      "git_blob": "ed63ed28baffc13f26b8e7c92751bc74cc2c6d08",
+      "committed_bytes_sha256": "9c62f592beef18ba0a850d69836345f3188404db02df80a0632d8ab6668001e0"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "a583e0d388f14d220d4decddb6563604089bcd68",
+      "committed_bytes_sha256": "25ce496b2203090ed5cf9c4f68b1234717fa9fc90e0dcdf2a59e51881df19362"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/hr144_baseline_boundary_review.json",
+      "git_blob": "a29b78f87e77d93955961a8ac33f0778ac7571c0",
+      "committed_bytes_sha256": "e8acf8354a7c4482fd4c03e12dfa2ae66ea7d2eb4a126dfead03be014f8058da"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/inherited_batch12_correction_receipt.json",
+      "git_blob": "571431823d48999b94799a2047aa9d234c4710b0",
+      "committed_bytes_sha256": "a32c5a2eb96733185a70acf5f7ddeb106fe514764b611bf873a7dabd165e6182"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/membership_review.json",
+      "git_blob": "00f5ca482c1c914513417afa617b83c4ab0a3172",
+      "committed_bytes_sha256": "a46c6d913d53204982cfdb6c8c93afd5e8c0cbd45d7ff035d6ef9c3f62175bcc"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/prior_snapshot_preservation.json",
+      "git_blob": "826e6f992b2c97da622229c162a42b058401b407",
+      "committed_bytes_sha256": "069d0694a213212f276f27401dc17d962a5ad9c4d9febb09dc788bdcfd56af26"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/recovery_receipt.json",
+      "git_blob": "26f638d14de3b5dc8fa348a9925a79546d197a0b",
+      "committed_bytes_sha256": "35bc9620ad2104f42c0d488c5135727cedcfe0615335669a84f39fd3d0be22f6"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/resume_receipt.json",
+      "git_blob": "49676ce3f69b2dfc6e9495a2b4fcc8ce7bb0d8ac",
+      "committed_bytes_sha256": "8a56ce857ff8fa27f306975f6d4d0086dfaf927f18d0d875f82e4d60bfcbeece"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/screening_receipt.json",
+      "git_blob": "3409a0d762f047cdf6ea342ce91d543e1f4aa073",
+      "committed_bytes_sha256": "fae608e949b20d7bb2cfec851b499dbde155cf43547370c8147519043e69c22d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/screening_units_receipt.json",
+      "git_blob": "f28bf3ad5e47ce7e98fe506d9afc2d279706b2ab",
+      "committed_bytes_sha256": "b892ca7010cdc32e123cbb540c1025af69520864b41ec075f07881eb0818b894"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/source_denial_restrictions_receipt.json",
+      "git_blob": "3865589f416aed956873fa284056ca9c7ad16bc5",
+      "committed_bytes_sha256": "291728a02f843194f5b842a54bdfd1aff3df56a95a987ed2783d7b4a7a6e0663"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/sources.json",
+      "git_blob": "1d72e55c525bf77c2e6b289e8684259941d6a1b2",
+      "committed_bytes_sha256": "3a3e8c9ff613e349a219d391b3f3ac52b0b8fadf25b4a582f04dddc213b5e8f9"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/timing_receipt.json",
+      "git_blob": "bd45c7dfa669e3d0eb52ceeb3fcd80eb13be8135",
+      "committed_bytes_sha256": "3b2ade923872f1bfae6ffccf54e71c5afeddc3aa48eccc95f435b455a36c3323"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/universe_proposal.json",
+      "git_blob": "bcc22170ff4b0fef0d8d2eecda35156574b197be",
+      "committed_bytes_sha256": "9dcaf959c8926df0ca6ab416313e16743467d6f8684739a748088e4fa4a2fecc"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/validation_receipt.json",
+      "git_blob": "e9377b4377fc48d95aa5c0c6dc490e479a287716",
+      "committed_bytes_sha256": "9548a146c7c897b0136eb9beda42b9bfce47ac5b17831323465d3da3aaacb636"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/authoring.json",
+      "git_blob": "16985514bed40d2789c9918a509a90ca3a1bb32f",
+      "committed_bytes_sha256": "fce1d664a9203244e58d6e43931ab448d1b1bc466f7e738f7976f73bf732d818"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/compiled_ir.json",
+      "git_blob": "7aead37e33c94f4985ed2e2ac696d223101d9f7d",
+      "committed_bytes_sha256": "a3eab0adf57ddeb7c4e0a7716a2c90664914c730a0493e5d9d9eacd8d3e99373"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/compiler_input.json",
+      "git_blob": "231ceaa56dc7de4f164bc8f8b82d8a61b1de9610",
+      "committed_bytes_sha256": "3ce1436252ccb02be481cf02db1ebcb019c21298edc6e9fd0734a7efaf4d6d34"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/member_projections.json",
+      "git_blob": "5b24b96b25cae1ff1e7debb6d8f36f35804a8b27",
+      "committed_bytes_sha256": "ad59eca6881b27113657ac8813b05560fd7b21128fd546213181e834750fb281"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/readable_candidates.json",
+      "git_blob": "d1fe73819c49a322ab75bbd13c589c200283472d",
+      "committed_bytes_sha256": "df3efc339d837e3050dff992d34b9f3acf192989c9a52ab55321103dfbdbf08e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/reproducibility_proof.json",
+      "git_blob": "3db29ab1b389c70ae149cd4010bb3d9faba40668",
+      "committed_bytes_sha256": "94d228b6e6300df76c586b8ae549ca3e68023bb46cbcf9cac0b1c2ab33a1332a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/shared_action_core.json",
+      "git_blob": "0226fdc0d84ea67119e69f80c053e920c4e7d5ee",
+      "committed_bytes_sha256": "9ac9dad1afbc755fdccd96ef78f4d8d19c6da60e827a7483b3b4476ac040073d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "3c3349a229ad7b6cb9bafcc644736aa8481fd57f",
+      "committed_bytes_sha256": "1481b6331e19c149069e90d015d0517b2e97aa6e28d958b3d9bea41238c6ca21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/hr144_baseline_boundary_review.json",
+      "git_blob": "a29b78f87e77d93955961a8ac33f0778ac7571c0",
+      "committed_bytes_sha256": "e8acf8354a7c4482fd4c03e12dfa2ae66ea7d2eb4a126dfead03be014f8058da"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/inherited_batch12_correction_receipt.json",
+      "git_blob": "571431823d48999b94799a2047aa9d234c4710b0",
+      "committed_bytes_sha256": "a32c5a2eb96733185a70acf5f7ddeb106fe514764b611bf873a7dabd165e6182"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/membership_review.json",
+      "git_blob": "b9d543070315e865d5a98cdaa426f862ea8952d7",
+      "committed_bytes_sha256": "7544032831dcbecad6bea5ca68b0f24fd252befbe5ee34869139e17ab944b83b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/prior_snapshot_preservation.json",
+      "git_blob": "59af1ebdb347a00b0a29974973e857bf005c898b",
+      "committed_bytes_sha256": "df01dfada60fc45c5691d38110bf2d2d9d51d16689f8b502a5ee25c6137bb2d1"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/resume_receipt.json",
+      "git_blob": "3faa5033f1e483157b6871cd9d68697ba027087f",
+      "committed_bytes_sha256": "014d56b37b817d006f5f83255f816ed16258a4a4df4a2d3d72bda76923b31d14"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/screening_receipt.json",
+      "git_blob": "530476f48e452faf1e457bdda1d2b9cf088980de",
+      "committed_bytes_sha256": "afb6aba180941a0a31b230efe5a933c5beeff4f2dab580e19599d40be4046713"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/screening_units_receipt.json",
+      "git_blob": "498f6af5d59f770cc7464e2981076ac000e49c04",
+      "committed_bytes_sha256": "90b27e49d82f1cdbcb090be92e218a28f990f2c00604f0577f469c42893a6c92"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/source_denial_restrictions_receipt.json",
+      "git_blob": "3865589f416aed956873fa284056ca9c7ad16bc5",
+      "committed_bytes_sha256": "291728a02f843194f5b842a54bdfd1aff3df56a95a987ed2783d7b4a7a6e0663"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/sources.json",
+      "git_blob": "d6bdd3f63022634c305451ae4b95a54eb980a341",
+      "committed_bytes_sha256": "c1dff1e9bd74b582d2229a8c3995cd1c09c14e28256c3079f6036017ff656546"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/timing_receipt.json",
+      "git_blob": "2308ed1b9e3c5455e334c4f3e252f1e303db7f34",
+      "committed_bytes_sha256": "78675ebd74bfd886a6dc14e169a7e39d927b83c910c1fb9018d8b6d1c6fa37f3"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/universe_proposal.json",
+      "git_blob": "1e9db7e57f4c1d527889760b14f1e4a72241e147",
+      "committed_bytes_sha256": "d15038744a7c46da35b263350c3d5f7752a8f76330978d669a98959f74e2b3b5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/validation_receipt.json",
+      "git_blob": "6cd2f40f29534dd6caa1aff80b7f1fb4ca247149",
+      "committed_bytes_sha256": "e98b43ddde22ac62878f8b52c1d73c6c51e9665abe71b13f7b00e486a5b9a0e9"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/authoring.json",
+      "git_blob": "b7e70a5cb2cd7809cbeef61122581a0e6416c631",
+      "committed_bytes_sha256": "9fdc103f59e2a49207a069ba5cbf4993d36cef54a2e179797ddff2dc0056c6ad"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/compiled_ir.json",
+      "git_blob": "b8b6cee87618dea2816b13d4f841b4c531c3e09f",
+      "committed_bytes_sha256": "0365ed631a9ff1c62df735d570b68e30e09275261b277b71510df2fe55f508c3"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/compiler_input.json",
+      "git_blob": "868bfcd4945d8cace5d57f12f9a3a6127f5867f8",
+      "committed_bytes_sha256": "d7fb0f95fb30f6237edda36e660b898494257e1c6fe15e04e91e8e8ef92e36d5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/member_projections.json",
+      "git_blob": "0d637fed07020b3e0137e3b93e00d35aef6febbc",
+      "committed_bytes_sha256": "542694378e6c0330025eb0940f4228dcefa04ca61958b125f8bca5c5bdc07b9c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/readable_candidates.json",
+      "git_blob": "f1fe6539097b4e592b47b5670ebfb12d0a563708",
+      "committed_bytes_sha256": "08bcffaa9b094cfde82845cbb474e821fca5110b86e9832ff65a11d7be52d054"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/reproducibility_proof.json",
+      "git_blob": "07b428339f1981ba09dee4571f02ac16f910e387",
+      "committed_bytes_sha256": "3bbf61f711817710024e0ae775be371d801183c6881a03ec1aaff05877b50b33"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/shared_action_core.json",
+      "git_blob": "d03bbdf2e2990896fd8f8bc4054a6ab62ddc45d2",
+      "committed_bytes_sha256": "f731da05ca0ffcc36766d05bf4383b4ba3e39957035333276331398f2ace9b33"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "fc4fe55333d5c33a6159faefa10e0cc1b6d260dd",
+      "committed_bytes_sha256": "6cf8e4ff08b48293a0411b1f905903250d852c70f713ef2bd335010be2ccdd28"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/hr144_baseline_boundary_review.json",
+      "git_blob": "a29b78f87e77d93955961a8ac33f0778ac7571c0",
+      "committed_bytes_sha256": "e8acf8354a7c4482fd4c03e12dfa2ae66ea7d2eb4a126dfead03be014f8058da"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/inherited_batch12_correction_receipt.json",
+      "git_blob": "571431823d48999b94799a2047aa9d234c4710b0",
+      "committed_bytes_sha256": "a32c5a2eb96733185a70acf5f7ddeb106fe514764b611bf873a7dabd165e6182"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/membership_review.json",
+      "git_blob": "bed5d17cb43aa833adf4824afbfaa73b55db0c94",
+      "committed_bytes_sha256": "ef1a0e4ebf16b00e402bf1cf1df65d8ec27f2616c5a4adb8b949f0ada2a8e810"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/prior_snapshot_preservation.json",
+      "git_blob": "adb76f9e006652c79521723b1332e5741af1d426",
+      "committed_bytes_sha256": "8de962bd4080e5736f1de95d5e06a7412f7e879dc7a6e85ced1bc0f997897c4f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/resume_receipt.json",
+      "git_blob": "803b36ff70b233b738a4051c0d8b5b0ebee078d4",
+      "committed_bytes_sha256": "f2a05704f93542d8d18cfa59d0a262f81b240655657b6b084c7c8ea42a2959ec"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/screening_receipt.json",
+      "git_blob": "6350bcfdc82faeab3a06ee85509bc8826765d514",
+      "committed_bytes_sha256": "29567d11a508a7204b0a89d89fe132fd9aad21f5fec6aa9f24c191c6104e6abb"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/screening_units_receipt.json",
+      "git_blob": "4444ed41abf2a4647158b44c22dfb0be8055ad1c",
+      "committed_bytes_sha256": "3ca7f23b98602115bd78dad00fc9cae867412f686f83323f571ffa5e633d7293"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/source_denial_restrictions_receipt.json",
+      "git_blob": "3865589f416aed956873fa284056ca9c7ad16bc5",
+      "committed_bytes_sha256": "291728a02f843194f5b842a54bdfd1aff3df56a95a987ed2783d7b4a7a6e0663"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/sources.json",
+      "git_blob": "3ae58bd5010bba906a1de31ddd62e5fd3ee839dd",
+      "committed_bytes_sha256": "356a2c634268fd0bbc4dc7ab5ad699c451c301de639488fd5ac3d2338e213f76"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/timing_receipt.json",
+      "git_blob": "f76e49e866bc820d3e09164f9996c169d3efe1ae",
+      "committed_bytes_sha256": "3f412dc35c4f91c76c716074acae40cd453f5fe90b170e8f153eb04685bb1e3f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/universe_proposal.json",
+      "git_blob": "056f14f22c215b68c2e6c7b03120ac5c77331306",
+      "committed_bytes_sha256": "fc0396346548751bdeb03fcf47a7859fb500b4b1bda1c69ade6efcb62369084f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/validation_receipt.json",
+      "git_blob": "2bf4639cb8d29c7635cb7201b9a290b5d599a58b",
+      "committed_bytes_sha256": "bb3ae760db1f86efa2026fe0193cc6080b2163a7477da1a2fc0f7253e68b656a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/authoring.json",
+      "git_blob": "341a94c6c10097cd18f3b5e2adb795f7ff446dcf",
+      "committed_bytes_sha256": "425ac019421fd9f677ec69f1c10b844b86518a0562f147601abb0b3ef5cf460c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/compiled_ir.json",
+      "git_blob": "b1368e950486317c4930cd85b3e77e5df7a799eb",
+      "committed_bytes_sha256": "1e635d65e6b6cb1bd600b707f7fbbdd2c281b05c0015bc6e4342de35f885a3f0"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/compiler_input.json",
+      "git_blob": "aaeafdb4f343b1434bd4e04e1a45a6ac0be216d1",
+      "committed_bytes_sha256": "70656ad1dd45e843652c124313ce2e0af1e0fbab839552f37110bc5a2a4deb6e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/member_projections.json",
+      "git_blob": "ddc9524d0992a549f861c7649c8f1b006ea4b716",
+      "committed_bytes_sha256": "0e1e9fe6886e050f74d654f21776495d4d9df562c81688fd47e663c9cce246d5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/readable_candidates.json",
+      "git_blob": "c7f2caf2cb3cd33376d9fff2c2a4bfa1ee775bf5",
+      "committed_bytes_sha256": "85e15172ca02485a5a987186d4c9df82656adf0357be615764856ccc1d30a7d8"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/reproducibility_proof.json",
+      "git_blob": "17476cc0e8851882f8c1267c8c71f090870520d5",
+      "committed_bytes_sha256": "8df070f31ad62b8813f65d7951c8b38785ead951b5c363a5d4dadcfce698556c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/shared_action_core.json",
+      "git_blob": "bfb99c4fe029e6423aef1d498f950bd15ffbfa55",
+      "committed_bytes_sha256": "f1dfc5cc16bf3effae22b68cf713930d5249f0786cf934b13d32280807af3b97"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "7d36a77705e6751937cf345de29423b3966d9f87",
+      "committed_bytes_sha256": "b0b91d9acfb896ea87fc4b1403ac05e737aeb86d9af02732bcf90754172c4051"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/hr144_baseline_boundary_review.json",
+      "git_blob": "a29b78f87e77d93955961a8ac33f0778ac7571c0",
+      "committed_bytes_sha256": "e8acf8354a7c4482fd4c03e12dfa2ae66ea7d2eb4a126dfead03be014f8058da"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/inherited_batch12_correction_receipt.json",
+      "git_blob": "571431823d48999b94799a2047aa9d234c4710b0",
+      "committed_bytes_sha256": "a32c5a2eb96733185a70acf5f7ddeb106fe514764b611bf873a7dabd165e6182"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/membership_review.json",
+      "git_blob": "888f8b892ec46a1b51659fb5962b0230d83f3177",
+      "committed_bytes_sha256": "ecefc16d0bb431d34e2ca5df0032405e3e33014919068ce1bd487a20bdc2875e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/prior_snapshot_preservation.json",
+      "git_blob": "e1e399010bd0358f09cf4b14fe94b580f26e702f",
+      "committed_bytes_sha256": "8001468ececb4dbbfe2bbe16764ef893817b977e5b106a177a612866d150778b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/resume_receipt.json",
+      "git_blob": "39cf5e6414794673e90fccf7206788166269f7a3",
+      "committed_bytes_sha256": "a10c12519e9bfc0eac72bb967bbe18eacaad3ef03373eb60130676c5477dfada"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/screening_receipt.json",
+      "git_blob": "b9194bf606a61dc4cceb620f7716a1a9c3fcdb2b",
+      "committed_bytes_sha256": "0d105892a9a4a46aa0ebbe960a6887e0c96271203b75a62c47b1170888ac9eba"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/screening_units_receipt.json",
+      "git_blob": "38d45adecc3f843cac8d9cdaa59a7afd7cc0d708",
+      "committed_bytes_sha256": "1adbedc9eed183353efed616753b7f7fc64c4fcba6bf55d114befcd45617415c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/source_denial_restrictions_receipt.json",
+      "git_blob": "3865589f416aed956873fa284056ca9c7ad16bc5",
+      "committed_bytes_sha256": "291728a02f843194f5b842a54bdfd1aff3df56a95a987ed2783d7b4a7a6e0663"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/sources.json",
+      "git_blob": "64a81bcae746887d47cbbbd7d3345066060c739a",
+      "committed_bytes_sha256": "c28413b77cee4c9df2a58f21a4a177490bec8e0eaf1bae2cf42e7d3ac7a3730c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/timing_receipt.json",
+      "git_blob": "db5553a09d7b58aa3547f5956a34adff6c36d97d",
+      "committed_bytes_sha256": "641482734e0a0ad6a068e1fcaffe8614fe76a16eb837270057bee65255c07387"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/universe_proposal.json",
+      "git_blob": "5db180966dd2b9d5740e4e0b11771d577b85a32a",
+      "committed_bytes_sha256": "722ac4c875b7bab838638b804e7e99595cecaa586ca27690ef9f60d2b14d5cad"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/validation_receipt.json",
+      "git_blob": "e4eec4f606f0a50416e456ac2005ae49ae461257",
+      "committed_bytes_sha256": "65944b30b66cb3819bfadc34a90a76ef90b1ed49e274ce3c28019455164027f9"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/authoring.json",
+      "git_blob": "68f3c3487f18a8b4b03cc1fa4057935b6b41c867",
+      "committed_bytes_sha256": "496f24114258730a785d5f7dd8db316200a19d1faa42a923afa0223dc937d8b5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/candidate_core_revision_receipt.json",
+      "git_blob": "21e4db01420b29270d161e184c4a7fbc3d899f65",
+      "committed_bytes_sha256": "6f5c8fe9db678ca25524b248de92f0e514fe823524f93564f0520fc63e4d57c0"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/compiled_ir.json",
+      "git_blob": "f7a8ece6dc24ef3eee64e4e09fe0b98a2c7c77a2",
+      "committed_bytes_sha256": "9bf7222897fbe001337caeca785d86778b5da77d3d4fd3ae1bd7df6a3de6f70c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/compiler_input.json",
+      "git_blob": "d6a061ceb03810a4dd4ad76fd2300fecd36c9ede",
+      "committed_bytes_sha256": "6b7971c4ab7f9597df0ba77213031f5bdef16ef49f80d87651408c624781aefe"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/member_projections.json",
+      "git_blob": "643870a09f75a89b2d028b3c23db684f2c815ca0",
+      "committed_bytes_sha256": "72358370d318a1bfa1e4b512b9d214b90194d75c095bf12532b7cb9266f615d5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/readable_candidates.json",
+      "git_blob": "df910fe373474391bc6e9931b372b1cb7a21e4e4",
+      "committed_bytes_sha256": "118673f637401234de1395941a97c29cc90aae6c89b97405be19644021c11788"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/reproducibility_proof.json",
+      "git_blob": "5a070ffd3e4bcb78de8358f2891407109145fe7a",
+      "committed_bytes_sha256": "c50bf6a66019c18f2d4669c473be94e6ff447a68334a08ea90d2cb54e8c7316d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_action_core.json",
+      "git_blob": "110e8f820fb99ce6c80e31d107e9c4a718c2827d",
+      "committed_bytes_sha256": "2001732b42191fc730844f071a7eb8009089aa1babaacc5ecf4fc39943bbf71b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "faf873d3699a43193406b321cefb9ecfcd45a132",
+      "committed_bytes_sha256": "5e67a487d24c0572bbdc1cbc129877b66e10e2264692e172d26c6b87b216fbb2"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/health_proof_hash_rebind_receipt.json",
+      "git_blob": "2855c5bc4d85da42ed1371084a3cfb12c870b254",
+      "committed_bytes_sha256": "56f1d2d1ae8568bc5142e10656adf67655577966793da86e052881b96272b20f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/membership_review.json",
+      "git_blob": "b4695e6d342e4ec57ac306133bb712ff6c39c27d",
+      "committed_bytes_sha256": "3ea1ddc60c74d519cffe402afd7377056c8d81a72154a0a5304df17a82210fc6"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/seed_change_receipt.json",
+      "git_blob": "7fd5958f451b85478fbad8f67c1b5b26b3beed9d",
+      "committed_bytes_sha256": "c73d8aa9920093db13563f13d056dfd8847983276fc0bcb31c24ef566bf27cb7"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/source_acquisition_receipt.json",
+      "git_blob": "f39b5ce3a92cb3e0a9aed03a2a10c2c6f03ea079",
+      "committed_bytes_sha256": "6ae80f5483954ba5846ae136b6cb32c11116737c0764fa083f76febb315f6057"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/sources.json",
+      "git_blob": "f39f563653f81adee45d4686496957034df0d2a3",
+      "committed_bytes_sha256": "b26b3b44b07d73b93d66c76ffea1da124048bb4adb720f9b9935a8e9a74c4d94"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/universe_proposal.json",
+      "git_blob": "ff5356d2adb88d33777b2932c8e780b586a49ad9",
+      "committed_bytes_sha256": "8024115ed87a538171aa484cb3e6c3d478bc3be16bdc403608945c3e3e51abad"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/validation_receipt.json",
+      "git_blob": "a188f0be7f1da56124818cc787aa4af722f630c7",
+      "committed_bytes_sha256": "04e57f25517040b95a8807fb2923c87f730e0a1220cf4e99feef6249dad6bc89"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/authoring.json",
+      "git_blob": "a0cc23d1fe7e931f938a8b1dea7300b27fb62682",
+      "committed_bytes_sha256": "a3b8fd250cd613c2c519119312aefc64f05ebc219e7fc39ce534fa7f2f803c24"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/candidate_core_revision_receipt.json",
+      "git_blob": "ed9ab90802e2e2c811688f7a4c5a9dc2dc1dcd94",
+      "committed_bytes_sha256": "25773212258a88fd2b766cdefedcc6809100bfb3f80f174a22e5be9983c89acb"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/compiled_ir.json",
+      "git_blob": "b2e9e2566f958fb0b581f8b68fb4cc248b287fe0",
+      "committed_bytes_sha256": "9ee3340b124f191a82fc3171cadc34f3b9d56a2e0b70147419c164ed044c1d2d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/compiler_input.json",
+      "git_blob": "1a61aec5d635ffd8295b19e1630015237b20ed07",
+      "committed_bytes_sha256": "e542db72df41db94855d3c45e340feccaf778c4b1ed4f131e512f2aba68f5496"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/member_projections.json",
+      "git_blob": "2f0aca14f1152855a81eab06a0184a4fd79b17f2",
+      "committed_bytes_sha256": "94a26a3d369da5c3d441cfe1c69d6f7fee48b8c11721abb97894de18ebdd41a8"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/readable_candidates.json",
+      "git_blob": "c1e6ee9720706dccc458161b8cd9d38ad0f47387",
+      "committed_bytes_sha256": "a96ace766222b90f7cb7386fdfd5f3bc15bbbb323a89709fcd6849152828b21c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/reproducibility_proof.json",
+      "git_blob": "9a11a07a3284f62cbbd5e5d9c23527e7e922b0b9",
+      "committed_bytes_sha256": "a8a2eb72132312ead23acacf44bd99f27295728e780c13fbeba69196cdcc1112"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_action_core.json",
+      "git_blob": "9870851d14c07bd554c7515f799751727e20c695",
+      "committed_bytes_sha256": "3926411ac532a69f046137086a26fe3c94f7ce7d72db3bf4421db2568d9862a6"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "9030c242faa2beff04ef4a3bdf312c5b7dab7775",
+      "committed_bytes_sha256": "8a397b100941ba039301e0a52c2aec6268452957b1cdf6200985139c35a302d6"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/membership_review.json",
+      "git_blob": "b985a426ea16a79a9c968c8260c5a25fbc5a3790",
+      "committed_bytes_sha256": "f48cd646bed7ae281f3072afc8e03b23722a9a43bd3ae33ce2dbd4d20bc9b6ea"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/prior_bytes_preservation_receipt.json",
+      "git_blob": "e1d0fbe0ed906acc38d4d0f110e2b47c5cdb5a43",
+      "committed_bytes_sha256": "a16282fb2df7480d304861fdf1c7b4b3bc985e4473ccaffe0641727370f68ea6"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/resume_receipt.json",
+      "git_blob": "9fcdafb963e9f33fd677b20e44904cf35daa8505",
+      "committed_bytes_sha256": "372fc3c186207bafb5abc79233506277952f7c3ea465095fbc656fcc952f58f6"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/source_reuse_and_version_receipt.json",
+      "git_blob": "4eb6b53b7c309a0b1669f73b5f70dae6982974d2",
+      "committed_bytes_sha256": "472505a57193a72b098b375276bc74e1938a00b8ba02cec0ef12773c7e126df9"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/sources.json",
+      "git_blob": "d6d2b0b8080c409860d65ad830b9aba2be0bf45e",
+      "committed_bytes_sha256": "be7af4edd7c3fe8925b2f96f1f0cff8ba6cc3601545cf030b980972e9124c049"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/universe_proposal.json",
+      "git_blob": "b95a3d425389994e3171845fb71dc9b2738447f1",
+      "committed_bytes_sha256": "6861658654afef512874204173f8b483586f5ecb8a4cff41fba6b075ec8a9449"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/validation_receipt.json",
+      "git_blob": "46270aac4046b175ee9fbf3511cbfd6a188e9cab",
+      "committed_bytes_sha256": "cefeb6bba85395562656eb4492b4826f85b432b3a552e73a97ad971c470c519c"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/authoring.json",
+      "git_blob": "ec7ceb52ce5ce90e248a21339e50899f09c9adb4",
+      "committed_bytes_sha256": "465fd986322b92b136dfc464f1544fab0913c282b5d339876fecc4bcb4fa059d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/candidate_core_revision_receipt.json",
+      "git_blob": "7e2586e0f4621eab2b703adc5c93bc1b0676c0a6",
+      "committed_bytes_sha256": "25ed2d7caf5a44b1f10532601ee6222e6cac74f1aaeea307df9f68f6e7ad813b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/compiled_ir.json",
+      "git_blob": "84431ce1e3a5f8aef91c28ea93dafed0ab300916",
+      "committed_bytes_sha256": "909715460ba915399e5b00a2891af2ff82a524e7ccf9bd0cad0fc569f1497f68"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/compiler_input.json",
+      "git_blob": "09229578a47d6b85cf823819d86c423c9b60d1a8",
+      "committed_bytes_sha256": "f35c3ae302385d48cd32cab820661734975eb50c2b34d5ad5d8849f985043620"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/member_projections.json",
+      "git_blob": "282dd15b7443858312af308e755f54349ceb114d",
+      "committed_bytes_sha256": "f77b50afd54f78e2ea56b0e8c1964ce43532b1eac720eab0ac072f2501b48991"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/readable_candidates.json",
+      "git_blob": "e7b98fd1406488f338cda9f4ac6dbb79a5f63933",
+      "committed_bytes_sha256": "3430b350fe4ae77e4b1ea2696ebf40f6aafd60a526d72e4bf7b67998c0884090"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/reproducibility_proof.json",
+      "git_blob": "e7b3ea6b9ee9a8870c2b6360368f0bf2944988b2",
+      "committed_bytes_sha256": "c058712e5559e052981d29d1dda450b13a5bb78b680f8e7e4638098bd865d8c4"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/shared_action_core.json",
+      "git_blob": "8e1bacf72ba6528652c1ecede7f458996681fe46",
+      "committed_bytes_sha256": "b0b4e4e69378a185e9f877c0e329e76df85b65225cbac06268d0de453dd999d2"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "6b496b14c7a4040ac72efc9d610f88efcf5d577d",
+      "committed_bytes_sha256": "98c19bbd83f7c9c16ccd405d81854ebc17a673b08c4d942c999204fcd3606b65"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/membership_delta_review_receipt.json",
+      "git_blob": "bdb173c72f40312c38860d498a98098fe4a4d72d",
+      "committed_bytes_sha256": "7d0740460dffb5b2940196de892416c1d63e73b1d8f2e5cff193a9ba52897cf1"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/membership_review.json",
+      "git_blob": "f6715cc3833602ab154221d758d0a7f765fc2ef0",
+      "committed_bytes_sha256": "9b697b696621061dbdf0092e58699454fc595e74ed8e1871a5d0ae10d9a07d60"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/prior_bytes_preservation_receipt.json",
+      "git_blob": "9ddad387f4f7ef29231d0acbf46d0f94df420574",
+      "committed_bytes_sha256": "7a166048cdd4a40a00562aa6ccf3304de9c504b68d60cb4fee40ead46cb5103b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/resume_receipt.json",
+      "git_blob": "c913a1a0cc17061e4930b1dc667b59df07a5e66c",
+      "committed_bytes_sha256": "76689c9fc26a8c75293d65a63c6698508ac266ff88bbe61c719ea2b127264d09"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/source_reuse_and_version_receipt.json",
+      "git_blob": "8ba7ac5d64fbfe033861a98ef86bbd7119de600b",
+      "committed_bytes_sha256": "490caa8d761a5ea29b4e4e1245132d8d19809a434fbf0e52270eefc6356d3c44"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/sources.json",
+      "git_blob": "030a958afb9eabe047de67cd0290ff1f661117cc",
+      "committed_bytes_sha256": "90fc5a6edf2571e669e841c52a1c1eb9a232c64cca1a6603f86f2bb5b38db8f8"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/universe_proposal.json",
+      "git_blob": "2b25c8aaa32527aaba2504b4bb11a3b148b06540",
+      "committed_bytes_sha256": "be326b78c1c71896e5943711eaead262c033ecddde759583b55723aab001b071"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/validation_receipt.json",
+      "git_blob": "6e85cfa36041f30fb47d59518f892da9aae2e61d",
+      "committed_bytes_sha256": "7ba536355fdee7361432ae839b94f7689089a1cdad814fd5f41b75cbf72b00d3"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/authoring.json",
+      "git_blob": "d2f8dd0e5019cb0df5a8e302001c010b19773a48",
+      "committed_bytes_sha256": "c644374998fae892479bcc359660d61c5ade36927f908dafed5b093b2f0860ad"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/candidate_correction_receipt.json",
+      "git_blob": "6ab6f5d41eaaac869e26d8220588c926bff56393",
+      "committed_bytes_sha256": "12741b28375a67ec98b9afdcc31edec04bb7d933b818a37eb016da2c8eca7a12"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/compiled_ir.json",
+      "git_blob": "29cb518e4c1abf7ff2d55fbf7eadd15d846f3a14",
+      "committed_bytes_sha256": "38e14728ed4b67d13ef2e1744d8950207b9f1cadd470ba65bc63c9e6fc9c0e48"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/compiler_input.json",
+      "git_blob": "7aedcb701490337e9e49966b0c3bf350ff96d2de",
+      "committed_bytes_sha256": "b161bd57c4693ed39c8cb5e7e78508f5fcdba904c7f0a2bca9e0921463d0f461"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/member_projections.json",
+      "git_blob": "58b8faef7265ad96c54031034f485d3ee8500238",
+      "committed_bytes_sha256": "d0b6805ce3c52458f2d1855ebbad3edc5687eee5bac9b1e8d9536d9ffc6dd3f9"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/readable_candidates.json",
+      "git_blob": "c75b4245b5e65c2779b33f2ec49e916c705fb7e2",
+      "committed_bytes_sha256": "5d683c6b3ef0bfbf82d23b0ff3354f529eec0dbbe1f0a1d11c3ce09f427e588b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/reproducibility_proof.json",
+      "git_blob": "c700ebb7b1e34393148d4b9282ba6df14d009aa2",
+      "committed_bytes_sha256": "6b29a9d1a074ef031d2eaa57e8e564b24d0c9adc11f091ee6c373974d4af4a66"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/shared_action_core.json",
+      "git_blob": "e0c508c749867e8e0aefe4f6055df0a6f53d4b17",
+      "committed_bytes_sha256": "4a631d078544ebb9661ab3bae2037ca0628e747051a717664e90c6504b97b02d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "7f89bf95b7674f3d162e56f49c6dfbb306a1e03a",
+      "committed_bytes_sha256": "73bea386dff94b35c51401513847e5cb341be7af8330cf5b4aecec8d85554967"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/membership_review.json",
+      "git_blob": "9472b0733594781f67bdfa2f98dbccb29cfea554",
+      "committed_bytes_sha256": "3378f83f634b44859744fe511291f95142809843f89ccaf647d4d952469dc8cd"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/prior_bytes_preservation_receipt.json",
+      "git_blob": "a950e00dcecbd29a45c9c5b3a43912d6d6c58c23",
+      "committed_bytes_sha256": "b1333711385d1a357a5a70f7616105c84d43c4cc7a86febff2d86f9e814f5d84"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/resume_receipt.json",
+      "git_blob": "d4b08f270869c4473af7c79a83295bb4259ba9ae",
+      "committed_bytes_sha256": "60fba6f865e1f84ce74310efd18f8af33f43208ccb28db3432c03eb353c2a9df"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/source_reuse_and_version_receipt.json",
+      "git_blob": "4418070f95b9518f3f0f6053fcdf8808dd0e94bd",
+      "committed_bytes_sha256": "b196e7ca482d25a6430285ad35fb5d0e74bfb695529e7e71f80178c02f36310b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/sources.json",
+      "git_blob": "259046f2de567355d1705510491c2d8fe7fd3ef4",
+      "committed_bytes_sha256": "601c0ec5154dad67f5205fedffc46390971557a6429c892e2c8f870e59bb36a3"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/universe_proposal.json",
+      "git_blob": "134698c894cf797d2cbab93c78646057f019e7ce",
+      "committed_bytes_sha256": "ec0a7f83c0fbee0c16b9c62bd15fedbb93f8f67827ead334e98844e560b99762"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/validation_receipt.json",
+      "git_blob": "d777b15478f5a909fc5b9caec549d7502b26c50a",
+      "committed_bytes_sha256": "79d3b298dce885100ecd111e45c62a9ff389b5abf3453e246483a02f08538cbd"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/authoring.json",
+      "git_blob": "4bcd226c17a1a0fea1458499741fee1a6f033cb0",
+      "committed_bytes_sha256": "7b0ec9b6216db89bf5af3efd12407cb8515d3bb7c4da122606cdcb7bed843f84"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/compiled_ir.json",
+      "git_blob": "cb1b7f5ef3508a6048cc5ee46f144b1fec6a9d0a",
+      "committed_bytes_sha256": "83518b6d5100e0b8ae461ef3ce8e42aa44f31dcb18d0b53f871e92d797d73cf0"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/compiler_input.json",
+      "git_blob": "62d5278bb9193e4c1f32b1ca7e384bf812275b04",
+      "committed_bytes_sha256": "4569a49b9c2794f8ea115763f4cfc354924d2d1bb32c2e602465930603260f85"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/member_projections.json",
+      "git_blob": "c7d76e3aa8004d33e16a687eb9419224ee325bec",
+      "committed_bytes_sha256": "5b5d93ebeb7fe86e1fdd2f656a63864ed8a552bc7606ef8aeedf297d8803b638"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/readable_candidates.json",
+      "git_blob": "b2950a8d0e1d8485a6e6a860dce1f1ca59db50d5",
+      "committed_bytes_sha256": "82dec839bdfe08bfc446031af6cffe47e264635d2770abbd99b09d88c9503d09"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/reproducibility_proof.json",
+      "git_blob": "f4c91b54269d660b874b18f705391f62650db13c",
+      "committed_bytes_sha256": "c0e54d51687ceab8239262d1774479f21ff8db3b761e390cfec0c88ae693d344"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/shared_action_core.json",
+      "git_blob": "27d39ef2dcca9b930746bf17fd1b58f5a4570e60",
+      "committed_bytes_sha256": "5303ebafc576dd66c601f8c282e4ad2d6d186a0305695c214ead2cfc6332a802"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "b2fd0b0b679a8935303557142e00fdafdb45938b",
+      "committed_bytes_sha256": "59f4f1c8c1a132d3d91e0a044ea16c47d29ab7dd54e0fba8efe26d8251e72017"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/membership_review.json",
+      "git_blob": "bcc80a8535631a6d676ae9767479cb2abfc81736",
+      "committed_bytes_sha256": "fd912c1c228703d4086d10d96a2b5877f26a85885484d43e143cd6d93eed0cc4"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/prior_bytes_preservation_receipt.json",
+      "git_blob": "4e576b930dd6affc6dcf0a9ddb8fe33ae2febe3d",
+      "committed_bytes_sha256": "f2ccdc2359e8af6a122828084cee63afe9219998d9dea858b3b07b864c83e361"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/resume_receipt.json",
+      "git_blob": "b12064e4ed69aa11d427500ecb21863bb35c9282",
+      "committed_bytes_sha256": "61eabc3cf920a462e95dcee237403de29bb87d45261226010d4845f87fad9473"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/source_reuse_and_version_receipt.json",
+      "git_blob": "f5d70c6dc8a747c7e462e1b1a5133dd00c77395d",
+      "committed_bytes_sha256": "522b42ff663dbe01e35cfa91b5fe020a1a8def6e6acd9e7faea5641220a5d0b5"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/sources.json",
+      "git_blob": "4d914e3c03264ba67e753b0a6bb5f11bfcd10cc9",
+      "committed_bytes_sha256": "13714b215112c944ff7af244f406c30a5631df23f27b6c2b488f4c2861598dbf"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/universe_proposal.json",
+      "git_blob": "762313811392394e317f9f275e8792167f95c6fc",
+      "committed_bytes_sha256": "dc65829b5fbab766364ea47cedb8d7a9d5b764a68cd0209b286044d914c0daf4"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/validation_receipt.json",
+      "git_blob": "1dcb540d93bb39892f53024f02605ceca037181b",
+      "committed_bytes_sha256": "411d05312aef117e9f1808fc0b981548872846f58edcb2e4b623ce30980f9ddc"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/authoring.json",
+      "git_blob": "d29ce369c62f57b006dc2882dd1a3c437627888f",
+      "committed_bytes_sha256": "fd7ee82006ed95670bac63ef198d0ed609c7e5ee058b617d66e09244eba205fa"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/compiled_ir.json",
+      "git_blob": "cb1b7f5ef3508a6048cc5ee46f144b1fec6a9d0a",
+      "committed_bytes_sha256": "83518b6d5100e0b8ae461ef3ce8e42aa44f31dcb18d0b53f871e92d797d73cf0"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/compiler_input.json",
+      "git_blob": "efe75ef51130c712d2f120c4c504bf13dc48a2ae",
+      "committed_bytes_sha256": "8b904c377ae714005418f6dd566d117196da22f967e2e808330a736494fb3d9f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/member_projections.json",
+      "git_blob": "80fb89b57f09e44af924381aea7a9ac4208cc501",
+      "committed_bytes_sha256": "baa4c56b08a5bb7a99965ba545fb156e05741648c53d6de94f762e0e8b4175ef"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/readable_candidates.json",
+      "git_blob": "6ee685fa9d0b5cf9e8309036c625ac23449f7ee8",
+      "committed_bytes_sha256": "faf7fdf60d09250446864623f738084b3a64718d08742b3af9dd06c033129382"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/reproducibility_proof.json",
+      "git_blob": "c6bcab961482c7e8b90b39726aee13e7ccbc96b1",
+      "committed_bytes_sha256": "f1706a2e9e41c45c62f3637de26cda1f3aaadb2e5a14b1a7e03e792c5be3b271"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/shared_action_core.json",
+      "git_blob": "26168a70039839c25d40d1c387491b12bc73f52e",
+      "committed_bytes_sha256": "2addcc0c5e71ab346a3761898b74f8dc704fe50d15ed2c0664b0d91998e76629"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "e26226967f75a5a1b24a1dd96ca45388c5a7f402",
+      "committed_bytes_sha256": "db130980d9b5251771ceb32311950593514fb58c0082a4107425dfa556b7fed9"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/membership_review.json",
+      "git_blob": "48027e06be7f47b52297e53e4d9691949a09bd4c",
+      "committed_bytes_sha256": "e3363c298f771fb2261da238224253e9d0b6e5471300e609e79f1b7f74419098"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/nonpolicy_observation_audit.json",
+      "git_blob": "28d40dff7efe79c8ba047d4fa898565d8c437324",
+      "committed_bytes_sha256": "26f4e68ea0c8fe73b2bee1485d0d79f9032e695449eac0316e8816b6ee296516"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/prior_bytes_preservation_receipt.json",
+      "git_blob": "a5686728576cd53891772289e8e498280b784057",
+      "committed_bytes_sha256": "a25c2765fb33420f76748b4a3400ad3930e457f7b9e948d6fc9a787c9dbf9a3b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/resume_receipt.json",
+      "git_blob": "a71e2b97acce4f6ad4751c1a1b872b691ed8623f",
+      "committed_bytes_sha256": "a6f721e79a493b72c02613bf5c1d325749ec54d7bd4840954b7ea1da782394c0"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/source_reuse_receipt.json",
+      "git_blob": "fd39ac506718061052c92da03ee58f17bdc80269",
+      "committed_bytes_sha256": "c26c6128194f418ccb101ecc58cf16105ccbfbf0beeb7f99ccd54199bcd3c000"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/sources.json",
+      "git_blob": "fe0ee74f1d93cbaf492df965e14c068c72a91549",
+      "committed_bytes_sha256": "9f8d41c3bc1052570c7babed0f00afa68c2e2fa4ac048f552e36427c61f09250"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/universe_proposal.json",
+      "git_blob": "a96d7283d3ead8d36979d6f48f3ea1aa267a6d4f",
+      "committed_bytes_sha256": "f1b7177f0d4a9f7b2c4e09a2cc8aca85a5a95f87d0736fd08ae64b4d67a68048"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/validation_receipt.json",
+      "git_blob": "c8e152ad743748f4fa1c866c49761838ec4504a9",
+      "committed_bytes_sha256": "c8cb6237cc1076781ac6ccb09e66e084e412949b68df3c2e3c31956e35f4351b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/authoring.json",
+      "git_blob": "c29398e3779d4e236c31f1ae4996ba014602ea53",
+      "committed_bytes_sha256": "d6b6e02277f4ef9f95ef13333b542b72644085ced06ddbcdd88619c22d5ded2e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/compiled_ir.json",
+      "git_blob": "1297f010c10ce0cbb700970653fb18a393f4fd84",
+      "committed_bytes_sha256": "019783e351dc22b042ed1e3fb74840d7f5c112eaf390242844227e8c06f7d9c7"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/compiler_input.json",
+      "git_blob": "7998b728a395a98aca5828255e27b8d4766a95f2",
+      "committed_bytes_sha256": "4f2bacb72d126e4fa65029421de13c6f2c082f03d8adcaa01e48a5f81a716378"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/member_projections.json",
+      "git_blob": "cf26ba7c7e06eb5ed2bbafc1c99bdb6ab05afd2e",
+      "committed_bytes_sha256": "ee9b5b889fc51e250966713ead69959b1734a9fffac5826c986ff5e39b601471"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/readable_candidates.json",
+      "git_blob": "34c43d54fb451d4c7ed56a03df5bae24fd7667b3",
+      "committed_bytes_sha256": "cf497b8532f1ce396ad5687708c83a95825c6dca7b7971d0b272934bd3af39d3"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/reproducibility_proof.json",
+      "git_blob": "2493447383bd4c8107efcd41ee49a30e28e02311",
+      "committed_bytes_sha256": "7ff7e53fb7f5540ca805394bceef824f1da53158127a7a35bd096b99b4c8595d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/shared_action_core.json",
+      "git_blob": "86ffd3df3ceb6262a50de2212f12c7260aefe8ad",
+      "committed_bytes_sha256": "6f434ea90d24d45bf918f75ea23bc201360682c85c68113fe63585f05fdd20cc"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "19f67d26370e675269ffa4e1172c0920095689e7",
+      "committed_bytes_sha256": "acbb02c597f2d3a07aac5f4fed3b84d181168ced14fba28f2f29a9582dc98130"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/membership_review.json",
+      "git_blob": "a92349d7470568cac457d26bf0db5286e39e3249",
+      "committed_bytes_sha256": "aeb7ca7460683a50e3575094f0fa13cb65b338e42ae92356bbfeaeae72667564"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/prior_snapshot_preservation.json",
+      "git_blob": "1d852ef9499ab9e1fc50c858a025a92645a939b3",
+      "committed_bytes_sha256": "7acbaa23dff8a7957323c7b89e720acea372aa40cf974d69df94aa31ee7da972"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/resume_receipt.json",
+      "git_blob": "65e30e0b635ec112198cac3003a39b319fa373eb",
+      "committed_bytes_sha256": "e6eafb8728a6d28400f8395801517d796c595907a416bb99bf8a4d7334f97565"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/screening_receipt.json",
+      "git_blob": "dbdbe12d9a59456f24822037d8a75e0eab4931b8",
+      "committed_bytes_sha256": "88362c73a1c736c9fec4f872e04aba7631c249d60f93838356451210ab1482cd"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/sources.json",
+      "git_blob": "39512d1ea7fe69c6a3dd3ba6b5ee2b180eedd6ad",
+      "committed_bytes_sha256": "287169e011036906b13ff870aaaffeb3964ad054a0d25d44fb0531187db8aece"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/universe_proposal.json",
+      "git_blob": "c0fd1d0eb5917834392e7f41abd12c8513df5c63",
+      "committed_bytes_sha256": "e68b92b5ac7f6e8323e8b7ba1b00d1873c614a8ab57f33f26eb58f3beb6a2bca"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/validation_receipt.json",
+      "git_blob": "208b039366fb3bf2aed515332538209ace446a61",
+      "committed_bytes_sha256": "9c3cbf797e07592b43563169450da2d8e926aa465f15098f2c2bffc5ba26b916"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/version_binding_receipt.json",
+      "git_blob": "5885720fb3fa67f25a767c1f27ae98f3b47875ec",
+      "committed_bytes_sha256": "d2ee5c70f775e37d5460d701de2feba1b3028af491bf3bea1db758f7aa5b1644"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/authoring.json",
+      "git_blob": "ead595d5fb00aee9ed3c742d8477ccd4a271936b",
+      "committed_bytes_sha256": "3f789951726bf1a203329c316c8b47cbd974cdfc10912d60361c60e7ceca02a4"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/compiled_ir.json",
+      "git_blob": "678695a8bcba84be84f36e6fb94bce5376feabb6",
+      "committed_bytes_sha256": "546452d1354ee8b778d974b0984c0ab1b7aeea6fe29fafb91fed449b2d3c6889"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/compiler_input.json",
+      "git_blob": "3f682f8aa41fae13d7f05e613b7c133db27e37aa",
+      "committed_bytes_sha256": "86a74991d91cf9418b43e4abc68ec77e91fd45e9211af4b0cdb5548bb7737fce"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/member_projections.json",
+      "git_blob": "2ff3bf98a5e039a10703d08fb7ee6ab380d1ac76",
+      "committed_bytes_sha256": "2f1efad56b9613b20efc2f5773b84c9aba795e72e92aa5a6aa1cf3f8e9487b35"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/readable_candidates.json",
+      "git_blob": "1d1b7ffa87f8505edc756c62dfe66b04ce950984",
+      "committed_bytes_sha256": "241cf1be3efbaa4dcc5f8726159610480fd8e4b50b44b393b5b701887f3b909e"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/reproducibility_proof.json",
+      "git_blob": "bddb8f0285259e17f1e4cae55374325691792555",
+      "committed_bytes_sha256": "c7e56fbdb079c9793be2050305833f39e574b326864fccf57ad01a6652a147f6"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/shared_action_core.json",
+      "git_blob": "3c1b049f9e0bcf6e87d839113bea8ba4ef507ff3",
+      "committed_bytes_sha256": "ffef729af93ffc7ed2b9109269aa89f0b8e5a453179607a930328d6c0a994bb2"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/shared_issue_mapping.json",
+      "git_blob": "f79e741482b515c86a03a7b7daaa2631a91ae5ee",
+      "committed_bytes_sha256": "679a5f53c93c859c9fffa4efeb14babf6ed800059a8fa6e4c4da2755ba14e26a"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/hr2189_taxonomy_recommendation.json",
+      "git_blob": "2b93c5a170203e5d6488333bdbfe4cbba0e69104",
+      "committed_bytes_sha256": "2bc1c271c133dd7dd663d5ac0a16fc05146863c3f6cf6cbf9a33b5de25b06e21"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/inherited_corrections_receipt.json",
+      "git_blob": "abaee0113f28a4f60ef84bc951a85277a84a6889",
+      "committed_bytes_sha256": "a2067d38606da1593ca494dfe139fff1aced4650094ac2c299dc054c6c38b206"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/membership_review.json",
+      "git_blob": "1f46f3c55a16049ee16576570cf7b9401cb8d141",
+      "committed_bytes_sha256": "9b65f2ff3767ebcd6786cf14f883875235bed91074c3a2b8ee68998d3b78d087"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/prior_snapshot_preservation.json",
+      "git_blob": "1b7799adecc7ad0a227917135b54a9ceb15376fa",
+      "committed_bytes_sha256": "57e91c4d8b47d98ebb68d6f421d9cbdbc0e1bea13a493358616d6923d04d683f"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/resume_receipt.json",
+      "git_blob": "e989f2b44c794a01133f1a679d5b989b95124067",
+      "committed_bytes_sha256": "461db6e81c7bc44d7c7704db232e69d4a672fd56622e9a88a92446709762e84d"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/screening_receipt.json",
+      "git_blob": "027f32e9b2885a19e406ed94633c68eeb9c15306",
+      "committed_bytes_sha256": "7ae8b8f794ed922c40f7732798abf4537c291da4a26a9f0ac560ee5ace686a87"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/sources.json",
+      "git_blob": "7ae58f25bf2c74ca299d1773b1aaed4770155b11",
+      "committed_bytes_sha256": "63a54695bea91a76ed07f213af05fae94c081711d616887ee9452f0171ec3c74"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/universe_proposal.json",
+      "git_blob": "6c0241ef2f08289dd4a3de2486192b9014b854fd",
+      "committed_bytes_sha256": "2a198021f0b8b5a14eac614143907ba0a8774204ba1309427a11547651cc476b"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/validation_receipt.json",
+      "git_blob": "e2745ce31c93deca5ca12058af93a116f7551190",
+      "committed_bytes_sha256": "4f323a4f24346ce953a44b4e9c003e9428b11542a19358c9e7eb69632fe33eb4"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/version_binding_receipt.json",
+      "git_blob": "fcde15c754cacfe6ddc6f724fedc49fe1ead0610",
+      "committed_bytes_sha256": "4851c4335833b92c899d602a39ca6877647d22e7380455aefb2bf7bac9c52cd8"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch10.md",
+      "git_blob": "6882417c4d5f4859e8b456a170f6bcf92668a323",
+      "committed_bytes_sha256": "e17fd939c6b649f0f04cee74c1eba7621a72201063f4095d9a504270849095e4"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch11.md",
+      "git_blob": "87dacd95551c2adbf32c22a9df229c1028d1c103",
+      "committed_bytes_sha256": "29d6d444edb20292dd9f9645fa3beb81e23b609005abc34de980be02b6d4e10a"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch12.md",
+      "git_blob": "3fba52185b2a7762b2cc77a0595001b6854f6c5a",
+      "committed_bytes_sha256": "7d073a82ac6616026ddd3f0c7517fb40cc686e5e02292fbf3c546ab6dfb45115"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch13.md",
+      "git_blob": "a4b5b2827c957b85687e290967e080f203abd30e",
+      "committed_bytes_sha256": "bf29657be36735f4521d4f08a1a9d7655ea0d99bb27741d691c8807498fdeb15"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch14.md",
+      "git_blob": "fe6cf7290113cf5fccb8624fadd348e2c51bea48",
+      "committed_bytes_sha256": "b5de31a88bf26f846713f8095efe001d3441a1b498d5b5b2403bccaeca05d32a"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch15.md",
+      "git_blob": "01e1b78ad10e9219163b07cccd8a74f9722f6bc5",
+      "committed_bytes_sha256": "55cdbb118ae0dd13d781bf1688c206937ceb3eb666a8c617715fe31deb979e65"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch16.md",
+      "git_blob": "c8ae07bdea58f244b71a412e553dc26a92afe2a5",
+      "committed_bytes_sha256": "952e58da9cd41c7b47b2cd8ee836197cc14a44a50fb92c5a7e17cbf8c0d83cdc"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch17.md",
+      "git_blob": "a1581049b539269687c4176e63e1e009fee1d391",
+      "committed_bytes_sha256": "884f597ae67050566736d062fa90356de8f2cdc145f5a8c80332457d5ad8edf6"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch18.md",
+      "git_blob": "f0a03c40501b16dc66a3839a8839829736f408ac",
+      "committed_bytes_sha256": "721144353c8a4f1c5608bd1216bb499e0aaae203786968907d12f34a6addc654"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch2.md",
+      "git_blob": "f49224e3c613f538735d4efbb65352211233ba30",
+      "committed_bytes_sha256": "5ffb70522d39fd393f0528552bc6f91ad065d34370be8e59375d23149a9d2f26"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch3.md",
+      "git_blob": "3c7164a0c0d7edd9a90c5bd99000d30ed27584c9",
+      "committed_bytes_sha256": "8e1c3c0cc13bb8b243dd3b92e2f96a5d8580fa2aa8de88eaeb065a011b7901d9"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch4.md",
+      "git_blob": "5f1074bc6eebaf81e2dc4044990883bdb465197d",
+      "committed_bytes_sha256": "05fdee36bc4feefe3ac0009a2d3bac541f554afd98fbf6ab0cb36e4ce48ba33b"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch5.md",
+      "git_blob": "4c98d19effa5f2c695f7ce2cd31f956bdbbc79bf",
+      "committed_bytes_sha256": "dcc1d1de19cec92cb54ac176a879af94a3b77e96fb758f8f3a7951689f8f6f46"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch6.md",
+      "git_blob": "9c947255847811e843f92f47079ce89c7d4f9649",
+      "committed_bytes_sha256": "127c02a71cf12a80548902c57694658c753940f94f41b2f601b3937b4bd009ea"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch7.md",
+      "git_blob": "f9d3a8a2d637c2d2d59fd160f1b18131fbedb89b",
+      "committed_bytes_sha256": "690447fadf6e51407e42d063d4087fa8334e1d1310da06ad8707d3abe797e990"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch8.md",
+      "git_blob": "1c79585d03f37641d4940aee7f265b5990525f6a",
+      "committed_bytes_sha256": "2b7d71e0215953c04726df32be8ed3880d79ac8ce626a22384241ca1a793731f"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_batch9.md",
+      "git_blob": "5ec3e566a07331d747a208686acf1eb2fa5b47fe",
+      "committed_bytes_sha256": "916a60aae5ef6caa1da316cd8d0e4f56073d10cf50611d7917ded1ff6d64dde2"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_candidate_seed.md",
+      "git_blob": "d6f31daccbdf5accd0c2f0a9d7be61d5c22d3688",
+      "committed_bytes_sha256": "098594e6051f0f7ae1698cf0b9b7c96151b34b5f08c47c006d1592d6aec9ab1b"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_discovery_delta_candidate_increment.md",
+      "git_blob": "cc43bb707ecfd1e46f7e45e5418b39f7e2831c7c",
+      "committed_bytes_sha256": "6a14ddee65baec7a5684498dfdeae2857c4a5558f803dbc313d60119eadcf459"
+    },
+    {
+      "path": "scripts/validate_infrastructure_candidate_batch2.py",
+      "git_blob": "8b85f0ae2749ace2a3f515f7502fd8b3ceab2dfc",
+      "committed_bytes_sha256": "4aa1eebe359678fef5068d54497c2f03bfd2ccd74b535dd63a86b61c7a12fad3"
+    },
+    {
+      "path": "scripts/validate_infrastructure_candidate_batch3.py",
+      "git_blob": "bf5c95902ce13cb404ca611fc780426577d21efc",
+      "committed_bytes_sha256": "acb806cdb1273eaaf0ea235f4f8c15774325abce6dd3e002ffc26c1e33500ea4"
+    },
+    {
+      "path": "scripts/validate_infrastructure_candidate_batch4.py",
+      "git_blob": "25a2568a3019b322a3d45425f249d15a74c45590",
+      "committed_bytes_sha256": "9d39820a0e486ad4f0977012b49c4cd448d0ee520783b90841e8d81a4d220a7e"
+    },
+    {
+      "path": "scripts/validate_infrastructure_candidate_batch5.py",
+      "git_blob": "6c11f254a911fdec0666de09b1414661cc2afa1b",
+      "committed_bytes_sha256": "6b277f64c4c5806fb3b06e6215c8c4a66a7b4a81a70ee5eb0a60bea9c07abafa"
+    },
+    {
+      "path": "scripts/validate_infrastructure_candidate_batch6.py",
+      "git_blob": "06e8b218f6f270ab9d6f6faf54d68b0b47643a6f",
+      "committed_bytes_sha256": "2cf813faff3c8206faf76dbd9ee70cc7f1058ea3a4ba3b6f4c899c4890fe7c0b"
+    },
+    {
+      "path": "scripts/validate_infrastructure_candidate_batch7.py",
+      "git_blob": "e33ebb7fcda72b34165f7a129f67d2c979f9c642",
+      "committed_bytes_sha256": "4807fb76bf6c65e3351c4bd284d8525ef800b8404240c75e46e495b0db1c4f47"
+    },
+    {
+      "path": "scripts/validate_infrastructure_candidate_seed.py",
+      "git_blob": "805e2661fcfe09843053cae75a34b870b19b5bef",
+      "committed_bytes_sha256": "afa6d6e19ab33f28a102b159d91b0c308c02f256527915a567c2db97ba29afc4"
+    }
+  ],
+  "all_unchanged": true
+}
