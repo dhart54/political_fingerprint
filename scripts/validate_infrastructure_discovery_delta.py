@@ -41,6 +41,7 @@ CASES[37]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(221,227
 CASES[38]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(227,232)],new=[],new_action_ids=['house:119:1:230'],counts=dict(interpreted_substantive_directional=38,interpreted_substantive_non_directional=1,procedural_context=93,exact_action_ineligible=36,expressive_nonbinding=7,source_unresolved=392,pending_interpretation=109),pending=387)
 CASES[39]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(232,237)],new=[],new_action_ids=['house:119:1:232'],counts=dict(interpreted_substantive_directional=39,interpreted_substantive_non_directional=1,procedural_context=93,exact_action_ineligible=36,expressive_nonbinding=7,source_unresolved=387,pending_interpretation=113),pending=382)
 CASES[40]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(237,242)],new=[],counts=dict(interpreted_substantive_directional=39,interpreted_substantive_non_directional=1,procedural_context=94,exact_action_ineligible=36,expressive_nonbinding=7,source_unresolved=383,pending_interpretation=116),pending=377)
+CASES[41]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(242,247)],new=[],counts=dict(interpreted_substantive_directional=39,interpreted_substantive_non_directional=1,procedural_context=95,exact_action_ineligible=39,expressive_nonbinding=7,source_unresolved=378,pending_interpretation=117),pending=372)
 
 def folder(n):return ROOT/f'docs/editorial/shared_candidates/house_119_infrastructure_batch{n}_20260916'
 
