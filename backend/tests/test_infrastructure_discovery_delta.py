@@ -89,4 +89,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_hr359_boundaries
         action=next(a for a in read(folder(20)/'authoring.json')['actions'] if a['action_id']=='house:119:1:72');baseline=copy.deepcopy(next(s for s in read(folder(20)/'sources.json')['sources'] if s['source_id']=='govinfo:42usc16352-2024-infra20'));baseline['text']=baseline['text'].replace('2-year period beginning on August 9, 2022','permanent period');baseline['governed_bytes_sha256']=sealed_digest(baseline,'governed_bytes_sha256')
         with self.assertRaisesRegex(ValueError,'359material baseline defaults/exclusions/dated exemption lost'):validate_hr359_boundaries(action,baseline)
+    def test_quad_negotiations_cannot_guarantee_international_group(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr1263_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(24)/'authoring.json')['actions'] if a['action_id']=='house:119:1:132'));action['meaning']=action['meaning'].replace('ONLY IF the governments enter that written agreement','even without an agreement')
+        with self.assertRaisesRegex(ValueError,'1263negotiation/conditional group/financing/ethics boundary differs'):validate_hr1263_boundaries(action)
+    def test_quad_not_voting_cannot_become_opposition(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr1263_nondirectional
+        readable=copy.deepcopy(read(folder(24)/'generated/readable_candidates.json'));member=next(m for m in readable['members'] if m['member_id']=='M001184');member['findings'].append(dict(action_ids=['house:119:1:132'],compact='Massie opposed the Quad bill'))
+        with self.assertRaisesRegex(ValueError,'1263Not Voting became directional finding'):validate_hr1263_nondirectional(readable)
 if __name__=='__main__':unittest.main()
