@@ -1,0 +1,119 @@
+{
+  "exact_head": "fffdb8ca4c0b4772380930ae290405e1ee7f3493",
+  "run_id": 39153212986,
+  "job_id": 117750968065,
+  "job_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39153212986/job/117750968065",
+  "job_name": "m14h-exact-head",
+  "conclusion": "failure",
+  "independently_verified_metadata": true,
+  "candidate_preparation_step": "success",
+  "shared_candidate_tests": 215,
+  "failed_step": "Run accepted M14G and public-receipt regressions",
+  "error": "RangeError: Invalid string length in Playwright coreBundle.js:9515 stdout accumulation",
+  "node_version": "20.20.2",
+  "later_release_and_frontend_steps": "skipped",
+  "bounded_log_evidence": [
+    {
+      "line": 676,
+      "text": "m14h-exact-head\tValidate shared candidate preparation at exact head\t2026-10-18T18:16:23.2911591Z ........................................................................ [ 66%]"
+    },
+    {
+      "line": 677,
+      "text": "m14h-exact-head\tValidate shared candidate preparation at exact head\t2026-10-18T18:17:10.1817684Z .......................................................................  [100%]"
+    },
+    {
+      "line": 678,
+      "text": "m14h-exact-head\tValidate shared candidate preparation at exact head\t2026-10-18T18:17:10.1818598Z 215 passed in 99.57s (0:01:39)"
+    },
+    {
+      "line": 679,
+      "text": "m14h-exact-head\tProve disposable M14H apply, idempotency, faults, rollback, and public selector\t﻿2026-10-18T18:17:10.2828299Z ##[group]Run createdb -h 127.0.0.1 -U postgres pf_m14h"
+    },
+    {
+      "line": 680,
+      "text": "m14h-exact-head\tProve disposable M14H apply, idempotency, faults, rollback, and public selector\t2026-10-18T18:17:10.2828739Z \u001b[36;1mcreatedb -h 127.0.0.1 -U postgres pf_m14h\u001b[0m"
+    },
+    {
+      "line": 681,
+      "text": "m14h-exact-head\tProve disposable M14H apply, idempotency, faults, rollback, and public selector\t2026-10-18T18:17:10.2829081Z \u001b[36;1mpython backend/scripts/prepare_editorial_artifact_disposable.py \\\u001b[0m"
+    },
+    {
+      "line": 1248,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:43.0929658Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 114.2 MiB"
+    },
+    {
+      "line": 1249,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:45.2830331Z Chrome Headless Shell 149.0.7827.55 (playwright chromium-headless-shell v1228) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1228"
+    },
+    {
+      "line": 1250,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6005218Z /home/runner/work/political_fingerprint/political_fingerprint/frontend/node_modules/playwright-core/lib/coreBundle.js:9515"
+    },
+    {
+      "line": 1251,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6005966Z       process2.stdout.on(\"data\", (data) => stdout += data.toString());"
+    },
+    {
+      "line": 1252,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6006267Z                                                           ^"
+    },
+    {
+      "line": 1253,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6006421Z "
+    },
+    {
+      "line": 1254,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6006539Z RangeError: Invalid string length"
+    },
+    {
+      "line": 1255,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6007065Z     at Socket.<anonymous> (/home/runner/work/political_fingerprint/political_fingerprint/frontend/node_modules/playwright-core/lib/coreBundle.js:9515:59)"
+    },
+    {
+      "line": 1256,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6007579Z     at Socket.emit (node:events:524:28)"
+    },
+    {
+      "line": 1257,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6007827Z     at addChunk (node:internal/streams/readable:561:12)"
+    },
+    {
+      "line": 1258,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6008147Z     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)"
+    },
+    {
+      "line": 1260,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6009300Z     at Pipe.onStreamRead (node:internal/stream_base_commons:191:23)"
+    },
+    {
+      "line": 1261,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6009524Z "
+    },
+    {
+      "line": 1262,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6009630Z Node.js v20.20.2"
+    },
+    {
+      "line": 1263,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:17:48.6442086Z ##[error]Process completed with exit code 1."
+    },
+    {
+      "line": 1264,
+      "text": "m14h-exact-head\tPost Run actions/checkout@v4\t﻿2026-10-18T18:17:48.6549037Z Post job cleanup."
+    },
+    {
+      "line": 1265,
+      "text": "m14h-exact-head\tPost Run actions/checkout@v4\t2026-10-18T18:17:48.7162706Z [command]/usr/bin/git version"
+    }
+  ],
+  "candidate_assertion_failure_established": false,
+  "exact_head_green": false,
+  "job_retried": false,
+  "tests_weakened": false,
+  "transient_runner_behavior_established": false,
+  "latest_repeat_assessment": "This is the latest pushed head at inspection. Assess the normal next-head CI separately after batch36push; no recurrence claim yet.",
+  "engineering_followup": "Preserve exact logs; if the failure repeats or deterministic harness evidence emerges, report a separately scoped engineering fix while candidate research continues.",
+  "source_report_thread": "01a15000-0ff6-73e2-95ac-fe6aee80201f",
+  "semantic_acceptance": false,
+  "publication_authorized": false
+}

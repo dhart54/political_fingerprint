@@ -167,4 +167,14 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_state_generation_boundaries
         action=copy.deepcopy(next(a for a in read(folder(56)/'authoring.json')['actions'] if a['action_id']=='house:119:1:323'));sources={s['source_id']:s for s in read(folder(56)/'sources.json')['sources']};action['meaning']=action['meaning'].replace('on-site fuel or an on-site continuously available energy source, or contractual fuel-supply obligations','only fuel stored on site')
         with self.assertRaisesRegex(ValueError,'State generation contractual alternative or on-site scope lost'):validate_state_generation_boundaries(action,sources['govinfo:hr3628eh'],sources['govinfo:16usc-2621abc-2024-195'])
+    def test_pipeline_deadline_does_not_grant_automatic_approval(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_pipeline_review_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(58)/'authoring.json')['actions'] if a['action_id']=='house:119:1:334'));sources={s['source_id']:s for s in read(folder(58)/'sources.json')['sources']}
+        action['meaning']=action['meaning'].replace('This is not automatic approval or a 90-day clock from application','Applications receive automatic approval 90 days after application')
+        with self.assertRaisesRegex(ValueError,'pipeline deadline became automatic approval'):validate_pipeline_review_boundaries(action,sources['govinfo:hr3668eh'],sources['govinfo:33usc1341-2024-water-boundary'])
+    def test_pipeline_proposed_state_conditions_are_not_binding(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_pipeline_review_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(58)/'authoring.json')['actions'] if a['action_id']=='house:119:1:334'));sources={s['source_id']:s for s in read(folder(58)/'sources.json')['sources']}
+        action['meaning']=action['meaning'].replace('FERC may include a proposed condition only if it finds the condition necessary for that compliance; proposed conditions are not automatically binding','All proposed State conditions are automatically binding and State certification remains mandatory')
+        with self.assertRaisesRegex(ValueError,'pipeline certification displacement or FERC discretion lost'):validate_pipeline_review_boundaries(action,sources['govinfo:hr3668eh'],sources['govinfo:33usc1341-2024-water-boundary'])
 if __name__=='__main__':unittest.main()

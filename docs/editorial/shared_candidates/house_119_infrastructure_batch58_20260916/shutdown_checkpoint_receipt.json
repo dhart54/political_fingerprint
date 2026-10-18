@@ -1,0 +1,31 @@
+{
+  "state": "STOP_AFTER_COHERENT_BATCH58_DELIVERY",
+  "recorded_utc": "2026-10-18T22:21:47.156355+00:00",
+  "worktree": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra",
+  "branch": "codex/infrastructure-candidate-seed",
+  "draft_pr": 232,
+  "pre_delivery_local_head": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+  "pre_delivery_remote_tracking_head": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+  "checkpoint_head": "The commit containing this receipt; exact delivered head also saved in ignored .tmp/infra_active_checkpoint.json after push.",
+  "counts": {
+    "fixed": 676,
+    "examined": 389,
+    "ordinary_unscreened": 287,
+    "shared_candidate_meanings": 45,
+    "observations": 90,
+    "authored_Not_Voting": 7,
+    "holds": 6
+  },
+  "validation": {
+    "source_conservation_replay": "passed",
+    "focused_tests": 86,
+    "semantic_checks": 7,
+    "running_or_failed_current_validation": null,
+    "hosted_CI": "unassessed; no wait or retry"
+  },
+  "next_identity": "house:119:1:335",
+  "next_batch": 59,
+  "inherited_restrictions": "All six source/access/version holds and all denials/cancellations remain stopped; zero acquisitions and zero protected retries. No authority/operator/amount selected. No acceptance/publication/production/merge authority.",
+  "preservation": "No root-checkout or other worktree editing; ignored unreadable baseline test temps preserved. No exhaustive untracked-cleanliness assertion.",
+  "uncommitted_preparation": "Only ignored batch59triage and pre-request source-reading notes; no batch59spec or tracked candidate artifacts. Final staged artifact list and byte proof checked before commit; unstaged tracked paths checked before delivery."
+}
