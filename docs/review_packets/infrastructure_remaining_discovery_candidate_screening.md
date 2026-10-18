@@ -1,14 +1,14 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch54**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch55**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
 corrections satisfactory and CI green at `f70fc3023bd69c087be166d16d792065232edf6c`.
 Neither report accepts later work or domain membership.
 
-There are **369owner-examined identities** and **307ordinary unscreened**.
-The remaining-record phase has examined293additional historical non-leads.
+There are **374owner-examined identities** and **302ordinary unscreened**.
+The remaining-record phase has examined298additional historical non-leads.
 Evidence receipts distinguish complete bodies, exact procedural questions, partial
 operative leads and one inherited access-only investigation without child-body review. Batch26 added an identity-only child examination; batch36 followed it with its own-body binding and partial incorporated-guidance review, preserving the historical snapshot.
 Titles and historical non-lead labels select research, never automatic exclusion.
@@ -16,21 +16,21 @@ Titles and historical non-lead labels select research, never automatic exclusion
 | State | Count |
 |---|---:|
 | Shared authored candidate meanings | 43 |
-| Procedural controls | 110 |
+| Procedural controls | 112 |
 | Proposed exact-action exclusions | 52 |
 | Nonbinding expression | 10 |
 | Source/access/version holds | 6 |
-| Ordinary unfinished/review cases | 148 |
-| Ordinary unscreened identities | 307 |
+| Ordinary unfinished/review cases | 151 |
+| Ordinary unscreened identities | 302 |
 | **Discovery identities** | **676** |
 
 All43shared meanings project mechanically to Foushee and Massie. 7 authored
 Not Voting observations remain nondirectional, with42Foushee
 and37Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Five new identities, rolls 310–314: three proposed exact-action exclusions and two ordinary whole-action or baseline cases pending review. No new shared meaning. The SBA cost cap concerns rulemaking costs, while the hotline retains alternative channels and existing complaint duties. School disclosure, broad funding eligibility and parent access remain distinct, with thresholds, notice, waiver, copyright and definition limits preserved. No foreign-influence claim is independently established.
+Five new identities, rolls 315–319: three ordinary whole-action or baseline cases pending review and two non-counting controls. No new shared meaning. Rural payment offsets and election exceptions, wildlife conditional approval and reservation, and H.Res.936 actual deemed texts remain distinct. The resumed motion to commit is separate from later passage and does not inherit meaning from S.1071’s older title.
 
-[Readable batch54 findings](infrastructure_candidate_batch54.md).
+[Readable batch55 findings](infrastructure_candidate_batch55.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch54_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch55_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -57,17 +57,17 @@ Independent records continue around these holds.
 
 **Current source/conservation/generated replay and seven semantic checks pass.** Full82focused tests passed at exacta1df454348534dfa2abc5908166905e9a3aa7e93(batch52), inherited without a full-suite rerun for this no-new-meaning increment. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took3.555seconds; the specification/authoring elapsed window and later byte/delivery
+took3.632seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch54_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch54_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch54_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch54_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch55_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch55_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch55_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch55_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Continue from roll 315. The whole hotline/technical-access boundary and broad education-funding baselines remain pending. Seven authored Not Voting observations remain unchanged; additional raw Not Voting observations are preserved without adding authored coverage. All six holds and unaccepted memberships persist. No acquisition, acceptance, publication or production authority.
+Continue from roll 320. Do not substitute S.1071’s older cemetery title for the deemed package, or collapse payments, obligations, conditional authorizations and final project approvals. Whole S.356, wildlife-program and H.Res.936 incorporated versions remain pending. Seven authored Not Voting observations, six holds and all unaccepted memberships persist. No acquisition, acceptance, publication or production authority.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
