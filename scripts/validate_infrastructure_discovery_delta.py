@@ -27,6 +27,7 @@ CASES[24]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [130,131,132,
 CASES[25]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(142,147)],new=[],counts=dict(interpreted_substantive_directional=36,interpreted_substantive_non_directional=1,procedural_context=67,exact_action_ineligible=31,expressive_nonbinding=3,source_unresolved=469,pending_interpretation=69),pending=465)
 
 CASES[26]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(147,152)],new=[],counts=dict(interpreted_substantive_directional=36,interpreted_substantive_non_directional=1,procedural_context=69,exact_action_ineligible=31,expressive_nonbinding=3,source_unresolved=464,pending_interpretation=72),pending=460)
+CASES[27]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [152,153,154,155,156,158,159,160,161,162]],new=[],counts=dict(interpreted_substantive_directional=36,interpreted_substantive_non_directional=1,procedural_context=73,exact_action_ineligible=32,expressive_nonbinding=5,source_unresolved=454,pending_interpretation=75),pending=450)
 
 def folder(n):return ROOT/f'docs/editorial/shared_candidates/house_119_infrastructure_batch{n}_20260916'
 
