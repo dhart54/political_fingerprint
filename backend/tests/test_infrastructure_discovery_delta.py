@@ -125,4 +125,16 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_retained_numeric_conflict
         record=copy.deepcopy(next(r for r in read(folder(40)/'membership_review.json')['records'] if r['action_id']=='house:119:1:237'));sources={s['source_id']:s for s in read(folder(40)/'sources.json')['sources']};receipt=read(folder(40)/'retained_numeric_conflict_receipt.json');record['authoritative_source_conflict']=False
         with self.assertRaisesRegex(ValueError,'retained237numeric conflict cleared or recast'):validate_retained_numeric_conflict(record,sources,receipt)
+    def test_vehicle_repeal_keeps_2035_multitechnology_scope(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_vehicle_repeal_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(42)/'authoring.json')['actions'] if a['action_id']=='house:119:1:251'));target=next(s for s in read(folder(42)/'sources.json')['sources'] if s['source_id']=='govinfo:10usc2922g-2024-operative');action['meaning']=action['meaning'].replace('not an immediate electric-only requirement for all military vehicles','an immediate electric-only requirement for all military vehicles')
+        with self.assertRaisesRegex(ValueError,'vehicle repeal lost time/technology/waiver qualifications'):validate_vehicle_repeal_boundaries(action,target)
+    def test_vehicle_preference_repeal_does_not_become_ev_ban(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_vehicle_repeal_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(42)/'authoring.json')['actions'] if a['action_id']=='house:119:1:251'));target=next(s for s in read(folder(42)/'sources.json')['sources'] if s['source_id']=='govinfo:10usc2922g-2024-operative');action['meaning']=action['meaning'].replace('does not create a new ban on electric or hybrid procurement','creates a new ban on electric or hybrid procurement')
+        with self.assertRaisesRegex(ValueError,'vehicle preference repeal became EV procurement ban'):validate_vehicle_repeal_boundaries(action,target)
+    def test_current_mechanism_summary_includes_authored_amendments(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_mechanism_summary
+        accounting=copy.deepcopy(read(folder(42)/'universe_proposal.json')['accounting']);core=read(folder(42)/'generated/shared_action_core.json');accounting['mechanism_types']=['final_passage','suspension_and_passage']
+        with self.assertRaisesRegex(ValueError,'accounting mechanism summary omits or invents'):validate_mechanism_summary(accounting,core)
 if __name__=='__main__':unittest.main()

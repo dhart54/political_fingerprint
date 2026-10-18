@@ -1,0 +1,1270 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 36,
+  "exact_committed_head": "d05a44461ae7550227169314a6b2504ea3bf9177",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact d05a44461ae7550227169314a6b2504ea3bf9177, never current batch42 working-tree bytes; zero source acquisition.",
+  "scope": "31 new identities across six batches plus only two prior roll150/207 follow-ups in batch36. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim. Whole CMS letter, BLM plans/maps, appropriations and other partial reviews remain incomplete as recorded. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/membership_review.json",
+      "git_blob": "db27f37f8407d04991a3deed055720beac7928b4",
+      "git_bytes_sha256": "d19458f66030dd9a3553f720207b24fc98ee25f92df1944ca8e3bf197908f215"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/sources.json",
+      "git_blob": "d859df32bdafd9f45df47a150ffb923f0add342c",
+      "git_bytes_sha256": "a858ffbc9b77685a4dd695d2f95885a50baee754faeaa5b52f1f179ea72adc46"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/screening_receipt.json",
+      "git_blob": "dc24d4228b665c4417414a4bdf0c87da733009a0",
+      "git_bytes_sha256": "688b8093074db0f10e948a45fe35ffe1355300c556c450889f9d6ed051c09461"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/screening_units_receipt.json",
+      "git_blob": "6a6672cea40f9bd107ecca5cccd0b9646e82d8dd",
+      "git_bytes_sha256": "38f79aa8c2fdd351228604774d739d1158a90025412f1364f08c0ea14bda2b58"
+    }
+  },
+  "cumulative_membership_review_sha256": "eafca6bd661a3cbee022de7ac8e303f7149278954fd9ccbf6ab5b98c8da40864",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/78044e1a51a47683b4a9a469ab325b85c1b5add85e7b59f08885ddf95f43f479.0000000.json",
+        "sha256": "5e73067fb062614a00d86e6da020afcf14772fdd83b193f505e7433939dff660",
+        "start_character": 0,
+        "end_character": 24069
+      }
+    ],
+    "utf8_sha256": "78044e1a51a47683b4a9a469ab325b85c1b5add85e7b59f08885ddf95f43f479",
+    "total_characters": 24069,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/a0d6b6a4c4abddd820d95d5b9b079997d2ebe6e86d718e2ac922de81b1937045.0000000.json",
+        "sha256": "8132d43f586dc61d9b7214749fa8166f5cad6a440952e3de45accabce659e7ad",
+        "start_character": 0,
+        "end_character": 60493
+      }
+    ],
+    "utf8_sha256": "a0d6b6a4c4abddd820d95d5b9b079997d2ebe6e86d718e2ac922de81b1937045",
+    "total_characters": 60493,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:215",
+    "house:119:1:216",
+    "house:119:1:217",
+    "house:119:1:219",
+    "house:119:1:220"
+  ],
+  "prior_record_followup_ids": [
+    "house:119:1:150",
+    "house:119:1:207"
+  ],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hr3937eh",
+      "scope": "Complete identified EHbody read; material imported scopes/version qualifications remain explicit"
+    },
+    {
+      "source_id": "govinfo:hr1917eh",
+      "scope": "Complete identified EHbody read; material imported scopes/version qualifications remain explicit"
+    },
+    {
+      "source_id": "govinfo:hr3357eh",
+      "scope": "Complete identified EHbody read; material imported scopes/version qualifications remain explicit"
+    },
+    {
+      "source_id": "govinfo:hr4216eh",
+      "scope": "Complete identified EHbody read; material imported scopes/version qualifications remain explicit"
+    },
+    {
+      "source_id": "govinfo:hr747eh",
+      "scope": "Complete identified EHbody read; material imported scopes/version qualifications remain explicit"
+    },
+    {
+      "source_id": "immigration:roll150-initial171",
+      "scope": "Complete own retained child offering/report/recorded result read; prior identity-only snapshot unchanged"
+    },
+    {
+      "source_id": "immigration:roll150-recorded171",
+      "scope": "Complete own retained child offering/report/recorded result read; prior identity-only snapshot unchanged"
+    },
+    {
+      "source_id": "immigration:roll150-report171",
+      "scope": "Complete own retained child offering/report/recorded result read; prior identity-only snapshot unchanged"
+    },
+    {
+      "source_id": "cms:smd24003",
+      "scope": "Partial0-2400and reviewed SHACparagraphs31163-33428within30000-33600of48001; no whole-letter interpretation"
+    },
+    {
+      "source_id": "govinfo:42usc1315a-operative171",
+      "scope": "Complete1937character retained subsection(a), not all later notes"
+    },
+    {
+      "source_id": "govinfo:hr4016rh-section8067-complete171",
+      "scope": "Complete1719character reported target across pages92-93, preserving five allocations and qualifiers; no parent final-EH substitution"
+    },
+    {
+      "source_id": "clerk:119:1:215",
+      "scope": "Exact question/measure/result/date and original member labels inspected"
+    },
+    {
+      "source_id": "clerk:119:1:216",
+      "scope": "Exact question/measure/result/date and original member labels inspected"
+    },
+    {
+      "source_id": "clerk:119:1:217",
+      "scope": "Exact question/measure/result/date and original member labels inspected"
+    },
+    {
+      "source_id": "clerk:119:1:219",
+      "scope": "Exact question/measure/result/date and original member labels inspected"
+    },
+    {
+      "source_id": "clerk:119:1:220",
+      "scope": "Exact question/measure/result/date and original member labels inspected"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_identified_bill_body_units": 5,
+    "prior_record_followup_units": 2,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 1,
+    "full_action_meanings_authored": 1,
+    "units": [
+      {
+        "action_id": "house:119:1:215",
+        "evidence_unit": "complete_identified_bill_body_domain_screen",
+        "metadata_only_does_not_establish_body_review": true,
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:216",
+        "evidence_unit": "complete_identified_bill_body_domain_screen",
+        "metadata_only_does_not_establish_body_review": true,
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:217",
+        "evidence_unit": "complete_identified_bill_body_domain_screen",
+        "metadata_only_does_not_establish_body_review": true,
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:219",
+        "evidence_unit": "complete_identified_bill_body_domain_screen",
+        "metadata_only_does_not_establish_body_review": true,
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:220",
+        "evidence_unit": "complete_identified_bill_body_domain_screen",
+        "metadata_only_does_not_establish_body_review": true,
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:150",
+        "prior_record_followup": true,
+        "evidence_unit": "complete_own_child_and_partial_incorporated_guidance_followup",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:207",
+        "prior_record_followup": true,
+        "evidence_unit": "complete_exact_deletion_and_reported_target_meaning_candidate",
+        "whole_action_meaning_authored": true
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "450a2340179efdc1ddff7e0f7aa16601d3c7d67427b62e5b2876bb4fb7f6136a",
+      "new_discovery_identity": false,
+      "record": {
+        "action_id": "house:119:1:150",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Bounded follow-up of the earlier identity-only record, not a new discovery identity. Complete own PettersenPartA3offering/report and resumed213-213rejection bind a clause giving the ENTIRE August22,2024CMS SMD24-003budget-neutrality guidance the force and effect of law. Full own operative body is now read/bound without using parent2483EH. Reviewed guidance header0-2400and SHACparagraphs within30000-33600of48001, plus complete retained42USC1315(a). The letter discusses3percent SHACand15percent HRSNinfrastructure sub-ceilings and one-way unspent authority rules; these are limited guidance context, not whole-letter review or proof of a general infrastructure-funding grant. Whole incorporated guidance/material budget methods and exact Infrastructure/Technology membership remain pending. Earlier identity-only snapshots and raw H R2483observations remain immutable; no other-domain disposition, waiver approval, actual construction or policy outcome transferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:150",
+            "url": "https://clerk.house.gov/evs/2025/roll150.xml",
+            "raw_sha256": "0d8ec08c30c91abbc8ee1f1013a68bb867d7f905eef4bd718aea9eac19addac7",
+            "governed_bytes_sha256": "6b5bdb5a3c576a97b7418ca18eeee5ea73d87d2818c8d9f99239eb5b8d4d6451"
+          },
+          {
+            "source_id": "immigration:roll150-initial171",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+            "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+            "governed_bytes_sha256": "b4554f389a1a07a3ed06fe20e789ecd081f1dd1ccf6999ed66ace92a04ee8d89"
+          },
+          {
+            "source_id": "immigration:roll150-recorded171",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+            "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+            "governed_bytes_sha256": "7cc847c3857a26ffc9f508afd901414aaee70bc2cab4423b2de48c603cfb4190"
+          },
+          {
+            "source_id": "immigration:roll150-report171",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt130/html/CRPT-119hrpt130.htm",
+            "raw_sha256": "e400873251d6b9864dfd79b961b15682a13ef2b3535a9fcfaf49bf1c808e1f86",
+            "governed_bytes_sha256": "60ae68942d9d65be0fa55e182d8032c0ba1e523805f34c001870d156e16a7648"
+          },
+          {
+            "source_id": "cms:smd24003",
+            "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/smd24003.pdf",
+            "raw_sha256": "b9eb2e7077fbd4cfdc5d81cab35bab18d47f5bc220d65a01f6ed9b6188b590a8",
+            "governed_bytes_sha256": "61ac79661105bbac75226bcc8823ff8dd040b457d06f8c330b928f4cade6dbc9"
+          },
+          {
+            "source_id": "govinfo:42usc1315a-operative171",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1315.htm",
+            "raw_sha256": "7b57e71712d2fb4f1267ab247eedfb1e2c78711ec4d1b711642696cd658a30b7",
+            "governed_bytes_sha256": "3bb61af13056905e7f3cfc3dd986ee1474406dce8aee4dc500efcff2675ff18c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:roll150-initial171",
+            "locator": "Complete retained own offering/operative or resumed recorded result",
+            "passage": "AMENDMENT NO. 3 OFFERED BY MS . PETTERSEN \nThe CHAIR. It is now in order to con-\nsider amendment No. 3 printed in part \nA of House Report 119–130. \nMs. PETTERSEN. Mr. Chair, I have \nan amendment at the desk. \nThe CHAIR. The Clerk will designate \nthe amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of title IV, add the following: \nSEC. ll. CODIFICATION OF BUDGET NEU-\nTRALITY GUIDANCE IN SMD #24-003. \nThe guidance for budget neutrality for \nMedicaid demonstration projects under sec-\ntion 1115(a) of the Social Security Act (42 \nU.S.C. 1315(a)) described in State Medicaid \nDirector letter #24-003 of the Centers for \nMedicare & Medicaid Services (published on \nAugust 22, 2024) shall have the force and ef-\nfect of law. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from Colorado (Ms. \nP\nETTERSEN). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMs. PETTERSEN. Madam Chair, I \ndemand a recorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from Colorado will be \npostponed."
+          },
+          {
+            "source_id": "immigration:roll150-recorded171",
+            "locator": "Complete retained own offering/operative or resumed recorded result",
+            "passage": "AMENDMENT NO. 3 OFFERED BY MS . PETTERSEN \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, the unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 3, printed in \npart A of House Report 119–130, offered \nby the gentlewoman from Colorado \n(Ms. P\nETTERSEN), on which further pro-\nceedings were postponed and on which \nthe noes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe vote was taken by electronic de-\nvice, and there were—ayes 213, noes 213, \nnot voting 12, as follows: \n[Roll No. 150]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "immigration:roll150-report171",
+            "locator": "Complete retained own offering/operative or resumed recorded result",
+            "passage": "3. An Amendment To Be Offered by Representative Pettersen of Colorado or Her Designee, Debatable for 10 Minutes At the end of title IV, add the following: SEC. __. CODIFICATION OF BUDGET NEUTRALITY GUIDANCE IN SMD #24-003. The guidance for budget neutrality for Medicaid demonstration projects under section 1115(a) of the Social Security Act (42 U.S.C. 1315(a)) described in State Medicaid Director letter #24-003 of the Centers for Medicare & Medicaid Services (published on August 22, 2024) shall have the force and effect of law. "
+          },
+          {
+            "source_id": "cms:smd24003",
+            "locator": "Exact dated guidance header chars0-2400of48001; partial letter only",
+            "passage": "DEPARTMENT OF HEALTH & HUMAN SERVICES Centers for Medicare & Medicaid Services 7500 Security Boulevard, Mail Stop: S2-26-12 Baltimore, Maryland 21244-1850 SMD # 24-003 RE: Budget Neutrality for Section 1115(a) Medicaid Demonstration Projects August 22, 2024 Dear State Medicaid Director: This letter describes the Centers for Medicare & Medicaid Services’ (CMS) current approach to determining budget neutrality for Medicaid demonstration projects authorized under section 1115(a) of the Social Security Act (“the Act”) and is intended to give states and interested parties information on how CMS calculates and applies budget neutrality in demonstration approvals. Until September 2022, CMS and states generally applied an approach to calculating budget neutrality described in the 2018 State Medicaid Director Letter (SMDL) available at link https://www.medicaid.gov/federal-policy-guidance/downloads/smd18009.pdf. Since issuing the 2018 SMDL, CMS has recognized that the approach described in that SMDL could limit states’ future ability to continue testing and developing innovative demonstration programs that are likely to assist in promoting the objectives of Medicaid. To address this, in recent approvals, CMS has updated its methodology to better support state innovation while continuing to promote fiscal integrity. The updated methodology has been applied as appropriate in demonstration special terms and conditions (STCs) starting in September 2022. 1 Accordingly, this SMDL updates and supersedes the 2018 budget neutrality SMDL.2 Section 1115(a) Medicaid Demonstration Projects Under section 1115(a) of the Act, the Secretary of Health and Human Services (“Secretary”) or CMS, operating under the Secretary’s delegated authority, may authorize a state to conduct experimental, pilot, or demonstration projects that, in the judgment of the Secretary, are likely to assist in promoting the objectives of title XIX of the Act. The Secretary (1) may, under section 1115(a)(1), waive provisions in section 1902 of the Act; and/or (2) may, under section 1115(a)(2)(A), authorize federal financial participation (FFP) for state expenditures that would not qualify for FFP under section 1903 of the Act (i.e., provide “expenditure authority”). Section 1902 of the Act generally lists what elements the Medicaid state plan must include, such as provisions relating to eligibility, beneficiary"
+          },
+          {
+            "source_id": "cms:smd24003",
+            "locator": "Complete reviewed SHACparagraphs chars31163-33428of48001; not whole guidance",
+            "passage": "To ensure that treating certain HRSN expenditures as hypothetical does not have a significant negative fiscal impact on Medicaid, CMS is applying a budget neutrality ceiling to HRSN services expenditures and an additional sub-ceiling to HRSN infrastructure expenditures. CMS is referring to these ceilings on HRSN expenditures collectively as the “Supplemental HRSN Aggregate Ceiling (SHAC),” also known as, “capped hypothetical expenditures.” The SHAC currently cannot exceed 3 percent of the state’s total computable Medicaid spending, and the sub-ceiling for infrastructure costs cannot exceed 15 percent of total HRSN expenditure authority. The SHAC differs from the usual limit CMS places on hypothetical expenditures under the “supplemental test” discussed above in several respects. First, ordinarily, if a state exceeds the hypothetical expenditure limit, it can offset the additional costs with savings from the rest of the demonstration. That is not permitted with the HRSN expenditures. However, unspent expenditure authority allocated for HRSN infrastructure in a given demonstration year can be applied to HRSN services in the same demonstration year. Any unspent HRSN services expenditure authority may not be used to fund HRSN infrastructure. Second, the expenditures subject to the SHAC are narrowly defined to reflect only expenditures associated with services that research indicates are likely to have certain positive downstream effects, as discussed above. Third, the upper limit on the SHAC is based on a range of estimates of the likely cost of these expenditures over the course of a five-year period and set at a mid-point in that range, and it cannot exceed the 3 percent and 15 percent thresholds discussed above. While this SHAC deviates from the traditional approach to hypothetical expenditures, it is consistent with CMS’s historical approach to maintaining budget neutrality in Medicaid demonstrations and it does not alter the underlying financing structure of the Medicaid program. This SHAC ensures that the state maintains its investment in the state plan benefits to which beneficiaries are entitled while testing the benefit of the HRSN services described above. CMS does not apply this SHAC to any other benefits or services. "
+          },
+          {
+            "source_id": "govinfo:42usc1315a-operative171",
+            "locator": "Complete retained subsection1315(a); no later subsections/notes certified",
+            "passage": "(a) Waiver of State plan requirements; costs regarded as State plan expenditures; availability of appropriations In the case of any experimental, pilot, or demonstration project which, in the judgment of the Secretary, is likely to assist in promoting the objectives of subchapter I, X, XIV, XVI, or XIX, or part A or D of subchapter IV, in a State or States— (1) the Secretary may waive compliance with any of the requirements of section 302, 602, 654, 1202, 1352, 1382, or 1396a of this title, as the case may be, to the extent and for the period he finds necessary to enable such State or States to carry out such project, and (2)(A) costs of such project which would not otherwise be included as expenditures under section 303, 655, 1203, 1353, 1383, or 1396b of this title, as the case may be, and which are not included as part of the costs of projects under section 1310 of this title, shall, to the extent and for the period prescribed by the Secretary, be regarded as expenditures under the State plan or plans approved under such subchapter, or for administration of such State plan or plans, as may be appropriate, and (B) costs of such project which would not otherwise be a permissible use of funds under part A of subchapter IV and which are not included as part of the costs of projects under section 1310 of this title, shall to the extent and for the period prescribed by the Secretary, be regarded as a permissible use of funds under such part. In addition, not to exceed $4,000,000 of the aggregate amount appropriated for payments to States under such subchapters for any fiscal year beginning after June 30, 1967, shall be available, under such terms and conditions as the Secretary may establish, for payments to States to cover so much of the cost of such projects as is not covered by payments under such subchapters and is not included as part of the cost of projects for purposes of section 1310 of this title. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "964ef4ac673423492454e13d9ed26ed0b55f67fbe39e6b429af5c20fd8f75b38",
+      "new_discovery_identity": false,
+      "record": {
+        "action_id": "house:119:1:207",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Prior-record follow-up binds the complete reported8067target to the previously read own failed Greene114child. Propose the whole deletion of its single500million-dollar allocation directive with all five suballocations and agreement/law conditions. This is not an automatic account-total cut or all-assistance ban. Candidate inclusion is proposed for direct missile-procurement/R&D allocation governance under the existing rule; independent membership acceptance remains withheld. No new discovery identity or other-domain disposition is transferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:207",
+            "url": "https://clerk.house.gov/evs/2025/roll207.xml",
+            "raw_sha256": "0109fb4b75187dff14d9b6c8a818afea333bf18775e1a1245cf3e3f670ae5792",
+            "governed_bytes_sha256": "58cf4c11bf6ad9dab124785feb41059b8a00694b71a724d23557fcf4a7ade8e7"
+          },
+          {
+            "source_id": "immigration:roll207-initial171",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+            "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+            "governed_bytes_sha256": "c1cf0d23f6975dc9a3a5cfab311c7be08d4698f67cf5c75a78ddafa136ab1745"
+          },
+          {
+            "source_id": "immigration:roll207-recorded171",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+            "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+            "governed_bytes_sha256": "bb3e05b8b9ca07c365eb1a4efe0b05c280004a7d5b1cbeca18bc060bdae36b18"
+          },
+          {
+            "source_id": "immigration:roll207-report171",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+            "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+            "governed_bytes_sha256": "18c5afd3728d901b017029dd3c91bf708704c38c84b522ff6ad78ff8c2f535e5"
+          },
+          {
+            "source_id": "govinfo:hr4016rh-section8067-complete171",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+            "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+            "governed_bytes_sha256": "99c223f19b5e318c0798a3b16895aa64835ce3e44a7e52faf62ce2c769ef9c79"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:roll207-initial171",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 114 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 114 printed \nin part A of House Report 119–199. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 8067 (page 92, beginning on \nline 12 through page 93, line 13). \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from Georgia (Ms. G\nREENE). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMs. GREENE of Georgia. Mr. Chair, I \ndemand a recorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from Georgia will be \npostponed."
+          },
+          {
+            "source_id": "immigration:roll207-recorded171",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 114 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 114, printed in \npart A of House Report 119–199, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 6, noes 422, \nnot voting 9, as follows: \n[Roll No. 207]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "immigration:roll207-report171",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "114. An Amendment To Be Offered by Representative Greene of Georgia or Her Designee, Debatable for 10 Minutes Strike section 8067 (page 92, beginning on line 12 through page 93, line 13). "
+          },
+          {
+            "source_id": "govinfo:hr4016rh-section8067-complete171",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SEC. 8067. Of the amounts appropriated in this Act 12\nunder the headings ‘‘Procurement, Defense-Wide’’ and 13\n‘‘Research, Development, Test and Evaluation, Defense- 14\nWide’’, $500,000,000 shall be for the Israeli Cooperative 15\nPrograms: Provided, That of this amount, $60,000,000 16\nshall be for the Secretary of Defense to provide to the Gov-17\nernment of Israel for the procurement of the Iron Dome 18\ndefense system to counter short-range rocket threats, sub-19\nject to the U.S.-Israel Iron Dome Procurement Agree-20\nment; $127,000,000 shall be for the Short Range Ballistic 21\nMissile Defense (SRBMD) program, including cruise mis-22\nsile defense research and development under the SRBMD 23\nprogram; $40,000,000 shall be for co-production activities 24\nof SRBMD systems in the United States and in Israel 25\nVerDate Sep 11 2014 20:32 Jun 16, 2025 Jkt 059200 PO 00000 Frm 00092 Fmt 6652 Sfmt 6201 E:\\BILLS\\H4016.RH H4016ssavage on LAPJG3WLY3PROD with BILLS 93 \n• HR 4016 RH\nto meet Israel’s defense requirements consistent with each 1\nnation’s laws, regulations, and procedures, subject to the 2\nU.S.-Israeli co-production agreement for SRBMD; 3\n$100,000,000 shall be for an upper-tier component to the 4\nIsraeli Missile Defense Architecture, of which 5\n$100,000,000 shall be for co-production activities of 6\nArrow 3 Upper Tier systems in the United States and in 7\nIsrael to meet Israel’s defense requirements consistent 8\nwith each nation’s laws, regulations, and procedures, sub-9\nject to the U.S.-Israeli co-production agreement for Arrow 10\n3 Upper Tier; and $173,000,000 shall be for the Arrow 11\nSystem Improvement Program including development of 12\na long range, ground and airborne, detection suite. 13\n"
+          }
+        ],
+        "episode_candidate_id": "episode:hr4016:amend114:119"
+      }
+    },
+    {
+      "original_record_sha256": "e4ad33b1c04370e0b0f6ba128a9519be327f02b4aa2865536b6b0541deda7ba4",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:215",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.3937EHcombines a conditional market-value conveyance of approximately14national-forest acres including mineral rights/improvements with a comprehensive Federal stone/sand/gravel permitting-process review and public180day report. The offer/conveyance clocks follow appraisal approval/offer, valid existing rights/quitclaim/protective terms and purchaser costs remain; the appraisal is due300days after enactment. The dated map, exact parcel/survey/appraisal standards and whole conveyance/permitting/material-supply versus direct infrastructure boundary, plus amended-suspension floor binding, remain ordinary work. No actual sale, plant expansion, permit approval or project benefit inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:215",
+            "url": "https://clerk.house.gov/evs/2025/roll215.xml",
+            "raw_sha256": "188ae5065423be68be02d58b3a799d02e4d1852db121b5daf1c451f954bf097e",
+            "governed_bytes_sha256": "2c6a5cf4f648c1461c7407a147c77c95b852b5092ea745df68a57d434fe3e940"
+          },
+          {
+            "source_id": "govinfo:hr3937eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3937eh/html/BILLS-119hr3937eh.htm",
+            "raw_sha256": "f2e7db52f8e51b347638912cb3907578e7211ba3f2f39fa3e52ae4b7d664e0a1",
+            "governed_bytes_sha256": "fc6a176b549af3dfc5f92fd9509c3e350420e3e4f4716529ea78bb2f372c3a01"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3937eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3937 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3937 _______________________________________________________________________ AN ACT To provide for the conveyance of certain Federal land in Chequamegon- Nicolet National Forest, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Wabeno Economic Development Act''. SEC. 2. CONVEYANCE OF CERTAIN NATIONAL FOREST SYSTEM LAND IN THE CHEQUAMEGON-NICOLET NATIONAL FOREST TO TONY'S WABENO REDI-MIX, LLC. (a) Conveyance Required.--If, during the 180-day period beginning on the date of Federal approval of the appraisal under subsection (d), Tony's Wabeno Redi-Mix, LLC submits to the Secretary an offer to acquire the property described in subsection (b) for market value, as determined by such appraisal, the Secretary shall, not later than 180 days after receiving such offer, convey to Tony's Wabeno Redi-Mix, LLC all right, title, and interest of the United States, including mineral rights, in and to the property described in subsection (b). (b) Description of Property.-- (1) In general.--The property referred to in subsection (a) is the parcel of real property, including all land and improvements, generally depicted as ``Federal Parcel to be Conveyed'' on the Map, consisting of approximately 14 acres of National Forest System land located in the Chequamegon-Nicolet National Forest in Wisconsin. (2) Map.-- (A) Minor errors.--The Secretary may correct minor errors in the Map. (B) Availability.--A copy of the Map shall be on file and available for public inspection in the appropriate office of the Forest Service. (3) Survey.--The exact acreage and legal description of the National Forest System land to be conveyed under subsection (a) shall be determined by a survey satisfactory to the Secretary. (c) Terms and Conditions of the Conveyance.-- (1) Requirements.--The conveyance under subsection (a) shall be-- (A) subject to valid existing rights; (B) made by quitclaim deed; and (C) subject to such other terms and conditions as the Secretary considers to be appropriate to protect the interests of the United States. (2) Costs.--As a condition of the conveyance under subsection (a), Tony's Wabeno Redi-Mix, LLC shall pay to the Secretary-- (A) an amount equal to the market value of the land to be conveyed under subsection (a), as determined by the appraisal under subsection (d); and (B) all costs associated with the conveyance, including the cost of-- (i) a survey, if necessary, under subsection (b)(3); (ii) conducting the appraisal under subsection (d); and (iii) any environmental analysis or resource survey required under Federal law. (d) Appraisal.-- (1) In general.--Not later than 300 days after the date of enactment of this Act, the Secretary shall complete an appraisal to determine the market value of the land to be conveyed under subsection (a). (2) Standards.--The appraisal under paragraph (1) shall be conducted in accordance with-- (A) the Uniform Appraisal Standards for Federal Land Acquisitions; and (B) the Uniform Standards of Professional Appraisal Practice. (e) Definitions.--In this section: (1) Map.--The term ``Map'' means the map entitled ``Conveyance of Federal Parcel Chequamegon-Nicolet National Forest'' and dated September 27, 2023. (2) Secretary.--The term ``Secretary'' means the Secretary of Agriculture, acting through the Chief of the Forest Service. SEC. 3. COMPREHENSIVE REVIEW OF FEDERAL PERMITTING PROCESSES FOR STONE, SAND, AND GRAVEL DEVELOPMENT ON FEDERAL LANDS. (a) Review.--The Secretary of the Interior, in consultation with the heads of other relevant Federal agencies, industry stakeholders, and State permitting authorities, shall conduct a comprehensive review of the Federal permitting processes for the development of stone, sand, and gravel on Federal lands. (b) Report.--Not later than 180 days after the date of enactment of this Act, the Secretary of the Interior, in consultation with the entities referred to in subsection (a), shall submit to the Committee on Natural Resources of the House of Representatives and the Committee on Energy and Natural Resources of the Senate, and make publicly available on the website of the Department of the Interior a report that includes-- (1) a detailed description of the current Federal permitting process for stone, sand, and gravel development, including average timelines from initial application to final approval; (2) an analysis identifying potential inefficiencies and duplicative steps in such permitting process and the impact of such inefficiencies and duplicative steps on project timelines; (3) the Secretary's recommendations for legislative or administrative actions to streamline such permitting process; and (4) a summary of the economic impacts associated with current permitting timelines under such permitting process, specifically focusing on the stone, sand, and gravel sectors. Passed the House of Representatives July 22, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3937 _______________________________________________________________________ AN ACT To provide for the conveyance of certain Federal land in Chequamegon- Nicolet National Forest, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "b25aafff3438282643b60a1c08c5109dc3fa9be57fa0fe1a4d44adf784ab7ebf",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:216",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.1917EHstatutorily establishes a GreatLakesmass-marking program, permits equipment/tags/data-processing/dissemination and personnel, requires named agency/council/strategic-plan-signatory collaboration and data availability to fish-management agencies, and authorizes2.7million dollars annually2026-2030. Permission to purchase/hire differs from a mandatory deployment, and authorization is not an appropriation. Findings about prior tagging/technology/economics remain bill attribution. Material JointStrategicPlanidentity/objectives and program baselines, scientific monitoring/data governance versus general fisheries-management membership, and amended-suspension binding remain ordinary review. No guaranteed tagging count, ecological result or new disbursed funding inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:216",
+            "url": "https://clerk.house.gov/evs/2025/roll216.xml",
+            "raw_sha256": "edb2cd1cdcf5178bb2eca0d480bfe8d79d4693f70ad1f0edc3c4fb99a25ceffe",
+            "governed_bytes_sha256": "f2c1cd9d0b44b35f3999f7a5a6143196863980d3bf9fb96a20a08f510b21d92b"
+          },
+          {
+            "source_id": "govinfo:hr1917eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1917eh/html/BILLS-119hr1917eh.htm",
+            "raw_sha256": "3fcb12f9983d6d3e4f7a016862a7e67c62c90232402a2d3a0c952dc09a64a3d3",
+            "governed_bytes_sha256": "8cf8c02decb1334920fbcd52086cac5da159779537d8378cd7c2d85e3e58fb80"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1917eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1917 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1917 _______________________________________________________________________ AN ACT To establish the Great Lakes Mass Marking Program, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Great Lakes Mass Marking Program Act of 2025''. SEC. 2. FINDINGS. Congress finds that-- (1) the Great Lakes have experienced rapid changes in recent years due to-- (A) the introduction of multiple aquatic invasive species; (B) alterations in the food web; and (C) decreases in the abundance of prey species; (2) due to rapid biological change in the Great Lakes, the Great Lakes need a collaborative, science-based program to assist in making management actions regarding fish stocking rates, the rehabilitation of important fish species, and habitat restoration; (3) the States of Illinois, Indiana, Michigan, Minnesota, Ohio, Pennsylvania, New York, and Wisconsin and Indian Tribes in those States, working through the Council of Lake Committees of the Great Lakes Fishery Commission, have identified that mass marking is-- (A) a precise tool to keep hatchery-produced fish in balance with wild fish; and (B) essential to achieving fishery management and research objectives through producing a better understanding of-- (i) the quantity of hatchery produced fish compared to wild fish in the Great Lakes; (ii) the effectiveness of hatchery operations; and (iii) the effectiveness of fishery management actions; (4) the mass marking program of the United States Fish and Wildlife Service in the Great Lakes-- (A) was initiated in 2010 on a limited scale; (B) annually tags approximately 9,000,000 to 11,000,000 of the hatchery-produced fish stocked in the Great Lakes; (C) is a basinwide cooperative effort among the United States Fish and Wildlife Service, Indian Tribes, and State management agencies; and (D) produces data used by State and Tribal fish management agencies to make management decisions regarding Great Lakes fisheries; (5) annually, Federal, State, and Tribal agencies stock approximately 21,000,000 hatchery-produced fish in the Great Lakes to support-- (A) native species recovery; and (B) recreational and commercial fishing; (6) mass marking of hatchery-produced fish, using automated technology, is an efficient method of implementing a collaborative, science-based fishery program; and (7) the Great Lakes are an important and valued resource that-- (A) supports a robust regional economy valued at more than $7,000,000,000; and (B) provides stability to the economy of the United States. SEC. 3. DEFINITIONS. In this Act: (1) Director.--The term ``Director'' means the Director of the United States Fish and Wildlife Service. (2) Program.--The term ``Program'' means the Great Lakes Mass Marking Program established by section 4(a). SEC. 4. GREAT LAKES MASS MARKING PROGRAM. (a) In General.--To assist in determining the effectiveness of hatchery operations and fisheries management actions and to support Great Lakes fisheries, there is established within the United States Fish and Wildlife Service a program for the mass marking of hatchery- produced fish in the Great Lakes basin, to be known as the ``Great Lakes Mass Marking Program''. (b) Authorized Actions.--In carrying out the Program, the Director may-- (1) purchase capital and expendable equipment, fish tags, and other items necessary to support and carry out tagging and tag recovery operations, including data processing and data dissemination relating to those operations; and (2) hire additional personnel, as necessary. (c) Required Collaboration.--In carrying out the Program, the Director shall collaborate with applicable Federal, State, and Tribal fish management agencies, the Council of Lake Committees of the Great Lakes Fishery Commission, and signatories to the Joint Strategic Plan for Management of Great Lakes Fisheries. (d) Availability of Data.--The Director shall make the data collected under the Program available to applicable Federal, State, and Tribal fish management agencies-- (1) to increase the understanding of the outcomes of management action; (2) to assist in meeting the restoration objectives of the Great Lakes, including the fish community objectives and fish management plans described in the Joint Strategic Plan for Management of Great Lakes Fisheries; (3) to assist in balancing predators and prey; (4) to support and improve the economic status of Tribal, recreational, and commercial fisheries; and (5) to assist in evaluating the effectiveness of habitat restoration efforts in the Great Lakes. SEC. 5. AUTHORIZATION OF APPROPRIATIONS. There is authorized to be appropriated to carry out the Program $2,700,000 for each of fiscal years 2026 through 2030. Passed the House of Representatives July 22, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1917 _______________________________________________________________________ AN ACT To establish the Great Lakes Mass Marking Program, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "17088f6364da975036db00077392f0963401077fcefee9c822f21e93cfb4bcca",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:217",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.3357EHrequires SECrules for general multi-class-share issuer disclosures in proxy/consent material or other appropriate filings. For directors/nominees/named executives and5percent-or-more voting-power beneficial owners, share ownership and voting-power percentages are separate required measures; the threshold is combined voting power, not a generic5percent ownership threshold. This is general corporate/securities voting-rights disclosure, not an operative infrastructure/transport/technology-development/deployment/research mechanism. Possible technology issuers do not establish this narrower change's membership. No current disclosure, issuer misconduct, actual voting result or enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:217",
+            "url": "https://clerk.house.gov/evs/2025/roll217.xml",
+            "raw_sha256": "0325cc870a4d79d219d738b2475d80df9a8298d4020850033aab76200a5f9acb",
+            "governed_bytes_sha256": "5bb87d32dd511701f961a9701cfc12dbfd225b931f1c971e5a669ac1d4580294"
+          },
+          {
+            "source_id": "govinfo:hr3357eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3357eh/html/BILLS-119hr3357eh.htm",
+            "raw_sha256": "f839b9b15857547340d5c4580ccd0a624fe43c2a112e55605fe3545a664facb7",
+            "governed_bytes_sha256": "4e4796b199f56db28e372c01fc3f80cc5b342197ff8a5d14c5394bcbc23d9a76"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3357eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3357 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3357 _______________________________________________________________________ AN ACT To amend the Securities Exchange Act of 1934 to require issuers with a multi-class stock structure to make certain disclosures in any proxy or consent solicitation material, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Enhancing Multi-Class Share Disclosures Act''. SEC. 2. DISCLOSURE RELATING TO MULTI-CLASS SHARE STRUCTURES. Section 14 of the Securities Exchange Act of 1934 (15 U.S.C. 78n) is amended by adding at the end the following: ``(l) Disclosure Relating to Multi-class Share Structures.-- ``(1) Disclosure.--The Commission shall, by rule, require each issuer with a multi-class share structure to disclose the information described in paragraph (2) in any proxy or consent solicitation material for an annual meeting of the shareholders of the issuer, or any other filing as the Commission determines appropriate. ``(2) Content of disclosure.--A disclosure made under paragraph (1) shall include, with respect to each person who is a director, director nominee, or named executive officer of the issuer, or who is the beneficial owner of securities with 5 percent or more of the total combined voting power of all classes of securities entitled to vote in the election of directors-- ``(A) the number of shares of all classes of securities entitled to vote in the election of directors beneficially owned by such person, expressed as a percentage of the total number of the outstanding securities of the issuer entitled to vote in the election of directors; and ``(B) the amount of voting power held by such person, expressed as a percentage of the total combined voting power of all classes of the securities of the issuer entitled to vote in the election of directors. ``(3) Multi-class share structure.--In this subsection, the term `multi-class share structure' means a capitalization structure that contains 2 or more types of securities that have differing amounts of voting rights in the election of directors.''. Passed the House of Representatives July 23, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3357 _______________________________________________________________________ AN ACT To amend the Securities Exchange Act of 1934 to require issuers with a multi-class stock structure to make certain disclosures in any proxy or consent solicitation material, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "e4d40b7526eb7f5a2dbffd89123ac2567a099a3dd6632fb5def1f7342bab2eff",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:219",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.4216EHrequires State/Defense review of FMS-only articles/services within one year and annually thereafter, with a report within30days after EACH review, specified transfer-time/workload/security/competitiveness matters and unclassified form permitting a classified annex. Sense-of-Congress delivery claims remain attributed. The review identifies possible direct-commercial-sale eligibility; it does not itself automatically remove items, waive export controls or guarantee faster transfers. Complete ArmsExportControlActchapter2/section38and covered article/service/list baselines, direct technology-transfer versus broad military-sales reporting boundary and amended-floor binding remain ordinary work.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:219",
+            "url": "https://clerk.house.gov/evs/2025/roll219.xml",
+            "raw_sha256": "08aac5958654815868a39aaa5c5c09383ddd105979bce37766d4499e37cfd23f",
+            "governed_bytes_sha256": "0614c8ac74dd1e38cc1063c70ea3159ecb484c97f13ef7cae980632283eb5a2f"
+          },
+          {
+            "source_id": "govinfo:hr4216eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4216eh/html/BILLS-119hr4216eh.htm",
+            "raw_sha256": "6779df145571b74626ef39621e99e044cb709c1135652967fb716ca86beae4bd",
+            "governed_bytes_sha256": "8ec52092909e550499493545e533dd8202bc1e894aa043af03a833960042d058"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4216eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4216 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 4216 _______________________________________________________________________ AN ACT To direct the Secretary of State, in coordination with the Secretary of Defense, to carry out a review of the list of defense articles and services required to be transferred under the foreign military sales program as opposed to direct commercial sale (FMS-Only List). Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Made-in-America Defense Act''. SEC. 2. SENSE OF CONGRESS. Congress-- (1) believes the expeditious delivery of defense articles and services to allies and partners strengthens American national security; (2) notes that the Department of Defense contracting process often adds significant amounts of time to the delivery of defense articles and services to allies and partners, and in some cases these articles and services could be appropriately transferred more quickly using direct commercial sales; and (3) supports the ongoing and periodic review of the FMS- Only List to ensure that defense articles and services that can be appropriately transferred using direct commercial sales are not included on the FMS-Only list. SEC. 3. REVIEW AND REPORT. (a) Review.-- (1) In general.--Not later than 1 year after the date of the enactment of this Act, and annually thereafter, the Secretary of State, in coordination with the Secretary of Defense, shall carry out a review of defense articles and defense services that are eligible to be provided under the foreign military sales program under chapter 2 of the Arms Export Control Act, but not eligible to be provided under direct commercial sales under section 38 of such Act, in order to identify those articles and services that should also be eligible to be provided under direct commercial sales. (2) Matters to be addressed.--The review required by this subsection shall address the following with respect to each defense article and defense services identified under this subsection: (A) The average length of time to complete a transfer of the article or service under the foreign military sales program compared to such a transfer under a direct commercial sale, measured from the initial submission of the letter of request to the delivery of the article or service. (B) The impact on the workload for the Department of State and Department of Defense by reason of a transfer of the article or service under a direct commercial sale. (C) The benefits to United States national security and United States competitiveness by reason of a transfer of the article or service under a direct commercial sale. (b) Report.-- (1) In general.--Not later than 30 days after the completion of each review required by subsection (a), the Secretary of State, in coordination of the Secretary of Defense, shall submit to the appropriate congressional committees a report that contains the results of the review, including-- (A) the average time to transfer the reviewed defense articles or services during the previous reporting period through the foreign military sales program and through direct commercial sales and how those averages compare to the averages reported in the previous reporting period; (B) the leading causes of delays; (C) any steps taken to reduce those delays; and (D) any defense articles and services added to or removed from the FMS-Only list during the preceding reporting period, as well as the justification for such decisions. (2) Form.--The report required by this subsection shall be submitted in unclassified form, but may contain a classified annex. (3) Definitions.--In this subsection-- (A) the term ``appropriate congressional committees'' means-- (i) the Committee on Foreign Affairs and the Committee on Armed Services of the House of Representatives; and (ii) the Committee on Foreign Relations and the Committee on Armed Services of the Senate; and (B) the term ``FMS-only list'' means the list maintained by the Secretary of State of defense articles and defense services that are eligible to be provided under the foreign military sales program under chapter 2 of the Arms Export Control Act, but not eligible to be provided under direct commercial sales under section 38 of such Act. Passed the House of Representatives September 2, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 4216 _______________________________________________________________________ AN ACT To direct the Secretary of State, in coordination with the Secretary of Defense, to carry out a review of the list of defense articles and services required to be transferred under the foreign military sales program as opposed to direct commercial sale (FMS-Only List)."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ffd7cf0fe876e257002aa7332a18577e4e7a20229b7874d5ef2e0f7f4372614d",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:220",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.747EHchanges foreign-opioid-trafficker definitions with specified entity/official determinations, identification timing, covered-drug-emergency evaluations/consultation/regulatory alternatives and termination criteria, and a goods-importation exception. Sense recommendations are not binding Chinese-government action or independently verified wrongdoing. Printed section4(b)(3)placement is preserved, not silently repaired. Complete21USC2302/2311and50USC1702/1703/1704baselines and covered-emergency/time/chemical-equipment-versus-technology governance scope, plus amended-floor binding, remain ordinary work. No actual sanctions, current official culpability, blanket import ban or drug outcome inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:220",
+            "url": "https://clerk.house.gov/evs/2025/roll220.xml",
+            "raw_sha256": "4b12a6ab6eb270d244c79d56a474917ea757ea9295375ffe21f3f616fc498939",
+            "governed_bytes_sha256": "779b39ba344a96c9648c3ae149b177600093b0420512a248406b1116d83f5ad2"
+          },
+          {
+            "source_id": "govinfo:hr747eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm",
+            "raw_sha256": "1563bceb1c6c96edc610788d486d29ad8571f8deecde9aa7423ba8d89e935c48",
+            "governed_bytes_sha256": "d00a8930042d9f7e5d66c8053082264523cf7a2a7f727f660f5a6c4c3e9efeb6"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr747eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/b58d43da3480a4537b360abfa038d146d418bc30a31b38f9a254f5e9a115704a.0000000.json",
+                  "sha256": "2f12fa002a7f71c1c02692db002e89f094ebbd2d0278ba98f31d5207a683eacc",
+                  "start_character": 0,
+                  "end_character": 7139
+                }
+              ],
+              "utf8_sha256": "b58d43da3480a4537b360abfa038d146d418bc30a31b38f9a254f5e9a115704a",
+              "total_characters": 7139,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "9e51cf54f3a2e892c8dea27083558df0617a0ddd767da2ce0271a2cf4209eb64",
+      "source": {
+        "source_id": "clerk:119:1:150",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll150.xml",
+        "text_version": null,
+        "raw_sha256": "0d8ec08c30c91abbc8ee1f1013a68bb867d7f905eef4bd718aea9eac19addac7",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "150",
+          "legis-num": "H R 2483",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "3",
+          "amendment-author": "Pettersen of Colorado Part A Amendment No. 3",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "4-Jun-2025",
+          "action-time": "4:59 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Aye",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "No",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "2",
+            "nay-total": "213",
+            "present-total": "0",
+            "not-voting-total": "8"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "211",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "6b5bdb5a3c576a97b7418ca18eeee5ea73d87d2818c8d9f99239eb5b8d4d6451"
+      }
+    },
+    {
+      "original_source_object_sha256": "f126dfd38ca3a3eceaa12c0a2ab9b2f14c5815b381ff32b6921fb20307e9df5e",
+      "source": {
+        "source_id": "clerk:119:1:207",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll207.xml",
+        "text_version": null,
+        "raw_sha256": "0109fb4b75187dff14d9b6c8a818afea333bf18775e1a1245cf3e3f670ae5792",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "207",
+          "legis-num": "H R 4016",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "13",
+          "amendment-author": "Greene of Georgia Part A Amendment No. 114",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "18-Jul-2025",
+          "action-time": "12:20 AM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "2",
+            "nay-total": "215",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "4",
+            "nay-total": "207",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "58cf4c11bf6ad9dab124785feb41059b8a00694b71a724d23557fcf4a7ade8e7"
+      }
+    },
+    {
+      "original_source_object_sha256": "48499fb6a445308666e5caf0acfb1a1c3606a2fd0929a087cf6eb16dbfc9f4b1",
+      "source": {
+        "source_id": "immigration:roll207-initial171",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "text_version": "Complete own operative/designation and actual question, voice result, demand and postponement; debate not operative",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "text": "AMENDMENT NO. 114 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 114 printed \nin part A of House Report 119–199. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 8067 (page 92, beginning on \nline 12 through page 93, line 13). \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from Georgia (Ms. G\nREENE). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMs. GREENE of Georgia. Mr. Chair, I \ndemand a recorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from Georgia will be \npostponed.",
+        "governed_bytes_sha256": "c1cf0d23f6975dc9a3a5cfab311c7be08d4698f67cf5c75a78ddafa136ab1745",
+        "captured_full_text_sha256": "3e125827a7c66f0279d866d3451b6904bac9285733186171e146915d6158d608",
+        "source_text_extents": [
+          {
+            "start": 27193,
+            "end": 27613,
+            "total": 141545
+          },
+          {
+            "start": 34702,
+            "end": 35123,
+            "total": 141545
+          }
+        ],
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair"
+      }
+    },
+    {
+      "original_source_object_sha256": "272e8bd0dbe3b4c475d62719d4da2b789fe73a4b535f629f4be9c0abdf68656d",
+      "source": {
+        "source_id": "immigration:roll207-recorded171",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "text_version": "Own resumed designation, recorded demand/order/totals and announced outcome; Clerk owns member labels; vote-name lists omitted",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "text": "AMENDMENT NO. 114 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 114, printed in \npart A of House Report 119–199, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 6, noes 422, \nnot voting 9, as follows: \n[Roll No. 207]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "bb3e05b8b9ca07c365eb1a4efe0b05c280004a7d5b1cbeca18bc060bdae36b18",
+        "captured_full_text_sha256": "3e125827a7c66f0279d866d3451b6904bac9285733186171e146915d6158d608",
+        "source_text_extents": [
+          {
+            "start": 103919,
+            "end": 104622,
+            "total": 141545
+          },
+          {
+            "start": 109041,
+            "end": 109129,
+            "total": 141545
+          }
+        ],
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair"
+      }
+    },
+    {
+      "original_source_object_sha256": "bac5d7fb0c25b490f2459b3a1273d43123ec7b2945159cfee03749858a844a3b",
+      "source": {
+        "source_id": "immigration:roll207-report171",
+        "source_type": "official_committee_report",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+        "text_version": "Complete own Report operative; no parent-title substitution",
+        "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+        "text": "114. An Amendment To Be Offered by Representative Greene of Georgia or Her Designee, Debatable for 10 Minutes Strike section 8067 (page 92, beginning on line 12 through page 93, line 13). ",
+        "governed_bytes_sha256": "18c5afd3728d901b017029dd3c91bf708704c38c84b522ff6ad78ff8c2f535e5",
+        "captured_full_text_sha256": "06b6193c6934cc6198042478562421624d9c87a44dce965bde9b737518933e9c",
+        "source_text_extents": [
+          {
+            "start": 145552,
+            "end": 145740,
+            "total": 203221
+          }
+        ],
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair"
+      }
+    },
+    {
+      "original_source_object_sha256": "2061a423de413fa71074849d78fad2bf00d392519a1ca7870232e6009dfc8a75",
+      "source": {
+        "source_id": "clerk:119:1:215",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll215.xml",
+        "text_version": null,
+        "raw_sha256": "188ae5065423be68be02d58b3a799d02e4d1852db121b5daf1c451f954bf097e",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "215",
+          "legis-num": "H R 3937",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "22-Jul-2025",
+          "action-time": "4:48 PM",
+          "vote-desc": "Wabeno Economic Development Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "206",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "12"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "204",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "2c6a5cf4f648c1461c7407a147c77c95b852b5092ea745df68a57d434fe3e940"
+      }
+    },
+    {
+      "original_source_object_sha256": "07f0422f638a77352deb43162ac7f33713cc2b29d471b1b32978692d61c4f709",
+      "source": {
+        "source_id": "govinfo:hr3937eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3937eh/html/BILLS-119hr3937eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "f2e7db52f8e51b347638912cb3907578e7211ba3f2f39fa3e52ae4b7d664e0a1",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3937 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3937 _______________________________________________________________________ AN ACT To provide for the conveyance of certain Federal land in Chequamegon- Nicolet National Forest, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Wabeno Economic Development Act''. SEC. 2. CONVEYANCE OF CERTAIN NATIONAL FOREST SYSTEM LAND IN THE CHEQUAMEGON-NICOLET NATIONAL FOREST TO TONY'S WABENO REDI-MIX, LLC. (a) Conveyance Required.--If, during the 180-day period beginning on the date of Federal approval of the appraisal under subsection (d), Tony's Wabeno Redi-Mix, LLC submits to the Secretary an offer to acquire the property described in subsection (b) for market value, as determined by such appraisal, the Secretary shall, not later than 180 days after receiving such offer, convey to Tony's Wabeno Redi-Mix, LLC all right, title, and interest of the United States, including mineral rights, in and to the property described in subsection (b). (b) Description of Property.-- (1) In general.--The property referred to in subsection (a) is the parcel of real property, including all land and improvements, generally depicted as ``Federal Parcel to be Conveyed'' on the Map, consisting of approximately 14 acres of National Forest System land located in the Chequamegon-Nicolet National Forest in Wisconsin. (2) Map.-- (A) Minor errors.--The Secretary may correct minor errors in the Map. (B) Availability.--A copy of the Map shall be on file and available for public inspection in the appropriate office of the Forest Service. (3) Survey.--The exact acreage and legal description of the National Forest System land to be conveyed under subsection (a) shall be determined by a survey satisfactory to the Secretary. (c) Terms and Conditions of the Conveyance.-- (1) Requirements.--The conveyance under subsection (a) shall be-- (A) subject to valid existing rights; (B) made by quitclaim deed; and (C) subject to such other terms and conditions as the Secretary considers to be appropriate to protect the interests of the United States. (2) Costs.--As a condition of the conveyance under subsection (a), Tony's Wabeno Redi-Mix, LLC shall pay to the Secretary-- (A) an amount equal to the market value of the land to be conveyed under subsection (a), as determined by the appraisal under subsection (d); and (B) all costs associated with the conveyance, including the cost of-- (i) a survey, if necessary, under subsection (b)(3); (ii) conducting the appraisal under subsection (d); and (iii) any environmental analysis or resource survey required under Federal law. (d) Appraisal.-- (1) In general.--Not later than 300 days after the date of enactment of this Act, the Secretary shall complete an appraisal to determine the market value of the land to be conveyed under subsection (a). (2) Standards.--The appraisal under paragraph (1) shall be conducted in accordance with-- (A) the Uniform Appraisal Standards for Federal Land Acquisitions; and (B) the Uniform Standards of Professional Appraisal Practice. (e) Definitions.--In this section: (1) Map.--The term ``Map'' means the map entitled ``Conveyance of Federal Parcel Chequamegon-Nicolet National Forest'' and dated September 27, 2023. (2) Secretary.--The term ``Secretary'' means the Secretary of Agriculture, acting through the Chief of the Forest Service. SEC. 3. COMPREHENSIVE REVIEW OF FEDERAL PERMITTING PROCESSES FOR STONE, SAND, AND GRAVEL DEVELOPMENT ON FEDERAL LANDS. (a) Review.--The Secretary of the Interior, in consultation with the heads of other relevant Federal agencies, industry stakeholders, and State permitting authorities, shall conduct a comprehensive review of the Federal permitting processes for the development of stone, sand, and gravel on Federal lands. (b) Report.--Not later than 180 days after the date of enactment of this Act, the Secretary of the Interior, in consultation with the entities referred to in subsection (a), shall submit to the Committee on Natural Resources of the House of Representatives and the Committee on Energy and Natural Resources of the Senate, and make publicly available on the website of the Department of the Interior a report that includes-- (1) a detailed description of the current Federal permitting process for stone, sand, and gravel development, including average timelines from initial application to final approval; (2) an analysis identifying potential inefficiencies and duplicative steps in such permitting process and the impact of such inefficiencies and duplicative steps on project timelines; (3) the Secretary's recommendations for legislative or administrative actions to streamline such permitting process; and (4) a summary of the economic impacts associated with current permitting timelines under such permitting process, specifically focusing on the stone, sand, and gravel sectors. Passed the House of Representatives July 22, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3937 _______________________________________________________________________ AN ACT To provide for the conveyance of certain Federal land in Chequamegon- Nicolet National Forest, and for other purposes.",
+        "governed_bytes_sha256": "fc6a176b549af3dfc5f92fd9509c3e350420e3e4f4716529ea78bb2f372c3a01"
+      }
+    },
+    {
+      "original_source_object_sha256": "f5a680ec483863d04f301d8de7c099af0fa3ff1a2c79b9def88b4853c82b357f",
+      "source": {
+        "source_id": "clerk:119:1:216",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll216.xml",
+        "text_version": null,
+        "raw_sha256": "edb2cd1cdcf5178bb2eca0d480bfe8d79d4693f70ad1f0edc3c4fb99a25ceffe",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "216",
+          "legis-num": "H R 1917",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "22-Jul-2025",
+          "action-time": "4:56 PM",
+          "vote-desc": "Great Lakes Mass Marking Program Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "153",
+            "nay-total": "57",
+            "present-total": "0",
+            "not-voting-total": "8"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "207",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "f2c1cd9d0b44b35f3999f7a5a6143196863980d3bf9fb96a20a08f510b21d92b"
+      }
+    },
+    {
+      "original_source_object_sha256": "9ff7dc88057d4659196ccdfae49d3da01bcf1b3e58262e6c6a0f2a9755834ba0",
+      "source": {
+        "source_id": "govinfo:hr1917eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1917eh/html/BILLS-119hr1917eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "3fcb12f9983d6d3e4f7a016862a7e67c62c90232402a2d3a0c952dc09a64a3d3",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1917 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1917 _______________________________________________________________________ AN ACT To establish the Great Lakes Mass Marking Program, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Great Lakes Mass Marking Program Act of 2025''. SEC. 2. FINDINGS. Congress finds that-- (1) the Great Lakes have experienced rapid changes in recent years due to-- (A) the introduction of multiple aquatic invasive species; (B) alterations in the food web; and (C) decreases in the abundance of prey species; (2) due to rapid biological change in the Great Lakes, the Great Lakes need a collaborative, science-based program to assist in making management actions regarding fish stocking rates, the rehabilitation of important fish species, and habitat restoration; (3) the States of Illinois, Indiana, Michigan, Minnesota, Ohio, Pennsylvania, New York, and Wisconsin and Indian Tribes in those States, working through the Council of Lake Committees of the Great Lakes Fishery Commission, have identified that mass marking is-- (A) a precise tool to keep hatchery-produced fish in balance with wild fish; and (B) essential to achieving fishery management and research objectives through producing a better understanding of-- (i) the quantity of hatchery produced fish compared to wild fish in the Great Lakes; (ii) the effectiveness of hatchery operations; and (iii) the effectiveness of fishery management actions; (4) the mass marking program of the United States Fish and Wildlife Service in the Great Lakes-- (A) was initiated in 2010 on a limited scale; (B) annually tags approximately 9,000,000 to 11,000,000 of the hatchery-produced fish stocked in the Great Lakes; (C) is a basinwide cooperative effort among the United States Fish and Wildlife Service, Indian Tribes, and State management agencies; and (D) produces data used by State and Tribal fish management agencies to make management decisions regarding Great Lakes fisheries; (5) annually, Federal, State, and Tribal agencies stock approximately 21,000,000 hatchery-produced fish in the Great Lakes to support-- (A) native species recovery; and (B) recreational and commercial fishing; (6) mass marking of hatchery-produced fish, using automated technology, is an efficient method of implementing a collaborative, science-based fishery program; and (7) the Great Lakes are an important and valued resource that-- (A) supports a robust regional economy valued at more than $7,000,000,000; and (B) provides stability to the economy of the United States. SEC. 3. DEFINITIONS. In this Act: (1) Director.--The term ``Director'' means the Director of the United States Fish and Wildlife Service. (2) Program.--The term ``Program'' means the Great Lakes Mass Marking Program established by section 4(a). SEC. 4. GREAT LAKES MASS MARKING PROGRAM. (a) In General.--To assist in determining the effectiveness of hatchery operations and fisheries management actions and to support Great Lakes fisheries, there is established within the United States Fish and Wildlife Service a program for the mass marking of hatchery- produced fish in the Great Lakes basin, to be known as the ``Great Lakes Mass Marking Program''. (b) Authorized Actions.--In carrying out the Program, the Director may-- (1) purchase capital and expendable equipment, fish tags, and other items necessary to support and carry out tagging and tag recovery operations, including data processing and data dissemination relating to those operations; and (2) hire additional personnel, as necessary. (c) Required Collaboration.--In carrying out the Program, the Director shall collaborate with applicable Federal, State, and Tribal fish management agencies, the Council of Lake Committees of the Great Lakes Fishery Commission, and signatories to the Joint Strategic Plan for Management of Great Lakes Fisheries. (d) Availability of Data.--The Director shall make the data collected under the Program available to applicable Federal, State, and Tribal fish management agencies-- (1) to increase the understanding of the outcomes of management action; (2) to assist in meeting the restoration objectives of the Great Lakes, including the fish community objectives and fish management plans described in the Joint Strategic Plan for Management of Great Lakes Fisheries; (3) to assist in balancing predators and prey; (4) to support and improve the economic status of Tribal, recreational, and commercial fisheries; and (5) to assist in evaluating the effectiveness of habitat restoration efforts in the Great Lakes. SEC. 5. AUTHORIZATION OF APPROPRIATIONS. There is authorized to be appropriated to carry out the Program $2,700,000 for each of fiscal years 2026 through 2030. Passed the House of Representatives July 22, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1917 _______________________________________________________________________ AN ACT To establish the Great Lakes Mass Marking Program, and for other purposes.",
+        "governed_bytes_sha256": "8cf8c02decb1334920fbcd52086cac5da159779537d8378cd7c2d85e3e58fb80"
+      }
+    },
+    {
+      "original_source_object_sha256": "64e13b43a423e581bef37d869c8f0567a02957c0f2ecd5168b87fbb2195d1a91",
+      "source": {
+        "source_id": "clerk:119:1:217",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll217.xml",
+        "text_version": null,
+        "raw_sha256": "0325cc870a4d79d219d738b2475d80df9a8298d4020850033aab76200a5f9acb",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "217",
+          "legis-num": "H R 3357",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "23-Jul-2025",
+          "action-time": "3:58 PM",
+          "vote-desc": "Enhancing Multi-Class Share Disclosures Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "176",
+            "nay-total": "31",
+            "present-total": "0",
+            "not-voting-total": "11"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "205",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "5bb87d32dd511701f961a9701cfc12dbfd225b931f1c971e5a669ac1d4580294"
+      }
+    },
+    {
+      "original_source_object_sha256": "834e0e192e6d9ed973f588c0eeb7e0f8aa5c1ebb6af690bc71056bddb3352d7d",
+      "source": {
+        "source_id": "govinfo:hr3357eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3357eh/html/BILLS-119hr3357eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "f839b9b15857547340d5c4580ccd0a624fe43c2a112e55605fe3545a664facb7",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3357 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3357 _______________________________________________________________________ AN ACT To amend the Securities Exchange Act of 1934 to require issuers with a multi-class stock structure to make certain disclosures in any proxy or consent solicitation material, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Enhancing Multi-Class Share Disclosures Act''. SEC. 2. DISCLOSURE RELATING TO MULTI-CLASS SHARE STRUCTURES. Section 14 of the Securities Exchange Act of 1934 (15 U.S.C. 78n) is amended by adding at the end the following: ``(l) Disclosure Relating to Multi-class Share Structures.-- ``(1) Disclosure.--The Commission shall, by rule, require each issuer with a multi-class share structure to disclose the information described in paragraph (2) in any proxy or consent solicitation material for an annual meeting of the shareholders of the issuer, or any other filing as the Commission determines appropriate. ``(2) Content of disclosure.--A disclosure made under paragraph (1) shall include, with respect to each person who is a director, director nominee, or named executive officer of the issuer, or who is the beneficial owner of securities with 5 percent or more of the total combined voting power of all classes of securities entitled to vote in the election of directors-- ``(A) the number of shares of all classes of securities entitled to vote in the election of directors beneficially owned by such person, expressed as a percentage of the total number of the outstanding securities of the issuer entitled to vote in the election of directors; and ``(B) the amount of voting power held by such person, expressed as a percentage of the total combined voting power of all classes of the securities of the issuer entitled to vote in the election of directors. ``(3) Multi-class share structure.--In this subsection, the term `multi-class share structure' means a capitalization structure that contains 2 or more types of securities that have differing amounts of voting rights in the election of directors.''. Passed the House of Representatives July 23, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3357 _______________________________________________________________________ AN ACT To amend the Securities Exchange Act of 1934 to require issuers with a multi-class stock structure to make certain disclosures in any proxy or consent solicitation material, and for other purposes.",
+        "governed_bytes_sha256": "4e4796b199f56db28e372c01fc3f80cc5b342197ff8a5d14c5394bcbc23d9a76"
+      }
+    },
+    {
+      "original_source_object_sha256": "a0a5ad3dcbd6d913c68b357bd2d4d6943a9226bd904ce1415c43188c09a57b6b",
+      "source": {
+        "source_id": "clerk:119:1:219",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll219.xml",
+        "text_version": null,
+        "raw_sha256": "08aac5958654815868a39aaa5c5c09383ddd105979bce37766d4499e37cfd23f",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "219",
+          "legis-num": "H R 4216",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "2-Sep-2025",
+          "action-time": "6:56 PM",
+          "vote-desc": "Made-in-America Defense Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "211",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "184",
+            "nay-total": "20",
+            "present-total": "0",
+            "not-voting-total": "8"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "0614c8ac74dd1e38cc1063c70ea3159ecb484c97f13ef7cae980632283eb5a2f"
+      }
+    },
+    {
+      "original_source_object_sha256": "db7ddf02fb6acbf58abb47f72dae4ab162c7870422657395e5ba959b455bc48e",
+      "source": {
+        "source_id": "govinfo:hr4216eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4216eh/html/BILLS-119hr4216eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "6779df145571b74626ef39621e99e044cb709c1135652967fb716ca86beae4bd",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4216 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 4216 _______________________________________________________________________ AN ACT To direct the Secretary of State, in coordination with the Secretary of Defense, to carry out a review of the list of defense articles and services required to be transferred under the foreign military sales program as opposed to direct commercial sale (FMS-Only List). Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Made-in-America Defense Act''. SEC. 2. SENSE OF CONGRESS. Congress-- (1) believes the expeditious delivery of defense articles and services to allies and partners strengthens American national security; (2) notes that the Department of Defense contracting process often adds significant amounts of time to the delivery of defense articles and services to allies and partners, and in some cases these articles and services could be appropriately transferred more quickly using direct commercial sales; and (3) supports the ongoing and periodic review of the FMS- Only List to ensure that defense articles and services that can be appropriately transferred using direct commercial sales are not included on the FMS-Only list. SEC. 3. REVIEW AND REPORT. (a) Review.-- (1) In general.--Not later than 1 year after the date of the enactment of this Act, and annually thereafter, the Secretary of State, in coordination with the Secretary of Defense, shall carry out a review of defense articles and defense services that are eligible to be provided under the foreign military sales program under chapter 2 of the Arms Export Control Act, but not eligible to be provided under direct commercial sales under section 38 of such Act, in order to identify those articles and services that should also be eligible to be provided under direct commercial sales. (2) Matters to be addressed.--The review required by this subsection shall address the following with respect to each defense article and defense services identified under this subsection: (A) The average length of time to complete a transfer of the article or service under the foreign military sales program compared to such a transfer under a direct commercial sale, measured from the initial submission of the letter of request to the delivery of the article or service. (B) The impact on the workload for the Department of State and Department of Defense by reason of a transfer of the article or service under a direct commercial sale. (C) The benefits to United States national security and United States competitiveness by reason of a transfer of the article or service under a direct commercial sale. (b) Report.-- (1) In general.--Not later than 30 days after the completion of each review required by subsection (a), the Secretary of State, in coordination of the Secretary of Defense, shall submit to the appropriate congressional committees a report that contains the results of the review, including-- (A) the average time to transfer the reviewed defense articles or services during the previous reporting period through the foreign military sales program and through direct commercial sales and how those averages compare to the averages reported in the previous reporting period; (B) the leading causes of delays; (C) any steps taken to reduce those delays; and (D) any defense articles and services added to or removed from the FMS-Only list during the preceding reporting period, as well as the justification for such decisions. (2) Form.--The report required by this subsection shall be submitted in unclassified form, but may contain a classified annex. (3) Definitions.--In this subsection-- (A) the term ``appropriate congressional committees'' means-- (i) the Committee on Foreign Affairs and the Committee on Armed Services of the House of Representatives; and (ii) the Committee on Foreign Relations and the Committee on Armed Services of the Senate; and (B) the term ``FMS-only list'' means the list maintained by the Secretary of State of defense articles and defense services that are eligible to be provided under the foreign military sales program under chapter 2 of the Arms Export Control Act, but not eligible to be provided under direct commercial sales under section 38 of such Act. Passed the House of Representatives September 2, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 4216 _______________________________________________________________________ AN ACT To direct the Secretary of State, in coordination with the Secretary of Defense, to carry out a review of the list of defense articles and services required to be transferred under the foreign military sales program as opposed to direct commercial sale (FMS-Only List).",
+        "governed_bytes_sha256": "8ec52092909e550499493545e533dd8202bc1e894aa043af03a833960042d058"
+      }
+    },
+    {
+      "original_source_object_sha256": "1cb616b406e54c6d2f483ef6708f2a129c9eb7b3a4e080090cc40cbc5acad203",
+      "source": {
+        "source_id": "clerk:119:1:220",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll220.xml",
+        "text_version": null,
+        "raw_sha256": "4b12a6ab6eb270d244c79d56a474917ea757ea9295375ffe21f3f616fc498939",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "220",
+          "legis-num": "H R 747",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "2-Sep-2025",
+          "action-time": "7:03 PM",
+          "vote-desc": "Stop Chinese Fentanyl Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "209",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "9"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "198",
+            "nay-total": "4",
+            "present-total": "0",
+            "not-voting-total": "10"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "779b39ba344a96c9648c3ae149b177600093b0420512a248406b1116d83f5ad2"
+      }
+    },
+    {
+      "original_source_object_sha256": "574bea0edd09178fa0fd0ee212695b9cbbdf8aa25371f4a4a4e713cd572cad19",
+      "source": {
+        "source_id": "govinfo:hr747eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "1563bceb1c6c96edc610788d486d29ad8571f8deecde9aa7423ba8d89e935c48",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/b58d43da3480a4537b360abfa038d146d418bc30a31b38f9a254f5e9a115704a.0000000.json",
+              "sha256": "2f12fa002a7f71c1c02692db002e89f094ebbd2d0278ba98f31d5207a683eacc",
+              "start_character": 0,
+              "end_character": 7139
+            }
+          ],
+          "utf8_sha256": "b58d43da3480a4537b360abfa038d146d418bc30a31b38f9a254f5e9a115704a",
+          "total_characters": 7139,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "d00a8930042d9f7e5d66c8053082264523cf7a2a7f727f660f5a6c4c3e9efeb6"
+      }
+    },
+    {
+      "original_source_object_sha256": "6590fdc593eef73e2f5fa7dff2d187df27fb463ea37b68a285a11cb1803498df",
+      "source": {
+        "source_id": "immigration:roll150-initial171",
+        "source_type": "official_primary_text",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+        "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+        "text": "AMENDMENT NO. 3 OFFERED BY MS . PETTERSEN \nThe CHAIR. It is now in order to con-\nsider amendment No. 3 printed in part \nA of House Report 119–130. \nMs. PETTERSEN. Mr. Chair, I have \nan amendment at the desk. \nThe CHAIR. The Clerk will designate \nthe amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of title IV, add the following: \nSEC. ll. CODIFICATION OF BUDGET NEU-\nTRALITY GUIDANCE IN SMD #24-003. \nThe guidance for budget neutrality for \nMedicaid demonstration projects under sec-\ntion 1115(a) of the Social Security Act (42 \nU.S.C. 1315(a)) described in State Medicaid \nDirector letter #24-003 of the Centers for \nMedicare & Medicaid Services (published on \nAugust 22, 2024) shall have the force and ef-\nfect of law. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from Colorado (Ms. \nP\nETTERSEN). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMs. PETTERSEN. Madam Chair, I \ndemand a recorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from Colorado will be \npostponed.",
+        "text_version": "Complete own operative/designation and actual question, voice result, demand and postponement; debate not operative",
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair",
+        "governed_bytes_sha256": "b4554f389a1a07a3ed06fe20e789ecd081f1dd1ccf6999ed66ace92a04ee8d89",
+        "captured_full_text_sha256": "b0ae2599660c8108562b2b324b6abe2b002d33d8e0679ae78a2b933be349aa89",
+        "source_text_extents": [
+          {
+            "start": 274597,
+            "end": 275339,
+            "total": 423602
+          },
+          {
+            "start": 285120,
+            "end": 285541,
+            "total": 423602
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "87b85e4a4f71fa71697d3a46b924d42b6b72dc6de99c27a00935941ad91b3201",
+      "source": {
+        "source_id": "immigration:roll150-recorded171",
+        "source_type": "official_primary_text",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+        "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+        "text": "AMENDMENT NO. 3 OFFERED BY MS . PETTERSEN \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, the unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 3, printed in \npart A of House Report 119–130, offered \nby the gentlewoman from Colorado \n(Ms. P\nETTERSEN), on which further pro-\nceedings were postponed and on which \nthe noes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe vote was taken by electronic de-\nvice, and there were—ayes 213, noes 213, \nnot voting 12, as follows: \n[Roll No. 150]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "text_version": "Own resumed designation, recorded demand/order/totals and announced outcome; Clerk owns member labels; vote-name lists omitted",
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair",
+        "governed_bytes_sha256": "7cc847c3857a26ffc9f508afd901414aaee70bc2cab4423b2de48c603cfb4190",
+        "captured_full_text_sha256": "b0ae2599660c8108562b2b324b6abe2b002d33d8e0679ae78a2b933be349aa89",
+        "source_text_extents": [
+          {
+            "start": 293368,
+            "end": 294052,
+            "total": 423602
+          },
+          {
+            "start": 298854,
+            "end": 298942,
+            "total": 423602
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "a810e0bac446d6a4c9e906d2329a1b9d6f0ce28d238dfbefe6267c6e2b69b62a",
+      "source": {
+        "source_id": "immigration:roll150-report171",
+        "source_type": "official_rules_report",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt130/html/CRPT-119hrpt130.htm",
+        "text_version": "Complete own Report operative; no parent-title substitution",
+        "raw_sha256": "e400873251d6b9864dfd79b961b15682a13ef2b3535a9fcfaf49bf1c808e1f86",
+        "text": "3. An Amendment To Be Offered by Representative Pettersen of Colorado or Her Designee, Debatable for 10 Minutes At the end of title IV, add the following: SEC. __. CODIFICATION OF BUDGET NEUTRALITY GUIDANCE IN SMD #24-003. The guidance for budget neutrality for Medicaid demonstration projects under section 1115(a) of the Social Security Act (42 U.S.C. 1315(a)) described in State Medicaid Director letter #24-003 of the Centers for Medicare & Medicaid Services (published on August 22, 2024) shall have the force and effect of law. ",
+        "governed_bytes_sha256": "60ae68942d9d65be0fa55e182d8032c0ba1e523805f34c001870d156e16a7648",
+        "captured_full_text_sha256": "301e2443c7a925101fc8517c49286f4dade1049f4ee7bc9f14554527eae6c1b1",
+        "source_text_extents": [
+          {
+            "start": 22144,
+            "end": 22678,
+            "total": 25916
+          }
+        ],
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair"
+      }
+    },
+    {
+      "original_source_object_sha256": "3243545d0a957a9ad01ec4a4d5087641c0577ee524adb997db90cd87afa897a9",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/939e210aa4106079466adcec8a37fdbb434b303bf7f4566551212ac9b5756d5f.0000000.json",
+            "sha256": "615a56aa2e8d64a7ca2c68e91d02e7b27e43100e99635944f3dedcf728859815",
+            "start_character": 0,
+            "end_character": 48812
+          }
+        ],
+        "utf8_sha256": "939e210aa4106079466adcec8a37fdbb434b303bf7f4566551212ac9b5756d5f",
+        "total_characters": 48812,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "d6fa11049b13d9e9dc7d04e08859334f1d36ef9ea707abf7e2df99197809307b",
+      "source": {
+        "source_id": "govinfo:42usc1315a-operative171",
+        "source_type": "official_primary_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1315.htm",
+        "raw_sha256": "7b57e71712d2fb4f1267ab247eedfb1e2c78711ec4d1b711642696cd658a30b7",
+        "text": "(a) Waiver of State plan requirements; costs regarded as State plan expenditures; availability of appropriations In the case of any experimental, pilot, or demonstration project which, in the judgment of the Secretary, is likely to assist in promoting the objectives of subchapter I, X, XIV, XVI, or XIX, or part A or D of subchapter IV, in a State or States— (1) the Secretary may waive compliance with any of the requirements of section 302, 602, 654, 1202, 1352, 1382, or 1396a of this title, as the case may be, to the extent and for the period he finds necessary to enable such State or States to carry out such project, and (2)(A) costs of such project which would not otherwise be included as expenditures under section 303, 655, 1203, 1353, 1383, or 1396b of this title, as the case may be, and which are not included as part of the costs of projects under section 1310 of this title, shall, to the extent and for the period prescribed by the Secretary, be regarded as expenditures under the State plan or plans approved under such subchapter, or for administration of such State plan or plans, as may be appropriate, and (B) costs of such project which would not otherwise be a permissible use of funds under part A of subchapter IV and which are not included as part of the costs of projects under section 1310 of this title, shall to the extent and for the period prescribed by the Secretary, be regarded as a permissible use of funds under such part. In addition, not to exceed $4,000,000 of the aggregate amount appropriated for payments to States under such subchapters for any fiscal year beginning after June 30, 1967, shall be available, under such terms and conditions as the Secretary may establish, for payments to States to cover so much of the cost of such projects as is not covered by payments under such subchapters and is not included as part of the cost of projects for purposes of section 1310 of this title. ",
+        "text_version": "Complete dated2024section1115(a) waiver/expenditure authority; no entire current-law certification",
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair",
+        "governed_bytes_sha256": "3bb61af13056905e7f3cfc3dd986ee1474406dce8aee4dc500efcff2675ff18c",
+        "captured_full_text_sha256": "e93d27b0c11d76b5486bce214071429501a7e225c652513306120804c54cf543",
+        "source_text_extents": [
+          {
+            "start": 392,
+            "end": 2329,
+            "total": 40334
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "b12b359f24a59ee4d03654be3822e58d092572a19f4bae087e94317d9e5a8dbf",
+      "source": {
+        "source_id": "govinfo:hr4016rh-section8067-complete171",
+        "source_type": "official_bill_pdf_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+        "text_version": "Complete RH8067 earmark and qualified Israeli cooperative suballocations; deleting directive not account-total cut",
+        "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+        "text": "SEC. 8067. Of the amounts appropriated in this Act 12\nunder the headings ‘‘Procurement, Defense-Wide’’ and 13\n‘‘Research, Development, Test and Evaluation, Defense- 14\nWide’’, $500,000,000 shall be for the Israeli Cooperative 15\nPrograms: Provided, That of this amount, $60,000,000 16\nshall be for the Secretary of Defense to provide to the Gov-17\nernment of Israel for the procurement of the Iron Dome 18\ndefense system to counter short-range rocket threats, sub-19\nject to the U.S.-Israel Iron Dome Procurement Agree-20\nment; $127,000,000 shall be for the Short Range Ballistic 21\nMissile Defense (SRBMD) program, including cruise mis-22\nsile defense research and development under the SRBMD 23\nprogram; $40,000,000 shall be for co-production activities 24\nof SRBMD systems in the United States and in Israel 25\nVerDate Sep 11 2014 20:32 Jun 16, 2025 Jkt 059200 PO 00000 Frm 00092 Fmt 6652 Sfmt 6201 E:\\BILLS\\H4016.RH H4016ssavage on LAPJG3WLY3PROD with BILLS 93 \n• HR 4016 RH\nto meet Israel’s defense requirements consistent with each 1\nnation’s laws, regulations, and procedures, subject to the 2\nU.S.-Israeli co-production agreement for SRBMD; 3\n$100,000,000 shall be for an upper-tier component to the 4\nIsraeli Missile Defense Architecture, of which 5\n$100,000,000 shall be for co-production activities of 6\nArrow 3 Upper Tier systems in the United States and in 7\nIsrael to meet Israel’s defense requirements consistent 8\nwith each nation’s laws, regulations, and procedures, sub-9\nject to the U.S.-Israeli co-production agreement for Arrow 10\n3 Upper Tier; and $173,000,000 shall be for the Arrow 11\nSystem Improvement Program including development of 12\na long range, ground and airborne, detection suite. 13\n",
+        "governed_bytes_sha256": "99c223f19b5e318c0798a3b16895aa64835ce3e44a7e52faf62ce2c769ef9c79",
+        "captured_full_text_sha256": "205598ac17cb4ee3f884400cedd009be5dd370839987b5813001d8332b9d36aa",
+        "source_text_extents": [
+          {
+            "start": 6463,
+            "end": 8182,
+            "total": 13644
+          }
+        ],
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 2,
+    "exported_source_objects": 21
+  }
+}
