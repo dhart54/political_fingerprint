@@ -1,0 +1,129 @@
+{
+  "starting_head": "330630a16324c3e47fa8ab35ec323f0bbd069b57",
+  "predecessor_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916",
+  "new_screened_ids": [
+    "house:119:1:190",
+    "house:119:1:193",
+    "house:119:1:194",
+    "house:119:1:195",
+    "house:119:1:197"
+  ],
+  "new_interpreted_ids": [],
+  "expected_counts": {
+    "procedural_context": 88,
+    "exact_action_ineligible": 35,
+    "interpreted_substantive_directional": 36,
+    "pending_interpretation": 85,
+    "source_unresolved": 424,
+    "expressive_nonbinding": 7,
+    "interpreted_substantive_non_directional": 1
+  },
+  "prior_source_count": 599,
+  "reused_sources": [
+    {
+      "source_id": "clerk:119:1:190",
+      "origin": "330630a16324c3e47fa8ab35ec323f0bbd069b57:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "1064078c3d6293f30697dc371888de7839923048e596191edaf9de184ae52c2d",
+      "raw_sha256": "246eeada21eedab63a0926e3dbd76ee16478a1b718c9cd61d9016efadeed24f9",
+      "governed_bytes_sha256": "8856c55de2025cbd6d2139476907410e06245b4d56f4634291074e243476cbfa"
+    },
+    {
+      "source_id": "govinfo:hr1eas",
+      "origin": "330630a16324c3e47fa8ab35ec323f0bbd069b57:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "00c885607d2135222bc610e4f72071301488e3b06c54b191116c106afdc9971e",
+      "raw_sha256": "123282622da535ebc7754e116c7afbdf7b3eb49d2f072795465f95448afea1c0",
+      "governed_bytes_sha256": "bab290d1cf5edfa935f82f4ad180265f1f0b4d3b5d507235f1660e45c99aaab7"
+    },
+    {
+      "source_id": "clerk:119:1:193",
+      "origin": "330630a16324c3e47fa8ab35ec323f0bbd069b57:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "7447a35ad50e6d027bed689555198c9719702f3a4abbd3448c73ce6103d6681f",
+      "raw_sha256": "ec534f23d0f4d93b1a383da420400030dc3efe2d74d36eb047b44b818e88f45d",
+      "governed_bytes_sha256": "0922edf662dfb6e56a037c45f873507fad4399d235d33af4de09211637e11ecf"
+    },
+    {
+      "source_id": "govinfo:s1596es",
+      "origin": "330630a16324c3e47fa8ab35ec323f0bbd069b57:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "db740c9ef65659c9b42e8597a570f3838fc6cfe28889ea77b801872369969491",
+      "raw_sha256": "6b0142995368468d0040dfa3772a9a7332d3f5c1237dba266e129fa2c5da69c8",
+      "governed_bytes_sha256": "1572892af72b65285ac916e6726e08968569cd462b0f975fb5212246fc4a0d8a"
+    },
+    {
+      "source_id": "clerk:119:1:194",
+      "origin": "676ae9e54ecd1192202567738b423ea42b5513c5:docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+      "source_object_sha256": "a6135eb6b601bbf6253a34344f5cc4358105eb2d609ab451dfc95096609ca0ec",
+      "raw_sha256": "4e64b220bb2be6e7d961f259d623a8ea0ca26767097981a407e0f75aa7e56c72",
+      "governed_bytes_sha256": "df1134ac70e87e044768f222fbe827e0a2c365bd9eb3935fe6a86404ef6c9bce"
+    },
+    {
+      "source_id": "clerk:119:1:195",
+      "origin": "330630a16324c3e47fa8ab35ec323f0bbd069b57:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "632580819cc2b0a14822b61536391f25945750c32e59713792dd56a93b0d0c33",
+      "raw_sha256": "ffc03f0e2edcffcbf9839c01a4a75fd8cd805fa442868866ce64c1415a088e3f",
+      "governed_bytes_sha256": "450e7bff1b9e0e7228bf92426f813d94dbe1c6b1b8e5a179e5c8413ce940a34b"
+    },
+    {
+      "source_id": "govinfo:hres580rh",
+      "origin": "330630a16324c3e47fa8ab35ec323f0bbd069b57:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "a08db4ebf46a4bd833faa6fb54dc681082a66a5b09c7ebf102f4cbf22e5f241e",
+      "raw_sha256": "d6b3f34266c5f7fc41eb39537d73208912658e00943f9e2595534bbf0fbc8ced",
+      "governed_bytes_sha256": "21e04d45c9932ed728613b51566d5f01a00c57913c2286cf8a82f2425da9eb07"
+    },
+    {
+      "source_id": "govinfo:hres580eh",
+      "origin": "330630a16324c3e47fa8ab35ec323f0bbd069b57:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "9c160e9dc8f4b6db9d49e5ca43eb08029c77667737bd973bab91b1e8970347b7",
+      "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+      "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
+    },
+    {
+      "source_id": "clerk:119:1:197",
+      "origin": "676ae9e54ecd1192202567738b423ea42b5513c5:docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+      "source_object_sha256": "4708c45b0e64427f0dc7bfc0dd2cd1b82c408685c9d09b41a8a7616135b6cc74",
+      "raw_sha256": "29086d4a39dccc8f188a8a143653f215edbf37d3560a20be0d905feb26be820a",
+      "governed_bytes_sha256": "0d7fdd9d98f2ef5ad998300b369e13bd6b272984d36b0363baa2f66e6ab3c3bf"
+    }
+  ],
+  "new_sources": [],
+  "source_acquisitions": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hr1eas",
+      "scope": "Partial only:0-2200,111238-114694,874396-874996of874996; complete section20002with36clauses, no whole Senate package review"
+    },
+    {
+      "source_id": "govinfo:s1596es",
+      "scope": "Complete2020character SenateESread; no independent House floor-body certification"
+    },
+    {
+      "source_id": "govinfo:hres580rh",
+      "scope": "Reported header and complete operative2519-9883of11174reviewed through normalized correspondence to previously read complete EHbody"
+    },
+    {
+      "source_id": "govinfo:hres580eh",
+      "scope": "Complete7570character finalEHpreviously read as comparator, not proof that July15failedagreement adopted it"
+    },
+    {
+      "source_id": "clerk:119:1:190",
+      "scope": "Exact question/measure/result/date and original member labels inspected without new substantive projection"
+    },
+    {
+      "source_id": "clerk:119:1:193",
+      "scope": "Exact question/measure/result/date and original member labels inspected without new substantive projection"
+    },
+    {
+      "source_id": "clerk:119:1:194",
+      "scope": "Exact question/measure/result/date and original member labels inspected without new substantive projection"
+    },
+    {
+      "source_id": "clerk:119:1:195",
+      "scope": "Exact question/measure/result/date and original member labels inspected without new substantive projection"
+    },
+    {
+      "source_id": "clerk:119:1:197",
+      "scope": "Exact question/measure/result/date and original member labels inspected without new substantive projection"
+    }
+  ],
+  "protected_targets_retried": false,
+  "authority_conferred": false
+}
