@@ -73,4 +73,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_hr758_boundaries
         action=copy.deepcopy(next(a for a in read(folder(17)/'authoring.json')['actions'] if a['action_id']=='house:119:1:55'));action['meaning']=action['meaning'].replace('does not personally identify any employee, contractor or other individual','identifies individual employees and contractors')
         with self.assertRaisesRegex(ValueError,'758internal/public privacy or discretionary penalty boundary differs'):validate_hr758_boundaries(action)
+    def test_border_team_permission_cannot_become_creation_mandate(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr993_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(18)/'authoring.json')['actions'] if a['action_id']=='house:119:1:65'));action['meaning']=action['meaning'].replace('does not require creation of a team','requires creation of a team')
+        with self.assertRaisesRegex(ValueError,'993team permission/conditional duty/technology example scope differs'):validate_hr993_boundaries(action)
+    def test_border_technology_review_cannot_drop_negative_consequences(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr993_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(18)/'authoring.json')['actions'] if a['action_id']=='house:119:1:65'));action['meaning']=action['meaning'].replace('including NEGATIVE consequences','limited to successful outcomes')
+        with self.assertRaisesRegex(ValueError,'993negative consequences/privacy/report clocks differ'):validate_hr993_boundaries(action)
 if __name__=='__main__':unittest.main()
