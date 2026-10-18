@@ -105,4 +105,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_hr4016_amend114_boundaries
         action=copy.deepcopy(next(a for a in read(folder(36)/'authoring.json')['actions'] if a['action_id']=='house:119:1:207'));target=next(s for s in read(folder(36)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4016rh-section8067-complete171');action['meaning']=action['meaning'].replace("their respective U.S.-Israeli co-production agreements and each nation's laws, regulations and procedures",'no conditions')
         with self.assertRaisesRegex(ValueError,'8067respective agreement/law conditions lost'):validate_hr4016_amend114_boundaries(action,target)
+    def test_atvm_administration_does_not_become_loan_principal(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_atvm_administration_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(38)/'authoring.json')['actions'] if a['action_id']=='house:119:1:230'));target=next(s for s in read(folder(38)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4553-rh-amend26-account-SRA146');action['meaning']=action['meaning'].replace('$13 million is administrative funding, not loan principal or credit subsidy','$13 million is loan principal')
+        with self.assertRaisesRegex(ValueError,'ATVM administrative reduction became loan-principal cut'):validate_atvm_administration_boundaries(action,target)
+    def test_atvm_administration_does_not_repeal_program(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_atvm_administration_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(38)/'authoring.json')['actions'] if a['action_id']=='house:119:1:230'));target=next(s for s in read(folder(38)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4553-rh-amend26-account-SRA146');action['compact_description']=action['compact_description'].replace('would not repeal the loan program or cancel existing loans','would repeal the loan program and cancel existing loans')
+        with self.assertRaisesRegex(ValueError,'ATVM administrative reduction became program repeal'):validate_atvm_administration_boundaries(action,target)
 if __name__=='__main__':unittest.main()
