@@ -1,39 +1,49 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch15**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch16**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Prior independent discovery review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports that
 H.R.9436 corrections at `f70fc3023bd69c087be166d16d792065232edf6c` are satisfactory
 and that head's CI is green. Neither report accepts later work or domain membership.
 
-The remaining-record phase has examined40additional identities in batches12-15.
-There are116owner-examined identities overall and **560ordinary unscreened**.
+The remaining-record phase has examined50additional identities in batches12-16.
+There are126owner-examined identities overall and **550ordinary unscreened**.
 Evidence units distinguish exact questions, complete rule/bill bodies, partial
 operative leads and one access-only investigation without amendment-body review.
 Titles and historical non-lead labels select research; they do not establish exclusion.
 
 | State | Count |
 |---|---:|
-| Shared authored candidate meanings | 31 |
-| Procedural controls | 37 |
-| Proposed exact-action exclusions | 18 |
+| Shared authored candidate meanings | 32 |
+| Procedural controls | 39 |
+| Proposed exact-action exclusions | 21 |
 | Nonbinding expression | 1 |
 | Source/access/version holds | 4 |
-| Ordinary unfinished/review cases | 25 |
-| Ordinary unscreened identities | 560 |
+| Ordinary unfinished/review cases | 29 |
+| Ordinary unscreened identities | 550 |
 | **Discovery identities** | **676** |
 
-The31shared meanings project mechanically to Foushee and Massie. Five original
-authored Not Voting observations remain nondirectional, leaving30Foushee and27
-Massie directional findings. Batch15does not change the authored behavioral IR.
+The32shared meanings project mechanically to Foushee and Massie. Five original
+authored Not Voting observations remain nondirectional, leaving31Foushee and28
+Massie directional findings. Batch16adds one whole-action research candidate.
 
-Batch15screens session1rolls34-43: four procedural questions, four proposed
-exclusions and two ordinary boundary leads. H.R.26's hydraulic-fracturing moratorium
-constraint and H.R.35's vehicle-flight/criminal/immigration package remain pending.
-H.R.77 passage is a substantive proposed general review-law change; its proposed
-domain exclusion does not turn it into a procedural vote or resolve other CRA cases.
-[Readable batch15 findings](infrastructure_candidate_batch15.md).
+Batch16screens session1rolls44-53: one whole-action H.R.788 candidate, two
+procedural questions, three proposed exclusions and four ordinary unfinished cases.
+The DOE/SBA proposal requires joint R&D agreements, appropriate small-business
+inclusion and a report to Congress within two years after enactment; reimbursable
+agreements and other-agency collaboration are permissions. The existing research-
+security framework remains incorporated, with no additional amounts authorized.
+No appropriation, blanket foreign-researcher exclusion, actual agreement or achieved
+research result is inferred. Both members recorded Yea on the exact whole motion.
+[Readable batch16 findings](infrastructure_candidate_batch16.md).
+
+H.R.804's disaster-program scope, HConRes14's full budget package/material baselines/
+deemed amendment and both energy-rule disapproval baselines remain pending. Only the
+specified budget declaration/opening and complete titlesII/III were read; committee
+instructions do not establish enacted program cuts. The seven complete bill-body
+screens, two complete rule-body reviews and one partial budget lead remain separate
+from metadata triage. [Earlier batch15](infrastructure_candidate_batch15.md).
 
 ## H.R.144 baseline follow-up
 
@@ -67,19 +77,19 @@ H.R.4690 rejection and cancelled WRDA version/glyph/table chain remain unchanged
 Ordinary package work and two CRA legal reviews remain explicit. Independent cases
 continue around these holds.
 
-**57focused tests, candidate source/conservation/replay checks and seven canonical
+**59focused tests, candidate source/conservation/replay checks and seven canonical
 semantic checks pass**. All current authoring/generated copies remain member-neutral.
-One new successful primary-source capture bound the TVA baseline; no protected
-acquisition was retried. The timing receipt separates the recovered working window,
-22.826seconds of formal gate processes and later byte/delivery overhead. The prior-day
-host interruption is excluded. Prior/current generated LF hashes are checked against
+No new source acquisition or protected retry in batch16. The timing receipt separates
+the specification/authoring window, 19.066seconds of formal gate processes and later
+byte/delivery overhead; preparatory source-reading duration was not continuously
+sampled and is not invented. Prior/current generated LF hashes are checked against
 actual Git blobs before commit.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch15_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch16_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch16_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch16_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch16_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Next ordinary group begins session1roll44. No editorial acceptance, publication,
+Next ordinary group begins session1roll54. No editorial acceptance, publication,
 registry change, production write, merge or manual deployment. The workstream remains partial.

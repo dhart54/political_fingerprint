@@ -57,4 +57,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         c,u,m=[copy.deepcopy(read(folder(15)/f'{k}.json')) for k in ['sources','universe_proposal','membership_review']];receipt=read(folder(15)/'hr144_baseline_boundary_review.json')
         for records in [u['candidate_dispositions'],m['records']]:next(r for r in records if r['action_id']=='house:119:1:14')['disposition']='exact_action_ineligible'
         with self.assertRaisesRegex(ValueError,'TVA operator-reporting boundary must remain pending'):validate_hr144_boundary(c,u,m,receipt)
+    def test_doe_sba_permissions_cannot_become_compulsory(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr788_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(16)/'authoring.json')['actions'] if a['action_id']=='house:119:1:48'));action['meaning']=action['meaning'].replace('may use reimbursable agreements','must use reimbursable agreements')
+        with self.assertRaisesRegex(ValueError,'788duties/permissions/qualification/report clock differ'):validate_hr788_boundaries(action)
+    def test_doe_sba_authorization_limit_cannot_become_funding(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr788_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(16)/'authoring.json')['actions'] if a['action_id']=='house:119:1:48'));action['meaning']=action['meaning'].replace('Section3 authorizes no additional amounts to be appropriated','Section3 appropriates new program funding')
+        with self.assertRaisesRegex(ValueError,'788no-additional-authorization boundary differs'):validate_hr788_boundaries(action)
 if __name__=='__main__':unittest.main()
