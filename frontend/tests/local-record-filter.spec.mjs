@@ -264,11 +264,12 @@ const snapshot = JSON.parse(gunzipSync(fs.readFileSync(`../${candidate.source_sn
 const warPowers = candidate.entries.find((entry) => entry.finding_id.includes("war-powers"));
 const massie = { id: "leg_thomas_massie", name_display: "Thomas Massie", chamber: "house", state: "KY", district: "04", party: "R", bioguide_id: "M001184" };
 const senator = { id: "leg_angela_d_alsobrooks", name_display: "Angela D. Alsobrooks", chamber: "senate", state: "MD", party: "D", bioguide_id: "A000382" };
-async function releasedResponses(page, { omit = null, measureReferences = false } = {}) {
-  await page.route("http://localhost:8000/**", (route) => {
+async function releasedResponses(page, { omit = null, measureReferences = false, editorialGate = null } = {}) {
+  await page.route("http://localhost:8000/**", async (route) => {
     const url = new URL(route.request().url()), member = url.pathname.split("/")[2];
     if (url.pathname.endsWith("/profile")) return route.fulfill({ json: [foushee, massie, senator].find((profile) => profile.id === member) });
     const resource = url.pathname.endsWith("/editorial-presentations") ? "editorial" : url.pathname.endsWith("/evidence") ? url.pathname.split("/")[4] : "positions";
+    if (resource === "editorial" && editorialGate) await editorialGate;
     const supplied = snapshot[`${member}:${url.searchParams.get("scope") || "all"}:${resource}`];
     if (!supplied) throw Error(`Unexpected fixture read: ${url.pathname}`);
     let body = supplied.body.evidence && omit ? { ...supplied.body, evidence: supplied.body.evidence.filter((row) => row.canonical_action_id !== omit) } : supplied.body;
@@ -284,6 +285,37 @@ async function releasedResponses(page, { omit = null, measureReferences = false 
     return route.fulfill({ status: supplied.status, json: body });
   });
 }
+
+async function releasedCardSnapshot(page, options = {}) {
+  const entries = page.getByTestId("record-card-entry");
+  // evaluateAll reads immediately; both snapshots require the full bound list.
+  await expect(entries).toHaveCount(candidate.entries.length, options);
+  return entries.evaluateAll((nodes) => nodes.map((node) => ({ id: node.id, href: node.getAttribute("href"), text: node.textContent })));
+}
+
+test("released card snapshot waits for a held editorial response", async ({ page }) => {
+  let release;
+  const gate = new Promise((resolve) => { release = resolve; });
+  await releasedResponses(page, { editorialGate: gate });
+  try {
+    await page.goto(`/?representative=${foushee.id}&scope=all`);
+    const captured = releasedCardSnapshot(page);
+    await expect(page.getByRole("region", { name: "Reviewed findings status" })).toContainText("Loading reviewed findings");
+    await expect(page.getByTestId("record-card-entry")).toHaveCount(0);
+    release();
+    expect(await captured).toHaveLength(candidate.entries.length);
+  } finally {
+    release();
+  }
+});
+
+test("released card snapshot rejects unavailable findings instead of accepting an empty baseline", async ({ page }) => {
+  await releasedResponses(page);
+  await page.route(/\/editorial-presentations(?:\?|$)/, (route) => route.fulfill({ status: 503, json: { detail: "Unavailable" } }));
+  await page.goto(`/?representative=${foushee.id}&scope=all`);
+  await expect(page.getByRole("region", { name: "Reviewed findings status" })).toContainText("Reviewed findings are unavailable right now.");
+  await expect(releasedCardSnapshot(page, { timeout: 500 })).rejects.toThrow(/toHaveCount/);
+});
 
 for (const width of [320, 390, 768, 1440]) test(`sourced H.Con.Res.89 finds the released Roll282 receipt at ${width}px without changing evidence or history`, async ({ page }, testInfo) => {
   await page.setViewportSize({ width, height: 900 });
@@ -357,7 +389,7 @@ test("amendment receipt keeps its exact action and meaning beside its associated
 for (const partial of [false, true]) test(`released finding ${partial ? "partial" : "complete"} response keeps source identity, coverage and history`, async ({ page }) => {
   await releasedResponses(page, { omit: partial ? warPowers.action_ids[0] : null });
   await page.goto(`/?representative=${foushee.id}&scope=all`);
-  const cards = await page.getByTestId("record-card-entry").evaluateAll((nodes) => nodes.map((node) => ({ id: node.id, href: node.getAttribute("href"), text: node.textContent })));
+  const cards = await releasedCardSnapshot(page);
   await page.locator(`#${warPowers.id}`).click();
   await page.getByRole("navigation", { name: "Selected issue sections" }).getByRole("link", { name: "Vote record", exact: true }).click();
   const count = partial ? 8 : 9;
@@ -381,7 +413,7 @@ for (const partial of [false, true]) test(`released finding ${partial ? "partial
   await page.goBack(); await expect(page.getByTestId("card-finding-detail")).toBeVisible();
   await page.goForward(); await expect(page.locator("[data-canonical-action-id]")).toHaveCount(count);
   await page.goto(`/?representative=${foushee.id}&scope=all`);
-  expect(await page.getByTestId("record-card-entry").evaluateAll((nodes) => nodes.map((node) => ({ id: node.id, href: node.getAttribute("href"), text: node.textContent })))).toEqual(cards);
+  expect(await releasedCardSnapshot(page)).toEqual(cards);
 });
 
 test("receipts-only and sparse members keep their existing evidence boundary", async ({ page }) => {
