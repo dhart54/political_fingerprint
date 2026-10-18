@@ -97,4 +97,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_hr1263_nondirectional
         readable=copy.deepcopy(read(folder(24)/'generated/readable_candidates.json'));member=next(m for m in readable['members'] if m['member_id']=='M001184');member['findings'].append(dict(action_ids=['house:119:1:132'],compact='Massie opposed the Quad bill'))
         with self.assertRaisesRegex(ValueError,'1263Not Voting became directional finding'):validate_hr1263_nondirectional(readable)
+    def test_allocation_deletion_cannot_become_overall_account_cut(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr4016_amend114_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(36)/'authoring.json')['actions'] if a['action_id']=='house:119:1:207'));target=next(s for s in read(folder(36)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4016rh-section8067-complete171');action['meaning']=action['meaning'].replace('does not establish a $500 million reduction in the overall account totals','cuts $500 million from the overall account totals');action['compact_description']=action['compact_description'].replace('does not establish a cut to overall account totals','cuts overall account totals')
+        with self.assertRaisesRegex(ValueError,'8067allocation directive became overall-account cut'):validate_hr4016_amend114_boundaries(action,target)
+    def test_allocation_deletion_cannot_drop_respective_agreement_conditions(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr4016_amend114_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(36)/'authoring.json')['actions'] if a['action_id']=='house:119:1:207'));target=next(s for s in read(folder(36)/'sources.json')['sources'] if s['source_id']=='govinfo:hr4016rh-section8067-complete171');action['meaning']=action['meaning'].replace("their respective U.S.-Israeli co-production agreements and each nation's laws, regulations and procedures",'no conditions')
+        with self.assertRaisesRegex(ValueError,'8067respective agreement/law conditions lost'):validate_hr4016_amend114_boundaries(action,target)
 if __name__=='__main__':unittest.main()
