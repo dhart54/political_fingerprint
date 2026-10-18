@@ -1,14 +1,14 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch43**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch44**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
 corrections satisfactory and CI green at `f70fc3023bd69c087be166d16d792065232edf6c`.
 Neither report accepts later work or domain membership.
 
-There are **314owner-examined identities** and **362ordinary unscreened**.
-The remaining-record phase has examined238additional historical non-leads.
+There are **319owner-examined identities** and **357ordinary unscreened**.
+The remaining-record phase has examined243additional historical non-leads.
 Evidence receipts distinguish complete bodies, exact procedural questions, partial
 operative leads and one inherited access-only investigation without child-body review. Batch26 added an identity-only child examination; batch36 followed it with its own-body binding and partial incorporated-guidance review, preserving the historical snapshot.
 Titles and historical non-lead labels select research, never automatic exclusion.
@@ -16,23 +16,21 @@ Titles and historical non-lead labels select research, never automatic exclusion
 | State | Count |
 |---|---:|
 | Shared authored candidate meanings | 42 |
-| Procedural controls | 95 |
-| Proposed exact-action exclusions | 41 |
+| Procedural controls | 96 |
+| Proposed exact-action exclusions | 42 |
 | Nonbinding expression | 7 |
 | Source/access/version holds | 6 |
-| Ordinary unfinished/review cases | 123 |
-| Ordinary unscreened identities | 362 |
+| Ordinary unfinished/review cases | 126 |
+| Ordinary unscreened identities | 357 |
 | **Discovery identities** | **676** |
 
 All42shared meanings project mechanically to Foushee and Massie. Six authored
 Not Voting observations remain nondirectional, with41Foushee
 and37Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Five new NDAAchildren: one proposed flag-policy exclusion, three ordinary unfinished criminal/property, whole Ukraine-funding and humanitarian-authorization cases, and one unaccepted whole cell-cultured-meat funding-use restriction candidate. Both printed funding descriptions and all four activities remain; the candidate is not a general consumer ban or scientific claim. Exact authorization/table units and differing assistance contexts remain qualified. The reviewed CIoverflowfix is integrated with research unchanged; exact-head backend success and separate frontend follow-up are recorded independently.
+Five new identities257–261: three ordinary pending child cases, one proposed general grant-oversight exclusion and one non-counting recommittal. No new whole-action meaning. Exact Taiwan cap authorization, mixed ESAoperations/definitions, news-rating service target gap and ten-part report scope remain explicit. Prior roll226exception-scope correction and exactd0a3CIresult are retained with their historical preimages/limits.
 
-Fixed676identities:42candidate meanings,95procedures,41proposed exclusions,7expressions,6holds,123ordinary unfinished,362ordinary unscreened;314owner-examined. All41earlier meanings/six authored nondirectional NotVoting observations, sixholds, protected chains and unaccepted memberships remain unchanged.
-
-[Readable batch43 findings](infrastructure_candidate_batch43.md).
+[Readable batch44 findings](infrastructure_candidate_batch44.md).
 
 ## Retained reviewer and access boundaries
 
@@ -42,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch43_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch44_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -57,25 +55,25 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**79focused tests and seven semantic checks passed before the narrow roll226 qualification. Current source/conservation/replay and one added source-backed negative regression passed after it; the full suite was not repeated solely for prose.** Current shared authoring/generated copies remain member-neutral.
+**Current source/conservation/generated replay and seven semantic checks pass.** The79-test focused suite is inherited from batch43before the roll226prose qualification; the added negative regression and current replay passed after that qualification. The full suite was not repeated for this no-new-meaning increment. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took48.166seconds; the specification/authoring elapsed window and later byte/delivery
+took3.678seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch43_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch43_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch43_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch43_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch44_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch44_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch44_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch44_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Continue362ordinary identities fromroll257in coherent5-10action increments. Preserve42candidates/six authored nondirectional NotVoting observations, sixholds/four protected chains and all unaccepted memberships including cellcultured-meatwholefunding-use restriction. Keep252property/criminal boundary,255wholeUkrainefunding and256authorization-versus-appropriation/table-unit work unfinished. CIoverflowfix exactbackendheadgreen is not fullheadgreen because separate frontend snapshot-readiness follow-up remains; no gate weakening, source retry or editorial acceptance.
+Continue chronological roll262whole NDAAthen263onward in bounded retained-source increments.257mixed Taiwan assistance,258underlying exact target and259whole ESA/land/operations remain ordinary pending cases. Six holds and unaccepted candidate memberships remain. No source retry or acceptance/publication authority.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
 
-Batch43 qualification: North Dakota RMP drainage/new-data leasing exceptions apply only to low-development-potential areas, not the separate drinking-water source-protection closure. Roll226 remains pending with unresolved exact-action binding. Historical wording/preimage and retained source digest are preserved in `north_dakota_exception_scope_correction.json`; no shared meaning or membership decision changed.
+Roll226 retains the corrected exception scope: drainage/new-data exceptions apply only to low-development-potential leasing, not the separate drinking-water source-protection closure. Pending status/unresolved binding and historical preimage remain preserved.
 
-Reviewed CI outcome at exact `d0a3b2586f3128195ba7a1b889a6f0b406ac765e`: backend run39160820528 passed, including acceptedM14G/public-receipt regressions,225candidate tests, both realCLIcanaries,48Nodecontracts,2browser tests and9release checks. The stdout overflow is resolved at that head. Separate frontend run39160820403 had194passed/1failed; an initial snapshot readiness race is a possible explanation, not locally reproduced. Its frontend tree matches reviewed main. Overall head was not fully green. No retry or assertion weakening; current research-head CI requires separate assessment. [Exact-head receipt](infrastructure_ci_fix_exact_head_d0a3b258.json).
+The reviewed CI fix resolved stdout overflow at exact `d0a3b2586f3128195ba7a1b889a6f0b406ac765e`: backend run39160820528 passed through acceptedM14G/public-receipt regressions and later gates. Its separate frontend run39160820403failed one of195tests; a snapshot readiness race is only an inference and the frontend tree matches reviewed main. Overall that head was not fully green. Batch43head `e3608e9ef07588e3f8a7e2b9451eade104d540f1` hosted CI remains in progress as last observed; no green transfer. [Historical exact-head receipt](infrastructure_ci_fix_exact_head_d0a3b258.json).
 
-Historical36–41 lossless reconstruction independently passed; bounded source audit remains underway. These reports confer no acceptance, publication or full primary-review clearance.
+Independent36–41lossless reconstruction passed. Bounded source audit remains underway; no acceptance or full primary clearance transfers.
