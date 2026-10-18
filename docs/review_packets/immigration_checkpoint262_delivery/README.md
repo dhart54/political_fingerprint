@@ -150,3 +150,14 @@ do not make Dylan adjudicate laws or reopening denied access a prerequisite.
 No editorial acceptance, approval registry, gold promotion, persistence, public
 rendering, deployment or production write follows from either this documentation
 checkpoint or green CI.
+
+
+## Current status pointer: checkpoint263
+
+The earlier status above is preserved as history. Dylan approved the bounded partial
+candidate milestone and integration preparation on October18 at16:57UTC.
+[Checkpoint263 current scope, recovered21-item provenance, terminal262CI and
+integration manifest](../immigration_checkpoint263_integration/README.md) supersedes
+the earlier pending reporting/CI statements. Ten holds, three partial packages,
+H.R.1048 typed counting hold and70application questions remain. No merge, editorial
+acceptance, publication or production authority follows.
