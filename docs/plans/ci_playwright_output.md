@@ -41,7 +41,11 @@ commit and draft PR for independent review; do not merge.
 - [x] Trace the failing subprocess and reproduce the smallest bounded case.
 - [x] Repair the runner boundary and add meaningful negative failure tests.
 - [x] Validate affected behavior and inspect final diff.
-- [ ] Commit, push, open draft PR, attach it, and record exact-head CI results.
+- [x] Prepare and review the scoped commit/feature-branch push for a draft PR.
+
+The attached draft PR and final chat receipt record the final pushed SHA and
+hosted workflow/job conclusions. These external run results are maintained in
+the PR body so recording them does not create a new, unvalidated Git head.
 
 ## Definition of done
 
@@ -89,7 +93,8 @@ Independent parent review remains a merge prerequisite.
   clean receipt files were temporarily readied with their exact HEAD blob
   bytes; no artifact content changed. Restore original checkout line endings
   after validation. No repository configuration change.
-- Final exact-head hosted Node20/Linux validation pending PR creation.
+- Exact-head hosted Node20/Linux results: see the attached draft PR's validation
+  receipt, including workflow/job IDs and actual checkout SHA.
 
 ## Production writes and rollback
 
@@ -101,4 +106,8 @@ commit; no data or editorial rollback is needed.
 No scope blocker. Original candidate runs remain failed; this branch's checks
 cannot establish those candidate heads as green. Candidate writers must later
 integrate the reviewed fix and rerun all gates at their new exact heads.
-Final pushed-head/PR reconciliation pending.
+Implementation and local proof are complete. The final diff contains the four
+intended engineering files, with no receipt artifacts, dependency changes, or
+production effects. The attached draft PR is the delivery and live hosted
+validation addendum. Independent review remains required before merge; this
+milestone authorizes no merge or candidate-branch integration.
