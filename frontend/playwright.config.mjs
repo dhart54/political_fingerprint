@@ -4,6 +4,10 @@ const useProductionBuild = process.env.PLAYWRIGHT_PRODUCTION_BUILD === "1";
 
 export default defineConfig({
   testDir: "./tests",
+  // Playwright 1.61 buffers the entire PR diff before truncating report metadata.
+  // Large evidence branches exceed V8's string limit before any tests run.
+  // Retain commit identity; exact-head/proof checks remain owned by CI.
+  captureGitInfo: { commit: true, diff: false },
   timeout: 30_000,
   expect: {
     timeout: 10_000,
