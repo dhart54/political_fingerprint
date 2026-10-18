@@ -1,14 +1,14 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch27**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch28**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
 corrections satisfactory and CI green at `f70fc3023bd69c087be166d16d792065232edf6c`.
 Neither report accepts later work or domain membership.
 
-There are **226owner-examined identities** and **450ordinary unscreened**.
-The remaining-record phase has examined150additional historical non-leads.
+There are **236owner-examined identities** and **440ordinary unscreened**.
+The remaining-record phase has examined160additional historical non-leads.
 Evidence receipts distinguish complete bodies, exact procedural questions, partial
 operative leads and one inherited access-only investigation without child-body review. Batch26also adds one explicitly identity-only child examination; neither is a substantive child-body review.
 Titles and historical non-lead labels select research, never automatic exclusion.
@@ -16,25 +16,25 @@ Titles and historical non-lead labels select research, never automatic exclusion
 | State | Count |
 |---|---:|
 | Shared authored candidate meanings | 37 |
-| Procedural controls | 73 |
-| Proposed exact-action exclusions | 32 |
+| Procedural controls | 77 |
+| Proposed exact-action exclusions | 33 |
 | Nonbinding expression | 5 |
 | Source/access/version holds | 4 |
-| Ordinary unfinished/review cases | 75 |
-| Ordinary unscreened identities | 450 |
+| Ordinary unfinished/review cases | 80 |
+| Ordinary unscreened identities | 440 |
 | **Discovery identities** | **676** |
 
 All37shared meanings project mechanically to Foushee and Massie. Five original
 authored Not Voting observations remain nondirectional, with36Foushee
 and32Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Ten chronological identities: four procedural controls, two nonbinding expressions, one proposed exclusion and three ordinary unfinished cases. Four complete identified bill bodies, two complete resolution bodies, one complete rule and three exact procedural questions reviewed; no new whole-action meaning.
+Ten chronological identities: four procedural controls, one proposed exclusion and five ordinary unfinished cases. Six complete identified bill bodies, one complete rule with its separately read incorporated engrossment-resolution body, and three exact procedural questions reviewed. No new whole-action meaning.
 
-The H.R.2987cap concerns at most16authorized non-nonprofit lenders, not borrower counts or technology-development programs. H.R.2931physical office relocation remains distinct from mere office hierarchy; H.R.2966needs program-financing/status baselines; H.R.2096needs the complete removed/revived D.C.law. The two condemnatory resolutions remain attributed nonbinding expressions; their NotVotingrecords create neither opposition nor authored substantive findings.
+H.Res.499adopts all20H.Res.492engrossment corrections; the bound directives remain distinct from wholeH.R.1effects and substantive passage. S.331contains direct research-registration governance alongside scheduling and penalties, requiring material baselines and exact House binding. The rescissions package includes CleanTechnologyFund/CPB leads without assuming which projects or services change. D.C.repeal/information and maritime-sanctions cases retain their material boundaries. General accredited-investor qualifications do not establish a technology-financing program.
 
-Conservation:37meanings+73procedures+32proposed exclusions+5expressions+4holds+75unfinished+450unscreened=676.226examined includes the inherited access-only and batch26identity-only child units. All earlier meanings/member observations/holds preserved; no source acquisition, protected retry, acceptance, publication, production, merge or deployment.
+Conservation:37meanings+77procedures+33proposed exclusions+5expressions+4holds+80unfinished+440unscreened=676.236examined includes earlier access-only/identity-only limitations. Earlier meanings/member observations/denials/holds remain unchanged. No acquisition, protected retry, acceptance, publication, production, merge or deployment.
 
-[Readable batch27 findings](infrastructure_candidate_batch27.md).
+[Readable batch28 findings](infrastructure_candidate_batch28.md).
 
 ## Retained reviewer and access boundaries
 
@@ -44,7 +44,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch27_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch28_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -62,16 +62,16 @@ Independent records continue around these holds.
 **67focused tests, candidate source/conservation/replay checks and seven canonical
 semantic checks pass**. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took39.237seconds; the specification/authoring elapsed window and later byte/delivery
+took33.174seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch27_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch27_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch27_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch27_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch28_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch28_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch28_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch28_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Continue450ordinary identities fromroll163 in coherent5-10action increments;roll157was an earlier seed, not new work. Preserve37meanings/six authored nondirectional NotVoting observations, all denials/cancelled chains, unacceptedHR144/2189/1263boundaries and roll150identity-only qualification. New office-relocation, financing/status and D.C.revival-baseline cases remain ordinary research. No parent-to-child transfer or denied-route retry.
+Continue440ordinary identities fromroll174 in coherent5-10action increments;roll169was earlier discovery work, not a new screen. Preserve37meanings, six authored nondirectional NotVoting observations, all holds/corrections/unaccepted memberships and roll150identity-only limit. Complete incorporated H.Res.492directives are bound to roll165without reconstructing wholeH.R.1effects. New S331/repeal/rescission/information/maritime cases remain ordinary baseline/version work; no denied/cancelled route retry or alternate transport.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
