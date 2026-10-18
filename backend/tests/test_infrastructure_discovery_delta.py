@@ -137,4 +137,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_mechanism_summary
         accounting=copy.deepcopy(read(folder(42)/'universe_proposal.json')['accounting']);core=read(folder(42)/'generated/shared_action_core.json');accounting['mechanism_types']=['final_passage','suspension_and_passage']
         with self.assertRaisesRegex(ValueError,'accounting mechanism summary omits or invents'):validate_mechanism_summary(accounting,core)
+    def test_cell_cultured_authorized_funding_is_not_only_appropriations(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_cell_cultured_funding_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(43)/'authoring.json')['actions'] if a['action_id']=='house:119:1:254'));report=next(s for s in read(folder(43)/'sources.json')['sources'] if s['source_id']=='house-rules:119255-partA-amend20-operative157');action['meaning']=action['meaning'].replace('The first funding description is Act-authorized funds, not merely funds appropriated by this Act','The first funding description covers only actual appropriations made by this Act')
+        with self.assertRaisesRegex(ValueError,'cell-cultured authorization funding collapsed'):validate_cell_cultured_funding_boundaries(action,report)
+    def test_cell_cultured_choice_keeps_procurement_and_promotion(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_cell_cultured_funding_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(43)/'authoring.json')['actions'] if a['action_id']=='house:119:1:254'));report=next(s for s in read(folder(43)/'sources.json')['sources'] if s['source_id']=='house-rules:119255-partA-amend20-operative157');action['meaning']=action['meaning'].replace('research, development, procurement and promotion','research only')
+        with self.assertRaisesRegex(ValueError,'cell-cultured whole activity scope reduced'):validate_cell_cultured_funding_boundaries(action,report)
+    def test_north_dakota_exceptions_cannot_expand_to_drinking_water(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_north_dakota_exception_scope
+        record=copy.deepcopy(next(r for r in read(folder(43)/'membership_review.json')['records'] if r['action_id']=='house:119:1:226'));source=next(s for s in read(folder(43)/'sources.json')['sources'] if s['source_id']=='blm:north-dakota-2025-reviewed-decision')
+        validate_north_dakota_exception_scope(record,source)
+        record['rationale']=record['rationale'].replace('The stated drainage/new-data exceptions apply only to low-development-potential leasing; they are not stated exceptions to the drinking-water source-protection closure','low-potential/drinking-water leasing restrictions have stated drainage/new-data exceptions')
+        with self.assertRaisesRegex(ValueError,'North Dakota exceptions improperly cover drinking-water closure'):validate_north_dakota_exception_scope(record,source)
 if __name__=='__main__':unittest.main()
