@@ -81,4 +81,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_hr993_boundaries
         action=copy.deepcopy(next(a for a in read(folder(18)/'authoring.json')['actions'] if a['action_id']=='house:119:1:65'));action['meaning']=action['meaning'].replace('including NEGATIVE consequences','limited to successful outcomes')
         with self.assertRaisesRegex(ValueError,'993negative consequences/privacy/report clocks differ'):validate_hr993_boundaries(action)
+    def test_cost_share_report_cannot_lose_public_quarterly_requirement(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr359_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(20)/'authoring.json')['actions'] if a['action_id']=='house:119:1:72'));baseline=next(s for s in read(folder(20)/'sources.json')['sources'] if s['source_id']=='govinfo:42usc16352-2024-infra20');action['meaning']=action['meaning'].replace('MAKE IT PUBLICLY AVAILABLE','send it privately to one committee')
+        with self.assertRaisesRegex(ValueError,'359public/quarterly/deadline/recipient boundary differs'):validate_hr359_boundaries(action,baseline)
+    def test_cost_share_baseline_cannot_make_temporary_exemption_permanent(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr359_boundaries
+        action=next(a for a in read(folder(20)/'authoring.json')['actions'] if a['action_id']=='house:119:1:72');baseline=copy.deepcopy(next(s for s in read(folder(20)/'sources.json')['sources'] if s['source_id']=='govinfo:42usc16352-2024-infra20'));baseline['text']=baseline['text'].replace('2-year period beginning on August 9, 2022','permanent period');baseline['governed_bytes_sha256']=sealed_digest(baseline,'governed_bytes_sha256')
+        with self.assertRaisesRegex(ValueError,'359material baseline defaults/exclusions/dated exemption lost'):validate_hr359_boundaries(action,baseline)
 if __name__=='__main__':unittest.main()
