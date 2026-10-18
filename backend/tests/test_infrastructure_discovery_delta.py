@@ -65,4 +65,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_hr788_boundaries
         action=copy.deepcopy(next(a for a in read(folder(16)/'authoring.json')['actions'] if a['action_id']=='house:119:1:48'));action['meaning']=action['meaning'].replace('Section3 authorizes no additional amounts to be appropriated','Section3 appropriates new program funding')
         with self.assertRaisesRegex(ValueError,'788no-additional-authorization boundary differs'):validate_hr788_boundaries(action)
+    def test_mail_reporting_cannot_lose_serious_injury_accommodation(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr758_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(17)/'authoring.json')['actions'] if a['action_id']=='house:119:1:55'));action['meaning']=action['meaning'].replace('must provide alternative-deadline procedures','may decline any alternative deadline')
+        with self.assertRaisesRegex(ValueError,'758report trigger/injury accommodation differs'):validate_hr758_boundaries(action)
+    def test_mail_internal_database_cannot_become_public_identifying_data(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr758_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(17)/'authoring.json')['actions'] if a['action_id']=='house:119:1:55'));action['meaning']=action['meaning'].replace('does not personally identify any employee, contractor or other individual','identifies individual employees and contractors')
+        with self.assertRaisesRegex(ValueError,'758internal/public privacy or discretionary penalty boundary differs'):validate_hr758_boundaries(action)
 if __name__=='__main__':unittest.main()
