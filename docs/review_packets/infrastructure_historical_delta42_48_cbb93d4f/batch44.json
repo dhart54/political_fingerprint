@@ -1,0 +1,1117 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 44,
+  "exact_committed_head": "cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea, never current batch50 working-tree bytes; zero source acquisition.",
+  "scope": "35 new identities across seven batches plus the prior roll226 correction/preimage binding in batch43. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim and batch43roll226correction source_extent/qualification. Whole CMS letter, BLM plans/maps, NDAA/CR and other partial reviews remain incomplete as recorded. Partial offsets are not full-body clearance. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch44_20260916/membership_review.json",
+      "git_blob": "7f5e726c284999996865b193c0dfa3745a73ba20",
+      "git_bytes_sha256": "e9b30349551c3cef1b2c31e2feb6578a5186eeeb9fd23828c90f3f3c2a00ec92"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch44_20260916/sources.json",
+      "git_blob": "14cf4794563b753c02151c27a0c0616b0229f776",
+      "git_bytes_sha256": "ba249d47946e78d62ae0f29f1c1640213f933237b528ec259dc7e898145db1f7"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch44_20260916/screening_receipt.json",
+      "git_blob": "d21e11c212d717a4a35baf202780a4a66834f4b6",
+      "git_bytes_sha256": "93f36b6aad8ba57eb12c3e6d486b892799c8990851be7c415e02973c3a1f8452"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch44_20260916/screening_units_receipt.json",
+      "git_blob": "88e7012410d6c11d57e9632fd3c817076c813233",
+      "git_bytes_sha256": "1c28ecce207728587dd670a628d8e1391847422a9ddbbdb5072c5dda812926da"
+    }
+  },
+  "cumulative_membership_review_sha256": "02950622b472da1c6b3a1159eaaa59d8f241e37669ec762f19c7d346a8b58c6c",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/71bee6a0c4a9dff4ed7dd972fd4096ef6ff784f429528674f4e02daaebefb2a2.0000000.json",
+        "sha256": "18e93c1f756ca96f5c46ac416d62c79f2141a20097d3ac4e92f9657ebaa415e9",
+        "start_character": 0,
+        "end_character": 27636
+      }
+    ],
+    "utf8_sha256": "71bee6a0c4a9dff4ed7dd972fd4096ef6ff784f429528674f4e02daaebefb2a2",
+    "total_characters": 27636,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/870f6d62b0eefd4337174d9dea8c07f96f3ebb3403768e04de417b4272736fa1.0000000.json",
+        "sha256": "160e1207e34ade4fef72984475af627c394adc262ba28de6617d1ab0bc47783f",
+        "start_character": 0,
+        "end_character": 73933
+      }
+    ],
+    "utf8_sha256": "870f6d62b0eefd4337174d9dea8c07f96f3ebb3403768e04de417b4272736fa1",
+    "total_characters": 73933,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:257",
+    "house:119:1:258",
+    "house:119:1:259",
+    "house:119:1:260",
+    "house:119:1:261"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "congressional-record:3838-amend24-roll257-choice160",
+      "governed_length": 1184,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "house-rules:119255-partA-amend24-operative160",
+      "governed_length": 158,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+      "governed_length": 8080,
+      "review_extent": "RCPpage793whole1313and neighboring1312/1314; previously reviewed selected other pages remain contextual, not whole RCP"
+    },
+    {
+      "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+      "governed_length": 6961,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "congressional-record:3838-amend25-roll258-choice160",
+      "governed_length": 1803,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "house-rules:119255-partA-amend25-operative160",
+      "governed_length": 777,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "congressional-record:3838-amend29-roll259-choice158",
+      "governed_length": 4688,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "house-rules:119255-partA-amend29-operative158",
+      "governed_length": 3557,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "govinfo:16usc1533-2024-ndaa-operative",
+      "governed_length": 1286,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "govinfo:16usc1536-2024-ndaa-operative",
+      "governed_length": 2135,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "govinfo:16usc670-2024-ndaa-operative",
+      "governed_length": 2215,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "congressional-record:3838-amend253-roll260-choice158",
+      "governed_length": 4116,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "house-rules:119255-partA-amend253-operative158",
+      "governed_length": 3036,
+      "review_extent": "Complete retained source text read; source may itself be a selected statutory unit, not whole title/statute"
+    },
+    {
+      "source_id": "congressional-record:3838-passage262-floor241",
+      "governed_length": 16507,
+      "review_extent": "Own MTR offsets5167:6157and result10741:10842; earlier context0:6000and tail1900read; other roll/member lists not fully reviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_child_instruction_and_recorded_choice_units": 4,
+    "complete_own_procedural_motion_units": 1,
+    "complete_retained_material_statutory_units": 4,
+    "partial_selected_RCP_unit_groups": 1,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:257",
+        "evidence_unit": "own_child_or_procedural_motion_with_explicit_material_baseline_review_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:258",
+        "evidence_unit": "own_child_or_procedural_motion_with_explicit_material_baseline_review_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:259",
+        "evidence_unit": "own_child_or_procedural_motion_with_explicit_material_baseline_review_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:260",
+        "evidence_unit": "own_child_or_procedural_motion_with_explicit_material_baseline_review_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:261",
+        "evidence_unit": "own_child_or_procedural_motion_with_explicit_material_baseline_review_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "prior_record_correction": null,
+  "records": [
+    {
+      "original_record_sha256": "f33476b316ba6e276ae893d7c20b6cb48f75edd2b523e43215edef9c088bbba4",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:257",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete own Greene PartA24 instruction deletes whole RCP119-8section1313. The retained page793 target would add a not-more-than1billiondollar fiscal2026Taiwan security-cooperation funding authorization, leaving the original fiscal2025not-more-than300milliondollar paragraph intact rather than repealing all section1323. Complete retained PublicLaw118-159section1323preserves State concurrence, mixed equipment/technology/cyber/transport/training assistance, inventory/replenishment powers, notices, ArmsExportControlAct rule and December31,2029termination. This is not a1billiondollar appropriation, actual aid cut, ban on all Taiwan assistance or separately proven construction cut. Whole mixed security-assistance versus Infrastructure membership and full material temporal/program/accounting baseline remain ordinary review; no particular technological component is selected as the whole choice. The House rejected this exact child9–422with6NotVoting.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:257",
+            "url": "https://clerk.house.gov/evs/2025/roll257.xml",
+            "raw_sha256": "8afe709c233fa585f705a72a6ad0c4866aeda9f22ad3d610feeeb2541a0fcb6b",
+            "governed_bytes_sha256": "27749dcfc028167f7e1caf6ee01a2e40a7a072537255c7b7224f8c0208b71b83"
+          },
+          {
+            "source_id": "congressional-record:3838-amend24-roll257-choice160",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "6f1f5d557fac68d12841d68846e104b173a1c9d5dc7613ce733868fb6d38c68e"
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend24-operative160",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+            "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+            "governed_bytes_sha256": "2b5b8c719cba5592c3d826b2858484681ad29671ed18cddc7646d179456382ec"
+          },
+          {
+            "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+            "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+            "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+            "governed_bytes_sha256": "1c1dbcdd9cb24aaa9f4ba873722f150de1c94d4b6a8f7d8496f3bd1dc549b511"
+          },
+          {
+            "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+            "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+            "governed_bytes_sha256": "7481f585dd0d20103b0d37cb2beaf0a38c51d3ff91299d5954a9c3532265a1c3"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend24-roll257-choice160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 24 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 24 printed \nin part A of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 793, beginning line 8, strike section \n1313. \n\n\nAMENDMENT NO. 24 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 24, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 9, noes 422, \nnot voting 6, as follows: \n[Roll No. 257] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend24-operative160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "24. An Amendment To Be Offered by Representative Greene of Georgia or Her Designee, Debatable for 10 Minutes Page 793, beginning line 8, strike section 1313. "
+          },
+          {
+            "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/1d0d9992cfbdc0f98670b10c34344a85c81f50b535e999e3d21d181da3f35b13.0000000.json",
+                  "sha256": "859b92c4de6b4310e73d2cfe031879035cab38fa3059d4c253b88cdc7aad81f8",
+                  "start_character": 0,
+                  "end_character": 8080
+                }
+              ],
+              "utf8_sha256": "1d0d9992cfbdc0f98670b10c34344a85c81f50b535e999e3d21d181da3f35b13",
+              "total_characters": 8080,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/396d86e71fe9f3cf6bad3f299f198f31a58e8d7086a1723c6dc172e8676effd4.0000000.json",
+                  "sha256": "710620f72cff5c4c37996e8070a86ef8b1f3fb8bd3da346e79a12c4decd5723f",
+                  "start_character": 0,
+                  "end_character": 6961
+                }
+              ],
+              "utf8_sha256": "396d86e71fe9f3cf6bad3f299f198f31a58e8d7086a1723c6dc172e8676effd4",
+              "total_characters": 6961,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0013d80480ea81983c6b65aff67ed5a7cf75b0ffe04083a8b3c306ed601e80fb",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:258",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own McCormick PartA25 language replaces the page853line8amending instruction with both a subsection(a)rating/ranking/opinion/service-acquisition restriction and subsection(c)deletion. All three(a)categories remain: factual accuracy; misinformation/bias/journalistic standards/ethics opinions; acquiring or using another person's such service. The underlying statute/subject and displaced subsection(c), exact RCPtarget and material current-law baseline are not bound here, so the actor, procurement reach, technology boundary and legal duration cannot be supplied from a title or later package. It is not a blanket internet/social-media ban, prohibition on all news purchases or established censorship outcome. House agreed219–211with7NotVoting; no current-law or motive claim.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:258",
+            "url": "https://clerk.house.gov/evs/2025/roll258.xml",
+            "raw_sha256": "9f6ddb0e5d8ee47fdd7a360910adf82f842b028f3fa0332451f9d50ec56bd72d",
+            "governed_bytes_sha256": "e3a209504917b417e25a1fd6b7ece3072ca4608c733337da9054d7c9e11ec675"
+          },
+          {
+            "source_id": "congressional-record:3838-amend25-roll258-choice160",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "7ce1acdf8129fbf92cbe68cf8a51388a3202ec3ed6b84f8b3cf2ba1c15589282"
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend25-operative160",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+            "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+            "governed_bytes_sha256": "cc7eaf4ff8be85a282ac1e09bc4704b05e93d27345b2144929d7dec577959f28"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend25-roll258-choice160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 25 OFFERED BY MR . MCCORMICK \nThe Acting CHAIR. It is now in order \nto consider amendment No. 25 printed \nin part A of House Report 119–255. \nMr. M\nCCORMICK. Madam Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 853, beginning line 8, strike ‘‘is \namended by striking subsection (c).’’ and in-\nsert the following: ‘‘is amended—’’ \n(1) in subsection (a), by striking ‘‘does not’’ \nand all that follows through the end and in-\nserting the following: ‘‘does not— \n‘‘(1) rate or rank news or information \nsources for the factual accuracy of their con-\ntent; \n‘‘(2) provide ratings or opinions on news or \nin formation sources regarding misinforma-\ntion, bias, adherence to journalistic stand-\nards, or ethics; or \n‘‘(3) acquire or use any service that pro-\nvides any ratings, rankings, or opinions de-\nscribed in paragraph (1) or (2) from any other \nperson.’’; and \n(2) by striking subsection (c). \n\n\nAMENDMENT NO. 25 OFFERED BY MR . MCCORMICK \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 25, printed in \npart A of House Report 119–255, offered \nby the gentleman from Georgia (Mr. \nM\nCCORMICK), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 219, noes 211, \nnot voting 7, as follows: \n[Roll No. 258] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend25-operative160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "25. An Amendment To Be Offered by Representative McCormick of Georgia or His Designee, Debatable for 10 Minutes Page 853, beginning line 8, strike ``is amended by striking subsection (c).'' and insert the following: ``is amended--'' (1) in subsection (a), by striking ``does not'' and all that follows through the end and inserting the following: ``does not-- ``(1) rate or rank news or information sources for the factual accuracy of their content; ``(2) provide ratings or opinions on news or in formation sources regarding misinformation, bias, adherence to journalistic standards, or ethics; or ``(3) acquire or use any service that provides any ratings, rankings, or opinions described in paragraph (1) or (2) from any other person.''; and (2) by striking subsection (c). "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "cfb8615117c093d6f541aa9131915712b60e0b1a227db5fcc9108d3f81a79348",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:259",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete Biggs PartA29offering and independently retained printed report preserve the whole two-part ESAchoice: expanded military/qualifying other-area critical-habitat exclusion and consultation language, plus described defense-operation section9exclusions and broad operation/personnel definitions including contractors and specified overseas support. Complete retained1533(a)(3)(B)baseline instead conditions its designation exclusion on an integrated natural resources plan and written species benefit, expressly preserving consultation and1538obligations; retained1536(a)and670definitions add material limits, including civil-works/closure exclusions in military-installation definition. Weapons RDT&E is one operation category alongside training, preparedness and other mission duties, not the whole amendment or a technology-only exemption. Whole1538/1539/670abaselines and mixed military land/species/operations versus Infrastructure boundary remain pending. Initial floor119–225citation is preserved alongside resumed119–255and the independently retained119–255own clause; operative wording is not repaired. Failed200–228with9NotVoting, not enacted ESArepeal or proven project/species impact.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:259",
+            "url": "https://clerk.house.gov/evs/2025/roll259.xml",
+            "raw_sha256": "ab8287b33366b469bc1fa0835c5e0ea6192d09d32ad7837f6ba2295961244c2a",
+            "governed_bytes_sha256": "d14ec2bef9685a05c2084dcef15a32a9ad99db63e9d946024363a99ea1403c7b"
+          },
+          {
+            "source_id": "congressional-record:3838-amend29-roll259-choice158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "93524e01847f101ec2e1a403b9b553a4ed6be138d429426597ca18c3d9cbfc28"
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend29-operative158",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+            "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+            "governed_bytes_sha256": "cc13557c68e72d665790db6bf2e3db2fdb7b84f395aa9da8dab13a244989747e"
+          },
+          {
+            "source_id": "govinfo:16usc1533-2024-ndaa-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1533.htm",
+            "raw_sha256": "44dcc7a470c103b5e8dbc877a4f884298f7f3a3c394fa2faf50e401bb7c4ebae",
+            "governed_bytes_sha256": "c3bd4bd1a102e15e46a44da6544b2fc4123b4745468c50a2ed4c7a27c51ec2c3"
+          },
+          {
+            "source_id": "govinfo:16usc1536-2024-ndaa-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1536.htm",
+            "raw_sha256": "3e35e0a190dbeb32b38f0406e067ab98a7ae8c6055fef4134e5786bd7fe67667",
+            "governed_bytes_sha256": "b4f7e58c85080d35beadeff2e5f80954d152b59ba2ea020f84725aa30fc4ef9c"
+          },
+          {
+            "source_id": "govinfo:16usc670-2024-ndaa-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5C-subchapI-sec670.htm",
+            "raw_sha256": "84c7a0ee3becf49f4c75203a8c7c9f59547b014f324df598e0fc1711e3933389",
+            "governed_bytes_sha256": "2655cbdde006d36354f4f72a4a372c9a0945a23c24d99c494726a716774e6c94"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend29-roll259-choice158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 29 OFFERED BY MR . BIGGS OF \nARIZONA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 29 printed \nin part A of House Report 119–225. \nMr. BIGGS of Arizona. Madam Chair, \nI have an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title XVII, add \nthe following new section: \nSEC. 17 ll. EXCLUSIONS FROM ENDANGERED \nSPECIES ACT OF 1973 WITH RESPECT \nTO MILITARY INSTITUTIONS AND \nFOR DEFENSE-RELATED OPER-\nATIONS. \n(a) EXCLUSION OF MILITARY INSTITUTIONS AS \nCRITICAL HABITAT.—Section 4(a)(3)(B) of the \nEndangered Species Act of 1973 (16 U.S.C. \n1533(a)(3)(B)) is amended to read as follows: \n‘‘(i) The Secretary shall not designate as \ncritical habitat— \n‘‘(I) any military installation or a State- \nowned National Guard installation, or any \nportion thereof, as such terms are defined in \nsection 100 of the Sikes Act (16 U.S.C. 670); or \n‘‘(II) any other lands, waters, or geo-\ngraphical area not described in subclause (I) \nthat is otherwise designated for use by the \nSecretary of Defense including by any con-\ntractor of the Department of Defense, if the \nSecretary of Defense determines in writing \nand submitted to the Secretary of the Inte-\nrior that such area is necessary for military \ntraining, weapons testing, or any other rea-\nson determined appropriate by such Sec-\nretary of Defense. \n‘‘(ii) The Secretary of Defense shall not be \nrequired to consult with the Secretary of the \nInterior, under section 7(a)(2) of this Act \nwith respect to agency action, regardless of \nwhether the area described in clause (i) is \nsubject to an integrated natural resources \nmanagement plan prepared under section 101 \nof the Sikes Act (16 U.S.C. 670a).’’. \n(b) E\nXCLUSION FOR NATIONAL DEFENSE-RE-\nLATED OPERATIONS.—Section 10 of the Endan-\ngered Species Act of 1973 (16 U.S.C. 1539) is \namended by adding at the end the following: \n‘‘(k) E\nXCLUSION FOR NATIONAL DEFENSE-RE-\nLATED OPERATIONS.— \n‘‘(1) E XCLUSIONS.—The prohibitions under \nsection 9 shall not apply with respect to— \n‘‘(A) the taking of any endangered species \nor threatened species, or the importation or \nexportation of any such species taken as pro-\nhibited by such section, by military per-\nsonnel engaged in a national defense-related \noperation; \n‘‘(B) damaging or destroying any threat-\nened or endangered species, or removing, \ncutting, digging up, damaging, or destroying \nany such species, by military personnel en-\ngaged in a national defense-related oper-\nation; or \n‘‘(C) an injury to or mortality of a threat-\nened or endangered species that results from, \nbut is not the purpose of, a national defense- \nrelated operation, \nregardless of whether the operation is con-\nducted on a military installation or other \narea described in section 4(a)(3)(B)(i). \n‘‘(2) D\nEFINITIONS.—For the purposes of this \nsubsection— \n\n\n‘‘(A) the term ‘national defense-related op-\neration’ means— \n‘‘(i) research, development, testing, and \nevaluation of military munitions, other ord-\nnance, and weapons systems; \n‘‘(ii) the training of members of the Armed \nForces in the use and handling of military \nmunitions, other ordnance, and weapons sys-\ntems; \n‘‘(iii) general training and military pre-\nparedness; or \n‘‘(iv) any action or duty that the Secretary \nof Defense deems necessary to support the \nDepartment of Defense in its mission; and \n‘‘(B) the term ‘military personnel’ means— \n‘‘(i) a member of the Armed Forces; and \n‘‘(ii) a civilian employee or contractor (in-\ncluding a subcontractor at any tier) of the— \n‘‘(I) Department of Defense (including a \nnonappropriated fund instrumentality of the \nDepartment); or \n‘‘(II) any other Federal agency, or any pro-\nvisional authority, to the extent such em-\nployment relates to supporting the mission \nof the Department of Defense overseas.’’. \n\n\nAMENDMENT NO. 29 OFFERED BY MR . BIGGS OF \nARIZONA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 29, printed in \npart A of House Report 119–255, offered \nby the gentleman from Arizona (Mr. \nB\nIGGS), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 200, noes 228, \nnot voting 9, as follows: \n[Roll No. 259] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend29-operative158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "29. An Amendment To Be Offered by Representative Biggs of Arizona or His Designee, Debatable for 10 Minutes At the end of subtitle B of title XVII, add the following new section: SEC. 17__. EXCLUSIONS FROM ENDANGERED SPECIES ACT OF 1973 WITH RESPECT TO MILITARY INSTITUTIONS AND FOR DEFENSE-RELATED OPERATIONS. (a) Exclusion of Military Institutions as Critical Habitat.-- Section 4(a)(3)(B) of the Endangered Species Act of 1973 (16 U.S.C. 1533(a)(3)(B)) is amended to read as follows: ``(i) The Secretary shall not designate as critical habitat-- ``(I) any military installation or a State- owned National Guard installation, or any portion thereof, as such terms are defined in section 100 of the Sikes Act (16 U.S.C. 670); or ``(II) any other lands, waters, or geographical area not described in subclause (I) that is otherwise designated for use by the Secretary of Defense including by any contractor of the Department of Defense, if the Secretary of Defense determines in writing and submitted to the Secretary of the Interior that such area is necessary for military training, weapons testing, or any other reason determined appropriate by such Secretary of Defense. ``(ii) The Secretary of Defense shall not be required to consult with the Secretary of the Interior, under section 7(a)(2) of this Act with respect to agency action, regardless of whether the area described in clause (i) is subject to an integrated natural resources management plan prepared under section 101 of the Sikes Act (16 U.S.C. 670a).''. (b) Exclusion for National Defense-Related Operations.-- Section 10 of the Endangered Species Act of 1973 (16 U.S.C. 1539) is amended by adding at the end the following: ``(k) Exclusion for National Defense-Related Operations.-- ``(1) Exclusions.--The prohibitions under section 9 shall not apply with respect to-- ``(A) the taking of any endangered species or threatened species, or the importation or exportation of any such species taken as prohibited by such section, by military personnel engaged in a national defense-related operation; ``(B) damaging or destroying any threatened or endangered species, or removing, cutting, digging up, damaging, or destroying any such species, by military personnel engaged in a national defense-related operation; or ``(C) an injury to or mortality of a threatened or endangered species that results from, but is not the purpose of, a national defense-related operation, regardless of whether the operation is conducted on a military installation or other area described in section 4(a)(3)(B)(i). ``(2) Definitions.--For the purposes of this subsection-- ``(A) the term `national defense-related operation' means-- ``(i) research, development, testing, and evaluation of military munitions, other ordnance, and weapons systems; ``(ii) the training of members of the Armed Forces in the use and handling of military munitions, other ordnance, and weapons systems; ``(iii) general training and military preparedness; or ``(iv) any action or duty that the Secretary of Defense deems necessary to support the Department of Defense in its mission; and ``(B) the term `military personnel' means-- ``(i) a member of the Armed Forces; and ``(ii) a civilian employee or contractor (including a subcontractor at any tier) of the-- ``(I) Department of Defense (including a nonappropriated fund instrumentality of the Department); or ``(II) any other Federal agency, or any provisional authority, to the extent such employment relates to supporting the mission of the Department of Defense overseas.''. "
+          },
+          {
+            "source_id": "govinfo:16usc1533-2024-ndaa-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(3)(A) The Secretary, by regulation promulgated in accordance with subsection (b) and to the maximum extent prudent and determinable— (i) shall, concurrently with making a determination under paragraph (1) that a species is an endangered species or a threatened species, designate any habitat of such species which is then considered to be critical habitat; and (ii) may, from time-to-time thereafter as appropriate, revise such designation. (B)(i) The Secretary shall not designate as critical habitat any lands or other geographical areas owned or controlled by the Department of Defense, or designated for its use, that are subject to an integrated natural resources management plan prepared under section 670a of this title, if the Secretary determines in writing that such plan provides a benefit to the species for which critical habitat is proposed for designation. (ii) Nothing in this paragraph affects the requirement to consult under section 1536(a)(2) of this title with respect to an agency action (as that term is defined in that section). (iii) Nothing in this paragraph affects the obligation of the Department of Defense to comply with section 1538 of this title, including the prohibition preventing extinction and taking of endangered species and threatened species. "
+          },
+          {
+            "source_id": "govinfo:16usc1536-2024-ndaa-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Federal agency actions and consultations (1) The Secretary shall review other programs administered by him and utilize such programs in furtherance of the purposes of this chapter. All other Federal agencies shall, in consultation with and with the assistance of the Secretary, utilize their authorities in furtherance of the purposes of this chapter by carrying out programs for the conservation of endangered species and threatened species listed pursuant to section 1533 of this title. (2) Each Federal agency shall, in consultation with and with the assistance of the Secretary, insure that any action authorized, funded, or carried out by such agency (hereinafter in this section referred to as an \"agency action\") is not likely to jeopardize the continued existence of any endangered species or threatened species or result in the destruction or adverse modification of habitat of such species which is determined by the Secretary, after consultation as appropriate with affected States, to be critical, unless such agency has been granted an exemption for such action by the Committee pursuant to subsection (h) of this section. In fulfilling the requirements of this paragraph each agency shall use the best scientific and commercial data available. (3) Subject to such guidelines as the Secretary may establish, a Federal agency shall consult with the Secretary on any prospective agency action at the request of, and in cooperation with, the prospective permit or license applicant if the applicant has reason to believe that an endangered species or a threatened species may be present in the area affected by his project and that implementation of such action will likely affect such species. (4) Each Federal agency shall confer with the Secretary on any agency action which is likely to jeopardize the continued existence of any species proposed to be listed under section 1533 of this title or result in the destruction or adverse modification of critical habitat proposed to be designated for such species. This paragraph does not require a limitation on the commitment of resources as described in subsection (d). "
+          },
+          {
+            "source_id": "govinfo:16usc670-2024-ndaa-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§670. Definitions In this subchapter: (1) Military installation The term \"military installation\"— (A) means any land or interest in land owned by the United States and administered by the Secretary of Defense or the Secretary of a military department, except land under the jurisdiction of the Assistant Secretary of the Army having responsibility for civil works; (B) includes all public lands withdrawn from all forms of appropriation under public land laws and reserved for use by the Secretary of Defense or the Secretary of a military department; and (C) does not include any land described in subparagraph (A) or (B) that is subject to an approved recommendation for closure under the Defense Base Closure and Realignment Act of 1990 (part A of title XXIX of Public Law 101–510; 10 U.S.C. 2687 note). (2) State The term \"State\" means any of the several States, the District of Columbia, the Commonwealth of Puerto Rico, Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the Virgin Islands. (3) State-owned National Guard installation The term \"State-owned National Guard installation\" means land owned and operated by a State when such land is used for training the National Guard pursuant to chapter 5 of title 32, with funds provided by the Secretary of Defense or the Secretary of a military department, even though such land is not under the jurisdiction of the Department of Defense. (4) State fish and wildlife agency The term \"State fish and wildlife agency\" means the one or more agencies of State government that are responsible under State law for managing fish or wildlife resources. (5) United States The term \"United States\" means the States, the District of Columbia, and the territories and possessions of the United States. (6) Indian tribe The term \"Indian tribe\" means any Indian tribe, band, nation, or other organized group or community, including any Alaska Native village or regional or village corporation as defined in or established pursuant to the Alaska Native Claims Settlement Act (43 U.S.C. 1601 et seq.), which is recognized as eligible for the special programs and services provided by the United States to Indians because of their status as Indians. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "db5de89aebddc16865ddc0b4ead935ce9224562a37f4cf772c4817cc63dfccf4",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:260",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete Rose PartA253requires a single report within one year of enactment to both ArmedServices committees and public posting on an appropriate DoDwebsite about the identified Army4-HMilitaryPartnershipGrant case. All ten report categories concern supervision, accountability, self-dealing controls, warning signs, policies, recommendations, disciplinary/administrative responses, management changes, program effects and other relevant information. This general grant/financial oversight requirement has no direct infrastructure or technology mechanism; public website delivery alone does not create one. The referenced case is the report's statutory subject, not an inferred allegation about any legislator, motive, corruption or endorsement. Agreed430–3with4NotVoting; no report completion, recovered funds, current wrongdoing or realized oversight outcome inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:260",
+            "url": "https://clerk.house.gov/evs/2025/roll260.xml",
+            "raw_sha256": "5ed827ff45ebff54516efc1d978c93b281848acb764e34bc47ec6b86cc3b0c3a",
+            "governed_bytes_sha256": "4163ed2d72f2928fa89206469ee6aff642693d7b5be4d6c22dd518f94bd42a5a"
+          },
+          {
+            "source_id": "congressional-record:3838-amend253-roll260-choice158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "d688e798ce24e190385bc71373de0a136c236d334b7765588572ce552add58ac"
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend253-operative158",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+            "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+            "governed_bytes_sha256": "468b5551477d61bff601b0b6a86b1c02116545ddc6ecbeb4e31c80bca26d6d32"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend253-roll260-choice158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 253 OFFERED BY MR . ROSE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 253 printed \nin part A of House Report 119–255. \nMr. ROSE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle E of title X, add the \nfollowing new section: \nSEC. 10 ll. REPORT ON RED FLAGS MISSED IN \nFRAUD SCHEME PERPETRATED BY \nJANET YAMANAKA MELLO. \n(a) REPORT REQUIRED.—Not later than one \nyear after the date of the enactment of this \nAct, the Secretary of Defense shall submit to \nthe Committees on Armed Services of the \nSenate and the House of Representatives a \nreport on the fraud scheme perpetrated by \nJanet Yamanaka Mello, a civilian employee \nof the Department of the Army, who was in-\ndicted and pleaded guilty to stealing over \n$100,000,000 in 4-H Military Partnership Grant \nprogram funds. \n(b) C\nONTENTS OF REPORT.—The report re-\nquired under subsection (a) shall include \neach of the following: \n(1) A description of the breakdown in the \nsupervision of Mello, including any failures \nof management or oversight that contrib-\nuted to the ability of Mello to carry out the \nfraud scheme undetected. \n\n\n(2) A description of the breakdown in ac-\ncountability with respect to the loss of the \nstolen funds, including any failures to ensure \nthat such funds were actually being spent for \nthe purposes for which such funds were in-\ntended. \n(3) A description of the failure to ensure \nthat financial program managers, such as \nMello, are not able to funnel Government \nfunds to themselves or their own entities. \n(4) An identification of any other red flags \nor warning signs that were missed or ignored \nby employees of the Department of Defense, \nincluding any instances of whistleblower re-\ntaliation or suppression of concerns. \n(5) An assessment of the policies and proce-\ndures of the Department of Defense and De-\npartment of the Army, as of the date of the \nenactment of this Act, designed to prevent \nemployees from perpetrating similar fraud \nschemes in the future. \n(6) Recommendations for improvements to \nthe policies, procedures, and oversight of the \nDepartment of Defense and Department of \nthe Army to prevent employees from perpe-\ntrating similar fraud schemes in the future. \n(7) A description of any disciplinary or ad-\nministrative actions taken against any indi-\nviduals or entities found to have contributed \nto the ability of Mello to carry out the fraud \nscheme. \n(8) A description of any changes made, or \nplanned to be made, to the financial manage-\nment and oversight processes of the Depart-\nment of Defense and the Department of the \nArmy as a result of the fraud scheme per-\npetrated by Mello. \n(9) An assessment of the effects of the \nfraud scheme perpetrated by Mello on the \nprograms and operations of the Department \nof Defense and the Department of the Army. \n(10) Any other information the Secretary \nof Defense determines relevant to under-\nstanding the fraud scheme perpetrated by \nMello and preventing employees from perpe-\ntrating similar fraud schemes in the future. \n(c) P\nUBLIC AVAILABILITY.—The Secretary of \nDefense shall make the report required under \nsubsection (a) publicly available on an ap-\npropriate website of the Department of De-\nfense. \n\n\nAMENDMENT NO. 253 OFFERED BY MR . ROSE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 253, printed in \npart A of House Report 119–255, offered \nby the gentleman from Tennessee (Mr. \nR\nOSE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 430, noes 3, \nnot voting 4, as follows: \n[Roll No. 260] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend253-operative158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "253. An Amendment To Be Offered by Representative Rose of Tennessee or His Designee, Debatable for 10 Minutes At the end of subtitle E of title X, add the following new section: SEC. 10__. REPORT ON RED FLAGS MISSED IN FRAUD SCHEME PERPETRATED BY JANET YAMANAKA MELLO. (a) Report Required.--Not later than one year after the date of the enactment of this Act, the Secretary of Defense shall submit to the Committees on Armed Services of the Senate and the House of Representatives a report on the fraud scheme perpetrated by Janet Yamanaka Mello, a civilian employee of the Department of the Army, who was indicted and pleaded guilty to stealing over $100,000,000 in 4-H Military Partnership Grant program funds. (b) Contents of Report.--The report required under subsection (a) shall include each of the following: (1) A description of the breakdown in the supervision of Mello, including any failures of management or oversight that contributed to the ability of Mello to carry out the fraud scheme undetected. (2) A description of the breakdown in accountability with respect to the loss of the stolen funds, including any failures to ensure that such funds were actually being spent for the purposes for which such funds were intended. (3) A description of the failure to ensure that financial program managers, such as Mello, are not able to funnel Government funds to themselves or their own entities. (4) An identification of any other red flags or warning signs that were missed or ignored by employees of the Department of Defense, including any instances of whistleblower retaliation or suppression of concerns. (5) An assessment of the policies and procedures of the Department of Defense and Department of the Army, as of the date of the enactment of this Act, designed to prevent employees from perpetrating similar fraud schemes in the future. (6) Recommendations for improvements to the policies, procedures, and oversight of the Department of Defense and Department of the Army to prevent employees from perpetrating similar fraud schemes in the future. (7) A description of any disciplinary or administrative actions taken against any individuals or entities found to have contributed to the ability of Mello to carry out the fraud scheme. (8) A description of any changes made, or planned to be made, to the financial management and oversight processes of the Department of Defense and the Department of the Army as a result of the fraud scheme perpetrated by Mello. (9) An assessment of the effects of the fraud scheme perpetrated by Mello on the programs and operations of the Department of Defense and the Department of the Army. (10) Any other information the Secretary of Defense determines relevant to understanding the fraud scheme perpetrated by Mello and preventing employees from perpetrating similar fraud schemes in the future. (c) Public Availability.--The Secretary of Defense shall make the report required under subsection (a) publicly available on an appropriate website of the Department of Defense. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2a505adb1d2ef905b95fe403d3f779e4db55a1f59d7d3ced9e1e933615ff0c9b",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:261",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Retained own motion simply recommits H.R.3838to ArmedServices, with no substantive instruction in the operative motion. Its rejection208–219with5NotVoting is a procedural disposition, distinct from subsequent final passage262and the parent's military construction/technology provisions. No parent support/opposition, underlying policy meaning, motive or procedural-to-substantive eligibility transfer.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:261",
+            "url": "https://clerk.house.gov/evs/2025/roll261.xml",
+            "raw_sha256": "eb2f2cb6193df3279bcf89a26cd353680ea33cdeef0e9f44de38858d3f113d94",
+            "governed_bytes_sha256": "f86713d08056961d7991c998b1b27037cbfa6bcb411afb15fbf4713854edd1ed"
+          },
+          {
+            "source_id": "congressional-record:3838-passage262-floor241",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "1f9690529b31f5c0092dc78b1e46a8d231f62dc0566fb9c28d7b3767ce9d1e72"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-passage262-floor241",
+            "locator": "Own complete motion/question offsets5167:6157",
+            "passage": "MOTION TO RECOMMIT \nMs. HOULAHAN. Mr. Speaker, I have \na motion to recommit at the desk. \nThe SPEAKER pro tempore. The \nClerk will report the motion to recom-\nmit. \nThe Clerk read as follows: \nMs. Houlahan of Pennsylvania moves to re-\ncommit the bill H.R. 3838 to the Committee \non Armed Services. \nThe SPEAKER pro tempore. Pursu-\nant to clause 2(b) of rule XIX, the pre-\nvious question is ordered on the motion \nto recommit. \nThe question is on the motion to re-\ncommit. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe noes appeared to have it. \nMs. HOULAHAN. Mr. Speaker, on \nthat I demand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 9 of rule XX, the Chair \nwill reduce to 5 minutes the minimum \ntime for any electronic vote on the \nquestion of passage. \nThis will be a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 208, nays \n219, not voting 5, as follows: \n[Roll No. 261]"
+          },
+          {
+            "source_id": "congressional-record:3838-passage262-floor241",
+            "locator": "Own rejection offsets10741:10842",
+            "passage": "So the motion to recommit was re-\njected. \nThe result of the vote was announced \nas above recorded. \n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "27dd4ad35710506ac30156ff3a1fd14319917f219125351cf5a28cd4a5ffadb7",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/4a93fbf1766210d1d6071d283967cfe84e5786d93c686be8e763ad0e0708f165.0000000.json",
+            "sha256": "0232664ff5e7ea313e68cef3b32ed5acdb60d054e25bdf2105bd425e60dd5599",
+            "start_character": 0,
+            "end_character": 9300
+          }
+        ],
+        "utf8_sha256": "4a93fbf1766210d1d6071d283967cfe84e5786d93c686be8e763ad0e0708f165",
+        "total_characters": 9300,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "79d4e51722e03b033ef0171e80b9d577d38437ddc51bc7cc63387b9de18581b1",
+      "source": {
+        "source_id": "clerk:119:1:257",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll257.xml",
+        "text_version": null,
+        "raw_sha256": "8afe709c233fa585f705a72a6ad0c4866aeda9f22ad3d610feeeb2541a0fcb6b",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "257",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "19",
+          "amendment-author": "Greene of Georgia Part A Amendment No. 24",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:30 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "9",
+            "nay-total": "209",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "213",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "27749dcfc028167f7e1caf6ee01a2e40a7a072537255c7b7224f8c0208b71b83"
+      }
+    },
+    {
+      "original_source_object_sha256": "91c419fbefaf1b31852f44310075de9d8404310a25a66ae6393264fa752cfd6d",
+      "source": {
+        "source_id": "congressional-record:3838-amend24-roll257-choice160",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA24 operative/question/totals/recorded outcome160; literalCivil label orretainedquotation andvoice/recorded distinctions, not debate/enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named own operative/stages or material pre-amendment/authority scope reviewed160. Literal source artifacts/label variation retained; no wholeparent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 24 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 24 printed \nin part A of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 793, beginning line 8, strike section \n1313. \n\n\nAMENDMENT NO. 24 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 24, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 9, noes 422, \nnot voting 6, as follows: \n[Roll No. 257] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "6f1f5d557fac68d12841d68846e104b173a1c9d5dc7613ce733868fb6d38c68e",
+        "captured_full_text_sha256": "6b0a26acaba6e49656a742ae82795f9c8f0499c0da1ac1459bd92a8903af76d4",
+        "source_text_extents": [
+          {
+            "start": 14767,
+            "end": 15156,
+            "total": 49117
+          },
+          {
+            "start": 30748,
+            "end": 31451,
+            "total": 49117
+          },
+          {
+            "start": 36060,
+            "end": 36148,
+            "total": 49117
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "9bbcbbaa9913e3fb1eca0e7709dc7abd90977db098730ba24f65c6f4fff3d853",
+      "source": {
+        "source_id": "house-rules:119255-partA-amend24-operative160",
+        "source_type": "official_committee_report_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+        "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+        "text_version": "Complete exact numbered PartA24 operative160 only, no otherReport meanings.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named own operative/stages or material pre-amendment/authority scope reviewed160. Literal source artifacts/label variation retained; no wholeparent/current-law/individual-application certification.",
+        "text": "24. An Amendment To Be Offered by Representative Greene of Georgia or Her Designee, Debatable for 10 Minutes Page 793, beginning line 8, strike section 1313. ",
+        "governed_bytes_sha256": "2b5b8c719cba5592c3d826b2858484681ad29671ed18cddc7646d179456382ec",
+        "captured_full_text_sha256": "1a8c32a7213829357ad4746ea72ed630a162d788e8b642d79bb7853f85fe26d2",
+        "source_text_extents": [
+          {
+            "start": 145163,
+            "end": 145321,
+            "total": 697572
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "71fe4c1071664148d8e7e4a23be54a3b07bcccbfec2ac60033664756eac14e16",
+      "source": {
+        "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+        "text_version": "CompletegovernedSection1323body includingFY2025cap/termination/concurrence/notifications/AECA/TaiwanRelationsqualifications;notwholePL/Acts/currentindividualexport/travelapplication.",
+        "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/396d86e71fe9f3cf6bad3f299f198f31a58e8d7086a1723c6dc172e8676effd4.0000000.json",
+              "sha256": "710620f72cff5c4c37996e8070a86ef8b1f3fb8bd3da346e79a12c4decd5723f",
+              "start_character": 0,
+              "end_character": 6961
+            }
+          ],
+          "utf8_sha256": "396d86e71fe9f3cf6bad3f299f198f31a58e8d7086a1723c6dc172e8676effd4",
+          "total_characters": 6961,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "7481f585dd0d20103b0d37cb2beaf0a38c51d3ff91299d5954a9c3532265a1c3",
+        "captured_full_text_sha256": "c584255518fbbcdd1a5985704c1bf68af9b9c501a350dcb570d33c7e8aca991f",
+        "source_text_extents": [
+          {
+            "start": 0,
+            "end": 6961,
+            "total": 6961
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "e58089da8b3bc04d7166cb7f243749a4e288ff9c9c49c49d57dd4f9450c8109b",
+      "source": {
+        "source_id": "clerk:119:1:258",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll258.xml",
+        "text_version": null,
+        "raw_sha256": "9f6ddb0e5d8ee47fdd7a360910adf82f842b028f3fa0332451f9d50ec56bd72d",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "258",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "20",
+          "amendment-author": "McCormick of Georgia Part A Amendment No. 25",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:33 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "217",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "2",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "e3a209504917b417e25a1fd6b7ece3072ca4608c733337da9054d7c9e11ec675"
+      }
+    },
+    {
+      "original_source_object_sha256": "dde4d0c16d1a6ccdb61a2afec81b4929d29058749cc08c7a7789f2b9e4e224e9",
+      "source": {
+        "source_id": "congressional-record:3838-amend25-roll258-choice160",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA25 operative/question/totals/recorded outcome160; literalCivil label orretainedquotation andvoice/recorded distinctions, not debate/enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named own operative/stages or material pre-amendment/authority scope reviewed160. Literal source artifacts/label variation retained; no wholeparent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 25 OFFERED BY MR . MCCORMICK \nThe Acting CHAIR. It is now in order \nto consider amendment No. 25 printed \nin part A of House Report 119–255. \nMr. M\nCCORMICK. Madam Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 853, beginning line 8, strike ‘‘is \namended by striking subsection (c).’’ and in-\nsert the following: ‘‘is amended—’’ \n(1) in subsection (a), by striking ‘‘does not’’ \nand all that follows through the end and in-\nserting the following: ‘‘does not— \n‘‘(1) rate or rank news or information \nsources for the factual accuracy of their con-\ntent; \n‘‘(2) provide ratings or opinions on news or \nin formation sources regarding misinforma-\ntion, bias, adherence to journalistic stand-\nards, or ethics; or \n‘‘(3) acquire or use any service that pro-\nvides any ratings, rankings, or opinions de-\nscribed in paragraph (1) or (2) from any other \nperson.’’; and \n(2) by striking subsection (c). \n\n\nAMENDMENT NO. 25 OFFERED BY MR . MCCORMICK \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 25, printed in \npart A of House Report 119–255, offered \nby the gentleman from Georgia (Mr. \nM\nCCORMICK), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 219, noes 211, \nnot voting 7, as follows: \n[Roll No. 258] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "7ce1acdf8129fbf92cbe68cf8a51388a3202ec3ed6b84f8b3cf2ba1c15589282",
+        "captured_full_text_sha256": "6b0a26acaba6e49656a742ae82795f9c8f0499c0da1ac1459bd92a8903af76d4",
+        "source_text_extents": [
+          {
+            "start": 17766,
+            "end": 18778,
+            "total": 49117
+          },
+          {
+            "start": 36150,
+            "end": 36848,
+            "total": 49117
+          },
+          {
+            "start": 41457,
+            "end": 41546,
+            "total": 49117
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "95a601b7eaf1e30d4416fbb05fd60839be0eefc1d7e4ff04f4e5d59f72bc259b",
+      "source": {
+        "source_id": "house-rules:119255-partA-amend25-operative160",
+        "source_type": "official_committee_report_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+        "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+        "text_version": "Complete exact numbered PartA25 operative160 only, no otherReport meanings.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named own operative/stages or material pre-amendment/authority scope reviewed160. Literal source artifacts/label variation retained; no wholeparent/current-law/individual-application certification.",
+        "text": "25. An Amendment To Be Offered by Representative McCormick of Georgia or His Designee, Debatable for 10 Minutes Page 853, beginning line 8, strike ``is amended by striking subsection (c).'' and insert the following: ``is amended--'' (1) in subsection (a), by striking ``does not'' and all that follows through the end and inserting the following: ``does not-- ``(1) rate or rank news or information sources for the factual accuracy of their content; ``(2) provide ratings or opinions on news or in formation sources regarding misinformation, bias, adherence to journalistic standards, or ethics; or ``(3) acquire or use any service that provides any ratings, rankings, or opinions described in paragraph (1) or (2) from any other person.''; and (2) by striking subsection (c). ",
+        "governed_bytes_sha256": "cc7eaf4ff8be85a282ac1e09bc4704b05e93d27345b2144929d7dec577959f28",
+        "captured_full_text_sha256": "1a8c32a7213829357ad4746ea72ed630a162d788e8b642d79bb7853f85fe26d2",
+        "source_text_extents": [
+          {
+            "start": 145332,
+            "end": 146109,
+            "total": 697572
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "9b00571ebc2752d233031b9ac372e54df5a3dd7fa869594f1f40f28f5c00c37c",
+      "source": {
+        "source_id": "clerk:119:1:259",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll259.xml",
+        "text_version": null,
+        "raw_sha256": "ab8287b33366b469bc1fa0835c5e0ea6192d09d32ad7837f6ba2295961244c2a",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "259",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "21",
+          "amendment-author": "Biggs of Arizona Part A Amendment No. 29",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:36 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "198",
+            "nay-total": "18",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "2",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "d14ec2bef9685a05c2084dcef15a32a9ad99db63e9d946024363a99ea1403c7b"
+      }
+    },
+    {
+      "original_source_object_sha256": "ccd2e013b9d9a9a5561bb9570113244cce8a4923e7bbdec4ed9d46aef80f65bf",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/8d4424e5e93fd588b58a4b360f812664954548c2e944e9e92175e2ecd535aeb6.0000000.json",
+            "sha256": "65f9169c9d49f01f7ed7b40fb7eb076d2edbb7844ead962059519fcbd2d70702",
+            "start_character": 0,
+            "end_character": 5942
+          }
+        ],
+        "utf8_sha256": "8d4424e5e93fd588b58a4b360f812664954548c2e944e9e92175e2ecd535aeb6",
+        "total_characters": 5942,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "c6f291f0ccea2ddf9fa41487ee3c08afda6b56c0897e3480fdcfad4300432043",
+      "source": {
+        "source_id": "house-rules:119255-partA-amend29-operative158",
+        "source_type": "official_committee_report_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+        "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+        "text_version": "Complete exact whole-number PartA29 operative only reviewed158; not otherReport meanings.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "29. An Amendment To Be Offered by Representative Biggs of Arizona or His Designee, Debatable for 10 Minutes At the end of subtitle B of title XVII, add the following new section: SEC. 17__. EXCLUSIONS FROM ENDANGERED SPECIES ACT OF 1973 WITH RESPECT TO MILITARY INSTITUTIONS AND FOR DEFENSE-RELATED OPERATIONS. (a) Exclusion of Military Institutions as Critical Habitat.-- Section 4(a)(3)(B) of the Endangered Species Act of 1973 (16 U.S.C. 1533(a)(3)(B)) is amended to read as follows: ``(i) The Secretary shall not designate as critical habitat-- ``(I) any military installation or a State- owned National Guard installation, or any portion thereof, as such terms are defined in section 100 of the Sikes Act (16 U.S.C. 670); or ``(II) any other lands, waters, or geographical area not described in subclause (I) that is otherwise designated for use by the Secretary of Defense including by any contractor of the Department of Defense, if the Secretary of Defense determines in writing and submitted to the Secretary of the Interior that such area is necessary for military training, weapons testing, or any other reason determined appropriate by such Secretary of Defense. ``(ii) The Secretary of Defense shall not be required to consult with the Secretary of the Interior, under section 7(a)(2) of this Act with respect to agency action, regardless of whether the area described in clause (i) is subject to an integrated natural resources management plan prepared under section 101 of the Sikes Act (16 U.S.C. 670a).''. (b) Exclusion for National Defense-Related Operations.-- Section 10 of the Endangered Species Act of 1973 (16 U.S.C. 1539) is amended by adding at the end the following: ``(k) Exclusion for National Defense-Related Operations.-- ``(1) Exclusions.--The prohibitions under section 9 shall not apply with respect to-- ``(A) the taking of any endangered species or threatened species, or the importation or exportation of any such species taken as prohibited by such section, by military personnel engaged in a national defense-related operation; ``(B) damaging or destroying any threatened or endangered species, or removing, cutting, digging up, damaging, or destroying any such species, by military personnel engaged in a national defense-related operation; or ``(C) an injury to or mortality of a threatened or endangered species that results from, but is not the purpose of, a national defense-related operation, regardless of whether the operation is conducted on a military installation or other area described in section 4(a)(3)(B)(i). ``(2) Definitions.--For the purposes of this subsection-- ``(A) the term `national defense-related operation' means-- ``(i) research, development, testing, and evaluation of military munitions, other ordnance, and weapons systems; ``(ii) the training of members of the Armed Forces in the use and handling of military munitions, other ordnance, and weapons systems; ``(iii) general training and military preparedness; or ``(iv) any action or duty that the Secretary of Defense deems necessary to support the Department of Defense in its mission; and ``(B) the term `military personnel' means-- ``(i) a member of the Armed Forces; and ``(ii) a civilian employee or contractor (including a subcontractor at any tier) of the-- ``(I) Department of Defense (including a nonappropriated fund instrumentality of the Department); or ``(II) any other Federal agency, or any provisional authority, to the extent such employment relates to supporting the mission of the Department of Defense overseas.''. ",
+        "governed_bytes_sha256": "cc13557c68e72d665790db6bf2e3db2fdb7b84f395aa9da8dab13a244989747e",
+        "captured_full_text_sha256": "1a8c32a7213829357ad4746ea72ed630a162d788e8b642d79bb7853f85fe26d2",
+        "source_text_extents": [
+          {
+            "start": 168350,
+            "end": 171907,
+            "total": 697572
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "c02098c458cf04c54c4db95790466b020644dae4adfcd899d7cdaa03b74e2379",
+      "source": {
+        "source_id": "govinfo:16usc1533-2024-ndaa-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1533.htm",
+        "text_version": "2024 Code operative text subsection(a)(3)",
+        "raw_sha256": "44dcc7a470c103b5e8dbc877a4f884298f7f3a3c394fa2faf50e401bb7c4ebae",
+        "text": "(3)(A) The Secretary, by regulation promulgated in accordance with subsection (b) and to the maximum extent prudent and determinable— (i) shall, concurrently with making a determination under paragraph (1) that a species is an endangered species or a threatened species, designate any habitat of such species which is then considered to be critical habitat; and (ii) may, from time-to-time thereafter as appropriate, revise such designation. (B)(i) The Secretary shall not designate as critical habitat any lands or other geographical areas owned or controlled by the Department of Defense, or designated for its use, that are subject to an integrated natural resources management plan prepared under section 670a of this title, if the Secretary determines in writing that such plan provides a benefit to the species for which critical habitat is proposed for designation. (ii) Nothing in this paragraph affects the requirement to consult under section 1536(a)(2) of this title with respect to an agency action (as that term is defined in that section). (iii) Nothing in this paragraph affects the obligation of the Department of Defense to comply with section 1538 of this title, including the prohibition preventing extinction and taking of endangered species and threatened species. ",
+        "governed_bytes_sha256": "c3bd4bd1a102e15e46a44da6544b2fc4123b4745468c50a2ed4c7a27c51ec2c3"
+      }
+    },
+    {
+      "original_source_object_sha256": "a751c2de6749871fcfd74aeb4812fcbe268eab106c2fbb088d263a0cde998e8f",
+      "source": {
+        "source_id": "govinfo:16usc1536-2024-ndaa-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1536.htm",
+        "text_version": "2024 Code operative text subsection(a)",
+        "raw_sha256": "3e35e0a190dbeb32b38f0406e067ab98a7ae8c6055fef4134e5786bd7fe67667",
+        "text": "(a) Federal agency actions and consultations (1) The Secretary shall review other programs administered by him and utilize such programs in furtherance of the purposes of this chapter. All other Federal agencies shall, in consultation with and with the assistance of the Secretary, utilize their authorities in furtherance of the purposes of this chapter by carrying out programs for the conservation of endangered species and threatened species listed pursuant to section 1533 of this title. (2) Each Federal agency shall, in consultation with and with the assistance of the Secretary, insure that any action authorized, funded, or carried out by such agency (hereinafter in this section referred to as an \"agency action\") is not likely to jeopardize the continued existence of any endangered species or threatened species or result in the destruction or adverse modification of habitat of such species which is determined by the Secretary, after consultation as appropriate with affected States, to be critical, unless such agency has been granted an exemption for such action by the Committee pursuant to subsection (h) of this section. In fulfilling the requirements of this paragraph each agency shall use the best scientific and commercial data available. (3) Subject to such guidelines as the Secretary may establish, a Federal agency shall consult with the Secretary on any prospective agency action at the request of, and in cooperation with, the prospective permit or license applicant if the applicant has reason to believe that an endangered species or a threatened species may be present in the area affected by his project and that implementation of such action will likely affect such species. (4) Each Federal agency shall confer with the Secretary on any agency action which is likely to jeopardize the continued existence of any species proposed to be listed under section 1533 of this title or result in the destruction or adverse modification of critical habitat proposed to be designated for such species. This paragraph does not require a limitation on the commitment of resources as described in subsection (d). ",
+        "governed_bytes_sha256": "b4f7e58c85080d35beadeff2e5f80954d152b59ba2ea020f84725aa30fc4ef9c"
+      }
+    },
+    {
+      "original_source_object_sha256": "c83eba7bed09a0da42b01799ec4cf03a92807f657d38b935bae4c6d807cc9515",
+      "source": {
+        "source_id": "govinfo:16usc670-2024-ndaa-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5C-subchapI-sec670.htm",
+        "text_version": "2024 Code operative text",
+        "raw_sha256": "84c7a0ee3becf49f4c75203a8c7c9f59547b014f324df598e0fc1711e3933389",
+        "text": "§670. Definitions In this subchapter: (1) Military installation The term \"military installation\"— (A) means any land or interest in land owned by the United States and administered by the Secretary of Defense or the Secretary of a military department, except land under the jurisdiction of the Assistant Secretary of the Army having responsibility for civil works; (B) includes all public lands withdrawn from all forms of appropriation under public land laws and reserved for use by the Secretary of Defense or the Secretary of a military department; and (C) does not include any land described in subparagraph (A) or (B) that is subject to an approved recommendation for closure under the Defense Base Closure and Realignment Act of 1990 (part A of title XXIX of Public Law 101–510; 10 U.S.C. 2687 note). (2) State The term \"State\" means any of the several States, the District of Columbia, the Commonwealth of Puerto Rico, Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the Virgin Islands. (3) State-owned National Guard installation The term \"State-owned National Guard installation\" means land owned and operated by a State when such land is used for training the National Guard pursuant to chapter 5 of title 32, with funds provided by the Secretary of Defense or the Secretary of a military department, even though such land is not under the jurisdiction of the Department of Defense. (4) State fish and wildlife agency The term \"State fish and wildlife agency\" means the one or more agencies of State government that are responsible under State law for managing fish or wildlife resources. (5) United States The term \"United States\" means the States, the District of Columbia, and the territories and possessions of the United States. (6) Indian tribe The term \"Indian tribe\" means any Indian tribe, band, nation, or other organized group or community, including any Alaska Native village or regional or village corporation as defined in or established pursuant to the Alaska Native Claims Settlement Act (43 U.S.C. 1601 et seq.), which is recognized as eligible for the special programs and services provided by the United States to Indians because of their status as Indians. ",
+        "governed_bytes_sha256": "2655cbdde006d36354f4f72a4a372c9a0945a23c24d99c494726a716774e6c94"
+      }
+    },
+    {
+      "original_source_object_sha256": "cf985c47c70c1b727689be150d6ba04a09bf94eeea1fc6027f02fe4064db2e7f",
+      "source": {
+        "source_id": "clerk:119:1:260",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll260.xml",
+        "text_version": null,
+        "raw_sha256": "5ed827ff45ebff54516efc1d978c93b281848acb764e34bc47ec6b86cc3b0c3a",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "260",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "24",
+          "amendment-author": "Rose of Tennessee Part A Amendment No. 253",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:40 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Aye",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "220",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "210",
+            "nay-total": "3",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "4163ed2d72f2928fa89206469ee6aff642693d7b5be4d6c22dd518f94bd42a5a"
+      }
+    },
+    {
+      "original_source_object_sha256": "b6fa319a9e92435d671c7401fe0eac2b7d2eb1ba4382891516af705cfe256bad",
+      "source": {
+        "source_id": "congressional-record:3838-amend253-roll260-choice158",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA253 September10 offer/operative/question/totals/recorded outcome; exact cross-page pieces, not debate/other actions/enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 253 OFFERED BY MR . ROSE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 253 printed \nin part A of House Report 119–255. \nMr. ROSE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle E of title X, add the \nfollowing new section: \nSEC. 10 ll. REPORT ON RED FLAGS MISSED IN \nFRAUD SCHEME PERPETRATED BY \nJANET YAMANAKA MELLO. \n(a) REPORT REQUIRED.—Not later than one \nyear after the date of the enactment of this \nAct, the Secretary of Defense shall submit to \nthe Committees on Armed Services of the \nSenate and the House of Representatives a \nreport on the fraud scheme perpetrated by \nJanet Yamanaka Mello, a civilian employee \nof the Department of the Army, who was in-\ndicted and pleaded guilty to stealing over \n$100,000,000 in 4-H Military Partnership Grant \nprogram funds. \n(b) C\nONTENTS OF REPORT.—The report re-\nquired under subsection (a) shall include \neach of the following: \n(1) A description of the breakdown in the \nsupervision of Mello, including any failures \nof management or oversight that contrib-\nuted to the ability of Mello to carry out the \nfraud scheme undetected. \n\n\n(2) A description of the breakdown in ac-\ncountability with respect to the loss of the \nstolen funds, including any failures to ensure \nthat such funds were actually being spent for \nthe purposes for which such funds were in-\ntended. \n(3) A description of the failure to ensure \nthat financial program managers, such as \nMello, are not able to funnel Government \nfunds to themselves or their own entities. \n(4) An identification of any other red flags \nor warning signs that were missed or ignored \nby employees of the Department of Defense, \nincluding any instances of whistleblower re-\ntaliation or suppression of concerns. \n(5) An assessment of the policies and proce-\ndures of the Department of Defense and De-\npartment of the Army, as of the date of the \nenactment of this Act, designed to prevent \nemployees from perpetrating similar fraud \nschemes in the future. \n(6) Recommendations for improvements to \nthe policies, procedures, and oversight of the \nDepartment of Defense and Department of \nthe Army to prevent employees from perpe-\ntrating similar fraud schemes in the future. \n(7) A description of any disciplinary or ad-\nministrative actions taken against any indi-\nviduals or entities found to have contributed \nto the ability of Mello to carry out the fraud \nscheme. \n(8) A description of any changes made, or \nplanned to be made, to the financial manage-\nment and oversight processes of the Depart-\nment of Defense and the Department of the \nArmy as a result of the fraud scheme per-\npetrated by Mello. \n(9) An assessment of the effects of the \nfraud scheme perpetrated by Mello on the \nprograms and operations of the Department \nof Defense and the Department of the Army. \n(10) Any other information the Secretary \nof Defense determines relevant to under-\nstanding the fraud scheme perpetrated by \nMello and preventing employees from perpe-\ntrating similar fraud schemes in the future. \n(c) P\nUBLIC AVAILABILITY.—The Secretary of \nDefense shall make the report required under \nsubsection (a) publicly available on an ap-\npropriate website of the Department of De-\nfense. \n\n\nAMENDMENT NO. 253 OFFERED BY MR . ROSE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 253, printed in \npart A of House Report 119–255, offered \nby the gentleman from Tennessee (Mr. \nR\nOSE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 430, noes 3, \nnot voting 4, as follows: \n[Roll No. 260] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "d688e798ce24e190385bc71373de0a136c236d334b7765588572ce552add58ac",
+        "captured_full_text_sha256": "5b79f72e735a4ca28b976d84432574abff9fc37e4c8740b9f5419c9c229b6c9d",
+        "source_text_extents": [
+          {
+            "start": 32633,
+            "end": 33876,
+            "total": 100262
+          },
+          {
+            "start": 34086,
+            "end": 36175,
+            "total": 100262
+          },
+          {
+            "start": 90167,
+            "end": 90856,
+            "total": 100262
+          },
+          {
+            "start": 95532,
+            "end": 95621,
+            "total": 100262
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "3c235529e377e617a021678408c185a77d4d1b98d2291c726c4e1d4f60f35ddb",
+      "source": {
+        "source_id": "house-rules:119255-partA-amend253-operative158",
+        "source_type": "official_committee_report_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+        "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+        "text_version": "Complete exact whole-number PartA253 operative only reviewed158; not otherReport meanings.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "253. An Amendment To Be Offered by Representative Rose of Tennessee or His Designee, Debatable for 10 Minutes At the end of subtitle E of title X, add the following new section: SEC. 10__. REPORT ON RED FLAGS MISSED IN FRAUD SCHEME PERPETRATED BY JANET YAMANAKA MELLO. (a) Report Required.--Not later than one year after the date of the enactment of this Act, the Secretary of Defense shall submit to the Committees on Armed Services of the Senate and the House of Representatives a report on the fraud scheme perpetrated by Janet Yamanaka Mello, a civilian employee of the Department of the Army, who was indicted and pleaded guilty to stealing over $100,000,000 in 4-H Military Partnership Grant program funds. (b) Contents of Report.--The report required under subsection (a) shall include each of the following: (1) A description of the breakdown in the supervision of Mello, including any failures of management or oversight that contributed to the ability of Mello to carry out the fraud scheme undetected. (2) A description of the breakdown in accountability with respect to the loss of the stolen funds, including any failures to ensure that such funds were actually being spent for the purposes for which such funds were intended. (3) A description of the failure to ensure that financial program managers, such as Mello, are not able to funnel Government funds to themselves or their own entities. (4) An identification of any other red flags or warning signs that were missed or ignored by employees of the Department of Defense, including any instances of whistleblower retaliation or suppression of concerns. (5) An assessment of the policies and procedures of the Department of Defense and Department of the Army, as of the date of the enactment of this Act, designed to prevent employees from perpetrating similar fraud schemes in the future. (6) Recommendations for improvements to the policies, procedures, and oversight of the Department of Defense and Department of the Army to prevent employees from perpetrating similar fraud schemes in the future. (7) A description of any disciplinary or administrative actions taken against any individuals or entities found to have contributed to the ability of Mello to carry out the fraud scheme. (8) A description of any changes made, or planned to be made, to the financial management and oversight processes of the Department of Defense and the Department of the Army as a result of the fraud scheme perpetrated by Mello. (9) An assessment of the effects of the fraud scheme perpetrated by Mello on the programs and operations of the Department of Defense and the Department of the Army. (10) Any other information the Secretary of Defense determines relevant to understanding the fraud scheme perpetrated by Mello and preventing employees from perpetrating similar fraud schemes in the future. (c) Public Availability.--The Secretary of Defense shall make the report required under subsection (a) publicly available on an appropriate website of the Department of Defense. ",
+        "governed_bytes_sha256": "468b5551477d61bff601b0b6a86b1c02116545ddc6ecbeb4e31c80bca26d6d32",
+        "captured_full_text_sha256": "1a8c32a7213829357ad4746ea72ed630a162d788e8b642d79bb7853f85fe26d2",
+        "source_text_extents": [
+          {
+            "start": 621682,
+            "end": 624718,
+            "total": 697572
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "e5aa93561bbfe2df6bfae349ba471169785c45ff0fc4384d35947b17aa374b5a",
+      "source": {
+        "source_id": "clerk:119:1:261",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll261.xml",
+        "text_version": null,
+        "raw_sha256": "eb2f2cb6193df3279bcf89a26cd353680ea33cdeef0e9f44de38858d3f113d94",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "261",
+          "legis-num": "H R 3838",
+          "vote-question": "On Motion to Recommit",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:49 PM",
+          "vote-desc": "Streamlining Procurement for Effective Execution and Delivery and National Defense Authorization Act for Fiscal Year 2026"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "f86713d08056961d7991c998b1b27037cbfa6bcb411afb15fbf4713854edd1ed"
+      }
+    },
+    {
+      "original_source_object_sha256": "5a9b0f08386ec9df573c955c7277ed231e2eaa12497b1f92cd995e9d701a0ca4",
+      "source": {
+        "source_id": "congressional-record:3838-passage262-floor241",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/840b98f3c9ecda8054c36f83aba4881b700a156954179042bc11419f63a3ab9b.0000000.json",
+              "sha256": "42fbd0b8c55feeb20e231e61228a2f047830d1714a3e90f533353b5c87672e53",
+              "start_character": 0,
+              "end_character": 16507
+            }
+          ],
+          "utf8_sha256": "840b98f3c9ecda8054c36f83aba4881b700a156954179042bc11419f63a3ab9b",
+          "total_characters": 16507,
+          "transport_only": true
+        },
+        "text_version": "September10,2025RecordH4226–H4227, physical60–61: complete extracted selected pages actually read; en-gros adoption, engrossment, separate261recommittal and262passage. No whole74pagePDF/visual certificate.",
+        "physical_pages_1based": [
+          60,
+          61
+        ],
+        "raw_document_pages": 74,
+        "derived_parent_unit": "Concatenated pypdf extraction of physical pages60and61, exact unchanged whitespace",
+        "governed_bytes_sha256": "1f9690529b31f5c0092dc78b1e46a8d231f62dc0566fb9c28d7b3767ce9d1e72"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 19
+  }
+}
