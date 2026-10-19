@@ -1,14 +1,14 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch63**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch64**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
 corrections satisfactory and CI green at `f70fc3023bd69c087be166d16d792065232edf6c`.
 Neither report accepts later work or domain membership.
 
-There are **414owner-examined identities** and **262ordinary unscreened**.
-The remaining-record phase has examined338additional historical non-leads.
+There are **419owner-examined identities** and **257ordinary unscreened**.
+The remaining-record phase has examined343additional historical non-leads.
 Evidence receipts distinguish complete bodies, exact procedural questions, partial
 operative leads and one inherited access-only investigation without child-body review. Batch26 added an identity-only child examination; batch36 followed it with its own-body binding and partial incorporated-guidance review, preserving the historical snapshot.
 Titles and historical non-lead labels select research, never automatic exclusion.
@@ -16,21 +16,21 @@ Titles and historical non-lead labels select research, never automatic exclusion
 | State | Count |
 |---|---:|
 | Shared authored candidate meanings | 47 |
-| Procedural controls | 126 |
-| Proposed exact-action exclusions | 57 |
+| Procedural controls | 128 |
+| Proposed exact-action exclusions | 58 |
 | Nonbinding expression | 10 |
 | Source/access/version holds | 6 |
-| Ordinary unfinished/review cases | 168 |
-| Ordinary unscreened identities | 262 |
+| Ordinary unfinished/review cases | 170 |
+| Ordinary unscreened identities | 257 |
 | **Discovery identities** | **676** |
 
 All47shared meanings project mechanically to Foushee and Massie. 7 authored
 Not Voting observations remain nondirectional, with46Foushee
 and41Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Five new identities357–361: three non-counting recommittals and two ordinary whole/incorporated-baseline cases pending. The mining package retains per-site acreage, approved-plan use, no mineral rights, patent/savings language and fee-funded remediation limits. The wolf bill retains the exact incorporated-rule and reissuance/judicial-review scope limits. No new shared meaning or actual mine, fee, cleanup, wildlife or court outcome is inferred.
+Five new identitiescross the House session boundary: session1roll362 and session2rolls2–5. One proposed medical-payment domain exclusion, two non-counting controls and two whole/incorporated-baseline cases pending. The earlier discharge is distinct from later rule adoption; substantive DivisionAretention is distinct from procedure and whole-bill passage. No new shared meaning or actual medical, budget, housing or project outcome is inferred.
 
-[Readable batch63 findings](infrastructure_candidate_batch63.md).
+[Readable batch64 findings](infrastructure_candidate_batch64.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch63_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch64_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -57,17 +57,17 @@ Independent records continue around these holds.
 
 **Current source/conservation/generated replay and seven semantic checks pass.** Full90focused tests passed at exact6ac711bc874399b07a46c6c4abe8e101c3c90bf4(batch61), inherited without repeating the full suite for unchanged compiled behavior. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took3.817seconds; the specification/authoring elapsed window and later byte/delivery
+took3.788seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch63_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch63_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch63_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch63_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch64_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch64_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch64_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch64_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Continue362onward. Whole mill-site/fund definitions, approvals and domain boundary remain pending; the wolf-rule reissuance does not stand in for the incorporated rule’s unreviewed scope. Forty-seven meanings remain unaccepted; seven authored Not Voting observations, six holds and both active disclosure qualifications persist. No acquisition, acceptance, publication or production authority.
+Continue session2roll6onward. Raw H R498identity remains unchanged; proposed domain exclusion is not a clinical or individual-benefit claim. Whole977deemed-substitute bundle and6938DivisionA accounts/explanatory/version work remain pending. Forty-seven unaccepted meanings, seven authored Not Voting observations, six holds and both active disclosure qualifications persist. No acquisition, acceptance, publication or production authority.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
@@ -79,4 +79,4 @@ Historical exact CI results remain separately attributed in retained receipts: d
 Requested historical42–48export remains [batch42manifest](infrastructure_historical_delta42_48_cbb93d4f/batch42.json) through48at exactcbb93d4f:35newidentities+226correction/preimage,118source-object occurrences,7manifests/57parts/all64files<200KB(max131266). Original partial offsets/hashes, lossless reconstruction and actual staged export blobs were verified. Local transport verification is separate from independent source review; no acceptance, publication or full primary clearance transfers.
 
 
-The controller-reported original49–58audit is complete within retained extents only:50records/130source occurrences,40original-file blob bindings and20receipts verified; no material meaning/disposition defect. Partial interiors, integrated current law, membership acceptance and59onward are not cleared. Both active62disclosure qualifications remain unchanged and validated by the current source gate; its separate one-test regression receipt is preserved. The historical export/source objects remain exact. No source acquisition/retry, publication or production write.
+Controller-reported49–58audit remains complete only within retained extents (50records/130source occurrences/40blob bindings/20receipts; no material meaning/disposition defect). Partial interiors/current law/membership and59onward remain uncleared. Both active62disclosure qualifications and exact historical/source objects remain unchanged. At the single64CIobservation, both workflows passed exact59–62heads;63frontend passed and backend was in progress. Later heads remain unassessed; no live Supabase/Render/Vercel health or production-write compatibility claim follows. No source acquisition/retry, publication or production write.
