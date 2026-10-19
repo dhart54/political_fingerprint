@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Detached bounded Health choice and rendering acceptance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_id", "member_id", "issue_id", "review_scope", "semantic_subject_sha256", "presentation_subject_sha256", "rendering_subject_sha256", "decision", "reviewer", "reviewer_authority", "decided_at_utc", "authorizations", "receipt_subject_sha256"],
+  "properties": {
+    "schema_version": {"const": "bounded_choice_acceptance_receipt_v1"},
+    "artifact_id": {"type": "string", "pattern": "^bounded-choice:(f000477|m001184):health:s2393:119:v1:acceptance$"},
+    "member_id": {"enum": ["F000477", "M001184"]},
+    "issue_id": {"const": "HEALTH_SOCIAL"},
+    "review_scope": {"const": "bounded_partial_record"},
+    "semantic_subject_sha256": {"$ref": "#/definitions/digest"},
+    "presentation_subject_sha256": {"$ref": "#/definitions/digest"},
+    "rendering_subject_sha256": {"$ref": "#/definitions/digest"},
+    "receipt_subject_sha256": {"$ref": "#/definitions/digest"},
+    "decision": {"enum": [null, "accept_exact_bounded_choice_and_rendering"]},
+    "reviewer": {"type": ["null", "string"], "minLength": 1},
+    "reviewer_authority": {"enum": [null, "bounded_choice_review_authority_v1"]},
+    "decided_at_utc": {"type": ["null", "string"]},
+    "authorizations": {"const": {"publication": false, "production_eligibility": false, "database_writes": false, "deployment": false}}
+  },
+  "allOf": [{
+    "if": {"properties": {"decision": {"const": null}}},
+    "then": {"properties": {"reviewer": {"const": null}, "reviewer_authority": {"const": null}, "decided_at_utc": {"const": null}}},
+    "else": {"properties": {"reviewer": {"type": "string", "pattern": "\\S"}, "reviewer_authority": {"const": "bounded_choice_review_authority_v1"}, "decided_at_utc": {"type": "string", "pattern": "Z$|\\+00:00$"}}}
+  }],
+  "definitions": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -56,7 +56,8 @@ def _load_publication_rows() -> list[dict[str, Any]]:
     try:
         connection = get_connection()
         try:
-            return EditorialArtifactRepository(connection).publication_selector()
+            repository = EditorialArtifactRepository(connection)
+            return repository.publication_selector() + repository.bounded_choice_publication_selector()
         finally:
             connection.close()
     except Exception:

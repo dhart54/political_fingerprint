@@ -176,6 +176,22 @@ class EditorialArtifactRepository:
                ORDER BY registry.member_bioguide_id, registry.issue_id""",
         )
 
+    def bounded_choice_publication_selector(self) -> list[dict[str, Any]]:
+        # The staged migration is deliberately absent in deployed databases.
+        # Avoid touching its view until a separately authorized migration exists.
+        installed = self._one("SELECT to_regclass('public.editorial_bounded_choice_publications') AS relation")
+        if not installed or installed["relation"] is None:
+            return []
+        access = self._one("""SELECT
+            has_table_privilege(current_user, 'public.editorial_bounded_choice_publications', 'SELECT')
+            AND has_function_privilege(current_user, 'public.bounded_choice_graph_valid(bigint)', 'EXECUTE')
+            AND has_function_privilege(current_user, 'public.bounded_choice_receipt_matches(jsonb,text)', 'EXECUTE')
+            AND has_function_privilege(current_user, 'public.bounded_choice_digest(jsonb)', 'EXECUTE')
+            AND has_function_privilege(current_user, 'public.bounded_choice_canonical_json(jsonb)', 'EXECUTE') AS allowed""")
+        if not access or access["allowed"] is not True:
+            return []
+        return self._all("SELECT * FROM public.editorial_bounded_choice_publications ORDER BY member_bioguide_id, issue_id")
+
     def _one(self, query: str, params: tuple[Any, ...] = ()) -> dict[str, Any] | None:
         cursor = self.connection.execute(query, params)
         row = cursor.fetchone()
