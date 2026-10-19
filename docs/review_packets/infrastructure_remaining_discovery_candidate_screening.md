@@ -1,14 +1,14 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch78**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch79**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
 corrections satisfactory and CI green at `f70fc3023bd69c087be166d16d792065232edf6c`.
 Neither report accepts later work or domain membership.
 
-There are **489owner-examined identities** and **187ordinary unscreened**.
-The remaining-record phase has examined413additional historical non-leads.
+There are **494owner-examined identities** and **182ordinary unscreened**.
+The remaining-record phase has examined418additional historical non-leads.
 Evidence receipts distinguish complete bodies, exact procedural questions, partial
 operative leads and one inherited access-only investigation without child-body review. Batch26 added an identity-only child examination; batch36 followed it with its own-body binding and partial incorporated-guidance review, preserving the historical snapshot.
 Titles and historical non-lead labels select research, never automatic exclusion.
@@ -16,21 +16,21 @@ Titles and historical non-lead labels select research, never automatic exclusion
 | State | Count |
 |---|---:|
 | Shared authored candidate meanings | 53 |
-| Procedural controls | 150 |
+| Procedural controls | 152 |
 | Proposed exact-action exclusions | 71 |
-| Nonbinding expression | 10 |
+| Nonbinding expression | 11 |
 | Source/access/version holds | 6 |
-| Ordinary unfinished/review cases | 199 |
-| Ordinary unscreened identities | 187 |
+| Ordinary unfinished/review cases | 201 |
+| Ordinary unscreened identities | 182 |
 | **Discovery identities** | **676** |
 
 All53shared meanings project mechanically to Foushee and Massie. 7 authored
 Not Voting observations remain nondirectional, with52Foushee
 and47Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Five new session2identities78–82. Home-energy sources preserve three repeals versus two new rescissions and the retained HOMES program; reuse of an existing whole shared meaning remains pending. BIAland-processing whole effects remain pending. Tuition/national-status policy is a proposed exclusion; two procedural cases are non-counting. No new shared meaning.
+Five new session2identities83–87. A simple House policy expression and two procedural questions are non-counting. The old war-powers IH does not certify the governing March5body; the separate DHS/continuing-appropriations package remains pending whole review. Resolution assertions and selected account fragments supply no new shared meaning.
 
-[Readable batch78 findings](infrastructure_candidate_batch78.md).
+[Readable batch79 findings](infrastructure_candidate_batch79.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch78_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -57,17 +57,17 @@ Independent records continue around these holds.
 
 **Current source/conservation/generated replay and seven semantic checks pass.** Full104focused tests passed at exact0ae531b104a2bf8706161ab447d83e032b3b3b4a(batch77), inherited without repeating the full suite for unchanged compiled behavior. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took4.109seconds; the specification/authoring elapsed window and later byte/delivery
+took4.175seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch78_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch78_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch78_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch78_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Continue session2roll83onward.53unaccepted meanings,7authoredNotVoting,6holds unchanged.4758existingwholeHealthmeaning/digest reuse andS723wholelandprocessing baselines remain pending; no duplicate meaning.77roll43PartAcrosswalk qualification and original65–75export remain preserved. No acquisition, acceptance, publication or production authority.
+Continue session2roll88onward.53unaccepted meanings,7authoredNotVoting,6holds unchanged. HConRes38March5body/version and whole7744baselines remain pending; no assertions accepted as verifiedfacts. No acquisition, acceptance, publication or production authority.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
