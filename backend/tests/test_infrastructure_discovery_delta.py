@@ -753,4 +753,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
         with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or complete read extent'):validate_4776_complete_retained_body(bad,u,s,r)
 
+    def test_senate_data_dated_context_cannot_imply_notice_revival_payment_or_claim_effects(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_senate_data_dated_context
+        p=folder(117);r=read(p/'senate_data_dated_program_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_senate_data_dated_context(a,u,s,r);self.assertTrue(validate(117)['generated_replay'])
+        for field in ['immediate_pre213_version_certified','repeal_effects_resolved','prior_law_revived','accrued_claims_cancelled','automatic_payment_inferred','current_law_certified']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'became revival/payment/current-law clearance'):validate_senate_data_dated_context(a,u,s,bad)
+        for old,new in [('permission to notify, NOT an affirmative notice mandate','mandatory notice in every case'),('quash OR modify','quash in every case'),('intended-recipient use qualification','unrestricted privileges for every person')]:
+            bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or dated claim'):validate_senate_data_dated_context(bad,u,s,r)
+        bad=copy.deepcopy(s);bad['text']=bad['text'].replace('shall not be barred','must always notify')
+        with self.assertRaisesRegex(ValueError,'dated program source differs'):validate_senate_data_dated_context(a,u,bad,r)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or dated claim'):validate_senate_data_dated_context(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()
