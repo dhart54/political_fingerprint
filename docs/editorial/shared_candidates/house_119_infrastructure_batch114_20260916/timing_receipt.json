@@ -1,0 +1,39 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T22:21:35.182599+00:00",
+    "qualification": "Two land-governance material-baseline specification start. Complete retained1613(c)/(g),8902withnotes and ownEH186/43triage reading occurred before marker and was not continuously timed; no active duration inferred."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T22:22:49.870904+00:00",
+    "end_utc": "2026-10-19T22:22:56.572122+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 114 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch114_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 3.505
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 3.196
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 74.688,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 6.701,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 3,
+    "reported_test_seconds": 6.803,
+    "result": "passed",
+    "scope": [
+      "Land-baseline map/historical-term/administration/pending/evidence negative mutations",
+      "HEA117old/proposed definition and pending evidence preservation",
+      "Title17inclusive financial-close-date correction"
+    ]
+  }
+}

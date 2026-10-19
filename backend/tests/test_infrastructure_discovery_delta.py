@@ -698,4 +698,22 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(objects);path=m['objects'][0]['export_path'];bad[path]+=b' '
         with self.assertRaisesRegex(ValueError,'exported byte length or preserved hash differs'):validator.validate_title17_export_lengths(m,bad,r)
 
+    def test_land_baselines_cannot_certify_maps_revive_terms_or_clear_membership(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_land_governance_baselines
+        p=folder(114);r=read(p/'land_governance_dated_baseline_receipt.json');m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_land_governance_baselines(m,u,s,r);self.assertTrue(validate(114)['generated_replay'])
+        bad=copy.deepcopy(r);bad['cases'][0]['actual_map_or_instrument_reviewed']=True
+        with self.assertRaisesRegex(ValueError,'became map/current-law/membership clearance'):validate_land_governance_baselines(m,u,s,bad)
+        bad=copy.deepcopy(r);bad['cases'][1]['domain_membership_accepted']=True
+        with self.assertRaisesRegex(ValueError,'became map/current-law/membership clearance'):validate_land_governance_baselines(m,u,s,bad)
+        bad=copy.deepcopy(s);bad['govinfo:40usc8902-services181']['text']=bad['govinfo:40usc8902-services181']['text'].replace('June 24, 2003','May 1, 1986')
+        with self.assertRaisesRegex(ValueError,'retained unit or source changed'):validate_land_governance_baselines(m,u,bad,r)
+        bad=copy.deepcopy(m);bad['house:119:1:28']['rationale']=bad['house:119:1:28']['rationale'].replace('historical ten-year','renewed ten-year')
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or exact-action limits'):validate_land_governance_baselines(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['house:119:1:28']['rationale']=bad['house:119:1:28']['rationale'].replace('administration, which remains','administration, which always transfers')
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or exact-action limits'):validate_land_governance_baselines(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['house:119:1:18']['claim_source_map']=bad['house:119:1:18']['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or exact-action limits'):validate_land_governance_baselines(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['cases'][1]['appended_claims'][1]['passage']='All easements extinguished.'
+        with self.assertRaisesRegex(ValueError,'omitted operative or historical context'):validate_land_governance_baselines(m,u,s,bad)
+
 if __name__=='__main__':unittest.main()

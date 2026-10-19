@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch113**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch114**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Five pending H.R.1048 actions—the Scott, Self and two Tlaib amendments plus parent passage—now share the retained 2024 HEA117(h) definitions as OLD pre-replacement context. Single-campus/institution eligibility, foreign-source categories and gift/contract restrictions remain exact. These definitions are not automatically imported into proposed rewritten117, proposed117A-D or rejected children. No complete old reporting program, fresh whole-body reading, parent floor/package equivalence, current-law or membership clearance is claimed. All five dispositions and existing flags,70meanings/compiledgraph/1585sourceobjects remain unchanged. The same checkpoint corrects pending Title17case231to inclusive on-or-after financial close, and seven published source-export byte lengths. All source/export bytes and hashes, historical preimages, dispositions, fee-offset and current-law limits are preserved.
+Two pending land-governance cases now bind retained dated named baselines: H.R.186links complete2024section8902and notes for the Reserve/commemorative definitions; H.R.43links complete1613(c)/(g)conveyance and valid-existing-rights units. Exact map/date/ownership, conditional acreage/revenue, historical review-period, continuing administration and reversion qualifications are preserved. Actual maps/remaining laws/instruments/current-law and whole property-versus-Infrastructure membership remain pending. Both dispositions/flags,70meanings and compiledgraph are unchanged; two existing retained objects are newly linked, not newly acquired.
 
-[Readable batch113 findings](infrastructure_candidate_batch113.md).
+[Readable batch114 findings](infrastructure_candidate_batch114.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch113_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -55,24 +55,26 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**Current source/conservation/generated replay, seven canonical semantic checks
-and six focused regressions pass**. The full 151-test suite passed at exact
+**Current source/conservation/generated replay, seven semantic checks and three
+focused regressions pass**. The full 151-test suite passed at exact
 `3be714268666858130bb62d1f171af6a19362c4a`; all 70 meanings and the compiled graph
-remain unchanged. A full 155-test suite was not run. Current shared authoring/generated copies remain member-neutral.
+remain unchanged. A full 156-test suite was not run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took6.261seconds; the specification/authoring elapsed window and later byte/delivery
+took6.701seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch113_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch113_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch113_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch113_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Five1048actions now share dated pre-replacement117(h)definitions. Complete old reporting program, proposed replacement/child effects, financial/research/security references, parent floor/version/body and membership limits remain.70unacceptedmeanings/262pending/6holds/0ordinary; no gate clearance.
+Two land-governance material baselines linked; cases18/28remainpending. Actualmap/8908/PL11780/other1613units/instruments/currentlaw and whole-membership questions remain.70unacceptedmeanings/262pending/6holds/0ordinary; no protected retry or acceptance.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
+
+[Two original retained land-baseline objects](infrastructure_batch114_land_baselines/manifest.json) authenticate to their frozen source-pool Git blob, actual numeric JSON pointers and original canonical/raw/governed hashes. Their exact retained units total10,854characters; actual exported file lengths are6,110and6,732bytes. No new source capture, full parent-statute/map/instrument/current-law certificate or membership clearance.
 
 The pending Title17fee clause now explicitly includes collection **on or after financial close**. Only that phrase and dependent review hashes changed in231; unresolved fee-offset/current-law limits remain. [Precision/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch113_20260916/title17_same_day_fee_precision_receipt.json).
 
