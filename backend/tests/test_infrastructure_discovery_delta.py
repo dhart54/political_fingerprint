@@ -177,4 +177,14 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         action=copy.deepcopy(next(a for a in read(folder(58)/'authoring.json')['actions'] if a['action_id']=='house:119:1:334'));sources={s['source_id']:s for s in read(folder(58)/'sources.json')['sources']}
         action['meaning']=action['meaning'].replace('FERC may include a proposed condition only if it finds the condition necessary for that compliance; proposed conditions are not automatically binding','All proposed State conditions are automatically binding and State certification remains mandatory')
         with self.assertRaisesRegex(ValueError,'pipeline certification displacement or FERC discretion lost'):validate_pipeline_review_boundaries(action,sources['govinfo:hr3668eh'],sources['govinfo:33usc1341-2024-water-boundary'])
+    def test_power_retirement_environmental_shield_is_compliance_linked(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_power_retirement_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(60)/'authoring.json')['actions'] if a['action_id']=='house:119:1:342'));sources={s['source_id']:s for s in read(folder(60)/'sources.json')['sources']}
+        action['meaning']=action['meaning'].replace('only acts or omissions necessary to comply with an order issued or extended under this subsection, including acts or omissions taken to voluntarily comply','every voluntary plant operation regardless of any compliance link')
+        with self.assertRaisesRegex(ValueError,'power environmental shield became unconditional immunity'):validate_power_retirement_boundaries(action,sources['govinfo:hr3632eh'],sources['govinfo:16usc824f-2024-operative'],sources['govinfo:16usc824o-2024-definitions'])
+    def test_power_retirement_notice_is_not_a_universal_ban(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_power_retirement_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(60)/'authoring.json')['actions'] if a['action_id']=='house:119:1:342'));sources={s['source_id']:s for s in read(folder(60)/'sources.json')['sources']}
+        action['meaning']=action['meaning'].replace('notice duty is not an automatic five-year retirement ban or a requirement to obtain a retirement permit','bill automatically bans every plant retirement for five years')
+        with self.assertRaisesRegex(ValueError,'power retirement notice became universal ban or lost unit/exception scope'):validate_power_retirement_boundaries(action,sources['govinfo:hr3632eh'],sources['govinfo:16usc824f-2024-operative'],sources['govinfo:16usc824o-2024-definitions'])
 if __name__=='__main__':unittest.main()
