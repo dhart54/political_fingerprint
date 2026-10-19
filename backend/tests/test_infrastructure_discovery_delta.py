@@ -244,4 +244,16 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'small-business AI lost existing services funding or broad definition'):validate_small_business_ai_boundaries(bad,s['govinfo:hr5764eh'],s['govinfo:15usc648-2024-sbdc-services'],s['govinfo:15usc9401-2024-ai-definition'],s['clerk:119:2:33'])
+    def test_vehicle_standard_funding_is_not_repeal_or_all_government(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_vehicle_standard_funding_boundaries
+        action=next(a for a in read(folder(72)/'authoring.json')['actions'] if a['action_id']=='house:119:2:43');s={s['source_id']:s for s in read(folder(72)/'sources.json')['sources']}
+        bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace('restriction on the funds made available by DivisionD, not a permanent repeal of section24220 or a restriction on every federal account','permanent repeal of section24220 and a restriction on every federal account')
+        with self.assertRaisesRegex(ValueError,'vehicle funding rider became permanent repeal or all-government restriction'):validate_vehicle_standard_funding_boundaries(bad,s['immigration:session2-roll43-initial174'],s['govinfo:49usc30111-24220-complete174'],s['govinfo:hr7148ih-reference-scope'],s['clerk:119:2:43'])
+    def test_vehicle_standard_alternatives_compliance_and_failed_outcome(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_vehicle_standard_funding_boundaries
+        action=next(a for a in read(folder(72)/'authoring.json')['actions'] if a['action_id']=='house:119:2:43');s={s['source_id']:s for s in read(folder(72)/'sources.json')['sources']}
+        for old,new,error in [('does not require both detection paths in every system','requires both detection paths in every system','vehicle technology alternatives became mandatory combined design'),('Manufacturer compliance is two to three years after rule issuance','Manufacturer compliance is immediate for every existing vehicle','vehicle funding candidate lost conditional compliance or current-rule limits'),('recorded amendment was rejected164–268with4NotVoting','recorded amendment passed and was adopted','vehicle funding failed amendment became adopted or accepted')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,error):validate_vehicle_standard_funding_boundaries(bad,s['immigration:session2-roll43-initial174'],s['govinfo:49usc30111-24220-complete174'],s['govinfo:hr7148ih-reference-scope'],s['clerk:119:2:43'])
 if __name__=='__main__':unittest.main()
