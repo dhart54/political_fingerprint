@@ -441,4 +441,28 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_historical86_90_disclosures
         p=folder(96);a={x['action_id']:x for x in read(p/'authoring.json')['actions']};m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};r=read(p/'historical86_90_disclosure_corrections_receipt.json');m['house:119:2:138']['rationale']=m['house:119:2:138']['rationale'].replace('existing whistleblower report','annual report')
         with self.assertRaisesRegex(ValueError,'bounded disclosure correction or dependent binding differs'):validate_historical86_90_disclosures(a,m,u,s,r)
+    def test_voice_pilot_is_optional_with_conditional_punitive_privacy_elements(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_voice_pilot_deletion_boundaries
+        p=folder(99);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:258');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('permit, rather than require','require'),('punitive or other appropriate actions','nonpunitive use only'),('one year AFTER ESTABLISHMENT','one year AFTER ENACTMENT'),('three years AFTER ESTABLISHMENT','three years AFTER ENACTMENT')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'voice pilot optional conditional elements or clocks lost'):validate_voice_pilot_deletion_boundaries(bad,s['rules:rcp119-33-ndaa-struck-sections'],s['clerk:119:2:258'])
+    def test_voice_pilot_deletion_cannot_end_all_testing_or_prove_accuracy(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_voice_pilot_deletion_boundaries
+        p=folder(99);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:258');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('not all Department of Defense drug testing','all Department of Defense drug testing'),('not evidence that the technology detects drug use accurately','proof of accurate drug detection')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'voice pilot deletion scope accuracy or enacted outcome changed'):validate_voice_pilot_deletion_boundaries(bad,s['rules:rcp119-33-ndaa-struck-sections'],s['clerk:119:2:258'])
+    def test_refining_study_has_two_enactment_clocks_and_national_scope(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_refining_study_boundaries
+        p=folder(99);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:261');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('120days AFTER ENACTMENT','120daysafter study completion'),('Scope is NATIONAL, with California as a required case study','Scope is California only')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'refining study clocks national scope or minimum mechanisms lost'):validate_refining_study_boundaries(bad,s['congressional-record:2026-07-21-ndaa-remaining-offerings'],s['clerk:119:2:261'])
+    def test_failed_refining_study_cannot_exercise_preemption_or_find_state_harm(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_refining_study_boundaries
+        p=folder(99);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:261');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('does not itself preempt or repeal a State law','immediately preempts all State laws'),('subjects for study, not established conclusions','established findings of State-caused harm')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'refining study became actual preemption or factual finding'):validate_refining_study_boundaries(bad,s['congressional-record:2026-07-21-ndaa-remaining-offerings'],s['clerk:119:2:261'])
 if __name__=='__main__':unittest.main()
