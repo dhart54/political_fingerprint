@@ -1,0 +1,42 @@
+{
+  "kind": "strict_prior_facet_and_append_only_proposal_validation_composition",
+  "initial_gate_failure": "consumer baseline changed earlier fields or evidence",
+  "initial_validation_journal": {
+    "start_utc": "2026-10-19T21:52:25.760859+00:00",
+    "end_utc": "2026-10-19T21:52:28.975684+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 112 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch112_20260916\\validation_receipt.json",
+        "returncode": 1,
+        "process_wall_seconds": 3.215
+      }
+    ]
+  },
+  "cause": "New proposal-only attestation on pendingHR1442appends one exactmetadata claim/progressparagraph after the retained107baseline claims. The older guard expected its original post107recordshape.",
+  "correction": "First validate current112record is exactly the preserved111preimage plus its permitted metadata-only paragraph/claim, with all flags/oldclaims/materiallimits retained and preimage matched to111. Then apply the UNCHANGED107consumer guard to that exact preserved prior facet. Both contracts remain strict; no oldcondition/sourceclaim/flag can disappear.",
+  "old_consumer_guard_changed": false,
+  "new_metadata_guard_weakened": false,
+  "regression": "New whole112positivevalidation plus mutation deleting the olderconsumer claim; existingconsumer negative regressions also rerun.",
+  "meaning_or_disposition_changed": false,
+  "source_acquisitions": 0,
+  "protected_retries": 0,
+  "targeted_test_option_correction": {
+    "test_count": 4,
+    "failures": 1,
+    "reported_test_seconds": 7.7,
+    "process_wall_seconds": 8.366,
+    "cause": "The new test requested check_files=False, then incorrectly asserted generated_replay=True. Corrected the test to run replay with validate(112). Production validator and candidate data did not change for this correction."
+  },
+  "final_targeted_regressions": {
+    "count": 4,
+    "reported_test_seconds": 7.302,
+    "process_wall_seconds": 7.909,
+    "result": "passed",
+    "scope": [
+      "Attestation proposal positive replay and negative gate/body-reading/evidence mutations",
+      "Preserved consumer-definition exclusions and pending gates",
+      "POST Act report clocks and replacement alternatives",
+      "Required parent-relay attribution addendum"
+    ]
+  }
+}

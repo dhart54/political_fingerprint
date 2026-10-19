@@ -767,4 +767,29 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
         with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or dated claim'):validate_senate_data_dated_context(bad,u,s,r)
 
+    def test_wildlife_context_cannot_mix_share_bases_repair_references_or_clear_membership(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_wildlife_dated_program_context
+        p=folder(118);r=read(p/'wildlife_dated_program_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_wildlife_dated_program_context(a,u,s,r);self.assertTrue(validate(118)['generated_replay'])
+        for field in ['printed_program_reference_repaired','all_projects_infrastructure','federal_shares_changed','current_law_certified','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared program/reference/share/membership gates'):validate_wildlife_dated_program_context(a,u,s,bad)
+        for old,new in [('MAY be supervised','must be supervised'),('EXCLUDING LAW ENFORCEMENT','including all law enforcement'),('up-to90percent','guaranteed100percent'),('no silent repair to669c(e)','all references automatically corrected')]:
+            bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or complete claims'):validate_wildlife_dated_program_context(bad,u,s,r)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or complete claims'):validate_wildlife_dated_program_context(bad,u,s,r)
+
+    def test_4776_challenge_precision_only_limits_establishment_and_preserves_preimage(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4776_establishment_challenge_precision
+        p=folder(118);r=read(p/'hr4776_establishment_challenge_precision_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_4776_establishment_challenge_precision(a,u,s,r)
+        for text in ['no-categorical-exclusion-challenge conditions','no-application-specific-challenges condition','all application challenges necessarily survive']:
+            bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace(r['rationale_replacement'][1],text)
+            with self.assertRaisesRegex(ValueError,'exceeded exact phrase or retained broad shorthand'):validate_4776_establishment_challenge_precision(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['application_specific_challenge_outcomes_decided']=True
+        with self.assertRaisesRegex(ValueError,'decided application challenges or exceeded scope'):validate_4776_establishment_challenge_precision(a,u,s,bad)
+        bad=copy.deepcopy(r);bad['source_quote']='challenge any categorical exclusion application'
+        with self.assertRaisesRegex(ValueError,'source quote differs'):validate_4776_establishment_challenge_precision(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'exceeded exact phrase or retained broad shorthand'):validate_4776_establishment_challenge_precision(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()
