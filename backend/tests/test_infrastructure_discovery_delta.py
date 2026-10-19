@@ -328,4 +328,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'conservation wildfire spread or distinct return predicates lost'):validate_emergency_conservation_advances(bad,s['govinfo:hr1011eh'],s['govinfo:16usc2201-operative162'],s['govinfo:16usc2206-operative162'])
+    def test_epa_review_preserves_legislation_publication_and_exact_categories(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_epa_review_channel_boundaries
+        p=folder(85);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:118');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('It retains mandatory section309review/written comment for proposed Federal-department/agency legislation','It abolishes every EPAreview'),("retains publication of that comment at review's conclusion",'makes all comments private'),('removes the construction/NEPA-linked-action and proposed-regulation categories from this section309duty','removes only the construction category')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'EPA review deletion lost exact categories or retained legislation/publication'):validate_epa_review_channel_boundaries(bad,s['govinfo:hr6398eh'],s['govinfo:42usc7609-2024-policy-review'],s['govinfo:42usc4332-2024-operative'])
+    def test_epa_referral_condition_and_separate_nepa_duties_remain(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_epa_review_channel_boundaries
+        p=folder(85);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:118');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('IF the Administrator determines it unsatisfactory','whether or not EPAfinds it unsatisfactory'),('H.R.6398does not amend that separate NEPA4332text','H.R.6398repeals the separateNEPAtext')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'EPA review conditional referral separate NEPA or candidate boundary lost'):validate_epa_review_channel_boundaries(bad,s['govinfo:hr6398eh'],s['govinfo:42usc7609-2024-policy-review'],s['govinfo:42usc4332-2024-operative'])
 if __name__=='__main__':unittest.main()
