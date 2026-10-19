@@ -733,4 +733,24 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(m);bad[aid]['claim_source_map']=bad[aid]['claim_source_map'][1:]
         with self.assertRaisesRegex(ValueError,'changed prior evidence flags or conditional review boundaries'):validate_nepa_review_framework(bad,u,s,r)
 
+    def test_complete_4776_retained_body_cannot_clear_versions_or_repair_printed_questions(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4776_complete_retained_body
+        p=folder(116);r=read(p/'hr4776_complete_retained_body_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_4776_complete_retained_body(a,u,s,r);self.assertTrue(validate(116)['generated_replay'])
+        for field in ['exact_floor_version_gate_cleared','printed_references_resolved','current_law_certified','new_shared_meaning_authored','rejected_amendments_imported']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared floor/reference/current-law/meaning gates'):validate_4776_complete_retained_body(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][-1]['passage']=s['text'][:3000]
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or complete read extent'):validate_4776_complete_retained_body(bad,u,s,r)
+        bad=copy.deepcopy(a);bad['exact_action_binding_unresolved']=False
+        with self.assertRaisesRegex(ValueError,'cleared floor/reference/current-law/meaning gates'):validate_4776_complete_retained_body(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['topics'][4]['start']+=1
+        with self.assertRaisesRegex(ValueError,'section coverage is incomplete'):validate_4776_complete_retained_body(a,u,s,bad)
+        bad=copy.deepcopy(r);bad['printed_reference_witnesses'][1]['quote']=bad['printed_reference_witnesses'][1]['quote'].replace('107(g)(3)','107(g)(6)')
+        with self.assertRaisesRegex(ValueError,'references or supplemental deadline were silently repaired'):validate_4776_complete_retained_body(a,u,s,bad)
+        for old,new in [('OTHER OUTSTANDING AUTHORIZATIONS','all permits completed'),('NOT silently rendered as a new150days-after clock','automatically a new150days-after clock'),('BOTH exceptions','no exceptions')]:
+            bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or complete read extent'):validate_4776_complete_retained_body(bad,u,s,r)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or complete read extent'):validate_4776_complete_retained_body(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()
