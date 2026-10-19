@@ -197,4 +197,12 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         action=copy.deepcopy(next(a for a in read(folder(61)/'authoring.json')['actions'] if a['action_id']=='house:119:1:347'));sources={s['source_id']:s for s in read(folder(61)/'sources.json')['sources']}
         action['meaning']=action['meaning'].replace('The90dayfallback governs advance agency submission, not a deadline for FERC to decide or automatic clearance after90days','FERC must decide within90days or the action is automatically cleared')
         with self.assertRaisesRegex(ValueError,'reliability advance submission became automatic clearance'):validate_reliability_gate_boundaries(action,sources['govinfo:hr3616eh'],sources['govinfo:16usc824o-2024-operative'],sources['govinfo:16usc824o-2024-definitions'])
+    def test_active_failed_adoption_and_ssa_provenance_disclosures_fail_closed(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_active_disclosure_corrections
+        m=read(folder(62)/'membership_review.json');u=read(folder(62)/'universe_proposal.json');s=read(folder(62)/'sources.json');receipt=read(folder(62)/'active_disclosure_corrections_20261019.json')
+        validate_active_disclosure_corrections(m,u,s,receipt)
+        bad=copy.deepcopy(m);next(r for r in bad['records'] if r['action_id']=='house:119:1:293')['rationale']=next(r for r in bad['records'] if r['action_id']=='house:119:1:293')['rationale'].replace('roll 297, which failed','roll 297, which passed')
+        with self.assertRaisesRegex(ValueError,'roll293 later adoption disclosure omits failed result'):validate_active_disclosure_corrections(bad,u,s,receipt)
+        bad=copy.deepcopy(m);next(c for c in next(r for r in bad['records'] if r['action_id']=='house:119:1:306')['claim_source_map'] if c['source_id']=='govinfo:42usc405c2Bi-2024-ssn-issuance')['locator']='Captured I/III commentary applies to this bill'
+        with self.assertRaisesRegex(ValueError,'SSA captured I/III commentary lacks active IV/V qualification'):validate_active_disclosure_corrections(bad,u,s,receipt)
 if __name__=='__main__':unittest.main()

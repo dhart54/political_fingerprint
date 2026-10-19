@@ -1,6 +1,6 @@
 """Offline conservation/source/replay checks for bounded discovery-delta increments."""
 from __future__ import annotations
-import argparse,json,os,re,sys
+import argparse,copy,json,os,re,sys
 from collections import Counter
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
@@ -118,6 +118,22 @@ def validate_refinery_report_boundaries(action,bill,clerk,compiled,readable):
     member=next(m for m in readable['members'] if m['member_id']=='M001184');require(all('house:119:1:303' not in f['action_ids'] for f in member['findings']),'refinery Not Voting became directional finding')
     member=next(m for m in compiled['members'] if m['member_id']=='M001184');require(member['coverage']['not_voting_actions']==6,'refinery new Not Voting coverage omitted')
 
+def validate_active_disclosure_corrections(membership,universe,sources,receipt):
+    records={r['action_id']:r for r in membership['records']};rows={r['action_id']:r for r in universe['candidate_dispositions']};ss={s['source_id']:s for s in sources['sources']}
+    aid='house:119:1:293';pre=receipt['preimage_memberships'][aid];now=records[aid]
+    require('later vote on adopting the substantive resolution, roll 297, which failed' in now['rationale'] and ss['clerk:119:1:297']['metadata']['vote-question']=='On Agreeing to the Resolution' and ss['clerk:119:1:297']['metadata']['vote-result']=='Failed','roll293 later adoption disclosure omits failed result')
+    require({k:v for k,v in now.items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and now['rationale']==receipt['corrected293_rationale'],'roll293 disclosure changed unrelated state')
+    aid='house:119:1:306';pre=receipt['preimage_memberships'][aid];now=records[aid];sid='govinfo:42usc405c2Bi-2024-ssn-issuance';source=ss[sid]
+    require(source==receipt['source_preimage'] and digest(source)==receipt['source_object_sha256'] and 'New House definition selects only the named (I)/portion (III)' in source['text_version'],'SSA captured source object or commentary was rewritten')
+    claim=next(c for c in now['claim_source_map'] if c['source_id']==sid)
+    require('INAPPLICABLE to H.R.5348/roll306' in claim['locator'] and 'selects subclauses (IV) or (V)' in claim['locator'],'SSA captured I/III commentary lacks active IV/V qualification')
+    expected=copy.deepcopy(pre);next(c for c in expected['claim_source_map'] if c['source_id']==sid)['locator']=receipt['qualification']+' '+next(c for c in pre['claim_source_map'] if c['source_id']==sid)['locator'];require(now==expected,'SSA provenance correction changed rationale, source passage or semantic state')
+    for aid in receipt['preimage_memberships']:
+        require(digest(receipt['preimage_memberships'][aid])==receipt['preimage_membership_sha256'][aid],'disclosure preimage hash differs')
+        expected=copy.deepcopy(receipt['preimage_universe_rows'][aid]);expected['review_progress']['shared_review_record_sha256']=digest(records[aid])
+        if aid.endswith(':293'):expected.update(reason=receipt['corrected293_rationale'],rationale=receipt['corrected293_rationale'])
+        require(rows[aid]==expected,'disclosure correction changed unrelated universe state')
+
 def validate_reliability_gate_boundaries(action,bill,baseline,definitions):
     meaning=action['meaning']
     require('periodic assessments' in baseline['text'] and 'Electric Reliability Organization' in definitions['text'] and all(x in bill['text'] for x in ['Annual long-term assessment','may not finalize','the Commission finds','not later than 90 days before']),'reliability gate material source or baseline differs')
@@ -155,6 +171,8 @@ CASES[43]['repairs']=['house:119:1:226']
 CASES[57]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(325,330)],new=[],counts=dict(interpreted_substantive_directional=43,interpreted_substantive_non_directional=1,procedural_context=115,exact_action_ineligible=53,expressive_nonbinding=10,source_unresolved=298,pending_interpretation=156),pending=292)
 CASES[59]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(335,340)],new=[],counts=dict(interpreted_substantive_directional=44,interpreted_substantive_non_directional=1,procedural_context=119,exact_action_ineligible=55,expressive_nonbinding=10,source_unresolved=288,pending_interpretation=159),pending=282)
 CASES[60]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [340,341,342,345,346]],new=[],new_action_ids=['house:119:1:342'],counts=dict(interpreted_substantive_directional=45,interpreted_substantive_non_directional=1,procedural_context=120,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=283,pending_interpretation=160),pending=277)
+CASES[62]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(352,357)],new=[],counts=dict(interpreted_substantive_directional=46,interpreted_substantive_non_directional=1,procedural_context=123,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=273,pending_interpretation=166),pending=267)
+CASES[62]['repairs']=['house:119:1:293','house:119:1:306']
 CASES[61]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(347,352)],new=[],new_action_ids=['house:119:1:347'],counts=dict(interpreted_substantive_directional=46,interpreted_substantive_non_directional=1,procedural_context=122,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=278,pending_interpretation=162),pending=272)
 CASES[58]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(330,335)],new=[],new_action_ids=['house:119:1:334'],counts=dict(interpreted_substantive_directional=44,interpreted_substantive_non_directional=1,procedural_context=117,exact_action_ineligible=54,expressive_nonbinding=10,source_unresolved=293,pending_interpretation=157),pending=287)
 CASES[56]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(320,325)],new=[],new_action_ids=['house:119:1:323'],counts=dict(interpreted_substantive_directional=43,interpreted_substantive_non_directional=1,procedural_context=114,exact_action_ineligible=52,expressive_nonbinding=10,source_unresolved=303,pending_interpretation=153),pending=297)
@@ -307,6 +325,10 @@ def validate(n,values=None,*,check_files=True):
         correction=read(data/'north_dakota_exception_scope_correction.json');aid='house:119:1:226';pre=correction['preimage_membership'];require(digest(pre)==correction['preimage_membership_sha256'] and digest(ss[correction['source_id']])==correction['source_object_sha256'],'North Dakota preserved source/preimage digest differs')
         require({k:v for k,v in records[aid].items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and records[aid]['rationale']==correction['corrected_rationale'],'North Dakota qualification changed meaning/state/source scope')
         if n==43:require(pre==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and correction['preimage_universe_row']==prev[aid],'North Dakota historical preimage differs')
+    if n>=62:
+        disclosure=read(data/'active_disclosure_corrections_20261019.json');validate_active_disclosure_corrections(membership,universe,capture,disclosure)
+        if n==62:
+            oldrecords={r['action_id']:r for r in old['membership_review']['records']};require(all(oldrecords[aid]==pre for aid,pre in disclosure['preimage_memberships'].items()),'active disclosure historical preimage differs')
     if n==61:
         aid='house:119:1:347';validate_reliability_gate_boundaries(by[aid],ss['govinfo:hr3616eh'],ss['govinfo:16usc824o-2024-operative'],ss['govinfo:16usc824o-2024-definitions']);recommendation=read(data/'reliability_gate_taxonomy_recommendation.json');require(recommendation['candidate_action_sha256']==digest(by[aid]) and not recommendation['accepted_membership'] and recommendation['required_independent_review'],'reliability candidate taxonomy binding/acceptance differs')
         identity=read(data/'hr6703_exact_identity_receipt.json');require(rows['house:119:1:349']['measure']==rows['house:119:1:349']['bill_ref']==identity['raw_measure']=='H R 6703' and not records['house:119:1:349']['exact_action_binding_unresolved'],'6703 raw identity was rewritten or mechanical binding lost');require(ss['clerk:119:1:349']['metadata']['legis-num']==identity['raw_measure'] and ss['clerk:119:1:349']['metadata']['action-date']=='17-Dec-2025' and 'Passed the House of Representatives December 17, 2025' in ss['govinfo:hr6703eh']['text'],'6703 exact House/date binding differs')
