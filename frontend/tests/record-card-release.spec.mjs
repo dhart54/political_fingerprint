@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { gunzipSync } from "node:zlib";
 import { expect, test } from "@playwright/test";
+import { makeDomainTransitionFixture, TRANSITION_SCOPES } from "./fixtures/domain-transition.mjs";
 
 const candidate = JSON.parse(fs.readFileSync(path.resolve("../docs/review_packets/record_at_a_glance_v1/candidate.json")));
 const snapshot = JSON.parse(gunzipSync(fs.readFileSync(path.resolve("..", candidate.source_snapshot))));
@@ -46,6 +47,99 @@ async function readExactReceiptJourney(page) {
   }
   return { ledger, filters, receipts, finding: await page.getByTestId("card-finding-detail").innerText() };
 }
+
+// Ordinary route only: runtime M4 stays untouched. Synthetic M5 is a unit-test
+// argument, never injected into the application or presented as a public binding.
+test.describe("offline synthetic domain transition", () => {
+  async function readJusticeFallback(page, scope) {
+    await page.getByRole("button", { name: "Explore Justice & Public Safety", exact: true }).click();
+    const analysis = page.getByTestId("reviewed-analysis");
+    await expect(analysis).toBeVisible();
+    await expect(analysis).toContainText("D.C.");
+    const expected = snapshot[`${candidate.legislator_id}:${scope}:JUSTICE_PUBLIC_SAFETY`].body.evidence;
+    await expect(page.locator("#vote-record")).toContainText(`${expected.length} recorded actions`);
+    const row = page.locator("[data-canonical-action-id]").first();
+    await expect(row).toBeVisible();
+    const button = row.locator(":scope > button");
+    await button.click();
+    await expect(button).toHaveAttribute("aria-expanded", "true");
+    const receipt = await row.evaluate((node) => ({
+      id: node.dataset.canonicalActionId, text: node.innerText,
+      links: [...node.querySelectorAll("a")].map((link) => link.getAttribute("href")),
+    }));
+    expect(expected.some((item) => item.canonical_action_id === receipt.id)).toBe(true);
+    expect(receipt.links.some((link) => link?.startsWith("https://"))).toBe(true);
+    return { summary: await analysis.innerText(), receipt };
+  }
+
+  for (const scope of TRANSITION_SCOPES) {
+    test(`${scope}: staging, extra reviewed domain, and selection rollback retain independent summaries and receipts`, async ({ page }) => {
+      const fixture = await makeDomainTransitionFixture();
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await liveInterfaceResponses(page);
+      const state = { serving: "four" };
+      await page.route("**/editorial-presentations*", (route) => route.fulfill({
+        json: fixture.payloads[state.serving][new URL(route.request().url()).searchParams.get("scope") || "all"],
+      }));
+      const landing = `/?representative=${candidate.legislator_id}&scope=${scope}`;
+      expect(fixture.staged.activated).toBe(false);
+      expect(fixture.staged.publication_eligible).toBe(false);
+      let original;
+      for (const serving of ["four", "five", "four"]) {
+        state.serving = serving;
+        await page.goto(landing);
+        if (serving === "four") {
+          await expect(page.getByTestId("record-card-entry")).toHaveCount(6);
+          for (const entry of candidate.entries) await expect(page.getByTestId("record-card")).toContainText(entry.explanation);
+        } else {
+          await expect(page.getByText(/The reviewed source has changed/)).toBeVisible();
+          await expect(page.getByTestId("record-card-entry")).toHaveCount(0);
+          await expect(page.getByText(/No reviewed findings are available|Issue summaries could not be verified/)).toHaveCount(0);
+        }
+        const fallback = await readJusticeFallback(page, scope);
+        if (!original) original = fallback;
+        else expect(fallback).toEqual(original);
+      }
+    });
+
+    test(`${scope}: late four-domain response cannot restore a card after switching to the five-domain scope`, async ({ page }) => {
+      const fixture = await makeDomainTransitionFixture();
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await liveInterfaceResponses(page);
+      let release, markHeld;
+      const gate = new Promise((resolve) => { release = resolve; });
+      const held = new Promise((resolve) => { markHeld = resolve; });
+      await page.route("**/editorial-presentations*", async (route) => {
+        const requested = new URL(route.request().url()).searchParams.get("scope") || "all";
+        // Hold every matching request, including development effect replay.
+        if (requested === scope) {
+          markHeld();
+          await gate;
+          return route.fulfill({ json: fixture.payloads.four[scope] });
+        }
+        return route.fulfill({ json: fixture.payloads.five[requested] });
+      });
+      const next = scope === "119" ? "all" : "119";
+      try {
+        await page.goto(`/?representative=${candidate.legislator_id}&scope=${scope}`);
+        await held;
+        await expect(page.getByText("Loading reviewed findings…", { exact: true })).toBeVisible();
+        const scopeButton = page.getByRole("button", { name: next === "all" ? "All available Congresses" : "119th Congress", exact: true });
+        await scopeButton.click();
+        await expect(page.getByText(/The reviewed source has changed/)).toBeVisible();
+        const late = page.waitForResponse((response) => response.url().includes("/editorial-presentations")
+          && new URL(response.url()).searchParams.get("scope") === scope);
+        release();
+        await (await late).finished();
+        await readJusticeFallback(page, next);
+        await expect(scopeButton).toHaveAttribute("aria-pressed", "true");
+        await expect(page).toHaveURL((url) => (url.searchParams.get("scope") || "all") === next);
+        await expect(page.getByText(/The reviewed source has changed/)).toBeVisible();
+        await expect(page.getByTestId("record-card-entry")).toHaveCount(0);
+      } finally { release(); }
+    });
+  }
+});
 
 for (const width of [390, 1440]) for (const failure of ["503", "network"]) test(`receipt retry recovers the unchanged finding journey after ${failure} at width ${width}`, async ({ page }, testInfo) => {
   await page.setViewportSize({ width, height: 900 });
