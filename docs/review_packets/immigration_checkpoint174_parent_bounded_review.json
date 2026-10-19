@@ -1,0 +1,41 @@
+{
+  "checkpoint_reviewed": 174,
+  "feature_head": "9cb6930443fd13d7316bfbcd69ca5b9bf837e2de",
+  "reviewer": "Parent bounded independent source/domain reviewer; trusted delegation",
+  "review_state": "no_blocking_source_domain_defect",
+  "supported_exclusions": [
+    "house:119:2:26",
+    "house:119:2:43"
+  ],
+  "supported_procedural": [
+    "house:119:2:40"
+  ],
+  "appropriate_holds": [
+    "house:119:2:27",
+    "house:119:2:44"
+  ],
+  "literal_extents_replayed": 18,
+  "preservation_checks": 24,
+  "six_semantic_outputs_unchanged": true,
+  "CI_successful_jobs": 9,
+  "nonblocking_qualifications": [
+    {
+      "action_id": "house:119:2:43",
+      "detail": "This Act scope is Division D-limited undersection3; do not paraphrase bill-wide"
+    },
+    {
+      "action_id": "house:119:2:44",
+      "detail": "Literal page3/line1 locator finds Act on IHline2; preserve discrepancy, do not silently normalize"
+    }
+  ],
+  "review_interruption": {
+    "started_utc": "2026-10-09T17:42:25Z",
+    "ended_utc": "2026-10-09T18:16:46Z",
+    "wall_seconds": 2061,
+    "attribution": "Independent review interruption; retain full-cycle overhead when reporting, not owner research",
+    "actual_review_completion_utc_not_provided": true
+  },
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "3c74f03d7b8cf11eb60911506f9d4647161f3e0e4ec9a0469ce82311fce2cb2f"
+}

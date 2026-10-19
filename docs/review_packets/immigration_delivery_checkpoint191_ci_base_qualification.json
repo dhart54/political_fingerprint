@@ -1,0 +1,32 @@
+{
+  "checkpoint": 191,
+  "synthetic_sha": "788f6b62315c13b057356c014d7e669d44f4c134",
+  "synthetic_parent_shas": [
+    "7a8c6ee11a899ea6912a4d37588917fcd0de0a24",
+    "47a828d284f9f7100b955f0f77b94267f88fd800"
+  ],
+  "direct_main_ref_observations": [
+    {
+      "utc": "2026-10-11T03:15:52.627719+00:00",
+      "main_sha": "7a8c6ee11a899ea6912a4d37588917fcd0de0a24"
+    },
+    {
+      "utc": "2026-10-11T03:15:54.429586+00:00",
+      "main_sha": "7a8c6ee11a899ea6912a4d37588917fcd0de0a24"
+    }
+  ],
+  "PR_snapshot": {
+    "baseRefOid": "862b290cceea8af7d6c1c800d1ecdfa52386a490",
+    "headRefOid": "47a828d284f9f7100b955f0f77b94267f88fd800",
+    "isDraft": true,
+    "state": "OPEN"
+  },
+  "run_PR_base_snapshots": [
+    "862b290cceea8af7d6c1c800d1ecdfa52386a490"
+  ],
+  "synthetic_base_matches_both_direct_main_reads": true,
+  "PR_run_snapshot_base_disagrees": true,
+  "current_main_integration_claim": false,
+  "qualification": "Checkout logs, actual synthetic parents and two direct main-ref reads establish bounded checkout evidence. PR/run snapshots are retained independently; any base disagreement is not reconciled by inventing broad integration coverage.",
+  "receipt_sha256": "69c0a682c289cf3462fe98ff34c957f06dcb8c6b8310a68ccfd883bf84fbf66b"
+}

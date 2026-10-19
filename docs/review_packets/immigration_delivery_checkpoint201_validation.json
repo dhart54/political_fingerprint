@@ -1,0 +1,365 @@
+{
+  "checkpoint": 201,
+  "base_head": "8e36be942ba0c9231b50179ad588efced7e0008a",
+  "candidate_receipt_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\hr5107_qualified_shared_core_augmentation_checkpoint201.json",
+  "candidate_receipt_sha256": "77cdb985398191f428ad6f146803210acc95bdb5d53fb96aebd71e0104ab1b94",
+  "completed_screenings": 1,
+  "previously_held_action_completed": true,
+  "counts": {
+    "reviewed": 616,
+    "pending": 60,
+    "ordinary_unscreened": 29,
+    "researched_holds": 31,
+    "meanings": 49,
+    "propositions": 84,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "focused_tests": 340,
+  "focused_test_runner_seconds": 63.456,
+  "focused_modules": [
+    "test_immigration_shared_candidate",
+    "test_editorial_semantic_ir",
+    "test_source_sequence",
+    "test_shared_domain_candidate"
+  ],
+  "semantic_checks": 7,
+  "accepted_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out_references": 4,
+    "held_out": 4
+  },
+  "byte_exact_current_output_replays": 14,
+  "additional_after_portability_Immigration_replays": 7,
+  "final_portable_reference_narrow_regression": {
+    "tests": 1,
+    "runner_seconds": 4.38
+  },
+  "full_focused_suites_before_portable_metadata_only_correction": true,
+  "phase_logs": [
+    {
+      "log": ".tmp\\tests201_retry1.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-11T19:38:08.581446+00:00",
+      "completed_utc": "2026-10-11T19:39:12.265180+00:00",
+      "elapsed_seconds": 63.68385220001801,
+      "exit_code": 0,
+      "log_sha256": "cc8e5a1e142f158096cd64bf4ff1772e67e32e9913a31dd998c091591f5bdd6c"
+    },
+    {
+      "log": ".tmp\\semantic201_retry1.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-11T19:39:12.271586+00:00",
+      "completed_utc": "2026-10-11T19:39:14.147535+00:00",
+      "elapsed_seconds": 1.8759551999974065,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir201_retry1.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-11T19:39:14.148502+00:00",
+      "completed_utc": "2026-10-11T19:39:14.217341+00:00",
+      "elapsed_seconds": 0.06884110000100918,
+      "exit_code": 0,
+      "log_sha256": "ba9d62abe83dd9bc3b50bacf822d0065def8c511304827adb3e79f74e3e6da77"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-11T19:39:14.221331+00:00",
+      "completed_utc": "2026-10-11T19:39:20.942256+00:00",
+      "elapsed_seconds": 6.720940600003814,
+      "outputs": 7
+    },
+    {
+      "phase": "health_byte_exact_output_replay",
+      "started_utc": "2026-10-11T19:39:20.942772+00:00",
+      "completed_utc": "2026-10-11T19:39:26.922505+00:00",
+      "elapsed_seconds": 5.979747900011716,
+      "outputs": 7
+    }
+  ],
+  "portable_reference_phase_logs": [
+    {
+      "log": ".tmp\\reuse201_portability_test.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_hr5107_immigration_reuses_one_corrected_cross_domain_core"
+      ],
+      "started_utc": "2026-10-11T19:44:45.105976+00:00",
+      "completed_utc": "2026-10-11T19:44:49.696782+00:00",
+      "elapsed_seconds": 4.590816000010818,
+      "log_sha256": "4ddf27f15d22d0b10d47ab25131a2d964bf831c9132db30c00d165650b7ac129"
+    },
+    {
+      "phase": "portable_reference_byte_exact_Immigration_replay",
+      "outputs": 7,
+      "started_utc": "2026-10-11T19:44:49.701649+00:00",
+      "completed_utc": "2026-10-11T19:44:56.760510+00:00",
+      "elapsed_seconds": 7.058878200012259
+    }
+  ],
+  "preservation_and_source_checks": {
+    "completed_screenings": 1,
+    "prior_Immigration_core_records_preserved": 48,
+    "prior_Health_core_records_preserved": 114,
+    "one_existing_core_augmented": true,
+    "core_identity_meaning_digest_identical_across_domains": true,
+    "member_statuses": {
+      "Health:F000477": "Nay",
+      "Health:M001184": "Yea",
+      "Immigration:F000477": "Nay",
+      "Immigration:M001184": "Yea"
+    },
+    "member_directions": {
+      "Health:F000477": "opposition",
+      "Health:M001184": "support",
+      "Immigration:F000477": "opposition",
+      "Immigration:M001184": "support"
+    },
+    "prior_projection_rows_preserved": {
+      "Health": 228,
+      "Immigration": 96
+    },
+    "prior_Immigration82_propositions_exact": true,
+    "Health_other_propositions_exact": true,
+    "Health158_proposition_count_and_member_directions_unchanged": true,
+    "Health_membership_universe_byte_exact": true,
+    "prior615_membership_records_exact": true,
+    "one_universe_row_changed": true,
+    "Immigration_source_prefix_preserved": 2288,
+    "Health_source_prefix_preserved": 2063,
+    "Immigration_new_immutable_catalog_reuses": 4,
+    "Health_new_immutable_catalog_reuses": 3,
+    "globally_new_governed_source_objects": 0,
+    "new_primary_acquisitions": 0,
+    "private_primary_pool_byte_exact": true,
+    "manifest_prefix_preserved": 1178,
+    "new_reuse_registrations": 4,
+    "literal_predicate_scopes": 5,
+    "own_floor_sequence_verified": true,
+    "Clerk_totals": {
+      "yea": 233,
+      "nay": 190,
+      "present": 0,
+      "not-voting": 10
+    },
+    "frozen_blobs_preserved": 392,
+    "untracked_notes_preserved": 2,
+    "common_adapter_and_canonical_schemas_unchanged": true,
+    "prior_HR7008_corrections_exact": true,
+    "partial_packages_unchanged": 3,
+    "canonical_questions_unchanged": 70,
+    "candidate_only": true,
+    "independent201_review_pending": true,
+    "Health158_propositions_and_compiled_IR_byte_exact": true,
+    "Health_issue_mapping_byte_exact": true,
+    "final_portable_reference_narrow_regression_passed": true,
+    "final_current_Immigration7_outputs_byte_exact": true
+  },
+  "literal_predicate_check_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\literal_predicate_authoring_check_checkpoint201.json",
+  "literal_predicate_check_sha256": "125f5608b3ff57f03c5f20e107ca872a8312fd188e678187f75bb0047457b4dc",
+  "source_count": 2292,
+  "capture_registration_count": 1182,
+  "Health_source_count": 2066,
+  "immutable_catalog_reuses": {
+    "Immigration": 4,
+    "Health": 3
+  },
+  "new_primary_acquisitions": 0,
+  "globally_new_governed_source_objects": 0,
+  "current_Health_shared_core_revision_bounded_to_299": true,
+  "Health_membership_universe_and_all158_propositions_unchanged": true,
+  "prior_HR7008_corrections_exact": true,
+  "common_adapter_canonical_schemas_unchanged": true,
+  "Immigration_adapter_bounded_sealed_reference_binding": true,
+  "rejected_reference_mutations": [
+    "stale_digest",
+    "divergent_mirror_meaning",
+    "outside_repository_candidate_corpus"
+  ],
+  "premature_baseline_validation_not_counted_as201": {
+    "tests": 339,
+    "runner_seconds": 55.501,
+    "reason": "In-memory equality guard failed on different snapshot identities before any candidate-file writes; subsequent baseline run was not valid candidate validation",
+    "phases_path": ".tmp/checkpoint201_validation_phases.json"
+  },
+  "CI200_receipt_path": "docs\\review_packets\\immigration_delivery_checkpoint200_ci.json",
+  "CI200_receipt_sha256": "5ebd0b0b753b97e0447a1a7d6858fb3e73c02ab87a6ffa3111346612b0d1ad1d",
+  "CI200_actual_first_attempt_jobs": 9,
+  "CI200_actual_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "CI200_conditional_guards_unexecuted": 4,
+  "CI200_base_qualification_path": "docs\\review_packets\\immigration_delivery_checkpoint200_ci_base_qualification.json",
+  "CI200_base_qualification_sha256": "ed7ca03eac1d17522dd821da2ac679051dc111bb0f4914eb33e113e8843e60c9",
+  "CI200_synthetic_base": "ca530c4bd193ea001a0b685124dd010ad50038ac",
+  "CI200_base_differs_later_direct_main": true,
+  "new_head_CI_pending": true,
+  "independent201_review_pending": true,
+  "benchmark": {
+    "result": "FAIL",
+    "mean_seconds": 781.087,
+    "ceiling_seconds": 600,
+    "target_seconds": 240,
+    "new_comparable_samples": 0,
+    "no_new_average": true
+  },
+  "timing": {
+    "checkpoint": 201,
+    "started_utc": "2026-10-11T19:20:40.413045+00:00",
+    "selection": "Close existing ready-source roll299 hold through one minimal source-complete shared-core augmentation and existing domain application",
+    "preselection_existing_core_and_source_inspection_unmeasured": true,
+    "new_acquisitions": 0,
+    "new_comparable_routine_samples": 0,
+    "new_average_inferred": false,
+    "prior_comparable_mean_seconds": 781.087,
+    "prior_comparable_result": "FAIL",
+    "authoring_completed_utc": "2026-10-11T19:35:54.258437+00:00",
+    "source_domain_authoring_endpoint_seconds": 913.845392,
+    "guarded_in_memory_snapshot_identity_mismatch_before_candidate_writes": true,
+    "premature_baseline_tests_not_counted_as201_validation": true,
+    "premature_baseline_test_runner_seconds": 55.501,
+    "bounded_reference_binding_and_all_debug_recovery_included": true,
+    "source_catalog_shape_error_recovery_included": true,
+    "local_validation_completed_utc": "2026-10-11T19:49:53.834255+00:00",
+    "elapsed_through_local_validation_seconds": 1753.42121,
+    "validation_phases": [
+      {
+        "log": ".tmp\\tests201_retry1.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate",
+          "backend.tests.test_editorial_semantic_ir",
+          "backend.tests.test_source_sequence",
+          "backend.tests.test_shared_domain_candidate"
+        ],
+        "started_utc": "2026-10-11T19:38:08.581446+00:00",
+        "completed_utc": "2026-10-11T19:39:12.265180+00:00",
+        "elapsed_seconds": 63.68385220001801,
+        "exit_code": 0,
+        "log_sha256": "cc8e5a1e142f158096cd64bf4ff1772e67e32e9913a31dd998c091591f5bdd6c"
+      },
+      {
+        "log": ".tmp\\semantic201_retry1.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/run_editorial_pipeline.py",
+          "validate",
+          "--tier",
+          "semantic"
+        ],
+        "started_utc": "2026-10-11T19:39:12.271586+00:00",
+        "completed_utc": "2026-10-11T19:39:14.147535+00:00",
+        "elapsed_seconds": 1.8759551999974065,
+        "exit_code": 0,
+        "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+      },
+      {
+        "log": ".tmp\\ir201_retry1.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/validate_editorial_semantic_ir.py"
+        ],
+        "started_utc": "2026-10-11T19:39:14.148502+00:00",
+        "completed_utc": "2026-10-11T19:39:14.217341+00:00",
+        "elapsed_seconds": 0.06884110000100918,
+        "exit_code": 0,
+        "log_sha256": "ba9d62abe83dd9bc3b50bacf822d0065def8c511304827adb3e79f74e3e6da77"
+      },
+      {
+        "phase": "immigration_byte_exact_output_replay",
+        "started_utc": "2026-10-11T19:39:14.221331+00:00",
+        "completed_utc": "2026-10-11T19:39:20.942256+00:00",
+        "elapsed_seconds": 6.720940600003814,
+        "outputs": 7
+      },
+      {
+        "phase": "health_byte_exact_output_replay",
+        "started_utc": "2026-10-11T19:39:20.942772+00:00",
+        "completed_utc": "2026-10-11T19:39:26.922505+00:00",
+        "elapsed_seconds": 5.979747900011716,
+        "outputs": 7
+      }
+    ],
+    "portable_reference_validation_phases": [
+      {
+        "log": ".tmp\\reuse201_portability_test.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_hr5107_immigration_reuses_one_corrected_cross_domain_core"
+        ],
+        "started_utc": "2026-10-11T19:44:45.105976+00:00",
+        "completed_utc": "2026-10-11T19:44:49.696782+00:00",
+        "elapsed_seconds": 4.590816000010818,
+        "log_sha256": "4ddf27f15d22d0b10d47ab25131a2d964bf831c9132db30c00d165650b7ac129"
+      },
+      {
+        "phase": "portable_reference_byte_exact_Immigration_replay",
+        "outputs": 7,
+        "started_utc": "2026-10-11T19:44:49.701649+00:00",
+        "completed_utc": "2026-10-11T19:44:56.760510+00:00",
+        "elapsed_seconds": 7.058878200012259
+      }
+    ],
+    "Windows_to_hosted_Linux_reference_portability_correction_included": true,
+    "all_guard_baseline_test_output_and_schema_shape_recovery_included": true
+  },
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "production_eligible": false,
+  "publication_authorized": false,
+  "receipt_sha256": "762d6841d1cf909f46bbb76411ded34491cb3f42028659b3bad1ea31f4ba49ba",
+  "independent200_review_path": "docs\\review_packets\\immigration_bounded_review_checkpoint200_received201.json",
+  "independent200_review_sha256": "4c2e0428486e98e4c413933637a72d250a2986369ad62eebb0c651387db1af9a",
+  "both_prior_HR7008_P3s_independently_closed": true
+}

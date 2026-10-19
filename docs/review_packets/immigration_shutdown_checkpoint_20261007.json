@@ -1,0 +1,117 @@
+{
+  "schema_version": "immigration_shutdown_checkpoint_v1",
+  "status": "paused_at_preserved_checkpoint_goal_incomplete",
+  "authority": "Dylan requested a safe checkpoint for PC shutdown within 10-15 minutes, relayed by Fingerprint at 2026-10-07 02:26 UTC. Stop new research immediately, preserve by 02:35 UTC, no automatic resume.",
+  "recorded_at": "2026-10-07T02:29:04.059819+00:00",
+  "safe_checkpoint_deadline_utc": "2026-10-07T02:35:00Z",
+  "immutable_base": "862b290cceea8af7d6c1c800d1ecdfa52386a490",
+  "branch": "codex/foushee-immigration-border-shared",
+  "worktree": "C:/Users/Dylan/Documents/Data Science/political_fingerprint/.w/ib",
+  "last_complete_implementation_checkpoint": "45ef2a7b87e89a1e7f9446478f3db7bbfbfb1acf",
+  "remote_implementation_head_verified": "45ef2a7b87e89a1e7f9446478f3db7bbfbfb1acf",
+  "remote_main_verified": "7a8c6ee11a899ea6912a4d37588917fcd0de0a24",
+  "development_base_unchanged": true,
+  "validation": {
+    "last_behavior_validation_head": "45ef2a7b87e89a1e7f9446478f3db7bbfbfb1acf",
+    "aggregate_tests": 255,
+    "aggregate_runtime_seconds": 42.179,
+    "candidate_tests_in_aggregate": 66,
+    "semantic_checks": 7,
+    "seven_raw_generated_json_files_byte_identical_to_replay": true,
+    "three_hra_mutations_each_assertion_failures": 1,
+    "three_hra_mutations_each_errors": 0,
+    "canonical_candidate_inputs_and_tracked_outputs_unchanged_from_checkpoint73": true,
+    "shutdown_preservation_changes_documentary_only": true,
+    "no_new_behavior_tests_claimed_for_shutdown_receipt": true,
+    "core_sha256": "79d1d9f481765fcb83e2cbd17ca8fcdcaf84d7ccca87d37794e69a1b624722e8",
+    "compiled_sha256": "b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f"
+  },
+  "ci": {
+    "implementation_head": "45ef2a7b87e89a1e7f9446478f3db7bbfbfb1acf",
+    "associated_run": 37561984509,
+    "status_at_recording": "in_progress",
+    "last_completed_prior_head": "9046b8ec8307380941fcbfcaf4a908bd6d328af8",
+    "last_completed_prior_run": 37560982589,
+    "prior_all_nine_jobs_green": true,
+    "checkout_provenance": "Five pinned PR-head jobs, three synthetic merge, one mixed-context repair. Latest shutdown commit/run status will be recorded in terminal marker and final report; no automatic claim of success."
+  },
+  "accounting": {
+    "inventory": 676,
+    "governed_reviews": 455,
+    "interpreted_meanings": 39,
+    "procedural": 211,
+    "excluded": 203,
+    "expressive": 2,
+    "ordinary_unfinished_screenings": 221,
+    "partial_hr1_component_reviews": 2,
+    "legal_application_questions": 62,
+    "independent_episodes": 36,
+    "observations": 78,
+    "findings": 70,
+    "canonical_sources": 1323,
+    "action_claim_bindings": 850,
+    "manifested_captures": 326,
+    "governed_extent_objects": 207,
+    "extent_coordinates": 346
+  },
+  "completed_since_checkpoint71": [
+    "Checkpoint 72 exact scholarship donor/student/income/version boundaries and reserved Q62",
+    "Checkpoint 73 duplicate-enrollment context-only scope, preserving canonical meanings",
+    "Checkpoint 74 exact HRA literal tax/employee-class/definition context, bounded domain application separately routed"
+  ],
+  "independent_review_record": "docs/review_packets/hr1_checkpoint72_73_independent_reviews.json",
+  "independent_review_receipt_sha256": "82f2fd48c3d60bc2414d2af671054f76105abf8665bd8b9de2993f16c2ae6ee9",
+  "remaining_review": [
+    "Checkpoint 74 HRA proposed context-only domain application pending; recommendation/evidence/alternatives/safe work in hr1_hra_employee_class_scope_review.json",
+    "Three cross-domain leads need source research: commercial customs, foreign-tax remedy, foreign-entity electricity",
+    "Full exact counterpart/absence and package coverage gates open; then continuing/omnibus/NDAA packages and 221 ordinary screenings",
+    "62 separately routed application questions remain unadjudicated; no editorial acceptance/publication"
+  ],
+  "unfinished_local_research": [
+    {
+      "path": ".tmp/19usc-chap4-2024-original75.html",
+      "raw_sha256": "06d52eecc89b5ded8db7e7906e87e3fef29ed9471e657a1485ff7af6643ee228",
+      "byte_count": 3143204,
+      "state": "local_preserved_uncommitted_research_only_not_manifested_or_canonical",
+      "original_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title19/html/USCODE-2024-title19-chap4.htm"
+    },
+    {
+      "path": ".tmp/19usc-chap4-2024-full75.txt",
+      "raw_sha256": "71a4d4bd0d4d42faf88f2ab520cddba3da0795b1d03f39047b9916b50af03487",
+      "byte_count": 2280895,
+      "state": "local_preserved_uncommitted_research_only_not_manifested_or_canonical",
+      "original_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title19/html/USCODE-2024-title19-chap4.htm"
+    }
+  ],
+  "unfinished_local_research_scope": "Only parent Chapter 4 acquisition and preliminary viewing of section1321; no checkpoint75 customs disposition, semantic authoring, tests, manifestation or completion. Do not replay author/document helpers or promote this capture automatically.",
+  "historical_markers": [
+    {
+      "path": ".codex-task-complete",
+      "raw_sha256": "674fe4725d2e594f6a05adb9990720a9abc55f2b53b1260a9efef2829a12555a",
+      "byte_count": 758,
+      "original_utf8": "STATUS=CHECKPOINT\r\nCOMPLETED=2026-10-06T10:28:20.1574943Z\r\nCOMMIT=bac767abf68781ff4bbcda4774e2893d42e2cd33\r\nREASON=TIME_LIMIT_8_HOURS\r\nNEXT_ACTION=Resume H.R.1 House passage1:145 EH plus adopted492/499 corrections versus Senate-amendment concurrence1:190 EAS; then remaining223 ordinary screenings and separately routed21 legal questions in this worktree. Clear terminal marker and establish the next-run deadline under new run instructions.\r\nSUMMARY=Candidate-only37 shared meanings;453 governed reviews;223 screenings unfinished;35 episodes;68 Foushee/Massie findings.217 focused tests,7 semantic checks,7 byte-identical outputs and all9 exact-head hosted jobs pass. DraftPR198 updated; no acceptance, production or registry writes; full goal incomplete.\r\n",
+      "local_byte_exact_archive": ".tmp/ib_shutdown_20261007/codex-task-complete.historical"
+    },
+    {
+      "path": ".codex-shutdown-deadline",
+      "raw_sha256": "8b5ea154b33e7672044d4ce1b7643731020adda1983c6c7134b3c0006f0be8cf",
+      "byte_count": 271,
+      "original_utf8": "﻿RUN_STARTED=2026-10-05T22:41:49.8725744-04:00\nSHUTDOWN_DEADLINE=2026-10-06T06:41:49.8725744-04:00\nSTOP_NEW_LARGE_WORK=2026-10-06T06:11:49.8725744-04:00\nBEGIN_CHECKPOINT_WRAP=2026-10-06T06:26:49.8725744-04:00\nTERMINAL_MARKER_REQUIRED=2026-10-06T06:36:49.8725744-04:00\r\n",
+      "local_byte_exact_archive": ".tmp/ib_shutdown_20261007/codex-shutdown-deadline.historical"
+    }
+  ],
+  "current_terminal_marker_policy": "After all commits/pushes/PR and process checks, write .codex-task-complete last as paused checkpoint, never goal success. Historical original preserved verbatim in this receipt and local archive. Leave historical .codex-shutdown-deadline untouched.",
+  "owner_processes_at_preservation": "All known owner test/generator/replay/verification/acquisition/push tool sessions completed; perform final read-only process inspection before writing terminal marker. Hosted CI may continue remotely and does not require PC to remain on.",
+  "resume_requires_explicit_dylan_authorization": true,
+  "automatic_resume_on_wake_or_reconnect": false,
+  "next_commands_after_authorization": [
+    "Set-Location \"C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\ib\"",
+    "git status --short",
+    "git rev-parse HEAD",
+    "git ls-remote origin refs/heads/codex/foushee-immigration-border-shared refs/heads/main",
+    "Read docs/plans/foushee_immigration_border_shared_interpretation.md and this shutdown receipt plus current terminal marker; reconcile ownership/current boundary before any mutation",
+    "Verify preserved customs raw/text paths and hashes; resume exact House112030/EAS70531 trade-article mechanism, full1321 operative extent and adopted correction/EH comparison. HRA domain application stays separately reserved. Do not rerun author_checkpoint72/prepare_checkpoint73/prepare_checkpoint74 or document helpers."
+  ],
+  "no_merge_deploy_production_editorial_acceptance_promotion_publication": true,
+  "receipt_sha256": "20023857dbb351f94215bc4d791c25a1b28a073e2449566a632f3dc203e4555f"
+}

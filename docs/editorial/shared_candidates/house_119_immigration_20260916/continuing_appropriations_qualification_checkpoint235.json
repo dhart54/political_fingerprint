@@ -1,0 +1,387 @@
+{
+  "checkpoint": 235,
+  "base_head": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+  "action_ids": [
+    "house:119:2:272",
+    "house:119:2:286"
+  ],
+  "prior_pending_rows": {
+    "house:119:2:272": {
+      "action_id": "house:119:2:272",
+      "session": 2,
+      "roll": 272,
+      "date": "2026-07-21",
+      "measure": "bill_119_hr_9770",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Whole H.R.9770 EH read and its complete own floor body matches under declared formatting comparison. Section101 imports twelve FY2026 appropriations sources, including HomelandSecurity divisionA PL11986; funds continue under qualified rates/authority/conditions, not a universally unchanged agency budget. Section106 ends authority at the earliest applicable project appropriation enactment OR applicable act without the project OR December4,2026, unless otherwise provided;111 has its printed mandatory-payment provisions and exceptions. The remaining read sections through128 include discretionary rescission accounting, qualified apportionment, SBA/FEMA/IHS and statutory-date adjustments, DC local funds and SSA partA/titleIV extension with its stated exceptions, as well as named survivor payments and congressional COLA restriction. Material appropriations/benefit/imported authority/current-integration Immigration application remains unfinished; reading a whole short CR does not finish its twelve source chains. Keep researched source_unresolved noncounting hold without automatic agency/title inclusion/exclusion, funding outcome, individual benefit/immigration determination or isolated component stance. Initial passage voice ayes, DeLauro demand/order/postponement and resumed passage220-205 with6NotVoting are distinct. No new shared meaning or editorial acceptance.",
+      "source": {
+        "source_id": "clerk:119:2:272",
+        "url": "https://clerk.house.gov/evs/2026/roll272.xml",
+        "raw_sha256": "c1104ec5fd295cb5fe8f4c6166bdb7d6810924c146bbba209e6bf05dfd3fee8b",
+        "governed_bytes_sha256": "9841f339886da67df4cd6aeacbbf5535b5e803bcf4c67f8c6a28bc58662835a9",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_9770",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Whole H.R.9770 EH read and its complete own floor body matches under declared formatting comparison. Section101 imports twelve FY2026 appropriations sources, including HomelandSecurity divisionA PL11986; funds continue under qualified rates/authority/conditions, not a universally unchanged agency budget. Section106 ends authority at the earliest applicable project appropriation enactment OR applicable act without the project OR December4,2026, unless otherwise provided;111 has its printed mandatory-payment provisions and exceptions. The remaining read sections through128 include discretionary rescission accounting, qualified apportionment, SBA/FEMA/IHS and statutory-date adjustments, DC local funds and SSA partA/titleIV extension with its stated exceptions, as well as named survivor payments and congressional COLA restriction. Material appropriations/benefit/imported authority/current-integration Immigration application remains unfinished; reading a whole short CR does not finish its twelve source chains. Keep researched source_unresolved noncounting hold without automatic agency/title inclusion/exclusion, funding outcome, individual benefit/immigration determination or isolated component stance. Initial passage voice ayes, DeLauro demand/order/postponement and resumed passage220-205 with6NotVoting are distinct. No new shared meaning or editorial acceptance.",
+      "unresolved_reason": "pending_whole_CR_appropriations_imports_Immigration_chain197",
+      "sources": [
+        {
+          "source_id": "govinfo:hr9770eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9770eh/html/BILLS-119hr9770eh.htm",
+          "raw_sha256": "eb469f38452dfa23b4f9dd469cfd136c2ec35c77d1dd0d52b12febb0f5fdc23d",
+          "governed_bytes_sha256": "f4059f8707e26b5b465662ca917eb82eb07f1162f5867dde38c74d263fd02fc3"
+        },
+        {
+          "source_id": "immigration:roll272-identity197",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "953be61e7af147e7700544de9a1420f0bf8518915c0bd2c7be593c54a755a921"
+        },
+        {
+          "source_id": "immigration:roll272-floor-complete197",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "5681f39d558df9f0eba99bec7cbe7987272f49ab1a6d0f948fa8721c8d9116eb"
+        },
+        {
+          "source_id": "immigration:roll272-initial197",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "44940952808a6a1a718459363a3b41adeef371a274f35c9c174a2816afa7df6c"
+        },
+        {
+          "source_id": "immigration:roll272-recorded197",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "08e61a85103ed3b0e6aa6341e09dfc294c3037f365dd221adb44a34e56e73dfc"
+        },
+        {
+          "source_id": "clerk:119:2:272",
+          "url": "https://clerk.house.gov/evs/2026/roll272.xml",
+          "raw_sha256": "c1104ec5fd295cb5fe8f4c6166bdb7d6810924c146bbba209e6bf05dfd3fee8b",
+          "governed_bytes_sha256": "9841f339886da67df4cd6aeacbbf5535b5e803bcf4c67f8c6a28bc58662835a9"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:272",
+        "url": "https://clerk.house.gov/evs/2026/roll272.xml",
+        "raw_sha256": "2b330f9c1ddc829f86e5241d073af0c3c93732fd3697d6bdba27511f53ad3366",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
+      }
+    },
+    "house:119:2:286": {
+      "action_id": "house:119:2:286",
+      "session": 2,
+      "roll": 286,
+      "date": "2026-09-01",
+      "measure": "H R 6500",
+      "question": "On Motion to Suspend the Rules and Concur in the Senate Amendments",
+      "disposition": "source_unresolved",
+      "reason": "Exact House choice is suspension and concurrence in the Senate amendments to H.R.6500, not a vote only on the original AGOA title. Whole64,001-character EAS read and full own floor reproduction matches under declared formatting comparison. It replaces everything after the enacting clause with Continuing Appropriations and Extensions Act2027, changes the title, and contains four divisions; division references stay division-specific unless expressly provided. DivisionA continues twelve specified FY2026 appropriations sources at qualified rates/authority/conditions with named exceptions, no-new-project and limited-funding rules and the section106 earliest-of termination alternatives, one of which is December11,2026. DivisionB includes AGOA/customs extensions, joint-task-force sunset substitution in2013 and Western-Hemisphere passport-fee authority substitution in2017; these precise imports may bear on Immigration but do not establish the whole adopted package meaning or stance without the material source chain. Homeland-Security funding imports and relevant appropriations/authorization/current-integration application remain research. DivisionsC/D surface-transportation and VA extensions retained as whole-choice context, no isolated component stance or automatic Immigration exclusion/inclusion. Keep researched source_unresolved noncounting hold; no funding outcome, individual passport/benefit determination, enactment, new shared meaning or editorial acceptance. Initial voice ayes, Cole demand/order/postponement precede resumed concurrence370-48 with14NotVoting.",
+      "source": {
+        "source_id": "clerk:119:2:286",
+        "url": "https://clerk.house.gov/evs/2026/roll286.xml",
+        "raw_sha256": "65aec5da8a8d26f236942d55358ddf798e6e0c5ead81bf9c31f723db86db651a",
+        "governed_bytes_sha256": "dd937bdc17f4cbb5753729496469e5dda26a566f5d557fa76a0c9d3448a146b6",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": true,
+      "bill_ref": "H R 6500",
+      "member_action": "Yea",
+      "house_action_stage": "On Motion to Suspend the Rules and Concur in the Senate Amendments",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Exact House choice is suspension and concurrence in the Senate amendments to H.R.6500, not a vote only on the original AGOA title. Whole64,001-character EAS read and full own floor reproduction matches under declared formatting comparison. It replaces everything after the enacting clause with Continuing Appropriations and Extensions Act2027, changes the title, and contains four divisions; division references stay division-specific unless expressly provided. DivisionA continues twelve specified FY2026 appropriations sources at qualified rates/authority/conditions with named exceptions, no-new-project and limited-funding rules and the section106 earliest-of termination alternatives, one of which is December11,2026. DivisionB includes AGOA/customs extensions, joint-task-force sunset substitution in2013 and Western-Hemisphere passport-fee authority substitution in2017; these precise imports may bear on Immigration but do not establish the whole adopted package meaning or stance without the material source chain. Homeland-Security funding imports and relevant appropriations/authorization/current-integration application remain research. DivisionsC/D surface-transportation and VA extensions retained as whole-choice context, no isolated component stance or automatic Immigration exclusion/inclusion. Keep researched source_unresolved noncounting hold; no funding outcome, individual passport/benefit determination, enactment, new shared meaning or editorial acceptance. Initial voice ayes, Cole demand/order/postponement precede resumed concurrence370-48 with14NotVoting.",
+      "unresolved_reason": "pending_whole_continuing_appropriations_imports_Immigration_chain196",
+      "sources": [
+        {
+          "source_id": "govinfo:hr6500eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eas/html/BILLS-119hr6500eas.htm",
+          "raw_sha256": "828941bae852dc7b3e9fe362cb59be251a4483f42b5f42d2beba15e0a5abc149",
+          "governed_bytes_sha256": "fc5916bbc9b78b7dee3feac7b42bf325886b4b0dbb1d2c26e65b21b57ae3e3ca"
+        },
+        {
+          "source_id": "immigration:roll286-identity196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "de8bac59eee1cc3f50d1771cbda60eb616d83704760a26d214875358c0778153"
+        },
+        {
+          "source_id": "immigration:roll286-floor-complete196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "2b15ff879c1ff87d7584c619fd15856ddf7cf86362a52139bcdc92e4e04f8059"
+        },
+        {
+          "source_id": "immigration:roll286-initial196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "6791b9de65c38089ae8da118a27b2b8d89c7110e16c1ea35024a76a9a414bf88"
+        },
+        {
+          "source_id": "immigration:roll286-recorded196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "458ea81a58abe406536c022f01c8a89c247cd5166b6cac6e75075e8d5a0ebd65"
+        },
+        {
+          "source_id": "clerk:119:2:286",
+          "url": "https://clerk.house.gov/evs/2026/roll286.xml",
+          "raw_sha256": "65aec5da8a8d26f236942d55358ddf798e6e0c5ead81bf9c31f723db86db651a",
+          "governed_bytes_sha256": "dd937bdc17f4cbb5753729496469e5dda26a566f5d557fa76a0c9d3448a146b6"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "historical_raw_hash_matches": true,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      }
+    }
+  },
+  "new_core_sha256": {
+    "house:119:2:272": "cae6a7f88ce73e7592793a192d54430a582eec03c870ba38cfb58c9adccabbb7",
+    "house:119:2:286": "5b4fdff617af1c4333b40a2b2be1b4be59a6737de80406b657072b79468aea00"
+  },
+  "original_Health_core_sha256": {
+    "house:119:2:272": "8a916feb12bbb560554a96a430bdb1c1d42c891ca488c2cc33b70d70606177a7",
+    "house:119:2:286": "4b4ea21ff70d0ece014b386d8e4266545b4dc4ed3b18d88f62c4eb81e5b8cdff"
+  },
+  "initial_private_draft": {
+    "started_utc": "2026-10-15T14:50:16.297022+00:00",
+    "completed_utc": "2026-10-15T14:50:17.289270+00:00",
+    "elapsed_seconds": 0.9923309999867342,
+    "source_imports": [
+      "govinfo:pl119-74-cr-baseline",
+      "govinfo:pl119-75-cr-baseline",
+      "govinfo:42usc603-2024-pandemic-exception",
+      "govinfo:42usc618-2024-childcare",
+      "govinfo:pl117-43-wildfire1701",
+      "congressional-record:2026-07-21-bank-cr"
+    ],
+    "new_derived_sources": [
+      "govinfo:8usc1101a27C-2024-cr235"
+    ],
+    "fresh_acquisitions": 0,
+    "preserved_raw_parent_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+    "new_selected_read_extent": [
+      32855,
+      34265
+    ],
+    "new_selected_read_parent_length": 353001,
+    "whole_parent_new_read": false,
+    "canonical_changes": false,
+    "completion_credit": 0,
+    "original_Health_cores": {
+      "house:119:2:272": "8a916feb12bbb560554a96a430bdb1c1d42c891ca488c2cc33b70d70606177a7",
+      "house:119:2:286": "4b4ea21ff70d0ece014b386d8e4266545b4dc4ed3b18d88f62c4eb81e5b8cdff"
+    },
+    "candidate_cores": {
+      "house:119:2:272": "3d44881fdf9d611b4e899e8cd81c0713a1ee854ee9b2fb6323a210faa5d9692a",
+      "house:119:2:286": "7e5870785499786f6785beb7bfac632bc92f8821e531cc156efb0ef4aae5cb0e"
+    },
+    "material_reading": "Reuse prior196/197wholebills/floor,232wholeDHS and348reads; fresh literal101-112,2013-2019,537-538and781/27Cchecks. Broader private234CRinspection preserved; no exclusive action timer.",
+    "annual_table_individual_legal_applications_reserved": true,
+    "independent_review_pending": true,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "e039dffe19f9c2be82ea6451e084224a2023e9f641b2ec9e9cd100ecc92030bb"
+  },
+  "pre_gate_refinement": {
+    "started_utc": "2026-10-15T15:04:08.279120+00:00",
+    "completed_utc": "2026-10-15T15:04:08.378211+00:00",
+    "elapsed_seconds": 0.09909689996857196,
+    "pre_gate_precision": [
+      {
+        "before": "the matching FinalBill table columns",
+        "after": "the corresponding amounts in the specified FinalBill column entries"
+      },
+      {
+        "before": "USCIS Operations and Support's122.941million E-Verify reference",
+        "after": "USCIS Operations and Support's122.941million annual baseline INCLUDING E-Verify, not a122.941million earmark solely for E-Verify"
+      }
+    ],
+    "reason": "Owner direct-source review: USCIS annual O&S baseline includes E-Verify, not sole programme earmark; preliminary4zeroes corresponding table entries, not entire FinalBill columns. No private draft accepted or canonically applied.",
+    "provider_version": "v30",
+    "provider_version_reason": "Fresh Ukraine234successor now uses v29; private CRv29draft remains historical, prospective235provider uses distinctv30.",
+    "prior_candidate_cores": {
+      "house:119:2:272": "3d44881fdf9d611b4e899e8cd81c0713a1ee854ee9b2fb6323a210faa5d9692a",
+      "house:119:2:286": "7e5870785499786f6785beb7bfac632bc92f8821e531cc156efb0ef4aae5cb0e"
+    },
+    "new_candidate_cores": {
+      "house:119:2:272": "cae6a7f88ce73e7592793a192d54430a582eec03c870ba38cfb58c9adccabbb7",
+      "house:119:2:286": "5b4fdff617af1c4333b40a2b2be1b4be59a6737de80406b657072b79468aea00"
+    },
+    "original_authoring_receipt_sha256": "e039dffe19f9c2be82ea6451e084224a2023e9f641b2ec9e9cd100ecc92030bb",
+    "prior_failed_parent_hash_assertion": {
+      "command_wall_seconds": 0.7746942,
+      "reason": "Preserved226captured_full_text_sha256 is UTF8text hash, not canonical JSON-string digest; both recipes now recorded separately. Exact raw parent unchanged, no source conflict."
+    },
+    "canonical_changes": false,
+    "completion_credit": 0,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "2967acf9f8a4eeb2eb3386c0c477ea0549374c1a8e4daa62039fef1726b83027"
+  },
+  "source_imports": [
+    {
+      "source_id": "govinfo:pl119-74-cr-baseline",
+      "registration_type": "unchanged_governed_Health_source_reuse",
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "raw_sha256": "817c5dedc636cf63f2c3b162d8971fd890cd1984a8591a2455b20a9a0afa81e2",
+      "governed_bytes_sha256": "f22a527c22bd6416de12fadc19f65990596ac75b0e930f9660a8d13d90dc27f3",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ74/html/PLAW-119publ74.htm",
+      "text_version": "PL119-74DivisionC;complete IHSservices,contract support,tribal leases,facilities and administration headings;existing FY2027advances remain distinct",
+      "text_sha256": "f1c4aa640a42a8c10425b085589a47b7a8a27ab400fff7dbb4fd055cef95b5ea",
+      "text_length": 15731,
+      "fresh_acquisition": false,
+      "whole_parent_fresh_owner_read": false,
+      "registration_scope": "Preserved original Health witness with existing read limits",
+      "registered_utc": "2026-10-15T15:15:47.160209+00:00",
+      "candidate_only": true
+    },
+    {
+      "source_id": "govinfo:pl119-75-cr-baseline",
+      "registration_type": "unchanged_governed_Health_source_reuse",
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+      "governed_bytes_sha256": "a8a1684e77dd53f12f332bf197e7f872d4e7afc27dfbb3f13fef52f170379694",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+      "text_version": "PL119-75;bounded complete material HRSA/CMS,LHHS506-510,CDFI,747political pay and6304TANF extents;not full-law review",
+      "text_sha256": "0ad72dfb8984807da4db0ec00d475ffad0149d23fdfdd21c2efa0949defa102e",
+      "text_length": 36427,
+      "fresh_acquisition": false,
+      "whole_parent_fresh_owner_read": false,
+      "registration_scope": "Preserved original Health witness with existing read limits",
+      "registered_utc": "2026-10-15T15:15:47.160574+00:00",
+      "candidate_only": true
+    },
+    {
+      "source_id": "govinfo:42usc603-2024-pandemic-exception",
+      "registration_type": "unchanged_governed_Health_source_reuse",
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "raw_sha256": "e43c374b1f15ef610c5cf253c5dc2b49f3904058020f736b2aad4ea61d57562f",
+      "governed_bytes_sha256": "10b016c060c2a49a9a4245af46970dabf9ce16e2b1eaa3d560cb4e8e0e3f2ac8",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapIV-partA-sec603.htm",
+      "text_version": "2024Code;complete403(c)pandemic emergency assistance;ordinary contingency fund is403(b)",
+      "text_sha256": "cb1fa7f3c75cc7346dfeb843a0bd361abfcb889fce2bcb3b54adff4051aab7f0",
+      "text_length": 5470,
+      "fresh_acquisition": false,
+      "whole_parent_fresh_owner_read": false,
+      "registration_scope": "Preserved original Health witness with existing read limits",
+      "registered_utc": "2026-10-15T15:15:47.160802+00:00",
+      "candidate_only": true
+    },
+    {
+      "source_id": "govinfo:42usc618-2024-childcare",
+      "registration_type": "unchanged_governed_Health_source_reuse",
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "raw_sha256": "27f6270c531232385fba44a39612edf68e4be267c80e59bf94f7e1f04ad1e0c2",
+      "governed_bytes_sha256": "0d6afa799ada724c9c79edc6def657b764ae1add429ae69802cd7b5ec9382c67",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapIV-partA-sec618.htm",
+      "text_version": "2024Code;complete operative418childcare appropriation/use terms;not repealed by CRexception",
+      "text_sha256": "cf7a709b7f9612c4559e867937ea64f16c2d99da0b1ebcb4ab0a90d46f4eff9f",
+      "text_length": 7510,
+      "fresh_acquisition": false,
+      "whole_parent_fresh_owner_read": false,
+      "registration_scope": "Preserved original Health witness with existing read limits",
+      "registered_utc": "2026-10-15T15:15:47.161028+00:00",
+      "candidate_only": true
+    },
+    {
+      "source_id": "govinfo:pl117-43-wildfire1701",
+      "registration_type": "unchanged_governed_Health_source_reuse",
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "raw_sha256": "b0b404f97be512a0910f0a360c51e6ac3d3f08d5df8bcd297a6e012e8f68539a",
+      "governed_bytes_sha256": "0e8a6feb42a9c10a9b5572a63b308e1b5f7ba02233a2d9ac0f41ceccf9bd3216",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ43/html/PLAW-117publ43.htm",
+      "text_version": "PL117-43DivisionBTitleVIIcomplete1701wildland-firefighter premium pay;not refugee eligibility",
+      "text_sha256": "da19fe2200877a2acfff7c6430b62103ffde3776f1ae3cba9916f3068ec85315",
+      "text_length": 4795,
+      "fresh_acquisition": false,
+      "whole_parent_fresh_owner_read": false,
+      "registration_scope": "Preserved original Health witness with existing read limits",
+      "registered_utc": "2026-10-15T15:15:47.161225+00:00",
+      "candidate_only": true
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-bank-cr",
+      "registration_type": "unchanged_governed_Health_source_reuse",
+      "source_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+      "governed_bytes_sha256": "1049611d5e769c13e7a0c284eb09faddd0fc5548c2b44fa82e1de472c0ad52e0",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+      "text_version": "July21House;actual barebankrecommit versus inserted instructions and competing CRarguments;bounded pages",
+      "text_sha256": "7b2d2ced42c1df1b38e6c50c71868e3cbe9fcc3c560d6700aa76a384df3af28d",
+      "text_length": 26939,
+      "fresh_acquisition": false,
+      "whole_parent_fresh_owner_read": false,
+      "registration_scope": "Preserved original Health witness with existing read limits",
+      "registered_utc": "2026-10-15T15:15:47.161526+00:00",
+      "candidate_only": true
+    },
+    {
+      "source_id": "govinfo:8usc1101a27C-2024-cr235",
+      "registration_type": "new_selected_derivation_from_preserved226raw_parent",
+      "source_artifact_ref": ".tmp/8usc1101-cg-original226.response",
+      "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+      "governed_bytes_sha256": "67fa720c252d9cf6571cae2dc0bd6015712ebc675ee3d97328d30a37f5ddeb37",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+      "text_version": "2024Code literal27intro/A/B/C through beforeD; complete religious-worker predicates, spouses/children and printed2015date. PL11975literal5015 supplies2026application; no whole353001character parent reading or present-law certificate.",
+      "text_sha256": "dd5bfcb7e846430a787181f00f919eada66083acfe6e1c0e12bda7ebf3ecdb6f",
+      "text_length": 1410,
+      "fresh_acquisition": false,
+      "whole_parent_fresh_owner_read": false,
+      "registration_scope": "Exact353001characterpreserved226parent identity; selected27intro/A/B/Cinterval32855:34265read, remaining parent not whole-owner-read",
+      "registered_utc": "2026-10-15T15:15:47.161714+00:00",
+      "candidate_only": true
+    }
+  ],
+  "fresh_acquisitions": 0,
+  "counts": {
+    "reviewed": 653,
+    "pending": 23,
+    "cores": 77,
+    "behavioral_propositions": 130,
+    "episodes": 67,
+    "multi_action_episodes": 9
+  },
+  "candidate_screening_recorded": true,
+  "ordinary_routine_sample_count": 0,
+  "benchmarkFAILretained": true,
+  "legal_applications_unresolved": [
+    "Fiscal2026programme dates and cap predicates not automatically reset to2027orDecember11",
+    "DivisionA-only versus wholeAct-minusB preliminaries/table integration; complete table-allocation certificate not claimed",
+    "Individual eligibility, fees, current INA/J/nonminister/EVerify applications and underlying agency-law integration",
+    "No all-appropriation/recipient or live regulatory inventory, delivery or enactment findings"
+  ],
+  "independent235source_domain_review_pending": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "e415cab412c4a9ea55136691c0bcb7834c8b1d116ffd9931ad689ccb0e0b1359"
+}

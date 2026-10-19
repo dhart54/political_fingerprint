@@ -1,0 +1,352 @@
+{
+  "head": "03e469301b73397eeba922278b6e7777975d6ed3",
+  "run": 37704760438,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37704760438",
+  "run_attempt": 2,
+  "jobs": [
+    {
+      "job_id": 113078494578,
+      "attempt_actually_executed": 2,
+      "attempt2_status_job_id": 113078494578,
+      "name": "receipt-evidence-repair-postgres",
+      "conclusion": "success",
+      "started_at": "2026-10-08T00:00:37Z",
+      "completed_at": "2026-10-08T00:06:42Z",
+      "checkout_log_shas": [
+        "7be4c80",
+        "7be4c803e607b49eb63785dc6b606fbd9751a9ac",
+        "03e4693",
+        "03e469301b73397eeba922278b6e7777975d6ed3",
+        "03e4693",
+        "03e469301b73397eeba922278b6e7777975d6ed3"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "6 passed in 1.66s",
+        "38 passed, 1 warning in 133.48s (0:02:13)",
+        "13 passed in 133.11s (0:02:13)",
+        "20 passed in 37.01s"
+      ],
+      "log_bytes": 137224,
+      "log_sha256": "ded1ccf21527432af838fde4a681a2083898ffce947b765e074a0ddb5c43b4d0"
+    },
+    {
+      "job_id": 113076361901,
+      "attempt_actually_executed": 1,
+      "attempt2_status_job_id": 113078495946,
+      "name": "m14d-exact-head",
+      "conclusion": "success",
+      "started_at": "2026-10-07T23:53:12Z",
+      "completed_at": "2026-10-07T23:53:40Z",
+      "checkout_log_shas": [
+        "03e4693",
+        "03e469301b73397eeba922278b6e7777975d6ed3"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "18 passed, 34 subtests passed in 0.70s"
+      ],
+      "log_bytes": 42741,
+      "log_sha256": "373632613466275231d3549af69a3c5fba99fba3d719f6751618ef5ca4b31ae7"
+    },
+    {
+      "job_id": 113076361867,
+      "attempt_actually_executed": 1,
+      "attempt2_status_job_id": 113078496397,
+      "name": "m14e-exact-head",
+      "conclusion": "success",
+      "started_at": "2026-10-07T23:53:12Z",
+      "completed_at": "2026-10-07T23:53:48Z",
+      "checkout_log_shas": [
+        "03e4693",
+        "03e469301b73397eeba922278b6e7777975d6ed3"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "22 passed, 55 subtests passed in 0.35s"
+      ],
+      "log_bytes": 43830,
+      "log_sha256": "cd70898948165ba39988c6961302136ff7f7000c676a3bc282f2a6b59315496e"
+    },
+    {
+      "job_id": 113076361997,
+      "attempt_actually_executed": 1,
+      "attempt2_status_job_id": 113078496505,
+      "name": "amendment-evidence-contracts",
+      "conclusion": "success",
+      "started_at": "2026-10-07T23:53:12Z",
+      "completed_at": "2026-10-07T23:53:47Z",
+      "checkout_log_shas": [
+        "7be4c80",
+        "7be4c803e607b49eb63785dc6b606fbd9751a9ac"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "============================== 87 passed in 0.82s =============================="
+      ],
+      "log_bytes": 26825,
+      "log_sha256": "4e7c358292f41f61018db7b443ce93e35d4784580909ab61eb964bf770a96d20"
+    },
+    {
+      "job_id": 113076361980,
+      "attempt_actually_executed": 1,
+      "attempt2_status_job_id": 113078523606,
+      "name": "foushee-full-record-benchmark",
+      "conclusion": "success",
+      "started_at": "2026-10-07T23:53:12Z",
+      "completed_at": "2026-10-07T23:57:29Z",
+      "checkout_log_shas": [
+        "7be4c80",
+        "7be4c803e607b49eb63785dc6b606fbd9751a9ac"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "15 passed in 0.61s",
+        "19 passed in 1.25s",
+        "27 passed in 2.70s",
+        "639 passed, 1 warning in 79.53s (0:01:19)"
+      ],
+      "log_bytes": 1504369,
+      "log_sha256": "8c5fecdbb8a8aa8024a8049047a380a12fb6d094a2a067ecc9763ecbcbb8e38c"
+    },
+    {
+      "job_id": 113076361593,
+      "attempt_actually_executed": 1,
+      "attempt2_status_job_id": 113078528482,
+      "name": "m14g-exact-head",
+      "conclusion": "success",
+      "started_at": "2026-10-07T23:53:12Z",
+      "completed_at": "2026-10-07T23:53:57Z",
+      "checkout_log_shas": [
+        "03e4693",
+        "03e469301b73397eeba922278b6e7777975d6ed3"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "15 passed, 1 warning in 0.80s",
+        "10 passed in 0.50s",
+        "3 passed in 0.55s",
+        "96 passed in 2.88s"
+      ],
+      "log_bytes": 60454,
+      "log_sha256": "57da92b664bf7fcd7bae071dd8916d8bb68177ee9ec4a582f112f6398870fed3"
+    },
+    {
+      "job_id": 113076361824,
+      "attempt_actually_executed": 1,
+      "attempt2_status_job_id": 113078533088,
+      "name": "m14f-exact-head",
+      "conclusion": "success",
+      "started_at": "2026-10-07T23:53:12Z",
+      "completed_at": "2026-10-07T23:53:38Z",
+      "checkout_log_shas": [
+        "03e4693",
+        "03e469301b73397eeba922278b6e7777975d6ed3"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "29 passed, 40 subtests passed in 0.41s"
+      ],
+      "log_bytes": 43673,
+      "log_sha256": "2d30eb33f66c8436cb1944a06bf4e4961da24a4687d1aba0ca22d112095ca989"
+    },
+    {
+      "job_id": 113076361913,
+      "attempt_actually_executed": 1,
+      "attempt2_status_job_id": 113078540104,
+      "name": "publication-activation-postgres",
+      "conclusion": "success",
+      "started_at": "2026-10-07T23:53:12Z",
+      "completed_at": "2026-10-07T23:55:19Z",
+      "checkout_log_shas": [
+        "7be4c80",
+        "7be4c803e607b49eb63785dc6b606fbd9751a9ac"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "23 passed, 1 warning in 16.04s",
+        "58 passed, 1 warning in 3.82s",
+        "1 passed in 1.62s",
+        "1 passed, 1 warning in 3.42s",
+        "1 passed in 3.09s",
+        "2 passed in 3.00s",
+        "14 passed in 1.67s"
+      ],
+      "log_bytes": 180024,
+      "log_sha256": "38709d2a3c4098ed8491b976ee0d7e20726f9737a0d72221d9834889a483795e"
+    },
+    {
+      "job_id": 113076361914,
+      "attempt_actually_executed": 1,
+      "attempt2_status_job_id": 113078540389,
+      "name": "m14h-exact-head",
+      "conclusion": "success",
+      "started_at": "2026-10-07T23:53:12Z",
+      "completed_at": "2026-10-07T23:59:27Z",
+      "checkout_log_shas": [
+        "03e4693",
+        "03e469301b73397eeba922278b6e7777975d6ed3"
+      ],
+      "unittest_counts": [],
+      "pytest_counts": [
+        "95 passed, 1 warning in 2.52s",
+        "282 passed in 91.44s (0:01:31)",
+        "1 passed in 3.75s",
+        "74 passed, 1 warning in 1.74s",
+        "  2 passed (12.5s)",
+        "  23 passed (17.3s)",
+        "15 passed in 0.20s",
+        "  1 passed (7.2s)",
+        "25 passed in 3.37s"
+      ],
+      "log_bytes": 140078,
+      "log_sha256": "e60ff6cd71a528bcea6cbdc0b595c31f39ae544d79b057ca41e04d106bcd9a96"
+    }
+  ],
+  "initial_attempt": {
+    "conclusion": "failure",
+    "successful_jobs": 8,
+    "failed_job": 113076362064,
+    "failure_evidence": {
+      "checkpoint": 111,
+      "head": "03e469301b73397eeba922278b6e7777975d6ed3",
+      "run": 37704760438,
+      "attempt": 1,
+      "job_id": 113076362064,
+      "job_name": "receipt-evidence-repair-postgres",
+      "job_conclusion": "failure",
+      "raw_log_sha256": "a5bb084e509b4cd8265fb3c77f09887156e8a57622af4fde74f5152d6249a0e8",
+      "raw_log_bytes": 76747,
+      "failed_step": {
+        "name": "Prove normalized storage at actual production cardinality",
+        "status": "completed",
+        "conclusion": "failure",
+        "number": 9,
+        "started_at": "2026-10-07T23:55:41Z",
+        "completed_at": "2026-10-07T23:56:12Z"
+      },
+      "skipped_step": {
+        "name": "Prove actual green M15B persistence and owned V2R lifecycle",
+        "status": "completed",
+        "conclusion": "skipped",
+        "number": 10,
+        "started_at": "2026-10-07T23:56:12Z",
+        "completed_at": "2026-10-07T23:56:12Z"
+      },
+      "evidence": [
+        {
+          "line": 122,
+          "text": "2026-10-07T23:53:27.4391544Z ##[command]/usr/bin/docker create --name d76ac45fbe52485992a716c3d41b1b86_postgres16_6be9dc --label 5a2f8e --network github_network_0e30b745f690444ab6da41cf190ddd5e --network-alias postgres -p 5432:5432 --health-cmd \"pg_isready -U postgres\" --health-interval 5s --health-timeout 5s --health-retries 10 -e \"POSTGRES_PASSWORD=postgres\" -e GITHUB_ACTIONS=true -e CI=true postgres:16"
+        },
+        {
+          "line": 377,
+          "text": "2026-10-07T23:53:50.0776129Z HEAD is now at 7be4c80 Merge 03e469301b73397eeba922278b6e7777975d6ed3 into 7a8c6ee11a899ea6912a4d37588917fcd0de0a24"
+        },
+        {
+          "line": 518,
+          "text": "2026-10-07T23:54:00.5442195Z 6 passed in 2.41s"
+        },
+        {
+          "line": 561,
+          "text": "2026-10-07T23:55:41.2035293Z 38 passed, 1 warning in 99.67s (0:01:39)"
+        },
+        {
+          "line": 562,
+          "text": "2026-10-07T23:55:41.2728249Z ##[group]Run git checkout --detach \"03e469301b73397eeba922278b6e7777975d6ed3\""
+        },
+        {
+          "line": 563,
+          "text": "2026-10-07T23:55:41.2728695Z \u001b[36;1mgit checkout --detach \"03e469301b73397eeba922278b6e7777975d6ed3\"\u001b[0m"
+        },
+        {
+          "line": 579,
+          "text": "2026-10-07T23:55:41.2736957Z \u001b[36;1mcontainer=\"$(docker run --detach --rm --publish 127.0.0.1:55432:5432 --env POSTGRES_PASSWORD=postgres postgres:17)\"\u001b[0m"
+        },
+        {
+          "line": 582,
+          "text": "2026-10-07T23:55:41.2737923Z \u001b[36;1m  if docker exec \"$container\" pg_isready -U postgres; then break; fi\u001b[0m"
+        },
+        {
+          "line": 585,
+          "text": "2026-10-07T23:55:41.2738580Z \u001b[36;1mdocker exec \"$container\" pg_isready -U postgres\u001b[0m"
+        },
+        {
+          "line": 600,
+          "text": "2026-10-07T23:55:41.3510200Z Previous HEAD position was 7be4c80 Merge 03e469301b73397eeba922278b6e7777975d6ed3 into 7a8c6ee11a899ea6912a4d37588917fcd0de0a24"
+        },
+        {
+          "line": 601,
+          "text": "2026-10-07T23:55:41.3514132Z HEAD is now at 03e4693 Bind qualified regional center context and shared current authorization"
+        },
+        {
+          "line": 602,
+          "text": "2026-10-07T23:55:41.3531198Z 03e469301b73397eeba922278b6e7777975d6ed3"
+        },
+        {
+          "line": 657,
+          "text": "2026-10-07T23:55:52.7151006Z Unable to find image 'postgres:17' locally"
+        },
+        {
+          "line": 720,
+          "text": "2026-10-07T23:56:00.4192053Z Status: Downloaded newer image for postgres:17"
+        },
+        {
+          "line": 721,
+          "text": "2026-10-07T23:56:00.5829978Z /var/run/postgresql:5432 - no response"
+        },
+        {
+          "line": 722,
+          "text": "2026-10-07T23:56:01.6466175Z /var/run/postgresql:5432 - accepting connections"
+        },
+        {
+          "line": 723,
+          "text": "2026-10-07T23:56:01.7076546Z /var/run/postgresql:5432 - no response"
+        },
+        {
+          "line": 724,
+          "text": "2026-10-07T23:56:12.3734047Z ##[error]Process completed with exit code 2."
+        }
+      ],
+      "run_status_at_preservation": "completed",
+      "run_conclusion_at_preservation": "failure",
+      "retry_requested": false,
+      "classification": "Pending owner comparison of disposable readiness evidence; no demonstrated candidate assertion failure or semantic acceptance."
+    },
+    "raw_log_sha256": "a5bb084e509b4cd8265fb3c77f09887156e8a57622af4fde74f5152d6249a0e8"
+  },
+  "single_job_retry": {
+    "retry_job": 113078494578,
+    "conclusion": "success",
+    "request": {
+      "run": 37704760438,
+      "head": "03e469301b73397eeba922278b6e7777975d6ed3",
+      "requested_at_utc": "2026-10-08T00:00:34.206590+00:00",
+      "original_failed_job": 113076362064,
+      "command": "gh run rerun 37704760438 --job 113076362064",
+      "requested_once": true,
+      "successful_jobs_not_requested_for_rerun": true,
+      "authorization": "Explicit source-thread instruction to inspect/preserve and narrowly retry confirmed transient disposable startup condition; existing routine candidate validation authority.",
+      "evidence_ref": ".tmp/ci_checkpoint111_initial_failure/failure_receipt.json",
+      "raw_log_sha256": "a5bb084e509b4cd8265fb3c77f09887156e8a57622af4fde74f5152d6249a0e8",
+      "classification": "Confirmed Unix-socket pg_isready accepting followed 61ms later by no-response, final exit2 before normalization test invocation; disposable postgres17 startup instability, not demonstrated candidate assertion failure.",
+      "retry_result": "requested_only; execution/completion still pending",
+      "production_or_workflow_configuration_changed": false
+    },
+    "successful_jobs_not_reexecuted": true,
+    "carried_successful_job_execution_timestamps_and_steps_match": true
+  },
+  "checkout_contexts": {
+    "feature_pinned_jobs": 5,
+    "synthetic_merge_jobs": 3,
+    "mixed_repair_jobs": 1
+  },
+  "synthetic_merge_sha": "7be4c803e607b49eb63785dc6b606fbd9751a9ac",
+  "owner_focused_tests": "153 focused tests in 13.067 seconds at111; distinct from hosted aggregate282",
+  "scope": "Eight original successful executions plus one successful narrowly authorized retry. Original failed startup and skipped lifecycle remain preserved. Default synthetic and mixed jobs are not feature-only. No workflow/production change.",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "checkpoint": 111,
+  "receipt_sha256": "274c0d6b8a575bd44a34679e25e887d54d5977e93bc29b9656568da0ed4d0037"
+}

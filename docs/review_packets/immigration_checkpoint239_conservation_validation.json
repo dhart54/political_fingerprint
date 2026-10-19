@@ -1,0 +1,1105 @@
+{
+  "checkpoint": 239,
+  "base_head": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+  "receipt_completed_utc": "2026-10-15T19:38:59.085933+00:00",
+  "counts": {
+    "reviewed": 662,
+    "pending": 14,
+    "cores": 83,
+    "behavioral_propositions": 141,
+    "episodes": 73,
+    "multi_action_episodes": 9
+  },
+  "completed_screening_action_ids": [
+    "house:119:2:218",
+    "house:119:2:283",
+    "house:119:1:151"
+  ],
+  "complex_screening_actions_completed": 3,
+  "ordinary_routine_samples": 0,
+  "P3_semantic_repairs_this_batch": 0,
+  "qualification_receipt_sha256": "e2562911bed6c74d902bef2d76bd18d16a05af80be02632b81bad7f05d48fe5c",
+  "functional_receipt_sha256": "6d5ccdbf7944c864280153fb3bcf9fadcd135d4115f6127ae93985579100e5e6",
+  "validation": {
+    "required_final_fixed_input_gate": {
+      "started_utc": "2026-10-15T19:24:41.801465+00:00",
+      "completed_utc": "2026-10-15T19:37:55.093763+00:00",
+      "wall_seconds": 793.2924992000335,
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-15T19:24:41.802022+00:00",
+          "PID": 12236,
+          "completed_utc": "2026-10-15T19:37:55.087300+00:00",
+          "elapsed_seconds": 793.2854967999738,
+          "exit_code": 0,
+          "log": ".tmp/full_gate239/owner.log",
+          "log_sha256": "93616a9890ed9e26e79595f850f70f3dc6c7b7005cea14b7dd80253ee4f2b53e"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-15T19:24:41.802203+00:00",
+          "PID": 23364,
+          "completed_utc": "2026-10-15T19:24:43.884749+00:00",
+          "elapsed_seconds": 2.0825558000360616,
+          "exit_code": 0,
+          "log": ".tmp/full_gate239/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-15T19:24:41.802336+00:00",
+          "PID": 24444,
+          "completed_utc": "2026-10-15T19:24:41.895188+00:00",
+          "elapsed_seconds": 0.09285620000446215,
+          "exit_code": 0,
+          "log": ".tmp/full_gate239/IR.log",
+          "log_sha256": "cafd6f4655219188fe47594aca80de26a32ea4f9150d00f5b827cbf58da198e3"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate239\\replay"
+          ],
+          "started_utc": "2026-10-15T19:24:41.802785+00:00",
+          "PID": 16004,
+          "completed_utc": "2026-10-15T19:27:07.787617+00:00",
+          "elapsed_seconds": 145.98488840000937,
+          "exit_code": 0,
+          "log": ".tmp/full_gate239/replay.log",
+          "log_sha256": "9cc26b30664eb48acccef1a944814c1b44e7b4c910a2db7b6d363eadacd37ca9",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "d386fdff5c9d832ddc94aa6fd408400df9bc1d4f6c9b03d1e67987f9d2e5520c",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "840c090a37f3befc8ea6894c4693feffbad21ab9522cd9ee64e8a73c522cfe5f",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "812272a32bf56d9b302a9db39dd60ba7577d0004374c0fc29b871885d0ab4b87",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "30b97993576be7aa6cc35bc86fa956c7cfd610bfedc558b979f4c74bed076738",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "532af66c252cddba75a38e3a1639026f77830f1c0f107d04761559095f338776",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "0af066e10ba1b024586b3f40228d8c0535a7e52a0b4c898ae6a8b817dab50515",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "323b3791ed44acd30b3e40b9dd18685b6744c1680cf382e7ec6817afecb30306",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "65f9ad486209a2204db0d23808a6af3f1e0d5d1517ff47abba9379ffa0735893",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "ed8739cbe66053afb5ec5ebed542a5c46df2646fb25825dd76d25a717781c890",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "1c16385f3b03a188c770541b4e9cb76743febbaf5f2b4ae742470018a697f427",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "04aace98d45d3950bccdf00685716d71272289dba589d7c41937ce29e2620a82",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "b3829c3df3b1ef029e08885c1c616de6537973117a4de4ef99a72da5f45957a9",
+        "backend/tests/test_immigration_shared_candidate.py": "49a8268d4da63d9ceac0fef45e4a2639120332f4169c702b56457f69904dea8c",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "a3bb6fb91e3e86765c4c341c0c82c3e60170808ed1d787e61673535cae939cc7",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/personnel_benefits_qualification_checkpoint239.json": "6889bebc516b9f995c203f0d87dc630b011bc510ed67ec6da8e03304525bc63e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/support_functional_qualification_checkpoint239.json": "794ea2f6642136e41ea0992b7fc305a7a6ecb2bb3369cccdd7881d3dcf2a748e",
+        "docs/editorial/shared_candidates/house_119_benefits_qualification_checkpoint239/shared_action_core_proposal.json": "9810b3bd0a10bf287521da67206ec6ddd16966d2724b3903d576aad9e8acdc53",
+        "docs/editorial/shared_candidates/house_119_benefits_qualification_checkpoint239/README.md": "0ead9515163fd0ce82fa6dd5e01f4bc5ebb8c00ffbe1669fbf98a1b997344730",
+        "docs/plans/immigration_checkpoint239_remaining.md": "587e338ec9e7bda94f4ab65eaf037282cbcabba863c2d03034ae7c7ba577fdb6"
+      },
+      "input_hashes_unchanged": true
+    },
+    "owner_tests": 458,
+    "Immigration_tests": 281,
+    "semantic_checks": 7,
+    "IR_passed": true,
+    "actual_CLI_outputs_byte_exact": 7,
+    "completed_full_gate_attempts_this_batch": 1,
+    "passed_final_gates_this_batch": 1,
+    "interrupted_or_failed_full_gates_this_batch": 0,
+    "focused": {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate.Checkpoint239PersonnelBenefitsAndSupportTests",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_wilson252_two_day_sequence_and_four_open_cases_are_preserved",
+        "backend.tests.test_immigration_shared_candidate.Checkpoint232SourceRelationshipAndScreeningTests.test_new_material_evidence_does_not_release_unresolved_legal_or_programme_holds"
+      ],
+      "started_utc": "2026-10-15T19:23:11.046672+00:00",
+      "completed_utc": "2026-10-15T19:23:35.644605+00:00",
+      "elapsed_seconds": 24.59794599999441,
+      "exit_code": 0
+    },
+    "private_preflight": {
+      "started_utc": "2026-10-15T19:18:41.767065+00:00",
+      "completed_utc": "2026-10-15T19:18:45.341101+00:00",
+      "elapsed_seconds": 3.5740414999891073,
+      "private_two_action_preparation_pass": true,
+      "private_functional_membership_guard_pass": true,
+      "source_claim_bindings": 107,
+      "original_Health283identity_prefix_bindings_witnesses_limits_preserved": true,
+      "negative_probes": [
+        {
+          "action_id": "house:119:2:218",
+          "source_id": "govinfo:5usc3161-b-i-2024-194",
+          "before": "excepted service",
+          "corruption": "competitive service",
+          "error": "claim passage absent from bound source: house:119:2:218"
+        },
+        {
+          "action_id": "house:119:2:218",
+          "source_id": "govinfo:ig218-3346-complete-display-239",
+          "before": "210 days",
+          "corruption": "910 days",
+          "error": "claim passage absent from bound source: house:119:2:218"
+        },
+        {
+          "action_id": "house:119:2:218",
+          "source_id": "govinfo:ig218-6329b-complete-display-239",
+          "before": "or (iv)",
+          "corruption": "and (iv)",
+          "error": "claim passage absent from bound source: house:119:2:218"
+        },
+        {
+          "action_id": "house:119:2:218",
+          "source_id": "govinfo:ig218-5203de-239",
+          "before": "30 \n                days",
+          "corruption": "90 \n                days",
+          "error": "claim passage absent from bound source: house:119:2:218"
+        },
+        {
+          "action_id": "house:119:2:283",
+          "source_id": "govinfo:hr8884eh",
+          "before": "December 31, 2030",
+          "corruption": "December 31, 2040",
+          "error": "claim passage absent from bound source: house:119:2:283"
+        },
+        {
+          "action_id": "house:119:2:283",
+          "source_id": "govinfo:42usc402y-2024-alien-nonpayment232",
+          "before": "Notwithstanding any other provision of law",
+          "corruption": "Subject to any other provision of law",
+          "error": "claim passage absent from bound source: house:119:2:283"
+        },
+        {
+          "action_id": "house:119:2:283",
+          "source_id": "govinfo:8usc1611-2024-complete",
+          "before": "lawfully present",
+          "corruption": "unconditionally eligible",
+          "error": "claim passage absent from bound source: house:119:2:283"
+        },
+        {
+          "action_id": "house:119:1:151",
+          "source_id": "govinfo:42usc295h-complete190",
+          "before": "migrant health center",
+          "corruption": "personal immigration-status certification",
+          "error": "membership claim absent from bound source",
+          "all_structural_digests_resealed": true
+        },
+        {
+          "action_id": "house:119:1:151",
+          "source_id": "govinfo:pl115271-sec8071-complete190",
+          "before": "2 percent",
+          "corruption": "20 percent",
+          "error": "membership claim absent from bound source",
+          "all_structural_digests_resealed": true
+        }
+      ],
+      "canonical_unchanged": true,
+      "candidate_credit": 0,
+      "structural_checks_not_semantic_acceptance": true,
+      "receipt_sha256": "34336d02960da552d0194cd2e954b6eb36769a2aa6dc23b150e75c610dd9421f"
+    },
+    "source_semantic_truth_not_established_by_structural_checks": true,
+    "scope": "Candidate semantic loop; no runtime/frontend/database/persistence/publication change."
+  },
+  "conservation": {
+    "checkpoint": 239,
+    "base_head": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+    "checked_utc": "2026-10-15T19:24:02.336375+00:00",
+    "all81prior_cores_and_authoring_exact": true,
+    "all659prior_reviews_exact": true,
+    "all673unaffected_inventory_rows_exact": true,
+    "all137prior_behavioral_propositions_exact": true,
+    "all162prior_official_observations_and_member_projections_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "new_selected_source_appends": 23,
+    "all_prior_audit_rows_exact": true,
+    "all_Health_historical_providers_receipts_inherited_P3s_and_withdrawals_exact": true,
+    "all_other_pending_reserved_holds_and_unrelated_notes_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3643,
+    "frozen_private_notes_exact": 832,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 662,
+      "pending": 14,
+      "cores": 83,
+      "behavioral_propositions": 141,
+      "episodes": 73,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 6.99670249997871,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "010f782e3a36fe1ace6e3e5206b74f6c085fb4729423d91b098e722dd97e074a"
+  },
+  "snapshot_receipt_sha256": "4baf00524383268cbb0207c18f75419497b2f94f34a19f136e69b86a632ae21c",
+  "prior238_CI": {
+    "head": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+    "run": 38791865929,
+    "all10jobs_and4late_stages_passed": true,
+    "contexts": {
+      "feature": 5,
+      "synthetic": 4,
+      "mixed": 1
+    },
+    "synthetic": "158ec92460cabf563b125ae405753dffb64aaa1b",
+    "ordered_parents": [
+      "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "a327f4ccd6f5d95ea12331bb91a8606382a59e50"
+    ],
+    "receipt_sha256": "73640bb33bcfca99437ffb11c71ea4b81fdf277fb4b09eda1e39446ee0d9c397",
+    "jobs": [
+      {
+        "name": "foushee-full-record-benchmark",
+        "started_at": "2026-10-15T19:11:39Z",
+        "completed_at": "2026-10-15T19:16:12Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14g-exact-head",
+        "started_at": "2026-10-15T19:11:38Z",
+        "completed_at": "2026-10-15T19:12:37Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "receipt-evidence-repair-postgres",
+        "started_at": "2026-10-15T19:11:39Z",
+        "completed_at": "2026-10-15T19:18:25Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14e-exact-head",
+        "started_at": "2026-10-15T19:11:38Z",
+        "completed_at": "2026-10-15T19:12:39Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14d-exact-head",
+        "started_at": "2026-10-15T19:11:38Z",
+        "completed_at": "2026-10-15T19:12:23Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14f-exact-head",
+        "started_at": "2026-10-15T19:11:38Z",
+        "completed_at": "2026-10-15T19:12:26Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "m14h-exact-head",
+        "started_at": "2026-10-15T19:11:38Z",
+        "completed_at": "2026-10-15T19:37:28Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "amendment-evidence-contracts",
+        "started_at": "2026-10-15T19:11:38Z",
+        "completed_at": "2026-10-15T19:12:45Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "measure-reference-integration",
+        "started_at": "2026-10-15T19:11:39Z",
+        "completed_at": "2026-10-15T19:12:40Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "publication-activation-postgres",
+        "started_at": "2026-10-15T19:11:39Z",
+        "completed_at": "2026-10-15T19:14:16Z",
+        "conclusion": "success"
+      }
+    ],
+    "late_stages": [
+      {
+        "name": "Run release-tier editorial, frontend, and persistence validation",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "fbe702694bd984324ab636e73e9bafd5f192a12e69f601320a94ed37204c55eb",
+        "line_start_1based": 1237,
+        "line_end_exclusive_1based": 1266,
+        "required_command_and_result_markers": [
+          "python scripts/run_editorial_pipeline.py validate --tier release",
+          "--include-frontend --include-persistence",
+          "Editorial pipeline release validation passed: 9 checks"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Run release-tier editorial, frontend, and persistence validation",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Verify Record at a Glance source bindings and both frontend routes",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "fbe702694bd984324ab636e73e9bafd5f192a12e69f601320a94ed37204c55eb",
+        "line_start_1based": 1266,
+        "line_end_exclusive_1based": 1398,
+        "required_command_and_result_markers": [
+          "node scripts/build_record_card_review.mjs --check",
+          "node --test lib/recordCard.test.mjs lib/editorialPresentation.test.mjs",
+          "tests/record-card.spec.mjs tests/record-card-release.spec.mjs",
+          "# tests 20",
+          "# pass 20",
+          "# fail 0",
+          "23 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Verify Record at a Glance source bindings and both frontend routes",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Validate M15B comparison semantics and governed limitation rendering",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "fbe702694bd984324ab636e73e9bafd5f192a12e69f601320a94ed37204c55eb",
+        "line_start_1based": 1398,
+        "line_end_exclusive_1based": 1508,
+        "required_command_and_result_markers": [
+          "python scripts/build_m15b_review.py --check",
+          "backend/tests/test_m15b_interpretive_trust.py",
+          "node --test lib/m15bTrust.test.mjs lib/publicReceipt.test.mjs",
+          "expanded receipts",
+          "15 passed",
+          "# tests 15",
+          "# pass 15",
+          "# fail 0",
+          "1 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Validate M15B comparison semantics and governed limitation rendering",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "fbe702694bd984324ab636e73e9bafd5f192a12e69f601320a94ed37204c55eb",
+        "line_start_1based": 1508,
+        "line_end_exclusive_1based": 1614,
+        "required_command_and_result_markers": [
+          "python scripts/prepare_m15b_replacement_artifacts.py --check",
+          "backend/tests/test_reusable_publication_replacement_v2r.py",
+          "backend/tests/test_reusable_publication_replacement_v2r_postgres.py",
+          "production execution disabled",
+          "25 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      }
+    ],
+    "no_manual_retry": true
+  },
+  "prior238_delivery": {
+    "checkpoint": 238,
+    "head": "a327f4ccd6f5d95ea12331bb91a8606382a59e50",
+    "previous_head": "a2f13b483f7ce6ff4ee1d1cf0fc8c2cb2dc17543",
+    "started_utc": "2026-10-15T19:11:06.916444+00:00",
+    "completed_utc": "2026-10-15T19:11:22.807754+00:00",
+    "push_seconds": 15.213091000041459,
+    "push_and_reconciliation_seconds": 15.891313100000843,
+    "remote_refs": "a327f4ccd6f5d95ea12331bb91a8606382a59e50\trefs/heads/codex/foushee-immigration-border-shared\naf6cd6d78d6944d64a68a92653066c4c1625f96b\trefs/heads/main\n",
+    "gross_seconds_through_push": 6590.912142
+  },
+  "prior238_PR_delivery": {
+    "body": "Checkpoint 238 at **a327f4ccd6f5d95ea12331bb91a8606382a59e50**, parent a2f13b483f7ce6ff4ee1d1cf0fc8c2cb2dc17543; live main af6cd6d78d6944d64a68a92653066c4c1625f96b. Existing worktree and sole writer retained.\n\n**659 reviewed / 17 pending, 81 cores / 137 propositions, 71 episodes / nine multi-action episodes** (before: 657/19, 80/135, 70/nine).\n\n- **house:119:2:271 / H.R.6955:** qualified whole July 21 House banking passage, Nay/Nay. Original unapproved Health identity, 3337-character prefix, 14 bindings, sources and limits preserved. New v35 provider has 52 bindings. Dated FDIC citizenship/State supervisory experience, separately added small-bank experience, literal two appointed terms versus twelve total service years, six-year terms and separate chair/interim/holdover rules remain distinct. Enacted ROAD §908 precedes this stage; printed 180/90 discrepancy, conditional MAY/UNLESS/permanence/grandfather/public-report branches and institution-specific clocks remain. Conditional after-text is not current law or an enacted bill; intervening-law/individual questions stay qualified.\n- **house:119:2:310 / H.R.10326:** qualified functional Immigration exclusion of whole exact fraud-record access passage, no new core/proposition. AG written request, listed/additional State programme scope, fraud-only purpose, citizen/LPR Privacy Act definition, limited Judicial Redress remedies, WHERE APPLICABLE HIPAA, security/destruction and legal/individual limits are explicit.\n- **P3 from exact-237 review [6199231809](https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6199231809):** H.R.6703 HRA same-terms condition now says that if an employer offers the arrangement to an employee within a specified class, it must offer it to all employees within that class on the same terms. Full EH witness [14014:14792), literal all-employees phrase offset14220 (review point14193 starts “offers”). v36 repairs all14active fields; original Health/v33 histories, bindings, observations, dispositions and counts remain. Review independently closed preceding Farm P3s; new238source/domain review remains pending.\n\n[Banking provider](https://github.com/dhart54/political_fingerprint/blob/a327f4ccd6f5d95ea12331bb91a8606382a59e50/docs/editorial/shared_candidates/house_119_banking_qualification_checkpoint238/README.md), [banking qualification](https://github.com/dhart54/political_fingerprint/blob/a327f4ccd6f5d95ea12331bb91a8606382a59e50/docs/editorial/shared_candidates/house_119_immigration_20260916/banking_qualification_checkpoint238.json), [records qualification](https://github.com/dhart54/political_fingerprint/blob/a327f4ccd6f5d95ea12331bb91a8606382a59e50/docs/editorial/shared_candidates/house_119_immigration_20260916/records_functional_qualification_checkpoint238.json), [HRA precision](https://github.com/dhart54/political_fingerprint/blob/a327f4ccd6f5d95ea12331bb91a8606382a59e50/docs/editorial/shared_candidates/house_119_immigration_20260916/HRA_precision_checkpoint238.json), [conservation/validation/timing](https://github.com/dhart54/political_fingerprint/blob/a327f4ccd6f5d95ea12331bb91a8606382a59e50/docs/review_packets/immigration_checkpoint238_conservation_validation.json), [frozen plan](https://github.com/dhart54/political_fingerprint/blob/a327f4ccd6f5d95ea12331bb91a8606382a59e50/docs/plans/immigration_checkpoint238_remaining.md).\n\nSeven source appends: two unchanged Health witnesses plus five selections from two retained raw parents. No fresh acquisition during canonical application. Whole271EH151645-character owner reading from237 is reused; complete310EH6436characters reread. Dated operative text, selected evidence and unread parent/notes/current-law limits remain distinguished.\n\n**Final fixed-input gate passed452tests (275Immigration), semantic7/IR, and seven byte-exact actual CLI outputs; all22input hashes unchanged.** Commands: `python -m unittest backend.tests.test_immigration_shared_candidate backend.tests.test_editorial_semantic_ir backend.tests.test_source_sequence backend.tests.test_shared_domain_candidate`; `python scripts/run_editorial_pipeline.py validate --tier semantic`; `python scripts/validate_editorial_semantic_ir.py`; `python scripts/prepare_immigration_shared_candidate.py --input docs/editorial/shared_candidates/house_119_immigration_20260916 --member F000477 --member M001184 --output <isolated-output>`. Native runs used UTF-8/no-bytecode flags.\n\nFour attempts, with all costs retained:332.595s interrupted after stale232hold guard;367.470s interrupted on incoming HRA review;789.080s completed with451passes/one stale223hold failure; corrected final797.122s passed. Both old310hold assertions now require precise sealed238closure while retaining historical zero-credit/other holds; combined focus22.847s passed. No unchanged status rerun. Raw logs/snapshots are local; essential outcomes/input hashes/receipts are committed. Structural tests do not establish paraphrase truth.\n\nConservation:79unaffected prior cores,656reviews,673inventory rows, all135prior propositions/160official observations and158unaffected projections exact. All source/history prefixes,3634tracked files outside scope and698frozen private/notes entries preserved. Initial697counter underreported a nonexistent subtraction; original and corrected evidence retained, all698comparisons actually ran. Scoped diff/whole-choice behavior inspected; four unrelated shutdown notes untouched.\n\nFirst-work bound17:21:31.895612UTC → final gate19:06:29.540846UTC: **104.961min gross/batch;52.480min per complex screening completion**, normalized over two complex completions plus HRA P3/historical-test rework and overlapping uncredited218/283/151research. Earlier research additional/unisolated. Application118.281s; HRA regeneration115.013s; initial/combined focused27.052/28.300s; final conservation7.264s. All failed inspections, offset assertions, counter/helper recovery, source work, reasoning/tool gaps and overlaps remain included; no exclusive-action labor or comparable routine claim. GPT-6 observed; variant/effort/speed unexposed, unchanged. Diagnosis230FAIL and600second routine target retained. Through push/reconciliation19:11:22.807754UTC: **109.849min/batch;54.924min per complex completion**. Commit1.105s/local delivery7.448s; push15.213s/reconciliation15.891s. PR/fresh CI follow cutoff and are measured separately.\n\nPrior237CI38780681811 passed ten fresh attempt1jobs/four late stages; its bounded receipt is included. **Fresh238CI pending**, no carried success or manual retry.\n\nBoundary comments6199281858/6199327338/6199493100/6199780095 add bounded IG218 recodification/threat/acting-service research, not corrections or screening credit. Existing85c12457packet privately verified/read; new c359cb84supplement awaits sole-writer verification/reading/registration. Next coherent batch:2:218H.R.8312,2:283H.R.8884 and1:151H.R.2483, preserving unresolved legal interactions and whole-choice meanings. H.R.5334roll2:308 already completed with historical limits.\n\nAll denied/cancelled-source restrictions, reserved193/196/243/157, conflicts, withdrawals and unresolved legal questions remain. Only six exact8c4WRDAartifacts received specific permission. Generated54.10MBartifact warning is a separate nonblocking follow-up. **Candidate only: no merge, editorial acceptance, publication/registry changes, manual deployment or production writes.** Continue after routine delivery.",
+    "body_delivery": {
+      "started": "2026-10-15T19:12:06.084Z",
+      "seconds": 7.318
+    },
+    "comment_delivery": {
+      "started": "2026-10-15T19:12:13.402Z",
+      "seconds": 3.308,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "id": 6200223120
+        },
+        "isError": false
+      }
+    },
+    "boundary_comments": [
+      {
+        "id": 6199281858,
+        "url": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6199281858",
+        "body": "IG218 research support at exact 85c124576fa70cac4f309759f60052185365f982 passed independent bounded review: https://github.com/dhart54/political_fingerprint/pull/230#issuecomment-6199276553. Verified 19 Git identities, 18 receipts, 21 literal bindings, four retained source rows, 20 tests and the three recodification PDF pages. The December 23 amendments carry into the December 27 restatement through §5(b); preserve §401 operand mismatches, the already-absent §406 operand and all remaining application/current-law limits.\n\nUse the packet for the narrowly claimed baseline only; no new candidate credit or whole-action acceptance follows. The packet still identifies incorporated 5 USC 6329b threat predicates and 3346 acting-service limits as unqualified. Before assigning separate support work, check whether the current writer has already captured or claimed them; do not duplicate whole H.R.8312 research or resolve legal application by editorial judgment."
+      },
+      {
+        "id": 6199327338,
+        "url": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6199327338",
+        "body": "Research-only claim for the remaining **house:119:2:218 / H.R.8312 IG baseline dependencies: complete dated5USC6329b and3346 operative provisions**, limited to the incorporated threat predicates, acting-service clocks/nomination/recess branches and literal403(b)/(h)/outer-bill3(c)callers. No whole-action authoring, application decision or screening credit.\n\nOwnership refreshed against current PR198head a2f13b483f7ce6ff4ee1d1cf0fc8c2cb2dc17543, latest237/238handoffs/review and supported read-only native writer progress. No exact6329b/3346claim or capture found in that public progress or the committed Immigration source bank. Writer is on238gate/HRAreview correction and whole8312 remains its lane. Existing IGpacket85c12457 passed independent bounded review6199276553; reuse it without reopening its sources or duplicating it.\n\nI will use existing governed captures first (none found for these two sections at the exact committed head), then permitted official dated sources once, stopping on denial. Preserve separate statutory exceptions, effective-date qualifications and unresolved legal interaction. Own.w/vhi/PR230only; no .w/ibfiles, candidate/shared-source/generated/runtime edits, messages/interrupts, fullcandidategate, settings/tier changes, merge/deploy/publication or production effects. All denied/cancelled restrictions remain. One coherent exact-head source handoff follows, or the specific evidence boundary."
+      },
+      {
+        "id": 6199493100,
+        "url": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6199493100",
+        "body": "Research-only **IG218 / H.R.8312 —6329bthreat and3346acting-service source dependencies** delivered in [draft PR230](https://github.com/dhart54/political_fingerprint/pull/230), exact head **`c359cb843a6ef037ddb5cb7760d013758e9077be`**. [Packet/raw sources/complete operative text/callers/25passages/checks/timing](https://github.com/dhart54/political_fingerprint/blob/c359cb843a6ef037ddb5cb7760d013758e9077be/docs/review_packets/immigration_research_support_20261014/ig218_limits/README.md). Completes narrow claim6199327338. Ownership/latest public writer progress and both committed source banks at a2f13b48checked first; no exact dependency capture/claim found. Whole8312authoring remains sole-writer work. Five exact caller rows reuse independently reviewed85c12457; EHsnapshot433f24f9. Mainaf6cd6d7unchanged.\n\nThree first-attempt officialHTTP200captures retain complete dated**2024Code6329b(a)–(i),3346(a)–(c)** and directly necessary**PL105-277§151(d)effective-date note under3345**. Four disjunctive threat predicates;6329bIGemployee-definition exclusion distinct from OIGemployees; different work/business/calendar units;3346sickness exception,210day/first-and-second-nomination branches and **sine-die(a)period** start; historical effective-date exceptions all retained/read. No general-recess tolling or automatic import of the whole6329bmechanism into403.\n\nLiteral corresponding403(b)/(h)callers and2022applicability are bound to prior enacted operators, not fabricated official consolidated403text. Outer**bill3(c)**notwithstanding403/3345**through3349**, PRACChair/vacancyExecutiveDirector transition and printedPreventionname remain separate from inserted317(d)(2)'s **initial** AGexception. No unlimited-tenure, eligibility/application or legal-interaction conclusion. Subsequent-law updating, actual regulations/compliance, judicial/office/individual/FVRAinteraction, coveredfunds, printedbillmismatches and Immigration disposition remain unresolved.\n\n**Exact INDEX/HEAD pass:**16focusedchecks,25literalbindings,fiveexactreusedrows,13Gitblobseals/**14addedfiles only**. Mutation/truncation/inputisolation negatives; all135prior artifacts/timings unchanged. No acquisition/test failures in this increment; prior failures remain preserved. No candidate/shared-source/generated/runtime/production edit, oldrestrictedbinary access, message/interrupt, fullcandidate gate, merge/deploy/publication or screening credit. [AutomaticCI38786856509](https://github.com/dhart54/political_fingerprint/actions/runs/38786856509) observed **in progress**, not passed.\n\nFirst tool **2026-10-15 18:26:38UTC**; documentation18:34:12.135295UTC=454.135s. Delivery cutoff **2026-10-15T18:36:10.073570+00:00**, **572.074s gross (9.53min)** for this one research supplement, inclusive of ownership/claim/source reading/analysis/checks/delivery; posting follows cutoff. Source-fetch commands.742s+.458s; actual three requests.269/.160/.188s. Initial16tests.015s; stagedcommand1.217s/helper.500s/tests.026s; commit.085s; exactheadcommand.543s/helper.488s/tests.021s; push1.901s; PRupdate/head/CIcommand3.907s. Other observed command durations in timing.json. No exclusive-labor, cold-cache or comparable-throughput claim; remainder not model latency/idle. Read-only config**gpt-6.1-sol/high/defaulttier**, effective overridesunexposed; selectedSolHigh/settings unchanged, hostlocal, cache/concurrentwriterload uncontrolled.\n\n**Ready for independent bounded review; stopping this source increment.** Sole writer01a13d6d-e460-72e2-8c82-df56a2374cbf independently validates/registers/integrates any useful evidence. All denied/cancelled-source restrictions remain intact.\n"
+      },
+      {
+        "id": 6199780095,
+        "url": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6199780095",
+        "body": "IG218 threat/acting-service supplement at exact `c359cb843a6ef037ddb5cb7760d013758e9077be` passed independent bounded review: https://github.com/dhart54/political_fingerprint/pull/230#issuecomment-6199775010.\n\nComplete dated 6329b/3346 provisions and the historical effective-date note, five prior callers, 25 bindings, 14 Git identities and 16 tests verify. Preserve IG/OIG distinctions, four disjunctive threat predicates, may/poses wording, different day units, nomination/sine-die limits and separate 1998/2022/bill transitions. The printed outer §3(c) endpoint is 3349, not 3349d. Current-law and individual/FVRA interaction remain unresolved.\n\nReuse for the narrowly claimed source dependencies after your own qualification/registration; this adds no candidate credit or whole-action acceptance. CI run38786856509 is successful across all10jobs, with checkout attribution limited to metadata in this review. Whole H.R.8312 authoring remains with the sole writer; no duplicate research assignment follows from this handoff."
+      }
+    ],
+    "fresh_CI_first_observation_command_seconds": 8.7336952,
+    "inspection_failures": "Missing guessed push237.py/receive239_ig218.py paths; bounded top-level discovery then reused native Git. Recursive rg encountered existing inaccessible test temporary directories; no source bypass or modification."
+  },
+  "prior238_CI_PR_delivery": {
+    "body_delivery": {
+      "started_utc": "2026-10-15T19:38:21.225Z",
+      "seconds": 1.704
+    },
+    "comment_delivery": {
+      "started_utc": "2026-10-15T19:38:22.929Z",
+      "seconds": 2.758,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "id": 6200710754
+        },
+        "isError": false
+      }
+    },
+    "CI_observer_command_seconds": 4.6477918
+  },
+  "boundary_review": {
+    "review6199231809": "Exact237a2vs433FarmP3s closed; HRAwithin-class conditional P3 handled238, prior histories intact. No new239repair or duplicate credit.",
+    "review6199281858_6199327338_6199493100_6199780095": "Bounded IGsource handoffs/reviews, own native Git/extraction/selected reading/registration performed239. Not candidate/editorial authority or universal current-law certificate.",
+    "new_PR198_before_freeze": "No comments after238delivery6200223120 at prefrozen boundary. Refreshed after finalgate before delivery: only own238CIcomment6200710754was new, no additional review finding. No arbitrary comment overrides reserved boundaries.",
+    "review234_6196276947": "Historical20of21input hashes, plan unmatched; owner image/floor reconstruction attributed. No blanket later certificate."
+  },
+  "behavior_and_diff_review": "218wholeJune10EHpassage has qualified personnel/nationality-framework relationship:317e1notwithstanding406a7uses3161b-iwithouta/b2, excepted-service classification distinct from dated competitive nationality rules; no universal citizenship waiver/work permission/personal status. FiscalService expresslynoninvestigative versus separateIGpowers, financial-loss versuspolicy use, voluntary/privacy/covered-fund limits and priorPRAC90102coverage retained. 2022recodification5bcarry-forward,401operand-position/alreadyabsent406Government, initial-onlyAGexception and distinct1998/2022/bill transitions remain. 6329bfour alternatives andmay/poses, IGversusOIGemployee definitions,3346sickness/nomination/sine-die(a)clocks, literalouter3349not3349d preserved. 283wholeJulyEHNay/Yea retains complete510characterHealthprefix/exactidentity/meaningref/witnesses/bindings/limits;434waiver does not decide402yoverriding alien-payment/Title8reach. Qualifiedalien versuslawfulpresence,402toutside-US/433totalization/Medicareexception and voluntary/income/admin-benefitfunds/dates stay distinct. 151wholeJune2025EHfunctionallyexcluded, no core/prop; migrantworksite notpersonalstatus, additionalHRSAcriteria403restriction remains, conditionaldrugreview notrescheduling, HHSCAREER/RHPtechnicalassistance/waivers/beneficiarylimits and credentials retained. All threewholechoices remain member-neutral; no component stance/motive/enactment/actualeligibility or legal adjudication.",
+  "source_scope": {
+    "new_selected_rows": 23,
+    "unique_retained_raw_parents": 10,
+    "unchanged_Health_source_imports": 0,
+    "fresh_HTTP_during_canonical_application": false,
+    "source_receipt": "e2562911bed6c74d902bef2d76bd18d16a05af80be02632b81bad7f05d48fe5c",
+    "IG_restatement_support_head": "85c124576fa70cac4f309759f60052185365f982",
+    "IG_limits_support_head": "c359cb843a6ef037ddb5cb7760d013758e9077be",
+    "selected_support_PDF_images_inspected": [
+      166,
+      167,
+      168
+    ],
+    "whole168page_PDF_or_whole_publiclaws_or_owner_rerender_certificate": false,
+    "partial117286HTML_and_literal131STATmarkers_retained": true,
+    "dated_source_not_current_law_certificate": true,
+    "whole_existing_legislative_readings": "21836580EH/2833047EH/43411037/401336and15158652EHread with exact recorded extents in source qualifications. Earlier189/190/192/194/196/237reading reused, not all freshly reread.",
+    "material402t_normalization": "Original10561character selected read from128047newlineparent preserved. New whitespace-collapsed field128046is semantically/extraction-equivalent, selected literal extent newly computed; neither wholeparent humanread claimed."
+  },
+  "timing": {
+    "conservative_first_work_bound_utc": "2026-10-15T17:21:31.895612+00:00",
+    "earlier_historical_research_additional_unisolated": true,
+    "required_gate_completed_utc": "2026-10-15T19:37:55.093763+00:00",
+    "gross_batch_seconds_through_gate": 8183.198151,
+    "gross_seconds_per_completed_complex_screening_action_through_gate": 2727.732717,
+    "gross_batch_seconds_through_receipt": 8247.190321,
+    "rate_qualification": "Gross normalized over three complex screenings, includes all shared238gate/HRA/Git/PR/CI overlap and uncredited240research. Not exclusive per-action labor, additive nonoverlapping batches or comparable routine sample.",
+    "observed_settings": {
+      "base_model_identity": "GPT-6",
+      "selected_variant": "unexposed",
+      "reasoning_effort": "unexposed",
+      "speed_service_tier": "unexposed",
+      "no_settings_changed": true
+    },
+    "known_command_process_seconds": {
+      "IGoriginal_receive": 3.220106000022497,
+      "IGoriginal_initial_missing_temp": 0.11390080000273883,
+      "IGoriginal_final_verifier_with20tests": 1.233444400015287,
+      "IGlimits_receive": 0.8314049000036903,
+      "IGlimits_initial_sandbox_temp_failure": 0.1437937999726273,
+      "IGlimits_native_verifier_with16tests": 0.5361157999723218,
+      "first_private_authoring_failed_parent_length_command": 0.8546135,
+      "corrected_private_authoring": 1.3736311999964528,
+      "functional_private_qualification": 0.1893922999734059,
+      "first_private_preflight_linewrapped_probe_failure_command": 1.2583133,
+      "corrected_private_preflight": 3.5740414999891073,
+      "snapshot": 2.281290699960664,
+      "application": 120.55495379999047,
+      "focused": 24.59794599999441,
+      "conservation": 6.99670249997871,
+      "required_full_gate_wall": 793.2924992000335,
+      "prior238_local_delivery": 7.447663599974476,
+      "prior238_push": 15.213091000041459,
+      "prior238_PR_body": 7.318,
+      "prior238_PR_comment": 3.308,
+      "prior238_CI_first_observation_command": 8.7336952,
+      "prior238_CI_later_observation_commands": [
+        1.4952546,
+        1.5728346,
+        4.6477918
+      ],
+      "next240_currency_receive": 0.7549178999615833,
+      "next240_tables_receive": 0.784164700016845,
+      "next240_native_currency_verification": 1.6658746000030078
+    },
+    "rework": "All tool/reading/transport/reasoning gaps included. Prewrite402parent length assertion failed safely because whitespace normalization differs by one char; original newline parent preserved and literal new extent compared. One private preflight StopIteration on line-wrapped30day source; exact literal fixed, all9negativeprobes thenpass. Prospective fullyresealed functional check lookup variable corrected before that probe executed. Initial IGlimits helper blocked on sandbox temporary-file write before tests; authorized filesystem retry passed16, original failure/log retained; no source acquisition denial/retry. Guessed push237/receive239helper paths missing, recursive rg hit old inaccessible testtemp directories, one ASTdiagnostic malformed/one unhelpful query; all costs retained, no excluded files accessed. Both historical223/232guards were audited/repaired prospectively with precise sealed239closure branches before focused/finalgate; oldzero-credit/otherholds kept. No semantic P3or failed fullgate thisbatch.",
+    "overlap": "239first bound overlaps prior237/238semantic work, source readings, HRAcorrection, interrupted/failed/passed238gates, Git/PR andCI. Four239read-only gate processes overlap; sum is not walltime.240queue/table/currency/visualresearch overlaps239gate and238CI and has zero240screeningcredit. Actual research time outside measured commands is included but not separately isolated; no residual assigned to model latency/idle. Prior238CIactualjobtimes retained separately; not239CI or exclusiveforeground labor.",
+    "routine_target_seconds": 600,
+    "historical_diagnosis": ".tmp/immigration_throughput_diagnosis230.md",
+    "benchmarkFAILretained": true,
+    "no_comparable_routine_improvement_claim": true,
+    "delivery_and_new_CI": "239commit/push/PR/freshCI follow receipt cutoff, measured separately, not preclaimed zero-cost or passed."
+  },
+  "uncredited_next240_research": {
+    "boundary": {
+      "first_work_qualification": "Conservative bound at239gate start precedes subsequent240queue inspection; exact exclusive first command not separately recorded. Earlier44research/whole7148reading228/currency support additional historical costs, not zero.",
+      "recorded_utc": "2026-10-15T19:27:33.084442+00:00",
+      "source_only_candidate_credit": 0,
+      "canonical_changes": false,
+      "case44": {
+        "action_id": "house:119:2:44",
+        "earlier_whole_primary_reading": ".tmp/hr7148_complete_primary_coverage228.json",
+        "primary_characters": 1095743,
+        "earlier_owner_read_new_or_changed": 963058,
+        "exact_literal_reuse": 132685,
+        "actual_current_reading": "7148frontmatter[0:7000), complete3404report462, initial885andrecorded784witnesses; not a second whole-primary reading.",
+        "finding": "Inserts CPF/CDSexception into explanatory-statement-effect clause, not a freestanding all-project appropriation rescission. PartAprior changes and seven direct table-linked appropriation branches must remain. Separate allocation/fiscal/programme/beneficiary application unresolved.",
+        "date_qualification": "Existing source metadata says CompleteJanuary22IHprimary, whereas actual primary introduction says January20,2026. Preserve frozen228history; future source-qualified wording must distinguish introduction from January22proposal stage rather than repeat metadata as bill date.",
+        "currency_support": "Exactf366acb9currency44and196c68a8batch4received17+16sealedblobs/manifests. ParentZIP23,075,400bytes/563pages and29literalpageextractions verified; native15tests/bothCLI modes/reportexact. Writer actually checked24targetamounts across13sourceimages plusWhitewater85000. No whole989visual/current/fiscal/domain certificate, no restrictedbatch2access.",
+        "denied_Committee_Rules_landing_page_403_retained": true,
+        "new_material_observation": "PrintedH1615PDF263CityofWhitewater WI explicitly funds povertyreduction through an immigrant liaison85000; actual writer image inspected. Not status inferred from recipient name; prospective source-qualified relationship still needs exact appropriation/section4limits, not blanketrescission.",
+        "current_complete_selected_textual_reading": [
+          {
+            "pdf_page": 238,
+            "printed": "H1590",
+            "characters": 10916
+          },
+          {
+            "pdf_page": 247,
+            "printed": "H1599",
+            "characters": 9514
+          },
+          {
+            "pdf_page": 263,
+            "printed": "H1615",
+            "characters": 7145
+          }
+        ],
+        "additional_image_reading": {
+          "page274": "Header FinalBill amounts in thousands inspected; pypdfextract254characterscontains no table body, not silently represented as full table extraction. No fullFinalBill/all subsequent pages certificate."
+        },
+        "P4complete_current_reread": {
+          "source_id": "govinfo:hr7148ih-complete-ordinary228",
+          "extent": [
+            302820,
+            310058
+          ],
+          "characters": 7238,
+          "label": "Complete ChildrenandFamiliesServicesPrograms heading; first overbroad12kexcerpt truncated and not counted as completed, exact7238selection reread."
+        },
+        "private_meaning_draft": {
+          "path": ".tmp/next240/roll44_meaning.txt",
+          "candidate_credit": 0,
+          "source_qualification_application_pending": true
+        }
+      },
+      "case262": {
+        "action_id": "house:119:1:262",
+        "retained_full_capture_id": "govinfo:hr3838eh-immigration-complete",
+        "characters": 2080487,
+        "raw_sha256": "7a5d6407fda4ddbe271ce5679a4fc8e8d7a6c0392f03802b6c33eb7accfe6658",
+        "whole_Immigration_reading_not_certified": true,
+        "Health_core": "9edcbd4dbbd31c9ce44192e52d91876977020868ee60af45b6708c2d3190c8d6",
+        "Healthlimited41613careselection_not_whole": true
+      },
+      "remaining_queue": "Other14pending include reserved/denied/conflicted and three wholeNDAApackages. No release by receipt/comment or broad hard-impossible claim.",
+      "overlap": "Private240research overlaps fixed239owner/CLI validation and238CI; all costs retained in gross futurebatch, no exclusive-labor claim.",
+      "conservative_first_work_bound_utc": "2026-10-15T19:24:41.801465+00:00",
+      "updated_utc": "2026-10-15T19:36:56.598020+00:00"
+    },
+    "currency_native_verification": {
+      "started_utc": "2026-10-15T19:29:00.760397+00:00",
+      "completed_utc": "2026-10-15T19:29:02.426272+00:00",
+      "elapsed_seconds": 1.6658746000030078,
+      "phases": [
+        {
+          "phase": "retained_parent_ZIP_and29mechanical_page_extractions",
+          "seconds": 0.5251018999842927,
+          "whole_parent_or_all_rows_actual_read": false
+        },
+        {
+          "phase": "unit15",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            ".tmp\\received240_currency44\\test_diagnostic.py",
+            "-v"
+          ],
+          "started_utc": "2026-10-15T19:29:01.285550+00:00",
+          "completed_utc": "2026-10-15T19:29:01.560818+00:00",
+          "seconds": 0.27526940003735945,
+          "exit_code": 0
+        },
+        {
+          "phase": "without_reviews",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            ".tmp\\received240_currency44\\diagnose_currency.py",
+            "--repo",
+            ".",
+            "--artifact-ref",
+            "f366acb95736102f75420237dac63c7b750ced92",
+            "--without-reviews"
+          ],
+          "started_utc": "2026-10-15T19:29:01.560833+00:00",
+          "completed_utc": "2026-10-15T19:29:01.695538+00:00",
+          "seconds": 0.13471259997459128,
+          "exit_code": 0
+        },
+        {
+          "phase": "with_reviews",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            ".tmp\\received240_currency44\\diagnose_currency.py",
+            "--repo",
+            ".",
+            "--artifact-ref",
+            "f366acb95736102f75420237dac63c7b750ced92"
+          ],
+          "started_utc": "2026-10-15T19:29:01.696154+00:00",
+          "completed_utc": "2026-10-15T19:29:02.419349+00:00",
+          "seconds": 0.7231992000015453,
+          "exit_code": 0
+        }
+      ],
+      "exact_native_Git_transport": true,
+      "raw_parent_and29selected_page_extractions_verified": true,
+      "unit_tests": 15,
+      "both_actual_CLI_modes_pass": true,
+      "report_exact": true,
+      "mechanical_rows": 989,
+      "visual_readings_reused_from_support_not_yet_writer_checked": 24,
+      "remaining_mechanical_amounts_not_visually_certified": 965,
+      "all_rows_or_fiscal_legal_domain_certificate": false,
+      "canonical_changes": false,
+      "completion_credit": 0,
+      "no_fresh_HTTP_or_restricted_batch2_access": true,
+      "overlap": "Read-only240qualification overlaps239fixed-inputgate and238CI; costs retained in shared gross, not exclusive CPU/labor."
+    },
+    "currency_actual_selected_visual_reading": {
+      "completed_utc": "2026-10-15T19:30:58.776700+00:00",
+      "target_amount_cells_actual_writer_viewed": 24,
+      "source_pages": [
+        248,
+        250,
+        251,
+        252,
+        254,
+        255,
+        258,
+        259,
+        260,
+        262,
+        263,
+        264,
+        268
+      ],
+      "scope": "Each of24target Amount($)cells compared against its agency/account/project row in exact retained support-rendered image. All24agree with separate support reading. Not owner rerender/pixel-reproduction or all989row/965otheramount certificate. Other visible recipient names/beneficiary applications not inferred.",
+      "target_readings": [
+        {
+          "row_id": "248:6519",
+          "pdf_page": 248,
+          "printed_page": "H1600",
+          "literal": "DOL Employment and Training Administration Ilisagvik College, AK, to expand Ilisagvik College’s Workforce Development program 2 50,000 Murkowski S \n",
+          "literal_utf8_sha256": "81cf15dc6b11b2216b72449a8166bacf9dea3f660bc673618570a1de696fea20",
+          "image_sha256": "229ac6f3b97efa978089d0dcc7eaeb466254c930c56c139dd91cdd7d1a8f9175",
+          "actual_writer_amount_dollars": 250000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page248.png"
+        },
+        {
+          "row_id": "250:5138",
+          "pdf_page": 250,
+          "printed_page": "H1602",
+          "literal": "HHS Health Resources and Services Administration AIDS Resource Alliance, Inc., PA, for equipment to purchase a mobile clinic 37 5,000 Fetterman S \n",
+          "literal_utf8_sha256": "260f6d6f1cf110be6788bb07e2979db69c024ff9f9f30aa9361fa5ef10620fb6",
+          "image_sha256": "a80a47574f3ebdc22a3430f83d6900a7a580ed2101e0ca89338e8907f9a9a002",
+          "actual_writer_amount_dollars": 375000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "196c68a8d431c4a3f789e47a5536be2a97a58425",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/batch4/page250.png"
+        },
+        {
+          "row_id": "251:5059",
+          "pdf_page": 251,
+          "printed_page": "H1603",
+          "literal": "HHS Health Resources and Services Administration Bullhead City Fire District, AZ, for equipment to provide ambulance services 2 94,000 Gallego, Kelly S \n",
+          "literal_utf8_sha256": "14fbf2d707dbc0bdf8db1e3f038a17b04e4a736a3eb1d39477d3a6e428d6de87",
+          "image_sha256": "877acc0ed4ec98ac958af919767d098e083a852c1f58db7c9cd2040af42de47d",
+          "actual_writer_amount_dollars": 294000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page251.png"
+        },
+        {
+          "row_id": "252:634",
+          "pdf_page": 252,
+          "printed_page": "H1604",
+          "literal": "HHS Health Resources and Services Administration Circle the City, AZ, for facilities and equipment to expand a health center 84 0,000 Gallego, Kelly S \n",
+          "literal_utf8_sha256": "abcc77b9307ea46eec5b66d6259b26b1e94296d564b772638c19063e667609cd",
+          "image_sha256": "af4e03aa5380d761fc53cc350ee95109731456c328138c331ff3fcb733816e19",
+          "actual_writer_amount_dollars": 840000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page252.png"
+        },
+        {
+          "row_id": "252:4992",
+          "pdf_page": 252,
+          "printed_page": "H1604",
+          "literal": "HHS Health Resources and Services Administration Community Dental, ME, for facilities and equipment to expand dental services 2 ,334,000 King S \n",
+          "literal_utf8_sha256": "d5667d2bb0acc747a946edd251041a8070087370199e642fe437d79e0bf970d3",
+          "image_sha256": "af4e03aa5380d761fc53cc350ee95109731456c328138c331ff3fcb733816e19",
+          "actual_writer_amount_dollars": 2334000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page252.png"
+        },
+        {
+          "row_id": "252:6203",
+          "pdf_page": 252,
+          "printed_page": "H1604",
+          "literal": "HHS Health Resources and Services Administration Conway Medical Center, SC, for acquisition of Emergency Department equipment 1 ,410,000 Graham S \n",
+          "literal_utf8_sha256": "7873d1eb779c439b894fc392f89d54b15dd43b28e6704829f96cef9be1353d28",
+          "image_sha256": "af4e03aa5380d761fc53cc350ee95109731456c328138c331ff3fcb733816e19",
+          "actual_writer_amount_dollars": 1410000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page252.png"
+        },
+        {
+          "row_id": "254:779",
+          "pdf_page": 254,
+          "printed_page": "H1606",
+          "literal": "HHS Health Resources and Services Administration Grant County Courthouse, WV, for equipment for purchase of new ambulance 310,0 00 Capito, \nJustice \nS \n",
+          "literal_utf8_sha256": "f1774e6617f73dc079d9fdd52ccf1f1798b6b103006a9fe7b8aada0c20934f96",
+          "image_sha256": "ea86391d6148690978d89878643a189cfaaa7fccd7865576fe12153abcc184f3",
+          "actual_writer_amount_dollars": 310000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page254.png"
+        },
+        {
+          "row_id": "254:1891",
+          "pdf_page": 254,
+          "printed_page": "H1606",
+          "literal": "HHS Health Resources and Services Administration Hale Makua Health Services, HI, for equipment to replace patient beds 1,850,00 0 Hirono, Schatz S \n",
+          "literal_utf8_sha256": "3b447cc16a13b6bd7954f0eb7db57cb365a64276989bd9316c398aafdae87fe7",
+          "image_sha256": "ea86391d6148690978d89878643a189cfaaa7fccd7865576fe12153abcc184f3",
+          "actual_writer_amount_dollars": 1850000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page254.png"
+        },
+        {
+          "row_id": "254:4845",
+          "pdf_page": 254,
+          "printed_page": "H1606",
+          "literal": "HHS Health Resources and Services Administration Illinois Eye Institute, IL, for equipment to improve optometry services 750,00 0 Duckworth S \n",
+          "literal_utf8_sha256": "1c59143ca2aedad58aed295783fa1dc206b12fb05535a47dd3b4c5a9cd31e65a",
+          "image_sha256": "ea86391d6148690978d89878643a189cfaaa7fccd7865576fe12153abcc184f3",
+          "actual_writer_amount_dollars": 750000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page254.png"
+        },
+        {
+          "row_id": "254:4988",
+          "pdf_page": 254,
+          "printed_page": "H1606",
+          "literal": "HHS Health Resources and Services Administration Inspira Health Network, NJ, for equipment to support telehealth services 2,000 ,000 Booker S \n",
+          "literal_utf8_sha256": "e78116974e3e5501c2952b454e6dadb48d0f52d522cd0dee40f762898bf61088",
+          "image_sha256": "ea86391d6148690978d89878643a189cfaaa7fccd7865576fe12153abcc184f3",
+          "actual_writer_amount_dollars": 2000000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page254.png"
+        },
+        {
+          "row_id": "254:6249",
+          "pdf_page": 254,
+          "printed_page": "H1606",
+          "literal": "HHS Health Resources and Services Administration Ketchikan Gateway Borough, AK, for equipment for purchase of new ambulance 347 ,000 Murkowski S \n",
+          "literal_utf8_sha256": "aa19a2013a70b0c2f059817ac18d148755742a91ab9ad4da495f2cd9ecd2fa7a",
+          "image_sha256": "ea86391d6148690978d89878643a189cfaaa7fccd7865576fe12153abcc184f3",
+          "actual_writer_amount_dollars": 347000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page254.png"
+        },
+        {
+          "row_id": "254:7062",
+          "pdf_page": 254,
+          "printed_page": "H1606",
+          "literal": "HHS Health Resources and Services Administration Lawrence General Hospital, MA, for equipment to provide infusion services 1,36 7,000 Markey, \nWarren \nS \n",
+          "literal_utf8_sha256": "312f3453e12a893b682a003b4267048fcd9809debfc8aee5f301f6ca32b67e52",
+          "image_sha256": "ea86391d6148690978d89878643a189cfaaa7fccd7865576fe12153abcc184f3",
+          "actual_writer_amount_dollars": 1367000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page254.png"
+        },
+        {
+          "row_id": "255:3545",
+          "pdf_page": 255,
+          "printed_page": "H1607",
+          "literal": "HHS Health Resources and Services Administration McDermott Center, IL, for facilities and equipment to expand dental services 2 68,000 Durbin S \n",
+          "literal_utf8_sha256": "6eb7eb6aba9766cdbc1945825a602981103cb83ef5d17fade0a8f06da8eae4ad",
+          "image_sha256": "a305ddcbcea1870fb07cb6dd393bcad8a5451009b9ac3c31220593be1e931618",
+          "actual_writer_amount_dollars": 268000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page255.png"
+        },
+        {
+          "row_id": "255:7055",
+          "pdf_page": 255,
+          "printed_page": "H1607",
+          "literal": "HHS Health Resources and Services Administration Morrow County Health District, OR, for equipment to provide imaging services 6 52,000 Merkley, Wyden S \n",
+          "literal_utf8_sha256": "7bb91d754c4845d21738266c8006a69952b64e706d0b834d0fd77ee07062263c",
+          "image_sha256": "a305ddcbcea1870fb07cb6dd393bcad8a5451009b9ac3c31220593be1e931618",
+          "actual_writer_amount_dollars": 652000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page255.png"
+        },
+        {
+          "row_id": "258:6098",
+          "pdf_page": 258,
+          "printed_page": "H1610",
+          "literal": "HHS Health Resources and Services Administration Union County Hospital Authority, GA, for equipment to improve cardiac care 2,0 00,000 Ossoff S \n",
+          "literal_utf8_sha256": "e267d175e2ea539616f0f19c6e5e38b7f505d806ef451f863e6c380a0b9ac796",
+          "image_sha256": "242dd2842bb194ef5ceea9388beb3a1ece224e2aa14af719120648c104219df7",
+          "actual_writer_amount_dollars": 2000000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page258.png"
+        },
+        {
+          "row_id": "259:1572",
+          "pdf_page": 259,
+          "printed_page": "H1611",
+          "literal": "HHS Health Resources and Services Administration University of Kentucky, KY, for acquisition of laboratory research equipment 1 5,000,000 McConnell S \n",
+          "literal_utf8_sha256": "980a3e94074bd43bf0bd23a295bcae34e15782d519e166bd9b8dafef134a9375",
+          "image_sha256": "c0bc413ab059e5380fc9477eb73a4091bea2c869cd074921136d87ce9859d37b",
+          "actual_writer_amount_dollars": 15000000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page259.png"
+        },
+        {
+          "row_id": "260:508",
+          "pdf_page": 260,
+          "printed_page": "H1612",
+          "literal": "HHS Health Resources and Services Administration Versiti, WI, for facilities and equipment to construct a research facility 3,0 00,000 Baldwin S \n",
+          "literal_utf8_sha256": "df28f365d7bdea8634018e6470ab03b7fc77f3691c0b806b9b67c67d92597c91",
+          "image_sha256": "eb80d39ce12d3923036cb78ec6d3e8e2e64715ce142c97b4e4bd733250306cd7",
+          "actual_writer_amount_dollars": 3000000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "196c68a8d431c4a3f789e47a5536be2a97a58425",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/batch4/page260.png"
+        },
+        {
+          "row_id": "262:5860",
+          "pdf_page": 262,
+          "printed_page": "H1614",
+          "literal": "HHS Administration for Children and Families Anchorage Coalition to End Homelessness, AK, to provide housing support services 4 50,000 Murkowski S \n",
+          "literal_utf8_sha256": "0ceb629ea9c69c384d2f604d03b1782381b2fa26db0a52e1cd654153eab0d46a",
+          "image_sha256": "2dd5c26621f02e1c653a24cf27fded1b79eba3316d76fafb3317c8c20b28ba01",
+          "actual_writer_amount_dollars": 450000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "196c68a8d431c4a3f789e47a5536be2a97a58425",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/batch4/page262.png"
+        },
+        {
+          "row_id": "263:2503",
+          "pdf_page": 263,
+          "printed_page": "H1615",
+          "literal": "HHS Administration for Children and Families Easter Seals North Georgia, GA, for programming to support children and families 7 67,000 Ossoff, Warnock S \n",
+          "literal_utf8_sha256": "ff8b90121f1fce0fab91bbae554488da5a490e3323602f375a9b86cd2c07e6c4",
+          "image_sha256": "92aae68956842f19835b33b9534fb44277a2032d45781252eedce5198a55ef6a",
+          "actual_writer_amount_dollars": 767000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page263.png"
+        },
+        {
+          "row_id": "263:6659",
+          "pdf_page": 263,
+          "printed_page": "H1615",
+          "literal": "HHS Administration for Children and Families So What Else, Inc., MD, for a hunger relief program for at-risk individuals 750,00 0 Alsobrooks, \nVan Hollen \nS \n",
+          "literal_utf8_sha256": "8bb3d6024b8be657f8f4815593225a14c775e2de0df7f412c607a83c62dc10b9",
+          "image_sha256": "92aae68956842f19835b33b9534fb44277a2032d45781252eedce5198a55ef6a",
+          "actual_writer_amount_dollars": 750000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page263.png"
+        },
+        {
+          "row_id": "264:2367",
+          "pdf_page": 264,
+          "printed_page": "H1616",
+          "literal": "HHS Administration for Children and Families Westbay Community Action, RI, to support low income families, including food 100,0 00 Reed, \nWhitehouse \nS \n",
+          "literal_utf8_sha256": "f77fbcbe74f149ae17828074d244bbc48cb31112e9c6c584f0af9ec69fbd7722",
+          "image_sha256": "7ae3ebc345a95c32ee1eebac549927b70f3317a40a1757e1715c6190a53b236e",
+          "actual_writer_amount_dollars": 100000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "196c68a8d431c4a3f789e47a5536be2a97a58425",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/batch4/page264.png"
+        },
+        {
+          "row_id": "264:4093",
+          "pdf_page": 264,
+          "printed_page": "H1616",
+          "literal": "HHS Administration for Community Living Denver Regional Council of Governments, CO, for supportive services for older adults 82 0,000 Bennet, \nHickenlooper \nS \n",
+          "literal_utf8_sha256": "020647f9e896eed26db676e1e46b0cba1b29c3b87acc9fa944ad10d16904904a",
+          "image_sha256": "7ae3ebc345a95c32ee1eebac549927b70f3317a40a1757e1715c6190a53b236e",
+          "actual_writer_amount_dollars": 820000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "196c68a8d431c4a3f789e47a5536be2a97a58425",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/batch4/page264.png"
+        },
+        {
+          "row_id": "264:5842",
+          "pdf_page": 264,
+          "printed_page": "H1616",
+          "literal": "HHS Administration for Community Living Matrix Human Services, MI, for programming and supportive services for older adults 1,0 00,000 Slotkin S \n",
+          "literal_utf8_sha256": "1d679e47793e05d98de0c38530f8339cdf146ba30519d476b794da7a12ddd6a5",
+          "image_sha256": "7ae3ebc345a95c32ee1eebac549927b70f3317a40a1757e1715c6190a53b236e",
+          "actual_writer_amount_dollars": 1000000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "196c68a8d431c4a3f789e47a5536be2a97a58425",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/batch4/page264.png"
+        },
+        {
+          "row_id": "268:1151",
+          "pdf_page": 268,
+          "printed_page": "H1620",
+          "literal": "ED Innovation and Improvement Rhode Island Marine Trade Association, RI, for workforce training for high school students 480,00 0 Whitehouse S \n",
+          "literal_utf8_sha256": "45e3b757e4db30a4ac0fefa929eb5d3c7623077b7bd605bcb45020b9c76dad7a",
+          "image_sha256": "35190095ee2cc5473c84d073cd61c2722f1587338d51a5d15f44ebb5518ed50b",
+          "actual_writer_amount_dollars": 480000,
+          "column_index": 4,
+          "column_label": "Amount ($)",
+          "source_ref": "delivery",
+          "source_image_path": "docs/review_packets/immigration_research_support_20261014/currency44/page268.png"
+        }
+      ],
+      "additional_selected_visual_observation": {
+        "page": 263,
+        "printed": "H1615",
+        "agency": "HHS",
+        "account": "Administration for Children and Families",
+        "recipient": "City of Whitewater, WI",
+        "purpose": "to reduce poverty through an immigrant liaison",
+        "amount_dollars": 85000,
+        "Senate_requestor": "Baldwin",
+        "origination": "S",
+        "limits": "Explicit project purpose, not recipient-name inference or proof of personal status/eligibility/benefit/fiscal result."
+      },
+      "canonical_changes": false,
+      "candidate_credit": 0,
+      "other965mechanical_amount_scope": "The965non-target amounts retain mechanical status; Whitewater85000was additionally inspected as one material row, so remaining964are not comprehensively visually certified. No all989row certificate."
+    },
+    "canonical_changes": false,
+    "candidate_credit": 0,
+    "whole989row_visual_certificate": false
+  },
+  "all_denied_cancelled_reserved_and_unrelated_boundaries_preserved": true,
+  "follow_up": "Generatedreadable_candidates54.10MBat238and prospectivegrowth remain separately scoped artifact-size follow-up, no automaticLFS/architecturechange.",
+  "worktree_hashes_not_Git_blob_hashes": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "receipt_sha256": "56632af5c339731d18040dd0d2268a9f01dc5b511bf49e04e7dd5e4f5e4c63fc"
+}

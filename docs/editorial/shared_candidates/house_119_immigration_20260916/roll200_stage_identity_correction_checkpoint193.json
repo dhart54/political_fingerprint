@@ -1,0 +1,494 @@
+{
+  "checkpoint": 193,
+  "base_head": "c75e3fec20396615e3bcc1786a5dcdc26cca0249",
+  "scope": "Confirmed source-identity correction only; no resumed research completion",
+  "review_state": "candidate_correction_pending_independent_review",
+  "action_id": "house:119:1:200",
+  "prior_pending_row": {
+    "action_id": "house:119:1:200",
+    "session": 1,
+    "roll": 200,
+    "date": "2025-07-17",
+    "measure": "bill_119_s_1582",
+    "question": "On Passage",
+    "disposition": "source_unresolved",
+    "reason": "Checkpoint 191 fully reads the complete 252-page July print and the 133,704-character Senate GENIUS text and confirms own July 17 passage identity. Existing Health shared core/ref/digests remain unchanged. No Immigration clearance, component member stance, new meaning/proposition, acceptance or enacted/current-law claim. S. 1582 ES has person including individuals and organizations, specified US formation and foreign financial domicile/registration/reciprocity conditions; these are not silently recast as citizenship/status. Section 8 retains qualified United States person secondary-trading waivers/licenses, distinct security/intelligence/law-enforcement exceptions and reporting. Section 5(i) AML/sanctions certifications reference INA section 219 designated organizations; that citation alone does not import alien admission/removal consequences. Financial approval revocation differs from immigration removal. Keep unresolved/noncounting pending materially affected individual-access/status definitions, incorporation and bounded Immigration application; no automatic domain fit/exclusion or universal exemption. Own question precedes voice ayes, Waters demand/order and postponement, followed later by recorded passage, 308-122 with two Not Voting; Foushee Nay and Massie Not Voting.",
+    "source": {
+      "source_id": "clerk:119:1:200",
+      "url": "https://clerk.house.gov/evs/2025/roll200.xml",
+      "raw_sha256": "131aa54723b74ed8e0dd3f923cac9d3f1ece215dbf43205709f4643c99df1f89",
+      "governed_bytes_sha256": "4326f5cd8e8a62f7cb4178bd44a473df22e52e2281bcfafd5460e9eb795e925d",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_s_1582",
+    "member_action": "nay",
+    "house_action_stage": "On Passage",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Checkpoint 191 fully reads the complete 252-page July print and the 133,704-character Senate GENIUS text and confirms own July 17 passage identity. Existing Health shared core/ref/digests remain unchanged. No Immigration clearance, component member stance, new meaning/proposition, acceptance or enacted/current-law claim. S. 1582 ES has person including individuals and organizations, specified US formation and foreign financial domicile/registration/reciprocity conditions; these are not silently recast as citizenship/status. Section 8 retains qualified United States person secondary-trading waivers/licenses, distinct security/intelligence/law-enforcement exceptions and reporting. Section 5(i) AML/sanctions certifications reference INA section 219 designated organizations; that citation alone does not import alien admission/removal consequences. Financial approval revocation differs from immigration removal. Keep unresolved/noncounting pending materially affected individual-access/status definitions, incorporation and bounded Immigration application; no automatic domain fit/exclusion or universal exemption. Own question precedes voice ayes, Waters demand/order and postponement, followed later by recorded passage, 308-122 with two Not Voting; Foushee Nay and Massie Not Voting.",
+    "unresolved_reason": "pending_financial_individual_access_and_incorporation_after_material_sources191",
+    "sources": [
+      {
+        "source_id": "clerk:119:1:200",
+        "url": "https://clerk.house.gov/evs/2025/roll200.xml",
+        "raw_sha256": "131aa54723b74ed8e0dd3f923cac9d3f1ece215dbf43205709f4643c99df1f89",
+        "governed_bytes_sha256": "4326f5cd8e8a62f7cb4178bd44a473df22e52e2281bcfafd5460e9eb795e925d",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      {
+        "source_id": "govinfo:s1582es",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm",
+        "raw_sha256": "ed4ba8a155875f23a39628df4981b251a96e159965a1a36a930f5ca6e6805d13",
+        "governed_bytes_sha256": "d5db170c89410972f54fc5e3d82cdf1b58d370fb14946bd837781eb8c5afcccf"
+      },
+      {
+        "source_id": "immigration:roll200-identity191",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "1b210a1d6db1fc553a6c3ad629df7f8aedf0047473c3f8e8580aba8ec39cea9e"
+      },
+      {
+        "source_id": "immigration:roll200-initial191",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "cd828924e04cd0995af2ce94699d098c276f851a1b0c3d2477cfd35f2f22f047"
+      },
+      {
+        "source_id": "immigration:roll200-recorded191",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "96af87172ed8aa498eb3d89fe663caab08892728ba6a7447aaa15303954849d2"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_raw_hash_matches": true
+  },
+  "corrected_pending_row": {
+    "action_id": "house:119:1:200",
+    "session": 1,
+    "roll": 200,
+    "date": "2025-07-17",
+    "measure": "bill_119_s_1582",
+    "question": "On Passage",
+    "disposition": "source_unresolved",
+    "reason": "Checkpoint 191 fully reads the complete 252-page July print and the 133,704-character Senate GENIUS text and confirms own July 17 passage identity. Existing Health shared core/ref/digests remain unchanged. No Immigration clearance, component member stance, new meaning/proposition, acceptance or enacted/current-law claim. S. 1582 ES has person including individuals and organizations, specified US formation and foreign financial domicile/registration/reciprocity conditions; these are not silently recast as citizenship/status. Section 8 retains qualified United States person secondary-trading waivers/licenses, distinct security/intelligence/law-enforcement exceptions and reporting. Section 5(i) AML/sanctions certifications reference INA section 219 designated organizations; that citation alone does not import alien admission/removal consequences. Financial approval revocation differs from immigration removal. Keep unresolved/noncounting pending materially affected individual-access/status definitions, incorporation and bounded Immigration application; no automatic domain fit/exclusion or universal exemption. Own question precedes voice ayes, Waters demand/order and postponement, followed later by recorded passage, 308-122 with two Not Voting; Foushee Nay and Massie Not Voting.",
+    "source": {
+      "source_id": "clerk:119:1:200",
+      "url": "https://clerk.house.gov/evs/2025/roll200.xml",
+      "raw_sha256": "131aa54723b74ed8e0dd3f923cac9d3f1ece215dbf43205709f4643c99df1f89",
+      "governed_bytes_sha256": "4326f5cd8e8a62f7cb4178bd44a473df22e52e2281bcfafd5460e9eb795e925d",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_s_1582",
+    "member_action": "nay",
+    "house_action_stage": "On Passage",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Checkpoint 191 fully reads the complete 252-page July print and the 133,704-character Senate GENIUS text and confirms own July 17 passage identity. Existing Health shared core/ref/digests remain unchanged. No Immigration clearance, component member stance, new meaning/proposition, acceptance or enacted/current-law claim. S. 1582 ES has person including individuals and organizations, specified US formation and foreign financial domicile/registration/reciprocity conditions; these are not silently recast as citizenship/status. Section 8 retains qualified United States person secondary-trading waivers/licenses, distinct security/intelligence/law-enforcement exceptions and reporting. Section 5(i) AML/sanctions certifications reference INA section 219 designated organizations; that citation alone does not import alien admission/removal consequences. Financial approval revocation differs from immigration removal. Keep unresolved/noncounting pending materially affected individual-access/status definitions, incorporation and bounded Immigration application; no automatic domain fit/exclusion or universal exemption. Own question precedes voice ayes, Waters demand/order and postponement, followed later by recorded passage, 308-122 with two Not Voting; Foushee Nay and Massie Not Voting.",
+    "unresolved_reason": "pending_financial_individual_access_and_incorporation_after_material_sources191",
+    "sources": [
+      {
+        "source_id": "clerk:119:1:200",
+        "url": "https://clerk.house.gov/evs/2025/roll200.xml",
+        "raw_sha256": "131aa54723b74ed8e0dd3f923cac9d3f1ece215dbf43205709f4643c99df1f89",
+        "governed_bytes_sha256": "4326f5cd8e8a62f7cb4178bd44a473df22e52e2281bcfafd5460e9eb795e925d",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      {
+        "source_id": "govinfo:s1582es",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm",
+        "raw_sha256": "ed4ba8a155875f23a39628df4981b251a96e159965a1a36a930f5ca6e6805d13",
+        "governed_bytes_sha256": "d5db170c89410972f54fc5e3d82cdf1b58d370fb14946bd837781eb8c5afcccf"
+      },
+      {
+        "source_id": "immigration:roll200-identity191",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "1b210a1d6db1fc553a6c3ad629df7f8aedf0047473c3f8e8580aba8ec39cea9e"
+      },
+      {
+        "source_id": "immigration:roll200-initial-corrected193",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "1e389de59399217ddb056623efcce0e149fedd92ace3960ec6b55d150698cf4f"
+      },
+      {
+        "source_id": "immigration:roll200-recorded191",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "96af87172ed8aa498eb3d89fe663caab08892728ba6a7447aaa15303954849d2"
+      },
+      {
+        "source_id": "immigration:roll200-next-action-boundary193",
+        "governed_bytes_sha256": "8efd8687a40d7f575b3d18abfec02fae0600d278b0dd21f8941e042e4a46eb21"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_raw_hash_matches": true
+  },
+  "historical_wrong_source_id": "immigration:roll200-initial191",
+  "active_corrected_source_id": "immigration:roll200-initial-corrected193",
+  "next_action_boundary_source_id": "immigration:roll200-next-action-boundary193",
+  "parent_capture_path": ".tmp/parent191-recordJuly17.json",
+  "parent_raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+  "parent_text_sha256": "233d60db8aaf4c2c2d4f2606ed0db8be80374f575fb58a2859b9afc430bc2e79",
+  "parent_text_length": 1020725,
+  "literal_correct_interval": [
+    578298,
+    578764
+  ],
+  "question_start": 578406,
+  "declared_callups": [
+    {
+      "start": 353150,
+      "bill": "S.1582"
+    },
+    {
+      "start": 578875,
+      "bill": "H.R.1919"
+    }
+  ],
+  "callup_scan_scope": [
+    353077,
+    579400
+  ],
+  "callup_scan_is_explicit_form_not_universal_parser": true,
+  "correct_initial_characters": 466,
+  "wrong_initial_characters": 475,
+  "original191_receipt_sha256": "fa0111e46419dfb8d21a45cdbd161513f5ecf539a320b6cc8d8793c5b5bcd183",
+  "original191_history_path": "docs\\editorial\\shared_candidates\\house_119_source_review_checkpoint193_history\\prior_financial_package_source_qualification_checkpoint191.json",
+  "repaired191_receipt_sha256": "f2d4d8a58ddac6fc6a59cbb33f7d961c7b0a78344d9d5c091650751afd1ff57b",
+  "independent_review_received_path": "docs\\review_packets\\immigration_bounded_review_checkpoints191_192_received193.json",
+  "independent_review_received_sha256": "d886a1110d0f27ed8636fd8b9a50b5cb6bb0c50b10965a30a31ddb84cc7f632f",
+  "historical_wrong_source_and_capture_unchanged": true,
+  "old_sources_and_capture_prefix_unchanged": true,
+  "new_sources": 2,
+  "new_capture_registrations": 2,
+  "source_count": 2158,
+  "capture_count": 1048,
+  "new_meanings": 0,
+  "new_propositions": 0,
+  "new_screening_completions": 0,
+  "held_actions_unchanged": true,
+  "membership_and_accounting_unchanged": true,
+  "meaning_of_recorded_result_unchanged": true,
+  "source_order_alone_not_identity": true,
+  "same_action_negative_regression": "Correct S.1582 declaration/result and HR1919 boundary retained; substitute only historical wrong initial passage; require rejection",
+  "private_research193_unchanged": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "b78b41b1d5c375ffa76976d0def93da7ad48ad50e1b8a8a91c976ad989860386",
+  "adjacent_shared_source_bank_reference_repair": {
+    "action_id": "house:119:1:199",
+    "prior_pending_row": {
+      "action_id": "house:119:1:199",
+      "session": 1,
+      "roll": 199,
+      "date": "2025-07-17",
+      "measure": "bill_119_hr_3633",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Checkpoint 191 fully reads the complete 252-page July print and the 133,704-character Senate GENIUS text and confirms own July 17 passage identity. Existing Health shared core/ref/digests remain unchanged. No Immigration clearance, component member stance, new meaning/proposition, acceptance or enacted/current-law claim. H.R. 3633 is Rules Committee Print 119-6 read with adopted Report 119-199 Part B and floor sections 106(c), 405(a)-(b), and 409 operators; unoffered Sherman Part C and later September Title VI are excluded. Financial registration, custody, insolvency, foreign-supervision and AML/customer-ID rules retain their scope. New GENIUS section 22 says United States individual for qualified personal self-custody/peer transactions, not automatically citizen, resident, lawful status or everybody; sanctions/enforcement savings remain. Expedited hiring retains referenced civil-service rules. Keep unresolved/noncounting pending materially affected incorporation and individual-access/status application; no automatic domain fit/exclusion. Own question precedes voice ayes, Craig demand/order and postponement, followed later by recorded passage, 294-134 with four Not Voting; Foushee Nay and Massie Not Voting.",
+      "source": {
+        "source_id": "clerk:119:1:199",
+        "url": "https://clerk.house.gov/evs/2025/roll199.xml",
+        "raw_sha256": "2655ba450276e7378cdc481e52999fb699dd22392c13259fe87eaa8f7ac80082",
+        "governed_bytes_sha256": "960fc5617b9dad8b3442048ce9c1db6d06f12b4b9932b816da7b24c908c9548a",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_3633",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Checkpoint 191 fully reads the complete 252-page July print and the 133,704-character Senate GENIUS text and confirms own July 17 passage identity. Existing Health shared core/ref/digests remain unchanged. No Immigration clearance, component member stance, new meaning/proposition, acceptance or enacted/current-law claim. H.R. 3633 is Rules Committee Print 119-6 read with adopted Report 119-199 Part B and floor sections 106(c), 405(a)-(b), and 409 operators; unoffered Sherman Part C and later September Title VI are excluded. Financial registration, custody, insolvency, foreign-supervision and AML/customer-ID rules retain their scope. New GENIUS section 22 says United States individual for qualified personal self-custody/peer transactions, not automatically citizen, resident, lawful status or everybody; sanctions/enforcement savings remain. Expedited hiring retains referenced civil-service rules. Keep unresolved/noncounting pending materially affected incorporation and individual-access/status application; no automatic domain fit/exclusion. Own question precedes voice ayes, Craig demand/order and postponement, followed later by recorded passage, 294-134 with four Not Voting; Foushee Nay and Massie Not Voting.",
+      "unresolved_reason": "pending_financial_individual_access_and_incorporation_after_material_sources191",
+      "sources": [
+        {
+          "source_id": "clerk:119:1:199",
+          "url": "https://clerk.house.gov/evs/2025/roll199.xml",
+          "raw_sha256": "2655ba450276e7378cdc481e52999fb699dd22392c13259fe87eaa8f7ac80082",
+          "governed_bytes_sha256": "960fc5617b9dad8b3442048ce9c1db6d06f12b4b9932b816da7b24c908c9548a",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:s1582es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm",
+          "raw_sha256": "ed4ba8a155875f23a39628df4981b251a96e159965a1a36a930f5ca6e6805d13",
+          "governed_bytes_sha256": "d5db170c89410972f54fc5e3d82cdf1b58d370fb14946bd837781eb8c5afcccf"
+        },
+        {
+          "source_id": "govinfo:hrpt119-199-partsBC",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "48ae829bfe60ed1a30e475d5ab3eef1c232f1ccd9c259b2044036a6537c926a7"
+        },
+        {
+          "source_id": "govinfo:hres707-engrossment-instruction",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+          "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+          "governed_bytes_sha256": "74b9c94c11a65a4cc0d963a2e809b6c285fcce6966a1997ac9d037ed7b026555"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17-3633-version",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "ed4822c98b75125e861a049ed95014f10f396ad2609e5843218f71f333017f52"
+        },
+        {
+          "source_id": "govinfo:rcp119-6-july-version",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61638/pdf/CPRT-119HPRT61638.pdf",
+          "raw_sha256": "1731334b4df7d292425d19a8a0936a3c891051358241c45bb78fe82a9967b7a6",
+          "governed_bytes_sha256": "6b74f740154e1d3417a4ee6840d154712171ebaa57a7f48f675968bb74b4f903"
+        },
+        {
+          "source_id": "govinfo:rcp1196-complete191",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61638/pdf/CPRT-119HPRT61638.pdf",
+          "raw_sha256": "1731334b4df7d292425d19a8a0936a3c891051358241c45bb78fe82a9967b7a6",
+          "governed_bytes_sha256": "4e4cc68b7bb364a6ab4a2d759f51f8b4f9988f747bd5b653c9ee965d06181e21"
+        },
+        {
+          "source_id": "immigration:roll199-identity191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "3311226cc66b5efaccfc1b738800aebdcad1c06412ea99e994603ac85cbfa7a8"
+        },
+        {
+          "source_id": "immigration:roll200-identity191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "1b210a1d6db1fc553a6c3ad629df7f8aedf0047473c3f8e8580aba8ec39cea9e"
+        },
+        {
+          "source_id": "immigration:roll199-initial191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "b9bd9b04c80aca798b9cca7cc4e99985755cbb32b3766b891d0d900e861a2042"
+        },
+        {
+          "source_id": "immigration:roll200-initial191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "cd828924e04cd0995af2ce94699d098c276f851a1b0c3d2477cfd35f2f22f047"
+        },
+        {
+          "source_id": "immigration:roll199-recorded191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "4f003f863aca7114cd9bfffd691d486488ae007f5c598b65335757ff19c16552"
+        },
+        {
+          "source_id": "immigration:roll200-recorded191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "96af87172ed8aa498eb3d89fe663caab08892728ba6a7447aaa15303954849d2"
+        },
+        {
+          "source_id": "immigration:roll199-adopted106c191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "e3bda46c46e6ee60f4b52aa4aa2d8042c642e3b5b3a6efd114a928491a894cbd"
+        },
+        {
+          "source_id": "immigration:roll199-adopted405ab191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "935ccc4405d59de3d3f5c8a6713960ac2c6c4b7fea4084d6791bdb39e377ecea"
+        },
+        {
+          "source_id": "immigration:roll199-adopted409191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "eae4d5f46c6a3967f04c9527250e90cb02b0b7612208d7ff3b55340f7742e063"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_raw_hash_matches": true
+    },
+    "corrected_pending_row": {
+      "action_id": "house:119:1:199",
+      "session": 1,
+      "roll": 199,
+      "date": "2025-07-17",
+      "measure": "bill_119_hr_3633",
+      "question": "On Passage",
+      "disposition": "source_unresolved",
+      "reason": "Checkpoint 191 fully reads the complete 252-page July print and the 133,704-character Senate GENIUS text and confirms own July 17 passage identity. Existing Health shared core/ref/digests remain unchanged. No Immigration clearance, component member stance, new meaning/proposition, acceptance or enacted/current-law claim. H.R. 3633 is Rules Committee Print 119-6 read with adopted Report 119-199 Part B and floor sections 106(c), 405(a)-(b), and 409 operators; unoffered Sherman Part C and later September Title VI are excluded. Financial registration, custody, insolvency, foreign-supervision and AML/customer-ID rules retain their scope. New GENIUS section 22 says United States individual for qualified personal self-custody/peer transactions, not automatically citizen, resident, lawful status or everybody; sanctions/enforcement savings remain. Expedited hiring retains referenced civil-service rules. Keep unresolved/noncounting pending materially affected incorporation and individual-access/status application; no automatic domain fit/exclusion. Own question precedes voice ayes, Craig demand/order and postponement, followed later by recorded passage, 294-134 with four Not Voting; Foushee Nay and Massie Not Voting.",
+      "source": {
+        "source_id": "clerk:119:1:199",
+        "url": "https://clerk.house.gov/evs/2025/roll199.xml",
+        "raw_sha256": "2655ba450276e7378cdc481e52999fb699dd22392c13259fe87eaa8f7ac80082",
+        "governed_bytes_sha256": "960fc5617b9dad8b3442048ce9c1db6d06f12b4b9932b816da7b24c908c9548a",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      "episode_candidate_id": null,
+      "after_historical_july23_boundary": false,
+      "bill_ref": "bill_119_hr_3633",
+      "member_action": "nay",
+      "house_action_stage": "On Passage",
+      "official_policy_area": null,
+      "recall_reasons": [
+        "complete_official_roll_discovery"
+      ],
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Checkpoint 191 fully reads the complete 252-page July print and the 133,704-character Senate GENIUS text and confirms own July 17 passage identity. Existing Health shared core/ref/digests remain unchanged. No Immigration clearance, component member stance, new meaning/proposition, acceptance or enacted/current-law claim. H.R. 3633 is Rules Committee Print 119-6 read with adopted Report 119-199 Part B and floor sections 106(c), 405(a)-(b), and 409 operators; unoffered Sherman Part C and later September Title VI are excluded. Financial registration, custody, insolvency, foreign-supervision and AML/customer-ID rules retain their scope. New GENIUS section 22 says United States individual for qualified personal self-custody/peer transactions, not automatically citizen, resident, lawful status or everybody; sanctions/enforcement savings remain. Expedited hiring retains referenced civil-service rules. Keep unresolved/noncounting pending materially affected incorporation and individual-access/status application; no automatic domain fit/exclusion. Own question precedes voice ayes, Craig demand/order and postponement, followed later by recorded passage, 294-134 with four Not Voting; Foushee Nay and Massie Not Voting.",
+      "unresolved_reason": "pending_financial_individual_access_and_incorporation_after_material_sources191",
+      "sources": [
+        {
+          "source_id": "clerk:119:1:199",
+          "url": "https://clerk.house.gov/evs/2025/roll199.xml",
+          "raw_sha256": "2655ba450276e7378cdc481e52999fb699dd22392c13259fe87eaa8f7ac80082",
+          "governed_bytes_sha256": "960fc5617b9dad8b3442048ce9c1db6d06f12b4b9932b816da7b24c908c9548a",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:s1582es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm",
+          "raw_sha256": "ed4ba8a155875f23a39628df4981b251a96e159965a1a36a930f5ca6e6805d13",
+          "governed_bytes_sha256": "d5db170c89410972f54fc5e3d82cdf1b58d370fb14946bd837781eb8c5afcccf"
+        },
+        {
+          "source_id": "govinfo:hrpt119-199-partsBC",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "48ae829bfe60ed1a30e475d5ab3eef1c232f1ccd9c259b2044036a6537c926a7"
+        },
+        {
+          "source_id": "govinfo:hres707-engrossment-instruction",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+          "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+          "governed_bytes_sha256": "74b9c94c11a65a4cc0d963a2e809b6c285fcce6966a1997ac9d037ed7b026555"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17-3633-version",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "ed4822c98b75125e861a049ed95014f10f396ad2609e5843218f71f333017f52"
+        },
+        {
+          "source_id": "govinfo:rcp119-6-july-version",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61638/pdf/CPRT-119HPRT61638.pdf",
+          "raw_sha256": "1731334b4df7d292425d19a8a0936a3c891051358241c45bb78fe82a9967b7a6",
+          "governed_bytes_sha256": "6b74f740154e1d3417a4ee6840d154712171ebaa57a7f48f675968bb74b4f903"
+        },
+        {
+          "source_id": "govinfo:rcp1196-complete191",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61638/pdf/CPRT-119HPRT61638.pdf",
+          "raw_sha256": "1731334b4df7d292425d19a8a0936a3c891051358241c45bb78fe82a9967b7a6",
+          "governed_bytes_sha256": "4e4cc68b7bb364a6ab4a2d759f51f8b4f9988f747bd5b653c9ee965d06181e21"
+        },
+        {
+          "source_id": "immigration:roll199-identity191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "3311226cc66b5efaccfc1b738800aebdcad1c06412ea99e994603ac85cbfa7a8"
+        },
+        {
+          "source_id": "immigration:roll200-identity191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "1b210a1d6db1fc553a6c3ad629df7f8aedf0047473c3f8e8580aba8ec39cea9e"
+        },
+        {
+          "source_id": "immigration:roll199-initial191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "b9bd9b04c80aca798b9cca7cc4e99985755cbb32b3766b891d0d900e861a2042"
+        },
+        {
+          "source_id": "immigration:roll200-initial-corrected193",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "1e389de59399217ddb056623efcce0e149fedd92ace3960ec6b55d150698cf4f"
+        },
+        {
+          "source_id": "immigration:roll199-recorded191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "4f003f863aca7114cd9bfffd691d486488ae007f5c598b65335757ff19c16552"
+        },
+        {
+          "source_id": "immigration:roll200-recorded191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "96af87172ed8aa498eb3d89fe663caab08892728ba6a7447aaa15303954849d2"
+        },
+        {
+          "source_id": "immigration:roll199-adopted106c191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "e3bda46c46e6ee60f4b52aa4aa2d8042c642e3b5b3a6efd114a928491a894cbd"
+        },
+        {
+          "source_id": "immigration:roll199-adopted405ab191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "935ccc4405d59de3d3f5c8a6713960ac2c6c4b7fea4084d6791bdb39e377ecea"
+        },
+        {
+          "source_id": "immigration:roll199-adopted409191",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "eae4d5f46c6a3967f04c9527250e90cb02b0b7612208d7ff3b55340f7742e063"
+        }
+      ],
+      "exact_action_source_binding": null,
+      "public_action_sha256": null,
+      "review_progress": {
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false
+      },
+      "historical_raw_hash_matches": true
+    },
+    "own_action199_initial_and_recorded_sources_unchanged": true
+  },
+  "active_reference_action_ids": [
+    "house:119:1:199",
+    "house:119:1:200"
+  ],
+  "post_delivery_active_locator_correction194": {
+    "prior_correction_receipt_sha256": "282bb605a9a7c6f96b0dab981171b468cbfa76b6cfdb8a4ac50afca07301f0eb",
+    "prior_correction_receipt_path": "docs\\editorial\\shared_candidates\\house_119_source_review_checkpoint194_history\\prior_roll200_stage_identity_correction_checkpoint193.json",
+    "active_question_position": 578406,
+    "independent193_original_P2_closed": true,
+    "residual_P3_repaired_pending_recheck": true
+  }
+}

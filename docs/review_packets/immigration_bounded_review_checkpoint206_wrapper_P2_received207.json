@@ -1,0 +1,25 @@
+{
+  "checkpoint": 207,
+  "reviewed_checkpoint": 206,
+  "reported_by_parent_thread": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+  "received_utc": "2026-10-11T22:56:17.800719+00:00",
+  "severity": "P2",
+  "finding": "Qualified-provider wrapper omitted package_component_boundary and semantic_ir_source_ids comparison before canonical copy",
+  "validly_resealed_provider_only_reproducers": [
+    {
+      "field": "package_component_boundary",
+      "mutation": "whole_measure -> exact_amendment"
+    },
+    {
+      "field": "semantic_ir_source_ids",
+      "mutation": "reduce to clerk:119:2:221 only"
+    }
+  ],
+  "capture_prose_claim_map_unchanged": true,
+  "submitted206_data_correct": true,
+  "required_source_fix_includes_both_own_Record_witnesses": true,
+  "parent_package_meaning_projected_true_already_schema_rejected": true,
+  "full206_review_finishing": true,
+  "editorial_acceptance": false,
+  "receipt_sha256": "2edc102099228d20b9ccc674a456b2c656c6c59d07ba43d04ce21f8614f1a043"
+}

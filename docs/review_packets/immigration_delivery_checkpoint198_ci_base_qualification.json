@@ -1,0 +1,56 @@
+{
+  "checkpoint": 198,
+  "synthetic_sha": "1b1a09c57fd98afd02c3a9a5e16691e084900c7b",
+  "synthetic_parent_shas": [
+    "f895f1c316afea888816fd1fd8e9eb2bfe9c31e6",
+    "3cbf25d1fb98c0f57c023f86e7a7d4ab1be058fd"
+  ],
+  "direct_main_ref_observations": [
+    {
+      "sha": "f895f1c316afea888816fd1fd8e9eb2bfe9c31e6",
+      "observed_utc": "2026-10-11T18:25:18.442590+00:00"
+    },
+    {
+      "sha": "f895f1c316afea888816fd1fd8e9eb2bfe9c31e6",
+      "observed_utc": "2026-10-11T18:25:21.950538+00:00"
+    }
+  ],
+  "PR_snapshot": {
+    "baseRefOid": "862b290cceea8af7d6c1c800d1ecdfa52386a490",
+    "headRefOid": "3cbf25d1fb98c0f57c023f86e7a7d4ab1be058fd",
+    "isDraft": true,
+    "mergeable": "MERGEABLE",
+    "state": "OPEN",
+    "url": "https://github.com/dhart54/political_fingerprint/pull/198"
+  },
+  "run_PR_base_snapshots": [
+    {
+      "url": "https://api.github.com/repos/dhart54/political_fingerprint/pulls/198",
+      "id": 4753238314,
+      "number": 198,
+      "head": {
+        "ref": "codex/foushee-immigration-border-shared",
+        "sha": "3cbf25d1fb98c0f57c023f86e7a7d4ab1be058fd",
+        "repo": {
+          "id": 1180371996,
+          "url": "https://api.github.com/repos/dhart54/political_fingerprint",
+          "name": "political_fingerprint"
+        }
+      },
+      "base": {
+        "ref": "main",
+        "sha": "862b290cceea8af7d6c1c800d1ecdfa52386a490",
+        "repo": {
+          "id": 1180371996,
+          "url": "https://api.github.com/repos/dhart54/political_fingerprint",
+          "name": "political_fingerprint"
+        }
+      }
+    }
+  ],
+  "synthetic_base_matches_both_direct_main_reads": true,
+  "current_main_integration_claim": false,
+  "qualification": "Actual synthetic-parent identity is authoritative for checkout; direct-main reads and PR/run metadata are separately bounded observations. No broad current-main integration or branch rebase/merge is claimed.",
+  "publication_authorized": false,
+  "receipt_sha256": "2c8d82477a2f3bcb4cd052a5e66312760bdbe018fc79bfbdb9c103dfbcddc589"
+}

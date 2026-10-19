@@ -1,0 +1,267 @@
+{
+  "checkpoint": 194,
+  "head": "e80863cf6244397ccfe780517fe959270dd9f788",
+  "run": 38153867105,
+  "run_attempt": 1,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "failed_jobs": [],
+  "jobs": [
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T16:04:01.5595549Z HEAD is now at e80863cf Screen student aid identity fraud and retain Treasury review hold"
+      ],
+      "job_id": 114512690836,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:36Z",
+      "completed_at": "2026-10-11T16:04:24Z",
+      "checkout_log_shas": [
+        "e80863cf6244397ccfe780517fe959270dd9f788"
+      ],
+      "log_sha256": "01b64c23994d4f5d8f4b7149acf0aeb297bed2758d38314f3b4d91028299bdb7",
+      "log_bytes": 63844,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:15.1192901Z 15 passed, 1 warning in 0.66s",
+        "2026-10-11T16:04:15.6591291Z 10 passed in 0.27s",
+        "2026-10-11T16:04:16.1950545Z 3 passed in 0.30s",
+        "2026-10-11T16:04:22.4317993Z 96 passed in 3.71s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114512690996,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:36Z",
+      "completed_at": "2026-10-11T16:04:05Z",
+      "checkout_log_shas": [
+        "9cede47b5f9e2cf0977bdfe416d4be088ce0a712"
+      ],
+      "log_sha256": "f72c741d0f9c2b63bfc527a84651ed6ca9add97cfd72652fb5b53252453930bf",
+      "log_bytes": 28474,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:03.2579068Z ============================== 87 passed in 1.09s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T16:04:02.0664709Z HEAD is now at e80863cf Screen student aid identity fraud and retain Treasury review hold"
+      ],
+      "job_id": 114512691012,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:36Z",
+      "completed_at": "2026-10-11T16:04:08Z",
+      "checkout_log_shas": [
+        "e80863cf6244397ccfe780517fe959270dd9f788"
+      ],
+      "log_sha256": "185b1598f94089869005470f498b6eebc794809946c6c820047dd2deb124ebf8",
+      "log_bytes": 44543,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:06.8821071Z 29 passed, 40 subtests passed in 0.37s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114512691013,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:37Z",
+      "completed_at": "2026-10-11T16:07:58Z",
+      "checkout_log_shas": [
+        "9cede47b5f9e2cf0977bdfe416d4be088ce0a712"
+      ],
+      "log_sha256": "944b439f8fc65c9c1f85b66b01a058dd8914526ec15dcbadee5755ade4666859",
+      "log_bytes": 1505470,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:10.0974103Z 15 passed in 0.60s",
+        "2026-10-11T16:04:11.7214123Z 19 passed in 1.20s",
+        "2026-10-11T16:04:14.8648658Z 27 passed in 2.67s",
+        "2026-10-11T16:07:54.1783144Z 639 passed, 1 warning in 79.13s (0:01:19)"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T16:04:01.9644647Z HEAD is now at e80863cf Screen student aid identity fraud and retain Treasury review hold"
+      ],
+      "job_id": 114512691022,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:36Z",
+      "completed_at": "2026-10-11T16:04:08Z",
+      "checkout_log_shas": [
+        "e80863cf6244397ccfe780517fe959270dd9f788"
+      ],
+      "log_sha256": "c549b34aab3c02a8da6201b12e47d0c8697e137f0d4d725c6759d0f96224d414",
+      "log_bytes": 43803,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:06.7524953Z 18 passed, 34 subtests passed in 0.75s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T16:05:59.2913494Z HEAD is now at e80863cf Screen student aid identity fraud and retain Treasury review hold",
+        "2026-10-11T16:07:53.7365817Z HEAD is now at e80863cf Screen student aid identity fraud and retain Treasury review hold"
+      ],
+      "job_id": 114512691023,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:36Z",
+      "completed_at": "2026-10-11T16:08:25Z",
+      "checkout_log_shas": [
+        "9cede47b5f9e2cf0977bdfe416d4be088ce0a712",
+        "e80863cf6244397ccfe780517fe959270dd9f788"
+      ],
+      "log_sha256": "d5561b27d2e47c8dce5cc5016ed3e5957a45e924633bac5b5f55c426839288e7",
+      "log_bytes": 139337,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:25.0115522Z 6 passed in 1.70s",
+        "2026-10-11T16:05:59.0393806Z 38 passed, 1 warning in 93.03s (0:01:33)",
+        "2026-10-11T16:07:52.3114401Z 13 passed in 94.56s (0:01:34)",
+        "2026-10-11T16:08:22.9451775Z 20 passed in 26.89s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T16:04:01.3351709Z HEAD is now at e80863cf Screen student aid identity fraud and retain Treasury review hold"
+      ],
+      "job_id": 114512691024,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:36Z",
+      "completed_at": "2026-10-11T16:04:07Z",
+      "checkout_log_shas": [
+        "e80863cf6244397ccfe780517fe959270dd9f788"
+      ],
+      "log_sha256": "ffef3f1abef980879acb6c8b0dded4805bb10e43326bb2a003c588d89472ea5b",
+      "log_bytes": 44727,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:05.4425702Z 22 passed, 55 subtests passed in 0.29s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T16:04:16.0839988Z HEAD is now at e80863cf Screen student aid identity fraud and retain Treasury review hold"
+      ],
+      "job_id": 114512691080,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:36Z",
+      "completed_at": "2026-10-11T16:08:18Z",
+      "checkout_log_shas": [
+        "e80863cf6244397ccfe780517fe959270dd9f788"
+      ],
+      "log_sha256": "77d29276dde18599d16aaa9960911bd04a24ade56aa706ffecc4eb2301a87f22",
+      "log_bytes": 138665,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:49.7824115Z 95 passed, 1 warning in 2.59s",
+        "2026-10-11T16:06:27.6865196Z 316 passed in 96.74s (0:01:36)",
+        "2026-10-11T16:06:32.8794902Z 1 passed in 3.68s",
+        "2026-10-11T16:06:35.1027054Z 74 passed, 1 warning in 1.75s",
+        "2026-10-11T16:07:18.3963184Z   2 passed (14.2s)",
+        "2026-10-11T16:08:02.7626029Z   23 passed (17.8s)",
+        "2026-10-11T16:08:03.4216408Z 15 passed in 0.22s",
+        "2026-10-11T16:08:12.4206964Z   1 passed (7.6s)",
+        "2026-10-11T16:08:16.4060055Z 25 passed in 3.51s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114512691105,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T16:03:36Z",
+      "completed_at": "2026-10-11T16:05:40Z",
+      "checkout_log_shas": [
+        "9cede47b5f9e2cf0977bdfe416d4be088ce0a712"
+      ],
+      "log_sha256": "2af3ae2f4419c840beed386e2ebcd70bcd6fe7ad89de08543a099b17bc3bd7cf",
+      "log_bytes": 181133,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T16:04:41.7817334Z 23 passed, 1 warning in 12.59s",
+        "2026-10-11T16:04:44.9841290Z 58 passed, 1 warning in 2.96s",
+        "2026-10-11T16:04:47.4139000Z 1 passed in 1.28s",
+        "2026-10-11T16:04:51.1790102Z 1 passed, 1 warning in 2.66s",
+        "2026-10-11T16:04:54.7278630Z 1 passed in 2.38s",
+        "2026-10-11T16:04:58.2325977Z 2 passed in 2.37s",
+        "2026-10-11T16:05:00.6995944Z 14 passed in 1.25s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38153867105",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts_verified": [
+    "m14g-exact-head",
+    "amendment-evidence-contracts",
+    "m14f-exact-head",
+    "foushee-full-record-benchmark",
+    "m14d-exact-head",
+    "receipt-evidence-repair-postgres",
+    "m14e-exact-head",
+    "m14h-exact-head",
+    "publication-activation-postgres"
+  ],
+  "synthetic_merge_sha": "9cede47b5f9e2cf0977bdfe416d4be088ce0a712",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [],
+  "remaining_gate": null,
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "8f638f7baadea775837ab33c7cf315ed92299b35887b213ac775cbc8016b8683"
+}

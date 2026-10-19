@@ -1,0 +1,330 @@
+{
+  "checkpoint": 263,
+  "kind": "documentation_conservation_validation",
+  "recorded_utc": "2026-10-18T17:24:24.432514+00:00",
+  "documentation_commit_parent": "dc934c13c88bbf0a03159b6e0e6a788cca26dddb",
+  "scope": [
+    "docs/plans/immigration_checkpoint263_candidate_integration.md",
+    "docs/review_packets/immigration_checkpoint263_integration/README.md",
+    "docs/review_packets/immigration_checkpoint263_integration/original21_delivery_mapping.md",
+    "docs/review_packets/immigration_checkpoint263_integration/original21_delivery_mapping.json",
+    "docs/review_packets/immigration_checkpoint263_integration/exact_head_ci.json",
+    "docs/review_packets/immigration_checkpoint263_integration/integration_manifest.json",
+    "docs/review_packets/immigration_checkpoint263_integration/validation.json",
+    "docs/review_packets/immigration_checkpoint262_delivery/README.md"
+  ],
+  "result": "PASS_documentation_conservation_only",
+  "protected_files_checked": 3761,
+  "protected_bytes_unchanged": true,
+  "protected_file_hash_manifest": "integration_manifest.json#/protected_existing_files",
+  "README_original_prefix_bytes": 13079,
+  "README_original_prefix_sha256": "ca06da2c321221f4ccf4455b6e8f739a1b4d665d3963c043fdec7245e966e257",
+  "untracked_shutdown_notes_exact": {
+    "docs/plans/immigration_checkpoint170_shutdown.md": "ea23ab42d9b62266ea6958ceda89d59c9e8851e51a33697691e57a31fa4398fb",
+    "docs/plans/immigration_checkpoint193_shutdown.md": "8e825ab9bb872d296ce73e4ee9889d7f68b2c64d8530c7ec5f302c9c462a1881",
+    "docs/plans/immigration_checkpoint219_shutdown.md": "381a2b576c6c31c5c055e4c608920b4d141a58ae1bd54c8f4bc751c61f672b44",
+    "docs/plans/immigration_checkpoint227_shutdown.md": "17cb47ee93fd1430d9c53cb81fb2fcd25b7042ce6b83a87e24858fe8b0523a9c",
+    "docs/plans/immigration_checkpoint246_shutdown.md": "c20b1c2b9ac405f20939c239b93e9181551c7059c0a375a0892743370db0572c"
+  },
+  "receipt_seals_verified": [
+    {
+      "path": "docs/review_packets/immigration_checkpoint263_integration/integration_manifest.json",
+      "receipt_sha256": "fbbe613e9472fb1f2064e7b9177c67dcb9ce985429169fed5b2bccf8a6d99f82"
+    },
+    {
+      "path": "docs/review_packets/immigration_checkpoint263_integration/original21_delivery_mapping.json",
+      "receipt_sha256": "9e44f8e04fca84d0798f83285b0d3a352038c415e65beecdd79b5dd0db58e8d5"
+    },
+    {
+      "path": "docs/review_packets/immigration_checkpoint263_integration/exact_head_ci.json",
+      "receipt_sha256": "877a741ebb02438a4ac70601ffcbb3d5c728c064bba17a0a9bd91f00a9a4fd8f"
+    },
+    {
+      "path": "docs/review_packets/immigration_checkpoint262_delivery/validation.json",
+      "receipt_sha256": "56583e8b8780c20e444f16ff51ee7943af88d556d510bd20f28fd9649c9e7cb2"
+    },
+    {
+      "path": "docs/review_packets/immigration_checkpoint262_delivery/review_receipt.json",
+      "receipt_sha256": "ef5748dc28402769b9dd9724400fa64888dce6141be053400766ea9c3a05e86e"
+    }
+  ],
+  "verbatim_artifacts_verified": [
+    {
+      "name": "review_receipt.md",
+      "sha256": "0a9a57588d3e2a6f7041bcfdd294e90d0daf7e54d9d1cfc32f3f1ecb25c04cf7",
+      "bytes": 3889
+    },
+    {
+      "name": "review_receipt.json",
+      "sha256": "41baa05c6c635b642bf677154f80dcaedb4c8611d85f87f364971d9255cb716f",
+      "bytes": 15413
+    },
+    {
+      "name": "mechanical_review.json",
+      "sha256": "e01f55b413e4e4f70d1a87cb2c8083b4087a6c2782a6e888e88b612a9765adbc",
+      "bytes": 126232
+    },
+    {
+      "name": "source_scope_review.json",
+      "sha256": "5da3169e0b657c256bbcb206f0f355da793fd4a9138e79542f390f8ffb687b32",
+      "bytes": 126320
+    },
+    {
+      "name": "verify_readonly.py",
+      "sha256": "2d5770196104a04d8ca22b848984d7e2fafc42a9fc61a099f32331ed7c460c43",
+      "bytes": 10452
+    },
+    {
+      "name": "verify_source_scope.py",
+      "sha256": "88a3ed02f5489834daf0fec2d3f6ec0680c6cee7090ccd18a9f2bbc937ae7521",
+      "bytes": 8546
+    },
+    {
+      "name": "closure_decision_packet.md",
+      "sha256": "74c267ca2758060c93f1083615d0b79c7635a180fd23d1807b1c33205c633cfc",
+      "bytes": 22648
+    },
+    {
+      "name": "closure_decision_packet.json",
+      "sha256": "8e707853b239de79822c7e01caea7d7caa53afcf018c23194e1b246c55738b6e",
+      "bytes": 167013
+    }
+  ],
+  "reviewer_archive_sha256": "86a20e6f2dbb9213732f22d36d12cc7c8d2c176bf26a69baa94f40635228a21f",
+  "JSON_parse": "All new JSON plus referenced frozen review receipts and protected status artifacts parsed; no semantic re-audit.",
+  "current_markdown_links_checked": [
+    {
+      "source": "docs/plans/immigration_checkpoint263_candidate_integration.md",
+      "target": "../review_packets/immigration_checkpoint263_integration/validation.json"
+    },
+    {
+      "source": "docs/plans/immigration_checkpoint263_candidate_integration.md",
+      "target": "../review_packets/immigration_checkpoint263_integration/README.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/README.md",
+      "target": "../../plans/immigration_checkpoint263_candidate_integration.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/README.md",
+      "target": "original21_delivery_mapping.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/README.md",
+      "target": "original21_delivery_mapping.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/README.md",
+      "target": "exact_head_ci.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/README.md",
+      "target": "integration_manifest.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/README.md",
+      "target": "validation.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/README.md",
+      "target": "../immigration_checkpoint262_delivery/README.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/original21_delivery_mapping.md",
+      "target": "original21_delivery_mapping.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/original21_delivery_mapping.md",
+      "target": "README.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint263_integration/original21_delivery_mapping.md",
+      "target": "exact_head_ci.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "review_receipt.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "review_receipt.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "mechanical_review.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "source_scope_review.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "reviewer_checkers.zip"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "closure_decision_packet.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "closure_decision_packet.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "validation.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "closure_decision_packet.json"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "../../../AGENTS.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "../../workflows/pr-merge-deployment.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "../../workflows/pr-merge-deployment.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "../../../AGENTS.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "../../plans/foushee_immigration_border_shared_interpretation.md"
+    },
+    {
+      "source": "docs/review_packets/immigration_checkpoint262_delivery/README.md",
+      "target": "../immigration_checkpoint263_integration/README.md"
+    }
+  ],
+  "historical_locators": "Recovered historical pointers/Temp paths remain verbatim provenance; current packet links are validated, not every historical locator.",
+  "protected_status": {
+    "unresolved_action_ids": [
+      "house:119:1:210",
+      "house:119:1:237",
+      "house:119:2:157",
+      "house:119:2:193",
+      "house:119:2:196",
+      "house:119:2:224",
+      "house:119:2:228",
+      "house:119:2:243",
+      "house:119:2:245",
+      "house:119:2:247"
+    ],
+    "partial_package_action_ids": [
+      "house:119:1:145",
+      "house:119:1:190",
+      "house:119:1:70"
+    ],
+    "partial_flags_all_false": true,
+    "HR1048_typed_counting_hold": [
+      {
+        "member_id": "F000477",
+        "typed_non_proposition_reasons": [
+          {
+            "action_id": "house:119:1:79",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:83",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          }
+        ]
+      },
+      {
+        "member_id": "M001184",
+        "typed_non_proposition_reasons": [
+          {
+            "action_id": "house:119:1:79",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:83",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          }
+        ]
+      }
+    ],
+    "application_questions_count": 70,
+    "application_questions_canonical_sha256": "d402070236b5996a280f7c64434780ed4b708e35e9df736d4cf43e5d310ff8ad",
+    "candidate_status_flags": {
+      "full_record_claim": false,
+      "synthesis_eligible": false,
+      "episode_acceptance_authorized": false,
+      "synthesis_authorized": false,
+      "publication_authorized": false,
+      "publication_changes": false,
+      "production_writes": false,
+      "full_issue_universe_closed": false
+    },
+    "disposition_counts": {
+      "procedural_context": 229,
+      "interpreted_substantive_directional": 87,
+      "exact_action_ineligible": 348,
+      "source_unresolved": 10,
+      "expressive_nonbinding_context": 2
+    }
+  },
+  "provider_reference_count": 68,
+  "distinct_provider_paths_checked": 27,
+  "main_only_paths_recorded": 111,
+  "workflow_bytes_unchanged": true,
+  "git_diff_check": "PASS; staged scope check additionally required before commit",
+  "completed_audits_broad_tests_or_generation_rerun": false,
+  "source_access_or_acquisition": false,
+  "production_publication_merge_or_rebase": false,
+  "Infrastructure_files_processes_touched": false,
+  "tooling_corrections": [
+    "Windows MAX_PATH read failed before snapshot writing or repository edits; corrected with extended-length local paths, no file missing or baseline defect inferred.",
+    "Default-decoding inspection corrected to UTF-8; no file changed.",
+    "First large write command transport disconnected before launch; status and path check confirmed no write, then file APIs/short command used.",
+    "Narrow checker initially included Vercel Preview Comments among backend CheckRuns; corrected to workflowName=Backend tests. Exact ten successful backend jobs and separate Vercel checks unchanged.",
+    "Narrow link checker initially compared unresolved relative paths, then Windows extended-path resolution; lexical normalization corrected both false failures. All27current links passed. No product or evidence change."
+  ],
+  "new_documentation_file_seals": {
+    "docs/plans/immigration_checkpoint263_candidate_integration.md": {
+      "sha256": "84aa06bf561d86675feda60a7594665adf6aeac832413bc14c42a6f0a27d2cda",
+      "bytes": 5094
+    },
+    "docs/review_packets/immigration_checkpoint263_integration/README.md": {
+      "sha256": "49e62bddff01c15a2c70f8f78cc5ce043bf8e75ee3d8da8a749c96115f2128a5",
+      "bytes": 5175
+    },
+    "docs/review_packets/immigration_checkpoint263_integration/original21_delivery_mapping.md": {
+      "sha256": "5ba891c40668cf0d2254ababbc7bfc855281c8ee02376cbd33589003c99317b5",
+      "bytes": 9232
+    },
+    "docs/review_packets/immigration_checkpoint263_integration/original21_delivery_mapping.json": {
+      "sha256": "6debf2e2da8c47bd01e17e67f1344cb00a090441d5105e974a561caef4b76f6e",
+      "bytes": 72715
+    },
+    "docs/review_packets/immigration_checkpoint263_integration/exact_head_ci.json": {
+      "sha256": "37e4cd144064f750fc67ea753737a3526ec8c89abb67fdc9ea2e0f038f505c4d",
+      "bytes": 7265
+    },
+    "docs/review_packets/immigration_checkpoint263_integration/integration_manifest.json": {
+      "sha256": "915317b0f62875cff319906348b3abc91c1d985c5ba110939690ff9ab9d7d83b",
+      "bytes": 1581088
+    },
+    "docs/review_packets/immigration_checkpoint262_delivery/README.md": {
+      "sha256": "55ae92903708f48ab6e1c77ae10d08c9c11fedf5790c683953ce69744b3aa2f8",
+      "bytes": 13664
+    }
+  },
+  "future_head_policy": "Final commitSHA and hosted checks recorded in delivery/PR after push;262green is not transferred.",
+  "temporary_validator": {
+    "path": "C:\\Users\\Dylan\\AppData\\Local\\Temp\\immigration_checkpoint263_20261018\\validate_docs.py",
+    "sha256": "66d26e525c720305d9b71e2fc400aee3b0456f9927105791922d18f0bc4ea024",
+    "scope": "Read-only conservation plus completed plan-checkbox and documentation-receipt writes; no test/generation/source work."
+  },
+  "receipt_sha256": "d3a7fdbbd2e9eefc6ffc27f1f31990b5ec13969da7f5628e5499d36ef6571b61"
+}

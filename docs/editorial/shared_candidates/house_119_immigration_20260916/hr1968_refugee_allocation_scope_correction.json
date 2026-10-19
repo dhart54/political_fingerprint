@@ -1,0 +1,226 @@
+{
+  "checkpoint": 89,
+  "review_state": "candidate_pending_external_semantic_review",
+  "action_id": "house:119:1:70",
+  "committed_prior_checkpoint": "5bc5f1dbd5834051b0c75d286231f1f9d6d0f731",
+  "pre_correction_state": "Validated uncommitted checkpoint88 candidate, not a claimed feature commit",
+  "preservation_receipt": {
+    "state": "Uncommitted but locally validated checkpoint88 candidate preserved before independently identified allocation wording correction",
+    "committed_base": "5bc5f1dbd5834051b0c75d286231f1f9d6d0f731",
+    "files": [
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json",
+        "bytes": 8802542,
+        "sha256": "b85ca77aaadc823c645731e6f57b1ad2779c04000b00d5dc0668902ca7980622"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+        "bytes": 10343087,
+        "sha256": "ed3a0fbefc689098e58d8d81d94b7a7268fd555af4db0970e517cb3780fa782d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json",
+        "bytes": 1318827,
+        "sha256": "876691cae397cafe63f646f80d1b098414cce8d4b46caa24089410ec2fda614f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json",
+        "bytes": 2238057,
+        "sha256": "ef9322219a9c72779c5905ecfbcd281ac37e626195e8b60cbfd1fc878ee89842"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json",
+        "bytes": 173040,
+        "sha256": "9551ae9be4853ef6de248d3e7154ddd0221f075176dfa787e5d3c82dc9c0cb76"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_dhs_oath_employment_scope_review.json",
+        "bytes": 18871,
+        "sha256": "8a66a895f3ca3f818db292cf1dbe650fed1e36e21bcd253f70d3df0b2cd0725f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+        "bytes": 61457,
+        "sha256": "3491089a515682d34842c1df550604a1387a78ed06fa2bd3958a0505b0716a74"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+        "bytes": 641735,
+        "sha256": "e9aba3faa034fe75067bf1111506e9cc820886d6588daaaf454908c40bfbc99d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+        "bytes": 71477,
+        "sha256": "0b39bfc2e7e593212b95b9d81ed22fbbe506c93f1b547da71d581946698d5537"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+        "bytes": 19473297,
+        "sha256": "5ff8c122328be2a8d70a92afcca77f674061cb2c959055b5bbed485fd7899700"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json",
+        "bytes": 34978,
+        "sha256": "2e4eed66480da39761ea12b2ad55d06d017627e84a78f0046f0c4afb01dba426"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+        "bytes": 9813414,
+        "sha256": "f0267fe4402d5ad45e0a66579d7fb87838d5b3f7ad1cbc3ce10b4cd7a92f10a0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json",
+        "bytes": 25052,
+        "sha256": "a8c1036972faf392c0b575f193b3ce8ca17c7dece295800bea70bfc53ea8969e"
+      },
+      {
+        "path": "docs/review_packets/immigration_semantic_audit_in_progress.json",
+        "bytes": 891965,
+        "sha256": "77331f9112297eadc0e33120d9d156aae5c3e9615c7f462085d80b81362c62d7"
+      },
+      {
+        "path": "docs/review_packets/immigration_delivery_checkpoint86_ci.json",
+        "bytes": 5577,
+        "sha256": "9a6714c5f176ec94da07c3f9d88ea3e30af4e79e3e3337326f9be995c29985f3"
+      }
+    ]
+  },
+  "change": {
+    "finding_id": "IB-HR1968-REFUGEE-PARENT-ALLOCATION-RECIPIENT-CATEGORY",
+    "severity": "P3",
+    "source": "Independent supervisory review of checkpoint84 authoring line618 and propagated core/both members",
+    "state": "candidate_correction_pending_validation_and_independent_recheck",
+    "before_action_sha256": "20079be6880e28333f3673fd971589ba5e0702d44a99e0739ed8cffa9d6e841c",
+    "corrected_action_sha256": "9dc7a977d5903b90b120f5d734dce459c054e4b39fbf42c721f0885bb16bb15a",
+    "before_sentence": "Section 11208(a)(1) would add fiscal year 2025 to the existing section 599D(b)(3) one-thousand allocation within the refugee admissions already allocated to the specified former-Soviet/Baltic national category described in (b)(2)(B).",
+    "corrected_sentence": "Section 11208(a)(1) would add fiscal year 2025 to section 599D(b)(3). Within refugee admissions already allocated under section 207(a)(3) for nationals of the independent states of the former Soviet Union, Estonia, Latvia and Lithuania, the President must allocate one thousand admissions to the narrower section 599D(b)(2)(B) recipient category. That category consists of people who are or were nationals of those countries, are current members of the Ukrainian Catholic Church or Ukrainian Orthodox Church, and demonstrate public, active and continuous participation (or attempted participation) in the religious activities of that church. The larger nationality-based admissions allocation and this narrower religious recipient category are distinct.",
+    "before_limitation": "The 599D one-thousand rule operates within the specified allocated refugee admissions and its defined (b)(2)(B) category; it does not add a universal or additional overall refugee quota.",
+    "corrected_limitation": "The 599D(b)(3) one-thousand allocation is within the larger former-Soviet/Baltic-national refugee admissions allocation under 207(a)(3), for the narrower 599D(b)(2)(B) recipient category: are or were nationals of those countries, current Ukrainian Catholic or Ukrainian Orthodox Church members, with public, active and continuous participation (or attempted participation) in that church's religious activities. It is not an additional overall refugee quota or admission for every national or church member.",
+    "classification": "Editorial/semantic precision ambiguity, not a demonstrated wrong beneficiary class or extra-quota assertion",
+    "historical_exact_checkpoint84_surfaces": {
+      "authoring_line": 618,
+      "shared_core_line": 1464,
+      "readable_foushee_lines": [
+        5755,
+        5788
+      ],
+      "readable_massie_lines": [
+        13439,
+        13472
+      ],
+      "review_packet_line": 787
+    },
+    "reviewer_details_received": true
+  },
+  "baseline_witness": {
+    "source_id": "govinfo:8usc1157-2024-hr1968-refugee-rules",
+    "start": 11707,
+    "end": 13413,
+    "total": 14615,
+    "passage": "\"(B) Aliens who are (or were) nationals of an independent state of the former Soviet Union or of Estonia, Latvia, or Lithuania and who are current members of, and demonstrate public, active, and continuous participation (or attempted participation) in the religious activities of, the Ukrainian Catholic Church or the Ukrainian Orthodox Church, shall be deemed a category of alien established under paragraph (1)(A). \"(C) Aliens who are (or were) nationals and residents of Vietnam, Laos, or Cambodia and who are members of categories of individuals determined, by the Attorney General in accordance with 'Immigration and Naturalization Service Worldwide Guidelines for Overseas Refugee Processing' (issued by the Immigration and Naturalization Service in August 1983) shall be deemed a category of alien established under paragraph (1)(B). \"(3) Within the number of admissions of refugees allocated for for [sic] each of fiscal years 1990, 1991, and 1992 for refugees who are nationals of the Soviet Union under section 207(a)(3) of the Immigration and Nationality Act [8 U.S.C. 1157(a)(3)] and within the number of such admissions allocated for each of fiscal years 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, and 2024 for refugees who are nationals of the independent states of the former Soviet Union, Estonia, Latvia, and Lithuania under such section, notwithstanding any other provision of law, the President shall allocate one thousand of such admissions for such fiscal year to refugees who are within the category of aliens described in paragraph (2)(B). ",
+    "passage_sha256": "464f103de1f9542e1d743f1330424ea632dccaf3d4e6a970477c0d982a843a85",
+    "scope": "Complete 599D(b)(2)(B), intervening(C) and(b)(3); recipient qualifications and parent allocation preserved"
+  },
+  "exact_outer_witness": {
+    "source_id": "govinfo:hr1968eh",
+    "start": 84124,
+    "end": 85380,
+    "total": 109266,
+    "passage": "Sec. 11208. (a) The Foreign Operations, Export Financing, and Related Programs Appropriations Act, 1990 (Public Law 101-167) is amended-- (1) in section 599D (8 U.S.C. 1157 note)-- (A) in subsection (b)(3), by striking ``and 2024'' and inserting ``2024, and 2025''; and (B) in subsection (e), by striking ``2024'' each place it appears and inserting ``2025''; and (2) in section 599E(b)(2) (8 U.S.C. 1255 note), by striking ``2024'' and inserting ``2025''. (b) The heading of subparagraph (F) of section 602(b)(3) of the Afghan Allies Protection Act of 2009 (8 U.S.C. 1101 note) is amended by striking ``2024'' and inserting ``2025''. (c) Chapter 5 of title I of the Emergency Wartime Supplemental Appropriations Act, 2003 (Public Law 108-11; 117 Stat. 576) is amended under the heading ``Loan Guarantees to Israel''-- (1) in the matter preceding the first proviso, by striking ``September 30, 2029'' and inserting ``September 30, 2030''; and (2) in the second proviso, by striking ``September 30, 2029'' and inserting ``September 30, 2030''. (d) Section 514(b)(2)(A) of the Foreign Assistance Act of 1961 (22 U.S.C. 2321h(b)(2)(A)) is amended by striking ``2023'' and all that follows through the end of the sentence and inserting ``2023 through 2027.''. ",
+    "passage_sha256": "fd2b27cae1d97b183a9c49aa13ae5e85e03782527c71854ae27eece8f82efe6b",
+    "scope": "Complete exact House EH11208 amendments; no enacted-version substitution"
+  },
+  "all_claims_sources_captures_membership_universe_64_questions_39_other_meanings_preserved": true,
+  "new_shared_interpretation_count": 0,
+  "independent_severity_pending": false,
+  "independent_recheck_pending": true,
+  "production_eligible": false,
+  "publication_authorized": false,
+  "receipt_sha256": "42fa693a98664604c23a6dc403f25041080e5a363b431e434fec0bbb70e3c7a0",
+  "validation": {
+    "final_focused_tests": 114,
+    "candidate_tests": 88,
+    "semantic_ir_tests": 26,
+    "focused_runtime_seconds": 11.982,
+    "semantic_pipeline_checks": 7,
+    "canonical_semantic_ir_reference_validator_passed": true,
+    "seven_raw_outputs_byte_identical_to_separate_replay": true,
+    "controlled_mutations": [
+      {
+        "name": "Parent pool and recipient category blurred",
+        "assertion_failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "Current church membership omitted",
+        "assertion_failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "Participation condition omitted",
+        "assertion_failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "Extra general quota asserted",
+        "assertion_failures": 1,
+        "errors": 0
+      }
+    ],
+    "fifteen_archived_byte_hashes_verified": true,
+    "two_exact_source_backed_replacements_only": true,
+    "all_claims_sources_captures_ledgers_questions_other_meanings_preserved": true,
+    "both_members_detail_compact_core_review_packet_and_projection_hashes_inspected": true,
+    "compact_choices_and_compiled_graph_unchanged": true,
+    "final_diff_reviewed": true,
+    "execution_corrections": [
+      "Initial focused run had one stale exact-wording assertion from pre-correction copy; updated to explicitly retain207(a)(3)parent-pool phrase and new source-backed regression. Final114 pass; no semantic guard removed.",
+      "Private core witness verifier used authoring field name meaning instead of canonical candidate_exact_action_meaning; reader corrected, no generated artifact editing."
+    ],
+    "exact_head_ci": "87 has nine associated successful jobs with verified checkout provenance; combined88/89 awaits own push/run. No87 result substituted for corrected copy."
+  },
+  "output_hashes": {
+    "core": "c1dd1fd4bc5e02825afc1d9cb323cefa64e66c1e371197b7af1b2073a25fabc8",
+    "compiled": "f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898"
+  },
+  "accounting": {
+    "inventory": 676,
+    "governed_reviews": 458,
+    "interpreted_actions": 40,
+    "procedural": 211,
+    "excluded": 205,
+    "expressive": 2,
+    "unfinished_ordinary": 218,
+    "unfinished_package_components": 3,
+    "application_questions": 64,
+    "episodes": 37,
+    "member_observations": 80,
+    "readable_candidate_findings": 72,
+    "canonical_sources": 1336,
+    "canonical_claim_bindings": 888,
+    "acquisition_captures": 340,
+    "extent_sources": 217,
+    "extent_coordinates": 361
+  },
+  "combined_commit_scope": "Validated oath/employment increment88 plus independent P3 correction89;88 was preserved uncommitted intermediate, not a claimed standalone feature commit.",
+  "supervisory_review_receipt": {
+    "path": "docs/review_packets/immigration_supervisory_review_checkpoints78_84_89.json",
+    "receipt_sha256": "3ca6c4d90be788b64b88fa7ad75ee86bcc44812e8b7f3a1d10134f489ebf245c"
+  },
+  "checkpoint87_delivery_receipt": {
+    "path": "docs/review_packets/immigration_delivery_checkpoint87_ci.json",
+    "receipt_sha256": "12efe344a1cad3cc3ba9e2bc693b3ed628dd69b094c77eb5945bdbfad595b10f"
+  },
+  "next_action": [
+    "Push combined88/89, update draft PR198 and check its exact-headCI",
+    "Prepare one bounded cross-case domain rationale for foreign-tax/HRA/electricity against H.R.2683 remote-access and scholarship72 plus negative controls, preserving disagreement and independent review",
+    "Continue ordinary screenings alongside reserved application/domain review",
+    "Resume remaining H.R.1968 DHS sponsor/family definitions, other riders and DOJ/State/supplementary incorporation"
+  ],
+  "checkpoint85_independent_recheck": {
+    "path": "docs/review_packets/immigration_retained_reporter_checkpoint85_independent_recheck.json",
+    "receipt_sha256": "a41b10385c28439756260f0f8c97638242c3c51b57492120a2e0e8a716fbaebb",
+    "state": "bounded_resolved",
+    "historical_major_preserved": true
+  }
+}

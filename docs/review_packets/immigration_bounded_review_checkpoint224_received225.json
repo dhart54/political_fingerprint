@@ -1,0 +1,92 @@
+{
+  "checkpoint": 225,
+  "reviewed_head": "06630bb580385f22f5cd362a20cc72ba4afa0d8c",
+  "findings": [
+    {
+      "checkpoint_received": 225,
+      "reviewed_checkpoint": 224,
+      "reviewed_head": "06630bb580385f22f5cd362a20cc72ba4afa0d8c",
+      "received_utc": "2026-10-13T21:10:42.747368+00:00",
+      "source_thread_id": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+      "severity": "P3",
+      "action_ids": [
+        "house:119:1:182",
+        "house:119:2:175"
+      ],
+      "finding": "Existing qualified section412 paraphrases resolve (a) into the dated class printed in (c), but (a) does not expressly link to (c) and (c) uses this subsection. Preserve printed linkage uncertainty.",
+      "recommended_correction": "Describe (a) broad DoD-by-this-Act facility prohibition, (b) Guantanamo modifications exception, and (c) dated class separately, reserving application linkage.",
+      "source_ranges": {
+        "govinfo:hr3944eh": [
+          106698,
+          107721
+        ],
+        "govinfo:hr8469eh": [
+          109572,
+          110595
+        ]
+      },
+      "reported_other_review_continues": true,
+      "reported_CI224_independently_green_from_full_logs": true,
+      "domain_membership_and_whole_vote_direction_not_overturned": true,
+      "editorial_acceptance": false,
+      "apply_in_next_coherent_increment": true
+    },
+    {
+      "checkpoint_received": 225,
+      "reviewed_checkpoint": 224,
+      "reviewed_head": "06630bb580385f22f5cd362a20cc72ba4afa0d8c",
+      "received_utc": "2026-10-13T21:12:54.420306+00:00",
+      "source_thread_id": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+      "severity": "P2",
+      "action_ids": [
+        "house:119:1:212"
+      ],
+      "finding": "HR4016EHsection8132foreign transfers conditioned on PL11492section1034 AND PL115232section1035; both operative bodies unbound. Existing PL1152321046 witness is unrelated. Whole-action completion/material-predicate claim premature.",
+      "recommended_resolution": "Bind and independently review both incorporated conditions from permitted sources or restore researched-pending without automatic exclusion; preserve verified8002/8118 analysis.",
+      "source_range": {
+        "govinfo:hr4016eh": [
+          176895,
+          177437
+        ]
+      },
+      "other_review_continues": true,
+      "editorial_acceptance": false
+    },
+    {
+      "checkpoint_received": 225,
+      "reviewed_checkpoint": 224,
+      "reviewed_head": "06630bb580385f22f5cd362a20cc72ba4afa0d8c",
+      "received_utc": "2026-10-13T21:13:34.717841+00:00",
+      "source_thread_id": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+      "severity": "P3",
+      "action_ids": [
+        "house:119:2:205"
+      ],
+      "finding": "Enforceability ends at naturalization overstates 8US1183a(a2) benefit-coverage limit and could imply accrued reimbursement claims extinguished. Separate b2C action window remains.",
+      "recommended_correction": "Describe covered benefits provided before naturalization or earlier qualified40-quarter date; retain separate reimbursement and action predicates/limits.",
+      "source_ranges": {
+        "govinfo:8usc1183a-2024-sponsor-affidavit": [
+          [
+            1439,
+            1703
+          ],
+          [
+            4831,
+            5065
+          ]
+        ]
+      },
+      "reported_runtime_tests": 22,
+      "reported_CLIoutputs": 7,
+      "reported_resealed_rejection_probes": 8,
+      "other_findings_not_resolved_by_runtime_checks": true,
+      "editorial_acceptance": false
+    }
+  ],
+  "reported_tests": 22,
+  "reported_CLIoutputs": 7,
+  "reported_resealed_rejection_probes": 8,
+  "full_report_bytes_not_received": true,
+  "editorial_acceptance": false,
+  "receipt_sha256": "963d9bb631f7fcef2febce8ee0e34b786b9ce706f4e2f84b483d7c3052797a6d"
+}

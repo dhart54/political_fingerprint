@@ -1,0 +1,81 @@
+{
+  "checkpoint": 179,
+  "base_head": "48f2c425e969d53fc0664166bfd22b3bd343a143",
+  "receipt_sha256_reference": "161bd1b44ccfd2a1cc516a917f99aea87e05964a98c87a557e1187811c85e971",
+  "focused_tests": {
+    "passed": 192,
+    "seconds": 17.772
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": "12 accepted,4 accepted-with-held,4 held mechanical cases; no candidate editorial acceptance",
+  "changed_action_ids": [
+    "house:119:1:289",
+    "house:119:1:298",
+    "house:119:1:299",
+    "house:119:1:332",
+    "house:119:2:11"
+  ],
+  "prior_review_records_preserved": 597,
+  "prior_canonical_sources_preserved": 1970,
+  "prior_registrations_preserved": 853,
+  "health_files_preserved": 13,
+  "literal_claims_verified": 14,
+  "exact_derivative_replays": 6,
+  "raw_capture_hashes_verified": 17,
+  "Clerk_reconciliations": 5,
+  "source_sequence_checks": 2,
+  "generated_byte_exact_replays": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "reproducibility_proof.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "unchanged_semantic_products": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "application_questions_preserved": 70,
+  "prior_pending_rows_preserved_except_three_declared_chains": true,
+  "shutdown_file_preserved": true,
+  "timing": {
+    "checkpoint": 179,
+    "base_head": "48f2c425e969d53fc0664166bfd22b3bd343a143",
+    "started_utc": "2026-10-09T19:57:23.154607+00:00",
+    "scope": "Pending-ledger composition, bounded source-correction search and next coherent executable case",
+    "special_benchmark_round": false,
+    "parallel_agents": false,
+    "no_overlap_subtraction_or_average_claim": true,
+    "source_review_and_authoring_utc": "2026-10-09T20:13:50.147473+00:00",
+    "source_review_and_authoring_seconds": 986.992866,
+    "attempted_action_ids": [
+      "house:119:1:289",
+      "house:119:1:298",
+      "house:119:1:299",
+      "house:119:1:332",
+      "house:119:2:11"
+    ],
+    "completed_action_ids": [
+      "house:119:1:289",
+      "house:119:2:11"
+    ],
+    "held_attempts": 3,
+    "local_validation_utc": "2026-10-09T20:16:28.895436+00:00",
+    "local_validation_endpoint_seconds": 1145.740829,
+    "focused_tests": 192,
+    "focused_tests_seconds": 17.772,
+    "semantic_checks": 7,
+    "byte_exact_replays": 7,
+    "semantic_products_unchanged": 6
+  },
+  "independent_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "7671615a0706164a8089aa45ac9194551290578141972462299d0f2ed1a36681"
+}

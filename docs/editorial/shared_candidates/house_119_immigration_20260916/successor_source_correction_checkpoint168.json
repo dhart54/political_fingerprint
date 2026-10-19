@@ -1,0 +1,81 @@
+{
+  "checkpoint": 168,
+  "base_head": "4d9c4ed5c773d44fbc82f13a37faa14f5c58830c",
+  "review_state": "candidate_only",
+  "outcome": "Resolve bounded checkpoint167source/provenance findings and recover the material HR2860historical report chain without closing held research.",
+  "completed_screenings": 0,
+  "accounting": {
+    "authority": "Mechanical integrity only; no semantic acceptance or publication",
+    "inventory_count": 676,
+    "ordered_action_ids_sha256": "e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25",
+    "governed_review_count": 588,
+    "unfinished_screenings": 88,
+    "queue_count": 88,
+    "disposition_counts": {
+      "procedural_context": 227,
+      "interpreted_substantive_directional": 44,
+      "exact_action_ineligible": 315,
+      "source_unresolved": 88,
+      "expressive_nonbinding_context": 2
+    },
+    "unfinished_component_reviews": 3
+  },
+  "sources": 1876,
+  "captures": 724,
+  "new_canonical_sources": 8,
+  "new_capture_registrations": 10,
+  "fresh_raw_acquisitions": 4,
+  "substantive_meanings_unchanged": 44,
+  "propositions_unchanged": 78,
+  "application_questions_unchanged": 70,
+  "partial_package_reviews_unchanged": 3,
+  "source_research_attempts": [
+    "house:119:2:196"
+  ],
+  "inherited_correction_action_ids": [
+    "house:119:2:150",
+    "house:119:2:241",
+    "house:119:2:242"
+  ],
+  "correction_receipt_refs": [
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint167_agarda_attribution_correction168.json",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint167_source_bindings_correction168.json",
+    "docs/editorial/shared_candidates/house_119_immigration_20260916/northwest_straits_membership_source_reconstruction168.json"
+  ],
+  "prior167_bounded_review_ref": "docs/review_packets/immigration_checkpoint167_parent_bounded_review.json",
+  "prior167_ci_ref": "docs/review_packets/immigration_delivery_checkpoint167_ci.json",
+  "validation": {
+    "focused_tests": 184,
+    "focused_runtime_seconds": 20.306,
+    "semantic_checks": 7,
+    "reference_validator_passed": true,
+    "all1876_source_seals_verified": true,
+    "all_prior_source_capture_pool_prefixes_preserved": true,
+    "only150rationale_and196241pending_rows_changed": true,
+    "all_original_sources_and167receipt_preserved": true,
+    "Fine749old_selected_parent_and_original_offsets_reproduced": true,
+    "Boebert433character_own_witness_verified": true,
+    "three_other_held_headers_verified": true,
+    "seven_file_byte_replay": true,
+    "six_semantic_outputs_unchanged": true,
+    "original_failed_helpers_and_logs_preserved": true,
+    "failed_check_context": "Initial pending-row generation caught an unrecomputed universe subject digest; established subject and proposal seals recomputed. Printed source numbers were attached to hyphenated line endings in the AGARDA comparison. The independently supplied Boebert passage digest uses canonical JSON-string serialization rather than raw UTF8; both hashes recorded separately. CI collector initially assumed only one job reran; actual API shows all nine attempt2 jobs, verified with original failure preserved. No validator weakened or source words repaired.",
+    "final_audit_guards_pending": false,
+    "final_diff_review_pending": false,
+    "final_audit_guard_tests": 2,
+    "final_audit_guard_runtime_seconds": 1.202,
+    "raw_HTML_and_PDF_extraction_replayed": true,
+    "final_diff_reviewed": true
+  },
+  "benchmark": {
+    "frozen166_result": "7m29 average through independent review closure passes600second bound;4minute target achieved only at Git/PRdelivery endpoint3m35",
+    "detailed_timing_stopped": true,
+    "lightweight168_timing_path": ".tmp/checkpoint168_timing.json",
+    "sample_type": "Historical-source reconstruction plus three inherited corrections, not five new routine screenings. Zero completions; no average based on completed screening count is reported. Gross start-to-delivery elapsed retained with all retries and CI/reporting overhead."
+  },
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "independent168_recheck_pending": true,
+  "ci168_pending": true,
+  "receipt_sha256": "115efb3c512613bac30cbda5c8707f1831ede8577a9dcde2381dc03725d17805"
+}

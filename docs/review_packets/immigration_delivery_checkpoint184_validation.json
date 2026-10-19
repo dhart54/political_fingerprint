@@ -1,0 +1,94 @@
+{
+  "checkpoint": 184,
+  "base_head": "0c43b292c793f6b0aa5050f63c78fb3c2a20f9a7",
+  "candidate_receipt_sha256": "62811dda437b950a7d8ff481ed9ad11f0d5344036220f5d311a8c982b9221326",
+  "focused_tests": {
+    "passed": 202,
+    "seconds": 17.811,
+    "log": ".tmp/tests184-final.log"
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4,
+    "semantic_acceptance": false
+  },
+  "preservation": {
+    "literal_claim_checks": 53,
+    "prior_proposed_core_and_mapping_preserved_as_historical_artifacts": true,
+    "new_active_issue_neutral_candidate_core_validated": true,
+    "held_mapping_structure_and_digests_validated": true,
+    "definition_import_source_bound_to_all_three_actions": true,
+    "conditional_fisc_waiver_and_prior_approval_exception_checked_in_core_mapping_and_review": true,
+    "all7_generated_files_unchanged": true,
+    "all602_membership_records_unchanged": true,
+    "all_sources_registrations_and_private_aliases_unchanged": true,
+    "only_universe_row_changed": [
+      "house:119:2:142"
+    ],
+    "health_and_canonical_corpus_files_preserved": 22,
+    "new_shared_meanings": 0,
+    "new_compiled_propositions": 0,
+    "no_counting_changes": true,
+    "counts": {
+      "reviewed": 602,
+      "pending": 74,
+      "ordinary_unscreened": 57,
+      "researched_holds": 17,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    }
+  },
+  "literal_claim_checks": 53,
+  "source_qualification_anchors_verified": true,
+  "expanded_conditional_FISC_waiver_verified": true,
+  "unchanged_prior_approval_exception_verified": true,
+  "definitions_bridge_bound_to_all_three": true,
+  "negative_regressions": [
+    "Original proposed142meaning lacks material FISC waiver",
+    "Generic discretionary waiver without required finding",
+    "Unconditional approval description omits threat exception",
+    "Missing definition bridge in active candidate source sets"
+  ],
+  "new_raw_acquisitions": 0,
+  "existing_verified_sources_reused": true,
+  "prior_core_mapping_and182receipt_preserved_historically": true,
+  "all7_generated_files_unchanged": true,
+  "byte_exact_generated_replays": 7,
+  "no_new_meanings_propositions_or_counting": true,
+  "all_three_held": true,
+  "counts": {
+    "reviewed": 602,
+    "pending": 74,
+    "ordinary_unscreened": 57,
+    "researched_holds": 17,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "timing": {
+    "checkpoint": 184,
+    "base_head": "0c43b292c793f6b0aa5050f63c78fb3c2a20f9a7",
+    "started_utc": "2026-10-09T22:24:12.732127+00:00",
+    "scope": "One coherent independent182source-precision correction: FISC waiver, approval exception and definition import bridge.",
+    "attempted_action_ids": [
+      "house:119:2:142",
+      "house:119:2:155",
+      "house:119:2:221"
+    ],
+    "special_benchmark_round": false,
+    "measurement_limitations": "Initial independent-review message reading and exact source lookup not timed; correction work is not a routine benchmark sample. Separate source/authoring phase endpoint not sampled. Joint correction/validation interval includes183CIverification overlap without subtraction; no retrospective phase reconstruction.",
+    "local_validation_utc": "2026-10-09T22:29:30.837013+00:00",
+    "local_validation_endpoint_seconds": 318.104886,
+    "separate_authoring_endpoint_not_sampled": true
+  },
+  "performance_status": "FAIL;prior comparable781.087seconds remains, no new routine average",
+  "independent184_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "3d35604fb45884e3ca92e22382777cf0d43c4605168d34b8b71b85536970cae2"
+}

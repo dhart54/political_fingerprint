@@ -1,0 +1,74 @@
+{
+  "authority": "Supervisor-prioritized source-backed senior age-branch correction; candidate only, no tax methodology, individual award or quotation-boundary resolution",
+  "prior_checkpoint": "ea376ac9d01c96bd488026e13739edfb56432844",
+  "historical_finding": {
+    "finding_id": "IB-HR1-SENIOR-AGED-BRANCH-SCOPE",
+    "severity": "Major",
+    "reviewed_commit": "ea376ac9d01c96bd488026e13739edfb56432844",
+    "problem": "House meaning umbrella sentence can impose taxpayer age 65 as a common predicate on separate spouse amount, narrowing baseline applicability. This is not a determination of actual taxpayer eligibility.",
+    "state": "Locally corrected and validated; independent historical Major retained, bounded independent correction recheck pending"
+  },
+  "prior_authoring_action_sha256": {
+    "house:119:1:145": "d2d872a6bbdcff41733bd36d3c454becec90dd42bbf70a08232d834d9d0f3aec"
+  },
+  "current_authoring_action_sha256": {
+    "house:119:1:145": "0096e488a72d99205c9ae2b0d115b1adbfa3adad0145c7ce169938d73b4e219a"
+  },
+  "repairs": [
+    {
+      "action_id": "house:119:1:145",
+      "field": "meaning",
+      "before": "The complete aged paragraph requires the taxpayer to have attained 65 before the tax year closes and separately retains its qualifying-spouse/exemption reference.",
+      "after": "The pre-vote aged paragraph has separate branches. Its taxpayer amount requires the taxpayer to have attained 65 before the tax year closes. Its separate spouse amount requires the spouse to have attained 65 before that close and an additional exemption for that spouse to be allowable to the taxpayer under section 151(b). These inherited predicates do not establish an actual bonus or override the new identification, marital or reserved quotation-boundary limits.",
+      "before_sha256": "a372f6593f15b0a6dac68f664fe396e27dd5a4c2a9e8e6580c954f312bf190fb",
+      "after_sha256": "00cbd7656fad4b0b8520ae8f6fc77954521394eb32cf780b2462033f4ef7cbd6",
+      "source_id": "govinfo:26usc63-operative-2024-senior-income-baseline",
+      "source_locator": "2024 Code section 63(f)(1)(A)/(B), printed page 454; complete operative source already governed"
+    }
+  ],
+  "primary_witnesses": [
+    {
+      "source_id": "govinfo:26usc63-operative-2024-senior-income-baseline",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partI-sec63.htm",
+      "raw_sha256": "1f095b810947b437cbac8e1e2b2321a8257697a377645a837f036d69eb1e470d",
+      "governed_bytes_sha256": "58280cd76be26e48a03920b7f45e59f3fa8348e385bf93157e1d634fc57f94ae",
+      "passage": "(1) Additional amounts for the aged The taxpayer shall be entitled to an additional amount of $600— (A) for himself if he has attained age 65 before the close of his taxable year, and (B) for the spouse of the taxpayer if the spouse has attained age 65 before the close of the taxable year and an additional exemption is allowable to the taxpayer for such spouse under section 151(b). ",
+      "passage_sha256": "5e7a2dd7c53b3a16631cf54f970161069be92327438a82e8dd05cad31e60468f"
+    }
+  ],
+  "recurrence_review": {
+    "scope": "Current shared natural-language meanings, limitations and compacts; analogous complete/full/paragraph requirement formulations reviewed for mistaken common-person predicates, not historical corpus reconciliation",
+    "matching_sentences": [
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Complete 1818(a) has its own age 65, Part B enrollment, US residence, citizen OR LPR-with-five-years and no-other-Part-A-entitlement conjunction.",
+        "sentence_sha256": "e1f52e4a51c322079c155dc5a8a33ed3e4452f9be8e4a28a6ce21713ba74c99a"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Complete 1818(a) has its own age 65, Part B enrollment, US residence, citizen OR LPR-with-five-years and no-other-Part-A-entitlement conjunction.",
+        "sentence_sha256": "e1f52e4a51c322079c155dc5a8a33ed3e4452f9be8e4a28a6ce21713ba74c99a"
+      }
+    ],
+    "result": "Localized aged umbrella sentence corrected. Other matching complete 1818(a) descriptions state that program's own conjunctive prerequisites; no additional material common-person defect established in this bounded review.",
+    "qualifications": "Existing senior qualification retains age/spouse-exemption reference without making taxpayer age common to spouse; all own SSN/similar-32(d), exclusion, hypothetical-itemizer and question 40 boundaries unchanged."
+  },
+  "preservation": "All 649 bindings, 1269 governed sources, 38 other actions including Senate, both compacts/qualifications, all 11 checkpoint 45 repair pairs, partial accounting and 40 reserved questions unchanged.",
+  "publication_authorized": false,
+  "receipt_sha256": "b70ebc7633087571336f35f40b23a109f296a755e2a2111b580e0b0d29c8dda4",
+  "validation": {
+    "focused_tests": 39,
+    "focused_runtime_seconds": 9.219,
+    "semantic_checks": 7,
+    "byte_replay_files": 7,
+    "negative_regression_probe": {
+      "anchor": "ea376ac9d01c96bd488026e13739edfb56432844",
+      "old_copy_rejected": 1,
+      "unexpected_errors": 0,
+      "test": "test_house_senior_baseline_keeps_separate_person_age_branches"
+    },
+    "limits": "Focused regression rejects actual old wording, without replacing source comparison or independent semantic review. All prior correction 45 pairs retained in both projections; no new governed source/capture or eligibility decision."
+  }
+}

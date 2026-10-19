@@ -1,0 +1,169 @@
+{
+  "checkpoint": 209,
+  "base_head": "239896fdb5bb2c9f7f2cafd35b55eab53c5e1ad3",
+  "scope": "Close source-ready198with qualified existing CCDF program/status-plan relationship; preserve originalHealthcore and remaining-work boundaries",
+  "candidate_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/CCDF_source_qualification_checkpoint209.json",
+  "candidate_receipt_sha256": "e08287f063a75fc021fb6ee61bcf310f6fcd8550315e1656e0a84abafcd38d8a",
+  "qualified_core_sha256": "4f6662ef69539c99ad0fdca6753cb1de7632ac05ac547911d49bcdf62c40a0a1",
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/literal_predicate_CCDF_check_checkpoint209.json",
+  "source_quality_sha256": "8c51abeb9b6134c00264d4caf8d8a40d08f5fac9317a90a19ae80bcb7825a668",
+  "focused_tests_passed": 364,
+  "focused_native_runner_seconds": 233.484,
+  "new_tests": 3,
+  "new_bounded_negatives": 10,
+  "negative_cases": {
+    "original_binding_primary_limits": 5,
+    "fully_resealed_component_sources_prefix_reference_question": 5
+  },
+  "test_coverage_limit": "Bounded full-prepare preservation/qualification counterexamples, not exhaustive semantic proof or editorial acceptance.",
+  "semantic_checks_passed": 7,
+  "IR_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4
+  },
+  "exact_replays": 14,
+  "literal_source_scopes": 16,
+  "preservation": {
+    "checkpoint": 209,
+    "completed_utc": "2026-10-12T01:08:46.111663+00:00",
+    "frozen_git_blobs_checked": 1074,
+    "shutdown_notes_checked": 2,
+    "prior53_cores_and92_behavioral_propositions_exact": true,
+    "total_previous_proposition_records_checked": 92,
+    "prior621_membership_records_exact": true,
+    "other675_universe_rows_exact": true,
+    "all_prior_member_projection_rows_exact": true,
+    "all_prior_readable_findings_and_questions_exact": true,
+    "complete_Health_inputs_and7_outputs_exact": true,
+    "sources_manifest_pool_exact": true,
+    "complete207_wrapper_and205_question_guard_AST_exact": true,
+    "checkpoint205_full_question_guard_exact": true,
+    "other_substantive_audit_records_exact_155_status_reconciled": true,
+    "legacy142_155_221_original_cores_and_source_seals_preserved": true
+  },
+  "counts": {
+    "reviewed": 622,
+    "pending": 54,
+    "ordinary_unscreened": 29,
+    "researched_holds": 25,
+    "meanings": 54,
+    "propositions": 94,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "remaining_work_categories_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/remaining_work_categories_checkpoint209.json",
+  "remaining_work_categories_sha256": "164cf6829d27272e0f16a1ce46a4e06adf63b4af6003cfff6724a020b8783e02",
+  "remaining_category_counts": {
+    "routine_screenings": 29,
+    "executable_held_closures_verified_in_this_increment": 0,
+    "source_material_or_access_work": 21,
+    "authoritative_source_conflicts": 3,
+    "legal_application_review": 1,
+    "new_product_or_methodology_decisions": 0
+  },
+  "all_current_verified207_and208_helpers_unchanged_except_dispatch": true,
+  "new_modern_qualification_reuses_complete_wrapper_guard": true,
+  "originalHealthcore_ID_prefix_limits_sources_and_outputs_unchanged": true,
+  "roll155_frozen_ambiguity_preserved": true,
+  "independent208_review_complete_received": true,
+  "CI217_integrated_main_nine_fresh_jobs_and_automaticVercel_verified": true,
+  "Immigration_main_not_integrated": true,
+  "independent209_source_augmentation_helper_domain_review_pending": true,
+  "logs": [
+    {
+      "log": ".tmp\\tests209.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-12T01:02:52.474401+00:00",
+      "completed_utc": "2026-10-12T01:06:46.194913+00:00",
+      "elapsed_seconds": 233.72799600000144,
+      "exit_code": 0,
+      "log_sha256": "5de6aa652f2cfe80a5e090ae6290f06c523953f368b2388e63fd1ab0e9555175"
+    },
+    {
+      "log": ".tmp\\semantic209.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-12T01:06:46.200087+00:00",
+      "completed_utc": "2026-10-12T01:06:48.220603+00:00",
+      "elapsed_seconds": 2.0205821999988984,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir209.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-12T01:06:48.221845+00:00",
+      "completed_utc": "2026-10-12T01:06:48.299586+00:00",
+      "elapsed_seconds": 0.07774720000452362,
+      "exit_code": 0,
+      "log_sha256": "2ad717eaa627f7cae5ff5db4cdd57a08132c2234e31ea5e46107dbfc93b6b7e8"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-12T01:06:48.304307+00:00",
+      "completed_utc": "2026-10-12T01:07:03.628695+00:00",
+      "elapsed_seconds": 15.32488369999919,
+      "outputs": 7
+    },
+    {
+      "phase": "health_byte_exact_output_replay",
+      "started_utc": "2026-10-12T01:07:03.629225+00:00",
+      "completed_utc": "2026-10-12T01:07:09.694813+00:00",
+      "elapsed_seconds": 6.065786699997261,
+      "outputs": 7
+    }
+  ],
+  "timing_through_local_delivery_preparation": {
+    "checkpoint": 209,
+    "started_utc": "2026-10-12T00:37:44.608394+00:00",
+    "initial_preread_and_pending_inventory_before_timer_unmeasured": true,
+    "base_head": "239896fdb5bb2c9f7f2cafd35b55eab53c5e1ad3",
+    "scope": "Highest-value executable held Immigration closure, with remaining work categorized at coherent delivery",
+    "new_comparable_routine_samples": 0,
+    "benchmark_result": "FAIL",
+    "benchmark_mean_seconds": 781.087,
+    "authoring_completed_utc": "2026-10-12T01:00:10.488499+00:00",
+    "source_domain_authoring_endpoint_seconds": 1345.880105,
+    "local_validation_completed_utc": "2026-10-12T01:10:57.060984+00:00",
+    "local_delivery_preparation_endpoint_seconds": 1992.45259,
+    "category_routing_generic_pending_label196_resolved_from_historical_hold_not_new_research": true
+  },
+  "initial_inventory_preread_before_timer_unmeasured": true,
+  "no_new_legislative_acquisitions": true,
+  "new_head_CI_pending": true,
+  "new_comparable_routine_samples": 0,
+  "benchmark_result": "FAIL",
+  "benchmark_mean_seconds": 781.087,
+  "counts_not_editorial_clearance": true,
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_eligible": false,
+  "receipt_sha256": "8fcf46e2d46d057016f7ecd50d82f1d15edc8e214a0ee62078e34e353440ef03"
+}

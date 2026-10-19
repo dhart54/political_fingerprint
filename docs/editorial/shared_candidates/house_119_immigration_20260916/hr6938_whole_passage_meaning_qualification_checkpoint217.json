@@ -1,0 +1,149 @@
+{
+  "checkpoint": 217,
+  "base_head": "113c5080fc9ee2b153b55946942becec7dc7df65",
+  "completed_candidate_action_ids": [
+    "house:119:2:7"
+  ],
+  "original_Health_core_sha256": "d57c94ce87f03763a066f645099a0f2e595d367768cad488b4bca5190befe0a6",
+  "original48source_identity_prefix_limits_preserved": true,
+  "new_core_sha256": "24660a6d8c08ecc7ee8a77e135355746f9401493f8483a9d0c2caf0389a24397",
+  "new_provider_path": "docs/editorial/shared_candidates/house_119_whole_passage_qualification_checkpoint217/shared_action_core_proposal.json",
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr6938_whole_passage_source_chain_checkpoint217.json",
+  "source_quality_sha256": "d010ba79029d2a4118c6e515b328e01b12a16513182d7c64ad7f6d0be3dd329a",
+  "prior_pending_row": {
+    "action_id": "house:119:2:7",
+    "session": 2,
+    "roll": 7,
+    "date": "2026-01-08",
+    "measure": "bill_119_hr_6938",
+    "question": "On Passage",
+    "disposition": "source_unresolved",
+    "reason": "H.R. 6938 whole passage remains pending after complete Division A, B/C and H.Res. 977 reads. Rule section 4 separately puts retention of A and retention of B/C with yeas/nays considered ordered, then engrossment/third reading of retained portions; section 5 allows conforming renumbering. Those component choices are distinct from final passage. LSC/EOIR/SCAAP, entity/facility/Compact/Indian-programme source chains and final explanatory imports remain unresolved as specified for rolls 2:5/6. Own retention outcomes and final-passage binding require completion; no component stance is inferred. Research hold only: no inclusion/exclusion, completion credit, inherited Health membership, component stance, enactment or individual legal eligibility is inferred. Further source work is executable; this is not established inaccessible evidence or a new methodology decision.",
+    "source": {
+      "source_id": "clerk:119:2:7",
+      "url": "https://clerk.house.gov/evs/2026/roll007.xml",
+      "raw_sha256": "25964a5b8d8b39fed88673c69e89aa17a9f9c504369fe56ed32ef6d283016fe9",
+      "governed_bytes_sha256": "da79b2d622fc3f17fd4850262d4d003ea9ee57709870057abfc0bc8c31b3858c",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_6938",
+    "member_action": "yea",
+    "house_action_stage": "On Passage",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "H.R. 6938 whole passage remains pending after complete Division A, B/C and H.Res. 977 reads. Rule section 4 separately puts retention of A and retention of B/C with yeas/nays considered ordered, then engrossment/third reading of retained portions; section 5 allows conforming renumbering. Those component choices are distinct from final passage. LSC/EOIR/SCAAP, entity/facility/Compact/Indian-programme source chains and final explanatory imports remain unresolved as specified for rolls 2:5/6. Own retention outcomes and final-passage binding require completion; no component stance is inferred. Research hold only: no inclusion/exclusion, completion credit, inherited Health membership, component stance, enactment or individual legal eligibility is inferred. Further source work is executable; this is not established inaccessible evidence or a new methodology decision.",
+    "unresolved_reason": "pending_material_exact_predicate_review",
+    "sources": [
+      {
+        "source_id": "clerk:119:2:7",
+        "url": "https://clerk.house.gov/evs/2026/roll007.xml",
+        "raw_sha256": "25964a5b8d8b39fed88673c69e89aa17a9f9c504369fe56ed32ef6d283016fe9",
+        "governed_bytes_sha256": "da79b2d622fc3f17fd4850262d4d003ea9ee57709870057abfc0bc8c31b3858c"
+      },
+      {
+        "source_id": "govinfo:hr6938eh-division-a",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+        "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+        "governed_bytes_sha256": "1085a34b729ea81e3e7ca81f4dfc8ccdcf5aa5c42abc86775e4e9ea3301ef256"
+      },
+      {
+        "source_id": "govinfo:hr6938eh-divisions-b-c",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+        "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+        "governed_bytes_sha256": "7fc197d01096814a5f04a6f54cec4693881c4be2473f10c9662b5ffee056b723"
+      },
+      {
+        "source_id": "govinfo:hres977eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm",
+        "raw_sha256": "7780f346b5f0b9c2020d2a2cc423cc35749209403b775554a0d974c4a301e1c1",
+        "governed_bytes_sha256": "5c61e60033d1ed0380c3be9dc936a0f2486e4db72cd5c04830167b2886010a06"
+      },
+      {
+        "source_id": "govinfo:lsc1626-operative-final2014-212",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2014-04-18/pdf/2014-08833.pdf",
+        "raw_sha256": "168e9cfe1881abe13b43eff7c4bddc2e6de99322492771e0740c26732cad14e6",
+        "governed_bytes_sha256": "56e54bc5190439adb854c4e48854cd5141d5d9e05a31d67d6f700c6f1c073dda"
+      },
+      {
+        "source_id": "govinfo:lsc1626-correction2014-212",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2014-05-27/pdf/2014-12110.pdf",
+        "raw_sha256": "60b536ab8e2d5f96d241450c5ddf9860051bc717988c78b9e2290e2ae8709590",
+        "governed_bytes_sha256": "9a4a65c462e650856ddb420808f31002603644f17314080fff122a57486d8d3a"
+      },
+      {
+        "source_id": "lsc:program-letter24-1-212",
+        "url": "https://www.lsc.gov/about-lsc/laws-regulations-and-guidance/program-letters/program-letter-24-1",
+        "raw_sha256": "13141c57a26b6d606cf71870e8aa53af4ead66985f76671b5399c7dea9e6c7a4",
+        "governed_bytes_sha256": "8c706230620eb0e224703102dfe1ebfc70a6409de560c1d4d048399826b8db6f"
+      },
+      {
+        "source_id": "lsc:part1626-publication-history-212",
+        "url": "https://www.lsc.gov/node/3147",
+        "raw_sha256": "7bc1fc7e23e8a8150b18db3985c2babaf46d84f1d41d304e4516b5de47f0bb21",
+        "governed_bytes_sha256": "d9d112afef021b33add4de85769a2450809880e295c8f79db434648023800aec"
+      },
+      {
+        "source_id": "govinfo:pl109162-lsc104-212",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-109publ162/html/PLAW-109publ162.htm",
+        "raw_sha256": "5fe9f9fabd8d2a2e81bdb1e2e418e26f842aa6d538021cf5159f1053b2b385d5",
+        "governed_bytes_sha256": "4048310a4b42d1831f9d09d894748df5aafcdcf06e27e19fdd906eb6dbdd9a8a"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_raw_hash_matches": true
+  },
+  "counts_after": {
+    "reviewed": 627,
+    "pending": 49,
+    "ordinary": 18,
+    "researched_holds": 31,
+    "meanings": 57,
+    "behavioral_propositions": 96,
+    "application_questions": 70,
+    "partial_packages": 3,
+    "independent_episodes": 50,
+    "multi_action_episodes": 6
+  },
+  "independent_final_choice_not_automatic_retention_inference": true,
+  "A_retention_core_exact_and_BC_deadline_precision_only": true,
+  "BC_corrected_core_sha256": "e41fca517b85b22cd92a0b64c1dc9cfd154f2a23241e7fbc1fa7d18227626402",
+  "remaining_application_qualifications": [
+    "Historicalpatent1994compliance/IHS1987implementation notdetermined",
+    "Individualproject/corps/status/grant/facility/LSCdeterminations notmade",
+    "Noexhaustiveimageprojectattribution/currentconsolidatedlaw/agencyperformancecertification"
+  ],
+  "new_acquisitions": 0,
+  "new_completed_comparable_routine_benchmark_credit": 0,
+  "benchmark": "FAIL unchanged; no five comparable completed routine cycles",
+  "independent216_review_pending": false,
+  "independent217_source_domain_review_pending": false,
+  "two_remaining_fixed_funding_cases_pending": true,
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "aecbe004509130e49b8f4f10e076ea6b07a35d37745ad8494a389c016128e8cd",
+  "owner_member_neutrality_correction_after_initial_validation": true,
+  "initial_suite_tests": 366,
+  "initial_suite_failures": 1,
+  "initial_suite_reported_seconds": 241.54,
+  "initial_failure": "Shared prose contained a member name; test and rule unchanged.",
+  "initial_pre_correction_core_sha256": "104d0477812e2f1472432fc6cf992d7718b53f086a727a213f35fa5c071397ae",
+  "member_observations_and_source_identity_sets_unchanged": true,
+  "independent216_bounded_review_received": true,
+  "independent217_bounded_review_received": true,
+  "independent217_bounded_review_report_sha256": "9667d9af3ed76b5db9cacac562fc423f3bfb12f8cc53f6f85b38c98b54b88c88",
+  "independent218_corrected_Dakota_candidate_review_pending": true,
+  "prospective_review_status_reconciled_in_checkpoint218": true
+}

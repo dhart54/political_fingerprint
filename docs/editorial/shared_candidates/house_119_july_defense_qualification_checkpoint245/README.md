@@ -1,0 +1,11 @@
+# July H.R. 8800 candidate qualification, checkpoint 245
+
+This prospective provider qualifies the whole July 22, 2026 passage action `house:119:2:278`. The vote-time base is RCP 119-33 plus adopted amendments under H.Res. 1438. Separately directed S.1383/Division E engrossment assembly does not create a new component choice. Official member observations remain two separately sourced Nay votes; neither supplies a motive or a position on each component.
+
+The retained public EH text was actually read in full (2,978,639 characters, 120 contiguous intervals). Selected native floor pages, RCP clauses, dated operative statutes and an explicit bounded report/EH comparison support the material predicates. This is not an independent whole-RCP, whole-report, JES, classified-annex, table-arithmetic, visual, current-law or individual-application certificate. The receipt in the main Immigration candidate directory records exact sources, read scopes, recovery costs and remaining legal questions.
+
+The original Health core `3e70666d7bf2de294118d0f9dc7fec67db62d00211e7ab572f8c30a0d0b70684`, 8,349-character meaning, 23 bindings, 26 witnesses, identity/reference and limitations remain intact. An explicit prospective clarification immediately after that prefix supersedes its grouped 1077/1079 shorthand: the amendment adds an exclusion to 1077(b), separately deletes the sterilization qualifier from 1079(a)(20), and does not remove a universal under-18 limit from both. Earlier Health history remains visible.
+
+The qualified core is `f7d5f6f499767c25a97d6df3b377165289519f3d83c9f9b25ae75880e32a77e4`, with 133 claim bindings and a 42-group owner predicate audit. Candidate accounting is 666 reviewed / 10 pending, 87 cores, 145 behavioral propositions, 75 episodes and 10 multi-action episodes. All prior actions, observations, propositions, earlier amendment dispositions, withdrawals and source restrictions remain. The separate audit-count reconciliation applies the already documented historical-highest rule and makes no new semantic assessment.
+
+Independent source/domain review remains pending. Candidate completion is not editorial acceptance, publication, promotion or a whole-domain clearance. No merge, deployment, registry or production write is authorized.

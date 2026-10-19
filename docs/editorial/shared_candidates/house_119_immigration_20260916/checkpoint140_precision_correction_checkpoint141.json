@@ -1,0 +1,1321 @@
+{
+  "checkpoint": 141,
+  "prior_checkpoint": "96194331d1a8a9f57c3ef5cce2a0ecca26bc73b9",
+  "review_state": "candidate_only_bounded_independent_precision_recheck_passed",
+  "source_of_findings": "Incoming independent checkpoint140source/mechanical review,initial two P3precision findings;final source review to follow",
+  "baseline_archive": ".tmp/checkpoint141_before_precision",
+  "cases": [
+    {
+      "action_id": "house:119:1:297",
+      "severity": "Minor",
+      "finding_id": "IB-AUDIT-888-INVESTIGATION-DIRECTIVE",
+      "source_id": "govinfo:hres888ih",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres888ih/html/BILLS-119hres888ih.htm",
+      "governed_bytes_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9",
+      "source_witness": {
+        "start": 4765,
+        "end": 4919,
+        "total": 5170,
+        "passage": "(2) directs the Committee on Ethics to conduct a full investigation into the extent of Plaskett's ties to Epstein and any potential further improprieties."
+      },
+      "before_review_record": {
+        "action_id": "house:119:1:297",
+        "domain_id": "IMMIGRATION_BORDER",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,request an Ethics investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:297",
+            "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+            "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
+            "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534"
+          },
+          {
+            "source_id": "govinfo:hres888ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres888ih/html/BILLS-119hres888ih.htm",
+            "raw_sha256": "5ee6367ad49b76721200a066fc9691174f76abaa4cfbf580f55bd261ef7a2d4d",
+            "governed_bytes_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9"
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+            "raw_sha256": "deecb5d1c9406ec3244bd225e9ae553ce533e5f43e5fcbcc8170789f7756c371",
+            "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres888ih",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 888 Introduced in House (IH)] <DOC> 119th CONGRESS 1st Session H. RES. 888 Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES November 18, 2025 Mr. Norman (for himself, Mr. Harris of Maryland, Mr. Roy, Ms. Boebert, Mr. Self, Mr. Higgins of Louisiana, Mr. Crane, Mr. Biggs of Arizona, Mr. Gosar, Mr. Moore of Alabama, Mr. Brecheen, Mrs. Miller of Illinois, Mrs. Biggs of South Carolina, Mr. Clyde, Mr. Harris of North Carolina, Mr. Donalds, Mr. Cloud, Mr. Gill of Texas, Mr. Burlison, Mr. Baumgartner, Mr. Fine, and Mrs. Luna) submitted the following resolution; which was referred to the Committee on Ethics _______________________________________________________________________ RESOLUTION Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing. Whereas Stacey Plaskett, the Delegate representing the United States Virgin Islands in the House of Representatives, inappropriately coordinated with convicted sex offender Jeffrey Epstein in a congressional hearing in February 2019; Whereas Delegate Plaskett was actively coached by Epstein during the hearing, received instructions on specific lines of questioning, and was congratulated afterwards with the message ``Good work''; Whereas Jeffrey Epstein was a known, convicted felony sex offender, having pled guilty and been convicted for procuring a child for prostitution and of soliciting a prostitute in a plea deal in 2008, and served a 13-month sentence; Whereas, in the course of that investigation, the FBI compiled reports on dozens of confirmed minors who credibly alleged sexual abuse by Epstein; Whereas Epstein was under further Federal investigation beginning in November 2018, two months before Delegate Plaskett's recently revealed text exchange during a congressional hearing, following investigative reporting by the Miami Herald detailing Epstein's controversial 2008 plea deal and highlighting accounts of his victims; Whereas Epstein was arrested in July 2019 and charged with one count of sex trafficking of minors and one count of conspiracy to commit sex trafficking of minors, and he was later found dead in the New York Metropolitan Correctional Center; Whereas, according to documents released from Epstein's estate, during a House Committee on Oversight and Reform hearing featuring testimony from Michael Cohen, disgraced former attorney to President Donald J. Trump, Delegate Plaskett coordinated her line of questioning with Jeffrey Epstein in real-time over text message while the hearing was underway; Whereas Delegate Plaskett, who previously served as an assistant attorney general in the U.S. Department of Justice Civil Division, is known to have had extensive political, personal, and professional connections with Epstein after his conviction as a sex offender up to the time of his arrest and then death in 2019; Whereas Delegate Plaskett's relationship with Epstein stands in stark contrast to the public image she has curated for herself as a defender of justice and accountability while secretly collaborating with an individual whose crimes against vulnerable women and children shocked the nation; Whereas Delegate Plaskett's willingness to receive instructions on official congressional proceedings from Epstein, a convicted felony sex offender with deeply concerning international associations, is especially alarming and inappropriate given her own past service in the U.S. Department of Justice and her current role on the House Permanent Select Committee on Intelligence, and raises serious questions about Delegate Plaskett's judgement, integrity, and fitness to serve; and Whereas such associations erode public trust in Congress, particularly when they involve using input from a sex offender to advance partisan attacks during official proceedings: Now, therefore, be it Resolved, SECTION 1. CENSURE OF DELEGATE STACEY PLASKETT. The House of Representatives-- (1) censures and condemns Delegate Stacey Plaskett for inappropriate coordination with convicted sex offender Jeffrey Epstein during a Congressional Hearing, which reflects discreditably on the House of Representatives; and (2) directs the Committee on Ethics to conduct a full investigation into the extent of Plaskett's ties to Epstein and any potential further improprieties. SEC. 2. REMOVAL FROM HOUSE PERMANENT SELECT COMMITTEE ON INTELLIGENCE. The following named Member be, and is hereby, removed from the following committee of the House of Representatives: Permanent Select Committee on Intelligence: Ms. Plaskett. <all>"
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "H. RES. 888 \nWhereas Stacey Plaskett, the Delegate \nrepresenting the United States Virgin Is-\nlands in the House of Representatives, inap-\npropriately coordinated with convicted sex \noffender Jeffrey Epstein in a congressional \nhearing in February 2019; \nWhereas Delegate Plaskett was actively \ncoached by Epstein during the hearing, re-\nceived instructions on specific lines of ques-\ntioning, and was congratulated afterwards \nwith the message ‘‘Good work’’; \nWhereas Jeffrey Epstein was a known, con-\nvicted felony sex offender, having pled guilty \nand been convicted for procuring a child for \nprostitution and of soliciting a prostitute in \na plea deal in 2008, and served a 13 month \nsentence; \nWhereas in the course of that investiga-\ntion, the FBI compiled reports on dozens of \nconfirmed minors who credibly alleged sex-\nual abuse by Epstein; \nWhereas Epstein was under further Federal \ninvestigation beginning in November 2018, \ntwo months before Delegate Plaskett’s re-\ncently revealed text exchange during a con-\ngressional hearing, following investigative \nreporting by the Miami Herald detailing \nEpstein’s controversial 2008 plea deal and \nhighlighting accounts of his victims; \nWhereas Epstein was arrested in July 2019 \nand charged with one count of sex traf-\nficking of minors and one count of con-\nspiracy to commit sex trafficking of minors, \nand he was later found dead in the New York \nMetropolitan Correctional Center; \nWhereas according to documents released \nfrom Epstein’s estate, during a House Com-\nmittee on Oversight and Reform hearing fea-\nturing testimony from Michael Cohen, dis-\ngraced former attorney to President Donald \nJ. Trump, Delegate Plaskett coordinated her \nline of questioning with Jeffrey Epstein in \nreal-time over text message while the hear-\ning was underway; \nWhereas Delegate Plaskett, who previously \nserved as an assistant attorney general in \nthe U.S. Department of Justice Civil Divi-\nsion, is known to have had extensive polit-\nical, personal and professional connections \nwith Epstein after his conviction as a sex of-\nfender up to the time of his arrest and then \ndeath in 2019; \nWhereas Delegate Plaskett’s relationship \nwith Epstein stands in stark contrast to the \npublic image she has curated for herself as a \ndefender of justice and accountability while \nsecretly collaborating with an individual \nwhose crimes against vulnerable women and \nchildren shocked the nation; \nWhereas Delegate Plaskett’s willingness to \nreceive instructions on official congressional \nproceedings from Epstein, a convicted felony \nsex offender with deeply concerning inter-\nnational associations, is especially alarming \nand inappropriate given her own past service \nin the U.S. Department of Justice and her \ncurrent role on the House Permanent Select \nCommittee on Intelligence, and raises seri-\nous questions about Delegate Plaskett’s \njudgement, integrity, and fitness to serve; \nand \nWhereas such associations erode public \ntrust in Congress, particularly when they in-\nvolve using input from a sex offender to ad-\nvance partisan attacks during official pro-\nceedings: Now, therefore, be it \nVerDate Sep 11 2014 08:12 Nov 19, 2025 Jkt 069060 PO 00000 Frm 00029 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A18NO7.012 H18NOPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH4738 November 18, 2025 \nResolved, \nSECTION 1. CENSURE OF DELEGATE STACEY \nPLASKETT. \nThe House of Representatives— \n(1) censures and condemns Delegate Stacey \nPlaskett for inappropriate coordination with \nconvicted sex offender Jeffrey Epstein during \na Congressional Hearing, which reflects dis-\ncreditably on the House of Representatives; \nand \n(2) directs the Committee on Ethics to con-\nduct a full investigation into the extent of \nPlaskett’s ties to Epstein and any potential \nfurther improprieties. \nSEC. 2. REMOVAL FROM HOUSE PERMANENT SE-\nLECT COMMITTEE ON INTEL-\nLIGENCE. \nThe following named Member be, and is \nhereby, removed from the following com-\nmittee of the House of Representatives: \nP\nERMANENT SELECT COMMITTEE ON INTEL-\nLIGENCE: Ms. Plaskett. \n\n\nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on adoption \nof the resolution (H. Res. 888) censuring \nand condemning Delegate S\nTACEY \nPLASKETT and removing her from the \nHouse Permanent Select Committee on \nIntelligence for conduct that reflects \ndiscreditably on the House of Rep-\nresentatives for colluding with con-\nvicted felony sex offender Jeffrey Ep-\nstein during a congressional hearing, \non which the yeas and nays were or-\ndered. \nThe Clerk read the title of the resolu-\ntion. \nThe SPEAKER pro tempore. The \nquestion is on the resolution. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 209, nays \n214, answered ‘‘present’’ 3, not voting 7, \nas follows: \n[Roll No. 297] \nYEAS—209 \nAderholt \nAlford \nAllen \nAmodei (NV) \nArrington \nBabin \nBaird \nBalderson \nBarr \nBarrett \nBaumgartner \nBean (FL) \nBegich \nBentz \nBergman \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBoebert \nBost \nBrecheen \nBresnahan \nBuchanan \nBurchett \nBurlison \nCalvert \nCammack \nCarey \nCarter (GA) \nCarter (TX) \nCiscomani \nCline \nCloud \nClyde \nCole \nCollins \nComer \nCrane \nCrank \nCrawford \nCrenshaw \nDavidson \nDe La Cruz \nDesJarlais \nDiaz-Balart \nDonalds \nDowning \nDunn (FL) \nEdwards \nEllzey \nEmmer \nEstes \nEvans (CO) \nEzell \nFallon \nFedorchak \nFeenstra \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFlood \nFong \nFoxx \nFranklin, Scott \nFry \nFulcher \nGill (TX) \nGimenez \nGoldman (TX) \nGonzales, Tony \nGosar \nGraves \nGreene (GA) \nGriffith \nGrothman \nGuest \nGuthrie \nHageman \nHamadeh (AZ) \nHaridopolos \nHarrigan \nHarris (MD) \nHarris (NC) \nHarshbarger \nHern (OK) \nHiggins (LA) \nHill (AR) \nHinson \nHouchin \nHudson \nHuizenga \nHunt \nHurd (CO) \nIssa \nJack \nJackson (TX) \nJames \nJohnson (LA) \nJohnson (SD) \nJordan \nJoyce (PA) \nKean \nKelly (PA) \nKennedy (UT) \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKustoff \nLaHood \nLaLota \nLaMalfa \nLangworthy \nLatta \nLawler \nLee (FL) \nLetlow \nLoudermilk \nLucas \nLuna \nLuttrell \nMace \nMackenzie \nMalliotakis \nMaloy \nMann \nMassie \nMast \nMcCaul \nMcClain \nMcClintock \nMcCormick \nMcDowell \nMcGuire \nMessmer \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMills \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WV) \nMoran \nMurphy \nNehls \nNewhouse \nNorman \nNunn (IA) \nOgles \nOnder \nOwens \nPalmer \nPatronis \nPerry \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nYakym \nZinke \nNAYS—214 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBacon \nBalint \nBarraga´n \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCase \nCasten \nCastor (FL) \nCastro (TX) \nCherfilus- \nMcCormick \nChu \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nClyburn \nCohen \nConaway \nCorrea \nCosta \nCourtney \nCraig \nCrockett \nCrow \nCuellar \nDavids (KS) \nDavis (IL) \nDavis (NC) \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDexter \nDingell \nDoggett \nElfreth \nEscobar \nEspaillat \nEvans (PA) \nFields \nFigures \nFletcher \nFoster \nFoushee \nFrankel, Lois \nFriedman \nFrost \nGaramendi \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGillen \nGolden (ME) \nGoldman (NY) \nGomez \nGonzalez, V. \nGooden \nGoodlander \nGottheimer \nGray \nGreen, Al (TX) \nGrijalva \nHarder (CA) \nHayes \nHimes \nHorsford \nHoulahan \nHoyer \nHoyle (OR) \nHuffman \nIvey \nJackson (IL) \nJacobs \nJayapal \nJeffries \nJohnson (GA) \nJohnson (TX) \nJoyce (OH) \nKamlager-Dove \nKaptur \nKeating \nKelly (IL) \nKennedy (NY) \nKhanna \nKrishnamoorthi \nLandsman \nLarsen (WA) \nLarson (CT) \nLatimer \nLee (NV) \nLee (PA) \nLeger Fernandez \nLevin \nLiccardo \nLieu \nLofgren \nLynch \nMagaziner \nMannion \nMatsui \nMcBath \nMcBride \nMcClain Delaney \nMcClellan \nMcCollum \nMcDonald Rivet \nMcGarvey \nMcGovern \nMcIver \nMeeks \nMenendez \nMeng \nMfume \nMin \nMoore (WI) \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nNadler \nNeal \nNeguse \nNorcross \nOcasio-Cortez \nOlszewski \nOmar \nPallone \nPanetta \nPappas \nPelosi \nPerez \nPeters \nPettersen \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nRiley (NY) \nRivas \nRoss \nRuiz \nRyan \nSalinas \nSa´nchez \nScanlon \nSchakowsky \nSchneider \nScholten \nSchrier \nScott (VA) \nScott, David \nSewell \nSherman \nSimon \nSmith (WA) \nSorensen \nSoto \nVerDate Sep 11 2014 06:56 Nov 19, 2025 Jkt 069060 PO 00000 Frm 00053 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A18NO7.025 H18NOPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH4762 November 18, 2025 \nStansbury \nStanton \nStevens \nStrickland \nSubramanyam \nSuozzi \nSykes \nTakano \nThanedar \nThompson (CA) \nThompson (MS) \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nUnderwood \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWhitesides \nWilliams (GA) \nWilson (FL) \nANSWERED ‘‘PRESENT’’—3 \nGarbarino Meuser Obernolte \nNOT VOTING—7 \nCasar \nKelly (MS) \nRulli \nRutherford \nSherrill \nSwalwell \nWomack \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (during \nthe vote). There are 2 minutes remain-\ning. \nb 2107 \nSo the resolution was not agreed to. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          }
+        ],
+        "reviewed_source_extents": [
+          {
+            "source_id": "govinfo:hres888ih",
+            "start": 0,
+            "end": 5170,
+            "total": 5170,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "start": 0,
+            "end": 9617,
+            "total": 9617,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "before_review_record_sha256": "db1bd539b581fa73b4c600102043ced580e61102666efa608bf6034ec4f023b7",
+      "corrected_review_record": {
+        "action_id": "house:119:1:297",
+        "domain_id": "IMMIGRATION_BORDER",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,direct the Committee on Ethics to conduct a full investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:297",
+            "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+            "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
+            "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534"
+          },
+          {
+            "source_id": "govinfo:hres888ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres888ih/html/BILLS-119hres888ih.htm",
+            "raw_sha256": "5ee6367ad49b76721200a066fc9691174f76abaa4cfbf580f55bd261ef7a2d4d",
+            "governed_bytes_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9"
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+            "raw_sha256": "deecb5d1c9406ec3244bd225e9ae553ce533e5f43e5fcbcc8170789f7756c371",
+            "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres888ih",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 888 Introduced in House (IH)] <DOC> 119th CONGRESS 1st Session H. RES. 888 Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES November 18, 2025 Mr. Norman (for himself, Mr. Harris of Maryland, Mr. Roy, Ms. Boebert, Mr. Self, Mr. Higgins of Louisiana, Mr. Crane, Mr. Biggs of Arizona, Mr. Gosar, Mr. Moore of Alabama, Mr. Brecheen, Mrs. Miller of Illinois, Mrs. Biggs of South Carolina, Mr. Clyde, Mr. Harris of North Carolina, Mr. Donalds, Mr. Cloud, Mr. Gill of Texas, Mr. Burlison, Mr. Baumgartner, Mr. Fine, and Mrs. Luna) submitted the following resolution; which was referred to the Committee on Ethics _______________________________________________________________________ RESOLUTION Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing. Whereas Stacey Plaskett, the Delegate representing the United States Virgin Islands in the House of Representatives, inappropriately coordinated with convicted sex offender Jeffrey Epstein in a congressional hearing in February 2019; Whereas Delegate Plaskett was actively coached by Epstein during the hearing, received instructions on specific lines of questioning, and was congratulated afterwards with the message ``Good work''; Whereas Jeffrey Epstein was a known, convicted felony sex offender, having pled guilty and been convicted for procuring a child for prostitution and of soliciting a prostitute in a plea deal in 2008, and served a 13-month sentence; Whereas, in the course of that investigation, the FBI compiled reports on dozens of confirmed minors who credibly alleged sexual abuse by Epstein; Whereas Epstein was under further Federal investigation beginning in November 2018, two months before Delegate Plaskett's recently revealed text exchange during a congressional hearing, following investigative reporting by the Miami Herald detailing Epstein's controversial 2008 plea deal and highlighting accounts of his victims; Whereas Epstein was arrested in July 2019 and charged with one count of sex trafficking of minors and one count of conspiracy to commit sex trafficking of minors, and he was later found dead in the New York Metropolitan Correctional Center; Whereas, according to documents released from Epstein's estate, during a House Committee on Oversight and Reform hearing featuring testimony from Michael Cohen, disgraced former attorney to President Donald J. Trump, Delegate Plaskett coordinated her line of questioning with Jeffrey Epstein in real-time over text message while the hearing was underway; Whereas Delegate Plaskett, who previously served as an assistant attorney general in the U.S. Department of Justice Civil Division, is known to have had extensive political, personal, and professional connections with Epstein after his conviction as a sex offender up to the time of his arrest and then death in 2019; Whereas Delegate Plaskett's relationship with Epstein stands in stark contrast to the public image she has curated for herself as a defender of justice and accountability while secretly collaborating with an individual whose crimes against vulnerable women and children shocked the nation; Whereas Delegate Plaskett's willingness to receive instructions on official congressional proceedings from Epstein, a convicted felony sex offender with deeply concerning international associations, is especially alarming and inappropriate given her own past service in the U.S. Department of Justice and her current role on the House Permanent Select Committee on Intelligence, and raises serious questions about Delegate Plaskett's judgement, integrity, and fitness to serve; and Whereas such associations erode public trust in Congress, particularly when they involve using input from a sex offender to advance partisan attacks during official proceedings: Now, therefore, be it Resolved, SECTION 1. CENSURE OF DELEGATE STACEY PLASKETT. The House of Representatives-- (1) censures and condemns Delegate Stacey Plaskett for inappropriate coordination with convicted sex offender Jeffrey Epstein during a Congressional Hearing, which reflects discreditably on the House of Representatives; and (2) directs the Committee on Ethics to conduct a full investigation into the extent of Plaskett's ties to Epstein and any potential further improprieties. SEC. 2. REMOVAL FROM HOUSE PERMANENT SELECT COMMITTEE ON INTELLIGENCE. The following named Member be, and is hereby, removed from the following committee of the House of Representatives: Permanent Select Committee on Intelligence: Ms. Plaskett. <all>"
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "H. RES. 888 \nWhereas Stacey Plaskett, the Delegate \nrepresenting the United States Virgin Is-\nlands in the House of Representatives, inap-\npropriately coordinated with convicted sex \noffender Jeffrey Epstein in a congressional \nhearing in February 2019; \nWhereas Delegate Plaskett was actively \ncoached by Epstein during the hearing, re-\nceived instructions on specific lines of ques-\ntioning, and was congratulated afterwards \nwith the message ‘‘Good work’’; \nWhereas Jeffrey Epstein was a known, con-\nvicted felony sex offender, having pled guilty \nand been convicted for procuring a child for \nprostitution and of soliciting a prostitute in \na plea deal in 2008, and served a 13 month \nsentence; \nWhereas in the course of that investiga-\ntion, the FBI compiled reports on dozens of \nconfirmed minors who credibly alleged sex-\nual abuse by Epstein; \nWhereas Epstein was under further Federal \ninvestigation beginning in November 2018, \ntwo months before Delegate Plaskett’s re-\ncently revealed text exchange during a con-\ngressional hearing, following investigative \nreporting by the Miami Herald detailing \nEpstein’s controversial 2008 plea deal and \nhighlighting accounts of his victims; \nWhereas Epstein was arrested in July 2019 \nand charged with one count of sex traf-\nficking of minors and one count of con-\nspiracy to commit sex trafficking of minors, \nand he was later found dead in the New York \nMetropolitan Correctional Center; \nWhereas according to documents released \nfrom Epstein’s estate, during a House Com-\nmittee on Oversight and Reform hearing fea-\nturing testimony from Michael Cohen, dis-\ngraced former attorney to President Donald \nJ. Trump, Delegate Plaskett coordinated her \nline of questioning with Jeffrey Epstein in \nreal-time over text message while the hear-\ning was underway; \nWhereas Delegate Plaskett, who previously \nserved as an assistant attorney general in \nthe U.S. Department of Justice Civil Divi-\nsion, is known to have had extensive polit-\nical, personal and professional connections \nwith Epstein after his conviction as a sex of-\nfender up to the time of his arrest and then \ndeath in 2019; \nWhereas Delegate Plaskett’s relationship \nwith Epstein stands in stark contrast to the \npublic image she has curated for herself as a \ndefender of justice and accountability while \nsecretly collaborating with an individual \nwhose crimes against vulnerable women and \nchildren shocked the nation; \nWhereas Delegate Plaskett’s willingness to \nreceive instructions on official congressional \nproceedings from Epstein, a convicted felony \nsex offender with deeply concerning inter-\nnational associations, is especially alarming \nand inappropriate given her own past service \nin the U.S. Department of Justice and her \ncurrent role on the House Permanent Select \nCommittee on Intelligence, and raises seri-\nous questions about Delegate Plaskett’s \njudgement, integrity, and fitness to serve; \nand \nWhereas such associations erode public \ntrust in Congress, particularly when they in-\nvolve using input from a sex offender to ad-\nvance partisan attacks during official pro-\nceedings: Now, therefore, be it \nVerDate Sep 11 2014 08:12 Nov 19, 2025 Jkt 069060 PO 00000 Frm 00029 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A18NO7.012 H18NOPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH4738 November 18, 2025 \nResolved, \nSECTION 1. CENSURE OF DELEGATE STACEY \nPLASKETT. \nThe House of Representatives— \n(1) censures and condemns Delegate Stacey \nPlaskett for inappropriate coordination with \nconvicted sex offender Jeffrey Epstein during \na Congressional Hearing, which reflects dis-\ncreditably on the House of Representatives; \nand \n(2) directs the Committee on Ethics to con-\nduct a full investigation into the extent of \nPlaskett’s ties to Epstein and any potential \nfurther improprieties. \nSEC. 2. REMOVAL FROM HOUSE PERMANENT SE-\nLECT COMMITTEE ON INTEL-\nLIGENCE. \nThe following named Member be, and is \nhereby, removed from the following com-\nmittee of the House of Representatives: \nP\nERMANENT SELECT COMMITTEE ON INTEL-\nLIGENCE: Ms. Plaskett. \n\n\nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on adoption \nof the resolution (H. Res. 888) censuring \nand condemning Delegate S\nTACEY \nPLASKETT and removing her from the \nHouse Permanent Select Committee on \nIntelligence for conduct that reflects \ndiscreditably on the House of Rep-\nresentatives for colluding with con-\nvicted felony sex offender Jeffrey Ep-\nstein during a congressional hearing, \non which the yeas and nays were or-\ndered. \nThe Clerk read the title of the resolu-\ntion. \nThe SPEAKER pro tempore. The \nquestion is on the resolution. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 209, nays \n214, answered ‘‘present’’ 3, not voting 7, \nas follows: \n[Roll No. 297] \nYEAS—209 \nAderholt \nAlford \nAllen \nAmodei (NV) \nArrington \nBabin \nBaird \nBalderson \nBarr \nBarrett \nBaumgartner \nBean (FL) \nBegich \nBentz \nBergman \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBoebert \nBost \nBrecheen \nBresnahan \nBuchanan \nBurchett \nBurlison \nCalvert \nCammack \nCarey \nCarter (GA) \nCarter (TX) \nCiscomani \nCline \nCloud \nClyde \nCole \nCollins \nComer \nCrane \nCrank \nCrawford \nCrenshaw \nDavidson \nDe La Cruz \nDesJarlais \nDiaz-Balart \nDonalds \nDowning \nDunn (FL) \nEdwards \nEllzey \nEmmer \nEstes \nEvans (CO) \nEzell \nFallon \nFedorchak \nFeenstra \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFlood \nFong \nFoxx \nFranklin, Scott \nFry \nFulcher \nGill (TX) \nGimenez \nGoldman (TX) \nGonzales, Tony \nGosar \nGraves \nGreene (GA) \nGriffith \nGrothman \nGuest \nGuthrie \nHageman \nHamadeh (AZ) \nHaridopolos \nHarrigan \nHarris (MD) \nHarris (NC) \nHarshbarger \nHern (OK) \nHiggins (LA) \nHill (AR) \nHinson \nHouchin \nHudson \nHuizenga \nHunt \nHurd (CO) \nIssa \nJack \nJackson (TX) \nJames \nJohnson (LA) \nJohnson (SD) \nJordan \nJoyce (PA) \nKean \nKelly (PA) \nKennedy (UT) \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKustoff \nLaHood \nLaLota \nLaMalfa \nLangworthy \nLatta \nLawler \nLee (FL) \nLetlow \nLoudermilk \nLucas \nLuna \nLuttrell \nMace \nMackenzie \nMalliotakis \nMaloy \nMann \nMassie \nMast \nMcCaul \nMcClain \nMcClintock \nMcCormick \nMcDowell \nMcGuire \nMessmer \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMills \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WV) \nMoran \nMurphy \nNehls \nNewhouse \nNorman \nNunn (IA) \nOgles \nOnder \nOwens \nPalmer \nPatronis \nPerry \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nYakym \nZinke \nNAYS—214 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBacon \nBalint \nBarraga´n \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCase \nCasten \nCastor (FL) \nCastro (TX) \nCherfilus- \nMcCormick \nChu \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nClyburn \nCohen \nConaway \nCorrea \nCosta \nCourtney \nCraig \nCrockett \nCrow \nCuellar \nDavids (KS) \nDavis (IL) \nDavis (NC) \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDexter \nDingell \nDoggett \nElfreth \nEscobar \nEspaillat \nEvans (PA) \nFields \nFigures \nFletcher \nFoster \nFoushee \nFrankel, Lois \nFriedman \nFrost \nGaramendi \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGillen \nGolden (ME) \nGoldman (NY) \nGomez \nGonzalez, V. \nGooden \nGoodlander \nGottheimer \nGray \nGreen, Al (TX) \nGrijalva \nHarder (CA) \nHayes \nHimes \nHorsford \nHoulahan \nHoyer \nHoyle (OR) \nHuffman \nIvey \nJackson (IL) \nJacobs \nJayapal \nJeffries \nJohnson (GA) \nJohnson (TX) \nJoyce (OH) \nKamlager-Dove \nKaptur \nKeating \nKelly (IL) \nKennedy (NY) \nKhanna \nKrishnamoorthi \nLandsman \nLarsen (WA) \nLarson (CT) \nLatimer \nLee (NV) \nLee (PA) \nLeger Fernandez \nLevin \nLiccardo \nLieu \nLofgren \nLynch \nMagaziner \nMannion \nMatsui \nMcBath \nMcBride \nMcClain Delaney \nMcClellan \nMcCollum \nMcDonald Rivet \nMcGarvey \nMcGovern \nMcIver \nMeeks \nMenendez \nMeng \nMfume \nMin \nMoore (WI) \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nNadler \nNeal \nNeguse \nNorcross \nOcasio-Cortez \nOlszewski \nOmar \nPallone \nPanetta \nPappas \nPelosi \nPerez \nPeters \nPettersen \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nRiley (NY) \nRivas \nRoss \nRuiz \nRyan \nSalinas \nSa´nchez \nScanlon \nSchakowsky \nSchneider \nScholten \nSchrier \nScott (VA) \nScott, David \nSewell \nSherman \nSimon \nSmith (WA) \nSorensen \nSoto \nVerDate Sep 11 2014 06:56 Nov 19, 2025 Jkt 069060 PO 00000 Frm 00053 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A18NO7.025 H18NOPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH4762 November 18, 2025 \nStansbury \nStanton \nStevens \nStrickland \nSubramanyam \nSuozzi \nSykes \nTakano \nThanedar \nThompson (CA) \nThompson (MS) \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nUnderwood \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWhitesides \nWilliams (GA) \nWilson (FL) \nANSWERED ‘‘PRESENT’’—3 \nGarbarino Meuser Obernolte \nNOT VOTING—7 \nCasar \nKelly (MS) \nRulli \nRutherford \nSherrill \nSwalwell \nWomack \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (during \nthe vote). There are 2 minutes remain-\ning. \nb 2107 \nSo the resolution was not agreed to. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          }
+        ],
+        "reviewed_source_extents": [
+          {
+            "source_id": "govinfo:hres888ih",
+            "start": 0,
+            "end": 5170,
+            "total": 5170,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "start": 0,
+            "end": 9617,
+            "total": 9617,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "corrected_review_record_sha256": "5aceb2d4bad25180ef3e232301f7fa611fee3dc240767e68d3f31768ac18dd9f",
+      "before_universe_row": {
+        "action_id": "house:119:1:297",
+        "session": 1,
+        "roll": 297,
+        "date": "2025-11-18",
+        "measure": "bill_119_hres_888",
+        "question": "On Agreeing to the Resolution",
+        "disposition": "exact_action_ineligible",
+        "reason": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,request an Ethics investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "source": {
+          "source_id": "clerk:119:1:297",
+          "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+          "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
+          "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hres_888",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Resolution",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "exact_action_ineligible",
+        "rationale": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,request an Ethics investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "unresolved_reason": null,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:297",
+            "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+            "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
+            "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534"
+          },
+          {
+            "source_id": "govinfo:hres888ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres888ih/html/BILLS-119hres888ih.htm",
+            "raw_sha256": "5ee6367ad49b76721200a066fc9691174f76abaa4cfbf580f55bd261ef7a2d4d",
+            "governed_bytes_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9"
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+            "raw_sha256": "deecb5d1c9406ec3244bd225e9ae553ce533e5f43e5fcbcc8170789f7756c371",
+            "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47"
+          }
+        ],
+        "exact_action_source_binding": null,
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "db1bd539b581fa73b4c600102043ced580e61102666efa608bf6034ec4f023b7"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "corrected_universe_row": {
+        "action_id": "house:119:1:297",
+        "session": 1,
+        "roll": 297,
+        "date": "2025-11-18",
+        "measure": "bill_119_hres_888",
+        "question": "On Agreeing to the Resolution",
+        "disposition": "exact_action_ineligible",
+        "reason": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,direct the Committee on Ethics to conduct a full investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "source": {
+          "source_id": "clerk:119:1:297",
+          "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+          "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
+          "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hres_888",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Resolution",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "exact_action_ineligible",
+        "rationale": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,direct the Committee on Ethics to conduct a full investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "unresolved_reason": null,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:297",
+            "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+            "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
+            "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534"
+          },
+          {
+            "source_id": "govinfo:hres888ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres888ih/html/BILLS-119hres888ih.htm",
+            "raw_sha256": "5ee6367ad49b76721200a066fc9691174f76abaa4cfbf580f55bd261ef7a2d4d",
+            "governed_bytes_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9"
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+            "raw_sha256": "deecb5d1c9406ec3244bd225e9ae553ce533e5f43e5fcbcc8170789f7756c371",
+            "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47"
+          }
+        ],
+        "exact_action_source_binding": null,
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "5aceb2d4bad25180ef3e232301f7fa611fee3dc240767e68d3f31768ac18dd9f"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "before_audit_assessment": {
+        "action_id": "house:119:1:297",
+        "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+        "reviewed_disposition": "source_unresolved",
+        "current_disposition": "exact_action_ineligible",
+        "severity": "No Defect",
+        "finding_id": null,
+        "exact_identity": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "297",
+          "legis-num": "H RES 888",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "18-Nov-2025",
+          "action-time": "9:07 PM",
+          "vote-desc": "Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing"
+        },
+        "recorded_member_observations": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "primary_reconstruction": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,request an Ethics investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "finding": "Failed disciplinary and military-use proposals and adopted broad fraud expression retain distinct floor choices and outcomes; no completed sanction,service change,withdrawal,immigration-person rule or truth of allegations inferred.",
+        "correction": null,
+        "before_review_record_sha256": null,
+        "corrected_review_record_sha256": "db1bd539b581fa73b4c600102043ced580e61102666efa608bf6034ec4f023b7",
+        "primary_evidence": [
+          {
+            "source_id": "clerk:119:1:297",
+            "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+            "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "govinfo:hres888ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres888ih/html/BILLS-119hres888ih.htm",
+            "governed_bytes_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+            "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          }
+        ],
+        "correction_state": "local_batch_validated_candidate_only"
+      },
+      "corrected_audit_assessment": {
+        "action_id": "house:119:1:297",
+        "audit_state": "primary_reconstructed_candidate_compared_corrected",
+        "reviewed_disposition": "source_unresolved",
+        "current_disposition": "exact_action_ineligible",
+        "severity": "Minor",
+        "finding_id": "IB-AUDIT-888-INVESTIGATION-DIRECTIVE",
+        "exact_identity": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "297",
+          "legis-num": "H RES 888",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "18-Nov-2025",
+          "action-time": "9:07 PM",
+          "vote-desc": "Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing"
+        },
+        "recorded_member_observations": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "primary_reconstruction": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,direct the Committee on Ethics to conduct a full investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "finding": "The operative clause DIRECTS a full Committee on Ethics investigation,not a discretionary request; failed adoption/no completed sanctions unchanged.",
+        "correction": "direct the Committee on Ethics to conduct a full investigation",
+        "before_review_record_sha256": "db1bd539b581fa73b4c600102043ced580e61102666efa608bf6034ec4f023b7",
+        "corrected_review_record_sha256": "5aceb2d4bad25180ef3e232301f7fa611fee3dc240767e68d3f31768ac18dd9f",
+        "primary_evidence": [
+          {
+            "source_id": "clerk:119:1:297",
+            "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+            "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "govinfo:hres888ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres888ih/html/BILLS-119hres888ih.htm",
+            "governed_bytes_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+            "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          }
+        ],
+        "correction_state": "locally_corrected_pending_bounded_independent_recheck"
+      },
+      "original_disposition_preserved": true,
+      "source_refs_claim_passages_reviewed_extents_unchanged": true,
+      "finding": "The operative clause DIRECTS a full Committee on Ethics investigation,not a discretionary request; failed adoption/no completed sanctions unchanged."
+    },
+    {
+      "action_id": "house:119:1:346",
+      "severity": "Minor",
+      "finding_id": "IB-AUDIT-1544-TERMINATION-REMOVAL",
+      "source_id": "govinfo:50usc1544-2024-operative",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+      "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367",
+      "source_witness": {
+        "start": 1025,
+        "end": 2450,
+        "total": 2500,
+        "passage": "(b) Termination of use of United States Armed Forces; exceptions; extension period Within sixty calendar days after a report is submitted or is required to be submitted pursuant to section 1543(a)(1) of this title, whichever is earlier, the President shall terminate any use of United States Armed Forces with respect to which such report was submitted (or required to be submitted), unless the Congress (1) has declared war or has enacted a specific authorization for such use of United States Armed Forces, (2) has extended by law such sixty-day period, or (3) is physically unable to meet as a result of an armed attack upon the United States. Such sixty-day period shall be extended for not more than an additional thirty days if the President determines and certifies to the Congress in writing that unavoidable military necessity respecting the safety of United States Armed Forces requires the continued use of such armed forces in the course of bringing about a prompt removal of such forces. (c) Concurrent resolution for removal by President of United States Armed Forces Notwithstanding subsection (b), at any time that United States Armed Forces are engaged in hostilities outside the territory of the United States, its possessions and territories without a declaration of war or specific statutory authorization, such forces shall be removed by the President if the Congress so directs by concurrent resolution."
+      },
+      "before_review_record": {
+        "action_id": "house:119:1:346",
+        "domain_id": "IMMIGRATION_BORDER",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced WarPowers scope retains its report-conditioned termination/removal framework and exceptions without resolving constitutional enforceability. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:346",
+            "url": "https://clerk.house.gov/evs/2025/roll346.xml",
+            "raw_sha256": "e7a665f5385e0a4d6da15affde6bf744f682b20be5e57e7767959f9ce9b0dab9",
+            "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f"
+          },
+          {
+            "source_id": "govinfo:hconres64ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres64ih/html/BILLS-119hconres64ih.htm",
+            "raw_sha256": "1589636a0626540559515255aca9b553ead24ffbf3d295f1cd0313be01adbb15",
+            "governed_bytes_sha256": "587f0e8e276ac92ee3d4ff23ab08c9b8f05eafc2530adb4c3062aafe80ffd85e"
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+            "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+            "governed_bytes_sha256": "e9b1f61a562d8946a7d49ea02a72621171db4efb133ca6842221f7c7008331e8"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+            "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+            "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hconres64ih",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 64 Introduced in House (IH)] <DOC> 119th CONGRESS 1st Session H. CON. RES. 64 To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES December 1, 2025 Mr. McGovern (for himself, Mr. Castro of Texas, Mr. Khanna, Ms. Jacobs, and Ms. Kamlager-Dove) submitted the following concurrent resolution; which was referred to the Committee on Foreign Affairs _______________________________________________________________________ CONCURRENT RESOLUTION To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress. Resolved by the House of Representatives (the Senate concurring), SEC. 1. REMOVAL OF THE USE OF UNITED STATES FORCES FOR HOSTILITIES WITHIN OR AGAINST VENEZUELA. Pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress hereby directs the President to remove the use of United States Armed Forces from hostilities within or against Venezuela, unless explicitly authorized by a declaration of war or specific statutory authorization for use of military force. <all>"
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "2025, I call up the concurrent resolution \n(H. Con. Res. 64) to direct the removal \nof United States Armed Forces from \nhostilities within or against Venezuela \nthat have not been authorized by Con-\ngress, and ask for its immediate con-\nsideration in the House. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore. Pursu-\nant to the order of the House of Decem-\nber 16, 2025, the concurrent resolution \nis considered read. \nThe text of the concurrent resolution \nis as follows: \nH. CON. RES. 64 \nResolved by the House of Representatives (the \nSenate concurring), \nSEC. 1. REMOVAL OF THE USE OF UNITED \nSTATES FORCES FOR HOSTILITIES \nWITHIN OR AGAINST VENEZUELA. \nPursuant to section 5(c) of the War Powers \nResolution (50 U.S.C. 1544(c)), Congress here-\nby directs the President to remove the use of \nUnited States Armed Forces from hostilities \nwithin or against Venezuela, unless explic-\nitly authorized by a declaration of war or \nspecific statutory authorization for use of \nmilitary force. \n\n\nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on adoption \nof the concurrent resolution (H. Con. \nRes. 64) to direct the removal of United \nStates Armed Forces from hostilities \nwithin or against Venezuela that have \nnot been authorized by Congress, on \nwhich the yeas and nays were ordered. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore. The \nquestion is on the concurrent resolu-\ntion. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 211, nays \n213, not voting 9, as follows: \n[Roll No. 346] \nYEAS—211 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBacon \nBalint \nBarraga´n \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCasar \nCase \nCasten \nCastor (FL) \nCastro (TX) \nCherfilus- \nMcCormick \nChu \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nClyburn \nCohen \nConaway \nCorrea \nCosta \nCraig \nCrockett \nCrow \nDavids (KS) \nDavis (IL) \nDavis (NC) \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDexter \nDingell \nDoggett \nElfreth \nEscobar \nEspaillat \nEvans (PA) \nFields \nFigures \nFletcher \nFoster \nFoushee \nFrankel, Lois \nFriedman \nFrost \nGaramendi \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGillen \nGolden (ME) \nGoldman (NY) \nGomez \nGoodlander \nGottheimer \nGray \nGreen, Al (TX) \nGreene (GA) \nGrijalva \nHarder (CA) \nHayes \nHimes \nHorsford \nHoulahan \nHoyer \nHoyle (OR) \nHuffman \nIvey \nJackson (IL) \nJacobs \nJayapal \nJeffries \nJohnson (GA) \nJohnson (TX) \nKamlager-Dove \nKaptur \nKeating \nKelly (IL) \nKennedy (NY) \nKhanna \nKrishnamoorthi \nLandsman \nLarsen (WA) \nLarson (CT) \nLatimer \nLee (NV) \nLee (PA) \nLeger Fernandez \nLevin \nLiccardo \nLieu \nLofgren \nLynch \nMagaziner \nMannion \nMassie \nMatsui \nMcBride \nMcClain Delaney \nMcClellan \nMcCollum \nMcDonald Rivet \nMcGarvey \nMcGovern \nMcIver \nMeeks \nMenendez \nMeng \nMfume \nMin \nMoore (WI) \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nNadler \nNeal \nNeguse \nNorcross \nOcasio-Cortez \nOlszewski \nOmar \nPallone \nPanetta \nPappas \nPelosi \nPerez \nPeters \nPettersen \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nRiley (NY) \nRivas \nRoss \nRuiz \nRyan \nSalinas \nSa´nchez \nScanlon \nSchakowsky \nSchneider \nScholten \nSchrier \nScott (VA) \nScott, David \nSewell \nSherman \nSimon \nSmith (WA) \nSorensen \nSoto \nStansbury \nStanton \nStevens \nStrickland \nSubramanyam \nSuozzi \nSykes \nTakano \nThanedar \nThompson (CA) \nThompson (MS) \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nUnderwood \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWhitesides \nWilliams (GA) \nWilson (FL) \nNAYS—213 \nAderholt \nAlford \nAllen \nAmodei (NV) \nArrington \nBabin \nBaird \nBalderson \nBarr \nBarrett \nBaumgartner \nBean (FL) \nBegich \nBentz \nBergman \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBoebert \nBost \nBrecheen \nBresnahan \nBuchanan \nBurchett \nBurlison \nCalvert \nCammack \nCarey \nCarter (GA) \nCarter (TX) \nCiscomani \nCline \nCloud \nClyde \nCole \nCollins \nComer \nCrane \nCrank \nCrawford \nCrenshaw \nCuellar \nDavidson \nDe La Cruz \nDesJarlais \nDiaz-Balart \nDonalds \nDowning \nDunn (FL) \nEdwards \nEllzey \nEmmer \nEstes \nEvans (CO) \nEzell \nFallon \nFedorchak \nFeenstra \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFlood \nFong \nFoxx \nFranklin, Scott \nFry \nGarbarino \nGill (TX) \nGimenez \nGoldman (TX) \nGonzales, Tony \nGooden \nGosar \nGraves \nGriffith \nGrothman \nGuest \nGuthrie \nHamadeh (AZ) \nHaridopolos \nHarrigan \nHarris (MD) \nHarris (NC) \nHarshbarger \nHern (OK) \nHiggins (LA) \nHill (AR) \nHinson \nHouchin \nHudson \nHuizenga \nHunt \nHurd (CO) \nIssa \nJack \nJackson (TX) \nJames \nJohnson (LA) \nJohnson (SD) \nJordan \nJoyce (OH) \nJoyce (PA) \nKean \nKelly (MS) \nKelly (PA) \nKennedy (UT) \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKustoff \nLaHood \nLaLota \nLaMalfa \nLangworthy \nLatta \nLawler \nLee (FL) \nLetlow \nLoudermilk \nLucas \nLuna \nLuttrell \nMace \nMackenzie \nMalliotakis \nMaloy \nMann \nMast \nMcCaul \nMcClain \nMcClintock \nMcCormick \nMcDowell \nMcGuire \nMessmer \nMeuser \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WV) \nMoran \nNehls \nNewhouse \nNorman \nNunn (IA) \nObernolte \nOgles \nOnder \nOwens \nPalmer \nPatronis \nPerry \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nRulli \nRutherford \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Epps \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nYakym \nZinke \nVerDate Sep 11 2014 08:56 Dec 18, 2025 Jkt 069060 PO 00000 Frm 00061 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A17DE7.029 H17DEPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH6006 December 17, 2025 \nNOT VOTING—9 \nCourtney \nFulcher \nGonzalez, V. \nHageman \nMcBath \nMills \nMurphy \nSwalwell \nWomack \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (Mr. \nDESJARLAIS) (during the vote). There \nare 2 minutes remaining. \nb 1808 \nSo the concurrent resolution was not \nagreed to. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "§1544. Congressional action (a) Transmittal of report and referral to Congressional committees; joint request for convening Congress Each report submitted pursuant to section 1543(a)(1) of this title shall be transmitted to the Speaker of the House of Representatives and to the President pro tempore of the Senate on the same calendar day. Each report so transmitted shall be referred to the Committee on Foreign Affairs of the House of Representatives and to the Committee on Foreign Relations of the Senate for appropriate action. If, when the report is transmitted, the Congress has adjourned sine die or has adjourned for any period in excess of three calendar days, the Speaker of the House of Representatives and the President pro tempore of the Senate, if they deem it advisable (or if petitioned by at least 30 percent of the membership of their respective Houses) shall jointly request the President to convene Congress in order that it may consider the report and take appropriate action pursuant to this section. (b) Termination of use of United States Armed Forces; exceptions; extension period Within sixty calendar days after a report is submitted or is required to be submitted pursuant to section 1543(a)(1) of this title, whichever is earlier, the President shall terminate any use of United States Armed Forces with respect to which such report was submitted (or required to be submitted), unless the Congress (1) has declared war or has enacted a specific authorization for such use of United States Armed Forces, (2) has extended by law such sixty-day period, or (3) is physically unable to meet as a result of an armed attack upon the United States. Such sixty-day period shall be extended for not more than an additional thirty days if the President determines and certifies to the Congress in writing that unavoidable military necessity respecting the safety of United States Armed Forces requires the continued use of such armed forces in the course of bringing about a prompt removal of such forces. (c) Concurrent resolution for removal by President of United States Armed Forces Notwithstanding subsection (b), at any time that United States Armed Forces are engaged in hostilities outside the territory of the United States, its possessions and territories without a declaration of war or specific statutory authorization, such forces shall be removed by the President if the Congress so directs by concurrent resolution. (Pub. L. 93–148, §5, Nov. 7, 1973, 87 Stat. 556.)"
+          }
+        ],
+        "reviewed_source_extents": [
+          {
+            "source_id": "govinfo:hconres64ih",
+            "start": 0,
+            "end": 1356,
+            "total": 1356,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "start": 0,
+            "end": 6414,
+            "total": 6414,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "start": 0,
+            "end": 2500,
+            "total": 2500,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "before_review_record_sha256": "a7b647d603516d4178bfa5001ec0541e0e28c10285a8f827b0fd663f236383fe",
+      "corrected_review_record": {
+        "action_id": "house:119:1:346",
+        "domain_id": "IMMIGRATION_BORDER",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced War Powers scope distinguishes section 1544(b)'s report-triggered termination, with its exceptions and qualified extension, from section 1544(c)'s separate concurrent-resolution removal mechanism, which applies notwithstanding subsection (b) under its stated conditions; constitutional enforceability is not resolved. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:346",
+            "url": "https://clerk.house.gov/evs/2025/roll346.xml",
+            "raw_sha256": "e7a665f5385e0a4d6da15affde6bf744f682b20be5e57e7767959f9ce9b0dab9",
+            "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f"
+          },
+          {
+            "source_id": "govinfo:hconres64ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres64ih/html/BILLS-119hconres64ih.htm",
+            "raw_sha256": "1589636a0626540559515255aca9b553ead24ffbf3d295f1cd0313be01adbb15",
+            "governed_bytes_sha256": "587f0e8e276ac92ee3d4ff23ab08c9b8f05eafc2530adb4c3062aafe80ffd85e"
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+            "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+            "governed_bytes_sha256": "e9b1f61a562d8946a7d49ea02a72621171db4efb133ca6842221f7c7008331e8"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+            "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+            "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hconres64ih",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 64 Introduced in House (IH)] <DOC> 119th CONGRESS 1st Session H. CON. RES. 64 To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES December 1, 2025 Mr. McGovern (for himself, Mr. Castro of Texas, Mr. Khanna, Ms. Jacobs, and Ms. Kamlager-Dove) submitted the following concurrent resolution; which was referred to the Committee on Foreign Affairs _______________________________________________________________________ CONCURRENT RESOLUTION To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress. Resolved by the House of Representatives (the Senate concurring), SEC. 1. REMOVAL OF THE USE OF UNITED STATES FORCES FOR HOSTILITIES WITHIN OR AGAINST VENEZUELA. Pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress hereby directs the President to remove the use of United States Armed Forces from hostilities within or against Venezuela, unless explicitly authorized by a declaration of war or specific statutory authorization for use of military force. <all>"
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "2025, I call up the concurrent resolution \n(H. Con. Res. 64) to direct the removal \nof United States Armed Forces from \nhostilities within or against Venezuela \nthat have not been authorized by Con-\ngress, and ask for its immediate con-\nsideration in the House. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore. Pursu-\nant to the order of the House of Decem-\nber 16, 2025, the concurrent resolution \nis considered read. \nThe text of the concurrent resolution \nis as follows: \nH. CON. RES. 64 \nResolved by the House of Representatives (the \nSenate concurring), \nSEC. 1. REMOVAL OF THE USE OF UNITED \nSTATES FORCES FOR HOSTILITIES \nWITHIN OR AGAINST VENEZUELA. \nPursuant to section 5(c) of the War Powers \nResolution (50 U.S.C. 1544(c)), Congress here-\nby directs the President to remove the use of \nUnited States Armed Forces from hostilities \nwithin or against Venezuela, unless explic-\nitly authorized by a declaration of war or \nspecific statutory authorization for use of \nmilitary force. \n\n\nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on adoption \nof the concurrent resolution (H. Con. \nRes. 64) to direct the removal of United \nStates Armed Forces from hostilities \nwithin or against Venezuela that have \nnot been authorized by Congress, on \nwhich the yeas and nays were ordered. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore. The \nquestion is on the concurrent resolu-\ntion. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 211, nays \n213, not voting 9, as follows: \n[Roll No. 346] \nYEAS—211 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBacon \nBalint \nBarraga´n \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCasar \nCase \nCasten \nCastor (FL) \nCastro (TX) \nCherfilus- \nMcCormick \nChu \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nClyburn \nCohen \nConaway \nCorrea \nCosta \nCraig \nCrockett \nCrow \nDavids (KS) \nDavis (IL) \nDavis (NC) \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDexter \nDingell \nDoggett \nElfreth \nEscobar \nEspaillat \nEvans (PA) \nFields \nFigures \nFletcher \nFoster \nFoushee \nFrankel, Lois \nFriedman \nFrost \nGaramendi \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGillen \nGolden (ME) \nGoldman (NY) \nGomez \nGoodlander \nGottheimer \nGray \nGreen, Al (TX) \nGreene (GA) \nGrijalva \nHarder (CA) \nHayes \nHimes \nHorsford \nHoulahan \nHoyer \nHoyle (OR) \nHuffman \nIvey \nJackson (IL) \nJacobs \nJayapal \nJeffries \nJohnson (GA) \nJohnson (TX) \nKamlager-Dove \nKaptur \nKeating \nKelly (IL) \nKennedy (NY) \nKhanna \nKrishnamoorthi \nLandsman \nLarsen (WA) \nLarson (CT) \nLatimer \nLee (NV) \nLee (PA) \nLeger Fernandez \nLevin \nLiccardo \nLieu \nLofgren \nLynch \nMagaziner \nMannion \nMassie \nMatsui \nMcBride \nMcClain Delaney \nMcClellan \nMcCollum \nMcDonald Rivet \nMcGarvey \nMcGovern \nMcIver \nMeeks \nMenendez \nMeng \nMfume \nMin \nMoore (WI) \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nNadler \nNeal \nNeguse \nNorcross \nOcasio-Cortez \nOlszewski \nOmar \nPallone \nPanetta \nPappas \nPelosi \nPerez \nPeters \nPettersen \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nRiley (NY) \nRivas \nRoss \nRuiz \nRyan \nSalinas \nSa´nchez \nScanlon \nSchakowsky \nSchneider \nScholten \nSchrier \nScott (VA) \nScott, David \nSewell \nSherman \nSimon \nSmith (WA) \nSorensen \nSoto \nStansbury \nStanton \nStevens \nStrickland \nSubramanyam \nSuozzi \nSykes \nTakano \nThanedar \nThompson (CA) \nThompson (MS) \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nUnderwood \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWhitesides \nWilliams (GA) \nWilson (FL) \nNAYS—213 \nAderholt \nAlford \nAllen \nAmodei (NV) \nArrington \nBabin \nBaird \nBalderson \nBarr \nBarrett \nBaumgartner \nBean (FL) \nBegich \nBentz \nBergman \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBoebert \nBost \nBrecheen \nBresnahan \nBuchanan \nBurchett \nBurlison \nCalvert \nCammack \nCarey \nCarter (GA) \nCarter (TX) \nCiscomani \nCline \nCloud \nClyde \nCole \nCollins \nComer \nCrane \nCrank \nCrawford \nCrenshaw \nCuellar \nDavidson \nDe La Cruz \nDesJarlais \nDiaz-Balart \nDonalds \nDowning \nDunn (FL) \nEdwards \nEllzey \nEmmer \nEstes \nEvans (CO) \nEzell \nFallon \nFedorchak \nFeenstra \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFlood \nFong \nFoxx \nFranklin, Scott \nFry \nGarbarino \nGill (TX) \nGimenez \nGoldman (TX) \nGonzales, Tony \nGooden \nGosar \nGraves \nGriffith \nGrothman \nGuest \nGuthrie \nHamadeh (AZ) \nHaridopolos \nHarrigan \nHarris (MD) \nHarris (NC) \nHarshbarger \nHern (OK) \nHiggins (LA) \nHill (AR) \nHinson \nHouchin \nHudson \nHuizenga \nHunt \nHurd (CO) \nIssa \nJack \nJackson (TX) \nJames \nJohnson (LA) \nJohnson (SD) \nJordan \nJoyce (OH) \nJoyce (PA) \nKean \nKelly (MS) \nKelly (PA) \nKennedy (UT) \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKustoff \nLaHood \nLaLota \nLaMalfa \nLangworthy \nLatta \nLawler \nLee (FL) \nLetlow \nLoudermilk \nLucas \nLuna \nLuttrell \nMace \nMackenzie \nMalliotakis \nMaloy \nMann \nMast \nMcCaul \nMcClain \nMcClintock \nMcCormick \nMcDowell \nMcGuire \nMessmer \nMeuser \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WV) \nMoran \nNehls \nNewhouse \nNorman \nNunn (IA) \nObernolte \nOgles \nOnder \nOwens \nPalmer \nPatronis \nPerry \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nRulli \nRutherford \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Epps \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nYakym \nZinke \nVerDate Sep 11 2014 08:56 Dec 18, 2025 Jkt 069060 PO 00000 Frm 00061 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A17DE7.029 H17DEPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH6006 December 17, 2025 \nNOT VOTING—9 \nCourtney \nFulcher \nGonzalez, V. \nHageman \nMcBath \nMills \nMurphy \nSwalwell \nWomack \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (Mr. \nDESJARLAIS) (during the vote). There \nare 2 minutes remaining. \nb 1808 \nSo the concurrent resolution was not \nagreed to. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "§1544. Congressional action (a) Transmittal of report and referral to Congressional committees; joint request for convening Congress Each report submitted pursuant to section 1543(a)(1) of this title shall be transmitted to the Speaker of the House of Representatives and to the President pro tempore of the Senate on the same calendar day. Each report so transmitted shall be referred to the Committee on Foreign Affairs of the House of Representatives and to the Committee on Foreign Relations of the Senate for appropriate action. If, when the report is transmitted, the Congress has adjourned sine die or has adjourned for any period in excess of three calendar days, the Speaker of the House of Representatives and the President pro tempore of the Senate, if they deem it advisable (or if petitioned by at least 30 percent of the membership of their respective Houses) shall jointly request the President to convene Congress in order that it may consider the report and take appropriate action pursuant to this section. (b) Termination of use of United States Armed Forces; exceptions; extension period Within sixty calendar days after a report is submitted or is required to be submitted pursuant to section 1543(a)(1) of this title, whichever is earlier, the President shall terminate any use of United States Armed Forces with respect to which such report was submitted (or required to be submitted), unless the Congress (1) has declared war or has enacted a specific authorization for such use of United States Armed Forces, (2) has extended by law such sixty-day period, or (3) is physically unable to meet as a result of an armed attack upon the United States. Such sixty-day period shall be extended for not more than an additional thirty days if the President determines and certifies to the Congress in writing that unavoidable military necessity respecting the safety of United States Armed Forces requires the continued use of such armed forces in the course of bringing about a prompt removal of such forces. (c) Concurrent resolution for removal by President of United States Armed Forces Notwithstanding subsection (b), at any time that United States Armed Forces are engaged in hostilities outside the territory of the United States, its possessions and territories without a declaration of war or specific statutory authorization, such forces shall be removed by the President if the Congress so directs by concurrent resolution. (Pub. L. 93–148, §5, Nov. 7, 1973, 87 Stat. 556.)"
+          }
+        ],
+        "reviewed_source_extents": [
+          {
+            "source_id": "govinfo:hconres64ih",
+            "start": 0,
+            "end": 1356,
+            "total": 1356,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "start": 0,
+            "end": 6414,
+            "total": 6414,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "start": 0,
+            "end": 2500,
+            "total": 2500,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "corrected_review_record_sha256": "f0be3e34a3487fdf39e7cc0780c5c912a7ca07c0971cb2e1168110b500736b22",
+      "before_universe_row": {
+        "action_id": "house:119:1:346",
+        "session": 1,
+        "roll": 346,
+        "date": "2025-12-17",
+        "measure": "bill_119_hconres_64",
+        "question": "On Agreeing to the Resolution",
+        "disposition": "exact_action_ineligible",
+        "reason": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced WarPowers scope retains its report-conditioned termination/removal framework and exceptions without resolving constitutional enforceability. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "source": {
+          "source_id": "clerk:119:1:346",
+          "url": "https://clerk.house.gov/evs/2025/roll346.xml",
+          "raw_sha256": "e7a665f5385e0a4d6da15affde6bf744f682b20be5e57e7767959f9ce9b0dab9",
+          "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hconres_64",
+        "member_action": "yea",
+        "house_action_stage": "On Agreeing to the Resolution",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "exact_action_ineligible",
+        "rationale": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced WarPowers scope retains its report-conditioned termination/removal framework and exceptions without resolving constitutional enforceability. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "unresolved_reason": null,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:346",
+            "url": "https://clerk.house.gov/evs/2025/roll346.xml",
+            "raw_sha256": "e7a665f5385e0a4d6da15affde6bf744f682b20be5e57e7767959f9ce9b0dab9",
+            "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f"
+          },
+          {
+            "source_id": "govinfo:hconres64ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres64ih/html/BILLS-119hconres64ih.htm",
+            "raw_sha256": "1589636a0626540559515255aca9b553ead24ffbf3d295f1cd0313be01adbb15",
+            "governed_bytes_sha256": "587f0e8e276ac92ee3d4ff23ab08c9b8f05eafc2530adb4c3062aafe80ffd85e"
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+            "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+            "governed_bytes_sha256": "e9b1f61a562d8946a7d49ea02a72621171db4efb133ca6842221f7c7008331e8"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+            "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+            "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+          }
+        ],
+        "exact_action_source_binding": null,
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "a7b647d603516d4178bfa5001ec0541e0e28c10285a8f827b0fd663f236383fe"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "corrected_universe_row": {
+        "action_id": "house:119:1:346",
+        "session": 1,
+        "roll": 346,
+        "date": "2025-12-17",
+        "measure": "bill_119_hconres_64",
+        "question": "On Agreeing to the Resolution",
+        "disposition": "exact_action_ineligible",
+        "reason": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced War Powers scope distinguishes section 1544(b)'s report-triggered termination, with its exceptions and qualified extension, from section 1544(c)'s separate concurrent-resolution removal mechanism, which applies notwithstanding subsection (b) under its stated conditions; constitutional enforceability is not resolved. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "source": {
+          "source_id": "clerk:119:1:346",
+          "url": "https://clerk.house.gov/evs/2025/roll346.xml",
+          "raw_sha256": "e7a665f5385e0a4d6da15affde6bf744f682b20be5e57e7767959f9ce9b0dab9",
+          "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hconres_64",
+        "member_action": "yea",
+        "house_action_stage": "On Agreeing to the Resolution",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "exact_action_ineligible",
+        "rationale": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced War Powers scope distinguishes section 1544(b)'s report-triggered termination, with its exceptions and qualified extension, from section 1544(c)'s separate concurrent-resolution removal mechanism, which applies notwithstanding subsection (b) under its stated conditions; constitutional enforceability is not resolved. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "unresolved_reason": null,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:346",
+            "url": "https://clerk.house.gov/evs/2025/roll346.xml",
+            "raw_sha256": "e7a665f5385e0a4d6da15affde6bf744f682b20be5e57e7767959f9ce9b0dab9",
+            "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f"
+          },
+          {
+            "source_id": "govinfo:hconres64ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres64ih/html/BILLS-119hconres64ih.htm",
+            "raw_sha256": "1589636a0626540559515255aca9b553ead24ffbf3d295f1cd0313be01adbb15",
+            "governed_bytes_sha256": "587f0e8e276ac92ee3d4ff23ab08c9b8f05eafc2530adb4c3062aafe80ffd85e"
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+            "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+            "governed_bytes_sha256": "e9b1f61a562d8946a7d49ea02a72621171db4efb133ca6842221f7c7008331e8"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+            "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+            "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+          }
+        ],
+        "exact_action_source_binding": null,
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "f0be3e34a3487fdf39e7cc0780c5c912a7ca07c0971cb2e1168110b500736b22"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "before_audit_assessment": {
+        "action_id": "house:119:1:346",
+        "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+        "reviewed_disposition": "source_unresolved",
+        "current_disposition": "exact_action_ineligible",
+        "severity": "No Defect",
+        "finding_id": null,
+        "exact_identity": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "346",
+          "legis-num": "H CON RES 64",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "17-Dec-2025",
+          "action-time": "6:08 PM",
+          "vote-desc": "To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress"
+        },
+        "recorded_member_observations": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "primary_reconstruction": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced WarPowers scope retains its report-conditioned termination/removal framework and exceptions without resolving constitutional enforceability. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "finding": "Failed disciplinary and military-use proposals and adopted broad fraud expression retain distinct floor choices and outcomes; no completed sanction,service change,withdrawal,immigration-person rule or truth of allegations inferred.",
+        "correction": null,
+        "before_review_record_sha256": null,
+        "corrected_review_record_sha256": "a7b647d603516d4178bfa5001ec0541e0e28c10285a8f827b0fd663f236383fe",
+        "primary_evidence": [
+          {
+            "source_id": "clerk:119:1:346",
+            "url": "https://clerk.house.gov/evs/2025/roll346.xml",
+            "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "govinfo:hconres64ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres64ih/html/BILLS-119hconres64ih.htm",
+            "governed_bytes_sha256": "587f0e8e276ac92ee3d4ff23ab08c9b8f05eafc2530adb4c3062aafe80ffd85e",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+            "governed_bytes_sha256": "e9b1f61a562d8946a7d49ea02a72621171db4efb133ca6842221f7c7008331e8",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+            "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          }
+        ],
+        "correction_state": "local_batch_validated_candidate_only"
+      },
+      "corrected_audit_assessment": {
+        "action_id": "house:119:1:346",
+        "audit_state": "primary_reconstructed_candidate_compared_corrected",
+        "reviewed_disposition": "source_unresolved",
+        "current_disposition": "exact_action_ineligible",
+        "severity": "Minor",
+        "finding_id": "IB-AUDIT-1544-TERMINATION-REMOVAL",
+        "exact_identity": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "346",
+          "legis-num": "H CON RES 64",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "17-Dec-2025",
+          "action-time": "6:08 PM",
+          "vote-desc": "To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress"
+        },
+        "recorded_member_observations": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "primary_reconstruction": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced War Powers scope distinguishes section 1544(b)'s report-triggered termination, with its exceptions and qualified extension, from section 1544(c)'s separate concurrent-resolution removal mechanism, which applies notwithstanding subsection (b) under its stated conditions; constitutional enforceability is not resolved. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "finding": "1544(b)report-triggered termination,exceptions/qualified extension are distinct from1544(c)removal notwithstanding(b); no report trigger imported into(c),no constitutional enforceability decision.",
+        "correction": "The materially referenced War Powers scope distinguishes section 1544(b)'s report-triggered termination, with its exceptions and qualified extension, from section 1544(c)'s separate concurrent-resolution removal mechanism, which applies notwithstanding subsection (b) under its stated conditions; constitutional enforceability is not resolved.",
+        "before_review_record_sha256": "a7b647d603516d4178bfa5001ec0541e0e28c10285a8f827b0fd663f236383fe",
+        "corrected_review_record_sha256": "f0be3e34a3487fdf39e7cc0780c5c912a7ca07c0971cb2e1168110b500736b22",
+        "primary_evidence": [
+          {
+            "source_id": "clerk:119:1:346",
+            "url": "https://clerk.house.gov/evs/2025/roll346.xml",
+            "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "govinfo:hconres64ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres64ih/html/BILLS-119hconres64ih.htm",
+            "governed_bytes_sha256": "587f0e8e276ac92ee3d4ff23ab08c9b8f05eafc2530adb4c3062aafe80ffd85e",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+            "governed_bytes_sha256": "e9b1f61a562d8946a7d49ea02a72621171db4efb133ca6842221f7c7008331e8",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+            "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367",
+            "reviewed_extent": "Complete IH bound to exact printed floor clauses and failed adoption,complete adopted expressive EH or material1544scope. Unrelated referral/61choices and later counterfactual statements excluded. Preambles are attributed context,not independently established conduct or events."
+          }
+        ],
+        "correction_state": "locally_corrected_pending_bounded_independent_recheck"
+      },
+      "original_disposition_preserved": true,
+      "source_refs_claim_passages_reviewed_extents_unchanged": true,
+      "finding": "1544(b)report-triggered termination,exceptions/qualified extension are distinct from1544(c)removal notwithstanding(b); no report trigger imported into(c),no constitutional enforceability decision."
+    }
+  ],
+  "before_active_checkpoint140_receipt": {
+    "checkpoint": 140,
+    "prior_checkpoint": "8e39acc7a5fdd9a9d815bf9f681f0f74d46fdddb",
+    "review_state": "candidate_only",
+    "member_neutral": true,
+    "baseline_archive": ".tmp/checkpoint140_before_failed_choices",
+    "preparation_started_at": "2026-10-08T09:02:30.138270+00:00",
+    "reviews": [
+      {
+        "action_ids": [
+          "house:119:1:297"
+        ],
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,request an Ethics investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+        "operative_source_ids": [
+          "govinfo:hres888ih",
+          "congressional-record:hres888-floor-choice-operative140"
+        ],
+        "claims": [
+          {
+            "source_id": "govinfo:hres888ih",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 888 Introduced in House (IH)] <DOC> 119th CONGRESS 1st Session H. RES. 888 Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES November 18, 2025 Mr. Norman (for himself, Mr. Harris of Maryland, Mr. Roy, Ms. Boebert, Mr. Self, Mr. Higgins of Louisiana, Mr. Crane, Mr. Biggs of Arizona, Mr. Gosar, Mr. Moore of Alabama, Mr. Brecheen, Mrs. Miller of Illinois, Mrs. Biggs of South Carolina, Mr. Clyde, Mr. Harris of North Carolina, Mr. Donalds, Mr. Cloud, Mr. Gill of Texas, Mr. Burlison, Mr. Baumgartner, Mr. Fine, and Mrs. Luna) submitted the following resolution; which was referred to the Committee on Ethics _______________________________________________________________________ RESOLUTION Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing. Whereas Stacey Plaskett, the Delegate representing the United States Virgin Islands in the House of Representatives, inappropriately coordinated with convicted sex offender Jeffrey Epstein in a congressional hearing in February 2019; Whereas Delegate Plaskett was actively coached by Epstein during the hearing, received instructions on specific lines of questioning, and was congratulated afterwards with the message ``Good work''; Whereas Jeffrey Epstein was a known, convicted felony sex offender, having pled guilty and been convicted for procuring a child for prostitution and of soliciting a prostitute in a plea deal in 2008, and served a 13-month sentence; Whereas, in the course of that investigation, the FBI compiled reports on dozens of confirmed minors who credibly alleged sexual abuse by Epstein; Whereas Epstein was under further Federal investigation beginning in November 2018, two months before Delegate Plaskett's recently revealed text exchange during a congressional hearing, following investigative reporting by the Miami Herald detailing Epstein's controversial 2008 plea deal and highlighting accounts of his victims; Whereas Epstein was arrested in July 2019 and charged with one count of sex trafficking of minors and one count of conspiracy to commit sex trafficking of minors, and he was later found dead in the New York Metropolitan Correctional Center; Whereas, according to documents released from Epstein's estate, during a House Committee on Oversight and Reform hearing featuring testimony from Michael Cohen, disgraced former attorney to President Donald J. Trump, Delegate Plaskett coordinated her line of questioning with Jeffrey Epstein in real-time over text message while the hearing was underway; Whereas Delegate Plaskett, who previously served as an assistant attorney general in the U.S. Department of Justice Civil Division, is known to have had extensive political, personal, and professional connections with Epstein after his conviction as a sex offender up to the time of his arrest and then death in 2019; Whereas Delegate Plaskett's relationship with Epstein stands in stark contrast to the public image she has curated for herself as a defender of justice and accountability while secretly collaborating with an individual whose crimes against vulnerable women and children shocked the nation; Whereas Delegate Plaskett's willingness to receive instructions on official congressional proceedings from Epstein, a convicted felony sex offender with deeply concerning international associations, is especially alarming and inappropriate given her own past service in the U.S. Department of Justice and her current role on the House Permanent Select Committee on Intelligence, and raises serious questions about Delegate Plaskett's judgement, integrity, and fitness to serve; and Whereas such associations erode public trust in Congress, particularly when they involve using input from a sex offender to advance partisan attacks during official proceedings: Now, therefore, be it Resolved, SECTION 1. CENSURE OF DELEGATE STACEY PLASKETT. The House of Representatives-- (1) censures and condemns Delegate Stacey Plaskett for inappropriate coordination with convicted sex offender Jeffrey Epstein during a Congressional Hearing, which reflects discreditably on the House of Representatives; and (2) directs the Committee on Ethics to conduct a full investigation into the extent of Plaskett's ties to Epstein and any potential further improprieties. SEC. 2. REMOVAL FROM HOUSE PERMANENT SELECT COMMITTEE ON INTELLIGENCE. The following named Member be, and is hereby, removed from the following committee of the House of Representatives: Permanent Select Committee on Intelligence: Ms. Plaskett. <all>"
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "H. RES. 888 \nWhereas Stacey Plaskett, the Delegate \nrepresenting the United States Virgin Is-\nlands in the House of Representatives, inap-\npropriately coordinated with convicted sex \noffender Jeffrey Epstein in a congressional \nhearing in February 2019; \nWhereas Delegate Plaskett was actively \ncoached by Epstein during the hearing, re-\nceived instructions on specific lines of ques-\ntioning, and was congratulated afterwards \nwith the message ‘‘Good work’’; \nWhereas Jeffrey Epstein was a known, con-\nvicted felony sex offender, having pled guilty \nand been convicted for procuring a child for \nprostitution and of soliciting a prostitute in \na plea deal in 2008, and served a 13 month \nsentence; \nWhereas in the course of that investiga-\ntion, the FBI compiled reports on dozens of \nconfirmed minors who credibly alleged sex-\nual abuse by Epstein; \nWhereas Epstein was under further Federal \ninvestigation beginning in November 2018, \ntwo months before Delegate Plaskett’s re-\ncently revealed text exchange during a con-\ngressional hearing, following investigative \nreporting by the Miami Herald detailing \nEpstein’s controversial 2008 plea deal and \nhighlighting accounts of his victims; \nWhereas Epstein was arrested in July 2019 \nand charged with one count of sex traf-\nficking of minors and one count of con-\nspiracy to commit sex trafficking of minors, \nand he was later found dead in the New York \nMetropolitan Correctional Center; \nWhereas according to documents released \nfrom Epstein’s estate, during a House Com-\nmittee on Oversight and Reform hearing fea-\nturing testimony from Michael Cohen, dis-\ngraced former attorney to President Donald \nJ. Trump, Delegate Plaskett coordinated her \nline of questioning with Jeffrey Epstein in \nreal-time over text message while the hear-\ning was underway; \nWhereas Delegate Plaskett, who previously \nserved as an assistant attorney general in \nthe U.S. Department of Justice Civil Divi-\nsion, is known to have had extensive polit-\nical, personal and professional connections \nwith Epstein after his conviction as a sex of-\nfender up to the time of his arrest and then \ndeath in 2019; \nWhereas Delegate Plaskett’s relationship \nwith Epstein stands in stark contrast to the \npublic image she has curated for herself as a \ndefender of justice and accountability while \nsecretly collaborating with an individual \nwhose crimes against vulnerable women and \nchildren shocked the nation; \nWhereas Delegate Plaskett’s willingness to \nreceive instructions on official congressional \nproceedings from Epstein, a convicted felony \nsex offender with deeply concerning inter-\nnational associations, is especially alarming \nand inappropriate given her own past service \nin the U.S. Department of Justice and her \ncurrent role on the House Permanent Select \nCommittee on Intelligence, and raises seri-\nous questions about Delegate Plaskett’s \njudgement, integrity, and fitness to serve; \nand \nWhereas such associations erode public \ntrust in Congress, particularly when they in-\nvolve using input from a sex offender to ad-\nvance partisan attacks during official pro-\nceedings: Now, therefore, be it \nVerDate Sep 11 2014 08:12 Nov 19, 2025 Jkt 069060 PO 00000 Frm 00029 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A18NO7.012 H18NOPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH4738 November 18, 2025 \nResolved, \nSECTION 1. CENSURE OF DELEGATE STACEY \nPLASKETT. \nThe House of Representatives— \n(1) censures and condemns Delegate Stacey \nPlaskett for inappropriate coordination with \nconvicted sex offender Jeffrey Epstein during \na Congressional Hearing, which reflects dis-\ncreditably on the House of Representatives; \nand \n(2) directs the Committee on Ethics to con-\nduct a full investigation into the extent of \nPlaskett’s ties to Epstein and any potential \nfurther improprieties. \nSEC. 2. REMOVAL FROM HOUSE PERMANENT SE-\nLECT COMMITTEE ON INTEL-\nLIGENCE. \nThe following named Member be, and is \nhereby, removed from the following com-\nmittee of the House of Representatives: \nP\nERMANENT SELECT COMMITTEE ON INTEL-\nLIGENCE: Ms. Plaskett. \n\n\nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on adoption \nof the resolution (H. Res. 888) censuring \nand condemning Delegate S\nTACEY \nPLASKETT and removing her from the \nHouse Permanent Select Committee on \nIntelligence for conduct that reflects \ndiscreditably on the House of Rep-\nresentatives for colluding with con-\nvicted felony sex offender Jeffrey Ep-\nstein during a congressional hearing, \non which the yeas and nays were or-\ndered. \nThe Clerk read the title of the resolu-\ntion. \nThe SPEAKER pro tempore. The \nquestion is on the resolution. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 209, nays \n214, answered ‘‘present’’ 3, not voting 7, \nas follows: \n[Roll No. 297] \nYEAS—209 \nAderholt \nAlford \nAllen \nAmodei (NV) \nArrington \nBabin \nBaird \nBalderson \nBarr \nBarrett \nBaumgartner \nBean (FL) \nBegich \nBentz \nBergman \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBoebert \nBost \nBrecheen \nBresnahan \nBuchanan \nBurchett \nBurlison \nCalvert \nCammack \nCarey \nCarter (GA) \nCarter (TX) \nCiscomani \nCline \nCloud \nClyde \nCole \nCollins \nComer \nCrane \nCrank \nCrawford \nCrenshaw \nDavidson \nDe La Cruz \nDesJarlais \nDiaz-Balart \nDonalds \nDowning \nDunn (FL) \nEdwards \nEllzey \nEmmer \nEstes \nEvans (CO) \nEzell \nFallon \nFedorchak \nFeenstra \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFlood \nFong \nFoxx \nFranklin, Scott \nFry \nFulcher \nGill (TX) \nGimenez \nGoldman (TX) \nGonzales, Tony \nGosar \nGraves \nGreene (GA) \nGriffith \nGrothman \nGuest \nGuthrie \nHageman \nHamadeh (AZ) \nHaridopolos \nHarrigan \nHarris (MD) \nHarris (NC) \nHarshbarger \nHern (OK) \nHiggins (LA) \nHill (AR) \nHinson \nHouchin \nHudson \nHuizenga \nHunt \nHurd (CO) \nIssa \nJack \nJackson (TX) \nJames \nJohnson (LA) \nJohnson (SD) \nJordan \nJoyce (PA) \nKean \nKelly (PA) \nKennedy (UT) \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKustoff \nLaHood \nLaLota \nLaMalfa \nLangworthy \nLatta \nLawler \nLee (FL) \nLetlow \nLoudermilk \nLucas \nLuna \nLuttrell \nMace \nMackenzie \nMalliotakis \nMaloy \nMann \nMassie \nMast \nMcCaul \nMcClain \nMcClintock \nMcCormick \nMcDowell \nMcGuire \nMessmer \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMills \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WV) \nMoran \nMurphy \nNehls \nNewhouse \nNorman \nNunn (IA) \nOgles \nOnder \nOwens \nPalmer \nPatronis \nPerry \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nYakym \nZinke \nNAYS—214 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBacon \nBalint \nBarraga´n \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCase \nCasten \nCastor (FL) \nCastro (TX) \nCherfilus- \nMcCormick \nChu \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nClyburn \nCohen \nConaway \nCorrea \nCosta \nCourtney \nCraig \nCrockett \nCrow \nCuellar \nDavids (KS) \nDavis (IL) \nDavis (NC) \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDexter \nDingell \nDoggett \nElfreth \nEscobar \nEspaillat \nEvans (PA) \nFields \nFigures \nFletcher \nFoster \nFoushee \nFrankel, Lois \nFriedman \nFrost \nGaramendi \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGillen \nGolden (ME) \nGoldman (NY) \nGomez \nGonzalez, V. \nGooden \nGoodlander \nGottheimer \nGray \nGreen, Al (TX) \nGrijalva \nHarder (CA) \nHayes \nHimes \nHorsford \nHoulahan \nHoyer \nHoyle (OR) \nHuffman \nIvey \nJackson (IL) \nJacobs \nJayapal \nJeffries \nJohnson (GA) \nJohnson (TX) \nJoyce (OH) \nKamlager-Dove \nKaptur \nKeating \nKelly (IL) \nKennedy (NY) \nKhanna \nKrishnamoorthi \nLandsman \nLarsen (WA) \nLarson (CT) \nLatimer \nLee (NV) \nLee (PA) \nLeger Fernandez \nLevin \nLiccardo \nLieu \nLofgren \nLynch \nMagaziner \nMannion \nMatsui \nMcBath \nMcBride \nMcClain Delaney \nMcClellan \nMcCollum \nMcDonald Rivet \nMcGarvey \nMcGovern \nMcIver \nMeeks \nMenendez \nMeng \nMfume \nMin \nMoore (WI) \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nNadler \nNeal \nNeguse \nNorcross \nOcasio-Cortez \nOlszewski \nOmar \nPallone \nPanetta \nPappas \nPelosi \nPerez \nPeters \nPettersen \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nRiley (NY) \nRivas \nRoss \nRuiz \nRyan \nSalinas \nSa´nchez \nScanlon \nSchakowsky \nSchneider \nScholten \nSchrier \nScott (VA) \nScott, David \nSewell \nSherman \nSimon \nSmith (WA) \nSorensen \nSoto \nVerDate Sep 11 2014 06:56 Nov 19, 2025 Jkt 069060 PO 00000 Frm 00053 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A18NO7.025 H18NOPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH4762 November 18, 2025 \nStansbury \nStanton \nStevens \nStrickland \nSubramanyam \nSuozzi \nSykes \nTakano \nThanedar \nThompson (CA) \nThompson (MS) \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nUnderwood \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWhitesides \nWilliams (GA) \nWilson (FL) \nANSWERED ‘‘PRESENT’’—3 \nGarbarino Meuser Obernolte \nNOT VOTING—7 \nCasar \nKelly (MS) \nRulli \nRutherford \nSherrill \nSwalwell \nWomack \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (during \nthe vote). There are 2 minutes remain-\ning. \nb 2107 \nSo the resolution was not agreed to. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          }
+        ],
+        "reviewed_source_extents": [
+          {
+            "source_id": "govinfo:hres888ih",
+            "start": 0,
+            "end": 5170,
+            "total": 5170,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "start": 0,
+            "end": 9617,
+            "total": 9617,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          }
+        ]
+      },
+      {
+        "action_ids": [
+          "house:119:1:346"
+        ],
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced WarPowers scope retains its report-conditioned termination/removal framework and exceptions without resolving constitutional enforceability. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+        "operative_source_ids": [
+          "govinfo:hconres64ih",
+          "congressional-record:hconres64-floor-choice-operative140",
+          "govinfo:50usc1544-2024-operative"
+        ],
+        "claims": [
+          {
+            "source_id": "govinfo:hconres64ih",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 64 Introduced in House (IH)] <DOC> 119th CONGRESS 1st Session H. CON. RES. 64 To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES December 1, 2025 Mr. McGovern (for himself, Mr. Castro of Texas, Mr. Khanna, Ms. Jacobs, and Ms. Kamlager-Dove) submitted the following concurrent resolution; which was referred to the Committee on Foreign Affairs _______________________________________________________________________ CONCURRENT RESOLUTION To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress. Resolved by the House of Representatives (the Senate concurring), SEC. 1. REMOVAL OF THE USE OF UNITED STATES FORCES FOR HOSTILITIES WITHIN OR AGAINST VENEZUELA. Pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress hereby directs the President to remove the use of United States Armed Forces from hostilities within or against Venezuela, unless explicitly authorized by a declaration of war or specific statutory authorization for use of military force. <all>"
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "2025, I call up the concurrent resolution \n(H. Con. Res. 64) to direct the removal \nof United States Armed Forces from \nhostilities within or against Venezuela \nthat have not been authorized by Con-\ngress, and ask for its immediate con-\nsideration in the House. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore. Pursu-\nant to the order of the House of Decem-\nber 16, 2025, the concurrent resolution \nis considered read. \nThe text of the concurrent resolution \nis as follows: \nH. CON. RES. 64 \nResolved by the House of Representatives (the \nSenate concurring), \nSEC. 1. REMOVAL OF THE USE OF UNITED \nSTATES FORCES FOR HOSTILITIES \nWITHIN OR AGAINST VENEZUELA. \nPursuant to section 5(c) of the War Powers \nResolution (50 U.S.C. 1544(c)), Congress here-\nby directs the President to remove the use of \nUnited States Armed Forces from hostilities \nwithin or against Venezuela, unless explic-\nitly authorized by a declaration of war or \nspecific statutory authorization for use of \nmilitary force. \n\n\nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on adoption \nof the concurrent resolution (H. Con. \nRes. 64) to direct the removal of United \nStates Armed Forces from hostilities \nwithin or against Venezuela that have \nnot been authorized by Congress, on \nwhich the yeas and nays were ordered. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore. The \nquestion is on the concurrent resolu-\ntion. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 211, nays \n213, not voting 9, as follows: \n[Roll No. 346] \nYEAS—211 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBacon \nBalint \nBarraga´n \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCasar \nCase \nCasten \nCastor (FL) \nCastro (TX) \nCherfilus- \nMcCormick \nChu \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nClyburn \nCohen \nConaway \nCorrea \nCosta \nCraig \nCrockett \nCrow \nDavids (KS) \nDavis (IL) \nDavis (NC) \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDexter \nDingell \nDoggett \nElfreth \nEscobar \nEspaillat \nEvans (PA) \nFields \nFigures \nFletcher \nFoster \nFoushee \nFrankel, Lois \nFriedman \nFrost \nGaramendi \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGillen \nGolden (ME) \nGoldman (NY) \nGomez \nGoodlander \nGottheimer \nGray \nGreen, Al (TX) \nGreene (GA) \nGrijalva \nHarder (CA) \nHayes \nHimes \nHorsford \nHoulahan \nHoyer \nHoyle (OR) \nHuffman \nIvey \nJackson (IL) \nJacobs \nJayapal \nJeffries \nJohnson (GA) \nJohnson (TX) \nKamlager-Dove \nKaptur \nKeating \nKelly (IL) \nKennedy (NY) \nKhanna \nKrishnamoorthi \nLandsman \nLarsen (WA) \nLarson (CT) \nLatimer \nLee (NV) \nLee (PA) \nLeger Fernandez \nLevin \nLiccardo \nLieu \nLofgren \nLynch \nMagaziner \nMannion \nMassie \nMatsui \nMcBride \nMcClain Delaney \nMcClellan \nMcCollum \nMcDonald Rivet \nMcGarvey \nMcGovern \nMcIver \nMeeks \nMenendez \nMeng \nMfume \nMin \nMoore (WI) \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nNadler \nNeal \nNeguse \nNorcross \nOcasio-Cortez \nOlszewski \nOmar \nPallone \nPanetta \nPappas \nPelosi \nPerez \nPeters \nPettersen \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nRiley (NY) \nRivas \nRoss \nRuiz \nRyan \nSalinas \nSa´nchez \nScanlon \nSchakowsky \nSchneider \nScholten \nSchrier \nScott (VA) \nScott, David \nSewell \nSherman \nSimon \nSmith (WA) \nSorensen \nSoto \nStansbury \nStanton \nStevens \nStrickland \nSubramanyam \nSuozzi \nSykes \nTakano \nThanedar \nThompson (CA) \nThompson (MS) \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nUnderwood \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWhitesides \nWilliams (GA) \nWilson (FL) \nNAYS—213 \nAderholt \nAlford \nAllen \nAmodei (NV) \nArrington \nBabin \nBaird \nBalderson \nBarr \nBarrett \nBaumgartner \nBean (FL) \nBegich \nBentz \nBergman \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBoebert \nBost \nBrecheen \nBresnahan \nBuchanan \nBurchett \nBurlison \nCalvert \nCammack \nCarey \nCarter (GA) \nCarter (TX) \nCiscomani \nCline \nCloud \nClyde \nCole \nCollins \nComer \nCrane \nCrank \nCrawford \nCrenshaw \nCuellar \nDavidson \nDe La Cruz \nDesJarlais \nDiaz-Balart \nDonalds \nDowning \nDunn (FL) \nEdwards \nEllzey \nEmmer \nEstes \nEvans (CO) \nEzell \nFallon \nFedorchak \nFeenstra \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFlood \nFong \nFoxx \nFranklin, Scott \nFry \nGarbarino \nGill (TX) \nGimenez \nGoldman (TX) \nGonzales, Tony \nGooden \nGosar \nGraves \nGriffith \nGrothman \nGuest \nGuthrie \nHamadeh (AZ) \nHaridopolos \nHarrigan \nHarris (MD) \nHarris (NC) \nHarshbarger \nHern (OK) \nHiggins (LA) \nHill (AR) \nHinson \nHouchin \nHudson \nHuizenga \nHunt \nHurd (CO) \nIssa \nJack \nJackson (TX) \nJames \nJohnson (LA) \nJohnson (SD) \nJordan \nJoyce (OH) \nJoyce (PA) \nKean \nKelly (MS) \nKelly (PA) \nKennedy (UT) \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKustoff \nLaHood \nLaLota \nLaMalfa \nLangworthy \nLatta \nLawler \nLee (FL) \nLetlow \nLoudermilk \nLucas \nLuna \nLuttrell \nMace \nMackenzie \nMalliotakis \nMaloy \nMann \nMast \nMcCaul \nMcClain \nMcClintock \nMcCormick \nMcDowell \nMcGuire \nMessmer \nMeuser \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WV) \nMoran \nNehls \nNewhouse \nNorman \nNunn (IA) \nObernolte \nOgles \nOnder \nOwens \nPalmer \nPatronis \nPerry \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nRulli \nRutherford \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Epps \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nYakym \nZinke \nVerDate Sep 11 2014 08:56 Dec 18, 2025 Jkt 069060 PO 00000 Frm 00061 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A17DE7.029 H17DEPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH6006 December 17, 2025 \nNOT VOTING—9 \nCourtney \nFulcher \nGonzalez, V. \nHageman \nMcBath \nMills \nMurphy \nSwalwell \nWomack \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (Mr. \nDESJARLAIS) (during the vote). There \nare 2 minutes remaining. \nb 1808 \nSo the concurrent resolution was not \nagreed to. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "§1544. Congressional action (a) Transmittal of report and referral to Congressional committees; joint request for convening Congress Each report submitted pursuant to section 1543(a)(1) of this title shall be transmitted to the Speaker of the House of Representatives and to the President pro tempore of the Senate on the same calendar day. Each report so transmitted shall be referred to the Committee on Foreign Affairs of the House of Representatives and to the Committee on Foreign Relations of the Senate for appropriate action. If, when the report is transmitted, the Congress has adjourned sine die or has adjourned for any period in excess of three calendar days, the Speaker of the House of Representatives and the President pro tempore of the Senate, if they deem it advisable (or if petitioned by at least 30 percent of the membership of their respective Houses) shall jointly request the President to convene Congress in order that it may consider the report and take appropriate action pursuant to this section. (b) Termination of use of United States Armed Forces; exceptions; extension period Within sixty calendar days after a report is submitted or is required to be submitted pursuant to section 1543(a)(1) of this title, whichever is earlier, the President shall terminate any use of United States Armed Forces with respect to which such report was submitted (or required to be submitted), unless the Congress (1) has declared war or has enacted a specific authorization for such use of United States Armed Forces, (2) has extended by law such sixty-day period, or (3) is physically unable to meet as a result of an armed attack upon the United States. Such sixty-day period shall be extended for not more than an additional thirty days if the President determines and certifies to the Congress in writing that unavoidable military necessity respecting the safety of United States Armed Forces requires the continued use of such armed forces in the course of bringing about a prompt removal of such forces. (c) Concurrent resolution for removal by President of United States Armed Forces Notwithstanding subsection (b), at any time that United States Armed Forces are engaged in hostilities outside the territory of the United States, its possessions and territories without a declaration of war or specific statutory authorization, such forces shall be removed by the President if the Congress so directs by concurrent resolution. (Pub. L. 93–148, §5, Nov. 7, 1973, 87 Stat. 556.)"
+          }
+        ],
+        "reviewed_source_extents": [
+          {
+            "source_id": "govinfo:hconres64ih",
+            "start": 0,
+            "end": 1356,
+            "total": 1356,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "congressional-record:hconres64-floor-choice-operative140",
+            "start": 0,
+            "end": 6414,
+            "total": 6414,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "start": 0,
+            "end": 2500,
+            "total": 2500,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          }
+        ]
+      },
+      {
+        "action_ids": [
+          "house:119:2:222"
+        ],
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete adopted H.Res.1335 EH has three resolved clauses: condemnation of fraud,belief in governmentwide prevention reforms,and belief that Federal program eligibility/spending should be verified before payment. These are House expressions,not enactment of benefit eligibility,verification procedures,funding suspension or a new enforcement power. Preambular accounts,estimates,investigations and allegations remain attributed context,not established findings of personal wrongdoing or causality. The anecdote about two foreign nationals does not set an immigration-person rule; Minnesota's Department of Human Services is distinct from Federal HomelandSecurity. Referenced existing orders/programs/reports are not adopted,amended or independently verified as events by this resolution. The exact broad fraud expression does not establish substantive Immigration admission,status,removal,visa/nationality or benefit eligibility meaning. Outside Immigration counting under the existing functional boundary,without denying the resolution's expressive nature or importing general fraud/health programs as directional migration evidence. FousheeNay/MassieYea are whole-resolution observations,not a corruption claim or inferred member motive.",
+        "operative_source_ids": [
+          "govinfo:hres1335eh"
+        ],
+        "claims": [
+          {
+            "source_id": "govinfo:hres1335eh",
+            "locator": "Complete exact IH bound to printed floor body/failure or adopted EH; governed material WarPowers scope. Preamble is attributed context,not independently established allegations/events.",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1335 Engrossed in House (EH)] <DOC> H. Res. 1335 In the House of Representatives, U. S., June 11, 2026. Whereas fraud and improper payments in Federal agency programs is an unsustainable national fiscal emergency; Whereas the Comptroller General of the United States documented in 2025 that the Federal Government has improperly paid about $3,000,000,000,000 since 2003 where payments should not have been made or were made incorrectly; Whereas the measured governmentwide improper payment rate has increased from the prior year, with the Comptroller General of the United States recently reporting that in fiscal year 2025 Federal agencies reported approximately $186,000,000,000 in estimated improper payments, an increase of about $24,000,000,000 from fiscal year 2024 documented improper payments; Whereas the Comptroller General of the United States also estimates that, based on data from 2018 to 2022 the Federal Government loses between $233,000,000,000 and $521,000,000,000 annually to fraud across all Federal programs and operations; Whereas each one of these fraudulently spent tax dollars is taken at the expense of a hard-working American; Whereas, based on the Comptroller General's estimate of the average annual amount of fraud losses, between $1,000 to $3,000 a year represents the average American tax filer's share of the Federal Government's total fraudulent spending; Whereas fraud and improper payments have long been a concern for Congress, pandemic-era spending programs exposed the vulnerability of Federal agencies to criminals and malicious actors who had not previously targeted United States Government programs; Whereas, between March 2020 and March 2021, Congress enacted a series of six laws providing over $4,600,000,000,000 in Federal funds to mitigate the economic and public health impact of the COVID-19 pandemic, with Congress appropriating over $2,700,000,000,000 for these purposes in the first four months of the pandemic alone; Whereas the unprecedented expansion of government programs, changes to program eligibility requirements, an influx of government spending, and lack of commensurate and adequate fraud prevention and financial management capabilities, created a perfect scenario for existing program and payment integrity weaknesses to be exploited; Whereas, in total, while the true extent of pandemic relief fraud may never be known, the Comptroller General of the United States observes that ``hundreds of billions of dollars in potentially fraudulent payments were disbursed''; Whereas fraud in Federal programs delays and prevents individuals who legitimately need services, as Congress intended in establishing such programs, from receiving them; Whereas fraud in Federal programs severely undermines the public's trust in the government causing unquantifiable additional damage to the United States; Whereas trust has further been eroded as specific fraud schemes have been uncovered through recent congressional, Federal, and local investigations; Whereas significant fraud risks exist in programs that are federally funded and administered by State, territorial, and local agencies; Whereas the ongoing investigation by the Committee on Oversight and Government Reform of the House of Representatives of fraud in Minnesota's social services programs has highlighted real examples of fraud schemes that stole billions of dollars from federally funded programs, taking advantage of severely lacking State level program integrity and agency oversight functions; Whereas the ongoing investigation by the Committee on Oversight and Government Reform of the House of Representatives of fraud in California's federally funded hospice programs, including providers potentially overbilling Medicare and enrolling beneficiaries without their knowledge, raises valid concerns that California lacks sufficient internal controls to detect and prevent fraud and is not conducting proper oversight of these hospice programs; Whereas the ongoing investigation by the Committee on Oversight and Government Reform of the House of Representatives of fraud in Medicaid personal care services authorized by Home and Community-Based Services (HCBS) waivers, including providers potentially improperly billing Medicaid or billing for services that were never provided, raises valid concerns of significant fraud in HCBS Medicaid waiver programs in Ohio and other States across the country; Whereas a March 4, 2026, interim report by the Majority staff of the Committee on Oversight and Government Reform of the House of Representatives found that Minnesota Governor Tim Walz and Minnesota Attorney General Keith Ellison ``were aware of widespread fraud in federally funded social services programs for years, possessed the legal and procedural authority to stop payments, but repeatedly failed to act''; Whereas the same March 4, 2026, report found that senior officials in the Governor Walz's office and Attorney General Ellison's office were ``aware of credible fraud concerns in Minnesota's social services programs as early as 2019 within the Department of Human Services (DHS) and by April 2020 within the Department of Education (MDE), despite later public statements by Governor Walz suggesting otherwise''. Whereas, based on these investigations, the House of Representatives has observed that State agencies have little incentive to ensure that Federal funds are spent efficiently, or appropriately, and frequently prioritize program access over payment integrity; Whereas, based on these investigations, the House of Representatives has observed that State agencies overly rely on the self-attested compliance and reimbursement claims of providers and service enrollees, leaving these programs highly susceptible to fraud; Whereas the Comptroller General of the United States has also documented how mechanisms of misrepresentation by criminals and malicious actors, such as document manipulation, false declarations, and creating fictitious entities, leave Federal programs open to significant fraud risk when they rely on recipient self-attestation to determine award eligibility and payment verification; Whereas, in response to the rampant fraud identified in several States, the Trump administration established the Task Force to Eliminate Fraud through Executive Order 14395 (91 Fed. Reg. 13485; relating to establishing the Task Force to eliminate fraud), issued on March 16, 2026; Whereas the Task Force to Eliminate Fraud is empowered to coordinate a national strategy to stop fraud, waste, and abuse, as rooted in a proper focus on fraud prevention rather than recovery, a critical shift in approach identified through the ongoing investigations by the Committee on Oversight and Government Reform of the House of Representatives, subcommittee hearings, and legislation favorably reported to the House of Representatives; Whereas, in March 2026, Federal prosecutors charged eleven individuals, including two foreign nationals, in a major real estate and loan fraud ring preying on elderly victims in California; Whereas, between March 25, 2026, and April 15, 2026, the Task Force to Eliminate Fraud suspended nearly 450 California-based hospice and home health providers due to suspected fraud, with estimated fraud exceeding $600,000,000; Whereas, in April 2026, the Department of Justice secured a guilty plea from a California-based provider who submitted nearly $270,000,000 in fraudulent Medicaid claims; Whereas the Task Force to Eliminate Fraud suspended $1,400,000,000 in home health and hospice funding nationwide, with 90 percent of the suspended providers failing to contact the Federal Government since payments were suspended; Whereas the White House Task Force to Eliminate Fraud uncovered $6,300,000,000 in suspected fraudulent government contracts, resulting in an immediate investigation into nearly 400 businesses; Whereas, on April 17, 2026, the Department of Justice announced that in the first week since its establishment, the National Fraud Enforcement Division exposed over $340,000,000 in fraudulent schemes; Whereas the Department of Justice has also discovered that $250,000,000 meant for a child nutrition program was instead spent on luxury cars and overseas real estate holdings; Whereas, between April 26, 2026, and May 13, 2026, the Secretary of Education blocked $60,000,000 in fraudulent student loan applications following the launch of a risk assessment tool to screen Federal student aid applications for fraud; Whereas conducting award recipient eligibility determinations and payment verification prior to issuing awards and payments is the primary policy reform needed to address the national fiscal emergency related to fraud and improper payments in Federal agency programs; and Whereas the House of Representatives in response to such emergency has expedited the drafting and consideration of governmentwide fraud prevention and improper payment reforms: Now, therefore, be it Resolved, That the House of Representatives-- (1) condemns the fraudulent actions of those seeking to defraud the United States Government; (2) believes governmentwide fraud and improper payment prevention legislative and policy reforms will meaningfully improve the continued financial prosperity of the United States Government and the American taxpayer; and (3) believes Federal program eligibility and spending activities should be verified prior to payments being issued. Attest: Clerk."
+          }
+        ],
+        "reviewed_source_extents": [
+          {
+            "source_id": "govinfo:hres1335eh",
+            "start": 0,
+            "end": 9560,
+            "total": 9560,
+            "reviewed_scope": "Complete governed exact proposal,scoped floor body/vote or material statutory context. Unrelated floor choices/debate,counterfactual vote statements and factual validity of allegations outside scope."
+          }
+        ]
+      }
+    ],
+    "exact_action_checks": [
+      {
+        "action_id": "house:119:1:297",
+        "exact_identity": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "297",
+          "legis-num": "H RES 888",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "18-Nov-2025",
+          "action-time": "9:07 PM",
+          "vote-desc": "Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing"
+        },
+        "member_observations": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "source_id": "govinfo:hres888ih",
+        "additional_reviewed_source_ids": [
+          "congressional-record:hres888-floor-choice-operative140"
+        ],
+        "complete_text_characters": 5170,
+        "source_governed_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9",
+        "noncounting": true
+      },
+      {
+        "action_id": "house:119:1:346",
+        "exact_identity": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "346",
+          "legis-num": "H CON RES 64",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "17-Dec-2025",
+          "action-time": "6:08 PM",
+          "vote-desc": "To direct the removal of United States Armed Forces from hostilities within or against Venezuela that have not been authorized by Congress"
+        },
+        "member_observations": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "source_id": "govinfo:hconres64ih",
+        "additional_reviewed_source_ids": [
+          "congressional-record:hconres64-floor-choice-operative140",
+          "govinfo:50usc1544-2024-operative"
+        ],
+        "complete_text_characters": 1356,
+        "source_governed_sha256": "587f0e8e276ac92ee3d4ff23ab08c9b8f05eafc2530adb4c3062aafe80ffd85e",
+        "noncounting": true
+      },
+      {
+        "action_id": "house:119:2:222",
+        "exact_identity": {
+          "majority": "R",
+          "congress": "119",
+          "session": "2nd",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "222",
+          "legis-num": "H RES 1335",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "11-Jun-2026",
+          "action-time": "10:44 AM",
+          "vote-desc": "Condemning actors seeking to defraud the U.S. Government, and expressing the sense of the House of Representatives that government-wide fraud and improper payment prevention reforms will meaningfully improve the financial prosperity of the U.S., and that Federal program eligibility should be verified before payment"
+        },
+        "member_observations": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "source_id": "govinfo:hres1335eh",
+        "additional_reviewed_source_ids": [],
+        "complete_text_characters": 9560,
+        "source_governed_sha256": "d0e9e745d6fa4bd4dfe173e949529b2492fa017e3007ce29739e1e573adb2264",
+        "noncounting": true
+      }
+    ],
+    "new_canonical_sources": 5,
+    "new_acquisition_captures": 0,
+    "primary_acquisitions": [],
+    "derivative_sources": [
+      {
+        "source_id": "congressional-record:hres888-floor-choice-operative140",
+        "original_source_id": "congressional-record:2025-11-18-plaskett-actions",
+        "intervals": [
+          {
+            "start": 5492,
+            "end": 9578,
+            "total": 32752
+          },
+          {
+            "start": 20428,
+            "end": 25957,
+            "total": 32752
+          }
+        ],
+        "full_text_sha256": "435a78fad036b8577fc7a79f4bbce4bf435f119ba23471b662a4ace4db0c313c",
+        "original_governed_bytes_sha256": "f911c036c33a3f402fd492582537b1fc8a52750e265a6beac7d7070e90ef6347"
+      },
+      {
+        "source_id": "congressional-record:hconres64-floor-choice-operative140",
+        "original_source_id": "congressional-record:2025-12-17-selected-choices",
+        "intervals": [
+          {
+            "start": 8495,
+            "end": 9522,
+            "total": 111237
+          },
+          {
+            "start": 82050,
+            "end": 87435,
+            "total": 111237
+          }
+        ],
+        "full_text_sha256": "2cdc7878e98e41b5c41489b874dfdaeeb1358476229361d0b092ff1783ed0105",
+        "original_governed_bytes_sha256": "330c6913f766b3b479552de9c8258fa0e9617383c71c7bd38a089d0177d5fa9d"
+      }
+    ],
+    "screening_method": "Two failed proposals grounded in exact printed floor text and adoption outcomes,and one complete adopted expressive EH. Not IH-only inference,not adoption of allegations or a completed disciplinary/military/service event. Prior party labels and noncounting contract preserved.",
+    "material_reference_stopping_rule": "Failed internal House discipline and military-use framework remain distinct from immigration-person rules. Whole expressive resolved clauses do not implement underlying program/report/order changes or establish preambular allegations. Earlier referral/separate61 vote/later counterfactual explanations excluded from action meaning.",
+    "semantic_meanings_unchanged": true,
+    "application_questions_unchanged": 70,
+    "partial_package_reviews_unchanged": 3,
+    "independent_review_pending": true,
+    "editorially_accepted": false,
+    "publication_authorized": false,
+    "next_action": "Continue bounded ordinary and material-package work;139/140 review pending,forestry25 held,qualified166/frozen265/unaccepted747 and133 restrictions preserved. Record138 bounded review and its precise provenance limits.",
+    "receipt_sha256": "52abd282831808a0e5ce602d8e341b19245264e5d6ef71ab434c90f07b07e6a5",
+    "accounting": {
+      "inventory": 676,
+      "governed_reviews": 506,
+      "interpreted_actions": 44,
+      "procedural": 227,
+      "excluded": 233,
+      "expressive": 2,
+      "unfinished_ordinary": 170,
+      "partial_packages": 3,
+      "application_questions": 70,
+      "canonical_sources": 1534,
+      "canonical_interpreted_claim_bindings": 1108,
+      "acquisition_captures": 426,
+      "extent_sources": 349,
+      "extent_coordinates": 587,
+      "episodes": 40,
+      "member_observations": 88,
+      "readable_findings": 78
+    },
+    "validation": {
+      "focused_tests": 178,
+      "focused_runtime_seconds": 14.171,
+      "semantic_ir_reference_validator_passed": true,
+      "semantic_checks": 7,
+      "seven_generated_files_raw_byte_identical_to_replay": true,
+      "six_semantic_outputs_raw_unchanged": true,
+      "prior503reviews_1529sources_426captures_44meanings_78findings_70questions_3partial_flags_preserved": true,
+      "source_seals_exact_reuse_two_floor_derivatives_four_intervals_verified": true,
+      "exact_IH_operatives_match_printed_floor_bodies_with_format_only_normalization": true,
+      "separate61_wrong_callup_control_rejected_before_candidate_mutation": true,
+      "failed297and346_adoption_not_completed_sanction_or_withdrawal": true,
+      "preambles_not_accepted_as_personal_wrongdoing_or_events": true,
+      "referral_separate61_and_counterfactual_vote_statements_not_inherited": true,
+      "qualified166_frozen265_unaccepted747_and132correction_preserved": true,
+      "candidate_publication_isolation_preserved": true,
+      "final_diff_reviewed": true,
+      "exact_head_ci": "139own nine green sealed;140 requires own pushed-head run."
+    },
+    "outputs": [
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+        "raw_sha256": "e870ad205554ebb417e33a205bc1734a1ad7a84ed85ebedd3e519b72a9dc0e96",
+        "raw_bytes": 67589,
+        "replay_identical": true
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+        "raw_sha256": "e51e51886b579d34421fc405b601302de81ea2e00b51e61d85b2a3513beb0e9a",
+        "raw_bytes": 818513,
+        "replay_identical": true
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+        "raw_sha256": "d95bdbb065a5183042dbe4a7458e6018d0595abab9f4c14b6a3c2393e18d5d70",
+        "raw_bytes": 78508,
+        "replay_identical": true
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+        "raw_sha256": "1c466ee0df67b2fcff7eeef7949048789962b37add1f35526852470ac4fb746b",
+        "raw_bytes": 22335506,
+        "replay_identical": true
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json",
+        "raw_sha256": "09ebfd75da96358a44e02597302e958224a9b839bbd5d2a43ac32292f58dfeb7",
+        "raw_bytes": 38206,
+        "replay_identical": true
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+        "raw_sha256": "37349bae49de37322c9ecaf247b4be3f10b41566bc781fa176fd407b0777d025",
+        "raw_bytes": 11291240,
+        "replay_identical": true
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json",
+        "raw_sha256": "6c28d32ae8da9d83f25156e2e57a97c0a08f07286bcd3f80a0cf6b0f44346f19",
+        "raw_bytes": 27312,
+        "replay_identical": true
+      }
+    ],
+    "core_sha256": "74f5b8c24b83811f90561777991d3bd06ff10153349497296a5f1497dadf86fc",
+    "compiled_sha256": "a4067137ecfa215594e65973fad8c0823e122be41d63b8ef36821435edf5fffb",
+    "validated_at_utc": "2026-10-08T09:08:25.487105+00:00",
+    "prior_exact_head_ci_receipt": {
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint139_ci.json",
+      "receipt_sha256": "fa948f59564047ee24114a402e1f0d6b26a84be3d1fa91c1545d29df83a27f96",
+      "head": "8e39acc7a5fdd9a9d815bf9f681f0f74d46fdddb",
+      "run": 37752134541,
+      "successful_jobs": 9
+    }
+  },
+  "before_active_checkpoint140_receipt_raw_sha256": "d66e2931eed0afa5011bbd5e7afbb7334425b6fe60e2343e6a58286a05e6e7ac",
+  "before_active_checkpoint140_receipt_raw_bytes": 56025,
+  "before_active_checkpoint140_receipt_git_blob": "e9a09c27bc33aacb95fda77dedb1d6df6c1a9b6d",
+  "before_active_checkpoint140_receipt_git_blob_raw_sha256": "f0876390c96f6ae048592e049129ba919596e093f57a2cabf886a25962b17ea2",
+  "before_active_checkpoint140_receipt_git_blob_bytes": 55640,
+  "line_ending_provenance": "Archived WindowsUTF8CRLF raw bytes differ from GitLF only by CRLF-to-LF normalization. ParsedJSONexact and embedded before_receipt reconstructs exact CRLF bytes. Initial strict byte equality stopped receipt completion;canonical precision corrections already applied,no source-content repair or rollback.",
+  "before_active_checkpoint140_receipt_seal": "52abd282831808a0e5ce602d8e341b19245264e5d6ef71ab434c90f07b07e6a5",
+  "corrected_active_checkpoint140_receipt_seal": "587199a6ee216694e46d46a100fa2d54202d080afa863883f2164286ffb98506",
+  "historical_findings_retained": true,
+  "source_passages_unchanged": true,
+  "dispositions_counts_unchanged": true,
+  "ordinary_pending_unchanged": 170,
+  "review_records_unchanged_count": 504,
+  "interpreted_actions_unchanged": 44,
+  "readable_findings_unchanged": 78,
+  "application_questions_unchanged": 70,
+  "partial_package_flags_unchanged": 3,
+  "semantic_meanings_and_seven_outputs_unchanged": true,
+  "validation_pending": false,
+  "independent_recheck_pending": false,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "next_action": "Continue bounded ordinary and source work;twoP3independently resolved with historical evidence retained. No acceptance;forestry/program/photoIDholds and133/138/139limits preserved.",
+  "receipt_sha256": "b81c1cad2d186dfd006fc1621364dafe2a3dc1b572cbf5ba8510951ddf5b75d5",
+  "validation": {
+    "focused_tests": 179,
+    "focused_runtime_seconds": 14.752,
+    "source_bound_precision_guard_passed": true,
+    "controlled_weaker_directive_merged_branch_and_dropped_notwithstanding_negatives": 3,
+    "semantic_ir_reference_validator_passed": true,
+    "semantic_checks": 7,
+    "all_seven_outputs_prior_and_replay_raw_exact": true,
+    "all1534sources_426captures_statuses_dispositions_unchanged": true,
+    "other504review_records_674rows_44meanings_78findings_70questions_threepartial_flags_unchanged": true,
+    "coupled_review_universe_active140_audit_and_receipt_seals_verified": true,
+    "original140receipt_before_CRLF_and_GitLF_identity_recorded": true,
+    "program_photoid_research_hold_eight_private_captures_no_registration_or_disposition": true,
+    "final_diff_reviewed": true,
+    "exact_head_ci": "140own nine green sealed;141 needs own pushed-head run."
+  },
+  "outputs": [
+    {
+      "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+      "raw_sha256": "e870ad205554ebb417e33a205bc1734a1ad7a84ed85ebedd3e519b72a9dc0e96",
+      "raw_bytes": 67589,
+      "replay_and_prior_identical": true
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+      "raw_sha256": "e51e51886b579d34421fc405b601302de81ea2e00b51e61d85b2a3513beb0e9a",
+      "raw_bytes": 818513,
+      "replay_and_prior_identical": true
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+      "raw_sha256": "d95bdbb065a5183042dbe4a7458e6018d0595abab9f4c14b6a3c2393e18d5d70",
+      "raw_bytes": 78508,
+      "replay_and_prior_identical": true
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+      "raw_sha256": "1c466ee0df67b2fcff7eeef7949048789962b37add1f35526852470ac4fb746b",
+      "raw_bytes": 22335506,
+      "replay_and_prior_identical": true
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json",
+      "raw_sha256": "09ebfd75da96358a44e02597302e958224a9b839bbd5d2a43ac32292f58dfeb7",
+      "raw_bytes": 38206,
+      "replay_and_prior_identical": true
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+      "raw_sha256": "37349bae49de37322c9ecaf247b4be3f10b41566bc781fa176fd407b0777d025",
+      "raw_bytes": 11291240,
+      "replay_and_prior_identical": true
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json",
+      "raw_sha256": "6c28d32ae8da9d83f25156e2e57a97c0a08f07286bcd3f80a0cf6b0f44346f19",
+      "raw_bytes": 27312,
+      "replay_and_prior_identical": true
+    }
+  ],
+  "core_sha256": "74f5b8c24b83811f90561777991d3bd06ff10153349497296a5f1497dadf86fc",
+  "compiled_sha256": "a4067137ecfa215594e65973fad8c0823e122be41d63b8ef36821435edf5fffb",
+  "prior_exact_head_ci_receipt": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint140_ci.json",
+    "receipt_sha256": "2fb4102401bf4ffe87467e9874e46106b5912b0dbdf86f7557aede070c5fea4c",
+    "head": "96194331d1a8a9f57c3ef5cce2a0ecca26bc73b9",
+    "run": 37755066372,
+    "successful_jobs": 9
+  },
+  "audit_after_cases_are_historical_at_correction_snapshots": true,
+  "independent_review_ref": "docs/review_packets/immigration_checkpoint141_independent_review.json",
+  "independent_review_sha256": "e1fd5ff921916ff2f2e7be91fee6f8dad4e391e8723f859d4be8cdc90d995372",
+  "closure_at_checkpoint142": {
+    "before_active140_receipt_seal": "587199a6ee216694e46d46a100fa2d54202d080afa863883f2164286ffb98506",
+    "current_active140_receipt_seal": "759bba5cfe9c79bbe8661f0caaae6e669ed2064bb0a5a79838a9e0b0cf8208b6",
+    "before_correction_receipt_seal": "04cddba8304a753b32c6285c519b448b08081580a8b391298490d03b48ea3e7c",
+    "before_snapshot_archive": ".tmp/checkpoint142_before_precision_closure",
+    "historical_corrected_active140_seal_at141_retained": true,
+    "case_after_audit_snapshot_correction_states_are_historical": true,
+    "active140_seal_rebound_at143_after_top_level_pending_flag_correction": true
+  }
+}

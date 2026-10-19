@@ -1,0 +1,353 @@
+{
+  "checkpoint": 129,
+  "head": "538db9e99abf75636e3320a2b4c03d712296eb2d",
+  "run": 37729393672,
+  "conclusion": "success_after_failed_job_only_retry",
+  "successful_jobs": 9,
+  "original_attempt_failure_ref": "docs/review_packets/immigration_delivery_checkpoint129_ci_failure.json",
+  "original_failed_job": 113154839495,
+  "retry_job": 113161534050,
+  "actual_reexecuted_jobs": [
+    "receipt-evidence-repair-postgres"
+  ],
+  "copied_success_records": [
+    "m14e-exact-head",
+    "m14h-exact-head",
+    "foushee-full-record-benchmark",
+    "m14f-exact-head",
+    "amendment-evidence-contracts",
+    "m14d-exact-head",
+    "m14g-exact-head",
+    "publication-activation-postgres"
+  ],
+  "eight_original_success_timestamps_steps_conclusions_preserved": true,
+  "original_failure_log_sha256": "6d0a55752eb5969f10417a0c73e25dc673e98ab2d1748a863ace2feae6a6cbdc",
+  "original_failure_log_bytes": 77629,
+  "all_attempt_metadata_sha256": "8cfb3d0c378a4e7f16454291b1c599d26b7a0ce740075d2d7323bc97ee91f42f",
+  "all_attempt_jobs": [
+    {
+      "id": 113154839244,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:55Z",
+      "completed_at": "2026-10-08T04:55:10Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113154839351,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:50:47Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113154839427,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:51:01Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113154839437,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:54:26Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113154839455,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:50:45Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113154839464,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:50:47Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113154839495,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:53:17Z",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 113154839517,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:52:30Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113154839535,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "started_at": "2026-10-08T04:50:20Z",
+      "completed_at": "2026-10-08T04:51:02Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161534050,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T05:16:24Z",
+      "completed_at": "2026-10-08T05:22:41Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161534166,
+      "name": "m14e-exact-head",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:50:47Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161534837,
+      "name": "m14h-exact-head",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T04:50:55Z",
+      "completed_at": "2026-10-08T04:55:10Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161562183,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:54:26Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161563854,
+      "name": "m14f-exact-head",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T04:50:20Z",
+      "completed_at": "2026-10-08T04:51:02Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161566775,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:50:47Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161570195,
+      "name": "m14d-exact-head",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:50:45Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161577181,
+      "name": "m14g-exact-head",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:51:01Z",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 113161581225,
+      "name": "publication-activation-postgres",
+      "run_attempt": 2,
+      "started_at": "2026-10-08T04:50:19Z",
+      "completed_at": "2026-10-08T04:52:30Z",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": 113161534050,
+      "name": "receipt-evidence-repair-postgres",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "8747fbc1fc7a3a8e69e1974daac0d98d86b77d24",
+        "538db9e99abf75636e3320a2b4c03d712296eb2d"
+      ],
+      "log_sha256": "8dfc02e947610e4365af14c08afefed448b4cae6d063c989ccf8c13e6a41e240",
+      "log_bytes": 136594,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "6 passed in 1.74s",
+        "38 passed, 1 warning in 135.52s (0:02:15)",
+        "13 passed in 132.82s (0:02:12)",
+        "20 passed in 37.60s"
+      ]
+    },
+    {
+      "job_id": 113154839464,
+      "name": "m14e-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "538db9e99abf75636e3320a2b4c03d712296eb2d"
+      ],
+      "log_sha256": "c5150b4c542cc023df16997a463d02f897b663b2162f34f8db790db0c490edc8",
+      "log_bytes": 43753,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "22 passed, 55 subtests passed in 0.30s"
+      ]
+    },
+    {
+      "job_id": 113154839244,
+      "name": "m14h-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "538db9e99abf75636e3320a2b4c03d712296eb2d"
+      ],
+      "log_sha256": "93718a05cceea97e3bbc587a7e00550644d798f21aa594840e99fa006aa7d4db",
+      "log_bytes": 137104,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "95 passed, 1 warning in 2.50s",
+        "305 passed in 87.03s (0:01:27)",
+        "1 passed in 3.78s",
+        "74 passed, 1 warning in 1.79s",
+        "  2 passed (13.0s)",
+        "  23 passed (17.0s)",
+        "15 passed in 0.20s",
+        "  1 passed (7.2s)",
+        "25 passed in 3.41s"
+      ]
+    },
+    {
+      "job_id": 113154839437,
+      "name": "foushee-full-record-benchmark",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "8747fbc1fc7a3a8e69e1974daac0d98d86b77d24"
+      ],
+      "log_sha256": "85c5ef5b1f1af45b03be72edfa1efdaf2848585c03912157213e0b055bfaa5f9",
+      "log_bytes": 1504363,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "15 passed in 0.59s",
+        "19 passed in 1.18s",
+        "27 passed in 2.66s",
+        "639 passed, 1 warning in 78.10s (0:01:18)"
+      ]
+    },
+    {
+      "job_id": 113154839535,
+      "name": "m14f-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "538db9e99abf75636e3320a2b4c03d712296eb2d"
+      ],
+      "log_sha256": "919ee7f91d2cb0bfae95d24140930a50f043f7377c42496761cfb755a2a24406",
+      "log_bytes": 43569,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "29 passed, 40 subtests passed in 0.37s"
+      ]
+    },
+    {
+      "job_id": 113154839351,
+      "name": "amendment-evidence-contracts",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "8747fbc1fc7a3a8e69e1974daac0d98d86b77d24"
+      ],
+      "log_sha256": "5cb0df3b92ed1d4e790a570340b1ea270863076020d70393434150c02ddb718e",
+      "log_bytes": 25952,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "============================== 87 passed in 0.88s =============================="
+      ]
+    },
+    {
+      "job_id": 113154839455,
+      "name": "m14d-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "538db9e99abf75636e3320a2b4c03d712296eb2d"
+      ],
+      "log_sha256": "ce0810ecc65eb6f8e3bc71ee78f49cd29afacc43e8b60bfc1215dcf277b1854f",
+      "log_bytes": 42731,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "18 passed, 34 subtests passed in 0.77s"
+      ]
+    },
+    {
+      "job_id": 113154839427,
+      "name": "m14g-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "538db9e99abf75636e3320a2b4c03d712296eb2d"
+      ],
+      "log_sha256": "7c52da99087fd6bc51c51288b8d35d4b7add97a1407cf49ba28da91621289c94",
+      "log_bytes": 63035,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "15 passed, 1 warning in 0.82s",
+        "10 passed in 0.30s",
+        "3 passed in 0.29s",
+        "96 passed in 3.70s"
+      ]
+    },
+    {
+      "job_id": 113154839517,
+      "name": "publication-activation-postgres",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "8747fbc1fc7a3a8e69e1974daac0d98d86b77d24"
+      ],
+      "log_sha256": "54ab6d87f0ba89cfd946a330b1ebf34a20aef56ed593d9512aeec8ecc07ed7b6",
+      "log_bytes": 180267,
+      "log_encoding": "UTF-8 decoded connector log response",
+      "pytest_counts": [
+        "23 passed, 1 warning in 15.61s",
+        "58 passed, 1 warning in 3.96s",
+        "1 passed in 1.59s",
+        "1 passed, 1 warning in 3.36s",
+        "1 passed in 2.93s",
+        "2 passed in 2.96s",
+        "14 passed in 1.56s"
+      ]
+    }
+  ],
+  "synthetic_merge_sha": "8747fbc1fc7a3a8e69e1974daac0d98d86b77d24",
+  "checkout_contexts": {
+    "feature_pinned_jobs": 5,
+    "synthetic_merge_jobs": 3,
+    "mixed_repair_jobs": 1
+  },
+  "scope": "Nine completed results: eight preserved original executions plus one authorized repair-job rerun. New copied jobIDs in latestattempt do not represent eight additional executions; timestamps/steps verify. No broadrerun or workflow change.",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "b4a4c5b5a6e45df30893d7c788e6fcb077bb3f1ee4dfc6c78cc4488d69308057"
+}

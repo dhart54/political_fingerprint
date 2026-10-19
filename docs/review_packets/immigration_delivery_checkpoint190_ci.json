@@ -1,0 +1,267 @@
+{
+  "checkpoint": 190,
+  "head": "2a9797fd360d37c0d7fdb67fa0af4efca7b54366",
+  "run": 38105786140,
+  "run_attempt": 1,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "failed_jobs": [],
+  "jobs": [
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:38:48.4081254Z HEAD is now at 2a9797fd Qualify addiction-program baselines and preserve unresolved eligibility"
+      ],
+      "job_id": 114370916628,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:09Z",
+      "completed_at": "2026-10-11T02:42:41Z",
+      "checkout_log_shas": [
+        "2a9797fd360d37c0d7fdb67fa0af4efca7b54366"
+      ],
+      "log_sha256": "ec6f087e110d967790fd2baa6be7cd310a8eff19276d3253867e2e3bac80744e",
+      "log_bytes": 138088,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:39:19.1379685Z 95 passed, 1 warning in 2.46s",
+        "2026-10-11T02:40:55.1899549Z 316 passed in 94.91s (0:01:34)",
+        "2026-10-11T02:41:00.3088430Z 1 passed in 3.61s",
+        "2026-10-11T02:41:02.4203880Z 74 passed, 1 warning in 1.67s",
+        "2026-10-11T02:41:41.3999129Z   2 passed (13.3s)",
+        "2026-10-11T02:42:24.2924062Z   23 passed (17.3s)",
+        "2026-10-11T02:42:24.9234662Z 15 passed in 0.20s",
+        "2026-10-11T02:42:33.7864557Z   1 passed (7.5s)",
+        "2026-10-11T02:42:37.5751542Z 25 passed in 3.33s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:38:32.6843142Z HEAD is now at 2a9797fd Qualify addiction-program baselines and preserve unresolved eligibility"
+      ],
+      "job_id": 114370916658,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:09Z",
+      "completed_at": "2026-10-11T02:38:39Z",
+      "checkout_log_shas": [
+        "2a9797fd360d37c0d7fdb67fa0af4efca7b54366"
+      ],
+      "log_sha256": "ae27e339194d952732eaae4611061b688183f99b61b07e9bcba89f710dc46e07",
+      "log_bytes": 44215,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:38:37.0740894Z 29 passed, 40 subtests passed in 0.35s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114370916690,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:10Z",
+      "completed_at": "2026-10-11T02:38:40Z",
+      "checkout_log_shas": [
+        "fb843ebfded57a26764f34a9baeda6389ec34c94"
+      ],
+      "log_sha256": "1d0372aabdba444ca1a0ba3ef0991bdd14f44b7e50a83c1618279192ad822418",
+      "log_bytes": 25986,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:38:37.8753413Z ============================== 87 passed in 0.96s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:40:11.8409797Z HEAD is now at 2a9797fd Qualify addiction-program baselines and preserve unresolved eligibility",
+        "2026-10-11T02:41:58.1778977Z HEAD is now at 2a9797fd Qualify addiction-program baselines and preserve unresolved eligibility"
+      ],
+      "job_id": 114370916705,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:09Z",
+      "completed_at": "2026-10-11T02:42:24Z",
+      "checkout_log_shas": [
+        "fb843ebfded57a26764f34a9baeda6389ec34c94",
+        "2a9797fd360d37c0d7fdb67fa0af4efca7b54366"
+      ],
+      "log_sha256": "6009339587682f54db9c3a2e969b20e61687d434293893d5673e678e325f9e5e",
+      "log_bytes": 137945,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:39:00.9780445Z 6 passed in 1.27s",
+        "2026-10-11T02:40:11.4428767Z 38 passed, 1 warning in 69.75s (0:01:09)",
+        "2026-10-11T02:41:56.7979836Z 13 passed in 81.59s (0:01:21)",
+        "2026-10-11T02:42:21.0761960Z 20 passed in 21.03s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:38:36.7341887Z HEAD is now at 2a9797fd Qualify addiction-program baselines and preserve unresolved eligibility"
+      ],
+      "job_id": 114370916709,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:09Z",
+      "completed_at": "2026-10-11T02:38:43Z",
+      "checkout_log_shas": [
+        "2a9797fd360d37c0d7fdb67fa0af4efca7b54366"
+      ],
+      "log_sha256": "05090bd25092988825c5c219e21b7ecfd0d7765a7a1562accf14d878552e2712",
+      "log_bytes": 43531,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:38:40.9894787Z 18 passed, 34 subtests passed in 0.62s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:38:32.3705465Z HEAD is now at 2a9797fd Qualify addiction-program baselines and preserve unresolved eligibility"
+      ],
+      "job_id": 114370916752,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:09Z",
+      "completed_at": "2026-10-11T02:38:38Z",
+      "checkout_log_shas": [
+        "2a9797fd360d37c0d7fdb67fa0af4efca7b54366"
+      ],
+      "log_sha256": "e1bf9ce516368fe77e772b0609d67ddb977edad9d7f214f3fa284e58a02b8e3b",
+      "log_bytes": 44401,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:38:36.9411524Z 22 passed, 55 subtests passed in 0.31s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114370916781,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:10Z",
+      "completed_at": "2026-10-11T02:40:16Z",
+      "checkout_log_shas": [
+        "fb843ebfded57a26764f34a9baeda6389ec34c94"
+      ],
+      "log_sha256": "231482ee375bc79dd6f4b3b27de6b2436df1086b2e97dfb72a310a015c46cf4e",
+      "log_bytes": 180787,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:39:13.4082732Z 23 passed, 1 warning in 15.36s",
+        "2026-10-11T02:39:17.3798194Z 58 passed, 1 warning in 3.68s",
+        "2026-10-11T02:39:20.3452098Z 1 passed in 1.58s",
+        "2026-10-11T02:39:24.9936477Z 1 passed, 1 warning in 3.29s",
+        "2026-10-11T02:39:29.2850149Z 1 passed in 2.89s",
+        "2026-10-11T02:39:33.5721199Z 2 passed in 2.94s",
+        "2026-10-11T02:39:36.5270831Z 14 passed in 1.57s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-11T02:38:28.0235344Z HEAD is now at 2a9797fd Qualify addiction-program baselines and preserve unresolved eligibility"
+      ],
+      "job_id": 114370916804,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:09Z",
+      "completed_at": "2026-10-11T02:38:47Z",
+      "checkout_log_shas": [
+        "2a9797fd360d37c0d7fdb67fa0af4efca7b54366"
+      ],
+      "log_sha256": "e9fcfbe1afd3b6f9d99ae3009e60a2cad9fb0b62cc19a3ae84cf8d8aa847d5cf",
+      "log_bytes": 62649,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:38:39.7804958Z 15 passed, 1 warning in 0.36s",
+        "2026-10-11T02:38:40.1153194Z 10 passed in 0.18s",
+        "2026-10-11T02:38:40.4321405Z 3 passed in 0.19s",
+        "2026-10-11T02:38:43.7109015Z 96 passed in 2.02s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114370916805,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-11T02:38:09Z",
+      "completed_at": "2026-10-11T02:42:04Z",
+      "checkout_log_shas": [
+        "fb843ebfded57a26764f34a9baeda6389ec34c94"
+      ],
+      "log_sha256": "3acccdf1cc87521d0c62cdd828b0bf083a02b4bfe5020afc6371b42537e0a4ff",
+      "log_bytes": 1505192,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-11T02:38:48.8224642Z 15 passed in 0.50s",
+        "2026-10-11T02:38:50.2864158Z 19 passed in 1.09s",
+        "2026-10-11T02:38:53.1811683Z 27 passed in 2.46s",
+        "2026-10-11T02:42:02.6325451Z 639 passed, 1 warning in 68.68s (0:01:08)"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38105786140",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts_verified": [
+    "m14h-exact-head",
+    "m14f-exact-head",
+    "amendment-evidence-contracts",
+    "receipt-evidence-repair-postgres",
+    "m14d-exact-head",
+    "m14e-exact-head",
+    "publication-activation-postgres",
+    "m14g-exact-head",
+    "foushee-full-record-benchmark"
+  ],
+  "synthetic_merge_sha": "fb843ebfded57a26764f34a9baeda6389ec34c94",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [],
+  "remaining_gate": null,
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "fa60e9b2ce05f7bb6a09a50e2ef4cf0bb9d2e48264ea75f269d47cd44110f04e"
+}

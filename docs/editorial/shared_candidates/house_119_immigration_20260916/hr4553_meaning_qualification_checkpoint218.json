@@ -1,0 +1,103 @@
+{
+  "checkpoint": 218,
+  "base_head": "458c7e4e88bc012deb4be83484963c588ac5913b",
+  "completed_candidate_action_ids": [
+    "house:119:1:239"
+  ],
+  "corrected_provenance_action_ids": [
+    "house:119:2:6",
+    "house:119:2:7"
+  ],
+  "prior_pending_row": {
+    "action_id": "house:119:1:239",
+    "session": 1,
+    "roll": 239,
+    "date": "2025-09-04",
+    "measure": "bill_119_hr_4553",
+    "question": "On Passage",
+    "disposition": "source_unresolved",
+    "reason": "H.R. 4553 EH whole passage remains pending. Sections 309-310 restrict DOE awards of at least $10 million to an entity of concern defined in PL 117-167, Division B, section 10114, and funded access by a non-US citizen from Russia or China to a nuclear weapons production facility defined in 50 USC 2501. The latter has a public-area exception and a 30-day advance committee-notification exception. Facility admittance does not establish admission to the United States; entity nationality or control does not automatically establish an immigration rule. The definitions, adopted report/allocations and remaining whole-package predicates need reconstruction. Only EH characters [66400,70400) of 89253 were read in this batch. Research hold only: no inclusion/exclusion, completion credit, inherited Health membership, component stance, enactment or individual legal eligibility is inferred. Further source work is executable; this is not established inaccessible evidence or a new methodology decision.",
+    "source": {
+      "source_id": "clerk:119:1:239",
+      "url": "https://clerk.house.gov/evs/2025/roll239.xml",
+      "raw_sha256": "5d0f334b7b5b1adcf4979bc7bee9276e02e21ccb7995a300e258f73e9475c03c",
+      "governed_bytes_sha256": "6d43a927d4ae1b04407b80480c1d0261003f5f8854d89ee96f9b09abb7cbd61b",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_4553",
+    "member_action": "nay",
+    "house_action_stage": "On Passage",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "H.R. 4553 EH whole passage remains pending. Sections 309-310 restrict DOE awards of at least $10 million to an entity of concern defined in PL 117-167, Division B, section 10114, and funded access by a non-US citizen from Russia or China to a nuclear weapons production facility defined in 50 USC 2501. The latter has a public-area exception and a 30-day advance committee-notification exception. Facility admittance does not establish admission to the United States; entity nationality or control does not automatically establish an immigration rule. The definitions, adopted report/allocations and remaining whole-package predicates need reconstruction. Only EH characters [66400,70400) of 89253 were read in this batch. Research hold only: no inclusion/exclusion, completion credit, inherited Health membership, component stance, enactment or individual legal eligibility is inferred. Further source work is executable; this is not established inaccessible evidence or a new methodology decision.",
+    "unresolved_reason": "pending_material_exact_predicate_review",
+    "sources": [
+      {
+        "source_id": "clerk:119:1:239",
+        "url": "https://clerk.house.gov/evs/2025/roll239.xml",
+        "raw_sha256": "5d0f334b7b5b1adcf4979bc7bee9276e02e21ccb7995a300e258f73e9475c03c",
+        "governed_bytes_sha256": "6d43a927d4ae1b04407b80480c1d0261003f5f8854d89ee96f9b09abb7cbd61b"
+      },
+      {
+        "source_id": "govinfo:hr4553eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm",
+        "raw_sha256": "d1992d7f333b69c9066024074bcca5ee41008fe39e63830b165d8aa7dedbc204",
+        "governed_bytes_sha256": "78b1bda19b231d6ae32c5909fe942b554b16d150016ca4f5efcc3a36cb4d0e09"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_raw_hash_matches": true
+  },
+  "original_Health_core_sha256": "6808ec0b78b800a164148c1f783cefb1bc90907077253ba119b7deaacbf3e263",
+  "original18identities_prefix_limits_preserved": true,
+  "new_core_sha256": "1142f764f161b46aace0867ecbc82ab4572e4b368316bbeed8ab20d5c7e8257e",
+  "new_provider_path": "docs/editorial/shared_candidates/house_119_energy_qualification_checkpoint218/shared_action_core_proposal.json",
+  "source_quality_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr4553_and_dakota_source_qualification_checkpoint218.json",
+  "source_quality_sha256": "7f7385141c97f07fb43eff3f0d275f0c1b0670a480720f9ca01d779b6cea6985",
+  "Dakota_corrected_core_sha256": {
+    "house:119:2:6": "05747f471de4e0f9fcff31349d6a9ea21e5cc86a52287eef96e1667507170c0b",
+    "house:119:2:7": "9aaafa3bf48bd5f96dabe3874ce4bb26e8c606043491a1b09af8885a280a4416"
+  },
+  "BC_joined_member_names_neutralized_without_observation_changes": true,
+  "all_other55cores_exact_expected": true,
+  "counts_after": {
+    "reviewed": 628,
+    "pending": 48,
+    "ordinary": 18,
+    "researched_holds": 30,
+    "meanings": 58,
+    "behavioral_propositions": 98,
+    "application_questions": 70,
+    "partial_packages": 3,
+    "independent_episodes": 51,
+    "multi_action_episodes": 6
+  },
+  "new_acquisitions": 0,
+  "independent217_bounded_review_received": true,
+  "independent218_source_domain_review_pending": true,
+  "remaining_fixed_funding_case": "house:119:1:281",
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "benchmark": "FAIL unchanged; no comparable routine credit",
+  "receipt_sha256": "bf7f020573d7122e77878bca3c2b723a6172622a37fdc1bb7979bd4f2a9196ed",
+  "Dakota_broad_positive_claim_scope": [
+    609877,
+    628179
+  ],
+  "full_original_broad_source_and_identity_preserved": true,
+  "prefinal_369tests_passed_before_final_claim_scope": true,
+  "source_scope_correction_after_prefinal_tests": true
+}

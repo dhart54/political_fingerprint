@@ -1,0 +1,137 @@
+{
+  "checkpoint": 203,
+  "base_head": "22fe7899afb4bca14c0a94c95f1a69387b20c24b",
+  "scope": "One retained-source Fulbright funding-minimum candidate membership exclusion, with typed meanings/IR unchanged",
+  "candidate_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/fulbright_exact_function_closure_checkpoint203.json",
+  "candidate_receipt_sha256": "b76de1bf98450f2ca4de3af100540b26f85115526d2d4fad37b1d45af0d4e02a",
+  "focused_tests_passed": 344,
+  "focused_runner_seconds": 68.33,
+  "final_two_regressions_passed": true,
+  "final_two_native_runner_seconds": 1.584,
+  "focused_suite_before_final_context_binding_qualification": "Final purpose/appropriations witnesses and qualified financing context added only to membership/universe/receipt. Final full membership validation and15predicate checks pass; authoring/sources/all14generated outputs unchanged.",
+  "semantic_checks_passed": 7,
+  "IR_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4
+  },
+  "exact_replays": 14,
+  "preservation": {
+    "checkpoint": 203,
+    "only_membership_disposition_changed": "house:119:2:241",
+    "prior617_membership_records_exact": true,
+    "other675_universe_rows_exact": true,
+    "all_authoring_sources_manifest_pool_and_14_generated_outputs_exact": true,
+    "complete_Health_candidate_preserved": true,
+    "frozen_git_blobs_checked": 398,
+    "shutdown_notes_checked": 2,
+    "source_predicates_checked": 15,
+    "own_voice_demand_postponement_recorded_order_and_rejection_verified": true,
+    "legacy_FISA_and_source_review_proposal_unmodified": true,
+    "received202_review_seal_valid": true
+  },
+  "counts": {
+    "reviewed": 618,
+    "pending": 58,
+    "ordinary_unscreened": 29,
+    "researched_holds": 29,
+    "meanings": 50,
+    "propositions": 86,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "independent202_review_path": "docs/review_packets/immigration_bounded_review_checkpoint202_received203.json",
+  "independent202_review_sha256": "c60ead7d92a205d14855eceb4fbd8302ae046fea549983c007f8a47a7884febe",
+  "independent203_program_domain_review_pending": true,
+  "new_head_CI_pending": true,
+  "validation_tier": "semantic",
+  "logs": [
+    {
+      "log": ".tmp\\tests203.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-11T20:45:39.633006+00:00",
+      "completed_utc": "2026-10-11T20:46:48.166963+00:00",
+      "elapsed_seconds": 68.5339942999999,
+      "exit_code": 0,
+      "log_sha256": "a77d5306ce7ffad48c98d8c9b4a5175cfb11f0912147cb7098d94d5b734d53b1"
+    },
+    {
+      "log": ".tmp\\semantic203.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-11T20:46:48.171696+00:00",
+      "completed_utc": "2026-10-11T20:46:51.930271+00:00",
+      "elapsed_seconds": 3.7585815000056755,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir203.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-11T20:46:51.931142+00:00",
+      "completed_utc": "2026-10-11T20:46:52.000691+00:00",
+      "elapsed_seconds": 0.0695521000016015,
+      "exit_code": 0,
+      "log_sha256": "9c93ae572de4339b53163cf7f1ed2253d875e94650c9b9eff414339e4b6b738b"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-11T20:46:52.005210+00:00",
+      "completed_utc": "2026-10-11T20:47:00.250881+00:00",
+      "elapsed_seconds": 8.245680599997286,
+      "outputs": 7
+    },
+    {
+      "phase": "health_byte_exact_output_replay",
+      "started_utc": "2026-10-11T20:47:00.250990+00:00",
+      "completed_utc": "2026-10-11T20:47:06.329591+00:00",
+      "elapsed_seconds": 6.078608199983137,
+      "outputs": 7
+    }
+  ],
+  "timing": {
+    "started_utc": "2026-10-11T20:32:44.853946+00:00",
+    "initial_commentary_dispatch_unmeasured": true,
+    "FISA_preselection_and_output_recovery_included": true,
+    "first_authoring_endpoint_seconds": 713.918104,
+    "measured_local_validation_endpoint_seconds": 997.357951,
+    "Git_CI_report_overhead_follows": true
+  },
+  "prior_benchmark": {
+    "result": "FAIL",
+    "mean_seconds": 781.087,
+    "ceiling_seconds": 600,
+    "target_seconds": 240
+  },
+  "new_comparable_routine_samples": 0,
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_eligible": false,
+  "receipt_sha256": "7680529e490e5eb0fae2eeb42ed133ee06571ab7baf6462bc8b15cd666a008c4"
+}

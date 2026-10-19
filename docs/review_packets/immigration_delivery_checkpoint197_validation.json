@@ -1,0 +1,285 @@
+{
+  "checkpoint": 197,
+  "base_head": "9725a02f35ebdc58e326c01000f19399be1209ea",
+  "screening_receipt_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\june_july_screening_checkpoint197.json",
+  "screening_receipt_sha256": "de591c5fcf7d18bdd65ad052b7f3f83df73a20fa708adc146af38949b5b18449",
+  "candidate_only": true,
+  "attempted_actions": 5,
+  "completed_screenings": 1,
+  "held_actions": 4,
+  "counts": {
+    "reviewed": 614,
+    "pending": 62,
+    "ordinary_unscreened": 29,
+    "researched_holds": 33,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "focused_tests": 205,
+  "focused_test_runner_seconds": 25.224,
+  "semantic_checks": 7,
+  "accepted_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out_references": 4,
+    "held_out": 4
+  },
+  "byte_exact_output_replays": 7,
+  "preservation_and_source_checks": {
+    "changed_universe_rows": [
+      "house:119:2:229",
+      "house:119:2:271",
+      "house:119:2:272",
+      "house:119:2:278",
+      "house:119:2:280"
+    ],
+    "five_attempts_with_one_completion_four_holds": true,
+    "preserved_prior_membership_records": 613,
+    "new_candidate_membership_records": 1,
+    "preserved_authoring": true,
+    "preserved_frozen_git_blobs": 146,
+    "frozen_artifact_exceptions": 0,
+    "unchanged_semantic_products": 6,
+    "proof_only_source_capture_digest_changes": true,
+    "literal_claim_checks": 35,
+    "literal_predicate_checked_actions": 5,
+    "HTML_parent_replays": 1,
+    "HTML_fresh_parents": 1,
+    "PDF_parent_replays": 3,
+    "PDF_fresh_parents": 2,
+    "PDF_immutable_reused_parent": 1,
+    "governed_proposal_reuses_without_fresh_raw_replay": 4,
+    "NDAA_private_governed_prefix_reuse_with_raw_parent_uncertified": true,
+    "NDAA_prefix_only_and_whole_adopted_binding_incomplete": true,
+    "banking_first3500_only_and_whole_package_incomplete": true,
+    "fresh_Clerk_reconciliations": 0,
+    "governed_Clerk_metadata_and_two_member_reuses": 5,
+    "new_literal_derivatives": 26,
+    "complete_floor_EH_format_matches": 4,
+    "banking_comparison_mechanical_not_whole_owner_read": true,
+    "NDAA_complete_floor_comparison_not_claimed": true,
+    "type_specific_sequence_checks": 5,
+    "direct_passage_checks": 3,
+    "postponed_resumed_checks": 2,
+    "roll271_one_Present_non_directional_preserved": true,
+    "TRIA_Hill_initial_Flood_callup_resumed_labels_literal": true,
+    "TRIA_biennial_report_cadence_preserved": true,
+    "prior_sources_registrations_private_aliases_preserved": true,
+    "active_receipt_and_audit_bindings_consistent": true,
+    "independent196_limits_preserved_no_retry": true,
+    "untracked_notes_preserved": true,
+    "counts": {
+      "reviewed": 614,
+      "pending": 62,
+      "ordinary_unscreened": 29,
+      "researched_holds": 33,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "source_count": 2277,
+    "registrations": 1167,
+    "editorially_accepted": false,
+    "publication_authorized": false
+  },
+  "phase_logs": [
+    {
+      "log": ".tmp\\tests197.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence"
+      ],
+      "started_utc": "2026-10-11T17:36:58.078224+00:00",
+      "completed_utc": "2026-10-11T17:37:23.515664+00:00",
+      "elapsed_seconds": 25.43790910000098,
+      "exit_code": 0,
+      "log_sha256": "79c37ad052904bd03132f5aff9fcfb95d34d4d1ba62ad9ed0e34671ca0902b0f"
+    },
+    {
+      "log": ".tmp\\semantic197.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-11T17:37:23.521012+00:00",
+      "completed_utc": "2026-10-11T17:37:25.540498+00:00",
+      "elapsed_seconds": 2.019526699994458,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir197.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-11T17:37:25.544279+00:00",
+      "completed_utc": "2026-10-11T17:37:25.614765+00:00",
+      "elapsed_seconds": 0.07049030001508072,
+      "exit_code": 0,
+      "log_sha256": "b2e9f7bf25b2864325c0ec6ba44a3dd5a8a6058bf3fd32b6040c9688c9a7486a"
+    },
+    {
+      "phase": "byte_exact_output_replay",
+      "started_utc": "2026-10-11T17:37:25.618832+00:00",
+      "completed_utc": "2026-10-11T17:37:31.533083+00:00",
+      "elapsed_seconds": 5.914363800024148,
+      "outputs": 7
+    }
+  ],
+  "source_count": 2277,
+  "capture_count": 1167,
+  "literal_predicate_authoring_check": {
+    "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\literal_predicate_authoring_check_checkpoint197.json",
+    "receipt_sha256": "0e3ead92be6078fc987bcdc6827badd3cf261b2d6194021def24be1a7fc4eaea",
+    "checked_actions": 5,
+    "no_extra_acquisition_or_broad_test_gate": true,
+    "whole_source_review_not_replaced": true
+  },
+  "independent196_review": {
+    "received_path": "docs\\review_packets\\immigration_bounded_review_checkpoint196_received197.json",
+    "receipt_sha256": "d93d23453124c7452a13e0050dbd41e0492ca03febf57720407a6c7192c21cef",
+    "no_new_actionable_defect_in_scope": true,
+    "exclusions281_295_supported": true,
+    "holds283_286_292_retained": true,
+    "all_three195_precision_P3s_independently_closed": true,
+    "reviewer_three_fresh_parent_checks_cancelled_before_bytes_and_uncertified": true,
+    "no_retry_or_alternate_route": true,
+    "owner205_test_claim_attributed": true,
+    "not_editorial_acceptance": true
+  },
+  "CI196": {
+    "path": "docs\\review_packets\\immigration_delivery_checkpoint196_ci.json",
+    "receipt_sha256": "d4a211340fa5dbe546735b59c99688cd562d7c52169f176cc8ed2f25eaa34fa0",
+    "fresh_first_attempt_successes": 9,
+    "base_qualification_path": "docs\\review_packets\\immigration_delivery_checkpoint196_ci_base_qualification.json",
+    "base_qualification_sha256": "d111e757ac50895878d80f67b8aed1b085701e2a25795106f6c523bf0a340822",
+    "actual_synthetic_base": "f494324f03514291e7f767b5f8a857515fe656a0",
+    "current_main_integration_claim": false
+  },
+  "timing": {
+    "checkpoint": 197,
+    "base_head": "9725a02f35ebdc58e326c01000f19399be1209ea",
+    "started_utc": "2026-10-11T17:25:16.073200+00:00",
+    "cohort_selection": "Five most recent remaining ordinary pending actions before completed July22-Sep3 cohort, fixed by action order and reviewed chronologically; no source-size selection",
+    "attempted_action_ids": [
+      "house:119:2:229",
+      "house:119:2:271",
+      "house:119:2:272",
+      "house:119:2:278",
+      "house:119:2:280"
+    ],
+    "selection_discovery_before_precise_start_qualified_unmeasured": true,
+    "no_artificial_benchmark": true,
+    "no_new_average": true,
+    "prior_comparable_failure_seconds": 781.087,
+    "quality_requirements_unchanged": true,
+    "phases": [],
+    "source_authoring_completed_utc": "2026-10-11T17:36:17.006510+00:00",
+    "source_read_selection_baseline_authoring_endpoint_seconds": 660.93331,
+    "failed_private_selector_heading_search_and_output_recovery_included": true,
+    "attempted_actions": 5,
+    "completed_screenings": 1,
+    "held_actions": 4,
+    "literal_predicate_checked_actions": 5,
+    "local_validation_completed_utc": "2026-10-11T17:41:51.580848+00:00",
+    "elapsed_through_local_validation_seconds": 995.507648,
+    "validation_phases": [
+      {
+        "log": ".tmp\\tests197.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate",
+          "backend.tests.test_editorial_semantic_ir",
+          "backend.tests.test_source_sequence"
+        ],
+        "started_utc": "2026-10-11T17:36:58.078224+00:00",
+        "completed_utc": "2026-10-11T17:37:23.515664+00:00",
+        "elapsed_seconds": 25.43790910000098,
+        "exit_code": 0,
+        "log_sha256": "79c37ad052904bd03132f5aff9fcfb95d34d4d1ba62ad9ed0e34671ca0902b0f"
+      },
+      {
+        "log": ".tmp\\semantic197.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/run_editorial_pipeline.py",
+          "validate",
+          "--tier",
+          "semantic"
+        ],
+        "started_utc": "2026-10-11T17:37:23.521012+00:00",
+        "completed_utc": "2026-10-11T17:37:25.540498+00:00",
+        "elapsed_seconds": 2.019526699994458,
+        "exit_code": 0,
+        "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+      },
+      {
+        "log": ".tmp\\ir197.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/validate_editorial_semantic_ir.py"
+        ],
+        "started_utc": "2026-10-11T17:37:25.544279+00:00",
+        "completed_utc": "2026-10-11T17:37:25.614765+00:00",
+        "elapsed_seconds": 0.07049030001508072,
+        "exit_code": 0,
+        "log_sha256": "b2e9f7bf25b2864325c0ec6ba44a3dd5a8a6058bf3fd32b6040c9688c9a7486a"
+      },
+      {
+        "phase": "byte_exact_output_replay",
+        "started_utc": "2026-10-11T17:37:25.618832+00:00",
+        "completed_utc": "2026-10-11T17:37:31.533083+00:00",
+        "elapsed_seconds": 5.914363800024148,
+        "outputs": 7
+      }
+    ],
+    "source_acquisition_timestamps_retained_in_private197_captures": true,
+    "all_private_helper_failures_heading_search_output_recovery_and_validation_preparation_included": true,
+    "authoring_wording_refinement_and_received196_review_recording_included": true
+  },
+  "prior_comparable_performance": {
+    "status": "FAIL",
+    "seconds": 781.087,
+    "target_seconds": 240,
+    "failure_threshold_seconds": 600
+  },
+  "new_benchmark_average": false,
+  "held271_272_278_280_not_completions": true,
+  "new_head_CI_pending": true,
+  "independent197_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_written": false,
+  "merge_or_deploy": false,
+  "receipt_sha256": "39bbbe837da56951979c4fe0d0783aa5a521445f68562890832cca3bfd78ef2c"
+}

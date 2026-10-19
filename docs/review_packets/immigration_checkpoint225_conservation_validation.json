@@ -1,0 +1,124 @@
+{
+  "checkpoint": 225,
+  "base_head": "06630bb580385f22f5cd362a20cc72ba4afa0d8c",
+  "four_affected_candidate_actions_sorted": [
+    "house:119:1:182",
+    "house:119:1:212",
+    "house:119:2:175",
+    "house:119:2:205"
+  ],
+  "other61cores634reviews672rows104props_projection_and_readable_findings_exact": true,
+  "all_original_Health_accepted_history_V19_and224_completion_CI_timing_and_notes_exact": true,
+  "all_previous_source_bank_manifest_private_pool_prefixes_exact": true,
+  "new_canonical_sources": 5,
+  "new_manifest_sources": 5,
+  "new_private_sources": 5,
+  "no_new_ordinary_completion": true,
+  "all_five_prospective_cases_still_pending": true,
+  "universe_accounting_and_directions_unchanged": true,
+  "active_counts": {
+    "reviewed": 638,
+    "pending": 38,
+    "cores": 65,
+    "behavioral_propositions": 112,
+    "episodes": 58,
+    "multi_action_episodes": 6,
+    "ordinary": 11,
+    "researched_holds": 27
+  },
+  "P2premature212_completion_superseded_and_revalidated_after_exact225_source_binding": true,
+  "cancelled_read_boundary": {
+    "recorded_utc": "2026-10-13T21:35:59.128493+00:00",
+    "action": "Read-only native PowerShell here-string piped to python -X utf8 -B -; inspect metadata/member_records for clerk:119:2:228 and selected terminal keyword contexts from congressional-record:2026-06-29-kids.",
+    "targets": [
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json#clerk:119:2:228",
+      "docs/editorial/shared_candidates/house_119_health_20260916/sources.json#congressional-record:2026-06-29-kids"
+    ],
+    "reported_result": "aborted by user after4.4s",
+    "additional_cancellation_or_denial_reason": "not supplied",
+    "network_acquisition": false,
+    "repository_mutation": false,
+    "operation_not_retried": true,
+    "alternate_route_not_used": true,
+    "affected_new_case_completion_credit": 0,
+    "unaffected_three_review_corrections_authorized_by_parent": true
+  },
+  "cancelled_operation_and_alternate_route_not_retried": true,
+  "source_quality_sha256": "99ff72af8bba9b353147fe32c85318d97ed4fe94331353b40c1fe5997cf0c8ff",
+  "correction_receipt_sha256": "266c48c086458044f7a68396d0b566a688b6fb59870227a1c7bc22911c840212",
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "independent225_review_pending": true,
+  "benchmarkFAILunchanged": true,
+  "full_gate_completed": true,
+  "focused_tests": 386,
+  "candidate_tests_included": 209,
+  "semantic_checks": 7,
+  "IRvalidation": true,
+  "CLI_byte_exact_outputs": 7,
+  "validation_phases": [
+    {
+      "log": ".tmp/tests225.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-13T21:39:27.430793+00:00",
+      "completed_utc": "2026-10-13T21:45:42.184477+00:00",
+      "elapsed_seconds": 374.75372480001533,
+      "exit_code": 0,
+      "log_sha256": "c25c84d375766a82969efe14b37990ac909494ac9b52f29bf7ad67fcd359ce84"
+    },
+    {
+      "log": ".tmp/semantic225.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-13T21:45:42.189747+00:00",
+      "completed_utc": "2026-10-13T21:45:44.160943+00:00",
+      "elapsed_seconds": 1.9711992999655195,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp/ir225.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-13T21:45:44.162131+00:00",
+      "completed_utc": "2026-10-13T21:45:44.231600+00:00",
+      "elapsed_seconds": 0.06947180000133812,
+      "exit_code": 0,
+      "log_sha256": "9c93ae572de4339b53163cf7f1ed2253d875e94650c9b9eff414339e4b6b738b"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-13T21:45:44.235965+00:00",
+      "completed_utc": "2026-10-13T21:46:37.232738+00:00",
+      "elapsed_seconds": 52.99678250000579,
+      "outputs": 7
+    }
+  ],
+  "elapsed_seconds": 4.491175699979067,
+  "completed_utc": "2026-10-13T21:48:31.518721+00:00",
+  "receipt_sha256": "e67b515bf9c5114ecc768c06257f2014696e421d3737bf988a0aa977fd9fe080"
+}

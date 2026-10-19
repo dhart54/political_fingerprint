@@ -1,0 +1,168 @@
+{
+  "checkpoint": 263,
+  "kind": "existing_checkpoint262_exact_head_CI_evidence",
+  "observed_utc": "2026-10-18T17:21:30.493027+00:00",
+  "head_sha": "dc934c13c88bbf0a03159b6e0e6a788cca26dddb",
+  "run": {
+    "id": 39005255204,
+    "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204",
+    "name": "Backend tests",
+    "status": "completed",
+    "conclusion": "success",
+    "run_number": 827
+  },
+  "evidence_sources": [
+    "Fresh supported GitHub fetch_commit_workflow_runs and fetch_workflow_run_jobs during checkpoint263; all ten jobs completed/success.",
+    "Retained planning live_remote_evidence.json statusCheckRollup for exact job IDs/times and Vercel contexts; imported without rerun."
+  ],
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:10:58Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294392",
+      "name": "measure-reference-integration",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:41:04Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294494",
+      "name": "m14h-exact-head",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:11:08Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294436",
+      "name": "m14g-exact-head",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:10:59Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294437",
+      "name": "m14f-exact-head",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:10:54Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294243",
+      "name": "m14e-exact-head",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:11:08Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294403",
+      "name": "m14d-exact-head",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:14:45Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294416",
+      "name": "foushee-full-record-benchmark",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:11:13Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294448",
+      "name": "amendment-evidence-contracts",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:12:48Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294447",
+      "name": "publication-activation-postgres",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:16:48Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/dhart54/political_fingerprint/actions/runs/39005255204/job/117316294593",
+      "name": "receipt-evidence-repair-postgres",
+      "startedAt": "2026-10-17T05:10:03Z",
+      "status": "COMPLETED",
+      "workflowName": "Backend tests"
+    },
+    {
+      "__typename": "StatusContext",
+      "context": "Vercel",
+      "startedAt": "2026-10-17T05:11:15Z",
+      "state": "SUCCESS",
+      "targetUrl": "https://vercel.com/dhart54s-projects/political-fingerprint/BSidkV9VQTFTGVyCfxa1SjTYsses"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-10-17T05:11:16Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://vercel.com/github",
+      "name": "Vercel Preview Comments",
+      "startedAt": "2026-10-17T05:11:16Z",
+      "status": "COMPLETED",
+      "workflowName": ""
+    }
+  ],
+  "checkout_identity": {
+    "run_id": 39005255204,
+    "job_id": 117316294392,
+    "job_name": "measure-reference-integration",
+    "observed_utc": "2026-10-18T17:05:18.323916+00:00",
+    "selected_checkout_identity_log_lines": [
+      "measure-reference-integration\tUNKNOWN STEP\t2026-10-17T05:10:40.7495777Z ##[group]Checking out the ref",
+      "measure-reference-integration\tUNKNOWN STEP\t2026-10-17T05:10:49.1370333Z HEAD is now at b52533f8 Merge dc934c13c88bbf0a03159b6e0e6a788cca26dddb into af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "measure-reference-integration\tUNKNOWN STEP\t2026-10-17T05:10:49.1672337Z ##[group]Run git show --no-patch --format='checkout=%H parents=%P'",
+      "measure-reference-integration\tUNKNOWN STEP\t2026-10-17T05:10:49.1672767Z \u001b[36;1mgit show --no-patch --format='checkout=%H parents=%P'\u001b[0m",
+      "measure-reference-integration\tUNKNOWN STEP\t2026-10-17T05:10:49.2017707Z checkout=b52533f88bdff4a5401e94ecee7b33139afe3a38 parents=af6cd6d78d6944d64a68a92653066c4c1625f96b dc934c13c88bbf0a03159b6e0e6a788cca26dddb"
+    ],
+    "full_log_not_retained": "Only non-secret checkout identity lines retained; no rerun."
+  },
+  "synthetic_integration": {
+    "commit": "b52533f88bdff4a5401e94ecee7b33139afe3a38",
+    "tree": "1729bae9f3fc4c167b8eeb1002c5f809da168acb",
+    "ordered_parents": [
+      "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "dc934c13c88bbf0a03159b6e0e6a788cca26dddb"
+    ],
+    "status": "Existing GitHub synthetic tree; not a merged main commit.",
+    "scope_limit": "Only job117316294392 checkout log personally inspected by predecessor; no every-job checkout claim."
+  },
+  "checkpoint263_CI": {
+    "state": "New documentation SHA must obtain its own existing hosted checks after push; no inherited success.",
+    "final_sha_location": "Git HEAD, PR198 head and delivery report after checkpoint263 commit; no self-referential future SHA."
+  },
+  "tests_or_workflows_rerun_now": false,
+  "acceptance_or_merge_authority": false,
+  "receipt_sha256": "877a741ebb02438a4ac70601ffcbb3d5c728c064bba17a0a9bd91f00a9a4fd8f"
+}

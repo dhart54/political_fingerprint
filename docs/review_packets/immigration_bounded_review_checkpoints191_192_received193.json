@@ -1,0 +1,55 @@
+{
+  "checkpoints_reviewed": [
+    191,
+    192
+  ],
+  "reviewed_heads": {
+    "191": "47a828d284f9f7100b955f0f77b94267f88fd800",
+    "192": "c75e3fec20396615e3bcc1786a5dcdc26cca0249"
+  },
+  "received_utc": "2026-10-11T15:03:37.003442+00:00",
+  "provenance": "Trusted parent delegation conveying completed independent191/192 review on explicit user resume2026-10-11; summary attribution, not raw-report digest",
+  "outcome": "confirmed_P2_wrong_action_initial_witness",
+  "preservation_checks": 42,
+  "byte_exact_output_replays": 7,
+  "checks_do_not_clear_source_identity": true,
+  "confirmed_finding": {
+    "action_id": "house:119:1:200",
+    "wrong_source_id": "immigration:roll200-initial191",
+    "wrong_bill": "H.R.1919",
+    "wrong_interval": [
+      637984,
+      638459
+    ],
+    "correct_bill": "S.1582",
+    "correct_interval": [
+      578298,
+      578764
+    ],
+    "question_start": 578406,
+    "wrong_page": "H3434",
+    "correct_page": "H3427"
+  },
+  "supported_candidate_exclusion": "house:119:2:309",
+  "retained_held_action_ids": [
+    "house:119:1:199",
+    "house:119:1:200",
+    "house:119:2:157",
+    "house:119:2:310"
+  ],
+  "counts": {
+    "reviewed": 607,
+    "pending": 69,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3,
+    "sources": 2156,
+    "captures": 1046
+  },
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "hold_release": false,
+  "source_correction_independent_review_pending": true,
+  "receipt_sha256": "d886a1110d0f27ed8636fd8b9a50b5cb6bb0c50b10965a30a31ddb84cc7f632f"
+}

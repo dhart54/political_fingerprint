@@ -1,0 +1,28 @@
+{
+  "authority": "Bounded independent semantic and mechanical recheck supplied by Fingerprint supervisor; no domain acceptance or full-corpus verdict",
+  "reviewed_commit": "ced5073953694d7d120664d05402709e45729b70",
+  "finding_id": "IB-HR1-PAROLE-FUNERAL-LOCATION",
+  "historical_severity": "Major",
+  "resolution": "Resolved within verified scope; historical Major remains preserved",
+  "original_defective_commit": "d1d146567e17d764b45f1f838afd8da0d2377db4",
+  "independently_verified_correction_receipt_sha256": "6a524ca939796b9c2676f8fa8250c8fb573aa75e1379ba6e1040c11a8294239d",
+  "correction_receipt_path": "docs/review_packets/hr1_checkpoint28_funeral_location_correction.json",
+  "verified_scope": [
+    "Both authoring meanings changed only through the two expected predicate-separation and DHS-determination replacements",
+    "Corrected shared core and Foushee detail match primary clauses4/5/10",
+    "Both member projection digests bind corrected cores and remain Nay",
+    "Four primary passage hashes and correction receipt hash recompute independently",
+    "Original authoring blob binding matches d1d1465",
+    "Source-backed regression rejects original wording for both versions; no pipeline/schema changes"
+  ],
+  "limitations": [
+    "Full Massie readable detail bytes were not directly inspected through oversized connector",
+    "Reviewer did not rerun tests or byte replay",
+    "No review of later visa/I-94 increment",
+    "No exhaustive package/domain audit, legal application resolution, editorial acceptance, promotion or publication"
+  ],
+  "independent_source": "Trusted Fingerprint supervisor delegation 2026-10-06",
+  "full_corpus_verdict": null,
+  "publication_authorized": false,
+  "receipt_sha256": "310ca6cce7617c6216ef499b13b9fa2cd45df341e4cf02aed28080db582c3a65"
+}

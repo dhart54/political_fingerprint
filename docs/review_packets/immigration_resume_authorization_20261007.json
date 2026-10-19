@@ -1,0 +1,70 @@
+{
+  "authority": "Dylan explicitly said Resume at 2026-10-07 14:22 UTC, relayed by Fingerprint in source thread 01a1119d-9871-7262-b3e5-9e8afa16b0fc. This lifts only the shutdown pause; all reserved boundaries remain.",
+  "recorded_at": "2026-10-07T14:25:47.676600+00:00",
+  "resumed_checkpoint": "c4ce6f129d6233bc186543657212251cb94a1150",
+  "local_remote_heads_match": true,
+  "remote_main_verified": "7a8c6ee11a899ea6912a4d37588917fcd0de0a24",
+  "immutable_development_base": "862b290cceea8af7d6c1c800d1ecdfa52386a490",
+  "branch": "codex/foushee-immigration-border-shared",
+  "worktree": "C:/Users/Dylan/Documents/Data Science/political_fingerprint/.w/ib",
+  "tracked_state_at_reconciliation": "clean",
+  "task_owned_processes_at_reconciliation": [],
+  "new_shutdown_deadline": null,
+  "old_markers_preserved_as_historical": [
+    {
+      "path": ".codex-task-complete",
+      "raw_sha256": "3300f7c3210a48cc3fa9fbbdad3450e03b4724d4a0a543d133d3c8fe90cf15b3",
+      "byte_count": 1767,
+      "original_utf8": "STATUS=CHECKPOINT\r\nSTATE=PAUSED_AWAITING_EXPLICIT_DYLAN_AUTHORIZATION\r\nGOAL_COMPLETE=false\r\nCOMPLETED=2026-10-07T02:31:34.801138+00:00\r\nCOMMIT=c4ce6f129d6233bc186543657212251cb94a1150\r\nREMOTE_COMMIT=c4ce6f129d6233bc186543657212251cb94a1150\r\nIMPLEMENTATION_COMMIT=45ef2a7b87e89a1e7f9446478f3db7bbfbfb1acf\r\nREASON=USER_REQUESTED_PC_SHUTDOWN\r\nPRESERVATION_DEADLINE_UTC=2026-10-07T02:35:00Z\r\nOWNED_ACTIVE_PROCESSES=none\r\nPR=https://github.com/dhart54/political_fingerprint/pull/198\r\nSHUTDOWN_RECEIPT=docs/review_packets/immigration_shutdown_checkpoint_20261007.json\r\nHISTORICAL_MARKER_ARCHIVE=.tmp/ib_shutdown_20261007/codex-task-complete.historical\r\nIMPLEMENTATION_CI=Run 37561984509 in progress at final check; eight jobs successful, m14h pending.\r\nSHUTDOWN_CI=Run 37562307986 in progress; no success claim. Remote CI does not require this PC to remain on.\r\nVALIDATION=At implementation checkpoint 74, 255 tests in 42.179 seconds, 66 candidate tests, seven semantic checks and seven raw byte-identical generated replay files passed. Shutdown checkpoint is documentary preservation only.\r\nREMAINING=221 ordinary screenings, two partial H.R. 1 reviews, 62 reserved application questions, three source scope leads and separately routed HRA domain application.\r\nNEXT_ACTION=Do not resume on wake, reconnect or routine supervisory messages. Wait for explicit Dylan authorization, then reconcile this existing worktree, read the shutdown receipt and verify preserved customs raw/text hashes before exact House 112030 and Senate 70531 research.\r\nSUMMARY=Candidate-only checkpoint safely preserved and pushed; full goal incomplete. All tracked work committed. No merge, deploy, production write, editorial acceptance, promotion, publication, PC shutdown or OS setting change.\r\n",
+      "local_byte_exact_archive": ".tmp/ib_resume_20261007/codex-task-complete.shutdown75"
+    },
+    {
+      "path": ".codex-shutdown-deadline",
+      "raw_sha256": "8b5ea154b33e7672044d4ce1b7643731020adda1983c6c7134b3c0006f0be8cf",
+      "byte_count": 271,
+      "original_utf8": "﻿RUN_STARTED=2026-10-05T22:41:49.8725744-04:00\nSHUTDOWN_DEADLINE=2026-10-06T06:41:49.8725744-04:00\nSTOP_NEW_LARGE_WORK=2026-10-06T06:11:49.8725744-04:00\nBEGIN_CHECKPOINT_WRAP=2026-10-06T06:26:49.8725744-04:00\nTERMINAL_MARKER_REQUIRED=2026-10-06T06:36:49.8725744-04:00\r\n",
+      "local_byte_exact_archive": ".tmp/ib_resume_20261007/codex-shutdown-deadline.shutdown75"
+    }
+  ],
+  "preserved_customs_files_hash_verified": [
+    {
+      "path": ".tmp/19usc-chap4-2024-original75.html",
+      "raw_sha256": "06d52eecc89b5ded8db7e7906e87e3fef29ed9471e657a1485ff7af6643ee228",
+      "byte_count": 3143204,
+      "state": "local_preserved_uncommitted_research_only_not_manifested_or_canonical",
+      "original_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title19/html/USCODE-2024-title19-chap4.htm"
+    },
+    {
+      "path": ".tmp/19usc-chap4-2024-full75.txt",
+      "raw_sha256": "71a4d4bd0d4d42faf88f2ab520cddba3da0795b1d03f39047b9916b50af03487",
+      "byte_count": 2280895,
+      "state": "local_preserved_uncommitted_research_only_not_manifested_or_canonical",
+      "original_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title19/html/USCODE-2024-title19-chap4.htm"
+    }
+  ],
+  "scope": "Continue three research leads, package/ordinary screening work, bounded corrections/audits/tests/feature commits/pushes/draft PR; HRA domain application independently reserved.",
+  "forbidden_actions": [
+    "merge",
+    "deploy",
+    "production write",
+    "publication",
+    "editorial acceptance/promotion",
+    "methodology change",
+    "application adjudication"
+  ],
+  "prior_associated_ci_runs": [
+    {
+      "head": "45ef2a7b87e89a1e7f9446478f3db7bbfbfb1acf",
+      "run": 37561984509,
+      "state": "all_nine_jobs_success_supplied_by_supervisor"
+    },
+    {
+      "head": "c4ce6f129d6233bc186543657212251cb94a1150",
+      "run": 37562307986,
+      "state": "all_nine_jobs_success_supplied_by_supervisor"
+    }
+  ],
+  "checkout_provenance": "Five pinned PR-head jobs, three synthetic-merge jobs, one mixed-context repair; run association is not feature-only execution proof.",
+  "next_action": "Exact House 112030 and Senate 70531 customs-article scope with original 1321, adopted corrections/EH comparison; then foreign-tax remedy and foreign-entity electricity. No automatic promotion of private captures or whole-package closure.",
+  "receipt_sha256": "70c7d7eaa8e54090bf0440aa39f717098dfb6ffee495fabf1d19c2dbe0e0f675"
+}

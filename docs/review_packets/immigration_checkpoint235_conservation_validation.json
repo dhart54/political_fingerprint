@@ -1,0 +1,1514 @@
+{
+  "checkpoint": 235,
+  "base_head": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+  "received_utc": "2026-10-15T15:40:39.620926+00:00",
+  "completed_action_ids": [
+    "house:119:2:272",
+    "house:119:2:286"
+  ],
+  "complex_actions_completed": 2,
+  "ordinary_routine_samples": 0,
+  "counts": {
+    "reviewed": 653,
+    "pending": 23,
+    "cores": 77,
+    "behavioral_propositions": 130,
+    "episodes": 67,
+    "multi_action_episodes": 9
+  },
+  "qualification_receipt_sha256": "e415cab412c4a9ea55136691c0bcb7834c8b1d116ffd9931ad689ccb0e0b1359",
+  "validation": {
+    "final_gate": {
+      "started_utc": "2026-10-15T15:27:59.038604+00:00",
+      "completed_utc": "2026-10-15T15:39:20.901660+00:00",
+      "wall_seconds": 681.8836211999878,
+      "phases": [
+        {
+          "phase": "owner",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "-m",
+            "unittest",
+            "backend.tests.test_immigration_shared_candidate",
+            "backend.tests.test_editorial_semantic_ir",
+            "backend.tests.test_source_sequence",
+            "backend.tests.test_shared_domain_candidate"
+          ],
+          "started_utc": "2026-10-15T15:27:59.039113+00:00",
+          "PID": 19556,
+          "completed_utc": "2026-10-15T15:39:20.896034+00:00",
+          "elapsed_seconds": 681.8774989999947,
+          "exit_code": 0,
+          "log": ".tmp/full_gate235/owner.log",
+          "log_sha256": "1d909e42ed6501cd0cb3d8155089d2134a791f35a4b9cf69e447705ec2681bbb"
+        },
+        {
+          "phase": "semantic",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/run_editorial_pipeline.py",
+            "validate",
+            "--tier",
+            "semantic"
+          ],
+          "started_utc": "2026-10-15T15:27:59.039284+00:00",
+          "PID": 13000,
+          "completed_utc": "2026-10-15T15:28:01.069827+00:00",
+          "elapsed_seconds": 2.0306199000333436,
+          "exit_code": 0,
+          "log": ".tmp/full_gate235/semantic.log",
+          "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+        },
+        {
+          "phase": "IR",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/validate_editorial_semantic_ir.py"
+          ],
+          "started_utc": "2026-10-15T15:27:59.039407+00:00",
+          "PID": 14648,
+          "completed_utc": "2026-10-15T15:27:59.119992+00:00",
+          "elapsed_seconds": 0.0805957000120543,
+          "exit_code": 0,
+          "log": ".tmp/full_gate235/IR.log",
+          "log_sha256": "7a489c234db968575160cfb88681585e7f200f6ee206e4e9025f15482d12f8f0"
+        },
+        {
+          "phase": "replay",
+          "command": [
+            "python",
+            "-X",
+            "utf8",
+            "-B",
+            "scripts/prepare_immigration_shared_candidate.py",
+            "--input",
+            "docs\\editorial\\shared_candidates\\house_119_immigration_20260916",
+            "--member",
+            "F000477",
+            "--member",
+            "M001184",
+            "--output",
+            ".tmp\\full_gate235\\replay"
+          ],
+          "started_utc": "2026-10-15T15:27:59.039752+00:00",
+          "PID": 21784,
+          "completed_utc": "2026-10-15T15:29:58.545949+00:00",
+          "elapsed_seconds": 119.51038719998905,
+          "exit_code": 0,
+          "log": ".tmp/full_gate235/replay.log",
+          "log_sha256": "8ea94c831cd6e22fa491f2284d0fef27a80526f5f5548496955d56218ed6064a",
+          "byte_exact_outputs": 7
+        }
+      ],
+      "all_passed": true,
+      "overlap": "Four independent read-only validations ran concurrently. Per-process elapsed times overlap; sum is not batch wall time.",
+      "input_hashes": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json": "bb1f7804b0d7d5488cc11acc9fff6beea26c06b1a8fd5fc0f31ec658617af53b",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json": "9dc8a47eb3cd053c5f3013f0346833c4bce27369b8f32449fe2c6c782e71b80d",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "c5d1e2ebc3ff1908ec595c08c73a2f815b07ac1e73767ba748aaac77b8883c5b",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "bb524159d3c403b9e03292a49e17510b9a78c6e43a33f871ba01fcac9ce3d904",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json": "66b36742e434114e520ef157f4bcc49dc368aafcad1b5c53b4e15fb75609b4f3",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json": "5cfec2828e9381c64ac343381d2c3d055df7b29a6613f16962551cc64ba652ca",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json": "83d029d20119120c3d6af681d9c35d51ae7f791fa15e04c95c733b10ad94a627",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json": "e3e3d6194bdf0216bdb882c17be07c9b9ab60cc6602d3f2dec20f9d0da33740e",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json": "1d90c71750bb953d736a3fae27fba365aa205ad909c636ebc7903e0ed0259eb8",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json": "e93f871d72bf04ee071092de0ebc198bf0d01902b66cf7ac8b17f10888da66e8",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json": "9c8d90cf1177394698905c54512c5ecfee81abdbfa6bc5211c2003c3b3c7ec75",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json": "89e4bb2e37ee634d3b2a9499ccc7ca0516d94d0f0d76880619edd0b3a6d0f652",
+        "backend/tests/test_immigration_shared_candidate.py": "b14c0f795b7913a560e7f32f8bf538ea006bbd8a29bc6f19e88b1f05bc7b6eb3",
+        "docs/review_packets/immigration_semantic_audit_in_progress.json": "8a2e2ab8608f9289cf9fd911691e1746e887a621d3b8d91042a42410425a9c12",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/continuing_appropriations_qualification_checkpoint235.json": "6398cac4146d6d426d60609e3d11cc9befa385398eeaaf25330d7974aafdf5e1",
+        "docs/editorial/shared_candidates/house_119_continuing_appropriations_qualification_checkpoint235/shared_action_core_proposal.json": "bd072d1974f25a7ac8bb883d3af1028e50655d4f4ccc8747acee08dc74fd8879",
+        "docs/editorial/shared_candidates/house_119_continuing_appropriations_qualification_checkpoint235/README.md": "f835cb875608b3772a027823263aefe6d4db1f5f4652cb68d25b6776fc70faa1",
+        "docs/plans/immigration_checkpoint235_remaining.md": "162c5497c391d1cd5205ee7ae9218110f507ce9fb3c081e145a3cbb20a53147b"
+      },
+      "input_hashes_unchanged": true
+    },
+    "owner_tests": 432,
+    "Immigration_tests": 255,
+    "semantic_checks": 7,
+    "actual_CLI_outputs_byte_exact": 7,
+    "full_gate_runs_this_batch": 1,
+    "all18held_inputs_still_exact": true,
+    "initial_five_focused": {
+      "started_utc": "2026-10-15T15:20:34.817187+00:00",
+      "completed_utc": "2026-10-15T15:22:06.791096+00:00",
+      "elapsed_seconds": 91.97713210002985,
+      "exit_code": 0,
+      "tests": [
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_preserves_original_shared_identity_and_distinct_whole_choices",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_dates_imports_and_inclusive_USCIS_funding_stay_distinct",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_programme_predicates_and_section_wide_sunset_remain_qualified",
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_swapped_or_unconditional_claims_are_rejected",
+        "backend.tests.test_immigration_shared_candidate.Checkpoint232SourceRelationshipAndScreeningTests.test_new_material_evidence_does_not_release_unresolved_legal_or_programme_holds"
+      ],
+      "log_sha256": "b7af8d321b4d0e2740b2f518db92ca4bc86d995de6c8d7ea12398266a8791b84"
+    },
+    "unchanged_historical_method": {
+      "checked_utc": "2026-10-15T15:22:07.629402+00:00",
+      "immutable_head": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+      "original_method_source_git_blob_sha256": "7c439c74d19d84b05e5377a551d7c87c421421d32ad247ffcffa596548a0e010",
+      "three_fixture_git_blob_sha256": {
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json": "6ef98249678a4a4a69d18c45fb5b9bb9cfc938d5875bacf1048def003ec9bcbc",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json": "1a507e36c6481b695c22e9d05ea43eeba618247fd7a3a8ed949d56d48a178f7a",
+        "docs/editorial/shared_candidates/house_119_immigration_20260916/remaining_research_checkpoint232.json": "c04f485cdc20583e8854374389491927b05dd1f8584a5a01696d63d4e2bdb730"
+      },
+      "unchanged_historical_method": "test_new_material_evidence_does_not_release_unresolved_legal_or_programme_holds",
+      "passed": true,
+      "elapsed_seconds": 0.8330028000054881,
+      "receipt_sha256": "05d448cb865f5bd7e5dd333d34ea560e50b1ded008b80d92be77a01df2ab14c1"
+    },
+    "narrowed_negative_fixture_failed": {
+      "started_utc": "2026-10-15T15:23:15.878603+00:00",
+      "completed_utc": "2026-10-15T15:23:35.988019+00:00",
+      "elapsed_seconds": 20.110123299993575,
+      "exit_code": 1,
+      "focused_method": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_swapped_or_unconditional_claims_are_rejected",
+      "source_corruption_probes": 4,
+      "scope": "Only the affected action is supplied to each negative probe; same source-binding guard and expected errors. Class setup and final gate still prepare the full77-core batch.",
+      "log_sha256": "03b18d1e5db4f46862c7ae333042e2f4129fec893b08a6fcc79504c1d0c369fa"
+    },
+    "corrected_scoped_negative": {
+      "started_utc": "2026-10-15T15:25:37.388011+00:00",
+      "completed_utc": "2026-10-15T15:26:00.429315+00:00",
+      "elapsed_seconds": 23.042114899959415,
+      "exit_code": 0,
+      "focused_method": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests.test_continuing235_swapped_or_unconditional_claims_are_rejected",
+      "source_corruption_probes": 4,
+      "scope": "The exact affected action plus the required native seed is supplied to each negative probe; same source-binding guard and expected errors. Class setup and final gate still prepare the full77-core batch.",
+      "log_sha256": "4d54433a47e8a1b25fb49655960a83fd9e9b8175f4c92133a308b5b24201c8f3"
+    },
+    "scope": "Same four altered source predicates must reach the actual source-binding rejection. Native seed preserves framework nonempty-native-corpus requirement; final gate still prepares all77cores. No weakened error/condition or product change."
+  },
+  "conservation": {
+    "checkpoint": 235,
+    "base_head": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+    "checked_utc": "2026-10-15T15:27:58.708646+00:00",
+    "all75prior_cores_exact": true,
+    "all651prior_reviews_exact": true,
+    "all674unaffected_inventory_rows_exact": true,
+    "all126prior_behavioral_propositions_exact": true,
+    "all150prior_member_action_observations_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "six_unchanged_Health_sources_and_one_dated_selected_derivation_appended": true,
+    "all_Health_historical_providers_receipts_and_inherited230P3s_exact": true,
+    "checkpoint232purpose_and234UkraineP3_WRDAscreening_exact": true,
+    "all_other_pending_reserved_holds_and_unrelated_notes_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3611,
+    "frozen_private_notes_exact": 417,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 653,
+      "pending": 23,
+      "cores": 77,
+      "behavioral_propositions": 130,
+      "episodes": 67,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 5.905530999996699,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "532b6bfae3ccf9b00c5bd9fe82b4306b2d2b21ea2b14774edff5ffa8fb161b78"
+  },
+  "conservation_before_fixture_refinement": {
+    "checkpoint": 235,
+    "base_head": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+    "checked_utc": "2026-10-15T15:24:55.460348+00:00",
+    "all75prior_cores_exact": true,
+    "all651prior_reviews_exact": true,
+    "all674unaffected_inventory_rows_exact": true,
+    "all126prior_behavioral_propositions_exact": true,
+    "all150prior_member_action_observations_exact": true,
+    "all_source_manifest_private_prefixes_exact": true,
+    "six_unchanged_Health_sources_and_one_dated_selected_derivation_appended": true,
+    "all_Health_historical_providers_receipts_and_inherited230P3s_exact": true,
+    "checkpoint232purpose_and234UkraineP3_WRDAscreening_exact": true,
+    "all_other_pending_reserved_holds_and_unrelated_notes_unchanged": true,
+    "tracked_files_outside_allowlist_exact": 3611,
+    "frozen_private_notes_exact": 417,
+    "index_unchanged": true,
+    "counts": {
+      "reviewed": 653,
+      "pending": 23,
+      "cores": 77,
+      "behavioral_propositions": 130,
+      "episodes": 67,
+      "multi_action_episodes": 9
+    },
+    "elapsed_seconds": 5.994618900003843,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "receipt_sha256": "48bf406f5c38fa80af04f107ee8bf057d3d4787e8793f6225a868c147a4ae416"
+  },
+  "prior_CI": {
+    "checkpoint": 234,
+    "head": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+    "run": 38758419271,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/dhart54/political_fingerprint/actions/runs/38758419271",
+    "jobs": [
+      {
+        "job_id": 116502929620,
+        "name": "m14f-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:14:30Z",
+        "checkout_log_shas": [
+          "72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+        ],
+        "log_sha256": "a657ff848862b7137674714125756b72a11d564b51881d4eced7edb26a95691f",
+        "log_bytes": 48883,
+        "pytest_counts": [
+          "2026-10-15T15:14:28.7349698Z 29 passed, 40 subtests passed in 0.44s"
+        ],
+        "skipped_steps": [
+          "Prove exact M14F milestone scope"
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14F offline validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate detached M14F wording and prominence review",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact M14F milestone scope",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502930024,
+        "name": "publication-activation-postgres",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:16:01Z",
+        "checkout_log_shas": [
+          "bc6479d334f643aea59fd394600396ac7647bf32"
+        ],
+        "log_sha256": "6836b918732d9cd4984156cba9ab5e41f1c64e707c1e43274dd2688c01570e2a",
+        "log_bytes": 185738,
+        "pytest_counts": [
+          "2026-10-15T15:14:58.2133699Z 23 passed, 1 warning in 15.95s",
+          "2026-10-15T15:15:02.6440087Z 58 passed, 1 warning in 4.12s",
+          "2026-10-15T15:15:05.7737733Z 1 passed in 1.62s",
+          "2026-10-15T15:15:10.6575700Z 1 passed, 1 warning in 3.49s",
+          "2026-10-15T15:15:15.2391903Z 1 passed in 3.03s",
+          "2026-10-15T15:15:19.8144846Z 2 passed in 3.09s",
+          "2026-10-15T15:15:22.9476435Z 14 passed in 1.69s"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Initialize containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install backend dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prepare reconciled disposable editorial baseline",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run publication activation PostgreSQL suite without skips",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run row-contract and owned-lifecycle fault tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove M11N authority closure, exact graph, idempotency, drift, and rollback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove M12N preparation graph, isolation, idempotency, drift, and rollback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove M13N-R Education lifecycle, idempotency, drift, and rollback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove governed M13N candidate lifecycle and exact public projections",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove V2 stable authority with fresh read-only execution evidence",
+            "conclusion": "success"
+          },
+          {
+            "name": "Build fresh disposable backup evidence",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run authoritative owned-lifecycle real-Uvicorn proof",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove no owned proof resources remain",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Stop containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502930027,
+        "name": "m14e-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:14:26Z",
+        "checkout_log_shas": [
+          "72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+        ],
+        "log_sha256": "6e3c653d56304da0dbf4e32944e9bf7d509a5b6b679d5c9b5356eef9a201d514",
+        "log_bytes": 49069,
+        "pytest_counts": [
+          "2026-10-15T15:14:24.0878748Z 22 passed, 55 subtests passed in 0.30s"
+        ],
+        "skipped_steps": [
+          "Prove exact M14E milestone scope"
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14E offline validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate detached M14E synthesis and frozen accepted inputs",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate exact user-approved M14E internal synthesis acceptance",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact M14E milestone scope",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502930040,
+        "name": "foushee-full-record-benchmark",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:18:07Z",
+        "checkout_log_shas": [
+          "bc6479d334f643aea59fd394600396ac7647bf32"
+        ],
+        "log_sha256": "1d68f7acc28efb50c9568f2f07c1303376aabaa71db93fa20a5fbcbe94864ebb",
+        "log_bytes": 1509962,
+        "pytest_counts": [
+          "2026-10-15T15:14:27.6228855Z 15 passed in 0.62s",
+          "2026-10-15T15:14:29.2858731Z 19 passed in 1.23s",
+          "2026-10-15T15:14:32.4463593Z 27 passed in 2.68s",
+          "2026-10-15T15:18:04.7231520Z 639 passed, 1 warning in 77.42s (0:01:17)"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install backend dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M14A shared corpus boundary",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M14B action interpretability contract",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M14C Education source-hold closure",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate governed M1-M7 chain and layered benchmark",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run full-record integration tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502930061,
+        "name": "m14g-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:14:40Z",
+        "checkout_log_shas": [
+          "72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+        ],
+        "log_sha256": "401d2ef1fc66e48c8fdd0fc9132dacd3e3018e25c6080708ba799ead219c01ce",
+        "log_bytes": 68184,
+        "pytest_counts": [
+          "2026-10-15T15:14:29.8756677Z 15 passed, 1 warning in 0.62s",
+          "2026-10-15T15:14:30.3931832Z 10 passed in 0.27s",
+          "2026-10-15T15:14:30.8951553Z 3 passed in 0.28s",
+          "2026-10-15T15:14:36.6866650Z 96 passed in 3.58s"
+        ],
+        "skipped_steps": [
+          "Enforce milestone-local M14G closure scope"
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14G focused validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate detached M14G candidate and exact receipt semantics",
+            "conclusion": "success"
+          },
+          {
+            "name": "Enforce milestone-local M14G closure scope",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Run required M14A-M14F regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502930108,
+        "name": "amendment-evidence-contracts",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:14:18Z",
+        "checkout_log_shas": [
+          "bc6479d334f643aea59fd394600396ac7647bf32"
+        ],
+        "log_sha256": "0126dd9bdd425b3acf4058385f513a0902eafadbfae98f4171f2b2fd5a5412bb",
+        "log_bytes": 29092,
+        "pytest_counts": [
+          "2026-10-15T15:14:17.0353349Z ============================== 87 passed in 1.18s =============================="
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install backend dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run amendment evidence backend tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502930321,
+        "name": "receipt-evidence-repair-postgres",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:20:49Z",
+        "checkout_log_shas": [
+          "bc6479d334f643aea59fd394600396ac7647bf32",
+          "72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+        ],
+        "log_sha256": "c94eb4fc092b2e5cdbb079ef104ce88dea600d7a8bb264e1de287f1de0fd2f82",
+        "log_bytes": 141925,
+        "pytest_counts": [
+          "2026-10-15T15:15:15.0991375Z 6 passed in 1.70s",
+          "2026-10-15T15:17:34.9125489Z 38 passed, 1 warning in 138.47s (0:02:18)",
+          "2026-10-15T15:20:05.3946403Z 13 passed in 133.48s (0:02:13)",
+          "2026-10-15T15:20:45.3749481Z 20 passed in 37.27s"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Initialize containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install backend dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Create dedicated disposable database",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact repair apply, idempotency, drift guard, and rollback",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove source-verified M15A.2 core repair and public invariants",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove normalized storage at actual production cardinality",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove actual green M15B persistence and owned V2R lifecycle",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Stop containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502930342,
+        "name": "m14h-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:31:53Z",
+        "checkout_log_shas": [
+          "72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+        ],
+        "log_sha256": "421d0aa58123fc1270820f2d8c30ebecfbe25e80e4e38814f14e9c77ffba23b2",
+        "log_bytes": 142542,
+        "pytest_counts": [
+          "2026-10-15T15:15:23.7998722Z 95 passed, 1 warning in 2.10s",
+          "2026-10-15T15:30:08.7454727Z 406 passed in 883.36s (0:14:43)",
+          "2026-10-15T15:30:14.0455584Z 1 passed in 2.95s",
+          "2026-10-15T15:30:15.7154201Z 74 passed, 1 warning in 1.32s",
+          "2026-10-15T15:31:00.1610715Z   2 passed (14.7s)",
+          "2026-10-15T15:31:35.8692122Z   23 passed (16.6s)",
+          "2026-10-15T15:31:36.3377892Z 15 passed in 0.15s",
+          "2026-10-15T15:31:46.1266904Z   1 passed (8.8s)",
+          "2026-10-15T15:31:49.1627565Z 25 passed in 2.65s"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Initialize containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14H validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact M14H package and unchanged V2/migration contracts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate shared candidate preparation at exact head",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove disposable M14H apply, idempotency, faults, rollback, and public selector",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run accepted M14G and public-receipt regressions",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run release-tier editorial, frontend, and persistence validation",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify Record at a Glance source bindings and both frontend routes",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M15B comparison semantics and governed limitation rendering",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Stop containers",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502930604,
+        "name": "m14d-exact-head",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:14:26Z",
+        "checkout_log_shas": [
+          "72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+        ],
+        "log_sha256": "71cec237cbf833bb09be4847e70e2e5eac42b0f2b4e4403e92e299ed4b5f383e",
+        "log_bytes": 48137,
+        "pytest_counts": [
+          "2026-10-15T15:14:24.8514788Z 18 passed, 34 subtests passed in 0.71s"
+        ],
+        "skipped_steps": [
+          "Prove exact M14D milestone scope"
+        ],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install M14D offline validation dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Validate M14D promotion, detached candidates, and frozen baseline",
+            "conclusion": "success"
+          },
+          {
+            "name": "Prove exact M14D milestone scope",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": []
+      },
+      {
+        "job_id": 116502931116,
+        "name": "measure-reference-integration",
+        "run_attempt": 1,
+        "conclusion": "success",
+        "started_at": "2026-10-15T15:13:32Z",
+        "completed_at": "2026-10-15T15:14:28Z",
+        "checkout_log_shas": [
+          "bc6479d334f643aea59fd394600396ac7647bf32"
+        ],
+        "log_sha256": "51b7e40521b76604d0ce965884d06347a1870fc5f4b322647688957cdb0a1203",
+        "log_bytes": 54732,
+        "pytest_counts": [
+          "2026-10-15T15:14:26.3476843Z 33 passed in 0.72s"
+        ],
+        "skipped_steps": [],
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Verify integration checkout identity",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Install measure-reference regression dependencies",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run measure-reference regressions on integration tree",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ],
+        "integration_identity_lines": [
+          "2026-10-15T15:14:17.1036569Z checkout=bc6479d334f643aea59fd394600396ac7647bf32 parents=af6cd6d78d6944d64a68a92653066c4c1625f96b 72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+        ]
+      }
+    ],
+    "run_attempt": 1,
+    "actual_job_executions": 10,
+    "carried_successes": 0,
+    "no_manual_retry": true,
+    "contexts": {
+      "feature": 5,
+      "synthetic": 4,
+      "mixed": 1
+    },
+    "synthetic_merge_sha": "bc6479d334f643aea59fd394600396ac7647bf32",
+    "synthetic_parent_shas": [
+      "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+      "72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+    ],
+    "resolved_workflow_blob": "081c14aef117867905654d3f67dbde33652f9960",
+    "resolved_workflow_sha256": "e52a857cba4ff9b1e395ab941faace4e355d316024e066c349f1ba9b9aa9b46d",
+    "workflow_ref_not_directly_logged": true,
+    "workflow_resolution_evidence": "Saved synthetic-tree workflow blob and actual executed job commands/checkouts",
+    "measure_explicit_github_sha_checkout": true,
+    "measure_identity_lines": [
+      "2026-10-15T15:14:17.1036569Z checkout=bc6479d334f643aea59fd394600396ac7647bf32 parents=af6cd6d78d6944d64a68a92653066c4c1625f96b 72b55fef7063cf4a2cf9af5fc317216b43a12aa0"
+    ],
+    "m14h_feature_checkout": true,
+    "late_M14H_steps": [
+      {
+        "name": "Run release-tier editorial, frontend, and persistence validation",
+        "conclusion": "success"
+      },
+      {
+        "name": "Verify Record at a Glance source bindings and both frontend routes",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate M15B comparison semantics and governed limitation rendering",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+        "conclusion": "success"
+      }
+    ],
+    "all_actual_M14H_steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Initialize containers",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install M14H validation dependencies",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove exact M14H package and unchanged V2/migration contracts",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate shared candidate preparation at exact head",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove disposable M14H apply, idempotency, faults, rollback, and public selector",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run accepted M14G and public-receipt regressions",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run release-tier editorial, frontend, and persistence validation",
+        "conclusion": "success"
+      },
+      {
+        "name": "Verify Record at a Glance source bindings and both frontend routes",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate M15B comparison semantics and governed limitation rendering",
+        "conclusion": "success"
+      },
+      {
+        "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Stop containers",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "direct_main_observations": [
+      {
+        "observed_utc": "2026-10-15T15:14:51.002435+00:00",
+        "sha": "af6cd6d78d6944d64a68a92653066c4c1625f96b"
+      },
+      {
+        "observed_utc": "2026-10-15T15:35:22.859946+00:00",
+        "sha": "af6cd6d78d6944d64a68a92653066c4c1625f96b"
+      }
+    ],
+    "current_main_integration_claim": false,
+    "synthetic_base_matches_both_main_observations": true,
+    "editorial_acceptance": false,
+    "publication_authorized": false,
+    "remaining_gate": "Independent checkpoint234 source/domain review",
+    "all10jobs_and4late_M14H_stages_passed": true,
+    "late_M14H_verified_from_complete_job_log": [
+      {
+        "name": "Run release-tier editorial, frontend, and persistence validation",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "421d0aa58123fc1270820f2d8c30ebecfbe25e80e4e38814f14e9c77ffba23b2",
+        "line_start_1based": 1235,
+        "line_end_exclusive_1based": 1264,
+        "required_command_and_result_markers": [
+          "python scripts/run_editorial_pipeline.py validate --tier release",
+          "--include-frontend --include-persistence",
+          "Editorial pipeline release validation passed: 9 checks"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Run release-tier editorial, frontend, and persistence validation",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Verify Record at a Glance source bindings and both frontend routes",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "421d0aa58123fc1270820f2d8c30ebecfbe25e80e4e38814f14e9c77ffba23b2",
+        "line_start_1based": 1264,
+        "line_end_exclusive_1based": 1396,
+        "required_command_and_result_markers": [
+          "node scripts/build_record_card_review.mjs --check",
+          "node --test lib/recordCard.test.mjs lib/editorialPresentation.test.mjs",
+          "tests/record-card.spec.mjs tests/record-card-release.spec.mjs",
+          "# tests 20",
+          "# pass 20",
+          "# fail 0",
+          "23 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Verify Record at a Glance source bindings and both frontend routes",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Validate M15B comparison semantics and governed limitation rendering",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "421d0aa58123fc1270820f2d8c30ebecfbe25e80e4e38814f14e9c77ffba23b2",
+        "line_start_1based": 1396,
+        "line_end_exclusive_1based": 1506,
+        "required_command_and_result_markers": [
+          "python scripts/build_m15b_review.py --check",
+          "backend/tests/test_m15b_interpretive_trust.py",
+          "node --test lib/m15bTrust.test.mjs lib/publicReceipt.test.mjs",
+          "expanded receipts",
+          "15 passed",
+          "# tests 15",
+          "# pass 15",
+          "# fail 0",
+          "1 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Validate M15B comparison semantics and governed limitation rendering",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      },
+      {
+        "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+        "verification": "Ordered complete job-log commands and positive results plus successful job conclusion",
+        "log_sha256": "421d0aa58123fc1270820f2d8c30ebecfbe25e80e4e38814f14e9c77ffba23b2",
+        "line_start_1based": 1506,
+        "line_end_exclusive_1based": 1611,
+        "required_command_and_result_markers": [
+          "python scripts/prepare_m15b_replacement_artifacts.py --check",
+          "backend/tests/test_reusable_publication_replacement_v2r.py",
+          "backend/tests/test_reusable_publication_replacement_v2r_postgres.py",
+          "production execution disabled",
+          "25 passed"
+        ],
+        "raw_API_step_metadata": {
+          "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+          "conclusion": "success"
+        },
+        "raw_API_step_name_exact_match": true
+      }
+    ],
+    "raw_M14H_step_metadata_inconsistent_with_completed_job_log": false,
+    "raw_pending_step_metadata_not_rewritten": true,
+    "raw_M14H_steps_empty": false,
+    "raw_step_arrays_retained_unmodified": true,
+    "jobs_API_metadata_path": ".tmp/ci234_latest_jobs_metadata.json",
+    "jobs_API_metadata_sha256": "80cf9a20c254806c0eeae66a42b0bcabf2976417f80a016a0596b76215bd9671",
+    "receipt_sha256": "ef861950563ca784ecf5997a0a37a3d7b0798259550264456f9f4c78c26dfdd7"
+  },
+  "next_research": {
+    "private_verification": {
+      "started_utc": "2026-10-15T15:33:32.394606+00:00",
+      "completed_utc": "2026-10-15T15:33:33.477136+00:00",
+      "elapsed_seconds": 1.0825662999995984,
+      "support_head": "513281bda5b7117f2e88115e1705e0dc6265380b",
+      "delivered_blobs_verified": 8,
+      "proofs": [
+        {
+          "action_id": "house:119:1:199",
+          "source_identities": 7,
+          "passages": 8,
+          "prior_artifacts": 2,
+          "snapshot": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+          "old_source_bank_git_blob_oid": "29d8c87176aec3a4789c998b9d93253675f2d587",
+          "old_source_bank_blob_sha256": "d947ade0352bff8e68e720b6f8be83b76546132b885fdfdb3b0c5f25d6e90303",
+          "current_bank_changed_only_by_preserved_appends": true
+        },
+        {
+          "action_id": "house:119:1:200",
+          "source_identities": 5,
+          "passages": 12,
+          "prior_artifacts": 3,
+          "snapshot": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+          "old_source_bank_git_blob_oid": "29d8c87176aec3a4789c998b9d93253675f2d587",
+          "old_source_bank_blob_sha256": "d947ade0352bff8e68e720b6f8be83b76546132b885fdfdb3b0c5f25d6e90303",
+          "current_bank_changed_only_by_preserved_appends": true
+        },
+        {
+          "action_id": "house:119:2:44",
+          "source_identities": 6,
+          "passages": 12,
+          "prior_artifacts": 1,
+          "snapshot": "817e412f730ef5900b28a0cfb9bb07f232916f72",
+          "old_source_bank_git_blob_oid": "29d8c87176aec3a4789c998b9d93253675f2d587",
+          "old_source_bank_blob_sha256": "d947ade0352bff8e68e720b6f8be83b76546132b885fdfdb3b0c5f25d6e90303",
+          "current_bank_changed_only_by_preserved_appends": true
+        }
+      ],
+      "total_source_identity_bindings": 18,
+      "total_passages": 32,
+      "fresh_primary_acquisitions": 0,
+      "canonical_changes": false,
+      "completion_credit": 0,
+      "whole_source_new_read": false,
+      "reserved_applications_pending": true,
+      "editorial_acceptance": false,
+      "publication_authorized": false,
+      "receipt_sha256": "f410a39f5de67989d2a0145b5fbcd34db025ed3d207fa149176a31d7b74d1e43"
+    },
+    "source_scope": "Eight exact support513281bdGitblobs,18identity bindings/32literal passages match old817sourcebank and its unchanged current prefix. New bounded material passages read privately. Financial199/200/44/349/218not disposed or credited by source verification.",
+    "canonical_changes": false,
+    "new_screening_credit": 0
+  },
+  "timing": {
+    "conservative_first_work_bound_utc": "2026-10-15T14:17:25.339307+00:00",
+    "earlier_preread_and_historical_reading_additional_unisolated": true,
+    "required_gate_completed_utc": "2026-10-15T15:39:20.901660+00:00",
+    "gross_batch_seconds_through_gate": 4915.562353,
+    "seconds_per_completed_complex_action_through_gate": 2457.7811765,
+    "receipt_completed_utc": "2026-10-15T15:40:39.620926+00:00",
+    "gross_batch_seconds_through_receipt": 4994.281619,
+    "scope": "Gross conservative235window includes CRinspection/private drafting overlapping234gate/delivery/CI; not exclusive labor. Two completed complex whole packages, no routine sample. Earlier196/197/232/Health readings and preread remain additional/unisolated, not zero.",
+    "observed_settings": {
+      "base_model_identity": "GPT-6",
+      "selected_variant": "unexposed",
+      "reasoning_effort": "unexposed",
+      "speed_service_tier": "unexposed",
+      "no_settings_changed": true
+    },
+    "snapshot_seconds": 2.0255148999858648,
+    "private_draft": {
+      "started_utc": "2026-10-15T14:50:16.297022+00:00",
+      "completed_utc": "2026-10-15T14:50:17.289270+00:00",
+      "elapsed_seconds": 0.9923309999867342,
+      "source_imports": [
+        "govinfo:pl119-74-cr-baseline",
+        "govinfo:pl119-75-cr-baseline",
+        "govinfo:42usc603-2024-pandemic-exception",
+        "govinfo:42usc618-2024-childcare",
+        "govinfo:pl117-43-wildfire1701",
+        "congressional-record:2026-07-21-bank-cr"
+      ],
+      "new_derived_sources": [
+        "govinfo:8usc1101a27C-2024-cr235"
+      ],
+      "fresh_acquisitions": 0,
+      "preserved_raw_parent_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+      "new_selected_read_extent": [
+        32855,
+        34265
+      ],
+      "new_selected_read_parent_length": 353001,
+      "whole_parent_new_read": false,
+      "canonical_changes": false,
+      "completion_credit": 0,
+      "original_Health_cores": {
+        "house:119:2:272": "8a916feb12bbb560554a96a430bdb1c1d42c891ca488c2cc33b70d70606177a7",
+        "house:119:2:286": "4b4ea21ff70d0ece014b386d8e4266545b4dc4ed3b18d88f62c4eb81e5b8cdff"
+      },
+      "candidate_cores": {
+        "house:119:2:272": "3d44881fdf9d611b4e899e8cd81c0713a1ee854ee9b2fb6323a210faa5d9692a",
+        "house:119:2:286": "7e5870785499786f6785beb7bfac632bc92f8821e531cc156efb0ef4aae5cb0e"
+      },
+      "material_reading": "Reuse prior196/197wholebills/floor,232wholeDHS and348reads; fresh literal101-112,2013-2019,537-538and781/27Cchecks. Broader private234CRinspection preserved; no exclusive action timer.",
+      "annual_table_individual_legal_applications_reserved": true,
+      "independent_review_pending": true,
+      "editorial_acceptance": false,
+      "publication_authorized": false,
+      "receipt_sha256": "e039dffe19f9c2be82ea6451e084224a2023e9f641b2ec9e9cd100ecc92030bb"
+    },
+    "pre_gate_refinement": {
+      "started_utc": "2026-10-15T15:04:08.279120+00:00",
+      "completed_utc": "2026-10-15T15:04:08.378211+00:00",
+      "elapsed_seconds": 0.09909689996857196,
+      "pre_gate_precision": [
+        {
+          "before": "the matching FinalBill table columns",
+          "after": "the corresponding amounts in the specified FinalBill column entries"
+        },
+        {
+          "before": "USCIS Operations and Support's122.941million E-Verify reference",
+          "after": "USCIS Operations and Support's122.941million annual baseline INCLUDING E-Verify, not a122.941million earmark solely for E-Verify"
+        }
+      ],
+      "reason": "Owner direct-source review: USCIS annual O&S baseline includes E-Verify, not sole programme earmark; preliminary4zeroes corresponding table entries, not entire FinalBill columns. No private draft accepted or canonically applied.",
+      "provider_version": "v30",
+      "provider_version_reason": "Fresh Ukraine234successor now uses v29; private CRv29draft remains historical, prospective235provider uses distinctv30.",
+      "prior_candidate_cores": {
+        "house:119:2:272": "3d44881fdf9d611b4e899e8cd81c0713a1ee854ee9b2fb6323a210faa5d9692a",
+        "house:119:2:286": "7e5870785499786f6785beb7bfac632bc92f8821e531cc156efb0ef4aae5cb0e"
+      },
+      "new_candidate_cores": {
+        "house:119:2:272": "cae6a7f88ce73e7592793a192d54430a582eec03c870ba38cfb58c9adccabbb7",
+        "house:119:2:286": "5b4fdff617af1c4333b40a2b2be1b4be59a6737de80406b657072b79468aea00"
+      },
+      "original_authoring_receipt_sha256": "e039dffe19f9c2be82ea6451e084224a2023e9f641b2ec9e9cd100ecc92030bb",
+      "prior_failed_parent_hash_assertion": {
+        "command_wall_seconds": 0.7746942,
+        "reason": "Preserved226captured_full_text_sha256 is UTF8text hash, not canonical JSON-string digest; both recipes now recorded separately. Exact raw parent unchanged, no source conflict."
+      },
+      "canonical_changes": false,
+      "completion_credit": 0,
+      "editorial_acceptance": false,
+      "publication_authorized": false,
+      "receipt_sha256": "2967acf9f8a4eeb2eb3386c0c477ea0549374c1a8e4daa62039fef1726b83027"
+    },
+    "private_binding_probes": {
+      "started_utc": "2026-10-15T15:08:34.055432+00:00",
+      "completed_utc": "2026-10-15T15:08:35.193774+00:00",
+      "elapsed_seconds": 1.1383986999862827,
+      "provider_version": "shared-action-core:house:119:v30",
+      "private_source_claim_bindings": 34,
+      "original_shared_identities_prefixes_witnesses_limits_preserved": 2,
+      "whole_choice_stages_endpoints_and_import_scope_distinct": true,
+      "USCIS_including_not_sole_earmark": true,
+      "fully_literal_negative_source_probes": [
+        {
+          "action_id": "house:119:2:272",
+          "source_id": "govinfo:hr9770eh",
+          "altered": "December 4, 2026",
+          "replacement": "December 11, 2026",
+          "error": "claim passage absent from bound source: house:119:2:272"
+        },
+        {
+          "action_id": "house:119:2:286",
+          "source_id": "govinfo:hr6500eas",
+          "altered": "December 11, 2026",
+          "replacement": "December 4, 2026",
+          "error": "claim passage absent from bound source: house:119:2:286"
+        },
+        {
+          "action_id": "house:119:2:286",
+          "source_id": "govinfo:pl11975-divisionI5013-5016-232",
+          "altered": "may increase",
+          "replacement": "shall automatically increase",
+          "error": "claim passage absent from bound source: house:119:2:286"
+        },
+        {
+          "action_id": "house:119:2:286",
+          "source_id": "govinfo:6usc348-2024-complete232",
+          "altered": "This section expires",
+          "replacement": "Only subsection b expires",
+          "error": "claim passage absent from bound source: house:119:2:286"
+        }
+      ],
+      "canonical_sources_unchanged": true,
+      "scope": "Private generic exact-source preparation only; final shared provider paths, membership/accounting, compiler projections and actualCLI remain for235application/gate. No canonical change or screening credit.",
+      "editorial_acceptance": false,
+      "publication_authorized": false,
+      "receipt_sha256": "e5914955ac056b7c9373a49934dc8ea422bf1f25665408e94c4b17151b1dbae7"
+    },
+    "application": {
+      "started_utc": "2026-10-15T15:15:46.003126+00:00",
+      "completed_utc": "2026-10-15T15:17:25.748327+00:00",
+      "elapsed_seconds": 99.74955200002296,
+      "counts": {
+        "reviewed": 653,
+        "pending": 23,
+        "cores": 77,
+        "behavioral_propositions": 130,
+        "episodes": 67,
+        "multi_action_episodes": 9
+      },
+      "qualification_receipt_sha256": "e415cab412c4a9ea55136691c0bcb7834c8b1d116ffd9931ad689ccb0e0b1359",
+      "canonical_inputs_written": true,
+      "full_gate_pending": true
+    },
+    "focused_command_seconds": [
+      91.97713210002985,
+      20.110123299993575,
+      23.042114899959415
+    ],
+    "historical_proof_seconds": 0.8330028000054881,
+    "conservation_seconds": [
+      5.994618900003843,
+      5.905530999996699
+    ],
+    "full_gate_wall_seconds": 681.8836211999878,
+    "research_time": "Source/legal reading, drafting, interleaved waits/approval/tool overhead and code preparation are not exclusively timed. Unallocated costs remain in gross wall, not guessed model latency or idle.",
+    "rework": "Initial private353001characterparent assertion used wrong hash recipe; exact UTF8/raw identities verified and canonicalJSONdigest kept separately. Two pre-gate USCISinclusive-funding/table-entry precisions retained with initial draft. Five focused tests passed91.977s; narrower all-shared fixture lacked native seed and failed20.110s before intended guard, then native-seeded same four probes passed23.042s. One plan-patch missing-context rejection before mutation is retained in gross. No failed full gate or changed product rule.",
+    "overlap": "235research/drafting overlaps234gates/delivery/CI. Four read-only final validations overlap; per-process times not additive exclusive labor. Private236support verification/reading overlaps235gate and stays included in gross, no236credit.",
+    "CI234": {
+      "run": 38758419271,
+      "head": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+      "first_actual_job_started_utc": "2026-10-15T15:13:32Z",
+      "last_actual_job_completed_utc": "2026-10-15T15:31:53Z",
+      "completion_observed_utc": "2026-10-15T15:35:22.859946+00:00",
+      "job_windows": [
+        {
+          "name": "m14f-exact-head",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:14:30Z"
+        },
+        {
+          "name": "publication-activation-postgres",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:16:01Z"
+        },
+        {
+          "name": "m14e-exact-head",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:14:26Z"
+        },
+        {
+          "name": "foushee-full-record-benchmark",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:18:07Z"
+        },
+        {
+          "name": "m14g-exact-head",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:14:40Z"
+        },
+        {
+          "name": "amendment-evidence-contracts",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:14:18Z"
+        },
+        {
+          "name": "receipt-evidence-repair-postgres",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:20:49Z"
+        },
+        {
+          "name": "m14h-exact-head",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:31:53Z"
+        },
+        {
+          "name": "m14d-exact-head",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:14:26Z"
+        },
+        {
+          "name": "measure-reference-integration",
+          "started_at": "2026-10-15T15:13:32Z",
+          "completed_at": "2026-10-15T15:14:28Z"
+        }
+      ],
+      "no_jobs_rerun": true
+    },
+    "delivery_and_new_CI": "Commit/push/PRupdate and235CI follow gate/receipt cutoffs and are measured separately, not assumed zero.",
+    "routine_target_seconds": 600,
+    "benchmarkFAILretained": true,
+    "no_comparable_routine_five_cycle_improvement_claim": true
+  },
+  "boundary_review": {
+    "received_comments": [
+      6195355985,
+      6195413165,
+      6195497136
+    ],
+    "currency44_head": "f366acb95736102f75420237dac63c7b750ced92",
+    "currency_scope": "Bounded24readings/four sums supported;965other amounts mechanically carried. No writer source/image replay or fiscal/recipient/domain determination in235.",
+    "H6955_271_scope": "Support-only whole151645characterreading/section-import ledger claimed at72b55fef; avoid duplicate reading, no writer completion or candidate credit before delivered packet reconciliation.",
+    "prior234_findings": "Both exact233318/321P3s handled in234; WRDA313qualifiedscreening and all earlier repairs remain exact.",
+    "arbitrary_comments_not_authority": true
+  },
+  "behavior_and_diff_review": "Two complete source-qualified CRchoices retain distinct stages/dates/imports, original unapproved Health prefixes/identities/witnesses/limits and official272Nay/Nay,286Yea/Nay observations. Prior75cores/651reviews/126propositions/150observations and674other rows exact; seven source appends, new77cores/130propositions/67episodes remain candidates. No component stance, blanket fiscal-year reset, table/current-law/individual certificate.",
+  "worktree_hashes_not_Git_blob_hashes": true,
+  "raw_logs_and_private_research_owner_attributed": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "receipt_sha256": "2840b4191c82143ab7be2763c28f756ea448b059fa0e4527db19ed2ce11102b6"
+}

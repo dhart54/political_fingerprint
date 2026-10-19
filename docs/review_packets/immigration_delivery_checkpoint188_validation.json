@@ -1,0 +1,103 @@
+{
+  "checkpoint": 188,
+  "base_head": "252c2bbbaf83977125167577acafabd41792b96e",
+  "candidate_receipt_sha256": "a8e8bcd92039a9751028014d755a683b67e391aa90013a54f258857123729ceb",
+  "focused_tests": {
+    "passed": 203,
+    "seconds": 17.822,
+    "log": ".tmp/tests188-final.log"
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4,
+    "semantic_acceptance": false
+  },
+  "preservation": {
+    "literal_claim_checks": 4,
+    "raw_parent_text_replays": 2,
+    "fresh_structured_Clerk_checks": 1,
+    "Clerk_metadata_both_members_all_party_totals_match": true,
+    "Clerk_raw_hash_difference_and_preservation_explicit": true,
+    "all_Clerk_member_records_certified": false,
+    "source_derivative_checks": 3,
+    "own_offered_bill_identity_only": true,
+    "full_engrossed_package_read": true,
+    "initial_and_resumed_passage_chronology": true,
+    "all603_prior_membership_records_preserved": true,
+    "new_member_neutral_candidate_membership_records": 1,
+    "only_universe_row_changed": [
+      "house:119:1:25"
+    ],
+    "all_prior_sources_registrations_and_aliases_preserved": true,
+    "existing_Health_shared_core_unchanged": true,
+    "preserved_git_blobs": 34,
+    "unchanged_semantic_products": 6,
+    "counts": {
+      "reviewed": 604,
+      "pending": 72,
+      "ordinary_unscreened": 55,
+      "researched_holds": 17,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "source_count": 2091,
+    "registrations": 981,
+    "new_meanings": 0,
+    "new_propositions": 0,
+    "editorially_accepted": false
+  },
+  "literal_claim_checks": 4,
+  "raw_parent_text_replays": 2,
+  "fresh_structured_Clerk_checks": 1,
+  "source_derivative_checks": 3,
+  "new_canonical_sources": 4,
+  "new_capture_registrations": 4,
+  "new_private_derived_aliases": 3,
+  "one_functional_exclusion_candidate": true,
+  "existing_Health_core_unchanged": true,
+  "Clerk_fresh_and_governed_raw_hashes_differ": true,
+  "Clerk_available_governed_fields_match": true,
+  "all_Clerk_members_certified": false,
+  "unchanged_semantic_products": 6,
+  "byte_exact_generated_replays": 7,
+  "counts": {
+    "reviewed": 604,
+    "pending": 72,
+    "ordinary_unscreened": 55,
+    "researched_holds": 17,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "source_count": 2091,
+  "registrations": 981,
+  "timing": {
+    "checkpoint": 188,
+    "base_head": "252c2bbbaf83977125167577acafabd41792b96e",
+    "started_utc": "2026-10-09T23:15:09.425849+00:00",
+    "scope": "Next chronological ordinary unresolved House119/1/25 passage; source/member/domain checks retained, no fresh benchmark round or scaling.",
+    "attempted_action_ids": [
+      "house:119:1:25"
+    ],
+    "special_benchmark_round": false,
+    "measurement_limitations": "Queue metadata selection precedes timer; all subsequent source work, validations and delivery included.",
+    "source_review_and_authoring_utc": "2026-10-09T23:19:52.439848+00:00",
+    "source_review_and_authoring_seconds": 283.013999,
+    "completed_functional_screenings": 1,
+    "no_new_routine_average_inferred": true,
+    "larger_package_retained_in_queue_order": true,
+    "local_validation_utc": "2026-10-09T23:22:15.520629+00:00",
+    "local_validation_endpoint_seconds": 426.09478,
+    "predecessor187_CI_reconciliation_overlap_included_without_subtraction": true
+  },
+  "performance_status": "FAIL at prior comparable781.087seconds; this next chronological larger-package screening is not a fresh benchmark round, average or scaling",
+  "independent188_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "27ca1c635018c48f37ed4d7abcfa83ea78d3884ec6f279fd5e21830167c334d8"
+}

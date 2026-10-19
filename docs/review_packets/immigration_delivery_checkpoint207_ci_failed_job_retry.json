@@ -1,0 +1,210 @@
+{
+  "checkpoint": 207,
+  "head": "284b11c3b009e15972f61172954195e0e6ccdb6d",
+  "run": 38182918430,
+  "run_attempt": 2,
+  "eight_carried_successes": [
+    {
+      "original_id": 114599101507,
+      "cloned_attempt2_id": 114602256737,
+      "name": "m14e-exact-head",
+      "original_start_and_end_timestamps_unchanged": true
+    },
+    {
+      "original_id": 114599101499,
+      "cloned_attempt2_id": 114602256856,
+      "name": "m14g-exact-head",
+      "original_start_and_end_timestamps_unchanged": true
+    },
+    {
+      "original_id": 114599101447,
+      "cloned_attempt2_id": 114602257039,
+      "name": "m14d-exact-head",
+      "original_start_and_end_timestamps_unchanged": true
+    },
+    {
+      "original_id": 114599101427,
+      "cloned_attempt2_id": 114602257263,
+      "name": "foushee-full-record-benchmark",
+      "original_start_and_end_timestamps_unchanged": true
+    },
+    {
+      "original_id": 114599101390,
+      "cloned_attempt2_id": 114602278654,
+      "name": "m14h-exact-head",
+      "original_start_and_end_timestamps_unchanged": true
+    },
+    {
+      "original_id": 114599101292,
+      "cloned_attempt2_id": 114602282052,
+      "name": "m14f-exact-head",
+      "original_start_and_end_timestamps_unchanged": true
+    },
+    {
+      "original_id": 114599101469,
+      "cloned_attempt2_id": 114602284023,
+      "name": "amendment-evidence-contracts",
+      "original_start_and_end_timestamps_unchanged": true
+    },
+    {
+      "original_id": 114599101531,
+      "cloned_attempt2_id": 114602285863,
+      "name": "publication-activation-postgres",
+      "original_start_and_end_timestamps_unchanged": true
+    }
+  ],
+  "one_fresh_retry_job": {
+    "id": 114602256236,
+    "run_id": 38182918430,
+    "workflow_name": "Backend tests",
+    "head_branch": "codex/foushee-immigration-border-shared",
+    "run_url": "https://api.github.com/repos/dhart54/political_fingerprint/actions/runs/38182918430",
+    "run_attempt": 2,
+    "node_id": "CR_kwDORlsMHM8AAAAartOnbA",
+    "head_sha": "284b11c3b009e15972f61172954195e0e6ccdb6d",
+    "url": "https://api.github.com/repos/dhart54/political_fingerprint/actions/jobs/114602256236",
+    "html_url": "https://github.com/dhart54/political_fingerprint/actions/runs/38182918430/job/114602256236",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-11T23:21:28Z",
+    "started_at": "2026-10-11T23:21:30Z",
+    "completed_at": "2026-10-11T23:25:46Z",
+    "name": "receipt-evidence-repair-postgres",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-10-11T23:21:30Z",
+        "completed_at": "2026-10-11T23:21:31Z"
+      },
+      {
+        "name": "Initialize containers",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-10-11T23:21:31Z",
+        "completed_at": "2026-10-11T23:21:51Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-10-11T23:21:51Z",
+        "completed_at": "2026-10-11T23:22:08Z"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-10-11T23:22:08Z",
+        "completed_at": "2026-10-11T23:22:09Z"
+      },
+      {
+        "name": "Install backend dependencies",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-10-11T23:22:09Z",
+        "completed_at": "2026-10-11T23:22:13Z"
+      },
+      {
+        "name": "Create dedicated disposable database",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-10-11T23:22:13Z",
+        "completed_at": "2026-10-11T23:22:13Z"
+      },
+      {
+        "name": "Prove exact repair apply, idempotency, drift guard, and rollback",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7,
+        "started_at": "2026-10-11T23:22:13Z",
+        "completed_at": "2026-10-11T23:22:15Z"
+      },
+      {
+        "name": "Prove source-verified M15A.2 core repair and public invariants",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-11T23:22:15Z",
+        "completed_at": "2026-10-11T23:23:33Z"
+      },
+      {
+        "name": "Prove normalized storage at actual production cardinality",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9,
+        "started_at": "2026-10-11T23:23:33Z",
+        "completed_at": "2026-10-11T23:25:18Z"
+      },
+      {
+        "name": "Prove actual green M15B persistence and owned V2R lifecycle",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 10,
+        "started_at": "2026-10-11T23:25:19Z",
+        "completed_at": "2026-10-11T23:25:43Z"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 18,
+        "started_at": "2026-10-11T23:25:43Z",
+        "completed_at": "2026-10-11T23:25:43Z"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 19,
+        "started_at": "2026-10-11T23:25:43Z",
+        "completed_at": "2026-10-11T23:25:43Z"
+      },
+      {
+        "name": "Stop containers",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 20,
+        "started_at": "2026-10-11T23:25:43Z",
+        "completed_at": "2026-10-11T23:25:43Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 21,
+        "started_at": "2026-10-11T23:25:43Z",
+        "completed_at": "2026-10-11T23:25:43Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/dhart54/political_fingerprint/check-runs/114602256236",
+    "labels": [
+      "ubuntu-latest"
+    ],
+    "runner_id": 1000004447,
+    "runner_name": "GitHub Actions 1000004447",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  },
+  "authorized_failed_job_only_once": true,
+  "original_failure_path": "docs/review_packets/immigration_delivery_checkpoint207_ci_first_attempt_failed.json",
+  "retry_log_sha256": "31d253edbf7825f39abc40bb6c6d605f4d9e10635771d95c10efc6a2d8ce52ab",
+  "actual_tested_base": "7794e8226d935bc08ae673e7aec447e7fe7f40f1",
+  "later_main": "918c054c6874d289decd87935d1823983a729978",
+  "test_counts_reported_by_parent": {
+    "cardinality": 13,
+    "lifecycle": 20
+  },
+  "original_failure_not_rewritten": true,
+  "all9_not_fresh": true,
+  "current_main_integration_claim": false,
+  "publication_authorized": false,
+  "receipt_sha256": "86a4c582dd5d0cf1621f3dd55233316d96b9c1c294a7b726fc8aa533fca1cbad"
+}

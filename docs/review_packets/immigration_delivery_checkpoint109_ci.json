@@ -1,0 +1,181 @@
+{
+  "head": "08db2156283fd4e63d1827a8af12f474a6887fc0",
+  "run": 37702699889,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37702699889",
+  "jobs": [
+    {
+      "job_id": 113069672068,
+      "name": "m14f-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "08db215",
+        "08db2156283fd4e63d1827a8af12f474a6887fc0"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "d01bc4082ff077361b2ab923d777b0c3d240aa62b0bb50d699e83983de0f4745",
+      "log_bytes": 43439,
+      "pytest_counts": [
+        "29 passed, 40 subtests passed in 0.46s"
+      ]
+    },
+    {
+      "job_id": 113069672184,
+      "name": "receipt-evidence-repair-postgres",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "7487d6f",
+        "7487d6f1a57a4860cd6439c88857b4cf7532106d",
+        "08db215",
+        "08db215"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "527843139d8c98acd27ff0288da8f8b512bf9072ba4d4c7e2c198c898e9dcdfa",
+      "log_bytes": 136460,
+      "pytest_counts": [
+        "6 passed in 1.81s",
+        "38 passed, 1 warning in 138.39s (0:02:18)",
+        "13 passed in 135.54s (0:02:15)",
+        "20 passed in 41.42s"
+      ]
+    },
+    {
+      "job_id": 113069672276,
+      "name": "publication-activation-postgres",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "7487d6f",
+        "7487d6f1a57a4860cd6439c88857b4cf7532106d"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "fe75295ad080ad7865b0cf50b27e7c38400428de6dc94f92ed2a2ebaeb245e30",
+      "log_bytes": 180123,
+      "pytest_counts": [
+        "23 passed, 1 warning in 14.92s",
+        "58 passed, 1 warning in 3.58s",
+        "1 passed in 1.50s",
+        "1 passed, 1 warning in 3.22s",
+        "1 passed in 2.84s",
+        "2 passed in 2.83s",
+        "14 passed in 1.50s"
+      ]
+    },
+    {
+      "job_id": 113069672280,
+      "name": "m14d-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "08db215",
+        "08db2156283fd4e63d1827a8af12f474a6887fc0"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "61c9664d2e9f28c55feec40a6df5b21cafd5f5ab89f441be289a4804f865d7d9",
+      "log_bytes": 42720,
+      "pytest_counts": [
+        "18 passed, 34 subtests passed in 0.71s"
+      ]
+    },
+    {
+      "job_id": 113069672342,
+      "name": "m14h-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "08db215",
+        "08db2156283fd4e63d1827a8af12f474a6887fc0"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "035c2a0056be842b5350ade6a744a86f05cb9929fd5a4f462f7159b4383807f5",
+      "log_bytes": 136716,
+      "pytest_counts": [
+        "95 passed, 1 warning in 2.50s",
+        "277 passed in 85.21s (0:01:25)",
+        "1 passed in 3.65s",
+        "74 passed, 1 warning in 1.80s",
+        "  2 passed (12.9s)",
+        "  23 passed (16.5s)",
+        "15 passed in 0.20s",
+        "  1 passed (7.3s)",
+        "25 passed in 3.37s"
+      ]
+    },
+    {
+      "job_id": 113069672433,
+      "name": "m14g-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "08db215",
+        "08db2156283fd4e63d1827a8af12f474a6887fc0"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "599adb2e58f7fc9d8a506c5f7972dedfa5a3e6b6b9c60fb65f979426c38b86bd",
+      "log_bytes": 62804,
+      "pytest_counts": [
+        "15 passed, 1 warning in 0.86s",
+        "10 passed in 0.33s",
+        "3 passed in 0.30s",
+        "96 passed in 3.76s"
+      ]
+    },
+    {
+      "job_id": 113069672467,
+      "name": "amendment-evidence-contracts",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "7487d6f",
+        "7487d6f1a57a4860cd6439c88857b4cf7532106d"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "6d979dd96dff22d22b295bd43b381b6856090187535a01fb9c2d88338da0b8cd",
+      "log_bytes": 28286,
+      "pytest_counts": [
+        "============================== 87 passed in 1.14s =============================="
+      ]
+    },
+    {
+      "job_id": 113069672539,
+      "name": "m14e-exact-head",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "08db215",
+        "08db2156283fd4e63d1827a8af12f474a6887fc0"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "78aa3d4f2b6f1e19db311220a5f6a710d3f390e5afeb87aedd242e53455385df",
+      "log_bytes": 43566,
+      "pytest_counts": [
+        "22 passed, 55 subtests passed in 0.20s"
+      ]
+    },
+    {
+      "job_id": 113069673640,
+      "name": "foushee-full-record-benchmark",
+      "conclusion": "success",
+      "checkout_log_shas": [
+        "7487d6f",
+        "7487d6f1a57a4860cd6439c88857b4cf7532106d"
+      ],
+      "unittest_counts": [],
+      "log_sha256": "ee44f74e137c13862f2d9927e99b040e81edee03af8ed91434e5c924b89af18a",
+      "log_bytes": 1502095,
+      "pytest_counts": [
+        "15 passed in 0.31s",
+        "19 passed in 0.70s",
+        "27 passed in 1.63s",
+        "639 passed, 1 warning in 49.10s"
+      ]
+    }
+  ],
+  "scope": "Exact reported PR head and nine successful jobs; checkout provenance differs by job. No claim that default synthetic-merge or mixed repair jobs test only feature bytes.",
+  "checkpoint": 109,
+  "checkout_contexts": {
+    "feature_pinned_jobs": 5,
+    "synthetic_merge_jobs": 3,
+    "mixed_repair_jobs": 1
+  },
+  "synthetic_merge_sha": "7487d6f1a57a4860cd6439c88857b4cf7532106d",
+  "owner_focused_tests": "148 focused tests in 15.987 seconds; distinct from hosted candidate aggregate",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "859e37fbd2941a08874ab56b8f2edbe1b5f237fcb6a310cf0f898fd4845ee1a1"
+}

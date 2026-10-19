@@ -1,0 +1,97 @@
+{
+  "checkpoint": 222,
+  "base_head": "4c3aa8bd44b8d6c5ad97af46ff67adfd86fa7a9c",
+  "other59cores630reviews672rows100props_and_readable_findings_exact": true,
+  "all_Health_historical_providers_and_original221completion_evidence_preserved": true,
+  "DC_exact_identity_original_witnesses_claim_maps_and_Health_prefix_preserved": true,
+  "source_bank_manifest_private_pool_exact": true,
+  "original_three_notes_and221failure_timing_logs_frozen": true,
+  "both_reopened_actions_completion_credit_withdrawn_without_automatic_inclusion": true,
+  "active_counts": {
+    "reviewed": 632,
+    "pending": 44,
+    "cores": 60,
+    "behavioral_propositions": 102,
+    "episodes": 53,
+    "multi_action_episodes": 6,
+    "ordinary": 17,
+    "researched_holds": 27
+  },
+  "candidate_only": true,
+  "editorial_acceptance": false,
+  "CIfailed221_not_green": true,
+  "CIworkflow_untouched_and_isolated_maintenance_pending": true,
+  "benchmarkFAILunchanged": true,
+  "full_gate_completed": true,
+  "focused_tests": 378,
+  "included_candidate_tests": 201,
+  "semantic_checks": 7,
+  "IRvalidation": true,
+  "CLI_byte_exact_outputs": 7,
+  "validation_phases": [
+    {
+      "log": ".tmp/tests222.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-13T17:41:16.571487+00:00",
+      "completed_utc": "2026-10-13T17:46:13.528511+00:00",
+      "elapsed_seconds": 296.95830380002735,
+      "exit_code": 0,
+      "log_sha256": "c07f3c2af5fb666cd33131d81ab6ba7701e66b3c7b66780706f3c907c011f02a"
+    },
+    {
+      "log": ".tmp/semantic222.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-13T17:46:13.532387+00:00",
+      "completed_utc": "2026-10-13T17:46:15.458833+00:00",
+      "elapsed_seconds": 1.9264567000209354,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp/ir222.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-13T17:46:15.459856+00:00",
+      "completed_utc": "2026-10-13T17:46:15.532390+00:00",
+      "elapsed_seconds": 0.07253740000305697,
+      "exit_code": 0,
+      "log_sha256": "d6f7a9da40ac5f82c11861fe64bfa26aa568e7d74f20699aa6ec95952a558846"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-13T17:46:15.535900+00:00",
+      "completed_utc": "2026-10-13T17:46:52.286130+00:00",
+      "elapsed_seconds": 36.75039119995199,
+      "outputs": 7
+    }
+  ],
+  "independent222_correction_review_pending": true,
+  "elapsed_seconds": 2.3923553000204265,
+  "completed_utc": "2026-10-13T17:47:29.421324+00:00",
+  "receipt_sha256": "b0ff81ada6335ec07eab6202e36fe36b72a97c6d1952d774424a6d2bdb7478fe"
+}

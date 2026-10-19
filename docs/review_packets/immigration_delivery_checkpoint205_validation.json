@@ -1,0 +1,168 @@
+{
+  "checkpoint": 205,
+  "base_head": "255cd9a1f2a42f83336526e6784a3931c962be3e",
+  "scope": "Replace permissive whole-passage question prefix with exact source-bound adopted-substitute contract",
+  "correction_receipt_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/source_review_full_question_correction_checkpoint205.json",
+  "correction_receipt_sha256": "1d0bbc0f7bed9c54d110a794490a0ef8cb0f5f9b153204420ec37b6e0726520a",
+  "focused_tests_passed": 350,
+  "focused_native_runner_seconds": 118.731,
+  "initial_failed_suite": {
+    "tests_run": 350,
+    "passed": 349,
+    "failures": 1,
+    "native_runner_seconds": 112.797,
+    "log_path": ".tmp/tests205.log",
+    "log_sha256": "a7433e3a2b7477dbed1e3fe10d463890c81673cebae5cc9d6c3525d7f5570449",
+    "failure": "Current audit authoring digest stale after addition of question-binding metadata; source meaning/core unchanged",
+    "safe_correction": "Update current audit digest; preserve original digest here and all204 historical receipts"
+  },
+  "initial_two_regressions_native_seconds": 9.594,
+  "new_full_prepare_resealed_provider_negatives": 3,
+  "new_source_binding_negatives": 2,
+  "valid_case_and_spacing_normalization_passed": true,
+  "test_coverage_limit": "These five negatives and positive normalization are bounded contract coverage, not complete semantic proof.",
+  "semantic_checks_passed": 7,
+  "IR_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4
+  },
+  "exact_replays": 14,
+  "preservation": {
+    "checkpoint": 205,
+    "all51_core_records_and88_propositions_exact": true,
+    "all676_universe_rows_and619_membership_records_exact": true,
+    "all_member_projections_and_questions_exact": true,
+    "complete_Health_inputs_and7_outputs_exact": true,
+    "sources_manifest_pool_exact": true,
+    "generated_outputs_preserved_except_provenance_proof": 13,
+    "proof_changes_only_authoring_and_Immigration_helper_hash": true,
+    "authoring_only_adds142_source_bound_question_metadata": true,
+    "frozen_git_blobs_checked": 1051,
+    "shutdown_notes_checked": 2,
+    "legacy142_155_221_and_raw_XML_conflict_preserved": true
+  },
+  "final_current_audit_binding_exact": true,
+  "other_substantive_audit_records_exact": true,
+  "counts": {
+    "reviewed": 619,
+    "pending": 57,
+    "ordinary_unscreened": 29,
+    "researched_holds": 28,
+    "meanings": 51,
+    "propositions": 88,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "independent204_partial_review_path": "docs/review_packets/immigration_bounded_review_checkpoint204_partial_received205.json",
+  "independent204_partial_review_sha256": "8dfefa94cf0bb41eec9f417f2a98cdc8af7308e1faf7182f65d1f0bf03555e8d",
+  "independent_correction_review_pending": true,
+  "complete204_independent_review_pending": true,
+  "legacy221_independent_source_checks_private_path": ".tmp/roll221_independent_identity205.json",
+  "legacy221_independent_source_checks_sha256": "ff25b2256c7b61bffee295cc79983d7f1c4fbf9d195789e5e2fcabc5730ab5cc",
+  "legacy155_221_remain_held": true,
+  "new_head_CI_pending": true,
+  "validation_tier": "semantic",
+  "logs": [
+    {
+      "log": ".tmp\\tests205_recovered.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence",
+        "backend.tests.test_shared_domain_candidate"
+      ],
+      "started_utc": "2026-10-11T21:48:41.468349+00:00",
+      "completed_utc": "2026-10-11T21:50:40.409640+00:00",
+      "elapsed_seconds": 118.94130710000172,
+      "exit_code": 0,
+      "log_sha256": "41e9fb0513acb60860d3513fbbe320ed2df10876254c344ae74490867bd00b21"
+    },
+    {
+      "log": ".tmp\\semantic205_recovered.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-11T21:50:40.415446+00:00",
+      "completed_utc": "2026-10-11T21:50:42.326707+00:00",
+      "elapsed_seconds": 1.9112639999948442,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir205_recovered.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-11T21:50:42.327549+00:00",
+      "completed_utc": "2026-10-11T21:50:42.398197+00:00",
+      "elapsed_seconds": 0.07064879999961704,
+      "exit_code": 0,
+      "log_sha256": "d6f7a9da40ac5f82c11861fe64bfa26aa568e7d74f20699aa6ec95952a558846"
+    },
+    {
+      "phase": "immigration_byte_exact_output_replay",
+      "started_utc": "2026-10-11T21:50:42.402830+00:00",
+      "completed_utc": "2026-10-11T21:50:51.674026+00:00",
+      "elapsed_seconds": 9.271199799986789,
+      "outputs": 7
+    },
+    {
+      "phase": "health_byte_exact_output_replay",
+      "started_utc": "2026-10-11T21:50:51.674156+00:00",
+      "completed_utc": "2026-10-11T21:50:57.689328+00:00",
+      "elapsed_seconds": 6.015177599998424,
+      "outputs": 7
+    }
+  ],
+  "timing": {
+    "checkpoint": 205,
+    "started_utc": "2026-10-11T21:32:58.532793+00:00",
+    "initial_commentary_dispatch_unmeasured": true,
+    "base_head": "255cd9a1f2a42f83336526e6784a3931c962be3e",
+    "source_preselection_retail_branch_comparison_and_legacy_contract_inspection_included": true,
+    "private_snapshot_key_mismatch_recovery_included": true,
+    "new_comparable_routine_samples": 0,
+    "prior_comparable_mean_seconds": 781.087,
+    "prior_comparable_result": "FAIL",
+    "selection": "Correct confirmed checkpoint204 P2 exact-question guard; independently qualify roll221 legacy candidate if coherent",
+    "new_acquisitions": 0,
+    "snapshot_completed_utc": "2026-10-11T21:39:55.785947+00:00",
+    "question_correction_authored_utc": "2026-10-11T21:44:39.750257+00:00",
+    "question_correction_authoring_endpoint_seconds": 701.217464,
+    "initial350_suite_stale_audit_digest_failure_and_recovery_included": true,
+    "initial_focused_suite_native_seconds": 112.797,
+    "local_delivery_preparation_utc": "2026-10-11T21:51:43.245223+00:00",
+    "measured_local_delivery_preparation_seconds": 1124.71243,
+    "Git_CI_report_overhead_follows": true
+  },
+  "prior_benchmark": {
+    "result": "FAIL",
+    "mean_seconds": 781.087,
+    "ceiling_seconds": 600,
+    "target_seconds": 240
+  },
+  "new_comparable_routine_samples": 0,
+  "candidate_only": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_eligible": false,
+  "receipt_sha256": "1106c82e05bcb7ebb50eb92587709d3c2616f78fea098ef9d5105aad0821bfd8"
+}

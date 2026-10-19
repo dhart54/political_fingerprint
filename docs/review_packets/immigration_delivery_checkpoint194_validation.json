@@ -1,0 +1,300 @@
+{
+  "checkpoint": 194,
+  "base_head": "1dd93cbc3273b0c5a05caf289e425c6f052b93d1",
+  "screening_receipt_path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\student_aid_fraud_screening_checkpoint194.json",
+  "screening_receipt_sha256": "4ff1a4c51389320e4690dab9e8996595571435bc3aa2810e754411df3b17e227",
+  "candidate_only": true,
+  "attempted_actions": 2,
+  "completed_screenings": 1,
+  "held_actions": 1,
+  "counts": {
+    "reviewed": 608,
+    "pending": 68,
+    "ordinary_unscreened": 44,
+    "researched_holds": 24,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "focused_tests": 205,
+  "focused_test_runner_seconds": 19.038,
+  "semantic_checks": 7,
+  "accepted_reference_validation": {
+    "accepted": 12,
+    "accepted_held_out_references": 4,
+    "held_out": 4
+  },
+  "byte_exact_output_replays": 7,
+  "preservation_and_source_checks": {
+    "changed_universe_rows": [
+      "house:119:2:217",
+      "house:119:2:218"
+    ],
+    "preserved_prior_membership_records": 607,
+    "new_candidate_membership_records": 1,
+    "preserved_authoring": true,
+    "preserved_frozen_git_blobs": 124,
+    "authorized_locator_receipt_exceptions": [
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/financial_package_source_qualification_checkpoint191.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/roll200_stage_identity_correction_checkpoint193.json"
+    ],
+    "unchanged_semantic_products": 6,
+    "proof_only_source_capture_digest_changes": true,
+    "literal_claim_checks": 35,
+    "HTML_parent_replays": 18,
+    "PDF_parent_replays": 2,
+    "Clerk_parent_reconciliations": 2,
+    "new_literal_derivatives": 28,
+    "complete_floor_EH_format_comparisons": 2,
+    "own_initial_and_resumed_recorded_stages_checked": 2,
+    "prior_sources_registrations_private_aliases_preserved": true,
+    "existing_canonical217_218_refs_unchanged": true,
+    "active_locator_and_required_binding_consistent": true,
+    "prior_receipts_archived_frozen_Git_bytes_equal": true,
+    "untracked_notes_preserved": true,
+    "counts": {
+      "reviewed": 608,
+      "pending": 68,
+      "ordinary_unscreened": 44,
+      "researched_holds": 24,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "source_count": 2188,
+    "registrations": 1078,
+    "editorially_accepted": false,
+    "publication_authorized": false
+  },
+  "phase_logs": [
+    {
+      "log": ".tmp\\tests194.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "backend.tests.test_immigration_shared_candidate",
+        "backend.tests.test_editorial_semantic_ir",
+        "backend.tests.test_source_sequence"
+      ],
+      "started_utc": "2026-10-11T16:00:31.860217+00:00",
+      "completed_utc": "2026-10-11T16:00:51.097203+00:00",
+      "elapsed_seconds": 19.239615099999355,
+      "exit_code": 0,
+      "log_sha256": "0a0e896c9229f70e11244c2721eb2f873bb7bbb3b5cb1f9842e869f1ee79eb2b"
+    },
+    {
+      "log": ".tmp\\semantic194.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/run_editorial_pipeline.py",
+        "validate",
+        "--tier",
+        "semantic"
+      ],
+      "started_utc": "2026-10-11T16:00:51.102085+00:00",
+      "completed_utc": "2026-10-11T16:00:54.840446+00:00",
+      "elapsed_seconds": 3.7388745000062045,
+      "exit_code": 0,
+      "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+    },
+    {
+      "log": ".tmp\\ir194.log",
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_editorial_semantic_ir.py"
+      ],
+      "started_utc": "2026-10-11T16:00:54.843986+00:00",
+      "completed_utc": "2026-10-11T16:00:54.913566+00:00",
+      "elapsed_seconds": 0.06959190001362003,
+      "exit_code": 0,
+      "log_sha256": "751b66b86e78a8b46f29f1c53866a5e238ac5780f57e2851289952cd8a53b149"
+    },
+    {
+      "phase": "byte_exact_output_replay",
+      "started_utc": "2026-10-11T16:00:54.917235+00:00",
+      "completed_utc": "2026-10-11T16:01:00.345811+00:00",
+      "elapsed_seconds": 5.429322500014678,
+      "outputs": 7
+    }
+  ],
+  "source_count": 2188,
+  "capture_count": 1078,
+  "active_locator_correction": {
+    "position": 578406,
+    "active191_receipt_sha256": "f2d4d8a58ddac6fc6a59cbb33f7d961c7b0a78344d9d5c091650751afd1ff57b",
+    "correction193_receipt_sha256": "b78b41b1d5c375ffa76976d0def93da7ad48ad50e1b8a8a91c976ad989860386",
+    "literal_consistency_regression_passed": true,
+    "historical_witness_preserved": true,
+    "prior_receipts_frozen_Git_bytes_equal": true,
+    "independent_recheck_pending": true
+  },
+  "independent193_review": {
+    "received_path": "docs\\review_packets\\immigration_bounded_review_checkpoint193_received194.json",
+    "receipt_sha256": "663ba260e467d5f4a0288cd72364ebc674de7016421c2d5fdb1f1cd96e33fee0",
+    "original_P2_narrowly_closed": true,
+    "residual_P3_repaired_here": true,
+    "not_editorial_acceptance": true
+  },
+  "CI193": {
+    "path": "docs\\review_packets\\immigration_delivery_checkpoint193_ci.json",
+    "receipt_sha256": "44e0360e33ff212da820f88d0e1a92bcbe7ebe65083054d0f7ce708962849373",
+    "fresh_first_attempt_successes": 9,
+    "base_qualification_path": "docs\\review_packets\\immigration_delivery_checkpoint193_ci_base_qualification.json",
+    "base_qualification_sha256": "42d7badef0ef247d0f8aa838a8dfa0f5edc3a5688d1885bc7edcf01c4e3456d6",
+    "synthetic_base": "7a8c6ee11a899ea6912a4d37588917fcd0de0a24",
+    "later_main": "d916dd6d7154b6c8dde2cb273972aa3fd33dfeb6",
+    "current_main_integration_claim": false
+  },
+  "timing": {
+    "checkpoint": 194,
+    "base_head": "1dd93cbc3273b0c5a05caf289e425c6f052b93d1",
+    "continued_research_attempt_ids": [
+      "house:119:2:217",
+      "house:119:2:218"
+    ],
+    "original_research193_timer": ".tmp/checkpoint193_timing.json",
+    "original_start_utc": "2026-10-11T03:29:20.642312+00:00",
+    "original_pre_shutdown_elapsed_seconds": 472.993034,
+    "explicit_resume": {
+      "resumed_utc": "2026-10-11T14:59:37.929002+00:00",
+      "explicit_user_resume_utc": "2026-10-11T14:57:00Z",
+      "paused_since_utc": "2026-10-11T03:37:13.635346+00:00",
+      "base_head": "c75e3fec20396615e3bcc1786a5dcdc26cca0249",
+      "sole_writer_resumed": true,
+      "preserved_inventory_files": 48,
+      "new_benchmark": false,
+      "original_timers_unchanged": true,
+      "correction_scope": "Confirmed roll200 initial witness identity, same-action negative regression, bounded CI diagnosis/recovery; preserve held states and incomplete research"
+    },
+    "inherited_identity_correction_delivery": {
+      "checkpoint": 193,
+      "delivered_head": "1dd93cbc3273b0c5a05caf289e425c6f052b93d1",
+      "remote_head": "1dd93cbc3273b0c5a05caf289e425c6f052b93d1",
+      "observed_utc": "2026-10-11T15:14:28.221930+00:00",
+      "PR": {
+        "headRefOid": "1dd93cbc3273b0c5a05caf289e425c6f052b93d1",
+        "isDraft": true,
+        "state": "OPEN",
+        "url": "https://github.com/dhart54/political_fingerprint/pull/198"
+      },
+      "new_screening_completions": 0,
+      "independent_correction_review_pending": true,
+      "new_head_CI_pending": true
+    },
+    "continuation_snapshot_utc": "2026-10-11T15:16:19.318419+00:00",
+    "special_benchmark_round": false,
+    "one_time_inherited_correction_separate": true,
+    "overnight_pause_excluded_from_active_duration": true,
+    "no_original_elapsed_erased_or_overlap_summed": true,
+    "zero_new_completions_at_snapshot": true,
+    "source_and_authoring_completed_utc": "2026-10-11T15:56:18.013985+00:00",
+    "continuation_source_and_authoring_endpoint_seconds": 2398.695566,
+    "attempted_actions": 2,
+    "completed_screenings": 1,
+    "held_actions": 1,
+    "source_output_recovery_private_format_correction_parentCI_and_report_overhead_retained": true,
+    "local_validation_completed_utc": "2026-10-11T16:02:03.964462+00:00",
+    "continuation_elapsed_through_local_validation_seconds": 2744.646043,
+    "original_pre_shutdown_plus_continuation_endpoint_seconds": 3217.6390770000003,
+    "validation_phases": [
+      {
+        "log": ".tmp\\tests194.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "-m",
+          "unittest",
+          "backend.tests.test_immigration_shared_candidate",
+          "backend.tests.test_editorial_semantic_ir",
+          "backend.tests.test_source_sequence"
+        ],
+        "started_utc": "2026-10-11T16:00:31.860217+00:00",
+        "completed_utc": "2026-10-11T16:00:51.097203+00:00",
+        "elapsed_seconds": 19.239615099999355,
+        "exit_code": 0,
+        "log_sha256": "0a0e896c9229f70e11244c2721eb2f873bb7bbb3b5cb1f9842e869f1ee79eb2b"
+      },
+      {
+        "log": ".tmp\\semantic194.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/run_editorial_pipeline.py",
+          "validate",
+          "--tier",
+          "semantic"
+        ],
+        "started_utc": "2026-10-11T16:00:51.102085+00:00",
+        "completed_utc": "2026-10-11T16:00:54.840446+00:00",
+        "elapsed_seconds": 3.7388745000062045,
+        "exit_code": 0,
+        "log_sha256": "cf7c3a61ceac508447bfb743372d04ecaea5989392983d7b77de36a5c8985096"
+      },
+      {
+        "log": ".tmp\\ir194.log",
+        "command": [
+          "python",
+          "-X",
+          "utf8",
+          "-B",
+          "scripts/validate_editorial_semantic_ir.py"
+        ],
+        "started_utc": "2026-10-11T16:00:54.843986+00:00",
+        "completed_utc": "2026-10-11T16:00:54.913566+00:00",
+        "elapsed_seconds": 0.06959190001362003,
+        "exit_code": 0,
+        "log_sha256": "751b66b86e78a8b46f29f1c53866a5e238ac5780f57e2851289952cd8a53b149"
+      },
+      {
+        "phase": "byte_exact_output_replay",
+        "started_utc": "2026-10-11T16:00:54.917235+00:00",
+        "completed_utc": "2026-10-11T16:01:00.345811+00:00",
+        "elapsed_seconds": 5.429322500014678,
+        "outputs": 7
+      }
+    ],
+    "one_time_193_inherited_repair_not_part_of_194_continuation": true,
+    "active_P3_locator_correction_and_all_failed_private_helpers_output_recovery_reports_and_priorCI_qualification_included": true,
+    "overnight_pause_excluded": true,
+    "not_a_new_comparable_five_cycle_benchmark": true,
+    "no_new_average": true
+  },
+  "prior_comparable_performance": {
+    "status": "FAIL",
+    "seconds": 781.087,
+    "target_seconds": 240,
+    "failure_threshold_seconds": 600
+  },
+  "new_benchmark_average": false,
+  "held218_not_completion": true,
+  "new_head_CI_pending": true,
+  "independent194_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "production_written": false,
+  "merge_or_deploy": false,
+  "receipt_sha256": "8dc1ba50d6aecaccb4737789a9ea1d675e5c8f976ab21da5c14232c32e840b51",
+  "later_precision_correction": {
+    "path": "docs\\editorial\\shared_candidates\\house_119_immigration_20260916\\fraud_package_precision_correction_checkpoint195.json",
+    "receipt_sha256": "08d2e73b6843169f94c20af53b51ec4565c20e4dc3c7743a53244864ebd21639",
+    "checkpoint": 195,
+    "original_validation_preserved_in_archive": true,
+    "original_validation_not_reperformed": true
+  }
+}
