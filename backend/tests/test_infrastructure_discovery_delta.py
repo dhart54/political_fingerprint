@@ -623,4 +623,30 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(u);bad['disposition']='interpreted_substantive_directional'
         with self.assertRaisesRegex(ValueError,'Title17 unresolved fee/currentlaw case was promoted'):validate_title17_dated_baseline_link(m,bad,s,r)
 
+    def post_act_case(self):
+        p=folder(111);a=next(x for x in read(p/'authoring.json')['actions'] if x['action_id']=='house:119:1:241');s={x['source_id']:x for x in read(p/'sources.json')['sources']};r=read(p/'post_act_taxonomy_recommendation.json');v=read(p/'post_act_retained_baseline_version_receipt.json')['exact_version_binding'];return a,s,r,v
+
+    def test_post_act_candidate_keeps_complete_same_day_amended_House_version(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_post_act_boundaries
+        a,s,r,v=self.post_act_case();validate_post_act_boundaries(a,s,r,v);bad=copy.deepcopy(s);bad['govinfo:hr3425eh']['text']=bad['govinfo:hr3425eh']['text'].replace('September 8, 2025','September 9, 2025')
+        with self.assertRaisesRegex(ValueError,'POSTAct exact amended House version/date binding differs'):validate_post_act_boundaries(a,bad,r,v)
+
+    def test_post_act_cannot_force_replacement_or_collapse_distinct_report_clocks(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_post_act_boundaries
+        a,s,r,v=self.post_act_case()
+        bad=copy.deepcopy(a);bad['compact_description']=bad['compact_description'].replace('choice between replacement and corrective actions','replacement-or-repair determination')
+        with self.assertRaisesRegex(ValueError,'POSTAct compact lost nontechnical corrective-action alternative'):validate_post_act_boundaries(bad,s,r,v)
+        for old,new in [('report is due UPON COMPLETION','report is due at exactly one year'),('annually thereafter FOR THREE YEARS','annually thereafter forever'),('OR to implement technical, operational or administrative corrective actions','AND install a private replacement'),('does not mandate replacement rather than repair','mandates replacement rather than repair')]:
+            with self.subTest(change=new):
+                bad=copy.deepcopy(a);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'POSTAct timing, alternative, scope or historical qualifications lost'):validate_post_act_boundaries(bad,s,r,v)
+
+    def test_post_act_cannot_convert_contractors_or_revive_historic_police_authority(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_post_act_boundaries
+        a,s,r,v=self.post_act_case()
+        for old,new in [('does not designate DHS contractor employees','designates DHS contractor employees'),('HISTORICAL, not revived operative authority','current revived operative authority'),('not a command that every Facility Security Committee accept every recommendation','a command that every Facility Security Committee accept every recommendation')]:
+            with self.subTest(change=new):
+                bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'POSTAct timing, alternative, scope or historical qualifications lost'):validate_post_act_boundaries(bad,s,r,v)
+
 if __name__=='__main__':unittest.main()

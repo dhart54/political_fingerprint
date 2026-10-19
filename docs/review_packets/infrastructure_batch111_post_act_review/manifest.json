@@ -1,0 +1,73 @@
+{
+  "kind": "minimal_exact_POSTAct_candidate_review_transport",
+  "action_id": "house:119:1:241",
+  "scope": "Two full current readable finding objects and exactly three retained source objects, preserving original parent pointers/digests. No cumulative corpus/readable copy, new acquisition or independent acceptance.",
+  "review_state": "candidate_pending_external_semantic_review",
+  "production_eligible": false,
+  "entries": [
+    {
+      "kind": "readable_finding",
+      "identity": "F000477:house:119:1:241",
+      "file": "F000477_roll241.json",
+      "json_pointer": "/members/0/findings/14",
+      "object_sha256": "f5ee8acd9641442d9a5e04a8a7d44f7007886551a862ef6875cb1c5bdf0600ad",
+      "file_lf_sha256": "cb91fb54a2593892a3e418c806e3ac22ca1ca736400c5a36e7633eb5ee2b437f",
+      "bytes": 41129,
+      "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/generated/readable_candidates.json",
+      "parent_lf_sha256": "f88a7b0051adcc0c98476f37b81b5e09318d927435359768b2b6de4036263e96",
+      "parent_git_blob": "6d65121812fa42a2e0b3cb30fc07ca5e5665a8b4"
+    },
+    {
+      "kind": "readable_finding",
+      "identity": "M001184:house:119:1:241",
+      "file": "M001184_roll241.json",
+      "json_pointer": "/members/1/findings/11",
+      "object_sha256": "a5fb316d70733321d211f7591906f54f0ebd95ea57cf3978b32a305305b6000d",
+      "file_lf_sha256": "e8ef65c0b558a0526c493a88f0f2904f231f016497f641ed38e058a6be1ac3ed",
+      "bytes": 41125,
+      "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/generated/readable_candidates.json",
+      "parent_lf_sha256": "f88a7b0051adcc0c98476f37b81b5e09318d927435359768b2b6de4036263e96",
+      "parent_git_blob": "6d65121812fa42a2e0b3cb30fc07ca5e5665a8b4"
+    },
+    {
+      "kind": "source_object",
+      "identity": "govinfo:hr3425eh",
+      "file": "passed_House_EH.json",
+      "json_pointer": "/sources/723",
+      "object_sha256": "07995932ae86e691965f39b24f64ecdfe9520ced84f574687270e6d10e5f5353",
+      "file_lf_sha256": "f4514099126f4a20aeef30581fc68f94cd0798f3f317c1705f507a73b4bb076e",
+      "bytes": 5647,
+      "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/sources.json",
+      "parent_lf_sha256": "3381fd5c83bb5e3e481e16e99eaefd32b5a083b08b066a42bb3990840a3316ef",
+      "parent_git_blob": "96fa0077a057287a7b0bb69d18d97fd965d0dedc"
+    },
+    {
+      "kind": "source_object",
+      "identity": "govinfo:40usc1315-2024",
+      "file": "dated_1315_and_notes.json",
+      "json_pointer": "/sources/724",
+      "object_sha256": "312d5d7dec50515c970d607227f084d1883ab72e5f981526efc824307bf75903",
+      "file_lf_sha256": "ec2c369abe1774fcf777d64084784fdeb7736f8363126158883db55763a3415c",
+      "bytes": 20466,
+      "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/sources.json",
+      "parent_lf_sha256": "3381fd5c83bb5e3e481e16e99eaefd32b5a083b08b066a42bb3990840a3316ef",
+      "parent_git_blob": "96fa0077a057287a7b0bb69d18d97fd965d0dedc"
+    },
+    {
+      "kind": "source_object",
+      "identity": "clerk:119:1:241",
+      "file": "clerk_exact_question.json",
+      "json_pointer": "/sources/722",
+      "object_sha256": "fb2794a9b6b0f99bdaa251a228e9bf1fd23850e70c425c628e9d7a602e0bdbeb",
+      "file_lf_sha256": "3c43e0453db4cbed191af58eb8203bc6d0fb9288fe03839d23d846d5599ee73f",
+      "bytes": 1502,
+      "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/sources.json",
+      "parent_lf_sha256": "3381fd5c83bb5e3e481e16e99eaefd32b5a083b08b066a42bb3990840a3316ef",
+      "parent_git_blob": "96fa0077a057287a7b0bb69d18d97fd965d0dedc"
+    }
+  ],
+  "object_files": 5,
+  "max_file_bytes": 41129,
+  "total_object_bytes": 109869,
+  "source_limits": "Retained official finalHouseEH, Clerk question/date and dated1315withhistorical/statutorynotes; no fresh raw/glyph retrieval, actual regulations/currentlaw/individualcontract or operational-result certificate."
+}

@@ -1,0 +1,53 @@
+{
+  "kind": "coordinator_reported_bounded_DRBC_and_attribution_guard_review",
+  "recorded_utc": "2026-10-19T21:37:58.638896+00:00",
+  "reviewed_candidate_head": "50140211a739bf0db2553bfcf8de7517078a2a20",
+  "reviewed_guard_head": "cd077940c0e5943de8a237873702c8d69cff200d",
+  "outcome": "No material defect reported within bounded retained-source review",
+  "authentication": {
+    "retained_sources": 7,
+    "parts": 15,
+    "historical_records": 2,
+    "bound_claims": "authenticated",
+    "core_hashes": 69,
+    "member_bindings": 138,
+    "prior_meanings": 68,
+    "prior_observations": 136,
+    "nondirectional_not_voting": 8
+  },
+  "historical_accounting": {
+    "meanings": 69,
+    "pending": 263,
+    "holds": 6
+  },
+  "interpretation_boundaries": [
+    "228THIS ACTfunds only",
+    "227stillpending missing unchanged regulatory baselines",
+    "Correcting parent-relay addendum REQUIRED; historypreserved"
+  ],
+  "hosted_CI": {
+    "candidate_head": {
+      "head": "50140211a739bf0db2553bfcf8de7517078a2a20",
+      "jobs_succeeded": 10,
+      "candidate_tests": 294
+    },
+    "guard_head": {
+      "head": "cd077940c0e5943de8a237873702c8d69cff200d",
+      "jobs_succeeded": 10,
+      "candidate_tests": 295
+    },
+    "guard_integration_tests": 33,
+    "guard_integration_checkout": "212e1edc3999e86a1939d1fd984d191d9a9c90d1",
+    "attribution": "Coordinator report, not independently refetched by writer; no runIDs supplied or guessed"
+  },
+  "limits": [
+    "Cumulative parent placement UNCERTIFIED",
+    "Current consolidated law UNCERTIFIED",
+    "Whole appropriations packages UNCERTIFIED",
+    "Actual funding effects UNCERTIFIED",
+    "Batch1106733672f and later heads OUTSIDE audit; no clearance transfer"
+  ],
+  "accepted_membership": false,
+  "publication_authorized": false,
+  "production_writes": false
+}

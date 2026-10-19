@@ -1,0 +1,59 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T21:28:53.161710+00:00",
+    "qualification": "Whole POSTActcandidate specification start; preceding complete5260characterEH/19769character1315includingnotes and exactClerk/version comparison read untimed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T21:36:51.991954+00:00",
+    "end_utc": "2026-10-19T21:41:16.430786+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 111 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch111_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 3.391
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 257.804
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 3.244
+      }
+    ]
+  },
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 264.439,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "elapsed_window_before_final_validation_seconds": 478.83,
+  "elapsed_window_qualification": "Wall-clock window includes initial full validation, compact precision review and tool overhead; not continuously sampled active authoring/source-reading time.",
+  "initial_preprecision_validation_processes": {
+    "start_utc": "2026-10-19T21:29:43.843430+00:00",
+    "end_utc": "2026-10-19T21:34:07.088226+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 111 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch111_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 3.276
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 253.604
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 6.365
+      }
+    ]
+  },
+  "initial_preprecision_formal_process_seconds": 263.245,
+  "all_formal_validation_process_seconds": 527.684,
+  "validation_sequence": "Initial151focused/7semantic passed; compact clarified and its guard/negative assertion added; final151focused/7semantic passed on final bytes. Both attempts retained."
+}
