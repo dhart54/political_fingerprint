@@ -1,6 +1,7 @@
 # Bounded Health choice: admission, previews and dormant publication
 
-Status: discovery and implementation, 19 October 2026.
+Status: implemented; draft PR239 under exact-head CI and independent review,
+19 October 2026.
 
 ## Intent and result
 
@@ -81,7 +82,7 @@ needed for this work.
 - [x] Ephemeral DB/security/idempotency/fault/rollback validation.
 - [x] Legacy/public defaults and automatic deployment isolation verified.
 - [x] Final subject/preview/activation packet and local validation reconciliation.
-- [ ] Scoped commits/push/draft PR and exact-head CI/review evidence.
+- [x] Scoped commits/push/draft PR; exact-head CI and independent review dispatched.
 
 Expected footprint: roughly 25-40 directly related files across backend contracts,
 presentation/storage, staged migration, focused tests, preview UI/fixtures and
@@ -169,5 +170,29 @@ The small footprint expansion beyond the initial estimate comes from separate
 member accounting/receipt/preparation objects, four actual captures, and an
 explicit schema rollback companion. It remains one action and two members.
 No adjacent Infrastructure, Immigration, capacity, finder or persistence work
-was absorbed. Independent review and hosted exact-head status remain pending
-until the draft PR and review evidence are available.
+was absorbed. Final exact-head check/review results are retained on draft PR239.
+
+## Delivery and hosted correction
+
+Draft PR: https://github.com/dhart54/political_fingerprint/pull/239
+Initial head: `c98ed06df8844ca22fa3e94638596299f9ef5523`.
+Local release subset: 144 passed. The dedicated Health hosted workflow checks the
+exact event head and runs development/production browser gates on PostgreSQL 16;
+it passed at the initial head. All final check/review links and the authoritative
+latest head are retained on the PR. A directly authorized read-only independent
+reviewer is examining the implementation; acceptance and merge remain excluded.
+
+Hosted M14G found an old milestone test that blanket-froze
+`ReviewedAnalysisSection.js`. The successor correction permits only the exact
+new bounded import/early return, then requires all remaining legacy renderer
+text to match its historical Git baseline. All other historical protected paths
+stay frozen. Explicit UTF-8 avoids Windows Git decoding differences. All 21 M14G
+integration tests pass locally. Separate historical byte-exact acceptance tests
+encounter the existing Windows CRLF checkout mismatch; their Linux hosted lane
+provides canonical-byte validation. No historical artifact was rewritten.
+
+The independent reviewer reproduced all 129 non-PostgreSQL tests read-only at
+the initial exact head, reviewed the test correction and all four previews, and
+checked ephemeral RLS/invoker/search-path properties without database mutations.
+Final hosted and independent-review outcomes belong to the PR's latest head;
+no static plan statement substitutes for those checks.
