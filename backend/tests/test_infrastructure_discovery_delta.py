@@ -465,4 +465,16 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         for old,new in [('does not itself preempt or repeal a State law','immediately preempts all State laws'),('subjects for study, not established conclusions','established findings of State-caused harm')]:
             bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
             with self.assertRaisesRegex(ValueError,'refining study became actual preemption or factual finding'):validate_refining_study_boundaries(bad,s['congressional-record:2026-07-21-ndaa-remaining-offerings'],s['clerk:119:2:261'])
+    def test_investor_clearance_pilot_keeps_discretion_need_to_know_and_security_alternative(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_investor_clearance_pilot_boundaries
+        p=folder(101);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:274');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('participation approval and investor sponsorship are discretionary','approval is guaranteed'),('LAWFUL NEED-TO-KNOW','unrestricted classified access'),('FACILITY CLEARANCE OR Secretary-approved ALTERNATIVE SECURITY ARRANGEMENT','facility clearance AND an additional arrangement')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'investor pilot mandatory/discretionary security alternatives or eligibility lost'):validate_investor_clearance_pilot_boundaries(bad,s['congressional-record:2026-07-22-ndaa-remaining-offerings'],s['clerk:119:2:274'])
+    def test_failed_investor_pilot_does_not_prefer_awards_or_prove_eligible_profit(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_investor_clearance_pilot_boundaries
+        p=folder(101);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:274');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('NO PREFERENCE in Federal contracts','automatic preference in Federal contracts'),('may not be used for personal financial gain, securities trading, market manipulation','may be used for unrestricted personal profits'),('five years AFTER ENACTMENT unless reauthorized','permanent program with no sunset'),('Rejection did not add','Passage enacted')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'investor pilot gain award clocks baseline or failed outcome boundary lost'):validate_investor_clearance_pilot_boundaries(bad,s['congressional-record:2026-07-22-ndaa-remaining-offerings'],s['clerk:119:2:274'])
 if __name__=='__main__':unittest.main()
