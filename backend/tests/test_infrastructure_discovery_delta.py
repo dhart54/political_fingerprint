@@ -506,4 +506,16 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(field=field,change=new):
                 bad=copy.deepcopy(a);self.assertIn(old,bad[field]);bad[field]=bad[field].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'investor initial report became fixed start or lost annual recurrence'):validate_investor_report_deadline_precision(bad,m,u,s,rec,r)
+    def test_hr1326_partial_arpae_context_cannot_complete_other_programs_or_promote(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr1326_partial_baseline_link
+        p=folder(106);r=read(p/'hr1326_partial_baseline_link_receipt.json');m=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_hr1326_partial_baseline_link(m,u,s,r)
+        bad=copy.deepcopy(m);bad['rationale']=bad['rationale'].replace('qualified by to the maximum extent practicable','unconditional')
+        with self.assertRaisesRegex(ValueError,'1326partial program scope or qualifications lost'):validate_hr1326_partial_baseline_link(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['claim_source_map'][-1]['locator']='All baseline/current-law requirements resolved'
+        with self.assertRaisesRegex(ValueError,'1326partial baseline became whole or current-law proof'):validate_hr1326_partial_baseline_link(bad,u,s,r)
+        bad=copy.deepcopy(u);bad['disposition']='interpreted_substantive_directional'
+        with self.assertRaisesRegex(ValueError,'1326remaining baseline gap was promoted'):validate_hr1326_partial_baseline_link(m,bad,s,r)
+        bad=copy.deepcopy(s);bad['text']+=' Unretained later law.'
+        with self.assertRaisesRegex(ValueError,'1326retained baseline object changed'):validate_hr1326_partial_baseline_link(m,u,bad,r)
+
 if __name__=='__main__':unittest.main()
