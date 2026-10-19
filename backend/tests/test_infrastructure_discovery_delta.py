@@ -256,4 +256,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,error):validate_vehicle_standard_funding_boundaries(bad,s['immigration:session2-roll43-initial174'],s['govinfo:49usc30111-24220-complete174'],s['govinfo:hr7148ih-reference-scope'],s['clerk:119:2:43'])
+    def test_critical_energy_resource_definition_and_existing_office_scope(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_critical_energy_resource_boundaries
+        action=next(a for a in read(folder(75)/'authoring.json')['actions'] if a['action_id']=='house:119:2:64');s={s['source_id']:s for s in read(folder(75)/'sources.json')['sources']}
+        for old,new in [('requires BOTH essentiality to the US energy sector/energy systems AND a supply chain vulnerable to disruption','requires either energy essentiality OR a vulnerable supply chain'),('adds functions to existing Assistant Secretaries, not a new office','creates a new critical-minerals office')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'critical-energy-resource definition became fixed list or new office'):validate_critical_energy_resource_boundaries(bad,s['govinfo:hr3617eh'],s['govinfo:42usc7112-operative149'],s['govinfo:42usc7133-operative149'])
+    def test_critical_energy_resource_duties_and_report_are_distinct(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_critical_energy_resource_boundaries
+        action=next(a for a in read(folder(75)/'authoring.json')['actions'] if a['action_id']=='house:119:2:64');s={s['source_id']:s for s in read(folder(75)/'sources.json')['sources']}
+        for old,new in [('operative duties, not only an optional study','only an optional study'),('not an annual reporting requirement or a universal two-year completion deadline','an annual report and universal two-year completion deadline'),('subjects for assessment, not findings by this candidate','proved findings of foreign misconduct')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'critical-energy-resource duties/report/assessment or candidate limits lost'):validate_critical_energy_resource_boundaries(bad,s['govinfo:hr3617eh'],s['govinfo:42usc7112-operative149'],s['govinfo:42usc7133-operative149'])
 if __name__=='__main__':unittest.main()
