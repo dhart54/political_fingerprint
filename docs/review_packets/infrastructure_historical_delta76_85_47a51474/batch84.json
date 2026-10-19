@@ -1,0 +1,304 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 84,
+  "exact_committed_head": "e7bf0db6f00dfd7e50765ca4c5c53b5a39264764",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "e7bf0db6f00dfd7e50765ca4c5c53b5a39264764",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch84_20260916/membership_review.json",
+      "git_blob": "c7bd70e2c1829cf4ee5ddb9022ed5afacd668420",
+      "git_bytes_sha256": "2cf26b7d2033cfa7ad978b052d516606d903efd9092fe651c18b4596c74f0e57"
+    },
+    "sources": {
+      "head": "e7bf0db6f00dfd7e50765ca4c5c53b5a39264764",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch84_20260916/sources.json",
+      "git_blob": "69b066090a288d3d0ad9f3999b24be4effc1817e",
+      "git_bytes_sha256": "5e9e97368ffd32a9cd187b96224d69fb275e7089821b2197f751d34eb543ee57"
+    },
+    "screening": {
+      "head": "e7bf0db6f00dfd7e50765ca4c5c53b5a39264764",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch84_20260916/screening_receipt.json",
+      "git_blob": "f6da516804c4231e46f3dbff84513f4d0d418474",
+      "git_bytes_sha256": "a1db2edb3d0dc62ff3d744ff70e84ed03845746b1ce17d536d8dace22986d621"
+    },
+    "screening_units": {
+      "head": "e7bf0db6f00dfd7e50765ca4c5c53b5a39264764",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch84_20260916/screening_units_receipt.json",
+      "git_blob": "7199aead8197fd635b31dc16f06e42a2c7ed89f4",
+      "git_bytes_sha256": "dbe3e42047d33475aba109f967c7266ede69c864cea8fbfeb3b4795697490cb4"
+    }
+  },
+  "original_membership_review_sha256": "5196137c97f3faae0f73bb868c0708a041afe454561dde3ead5624edcdd89a51",
+  "new_screened_ids": [
+    "house:119:2:111",
+    "house:119:2:112",
+    "house:119:2:113",
+    "house:119:2:114",
+    "house:119:2:115"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "c31d27a150d10ca98dba2370c4f491a762766edb1ab512a9f31d3d85b6c71bce",
+      "record": {
+        "action_id": "house:119:2:111",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact retained Clerk question is ordering the previous question on H.Res.1174. This is a non-counting procedural action, separate from agreement to a rule or passage of its underlying substantive bill. No motion body, component policy support/opposition, enacted authority or physical/technical outcome is inferred. Raw measure labels and member observations remain unchanged.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:111",
+            "url": "https://clerk.house.gov/evs/2026/roll111.xml",
+            "raw_sha256": "1c04a717fbc4986b2f73de21f3fd2831b622adb53e2e9ba741bf327f5e7535c3",
+            "governed_bytes_sha256": "3a391b444772b55acb6d7d1b5855cfa0c4f300fed9e3b56d95c219c9600d2104"
+          },
+          {
+            "source_id": "clerk:119:2:111:continuation-recapture",
+            "url": "https://clerk.house.gov/evs/2026/roll111.xml",
+            "raw_sha256": "82f92582c223f8f0768a9f48c6811a0aab8a7a8099cf20d6d32bf7cfee317640",
+            "governed_bytes_sha256": "c06493a33e4b7bff44bcf070ae6cefe6080505c4b55d0c5ac05b6948388f3698"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a6da0ccbdb0d89a310cf252fda5aa2774fbc5f3cef218a7eb355417514232109",
+      "record": {
+        "action_id": "house:119:2:112",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete1174EH waives points of order, orders the previous question, provides debate and recommittal for6387/6398/6409, and provides debate/consideration of1156resolution and preamble. It contains no self-executing substantive substitute or amendment adoption. This exact House rule is therefore non-counting procedural context; the listed clean-air bills and tax-policy expression remain separate questions. Raw H RES1174identity is preserved and mechanically bound to the complete1174EH/Clerk date and question, including the existing continuation-recapture source. No enactment, emissions, monitoring, tax or infrastructure effect is attributed to the rule vote.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:112",
+            "url": "https://clerk.house.gov/evs/2026/roll112.xml",
+            "raw_sha256": "21f0b6c279628fd22963d36abae1c3fccb26097282396806cb8240b10276e2a8",
+            "governed_bytes_sha256": "6923294d602a5a44ec44796b459c8baa4c52233e9d0a639293fb7e7b4967aebd"
+          },
+          {
+            "source_id": "clerk:119:2:112:continuation-recapture",
+            "url": "https://clerk.house.gov/evs/2026/roll112.xml",
+            "raw_sha256": "c75375f4501cdc3529f85d17bb5e01a98904e28a956c878499c70ad13d52fd02",
+            "governed_bytes_sha256": "44e199b61d97e7b5a127d235c1a8680482478f9cbe2f1381f26f7ac8ae3b8273"
+          },
+          {
+            "source_id": "govinfo:hres1174eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1174eh/html/BILLS-119hres1174eh.htm",
+            "raw_sha256": "c55c3cccb1946e5768f53f5fd7f679a9ad7a3bb879756fd40cd9ece73c8ea60a",
+            "governed_bytes_sha256": "1b253a8962cd6a79a7d74d4f397dc07828d2be28dee89d8c750ff520faa2d145"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1174eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1174 Engrossed in House (EH)] <DOC> H. Res. 1174 In the House of Representatives, U. S., April 15, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House any bill specified in section 2 of this resolution. All points of order against consideration of each such bill are waived. Each such bill shall be considered as read. All points of order against provisions in each such bill are waived. The previous question shall be considered as ordered on each such bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 2. The bills referred to in the first section of this resolution are as follows: (a) The bill (H.R. 6387) to amend the Clean Air Act to require revisions to regulations governing the review and handling of air quality monitoring data influenced by exceptional events or actions to mitigate wildfire risk. (b) The bill (H.R. 6398) to amend the Clean Air Act relating to review by the Environmental Protection Agency of proposed legislation. (c) The bill (H.R. 6409) to amend the Clean Air Act to clarify standards for emissions emanating from outside of the United States, and for other purposes. Sec. 3. Upon adoption of this resolution it shall be in order without intervention of any point of order to consider in the House the resolution (H. Res. 1156) expressing support for tax policies that support working families. The resolution shall be considered as read. The previous question shall be considered as ordered on the resolution and preamble to adoption without intervening motion or demand for division of the question except one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Ways and Means or their respective designees. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "89a3d449c95b389dbc2983b1dc599758c4b5a23e9d00cb88c87fbd758a3db4b3",
+      "record": {
+        "action_id": "house:119:2:113",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact retained Clerk question is motion to discharge H.Res.965 from committee. This is a non-counting procedural action, separate from agreement to a rule or passage of its underlying substantive bill. No motion body, component policy support/opposition, enacted authority or physical/technical outcome is inferred. Raw measure labels and member observations remain unchanged.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:113",
+            "url": "https://clerk.house.gov/evs/2026/roll113.xml",
+            "raw_sha256": "704f27214e1bb18e9ef421ecedf0b6be46a7048f321860a86e5d218f8450bd3b",
+            "governed_bytes_sha256": "39c035255ccbcc4d5283887cbf4680bde6f2ea8cda5d70eec1fc6634e96f9818"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "85782ec9ecc0b6eaea39f5941230be69ace5d95300f9befe4a6a9cac1b527f65",
+      "record": {
+        "action_id": "house:119:2:114",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete April16floor callup prints the operative H.Con.Res.40text, matching the retained introduced operative clause. It directs withdrawal from hostilities against Iran with an imminent-attack defense exception for the United States or an ally/partner conditioned on full section5(b)compliance, unless explicitly authorized by declaration of war or specific IranAUMF. This exact substantive war-powers proposal is a proposed Infrastructure exclusion: it changes hostilities/authorization directions rather than establishing a physical-service, scientific, technical, data or infrastructure program. The recorded agreement failed; no actual withdrawal, current force authority, satisfaction of exceptions, compliance or motive is inferred. This is not a title-only exclusion or a procedural label, and the contemporaneous floor text rather than unverified later continuity binds the choice.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:114",
+            "url": "https://clerk.house.gov/evs/2026/roll114.xml",
+            "raw_sha256": "c078629f58e26d5492966f15aa936e7481ed3949eab815b696c36f77e27ff90b",
+            "governed_bytes_sha256": "15a9ed15df7a3059ae2c54c83690129cd02790aec7b182b7ffcb0e5fc42d8190"
+          },
+          {
+            "source_id": "congressional-record:2026-04-16-hconres40",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-16/html/CREC-2026-04-16-pt1-PgH2929-2.htm",
+            "raw_sha256": "0d2d3dbdd64985750d9eef932d7684bdad7426e97327f123e1257a1842855c43",
+            "governed_bytes_sha256": "cebd33ac3456e56fd786d856964e3002335894b69ce8b39967637303ddf4839a"
+          },
+          {
+            "source_id": "govinfo:hconres40ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres40ih/html/BILLS-119hconres40ih.htm",
+            "raw_sha256": "cb2c7e6d4df169e3b947c13b0df964cfbdea62a063f89e203d80649f34f8ecf9",
+            "governed_bytes_sha256": "80c1d2032224050d4f16629de4e2292a176ede08e5afa15e85362dd844ce3ac7"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-04-16-hconres40",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Mr. MAST. Mr. Speaker, pursuant to the order of the House of April 15, 2026, I call up the concurrent resolution (H. Con. Res. 40) directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran, and ask for its immediate consideration in the House. The Clerk read the title of the concurrent resolution. The SPEAKER pro tempore. Pursuant to the order of the House of April 15, 2026, the concurrent resolution is considered as read. The text of the concurrent resolution is as follows: H. Con. Res. 40 Resolved by the House of Representatives (the Senate concurring), That, pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress directs the President to remove United States Armed Forces from hostilities against the Islamic Republic of Iran, other than those elements of the Armed Forces that may be necessary to defend the United States or an ally or partner of the United States from imminent attack provided that the President complies fully with the requirements of section 5(b) the War Powers Resolution (50 U.S.C. 1544(b)) with respect to any such use of the Armed Forces, unless explicitly authorized by a declaration of war or a specific congressional authorization for use of military force against Iran. "
+          },
+          {
+            "source_id": "govinfo:hconres40ih",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 40 Introduced in House (IH)] <DOC> 119th CONGRESS 1st Session H. CON. RES. 40 Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES June 23, 2025 Mr. Meeks (for himself, Mr. Smith of Washington, and Mr. Himes) submitted the following concurrent resolution; which was referred to the Committee on Foreign Affairs _______________________________________________________________________ CONCURRENT RESOLUTION Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran. Resolved by the House of Representatives (the Senate concurring), That, pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress directs the President to remove United States Armed Forces from hostilities against the Islamic Republic of Iran, other than those elements of the Armed Forces that may be necessary to defend the United States or an ally or partner of the United States from imminent attack provided that the President complies fully with the requirements of section 5(b) the War Powers Resolution (50 U.S.C. 1544(b)) with respect to any such use of the Armed Forces, unless explicitly authorized by a declaration of war or a specific congressional authorization for use of military force against Iran. <all>"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "aba9ca4998ebe9369ff3afd036ca28fe66509e54189740ff714e7cec2e260468",
+      "record": {
+        "action_id": "house:119:2:115",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact retained Clerk question is failed motion to recommit H.R.6409. This is a non-counting procedural action, separate from agreement to a rule or passage of its underlying substantive bill. No motion body, component policy support/opposition, enacted authority or physical/technical outcome is inferred. Raw measure labels and member observations remain unchanged.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:115",
+            "url": "https://clerk.house.gov/evs/2026/roll115.xml",
+            "raw_sha256": "a27098d410b16e60bdbe0bc84dd2753f0e9bf927a35385cd6a75d1af9c8ec750",
+            "governed_bytes_sha256": "7e66835909feb1a5cff0ebfd6b66f1987fbdc296a577e2840888b7d70f3b97d5"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:111",
+      "original_source_object_sha256": "967a5ef46ea5dbef651f64175899a5bb55f0fa6cf2ce907c41cbfacf2a40d209"
+    },
+    {
+      "source_id": "clerk:119:2:111:continuation-recapture",
+      "original_source_object_sha256": "73e7f3d1925d4095c4c20d5c3efeebbd03e2d9f518d97f1148a6e2a88f11e23a"
+    },
+    {
+      "source_id": "clerk:119:2:112",
+      "original_source_object_sha256": "441fceb37926415454d68cf322f1f445d469b83702ab8852aeac55be096511d7"
+    },
+    {
+      "source_id": "clerk:119:2:112:continuation-recapture",
+      "original_source_object_sha256": "c5274ef1df8c814511b1559d9d56594cfdc56bf0d29e5bc781af34774358ab5f"
+    },
+    {
+      "source_id": "clerk:119:2:113",
+      "original_source_object_sha256": "323e81c6a8ab99e524ed81dc74fd702c74ca80b4bf18d4dc74b5473880714755"
+    },
+    {
+      "source_id": "clerk:119:2:114",
+      "original_source_object_sha256": "bc4e0d5ac6b0b47eddcfb022a1c37dc19aee7099b67fc4937ee1fa8be3190b0d"
+    },
+    {
+      "source_id": "clerk:119:2:115",
+      "original_source_object_sha256": "eee632e614f2d585cd9f0a268c61ef98c7e57b06b7f53947d7314c37daee302f"
+    },
+    {
+      "source_id": "congressional-record:2026-04-16-hconres40",
+      "original_source_object_sha256": "597e71796c7b0850553a035f5d04c30f76bea7e3cce87748dfb0b59cf7e033b0"
+    },
+    {
+      "source_id": "govinfo:hconres40ih",
+      "original_source_object_sha256": "9596fcfc12ee02747561798af75b73c6300fb08f62db2423aaf407b551b93c73"
+    },
+    {
+      "source_id": "govinfo:hres1174eh",
+      "original_source_object_sha256": "4a373e48b5e6aa5dcc0dd6be8c066c76a07fa99918b80e4a35d7afa5dfdcf28f"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres1174eh",
+      "governed_length": 2089,
+      "review_extent": "Complete retained own rule or contemporaneous floor text/introduced operative clause read; no current-law or individual compliance certification"
+    },
+    {
+      "source_id": "congressional-record:2026-04-16-hconres40",
+      "governed_length": 1324,
+      "review_extent": "Complete retained own rule or contemporaneous floor text/introduced operative clause read; no current-law or individual compliance certification"
+    },
+    {
+      "source_id": "govinfo:hconres40ih",
+      "governed_length": 1589,
+      "review_extent": "Complete retained own rule or contemporaneous floor text/introduced operative clause read; no current-law or individual compliance certification"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:111",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:112",
+        "evidence_unit": "complete_non_self_executing_rule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:113",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:114",
+        "evidence_unit": "complete_contemporaneous_floor_operating_clause",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:115",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}

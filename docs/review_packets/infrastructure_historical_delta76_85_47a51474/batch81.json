@@ -1,0 +1,364 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 81,
+  "exact_committed_head": "c1ab6fbb455cd42aa3ced482f65c9097483a95d9",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "c1ab6fbb455cd42aa3ced482f65c9097483a95d9",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch81_20260916/membership_review.json",
+      "git_blob": "57a398f6523077a6f756d98268560f2e60a3a5f8",
+      "git_bytes_sha256": "df74e2c9c7c4093311f53ffc753cf9b0791e647e995cb46b64f79606822e8739"
+    },
+    "sources": {
+      "head": "c1ab6fbb455cd42aa3ced482f65c9097483a95d9",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch81_20260916/sources.json",
+      "git_blob": "cff718ba18e207217223d2ef252a0a2d85d2d7d0",
+      "git_bytes_sha256": "e827f2780f34d7012ab42196ac471968eea60280bb9c2f39951bc5fceaff3f74"
+    },
+    "screening": {
+      "head": "c1ab6fbb455cd42aa3ced482f65c9097483a95d9",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch81_20260916/screening_receipt.json",
+      "git_blob": "f89acc87ab9e7668e3fde4f34e17f4d0bfcd45dd",
+      "git_bytes_sha256": "66fa9069c6ff80a4335400877fe5e0ec7e5936412df9e7fd37e5ca85d3e68e91"
+    },
+    "screening_units": {
+      "head": "c1ab6fbb455cd42aa3ced482f65c9097483a95d9",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch81_20260916/screening_units_receipt.json",
+      "git_blob": "1f8bf42ef7ba2fdb47251298a7dae98ac4bff24f",
+      "git_bytes_sha256": "6655264c684bbd021af4d16f070065ad4a6fd9ddabbc6b115fa3d89066191619"
+    }
+  },
+  "original_membership_review_sha256": "9d05cde4a2728c26e88ca4c112a048f951df194836340d79f6fbcee6418e6a95",
+  "new_screened_ids": [
+    "house:119:2:93",
+    "house:119:2:94",
+    "house:119:2:95",
+    "house:119:2:96",
+    "house:119:2:97"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "f67854d10874180b6c1a6523163a9955dc587f4d168617aee606b63dd2756932",
+      "record": {
+        "action_id": "house:119:2:93",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete556EH restricts the named Interior/FWS/BLM and Agriculture/ForestService officials from prohibiting lead-ammunition/tackle use or regulating its lead level on covered federal hunting/fishing land/water, with the specified enactment-dated50CFR20.21/20.108and unit-specific exceptions. The unit exception requires a Secretary determination of primary-cause wildlife decline based on local field data AND one of State-law consistency, State-wildlife-policy consistency OR State-wildlife-department approval, plus a FederalRegisterexplanation. This is recreational wildlife/land-use regulation, not a direct infrastructure, technical-development or scientific-data program merely because ammunition/materials and evidentiary field data are involved. Proposed whole-action exclusion does not certify the unreviewed incorporated CFR’s current application, actual cause of a decline, universalleadpermission, safety/toxicity, abolition of every wildlife rule or a realized outcome. House passage is not enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:93",
+            "url": "https://clerk.house.gov/evs/2026/roll093.xml",
+            "raw_sha256": "c6bcf4caa3c62da7ad92e9b7daaa2aed0a63aba30ce62db97ce61210c13d7256",
+            "governed_bytes_sha256": "90c40ea98bd2a41f2e858414a13d8ad5bbf08192167de2ce401c46feab9c5468"
+          },
+          {
+            "source_id": "govinfo:hr556eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr556eh/html/BILLS-119hr556eh.htm",
+            "raw_sha256": "3c44859e2a5cef76f6b99010f8688677a101c2f78890ae00f9dddccc7957d475",
+            "governed_bytes_sha256": "d9e0a21572eceb1bf06592bac9a7117ed15ca6ab4e7132f6d520c63e2cf4c57c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr556eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 556 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 556 _______________________________________________________________________ AN ACT To prohibit the Secretary of the Interior and the Secretary of Agriculture from prohibiting the use of lead ammunition or tackle on certain Federal land or water under the jurisdiction of the Secretary of the Interior and the Secretary of Agriculture, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Protecting Access for Hunters and Anglers Act''. SEC. 2. PROTECTING ACCESS FOR HUNTERS AND ANGLERS ON FEDERAL LAND AND WATER. (a) In General.--Except as provided in section 20.21 or 20.108 of title 50, Code of Federal Regulations (as in effect on the date of enactment of this Act), and subsection (b), the Secretary of the Interior, acting through the Director of the United States Fish and Wildlife Service or the Director of the Bureau of Land Management, and the Secretary of Agriculture, acting through the Chief of the Forest Service (referred to in this section as the ``applicable Secretary''), may not-- (1) prohibit the use of lead ammunition or tackle on Federal land or water that is-- (A) under the jurisdiction of the applicable Secretary; and (B) made available for hunting or fishing activities; or (2) issue regulations relating to the level of lead in ammunition or tackle to be used on Federal land or water described in paragraph (1). (b) Exception.--Subsection (a) shall not apply to a prohibition or regulations described in that subsection that are limited to a specific unit of Federal land or water, if the applicable Secretary determines that-- (1) a decline in wildlife population at the specific unit of Federal land or water is primarily caused by the use of lead in ammunition or tackle, based on the field data from the specific unit of Federal land or water; and (2) the prohibition or regulations, as applicable, are-- (A) consistent with the law of the State in which the specific Federal land or water is located; (B) consistent with an applicable policy of the fish and wildlife department of the State in which the specific Federal land or water is located; or (C) approved by the applicable fish and wildlife department of the State in which the specific Federal land or water is located. (c) Federal Register Notice.--The applicable Secretary shall include in a Federal Register notice with respect to any prohibition or regulations that meet the requirements of paragraphs (1) and (2) of subsection (b) an explanation of how the prohibition or regulations, as applicable, meet those requirements. Passed the House of Representatives March 18, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 556 _______________________________________________________________________ AN ACT To prohibit the Secretary of the Interior and the Secretary of Agriculture from prohibiting the use of lead ammunition or tackle on certain Federal land or water under the jurisdiction of the Secretary of the Interior and the Secretary of Agriculture, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a3cd5adfc4c56b03e5986ba2570a0536301b18740b65856a4934293ffa4b7145",
+      "record": {
+        "action_id": "house:119:2:94",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete1958EH appends inadmissibility and deportability grounds for conviction, admitted commission OR admitted essential-element acts involving the listed SNAP/social-security/identification/federal-program/theft/bribery/major-fraud/mail-fraud/conspiracy categories and other specified federal/State/local-benefit offenses. It also adds the printed immigration-relief ineligibility clause including the named2242reference. Those are immigration/criminal-consequence rules, not a change to the underlying benefit appropriations or a dedicated infrastructure/technical-system program; possible document/data technology does not establish one. Preserve the conviction/admission alternatives, broad referenced offenses, relief clause and printed1128citation without silently repairing it. Proposed whole-action exclusion certifies no individual offense, actual fraud, current removal/admission/relief outcome or complete incorporated-offense/current-law application. House passage is not enactment or automatic removal.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:94",
+            "url": "https://clerk.house.gov/evs/2026/roll094.xml",
+            "raw_sha256": "0b9ea1f2e7235b850b65c43ab44a5b4763b4e3232e835b0cfcaf4f333b937c6b",
+            "governed_bytes_sha256": "b53276fa8074f0ee691e564b0ee675d981959a1787dfdc492af2b6765c16739a"
+          },
+          {
+            "source_id": "govinfo:hr1958eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1958eh/html/BILLS-119hr1958eh.htm",
+            "raw_sha256": "481e0657f34180c426aebb7baac084abc2496511e7b9db01cbb7e7e9e8866454",
+            "governed_bytes_sha256": "ff6a728f17ed3f25b9847e0d20d6e278d5c7602352b32b42a769a6e08ee11920"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1958eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/daf0608d29baafa59e1ce757cc43ca698202b51b9f23e2274fd473951659909c.0000000.json",
+                  "sha256": "6f21d3ca4acc0390e0aafa8e32afc644f69311d8311a6348af6421b8635cb0e5",
+                  "start_character": 0,
+                  "end_character": 5685
+                }
+              ],
+              "utf8_sha256": "daf0608d29baafa59e1ce757cc43ca698202b51b9f23e2274fd473951659909c",
+              "total_characters": 5685,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "8fba18059c39c74173accd25f75d2987f64efb637320b7b14039f75744010f10",
+      "record": {
+        "action_id": "house:119:2:95",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete own floor-printed HJR139sets a proposed constitutional expenditure ceiling using the average annual receipts of3prior years adjusted for citizen-population changes/inflation, with debt-payment/borrowing accounting exclusions, a2/3spending override, separate declared-war roll-call override,2/3whole-membership new/increased-tax requirement, implementation and fifth-year-after-ratification effect. It requires the stated congressional concurrence and3/4State-legislature ratification; this is a substantive fiscal/constitutional proposal, not an ordinary procedural motion or a dedicated infrastructure/technical program. Exact combined suspension/passage failed, so it did not itself amend the Constitution. Proposed exclusion does not call it merely expenditures-equal-current-revenue, conflate the distinct override thresholds, predict budgets/taxes or certify current legal outcomes.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:95",
+            "url": "https://clerk.house.gov/evs/2026/roll095.xml",
+            "raw_sha256": "7b44c430b74cd1dda466626130b3b9252a7f5cb0a0dfa1079280ac576eee1b26",
+            "governed_bytes_sha256": "d81fc77cc0368d7ebc9c756a8af613a9c30e44dea3fb20da8b9b3ad36f0aad4f"
+          },
+          {
+            "source_id": "congressional-record:2026-03-18-hjres139",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-03-18/html/CREC-2026-03-18-pt1-PgH2560-8.htm",
+            "raw_sha256": "cffe782b4f985cd95c70eea8771d01713e84a0e72f1d147c8cf7de1955007544",
+            "governed_bytes_sha256": "acbf0b3a6debd67c53c679fa5195bc207ead4110d6747452236f743bbe9e0b29"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-03-18-hjres139",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Mr. BIGGS of Arizona. Mr. Speaker, I move to suspend the rules and pass the joint resolution (H.J. Res. 139) proposing an amendment to the Constitution of the United States requiring a balanced budget for the Federal Government. The Clerk read the title of the joint resolution. The text of the joint resolution is as follows: H.J. Res. 139 Resolved by the Senate and House of Representatives of the United States of America in [[Page H2561]] Congress assembled (two-thirds of each House concurring therein), That the following article is proposed as an amendment to the Constitution of the United States, which shall be valid to all intents and purposes as part of the Constitution when ratified by the legislatures of three- fourths of the several States: ``Article -- ``Section 1. Total expenditures for a year shall not exceed the average annual receipts collected in the three prior years, adjusted in proportion to the changes in the population of citizens of the United States and inflation. Total expenditures shall include all expenditures of the United States except those for payment of debt, and receipts shall include all receipts of the United States except those derived from borrowing. ``Section 2. Congress may by a roll call vote of two-thirds of each House provide by law for specific expenditures in excess of the limit in section 1. ``Section 3. Congress may by a roll call vote provide by law for specific expenditures in excess of the limit in section 1 for any year in which a declaration of war is in effect. ``Section 4. Any bill to levy a new tax or to increase the rate of any tax shall not become law unless approved by two- thirds of the whole number of each House of Congress by a roll call vote. ``Section 5. Congress shall enforce and implement this article by appropriate legislation. ``Section 6. This article shall take effect with the fifth year beginning after ratification.''. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ecca05cf4c8086563d9dd26beffde102ed7f5e95f75bdc859ca2ef499309b647",
+      "record": {
+        "action_id": "house:119:2:96",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete4638EH adds inadmissibility and deportability for conviction, admitted commission OR admitted essential-element acts under18USC1368. The retained complete offense unit concerns willful/malicious harm, attempt or conspiracy involving a dog or horse employed by a federal agency principally for criminal-detection, law-enforcement or apprehension purposes, not every animal or mere suspicion. The final EHincludes admission alternatives beyond the older title’s conviction wording; use its actual body, not a narrower title or earlier substitute. This is immigration/offense policy without a direct infrastructure, technical-system or research mechanism merely because a law-enforcement agency is involved. Proposed whole-action exclusion does not prove a person committed an offense, expand the federal-animal definition to all animals, certify all current immigration exceptions/process or infer automatic removal/admission outcomes. House passage is not enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:96",
+            "url": "https://clerk.house.gov/evs/2026/roll096.xml",
+            "raw_sha256": "f04255eb9b760dc0bec40acd9d511a3e4121b7a25d1f294a75ea446a089581cc",
+            "governed_bytes_sha256": "60369934eee5f83e636a2bae98007aab0fa4980c459aec48b446cb45169f76f3"
+          },
+          {
+            "source_id": "govinfo:hr4638eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4638eh/html/BILLS-119hr4638eh.htm",
+            "raw_sha256": "064fd5843eff8b122faa1fef8daabaf2ade07dec55eb5b4866a3829eed166314",
+            "governed_bytes_sha256": "b20dc62e7d2490c077d220a05252b61c2ad613f17fe692766c19c40143376ae7"
+          },
+          {
+            "source_id": "govinfo:18usc1368-2024-working-animals",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap65-sec1368.htm",
+            "raw_sha256": "5f55d11c8e2dfed5861fe3afc301ed62900aa111842716914f69a3c33c4439e8",
+            "governed_bytes_sha256": "ff66f1ae7801620fbcc4b68dec182a7d1cb72e69606fae3533edf4760dfefa18"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4638eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4638 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 4638 _______________________________________________________________________ AN ACT To amend the Immigration and Nationality Act to provide that an alien who has been convicted of harming animals used in law enforcement is inadmissible and deportable, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Federal Working Animal Protection Act''. SEC. 2. INADMISSIBILITY AND DEPORTABILITY RELATED TO HARMING ANIMALS USED IN LAW ENFORCEMENT. (a) Inadmissibility.--Section 212(a)(2) of the Immigration and Nationality Act (8 U.S.C. 1182(a)(2)) is amended by adding at the end the following: ``(J) Harming animals used in law enforcement.--Any alien who has been convicted of, who admits having committed, or who admits committing acts which constitute the essential elements of an offense under section 1368 of title 18, United States Code (relating to harming animals used in law enforcement), is inadmissible.''. (b) Deportability.--Section 237(a)(2) of the Immigration and Nationality Act (8 U.S.C. 1227(a)(2)) is amended by adding at the end the following: ``(G) Harming animals used in law enforcement.--Any alien who has been convicted of, who admits having committed, or who admits committing acts which constitute the essential elements of an offense under section 1368 of title 18, United States Code (relating to harming animals used in law enforcement), is deportable.''. Passed the House of Representatives March 19, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 4638 _______________________________________________________________________ AN ACT To amend the Immigration and Nationality Act to provide that an alien who has been convicted of harming animals used in law enforcement is inadmissible and deportable, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:18usc1368-2024-working-animals",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Whoever willfully and maliciously harms any police animal, or attempts or conspires to do so, shall be fined under this title and imprisoned not more than 1 year. If the offense permanently disables or disfigures the animal, or causes serious bodily injury to or the death of the animal, the maximum term of imprisonment shall be 10 years. (b) In this section, the term \"police animal\" means a dog or horse employed by a Federal agency (whether in the executive, legislative, or judicial branch) for the principal purpose of aiding in the detection of criminal activity, enforcement of laws, or apprehension of criminal offenders. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "51a08f507cccae8ffc52ff26f934212b0539731e0ccd923b09cce64154e9b8f3",
+      "record": {
+        "action_id": "house:119:2:97",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole6422EH is9290characters; only opening0:2600andclosing8290:9290were read. The opening extends named EPAgeographic-program authorizations and changes SanFranciscoBayfunding mechanisms/recipients and cost-share terms; the closing lists multiple covered programs. Those fragments do not clear the NationalEstuary/other regional/interior provisions, complete affected-program purposes/funding baselines or whole water-infrastructure/scientific versus conservation taxonomy. Do not equate authorization extensions with appropriations, pick one75percent/25percentclause as whole meaning, infer every program has identical dates/operators or assume a project/recipient entitled to funds. Whole as-amended suspension/passage/version/domain review remains pending; no actual water-quality, construction, spending or enacted outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:97",
+            "url": "https://clerk.house.gov/evs/2026/roll097.xml",
+            "raw_sha256": "c8c22e4c430adfac4707f30819d516928a58bf67380893b17cd2942f0756bd37",
+            "governed_bytes_sha256": "c3674cb7fa4095a81e3b26bad4ad9bc50cd42d0fde701f80649cf6bac9fb6ecf"
+          },
+          {
+            "source_id": "govinfo:hr6422eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6422eh/html/BILLS-119hr6422eh.htm",
+            "raw_sha256": "370bcbb0019fdb8080aaaf926aa4f714a605c02ee3131bd66e3471a0b918155f",
+            "governed_bytes_sha256": "91ea81fa45068925f076d6d71d24a28d6cf39cc431542c0a222c289870e75e30"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6422eh",
+            "locator": "Only opening0:2600read;9290character bill interior unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6422 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 6422 _______________________________________________________________________ AN ACT To amend the Federal Water Pollution Control Act to reauthorize certain EPA geographic programs, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``American Water Stewardship Act''. SEC. 2. GREAT LAKES RESTORATION INITIATIVE. Section 118(c)(7)(J)(i)(VI) of the Federal Water Pollution Control Act (33 U.S.C. 1268(c)(7)(J)(i)(VI)) is amended by striking ``fiscal year 2026'' and inserting ``each of fiscal years 2026 through 2031''. SEC. 3. LONG ISLAND SOUND. Section 119(h) of the Federal Water Pollution Control Act (33 U.S.C. 1269(h)) is amended by striking ``2023'' and inserting ``2031''. SEC. 4. COLUMBIA RIVER BASIN RESTORATION. Section 123(d)(6) of the Federal Water Pollution Control Act (33 U.S.C. 1275(d)(6)) is amended by striking ``and 2021'' and inserting ``through 2031''. SEC. 5. SAN FRANCISCO BAY RESTORATION PROGRAM. Section 125 of the Federal Water Pollution Control Act (33 U.S.C. 1276a) is amended-- (1) in the section heading, by striking ``grant''; and (2) in subsection (e)-- (A) in the subsection heading, by striking ``Grant Program'' and inserting ``Program Implementation''; (B) in paragraph (1), by striking ``or other means to State and local agencies, special districts, and public or nonprofit agencies'' and inserting ``interagency agreements, contracts, or other funding mechanisms to Federal, State, and local agencies, special districts, public or nonprofit agencies, and other public or private entities''; and (C) by striking paragraph (2) and inserting the following: ``(2) Maximum amount.--Amounts provided for a project, activity, or study under this section shall not exceed an amount that is equal to 75 percent of the total cost of such project, activity, or study. ``(3) Assistance to non-federal entities.--Not less than 25 percent of the cost of any project, activity, or study carried out using amounts provided to a non-Federal entity under this section shall be provided from non-Federal sources.''. SEC. 6. NATIONAL ESTUARY PROGRAM. (a) In General.--Section 320 of the Federal Water Pollution Control Act (33 U.S.C. 1330) is amended-- (1) in subsection (a)(2)(B), by striking ``and Pensacola and Perdido Bays, Florida'' and inserting ``Pensacola and Perdido Bays, Florid"
+          },
+          {
+            "source_id": "govinfo:hr6422eh",
+            "locator": "Only closing8290:9290read; regional-program list is not complete program review",
+            "passage": "the Lake Pontchartrain Basin Restoration Program under section 121 of the Federal Water Pollution Control Act (33 U.S.C. 1273); (6) the Columbia River Basin Restoration Program under section 123 of the Federal Water Pollution Control Act (33 U.S.C. 1275); (7) the San Francisco Bay Restoration Program under section 125 of the Federal Water Pollution Control Act (33 U.S.C. 1276a); (8) the Puget Sound program under section 126 of the Federal Water Pollution Control Act (33 U.S.C. 1276b); (9) the Gulf of America Program carried out by the Administrator; (10) the South Florida Program carried out by the Administrator; or (11) the Southeast New England Program carried out by the Administrator. Passed the House of Representatives March 24, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 6422 _______________________________________________________________________ AN ACT To amend the Federal Water Pollution Control Act to reauthorize certain EPA geographic programs, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:93",
+      "original_source_object_sha256": "d9ea33c2b14da0da18d35e89b637ed0106582634be83a25857104e54567ef86b"
+    },
+    {
+      "source_id": "clerk:119:2:94",
+      "original_source_object_sha256": "bc686bebe53892f6d06156a1d966f003f8b79af83a6709e5ac0f23fdfffd621a"
+    },
+    {
+      "source_id": "clerk:119:2:95",
+      "original_source_object_sha256": "9263362ef6f0fc0e1f4c210ae93649c5cf59799b1dccfc7f42466b4a737b3add"
+    },
+    {
+      "source_id": "clerk:119:2:96",
+      "original_source_object_sha256": "dd07ae0f8b1fbd0c8e3d40c841f6d16aaa19f9bc8f0738e2db81a7b3457e7e95"
+    },
+    {
+      "source_id": "clerk:119:2:97",
+      "original_source_object_sha256": "921f95d39b750b0e0711840ef20bbe1305d73aa6e86875d8affe0ed6a10b1833"
+    },
+    {
+      "source_id": "congressional-record:2026-03-18-hjres139",
+      "original_source_object_sha256": "966462993eb08e12897922735a74d6c9b7f9e698ab94f946e646835bb96d513c"
+    },
+    {
+      "source_id": "govinfo:18usc1368-2024-working-animals",
+      "original_source_object_sha256": "18529fd743b9ec464ad356b4fbd234882e623c0e96277e2c363f9489c49ad222"
+    },
+    {
+      "source_id": "govinfo:hr1958eh",
+      "original_source_object_sha256": "323ff4604787fb9496b2b8267249852471742a4c21f463552bf8941ed7413465"
+    },
+    {
+      "source_id": "govinfo:hr4638eh",
+      "original_source_object_sha256": "d1085a6bf40dace9a930fc8a1b7422955cd297dd4e77ddda652f83c460c2fde8"
+    },
+    {
+      "source_id": "govinfo:hr556eh",
+      "original_source_object_sha256": "51baec02a9543a55438de77697b29c135d327755b364f005e672f7e7b53fc670"
+    },
+    {
+      "source_id": "govinfo:hr6422eh",
+      "original_source_object_sha256": "68266ba53cc91a9d565e40f2cd41c8839ebcf3c152639a627572a1f1b58fa98f"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr556eh",
+      "governed_length": 3275,
+      "review_extent": "Complete captured own floor/EH/offense unit read; incorporated current CFR/offense/immigration application not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr1958eh",
+      "governed_length": 5685,
+      "review_extent": "Complete captured own floor/EH/offense unit read; incorporated current CFR/offense/immigration application not implicitly certified"
+    },
+    {
+      "source_id": "congressional-record:2026-03-18-hjres139",
+      "governed_length": 1916,
+      "review_extent": "Complete captured own floor/EH/offense unit read; incorporated current CFR/offense/immigration application not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr4638eh",
+      "governed_length": 2048,
+      "review_extent": "Complete captured own floor/EH/offense unit read; incorporated current CFR/offense/immigration application not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:18usc1368-2024-working-animals",
+      "governed_length": 635,
+      "review_extent": "Complete captured own floor/EH/offense unit read; incorporated current CFR/offense/immigration application not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr6422eh",
+      "governed_length": 9290,
+      "review_extent": "Only0:2600and8290:9290read; geographic-program interior/baselines unreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:93",
+        "evidence_unit": "complete_own_operational_proposal_with_explicit_material_current_application_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:94",
+        "evidence_unit": "complete_own_operational_proposal_with_explicit_material_current_application_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:95",
+        "evidence_unit": "complete_own_operational_proposal_with_explicit_material_current_application_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:96",
+        "evidence_unit": "complete_own_operational_proposal_with_explicit_material_current_application_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:97",
+        "evidence_unit": "partial_whole_geographic_water_program_bill",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}
