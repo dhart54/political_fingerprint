@@ -1,0 +1,66 @@
+[
+  {
+    "actions": [
+      {
+        "action_core_sha256": "7df0c99b81ac06d558a9a6906202b25993e3f38eb9fe9a9421fd3c827e95e3e5",
+        "action_id": "house:119:2:180",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "governed_bytes_sha256": "eb88c63efbc5d13d03dcf1107601a087a1049e141679d10d89718e30331fd83f",
+            "raw_sha256": "cdcf9b4380ba0f7daae98c341396bea2407bf587f4b8994b28a77f45c897895b",
+            "source_id": "clerk:119:2:180",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null
+          }
+        ],
+        "member_action_source_identity_sha256": "8b061f135a008ce3c3112e5ca943de331d28ae3d93a8b38b7e20bb6806d075a1",
+        "official_status": "Yea",
+        "service_status": "in_service"
+      }
+    ],
+    "artifact_id": "member-action-projection:f000477:house:119:v4",
+    "authoritative_legislative_meaning": false,
+    "context_metadata": {
+      "display_name": "Foushee",
+      "service_basis": "Named official Clerk member row at each listed action; no unobserved service interval inferred."
+    },
+    "member_id": "F000477",
+    "party": "D",
+    "projection_sha256": "332cef983a96dd633c6555426a3e6ec86123c3e23fd4fb9c79a9f467041d2806",
+    "schema_version": "member_action_projection_v1"
+  },
+  {
+    "actions": [
+      {
+        "action_core_sha256": "7df0c99b81ac06d558a9a6906202b25993e3f38eb9fe9a9421fd3c827e95e3e5",
+        "action_id": "house:119:2:180",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "resolved_non_directional",
+        "member_action_source_identities": [
+          {
+            "governed_bytes_sha256": "eb88c63efbc5d13d03dcf1107601a087a1049e141679d10d89718e30331fd83f",
+            "raw_sha256": "cdcf9b4380ba0f7daae98c341396bea2407bf587f4b8994b28a77f45c897895b",
+            "source_id": "clerk:119:2:180",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null
+          }
+        ],
+        "member_action_source_identity_sha256": "8b061f135a008ce3c3112e5ca943de331d28ae3d93a8b38b7e20bb6806d075a1",
+        "official_status": "Not Voting",
+        "service_status": "in_service"
+      }
+    ],
+    "artifact_id": "member-action-projection:m001184:house:119:v4",
+    "authoritative_legislative_meaning": false,
+    "context_metadata": {
+      "display_name": "Massie",
+      "service_basis": "Named official Clerk member row at each listed action; no unobserved service interval inferred."
+    },
+    "member_id": "M001184",
+    "party": "R",
+    "projection_sha256": "a988f8a66cf102a6f529573c1e06c69961e822fd31e5840be98a734e45cbf92f",
+    "schema_version": "member_action_projection_v1"
+  }
+]
