@@ -1,0 +1,105 @@
+{
+  "compiled_ir_sha256": "29be897f6a2d48754f2ac5ec5966474cad88ba0bed9df36cb654af2fa9b4ace6",
+  "members": [
+    {
+      "composition": {
+        "conclusion_plan": {
+          "limiting_proposition_ids": [],
+          "primary_proposition_ids": []
+        },
+        "coverage_boundaries": [],
+        "method_boundaries": [],
+        "presentation_ownership": {
+          "other_notable_choices": [
+            "prop:75edca987585935c"
+          ]
+        }
+      },
+      "coverage": {
+        "complete_episodes": 1,
+        "context_only_control_actions": 0,
+        "directional_yes_no_positions": 1,
+        "eligible_substantive_actions": 1,
+        "in_service_eligible_actions": 1,
+        "missing_evidence_actions": 0,
+        "not_voting_actions": 0,
+        "outside_service_actions": 0,
+        "partial_episodes": 0,
+        "present_actions": 0,
+        "resolved_eligible_actions": 1,
+        "unresolved_service_actions": 0
+      },
+      "member_id": "F000477",
+      "party": "D",
+      "proposition_graph": {
+        "propositions": [
+          {
+            "conclusion_relevance": "supporting",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:180"
+            ],
+            "evidence_episode_ids": [
+              "episode:s2393:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "proposition_id": "prop:75edca987585935c",
+            "proposition_type": "notable_choice",
+            "relationships": {
+              "limited_by": [],
+              "supported_by": []
+            },
+            "semantic_role": "behavioral"
+          }
+        ]
+      },
+      "review_route": "human_exception_required"
+    },
+    {
+      "composition": {
+        "conclusion_plan": {
+          "limiting_proposition_ids": [],
+          "primary_proposition_ids": []
+        },
+        "coverage_boundaries": [
+          {
+            "action_ids": [
+              "house:119:2:180"
+            ],
+            "boundary_id": "coverage:c9ecb27beef8637e",
+            "boundary_type": "not_voting",
+            "detail": "Resolved Not Voting actions are non-directional.",
+            "presentation_target": "coverage_note"
+          }
+        ],
+        "method_boundaries": [],
+        "presentation_ownership": {}
+      },
+      "coverage": {
+        "complete_episodes": 1,
+        "context_only_control_actions": 0,
+        "directional_yes_no_positions": 0,
+        "eligible_substantive_actions": 1,
+        "in_service_eligible_actions": 1,
+        "missing_evidence_actions": 0,
+        "not_voting_actions": 1,
+        "outside_service_actions": 0,
+        "partial_episodes": 0,
+        "present_actions": 0,
+        "resolved_eligible_actions": 1,
+        "unresolved_service_actions": 0
+      },
+      "member_id": "M001184",
+      "party": "R",
+      "proposition_graph": {
+        "propositions": []
+      },
+      "review_route": "human_exception_required"
+    }
+  ],
+  "rendering_may_add_analytical_meaning": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "schema_version": "editorial_semantic_ir_presentation_payload_v1",
+  "source_render_constraints": []
+}

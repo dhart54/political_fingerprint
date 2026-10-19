@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "house:119:2:180": {
+      "action_meaning_source_refs": [
+        "govinfo:s2393es"
+      ],
+      "required_action_meaning_source_types": [
+        "official_bill_text"
+      ],
+      "vote_source_refs": [
+        "clerk:119:2:180"
+      ]
+    }
+  },
+  "claim_source_map": {
+    "path": "claim_source_map.json",
+    "sha256": "f7e602de6ff73632cfe0c7cc63b395db50ea8d5e6e76ceb95714ba25493135ef"
+  },
+  "contract_id": "candidate-review-only:s2393:119:v1",
+  "schema_version": "editorial_action_source_contract_v1",
+  "source_authorities": {
+    "clerk:119:2:180": "house_clerk_roll_call",
+    "govinfo:s2393es": "official_bill_text"
+  },
+  "source_manifest": {
+    "path": "governed_sources.json",
+    "sha256": "833769acb7c57afe9f9404bb581955e9a12f6f98d4a00e462ef5b6fc8641efdf"
+  }
+}

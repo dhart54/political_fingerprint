@@ -1,0 +1,44 @@
+{
+  "action_mappings": [
+    {
+      "action_id": "house:119:2:180",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:s2393:119",
+      "mapping_sha256": "5ac6e6b24ab126d19781245af2b2f4f8e80104585d2bab061fe9628097c423a3",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20180
+      }
+    }
+  ],
+  "artifact_id": "candidate:HEALTH_SOCIAL:s2393-one-action:119:v1",
+  "authoritative_for_new_editorial_work": false,
+  "domain_id": "HEALTH_SOCIAL",
+  "episodes": [
+    {
+      "action_ids": [
+        "house:119:2:180"
+      ],
+      "episode_id": "episode:s2393:119",
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "historical_inputs_rewritten": false,
+  "mapping_sha256": "d1a9f52302cfb790a35c3a666aba006e6971ff8559901be8e03bc76c5f769db4",
+  "policy_families": [],
+  "policy_traits": [],
+  "review_state": "candidate_pending_external_semantic_review",
+  "schema_version": "shared_issue_mapping_v1",
+  "scope_boundaries": [
+    "One reviewed vote on a St. Louis VA facility authorization. This is a bounded sample, not an assessment of the member’s overall Health record."
+  ],
+  "semantic_ir_case_scope": "full_record",
+  "shared_review_dependencies": [],
+  "source_render_constraints": [],
+  "trait_relationships": []
+}
