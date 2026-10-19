@@ -205,4 +205,15 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'roll293 later adoption disclosure omits failed result'):validate_active_disclosure_corrections(bad,u,s,receipt)
         bad=copy.deepcopy(m);next(c for c in next(r for r in bad['records'] if r['action_id']=='house:119:1:306')['claim_source_map'] if c['source_id']=='govinfo:42usc405c2Bi-2024-ssn-issuance')['locator']='Captured I/III commentary applies to this bill'
         with self.assertRaisesRegex(ValueError,'SSA captured I/III commentary lacks active IV/V qualification'):validate_active_disclosure_corrections(bad,u,s,receipt)
+    def test_conduit_cost_hardship_and_construction_entity_qualifications(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_conduit_repayment_boundaries
+        action=next(a for a in read(folder(65)/'authoring.json')['actions'] if a['action_id']=='house:119:2:9');s={s['source_id']:s for s in read(folder(65)/'sources.json')['sources']}
+        for old,new,error in [('35 percent of the full conduit cost, not a new 35 percent charge on the remaining balance','35 percent of remaining debt only','conduit total-cost obligation became balance charge or forgiveness'),('favorable balance-repayment terms require a demonstration of financial hardship determined by the Secretary','favorable terms are automatic for every contract','conduit hardship/maximum/simple-interest qualifications lost'),('Any entity other than the Secretary is not narrowed here to State/local or non-Federal entities','Only State/local or non-Federal construction money qualifies','conduit construction funding narrowed to non-Federal entities')]:
+            with self.subTest(boundary=error):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,error):validate_conduit_repayment_boundaries(bad,s['govinfo:hr131enr'],s['govinfo:pl111-11-arkansas9115'],s['clerk:119:2:9'])
+    def test_conduit_failed_override_does_not_enact_enrolled_bill(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_conduit_repayment_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(65)/'authoring.json')['actions'] if a['action_id']=='house:119:2:9'));s={s['source_id']:s for s in read(folder(65)/'sources.json')['sources']};action['meaning']=action['meaning'].replace('House veto-override attempt failed and did not itself enact the bill','House veto-override attempt passed and enacted the bill')
+        with self.assertRaisesRegex(ValueError,'conduit failed override became ordinary passage or enactment'):validate_conduit_repayment_boundaries(action,s['govinfo:hr131enr'],s['govinfo:pl111-11-arkansas9115'],s['clerk:119:2:9'])
 if __name__=='__main__':unittest.main()
