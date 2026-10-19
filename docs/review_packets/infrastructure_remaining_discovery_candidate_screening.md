@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch108**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch109**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
@@ -15,22 +15,22 @@ Titles and historical non-lead labels select research, never automatic exclusion
 
 | State | Count |
 |---|---:|
-| Shared authored candidate meanings | 68 |
+| Shared authored candidate meanings | 69 |
 | Procedural controls | 199 |
 | Proposed exact-action exclusions | 120 |
 | Nonbinding expression | 19 |
 | Source/access/version holds | 6 |
-| Ordinary unfinished/review cases | 264 |
+| Ordinary unfinished/review cases | 263 |
 | Ordinary unscreened identities | 0 |
 | **Discovery identities** | **676** |
 
-All68shared meanings project mechanically to Foushee and Massie. 8 authored
-Not Voting observations remain nondirectional, with66Foushee
-and62Massie directional findings. No coverage, synthesis or publication acceptance.
+All69shared meanings project mechanically to Foushee and Massie. 8 authored
+Not Voting observations remain nondirectional, with67Foushee
+and63Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Three unaccepted whole regional-commission appropriation amendments now have complete retained shared program baselines and exact own-action/heading bindings. They propose reductions to SouthwestBorder, SoutheastCrescent and GreatLakes accounts with matching SpendingReductionAccount instructions; all were rejected. The grant-only allocation base, conditional cost shares, administrative threshold, non-infrastructure purposes, legal geography, other funds and authorization-versus-spending limits remain explicit. These are candidates for independent mixed-purpose taxonomy review, not acceptance or actual project/savings findings.
+One unaccepted whole Act-specific DRBC funding-restriction candidate is now supported by complete retained operative Compact/effectuation/editor-note context. The separately voted rule-specific restriction remains pending after reading the complete published rule: asterisks do not supply unchanged regulations. A new governed witness is reconstructed from existing44retained page extracts, preserving original source/hash/history and requiring no acquisition. Other-source funds, historical/repealed clauses, federal reservations, current-law/decree limits and mixed-purpose review boundaries remain explicit.
 
-[Readable batch108 findings](infrastructure_candidate_batch108.md).
+[Readable batch109 findings](infrastructure_candidate_batch109.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch108_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch109_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -55,26 +55,26 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**143focused tests, candidate source/conservation/replay checks and seven canonical
+**146focused tests, candidate source/conservation/replay checks and seven canonical
 semantic checks pass**. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took162.307seconds; the specification/authoring elapsed window and later byte/delivery
+took172.118seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch108_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch108_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch108_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch108_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch109_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch109_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch109_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch109_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Continue existing pending cases;68unacceptedmeanings/264pending/6protectedholds/0ordinary. Three rejected regional-commission cuts retain whole mixed purposes and exact accounting. No acceptance, current-law certification or production/publication effect.
+Continue pending material-baseline work;69unacceptedmeanings/263pending/6protectedholds/0ordinary.227unchanged-regulation gaps stayexplicit;228Act-only funding candidate not all defunding or repeal.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
 
-Three new regional-commission meanings are unaccepted proposals under the existing NorthernBorder mixed-purpose funding boundary. Whole retained subtitleV and law2241–2250read; all six new readable findings inspected, with [exact full copies and original parent pointers](infrastructure_batch108_regional_commission_readable/manifest.json) in six files below190KB(max125730bytes). Extraction/reconstruction is verified separately from independent review. Prior65shared meanings and130member observations remain unchanged except snapshot-meaning references and derived core hashes; all1577sourceobjects and673unaffected memberships are exact-equal.
+The new DRBC source is a governed operative-body witness derived solely from existing44page extracts. Joining the retained pages with twoLFseparators reproduces the original144121character canonical-string digest; the operative27450:144121slice is116671characters. RawPDFhash, original source object, originalGitblob and both canonical/UTF8joined digests are preserved. No PDFdownload or re-extraction occurred. Historical printed membership and repealed15.1(d) remain qualified by the1997/2007editor note; no current-law/decree certificate or revived clause.
 
-Current review transport for original101–102 remains [manifest](infrastructure_historical_delta101_102_9fd76739/manifest.json), delivered9954bdaf. Original101–102source closure and274precision review remain ongoing; no broad clearance transferred. [Roll241relay attribution clarification](infrastructure_roll241_relay_attribution_clarification_20261019.json) separately records coordinator-reported parent-relay origin of the malformed66character duplicate, preserving the original correct64digest/source/receipt history.
+[Two exact new DRBC readable copies and governed source](infrastructure_batch109_drbc_readable/manifest.json) preserve full objects and parent pointers: two findings≤133299bytes, newsource120298bytes, plus manifest. Local extraction/reconstruction and inspection are separate from independent review. Published rule227remains pending on unchanged/priorregulations and other stated limits; no asterisk expansion.
 
-The initial108preparation proof incorrectly compared snapshot-derived hashes byte-for-byte and failed before writing recommendations; the mistakenly continued source gate then reported that missing preparation file. The proof now verifies all unchanged semantic/evidence fields and both exact old/new hash bindings. That failed preparation is retained; no unit suite ran in that attempt. Final143focused tests and7semantic checks passed, with no test weakening. No new source acquisition, protected retry, acceptance, publication, production, merge or deployment.
+Review history remains separate: [original101–102transport](infrastructure_historical_delta101_102_9fd76739/manifest.json) delivered9954bdaf; originalsource closure/274precision review stillongoing. [Roll241parent-relay attribution clarification](infrastructure_roll241_relay_attribution_clarification_20261019.json) preserves source/digest/history. [108regional-commission readables](infrastructure_batch108_regional_commission_readable/manifest.json) remain unaccepted and are not re-reviewed or certified by this increment.

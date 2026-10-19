@@ -1,0 +1,44 @@
+{
+  "kind": "two_exact_current_candidate_readable_copies",
+  "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch109_20260916/generated/readable_candidates.json",
+  "expected_parent_git_blob": "087fc6b112615408f8c2b1e6092991f1fc6cfe9e",
+  "parent_committed_lf_bytes_sha256": "ba9336fecada1daf5dcef7e0013170345e73cd5a9e6fb9802ab0c093a6966a84",
+  "scope": "Only newly authored whole DRBC Act-specific funding restriction228 for both members; rule-specific227 remains pending. Full finding objects including observations are copied losslessly; no cumulative whole-population readable artifact or source recapture.",
+  "review_state": "candidate_pending_external_semantic_review",
+  "production_eligible": false,
+  "entries": [
+    {
+      "member_id": "F000477",
+      "action_id": "house:119:1:228",
+      "file": "F000477_roll228.json",
+      "json_pointer": "/members/0/findings/7",
+      "finding_sha256": "b329f4f7afc73c76fd49169f9f1f3f73fe5e1306ffee6668bda0b3d1551ce27b",
+      "committed_lf_bytes_sha256": "816cade6a07b84193885041fc2f46d8d7404062245f78bec187634155a09d3e5",
+      "bytes": 133298
+    },
+    {
+      "member_id": "M001184",
+      "action_id": "house:119:1:228",
+      "file": "M001184_roll228.json",
+      "json_pointer": "/members/1/findings/4",
+      "finding_sha256": "f89bd6682328aba0d58f31f73e14cea07347c9057978ff8c18180e7f88b77fb4",
+      "committed_lf_bytes_sha256": "50f7e5483c6f0c95176274a1788e99c5be0050646d39fcc5a715e8d2c4dfd329",
+      "bytes": 133299
+    }
+  ],
+  "max_file_bytes": 133299,
+  "total_copy_bytes": 266597,
+  "qualification": "Original parent pointers/objects are exact. Local extraction/inspection is not independent review, acceptance, publication or CI clearance. The two original finding objects are carried separately below190KB each for bounded review.",
+  "governed_source": {
+    "file": "governed_operative_source.json",
+    "source_id": "drbc:compact-operative-retained-109",
+    "source_object_sha256": "9ce063bf6e55952bff90a8d287ca7ca571152e9b4616ae801189d0f365e05e3c",
+    "committed_lf_bytes_sha256": "769089b382898d16902b5b54f3fbe8e2a2a75c6778e34e3d647359ff606a9ee9",
+    "bytes": 120298,
+    "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch109_20260916/sources.json",
+    "json_pointer": "/sources/1577",
+    "expected_parent_git_blob": "86819d2e96d6606dec5cdc070451e481c72d969c",
+    "parent_committed_lf_bytes_sha256": "ae74b8a1f0ac3183904582d1f97e2bcb22d3ccce913e6dcfe148878c7ad34cf1"
+  },
+  "governed_source_scope": "Only the new retained operative-body source object, not the cumulative source corpus or a new rawPDFacquisition. Original witness/source/Gitblob derivation stays explicit."
+}

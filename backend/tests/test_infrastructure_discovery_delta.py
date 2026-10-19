@@ -567,4 +567,28 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['accepted_membership']=True
         with self.assertRaisesRegex(ValueError,'regional commission independent-review boundary differs'):validate_regional_commission_amendment(a,s,bad)
 
+    def drbc_funding_case(self):
+        p=folder(109);a=next(x for x in read(p/'authoring.json')['actions'] if x['action_id']=='house:119:1:228');m=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']=='house:119:1:227');u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']=='house:119:1:227');s={x['source_id']:x for x in read(p/'sources.json')['sources']};r=read(p/'drbc_funding_restriction_taxonomy_recommendation.json');return a,m,u,s,r
+
+    def test_drbc_funding_candidate_uses_verified_retained_operative_pages(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_drbc_funding_restriction
+        validate_drbc_funding_restriction(*self.drbc_funding_case())
+
+    def test_drbc_funding_cannot_become_all_money_rule_repeal_or_revived_membership(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_drbc_funding_restriction
+        a,m,u,s,r=self.drbc_funding_case()
+        for old,new in [('this Act’s funds, rather than every source of money','all funding from all governments'),('does not itself cancel those other funding authorities','cancels all other funding authorities'),('They are not revived','They are revived')]:
+            with self.subTest(change=new):
+                bad=copy.deepcopy(a);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'DRBC funding scope, financing or historical qualifications lost'):validate_drbc_funding_restriction(bad,m,u,s,r)
+
+    def test_drbc_cannot_invent_retained_text_or_expand_published_rule_asterisks(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_drbc_funding_restriction
+        a,m,u,s,r=self.drbc_funding_case();bad=copy.deepcopy(s);bad['drbc:compact-operative-retained-109']['text']+=' Invented later law.'
+        with self.assertRaisesRegex(ValueError,'DRBC governed operative witness not exact retained extent'):validate_drbc_funding_restriction(a,m,u,bad,r)
+        bad=copy.deepcopy(m);bad['rationale']=bad['rationale'].replace('Published asterisks omit unchanged401text','All asterisks expanded into complete regulations')
+        with self.assertRaisesRegex(ValueError,'DRBC published rule expanded asterisks or promoted pending case'):validate_drbc_funding_restriction(a,bad,u,s,r)
+        bad=copy.deepcopy(u);bad['disposition']='interpreted_substantive_directional'
+        with self.assertRaisesRegex(ValueError,'DRBC published rule expanded asterisks or promoted pending case'):validate_drbc_funding_restriction(a,m,bad,s,r)
+
 if __name__=='__main__':unittest.main()
