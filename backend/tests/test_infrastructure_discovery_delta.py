@@ -281,4 +281,11 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,error):validate_cable_sanctuary_boundaries(bad,s['govinfo:hr261eh'],s['govinfo:16usc1441-permit-terms'],s['govinfo:16usc1434-cooperation'])
+    def test_roll43_part_a_binding_is_required_without_semantic_change(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_roll43_part_a_binding
+        p=folder(77);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:43');record=next(r for r in read(p/'membership_review.json')['records'] if r['action_id']=='house:119:2:43');row=next(r for r in read(p/'universe_proposal.json')['candidate_dispositions'] if r['action_id']=='house:119:2:43');s={x['source_id']:x for x in read(p/'sources.json')['sources']};receipt=read(p/'roll43_partA_version_binding_receipt.json');recommendation=read(p/'vehicle_standard_funding_taxonomy_recommendation.json')
+        bad=copy.deepcopy(action);bad['claim_source_map']=[x for x in bad['claim_source_map'] if x['source_id']!='govinfo:hrpt119-462-operative-amendments']
+        with self.assertRaisesRegex(ValueError,'roll43 PartA claim binding missing'):validate_roll43_part_a_binding(bad,record,row,s,receipt,recommendation)
+        bad=copy.deepcopy(action);bad['meaning']+=' This restricts every federal account.'
+        with self.assertRaisesRegex(ValueError,'roll43 provenance repair changed meaning or other action fields'):validate_roll43_part_a_binding(bad,record,row,s,receipt,recommendation)
 if __name__=='__main__':unittest.main()
