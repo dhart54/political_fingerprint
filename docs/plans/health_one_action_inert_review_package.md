@@ -40,13 +40,17 @@ editorial standardization workflow.
 
 Allowed: isolated tooling, candidate evidence/inputs/IR and mapped presentation
 review inputs, focused tests, review corrections, commit/push and draft PR.
+This includes bounded CI test-selection maintenance in the existing full-history
+exact-head shared-candidate pytest step. It does not authorize changes to workflow
+permissions, secrets, deployment triggers, environments or production configuration.
 Existing automatic PR previews are included. Forbidden: successor merge,
 database/import or production writes, publication/activation, new artifact
 acceptance/promotion, manual deployment, runtime manifests, schema/security/
-secret/config changes and storage-contract changes.
+secret/production-config changes and storage-contract changes.
 
 Expected footprint: one preparation script, one focused test module, this plan
-and a bounded review directory (17 files total). Targeted validation in
+and a bounded review directory (17 new files), plus one existing workflow's
+test-list correction. Targeted validation in
 seconds; no population regeneration, browser or database loop.
 
 ## Representability and implementation sequence
@@ -74,8 +78,9 @@ seconds; no population regeneration, browser or database loop.
 - [x] Read applicable contracts; candidate compilation is representable.
 - [x] Implement bounded preparation and mapped presentation-input validation.
 - [x] Exact packet parity, twelve focused positive/negative checks and deterministic replay.
-- [x] Final artifact/diff review: 17 new scoped files; existing tracked files,
-      candidate/history bytes, schemas and rejection guards are unchanged.
+- [x] Final artifact/diff review: 17 new scoped files plus one existing CI pytest
+      list correction; candidate/history bytes, runtime, schemas and rejection
+      guards are unchanged.
 - [x] Prepare authorized feature-branch commit/push and draft-PR handoff. Exact
       remote head and PR state are recorded by PR metadata and the delivery report.
 
@@ -112,9 +117,10 @@ candidate guards, adverse mapping/scope mutations, immutable upstream files,
 and deterministic generated-object comparisons. Seven generation rules remain
 identical to the reconciled base and are hash-bound in provenance.
 `validate_editorial_semantic_ir.py` passes all 12 development and 4 held-out
-accepted references plus 4 held-out cases. The existing hosted workflow does
-not select the new test module; its explicit local result is reported separately.
-No workflow configuration is changed to hide that limitation.
+accepted references plus 4 held-out cases. Independent review identified that
+the initial hosted workflow did not select the new module. The bounded correction
+adds it to the existing exact-head/full-history shared-candidate pytest list;
+all other workflow structure and operational settings remain unchanged.
 
 The focused package, shared-corpus and pipeline regression run passes 35 tests:
 `python -m pytest -q backend/tests/test_health_one_action_review.py
@@ -142,3 +148,22 @@ Automatic PR previews are authorized but display only the existing application,
 not this unintegrated package. Original ZIP identity, complete public-authoring
 implementation, new artifact approval and any later compatible storage path
 remain unresolved release gates, not authorities conferred by passing tests.
+
+## Independent review correction: hosted selection
+
+At initial head `2957e307f146c711516802c0036ed0d2c58e358c`, independent review
+correctly found the new module absent from all explicit hosted lists. The scoped
+fix adds `backend/tests/test_health_one_action_review.py` to
+`m14h-exact-head` / “Validate shared candidate preparation at exact head”.
+Workflow YAML structure is compared against the prior head with only that run
+string allowed to change. The exact selected invocation is run locally, then
+the resulting exact-head hosted step is inspected for actual execution evidence.
+Hosted results and the correction head are retained in the delivery report and
+PR evidence, without claiming editorial acceptance or changing any artifact.
+
+Local correction validation passed: workflow YAML parses, and structural
+comparison to the prior head permits exactly the single pytest run-string
+addition. Full-history exact-head checkout is preserved. The unmodified selected
+command passes 160 tests (including all 12 package tests); two existing local
+cache-write permission warnings remain non-failing. Separate collection confirms
+the 12 Health test identities. Package regeneration `--check` still passes.

@@ -57,8 +57,11 @@ The focused suite covers wording/packet parity, singleton/source closure,
 Foushee/Massie distinctions, membership, immutability, deterministic regeneration,
 scope/source/action/episode/proposition/boundary mutations, candidate promotion
 attempts, all existing candidate refusal paths, and historical seed identity
-refusal. The new suite is run explicitly locally; current hosted workflow lists
-do not select this new test module. Workflow configuration is unchanged.
+refusal. The module is selected in the existing hosted `m14h-exact-head` job's
+“Validate shared candidate preparation at exact head” pytest invocation, alongside
+the shared-domain and shared-corpus tests. That job checks out the PR head with
+full Git history. The review correction changes only this test list; workflow
+permissions, secrets, environments, triggers and deployment behavior are unchanged.
 
 ## Remaining gates
 
