@@ -716,4 +716,21 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['cases'][1]['appended_claims'][1]['passage']='All easements extinguished.'
         with self.assertRaisesRegex(ValueError,'omitted operative or historical context'):validate_land_governance_baselines(m,u,s,bad)
 
+    def test_nepa_framework_preserves_conditional_review_and_pending_proposal_limits(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_nepa_review_framework
+        p=folder(115);r=read(p/'nepa_dated_review_framework_receipt.json');m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_nepa_review_framework(m,u,s,r);self.assertTrue(validate(115)['generated_replay'])
+        for field in ['whole_proposal_effects_resolved','whole_parent_body_reread','current_law_certified','rejected_changes_imported']:
+            bad=copy.deepcopy(r);bad['cases'][3][field]=True
+            with self.assertRaisesRegex(ValueError,'became whole-effect parent/current-law or rejection clearance'):validate_nepa_review_framework(m,u,s,bad)
+        aid='house:119:1:354'
+        for old,new in [('SOONER OF','LATER OF'),('NOT EXCEEDING90days UNLESS longer','automatic project approval after90days'),('after5years only after reevaluating','after5years without reevaluating'),('exception for substantial new circumstances or information about the significance of adverse effects bearing on the analysis','unconditional five-year reliance'),('UNLESS essential','under no circumstances'),('independent agency evaluation/responsibility','automatic acceptance of sponsor findings')]:
+            bad=copy.deepcopy(m);bad[aid]['rationale']=bad[aid]['rationale'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'changed prior evidence flags or conditional review boundaries'):validate_nepa_review_framework(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['house:119:1:356']['exact_action_binding_unresolved']=False
+        with self.assertRaisesRegex(ValueError,'changed prior evidence flags or conditional review boundaries'):validate_nepa_review_framework(bad,u,s,r)
+        bad=copy.deepcopy(s);bad['govinfo:42usc4336c-2024-operative']['text']=bad['govinfo:42usc4336c-2024-operative']['text'].replace('consult with','do not consult with')
+        with self.assertRaisesRegex(ValueError,'source or dated extent changed'):validate_nepa_review_framework(m,u,bad,r)
+        bad=copy.deepcopy(m);bad[aid]['claim_source_map']=bad[aid]['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed prior evidence flags or conditional review boundaries'):validate_nepa_review_framework(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()

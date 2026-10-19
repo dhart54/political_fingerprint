@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch114**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch115**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Two pending land-governance cases now bind retained dated named baselines: H.R.186links complete2024section8902and notes for the Reserve/commemorative definitions; H.R.43links complete1613(c)/(g)conveyance and valid-existing-rights units. Exact map/date/ownership, conditional acreage/revenue, historical review-period, continuing administration and reversion qualifications are preserved. Actual maps/remaining laws/instruments/current-law and whole property-versus-Infrastructure membership remain pending. Both dispositions/flags,70meanings and compiledgraph are unchanged; two existing retained objects are newly linked, not newly acquired.
+Four pending H.R.4776 actions—three rejected amendments and parent passage—now share complete retained2024operative NEPA review-framework sections4336/4336a/4336b/4336c. Threshold/EA/EIS/research qualifications, qualified clocks and court schedules, agency responsibility, conditional programmatic reliance and cross-agency-exclusion adoption remain distinct. These are dated comparative baselines, not whole-proposal effects, a newly read complete parent, current-law or membership clearance. All four dispositions/flags,70meanings and compiledgraph remain unchanged. Three existing objects are newly linked and one governed object reused, with zero acquisition.
 
-[Readable batch114 findings](infrastructure_candidate_batch114.md).
+[Readable batch115 findings](infrastructure_candidate_batch115.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch115_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -55,31 +55,29 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**Current source/conservation/generated replay, seven semantic checks and three
+**Final source/conservation/generated replay, seven semantic checks and three
 focused regressions pass**. The full 151-test suite passed at exact
 `3be714268666858130bb62d1f171af6a19362c4a`; all 70 meanings and the compiled graph
-remain unchanged. A full 156-test suite was not run. Current shared authoring/generated copies remain member-neutral.
+remain unchanged. A full 157-test suite was not run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took6.701seconds; the specification/authoring elapsed window and later byte/delivery
+took7.792seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch114_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch115_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch115_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch115_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch115_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Two land-governance material baselines linked; cases18/28remainpending. Actualmap/8908/PL11780/other1613units/instruments/currentlaw and whole-membership questions remain.70unacceptedmeanings/262pending/6holds/0ordinary; no protected retry or acceptance.
+Four4776actions now share dated review-level/agency/deadline/reliance/exclusion framework. Wholechild/parenteffects, standing/Tribal/otherlaw, fullparentbody/floor and membership remainpending.70unacceptedmeanings/262pending/6holds/0ordinary; no protectedretry or acceptance.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
-[Two original retained land-baseline objects](infrastructure_batch114_land_baselines/manifest.json) authenticate to their frozen source-pool Git blob, actual numeric JSON pointers and original canonical/raw/governed hashes. Their exact retained units total10,854characters; actual exported file lengths are6,110and6,732bytes. No new source capture, full parent-statute/map/instrument/current-law certificate or membership clearance.
+[Four pending records and four exact retained framework sources](infrastructure_batch115_nepa_framework/manifest.json) preserve current snapshot pointers and original source provenance, actual UTF8/LF lengths and canonical/transport hashes. Eight small files total152,158bytes, maximum44,455bytes. [Pre-delivery reliance precision](../editorial/shared_candidates/house_119_infrastructure_batch115_20260916/programmatic_reliance_precision_receipt.json) preserves initial passing gates and reconstructible record/transport preimages; final gates also pass.
 
-The pending Title17fee clause now explicitly includes collection **on or after financial close**. Only that phrase and dependent review hashes changed in231; unresolved fee-offset/current-law limits remain. [Precision/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch113_20260916/title17_same_day_fee_precision_receipt.json).
+[One original HEA117(h)object](infrastructure_batch113_hea117_original_object/manifest.json) preserves exact10a6e616/batch112sources blobad1332bd0cb3683fa42be8cd4c7d066de15a02ca, actualpointer904, full2143character extent and original hashes. Its2,650-byte transport adds no new source acquisition or independent-review closure claim.
 
-The [seven original Title17objects](infrastructure_batch110_title17_original_objects/manifest.json) are unchanged. Their seven length fields now match actual published Git LF bytes; the original Windows-CRLF-length declarations and all object/hash preimages remain in the [narrow correction receipt](../editorial/shared_candidates/house_119_infrastructure_batch113_20260916/title17_export_length_correction_receipt.json). Source content integrity was unaffected.
+[Latest scoped113/114review attribution](infrastructure_batch113_114_independent_review_attribution.json) reports bothTitle17corrections closed, all20attestationobjects authenticated and no material114defect. No Actions run was reportedly found for exacta5df7205/05b35939; fresh local gates remain separate from the inherited111full151suite. This115increment is outside that review.
 
-[POSTAct provisional review](infrastructure_batch111_provisional_review_attribution.json), [bounded earlier independent review](infrastructure_batch109_guard_independent_review_attribution.json) and the [required parent-relay correction](infrastructure_roll241_relay_attribution_clarification_20261019.json) retain their checkout, source, incompleteness and acceptance limits. No review status is silently advanced.
-
-[Twenty original source objects for the ten pending attestation proposals](infrastructure_batch112_attestation_original_objects/manifest.json) preserve exact batch111 Git objects, actual numeric JSON pointers and all canonical/raw/governed/transport hashes. The twenty small files total 57,340 bytes, with a maximum of 9,753 bytes. This transport does not expand the earlier opening/attestation/structured-metadata reading scope. [Scoped review attribution](infrastructure_batch112_title17_scoped_review_attribution.json) records reported Title17 object authentication and batch112 meaning/observation preservation; independent review of the ten proposals remains incomplete.
+[Land-baseline original objects](infrastructure_batch114_land_baselines/manifest.json), [Title17original objects](infrastructure_batch110_title17_original_objects/manifest.json), [attestation originals](infrastructure_batch112_attestation_original_objects/manifest.json), [POSTAct provisional review](infrastructure_batch111_provisional_review_attribution.json) and [required parent-relay correction](infrastructure_roll241_relay_attribution_clarification_20261019.json) retain source/history and acceptance limits. No protected hold or publication state changed.

@@ -312,6 +312,7 @@ CASES[59]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(335,340
 CASES[60]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [340,341,342,345,346]],new=[],new_action_ids=['house:119:1:342'],counts=dict(interpreted_substantive_directional=45,interpreted_substantive_non_directional=1,procedural_context=120,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=283,pending_interpretation=160),pending=277)
 CASES[64]=dict(rolls=[],action_ids=['house:119:1:362',*['house:119:2:'+str(r) for r in range(2,6)]],new=[],counts=dict(interpreted_substantive_directional=46,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=263,pending_interpretation=170),pending=257)
 CASES[65]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(6,11)],new=[],new_action_ids=['house:119:2:9'],counts=dict(interpreted_substantive_directional=47,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=258,pending_interpretation=174),pending=252)
+CASES[115]=dict(rolls=[],action_ids=[],new=[],repairs=[f'house:119:1:{i}' for i in [352,353,354,356]],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[114]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:18','house:119:1:28'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[113]=dict(rolls=[],action_ids=[],new=[],repairs=[f'house:119:1:{i}' for i in [79,80,81,82,83,231]],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[112]=dict(rolls=[],action_ids=[],new=[],repairs=[f'house:119:1:{i}' for i in [19,84,85,88,89,90,108,115,133,213]],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
@@ -395,6 +396,24 @@ def validate_investor_report_deadline_precision(action,record,row,source,recomme
     expected_rec=copy.deepcopy(receipt['before_recommendation']);expected_rec['candidate_action_sha256']=digest(action);expected_rec['material_qualifications']=[x.replace(*receipt['limitation_replacement'])for x in expected_rec['material_qualifications']];require(recommendation==expected_rec,'investor report qualification or recommendation binding differs')
     require(receipt['after_action_sha256']==digest(action)and receipt['after_record_sha256']==digest(record)and receipt['after_universe_row_sha256']==digest(row)and receipt['unaffected_shared_actions_preserved']==64 and receipt['member_observations_unchanged_except_hash_rebinding'],'investor timing correction receipt binding/preservation differs')
     require(not receipt['source_acquisitions']and not receipt['protected_retries']and not receipt['accepted_membership']and not receipt['external_delivery_authorized']and not receipt['publication_authorized']and not receipt['production_writes'],'investor timing correction conferred authority')
+
+def validate_nepa_review_framework(records,rows,sources,receipt):
+    hashes=['45baf181b78476d4d68c2e6597115b913d4c960b2a15af78ad87513b769fba2b','ed1144680acfd42ed1ff4f77b291569ac0cb927c2bb0a89ce8b9546ed3ecba54','73bbd8c06b01046d12f2815d420535e6d0d0d90e3cd9a729cdf1b10a3e87e1f7','d24a16df0d1d991a00a668bb41ee280fe93e1268103b7522a123f39948371b70']
+    ids=[f'govinfo:42usc4336{s}-2024-operative' for s in ['', 'a','b','c']]
+    require([x['source_id'] for x in receipt['baseline_units']]==ids,'NEPA framework named units differ')
+    for unit,hashed in zip(receipt['baseline_units'],hashes):
+        source=sources[unit['source_id']];total=len(source['text']);require(digest(source)==unit['source_object_sha256']==hashed and unit['review_extent']==dict(start=0,end=total,total=total) and source['text_version']=='2024 Code complete operative section; later notes excluded','NEPA framework source or dated extent changed')
+    require([c['action_id'] for c in receipt['cases']]==[f'house:119:1:{i}' for i in [352,353,354,356]],'NEPA framework pending cohort differs')
+    refs=[{k:sources[sid][k] for k in ['source_id','url','raw_sha256','governed_bytes_sha256']} for sid in ids]
+    terms=['Dated comparative framework ONLY','UNLESS essential','AND overall cost/time are not unreasonable','jurisdiction-by-law OR special-expertise','independent agency evaluation/responsibility','SOONER OF','consultation-based necessary extensions','NOT EXCEEDING90days UNLESS longer','None of those clocks or remedies automatically approves','exception for substantial new circumstances or information about the significance of adverse effects bearing on the analysis','after5years only after reevaluating','ensure reliance remains valid','identification, consultation, public identification and documented adoption','No new whole-parent-body reading','all four cases remain pending']
+    for case in receipt['cases']:
+        aid=case['action_id'];record=records[aid];row=rows[aid];before=case['before_record'];claims=case['appended_claims']
+        require(case['comparative_framework_only'] and not any(case[k] for k in ['whole_proposal_effects_resolved','whole_parent_body_reread','current_law_certified','rejected_changes_imported']) and record['disposition']==row['disposition']=='pending_interpretation','NEPA framework became whole-effect parent/current-law or rejection clearance')
+        require([x['source_id'] for x in claims]==ids and all(x['passage']==sources[x['source_id']]['text'] and 'laternotes excluded' in x['locator'] for x in claims),'NEPA framework omitted operative scope or source claims')
+        expected=copy.deepcopy(before);expected.update(rationale=case['new_rationale'],sources=before['sources']+refs,claim_source_map=before['claim_source_map']+claims)
+        require(record==expected and record['rationale'].startswith(before['rationale']+'\n\n') and all(q in record['rationale'] for q in terms),'NEPA framework changed prior evidence flags or conditional review boundaries')
+        expected_row=copy.deepcopy(case['before_universe_row']);expected_row.update(reason=record['rationale'],rationale=record['rationale'],sources=record['sources']);expected_row['exact_action_source_binding']['source_ids']=[s['source_id'] for s in record['sources']];expected_row['review_progress']['shared_review_record_sha256']=digest(record)
+        require(row==expected_row,'NEPA framework altered universe or exact-parent version boundaries')
 
 def validate_land_governance_baselines(records,rows,sources,receipt):
     identities={'house:119:1:18':('govinfo:40usc8902-services181','d2e2e1d5bb38a9960a371345baca889bfa3dc5e438913b4b09942cdf88a94309',5164),'house:119:1:28':('govinfo:43usc1613-2024-land-conveyance-c-g','f99486b29baf89ab19e457cb9d16b36df45cfd44069ee5afe539155f2bfaf6fa',5690)}
@@ -749,6 +768,11 @@ def validate(n,values=None,*,check_files=True):
         correction=read(data/'north_dakota_exception_scope_correction.json');aid='house:119:1:226';pre=correction['preimage_membership'];require(digest(pre)==correction['preimage_membership_sha256'] and digest(ss[correction['source_id']])==correction['source_object_sha256'],'North Dakota preserved source/preimage digest differs')
         require({k:v for k,v in records[aid].items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and records[aid]['rationale']==correction['corrected_rationale'],'North Dakota qualification changed meaning/state/source scope')
         if n==43:require(pre==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and correction['preimage_universe_row']==prev[aid],'North Dakota historical preimage differs')
+    if n>=115:
+        nepa=read(data/'nepa_dated_review_framework_receipt.json');validate_nepa_review_framework(records,rows,ss,nepa)
+        if n==115:
+            for c in nepa['cases']:require(c['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==c['action_id']) and c['before_universe_row']==prev[c['action_id']],'NEPA framework preimages differ from exact114')
+        else:require(nepa==read(prior/'nepa_dated_review_framework_receipt.json'),'original NEPA framework receipt changed')
     if n>=114:
         land=read(data/'land_governance_dated_baseline_receipt.json');validate_land_governance_baselines(records,rows,ss,land)
         if n==114:
