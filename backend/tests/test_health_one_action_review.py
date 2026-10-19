@@ -5,6 +5,9 @@ import json
 import unittest
 
 from scripts import prepare_health_one_action_review as review
+from scripts import prepare_health_one_action_decision_packet as decision_packet
+from jsonschema import Draft7Validator, ValidationError
+from backend.app.semantic_ir.adapters import build_review_payload
 from backend.app.semantic_ir.shared_corpus import (
     adapt_to_semantic_ir_input, sealed_digest, SharedCorpusValidationError,
 )
@@ -193,6 +196,127 @@ class HealthOneActionReviewTests(unittest.TestCase):
         substitute["manifest_sha256"] = semantic_hash(substitute)
         with self.assertRaisesRegex(ValueError, "bundle identity mismatch"):
             validate_bundle(substitute)
+
+
+class HealthOwnerDecisionPacketTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.products = decision_packet.read_products()
+        cls.outputs = decision_packet.build_packet(cls.products)
+        cls.document = cls.outputs["OWNER-DECISION-PACKET.md"].decode("utf-8")
+        cls.payload = json.loads(cls.outputs["review_payload.json"])
+
+    def test_existing_typed_review_payload_binds_both_members_without_approval(self):
+        self.assertEqual(self.payload, build_review_payload(self.products["compiled_ir.json"]))
+        self.assertEqual([m["member_id"] for m in self.payload["members"]], ["F000477", "M001184"])
+        self.assertIs(self.payload["approval_conferred"], False)
+        self.assertEqual(self.payload["review_state"], review.CANDIDATE)
+        self.assertEqual(set(self.outputs), {"review_payload.json", "OWNER-DECISION-PACKET.md"})
+
+    def test_exact_graph_accounting_and_all_seven_mapping_objects_are_reviewable(self):
+        records = [record for m in self.products["presentation_inputs.json"]["members"] for record in m["records"].values()]
+        self.assertEqual(len(records), 7)
+        for record in records:
+            self.assertIn(decision_packet.code(record), self.document)
+        for member in self.products["compiled_ir.json"]["members"]:
+            exact = {key: member[key] for key in ("proposition_graph", "coverage", "action_accounting")}
+            self.assertIn(decision_packet.code(exact), self.document)
+        self.assertIn("conclusion_relevance=supporting", self.document)
+        self.assertIn("zero behavioral propositions", self.document)
+        self.assertIn("Bundle decision: __________", self.document)
+        self.assertEqual(self.document.count("| Pending |"), 2)
+
+    def test_documentary_scope_and_executable_admission_are_explicitly_distinct(self):
+        for text in ("not an executable formal acceptance-chain subject", "approval_conferred=false", "executable acceptance-chain admission is unresolved", "bounded_partial_record", "Those constants are incompatible with this bounded pilot", "Original ZIP remains **unverified**", "No National Security authority is substituted"):
+            self.assertIn(text, self.document)
+        self.assertIn(self.payload["compiled_ir_sha256"], self.document)
+        self.assertIn(review.PACKET_SHA, self.document)
+
+    def test_review_payload_cannot_gain_approval_drop_a_member_or_change_binding(self):
+        for change in ("approval", "member", "digest", "candidate"):
+            value = copy.deepcopy(self.payload)
+            if change == "approval": value["approval_conferred"] = True
+            elif change == "member": value["members"].pop()
+            elif change == "digest": value["compiled_ir_sha256"] = "0" * 64
+            else: value.pop("review_state")
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, "pending review payload differs"):
+                decision_packet.validate_review_payload(value, self.products["compiled_ir.json"])
+
+    def test_graph_scope_and_member_disposition_changes_are_rejected(self):
+        for change in ("primary", "massie_direction", "extra_action", "full_scope"):
+            products = copy.deepcopy(self.products)
+            graph = products["compiled_ir.json"]["members"]
+            if change == "primary": graph[0]["proposition_graph"]["propositions"][0]["conclusion_relevance"] = "primary"
+            elif change == "massie_direction": graph[1]["proposition_graph"]["propositions"] = copy.deepcopy(graph[0]["proposition_graph"]["propositions"])
+            elif change == "extra_action": products["shared_issue_mapping.json"]["episodes"][0]["action_ids"].append("house:119:2:181")
+            else: products["presentation_inputs.json"]["review_scope"] = "full_defined_issue_record"
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, "frozen Health object differs"):
+                decision_packet.build_packet(products)
+
+    def test_all_wording_and_mapping_changes_are_rejected(self):
+        for index, member in enumerate(self.products["presentation_inputs.json"]["members"]):
+            for field in member["records"]:
+                for change in ("text", "mapping"):
+                    products = copy.deepcopy(self.products)
+                    record = products["presentation_inputs.json"]["members"][index]["records"][field]
+                    if change == "text": record["text"] += " Unsupported expansion."
+                    else: record["mapping"]["presentation_target"] = "unsupported_target"
+                    with self.subTest(member=member["member_id"], field=field, change=change), self.assertRaisesRegex(ValueError, "frozen Health object differs"):
+                        decision_packet.build_packet(products)
+
+    def test_original_source_identity_and_zip_limit_cannot_be_replaced(self):
+        for change in ("normalized_source", "zip_verified"):
+            products = copy.deepcopy(self.products)
+            if change == "normalized_source": products["governed_sources.json"]["sources"][0]["raw_sha256"] = decision_packet.RAW_EVIDENCE[1][1][:64]
+            else: products["provenance.json"]["original_zip_verified"] = True
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, "frozen Health object differs"):
+                decision_packet.build_packet(products)
+
+    def test_additional_raw_bytes_are_pinned_and_cannot_be_substituted(self):
+        raw = {source_id: decision_packet.git_bytes(decision_packet.RAW_ROOT + name) for source_id, name in decision_packet.RAW_EVIDENCE}
+        decision_packet.validate_raw_evidence(raw)
+        for source_id, name in decision_packet.RAW_EVIDENCE:
+            self.assertEqual(hashlib.sha256(raw[source_id]).hexdigest(), name[:64])
+            changed = dict(raw)
+            changed[source_id] += b"\n"
+            with self.subTest(source=source_id), self.assertRaisesRegex(ValueError, "additional raw bytes differ"):
+                decision_packet.build_packet(self.products, raw_sources=changed)
+            self.assertIn(decision_packet.RAW_ROOT + name, self.document)
+            self.assertIn(name[:64], self.document)
+
+    def test_full_universe_receipt_cannot_admit_a_pending_bounded_review(self):
+        schema = json.loads((review.ROOT / "docs/methodology/full_issue_universe_authority_receipt_v1.schema.json").read_text(encoding="utf-8"))
+        for field, value in (("review_scope", "bounded_partial_record"), ("decision", None)):
+            with self.subTest(field=field), self.assertRaises(ValidationError):
+                Draft7Validator(schema["properties"][field]).validate(value)
+
+    def test_existing_pending_decision_format_does_not_require_a_massie_proposition(self):
+        schema = json.loads((review.ROOT / "docs/methodology/full_record_behavioral_semantic_ir_human_decision_v1.schema.json").read_text(encoding="utf-8"))
+        for member, count in zip(self.products["compiled_ir.json"]["members"], (1, 0)):
+            decisions = [{"proposition_id": p["proposition_id"], "decision": None, "bounded_revision": None, "reviewer_notes": None} for p in member["proposition_graph"]["propositions"]]
+            self.assertEqual(len(decisions), count)
+            Draft7Validator(schema["properties"]["decisions"]).validate(decisions)
+            if decisions:
+                decisions[0]["decision"] = "accept_candidate_as_written"
+                with self.assertRaises(ValidationError):
+                    Draft7Validator(schema["properties"]["decisions"]).validate(decisions)
+        # Fragment conformance is deliberately not advertised as a complete
+        # full-record candidate/authority-chain validation.
+        self.assertIn("not proof of complete acceptance-chain admission", self.document)
+
+    def test_candidate_public_and_persistence_guards_remain_active(self):
+        for kwargs in ({"prepare_persistence_proposal": True}, {"public_presentation_authoring": self.products["presentation_inputs.json"]}):
+            with self.assertRaisesRegex(ValueError, "shared candidates cannot prepare public or persistence"):
+                run_editorial_pipeline(self.products["compiler_input.json"], **kwargs)
+
+    def test_deterministic_outputs_and_no_input_or_guard_writes(self):
+        paths = [review.PACKAGE / name for name in ("DECISION-PACKET.md", *decision_packet.NAMES)]
+        paths += [review.ROOT / p for p in ("backend/app/semantic_ir/pipeline.py", "backend/app/semantic_ir/adapters.py", "backend/app/editorial_presentations/compiler.py")]
+        before = {str(p): p.read_bytes() for p in paths}
+        self.assertEqual(decision_packet.build_packet(self.products), self.outputs)
+        self.assertEqual({str(p): p.read_bytes() for p in paths}, before)
+        for name, expected in self.outputs.items():
+            self.assertEqual((decision_packet.OUTPUT / name).read_text(encoding="utf-8"), expected.decode("utf-8"))
 
 
 if __name__ == "__main__":
