@@ -611,4 +611,16 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         with patch.object(validator,'read',side_effect=missing_addendum):
             with self.assertRaisesRegex(FileNotFoundError,'required correcting addendum missing'):validator.validate(109,check_files=False)
 
+    def test_title17_dated_program_context_cannot_revive_superseded_law_or_promote_funding_case(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_title17_dated_baseline_link
+        p=folder(110);r=read(p/'title17_dated_baseline_link_receipt.json');m=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_title17_dated_baseline_link(m,u,s,r)
+        for old,new in [('16517text is HISTORICAL relative','16517text is current regardless of'),('additional1billion throughSeptember30,2028with NOT MORE THAN3percent','no other administrative funding'),('four-billion commitment figure is NOT certified as the current aggregate limit','four-billion is the current aggregate limit'),('not loan principal','loan principal')]:
+            with self.subTest(change=new):
+                bad=copy.deepcopy(m);self.assertIn(old,bad['rationale']);bad['rationale']=bad['rationale'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'Title17 source age, funding or remaining-gap qualifications lost'):validate_title17_dated_baseline_link(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['claim_source_map'][-1]['locator']='Current complete law, all funding effects resolved'
+        with self.assertRaisesRegex(ValueError,'Title17 baseline claim lost dated exact scope'):validate_title17_dated_baseline_link(bad,u,s,r)
+        bad=copy.deepcopy(u);bad['disposition']='interpreted_substantive_directional'
+        with self.assertRaisesRegex(ValueError,'Title17 unresolved fee/currentlaw case was promoted'):validate_title17_dated_baseline_link(m,bad,s,r)
+
 if __name__=='__main__':unittest.main()
