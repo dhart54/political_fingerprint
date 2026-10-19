@@ -591,4 +591,24 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(u);bad['disposition']='interpreted_substantive_directional'
         with self.assertRaisesRegex(ValueError,'DRBC published rule expanded asterisks or promoted pending case'):validate_drbc_funding_restriction(a,m,bad,s,r)
 
+    def test_roll241_parent_relay_correction_is_required_without_rewriting_history(self):
+        from unittest.mock import patch
+        from scripts import validate_infrastructure_discovery_delta as validator
+        p=folder(109);original=read(p/'roll241_report_extent_disclosure_correction_receipt.json');source=next(x for x in read(p/'sources.json')['sources'] if x['source_id']=='state:roll241-report169');path=validator.ROOT/'docs/review_packets/infrastructure_roll241_relay_attribution_clarification_20261019.json';clarification=read(path)
+        validator.validate_roll241_relay_attribution_clarification(clarification,original,source)
+        bad=copy.deepcopy(clarification);bad['corrected_attribution']='The independent reviewer introduced the malformed duplicate.'
+        with self.assertRaisesRegex(ValueError,'roll241 correcting addendum misattributes the parent relay'):validator.validate_roll241_relay_attribution_clarification(bad,original,source)
+        bad=copy.deepcopy(clarification);bad['original_attribution_preimage']['resolution']='Old receipt silently replaced'
+        with self.assertRaisesRegex(ValueError,'roll241 attribution original receipt or preimage changed'):validator.validate_roll241_relay_attribution_clarification(bad,original,source)
+        bad=copy.deepcopy(clarification);bad['verified_canonical_digest']='0'*64
+        with self.assertRaisesRegex(ValueError,'roll241 attribution canonical retained source digest differs'):validator.validate_roll241_relay_attribution_clarification(bad,original,source)
+        bad=copy.deepcopy(clarification);bad['meaning_or_disposition_changed']=True
+        with self.assertRaisesRegex(ValueError,'roll241 attribution correction became acceptance or semantic change'):validator.validate_roll241_relay_attribution_clarification(bad,original,source)
+        original_read=validator.read
+        def missing_addendum(candidate):
+            if candidate==path:raise FileNotFoundError('required correcting addendum missing')
+            return original_read(candidate)
+        with patch.object(validator,'read',side_effect=missing_addendum):
+            with self.assertRaisesRegex(FileNotFoundError,'required correcting addendum missing'):validator.validate(109,check_files=False)
+
 if __name__=='__main__':unittest.main()

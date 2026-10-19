@@ -391,6 +391,14 @@ def validate_investor_report_deadline_precision(action,record,row,source,recomme
     require(receipt['after_action_sha256']==digest(action)and receipt['after_record_sha256']==digest(record)and receipt['after_universe_row_sha256']==digest(row)and receipt['unaffected_shared_actions_preserved']==64 and receipt['member_observations_unchanged_except_hash_rebinding'],'investor timing correction receipt binding/preservation differs')
     require(not receipt['source_acquisitions']and not receipt['protected_retries']and not receipt['accepted_membership']and not receipt['external_delivery_authorized']and not receipt['publication_authorized']and not receipt['production_writes'],'investor timing correction conferred authority')
 
+def validate_roll241_relay_attribution_clarification(clarification,original,source):
+    require(clarification['kind']=='append_only_parent_relay_transcription_attribution_clarification' and clarification['original_receipt_path']=='docs/editorial/shared_candidates/house_119_infrastructure_batch103_20260916/roll241_report_extent_disclosure_correction_receipt.json','roll241 attribution correcting addendum identity differs')
+    require(clarification['original_receipt_sha256']==digest(original) and clarification['original_attribution_preimage']==original['review_transcription_qualification'] and clarification['original_receipt_and_source_unchanged'],'roll241 attribution original receipt or preimage changed')
+    require(clarification['source_id']==source['source_id']=='state:roll241-report169' and clarification['verified_canonical_digest']==digest(source) and len(clarification['verified_canonical_digest'])==64,'roll241 attribution canonical retained source digest differs')
+    text=clarification['corrected_attribution']
+    require(all(x in text for x in ['independent reviewer originally supplied and recomputed the correct64character digest','parent coordinator introduced the malformed66character duplicate','attributed to the parent relay, not the independent reviewer']) and 'corrected parent-relay transcription' in clarification['corrected_resolution'],'roll241 correcting addendum misattributes the parent relay')
+    require(not clarification['meaning_or_disposition_changed'] and not clarification['publication_authorized'] and not clarification['production_writes'] and 'No broad source/semantic clearance or acceptance' in clarification['independent_review_scope'],'roll241 attribution correction became acceptance or semantic change')
+
 def validate_drbc_funding_restriction(action,pending_record,pending_row,sources,recommendation):
     old=sources['drbc:compact-material-water-budget-reservations150'];source=sources['drbc:compact-operative-retained-109'];full='\n\n'.join(p['text'] for p in old['page_extracts'])
     require(len(old['page_extracts'])==44 and len(full)==144121 and digest(full)==old['captured_full_text_sha256'],'DRBC retained full-page witness reconstruction differs')
@@ -687,6 +695,7 @@ def validate(n,values=None,*,check_files=True):
         else:require(receipt==read(prior/'hr804_partial_baseline_link_receipt.json'),'804original baseline follow-up receipt changed')
     if n>=103:
         aid='house:119:2:241';receipt=read(data/'roll241_report_extent_disclosure_correction_receipt.json');validate_roll241_report_extent_disclosure(records[aid],rows[aid],ss['state:roll241-report169'],receipt)
+        validate_roll241_relay_attribution_clarification(read(ROOT/'docs/review_packets/infrastructure_roll241_relay_attribution_clarification_20261019.json'),receipt,ss['state:roll241-report169'])
         if n==103:require(receipt['before_record']==next(r for r in old['membership_review']['records']if r['action_id']==aid)and receipt['before_universe_row']==prev[aid],'roll241 correction preimages differ from exact102')
         else:require(receipt==read(prior/'roll241_report_extent_disclosure_correction_receipt.json'),'roll241 original correction receipt changed')
     if n>=101:
