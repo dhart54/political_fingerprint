@@ -216,4 +216,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         from scripts.validate_infrastructure_discovery_delta import validate_conduit_repayment_boundaries
         action=copy.deepcopy(next(a for a in read(folder(65)/'authoring.json')['actions'] if a['action_id']=='house:119:2:9'));s={s['source_id']:s for s in read(folder(65)/'sources.json')['sources']};action['meaning']=action['meaning'].replace('House veto-override attempt failed and did not itself enact the bill','House veto-override attempt passed and enacted the bill')
         with self.assertRaisesRegex(ValueError,'conduit failed override became ordinary passage or enactment'):validate_conduit_repayment_boundaries(action,s['govinfo:hr131enr'],s['govinfo:pl111-11-arkansas9115'],s['clerk:119:2:9'])
+    def test_housing_energy_advice_does_not_force_hud_or_remove_its_standards(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_housing_energy_role_boundaries
+        action=next(a for a in read(folder(66)/'authoring.json')['actions'] if a['action_id']=='house:119:2:12');s={s['source_id']:s for s in read(folder(66)/'sources.json')['sources']}
+        for old,new in [('does not require HUD to adopt every DOE recommendation','requires HUD to adopt every DOE recommendation automatically'),('does not repeal HUD’s separate section 5403(g) energy-standard duty','repeals every HUD energy and safety standard')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'housing advice became compulsory HUD adoption or abolished independent standards'):validate_housing_energy_role_boundaries(bad,s['govinfo:hr5184eh'],s['olrc:42usc17071-2024-operative'],s['govinfo:42usc5403g-2024-operative'],s['doe:manufactured-housing2022-operative'],s['doe:manufactured-housing2025-compliance'])
+    def test_housing_contingent_dates_and_single_multi_section_tiers_remain(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_housing_energy_role_boundaries
+        action=next(a for a in read(folder(66)/'authoring.json')['actions'] if a['action_id']=='house:119:2:12');s={s['source_id']:s for s in read(folder(66)/'sources.json')['sources']}
+        for old,new,error in [('60-day and 180-day clocks after publication of final enforcement procedures','a fixed current May 31, 2023 deadline','housing original deadline replaced later contingent compliance clocks'),('Tier 1 single-section homes and Tier 2 multi-section homes','Tier 1 homes below a retail-price cutoff and Tier 2 higher-priced homes','housing rule tiers became an invented price cutoff'),('relative to the standard as proposed to be revised','relative to every existing standard before revision','housing performance comparator changed from proposed revision to existing standard')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,error):validate_housing_energy_role_boundaries(bad,s['govinfo:hr5184eh'],s['olrc:42usc17071-2024-operative'],s['govinfo:42usc5403g-2024-operative'],s['doe:manufactured-housing2022-operative'],s['doe:manufactured-housing2025-compliance'])
 if __name__=='__main__':unittest.main()
