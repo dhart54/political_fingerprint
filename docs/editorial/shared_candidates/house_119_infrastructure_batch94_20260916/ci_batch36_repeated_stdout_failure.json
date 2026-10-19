@@ -1,0 +1,60 @@
+{
+  "exact_head": "82dad47ec1713681be59cda9801d186f2796b719",
+  "run_id": 39155333254,
+  "job_id": 117757274641,
+  "job_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39155333254/job/117757274641",
+  "conclusion": "failure",
+  "candidate_preparation_step": "success",
+  "disposable_m14h_step": "success",
+  "failed_step": "Run accepted M14G and public-receipt regressions",
+  "later_release_frontend_steps": "skipped",
+  "raw_log_sha256": "9c6649568dcc79e3f5eac2f2626efaeb2017e2fa6f99ce3960309915c9fc6892",
+  "bounded_log_evidence": [
+    {
+      "line": 680,
+      "needle": "passed in",
+      "excerpt": "m14h-exact-head\tValidate shared candidate preparation at exact head\t2026-10-18T18:45:30.8485236Z 217 passed in 124.94s (0:02:04)",
+      "full_line_characters": 128
+    },
+    {
+      "line": 754,
+      "needle": "passed in",
+      "excerpt": "m14h-exact-head\tProve disposable M14H apply, idempotency, faults, rollback, and public selector\t2026-10-18T18:45:35.8790734Z 1 passed in 3.60s",
+      "full_line_characters": 142
+    },
+    {
+      "line": 1252,
+      "needle": "coreBundle.js:9515",
+      "excerpt": "n accepted M14G and public-receipt regressions\t2026-10-18T18:46:04.7575006Z /home/runner/work/political_fingerprint/political_fingerprint/frontend/node_modules/playwright-core/lib/coreBundle.js:9515",
+      "full_line_characters": 216
+    },
+    {
+      "line": 1256,
+      "needle": "RangeError: Invalid string length",
+      "excerpt": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:46:04.7576686Z RangeError: Invalid string length",
+      "full_line_characters": 127
+    },
+    {
+      "line": 1257,
+      "needle": "coreBundle.js:9515",
+      "excerpt": "receipt regressions\t2026-10-18T18:46:04.7577558Z     at Socket.<anonymous> (/home/runner/work/political_fingerprint/political_fingerprint/frontend/node_modules/playwright-core/lib/coreBundle.js:9515:59)",
+      "full_line_characters": 247
+    },
+    {
+      "line": 1264,
+      "needle": "Node.js v20.20.2",
+      "excerpt": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T18:46:04.7581499Z Node.js v20.20.2",
+      "full_line_characters": 110
+    }
+  ],
+  "prior_same_error_head": "fffdb8ca4c0b4772380930ae290405e1ee7f3493",
+  "repeat_of_stdout_range_error": true,
+  "exact_head_green": false,
+  "candidate_assertion_failure_established": false,
+  "deterministic_local_reproduction_established": false,
+  "transient_runner_cause_established": false,
+  "job_retried": false,
+  "tests_weakened": false,
+  "engineering_followup": "Repeated normal CI failure in Playwright stdout accumulation warrants a separately scoped harness investigation; no semantic/publication acceptance or release validation inferred.",
+  "latest_pushed_batch37_assessment": "Separate run; no success claimed by this receipt."
+}

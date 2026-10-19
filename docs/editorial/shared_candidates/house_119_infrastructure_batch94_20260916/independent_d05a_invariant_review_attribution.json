@@ -1,0 +1,21 @@
+{
+  "source_thread": "01a15000-0ff6-73e2-95ac-fe6aee80201f",
+  "report_type": "Parent-relayed independent invariant review, not self-certified",
+  "exact_historical_head": "d05a44461ae7550227169314a6b2504ea3bf9177",
+  "reported": {
+    "prior_authoring_objects_preserved": 37,
+    "prior_observations_preserved": 74,
+    "core_hashes_resolve": 40,
+    "projection_bindings_resolve": 80,
+    "not_voting_nondirectional": 6
+  },
+  "reported_defect": "Historical accounting.mechanism_types omitted amendment although roll207/230/232 cores correctly used amendment.",
+  "current_correction": "Derive current summary from authored stages and guard it; historical bytes unchanged.",
+  "source_level_36_41_review": "Pending requested historical split export",
+  "membership_accepted": false,
+  "publication_authorized": false,
+  "production_authorized": false,
+  "ci_repair_PR": 233,
+  "integration_authorized": false,
+  "tests_rerun_solely_for_attribution": false
+}
