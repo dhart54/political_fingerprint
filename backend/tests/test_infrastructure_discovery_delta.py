@@ -488,4 +488,15 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'roll241 retained source object or canonical digest changed'):validate_roll241_report_extent_disclosure(m,u,bad,r)
         bad=copy.deepcopy(u);bad['disposition']='exact_action_ineligible'
         with self.assertRaisesRegex(ValueError,'roll241 universe binding or pending disposition changed'):validate_roll241_report_extent_disclosure(m,bad,s,r)
+    def test_hr804_partial_baseline_cannot_supply_rural_definition_or_promote_pending(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hr804_partial_baseline_link
+        p=folder(104);r=read(p/'hr804_partial_baseline_link_receipt.json');m=next(x for x in read(p/'membership_review.json')['records']if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions']if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources']if x['source_id']==r['source_id']);validate_hr804_partial_baseline_link(m,u,s,r)
+        bad=copy.deepcopy(m);bad['rationale']=bad['rationale'].replace('ONLY paragraphs(1)and(2), not all7(b) or its rural paragraph16','the entire7(b), including its rural definition')
+        with self.assertRaisesRegex(ValueError,'804partial baseline scope or program-specific qualifications lost'):validate_hr804_partial_baseline_link(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['claim_source_map'][-1]['locator']='Full7(b)and rural eligibility certified'
+        with self.assertRaisesRegex(ValueError,'804partial baseline became whole program or rural proof'):validate_hr804_partial_baseline_link(bad,u,s,r)
+        bad=copy.deepcopy(u);bad['disposition']='interpreted_substantive_directional'
+        with self.assertRaisesRegex(ValueError,'804remaining baseline or taxonomy gap was promoted'):validate_hr804_partial_baseline_link(m,bad,s,r)
+        bad=copy.deepcopy(r);bad['agricultural_rural_proxy_used']=True
+        with self.assertRaisesRegex(ValueError,'804baseline receipt or proxy boundary differs'):validate_hr804_partial_baseline_link(m,u,s,bad)
 if __name__=='__main__':unittest.main()

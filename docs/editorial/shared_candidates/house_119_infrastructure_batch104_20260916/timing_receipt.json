@@ -1,0 +1,35 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T18:54:44.221367+00:00",
+    "qualification": "Bounded pending-baseline follow-up specification start; prior retained-source inspection untimed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T18:55:26.517381+00:00",
+    "end_utc": "2026-10-19T18:55:31.697814+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 104 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch104_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.362
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.233
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_hr804_partial_baseline_cannot_supply_rural_definition_or_promote_pending backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_roll241_report_extent_correction_preserves_source_and_pending_state",
+        "returncode": 0,
+        "process_wall_seconds": 0.537,
+        "scope": "Two targeted tests: new104partial-baseline boundary and retained103report correction; not full136test suite"
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 42.296,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 5.132,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0
+}
