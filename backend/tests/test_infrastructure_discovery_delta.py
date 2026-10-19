@@ -807,4 +807,20 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(m);bad['house:119:1:356']['rationale']=bad['house:119:1:356']['rationale'].replace('not the entire six-ground list','the entire six-ground list repealed')
         with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or comparative limits'):validate_nepa_judicial_dependency_context(bad,u,s,r)
 
+    def test_urban_definition_keeps_population_alternatives_and_boundary_exception_scoped(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_urban_definition_context
+        p=folder(120);r=read(p/'urban_dated_definition_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_urban_definition_context(a,u,s,r);self.assertTrue(validate(120)['generated_replay'])
+        for field in ['full_101_reviewed','current_Census_geography_certified','EDGE_thresholds_resolved','actual_recipient_eligibility_decided','current_law_certified','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared full-law/geography/EDGE/recipient/membership gates'):validate_urban_definition_context(a,u,s,bad)
+        bad=copy.deepcopy(s);bad['text']=bad['text'].replace('5,000','50,000')
+        with self.assertRaisesRegex(ValueError,'dated definition source differs'):validate_urban_definition_context(a,u,bad,r)
+        for old,new in [('5,000cutoff is not universal','5,000cutoff applies to every State portion'),('50,000people AND Census designation','population alone is sufficient'),('NOT a population waiver','a waiver of population limits'),('NOT imported into paragraph36','also automatically imported into paragraph36')]:
+            bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'dropped remaining named program gaps'):validate_urban_definition_context(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['previous_gap_phrase_replacement'][1]='All remaining program and EDGEgaps resolved.'
+        with self.assertRaisesRegex(ValueError,'dropped remaining named program gaps'):validate_urban_definition_context(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed prior evidence flags or bounded claim'):validate_urban_definition_context(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()
