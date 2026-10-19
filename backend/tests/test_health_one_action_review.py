@@ -141,6 +141,45 @@ class HealthOneActionReviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.presentation_check(inputs)
 
+    def assert_massie_boundary_swap_rejected(self, field, boundary_index):
+        inputs = copy.deepcopy(self.products["presentation_inputs.json"])
+        massie = inputs["members"][1]
+        boundary = massie["boundaries"][boundary_index]
+        mapping = massie["records"][field]["mapping"]
+        # Keep the generic boundary mapping internally consistent so this tests
+        # the field-specific contract, rather than an unrelated reference error.
+        mapping["boundary_ids"] = [boundary["boundary_id"]]
+        mapping["presentation_target"] = boundary["presentation_target"]
+        mapping["action_ids"] = copy.deepcopy(boundary["action_ids"])
+        mapping["episode_ids"] = copy.deepcopy(boundary.get("episode_ids", []))
+        with self.assertRaisesRegex(ValueError, "field semantic reference differs"):
+            self.presentation_check(inputs)
+
+    def test_accounting_cannot_map_to_scope_boundary(self):
+        self.assert_massie_boundary_swap_rejected("accounting", 0)
+
+    def test_scope_cannot_map_to_not_voting_boundary(self):
+        self.assert_massie_boundary_swap_rejected("scope_label", 1)
+
+    def test_qualifications_cannot_map_to_not_voting_boundary(self):
+        self.assert_massie_boundary_swap_rejected("qualifications", 1)
+
+    def test_legitimate_field_mappings_keep_exact_evidence_closure(self):
+        inputs = self.products["presentation_inputs.json"]
+        self.presentation_check(inputs)
+        for member in inputs["members"]:
+            for field in ["scope_label", "qualifications"]:
+                mapping = member["records"][field]["mapping"]
+                self.assertEqual(mapping["boundary_ids"], [member["boundaries"][0]["boundary_id"]])
+                self.assertEqual(mapping["presentation_target"], "scope_note")
+                self.assertEqual(mapping["action_ids"], [review.ACTION])
+                self.assertEqual(mapping["episode_ids"], [review.EPISODE])
+        accounting = inputs["members"][1]["records"]["accounting"]["mapping"]
+        self.assertEqual(accounting["boundary_ids"], [inputs["members"][1]["boundaries"][1]["boundary_id"]])
+        self.assertEqual(accounting["presentation_target"], "coverage_note")
+        self.assertEqual(accounting["action_ids"], [review.ACTION])
+        self.assertEqual(accounting["episode_ids"], [])
+
     def test_deterministic_replay_and_checked_in_products(self):
         self.assertEqual(review.build_package(self.packet), self.products)
         for name, expected in self.products.items():

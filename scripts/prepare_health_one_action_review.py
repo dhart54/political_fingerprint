@@ -113,6 +113,23 @@ def validate_presentation_inputs(inputs, compiled, source_contract, wording):
             require(record["mapping"]["source_refs"] == SOURCE_IDS, "exact source closure required")
             expected_proposition = mid == "F000477" and key in {"finding_title", "finding"}
             require(bool(record["mapping"]["proposition_ids"]) == expected_proposition, "field semantic role differs")
+            if expected_proposition:
+                require(len(propositions) == 1, "one exact-choice proposition required")
+                reference = next(iter(propositions.values()))
+            elif key == "accounting":
+                not_voting = [b for b in members[mid]["composition"]["coverage_boundaries"] if b["boundary_type"] == "not_voting"]
+                require(len(not_voting) == 1, "one compiled Not Voting boundary required")
+                reference = not_voting[0]
+            else:
+                reference = expected_scope
+            expected_mapping = {
+                "proposition_ids": [reference["proposition_id"]] if expected_proposition else [],
+                "boundary_ids": [] if expected_proposition else [reference["boundary_id"]],
+                "presentation_target": reference["presentation_target"],
+                "action_ids": reference.get("evidence_action_ids", reference.get("action_ids", [])),
+                "episode_ids": reference.get("evidence_episode_ids", reference.get("episode_ids", [])),
+            }
+            require(all(record["mapping"][field] == value for field, value in expected_mapping.items()), f"field semantic reference differs: {mid}:{key}")
             _validate_analytical_text(
                 record, allowed_targets={"other_notable_choices", "scope_note", "coverage_note"},
                 propositions=propositions, boundaries=boundaries,

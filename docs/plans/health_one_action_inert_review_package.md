@@ -167,3 +167,25 @@ addition. Full-history exact-head checkout is preserved. The unmodified selected
 command passes 160 tests (including all 12 package tests); two existing local
 cache-write permission warnings remain non-failing. Separate collection confirms
 the 12 Health test identities. Package regeneration `--check` still passes.
+
+## Independent review correction: exact field bindings
+
+Independent review reproduced the initial twelve focused tests and output parity
+using cached raw source files verified against Git-tree identities through a
+read-only shim; this was not a fresh-clone replay. It then demonstrated three
+invalid swaps accepted by the initial kind-only validator. The stored mappings
+were correct; this was a validation gap, not a wording or current-output defect.
+
+Regression tests first reproduced all three missing rejections while legitimate
+mappings passed. Validation now binds each field's exact proposition/boundary,
+target, action IDs and episode IDs. Accounting must use the actual compiled
+Not Voting boundary; scope and qualifications must use the scope boundary.
+Three separate negative tests and one positive closure test cover the correction.
+Only the preparation-tool hash in provenance changes on regeneration; wording,
+IR, sources, all generated payloads and their recorded content hashes stay equal.
+
+All sixteen focused package tests pass after the correction. The unchanged
+hosted selection command passes 164 tests locally (two non-failing local cache
+permission warnings). Regeneration `--check` passes. Byte comparison confirms
+the eleven generated content files equal the prior committed bytes; provenance
+differs only in `preparation_tool_canonical_string_sha256`.

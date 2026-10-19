@@ -57,7 +57,12 @@ The focused suite covers wording/packet parity, singleton/source closure,
 Foushee/Massie distinctions, membership, immutability, deterministic regeneration,
 scope/source/action/episode/proposition/boundary mutations, candidate promotion
 attempts, all existing candidate refusal paths, and historical seed identity
-refusal. The module is selected in the existing hosted `m14h-exact-head` job's
+refusal. Field-specific tests also reject all three reviewed boundary swaps:
+accounting to scope, scope to Not Voting, and qualifications to Not Voting.
+Each field must match its exact expected reference, target, action and episode
+closure; the legitimate committed mappings are unchanged. Independent review
+replayed verified cached source files through a read-only shim, not a fresh clone.
+The module is selected in the existing hosted `m14h-exact-head` job's
 “Validate shared candidate preparation at exact head” pytest invocation, alongside
 the shared-domain and shared-corpus tests. That job checks out the PR head with
 full Git history. The review correction changes only this test list; workflow
