@@ -1,0 +1,633 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 86,
+  "exact_committed_head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+  "export_anchor_head": "c83babd6dec4af0be87befa87d8b763816e85479",
+  "committed_provenance": {
+    "membership": {
+      "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/membership_review.json",
+      "git_blob": "fb37ae9fec7d7eaa610713e8703225cd9b5adeb3",
+      "git_bytes_sha256": "a36e709a73e302abef0dd50c04e19241fc8841b865f6af5044222576523ba5c1"
+    },
+    "sources": {
+      "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+      "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+      "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+    },
+    "screening": {
+      "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/screening_receipt.json",
+      "git_blob": "8f0a9c8d6c436717c9dfd9a0175a4a011c3e1ae0",
+      "git_bytes_sha256": "7e47b1e3e8223ae603ab5ff876ba02d632c605a4e1bc162320c6c3be21839599"
+    },
+    "screening_units": {
+      "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/screening_units_receipt.json",
+      "git_blob": "b8f684c9d0e1b0db80299caffc9e45b3d183f5a3",
+      "git_bytes_sha256": "84bc3d1033da35c1532192bbba9aff8a2a586bad00d377628ebf7c682e277c47"
+    },
+    "validation": {
+      "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/validation_receipt.json",
+      "git_blob": "8f0225010c47a7fcb0bb41f81b7cdfe8e2284965",
+      "git_bytes_sha256": "1069fd4db34cff56df6ecf08996eba8824f1ff3a063501ddab0da4188fef1c7d"
+    }
+  },
+  "original_membership_review_sha256": "1e0969ad19ab2dc63f89dea62b3a367d4d8705c7a2a5618f83c0010c924a1322",
+  "new_screened_ids": [
+    "house:119:2:121",
+    "house:119:2:122",
+    "house:119:2:123",
+    "house:119:2:124",
+    "house:119:2:128",
+    "house:119:2:129",
+    "house:119:2:130",
+    "house:119:2:131",
+    "house:119:2:132",
+    "house:119:2:135"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "79f697d96bfa94f3713304433b48465ed679c9505ddc05953b8f274b64f4f8cd",
+      "record": {
+        "action_id": "house:119:2:121",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete own EH is a House tax-policy support/recognition expression. Its economic, refund, health, emissions, broadband, manufacturing or other asserted benefits remain attributed resolution claims, not independently verified current facts, achieved outcomes or representative motives. It does not itself enact cited earlier bills, appropriate funds, create new tax or health entitlements, change permit duties or establish a technical/physical program. Exact adoption is therefore non-counting expressive context, separate from binding earlier legislation and its domain/evidence review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:121",
+            "url": "https://clerk.house.gov/evs/2026/roll121.xml",
+            "raw_sha256": "5eed5bd63fd971cdfafb5497d83c4ae119bd17e0733b1c80ae2aae48de4fa7bf",
+            "governed_bytes_sha256": "cb368df04971d66f860eeae4ecef96a7e9d63021ac619f9e8bb0c24bb88c0b41"
+          },
+          {
+            "source_id": "clerk:119:2:121:continuation-recapture",
+            "url": "https://clerk.house.gov/evs/2026/roll121.xml",
+            "raw_sha256": "09a909f2e90aa7a907741bc1f6397e8f0ef6f5dac5e705075fd6738e7c9c50f6",
+            "governed_bytes_sha256": "186a0b53ac2a9a17713b7e643266d0b37e25a7fd5d2b98e0e8a0521d304ef5a7"
+          },
+          {
+            "source_id": "govinfo:hres1156eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1156eh/html/BILLS-119hres1156eh.htm",
+            "raw_sha256": "7e542ca509f53e9a8249f2f9c82b1f3600162f479237e14685d98bfbc64188c0",
+            "governed_bytes_sha256": "4591d7e25dd37e391d4c13d934079fc784f1e857bcc51f9366c5fc5c6c3c58da"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1156eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1156 Engrossed in House (EH)] <DOC> H. Res. 1156 In the House of Representatives, U. S., April 16, 2026. Whereas, on July 4, 2025, the President signed Public Law 119-21, commonly known as the ``Working Families Tax Cuts''; Whereas the Working Families Tax Cuts prevented a $2,600,000,000,000 tax hike on taxpayers making less than $400,000 per year; Whereas, for the 2025 tax year, the Working Families Tax Cuts helped deliver an estimated $222,000,000,000 in tax refunds, putting money directly back into Americans' wallets; Whereas, for the 2026 tax year, the Working Families Tax Cuts are anticipated to deliver an average tax cut of $3,750, helping make America affordable again; Whereas the Working Families Tax Cuts ensure that families of four making under $73,000 will generally face zero Federal income tax liability; Whereas the Working Families Tax Cuts will result in a 15 percent tax cut for Americans whose income is in the bottom 40 percent, with the largest percentage reduction going to the bottom 20 percent; Whereas the share of total income taxes paid by Americans whose income is in the top 1 percent will increase to nearly 40 percent as a result of the Working Families Tax Cuts, while the share paid by Americans in the remaining 99 percent will decrease to 60 percent; Whereas the Working Families Tax Cuts enacted ``no tax on tips'', which will provide millions of tipped workers with $32,000,000,000 of tax relief; Whereas the Working Families Tax Cuts enacted ``no tax on overtime'', which will provide hard-working Americans with a $90,000,000,000 tax cut on their overtime pay; Whereas the Working Families Tax Cuts provide a new deduction for interest on auto loans for new American-made vehicles, lowering costs and helping more Americans get behind the wheel; Whereas the Working Families Tax Cuts honor a lifetime of hard work by American seniors by providing them with a deduction of up to $6,000 per year; Whereas, to date, nearly 45 percent of tax returns filed this tax season have claimed at least one of these four new tax cuts; Whereas the Working Families Tax Cuts help jump-start the American dream for millions of youth by making a down payment of over $15,000,000,000 in tax-advantaged investment accounts for American children; Whereas the Working Families Tax Cuts permanently increase the standard deduction, delivering $205,000,000,000 in new tax relief to the 90 percent of earners who claim it; Whereas the Working Families Tax Cuts permanently expand the child tax credit, increasing the maximum credit amount to $2,200 per child and ensuring that the credit will not lose value due to inflation; Whereas the Working Families Tax Cuts expands the accessibility of the $17,280 adoption tax credit so that all families who adopt, regardless of income, can benefit; Whereas the Working Families Tax Cuts expands educational freedom and choice for working families by ensuring 529 accounts can now cover costs associated with trade schools or K-12 educational expenses; and Whereas the Working Families Tax Cuts expands access to health savings accounts for more than 10 million Americans to help control health care costs and promotes preventive care by allowing patients to pair these accounts with innovative direct primary care and easier access to telehealth: Now, therefore, be it Resolved, That the House of Representatives-- (1) expresses its support for tax policies that support working families and let them keep more of their hard-earned money; and (2) recognizes the significant tax relief provided by the Working Families Tax Cuts for hardworking Americans. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "485b10e27274dd05a890e994d8137fc01bb297cfab31a4a45cf74e46a3954e94",
+      "record": {
+        "action_id": "house:119:2:122",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact retained Clerk question is previous question on1175. No substantive motion body is interpreted. This non-counting procedural action is distinct from an amendment, whole rule adoption or underlying bill passage; no component policy position, enacted authority or physical/technical outcome is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:122",
+            "url": "https://clerk.house.gov/evs/2026/roll122.xml",
+            "raw_sha256": "02e1c0ff1c816ddc169a12ccdb2485d06fb9051772aa1448911342acc70d38fc",
+            "governed_bytes_sha256": "74bd949721fba6f56151b976a533e823d0d74ea428dffcf9b4739b019f168589"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f36f73a8b99e0cb0f3015654472daaef4adb071bebde5ffda21259d3465faf68",
+      "record": {
+        "action_id": "house:119:2:123",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete retained1175callup/offered-amendment/recorded result read. Scott amendment replaces the first resolving section and adds deemed adoption of RCP119-25as8035substitute. This is a substantive self-executing substitution proposal, not merely previous-question procedure. Exact amendment failed200–220with11NotVoting; the incorporated print/whole8035FISAand surveillance/technical/legal baselines are not bound or reviewed here, so whole meaning/domain remain pending. Do not infer any participant preferred a particular surveillance alternative, enacted/extended authority or accepted print from this failed vote. The RecordheadingApril16and early-morning proceedings are retained alongside ClerkApril17metadata without rewriting raw dates.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:123",
+            "url": "https://clerk.house.gov/evs/2026/roll123.xml",
+            "raw_sha256": "25e006be70f81466e4692319e8aab5084c0044d9550d8852188e9cba1aa5ef21",
+            "governed_bytes_sha256": "909a17279ff27e193018c2fbd7dc134504a9eaf6d156bbfc80dfac2522d23919"
+          },
+          {
+            "source_id": "congressional-record:2026-04-16-hres1175",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-16/pdf/CREC-2026-04-16-house.pdf",
+            "raw_sha256": "9ff4f8654293ba98f7e65765798fc629b51951e295656ddfe79f69fbb7ed802a",
+            "governed_bytes_sha256": "3f1544b3f9040bb296ef65c3fa7caee95e001efa4b4dd539df44141dd0dca964"
+          },
+          {
+            "source_id": "govinfo:hres1175rh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1175rh/html/BILLS-119hres1175rh.htm",
+            "raw_sha256": "733fa8df1db7c0fa95258644cc7f9abbf6dfd501eee83139ee42d7cce9f31c83",
+            "governed_bytes_sha256": "5bcfbadb5d908409cc47ded3a989f7b6db51b60f467bb25976c6eb659d2ead6a"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-04-16-hres1175",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/20352a7bf9bb7e81968a7ba6fb2470ef78294eca0bbfad5ed1b9e50d5afbf940.0000000.json",
+                  "sha256": "1886de654436cbed42013be5fdd2beb101c48b3ff7edde6e6060b43628b64eee",
+                  "start_character": 0,
+                  "end_character": 12737
+                }
+              ],
+              "utf8_sha256": "20352a7bf9bb7e81968a7ba6fb2470ef78294eca0bbfad5ed1b9e50d5afbf940",
+              "total_characters": 12737,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1175rh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1175 Reported in House (RH)] <DOC> House Calendar No. 71 119th CONGRESS 2d Session H. RES. 1175 [Report No. 119-610] Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES April 15, 2026 Mr. Austin Scott of Georgia, from the Committee on Rules, reported the following resolution; which was referred to the House Calendar and ordered to be printed _______________________________________________________________________ RESOLUTION Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intel-ligence Surveillance Act of 1978 through October 20, 2027, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided among and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees and the chair and ranking minority member of the Permanent Select Committee on Intelligence or their respective designees; and (2) one motion to recommit. House Calendar No. 71 119th CONGRESS 2d Session H. RES. 1175 [Report No. 119-610] _______________________________________________________________________ RESOLUTION Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes. _______________________________________________________________________ April 15, 2026 Referred to the House Calendar and ordered to be printed"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "5d33e64559422c73cd32e13c53f80257e7dcefd2632261d4b162d413778c2652",
+      "record": {
+        "action_id": "house:119:2:124",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete1175RH and contemporary floor callup/result read. The separate amendment to deem RCP119-25failed at123; the subsequent underlying resolution also failed197–228with6NotVoting after a preliminary voice result. Original1175provides consideration, debate, waived points and recommittal without a substantive deemed substitute. Failed123language is not imported into the remaining rule. This exact whole original-rule choice is non-counting procedural context, not approval, opposition or enactment of an8035surveillance component. Retain RecordApril16heading/overnight proceedings and ClerkApril17metadata.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:124",
+            "url": "https://clerk.house.gov/evs/2026/roll124.xml",
+            "raw_sha256": "c0f957fb016c8b8a84be3315dcb6fd3aaaf77771377474d69220c5a4de65695e",
+            "governed_bytes_sha256": "840ddcdcc1dd411e7b450f010feca24d888b741b1a1cee16897c3ce80965520b"
+          },
+          {
+            "source_id": "govinfo:hres1175rh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1175rh/html/BILLS-119hres1175rh.htm",
+            "raw_sha256": "733fa8df1db7c0fa95258644cc7f9abbf6dfd501eee83139ee42d7cce9f31c83",
+            "governed_bytes_sha256": "5bcfbadb5d908409cc47ded3a989f7b6db51b60f467bb25976c6eb659d2ead6a"
+          },
+          {
+            "source_id": "congressional-record:2026-04-16-hres1175",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-16/pdf/CREC-2026-04-16-house.pdf",
+            "raw_sha256": "9ff4f8654293ba98f7e65765798fc629b51951e295656ddfe79f69fbb7ed802a",
+            "governed_bytes_sha256": "3f1544b3f9040bb296ef65c3fa7caee95e001efa4b4dd539df44141dd0dca964"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1175rh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1175 Reported in House (RH)] <DOC> House Calendar No. 71 119th CONGRESS 2d Session H. RES. 1175 [Report No. 119-610] Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES April 15, 2026 Mr. Austin Scott of Georgia, from the Committee on Rules, reported the following resolution; which was referred to the House Calendar and ordered to be printed _______________________________________________________________________ RESOLUTION Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intel-ligence Surveillance Act of 1978 through October 20, 2027, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided among and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees and the chair and ranking minority member of the Permanent Select Committee on Intelligence or their respective designees; and (2) one motion to recommit. House Calendar No. 71 119th CONGRESS 2d Session H. RES. 1175 [Report No. 119-610] _______________________________________________________________________ RESOLUTION Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes. _______________________________________________________________________ April 15, 2026 Referred to the House Calendar and ordered to be printed"
+          },
+          {
+            "source_id": "congressional-record:2026-04-16-hres1175",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/20352a7bf9bb7e81968a7ba6fb2470ef78294eca0bbfad5ed1b9e50d5afbf940.0000000.json",
+                  "sha256": "1886de654436cbed42013be5fdd2beb101c48b3ff7edde6e6060b43628b64eee",
+                  "start_character": 0,
+                  "end_character": 12737
+                }
+              ],
+              "utf8_sha256": "20352a7bf9bb7e81968a7ba6fb2470ef78294eca0bbfad5ed1b9e50d5afbf940",
+              "total_characters": 12737,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "65f536f699eda458c2486dac828a8b318ece8c4a1d679494ba27c0524ff1ccf9",
+      "record": {
+        "action_id": "house:119:2:128",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete2493EH adds as-appropriate rural-underserved fund-use/involvement conditions separately to outreach and network grants and changes330A(j)authorization years2021–2025to2026–2030. Those are authorization/use conditions, not a new appropriation or proof every resident receives services. Whole baseline330Agrants/network purposes, existing shared Healthmeaning and technical-infrastructure versus general-health-service boundary remain pending reconciliation. Do not author a duplicate narrower digital-network meaning, treat every integrated clinical network as physical/telecommunications infrastructure, or infer current grant awards, health access or quality outcomes. Raw H R2493identity/source remains preserved.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:128",
+            "url": "https://clerk.house.gov/evs/2026/roll128.xml",
+            "raw_sha256": "e08f4ea51eba559fe428e8f595a1daa99a277915d6c20bd5a7d5574027a7e4b5",
+            "governed_bytes_sha256": "42cad9e2a02afccbb6870e35932ea9b6e333490852941e5fe99b715ae6f23b36"
+          },
+          {
+            "source_id": "govinfo:hr2493eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2493eh/html/BILLS-119hr2493eh.htm",
+            "raw_sha256": "073f3603cc3864011dd0bd34f960806310bea4070783b5e8d06d6afef5c5e5f5",
+            "governed_bytes_sha256": "af85767b4707f3a6c83d209d85b844471b2a1d093ac44650f7568e8795cc2567"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2493eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2493 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 2493 _______________________________________________________________________ AN ACT To reauthorize certain programs regarding rural health care. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Improving Care in Rural America Reauthorization Act of 2025''. SEC. 2. RURAL HEALTH CARE SERVICES OUTREACH, RURAL HEALTH NETWORK DEVELOPMENT, AND SMALL HEALTH CARE PROVIDER QUALITY IMPROVEMENT GRANT PROGRAMS. (a) Rural Health Care Services Outreach Grants.--Section 330A(e) of the Public Health Service Act (42 U.S.C. 254c(e)) is amended by adding at the end the following: ``(4) Use of funds for rural underserved populations.--In awarding a grant under this subsection, the Director shall ensure that the funds made available through the grant will be used, as appropriate-- ``(A) to meet the health care needs of rural underserved populations in the local community or region to be served; and ``(B) for other activities to ensure the rural underserved populations in the local community or region to be served will be involved in the development and ongoing operations of the project.''. (b) Rural Health Network Development Grants.--Section 330A(f) of the Public Health Service Act (42 U.S.C. 254c(f)) is amended by adding at the end the following: ``(4) Use of funds for rural underserved populations.--In awarding a grant under this subsection, the Director shall ensure that the funds made available through the grant will be used, as appropriate-- ``(A) to increase access to quality health care services through integrated health care networks for the rural underserved populations in the local community or region to be served; and ``(B) for other activities to ensure the rural underserved populations in the local community or region to be served will benefit from and be involved in the planning, development, and ongoing implementation of the network.''. (c) Reauthorization.--Section 330A(j) of the Public Health Service Act (42 U.S.C. 254c(j)) is amended by striking ``2021 through 2025'' and inserting ``2026 through 2030''. Passed the House of Representatives April 21, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 2493 _______________________________________________________________________ AN ACT To reauthorize certain programs regarding rural health care."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0b7142d15a152f4bd29ac8b3f35a9da6186f004394ff3995a8873630e69f69c2",
+      "record": {
+        "action_id": "house:119:2:129",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete S1020ESread for exact House suspension/pass question. Covered license must have been issued beforeMarch13,2020. On licensee request FERCmay, after reasonable notice and good cause, provide at most3consecutive2yearextensions, not more than6additional years beyond the referenced8, measured from the final806extension. Reinstatement is discretionary for a construction-start period expiring afterDec31,2023and beforeenactment, with retroactive effective-date and extension-on-expiration terms; not every expired permit automatically revived. Material16USC806commencement/extension baseline is not present in the bounded reused source pool and remains unbound; retain whole hydroconstruction meaning pending that baseline/version review. No completed project, guaranteed extension, new appropriation or realized power outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:129",
+            "url": "https://clerk.house.gov/evs/2026/roll129.xml",
+            "raw_sha256": "e70f79358608c7ac624d31490aae82845247b920c532577c571fdcc984cd4cf9",
+            "governed_bytes_sha256": "18ed4ae56e760cb3c618e28a751e16203c942d5ae10e618b0ea131e962455fa7"
+          },
+          {
+            "source_id": "govinfo:s1020es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1020es/html/BILLS-119s1020es.htm",
+            "raw_sha256": "326d9f4e6b58d1c503d14e9a641c70b923d3763fc6e797d1fd0223c93a0732da",
+            "governed_bytes_sha256": "735c9940115e6354b35336855773aa3edce8af9f2d88e6f80f8377c1e8ba2a19"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s1020es",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S. 1020 Engrossed in Senate (ES)] <DOC> 119th CONGRESS 1st Session S. 1020 _______________________________________________________________________ AN ACT To require the Federal Energy Regulatory Commission to extend the time period during which licensees are required to commence construction of certain hydropower projects. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. EXTENSION OF TIME TO COMMENCE CONSTRUCTION OF CERTAIN HYDROPOWER PROJECTS. (a) Definition of Covered Project.--In this section, the term ``covered project'' means a hydropower project with respect to which the Federal Energy Regulatory Commission issued a license before March 13, 2020. (b) Authorization of Extension.--Notwithstanding section 13 of the Federal Power Act (16 U.S.C. 806), on the request of a licensee of a covered project, the Federal Energy Regulatory Commission may, after reasonable notice and for good cause shown, extend in accordance with subsection (c) the period during which the licensee is required to commence construction of the covered project for not more than an additional 6 years beyond the 8 years authorized by that section. (c) Period of Extension.--An extension of time to commence construction of a covered project under subsection (b) shall-- (1) consist of not more than 3 consecutive 2-year periods; (2) begin on the date on which the final extension of the period for commencement of construction granted to the licensee under section 13 of the Federal Power Act (16 U.S.C. 806) expires; and (3) end on the date that is not more than 6 years after the latest date to which the Federal Energy Regulatory Commission is authorized to extend the period for commencement of construction under that section. (d) Reinstatement of Expired License.--If the time period required under section 13 of the Federal Power Act (16 U.S.C. 806) to commence construction of a covered project expires after December 31, 2023, and before the date of enactment of this Act-- (1) the Federal Energy Regulatory Commission may reinstate the license for the applicable project effective as of the date of expiration of the license; and (2) the extension authorized under subsection (b) shall take effect on the date of that expiration. Passed the Senate July 29, 2025. Attest: Secretary. 119th CONGRESS 1st Session S. 1020 _______________________________________________________________________ AN ACT To require the Federal Energy Regulatory Commission to extend the time period during which licensees are required to commence construction of certain hydropower projects."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "b700696b33f351e1b1154262fab326d7b002a06bde3c88093247fd1d64c04aa1",
+      "record": {
+        "action_id": "house:119:2:130",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact retained Clerk question is previous question on1189. No substantive motion body is interpreted. This non-counting procedural action is distinct from an amendment, whole rule adoption or underlying bill passage; no component policy position, enacted authority or physical/technical outcome is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:130",
+            "url": "https://clerk.house.gov/evs/2026/roll130.xml",
+            "raw_sha256": "002e80f30892c618a1dd65b44b53117957f8f51428fd276294445da807cff073",
+            "governed_bytes_sha256": "dae3b0312a6ff43112c96fa5bc2f97a99c3da054b4a6fc8675c4a857e765ae4d"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "7b85db32087a47271a43f6b725fc0d70d8292b40478a5f3cd9f8660ebe269754",
+      "record": {
+        "action_id": "house:119:2:131",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1189EH deems committee substitutes for4690Federalbuildingenergy and5587geothermal, and RCP119-23inlieucommittee substitute for1897species package;1182expression is only made in order. Whole rule bundles substantive deemed versions with procedure and is not a simple scheduling control. Incorporated substitutes/print, baselines and whole domain mapping remain pending; no selected energy/permitting fragment is authored. The pre-existing4690CFR433/435rejection chain remains stopped without retry, transport change or access attempt; own-rule reading does not reopen it or certify that protected baseline. No project/energy/emissions/species outcome or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:131",
+            "url": "https://clerk.house.gov/evs/2026/roll131.xml",
+            "raw_sha256": "4a52bce28abcf26ddd3560fe0303852736c2578d6a0936ecd1aa80c09600b0ac",
+            "governed_bytes_sha256": "7117b1a579b37d0b4bd6f862e31abf23608e686b21c5820ece81621e722d7da1"
+          },
+          {
+            "source_id": "govinfo:hres1189eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1189eh/html/BILLS-119hres1189eh.htm",
+            "raw_sha256": "27dbbaac8b6786fb55f62e353c4ff2b53dac78d216c65dd088b10ebc4053c317",
+            "governed_bytes_sha256": "6cd71733c1df2ea9a6084d107738c65feb6b8802be5f9ad29fd107200aca7f43"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1189eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/1241add2f1517280cc312e02d99ab470b8cc978b58fafc6366c41986d1b8fd07.0000000.json",
+                  "sha256": "70b6516db3f4f30ebc1cd9f18e777315e5140d1e848cb4199680c0369fb2d868",
+                  "start_character": 0,
+                  "end_character": 4480
+                }
+              ],
+              "utf8_sha256": "1241add2f1517280cc312e02d99ab470b8cc978b58fafc6366c41986d1b8fd07",
+              "total_characters": 4480,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "7dcdd0528e1dfb01e1d0f6b5ca27edef83286737b0b8386fb2e3872e87939202",
+      "record": {
+        "action_id": "house:119:2:132",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete own EH is a House rural-community support/recognition expression. Its economic, refund, health, emissions, broadband, manufacturing or other asserted benefits remain attributed resolution claims, not independently verified current facts, achieved outcomes or representative motives. It does not itself enact cited earlier bills, appropriate funds, create new tax or health entitlements, change permit duties or establish a technical/physical program. Exact adoption is therefore non-counting expressive context, separate from binding earlier legislation and its domain/evidence review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:132",
+            "url": "https://clerk.house.gov/evs/2026/roll132.xml",
+            "raw_sha256": "259d6a2bee396d09d745679b0f1fb4a16208c7710645e7bf7425eda34d7e82ca",
+            "governed_bytes_sha256": "a0bbb8bbc0b261755ef96ee2e6d21063621aa7b74f517cad52fe9b9c7423acb1"
+          },
+          {
+            "source_id": "govinfo:hres1182eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1182eh/html/BILLS-119hres1182eh.htm",
+            "raw_sha256": "0e2d9dee1cd24e49acaf3c4f7531d517086893f01ca0bbf510598a7583d85d84",
+            "governed_bytes_sha256": "4deadbd3c672375f03051793fe91a77fabb516eec95b976668e47b775a654c52"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1182eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/37d5c8a11438eb783f4c29e0b089463a23de296477ec7f1de96b3694f59ff12b.0000000.json",
+                  "sha256": "140febca19f5ff051309fe623ed346d9d452bca5e2cd5b29f236d1f1b96f48af",
+                  "start_character": 0,
+                  "end_character": 6361
+                }
+              ],
+              "utf8_sha256": "37d5c8a11438eb783f4c29e0b089463a23de296477ec7f1de96b3694f59ff12b",
+              "total_characters": 6361,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a5f568c35094797e1a4ec2d6883d391d58160652bfc01c78627cc2f479033571",
+      "record": {
+        "action_id": "house:119:2:135",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact retained Clerk question is failed recommittal of6387. No substantive motion body is interpreted. This non-counting procedural action is distinct from an amendment, whole rule adoption or underlying bill passage; no component policy position, enacted authority or physical/technical outcome is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:135",
+            "url": "https://clerk.house.gov/evs/2026/roll135.xml",
+            "raw_sha256": "d8d9f243cf827e37a9c64f759557f009bbff1be2aa451efe205dc095e581f5e4",
+            "governed_bytes_sha256": "f08b1c438b5c263764b1a5a91cc7d7e3596b23e2c3992a95b6737ad4f2771244"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:121",
+      "original_source_object_sha256": "d7ff504ce60c1eb8333a00706deca44c37bc0e0f16101d25c98c42d1f5b3b499"
+    },
+    {
+      "source_id": "clerk:119:2:121:continuation-recapture",
+      "original_source_object_sha256": "3ff682c92ad600dbda6dc0c9d1de31c5277aa52a9268ac06ea356f9c08b9c23e"
+    },
+    {
+      "source_id": "clerk:119:2:122",
+      "original_source_object_sha256": "82a26b842fdaf7ff531c0ef6203dd3eae84f46757da401d2ae865e09f17276ee"
+    },
+    {
+      "source_id": "clerk:119:2:123",
+      "original_source_object_sha256": "765ca7c7b92dcfcd50ea09f3c3cf18bf4b9837199089c780d31ee403c53f9629"
+    },
+    {
+      "source_id": "clerk:119:2:124",
+      "original_source_object_sha256": "e036b7fc642cd3bded92afe21d89499fa793552f48ece9d1c726821b572bda00"
+    },
+    {
+      "source_id": "clerk:119:2:128",
+      "original_source_object_sha256": "b077a789461c82c367ea393a2736642a0ceaa422d83663a9725637ff83e15b59"
+    },
+    {
+      "source_id": "clerk:119:2:129",
+      "original_source_object_sha256": "adc2dd33899302f57d894af1a3711a5123057b70208d4ae441227c28e48d0fbc"
+    },
+    {
+      "source_id": "clerk:119:2:130",
+      "original_source_object_sha256": "2a7b7f012fce94c230c353d6d7c52f1918f33b0a58c2183f5c3f49d060306e2d"
+    },
+    {
+      "source_id": "clerk:119:2:131",
+      "original_source_object_sha256": "bb619e5d0b06052edf5c99bf2c37438d49bf83170b780c496b56d877ba0646f2"
+    },
+    {
+      "source_id": "clerk:119:2:132",
+      "original_source_object_sha256": "632719d7ff4ae9ae5eee42391f98a0040cd16b72a7fc5b7eefdba10db9aea26c"
+    },
+    {
+      "source_id": "clerk:119:2:135",
+      "original_source_object_sha256": "1acd404959a4c4bde3eae3c02a953c1f8849082af4dc90d24620c8f9ede1bd0c"
+    },
+    {
+      "source_id": "congressional-record:2026-04-16-hres1175",
+      "original_source_object_sha256": "3277bfeaa370656d908ace638cd72f82824112105c5a1541b9aa9f8047df8450"
+    },
+    {
+      "source_id": "govinfo:hr2493eh",
+      "original_source_object_sha256": "015870093aa1bbf3f46f081b79831e7979f3a004b18e7c991bbecd39cacdc289"
+    },
+    {
+      "source_id": "govinfo:hres1156eh",
+      "original_source_object_sha256": "cc6d53450aa606bfe508926cf574da93170247b809ea807fa5ddff13edfe7f78"
+    },
+    {
+      "source_id": "govinfo:hres1175rh",
+      "original_source_object_sha256": "b33e758d8ae1fc43ea1cbd11d6b656e702d3e177998b474062d9bff962f0ff75"
+    },
+    {
+      "source_id": "govinfo:hres1182eh",
+      "original_source_object_sha256": "1fde54ea3d96973b19cba0d866454f00faa70022e9e798286737af7faf63fcf9"
+    },
+    {
+      "source_id": "govinfo:hres1189eh",
+      "original_source_object_sha256": "ce1bf6177484f4af8e322b1bd16be03361e7593893b8bbcdcddb47ac432fc4ad"
+    },
+    {
+      "source_id": "govinfo:s1020es",
+      "original_source_object_sha256": "346bbaaa18f33f75634f810cd68867edd9d7c87c91efb14a047596fd1a4a1688"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres1156eh",
+      "governed_length": 3726,
+      "review_extent": "Complete retained own expression/bill/rule or complete captured floor callup/amendment/results read; incorporated prints/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "congressional-record:2026-04-16-hres1175",
+      "governed_length": 12737,
+      "review_extent": "Complete retained own expression/bill/rule or complete captured floor callup/amendment/results read; incorporated prints/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1175rh",
+      "governed_length": 2515,
+      "review_extent": "Complete retained own expression/bill/rule or complete captured floor callup/amendment/results read; incorporated prints/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr2493eh",
+      "governed_length": 2554,
+      "review_extent": "Complete retained own expression/bill/rule or complete captured floor callup/amendment/results read; incorporated prints/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:s1020es",
+      "governed_length": 2720,
+      "review_extent": "Complete retained own expression/bill/rule or complete captured floor callup/amendment/results read; incorporated prints/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1189eh",
+      "governed_length": 4480,
+      "review_extent": "Complete retained own expression/bill/rule or complete captured floor callup/amendment/results read; incorporated prints/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1182eh",
+      "governed_length": 6361,
+      "review_extent": "Complete retained own expression/bill/rule or complete captured floor callup/amendment/results read; incorporated prints/baselines/current law not implicitly certified"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "existing_shared_meaning_identified_for_later_reuse": 1,
+    "units": [
+      {
+        "action_id": "house:119:2:121",
+        "evidence_unit": "complete_nonbinding_expression",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:122",
+        "evidence_unit": "complete_rule_or_exact_procedural_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:123",
+        "evidence_unit": "complete_own_source_pending_incorporated_baselines_or_shared_reuse",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:124",
+        "evidence_unit": "complete_rule_or_exact_procedural_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:128",
+        "evidence_unit": "complete_own_source_pending_incorporated_baselines_or_shared_reuse",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:129",
+        "evidence_unit": "complete_own_source_pending_incorporated_baselines_or_shared_reuse",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:130",
+        "evidence_unit": "complete_rule_or_exact_procedural_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:131",
+        "evidence_unit": "complete_own_source_pending_incorporated_baselines_or_shared_reuse",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:132",
+        "evidence_unit": "complete_nonbinding_expression",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:135",
+        "evidence_unit": "complete_rule_or_exact_procedural_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": null,
+    "inherited_focused_test_count": 113,
+    "inherited_focused_suite_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+    "semantic_checks": 7,
+    "compiled_sha256": "e9f481d0d9f7048de94029be148ea49cbe89089f21ffce9e4d5859b108feb4c5"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority."
+}

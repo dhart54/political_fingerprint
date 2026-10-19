@@ -378,4 +378,32 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'construction shift failed outcome fixed conditions or limited NATO scope lost'):validate_military_construction_shift_boundaries(bad,s['congressional-record:8469-amend50-roll174-choice160'],s['house-bill:8469rh-Defensewide-NATO-complete160'],s['govinfo:10usc2806-operative160'])
+    def test_battlefield_authorization_deletion_does_not_remove_share_caps(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_battlefield_program_boundaries
+        p=folder(93);action=next(a for a in read(p/'authoring.json')['actions']if a['action_id']=='house:119:2:192');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('deletes(d), the separate$1millionauthorization, not(c), the50percentFederal-sharecap','deletes all50percentsharecaps'),('one shared$2millionannualauthorization for BOTH308104','separate$2millionannualauthorization EACH for308104')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'battlefield operative subsection share or joint-pool amount changed'):validate_battlefield_program_boundaries(bad,s['govinfo:hr7618eh'],s['govinfo:54usc3081-2024-operative134'])
+    def test_battlefield_study_clocks_and_existing_site_eligibility_remain(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_battlefield_program_boundaries
+        p=folder(93);action=next(a for a in read(p/'authoring.json')['actions']if a['action_id']=='house:119:2:192');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('within2yearsafterfundsareavailable','within2yearsafterenactment'),('certify WHETHER it meets','mustpositivelycertifyitmeets'),('does not by itself make every studied site eligible for every grant','automatically makes every studied site eligible for all grants')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'battlefield conditional study clocks or remaining eligibility lost'):validate_battlefield_program_boundaries(bad,s['govinfo:hr7618eh'],s['govinfo:54usc3081-2024-operative134'])
+    def test_northwest_straits_base_membership_and_nonvoting_liaison(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_northwest_straits_boundaries
+        p=folder(93);action=next(a for a in read(p/'authoring.json')['actions']if a['action_id']=='house:119:2:196');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('14base, not a permanent maximum','exactly14forever'),('does not create a fifteenth ordinary voting seat','creates a fifteenth ordinary voting seat'),('twoInteriorappointments','oneInteriorappointment')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'Northwest Straits membership or liaison boundary lost'):validate_northwest_straits_boundaries(bad,s['govinfo:hr2860eh'],s['govinfo:pl105384-titleIV-original162'],s['nwstraits:1998-report-reprint-edition168'],s['nwstraits:1998-report-reprint-membership-complete169'])
+    def test_northwest_straits_advisory_funding_and_old_report_limits(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_northwest_straits_boundaries
+        p=folder(93);action=next(a for a in read(p/'authoring.json')['actions']if a['action_id']=='house:119:2:196');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('no authority to issue regulations or implement Federal law or regulation','authority to issue allFederalregulations'),('No new fixed appropriation or guaranteed recipient payment','New fixed appropriation and guaranteed payments'),('authority to carry out the title7yearsafterenactment','authority to carry out the title7yearsafterHousepassage')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'Northwest Straits regulatory funding sunset or baseline limit lost'):validate_northwest_straits_boundaries(bad,s['govinfo:hr2860eh'],s['govinfo:pl105384-titleIV-original162'],s['nwstraits:1998-report-reprint-edition168'],s['nwstraits:1998-report-reprint-membership-complete169'])
 if __name__=='__main__':unittest.main()

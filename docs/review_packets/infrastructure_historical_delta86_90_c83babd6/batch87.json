@@ -1,0 +1,568 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 87,
+  "exact_committed_head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+  "export_anchor_head": "c83babd6dec4af0be87befa87d8b763816e85479",
+  "committed_provenance": {
+    "membership": {
+      "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/membership_review.json",
+      "git_blob": "5904fb738b1109785f38a8ea2e8e33150ae25b3a",
+      "git_bytes_sha256": "5fa09cefc984d9ff381d92cae842af556c06c067b8868b573a054804de4ce305"
+    },
+    "sources": {
+      "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+      "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+      "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+    },
+    "screening": {
+      "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/screening_receipt.json",
+      "git_blob": "28bfbdf394bf673bdf2bab7a93c67e9581472dde",
+      "git_bytes_sha256": "1d9abf3e88c3b5d9b93cb09de2396630a148cbf7c6ace1d738287f38a8b0554c"
+    },
+    "screening_units": {
+      "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/screening_units_receipt.json",
+      "git_blob": "ca110d0b00e69a2f868b6ba0e6073483680b6439",
+      "git_bytes_sha256": "9e0fb415bbf5c9c58894a6933101f0fbacd23f8debc61eb2bdc723dce0c8f143"
+    },
+    "validation": {
+      "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/validation_receipt.json",
+      "git_blob": "e6763dd557e2052905586f5e32d832d947b2cc34",
+      "git_bytes_sha256": "ca6523fc9dd34b3cb7745d50f1151b597358dc42e2ef03379d9c14e979f1979c"
+    }
+  },
+  "original_membership_review_sha256": "ffb4114a02f08b5d748f979dc02e5a201009aec4a8b6f8d9032a6b5fbd64f245",
+  "new_screened_ids": [
+    "house:119:2:136",
+    "house:119:2:137",
+    "house:119:2:138",
+    "house:119:2:139",
+    "house:119:2:140"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "f8fcf14a02cfddfe43d5bca58cb7886f51b49438b25177a1b690891febabf68b",
+      "record": {
+        "action_id": "house:119:2:136",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete6387EH and complete retained7619unit support an unaccepted whole scientific monitoring/modeling/public-status candidate. Preserve other exceptional-event limbs, separate State-approved wildfire-mitigation definition, changed exclusion list and existing public-health/data duties, causal-or-reasonably-expected link, alternative regional triggers, distinct18monthproposal/1yearafterproposal-final/12monthwebsite-monthly clocks, expanded specified data-use petitions and exact interim-clause deletion. Referenced old guidance/appendices/current rules/Statepractices remain uninspected, not certified repealed or currently enforceable. Nonparticipation observations remain nondirectional in the separate member-projection layer. Whole environmental-policy versus scientific-data Infrastructure taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:136",
+            "url": "https://clerk.house.gov/evs/2026/roll136.xml",
+            "raw_sha256": "8b39431dccc319aef3bbe39d9e457fa5fbb69e750e3bc714d11274b78d0c588a",
+            "governed_bytes_sha256": "27256bb693d17d587e3ecaf14e213e0c2d89bf371f36394ea247bef50a297ab4"
+          },
+          {
+            "source_id": "govinfo:hr6387eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6387eh/html/BILLS-119hr6387eh.htm",
+            "raw_sha256": "a362056d6c4021e0b3d27353ccec22c4445005268710c6247705bc24f00d4ae7",
+            "governed_bytes_sha256": "1008d75be3fa011de346a9d2e94be0315df5afdeaab56dd60c9ce555495c11c2"
+          },
+          {
+            "source_id": "govinfo:42usc7619-2024-exceptional-events",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapIII-sec7619.htm",
+            "raw_sha256": "91ed1ea2b2ce2a24e819254efa2f780596773f16ba7c19ec9cbed212514db875",
+            "governed_bytes_sha256": "721297c45ec9f7878224aa9114f670a8ff691d9c5733ab2ef3f8866b9c11e349"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6387eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9.0000000.json",
+                  "sha256": "48d58e2270180f84174f21388a51a1677c0ec945e03e1b30ff1b918167ac4e42",
+                  "start_character": 0,
+                  "end_character": 5900
+                }
+              ],
+              "utf8_sha256": "74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9",
+              "total_characters": 5900,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc7619-2024-exceptional-events",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e.0000000.json",
+                  "sha256": "f903cf629752d5772e9a5e8e0de0ceaafa78fbdf90032c9d00f46a568689cd98",
+                  "start_character": 0,
+                  "end_character": 5357
+                }
+              ],
+              "utf8_sha256": "19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e",
+              "total_characters": 5357,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr6387:119"
+      }
+    },
+    {
+      "original_record_sha256": "056500cf09503f9a4965b1ffa623448e051803faeab244fd632a1d776282c5f7",
+      "record": {
+        "action_id": "house:119:2:137",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete5587EHread. New geothermal permit exception requires non-Federal surface, Federalownershipless than50percentofaccessedsubsurface AND submitted Statepermit; associated no-major-Federal-action/no-additional-action/30daycommencement/ESA7and Statehistoric-law-dependent NHPAundertaking terms remain whole. Royalty amounts/electricity-versus-direct-use/byproduct qualification and discretionary onsite accountability reviews survive; Indianlands/trustresources exception and detailed Indianlanddefinition remain. Whole GeothermalActpermit/royalty, ESA7and NHPAundertaking baselines/current version remain unbound, so no blanket no-permits/no-royalties/everyproject clearance meaning is authored. No actual drilling, Stateapproval, tribal consent, royalty payment, energy or environmental outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:137",
+            "url": "https://clerk.house.gov/evs/2026/roll137.xml",
+            "raw_sha256": "c2c0806d427a081fd26a552d57dc5822dfee8b7b7fdccbd46a7e650415457305",
+            "governed_bytes_sha256": "e01f8f2cd271236a57aa0a7d125969142ba4803a7ecabfed49178b3684823f9f"
+          },
+          {
+            "source_id": "govinfo:hr5587eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5587eh/html/BILLS-119hr5587eh.htm",
+            "raw_sha256": "6f21957d009969931cbf8c0c7503309eb0e40e4dd91e5054a1c84b0a0d341c0e",
+            "governed_bytes_sha256": "cd31bc16ef9ca3a75e857c2c0fcb6a0820c04f85e021e321283e2d2a18e4b3e1"
+          },
+          {
+            "source_id": "govinfo:hres1189eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1189eh/html/BILLS-119hres1189eh.htm",
+            "raw_sha256": "27dbbaac8b6786fb55f62e353c4ff2b53dac78d216c65dd088b10ebc4053c317",
+            "governed_bytes_sha256": "6cd71733c1df2ea9a6084d107738c65feb6b8802be5f9ad29fd107200aca7f43"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5587eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5587 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 5587 _______________________________________________________________________ AN ACT To amend the Geothermal Steam Act of 1970 to waive the requirement for a Federal drilling permit for certain activities, to exempt certain activities from the requirements of the National Environmental Policy Act of 1969, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Harnessing Energy At Thermal Sources Act of 2026'' or the ``HEATS Act''. SEC. 2. NO FEDERAL PERMIT REQUIRED FOR GEOTHERMAL ACTIVITIES ON CERTAIN LAND. The Geothermal Steam Act of 1970 (30 U.S.C. 1001 et seq.) is amended by adding at the end the following: ``SEC. 30. NO FEDERAL PERMIT REQUIRED FOR GEOTHERMAL ACTIVITIES ON CERTAIN LAND. ``(a) In General.--The Secretary shall not require an operator to obtain a Federal drilling permit for geothermal exploration and production activities conducted on a non-Federal surface estate, provided that-- ``(1) the United States holds an ownership interest of less than 50 percent of the subsurface geothermal estate to be accessed by the proposed action; and ``(2) the operator submits to the Secretary a State permit to conduct geothermal exploration and production activities on the non-Federal surface estate. ``(b) No Federal Action.--A geothermal exploration and production activity carried out under subsection (a)-- ``(1) shall not be considered a major Federal action for the purposes of section 102(2)(C) of the National Environmental Policy Act of 1969; ``(2) shall require no additional Federal action; ``(3) may commence 30 days after submission of the State permit to the Secretary; ``(4) shall not be subject to section 7 of the Endangered Species Act of 1973; and ``(5) shall only be considered an undertaking under division A of subtitle III of title 54, United States Code (commonly referred to as the `National Historic Preservation Act'), if, with respect to the State in which the activity occurs, there is no State law in effect that addresses the preservation of historic properties in such State. ``(c) Royalties and Production Accountability.--(1) Nothing in this section shall affect the amount of royalties due to the United States under this Act from the production of electricity using geothermal resources (other than direct use of geothermal resources) or the production of any byproducts. ``(2) The Secretary may conduct onsite reviews and inspections to ensure proper accountability, measurement, and reporting of the production described in subsection (a), and payment of royalties. ``(d) Exceptions.--This section shall not apply to actions on Indian lands or resources managed in trust for the benefit of Indian Tribes. ``(e) Indian Land.--In this section, the term `Indian land' means-- ``(1) any land located within the boundaries of an Indian reservation, pueblo, or rancheria; and ``(2) any land not located within the boundaries of an Indian reservation, pueblo, or rancheria, the title to which is held-- ``(A) in trust by the United States for the benefit of an Indian tribe or an individual Indian; ``(B) by an Indian tribe or an individual Indian, subject to restriction against alienation under laws of the United States; or ``(C) by a dependent Indian community.''. Passed the House of Representatives April 23, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 5587 _______________________________________________________________________ AN ACT To amend the Geothermal Steam Act of 1970 to waive the requirement for a Federal drilling permit for certain activities, to exempt certain activities from the requirements of the National Environmental Policy Act of 1969, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1189eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/1241add2f1517280cc312e02d99ab470b8cc978b58fafc6366c41986d1b8fd07.0000000.json",
+                  "sha256": "70b6516db3f4f30ebc1cd9f18e777315e5140d1e848cb4199680c0369fb2d868",
+                  "start_character": 0,
+                  "end_character": 4480
+                }
+              ],
+              "utf8_sha256": "1241add2f1517280cc312e02d99ab470b8cc978b58fafc6366c41986d1b8fd07",
+              "total_characters": 4480,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "09e0ea831b0206ff70a472872abd8ecdfc401539dc8127a2215954950e128895",
+      "record": {
+        "action_id": "house:119:2:138",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete7959EHchanges IRSwhistleblower award TaxCourtreview(de novo with original record plus newly discovered/previously unavailable evidence), elective anonymity with court societal-interest-versus-harm exception, annual report including at most10taxavoidance schemes, qualified interest and attorney-fee deduction reference. Interest requires missing preliminary-award notice past a12monthdate after both collected proceeds AND refund-period/finality conditions, stops accruing on notice, and has180dayeffective plus special transition/12month rule. Other petition/report/taxyear effective dates remain separate. This whole tax-award/judicial/privacy/reporting package establishes no scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Anonymity is not an unconditional guarantee, generic reporting is not a technology mandate, and no individual tax offense, award, interest amount, payment or corruption/motive finding is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:138",
+            "url": "https://clerk.house.gov/evs/2026/roll138.xml",
+            "raw_sha256": "5e2112a45af804131f748f043c4b8b1cab5ebbd0a7fe69345ef9e2cfd63fa260",
+            "governed_bytes_sha256": "d359b2450b867930ac5dd7cc6e1ce6d3c8a1a581bac1a365472b395eb28d813a"
+          },
+          {
+            "source_id": "govinfo:hr7959eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7959eh/html/BILLS-119hr7959eh.htm",
+            "raw_sha256": "e5120c7d265230349d78230ebc78e639b409ccf24665780d133925b62f7aa52a",
+            "governed_bytes_sha256": "0f4266845f0bf7c420ed6666df9e3d0d82da81ba027d04dc806739ca69084f2f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7959eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/500d0d04168ebdb574195f59cfcda36b013865c4d63a6056923221d4e6fcc579.0000000.json",
+                  "sha256": "e647b31412520eb584e675eb3bc054af68dc4989b4cd1d89adc1d68f1d1f9f16",
+                  "start_character": 0,
+                  "end_character": 6088
+                }
+              ],
+              "utf8_sha256": "500d0d04168ebdb574195f59cfcda36b013865c4d63a6056923221d4e6fcc579",
+              "total_characters": 6088,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c4141585c54dd5163d0732871f278b739dff957e175da73898eb5406f19c0abc",
+      "record": {
+        "action_id": "house:119:2:139",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete227EHprovides qualifying clergy/religious-order/ChristianSciencepractitioners an optional application window to revoke an exemption effective in enactmentyear, by the extended return-due-date for the second taxableyearbeginningafterDec31,2028. Election selects first or second post2028taxable year and persists, with no later re-exemption and conditional full tax payment for late-return applications. Service/benefit/death-payment effective rules differ from the90dayIRS/SSAcongressional information-plan deadline. This whole SocialSecurity/self-employment-tax election/notice package creates no physical-service, scientific or technical-infrastructure program, supporting a proposed Infrastructure exclusion. It does not compel participation, erase all clergy exemptions, automatically approve benefits or certify individual eligibility/payment/tax amount. Raw H R227identity is preserved with own EHattestation.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:139",
+            "url": "https://clerk.house.gov/evs/2026/roll139.xml",
+            "raw_sha256": "26afc66d8af579aad1888b20e844a6d27c57c726c905e1cb45667d544a76188f",
+            "governed_bytes_sha256": "99a5baae5f213ca9c424b8ff6176790f5a802613c64cb58c8ca83546a12201e3"
+          },
+          {
+            "source_id": "govinfo:hr227eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr227eh/html/BILLS-119hr227eh.htm",
+            "raw_sha256": "95f12e8b5dea0d83debcbf94a566168e1f04c519f34cf532a93b86e19b037224",
+            "governed_bytes_sha256": "f3cdb041d4e6f7f9f0a732cb8fd0eb2f23ce769d00a77f3d61fde42186b95a4d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr227eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8ae5e15d04a772310e9f37e7ab7b08f3043ac14e21a9e44070fa31c245a969bf.0000000.json",
+                  "sha256": "84f15abc640e94ea242565e46da86f79204aff5b2f3e4c8995b472b3c16d5477",
+                  "start_character": 0,
+                  "end_character": 4112
+                }
+              ],
+              "utf8_sha256": "8ae5e15d04a772310e9f37e7ab7b08f3043ac14e21a9e44070fa31c245a969bf",
+              "total_characters": 4112,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "b201bb110dbc995baabbf1b1fe13783c134851d018afb8413aab6d19b6d82948",
+      "record": {
+        "action_id": "house:119:2:140",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question orders the previous question on H.Res.1224. No substantive motion body is interpreted. This is non-counting procedural context, separate from the subsequent whole rule/deemed package and any farmbill, surveillance, budget or other underlying choice; no component support/opposition or enactment is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:140",
+            "url": "https://clerk.house.gov/evs/2026/roll140.xml",
+            "raw_sha256": "fa292b8724b8015de49c4603d7e1231e6aab665f79a969c3cbc4a50db090eb6d",
+            "governed_bytes_sha256": "e5d5d0a9773192485c137db677922064bfe6ebae14aa8c7a46218274effb6348"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:136",
+      "original_source_object_sha256": "1a919f40c367152480483ac009f9c3e2024a8fe0bd73fbe914773eb923b63c4d"
+    },
+    {
+      "source_id": "clerk:119:2:137",
+      "original_source_object_sha256": "991c1cd0d9d496077aab55742c1a7784ec01db96ffc6a14d65861a0e5351013c"
+    },
+    {
+      "source_id": "clerk:119:2:138",
+      "original_source_object_sha256": "653a1b5ed520834877597feb3afa16e791efe5c1e73a51df8f1f7cae13f1e610"
+    },
+    {
+      "source_id": "clerk:119:2:139",
+      "original_source_object_sha256": "65ae5aa58a865bf187539efc128b99e7175816a02129813f701896ba6a144a6e"
+    },
+    {
+      "source_id": "clerk:119:2:140",
+      "original_source_object_sha256": "b19becf2a7485036beda642edb6e81b45788c0d0a4f3b509c0ec1013d7f88654"
+    },
+    {
+      "source_id": "govinfo:42usc7619-2024-exceptional-events",
+      "original_source_object_sha256": "82d6c8d5dd5975f489e8c7a5e456c8aa247b0f09637ee1ad306676934428affb"
+    },
+    {
+      "source_id": "govinfo:hr227eh",
+      "original_source_object_sha256": "6572719dc52fc5853eac74be8f493368c4fc8aaece7ad7189eb18aa030398fe2"
+    },
+    {
+      "source_id": "govinfo:hr5587eh",
+      "original_source_object_sha256": "940de39f1076c60e6154500fce4bc2cb93202d13af3ff74fff96e38cda1e69ca"
+    },
+    {
+      "source_id": "govinfo:hr6387eh",
+      "original_source_object_sha256": "ea03c14da2da8b1749206905bca71e85506311de035332eff5d87c97351df6c7"
+    },
+    {
+      "source_id": "govinfo:hr7959eh",
+      "original_source_object_sha256": "2faca38e5e4c5f45f4fa7929f91ebdf0ff8781e1eaf44ac6e49fb61bc38997da"
+    },
+    {
+      "source_id": "govinfo:hres1189eh",
+      "original_source_object_sha256": "ce1bf6177484f4af8e322b1bd16be03361e7593893b8bbcdcddb47ac432fc4ad"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr6387eh",
+      "governed_length": 5900,
+      "review_extent": "Complete retained own bill or complete selected7619operative unit read; old guidance/CFRappendices/current rules, individual practices and geothermal cross-statute baselines not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:42usc7619-2024-exceptional-events",
+      "governed_length": 5357,
+      "review_extent": "Complete retained own bill or complete selected7619operative unit read; old guidance/CFRappendices/current rules, individual practices and geothermal cross-statute baselines not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr5587eh",
+      "governed_length": 3937,
+      "review_extent": "Complete retained own bill or complete selected7619operative unit read; old guidance/CFRappendices/current rules, individual practices and geothermal cross-statute baselines not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1189eh",
+      "governed_length": 4480,
+      "review_extent": "Complete retained own bill or complete selected7619operative unit read; old guidance/CFRappendices/current rules, individual practices and geothermal cross-statute baselines not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr7959eh",
+      "governed_length": 6088,
+      "review_extent": "Complete retained own bill or complete selected7619operative unit read; old guidance/CFRappendices/current rules, individual practices and geothermal cross-statute baselines not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr227eh",
+      "governed_length": 4112,
+      "review_extent": "Complete retained own bill or complete selected7619operative unit read; old guidance/CFRappendices/current rules, individual practices and geothermal cross-statute baselines not implicitly certified"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "new_authored_nondirectional_observations": 1,
+    "units": [
+      {
+        "action_id": "house:119:2:136",
+        "evidence_unit": "complete_monitoring_bill_and_statutory_unit",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:137",
+        "evidence_unit": "complete_own_bill_pending_crossstatutes",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:138",
+        "evidence_unit": "complete_own_tax_or_SocialSecurity_bill",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:139",
+        "evidence_unit": "complete_own_tax_or_SocialSecurity_bill",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:140",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": 116,
+    "inherited_focused_test_count": null,
+    "inherited_focused_suite_head": null,
+    "semantic_checks": 7,
+    "compiled_sha256": "815d5ef89273d85ca61641009b6a2fc64f192862c8a0d7dbf1a32ef45404fcce"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_precommit_layer_correction": {
+    "original_receipt_sha256": "abb9c4755c98db69765ccc7aa5d57ed8c16e709a130ea0954f2018b238434f8b",
+    "committed_provenance": {
+      "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/membership_rationale_neutrality_correction_receipt.json",
+      "git_blob": "c75734228bc90e75cdad802a49341e6a8aa8b22e",
+      "git_bytes_sha256": "21bb4a0330223c5fc588d351d5ac68531cba73399d408f2ddd22ad3dfb6626e1"
+    },
+    "receipt": {
+      "kind": "precommit_shared_membership_layer_correction",
+      "action_id": "house:119:2:136",
+      "scope": "Remove member-specific projection-status sentence from shared membership rationale only. Status evidence remains in member projections and this separate receipt; whole meaning/source/choices and compiled graph unchanged.",
+      "before_record": {
+        "action_id": "house:119:2:136",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete6387EH and complete retained7619unit support an unaccepted whole scientific monitoring/modeling/public-status candidate. Preserve other exceptional-event limbs, separate State-approved wildfire-mitigation definition, changed exclusion list and existing public-health/data duties, causal-or-reasonably-expected link, alternative regional triggers, distinct18monthproposal/1yearafterproposal-final/12monthwebsite-monthly clocks, expanded specified data-use petitions and exact interim-clause deletion. Referenced old guidance/appendices/current rules/Statepractices remain uninspected, not certified repealed or currently enforceable. FousheeNotVoting remains nondirectional, not opposition; MassieYea projects mechanically. Whole environmental-policy versus scientific-data Infrastructure taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:136",
+            "url": "https://clerk.house.gov/evs/2026/roll136.xml",
+            "raw_sha256": "8b39431dccc319aef3bbe39d9e457fa5fbb69e750e3bc714d11274b78d0c588a",
+            "governed_bytes_sha256": "27256bb693d17d587e3ecaf14e213e0c2d89bf371f36394ea247bef50a297ab4"
+          },
+          {
+            "source_id": "govinfo:hr6387eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6387eh/html/BILLS-119hr6387eh.htm",
+            "raw_sha256": "a362056d6c4021e0b3d27353ccec22c4445005268710c6247705bc24f00d4ae7",
+            "governed_bytes_sha256": "1008d75be3fa011de346a9d2e94be0315df5afdeaab56dd60c9ce555495c11c2"
+          },
+          {
+            "source_id": "govinfo:42usc7619-2024-exceptional-events",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapIII-sec7619.htm",
+            "raw_sha256": "91ed1ea2b2ce2a24e819254efa2f780596773f16ba7c19ec9cbed212514db875",
+            "governed_bytes_sha256": "721297c45ec9f7878224aa9114f670a8ff691d9c5733ab2ef3f8866b9c11e349"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6387eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9.0000000.json",
+                  "sha256": "48d58e2270180f84174f21388a51a1677c0ec945e03e1b30ff1b918167ac4e42",
+                  "start_character": 0,
+                  "end_character": 5900
+                }
+              ],
+              "utf8_sha256": "74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9",
+              "total_characters": 5900,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc7619-2024-exceptional-events",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e.0000000.json",
+                  "sha256": "f903cf629752d5772e9a5e8e0de0ceaafa78fbdf90032c9d00f46a568689cd98",
+                  "start_character": 0,
+                  "end_character": 5357
+                }
+              ],
+              "utf8_sha256": "19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e",
+              "total_characters": 5357,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr6387:119"
+      },
+      "before_record_sha256": "e8b3c768bfb0a28cda3de4f677231ba1d8baa1bbfc10b5ee14e97974d1a7cc4a",
+      "after_record_sha256": "f8fcf14a02cfddfe43d5bca58cb7886f51b49438b25177a1b690891febabf68b",
+      "removed": " FousheeNotVoting remains nondirectional, not opposition; MassieYea projects mechanically.",
+      "replacement": " Nonparticipation observations remain nondirectional in the separate member-projection layer.",
+      "initial_positive_validation": {
+        "start_utc": "2026-10-19T17:00:01.201746+00:00",
+        "end_utc": "2026-10-19T17:02:00.287983+00:00",
+        "processes": [
+          {
+            "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 87 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch87_20260916\\validation_receipt.json",
+            "returncode": 0,
+            "process_wall_seconds": 2.097
+          },
+          {
+            "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+            "returncode": 0,
+            "process_wall_seconds": 114.883
+          },
+          {
+            "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+            "returncode": 0,
+            "process_wall_seconds": 2.106
+          }
+        ]
+      },
+      "final_positive_validation": {
+        "start_utc": "2026-10-19T17:03:23.528412+00:00",
+        "end_utc": "2026-10-19T17:05:24.721320+00:00",
+        "processes": [
+          {
+            "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 87 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch87_20260916\\validation_receipt.json",
+            "returncode": 0,
+            "process_wall_seconds": 2.103
+          },
+          {
+            "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+            "returncode": 0,
+            "process_wall_seconds": 116.96
+          },
+          {
+            "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+            "returncode": 0,
+            "process_wall_seconds": 2.129
+          }
+        ]
+      },
+      "focused_tests_each_phase": 116,
+      "semantic_checks_each_phase": 7,
+      "shared_core_unchanged": "ed93434fbda46b7d9bca9549f9e8cbfc7e82fa6a49189876579a21c90f9fc878",
+      "compiled_graph_unchanged": "815d5ef89273d85ca61641009b6a2fc64f192862c8a0d7dbf1a32ef45404fcce",
+      "new_status_source": {
+        "source_id": "clerk:119:2:136",
+        "source_object_sha256": "1a919f40c367152480483ac009f9c3e2024a8fe0bd73fbe914773eb923b63c4d",
+        "member_id": "F000477",
+        "official_label": "Not Voting"
+      },
+      "authored_not_voting_observations": {
+        "F000477": 2,
+        "M001184": 6,
+        "total": 8
+      },
+      "new_nondirectional_observation_has_no_directional_finding": true,
+      "historical_snapshots_sources_unchanged": true,
+      "publication_authorized": false,
+      "production_writes": false,
+      "preimage_basis": "Reconstructed by reversing the exact declared sentence replacement; no separate initial per-record byte hash was captured."
+    }
+  }
+}
