@@ -1,0 +1,326 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 67,
+  "exact_committed_head": "e6f7b20514843925c0f1ec35c5b90f7b3ddc751d",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "e6f7b20514843925c0f1ec35c5b90f7b3ddc751d",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/membership_review.json",
+      "git_blob": "3d91b9d69e0e8b7fb1f76d1c7778538bfd294111",
+      "git_bytes_sha256": "9bb4cc1956da1cb46273dff146cc7a88c0dcda0bf45b958689b19df49eb28f9f"
+    },
+    "sources": {
+      "head": "e6f7b20514843925c0f1ec35c5b90f7b3ddc751d",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/sources.json",
+      "git_blob": "f44533395f36ec74924b799d68d072135c117d4b",
+      "git_bytes_sha256": "911915c13b332e1741453332e78f4af1bc0e6da642e1f5e93b86a953812a7051"
+    },
+    "screening": {
+      "head": "e6f7b20514843925c0f1ec35c5b90f7b3ddc751d",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/screening_receipt.json",
+      "git_blob": "44ed7e87c6b2da551ddd5152019af98446e899ea",
+      "git_bytes_sha256": "6ff7997c4849e753a0f4e9e237856393c494e0424c91dee4c35e896a34c085ef"
+    },
+    "screening_units": {
+      "head": "e6f7b20514843925c0f1ec35c5b90f7b3ddc751d",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/screening_units_receipt.json",
+      "git_blob": "2fcf5fb250a6f070e1c04ddcdabb0a1fee89620b",
+      "git_bytes_sha256": "1a4ef563086bcf61e29635645dbe6b85c8f1eedc7007be9a0ff8400f97c77edb"
+    },
+    "validation": {
+      "head": "e6f7b20514843925c0f1ec35c5b90f7b3ddc751d",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/validation_receipt.json",
+      "git_blob": "c30e5ae02cdaaec586bd1958146ea9173e9ab893",
+      "git_bytes_sha256": "15f352b2244b3c1169df026d0b2230e109fcab11718d37e0639419145af00042"
+    }
+  },
+  "original_membership_review_sha256": "874410871523e83544d805ac953ca6e327fa58370ab7145df60452e6201f1ef0",
+  "new_screened_ids": [
+    "house:119:2:17",
+    "house:119:2:18",
+    "house:119:2:19",
+    "house:119:2:20",
+    "house:119:2:21"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "c9630743ea306e3a468e3404084c5358157b561eab05df340ef3be7b25f97e78",
+      "record": {
+        "action_id": "house:119:2:17",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.Res.988 EH deems committee substitutes adopted for 2988, 2262, 2270, 2312 and 4366, with 2262 modified by report Part B. The separately offerable 2988 Part A amendment is not itself deemed adopted by this rule. The package spans pension fiduciary factors, hours worked/training, care benefits/overtime, tipped-employee definitions and joint-employer treatment. Whole incorporated versions, the Part B reconciliation across the bundle and material ERISA/FLSA/labor/domain baselines remain pending. This whole adoption cannot be reduced to a non-counting schedule or selected training/financial fragment. No pension, wage, job, classification, technical-system or enacted outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:17",
+            "url": "https://clerk.house.gov/evs/2026/roll017.xml",
+            "raw_sha256": "faf522620a2bfbded3320777a1f74d26169089c476db51278214f2da8142a6e4",
+            "governed_bytes_sha256": "0e5e25682cbde4ca2d0d98220132b20b15b44d8b2015edb923f4cea66d10022b"
+          },
+          {
+            "source_id": "govinfo:hres988eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm",
+            "raw_sha256": "735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77",
+            "governed_bytes_sha256": "1a756a61822f43f09f756154e094cd663eaa955751bc7b12bb498db53177f50b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres988eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/29a1213cab6bd4b3d24fb40793b5cfa4356c3522317a0bf8a5a5f0fa762ddf30.0000000.json",
+                  "sha256": "72091e74eb4837a62ff89b3fc7c5f59f74af21287340ff491361fff5928d1f56",
+                  "start_character": 0,
+                  "end_character": 4230
+                }
+              ],
+              "utf8_sha256": "29a1213cab6bd4b3d24fb40793b5cfa4356c3522317a0bf8a5a5f0fa762ddf30",
+              "total_characters": 4230,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "eaf2220ff361f27aa83be68af783d6b2ffd9fec54a9b29bf8a5848cdaa3b1932",
+      "record": {
+        "action_id": "house:119:2:18",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.2262. Its motion body has not been reviewed here. It remains non-counting procedural context and does not itself adopt, reject or supply the substantive meaning of an underlying compensation policy.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:18",
+            "url": "https://clerk.house.gov/evs/2026/roll018.xml",
+            "raw_sha256": "592622c032fcd6f1130b921097d035cb324963ba0ddd0a39632469218a0f89f7",
+            "governed_bytes_sha256": "77345beb30d1a50c178012588c30ed776ac787e95fdbea15ad76cbde52be164c"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6557f7bd359395ec5f65b98770db164068b65f033baaf92f6dadc4d12c3affdb",
+      "record": {
+        "action_id": "house:119:2:19",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "The complete own printed bill AS MODIFIED under H.Res.988/report Part B is bound to this failed passage choice, rather than substituting the earlier unmodified RH. It preserves the quoted collective-bargaining clothes/washing branch; the ordinary education/training branch requires outside regular hours, voluntary participation without adverse action and no work for the employer. A separate apprenticeship-instruction branch uses the dated 29 CFR 785.32 reference and is not flattened into the same three conditions. The whole object is general statutory hours-worked treatment for FLSA sections 6/7, without a direct infrastructure, technical-system or technical-research mechanism; mentioning education does not establish one. Proposed exclusion does not decide individual compensability, require training, prohibit voluntary pay, or certify current regulation/application. The 209–215 recorded rejection with seven Not Voting overrides the preliminary voice result and did not itself enact the bill. No actual wage, job, training, technical outcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:19",
+            "url": "https://clerk.house.gov/evs/2026/roll019.xml",
+            "raw_sha256": "7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f",
+            "governed_bytes_sha256": "8ab43937a6f42aab1016ee8928ebe29b6a5792dfdbb6938bb0c2533220f618e8"
+          },
+          {
+            "source_id": "congressional-record:2026-01-13-2262-rule-passage",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-13/pdf/CREC-2026-01-13-house.pdf",
+            "raw_sha256": "d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b",
+            "governed_bytes_sha256": "4e39f3edcb9cbdca54361f6c1c292928374a6b33314adab89a7764b10cc54fbe"
+          },
+          {
+            "source_id": "govinfo:hres988eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm",
+            "raw_sha256": "735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77",
+            "governed_bytes_sha256": "1a756a61822f43f09f756154e094cd663eaa955751bc7b12bb498db53177f50b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-01-13-2262-rule-passage",
+            "locator": "Complete governing call-up and printed AS-MODIFIED operative bill at 6248:9236; excludes debate",
+            "passage": "FLEXIBILITY FOR WORKERS \nEDUCATION ACT \nMr. WALBERG. Mr. Speaker, pursu-\nant to House Resolution 988, I call up \nthe bill (H.R. 2262) to amend the Fair \nLabor Standards Act of 1938 to exclude \ncertain activities from hours worked, \nand for other purposes, and ask for its \nimmediate consideration in the House. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore (Mr. \nM\nEUSER). Pursuant to House Resolu-\ntion 988, the amendment in the nature \nof a substitute recommended by the \nCommittee on Education and Work-\nforce, printed in the bill, modified by \nthe amendment printed in part B of \nHouse Report 119–440, is adopted and \nthe bill, as amended, is considered \nread. \nThe text of the bill, as amended, is as \nfollows: \nH.R. 2262 \nBe it enacted by the Senate and House of Rep-\nresentatives of the United States of America in \nCongress assembled, \nSECTION 1. SHORT TITLE. \nThis Act may be cited as the ‘‘Flexibility for \nWorkers Education Act’’. \nSEC. 2. TREATMENT OF ATTENDANCE OR PAR-\nTICIPATION IN CERTAIN ACTIVITIES. \n(a) I N GENERAL.—Section 3(o) of the Fair \nLabor Standards Act of 1938 (29 U.S.C. 203(o)) is \namended to read as follows: \n‘‘(o) H\nOURS WORKED.—In determining for the \npurposes of sections 6 and 7 the hours for which \nan employee is employed— \n‘‘(1) there shall be excluded— \n‘‘(A) any time spent in changing clothes or \nwashing at the beginning or end of each work-\nday which was excluded from measured working \ntime during the week involved by the express \nterms of or by custom or practice under a bona \nfide collective-bargaining agreement applicable \nto the particular employee; and \n(B) except as provided in paragraph (2), any \ntime spent attending or participating in an edu-\ncation or training program or a similar activity \nVerDate Sep 11 2014 10:05 Jan 14, 2026 Jkt 069060 PO 00000 Frm 00015 Fmt 4634 Sfmt 6333 E:\\CR\\FM\\A13JA7.005 H13JAPT1DMwilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSEH678 January 13, 2026 \n(such as a lecture), regardless of whether the \nprogram or activity is offered or facilitated by \nthe employer, provided that— \n‘‘(i) such attendance or participation occurs \noutside of the employee’s regular working hours; \n‘‘(ii) such attendance or participation is vol-\nuntary, and the employer does not take adverse \naction against the employee on the basis that \nsuch employee does not so attend or participate; \nand \n‘‘(iii) the employee does not perform any work \nfor the employer during such attendance or par-\nticipation; and \n‘‘(2) there may be excluded, in accordance \nwith section 785.32 of title 29, Code of Federal \nRegulations (as in effect on the date of enact-\nment of the Flexibility for Workers Education \nAct), any time spent in an organized program of \nrelated, supplemental instruction working under \na bona fide apprenticeship program.’’. \n(b) E\nFFECTIVE DATE.—The amendment made \nby subsection (a) shall apply with respect to \nhours worked on or after the date of enactment \nof this Act. \n"
+          },
+          {
+            "source_id": "congressional-record:2026-01-13-2262-rule-passage",
+            "locator": "Own passage question/totals at 16957:17398, before member lists",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMr. WALBERG. Mr. Speaker, on that \nI demand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. This is a \n5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 209, nays \n215, not voting 7, as follows: \n[Roll No. 19] \n"
+          },
+          {
+            "source_id": "congressional-record:2026-01-13-2262-rule-passage",
+            "locator": "Own failed outcome at 21868:22006; member changes and neighboring bill excluded",
+            "passage": "So the bill was not passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \nf \n"
+          },
+          {
+            "source_id": "govinfo:hres988eh",
+            "locator": "Complete governing rule; section2 mandates PartB modification",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/29a1213cab6bd4b3d24fb40793b5cfa4356c3522317a0bf8a5a5f0fa762ddf30.0000000.json",
+                  "sha256": "72091e74eb4837a62ff89b3fc7c5f59f74af21287340ff491361fff5928d1f56",
+                  "start_character": 0,
+                  "end_character": 4230
+                }
+              ],
+              "utf8_sha256": "29a1213cab6bd4b3d24fb40793b5cfa4356c3522317a0bf8a5a5f0fa762ddf30",
+              "total_characters": 4230,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "bf00d0773316c2db70b83eb50508fe8f1fa28211aacb7434b74e41107c8490c1",
+      "record": {
+        "action_id": "house:119:2:20",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.2270. Its motion body has not been reviewed here. It remains non-counting procedural context and does not itself adopt, reject or supply the substantive meaning of an underlying compensation policy.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:20",
+            "url": "https://clerk.house.gov/evs/2026/roll020.xml",
+            "raw_sha256": "09818f3643d99fca8f68a50409cb50c3c3e47a770abc3dd4667df40b2f635331",
+            "governed_bytes_sha256": "ed10766ddd483904e3b65715fa9cde6836350edc668baef734406c522fbb5279"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "3bc5648734e15507bd4e44299b84c2fc7a50822b0b13cfd090a5061cc1d2774b",
+      "record": {
+        "action_id": "house:119:2:21",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.2312. Its motion body has not been reviewed here. It remains non-counting procedural context and does not itself adopt, reject or supply the substantive meaning of an underlying compensation policy.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:21",
+            "url": "https://clerk.house.gov/evs/2026/roll021.xml",
+            "raw_sha256": "eb9d812ae8501dbb76b63ce89c3ec9c52fa41bff5c5953ece4fe272637ae72e5",
+            "governed_bytes_sha256": "89c482f648a9e83ba786e1c1e9fa1d84c1854ddaac7b1cd4bb847a365736cd02"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:17",
+      "original_source_object_sha256": "80c2b851310aa901f886d604219601d908b5805c15e4ae240d6cbc4a477af5d9",
+      "path": "source_objects/80c2b851310aa901f886d604219601d908b5805c15e4ae240d6cbc4a477af5d9.json"
+    },
+    {
+      "source_id": "clerk:119:2:18",
+      "original_source_object_sha256": "daba4ff9a69dc91e2bbab8320bf12b43833d100a385827188159655a962423e9",
+      "path": "source_objects/daba4ff9a69dc91e2bbab8320bf12b43833d100a385827188159655a962423e9.json"
+    },
+    {
+      "source_id": "clerk:119:2:19",
+      "original_source_object_sha256": "738fcdfb248a9f08050767d9c1bd18ddf840076f5e13a9661d3c660241fd787f",
+      "path": "source_objects/738fcdfb248a9f08050767d9c1bd18ddf840076f5e13a9661d3c660241fd787f.json"
+    },
+    {
+      "source_id": "clerk:119:2:20",
+      "original_source_object_sha256": "f50ee4e8a1f530389f6eee3da6b5495f0a1c81b8dc90a30492ebd2a78a5486d9",
+      "path": "source_objects/f50ee4e8a1f530389f6eee3da6b5495f0a1c81b8dc90a30492ebd2a78a5486d9.json"
+    },
+    {
+      "source_id": "clerk:119:2:21",
+      "original_source_object_sha256": "1e298b084fc44d4490a94d505328fffd72e6b7ac6c4abbd4430e198106e827d7",
+      "path": "source_objects/1e298b084fc44d4490a94d505328fffd72e6b7ac6c4abbd4430e198106e827d7.json"
+    },
+    {
+      "source_id": "congressional-record:2026-01-13-2262-rule-passage",
+      "original_source_object_sha256": "e85046aa9b3226ae1964143e00655517fbad87c7d8f3355059237a1f48e8749e",
+      "path": "source_objects/e85046aa9b3226ae1964143e00655517fbad87c7d8f3355059237a1f48e8749e.json"
+    },
+    {
+      "source_id": "govinfo:hres988eh",
+      "original_source_object_sha256": "7d0440e646eeed8c20e14cb3ff3d4659093bd970e5e1391fd0de44f8e86cea49",
+      "path": "source_objects/7d0440e646eeed8c20e14cb3ff3d4659093bd970e5e1391fd0de44f8e86cea49.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres988eh",
+      "governed_length": 4230,
+      "review_extent": "Complete governing rule read; full incorporated pension/joint-employer and other component baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "congressional-record:2026-01-13-2262-rule-passage",
+      "governed_length": 24995,
+      "review_extent": "Partial captured floor source: complete governing/modified-bill unit 6248:9236, own question/totals 16957:17398, own failed outcome 21868:22006. Incidental debate/member-list context seen but not used for legal meaning, official status or motive."
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_governing_rule_units_read": 1,
+    "complete_own_as_modified_operative_bill_units_read": 1,
+    "complete_own_recorded_question_and_outcome_units_read": 1,
+    "exact_Clerk_procedural_questions_read": 3,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:17",
+        "evidence_unit": "whole_rule_with_unreviewed_incorporated_bundle",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:18",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:19",
+        "evidence_unit": "complete_modified_own_bill_and_recorded_failure",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:20",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:21",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}

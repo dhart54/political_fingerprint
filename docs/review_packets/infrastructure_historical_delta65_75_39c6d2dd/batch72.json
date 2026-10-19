@@ -1,0 +1,729 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 72,
+  "exact_committed_head": "62c0537f0881c1ebadded7e69ec964b2066a1812",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "62c0537f0881c1ebadded7e69ec964b2066a1812",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/membership_review.json",
+      "git_blob": "1433c0f87873eacfc43bf4be5d0ce57303e24bc1",
+      "git_bytes_sha256": "a05068ccf6b14f5cc5d229418c7fc90c668fb258b63273a942a95126d75268ab"
+    },
+    "sources": {
+      "head": "62c0537f0881c1ebadded7e69ec964b2066a1812",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/sources.json",
+      "git_blob": "910b9c0085ecb5345134a95cd80040dec270d711",
+      "git_bytes_sha256": "d2727b047397efe4d23371c17839650bf5a05de38d0b5d0e7f123a04be42f04f"
+    },
+    "screening": {
+      "head": "62c0537f0881c1ebadded7e69ec964b2066a1812",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/screening_receipt.json",
+      "git_blob": "89e5d39f966a777e7a78ced6a239cbdcb619321c",
+      "git_bytes_sha256": "b5e7a647ae4500d0497192d30c14264d6cfc5cd7120d9b1a6fd7230c66001970"
+    },
+    "screening_units": {
+      "head": "62c0537f0881c1ebadded7e69ec964b2066a1812",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/screening_units_receipt.json",
+      "git_blob": "3842612bb2381f8868c5739e9dc0d1e301f02950",
+      "git_bytes_sha256": "ebedb9d61e27b1cfbaa359614f773ff1d4aef81ab9c138100653b256a406f10b"
+    },
+    "validation": {
+      "head": "62c0537f0881c1ebadded7e69ec964b2066a1812",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/validation_receipt.json",
+      "git_blob": "748a33030418efdadb7b713bd5b79fa946cca82f",
+      "git_bytes_sha256": "67e10a89cfe989f1b041bbbec6bdf3485357797c9868656f5bf561a931c8a9ae"
+    }
+  },
+  "original_membership_review_sha256": "dd6b13407ef9e07b0e802dd639daed024f571de08cd2c2fb213c2659b2258ef8",
+  "new_screened_ids": [
+    "house:119:2:42",
+    "house:119:2:43",
+    "house:119:2:44",
+    "house:119:2:45",
+    "house:119:2:46"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "d1d2ed42fe1cb13b59eab337b5b1634933303815018cb2380f5f68f82960735d",
+      "record": {
+        "action_id": "house:119:2:42",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "220–207House passagewith4NotVoting concerns the whole7147DHSpackage, including the deemed Senate-data repeal, not a selected CoastGuard/CISA/FEMA/health account. Only IHopening0:2400andclosing121516:122516, retained version-boundary units, own passage, governing1014EH and subsequent correction source were read here. HRes1016later narrows230(b)from this Act or any other act to DHSfunds in this or any prior Act; do not use the later corrected EH as the pre-vote wording or infer an all-government weapons rule from its corrected phrase. The $98million MQ9/base-station allocation is a selected fragment, not whole package meaning. Material account/statement/repeal conditions, version reconciliation and reuse of existing whole Health/Immigration shared action remain pending. No enacted appropriation, component endorsement, equipment acquisition, aid, net-outlay or security outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:42",
+            "url": "https://clerk.house.gov/evs/2026/roll042.xml",
+            "raw_sha256": "b6d23102628e791928a3911d1f1d9fad27807d439cda3bf03d02f15ba49d1f83",
+            "governed_bytes_sha256": "ffdd38d072637d2fe8d11885480c058e8deeea8b7af6c018885803f7622f8958"
+          },
+          {
+            "source_id": "govinfo:hr7147ih-immigration-complete",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147ih/html/BILLS-119hr7147ih.htm",
+            "raw_sha256": "a31c4e33d57ab14ebada9ab38554e34b8af5232ea70a307b4adae60057bcaedf",
+            "governed_bytes_sha256": "9ba2e0a8327c1189e2e39776f3bcc439a977335d8a30286eab0bc7228e08b7ce"
+          },
+          {
+            "source_id": "govinfo:hr7147-reviewed-version-boundaries",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147eh/html/BILLS-119hr7147eh.htm",
+            "raw_sha256": "03795a47a762a4138f0dbe3b7428bdd821fb6e66365c3391c5c04559aa7cb0e8",
+            "governed_bytes_sha256": "704f959e780a2cbd474636571f5becfaff714772a93db1a9a72ffe4d082de78a"
+          },
+          {
+            "source_id": "congressional-record:2026-01-22-7147-passage42",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "28b9401bd16b0082c205172dbeaaea4a86d33d7345ae04d3332170f766e76939"
+          },
+          {
+            "source_id": "congressional-record:2026-01-22-7147-correction-after42",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "d9581deb2b882f1a6cec8ec76ba9f6f29181ddd07057321c9ebd1647020ceab9"
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+            "raw_sha256": "5e3f2a713beda1ea584d8eb1d21dd09b69fb195d83714feb525d688d0b8c60b7",
+            "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7147ih-immigration-complete",
+            "locator": "Only opening0:2400read; whole122516character IH not reviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 7147 Introduced in House (IH)] <DOC> 119th CONGRESS 2d Session H. R. 7147 Making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES January 20, 2026 Mr. Cole introduced the following bill; which was referred to the Committee on Appropriations, and in addition to the Committee on the Budget, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned _______________________________________________________________________ A BILL Making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, That the following sums in this Act are appropriated, out of any money in the Treasury not otherwise appropriated, for the fiscal year ending September 30, 2026. TITLE I DEPARTMENTAL MANAGEMENT, INTELLIGENCE, SITUATIONAL AWARENESS, AND OVERSIGHT Office of the Secretary and Executive Management operations and support For necessary expenses of the Office of the Secretary and for executive management for operations and support, $316,295,000, which shall be for the purposes and in the amounts specified in the ``Final Bill'' column for Office of the Secretary and Executive Management, Operations and Support, in the ``Department of Homeland Security Appropriations Act, 2026'' table in the explanatory statement described in section 4 (in the matter preceding division A of this consolidated Act), of which $14,050,000 of amounts made available for Management and Oversight, Office of Health Security and $8,000,000 of amounts made available for Office of Strategy, Policy, and Plans shall remain available until September 30, 2027: Provided, That $5,000,000 shall be withheld from obligation until the Secretary submits to the Committees on Appropriations of the House of Representatives and the Senate responses to all questions for the record for each hearing on the fiscal year 2027 budget submission for the Department of Homeland Security held by such Committees prior to July 1:"
+          },
+          {
+            "source_id": "govinfo:hr7147ih-immigration-complete",
+            "locator": "Only closing121516:122516read",
+            "passage": "96 from ``U.S. Customs and Border Protection-- Operations and Support''. (6) $19,650,000 from ``Transportation Security Administration--Operations and Support''. (7) $703,390 from ``United States Secret Service-- Operations and Support''. (8) $52,349,050 from ``Cybersecurity and Infrastructure Security Agency--Operations and Support''. (9) $18,525,975 from ``Federal Emergency Management Agency--Operations and Support''. (10) $120,860 from ``U.S. Citizenship and Immigration Services--Operations and Support''. (11) $178,340 from ``Science and Technology Directorate-- Operations and Support''. (12) $6,937,020 from ``Countering Weapons of Mass Destruction Office--Operations and Support''. Sec. 553. Of the unobligated balances in the ``Department of Homeland Security Nonrecurring Expenses Fund'' established in section 538 of division F of Public Law 117-103, $2,362,000 are hereby rescinded. This division may be cited as the ``Department of Homeland Security Appropriations Act, 2026''. <all>"
+          },
+          {
+            "source_id": "govinfo:hr7147-reviewed-version-boundaries",
+            "locator": "Complete captured own operative/question/baseline unit read",
+            "passage": "IH230 only\nSec. 230. (a) For an additional amount for ``Coast Guard-- Procurement, Construction, and Improvements'', $98,000,000, to remain available until September 30, 2030, for the procurement and acquisition of MQ-9 aircraft and associated base stations, equipment related to such aircraft and associated base stations, and program management for such aircraft and base stations. (b) None of the funds made available in this Act or any other act may be used to procure or acquire long-range unmanned aircraft with kinetic capabilities or to equip any long-range unmanned aircraft with kinetic capabilities. \n\nEH230 and554 only\nSec. 230. (a) For an additional amount for ``Coast Guard-- Procurement, Construction, and Improvements'', $98,000,000, to remain available until September 30, 2030, for the procurement and acquisition of MQ-9 aircraft and associated base stations, equipment related to such aircraft and associated base stations, and program management for such aircraft and base stations. (b) None of the funds made available for the Department of Homeland Security in this or any prior Act may be used to procure or acquire long-range unmanned aircraft with kinetic capabilities or to equip any long-range unmanned aircraft with kinetic capabilities. \n\nSec. 554. Section 213 of title II of division C of the Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026, and the amendments made by such section, are hereby repealed and shall have no force or effect. "
+          },
+          {
+            "source_id": "congressional-record:2026-01-22-7147-passage42",
+            "locator": "Complete captured own operative/question/baseline unit read",
+            "passage": "PDF156\nDEPARTMENT OF HOMELAND SE-\nCURITY APPROPRIATIONS ACT, \n2026 \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on passage of \nthe bill (H.R. 7147) making further con-\nsolidated appropriations for the fiscal \nyear ending September 30, 2026, and for \nother purposes, on which the yeas and \nnays were ordered. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe vote was taken by electronic de-\nvice, and there were—yeas 220, nays \n207, not voting 4, as follows: \n[Roll No. 42] \n\n\nb 1641 \nMr. GOLDMAN of New York changed \nhis vote from ‘‘yea’’ to ‘‘nay.’’ \nMs. STEFANIK changed her vote \nfrom ‘‘nay’’ to ‘‘yea.’’ \nSo the bill was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          },
+          {
+            "source_id": "congressional-record:2026-01-22-7147-correction-after42",
+            "locator": "Complete captured own operative/question/baseline unit read",
+            "passage": "PDF161\nDIRECTING THE CLERK OF THE \nHOUSE OF REPRESENTATIVES \nTO MAKE A CORRECTION IN THE \nENGROSSMENT OF H.R. 7147 \nMr. CISCOMANI. Mr. Speaker, I send \nto the desk a resolution and ask for its \nimmediate consideration. \nThe Clerk read the title of the resolu-\ntion. \nThe SPEAKER pro tempore. Is there \nobjection to the request of the gen-\ntleman from Arizona? \nThere was no objection. \nThe text of the resolution is as fol-\nlows: \nH. RES. 1016 \nResolved, That the Clerk of the House of \nRepresentatives shall, in the engrossment of \nthe bill H.R. 7147, make the following correc-\ntion: In section 230(b), strike ‘‘in this Act or \nany other act’’ and insert ‘‘for the Depart-\nment of Homeland Security in this or any \nprior Act’’; and such correction shall be in-\ncorporated in the engrossment of H.R. 7148 \npursuant to House Resolution 1014. \nThe resolution was agreed to. \nA motion to reconsider was laid on \nthe table. \n"
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "locator": "Complete captured own operative/question/baseline unit read",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c.0000000.json",
+                  "sha256": "4a3585e6ab3581e9b6f299f3c49165357ef15bc3b59e146f2b9a887c173d57d9",
+                  "start_character": 0,
+                  "end_character": 5061
+                }
+              ],
+              "utf8_sha256": "bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c",
+              "total_characters": 5061,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "b3c3a364f2cc94a92857168fc5bee956e3b400056dc7c03be741454084693923",
+      "record": {
+        "action_id": "house:119:2:43",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete own amendment/report, recorded rejection, dated24220/30111baseline and division-reference clause support an unaccepted vehicle-standard funding candidate. Preserve division-specific funds versus repeal/all-government scope, alternative detection paths, new-vehicle and practicability limits, separate compliance/extension/report clocks and no current-standard certification. Recorded failure controls; direct technical-system versus private-vehicle taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:43",
+            "url": "https://clerk.house.gov/evs/2026/roll043.xml",
+            "raw_sha256": "711483c97207d4f3385a4e896e701bbaa887cd9b83ea7a2a8f02cf6007842d9b",
+            "governed_bytes_sha256": "f10fe01a3e0bc5f8f91cd31a23cde57490b527a60f7f6dc1148d3c9ac6d5c916"
+          },
+          {
+            "source_id": "immigration:session2-roll43-initial174",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "c2b1c53d5c676fab7c1085892effcdc4d46f770bf33b24cb1cdd9a2b25484da3"
+          },
+          {
+            "source_id": "immigration:session2-roll43-recorded174",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "47d8eaebbe91402c53ac189b67ab56c731da7e4ce73df6bb8d98b523278b10ce"
+          },
+          {
+            "source_id": "immigration:session2-roll43-report174",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+            "raw_sha256": "cef9f92f036e7f18416c7a87087c5d133b9a9f0b8af00fb254b65d4c27329ff8",
+            "governed_bytes_sha256": "22b846499c665adf030673c9333930b6d3cda8363233b1b9ab28a934ec82eb1f"
+          },
+          {
+            "source_id": "govinfo:49usc30111-24220-complete174",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVI-partA-chap301-subchapII-sec30111.htm",
+            "raw_sha256": "bb56951dc114d11666ec063b2d62271065c05907ad5eadf7b4eb55ece1e2fa9f",
+            "governed_bytes_sha256": "bb854de41777d9e96c13dc6da485f40953c7f1212b242e3e2211e3477632988b"
+          },
+          {
+            "source_id": "govinfo:hr7148ih-reference-scope",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm",
+            "raw_sha256": "0ca75b2f225d2679446bad81c0368b844c5545c9a3459a850f9b0c46a1811bd1",
+            "governed_bytes_sha256": "db93338f7ef6471d7d310296924166e6b155b22b47c74e26c75105112d5007ee"
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+            "raw_sha256": "5e3f2a713beda1ea584d8eb1d21dd09b69fb195d83714feb525d688d0b8c60b7",
+            "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:session2-roll43-initial174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY \nMR. MASSIE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 1 printed \nthe part B of House Report 119–462. \nMr. MASSIE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of Title I of Division D, insert \nthe following: \nSEC. 195. None of the funds made available \nby this Act may be used to implement sec-\ntion 24220 of the Infrastructure Investment \nand Jobs Act (49 U.S.C. 30111 note). \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Kentucky (Mr. M\nASSIE). \nThe question was taken; and the Act-\ning Chair announced that the ayes ap-\npeared to have it. \nMr. MASSIE. Mr. Chair, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Kentucky will be \npostponed."
+          },
+          {
+            "source_id": "immigration:session2-roll43-recorded174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MR . MASSIE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 1, printed in \npart B of House Report 119–462, offered \nby the gentleman from Kentucky (Mr. \nM\nASSIE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 164, noes 268, \nnot voting 4, as follows: \n[Roll No. 43]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "immigration:session2-roll43-report174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "1. An Amendment To Be Offered by Representative Massie of Kentucky or His Designee, Debatable for 10 Minutes At the end of Title I of Division D, insert the following: Sec. 195. None of the funds made available by this Act may be used to implement section 24220 of the Infrastructure Investment and Jobs Act (49 U.S.C. 30111 note). "
+          },
+          {
+            "source_id": "govinfo:49usc30111-24220-complete174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/6a1b702c0ebc41e5b18d76cafbbcc06334a30bd15ae6e4fce0e0d9550d18bf08.0000000.json",
+                  "sha256": "94397c36424a4f7c1729de3f5be16e65657bbe7320012513f590ac670153bb4c",
+                  "start_character": 0,
+                  "end_character": 6482
+                }
+              ],
+              "utf8_sha256": "6a1b702c0ebc41e5b18d76cafbbcc06334a30bd15ae6e4fce0e0d9550d18bf08",
+              "total_characters": 6482,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hr7148ih-reference-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in any division of this Act shall be treated as referring only to the provisions of that division. SEC. 4. EXPLANATORY STATEMENT. The explanatory statement regarding this Act, printed in the House section of the Congressional Record on or about January 21, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall have the same effect with respect to the allocation of funds and implementation of divisions A through D of this Act as if it were a joint explanatory statement of a committee of conference. SEC. 5. STATEMENT OF APPROPRIATIONS. The following sums in this Act are appropriated, out of any money in the Treasury not otherwise appropriated, for the fiscal year ending September 30, 2026."
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c.0000000.json",
+                  "sha256": "4a3585e6ab3581e9b6f299f3c49165357ef15bc3b59e146f2b9a887c173d57d9",
+                  "start_character": 0,
+                  "end_character": 5061
+                }
+              ],
+              "utf8_sha256": "bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c",
+              "total_characters": 5061,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr7148:amend1:119"
+      }
+    },
+    {
+      "original_record_sha256": "ccf1b5615fd88582fefaf4524aac8c0ef37bdf10ea2b64d478c5f69761cb6c48",
+      "record": {
+        "action_id": "house:119:2:44",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete Norman offering/report/original and both preface prints bind the proposed insertion except CommunityProjectFunding/CongressionallyDirectedSpending as specified inDivisionB after Act on printedpage3line1. The committee print puts that Act in section4conference-equivalent explanatory-statement allocation/implementation clause; GPOIH wraps the same clause differently. Neither is section5appropriating sums. Retain exact incorporation-effect wording and PartAdeemed separate division crosswalks; do not turn debate shorthand into a different operative sentence canceling every project appropriation or choose a net amount. Whole interaction with explicit account appropriations/project tables, version/legal operator and existing Immigration shared action reuse remain pending; the separate Health unresolved review is not silently cleared.136–291recorded failurewith9NotVoting controls over voice appearance and the exception was not adopted. No recipient misconduct, motive, funding cancellation or construction/technology outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:44",
+            "url": "https://clerk.house.gov/evs/2026/roll044.xml",
+            "raw_sha256": "59c155c30ce9586d9d672feb43d344c557e2c1ed0594d830b0dbe19e282fa2de",
+            "governed_bytes_sha256": "4d1c0eb39f237068b221e7ad05e82e485a739ba31b05f54c945519de6a5e8eda"
+          },
+          {
+            "source_id": "immigration:session2-roll44-initial174",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "2a2b53a072a146895ff781ffe4ad20109fb13f7d16f4da9f0e83ecd6da10f6d1"
+          },
+          {
+            "source_id": "immigration:session2-roll44-recorded174",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "8bd5009e0ed5a6db46002da600376a3c9f1a6ccd4e3fed5249e729c66bef8ab2"
+          },
+          {
+            "source_id": "immigration:session2-roll44-report174",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+            "raw_sha256": "cef9f92f036e7f18416c7a87087c5d133b9a9f0b8af00fb254b65d4c27329ff8",
+            "governed_bytes_sha256": "d91e6d075c035b7ef42148df2ef0927457b227e4b52a1b356e58312b6cbe9f7e"
+          },
+          {
+            "source_id": "house:7148-jan20-1252-preface",
+            "url": "https://docs.house.gov/meetings/RU/RU00/20260121/118889/BILLS-119pih-ConsolidatedAppropriationsAc.pdf",
+            "raw_sha256": "47db8d56258b420dc5d5ec42d3efaa1c2bef6a5cc15b88bb56d8cfbffa3f6c04",
+            "governed_bytes_sha256": "3f0615a8439ff7ffe058646586855f422b3aecb352faa58d13b055f581112d45"
+          },
+          {
+            "source_id": "govinfo:hr7148ih-preface-pages",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/pdf/BILLS-119hr7148ih.pdf",
+            "raw_sha256": "0067d2f31fbe1965dbfa2125cdb16cf33ae7aca03cfd8e6a6b1b8fd4434d7449",
+            "governed_bytes_sha256": "0a9027296c658e29deb53a0ce3221341f37d554af80e79b7865b54e3b9b34505"
+          },
+          {
+            "source_id": "rules:hr7148-norman-original",
+            "url": "https://amendments-rules.house.gov/amendments/Earmark%20amdt260122072108584.pdf",
+            "raw_sha256": "9a1dbed434b8ee1ba4eef5d3c02e9a00e06128b3ef7d1ebda0bc7ac321c4e7ae",
+            "governed_bytes_sha256": "6fba8f69670e21a4f04e728d60e54d5e4046bad2c3bad9ea528fea1ee4b0e2ca"
+          },
+          {
+            "source_id": "govinfo:hrpt119-462-operative-amendments",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+            "raw_sha256": "cef9f92f036e7f18416c7a87087c5d133b9a9f0b8af00fb254b65d4c27329ff8",
+            "governed_bytes_sha256": "efbf7c6f8c904db00ae540fb516f9fbaafde21882d15b40cc3e2d3d51cfc54e9"
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+            "raw_sha256": "5e3f2a713beda1ea584d8eb1d21dd09b69fb195d83714feb525d688d0b8c60b7",
+            "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:session2-roll44-initial174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 2 OFFERED BY MR . NORMAN \nThe Acting CHAIR. It is now in order \nto consider amendment No. 2 printed in \npart B of House Report 119–462. \nMr. NORMAN. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nOn page 3, line 1 after ‘‘Act’’ insert ‘‘, ex-\ncept Community Project Funding/Congres-\nsionally Directed Spending as specified in \nDivision B,’’ \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from South Carolina (Mr. N\nOR-\nMAN). \nThe question was taken; and the Act-\ning Chair announced that the ayes ap-\npeared to have it. \nMs. D\nELAURO. Mr. Chair, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from South Carolina \nwill be postponed."
+          },
+          {
+            "source_id": "immigration:session2-roll44-recorded174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 2 OFFERED BY MR . NORMAN \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 2, printed in \npart B of House Report 119–462, offered \nby the gentleman from South Carolina \n(Mr. N\nORMAN), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 136, noes 291, \nnot voting 9, as follows: \n[Roll No. 44]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "immigration:session2-roll44-report174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "2. An Amendment To Be Offered by Representative Norman of South Carolina or His Designee, Debatable for 10 Minutes On page 3, line 1 after ``Act'' insert ``, except Community Project Funding/Congressionally Directed Spending as specified in Division B,'' "
+          },
+          {
+            "source_id": "house:7148-jan20-1252-preface",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "2 \nTitle I—Military Personnel \nTitle II—Operation and Maintenance \nTitle III—Procurement \nTitle IV—Research, Development, Test and Evaluation \nTitle V—Revolving and Management Funds \nTitle VI—Other Department of Defense Programs \nTitle VII—Related Agencies \nTitle VIII—General Provisions \nDIVISION B—DEPARTMENTS OF LABOR, HEALTH AND HUMAN \nSERVICES, AND EDUCATION, AND RELATED AGENCIES APPRO-\nPRIATIONS ACT, 2026 \nTitle I—Department of Labor \nTitle II—Department of Health and Human Services \nTitle III—Department of Education \nTitle IV—Related Agencies \nTitle V—General Provisions \nDIVISION D—TRANSPORTATION, HOUSING AND URBAN DEVELOP-\nMENT, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 \nTitle I—Department of Transportation \nTitle II—Department of Housing and Urban Development \nTitle III—Related Agencies \nTitle IV—General Provisions—This Act \nDIVISION E—AUTHORIZING EXTENDERS AND TECHNICAL \nCORRECTIONS \nDIVISION F—HEALTH CARE EXTENDERS \nSEC. 3. REFERENCES. \n1\nExcept as expressly provided otherwise, any reference 2\nto ‘‘this Act’’ contained in any division of this Act shall 3\nbe treated as referring only to the provisions of that divi-4\nsion. 5\nSEC. 4. EXPLANATORY STATEMENT. 6\nThe explanatory statement regarding this Act, print-7\ned in the House section of the Congressional Record on 8\nor about January 21, 2026, and submitted by the chair 9\nof the Committee on Appropriations of the House, shall 10\nhave the same effect with respect to the allocation of funds 11\nVerDate Nov 24 2008 12:52 Jan 20, 2026 Jkt 000000 PO 00000 Frm 00002 Fmt 6652 Sfmt 6201 C:\\USERS\\AWILSON3\\APPDATA\\ROAMING\\SOFTQUAD\\XM ETAL\\11.0\\GEN\\C\\DEF-LABO\nJanuary 20, 2026 (12:52 p.m.)\nI:\\XML\\FY26\\CONFERENCE\\MINI2\\DEF-LABORH-THUD26_01.XML\nL:\\VA\\012026\\A012026.007.xml            3 \nand implementation of divisions A through D of this Act 1\nas if it were a joint explanatory statement of a committee 2\nof conference. 3\nSEC. 5. STATEMENT OF APPROPRIATIONS. 4\nThe following sums in this Act are appropriated, out 5\nof any money in the Treasury not otherwise appropriated, 6\nfor the fiscal year ending September 30, 2026. 7\nVerDate Nov 24 2008 12:52 Jan 20, 2026 Jkt 000000 PO 00000 Frm 00003 Fmt 6652 Sfmt 6201 C:\\USERS\\AWILSON3\\APPDATA\\ROAMING\\SOFTQUAD\\XM ETAL\\11.0\\GEN\\C\\DEF-LABO\nJanuary 20, 2026 (12:52 p.m.)\nI:\\XML\\FY26\\CONFERENCE\\MINI2\\DEF-LABORH-THUD26_01.XML\nL:\\VA\\012026\\A012026.007.xml           "
+          },
+          {
+            "source_id": "govinfo:hr7148ih-preface-pages",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "2 \n• HR 7148 IH\nDIVISION A—DEPARTMENT OF DEFENSE APPROPRIATIONS ACT, \n2026 \nTitle I—Military Personnel \nTitle II—Operation and Maintenance \nTitle III—Procurement \nTitle IV—Research, Development, Test and Evaluation \nTitle V—Revolving and Management Funds \nTitle VI—Other Department of Defense Programs \nTitle VII—Related Agencies \nTitle VIII—General Provisions \nDIVISION B—DEPARTMENTS OF LABOR, HEALTH AND HUMAN \nSERVICES, AND EDUCATION, AND RELATED AGENCIES APPRO-\nPRIATIONS ACT, 2026 \nTitle I—Department of Labor \nTitle II—Department of Health and Human Services \nTitle III—Department of Education \nTitle IV—Related Agencies \nTitle V—General Provisions \nDIVISION D—TRANSPORTATION, HOUSING AND URBAN DEVELOP-\nMENT, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 \nTitle I—Department of Transportation \nTitle II—Department of Housing and Urban Development \nTitle III—Related Agencies \nTitle IV—General Provisions—This Act \nDIVISION E—AUTHORIZING EXTENDERS AND TECHNICAL \nCORRECTIONS \nDIVISION F—HEALTH CARE EXTENDERS \nSEC. 3. REFERENCES. \n1\nExcept as expressly provided otherwise, any reference 2\nto ‘‘this Act’’ contained in any division of this Act shall 3\nbe treated as referring only to the provisions of that divi-4\nsion. 5\nSEC. 4. EXPLANATORY STATEMENT. 6\nThe explanatory statement regarding this Act, print-7\ned in the House section of the Congressional Record on 8\nor about January 21, 2026, and submitted by the chair 9\nof the Committee on Appropriations of the House, shall 10\nVerDate Sep 11 2014 00:08 Jan 21, 2026 Jkt 069200 PO 00000 Frm 00002 Fmt 6652 Sfmt 6201 E:\\BILLS\\H7148.IH H7148kjohnson on DSK7ZCZBW3PROD with $$_JOB 3 \n• HR 7148 IH\nhave the same effect with respect to the allocation of funds 1\nand implementation of divisions A through D of this Act 2\nas if it were a joint explanatory statement of a committee 3\nof conference. 4\nSEC. 5. STATEMENT OF APPROPRIATIONS. 5\nThe following sums in this Act are appropriated, out 6\nof any money in the Treasury not otherwise appropriated, 7\nfor the fiscal year ending September 30, 2026. 8\nVerDate Sep 11 2014 00:08 Jan 21, 2026 Jkt 069200 PO 00000 Frm 00003 Fmt 6652 Sfmt 6201 E:\\BILLS\\H7148.IH H7148kjohnson on DSK7ZCZBW3PROD with $$_JOB"
+          },
+          {
+            "source_id": "rules:hr7148-norman-original",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Amendment to H.R. 7148 \nOffered by M_. ______ of ___________ \nOn page 3, line 1 after “Act” insert “, except Community Project Funding/Congressionally \nDirected Spending as specified in Division B,” "
+          },
+          {
+            "source_id": "govinfo:hrpt119-462-operative-amendments",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "PART A--TEXT OF AMENDMENT TO H.R. 7148 CONSIDERED AS ADOPTED Section 4 in the matter preceding division A is amended by inserting the following new paragraphs: ``The explanatory statement regarding division A of H.R. 7006 of the 119th Congress, the explanatory statement regarding division B of H.R. 7006 of the 119th Congress, and the explanatory statement regarding division C of H.R. 7006 of the 119th Congress, printed in the House section of the Congressional Record on January 14, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall each have the same effect with respect to the allocation of funds and implementation of divisions E, F, and G, respectively, of this Act as if they were each a joint explanatory statement of a committee of conference.'' ``The explanatory statement regarding H.R. 7147 of the 119th Congress, printed in the House section of the Congressional Record on or about January 21, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall have the same effect with respect to the allocation of funds and implementation of division H of this Act as if it were a joint explanatory statement of a committee of conference.'' Insert after section 5, in the matter preceding Division A, the following: SEC. __. PAYMENT TO WIDOWS AND HEIRS OF DECEASED MEMBERS OF CONGRESS. For payment to Jill Marie LaMalfa, widow of Douglas L. LaMalfa, late a Representative from the State of California, $174,000. Page 657, line 6, strike ``during'' and insert ``During''. Page 659, beginning on line 13, strike ``, section 112 of the African Growth and Opportunity Act (19 U.S.C. 3721),''. Page 659, line 19, after ``2466a)'', insert ``or section 112 of the African Grown and Opportunity Act (19 U.S.C. 3721)''. Page 813, line 23, strike ``AC'' and insert ``WTC''. Page 816, line 6, strike ``XXIII'' and insert ``XXXIII''. PART B--TEXT OF AMENDMENTS TO H.R. 7148 MADE IN ORDER 1. An Amendment To Be Offered by Representative Massie of Kentucky or His Designee, Debatable for 10 Minutes At the end of Title I of Division D, insert the following: Sec. 195. None of the funds made available by this Act may be used to implement section 24220 of the Infrastructure Investment and Jobs Act (49 U.S.C. 30111 note). ---------- 2. An Amendment To Be Offered by Representative Norman of South Carolina or His Designee, Debatable for 10 Minutes On page 3, line 1 after ``Act'' insert ``, except Community Project Funding/Congressionally Directed Spending as specified in Division B,'' PART C--TEXT OF AMENDMENTS TO H. RES. 375 CONSIDERED AS ADOPTED Strike all after the resolving clause and insert-- (1) Establishes the E-15 Rural Domestic Energy Council (``Council''), appointed by the Speaker of the House, to develop legislative solutions to address the crisis facing our nation's farmers and refiners. (2) Directs the Council to investigate topic including, but not limited to, the sale of Ethanol-15, U.S. refinery capacity, the Renewable Fuel Standard Program, Renewable Identification Numbers, access to markets, and federal regulations that hinder American energy dominance. (3) Directs the Council to meet regularly to develop legislative solutions and to submit those solutions to Congress no later than February 15, 2026, with the intent to consider legislation no later that February 25, 2026. ------ Strike the preamble. [all]"
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c.0000000.json",
+                  "sha256": "4a3585e6ab3581e9b6f299f3c49165357ef15bc3b59e146f2b9a887c173d57d9",
+                  "start_character": 0,
+                  "end_character": 5061
+                }
+              ],
+              "utf8_sha256": "bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c",
+              "total_characters": 5061,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "cfe400b2f8b56b44130a1f97c617f87e06e95987ad4e1cdeefbfee67bc82c5bb",
+      "record": {
+        "action_id": "house:119:2:45",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole7148passage is not the later assembled EH as if every combined7006/7147division were newly voted on here. The retained selected IHcapture was read only0:2600and15381:16481; its health extenders do not establish whole defense/labor-health/transport-housing/authorization package meaning.1014PartAis deemed, PartBfailed43/44are not adopted, and section5later assembles previously passed texts/redesignations. Material account/statement/extension conditions, exact pre-vote package reconciliation and reuse of existing Health/Immigration shared whole action remain pending. No selected infrastructure fragment, enacted allocation, component endorsement, net spending or delivery outcome supplies the whole vote.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:45",
+            "url": "https://clerk.house.gov/evs/2026/roll045.xml",
+            "raw_sha256": "697bb308ec7bed155acc4a994bf83fef142c6629303edb3269acd078cdeb1582",
+            "governed_bytes_sha256": "3a8e8bd70d599214127a76b15d501f5e04ee6f8c27669e7ea888ab4a7fbc1c85"
+          },
+          {
+            "source_id": "govinfo:hr7148ih-passage45-scope",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm",
+            "raw_sha256": "0ca75b2f225d2679446bad81c0368b844c5545c9a3459a850f9b0c46a1811bd1",
+            "governed_bytes_sha256": "379e38268d136be3bc338dc15f270cc7adfd3f0d6777f8d7e5d0922165217793"
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+            "raw_sha256": "5e3f2a713beda1ea584d8eb1d21dd09b69fb195d83714feb525d688d0b8c60b7",
+            "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de"
+          },
+          {
+            "source_id": "govinfo:hrpt119-462-operative-amendments",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+            "raw_sha256": "cef9f92f036e7f18416c7a87087c5d133b9a9f0b8af00fb254b65d4c27329ff8",
+            "governed_bytes_sha256": "efbf7c6f8c904db00ae540fb516f9fbaafde21882d15b40cc3e2d3d51cfc54e9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7148ih-passage45-scope",
+            "locator": "Only selected-capture opening0:2600read; not a complete whole7148IHbody",
+            "passage": "SECTION 1. SHORT TITLE. This Act may be cited as the ``Consolidated Appropriations Act, 2026''. SEC. 2. TABLE OF CONTENTS. Sec. 1. Short title. Sec. 2. Table of contents. Sec. 3. References. Sec. 4. Explanatory statement. Sec. 5. Statement of appropriations. DIVISION A--DEPARTMENT OF DEFENSE APPROPRIATIONS ACT, 2026 Title I--Military Personnel Title II--Operation and Maintenance Title III--Procurement Title IV--Research, Development, Test and Evaluation Title V--Revolving and Management Funds Title VI--Other Department of Defense Programs Title VII--Related Agencies Title VIII--General Provisions DIVISION B--DEPARTMENTS OF LABOR, HEALTH AND HUMAN SERVICES, AND EDUCATION, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Department of Labor Title II--Department of Health and Human Services Title III--Department of Education Title IV--Related Agencies Title V--General Provisions DIVISION D--TRANSPORTATION, HOUSING AND URBAN DEVELOPMENT, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Department of Transportation Title II--Department of Housing and Urban Development Title III--Related Agencies Title IV--General Provisions--This Act DIVISION E--AUTHORIZING EXTENDERS AND TECHNICAL CORRECTIONS DIVISION F--HEALTH CARE EXTENDERS\n\nSEC. 6101. STREAMLINED ENROLLMENT PROCESS FOR ELIGIBLE OUT-OF-STATE PROVIDERS UNDER MEDICAID AND CHIP. (a) In General.--Section 1902(kk) of the Social Security Act (42 U.S.C. 1396a(kk)) is amended by adding at the end the following new paragraph: ``(10) Streamlined enrollment process for eligible out-of- state providers.-- ``(A) In general.--The State-- ``(i) adopts and implements a process to allow an eligible out-of-State provider to enroll under the State plan (or a waiver of such plan) to furnish items and services to, or order, prescribe, refer, or certify eligibility for items and services for, qualifying individuals without the imposition of screening or enrollment requirements by such State that exceed the minimum necessary for such State to provide payment to an eligible out-of-State provider under such State plan (or a waiver of such plan), such as the provider's name and National Provider Identifier (and such other information specified by the Secretary); and ``(ii) provides that an eligible out-of- State provider that enrolls as a participating provider in the State plan (or a waiver of such plan) through such process shall be so enrolled for a 5-year period, unless the provider is terminated or excluded from participation during such period. ``(B) Definitions.--In this paragraph: ``(i) Eligible out-of-state prov"
+          },
+          {
+            "source_id": "govinfo:hr7148ih-passage45-scope",
+            "locator": "Only selected-capture closing15381:16481read",
+            "passage": "tudy under paragraph (1), the Secretary shall, to the extent practicable, analyze and compare individuals who participate and do not participate in the initiative controlling for selection bias or other factors that may impact the reliability of data. ``(3) Report.--Not later than September 30, 2029, the Secretary of Health and Human Services shall-- ``(A) submit to the Committee on Ways and Means of the House of Representatives and the Committee on Finance of the Senate a report on the study conducted under paragraph (1); and ``(B) make such report publicly available on a website of the Centers for Medicare & Medicaid Services. ``(4) Funding.--In addition to amounts otherwise available, there is appropriated to the Centers for Medicare & Medicaid Services Program Management Account for fiscal year 2026, out of any amounts in the Treasury not otherwise appropriated, $2,500,000, to remain available until expended, for purposes of carrying out this section.''; and (5) in subsection (e), as redesignated by paragraph (3), by striking ``and (b)(1)'' and inserting ``, (b)(1), and (c)(1)''."
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "locator": "Complete captured own operative/question/baseline unit read",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c.0000000.json",
+                  "sha256": "4a3585e6ab3581e9b6f299f3c49165357ef15bc3b59e146f2b9a887c173d57d9",
+                  "start_character": 0,
+                  "end_character": 5061
+                }
+              ],
+              "utf8_sha256": "bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c",
+              "total_characters": 5061,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hrpt119-462-operative-amendments",
+            "locator": "Complete captured own operative/question/baseline unit read",
+            "passage": "PART A--TEXT OF AMENDMENT TO H.R. 7148 CONSIDERED AS ADOPTED Section 4 in the matter preceding division A is amended by inserting the following new paragraphs: ``The explanatory statement regarding division A of H.R. 7006 of the 119th Congress, the explanatory statement regarding division B of H.R. 7006 of the 119th Congress, and the explanatory statement regarding division C of H.R. 7006 of the 119th Congress, printed in the House section of the Congressional Record on January 14, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall each have the same effect with respect to the allocation of funds and implementation of divisions E, F, and G, respectively, of this Act as if they were each a joint explanatory statement of a committee of conference.'' ``The explanatory statement regarding H.R. 7147 of the 119th Congress, printed in the House section of the Congressional Record on or about January 21, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall have the same effect with respect to the allocation of funds and implementation of division H of this Act as if it were a joint explanatory statement of a committee of conference.'' Insert after section 5, in the matter preceding Division A, the following: SEC. __. PAYMENT TO WIDOWS AND HEIRS OF DECEASED MEMBERS OF CONGRESS. For payment to Jill Marie LaMalfa, widow of Douglas L. LaMalfa, late a Representative from the State of California, $174,000. Page 657, line 6, strike ``during'' and insert ``During''. Page 659, beginning on line 13, strike ``, section 112 of the African Growth and Opportunity Act (19 U.S.C. 3721),''. Page 659, line 19, after ``2466a)'', insert ``or section 112 of the African Grown and Opportunity Act (19 U.S.C. 3721)''. Page 813, line 23, strike ``AC'' and insert ``WTC''. Page 816, line 6, strike ``XXIII'' and insert ``XXXIII''. PART B--TEXT OF AMENDMENTS TO H.R. 7148 MADE IN ORDER 1. An Amendment To Be Offered by Representative Massie of Kentucky or His Designee, Debatable for 10 Minutes At the end of Title I of Division D, insert the following: Sec. 195. None of the funds made available by this Act may be used to implement section 24220 of the Infrastructure Investment and Jobs Act (49 U.S.C. 30111 note). ---------- 2. An Amendment To Be Offered by Representative Norman of South Carolina or His Designee, Debatable for 10 Minutes On page 3, line 1 after ``Act'' insert ``, except Community Project Funding/Congressionally Directed Spending as specified in Division B,'' PART C--TEXT OF AMENDMENTS TO H. RES. 375 CONSIDERED AS ADOPTED Strike all after the resolving clause and insert-- (1) Establishes the E-15 Rural Domestic Energy Council (``Council''), appointed by the Speaker of the House, to develop legislative solutions to address the crisis facing our nation's farmers and refiners. (2) Directs the Council to investigate topic including, but not limited to, the sale of Ethanol-15, U.S. refinery capacity, the Renewable Fuel Standard Program, Renewable Identification Numbers, access to markets, and federal regulations that hinder American energy dominance. (3) Directs the Council to meet regularly to develop legislative solutions and to submit those solutions to Congress no later than February 15, 2026, with the intent to consider legislation no later that February 25, 2026. ------ Strike the preamble. [all]"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "e0125f9302345e5b49741a263679cae29d06dcb00402c103c1c4da1c1e72523f",
+      "record": {
+        "action_id": "house:119:2:46",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.6359. No substantive motion body is interpreted. It remains non-counting procedural context and does not itself establish support/opposition to the distinct pregnant-student information/accommodation bill or a technical/infrastructure mechanism.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:46",
+            "url": "https://clerk.house.gov/evs/2026/roll046.xml",
+            "raw_sha256": "9df1ab251f07b4dffccca37a3d0c3a59e9e73b0ab49d6f083a7bcb58adb338d3",
+            "governed_bytes_sha256": "e54eb45e52b5defdaca3428161d2ee3719c015d211e367a61c09ff75ca98f2a4"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:42",
+      "original_source_object_sha256": "28009f6024deddc7aed11214dbc9826b487ba94a6260cbc16d31606ce94b97e1",
+      "path": "source_objects/28009f6024deddc7aed11214dbc9826b487ba94a6260cbc16d31606ce94b97e1.json"
+    },
+    {
+      "source_id": "clerk:119:2:43",
+      "original_source_object_sha256": "c94636701e9964bc663a0c3dac2a5e22edae97c833d13714928e47a036aee13f",
+      "path": "source_objects/c94636701e9964bc663a0c3dac2a5e22edae97c833d13714928e47a036aee13f.json"
+    },
+    {
+      "source_id": "clerk:119:2:44",
+      "original_source_object_sha256": "f102c2a6f6cfe658ad06317c55e87095f0bbcd9af0e6b81e9fc7554fadacfe88",
+      "path": "source_objects/f102c2a6f6cfe658ad06317c55e87095f0bbcd9af0e6b81e9fc7554fadacfe88.json"
+    },
+    {
+      "source_id": "clerk:119:2:45",
+      "original_source_object_sha256": "f2ddb09a25b342074712d36eacc6e748bfa20fbe2c30eae193f9736f78dc3587",
+      "path": "source_objects/f2ddb09a25b342074712d36eacc6e748bfa20fbe2c30eae193f9736f78dc3587.json"
+    },
+    {
+      "source_id": "clerk:119:2:46",
+      "original_source_object_sha256": "e52d46c4afae0acdaf882c9c0131a0ee40a960b234143e6dcc2681cc6b62d3fd",
+      "path": "source_objects/e52d46c4afae0acdaf882c9c0131a0ee40a960b234143e6dcc2681cc6b62d3fd.json"
+    },
+    {
+      "source_id": "congressional-record:2026-01-22-7147-correction-after42",
+      "original_source_object_sha256": "c848cfb42aa6522f421f34558262676aa9acd56457acaf6adc3f31886831a7a0",
+      "path": "source_objects/c848cfb42aa6522f421f34558262676aa9acd56457acaf6adc3f31886831a7a0.json"
+    },
+    {
+      "source_id": "congressional-record:2026-01-22-7147-passage42",
+      "original_source_object_sha256": "e5db0695a7e3cda26f69f3612b07485f7fc52026f12aa09967399d425149159c",
+      "path": "source_objects/e5db0695a7e3cda26f69f3612b07485f7fc52026f12aa09967399d425149159c.json"
+    },
+    {
+      "source_id": "govinfo:49usc30111-24220-complete174",
+      "original_source_object_sha256": "90387d3c29fd93f81403e5e567bcd3a18507592a648aaee19fd4d394c6e0382c",
+      "path": "source_objects/90387d3c29fd93f81403e5e567bcd3a18507592a648aaee19fd4d394c6e0382c.json"
+    },
+    {
+      "source_id": "govinfo:hr7147-reviewed-version-boundaries",
+      "original_source_object_sha256": "90f1340d881319c337357deb983d83a928fbb3d5ab22ef64ad058c60e2fe9f92",
+      "path": "source_objects/90f1340d881319c337357deb983d83a928fbb3d5ab22ef64ad058c60e2fe9f92.json"
+    },
+    {
+      "source_id": "govinfo:hr7147ih-immigration-complete",
+      "original_source_object_sha256": "b653ce5b989a863cb744c0642d21bd8e92457e01d7ee6a714c7f58e9f4da5d66",
+      "path": "source_objects/b653ce5b989a863cb744c0642d21bd8e92457e01d7ee6a714c7f58e9f4da5d66.json"
+    },
+    {
+      "source_id": "govinfo:hr7148ih-passage45-scope",
+      "original_source_object_sha256": "4e55bb147178be864635ac699cc2e2852779f436063fea5c68952391c7b8e67b",
+      "path": "source_objects/4e55bb147178be864635ac699cc2e2852779f436063fea5c68952391c7b8e67b.json"
+    },
+    {
+      "source_id": "govinfo:hr7148ih-preface-pages",
+      "original_source_object_sha256": "ec238ead16968bebf295bf7c50de0f0d19cadbaddd735cdc821a2abdccf78798",
+      "path": "source_objects/ec238ead16968bebf295bf7c50de0f0d19cadbaddd735cdc821a2abdccf78798.json"
+    },
+    {
+      "source_id": "govinfo:hr7148ih-reference-scope",
+      "original_source_object_sha256": "5ccacee9fc5a351473e48f0f15b1671a8bd79979333e88f08b0f52e6f46c589f",
+      "path": "source_objects/5ccacee9fc5a351473e48f0f15b1671a8bd79979333e88f08b0f52e6f46c589f.json"
+    },
+    {
+      "source_id": "govinfo:hres1014eh",
+      "original_source_object_sha256": "d9814e3a0649391be7bb20bf2da6c01fef7f3ad7b8a15787845dde39823e7664",
+      "path": "source_objects/d9814e3a0649391be7bb20bf2da6c01fef7f3ad7b8a15787845dde39823e7664.json"
+    },
+    {
+      "source_id": "govinfo:hrpt119-462-operative-amendments",
+      "original_source_object_sha256": "085e53f8a9aba112e820489be6a713238d1651348e46d935b2f709bb729e4fe4",
+      "path": "source_objects/085e53f8a9aba112e820489be6a713238d1651348e46d935b2f709bb729e4fe4.json"
+    },
+    {
+      "source_id": "house:7148-jan20-1252-preface",
+      "original_source_object_sha256": "88d6ef9cfe6e5c147daec4b521578e608700f0c9c56ff2ea544884c2295f3b86",
+      "path": "source_objects/88d6ef9cfe6e5c147daec4b521578e608700f0c9c56ff2ea544884c2295f3b86.json"
+    },
+    {
+      "source_id": "immigration:session2-roll43-initial174",
+      "original_source_object_sha256": "ba0b9f3a6dfe5edd7c5da55857c1e7a78e6d3836901cc0f8314be7ba40bf9e15",
+      "path": "source_objects/ba0b9f3a6dfe5edd7c5da55857c1e7a78e6d3836901cc0f8314be7ba40bf9e15.json"
+    },
+    {
+      "source_id": "immigration:session2-roll43-recorded174",
+      "original_source_object_sha256": "94cc7e3e31cffbd47cacf573a634a6a447a9a0fabf56b25271a426636726e9c4",
+      "path": "source_objects/94cc7e3e31cffbd47cacf573a634a6a447a9a0fabf56b25271a426636726e9c4.json"
+    },
+    {
+      "source_id": "immigration:session2-roll43-report174",
+      "original_source_object_sha256": "9d22c4d2ce73414bf33fa25463ff4233420aadcd1a4d770d86dd88098b7f7b34",
+      "path": "source_objects/9d22c4d2ce73414bf33fa25463ff4233420aadcd1a4d770d86dd88098b7f7b34.json"
+    },
+    {
+      "source_id": "immigration:session2-roll44-initial174",
+      "original_source_object_sha256": "270976d3048a95becbf5af4cb441ceee6e5be2a79a61c9efa9d831c52dfe39f3",
+      "path": "source_objects/270976d3048a95becbf5af4cb441ceee6e5be2a79a61c9efa9d831c52dfe39f3.json"
+    },
+    {
+      "source_id": "immigration:session2-roll44-recorded174",
+      "original_source_object_sha256": "26c4ea96b7fafcd8814b91aa1c2a88a83a14119e5cc8878022b4122a5a149948",
+      "path": "source_objects/26c4ea96b7fafcd8814b91aa1c2a88a83a14119e5cc8878022b4122a5a149948.json"
+    },
+    {
+      "source_id": "immigration:session2-roll44-report174",
+      "original_source_object_sha256": "d1b8fe21be03e27d64010561ef8e3fb92f0beb52b47f92a57d5b08f2a1b05b85",
+      "path": "source_objects/d1b8fe21be03e27d64010561ef8e3fb92f0beb52b47f92a57d5b08f2a1b05b85.json"
+    },
+    {
+      "source_id": "rules:hr7148-norman-original",
+      "original_source_object_sha256": "b0117afc217c42489a19a65f03b4618a1f6452b087018735177ab4600dace318",
+      "path": "source_objects/b0117afc217c42489a19a65f03b4618a1f6452b087018735177ab4600dace318.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr7147ih-immigration-complete",
+      "governed_length": 122516,
+      "review_extent": "Only0:2400and121516:122516read; interior unreviewed"
+    },
+    {
+      "source_id": "govinfo:hr7147-reviewed-version-boundaries",
+      "governed_length": 1550,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "congressional-record:2026-01-22-7147-passage42",
+      "governed_length": 860,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "congressional-record:2026-01-22-7147-correction-after42",
+      "governed_length": 922,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "govinfo:hres1014eh",
+      "governed_length": 5061,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "immigration:session2-roll43-initial174",
+      "governed_length": 954,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "immigration:session2-roll43-recorded174",
+      "governed_length": 777,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "immigration:session2-roll43-report174",
+      "governed_length": 332,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "govinfo:49usc30111-24220-complete174",
+      "governed_length": 6482,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "govinfo:hr7148ih-reference-scope",
+      "governed_length": 829,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "immigration:session2-roll44-initial174",
+      "governed_length": 885,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "immigration:session2-roll44-recorded174",
+      "governed_length": 784,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "immigration:session2-roll44-report174",
+      "governed_length": 255,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "house:7148-jan20-1252-preface",
+      "governed_length": 2382,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "govinfo:hr7148ih-preface-pages",
+      "governed_length": 2201,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "rules:hr7148-norman-original",
+      "governed_length": 199,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "govinfo:hrpt119-462-operative-amendments",
+      "governed_length": 3404,
+      "review_extent": "Complete captured operative/question/version/baseline unit read; no current technical or integrated-law certificate"
+    },
+    {
+      "source_id": "govinfo:hr7148ih-passage45-scope",
+      "governed_length": 16481,
+      "review_extent": "Only selected-capture0:2600and15381:16481read; not whole bill"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:42",
+        "evidence_unit": "partial_whole_package_with_version_and_shared_reuse_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:43",
+        "evidence_unit": "complete_vehicle_funding_child_and_dated_standard_baseline",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:44",
+        "evidence_unit": "complete_incorporation_exception_with_unreviewed_account_interaction",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:45",
+        "evidence_unit": "partial_whole_package_with_version_and_shared_reuse_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:46",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}

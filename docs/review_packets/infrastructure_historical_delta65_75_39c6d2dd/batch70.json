@@ -1,0 +1,386 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 70,
+  "exact_committed_head": "1f516af11fcde14db97cd8dc52185ead591a851e",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "1f516af11fcde14db97cd8dc52185ead591a851e",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/membership_review.json",
+      "git_blob": "784d270f9e80afe8cea7ea725642cd36646bd4b7",
+      "git_bytes_sha256": "5289186b063b4d8c4b93ab4096e13a8194d429323e555933beab9e05667bc129"
+    },
+    "sources": {
+      "head": "1f516af11fcde14db97cd8dc52185ead591a851e",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/sources.json",
+      "git_blob": "25621e513c01f96a8dddbd19fa109732d2a59d50",
+      "git_bytes_sha256": "cf38abbe31e7df56800b72caafe00bf62e004f8d887d3c593ab1af0b228f59d5"
+    },
+    "screening": {
+      "head": "1f516af11fcde14db97cd8dc52185ead591a851e",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/screening_receipt.json",
+      "git_blob": "cc74560799a32a150f5b776519a99072bb71db39",
+      "git_bytes_sha256": "e6bc7db3d74c16e7f3dfcb92bfc810fa28ad90ee5285c5b27082b2308d48c364"
+    },
+    "screening_units": {
+      "head": "1f516af11fcde14db97cd8dc52185ead591a851e",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/screening_units_receipt.json",
+      "git_blob": "4df7949c035e71fb0837107257939133d9a26ab6",
+      "git_bytes_sha256": "9aaed0849f25d90b0956f63a04c12516b28b867513b2eef46945075b9151830a"
+    },
+    "validation": {
+      "head": "1f516af11fcde14db97cd8dc52185ead591a851e",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/validation_receipt.json",
+      "git_blob": "e883fdc97c5797074f2cc764c6d745a9e7befe82",
+      "git_bytes_sha256": "b1ffc541da9d4008b32fa7168e4ae32d91da9140ca7856749dda5400793c7b4d"
+    }
+  },
+  "original_membership_review_sha256": "22d3d0bef1def32115b10f2ba08c40410a5aa3e3ff96f420e05eb046ba1aa065",
+  "new_screened_ids": [
+    "house:119:2:32",
+    "house:119:2:33",
+    "house:119:2:34",
+    "house:119:2:35",
+    "house:119:2:36"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "8c9ddaade16fb8f85654362835bc0273e9043c098fea9376d6b13cc181b2b986",
+      "record": {
+        "action_id": "house:119:2:32",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete5763EH and retained696loan baseline show deletion of the limited/single-purpose15percent and combined20percent statutory contribution clauses, retention of the15percent new-business and residual10percent minima, and narrowing the50percent institutional-funding reference to the retained new-business clause. These are floors, not every borrower receiving exactly10percent or a loan approval. Existing Health shared action truth already covers this whole suspension/passage choice with additional special-purpose regulatory/SBA guidance and floor-version evidence. Reuse/reconciliation of that whole source-qualified action and the private fixed-asset versus Infrastructure taxonomy boundary remain pending; do not author a duplicate narrower meaning from this loan fragment or certify current rules, entitlement or construction outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:32",
+            "url": "https://clerk.house.gov/evs/2026/roll032.xml",
+            "raw_sha256": "bd68eac5103682e0f1af70f5857b6b996f2fce34816bf4795a8b581ab069dc0f",
+            "governed_bytes_sha256": "147abb19cc5d6e114234a4a288128424cd756ef183c97b97c810d8352e600983"
+          },
+          {
+            "source_id": "govinfo:hr5763eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5763eh/html/BILLS-119hr5763eh.htm",
+            "raw_sha256": "c928f453a07b098a5ba3557e415110ff6b32833653b9da82b49294d38ad133cd",
+            "governed_bytes_sha256": "a70466570b352573bf920e87cc8c60f19ed197e3e9204854438a9680da2c9bf3"
+          },
+          {
+            "source_id": "govinfo:15usc696-224-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec696.htm",
+            "raw_sha256": "eeed887bd77bcbf883c2829294068ce00c418f10464ff3c57d69f9fefd2d68f4",
+            "governed_bytes_sha256": "da993e852659e491075da455783fc1391af45680273903a591aa5418615f52b2"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5763eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5763 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 5763 _______________________________________________________________________ AN ACT To amend the Small Business Investment Act of 1958 to modify the criteria for loans for plant acquisition, construction, conversion or expansion, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Main Street Parity Act''. SEC. 2. MODIFICATION TO CRITERIA FOR LOANS FOR PLANT ACQUISITION, CONSTRUCTION, CONVERSION OR EXPANSION. (a) In General.--Section 502(3)(C) of the Small Business Investment Act of 1958 (15 U.S.C. 696(3)(C)) is amended-- (1) by striking clauses (ii) and (iii); (2) in clause (i), by inserting ``or'' at the end; and (3) by redesignating clause (iv) as clause (ii). (b) Conforming Amendment.--Section 502(3)(B)(ii) of the Small Business Investment Act of 1958 (15 U.S.C. 696(3)(B)(ii)) is amended by striking ``clauses (i), (ii), or (iii) of subparagraph (C)'' and inserting ``clause (i) of subparagraph (C)''. Passed the House of Representatives January 20, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 5763 _______________________________________________________________________ AN ACT To amend the Small Business Investment Act of 1958 to modify the criteria for loans for plant acquisition, construction, conversion or expansion, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:15usc696-224-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/53c8851e72df6dd83bafa2c10973d0addf10f84865428e0799004ddf3a5e7efb.0000000.json",
+                  "sha256": "0c2719b9547a454fb6bf1b70ac5e6eeda1fe84ffcf9bcdaaf60e6826caaa3388",
+                  "start_character": 0,
+                  "end_character": 11634
+                }
+              ],
+              "utf8_sha256": "53c8851e72df6dd83bafa2c10973d0addf10f84865428e0799004ddf3a5e7efb",
+              "total_characters": 11634,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d1b553a7e782edecad6ace376c267dd5571c10b52f9ff6e1bb3ecc6fc1913ffd",
+      "record": {
+        "action_id": "house:119:2:33",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete5764EH, whole retained648(c)service unit and named9401(3)AIdefinition support an unaccepted technical-assistance candidate. Preserve existing technology duties, mandatory assistance versus practical outreach, broad statutory AI scope, separate preexisting services and no-additional-authorization versus existing-resource distinction. No compelled business adoption or realized benefit. This combines suspension/passage as amended, not enactment; the general business-services taxonomy counterboundary requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:33",
+            "url": "https://clerk.house.gov/evs/2026/roll033.xml",
+            "raw_sha256": "511e5f3f1a59e0343c871062406fe3f885e0870ed5bb154bde8f8b672219a7d0",
+            "governed_bytes_sha256": "abe581bafae522468d99474e793cd878719baada8ff8d655536d5583832e36a7"
+          },
+          {
+            "source_id": "govinfo:hr5764eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5764eh/html/BILLS-119hr5764eh.htm",
+            "raw_sha256": "3aece90395244d38abdf49b298cad69d05154084b075b9bad9a2e3f965d21d3e",
+            "governed_bytes_sha256": "ac70a26b8fb9fe5be6c0e1aaf0a8abc31d2c383d559cc69f75b31344db629736"
+          },
+          {
+            "source_id": "govinfo:15usc648-2024-sbdc-services",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec648.htm",
+            "raw_sha256": "0adb19ea9dba5708a1abb4e378e82e81e1d84bd6b23c2f016868bdf43f3ea196",
+            "governed_bytes_sha256": "04196815552a2794f62e37aab7ea4c39fe088447b97284683d532ca7b9191753"
+          },
+          {
+            "source_id": "govinfo:15usc9401-2024-ai-definition",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap119-sec9401.htm",
+            "raw_sha256": "e401baf2fe508ddf39baf8e5bd794da72c130d4619bd75b277f5ec3e72d1dc00",
+            "governed_bytes_sha256": "77464ce4b141e82a5d38d1e9878a4a8091eca4bf10ec64cacf5491e62f9d1b77"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5764eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5764 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 5764 _______________________________________________________________________ AN ACT To amend the Small Business Act to require small business development centers to assist small business concerns with the use of artificial intelligence, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``AI for Main Street Act''. SEC. 2. GUIDANCE ON THE USE OF ARTIFICIAL INTELLIGENCE FOR SMALL BUSINESS CONCERNS. (a) In General.--Section 21(c)(3) of the Small Business Act (15 U.S.C. 648(c)(3)) is amended-- (1) in subparagraph (T), by striking ``and'' at the end; (2) in the first subparagraph (U) (relating to encouraging and assisting the provision of succession planning), by striking the period at the end and inserting a semicolon; (3) by redesignating the second subparagraph (U) (relating to providing training in conjunction with the United States Patent and Trademark Office) as subparagraph (V); (4) in subparagraph (V), as so redesignated, by striking the period at the end and inserting ``; and''; and (5) by adding at the end the following new subparagraph: ``(W) assisting small business concerns in evaluating artificial intelligence concerning operations, including by-- ``(i) providing information, guidance, and training to small business concerns on the use of artificial intelligence, including-- ``(I) best practices for using artificial intelligence; ``(II) using artificial intelligence to plan for unexpected circumstances, protect data and intellectual property, improve cybersecurity, facilitate regulatory compliance, and improve customer trust; and ``(III) incorporating artificial intelligence into business operations; and ``(ii) conducting outreach to the extent practical to small business concerns regarding the use of artificial intelligence.''. (b) Conforming Amendment.--Section 3 of the Small Business Act (15 U.S.C. 632) is amended by adding at the end the following new subsection: ``(gg) Artificial Intelligence.--In this Act, the term `artificial intelligence' has the meaning given such term in section 5002 of the National Artificial Intelligence Initiative Act of 2020 (15 U.S.C. 9401).''. SEC. 3. COMPLIANCE WITH CUTGO. No additional amounts are authorized to carry out this Act or the amendments made by this Act. Passed the House of Representatives January 20, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 5764 _______________________________________________________________________ AN ACT To amend the Small Business Act to require small business development centers to assist small business concerns with the use of artificial intelligence, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:15usc648-2024-sbdc-services",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/fd81fb4447a8d3a71fed2c33e4c9e1a5e0b8d059f8efea1a98481e4d6f57d46b.0000000.json",
+                  "sha256": "7ef5a08c6c7148ed8f68e5feb39f80000b50dff9571902e251ab4adaf54b98cc",
+                  "start_character": 0,
+                  "end_character": 15486
+                }
+              ],
+              "utf8_sha256": "fd81fb4447a8d3a71fed2c33e4c9e1a5e0b8d059f8efea1a98481e4d6f57d46b",
+              "total_characters": 15486,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:15usc9401-2024-ai-definition",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(3) Artificial intelligence The term \"artificial intelligence\" means a machine-based system that can, for a given set of human-defined objectives, make predictions, recommendations or decisions influencing real or virtual environments. Artificial intelligence systems use machine and human-based inputs to— (A) perceive real and virtual environments; (B) abstract such perceptions into models through analysis in an automated manner; and (C) use model inference to formulate options for information or action."
+          }
+        ],
+        "episode_candidate_id": "episode:hr5764:119"
+      }
+    },
+    {
+      "original_record_sha256": "083c9602720887f3ce72f775bdd1122b5e8a3a8b6376019b4793b3a435a02e59",
+      "record": {
+        "action_id": "house:119:2:34",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the ordering of the previous question on H.Res.1009. No substantive motion body is interpreted. This remains non-counting procedural context and does not establish support/opposition to an underlying care, land-withdrawal or technical-policy mechanism.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:34",
+            "url": "https://clerk.house.gov/evs/2026/roll034.xml",
+            "raw_sha256": "ba318b48ee55dea5cbb4dabda7ca1dfcb97dddb28691e4686df37413438a250c",
+            "governed_bytes_sha256": "21a90f7f733ae5b5980c2febd533061b677fb1edf6b5e3fa55b407cbbe4f6fb5"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4ac7ee70e5eb10802b0e32c46eb8d7c8231f9b54d8785ea0c9568f5e8d365d93",
+      "record": {
+        "action_id": "house:119:2:35",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1009EH deems the6945RulesCommitteePrint119-17substitute adopted and the6359committee substitute adopted, while separately permitting consideration of HJR140BLMland-withdrawal disapproval. Whole incorporated versions and their material care/education/baseline/domain relationships have not been reconciled here. Scheduling a land rule alone is not adoption of its disapproval. Whole rule adoption cannot be reduced to a schedule or selected technical/health fragment. Preserve pending substantive bundle/version review without an enacted benefit, environmental, mining, land-opening or infrastructure outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:35",
+            "url": "https://clerk.house.gov/evs/2026/roll035.xml",
+            "raw_sha256": "989809528e53d570692af8a068a200f421a37a802e778258f3b9585dd75a78ac",
+            "governed_bytes_sha256": "ee7030df4b6ab8372a11ed155af454f5b1fe55fe24709694df4b82fcff7aa1c8"
+          },
+          {
+            "source_id": "govinfo:hres1009eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1009eh/html/BILLS-119hres1009eh.htm",
+            "raw_sha256": "7bc4fb997cb5062354adcdf508c57f057a82a3d3b1f18a71608d53e762a8f434",
+            "governed_bytes_sha256": "735daf15d3237af26a097ab05786020209e6007e1295cbe445b74c43a2a34967"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1009eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1009 Engrossed in House (EH)] <DOC> H. Res. 1009 In the House of Representatives, U. S., January 21, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 6945) to amend part A of title IV of the Social Security Act to clarify the authority of States to use funds for pregnancy centers, and for other purposes. All points of order against consideration of the bill are waived. An amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-17 shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Ways and Means or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 6359) to require institutions of higher education to disseminate information on the rights of, and accommodations and resources for, pregnant students, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Education and Workforce now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Education and Workforce or their respective designees; and (2) one motion to recommit. Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 140) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Public Land Order No. 7917 for Withdrawal of Federal Lands; Cook, Lake, and Saint Louis Counties, MN. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Natural Resources or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0d44c47af211aa56cb0b56457721e77cf11cdfecf11c7bf42b30c612ebe99676",
+      "record": {
+        "action_id": "house:119:2:36",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.6945. No substantive motion body is interpreted. This remains non-counting procedural context and does not establish support/opposition to an underlying care, land-withdrawal or technical-policy mechanism.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:36",
+            "url": "https://clerk.house.gov/evs/2026/roll036.xml",
+            "raw_sha256": "c2205f8eca5e129db1b40f04cdc8f0bff1cdc47bd031b067646964de26f796bc",
+            "governed_bytes_sha256": "80c8d5e6a3ac230839b62f83bc3a4a51fc4d1b2712daa86aaeb0aa02123f75a2"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:32",
+      "original_source_object_sha256": "ea5e848a180d59d1d2c64fb8b77cb241a88a97c9e46d8e4cef330bcee45a86fa",
+      "path": "source_objects/ea5e848a180d59d1d2c64fb8b77cb241a88a97c9e46d8e4cef330bcee45a86fa.json"
+    },
+    {
+      "source_id": "clerk:119:2:33",
+      "original_source_object_sha256": "70ae3afbe0d4e2484e8b31121c0cc000c335e8ce5079e6bce57f025b8323d0a4",
+      "path": "source_objects/70ae3afbe0d4e2484e8b31121c0cc000c335e8ce5079e6bce57f025b8323d0a4.json"
+    },
+    {
+      "source_id": "clerk:119:2:34",
+      "original_source_object_sha256": "93bfd24dde0fa8c76c5601030157381688954890fd06550083ab5d094cb54c6c",
+      "path": "source_objects/93bfd24dde0fa8c76c5601030157381688954890fd06550083ab5d094cb54c6c.json"
+    },
+    {
+      "source_id": "clerk:119:2:35",
+      "original_source_object_sha256": "b37e1e34c1c675a56b16189ef92e007367243cc151372d74fa98679bc1805e38",
+      "path": "source_objects/b37e1e34c1c675a56b16189ef92e007367243cc151372d74fa98679bc1805e38.json"
+    },
+    {
+      "source_id": "clerk:119:2:36",
+      "original_source_object_sha256": "66cb069af786eb5ebeb911bda86083067cb000a7545d211f0d3a8684bbf900be",
+      "path": "source_objects/66cb069af786eb5ebeb911bda86083067cb000a7545d211f0d3a8684bbf900be.json"
+    },
+    {
+      "source_id": "govinfo:15usc648-2024-sbdc-services",
+      "original_source_object_sha256": "c9b5af55838aac42d59671733cb666f421d76dd29618fe476214e2a233d7f0ef",
+      "path": "source_objects/c9b5af55838aac42d59671733cb666f421d76dd29618fe476214e2a233d7f0ef.json"
+    },
+    {
+      "source_id": "govinfo:15usc696-224-operative",
+      "original_source_object_sha256": "fc641977dc63c24191a50512c97a964e68793d60352e502a97de91a0e2d78bc8",
+      "path": "source_objects/fc641977dc63c24191a50512c97a964e68793d60352e502a97de91a0e2d78bc8.json"
+    },
+    {
+      "source_id": "govinfo:15usc9401-2024-ai-definition",
+      "original_source_object_sha256": "23212dda42aac70c69e8bef526ca06a6e1a3833f5c3b99fded0c091e19ac33db",
+      "path": "source_objects/23212dda42aac70c69e8bef526ca06a6e1a3833f5c3b99fded0c091e19ac33db.json"
+    },
+    {
+      "source_id": "govinfo:hr5763eh",
+      "original_source_object_sha256": "2f0477b0c37ac5864047d4b0dbdccd0e7fa6f6f8d7b63b7d989b20df57131d0a",
+      "path": "source_objects/2f0477b0c37ac5864047d4b0dbdccd0e7fa6f6f8d7b63b7d989b20df57131d0a.json"
+    },
+    {
+      "source_id": "govinfo:hr5764eh",
+      "original_source_object_sha256": "8b1e5724939f57274c1a2c487f74a8348f80d29da159724dfd031fff109f21b2",
+      "path": "source_objects/8b1e5724939f57274c1a2c487f74a8348f80d29da159724dfd031fff109f21b2.json"
+    },
+    {
+      "source_id": "govinfo:hres1009eh",
+      "original_source_object_sha256": "18480451caecdc69baea525f890f845db8ad80da5cf9df28e65745230028beed",
+      "path": "source_objects/18480451caecdc69baea525f890f845db8ad80da5cf9df28e65745230028beed.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr5763eh",
+      "governed_length": 1566,
+      "review_extent": "Complete captured unit read; dated696and648material units do not certify all current law or incorporated guidance"
+    },
+    {
+      "source_id": "govinfo:15usc696-224-operative",
+      "governed_length": 11634,
+      "review_extent": "Complete captured unit read; dated696and648material units do not certify all current law or incorporated guidance"
+    },
+    {
+      "source_id": "govinfo:hr5764eh",
+      "governed_length": 2903,
+      "review_extent": "Complete captured unit read; dated696and648material units do not certify all current law or incorporated guidance"
+    },
+    {
+      "source_id": "govinfo:15usc648-2024-sbdc-services",
+      "governed_length": 15486,
+      "review_extent": "Complete captured unit read; dated696and648material units do not certify all current law or incorporated guidance"
+    },
+    {
+      "source_id": "govinfo:15usc9401-2024-ai-definition",
+      "governed_length": 509,
+      "review_extent": "Complete captured unit read; dated696and648material units do not certify all current law or incorporated guidance"
+    },
+    {
+      "source_id": "govinfo:hres1009eh",
+      "governed_length": 3096,
+      "review_extent": "Complete captured unit read; dated696and648material units do not certify all current law or incorporated guidance"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:32",
+        "evidence_unit": "complete_loan_bill_and_dated_unit_pending_shared_reuse",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:33",
+        "evidence_unit": "complete_AI_assistance_bill_service_baseline_and_definition",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:34",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:35",
+        "evidence_unit": "whole_deemed_bundle_with_unreconciled_versions",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:36",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}

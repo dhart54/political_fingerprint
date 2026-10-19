@@ -1,0 +1,419 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 73,
+  "exact_committed_head": "2519493fd35b9d99579c709cc9a1b0864916e1f1",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "2519493fd35b9d99579c709cc9a1b0864916e1f1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/membership_review.json",
+      "git_blob": "47acd434ab8b51120c814f03997b07975c2c258f",
+      "git_bytes_sha256": "ecbc41388097faf1f727c073e1f84eb989029ca946c0d7f1c14c74f33feb3754"
+    },
+    "sources": {
+      "head": "2519493fd35b9d99579c709cc9a1b0864916e1f1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/sources.json",
+      "git_blob": "10c3fe1748dd822c1d789951438dfe96467f8059",
+      "git_bytes_sha256": "6286ff9ebe383c6b2c14697949ec770333d5f8e06b1bad2eb3c3401543efccca"
+    },
+    "screening": {
+      "head": "2519493fd35b9d99579c709cc9a1b0864916e1f1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/screening_receipt.json",
+      "git_blob": "823700c7df7cf4ede731b043cc03c72f7a91e874",
+      "git_bytes_sha256": "a4a67486964eda7dce08b1f739c2f31aadf7665cfb9c90a127d1cfe3856aac97"
+    },
+    "screening_units": {
+      "head": "2519493fd35b9d99579c709cc9a1b0864916e1f1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/screening_units_receipt.json",
+      "git_blob": "738b4356d8609b0d75197a9f392e0fb023c83789",
+      "git_bytes_sha256": "ed542ad875233c1e5316c8b26817293bb0a19318e7efa7e104879412a18170b9"
+    },
+    "validation": {
+      "head": "2519493fd35b9d99579c709cc9a1b0864916e1f1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/validation_receipt.json",
+      "git_blob": "e992e32f6e769d7ba43cd436649ec995918beee4",
+      "git_bytes_sha256": "35fdf689b955b23c5f003e4e9f954a7b987d2fb48d979a87addfb5b3950985ef"
+    }
+  },
+  "original_membership_review_sha256": "96517f280854f648db98cfb689cb3c551c9821ba1bf9b39f53c8cdbe74d1162f",
+  "new_screened_ids": [
+    "house:119:2:47",
+    "house:119:2:48",
+    "house:119:2:49",
+    "house:119:2:50",
+    "house:119:2:51"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "f1d02d37821af4ac10e686d58c89c94e9d5b2e31bc204c6e3138f53577da5d9f",
+      "record": {
+        "action_id": "house:119:2:47",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete6359EH requires participating higher-education institutions to disseminate the specified pregnant-student carrying-to-term/after-birth resources, accommodations and complaint information to prospective/enrolled students including less-than-full-time students. Annual email, handbooks if any, orientation, health/counseling centers if any and a public website are specified delivery channels; generic electronic dissemination does not make this a technical-system or infrastructure program. The printed construction rule limits the Secretary regarding additional information/rights beyond those included. Proposed whole-action Infrastructure exclusion does not certify current TitleIX entitlement, create new care capacity, require every listed resource exist, or infer actual enrollment, care, parenting or academic outcomes. House passage is not enactment or component endorsement.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:47",
+            "url": "https://clerk.house.gov/evs/2026/roll047.xml",
+            "raw_sha256": "21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b",
+            "governed_bytes_sha256": "b1f023a3f1ce45ddad073573133b8a8ada0ad1c33ce8d5682a40987780c8ba5e"
+          },
+          {
+            "source_id": "govinfo:hr6359eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm",
+            "raw_sha256": "056442fa0bc476d8d4c9bd3dc31c812e3e69138cf658809048b9951b938813b4",
+            "governed_bytes_sha256": "a88a06bbbba92e1686a1cc4eb1b8d821500012f33e269c9cbd5cc5cba30aa866"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6359eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6359 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 6359 _______________________________________________________________________ AN ACT To require institutions of higher education to disseminate information on the rights of, and accommodations and resources for, pregnant students, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Pregnant Students' Rights Act''. SEC. 2. NOTICE OF PREGNANT STUDENT RIGHTS, ACCOMMODATIONS, AND RESOURCES. Section 485 of the Higher Education Act of 1965 (20 U.S.C. 1092) is amended by adding at the end the following: ``(n) Pregnant Students' Rights, Accommodations, and Resources.-- ``(1) In general.--Each institution of higher education participating in any program under this title shall carry out the information dissemination activities described in paragraph (3) for prospective and enrolled students (including those attending or planning to attend less than full time) regarding the information described in paragraph (2) on the rights of, and resources (including protections and accommodations) for, pregnant students to carry a baby to term and students who may become pregnant while enrolled at such institution of higher education to carry a baby to term. ``(2) Information content.--The information described in this paragraph is the following: ``(A) A list of resources on campus and in the community that exist to help a pregnant student in carrying the baby to term and caring for the baby after birth. ``(B) Information about the accommodations available to help a pregnant student carry the baby to term and parent the baby after birth. ``(C) Information on how to file a complaint with-- ``(i) the Department of Education, if a student believes there was a violation by the institution of title IX of the Education Amendments of 1972 (20 U.S.C. 1681 et seq.) on account of such student's determination to carry a baby to term; and ``(ii) the institution, if a student believes the student has been discriminated against in violation of such title IX on account of the student's determination to carry a baby to term. ``(3) Information dissemination activities.--The information dissemination activities described in this paragraph shall include-- ``(A) an email to each enrolled student at least once each academic year; and ``(B) the provision of information-- ``(i) in student handbooks, if any; ``(ii) at each orientation for enrolled students; ``(iii) at student health or counseling centers, if any; and ``(iv) on the publicly available website of the institution of higher education. ``(4) Rule of construction.--Nothing in this subsection shall be construed to authorize the Secretary to require the dissemination of additional information, or establish additional rights, beyond the information and rights included in this subsection.''. Passed the House of Representatives January 22, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 6359 _______________________________________________________________________ AN ACT To require institutions of higher education to disseminate information on the rights of, and accommodations and resources for, pregnant students, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "aa4260531314b9aaffc70f79f4fd2c7e7ffd6dda77d27b1fbca49370084dbf04",
+      "record": {
+        "action_id": "house:119:2:48",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete own floor-printed HConRes68directs removal of USforces from Venezuela pursuant to50USC1544(c), unless explicitly authorized by a declaration of war or specific statutory authorization. This is an armed-forces/war-powers choice, not a direct transport, energy, public-works or technical-system mechanism; references to geography and possible oil motives in debate do not supply a different operative object. The dated1544context is not a certificate of current constitutional validity, actual authorization, hostilities, legality or operational compliance. Exact recorded agreement question failed; do not infer enacted withdrawal, timing beyond printed text, actual troop removal or motive.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:48",
+            "url": "https://clerk.house.gov/evs/2026/roll048.xml",
+            "raw_sha256": "cd3b6650771d4f892ae8c4297b0b2a971f7efbc5d2b258497bd90ed53323bf93",
+            "governed_bytes_sha256": "5b90e5687bcbd9a58c8ce87b6f2cc4e1fc0c200dc517c0fc664b169503881cad"
+          },
+          {
+            "source_id": "congressional-record:2026-01-22-hconres68-exact",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "dc80271d5c3b72adfbed131bc09111c296dfb82bb31c9adf7b8f15e3ae27a66e"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+            "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+            "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-01-22-hconres68-exact",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "REMOVAL OF THE USE OF UNITED \nSTATES FORCES FOR HOS-\nTILITIES WITHIN OR AGAINST \nVENEZUELA \nMr. MAST. Mr. Speaker, pursuant to \nthe order of the House of January 21, \n2026, I call up the concurrent resolution \n(H. Con. Res. 68) to direct the removal \nof United States Armed Forces from \nVenezuela that have not been author-\nized by Congress, and ask for its imme-\ndiate consideration in the House. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore. Pursu-\nant to the order of the House of Janu-\nary 21, 2026, the concurrent resolution \nis considered read. \nThe text of the concurrent resolution \nis as follows: \nH. CON. RES. 68 \nResolved by the House of Representatives (the \nSenate concurring), \nSECTION 1. REMOVAL OF THE USE OF UNITED \nSTATES FORCES FOR HOSTILITIES \nWITHIN OR AGAINST VENEZUELA. \nPursuant to section 5(c) of the War Powers \nResolution (50 U.S.C. 1544(c)), Congress here-\nby directs the President to remove United \nStates Armed Forces from Venezuela, unless \nexplicitly authorized by a declaration of war \nor specific statutory authorization for use of \nmilitary force. \n"
+          },
+          {
+            "source_id": "govinfo:50usc1544-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§1544. Congressional action (a) Transmittal of report and referral to Congressional committees; joint request for convening Congress Each report submitted pursuant to section 1543(a)(1) of this title shall be transmitted to the Speaker of the House of Representatives and to the President pro tempore of the Senate on the same calendar day. Each report so transmitted shall be referred to the Committee on Foreign Affairs of the House of Representatives and to the Committee on Foreign Relations of the Senate for appropriate action. If, when the report is transmitted, the Congress has adjourned sine die or has adjourned for any period in excess of three calendar days, the Speaker of the House of Representatives and the President pro tempore of the Senate, if they deem it advisable (or if petitioned by at least 30 percent of the membership of their respective Houses) shall jointly request the President to convene Congress in order that it may consider the report and take appropriate action pursuant to this section. (b) Termination of use of United States Armed Forces; exceptions; extension period Within sixty calendar days after a report is submitted or is required to be submitted pursuant to section 1543(a)(1) of this title, whichever is earlier, the President shall terminate any use of United States Armed Forces with respect to which such report was submitted (or required to be submitted), unless the Congress (1) has declared war or has enacted a specific authorization for such use of United States Armed Forces, (2) has extended by law such sixty-day period, or (3) is physically unable to meet as a result of an armed attack upon the United States. Such sixty-day period shall be extended for not more than an additional thirty days if the President determines and certifies to the Congress in writing that unavoidable military necessity respecting the safety of United States Armed Forces requires the continued use of such armed forces in the course of bringing about a prompt removal of such forces. (c) Concurrent resolution for removal by President of United States Armed Forces Notwithstanding subsection (b), at any time that United States Armed Forces are engaged in hostilities outside the territory of the United States, its possessions and territories without a declaration of war or specific statutory authorization, such forces shall be removed by the President if the Congress so directs by concurrent resolution. (Pub. L. 93–148, §5, Nov. 7, 1973, 87 Stat. 556.)"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "e22def55cee6ea348a68899e6d9f81cdc079ded31a055d1184643737988357bf",
+      "record": {
+        "action_id": "house:119:2:49",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete980EH combines deletion of the second3697B(a)sentence (dated baseline identifies VAemployee-only provision of on-campus counseling), discretionary approval of certain nondegree flight training despite3680A(b)for programs approved on/afterAugust1,2026, dedicated telephone/regional web contacts,30dayextension approval-or-denial and separate one-year/annual-report duties, plus5503(d)(7)printedJan31→July31,2033date change. This is not automatic flight-course approval, guaranteed program extension, removal of all staffing rules or technical capacity merely from a website/contact channel. Whole vocational/flight-training and extension baselines, any technical-workforce versus general veterans-service domain relationship and the pension date chain remain pending. Retained2024limited5503(d)unit endsNov30,2031and does not by itself establish the bill’sJan2033preimage or current sunset. No individual training eligibility, current pension amount/date, flight safety, job, service or infrastructure outcome is certified. Combined as-amended suspension/passage is not enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:49",
+            "url": "https://clerk.house.gov/evs/2026/roll049.xml",
+            "raw_sha256": "9c1c53cebcf84b971f5f33846b058407121627ff4247a12f0d2f248c59755c58",
+            "governed_bytes_sha256": "bebbd13daa260dc6c69fb00d99cf9daf831f0386b422e957342e5f9940e26dba"
+          },
+          {
+            "source_id": "govinfo:hr980eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr980eh/html/BILLS-119hr980eh.htm",
+            "raw_sha256": "bc1cd582c300a5a3d3112c3ce8084985cd531973210287a0397a6e4e946c8090",
+            "governed_bytes_sha256": "a4c4038d3f7ae8b9133bb8f3d4b7674b7afcaf5ccccd77ddd0595984706203a0"
+          },
+          {
+            "source_id": "govinfo:38usc3697A-B-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36.htm",
+            "raw_sha256": "55453a90f9c2940b5412873c52eb059f49b5c35287b7a23008dbb957dc26e9d3",
+            "governed_bytes_sha256": "1e99e7c24760951cfe793d3d4fa8dcb0d07156be77044f87d0b3686ff10d31d4"
+          },
+          {
+            "source_id": "govinfo:38usc5503d-2024-pension-cap",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+            "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+            "governed_bytes_sha256": "19744f7f2b2100d95781fa5b7e3fa6747bf5f67c02029ee94dd5ce82f08881a9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr980eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/6b752bb2d4181fa10b8fc82c2a02e2eb756957f6ae10209371a92a8e9c231920.0000000.json",
+                  "sha256": "27e4b9da1fc9af345e8a07acf0fa0efb0351912bab9697003dce065e1630dd84",
+                  "start_character": 0,
+                  "end_character": 4321
+                }
+              ],
+              "utf8_sha256": "6b752bb2d4181fa10b8fc82c2a02e2eb756957f6ae10209371a92a8e9c231920",
+              "total_characters": 4321,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:38usc3697A-B-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/d506e81a00d0922873ac89fb8118269854af8da52757064afc060be7be1fb64f.0000000.json",
+                  "sha256": "95a7c8a65fcfb612a7cf8e3f863e5df2832370d3e35cb97205517b31179d494c",
+                  "start_character": 0,
+                  "end_character": 4110
+                }
+              ],
+              "utf8_sha256": "d506e81a00d0922873ac89fb8118269854af8da52757064afc060be7be1fb64f",
+              "total_characters": 4110,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:38usc5503d-2024-pension-cap",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(d)(1) For the purposes of this subsection— (A) the term \"Medicaid plan\" means a State plan for medical assistance referred to in section 1902(a) of the Social Security Act (42 U.S.C. 1396a(a)); and (B) the term \"nursing facility\" means a nursing facility described in section 1919 of such Act (42 U.S.C. 1396r), other than a facility that is a State home with respect to which the Secretary makes per diem payments for nursing home care pursuant to section 1741(a) of this title. (2) If a veteran having neither spouse nor child is covered by a Medicaid plan for services furnished such veteran by a nursing facility, no pension in excess of $90 per month shall be paid to or for the veteran for any period after the month of admission to such nursing facility. (3) Notwithstanding any provision of title XIX of the Social Security Act, the amount of the payment paid a nursing facility pursuant to a Medicaid plan for services furnished a veteran may not be reduced by any amount of pension permitted to be paid such veteran under paragraph (2) of this subsection. (4) A veteran is not liable to the United States for any payment of pension in excess of the amount permitted under this subsection that is paid to or for the veteran by reason of the inability or failure of the Secretary to reduce the veteran's pension under this subsection unless such inability or failure is the result of a willful concealment by the veteran of information necessary to make a reduction in pension under this subsection. (5)(A) The provisions of this subsection shall apply with respect to a surviving spouse having no child in the same manner as they apply to a veteran having neither spouse nor child. (B) The provisions of this subsection shall apply with respect to a child entitled to pension under section 1542 of this title in the same manner as they apply to a veteran having neither spouse nor child. (6) The costs of administering this subsection shall be paid for from amounts available to the Department of Veterans Affairs for the payment of compensation and pension. (7) This subsection expires on November 30, 2031. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "68a02de7987db7ecfd10e5c964a48bfdfbfe8af43d49c19793a98b3a61025966",
+      "record": {
+        "action_id": "house:119:2:50",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete3123EH concerns a pension awarded before a veteran’s death but paid afterward: due/unpaid amounts follow spouse, equal-share children, equal-share dependent parents, then estate unless escheat; subject to the stated no5121application within1year estate provision. It includes conforming references, application to deaths on/afterenactment and a separate5503(d)(7)printedJan31→Feb28,2033date extension. This is survivor/estate payment and pension-limit policy without a direct physical-infrastructure, technical-system or research mechanism. Proposed whole-action exclusion does not equate all veteran benefits with pension, guarantee every estate a payment or decide individual eligibility/application advice. The retained2024limited5503(d)unit has a differentNov30,2031sunset; it supplies dated context, not the full later amendment chain or a current pension/deadline certificate. House passage is not enactment, receipt of money or actual benefit outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:50",
+            "url": "https://clerk.house.gov/evs/2026/roll050.xml",
+            "raw_sha256": "812a38ddf813ba406d928127db1d05d875c07843061a9f44d6225e1c05bded03",
+            "governed_bytes_sha256": "d8c778c05ceeca85a180f5267512f511415b7b8c208c416c7e4d5a76cc9df85b"
+          },
+          {
+            "source_id": "govinfo:hr3123eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3123eh/html/BILLS-119hr3123eh.htm",
+            "raw_sha256": "36b0e5c5f684abb4b0e2cd3b4acca3db08c88434c9ae415585efc5fb5f43ac2e",
+            "governed_bytes_sha256": "cf9a5749e18b90834a4b9eb5f78787ee46c3f1c7be735825735624f659abc78a"
+          },
+          {
+            "source_id": "govinfo:38usc5503d-2024-pension-cap",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+            "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+            "governed_bytes_sha256": "19744f7f2b2100d95781fa5b7e3fa6747bf5f67c02029ee94dd5ce82f08881a9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3123eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3123 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 3123 _______________________________________________________________________ AN ACT To amend title 38, United States Code, to make certain improvements to laws relating to the payment of certain benefits administered by the Secretary of Veterans Affairs that are affected by death, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Ernest Peltz Accrued Veterans Benefits Act''. SEC. 2. PAYMENT BY SECRETARY OF VETERANS AFFAIRS OF PENSION AFTER DEATH OF A VETERAN IN CERTAIN CIRCUMSTANCES. (a) In General.--Chapter 51 of title 38, United States Code, is amended by inserting, after section 5121A, the following new section: ``Sec. 5121B. Payment of pension after death of a veteran in certain circumstances ``(a) In General.--Subject to subsection (b), if the Secretary issues a decision awarding entitlement to a pension to a veteran before the death of such veteran, and the Secretary issues payment of such pension after the veteran dies, such pension that was due and unpaid at the time of the veteran's death shall be paid to the first living person or entity listed below: ``(1) The veteran's spouse. ``(2) The veteran's children (in equal shares). ``(3) The veteran's dependent parents (in equal shares). ``(4) The estate of the deceased veteran unless the estate will escheat. ``(b) Limitation.--In a case described in subsection (a), if no application is filed under section 5121 of this title during the one- year period following the death of the veteran, the pension described in such subsection shall be paid to the estate of the deceased veteran unless the estate will escheat.''. (b) Technical and Conforming Amendments.-- (1) Conforming amendment.--Section 5121(a) of such title is amended, in the matter preceding paragraph (1), by inserting ``section 5121B of this title, or'' before ``sections 3329 and 3330''. (2) Clerical amendment.--The table of sections at the beginning of such chapter is amended by inserting, after the item relating to section 5121A, the following new item: ``5121B. Payment of pension after death of a veteran in certain circumstances.''. (c) Effective Date.--The amendments made by this section shall apply with respect to the death of a veteran that occurs on or after the date of the enactment of this Act. SEC. 3. EXTENSION OF CERTAIN LIMITS ON PAYMENTS OF PENSION. Section 5503(d)(7) of title 38, United States Code, is amended by striking ``January 31, 2033'' and inserting ``February 28, 2033''. Passed the House of Representatives February 2, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 3123 _______________________________________________________________________ AN ACT To amend title 38, United States Code, to make certain improvements to laws relating to the payment of certain benefits administered by the Secretary of Veterans Affairs that are affected by death, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:38usc5503d-2024-pension-cap",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(d)(1) For the purposes of this subsection— (A) the term \"Medicaid plan\" means a State plan for medical assistance referred to in section 1902(a) of the Social Security Act (42 U.S.C. 1396a(a)); and (B) the term \"nursing facility\" means a nursing facility described in section 1919 of such Act (42 U.S.C. 1396r), other than a facility that is a State home with respect to which the Secretary makes per diem payments for nursing home care pursuant to section 1741(a) of this title. (2) If a veteran having neither spouse nor child is covered by a Medicaid plan for services furnished such veteran by a nursing facility, no pension in excess of $90 per month shall be paid to or for the veteran for any period after the month of admission to such nursing facility. (3) Notwithstanding any provision of title XIX of the Social Security Act, the amount of the payment paid a nursing facility pursuant to a Medicaid plan for services furnished a veteran may not be reduced by any amount of pension permitted to be paid such veteran under paragraph (2) of this subsection. (4) A veteran is not liable to the United States for any payment of pension in excess of the amount permitted under this subsection that is paid to or for the veteran by reason of the inability or failure of the Secretary to reduce the veteran's pension under this subsection unless such inability or failure is the result of a willful concealment by the veteran of information necessary to make a reduction in pension under this subsection. (5)(A) The provisions of this subsection shall apply with respect to a surviving spouse having no child in the same manner as they apply to a veteran having neither spouse nor child. (B) The provisions of this subsection shall apply with respect to a child entitled to pension under section 1542 of this title in the same manner as they apply to a veteran having neither spouse nor child. (6) The costs of administering this subsection shall be paid for from amounts available to the Department of Veterans Affairs for the payment of compensation and pension. (7) This subsection expires on November 30, 2031. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "bdf0c5f69f1295ceaa5ee36538d1c3546d45d47a2736ffdde8a2d30fc0d10ba0",
+      "record": {
+        "action_id": "house:119:2:51",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question orders the previous question on H.Res.1032. It is separate from whole-rule adoption and the later Senate-amendment concurrence, mining-bill and DCtax-disapproval questions. No substantive motion body is interpreted; this remains non-counting procedural context without component support/opposition or an appropriations, tax or mining outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:51",
+            "url": "https://clerk.house.gov/evs/2026/roll051.xml",
+            "raw_sha256": "862bec743589e7e9282e95fed0e2678a39f3f226b34677d7f80a4928bd54b593",
+            "governed_bytes_sha256": "85fdf69c4923c60078066fbcfceea4058462f7005aaad40134f79e9fb14d8fbd"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:47",
+      "original_source_object_sha256": "8c031683fb53bd4729386f29ba0fa3f7e1c215a7781c21a2531ddb2ae159c8c5",
+      "path": "source_objects/8c031683fb53bd4729386f29ba0fa3f7e1c215a7781c21a2531ddb2ae159c8c5.json"
+    },
+    {
+      "source_id": "clerk:119:2:48",
+      "original_source_object_sha256": "a50263bf6a3c4c72bdbe7d4a47ca10f2b31aa5bc40fbda6b472924d57fab197d",
+      "path": "source_objects/a50263bf6a3c4c72bdbe7d4a47ca10f2b31aa5bc40fbda6b472924d57fab197d.json"
+    },
+    {
+      "source_id": "clerk:119:2:49",
+      "original_source_object_sha256": "d8d02c9a2b855fd90db04a9df66b42b6807bec08358807a8bfab878b221c0303",
+      "path": "source_objects/d8d02c9a2b855fd90db04a9df66b42b6807bec08358807a8bfab878b221c0303.json"
+    },
+    {
+      "source_id": "clerk:119:2:50",
+      "original_source_object_sha256": "39fd5dbf67a241e9b33f06f41679b1e58e7207c4bea005b275e0b3e51e35cc7f",
+      "path": "source_objects/39fd5dbf67a241e9b33f06f41679b1e58e7207c4bea005b275e0b3e51e35cc7f.json"
+    },
+    {
+      "source_id": "clerk:119:2:51",
+      "original_source_object_sha256": "5d15230e62eb7fe54b9b43ab9fabc9461d617b4ac38fe7c1aa5c32cb9e8525a6",
+      "path": "source_objects/5d15230e62eb7fe54b9b43ab9fabc9461d617b4ac38fe7c1aa5c32cb9e8525a6.json"
+    },
+    {
+      "source_id": "congressional-record:2026-01-22-hconres68-exact",
+      "original_source_object_sha256": "bed47405738d04cbdc50dec0f8bd2ba044616197560542f55e370e8e9156bc3f",
+      "path": "source_objects/bed47405738d04cbdc50dec0f8bd2ba044616197560542f55e370e8e9156bc3f.json"
+    },
+    {
+      "source_id": "govinfo:38usc3697A-B-operative",
+      "original_source_object_sha256": "8f542a4e9d2f02288547b2ac4b5aa3d616534db5ebcfd290028d90d4860b1bf6",
+      "path": "source_objects/8f542a4e9d2f02288547b2ac4b5aa3d616534db5ebcfd290028d90d4860b1bf6.json"
+    },
+    {
+      "source_id": "govinfo:38usc5503d-2024-pension-cap",
+      "original_source_object_sha256": "3df15c885111aece3ce5f68ec5a4b426287f380ccdb80e5536737bb304441bc4",
+      "path": "source_objects/3df15c885111aece3ce5f68ec5a4b426287f380ccdb80e5536737bb304441bc4.json"
+    },
+    {
+      "source_id": "govinfo:50usc1544-2024-operative",
+      "original_source_object_sha256": "0d1633ba5da3dea898075edbc667d162d2c2c83ad67b161147b092066ab48e76",
+      "path": "source_objects/0d1633ba5da3dea898075edbc667d162d2c2c83ad67b161147b092066ab48e76.json"
+    },
+    {
+      "source_id": "govinfo:hr3123eh",
+      "original_source_object_sha256": "1dc93f1441c4d75510bea0823b6720362bc2e0c572c39f81ad794c4b59d6a75f",
+      "path": "source_objects/1dc93f1441c4d75510bea0823b6720362bc2e0c572c39f81ad794c4b59d6a75f.json"
+    },
+    {
+      "source_id": "govinfo:hr6359eh",
+      "original_source_object_sha256": "b83d9770c83a054ff980e781461ca7cbf8089eb0c30ea61e4c3f0b7069e71af9",
+      "path": "source_objects/b83d9770c83a054ff980e781461ca7cbf8089eb0c30ea61e4c3f0b7069e71af9.json"
+    },
+    {
+      "source_id": "govinfo:hr980eh",
+      "original_source_object_sha256": "3cc320947d7653d14a2c2628c85e57cb8d5215d999cd76c3e0459a02ad792777",
+      "path": "source_objects/3cc320947d7653d14a2c2628c85e57cb8d5215d999cd76c3e0459a02ad792777.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr6359eh",
+      "governed_length": 3399,
+      "review_extent": "Complete captured own operative or selected dated unit read; incomplete later pension amendment chain/current eligibility not implicitly certified"
+    },
+    {
+      "source_id": "congressional-record:2026-01-22-hconres68-exact",
+      "governed_length": 1122,
+      "review_extent": "Complete captured own operative or selected dated unit read; incomplete later pension amendment chain/current eligibility not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:50usc1544-2024-operative",
+      "governed_length": 2500,
+      "review_extent": "Complete captured own operative or selected dated unit read; incomplete later pension amendment chain/current eligibility not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr980eh",
+      "governed_length": 4321,
+      "review_extent": "Complete captured own operative or selected dated unit read; incomplete later pension amendment chain/current eligibility not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:38usc3697A-B-operative",
+      "governed_length": 4110,
+      "review_extent": "Complete captured own operative or selected dated unit read; incomplete later pension amendment chain/current eligibility not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:38usc5503d-2024-pension-cap",
+      "governed_length": 2119,
+      "review_extent": "Complete captured own operative or selected dated unit read; incomplete later pension amendment chain/current eligibility not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr3123eh",
+      "governed_length": 3149,
+      "review_extent": "Complete captured own operative or selected dated unit read; incomplete later pension amendment chain/current eligibility not implicitly certified"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:47",
+        "evidence_unit": "complete_own_body_with_explicit_dated_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:48",
+        "evidence_unit": "complete_own_body_with_explicit_dated_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:49",
+        "evidence_unit": "complete_own_body_with_explicit_dated_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:50",
+        "evidence_unit": "complete_own_body_with_explicit_dated_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:51",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}

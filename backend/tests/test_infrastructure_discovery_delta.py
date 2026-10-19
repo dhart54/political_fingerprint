@@ -270,4 +270,15 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'critical-energy-resource duties/report/assessment or candidate limits lost'):validate_critical_energy_resource_boundaries(bad,s['govinfo:hr3617eh'],s['govinfo:42usc7112-operative149'],s['govinfo:42usc7133-operative149'])
+    def test_cable_sanctuary_exemption_requires_effective_authorization(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_cable_sanctuary_boundaries
+        action=next(a for a in read(folder(76)/'authoring.json')['actions'] if a['action_id']=='house:119:2:67');s={s['source_id']:s for s in read(folder(76)/'sources.json')['sources']};bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace('IF another Federal OR State agency has issued a license, lease or permit that is in effect authorizing those activities','whether or not another agency has authorized the activities')
+        with self.assertRaisesRegex(ValueError,'cable sanctuary exemption lost effective matching authorization'):validate_cable_sanctuary_boundaries(bad,s['govinfo:hr261eh'],s['govinfo:16usc1441-permit-terms'],s['govinfo:16usc1434-cooperation'])
+    def test_cable_general_permit_scope_and_surviving_cooperation(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_cable_sanctuary_boundaries
+        action=next(a for a in read(folder(76)/'authoring.json')['actions'] if a['action_id']=='house:119:2:67');s={s['source_id']:s for s in read(folder(76)/'sources.json')['sources']}
+        for old,new,error in [('deletions apply to special-use permits generally, not only cable permits','deletions apply only to cable permits','cable sanctuary general term deletion or surviving protections lost'),('insurance/equivalent-bond and hold-harmless term is redesignated, not deleted','insurance and hold-harmless protections are deleted','cable sanctuary general term deletion or surviving protections lost'),('expressly preserves interagency cooperation under304(d)','abolishes all interagency cooperation','cable sanctuary cooperation became abolished or automatic approval')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,error):validate_cable_sanctuary_boundaries(bad,s['govinfo:hr261eh'],s['govinfo:16usc1441-permit-terms'],s['govinfo:16usc1434-cooperation'])
 if __name__=='__main__':unittest.main()

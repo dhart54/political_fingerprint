@@ -1,0 +1,451 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 75,
+  "exact_committed_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/membership_review.json",
+      "git_blob": "4ff48f6ade6379f282ee17f50502831447b22f7d",
+      "git_bytes_sha256": "d8475021281f189af88170385e65c7b919eebcc70fc044f801a1cbb5ce24b3e7"
+    },
+    "sources": {
+      "head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/sources.json",
+      "git_blob": "49ff4f86b35f3fbe39a5c563a009c3e103a92e4f",
+      "git_bytes_sha256": "25f4b3b5dd6314fc3bd376b83521f1025d10b414f2af6e9022ba953efa63e5ad"
+    },
+    "screening": {
+      "head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/screening_receipt.json",
+      "git_blob": "aed9ac5a4c3b02638921f76e446c6fd09864ba15",
+      "git_bytes_sha256": "b5212543cbdae99ae3c1ab2515851fb8ef97c04dcbaa0049f773c4959caa07ec"
+    },
+    "screening_units": {
+      "head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/screening_units_receipt.json",
+      "git_blob": "1a43436cbe3dd48b530943f3c9a0cb1dc60dc2a8",
+      "git_bytes_sha256": "dfd47ab14dfff6fe3ac1685b27d9be006eed80788c10af4261a634f0d48cd74f"
+    },
+    "validation": {
+      "head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/validation_receipt.json",
+      "git_blob": "52184e7eefd4da28d0ab295d97f3af89636440af",
+      "git_bytes_sha256": "5c51493737661c36d5207bce08c355b0c5567217b8a14e4a045065ff20b48fce"
+    }
+  },
+  "original_membership_review_sha256": "3256854db9dfa057dc48ce887d6efa7c5bc60cee85f5300420c96d41460841d6",
+  "new_screened_ids": [
+    "house:119:2:57",
+    "house:119:2:58",
+    "house:119:2:63",
+    "house:119:2:64",
+    "house:119:2:65"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "1234b97e5f2adad6d4666924f31a3c55ea81867e6c531e3f61c5f9c36283760a",
+      "record": {
+        "action_id": "house:119:2:57",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole6644EH is194884characters; only opening0:2400andclosing193884:194884were read. The opening spans housing frameworks/grants, building guidelines/reviews, local/rural programs, manufactured housing/finance, borrower resources, temperature-sensor pilot, oversight and banking subjects; the closing contains a separate115million FederalReserve-surplus reduction effectiveSep30,2035. Neither a sensor/energy/building fragment nor the housing-supply title establishes whole as-amended suspension/passage meaning. Material interior mechanisms/baselines, exact whole package and existing shared-action reuse/domain relationships remain pending. No housing supply, affordability, bank-credit, construction or technology outcome is inferred; House passage is not enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:57",
+            "url": "https://clerk.house.gov/evs/2026/roll057.xml",
+            "raw_sha256": "8b88f025d5c22380c3a466136ec27921e4313d52eca482d8aa9b54c29f6886de",
+            "governed_bytes_sha256": "d928045f6ffca46a31bd9641dd1cc0452441517996361eb81eb8517e2c78effb"
+          },
+          {
+            "source_id": "govinfo:hr6644eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6644eh/html/BILLS-119hr6644eh.htm",
+            "raw_sha256": "24bf788c91da07ab2f461f808e4109b1488b20144f34f202f82594dbcb7d8949",
+            "governed_bytes_sha256": "dcb4bb0698c380c4a03766fbd84a2172ffd2d82c42805573cbfe2e732f4794ef"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6644eh",
+            "locator": "Only opening0:2400read; whole194884character package interior unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6644 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 6644 _______________________________________________________________________ AN ACT To increase the supply of housing in America, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE; TABLE OF CONTENTS. (a) Short Title.--This Act may be cited as the ``Housing for the 21st Century Act''. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title; table of contents. TITLE I--BUILDING SMARTER FOR THE 21ST CENTURY Sec. 101. Housing Supply Frameworks. Sec. 102. Accelerating home building grant program. Sec. 103. Federal guidelines for point-access block buildings. Sec. 104. Unlocking Housing Supply Through Streamlined and Modernized Reviews. Sec. 105. Federal Housing Agency Application of Environmental Reviews. Sec. 106. Multifamily loan limits. Sec. 107. GAO study on workforce housing. TITLE II--MODERNIZING LOCAL DEVELOPMENT AND RURAL HOUSING PROGRAMS Sec. 201. HOME Reform. Sec. 202. Community Development Fund Amendments. Sec. 203. Grants for planning and implementation associated with affordable housing. Sec. 204. Rural housing service program improvements. Sec. 205. Choice in Affordable Housing. TITLE III--EXPANDING MANUFACTURED AND AFFORDABLE HOUSING FINANCE OPPORTUNITIES Sec. 301. Manufactured Housing Innovations. Sec. 302. FHA small-dollar mortgages. Sec. 303. Community investment and prosperity. TITLE IV--PROTECTING BORROWERS AND ASSISTED FAMILIES Sec. 401. Exclusion of certain disability benefits. Sec. 402. Military service question. Sec. 403. HUD-USDA-VA Interagency Coordination. Sec. 404. Family self-sufficiency escrow expansion pilot program. Sec. 405. Reforms to housing counseling and financial literacy programs. Sec. 406. Establishment of eviction helpline. Sec. 407. Temperature Sensor pilot program. Sec. 408. GAO studies. TITLE V--ENHANCING OVERSIGHT OF HOUSING PROVIDERS Sec. 501. Requirement to testify. Sec. 502. Improving public housing agency accountability. TITLE VI--STRENGTHENING COMMUNITY BANKS' ROLE IN HOUSING Sec. 601. Community Bank Deposit Access. Sec. 602. Keeping Deposits Local. Sec. 603. Supervisory Modifications for Appropriate Risk-based Testi"
+          },
+          {
+            "source_id": "govinfo:hr6644eh",
+            "locator": "Only closing193884:194884read",
+            "passage": "ing given that term in section 3 of the Federal Deposit Insurance Act (12 U.S.C. 1813). (2) Federal banking agencies.--The term ``Federal banking agencies'' means the Board of Governors of the Federal Reserve System, the Comptroller of the Currency, and the Federal Deposit Insurance Corporation. (3) Rural.--With respect to an area, the term ``rural'' has the meaning given that term in section 1026.35(b)(2)(iv)(A) of title 12, Code of Federal Regulations. SEC. 613. DISCRETIONARY SURPLUS FUND. (a) In General.--The dollar amount specified under section 7(a)(3)(A) of the Federal Reserve Act (12 U.S.C. 289(a)(3)(A)) is reduced by $115,000,000. (b) Effective Date.--The amendment made by subsection (a) shall take effect on September 30, 2035. Passed the House of Representatives February 9, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 6644 _______________________________________________________________________ AN ACT To increase the supply of housing in America, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "9a0def5c58fd0d5a34a2fb81bb2958ddfb2b89844fd325d1fd611cafb565649b",
+      "record": {
+        "action_id": "house:119:2:58",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete1531EH conditions a USpolicy of seeking to exclude PRCrepresentatives from participation in six named financial organizations on the President’s specified3302(c)notice of PRC-caused Taiwan threat/danger. Treasury/FederalReserve/SECmust take necessary policy-advancement steps, while to-the-maximum-extent-practicable and organization-specific presidential report/waiver qualifications remain. It does not itself expel an organization’s members, sanction every Chinese person/bank or determine that a trigger has occurred. The earlier of5yearsafterenactment or30daysafter specified national-interest termination notice controls the sunset; these clocks are not flattened. This is financial-organization/diplomatic participation policy, not a direct infrastructure or technical-system program. Proposed exclusion does not infer actual exclusion, current threat, military action, market/supply-chain/technology result or motive. As-amended suspension/passage is not enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:58",
+            "url": "https://clerk.house.gov/evs/2026/roll058.xml",
+            "raw_sha256": "6d5b9f2afa0da525a51d712e94d7daa7df5f5c1d3f94e87b1872645262b092c4",
+            "governed_bytes_sha256": "aeca847d616d4bdc62a9224d0de41ec6170abc3fb28f64ad518821d216f51ef3"
+          },
+          {
+            "source_id": "govinfo:hr1531eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1531eh/html/BILLS-119hr1531eh.htm",
+            "raw_sha256": "ed20eb2de645d9b7baa9f37b44b29e7a40a3cddb9a6737d17995a327bd60352c",
+            "governed_bytes_sha256": "ad8a63626976958e57fc502c7f2df2cbb0ea59a4cfe6c3f8c67c2393a643137e"
+          },
+          {
+            "source_id": "govinfo:22usc3302-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap48-sec3302.htm",
+            "raw_sha256": "eab32df6e058cc8dedae9619da6f3a458a732996a0a474ac7d51dd07a1b6a4bf",
+            "governed_bytes_sha256": "fe7782b363c004e4a98b2fadf48fdd886906283bbf9ea23cba48454dbd600bbf"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1531eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1531 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 1531 _______________________________________________________________________ AN ACT To direct certain financial regulators to exclude representatives of the People's Republic of China from certain banking organizations upon notice of certain threats or danger, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Pressure Regulatory Organizations To End Chinese Threats to Taiwan Act'' or the ``PROTECT Taiwan Act''. SEC. 2. STATEMENT OF POLICY REGARDING THE EXCLUSION OF REPRESENTATIVES OF THE PEOPLE'S REPUBLIC OF CHINA FROM CERTAIN BANKING ORGANIZATIONS UPON NOTICE OF CERTAIN THREATS OR DANGER. (a) In General.--If the President, pursuant to section 3(c) of the Taiwan Relations Act (22 U.S.C. 3302(c)), informs the Congress of any threat to the security or the social or economic system of the people on Taiwan and any danger to the interests of the United States arising therefrom resulting from actions of the People's Republic of China, it is the policy of the United States to seek to exclude representatives of the People's Republic of China, to the maximum extent practicable, from participation in meetings, proceedings, and other activities of the following organizations: (1) The Group of Twenty. (2) The Bank for International Settlements. (3) The Financial Stability Board. (4) The Basel Committee on Banking Supervision. (5) The International Association of Insurance Supervisors. (6) The International Organization of Securities Commissions. (b) Policy Advancement.--The Secretary of the Treasury, the Board of Governors of the Federal Reserve System, and the Securities and Exchange Commission shall take all necessary steps to advance the policy set forth in subsection (a). (c) Waiver.--The President may waive the application of subsection (a) with respect to an organization upon submission of a report to the Committee on Financial Services of the House of Representatives and the Committee on Banking, Housing, and Urban Affairs of the Senate-- (1) that such waiver is in the national interest of the United States; and (2) that contains an explanation of the reasons therefor. (d) Sunset.--This Act and the requirements of this Act shall have no force or effect on the date that is the earlier of-- (1) 5 years after the date of the enactment of this Act; or (2) 30 days after the date on which the President notifies Congress that the termination of this Act is in the national interest of the United States. Passed the House of Representatives February 9, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 1531 _______________________________________________________________________ AN ACT To direct certain financial regulators to exclude representatives of the People's Republic of China from certain banking organizations upon notice of certain threats or danger, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:22usc3302-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§3302. Implementation of United States policy with regard to Taiwan (a) Defense articles and services In furtherance of the policy set forth in section 3301 of this title, the United States will make available to Taiwan such defense articles and defense services in such quantity as may be necessary to enable Taiwan to maintain a sufficient self-defense capability. (b) Determination of Taiwan's defense needs The President and the Congress shall determine the nature and quantity of such defense ar ticles and services based solely upon their judgment of the needs of Taiwan, in accordance with procedures established by law. Such determination of Taiwan's defense needs shall include review by United States military authorities in connection with recommendations to the President and the Congress. (c) United States response to threats to Taiwan or dangers to United States interests The President is directed to inform the Congress promptly of any threat to the security or the social or economic system of the people on Taiwan and any danger to the interests of the United States arising therefrom. The President and the Congress shall determine, in accordance with constitutional processes, appropriate action by the United States in response to any such danger. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2a8a15b26c7c2ed36a10ce67a4176d11a0ab5809ab2d73d1a87d96e299b5f8bf",
+      "record": {
+        "action_id": "house:119:2:63",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.3617. No substantive motion body is interpreted. It remains non-counting procedural context, separate from the critical-energy-resource final-passage choice and without component support/opposition.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:63",
+            "url": "https://clerk.house.gov/evs/2026/roll063.xml",
+            "raw_sha256": "a5487591f301f843ec75f2c8229d3ec38305383b9e9f652cd2c7073ca8b52511",
+            "governed_bytes_sha256": "e44643a587d80e9f3373c66973bbc7b691285ff2e4e37c49b3c8a111f227466f"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "76cba59dfdf86fb4209d19c6e2ab127db9756458f5c78a7c1df9962ec9607dcb",
+      "record": {
+        "action_id": "house:119:2:64",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete3617EH and retained7112/7133units support an unaccepted energy-system/technical-development candidate. Preserve the joint essentiality/vulnerable-chain definition, existing AssistantSecretary organization, mandatory ongoing assessments/strategy/substitution/recycling and separate2yearstatusreport. Assessing adversarial practices is not a finding of conduct; no permit, appropriation, current resource designation or production/security outcome follows from House passage. Whole-mandate and competing industrial-policy taxonomy require independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:64",
+            "url": "https://clerk.house.gov/evs/2026/roll064.xml",
+            "raw_sha256": "ecceac9290f6020d9c43511bf24bb6bea26fb1c1158c2f0776aba2d151c75d55",
+            "governed_bytes_sha256": "bd0e767436cefecd56a4ed195595e9321f782c164a56640f7be4e107cd4aa915"
+          },
+          {
+            "source_id": "govinfo:hr3617eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3617eh/html/BILLS-119hr3617eh.htm",
+            "raw_sha256": "fed5bc25d849387490da7e2b2793f332fd21fb5528125c8f8282b7e3548b0fc1",
+            "governed_bytes_sha256": "2eb5acf11b3a585595fab91a24d649c3d19d09348c7e5fe87a51cf136dc30cc7"
+          },
+          {
+            "source_id": "govinfo:42usc7112-operative149",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap84-subchapI-sec7112.htm",
+            "raw_sha256": "b56d04c2b3a713e5245b9d485615264759ebfc42854c46d3c5ddc5076c6f062d",
+            "governed_bytes_sha256": "a1b623c80fd049c87c0219d9c9fb3a7d57b740018988178013b0999f08d64df9"
+          },
+          {
+            "source_id": "govinfo:42usc7133-operative149",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap84-subchapII-sec7133.htm",
+            "raw_sha256": "724772e264bcdcc53d8307d6051b2648a1758b75f70198c7bdd9199b5c366d13",
+            "governed_bytes_sha256": "7fe3e382a684bf051e6f1cb95cdd5b29354d72de4a8a5de12e432c87be2a4fe1"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3617eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8eddbb8d932efcf22ab7463966c49a33fa3cd553da5bb6c17107e3e79e68c33b.0000000.json",
+                  "sha256": "f0868eadcee28a76527f778fd4f99590dfad197410616a0d07d20fe0cb8f8b66",
+                  "start_character": 0,
+                  "end_character": 4694
+                }
+              ],
+              "utf8_sha256": "8eddbb8d932efcf22ab7463966c49a33fa3cd553da5bb6c17107e3e79e68c33b",
+              "total_characters": 4694,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc7112-operative149",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8c3cc42494e44349b5108d5ed31f2fcb3deb4d5a54feb8e21bcce7c75abb40c1.0000000.json",
+                  "sha256": "96643d02202f3a5ff82a28164fcae8b133a0c940ce86d443c5b63e33ee27991a",
+                  "start_character": 0,
+                  "end_character": 5634
+                }
+              ],
+              "utf8_sha256": "8c3cc42494e44349b5108d5ed31f2fcb3deb4d5a54feb8e21bcce7c75abb40c1",
+              "total_characters": 5634,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc7133-operative149",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/b733c0fb583847432f08a2ef1afef85e0a4b86fec0ad9bbdb70e29ca29286c6a.0000000.json",
+                  "sha256": "e2992a16fd71db7822e2c4bc2fdf33d5be0a595dec40b416faa325a493b0b493",
+                  "start_character": 0,
+                  "end_character": 5195
+                }
+              ],
+              "utf8_sha256": "b733c0fb583847432f08a2ef1afef85e0a4b86fec0ad9bbdb70e29ca29286c6a",
+              "total_characters": 5195,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr3617:119"
+      }
+    },
+    {
+      "original_record_sha256": "2d7a4bb7be32256e421d5cacfa2d073792fc6fcd31a3da5f3688054cab114811",
+      "record": {
+        "action_id": "house:119:2:65",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete HJR72EH terminates the national emergency identified by the President’s Feb1,2025finding in EO14193underNEA202. Preserve its printed25FedReg02406citation without silently substituting a different cited string. The retained EO’s opening0:2600andclosing11938:13138were read; its duty/exception/delegation operative middle and material NEA/IEEPAbaselines were not reviewed here. Statements in the opening are attributed presidential assertions, not established factual findings by this candidate. Whole emergency/affected authority/domain and exact citation/version reconciliation remain pending; do not reduce the choice to a selected energy/import fragment or infer that House passage alone ends every tariff, emergency, statutory power or border operation. No current court/legal status, duty rate, refund, supply/price or motive is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:65",
+            "url": "https://clerk.house.gov/evs/2026/roll065.xml",
+            "raw_sha256": "78cdf182d27d2fbc5ec7f40bdeb9d6a13cb6f09a550ba2333d749e018bacc4f7",
+            "governed_bytes_sha256": "4487353110e4526b9f1e44354c25f5c8dfb2dd6a08c865176c24a71df4331c6c"
+          },
+          {
+            "source_id": "govinfo:hjres72eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres72eh/html/BILLS-119hjres72eh.htm",
+            "raw_sha256": "8a2c3da0030e52c068e9d7d5dc4084a6842224b977e3adc1d3ae21fbf8a35465",
+            "governed_bytes_sha256": "28ee4d4cec7da42b3a1aad2402c3966b8904e9c1737af9fddb33515cc65e2079"
+          },
+          {
+            "source_id": "govinfo:eo14193-20250201-canada",
+            "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-07/html/2025-02406.htm",
+            "raw_sha256": "40a567469b7a2f34468ccdcd762b500d3083d260e6ef6b8341e11cfe5e0a562f",
+            "governed_bytes_sha256": "acc3a6b3a159a2be677da48065a2ae23f711a79c36c0aec6d9aeb19d53ac539a"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres72eh",
+            "locator": "Complete captured own or dated material unit read",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 72 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. J. RES. 72 _______________________________________________________________________ JOINT RESOLUTION Relating to a national emergency by the President on February 1, 2025. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That pursuant to section 202 of the National Emergencies Act (50 U.S.C. 1622), the national emergency declared by the finding of the President on February 1, 2025, in Executive Order 14193 (25 Fed. Reg. 02406), is hereby terminated. Passed the House of Representatives February 11, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. J. RES. 72 _______________________________________________________________________ JOINT RESOLUTION Relating to a national emergency by the President on February 1, 2025."
+          },
+          {
+            "source_id": "govinfo:eo14193-20250201-canada",
+            "locator": "Only opening0:2600read; presidential statements not independently adopted",
+            "passage": "Executive Order 14193 of February 1, 2025 Imposing Duties To Address the Flow of Illicit Drugs Across Our Northern Border By the authority vested in me as President by the Constitution and the laws of the United States of America, including the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.) (IEEPA), the National Emergencies Act (50 U.S.C. 1601 et seq.) (NEA), section 604 of the Trade Act of 1974, as amended (19 U.S.C. 2483), and section 301 of title 3, United States Code, I, DONALD J. TRUMP, President of the United States of America, find that the sustained influx of illicit opioids and other drugs has profound consequences on our Nation, endangering lives and putting a severe strain on our healthcare system, public services, and communities. This challenge threatens the fabric of our society. Gang members, smugglers, human traffickers, and illicit drugs of all kinds have poured across our borders and into our communities. Canada has played a central role in these challenges, including by failing to devote sufficient attention and resources or meaningfully coordinate with United States law enforcement partners to effectively stem the tide of illicit drugs. Drug trafficking organizations (DTOs) are the world's leading producers of fentanyl, methamphetamine, cocaine, and other illicit drugs, and they cultivate, process, and distribute massive quantities of narcotics that fuel addiction and violence in communities across the United States. These DTOs often collaborate with transnational cartels to smuggle illicit drugs into the United States, utilizing clandestine airstrips, maritime routes, and overland corridors. The challenges at our southern border are foremost in the public consciousness, but our northern border is not exempt from these issues. Criminal networks are implicated in human trafficking and smuggling operations, enabling unvetted illegal migration across our northern border. There is also a growing presence of Mexican cartels operating fentanyl and nitazene synthesis labs in Canada. The flow of illicit drugs like fentanyl to the United States through both illicit distribution networks and international mail--due, in the case of the latter, to the existing administrative exemption from duty and taxes, also known as de minimis, under section 1321 of title 19, United States Code--has created a public health crisis in the United States, as outlined in the Presidential Memorandum of January 20, 2025 (America First Trade Policy) and Executive Order 14157 of January 20, 2025 (Designating Cartels and Other Organizations as Fore"
+          },
+          {
+            "source_id": "govinfo:eo14193-20250201-canada",
+            "locator": "Only closing11938:13138read; operative duty/exception middle unreviewed",
+            "passage": " the Attorney General, the Secretary of Commerce, the Assistant to the President for National Security Affairs, and the Assistant to the President for Homeland Security, is hereby authorized to submit recurring and final reports to the Congress on the national emergency under IEEPA declared in this order, consistent with section 401(c) of the NEA (50 U.S.C. 1641(c)) and section 204(c) of IEEPA (50 U.S.C. 1703(c)). Sec. 6. General Provisions. (a) Nothing in this order shall be construed to impair or otherwise affect: (i) the authority granted by law to an executive department, agency, or the head thereof; or (ii) the functions of the Director of the Office of Management and Budget relating to budgetary, administrative, or legislative proposals. (b) This order shall be implemented consistent with applicable law and subject to the availability of appropriations. (c) This order is not intended to, and does not, create any right or benefit, substantive or procedural, enforceable at law or in equity by any party against the United States, its departments, agencies, or entities, its officers, employees, or agents, or any other person. (Presidential Sig.) THE WHITE HOUSE, February 1, 2025."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:57",
+      "original_source_object_sha256": "7c4f178770ba0464a464c673812c7955b2a364b3ed6e74cde49d99f8eb7b2cbd",
+      "path": "source_objects/7c4f178770ba0464a464c673812c7955b2a364b3ed6e74cde49d99f8eb7b2cbd.json"
+    },
+    {
+      "source_id": "clerk:119:2:58",
+      "original_source_object_sha256": "aa6ba27b12b73738d6884faf8b03fc6b16c83d34654c1c70de90a8af9ca3c306",
+      "path": "source_objects/aa6ba27b12b73738d6884faf8b03fc6b16c83d34654c1c70de90a8af9ca3c306.json"
+    },
+    {
+      "source_id": "clerk:119:2:63",
+      "original_source_object_sha256": "de5c1910d90c80b68b66bd4037bbab7ca30f5ed1c9078753a9b29f465ad9c15f",
+      "path": "source_objects/de5c1910d90c80b68b66bd4037bbab7ca30f5ed1c9078753a9b29f465ad9c15f.json"
+    },
+    {
+      "source_id": "clerk:119:2:64",
+      "original_source_object_sha256": "edb50eb8cac0ecb426f41734756b8034bd33aacfdeacf1172bf036699235182f",
+      "path": "source_objects/edb50eb8cac0ecb426f41734756b8034bd33aacfdeacf1172bf036699235182f.json"
+    },
+    {
+      "source_id": "clerk:119:2:65",
+      "original_source_object_sha256": "b41367e5ee020bde66f6d7bcbd967b9b2c9b328492b25e86567dbd3c353b8cc8",
+      "path": "source_objects/b41367e5ee020bde66f6d7bcbd967b9b2c9b328492b25e86567dbd3c353b8cc8.json"
+    },
+    {
+      "source_id": "govinfo:22usc3302-2024-operative",
+      "original_source_object_sha256": "242a67140305262812f8c8aa0f1b70119909c29d03282bc9da28186c311116f1",
+      "path": "source_objects/242a67140305262812f8c8aa0f1b70119909c29d03282bc9da28186c311116f1.json"
+    },
+    {
+      "source_id": "govinfo:42usc7112-operative149",
+      "original_source_object_sha256": "0830b10ab29ff8e1547174842799f7edeaeaf5af3641a5f4cc1a1da119d5d51f",
+      "path": "source_objects/0830b10ab29ff8e1547174842799f7edeaeaf5af3641a5f4cc1a1da119d5d51f.json"
+    },
+    {
+      "source_id": "govinfo:42usc7133-operative149",
+      "original_source_object_sha256": "b6a8f0a74414cb14c66e223c8f6d5f2f8f16226f5eb8314dbe809cc8bf2b8e07",
+      "path": "source_objects/b6a8f0a74414cb14c66e223c8f6d5f2f8f16226f5eb8314dbe809cc8bf2b8e07.json"
+    },
+    {
+      "source_id": "govinfo:eo14193-20250201-canada",
+      "original_source_object_sha256": "bb40cbb138132670cb313658013f57a2bc0ce279d765a060206d5acbc19927e9",
+      "path": "source_objects/bb40cbb138132670cb313658013f57a2bc0ce279d765a060206d5acbc19927e9.json"
+    },
+    {
+      "source_id": "govinfo:hjres72eh",
+      "original_source_object_sha256": "58780b3fb05fa85ebeb8e446262619a4891bb2883874948098bd1ba11cfc6727",
+      "path": "source_objects/58780b3fb05fa85ebeb8e446262619a4891bb2883874948098bd1ba11cfc6727.json"
+    },
+    {
+      "source_id": "govinfo:hr1531eh",
+      "original_source_object_sha256": "dad462e3a2ebe90acec7c58cab1658055d9a0958fcce3c675124623646d0ece5",
+      "path": "source_objects/dad462e3a2ebe90acec7c58cab1658055d9a0958fcce3c675124623646d0ece5.json"
+    },
+    {
+      "source_id": "govinfo:hr3617eh",
+      "original_source_object_sha256": "2f84282c77497402d8f3ad539694d378ed0bf46efa2106b1ae001cd4bf2593b3",
+      "path": "source_objects/2f84282c77497402d8f3ad539694d378ed0bf46efa2106b1ae001cd4bf2593b3.json"
+    },
+    {
+      "source_id": "govinfo:hr6644eh",
+      "original_source_object_sha256": "bde3773321e8f426fd8d000eca2fb576a5455e1c9ef94754bfc80332917bf445",
+      "path": "source_objects/bde3773321e8f426fd8d000eca2fb576a5455e1c9ef94754bfc80332917bf445.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr6644eh",
+      "governed_length": 194884,
+      "review_extent": "Only0:2400and193884:194884read; housing-package interior unreviewed"
+    },
+    {
+      "source_id": "govinfo:hr1531eh",
+      "governed_length": 3116,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no integrated current-law/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:22usc3302-2024-operative",
+      "governed_length": 1270,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no integrated current-law/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:hr3617eh",
+      "governed_length": 4694,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no integrated current-law/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:42usc7112-operative149",
+      "governed_length": 5634,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no integrated current-law/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:42usc7133-operative149",
+      "governed_length": 5195,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no integrated current-law/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:hjres72eh",
+      "governed_length": 936,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no integrated current-law/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:eo14193-20250201-canada",
+      "governed_length": 13138,
+      "review_extent": "Only0:2600and11938:13138read; EOoperative middle unreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:57",
+        "evidence_unit": "whole_own_identity_with_partial_large_package_or_EO",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:58",
+        "evidence_unit": "complete_financial_participation_bill_and_trigger_baseline",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:63",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:64",
+        "evidence_unit": "complete_energy_resource_bill_and_existing_organization_baselines",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:65",
+        "evidence_unit": "whole_own_identity_with_partial_large_package_or_EO",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}
