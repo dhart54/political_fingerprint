@@ -406,4 +406,39 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'Northwest Straits regulatory funding sunset or baseline limit lost'):validate_northwest_straits_boundaries(bad,s['govinfo:hr2860eh'],s['govinfo:pl105384-titleIV-original162'],s['nwstraits:1998-report-reprint-edition168'],s['nwstraits:1998-report-reprint-membership-complete169'])
+    def test_s629_cost_base_and_return_clock_cannot_inherit_hr1011(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_conservation_s629_boundaries
+        p=folder(96);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:223');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('receiving75percent of replacement COST or50percent of repair/restoration COST','receiving at most75percent or50percent of payment'),('from60days to180days after receipt','retains60days after receipt')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'S629 cost base percentage or return predicate lost'):validate_conservation_s629_boundaries(bad,s['govinfo:s629es'],s['govinfo:16usc2201-operative162'],s['govinfo:16usc2206-operative162'])
+    def test_s629_federal_fire_category_and_total_forest_cap_remain_distinct(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_conservation_s629_boundaries
+        p=folder(96);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:223');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('not imposed on the separate Federal-caused item','also imposed on all Federal-caused fires'),('retained75percent total-cost assistance cap','removed total-cost assistance cap')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'S629 distinct wildfire category eligibility or forest cap lost'):validate_conservation_s629_boundaries(bad,s['govinfo:s629es'],s['govinfo:16usc2201-operative162'],s['govinfo:16usc2206-operative162'])
+    def test_software_loan_discretion_and_all_construction_limits_survive(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_software_loan_boundaries
+        p=folder(96);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:226');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('Administration MAY provide loans','Administration MUST approve all loans'),('does NOT authorize research-and-development use','authorizes research-and-development use'),('does NOT imply that pre-enactment7(a) loans for these purposes were impermissible','establishes all prior loans were impermissible'),('does NOT limit the definition of working capital','limits working capital to software')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'software loan discretion or construction limit lost'):validate_software_loan_boundaries(bad,s['govinfo:hr915eh'],s['govinfo:15usc636-2024-7a-authority'])
+    def test_software_loan_does_not_import_disaster_or_complete_eligibility(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_software_loan_boundaries
+        p=folder(96);a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']=='house:119:2:226');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('does not establish the remainder of7(a)','certifies all current7(a)eligibility'),('disaster-loan unit is not the operative7(a) baseline','disaster damage is mandatory for these7(a)loans')]:
+            bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
+            with self.assertRaisesRegex(ValueError,'software loan remaining baseline or outcome boundary lost'):validate_software_loan_boundaries(bad,s['govinfo:hr915eh'],s['govinfo:15usc636-2024-7a-authority'])
+    def test_exceptional_events_qualification_preserves_original_source_and_actual_extent(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_historical86_90_disclosures
+        p=folder(96);a={x['action_id']:x for x in read(p/'authoring.json')['actions']};m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};r=read(p/'historical86_90_disclosure_corrections_receipt.json')
+        bad=copy.deepcopy(a);next(c for c in bad['house:119:2:136']['claim_source_map']if c['source_id']=='govinfo:42usc7619-2024-exceptional-events')['locator']='Captured(a)andKarinote'
+        with self.assertRaisesRegex(ValueError,'exceptional-events correction exceeded source locator'):validate_historical86_90_disclosures(bad,m,u,s,r)
+        bad=copy.deepcopy(s);bad['govinfo:42usc7619-2024-exceptional-events']['text_version']='Rewritten historical label'
+        with self.assertRaisesRegex(ValueError,'disclosure correction changed historical source object'):validate_historical86_90_disclosures(a,m,u,bad,r)
+    def test_whistleblower_report_cadence_cannot_return_without_baseline(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_historical86_90_disclosures
+        p=folder(96);a={x['action_id']:x for x in read(p/'authoring.json')['actions']};m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};r=read(p/'historical86_90_disclosure_corrections_receipt.json');m['house:119:2:138']['rationale']=m['house:119:2:138']['rationale'].replace('existing whistleblower report','annual report')
+        with self.assertRaisesRegex(ValueError,'bounded disclosure correction or dependent binding differs'):validate_historical86_90_disclosures(a,m,u,s,r)
 if __name__=='__main__':unittest.main()

@@ -312,6 +312,7 @@ CASES[59]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(335,340
 CASES[60]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [340,341,342,345,346]],new=[],new_action_ids=['house:119:1:342'],counts=dict(interpreted_substantive_directional=45,interpreted_substantive_non_directional=1,procedural_context=120,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=283,pending_interpretation=160),pending=277)
 CASES[64]=dict(rolls=[],action_ids=['house:119:1:362',*['house:119:2:'+str(r) for r in range(2,6)]],new=[],counts=dict(interpreted_substantive_directional=46,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=263,pending_interpretation=170),pending=257)
 CASES[65]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(6,11)],new=[],new_action_ids=['house:119:2:9'],counts=dict(interpreted_substantive_directional=47,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=258,pending_interpretation=174),pending=252)
+CASES[96]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(219,229)],new=[],new_action_ids=['house:119:2:223','house:119:2:226'],repairs=['house:119:2:136','house:119:2:138'],counts=dict(interpreted_substantive_directional=61,interpreted_substantive_non_directional=1,procedural_context=190,exact_action_ineligible=98,expressive_nonbinding=19,source_unresolved=58,pending_interpretation=249),pending=52)
 CASES[95]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(209,219)],new=[],counts=dict(interpreted_substantive_directional=59,interpreted_substantive_non_directional=1,procedural_context=189,exact_action_ineligible=96,expressive_nonbinding=18,source_unresolved=68,pending_interpretation=245),pending=62)
 CASES[94]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(199,209)],new=[],counts=dict(interpreted_substantive_directional=59,interpreted_substantive_non_directional=1,procedural_context=185,exact_action_ineligible=95,expressive_nonbinding=18,source_unresolved=78,pending_interpretation=240),pending=72)
 CASES[93]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in [187,188,189,190,191,192,193,196,197,198]],new=[],new_action_ids=['house:119:2:192','house:119:2:196'],counts=dict(interpreted_substantive_directional=59,interpreted_substantive_non_directional=1,procedural_context=180,exact_action_ineligible=93,expressive_nonbinding=18,source_unresolved=88,pending_interpretation=237),pending=82)
@@ -360,6 +361,37 @@ CASES[47]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(272,277
 CASES[46]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(267,272)],new=[],counts=dict(interpreted_substantive_directional=41,interpreted_substantive_non_directional=1,procedural_context=99,exact_action_ineligible=46,expressive_nonbinding=7,source_unresolved=353,pending_interpretation=129),pending=347)
 CASES[45]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(262,267)],new=[],counts=dict(interpreted_substantive_directional=41,interpreted_substantive_non_directional=1,procedural_context=98,exact_action_ineligible=44,expressive_nonbinding=7,source_unresolved=358,pending_interpretation=127),pending=352)
 CASES[44]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(257,262)],new=[],counts=dict(interpreted_substantive_directional=41,interpreted_substantive_non_directional=1,procedural_context=96,exact_action_ineligible=42,expressive_nonbinding=7,source_unresolved=363,pending_interpretation=126),pending=357)
+
+def validate_conservation_s629_boundaries(action,bill,farmland,forest):
+    require(action['source_id']==bill['source_id']=='govinfo:s629es' and '75 percent of the cost of the replacement' in bill['text'] and '50 percent of the cost of the repair or restoration' in bill['text'],'S629 exact cost-base source differs')
+    meaning=action['meaning']
+    require(all(x in meaning for x in ['receiving75percent of replacement COST or50percent of repair/restoration COST','not caps expressed as percentages of payment','from60days to180days after receipt','return remains within a reasonable timeframe']),'S629 cost base percentage or return predicate lost')
+    require(all(x in meaning for x in ['IF damage is caused by its spread due to natural causes','separately listed Federal-caused wildfire','not imposed on the separate Federal-caused item','NOT MORE THAN75percent of their COST','retained75percent total-cost assistance cap','remaining predicates','UNACCEPTED candidate proposal','does not itself enact']),'S629 distinct wildfire category eligibility or forest cap lost')
+    require('60-day period' in farmland['text'] and '75 percent of the total cost' in forest['text'],'S629 retained baseline differs')
+
+def validate_software_loan_boundaries(action,bill,baseline):
+    require(action['source_id']==bill['source_id']=='govinfo:hr915eh' and 'may provide loans under this subsection' in bill['text'] and 'appropriation Acts' in baseline['text'],'software loan source/authority differs')
+    meaning=action['meaning']
+    require(all(x in meaning for x in ['Administration MAY provide loans','not an AI grant','does NOT imply that pre-enactment7(a) loans for these purposes were impermissible','does NOT authorize research-and-development use','does NOT limit the definition of working capital']),'software loan discretion or construction limit lost')
+    require(all(x in meaning for x in ['does not establish the remainder of7(a)','disaster-loan unit is not the operative7(a) baseline','No fixed new appropriation or loan amount','UNACCEPTED candidate proposal','does not itself enact']),'software loan remaining baseline or outcome boundary lost')
+
+def validate_historical86_90_disclosures(actions,records,rows,sources,receipt):
+    aid='house:119:2:136';sid='govinfo:42usc7619-2024-exceptional-events';q=receipt['qualification'];items={x['action_id']:x for x in receipt['corrections']}
+    require('7619(a) AND(b), through(b)(4)' in q and 'NO Kari-law applicability note' in q and 'Historical text_version metadata is preserved' in q,'exceptional-events active extent qualification lost')
+    for source_id,binding in receipt['source_objects'].items():require(digest(sources[source_id])==binding['source_object_sha256'] and sources[source_id]['raw_sha256']==binding['raw_sha256'] and sources[source_id]['governed_bytes_sha256']==binding['governed_bytes_sha256'],'disclosure correction changed historical source object')
+    expected=copy.deepcopy(items[aid]['before_action']);claim=next(x for x in expected['claim_source_map']if x['source_id']==sid);claim['locator']=q+' '+claim['locator'];require(actions[aid]==expected,'exceptional-events correction exceeded source locator')
+    for x,item in items.items():
+        expected=copy.deepcopy(item['before_record']);row=copy.deepcopy(item['before_universe_row'])
+        if x==aid:
+            claim=next(c for c in expected['claim_source_map']if c['source_id']==sid);claim['locator']=q+' '+claim['locator']
+        else:
+            require('annual report' in expected['rationale'],'whistleblower cadence preimage differs');expected['rationale']=expected['rationale'].replace('annual report','existing whistleblower report')
+            for k in ['reason','rationale']:row[k]=row[k].replace('annual report','existing whistleblower report')
+        row['review_progress']['shared_review_record_sha256']=digest(expected)
+        require(records[x]==expected and rows[x]==row,'bounded disclosure correction or dependent binding differs')
+        require(item['after_record_sha256']==digest(expected) and item['after_universe_row_sha256']==digest(row),'disclosure correction receipt binding differs')
+    require('annual report' not in records['house:119:2:138']['rationale'] and 'not retained' in receipt['cadence_qualification'] and 'does not find' in receipt['cadence_qualification'],'unsupported whistleblower cadence or nonannual inference')
+    require(not receipt['source_acquisitions'] and not receipt['protected_retries'] and not receipt['accepted_membership'] and not receipt['publication_authorized'] and not receipt['production_writes'],'disclosure correction conferred authority')
 
 def validate(n,values=None,*,check_files=True):
     expected=CASES[n];data=folder(n);prior=folder(n-1);author,capture,universe,membership=values or [read(data/f'{k}.json') for k in ['authoring','sources','universe_proposal','membership_review']];validate_universe_proposal(universe,author,capture,membership)
@@ -497,6 +529,17 @@ def validate(n,values=None,*,check_files=True):
         correction=read(data/'north_dakota_exception_scope_correction.json');aid='house:119:1:226';pre=correction['preimage_membership'];require(digest(pre)==correction['preimage_membership_sha256'] and digest(ss[correction['source_id']])==correction['source_object_sha256'],'North Dakota preserved source/preimage digest differs')
         require({k:v for k,v in records[aid].items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and records[aid]['rationale']==correction['corrected_rationale'],'North Dakota qualification changed meaning/state/source scope')
         if n==43:require(pre==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and correction['preimage_universe_row']==prev[aid],'North Dakota historical preimage differs')
+    if n>=96:
+        validate_conservation_s629_boundaries(by['house:119:2:223'],ss['govinfo:s629es'],ss['govinfo:16usc2201-operative162'],ss['govinfo:16usc2206-operative162'])
+        validate_software_loan_boundaries(by['house:119:2:226'],ss['govinfo:hr915eh'],ss['govinfo:15usc636-2024-7a-authority'])
+        for aid,name in [('house:119:2:223','conservation_s629_taxonomy_recommendation'),('house:119:2:226','software_loan_taxonomy_recommendation')]:
+            recommendation=read(data/(name+'.json'));require(recommendation['candidate_action_sha256']==digest(by[aid])and not recommendation['accepted_membership']and recommendation['required_independent_review'],'new96taxonomy candidate binding/acceptance differs')
+        receipt=read(data/'historical86_90_disclosure_corrections_receipt.json');validate_historical86_90_disclosures(by,records,rows,ss,receipt)
+        if n==96:
+            for item in receipt['corrections']:
+                aid=item['action_id'];require(item['before_record']==next(r for r in old['membership_review']['records']if r['action_id']==aid)and item['before_universe_row']==prev[aid],'96disclosure preimage differs from exact95')
+                if item['before_action']:require(item['before_action']==next(a for a in old['authoring']['actions']if a['action_id']==aid),'96source locator action preimage differs')
+        else:require(receipt==read(prior/'historical86_90_disclosure_corrections_receipt.json'),'96original disclosure correction receipt changed')
     if n>=93:
         validate_battlefield_program_boundaries(by['house:119:2:192'],ss['govinfo:hr7618eh'],ss['govinfo:54usc3081-2024-operative134']);validate_northwest_straits_boundaries(by['house:119:2:196'],ss['govinfo:hr2860eh'],ss['govinfo:pl105384-titleIV-original162'],ss['nwstraits:1998-report-reprint-edition168'],ss['nwstraits:1998-report-reprint-membership-complete169'])
         for aid,name in [('house:119:2:192','battlefield_program_taxonomy_recommendation'),('house:119:2:196','northwest_straits_taxonomy_recommendation')]:
