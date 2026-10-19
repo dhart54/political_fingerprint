@@ -518,4 +518,20 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(s);bad['text']+=' Unretained later law.'
         with self.assertRaisesRegex(ValueError,'1326retained baseline object changed'):validate_hr1326_partial_baseline_link(m,u,bad,r)
 
+    def test_shared_consumer_definition_cannot_drop_exclusions_or_complete_pending_bills(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_consumer_definition_dependency
+        p=folder(107);r=read(p/'consumer_definition_dependency_receipt.json');records={x['action_id']:x for x in read(p/'membership_review.json')['records']};rows={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id'])
+        for case in r['cases']:
+            aid=case['action_id'];m=records[aid];u=rows[aid]
+            with self.subTest(action=aid):
+                validate_consumer_definition_dependency(m,u,s,r)
+                bad=copy.deepcopy(m);bad['claim_source_map'][-2]['passage']=bad['claim_source_map'][-2]['passage'].replace('(I) food.','(I) all food is included.')
+                with self.assertRaisesRegex(ValueError,'consumer baseline claim lost exact scope or exclusions'):validate_consumer_definition_dependency(bad,u,s,r)
+                bad=copy.deepcopy(m);bad['claim_source_map'][-2]['locator']='All technical and current-law baselines complete'
+                with self.assertRaisesRegex(ValueError,'consumer baseline claim lost exact scope or exclusions'):validate_consumer_definition_dependency(bad,u,s,r)
+                bad=copy.deepcopy(u);bad['disposition']='interpreted_substantive_directional'
+                with self.assertRaisesRegex(ValueError,'consumer definition dependency promoted pending case'):validate_consumer_definition_dependency(m,bad,s,r)
+        bad=copy.deepcopy(r);bad['source_acquisitions']=1
+        with self.assertRaisesRegex(ValueError,'consumer definition receipt boundary differs'):validate_consumer_definition_dependency(m,u,s,bad)
+
 if __name__=='__main__':unittest.main()
