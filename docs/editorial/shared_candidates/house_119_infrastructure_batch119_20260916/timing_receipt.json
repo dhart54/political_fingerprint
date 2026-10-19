@@ -1,0 +1,41 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T23:14:34.676671+00:00",
+    "qualification": "Two pending judicial-review dependency specifications. Complete RHsection3(5793characters)and complete datedAPA706(1287characters)read before marker, untimed. No wholeRHbody/currentlaw/version reconciliation or child-antecedent resolution."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T23:17:14.487642+00:00",
+    "end_utc": "2026-10-19T23:17:22.909975+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 119 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch119_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 4.521
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 3.902
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 159.811,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 8.423,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 9.707,
+    "result": "passed",
+    "scope": [
+      "Reportedjudicial-unit/detailedAPA context, own-child/version/antecedent/standing limits and current composite validation",
+      "Preserved establishment-only challenge precision",
+      "Preserved complete-retained4776body and unresolved printed questions",
+      "Preserved dated NEPA conditional review framework"
+    ]
+  },
+  "pre_specification_boundary_preparation": "Initial marker selection incorrectly expected RHSEC.4; RHsection3ends atUnionCalendar. Corrected before spec/marker/plan/gates; no source/version or test-gate failure."
+}

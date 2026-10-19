@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch118**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch119**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Pending H.R.1676links complete retained2024operative669a/669gprogram/resource definitions and maintenance/cost-share context, keeping mixed uses, printed references and distinct percentage bases explicit. Pending H.R.4776narrows its challenge-condition shorthand to establishment of a categorical exclusion, matching the source without deciding application-specific challenge outcomes. Both remain pending with existing flags; no new meaning, current-law/membership clearance or source acquisition. Historical116wording/sourcebytes stay preserved.
+Two pending H.R.4776judicial cases link the complete datedAPA706unit, distinguishing the named(2)(A)ground from the full scope-of-review section. Rejected Clyde Amendment1also links complete retained RHsection3context, including Tribal exceptions beyond its earlier clipped target. Its own insertion/rejection remain the exact-action evidence; parent context does not establish child eligibility, resolve the which-clause antecedent or certify whole-version equivalence. Both cases retain pending dispositions/flags, current-law/claim/remedy/whole-membership limits and70unchanged meanings/compiledgraph.
 
-[Readable batch118 findings](infrastructure_candidate_batch118.md).
+[Readable batch119 findings](infrastructure_candidate_batch119.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch118_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch119_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -58,21 +58,23 @@ Independent records continue around these holds.
 **Current source/conservation/generated replay, seven semantic checks and four
 focused regressions pass**. The full 151-test suite passed at exact
 `3be714268666858130bb62d1f171af6a19362c4a`; all 70 meanings and the compiled graph
-remain unchanged. A full 161-test suite was not run. Current shared authoring/generated copies remain member-neutral.
+remain unchanged. A full 162-test suite was not run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took6.563seconds; the specification/authoring elapsed window and later byte/delivery
+took8.423seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch118_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch118_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch118_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch118_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch119_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch119_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch119_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch119_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Wildlife316nowlinks dated669a/669g; mixedprogram/reference/currentlaw/floor/membership remainpending.4776parent shorthand nowstates establishment-of-categorical-exclusion only; otherapplicationchallengeoutcomes notdecided.70unacceptedmeanings/262pending/6holds/0ordinary unchanged.
+Two4776judicial cases nowshare datedAPA706;352completeRHjudicialcontextincludesTribalcontinuation. Ownchildantecedent/eligibility, fullversion/floor/otherstanding/currentlaw/claimoutcomes remainpending.70unacceptedmeanings/262pending/6holds/0ordinary unchanged.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
+
+[Two pending judicial records and two exact context sources](infrastructure_batch119_judicial_context/manifest.json) preserve current-parent/source-origin numeric pointers, canonical/raw/governed/transport hashes and actualUTF8/LFlengths. Four files total136,422bytes, maximum62,492bytes. The full source object transport does not enlarge the declared RHreading extent22064:27857of28405; no fullRHbody/APA, childantecedent/eligibility, wholeversion or actualclaim/currentlaw clearance. [Reported-version boundary preparation](../editorial/shared_candidates/house_119_infrastructure_batch119_20260916/reported_judicial_boundary_preparation_receipt.json) preserves the initial pre-spec marker correction; RHdoes not acquire the EH's latersection.
 
 [Two current pending records and two original wildlife units](infrastructure_batch118_wildlife_and_precision/manifest.json) preserve source/current-parent pointers, canonical/raw/governed/transport hashes and actual UTF8/LF lengths. Four files total89,498bytes, maximum59,649bytes; the exact4776source reuses its historical transport. [Establishment-only correction/preimage](../editorial/shared_candidates/house_119_infrastructure_batch118_20260916/hr4776_establishment_challenge_precision_receipt.json) changes only the current shorthand; historical116receipt/record/sourcebytes remain unchanged and application-specific challenge outcomes are not decided.
 

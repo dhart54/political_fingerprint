@@ -792,4 +792,19 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
         with self.assertRaisesRegex(ValueError,'exceeded exact phrase or retained broad shorthand'):validate_4776_establishment_challenge_precision(bad,u,s,r)
 
+    def test_nepa_judicial_context_cannot_replace_child_or_certify_full_reported_form(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_nepa_judicial_dependency_context
+        p=folder(119);r=read(p/'nepa_judicial_dependency_context_receipt.json');m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_nepa_judicial_dependency_context(m,u,s,r);self.assertTrue(validate(119)['generated_replay'])
+        for field in ['whole_RH_body_read','child_antecedent_resolved','whole_version_equivalence_certified','claim_remedy_outcomes_decided','current_law_certified','membership_accepted']:
+            bad=copy.deepcopy(r);bad['cases'][0][field]=True
+            with self.assertRaisesRegex(ValueError,'cleared child/version/standing/outcome gates'):validate_nepa_judicial_dependency_context(m,u,s,bad)
+        bad=copy.deepcopy(r);bad['cases'][0]['appended_claims'][0]['passage']=s['govinfo:hr4776rh']['text']
+        with self.assertRaisesRegex(ValueError,'became whole RH or truncated operative context'):validate_nepa_judicial_dependency_context(m,u,s,bad)
+        bad=copy.deepcopy(r);bad['cases'][1]['source_ids'].insert(0,'govinfo:hr4776rh')
+        with self.assertRaisesRegex(ValueError,'transferred reported form to parent'):validate_nepa_judicial_dependency_context(m,u,s,bad)
+        bad=copy.deepcopy(m);bad['house:119:1:352']['claim_source_map']=bad['house:119:1:352']['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or comparative limits'):validate_nepa_judicial_dependency_context(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['house:119:1:356']['rationale']=bad['house:119:1:356']['rationale'].replace('not the entire six-ground list','the entire six-ground list repealed')
+        with self.assertRaisesRegex(ValueError,'changed earlier evidence flags or comparative limits'):validate_nepa_judicial_dependency_context(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()
