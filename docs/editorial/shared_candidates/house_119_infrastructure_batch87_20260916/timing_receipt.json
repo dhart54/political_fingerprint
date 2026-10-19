@@ -1,0 +1,56 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T16:59:01.915778+00:00",
+    "qualification": "First specification-writing execution; prior complete retained-source reading untimed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T17:03:23.528412+00:00",
+    "end_utc": "2026-10-19T17:05:24.721320+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 87 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch87_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.103
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 116.96
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.129
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 261.613,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 240.278,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "initial_positive_validation": {
+    "start_utc": "2026-10-19T17:00:01.201746+00:00",
+    "end_utc": "2026-10-19T17:02:00.287983+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 87 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch87_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.097
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 114.883
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.106
+      }
+    ]
+  },
+  "phase_qualification": "Both full116/7positive phases retained. The first preceded a precommit member-neutrality layer correction and stronger regression; final checks apply to corrected bytes. This is gate-process time, not total active research duration."
+}

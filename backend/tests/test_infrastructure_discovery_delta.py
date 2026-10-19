@@ -342,4 +342,26 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'EPA review conditional referral separate NEPA or candidate boundary lost'):validate_epa_review_channel_boundaries(bad,s['govinfo:hr6398eh'],s['govinfo:42usc7609-2024-policy-review'],s['govinfo:42usc4332-2024-operative'])
+    def test_air_monitoring_retains_eligibility_health_and_public_data(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_air_monitoring_boundaries
+        p=folder(87);action=next(a for a in read(p/'authoring.json')['actions']if a['action_id']=='house:119:2:136');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('the event still must affect air quality, be not reasonably controllable or preventable, and receive the specified Administrator determination','every deliberate fire qualifies automatically'),('Retained principles still prioritize public health','Public health principles are deleted'),('Exclusion from those regulatory uses does not delete the monitoring record or abolish public access','All excluded monitoring data must be erased')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'air monitoring retained eligibility public health or data duties lost'):validate_air_monitoring_boundaries(bad,s['govinfo:hr6387eh'],s['govinfo:42usc7619-2024-exceptional-events'])
+    def test_air_monitoring_regional_alternatives_and_distinct_clocks(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_air_monitoring_boundaries
+        p=folder(87);action=next(a for a in read(p/'authoring.json')['actions']if a['action_id']=='house:119:2:136');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('OR the Administrator determines such a multistate event occurred','AND the Administrator determines such a multistate event occurred'),('due1yearafterpublicationoftheproposal','due1yearafterenactment'),('due12monthsafterenactment and must then be updated monthly','due18monthsafterenactment and updated yearly')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'air monitoring regional alternatives clocks or source limits lost'):validate_air_monitoring_boundaries(bad,s['govinfo:hr6387eh'],s['govinfo:42usc7619-2024-exceptional-events'])
+    def test_air_monitoring_foushee_not_voting_is_nondirectional(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_air_monitoring_nondirectional,validate_air_monitoring_membership_neutrality
+        p=folder(87);r=read(p/'generated/readable_candidates.json');c=read(p/'generated/compiled_ir.json');bad=copy.deepcopy(r);next(m for m in bad['members']if m['member_id']=='F000477')['findings'].append(dict(action_ids=['house:119:2:136']))
+        with self.assertRaisesRegex(ValueError,'air monitoring Foushee Not Voting became directional or omitted'):validate_air_monitoring_nondirectional(bad,c)
+        bad=copy.deepcopy(c);next(m for m in bad['members']if m['member_id']=='F000477')['coverage']['not_voting_actions']=1
+        with self.assertRaisesRegex(ValueError,'air monitoring Foushee Not Voting became directional or omitted'):validate_air_monitoring_nondirectional(r,bad)
+        record=next(x for x in read(p/'membership_review.json')['records']if x['action_id']=='house:119:2:136');record['rationale']+=' FousheeNotVoting remains nondirectional.'
+        with self.assertRaisesRegex(ValueError,'air monitoring shared membership rationale became member-specific'):validate_air_monitoring_membership_neutrality(record)
 if __name__=='__main__':unittest.main()

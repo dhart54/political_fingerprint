@@ -118,6 +118,19 @@ def validate_refinery_report_boundaries(action,bill,clerk,compiled,readable):
     member=next(m for m in readable['members'] if m['member_id']=='M001184');require(all('house:119:1:303' not in f['action_ids'] for f in member['findings']),'refinery Not Voting became directional finding')
     member=next(m for m in compiled['members'] if m['member_id']=='M001184');require(member['coverage']['not_voting_actions']==6,'refinery new Not Voting coverage omitted')
 
+def validate_air_monitoring_boundaries(action,bill,baseline):
+    meaning=action['meaning']
+    require('not reasonably controllable or preventable' in baseline['text'] and 'a public process for determining' in baseline['text'] and 'Regional analysis' in bill['text'] and 'by striking paragraph (4)' in bill['text'],'air monitoring operative sources differ')
+    require('the event still must affect air quality, be not reasonably controllable or preventable, and receive the specified Administrator determination' in meaning and 'Retained principles still prioritize public health' in meaning and 'Exclusion from those regulatory uses does not delete the monitoring record or abolish public access' in meaning,'air monitoring retained eligibility public health or data duties lost')
+    require('more than one State notifies intent to petition for the same air-quality event OR the Administrator determines such a multistate event occurred' in meaning and 'due18monthsafterenactment' in meaning and 'due1yearafterpublicationoftheproposal' in meaning and 'due12monthsafterenactment and must then be updated monthly' in meaning and 'underlying old guidance, appendices, current implementing rules and particular State-approved practices were not independently inspected' in meaning and 'UNACCEPTED candidate proposal' in meaning,'air monitoring regional alternatives clocks or source limits lost')
+
+def validate_air_monitoring_nondirectional(readable,compiled):
+    member=next(m for m in readable['members']if m['member_id']=='F000477');coverage=next(m for m in compiled['members']if m['member_id']=='F000477')['coverage']
+    require(all('house:119:2:136'not in f['action_ids']for f in member['findings'])and coverage['not_voting_actions']>=2,'air monitoring Foushee Not Voting became directional or omitted')
+
+def validate_air_monitoring_membership_neutrality(record):
+    require(all(name not in record['rationale'].casefold()for name in ['foushee','massie','f000477','m001184']),'air monitoring shared membership rationale became member-specific')
+
 def validate_epa_review_channel_boundaries(action,bill,review,nepa):
     meaning=action['meaning']
     require('newly authorized Federal projects for construction' in review['text'] and 'proposed regulations published by any department or agency' in review['text'] and 'Such written comment shall be made public' in review['text'] and 'by striking' in bill['text'] and 'Prior to making any detailed statement' in nepa['text'],'EPA review-channel operative sources differ')
@@ -281,6 +294,7 @@ CASES[59]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(335,340
 CASES[60]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [340,341,342,345,346]],new=[],new_action_ids=['house:119:1:342'],counts=dict(interpreted_substantive_directional=45,interpreted_substantive_non_directional=1,procedural_context=120,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=283,pending_interpretation=160),pending=277)
 CASES[64]=dict(rolls=[],action_ids=['house:119:1:362',*['house:119:2:'+str(r) for r in range(2,6)]],new=[],counts=dict(interpreted_substantive_directional=46,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=263,pending_interpretation=170),pending=257)
 CASES[65]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(6,11)],new=[],new_action_ids=['house:119:2:9'],counts=dict(interpreted_substantive_directional=47,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=258,pending_interpretation=174),pending=252)
+CASES[87]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(136,141)],new=[],new_action_ids=['house:119:2:136'],counts=dict(interpreted_substantive_directional=56,interpreted_substantive_non_directional=1,procedural_context=168,exact_action_ineligible=80,expressive_nonbinding=14,source_unresolved=143,pending_interpretation=214),pending=137)
 CASES[86]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in [121,122,123,124,128,129,130,131,132,135]],new=[],counts=dict(interpreted_substantive_directional=55,interpreted_substantive_non_directional=1,procedural_context=167,exact_action_ineligible=78,expressive_nonbinding=14,source_unresolved=148,pending_interpretation=213),pending=142)
 CASES[85]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(116,121)],new=[],new_action_ids=['house:119:2:118'],counts=dict(interpreted_substantive_directional=55,interpreted_substantive_non_directional=1,procedural_context=163,exact_action_ineligible=78,expressive_nonbinding=12,source_unresolved=158,pending_interpretation=209),pending=152)
 CASES[84]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(111,116)],new=[],counts=dict(interpreted_substantive_directional=54,interpreted_substantive_non_directional=1,procedural_context=162,exact_action_ineligible=76,expressive_nonbinding=12,source_unresolved=163,pending_interpretation=208),pending=157)
@@ -344,7 +358,7 @@ def validate(n,values=None,*,check_files=True):
         for ref in rec['sources']:require(all(ref[k]==ss[ref['source_id']][k] for k in ['url','raw_sha256','governed_bytes_sha256']),'membership source binding differs')
         if aid not in new:require(row['episode_candidate_id'] is None and aid not in by,'screening became authored interpretation')
     assert_neutral(author['actions']);assert_neutral(membership['records']);core,mapping,projections,inputs,result=prepare(author,capture,['F000477','M001184']);assert_neutral(core['actions']);assert_neutral(mapping['action_mappings']);readable=readable_candidates(author,core,projections,result);proof=reproducibility_proof(author,capture,['F000477','M001184'])
-    for member in result.compiled_ir['members']:require(member['coverage']['not_voting_actions']==(1 if member['member_id']=='F000477' else 6 if n>=52 else 5 if n>=24 else 4),'inherited/new authored Not Voting accounting differs')
+    for member in result.compiled_ir['members']:require(member['coverage']['not_voting_actions']==((2 if n>=87 else 1) if member['member_id']=='F000477' else 6 if n>=52 else 5 if n>=24 else 4),'inherited/new authored Not Voting accounting differs')
     require(read(data/'hr2189_taxonomy_recommendation.json')==read(prior/'hr2189_taxonomy_recommendation.json'),'unaccepted membership recommendation changed');require(read(data/'inherited_corrections_receipt.json')==read(prior/'inherited_corrections_receipt.json'),'inherited corrections changed')
     # Incorporated report has nine recommendations; current webpage only lists four open.
     if n==8:
@@ -457,6 +471,8 @@ def validate(n,values=None,*,check_files=True):
         correction=read(data/'north_dakota_exception_scope_correction.json');aid='house:119:1:226';pre=correction['preimage_membership'];require(digest(pre)==correction['preimage_membership_sha256'] and digest(ss[correction['source_id']])==correction['source_object_sha256'],'North Dakota preserved source/preimage digest differs')
         require({k:v for k,v in records[aid].items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and records[aid]['rationale']==correction['corrected_rationale'],'North Dakota qualification changed meaning/state/source scope')
         if n==43:require(pre==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and correction['preimage_universe_row']==prev[aid],'North Dakota historical preimage differs')
+    if n>=87:
+        aid='house:119:2:136';validate_air_monitoring_boundaries(by[aid],ss['govinfo:hr6387eh'],ss['govinfo:42usc7619-2024-exceptional-events']);validate_air_monitoring_nondirectional(readable,result.compiled_ir);validate_air_monitoring_membership_neutrality(records[aid]);recommendation=read(data/'air_monitoring_data_taxonomy_recommendation.json');require(recommendation['candidate_action_sha256']==digest(by[aid])and not recommendation['accepted_membership']and recommendation['required_independent_review'],'air monitoring taxonomy acceptance/binding differs')
     if n>=85:
         aid='house:119:2:118';validate_epa_review_channel_boundaries(by[aid],ss['govinfo:hr6398eh'],ss['govinfo:42usc7609-2024-policy-review'],ss['govinfo:42usc4332-2024-operative']);recommendation=read(data/'epa_review_channel_taxonomy_recommendation.json');require(recommendation['candidate_action_sha256']==digest(by[aid]) and not recommendation['accepted_membership'] and recommendation['required_independent_review'],'EPA review-channel taxonomy acceptance/binding differs')
     if n>=83:
