@@ -272,11 +272,11 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'critical-energy-resource duties/report/assessment or candidate limits lost'):validate_critical_energy_resource_boundaries(bad,s['govinfo:hr3617eh'],s['govinfo:42usc7112-operative149'],s['govinfo:42usc7133-operative149'])
     def test_cable_sanctuary_exemption_requires_effective_authorization(self):
         from scripts.validate_infrastructure_discovery_delta import validate_cable_sanctuary_boundaries
-        action=next(a for a in read(folder(76)/'authoring.json')['actions'] if a['action_id']=='house:119:2:67');s={s['source_id']:s for s in read(folder(76)/'sources.json')['sources']};bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace('IF another Federal OR State agency has issued a license, lease or permit that is in effect authorizing those activities','whether or not another agency has authorized the activities')
+        action=next(a for a in read(folder(83)/'authoring.json')['actions'] if a['action_id']=='house:119:2:67');s={s['source_id']:s for s in read(folder(83)/'sources.json')['sources']};bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace('IF a Federal OR State agency has issued a license, lease or permit that is in effect authorizing those activities','whether or not another agency has authorized the activities')
         with self.assertRaisesRegex(ValueError,'cable sanctuary exemption lost effective matching authorization'):validate_cable_sanctuary_boundaries(bad,s['govinfo:hr261eh'],s['govinfo:16usc1441-permit-terms'],s['govinfo:16usc1434-cooperation'])
     def test_cable_general_permit_scope_and_surviving_cooperation(self):
         from scripts.validate_infrastructure_discovery_delta import validate_cable_sanctuary_boundaries
-        action=next(a for a in read(folder(76)/'authoring.json')['actions'] if a['action_id']=='house:119:2:67');s={s['source_id']:s for s in read(folder(76)/'sources.json')['sources']}
+        action=next(a for a in read(folder(83)/'authoring.json')['actions'] if a['action_id']=='house:119:2:67');s={s['source_id']:s for s in read(folder(83)/'sources.json')['sources']}
         for old,new,error in [('deletions apply to special-use permits generally, not only cable permits','deletions apply only to cable permits','cable sanctuary general term deletion or surviving protections lost'),('insurance/equivalent-bond and hold-harmless term is redesignated, not deleted','insurance and hold-harmless protections are deleted','cable sanctuary general term deletion or surviving protections lost'),('expressly preserves interagency cooperation under304(d)','abolishes all interagency cooperation','cable sanctuary cooperation became abolished or automatic approval')]:
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
@@ -294,16 +294,38 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'roll29 conjunctive conditions became exactly three arrangements'):validate_roll29_conditions_wording(record,row,source,receipt)
     def test_blue_catfish_purchase_roles_and_transport_cap_remain(self):
         from scripts.validate_infrastructure_discovery_delta import validate_blue_catfish_program_boundaries
-        p=folder(80);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:88');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        p=folder(83);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:88');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
         for old,new in [('pet-food, animal-feed or aquaculture-feed manufacturers/processors, not human-food recipients or every research partner','human-food recipients and all research partners'),('may use no more than15percent for transport','may use unlimited funds for transport')]:
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'blue-catfish purchasing roles price or transport limits lost'):validate_blue_catfish_program_boundaries(bad,s['govinfo:hr4294eh'],s['govinfo:15usc1511d-2024-marine'])
     def test_blue_catfish_later_fiscal_year_start_and_uncertainty_remain(self):
         from scripts.validate_infrastructure_discovery_delta import validate_blue_catfish_program_boundaries
-        p=folder(80);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:88');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        p=folder(83);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:88');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
         for old,new,error in [('fiscal year AFTER the LATER fiscal year of the first public abundance estimate and the required guidance','date of enactment alone','blue-catfish conditional timing or seek-MOU became automatic'),('Seeking the memorandum is not a guarantee of agreement','The memorandum is automatically guaranteed','blue-catfish conditional timing or seek-MOU became automatic'),('requested assessments are not proved causal effects','requested assessments are proved causal benefits','blue-catfish report scientific uncertainty or candidate scope lost')]:
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,error):validate_blue_catfish_program_boundaries(bad,s['govinfo:hr4294eh'],s['govinfo:15usc1511d-2024-marine'])
+    def test_cable_agency_scope_has_no_other_agency_identity_condition(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_source_literal_scope_corrections
+        p=folder(83);a={x['action_id']:x for x in read(p/'authoring.json')['actions']};m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};r=read(p/'source_literal_scope_corrections_83_receipt.json');recs={x['recommendation']:read(p/(x['recommendation']+'.json')) for x in r['corrections']};a['house:119:2:67']['meaning']=a['house:119:2:67']['meaning'].replace('IF a Federal OR State agency','IF another Federal OR State agency')
+        with self.assertRaisesRegex(ValueError,'cable agency category acquired unsupported other-agency identity predicate'):validate_source_literal_scope_corrections(a,m,u,s,r,recs)
+    def test_catfish_research_institution_examples_are_nonexclusive(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_source_literal_scope_corrections
+        p=folder(83);a={x['action_id']:x for x in read(p/'authoring.json')['actions']};m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};r=read(p/'source_literal_scope_corrections_83_receipt.json');recs={x['recommendation']:read(p/(x['recommendation']+'.json')) for x in r['corrections']};a['house:119:2:88']['meaning']=a['house:119:2:88']['meaning'].replace('research institutions, including those with the specified expertise','the specified expert research institutions')
+        with self.assertRaisesRegex(ValueError,'catfish research-institution examples became exclusive expert-only eligibility'):validate_source_literal_scope_corrections(a,m,u,s,r,recs)
+    def test_conservation_advance_payment_cost_denominators_and_forest_ceiling(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_emergency_conservation_advances
+        p=folder(83);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:109');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('ECP replacement/rehabilitation advances are up to75percentofpayment; ECP repair advances are up to50percentofpayment','ECP advances are75or50percentoftotalprojectcost'),('overall forest assistance ceiling remains75percentoftotalcost','forest assistance addsanother75percentontopofexistinglimit')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'conservation advance denominators or retained ceiling changed'):validate_emergency_conservation_advances(bad,s['govinfo:hr1011eh'],s['govinfo:16usc2201-operative162'],s['govinfo:16usc2206-operative162'])
+    def test_conservation_wildfire_spread_and_return_clocks_remain_distinct(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_emergency_conservation_advances
+        p=folder(83);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:109');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('new unnatural-ignition inclusion retains the natural-cause spread condition','allgovernmentignitionsqualifyautomatically'),('existing ECP60dayunspent-funds deadline after receipt remains','ECP180dayruleappliestoalladvances')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'conservation wildfire spread or distinct return predicates lost'):validate_emergency_conservation_advances(bad,s['govinfo:hr1011eh'],s['govinfo:16usc2201-operative162'],s['govinfo:16usc2206-operative162'])
 if __name__=='__main__':unittest.main()

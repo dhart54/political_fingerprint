@@ -118,6 +118,33 @@ def validate_refinery_report_boundaries(action,bill,clerk,compiled,readable):
     member=next(m for m in readable['members'] if m['member_id']=='M001184');require(all('house:119:1:303' not in f['action_ids'] for f in member['findings']),'refinery Not Voting became directional finding')
     member=next(m for m in compiled['members'] if m['member_id']=='M001184');require(member['coverage']['not_voting_actions']==6,'refinery new Not Voting coverage omitted')
 
+def validate_emergency_conservation_advances(action,bill,ecp,efr):
+    meaning=action['meaning']
+    require('not more than 75 percent of the payment' in bill['text'] and 'not more than 50 percent of the payment' in bill['text'] and 'not more than 75 percent of the cost' in bill['text'] and 'not more than 25 percent of the payment' in ecp['text'] and 'not exceed 75 percent of the total cost' in efr['text'],'conservation advance/payment/total-cost baseline differs')
+    require('ECP replacement/rehabilitation advances are up to75percentofpayment; ECP repair advances are up to50percentofpayment' in meaning and 'advance up to75percentofemergency-measurecost' in meaning and 'overall forest assistance ceiling remains75percentoftotalcost' in meaning,'conservation advance denominators or retained ceiling changed')
+    require('new unnatural-ignition inclusion retains the natural-cause spread condition' in meaning and 'existing ECP60dayunspent-funds deadline after receipt remains' in meaning and 'new EFR180dayunspent-funds deadline after receipt' in meaning and 'reasonable timeframe determined by the Secretary' in meaning and 'UNACCEPTED candidate proposal' in meaning,'conservation wildfire spread or distinct return predicates lost')
+
+def validate_source_literal_scope_corrections(actions,records,rows,sources,receipt,recommendations):
+    cable=actions['house:119:2:67'];catfish=actions['house:119:2:88']
+    require('IF a Federal OR State agency' in cable['meaning'] and 'IF another Federal OR State agency' not in cable['meaning'] and 'without other agency authorization' not in cable['meaning'] and all('Other Federal OR State' not in x for x in cable['limitations']) and 'other-agency' not in records['house:119:2:67']['rationale'] and 'a Federal or State agency' in sources['govinfo:hr261eh']['text'],'cable agency category acquired unsupported other-agency identity predicate')
+    require('Partners are Maryland, Virginia and research institutions, including those with the specified expertise' in catfish['meaning'] and 'specified expert research institutions' not in catfish['meaning'] and 'they are not automatically covered feed-purchasing entities' in catfish['meaning'] and 'research institutions, including research institutions with expertise' in sources['govinfo:hr4294eh']['text'],'catfish research-institution examples became exclusive expert-only eligibility')
+    for item in receipt['corrections']:
+        aid=item['aid'];expected=copy.deepcopy(item['before_action'])
+        for old,new in item['meaning_replacements']:expected['meaning']=expected['meaning'].replace(old,new)
+        for old,new in item['limitation_replacements']:expected['limitations']=[x.replace(old,new) for x in expected['limitations']]
+        require(expected==actions[aid] and digest(expected)==item['after_action_sha256'] and digest(item['before_action'])==item['before_action_sha256'],'literal-scope correction changed extra action/source/choice fields')
+        expected=copy.deepcopy(item['before_record'])
+        for old,new in item['rationale_replacements']:expected['rationale']=expected['rationale'].replace(old,new)
+        require(expected==records[aid] and digest(expected)==item['after_record_sha256'] and digest(item['before_record'])==item['before_record_sha256'],'literal-scope correction changed record sources disposition or flags')
+        expected=copy.deepcopy(item['before_universe_row'])
+        for old,new in item['rationale_replacements']:
+            for key in ['reason','rationale']:expected[key]=expected[key].replace(old,new)
+        expected['review_progress']['shared_review_record_sha256']=digest(records[aid]);require(expected==rows[aid],'literal-scope correction changed universe observations or counting')
+        expected=copy.deepcopy(item['before_recommendation'])
+        for old,new in item['recommendation_replacements']:expected['material_qualifications']=[x.replace(old,new) for x in expected['material_qualifications']]
+        expected['candidate_action_sha256']=digest(actions[aid]);require(expected==recommendations[item['recommendation']],'literal-scope recommendation changed beyond source scope/digest')
+        source=sources[item['sid']];ref=receipt['source_objects'][item['sid']];require(digest(source)==ref['original_source_object_sha256'] and all(source[k]==ref[k] for k in ['url','raw_sha256','governed_bytes_sha256']) and next(c for c in actions[aid]['claim_source_map'] if c['source_id']==item['sid'])['passage']==source['text'],'literal-scope original source or full claim changed')
+
 def validate_roll29_conditions_wording(record,row,source,receipt):
     old='the three jointly specified pension investment arrangements';new='investment arrangements satisfying all three specified conditions'
     require(new in record['rationale'] and old not in record['rationale'] and row['reason']==row['rationale']==record['rationale'],'roll29 conjunctive conditions became exactly three arrangements')
@@ -149,7 +176,7 @@ def validate_roll43_part_a_binding(action,record,row,sources,receipt,recommendat
 def validate_cable_sanctuary_boundaries(action,bill,terms,cooperation):
     meaning=action['meaning']
     require('and is in effect' in bill['text'] and 'Federal or State agency' in bill['text'] and 'by striking paragraphs (2) and (3)' in bill['text'] and 'shall not authorize' in terms['text'] and 'Response to recommendations' in cooperation['text'],'cable sanctuary approval/permit/cooperation baseline differs')
-    require('IF another Federal OR State agency has issued a license, lease or permit that is in effect authorizing those activities' in meaning and 'not a blanket exemption for every cable without other agency authorization' in meaning,'cable sanctuary exemption lost effective matching authorization')
+    require('Federal OR State agency has issued a license, lease or permit that is in effect authorizing those activities' in meaning and 'not a blanket exemption for every cable' in meaning,'cable sanctuary exemption lost effective matching authorization')
     require('deletions apply to special-use permits generally, not only cable permits' in meaning and 'compatibility with sanctuary-designation purposes and protection of sanctuary resources is retained' in meaning and 'insurance/equivalent-bond and hold-harmless term is redesignated, not deleted' in meaning,'cable sanctuary general term deletion or surviving protections lost')
     require('expressly preserves interagency cooperation under304(d)' in meaning and 'distinct clocks, not a single automatic45dayapproval' in meaning and 'UNACCEPTED candidate proposal' in meaning,'cable sanctuary cooperation became abolished or automatic approval')
 
@@ -248,6 +275,7 @@ CASES[59]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(335,340
 CASES[60]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [340,341,342,345,346]],new=[],new_action_ids=['house:119:1:342'],counts=dict(interpreted_substantive_directional=45,interpreted_substantive_non_directional=1,procedural_context=120,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=283,pending_interpretation=160),pending=277)
 CASES[64]=dict(rolls=[],action_ids=['house:119:1:362',*['house:119:2:'+str(r) for r in range(2,6)]],new=[],counts=dict(interpreted_substantive_directional=46,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=263,pending_interpretation=170),pending=257)
 CASES[65]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(6,11)],new=[],new_action_ids=['house:119:2:9'],counts=dict(interpreted_substantive_directional=47,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=258,pending_interpretation=174),pending=252)
+CASES[83]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in [103,104,107,108,109]],new=[],new_action_ids=['house:119:2:109'],repairs=['house:119:2:67','house:119:2:88'],counts=dict(interpreted_substantive_directional=54,interpreted_substantive_non_directional=1,procedural_context=158,exact_action_ineligible=75,expressive_nonbinding=12,source_unresolved=168,pending_interpretation=208),pending=162)
 CASES[82]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(98,103)],new=[],counts=dict(interpreted_substantive_directional=53,interpreted_substantive_non_directional=1,procedural_context=156,exact_action_ineligible=75,expressive_nonbinding=12,source_unresolved=173,pending_interpretation=206),pending=167)
 CASES[81]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(93,98)],new=[],counts=dict(interpreted_substantive_directional=53,interpreted_substantive_non_directional=1,procedural_context=154,exact_action_ineligible=75,expressive_nonbinding=11,source_unresolved=178,pending_interpretation=204),pending=172)
 CASES[80]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(88,93)],new=[],new_action_ids=['house:119:2:88'],repairs=['house:119:2:29'],counts=dict(interpreted_substantive_directional=53,interpreted_substantive_non_directional=1,procedural_context=154,exact_action_ineligible=71,expressive_nonbinding=11,source_unresolved=183,pending_interpretation=203),pending=177)
@@ -420,6 +448,12 @@ def validate(n,values=None,*,check_files=True):
         correction=read(data/'north_dakota_exception_scope_correction.json');aid='house:119:1:226';pre=correction['preimage_membership'];require(digest(pre)==correction['preimage_membership_sha256'] and digest(ss[correction['source_id']])==correction['source_object_sha256'],'North Dakota preserved source/preimage digest differs')
         require({k:v for k,v in records[aid].items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and records[aid]['rationale']==correction['corrected_rationale'],'North Dakota qualification changed meaning/state/source scope')
         if n==43:require(pre==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and correction['preimage_universe_row']==prev[aid],'North Dakota historical preimage differs')
+    if n>=83:
+        receipt=read(data/'source_literal_scope_corrections_83_receipt.json');recommendations={item['recommendation']:read(data/(item['recommendation']+'.json')) for item in receipt['corrections']};validate_source_literal_scope_corrections(by,records,rows,ss,receipt,recommendations)
+        if n==83:
+            for item in receipt['corrections']:require(item['before_action']==next(a for a in old['authoring']['actions'] if a['action_id']==item['aid']) and item['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==item['aid']) and item['before_universe_row']==prev[item['aid']],'literal-scope preimages differ from exact prior snapshot')
+        else:require(receipt==read(prior/'source_literal_scope_corrections_83_receipt.json'),'original literal-scope correction receipt changed')
+        aid='house:119:2:109';validate_emergency_conservation_advances(by[aid],ss['govinfo:hr1011eh'],ss['govinfo:16usc2201-operative162'],ss['govinfo:16usc2206-operative162']);recommendation=read(data/'emergency_conservation_advance_taxonomy_recommendation.json');require(recommendation['candidate_action_sha256']==digest(by[aid]) and not recommendation['accepted_membership'] and recommendation['required_independent_review'],'conservation advance taxonomy acceptance/binding differs')
     if n>=80:
         aid='house:119:2:29';receipt=read(data/'roll29_conditions_wording_correction_receipt.json');validate_roll29_conditions_wording(records[aid],rows[aid],ss[receipt['source_id']],receipt)
         if n==80:require(receipt['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and receipt['before_universe_row']==prev[aid],'roll29 wording preimages differ from exact prior snapshot')
