@@ -1,0 +1,689 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 97,
+  "exact_committed_head": "014a35ef6bd800ecb1e8be17c8f2dc4b53907db3",
+  "export_anchor_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "committed_provenance": {
+    "membership": {
+      "head": "014a35ef6bd800ecb1e8be17c8f2dc4b53907db3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/membership_review.json",
+      "git_blob": "00577319c2c27770059a08896f648d9011cad9ae",
+      "git_bytes_sha256": "cef3dc86ddb7951415f7bb3057f5d86ed22d3b7ccffc99e186202c4f6aa66d54"
+    },
+    "sources": {
+      "head": "014a35ef6bd800ecb1e8be17c8f2dc4b53907db3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/sources.json",
+      "git_blob": "0e0291ba2be8f9d16b913e10c8075d5f9f3f9d64",
+      "git_bytes_sha256": "f3efa24bd3d5d6ad291f25f266c9155281184256c13cd3e83ee3ede21fc16251"
+    },
+    "screening": {
+      "head": "014a35ef6bd800ecb1e8be17c8f2dc4b53907db3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/screening_receipt.json",
+      "git_blob": "f53cf666467ccb8bffd616e74a7a2e91d9ca5960",
+      "git_bytes_sha256": "57e146b02a228bebbfd7f4d40cbb26017978bf16188be6a0bf7a199cc5819aca"
+    },
+    "screening_units": {
+      "head": "014a35ef6bd800ecb1e8be17c8f2dc4b53907db3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/screening_units_receipt.json",
+      "git_blob": "66cd93f685985644f449adbc4e29dafc742480e8",
+      "git_bytes_sha256": "613dd942e32705c3ab23685ffb632b05601465cbe28d1cbcc21252b5aff1621d"
+    },
+    "validation": {
+      "head": "014a35ef6bd800ecb1e8be17c8f2dc4b53907db3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/validation_receipt.json",
+      "git_blob": "316ffdbde9406a6a840183a2288e7d65052abe6b",
+      "git_bytes_sha256": "d171db7ebeacaf89fe83088514ac783ab051a90525a5f93550dd1974bcabb70f"
+    }
+  },
+  "original_membership_review_sha256": "86e7be37b4a95ba632d8c84dee443d186628495545b979180acf2ec09b9f6409",
+  "new_screened_ids": [
+    "house:119:2:229",
+    "house:119:2:230",
+    "house:119:2:231",
+    "house:119:2:232",
+    "house:119:2:233",
+    "house:119:2:236",
+    "house:119:2:237",
+    "house:119:2:239",
+    "house:119:2:240",
+    "house:119:2:241"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "c6eec751b48cce53c730e193837d518618a29c3bb2090a1194f495081de9ee36",
+      "record": {
+        "action_id": "house:119:2:229",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete7128EHread. Whole terrorism-risk insurance reauthorization/certification/reporting/technical-date package is proposed outside Infrastructure, not a technical/physical/scientific program because insured losses may include property. Preserve literal2027to2034extension, pre2029$5million versus2029onward$10million certification threshold,30day notice from starting review,90day review after publication and conditional extension no later than365daysfromdamage. Positive final certification is irrevocable; no final determination for every noncertified act is compelled. Underlying recoupment/date targets and particular coverage/current law are not fully conformed, so no complete net fiscal/insurance claim or actual terrorism/loss determination is made. Generic public reporting does not create a technical platform.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:229",
+            "url": "https://clerk.house.gov/evs/2026/roll229.xml",
+            "raw_sha256": "a3369b5d8c8fcbffd29ded7660e914fbfd83b5603332ba2665df541ec87c515c",
+            "governed_bytes_sha256": "f1bd65263c59d6eb1fda5816f43321ba35e31a655d65c5fff0cb5d101f827df0"
+          },
+          {
+            "source_id": "govinfo:hr7128eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7128eh/html/BILLS-119hr7128eh.htm",
+            "raw_sha256": "524893e8fb9cb9d583b040babcb36f452e1b45846df47362eaf8cfae5783b8e9",
+            "governed_bytes_sha256": "c1a46da89b755962cc4e67fc202a7398f6e0dcb6e92208148dcef7feab875df0"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7128eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/755968eaf895995ddbe5a6e209cc286913ad3d127bcf87a0d48d96c0b499d720.0000000.json",
+                  "sha256": "5c0d3f6a9235173b068f322826cc5872e86832437ce63cb3cc2994e9f66513a0",
+                  "start_character": 0,
+                  "end_character": 5654
+                }
+              ],
+              "utf8_sha256": "755968eaf895995ddbe5a6e209cc286913ad3d127bcf87a0d48d96c0b499d720",
+              "total_characters": 5654,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "dc18c164b14037d39a5fc593b0ea50e296bfd5ab764b52a088bbd7f7eef08d00",
+      "record": {
+        "action_id": "house:119:2:230",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question is ordering the previous question on1398. No substantive motion body is interpreted. Non-counting procedural context establishes no policy component support/opposition or enactment; keep separate from substantive deemed substitutes and final passage.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:230",
+            "url": "https://clerk.house.gov/evs/2026/roll230.xml",
+            "raw_sha256": "6ec494aaa9a64df9edd036b15a231c7a2117512a2c8f46f79f689f34feea227f",
+            "governed_bytes_sha256": "15df9fc770932fc0d429d615105a967fb6a99bcfaab0fe1c63520a5f8ab73573"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "61b3712acbd67a28505cedf528792e5040eca691b288d380fd6cf841f6fb6b14",
+      "record": {
+        "action_id": "house:119:2:231",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete floor-printed1398bodyread. This failed rule would deem8800RCP119–33,8884RCP119–34 and1383preamblePartC adopted, and directs engrossment ofS1383into8800;8595would only be considered with amendments made in order. The whole incorporated defense/SSA/preamble bundle requires exact print/version/material baseline and domain review. Failure does not adopt any deemed text, and made-in-order amendments are not thereby approved. Not merely scheduling or an isolated military-construction/technical clause. No appropriation, benefit demonstration, policy outcome or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:231",
+            "url": "https://clerk.house.gov/evs/2026/roll231.xml",
+            "raw_sha256": "dd744439e153320d3040364a2d545d6a7b7fac105cf2fa7146e57a888896019c",
+            "governed_bytes_sha256": "18dfe4e9cd55c41f76e13e21aa4c4156e6aac3021a16a6740f125d60a1ece8ed"
+          },
+          {
+            "source_id": "congressional-record:2026-06-30-1398-exact-body",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-30/pdf/CREC-2026-06-30-house.pdf",
+            "raw_sha256": "75a23dea753d21bed1a0a2cf08de6a9a33f3b8ac48a1ce2f16fb7ff392682ce9",
+            "governed_bytes_sha256": "37a9038537910900cca8112f7e01af60b8a5676f6a8c60b4408bee54db435aef"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-06-30-1398-exact-body",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/02b7cff6de7dfb6632cd62728e00cf2f62ae5521fa39a72d6adaf7387098aa5f.0000000.json",
+                  "sha256": "2e178a4854067b01b156ad46b80d9df18a2e0ebe12132350579fed14972a7436",
+                  "start_character": 0,
+                  "end_character": 10200
+                }
+              ],
+              "utf8_sha256": "02b7cff6de7dfb6632cd62728e00cf2f62ae5521fa39a72d6adaf7387098aa5f",
+              "total_characters": 10200,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "628dadfd72307ec507f5325649b60e47618292170a7f7710fc007a2db123a59b",
+      "record": {
+        "action_id": "house:119:2:232",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete own108floorbody and own recorded rejection read. Whole substantive WarPowers direction concerns Lebanonhostilities removal7daysafterADOPTION, preserving security cooperation with LebaneseArmedForces/protection of diplomaticfacilities and no-use-of-force-authorization construction. It is not nonbinding expression, a technical infrastructure program or the earlier84Lebanonresolution without these exact clauses. Recorded189–235with7NotVoting rejects adoption; no actual withdrawal, legal compliance, military incident or enactment is inferred. Proposed Infrastructure exclusion only.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:232",
+            "url": "https://clerk.house.gov/evs/2026/roll232.xml",
+            "raw_sha256": "7c3e631d97a99968c4753bd69ae5fc4af4a7e6449478611ae08366638bab1544",
+            "governed_bytes_sha256": "b453d55622dd9fa0cbabd99990c77788b3c48abe984f39eefc030caeacd40c55"
+          },
+          {
+            "source_id": "congressional-record:hconres108-complete-floor-body144",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-29/html/CREC-2026-06-29-pt1-PgH4304.htm",
+            "raw_sha256": "14409121c7735c60422d08f8647aa7f65c95896f1eeb22181ada6f13cd13807f",
+            "governed_bytes_sha256": "f0d8f2d9526f457b41584bd43e0eeee318a7f0112125c9f6e56b6510dfca1d2c"
+          },
+          {
+            "source_id": "congressional-record:hconres108-roll232-choice144",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-30/pdf/CREC-2026-06-30-house.pdf",
+            "raw_sha256": "75a23dea753d21bed1a0a2cf08de6a9a33f3b8ac48a1ce2f16fb7ff392682ce9",
+            "governed_bytes_sha256": "b0a49c1e5e4496a1f761c48abd2416fd641a7882cdcfb669bf95814a6ca1f288"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:hconres108-complete-floor-body144",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Mr. MAST. Mr. Speaker, pursuant to order of the House of June 29, 2026, I call up the concurrent resolution (H. Con. Res. 108) directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from hostilities in Lebanon, and ask for its immediate consideration. The Clerk read the title of the concurrent resolution. The SPEAKER pro tempore. Pursuant to the order of the House of today, the concurrent resolution is considered read. The text of the concurrent resolution is as follows: H. Con. Res. 108 Resolved by the House of Representatives (the Senate concurring), SECTION 1. REMOVAL OF UNITED STATES ARMED FORCES FROM ANY HOSTILITIES IN LEBANON. Termination.--Pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress directs the President to remove the United States Armed Forces from any hostilities in Lebanon by not later than the date that is 7 days after the date of the adoption of this concurrent resolution. SEC. 2 RULE OF CONSTRUCTION RELATING TO CERTAIN ACTIVITIES. Nothing in this concurrent resolution may be construed to prevent or limit security cooperation with the Lebanese Armed Forces or the protection of diplomatic facilities. SEC. 3 RULE OF CONSTRUCTION RELATING TO THE NONAUTHORIZATION OF THE USE OF MILITARY FORCE. Consistent with section 8(a)(1) of the War Powers Resolution (50 U.S.C. 1547(a)(1)), nothing in this concurrent resolution may be construed as authorizing the use of military force. "
+          },
+          {
+            "source_id": "congressional-record:hconres108-roll232-choice144",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "DIRECTING THE PRESIDENT PUR-\nSUANT TO SECTION 5(C) OF THE\nWAR POWERS RESOLUTION TO\nREMOVE UNITED STATES ARMED\nFORCES FROM HOSTILITIES IN\nLEBANON\nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on adoption\nof the concurrent resolution (H. Con.\nRes. 108) directing the President pursu-\nant to section 5(c) of the War Powers\nResolution to remove United States\nArmed Forces from hostilities in Leb-\nanon, on which the yeas and nays were\nordered.\nThe Clerk read the title of the con-\ncurrent resolution.\nThe SPEAKER pro tempore. The\nquestion is on the adoption of the con-\ncurrent resolution.\nThis is a 5-minute vote.\nThe vote was taken by electronic de-\nvice, and there were—yeas 189, nays\n235, not voting 7, as follows:\n[Roll No. 232]\n\n\nSo the concurrent resolution was not\nagreed to.\nThe result of the vote was announced\nas above recorded.\nA motion to reconsider was laid on\nthe table."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0c60d8fbee28c258e44750268489701ba044c2b783f20d21ced6fd31a093f9f8",
+      "record": {
+        "action_id": "house:119:2:233",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete1399EHread. This House-internal operative disclosure requires Ethics/WorkplaceRights entities within60daysafterADOPTION to publish a consolidated named-member list with taxpayer-payment amounts for specified sexual-harassment/abuse matters and three aggregate categories for other member/employee matters. Any sexual component controls inclusion despite another classification. It is not merely expression; public disclosure/aggregation itself creates no technical/physical/scientific program. Proposed Infrastructure exclusion preserves category/privacy distinctions without asserting actual allegations, settlements, misconduct, guilt or motive for any individual.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:233",
+            "url": "https://clerk.house.gov/evs/2026/roll233.xml",
+            "raw_sha256": "714d1393e648034fd4c8f414086410a48861c6cf51194f75f2167d11a4a7ba16",
+            "governed_bytes_sha256": "0d745625e13b8b4bb913202927d100aa36ebfa031cf752de40b8ce086813aafc"
+          },
+          {
+            "source_id": "govinfo:hres1399eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1399eh/html/BILLS-119hres1399eh.htm",
+            "raw_sha256": "6418c537f4f291f303b06fdd7e78209110e1b8647a3cfce9c1df4e610316a73a",
+            "governed_bytes_sha256": "c7ffbbc87930f16b3b473f82a3e7468556393d9e04740f52422be2225d0a209f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1399eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1399 Engrossed in House (EH)] <DOC> H. Res. 1399 In the House of Representatives, U. S., June 30, 2026. Whereas transparency is essential for accountability in government; Whereas sexual harassment and unwelcome sexual advances by Members, Delegates, or Resident Commissioners, in violation of clause 9 and clause 18 of rule XXIII of the Rules of the House, affect the safety, dignity, and the integrity of the proceedings of the House of Representatives: Now, therefore, be it Resolved, (1) That with respect to reviews, investigations, or matters which the Committee on Ethics or the Office of Congressional Workplace Rights have reviewed, conducted, or facilitated, the Committee on Ethics and the Office of Congressional Workplace Rights shall, not later than 60 days after the adoption of this resolution, make publicly available-- (A) a single consolidated list that sets forth separately for each Member, Delegate, or Resident Commissioner-- (i) the name of each Member, Delegate, or Resident Commissioner who was the subject of any review or investigation involving a violation of clause 9 of Rule XXIII of the Rules of the House of Representatives, as it pertains to acts of sexual harassment, or clause 18 of Rule XXIII of the Rules of the House of Representatives, or any case involving sexual harassment or sexual abuse, if it resulted in a payment of taxpayer funds; and (ii) adjacent to each such name, the total amount of taxpayer funds included in all settlements, payments, reimbursements, awards, or other financial considerations paid in connection with such matters; (B) the aggregate total amount of taxpayer funds included in all settlements, payments, reimbursements, awards, or other financial considerations paid in connection with such reviews, investigations, or matters involving Members, Delegates, or Resident Commissioners that did not, in any portion of the settlement, involve sexual harassment, sexual abuse, or sexual misconduct; (C) the aggregate total amount of taxpayer funds included in all settlements, payments, reimbursements, awards, or other financial considerations paid in connection with such reviews, investigations, or matters involving, in part or in full, sexual harassment, sexual abuse, or sexual misconduct by employees of the House of Representatives; and (D) the aggregate total amount of taxpayer funds included in all settlements, payments, reimbursements, awards, or other financial considerations paid in connection with such reviews, investigations, or matters involving conduct by employees of the House of Representatives that did not, in any portion of the settlement, involve sexual harassment, sexual abuse, or sexual misconduct. (2) That for purposes of this resolution, any such settlement, payment, reimbursement, award, or other financial consideration shall be treated as involving sexual harassment, sexual abuse, or sexual misconduct if sexual harassment, sexual abuse, or sexual misconduct was any component of the matter, regardless of whether the matter also involved, was classified as, or was resolved under another claim, violation, or category. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "dec52f463a96a241e06e79041690f987b0b4041090d1bcde0933961d33e8c2b0",
+      "record": {
+        "action_id": "house:119:2:236",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question is ordering the previous question on1423. No substantive motion body is interpreted. Non-counting procedural context establishes no policy component support/opposition or enactment; keep separate from substantive deemed substitutes and final passage.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:236",
+            "url": "https://clerk.house.gov/evs/2026/roll236.xml",
+            "raw_sha256": "9d9634b122bf807052454591451f6a2de4e31d123d40b8fbc00ebac5786866ad",
+            "governed_bytes_sha256": "136e6db9bdc5715c601146261a2f37f1626f1fd711971576c26fcf6fc019c625"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c82d2586f30d702061881752ac13c452760cd10c098a1f90d76c136ecf6b368f",
+      "record": {
+        "action_id": "house:119:2:237",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1423EHread. It deems the9237PartB and1181FinancialServices substitute adopted;139and8595are made in order and8595engrossment addsS1383. Whole incorporated VA/merchant-code/other versions and material baselines require review. The RulesPartA8595amendments are only made in order, not all adopted; this is a substantive deemed bundle rather than pure scheduling or an isolated digital-code clause. LaterStateappropriations assembly is not a version preimage for earlier rejected1398. No policy/enactment or technical outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:237",
+            "url": "https://clerk.house.gov/evs/2026/roll237.xml",
+            "raw_sha256": "5692629bcc5f548414b4fb09cb492ade85d2cab2588afd2a47026e8dc3ec8f59",
+            "governed_bytes_sha256": "73088f8aaa17d6156fb1601ce4ea56e49f52db5eb923febbb489d8669d330db5"
+          },
+          {
+            "source_id": "govinfo:hres1423eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1423eh/html/BILLS-119hres1423eh.htm",
+            "raw_sha256": "7e136bbbf7ca4e58ca91bd3b4cdf2a303c3580ff62d4bc66b24d2dbc798d4e3e",
+            "governed_bytes_sha256": "6a1ad0235bd8aede4cd79a7748db956c2e94c4bfc9f8ca2ccf9819876113073c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1423eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/61aeeda59cd85f461024f81d6322216ad0351295168272270802bd63f50c356c.0000000.json",
+                  "sha256": "ab808a1b25800aac207659f457057fdf9af7679220a5da3f51802e3e3b1ff117",
+                  "start_character": 0,
+                  "end_character": 6750
+                }
+              ],
+              "utf8_sha256": "61aeeda59cd85f461024f81d6322216ad0351295168272270802bd63f50c356c",
+              "total_characters": 6750,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "71395e6bb71d90b959a7762454f5a167b7ac41d84111fa9d88bf631f1ba42060",
+      "record": {
+        "action_id": "house:119:2:239",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question is recommittal of1181. No substantive motion body is interpreted. Non-counting procedural context establishes no policy component support/opposition or enactment; keep separate from substantive deemed substitutes and final passage.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:239",
+            "url": "https://clerk.house.gov/evs/2026/roll239.xml",
+            "raw_sha256": "32480abc2a9c1e385ed56b17b6a5f72016d8499ba7c5f3e8616c93ad84580d48",
+            "governed_bytes_sha256": "7a4770863e9428553231539e2a5672b7316c18eedea8fc114e072adc9858013a"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "1e12be36fefdf1406b6cf59704e6f783a904a33396623622c2d35f6cd441c938",
+      "record": {
+        "action_id": "house:119:2:240",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1181EHread. Whole merchant-category-code package restricts network requirements/covered-entity assignment for firearms retailers, establishes mandatory complaint investigation/conditional notice/remedy and discretionary injunction, no private right, qualified preemption, annual reports and definitions.90daysforcomplaintprocess and30daysafterreceiptforremedy differ. The compliance/fraud/transaction-integrity/data-breach/cyber-risk exception remains; no blanket ban on transaction records or all suspicious-activity compliance follows. Payment-network infrastructure definition is not itself a construction mandate. Material921definitions, code framework and whole technology/data-governance versus firearms/financial-regulation mapping remain pending. No actual retailer surveillance, privacy violation, stopped investigation or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:240",
+            "url": "https://clerk.house.gov/evs/2026/roll240.xml",
+            "raw_sha256": "fe1c3b2b7a3ae809b952c7e8c31c2fb8227ec9d6aa986d05ab5c439518244a4f",
+            "governed_bytes_sha256": "8600fd34dfa4758417950ac270db91804fcd2d63d8ed017e39ddb54aa0d0b2a3"
+          },
+          {
+            "source_id": "govinfo:hr1181eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1181eh/html/BILLS-119hr1181eh.htm",
+            "raw_sha256": "3052ffe7df14e150979b03976d8b8705aee078dd1a216c2b9cc0a387147f64ce",
+            "governed_bytes_sha256": "2c17a978b820a28d5a15aae9ebfdd05002800dbe06eb43675da7663606f0ca08"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1181eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/065b445a9706851023410d9ed96cccabc0a524e1c4a2f34b92fb7e8aba328b84.0000000.json",
+                  "sha256": "02472c85517912d3244fda25075c800c3891c98cdf7235f798f8700ac57c27fb",
+                  "start_character": 0,
+                  "end_character": 6750
+                }
+              ],
+              "utf8_sha256": "065b445a9706851023410d9ed96cccabc0a524e1c4a2f34b92fb7e8aba328b84",
+              "total_characters": 6750,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "977742cc4d65ff8a853744ca117a9666211e35efeffd3e3bf4d8b28d64f9cb62",
+      "record": {
+        "action_id": "house:119:2:241",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own BoebertPartA1offering/report/recorded rejection and selected RHaccount-context slice read. Exact text removes the not-less-than$287800000Fulbright floor, not the full$647millionEducational/CulturalExchange account or a prohibition on allFulbright spending. Account lifetime/fee-credit/consultation/remainingallocationconditions and full program authority/domain remain pending; only the declared RHslice was read, not the wholeStatebill. Report rendering leaves a blank section artifact, not an invented section number. Recorded79–348with9NotVoting rejects the amendment; no executed cut, eliminatedprogram, student/scientific outcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:241",
+            "url": "https://clerk.house.gov/evs/2026/roll241.xml",
+            "raw_sha256": "7e1c32b212342b4c3d399430349165be8007c2aa192ec7559cf67814c0650946",
+            "governed_bytes_sha256": "759c78f59fb0d893db4ec19faffc5660c2dab7373d6f7e2cd52c13f3477cf267"
+          },
+          {
+            "source_id": "state:roll241-initial169",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "b089239d41ff6b06bf139d8417386a841b3bdb2922df70cd2fb8f180e125461c"
+          },
+          {
+            "source_id": "state:roll241-report169",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt749/html/CRPT-119hrpt749.htm",
+            "raw_sha256": "7d38f033da963fb4b583dafef140fff695fc7c0d2a15cf11c481f20b1b6a22c1",
+            "governed_bytes_sha256": "0734d487dbbac49c97158c8c734894d7f75f68e62459006c2364a6ad1e3520d1"
+          },
+          {
+            "source_id": "state:roll241-recorded169",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "b8e0a9429e3d42372925640493258676138ef02237cc71693651080aaa34db8a"
+          },
+          {
+            "source_id": "govinfo:hr8595rh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595rh/html/BILLS-119hr8595rh.htm",
+            "raw_sha256": "ba3fb55c5f1d27c5718854301c32e6035eac3f99d2f4c85810ef20ed4b4f746b",
+            "governed_bytes_sha256": "25d8cb54a95368ef42cbb0faea703689cf4fdab9435e1842a848125165564825"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "state:roll241-initial169",
+            "locator": "Complete retained own amendment or recorded result; Clerk owns member labels",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MS . BOEBERT \nThe Acting CHAIR. It is now in order \nto consider amendment No. 1 printed in \npart A of House Report 119–749. \nMs. BOEBERT. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 4, beginning on line 24, strike ‘‘, of \nwhich not less than $287,800,000 shall be for \nthe Fulbright Program’’. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from Colorado (Ms. \nB\nOEBERT). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMs. BOEBERT. Mr. Chair, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from Colorado will be \npostponed."
+          },
+          {
+            "source_id": "state:roll241-report169",
+            "locator": "Complete retained own amendment or recorded result; Clerk owns member labels",
+            "passage": "1. An Amendment To Be Offered by Representative Boebert of Colorado or a Designee, Debatable for 10 Minutes Page 4, beginning on line 24, strike ``, of which not less than $287,800,000 shall be for the Fulbright Program''. "
+          },
+          {
+            "source_id": "state:roll241-recorded169",
+            "locator": "Complete retained own amendment or recorded result; Clerk owns member labels",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MS . BOEBERT \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 1, printed in \npart A of House Report 119–749, offered \nby the gentlewoman from Colorado \n(Ms. B\nOEBERT), on which further pro-\nceedings were postponed and on which \nthe noes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe vote was taken by electronic de-\nvice, and there were—ayes 79, noes 348, \nnot voting 9, as follows: \n[Roll No. 241] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr8595rh",
+            "locator": "OnlyRHcharacter3259:5059accountcontextread; remainingbill/provisos unreviewed",
+            "passage": "the amounts deposited in the Consular and Border Security Programs account in this or any prior fiscal year pursuant to section 7069(e) of the Department of State, Foreign Operations, and Related Programs Appropriations Act, 2022 (division K of Public Law 117-103), $533,000,000 shall be available until expended for the purposes of such account, including to reduce passport backlogs and reduce visa wait times: Provided, That the Secretary of State may by regulation authorize State officials or the United States Postal Service to collect and retain the execution fee for each application for a passport accepted by such officials or by that Service. capital investment fund For necessary expenses of the Capital Investment Fund, as authorized, $413,615,000, to remain available until expended. educational and cultural exchange programs For necessary expenses of educational and cultural exchange programs, as authorized, $647,000,000, to remain available until expended, of which not less than $287,800,000 shall be for the Fulbright Program: Provided, That fees or other payments received from, or in connection with, English teaching, educational advising and counseling programs, and exchange visitor programs as authorized may be credited to this account, to remain available until expended: Provided further, That not later than 30 days after the date of enactment of this Act, the Secretary of State shall consult with the Committees on Appropriations on the allocation of funds made available under this heading by program, project, and activity: Provided further, That any substantive modifications from the prior fiscal year to programs funded under this heading in this Act, including program consolidation and closures, changes to eligibility criteria and geographic scope, and implem"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:229",
+      "original_source_object_sha256": "50db1618313d93ba8ea1d6fbb235c0ac459f63a6fb7a2e1376ea81fb24a72c54"
+    },
+    {
+      "source_id": "clerk:119:2:230",
+      "original_source_object_sha256": "2eb959060b535d99ce5f05a6cc99c1749d3a4ab776de7744180af3fdee401c9a"
+    },
+    {
+      "source_id": "clerk:119:2:231",
+      "original_source_object_sha256": "fabfe143b7604996dc0259fc70a87e645904d884d567a21de6c605cf7915bb64"
+    },
+    {
+      "source_id": "clerk:119:2:232",
+      "original_source_object_sha256": "36ce371d1f2d0d873ee13f863e0ab96bba7cf3b04712e5201de943a193092c3c"
+    },
+    {
+      "source_id": "clerk:119:2:233",
+      "original_source_object_sha256": "5857f0393f0ed1c3113510601addddd03684fc3cd6dcfc5adadcca4a5debcde8"
+    },
+    {
+      "source_id": "clerk:119:2:236",
+      "original_source_object_sha256": "57b26a4ea920c3f8ddc93510cffa229619980610eb677acb23dc19804b4eb548"
+    },
+    {
+      "source_id": "clerk:119:2:237",
+      "original_source_object_sha256": "0e12232ec0f272657ff79d1b23125b217ecabab7b192c73f83f7d5ecbafc2866"
+    },
+    {
+      "source_id": "clerk:119:2:239",
+      "original_source_object_sha256": "d1bead744076ca796c0bc928b8eac57c443cc3d0bf93fe445053bcd81958726c"
+    },
+    {
+      "source_id": "clerk:119:2:240",
+      "original_source_object_sha256": "db7479397deda1319837dacc9e02e2bf3d9d9a7565d093e4a756f4fb8f66dfdc"
+    },
+    {
+      "source_id": "clerk:119:2:241",
+      "original_source_object_sha256": "8639d687a154cefe215368ce55d8e039940adc3fd4ee1ad79f0eb479f213951d"
+    },
+    {
+      "source_id": "congressional-record:2026-06-30-1398-exact-body",
+      "original_source_object_sha256": "4760ec34746d5398d05bb3ad484568643b6d869c614c0ac47e509749e1d74349"
+    },
+    {
+      "source_id": "congressional-record:hconres108-complete-floor-body144",
+      "original_source_object_sha256": "5f63ccdb0f56d52563f966239889d5371f1889e9bd564dd303d84b2ecda19d51"
+    },
+    {
+      "source_id": "congressional-record:hconres108-roll232-choice144",
+      "original_source_object_sha256": "9e1f23194bd78a74d4cde6f8811e1fa0382aa3e225a1fbab97800156453354c7"
+    },
+    {
+      "source_id": "govinfo:hr1181eh",
+      "original_source_object_sha256": "6b214097766bc6c696163e89d7c7f9d72f3a26318c3141c0b9c524a31e88314b"
+    },
+    {
+      "source_id": "govinfo:hr7128eh",
+      "original_source_object_sha256": "55d25e7244a053dc6a523096fe97f03ec9dcce630591546a7938792e718151db"
+    },
+    {
+      "source_id": "govinfo:hr8595rh",
+      "original_source_object_sha256": "28b85521d53b0c91cad3a92f895fbfdbc6de720f35be81351af954ed8480ab2f"
+    },
+    {
+      "source_id": "govinfo:hres1399eh",
+      "original_source_object_sha256": "21e84ca407aaa0aba285e66b08b84393320d0808023ef705a1040965016f5ff5"
+    },
+    {
+      "source_id": "govinfo:hres1423eh",
+      "original_source_object_sha256": "7a605de5671f76ff672a59ee31e57191f13f18d8e6f68fac73ad2a9d978bde2e"
+    },
+    {
+      "source_id": "state:roll241-initial169",
+      "original_source_object_sha256": "78c234e298833f30afa13560937085fd8799ccbaef1964748eeb5e863013df55"
+    },
+    {
+      "source_id": "state:roll241-recorded169",
+      "original_source_object_sha256": "bab5c2dba2565f5d4881199caf248ab68577de048887454417ee40786be08313"
+    },
+    {
+      "source_id": "state:roll241-report169",
+      "original_source_object_sha256": "6efbdc9f885f1bb75b97cc8083f0fc5f381b004620d079e9753310a7c7a868f4"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr7128eh",
+      "governed_length": 5654,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "congressional-record:2026-06-30-1398-exact-body",
+      "governed_length": 10200,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "congressional-record:hconres108-complete-floor-body144",
+      "governed_length": 1502,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "congressional-record:hconres108-roll232-choice144",
+      "governed_length": 933,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "govinfo:hres1399eh",
+      "governed_length": 3230,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "govinfo:hres1423eh",
+      "governed_length": 6750,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "govinfo:hr1181eh",
+      "governed_length": 6750,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "state:roll241-initial169",
+      "governed_length": 850,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "state:roll241-report169",
+      "governed_length": 223,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "state:roll241-recorded169",
+      "governed_length": 733,
+      "review_extent": "Complete retained own bill/resolution/rule/amendment/result unit read; material remainingbaselines/currentapplication notcertified"
+    },
+    {
+      "source_id": "govinfo:hr8595rh",
+      "governed_length": 302844,
+      "review_extent": "OnlyRHcharacter3259:5059read; restunreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:229",
+        "evidence_unit": "complete_own_question_or_wholebody_with_declared_targetlimits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:230",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:231",
+        "evidence_unit": "complete_own_question_or_wholebody_with_declared_targetlimits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:232",
+        "evidence_unit": "complete_own_question_or_wholebody_with_declared_targetlimits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:233",
+        "evidence_unit": "complete_own_question_or_wholebody_with_declared_targetlimits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:236",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:237",
+        "evidence_unit": "complete_own_question_or_wholebody_with_declared_targetlimits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:239",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:240",
+        "evidence_unit": "complete_own_question_or_wholebody_with_declared_targetlimits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:241",
+        "evidence_unit": "complete_own_question_or_wholebody_with_declared_targetlimits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": null,
+    "inherited_focused_test_count": 128,
+    "inherited_focused_suite_head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+    "semantic_checks": 7,
+    "compiled_sha256": "13e92b1674b214e49c56a6c370584798bda9a50d9131fc75eba879bf8941a4d7"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "014a35ef6bd800ecb1e8be17c8f2dc4b53907db3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/authoring.json",
+      "git_blob": "ce06b745089851c6707d191ef4f3d13a7bac30ff",
+      "git_bytes_sha256": "cca3565e82ba945548aa2eeae39e05a60e49369474edcad0bc5c782ad16299d7"
+    },
+    "actions": []
+  }
+}

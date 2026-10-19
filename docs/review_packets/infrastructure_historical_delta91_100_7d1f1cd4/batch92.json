@@ -1,0 +1,661 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 92,
+  "exact_committed_head": "11e7063a998655526d83c4b2d4e7e3989ebafaaa",
+  "export_anchor_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "committed_provenance": {
+    "membership": {
+      "head": "11e7063a998655526d83c4b2d4e7e3989ebafaaa",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/membership_review.json",
+      "git_blob": "d35ca552028827a1cd4f9a7e4473bc79fef152e7",
+      "git_bytes_sha256": "f712fd560a93fc9e06d5de755772633e7f7ca7d8875f87e44950cfb60bb6c8f0"
+    },
+    "sources": {
+      "head": "11e7063a998655526d83c4b2d4e7e3989ebafaaa",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/sources.json",
+      "git_blob": "1f01bdefa5c038773396b1a89e362934cfb68aab",
+      "git_bytes_sha256": "00b0c8db2331054a9c2dd9071d211ae4733b1f194d7202bfbe1e1e1923ec54f6"
+    },
+    "screening": {
+      "head": "11e7063a998655526d83c4b2d4e7e3989ebafaaa",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/screening_receipt.json",
+      "git_blob": "de766b01d2de2984f3841c18973700723c2f660d",
+      "git_bytes_sha256": "8bc167932162dca65fa83a5609678f95acf145686e71233298b82a081cef89b1"
+    },
+    "screening_units": {
+      "head": "11e7063a998655526d83c4b2d4e7e3989ebafaaa",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/screening_units_receipt.json",
+      "git_blob": "68a955457d156cbcf4f729cce0e7ad8e6172ca98",
+      "git_bytes_sha256": "7b22ad0e1b500f8bd2459d0810baebe30f535869c9f71dbbba195ba51824caa2"
+    },
+    "validation": {
+      "head": "11e7063a998655526d83c4b2d4e7e3989ebafaaa",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/validation_receipt.json",
+      "git_blob": "78daf7bf23fc447a73fd53b198290a992694ec76",
+      "git_bytes_sha256": "db02143f7bdfb09e8cbe7bb6a5980ace295bf0b64732750fc04dd86cba6ce869"
+    }
+  },
+  "original_membership_review_sha256": "8b8052417e6494ece7661a1463441082e72835c5fcd91aa35646ac5f899b8077",
+  "new_screened_ids": [
+    "house:119:2:176",
+    "house:119:2:177",
+    "house:119:2:178",
+    "house:119:2:179",
+    "house:119:2:180",
+    "house:119:2:182",
+    "house:119:2:183",
+    "house:119:2:184",
+    "house:119:2:185",
+    "house:119:2:186"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "392ddfbde9c2da9404da7d82d74a944ad73628c922b9e530afa4c1d55ce96eee",
+      "record": {
+        "action_id": "house:119:2:176",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete571character1299deemed-concurrence opening and only0:1800/302854:303654of303654character replacement read. Adoption deems the House to concur in the Senateamendment to6644with a whole replacement housing/banking package; it is not merely consideration or a Houseexpression. Earlier6644passage is a distinct version/choice. Technical housing/building/land-database/sensor and endingCBDC/no-additional-funds items cannot stand in for the whole. Existing Health/Immigrationqualified whole-meaning candidates are identified, not independently rewritten or chosen from partial reading; whole source/version/qualifications/canonical reuse/domain review remain pending. No selected repair, tenant, data, banking or appropriation fragment, current law or realized housing/financial outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:176",
+            "url": "https://clerk.house.gov/evs/2026/roll176.xml",
+            "raw_sha256": "d8144acb9a26747d25704607a577bfcb62ab844c56364ebace6a93470c067fea",
+            "governed_bytes_sha256": "23eae212d00234d0b68ea9dfc3d3d3b5a89ab2d87acefa65aaceb7248852e0ca"
+          },
+          {
+            "source_id": "govinfo:hres1299eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1299eh/html/BILLS-119hres1299eh.htm",
+            "raw_sha256": "99944ee9b0dcd54181205cbfe8e361b0f40f1015f758f21c7bb19755a9394659",
+            "governed_bytes_sha256": "0290ce49d86706a1883e2b87c564b68d257335f3c00ed664de344914147aa393"
+          },
+          {
+            "source_id": "govinfo:hres1299eh-full-housing",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1299eh/html/BILLS-119hres1299eh.htm",
+            "raw_sha256": "99944ee9b0dcd54181205cbfe8e361b0f40f1015f758f21c7bb19755a9394659",
+            "governed_bytes_sha256": "e0fcac3f4e595b9b32f32ea3c2c3d989efb69035be532ba1b03ea2d4007560ad"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1299eh",
+            "locator": "Complete retained deemed-concurrence opening only; does not include full replacement",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1299 Engrossed in House (EH)] <DOC> H. Res. 1299 In the House of Representatives, U. S., May 20, 2026. Resolved, That upon the adoption of this resolution the House shall be considered to have taken from the Speaker's table the bill, H.R. 6644, with the Senate amendment thereto, and to have concurred in the Senate amendment with the following amendment: In lieu of the matter proposed to be inserted by the amendment of the Senate to the text of the bill, insert the following: "
+          },
+          {
+            "source_id": "govinfo:hres1299eh-full-housing",
+            "locator": "Only opening0:1800read;303654character whole interior unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1299 Engrossed in House (EH)] <DOC> H. Res. 1299 In the House of Representatives, U. S., May 20, 2026. Resolved, That upon the adoption of this resolution the House shall be considered to have taken from the Speaker's table the bill, H.R. 6644, with the Senate amendment thereto, and to have concurred in the Senate amendment with the following amendment: In lieu of the matter proposed to be inserted by the amendment of the Senate to the text of the bill, insert the following: SECTION 1. SHORT TITLE; TABLE OF CONTENTS. (a) Short Title.--This Act may be cited as the ``21st Century ROAD to Housing Act''. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title; table of contents. TITLE I--OPPORTUNITIES FOR HOUSING Sec. 101. Reforms to housing counseling and financial literacy programs. Sec. 102. Federal guidelines for point access block buildings. Sec. 103. Exemption on construction or modification of residential housing located on an infill site. Sec. 104. Database of publicly owned land. Sec. 105. FHA Small-Dollar Mortgages. Sec. 106. Temperature Sensor Pilot Program. Sec. 107. Housing supply frameworks. TITLE II--BUILDING MORE IN AMERICA Sec. 201. Increasing housing in opportunity zones. Sec. 202. Whole-Home Repairs Act. Sec. 203. Community Investment and Prosperity Act. Sec. 204. Addition of affordable housing construction as an eligible activity. Sec. 205. Better Use of Intergovernmental and Local Development (BUILD) Housing Act. Sec. 206. Unlocking Housing Supply Through Streamlined and Modernized Reviews Act. Sec. 207. Grants for planning and implementation associated with affordable housing. Sec. 208. Innovation Fund. Sec. 209. Accelerating"
+          },
+          {
+            "source_id": "govinfo:hres1299eh-full-housing",
+            "locator": "Only closing302854:303654read",
+            "passage": ". ``(e) Rule of Construction.--Nothing in this section shall be construed to allow the Board of Governors of the Federal Reserve to issue a central bank digital currency or any digital asset that is substantially similar to a central bank digital currency directly or indirectly absent authorization by an Act of Congress.''. TITLE XII--MISCELLANEOUS SEC. 1201. SEVERABILITY. If any provision of this Act, or the application thereof to any person or circumstance, is held invalid, the remainder of the Act, and the application of such provisions to other persons or circumstances, shall not be affected thereby. SEC. 1202. NO ADDITIONAL FUNDS AUTHORIZED. No additional funds are authorized to be appropriated to carry out the requirements of this Act or any amendment made by this Act. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2c190527b3dd5836243b9f73dce3638fe6f6cd96b5e7e66c3cbfaeffaf1bbe27",
+      "record": {
+        "action_id": "house:119:2:177",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete3234EHchanges reciprocal-deposit treatment using the SUMof50percentofliabilitiesportionup-to1b,40percentofportionover1bthrough10b,and30percentofportionover10bthrough250b, not one rate applied to all liabilities. It changes agent-institution exam-rating wording, requires FDIC/Fedquantitative/qualitative reciprocal-deposit study/report within6months with specified extent-practicable analyses, and reduces statutoryFedSurpluscapby28m effectiveSep1,2036. This whole bank-deposit/regulatory-study/financial-offset package creates no scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Generic financial data analysis is not a technology-platform mandate; no individual bank/risk/coverage/interest/lending or realized saving is certified, and existing legal comparisons/currentcap are uninspected.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:177",
+            "url": "https://clerk.house.gov/evs/2026/roll177.xml",
+            "raw_sha256": "b986366eeb674fc197b7a0500b7e88fcbc7e6a86c149b6cf224cd54e16069c36",
+            "governed_bytes_sha256": "b162ceb6c32a799b9b9d919b12f7510dc1c367e01558c0c14fa07754e1b419fb"
+          },
+          {
+            "source_id": "govinfo:hr3234eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3234eh/html/BILLS-119hr3234eh.htm",
+            "raw_sha256": "6a7b7ada4462a3fe5d51793beb5714c69def07eac5a18410445626482630ff7b",
+            "governed_bytes_sha256": "6755e04747af3996fcfe27ae57173bd9d05b2c3e0da9ffe6b6ab2fb265755412"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3234eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8eebfd6ba86934b1d288e3ecca0789beb08944372df3644af55675ff92674298.0000000.json",
+                  "sha256": "9f3e04715ec6866c1c66bd6689c1a99febbe45d5a5b8721429022afa818988c9",
+                  "start_character": 0,
+                  "end_character": 4102
+                }
+              ],
+              "utf8_sha256": "8eebfd6ba86934b1d288e3ecca0789beb08944372df3644af55675ff92674298",
+              "total_characters": 4102,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d953adb4d4c0ee36fde6806ec8047f5290142d2109835aace4798c8625c685a7",
+      "record": {
+        "action_id": "house:119:2:178",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete4544EHrequires agency application/capital-raising reviews with investor-protection context, practicable information reuse, request-triggered caseworkers/voluntary mentor lists, outreach and State/stakeholder plans. Reports are due1yearthenannuallyfor5years; plans2yearsthenevery5years with public-comment consideration;24mFedSurpluscapreduction effectiveSep1,2036is separate. It creates no automatic charter/insurance approval, lending promise or specified technical/physical-infrastructure program. Whole deNovobank/credit-union administrative and financial package is a proposed Infrastructure exclusion; publicwebreports/forms/training are generic process duties rather than a technology system. No actual bank access, approval speed, capital, current eligible institution or fiscal outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:178",
+            "url": "https://clerk.house.gov/evs/2026/roll178.xml",
+            "raw_sha256": "6540f2a15b7c3ab40f941d1437d059140445b9bd7df9270f358edfe123fee05a",
+            "governed_bytes_sha256": "60a0d503d49a63e53a7a3e1e957ee7db70f64dbc33cf8cc38a43839e6f8a2c67"
+          },
+          {
+            "source_id": "govinfo:hr4544eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4544eh/html/BILLS-119hr4544eh.htm",
+            "raw_sha256": "7a2abf62d359b124d2c8dfa14ccaefec25e99474475ee88c87ff5cf6764ff50e",
+            "governed_bytes_sha256": "7865797547a86db4735e40386d3a7728a3f7ad207c17ec8547ee8a6450277997"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4544eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/b7491749640e5c1aa8e1b2ab0fd70a63b3d3fadecbb2627023b94149d7e4c59b.0000000.json",
+                  "sha256": "2287878330aec7bd1fca34017c64bb9498560a46a41972eff0436abc5493ba6b",
+                  "start_character": 0,
+                  "end_character": 8288
+                }
+              ],
+              "utf8_sha256": "b7491749640e5c1aa8e1b2ab0fd70a63b3d3fadecbb2627023b94149d7e4c59b",
+              "total_characters": 8288,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "809f786a9a1b51344507fe6b6849d802b6f60e44ed5ad6d6593620854836bafc",
+      "record": {
+        "action_id": "house:119:2:179",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete5317EHlimits qualifying custodial-deposit broker exclusion to20percentoftotalliabilities; eligibility requires under10bassets plus specified rating/capital conditions OR referencedwaiver, with formal custodial/fiduciary definitions and fee exclusion. Separate rules restrict rates for covered deposits accepted while notwellcapitalized against local/comparable-national benchmarks.4mFedSurpluscapreduction effectiveSep1,2036is separate. This whole deposit/insurance/rate/offset package creates no technical/scientific/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Preserve asset-versus-liability denominators and conditional waiver path; no universal deposit exemption, guaranteed interest, insurance/capital/risk finding, individual eligibility or realized saving is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:179",
+            "url": "https://clerk.house.gov/evs/2026/roll179.xml",
+            "raw_sha256": "57cd81296913c97e87735a897e707e91fcec5d4b43c3f9dec9dac982b3e2f3d6",
+            "governed_bytes_sha256": "774c8c2b4fcdeca15997b6e41a377dcc2e5a925160dbac9dacc4fb3b9a51b41b"
+          },
+          {
+            "source_id": "govinfo:hr5317eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5317eh/html/BILLS-119hr5317eh.htm",
+            "raw_sha256": "9b17c3b58b3a3fb7e536624f97c3368714db729debb5f80d85685a2d17093ae3",
+            "governed_bytes_sha256": "3af9c5cebe4f29fc2129581e04ae0196d4728d75fd3b4febce63721f5686c37d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5317eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/9073fe6c1e1c91fa985c001624cfe30351ef8ee6fcb2cc00ce93e6e2888bb4e7.0000000.json",
+                  "sha256": "55c58ecbb51d6420a7ced3acd196f88a887669ee6d1f0c1c108d25e830ab91e8",
+                  "start_character": 0,
+                  "end_character": 5614
+                }
+              ],
+              "utf8_sha256": "9073fe6c1e1c91fa985c001624cfe30351ef8ee6fcb2cc00ce93e6e2888bb4e7",
+              "total_characters": 5614,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "62cf2419a092e2cc74d64572c8567c7a535c6523aa607baa9262849f3721ea88",
+      "record": {
+        "action_id": "house:119:2:180",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete unamendedS2393ESand existing Healthshared whole meaning read. VASecretarymay carry out the defined fiscal2026StLouisbedtower/clinical expansion/adminbuilding-warehouse/utilityplant/parking project up to1762668000; separate authorization of appropriations is forFY2026ORtheyearfundsareappropriated toConstructionMajorProjects, not actual funding. Printed shorttitleFiscalYear2025and operativeFY2026distinction remains. Direct physical-facility/utility construction supports an Infrastructuremapping proposal, but the existing whole action/core must be reused with its source/qualification bindings and independently reviewed cross-domain mapping. Do not author a second narrowed clinical/utility/parking interpretation or count it automatically in this lane. No actual appropriation, obligated amount, completed project, admission rule or delivered care is established.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:180",
+            "url": "https://clerk.house.gov/evs/2026/roll180.xml",
+            "raw_sha256": "cdcf9b4380ba0f7daae98c341396bea2407bf587f4b8994b28a77f45c897895b",
+            "governed_bytes_sha256": "eb88c63efbc5d13d03dcf1107601a087a1049e141679d10d89718e30331fd83f"
+          },
+          {
+            "source_id": "govinfo:s2393es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2393es/html/BILLS-119s2393es.htm",
+            "raw_sha256": "529db2fc830de6b0d199418962d52867c7de1d17738b80518158155721b5e757",
+            "governed_bytes_sha256": "144cf0e5cc200e45790954355bcd42e45a247eee3ef64faba0d5e01beccec203"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s2393es",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S. 2393 Engrossed in Senate (ES)] <DOC> 119th CONGRESS 1st Session S. 2393 _______________________________________________________________________ AN ACT To authorize a major medical facility project for the Department of Veterans Affairs for fiscal year 2026 in St. Louis, Missouri, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Fiscal Year 2025 Veterans Affairs Major Medical Facility Authorization Act''. SEC. 2. AUTHORIZATION OF MAJOR MEDICAL FACILITY PROJECT OF DEPARTMENT OF VETERANS AFFAIRS FOR FISCAL YEAR 2026 IN ST. LOUIS, MISSOURI. (a) In General.--The Secretary of Veterans Affairs may carry out a major medical facility project in fiscal year 2026 in St. Louis, Missouri, that consists of the construction of a new bed tower, clinical building expansion, consolidated administrative building and warehouse, utility plant, and parking garages, in an amount not to exceed $1,762,668,000. (b) Authorization of Appropriations.--There is authorized to be appropriated to the Secretary of Veterans Affairs for fiscal year 2026 or the year in which funds are appropriated for the Construction, Major Projects account, $1,762,668,000 for the project authorized in subsection (a). Passed the Senate December 17, 2025. Attest: Secretary. 119th CONGRESS 1st Session S. 2393 _______________________________________________________________________ AN ACT To authorize a major medical facility project for the Department of Veterans Affairs for fiscal year 2026 in St. Louis, Missouri, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d04479ff700ca4e8d386e003a1213cf5e19b3e4a0c889c9885b82e902047c2f7",
+      "record": {
+        "action_id": "house:119:2:182",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete1993operative sections3–8read, opening0:1800/preamblefindingspartial. It mandates capped gold/silver commemorativecoins with physical specifications/design consultation, legal-tender/numismatic treatment, only2028issuance, pricing/discounts and35/10surcharges conditionally paid for Memorial/Museumoperations-maintenance after cost recovery, audits and annual-program-limit conditions. Anniversary subject is distinct from2028issuance; WestPointminting is a sense/recommendation, not an unconditional directive. Whole commemorative-currency/cultural fundraising is a proposed Infrastructure exclusion: coinmanufacturing specifications and generic museummaintenance receipts establish no construction, technical research or scientific/data-infrastructure program. No verified historical/health finding, actual sale, guaranteed donation, taxpayer-saving outcome or individual entitlement is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:182",
+            "url": "https://clerk.house.gov/evs/2026/roll182.xml",
+            "raw_sha256": "239613df38df911c2fe34025cd1c4a5a3cebf803e7d3b08fea77d464677e206e",
+            "governed_bytes_sha256": "88d88dee4265cbeb33df152de702f6553c37e259246bdd8d1d200867e55eeff0"
+          },
+          {
+            "source_id": "govinfo:hr1993eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1993eh/html/BILLS-119hr1993eh.htm",
+            "raw_sha256": "154b0d714f0ebf38983be6df41fb43b69b4962d4c4443c45a4dbe931be6864cc",
+            "governed_bytes_sha256": "acdc8a4c8fa90a2deb012ca934e27c0bfbd57c9eeb31f89beceaf1558c1dfdbc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1993eh",
+            "locator": "Only opening0:1800read; intervening preamblefindings not fully reviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1993 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 1993 _______________________________________________________________________ AN ACT To require the Secretary of the Treasury to mint coins in commemoration of the 25th anniversary of the September 11, 2001, terrorist attacks on the United States and to support programs at the National September 11 Memorial and Museum at the World Trade Center. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``25th Anniversary of 9/11 Commemorative Coin Act''. SEC. 2. FINDINGS. Congress finds the following: (1) On September 11, 2001, the United States suffered the deadliest terrorist attacks on United States soil (referred to in this section as ``the attacks''). (2) 2,977 people were killed during the attacks, marking the single worst foreign attack on United States soil since Pearl Harbor in 1941. (3) In New York City, 2 planes hit the Twin Towers during the attacks, causing both 110-story towers to collapse in less than 2 hours, as well as destroying 5 other buildings in the World Trade Center complex, leaving a death toll of 2,753 people, including all passengers and crew members of American Airlines Flight 11 and all passengers and crew members of United Airlines Flight 175. (4) During the attacks, American Airlines Flight 77 struck the side of the Pentagon, killing 184 passengers, crew members, and personnel. (5) In Pennsylvania, during the attacks, United Airlines Flight 93 crashed near Shanksville, killing all 40 passengers and crew members. (6) The attacks took the lives of 441 first responders in New York, spec"
+          },
+          {
+            "source_id": "govinfo:hr1993eh",
+            "locator": "Complete substantive operative sections3–8at3269:9049read",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/205ef53e094cf0f5f7ae139a5abc7baee3f3edff2b5a0cf9f108b5ef656dad63.0000000.json",
+                  "sha256": "c307611d81c18a04de5b94b6cbffbce7fbde31395dd4dcde5b65b805257cdb71",
+                  "start_character": 0,
+                  "end_character": 5780
+                }
+              ],
+              "utf8_sha256": "205ef53e094cf0f5f7ae139a5abc7baee3f3edff2b5a0cf9f108b5ef656dad63",
+              "total_characters": 5780,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "16ccdcd86877b23c0430ebd690913b10edad46e0de3d2eb2ec05f46993345caf",
+      "record": {
+        "action_id": "house:119:2:183",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is failed recommittal of2616. No substantive motion body is interpreted. This non-counting procedural action is distinct from the whole school-policy passage or deemed rule bundle, without component support/opposition, enacted mandate or technical/physical outcome.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:183",
+            "url": "https://clerk.house.gov/evs/2026/roll183.xml",
+            "raw_sha256": "7c58084f14e7685231830c2c97c969644c514782aa335da190f425cdaf03b711",
+            "governed_bytes_sha256": "f473d824bd93b7f5949c78119461295b1a665fba0c9826deb8c7407726012177"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "5c6e88b3f0e4e1b1272cd7af06f47a141ec5358b228b2464ab5c3701156b38b5",
+      "record": {
+        "action_id": "house:119:2:184",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete2616EHconditions specified ESEArecipient publicschools on parental consent before changing covered minor elementary/middle-grade students forms/name/pronouns/gender markers or sex-based accommodations, and adds an ESEAfund-use restriction using EO14168section2definition. It is not allstudents/allschools, a physical-school-construction mandate or a specified electronic-data platform. Whole parental-consent/education-curriculum funding condition establishes no technical/scientific/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Incorporated definitions/EOscope/current individual application remain uninspected; no universal bathroom ban, allschoolfund cancellation, personal health/motive finding or current legal outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:184",
+            "url": "https://clerk.house.gov/evs/2026/roll184.xml",
+            "raw_sha256": "a19c20f13e901cb3004949252066f2dd110099679e5c932edfbd8244322c04aa",
+            "governed_bytes_sha256": "e9bfa9c836980b34acf8403d851616ca1b154a3bf15e09a1a5b03e04464a85bd"
+          },
+          {
+            "source_id": "govinfo:hr2616eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2616eh/html/BILLS-119hr2616eh.htm",
+            "raw_sha256": "deacacd0e6762109a033c820155541e6a5f90ec8ded8e9ea7fdc3adaad0be189",
+            "governed_bytes_sha256": "a0ae59de79e6effad72d2d5218deae323a57b69a5c8fd89bc4111e192f4b9a4d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2616eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2616 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 2616 _______________________________________________________________________ AN ACT To require public elementary and middle schools that receive funds under the Elementary and Secondary Education Act of 1965 to obtain parental consent before changing a minor's gender markers, pronouns, or preferred name on any school form or sex-based accommodations, including locker rooms or bathrooms. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Stopping Indoctrination and Protecting Kids Act''. SEC. 2. PARENTAL CONSENT REQUIREMENT RELATED TO GENDER MARKERS, PRONOUNS, AND PREFERRED NAMES ON SCHOOL FORMS AND SEX- BASED ACCOMMODATIONS. (a) Requirement.--As a condition of receiving funds under the Elementary and Secondary Education Act of 1965 (20 U.S.C. 6301 et seq.), a public school that receives funds under such Act shall obtain parental consent before changing a covered student's-- (1) gender markers, pronouns, or preferred name on any school form; or (2) sex-based accommodations, including locker rooms or bathrooms. (b) Definitions.--In this section: (1) Covered student.--The term ``covered student'' means a minor who is-- (A) an elementary school student; or (B) a student in any of the middle grades. (2) ESEA terms.--The terms ``elementary school'', ``middle grades'', and ``parent'' have the meanings given such terms in section 8101 of the Elementary and Secondary Education Act of 1965 (20 U.S.C. 7801). SEC. 3. PROHIBITING USE OF ESEA FUNDS TO TEACH GENDER IDEOLOGY. Section 8526 of the Elementary and Secondary Education Act of 1965 (20 U.S.C. 7906) is amended-- (1) in paragraph (6), by striking ``or''; (2) by redesignating paragraph (7) as paragraph (8); and (3) by inserting after paragraph (6) the following: ``(7) to teach or advance concepts related to gender ideology, as defined in section 2 of Executive Order 14168 (90 Fed. Reg. 8615; relating to defending women from gender ideology extremism and restoring biological truth to the Federal Government); or''. Passed the House of Representatives May 20, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 2616 _______________________________________________________________________ AN ACT To require public elementary and middle schools that receive funds under the Elementary and Secondary Education Act of 1965 to obtain parental consent before changing a minor's gender markers, pronouns, or preferred name on any school form or sex-based accommodations, including locker rooms or bathrooms."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "298aba7defd078f35ea389b41b038066f5db927b9a83ddfb1364d48c8a036a87",
+      "record": {
+        "action_id": "house:119:2:185",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is ordering the previous question on1300. No substantive motion body is interpreted. This non-counting procedural action is distinct from the whole school-policy passage or deemed rule bundle, without component support/opposition, enacted mandate or technical/physical outcome.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:185",
+            "url": "https://clerk.house.gov/evs/2026/roll185.xml",
+            "raw_sha256": "145a2b5a59099b3c9fed2ddb765ecf1416e70bf652dcb515a5b62a2fa24f81e0",
+            "governed_bytes_sha256": "39ee28071dc27f8b5b34630e5eb5115b13c8377cb72b14cc17f745e204900122"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "717c69751ebd37e3b3ead16f06f404ed8559cb015f0ec88f350ca2d1f0c73453",
+      "record": {
+        "action_id": "house:119:2:186",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1300EHdeems committee substitutes for1041VA-to-DOJbackground-check information,6047compensationasmodifiedPartA,and1329WomenHistoryMuseumNationalMalllocationasmodifiedPartB. It also waives same-dayRulesreportconsideration threshold throughMay24legislativedayforreconciliation resolutions. Whole substitutes/modifications/VAdata-benefit/museum-site/baseline and issue mapping remain pending; not a pure scheduling rule or a selected NICSprivacy/museumconstruction component. No underlying benefit increase, gun/court status, siteconstruction, data-transfer change or enactment is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:186",
+            "url": "https://clerk.house.gov/evs/2026/roll186.xml",
+            "raw_sha256": "73ef756146fb52566b06309e049424332777e5b8d5a225d0a8ecfa6cdd481e44",
+            "governed_bytes_sha256": "84ea27e55e99a4a686566581cd4b5fbc9672ac5b5cb0bf56da5cba36ee51a107"
+          },
+          {
+            "source_id": "govinfo:hres1300eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1300eh/html/BILLS-119hres1300eh.htm",
+            "raw_sha256": "138f8d9250a4c87742254cd55d59f1856bc58ccb4fc05bd110702400aa1ce8f4",
+            "governed_bytes_sha256": "d1e39b9a89e0fb860a3115e4af75dd842d8a8e00c020e6dcd5651a463bdc7424"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1300eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1300 Engrossed in House (EH)] <DOC> H. Res. 1300 In the House of Representatives, U. S., May 20, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 1041) to amend title 38, United States Code, to prohibit the Secretary of Veterans Affairs from transmitting certain information to the Department of Justice for use by the national instant criminal background check system. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Veterans' Affairs now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Veterans' Affairs or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 6047) to amend title 38, United States Code, to direct the Secretary of Veterans Affairs to increase the dollar amounts for the payment of certain disability compensation and dependency and indemnity compensation under the laws administered by the Secretary. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Veterans' Affairs now printed in the bill, modified by the amendment printed in part A of the report of the Committee on Rules accompanying this resolution, shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Veterans' Affairs or their respective designees; and (2) one motion to recommit. Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 1329) to permit the Smithsonian American Women's History Museum to be located within the Reserve of the National Mall, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on House Administration now printed in the bill, modified by the amendment printed in part B of the report of the Committee on Rules accompanying this resolution, shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on House Administration or their respective designees; and (2) one motion to recommit. Sec. 4. The requirement of clause 6(a) of rule XIII for a two-thirds vote to consider a report from the Committee on Rules on the same day it is presented to the House is waived with respect to any resolution reported through the legislative day of May 24, 2026, relating to a measure providing for reconciliation pursuant to title II of S. Con. Res. 33. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:176",
+      "original_source_object_sha256": "5de8b3c3adbd7da5d34cf4051da837271ba0c80055c3347cde4c44723c95dc01"
+    },
+    {
+      "source_id": "clerk:119:2:177",
+      "original_source_object_sha256": "793762fbac58ca6d86aceb3f8d7524065d947f5669a7473c296e80dbd691b8cf"
+    },
+    {
+      "source_id": "clerk:119:2:178",
+      "original_source_object_sha256": "24aaf81c4f86837e05f21a053b838ff3235e398f90276e4f159559462e7ef018"
+    },
+    {
+      "source_id": "clerk:119:2:179",
+      "original_source_object_sha256": "34dc13cd018dc70619ec409d611792d3c7885ec1f3a90a682726f6c0de333aab"
+    },
+    {
+      "source_id": "clerk:119:2:180",
+      "original_source_object_sha256": "8f950ea1478980ae6aaed47f08ca7087442ff2da473c11d55c78d2b6d8b32f09"
+    },
+    {
+      "source_id": "clerk:119:2:182",
+      "original_source_object_sha256": "254faa1020fa0e009291d8887b30a92bed512e7b568d6b2356cd65b90d671fcf"
+    },
+    {
+      "source_id": "clerk:119:2:183",
+      "original_source_object_sha256": "6c017f3b503862c64dd632e4368d15a4a13881da5a4eb521a797d4cb0e4e0952"
+    },
+    {
+      "source_id": "clerk:119:2:184",
+      "original_source_object_sha256": "c43c43ce20ce24d6ea1e59f9d69f14585e19704918647f1e5ac177593f0b9948"
+    },
+    {
+      "source_id": "clerk:119:2:185",
+      "original_source_object_sha256": "1c746da2e7ecffbe523fa20c1b8191b434e402760ac41c36fe89ef09088fca84"
+    },
+    {
+      "source_id": "clerk:119:2:186",
+      "original_source_object_sha256": "11d6a5b7909c4d9c49419ccd666c2f7b8baaf4e07f3c0351447c3c718fa47be2"
+    },
+    {
+      "source_id": "govinfo:hr1993eh",
+      "original_source_object_sha256": "eb4dc8ee4ff6530edaac297f27329365b89a4b8a223a138707729bacc82f6cb5"
+    },
+    {
+      "source_id": "govinfo:hr2616eh",
+      "original_source_object_sha256": "8151bdf08c8890e6670bc0a9018738e15839360ccfb3db4462596bb5f4e637c3"
+    },
+    {
+      "source_id": "govinfo:hr3234eh",
+      "original_source_object_sha256": "ccfb0faa6d3f9facc7ec18f256472ff6148972f51ac9811b52cdb38a3b6f7bd2"
+    },
+    {
+      "source_id": "govinfo:hr4544eh",
+      "original_source_object_sha256": "035dcd71d6fed2df0fb51e94d71ee5fd42bf8a65b4720a4fd1dfa194b6b4965a"
+    },
+    {
+      "source_id": "govinfo:hr5317eh",
+      "original_source_object_sha256": "dea651291d7997b806d6824f21a2001733a36b97f4c1ae5a0b84019e731111b1"
+    },
+    {
+      "source_id": "govinfo:hres1299eh",
+      "original_source_object_sha256": "0da7b4310c5a883bc806218061fef94f91da82fa868ed8d442ee00310892ebb4"
+    },
+    {
+      "source_id": "govinfo:hres1299eh-full-housing",
+      "original_source_object_sha256": "0f24d3d259e18fb3b54b314d3f49a1aa082279989fcda36a7be88576b119d863"
+    },
+    {
+      "source_id": "govinfo:hres1300eh",
+      "original_source_object_sha256": "2d01ab4567cec85b56d4fd13631d694edcbe7c6c4b6d2f64c6d6fe4b309c7a83"
+    },
+    {
+      "source_id": "govinfo:s2393es",
+      "original_source_object_sha256": "9724a55494cae6f453a87c358ca674833237472b8313fd7fbec0c44bd108c5d6"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres1299eh",
+      "governed_length": 571,
+      "review_extent": "Complete retained own bill/rule or deemed-concurrence opening read; incorporated fullpackage/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr3234eh",
+      "governed_length": 4102,
+      "review_extent": "Complete retained own bill/rule or deemed-concurrence opening read; incorporated fullpackage/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr4544eh",
+      "governed_length": 8288,
+      "review_extent": "Complete retained own bill/rule or deemed-concurrence opening read; incorporated fullpackage/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr5317eh",
+      "governed_length": 5614,
+      "review_extent": "Complete retained own bill/rule or deemed-concurrence opening read; incorporated fullpackage/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:s2393es",
+      "governed_length": 1736,
+      "review_extent": "Complete retained own bill/rule or deemed-concurrence opening read; incorporated fullpackage/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr2616eh",
+      "governed_length": 2747,
+      "review_extent": "Complete retained own bill/rule or deemed-concurrence opening read; incorporated fullpackage/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1300eh",
+      "governed_length": 3859,
+      "review_extent": "Complete retained own bill/rule or deemed-concurrence opening read; incorporated fullpackage/baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1299eh-full-housing",
+      "governed_length": 303654,
+      "review_extent": "Only0:1800and302854:303654read; whole interior unreviewed"
+    },
+    {
+      "source_id": "govinfo:hr1993eh",
+      "governed_length": 9049,
+      "review_extent": "Only opening0:1800andcomplete operative sections3–8at3269:9049read; intervening findings not fully reviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "existing_shared_whole_meanings_identified_for_reuse": 2,
+    "units": [
+      {
+        "action_id": "house:119:2:176",
+        "evidence_unit": "partial_whole_deemed_housing_existing_qualified_reuse_pending",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:177",
+        "evidence_unit": "complete_own_bill_or_deemedrule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:178",
+        "evidence_unit": "complete_own_bill_or_deemedrule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:179",
+        "evidence_unit": "complete_own_bill_or_deemedrule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:180",
+        "evidence_unit": "complete_source_existing_whole_shared_project_reuse_mapping_pending",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:182",
+        "evidence_unit": "complete_operative_coin_package_preamble_partial",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:183",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:184",
+        "evidence_unit": "complete_own_bill_or_deemedrule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:185",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:186",
+        "evidence_unit": "complete_own_bill_or_deemedrule",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": null,
+    "inherited_focused_test_count": 118,
+    "inherited_focused_suite_head": "c100329dadbfb8e830d6af51e9dd7e6c1a6230e6",
+    "semantic_checks": 7,
+    "compiled_sha256": "ce66399b9ea97b0f6e0942c15876932fdbaef0104466ca2c1b0f4a11ae5eb938"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "11e7063a998655526d83c4b2d4e7e3989ebafaaa",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/authoring.json",
+      "git_blob": "722c90a0b1bbed3cb800bdde957cb0f8694714dd",
+      "git_bytes_sha256": "9ad4dca72ad0dd2ff048fcefc1375534eb8e9eb3d2e8c9aec438d4da722eb4c2"
+    },
+    "actions": []
+  }
+}

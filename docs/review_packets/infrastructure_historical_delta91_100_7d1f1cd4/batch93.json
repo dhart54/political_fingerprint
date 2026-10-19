@@ -1,0 +1,913 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 93,
+  "exact_committed_head": "3cabbd5aa8c0f3bca0ccec8155aafd1a041f0ae6",
+  "export_anchor_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "committed_provenance": {
+    "membership": {
+      "head": "3cabbd5aa8c0f3bca0ccec8155aafd1a041f0ae6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/membership_review.json",
+      "git_blob": "a2fa8f872ee25d093927fa86c378693967ab0775",
+      "git_bytes_sha256": "520eb556ce083fc1d85dd84309dd91d85cc7888ae3d9d67afecc8d950a63c2c4"
+    },
+    "sources": {
+      "head": "3cabbd5aa8c0f3bca0ccec8155aafd1a041f0ae6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/sources.json",
+      "git_blob": "c0edbdaa0103fab3bfd88f9b45d03178804a25f0",
+      "git_bytes_sha256": "5d21d3240190b51181861fe6e6e85dbbcd5f8d783fbb14f76a90f87f6d2337c3"
+    },
+    "screening": {
+      "head": "3cabbd5aa8c0f3bca0ccec8155aafd1a041f0ae6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/screening_receipt.json",
+      "git_blob": "8be02a4b460d7273ae16fe9e94850a5bc5962682",
+      "git_bytes_sha256": "3285b18d05b568a3b31fa36d3e165c9e7acabad28bef7cdfc51762c0b737fc60"
+    },
+    "screening_units": {
+      "head": "3cabbd5aa8c0f3bca0ccec8155aafd1a041f0ae6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/screening_units_receipt.json",
+      "git_blob": "3e7ae0b74ade4c48225a97ac2f65f3ab0ac4f397",
+      "git_bytes_sha256": "224536b3f1f4e523386fe876de7b8c2919d4b3d10f9bdc2a28496cfe6e464031"
+    },
+    "validation": {
+      "head": "3cabbd5aa8c0f3bca0ccec8155aafd1a041f0ae6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/validation_receipt.json",
+      "git_blob": "479223c4eea721eacb0a1400a81ff35110198650",
+      "git_bytes_sha256": "94d384f34f0198f354305d251dae4ea29c1bca648ea8d76607d53cfa8f300e83"
+    }
+  },
+  "original_membership_review_sha256": "40bb6445d6b48ece790f060ad04d162cad3837c1925e4d90c160033fc16ef4ab",
+  "new_screened_ids": [
+    "house:119:2:187",
+    "house:119:2:188",
+    "house:119:2:189",
+    "house:119:2:190",
+    "house:119:2:191",
+    "house:119:2:192",
+    "house:119:2:193",
+    "house:119:2:196",
+    "house:119:2:197",
+    "house:119:2:198"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "8b0caaf784698c0d52e935b544dededbf434b29cfeab304ca0dc16a94c2c52ce",
+      "record": {
+        "action_id": "house:119:2:187",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is failed recommittal of1329. No substantive motion body is interpreted. This is non-counting procedural context, separate from whole museum-site/mission, VAdata or child-care passage and without component policy positions, enacted duties or physical/technical outcomes.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:187",
+            "url": "https://clerk.house.gov/evs/2026/roll187.xml",
+            "raw_sha256": "e2d8733ca4b6eae980b728235249e081211b2f6f56f9b8840d313f820bc3e0a8",
+            "governed_bytes_sha256": "7666c39c74a8566b060b7651b0f95b387d67171c52a6c7e3cf724db5241084a6"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0c22a51e8e8af2e0e259f2e6f2fa6aae77d0531989ecaf147bac8a520d3f986d",
+      "record": {
+        "action_id": "house:119:2:188",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete contemporary1329callup/amended operative text read, binding the1300deemed substitute as modifiedPartB. Whole package changes Reserve/site designation with a180dayPresidentialalternative, administrative transfer, design/construction approvals/criteria/reimbursement, mission/exhibit/council-viewpoint and reporting clauses with retroactive effective language. It is not only NationalMallfacility permission: statutory biological-sex/mission/viewpoint requirements remain attributed bill terms, not a model identity/ideology judgment. The reporting clause prints amendmentsmadebysubsection(f)inside(f); preserve the self-reference without choosing an intended replacement. Material80t/commemorative-works/source-version and whole physical-site-versus-cultural/mission mapping remain pending; no selected museum-construction meaning, actualsite/design approval, historic-space effect or enactment is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:188",
+            "url": "https://clerk.house.gov/evs/2026/roll188.xml",
+            "raw_sha256": "9d45b832d5380ca3400ecc465f933d45f88130eb67f92f7c9dd9cb4833390c03",
+            "governed_bytes_sha256": "74b8d51b0ffee51819a56906b9adf4b047fb08263002c480a7115901c4bc8e12"
+          },
+          {
+            "source_id": "congressional-record:2026-05-21-hr1329-exact",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-21/pdf/CREC-2026-05-21-house.pdf",
+            "raw_sha256": "69f2b1bf08af58eb29e142c16e2fcc13cf4c8eb5bbdb2d57a210135e372f0238",
+            "governed_bytes_sha256": "72ba752894e21bb4ffd5c8201fadc4e9a071c3501165de7f901ef6f46c6e4c47"
+          },
+          {
+            "source_id": "govinfo:hres1300eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1300eh/html/BILLS-119hres1300eh.htm",
+            "raw_sha256": "138f8d9250a4c87742254cd55d59f1856bc58ccb4fc05bd110702400aa1ce8f4",
+            "governed_bytes_sha256": "d1e39b9a89e0fb860a3115e4af75dd842d8a8e00c020e6dcd5651a463bdc7424"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-05-21-hr1329-exact",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/62196cb9c7cd80e8d49da1a83cf2c51297f90ec9e6d082d77152cd2913d000c3.0000000.json",
+                  "sha256": "69e36b96f349192396554e76d0832f28cbc7ab9dc880a9da24f621ab70803eb1",
+                  "start_character": 0,
+                  "end_character": 8105
+                }
+              ],
+              "utf8_sha256": "62196cb9c7cd80e8d49da1a83cf2c51297f90ec9e6d082d77152cd2913d000c3",
+              "total_characters": 8105,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1300eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1300 Engrossed in House (EH)] <DOC> H. Res. 1300 In the House of Representatives, U. S., May 20, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 1041) to amend title 38, United States Code, to prohibit the Secretary of Veterans Affairs from transmitting certain information to the Department of Justice for use by the national instant criminal background check system. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Veterans' Affairs now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Veterans' Affairs or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 6047) to amend title 38, United States Code, to direct the Secretary of Veterans Affairs to increase the dollar amounts for the payment of certain disability compensation and dependency and indemnity compensation under the laws administered by the Secretary. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Veterans' Affairs now printed in the bill, modified by the amendment printed in part A of the report of the Committee on Rules accompanying this resolution, shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Veterans' Affairs or their respective designees; and (2) one motion to recommit. Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 1329) to permit the Smithsonian American Women's History Museum to be located within the Reserve of the National Mall, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on House Administration now printed in the bill, modified by the amendment printed in part B of the report of the Committee on Rules accompanying this resolution, shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on House Administration or their respective designees; and (2) one motion to recommit. Sec. 4. The requirement of clause 6(a) of rule XIII for a two-thirds vote to consider a report from the Committee on Rules on the same day it is presented to the House is waived with respect to any resolution reported through the legislative day of May 24, 2026, relating to a measure providing for reconciliation pursuant to title II of S. Con. Res. 33. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "494e32bdcbf43bba94cfcf1f09e45e15395c0cf9e64558f90b93cca4f39ca1eb",
+      "record": {
+        "action_id": "house:119:2:189",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is failed recommittal of1041. No substantive motion body is interpreted. This is non-counting procedural context, separate from whole museum-site/mission, VAdata or child-care passage and without component policy positions, enacted duties or physical/technical outcomes.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:189",
+            "url": "https://clerk.house.gov/evs/2026/roll189.xml",
+            "raw_sha256": "850147e43c9913096be0cbf44db79d524186a5ea7f4a97cfbdc71aca60b3a9d5",
+            "governed_bytes_sha256": "ccabfd90a4d61be2cf41fc69f85ceca83f2ebd9cbe91b9539c8c8c9900be1179"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a1f50ecd48d576fc37a84c30bc4d03f6a0f50b995cb60c79f31efcd0321a34fe",
+      "record": {
+        "action_id": "house:119:2:190",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1041EHread. It restricts VAtransmission toDOJforNICSofbeneficiaryPIIsolelyonfiduciarybasis without specified judicial-dangerfinding, directs30daynotification about prior solely-fiduciary transmissions fromNov30,1993, and limits treating a person as adjudicated under the stated statutory terminology solely fromVAincompetence/fiduciary determinations. These separate clauses do not bar every VA/DOJdataflow, automatically restore every firearm eligibility or establish a medical diagnosis. Whole5502/38CFR3.353/NICS/other adjudication/notification material baselines and data-governance versus general benefits/firearm-policy mapping remain pending; no individual dangerousness, legal status, transmission deletion, actual weapon access or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:190",
+            "url": "https://clerk.house.gov/evs/2026/roll190.xml",
+            "raw_sha256": "805c1ca5e6f2d9fd3a1f037ac9fb246895ec6ad3d0e28dfe30de51a75f9c629f",
+            "governed_bytes_sha256": "8eba64a84f95a721ef62120cbd489d27be30a1f25d1243608d38f99ef1a57df6"
+          },
+          {
+            "source_id": "govinfo:hr1041eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1041eh/html/BILLS-119hr1041eh.htm",
+            "raw_sha256": "80749a1bf75cada45f7ab07d0ce0b7309b1374d34438a338f67438b4fc0167c8",
+            "governed_bytes_sha256": "e89bea10f91e67181738e42bf0dfe5c5684102c094152ce287e6159d822abab6"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1041eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/c157b142d055054ddeaba44e7800d07f5a725c0bb533332ebb23c79121993f83.0000000.json",
+                  "sha256": "e444e2948c9e6e1fd4fb1200a76a90ba74241a63129df25abc7a926c6fbc5154",
+                  "start_character": 0,
+                  "end_character": 5433
+                }
+              ],
+              "utf8_sha256": "c157b142d055054ddeaba44e7800d07f5a725c0bb533332ebb23c79121993f83",
+              "total_characters": 5433,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "87e11335b4ccab04ade50e454b0640a932df1abfc907737edb1ce1a5de35ed93",
+      "record": {
+        "action_id": "house:119:2:191",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete6047EHread. Whole package combines833.33monthlyallowance for specified aid/attendance eligibility fromDec1,2026, conditional DICadjustments tied toSocialSecurityincrease plus1percentagepointfirst/0.5second with second-increase termination, housing-fee changes/extensions, pension-payment-limit extension and qualifiedGuard/Reservehousing-loan eligibility/extra fee/notice.14activedaysalone do not suffice: othernoneligibility and completedentry/skilltraining predicates and an added1.00percentagepointloanfee remain. It establishes benefit/credit/pension payment rules, not a physical-housing-construction, scientific or technical-infrastructure program, supporting a proposed Infrastructure exclusion. Existing Healthwholemeaning is not duplicated. No individual eligibility, disability/medical outcome, currentloanfee baseline, guaranteedhomeownership or actualpayment is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:191",
+            "url": "https://clerk.house.gov/evs/2026/roll191.xml",
+            "raw_sha256": "b910a7edc72b36e0e17fd3f3ab384a6225d3f24b0d7d52490a5d7acd0c12351e",
+            "governed_bytes_sha256": "88c4accd31d23ea0a291a94c0f6e6db50512679e3ea2c69b517977818cb57fe6"
+          },
+          {
+            "source_id": "govinfo:hr6047eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6047eh/html/BILLS-119hr6047eh.htm",
+            "raw_sha256": "b33c75f8a364efec9dbb8d17b46663f57cf78fc0761e1d2184ef0a99b32c089b",
+            "governed_bytes_sha256": "040eb13fadf41ac37922b8f80cb83d32b6d0f0bbf44547dcb92ec700845b245b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6047eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/06805b9c679278758696ed8f88ce8e864aae511f3f5058c99c2aa905fa356a57.0000000.json",
+                  "sha256": "f5977fff95ee62414c8e4ae1a16929b81e3eac1e1b3f895620991e698d3792eb",
+                  "start_character": 0,
+                  "end_character": 8966
+                }
+              ],
+              "utf8_sha256": "06805b9c679278758696ed8f88ce8e864aae511f3f5058c99c2aa905fa356a57",
+              "total_characters": 8966,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6570652b183bbec57d8a30a059347de7d307087bf78d4a591859ee29b592488a",
+      "record": {
+        "action_id": "house:119:2:192",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete7618EH and retained308101–106unit support an unaccepted whole technology/preservation-authorization/study candidate. Operative(d)deletion affects authorization, not(c)sharecap; allthree50percentshare rules remain. Shared2mforbothinterpretation/restoration, not2meach;18macquisitionendpoint and studies funding/certification/fromfunds/aftercertification clocks remain. New report inclusion does not override allsite/war/NPSboundary gates. Underlyingreports/currentlandstatus/land-use/restorationstandards not fully conformed; heritage/historical-study versus directtechnology/preservation mapping requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:192",
+            "url": "https://clerk.house.gov/evs/2026/roll192.xml",
+            "raw_sha256": "457876da057527a0ec279ae53f907cb6ad835d7a076d38c3e81ac174856a2321",
+            "governed_bytes_sha256": "6d2da2ce5d7f4a582259f40cfb0aae89f08c8ca5ee73d18640c7f24b463f90d2"
+          },
+          {
+            "source_id": "govinfo:hr7618eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7618eh/html/BILLS-119hr7618eh.htm",
+            "raw_sha256": "10f441145f84980f0eeaa7a3ea1008f79a81790ccb2e981662d857522a6a1a87",
+            "governed_bytes_sha256": "c21a124b77720cc36fb36c01d0cdad95dbc0f21eaae9664de5b7bffb276517cf"
+          },
+          {
+            "source_id": "govinfo:54usc3081-2024-operative134",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title54/pdf/USCODE-2024-title54-subtitleIII.pdf",
+            "raw_sha256": "9d857e6a67dfa67b61396b1b5462f8a4565861e4980b6d013ce04bbda3440ca7",
+            "governed_bytes_sha256": "c0758ec0ed2797e5d0b7d2ab378de9eae358053ddf7ddf8d410b92951a3314d8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7618eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/18a98ebfda4b4e1bb666a169f3a74c247777dccabf7f753c1894e09aaf70e63e.0000000.json",
+                  "sha256": "3f8c93a2170422c37124bef4afae228153278032f8f9a78c2058d7b5b040bd02",
+                  "start_character": 0,
+                  "end_character": 5272
+                }
+              ],
+              "utf8_sha256": "18a98ebfda4b4e1bb666a169f3a74c247777dccabf7f753c1894e09aaf70e63e",
+              "total_characters": 5272,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:54usc3081-2024-operative134",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/a0de36c48ba9863022f54c6648cc26f6d504ba3b7010b1849483313da264a15e.0000000.json",
+                  "sha256": "b30ebd0abe8f2da9e6e9180abf3d5ccedda35c81d7ce8b66debdf452b868cc81",
+                  "start_character": 0,
+                  "end_character": 6467
+                }
+              ],
+              "utf8_sha256": "a0de36c48ba9863022f54c6648cc26f6d504ba3b7010b1849483313da264a15e",
+              "total_characters": 6467,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr7618:119"
+      }
+    },
+    {
+      "original_record_sha256": "ff803990cc5098ec730d4a0ea60e75809a8aa110e1cc4f6127b20056493f516e",
+      "record": {
+        "action_id": "house:119:2:193",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "CompleteS254ESread: whole AlaskaNativehandicraft/marinemammal-taking/commerce package preserves specified residence/coast/traditionalnatural-material/non-mass-copying/nonwasteful predicates, depleted-stock regulatory route and tribalrights/consultation construction. Writtenpublic substantial-evidence/whole-record/Indigenousknowledge requirement has an applicability clause tied to an action brought by eligible AlaskaNativeorganizations; it is not automatically every marine-mammaldecision or blankettradefreedom. Whole1371/117/109taking-assessment/Statepreemption/legal-action baselines and science-evidence-governance versus cultural/commerce mapping remain pending. No speciesstatus, tribal membership, actualexemption, publicassessment, taking/trade lawfulness or ecological outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:193",
+            "url": "https://clerk.house.gov/evs/2026/roll193.xml",
+            "raw_sha256": "803adab8147ffec2fd443206e21c3c2b597fa717bf2a3cac5a35b6c4681a336f",
+            "governed_bytes_sha256": "a4fac84f3738aef95fc17bbf23ecf7fe5dd9ac3a8c348e77abc4485ea95d08e9"
+          },
+          {
+            "source_id": "govinfo:s254es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s254es/html/BILLS-119s254es.htm",
+            "raw_sha256": "9af71331d57e08880139162b106798723801fe091700c87a5a3caf98f1bb0411",
+            "governed_bytes_sha256": "2d8e7066f1694f1d15ddfb1c99ec960e90f39581deca0031ff1f3a2b8d1d8f2c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s254es",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/2d47090a8f9cbe5a6a99d185a37170aad006434e53cf25a919100d554d309add.0000000.json",
+                  "sha256": "e9d88b6aaa66ec2f6ca9ff8d32f4e0621d1cb01ed238cc206dd31c398cd4ad29",
+                  "start_character": 0,
+                  "end_character": 5750
+                }
+              ],
+              "utf8_sha256": "2d47090a8f9cbe5a6a99d185a37170aad006434e53cf25a919100d554d309add",
+              "total_characters": 5750,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "011d11dec4a2bbc1c28f9e15535a0f6e085e72bcc0d3d40ffc6ebb2a63017cb1",
+      "record": {
+        "action_id": "house:119:2:196",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete2860EH, originalTitleIV and captured report edition/complete membership portion support an unaccepted whole science/data/advisory/governance candidate. Preserve14baseplusadditionalpath, twoTribalappointments, government-employmenthigher-educationexception, limitednonvotingNOAAliaison, data/technicalduties versus noFederalregulatoryauthority, nofixednewappropriation, annualpublicbenchmarksreport and7yearfromenactment sunset. OtherReport/laterlaw/currentcharter/list/individualfunding remain unreviewed; reprintcommentary notstatutoryfunding/sunsetproof. Broad environmental/communityadvisory versus explicit scientific-data/technical-support mapping requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:196",
+            "url": "https://clerk.house.gov/evs/2026/roll196.xml",
+            "raw_sha256": "090951171f52fa18a99ffe3089e5d415e935042a41e9513836c4f6b55dc53615",
+            "governed_bytes_sha256": "4405e2f4c06d566ef25c372b7de5899a6ee3468cd65a50982328d6c013438a60"
+          },
+          {
+            "source_id": "govinfo:hr2860eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2860eh/html/BILLS-119hr2860eh.htm",
+            "raw_sha256": "d9454d7e9d959399427685915bef788d374c1fc826d7043743af19b71072dac4",
+            "governed_bytes_sha256": "4743c2b61f947252c09b52ce370355ee301b595499b6f340a60e80392b02f16a"
+          },
+          {
+            "source_id": "govinfo:pl105384-titleIV-original162",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-105publ384/html/PLAW-105publ384.htm",
+            "raw_sha256": "3aedfd5ac333495833dbc2b7c43ace6e291619b9d63478a4dc52091625d80abc",
+            "governed_bytes_sha256": "a44f7a2d91075bfb1a870db9cc6a7572fe47d06a4ee6a4372edc75444b1b50a2"
+          },
+          {
+            "source_id": "nwstraits:1998-report-reprint-edition168",
+            "url": "https://nwstraits.org/sites/default/files/2025-10/nwsc-1998-mm_report.pdf",
+            "raw_sha256": "eb199ef6a26a2b0b0469f7340ae7281ba8dea1f04757ea81e0cf3f6d6d115825",
+            "governed_bytes_sha256": "1fe926a52111fbb82b57eb49d4b9fe6eea71c9b7f8150c2da719ffd0a5767907"
+          },
+          {
+            "source_id": "nwstraits:1998-report-reprint-membership-complete169",
+            "url": "https://nwstraits.org/sites/default/files/2025-10/nwsc-1998-mm_report.pdf",
+            "raw_sha256": "eb199ef6a26a2b0b0469f7340ae7281ba8dea1f04757ea81e0cf3f6d6d115825",
+            "governed_bytes_sha256": "cf4ffa1d3806561638caca4d9e61cf870454aeb19b5d4a5644ef30b00adb0b5c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2860eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/be365b3e8bf3bee4df9ab75f2a32ba2c838aad372fdfa93dbcd9c195fcf7176c.0000000.json",
+                  "sha256": "0c12f039c121125ecf9457d67db65e52ce87d3d881c3903b7c7396b802ae1d53",
+                  "start_character": 0,
+                  "end_character": 10926
+                }
+              ],
+              "utf8_sha256": "be365b3e8bf3bee4df9ab75f2a32ba2c838aad372fdfa93dbcd9c195fcf7176c",
+              "total_characters": 10926,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:pl105384-titleIV-original162",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "TITLE <<NOTE: Northwest Straits Marine Conservation.>> IV--NORTHWEST STRAITS MARINE CONSERVATION INITIATIVE SEC. 401. SHORT TITLE. This title may be cited as the ``Northwest Straits Marine Conservation Initiative Act''. SEC. 402. ESTABLISHMENT. There is established a commission to be known as the Northwest Straits Advisory Commission (in this title referred to as the ``Commission''). SEC. 403. ORGANIZATION AND OPERATION. The Commission shall be organized and operated in accordance with the provisions of the Northwest Straits Citizen's Advisory Commission Report of August 20, 1998, on file with the Secretary of Commerce (in this title referred to as the ``Report''). SEC. 404. FUNDING. (a) In General.--The Secretary of Commerce may, from amounts available to the Secretary to carry out the work of the Commission, provide assistance for use in accordance with the Report and the priorities of the Commission-- (1) <<NOTE: Records.>> to collect marine resources data in the Northwest Straits; (2) to coordinate Federal, State, and local marine resources protection and restoration activities in the Northwest Straits; and (3) to carry out other activities identified in the Report as important to the protection and restoration of marine resources in the Northwest Straits. (b) Provision.--The Secretary may provide the assistance authorized by subsection (a) through the Director of the Padilla Bay National Estuarine Research Reserve, unless the Governor of the State of Washington objects. If the Governor objects, then the Secretary may provide the assistance though the Administrator of the National Oceanic and Atmospheric Administration. [[Page 112 STAT. 3459]] SEC. 405. LIMITATION. Nothing in this title provides the Commission with the authority to implement any Federal law or regulation. "
+          },
+          {
+            "source_id": "nwstraits:1998-report-reprint-edition168",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "1\nReport to the Convenors\nAugust 20, 1998\nMurray-Metcalf\nNorthwest Straits Citizens Advisory\nCommission\n\nThe MRCs and the Northwest Straits Commission were established by Congress in 1998\n(HR 3461). The legislation calls for a review of the Commissions’ efforts by the National Re-\nsearch Council, with particular emphasis on the achievement of the Benchmarks for Perfor-\nmance. The authorization for this local marine conservation initiative expires in six years and\nincludes an authorization for funding to support the effort. Federal funds to jumpstart the\nprocess were made available through the National Oceanic and Atmospheric Administration in\nlate 1998.\nThis document was prepared by Washington Sea Grant Program,\nUniversity of Washington.\n\n12\nCopies of this report are available from:\nNorthwest Straits Commission\n     10441 Bayview-Edison Road\nMt Vernon , WA  98273\n360-428-1084\nOffice of Senator Patty Murray\n2930 Wetmore Avenue, Suite 903\nEverett, WA  98201\n425-259-6515\nPrinted on recycled paper. Reprinted 4/04\nKnowledge for Use in the Marine Environment"
+          },
+          {
+            "source_id": "nwstraits:1998-report-reprint-membership-complete169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Membership:  Participating county commissions and councils would select MRC\nmembers to ensure that the committee reflects the following attributes:\n• Relevant scientific expertise.\n• Balanced, with representation from:\n— local government (especially planning staff from counties and cities\nwith marine shorelines)\n— affected economic interests (such as port, commercial fishers)\n— affected recreational interests (for example, sport fisher)\n— conservation and environmental interests.\n• Constructive and knowledgeable individuals.\n\n7\nEach recognized tribe with a reservation in the county would be offered a seat on the\nMRC, with that person appointed by their respective Tribal authority.  The chair of the MRC\nwould be selected by a majority of the MRC membership.\nCounty Participation:  Establishing an MRC would be voluntary for each of the seven\ncounties in the Northwest Straits area (Clallam, Jefferson, Island, San Juan, Skagit, Snohomish,\nWhatcom).  Given the importance of strong county participation, the Murray-Metcalf Commis-\nsion has attempted to structure this initiative in a manner that will encourage such involve-\nment.  The Murray-Metcalf Commission anticipates that most, if not all, of the counties would\nparticipate.  The NW Straits Commission and/or participating entities will provide financial\nassistance and technical expertise through such channels as the Sea Grant program to partici-\npating counties to use for planning, scientific studies, and revision of city and county ordi-\nnances in support of the goals of the NW Straits initiative.  Counties which do not form an MRC\nwould be unrepresented on the Northwest Straits Commission.  Current and future require-\nments of the Endangered Species Act would also provide incentives for establishing an MRC,\nsince the proposed listing of Puget Sound Chinook salmon and potentially other species puts an\nemphasis on the health of estuaries, nearshore habitat, and other marine areas in addition to\nupland watersheds.\n\n\nMembership:  The Murray-Metcalf Commission recommends that the Northwest Straits\nCommission be composed of up to 13 members selected in the following manner.\n• MRC appointments:  Each MRC would, by consensus, select a single representative to\nserve on the NW Straits Commission (total of up to seven).\n• Tribal appointment:  One Tribal representative would be selected by the Secretary of\nthe Interior, acting in his trust capacity; additional Tribal input would be sought by the NW\nStraits panel on actions or recommendations affecting Tribal interests by direct consultation\nwith the relevant Tribes meeting separately or en bloc.\n• Governor’s appointments:  The remaining members of the Commission (up to five, but\nin no case more than the number of MRC representatives minus one) would be selected by the\nGovernor for four-year rotating terms according to the general criteria for the counties in\nselecting MRC members and to ensure thoughtful, balanced representation on the Northwest\nStraits Commission.  Included among the Governor’s appointments will be a representative of\nthe Puget Sound Water Quality Action Team.  The remaining appointments by the Governor\nwill be citizens of the State of Washington and not official representatives of State agencies.\n• Governmental Participation:  Federal, State, local, and Tribal representatives would be\nencouraged to participate in the deliberations of the Commission.  The NWSC will also wel-\ncome informal Canadian participation.\n"
+          }
+        ],
+        "episode_candidate_id": "episode:hr2860:119"
+      }
+    },
+    {
+      "original_record_sha256": "84c0fc83a653e3e4a3d11c221da78dcfb7905bc80a5a18a35e19a7bf429c639a",
+      "record": {
+        "action_id": "house:119:2:197",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is failed recommittal of7726. No substantive motion body is interpreted. This is non-counting procedural context, separate from whole museum-site/mission, VAdata or child-care passage and without component policy positions, enacted duties or physical/technical outcomes.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:197",
+            "url": "https://clerk.house.gov/evs/2026/roll197.xml",
+            "raw_sha256": "507c7d642277ea1dd0039d10214b19668f2534f78d6b3070278e061ebe98504c",
+            "governed_bytes_sha256": "ea33523ef2f2489169d1c9a9ae57a7a3871ddaa6883b77d713a14870b07c95da"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f6f6bab87c4400f9f172db70da5377ae75693c3751865da3265ea12088806a35",
+      "record": {
+        "action_id": "house:119:2:198",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole7726EHhas12392characters; onlyopening0:1800andclosing11592:12392read. Mandatorywithholdingword change, Stateinternal-control/datause plan and endingimproper-paymentcategories report are partial components, not the whole child-careeligibility/fraud/stateplan/withholding baseline or version review. Existing Health/Immigrationwholecandidates are identified for qualified canonical reuse, not duplicated or narrowed to an interagency-data fragment. Preserve suspected-versusverifiedfraud/nonfraudoverpayments/underpayments/technicalerrors distinctions; no actualStatefraud, child eligibility, blanketfundloss, technologyprocurement or enactment is inferred. Older stopped ACF/source-access chains remain untouched without reacquisition.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:198",
+            "url": "https://clerk.house.gov/evs/2026/roll198.xml",
+            "raw_sha256": "79d58d074cfd005d11a9fd6d9407df9f76a5ed4786df71be6bae39a6459c6a2c",
+            "governed_bytes_sha256": "bf5b916d82dc9c0bcb02960304f45e8417cb02241dc5f83d8fe869352295f195"
+          },
+          {
+            "source_id": "govinfo:hr7726eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7726eh/html/BILLS-119hr7726eh.htm",
+            "raw_sha256": "d3c34e889f63e5518d4ac22b6e678f24084616eabb0fa7fb3c3cc85cdbd2125d",
+            "governed_bytes_sha256": "db0bae0e6086af3a16ed4ab829ecdddeea03693dab9a0b50209c28cdb717b5ca"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7726eh",
+            "locator": "Onlyopening0:1800read; wholeinteriorunreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 7726 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 7726 _______________________________________________________________________ AN ACT To amend the Child Care and Development Block Grant Act of 1990 to withhold funds from noncompliant States under such Act. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Stop Child Care Scams Act of 2026''. SEC. 2. STRENGTHENING THE AUTHORITY TO WITHHOLD FUNDS FOR FRAUD. Section 658I(b)(2)(B) of the Child Care and Development Block Grant Act of 1990 (42 U.S.C. 9858g(b)(2)) is amended by striking ``Secretary may'' and inserting ``Secretary shall''. SEC. 3. PROGRAM INTEGRITY AND ACCOUNTABILITY. Section 658E(c)(2) of the Child Care and Development Block Grant Act of 1990 (42 U.S.C. 9858c(c)(2)) is amended by adding at the end the following: ``(W) Program integrity and accountability.--The plan shall include a description of-- ``(i) the State's internal controls to ensure program integrity and accountability; ``(ii) the processes in place-- ``(I) to investigate and recover fraudulent payments; and ``(II) to impose sanctions on clients or providers in response to fraud; and ``(iii) the procedures in place to document and verify eligibility. Such description shall include how the State utilizes data within and across other State and local agencies that have oversight of child care providers that serve children who receive assistance under this subchapter.''. SEC. 4. PREVENTING FRAUD IN THE CHILD CARE AND DEVELOPMENT BLOCK GRANT PROGRAM. Section 658I(b) of the Child Care and Development Block Grant Act of 1990 (42 U.S.C. 98"
+          },
+          {
+            "source_id": "govinfo:hr7726eh",
+            "locator": "Onlyclosing11592:12392read",
+            "passage": "udulent payments)'' after ``overpayments''; and (2) by adding at the end the following: ``(3) Report.--The State shall submit to the Secretary an annual report that identifies the dollar and percentage amount of improper payments made by the State, disaggregated as specified by the Secretary by standardized payment categories (including suspected and verified fraudulent payments, non- fraudulent overpayments, underpayments, and technically improper payments (e.g., system error payments)).''. Passed the House of Representatives June 3, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 7726 _______________________________________________________________________ AN ACT To amend the Child Care and Development Block Grant Act of 1990 to withhold funds from noncompliant States under such Act."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:187",
+      "original_source_object_sha256": "da3f2d6c1e0b569bd8d20c9ca12594bcb959b82bf413976d51e725c3ad7c0284"
+    },
+    {
+      "source_id": "clerk:119:2:188",
+      "original_source_object_sha256": "306418496b1d50475c57b007350f29230046c10906374adce2838a9a6447d3cf"
+    },
+    {
+      "source_id": "clerk:119:2:189",
+      "original_source_object_sha256": "74cb6e91ff7bee085ad25e24e58e1c4d94a521629ebe1d615f1532b0b9283de9"
+    },
+    {
+      "source_id": "clerk:119:2:190",
+      "original_source_object_sha256": "180dc4d0369e690e94d082c4bb0e5ce135c9a228d5e89433492e833dad4a5517"
+    },
+    {
+      "source_id": "clerk:119:2:191",
+      "original_source_object_sha256": "fbfa1a2564f4a275c2d8f1312ebf05a3f35838bf7636201a2c8c1b588ac59c2c"
+    },
+    {
+      "source_id": "clerk:119:2:192",
+      "original_source_object_sha256": "90024c7e653efc0b729a98ebbcda3849daf529ffc980e32465c12323e3f772d6"
+    },
+    {
+      "source_id": "clerk:119:2:193",
+      "original_source_object_sha256": "1ff29840fc576b2c4597c0c2cda07ad02404dd0ae4878de338a01e768143225f"
+    },
+    {
+      "source_id": "clerk:119:2:196",
+      "original_source_object_sha256": "51ab73841b32b8abd5c2f9a5f893417e30367c48726e7ca9156d69b4d38ffb89"
+    },
+    {
+      "source_id": "clerk:119:2:197",
+      "original_source_object_sha256": "2dc89203f9dfcdb3188ff9ad5a0b998459956be48a97bb8e3ca54cae6aec17a7"
+    },
+    {
+      "source_id": "clerk:119:2:198",
+      "original_source_object_sha256": "c3d7ef133ae8cbc51169721924ea0e226560d9602a74d559015872c5af84bb14"
+    },
+    {
+      "source_id": "congressional-record:2026-05-21-hr1329-exact",
+      "original_source_object_sha256": "17e418cb5fd9e220dafd5130187ad25ead7441462fe3800627f44f58dbfc78d3"
+    },
+    {
+      "source_id": "govinfo:54usc3081-2024-operative134",
+      "original_source_object_sha256": "f7fa11931db104b5732233480632f650f60db6ecdecfdcbe3aa966f3ce2a6739"
+    },
+    {
+      "source_id": "govinfo:hr1041eh",
+      "original_source_object_sha256": "69c9568e48678ae56ae7fc3f952ed510179555e836ff085f45cad52c6fc74803"
+    },
+    {
+      "source_id": "govinfo:hr2860eh",
+      "original_source_object_sha256": "4848557ba9ef2ecad5ce9c7f25229f65242b98c16db6e5b0c0f0a6e213fe6151"
+    },
+    {
+      "source_id": "govinfo:hr6047eh",
+      "original_source_object_sha256": "fb7cf8e431224b41a53c0f124bd50131fb578372f124a10ef31cc4d101ca0aaa"
+    },
+    {
+      "source_id": "govinfo:hr7618eh",
+      "original_source_object_sha256": "713867e61bd068ffe6bc857edf2b0d694f140db90d7cbb885881c0081d26ab17"
+    },
+    {
+      "source_id": "govinfo:hr7726eh",
+      "original_source_object_sha256": "f22ccd19875bf42ff4ac3f9d4b43b3501d4b1f2482076b20b39ea93d1d47acf4"
+    },
+    {
+      "source_id": "govinfo:hres1300eh",
+      "original_source_object_sha256": "2d01ab4567cec85b56d4fd13631d694edcbe7c6c4b6d2f64c6d6fe4b309c7a83"
+    },
+    {
+      "source_id": "govinfo:pl105384-titleIV-original162",
+      "original_source_object_sha256": "6e283505ff793cd887c3366ebaf8830d8616a182decbfbd1dafcd84fed20002b"
+    },
+    {
+      "source_id": "govinfo:s254es",
+      "original_source_object_sha256": "350cc027bc6736646137cc2b0c5330a644a7d34a7c7fb4017c823577f2f1c176"
+    },
+    {
+      "source_id": "nwstraits:1998-report-reprint-edition168",
+      "original_source_object_sha256": "dba448822c05126d7a30ee8b49e6bcacd52803be684bf5a945d3def664d1107b"
+    },
+    {
+      "source_id": "nwstraits:1998-report-reprint-membership-complete169",
+      "original_source_object_sha256": "9121eb592f151fa56c89f55fb1f792297b6badb7545affbf2d57fa2e984d29c1"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "congressional-record:2026-05-21-hr1329-exact",
+      "governed_length": 8105,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:hres1300eh",
+      "governed_length": 3859,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:hr1041eh",
+      "governed_length": 5433,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:hr6047eh",
+      "governed_length": 8966,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:hr7618eh",
+      "governed_length": 5272,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:54usc3081-2024-operative134",
+      "governed_length": 6467,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:s254es",
+      "governed_length": 5750,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:hr2860eh",
+      "governed_length": 10926,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:pl105384-titleIV-original162",
+      "governed_length": 1807,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "nwstraits:1998-report-reprint-edition168",
+      "governed_length": 1068,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "nwstraits:1998-report-reprint-membership-complete169",
+      "governed_length": 3479,
+      "review_extent": "Complete retained ownfloor/bill/selectedchapter/originalTitleIV/reporteditionormembershipunitread; fullremainingReport/currentlaw/individualstandardsnotcertified"
+    },
+    {
+      "source_id": "govinfo:hr7726eh",
+      "governed_length": 12392,
+      "review_extent": "Onlyopening0:1800andclosing11592:12392read; wholeinteriorunreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 2,
+    "newly_screened_meanings_authored": 2,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:187",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:188",
+        "evidence_unit": "complete_own_whole_bill_or_amendedfloor_pending_materialsemantics_or_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:189",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:190",
+        "evidence_unit": "complete_own_whole_bill_or_amendedfloor_pending_materialsemantics_or_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:191",
+        "evidence_unit": "complete_own_whole_bill_or_amendedfloor_pending_materialsemantics_or_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:192",
+        "evidence_unit": "complete_whole_bill_and_declared_baseline_units",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:193",
+        "evidence_unit": "complete_own_whole_bill_or_amendedfloor_pending_materialsemantics_or_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:196",
+        "evidence_unit": "complete_whole_bill_and_declared_baseline_units",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:197",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:198",
+        "evidence_unit": "partial_whole_shared_reuse",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": 122,
+    "inherited_focused_test_count": null,
+    "inherited_focused_suite_head": null,
+    "semantic_checks": 7,
+    "compiled_sha256": "a775233e7d66d27bdfa497cb7c35c510217bbba68ebedd95c81b360ab93f0637"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "3cabbd5aa8c0f3bca0ccec8155aafd1a041f0ae6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/authoring.json",
+      "git_blob": "bc39da74c93d2527d35f1eb4229f61f139f9503b",
+      "git_bytes_sha256": "76b5bddcdfd4725acacf9359a4d2cc2b713aa6eb9d1117f0eef286cfe71401f0"
+    },
+    "actions": [
+      {
+        "original_action_sha256": "b287e31c9e7df53379c19dbaf00f76ea2ac8b9f5624ab5ace3e6740a0741fb25",
+        "action": {
+          "source_id": "govinfo:hr7618eh",
+          "bill_type": "hr",
+          "bill_number": 7618,
+          "stage": "suspension_and_passage",
+          "episode_id": "episode:hr7618:119",
+          "short_description": "Extending battlefield grants and requiring qualified historic-site studies",
+          "compact_description": "The bill would extend the acquisition authorization and pool a shared$2millionannualauthorization for technology-interpretation/restoration grants through2036. Existing50percentshare limits remain. Two-war studies have funding/certification conditions and distinct deadlines; whole-measure Infrastructure membership is unaccepted.",
+          "compact_source_refs": [
+            "govinfo:hr7618eh",
+            "govinfo:54usc3081-2024-operative134"
+          ],
+          "additional_source_ids": [
+            "govinfo:54usc3081-2024-operative134"
+          ],
+          "meaning": {
+            "$lossless_text_parts": [
+              {
+                "path": "source_parts/c5c14d8bf02c924c7203c8d755d6e842ca70496fbbe121b2cc67ff08208b56ba.0000000.json",
+                "sha256": "02d067d1353e02b89cfd8a08bad1163106e2872f687a03fb5f3f60f35dab97b9",
+                "start_character": 0,
+                "end_character": 4046
+              }
+            ],
+            "utf8_sha256": "c5c14d8bf02c924c7203c8d755d6e842ca70496fbbe121b2cc67ff08208b56ba",
+            "total_characters": 4046,
+            "transport_only": true
+          },
+          "limitations": [
+            "Deleting308104(d)removes its separate authorization, not308104(c)50percentFederal-sharecap; acquisition/restoration share rules remain.",
+            "One shared2millionannualauthorization for both programs, not2millioneach or actual funds; acquisition18millionendpoint extends to2036.",
+            "Private-study1yearreview/certifywhether differs from guaranteedpositivecertification;2yearsfromfunds versus180daysfrompositivecertification deadlines.",
+            "Submitted-study report definition does not erase existing site/battlefield/war eligibility restrictions or designate a park.",
+            "Underlyinghistoricreports/currentprojectstatus/land-conversion/36CFR68standards not independently conformed; no actualgrant/deployment/restoration outcome.",
+            "Whole technology/preservation versus broader heritage/historical-study taxonomy remains unaccepted."
+          ],
+          "choice_meanings": {
+            "Yea": "supported suspending the rules and passing H.R.7618 in this exact form",
+            "Nay": "opposed suspending the rules and passing H.R.7618 in this exact form"
+          },
+          "action_id": "house:119:2:192",
+          "claim_source_map": [
+            {
+              "source_id": "govinfo:hr7618eh",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/18a98ebfda4b4e1bb666a169f3a74c247777dccabf7f753c1894e09aaf70e63e.0000000.json",
+                    "sha256": "3f8c93a2170422c37124bef4afae228153278032f8f9a78c2058d7b5b040bd02",
+                    "start_character": 0,
+                    "end_character": 5272
+                  }
+                ],
+                "utf8_sha256": "18a98ebfda4b4e1bb666a169f3a74c247777dccabf7f753c1894e09aaf70e63e",
+                "total_characters": 5272,
+                "transport_only": true
+              }
+            },
+            {
+              "source_id": "govinfo:54usc3081-2024-operative134",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/a0de36c48ba9863022f54c6648cc26f6d504ba3b7010b1849483313da264a15e.0000000.json",
+                    "sha256": "b30ebd0abe8f2da9e6e9180abf3d5ccedda35c81d7ce8b66debdf452b868cc81",
+                    "start_character": 0,
+                    "end_character": 6467
+                  }
+                ],
+                "utf8_sha256": "a0de36c48ba9863022f54c6648cc26f6d504ba3b7010b1849483313da264a15e",
+                "total_characters": 6467,
+                "transport_only": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "original_action_sha256": "18990f3a0e181c79716e6d860c3eca388bf988e9a5e53e81f189c45472156735",
+        "action": {
+          "source_id": "govinfo:hr2860eh",
+          "bill_type": "hr",
+          "bill_number": 2860,
+          "stage": "suspension_and_passage",
+          "episode_id": "episode:hr2860:119",
+          "short_description": "Reorganizing Northwest Straits science, monitoring and advisory work",
+          "compact_description": "The bill would reorganize an existing regional Commission, set14baseappointments with an additional-member path, specify science/data/technical/advisory duties and require annual public reporting. It grants no regulatory power or fixed new appropriation and sunsets titleauthority7yearsafterenactment. Whole-program Infrastructure membership is unaccepted.",
+          "compact_source_refs": [
+            "govinfo:hr2860eh",
+            "govinfo:pl105384-titleIV-original162"
+          ],
+          "additional_source_ids": [
+            "govinfo:pl105384-titleIV-original162",
+            "nwstraits:1998-report-reprint-edition168",
+            "nwstraits:1998-report-reprint-membership-complete169"
+          ],
+          "meaning": {
+            "$lossless_text_parts": [
+              {
+                "path": "source_parts/96913a11e27dc37f9cc9836e0fc742479b1d1bec29f0e1a7dd9112b1cbee9119.0000000.json",
+                "sha256": "0ba6d6d9bc6c1e0a149fe27e32028a4e76ab86997f596445948328577deb6f83",
+                "start_character": 0,
+                "end_character": 4553
+              }
+            ],
+            "utf8_sha256": "96913a11e27dc37f9cc9836e0fc742479b1d1bec29f0e1a7dd9112b1cbee9119",
+            "total_characters": 4553,
+            "transport_only": true
+          },
+          "limitations": [
+            "Existing402Commission retained; oldReport/currentcharter/laterlaw not fully conformed, and reprint commentary is not statutory funding/sunset proof.",
+            "14baseappointments plus conditional additional-MRCappointments; NOAA liaison is not an ordinary fifteenth voting seat or obligated Commissionduty performer.",
+            "Technical/data/advisory duties are not Federal regulatory/implementation authority or actual ecological findings.",
+            "Cooperativeagreements/assistance do not provide a fixednewappropriation or guaranteedpayment; oldfundingparagraph replaced.",
+            "Annualpublicreportbenchmarks are not achievedbenefits; sevenyearsunset fromenactment and enactment-dateTribal-list qualification remain.",
+            "Scientificmonitoring/technicalsupport versus broaderconservation/advisory taxonomy remains unaccepted; currentindividualrepresentatives/funds/treatycompliance unverified."
+          ],
+          "choice_meanings": {
+            "Yea": "supported suspending the rules and passing H.R.2860 in this exact form",
+            "Nay": "opposed suspending the rules and passing H.R.2860 in this exact form"
+          },
+          "action_id": "house:119:2:196",
+          "claim_source_map": [
+            {
+              "source_id": "govinfo:hr2860eh",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/be365b3e8bf3bee4df9ab75f2a32ba2c838aad372fdfa93dbcd9c195fcf7176c.0000000.json",
+                    "sha256": "0c12f039c121125ecf9457d67db65e52ce87d3d881c3903b7c7396b802ae1d53",
+                    "start_character": 0,
+                    "end_character": 10926
+                  }
+                ],
+                "utf8_sha256": "be365b3e8bf3bee4df9ab75f2a32ba2c838aad372fdfa93dbcd9c195fcf7176c",
+                "total_characters": 10926,
+                "transport_only": true
+              }
+            },
+            {
+              "source_id": "govinfo:pl105384-titleIV-original162",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "TITLE <<NOTE: Northwest Straits Marine Conservation.>> IV--NORTHWEST STRAITS MARINE CONSERVATION INITIATIVE SEC. 401. SHORT TITLE. This title may be cited as the ``Northwest Straits Marine Conservation Initiative Act''. SEC. 402. ESTABLISHMENT. There is established a commission to be known as the Northwest Straits Advisory Commission (in this title referred to as the ``Commission''). SEC. 403. ORGANIZATION AND OPERATION. The Commission shall be organized and operated in accordance with the provisions of the Northwest Straits Citizen's Advisory Commission Report of August 20, 1998, on file with the Secretary of Commerce (in this title referred to as the ``Report''). SEC. 404. FUNDING. (a) In General.--The Secretary of Commerce may, from amounts available to the Secretary to carry out the work of the Commission, provide assistance for use in accordance with the Report and the priorities of the Commission-- (1) <<NOTE: Records.>> to collect marine resources data in the Northwest Straits; (2) to coordinate Federal, State, and local marine resources protection and restoration activities in the Northwest Straits; and (3) to carry out other activities identified in the Report as important to the protection and restoration of marine resources in the Northwest Straits. (b) Provision.--The Secretary may provide the assistance authorized by subsection (a) through the Director of the Padilla Bay National Estuarine Research Reserve, unless the Governor of the State of Washington objects. If the Governor objects, then the Secretary may provide the assistance though the Administrator of the National Oceanic and Atmospheric Administration. [[Page 112 STAT. 3459]] SEC. 405. LIMITATION. Nothing in this title provides the Commission with the authority to implement any Federal law or regulation. "
+            },
+            {
+              "source_id": "nwstraits:1998-report-reprint-edition168",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "1\nReport to the Convenors\nAugust 20, 1998\nMurray-Metcalf\nNorthwest Straits Citizens Advisory\nCommission\n\nThe MRCs and the Northwest Straits Commission were established by Congress in 1998\n(HR 3461). The legislation calls for a review of the Commissions’ efforts by the National Re-\nsearch Council, with particular emphasis on the achievement of the Benchmarks for Perfor-\nmance. The authorization for this local marine conservation initiative expires in six years and\nincludes an authorization for funding to support the effort. Federal funds to jumpstart the\nprocess were made available through the National Oceanic and Atmospheric Administration in\nlate 1998.\nThis document was prepared by Washington Sea Grant Program,\nUniversity of Washington.\n\n12\nCopies of this report are available from:\nNorthwest Straits Commission\n     10441 Bayview-Edison Road\nMt Vernon , WA  98273\n360-428-1084\nOffice of Senator Patty Murray\n2930 Wetmore Avenue, Suite 903\nEverett, WA  98201\n425-259-6515\nPrinted on recycled paper. Reprinted 4/04\nKnowledge for Use in the Marine Environment"
+            },
+            {
+              "source_id": "nwstraits:1998-report-reprint-membership-complete169",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "Membership:  Participating county commissions and councils would select MRC\nmembers to ensure that the committee reflects the following attributes:\n• Relevant scientific expertise.\n• Balanced, with representation from:\n— local government (especially planning staff from counties and cities\nwith marine shorelines)\n— affected economic interests (such as port, commercial fishers)\n— affected recreational interests (for example, sport fisher)\n— conservation and environmental interests.\n• Constructive and knowledgeable individuals.\n\n7\nEach recognized tribe with a reservation in the county would be offered a seat on the\nMRC, with that person appointed by their respective Tribal authority.  The chair of the MRC\nwould be selected by a majority of the MRC membership.\nCounty Participation:  Establishing an MRC would be voluntary for each of the seven\ncounties in the Northwest Straits area (Clallam, Jefferson, Island, San Juan, Skagit, Snohomish,\nWhatcom).  Given the importance of strong county participation, the Murray-Metcalf Commis-\nsion has attempted to structure this initiative in a manner that will encourage such involve-\nment.  The Murray-Metcalf Commission anticipates that most, if not all, of the counties would\nparticipate.  The NW Straits Commission and/or participating entities will provide financial\nassistance and technical expertise through such channels as the Sea Grant program to partici-\npating counties to use for planning, scientific studies, and revision of city and county ordi-\nnances in support of the goals of the NW Straits initiative.  Counties which do not form an MRC\nwould be unrepresented on the Northwest Straits Commission.  Current and future require-\nments of the Endangered Species Act would also provide incentives for establishing an MRC,\nsince the proposed listing of Puget Sound Chinook salmon and potentially other species puts an\nemphasis on the health of estuaries, nearshore habitat, and other marine areas in addition to\nupland watersheds.\n\n\nMembership:  The Murray-Metcalf Commission recommends that the Northwest Straits\nCommission be composed of up to 13 members selected in the following manner.\n• MRC appointments:  Each MRC would, by consensus, select a single representative to\nserve on the NW Straits Commission (total of up to seven).\n• Tribal appointment:  One Tribal representative would be selected by the Secretary of\nthe Interior, acting in his trust capacity; additional Tribal input would be sought by the NW\nStraits panel on actions or recommendations affecting Tribal interests by direct consultation\nwith the relevant Tribes meeting separately or en bloc.\n• Governor’s appointments:  The remaining members of the Commission (up to five, but\nin no case more than the number of MRC representatives minus one) would be selected by the\nGovernor for four-year rotating terms according to the general criteria for the counties in\nselecting MRC members and to ensure thoughtful, balanced representation on the Northwest\nStraits Commission.  Included among the Governor’s appointments will be a representative of\nthe Puget Sound Water Quality Action Team.  The remaining appointments by the Governor\nwill be citizens of the State of Washington and not official representatives of State agencies.\n• Governmental Participation:  Federal, State, local, and Tribal representatives would be\nencouraged to participate in the deliberations of the Commission.  The NWSC will also wel-\ncome informal Canadian participation.\n"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
