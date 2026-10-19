@@ -499,4 +499,11 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'804remaining baseline or taxonomy gap was promoted'):validate_hr804_partial_baseline_link(m,bad,s,r)
         bad=copy.deepcopy(r);bad['agricultural_rural_proxy_used']=True
         with self.assertRaisesRegex(ValueError,'804baseline receipt or proxy boundary differs'):validate_hr804_partial_baseline_link(m,u,s,bad)
+    def test_investor_first_report_is_due_within_one_year_and_annually_thereafter(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_investor_report_deadline_precision
+        p=folder(105);r=read(p/'investor_report_deadline_precision_receipt.json');a=next(x for x in read(p/'authoring.json')['actions']if x['action_id']==r['action_id']);m=next(x for x in read(p/'membership_review.json')['records']if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions']if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources']if x['source_id']==r['source_id']);rec=read(p/'investor_clearance_pilot_taxonomy_recommendation.json');validate_investor_report_deadline_precision(a,m,u,s,rec,r)
+        for field,old,new in [('compact_description','The first report is due within one year after enactment, with annual reports thereafter;','Reports begin one year after enactment;'),('compact_description',', with annual reports thereafter;',';'),('meaning','would be due WITHIN one year AFTER ENACTMENT and annually thereafter','would be due one year AFTER ENACTMENT and annually thereafter'),('meaning','and annually thereafter','with no annual recurrence')]:
+            with self.subTest(field=field,change=new):
+                bad=copy.deepcopy(a);self.assertIn(old,bad[field]);bad[field]=bad[field].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'investor initial report became fixed start or lost annual recurrence'):validate_investor_report_deadline_precision(bad,m,u,s,rec,r)
 if __name__=='__main__':unittest.main()
