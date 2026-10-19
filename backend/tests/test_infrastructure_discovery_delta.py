@@ -187,4 +187,14 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         action=copy.deepcopy(next(a for a in read(folder(60)/'authoring.json')['actions'] if a['action_id']=='house:119:1:342'));sources={s['source_id']:s for s in read(folder(60)/'sources.json')['sources']}
         action['meaning']=action['meaning'].replace('notice duty is not an automatic five-year retirement ban or a requirement to obtain a retirement permit','bill automatically bans every plant retirement for five years')
         with self.assertRaisesRegex(ValueError,'power retirement notice became universal ban or lost unit/exception scope'):validate_power_retirement_boundaries(action,sources['govinfo:hr3632eh'],sources['govinfo:16usc824f-2024-operative'],sources['govinfo:16usc824o-2024-definitions'])
+    def test_reliability_gate_requires_finding_beyond_agency_response(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_reliability_gate_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(61)/'authoring.json')['actions'] if a['action_id']=='house:119:1:347'));sources={s['source_id']:s for s in read(folder(61)/'sources.json')['sources']}
+        action['meaning']=action['meaning'].replace('AND FERC finds the action will not likely have a significant negative impact','with no separate FERC finding required')
+        with self.assertRaisesRegex(ValueError,'reliability finalization lost independent FERC gate'):validate_reliability_gate_boundaries(action,sources['govinfo:hr3616eh'],sources['govinfo:16usc824o-2024-operative'],sources['govinfo:16usc824o-2024-definitions'])
+    def test_reliability_advance_submission_is_not_automatic_clearance(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_reliability_gate_boundaries
+        action=copy.deepcopy(next(a for a in read(folder(61)/'authoring.json')['actions'] if a['action_id']=='house:119:1:347'));sources={s['source_id']:s for s in read(folder(61)/'sources.json')['sources']}
+        action['meaning']=action['meaning'].replace('The90dayfallback governs advance agency submission, not a deadline for FERC to decide or automatic clearance after90days','FERC must decide within90days or the action is automatically cleared')
+        with self.assertRaisesRegex(ValueError,'reliability advance submission became automatic clearance'):validate_reliability_gate_boundaries(action,sources['govinfo:hr3616eh'],sources['govinfo:16usc824o-2024-operative'],sources['govinfo:16usc824o-2024-definitions'])
 if __name__=='__main__':unittest.main()
