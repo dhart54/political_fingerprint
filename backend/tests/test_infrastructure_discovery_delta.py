@@ -230,4 +230,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
             with self.subTest(boundary=old):
                 bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,error):validate_housing_energy_role_boundaries(bad,s['govinfo:hr5184eh'],s['olrc:42usc17071-2024-operative'],s['govinfo:42usc5403g-2024-operative'],s['doe:manufactured-housing2022-operative'],s['doe:manufactured-housing2025-compliance'])
+    def test_small_business_ai_assistance_is_not_compelled_adoption_or_optional_list(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_small_business_ai_boundaries
+        action=next(a for a in read(folder(70)/'authoring.json')['actions'] if a['action_id']=='house:119:2:33');s={s['source_id']:s for s in read(folder(70)/'sources.json')['sources']}
+        for old,new in [('Outreach is required only to the extent practical','Outreach is unconditionally required'),('mandatory assistance subjects and qualified outreach','optional assistance and mandatory outreach'),('not a vote requiring small businesses to buy or use an AI product','requires every business to buy an AI product')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'small-business AI assistance became optional or compelled adoption'):validate_small_business_ai_boundaries(bad,s['govinfo:hr5764eh'],s['govinfo:15usc648-2024-sbdc-services'],s['govinfo:15usc9401-2024-ai-definition'],s['clerk:119:2:33'])
+    def test_small_business_ai_preserves_existing_funding_services_and_definition(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_small_business_ai_boundaries
+        action=next(a for a in read(folder(70)/'authoring.json')['actions'] if a['action_id']=='house:119:2:33');s={s['source_id']:s for s in read(folder(70)/'sources.json')['sources']}
+        for old,new in [('neither creates a new appropriation nor cancels all existing SBDC funding','cancels all existing SBDC funding'),('not the first authorization for every technology or cybersecurity service','creates the first technology service authority'),('not confined here to generative chatbots','confined to generative chatbots')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'small-business AI lost existing services funding or broad definition'):validate_small_business_ai_boundaries(bad,s['govinfo:hr5764eh'],s['govinfo:15usc648-2024-sbdc-services'],s['govinfo:15usc9401-2024-ai-definition'],s['clerk:119:2:33'])
 if __name__=='__main__':unittest.main()
