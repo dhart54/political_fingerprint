@@ -1,0 +1,1151 @@
+{
+  "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
+  "rule_files_sha256": {
+    "scripts/prepare_shared_domain_candidate.py": "196547c044218b69e1a942a764af9be522564bcbb94aa22f715a38a7d0ee5d39",
+    "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
+    "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
+    "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
+    "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
+    "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
+  },
+  "input_sha256": "7c31f9e0620e9efb357b8847051853c990dbcd1e420e848a7870069cec7ee0f7",
+  "source_capture_sha256": "fa2aa9de0c7d6d8339a862a2fc5b518df271af5ff2045daf61d95edb6209fcd3",
+  "core_sha256": "21a91865d04c4cdeee798e6c4839b2762aa8948c8aef776c7ff2837b017b2b51",
+  "compiled_sha256": "a039c5fb85aa47e268978c77fc513b92f9bb53ca65e6a5ccaf0dea9ab1d78b3a",
+  "readable_sha256": "cfd06c6d5137e79205699bac043caca7178383123c885ba1f95aa1eed603a100",
+  "identical_replay": true,
+  "real_member_reuse": [
+    {
+      "action_id": "house:119:1:8",
+      "shared_sha256": "f8020e88e61f101648eddc6277e545a224463ddd426d58fdddae4e35d327faa4",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 192 in this exact version",
+          "source_id": "clerk:119:1:8"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 192 in this exact version",
+          "source_id": "clerk:119:1:8"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:64",
+      "shared_sha256": "be284029e7de02579c139ced572b6b238747e7f95f32af163e5c0bb71a98e3fc",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 901 in this exact version",
+          "source_id": "clerk:119:1:64"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 901 in this exact version",
+          "source_id": "clerk:119:1:64"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:74",
+      "shared_sha256": "9cdf292306c6c977678d3d6ab9f006bfcbc2d28499d325e683838e5063cccf93",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 1534 in this exact version",
+          "source_id": "clerk:119:1:74"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R. 1534 in this exact version",
+          "source_id": "clerk:119:1:74"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:104",
+      "shared_sha256": "d48b8c496365d68aa0eb191cb1f1246227a04e5664002f3e9d4715778c61b696",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing S.146 in this exact version",
+          "source_id": "clerk:119:1:104"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing S.146 in this exact version",
+          "source_id": "clerk:119:1:104"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:136",
+      "shared_sha256": "0ecc6b39601976d9b48599491c03811fb6b6541d3c7f4fa639da4318b12a42cd",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1223 in this exact version",
+          "source_id": "clerk:119:1:136"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1223 in this exact version",
+          "source_id": "clerk:119:1:136"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:157",
+      "shared_sha256": "ac0284511f7808cfe399a9a651ee1f8f1a6feea0f1f39f3e3b33675c0727c697",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:157"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.2035 in this exact version",
+          "source_id": "clerk:119:1:157"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:191",
+      "shared_sha256": "0b26357b8d0419f33cf988b2374bfcd803e3fcaed428ba7c38dd3b099e210b03",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1709 in this exact version",
+          "source_id": "clerk:119:1:191"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:191"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:192",
+      "shared_sha256": "7e58e0f30750e72b90e9b6f602c6ca9b16d04cc6dc131b11b57ad364e438aaed",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1770 in this exact version",
+          "source_id": "clerk:119:1:192"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:192"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:196",
+      "shared_sha256": "eda92277db06985bab63a12158b2a7f49d1cb6fca839ce5bde73458b5b49e180",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1717 in this exact version",
+          "source_id": "clerk:119:1:196"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:196"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:277",
+      "shared_sha256": "e12cddb0bf7ae9155f6251e3e88a33f809f577eaf64da9faabfde689bba79b03",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R.3062 in this exact version",
+          "source_id": "clerk:119:1:277"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.3062 in this exact version",
+          "source_id": "clerk:119:1:277"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:286",
+      "shared_sha256": "821a19b1fd0454efa8fa7e07a6451628e0b9a62a9e1346d8d45098ed2caca326",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1608 in this exact version",
+          "source_id": "clerk:119:1:286"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.1608 in this exact version",
+          "source_id": "clerk:119:1:286"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:287",
+      "shared_sha256": "f624e7e896e97d096e80d4c26497f5e62ce67f34a3a82b6aaeeacbced7f4d3b4",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.2659 in this exact version",
+          "source_id": "clerk:119:1:287"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.2659 in this exact version",
+          "source_id": "clerk:119:1:287"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:13",
+      "shared_sha256": "acbd8c651cb4ef1aea19189799f2540107a4270bf371dc5575453b0c3176737e",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.2683 in this exact version",
+          "source_id": "clerk:119:2:13"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.2683 in this exact version",
+          "source_id": "clerk:119:2:13"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:70",
+      "shared_sha256": "26648a65e407034cef5da34eed1981e02b5f86a8a57fcd2cb5cb0575336c728f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R.2189 in this exact version",
+          "source_id": "clerk:119:2:70"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.2189 in this exact version",
+          "source_id": "clerk:119:2:70"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:72",
+      "shared_sha256": "d219dad4df01729b99e2af10426e76d532d0e7a89425d1af50505d60b17a9d1b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing S.2503 in this exact version",
+          "source_id": "clerk:119:2:72"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing S.2503 in this exact version",
+          "source_id": "clerk:119:2:72"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:105",
+      "shared_sha256": "b6660595706fe1a5682052c2d8f05290a1919f186bd9169743e9dc7a395aea0d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 7084 in this exact version",
+          "source_id": "clerk:119:2:105"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R. 7084 in this exact version",
+          "source_id": "clerk:119:2:105"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:125",
+      "shared_sha256": "8bde49df055e2e334c7a913934ac0f5df2cac4762f5c3400aa26cc9b26ca74e2",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 1681 in this exact version",
+          "source_id": "clerk:119:2:125"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R. 1681 in this exact version",
+          "source_id": "clerk:119:2:125"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:126",
+      "shared_sha256": "ac095983ccbde4732c18f6d5ac08dba9d675e70dcd047e5faae7abc24ad9815f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 5200 in this exact version",
+          "source_id": "clerk:119:2:126"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R. 5200 in this exact version",
+          "source_id": "clerk:119:2:126"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:127",
+      "shared_sha256": "3f301f0be633773452eb1db3df2bfc88416e1a38117a7b73d2f98f3dbc1a28d1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 5201 in this exact version",
+          "source_id": "clerk:119:2:127"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 5201 in this exact version",
+          "source_id": "clerk:119:2:127"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:181",
+      "shared_sha256": "127b2ab391114d338df36ff78b6b1c4229528eeaa430c6d98c30a0cdbdf84230",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing S. 1003 in this exact version",
+          "source_id": "clerk:119:2:181"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:181"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:234",
+      "shared_sha256": "2013b2792dcb39046cdc2b4ef28e327f49a85876add92fb897d677d012049e0d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 3106 in this exact version",
+          "source_id": "clerk:119:2:234"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R. 3106 in this exact version",
+          "source_id": "clerk:119:2:234"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:235",
+      "shared_sha256": "3c2c16f277e2e829a7696fc11d574dc7becb99bf88bcb0bafbfa088fcb3028c5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 8897 in this exact version",
+          "source_id": "clerk:119:2:235"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R. 8897 in this exact version",
+          "source_id": "clerk:119:2:235"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:238",
+      "shared_sha256": "a6335d9810b794f5b038a1a6e60bb1343329833f14a3a7a679364008611c836d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 139 in this exact version",
+          "source_id": "clerk:119:2:238"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R. 139 in this exact version",
+          "source_id": "clerk:119:2:238"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:284",
+      "shared_sha256": "5b4fd5130d4aa10f4e0850db14f671efb2141f4075ab62d89c2ba36a632445f9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing S. 307 in this exact version",
+          "source_id": "clerk:119:2:284"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing S. 307 in this exact version",
+          "source_id": "clerk:119:2:284"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:291",
+      "shared_sha256": "cb6fdc07e4864f6854dfe7f29e6a015461390668f2df7a793a69c429b064ef69",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 9436 in this exact version",
+          "source_id": "clerk:119:2:291"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R. 9436 in this exact version",
+          "source_id": "clerk:119:2:291"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:294",
+      "shared_sha256": "a7d88d7831527c7f2be6fe5c8d7fea465a0a58d4895cd59fdd537f599c7a89f0",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 1501 in this exact version",
+          "source_id": "clerk:119:2:294"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R. 1501 in this exact version",
+          "source_id": "clerk:119:2:294"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:296",
+      "shared_sha256": "de257bb4390bb8b41b85c71eafdc772759f15f1a380e3ba3ee9956f325a71b6a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 4219 in this exact version",
+          "source_id": "clerk:119:2:296"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R. 4219 in this exact version",
+          "source_id": "clerk:119:2:296"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:302",
+      "shared_sha256": "f8975ead975186a67fa652ae93fbf031aad07aa7b9f9434ca48042e2ecc14036",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 8278 in this exact version",
+          "source_id": "clerk:119:2:302"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 8278 in this exact version",
+          "source_id": "clerk:119:2:302"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:304",
+      "shared_sha256": "ead7addb6514e56a80c5e78869f84e54ffb5f741a2da918aa77aaf748cd44200",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 2140 in this exact version",
+          "source_id": "clerk:119:2:304"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R. 2140 in this exact version",
+          "source_id": "clerk:119:2:304"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:312",
+      "shared_sha256": "b69c06f284320f907d4a6bb525ee9d161077a73afa076463454315cfffb9d22a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 9340 in this exact version",
+          "source_id": "clerk:119:2:312"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 9340 in this exact version",
+          "source_id": "clerk:119:2:312"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:24",
+      "shared_sha256": "48b9b7cc1aa1c3926a6698f66a8789942174e8d099dcc96fdab17c4daf06334f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 375 in this exact version",
+          "source_id": "clerk:119:1:24"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R. 375 in this exact version",
+          "source_id": "clerk:119:1:24"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:48",
+      "shared_sha256": "b51e8a567fef33971be3c2576bbff6b29d7d6ed17212281c108bf024e1d52fc3",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 788 in this exact version",
+          "source_id": "clerk:119:1:48"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 788 in this exact version",
+          "source_id": "clerk:119:1:48"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:55",
+      "shared_sha256": "013eae5fb82e009d171632b914008a4e9c5594d13d2cc2b05b18da4f361b94f5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 758 in this exact version",
+          "source_id": "clerk:119:1:55"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 758 in this exact version",
+          "source_id": "clerk:119:1:55"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:63",
+      "shared_sha256": "c7026e5c304d5fbf22a7d8db8e9374eecf47347bf4550f6d394c74070d1c4bd7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 495 in this exact version",
+          "source_id": "clerk:119:1:63"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 495 in this exact version",
+          "source_id": "clerk:119:1:63"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:65",
+      "shared_sha256": "a26f60cb514cfceda39d31758d6b45604353a2c9cd7d3a64585606179d8867da",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 993 in this exact version",
+          "source_id": "clerk:119:1:65"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 993 in this exact version",
+          "source_id": "clerk:119:1:65"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:72",
+      "shared_sha256": "82c85e187f1c2c3fdbffdbab70b4d7c3f84fcadbc370c41b3956b07264ecd2a9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 359 in this exact version",
+          "source_id": "clerk:119:1:72"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 359 in this exact version",
+          "source_id": "clerk:119:1:72"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:132",
+      "shared_sha256": "223688bbb3c5ea0684bb0af74a98322c0b004cdaa76350c60a8a477db131bbee",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 1263 in this exact version",
+          "source_id": "clerk:119:1:132"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:132"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:207",
+      "shared_sha256": "76297ae7d3235e2ecbb8bc013b4516e18b2f7cd643b8b7abe9e12f5f89d0b282",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting Greene Part A Amendment No. 114 to H.R. 4016 in this exact form",
+          "source_id": "clerk:119:1:207"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting Greene Part A Amendment No. 114 to H.R. 4016 in this exact form",
+          "source_id": "clerk:119:1:207"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:230",
+      "shared_sha256": "eb5540df8abd608b1c0b1ae8b513e8a433158d7558bafd27e60898562329de13",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting Perry Amendment No. 26 to H.R. 4553 in this exact form",
+          "source_id": "clerk:119:1:230"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting Perry Amendment No. 26 to H.R. 4553 in this exact form",
+          "source_id": "clerk:119:1:230"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:232",
+      "shared_sha256": "2f77580abab0af68d7ec7883c8d883c2fc31cd95205e86d48e4da46f321b8699",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting Perry Amendment No. 28 to H.R. 4553 in this exact form",
+          "source_id": "clerk:119:1:232"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting Perry Amendment No. 28 to H.R. 4553 in this exact form",
+          "source_id": "clerk:119:1:232"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:251",
+      "shared_sha256": "200d0f2733d0838889bad29073102c4427174c782c9c864a1203bbc4ab0ebfb9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting Patronis Part A Amendment No. 9 to H.R. 3838 in this exact form",
+          "source_id": "clerk:119:1:251"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting Patronis Part A Amendment No. 9 to H.R. 3838 in this exact form",
+          "source_id": "clerk:119:1:251"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:254",
+      "shared_sha256": "c7f1cbf67928e20dd9331718aac1ccd2c9d974dad122d303e26c9e3ae41d1efb",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting Greene Part A Amendment No. 20 to H.R. 3838 in this exact form",
+          "source_id": "clerk:119:1:254"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting Greene Part A Amendment No. 20 to H.R. 3838 in this exact form",
+          "source_id": "clerk:119:1:254"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:303",
+      "shared_sha256": "927d20596468ae44b50c0bbdf88e98ec6937d4b5af3c5a2c65b174db07268ef9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 3109 in this exact form",
+          "source_id": "clerk:119:1:303"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:303"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:323",
+      "shared_sha256": "43dfb685539953e660def9f8fbcd160fd1871db9f3af9125d6a4fe2fd11bd269",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 3628 in this exact form",
+          "source_id": "clerk:119:1:323"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R. 3628 in this exact form",
+          "source_id": "clerk:119:1:323"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:334",
+      "shared_sha256": "26f39035b835ecb61a6726ad828e69260c8e0acfceb1bdae9f0c03fe8f64a737",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 3668 in this exact form",
+          "source_id": "clerk:119:1:334"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 3668 in this exact form",
+          "source_id": "clerk:119:1:334"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:342",
+      "shared_sha256": "6c9c285ad4e1d9d5d6c7f2561941cff8ef0807912a05758fc108ba72c6cc0914",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R.3632 in this exact form",
+          "source_id": "clerk:119:1:342"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R.3632 in this exact form",
+          "source_id": "clerk:119:1:342"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:347",
+      "shared_sha256": "f8b150877acd2e637a9811eadcf45692ac4d940352d1addb8b14597e7b646340",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R.3616 in this exact form",
+          "source_id": "clerk:119:1:347"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.3616 in this exact form",
+          "source_id": "clerk:119:1:347"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:9",
+      "shared_sha256": "aec9bc9da84a8f7af807ad09d7b185ec29843099a937e43c9cf291a836dd6cbe",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.131 over the President's objections in this exact form",
+          "source_id": "clerk:119:2:9"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.131 over the President's objections in this exact form",
+          "source_id": "clerk:119:2:9"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:12",
+      "shared_sha256": "5ecb552bfa3679774da45300c014b35a7138e51c8a72408a7abbd574d81b40f6",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R.5184 in this exact form",
+          "source_id": "clerk:119:2:12"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.5184 in this exact form",
+          "source_id": "clerk:119:2:12"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:33",
+      "shared_sha256": "91b23e12f0f510feb9a728c9a0711ae27105ea42e64f73509d6b592be1bb3b3e",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.5764 as amended",
+          "source_id": "clerk:119:2:33"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.5764 as amended",
+          "source_id": "clerk:119:2:33"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:43",
+      "shared_sha256": "4a8aa75cf750ef771de5cb8f7c8f19b78c33e44f353b1ab2c7974eb2e16f60a6",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting Part B Amendment No.1 to H.R.7148 in this exact form",
+          "source_id": "clerk:119:2:43"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting Part B Amendment No.1 to H.R.7148 in this exact form",
+          "source_id": "clerk:119:2:43"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:64",
+      "shared_sha256": "741c13bfe85d7f74629c1f6b26f701fc83b4a171aef94cc0a6baed9f0703b159",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R.3617 in this exact form",
+          "source_id": "clerk:119:2:64"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.3617 in this exact form",
+          "source_id": "clerk:119:2:64"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:67",
+      "shared_sha256": "14a3c2f64f6f65221c6c19af6412493a98a71406b1a979d92fe94dbeb1fbc948",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R.261 in this exact form",
+          "source_id": "clerk:119:2:67"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.261 in this exact form",
+          "source_id": "clerk:119:2:67"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:88",
+      "shared_sha256": "a46822fd06385c4708ee57848c316b9d867e91ed5509d00820c2f360d0efedfa",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.4294 as amended",
+          "source_id": "clerk:119:2:88"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.4294 as amended",
+          "source_id": "clerk:119:2:88"
+        }
+      ]
+    }
+  ],
+  "differing_real_choices_exercised": true,
+  "controlled_raw_update": {
+    "interpretation_unchanged": true,
+    "cutoff_unchanged": "2026-09-16"
+  },
+  "controlled_new_interpretation_input": {
+    "action_id": "house:119:1:74",
+    "requires_explicit_authoring_change": true,
+    "acceptance_conferred": false
+  },
+  "controlled_shared_correction": {
+    "impact": {
+      "changed_action_ids": [
+        "house:119:1:74"
+      ],
+      "affected_projections": [
+        {
+          "member_id": "F000477",
+          "action_ids": [
+            "house:119:1:74"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "action_ids": [
+            "house:119:1:74"
+          ]
+        }
+      ],
+      "affected_findings": [
+        {
+          "member_id": "F000477",
+          "proposition_ids": [
+            "prop:3ff8d272860046a5"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "proposition_ids": [
+            "prop:be37003372950e86"
+          ]
+        }
+      ],
+      "acceptance_conferred": false
+    },
+    "stale_projections_rejected": [
+      "F000477",
+      "M001184"
+    ],
+    "historical_core_unchanged": true
+  }
+}
