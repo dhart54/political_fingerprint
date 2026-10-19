@@ -364,4 +364,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'air monitoring Foushee Not Voting became directional or omitted'):validate_air_monitoring_nondirectional(r,bad)
         record=next(x for x in read(p/'membership_review.json')['records']if x['action_id']=='house:119:2:136');record['rationale']+=' FousheeNotVoting remains nondirectional.'
         with self.assertRaisesRegex(ValueError,'air monitoring shared membership rationale became member-specific'):validate_air_monitoring_membership_neutrality(record)
+    def test_military_construction_shift_preserves_math_and_account_lifetimes(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_military_construction_shift_boundaries
+        p=folder(91);action=next(a for a in read(p/'authoring.json')['actions']if a['action_id']=='house:119:2:174');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('Defense-WideMilitaryConstructionfrom$3,757,301,000to$4,239,133,000','Defense-WideMilitaryConstructionfrom$3,757,301,000to$4,757,301,000'),('available untilSeptember30,2031','available forever')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'construction shift amount math or distinct account life lost'):validate_military_construction_shift_boundaries(bad,s['congressional-record:8469-amend50-roll174-choice160'],s['house-bill:8469rh-Defensewide-NATO-complete160'],s['govinfo:10usc2806-operative160'])
+    def test_military_construction_shift_cannot_be_enacted_or_all_nato_cut(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_military_construction_shift_boundaries
+        p=folder(91);action=next(a for a in read(p/'authoring.json')['actions']if a['action_id']=='house:119:2:174');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('amendment was rejected80–333with22NotVoting','amendment was adopted and enacted'),('does not repeal2806or end allNATOfunding','repeals2806and ends allNATOfunding'),('Neither fixed amount is automatically raised','Both fixed amounts are automatically raised')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'construction shift failed outcome fixed conditions or limited NATO scope lost'):validate_military_construction_shift_boundaries(bad,s['congressional-record:8469-amend50-roll174-choice160'],s['house-bill:8469rh-Defensewide-NATO-complete160'],s['govinfo:10usc2806-operative160'])
 if __name__=='__main__':unittest.main()
