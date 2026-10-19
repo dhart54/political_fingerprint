@@ -1,0 +1,63 @@
+{
+  "observed_at_utc": "2026-10-18T20:38:29.267372+00:00",
+  "basis": "Read-only gh run list --branch codex/infrastructure-candidate-seed --limit12 and PR232head/draft read; no retry.",
+  "backend_success": [
+    {
+      "batch": 45,
+      "head": "05dc9be2d391380f5bc46e7dcc6a2ee194b820f8",
+      "run": 39162940929
+    },
+    {
+      "batch": 46,
+      "head": "145c73611c071a19092b0a24c3f174fb3b34a937",
+      "run": 39163154710
+    },
+    {
+      "batch": 47,
+      "head": "4e6b56cba306431ef5c8c6c8446bab2853fc3865",
+      "run": 39163313905
+    },
+    {
+      "batch": 48,
+      "head": "cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea",
+      "run": 39163493694
+    }
+  ],
+  "frontend_cancelled": [
+    {
+      "batch": 45,
+      "run": 39162940870
+    },
+    {
+      "batch": 46,
+      "run": 39163156760
+    },
+    {
+      "batch": 47,
+      "run": 39163313819
+    },
+    {
+      "batch": 48,
+      "run": 39163493717
+    }
+  ],
+  "frontend_success": {
+    "batch": 49,
+    "head": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+    "run": 39163677362
+  },
+  "backend_in_progress": {
+    "batch": 49,
+    "head": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+    "run": 39163677392
+  },
+  "batch50": {
+    "head": "fc3b0ee2565ced0621e3238a2fdc5ec0d1481c34",
+    "frontend_run": 39163992789,
+    "backend_run": 39163992853,
+    "both_in_progress": true
+  },
+  "scope": "Exact run conclusions only; cancelled frontend jobs are not passing. Later heads are separate. No source-review clearance, acceptance, publication or production authority. Older failure/timeout/retry attribution remains preserved.",
+  "manual_retry": false,
+  "test_weakened": false
+}

@@ -1,0 +1,1066 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 58,
+  "exact_committed_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch58_20260916/membership_review.json",
+      "git_blob": "50a058c40132c816115a09ebb6fd298498a9e010",
+      "git_bytes_sha256": "f9f2700797e1fd2600f56390b5a3cbf0ca99dfe14083918a0e2d4babbbf9a677"
+    },
+    "sources": {
+      "head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch58_20260916/sources.json",
+      "git_blob": "d6b869b8224f02cc239a7f4bbe35736fc965dc32",
+      "git_bytes_sha256": "2de7d66d7f7471844969a9e950383224e6a548e685649f18a64ff9660b9d2c76"
+    },
+    "screening": {
+      "head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch58_20260916/screening_receipt.json",
+      "git_blob": "78793ea2726cd764bea5083524f5baf0da5078d9",
+      "git_bytes_sha256": "70fa41b7a7ed259c893d1f80593efdcdc2968d96000dd3a4943e67075be84871"
+    },
+    "screening_units": {
+      "head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch58_20260916/screening_units_receipt.json",
+      "git_blob": "b006867c566a60322cc65db28fbf5a0cdbf8f1e5",
+      "git_bytes_sha256": "382a3f4dc8b93ce1b9492cc79bbc7f1efd54734da241de373c7ab4200a75ce28"
+    }
+  },
+  "cumulative_membership_review_sha256": "d6983f4b345e00e364f68aa061b096d77c4507c5ec8497bcf9b5579058d47320",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/68993c37f888fd854f6cbd0cb6e6e4c39c1bea3443ce1786313a7b73bc12d4b9.0000000.json",
+        "sha256": "2dbc655f009061f0a32420c12f4e37abf959e664f37ce4d81092ef0ea754f4fc",
+        "start_character": 0,
+        "end_character": 33726
+      }
+    ],
+    "utf8_sha256": "68993c37f888fd854f6cbd0cb6e6e4c39c1bea3443ce1786313a7b73bc12d4b9",
+    "total_characters": 33726,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/1f977fd1395920fa9395a1362e673cebf4ee3424382a84c9b02be8e057a3c8a9.0000000.json",
+        "sha256": "7182c1c2d09615838d4a6e745c6d1134f462a008839b78af915ff6375e13ae02",
+        "start_character": 0,
+        "end_character": 90000
+      },
+      {
+        "path": "source_parts/1f977fd1395920fa9395a1362e673cebf4ee3424382a84c9b02be8e057a3c8a9.0090000.json",
+        "sha256": "df36c21a9dcf02ba4f633c2136dcc120a25b43c07d5858533f0024aa9ad4658c",
+        "start_character": 90000,
+        "end_character": 90550
+      }
+    ],
+    "utf8_sha256": "1f977fd1395920fa9395a1362e673cebf4ee3424382a84c9b02be8e057a3c8a9",
+    "total_characters": 90550,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:330",
+    "house:119:1:331",
+    "house:119:1:332",
+    "house:119:1:333",
+    "house:119:1:334"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hr3898eh",
+      "governed_length": 54257,
+      "review_extent": "Only first3500and last1000of54257 characters read; middle unreviewed."
+    },
+    {
+      "source_id": "congressional-record:3898-roll330-passage165",
+      "governed_length": 526,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:hres432eh",
+      "governed_length": 1243,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:hr2550eh",
+      "governed_length": 1557,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:hr3668eh",
+      "governed_length": 15531,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:15usc717n-2024-operative",
+      "governed_length": 3923,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:15usc717b-2024-operative",
+      "governed_length": 5879,
+      "review_extent": "Complete retained statutory unit read previously in batch52 and reused; no new current-law acquisition."
+    },
+    {
+      "source_id": "govinfo:15usc717f-2024-operative",
+      "governed_length": 8487,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:33usc1341-2024-water-boundary",
+      "governed_length": 10082,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:42usc4332-2024-operative",
+      "governed_length": 5728,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:42usc4336a-2024-operative",
+      "governed_length": 9393,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    },
+    {
+      "source_id": "govinfo:42usc4336e-2024-operative",
+      "governed_length": 3973,
+      "review_extent": "Complete retained own bill, rule, recorded-choice unit or selected dated statutory unit read; external referenced law is not implicitly reviewed."
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_final_bills_read": 2,
+    "complete_rule_texts_read": 1,
+    "partial_whole_package_sources": 1,
+    "complete_recorded_choice_units_read": 1,
+    "complete_selected_material_statutory_units_read": 7,
+    "exact_Clerk_procedural_questions_read": 1,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:330",
+        "evidence_unit": "partial_whole_package",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:331",
+        "evidence_unit": "complete_bill_rule_or_exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:332",
+        "evidence_unit": "complete_bill_rule_or_exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:333",
+        "evidence_unit": "complete_bill_rule_or_exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:334",
+        "evidence_unit": "whole_bill_with_selected_material_statutory_baselines",
+        "whole_action_meaning_authored": true
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "4fba19be4ae718db7d1848074feef2220ea471941dd986245a89714f43bccf61",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:330",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The 54,257-character December 11 H.R.3898 EH is a 26-section water-law package. Only the first 3,500 and last 1,000 characters were read, alongside its complete own passage unit. Its contents include standards, technology, water certification, general and individual permits, forestry/agriculture, jurisdiction, mitigation, judicial timing, recharge, pilot and International Boundary and Water Commission provisions. An infrastructure title or selected permit provision cannot represent the whole package. Whole operative provisions, versions and material water-law baselines remain pending. Passage 221–205 with seven Not Voting is distinct from the failed recommittal. No permit, construction, water-quality outcome, enacted change or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:330",
+            "url": "https://clerk.house.gov/evs/2025/roll330.xml",
+            "raw_sha256": "4c569f703a7b6f436d117d76b6b36f78355e4db9dc91baea833d2e0a8cc3d912",
+            "governed_bytes_sha256": "66939b03788aae5fe79acda5fb72009768e521df868dd15cbc84438552d3d01e"
+          },
+          {
+            "source_id": "govinfo:hr3898eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3898eh/html/BILLS-119hr3898eh.htm",
+            "raw_sha256": "04a3814dc7ca81c2a744fb2eaf181a4532aa7faac3fc52b497ab97be16711b7e",
+            "governed_bytes_sha256": "dc426a72f2ff3540f51415a1dbfa2536a056e5c68dccc24d0132bb7fd8007fbd"
+          },
+          {
+            "source_id": "congressional-record:3898-roll330-passage165",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+            "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+            "governed_bytes_sha256": "1a220a4560f8e7fdd32122611cdbd4ed975dadaa2d99e900ed108be2db65ba4f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3898eh",
+            "locator": "Only first3500of54257 characters read",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3898 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3898 _______________________________________________________________________ AN ACT To amend the Federal Water Pollution Control Act to make targeted reforms with respect to waters of the United States and other matters, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE; TABLE OF CONTENTS. (a) Short Title.--This Act may be cited as the ``Promoting Efficient Review for Modern Infrastructure Today Act'' or the ``PERMIT Act''. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title; table of contents. Sec. 2. Water quality standards attainability. Sec. 3. Water quality criteria development and transparency. Sec. 4. Water quality technology availability. Sec. 5. Improving water quality certifications and American energy infrastructure. Sec. 6. Clarifying Federal general permits. Sec. 7. NPDES permit terms. Sec. 8. Confidence in clean water permits. Sec. 9. Forest protection and wildland firefighter safety. Sec. 10. Agricultural stormwater discharge. Sec. 11. Reducing regulatory burdens. Sec. 12. Reducing permitting uncertainty. Sec. 13. Nationwide permitting improvement. Sec. 14. Deadline for request for submission of additional information for permit programs for dredged or fill material. Sec. 15. Judicial review timeline clarity. Sec. 16. Maintaining cooperative permitting. Sec. 17. Restoring federalism in clean water permitting. Sec. 18. Revision of framework for compensatory mitigation. Sec. 19. Jurisdictional determination backlog reduction. Sec. 20. Definition of navigable waters. Sec. 21. Applicability of Spill Prevention, Control, and Countermeasure rule. Sec. 22. Coordination with Federal Permitting Improvement Steering Council. Sec. 23. Sense of Congress on Chesapeake Bay Watershed Agreement. Sec. 24. Identification and permitting for water recharge on certain Federal lands. Sec. 25. State-led permitting efficiency and water quality pilot. Sec. 26. International Boundary and Water Commission authority. SEC. 2. WATER QUALITY STANDARDS ATTAINABILITY. (a) State Water Quality Standards.--Section 303(c) (33 U.S.C. 1313(c)) of the Federal Water Pollution Control Act is amended-- (1) in paragraph (1)-- (A) by striking ``The Governor of a State'' and inserting ``(A) The Governor of a State''; and (B) by striking ``Results of such review shall be made available to the Administrator.'' and inserting the following: ``(B) Reviews under this paragraph shall include review, for purposes of ensuring that combined sewer overflow controls are cost effective, of any water quality standard applicable to a body of water into which, pursuant to a permit, order, or decree issued pursuant to this Act, a municipal combined storm and sanitary sewer discharges. ``(C) Results of each review under this paragraph shall be made available to the Administrator.''; and (2) in paragraph (2)(A)-- (A) by inserting ``(i)'' before ``their use and value for public water supplies''; (B) by striking ``, and also taking into consideration'' and inserting ``; (ii)''; and (C) by inserting before the period at the end the following: ``; and (iii) the cost and commercial availability in the United States of treatment technologies (including whether the technologies have been de"
+          },
+          {
+            "source_id": "govinfo:hr3898eh",
+            "locator": "Only last1000of54257 characters read",
+            "passage": "ee on Foreign Relations of the Senate and the Committee on Transportation and Infrastructure of the House of Representatives a report on the funds accepted under this section that includes a description of-- (1) the activities carried out with such funds; and (2) costs associated with such activities. (e) Definitions.--In this section: (1) The term ``Commission'' means the United States Section of the International Boundary and Water Commission, United States and Mexico. (2) The term ``foreign country of concern'' has the meaning given that term in section 10638 of the Research and Development, Competition, and Innovation Act (42 U.S.C. 19237). Passed the House of Representatives December 11, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3898 _______________________________________________________________________ AN ACT To amend the Federal Water Pollution Control Act to make targeted reforms with respect to waters of the United States and other matters, and for other purposes."
+          },
+          {
+            "source_id": "congressional-record:3898-roll330-passage165",
+            "locator": "Complete own passage unit read",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMs. SCHOLTEN. Mr. Speaker, on \nthat I demand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. This is a \n5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 221, nays \n205, not voting 7, as follows: \n[Roll No. 330] \n\n\nSo the bill was passed. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "285395ecb67c0f608c130483b082576ec6de4f7c9cdefd6687a99022819e3190",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:331",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete H.Res.432 EH governs consideration of H.R.2550, with waived points of order, one hour of debate, one recommittal, specified House-rule exceptions and transmission to the Senate within one week after passage. Adoption does not itself nullify the executive order or pass the underlying bill. It remains non-counting procedural context, separate from the preceding discharge vote and subsequent bill passage.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:331",
+            "url": "https://clerk.house.gov/evs/2025/roll331.xml",
+            "raw_sha256": "48eee1049476468bf95b14ef1730dd73a12934f4f512aa605aa6aa3c57fc3804",
+            "governed_bytes_sha256": "b7b2c986775bc0a5f757665e7de7c5ff9fd64ff2f5d8369a9d4f1b082a185e95"
+          },
+          {
+            "source_id": "govinfo:hres432eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres432eh/html/BILLS-119hres432eh.htm",
+            "raw_sha256": "1f8925d6de1a4bf700ba6ce0baeaf4e60e3abe75df0682e78be5eb23a56f7969",
+            "governed_bytes_sha256": "b3561a577dde3438bde939d1cd6a9cdf7cb0102ba3e3f6ed05b7a6e9cc9c2d1d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres432eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 432 Engrossed in House (EH)] <DOC> H. Res. 432 In the House of Representatives, U. S., December 11, 2025. Resolved, That immediately upon adoption of this resolution, the House shall proceed to the consideration in the House of the bill (H.R. 2550) to nullify the Executive order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees; and (2) one motion to recommit. Sec. 2. Clause 1(c) of rule XIX and clause 8 of rule XX shall not apply to the consideration of H.R. 2550. Sec. 3. The Clerk shall transmit to the Senate a message that the House has passed H.R. 2550 no later than one week after passage. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "8ed1a6cdca1a2f4c7119be4f109b948504fafc29e6590dd945af215c3e449879",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:332",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.2550 EH would nullify the March 27, 2025 executive order on exclusions from Federal labor-management programs and prohibit Federal funds to carry it out. It would give covered March 26 executive-agency collective bargaining agreements full force and effect through their stated terms. This is general Federal employment and bargaining policy without a direct infrastructure or technical mechanism; the proposed exclusion does not infer effects on particular agencies or employees. No permanent guarantee for future contracts, actual restoration of rights, enacted effect or motive is established. The underlying executive order and agency implementation were not separately reviewed for this narrow domain proposal.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:332",
+            "url": "https://clerk.house.gov/evs/2025/roll332.xml",
+            "raw_sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c",
+            "governed_bytes_sha256": "3f2693e031dc1943a60e85994111393ec95265e6d1a3fedb276aca106934174e"
+          },
+          {
+            "source_id": "govinfo:hr2550eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2550eh/html/BILLS-119hr2550eh.htm",
+            "raw_sha256": "f6a900a52c4f2a2a599c760fef1de91a4d94c31f2c67ac0ed06812a35c821fee",
+            "governed_bytes_sha256": "d65bd10625d81816d5d43f194d0765f298ffd3a54117afee1f03ec5b7e134f7a"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2550eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2550 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 2550 _______________________________________________________________________ AN ACT To nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Protect America's Workforce Act''. SEC. 2. NULLIFICATION OF EXECUTIVE ORDER RELATING TO EXCLUSIONS FROM FEDERAL LABOR-MANAGEMENT RELATIONS PROGRAMS. The Executive order titled ``Exclusions from Federal Labor- Management Relations Programs'', issued on March 27, 2025, shall have no force or effect and no Federal funds may be obligated or expended to carry out such Executive order. SEC. 3. COLLECTIVE BARGAINING AGREEMENTS. Any collective bargaining agreement in effect as of March 26, 2025, between any executive branch Federal agency and any labor organization that is an exclusive representative of Federal employees shall have full force and effect through the stated term of the applicable agreement. Passed the House of Representatives December 11, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 2550 _______________________________________________________________________ AN ACT To nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2818282a10662b5763d32e74c036997c6c706feb949fa4f3d022699b684516e2",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:333",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.3668. The motion body was not reviewed. This non-counting procedural choice does not establish support for or opposition to a substantive pipeline provision and does not inherit the meaning of the subsequent whole-bill passage.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:333",
+            "url": "https://clerk.house.gov/evs/2025/roll333.xml",
+            "raw_sha256": "d9006495fc77ef2cf3d0a087a7d0c0a8497f43a35da47efe51921cb40ef484f5",
+            "governed_bytes_sha256": "1c38ca502258131d371d69b8f20f8df09edaa55545a9096b6f066daed6c6119d"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a76cec0d3a95d168bf2975e5a3899835a9063de838b027d3a50d8433d64679f6",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:334",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete H.R.3668 EH and retained material Natural Gas Act, water-certification and NEPA baselines support an unaccepted whole pipeline/facility authorization-process candidate. It preserves the certification displacement, FERC discretion, agency participation and record limits, qualified schedules, remote surveys, optional contractor assistance, tracking and security consultation. No automatic permit or actual project outcome is inferred. Independent whole-mandate and legal review remain required.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:334",
+            "url": "https://clerk.house.gov/evs/2025/roll334.xml",
+            "raw_sha256": "5886a8482b18ab0dfc0b797fd370b331e81bc75b7dce0a2cb4f4e0256b7260bc",
+            "governed_bytes_sha256": "db3cbe4ea6aa372207d602c6739b8d7a7bfdeccc538d6258d9a15004faf0f1af"
+          },
+          {
+            "source_id": "govinfo:hr3668eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3668eh/html/BILLS-119hr3668eh.htm",
+            "raw_sha256": "3cf698aad7d12ad0d584c7b17d6ada042f6a57c317794960ee7123ba23072750",
+            "governed_bytes_sha256": "a84b897eadda50034e795330830c34f4d4c941ffc798ce5904297446d6b4ea4d"
+          },
+          {
+            "source_id": "govinfo:15usc717n-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717n.htm",
+            "raw_sha256": "1807a9699b994f05471b34b334da0d58bacd9282109a97de688de670d347bb9b",
+            "governed_bytes_sha256": "27e56ad7299c39b1d34faf5f5d6f75fc0976c162f55f1a19e759ecaa2c90f4a8"
+          },
+          {
+            "source_id": "govinfo:15usc717b-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717b.htm",
+            "raw_sha256": "ddd9fdc0d571c677ec58cfbb29634a763ecda3c14bdfaa2f3b6c48c85dad9176",
+            "governed_bytes_sha256": "b5a884b22a0edaecc644f31502e96b546a0873170bec9b7e6ef11457dd3f1825"
+          },
+          {
+            "source_id": "govinfo:15usc717f-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717f.htm",
+            "raw_sha256": "9705ad8ddf9e34b1b3a8958e2f9a778492e4758bfa3de4188a8bd29b60aee1a1",
+            "governed_bytes_sha256": "75acbd1f42ba710bb9168d962d3155e6ead15714f23700fdd60cd8e4eaa4dbc2"
+          },
+          {
+            "source_id": "govinfo:33usc1341-2024-water-boundary",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIV-sec1341.htm",
+            "raw_sha256": "12151ee37a76c66a6252000cf53075a3f44e66a596b6e489152a5d406ff19eb7",
+            "governed_bytes_sha256": "05b17053ca5c8e6c861e4ce414e820939a84e5eb23b06912a8fb075dcb22c5a5"
+          },
+          {
+            "source_id": "govinfo:42usc4332-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4332.htm",
+            "raw_sha256": "1e488727268009a42447de310b94f13380ae907ba6c2b8c87d82b4c740c1bd47",
+            "governed_bytes_sha256": "753d8c2bdaaf9a4e06c199daf35ef43a099dddead6ff38a25ee34ced85d13e9a"
+          },
+          {
+            "source_id": "govinfo:42usc4336a-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4336a.htm",
+            "raw_sha256": "c15732fe4a9398c9f7a653bb3d9131fdefdfb64a015d8870f44dee9b2607cf6b",
+            "governed_bytes_sha256": "4c8259de2b24b36cf673854f87a1c8f71a467ef8d20556fa08342ef9db3bc5d3"
+          },
+          {
+            "source_id": "govinfo:42usc4336e-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4336e.htm",
+            "raw_sha256": "286ab25c36fbb96d079f74c5b5c45c567cc7c7f2d04fb6c0761b362c94c45917",
+            "governed_bytes_sha256": "89ea13fa019f595f8b639f406afed68b1bd75c7dd50fb6b924064204e9a41d94"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3668eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/138d1fb6557b99121e085fa1002456e7018dbfff79fd330029cf0f5c2fc0b5b2.0000000.json",
+                  "sha256": "4a87363a2f8e651229f56bf3422378719b3496357295b059032817d7188bee64",
+                  "start_character": 0,
+                  "end_character": 15531
+                }
+              ],
+              "utf8_sha256": "138d1fb6557b99121e085fa1002456e7018dbfff79fd330029cf0f5c2fc0b5b2",
+              "total_characters": 15531,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:15usc717n-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§717n. Process coordination; hearings; rules of procedure (a) Definition In this section, the term \"Federal authorization\"— (1) means any authorization required under Federal law with respect to an application for authorization under section 717b of this title or a certificate of public convenience and necessity under section 717f of this title; and (2) includes any permits, special use authorizations, certifications, opinions, or other approvals as may be required under Federal law with respect to an application for authorization under section 717b of this title or a certificate of public convenience and necessity under section 717f of this title. (b) Designation as lead agency (1) In general The Commission shall act as the lead agency for the purposes of coordinating all applicable Federal authorizations and for the purposes of complying with the National Environmental Policy Act of 1969 (42 U.S.C. 4321 et seq.). (2) Other agencies Each Federal and State agency considering an aspect of an application for Federal authorization shall cooperate with the Commission and comply with the deadlines established by the Commission. (c) Schedule (1) Commission authority to set schedule The Commission shall establish a schedule for all Federal authorizations. In establishing the schedule, the Commission shall— (A) ensure expeditious completion of all such proceedings; and (B) comply with applicable schedules established by Federal law. (2) Failure to meet schedule If a Federal or State administrative agency does not complete a proceeding for an approval that is required for a Federal authorization in accordance with the schedule established by the Commission, the applicant may pursue remedies under section 717r(d) of this title. (d) Consolidated record The Commission shall, with the cooperation of Federal and State administrative agencies and officials, maintain a complete consolidated record of all decisions made or actions taken by the Commission or by a Federal administrative agency or officer (or State administrative agency or officer acting under delegated Federal authority) with respect to any Federal authorization. Such record shall be the record for— (1) appeals or reviews under the Coastal Zone Management Act of 1972 (16 U.S.C. 1451 et seq.), provided that the record may be supplemented as expressly provided pursuant to section 319 of that Act [16 U.S.C. 1465]; or (2) judicial review under section 717r(d) of this title of decisions made or actions taken of Federal and State administrative agencies and officials, provided that, if the Court determines that the record does not contain sufficient information, the Court may remand the proceeding to the Commission for further development of the consolidated record. (e) Hearings; parties Hearings under this chapter may be held before the Commission, any member or members thereof, or any representative of the Commission designated by it, and appropriate records thereof shall be kept. In any proceeding before it, the Commission in accordance with such rules and regulations as it may prescribe, may admit as a party any interested State, State commission, municipality or any representative of interested consumers or security holders, or any competitor of a party to such proceeding, or any other person whose participation in the proceeding may be in the public interest. (f) Procedure All hearings, investigations, and proceedings under this chapter shall be governed by rules of practice and procedure to be adopted by the Commission, and in the conduct thereof the technical rules of evidence need not be applied. No informality in any hearing, investigation, or proceeding or in the manner of taking testimony shall invalidate any order, decision, rule, or regulation issued under the authority of this chapter. (June 21, 1938, ch. 556, §15, 52 Stat. 829; Pub. L. 109–58, title III, §313(a), Aug. 8, 2005, 119 Stat. 688.) "
+          },
+          {
+            "source_id": "govinfo:15usc717b-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c.0000000.json",
+                  "sha256": "0b6b18818ce3045caa3a098c521f84fdc2c58ad0cb48213f26bd658ac515878d",
+                  "start_character": 0,
+                  "end_character": 5879
+                }
+              ],
+              "utf8_sha256": "66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c",
+              "total_characters": 5879,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:15usc717f-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/e47f603c63f0b3b3c9306652abc712138216f1f68676dcffca764f5e4278bf12.0000000.json",
+                  "sha256": "85dbf5e92cf2eadad07f5be5bd5587b6eff58c5048e6a4fa6822098c8d78498c",
+                  "start_character": 0,
+                  "end_character": 8487
+                }
+              ],
+              "utf8_sha256": "e47f603c63f0b3b3c9306652abc712138216f1f68676dcffca764f5e4278bf12",
+              "total_characters": 8487,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:33usc1341-2024-water-boundary",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/868852c865f48e2fc0a0fa3fc8bb5a13a78b0f93838b82d52cd1a9ef8bd3651d.0000000.json",
+                  "sha256": "f6db33bd20325d7dceb63b6522db43a1d451cd8ba4c2195d2542a6e65853a225",
+                  "start_character": 0,
+                  "end_character": 10082
+                }
+              ],
+              "utf8_sha256": "868852c865f48e2fc0a0fa3fc8bb5a13a78b0f93838b82d52cd1a9ef8bd3651d",
+              "total_characters": 10082,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc4332-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/960ff9a494a1e079f8855f7c36dae2054d7a08ed427cc320049e1f154ca01256.0000000.json",
+                  "sha256": "f4e0ab02296aff677f81bc415d243d4d72f08f0edd5434159ad7fd3a4253432d",
+                  "start_character": 0,
+                  "end_character": 5728
+                }
+              ],
+              "utf8_sha256": "960ff9a494a1e079f8855f7c36dae2054d7a08ed427cc320049e1f154ca01256",
+              "total_characters": 5728,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc4336a-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8c7015b5c019a8936a5b5c8b283ba36bf61e28a506e6c51f006e5b1c2825e3df.0000000.json",
+                  "sha256": "97cb826cc45975e9301f5d2635bb90b573c5f1168b3977d73c19ee43f5cc5d26",
+                  "start_character": 0,
+                  "end_character": 9393
+                }
+              ],
+              "utf8_sha256": "8c7015b5c019a8936a5b5c8b283ba36bf61e28a506e6c51f006e5b1c2825e3df",
+              "total_characters": 9393,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc4336e-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§4336e. Definitions In this subchapter: (1) Categorical exclusion The term \"categorical exclusion\" means a category of actions that a Federal agency has determined normally does not significantly affect the quality of the human environment within the meaning of section 4332(2)(C) of this title. (2) Cooperating agency The term \"cooperating agency\" means any Federal, State, Tribal, or local agency that has been designated as a cooperating agency under section 4336a(a)(3) of this title. (3) Council The term \"Council\" means the Council on Environmental Quality established in subchapter II. (4) Environmental assessment The term \"environmental assessment\" means an environmental assessment prepared under section 4336(b)(2) of this title. (5) Environmental document The term \"environmental document\" means an environmental impact statement, an environmental assessment, or a finding of no significant impact. (6) Environmental impact statement The term \"environmental impact statement\" means a detailed written statement that is required by section 4332(2)(C) of this title. (7) Finding of no significant impact The term \"finding of no significant impact\" means a determination by a Federal agency that a proposed agency action does not require the issuance of an environmental impact statement. (8) Participating Federal agency The term \"participating Federal agency\" means a Federal agency participating in an environmental review or authorization of an action. (9) Lead agency The term \"lead agency\" means, with respect to a proposed agency action— (A) the agency that proposed such action; or (B) if there are 2 or more involved Federal agencies with respect to such action, the agency designated under section 4336a(a)(1) of this title. (10) Major Federal action (A) In general The term \"major Federal action\" means an action that the agency carrying out such action determines is subject to substantial Federal control and responsibility. (B) Exclusion The term \"major Federal action\" does not include— (i) a non-Federal action— (I) with no or minimal Federal funding; or (II) with no or minimal Federal involvement where a Federal agency cannot control the outcome of the project; (ii) funding assistance solely in the form of general revenue sharing funds which do not provide Federal agency compliance or enforcement responsibility over the subsequent use of such funds; (iii) loans, loan guarantees, or other forms of financial assistance where a Federal agency does not exercise sufficient control and responsibility over the subsequent use of such financial assistance or the effect of the action; (iv) business loan guarantees provided by the Small Business Administration pursuant to section 7(a) or (b) and 1 of the Small Business Act ( U.S.C. 636(a)), 2 or title V of the Small Business Investment Act of 1958 (15 U.S.C. 695 et seq.); (v) bringing judicial or administrative civil or criminal enforcement actions; (vi) extraterritorial activities or decisions, which means agency activities or decisions with effects located entirely outside of the jurisdiction of the United States; or (vii) activities or decisions that are non-discretionary and made in accordance with the agency's statutory authority. (11) Programmatic environmental document The term \"programmatic environmental document\" means an environmental impact statement or environmental assessment analyzing all or some of the environmental effects of a policy, program, plan, or group of related actions. (12) Proposal The term \"proposal\" means a proposed action at a stage when an agency has a goal, is actively preparing to make a decision on one or more alternative means of accomplishing that goal, and can meaningfully evaluate its effects. (13) Special expertise The term \"special expertise\" means statutory responsibility, agency mission, or related program experience. (Pub. L. 91–190, title I, §111, as added Pub. L. 118–5, div. C, title III, §321(b), June 3, 2023, 137 Stat. 44.) "
+          }
+        ],
+        "episode_candidate_id": "episode:hr3668:119"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "81d63d2f55318a7ef890c25f62d1971a2444330f1206cbdbace4bf1c7647dda4",
+      "source": {
+        "source_id": "govinfo:15usc717b-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717b.htm",
+        "text_version": "2024 Code: complete operative section; later notes excluded",
+        "raw_sha256": "ddd9fdc0d571c677ec58cfbb29634a763ecda3c14bdfaa2f3b6c48c85dad9176",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c.0000000.json",
+              "sha256": "0b6b18818ce3045caa3a098c521f84fdc2c58ad0cb48213f26bd658ac515878d",
+              "start_character": 0,
+              "end_character": 5879
+            }
+          ],
+          "utf8_sha256": "66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c",
+          "total_characters": 5879,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "b5a884b22a0edaecc644f31502e96b546a0873170bec9b7e6ef11457dd3f1825"
+      }
+    },
+    {
+      "original_source_object_sha256": "c4fb32701c0cd34c5da1e59646fbf43a007c3f5c4b067c40f26cc1bd0dd6bc1a",
+      "source": {
+        "source_id": "govinfo:15usc717f-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717f.htm",
+        "text_version": "2024 Code: complete operative section; later notes excluded",
+        "raw_sha256": "9705ad8ddf9e34b1b3a8958e2f9a778492e4758bfa3de4188a8bd29b60aee1a1",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/e47f603c63f0b3b3c9306652abc712138216f1f68676dcffca764f5e4278bf12.0000000.json",
+              "sha256": "85dbf5e92cf2eadad07f5be5bd5587b6eff58c5048e6a4fa6822098c8d78498c",
+              "start_character": 0,
+              "end_character": 8487
+            }
+          ],
+          "utf8_sha256": "e47f603c63f0b3b3c9306652abc712138216f1f68676dcffca764f5e4278bf12",
+          "total_characters": 8487,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "75acbd1f42ba710bb9168d962d3155e6ead15714f23700fdd60cd8e4eaa4dbc2"
+      }
+    },
+    {
+      "original_source_object_sha256": "e98bc31a7313c84f78625371206f9f69f3502e6880c63eac2352fc00babab68d",
+      "source": {
+        "source_id": "clerk:119:1:330",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll330.xml",
+        "text_version": null,
+        "raw_sha256": "4c569f703a7b6f436d117d76b6b36f78355e4db9dc91baea833d2e0a8cc3d912",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "330",
+          "legis-num": "H R 3898",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:55 PM",
+          "vote-desc": "PERMIT Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "6",
+            "nay-total": "204",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "66939b03788aae5fe79acda5fb72009768e521df868dd15cbc84438552d3d01e"
+      }
+    },
+    {
+      "original_source_object_sha256": "ed1cd53857622b928ef62f836330d0e1467fa0142b6f79d4bb2d3058fa88afa5",
+      "source": {
+        "source_id": "govinfo:hr3898eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3898eh/html/BILLS-119hr3898eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "04a3814dc7ca81c2a744fb2eaf181a4532aa7faac3fc52b497ab97be16711b7e",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/a373c7e2b64f1a525f146d1c9bb17208c0025ba7b8577f783a53b5f637b80873.0000000.json",
+              "sha256": "45b26b4d00f3f28892a189be77689f773b9c3ea71a75b47a93ede9dd085de74b",
+              "start_character": 0,
+              "end_character": 54257
+            }
+          ],
+          "utf8_sha256": "a373c7e2b64f1a525f146d1c9bb17208c0025ba7b8577f783a53b5f637b80873",
+          "total_characters": 54257,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "dc426a72f2ff3540f51415a1dbfa2536a056e5c68dccc24d0132bb7fd8007fbd"
+      }
+    },
+    {
+      "original_source_object_sha256": "0f9b05beb898fb7aa6ea582690dcff37e15cd06004ee76db69152606d1e3920a",
+      "source": {
+        "source_id": "congressional-record:3898-roll330-passage165",
+        "source_type": "congressional_record",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+        "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+        "text": "The SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMs. SCHOLTEN. Mr. Speaker, on \nthat I demand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. This is a \n5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 221, nays \n205, not voting 7, as follows: \n[Roll No. 330] \n\n\nSo the bill was passed. \nThe result of the vote was announced \nas above recorded.",
+        "text_version": "Own direct passage question/voiceayes/Scholten demand/order/totals/passage, not recommit329/next331",
+        "text_extraction_method": "Exact preserved source intervals joined doubleLF. Only complete named operative/stages or material target/definition; no word repair or whole-parent/current-law application certification.",
+        "governed_bytes_sha256": "1a220a4560f8e7fdd32122611cdbd4ed975dadaa2d99e900ed108be2db65ba4f",
+        "captured_full_text_sha256": "d2e5810bdc6ddcaf81f9bc41b0f56c0a6153566e430c5e6d3ea5f255cff7c8b1",
+        "source_text_extents": [
+          {
+            "start": 1495,
+            "end": 1938,
+            "total": 7953
+          },
+          {
+            "start": 6368,
+            "end": 6449,
+            "total": 7953
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "6709bd12a584be558a97ef0fa6d60a5139a8848d27ec5fbe690c64d35c3970ab",
+      "source": {
+        "source_id": "clerk:119:1:331",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll331.xml",
+        "text_version": null,
+        "raw_sha256": "48eee1049476468bf95b14ef1730dd73a12934f4f512aa605aa6aa3c57fc3804",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "331",
+          "legis-num": "H RES 432",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "11-Dec-2025",
+          "action-time": "3:03 PM",
+          "vote-desc": "Providing for consideration of the bill (H.R. 2550) to nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "22",
+            "nay-total": "194",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "210",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "b7b2c986775bc0a5f757665e7de7c5ff9fd64ff2f5d8369a9d4f1b082a185e95"
+      }
+    },
+    {
+      "original_source_object_sha256": "b396a80777df1b87a140ff2035076473303d8cef136d62ae290245f9c40002aa",
+      "source": {
+        "source_id": "govinfo:hres432eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres432eh/html/BILLS-119hres432eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "1f8925d6de1a4bf700ba6ce0baeaf4e60e3abe75df0682e78be5eb23a56f7969",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 432 Engrossed in House (EH)] <DOC> H. Res. 432 In the House of Representatives, U. S., December 11, 2025. Resolved, That immediately upon adoption of this resolution, the House shall proceed to the consideration in the House of the bill (H.R. 2550) to nullify the Executive order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees; and (2) one motion to recommit. Sec. 2. Clause 1(c) of rule XIX and clause 8 of rule XX shall not apply to the consideration of H.R. 2550. Sec. 3. The Clerk shall transmit to the Senate a message that the House has passed H.R. 2550 no later than one week after passage. Attest: Clerk.",
+        "governed_bytes_sha256": "b3561a577dde3438bde939d1cd6a9cdf7cb0102ba3e3f6ed05b7a6e9cc9c2d1d"
+      }
+    },
+    {
+      "original_source_object_sha256": "789dc03f5ec67bdb7bdcd1a0c4d491a0eb0010f5ddaaad54f095632bda866a03",
+      "source": {
+        "source_id": "clerk:119:1:332",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll332.xml",
+        "text_version": null,
+        "raw_sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "332",
+          "legis-num": "H R 2550",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "11-Dec-2025",
+          "action-time": "4:43 PM",
+          "vote-desc": "Protect America’s Workforce Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "20",
+            "nay-total": "195",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "211",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "3f2693e031dc1943a60e85994111393ec95265e6d1a3fedb276aca106934174e"
+      }
+    },
+    {
+      "original_source_object_sha256": "a207443ddcf7a230d2130d2c7f2dd20dea0230f39d85c5c3833ccbc16b2b2579",
+      "source": {
+        "source_id": "govinfo:hr2550eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2550eh/html/BILLS-119hr2550eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "f6a900a52c4f2a2a599c760fef1de91a4d94c31f2c67ac0ed06812a35c821fee",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2550 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 2550 _______________________________________________________________________ AN ACT To nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Protect America's Workforce Act''. SEC. 2. NULLIFICATION OF EXECUTIVE ORDER RELATING TO EXCLUSIONS FROM FEDERAL LABOR-MANAGEMENT RELATIONS PROGRAMS. The Executive order titled ``Exclusions from Federal Labor- Management Relations Programs'', issued on March 27, 2025, shall have no force or effect and no Federal funds may be obligated or expended to carry out such Executive order. SEC. 3. COLLECTIVE BARGAINING AGREEMENTS. Any collective bargaining agreement in effect as of March 26, 2025, between any executive branch Federal agency and any labor organization that is an exclusive representative of Federal employees shall have full force and effect through the stated term of the applicable agreement. Passed the House of Representatives December 11, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 2550 _______________________________________________________________________ AN ACT To nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.",
+        "governed_bytes_sha256": "d65bd10625d81816d5d43f194d0765f298ffd3a54117afee1f03ec5b7e134f7a"
+      }
+    },
+    {
+      "original_source_object_sha256": "16f0f8282e3d1c3472d819f0876192c334199350b740d38299675b0f2e9c1800",
+      "source": {
+        "source_id": "clerk:119:1:333",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll333.xml",
+        "text_version": null,
+        "raw_sha256": "d9006495fc77ef2cf3d0a087a7d0c0a8497f43a35da47efe51921cb40ef484f5",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "333",
+          "legis-num": "H R 3668",
+          "vote-question": "On Motion to Recommit",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "12-Dec-2025",
+          "action-time": "10:24 AM",
+          "vote-desc": "Improving Interagency Coordination for Pipeline Reviews Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "1c38ca502258131d371d69b8f20f8df09edaa55545a9096b6f066daed6c6119d"
+      }
+    },
+    {
+      "original_source_object_sha256": "8b9b7a7f28dba1ff289b75de893e2b81ec679f6372a92f98eb8f8ff7b2cf9646",
+      "source": {
+        "source_id": "clerk:119:1:334",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll334.xml",
+        "text_version": null,
+        "raw_sha256": "5886a8482b18ab0dfc0b797fd370b331e81bc75b7dce0a2cb4f4e0256b7260bc",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "334",
+          "legis-num": "H R 3668",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "12-Dec-2025",
+          "action-time": "10:33 AM",
+          "vote-desc": "Improving Interagency Coordination for Pipeline Reviews Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "206",
+            "nay-total": "2",
+            "present-total": "0",
+            "not-voting-total": "12"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "7",
+            "nay-total": "182",
+            "present-total": "0",
+            "not-voting-total": "24"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "db3cbe4ea6aa372207d602c6739b8d7a7bfdeccc538d6258d9a15004faf0f1af"
+      }
+    },
+    {
+      "original_source_object_sha256": "af32e7894b611ad9833eaf39cc4685a88e745afef2daf17e7036ab9d03d86eeb",
+      "source": {
+        "source_id": "govinfo:hr3668eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3668eh/html/BILLS-119hr3668eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "3cf698aad7d12ad0d584c7b17d6ada042f6a57c317794960ee7123ba23072750",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/138d1fb6557b99121e085fa1002456e7018dbfff79fd330029cf0f5c2fc0b5b2.0000000.json",
+              "sha256": "4a87363a2f8e651229f56bf3422378719b3496357295b059032817d7188bee64",
+              "start_character": 0,
+              "end_character": 15531
+            }
+          ],
+          "utf8_sha256": "138d1fb6557b99121e085fa1002456e7018dbfff79fd330029cf0f5c2fc0b5b2",
+          "total_characters": 15531,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "a84b897eadda50034e795330830c34f4d4c941ffc798ce5904297446d6b4ea4d"
+      }
+    },
+    {
+      "original_source_object_sha256": "bceca5e4e20e33a27b34641376a535b78cc1f43adc8b4108e47c6ebac0e01f14",
+      "source": {
+        "source_id": "govinfo:15usc717n-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717n.htm",
+        "text_version": "2024 Code operative section",
+        "raw_sha256": "1807a9699b994f05471b34b334da0d58bacd9282109a97de688de670d347bb9b",
+        "text": "§717n. Process coordination; hearings; rules of procedure (a) Definition In this section, the term \"Federal authorization\"— (1) means any authorization required under Federal law with respect to an application for authorization under section 717b of this title or a certificate of public convenience and necessity under section 717f of this title; and (2) includes any permits, special use authorizations, certifications, opinions, or other approvals as may be required under Federal law with respect to an application for authorization under section 717b of this title or a certificate of public convenience and necessity under section 717f of this title. (b) Designation as lead agency (1) In general The Commission shall act as the lead agency for the purposes of coordinating all applicable Federal authorizations and for the purposes of complying with the National Environmental Policy Act of 1969 (42 U.S.C. 4321 et seq.). (2) Other agencies Each Federal and State agency considering an aspect of an application for Federal authorization shall cooperate with the Commission and comply with the deadlines established by the Commission. (c) Schedule (1) Commission authority to set schedule The Commission shall establish a schedule for all Federal authorizations. In establishing the schedule, the Commission shall— (A) ensure expeditious completion of all such proceedings; and (B) comply with applicable schedules established by Federal law. (2) Failure to meet schedule If a Federal or State administrative agency does not complete a proceeding for an approval that is required for a Federal authorization in accordance with the schedule established by the Commission, the applicant may pursue remedies under section 717r(d) of this title. (d) Consolidated record The Commission shall, with the cooperation of Federal and State administrative agencies and officials, maintain a complete consolidated record of all decisions made or actions taken by the Commission or by a Federal administrative agency or officer (or State administrative agency or officer acting under delegated Federal authority) with respect to any Federal authorization. Such record shall be the record for— (1) appeals or reviews under the Coastal Zone Management Act of 1972 (16 U.S.C. 1451 et seq.), provided that the record may be supplemented as expressly provided pursuant to section 319 of that Act [16 U.S.C. 1465]; or (2) judicial review under section 717r(d) of this title of decisions made or actions taken of Federal and State administrative agencies and officials, provided that, if the Court determines that the record does not contain sufficient information, the Court may remand the proceeding to the Commission for further development of the consolidated record. (e) Hearings; parties Hearings under this chapter may be held before the Commission, any member or members thereof, or any representative of the Commission designated by it, and appropriate records thereof shall be kept. In any proceeding before it, the Commission in accordance with such rules and regulations as it may prescribe, may admit as a party any interested State, State commission, municipality or any representative of interested consumers or security holders, or any competitor of a party to such proceeding, or any other person whose participation in the proceeding may be in the public interest. (f) Procedure All hearings, investigations, and proceedings under this chapter shall be governed by rules of practice and procedure to be adopted by the Commission, and in the conduct thereof the technical rules of evidence need not be applied. No informality in any hearing, investigation, or proceeding or in the manner of taking testimony shall invalidate any order, decision, rule, or regulation issued under the authority of this chapter. (June 21, 1938, ch. 556, §15, 52 Stat. 829; Pub. L. 109–58, title III, §313(a), Aug. 8, 2005, 119 Stat. 688.) ",
+        "governed_bytes_sha256": "27e56ad7299c39b1d34faf5f5d6f75fc0976c162f55f1a19e759ecaa2c90f4a8"
+      }
+    },
+    {
+      "original_source_object_sha256": "e15b3a23aa552aa81d85cc2c116b8e1924fcc16c660130abed9742283b967da6",
+      "source": {
+        "source_id": "govinfo:33usc1341-2024-water-boundary",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIV-sec1341.htm",
+        "text_version": "2024 Code exact water-law operative provision identified in excerpt",
+        "raw_sha256": "12151ee37a76c66a6252000cf53075a3f44e66a596b6e489152a5d406ff19eb7",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/868852c865f48e2fc0a0fa3fc8bb5a13a78b0f93838b82d52cd1a9ef8bd3651d.0000000.json",
+              "sha256": "f6db33bd20325d7dceb63b6522db43a1d451cd8ba4c2195d2542a6e65853a225",
+              "start_character": 0,
+              "end_character": 10082
+            }
+          ],
+          "utf8_sha256": "868852c865f48e2fc0a0fa3fc8bb5a13a78b0f93838b82d52cd1a9ef8bd3651d",
+          "total_characters": 10082,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "05b17053ca5c8e6c861e4ce414e820939a84e5eb23b06912a8fb075dcb22c5a5"
+      }
+    },
+    {
+      "original_source_object_sha256": "358794d736acd9f762eaa1e0447902b0a7fca519ab3113ea9caa878fe4e71e79",
+      "source": {
+        "source_id": "govinfo:42usc4332-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4332.htm",
+        "text_version": "2024 Code operative section",
+        "raw_sha256": "1e488727268009a42447de310b94f13380ae907ba6c2b8c87d82b4c740c1bd47",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/960ff9a494a1e079f8855f7c36dae2054d7a08ed427cc320049e1f154ca01256.0000000.json",
+              "sha256": "f4e0ab02296aff677f81bc415d243d4d72f08f0edd5434159ad7fd3a4253432d",
+              "start_character": 0,
+              "end_character": 5728
+            }
+          ],
+          "utf8_sha256": "960ff9a494a1e079f8855f7c36dae2054d7a08ed427cc320049e1f154ca01256",
+          "total_characters": 5728,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "753d8c2bdaaf9a4e06c199daf35ef43a099dddead6ff38a25ee34ced85d13e9a"
+      }
+    },
+    {
+      "original_source_object_sha256": "ed1144680acfd42ed1ff4f77b291569ac0cb927c2bb0a89ce8b9546ed3ecba54",
+      "source": {
+        "source_id": "govinfo:42usc4336a-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4336a.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "c15732fe4a9398c9f7a653bb3d9131fdefdfb64a015d8870f44dee9b2607cf6b",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/8c7015b5c019a8936a5b5c8b283ba36bf61e28a506e6c51f006e5b1c2825e3df.0000000.json",
+              "sha256": "97cb826cc45975e9301f5d2635bb90b573c5f1168b3977d73c19ee43f5cc5d26",
+              "start_character": 0,
+              "end_character": 9393
+            }
+          ],
+          "utf8_sha256": "8c7015b5c019a8936a5b5c8b283ba36bf61e28a506e6c51f006e5b1c2825e3df",
+          "total_characters": 9393,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "4c8259de2b24b36cf673854f87a1c8f71a467ef8d20556fa08342ef9db3bc5d3"
+      }
+    },
+    {
+      "original_source_object_sha256": "440ea5ad146df9958d6f37fe31ed68613c58229bc9821c47563db891b6173dc9",
+      "source": {
+        "source_id": "govinfo:42usc4336e-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4336e.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "286ab25c36fbb96d079f74c5b5c45c567cc7c7f2d04fb6c0761b362c94c45917",
+        "text": "§4336e. Definitions In this subchapter: (1) Categorical exclusion The term \"categorical exclusion\" means a category of actions that a Federal agency has determined normally does not significantly affect the quality of the human environment within the meaning of section 4332(2)(C) of this title. (2) Cooperating agency The term \"cooperating agency\" means any Federal, State, Tribal, or local agency that has been designated as a cooperating agency under section 4336a(a)(3) of this title. (3) Council The term \"Council\" means the Council on Environmental Quality established in subchapter II. (4) Environmental assessment The term \"environmental assessment\" means an environmental assessment prepared under section 4336(b)(2) of this title. (5) Environmental document The term \"environmental document\" means an environmental impact statement, an environmental assessment, or a finding of no significant impact. (6) Environmental impact statement The term \"environmental impact statement\" means a detailed written statement that is required by section 4332(2)(C) of this title. (7) Finding of no significant impact The term \"finding of no significant impact\" means a determination by a Federal agency that a proposed agency action does not require the issuance of an environmental impact statement. (8) Participating Federal agency The term \"participating Federal agency\" means a Federal agency participating in an environmental review or authorization of an action. (9) Lead agency The term \"lead agency\" means, with respect to a proposed agency action— (A) the agency that proposed such action; or (B) if there are 2 or more involved Federal agencies with respect to such action, the agency designated under section 4336a(a)(1) of this title. (10) Major Federal action (A) In general The term \"major Federal action\" means an action that the agency carrying out such action determines is subject to substantial Federal control and responsibility. (B) Exclusion The term \"major Federal action\" does not include— (i) a non-Federal action— (I) with no or minimal Federal funding; or (II) with no or minimal Federal involvement where a Federal agency cannot control the outcome of the project; (ii) funding assistance solely in the form of general revenue sharing funds which do not provide Federal agency compliance or enforcement responsibility over the subsequent use of such funds; (iii) loans, loan guarantees, or other forms of financial assistance where a Federal agency does not exercise sufficient control and responsibility over the subsequent use of such financial assistance or the effect of the action; (iv) business loan guarantees provided by the Small Business Administration pursuant to section 7(a) or (b) and 1 of the Small Business Act ( U.S.C. 636(a)), 2 or title V of the Small Business Investment Act of 1958 (15 U.S.C. 695 et seq.); (v) bringing judicial or administrative civil or criminal enforcement actions; (vi) extraterritorial activities or decisions, which means agency activities or decisions with effects located entirely outside of the jurisdiction of the United States; or (vii) activities or decisions that are non-discretionary and made in accordance with the agency's statutory authority. (11) Programmatic environmental document The term \"programmatic environmental document\" means an environmental impact statement or environmental assessment analyzing all or some of the environmental effects of a policy, program, plan, or group of related actions. (12) Proposal The term \"proposal\" means a proposed action at a stage when an agency has a goal, is actively preparing to make a decision on one or more alternative means of accomplishing that goal, and can meaningfully evaluate its effects. (13) Special expertise The term \"special expertise\" means statutory responsibility, agency mission, or related program experience. (Pub. L. 91–190, title I, §111, as added Pub. L. 118–5, div. C, title III, §321(b), June 3, 2023, 137 Stat. 44.) ",
+        "governed_bytes_sha256": "89ea13fa019f595f8b639f406afed68b1bd75c7dd50fb6b924064204e9a41d94"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 17
+  }
+}

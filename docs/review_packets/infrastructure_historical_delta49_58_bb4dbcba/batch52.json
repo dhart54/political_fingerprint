@@ -1,0 +1,840 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 52,
+  "exact_committed_head": "a1df454348534dfa2abc5908166905e9a3aa7e93",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "a1df454348534dfa2abc5908166905e9a3aa7e93",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch52_20260916/membership_review.json",
+      "git_blob": "d144df876d3ca172b7f256114907db788195a6b5",
+      "git_bytes_sha256": "f0cd93b6c4d56ea4df78b7dba196357513c69aa24b21061acc6a15c555410f31"
+    },
+    "sources": {
+      "head": "a1df454348534dfa2abc5908166905e9a3aa7e93",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch52_20260916/sources.json",
+      "git_blob": "52428d1d75f9d73f8a7ae79cadbf75e0c3b163c1",
+      "git_bytes_sha256": "392bfb08c8cbd94bf052172f67416e245bbc6f2ee237f63e9b1613028c2729cc"
+    },
+    "screening": {
+      "head": "a1df454348534dfa2abc5908166905e9a3aa7e93",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch52_20260916/screening_receipt.json",
+      "git_blob": "68ff7c2c774667139c355ecbae555a63e1cabb97",
+      "git_bytes_sha256": "6ef926918f2e97b570a395c00b035e2848c4c9c0163df719977721e6ea48c269"
+    },
+    "screening_units": {
+      "head": "a1df454348534dfa2abc5908166905e9a3aa7e93",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch52_20260916/screening_units_receipt.json",
+      "git_blob": "2a57583187cc3053ba2680c6cffe62ff4b626b03",
+      "git_bytes_sha256": "3769d17450a17d9faed9890e7b3aa84555cc83f0ffb0fdb2680069d59ef8eebb"
+    }
+  },
+  "cumulative_membership_review_sha256": "92ce86623dd821c70a07bd7277185c2db89fcee189c1b407f92b6587b24e5e1f",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/fcbf9a665af634027b34b4ba5709a1e226884c24d19050c5cef87519096a0ff0.0000000.json",
+        "sha256": "d0e91d04337f9521716b3bf818da84cfeb5c040fbc999b7efe3a51aabd535331",
+        "start_character": 0,
+        "end_character": 31116
+      }
+    ],
+    "utf8_sha256": "fcbf9a665af634027b34b4ba5709a1e226884c24d19050c5cef87519096a0ff0",
+    "total_characters": 31116,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/5834d73afdd7b5740fc859afc5fb640fd7c64177c57c24270ca4bca098230ca6.0000000.json",
+        "sha256": "562e136cf83d36af6ccadadce45b2035b844b55881afc478b1193f61a3263aae",
+        "start_character": 0,
+        "end_character": 82834
+      }
+    ],
+    "utf8_sha256": "5834d73afdd7b5740fc859afc5fb640fd7c64177c57c24270ca4bca098230ca6",
+    "total_characters": 82834,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:300",
+    "house:119:1:301",
+    "house:119:1:302",
+    "house:119:1:303",
+    "house:119:1:304"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hr4058eh",
+      "governed_length": 4524,
+      "review_extent": "Complete retained own bill or selected enacted/datedstatutory unit read; no whole current-law/agencydelegation/remainingexternalbaseline clearance"
+    },
+    {
+      "source_id": "govinfo:hr6019eh",
+      "governed_length": 1221,
+      "review_extent": "Complete retained own bill or selected enacted/datedstatutory unit read; no whole current-law/agencydelegation/remainingexternalbaseline clearance"
+    },
+    {
+      "source_id": "govinfo:pl119-37-senate-data213",
+      "governed_length": 11928,
+      "review_extent": "Complete retained own bill or selected enacted/datedstatutory unit read; no whole current-law/agencydelegation/remainingexternalbaseline clearance"
+    },
+    {
+      "source_id": "govinfo:hr3109eh",
+      "governed_length": 2356,
+      "review_extent": "Complete retained own bill or selected enacted/datedstatutory unit read; no whole current-law/agencydelegation/remainingexternalbaseline clearance"
+    },
+    {
+      "source_id": "govinfo:hr1949eh",
+      "governed_length": 3345,
+      "review_extent": "Complete retained own bill or selected enacted/datedstatutory unit read; no whole current-law/agencydelegation/remainingexternalbaseline clearance"
+    },
+    {
+      "source_id": "govinfo:15usc717b-2024-operative",
+      "governed_length": 5879,
+      "review_extent": "Complete retained own bill or selected enacted/datedstatutory unit read; no whole current-law/agencydelegation/remainingexternalbaseline clearance"
+    },
+    {
+      "source_id": "govinfo:50usc4318-2024-operative",
+      "governed_length": 818,
+      "review_extent": "Complete retained own bill or selected enacted/datedstatutory unit read; no whole current-law/agencydelegation/remainingexternalbaseline clearance"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_final_bill_bodies_read": 4,
+    "complete_selected_material_baseline_units_read": 3,
+    "exact_Clerk_procedural_questions_read": 1,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:300",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:301",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:302",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:303",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:1:304",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "42350d9d7f68029c9f30462eddcdb299dfd137aa37632ea3f96f9bdae99c028f",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:300",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.4058EHadds ongoing stakeholder outreach/engagement/education/technicalassistance before/during/after UrbanAreaSecurityInitiativeandStateHomelandSecuritygrants, annual feedback surveys and summaries/how incorporated into subsequent fundingnotices, plus GAOeffectivenessreport within2years and FEMAactionsreport within3years to specified recipients. Technicalassistance is not itself proof of an engineering/ITsystem or direct Infrastructuremechanism. Whole mixed-program604/605eligibility/609allowables and prior-outreach/reporting baselines, actor/source versions and domain boundary remain ordinary review; no grantamount/eligibilityexpansion, projectfunding, preparedness/security outcome or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:300",
+            "url": "https://clerk.house.gov/evs/2025/roll300.xml",
+            "raw_sha256": "75efe5681c8d4d74a8c93a28d08d753b8a8f86b3ac81d553cbc978bfa974d60b",
+            "governed_bytes_sha256": "2acfa4b633f390c75c1ba0514f50ac8d07389d24cdfdded3f4a6462be5ebe610"
+          },
+          {
+            "source_id": "govinfo:hr4058eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4058eh/html/BILLS-119hr4058eh.htm",
+            "raw_sha256": "0a2bf3613c9ea058f7d4eec6329c7b2915ea2463c1303e73246564be630a3a23",
+            "governed_bytes_sha256": "0fb34f3d07428f81ac348c5b0ce397daed0e5eac173e843310fc5767b0c2dde8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4058eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0f11c46cd7152df1f69e8cb0eb00569c715498d0ee0ac12b419e3f95ee17536b.0000000.json",
+                  "sha256": "9a90e0527caa653a05f8ec21e336ee883239eba48911425ba47c17adf43da0b5",
+                  "start_character": 0,
+                  "end_character": 4524
+                }
+              ],
+              "utf8_sha256": "0f11c46cd7152df1f69e8cb0eb00569c715498d0ee0ac12b419e3f95ee17536b",
+              "total_characters": 4524,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "93f91a56e458a5254223ede05f527bb5bb8463c4ce0c812c38b158b344d05e8f",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:301",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.6019EHrepeals section213ofdivisionCtitleIIofthe namedNovemberappropriationsActand amendmentsmadebythatsection. Complete retained enacted213changes Senate-datadefinitions/provider/SAAlegal-process notices, specifiedtarget/nontargetnotice-delay rules, immunity/liability and civil-action remedies including conditional greater-of500,000dollarsoractualdamagesperinstanceifSenatorprevails, plus qualified retroactive applicability toJanuary1,2022. It is not repeal of all underlying2USC6628, a universalrightforallpersons, automatic500,000dollarpayment or proof any actualofficial misconduct. Whole pre213underlyingAct/version/repeal-effect baselines and mixed legislativelegal-process/electronic-data/privacy boundary remain pending. No priorlawrevival/claimcancellation, actualnotice/litigationpayment, current-law status, corruption/motive or guilt inference.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:301",
+            "url": "https://clerk.house.gov/evs/2025/roll301.xml",
+            "raw_sha256": "4999eedef565ea71d610680e4206cb51ce7640071fdd138ef4d413bd00900493",
+            "governed_bytes_sha256": "7e32d979b0c124549edc5cb1fff90c8586ffba5b492953123ee107a7442b183a"
+          },
+          {
+            "source_id": "govinfo:hr6019eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6019eh/html/BILLS-119hr6019eh.htm",
+            "raw_sha256": "24496d19cd60ab391855c46551c8cb2257199891f84f27b85bcfe3ded0a0768a",
+            "governed_bytes_sha256": "f919646f3142c5966afc711565df018e3411e87de2728b1c24d640d411d05282"
+          },
+          {
+            "source_id": "govinfo:pl119-37-senate-data213",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+            "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+            "governed_bytes_sha256": "3c6f555e995d06ca331c4001ac823d7d675a36c4c41ae6bb3384a34312b1fa19"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6019eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6019 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 6019 _______________________________________________________________________ AN ACT To repeal certain provisions relating to notification to Senate offices regarding legal process on disclosure of Senate data, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. REPEAL OF SENATE NOTIFICATION REQUIREMENTS RELATING TO LEGAL PROCESS ON DISCLOSURES OF SENATE DATA. Section 213 of title II of division C of the Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026, and the amendments made by such section, are hereby repealed and shall have no force or effect. Passed the House of Representatives November 19, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 6019 _______________________________________________________________________ AN ACT To repeal certain provisions relating to notification to Senate offices regarding legal process on disclosure of Senate data, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:pl119-37-senate-data213",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/259c39e72fa80c4eb19ecbbaf80ca7a7043aeb76711593d073d9f8c20102a37e.0000000.json",
+                  "sha256": "7ade6d832e7c340247620a3d55d54379304a62d4da93c6a09f6f5fa4e1a16f87",
+                  "start_character": 0,
+                  "end_character": 11928
+                }
+              ],
+              "utf8_sha256": "259c39e72fa80c4eb19ecbbaf80ca7a7043aeb76711593d073d9f8c20102a37e",
+              "total_characters": 11928,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0e33fce4eeb8af1d486aa155cc016109e46764909fe25c13eb0c79918cf2f249",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:302",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact retained Clerkquestion refersH.Res.893and passed. This is non-counting chamber routing, not adoption of censure/committee removal, a factual finding concerning its allegations, an Infrastructurepolicy choice or evidence of motive/character. Underlying resolution meaning is not supplied from its title or this referral; no service-status change or guilt inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:302",
+            "url": "https://clerk.house.gov/evs/2025/roll302.xml",
+            "raw_sha256": "6bbfa8dad65e7cdfd6fd2a7ee576ae2f0856b5136abbc70b92a2a919565bb41f",
+            "governed_bytes_sha256": "77928c05f44af24a77e1118f66844b90dcc5e3ebf87d408c91e52093941ef350"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f3e679d383f15caa1b776a7f59c8554a0bcf0f45847b725b2bb9f835486f1f96",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:303",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete H.R.3109EHcreates a whole directrefinery-capacityplanning/publicreport mandate.90daysattaches to Secretarydirection, not reportcompletion; bothSecretary/Congressrecipients and publicavailability plus all assessment/recommendation topics remain. No funding/permit/expansion, causal finding or outcome is created. UNACCEPTED candidate membership under existing directcapacityplanning/reporting criterion pending independent review. The retained individualNotVotingobservation remains nondirectional.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:303",
+            "url": "https://clerk.house.gov/evs/2025/roll303.xml",
+            "raw_sha256": "85fcb61aed4dcbd46d709a1261af8295ba6d3d3c20677bf61a3f2a0ae27bea4a",
+            "governed_bytes_sha256": "ae97a7a91ae378bf86eac4fc4f360e001f9f8e918aa534ae38d7e23aeb6ef6ac"
+          },
+          {
+            "source_id": "govinfo:hr3109eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3109eh/html/BILLS-119hr3109eh.htm",
+            "raw_sha256": "3469748d158580b26e77cf24ecd68664c6a8022b6b6fa58f28632f72f0f7bdb4",
+            "governed_bytes_sha256": "9f3c9e14e06b298e729be948e69d37fccd926207f5f8c3f73b469c5daf86d6b5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3109eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3109 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3109 _______________________________________________________________________ AN ACT To require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Researching Efficient Federal Improvements for Necessary Energy Refining Act'' or the ``REFINER Act''. SEC. 2. REPORT ON PETROCHEMICAL REFINERIES. Not later than 90 days after the date of enactment of this section, the Secretary of Energy shall direct the National Petroleum Council to-- (1) submit to the Secretary of Energy and Congress a report containing-- (A) an examination of the role of petrochemical refineries located in the United States and the contributions of such petrochemical refineries to the energy security of the United States, including the reliability of supply in the United States of liquid fuels and feedstocks, and the affordability of liquid fuels for consumers in the United States; (B) analyses and projections with respect to-- (i) the capacity of petrochemical refineries located in the United States; (ii) opportunities for expanding such capacity; and (iii) the risks to petrochemical refineries located in the United States; (C) an assessment of any Federal or State executive actions, regulations, or policies that have caused or contributed to a decline in the capacity of petrochemical refineries located in the United States; and (D) any recommendations for Federal agencies and Congress to encourage an increase in the capacity of petrochemical refineries located in the United States; and (2) make publicly available the report submitted under paragraph (1). Passed the House of Representatives November 20, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3109 _______________________________________________________________________ AN ACT To require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": "episode:hr3109:119"
+      }
+    },
+    {
+      "original_record_sha256": "2f66f5920103be086758c8d6ed041500603d151368c23b0dfd84f0111d9f9bdd",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:304",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.1949EHdeletes717b(a)–(c), reorganizes remaining clauses and replaces the LNG-terminal approval paragraph with FERCexclusive import/export-facility jurisdiction/public-interest deeming for gastrade, retaining a separately printed savings clause for presidential/sanctions powers. Complete retained717bshows the displacedauthorization/FTAconditions and remaininghearing/modification/openaccess/military/stateenvironmental-rights clauses; this is not automaticfacilityapproval, repealofallNEPA/statepowers or blankettrade permission. Printed ECRA1754(c)(1)(A)reference identifies50USC4318(c)(1)(A), but retained4318is an unrelatednaturalized-citizenclaims provision. This mismatch is preserved without choosing/correcting a codification or inventing operative sanctions meaning. Whole temporal/agency-delegation/LNGdefinition, remaining crossreferences and material sanctions/current-law baselines require ordinary legal/semantic review. No new source denial or repairedauthority, actualpermit/output/price/geopolitical outcome or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:304",
+            "url": "https://clerk.house.gov/evs/2025/roll304.xml",
+            "raw_sha256": "e2a058c8c3fceb8c52c83a15e8d55d7ff754d46e6b3ec6b32168377fadf0f290",
+            "governed_bytes_sha256": "47aa24a51fb6bd0ad8ef99097bb0463860bc1042283505d899c7ed0a653103ae"
+          },
+          {
+            "source_id": "govinfo:hr1949eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1949eh/html/BILLS-119hr1949eh.htm",
+            "raw_sha256": "d9c98db994d457f93115277221276d33840c7fc1bb2beb60d7b53e74ab292460",
+            "governed_bytes_sha256": "5253e0eafb154927dd0299bb783492fd931ef7d7aeaef50e761d987d31b313b2"
+          },
+          {
+            "source_id": "govinfo:15usc717b-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717b.htm",
+            "raw_sha256": "ddd9fdc0d571c677ec58cfbb29634a763ecda3c14bdfaa2f3b6c48c85dad9176",
+            "governed_bytes_sha256": "b5a884b22a0edaecc644f31502e96b546a0873170bec9b7e6ef11457dd3f1825"
+          },
+          {
+            "source_id": "govinfo:50usc4318-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap53-sec4318.htm",
+            "raw_sha256": "849cb0b7dba1307aa95f4bebf5f575b039a9041c2158ee99c4abc6528016a31a",
+            "governed_bytes_sha256": "5bf7f57f66739470d6bc0409937c21dac977f3815806165b442b3dc1809a0012"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1949eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1949 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1949 _______________________________________________________________________ AN ACT To repeal restrictions on the export and import of natural gas. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Unlocking our Domestic LNG Potential Act of 2025''. SEC. 2. ADVANCING UNITED STATES GLOBAL LEADERSHIP. Section 3 of the Natural Gas Act (15 U.S.C. 717b) is amended-- (1) by striking subsections (a) through (c); (2) by redesignating subsections (e) and (f) as subsections (a) and (b), respectively; (3) by redesignating subsection (d) as subsection (c), and moving such subsection after subsection (b), as so redesignated; (4) in subsection (a), as so redesignated, by amending paragraph (1) to read as follows: ``(1) The Federal Energy Regulatory Commission (in this subsection referred to as the `Commission') shall have the exclusive authority to approve or deny an application for authorization for the siting, construction, expansion, or operation of a facility to export natural gas from the United States to a foreign country or import natural gas from a foreign country, including an LNG terminal. In determining whether to approve or deny an application under this paragraph, the Commission shall deem the exportation or importation of natural gas to be consistent with the public interest. Except as specifically provided in this Act, nothing in this Act is intended to affect otherwise applicable law related to any Federal agency's authorities or responsibilities related to facilities to import or export natural gas, including LNG terminals.''; and (5) by adding at the end the following new subsection: ``(d)(1) Nothing in this Act limits the authority of the President under the Constitution, the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.), the National Emergencies Act (50 U.S.C. 1601 et seq.), part B of title II of the Energy Policy and Conservation Act (42 U.S.C. 6271 et seq.), the Trading With the Enemy Act (50 U.S.C. 4301 et seq.), or any other provision of law that imposes sanctions on a foreign person or foreign government (including any provision of law that prohibits or restricts United States persons from engaging in a transaction with a sanctioned person or government), including a country that is designated as a state sponsor of terrorism, to prohibit imports or exports. ``(2) In this subsection, the term `state sponsor of terrorism' means a country the government of which the Secretary of State determines has repeatedly provided support for international terrorism pursuant to-- ``(A) section 1754(c)(1)(A) of the Export Control Reform Act of 2018 (50 U.S.C. 4318(c)(1)(A)); ``(B) section 620A of the Foreign Assistance Act of 1961 (22 U.S.C. 2371); ``(C) section 40 of the Arms Export Control Act (22 U.S.C. 2780); or ``(D) any other provision of law.''. Passed the House of Representatives November 20, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1949 _______________________________________________________________________ AN ACT To repeal restrictions on the export and import of natural gas."
+          },
+          {
+            "source_id": "govinfo:15usc717b-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c.0000000.json",
+                  "sha256": "0b6b18818ce3045caa3a098c521f84fdc2c58ad0cb48213f26bd658ac515878d",
+                  "start_character": 0,
+                  "end_character": 5879
+                }
+              ],
+              "utf8_sha256": "66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c",
+              "total_characters": 5879,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:50usc4318-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§4318. Claims of naturalized citizens as affected by expatriation The claim of any naturalized American citizen under the provisions of this chapter shall not be denied on the ground of any presumption of expatriation which has arisen against him, under the second sentence of section 2 of the Act entitled \"An Act in reference to the expatriation of citizens and their protection abroad,\" approved March 2, 1907, if he shall give satisfactory evidence to the President, or the court, as the case may be, of his uninterrupted loyalty to the United States during his absence, and that he has returned to the United States, or that he, although desiring to return, has been prevented from so returning by circumstances beyond his control. (Oct. 6, 1917, ch. 106, §21, as added Mar. 4, 1923, ch. 285, §2, 42 Stat. 1516.) "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "81d63d2f55318a7ef890c25f62d1971a2444330f1206cbdbace4bf1c7647dda4",
+      "source": {
+        "source_id": "govinfo:15usc717b-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717b.htm",
+        "text_version": "2024 Code: complete operative section; later notes excluded",
+        "raw_sha256": "ddd9fdc0d571c677ec58cfbb29634a763ecda3c14bdfaa2f3b6c48c85dad9176",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c.0000000.json",
+              "sha256": "0b6b18818ce3045caa3a098c521f84fdc2c58ad0cb48213f26bd658ac515878d",
+              "start_character": 0,
+              "end_character": 5879
+            }
+          ],
+          "utf8_sha256": "66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c",
+          "total_characters": 5879,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "b5a884b22a0edaecc644f31502e96b546a0873170bec9b7e6ef11457dd3f1825"
+      }
+    },
+    {
+      "original_source_object_sha256": "e420b0ad085823e34ca7e52a11805fb2012d3d7d151acf86b15f3ce06989b87b",
+      "source": {
+        "source_id": "clerk:119:1:300",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll300.xml",
+        "text_version": null,
+        "raw_sha256": "75efe5681c8d4d74a8c93a28d08d753b8a8f86b3ac81d553cbc978bfa974d60b",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "300",
+          "legis-num": "H R 4058",
+          "vote-question": "On Motion to Suspend the Rules and Pass",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "19-Nov-2025",
+          "action-time": "8:53 PM",
+          "vote-desc": "Enhancing Stakeholder Support and Outreach for Preparedness Grants Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "170",
+            "nay-total": "45",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "210",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "2acfa4b633f390c75c1ba0514f50ac8d07389d24cdfdded3f4a6462be5ebe610"
+      }
+    },
+    {
+      "original_source_object_sha256": "6070741d9ac49d6565aa784bac0807fae8e7234771faef05ff9536b330773bf2",
+      "source": {
+        "source_id": "govinfo:hr4058eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4058eh/html/BILLS-119hr4058eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "0a2bf3613c9ea058f7d4eec6329c7b2915ea2463c1303e73246564be630a3a23",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/0f11c46cd7152df1f69e8cb0eb00569c715498d0ee0ac12b419e3f95ee17536b.0000000.json",
+              "sha256": "9a90e0527caa653a05f8ec21e336ee883239eba48911425ba47c17adf43da0b5",
+              "start_character": 0,
+              "end_character": 4524
+            }
+          ],
+          "utf8_sha256": "0f11c46cd7152df1f69e8cb0eb00569c715498d0ee0ac12b419e3f95ee17536b",
+          "total_characters": 4524,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "0fb34f3d07428f81ac348c5b0ce397daed0e5eac173e843310fc5767b0c2dde8"
+      }
+    },
+    {
+      "original_source_object_sha256": "bdceb64151e086ecb2322aed37e3bf422cf754e40f4e9046d1631f7c0d3f03e6",
+      "source": {
+        "source_id": "clerk:119:1:301",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll301.xml",
+        "text_version": null,
+        "raw_sha256": "4999eedef565ea71d610680e4206cb51ce7640071fdd138ef4d413bd00900493",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "301",
+          "legis-num": "H R 6019",
+          "vote-question": "On Motion to Suspend the Rules and Pass",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "19-Nov-2025",
+          "action-time": "9:00 PM",
+          "vote-desc": "To repeal certain provisions relating to notification to Senate offices regarding legal process on disclosure of Senate data, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "210",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "7e32d979b0c124549edc5cb1fff90c8586ffba5b492953123ee107a7442b183a"
+      }
+    },
+    {
+      "original_source_object_sha256": "826f1689856e11222b7482b8a9ab9e1fb3329b75170fae1ab698cc778d1bf94c",
+      "source": {
+        "source_id": "govinfo:hr6019eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6019eh/html/BILLS-119hr6019eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "24496d19cd60ab391855c46551c8cb2257199891f84f27b85bcfe3ded0a0768a",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6019 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 6019 _______________________________________________________________________ AN ACT To repeal certain provisions relating to notification to Senate offices regarding legal process on disclosure of Senate data, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. REPEAL OF SENATE NOTIFICATION REQUIREMENTS RELATING TO LEGAL PROCESS ON DISCLOSURES OF SENATE DATA. Section 213 of title II of division C of the Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026, and the amendments made by such section, are hereby repealed and shall have no force or effect. Passed the House of Representatives November 19, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 6019 _______________________________________________________________________ AN ACT To repeal certain provisions relating to notification to Senate offices regarding legal process on disclosure of Senate data, and for other purposes.",
+        "governed_bytes_sha256": "f919646f3142c5966afc711565df018e3411e87de2728b1c24d640d411d05282"
+      }
+    },
+    {
+      "original_source_object_sha256": "b012d10e5612a19f2188d11384e14d0ed18e908dc1df1810794c1e49f639f301",
+      "source": {
+        "source_id": "govinfo:pl119-37-senate-data213",
+        "source_type": "official_public_law_text",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+        "text_version": "Enacted PL119-37 DivisionC TitleII complete Senate-data section213; not other divisions213 or whole continuing resolution",
+        "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/259c39e72fa80c4eb19ecbbaf80ca7a7043aeb76711593d073d9f8c20102a37e.0000000.json",
+              "sha256": "7ade6d832e7c340247620a3d55d54379304a62d4da93c6a09f6f5fa4e1a16f87",
+              "start_character": 0,
+              "end_character": 11928
+            }
+          ],
+          "utf8_sha256": "259c39e72fa80c4eb19ecbbaf80ca7a7043aeb76711593d073d9f8c20102a37e",
+          "total_characters": 11928,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "3c6f555e995d06ca331c4001ac823d7d675a36c4c41ae6bb3384a34312b1fa19",
+        "captured_full_text_sha256": "30eb2d0f40836f080ca97fe00843c395d64cd4df987a68c467829a9c3143ce7e",
+        "source_text_extents": [
+          {
+            "start": 282581,
+            "end": 294509,
+            "total": 489080
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "67882624c4f3a1e9473645d1c723b9ed3c0b665bfbfde677bd0f97675f4973cc",
+      "source": {
+        "source_id": "clerk:119:1:302",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll302.xml",
+        "text_version": null,
+        "raw_sha256": "6bbfa8dad65e7cdfd6fd2a7ee576ae2f0856b5136abbc70b92a2a919565bb41f",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "302",
+          "legis-num": "H RES 893",
+          "vote-question": "On Motion to Refer",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "19-Nov-2025",
+          "action-time": "9:20 PM",
+          "vote-desc": "Censuring Representative Cory Mills and Removing Him From the Committee on Armed Services and the Committee on Foreign Affairs"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "204",
+            "nay-total": "8",
+            "present-total": "4",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "106",
+            "nay-total": "95",
+            "present-total": "8",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "77928c05f44af24a77e1118f66844b90dcc5e3ebf87d408c91e52093941ef350"
+      }
+    },
+    {
+      "original_source_object_sha256": "24fe8496425a0f45f3174acf3d252166f9b67341b369b9631b388a203012ff06",
+      "source": {
+        "source_id": "clerk:119:1:303",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll303.xml",
+        "text_version": null,
+        "raw_sha256": "85fcb61aed4dcbd46d709a1261af8295ba6d3d3c20677bf61a3f2a0ae27bea4a",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "303",
+          "legis-num": "H R 3109",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "20-Nov-2025",
+          "action-time": "5:30 PM",
+          "vote-desc": "REFINER Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Not Voting",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "205",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "14"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "25",
+            "nay-total": "176",
+            "present-total": "0",
+            "not-voting-total": "13"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "ae97a7a91ae378bf86eac4fc4f360e001f9f8e918aa534ae38d7e23aeb6ef6ac"
+      }
+    },
+    {
+      "original_source_object_sha256": "8ad0aaeba7e35edd1d892008a74133ed8262e9200dde0714fcd7ab80f1956886",
+      "source": {
+        "source_id": "govinfo:hr3109eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3109eh/html/BILLS-119hr3109eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "3469748d158580b26e77cf24ecd68664c6a8022b6b6fa58f28632f72f0f7bdb4",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3109 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3109 _______________________________________________________________________ AN ACT To require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Researching Efficient Federal Improvements for Necessary Energy Refining Act'' or the ``REFINER Act''. SEC. 2. REPORT ON PETROCHEMICAL REFINERIES. Not later than 90 days after the date of enactment of this section, the Secretary of Energy shall direct the National Petroleum Council to-- (1) submit to the Secretary of Energy and Congress a report containing-- (A) an examination of the role of petrochemical refineries located in the United States and the contributions of such petrochemical refineries to the energy security of the United States, including the reliability of supply in the United States of liquid fuels and feedstocks, and the affordability of liquid fuels for consumers in the United States; (B) analyses and projections with respect to-- (i) the capacity of petrochemical refineries located in the United States; (ii) opportunities for expanding such capacity; and (iii) the risks to petrochemical refineries located in the United States; (C) an assessment of any Federal or State executive actions, regulations, or policies that have caused or contributed to a decline in the capacity of petrochemical refineries located in the United States; and (D) any recommendations for Federal agencies and Congress to encourage an increase in the capacity of petrochemical refineries located in the United States; and (2) make publicly available the report submitted under paragraph (1). Passed the House of Representatives November 20, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3109 _______________________________________________________________________ AN ACT To require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes.",
+        "governed_bytes_sha256": "9f3c9e14e06b298e729be948e69d37fccd926207f5f8c3f73b469c5daf86d6b5"
+      }
+    },
+    {
+      "original_source_object_sha256": "4549eb8b7605e6b65f917d51c62727f19c54d2d32cf9c2a61529a343c2f647d0",
+      "source": {
+        "source_id": "clerk:119:1:304",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll304.xml",
+        "text_version": null,
+        "raw_sha256": "e2a058c8c3fceb8c52c83a15e8d55d7ff754d46e6b3ec6b32168377fadf0f290",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "304",
+          "legis-num": "H R 1949",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "20-Nov-2025",
+          "action-time": "5:40 PM",
+          "vote-desc": "Unlocking our Domestic LNG Potential Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Not Voting",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "206",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "13"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "11",
+            "nay-total": "188",
+            "present-total": "0",
+            "not-voting-total": "15"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "47aa24a51fb6bd0ad8ef99097bb0463860bc1042283505d899c7ed0a653103ae"
+      }
+    },
+    {
+      "original_source_object_sha256": "07ee1f3c0f08b855393d68e2e0173756146ad66c0ca5275695e716c2a69320b5",
+      "source": {
+        "source_id": "govinfo:hr1949eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1949eh/html/BILLS-119hr1949eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "d9c98db994d457f93115277221276d33840c7fc1bb2beb60d7b53e74ab292460",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1949 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1949 _______________________________________________________________________ AN ACT To repeal restrictions on the export and import of natural gas. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Unlocking our Domestic LNG Potential Act of 2025''. SEC. 2. ADVANCING UNITED STATES GLOBAL LEADERSHIP. Section 3 of the Natural Gas Act (15 U.S.C. 717b) is amended-- (1) by striking subsections (a) through (c); (2) by redesignating subsections (e) and (f) as subsections (a) and (b), respectively; (3) by redesignating subsection (d) as subsection (c), and moving such subsection after subsection (b), as so redesignated; (4) in subsection (a), as so redesignated, by amending paragraph (1) to read as follows: ``(1) The Federal Energy Regulatory Commission (in this subsection referred to as the `Commission') shall have the exclusive authority to approve or deny an application for authorization for the siting, construction, expansion, or operation of a facility to export natural gas from the United States to a foreign country or import natural gas from a foreign country, including an LNG terminal. In determining whether to approve or deny an application under this paragraph, the Commission shall deem the exportation or importation of natural gas to be consistent with the public interest. Except as specifically provided in this Act, nothing in this Act is intended to affect otherwise applicable law related to any Federal agency's authorities or responsibilities related to facilities to import or export natural gas, including LNG terminals.''; and (5) by adding at the end the following new subsection: ``(d)(1) Nothing in this Act limits the authority of the President under the Constitution, the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.), the National Emergencies Act (50 U.S.C. 1601 et seq.), part B of title II of the Energy Policy and Conservation Act (42 U.S.C. 6271 et seq.), the Trading With the Enemy Act (50 U.S.C. 4301 et seq.), or any other provision of law that imposes sanctions on a foreign person or foreign government (including any provision of law that prohibits or restricts United States persons from engaging in a transaction with a sanctioned person or government), including a country that is designated as a state sponsor of terrorism, to prohibit imports or exports. ``(2) In this subsection, the term `state sponsor of terrorism' means a country the government of which the Secretary of State determines has repeatedly provided support for international terrorism pursuant to-- ``(A) section 1754(c)(1)(A) of the Export Control Reform Act of 2018 (50 U.S.C. 4318(c)(1)(A)); ``(B) section 620A of the Foreign Assistance Act of 1961 (22 U.S.C. 2371); ``(C) section 40 of the Arms Export Control Act (22 U.S.C. 2780); or ``(D) any other provision of law.''. Passed the House of Representatives November 20, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1949 _______________________________________________________________________ AN ACT To repeal restrictions on the export and import of natural gas.",
+        "governed_bytes_sha256": "5253e0eafb154927dd0299bb783492fd931ef7d7aeaef50e761d987d31b313b2"
+      }
+    },
+    {
+      "original_source_object_sha256": "875f4e2b8487457cf909eaab6c3c37f7b119c029d5a1f30e5a1ebd1a97f6c77b",
+      "source": {
+        "source_id": "govinfo:50usc4318-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap53-sec4318.htm",
+        "text_version": "2024 Code complete operative section; historical/executive notes excluded",
+        "raw_sha256": "849cb0b7dba1307aa95f4bebf5f575b039a9041c2158ee99c4abc6528016a31a",
+        "text": "§4318. Claims of naturalized citizens as affected by expatriation The claim of any naturalized American citizen under the provisions of this chapter shall not be denied on the ground of any presumption of expatriation which has arisen against him, under the second sentence of section 2 of the Act entitled \"An Act in reference to the expatriation of citizens and their protection abroad,\" approved March 2, 1907, if he shall give satisfactory evidence to the President, or the court, as the case may be, of his uninterrupted loyalty to the United States during his absence, and that he has returned to the United States, or that he, although desiring to return, has been prevented from so returning by circumstances beyond his control. (Oct. 6, 1917, ch. 106, §21, as added Mar. 4, 1923, ch. 285, §2, 42 Stat. 1516.) ",
+        "governed_bytes_sha256": "5bf7f57f66739470d6bc0409937c21dac977f3815806165b442b3dc1809a0012"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 12
+  }
+}

@@ -1,0 +1,1060 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 51,
+  "exact_committed_head": "8952e2c8cdcde0fa71123163b57c5efa449155d8",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "8952e2c8cdcde0fa71123163b57c5efa449155d8",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch51_20260916/membership_review.json",
+      "git_blob": "ea1874ff5a3372fe6cec01bec1555692ba64738d",
+      "git_bytes_sha256": "96396b9213f8c0971aa4859d87b2eed4a9e052b2f850845d2c49b940558ae103"
+    },
+    "sources": {
+      "head": "8952e2c8cdcde0fa71123163b57c5efa449155d8",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch51_20260916/sources.json",
+      "git_blob": "677f462bfb3af5520785611a323834d9ba15afc0",
+      "git_bytes_sha256": "2ef336d3cce46c2f4717090201ba411bef9051b17c8660e6ff816ef5ee0f33ca"
+    },
+    "screening": {
+      "head": "8952e2c8cdcde0fa71123163b57c5efa449155d8",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch51_20260916/screening_receipt.json",
+      "git_blob": "6b6c4aea84d981ac5e56b944e0b40b341760151a",
+      "git_bytes_sha256": "47f7c38cf256af7337e454fdda614c527f6c6e93566468996310b419f05f40fe"
+    },
+    "screening_units": {
+      "head": "8952e2c8cdcde0fa71123163b57c5efa449155d8",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch51_20260916/screening_units_receipt.json",
+      "git_blob": "bb8b1843ebf48d71bb2ca6034a0677b6b27a74eb",
+      "git_bytes_sha256": "5b674630849132cf27008f71ed01ae5600caaf3038c9b66a329d71cdb3e3cce0"
+    }
+  },
+  "cumulative_membership_review_sha256": "d566f1080c622483591ee69c525c13a0a062139533be0a03ee1a6544dab30995",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/12fd6b26bb5d3668b4dfc946f9f3be12ee18431c2c780bf46e722a39243bbba1.0000000.json",
+        "sha256": "72a65def03add0142785bb9329c45e40319e2001e627ea41bbb78fd47e0cefc5",
+        "start_character": 0,
+        "end_character": 30681
+      }
+    ],
+    "utf8_sha256": "12fd6b26bb5d3668b4dfc946f9f3be12ee18431c2c780bf46e722a39243bbba1",
+    "total_characters": 30681,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/c93f914fe421d677c4b8f0e4490ecf851db72398aff7702160fbca9396251e15.0000000.json",
+        "sha256": "87beb21e56264ef9923b36d2420e3a92c32616a37e92836571b6e64263bfea1c",
+        "start_character": 0,
+        "end_character": 81840
+      }
+    ],
+    "utf8_sha256": "c93f914fe421d677c4b8f0e4490ecf851db72398aff7702160fbca9396251e15",
+    "total_characters": 81840,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:295",
+    "house:119:1:296",
+    "house:119:1:297",
+    "house:119:1:298",
+    "house:119:1:299"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hjres131eh",
+      "governed_length": 1515,
+      "review_extent": "Complete retained own body or selected801scope unit read; external current-law/baselines not implied"
+    },
+    {
+      "source_id": "blm:coastal-plain-2024-reviewed-decision",
+      "governed_length": 31114,
+      "review_extent": "0:11500andlast2000ofselected31,114characterplan; no wholeplan/maps/appendices"
+    },
+    {
+      "source_id": "govinfo:5usc801-2024-disapproval-scope",
+      "governed_length": 980,
+      "review_extent": "Complete retained own body or selected801scope unit read; external current-law/baselines not implied"
+    },
+    {
+      "source_id": "govinfo:sjres80es",
+      "governed_length": 1550,
+      "review_extent": "Complete retained own body or selected801scope unit read; external current-law/baselines not implied"
+    },
+    {
+      "source_id": "blm:npra-2022-reviewed-decision",
+      "governed_length": 41279,
+      "review_extent": "0:9000andlast2000ofselected41,279characterplan; no wholeplan/maps/appendices"
+    },
+    {
+      "source_id": "congressional-record:hres888-floor-choice-operative140",
+      "governed_length": 9617,
+      "review_extent": "Complete own proposal/question0:4862and finaloutcome9473:end; rawmemberlists not used"
+    },
+    {
+      "source_id": "govinfo:hr5214eh",
+      "governed_length": 9716,
+      "review_extent": "Complete retained own body or selected801scope unit read; external current-law/baselines not implied"
+    },
+    {
+      "source_id": "govinfo:hr5107eh",
+      "governed_length": 1604,
+      "review_extent": "Complete retained own body or selected801scope unit read; external current-law/baselines not implied"
+    },
+    {
+      "source_id": "dc-council:law24-345",
+      "governed_length": 112109,
+      "review_extent": "0:11000;subtitleS83910:85410;last1000of112,109characterlawonly; embeddedsummary not operative evidence"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_CRA_or_bill_bodies_read": 4,
+    "complete_own_internal_House_proposal_question_units_read": 1,
+    "partial_plan_or_omnibus_legal_sources": 3,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:295",
+        "evidence_unit": "complete_exact_own_choice_with_explicit_partial_material_target_baseline_scope",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:296",
+        "evidence_unit": "complete_exact_own_choice_with_explicit_partial_material_target_baseline_scope",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:297",
+        "evidence_unit": "complete_exact_own_choice_with_explicit_partial_material_target_baseline_scope",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:298",
+        "evidence_unit": "complete_exact_own_choice_with_explicit_partial_material_target_baseline_scope",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:299",
+        "evidence_unit": "complete_exact_own_choice_with_explicit_partial_material_target_baseline_scope",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "c7006332f53099f12fdbf064d8c6a7304fdc42e6919647e4ab2d978d5a0da74d",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:295",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.J.Res.131EHdisapproves the specifiedDecember9,2024CoastalPlainRODwith a describedGAOopinion, not the wholeArcticRefuge, every leasing statute or any single project permit. Retained plantext31,114characters is already selected material; only0:11500andlast2000were read here. It selectsD2with400,000acresavailable for second-saleleasing and1,163,500unavailable, retaining NSO/controlled-use/timing/standardterms distinctions and required project-specificNEPA/separate decisions; availability is not drilling approval, output or a blanketleasingban. The995acresurface-disturbance figure is the document's projection, not actual disturbance or a guaranteedcapindependentlyvalidated here. Whole datedsignature/maps/stipulations/ROPs,2017TaxAct/2020plan/GAOandCRAtemporal/legal baselines remain ordinary pending. Selected water/subsistence clauses do not establish the entire governing regime; no opposite universal water permission, environmental result or current-law effect is inferred. Retained801enactment/substantially-same-form/no-intent rules remain; Housepassage alone does not supply enacted repeal.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:295",
+            "url": "https://clerk.house.gov/evs/2025/roll295.xml",
+            "raw_sha256": "c4ee549bb88b7ce9806dcd4c64b213d51a33cca8c914d4e11dccdad1485129c2",
+            "governed_bytes_sha256": "217d3118e820ca2b4b62ead554d04c35b667272941abd393e16e6e815a1c6857"
+          },
+          {
+            "source_id": "govinfo:hjres131eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres131eh/html/BILLS-119hjres131eh.htm",
+            "raw_sha256": "ac495bf85c43ba402cd560585cb00203f58ebd86a3018865db73a90df0c7b3b2",
+            "governed_bytes_sha256": "f075d640f19008687268696e39dbaa7f7ceca3aa0fdf7be5660ff387175d85f9"
+          },
+          {
+            "source_id": "blm:coastal-plain-2024-reviewed-decision",
+            "url": "https://eplanning.blm.gov/public_projects/2015144/200492847/20124527/251024507/CoastalPlainSEIS_ROD_20241208_508.pdf",
+            "raw_sha256": "8159a3d49685afc196b3f6d6635d637b1d8003ed914e30c8925f0ba607eb3697",
+            "governed_bytes_sha256": "4c7e65f612c8a4f99dc11c10d3f74d616e81c86390c35d4fba3014192d870b6d"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres131eh",
+            "locator": "Complete retained exact Housejoint resolution",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 131 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 131 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Coastal Plain Oil and Gas Leasing Program Record of Decision''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``Coastal Plain Oil and Gas Leasing Program Record of Decision'' (issued December 9, 2024, as a record of decision, and a letter of opinion from the Government Accountability Office dated August 25, 2025, printed in the Congressional Record on September 2, 2025, on pages S5557-S5560, concluding that such record of decision is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives November 18, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 131 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Coastal Plain Oil and Gas Leasing Program Record of Decision''."
+          },
+          {
+            "source_id": "blm:coastal-plain-2024-reviewed-decision",
+            "locator": "Retained selected-plan source0:11500only; wholeplan/maps not reviewed",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/d9ea1ae99f686240dae213f123a4d9bddf6e10c73804a464bea82cdf3b7b6edf.0000000.json",
+                  "sha256": "acfcac414073f1d86d37355a4deec1f535e3beabd57f9cadb4ccd3182b7bda02",
+                  "start_character": 0,
+                  "end_character": 11500
+                }
+              ],
+              "utf8_sha256": "d9ea1ae99f686240dae213f123a4d9bddf6e10c73804a464bea82cdf3b7b6edf",
+              "total_characters": 11500,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "blm:coastal-plain-2024-reviewed-decision",
+            "locator": "Retained selected-plan last2000only",
+            "passage": "nitoring \ndetects a measurable and persistent incr ease in a contaminant in subsistence foods, the operator would \ndesign and implement a study to determine how much, if any, of the increase originates from the operator’s \nactivities. If the study preparers determine that a portion of the increase in contami nation is caused by the \noperator’s activities, the BLM Authorized Officer in coordination with the USFWS may require changes in \nthe operator’s processes to reduce or eliminate emissions of the contaminant. The design of the study must \nmeet the approval of the BLM Authorized Officer and Tribal Governments, who may coordinate with \nappropriate entities before approving the study design. The BLM Authorized Officer, in coordination with \nthe USFWS, and Tribal Governments, may require or authorize changes in the design of the studies \nthroughout the operations and abandonment period or terminate or suspend studies if results warrant. \nWater Use for Permitted Activities  \nRequired Operating Procedure 8 \nObjective: In flowing waters (rivers, springs, and streams), ensure water of sufficient quality and quantity \nto conserve fish, waterbirds, and wildlife populations and habitats in their natural diversity. \nRequirement/Standard: The removal of ice aggregate from aufeis fields identified in Lease Stipulation 3  \nand aufeis fields along the Canning River is prohibited. The removal of ice aggregate from grounded areas \n4 feet deep or less may be authorized from rivers on a site-specific basis. \nWinter Water Use \na. Withdrawal of unfrozen water from springs, rivers, and streams during winter (onset of freeze-up \nto break-up) is prohibited. \nSummer Water Use \na. Water withdrawals from springs identified in Lease Stipulation 3 is prohibited. Withdrawal of \nunfrozen water would be prohibited from the following rivers that support resident, anadromous, \nor endemic fish populations: \ni. Canning/Staines River \nii. West Fork Tamayariak River \niii. Middle Fork Tamayariak River "
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Complete retained selected801scope unit",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "9ab826f513fa91790e768a265c72c25e2d63c78e0d4f989de02ef0fee2408e24",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:296",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Exact Housequestion is passage of S.J.Res.80, whose complete retained SenateESpassedOctober30targets theApril25,2022NPR-AIAPRODwith a describedGAOopinion. No missingHouseEH is silently invented. Retained41,279characterselected-plan source was reviewed only0:9000andlast2000here. Its summary adoptsAlternativeAwithAppendixCmodifications/clarifications, replacing2020AlternativeEand describing consistency with2013management. It distinguishes approximately11.8millionacresavailable and11millionclosed toleasing, areaswhereinfrastructureapplicationsfit from protectedhabitat prohibitions, and mixedA/Eprotectivemeasures. This is not a totalleaseban or universalpipelinepermission; a plan-levelapplicationallocation is not an actual project permit. Whole exactdates/signature/maps/AppendicesA/C,2013/2020decisions, statutory/GAO/CRAandHousefloorversion baselines remain ordinary pending. No automaticreinstatementofall2020provisions, actual construction/production/ecological effect or current-law conclusion inferred from this Housevote.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:296",
+            "url": "https://clerk.house.gov/evs/2025/roll296.xml",
+            "raw_sha256": "e680e3d48cdd68ddf73f301066c90be3e390cbb106d9d8653d5d13a8bace4c30",
+            "governed_bytes_sha256": "234cb7502de6aa6437b5abfbecbadc49d83b88aac1a29fdcf87ff1d66f45f864"
+          },
+          {
+            "source_id": "govinfo:sjres80es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres80es/html/BILLS-119sjres80es.htm",
+            "raw_sha256": "340a84689cf626d6012be38953cf28ff332209ba11504cb7ed558613d9c9b8ae",
+            "governed_bytes_sha256": "375d4e0de775aa9ce9ea7062d3328b29ebd9ccac94af2c029ac2ff761616b4dc"
+          },
+          {
+            "source_id": "blm:npra-2022-reviewed-decision",
+            "url": "https://eplanning.blm.gov/public_projects/117408/200284263/20058238/250064420/2022_NPRA_IAP_ROD_508.pdf",
+            "raw_sha256": "200ae755e165ddb0814b3331b661488b57784e541a06f6ed8cdd98dc696fa6a6",
+            "governed_bytes_sha256": "2c4f926dde1e6697fb8edb35daa6eef2fade36bf0fd1440cd70d5fa6d7868643"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:sjres80es",
+            "locator": "Complete retained SenateES; distinct from unboundHouseengrossment/floor reconciliation",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S.J. Res. 80 Engrossed in Senate (ES)] <DOC> 119th CONGRESS 1st Session S. J. RES. 80 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision'' (issued April 25, 2022, as a record of decision, and a letter of opinion from the Government Accountability Office dated July 24, 2025, printed in the Congressional Record on July 28, 2025, on pages S4768-S4770, concluding that such record of decision is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the Senate October 30, 2025. Attest: Secretary. 119th CONGRESS 1st Session S. J. RES. 80 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision''."
+          },
+          {
+            "source_id": "blm:npra-2022-reviewed-decision",
+            "locator": "Selectedretainedplan0:9000only; wholeplan/maps/appendices not reviewed",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/3d37bdd88f5d2d7b7d8c8eb02ee870272640f0cc75443c35917b59cc24872947.0000000.json",
+                  "sha256": "f9369521b92274019c1247c99231bec57761c4844898ff93928cc1d3be870749",
+                  "start_character": 0,
+                  "end_character": 9000
+                }
+              ],
+              "utf8_sha256": "3d37bdd88f5d2d7b7d8c8eb02ee870272640f0cc75443c35917b59cc24872947",
+              "total_characters": 9000,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "blm:npra-2022-reviewed-decision",
+            "locator": "Selectedretainedplan last2000only",
+            "passage": "nd gas development shall design and \nimplement a monitoring study of contaminants in locally-used subsistence foods. The monitoring \nstudy shall examine subsistence foods for all contaminants that could be associated with the \nproposed development. The study shall identify the level of contaminants in subsistence foods \nprior to the proposed permanent oil and gas development and monitor the level of these \ncontaminants throughout the operation and abandonment phases of the development. If ongoing \nmonitoring detects a measurable and persistent increase in a contaminant in subsistence foods, the \nlessee shall design and implement a study to determine how much, if any, of the increase in the \ncontaminant in subsistence foods originates from the lessee's activities. If the study determines that \na portion of the increase in contamination in subsistence foods is caused by the lessee's activities, \nthe authorized officer may require changes in the lessee’s processes to reduce or elimin ate \nemissions of the contaminant. The design of the study/studies must meet the approval of the \nauthorized officer. The authorized officer may consult with appropriate federal, State, and North \nSlope Borough agencies prior to approving the study/studies de sign. The authorized officer may \nrequire/authorize changes in the design of the studies throughout the operations and abandonment \nperiod, or terminate or suspend studies if results warrant.   \n \nROP A-12  \nObjective:  To minimize negative health impacts associated with oil spills. \n \nRequirement/Standard:  If an oil spill with potential impacts to public health occurs, the BLM, in \nundertaking its oil spill responsibilities, will consider: \na. Immediate health impacts and responses for affected communities and individuals. \nb. Long-term monitoring for contamination of subsistence food sources. \nc. Long-term monitoring of potential human health impacts. \nd. Perceptions of contamination and subsequent changes in consumption patterns. "
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Complete selected801scope unit",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "dbc49c07869cfc9dc78e4263b81145cd51e15855b4534d2dd67aa7532e480133",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:297",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "The complete retained own floor proposal combines censure/condemnation, a directedEthicsinvestigation and actual proposed removal from the IntelligenceCommittee. It is therefore not merely a nonbinding expression or the separate referral293. These internal House discipline/committee/ethics mechanisms have no direct Infrastructure/Technology action. Its allegations/evaluations remain attributed to the proposal; they are not platformfindings about wrongdoing, motive, character, corruption or guilt. Recorded209–214rejection with3Presentand7NotVoting means no censure/investigation/removal was adopted by this vote; chamberaggregate nondirectional statuses do not assign any individual's status. No committee service change, voting recommendation or endorsement of the allegations inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:297",
+            "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+            "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
+            "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534"
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+            "raw_sha256": "deecb5d1c9406ec3244bd225e9ae553ce533e5f43e5fcbcc8170789f7756c371",
+            "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "locator": "Complete retained own proposal/question throughRoll297at0:4862; member lists not used",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bc25c36a826285d3be498c50cf5cc8738c1a8f78b5a9a2eedcc055661b0d7448.0000000.json",
+                  "sha256": "4bdcba75100af3bfcd3f2e4d6fa1121eb969163e25cf6e1d758dc60fae21e382",
+                  "start_character": 0,
+                  "end_character": 4862
+                }
+              ],
+              "utf8_sha256": "bc25c36a826285d3be498c50cf5cc8738c1a8f78b5a9a2eedcc055661b0d7448",
+              "total_characters": 4862,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "congressional-record:hres888-floor-choice-operative140",
+            "locator": "Own final rejection at9473:end",
+            "passage": "So the resolution was not agreed to. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "1fe316dd93c682dbffee2e4a1e9cd7fa312241a5cf25e22608d06787ecf51933",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:298",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.5214EHchanges DCpretrial/postconviction detention, dangerous/violent-crime definitions and release/bond procedures. Its secured-appearance-bond definition permits specified property/moneyor solventsureties, so the title's cashbail shorthand is not cash-only treatment of everyoffense. Mandatory detention and public-safety/orderrelease categories remain distinct; rebuttable conditions, suretyarrest/judicialrevocation and30days-after-enactment applicability are preserved as printed, without silent typo/reference repair. Whole mechanism concerns criminal custody/release/financialconditions rather than direct facility construction, technicalsystems, procurement or research. Detailed externalDCbaseline/currentconstitutional-law review is not claimed or needed to infer a specificperson's result; no universal detentionforallcharges, actual detention, guilt, safety/crime outcome, motive or current enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:298",
+            "url": "https://clerk.house.gov/evs/2025/roll298.xml",
+            "raw_sha256": "a9ae200372594e6f9c228a951f34fe662ba9a25cb321a27b56e8b584ef9cd7e9",
+            "governed_bytes_sha256": "56f1fc546f888bde2c385e81bbaa70faf6ef9e63a37b92c64186c6349461d476"
+          },
+          {
+            "source_id": "govinfo:hr5214eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5214eh/html/BILLS-119hr5214eh.htm",
+            "raw_sha256": "48de0b6d60c35e60eef84e81cd163c1dbf9ec5062ccda79530a53809748546a8",
+            "governed_bytes_sha256": "50f64c3e054a984b492b5af719652c1bc1a208652c197a0901353651655af60f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5214eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/63eb004e40f046f8a9b86dd102133fb2340311ba5d3e613bf5f0628926bd1be1.0000000.json",
+                  "sha256": "2d69c58eb958eb82dc23a9774c56aa176068785f358187b17fde7c887724d69b",
+                  "start_character": 0,
+                  "end_character": 9716
+                }
+              ],
+              "utf8_sha256": "63eb004e40f046f8a9b86dd102133fb2340311ba5d3e613bf5f0628926bd1be1",
+              "total_characters": 9716,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "850c9df0a375c721a0f597c37e2862b443d8544ac6a3eb33ce911ab25be19d5d",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:299",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.5107EHrepeals/restores laws changed byDC24-345exceptTitleIsubtitlesS(vehicularpursuits)andA(asphyxiating/neckrestraints), which are expressly preserved from this repeal. It is not repeal of every2022provision or of the separately voted5143pursuitamendment. Retained112,109characterlawtext is reviewed only0:11000, thefirst1500ofsubtitleSandlast1000; embedded introduced-billsummary is not used as enacted operative evidence. Reviewed enactedsubtitleBchanges body-worn-camera access/reporting/public-searchable-video release with conditions, alongside other mixed policing rules; that slice is not the whole repeal. Whole exactDC24-345/prior-lawrestoration, exceptions/remaining amendedversions and mixedpolicing/technology-records boundary require ordinary review before membership. No automaticrestorationofalloldagencypractices, specific disclosure/deployment/crime/safety effect, current-law status or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:299",
+            "url": "https://clerk.house.gov/evs/2025/roll299.xml",
+            "raw_sha256": "1d2f685b06de6af58b7b9aef7c07c1b4f78ffc368eb9a9a939adf077e0e7445a",
+            "governed_bytes_sha256": "ac005bcf035803933d2e9245ea33cac1ef066594c502f49cb1e000b40c026e5b"
+          },
+          {
+            "source_id": "govinfo:hr5107eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5107eh/html/BILLS-119hr5107eh.htm",
+            "raw_sha256": "553e430a35817da6410e32d6bf9d7753fc770c041556f50d26ec615b48d8508d",
+            "governed_bytes_sha256": "d10868eeba6326c02499053a7c6a267503052541086faaa6e6e4e32f5e4f767f"
+          },
+          {
+            "source_id": "dc-council:law24-345",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/main/us/dc/council/periods/24/laws/24-345.xml",
+            "raw_sha256": "c0e55f4548f97bad2bf4ad6e144cb2e8c50dc37a52895f6f864e9868a395e0d7",
+            "governed_bytes_sha256": "114dbb051712d436fd39eba1ed3aa9a28ce253ee18ce0110080eacbff0c29313"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5107eh",
+            "locator": "Complete retained HouseEH, including both exceptions",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5107 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5107 _______________________________________________________________________ AN ACT To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Common-Sense Law Enforcement and Accountability Now in DC Act of 2025'' or the ``CLEAN DC Act of 2025''. SEC. 2. REPEAL OF CERTAIN PROVISIONS OF COMPREHENSIVE POLICING AND JUSTICE REFORM AMENDMENT ACT OF 2022. (a) In General.--Except as provided in subsection (b), the Comprehensive Policing and Justice Reform Amendment Act of 2022 (D.C. Law 24-345) is hereby repealed, and any provision of law amended or repealed by such Act is restored or revived as if such Act had not been enacted into law. (b) Exception.--The repeal under subsection (a) shall not apply with respect to-- (1) subtitle S of title I of such Act (sec. 5-365.01 et seq., D.C. Official Code); and (2) subtitle A of title I of such Act (sec. 5-125.01 et seq. and sec. 5-302, D.C. Official Code). Passed the House of Representatives November 19, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5107 _______________________________________________________________________ AN ACT To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council."
+          },
+          {
+            "source_id": "dc-council:law24-345",
+            "locator": "Only0:11000read; summary text in source not treated as enacted operative provision",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/1ea8344f5a2396db65afc76fec624b0b4090fa24eb1b96cda1d7ae18577dcd4a.0000000.json",
+                  "sha256": "0feff7df13359a899e5b8a211c0f87a9e3cc2d32949eb4fc943cc5bbf17fee48",
+                  "start_character": 0,
+                  "end_character": 11000
+                }
+              ],
+              "utf8_sha256": "1ea8344f5a2396db65afc76fec624b0b4090fa24eb1b96cda1d7ae18577dcd4a",
+              "total_characters": 11000,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "dc-council:law24-345",
+            "locator": "SubtitleSfirst1500at83910:85410only",
+            "passage": "SUBTITLE S LIMITATIONS ON THE USE OF VEHICULAR PURSUITS BY LAW ENFORCEMENT OFFICERS. 127 Definitions. (a) For the purposes of this subtitle , the term: (1) \"Boxing in\" means a practice or tactic in which law enforcement officers intentionally surround a suspect motor vehicle with pursuit vehicles and then reduce the traveling speed of the pursuit vehicles with the intent to stop or slow the suspect motor vehicle. (2) \"Caravanning\" means a practice or tactic in which a law enforcement officer operates a pursuit vehicle without maintaining a reasonable distance between another pursuit vehicle. (3) \"Crime of violence\" shall have the same meaning as provided in D.C. Official Code § 23-1331(4) . (4) \"Deploying a roadblock\" means a tactic or practice in which a law enforcement officer intentionally places a vehicle or object in the path of the suspect vehicle with the intent to stop the suspect motor vehicle. (5) (A) \"Deploying a tire deflation device\" means a tactic or practice in which a law enforcement officer intentionally places or activates a device that extends across the roadway with the intent to slow or stop a suspect vehicle. (B) The term \"deploying a tire deflation device\" does not include raising bollards or other barricades when: (i) The bollard or barricade is clearly visible to the operator of the suspect motor vehicle; and (ii) The bollard or barricade is raised in a manner that provides the operator of the suspect motor vehicle adequate time to safely avoid the bo"
+          },
+          {
+            "source_id": "dc-council:law24-345",
+            "locator": "Last1000characters only",
+            "passage": "ocess or under Title XVI-A of the District of Columbia Government Comprehensive Merit Personnel Act, effective June 10, 1998 (D.C. Law 12-124; D.C. Official Code § 1-616.51 et seq .), or any related regulations. (c) Section 121 shall apply as of October 1, 2023. (d) Section 129 shall apply as of September 1, 2023. 302 Fiscal impact statement. The Council adopts the fiscal impact statement in the committee report as the fiscal impact statement required by section 4a of the General Legislative Procedures Act of 1975, approved October 16, 2006 (120 Stat. 2038; D.C. Official Code § 1-301.47a). 303 Effective date. This act shall take effect following approval by the Mayor (or in the event of veto by the Mayor, action by the Council to override the veto), a 60-day period of congressional review as provided in section 602(c)(2) of the District of Columbia Home Rule Act, approved 24, 1973 (87 Stat. 813; D.C. Official Code § 1-206.02(c)(2)), and publication in the District of Columbia Register."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "3d1bd6d1aacd4a0562f132a857c9c3444c19564cd0880c17ea32ae1feddff073",
+      "source": {
+        "source_id": "govinfo:5usc801-2024-disapproval-scope",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+        "text_version": "2024 Code specified disapproval/withdrawal provisions",
+        "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+        "text": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval.",
+        "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+      }
+    },
+    {
+      "original_source_object_sha256": "0542d8e7fc86b025a6cdd9e656b95edf410f9ffacbc150d64bc0bdf812411255",
+      "source": {
+        "source_id": "clerk:119:1:295",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll295.xml",
+        "text_version": "119:1",
+        "raw_sha256": "c4ee549bb88b7ce9806dcd4c64b213d51a33cca8c914d4e11dccdad1485129c2",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "295",
+          "legis-num": "H J RES 131",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "18-Nov-2025",
+          "action-time": "8:52 PM",
+          "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to “Coastal Plain Oil and Gas Leasing Program Record of Decision”"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "214",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "3",
+            "nay-total": "208",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "217d3118e820ca2b4b62ead554d04c35b667272941abd393e16e6e815a1c6857"
+      }
+    },
+    {
+      "original_source_object_sha256": "2c271e83449ebce5f9ac3fae7e1ca1a8f950a615855ed205aee4d7f1d1e50264",
+      "source": {
+        "source_id": "govinfo:hjres131eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres131eh/html/BILLS-119hjres131eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "ac495bf85c43ba402cd560585cb00203f58ebd86a3018865db73a90df0c7b3b2",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 131 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 131 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Coastal Plain Oil and Gas Leasing Program Record of Decision''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``Coastal Plain Oil and Gas Leasing Program Record of Decision'' (issued December 9, 2024, as a record of decision, and a letter of opinion from the Government Accountability Office dated August 25, 2025, printed in the Congressional Record on September 2, 2025, on pages S5557-S5560, concluding that such record of decision is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives November 18, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 131 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Coastal Plain Oil and Gas Leasing Program Record of Decision''.",
+        "governed_bytes_sha256": "f075d640f19008687268696e39dbaa7f7ceca3aa0fdf7be5660ff387175d85f9"
+      }
+    },
+    {
+      "original_source_object_sha256": "c33fad2b51d4c8e704b2dc03875079a7f6a768ba5fa9bf8ffb04ca2c737f0bc7",
+      "source": {
+        "source_id": "blm:coastal-plain-2024-reviewed-decision",
+        "source_type": "official_agency_record_of_decision",
+        "url": "https://eplanning.blm.gov/public_projects/2015144/200492847/20124527/251024507/CoastalPlainSEIS_ROD_20241208_508.pdf",
+        "raw_sha256": "8159a3d49685afc196b3f6d6635d637b1d8003ed914e30c8925f0ba607eb3697",
+        "text_version": "December2024 ROD; completePDF9/10/13/20/30/31/56/57/58 only: AlternativeD2 leasing/permits, environmental-justice context and completeROP6/7 air/subsistence-food protections; map/image pages not used for text claims, not full86page review",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/d10be4a6947400d4ee67940ad2b3c93758c705d6ecf7c96a90d21621b5f509c7.0000000.json",
+              "sha256": "2ba0f8b9e216d93e3a80d2841143765c8f5fa38dc13c962f071205102c524145",
+              "start_character": 0,
+              "end_character": 31114
+            }
+          ],
+          "utf8_sha256": "d10be4a6947400d4ee67940ad2b3c93758c705d6ecf7c96a90d21621b5f509c7",
+          "total_characters": 31114,
+          "transport_only": true
+        },
+        "capture_provenance": "Primary BLM PDF captured through the public anonymous download route published by the migrated ePlanning document portal; declared URL is the legacy document identity, raw hash identifies downloaded PDF bytes.",
+        "governed_bytes_sha256": "4c7e65f612c8a4f99dc11c10d3f74d616e81c86390c35d4fba3014192d870b6d"
+      }
+    },
+    {
+      "original_source_object_sha256": "0260fdb1a73ae9d4b507e915b46e6bf583313dd199223252bc4aee27337f43d3",
+      "source": {
+        "source_id": "clerk:119:1:296",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll296.xml",
+        "text_version": "119:1",
+        "raw_sha256": "e680e3d48cdd68ddf73f301066c90be3e390cbb106d9d8653d5d13a8bace4c30",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "296",
+          "legis-num": "S J RES 80",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "18-Nov-2025",
+          "action-time": "8:59 PM",
+          "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to “National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "213",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "3",
+            "nay-total": "208",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "234cb7502de6aa6437b5abfbecbadc49d83b88aac1a29fdcf87ff1d66f45f864"
+      }
+    },
+    {
+      "original_source_object_sha256": "44975be4f2441cc0bd0ecb48db394632f6d6a205d493b529c6270cb157c71fa8",
+      "source": {
+        "source_id": "govinfo:sjres80es",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres80es/html/BILLS-119sjres80es.htm",
+        "text_version": "ES",
+        "raw_sha256": "340a84689cf626d6012be38953cf28ff332209ba11504cb7ed558613d9c9b8ae",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S.J. Res. 80 Engrossed in Senate (ES)] <DOC> 119th CONGRESS 1st Session S. J. RES. 80 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision'' (issued April 25, 2022, as a record of decision, and a letter of opinion from the Government Accountability Office dated July 24, 2025, printed in the Congressional Record on July 28, 2025, on pages S4768-S4770, concluding that such record of decision is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the Senate October 30, 2025. Attest: Secretary. 119th CONGRESS 1st Session S. J. RES. 80 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision''.",
+        "governed_bytes_sha256": "375d4e0de775aa9ce9ea7062d3328b29ebd9ccac94af2c029ac2ff761616b4dc"
+      }
+    },
+    {
+      "original_source_object_sha256": "f0c4112e2191578724c32354e8a08b6994b133ed636c1f245c9c77e340a6c535",
+      "source": {
+        "source_id": "blm:npra-2022-reviewed-decision",
+        "source_type": "official_agency_record_of_decision",
+        "url": "https://eplanning.blm.gov/public_projects/117408/200284263/20058238/250064420/2022_NPRA_IAP_ROD_508.pdf",
+        "raw_sha256": "200ae755e165ddb0814b3331b661488b57784e541a06f6ed8cdd98dc696fa6a6",
+        "text_version": "April25,2022 IAP/ROD; completePDF7-12/53-58 only: adopted land allocations/limits and completeROP A10/A11/A12 health/contamination safeguards; separate2024regulation not the target; not full91page review",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/d1aa3597027360091c0de7e01d916c3b213454aef6494598b9a408977ea8ad88.0000000.json",
+              "sha256": "8516af5869ac85bd844e1bcd90eaff93f00e1aa8146f6c64971624a8c7c99282",
+              "start_character": 0,
+              "end_character": 41279
+            }
+          ],
+          "utf8_sha256": "d1aa3597027360091c0de7e01d916c3b213454aef6494598b9a408977ea8ad88",
+          "total_characters": 41279,
+          "transport_only": true
+        },
+        "capture_provenance": "Primary BLM PDF captured through the public anonymous download route published by the migrated ePlanning document portal; declared URL is the legacy document identity, raw hash identifies downloaded PDF bytes.",
+        "governed_bytes_sha256": "2c4f926dde1e6697fb8edb35daa6eef2fade36bf0fd1440cd70d5fa6d7868643"
+      }
+    },
+    {
+      "original_source_object_sha256": "ffdf0c07954f4eae016f046e7513dabafe43a355a51dcdd2faab8fc46ca4ff18",
+      "source": {
+        "source_id": "clerk:119:1:297",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll297.xml",
+        "text_version": null,
+        "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "297",
+          "legis-num": "H RES 888",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "18-Nov-2025",
+          "action-time": "9:07 PM",
+          "vote-desc": "Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "209",
+            "nay-total": "3",
+            "present-total": "3",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "211",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534"
+      }
+    },
+    {
+      "original_source_object_sha256": "91dfacfc2c961dd1addff4a4a0b0f3f496b0253794f678ceefb6774bfd144765",
+      "source": {
+        "source_id": "congressional-record:hres888-floor-choice-operative140",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+        "text_version": "Exact Clerk-read floor resolution and failed297 adoption vote; prior notice/referral vote and later counterfactual explanation excluded",
+        "raw_sha256": "deecb5d1c9406ec3244bd225e9ae553ce533e5f43e5fcbcc8170789f7756c371",
+        "page_extracts": [
+          {
+            "pdf_page": 29,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/47347047a01e19feb0a1bd1c448023cd363a717b6e66b0d71a9e8c522db4256c.0000000.json",
+                  "sha256": "80187ff75ea58172576ce6a8e14a6dcadcd7e44a3bab420a40d904227ba46f11",
+                  "start_character": 0,
+                  "end_character": 8783
+                }
+              ],
+              "utf8_sha256": "47347047a01e19feb0a1bd1c448023cd363a717b6e66b0d71a9e8c522db4256c",
+              "total_characters": 8783,
+              "transport_only": true
+            }
+          },
+          {
+            "pdf_page": 30,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/d8e529b86a0cba43d7fcbfd9c6c9c148a45df82f8de144d6258270c6280e0ce4.0000000.json",
+                  "sha256": "fdf35f40dd30c3aa09b1275f4d8ff47dc1a22ff882afd8732941a77e178949f0",
+                  "start_character": 0,
+                  "end_character": 8241
+                }
+              ],
+              "utf8_sha256": "d8e529b86a0cba43d7fcbfd9c6c9c148a45df82f8de144d6258270c6280e0ce4",
+              "total_characters": 8241,
+              "transport_only": true
+            }
+          },
+          {
+            "pdf_page": 53,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/28a974cb21fb11877f8751d8773ff0fd0b157157766f35216259502e55e816f3.0000000.json",
+                  "sha256": "de0ab18b6491458cdf1235c745749c4aa29974cfab464c2027ee3f919ffbe354",
+                  "start_character": 0,
+                  "end_character": 8134
+                }
+              ],
+              "utf8_sha256": "28a974cb21fb11877f8751d8773ff0fd0b157157766f35216259502e55e816f3",
+              "total_characters": 8134,
+              "transport_only": true
+            }
+          },
+          {
+            "pdf_page": 54,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bf3c3189c24ed0a657002571872f5c08c34fdaca3877664d3327220eb0c96cbf.0000000.json",
+                  "sha256": "5658811953fbcc934b90ff8f3d7cd581f8144a1a23de86941d5285e3b8bd1f49",
+                  "start_character": 0,
+                  "end_character": 7591
+                }
+              ],
+              "utf8_sha256": "bf3c3189c24ed0a657002571872f5c08c34fdaca3877664d3327220eb0c96cbf",
+              "total_characters": 7591,
+              "transport_only": true
+            }
+          }
+        ],
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/ad2882ee1d3705ef0f073bbf59ae1fe0e39f4076a15f2c29d34de3f69bd72709.0000000.json",
+              "sha256": "d8110b3ff7b84686172cd6740c09f32bbb9ebbcced547e2e68f13c5a8c829ed2",
+              "start_character": 0,
+              "end_character": 9617
+            }
+          ],
+          "utf8_sha256": "ad2882ee1d3705ef0f073bbf59ae1fe0e39f4076a15f2c29d34de3f69bd72709",
+          "total_characters": 9617,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47",
+        "captured_full_text_sha256": "435a78fad036b8577fc7a79f4bbce4bf435f119ba23471b662a4ace4db0c313c",
+        "source_text_extents": [
+          {
+            "start": 5492,
+            "end": 9578,
+            "total": 32752
+          },
+          {
+            "start": 20428,
+            "end": 25957,
+            "total": 32752
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "871641164cb9ab3f98b2d02dcf7bf6001a9c8ad4bb74babee659d1853a35713e",
+      "source": {
+        "source_id": "clerk:119:1:298",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll298.xml",
+        "text_version": null,
+        "raw_sha256": "a9ae200372594e6f9c228a951f34fe662ba9a25cb321a27b56e8b584ef9cd7e9",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "298",
+          "legis-num": "H R 5214",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "19-Nov-2025",
+          "action-time": "8:39 PM",
+          "vote-desc": "District of Columbia Cash Bail Reform Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "209",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "10"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "28",
+            "nay-total": "179",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "56f1fc546f888bde2c385e81bbaa70faf6ef9e63a37b92c64186c6349461d476"
+      }
+    },
+    {
+      "original_source_object_sha256": "04bb093a4361d63ca4c15b5c268b52fc06a2db25873229daef85cce587a72cc6",
+      "source": {
+        "source_id": "govinfo:hr5214eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5214eh/html/BILLS-119hr5214eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "48de0b6d60c35e60eef84e81cd163c1dbf9ec5062ccda79530a53809748546a8",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/63eb004e40f046f8a9b86dd102133fb2340311ba5d3e613bf5f0628926bd1be1.0000000.json",
+              "sha256": "2d69c58eb958eb82dc23a9774c56aa176068785f358187b17fde7c887724d69b",
+              "start_character": 0,
+              "end_character": 9716
+            }
+          ],
+          "utf8_sha256": "63eb004e40f046f8a9b86dd102133fb2340311ba5d3e613bf5f0628926bd1be1",
+          "total_characters": 9716,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "50f64c3e054a984b492b5af719652c1bc1a208652c197a0901353651655af60f"
+      }
+    },
+    {
+      "original_source_object_sha256": "614a99938be661cf17bffa44c370b1ffc0366761460d42762fac02d32dd7f60f",
+      "source": {
+        "source_id": "clerk:119:1:299",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll299.xml",
+        "text_version": "119:1",
+        "raw_sha256": "1d2f685b06de6af58b7b9aef7c07c1b4f78ffc368eb9a9a939adf077e0e7445a",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "299",
+          "legis-num": "H R 5107",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "19-Nov-2025",
+          "action-time": "8:45 PM",
+          "vote-desc": "CLEAN DC Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "213",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "20",
+            "nay-total": "190",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "ac005bcf035803933d2e9245ea33cac1ef066594c502f49cb1e000b40c026e5b"
+      }
+    },
+    {
+      "original_source_object_sha256": "9e20060acefbad6829f6d0147496c583d6257bb83c0a00907220c61d4c31f778",
+      "source": {
+        "source_id": "govinfo:hr5107eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5107eh/html/BILLS-119hr5107eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "553e430a35817da6410e32d6bf9d7753fc770c041556f50d26ec615b48d8508d",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5107 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5107 _______________________________________________________________________ AN ACT To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Common-Sense Law Enforcement and Accountability Now in DC Act of 2025'' or the ``CLEAN DC Act of 2025''. SEC. 2. REPEAL OF CERTAIN PROVISIONS OF COMPREHENSIVE POLICING AND JUSTICE REFORM AMENDMENT ACT OF 2022. (a) In General.--Except as provided in subsection (b), the Comprehensive Policing and Justice Reform Amendment Act of 2022 (D.C. Law 24-345) is hereby repealed, and any provision of law amended or repealed by such Act is restored or revived as if such Act had not been enacted into law. (b) Exception.--The repeal under subsection (a) shall not apply with respect to-- (1) subtitle S of title I of such Act (sec. 5-365.01 et seq., D.C. Official Code); and (2) subtitle A of title I of such Act (sec. 5-125.01 et seq. and sec. 5-302, D.C. Official Code). Passed the House of Representatives November 19, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5107 _______________________________________________________________________ AN ACT To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council.",
+        "governed_bytes_sha256": "d10868eeba6326c02499053a7c6a267503052541086faaa6e6e4e32f5e4f767f"
+      }
+    },
+    {
+      "original_source_object_sha256": "85b840146c23b81dacc2062bbe40843208330c76fe37793fb52f7e3e0c28a8dc",
+      "source": {
+        "source_id": "dc-council:law24-345",
+        "source_type": "official_statutory_text",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/main/us/dc/council/periods/24/laws/24-345.xml",
+        "text_version": "D.C. Law 24-345; Council source XML",
+        "raw_sha256": "c0e55f4548f97bad2bf4ad6e144cb2e8c50dc37a52895f6f864e9868a395e0d7",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/9d55bc9a51cbfa4e6ae9193ffb3e073dbf9f7d8c94c345f4fa87a25f2f478196.0000000.json",
+              "sha256": "1eda2070fae91248f8b96b651255ce63719dcaf157e7e28c43ede6bdc5c65ece",
+              "start_character": 0,
+              "end_character": 90000
+            },
+            {
+              "path": "source_parts/9d55bc9a51cbfa4e6ae9193ffb3e073dbf9f7d8c94c345f4fa87a25f2f478196.0090000.json",
+              "sha256": "040a0508b6fa6006553cdaa72997d8671c58e7133415b9c43c884c0871e4bc91",
+              "start_character": 90000,
+              "end_character": 112109
+            }
+          ],
+          "utf8_sha256": "9d55bc9a51cbfa4e6ae9193ffb3e073dbf9f7d8c94c345f4fa87a25f2f478196",
+          "total_characters": 112109,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "114dbb051712d436fd39eba1ed3aa9a28ce253ee18ce0110080eacbff0c29313"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 14
+  }
+}

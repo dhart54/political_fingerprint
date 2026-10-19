@@ -1,0 +1,967 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 55,
+  "exact_committed_head": "2d16fa2eeca8f98e4ad4843827b1295e14cb3b47",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "2d16fa2eeca8f98e4ad4843827b1295e14cb3b47",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch55_20260916/membership_review.json",
+      "git_blob": "d6b2f1c9d03fa4cec7d9630d81c3860bd8370ca0",
+      "git_bytes_sha256": "5740afb23aaa1a2072603fed40ef02505dc274043d144499460987ef65ecc843"
+    },
+    "sources": {
+      "head": "2d16fa2eeca8f98e4ad4843827b1295e14cb3b47",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch55_20260916/sources.json",
+      "git_blob": "891455e428329d6839a711f7c212471e8709e42d",
+      "git_bytes_sha256": "9a5c0b5f31b33531e466aa2f1edb57f6c11e0db6455053b5fa9a62509dd003f2"
+    },
+    "screening": {
+      "head": "2d16fa2eeca8f98e4ad4843827b1295e14cb3b47",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch55_20260916/screening_receipt.json",
+      "git_blob": "515cb50d889170d35b5f0e80d3d1337d48abae99",
+      "git_bytes_sha256": "b13446d072bbd819fc0f3dec8c55dac56d0e1fec361da2265ef265815184fbdd"
+    },
+    "screening_units": {
+      "head": "2d16fa2eeca8f98e4ad4843827b1295e14cb3b47",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch55_20260916/screening_units_receipt.json",
+      "git_blob": "03568139daa745b3e6607fdbbcf1fef94fa3706a",
+      "git_bytes_sha256": "0018f8d4d8f9e28e455735d91bd1c2730bfa86b8b9bb1e3375f802f353db7eda"
+    }
+  },
+  "cumulative_membership_review_sha256": "bd8ee3ac39ee8021933499ab4a75bad5e2d551af22c8d0ea6fa0b1050d753702",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/eb46b3a2a246ee0cdc5a0be25808e85253c002b9623e99d8b2d264ffd1ba91e7.0000000.json",
+        "sha256": "9c8571f4bb3fcc98afd2f81a85f585857c58aa69d9db70143947a99de916ecb1",
+        "start_character": 0,
+        "end_character": 32421
+      }
+    ],
+    "utf8_sha256": "eb46b3a2a246ee0cdc5a0be25808e85253c002b9623e99d8b2d264ffd1ba91e7",
+    "total_characters": 32421,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/e125c32fb5334eb4bff2ef063e07efd687ef951dc9f4d96bbd99f6c3006684a6.0000000.json",
+        "sha256": "76a503cd405d1c1a414e6cf633e14922a19edd861a3c58d3332a9c479213d691",
+        "start_character": 0,
+        "end_character": 86642
+      }
+    ],
+    "utf8_sha256": "e125c32fb5334eb4bff2ef063e07efd687ef951dc9f4d96bbd99f6c3006684a6",
+    "total_characters": 86642,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:315",
+    "house:119:1:316",
+    "house:119:1:317",
+    "house:119:1:318",
+    "house:119:1:319"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:s356es",
+      "governed_length": 5488,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; remaining program, print and current-law baselines not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:16usc7111-2024-operative",
+      "governed_length": 2899,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; remaining program, print and current-law baselines not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:16usc7113-2024-operative",
+      "governed_length": 4143,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; remaining program, print and current-law baselines not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:16usc7128-2024-operative",
+      "governed_length": 856,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; remaining program, print and current-law baselines not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:16usc7144-2024-operative",
+      "governed_length": 879,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; remaining program, print and current-law baselines not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:hr1676eh",
+      "governed_length": 3108,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; remaining program, print and current-law baselines not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:16usc669c-e-2024",
+      "governed_length": 4675,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; remaining program, print and current-law baselines not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:hres936eh",
+      "governed_length": 10473,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; remaining program, print and current-law baselines not implicitly cleared"
+    },
+    {
+      "source_id": "congressional-record:s1071-passage320-native243",
+      "governed_length": 35454,
+      "review_extent": "Only opening0:2000, resumed question20030:20754 and outcome25407:25506 read; initial motion and remaining floor text not fully reviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_bill_bodies_read": 2,
+    "complete_rule_texts_read": 1,
+    "complete_selected_material_statutory_units_read": 5,
+    "resumed_procedural_question_and_outcome_units": 1,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:315",
+        "evidence_unit": "complete_own_body_or_rule_with_explicit_remaining_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:316",
+        "evidence_unit": "complete_own_body_or_rule_with_explicit_remaining_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:317",
+        "evidence_unit": "complete_own_body_or_rule_with_explicit_remaining_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:318",
+        "evidence_unit": "complete_own_body_or_rule_with_explicit_remaining_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:319",
+        "evidence_unit": "resumed_procedural_question_and_outcome_with_initial_motion_scope_limit",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "45e0ed8c961e83e82d1a560f4fd2cb409fa33da520d59d8b3240e3068b8fc703",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:315",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete retained S. 356 Senate ES extends specified secure-payment years through 2026 and project-initiation/obligation deadlines through 2028/2029. It includes fiscal 2024/2025 payment offsets for specified prior payments, Treasury payment within 45 days, election carryovers and exceptions, committee-composition and pilot provisions, and technical corrections. It does not require duplicate full payments or make every deadline the same. Complete retained sections 7111, 7113, 7128 and 7144 distinguish payment calculations and California distribution from project initiation and return of unobligated funds. Whole sections 7112/7125/7126, funding definitions, project criteria, mixed schools/roads/community purposes and exact Senate-to-House version reconciliation remain pending. A program title or selected road use does not establish the whole choice. No particular county amount, project funding, construction, school outcome, existing payment receipt, current-law status or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:315",
+            "url": "https://clerk.house.gov/evs/2025/roll315.xml",
+            "raw_sha256": "c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736",
+            "governed_bytes_sha256": "20aa431399625b4c4183e24b9034f7260a2e8b0adc0745c83a8e53c54dbf59f2"
+          },
+          {
+            "source_id": "govinfo:s356es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s356es/html/BILLS-119s356es.htm",
+            "raw_sha256": "052bba15bded93128dc09031813072e45e1c40bf1c7d66ad7a3938f1c62391a9",
+            "governed_bytes_sha256": "2ece82b5e31561b9b596853a9a2bbaddb19838d09351939a47a98d6be82ae245"
+          },
+          {
+            "source_id": "govinfo:16usc7111-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7111.htm",
+            "raw_sha256": "d4287772f48b40bd90bed2c1f4d8bf1244a6e12c6febac0288eb22a0475a5876",
+            "governed_bytes_sha256": "0c2fd58027426ebf27ecae8815f723ce6bb8400c727c96c0ec4802f8de4a91dd"
+          },
+          {
+            "source_id": "govinfo:16usc7113-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7113.htm",
+            "raw_sha256": "377130852c1b2fcdb72bc8dbb261e78b08372b3f4be265bf6cdf044d49e45745",
+            "governed_bytes_sha256": "8bd6b35795c3d6a952b058708605483f3ec0bd2f4bf1e1df44d1df1a7e1f06f2"
+          },
+          {
+            "source_id": "govinfo:16usc7128-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7128.htm",
+            "raw_sha256": "772e7b656e21beb39a754f8a6173987c811872a019675f2eebf706607d4d97fe",
+            "governed_bytes_sha256": "8e6c382c219a5fea7a057111e5ea84e4595e9cabcee43e2e0fddb8c0fcbecce5"
+          },
+          {
+            "source_id": "govinfo:16usc7144-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7144.htm",
+            "raw_sha256": "936e598b551ec2b1485e63a9dae7e0ea68c4e91a7c517e7dd3cff2d284187252",
+            "governed_bytes_sha256": "f20183ed499996df3b8e9f0936096fe9407995af206aae1acdb3de2e4e35e3e7"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s356es",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/48612dbb4cdacc7b00b0f3510b4bf3de07c25e0d856ef9cd1c9b98f4243b8f48.0000000.json",
+                  "sha256": "ac08425154e30d34615c5f1dd397917cb832eb85923b5c04a0de3695939aff41",
+                  "start_character": 0,
+                  "end_character": 5488
+                }
+              ],
+              "utf8_sha256": "48612dbb4cdacc7b00b0f3510b4bf3de07c25e0d856ef9cd1c9b98f4243b8f48",
+              "total_characters": 5488,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:16usc7111-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§7111. Secure payments for States containing Federal land (a) State payment For each of fiscal years 2008 through 2015 and 2017 through 2023, the Secretary of Agriculture shall calculate for each eligible State an amount equal to the sum of the products obtained by multiplying— (1) the adjusted share for each eligible county within the eligible State; by (2) the full funding amount for the fiscal year. (b) County payment For each of fiscal years 2008 through 2015 and 2017 through 2023, the Secretary of the Interior shall calculate for each eligible county that received a 50-percent payment during the eligibility period an amount equal to the product obtained by multiplying— (1) the 50-percent adjusted share for the eligible county; by (2) the full funding amount for the fiscal year. (c) Special rule for fiscal year 2014 payments (1) State payment If an eligible county in a State that will receive a share of the State payment for fiscal year 2014 has already received, or will receive, a share of the 25-percent payment for fiscal year 2014 distributed to the State before April 16, 2015, the amount of the State payment shall be reduced by the amount of that eligible county's share of the 25-percent payment. (2) County payment If an eligible county that will receive a county payment for fiscal year 2014 has already received a 50-percent payment for that fiscal year, the amount of the county payment shall be reduced by the amount of the 50-percent payment. (d) Special rule for fiscal year 2017 payments (1) State payment If an eligible county in a State that will receive a share of the State payment for fiscal year 2017 has already received, or will receive, a share of the 25-percent payment for fiscal year 2017 distributed to the State before March 23, 2018, the amount of the State payment shall be reduced by the amount of the share of the eligible county of the 25-percent payment. (2) County payment If an eligible county that will receive a county payment for fiscal year 2017 has already received a 50-percent payment for fiscal year 2017, the amount of the county payment shall be reduced by the amount of the 50-percent payment. (3) Prompt payment Not later than 45 days after March 23, 2018, the Secretary of the Treasury shall make all payments under this subchapter for fiscal year 2017. (Pub. L. 106–393, title I, §101, as added Pub. L. 110–343, div. C, title VI, §601(a), Oct. 3, 2008, 122 Stat. 3896; amended Pub. L. 112–141, div. F, title I, §100101(a)(2), July 6, 2012, 126 Stat. 905; Pub. L. 113–40, §10(a)(1)(A), Oct. 2, 2013, 127 Stat. 544; Pub. L. 114–10, title V, §524(a)(1), (3), Apr. 16, 2015, 129 Stat. 178, 179; Pub. L. 115–141, div. O, title IV, §401(a)(2), Mar. 23, 2018, 132 Stat. 1077; Pub. L. 116–94, div. I, title III, §301(a)(1), Dec. 20, 2019, 133 Stat. 3020; Pub. L. 117–58, div. D, title XII, §41202(b)(1), Nov. 15, 2021, 135 Stat. 1132.) "
+          },
+          {
+            "source_id": "govinfo:16usc7113-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/e831853154c114bef9a1fff0660bbf307bbd89a7926bf567f4161731f4bb7ada.0000000.json",
+                  "sha256": "ee39140ac6d9e94f11c022a99595554f897b57975bd50c7148ec1d6b32e3341a",
+                  "start_character": 0,
+                  "end_character": 4143
+                }
+              ],
+              "utf8_sha256": "e831853154c114bef9a1fff0660bbf307bbd89a7926bf567f4161731f4bb7ada",
+              "total_characters": 4143,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:16usc7128-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§7128. Termination of authority (a) In general The authority to initiate projects under this subchapter shall terminate on September 30, 2025. (b) Deposits in Treasury Any project funds not obligated by September 30, 2026, shall be deposited in the Treasury of the United States. (Pub. L. 106–393, title II, §208, as added Pub. L. 110–343, div. C, title VI, §601(a), Oct. 3, 2008, 122 Stat. 3909; amended Pub. L. 112–141, div. F, title I, §100101(a)(2), (8), July 6, 2012, 126 Stat. 905, 906; Pub. L. 113–40, §10(a)(2)(E), Oct. 2, 2013, 127 Stat. 545; Pub. L. 114–10, title V, §524(c)(4), Apr. 16, 2015, 129 Stat. 180; Pub. L. 115–141, div. O, title IV, §401(b)(4), Mar. 23, 2018, 132 Stat. 1079; Pub. L. 116–94, div. I, title III, §301(b)(2), Dec. 20, 2019, 133 Stat. 3021; Pub. L. 117–58, div. D, title XII, §41202(d)(2), Nov. 15, 2021, 135 Stat. 1134.) "
+          },
+          {
+            "source_id": "govinfo:16usc7144-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§7144. Termination of authority (a) In general The authority to initiate projects under this subchapter terminates on September 30, 2025. (b) Availability Any county funds not obligated by September 30, 2026, shall be returned to the Treasury of the United States. (Pub. L. 106–393, title III, §305, formerly §304, as added Pub. L. 110–343, div. C, title VI, §601(a), Oct. 3, 2008, 122 Stat. 3910; amended Pub. L. 112–141, div. F, title I, §100101(a)(2), (10), July 6, 2012, 126 Stat. 905, 906; Pub. L. 113–40, §10(a)(3), Oct. 2, 2013, 127 Stat. 545; Pub. L. 114–10, title V, §524(d), Apr. 16, 2015, 129 Stat. 180; Pub. L. 115–141, div. O, title IV, §401(c), Mar. 23, 2018, 132 Stat. 1079; Pub. L. 116–94, div. I, title III, §301(c), Dec. 20, 2019, 133 Stat. 3021; renumbered §305 and amended Pub. L. 117–58, div. D, title XII, §41202(f), (g)(1), Nov. 15, 2021, 135 Stat. 1134.) "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "59d3360ef145844ada51fae0880c076fc4b87c8081ee0f65aea49e4c8f2320ab",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:316",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R. 1676 EH adds a 180-day approval period, conditional implementation authorization and reservation of amounts upon comprehensive-plan submission, a review process, and a specified following-June report when timely approval does not occur. Complete retained section 669c(e) preserves plan-compliance conditions, public participation, wildlife/recreation/education purposes, a set-aside not exceeding 75 percent of estimated program cost, progress-based project payments and the separate 10-percent recreation limit. Conditional authorization is not final approval of every deficient plan; reservation is not immediate payment or a new 100-percent Federal share. Whole material program and resource definitions, current implementation, exact amended-floor/EH reconciliation and the mixed conservation/recreation versus direct-infrastructure boundary remain pending. No automatic project permit, actual funds, habitat/recreation outcome, current-law status or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:316",
+            "url": "https://clerk.house.gov/evs/2025/roll316.xml",
+            "raw_sha256": "b3fa1c814d5783a5e48650d2e65d10739d0953d244241305fa5de90418a342ec",
+            "governed_bytes_sha256": "cf82c54a40c6490c44031f2da3c2bd3cd18662f4539c3015b9d5eb8f3ed46d2d"
+          },
+          {
+            "source_id": "govinfo:hr1676eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1676eh/html/BILLS-119hr1676eh.htm",
+            "raw_sha256": "08d3bae21bf0c8193d4cab4a5c22ccb17adbcf6b33d1d0cb8c26ad8c271a01ab",
+            "governed_bytes_sha256": "cca58c4cfa85df68ce18793e9b78a202f0bdb2ed4f8c5bb80b59dedfe245ee9b"
+          },
+          {
+            "source_id": "govinfo:16usc669c-e-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5B-sec669c.htm",
+            "raw_sha256": "2131899a8d8a8549b0b65dc1efac201c6676b1e07048a90c1cc4463331b8ddb4",
+            "governed_bytes_sha256": "1e00aa4dc75f6c468ad05937748f4e6e3ec27c362e01057301f1efb130e3f6cf"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1676eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1676 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1676 _______________________________________________________________________ AN ACT To amend the Pittman-Robertson Wildlife Restoration Act to require the Secretary of the Interior to approve the wildlife conservation and restoration program of a State within a certain period of time. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Make SWAPs Efficient Act of 2025'' or the ``Make State Wildlife Action Plans Efficient Act of 2025''. SEC. 2. TIMING OF APPROVAL OF WILDLIFE CONSERVATION AND RESTORATION PROGRAM. Section 4(e)(3) of the Pittman-Robertson Wildlife Restoration Act (16 U.S.C. 669c(e)(3)) is amended-- (1) by inserting ``, not later than 180 days after the date on which the State submitted the comprehensive plan,'' after ``, the Secretary''; (2) by striking ``, as redesignated''; (3) by striking ``If the Secretary'' and inserting ``(A) If the Secretary''; and (4) by adding at the end the following: ``(B) Upon submission of a comprehensive plan by a State under paragraph (1), the Secretary shall conditionally authorize the implementation of the wildlife conservation and restoration program of the State and shall set aside amounts as described in subparagraph (A). ``(C) The Secretary, in consultation with the States, shall develop a process to ensure sufficient and timely review of comprehensive plans submitted by States under paragraph (1) and final approval of the wildlife conservation and restoration program of such States not later than 180 days after the date on which a State submits such a comprehensive plan. ``(D) It is the intent of Congress that the Secretary prioritize the-- ``(i) timely review of comprehensive plans submitted by States under paragraph (1); and ``(ii) approval of the wildlife conservation and restoration programs of such States. ``(E) Not later than June 1 of the year immediately following the year in which a State submits a comprehensive plan under paragraph (1), if the Secretary does not approve the wildlife conservation and restoration program of the State under subparagraph (A) within the time described in that subparagraph, the Secretary shall submit to the Chair and Ranking Member of the Committee on Natural Resources of the House of Representatives and the Environment and Public Works Committee of the Senate a report regarding the status of such comprehensive plan and including the reason why the wildlife conservation and restoration program was not so approved.''. Passed the House of Representatives December 9, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1676 _______________________________________________________________________ AN ACT To amend the Pittman-Robertson Wildlife Restoration Act to require the Secretary of the Interior to approve the wildlife conservation and restoration program of a State within a certain period of time."
+          },
+          {
+            "source_id": "govinfo:16usc669c-e-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/142fe891fe46451f05ff0a2c9f09c69d6ec1af088ff96df16426e0e225e74436.0000000.json",
+                  "sha256": "dd79e41324a0608c6545014ae2156f20e9b25dc688ec8635178d755277e95614",
+                  "start_character": 0,
+                  "end_character": 4675
+                }
+              ],
+              "utf8_sha256": "142fe891fe46451f05ff0a2c9f09c69d6ec1af088ff96df16426e0e225e74436",
+              "total_characters": 4675,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ae61238535fc7ea052efb142bbdbe8ed54b72a966e76adbc323c9e99d4879e7d",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:317",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The previous-question vote controls H.Res. 936 consideration. It does not itself adopt its deemed substitutes, S.1071 package or other target bills. The complete rule has actual text-adoption effects, separately addressed at roll 318; this question remains non-counting procedural context without underlying policy, project or motive inference.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:317",
+            "url": "https://clerk.house.gov/evs/2025/roll317.xml",
+            "raw_sha256": "cb4b5307efc5965df1a3c00cdebdbf728d2640c0d07da3e23b468c58b763a89d",
+            "governed_bytes_sha256": "2cf6baeb56a204311e5bdf19abc625da4878d41cf3b31fea8d4152f4d30ef0e9"
+          },
+          {
+            "source_id": "govinfo:hres936eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+            "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+            "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres936eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a.0000000.json",
+                  "sha256": "44d65bb7a0728ed9e3a2d8654ad87e239f27f4d1b29b3fcd1e8a0456c2a9f7ec",
+                  "start_character": 0,
+                  "end_character": 10473
+                }
+              ],
+              "utf8_sha256": "0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a",
+              "total_characters": 10473,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "fefc763037fbe40cd3c69efb5365178310b5f8a624782e62e4ff2a3e3efee2ae",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:318",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.Res. 936 deems the Transportation and Infrastructure substitute for H.R.3898 adopted, RCP119-15 for H.R.3383 in lieu of a committee substitute, and RCP119-16 for S.1071. Other provisions structure specified amendments and consideration of H.R.3638, 3628 and 3668, allow specified S.1071 explanatory material by December 12 and address limited early-second-session chamber business. It does not itself adopt every permitted further amendment or pass the target bills. S.1071 retains an older cemetery title in the rule, which cannot supply the substituted package meaning. Whole incorporated prints and committee texts, explanatory material, exact floor versions, earlier rules and the integrated water/finance/energy/defense boundary remain pending. No selected favorable project, actual funding, construction, current-law status or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:318",
+            "url": "https://clerk.house.gov/evs/2025/roll318.xml",
+            "raw_sha256": "deca6c4e679ab3e8b4567b4c4b2190e0dc814a9b69ae3d8efb2f9956afb7bb0c",
+            "governed_bytes_sha256": "592641ab2fcc82edf808687362485c951b75132cd345f7b3931e806a8b6a4b4c"
+          },
+          {
+            "source_id": "govinfo:hres936eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+            "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+            "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres936eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a.0000000.json",
+                  "sha256": "44d65bb7a0728ed9e3a2d8654ad87e239f27f4d1b29b3fcd1e8a0456c2a9f7ec",
+                  "start_character": 0,
+                  "end_character": 10473
+                }
+              ],
+              "utf8_sha256": "0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a",
+              "total_characters": 10473,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "e2a1998c3ff40d22934877de188935835e2ce69107dd9ffbb451210015bcf08e",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:319",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact resumed question is the motion to commit S.1071, rejected 209–216 with eight Not Voting, distinct from subsequent passage at roll 320. Its retained Clerk and floor description uses the older cemetery bill title; H.Res.936 separately deems RCP119-16 substituted. Neither title supplies an analytical meaning for the whole amended package. The initial motion body or instructions have not been fully reviewed here; no substantive instruction is invented from the resumed question. This remains non-counting procedural context, without underlying defense or cemetery-policy support, service-status change, funding effect or motive inference.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:319",
+            "url": "https://clerk.house.gov/evs/2025/roll319.xml",
+            "raw_sha256": "253ad12b29cc53e2fe88ccdfe7a31f733c6481c2baab72150f0a06a2bd942fd9",
+            "governed_bytes_sha256": "0ea6b989517039eed5c0e1c30f972620e496c94356a5448c9941e9ff08283014"
+          },
+          {
+            "source_id": "congressional-record:s1071-passage320-native243",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-house.pdf",
+            "raw_sha256": "3c3387e5d97d8ffb1880958547f6d73279b5cec9e0d49f1ed1f60e3f1beb4a62",
+            "governed_bytes_sha256": "80012b600a8289f457f0925cd63242089234478924f0938618c6179a2056f96d"
+          },
+          {
+            "source_id": "govinfo:hres936eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+            "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+            "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:s1071-passage320-native243",
+            "locator": "Resumed own question and aggregate outcome before member lists, offsets20030:20754",
+            "passage": "The SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the question on agree-\ning to the motion to commit on the bill \n(S. 1071) to require the Secretary of \nVeterans Affairs to disinter the re-\nmains of Fernando V. Cota from Fort \nSam Houston National Cemetery, \nTexas, and for other purposes, offered \nby the gentleman from New Jersey \n(Mr. N\nORCROSS), on which the yeas and \nnays were ordered. \nThe Clerk will redesignate the mo-\ntion. \nThe Clerk redesignated the motion. \nThe SPEAKER pro tempore. The \nquestion is on the motion to commit. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 209, nays \n216, not voting 8, as follows: \n[Roll No. 319]"
+          },
+          {
+            "source_id": "congressional-record:s1071-passage320-native243",
+            "locator": "Own final rejection offsets25407:25506",
+            "passage": "So the motion to commit was re-\njected. \nThe result of the vote was announced \nas above recorded. \n"
+          },
+          {
+            "source_id": "govinfo:hres936eh",
+            "locator": "Complete exact rule, including S.1071 deemed-substitute provision",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a.0000000.json",
+                  "sha256": "44d65bb7a0728ed9e3a2d8654ad87e239f27f4d1b29b3fcd1e8a0456c2a9f7ec",
+                  "start_character": 0,
+                  "end_character": 10473
+                }
+              ],
+              "utf8_sha256": "0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a",
+              "total_characters": 10473,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "07257d6fc40cf54da5ec9d8a5eed137685a8ad6353e9d05f9d9d76a4de105d5e",
+      "source": {
+        "source_id": "clerk:119:1:315",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll315.xml",
+        "text_version": null,
+        "raw_sha256": "c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "315",
+          "legis-num": "S 356",
+          "vote-question": "On Motion to Suspend the Rules and Pass",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "9-Dec-2025",
+          "action-time": "6:57 PM",
+          "vote-desc": "Secure Rural Schools Reauthorization Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "198",
+            "nay-total": "5",
+            "present-total": "0",
+            "not-voting-total": "16"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "201",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "12"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "20aa431399625b4c4183e24b9034f7260a2e8b0adc0745c83a8e53c54dbf59f2"
+      }
+    },
+    {
+      "original_source_object_sha256": "a020879771f0032c8bfcb04bcb110cfb503517e59525738a567a78addcb43ca7",
+      "source": {
+        "source_id": "govinfo:s356es",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s356es/html/BILLS-119s356es.htm",
+        "text_version": "ES",
+        "raw_sha256": "052bba15bded93128dc09031813072e45e1c40bf1c7d66ad7a3938f1c62391a9",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/48612dbb4cdacc7b00b0f3510b4bf3de07c25e0d856ef9cd1c9b98f4243b8f48.0000000.json",
+              "sha256": "ac08425154e30d34615c5f1dd397917cb832eb85923b5c04a0de3695939aff41",
+              "start_character": 0,
+              "end_character": 5488
+            }
+          ],
+          "utf8_sha256": "48612dbb4cdacc7b00b0f3510b4bf3de07c25e0d856ef9cd1c9b98f4243b8f48",
+          "total_characters": 5488,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "2ece82b5e31561b9b596853a9a2bbaddb19838d09351939a47a98d6be82ae245"
+      }
+    },
+    {
+      "original_source_object_sha256": "9f8bb31a812567247d4f2745665e48a70008a5a6f473f745d6bbe3957bf3ec04",
+      "source": {
+        "source_id": "govinfo:16usc7111-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7111.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "d4287772f48b40bd90bed2c1f4d8bf1244a6e12c6febac0288eb22a0475a5876",
+        "text": "§7111. Secure payments for States containing Federal land (a) State payment For each of fiscal years 2008 through 2015 and 2017 through 2023, the Secretary of Agriculture shall calculate for each eligible State an amount equal to the sum of the products obtained by multiplying— (1) the adjusted share for each eligible county within the eligible State; by (2) the full funding amount for the fiscal year. (b) County payment For each of fiscal years 2008 through 2015 and 2017 through 2023, the Secretary of the Interior shall calculate for each eligible county that received a 50-percent payment during the eligibility period an amount equal to the product obtained by multiplying— (1) the 50-percent adjusted share for the eligible county; by (2) the full funding amount for the fiscal year. (c) Special rule for fiscal year 2014 payments (1) State payment If an eligible county in a State that will receive a share of the State payment for fiscal year 2014 has already received, or will receive, a share of the 25-percent payment for fiscal year 2014 distributed to the State before April 16, 2015, the amount of the State payment shall be reduced by the amount of that eligible county's share of the 25-percent payment. (2) County payment If an eligible county that will receive a county payment for fiscal year 2014 has already received a 50-percent payment for that fiscal year, the amount of the county payment shall be reduced by the amount of the 50-percent payment. (d) Special rule for fiscal year 2017 payments (1) State payment If an eligible county in a State that will receive a share of the State payment for fiscal year 2017 has already received, or will receive, a share of the 25-percent payment for fiscal year 2017 distributed to the State before March 23, 2018, the amount of the State payment shall be reduced by the amount of the share of the eligible county of the 25-percent payment. (2) County payment If an eligible county that will receive a county payment for fiscal year 2017 has already received a 50-percent payment for fiscal year 2017, the amount of the county payment shall be reduced by the amount of the 50-percent payment. (3) Prompt payment Not later than 45 days after March 23, 2018, the Secretary of the Treasury shall make all payments under this subchapter for fiscal year 2017. (Pub. L. 106–393, title I, §101, as added Pub. L. 110–343, div. C, title VI, §601(a), Oct. 3, 2008, 122 Stat. 3896; amended Pub. L. 112–141, div. F, title I, §100101(a)(2), July 6, 2012, 126 Stat. 905; Pub. L. 113–40, §10(a)(1)(A), Oct. 2, 2013, 127 Stat. 544; Pub. L. 114–10, title V, §524(a)(1), (3), Apr. 16, 2015, 129 Stat. 178, 179; Pub. L. 115–141, div. O, title IV, §401(a)(2), Mar. 23, 2018, 132 Stat. 1077; Pub. L. 116–94, div. I, title III, §301(a)(1), Dec. 20, 2019, 133 Stat. 3020; Pub. L. 117–58, div. D, title XII, §41202(b)(1), Nov. 15, 2021, 135 Stat. 1132.) ",
+        "governed_bytes_sha256": "0c2fd58027426ebf27ecae8815f723ce6bb8400c727c96c0ec4802f8de4a91dd"
+      }
+    },
+    {
+      "original_source_object_sha256": "21f0bf18fcf7974e528e3800b99e7892e77db78e0b88eb70aadd178710489f51",
+      "source": {
+        "source_id": "govinfo:16usc7113-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7113.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "377130852c1b2fcdb72bc8dbb261e78b08372b3f4be265bf6cdf044d49e45745",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/e831853154c114bef9a1fff0660bbf307bbd89a7926bf567f4161731f4bb7ada.0000000.json",
+              "sha256": "ee39140ac6d9e94f11c022a99595554f897b57975bd50c7148ec1d6b32e3341a",
+              "start_character": 0,
+              "end_character": 4143
+            }
+          ],
+          "utf8_sha256": "e831853154c114bef9a1fff0660bbf307bbd89a7926bf567f4161731f4bb7ada",
+          "total_characters": 4143,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "8bd6b35795c3d6a952b058708605483f3ec0bd2f4bf1e1df44d1df1a7e1f06f2"
+      }
+    },
+    {
+      "original_source_object_sha256": "f9ea55b2183bbd7c1167bc0ffcc3d5d2284cf5ed1843a7412b7e84664f1962b7",
+      "source": {
+        "source_id": "govinfo:16usc7128-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7128.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "772e7b656e21beb39a754f8a6173987c811872a019675f2eebf706607d4d97fe",
+        "text": "§7128. Termination of authority (a) In general The authority to initiate projects under this subchapter shall terminate on September 30, 2025. (b) Deposits in Treasury Any project funds not obligated by September 30, 2026, shall be deposited in the Treasury of the United States. (Pub. L. 106–393, title II, §208, as added Pub. L. 110–343, div. C, title VI, §601(a), Oct. 3, 2008, 122 Stat. 3909; amended Pub. L. 112–141, div. F, title I, §100101(a)(2), (8), July 6, 2012, 126 Stat. 905, 906; Pub. L. 113–40, §10(a)(2)(E), Oct. 2, 2013, 127 Stat. 545; Pub. L. 114–10, title V, §524(c)(4), Apr. 16, 2015, 129 Stat. 180; Pub. L. 115–141, div. O, title IV, §401(b)(4), Mar. 23, 2018, 132 Stat. 1079; Pub. L. 116–94, div. I, title III, §301(b)(2), Dec. 20, 2019, 133 Stat. 3021; Pub. L. 117–58, div. D, title XII, §41202(d)(2), Nov. 15, 2021, 135 Stat. 1134.) ",
+        "governed_bytes_sha256": "8e6c382c219a5fea7a057111e5ea84e4595e9cabcee43e2e0fddb8c0fcbecce5"
+      }
+    },
+    {
+      "original_source_object_sha256": "a4cd9e034d8fd129db9504a9fbe43a8032c9c2e767a9fde566c6cb52b838a78c",
+      "source": {
+        "source_id": "govinfo:16usc7144-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7144.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "936e598b551ec2b1485e63a9dae7e0ea68c4e91a7c517e7dd3cff2d284187252",
+        "text": "§7144. Termination of authority (a) In general The authority to initiate projects under this subchapter terminates on September 30, 2025. (b) Availability Any county funds not obligated by September 30, 2026, shall be returned to the Treasury of the United States. (Pub. L. 106–393, title III, §305, formerly §304, as added Pub. L. 110–343, div. C, title VI, §601(a), Oct. 3, 2008, 122 Stat. 3910; amended Pub. L. 112–141, div. F, title I, §100101(a)(2), (10), July 6, 2012, 126 Stat. 905, 906; Pub. L. 113–40, §10(a)(3), Oct. 2, 2013, 127 Stat. 545; Pub. L. 114–10, title V, §524(d), Apr. 16, 2015, 129 Stat. 180; Pub. L. 115–141, div. O, title IV, §401(c), Mar. 23, 2018, 132 Stat. 1079; Pub. L. 116–94, div. I, title III, §301(c), Dec. 20, 2019, 133 Stat. 3021; renumbered §305 and amended Pub. L. 117–58, div. D, title XII, §41202(f), (g)(1), Nov. 15, 2021, 135 Stat. 1134.) ",
+        "governed_bytes_sha256": "f20183ed499996df3b8e9f0936096fe9407995af206aae1acdb3de2e4e35e3e7"
+      }
+    },
+    {
+      "original_source_object_sha256": "16236fdc1e7fa5a0b9da3d519c692cbeaee570f149c2ac958597b8275ef96fc7",
+      "source": {
+        "source_id": "clerk:119:1:316",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll316.xml",
+        "text_version": null,
+        "raw_sha256": "b3fa1c814d5783a5e48650d2e65d10739d0953d244241305fa5de90418a342ec",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "316",
+          "legis-num": "H R 1676",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "9-Dec-2025",
+          "action-time": "7:04 PM",
+          "vote-desc": "Make SWAPs Efficient Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "202",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "17"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "198",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "15"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "cf82c54a40c6490c44031f2da3c2bd3cd18662f4539c3015b9d5eb8f3ed46d2d"
+      }
+    },
+    {
+      "original_source_object_sha256": "ce057997112e2bcf3bdac89ed8ed84349441413d508509951fbfb701d83c3a58",
+      "source": {
+        "source_id": "govinfo:hr1676eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1676eh/html/BILLS-119hr1676eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "08d3bae21bf0c8193d4cab4a5c22ccb17adbcf6b33d1d0cb8c26ad8c271a01ab",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1676 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1676 _______________________________________________________________________ AN ACT To amend the Pittman-Robertson Wildlife Restoration Act to require the Secretary of the Interior to approve the wildlife conservation and restoration program of a State within a certain period of time. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Make SWAPs Efficient Act of 2025'' or the ``Make State Wildlife Action Plans Efficient Act of 2025''. SEC. 2. TIMING OF APPROVAL OF WILDLIFE CONSERVATION AND RESTORATION PROGRAM. Section 4(e)(3) of the Pittman-Robertson Wildlife Restoration Act (16 U.S.C. 669c(e)(3)) is amended-- (1) by inserting ``, not later than 180 days after the date on which the State submitted the comprehensive plan,'' after ``, the Secretary''; (2) by striking ``, as redesignated''; (3) by striking ``If the Secretary'' and inserting ``(A) If the Secretary''; and (4) by adding at the end the following: ``(B) Upon submission of a comprehensive plan by a State under paragraph (1), the Secretary shall conditionally authorize the implementation of the wildlife conservation and restoration program of the State and shall set aside amounts as described in subparagraph (A). ``(C) The Secretary, in consultation with the States, shall develop a process to ensure sufficient and timely review of comprehensive plans submitted by States under paragraph (1) and final approval of the wildlife conservation and restoration program of such States not later than 180 days after the date on which a State submits such a comprehensive plan. ``(D) It is the intent of Congress that the Secretary prioritize the-- ``(i) timely review of comprehensive plans submitted by States under paragraph (1); and ``(ii) approval of the wildlife conservation and restoration programs of such States. ``(E) Not later than June 1 of the year immediately following the year in which a State submits a comprehensive plan under paragraph (1), if the Secretary does not approve the wildlife conservation and restoration program of the State under subparagraph (A) within the time described in that subparagraph, the Secretary shall submit to the Chair and Ranking Member of the Committee on Natural Resources of the House of Representatives and the Environment and Public Works Committee of the Senate a report regarding the status of such comprehensive plan and including the reason why the wildlife conservation and restoration program was not so approved.''. Passed the House of Representatives December 9, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1676 _______________________________________________________________________ AN ACT To amend the Pittman-Robertson Wildlife Restoration Act to require the Secretary of the Interior to approve the wildlife conservation and restoration program of a State within a certain period of time.",
+        "governed_bytes_sha256": "cca58c4cfa85df68ce18793e9b78a202f0bdb2ed4f8c5bb80b59dedfe245ee9b"
+      }
+    },
+    {
+      "original_source_object_sha256": "91883b277426bfee61bbf64f1e31b949674114d89d8c23b4d7f3f7ad73e05805",
+      "source": {
+        "source_id": "govinfo:16usc669c-e-2024",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5B-sec669c.htm",
+        "text_version": "2024 Code section669c(e), complete wildlife conservation/restoration program provisions",
+        "raw_sha256": "2131899a8d8a8549b0b65dc1efac201c6676b1e07048a90c1cc4463331b8ddb4",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/142fe891fe46451f05ff0a2c9f09c69d6ec1af088ff96df16426e0e225e74436.0000000.json",
+              "sha256": "dd79e41324a0608c6545014ae2156f20e9b25dc688ec8635178d755277e95614",
+              "start_character": 0,
+              "end_character": 4675
+            }
+          ],
+          "utf8_sha256": "142fe891fe46451f05ff0a2c9f09c69d6ec1af088ff96df16426e0e225e74436",
+          "total_characters": 4675,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "1e00aa4dc75f6c468ad05937748f4e6e3ec27c362e01057301f1efb130e3f6cf"
+      }
+    },
+    {
+      "original_source_object_sha256": "5503effb748d68eb9c24f99b5ec3285e09e628cf8f9b25925c502bb9fac03889",
+      "source": {
+        "source_id": "clerk:119:1:317",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll317.xml",
+        "text_version": null,
+        "raw_sha256": "cb4b5307efc5965df1a3c00cdebdbf728d2640c0d07da3e23b468c58b763a89d",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "317",
+          "legis-num": "H RES 936",
+          "vote-question": "On Ordering the Previous Question",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "10-Dec-2025",
+          "action-time": "2:03 PM",
+          "vote-desc": "Providing for consideration of the bills H.R. 3898, H.R. 3383, H.R. 3638, H.R. 3628, H.R. 3668, and S. 1071; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "2cf6baeb56a204311e5bdf19abc625da4878d41cf3b31fea8d4152f4d30ef0e9"
+      }
+    },
+    {
+      "original_source_object_sha256": "d08db6e255d62a3ad8f85401d3d2f56c23156f50632997795f25ab2b28039c49",
+      "source": {
+        "source_id": "govinfo:hres936eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a.0000000.json",
+              "sha256": "44d65bb7a0728ed9e3a2d8654ad87e239f27f4d1b29b3fcd1e8a0456c2a9f7ec",
+              "start_character": 0,
+              "end_character": 10473
+            }
+          ],
+          "utf8_sha256": "0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a",
+          "total_characters": 10473,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
+      }
+    },
+    {
+      "original_source_object_sha256": "e2790fd0f28d8ef34276a6df8dd547ae3794bbfe1fdf5dfe0e7244032329a8d9",
+      "source": {
+        "source_id": "clerk:119:1:318",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll318.xml",
+        "text_version": "119:1",
+        "raw_sha256": "deca6c4e679ab3e8b4567b4c4b2190e0dc814a9b69ae3d8efb2f9956afb7bb0c",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "318",
+          "legis-num": "H RES 936",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "10-Dec-2025",
+          "action-time": "3:24 PM",
+          "vote-desc": "Providing for consideration of the bills H.R. 3898, H.R. 3383, H.R. 3638, H.R. 3628, H.R. 3668, and S. 1071; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "No",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "592641ab2fcc82edf808687362485c951b75132cd345f7b3931e806a8b6a4b4c"
+      }
+    },
+    {
+      "original_source_object_sha256": "85a1fbc532ffe0907f5b6a90753971fa761e9d62ed615aec8468aa961959b902",
+      "source": {
+        "source_id": "clerk:119:1:319",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll319.xml",
+        "text_version": null,
+        "raw_sha256": "253ad12b29cc53e2fe88ccdfe7a31f733c6481c2baab72150f0a06a2bd942fd9",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "319",
+          "legis-num": "S 1071",
+          "vote-question": "On Motion to Commit",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "10-Dec-2025",
+          "action-time": "5:24 PM",
+          "vote-desc": "To require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "0",
+            "nay-total": "216",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "209",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "0ea6b989517039eed5c0e1c30f972620e496c94356a5448c9941e9ff08283014"
+      }
+    },
+    {
+      "original_source_object_sha256": "62e26e2a62fbebd2ac242457d0e786ac1948207b368a70d218b01dab543550f0",
+      "source": {
+        "source_id": "congressional-record:s1071-passage320-native243",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-house.pdf",
+        "raw_sha256": "3c3387e5d97d8ffb1880958547f6d73279b5cec9e0d49f1ed1f60e3f1beb4a62",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/33274a687b163f272ddd7636af28f77844d97b69959498c22402533b71bd497b.0000000.json",
+              "sha256": "d6c286a16e4e559d53ddbec3ff708c8d05fa60c3974780f928c3ef7cdf4b247c",
+              "start_character": 0,
+              "end_character": 35454
+            }
+          ],
+          "utf8_sha256": "33274a687b163f272ddd7636af28f77844d97b69959498c22402533b71bd497b",
+          "total_characters": 35454,
+          "transport_only": true
+        },
+        "text_version": "December10Record nativephysical11/22/405/406(H5125/H5136/H5519/H5520) completeextractedselectedpages actuallyread; rule6/7,adoptedprint,distinctmotion319/ownpassage320,officialobservations. Notwhole455pagePDF/JES/visualcertificate.",
+        "physical_pages_1based": [
+          11,
+          22,
+          405,
+          406
+        ],
+        "raw_document_pages": 455,
+        "derived_parent_unit": "Concatenated pypdf extraction of four explicitly identified physical pages, exact retained whitespace",
+        "governed_bytes_sha256": "80012b600a8289f457f0925cd63242089234478924f0938618c6179a2056f96d"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 14
+  }
+}
