@@ -1,36 +1,36 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch79**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch80**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
 targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
 corrections satisfactory and CI green at `f70fc3023bd69c087be166d16d792065232edf6c`.
 Neither report accepts later work or domain membership.
 
-There are **494owner-examined identities** and **182ordinary unscreened**.
-The remaining-record phase has examined418additional historical non-leads.
+There are **499owner-examined identities** and **177ordinary unscreened**.
+The remaining-record phase has examined423additional historical non-leads.
 Evidence receipts distinguish complete bodies, exact procedural questions, partial
 operative leads and one inherited access-only investigation without child-body review. Batch26 added an identity-only child examination; batch36 followed it with its own-body binding and partial incorporated-guidance review, preserving the historical snapshot.
 Titles and historical non-lead labels select research, never automatic exclusion.
 
 | State | Count |
 |---|---:|
-| Shared authored candidate meanings | 53 |
-| Procedural controls | 152 |
+| Shared authored candidate meanings | 54 |
+| Procedural controls | 154 |
 | Proposed exact-action exclusions | 71 |
 | Nonbinding expression | 11 |
 | Source/access/version holds | 6 |
-| Ordinary unfinished/review cases | 201 |
-| Ordinary unscreened identities | 182 |
+| Ordinary unfinished/review cases | 203 |
+| Ordinary unscreened identities | 177 |
 | **Discovery identities** | **676** |
 
-All53shared meanings project mechanically to Foushee and Massie. 7 authored
-Not Voting observations remain nondirectional, with52Foushee
-and47Massie directional findings. No coverage, synthesis or publication acceptance.
+All54shared meanings project mechanically to Foushee and Massie. 7 authored
+Not Voting observations remain nondirectional, with53Foushee
+and48Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Five new session2identities83–87. A simple House policy expression and two procedural questions are non-counting. The old war-powers IH does not certify the governing March5body; the separate DHS/continuing-appropriations package remains pending whole review. Resolution assertions and selected account fragments supply no new shared meaning.
+Five new session2identities88–92. One new whole fisheries-purchase/scientific-assessment candidate retains distinct purchasing, supplier and data-partner roles and a two-year pilot beginning after both prerequisite fiscal years. Whole SBIR/STTRsecurity and deemed multi-bill rule cases remain pending. No verified population, commercial, funding or ecological result is inferred; no accepted taxonomy.
 
-[Readable batch79 findings](infrastructure_candidate_batch79.md).
+[Readable batch80 findings](infrastructure_candidate_batch80.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch80_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -50,30 +50,27 @@ membership stays unaccepted. Earlier snapshots remain immutable.
 The H.R.27 exact-child Rules lookup reported403 and is stopped without retry,
 transport switch or alternate route. The older H.J.Res.87 denial, unclassified
 H.R.4690 rejection and cancelled WRDA version/glyph/table chain remain unchanged.
-Retained CRA legal reviews and all ordinary package/baseline cases remain explicit.
+Two CRA legal reviews and all ordinary package/baseline cases remain explicit.
 Independent records continue around these holds.
 
 ## Validation and resume
 
-**Current source/conservation/generated replay and seven semantic checks pass.** Full104focused tests passed at exact0ae531b104a2bf8706161ab447d83e032b3b3b4a(batch77), inherited without repeating the full suite for unchanged compiled behavior. Current shared authoring/generated copies remain member-neutral.
+**107focused tests, candidate source/conservation/replay checks and seven canonical
+semantic checks pass**. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took4.175seconds; the specification/authoring elapsed window and later byte/delivery
+took112.629seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch79_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch80_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch80_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch80_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch80_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Continue session2roll88onward.53unaccepted meanings,7authoredNotVoting,6holds unchanged. HConRes38March5body/version and whole7744baselines remain pending; no assertions accepted as verifiedfacts. No acquisition, acceptance, publication or production authority.
+Continue session2roll93onward.54unaccepted meanings;88wholefeed-purchase/scientific-assessment program retains roles/conditions/later-fiscal-year clock and competingtaxonomy.7authoredNotVotingand6holds unchanged. No acquisition, acceptance, publication or production authority.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
 
-Roll226 exception-scope correction, preimage and unresolved binding remain preserved. Seven authored Not Voting observations remain nondirectional. All shared meanings and memberships remain candidate-only and unaccepted.
-
-Historical exact CI results remain separately attributed in retained receipts: d0a3b258backend resolved stdout overflow; e3608e9ebackend228candidate tests/laterreleasegates and frontend passed. More recent successes, cancellations and pending observations have their own exact heads. Cancelled is not passed, and no green result transfers to current bytes. No manual retry or test weakening.
-
-Requested historical42–48export remains [batch42manifest](infrastructure_historical_delta42_48_cbb93d4f/batch42.json) through48at exactcbb93d4f:35newidentities+226correction/preimage,118source-object occurrences,7manifests/57parts/all64files<200KB(max131266). Original partial offsets/hashes, lossless reconstruction and actual staged export blobs were verified. Local transport verification is separate from independent source review; no acceptance, publication or full primary clearance transfers.
+Roll29confirmed minor wording correction: current membership/universe prose now says investment arrangements satisfying all three specified conditions. It does not say exactly three arrangements. [Narrow preimage/source binding](../editorial/shared_candidates/house_119_infrastructure_batch80_20260916/roll29_conditions_wording_correction_receipt.json) preserves the original79record/universe and links the unchanged69export/source object. Only the requested phrase and dependent digests changed; exclusion, source/claim bytes, flags and amendment-versus-passage distinction remain. This correction is not broad clearance; original-source review through75is still completing.

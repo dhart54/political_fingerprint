@@ -288,4 +288,22 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'roll43 PartA claim binding missing'):validate_roll43_part_a_binding(bad,record,row,s,receipt,recommendation)
         bad=copy.deepcopy(action);bad['meaning']+=' This restricts every federal account.'
         with self.assertRaisesRegex(ValueError,'roll43 provenance repair changed meaning or other action fields'):validate_roll43_part_a_binding(bad,record,row,s,receipt,recommendation)
+    def test_roll29_three_conditions_are_not_three_arrangements(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_roll29_conditions_wording
+        p=folder(80);record=copy.deepcopy(next(r for r in read(p/'membership_review.json')['records'] if r['action_id']=='house:119:2:29'));row=next(r for r in read(p/'universe_proposal.json')['candidate_dispositions'] if r['action_id']=='house:119:2:29');receipt=read(p/'roll29_conditions_wording_correction_receipt.json');source=next(s for s in read(p/'sources.json')['sources'] if s['source_id']==receipt['source_id']);record['rationale']=record['rationale'].replace('investment arrangements satisfying all three specified conditions','exactly three investment arrangements')
+        with self.assertRaisesRegex(ValueError,'roll29 conjunctive conditions became exactly three arrangements'):validate_roll29_conditions_wording(record,row,source,receipt)
+    def test_blue_catfish_purchase_roles_and_transport_cap_remain(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_blue_catfish_program_boundaries
+        p=folder(80);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:88');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new in [('pet-food, animal-feed or aquaculture-feed manufacturers/processors, not human-food recipients or every research partner','human-food recipients and all research partners'),('may use no more than15percent for transport','may use unlimited funds for transport')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'blue-catfish purchasing roles price or transport limits lost'):validate_blue_catfish_program_boundaries(bad,s['govinfo:hr4294eh'],s['govinfo:15usc1511d-2024-marine'])
+    def test_blue_catfish_later_fiscal_year_start_and_uncertainty_remain(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_blue_catfish_program_boundaries
+        p=folder(80);action=next(a for a in read(p/'authoring.json')['actions'] if a['action_id']=='house:119:2:88');s={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        for old,new,error in [('fiscal year AFTER the LATER fiscal year of the first public abundance estimate and the required guidance','date of enactment alone','blue-catfish conditional timing or seek-MOU became automatic'),('Seeking the memorandum is not a guarantee of agreement','The memorandum is automatically guaranteed','blue-catfish conditional timing or seek-MOU became automatic'),('requested assessments are not proved causal effects','requested assessments are proved causal benefits','blue-catfish report scientific uncertainty or candidate scope lost')]:
+            with self.subTest(boundary=old):
+                bad=copy.deepcopy(action);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,error):validate_blue_catfish_program_boundaries(bad,s['govinfo:hr4294eh'],s['govinfo:15usc1511d-2024-marine'])
 if __name__=='__main__':unittest.main()
