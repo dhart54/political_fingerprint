@@ -665,4 +665,37 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(m);bad['house:119:1:108']['claim_source_map'][1]['passage']='Old consumer definition silently removed'
         with self.assertRaisesRegex(ValueError,'attestation proposal changed prior evidence, flags or material limits'):validate_retained_attestation_proposals(bad,u,s,r)
 
+    def test_hea117_old_definitions_cannot_become_proposed_or_clear_pending_actions(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_hea117_definition_context
+        p=folder(113);r=read(p/'hea117_dated_definition_context_receipt.json');m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_hea117_definition_context(m,u,s,r);self.assertTrue(validate(113)['generated_replay'])
+        bad=copy.deepcopy(r);bad['proposed_definitions_inherited']=True
+        with self.assertRaisesRegex(ValueError,'old context became proposed definitions'):validate_hea117_definition_context(m,u,s,bad)
+        bad=copy.deepcopy(s);bad['text']=bad['text'].replace('any single campus','any educational organization')
+        with self.assertRaisesRegex(ValueError,'dated definition source differs'):validate_hea117_definition_context(m,u,bad,r)
+        for aid in ['house:119:1:79','house:119:1:80','house:119:1:81','house:119:1:82','house:119:1:83']:
+            bad=copy.deepcopy(m);bad[aid]['claim_source_map']=bad[aid]['claim_source_map'][1:]
+            with self.assertRaisesRegex(ValueError,'changed prior action evidence flags or pending state'):validate_hea117_definition_context(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['house:119:1:83']['exact_action_binding_unresolved']=False
+        with self.assertRaisesRegex(ValueError,'changed prior action evidence flags or pending state'):validate_hea117_definition_context(bad,u,s,r)
+
+    def test_title17_fee_collection_includes_financial_close_date_only(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_title17_same_day_fee_precision
+        p=folder(113);r=read(p/'title17_same_day_fee_precision_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_title17_same_day_fee_precision(a,u,s,r)
+        for bad_text in ['fee collection after financial close','fee collection before financial close','fee collection on or after financial close with all fee-offset interactions resolved']:
+            bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace('fee collection on or after financial close',bad_text)
+            with self.assertRaisesRegex(ValueError,'excluded same-day collection or exceeded exact phrase'):validate_title17_same_day_fee_precision(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['fee_offset_interaction_resolved']=True
+        with self.assertRaisesRegex(ValueError,'same-day boundary or unresolved limits differ'):validate_title17_same_day_fee_precision(a,u,s,bad)
+
+    def test_title17_export_lengths_match_published_lf_bytes_without_other_changes(self):
+        from scripts import validate_infrastructure_discovery_delta as validator
+        p=validator.ROOT/'docs/review_packets/infrastructure_batch110_title17_original_objects/manifest.json';m=read(p);r=read(folder(113)/'title17_export_length_correction_receipt.json');objects={x['export_path']:(validator.ROOT/x['export_path']).read_bytes().replace(b'\r\n',b'\n') for x in m['objects']};validator.validate_title17_export_lengths(m,objects,r)
+        for i in range(7):
+            bad=copy.deepcopy(m);bad['objects'][i]['export_bytes']+=9
+            with self.assertRaisesRegex(ValueError,'exported byte length or preserved hash differs'):validator.validate_title17_export_lengths(bad,objects,r)
+        bad=copy.deepcopy(m);bad['objects'][0]['origin_git_blob']='0'*40
+        with self.assertRaisesRegex(ValueError,'exceeded seven length fields'):validator.validate_title17_export_lengths(bad,objects,r)
+        bad=copy.deepcopy(objects);path=m['objects'][0]['export_path'];bad[path]+=b' '
+        with self.assertRaisesRegex(ValueError,'exported byte length or preserved hash differs'):validator.validate_title17_export_lengths(m,bad,r)
+
 if __name__=='__main__':unittest.main()

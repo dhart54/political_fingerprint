@@ -312,6 +312,7 @@ CASES[59]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(335,340
 CASES[60]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [340,341,342,345,346]],new=[],new_action_ids=['house:119:1:342'],counts=dict(interpreted_substantive_directional=45,interpreted_substantive_non_directional=1,procedural_context=120,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=283,pending_interpretation=160),pending=277)
 CASES[64]=dict(rolls=[],action_ids=['house:119:1:362',*['house:119:2:'+str(r) for r in range(2,6)]],new=[],counts=dict(interpreted_substantive_directional=46,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=263,pending_interpretation=170),pending=257)
 CASES[65]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(6,11)],new=[],new_action_ids=['house:119:2:9'],counts=dict(interpreted_substantive_directional=47,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=258,pending_interpretation=174),pending=252)
+CASES[113]=dict(rolls=[],action_ids=[],new=[],repairs=[f'house:119:1:{i}' for i in [79,80,81,82,83,231]],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[112]=dict(rolls=[],action_ids=[],new=[],repairs=[f'house:119:1:{i}' for i in [19,84,85,88,89,90,108,115,133,213]],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[111]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:241'],new_action_ids=['house:119:1:241'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[110]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:231'],counts=dict(interpreted_substantive_directional=68,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=263),pending=0)
@@ -393,6 +394,37 @@ def validate_investor_report_deadline_precision(action,record,row,source,recomme
     expected_rec=copy.deepcopy(receipt['before_recommendation']);expected_rec['candidate_action_sha256']=digest(action);expected_rec['material_qualifications']=[x.replace(*receipt['limitation_replacement'])for x in expected_rec['material_qualifications']];require(recommendation==expected_rec,'investor report qualification or recommendation binding differs')
     require(receipt['after_action_sha256']==digest(action)and receipt['after_record_sha256']==digest(record)and receipt['after_universe_row_sha256']==digest(row)and receipt['unaffected_shared_actions_preserved']==64 and receipt['member_observations_unchanged_except_hash_rebinding'],'investor timing correction receipt binding/preservation differs')
     require(not receipt['source_acquisitions']and not receipt['protected_retries']and not receipt['accepted_membership']and not receipt['external_delivery_authorized']and not receipt['publication_authorized']and not receipt['production_writes'],'investor timing correction conferred authority')
+
+def validate_hea117_definition_context(records,rows,source,receipt):
+    require(source['source_id']==receipt['source_id']=='govinfo:20usc1011f-h-2024' and digest(source)==receipt['source_object_sha256']=='ad4e5b4f1bffff4a15a29fc16e887c9dba6216c65340f4478dfaf2377111fb00','HEA117 dated definition source differs')
+    require(receipt['baseline_context_only'] and not receipt['proposed_definitions_inherited'] and not receipt['complete_1011f_reviewed'] and not receipt['whole_action_body_reread'] and receipt['definition_extent']==dict(start=0,end=2143,total=2143),'HEA117 old context became proposed definitions or whole-program clearance')
+    require([c['action_id'] for c in receipt['cases']]==[f'house:119:1:{i}' for i in [79,80,81,82,83]],'HEA117 shared context cohort differs')
+    ref={k:source[k] for k in ['source_id','url','raw_sha256','governed_bytes_sha256']}
+    for case in receipt['cases']:
+        aid=case['action_id'];before=case['before_record'];record=records[aid];row=rows[aid];claim=case['appended_claim']
+        expected=copy.deepcopy(before);expected.update(rationale=case['new_rationale'],sources=before['sources']+[ref],claim_source_map=before['claim_source_map']+[claim])
+        require(record==expected and record['disposition']==row['disposition']=='pending_interpretation' and record['rationale'].startswith(before['rationale']+'\n\n'),'HEA117 context changed prior action evidence flags or pending state')
+        require(claim['source_id']==source['source_id'] and claim['passage']==source['text'] and 'OLD pre-replacement context' in claim['locator'] and all(q in record['rationale'] for q in ['single-campus','accreditation','Federal-financial-support','These are the OLD definitions','not definitions automatically incorporated','unretained old reporting threshold/complete1011f','All five remain pending']),'HEA117 definition scope or old/proposed qualifications lost')
+        expected_row=copy.deepcopy(case['before_universe_row']);expected_row.update(reason=record['rationale'],rationale=record['rationale'],sources=record['sources']);expected_row['exact_action_source_binding']['source_ids']=[s['source_id'] for s in record['sources']];expected_row['review_progress']['shared_review_record_sha256']=digest(record)
+        require(row==expected_row,'HEA117 context altered prior universe or version boundary')
+
+def validate_title17_same_day_fee_precision(record,row,source,receipt):
+    old='fee collection after financial close';new='fee collection on or after financial close';before=receipt['before_record'];expected=copy.deepcopy(before)
+    require(receipt['action_id']==record['action_id']=='house:119:1:231' and receipt['rationale_replacement']==[old,new] and before['rationale'].count(old)==1 and receipt['includes_financial_close_day'] and not receipt['fee_offset_interaction_resolved'] and not receipt['current_law_certified'],'Title17 fee same-day boundary or unresolved limits differ')
+    expected['rationale']=before['rationale'].replace(old,new)
+    require(record==expected and record['disposition']==row['disposition']=='pending_interpretation','Title17 fee correction excluded same-day collection or exceeded exact phrase')
+    quote=receipt['source_passage'];require(source['source_id']==receipt['source_id']=='govinfo:42usc16512-2024' and digest(source)==receipt['source_object_sha256'] and source['text'][receipt['source_passage_start']:receipt['source_passage_end']]==quote and 'on or after the date of the financial close' in quote,'Title17 fee correction lacks inclusive source witness')
+    expected_row=copy.deepcopy(receipt['before_universe_row']);expected_row.update(reason=record['rationale'],rationale=record['rationale']);expected_row['review_progress']['shared_review_record_sha256']=digest(record)
+    require(row==expected_row,'Title17 fee correction changed universe source flags or pending gates')
+
+def validate_title17_export_lengths(manifest,object_bytes,receipt):
+    import hashlib
+    expected=copy.deepcopy(receipt['original_manifest']);require(len(manifest['objects'])==len(expected['objects'])==7 and not receipt['source_content_integrity_changed'],'Title17 export correction changed source integrity or cohort')
+    for i,(old,current) in enumerate(zip(expected['objects'],manifest['objects']),16511):
+        require(current['source_id']==f'govinfo:42usc{i}-2024','Title17 export source identity differs')
+        body=object_bytes[current['export_path']];old['export_bytes']=len(body)
+        require(current['export_bytes']==len(body) and hashlib.sha256(body).hexdigest()==current['export_lf_sha256'],'Title17 exported byte length or preserved hash differs')
+    require(manifest==expected,'Title17 export correction exceeded seven length fields')
 
 def validate_retained_attestation_proposals(records,rows,sources,receipt):
     from datetime import datetime
@@ -700,6 +732,15 @@ def validate(n,values=None,*,check_files=True):
         correction=read(data/'north_dakota_exception_scope_correction.json');aid='house:119:1:226';pre=correction['preimage_membership'];require(digest(pre)==correction['preimage_membership_sha256'] and digest(ss[correction['source_id']])==correction['source_object_sha256'],'North Dakota preserved source/preimage digest differs')
         require({k:v for k,v in records[aid].items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and records[aid]['rationale']==correction['corrected_rationale'],'North Dakota qualification changed meaning/state/source scope')
         if n==43:require(pre==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and correction['preimage_universe_row']==prev[aid],'North Dakota historical preimage differs')
+    title17_fee_before_view=None
+    if n>=113:
+        hea=read(data/'hea117_dated_definition_context_receipt.json');validate_hea117_definition_context(records,rows,ss[hea['source_id']],hea)
+        fee=read(data/'title17_same_day_fee_precision_receipt.json');aid=fee['action_id'];validate_title17_same_day_fee_precision(records[aid],rows[aid],ss[fee['source_id']],fee);title17_fee_before_view=(fee['before_record'],fee['before_universe_row'])
+        if n==113:
+            for c in [*hea['cases'],fee]:require(c['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==c['action_id']) and c['before_universe_row']==prev[c['action_id']],'HEA117 or fee correction preimages differ from exact112')
+        else:
+            for name in ['hea117_dated_definition_context_receipt.json','title17_same_day_fee_precision_receipt.json']:require(read(data/name)==read(prior/name),'original HEA117 or fee correction receipt changed')
+        manifest=read(ROOT/'docs/review_packets/infrastructure_batch110_title17_original_objects/manifest.json');lengths=read(data/'title17_export_length_correction_receipt.json');object_bytes={x['export_path']:(ROOT/x['export_path']).read_bytes().replace(b'\r\n',b'\n') for x in manifest['objects']};validate_title17_export_lengths(manifest,object_bytes,lengths)
     attestation_before_views={}
     if n>=112:
         receipt=read(data/'retained_eh_attestation_proposals_receipt.json');validate_retained_attestation_proposals(records,rows,ss,receipt)
@@ -712,7 +753,7 @@ def validate(n,values=None,*,check_files=True):
         if n==111:require(receipt['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']=='house:119:1:241') and receipt['before_universe_row']==prev['house:119:1:241'],'POSTAct preimages differ from exact110')
         else:require(receipt==read(prior/'post_act_retained_baseline_version_receipt.json'),'POSTAct original baseline/version receipt changed')
     if n>=110:
-        aid='house:119:1:231';receipt=read(data/'title17_dated_baseline_link_receipt.json');validate_title17_dated_baseline_link(records[aid],rows[aid],ss,receipt)
+        aid='house:119:1:231';receipt=read(data/'title17_dated_baseline_link_receipt.json');record_view,row_view=title17_fee_before_view or (records[aid],rows[aid]);validate_title17_dated_baseline_link(record_view,row_view,ss,receipt)
         if n==110:require(receipt['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and receipt['before_universe_row']==prev[aid],'Title17 baseline preimages differ from exact109')
         else:require(receipt==read(prior/'title17_dated_baseline_link_receipt.json'),'Title17 original dated baseline receipt changed')
     if n>=109:
