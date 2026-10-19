@@ -477,4 +477,15 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         for old,new in [('NO PREFERENCE in Federal contracts','automatic preference in Federal contracts'),('may not be used for personal financial gain, securities trading, market manipulation','may be used for unrestricted personal profits'),('five years AFTER ENACTMENT unless reauthorized','permanent program with no sunset'),('Rejection did not add','Passage enacted')]:
             bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
             with self.assertRaisesRegex(ValueError,'investor pilot gain award clocks baseline or failed outcome boundary lost'):validate_investor_clearance_pilot_boundaries(bad,s['congressional-record:2026-07-22-ndaa-remaining-offerings'],s['clerk:119:2:274'])
+    def test_roll241_report_extent_correction_preserves_source_and_pending_state(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_roll241_report_extent_disclosure
+        p=folder(103);r=read(p/'roll241_report_extent_disclosure_correction_receipt.json');m=next(x for x in read(p/'membership_review.json')['records']if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions']if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources']if x['source_id']==r['source_id']);validate_roll241_report_extent_disclosure(m,u,s,r)
+        bad=copy.deepcopy(m);bad['rationale']+=r['removed_sentence']
+        with self.assertRaisesRegex(ValueError,'roll241 correction exceeded rationale and locator'):validate_roll241_report_extent_disclosure(bad,u,s,r)
+        bad=copy.deepcopy(m);next(c for c in bad['claim_source_map']if c['source_id']==s['source_id'])['locator']='Only old stale label'
+        with self.assertRaisesRegex(ValueError,'roll241 correction exceeded rationale and locator'):validate_roll241_report_extent_disclosure(bad,u,s,r)
+        bad=copy.deepcopy(s);bad['text_version']='Silently rewritten historical label'
+        with self.assertRaisesRegex(ValueError,'roll241 retained source object or canonical digest changed'):validate_roll241_report_extent_disclosure(m,u,bad,r)
+        bad=copy.deepcopy(u);bad['disposition']='exact_action_ineligible'
+        with self.assertRaisesRegex(ValueError,'roll241 universe binding or pending disposition changed'):validate_roll241_report_extent_disclosure(m,bad,s,r)
 if __name__=='__main__':unittest.main()
