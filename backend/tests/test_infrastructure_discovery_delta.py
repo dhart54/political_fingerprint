@@ -534,4 +534,37 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['source_acquisitions']=1
         with self.assertRaisesRegex(ValueError,'consumer definition receipt boundary differs'):validate_consumer_definition_dependency(m,u,s,bad)
 
+    def regional_commission_cases(self):
+        p=folder(108);actions={x['action_id']:x for x in read(p/'authoring.json')['actions']};sources={x['source_id']:x for x in read(p/'sources.json')['sources']};recommendations=read(p/'regional_commission_appropriation_taxonomy_recommendations.json')['cases']
+        return [(actions[r['action_id']],sources,r) for r in recommendations]
+
+    def test_regional_commission_candidates_keep_exact_pairs_rejection_and_whole_scope(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_regional_commission_amendment
+        for a,s,r in self.regional_commission_cases():
+            with self.subTest(action=a['action_id']):validate_regional_commission_amendment(a,s,r)
+
+    def test_regional_commission_residuals_cannot_be_zeroed_or_given_to_a_new_program(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_regional_commission_amendment
+        for a,s,r in self.regional_commission_cases():
+            with self.subTest(action=a['action_id']):
+                bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace('leaving$2,000,000','leaving$0').replace('leaving$250,000','leaving$0')
+                with self.assertRaisesRegex(ValueError,'regional commission paired accounting or residual amount differs'):validate_regional_commission_amendment(bad,s,r)
+
+    def test_regional_commission_grant_share_admin_and_matching_limits_are_not_universal(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_regional_commission_amendment
+        a,s,r=self.regional_commission_cases()[0]
+        for old,new in [('At least40percent of GRANT AMOUNTS','At least40percent of the entire appropriation'),('exception when less than10million','no exception'),('NorthernBorder-specific COVID cost-share waiver is not transferred','NorthernBorder waiver applies to every Commission'),('3or more counties OR more than one State AND','3or more counties OR more than one State OR')]:
+            with self.subTest(change=new):
+                bad=copy.deepcopy(a);self.assertIn(old,bad['meaning']);bad['meaning']=bad['meaning'].replace(old,new)
+                with self.assertRaisesRegex(ValueError,'regional commission whole program or funding qualifications lost'):validate_regional_commission_amendment(bad,s,r)
+
+    def test_regional_commission_geography_choice_and_review_boundary_remain_scoped(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_regional_commission_amendment
+        a,s,r=self.regional_commission_cases()[2];bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace('not every county in those eight States','every county in those eight States')
+        with self.assertRaisesRegex(ValueError,'regional commission geography or external-definition limit lost'):validate_regional_commission_amendment(bad,s,r)
+        bad=copy.deepcopy(a);bad['choice_meanings']['Nay']='supported every Commission program'
+        with self.assertRaisesRegex(ValueError,'regional commission choice became component or parent stance'):validate_regional_commission_amendment(bad,s,r)
+        bad=copy.deepcopy(r);bad['accepted_membership']=True
+        with self.assertRaisesRegex(ValueError,'regional commission independent-review boundary differs'):validate_regional_commission_amendment(a,s,bad)
+
 if __name__=='__main__':unittest.main()
