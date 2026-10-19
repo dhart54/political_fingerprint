@@ -1,0 +1,385 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "exact_committed_head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+  "original_heads": {
+    "101": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+    "102": "9fd76739f8597aa0f57a47007c1bafb242a241e4"
+  },
+  "batches": [
+    {
+      "batch": 101,
+      "original_head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+      "path": "batch101.json",
+      "committed_utf8_lf_bytes_sha256": "96f057407f6632043b9aa7f95e1c7cb1108ff3cc01f20d216eab98e34cbdbbb8",
+      "new_records": 5,
+      "prior_followup_records": 0,
+      "source_object_occurrences": 12
+    },
+    {
+      "batch": 102,
+      "original_head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+      "path": "batch102.json",
+      "committed_utf8_lf_bytes_sha256": "6b59d9fd334581b9a4ea24d24b6c5f57b714641c0ff8b2d23ec85e20be6cae0d",
+      "new_records": 7,
+      "prior_followup_records": 0,
+      "source_object_occurrences": 13
+    }
+  ],
+  "source_objects": [
+    {
+      "source_id": "clerk:119:2:272",
+      "original_source_object_sha256": "86d1c9924890dd1f1931ebd0198ef718a4e9959735a3d7fe0b7f2441ef7da187",
+      "raw_sha256": "c1104ec5fd295cb5fe8f4c6166bdb7d6810924c146bbba209e6bf05dfd3fee8b",
+      "governed_bytes_sha256": "9841f339886da67df4cd6aeacbbf5535b5e803bcf4c67f8c6a28bc58662835a9",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/86d1c9924890dd1f1931ebd0198ef718a4e9959735a3d7fe0b7f2441ef7da187.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "2ac73a611d0a782ced0b1e20cacc3134806dde3efaa4f588231aaa2a75799fea",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:273",
+      "original_source_object_sha256": "197476f78b87e8076b4264688f820a867ab136fc20b6f25b72ce333facb645f5",
+      "raw_sha256": "d0129c5d8d2252f8a566d3b69416d6fb9c58451eca359ebb88ad7223b39be5e2",
+      "governed_bytes_sha256": "7c63a341532de0eb1b79bc7fdf5a8ef0b2a67ce3eb87dc0d178c1dc3de152f9f",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/197476f78b87e8076b4264688f820a867ab136fc20b6f25b72ce333facb645f5.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "b868c50db23dc83e244b1ca6a58aa233380186e39e1afab524f2e6fadd6def45",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:274",
+      "original_source_object_sha256": "bd1733f789232eec0ec17b6ee9a3c18d285930ceadad10ea97a7acf8e318dd20",
+      "raw_sha256": "92972207cf64edf26fe2c274d51be73f08ebe03604ea18d022da6aa138d7caa5",
+      "governed_bytes_sha256": "fc0c50268bf337a424b4781248a872e286ac539a4c0315df0fa75c15b230581d",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/bd1733f789232eec0ec17b6ee9a3c18d285930ceadad10ea97a7acf8e318dd20.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "28a38348726c19b2a214259f84abab7aedb3b6de561cd2abbed84ffa6f5d014b",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:275",
+      "original_source_object_sha256": "d481be29a77ac6f0f76710e78400a12aa69d9152cd0958ec9f216f49783a514f",
+      "raw_sha256": "07ab443206c49fe20084c474b12b6ab2d37bdea221d0e0a356c0013b5dce2265",
+      "governed_bytes_sha256": "db027ade1196693be98cf42b9ed66d88492a1c67b8b9fbfd4977a14efb1bd4e4",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/d481be29a77ac6f0f76710e78400a12aa69d9152cd0958ec9f216f49783a514f.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "80526a6da24d7f6b3faac812dbc7c96102e858bb9e49ccc51459b6ae0e91963e",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:276",
+      "original_source_object_sha256": "3c916a6d027ad9e4c63639f0cb310d5e5dd1ab6d1a23c1b33d98756d79d12641",
+      "raw_sha256": "58ba211fccbfc02fee506ea4894c4b2cbf6629b0ab0e3a6e7bd0698c55c272ac",
+      "governed_bytes_sha256": "c13285626c1d3f2feb60ec8a61b60eb40864ab0ac2de6b6228e692f10d8c8211",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/3c916a6d027ad9e4c63639f0cb310d5e5dd1ab6d1a23c1b33d98756d79d12641.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "1cc27618fd300ddd625b5b77fa28139bdea29142a3920b2daa88167fe7b70f63",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:277",
+      "original_source_object_sha256": "e507d6cb71787d8227135bcd6adba798b11627e6867a47e5d6d5ecb128c8ac91",
+      "raw_sha256": "71976392dd89f4dd3398991887a335e3e2f6ee6bdfa22158bcb9b0e1e8e666f0",
+      "governed_bytes_sha256": "e8065c0d3ccc3ecc9bb541066a589696dc6764c8dab75aa594b6b65c7283a516",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/e507d6cb71787d8227135bcd6adba798b11627e6867a47e5d6d5ecb128c8ac91.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "b8298cebc5b3679180a2e6a1b238144868bb18f784b7e36303dc1a768b119707",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:278",
+      "original_source_object_sha256": "8044123f018c5ab358c6e6439ddccf929893731fedf8fc046f5fbd10fe1fdc6a",
+      "raw_sha256": "541fa8d9340952b4674afdc74e54b5ace14bbb7b465d1250b8b898ea1407e094",
+      "governed_bytes_sha256": "0ec9bdbe6ad0d77fb06d3fa4ddfd3c28514477c49ae19e64f88b183d4f2b6d64",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/8044123f018c5ab358c6e6439ddccf929893731fedf8fc046f5fbd10fe1fdc6a.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "dc05f456cc2d87532c4cfc41d97a23611b05e9d3256f900a76a8cb7eb1057014",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:279",
+      "original_source_object_sha256": "593074627fca3d95075331f88f53ed6a73db7f18aefde784b8f2b8a9a34127cd",
+      "raw_sha256": "7aa87acafa6ae7edcc1d8593418908362421a4532f6040b45bf2787ab67a91bc",
+      "governed_bytes_sha256": "244d69e89217ec9ce9ff52ff05b0ed5361d8cc4ec2e9f56f84ead281aeea4300",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/593074627fca3d95075331f88f53ed6a73db7f18aefde784b8f2b8a9a34127cd.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "d066c8d531d0398cab3856113bde1e23e5d913fd504445de15c93214c206fbc9",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:280",
+      "original_source_object_sha256": "3506386ad0712faeffcafa2d98240f490cf1400d17ff638d311e557adae22d3a",
+      "raw_sha256": "543f0e2c7d60bdadd88f0b0da9ef88d05f23502b9e3609b37ddcc2bc411e889a",
+      "governed_bytes_sha256": "df59ef6affe744c9b46f4e96e5cb8020d39bc00080ea6f3d95093791274a2742",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/3506386ad0712faeffcafa2d98240f490cf1400d17ff638d311e557adae22d3a.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "4c2731c2f4fbbf49cd0ffc6f2139dd78982f1ca860e33f057328ea83dc42ebfa",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:281",
+      "original_source_object_sha256": "0da8d80843cf341afc7b862ef66b07c4bbee83637382e2ea7bb07b99d38e3ee2",
+      "raw_sha256": "41547348e64728b2fe1da765fdb6b6be7b6ce47d3ea86693a91c6c5ac5a05f80",
+      "governed_bytes_sha256": "cd84ee41252251404c0c6f441b1498d9281ba74ed49bb0f42adfda42cfe61c3c",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/0da8d80843cf341afc7b862ef66b07c4bbee83637382e2ea7bb07b99d38e3ee2.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "4da1f21451eeae85a3c8471e04793adc24596ff6669c26ad94fd323dadf9130e",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:282",
+      "original_source_object_sha256": "65bcd1e46d3ce7b94b51319248a5c4d6fed24efe553c4a702736aac537c15d29",
+      "raw_sha256": "3bc8e86e67a5e60b7e164f19b94e72d3f778e859342a029d59387e575feddba0",
+      "governed_bytes_sha256": "82d0031016e99fdf05f461126c95cb86c8ca95e82a2b19cda577458df7c6ed55",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/65bcd1e46d3ce7b94b51319248a5c4d6fed24efe553c4a702736aac537c15d29.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "d165d6155e265347a9b258dcb3a823f3117143a57be4fecef231c2ae16969aec",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:283",
+      "original_source_object_sha256": "025cdf436d9d6d1ae469a191727a8e30ebaf0e9c37151c6531138599d31a4ac3",
+      "raw_sha256": "a01817dc8413dd3d8fe331600fbe1b9c7b9e44c7e26257e87760a1d10c932f81",
+      "governed_bytes_sha256": "f9939d8dddc151c37b6e19fd362468b5d3156c3dcc32b7eb48ff778146b2f9cc",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/025cdf436d9d6d1ae469a191727a8e30ebaf0e9c37151c6531138599d31a4ac3.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "108c29f03dbfe55b329c2f8be362ccfb696d3a9de634e576294e9f85669b6f4d",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-chaplains",
+      "original_source_object_sha256": "1507f050affffa13273db5a15b748d99b6a021ed5f7bd324e6de22a883782400",
+      "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+      "governed_bytes_sha256": "012e59be548f9aa26bf8731b4d91adc56eca00cb7ac3f80a494335f749db29be",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/1507f050affffa13273db5a15b748d99b6a021ed5f7bd324e6de22a883782400.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "ef4c0c08adb45c427108958497a095c4475a0eccf83bdcd56534c0783288b2bb",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+      "original_source_object_sha256": "148f5ceeb4c7271dde51b87dd53772969def67c6b325cac0a9d55660458b61b4",
+      "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+      "governed_bytes_sha256": "200220eb1723bcd6c2d8082cab308527a47d1d4dbd2331223b643108589916c0",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/148f5ceeb4c7271dde51b87dd53772969def67c6b325cac0a9d55660458b61b4.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "36da31a176f822bc8df894b824028bb44bddc918499f31e996e251ceac242988",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-remaining-offerings",
+      "original_source_object_sha256": "ccbacbc500c6adcba32ac8ff3c7b1b0451e25e02442d5c24a11086a8687fbcd8",
+      "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+      "governed_bytes_sha256": "52c11e63712e94ca10beb464a3d2e52a17317ef93717f2a5b2cec0e0b7dda410",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/ccbacbc500c6adcba32ac8ff3c7b1b0451e25e02442d5c24a11086a8687fbcd8.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "0e2bf91f7db4f5a8e01e3b5faf43519e37de6b1edfca3b2becd0d44ba3aeaac3",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:10usc2801-2024-amendment-binding",
+      "original_source_object_sha256": "adaf75bdf3d45105f57108910d24156f2c6082f4358801b0f4ea83cd85027b80",
+      "raw_sha256": "1dbddfeacdeaf23e2e326e759d9ffd85e250c44e1ce39b70fdac2d59a6059962",
+      "governed_bytes_sha256": "b520c35c817faf41f8e7c7e2ff5fd837ed571a37096e201c679b2f93bb1ac743",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta42_48_cbb93d4f/batch42.json",
+      "source_json_pointer": "/sources/7/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta42_48_cbb93d4f",
+      "committed_utf8_lf_bytes_sha256": "24ebdad053d12705e31623619ad33beca4b73d46268d69b02a0780056de6f1e2",
+      "container_bytes": 94768,
+      "container_git_blob_at_anchor": "b274e78e064918090d921467a826b17275e73379",
+      "reused_existing_export": true
+    },
+    {
+      "source_id": "govinfo:15usc632a1-business198",
+      "original_source_object_sha256": "0b9c1e0b9f6d0f47f0fd23727ab6462d62aea322fb2b2071bdc1bed87db6d4ee",
+      "raw_sha256": "9848ab1e7195316a297a32303a1d2de465e14a3191d0c411577ec10beab84de3",
+      "governed_bytes_sha256": "09c92c506ceac9aca043b593a8ab011dfbfdb568eaede8b5861f42770dbceccf",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/0b9c1e0b9f6d0f47f0fd23727ab6462d62aea322fb2b2071bdc1bed87db6d4ee.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "d7f832077d30b85e0776720d0654e6bb03f48d2360fa3b649522872fba4ab498",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hconres113eh",
+      "original_source_object_sha256": "1c6248daac484a45892c4ea8d2f499092f47a28bde84c8a994fb46d22c5951f8",
+      "raw_sha256": "016b1869974a4a483717f2e6cca4431a89735792bff19a4b774948bc84e68f91",
+      "governed_bytes_sha256": "000e890b281364b6781c5e14fa3ff1df777ca765d2ccd88b6d13afff2d9a6a58",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/1c6248daac484a45892c4ea8d2f499092f47a28bde84c8a994fb46d22c5951f8.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "397165ffdf33bd3ee14a6fa442e418f8e0fdff4503cf8fc9b049d88c63a29920",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hconres89eh",
+      "original_source_object_sha256": "12278f044cadb0ea3586e63e24c08d43e5c0ecb226d07d9eb6cef0db491a799d",
+      "raw_sha256": "5a22324853eff03930959c9ed1d4fc72fc887fdb6a8f945779bcc66c0a19bd3e",
+      "governed_bytes_sha256": "c7d5db83929758ace60e1ff4eaf92b4b933caafa8a748748dbf917695757dc33",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/12278f044cadb0ea3586e63e24c08d43e5c0ecb226d07d9eb6cef0db491a799d.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "140aae89bb49257600cd743e3f1a5aacbfe8c92a0f2becfa46d3d61078d1e6fb",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr7008eh",
+      "original_source_object_sha256": "44330fc7b82972327f9872194063321b4f4e4bc8105c312b6301769aec2eea75",
+      "raw_sha256": "50404d0347d37f917aa50283cdbaf2f76a5ae700ee6f2207fa34251b404ab43e",
+      "governed_bytes_sha256": "6347366c628adfd9ee25107d263d57463bc5da1009af14521fbda182340a6751",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/44330fc7b82972327f9872194063321b4f4e4bc8105c312b6301769aec2eea75.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "645d885b1d6590ce7c466a795290ebe6e79035d61ea542cf6fe0afa0ca557062",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr8800eh-prefix197",
+      "original_source_object_sha256": "9cfd6e579949139ce9211fe594ba3dd2a936d84b212ac59e8ab28ca95891c202",
+      "raw_sha256": "3c9b36205ce1156d102cae4ce3eddab3f4f3326821a9352ff2fd2877f1a32423",
+      "governed_bytes_sha256": "4ebfd5721b5b97a08a995003063a6cfb09b41153a73fd2d0195f90ede8db2b74",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/9cfd6e579949139ce9211fe594ba3dd2a936d84b212ac59e8ab28ca95891c202.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "08e1391d161769c1f3bd89f58d92bcba37bab39a2bb3acafc5c941c2555b2cd7",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr8884eh",
+      "original_source_object_sha256": "7e33540b37582a6aa465167f890094e485708418405adc8c18b32fc8ce2dd1e9",
+      "raw_sha256": "19b5a7e317a197dd4eb101c4a31847c958f135f158a20954d4dc807a63a72422",
+      "governed_bytes_sha256": "edea62c6729adc0cee029d86679926e0ce55297c9de12d6df23eb3622e55a147",
+      "original_batches": [
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/7e33540b37582a6aa465167f890094e485708418405adc8c18b32fc8ce2dd1e9.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "957e73024180e682d4567349e2ef1b0e99e8908537073d96e912688a8fb3e767",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr9770eh",
+      "original_source_object_sha256": "68fe89853aeeb6febeb51ab7778025d0ddb7a8ec208e0954523ec46a63a7f485",
+      "raw_sha256": "eb469f38452dfa23b4f9dd469cfd136c2ec35c77d1dd0d52b12febb0f5fdc23d",
+      "governed_bytes_sha256": "f4059f8707e26b5b465662ca917eb82eb07f1162f5867dde38c74d263fd02fc3",
+      "original_batches": [
+        101
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739/source_objects/68fe89853aeeb6febeb51ab7778025d0ddb7a8ec208e0954523ec46a63a7f485.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta101_102_9fd76739",
+      "committed_utf8_lf_bytes_sha256": "f4771d42bf4836ea7492ccf523cb17f5ba5ceda504edec86a29c40c90d6d817c",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "original_source_object_sha256": "94957804622c76e7efae6b9e37d6c0ce932d4cd8ad66793e44c4c15cc1fb0ea1",
+      "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+      "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00",
+      "original_batches": [
+        101,
+        102
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta91_100_7d1f1cd4/source_objects/94957804622c76e7efae6b9e37d6c0ce932d4cd8ad66793e44c4c15cc1fb0ea1.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta91_100_7d1f1cd4",
+      "committed_utf8_lf_bytes_sha256": "e764b042fdaa090cf8bb6263063d148627df2d2861a5034dd499bf48ff976e8b",
+      "container_bytes": 1010,
+      "container_git_blob_at_anchor": "8f99842819638c9afc9f1b141e89fc8c0f3b9e70",
+      "reused_existing_export": true
+    }
+  ],
+  "source_read_scope_only_ids": [],
+  "separate_later_precision_correction": {
+    "path": "later105_report_deadline_correction.json",
+    "committed_utf8_lf_bytes_sha256": "ae821fb75488c3b982f34ed3241ecb6a56931d1b22f71ed332e8b94156b27dda",
+    "correction_head": "dfd7d988d8d3d2cab69f952fd248cc2239cdbf57",
+    "corrected_actions": 1,
+    "corrected_readable_findings": 2
+  },
+  "scope": "Exactly12original membership records101–102, one original101action274meaning and24referenced/read-scope retained sourceobjects from two exact original heads. No cumulative authoring/membership or whole-corpus copy. Later105deadline correction/preimages and exactlytwoaffectedreadablefindings are separate, never substituted into history.",
+  "reconstruction": "Batch paths relative to this manifest directory. Source paths repository-relative; resolve source_json_pointer then recursively restore $lossless_text_parts using that entry transport_base. Verify container/part hashes and canonical original object digests. Same lossless text convention as earlier exports; original extents and qualifications remain.",
+  "review_limits": "Original91–100independentreview completed within retainedextents, separately attributed. Parent101–102finding used embedded evidence only and lacked12originalrecords/23of24sources. This LOCAL101–102transport is not independently cleared or externally delivered; partialinteriors/currentlaw/fullrenderreplay remainuncleared. Sixprotectedholds and candidate-only acceptance state unchanged.",
+  "source_acquisitions": 0,
+  "protected_retries": 0,
+  "working_tree_candidate_substituted": false
+}

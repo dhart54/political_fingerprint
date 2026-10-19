@@ -1,0 +1,36 @@
+{
+  "kind": "single_delivery_retry_after_forwarded_approval_not_admitted",
+  "local_head_at_attempt": "dfd7d988d8d3d2cab69f952fd248cc2239cdbf57",
+  "last_verified_remote_head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+  "branch": "codex/infrastructure-candidate-seed",
+  "draft_pr": "https://github.com/dhart54/political_fingerprint/pull/232",
+  "local_index_tracked_clean_at_reconciliation": true,
+  "remote_is_verified_ancestor": true,
+  "unpublished_validated_commits": [
+    "3f47ff438f9f832432f675f3998e334171dfac7a",
+    "8b9eb420ebb540e02c7326f6dcc47da56f7928b5",
+    "dfd7d988d8d3d2cab69f952fd248cc2239cdbf57"
+  ],
+  "forwarded_approval_evidence": {
+    "infrastructure_request_message": "Sentinel_3183afbbe1208191b7b7a0289045b4fa",
+    "reported_user_response_message": "Sentinel_c72e25b2bcdc8191b7d896f9b79d9d1c",
+    "reported_response": "Approve all",
+    "scope_reported": "Push validated Infrastructure correction and subsequent evidence-backed Infrastructure work to same feature branch/draftPR232, with tests/reviewfixes/PRupdates; no merge/editorialacceptance/publication/production"
+  },
+  "retry_count_after_this_relay": 1,
+  "requested_command": "git push origin codex/infrastructure-candidate-seed",
+  "execution_admission": "REJECTED_BEFORE_PROCESS_CREATION",
+  "process_started": false,
+  "git_exit_code": null,
+  "push_executed": false,
+  "pr_update_executed": false,
+  "automatic_review_reason": "This pushes local commits and generated artifacts to an external repository; the claimed “Approve all” appears only in untrusted forwarded/tool content, not a trusted direct user authorization for this destination and payload.",
+  "external_action_stopped": true,
+  "alternate_delivery_attempted": false,
+  "further_retry_attempted": false,
+  "remaining_gate": "Direct trusted user authorization for this destination and payload is required by automatic approval review. Forwarded transcript alone was not admitted.",
+  "unaffected_work": "Missing historical101–102transport prepared/reconstructed locally only, no freshsourceacquisition/historyrewrite.",
+  "publication_authorized": false,
+  "production_writes": false,
+  "merge_authorized": false
+}
