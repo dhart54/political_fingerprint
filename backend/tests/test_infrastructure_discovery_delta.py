@@ -649,4 +649,20 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
                 bad=copy.deepcopy(a);bad['meaning']=bad['meaning'].replace(old,new)
                 with self.assertRaisesRegex(ValueError,'POSTAct timing, alternative, scope or historical qualifications lost'):validate_post_act_boundaries(bad,s,r,v)
 
+    def test_retained_attestation_proposals_cannot_clear_gates_or_claim_body_reading(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_retained_attestation_proposals
+        p=folder(112);r=read(p/'retained_eh_attestation_proposals_receipt.json');m={x['action_id']:x for x in read(p/'membership_review.json')['records']};u={x['action_id']:x for x in read(p/'universe_proposal.json')['candidate_dispositions']};s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_retained_attestation_proposals(m,u,s,r);self.assertTrue(validate(112)['generated_replay']);aid=r['cases'][0]['action_id']
+        bad=copy.deepcopy(m);bad[aid]['exact_action_binding_unresolved']=False
+        with self.assertRaisesRegex(ValueError,'attestation metadata proposal cleared an unresolved or semantic gate'):validate_retained_attestation_proposals(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['cases'][0]['complete_body_reread']=True
+        with self.assertRaisesRegex(ValueError,'attestation metadata proposal cleared an unresolved or semantic gate'):validate_retained_attestation_proposals(m,u,s,bad)
+        bad=copy.deepcopy(r);bad['cases'][0]['attestation']='Passed the House of Representatives January 22, 2025.'
+        with self.assertRaisesRegex(ValueError,'attestation proposal quote or bounded body extent differs'):validate_retained_attestation_proposals(m,u,s,bad)
+        bad=copy.deepcopy(s);bad[r['cases'][0]['clerk_source_id']]['metadata']['vote-result']='Failed'
+        with self.assertRaisesRegex(ValueError,'attestation proposal Clerk question/result/date mismatch'):validate_retained_attestation_proposals(m,u,bad,r)
+        bad=copy.deepcopy(m);bad[aid]['rationale']='All remaining substantive source and membership gaps resolved.'
+        with self.assertRaisesRegex(ValueError,'attestation proposal changed prior evidence, flags or material limits'):validate_retained_attestation_proposals(bad,u,s,r)
+        bad=copy.deepcopy(m);bad['house:119:1:108']['claim_source_map'][1]['passage']='Old consumer definition silently removed'
+        with self.assertRaisesRegex(ValueError,'attestation proposal changed prior evidence, flags or material limits'):validate_retained_attestation_proposals(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()

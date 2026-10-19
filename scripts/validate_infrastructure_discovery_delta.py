@@ -312,6 +312,7 @@ CASES[59]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in range(335,340
 CASES[60]=dict(rolls=[],action_ids=['house:119:1:'+str(r) for r in [340,341,342,345,346]],new=[],new_action_ids=['house:119:1:342'],counts=dict(interpreted_substantive_directional=45,interpreted_substantive_non_directional=1,procedural_context=120,exact_action_ineligible=57,expressive_nonbinding=10,source_unresolved=283,pending_interpretation=160),pending=277)
 CASES[64]=dict(rolls=[],action_ids=['house:119:1:362',*['house:119:2:'+str(r) for r in range(2,6)]],new=[],counts=dict(interpreted_substantive_directional=46,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=263,pending_interpretation=170),pending=257)
 CASES[65]=dict(rolls=[],action_ids=['house:119:2:'+str(r) for r in range(6,11)],new=[],new_action_ids=['house:119:2:9'],counts=dict(interpreted_substantive_directional=47,interpreted_substantive_non_directional=1,procedural_context=128,exact_action_ineligible=58,expressive_nonbinding=10,source_unresolved=258,pending_interpretation=174),pending=252)
+CASES[112]=dict(rolls=[],action_ids=[],new=[],repairs=[f'house:119:1:{i}' for i in [19,84,85,88,89,90,108,115,133,213]],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[111]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:241'],new_action_ids=['house:119:1:241'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[110]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:231'],counts=dict(interpreted_substantive_directional=68,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=263),pending=0)
 CASES[109]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:227','house:119:1:228'],new_action_ids=['house:119:1:228'],counts=dict(interpreted_substantive_directional=68,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=263),pending=0)
@@ -392,6 +393,22 @@ def validate_investor_report_deadline_precision(action,record,row,source,recomme
     expected_rec=copy.deepcopy(receipt['before_recommendation']);expected_rec['candidate_action_sha256']=digest(action);expected_rec['material_qualifications']=[x.replace(*receipt['limitation_replacement'])for x in expected_rec['material_qualifications']];require(recommendation==expected_rec,'investor report qualification or recommendation binding differs')
     require(receipt['after_action_sha256']==digest(action)and receipt['after_record_sha256']==digest(record)and receipt['after_universe_row_sha256']==digest(row)and receipt['unaffected_shared_actions_preserved']==64 and receipt['member_observations_unchanged_except_hash_rebinding'],'investor timing correction receipt binding/preservation differs')
     require(not receipt['source_acquisitions']and not receipt['protected_retries']and not receipt['accepted_membership']and not receipt['external_delivery_authorized']and not receipt['publication_authorized']and not receipt['production_writes'],'investor timing correction conferred authority')
+
+def validate_retained_attestation_proposals(records,rows,sources,receipt):
+    from datetime import datetime
+    expected=[f'house:119:1:{i}' for i in [19,84,85,88,89,90,108,115,133,213]]
+    require([c['action_id'] for c in receipt['cases']]==expected and receipt['no_source_or_semantic_gate_cleared'] and not receipt['new_shared_meaning_authored'] and receipt['compiled_graph_unchanged'],'attestation proposal cohort or no-clearance boundary differs')
+    for case in receipt['cases']:
+        aid=case['action_id'];record=records[aid];row=rows[aid];before=case['before_record'];body=sources[case['body_source_id']];clerk=sources[case['clerk_source_id']];md=clerk['metadata'];extent=case['attestation_extent'];quote=case['attestation']
+        require(case['proposal_only'] and not case['exact_binding_gate_cleared'] and not case['complete_body_reread'] and record['disposition']==row['disposition']=='pending_interpretation' and record['exact_action_binding_unresolved'] and not row['exact_action_source_binding']['complete'],'attestation metadata proposal cleared an unresolved or semantic gate')
+        date=re.fullmatch(r'Passed the House of Representatives ([A-Z][a-z]+ \d{1,2}, \d{4})\.',quote)
+        require(date is not None and body['text'][extent['start']:extent['end']]==quote and extent['total']==len(body['text']) and case['body_header_excerpt']==body['text'][:360],'attestation proposal quote or bounded body extent differs')
+        require(body['source_type']=='official_bill_text' and body['text_version']=='EH' and body['source_id']==f'govinfo:hr{case["bill_number"]}eh' and f'BILLS-119hr{case["bill_number"]}eh' in body['url'] and re.sub(r'[\s.]','',md['legis-num']).upper()=='HR'+str(case['bill_number']) and md['congress']=='119','attestation proposal official identity/version differs')
+        require(md['vote-result']=='Passed' and md['vote-question']=='On Motion to Suspend the Rules and Pass, as Amended' and case['clerk_metadata']=={k:md[k] for k in ['congress','legis-num','action-date','vote-question','vote-result']} and datetime.strptime(date.group(1),'%B %d, %Y').date()==datetime.strptime(md['action-date'],'%d-%b-%Y').date(),'attestation proposal Clerk question/result/date mismatch')
+        require(all(digest(sources[sid])==b['source_object_sha256'] for sid,b in case['source_bindings'].items()),'attestation proposal retained source object changed')
+        wanted=copy.deepcopy(before);wanted.update(rationale=case['new_rationale'],claim_source_map=before['claim_source_map']+[case['new_claim']]);require(record==wanted and record['rationale'].startswith(before['rationale']+'\n\n') and 'Matching dates alone do not clear those gates' in record['rationale'],'attestation proposal changed prior evidence, flags or material limits')
+        claim=case['new_claim'];require(claim['source_id']==body['source_id'] and claim['passage']==quote and 'proposal evidence ONLY' in claim['locator'] and 'DOES NOT clear floor/package reconciliation' in claim['locator'],'attestation proposal became full-body/version clearance')
+        wanted_row=copy.deepcopy(case['before_universe_row']);wanted_row.update(reason=record['rationale'],rationale=record['rationale']);wanted_row['review_progress']['shared_review_record_sha256']=digest(record);require(row==wanted_row,'attestation proposal altered prior universe boundary')
 
 def validate_post_act_boundaries(action,sources,recommendation,version):
     require(action['action_id']=='house:119:1:241' and action['source_id']=='govinfo:hr3425eh' and action['stage']=='suspension_and_passage' and action['bill_number']==3425,'POSTAct exact action identity differs')
@@ -683,6 +700,13 @@ def validate(n,values=None,*,check_files=True):
         correction=read(data/'north_dakota_exception_scope_correction.json');aid='house:119:1:226';pre=correction['preimage_membership'];require(digest(pre)==correction['preimage_membership_sha256'] and digest(ss[correction['source_id']])==correction['source_object_sha256'],'North Dakota preserved source/preimage digest differs')
         require({k:v for k,v in records[aid].items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and records[aid]['rationale']==correction['corrected_rationale'],'North Dakota qualification changed meaning/state/source scope')
         if n==43:require(pre==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and correction['preimage_universe_row']==prev[aid],'North Dakota historical preimage differs')
+    attestation_before_views={}
+    if n>=112:
+        receipt=read(data/'retained_eh_attestation_proposals_receipt.json');validate_retained_attestation_proposals(records,rows,ss,receipt)
+        attestation_before_views={c['action_id']:(c['before_record'],c['before_universe_row']) for c in receipt['cases']}
+        if n==112:
+            for c in receipt['cases']:require(c['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==c['action_id']) and c['before_universe_row']==prev[c['action_id']],'attestation proposal preimages differ from exact111')
+        else:require(receipt==read(prior/'retained_eh_attestation_proposals_receipt.json'),'original attestation proposals receipt changed')
     if n>=111:
         receipt=read(data/'post_act_retained_baseline_version_receipt.json');validate_post_act_boundaries(by['house:119:1:241'],ss,read(data/'post_act_taxonomy_recommendation.json'),receipt['exact_version_binding'])
         if n==111:require(receipt['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']=='house:119:1:241') and receipt['before_universe_row']==prev['house:119:1:241'],'POSTAct preimages differ from exact110')
@@ -709,7 +733,10 @@ def validate(n,values=None,*,check_files=True):
     if n>=107:
         receipt=read(data/'consumer_definition_dependency_receipt.json')
         for case in receipt['cases']:
-            aid=case['action_id'];validate_consumer_definition_dependency(records[aid],rows[aid],ss[receipt['source_id']],receipt)
+            aid=case['action_id']
+            # The validated append-only attestation layer preserves this exact prior facet.
+            record_view,row_view=attestation_before_views.get(aid,(records[aid],rows[aid]))
+            validate_consumer_definition_dependency(record_view,row_view,ss[receipt['source_id']],receipt)
             if n==107:require(case['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and case['before_universe_row']==prev[aid],'consumer dependency preimages differ from exact106')
         if n>107:require(receipt==read(prior/'consumer_definition_dependency_receipt.json'),'consumer original dependency receipt changed')
     if n>=106:
