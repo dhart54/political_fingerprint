@@ -1,18 +1,36 @@
--- Explicit future schema rollback only; never run by startup or CI deployment.
+-- Explicit future compatibility rollback; retain immutable owner audit evidence.
 -- First roll back bounded data batches in reverse order. Preserve legacy rows.
 BEGIN;
 DO $$ BEGIN
-  IF EXISTS (SELECT FROM public.editorial_bounded_choice_owner_decisions) THEN
-    RAISE EXCEPTION 'preserve registered owner evidence; separate rollback decision required';
-  END IF;
   IF EXISTS (SELECT FROM public.editorial_artifact_versions WHERE publication_basis='bounded_choice_review') THEN
     RAISE EXCEPTION 'roll back all bounded data before schema rollback';
   END IF;
 END $$;
 DROP VIEW public.editorial_bounded_choice_publications;
 DROP FUNCTION public.bounded_choice_owner_evidence_matches(JSONB,BOOLEAN);
-DROP TABLE public.editorial_bounded_choice_owner_decisions;
-DROP FUNCTION public.guard_bounded_choice_owner_evidence();
+-- Retain evidence, CHECK/hash helpers and the append-only trigger. Remove all
+-- direct ACL grants except the table owner's administrative access. RLS stays
+-- enabled with no serving policies; there is no remaining serving view/function.
+DO $$ DECLARE grantee_name TEXT; BEGIN
+    FOR grantee_name IN
+        SELECT DISTINCT CASE WHEN grants.grantee=0 THEN 'PUBLIC' ELSE quote_ident(role.rolname) END
+        FROM (
+            SELECT c.relowner, acl.grantee
+            FROM pg_class c CROSS JOIN LATERAL aclexplode(COALESCE(c.relacl,acldefault('r',c.relowner))) acl
+            WHERE c.oid='public.editorial_bounded_choice_owner_decisions'::regclass
+            UNION
+            SELECT c.relowner, acl.grantee
+            FROM pg_class c JOIN pg_attribute col ON col.attrelid=c.oid
+            CROSS JOIN LATERAL aclexplode(col.attacl) acl
+            WHERE c.oid='public.editorial_bounded_choice_owner_decisions'::regclass
+        ) grants LEFT JOIN pg_roles role ON role.oid=grants.grantee
+        WHERE grants.grantee<>grants.relowner
+    LOOP
+        EXECUTE 'REVOKE ALL ON public.editorial_bounded_choice_owner_decisions FROM ' || grantee_name || ' CASCADE';
+    END LOOP;
+END $$;
+ALTER TABLE public.editorial_bounded_choice_owner_decisions FORCE ROW LEVEL SECURITY;
+COMMENT ON TABLE public.editorial_bounded_choice_owner_decisions IS 'bounded_choice_owner_evidence_audit_only_v1';
 DROP TRIGGER editorial_bounded_choice_insert ON public.editorial_artifact_versions;
 CREATE OR REPLACE FUNCTION public.guard_editorial_publication_activation()
 RETURNS TRIGGER
@@ -65,8 +83,7 @@ $$;
 DROP FUNCTION public.guard_bounded_choice_insert();
 DROP FUNCTION public.bounded_choice_graph_valid(BIGINT);
 DROP FUNCTION public.bounded_choice_receipt_matches(JSONB,TEXT);
-DROP FUNCTION public.bounded_choice_digest(JSONB);
-DROP FUNCTION public.bounded_choice_canonical_json(JSONB);
+-- Hash/envelope helpers remain required by retained audit CHECK constraints.
 ALTER TABLE public.editorial_artifact_versions
   DROP CONSTRAINT editorial_eligibility_by_basis,
   DROP COLUMN bounded_acceptance_artifact_id,

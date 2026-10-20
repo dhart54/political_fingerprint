@@ -76,6 +76,7 @@ RENDER_FILES = (
     "frontend/components/IssueOverviewGrid.js",
     "frontend/components/RepresentativeExperience.js",
     "backend/app/editorial_presentations/bounded_choice_authority.py",
+    "backend/app/editorial_presentations/bounded_choice_pair.py",
     "backend/app/editorial_presentations/bounded_choice_sources.py",
     "backend/app/editorial_presentations/bounded_choice_review.py",
     "backend/app/editorial_presentations/bounded_choice_publication.py",
@@ -525,7 +526,10 @@ def validate_presentation(
 
 
 def pending_receipt(
-    subject: dict, presentation: dict, rendering_subject_sha256: str | None
+    subject: dict,
+    presentation: dict,
+    rendering_subject_sha256: str | None,
+    pair_subject_sha256: str,
 ) -> dict:
     return seal(
         {
@@ -537,6 +541,7 @@ def pending_receipt(
             "semantic_subject_sha256": subject["semantic_subject_sha256"],
             "presentation_subject_sha256": presentation["presentation_subject_sha256"],
             "rendering_subject_sha256": rendering_subject_sha256,
+            "pair_subject_sha256": pair_subject_sha256,
             "decision": None,
             "reviewer": None,
             "reviewer_authority": None,
@@ -661,9 +666,20 @@ def validate_receipt(
     validate_semantic_subject(subject)
     validate_presentation(presentation, subject)
     validate_rendering(rendering, presentation)
+    from .bounded_choice_pair import validate_pair_subject
+
+    pair = validate_pair_subject()
+    require(
+        pair["members"][subject["member_id"]]["rendering_subject_sha256"]
+        == rendering["rendering_subject_sha256"],
+        "member rendering differs from shared pair",
+    )
     check_seal(receipt, "receipt_subject_sha256")
     expected = pending_receipt(
-        subject, presentation, rendering["rendering_subject_sha256"]
+        subject,
+        presentation,
+        rendering["rendering_subject_sha256"],
+        pair["pair_subject_sha256"],
     )
     decisions = {
         "decision",

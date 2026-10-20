@@ -134,6 +134,8 @@ def candidate(
     *,
     allow_test_authority: bool = False,
 ) -> dict:
+    from .bounded_choice_pair import validate_pair_subject
+
     value = {
         "schema_version": "bounded_choice_publication_v1",
         "artifact_id": presentation["artifact_id"],
@@ -141,6 +143,7 @@ def candidate(
         "presentation": presentation,
         "rendering": rendering,
         "acceptance": receipt,
+        "decision_subject": validate_pair_subject(),
         "blocking_findings": 0,
     }
     validate_candidate(value, allow_test_authority=allow_test_authority)
@@ -158,6 +161,7 @@ def validate_candidate(value: dict, *, allow_test_authority: bool = False) -> No
             "presentation",
             "rendering",
             "acceptance",
+            "decision_subject",
             "blocking_findings",
         }
         and value["schema_version"] == "bounded_choice_publication_v1"
@@ -174,6 +178,13 @@ def validate_candidate(value: dict, *, allow_test_authority: bool = False) -> No
         allow_test_authority=allow_test_authority,
     )
     review.source_evidence()
+    from .bounded_choice_pair import validate_pair_subject
+
+    review.require(
+        canonical_digest(value["decision_subject"])
+        == canonical_digest(validate_pair_subject()),
+        "publication pair binding differs",
+    )
 
 
 def graph(

@@ -53,7 +53,7 @@ with the flag set. This route cannot become a public preview by deployment.
 The owner may accept the exact bounded content and rendering together, reject,
 or request revision. Acceptance requires a real named reviewer, the bounded
 review authority, truthful UTC decision time and all three exact subject hashes.
-Self-asserted reviewer metadata and a self-seal do not establish authority. `owner_decision_registry.json` is an empty, fixed repository trust store. A later separately authorized owner-decision recording must register the evidence file byte hash and canonical decision hash. The decision must bind all ten identity/subject/decision fields and direct owner provenance; missing, stripped or unregistered evidence rejects. This evidence data stays outside the rendering manifest to avoid changing the subject being accepted. The SQL trust table is likewise empty, protected, append-only and outside initial-apply mutation caps. The receipt schema is closed; `validate_receipt` also checks frozen equality,
+Self-asserted reviewer metadata and a self-seal do not establish authority. `owner_decision_registry.json` is an empty, fixed repository trust store. A later separately authorized owner-decision recording must register the evidence file byte hash and canonical decision hash. The decision must bind all eleven identity/subject/decision fields (including the shared pair digest) and direct owner provenance; missing, stripped or unregistered evidence rejects. This evidence data stays outside the rendering manifest to avoid changing the subject being accepted. The SQL trust table is likewise empty, protected, append-only and outside initial-apply mutation caps. The shared `pair-subject.json` binds both complete member semantic/accounting/presentation/rendering closures. Every default acceptance and registration-preparation check revalidates both sets of pending receipt/preparation files and capture bytes. Each detached receipt and owner evidence decision binds the shared pair digest in addition to its three member hashes; missing or changed counterpart output blocks acceptance. Per-member activation transactions and fresh baselines remain separate. The receipt schema is closed; `validate_receipt` also checks frozen equality,
 canonical seals, member/scope/source/mapping bindings, runtime and PNG bytes.
 Schema success alone grants no authority. Pending receipts fail every
 acceptance-dependent constructor, write-set builder and selector boundary.
@@ -85,8 +85,7 @@ follow-up outside this bounded change. No new advisor finding remains.
 CLI, startup, deploy or scheduled execution hook. It reuses V2 initial-write
 governance, including separate positive activation authority and fresh actual
 read-only database/runtime evidence. It does not use the replacement-only V2R
-path. Each member has exactly one batch, four artifacts, three relationships and
-one registry row; updates/deletes/unrelated writes have zero apply caps.
+path. Publication apply still has exactly one batch, four artifacts, three relationships and one publication row per member, with zero owner-evidence registration writes. Before that baseline, owner-evidence registration is a separate operation capped at exactly one audit row per member and zero other mutations. `registration_plan` verifies the actual trusted evidence and pair closure and prepares the exact row/hash; it performs no write and grants no authority. The pending preparation records require separate positive approval for that exact registration, fresh target identity/baseline, absent decision ID, and verification that all other tables are unchanged. There is no production registration executor in this package.
 
 Both `*-initial-publication-preparation.json` files are explicitly pending, with
 accepted receipt, activation authority, exact write set, production baseline and
@@ -96,13 +95,10 @@ write fails closed without writes. Each member is atomic; if a later member
 fails, the prior successful member remains separately identifiable. Roll back
 later member writes first, verifying exact row-state restoration. PostgreSQL
 sequence gaps after rolled-back inserts are expected and are not content state.
-The separate `staged-migration-rollback.sql` restores the original gold guard and
-eligibility meaning, removes only the new objects/columns, and refuses to run
-while any bounded root or registered owner decision remains. Ephemeral tests verify reverse data rollback,
-schema rollback and reapplication with legacy rows preserved. Its restored CHECK
+The separate `staged-migration-rollback.sql` is an operational compatibility rollback. It requires bounded publication data to be rolled back first, restores legacy gold serving/eligibility, and removes the bounded serving view/helpers and added publication columns. It retains the exact append-only owner audit rows, envelope/hash CHECK helpers and immutability trigger. It revokes non-owner audit access, forces RLS, and leaves no serving policy or endpoint. Table-owner administration remains possible. Full audit erasure is not part of this rollback and would require separate authorized archival/removal. An explicitly authorized later reapplication may reuse the marked retained audit table without rewriting its rows. Ephemeral tests verify exact data rollback, retained row bytes and security state, legacy parity, and reapplication. Its restored CHECK
 has an explicit name; PostgreSQL's former generated CHECK name is not preserved.
 
-Before future activation, obtain separate migration and V2 activation authority,
+Before future activation, obtain separate migration, exact owner-evidence registration, and V2 activation authority,
 capture fresh per-member baselines, validate rollback, and verify the deployed
 runtime. Stable human decisions are distinct from expiring execution evidence.
 Database owner/service access is required; this staged migration adds no grants.
@@ -149,3 +145,45 @@ untouched legacy immutability-function search-path warning. Frozen original
 package diff is empty. Hosted checks and independent review must identify the
 successor head on draft PR239. Owner decisions remain null, both trusted stores
 remain empty, and there were no production effects.
+
+
+Residual verification adds an ordinary-defaults registered-evidence rehearsal:
+TEST ONLY evidence and registry data live in an owned temporary trust store;
+only its data location is redirected. The real verifier and SQL registration,
+apply, public view, Python selector and reverse data rollback run without a
+synthetic-mode flag or verifier mock. Each one-row registration delta is checked
+separately from publication writes. Compatibility rollback retains the two exact
+audit records while restoring legacy serving; real repository owner records
+remain empty and all actual receipts/preparations remain pending.
+
+Closed SQL evidence-envelope checks reject omitted, null, wrong-type and extra
+root/provenance fields. The ordinary path exposed and corrected a JSON operator
+precedence defect that synthetic mode had bypassed. The default two-member
+closure has missing/changed tests for all eight counterpart outputs through
+candidate acceptance, publication preparation, and registration preparation.
+
+All four PNGs are recaptured from normal page states after resetting scroll and
+allowing the page's own sticky observer to settle. No UI was hidden or restyled;
+accepted paragraphs and qualifications are unobscured. Prior capture/subject
+hashes and b027853 readiness results are superseded by this residual bundle.
+
+
+Final residual local validation: all 218 backend release-subset tests and all
+369 frontend units passed; 19 development browser checks and changed-file lint
+passed. The 50 API ingestion/card-parity cases remain part of those frontend
+units. Ordinary-defaults SQL registration/apply/public-selection and exact
+reverse data rollback passed for both members, followed by compatibility
+rollback retaining exact immutable audit rows while denying table, column-only,
+and delegated/grant-option reader access. Reapplication retained those rows.
+SQL omitted/null/wrong-type/extra-field negatives passed. Both members' eight
+counterpart outputs have missing/changed default acceptance/preparation tests.
+The full frontend runtime source is unchanged from b027853; hosted successor CI
+will independently rebuild and repeat production/browser exclusion checks.
+All four current normal-page captures were visually inspected and are unobscured.
+Real receipts and registry remain pending/empty; owned TEST ONLY database rows
+are rehearsal evidence and convey no authorization. Production effects: none.
+
+Current shared pair subject: `6a1f9c3d592eac80caec02a7914777b115c7d332fc238ecd7a6d3d51b47335ab`.
+F000477 rendering subject: `5682cb7c2e8359a88aaa32fa2836b68b8cee53470dcc9d2c9d58e48a9ccc712e`.
+M001184 rendering subject: `cb9cc57d2bc530b9cecf0a23f08c3bc8e47f5dd2ea3dbd150434bf20a884cdac`.
+The only Supabase advisor finding remains the unchanged legacy immutability-function mutable search-path warning. Full audit erasure remains excluded.

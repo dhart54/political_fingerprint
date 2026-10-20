@@ -186,6 +186,7 @@ class EditorialArtifactRepository:
             has_table_privilege(current_user, 'public.editorial_bounded_choice_publications', 'SELECT')
             AND has_table_privilege(current_user, 'public.editorial_bounded_choice_owner_decisions', 'SELECT')
             AND has_function_privilege(current_user, 'public.bounded_choice_owner_evidence_matches(jsonb,boolean)', 'EXECUTE')
+            AND has_function_privilege(current_user, 'public.bounded_choice_owner_decision_valid(jsonb)', 'EXECUTE')
             AND has_function_privilege(current_user, 'public.bounded_choice_graph_valid(bigint)', 'EXECUTE')
             AND has_function_privilege(current_user, 'public.bounded_choice_receipt_matches(jsonb,text)', 'EXECUTE')
             AND has_function_privilege(current_user, 'public.bounded_choice_digest(jsonb)', 'EXECUTE')

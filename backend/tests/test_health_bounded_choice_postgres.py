@@ -18,6 +18,7 @@ from app.editorial_presentations.publication_activation_governance_v2 import (
 from app.editorial_artifacts.repository import EditorialArtifactRepository
 from scripts.disposable_database_url import require_exact_loopback_postgres_url
 from test_health_bounded_choice import synthetic_candidate
+from health_choice_registered_fixture import registered_fixture
 
 DSN = os.getenv("HEALTH_CHOICE_TEST_DATABASE_URL")
 pytestmark = pytest.mark.skipif(
@@ -55,8 +56,9 @@ def db():
     conn.close()
 
 
-def activation(conn, member="F000477"):
-    value = synthetic_candidate(member)
+def activation(conn, member="F000477", *, value=None):
+    mode = {"allow_test_authority": True} if value is None else {}
+    value = synthetic_candidate(member) if value is None else value
     with conn.transaction():
         conn.execute("SET TRANSACTION READ ONLY")
         baseline = p.observe_baseline(conn, value)
@@ -75,7 +77,7 @@ def activation(conn, member="F000477"):
         preparation=preparation,
         runtime=runtime,
         baseline=baseline,
-        allow_test_authority=True,
+        **mode,
     )
     subject = {
         "decision": "approve_exact_publication_activation_v2",
@@ -133,7 +135,7 @@ def activation(conn, member="F000477"):
         write_set=writes,
         authority=authority,
         runtime_proof=proof,
-        allow_test_authority=True,
+        **mode,
     )
 
 
@@ -567,7 +569,9 @@ def test_staged_migration_does_not_require_new_grants_for_legacy_reader(db):
         assert repo.bounded_choice_publication_selector() == []
 
 
-@pytest.mark.parametrize("missing", ["owner_table", "owner_function"])
+@pytest.mark.parametrize(
+    "missing", ["owner_table", "owner_function", "envelope_function"]
+)
 def test_partial_bounded_reader_preserves_legacy_when_new_dependency_is_missing(
     db, missing
 ):
@@ -585,18 +589,316 @@ def test_partial_bounded_reader_preserves_legacy_when_new_dependency_is_missing(
         "bounded_choice_digest(jsonb)",
         "bounded_choice_canonical_json(jsonb)",
         "bounded_choice_owner_evidence_matches(jsonb,boolean)",
+        "bounded_choice_owner_decision_valid(jsonb)",
     ]:
         db.execute(f"GRANT EXECUTE ON FUNCTION public.{function} TO {role}")
     if missing == "owner_table":
         db.execute(
             f"REVOKE SELECT ON public.editorial_bounded_choice_owner_decisions FROM {role}"
         )
-    else:
+    elif missing == "owner_function":
         db.execute(
             f"REVOKE EXECUTE ON FUNCTION public.bounded_choice_owner_evidence_matches(jsonb,boolean) FROM {role}"
+        )
+    else:
+        db.execute(
+            f"REVOKE EXECUTE ON FUNCTION public.bounded_choice_owner_decision_valid(jsonb) FROM {role}"
         )
     with db.transaction():
         db.execute(f"SET LOCAL ROLE {role}")
         repository = EditorialArtifactRepository(db)
         assert repository.bounded_choice_publication_selector() == []
         assert repository.publication_selector() == legacy
+
+
+def _snapshot(conn):
+    return {
+        name: conn.execute(f"SELECT * FROM public.{table} ORDER BY 1,2").fetchall()
+        for name, table in p.TABLES.items()
+    }
+
+
+def _register_test_evidence(conn, value):
+    # Test fixture writes only, after checking the actual owned DB identity.
+    # There is no production registration executor or authority in this package.
+    p.require_owned_test_connection(conn)
+    plan = r.owner_authority.registration_plan(value["acceptance"])
+    assert (
+        plan["required_approval"]
+        == "separate_positive_exact_owner_evidence_database_registration"
+    )
+    assert plan["authorizing"] is False
+    assert plan["mutation_caps"] == r.owner_authority.REGISTRATION_CAPS
+    assert plan["mutation_caps"]["insert_owner_decision_rows"] == 1
+    assert all(
+        v == 0
+        for k, v in plan["mutation_caps"].items()
+        if k != "insert_owner_decision_rows"
+    )
+    before = _snapshot(conn)
+    row = plan["exact_row"]
+    assert p.canonical_digest(row) == plan["exact_row_sha256"]
+    assert "TEST_ONLY" in row["decision_id"]
+    conn.execute(
+        "INSERT INTO editorial_bounded_choice_owner_decisions (decision_id,decision_sha256,file_sha256,decision_jsonb) VALUES (%s,%s,%s,%s)",
+        (
+            row["decision_id"],
+            row["decision_sha256"],
+            row["file_sha256"],
+            psycopg.types.json.Jsonb(row["decision_jsonb"]),
+        ),
+    )
+    after = _snapshot(conn)
+    assert len(after["owner_decisions"]) - len(before["owner_decisions"]) == 1
+    assert all(after[k] == before[k] for k in before if k != "owner_decisions")
+    with pytest.raises(psycopg.errors.UniqueViolation):
+        conn.execute(
+            "INSERT INTO editorial_bounded_choice_owner_decisions (decision_id,decision_sha256,file_sha256,decision_jsonb) VALUES (%s,%s,%s,%s)",
+            (
+                row["decision_id"],
+                row["decision_sha256"],
+                row["file_sha256"],
+                psycopg.types.json.Jsonb(row["decision_jsonb"]),
+            ),
+        )
+    assert _snapshot(conn) == after
+    return plan
+
+
+def test_registered_evidence_ordinary_defaults_two_member_serving_and_audit_retaining_rollback(
+    db, tmp_path, monkeypatch
+):
+    from app.editorial_presentations.selector import select_public_presentations
+
+    values = registered_fixture(tmp_path, monkeypatch)
+    legacy = seed_legacy_gold(db)
+    before_registration = _snapshot(db)
+    for value in values.values():
+        _register_test_evidence(db, value)
+    baseline = _snapshot(db)
+    assert len(baseline["owner_decisions"]) == 2
+    assert all(
+        baseline[k] == before_registration[k]
+        for k in baseline
+        if k != "owner_decisions"
+    )
+    assert db.execute(
+        "SELECT current_setting('app.bounded_choice_synthetic_test',TRUE) AS mode"
+    ).fetchone()["mode"] in (None, "", "off")
+    executions = []
+    for member, value in values.items():
+        args = activation(db, member, value=value)
+        assert "allow_test_authority" not in args
+        assert (
+            args["write_set"]["subject"]["expected_postconditions"]["counts"][
+                "owner_decisions"
+            ]
+            == 2
+        )
+        executions.append((args, p.apply_initial(db, **args)))
+        rows = EditorialArtifactRepository(db).bounded_choice_publication_selector()
+        assert len(rows) == len(executions)
+        for row in rows:
+            identity = row["member_bioguide_id"]
+            for scope in ["119", "all"]:
+                selected = p.select_bounded_publication(
+                    row, member_id=identity, scope=scope
+                )
+                assert selected["bounded_choice"]["proposition_ids"] == (
+                    ["prop:75edca987585935c"] if identity == "F000477" else []
+                )
+                payload = select_public_presentations(
+                    rows,
+                    legislator_id=r.MEMBERS[identity][1],
+                    member_bioguide_id=identity,
+                    scope=scope,
+                )
+                assert len(payload["presentations"]) == 8
+                assert (
+                    next(
+                        x for x in payload["presentations"] if x["issue_id"] == r.ISSUE
+                    )
+                    == selected
+                )
+            assert (
+                p.select_bounded_publication(row, member_id=identity, scope="118")
+                is None
+            )
+    audit_before = _snapshot(db)["owner_decisions"]
+    compatibility = (
+        r.ROOT
+        / "docs/editorial/review_packages/health_bounded_choice_v1/staged-migration-rollback.sql"
+    ).read_text()
+    with pytest.raises(psycopg.Error, match="roll back all bounded data"):
+        try:
+            db.execute(compatibility)
+        finally:
+            db.execute("ROLLBACK")
+    for args, execution in reversed(executions):
+        p.rollback_initial(
+            db, value=args["value"], write_set=args["write_set"], execution=execution
+        )
+    assert _snapshot(db) == baseline
+    # Deliberately grant an audit reader access before rollback; compatibility
+    # rollback must revoke even custom ACLs, while retaining every audit byte.
+    role = "health_retained_audit_reader_test"
+    db.execute(
+        f"DO $$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='{role}') THEN CREATE ROLE {role} NOLOGIN BYPASSRLS; END IF; END $$"
+    )
+    db.execute(f"GRANT USAGE ON SCHEMA public TO {role}")
+    db.execute(f"GRANT SELECT ON editorial_bounded_choice_owner_decisions TO {role}")
+    column_role = "health_column_audit_reader_test"
+    grantor_role = "health_grantor_audit_reader_test"
+    delegated_role = "health_delegated_audit_reader_test"
+    for reader in [column_role, grantor_role, delegated_role]:
+        db.execute(
+            f"DO $$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='{reader}') THEN CREATE ROLE {reader} NOLOGIN BYPASSRLS; END IF; END $$"
+        )
+        db.execute(f"GRANT USAGE ON SCHEMA public TO {reader}")
+    db.execute(
+        f"GRANT SELECT (decision_jsonb) ON editorial_bounded_choice_owner_decisions TO {column_role}"
+    )
+    db.execute(
+        f"GRANT SELECT ON editorial_bounded_choice_owner_decisions TO {grantor_role} WITH GRANT OPTION"
+    )
+    with db.transaction():
+        db.execute(f"SET LOCAL ROLE {grantor_role}")
+        db.execute(
+            f"GRANT SELECT ON editorial_bounded_choice_owner_decisions TO {delegated_role}"
+        )
+    assert (
+        db.execute(
+            "SELECT has_column_privilege(%s,'editorial_bounded_choice_owner_decisions','decision_jsonb','SELECT') AS allowed",
+            (column_role,),
+        ).fetchone()["allowed"]
+        is True
+    )
+    assert (
+        db.execute(
+            "SELECT has_table_privilege(%s,'editorial_bounded_choice_owner_decisions','SELECT') AS allowed",
+            (delegated_role,),
+        ).fetchone()["allowed"]
+        is True
+    )
+    db.execute(compatibility)
+    assert (
+        db.execute(
+            "SELECT * FROM editorial_bounded_choice_owner_decisions ORDER BY 1,2"
+        ).fetchall()
+        == audit_before
+    )
+    assert EditorialArtifactRepository(db).publication_selector() == legacy
+    assert EditorialArtifactRepository(db).bounded_choice_publication_selector() == []
+    for name in [
+        "editorial_bounded_choice_publications",
+        "bounded_choice_owner_evidence_matches(jsonb,boolean)",
+    ]:
+        expression = (
+            "to_regclass" if name.startswith("editorial_") else "to_regprocedure"
+        )
+        assert (
+            db.execute(
+                f"SELECT {expression}(%s) AS object", ("public." + name,)
+            ).fetchone()["object"]
+            is None
+        )
+    security = db.execute(
+        "SELECT relrowsecurity,relforcerowsecurity FROM pg_class WHERE oid='editorial_bounded_choice_owner_decisions'::regclass"
+    ).fetchone()
+    assert security == {"relrowsecurity": True, "relforcerowsecurity": True}
+    for reader in [
+        role,
+        column_role,
+        grantor_role,
+        delegated_role,
+        "anon",
+        "authenticated",
+    ]:
+        assert (
+            db.execute(
+                "SELECT has_table_privilege(%s,'editorial_bounded_choice_owner_decisions','SELECT,INSERT,UPDATE,DELETE') AS allowed",
+                (reader,),
+            ).fetchone()["allowed"]
+            is False
+        )
+        assert (
+            db.execute(
+                "SELECT has_any_column_privilege(%s,'editorial_bounded_choice_owner_decisions','SELECT,INSERT,UPDATE,REFERENCES') AS allowed",
+                (reader,),
+            ).fetchone()["allowed"]
+            is False
+        )
+        with pytest.raises(psycopg.errors.InsufficientPrivilege):
+            with db.transaction():
+                db.execute(f"SET LOCAL ROLE {reader}")
+                db.execute(
+                    "SELECT decision_jsonb FROM public.editorial_bounded_choice_owner_decisions"
+                )
+    for operation in [
+        "UPDATE editorial_bounded_choice_owner_decisions SET file_sha256=file_sha256",
+        "DELETE FROM editorial_bounded_choice_owner_decisions",
+    ]:
+        with pytest.raises(psycopg.Error, match="append-only"):
+            db.execute(operation)
+    assert (
+        db.execute(
+            "SELECT * FROM editorial_bounded_choice_owner_decisions ORDER BY 1,2"
+        ).fetchall()
+        == audit_before
+    )
+    # Explicitly authorized future reapplication can restore the schema without
+    # recreating or erasing retained evidence; this is still only the owned DB.
+    db.execute(STAGED.read_text())
+    assert _snapshot(db) == baseline
+    assert EditorialArtifactRepository(db).publication_selector() == legacy
+    assert EditorialArtifactRepository(db).bounded_choice_publication_selector() == []
+
+
+def test_owner_evidence_sql_rejects_omitted_null_wrong_type_and_extra_fields(
+    db, tmp_path, monkeypatch
+):
+    values = registered_fixture(tmp_path, monkeypatch)
+    row = r.owner_authority.registration_plan(values["F000477"]["acceptance"])[
+        "exact_row"
+    ]
+    original = row["decision_jsonb"]
+    bad = []
+    for key in original:
+        for mode in ["omitted", "null", "wrong_type"]:
+            value = copy.deepcopy(original)
+            if mode == "omitted":
+                del value[key]
+            else:
+                value[key] = None if mode == "null" else 0
+            bad.append(value)
+    for key in original["provenance"]:
+        for mode in ["omitted", "null", "wrong_type"]:
+            value = copy.deepcopy(original)
+            if mode == "omitted":
+                del value["provenance"][key]
+            else:
+                value["provenance"][key] = None if mode == "null" else 0
+            bad.append(value)
+    bad.append({**original, "extra": "unreviewed"})
+    bad.append(
+        {**original, "provenance": {**original["provenance"], "extra": "unreviewed"}}
+    )
+    for value in bad:
+        with pytest.raises(psycopg.errors.CheckViolation):
+            db.execute(
+                "INSERT INTO editorial_bounded_choice_owner_decisions (decision_id,decision_sha256,file_sha256,decision_jsonb) VALUES (%s,%s,%s,%s)",
+                (
+                    row["decision_id"],
+                    p.canonical_digest(value),
+                    row["file_sha256"],
+                    psycopg.types.json.Jsonb(value),
+                ),
+            )
+        assert (
+            db.execute(
+                "SELECT bounded_choice_owner_decision_valid(%s) AS valid",
+                (psycopg.types.json.Jsonb(value),),
+            ).fetchone()["valid"]
+            is False
+        )
+    _register_test_evidence(db, values["F000477"])

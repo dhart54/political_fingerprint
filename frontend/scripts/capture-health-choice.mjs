@@ -38,6 +38,13 @@ try {
       for (const record of Object.values(presentation.records)) {
         if (!(await card.innerText()).includes(record.text)) throw new Error(`mapped field missing: ${record.field_id}`);
       }
+      // Normal scroll state: let the page's own sticky-navigation observer
+      // settle before a full-page capture. Do not hide or restyle any UI.
+      await page.evaluate(async () => {
+        window.scrollTo({top:0, behavior:"instant"});
+        await new Promise((resolve)=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      });
+      await page.waitForTimeout(250);
       const file = `docs/editorial/review_packages/health_bounded_choice_v1/previews/${member.toLowerCase()}-${viewport}.png`;
       const raw = await page.screenshot({ path: path.join(root, file), fullPage: true, animations: "disabled" });
       captures.push({ viewport, width, height, requested_scope, representative_path, path: file, sha256: digest(raw), visible_text_sha256: digest(await card.innerText()), presentation_subject_sha256: presentation.presentation_subject_sha256, page_errors: errors });

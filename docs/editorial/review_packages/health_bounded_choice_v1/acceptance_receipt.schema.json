@@ -18,7 +18,8 @@
     "decided_at_utc",
     "authorizations",
     "receipt_subject_sha256",
-    "authority_evidence"
+    "authority_evidence",
+    "pair_subject_sha256"
   ],
   "properties": {
     "schema_version": {
@@ -118,6 +119,9 @@
           }
         }
       ]
+    },
+    "pair_subject_sha256": {
+      "$ref": "#/definitions/digest"
     }
   },
   "allOf": [

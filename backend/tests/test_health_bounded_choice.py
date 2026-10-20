@@ -344,7 +344,7 @@ def test_registered_evidence_pins_bytes_decision_and_exact_full_subject(
             }
         )
     )
-    monkeypatch.setattr(r, "ROOT", tmp_path)
+    monkeypatch.setattr(a, "TRUST_ROOT", tmp_path)
     receipt["authority_evidence"] = {
         "kind": "owner_decision",
         "decision_id": entry["decision_id"],
@@ -373,7 +373,9 @@ def test_source_reconciliation_detects_changed_content_and_preserves_typography(
         for name, source in r.RAW.items()
     }
     reconcile_sources(raw, foundation["governed_sources.json"])
-    assert typography("a  ‘quoted’ word .") == typography("a ``quoted'' word.")
+    assert typography("a  \u2018quoted\u2019 word .") == typography(
+        "a ``quoted'' word."
+    )
     for old, new in [
         (b"1,762,668,000", b"1,762,668,001"),
         (b"clinical building", b"hospital building"),
@@ -457,3 +459,88 @@ print('backend runtime validation passed')
     )
     assert result.returncode == 0, result.stderr
     assert result.stdout.strip() == "backend runtime validation passed"
+
+
+@pytest.mark.parametrize(
+    "suffix",
+    [
+        "semantic.json",
+        "accounting.json",
+        "presentation.json",
+        "rendering.json",
+        "pending-receipt.json",
+        "initial-publication-preparation.json",
+        "desktop.png",
+        "mobile.png",
+    ],
+)
+@pytest.mark.parametrize("change", ["missing", "changed"])
+def test_default_acceptance_and_registration_preparation_require_complete_counterpart(
+    tmp_path, monkeypatch, suffix, change
+):
+    import shutil
+    from app.editorial_presentations import bounded_choice_pair as pair
+    from health_choice_registered_fixture import registered_fixture
+
+    values = registered_fixture(tmp_path / "trust", monkeypatch)
+    value = values["F000477"]
+    isolated = tmp_path / "pair"
+    shutil.copytree(DIRECTORY, isolated / pair.DIRECTORY)
+    for path in r.RENDER_FILES:
+        target = isolated / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(r.ROOT / path, target)
+    monkeypatch.setattr(pair, "PAIR_ROOT", isolated)
+    # Verify the unmodified isolated data first with the actual trust verifier.
+    p.validate_candidate(value)
+    stem = "m001184-" + suffix
+    path = (
+        isolated
+        / pair.DIRECTORY
+        / ("previews" if suffix.endswith(".png") else "")
+        / stem
+    )
+    assert path.is_file()
+    if change == "missing":
+        path.unlink()
+    elif suffix.endswith(".png"):
+        path.write_bytes(path.read_bytes() + b"TEST ONLY changed capture")
+    else:
+        document = json.loads(path.read_text(encoding="utf-8"))
+        document["TEST_ONLY_changed_counterpart"] = True
+        path.write_text(json.dumps(document), encoding="utf-8")
+    for action in [
+        lambda: p.candidate(
+            value["semantic"],
+            value["presentation"],
+            value["rendering"],
+            value["acceptance"],
+        ),
+        lambda: p.validate_candidate(value),
+        lambda: p.build_write_set(value, preparation={}, runtime={}, baseline={}),
+        lambda: r.owner_authority.registration_plan(value["acceptance"]),
+    ]:
+        with pytest.raises((ValueError, OSError)):
+            action()
+
+
+def test_preparation_separately_accounts_for_exact_owner_registration():
+    for member in r.MEMBERS:
+        preparation = load(member, "initial-publication-preparation")
+        registration = preparation["owner_evidence_registration"]
+        assert registration["state"] == "pending_separate_exact_registration_approval"
+        assert registration["mutation_caps"] == r.owner_authority.REGISTRATION_CAPS
+        assert (
+            registration["exact_row"]
+            is registration["exact_row_sha256"]
+            is registration["registration_approval"]
+            is None
+        )
+        assert registration["authorizing"] is False
+        assert "owner" in registration["table"]
+        assert preparation["mutation_caps"]["insert_artifacts"] == 4
+        assert preparation["mutation_caps"]["unauthorized_table_writes"] == 0
+        assert any(
+            "exactly one owner-evidence" in requirement
+            for requirement in preparation["future_requirements"]
+        )

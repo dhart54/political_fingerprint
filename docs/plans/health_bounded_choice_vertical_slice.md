@@ -256,3 +256,45 @@ untouched legacy immutability-function search-path warning. Frozen original
 package diff is empty. Hosted checks and independent review must identify the
 successor head on draft PR239. Owner decisions remain null, both trusted stores
 remain empty, and there were no production effects.
+
+
+## Residual registered-evidence and complete-pair correction
+
+The prior green b027853 head did not exercise ordinary registered evidence.
+The consolidated follow-up adds: one-row-only separate registration accounting
+and approval requirements; temporary TEST ONLY actual trusted-evidence/SQL
+rehearsal with ordinary defaults; closed non-null SQL envelopes; complete
+shared two-member subject binding/default counterpart checks; compatibility
+rollback retaining immutable audit rows and required CHECK helpers while
+restoring legacy serving; and genuine unobscured normal-page captures.
+Registration remains preparation only; no production executor or authority is
+added. Publication apply remains four artifacts/three relationships/one row per
+member, with separate baselines after registration. Retained audit erasure is
+excluded and would require separately authorized archival/removal.
+
+The actual ordinary rehearsal exposed JSON extraction/subtraction precedence
+that the synthetic branch had skipped. Its correction is validated by requiring
+actual selected public rows for both members before reverse publication rollback.
+Real owners, registry and receipt decisions remain pending. There are no
+production effects, merge, deployment or real registration.
+
+
+Final residual local validation: all 218 backend release-subset tests and all
+369 frontend units passed; 19 development browser checks and changed-file lint
+passed. The 50 API ingestion/card-parity cases remain part of those frontend
+units. Ordinary-defaults SQL registration/apply/public-selection and exact
+reverse data rollback passed for both members, followed by compatibility
+rollback retaining exact immutable audit rows while denying table, column-only,
+and delegated/grant-option reader access. Reapplication retained those rows.
+SQL omitted/null/wrong-type/extra-field negatives passed. Both members' eight
+counterpart outputs have missing/changed default acceptance/preparation tests.
+The full frontend runtime source is unchanged from b027853; hosted successor CI
+will independently rebuild and repeat production/browser exclusion checks.
+All four current normal-page captures were visually inspected and are unobscured.
+Real receipts and registry remain pending/empty; owned TEST ONLY database rows
+are rehearsal evidence and convey no authorization. Production effects: none.
+
+Current shared pair subject: `6a1f9c3d592eac80caec02a7914777b115c7d332fc238ecd7a6d3d51b47335ab`.
+F000477 rendering subject: `5682cb7c2e8359a88aaa32fa2836b68b8cee53470dcc9d2c9d58e48a9ccc712e`.
+M001184 rendering subject: `cb9cc57d2bc530b9cecf0a23f08c3bc8e47f5dd2ea3dbd150434bf20a884cdac`.
+The only Supabase advisor finding remains the unchanged legacy immutability-function mutable search-path warning. Full audit erasure remains excluded.

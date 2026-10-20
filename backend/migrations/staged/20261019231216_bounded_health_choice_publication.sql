@@ -39,7 +39,7 @@ ALTER TABLE public.editorial_artifact_versions ADD CONSTRAINT editorial_eligibil
 
 -- Compact sorted UTF-8 JSON, matching the established Python canonical_digest
 -- for these integer/string/boolean/null contracts. No extension is required.
-CREATE FUNCTION public.bounded_choice_canonical_json(value JSONB) RETURNS TEXT
+CREATE OR REPLACE FUNCTION public.bounded_choice_canonical_json(value JSONB) RETURNS TEXT
 LANGUAGE sql IMMUTABLE STRICT SECURITY INVOKER SET search_path = pg_catalog, public AS $$
     SELECT CASE jsonb_typeof(value)
       WHEN 'object' THEN '{' || COALESCE((SELECT string_agg(to_jsonb(key)::text || ':' || public.bounded_choice_canonical_json(val), ',' ORDER BY key COLLATE "C") FROM jsonb_each(value) AS e(key,val)), '') || '}'
@@ -47,33 +47,75 @@ LANGUAGE sql IMMUTABLE STRICT SECURITY INVOKER SET search_path = pg_catalog, pub
       ELSE value::text END
 $$;
 
-CREATE FUNCTION public.bounded_choice_digest(value JSONB) RETURNS TEXT
+CREATE OR REPLACE FUNCTION public.bounded_choice_digest(value JSONB) RETURNS TEXT
 LANGUAGE sql IMMUTABLE STRICT SECURITY INVOKER SET search_path = pg_catalog, public AS $$
     SELECT encode(sha256(convert_to(public.bounded_choice_canonical_json(value), 'UTF8')), 'hex')
 $$;
 
+CREATE OR REPLACE FUNCTION public.bounded_choice_owner_decision_valid(decision JSONB) RETURNS BOOLEAN
+LANGUAGE plpgsql IMMUTABLE SECURITY INVOKER SET search_path = pg_catalog, public AS $$
+DECLARE field TEXT;
+BEGIN
+    IF jsonb_typeof(decision) IS DISTINCT FROM 'object' THEN RETURN FALSE; END IF;
+    IF NOT (decision ?& ARRAY['schema_version','decision_id','provenance','member_id','issue_id','review_scope','semantic_subject_sha256','presentation_subject_sha256','rendering_subject_sha256','pair_subject_sha256','decision','reviewer','reviewer_authority','decided_at_utc']) OR decision - ARRAY['schema_version','decision_id','provenance','member_id','issue_id','review_scope','semantic_subject_sha256','presentation_subject_sha256','rendering_subject_sha256','pair_subject_sha256','decision','reviewer','reviewer_authority','decided_at_utc'] <> '{}'::jsonb THEN RETURN FALSE; END IF;
+    FOREACH field IN ARRAY ARRAY['schema_version','decision_id','member_id','issue_id','review_scope','semantic_subject_sha256','presentation_subject_sha256','rendering_subject_sha256','pair_subject_sha256','decision','reviewer','reviewer_authority','decided_at_utc'] LOOP
+        IF jsonb_typeof(decision->field) IS DISTINCT FROM 'string' OR length(trim(decision->>field))=0 THEN RETURN FALSE; END IF;
+    END LOOP;
+    IF jsonb_typeof(decision->'provenance') IS DISTINCT FROM 'object'
+      OR NOT ((decision->'provenance') ?& ARRAY['kind','source_ref','decision_quote'])
+      OR (decision->'provenance') - ARRAY['kind','source_ref','decision_quote'] <> '{}'::jsonb THEN RETURN FALSE; END IF;
+    FOREACH field IN ARRAY ARRAY['kind','source_ref','decision_quote'] LOOP
+        IF jsonb_typeof(decision->'provenance'->field) IS DISTINCT FROM 'string'
+          OR length(trim(decision->'provenance'->>field))=0 THEN RETURN FALSE; END IF;
+    END LOOP;
+    FOREACH field IN ARRAY ARRAY['semantic_subject_sha256','presentation_subject_sha256','rendering_subject_sha256','pair_subject_sha256'] LOOP
+        IF decision->>field !~ '^[0-9a-f]{64}$' THEN RETURN FALSE; END IF;
+    END LOOP;
+    PERFORM (decision->>'decided_at_utc')::timestamptz;
+    RETURN COALESCE(decision->>'schema_version'='bounded_choice_owner_decision_v1'
+      AND decision->>'member_id' IN ('F000477','M001184')
+      AND decision->>'issue_id'='HEALTH_SOCIAL'
+      AND decision->>'review_scope'='bounded_partial_record'
+      AND decision->>'decision'='accept_exact_bounded_choice_and_rendering'
+      AND decision->>'reviewer_authority'='bounded_choice_review_authority_v1'
+      AND decision->'provenance'->>'kind'='direct_owner_decision'
+      AND decision->>'decided_at_utc' ~ '(Z|\+00:00)$', FALSE);
+EXCEPTION WHEN invalid_text_representation OR datetime_field_overflow THEN RETURN FALSE;
+END $$;
+
 -- Empty on installation. Only a separately authorized recording of trusted
 -- owner evidence may insert here; the initial four-artifact writer cannot.
-CREATE TABLE public.editorial_bounded_choice_owner_decisions (
+DO $$ BEGIN
+    IF to_regclass('public.editorial_bounded_choice_owner_decisions') IS NOT NULL
+      AND obj_description(to_regclass('public.editorial_bounded_choice_owner_decisions')) IS DISTINCT FROM 'bounded_choice_owner_evidence_audit_only_v1' THEN
+        RAISE EXCEPTION 'unexpected existing owner evidence table; explicit reconciliation required';
+    END IF;
+END $$;
+CREATE TABLE IF NOT EXISTS public.editorial_bounded_choice_owner_decisions (
     decision_id TEXT PRIMARY KEY,
     decision_sha256 TEXT NOT NULL CHECK (decision_sha256 ~ '^[0-9a-f]{64}$'),
     file_sha256 TEXT NOT NULL CHECK (file_sha256 ~ '^[0-9a-f]{64}$'),
     decision_jsonb JSONB NOT NULL,
     CHECK (public.bounded_choice_digest(decision_jsonb) = decision_sha256),
-    CHECK (decision_jsonb->>'decision_id' = decision_id),
-    CHECK (decision_jsonb->>'schema_version' = 'bounded_choice_owner_decision_v1'),
-    CHECK (decision_jsonb->'provenance'->>'kind' = 'direct_owner_decision')
+    CHECK ((decision_jsonb->>'decision_id' = decision_id) IS TRUE),
+    CHECK (public.bounded_choice_owner_decision_valid(decision_jsonb) IS TRUE)
 );
 ALTER TABLE public.editorial_bounded_choice_owner_decisions ENABLE ROW LEVEL SECURITY;
-CREATE FUNCTION public.guard_bounded_choice_owner_evidence() RETURNS TRIGGER
+ALTER TABLE public.editorial_bounded_choice_owner_decisions NO FORCE ROW LEVEL SECURITY;
+COMMENT ON TABLE public.editorial_bounded_choice_owner_decisions IS 'bounded_choice_owner_evidence_active_v1';
+CREATE OR REPLACE FUNCTION public.guard_bounded_choice_owner_evidence() RETURNS TRIGGER
 LANGUAGE plpgsql SECURITY INVOKER SET search_path = pg_catalog, public AS $$
 BEGIN RAISE EXCEPTION 'owner decision evidence is append-only'; END $$;
-CREATE TRIGGER bounded_owner_evidence_immutable BEFORE UPDATE OR DELETE ON public.editorial_bounded_choice_owner_decisions
-FOR EACH ROW EXECUTE FUNCTION public.guard_bounded_choice_owner_evidence();
+DO $$ BEGIN
+    IF NOT EXISTS (SELECT FROM pg_trigger WHERE tgrelid='public.editorial_bounded_choice_owner_decisions'::regclass AND tgname='bounded_owner_evidence_immutable') THEN
+        CREATE TRIGGER bounded_owner_evidence_immutable BEFORE UPDATE OR DELETE ON public.editorial_bounded_choice_owner_decisions
+        FOR EACH ROW EXECUTE FUNCTION public.guard_bounded_choice_owner_evidence();
+    END IF;
+END $$;
 
 CREATE FUNCTION public.bounded_choice_owner_evidence_matches(receipt JSONB, allow_synthetic BOOLEAN DEFAULT FALSE) RETURNS BOOLEAN
 LANGUAGE plpgsql STABLE SECURITY INVOKER SET search_path = pg_catalog, public AS $$
-DECLARE evidence JSONB; fields TEXT[] := ARRAY['member_id','issue_id','review_scope','semantic_subject_sha256','presentation_subject_sha256','rendering_subject_sha256','decision','reviewer','reviewer_authority','decided_at_utc'];
+DECLARE evidence JSONB; fields TEXT[] := ARRAY['member_id','issue_id','review_scope','semantic_subject_sha256','presentation_subject_sha256','rendering_subject_sha256','pair_subject_sha256','decision','reviewer','reviewer_authority','decided_at_utc'];
 BEGIN
     IF receipt->'authority_evidence' = '{"kind":"synthetic_test","fixture_id":"health-choice-contract-v1"}'::jsonb THEN
         RETURN allow_synthetic AND current_database()='pf_health_choice_test'
@@ -81,11 +123,11 @@ BEGIN
           AND EXISTS(SELECT FROM pg_roles WHERE rolname=current_user AND rolsuper);
     END IF;
     IF receipt->'authority_evidence'->>'kind' IS DISTINCT FROM 'owner_decision'
-      OR (receipt->'authority_evidence' - ARRAY['kind','decision_id','decision_sha256']) <> '{}'::jsonb THEN RETURN FALSE; END IF;
+      OR ((receipt->'authority_evidence') - ARRAY['kind','decision_id','decision_sha256']) <> '{}'::jsonb THEN RETURN FALSE; END IF;
     SELECT decision_jsonb INTO evidence FROM public.editorial_bounded_choice_owner_decisions
       WHERE decision_id=receipt->'authority_evidence'->>'decision_id'
         AND decision_sha256=receipt->'authority_evidence'->>'decision_sha256';
-    RETURN COALESCE(evidence IS NOT NULL
+    RETURN COALESCE(evidence IS NOT NULL AND public.bounded_choice_owner_decision_valid(evidence)
       AND evidence->'provenance'->>'kind'='direct_owner_decision'
       AND length(trim(evidence->'provenance'->>'source_ref'))>0
       AND length(trim(evidence->'provenance'->>'decision_quote'))>0
@@ -127,6 +169,21 @@ BEGIN
       AND receipt->>'semantic_subject_sha256' = expected_semantic
       AND receipt->>'presentation_subject_sha256' = expected_presentation
       AND receipt->>'rendering_subject_sha256' = rendering->>'rendering_subject_sha256'
+      AND payload->'decision_subject'->>'schema_version'='bounded_choice_pair_subject_v1'
+      AND payload->'decision_subject'->'authorizing'='false'::jsonb
+      AND ((payload->'decision_subject') - ARRAY['schema_version','members','authorizing','pair_subject_sha256'])='{}'::jsonb
+      AND ((payload->'decision_subject'->'members') - ARRAY['F000477','M001184'])='{}'::jsonb
+      AND (payload->'decision_subject'->'members') ?& ARRAY['F000477','M001184']
+      AND public.bounded_choice_digest((payload->'decision_subject') - 'pair_subject_sha256')=receipt->>'pair_subject_sha256'
+      AND payload->'decision_subject'->>'pair_subject_sha256'=receipt->>'pair_subject_sha256'
+      AND payload->'decision_subject'->'members'->member->>'semantic_subject_sha256'=expected_semantic
+      AND payload->'decision_subject'->'members'->member->>'accounting_sha256'=public.bounded_choice_digest(semantic->'accounting_review')
+      AND payload->'decision_subject'->'members'->member->>'presentation_subject_sha256'=expected_presentation
+      AND payload->'decision_subject'->'members'->member->>'rendering_subject_sha256'=rendering->>'rendering_subject_sha256'
+      AND payload->'decision_subject'->'members'->'F000477'->>'semantic_subject_sha256'='8d1fa7f75e9f4a982214aac2bc79ae1da8ac34b49eda0eacef5c60f4dfc8d4c4'
+      AND payload->'decision_subject'->'members'->'F000477'->>'presentation_subject_sha256'='9aee7b93d8f11700548f7280dfa22b181157b2ae309502d7d999ea25bef792c1'
+      AND payload->'decision_subject'->'members'->'M001184'->>'semantic_subject_sha256'='5c3405cac0ff34273622320fff51c817c2ad2c62466855bb5b20ed59276182f2'
+      AND payload->'decision_subject'->'members'->'M001184'->>'presentation_subject_sha256'='9d69d66ecc97cd86a0030e022e64a12b998ebe6ae407efd7961696dc08544fdf'
       AND receipt->>'decision' = 'accept_exact_bounded_choice_and_rendering'
       AND public.bounded_choice_owner_evidence_matches(receipt, TRUE)
       AND length(trim(receipt->>'reviewer')) > 0
@@ -262,7 +319,7 @@ WHERE r.publicly_active AND r.deactivated_at IS NULL
 
 REVOKE ALL ON public.editorial_bounded_choice_publications FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON public.editorial_bounded_choice_owner_decisions FROM PUBLIC, anon, authenticated;
-REVOKE ALL ON FUNCTION public.bounded_choice_owner_evidence_matches(JSONB,BOOLEAN), public.guard_bounded_choice_owner_evidence() FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.bounded_choice_owner_evidence_matches(JSONB,BOOLEAN), public.guard_bounded_choice_owner_evidence(), public.bounded_choice_owner_decision_valid(JSONB) FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.bounded_choice_canonical_json(JSONB), public.bounded_choice_digest(JSONB),
  public.bounded_choice_receipt_matches(JSONB,TEXT), public.guard_bounded_choice_insert(),
  public.bounded_choice_graph_valid(BIGINT) FROM PUBLIC, anon, authenticated;

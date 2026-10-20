@@ -8,6 +8,9 @@
   "future_requirements": [
     "separate staged-migration authorization",
     "exact content and rendering acceptance",
+    "trusted repository evidence registration with exact file and decision hashes",
+    "separate positive approval for exactly one owner-evidence database row per member; no other writes",
+    "verify registration delta and retained immutable audit state before taking the publication baseline",
     "separate positive V2 initial-publication authority",
     "fresh per-member read-only baseline and runtime identity",
     "validated exact rollback before writing"
@@ -24,9 +27,30 @@
     "unauthorized_table_writes": 0,
     "updates": 0
   },
-  "pending_receipt_subject_sha256": "dd7c028215fa95ff7370315d1f06ba867ef9f6aeeef406ffe20841edaf3a86d2",
+  "owner_evidence_registration": {
+    "authorizing": false,
+    "exact_row": null,
+    "exact_row_sha256": null,
+    "fresh_database_baseline": null,
+    "mutation_caps": {
+      "deletes": 0,
+      "insert_artifacts": 0,
+      "insert_batches": 0,
+      "insert_owner_decision_rows": 1,
+      "insert_publication_registry_rows": 0,
+      "insert_relationships": 0,
+      "unauthorized_table_writes": 0,
+      "updates": 0
+    },
+    "registration_approval": null,
+    "rollback": "retain_append_only_audit_evidence; remove_serving_access",
+    "state": "pending_separate_exact_registration_approval",
+    "table": "editorial_bounded_choice_owner_decisions"
+  },
+  "pair_subject_sha256": "6a1f9c3d592eac80caec02a7914777b115c7d332fc238ecd7a6d3d51b47335ab",
+  "pending_receipt_subject_sha256": "3829b1a8881bfd0302d93179c5bf3bbd7de00b59a77d91c92b9ccea8f88a88a7",
   "presentation_subject_sha256": "9d69d66ecc97cd86a0030e022e64a12b998ebe6ae407efd7961696dc08544fdf",
-  "rendering_subject_sha256": "49edcd8f080058f0f8f137afc0c967df34ed9d43e593d511f0df095bd2f49576",
+  "rendering_subject_sha256": "cb9cc57d2bc530b9cecf0a23f08c3bc8e47f5dd2ea3dbd150434bf20a884cdac",
   "replacement_path": false,
   "schema_version": "bounded_choice_initial_publication_preparation_v1",
   "semantic_subject_sha256": "5c3405cac0ff34273622320fff51c817c2ad2c62466855bb5b20ed59276182f2",
