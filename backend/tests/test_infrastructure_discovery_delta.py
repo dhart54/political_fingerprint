@@ -884,4 +884,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['appended_claims'][0]['passage']='A person who is not a citizen.'
         with self.assertRaisesRegex(ValueError,'exceeded named dated scope'):validate_275_named_definition_context(a,u,s,bad)
 
+    def test_hr4922_record_context_keeps_private_files_purpose_clocks_and_printed_reference_distinct(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4922_record_access_context
+        p=folder(124);r=read(p/'hr4922_dated_record_access_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_4922_record_access_context(a,u,s,r);self.assertTrue(validate(124)['generated_replay'])
+        for field in ['complete_title16_reviewed','all_privacy_interactions_resolved','raw_files_public_release_authorized','actual_record_or_person_classified','printed_reference_repaired','current_law_certified','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared full-law/privacy/public-files/person/reference/current-law/meaning gates'):validate_4922_record_access_context(a,u,s,bad)
+        for old,new in [('Case records EXCLUDE social records','All records are the same class'),('press provision is DISCRETIONARY','all press access is mandatory'),('LIMITED to photos, description, addresses and contact information','unlimited access to all health files'),('Mayor MAY','Mayor SHALL'),('within ONE HOUR','within one month'),('ONLY specified INFORMATION, NOT the records/files','all raw records and files'),('EVERY SIX MONTHS','every month already'),('FOR THE WEBSITE PURPOSE','for any public purpose'),('exactly(b)/(b)/(a)','all sections without limitation'),('NO JUVENILE PERSONALLY IDENTIFIABLE INFORMATION','juvenile names and addresses allowed'),('prints16-2341although the inserted section is16-2340a','automatically conformed to16-2340a')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'reference boundary lost'):validate_4922_record_access_context(aa,uu,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed prior source claims/evidence flags'):validate_4922_record_access_context(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['appended_claims'][1]['passage']=bad['appended_claims'][1]['passage'][:3000]
+        with self.assertRaisesRegex(ValueError,'exceeded operative section scope'):validate_4922_record_access_context(a,u,s,bad)
+
 if __name__=='__main__':unittest.main()

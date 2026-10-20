@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch123**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch124**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Historical independent discovery-delta review
 targeted exact `d2865c36c277c85866ca38935eb11706d63f4313`. A historical parent report described H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Pending H.R.275 receives two dated named-definition units: alien excludes BOTH UScitizens and USnationals; covered nation is the literal four-country list only. Nationality is not a risk finding, and procurement rules are not imported. Current-law/adopted-version/reporting-versus-Infrastructure limits remain pending, with all old claims/flags/70meanings unchanged. Two existing objects linked, zero acquisition.
+Pending H.R.4922links three retained pre-vote D.C.record-access sections, preserving distinct case/social/law-enforcement classes, confidentiality and specific sharing/public-information exceptions. Proposed AGinformation transfer is distinct from public statistical publication with juvenilePIIbar. Clocks, MAY/SHALL, information/files, old6month/newmonthly reports and printed2341/2340aissue stay separate. External/privacy/version/currentlaw/whole Infrastructure boundary remain pending;1598priorobjects/70meanings/675otherrecords unchanged,3existingobjects linked without acquisition.
 
-[Readable batch123 findings](infrastructure_candidate_batch123.md).
+[Readable batch124 findings](infrastructure_candidate_batch124.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch123_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch124_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -55,24 +55,28 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**Final four focused regressions, current source/conservation/generated replay and
-seven semantic checks pass**. Full151focused passed at exact
+**Current four focused regressions, source/conservation/generated replay and seven
+semantic checks pass**. Full151focused passed at exact
 `3be714268666858130bb62d1f171af6a19362c4a`; all70meanings/compiledgraph remain unchanged.
-No full167suite run. Current shared authoring/generated copies remain member-neutral.
+No full168suite run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took5.29seconds; the specification/authoring elapsed window and later byte/delivery
+took5.021seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch123_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch123_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch123_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch123_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch124_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch124_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch124_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch124_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Pending H.R.275 receives two dated named-definition units: alien excludes BOTH UScitizens and USnationals; covered nation is the literal four-country list only. Nationality is not a risk finding, and procurement rules are not imported. Current-law/adopted-version/reporting-versus-Infrastructure limits remain pending, with all old claims/flags/70meanings unchanged. Two existing objects linked, zero acquisition.
+Pending H.R.4922links three retained pre-vote D.C.record-access sections, preserving distinct case/social/law-enforcement classes, confidentiality and specific sharing/public-information exceptions. Proposed AGinformation transfer is distinct from public statistical publication with juvenilePIIbar. Clocks, MAY/SHALL, information/files, old6month/newmonthly reports and printed2341/2340aissue stay separate. External/privacy/version/currentlaw/whole Infrastructure boundary remain pending;1598priorobjects/70meanings/675otherrecords unchanged,3existingobjects linked without acquisition.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
+
+[Pending H.R.4922record and three original record-access units](infrastructure_batch124_hr4922_record_access/manifest.json) preserve current-parent/original-Health numeric pointers, canonical/raw/governed/transport hashes and actualUTF8-LFlengths:59,122-byte record and15,973/9,379/8,290-byte sources. The31,577operative characters come from the pre-vote8ed3D.C.Council snapshot; existing extraction excludes amendment-history notes. Different case/social/police classes, confidentiality exceptions/court limits and purpose-limited sharing are preserved. Proposed information transfer toAG forwebsite purposes is separate from public statistical publication with juvenilePIIbar; no public raw-file access or blanket privacy-regime repeal is inferred.
+
+[Record-access context/preimage](../editorial/shared_candidates/house_119_infrastructure_batch124_20260916/hr4922_dated_record_access_receipt.json) keeps discretionary press/placement provisions, required one-hourescape notice,48hour case-sharing/destruction clocks, limited public information and old6monthreports distinct from monthly/indefinite statistical website duties. The printed2333(f)subsection(b) reference and bill2341versus2340a remain literal; no executed repair. External23-1331/11-1101/2333.01/privacy interactions, current-law/version integration and whole mixed criminal-law/public-data-system membership remain pending. Existing exact-binding/evidence flags remain unchanged; all1598prior objects/675otherrecords/70meanings/compiledgraph are unchanged.
 
 [Pending H.R.275record and two exact dated definition objects](infrastructure_batch123_hr275_definitions/manifest.json) preserve current-parent/original-Health-source numeric pointers, canonical/raw/governed/transport hashes and actualUTF8-LFlengths:18,556-byte record,550/759-byte sources. Only86/209characters of named2024definitions are added. Alien excludes BOTH citizens and nationals; the literal four-country list is not actual risk, current-list certification or procurement-law incorporation. Broad bill1101citation is preserved; adopted-version/current-law/whole reporting-versus-Infrastructure meaning remain pending.
 
