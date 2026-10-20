@@ -176,9 +176,10 @@ export async function fetchSummary({ legislatorId }) {
   return response.json();
 }
 
-export async function fetchZipLookup({ zipCode }) {
+export async function fetchZipLookup({ zipCode, signal }) {
   const response = await fetch(`${API_BASE_URL}/lookup/zip/${zipCode}`, {
     cache: "no-store",
+    signal,
   });
 
   if (!response.ok) {
@@ -224,7 +225,7 @@ export async function fetchSupportedZips() {
   return response.json();
 }
 
-export async function fetchLegislatorSearch({ query = "" } = {}) {
+export async function fetchLegislatorSearch({ query = "", signal } = {}) {
   const searchParams = new URLSearchParams();
   if (query) {
     searchParams.set("q", query);
@@ -233,6 +234,7 @@ export async function fetchLegislatorSearch({ query = "" } = {}) {
   const suffix = searchParams.toString() ? `?${searchParams.toString()}` : "";
   const response = await fetch(`${API_BASE_URL}/legislators/search${suffix}`, {
     cache: "no-store",
+    signal,
   });
 
   if (!response.ok) {
