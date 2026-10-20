@@ -1,0 +1,65 @@
+{
+  "started_utc": "2026-10-15T19:56:30.689029+00:00",
+  "host": "local",
+  "source_code": [
+    {
+      "path": "backend/scripts/editorial_artifact_store.py",
+      "git_blob_oid": "aec7a25647fa39714cd6cd249e14fc1de67a27ea",
+      "sha256": "68a7999343df7eed1710266a298e11911863cf41fdca98bdd3506c7b7c15c5f5"
+    },
+    {
+      "path": "backend/app/editorial_artifacts/bundle.py",
+      "git_blob_oid": "afc5342c56395f60bfe15a47c0f46f3b68c33aed",
+      "sha256": "cdfaf878d9fc5ebf9aa676cd6eadf7338af1b5d62a3a9dbd06087b1b49157750"
+    },
+    {
+      "path": "backend/app/editorial_artifacts/migration.py",
+      "git_blob_oid": "ac48a2ee74053cd376ff3c735ae1680d728b6b05",
+      "sha256": "45d403a55faf20eb8996d5206d646e320d5de3a85094224427d88bfda7184508"
+    },
+    {
+      "path": "backend/app/semantic_ir/adapters.py",
+      "git_blob_oid": "6eb887ba9ba1208d7187a225f37bfaa621e12fb1",
+      "sha256": "60c36267d625e8122d16319839cf30c8e9a51b5089e3b1f70562c04eafc22b7e"
+    },
+    {
+      "path": "backend/app/semantic_ir/pipeline.py",
+      "git_blob_oid": "0857d81e797cf8eabe2751a38a655888c9ad03df",
+      "sha256": "a8446422b53ceb244fb8a200fc14de9da3772a0f5807c64268cf908f0eb78f2b"
+    },
+    {
+      "path": "backend/migrations/0016_editorial_artifact_persistence.sql",
+      "git_blob_oid": "42960cde622a9537ae9816b41870dd969e4ab5d7",
+      "sha256": "bfb654b7fbcb1adc4052e31ca019d9808d8c1c35819c4a687a10cd40974ca163"
+    }
+  ],
+  "method": "hypothetical-granular-generated-review-mirror-v1",
+  "production_connections": 0,
+  "production_writes": 0,
+  "server": {
+    "data_directory": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\cps\\.local\\capacity-pg-20261015T195630\\data",
+    "port": 61379,
+    "stopped": true
+  },
+  "stages": {},
+  "inputs": {},
+  "commands": [
+    {
+      "label": "initdb",
+      "seconds": 4.096194700046908,
+      "exit_code": 0
+    },
+    {
+      "label": "start",
+      "seconds": 0.14986469998257235,
+      "exit_code": 0
+    },
+    {
+      "label": "stop",
+      "seconds": 0.13549570000031963,
+      "exit_code": 0
+    }
+  ],
+  "error": "UndefinedObject('unrecognized configuration parameter \"lc_collate\"')",
+  "finished_utc": "2026-10-15T19:56:35.094302+00:00"
+}
