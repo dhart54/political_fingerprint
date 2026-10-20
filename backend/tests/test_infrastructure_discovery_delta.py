@@ -870,4 +870,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['source_passage']=bad['source_passage'].replace('directly ','')
         with self.assertRaisesRegex(ValueError,'lost exact source witness'):validate_1048_direct_use_precision(a,u,s,bad)
 
+    def test_hr275_named_definitions_exclude_nationals_and_do_not_infer_risk_or_procurement_rules(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_275_named_definition_context
+        p=folder(123);r=read(p/'hr275_dated_named_definitions_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_275_named_definition_context(a,u,s,r);self.assertTrue(validate(123)['generated_replay'])
+        for field in ['complete_1101_or_4872_reviewed','procurement_rules_imported','covered_nationality_is_risk_finding','actual_person_or_encounter_certified','current_law_certified','whole_version_binding_cleared','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared law/procurement/risk/person/version/membership gates'):validate_275_named_definition_context(a,u,s,bad)
+        for old,new in [('NEITHER a United States citizen NOR a United States national','every noncitizen including USnationals'),('Russian Federation','a fifth unnamed nation'),('not surrounding defense-procurement restrictions','all defense-procurement restrictions'),('NOT an individual risk finding','an automatic individual risk finding'),('travel-pattern analysis of POTENTIAL risk','nationality alone as actual wrongdoing')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'potential-risk boundary lost'):validate_275_named_definition_context(aa,uu,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed prior claims/evidence flags'):validate_275_named_definition_context(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['appended_claims'][0]['passage']='A person who is not a citizen.'
+        with self.assertRaisesRegex(ValueError,'exceeded named dated scope'):validate_275_named_definition_context(a,u,s,bad)
+
 if __name__=='__main__':unittest.main()
