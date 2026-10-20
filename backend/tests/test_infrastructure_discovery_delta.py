@@ -914,4 +914,18 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
         with self.assertRaisesRegex(ValueError,'changed prior claims/evidence flags'):validate_4922_definition_context(bad,u,s,r)
 
+    def test_hr3638_definitions_keep_alternative_material_entity_utility_and_ERO_scopes_distinct(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_3638_definition_context
+        p=folder(126);r=read(p/'hr3638_dated_named_definitions_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_3638_definition_context(a,u,s,r);self.assertTrue(validate(126)['generated_replay'])
+        for field in ['whole_Acts_reviewed','printed_reference_corrected','reference_equivalence_certified','current_designation_lists_reviewed','actual_entity_or_person_classified','covered_country_list_imported','reliability_limits_narrow_whole_bill','current_law_certified','whole_version_binding_cleared','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared Acts/reference/classification/list/whole-bill/current-law/meaning gates'):validate_3638_definition_context(a,u,s,bad)
+        for old,new in [('BOTH high supply-chain disruption risk AND an essential function','either risk or function'),('Secretary of the INTERIOR','Secretary of ENERGY alone'),('OR a critical mineral','AND a critical mineral'),('not silently applied to every item in the other critical-material route','automatically applied to every material'),('conviction clause is not allegation ALONE','allegation alone is sufficient'),('no rewrite to4872or import','automatic4872country-list substitution'),('person OR Federal/Stateagency that SELLS electric energy','only investor-owned producers'),('Commission-CERTIFIED under(c)','any self-described reliability group'),('SUBJECT TO COMMISSION REVIEW','free of Commission review'),('does NOT exclude the bill','automatically excludes the bill'),('that STANDARD definition','the whole bill prohibition'),('printed42US824o(a)reference remains UNCORRECTED','printed citation automatically repaired')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'scope boundary lost'):validate_3638_definition_context(aa,uu,s,bad)
+        bad=copy.deepcopy(r);bad['printed_bill_reference_witness']['quote']=bad['printed_bill_reference_witness']['quote'].replace('42 U.S.C.','16 U.S.C.')
+        with self.assertRaisesRegex(ValueError,'Code-title reference witness changed'):validate_3638_definition_context(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed prior source claims/evidence flags'):validate_3638_definition_context(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()

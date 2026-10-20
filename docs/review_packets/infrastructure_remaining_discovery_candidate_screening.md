@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch125**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch126**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Historical independent discovery-delta review
 targeted exact `d2865c36c277c85866ca38935eb11706d63f4313`. A historical parent report described H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Pending4922links dated pre-vote crime/offense, FamilyCourt jurisdiction and child definitions. Different offense lists, allegations/statuses/age exceptions, and the website OWN YRAage-at-act/crime-exclusion definition remain distinct. Two existing objects new to corpus, one already-governed unit newly linked to this record:1601→1603sources/noacquisition. All old claims/flags/70meanings/compiledgraph unchanged; privacy/statisticalpopulation/reference/currentlaw/version/whole Infrastructure gates remain pending.
+Pending3638links four dated named-definition units: critical-material alternative routes/authority/exclusion scope, qualified foreign-entity limbs, selling-electricity utility coverage and Commission-certified ERO. Printed42/16Code-title mismatch remains unresolved; reliability scope does not narrow wholebill stakeholders or expansion topics. Three existing objects newtocorpus plus one alreadygoverned newrecordlink→1606sources/noacquisition. No actual designations/nationality-as-threat/powers/currentlaw/wholemeaning or acceptance;70meanings/compiledgraph unchanged.
 
-[Readable batch125 findings](infrastructure_candidate_batch125.md).
+[Readable batch126 findings](infrastructure_candidate_batch126.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch125_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -58,21 +58,25 @@ Independent records continue around these holds.
 **Current four focused regressions, source/conservation/generated replay and seven
 semantic checks pass**. Full151focused passed at exact
 `3be714268666858130bb62d1f171af6a19362c4a`; all70meanings/compiledgraph remain unchanged.
-No full169suite run. Current shared authoring/generated copies remain member-neutral.
+No full170suite run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took4.921seconds; the specification/authoring elapsed window and later byte/delivery
+took4.968seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch125_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch125_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch125_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch125_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Pending4922links dated pre-vote crime/offense, FamilyCourt jurisdiction and child definitions. Different offense lists, allegations/statuses/age exceptions, and the website OWN YRAage-at-act/crime-exclusion definition remain distinct. Two existing objects new to corpus, one already-governed unit newly linked to this record:1601→1603sources/noacquisition. All old claims/flags/70meanings/compiledgraph unchanged; privacy/statisticalpopulation/reference/currentlaw/version/whole Infrastructure gates remain pending.
+Pending3638links four dated named-definition units: critical-material alternative routes/authority/exclusion scope, qualified foreign-entity limbs, selling-electricity utility coverage and Commission-certified ERO. Printed42/16Code-title mismatch remains unresolved; reliability scope does not narrow wholebill stakeholders or expansion topics. Three existing objects newtocorpus plus one alreadygoverned newrecordlink→1606sources/noacquisition. No actual designations/nationality-as-threat/powers/currentlaw/wholemeaning or acceptance;70meanings/compiledgraph unchanged.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
+
+[Pending H.R.3638record and dated named-definition sources](infrastructure_batch126_hr3638_definitions/manifest.json) preserve current-parent and originalHealth/priorInfrastructure numeric pointers, canonical/raw/governed/transport hashes and actualUTF8-LFlengths:22,816-byte record/2,202+3,649+804-byte original objects, plus reused3,317-byte historicalEROwrapper with/source pointer. Its restored object equals the exact original source; wrapper/oldexport remain unchanged. Four complete retained2024units total7,849characters; three existing objects newly enter corpus and one already-governed unit is linked to this record. All1603prior sources/675otherrecords/70meanings/compiledgraph stay unchanged.
+
+[Electricity-definition context/preimages](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/hr3638_dated_named_definitions_receipt.json) preserve critical-material ALTERNATIVE routes, DOE-BOTH predicates versus Interior designation and mineral-only exclusion scope; qualified foreign-entity limbs/AGactivity-conviction wording without nationality-as-threat or current classifications; SELLSelectricity/FedState/TVA/PMAutility scope; and Commission-certified EROsubjecttoCommissionreview. Reliability localdistribution/capacity-standard limits do not narrow the whole bill's broader stakeholder/expansion topics. Printed42US824o(a)versus retained16context and2533c(d)country reference remain literal, with no automatic4872list substitution. DOE7101baseline, external/currentdesignations, currentlaw/version and whole assessment meaning remain pending. Research-only928organization-unit selection note is kept outside current rationale; no unmapped claim or new statutory power.
 
 [Current pending H.R.4922record and original definition/jurisdiction units](infrastructure_batch125_hr4922_definitions/manifest.json) preserve current-parent and original-Health/prior-Infrastructure numeric pointers, canonical/raw/governed/transport hashes and actualUTF8-LFlengths:87,565-byte record/3,631+2,784+18,120-byte sources. The22,258operative characters use the pre-vote8ed3snapshot; retained laterNovember23-1331is not substituted. Two existing objects newly enter the corpus; the already-governed child unit is newly linked to this record. All1601prior objects/675otherrecords/70meanings/compiledgraph remain unchanged.
 
