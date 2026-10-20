@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch126**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch127**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Historical independent discovery-delta review
 targeted exact `d2865c36c277c85866ca38935eb11706d63f4313`. A historical parent report described H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Pending3638links four dated named-definition units: critical-material alternative routes/authority/exclusion scope, qualified foreign-entity limbs, selling-electricity utility coverage and Commission-certified ERO. Printed42/16Code-title mismatch remains unresolved; reliability scope does not narrow wholebill stakeholders or expansion topics. Three existing objects newtocorpus plus one alreadygoverned newrecordlink→1606sources/noacquisition. No actual designations/nationality-as-threat/powers/currentlaw/wholemeaning or acceptance;70meanings/compiledgraph unchanged.
+Pending2:260PartA7nowhas complete retainedown13008characterbody reading, distinctfromadjacentA6/A8/wholeRecord and unreviewed referencedlaw/version/actualoutcomes. Acquisition/condemnation/report/deposit/compensation, licenseduse/safety/cure/successor transfer, different Statepreemption/continuity scopes/Federal savings, optionalcostrecovery and5definitions stay qualified. Historicbookends/passages preserved, no source/ref/flags/70meaning/compiled changes; all1606sourcesunchanged, noacquisition/retry/acceptance.
 
-[Readable batch126 findings](infrastructure_candidate_batch126.md).
+[Readable batch127 findings](infrastructure_candidate_batch127.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -58,21 +58,25 @@ Independent records continue around these holds.
 **Current four focused regressions, source/conservation/generated replay and seven
 semantic checks pass**. Full151focused passed at exact
 `3be714268666858130bb62d1f171af6a19362c4a`; all70meanings/compiledgraph remain unchanged.
-No full170suite run. Current shared authoring/generated copies remain member-neutral.
+No full171suite run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took4.968seconds; the specification/authoring elapsed window and later byte/delivery
+took5.108seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch126_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Pending3638links four dated named-definition units: critical-material alternative routes/authority/exclusion scope, qualified foreign-entity limbs, selling-electricity utility coverage and Commission-certified ERO. Printed42/16Code-title mismatch remains unresolved; reliability scope does not narrow wholebill stakeholders or expansion topics. Three existing objects newtocorpus plus one alreadygoverned newrecordlink→1606sources/noacquisition. No actual designations/nationality-as-threat/powers/currentlaw/wholemeaning or acceptance;70meanings/compiledgraph unchanged.
+Pending2:260PartA7nowhas complete retainedown13008characterbody reading, distinctfromadjacentA6/A8/wholeRecord and unreviewed referencedlaw/version/actualoutcomes. Acquisition/condemnation/report/deposit/compensation, licenseduse/safety/cure/successor transfer, different Statepreemption/continuity scopes/Federal savings, optionalcostrecovery and5definitions stay qualified. Historicbookends/passages preserved, no source/ref/flags/70meaning/compiled changes; all1606sourcesunchanged, noacquisition/retry/acceptance.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
+
+[Complete OWN PartA7record/source transport](infrastructure_batch127_partA7_full_body/manifest.json) adds one35,247-byte pendingrecord and manifest, reusing the immutable91–100original source wrapper(1,132bytes)and validated lossless text part(48,253bytes). Restored46,475-character source equals its original canonical object; ONLY own PartA7source26180:39188(13,008chars)was read, not adjacentA6/A8/wholeRecord. Originalbookendpassages/ruleclaim stay exact; two oldlocators are explicitly HISTORICAL and one complete-own-unitclaim is appended.
+
+[Own-unit review/preimage](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/partA7_complete_retained_own_body_receipt.json) covers header plus(a)-(h). Acquisition is named-route easements/purpose/necessity, MAYcondemnation, sevenDaysAFTERreport, filingANDestimateddeposit/independent finalcourtcompensation. SHALLlicenseuponacquisition retains alternativeexpressCongress-or-qualifiedDefensesafetypaths, finalorder/appeal/imminenthazard/reasonablecure; transferdeemedcomplianceisparagraph-limited. ConditionalStateLOCALcontinuity/Federalsavings remains distinct from broaderCalifornia(e2); pendingStatecourtclausehasUS-not-partycondition. MAYall/partcostrecovery/nodollarappropriation and5definitions remain qualified. Congressionalnational-security findings are the proposal's assertions, not platformmilitaryneed findings. ReferencedActs/actualparcel-title-compensation-license-operation/currentlaw/floor-version/whole Infrastructure meaning remain pending. All1606sources/675otherrecords/70meanings/compiledgraph unchanged.
 
 [Pending H.R.3638record and dated named-definition sources](infrastructure_batch126_hr3638_definitions/manifest.json) preserve current-parent and originalHealth/priorInfrastructure numeric pointers, canonical/raw/governed/transport hashes and actualUTF8-LFlengths:22,816-byte record/2,202+3,649+804-byte original objects, plus reused3,317-byte historicalEROwrapper with/source pointer. Its restored object equals the exact original source; wrapper/oldexport remain unchanged. Four complete retained2024units total7,849characters; three existing objects newly enter corpus and one already-governed unit is linked to this record. All1603prior sources/675otherrecords/70meanings/compiledgraph stay unchanged.
 
@@ -117,3 +121,5 @@ No editorial acceptance, publication/registry change, production write, merge or
 [Latest scoped113/114review attribution](infrastructure_batch113_114_independent_review_attribution.json) reports bothTitle17corrections closed, all20attestationobjects authenticated and no material114defect. No Actions run was reportedly found for exacta5df7205/05b35939; fresh local gates remain separate from the inherited111full151suite. This115increment is outside that review.
 
 [Land-baseline original objects](infrastructure_batch114_land_baselines/manifest.json), [Title17original objects](infrastructure_batch110_title17_original_objects/manifest.json), [attestation originals](infrastructure_batch112_attestation_original_objects/manifest.json), [POSTAct provisional review](infrastructure_batch111_provisional_review_attribution.json) and [required parent-relay correction](infrastructure_roll241_relay_attribution_clarification_20261019.json) retain source/history and acceptance limits. No protected hold or publication state changed.
+
+[Scoped125–126 independent-review attribution](infrastructure_batch125_126_scoped_review_attribution.json) records coordinator-reported no material defect through74356a80, preserving70unacceptedmeanings/262pending/6holds. The unchanged841characterYRAage-at-act passage was substantively checked; [full original object](infrastructure_batch125_yra_original_object/manifest.json) now exports exact179a13ac…source with actual retainedHealthcommit/path/blob/pointer, originalraw/governed/canonical and transport hashes/lengths. Original pre-vote24year text is not changed into enactedunder18law. No new interpretation/acceptance/production effect, source acquisition, inherited-test/hostedCI transfer, or current127semantic-review closure.

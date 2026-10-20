@@ -928,4 +928,20 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
         with self.assertRaisesRegex(ValueError,'changed prior source claims/evidence flags'):validate_3638_definition_context(bad,u,s,r)
 
+    def test_partA7_full_own_body_keeps_condemnation_license_safety_and_State_scopes_qualified(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_partA7_complete_own_body
+        p=folder(127);r=read(p/'partA7_complete_retained_own_body_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_partA7_complete_own_body(a,u,s,r);self.assertTrue(validate(127)['generated_replay'])
+        for field in ['whole_record_source_read','adjacent_PartA6_or_A8_imported','referenced_laws_fully_reviewed','actual_military_need_certified','actual_title_or_compensation_decided','license_issued_or_operation_certified','State_or_Federal_permits_globally_cleared','Clerk_agreement_implies_enactment','current_law_certified','whole_version_binding_cleared','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared adjacent/law/actual-rights/enactment/version/meaning gates'):validate_partA7_complete_own_body(a,u,s,bad)
+        for old,new in [('Condemnation MAY','Condemnation must'),('SEVEN DAYS AFTER commencement','seven days before enactment'),('BOTH filing a declaration of taking AND depositing estimated just compensation','House agreement alone'),('IF THE PARTIES ELECT','unilaterally by the operator'),('ALTERNATIVE exceptions','cumulative prerequisites'),('IMMINENT HAZARD','any alleged violation'),('REASONABLE PERIOD','no cure opportunity'),('FOR THAT TRANSFER PARAGRAPH','for all safety laws'),('HALT OR SUBSTANTIALLY DELAY','any State or local requirement'),('BROADER CALIFORNIA','only the narrow continuity test'),('UNITED STATES IS NOT A PARTY','any proceeding including Federal courts'),('Reimbursement MAY','Reimbursement SHALL')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'actual-outcome boundary lost'):validate_partA7_complete_own_body(aa,uu,s,bad)
+        bad=copy.deepcopy(r);bad['appended_full_claim']['passage']=s['text']
+        with self.assertRaisesRegex(ValueError,'not exact own unit'):validate_partA7_complete_own_body(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][0]['passage']='changed earlier bookend'
+        with self.assertRaisesRegex(ValueError,'changed source references/passages/evidence flags'):validate_partA7_complete_own_body(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['topics'].pop(6)
+        with self.assertRaisesRegex(ValueError,'omitted an operative section'):validate_partA7_complete_own_body(a,u,s,bad)
+
 if __name__=='__main__':unittest.main()
