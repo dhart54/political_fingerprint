@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch121**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch122**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Historical independent discovery-delta review
 targeted exact `d2865c36c277c85866ca38935eb11706d63f4313`. A historical parent report described H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Pending H.R.1048parent now has a complete retained57,840-character HouseEHbody review, superseding only its earlier selected reading extent. All reporting, qualified public privacy/unredacted sharing, contract waivers, covered faculty/investment reporting, enforcement, technical database, participation and GAO provisions are mapped. Distinct thresholds/timing/court predicates and printed references remain explicit. No full floor/version, external-definition/current-law/formula-conformance or whole Infrastructure meaning is certified; the case remains pending with binding unresolved, all source bytes and other claims preserved.
+Complete retained H.R. 33 House EH source reading replaces selected-clause scope only. Qualified income/residency, crew wages, temporary-project tax nexus, reciprocity and agreement clocks/legislative gates remain distinct. Existing exact binding and all flags/passages/sources/70 meanings stay unchanged. Material tax/model-convention, actual reciprocity/agreement, current-law and whole Infrastructure boundaries remain pending. H.R.1048's current $6billion asset-test shorthand also now preserves the source's DIRECT use exclusion; original121receipt/export remain immutable. No IRC4968 coverage/application or membership decision.
 
-[Readable batch121 findings](infrastructure_candidate_batch121.md).
+[Readable batch122 findings](infrastructure_candidate_batch122.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch122_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -55,26 +55,30 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**Current source/conservation/generated replay, seven semantic checks and three
-focused regressions pass**. The full 151-test suite passed at exact
-`3be714268666858130bb62d1f171af6a19362c4a`; all 70 meanings and the compiled graph
-remain unchanged. A full 164-test suite was not run. Current shared authoring/generated copies remain member-neutral.
+**Current four focused regressions, source/conservation/generated replay and seven
+semantic checks pass after the direct-use correction**. Full151focused passed at
+exact `3be714268666858130bb62d1f171af6a19362c4a`; all70meanings/compiledgraph remain
+unchanged. No full166suite run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took8.36seconds; the specification/authoring elapsed window and later byte/delivery
+took4.951seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch122_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch122_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch122_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch122_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Complete1048EHbody nowread; selectedpartial/olddefinition scope preservedhistorically. Reporting/publicprivacy/unredactedsharing, waivers, faculty/investment thresholds, civil-compulsion/sanction and timing bases remain distinct. Floor/externalreferences/formulaconformance/currentlaw/wholemembership pending;70unacceptedmeanings/262pending/6holds/0ordinary unchanged.
+Complete retained H.R. 33 House EH source reading replaces selected-clause scope only. Qualified income/residency, crew wages, temporary-project tax nexus, reciprocity and agreement clocks/legislative gates remain distinct. Existing exact binding and all flags/passages/sources/70 meanings stay unchanged. Material tax/model-convention, actual reciprocity/agreement, current-law and whole Infrastructure boundaries remain pending. H.R.1048's current $6billion asset-test shorthand also now preserves the source's DIRECT use exclusion; original121receipt/export remain immutable. No IRC4968 coverage/application or membership decision.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
-[Complete retained H.R. 1048 body review](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/hr1048_complete_retained_body_receipt.json) maps all 13 contiguous body/attestation units without changing any claim passage, source, disposition or evidence flag. [Pending parent record and original EH object](infrastructure_batch121_1048_full_body/manifest.json) carry exact parent/source pointers and UTF8-LF lengths/hashes: 84,366 and 58,227 bytes. The previously stored full passage now has a complete-reading locator. Old batch113 definition-only scope remains explicitly historical; rejected child amendments are not imported. Floor/version, external definitions/current law, printed1286(c)(9)(A) versus selectedRCP1286(c)(8)(A), repeat-fine wording and whole Infrastructure membership remain pending.
+[Full retained H.R. 33 reading and direct-use precision](infrastructure_batch122_hr33_full_body/manifest.json) exports the pending33record (44,059bytes), its originalEHobject (37,968bytes), and current1048precision record (84,427bytes), with exact current-parent and source pointers, canonical/raw/governed/transport hashes and UTF8-LF lengths. The33passage was already complete in storage; its reading extent now coversall37,587characters/19units. Qualified tax residency/rates, crew-wage predicates, >12month/>30dayproject rules, reciprocity and different agreement clocks/enacted-law gates are explicit. Material tax/model/currentlaw/actualreciprocity and whole Infrastructure boundaries remain pending.
+
+[H.R.1048 direct-use correction/preimage](../editorial/shared_candidates/house_119_infrastructure_batch122_20260916/hr1048_direct_use_asset_precision_receipt.json) changes only the current117Casset-test shorthand to preserve assets used DIRECTLY for exempt purpose, as source38147:38252states. Original121receipt, export and sources remain immutable; no IRC4968 coverage/application or membership decision. Coordinator-reported independent121review found this issue and no other material semantic defect; current122correction is not independently accepted. Currentguard validates the exact correction; unchanged121body/113definition guards validate their preserved preimages.
+
+[Complete retained H.R. 1048 body review](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/hr1048_complete_retained_body_receipt.json) maps all 13 contiguous body/attestation units without changing any claim passage, source, disposition or evidence flag. [Pending parent record and original EH object](infrastructure_batch121_1048_full_body/manifest.json) carry exact parent/source pointers and UTF8-LF lengths/hashes: 84,366 and 58,227 bytes. The previously stored full passage now has a complete-reading locator. Its original asset shorthand is superseded in current122only by the direct-use precision above. Old batch113 definition-only scope remains explicitly historical; rejected child amendments are not imported. Floor/version, external definitions/current law, printed1286(c)(9)(A) versus selectedRCP1286(c)(8)(A), repeat-fine wording and whole Infrastructure membership remain pending.
 
 [Scoped117–119 independent-review attribution](infrastructure_batch117_119_scoped_review_attribution.json) records the coordinator-reported closure through `ed49ca8c028d24cf2403486ac640ffa21f2d8818`: no new material defect and establishment-only4776precision independently closed against original preimage/source bindings. This supersedes the earlier open-review status only for117–119. It does not accept meanings or clear pending/version/current-law gates, transfer the inherited full151test scope, certify hostedCI, or cover120/121.
 

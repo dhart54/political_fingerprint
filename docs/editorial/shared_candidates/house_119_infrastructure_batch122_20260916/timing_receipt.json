@@ -1,0 +1,74 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-20T00:19:05.867926+00:00",
+    "qualification": "Complete retained37587character HR33EH source-version followup. Three contiguous source slices read before marker, untimed. No external tax baseline, model treaty, present reciprocity/agreement or current-law verification."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-20T00:22:56.358071+00:00",
+    "end_utc": "2026-10-20T00:23:01.309545+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 122 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch122_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.597
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.354
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 230.49,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 4.951,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 7.788,
+    "result": "passed",
+    "scope": [
+      "HR33completeEHbody, tax/crew/project and reciprocity/agreement conditions",
+      "1048direct-use asset exclusion with negative omission test and preserved121source/record preimages",
+      "Preserved121complete1048body guard",
+      "Preserved120urban definition boundaries"
+    ]
+  },
+  "initial_pre_correction_gates": {
+    "current_targeted_tests": {
+      "count": 3,
+      "reported_seconds": 8.132,
+      "result": "passed",
+      "qualification": "Before direct-use precision only; not final122gates."
+    },
+    "source_replay_seven_semantic": {
+      "start_utc": "2026-10-20T00:20:06.586604+00:00",
+      "end_utc": "2026-10-20T00:20:14.379058+00:00",
+      "processes": [
+        {
+          "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 122 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch122_20260916\\validation_receipt.json",
+          "returncode": 0,
+          "process_wall_seconds": 2.586
+        },
+        {
+          "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+          "returncode": 0,
+          "process_wall_seconds": 5.206
+        }
+      ]
+    },
+    "inherited_full_suite": {
+      "count": 151,
+      "head": "3be714268666858130bb62d1f171af6a19362c4a",
+      "current_full_suite_run": false
+    },
+    "initial_finalizer": {
+      "prior_files_unchanged": 8827,
+      "generated_files": 854,
+      "qualification": "Prior-file preservation remains valid because only new122is rebuilt; current122generated hashes must be refreshed and every actual index blob rechecked."
+    }
+  }
+}

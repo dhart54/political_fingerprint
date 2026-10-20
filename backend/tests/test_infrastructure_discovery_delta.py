@@ -841,4 +841,33 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['historical_baseline_paragraph']='Old definitions now govern proposed117A-D.'
         with self.assertRaisesRegex(ValueError,'old-definition baseline history'):validate_1048_complete_retained_body(a,u,s,bad)
 
+    def test_hr33_full_source_preserves_tax_crew_project_and_agreement_conditions(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_33_complete_retained_body
+        p=folder(122);r=read(p/'hr33_complete_retained_body_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_33_complete_retained_body(a,u,s,r);self.assertTrue(validate(122)['generated_replay'])
+        for field in ['external_tax_baselines_resolved','model_convention_reviewed','actual_reciprocity_or_agreement_certified','current_law_certified','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared external-tax/current-law/actual-agreement/meaning gates'):validate_33_complete_retained_body(a,u,s,bad)
+        bad=copy.deepcopy(r);bad['topics'].pop(10)
+        with self.assertRaisesRegex(ValueError,'coverage omitted'):validate_33_complete_retained_body(a,u,s,bad)
+        for old,new in [('ownership/12-month conditions and RIC/REIT limits','every dividend qualifies'),('non-US resident OR a regular ship/aircraft crew member','non-US resident AND any transport worker'),('BOTH its non-US-person-employer','only its employer'),('30,000-dollar gross-receipts ceiling','unlimited receipts'),('MORE THAN 12 months','12 months or less'),('MORE THAN 30 days','any interruption'),('RECIPROCITY DETERMINATION','automatic relief on passage'),('60 days BEFORE entering','60 days after entering'),('270 days AFTER entering','270 days after enactment'),('approval AND implementing legislation','signature alone'),("does not erase Title I's proposed Code amendments",'this bill never amends the Code')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'boundary lost'):validate_33_complete_retained_body(aa,uu,s,bad)
+        bad=copy.deepcopy(a);bad['exact_action_binding_unresolved']=True
+        with self.assertRaisesRegex(ValueError,'changed source/claim passage/evidence flags'):validate_33_complete_retained_body(bad,u,s,r)
+        bad=copy.deepcopy(a);bad['claim_source_map'][0]['passage']=s['text'][3000:6000]
+        with self.assertRaisesRegex(ValueError,'changed source/claim passage/evidence flags'):validate_33_complete_retained_body(bad,u,s,r)
+
+    def test_hr1048_asset_exclusion_requires_direct_exempt_purpose_use(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_1048_direct_use_precision
+        p=folder(122);r=read(p/'hr1048_direct_use_asset_precision_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_1048_direct_use_precision(a,u,s,r)
+        bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace('those used directly in carrying out', 'those used in carrying out')
+        with self.assertRaisesRegex(ValueError,'direct-use qualifier lost'):validate_1048_direct_use_precision(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['rationale_replacement'][1]=bad['rationale_replacement'][1].replace('directly ','')
+        with self.assertRaisesRegex(ValueError,'direct-use precision changed exclusion'):validate_1048_direct_use_precision(a,u,s,bad)
+        for field in ['IRC4968_application_decided','membership_accepted','current_law_certified']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared coverage/current-law/membership gates'):validate_1048_direct_use_precision(a,u,s,bad)
+        bad=copy.deepcopy(r);bad['source_passage']=bad['source_passage'].replace('directly ','')
+        with self.assertRaisesRegex(ValueError,'lost exact source witness'):validate_1048_direct_use_precision(a,u,s,bad)
+
 if __name__=='__main__':unittest.main()
