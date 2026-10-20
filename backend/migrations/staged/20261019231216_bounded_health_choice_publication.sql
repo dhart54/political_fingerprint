@@ -52,6 +52,47 @@ LANGUAGE sql IMMUTABLE STRICT SECURITY INVOKER SET search_path = pg_catalog, pub
     SELECT encode(sha256(convert_to(public.bounded_choice_canonical_json(value), 'UTF8')), 'hex')
 $$;
 
+-- Empty on installation. Only a separately authorized recording of trusted
+-- owner evidence may insert here; the initial four-artifact writer cannot.
+CREATE TABLE public.editorial_bounded_choice_owner_decisions (
+    decision_id TEXT PRIMARY KEY,
+    decision_sha256 TEXT NOT NULL CHECK (decision_sha256 ~ '^[0-9a-f]{64}$'),
+    file_sha256 TEXT NOT NULL CHECK (file_sha256 ~ '^[0-9a-f]{64}$'),
+    decision_jsonb JSONB NOT NULL,
+    CHECK (public.bounded_choice_digest(decision_jsonb) = decision_sha256),
+    CHECK (decision_jsonb->>'decision_id' = decision_id),
+    CHECK (decision_jsonb->>'schema_version' = 'bounded_choice_owner_decision_v1'),
+    CHECK (decision_jsonb->'provenance'->>'kind' = 'direct_owner_decision')
+);
+ALTER TABLE public.editorial_bounded_choice_owner_decisions ENABLE ROW LEVEL SECURITY;
+CREATE FUNCTION public.guard_bounded_choice_owner_evidence() RETURNS TRIGGER
+LANGUAGE plpgsql SECURITY INVOKER SET search_path = pg_catalog, public AS $$
+BEGIN RAISE EXCEPTION 'owner decision evidence is append-only'; END $$;
+CREATE TRIGGER bounded_owner_evidence_immutable BEFORE UPDATE OR DELETE ON public.editorial_bounded_choice_owner_decisions
+FOR EACH ROW EXECUTE FUNCTION public.guard_bounded_choice_owner_evidence();
+
+CREATE FUNCTION public.bounded_choice_owner_evidence_matches(receipt JSONB, allow_synthetic BOOLEAN DEFAULT FALSE) RETURNS BOOLEAN
+LANGUAGE plpgsql STABLE SECURITY INVOKER SET search_path = pg_catalog, public AS $$
+DECLARE evidence JSONB; fields TEXT[] := ARRAY['member_id','issue_id','review_scope','semantic_subject_sha256','presentation_subject_sha256','rendering_subject_sha256','decision','reviewer','reviewer_authority','decided_at_utc'];
+BEGIN
+    IF receipt->'authority_evidence' = '{"kind":"synthetic_test","fixture_id":"health-choice-contract-v1"}'::jsonb THEN
+        RETURN allow_synthetic AND current_database()='pf_health_choice_test'
+          AND current_setting('app.bounded_choice_synthetic_test',TRUE)='on'
+          AND EXISTS(SELECT FROM pg_roles WHERE rolname=current_user AND rolsuper);
+    END IF;
+    IF receipt->'authority_evidence'->>'kind' IS DISTINCT FROM 'owner_decision'
+      OR (receipt->'authority_evidence' - ARRAY['kind','decision_id','decision_sha256']) <> '{}'::jsonb THEN RETURN FALSE; END IF;
+    SELECT decision_jsonb INTO evidence FROM public.editorial_bounded_choice_owner_decisions
+      WHERE decision_id=receipt->'authority_evidence'->>'decision_id'
+        AND decision_sha256=receipt->'authority_evidence'->>'decision_sha256';
+    RETURN COALESCE(evidence IS NOT NULL
+      AND evidence->'provenance'->>'kind'='direct_owner_decision'
+      AND length(trim(evidence->'provenance'->>'source_ref'))>0
+      AND length(trim(evidence->'provenance'->>'decision_quote'))>0
+      AND (SELECT jsonb_object_agg(k,evidence->k) FROM unnest(fields) AS k)
+        = (SELECT jsonb_object_agg(k,receipt->k) FROM unnest(fields) AS k), FALSE);
+END $$;
+
 CREATE FUNCTION public.bounded_choice_receipt_matches(payload JSONB, member TEXT) RETURNS BOOLEAN
 LANGUAGE plpgsql STABLE SECURITY INVOKER SET search_path = pg_catalog, public AS $$
 DECLARE receipt JSONB := payload->'acceptance'; semantic JSONB := payload->'semantic';
@@ -59,11 +100,11 @@ DECLARE receipt JSONB := payload->'acceptance'; semantic JSONB := payload->'sema
         expected_semantic TEXT; expected_presentation TEXT;
 BEGIN
     IF member = 'F000477' THEN
-        expected_semantic := 'a949d7df167e1d87a74e5d60d3893bd71d1d0f3373c13679566baaf49babea83';
-        expected_presentation := 'b5d84225f81c50114420c270ed9f3e5292a8c660aaec2883da45c9f4a615fce3';
+        expected_semantic := '8d1fa7f75e9f4a982214aac2bc79ae1da8ac34b49eda0eacef5c60f4dfc8d4c4';
+        expected_presentation := '9aee7b93d8f11700548f7280dfa22b181157b2ae309502d7d999ea25bef792c1';
     ELSIF member = 'M001184' THEN
-        expected_semantic := '22774879942755bbfadcffee831ef2bf98817bfe52fd0eda91869a59e2a75e2d';
-        expected_presentation := 'd67e3983f5dd09fca18b51d20e599abe7050bfaef70c27215ad9d24c1f14e206';
+        expected_semantic := '5c3405cac0ff34273622320fff51c817c2ad2c62466855bb5b20ed59276182f2';
+        expected_presentation := '9d69d66ecc97cd86a0030e022e64a12b998ebe6ae407efd7961696dc08544fdf';
     ELSE RETURN FALSE; END IF;
     RETURN COALESCE(
       payload->>'schema_version' = 'bounded_choice_publication_v1'
@@ -87,6 +128,7 @@ BEGIN
       AND receipt->>'presentation_subject_sha256' = expected_presentation
       AND receipt->>'rendering_subject_sha256' = rendering->>'rendering_subject_sha256'
       AND receipt->>'decision' = 'accept_exact_bounded_choice_and_rendering'
+      AND public.bounded_choice_owner_evidence_matches(receipt, TRUE)
       AND length(trim(receipt->>'reviewer')) > 0
       AND receipt->>'reviewer_authority' = 'bounded_choice_review_authority_v1'
       AND (receipt->>'decided_at_utc')::timestamptz <= now()
@@ -211,6 +253,7 @@ FROM public.editorial_publication_registry r JOIN public.editorial_artifact_vers
 WHERE r.publicly_active AND r.deactivated_at IS NULL
   AND a.member_bioguide_id=r.member_bioguide_id AND a.issue_id=r.issue_id
   AND public.bounded_choice_graph_valid(a.artifact_id)
+  AND public.bounded_choice_owner_evidence_matches(a.payload_jsonb->'acceptance', FALSE)
   AND r.publication_metadata_jsonb->>'publication_basis'='bounded_choice_review'
   AND r.publication_metadata_jsonb->>'active_artifact_sha256'=a.content_sha256
   AND r.publication_metadata_jsonb->>'presentation_natural_key'=a.natural_key
@@ -218,6 +261,8 @@ WHERE r.publicly_active AND r.deactivated_at IS NULL
   AND r.publication_metadata_jsonb->>'activation_authority_sha256' ~ '^[0-9a-f]{64}$';
 
 REVOKE ALL ON public.editorial_bounded_choice_publications FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON public.editorial_bounded_choice_owner_decisions FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.bounded_choice_owner_evidence_matches(JSONB,BOOLEAN), public.guard_bounded_choice_owner_evidence() FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.bounded_choice_canonical_json(JSONB), public.bounded_choice_digest(JSONB),
  public.bounded_choice_receipt_matches(JSONB,TEXT), public.guard_bounded_choice_insert(),
  public.bounded_choice_graph_valid(BIGINT) FROM PUBLIC, anon, authenticated;
