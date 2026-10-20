@@ -944,4 +944,36 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['topics'].pop(6)
         with self.assertRaisesRegex(ValueError,'omitted an operative section'):validate_partA7_complete_own_body(a,u,s,bad)
 
+    def test_partA6_full_own_body_preserves_certification_review_clocks_literal_discretion_and_savings(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_partA6_complete_own_body
+        p=folder(128);r=read(p/'partA6_complete_retained_own_body_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_partA6_complete_own_body(a,u,s,r);self.assertTrue(validate(128)['generated_replay'])
+        for field in ['whole_record_source_read','adjacent_PartA7_or_A8_imported','referenced_laws_fully_reviewed','actual_military_need_certified','actual_certification_or_court_outcome_decided','permit_or_Tribal_rights_globally_cleared','conclusive_evidence_and_review_interactions_resolved','termination_clocks_reconciled','lacks_discretion_rewritten','Clerk_failure_implies_enactment','current_law_certified','whole_version_binding_cleared','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared adjacent/law/certification/judicial/rights/interaction/version/meaning gates'):validate_partA6_complete_own_body(a,u,s,bad)
+        for old,new in [('DISCRETIONARY MAY','automatic approval'),('REBUTTABLE','irrebuttable'),('60dayclock AFTER SUBMISSION OF TERMINATION MATERIALS','60days after effective termination'),('GRANT OR DENIAL within15days of a COMPLETE request','automatic grant within15days of any request'),('ENDEAVOR','mandatory result'),('ALL THREE clear-and-convincing elements','any one ordinary-evidence element'),('REMOVABLE','automatically removed'),('UPON REMOVAL','upon certification'),('60days after service of the first relevant pleading','90days after any pleading'),('90dayAFTER-ENACTMENT window','60days after certification'),('SUBSTANTIALLY PREVAILS','merely files suit'),('LACKS DISCRETION TO WAIVE OR DECLINE','HAS discretion to waive or decline'),('more stringent than OR additional to a Federally COMPELLED requirement','every State permit condition'),('EXPRESS(l)(8)(A)(ii)(III)EXCEPTION','no exception at all'),('NONCERTIFIED infrastructure','every energy facility'),('NO FEDERAL PROPERTY INTEREST','Federal easement acquired'),('AGintervention MAY','AGintervention must')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'State-floor/savings boundary lost'):validate_partA6_complete_own_body(aa,uu,s,bad)
+        bad=copy.deepcopy(r);bad['appended_full_claim']['passage']=s['text'][26180:39188]
+        with self.assertRaisesRegex(ValueError,'not exact own unit'):validate_partA6_complete_own_body(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][1]['passage']='altered old bookend'
+        with self.assertRaisesRegex(ValueError,'changed source references/passages/evidence flags'):validate_partA6_complete_own_body(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['topics'].pop(12)
+        with self.assertRaisesRegex(ValueError,'omitted an operative section'):validate_partA6_complete_own_body(a,u,s,bad)
+
+    def test_partA7_precision_requires_California_payee_and_separate_preemption_verbs(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_partA7_compensation_preemption_precision
+        p=folder(128);r=read(p/'partA7_compensation_preemption_precision_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id']);validate_partA7_compensation_preemption_precision(a,u,s,r)
+        bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace('Compensation payable to California or its agencies','All compensation including private parties')
+        with self.assertRaisesRegex(ValueError,'omitted California/agencies or broadened operator verbs'):validate_partA7_compensation_preemption_precision(bad,u,s,r)
+        bad=copy.deepcopy(a);bad['rationale']=bad['rationale'].replace('OR whose PURPOSE OR EFFECT is PREVENTING operator use','OR whose PURPOSE OR EFFECT is PREVENTING, CONDITIONING OR DELAYING operator use')
+        with self.assertRaisesRegex(ValueError,'omitted California/agencies or broadened operator verbs'):validate_partA7_compensation_preemption_precision(bad,u,s,r)
+        for i in [0,1]:
+            bad=copy.deepcopy(r);bad['rationale_replacements'][i]['new']=bad['rationale_replacements'][i]['old']
+            with self.assertRaisesRegex(ValueError,'lost California-payee/separate-verb scope'):validate_partA7_compensation_preemption_precision(a,u,s,bad)
+        for field in ['private_compensation_scope_adjudicated','actual_preemption_outcome_decided','current_law_certified','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'adjudicated outcomes'):validate_partA7_compensation_preemption_precision(a,u,s,bad)
+        bad=copy.deepcopy(r);bad['source_witnesses'][0]['source_start']=30664
+        with self.assertRaisesRegex(ValueError,'source witnesses differ'):validate_partA7_compensation_preemption_precision(a,u,s,bad)
+
 if __name__=='__main__':unittest.main()

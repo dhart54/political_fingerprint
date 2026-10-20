@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch127**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch128**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Historical independent discovery-delta review
 targeted exact `d2865c36c277c85866ca38935eb11706d63f4313`. A historical parent report described H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Pending2:260PartA7nowhas complete retainedown13008characterbody reading, distinctfromadjacentA6/A8/wholeRecord and unreviewed referencedlaw/version/actualoutcomes. Acquisition/condemnation/report/deposit/compensation, licenseduse/safety/cure/successor transfer, different Statepreemption/continuity scopes/Federal savings, optionalcostrecovery and5definitions stay qualified. Historicbookends/passages preserved, no source/ref/flags/70meaning/compiled changes; all1606sourcesunchanged, noacquisition/retry/acceptance.
+Pending2:259PartA6nowhas complete retainedOWN26180characterbody review/header+(a)-(n), separatefromA7/A8/wholeRecord. Certification/termination/request/review/evidence/relief/removal/enforcement/Statefloor/savings/definitions retain distinct predicates and clocks, literal LACKSdiscretion and noFederalproperty/operationcommand. Historicbookends/passages preserved, no source/ref/flags/70meaning/compiled change. All1606sourcesunchanged/noacquisition; referencedlaw/rights/internallegalinteractions/version/currentlaw/wholemeaning remainpending. The same checkpoint corrects currentPartA7compensation payee toCalifornia/agencies and separates(e1)Defense preventing/conditioning/delaying from operator-use PREVENTING, preserving127preimages/source/claims/flags and no actualprivate-compensation/preemption judgment.
 
-[Readable batch127 findings](infrastructure_candidate_batch127.md).
+[Readable batch128 findings](infrastructure_candidate_batch128.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch128_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -55,28 +55,36 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**Current four focused regressions, source/conservation/generated replay and seven
-semantic checks pass**. Full151focused passed at exact
+**Final five focused regressions, source/conservation/generated replay and seven
+semantic checks pass after both PartA7scope corrections**. Full151focused passed at exact
 `3be714268666858130bb62d1f171af6a19362c4a`; all70meanings/compiledgraph remain unchanged.
-No full171suite run. Current shared authoring/generated copies remain member-neutral.
+No full173suite run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took5.108seconds; the specification/authoring elapsed window and later byte/delivery
+took5.122seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch128_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch128_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch128_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch128_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Pending2:260PartA7nowhas complete retainedown13008characterbody reading, distinctfromadjacentA6/A8/wholeRecord and unreviewed referencedlaw/version/actualoutcomes. Acquisition/condemnation/report/deposit/compensation, licenseduse/safety/cure/successor transfer, different Statepreemption/continuity scopes/Federal savings, optionalcostrecovery and5definitions stay qualified. Historicbookends/passages preserved, no source/ref/flags/70meaning/compiled changes; all1606sourcesunchanged, noacquisition/retry/acceptance.
+Pending2:259PartA6nowhas complete retainedOWN26180characterbody review/header+(a)-(n), separatefromA7/A8/wholeRecord. Certification/termination/request/review/evidence/relief/removal/enforcement/Statefloor/savings/definitions retain distinct predicates and clocks, literal LACKSdiscretion and noFederalproperty/operationcommand. Historicbookends/passages preserved, no source/ref/flags/70meaning/compiled change. All1606sourcesunchanged/noacquisition; referencedlaw/rights/internallegalinteractions/version/currentlaw/wholemeaning remainpending. The same checkpoint corrects currentPartA7compensation payee toCalifornia/agencies and separates(e1)Defense preventing/conditioning/delaying from operator-use PREVENTING, preserving127preimages/source/claims/flags and no actualprivate-compensation/preemption judgment.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
+[Current PartA6body and PartA7precision records](infrastructure_batch128_partA6_full_body/manifest.json) export52,503/35,480-byte current pendingrecords with exact parent pointers/hashes and reuse the immutable1,132-byteGovsourcewrapper/48,253-bytepart. Only OWN PartA6source0:26180(header+(a)-(n))gets a complete new body review; pairedA7clauses30663:31221and34871:35332are separately mapped precision checks. Whole46475source/adjacentmeaning/referencedActs/actualjudicial-certification-permit-operation/currentlaw/version/wholemeaning gates stay pending. All1606objects/70meanings/compiledgraph/674otherrecords unchanged.
+
+[Complete OWN PartA6review/preimage](../editorial/shared_candidates/house_119_infrastructure_batch128_20260916/partA6_complete_retained_own_body_receipt.json) preserves discretionarysignedcertification/BOTHcriteria/CongressANDclerkfiling; rebuttablecontinuation versus proposedconclusiveevidence; post-effectivetermination/180days/60-after-MATERIALS/covered-action bar; priority15/ordinary90COMPLETErequestGRANTorDENY; distinct review/relief/endeavor/hard10day/removal/venue/fee predicates. The Statefloor branch retains ALL3conditions including literalLACKSdiscretion, practicaleffect/operator-suit/burden and explicitm3exception. Federalminimum/noncertified/permits/safety/pendingcriminal and property/operational/Tribal limits are not flattened or adjudicated. Newsourcebody does not import A7easement/license powers.
+
+[PartA7two-phrase correction/preimage](../editorial/shared_candidates/house_119_infrastructure_batch128_20260916/partA7_compensation_preemption_precision_receipt.json) restores compensation payable toCalifornia/agencies and separates State-law PURPOSE/EFFECTprevent-condition-delayDefenseauthority from PURPOSE/EFFECTPREVENToperatoruse. No private-compensation or actual-preemption judgment; historical127receipt/record/export/source and all current claims/flags remain unchanged. Currentstrictprecisionguard validates exact corrections; unchanged127bodyguard validates the exact before-record. Initial128fourtarget10.000s/source-seven were before these corrections; FINALfivetarget9.860s/source-seven pass. No current128independent semantic acceptance/closure is claimed.
+
+[YRAoriginal-object authentication closure](infrastructure_yra_original_object_independent_authentication.json) records coordinator-reported independent authentication of the unchanged179a13acfulloriginalobject published with127, closing that export gap only. It grants no semantic acceptance, current128correction clearance or test/currentCI transfer.
+
 [Complete OWN PartA7record/source transport](infrastructure_batch127_partA7_full_body/manifest.json) adds one35,247-byte pendingrecord and manifest, reusing the immutable91–100original source wrapper(1,132bytes)and validated lossless text part(48,253bytes). Restored46,475-character source equals its original canonical object; ONLY own PartA7source26180:39188(13,008chars)was read, not adjacentA6/A8/wholeRecord. Originalbookendpassages/ruleclaim stay exact; two oldlocators are explicitly HISTORICAL and one complete-own-unitclaim is appended.
 
-[Own-unit review/preimage](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/partA7_complete_retained_own_body_receipt.json) covers header plus(a)-(h). Acquisition is named-route easements/purpose/necessity, MAYcondemnation, sevenDaysAFTERreport, filingANDestimateddeposit/independent finalcourtcompensation. SHALLlicenseuponacquisition retains alternativeexpressCongress-or-qualifiedDefensesafetypaths, finalorder/appeal/imminenthazard/reasonablecure; transferdeemedcomplianceisparagraph-limited. ConditionalStateLOCALcontinuity/Federalsavings remains distinct from broaderCalifornia(e2); pendingStatecourtclausehasUS-not-partycondition. MAYall/partcostrecovery/nodollarappropriation and5definitions remain qualified. Congressionalnational-security findings are the proposal's assertions, not platformmilitaryneed findings. ReferencedActs/actualparcel-title-compensation-license-operation/currentlaw/floor-version/whole Infrastructure meaning remain pending. All1606sources/675otherrecords/70meanings/compiledgraph unchanged.
+[Own-unit review/preimage](../editorial/shared_candidates/house_119_infrastructure_batch127_20260916/partA7_complete_retained_own_body_receipt.json) covers header plus(a)-(h). Acquisition is named-route easements/purpose/necessity, MAYcondemnation, sevenDaysAFTERreport, filingANDestimateddeposit; current128above restores the California/agencies payee scope for clause(c)and exact(e1)verb branches. SHALLlicenseuponacquisition retains alternativeexpressCongress-or-qualifiedDefensesafetypaths, finalorder/appeal/imminenthazard/reasonablecure; transferdeemedcomplianceisparagraph-limited. ConditionalStateLOCALcontinuity/Federalsavings remains distinct from broaderCalifornia(e2); pendingStatecourtclausehasUS-not-partycondition. MAYall/partcostrecovery/nodollarappropriation and5definitions remain qualified. Congressionalnational-security findings are the proposal's assertions, not platformmilitaryneed findings. ReferencedActs/actualparcel-title-compensation-license-operation/currentlaw/floor-version/whole Infrastructure meaning remain pending. All1606sources/675otherrecords/70meanings/compiledgraph unchanged.
 
 [Pending H.R.3638record and dated named-definition sources](infrastructure_batch126_hr3638_definitions/manifest.json) preserve current-parent and originalHealth/priorInfrastructure numeric pointers, canonical/raw/governed/transport hashes and actualUTF8-LFlengths:22,816-byte record/2,202+3,649+804-byte original objects, plus reused3,317-byte historicalEROwrapper with/source pointer. Its restored object equals the exact original source; wrapper/oldexport remain unchanged. Four complete retained2024units total7,849characters; three existing objects newly enter corpus and one already-governed unit is linked to this record. All1603prior sources/675otherrecords/70meanings/compiledgraph stay unchanged.
 
