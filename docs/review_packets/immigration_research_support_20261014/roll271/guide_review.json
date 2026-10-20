@@ -1,0 +1,662 @@
+{
+  "source_snapshot": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+  "review_url": "https://github.com/dhart54/political_fingerprint/pull/230#issuecomment-6196416018",
+  "prior_head": "c3c108a05f1132a38172c33b2e8463c4a3c663d2",
+  "first_tool_utc": "2026-10-15T15:59:54+00:00",
+  "rules": [
+    {
+      "id": "301_revised_statutes_baseline",
+      "section": "301",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 35437,
+          "end": 35750,
+          "text": "Section 5136A(g)(6)(A) of the Revised Statutes of the United States (12 U.S.C. 24a(g)(6)(A)) is amended-- (i) by striking ``agency--'' and all that follows through ``the achievement'' and inserting ``agency, the achievement''; (ii) by striking ``; and'' and inserting ``; or''; and (iii) by striking clause (ii). ",
+          "passage_utf8_sha256": "6fea2df06ef3eca2284980f1bb1beba004b022e5bbce0ffa3c1a96a596982356",
+          "label": "Section 5136A(g)(6)(A)"
+        }
+      ],
+      "source_required": [
+        "Section 5136A(g)(6)(A) of the Revised Statutes of the United States (12 U.S.C. 24a(g)(6)(A))"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            9,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "301"
+          ]
+        },
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            9,
+            "external_dependency_scope"
+          ]
+        },
+        {
+          "file": "imports.json",
+          "path": [
+            "missing_qualification",
+            8,
+            "scope"
+          ]
+        }
+      ],
+      "required": [
+        "Revised Statutes",
+        "24a(g)(6)(A)"
+      ],
+      "forbidden": [
+        "1467a(g)(6)(A)"
+      ],
+      "bad_replacement": [
+        "24a(g)(6)(A)",
+        "1467a(g)(6)(A)"
+      ]
+    },
+    {
+      "id": "801_permitted_period",
+      "section": "801",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 146157,
+          "end": 146717,
+          "text": "Under such regulations, the period of time generally permitted for holding merchant banking investments shall not be less than 15 years. For any merchant banking investment held on the date of enactment of the Main Street Act, the holding period of time permitted shall not be less than 15 years from the initial date of the investment.'' after the period at the end. (b) Merchant Banking Study.-- (1) In general.--Not later than 1 year after the date of enactment of this Act, the Board of Governors of the Federal Reserve System shall carry out a study on me",
+          "passage_utf8_sha256": "c011ee0e76cf528a0d11f13d2c80419501d257cc5633847ef8f87e6b3dd4715f",
+          "label": "Under such regulations"
+        }
+      ],
+      "source_required": [
+        "the period of time generally permitted for holding merchant banking investments shall not be less than 15 years",
+        "from the initial date of the investment"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            25,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "801"
+          ]
+        }
+      ],
+      "required": [
+        "period generally permitted",
+        "does not require investors to retain investments",
+        "INITIAL investment date"
+      ],
+      "forbidden": [
+        "Merchant-investment holding minimum 15 years."
+      ],
+      "bad_replacement": [
+        "period generally permitted",
+        "mandatory investor-retention period"
+      ]
+    },
+    {
+      "id": "203_one_year_deadline",
+      "section": "203",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 18124,
+          "end": 18624,
+          "text": "Not later than 1 year after the date of enactment of this section, and every 5 years thereafter, the Board of Governors shall increase each threshold described in subsection (b) by the ratio, if greater than 1, of the annual value of the economic indicator selected by the Board of Governors as appropriate for that threshold under paragraph (2)(B) for the calendar year preceding the year in which the adjustment is calculated under this section, to the published annual value of such economic indic",
+          "passage_utf8_sha256": "0de19803539fb1e9a6aeeaa36a42cff70cd06ce759d40aaf3c85728277121cdc",
+          "label": "Not later than 1 year"
+        }
+      ],
+      "source_required": [
+        "Not later than 1 year after the date of enactment of this section, and every 5 years thereafter"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            7,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "203"
+          ]
+        }
+      ],
+      "required": [
+        "not later than one year after enactment",
+        "every five years thereafter"
+      ],
+      "forbidden": [
+        "adjustment after one year then"
+      ],
+      "bad_replacement": [
+        "not later than one year after enactment",
+        "after one year"
+      ]
+    },
+    {
+      "id": "302_existing_FFIEC_sections",
+      "section": "302",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 51284,
+          "end": 51504,
+          "text": "Section 1003 of the Federal Financial Institutions Examination Council Act of 1978 (12 U.S.C. 3302) is amended-- (A) in paragraph (2), by striking ``and'' at the end; and (B) by adding at the end the following: ``(4) the",
+          "passage_utf8_sha256": "5042222b579b8849ebd91ce708b13e16fb15e2e43980887a6d3bbedf68440ea1",
+          "label": "Section 1003"
+        },
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 63582,
+          "end": 63942,
+          "text": "in section 1004(a)(4) (12 U.S.C. 3303), by striking ``Consumer Financial Protection Bureau'' and inserting ``Bureau of Consumer Financial Protection''; and (C) in section 1005 (12 U.S.C. 3304)-- (i) by striking ``One-fifth'' and inserting ``One-fourth''; and (ii) by inserting ``described under section 1003(1)(A)'' after ``agencies''. (f) Election of Forum fo",
+          "passage_utf8_sha256": "bf5987c96ad245cde5a63415e1ad4466946fca84f536f9398638105c0f3461d4",
+          "label": "in section 1004(a)(4)"
+        }
+      ],
+      "source_required": [
+        "Section 1003",
+        "in section 1004(a)(4) (12 U.S.C. 3303)",
+        "in section 1005 (12 U.S.C. 3304)"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            10,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "302"
+          ]
+        },
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            10,
+            "external_dependency_scope"
+          ]
+        },
+        {
+          "file": "imports.json",
+          "path": [
+            "missing_qualification",
+            9,
+            "scope"
+          ]
+        }
+      ],
+      "required": [
+        "§§1003/1004/1005"
+      ],
+      "forbidden": [
+        "1006"
+      ],
+      "bad_replacement": [
+        "§§1003/1004/1005",
+        "§§1003/1005/1006"
+      ]
+    },
+    {
+      "id": "702_exact_OCC_edition",
+      "section": "702",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 133767,
+          "end": 134024,
+          "text": "(3) Shelf charter.--The term ``shelf charter'' has the meaning given such term in the report issued by the Comptroller of the Currency titled ``Activities Permissible for National Banks and Federal Savings Associations, Cumulative'' published October 2017. ",
+          "passage_utf8_sha256": "49771ef2b9d66dc4e8c2b51a4ec5fa255a53b93000c8c21afc96f1bfa546f3fd",
+          "label": "(3) Shelf charter.--"
+        }
+      ],
+      "source_required": [
+        "Activities Permissible for National Banks and Federal Savings Associations, Cumulative",
+        "published October 2017"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            23,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "702"
+          ]
+        },
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            23,
+            "external_dependency_scope"
+          ]
+        },
+        {
+          "file": "imports.json",
+          "path": [
+            "missing_qualification",
+            22,
+            "scope"
+          ]
+        }
+      ],
+      "required": [
+        "Activities Permissible for National Banks and Federal Savings Associations, Cumulative"
+      ],
+      "forbidden": [
+        "Cumulative Activities Permissible"
+      ],
+      "bad_replacement": [
+        "Activities Permissible for National Banks and Federal Savings Associations, Cumulative",
+        "Cumulative Activities Permissible for a National Bank"
+      ]
+    },
+    {
+      "id": "204_upper_bound",
+      "section": "204",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 24868,
+          "end": 25148,
+          "text": "By April 1, 2031, and the 1st day of each subsequent 5-year period, the Board of Governors of the Federal Reserve System shall prescribe the amount by which each dollar amount described in subsection (b) shall be increased by the ratio, if greater than 1, of the annual value of t",
+          "passage_utf8_sha256": "53763b9933538d22caf858ba9da3ace33eaa49186ac51729a1ab038bd2543432",
+          "label": "By April 1, 2031"
+        }
+      ],
+      "source_required": [
+        "By April 1, 2031"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            8,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "204"
+          ]
+        }
+      ],
+      "required": [
+        "By April 1, 2031",
+        "publication not later than April 5"
+      ],
+      "forbidden": [
+        "April 5 publication"
+      ],
+      "bad_replacement": [
+        "By April 1, 2031",
+        "On April 1, 2031"
+      ]
+    },
+    {
+      "id": "501_enactment_deadlines",
+      "section": "501",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 97513,
+          "end": 97923,
+          "text": "Not later than 60 days after the date of enactment of this paragraph, the Board of Governors shall commence a review of the discount window lending programs of the Federal reserve banks (the `discount window'), and shall complete such review not later than 240 days after the date of enactment of this paragraph. ``(B) Contents.--The review required by subparagraph (A) shall include a consideration of-- ``(i)",
+          "passage_utf8_sha256": "755a457257dc91ecab129d520a75100644c4891d38dfa6d5ccf90bdbe5e14db6",
+          "label": "Not later than 60 days"
+        },
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 100867,
+          "end": 101027,
+          "text": "Not later than 365 days after the date of enactment of this paragraph, the Board of Governors shall submit a report to the Committee on Financial Services of th",
+          "passage_utf8_sha256": "e36229051a783d20b443029ae4ecd1aaa7b905f743219f7926dc131476b69935",
+          "label": "Not later than 365 days"
+        }
+      ],
+      "source_required": [
+        "Not later than 60 days after the date of enactment of this paragraph",
+        "not later than 240 days after the date of enactment of this paragraph",
+        "Not later than 365 days after the date of enactment of this paragraph"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            16,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "501"
+          ]
+        }
+      ],
+      "required": [
+        "not later than 60 days after enactment of the paragraph",
+        "not later than 240 days after enactment of the paragraph",
+        "not later than 365 days after enactment of the paragraph"
+      ],
+      "forbidden": [
+        "review begins in 60 days"
+      ],
+      "bad_replacement": [
+        "not later than 365 days after enactment of the paragraph",
+        "365 days after the review"
+      ]
+    },
+    {
+      "id": "604_latest_decision",
+      "section": "604",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 119618,
+          "end": 120008,
+          "text": " (B), the Board shall grant or deny an application submitted under this section not later than 120 days after the date on which the application was initially submitted to the Board, regardless of whether the record on such initial application was complete. ``(ii) Failure to make a determination.--If the Board does not grant or deny an application within the time period described under cl",
+          "passage_utf8_sha256": "0b107a05d9d8af3fd6865e1a375d012ac3aba4c7f2a6f71aa9ad63effd43ac50",
+          "label": "not later than 120 days"
+        }
+      ],
+      "source_required": [
+        "not later than 120 days after the date on which the application was initially submitted"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            21,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "604"
+          ]
+        }
+      ],
+      "required": [
+        "not later than 120 days after INITIAL submission"
+      ],
+      "forbidden": [
+        "Decision at 120 days"
+      ],
+      "bad_replacement": [
+        "not later than 120 days after INITIAL submission",
+        "at 120 days after INITIAL submission"
+      ]
+    },
+    {
+      "id": "802_report_not_study_deadline",
+      "section": "802",
+      "source_passages": [
+        {
+          "source_id": "govinfo:hr6955eh",
+          "start": 149011,
+          "end": 149481,
+          "text": "(2) Report.--Not later than 1 year after the date of enactment of this Act, the Board of Governors of the Federal Reserve System, the Comptroller of the Currency, and the Federal Deposit Insurance Corporation shall issue a report to the Committee on Financial Services of the House of Representatives and the Committee on Banking, Housing, and Urban Affairs of the Senate containing all findings and determinations made in carrying out the study required under paragraph",
+          "passage_utf8_sha256": "1f42316509be4319b2146d18bed94c12dcb47aeadcdc7491f47d08c6284cb1c7",
+          "label": "(2) Report.--Not later than 1 year"
+        }
+      ],
+      "source_required": [
+        "(2) Report.--Not later than 1 year after the date of enactment of this Act"
+      ],
+      "targets": [
+        {
+          "file": "section_ledger.json",
+          "path": [
+            "sections",
+            26,
+            "operator_conditions_exceptions_dates"
+          ]
+        },
+        {
+          "file": "read_receipt.json",
+          "path": [
+            "section_notes",
+            "802"
+          ]
+        }
+      ],
+      "required": [
+        "studies are required; reports are due not later than one year",
+        "report deadlines, not separately specified study deadlines"
+      ],
+      "forbidden": [
+        "studies/reports due in one year"
+      ],
+      "bad_replacement": [
+        "studies are required; reports are due not later than one year",
+        "studies and reports both have separately stated one-year deadlines"
+      ]
+    }
+  ],
+  "sibling_guide_audit": [
+    {
+      "section": "1",
+      "result": "Title/TOC only; no permission/deadline claim.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "101",
+      "result": "May determine versus shall permanent/grandfather/report retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "102",
+      "result": "Shall annual reporting; equivalent procedure/practicability retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "103",
+      "result": "Shall annually testify subject to chair discretion retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "104",
+      "result": "Guarantee lower bound/cap is not duty to grant; report upper deadline explicit.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "201",
+      "result": "Shall consider/tailor and reporting upper deadlines explicit.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "202",
+      "result": "180-day upper deadline and rule amendment retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "203",
+      "result": "One-year upper deadline corrected; ratio>1 and five-year cadence retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "204",
+      "result": "By-April-1 and not-later-April-5 clarified.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "301",
+      "result": "Rule deadline upper bound and baseline identity corrected; 90-day minimum comment preserved.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "302",
+      "result": "90-day report is upper deadline; existing FFIEC sections corrected; literal 30/60 mismatch preserved.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "303",
+      "result": "Shall combine on institutional request; scope/exception/savings retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "304",
+      "result": "One-year study/determination and conditional shall-remove/may-not maintained; 180-day report distinct.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "401",
+      "result": "Appointment/term qualifications retained, preexisting citizenship not inferred.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "402",
+      "result": "Required guidance statement and exclusions retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "403",
+      "result": "Exact once-every substitution stated; no unprinted baseline qualification invented.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "501",
+      "result": "60/240/365-day deadlines anchored to enactment, not fixed dates or review completion.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "502",
+      "result": "Discretionary waiver retained; six-month deadline attached to report, not separately to study.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "601",
+      "result": "Conditional nonconsideration lanes and unaffected criteria distinction retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "602",
+      "result": "Required study, report within one year retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "603",
+      "result": "First review upper deadline and later cadence explicit; report at conclusion retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "604",
+      "result": "All three 120-day latest-decision clauses, initial submission, default and tolling retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "701",
+      "result": "Discretionary alternative retained; assessment-payment period is minimum duration.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "702",
+      "result": "Required study/report and exact historical document title distinguished from findings.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "703",
+      "result": "Discretionary waivers versus conjunctive exception predicates retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "801",
+      "result": "Minimum permitted period corrected; no mandatory investor-retention claim; study/report upper deadlines.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "802",
+      "result": "Required studies distinguished from one-year report deadlines.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    },
+    {
+      "section": "803",
+      "result": "Shall-take-effect September1,2036 retained.",
+      "review_method": "Compared all authored guide notes and original quoted sections; targeted source-clause rechecks for modal/deadline/reference distinctions. Not a second full-source reading, legal sufficiency review or candidate interpretation."
+    }
+  ],
+  "historical_preservation": "Original reading windows/acknowledgement/emission history and timing file are unchanged. Corrected authored notes have explicit successor attribution; literal quotations, raw identities, source seals and whole-capture partition remain exact. Original erroneous guides remain at the immutable prior head.",
+  "limits": "Focused source-backed wording regressions, not a general legal-language parser or certification. No new primary acquisition/candidate/runtime/source-bank edits or restricted route.",
+  "correction_documentation_cutoff_utc": "2026-10-15T16:09:31.245896+00:00",
+  "correction_elapsed_seconds_to_cutoff": 577.245896,
+  "settings": "User-selected Sol High unchanged; prior narrow config observation gpt-6.1-sol/high/default tier, effective overrides unexposed; no settings changes.",
+  "command_durations_seconds": [
+    {
+      "stage": "initial review and scope read",
+      "seconds": 0.8943324
+    },
+    {
+      "stage": "five exact clauses and all28guide notes",
+      "seconds": 0.3665147
+    },
+    {
+      "stage": "broad sibling modal scan, output truncated",
+      "seconds": 0.0805737
+    },
+    {
+      "stage": "bounded sibling clauses",
+      "seconds": 0.0693378
+    },
+    {
+      "stage": "specific201/301/403/501recheck and helper read",
+      "seconds": 0.0953489
+    },
+    {
+      "stage": "apply duplicate corrections and regression ledger",
+      "seconds": 0.3496445
+    },
+    {
+      "stage": "first21test command",
+      "seconds": 2.2813948,
+      "runner_seconds": 1.934
+    }
+  ],
+  "overhead": "One broad sibling scan exceeded output budget; unseen middle was not treated as read and was followed by bounded clauses. No test failure so far. Original guide errors and their independent-review correction are retained at prior SHA; correction gross includes review, rereading, drafting, focused tests, tool and recovery overhead, with no model-latency/idle allocation. Commit/push/exact-head checks follow and are reported in PR230.",
+  "conditions": "Existing Git/OS/Python cache and concurrent Immigration writer load uncontrolled; no profile, full candidate gate, monitor or speedup claim."
+}

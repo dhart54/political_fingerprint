@@ -1,0 +1,135 @@
+{
+  "action_id": "house:119:2:271",
+  "scope": "Only §401/12USC1812 dated Board baseline; one research-only claimed support increment.",
+  "first_tool_utc": "2026-10-15T16:17:59+00:00",
+  "documentation_cutoff_utc": "2026-10-15T16:33:50.696919+00:00",
+  "inclusive_single_scope_seconds_to_cutoff": 951.696919,
+  "attribution": "Ownership/claim, existing-source inventory, official acquisition, reading, temporal qualification, analysis, recovery, comparison and initial tests included. Commit/HEAD/push/handoff follow. Not exclusive reading, model latency or idle time.",
+  "existing_source_snapshot": "770419240bcf0b672c701886f14d5fa8e0d31f82",
+  "prior_research_head": "4c1439cf33e698c8997c408aa78336e4010a64d7",
+  "claim_url": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6196825115",
+  "native_command_seconds": [
+    {
+      "stage": "initial ownership/review",
+      "seconds": 1.6020097
+    },
+    {
+      "stage": "historical claim search/brief recheck",
+      "seconds": 1.0184752
+    },
+    {
+      "stage": "post narrow claim",
+      "seconds": 1.1852422
+    },
+    {
+      "stage": "Immigration existing witnesses/EH401",
+      "seconds": 0.4681584
+    },
+    {
+      "stage": "Health existing witness check",
+      "seconds": 0.3379684
+    },
+    {
+      "stage": "five sequential bounded raw captures",
+      "seconds": 1.9863403
+    },
+    {
+      "stage": "raw header/content inspection",
+      "seconds": 0.1293086
+    },
+    {
+      "stage": "field markers/table headers and soft404qualification",
+      "seconds": 0.1140929
+    },
+    {
+      "stage": "full9632character source read then failed header probe",
+      "seconds": 0.123082
+    },
+    {
+      "stage": "second failed header substring probe",
+      "seconds": 0.0953769
+    },
+    {
+      "stage": "bounded67row/header read",
+      "seconds": 0.1369063
+    },
+    {
+      "stage": "initial comparison builder failed on index wrapping",
+      "seconds": 0.4278868
+    },
+    {
+      "stage": "bounded whole classification landing text read",
+      "seconds": 0.080811
+    },
+    {
+      "stage": "corrected builder/four operator review",
+      "seconds": 0.5565271
+    },
+    {
+      "stage": "first18test command17pass1fail",
+      "seconds": 2.5085799
+    },
+    {
+      "stage": "repaired18test command allpass",
+      "seconds": 2.4576333
+    }
+  ],
+  "raw_fetch_seconds": [
+    {
+      "file": "govinfo_2024_1812.html",
+      "seconds": 0.20219029998406768
+    },
+    {
+      "file": "govinfo_2025_1812.html",
+      "seconds": 0.32253050000872463
+    },
+    {
+      "file": "olrc_classification_index.html",
+      "seconds": 0.20145300001604483
+    },
+    {
+      "file": "olrc_119_1_code_order.html",
+      "seconds": 0.7783351000398397
+    },
+    {
+      "file": "olrc_119_2_code_order.html",
+      "seconds": 0.2418656999943778
+    }
+  ],
+  "first_test_attempt": {
+    "tests": 18,
+    "pass": 17,
+    "fail": 1,
+    "runner_seconds": 2.124,
+    "failure": "Case-sensitive closing-tag replacement did not mutate the lower-case HTML fixture. Negative injection was not exercised; no evidence/candidate defect. Long raw-bytes failure output was truncated."
+  },
+  "second_test_attempt": {
+    "tests": 18,
+    "pass": 18,
+    "fail": 0,
+    "runner_seconds": 2.089,
+    "change": "Case-insensitive single closing-tag substitution; require one actual mutation and reject injected12/1812row. Subsequent claimed-currency probe tightened to change the claim against intact source."
+  },
+  "other_failures_and_boundaries": [
+    "OLRC preliminary section web fetch timed out; dated section web fetch failed; neither qualified or retried.",
+    "MetadataXML URL inaccessible through web tool, left unretried.",
+    "Incorrect classification .shtml URL returned a not-found page; actual linked .html page used.",
+    "GovInfo2025HTTP200body was Page Not Found, retained/unusable; no retry or assumed edition.",
+    "Two header substring probes and the initial builder encountered actual case/line-wrap differences; corrected after bounded reads.",
+    "Brief recheck output truncated; earlier full brief reading remains attributed.",
+    "No HTTP access denial in retained captures; all prior denied/cancelled routes remain excluded."
+  ],
+  "settings": {
+    "user_selected": "Sol High, unchanged",
+    "prior_verified_local_config": "gpt-6.1-sol; efforthigh; service_tierdefault",
+    "effective_request_overrides": "unexposed; no tier claim beyond config observation"
+  },
+  "conditions": {
+    "cache": "Existing OS/Git/Python/web cache uncontrolled; raw fetch timestamp not source publication date.",
+    "concurrent_load": "Writer public FarmBill research observed; machine load not isolated or profiled.",
+    "background_monitor": false,
+    "candidate_gate": false,
+    "speedup_claim": false
+  },
+  "preservation": "Only newfdic401folder; all prior79research artifacts, historical timing, correctedroll271guide, candidate/shared sources/runtime/compiler and .w/ib untouched. No settings, merge/deploy/publication/production effects."
+}

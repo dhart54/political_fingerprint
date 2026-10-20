@@ -1,0 +1,58 @@
+{
+  "source_snapshot": "770419240bcf0b672c701886f14d5fa8e0d31f82",
+  "bank_path": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+  "bank_git_oid": "bf26db2b5fb56c3b2df86777c02d3863c9f1908e",
+  "bank_blob_sha256": "fd1c86297c2a85c6b3402dbdf2aa1c826563df1c48572e174fdb7281112e7d1c",
+  "governed_sources": {
+    "govinfo:hr6955eh": {
+      "source_id": "govinfo:hr6955eh",
+      "source_type": "official_bill_text",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6955eh/html/BILLS-119hr6955eh.htm",
+      "text_version": "EH",
+      "raw_sha256": "9c0cbdc9ff91c813e94dbd0f77b738004226ae6261b2fcd3bf60b9ad51ae8a03",
+      "governed_bytes_sha256": "7461114a026a43166f194c53851f9fd0dd01158b59991aeb9642789cdc50ffd3",
+      "row_index": 2248,
+      "text_characters": 151645,
+      "text_utf8_sha256": "bc5f2dc16d23617459f8720d3cf4d89c3340f7e83ca3b98c2d333989b7f5b55a"
+    },
+    "govinfo:hr6644eas2": {
+      "source_id": "govinfo:hr6644eas2",
+      "source_type": "official_bill_text",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6644eas2/html/BILLS-119hr6644eas2.htm",
+      "text_version": "EAS2",
+      "raw_sha256": "2e4c8c459ad22cc6dcb4a533d3794fdba23a83f4d93c558e12c0aefbaecda612",
+      "governed_bytes_sha256": "8b538a3302f11766f2e35050bbdaf8135146ae1dcc87dfe4de22b788a5a60587",
+      "row_index": 2661,
+      "text_characters": 377081,
+      "text_utf8_sha256": "878fce227bbb2402ea820ce7bda744da85e048cdf766fdbab3901a26acda222f"
+    }
+  },
+  "prior_classification_source": {
+    "commit": "5151b3eafed3af95d01192adb6f07ec9267c1a34",
+    "path": "docs/review_packets/immigration_research_support_20261014/fdic401/olrc_119_2_code_order.html",
+    "raw_sha256": "c0ad7b6c6ec8d03ddf5e4bedf24561d44d10880fadfbc63f27d625133481d858"
+  },
+  "derived_sources": {
+    "law_pre": {
+      "characters": 521720,
+      "text_utf8_sha256": "1cba5b38e47c49bd6e8fb2438c5f3862438df58b2c061d412492613fbee7496c"
+    },
+    "baseline_operative": {
+      "characters": 5147,
+      "text_utf8_sha256": "be360bbab2762eb01ca647a8d9cfcc5bcc3b99b78c0ae979203047194b263781"
+    },
+    "FDIA1813_operative": {
+      "characters": 21172,
+      "text_utf8_sha256": "00e025de8856e41108009913f067b05bcc5667075e07d75d2ea88bf1ef6af7b3"
+    },
+    "FDIA1813_raw_utf8": {
+      "characters": 70947,
+      "text_utf8_sha256": "2d04a179690981c6daf7ae713a4ca831300006c16f9b7de7a73e683ec60e2524"
+    },
+    "reviewed_classification_pre": {
+      "characters": 51483,
+      "text_utf8_sha256": "a13eb190c504ea98e008be1c6e3ee2756def931cef41962d50a39ba091f18567"
+    }
+  },
+  "fresh_source_status": "New official raw captures are unregistered research evidence; no shared-source bank edits or candidate integration."
+}
