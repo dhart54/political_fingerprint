@@ -1,0 +1,39 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T23:54:36.200145+00:00",
+    "qualification": "Complete retained57840character1048EHbody followup specification start. Four contiguous source slices and bounded marker/reference checks read before marker, untimed. No fullRCP/floor/current-law or external-reference integration performed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T23:59:24.422547+00:00",
+    "end_utc": "2026-10-19T23:59:32.782257+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 121 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch121_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 4.201
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 4.159
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 288.222,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 8.36,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 3,
+    "reported_test_seconds": 9.386,
+    "result": "passed",
+    "scope": [
+      "Complete1048EHbody coverage, retained passages, qualified thresholds/privacy/waiver/court/fine/aid/GAO and unresolved floor/external-reference limits",
+      "Preserved historical oldHEAdefinitions without importing them into proposed sections or clearing pending cases",
+      "Preserved4776establishment-only challenge precision and exact preimage"
+    ]
+  }
+}

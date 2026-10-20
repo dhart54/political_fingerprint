@@ -1,9 +1,9 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch120**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch121**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
-`af6cd6d78d6944d64a68a92653066c4c1625f96b`. Independent discovery-delta review
-targets exact `d2865c36c277c85866ca38935eb11706d63f4313`. Parent reports H.R.9436
+`af6cd6d78d6944d64a68a92653066c4c1625f96b`. Historical independent discovery-delta review
+targeted exact `d2865c36c277c85866ca38935eb11706d63f4313`. A historical parent report described H.R.9436
 corrections satisfactory and CI green at `f70fc3023bd69c087be166d16d792065232edf6c`.
 Neither report accepts later work or domain membership.
 
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Pending H.R.3276now links the complete retained2024urban/urbanized-area definitions named by its broad101(a)reference. Alternative population/designation branches, cooperative approved boundaries and the limited Maine/NewHampshire boundary exception remain distinct. The link does not resolve EDGEcity-size thresholds,16USC3709(a), actual current geography/recipient eligibility, whole current law or Infrastructure membership. The case remains pending with existing flags and70unchanged meanings/compiledgraph; one retained object is newly linked without acquisition.
+Pending H.R.1048parent now has a complete retained57,840-character HouseEHbody review, superseding only its earlier selected reading extent. All reporting, qualified public privacy/unredacted sharing, contract waivers, covered faculty/investment reporting, enforcement, technical database, participation and GAO provisions are mapped. Distinct thresholds/timing/court predicates and printed references remain explicit. No full floor/version, external-definition/current-law/formula-conformance or whole Infrastructure meaning is certified; the case remains pending with binding unresolved, all source bytes and other claims preserved.
 
-[Readable batch120 findings](infrastructure_candidate_batch120.md).
+[Readable batch121 findings](infrastructure_candidate_batch121.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch120_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -58,21 +58,25 @@ Independent records continue around these holds.
 **Current source/conservation/generated replay, seven semantic checks and three
 focused regressions pass**. The full 151-test suite passed at exact
 `3be714268666858130bb62d1f171af6a19362c4a`; all 70 meanings and the compiled graph
-remain unchanged. A full 163-test suite was not run. Current shared authoring/generated copies remain member-neutral.
+remain unchanged. A full 164-test suite was not run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took6.902seconds; the specification/authoring elapsed window and later byte/delivery
+took8.36seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch120_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch120_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch120_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch120_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Pending2:297nowlinks nameddatedurban definition; alternative5000/50000Census/boundary branches and Maine/NHexceptionkept scoped.3709/EDGE/actualgeography/currentlaw/wholemembership remainpending;70unacceptedmeanings/262pending/6holds/0ordinary unchanged.
+Complete1048EHbody nowread; selectedpartial/olddefinition scope preservedhistorically. Reporting/publicprivacy/unredactedsharing, waivers, faculty/investment thresholds, civil-compulsion/sanction and timing bases remain distinct. Floor/externalreferences/formulaconformance/currentlaw/wholemembership pending;70unacceptedmeanings/262pending/6holds/0ordinary unchanged.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
+
+[Complete retained H.R. 1048 body review](../editorial/shared_candidates/house_119_infrastructure_batch121_20260916/hr1048_complete_retained_body_receipt.json) maps all 13 contiguous body/attestation units without changing any claim passage, source, disposition or evidence flag. [Pending parent record and original EH object](infrastructure_batch121_1048_full_body/manifest.json) carry exact parent/source pointers and UTF8-LF lengths/hashes: 84,366 and 58,227 bytes. The previously stored full passage now has a complete-reading locator. Old batch113 definition-only scope remains explicitly historical; rejected child amendments are not imported. Floor/version, external definitions/current law, printed1286(c)(9)(A) versus selectedRCP1286(c)(8)(A), repeat-fine wording and whole Infrastructure membership remain pending.
+
+[Scoped117–119 independent-review attribution](infrastructure_batch117_119_scoped_review_attribution.json) records the coordinator-reported closure through `ed49ca8c028d24cf2403486ac640ffa21f2d8818`: no new material defect and establishment-only4776precision independently closed against original preimage/source bindings. This supersedes the earlier open-review status only for117–119. It does not accept meanings or clear pending/version/current-law gates, transfer the inherited full151test scope, certify hostedCI, or cover120/121.
 
 [Pending grant record and original urban-definition object](infrastructure_batch120_urban_definition/manifest.json) preserve current-parent/original-source pointers, canonical/raw/governed/full-capture/transport hashes, original extraction extents and actualUTF8/LFlengths. The29,299-byte pending record and1,940-byte original object do not certify full101/currentCensus/EDGE/actualrecipients or membership. The newly linked named definition is separated from the remaining3709/EDGE/program-law gaps in the current rationale, with the complete previous preimage preserved.
 
@@ -80,7 +84,7 @@ No editorial acceptance, publication/registry change, production write, merge or
 
 [Two current pending records and two original wildlife units](infrastructure_batch118_wildlife_and_precision/manifest.json) preserve source/current-parent pointers, canonical/raw/governed/transport hashes and actual UTF8/LF lengths. Four files total89,498bytes, maximum59,649bytes; the exact4776source reuses its historical transport. [Establishment-only correction/preimage](../editorial/shared_candidates/house_119_infrastructure_batch118_20260916/hr4776_establishment_challenge_precision_receipt.json) changes only the current shorthand; historical116receipt/record/sourcebytes remain unchanged and application-specific challenge outcomes are not decided.
 
-[Latest scoped115/116review attribution](infrastructure_batch115_116_scoped_review_attribution.json) reports115source review passes, HEAoriginal-provenance gap closed, and116full-body source authenticates with no other material full-body defect besides the routed shorthand precision. This current118correction is not independently cleared by that report; no acceptance or new exact-head CI claim.
+[Earlier scoped115/116review attribution](infrastructure_batch115_116_scoped_review_attribution.json) reports115source review passes, HEAoriginal-provenance gap closed, and116full-body source authenticates with no other material full-body defect besides the routed shorthand precision. That report did not independently clear the118correction; the later117–119closure above records its independent closure. No acceptance or new exact-head CI claim.
 
 [Pending repeal record and dated underlying-program source](infrastructure_batch117_senate_data_context/manifest.json) preserve the current staged-parent pointer and exact retained-source origin, canonical/raw/governed/transport hashes and actual UTF8/LF lengths. The23,134-byte record and5,295-byte original object add no source capture, immediate-pre213conformed-law/repeal-effect or membership clearance.
 

@@ -823,4 +823,22 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
         with self.assertRaisesRegex(ValueError,'changed prior evidence flags or bounded claim'):validate_urban_definition_context(bad,u,s,r)
 
+    def test_1048_complete_body_preserves_thresholds_privacy_waiver_court_and_timing_limits(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_1048_complete_retained_body
+        p=folder(121);r=read(p/'hr1048_complete_retained_body_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_1048_complete_retained_body(a,u,s,r);self.assertTrue(validate(121)['generated_replay'])
+        for field in ['whole_floor_version_equivalence_certified','external_definitions_resolved','printed_reference_formula_conformance_resolved','current_law_certified','new_meaning_authored','membership_accepted','rejected_children_imported']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared floor/external/current-law/meaning gates'):validate_1048_complete_retained_body(a,u,s,bad)
+        bad=copy.deepcopy(r);bad['topics'].pop(4)
+        with self.assertRaisesRegex(ValueError,'omitted a body section'):validate_1048_complete_retained_body(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][0]['passage']=bad['claim_source_map'][0]['passage'][:3000]
+        with self.assertRaisesRegex(ValueError,'changed source/claim passages/evidence flags'):validate_1048_complete_retained_body(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['reference_and_formula_witnesses'][1]['quote']='1286(c)(9)(A)'
+        with self.assertRaisesRegex(ValueError,'silently repaired'):validate_1048_complete_retained_body(a,u,s,bad)
+        for old,new in [('50,000dollars or more','every gift'),('natural-person name/address protections','all identities public'),('UNREDACTED interagency','only redacted interagency'),('60dayPRE-CONTRACT-or-RENEWAL','60days after waiver request'),('SOONER of one-year-after-enactment or contract end','one year after issuance'),('ANY of the previousfivecalendar years OR titleVIfunding','all faculty everywhere'),('NONPUBLIC AND','public OR'),('REPORTING, not a standalone command to DIVEST','mandatory divestment'),('court-COMPELLED compliance before','alleged errors alone before'),('not automatic fines','automatic fines'),('AND the specified waiver-ineligibility','OR three alleged reporting errors'),('THREE YEARS OF STUDY INITIATION','three years after enactment')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'boundary lost'):validate_1048_complete_retained_body(aa,uu,s,bad)
+        bad=copy.deepcopy(r);bad['historical_baseline_paragraph']='Old definitions now govern proposed117A-D.'
+        with self.assertRaisesRegex(ValueError,'old-definition baseline history'):validate_1048_complete_retained_body(a,u,s,bad)
+
 if __name__=='__main__':unittest.main()
