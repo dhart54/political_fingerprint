@@ -898,4 +898,20 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['appended_claims'][1]['passage']=bad['appended_claims'][1]['passage'][:3000]
         with self.assertRaisesRegex(ValueError,'exceeded operative section scope'):validate_4922_record_access_context(a,u,s,bad)
 
+    def test_hr4922_definitions_keep_offense_lists_allegation_child_exceptions_and_age_at_act_distinct(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4922_definition_context
+        p=folder(125);r=read(p/'hr4922_dated_definition_jurisdiction_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s={x['source_id']:x for x in read(p/'sources.json')['sources']};validate_4922_definition_context(a,u,s,r);self.assertTrue(validate(125)['generated_replay'])
+        for field in ['later_November_unit_substituted','allegation_is_conviction','child_equals_website_juvenile','statistical_population_resolved','all_privacy_interactions_resolved','actual_record_or_person_classified','printed_reference_repaired','current_law_certified','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared later-version/guilt/population/privacy/current-law/meaning gates'):validate_4922_definition_context(a,u,s,bad)
+        for old,new in [('ACT OF CONGRESS','any law anywhere'),('EXCLUDES the specified military tribunals','includes all military tribunals'),('MISDEMEANOR','felony-only'),('ATTEMPT, SOLICITATION OR CONSPIRACY','completed offenses only'),('DANGEROUS CRIME is not synonymous','DANGEROUS CRIME is interchangeable'),('ALLEGED to be delinquent, NEGLECTED, or IN NEED OF SUPERVISION','convicted of a crime'),('UNDER18 WITH specified16-or-older exclusions','all persons under18'),('UNDER21 extension for specified earlier-age acts','all persons under21'),('TIME THE PERSON COMMITTED A CRIME','time of conviction'),('not replaced by16-2301child','replaced by every FamilyCourt child')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'population boundary lost'):validate_4922_definition_context(aa,uu,s,bad)
+        bad=copy.deepcopy(s);bad['dc-council:code-23-1331-20250916']['text_version']='Later November operative version'
+        with self.assertRaisesRegex(ValueError,'not exact pre-vote unit'):validate_4922_definition_context(a,u,bad,r)
+        bad=copy.deepcopy(r);bad['existing_age_basis_witness']['quote']='at conviction'
+        with self.assertRaisesRegex(ValueError,'age-at-act source witness differs'):validate_4922_definition_context(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map']=bad['claim_source_map'][1:]
+        with self.assertRaisesRegex(ValueError,'changed prior claims/evidence flags'):validate_4922_definition_context(bad,u,s,r)
+
 if __name__=='__main__':unittest.main()
