@@ -13,13 +13,19 @@ from app.editorial_presentations import bounded_choice_publication as p
 from test_health_bounded_choice import load
 
 
-def registered_fixture(tmp_path: Path, monkeypatch):
+def registered_inputs(tmp_path: Path, monkeypatch, *, directory: Path | None = None):
     authority = r.owner_authority
     monkeypatch.setattr(authority, "TRUST_ROOT", tmp_path)
     entries, inputs = [], {}
     for member in r.MEMBERS:
         subject, presentation, rendering, receipt = [
             load(member, suffix)
+            if directory is None
+            else json.loads(
+                (directory / f"{member.lower()}-{suffix}.json").read_text(
+                    encoding="utf-8"
+                )
+            )
             for suffix in ["semantic", "presentation", "rendering", "pending-receipt"]
         ]
         decision_id = "TEST_ONLY_ephemeral_owner_evidence_" + member
@@ -73,4 +79,11 @@ def registered_fixture(tmp_path: Path, monkeypatch):
         ),
         encoding="utf-8",
     )
-    return {member: p.candidate(*values) for member, values in inputs.items()}
+    return inputs
+
+
+def registered_fixture(tmp_path: Path, monkeypatch):
+    return {
+        member: p.candidate(*values)
+        for member, values in registered_inputs(tmp_path, monkeypatch).items()
+    }

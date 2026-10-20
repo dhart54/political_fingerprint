@@ -294,7 +294,43 @@ All four current normal-page captures were visually inspected and are unobscured
 Real receipts and registry remain pending/empty; owned TEST ONLY database rows
 are rehearsal evidence and convey no authorization. Production effects: none.
 
-Current shared pair subject: `6a1f9c3d592eac80caec02a7914777b115c7d332fc238ecd7a6d3d51b47335ab`.
+Previous shared pair subject (superseded below): `6a1f9c3d592eac80caec02a7914777b115c7d332fc238ecd7a6d3d51b47335ab`.
 F000477 rendering subject: `5682cb7c2e8359a88aaa32fa2836b68b8cee53470dcc9d2c9d58e48a9ccc712e`.
 M001184 rendering subject: `cb9cc57d2bc530b9cecf0a23f08c3bc8e47f5dd2ea3dbd150434bf20a884cdac`.
 The only Supabase advisor finding remains the unchanged legacy immutability-function mutable search-path warning. Full audit erasure remains excluded.
+
+## Outer member identity admission correction
+
+Retesting a0e25ff5 reproduced duplicate and swapped valid inner bundles under
+incorrect outer member keys after consistent resealing. This is blocking Python
+admission/acceptance work within the milestone; SQL's existing member-specific
+semantic/presentation pins already rejected persistence and remain unchanged.
+
+Bind all four bundle identities to the outer member before nested validation;
+bind pending preparation to its subject, presentation and receipt identities.
+Seven focused regressions cover both duplicate directions, swapping, three split
+nested identities and preparation substitution. Duplicate/swap tests exercise
+default pair/receipt/candidate gates using genuine temporary TEST ONLY registered
+evidence, with no verifier mock or synthetic authority flag. Preserve the normal
+two-member registered SQL apply/select/rollback path and all existing SQL pins.
+
+Scope remains admission validation and regenerated runtime seals. Frozen sources,
+semantics, accounting, presentation and all four PNG bytes are unchanged. The
+normal pages were recaptured; only runtime-bound rendering/pair/receipt/preparation
+seals change. No actual owner acceptance, registration, production operation,
+deployment, merge or ready transition is authorized by this correction.
+
+Current shared pair subject: `eba0d9856c124fca6ba231f1e5bf88d21a2045cf5ff92ef9f079ec946f0e500a`.
+F000477 rendering subject: `2e5284a80c249c916a7ef7a7396e360027ce9e5f229dbc6e5f1a6dd1fb96937c`.
+M001184 rendering subject: `fde3758b346d7757d75f286b976b9fb96f86e66a7e156bbe846902446bcdf489`.
+Definition of done: targeted and release-subset regressions pass, ordinary SQL
+path remains valid, committed runtime bytes match both manifests, exact-head
+hosted checks pass, independent review closes this finding, and PR239 stays draft.
+Exact successor evidence belongs on PR239; earlier readiness claims are historical.
+
+Local correction validation: all 225 backend release-subset tests, 369 frontend
+units, 19 development browser checks and seven new identity regressions pass.
+Changed-file lint/format and builder `--check` pass. The ordinary registered SQL
+path, exact reverse rollback, retained immutable audit state and reapplication
+remain valid. An initial sandbox-only pytest temp-directory access failure was
+resolved by running with normal local access; no product failure was suppressed.

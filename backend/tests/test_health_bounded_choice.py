@@ -544,3 +544,133 @@ def test_preparation_separately_accounts_for_exact_owner_registration():
             "exactly one owner-evidence" in requirement
             for requirement in preparation["future_requirements"]
         )
+
+
+@pytest.mark.parametrize(
+    "assignment",
+    [
+        {"F000477": "F000477", "M001184": "F000477"},
+        {"F000477": "M001184", "M001184": "M001184"},
+        {"F000477": "M001184", "M001184": "F000477"},
+    ],
+    ids=["duplicate_foushee", "duplicate_massie", "swapped"],
+)
+def test_resealed_duplicate_or_swapped_pair_rejects_default_admission(
+    tmp_path, monkeypatch, assignment
+):
+    import shutil
+    from app.editorial_presentations import bounded_choice_pair as pair
+    from health_choice_registered_fixture import registered_inputs
+
+    isolated = tmp_path / "pair"
+    shutil.copytree(DIRECTORY, isolated / pair.DIRECTORY)
+    for path in r.RENDER_FILES:
+        target = isolated / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(r.ROOT / path, target)
+    monkeypatch.setattr(pair, "PAIR_ROOT", isolated)
+    directory = isolated / pair.DIRECTORY
+    bundles = {
+        outer: {
+            suffix: load(inner, suffix)
+            for suffix in ["semantic", "accounting", "presentation", "rendering"]
+        }
+        for outer, inner in assignment.items()
+    }
+    # Every substituted bundle is independently valid. Only its outer identity
+    # is false; resealing must never turn those duplicate identities into a pair.
+    for bundle in bundles.values():
+        r.validate_semantic_subject(bundle["semantic"])
+        r.validate_presentation(bundle["presentation"], bundle["semantic"])
+        r.validate_rendering(bundle["rendering"], bundle["presentation"], root=isolated)
+    forged = r.seal(
+        {
+            "schema_version": "bounded_choice_pair_subject_v1",
+            "authorizing": False,
+            "members": {
+                outer: {
+                    "semantic_subject_sha256": b["semantic"]["semantic_subject_sha256"],
+                    "accounting_sha256": p.canonical_digest(b["accounting"]),
+                    "presentation_subject_sha256": b["presentation"][
+                        "presentation_subject_sha256"
+                    ],
+                    "rendering_subject_sha256": b["rendering"][
+                        "rendering_subject_sha256"
+                    ],
+                }
+                for outer, b in bundles.items()
+            },
+        },
+        "pair_subject_sha256",
+    )
+    (directory / "pair-subject.json").write_text(json.dumps(forged), encoding="utf-8")
+    for outer, b in bundles.items():
+        for suffix, document in b.items():
+            (directory / f"{outer.lower()}-{suffix}.json").write_text(
+                json.dumps(document), encoding="utf-8"
+            )
+        receipt = r.pending_receipt(
+            b["semantic"],
+            b["presentation"],
+            b["rendering"]["rendering_subject_sha256"],
+            forged["pair_subject_sha256"],
+        )
+        preparation = load(assignment[outer], "initial-publication-preparation")
+        preparation.update(
+            member_id=outer,
+            pair_subject_sha256=forged["pair_subject_sha256"],
+            pending_receipt_subject_sha256=receipt["receipt_subject_sha256"],
+        )
+        (directory / f"{outer.lower()}-pending-receipt.json").write_text(
+            json.dumps(receipt), encoding="utf-8"
+        )
+        (
+            directory / f"{outer.lower()}-initial-publication-preparation.json"
+        ).write_text(json.dumps(preparation), encoding="utf-8")
+    # Real verifier, isolated TEST ONLY registered evidence; no test authority
+    # flag or verifier mock. The forged pair itself is the admission failure.
+    inputs = registered_inputs(tmp_path / "trust", monkeypatch, directory=directory)
+    subject, presentation, rendering, receipt = next(iter(inputs.values()))
+    r.owner_authority.require_trusted_decision(receipt)
+    for action in [
+        lambda: pair.build_pair_subject(bundles),
+        lambda: pair.validate_pair_subject(),
+        lambda: r.validate_receipt(
+            receipt, subject=subject, presentation=presentation, rendering=rendering
+        ),
+        lambda: p.candidate(subject, presentation, rendering, receipt),
+    ]:
+        with pytest.raises(ValueError, match="member identity"):
+            action()
+
+
+@pytest.mark.parametrize("part", ["accounting", "presentation", "rendering"])
+def test_pair_rejects_split_member_identity_before_nested_validation(part):
+    from app.editorial_presentations import bounded_choice_pair as pair
+
+    bundles = {
+        member: {
+            suffix: load(member, suffix)
+            for suffix in ["semantic", "accounting", "presentation", "rendering"]
+        }
+        for member in r.MEMBERS
+    }
+    target = bundles["F000477"][part]
+    if part == "accounting":
+        target = target["subject"]
+    target["member_id"] = "M001184"
+    with pytest.raises(ValueError, match="member identity"):
+        pair.build_pair_subject(bundles)
+
+
+def test_pending_preparation_rejects_outer_member_substitution():
+    from app.editorial_presentations import bounded_choice_pair as pair
+
+    subject, presentation, receipt = [
+        load("F000477", suffix)
+        for suffix in ["semantic", "presentation", "pending-receipt"]
+    ]
+    with pytest.raises(ValueError, match="member identity"):
+        pair.pending_preparation(
+            "M001184", subject, presentation, receipt, receipt["pair_subject_sha256"]
+        )

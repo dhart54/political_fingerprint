@@ -183,7 +183,40 @@ All four current normal-page captures were visually inspected and are unobscured
 Real receipts and registry remain pending/empty; owned TEST ONLY database rows
 are rehearsal evidence and convey no authorization. Production effects: none.
 
-Current shared pair subject: `6a1f9c3d592eac80caec02a7914777b115c7d332fc238ecd7a6d3d51b47335ab`.
+Previous shared pair subject (superseded below): `6a1f9c3d592eac80caec02a7914777b115c7d332fc238ecd7a6d3d51b47335ab`.
 F000477 rendering subject: `5682cb7c2e8359a88aaa32fa2836b68b8cee53470dcc9d2c9d58e48a9ccc712e`.
 M001184 rendering subject: `cb9cc57d2bc530b9cecf0a23f08c3bc8e47f5dd2ea3dbd150434bf20a884cdac`.
 The only Supabase advisor finding remains the unchanged legacy immutability-function mutable search-path warning. Full audit erasure remains excluded.
+
+## Outer member identity correction
+
+Independent retesting of a0e25ff5 reproduced a Python admission defect: a valid
+inner bundle could be duplicated or swapped under the other outer member key,
+then consistently resealed. The existing SQL semantic/presentation pins rejected
+that pair; this finding did not demonstrate a persistence or serving bypass.
+
+Pair construction now requires each outer key to equal the semantic, accounting,
+presentation and rendering member identities before nested validation. Pending
+preparation also binds its outer member to subject, presentation and receipt.
+Regressions cover both duplicate directions and swapped bundles through the
+default pair, receipt and candidate gates with actual TEST ONLY registered
+evidence, plus split nested identities and preparation substitution. The verifier
+is not mocked and no synthetic authority flag is used in these regressions.
+
+Semantic, accounting and presentation subjects, frozen source content and SQL
+pins are unchanged. All four fresh normal-page captures are byte-identical to
+the prior unobscured captures; their rendering subjects now bind the corrected
+Python runtime. Actual owner decisions remain pending and the registry empty.
+
+Current shared pair subject: `eba0d9856c124fca6ba231f1e5bf88d21a2045cf5ff92ef9f079ec946f0e500a`.
+F000477 rendering subject: `2e5284a80c249c916a7ef7a7396e360027ce9e5f229dbc6e5f1a6dd1fb96937c`.
+M001184 rendering subject: `fde3758b346d7757d75f286b976b9fb96f86e66a7e156bbe846902446bcdf489`.
+Successor validation and independent review are recorded on draft PR239 by exact
+commit. Earlier green checks/clean reviews do not close this admission finding.
+
+Correction validation: 225 backend release-subset tests passed, including the
+ordinary registered two-member SQL path and retained-audit rollback/reapplication;
+369 frontend units and 19 development browser checks passed. All seven new
+identity regressions pass, changed-file lint/format and builder `--check` pass.
+The initial sandbox test attempt could not access Windows' pytest temporary
+directory; rerunning with normal local access resolved that tooling limitation.

@@ -9,6 +9,13 @@ DIRECTORY = "docs/editorial/review_packages/health_bounded_choice_v1"
 
 
 def pending_preparation(member, subject, presentation, receipt, pair_sha256):
+    review.require(
+        member in review.MEMBERS
+        and subject["member_id"] == member
+        and presentation["member_id"] == member
+        and receipt["member_id"] == member,
+        "bounded preparation member identity differs",
+    )
     result = {
         "schema_version": "bounded_choice_initial_publication_preparation_v1",
         "member_id": member,
@@ -68,6 +75,13 @@ def build_pair_subject(bundles):
     )
     members = {}
     for member, b in bundles.items():
+        review.require(
+            b["semantic"]["member_id"] == member
+            and b["accounting"]["subject"]["member_id"] == member
+            and b["presentation"]["member_id"] == member
+            and b["rendering"]["member_id"] == member,
+            "bounded bundle member identity differs",
+        )
         review.validate_semantic_subject(b["semantic"])
         review.validate_presentation(b["presentation"], b["semantic"])
         review.validate_rendering(b["rendering"], b["presentation"], root=PAIR_ROOT)
