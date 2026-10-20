@@ -71,7 +71,11 @@ def activation(conn, member="F000477"):
         "decision_recorded_at_utc": "2026-10-19T00:00:00Z",
     }
     writes = p.build_write_set(
-        value, preparation=preparation, runtime=runtime, baseline=baseline
+        value,
+        preparation=preparation,
+        runtime=runtime,
+        baseline=baseline,
+        allow_test_authority=True,
     )
     subject = {
         "decision": "approve_exact_publication_activation_v2",
@@ -124,7 +128,13 @@ def activation(conn, member="F000477"):
         },
         "runtime_health_proof_subject_sha256",
     )
-    return dict(value=value, write_set=writes, authority=authority, runtime_proof=proof)
+    return dict(
+        value=value,
+        write_set=writes,
+        authority=authority,
+        runtime_proof=proof,
+        allow_test_authority=True,
+    )
 
 
 def seed_legacy_gold(conn):
@@ -201,7 +211,7 @@ def test_initial_two_member_apply_selector_replay_and_exact_reverse_rollback(db)
     stale_second = activation(db, "M001184")
     result1 = p.apply_initial(db, **first)
     assert (
-        len(EditorialArtifactRepository(db).bounded_choice_publication_selector()) == 1
+        len(EditorialArtifactRepository(db).bounded_choice_publication_selector()) == 0
     )
     with pytest.raises(ValueError):
         p.apply_initial(db, **first)  # exact replay writes nothing
@@ -210,16 +220,18 @@ def test_initial_two_member_apply_selector_replay_and_exact_reverse_rollback(db)
     second = activation(db, "M001184")
     result2 = p.apply_initial(db, **second)
     rows = EditorialArtifactRepository(db).bounded_choice_publication_selector()
-    assert len(rows) == 2
-    for row in rows:
-        assert p.select_bounded_publication(
-            row, member_id=row["member_bioguide_id"], scope="119"
-        )
+    # Explicit synthetic graph exercises mutation/rollback, never public serving.
+    assert rows == []
+    assert (
+        db.execute(
+            "SELECT count(*) AS n FROM editorial_publication_registry WHERE issue_id='HEALTH_SOCIAL'"
+        ).fetchone()["n"]
+        == 2
+    )
+    with db.transaction():
+        db.execute("SET LOCAL app.bounded_choice_synthetic_test = 'on'")
         assert (
-            p.select_bounded_publication(
-                row, member_id=row["member_bioguide_id"], scope="118"
-            )
-            is None
+            EditorialArtifactRepository(db).bounded_choice_publication_selector() == []
         )
     assert EditorialArtifactRepository(db).publication_selector() == legacy_before
     with pytest.raises(ValueError):
@@ -302,7 +314,7 @@ def test_partial_member_failure_preserves_first_then_retries_second(db):
     with pytest.raises(RuntimeError):
         p.apply_initial(db, **second, fault_after="registry")
     assert (
-        len(EditorialArtifactRepository(db).bounded_choice_publication_selector()) == 1
+        len(EditorialArtifactRepository(db).bounded_choice_publication_selector()) == 0
     )
     result2 = p.apply_initial(db, **second)
     p.rollback_initial(
@@ -417,6 +429,106 @@ def test_database_rejects_pending_even_when_writer_forges_eligibility(db):
         )
 
 
+def test_synthetic_authority_requires_explicit_owned_test_context_and_never_serves(db):
+    args = activation(db)
+    before = p.observe_baseline(db, args["value"])
+    ordinary = {k: v for k, v in args.items() if k != "allow_test_authority"}
+    with pytest.raises(ValueError, match="owner decision"):
+        p.apply_initial(db, **ordinary)
+    assert p.observe_baseline(db, args["value"]) == before
+    for evidence in [
+        None,
+        {},
+        {
+            "kind": "owner_decision",
+            "decision_id": "invented",
+            "decision_sha256": "a" * 64,
+        },
+    ]:
+        forged = copy.deepcopy(args["value"])
+        forged["acceptance"].update(
+            authority_evidence=evidence, reviewer="Plausible owner"
+        )
+        forged["acceptance"] = r.seal(forged["acceptance"], "receipt_subject_sha256")
+        for flag in ["on", "off"]:
+            with db.transaction():
+                db.execute(
+                    "SELECT set_config('app.bounded_choice_synthetic_test',%s,TRUE)",
+                    (flag,),
+                )
+                assert (
+                    db.execute(
+                        "SELECT bounded_choice_receipt_matches(%s,'F000477') AS valid",
+                        (psycopg.types.json.Jsonb(forged),),
+                    ).fetchone()["valid"]
+                    is False
+                )
+    # The owned context is necessary even for otherwise-valid synthetic content.
+    value = args["value"]
+    assert (
+        db.execute(
+            "SELECT bounded_choice_receipt_matches(%s,'F000477') AS valid",
+            (psycopg.types.json.Jsonb(value),),
+        ).fetchone()["valid"]
+        is False
+    )
+    with db.transaction():
+        db.execute("SET LOCAL app.bounded_choice_synthetic_test = 'on'")
+        assert (
+            db.execute(
+                "SELECT bounded_choice_receipt_matches(%s,'F000477') AS valid",
+                (psycopg.types.json.Jsonb(value),),
+            ).fetchone()["valid"]
+            is True
+        )
+        assert (
+            db.execute(
+                "SELECT bounded_choice_owner_evidence_matches(%s,FALSE) AS valid",
+                (psycopg.types.json.Jsonb(value["acceptance"]),),
+            ).fetchone()["valid"]
+            is False
+        )
+        for part, path, wrong in [
+            (
+                "semantic",
+                ["accounting_review", "frontend_state", "total_recorded_actions"],
+                True,
+            ),
+            ("presentation", ["congress"], 119.0),
+        ]:
+            mutated = copy.deepcopy(value)
+            node = mutated[part]
+            for key in path[:-1]:
+                node = node[key]
+            node[path[-1]] = wrong
+            assert (
+                db.execute(
+                    "SELECT bounded_choice_receipt_matches(%s,'F000477') AS valid",
+                    (psycopg.types.json.Jsonb(mutated),),
+                ).fetchone()["valid"]
+                is False
+            )
+    assert (
+        db.execute(
+            "SELECT count(*) AS n FROM editorial_bounded_choice_owner_decisions"
+        ).fetchone()["n"]
+        == 0
+    )
+    assert p.observe_baseline(db, value) == before
+
+
+def test_synthetic_connection_guard_uses_actual_connection_identity():
+    from types import SimpleNamespace
+
+    for host, name in [
+        ("production.example", "pf_health_choice_test"),
+        ("127.0.0.1", "postgres"),
+    ]:
+        conn = SimpleNamespace(info=SimpleNamespace(host=host, dbname=name))
+        with pytest.raises(ValueError, match="owned loopback"):
+            p.require_owned_test_connection(conn)
+
+
 def test_default_api_is_identical_without_a_bounded_activation(db, monkeypatch):
     from app.api import editorial_presentations as api
     from app.editorial_presentations.selector import select_public_presentations
@@ -453,3 +565,38 @@ def test_staged_migration_does_not_require_new_grants_for_legacy_reader(db):
         repo = EditorialArtifactRepository(db)
         assert repo.publication_selector() == legacy
         assert repo.bounded_choice_publication_selector() == []
+
+
+@pytest.mark.parametrize("missing", ["owner_table", "owner_function"])
+def test_partial_bounded_reader_preserves_legacy_when_new_dependency_is_missing(
+    db, missing
+):
+    legacy = seed_legacy_gold(db)
+    role = "health_partial_reader_test"
+    db.execute(
+        f"DO $$ BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname='{role}') THEN CREATE ROLE {role} NOLOGIN BYPASSRLS; END IF; END $$"
+    )
+    db.execute(f"GRANT USAGE ON SCHEMA public TO {role}")
+    for table in list(p.TABLES.values()) + ["editorial_bounded_choice_publications"]:
+        db.execute(f"GRANT SELECT ON public.{table} TO {role}")
+    for function in [
+        "bounded_choice_graph_valid(bigint)",
+        "bounded_choice_receipt_matches(jsonb,text)",
+        "bounded_choice_digest(jsonb)",
+        "bounded_choice_canonical_json(jsonb)",
+        "bounded_choice_owner_evidence_matches(jsonb,boolean)",
+    ]:
+        db.execute(f"GRANT EXECUTE ON FUNCTION public.{function} TO {role}")
+    if missing == "owner_table":
+        db.execute(
+            f"REVOKE SELECT ON public.editorial_bounded_choice_owner_decisions FROM {role}"
+        )
+    else:
+        db.execute(
+            f"REVOKE EXECUTE ON FUNCTION public.bounded_choice_owner_evidence_matches(jsonb,boolean) FROM {role}"
+        )
+    with db.transaction():
+        db.execute(f"SET LOCAL ROLE {role}")
+        repository = EditorialArtifactRepository(db)
+        assert repository.bounded_choice_publication_selector() == []
+        assert repository.publication_selector() == legacy

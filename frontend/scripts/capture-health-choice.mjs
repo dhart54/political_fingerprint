@@ -4,6 +4,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { chromium } from "@playwright/test";
+import { installHealthRoutes } from "../tests/health-choice-routes.mjs";
 
 const root = path.resolve(process.cwd(), "..");
 const directory = path.join(root, "docs/editorial/review_packages/health_bounded_choice_v1");
@@ -22,10 +23,14 @@ try {
       const page = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: 1 });
       const errors = [];
       page.on("pageerror", (error) => errors.push(error.message));
-      const response = await page.goto(`http://127.0.0.1:3100/review/health-choice?member=${member}`);
+      const profile = await installHealthRoutes(page, member);
+      const requested_scope = viewport === "desktop" ? "119" : "all";
+      const representative_path = `/?representative=${profile.id}&issue=HEALTH_SOCIAL&scope=${requested_scope}`;
+      const response = await page.goto(`http://127.0.0.1:3100${representative_path}`);
       if (response.status() !== 200) throw new Error(`preview status ${response.status()}`);
       await page.evaluate(() => document.fonts.ready);
       const card = page.getByTestId("bounded-choice-review");
+      await card.waitFor({state:"visible"});
       if (await card.getAttribute("data-presentation-sha256") !== presentation.presentation_subject_sha256) throw new Error("preview identity differs");
       await page.getByTestId("choice-receipts").locator("summary").click();
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
@@ -35,7 +40,7 @@ try {
       }
       const file = `docs/editorial/review_packages/health_bounded_choice_v1/previews/${member.toLowerCase()}-${viewport}.png`;
       const raw = await page.screenshot({ path: path.join(root, file), fullPage: true, animations: "disabled" });
-      captures.push({ viewport, width, height, path: file, sha256: digest(raw), visible_text_sha256: digest(await card.innerText()), presentation_subject_sha256: presentation.presentation_subject_sha256, page_errors: errors });
+      captures.push({ viewport, width, height, requested_scope, representative_path, path: file, sha256: digest(raw), visible_text_sha256: digest(await card.innerText()), presentation_subject_sha256: presentation.presentation_subject_sha256, page_errors: errors });
       if (errors.length) throw new Error(errors.join("\n"));
       await page.close();
     }

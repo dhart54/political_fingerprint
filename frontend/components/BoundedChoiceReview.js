@@ -17,7 +17,7 @@ export default function BoundedChoiceReview({ presentation }) {
         <span className="rounded-full bg-teal-50 px-3 py-1 font-semibold text-teal-950">
           {presentation.official_member_action}
         </span>
-        <span className="text-stone-600">House · May 20, 2026 · S.2393</span>
+        <span className="text-stone-600">119th Congress · House · May 20, 2026 · S.2393</span>
       </div>
       <p className="mt-5 max-w-3xl text-sm leading-6 text-stone-600" data-testid="choice-scope">
         {records.scope_label.text}

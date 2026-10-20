@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import copy
+from unittest.mock import patch
 
 import pytest
 
@@ -31,9 +33,12 @@ def synthetic_candidate(member="F000477"):
         reviewer="SYNTHETIC TEST ONLY",
         reviewer_authority="bounded_choice_review_authority_v1",
         decided_at_utc="2026-10-19T00:00:00Z",
+        authority_evidence=r.owner_authority.TEST_EVIDENCE,
     )
     receipt = r.seal(receipt, "receipt_subject_sha256")
-    return p.candidate(subject, presentation, rendering, receipt)
+    return p.candidate(
+        subject, presentation, rendering, receipt, allow_test_authority=True
+    )
 
 
 @pytest.mark.parametrize("member", r.MEMBERS)
@@ -161,11 +166,19 @@ def public_row(value):
 
 @pytest.mark.parametrize("member", r.MEMBERS)
 def test_closed_selector_only_exposes_bounded_card_after_exact_acceptance(member):
+    from unittest.mock import patch
+
     value = synthetic_candidate(member)
     row = public_row(value)
-    selected = select_public_presentations(
-        [row], legislator_id="test", member_bioguide_id=member, scope="119"
-    )
+    assert p.select_bounded_publication(row, member_id=member, scope="119") is None
+    # Simulate the external governed trust seam, never a serving override.
+    with patch.object(r.owner_authority, "require_trusted_decision"):
+        selected = select_public_presentations(
+            [row],
+            legislator_id=r.MEMBERS[member][1],
+            member_bioguide_id=member,
+            scope="119",
+        )
     health = next(x for x in selected["presentations"] if x["issue_id"] == r.ISSUE)
     assert health["presentation_branch"] == "bounded_choice_review"
     assert health["conclusion"] is health["teaser"] is None
@@ -219,3 +232,228 @@ def test_closed_receipt_schema_matches_pending_and_synthetic_positive_subjects()
     for member in r.MEMBERS:
         validator.validate(load(member, "pending-receipt"))
         validator.validate(synthetic_candidate(member)["acceptance"])
+
+
+@pytest.mark.parametrize("member", r.MEMBERS)
+@pytest.mark.parametrize("reseal", [False, True])
+@pytest.mark.parametrize(
+    "part,path,value",
+    [
+        (
+            "semantic",
+            ["accounting_review", "frontend_state", "total_recorded_actions"],
+            True,
+        ),
+        ("semantic", ["congress"], 119.0),
+        ("semantic", ["authorizing"], 0),
+        ("presentation", ["congress"], 119.0),
+        ("presentation", ["authorizing"], 0),
+    ],
+)
+def test_typed_subject_mutations_fail_constructor_and_serving(
+    member, reseal, part, path, value
+):
+    candidate = synthetic_candidate(member)
+    node = candidate[part]
+    for key in path[:-1]:
+        node = node[key]
+    node[path[-1]] = value
+    if reseal:
+        candidate[part] = r.seal(candidate[part], f"{part}_subject_sha256")
+    with pytest.raises(ValueError):
+        p.candidate(
+            candidate["semantic"],
+            candidate["presentation"],
+            candidate["rendering"],
+            candidate["acceptance"],
+            allow_test_authority=True,
+        )
+    with patch.object(r.owner_authority, "require_trusted_decision"):
+        assert (
+            p.select_bounded_publication(
+                public_row(candidate), member_id=member, scope="119"
+            )
+            is None
+        )
+
+
+@pytest.mark.parametrize(
+    "evidence",
+    [
+        None,
+        {},
+        r.owner_authority.TEST_EVIDENCE,
+        {
+            "kind": "owner_decision",
+            "decision_id": "unregistered",
+            "decision_sha256": "a" * 64,
+        },
+    ],
+)
+def test_self_asserted_or_stripped_synthetic_receipt_never_confers_default_authority(
+    evidence,
+):
+    value = synthetic_candidate()
+    value["acceptance"].update(
+        authority_evidence=evidence, reviewer="Plausible owner name"
+    )
+    value["acceptance"] = r.seal(value["acceptance"], "receipt_subject_sha256")
+    with pytest.raises(ValueError, match="owner decision"):
+        p.validate_candidate(value)
+    with pytest.raises(ValueError):
+        p.graph(value)
+    assert (
+        p.select_bounded_publication(
+            public_row(value), member_id="F000477", scope="119"
+        )
+        is None
+    )
+
+
+def test_registered_evidence_pins_bytes_decision_and_exact_full_subject(
+    tmp_path, monkeypatch
+):
+    a = r.owner_authority
+    receipt = synthetic_candidate()["acceptance"]
+    decision = {
+        "schema_version": "bounded_choice_owner_decision_v1",
+        "decision_id": "contract-fixture",
+        "provenance": {
+            "kind": "direct_owner_decision",
+            "source_ref": "test fixture only",
+            "decision_quote": "test fixture only",
+        },
+        **{k: receipt[k] for k in a.DECISION_FIELDS},
+    }
+    raw = (json.dumps(decision) + "\n").encode()
+    path = tmp_path / a.DIRECTORY / "owner_decisions/contract-fixture.json"
+    path.parent.mkdir(parents=True)
+    path.write_bytes(raw)
+    entry = {
+        "decision_id": decision["decision_id"],
+        "path": path.relative_to(tmp_path).as_posix(),
+        "file_sha256": r.hashlib.sha256(raw).hexdigest(),
+        "decision_sha256": p.canonical_digest(decision),
+    }
+    registry = tmp_path / a.DIRECTORY / "owner_decision_registry.json"
+    registry.write_text(
+        json.dumps(
+            {
+                "schema_version": "bounded_choice_owner_decision_registry_v1",
+                "records": [entry],
+            }
+        )
+    )
+    monkeypatch.setattr(r, "ROOT", tmp_path)
+    receipt["authority_evidence"] = {
+        "kind": "owner_decision",
+        "decision_id": entry["decision_id"],
+        "decision_sha256": entry["decision_sha256"],
+    }
+    a.require_trusted_decision(receipt)
+    for key in a.DECISION_FIELDS:
+        wrong = copy.deepcopy(receipt)
+        wrong[key] = "different"
+        with pytest.raises(ValueError):
+            a.require_trusted_decision(wrong)
+    path.write_bytes(raw + b" ")
+    with pytest.raises(ValueError, match="bytes"):
+        a.require_trusted_decision(receipt)
+
+
+def test_source_reconciliation_detects_changed_content_and_preserves_typography():
+    from app.editorial_presentations.bounded_choice_sources import (
+        reconcile_sources,
+        typography,
+    )
+
+    foundation = r.load_foundation()
+    raw = {
+        source: r._filesystem_path(r.ROOT / r.RAW_ROOT / name).read_bytes()
+        for name, source in r.RAW.items()
+    }
+    reconcile_sources(raw, foundation["governed_sources.json"])
+    assert typography("a  ‘quoted’ word .") == typography("a ``quoted'' word.")
+    for old, new in [
+        (b"1,762,668,000", b"1,762,668,001"),
+        (b"clinical building", b"hospital building"),
+    ]:
+        changed = copy.deepcopy(raw)
+        key = "congress-text:119:s:2393:es"
+        assert old in changed[key]
+        changed[key] = changed[key].replace(old, new)
+        with pytest.raises(ValueError, match="bill text"):
+            reconcile_sources(changed, foundation["governed_sources.json"])
+    for section in ["metadata", "member_records", "party_totals"]:
+        governed = copy.deepcopy(foundation["governed_sources.json"])
+        clerk = governed["sources"][0]
+        if section == "metadata":
+            clerk[section]["vote-question"] = "Different"
+        elif section == "member_records":
+            clerk[section]["M001184"]["official_label"] = "Yea"
+        else:
+            clerk[section][0]["yea-total"] = "198"
+        with pytest.raises(ValueError):
+            reconcile_sources(raw, governed)
+
+
+def test_compiler_replay_compares_typed_outputs_not_only_file_pins():
+    foundation = r.load_foundation()
+    for name in [
+        "compiler_input.json",
+        "compiled_ir.json",
+        "presentation_payload.json",
+    ]:
+        changed = copy.deepcopy(foundation)
+        changed[name]["extra_unreviewed_field"] = True
+        with pytest.raises(ValueError, match="replay differs"):
+            r.replay_foundation(changed)
+
+
+def test_real_api_transport_fixture_is_current():
+    from health_choice_transport import transport
+
+    path = r.ROOT / "frontend/tests/fixtures/health-choice-api.json"
+    assert json.loads(path.read_text(encoding="utf-8")) == transport()
+    for member in r.MEMBERS:
+        axes = load(member, "accounting")["axes"]
+        assert (
+            axes["semantic_tier"] == "receipts_only"
+            and axes["public_claim_class"] == "vote_record_only"
+        )
+
+
+def test_actual_backend_working_directory_validates_without_repo_pythonpath():
+    import os
+    import subprocess
+    import sys
+
+    code = """
+import json, copy
+from app.editorial_presentations import bounded_choice_review as r
+directory=r.ROOT/'docs/editorial/review_packages/health_bounded_choice_v1'
+for member in r.MEMBERS:
+    subject=json.loads((directory/f'{member.lower()}-semantic.json').read_text(encoding='utf-8'))
+    presentation=json.loads((directory/f'{member.lower()}-presentation.json').read_text(encoding='utf-8'))
+    r.validate_semantic_subject(subject)
+    r.validate_presentation(presentation,subject)
+    wrong=copy.deepcopy(subject)
+    wrong['accounting_review']['frontend_state']['total_recorded_actions']=True
+    try: r.validate_semantic_subject(r.seal(wrong,'semantic_subject_sha256'))
+    except ValueError: pass
+    else: raise AssertionError('typed mutation accepted')
+r.source_evidence()
+print('backend runtime validation passed')
+"""
+    env = dict(os.environ)
+    env.pop("PYTHONPATH", None)
+    result = subprocess.run(
+        [sys.executable, "-B", "-c", code],
+        cwd=r.ROOT / "backend",
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.strip() == "backend runtime validation passed"

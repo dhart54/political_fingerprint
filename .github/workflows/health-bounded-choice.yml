@@ -52,6 +52,9 @@ jobs:
       - name: Browser dependencies
         working-directory: frontend
         run: npx --no-install playwright install --with-deps chromium
+      - name: Real API transport indexing and existing record-card parity
+        working-directory: frontend
+        run: node --test lib/healthChoicePresentation.test.mjs
       - name: Local-only review at desktop, tablet and mobile
         working-directory: frontend
         run: npx --no-install playwright test tests/health-choice.spec.mjs --workers=1 --retries=0

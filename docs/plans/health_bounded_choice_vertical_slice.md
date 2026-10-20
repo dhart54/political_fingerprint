@@ -196,3 +196,63 @@ the initial exact head, reviewed the test correction and all four previews, and
 checked ephemeral RLS/invoker/search-path properties without database mutations.
 Final hosted and independent-review outcomes belong to the PR's latest head;
 no static plan statement substitutes for those checks.
+
+
+## Independent review corrections (supersede earlier readiness claims)
+
+The earlier all-green/clean-review result did not establish end-to-end readiness.
+A deeper review reproduced broken normal-page API indexing, Python bool/int/float
+subject equality, and self-asserted synthetic authority passing default gates.
+These were blocking findings within this same milestone, corrected together:
+
+- Explicit strict bounded transport/index branch with requested_scope; legacy
+  validation unchanged. API/selector transport fixtures preserve all eight
+  domains and both member identities across all/119/118 views. Normal-page tests
+  retain Justice and expose truthful bounded discovery, without overall teaser.
+- Actual typed canonical seals plus actual runtime accounting validation. The
+  SQL gate already rehashed incoming subjects; this was a Python binding defect,
+  not a demonstrated SQL hash bypass.
+- Separate fixed empty trusted owner-evidence registry and protected SQL table.
+  Exact evidence bytes/decision/ten-field subject binding is required by default.
+  Self-sealed, stripped or synthetic receipts do not establish authority. Owner
+  evidence registration is a later separately authorized operation, outside the
+  four-artifact writer and outside rendering inputs (avoiding a hash cycle).
+- Explicit synthetic constructors and owned loopback database test execution only;
+  the public SQL view excludes synthetic evidence even with the test flag and
+  the serving selector has no override. Separate positive V2 authority remains.
+- Parsed official XML/JSON reconciliation and deterministic adapter/compiler
+  replay, with changed-content negative tests. All frozen original inputs remain
+  byte/hash-identical. Both new accounting records stay candidate, receipts_only,
+  vote_record_only; the separate display role supplies one supporting F finding
+  and zero M propositions/non-directional accounting.
+- Four normal representative-page captures replace component-only evidence:
+  desktop requests 119; mobile requests all; every card visibly says 119th
+  Congress and retains every mapped qualification and source. Test transport
+  exports no receipts, acceptance records or authority.
+
+No production writes, owner acceptance, promotion, activation, deployment or merge
+were performed. The staged migration and rollback remain future authorized work.
+Correction validation and final independent review must use the successor head;
+prior head results are historical only.
+
+The same authorized independent read-only reviewer found three additional runtime
+edges during correction: repository-root accounting import failed from Render's
+backend cwd; bounded Health entered the legacy record-card source-count contract;
+and a partially granted reader could miss new invoker-view dependencies. All
+three are corrected with deployed-cwd subprocess validation, actual API-fixture
+and existing four-domain/six-entry card parity, and real PostgreSQL partial-grant
+fallback tests. No historical card manifest or accepted wording was changed.
+
+
+Consolidated local validation: 198 backend release-subset tests passed, including
+actual PostgreSQL apply/replay/fault/rollback/security checks, backend-cwd runtime
+validation, and partial-reader preservation. All 369 frontend units passed;
+19 development and 19 production browser checks passed; production build and
+changed-file lint passed. The four refreshed normal-page PNGs are bound by
+rendering subjects F `56af1a84405b800a2b777dd4f0c28db22ffbe0f03b4466ecdfa5467a447ea7a3`
+and M `49edcd8f080058f0f8f137afc0c967df34ed9d43e593d511f0df095bd2f49576`.
+The builder `--check` passes. Supabase advisors report only the documented
+untouched legacy immutability-function search-path warning. Frozen original
+package diff is empty. Hosted checks and independent review must identify the
+successor head on draft PR239. Owner decisions remain null, both trusted stores
+remain empty, and there were no production effects.

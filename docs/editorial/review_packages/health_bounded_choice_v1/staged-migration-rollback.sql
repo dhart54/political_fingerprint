@@ -2,11 +2,17 @@
 -- First roll back bounded data batches in reverse order. Preserve legacy rows.
 BEGIN;
 DO $$ BEGIN
+  IF EXISTS (SELECT FROM public.editorial_bounded_choice_owner_decisions) THEN
+    RAISE EXCEPTION 'preserve registered owner evidence; separate rollback decision required';
+  END IF;
   IF EXISTS (SELECT FROM public.editorial_artifact_versions WHERE publication_basis='bounded_choice_review') THEN
     RAISE EXCEPTION 'roll back all bounded data before schema rollback';
   END IF;
 END $$;
 DROP VIEW public.editorial_bounded_choice_publications;
+DROP FUNCTION public.bounded_choice_owner_evidence_matches(JSONB,BOOLEAN);
+DROP TABLE public.editorial_bounded_choice_owner_decisions;
+DROP FUNCTION public.guard_bounded_choice_owner_evidence();
 DROP TRIGGER editorial_bounded_choice_insert ON public.editorial_artifact_versions;
 CREATE OR REPLACE FUNCTION public.guard_editorial_publication_activation()
 RETURNS TRIGGER

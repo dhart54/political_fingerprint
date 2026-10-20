@@ -1,9 +1,9 @@
 {
   "schema_version": "bounded_choice_rendering_subject_v1",
   "member_id": "F000477",
-  "presentation_subject_sha256": "b5d84225f81c50114420c270ed9f3e5292a8c660aaec2883da45c9f4a615fce3",
+  "presentation_subject_sha256": "9aee7b93d8f11700548f7280dfa22b181157b2ae309502d7d999ea25bef792c1",
   "runtime_manifest": {
-    "frontend/components/BoundedChoiceReview.js": "a92086613d7b852b95e1cb3e5a04dda3c01a83fb3a452b08d338b4de31a7cf58",
+    "frontend/components/BoundedChoiceReview.js": "280a317038dff119f9d06d237e50f01c1e0c96bd7d79837bc26d1989e07f46cb",
     "frontend/components/ReviewedAnalysisSection.js": "650b03ba678223ec7f95c0654a6ab5c6fcbc0cbebd9d2fb0abf2b8bc2486a313",
     "frontend/app/review/health-choice/page.js": "77250835d98e03986bab5019b50f2e25ba5c7b19f313b98d56d1f69d34bfff9a",
     "frontend/app/globals.css": "c5660fc284421fe89b8779afc809862ef69ce8d6d1a67213d415d22f8ff899aa",
@@ -12,38 +12,52 @@
     "frontend/next.config.mjs": "a9d1dea36bcfb6b891521b6a8edb830cc2f14e22d09bb2f90b0a019e2101afc0",
     "frontend/components/IssueDetail.js": "221be171214f4f9e0bbe12f8db13b6a28c40eecacb642fcfdf749848486f1af0",
     "frontend/lib/selectedIssueExperience.mjs": "0d9048ee227b2ddb04b28df21099bf5297a788839535fc23ae502bfb729af061",
-    "backend/app/editorial_presentations/bounded_choice_review.py": "058b3cf4a1865773256dc3e8cd5f655bf9e6db424e752bc20aec7dcf0e44137e",
-    "backend/app/editorial_presentations/bounded_choice_publication.py": "d17170ddf364d6751c11c0a50b250ccefd412919de053464052568cb36c0dce5",
+    "frontend/lib/editorialPresentation.mjs": "269facbe87460378e02dde4d27c761c0044ea8a59180f0d93c2b549696fcabf0",
+    "frontend/lib/boundedChoicePresentation.mjs": "82733e937bf243a2d9361493079fbc5fe35c8b8876176829fa32f7dae834ec00",
+    "frontend/lib/frontendPassA.mjs": "ee0498caa643d21d018f3f380b3b4a953045c34805bfac4fd451149238fc73e8",
+    "frontend/lib/recordCard.mjs": "f27ca93787552f7cc072443ff49165bf3256a21bf30672ad39b467c86b537262",
+    "frontend/components/IssueOverviewGrid.js": "a4f32f2ef28c9be85011a9c617306146fc3389f0ebac321d1489e1656c3218e3",
+    "frontend/components/RepresentativeExperience.js": "9be173d630e47d7eae82040e105293facdae2f35e9ac1c8d5afeb10bcbbc0df2",
+    "backend/app/editorial_presentations/bounded_choice_authority.py": "86971dc61ad410fd505df86d00604e39bc0df63e3aa08df9523a71f77554d329",
+    "backend/app/editorial_presentations/bounded_choice_sources.py": "d071d7b18d92a7a7cc987fca521d6740f0b65251ffd2a712bd7cbcb580de22d6",
+    "backend/app/editorial_presentations/bounded_choice_review.py": "d61e9580635cb512ad2cf453792049b24aef574a116048ebb34e1ae0958ac87b",
+    "backend/app/editorial_presentations/bounded_choice_publication.py": "7c4d4a0a1d0727839b137cd05843bece1a0d513efc667f344f299ababa132201",
     "backend/app/editorial_presentations/selector.py": "5f71aa5366806f27b66ae6d10132a151475d811a4bc6d75679265d6a66e303c6",
     "backend/app/editorial_presentations/compiler.py": "a72b7513c686ffe1b37dc3f7a5bc657e971716e323c0d8ad3d766112c3048377",
     "backend/app/editorial_presentations/publication_activation_governance_v2.py": "e5a5ae28ebd0ce240a708200e9ccf12a01eb425df3aa736c023fc5f0e665637b",
-    "backend/app/editorial_artifacts/repository.py": "ebe60fcef1c9e967906dfede1570707f01c7dd6c5bb9bd51e0527b970b2fb420",
+    "backend/app/editorial_artifacts/repository.py": "aa8752ff10de293fa15c472d76421dc822e58b9932b26c60a361c48de13c1696",
     "backend/app/api/editorial_presentations.py": "91c054714971926906f5b5eed6d008fa70a9bc1a5d1b6652f4c0b3f8ebef2247",
     "backend/app/semantic_ir/validation.py": "456f803480811c0a786d53740efc4fff0f978ce4e9ac81c1e0da260b525d2b94",
+    "scripts/validate_full_record_issue_interpretation.py": "ad054fef230f57998831da69fb327ed22506214ab08ef501354c6a4a38937278",
+    "docs/methodology/full_record_issue_interpretation_v1.schema.json": "fa9864c5b1868c74a7d9ce86ae97c1736e5f8cfd00ceb3d845c5d9a928382fa1",
     "backend/migrations/0016_editorial_artifact_persistence.sql": "bfb654b7fbcb1adc4052e31ca019d9808d8c1c35819c4a687a10cd40974ca163",
-    "backend/migrations/staged/20261019231216_bounded_health_choice_publication.sql": "38520b5aba9d178fc9e72f7b46edae9c5dc6beecdff913b2f947f9bd033a4674"
+    "backend/migrations/staged/20261019231216_bounded_health_choice_publication.sql": "a1ca5832686439100745a6d009d81a0f19886c1613fda229b42e2b4d869b5bb9"
   },
   "captures": [
     {
       "viewport": "desktop",
       "width": 1280,
       "height": 900,
+      "requested_scope": "119",
+      "representative_path": "/?representative=leg_valerie_p_foushee&issue=HEALTH_SOCIAL&scope=119",
       "path": "docs/editorial/review_packages/health_bounded_choice_v1/previews/f000477-desktop.png",
-      "sha256": "1880fbb4dcc67cb4929138e58d6a3466327d35ec0f56f9b0488006ac7f6320ff",
-      "visible_text_sha256": "9acad27ebbf7c964fb7b356f04714e962f946fc02840c9cf8b3369ce249c7e22",
-      "presentation_subject_sha256": "b5d84225f81c50114420c270ed9f3e5292a8c660aaec2883da45c9f4a615fce3",
+      "sha256": "074f5168e098e687bdff0df973ea63283fa7ee92dd88623af208d5dc3fb2e1c1",
+      "visible_text_sha256": "d892fb1f2eb9084f02ddc29e5a4b55fa3dbf97dcbabac467a7774590acb089ed",
+      "presentation_subject_sha256": "9aee7b93d8f11700548f7280dfa22b181157b2ae309502d7d999ea25bef792c1",
       "page_errors": []
     },
     {
       "viewport": "mobile",
       "width": 390,
       "height": 844,
+      "requested_scope": "all",
+      "representative_path": "/?representative=leg_valerie_p_foushee&issue=HEALTH_SOCIAL&scope=all",
       "path": "docs/editorial/review_packages/health_bounded_choice_v1/previews/f000477-mobile.png",
-      "sha256": "4fc883ac8f6077ac4eaeaf4a6ba38f2da15661db9eb5df4add530fb831f320fc",
-      "visible_text_sha256": "9acad27ebbf7c964fb7b356f04714e962f946fc02840c9cf8b3369ce249c7e22",
-      "presentation_subject_sha256": "b5d84225f81c50114420c270ed9f3e5292a8c660aaec2883da45c9f4a615fce3",
+      "sha256": "56a522fb5268384fb55f142da24b6a6001cd28466a209d4e07978c3c9d98dc08",
+      "visible_text_sha256": "d892fb1f2eb9084f02ddc29e5a4b55fa3dbf97dcbabac467a7774590acb089ed",
+      "presentation_subject_sha256": "9aee7b93d8f11700548f7280dfa22b181157b2ae309502d7d999ea25bef792c1",
       "page_errors": []
     }
   ],
-  "rendering_subject_sha256": "e5d30d2a4d4575c72e76cefbbe604f78d963744b586b1693d0e48a3981a57d05"
+  "rendering_subject_sha256": "56af1a84405b800a2b777dd4f0c28db22ffbe0f03b4466ecdfa5467a447ea7a3"
 }

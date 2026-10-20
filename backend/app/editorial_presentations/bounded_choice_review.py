@@ -8,14 +8,17 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import importlib.util
 import json
 import re
 import struct
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
 from .compiler import canonical_digest
+from . import bounded_choice_authority as owner_authority
 from ..semantic_ir.validation import validate_compiled_ir
 from ..etl.full_record_source_readiness import _filesystem_path
 
@@ -66,6 +69,14 @@ RENDER_FILES = (
     "frontend/next.config.mjs",
     "frontend/components/IssueDetail.js",
     "frontend/lib/selectedIssueExperience.mjs",
+    "frontend/lib/editorialPresentation.mjs",
+    "frontend/lib/boundedChoicePresentation.mjs",
+    "frontend/lib/frontendPassA.mjs",
+    "frontend/lib/recordCard.mjs",
+    "frontend/components/IssueOverviewGrid.js",
+    "frontend/components/RepresentativeExperience.js",
+    "backend/app/editorial_presentations/bounded_choice_authority.py",
+    "backend/app/editorial_presentations/bounded_choice_sources.py",
     "backend/app/editorial_presentations/bounded_choice_review.py",
     "backend/app/editorial_presentations/bounded_choice_publication.py",
     "backend/app/editorial_presentations/selector.py",
@@ -74,6 +85,8 @@ RENDER_FILES = (
     "backend/app/editorial_artifacts/repository.py",
     "backend/app/api/editorial_presentations.py",
     "backend/app/semantic_ir/validation.py",
+    "scripts/validate_full_record_issue_interpretation.py",
+    "docs/methodology/full_record_issue_interpretation_v1.schema.json",
     "backend/migrations/0016_editorial_artifact_persistence.sql",
     "backend/migrations/staged/20261019231216_bounded_health_choice_publication.sql",
 )
@@ -126,13 +139,44 @@ def validate_foundation(foundation: dict) -> None:
             "frozen bounded input differs: " + name,
         )
     validate_compiled_ir(foundation["compiled_ir.json"])
+    replay_foundation(foundation)
+
+
+def replay_foundation(foundation: dict) -> None:
+    from ..semantic_ir.shared_corpus import adapt_to_semantic_ir_input
+    from ..semantic_ir.pipeline import run_editorial_pipeline
+
+    compiler_input = adapt_to_semantic_ir_input(
+        ROOT,
+        foundation["shared_action_core.json"],
+        foundation["shared_issue_mapping.json"],
+        foundation["member_projections.json"],
+    )
+    require(
+        canonical_digest(compiler_input)
+        == canonical_digest(foundation["compiler_input.json"]),
+        "compiler input replay differs",
+    )
+    result = run_editorial_pipeline(compiler_input)
+    require(
+        canonical_digest(result.compiled_ir)
+        == canonical_digest(foundation["compiled_ir.json"]),
+        "compiled IR replay differs",
+    )
+    require(
+        canonical_digest(result.presentation_payload)
+        == canonical_digest(foundation["presentation_payload.json"]),
+        "presentation replay differs",
+    )
 
 
 def source_evidence(root: Path = ROOT) -> list[dict]:
     evidence = []
+    raw_sources = {}
     for name, source_id in RAW.items():
         path = RAW_ROOT + name
         raw = _filesystem_path(root / path).read_bytes()
+        raw_sources[source_id] = raw
         require(
             hashlib.sha256(raw).hexdigest() == name[:64],
             "retained raw evidence differs: " + source_id,
@@ -146,6 +190,12 @@ def source_evidence(root: Path = ROOT) -> list[dict]:
                 "role": "additional_preparation_evidence_no_inherited_acceptance",
             }
         )
+    from .bounded_choice_sources import reconcile_sources
+
+    governed = json.loads(
+        (root / PACKAGE / "governed_sources.json").read_text(encoding="utf-8")
+    )
+    reconcile_sources(raw_sources, governed)
     return evidence
 
 
@@ -181,14 +231,10 @@ def build_accounting_review(foundation: dict, member_id: str) -> dict:
     }
     interpretation = seal(interpretation, "interpretation_sha256")
     axes = {
-        "semantic_tier": "developing_read"
-        if status == "Yea"
-        else "non_directional_or_limited_evidence",
+        "semantic_tier": "receipts_only",
         "review_scope": "bounded_partial_record",
         "review_completion_state": "in_progress",
-        "public_claim_class": "reviewed_sample_finding"
-        if status == "Yea"
-        else "vote_record_only",
+        "public_claim_class": "vote_record_only",
     }
     review = {
         "schema_version": "full_record_issue_interpretation_v1",
@@ -384,11 +430,34 @@ def build_semantic_subject(foundation: dict, member_id: str) -> dict:
     )
 
 
+@lru_cache(maxsize=1)
+def _accounting_validator():
+    # Render starts in backend/, where an unrelated scripts namespace can mask
+    # the repository script. Load the established validator at its fixed path;
+    # do not duplicate its contract or depend on the caller's Python search path.
+    spec = importlib.util.spec_from_file_location(
+        "_bounded_choice_accounting_validator",
+        ROOT / "scripts/validate_full_record_issue_interpretation.py",
+    )
+    require(
+        spec is not None and spec.loader is not None,
+        "accounting validator is unavailable",
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.validate_review
+
+
 def validate_semantic_subject(subject: dict, foundation: dict | None = None) -> None:
     require(isinstance(subject, dict), "bounded semantic subject must be an object")
+    check_seal(subject, "semantic_subject_sha256")
+    _accounting_validator()(subject["accounting_review"], authority_root=ROOT)
     foundation = load_foundation() if foundation is None else foundation
     require(
-        subject == build_semantic_subject(foundation, subject.get("member_id")),
+        canonical_digest(subject)
+        == canonical_digest(
+            build_semantic_subject(foundation, subject.get("member_id"))
+        ),
         "bounded semantic subject differs from exact frozen evidence",
     )
 
@@ -447,8 +516,10 @@ def build_presentation(subject: dict, foundation: dict | None = None) -> dict:
 def validate_presentation(
     presentation: dict, subject: dict, foundation: dict | None = None
 ) -> None:
+    check_seal(presentation, "presentation_subject_sha256")
     require(
-        presentation == build_presentation(subject, foundation),
+        canonical_digest(presentation)
+        == canonical_digest(build_presentation(subject, foundation)),
         "bounded presentation differs from exact mapped wording",
     )
 
@@ -470,6 +541,7 @@ def pending_receipt(
             "reviewer": None,
             "reviewer_authority": None,
             "decided_at_utc": None,
+            "authority_evidence": None,
             "authorizations": NO_OPERATIONAL_AUTHORITY,
         },
         "receipt_subject_sha256",
@@ -533,6 +605,8 @@ def validate_rendering(
                 "visible_text_sha256",
                 "presentation_subject_sha256",
                 "page_errors",
+                "requested_scope",
+                "representative_path",
             },
             "bounded capture fields differ",
         )
@@ -543,7 +617,13 @@ def validate_rendering(
             "bounded capture identity or browser errors differ",
         )
         require(
-            (capture["width"], capture["height"])
+            type(capture["width"]) is int
+            and type(capture["height"]) is int
+            and capture["requested_scope"]
+            == ("119" if capture["viewport"] == "desktop" else "all")
+            and capture["representative_path"]
+            == f"/?representative={MEMBERS[presentation['member_id']][1]}&issue=HEALTH_SOCIAL&scope={capture['requested_scope']}"
+            and (capture["width"], capture["height"])
             == ((1280, 900) if capture["viewport"] == "desktop" else (390, 844)),
             "bounded viewport differs",
         )
@@ -576,6 +656,7 @@ def validate_receipt(
     presentation: dict,
     rendering: dict,
     require_accepted: bool = True,
+    allow_test_authority: bool = False,
 ) -> None:
     validate_semantic_subject(subject)
     validate_presentation(presentation, subject)
@@ -590,10 +671,12 @@ def validate_receipt(
         "reviewer_authority",
         "decided_at_utc",
         "receipt_subject_sha256",
+        "authority_evidence",
     }
     require(
         set(receipt) == set(expected)
-        and all(receipt[k] == expected[k] for k in set(expected) - decisions),
+        and canonical_digest({k: receipt[k] for k in set(expected) - decisions})
+        == canonical_digest({k: expected[k] for k in set(expected) - decisions}),
         "bounded receipt identity, scope, source or subject binding differs",
     )
     if receipt["decision"] is None:
@@ -628,3 +711,9 @@ def validate_receipt(
         and decided <= datetime.now(timezone.utc),
         "bounded owner decision timestamp is invalid",
     )
+    if (
+        allow_test_authority
+        and receipt["authority_evidence"] == owner_authority.TEST_EVIDENCE
+    ):
+        return
+    owner_authority.require_trusted_decision(receipt)

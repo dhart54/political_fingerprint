@@ -43,10 +43,10 @@
       }
     ],
     "axes": {
-      "public_claim_class": "reviewed_sample_finding",
+      "public_claim_class": "vote_record_only",
       "review_completion_state": "in_progress",
       "review_scope": "bounded_partial_record",
-      "semantic_tier": "developing_read"
+      "semantic_tier": "receipts_only"
     },
     "benchmark": {
       "benchmark_refs": [],
@@ -110,7 +110,7 @@
       "partial_episode_count": 0,
       "present_actions": 0,
       "procedural_context_actions": 0,
-      "public_claim_class": "reviewed_sample_finding",
+      "public_claim_class": "vote_record_only",
       "review_completion_state": "in_progress",
       "review_friendly_actions": 1,
       "review_scope": "bounded_partial_record",
@@ -411,5 +411,5 @@
   },
   "review_scope": "bounded_partial_record",
   "schema_version": "bounded_choice_semantic_subject_v1",
-  "semantic_subject_sha256": "a949d7df167e1d87a74e5d60d3893bd71d1d0f3373c13679566baaf49babea83"
+  "semantic_subject_sha256": "8d1fa7f75e9f4a982214aac2bc79ae1da8ac34b49eda0eacef5c60f4dfc8d4c4"
 }

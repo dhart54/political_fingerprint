@@ -28,6 +28,7 @@ TABLES = {
     "artifacts": "editorial_artifact_versions",
     "relationships": "editorial_artifact_relationships",
     "publication_registry": "editorial_publication_registry",
+    "owner_decisions": "editorial_bounded_choice_owner_decisions",
 }
 CAPS = {
     "insert_batches": 1,
@@ -38,6 +39,22 @@ CAPS = {
     "deletes": 0,
     "unauthorized_table_writes": 0,
 }
+
+
+def require_owned_test_connection(conn) -> None:
+    """Check the actual connection, never a caller's claimed environment label."""
+    review.require(
+        conn.info.host in {"127.0.0.1", "::1", "localhost"}
+        and conn.info.dbname == "pf_health_choice_test",
+        "synthetic writes require the owned loopback test database",
+    )
+    actual = conn.execute(
+        "SELECT current_database() AS name, rolsuper FROM pg_roles WHERE rolname=session_user"
+    ).fetchone()
+    review.require(
+        actual["name"] == "pf_health_choice_test" and actual["rolsuper"] is True,
+        "synthetic writes require the owned test database superuser",
+    )
 
 
 def select_bounded_publication(row: dict, *, member_id: str, scope: str) -> dict | None:
@@ -82,7 +99,7 @@ def select_bounded_publication(row: dict, *, member_id: str, scope: str) -> dict
         return None
     return {
         "issue_id": review.ISSUE,
-        "scope": scope,
+        "requested_scope": scope,
         "tier": "bounded_choice_review",
         "presentation_branch": "bounded_choice_review",
         "bounded_choice": copy.deepcopy(value["presentation"]),
@@ -95,9 +112,7 @@ def select_bounded_publication(row: dict, *, member_id: str, scope: str) -> dict
         "review_state": {
             "review_scope": "bounded_partial_record",
             "review_completion_state": "in_progress",
-            "public_claim_class": "reviewed_sample_finding"
-            if member_id == "F000477"
-            else "vote_record_only",
+            "public_claim_class": "vote_record_only",
             "congress_scope": [119],
             "total_recorded_actions": 1,
             "complete_episode_count": 1,
@@ -112,7 +127,12 @@ def select_bounded_publication(row: dict, *, member_id: str, scope: str) -> dict
 
 
 def candidate(
-    subject: dict, presentation: dict, rendering: dict, receipt: dict
+    subject: dict,
+    presentation: dict,
+    rendering: dict,
+    receipt: dict,
+    *,
+    allow_test_authority: bool = False,
 ) -> dict:
     value = {
         "schema_version": "bounded_choice_publication_v1",
@@ -123,11 +143,11 @@ def candidate(
         "acceptance": receipt,
         "blocking_findings": 0,
     }
-    validate_candidate(value)
+    validate_candidate(value, allow_test_authority=allow_test_authority)
     return value
 
 
-def validate_candidate(value: dict) -> None:
+def validate_candidate(value: dict, *, allow_test_authority: bool = False) -> None:
     review.require(isinstance(value, dict), "bounded publication must be an object")
     review.require(
         set(value)
@@ -151,12 +171,15 @@ def validate_candidate(value: dict) -> None:
         subject=value["semantic"],
         presentation=value["presentation"],
         rendering=value["rendering"],
+        allow_test_authority=allow_test_authority,
     )
     review.source_evidence()
 
 
-def graph(value: dict) -> tuple[list[dict], list[dict]]:
-    validate_candidate(value)
+def graph(
+    value: dict, *, allow_test_authority: bool = False
+) -> tuple[list[dict], list[dict]]:
+    validate_candidate(value, allow_test_authority=allow_test_authority)
     key = value["artifact_id"]
     sources = {
         "schema_version": "bounded_choice_sources_v1",
@@ -248,7 +271,10 @@ def observe_baseline(conn, value: dict) -> dict:
         }
         for r in identities
     ]
-    keys = sorted(a["natural_key"] for a in graph(value)[0])
+    keys = sorted(
+        value["artifact_id"] + suffix
+        for suffix in ["", ":receipt", ":sources", ":validation"]
+    )
     found = [
         r["natural_key"] for r in snapshots["artifacts"] if r["natural_key"] in keys
     ]
@@ -279,10 +305,15 @@ def observe_baseline(conn, value: dict) -> dict:
 
 
 def build_write_set(
-    value: dict, *, preparation: dict, runtime: dict, baseline: dict
+    value: dict,
+    *,
+    preparation: dict,
+    runtime: dict,
+    baseline: dict,
+    allow_test_authority: bool = False,
 ) -> dict:
     """Accepted subjects only. Stable baseline is distinct for EACH member."""
-    artifacts, relationships = graph(value)
+    artifacts, relationships = graph(value, allow_test_authority=allow_test_authority)
     review.require(
         runtime["reviewed_runtime_manifest_sha256"]
         == canonical_digest(review.rendering_manifest()),
@@ -380,13 +411,16 @@ def apply_initial(
     authority: dict,
     runtime_proof: dict,
     fault_after: str | None = None,
+    allow_test_authority: bool = False,
 ) -> dict:
     """Initial insert only. Separate V2 authority, fresh actual DB checks and caps.
 
     A failing member transaction rolls back its entire write set. A previous
     member's successful transaction remains independently identifiable/rollbackable.
     """
-    artifacts, relationships = graph(value)
+    if allow_test_authority:
+        require_owned_test_connection(conn)
+    artifacts, relationships = graph(value, allow_test_authority=allow_test_authority)
     subject = write_set["subject"]
     review.require(
         subject["artifacts"] == artifacts
@@ -413,6 +447,7 @@ def apply_initial(
             preparation=a["preparation_authority_binding"],
             runtime=a["stable_runtime_binding"],
             baseline=a["stable_production_baseline"],
+            allow_test_authority=allow_test_authority,
         ),
         "initial write set differs from the exact deterministic plan",
     )
@@ -430,10 +465,12 @@ def apply_initial(
     )
     batch_key = "bounded-choice-initial:" + write_set["write_set_subject_sha256"]
     with conn.transaction():
+        if allow_test_authority:
+            conn.execute("SET LOCAL app.bounded_choice_synthetic_test = 'on'")
         # Prevent a race after the read-only observation. This also serializes
         # independent member initial writes; the second needs a fresh baseline.
         conn.execute(
-            "LOCK TABLE public.editorial_artifact_batches, public.editorial_artifact_versions, public.editorial_artifact_relationships, public.editorial_publication_registry IN SHARE ROW EXCLUSIVE MODE"
+            "LOCK TABLE public.editorial_artifact_batches, public.editorial_artifact_versions, public.editorial_artifact_relationships, public.editorial_publication_registry, public.editorial_bounded_choice_owner_decisions IN SHARE ROW EXCLUSIVE MODE"
         )
         observed = observe_baseline(conn, value)
         review.require(
