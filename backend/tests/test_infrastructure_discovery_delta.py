@@ -995,4 +995,21 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
         with self.assertRaisesRegex(ValueError,'changed unresolved version or universe gates'):validate_4371_complete_retained_body(a,bad,s,r)
 
+    def test_hr4371_dated_placement_context_keeps_old_rules_selected_scope_and_opposite_dataflows(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4371_placement_context
+        p=folder(130);r=read(p/'hr4371_dated_placement_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);ss={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        validate_4371_placement_context(a,u,ss,r);self.assertTrue(validate(130)['generated_replay'])
+        for field in ['whole_1232_read','all_editorial_notes_reviewed','current_law_certified','committee_floor_version_binding_cleared','all_review_or_alternatives_abolished','old_bond_or_642_reference_repaired','actual_child_or_sponsor_risk_determined','new_software_or_construction_mandated','membership_accepted','new_meaning_authored']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared selected-unit/law/reference/outcome/technology/meaning gates'):validate_4371_placement_context(a,u,ss,bad)
+        for old,new in [('ONLY(c)(1)–(6)(F)','whole1232'),('EXISTING CONTEXT','new bill mandate'),('ALREADY PROHIBITS OWN-RECOGNIZANCE RELEASE','first introduced the prohibition'),('ALL THREE branches','any one branch'),('AVAILABLE TO PROVIDE CARE AND PHYSICAL CUSTODY','physically present anywhere'),('REPLACES ALL OF(c)(2)','replaces only the first sentence'),('does not establish that ALL REVIEW OR ALL ALTERNATIVES UNDER OTHER LAW DISAPPEAR','all review and alternatives disappear'),('does not mandate a home study for every child','mandates a home study for every child'),('DHS TO PROVIDE HHS','HHS TO PROVIDE DHS'),('WITHIN TWO WEEKS AFTER HHS REQUEST','before placement'),('HHS TO PROVIDE DHS sponsor/adult-household information BEFORE PLACEMENT','DHS TO PROVIDE HHS before placement'),('do not transfer the two-weekclock to(D)','apply the two-weekclock to(D)'),('AT LEAST25percent OF FEDERAL FUNDS','25percent of the entire budget')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'retained-safeguard boundary lost'):validate_4371_placement_context(aa,uu,ss,bad)
+        bad=copy.deepcopy(r);bad['source_contexts'][1]['appended_claim']['locator']='Entire1232andcurrentlaw'
+        with self.assertRaisesRegex(ValueError,'claim broadened source scope'):validate_4371_placement_context(a,u,ss,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][2]['passage']='altered complete EH'
+        with self.assertRaisesRegex(ValueError,'changed existing EH/source/flags/meaning state'):validate_4371_placement_context(bad,u,ss,r)
+        bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
+        with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_placement_context(a,bad,ss,r)
+
 if __name__=='__main__':unittest.main()

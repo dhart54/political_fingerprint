@@ -322,6 +322,7 @@ CASES[126]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:324'],counts
 CASES[127]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:2:260'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[128]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:2:259','house:119:2:260'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[129]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:340'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
+CASES[130]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:340'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[119]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:352','house:119:1:356'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[118]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:316','house:119:1:356'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
 CASES[117]=dict(rolls=[],action_ids=[],new=[],repairs=['house:119:1:301'],counts=dict(interpreted_substantive_directional=69,interpreted_substantive_non_directional=1,procedural_context=199,exact_action_ineligible=120,expressive_nonbinding=19,source_unresolved=6,pending_interpretation=262),pending=0)
@@ -521,6 +522,26 @@ def validate_partA7_compensation_preemption_precision(record,row,source,receipt)
     for r in replacements:require(expected['rationale'].count(r['old'])==1,'PartA7 precision original phrase preimage differs');expected['rationale']=expected['rationale'].replace(r['old'],r['new'])
     require(record==expected and record['disposition']==row['disposition']=='pending_interpretation','PartA7 precision omitted California/agencies or broadened operator verbs or exceeded two phrases')
     expected_row=copy.deepcopy(receipt['before_universe_row']);expected_row.update(reason=record['rationale'],rationale=record['rationale']);expected_row['review_progress']['shared_review_record_sha256']=digest(record);require(row==expected_row,'PartA7 precision changed universe/source/flag/binding gates')
+
+
+def validate_4371_placement_context(record,row,sources,receipt):
+    before=receipt['before_record'];contexts=receipt['source_contexts']
+    expected_contexts=[('govinfo:6usc279-2024-operative','6bcaad382c6e9d763676c208fe96ffbe79c76dcd84072d1541b322e5210b1a6d',8062),('govinfo:8usc1232-2024-care-placement','a94b2f489b30f3c27b16e6a4ea2d8e1ab13d7cf49d52cea2bf8991af8e36d2cf',10450)]
+    require(record['action_id']==receipt['action_id']=='house:119:1:340' and [c['source_id'] for c in contexts]==[c[0] for c in expected_contexts],'HR4371 placement-context cohort differs')
+    require(receipt['dated_selected_units_read'] and not any(receipt[k] for k in ['whole_1232_read','all_editorial_notes_reviewed','current_law_certified','committee_floor_version_binding_cleared','all_review_or_alternatives_abolished','old_bond_or_642_reference_repaired','actual_child_or_sponsor_risk_determined','new_software_or_construction_mandated','membership_accepted','new_meaning_authored']),'HR4371 dated context cleared selected-unit/law/reference/outcome/technology/meaning gates')
+    prefix='PRESERVED checkpoint129 complete-EH review and historical bookend scope (not overwritten):\n';rationale=receipt['new_rationale']
+    require(receipt['preserved_EH_prefix']==prefix and rationale.endswith('\n\n'+prefix+before['rationale']),'HR4371 prior complete-EH/bookend review changed')
+    terms=['ONLY(c)(1)–(6)(F)','INFRASTRUCTURE OVERSIGHT','EXISTING CONTEXT','not a new construction, procurement or software mandate','not an instruction to publish every child\'s private record','ALREADY PROHIBITS OWN-RECOGNIZANCE RELEASE','does not require a bond','not automatically repaired','detention facility OR AN ALTERNATIVE','ALL THREE branches','NO LAWFUL IMMIGRATION STATUS, UNDER18, AND EITHER','AVAILABLE TO PROVIDE CARE AND PHYSICAL CUSTODY','EH applicability clause prints642(g)(2)','TWO SUBPARAGRAPHS','danger determination OR a criminal charge','AT LEAST MONTHLY','REPLACES ALL OF(c)(2)','NOT REPRODUCED','does not establish that ALL REVIEW OR ALL ALTERNATIVES UNDER OTHER LAW DISAPPEAR','WHETHER A HOME STUDY IS NECESSARY','does not mandate a home study for every child','does not expressly strike existing(B)or(C)','DHS TO PROVIDE HHS','WITHIN TWO WEEKS AFTER HHS REQUEST','HHS TO PROVIDE DHS','BEFORE PLACEMENT','Both DIRECTION AND TRIGGER differ','do not transfer the two-weekclock to(D)','AUTHORIZED child-advocate appointment','AT LEAST25percent OF FEDERAL FUNDS','historical2014–2015/2018–2021AUTHORIZATIONS','whole Infrastructure meaning remain pending']
+    require(all(t in rationale.split('\n\n'+prefix,1)[0] for t in terms),'HR4371 dated placement/scope/reference/dataflow/clock/retained-safeguard boundary lost')
+    expected=copy.deepcopy(before);expected['rationale']=rationale
+    for context,(sid,sha,size) in zip(contexts,expected_contexts):
+        source=sources[sid];claim=context['appended_claim']
+        require(digest(source)==context['source_object_sha256']==sha and len(source['text'])==size and context['source_extent']==dict(start=0,end=size,total=size),'HR4371 dated source or selected extent differs')
+        require(claim['source_id']==sid and claim['passage']==source['text'] and f'0:{size}of{size}' in claim['locator'] and ('notallnotes/currentlaw' if size==8062 else 'notwhole1232/allnotes/currentlaw') in claim['locator'],'HR4371 selected-unit claim broadened source scope')
+        expected['sources'].append({k:source[k] for k in ['source_id','url','raw_sha256','governed_bytes_sha256']});expected['claim_source_map'].append(claim)
+    require(record==expected and record['disposition']==row['disposition']=='pending_interpretation' and record['exact_action_binding_unresolved'],'HR4371 dated context changed existing EH/source/flags/meaning state')
+    expected_row=copy.deepcopy(receipt['before_universe_row']);expected_row.update(reason=rationale,rationale=rationale,unresolved_reason=receipt['new_unresolved_reason'],sources=expected['sources']);expected_row['exact_action_source_binding']['source_ids']=[s['source_id'] for s in expected['sources']];expected_row['review_progress']['shared_review_record_sha256']=digest(record)
+    require(row==expected_row and not row['exact_action_source_binding']['complete'],'HR4371 dated context cleared version or changed universe gates')
 
 
 def validate_4371_complete_retained_body(record,row,source,receipt):
@@ -1019,8 +1040,13 @@ def validate(n,values=None,*,check_files=True):
         correction=read(data/'north_dakota_exception_scope_correction.json');aid='house:119:1:226';pre=correction['preimage_membership'];require(digest(pre)==correction['preimage_membership_sha256'] and digest(ss[correction['source_id']])==correction['source_object_sha256'],'North Dakota preserved source/preimage digest differs')
         require({k:v for k,v in records[aid].items() if k!='rationale'}=={k:v for k,v in pre.items() if k!='rationale'} and records[aid]['rationale']==correction['corrected_rationale'],'North Dakota qualification changed meaning/state/source scope')
         if n==43:require(pre==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and correction['preimage_universe_row']==prev[aid],'North Dakota historical preimage differs')
+    hr4371_before_placement_context=None
+    if n>=130:
+        placement=read(data/'hr4371_dated_placement_context_receipt.json');aid=placement['action_id'];validate_4371_placement_context(records[aid],rows[aid],ss,placement);hr4371_before_placement_context=(placement['before_record'],placement['before_universe_row'])
+        if n==130:require(placement['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and placement['before_universe_row']==prev[aid],'HR4371 dated-context preimages differ from exact129')
+        else:require(placement==read(prior/'hr4371_dated_placement_context_receipt.json'),'originalHR4371 dated-context receipt changed')
     if n>=129:
-        body=read(data/'hr4371_complete_retained_body_receipt.json');aid=body['action_id'];validate_4371_complete_retained_body(records[aid],rows[aid],ss[body['source_id']],body)
+        body=read(data/'hr4371_complete_retained_body_receipt.json');aid=body['action_id'];record_view,row_view=hr4371_before_placement_context or (records[aid],rows[aid]);validate_4371_complete_retained_body(record_view,row_view,ss[body['source_id']],body)
         if n==129:require(body['before_record']==next(r for r in old['membership_review']['records'] if r['action_id']==aid) and body['before_universe_row']==prev[aid],'HR4371 complete-body preimages differ from exact128')
         else:require(body==read(prior/'hr4371_complete_retained_body_receipt.json'),'originalHR4371 complete-body receipt changed')
     partA7_before_precision_view=None
