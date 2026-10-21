@@ -416,3 +416,12 @@ reconciliation are recorded on draft PR239; older green results do not certify i
 No real owner acceptance, registration, schema application, access grant,
 activation/publication, merge/ready transition, production write or manual deploy
 was performed. Infrastructure and Immigration worktrees were not modified.
+
+Hosted 35e0de8a Health validation rejected the Docker service's actual server
+address: although the client connects to127.0.0.1, inet_server_addr() is the
+container bridge address. All25 database-using operator cases stopped at the
+same actual-target guard;210 other cases passed. Preserve that safety boundary.
+The Health workflow now creates an isolated native runner PostgreSQL cluster
+bound to127.0.0.1:55438, matching the successful local ownership model, and stops
+it in an always cleanup step. Runtime/SQL/subjects/captures are unchanged; hosted
+successor validation and exact-head review must cover this fixture correction.

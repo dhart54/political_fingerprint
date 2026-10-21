@@ -263,3 +263,9 @@ reconciliation are recorded on draft PR239; older green results do not certify i
 No real owner acceptance, registration, schema application, access grant,
 activation/publication, merge/ready transition, production write or manual deploy
 was performed. Infrastructure and Immigration worktrees were not modified.
+
+Hosted 35e0de8a Health validation failed closed because the Docker service's
+server address was a bridge address despite client127.0.0.1. The workflow now
+starts an isolated native runner cluster on127.0.0.1:55438 and stops it with
+always cleanup. The actual-server guard, operator/runtime/SQL and all pending
+subject/capture bytes remain unchanged. Exact successor CI/review is required.
