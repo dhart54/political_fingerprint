@@ -1,0 +1,37 @@
+{
+  "kind": "append_only_controller_relayed_independent_review_attribution",
+  "reported_date": "2026-10-21",
+  "reporting_channel": "Controller relay from01a15000-0ff6-73e2-95ac-fe6aee80201f",
+  "independent_reviewer_thread": "01a15ebb-b550-7823-a734-9e1eefea290c",
+  "reviewed_heads": {
+    "128": "240175891f37587574a62da3e8412f95e53b13ab",
+    "129": "fe9cc7d12b35f5cefcf8b11a928338f20bc20974"
+  },
+  "reported_outcome": "CLEAN within the bounded128-129review scope; no material defect reported",
+  "source_authentication_reported": [
+    "Original source wrappers and lossless parts",
+    "Numeric source and record pointers",
+    "Preserved preimages",
+    "YRA original object"
+  ],
+  "preservation_reported": {
+    "128_intended_record_changes": 2,
+    "129_intended_record_changes": 1,
+    "compiled_graphs_unchanged": true
+  },
+  "independent_focused_tests_reported": {
+    "128": 2,
+    "129": 3,
+    "scope": "Exact snapshots, including generated replay and negative mutations; test timing/names not supplied in this relay"
+  },
+  "execution_provenance": "Isolated Git-authenticated snapshots with an LF serialization shim on Windows; NOT fresh clones",
+  "full_suite_established": false,
+  "hosted_Actions_success_established": false,
+  "130_review_status": "Continues separately; this report does not close130",
+  "131_or_later_review_status": "Outside this report",
+  "semantic_acceptance": false,
+  "promotion": false,
+  "publication_authorized": false,
+  "production_authorized": false,
+  "historical_receipts_or_exports_rewritten": false
+}

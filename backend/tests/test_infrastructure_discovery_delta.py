@@ -1012,4 +1012,23 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
         with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_placement_context(a,bad,ss,r)
 
+    def test_hr4371_committee_and_offense_context_preserves_exceptions_age_and_conviction_scopes(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4371_committee_offense_context
+        p=folder(131);r=read(p/'hr4371_committee_offense_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);ss={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        validate_4371_committee_offense_context(a,u,ss,r);self.assertTrue(validate(131)['generated_replay'])
+        for field in ['RH_relabelled_EH','all_floor_binding_cleared','current_law_certified','printed_references_repaired','all_adjacent_definitions_automatically_imported','noncriminal_behavior_alone_satisfies_conviction_gate','actual_child_sponsor_or_conviction_determined','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared version/reference/incorporation/conviction/outcome/meaning gates'):validate_4371_committee_offense_context(a,u,ss,bad)
+        for old,new in [('not proof that RH IS EH','RH is the exact enacted law'),('equality does NOT REPAIR REFERENCES','equality repairs642'),('BOUNDED CONTEXT, NOT AUTOMATIC WHOLESALE INCORPORATION','every adjacent definition automatically imported'),('EXPRESSLY LIMITED BY(B)AND(C)','without exceptions'),('ADULT VICTIM UNLESS UNDER THE OFFENDER\'S CUSTODIAL AUTHORITY','every adult victim'),('AT LEAST13','any age'),('NOT MORE THAN4YEARS OLDER','any age difference'),('PARENT/GUARDIAN EXCEPTIONS','no parental exceptions'),('14OR OLDER AT THE TIME OF THE OFFENSE AND','14or older at adjudication OR'),('FORCE/FRAUD/COERCION OR','force always required AND'),('FORCE/FRAUD/COERCION AND','force or purpose alone OR'),('FELONY OR MISDEMEANOR CRIMES','felonies only'),('MAY OR MAY NOT BE CRIMINAL','always criminal'),('DOES NOT BY ITSELF SATISFY','automatically satisfies')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'conviction-service boundary lost'):validate_4371_committee_offense_context(aa,uu,ss,bad)
+        bad=copy.deepcopy(r);bad['operative_comparison']['RH_start']=1262
+        with self.assertRaisesRegex(ValueError,'exact RH/EH operative comparison differs'):validate_4371_committee_offense_context(a,u,ss,bad)
+        bad=copy.deepcopy(r);bad['source_contexts'][1]['appended_claim']['locator']='wholeCode/currentlaw'
+        with self.assertRaisesRegex(ValueError,'claim broadened scope'):validate_4371_committee_offense_context(a,u,ss,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][3]['passage']='altered prior placement baseline'
+        with self.assertRaisesRegex(ValueError,'changed existing evidence/flags/meaning state'):validate_4371_committee_offense_context(bad,u,ss,r)
+        bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
+        with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_committee_offense_context(a,bad,ss,r)
+
 if __name__=='__main__':unittest.main()
