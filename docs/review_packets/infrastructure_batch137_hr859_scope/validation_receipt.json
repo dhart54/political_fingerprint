@@ -1,7 +1,7 @@
 {
   "kind": "focused_source_research_and_transport_validation",
   "base_head": "28437fb5f0c79f7aa3b63faa705c8bb58ac1d7d0",
-  "recorded_utc": "2026-10-21T16:31:55.531684+00:00",
+  "recorded_utc": "2026-10-21T16:44:10.282220+00:00",
   "packet_byte_units": "committed_LF_UTF8",
   "raw_byte_units": "originalHTTPresponsebytesdecodedfrombase64",
   "test_status": "passed",
@@ -64,8 +64,8 @@
     },
     {
       "path": "docs/review_packets/infrastructure_batch137_hr859_scope/source_questions.json",
-      "bytes": 30874,
-      "lf_sha256": "1446285b5af668a604545272d5360d626de2f85bcee28bbac014e2b558170be9"
+      "bytes": 30942,
+      "lf_sha256": "8c44ef2125a36161fa04b6598bd2c6715ea5db528f918cbce37a1723ccd8cbed"
     }
   ],
   "canonical_editorial_tree_at_base": "e12eda9611781d469d8600e53f2d4c72dc48140e",
@@ -136,7 +136,7 @@
   "compatibility_authorized": false,
   "Health_activated": false,
   "test_count": 5,
-  "reported_test_seconds": 2.279,
+  "reported_test_seconds": 2.259,
   "validation_processes": [
     {
       "command": [
@@ -145,11 +145,10 @@
         "unittest",
         "backend.tests.test_infrastructure_hr859_scope137"
       ],
-      "start_utc": "2026-10-21T16:31:53.082865+00:00",
       "returncode": 0,
-      "process_wall_seconds": 2.448,
+      "process_wall_seconds": 2.425,
       "stdout": "",
-      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 2.279s\n\nOK\n"
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 2.259s\n\nOK\n"
     },
     {
       "command": [
@@ -157,13 +156,28 @@
         "-m",
         "scripts.validate_infrastructure_hr859_scope137"
       ],
-      "start_utc": "2026-10-21T16:31:53.083001+00:00",
       "returncode": 0,
-      "process_wall_seconds": 0.345,
+      "process_wall_seconds": 0.346,
       "stdout": "{\n  \"source_scope\": {\n    \"action_id\": \"house:119:1:109\",\n    \"selected_sources\": 5,\n    \"selected_primary_unit_characters\": 13330,\n    \"original_raw_bytes\": 117656,\n    \"canonical_source_objects_added\": 0,\n    \"whole_case_completed\": false,\n    \"actual_device_classified\": false\n  },\n  \"transport\": {\n    \"files\": 10,\n    \"byte_units\": \"committed_LF_UTF8\"\n  }\n}\n",
       "stderr": ""
     }
   ],
   "reading_qualification": "13330selectedprimaryunit characters plus a separately mapped255reference note; not whole303/45b/Code/currentlaw/regulations/actualclassification",
-  "validation_qualification": "Local source/traceability/transport/preimage/authority negatives and independent CLI invocation only; no independent137/fullsuite/hosted or canonical-seven clearance"
+  "validation_qualification": "Local5focused and CLI source/transport checks after narrow617availability wording correction; no code/capture/claim/extent/canonical changes, no independent-successor/fullsuite/hosted/seven clearance",
+  "independent137_wording_correction": {
+    "reviewed_head": "0550157344f42a5ab100a1a7ee362615d0944776",
+    "source_key": "47usc617",
+    "field": "source_units/1/limits",
+    "issue": "Stale unavailable255/619 wording contradicted the five successful selected captures",
+    "correction": "617alone does not establish separate255/619frameworks; selected readings separately captured; regulation/actual-device relation unadjudicated",
+    "raw_bodies_claims_reading_extents_unchanged": true,
+    "earlier_PartI_missing_body_limit_unchanged": true,
+    "canonical_and_pending_decision_subjects_unchanged": true
+  },
+  "prior_initial137_gate": {
+    "test_count": 5,
+    "reported_test_seconds": 2.279,
+    "head": "0550157344f42a5ab100a1a7ee362615d0944776"
+  },
+  "narrow_successor_base_head": "0550157344f42a5ab100a1a7ee362615d0944776"
 }
