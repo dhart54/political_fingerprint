@@ -1,5 +1,6 @@
 """Focused validation of two unapplied Infrastructure review sidecars."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 
@@ -123,5 +124,22 @@ def validate_bundle(bundle=None):
     return dict(action_count=3, exceptions_enacted=False, governed_pending=262)
 
 
+def validate_transport(receipt=None):
+    v = read(PACKET / 'validation_receipt.json') if receipt is None else receipt
+    require(v['packet_byte_units'] == 'committed_LF_UTF8', 'Packet byte units differ')
+    expected = {'README.md', 'decision_bundle.json', 'hr28_recommendation.json',
+                'hr1442_recommendation.json'}
+    require({Path(f['path']).name for f in v['packet_files']} == expected
+            and len(v['packet_files']) == 4, 'Packet transport set differs')
+    for f in v['packet_files']:
+        path = ROOT / f['path']
+        require(path.parent == PACKET, 'Packet transport path differs')
+        lf = path.read_bytes().replace(b'\r\n', b'\n')
+        require(f['bytes'] == len(lf) and f['lf_sha256'] == hashlib.sha256(lf).hexdigest(),
+                'Committed LF byte count or hash differs')
+    return dict(files=4, byte_units='committed_LF_UTF8')
+
+
 if __name__ == '__main__':
-    print(json.dumps(dict(cases=[validate(bill) for bill in SUBJECTS], bundle=validate_bundle()), indent=2))
+    print(json.dumps(dict(cases=[validate(bill) for bill in SUBJECTS],
+                         bundle=validate_bundle(), transport=validate_transport()), indent=2))

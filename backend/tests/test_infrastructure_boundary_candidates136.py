@@ -2,10 +2,26 @@ import copy
 import unittest
 
 from backend.app.semantic_ir.shared_corpus import digest
-from scripts.validate_infrastructure_boundary_candidates136 import PACKET, SUBJECTS, read, validate, validate_bundle
+from scripts.validate_infrastructure_boundary_candidates136 import PACKET, SUBJECTS, read, validate, validate_bundle, validate_transport
 
 
 class BoundaryCandidates136Tests(unittest.TestCase):
+    def test_packet_transport_counts_the_same_committed_lf_bytes_it_hashes(self):
+        self.assertEqual(validate_transport()['files'], 4)
+        v = read(PACKET / 'validation_receipt.json')
+        bad = copy.deepcopy(v)
+        next(f for f in bad['packet_files'] if f['path'].endswith('/README.md'))['bytes'] += 40
+        with self.assertRaisesRegex(ValueError, 'Committed LF byte count'):
+            validate_transport(bad)
+        bad = copy.deepcopy(v)
+        bad['packet_files'][0]['lf_sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'Committed LF byte count or hash'):
+            validate_transport(bad)
+        bad = copy.deepcopy(v)
+        bad['packet_byte_units'] = 'unspecified_worktree_bytes'
+        with self.assertRaisesRegex(ValueError, 'byte units'):
+            validate_transport(bad)
+
     def test_three_case_bundle_keeps_seals_and_requested_decisions_separate_from_authority(self):
         self.assertEqual(validate_bundle()['action_count'], 3)
         v = read(PACKET / 'decision_bundle.json')
