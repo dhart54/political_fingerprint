@@ -1,0 +1,22 @@
+{
+  "base_head": "1d4496ef28a2180dbd842fe6ece8dcf785da4003",
+  "application_validator": "PASS; standalone script and actual typed replay;5cases,671other records,1621sources,70meanings,member/core/compiled output parity;positive eligibility retains pending interpretation;idempotent",
+  "focused_tests": {
+    "command": "python -m unittest backend.tests.test_infrastructure_case_application145",
+    "tests": 8,
+    "negative_mutations": 24,
+    "seconds": 6.727,
+    "result": "PASS"
+  },
+  "semantic_and_CI_checks": {
+    "tests": 36,
+    "seconds": 0.889,
+    "result": "PASS;26SemanticIR,8CIpreservation,2actual legacy predicates"
+  },
+  "canonical_validator": "PASS;12accepted references,4accepted held-out references,4held-out;0.1594s",
+  "prior_packets_and_snapshot": "git diff --quiet HEAD -- snapshot139,packet142,packet143 PASS;176preserved file hashes checked offline",
+  "behavior_inspected": "Five approved record translations; two positive eligibility decisions remain uninterpreted; two exclusions;1491singlebindingchange; all prior semantic/member outputs exact;detached binding witnesses match reviewed142without registry addition",
+  "editorial_acceptance": false,
+  "production_changes": false,
+  "independent_review": "Required at exact frozen staged target before commit/push; not yet claimed"
+}
