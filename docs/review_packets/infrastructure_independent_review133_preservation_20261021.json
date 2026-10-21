@@ -1,0 +1,123 @@
+{
+  "head": "e1adbdeeff2982eab5a43277f1cd76c660696412",
+  "base": "f99c44443400722da216a1c8d0c77be4bb9c7ab6",
+  "findings": [],
+  "source_authentication": [
+    {
+      "source_id": "govinfo:44usc3501-2024-operative",
+      "pointer": "/sources/85",
+      "canonical_sha256": "6cc64b2b0efedf19e37a6736f4ad5e1664b9c554ff31e421aaa2054ef38052bb",
+      "characters": 2864,
+      "export_bytes": 3382
+    },
+    {
+      "source_id": "govinfo:44usc3502-2024-operative",
+      "pointer": "/sources/86",
+      "canonical_sha256": "59924ed9143760be85008fee8c2a8d5dfd886fc9b61ba8622e2e239835d56b85",
+      "characters": 7849,
+      "export_bytes": 8447
+    },
+    {
+      "source_id": "govinfo:5usc551-2024-operative",
+      "pointer": "/sources/897",
+      "canonical_sha256": "21f05e8063acf827ec382de94791746ec893ad7221bb584cf8a24cbdd78a331c",
+      "characters": 4166,
+      "export_bytes": 4719
+    }
+  ],
+  "preserved_other_records": 675,
+  "preserved_old_sources": 1620,
+  "total_sources": 1620,
+  "preserved_meanings": 70,
+  "counts": {
+    "procedural_context": 199,
+    "exact_action_ineligible": 120,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 262,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "generated_artifacts": {
+    "compiled_ir": {
+      "equal": true,
+      "differences": 0,
+      "leaf_fields": {}
+    },
+    "compiler_input": {
+      "equal": false,
+      "differences": 70,
+      "leaf_fields": {
+        "action_meaning_ref": 70
+      }
+    },
+    "shared_action_core": {
+      "equal": false,
+      "differences": 141,
+      "leaf_fields": {
+        "corpus_sha256": 1,
+        "action_meaning_ref": 70,
+        "action_core_sha256": 70
+      }
+    },
+    "shared_issue_mapping": {
+      "equal": false,
+      "differences": 3,
+      "leaf_fields": {
+        "mapping_sha256": 1,
+        "0": 1,
+        "artifact_id": 1
+      }
+    },
+    "member_projections": {
+      "equal": false,
+      "differences": 142,
+      "leaf_fields": {
+        "action_core_sha256": 140,
+        "projection_sha256": 2
+      }
+    },
+    "readable_candidates": {
+      "equal": false,
+      "differences": 134,
+      "leaf_fields": {
+        "boundary": 2,
+        "shared_meaning_sha256": 132
+      }
+    },
+    "reproducibility_proof": {
+      "equal": false,
+      "differences": 74,
+      "leaf_fields": {
+        "shared_sha256": 70,
+        "readable_sha256": 1,
+        "core_sha256": 1,
+        "input_sha256": 1,
+        "source_capture_sha256": 1
+      }
+    }
+  },
+  "prior_receipts_preserved": true,
+  "snapshot_files": 1235,
+  "snapshot_bytes": 435353274,
+  "preexisting_modified_paths": [
+    "M\tbackend/tests/test_infrastructure_discovery_delta.py",
+    "M\tdocs/plans/infrastructure_remaining_discovery_screening.md",
+    "M\tdocs/review_packets/infrastructure_remaining_discovery_candidate_screening.md",
+    "M\tscripts/validate_infrastructure_discovery_delta.py"
+  ],
+  "test": {
+    "head": "e1adbdeeff2982eab5a43277f1cd76c660696412",
+    "snapshot": "C:\\Users\\Dylan\\.codex\\visualizations\\2026\\10\\21\\01a15ebb-b550-7823-a734-9e1eefea290c\\infra-review-128-129\\snapshot133",
+    "shim": "os.linesep=LF on Windows; lazy pinned Git blob materialization only",
+    "tests": [
+      "test_hr4371_PRA_APA_context_keeps_collection_agency_privacy_and_rulemaking_scopes"
+    ],
+    "ran": 1,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 2.7094131000339985,
+    "lazy_files": []
+  },
+  "owner_931_generated_and_10388_prior_index_counts_independently_reproduced": false
+}

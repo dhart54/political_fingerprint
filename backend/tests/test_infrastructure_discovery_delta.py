@@ -1065,4 +1065,23 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
         with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_pra_apa_context(a,bad,ss,r)
 
+    def test_hr4371_3506_context_preserves_agency_assets_notice_privacy_and_historical_limits(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4371_pra_responsibilities_context
+        p=folder(134);r=read(p/'hr4371_pra_responsibilities_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);ss={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        validate_4371_pra_responsibilities_context(a,u,ss,r);self.assertTrue(validate(134)['generated_replay'])
+        for field in ['whole_PRA_privacy_or_currentlaw_reviewed','actual_agency_or_collection_outcome_determined','conditional_EH_displacement_adjudicated','all_data_assets_declared_public','notice_alternatives_or_statutory_exceptions_erased','historical_order_is_new_bill_mandate','historical_dates_rebased_to_bill_enactment','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared unit/privacy/outcome/exception/history/meaning gates'):validate_4371_pra_responsibilities_context(a,u,ss,bad)
+        for old,new in [('DISTINCT FROM OPERATIVE3506AND FROM H.R.4371','new4371operativeprovisions'),('MAYdesignate','mustdesignate'),('TO THE EXTENT PRACTICABLE','without qualification'),('NOT CONCERNING MONETARY POLICY','including all monetarypolicy'),('UPDATED ANNUALLY AND PUBLISHED WITHIN FIVE DAYS AFTER EACH UPDATE','all files published everyfive days'),('PUBLIC DATA ASSET','everyprivate file'),('SUFFICIENTLY INDEPENDENT OF PROGRAM RESPONSIBILITY','sameprogramofficialonly'),('NOTICE-OF-PROPOSED-RULEMAKING alternative AND the3507(j)EXCEPTION','no exceptions'),('SUPPORTING RECORD INCLUDING PUBLIC COMMENTS','no record needed'),('FEWER THAN25EMPLOYEES','every smallbusinesscondition'),('EXCEPT WHERE SPECIFICALLY AUTHORIZED BY STATUTE','without exceptions'),('RESPONDENT PRIVACY AND CONFIDENTIALITY PLEDGES','unrestricted public access'),('ONE-YEAR establishment clock runs AFTER THE2002SMALLBUSINESSPAPERWORKRELIEFACT','oneyear after4371'),('NOT A NEW4371COUNCIL','new4371Council'),('INTERNAL MANAGEMENT ONLY / NO ENFORCEABLE RIGHT OR BENEFIT','universal new right'),('does not adjudicate which duties are displaced','all duties automatically displaced')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'conditional boundary lost'):validate_4371_pra_responsibilities_context(aa,uu,ss,bad)
+        bad=copy.deepcopy(r);bad['source_classes'].pop()
+        with self.assertRaisesRegex(ValueError,'source classes flattened'):validate_4371_pra_responsibilities_context(a,u,ss,bad)
+        bad=copy.deepcopy(r);bad['source_contexts'][0]['appended_claim']['passage']=ss[r['source_contexts'][0]['source_id']]['text'][:18010]
+        with self.assertRaisesRegex(ValueError,'full responsibilities claim lost'):validate_4371_pra_responsibilities_context(a,u,ss,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][2]['passage']='altered completeEH'
+        with self.assertRaisesRegex(ValueError,'changed prior evidence/flags/meaning state'):validate_4371_pra_responsibilities_context(bad,u,ss,r)
+        bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
+        with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_pra_responsibilities_context(a,bad,ss,r)
+
 if __name__=='__main__':unittest.main()
