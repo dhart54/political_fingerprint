@@ -1,0 +1,40 @@
+{
+  "exact_head": "748519100b888bf17a0b8147eb1dd0e60a184e84",
+  "exact_base": "e1adbdeeff2982eab5a43277f1cd76c660696412",
+  "outcome": "Bounded clean",
+  "reviewer_thread": "01a15ebb-b550-7823-a734-9e1eefea290c",
+  "portable_evidence": "docs/review_packets/infrastructure_independent_review134_preservation_20261021.json",
+  "original_bytes": 4094,
+  "original_sha256": "b78511f6fd8d8c86ed2b92000a574d6491a67d0ef150e3fdc872483a288da838",
+  "repository_LF_bytes": 3940,
+  "repository_LF_sha256": "2048328e32719049368117ef035fda1cb76b9828807b66a08ca29e8d34d9f358",
+  "source_authentication": [
+    {
+      "source_id": "govinfo:44usc3506-2024",
+      "pointer": "/sources/502",
+      "canonical_sha256": "05f37966e78cf9eaa70dc1d2f78136f601d628f5f6dee761d7f59cb330a79a06",
+      "characters": 30087,
+      "export_bytes": 30789
+    }
+  ],
+  "snapshot_files": 1382,
+  "test": {
+    "head": "748519100b888bf17a0b8147eb1dd0e60a184e84",
+    "snapshot": "C:\\Users\\Dylan\\.codex\\visualizations\\2026\\10\\21\\01a15ebb-b550-7823-a734-9e1eefea290c\\infra-review-128-129\\snapshot134",
+    "shim": "os.linesep=LF on Windows; lazy pinned Git blob materialization only",
+    "tests": [
+      "test_hr4371_3506_context_preserves_agency_assets_notice_privacy_and_historical_limits"
+    ],
+    "ran": 1,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 2.846251599956304,
+    "lazy_files": []
+  },
+  "provenance": "Git-authenticated isolated Windows snapshot with LF serialization shim; not fresh clone",
+  "full179_suite_rerun": false,
+  "seven_semantic_checks_rerun": false,
+  "owner_blob_counts_independently_reproduced": false,
+  "semantic_acceptance": false,
+  "scope_does_not_include_batch135": true
+}
