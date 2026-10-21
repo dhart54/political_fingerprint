@@ -1,0 +1,39 @@
+{
+  "base_head": "e85b87c69c6191ab6e17bfbe71f4a29b1e41d08c",
+  "packet": "docs/review_packets/infrastructure_batch143_land_siting_easements",
+  "targeted_validation": [
+    {
+      "command": "scripts/validate_infrastructure_land_siting_candidates143.py",
+      "exit_code": 0,
+      "elapsed_seconds": 0.889,
+      "log": ".tmp\\infra_batch143\\validation0.log"
+    },
+    {
+      "command": "-m unittest backend.tests.test_infrastructure_land_siting_candidates143",
+      "exit_code": 0,
+      "elapsed_seconds": 4.918,
+      "log": ".tmp\\infra_batch143\\validation1.log"
+    }
+  ],
+  "cohort_unit_tests": 9,
+  "negative_mutations": 20,
+  "additional_validation": {
+    "canonical_IR_validator": "PASS;12accepted references,4accepted held-out references,4held-out",
+    "command": "python -m unittest backend.tests.test_editorial_semantic_ir backend.tests.test_ci_workflow_preservation backend.tests.test_accepted_findings_synthesis.AcceptedFindingsSynthesisTests.test_frozen_upstream_paths_and_existing_ci_jobs backend.tests.test_accepted_findings_public_wording.AcceptedFindingsPublicWordingTests.test_upstream_historical_and_prior_ci_blocks_are_unchanged",
+    "result": "PASS;36tests;0.478s;dependency scope unchanged by final143coverage assertion"
+  },
+  "behavior_inspected": "Compiled/readable artifacts:5shared cores,10official observations,0propositions,all5held,1resolved NotVoting excluded from directional candidate accounting. Direct source/replay, originalPDFidentities,14selected PDFpages plus named map visually inspected, full source-scope qualifications and narrow workflow diff reviewed.",
+  "canonical_state_changed": false,
+  "semantic_acceptance": false,
+  "application_authorized": false,
+  "batch142_application_or_meaning_acceptance_inferred": false,
+  "independent_review": "Required at exact immutable target; not yet claimed",
+  "standalone_entrypoint_fix": "142and143validatorCLIbootstrap repo root before package imports; subprocess regression removesPYTHONPATH. Frozen142source/semantic artifacts unchanged.",
+  "e85_hosted_validation_owner": "Separate read-only verifier; no duplicate CI investigation performed here after coordination instruction.",
+  "prior142regression": {
+    "command": "python -m unittest backend.tests.test_infrastructure_disaster_candidates142",
+    "tests": 7,
+    "seconds": 2.512,
+    "result": "PASS;frozen142packet unchanged;CLIbootstrap only"
+  }
+}

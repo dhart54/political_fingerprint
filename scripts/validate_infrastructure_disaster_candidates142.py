@@ -9,12 +9,15 @@ import io
 import json
 import re
 from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 
 from backend.app.semantic_ir.shared_corpus import digest, sealed_digest
 from scripts.prepare_shared_domain_candidate import prepare, readable_candidates
 from scripts.validate_infrastructure_hr859_scope137 import TextParser
 
-ROOT = Path(__file__).resolve().parents[1]
 PACKET = ROOT / 'docs/review_packets/infrastructure_batch142_disaster_baselines'
 BASE = ROOT / 'docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916'
 MEMBERS = ['F000477', 'M001184']

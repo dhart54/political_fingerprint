@@ -1,0 +1,48 @@
+{
+  "capture": "covenant2022_capture.json",
+  "pages": [
+    {
+      "one_based_pdf_page": 1,
+      "extracted_text_characters": 1814,
+      "extracted_text_sha256": "712d349176458cd46f8913dc44feeb92da93ada7545165446a6c9e634af00c22",
+      "rendered_image_sha256": "db4b940f7365de13a60fdfbb450e0e08713aa294cc603732769936cf8b7dad51",
+      "visually_reviewed": true
+    },
+    {
+      "one_based_pdf_page": 2,
+      "extracted_text_characters": 1666,
+      "extracted_text_sha256": "bbc5d7cfd45dafb9ed5f68fc757d51a301b36af9c88009cd8d7573e3858e6b00",
+      "rendered_image_sha256": "54d5f6d1d0c8681f797d393846c2c62dd0af24520a6105e1044a93c5af18baea",
+      "visually_reviewed": true
+    },
+    {
+      "one_based_pdf_page": 3,
+      "extracted_text_characters": 0,
+      "extracted_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rendered_image_sha256": "f501ac9bb1c116aa9bc5ed36a762e904fc65734548740ba69810c28228d63eef",
+      "visually_reviewed": true
+    },
+    {
+      "one_based_pdf_page": 4,
+      "extracted_text_characters": 0,
+      "extracted_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rendered_image_sha256": "923961693ddd13538214606f59b46925c3fc36efd90376f7d47285469eb04635",
+      "visually_reviewed": true
+    },
+    {
+      "one_based_pdf_page": 5,
+      "extracted_text_characters": 0,
+      "extracted_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rendered_image_sha256": "1da6278963a90c502abe2e3a4e431b2c87904a27e455bae7e1ab212eda9e7b0b",
+      "visually_reviewed": true
+    }
+  ],
+  "render_command": "pdftoppm -r130 -png covenant2022.pdf covenant",
+  "reviewed_physical_pages": 5,
+  "printed_covenant_pages": 4,
+  "physical_page5_is_exhibit_A": true,
+  "exhibit_is_not_the_named_October26_2022_map": true,
+  "observations": "Printedpages1/2contain the operative covenant; pages3/4are scanned dated execution/notarial pages, not a model finding of legal authenticity or present recording. Page5ExhibitA labels the Czywczynski parcel, describes the map as general reference rather than a legal survey, and shows a different map title/date from the HR165October26instrument.",
+  "current_title_or_recording_certified": false,
+  "map_polygon_or_geodetic_accuracy_certified": false
+}
