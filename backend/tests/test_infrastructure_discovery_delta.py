@@ -1048,4 +1048,21 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
         with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_remaining_offense_context(a,bad,ss,r)
 
+    def test_hr4371_PRA_APA_context_keeps_collection_agency_privacy_and_rulemaking_scopes(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4371_pra_apa_context
+        p=folder(133);r=read(p/'hr4371_pra_apa_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);ss={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        validate_4371_pra_apa_context(a,u,ss,r);self.assertTrue(validate(133)['generated_replay'])
+        for field in ['whole_PRA_APA_or_privacy_law_reviewed','current_law_certified','all_floor_version_binding_cleared','actual_collection_or_system_classified','ten_person_test_applied_to_all_branches','agency_definitions_flattened','all_agency_action_is_rulemaking','unconditional_PRA_APA_or_privacy_waiver','new_technology_or_public_disclosure_mandated','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared purpose/definition/operative/privacy/outcome/meaning gates'):validate_4371_pra_apa_context(a,u,ss,bad)
+        for old,new in [('PURPOSES, NOT ACHIEVED OUTCOMES','proven achieved efficiency'),('PRIVACY/CONFIDENTIALITY, SECURITY AND ACCESS-LAW','unrestricted public disclosure'),('not automatically the same as551agency exclusions','identical to every551exclusion'),('TEN OR MORE NON-FEDERAL PERSONS','any number of persons'),('SEPARATE FEDERAL-AGENCY/EMPLOYEE','same ten-person rule for all employees'),('3518(c)(1)EXCLUSION','no exclusions'),('NATIONAL SECURITY SYSTEMS','everyDefensecomputer'),('EXCLUDES UNDERLYING LISTED DATA ASSETS','includes all listed privatefiles'),('ALL FOUR printed','any one printed'),('EXCEPT-AS-TO552','blanketFOIAimmunity'),('GENERAL OR PARTICULAR','generalonly'),('FORMULATING, AMENDING OR REPEALING','every agencyprocess'),('OTHER THAN RULEMAKING, INCLUDING LICENSING','allrulemaking'),('DENIAL OR FAILURE TO ACT','positiveacts only'),('TWO DIFFERENT CONDITIONAL','oneunconditional'),('PROMULGATING REGULATIONS','allAPArequirements'),('IF THE NAMED OFFICIALS DETERMINE','regardless of a determination')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'conditional-waiver boundary lost'):validate_4371_pra_apa_context(aa,uu,ss,bad)
+        bad=copy.deepcopy(r);bad['source_contexts'][-1]['appended_claim']['locator']='wholeAPA/currentlaw'
+        with self.assertRaisesRegex(ValueError,'claim broadened selected scope'):validate_4371_pra_apa_context(a,u,ss,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][2]['passage']='altered full EH'
+        with self.assertRaisesRegex(ValueError,'changed prior evidence/flags/meaning state'):validate_4371_pra_apa_context(bad,u,ss,r)
+        bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
+        with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_pra_apa_context(a,bad,ss,r)
+
 if __name__=='__main__':unittest.main()

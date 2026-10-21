@@ -1,6 +1,6 @@
 # Infrastructure remaining-discovery candidate screening
 
-Current checkpoint: **batch132**, candidate only. Owner DESKTOP-1CQBHTJ,
+Current checkpoint: **batch133**, candidate only. Owner DESKTOP-1CQBHTJ,
 `.w/infra`, `codex/infrastructure-candidate-seed`; actual main base
 `af6cd6d78d6944d64a68a92653066c4c1625f96b`. Historical independent discovery-delta review
 targeted exact `d2865c36c277c85866ca38935eb11706d63f4313`. A historical parent report described H.R.9436
@@ -28,9 +28,9 @@ All70shared meanings project mechanically to Foushee and Massie. 8 authored
 Not Voting observations remain nondirectional, with68Foushee
 and64Massie directional findings. No coverage, synthesis or publication acceptance.
 
-Pending1:340HR4371links8retaineddated2024selectedunits/20166chars:CAPTAchild/abuse,1111–1113homicide/attempt,1226custody,1101aggravated/seriousoffense,2252operative. Preservethreechilddefinitions/convictiongate, malice-versuswithoutmalice/sectionjurisdiction/attemptconditions, datedcustodycategories/witnessrelease/sentenced-vspunishablethreshold, seriousoffenseinjury/3alternatives, allA–Udistinctthresholds/family/foreign/attemptlimits/literalglyphs,2252knowing+BOTHpredicates/separatesentences/qualifieda4defense/no2252Aimport. Noactualperson/currentlaw/floor/wholemeaning/acceptance; all1612priorobjects/70actions/compiled/675otherssame,8retainedlinks→1620,zeroacquisition/retry.
+Pending1:340HR4371links3existingdated2024units/14879chars:3501purposes,3502PRAdefinitions,551APAdefinitions. Preservepurposes-vsoutcomes/privacy-security-access, differingagency/burden/collection10person-vsFedstatistical/exclusionlimits, information-system/IT-NSS/open-data/license/inventory boundaries and rulemaking-vsorder/licensing/otheragencyaction. EHsection5remains2conditionalcompliance/regulationprovisions, noallAPA/privacywaiver/actualcollection/software/publicposting/wholemeaning/acceptance. All1620objects/70actions/compiled/675otherrecords unchanged,0newobjects/acquisitions/retries;3newrecordlinks only.
 
-[Readable batch132 findings](infrastructure_candidate_batch132.md).
+[Readable batch133 findings](infrastructure_candidate_batch133.md).
 
 ## Retained reviewer and access boundaries
 
@@ -40,7 +40,7 @@ span. Its reporting-termination note prevents an unqualified current-enforceabil
 claim. The H.R.192 public-operator comparator is bound; the earlier compensation-only
 exclusion rationale is withheld pending independent taxonomy/material-baseline review.
 No opposite membership or change to H.R.192 is accepted.
-[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch132_20260916/hr144_baseline_boundary_review.json).
+[Baseline/preimage receipt](../editorial/shared_candidates/house_119_infrastructure_batch133_20260916/hr144_baseline_boundary_review.json).
 
 H.R.9436's annual recipient remains Congress, in consultation with affected States;
 measures are expected not to exceed Potential Biological Removal and its amendment
@@ -55,28 +55,28 @@ Independent records continue around these holds.
 
 ## Validation and resume
 
-**Four focused regressions9.594s, source/conservation/generated replay and seven
+**Four focused regressions9.603s, source/conservation/generated replay and seven
 semantic checks pass**. Full151suite remains inherited exact
-`3be714268666858130bb62d1f171af6a19362c4a`; no full177suite run. Current shared authoring/generated copies remain member-neutral.
+`3be714268666858130bb62d1f171af6a19362c4a`; no full178suite run. Current shared authoring/generated copies remain member-neutral.
 0successful new source acquisitions and no protected retry in this increment. Formal gate processes
-took4.73seconds; the specification/authoring elapsed window and later byte/delivery
+took4.712seconds; the specification/authoring elapsed window and later byte/delivery
 overhead are separate. Preparatory source reading was not continuously timed.
 Prior/current generated LF hashes are checked against actual staged Git blobs.
 
-[Resume](../editorial/shared_candidates/house_119_infrastructure_batch132_20260916/resume_receipt.json),
-[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch132_20260916/screening_units_receipt.json),
-[validation](../editorial/shared_candidates/house_119_infrastructure_batch132_20260916/validation_receipt.json),
-[timing](../editorial/shared_candidates/house_119_infrastructure_batch132_20260916/timing_receipt.json),
+[Resume](../editorial/shared_candidates/house_119_infrastructure_batch133_20260916/resume_receipt.json),
+[evidence units](../editorial/shared_candidates/house_119_infrastructure_batch133_20260916/screening_units_receipt.json),
+[validation](../editorial/shared_candidates/house_119_infrastructure_batch133_20260916/validation_receipt.json),
+[timing](../editorial/shared_candidates/house_119_infrastructure_batch133_20260916/timing_receipt.json),
 [living plan](../plans/infrastructure_remaining_discovery_screening.md).
 
-Pending1:340HR4371links8retaineddated2024selectedunits/20166chars:CAPTAchild/abuse,1111–1113homicide/attempt,1226custody,1101aggravated/seriousoffense,2252operative. Preservethreechilddefinitions/convictiongate, malice-versuswithoutmalice/sectionjurisdiction/attemptconditions, datedcustodycategories/witnessrelease/sentenced-vspunishablethreshold, seriousoffenseinjury/3alternatives, allA–Udistinctthresholds/family/foreign/attemptlimits/literalglyphs,2252knowing+BOTHpredicates/separatesentences/qualifieda4defense/no2252Aimport. Noactualperson/currentlaw/floor/wholemeaning/acceptance; all1612priorobjects/70actions/compiled/675otherssame,8retainedlinks→1620,zeroacquisition/retry.
+Pending1:340HR4371links3existingdated2024units/14879chars:3501purposes,3502PRAdefinitions,551APAdefinitions. Preservepurposes-vsoutcomes/privacy-security-access, differingagency/burden/collection10person-vsFedstatistical/exclusionlimits, information-system/IT-NSS/open-data/license/inventory boundaries and rulemaking-vsorder/licensing/otheragencyaction. EHsection5remains2conditionalcompliance/regulationprovisions, noallAPA/privacywaiver/actualcollection/software/publicposting/wholemeaning/acceptance. All1620objects/70actions/compiled/675otherrecords unchanged,0newobjects/acquisitions/retries;3newrecordlinks only.
 
 No editorial acceptance, publication/registry change, production write, merge or manual deployment.
 
-[Currenteight-unit context/preimage](../editorial/shared_candidates/house_119_infrastructure_batch132_20260916/hr4371_remaining_offense_context_receipt.json) binds20166characters of8retained2024selectedunits only. CAPTA/1111/INAchilddefinitions, convictiongate, malice/withoutmalice andsectionjurisdiction, datedcustodycategories/qualifiedwitnessrelease/sentenced-versuspunishablethreshold, seriousoffense3alternatives/injury, allaggravatedA–Uthresholds/family/foreign/attemptlimits/literalglyphs, and2252knowing+BOTHpredicates/qualifieda4defense/baselinepenalties/no2252Aimport remain distinct. Noactualperson/currentlaw/remainingpredicate-law/floor/wholeInfra/readiness/acceptance.
+[CurrentPRA/APAcontext/preimage](../editorial/shared_candidates/house_119_infrastructure_batch133_20260916/hr4371_pra_apa_context_receipt.json) links ONLY3existingdatedunits3501purposes/3502PRAdefinitions/551APAdefinitions,14879characters. Purpose-versusoutcome/privacy-security-access, differingagencyexclusions, collection10nonFederalversusFederalstatisticalalternatives/unreviewedexclusion, information-system/IT-NSS/open-data/license/inventory and rulemaking-versusotheragencyaction boundaries staydistinct. EHsection5remains2conditionalcompliance/regulationprovisions; noactualcollection/privacywaiver/publicposting/newsoftware/fulloperative-law/currentlaw/floor/wholeInfra clearance.
 
-[Currentrecord and8originalobjects](infrastructure_batch132_hr4371_remaining_offenses/manifest.json) export105688bytes and2481/2769/1505/1225/2195/6055/879/7327-byte originalobjects withactualHealth5f050bbdorigin/pointers/canonical/raw/governed/transport hashes. All1612priorobjects/70actions/compiled/675otherrecords unchanged;8retainedlinks→1620andzeroacquisition/retry. Prepared10234prior/924generatedLFblobs areverifiedagainstactualindexbeforecommit. Unchanged131→130→129guards apply onlytoexactpreservedpreimages, witholdclaims/flags/receipts/exports intact.
+[Currentrecord and3originalexistingobjects](infrastructure_batch133_hr4371_pra_apa_context/manifest.json) export128437/3382/8447/4719bytes withactualf99Infraorigin/pointers/canonical/raw/governed/transport hashes. All1620objects/70actions/compiled/675otherssame,0newobjects/acquisitions/retries;only3newrecordlinks. Prepared10388prior/931generatedLFblobs areverifiedagainstactualindexbeforecommit. Strictnewguard precedes unchanged132→131→130→129guards onexactpreservedpreimages; earlierclaims/flags/receipts/exports remain exact.
 
-[Independent131review](infrastructure_batch131_scoped_review_attribution.json) and [portablepreservationevidence](infrastructure_independent_review131_preservation_20261021.json) reportboundedclean exact5f050bbdversus21142cef. OneNEWregression2.732s/935authenticatedsnapshotfiles, including131generatedreplay/negatives; no earlier-headtests/full176/sevensemanticrerun, and owner917/10083totalsnotindependentlyreproduced. Git-authenticatedisolatedWindowsLFshim/notfreshclone; no PR-triggeredActionsrunfor131/Vercelsucceeded. No132closure oracceptance. Earlier[128–129review](infrastructure_batch128_129_scoped_review_attribution.json), [130review](infrastructure_batch130_scoped_review_attribution.json), [reviewervalidation](infrastructure_independent_review128_130_validation_20261021.json) and[YRAauthentication](infrastructure_yra_original_object_independent_authentication.json) remain scoped/immutable.
+[Independent132review](infrastructure_batch132_scoped_review_attribution.json) and [portableevidence](infrastructure_independent_review132_preservation_20261021.json) reportboundedclean exactf99c4444against5f050bbd. OneNEWregression2.747s/1087authenticatedsnapshotfiles, including132replay/negatives;no full177/sevensemanticrerun/earlierheadtests/owner924-10234reproduction. Git-authenticatedisolatedWindowsLFshim/notfreshclone. No133closureoracceptance; earlier128–131attributions remainimmutable.
 
-Continue safelyexecutableretainedresearch through privacy/PRA-APA/otherstatutoryunits/predicate/rights/floor/currentlaw/wholemeaning gates, preservingall6holds/stoppedroutes. No protectedretry or merge/acceptance/promotion/publication/production/schemaapply/deploy.
+[Hostedvalidationblocker](infrastructure_checkpoint132_hosted_validation_blocker.json) and [compatibilityassessment](../plans/infrastructure_ci_workflow_compatibility_20261021.md) preserve exact132/c52dworkflowconflict and deeperHealthwhole-helperfreeze(ac221/8eb95a54)versusInfrastructure674ec45dnondirectionalfix. Other6frozenrulesmatch; mainHealthvalidationclosurecannotpassunchangedonthishelper. Prototypepreflightstoppedbeforeanycopy/workflowedit; noHealthbranch/worktree/runtime/schema/decision/provenancechange. ExplicitboundedcompatibilityapprovalisPENDING; do notimplementthatlaneuntilgranted. No applicablemanualdispatch/exactActionsrun/checkoutlogs; VercelisnotActionsvalidation. Retainedsourceworkcontinuesindependently; allsixholds/stoppedroutes andreserved-actionprohibitionsremain.

@@ -1,0 +1,42 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-21T14:44:26.703408+00:00",
+    "qualification": "Complete3retained2024units read before marker:3501purposes2864/3502definitions7849/551definitions4166,14879characters total; untimed. AllalreadyinInfrastructurecorpus, no acquisition/newobject/wholePRA-APA/privacy/currentlaw/actualcollectioncertificate."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-21T14:47:13.849655+00:00",
+    "end_utc": "2026-10-21T14:47:18.561650+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 133 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch133_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.366
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.346
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 167.146,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 4.712,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 9.603,
+    "process_wall_seconds": 9.821,
+    "result": "passed",
+    "scope": [
+      "Current133PRApurpose-definitions/APAdefinitions/agency-collectionalternatives/privacy-rulemaking-conditionalEHscope",
+      "Preserved132child-homicide-custody-offenseguard-on-beforeview",
+      "Preserved131RH-definitionguard-on-original132preimage",
+      "Preserved130placementguard-on-original131preimage"
+    ]
+  },
+  "timing_qualification": "Successfulsource/semanticprocess4.712s excludesfocusedprocess9.821s and byteproof/deliveryoverhead. Preparatorysource reading untimed; authoringelapsedwindow isnot activeworkduration. No focused/source/semantic gatefailure in133; earlierCIprototypecountpreflightwasaseparateblockedlane, not133researchvalidation."
+}
