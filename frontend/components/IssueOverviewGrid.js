@@ -43,7 +43,10 @@ export default function IssueOverviewGrid({
 function IssueCard({ compact, isRecommended, isSelected, onSelect, row }) {
   const composition = getRecordedActionComposition(row);
   const label = formatDomainLabel(row.domain);
-  const status = row.analysisAvailable
+  const bounded = row.boundedChoiceAvailable || row.boundedAccountingAvailable;
+  const status = row.boundedChoiceAvailable ? "Reviewed choice available"
+    : row.boundedAccountingAvailable ? "Not Voting record available"
+    : row.analysisAvailable
     ? "Issue summary available"
     : "Vote receipts available";
   return (
@@ -99,7 +102,9 @@ function IssueCard({ compact, isRecommended, isSelected, onSelect, row }) {
           ))}
         </ul>
       </div> : null}
-      {!compact && (row.analysisAvailable ? (
+      {!compact && (bounded ? (
+        <p className="mt-4 text-sm leading-6 text-teal-950">One House action in the 119th Congress. Inspect the choice, qualifications and sources.</p>
+      ) : row.analysisAvailable ? (
         <p className="mt-4 line-clamp-2 text-sm leading-6 text-teal-950">
           {row.presentation.review_state.scope_bounded_teaser?.text
             || row.presentation.teaser
@@ -112,12 +117,12 @@ function IssueCard({ compact, isRecommended, isSelected, onSelect, row }) {
       ))}
       <button
         aria-current={isSelected ? "true" : undefined}
-        aria-label={`${row.analysisAvailable ? "Explore" : "Browse vote record for"} ${label}`}
+        aria-label={`${bounded ? "Inspect recorded choice for" : row.analysisAvailable ? "Explore" : "Browse vote record for"} ${label}`}
         className="mt-auto pt-5 text-left text-sm font-semibold text-teal-900 underline decoration-teal-700/30 underline-offset-4 hover:decoration-teal-800"
         onClick={() => onSelect(row.domain)}
         type="button"
       >
-        {row.analysisAvailable ? "Explore issue" : "Browse vote record"}
+        {row.boundedChoiceAvailable ? "Inspect reviewed choice" : row.boundedAccountingAvailable ? "Inspect recorded action" : row.analysisAvailable ? "Explore issue" : "Browse vote record"}
       </button>
     </article>
   );

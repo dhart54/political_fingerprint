@@ -1,0 +1,57 @@
+{
+  "schema_version": "bounded_health_release_observation_v1",
+  "authorizing": false,
+  "project_ref": "yalpfkaxkxebwolhorha",
+  "source": "authorized Supabase execute_sql connector; REPEATABLE READ READ ONLY; 2026-10-21",
+  "observation": {
+    "port": 5432,
+    "role": "postgres",
+    "counts": {
+      "batches": 11,
+      "artifacts": 167,
+      "relationships": 173,
+      "publication_registry": 4
+    },
+    "database": "postgres",
+    "read_only": "on",
+    "owner_table": null,
+    "bounded_view": null,
+    "active_registry": [
+      {
+        "issue": "EDUCATION_WORKFORCE",
+        "active": true,
+        "member": "F000477",
+        "artifact_id": 254,
+        "content_sha256": "dde91335f2a125463024275930e173afb562df0746fe00c394452d7759bcb698",
+        "deactivated_at": null
+      },
+      {
+        "issue": "ENVIRONMENT_ENERGY",
+        "active": true,
+        "member": "F000477",
+        "artifact_id": 239,
+        "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+        "deactivated_at": null
+      },
+      {
+        "issue": "JUSTICE_PUBLIC_SAFETY",
+        "active": true,
+        "member": "F000477",
+        "artifact_id": 251,
+        "content_sha256": "01f237396226557347cb6a216ad4ae8ea6b20d04fabe084ec3f5cc9732e5545b",
+        "deactivated_at": null
+      },
+      {
+        "issue": "NATIONAL_SECURITY_FOREIGN",
+        "active": true,
+        "member": "F000477",
+        "artifact_id": 248,
+        "content_sha256": "c675731a2602829f2c1d325673c50099cb3ef458d2ae0bf07b10237019858f29",
+        "deactivated_at": null
+      }
+    ],
+    "bounded_columns": 0,
+    "captured_at_utc": "2026-10-21T13:40:12.991256+00:00",
+    "target_registry_rows": 0
+  }
+}

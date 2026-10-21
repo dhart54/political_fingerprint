@@ -46,6 +46,9 @@ export function buildSelectedIssueModel({ presentation, rows = [], scope = "all"
 }
 
 function findingCount(presentation) {
+  if (presentation?.presentation_branch === "bounded_choice_review") {
+    return presentation.bounded_choice?.proposition_ids?.length || 0;
+  }
   return ["repeated_patterns", "policy_trajectories", "notable_choices"]
     .reduce((count, field) => (
       count + (Array.isArray(presentation?.[field]) ? presentation[field].length : 0)

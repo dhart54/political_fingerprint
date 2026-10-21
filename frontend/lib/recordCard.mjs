@@ -50,7 +50,8 @@ export function suppliedDirection(item) {
 }
 
 export function reviewedPresentations(payload) {
-  return (payload?.presentations || []).filter((p) => p.review_state && p.tier !== "receipts_only");
+  return (payload?.presentations || []).filter((p) => p.review_state && p.tier !== "receipts_only"
+    && p.presentation_branch !== "bounded_choice_review");
 }
 
 export async function projectRecordCard({ candidate, payload, legislatorId, memberBioguideId, scope, requestStatus = "ready" }) {

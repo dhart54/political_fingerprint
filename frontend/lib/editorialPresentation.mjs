@@ -1,4 +1,5 @@
 import { DOMAIN_ORDER } from "./issueEvidenceCoverage.mjs";
+import { isBoundedChoiceProjection } from "./boundedChoicePresentation.mjs";
 
 const PUBLIC_TIERS = new Set([
   "reviewed_conclusion",
@@ -20,6 +21,10 @@ export function issuePresentationStatus(payload, identity, scope) {
 export function indexEditorialPresentations(payload) {
   const result = new Map();
   for (const presentation of payload?.presentations || []) {
+    if (presentation?.presentation_branch === "bounded_choice_review" || presentation?.tier === "bounded_choice_review" || presentation?.bounded_choice !== undefined) {
+      if (isBoundedChoiceProjection(presentation, payload)) result.set(presentation.issue_id, presentation);
+      continue;
+    }
     if (
       typeof presentation?.issue_id !== "string" ||
       !PUBLIC_TIERS.has(presentation?.tier) ||
