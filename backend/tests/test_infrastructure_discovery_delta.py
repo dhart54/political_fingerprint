@@ -976,4 +976,23 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(r);bad['source_witnesses'][0]['source_start']=30664
         with self.assertRaisesRegex(ValueError,'source witnesses differ'):validate_partA7_compensation_preemption_precision(a,u,s,bad)
 
+    def test_hr4371_full_EH_keeps_age_sponsor_disclosure_and_conditional_implementation_scopes(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4371_complete_retained_body
+        p=folder(129);r=read(p/'hr4371_complete_retained_body_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);s=next(x for x in read(p/'sources.json')['sources'] if x['source_id']==r['source_id'])
+        validate_4371_complete_retained_body(a,u,s,r);self.assertTrue(validate(129)['generated_replay'])
+        for field in ['referenced_laws_fully_reviewed','committee_floor_version_binding_cleared','current_law_certified','actual_child_or_sponsor_risk_determined','information_disclosure_is_public_posting','APA_or_PRA_unconditionally_waived','House_passage_implies_enactment','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared law/version/individual-risk/publication/implementation/meaning gates'):validate_4371_complete_retained_body(a,u,s,bad)
+        for old,new in [('BY REASON OF IMMIGRATION STATUS','for any reason'),('ARRESTED, CHARGED AND CONVICTED','convicted'),('children12OR OLDER','children of all ages'),('FLIGHT RISK OR DANGER','flight risk AND danger'),('IF ORDERED REMOVED','regardless of removal order'),('FOR CONDUCT IN CONNECTION WITH GANG AFFILIATION OR ACTIVITY','for any conduct'),('NEITHER A US CITIZEN NOR A LAWFUL PERMANENT RESIDENT','not a US citizen'),('OR A HOUSEHOLD RESIDENT','only the sponsor'),('MORE THAN ONE YEAR','at least one year'),('HHS SHALL PROVIDE DHS','HHS shall publicly post'),('EACH ADULT HOUSEHOLD RESIDENT','only the sponsor'),('SSN OR ITIN','SSN only'),('AT A MINIMUM','optional'),('public-records background check AND fingerprint-based national criminal-history check','public-records OR fingerprint checks'),('IF THEY DETERMINE compliance WOULD IMPEDE IMMEDIATE IMPLEMENTATION','unconditionally'),('AND ALL RELEASE REDETERMINATIONS','new determinations only'),('printed section642(g)(2)','corrected section462(g)(2)')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'conditional-implementation/applicability boundary lost'):validate_4371_complete_retained_body(aa,uu,s,bad)
+        bad=copy.deepcopy(r);bad['appended_full_claim']['passage']=s['text'][:3200]+s['text'][-900:]
+        with self.assertRaisesRegex(ValueError,'not exact complete EH'):validate_4371_complete_retained_body(a,u,s,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][0]['passage']='altered earlier passage'
+        with self.assertRaisesRegex(ValueError,'changed source references/passages/evidence flags'):validate_4371_complete_retained_body(bad,u,s,r)
+        bad=copy.deepcopy(r);bad['topics'].pop(5)
+        with self.assertRaisesRegex(ValueError,'omitted an operative section'):validate_4371_complete_retained_body(a,u,s,bad)
+        bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
+        with self.assertRaisesRegex(ValueError,'changed unresolved version or universe gates'):validate_4371_complete_retained_body(a,bad,s,r)
+
 if __name__=='__main__':unittest.main()
