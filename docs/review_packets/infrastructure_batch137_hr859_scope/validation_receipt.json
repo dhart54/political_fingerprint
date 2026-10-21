@@ -1,0 +1,169 @@
+{
+  "kind": "focused_source_research_and_transport_validation",
+  "base_head": "28437fb5f0c79f7aa3b63faa705c8bb58ac1d7d0",
+  "recorded_utc": "2026-10-21T16:31:55.531684+00:00",
+  "packet_byte_units": "committed_LF_UTF8",
+  "raw_byte_units": "originalHTTPresponsebytesdecodedfrombase64",
+  "test_status": "passed",
+  "prior_source_four_test_result": {
+    "count": 4,
+    "seconds": 2.102,
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "backend.tests.test_infrastructure_hr859_scope137"
+    ],
+    "qualification": "Local source/provenance gate before adding manifest transport checks; not independent/fullsuite/hosted clearance"
+  },
+  "packet_files": [
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/15usc45b_capture.json",
+      "bytes": 33280,
+      "lf_sha256": "4abb840b9e9a0ea24cf674569507fa9645f4563aebd12a66583d72e3ed5fb64f"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc255_capture.json",
+      "bytes": 10874,
+      "lf_sha256": "1dce5be9d69f91ec9e5b07076fca291c3e2aa4a0688f668ef25970ff20c5f5a7"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc255_failed_capture.json",
+      "bytes": 2052,
+      "lf_sha256": "3d01d83d04d58578e1ee118a96612db0012a61b440fde822ce1a63f6a5c6a443"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc303_capture.json",
+      "bytes": 177195,
+      "lf_sha256": "808d3b6690d9eaec7c4a393ea90ef216aa7bff8cf4633257044b6e7c2fd54c4a"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc617_capture.json",
+      "bytes": 24443,
+      "lf_sha256": "17f3f0dcee708af32b37aa2c02db7af56ebf403b9f0ed632c19a3a34b4555f93"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc619_capture.json",
+      "bytes": 10240,
+      "lf_sha256": "0183f0416e0870646f9aab0412ed5e7ec8e67b6b0284b73151d34f92c2a4f39d"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/access_diagnosis_and_followup.json",
+      "bytes": 9008,
+      "lf_sha256": "7213a7f714b1b3ffb0c4a63256631d57254dff49b70dec43f307deb26f8df0fc"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/acquisition_observations.json",
+      "bytes": 3364,
+      "lf_sha256": "0fc1c28de048ab0518d0e1f7ce59f461b58bdb69f8c6505b34fd3b48b71c44a7"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/README.md",
+      "bytes": 3484,
+      "lf_sha256": "535388a0b318f2b6f91ecf9c425a0b52719edc73134a97cb807cd453100204fc"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/source_questions.json",
+      "bytes": 30874,
+      "lf_sha256": "1446285b5af668a604545272d5360d626de2f85bcee28bbac014e2b558170be9"
+    }
+  ],
+  "canonical_editorial_tree_at_base": "e12eda9611781d469d8600e53f2d4c72dc48140e",
+  "canonical_file_proof": [
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/membership_review.json",
+      "git_blob": "836b70b563c8c6a1c421255eaf576f3c49a7427c",
+      "LF_sha256": "f2bf337a779760092006741192db5e8772d6db505fe42786818c86a160b81f07"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/sources.json",
+      "git_blob": "62c1120fd2f54c9aef2a7666b957e4e86ffe732a",
+      "LF_sha256": "60d0965f32dac135f8c949e6a540145ad4158ecda31ce1eac1123144538a67ec"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/authoring.json",
+      "git_blob": "7a7b61c22eb1820bd8f8774cde1998322f12bba0",
+      "LF_sha256": "4aa9c5582c1ffebbf1c8d11580ce40a21bb777d82adbe6492fa75671f93b38fc"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/universe_proposal.json",
+      "git_blob": "fcca0ccf82bfe601c2d44d5e466edaddce44949d",
+      "LF_sha256": "8a4496ed1b24a84719152db264e0709f07a7cfb97e8b3a7110acfc57f2ca2acf"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/generated/compiled_ir.json",
+      "git_blob": "5cf6b8307c78d00ae36197339d78a65ad8392037",
+      "LF_sha256": "b9bf106a912489d8905b0a5443375750976658a391d269b56a249b514f99ded7"
+    }
+  ],
+  "pending_decision_subjects_unchanged": [
+    {
+      "path": "docs/review_packets/infrastructure_batch135_hr4371_decision/recommendation.json",
+      "git_blob": "0bc02c15882056c8e80f97c72fb9fe9cb4e3b78d",
+      "LF_sha256": "03a74625488507102d3d102f1c7e0dbb076d09ec7507765235a6499728f810ca"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr28_recommendation.json",
+      "git_blob": "b127ba17e75523590baf8b90b11d9b7135ed92cd",
+      "LF_sha256": "19e10c21d02328df385e9d22010e4cac69a1c81423e412b55ff464c61e8bcb5b"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr1442_recommendation.json",
+      "git_blob": "4654ebba4879e15fd989a993525c7600715d0542",
+      "LF_sha256": "6a922cd6e645015fdcf00e68afc2de10eab6531a1143439ee7836108410d466f"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/decision_bundle.json",
+      "git_blob": "a7621ee8c6bafab2388bc9cc1560341dbbcfddbc",
+      "LF_sha256": "883ff3018a530a49dd85fe4a511d6f88b3279aa700334888c5a5c8f1c58203b3"
+    }
+  ],
+  "successful_source_captures": 5,
+  "raw_transport_attempts": 6,
+  "old_failed_response_body_restored": false,
+  "source_registered": false,
+  "canonical_source_count": 1621,
+  "governed_pending": 262,
+  "source_holds": 6,
+  "whole_case_complete": false,
+  "current_law_certified": false,
+  "actual_device_classified": false,
+  "full_repository_suite_run": false,
+  "canonical_seven_gate_rerun": false,
+  "hosted_success_established": false,
+  "independent137review": "Pending",
+  "semantic_acceptance": false,
+  "compatibility_authorized": false,
+  "Health_activated": false,
+  "test_count": 5,
+  "reported_test_seconds": 2.279,
+  "validation_processes": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "backend.tests.test_infrastructure_hr859_scope137"
+      ],
+      "start_utc": "2026-10-21T16:31:53.082865+00:00",
+      "returncode": 0,
+      "process_wall_seconds": 2.448,
+      "stdout": "",
+      "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 2.279s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "scripts.validate_infrastructure_hr859_scope137"
+      ],
+      "start_utc": "2026-10-21T16:31:53.083001+00:00",
+      "returncode": 0,
+      "process_wall_seconds": 0.345,
+      "stdout": "{\n  \"source_scope\": {\n    \"action_id\": \"house:119:1:109\",\n    \"selected_sources\": 5,\n    \"selected_primary_unit_characters\": 13330,\n    \"original_raw_bytes\": 117656,\n    \"canonical_source_objects_added\": 0,\n    \"whole_case_completed\": false,\n    \"actual_device_classified\": false\n  },\n  \"transport\": {\n    \"files\": 10,\n    \"byte_units\": \"committed_LF_UTF8\"\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "reading_qualification": "13330selectedprimaryunit characters plus a separately mapped255reference note; not whole303/45b/Code/currentlaw/regulations/actualclassification",
+  "validation_qualification": "Local source/traceability/transport/preimage/authority negatives and independent CLI invocation only; no independent137/fullsuite/hosted or canonical-seven clearance"
+}

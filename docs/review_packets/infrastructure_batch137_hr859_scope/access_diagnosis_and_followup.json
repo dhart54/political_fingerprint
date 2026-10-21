@@ -1,0 +1,82 @@
+{
+  "kind": "unclassified_failure_diagnosis_and_bounded_followup",
+  "action_id": "house:119:1:109",
+  "original_observations_ref": "docs/review_packets/infrastructure_batch137_hr859_scope/acquisition_observations.json",
+  "initial_failure_status": "Both255/619browserfailures supplied no HTTPstatus/body/auth/securitywarning",
+  "instruction_update": "The user superseded the blanket no-retry treatment of these two unclassified failures only; genuine restrictions and six canonical holds remain unchanged",
+  "before_new_reads": "Existing receipts inspected; neither255nor619had a later successful/uncertain raw attempt",
+  "followups": [
+    {
+      "source_key": "47usc619",
+      "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapVI-sec619.htm",
+      "result": "captured_same_official_source_after_unclassified_tool_failure",
+      "http_status": 200,
+      "raw_response_bytes": 4143,
+      "raw_response_sha256": "31a1e47764a5b537f3edfeacfc39da9f0e762cdf81db0e6d99f6b37fd9466ed4",
+      "capture_path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc619_capture.json",
+      "raw_transport_attempts": 1
+    },
+    {
+      "source_key": "47usc255",
+      "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partI-sec255.htm",
+      "result": "bounded_followup_failed",
+      "http_status": 200,
+      "error_type": "AssertionError",
+      "error": "",
+      "raw_response_retained": false,
+      "raw_response_sha256": null,
+      "capture_path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc255_failed_capture.json",
+      "raw_transport_attempts": 1,
+      "provenance_limit": "The helper asserted a combined nonstatutory-content check before retaining the returned body. The body is unavailable; cannot identify the marker or reconstruct the response, call it a denial/not-found page, or use it as legislative evidence."
+    }
+  ],
+  "helper_correction": "Original bytes/hash/status/finalURL are now persisted before parsing/content validation; no extra network request was made to refill the lost body",
+  "retained617_href_inspection": {
+    "capture_raw_sha256": "197decf27a2294680183d496c2f90285c76f406147c8f1d3abe48fffbcce7b14",
+    "hrefs_containing255": [],
+    "reference_text_present": true,
+    "alternate_official_location_established": false
+  },
+  "ordinary_official_search_observation": {
+    "query": "site:govinfo.gov/content/pkg/USCODE-2024-title47 sec255 Access by persons",
+    "result": "No results; not evidence of statutory absence"
+  },
+  "canonical_source_or_hold_changes": false,
+  "all_approval_gates_pending": true,
+  "earlier_unverified_location_browser_observation": {
+    "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partII-sec255.htm",
+    "tool": "web.open",
+    "result": "Generic tool-inaccessible error",
+    "http_status": null,
+    "response_body_retained": false,
+    "qualification": "At that earlier observation the route was an unverified hypothesis and the raw helper remained disabled. Later publisher-locator evidence supports the separately recorded ordinary read; no extra old-URL request or missing-body reconstruction occurred.",
+    "raw_capture_attempted_at_that_time": false
+  },
+  "publisher_locator_followup": {
+    "publisher_locator_url": "https://www.govinfo.gov/app/details/USCODE-2024-title47/USCODE-2024-title47-chap5-subchapII-partII-sec255",
+    "verified_granule": "USCODE-2024-title47-chap5-subchapII-partII-sec255",
+    "locator_provenance": "Coordinator supplied publisher search result identifying2024section255 Access by persons with disabilities; locator only, no statutory-body review or prior response reconstruction",
+    "preflight": "Existing captures checked: no raw attempt at exactPartIIURI",
+    "capture_path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc255_capture.json",
+    "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partII-sec255.htm",
+    "http_status": 200,
+    "raw_response_bytes": 4672,
+    "raw_response_sha256": "f717fbbd845a1c79490ec8cee12a7db140b20a76e090d8eddcd2fd50db4276e3",
+    "response_retained_before_validation": true,
+    "content_markers": {
+      "request_access": false,
+      "page_not_found": false,
+      "expected_section": true,
+      "expected_edition": true
+    },
+    "raw_transport_attempts": 1,
+    "original_failure_body_reconstructed": false,
+    "no_actual_denial_authentication_security_warning_bypassed": true
+  },
+  "executed_locator_capture_helper": {
+    "path_as_run": ".tmp/infra_hr859_followup/capture_255_location.py",
+    "LF_sha256": "60fa3ce3649876a39d02111180b2b2b8cbd80787033e884e847ac952c1da72b1",
+    "source": "import base64,hashlib,json,urllib.request\nfrom datetime import datetime,timezone\nfrom html.parser import HTMLParser\nfrom pathlib import Path\n\nD=Path('.tmp/infra_hr859_followup/captures')\nurl='https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partII-sec255.htm'\np=D/'47usc255-corrected-location-capture.json'\nassert not p.exists()\nfor q in D.glob('*.json'):\n assert json.loads(q.read_text(encoding='utf8'))['requested_url']!=url,'Do not duplicate an existing/uncertain raw request'\nr=dict(requested_url=url,source_edition='2024 United States Code',started_utc=datetime.now(timezone.utc).isoformat(),purpose='Locate exact255at the ordinary public PartIIpath; authenticate edition/section before using content',raw_capture_attempts=1,raw_transport_retries=0,source_registered=False,canonical_state_changed=False,prior_location='The PartIURL returnedHTTP200but failed content validation; its body was not retained and is not evidence of a statute,404or access denial',prior_corrected_location_browser_result='Generic tool-inaccessible error without HTTPstatus/body/authentication/securitywarning',location_hypothesis='Publisher-located PartIIgranule; acceptance requires exact official section/edition header',publisher_locator_url='https://www.govinfo.gov/app/details/USCODE-2024-title47/USCODE-2024-title47-chap5-subchapII-partII-sec255',locator_provenance='Coordinator supplied publisher search result identifying2024section255 Access by persons with disabilities; locator only, no statutory-body review or prior response reconstruction',maximum_raw_bytes=2097152)\ndef write():p.write_bytes((json.dumps(r,ensure_ascii=False,indent=2)+'\\n').encode())\nwrite()\nclass Parser(HTMLParser):\n def __init__(self):super().__init__();self.parts=[]\n def handle_data(self,s):self.parts.append(s)\ntry:\n with urllib.request.urlopen(url,timeout=25) as response:\n  raw=response.read(2097153);r.update(http_status=response.status,final_url=response.url,response_headers={k:response.headers[k] for k in ['Content-Type','Content-Length','Last-Modified','ETag'] if k in response.headers})\n # Preserve the actual response before classification, including an error page.\n r.update(raw_response_bytes=len(raw),raw_response_sha256=hashlib.sha256(raw).hexdigest(),raw_response_base64=base64.b64encode(raw).decode(),raw_response_retained=True)\n write();assert len(raw)<=2097152,'Raw bound exceeded; no parsing/registration'\n parser=Parser();parser.feed(raw.decode('utf8'));text=' '.join(' '.join(parser.parts).split());r.update(normalized_text=text,normalized_text_characters=len(text),normalized_text_sha256=hashlib.sha256(text.encode()).hexdigest(),content_markers=dict(request_access='Request Access' in text,page_not_found='Page Not Found' in text,expected_section='§255. Access by persons with disabilities' in text,expected_edition='United States Code, 2024 Edition' in text));write()\n assert not r['content_markers']['request_access'],'Access warning: stop this chain'\n assert not r['content_markers']['page_not_found'],'Location not found: no statutory evidence'\n assert r['content_markers']['expected_section'] and r['content_markers']['expected_edition'],'Exact section/edition not authenticated'\n r['result']='captured_exact255_at_verified_official_PartII_location'\nexcept Exception as exc:\n r.update(result='bounded_location_attempt_failed',error_type=type(exc).__name__,error=str(exc),http_status=getattr(exc,'code',r.get('http_status')),next_state='Preserve actual response/classification; stop if denial/authentication/securitywarning is established, otherwise retain the specific missing evidence without another automatic retry')\nr['finished_utc']=datetime.now(timezone.utc).isoformat();write();print(json.dumps({k:r.get(k) for k in ['requested_url','result','http_status','raw_response_bytes','normalized_text_characters','content_markers','error']}))\n",
+    "scope": "Snapshot of the helper executed for the verifiedPartIIcapture; publicGETonly, raw bytes/status/hash/finalURL persisted before parsing/content guards. This evidence was not an HTTP argument."
+  }
+}

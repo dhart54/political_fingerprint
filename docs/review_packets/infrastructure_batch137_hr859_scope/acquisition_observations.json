@@ -1,0 +1,81 @@
+{
+  "recorded_utc": "2026-10-21T16:09:47.228764+00:00",
+  "action_id": "house:119:1:109",
+  "edition": "2024Code; no currentlawcertificate",
+  "browser_open_observations": [
+    {
+      "source_key": "15usc45b",
+      "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2-subchapI-sec45b.htm",
+      "tool": "web.open",
+      "attempts": 1,
+      "result": "official_page_read_success",
+      "error": null,
+      "http_status": null,
+      "response_body_retained": false,
+      "raw_response_hash": null,
+      "source_registered": false,
+      "restriction": null,
+      "reading_scope": "Definitions(a), with(a)(4)pictorial target"
+    },
+    {
+      "source_key": "47usc255",
+      "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partI-sec255.htm",
+      "tool": "web.open",
+      "attempts": 1,
+      "result": "unclassified_tool_access_failure",
+      "error": "Internal Error: URL is not accessible via this tool",
+      "http_status": null,
+      "response_body_retained": false,
+      "raw_response_hash": null,
+      "source_registered": false,
+      "restriction": "No retry or alternate acquisition of this failed chain; do not infer denial status or source meaning",
+      "reading_scope": null
+    },
+    {
+      "source_key": "47usc617",
+      "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapVI-sec617.htm",
+      "tool": "web.open",
+      "attempts": 1,
+      "result": "official_page_read_success",
+      "error": null,
+      "http_status": null,
+      "response_body_retained": false,
+      "raw_response_hash": null,
+      "source_registered": false,
+      "restriction": null,
+      "reading_scope": "Operative(a)-(j), dated2024; not actual device classification"
+    },
+    {
+      "source_key": "47usc619",
+      "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapVI-sec619.htm",
+      "tool": "web.open",
+      "attempts": 1,
+      "result": "unclassified_tool_access_failure",
+      "error": "Internal Error: URL is not accessible via this tool",
+      "http_status": null,
+      "response_body_retained": false,
+      "raw_response_hash": null,
+      "source_registered": false,
+      "restriction": "No retry or alternate acquisition of this failed chain; do not infer denial status or source meaning",
+      "reading_scope": null
+    },
+    {
+      "source_key": "47usc303",
+      "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapIII-partI-sec303.htm",
+      "tool": "web.open",
+      "attempts": 1,
+      "result": "official_page_read_success",
+      "error": null,
+      "http_status": null,
+      "response_body_retained": false,
+      "raw_response_hash": null,
+      "source_registered": false,
+      "restriction": null,
+      "reading_scope": "Selected(aa)/(bb) and immediately governing text; not whole303"
+    }
+  ],
+  "subsequent_successful_page_locator_reads": "47USC303(aa)/(bb)only, using already successful page; no failed-chain retry",
+  "raw_capture_plan": "Only45b/617/303previouslysuccessful pages; 255/619 excluded",
+  "all_three_pending_approval_subjects_unchanged": true,
+  "canonical_state_changed": false
+}
