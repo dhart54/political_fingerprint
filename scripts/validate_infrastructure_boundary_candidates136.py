@@ -85,5 +85,43 @@ def validate(bill, packet=None):
                 governed_inventory_changed=False, accepted=False)
 
 
+def validate_bundle(bundle=None):
+    v = read(PACKET / 'decision_bundle.json') if bundle is None else bundle
+    expected = {
+        'house:119:1:340': ('docs/review_packets/infrastructure_batch135_hr4371_decision/recommendation.json',
+                          '9d1c04ac2119d9bb762fa578a10214f7184f257013a7b07cc2a19f1f58e8982d'),
+        'house:119:1:12': ((PACKET / 'hr28_recommendation.json').relative_to(ROOT).as_posix(), SUBJECTS[28][3]),
+        'house:119:1:108': ((PACKET / 'hr1442_recommendation.json').relative_to(ROOT).as_posix(), SUBJECTS[1442][3]),
+    }
+    require([c['action_id'] for c in v['cases']] == list(expected), 'Bundle action set differs')
+    require(v['status'] == 'prepared_for_independent_and_authorized_human_review'
+            and v['governed_snapshot'] == 134 and v['governed_pending'] == 262,
+            'Bundle state differs')
+    for k in ['canonical_changes_authorized', 'exceptions_enacted', 'editorial_acceptance',
+              'publication_authorized', 'production_authorized', 'compatibility_authorized']:
+        require(v[k] is False, 'Bundle authority asserted')
+    members = {r['action_id']: r for r in read(BASE / 'membership_review.json')['records']}
+    for c in v['cases']:
+        path, sha = expected[c['action_id']]
+        subject = read(ROOT / path)
+        before = members[c['action_id']]
+        require(c['candidate_path'] == path and c['proposed_record_sha256'] == sha
+                == digest(subject['proposed_record']), 'Bundle sealed subject differs')
+        require(c['current_governed_record_sha256'] == digest(before)
+                and c['current_governed_disposition'] == before['disposition']
+                and c['current_governed_binding_unresolved'] is before['exact_action_binding_unresolved']
+                and c['proposed_disposition'] == subject['proposed_record']['disposition']
+                and c['proposed_binding_unresolved'] is subject['proposed_record']['exact_action_binding_unresolved'],
+                'Bundle current/proposed state differs')
+        require(c['canonical_application_authorized'] is c['semantic_acceptance'] is False
+                and c['review_route'] == 'human_exception_required'
+                and c['strongest_counterevidence'] and c['requested_content_bound_human_decision'],
+                'Bundle case authority or decision lost')
+        require(c['independent_packet_review_at_index_preparation'] ==
+                ('bounded_clean' if c['action_id'] == 'house:119:1:340' else 'pending'),
+                'Bundle retrospective review claim differs')
+    return dict(action_count=3, exceptions_enacted=False, governed_pending=262)
+
+
 if __name__ == '__main__':
-    print(json.dumps([validate(bill) for bill in SUBJECTS], indent=2))
+    print(json.dumps(dict(cases=[validate(bill) for bill in SUBJECTS], bundle=validate_bundle()), indent=2))

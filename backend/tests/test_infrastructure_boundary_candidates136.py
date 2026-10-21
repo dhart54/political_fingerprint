@@ -2,10 +2,28 @@ import copy
 import unittest
 
 from backend.app.semantic_ir.shared_corpus import digest
-from scripts.validate_infrastructure_boundary_candidates136 import PACKET, SUBJECTS, read, validate
+from scripts.validate_infrastructure_boundary_candidates136 import PACKET, SUBJECTS, read, validate, validate_bundle
 
 
 class BoundaryCandidates136Tests(unittest.TestCase):
+    def test_three_case_bundle_keeps_seals_and_requested_decisions_separate_from_authority(self):
+        self.assertEqual(validate_bundle()['action_count'], 3)
+        v = read(PACKET / 'decision_bundle.json')
+        for edit in ['seal', 'current_state', 'authority', 'review', 'counterevidence']:
+            bad = copy.deepcopy(v)
+            if edit == 'seal':
+                bad['cases'][0]['proposed_record_sha256'] = '0' * 64
+            elif edit == 'current_state':
+                bad['cases'][2]['current_governed_binding_unresolved'] = False
+            elif edit == 'authority':
+                bad['exceptions_enacted'] = True
+            elif edit == 'review':
+                bad['cases'][1]['independent_packet_review_at_index_preparation'] = 'bounded_clean'
+            else:
+                bad['cases'][0]['strongest_counterevidence'] = ''
+            with self.subTest(edit=edit), self.assertRaises(ValueError):
+                validate_bundle(bad)
+
     def test_exact_sources_stages_and_retained_governed_states(self):
         for bill in SUBJECTS:
             v = read(PACKET / f'hr{bill}_recommendation.json')

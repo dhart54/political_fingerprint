@@ -36,3 +36,5 @@ The135recommendation remains with the existing reviewer; no further4371context
 is added. Compatibility remains unapproved, Health inactive, and all merge,
 acceptance, publication, production, schema-application and deployment boundaries
 remain closed.
+
+[Three-action decision index](decision_bundle.json) collects H.R.4371, H.R.28 and H.R.1442 with exact identities, sealed proposed records, current governed states, strongest counterevidence and requested content-bound human decisions. H.R.4371 references unchanged reviewed135 at638178a9 and seal9d1c04ac2119d9bb762fa578a10214f7184f257013a7b07cc2a19f1f58e8982d. The index is preparatory; it does not enact an exception or convert packet review into acceptance. Its review-status fields describe the time of preparation.
