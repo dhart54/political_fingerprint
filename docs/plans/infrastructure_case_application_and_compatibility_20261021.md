@@ -4,7 +4,7 @@
 
 Execute Dylan's two bounded approvals in distinct reviewable units, using the
 same sole writer in `.w/infra`. First apply the exact sealed three-case decisions
-to the candidate inventory; then reconcile HealthÃ¢â‚¬â€œInfrastructure CI compatibility
+to the candidate inventory; then reconcile HealthÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Infrastructure CI compatibility
 without changing either intended behavior or accepted wording. This replaces
 indefinite research with reviewed, source-bound decisions and reliable validation.
 
@@ -18,7 +18,7 @@ Both are approved; none authorizes H.R. 859 admission or a general domain rule.
 ## Baseline and ownership
 
 - Local HEAD: `35c7ce373930f884e715dbbf01c900bb9c8c05fe`, isolated H.R. 859
-  candidate frozen locally, unaccepted. Last pushed head: `3a09c195Ã¢â‚¬Â¦`; draft PR232.
+  candidate frozen locally, unaccepted. Last pushed head: `3a09c195ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦`; draft PR232.
 - Governed snapshot134:676records/1621sources/70meanings/262pending/120ineligible/
   sixholds; compiled semantic graph `3d3e1f99b03b52c19867c7319cce810850330afe6b16cc20e8043a0f43fcc85d`.
 - All three before/proposed record seals, row seals,28source references and
@@ -57,7 +57,7 @@ Inspect actual current sources and live main before implementation. Preserve:
 - Health historical package/BASE/wording/source/IR/provenance bytes; singleton
   action, Foushee one supporting proposition and Massie zero.
 - Exact checks on the other six frozen rule files. Admit only the reviewed helper
-  successor8eb95a54bb95b17009023e851cfdeb26cb9a4573Ã¢â€ â€™674ec45d22e8f890d654b499e438d4356e0b2227.
+  successor8eb95a54bb95b17009023e851cfdeb26cb9a4573ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢674ec45d22e8f890d654b499e438d4356e0b2227.
 - Historical versus current helper/preparer identities in a separate nonauthorizing
   compatibility sidecar; no false claim that historical code executed now.
 - Rejection of unrelated helper/rule/sidecar/payload drift, accepted-content
@@ -168,3 +168,35 @@ identities, services and all other workflow content remain unchanged; the earlie
 statement that all path filters were unchanged describes the pre-review state.
 The37-test post-fix Health code and339-test Infrastructure dependency closure are
 unchanged by this workflow-only correction. Final staged review remains required.
+
+## Hosted iteration141
+
+Both independent scopes cleared tree `b335285c91698c9680261af12a87ab5e46589c87`.
+It was committed/pushed as `a988dd87b307ad9575201130b87105e3717013c1`, preserving
+feature parent d94f178e and main parent c52d121b. PR232 is OPEN/DRAFT/MERGEABLE;
+local/remote/PR heads and exact body match. Main was not updated.
+
+Run39651713141 now executes, resolving the previous hosting obstacle. Its M14E/F/G
+jobs fail on an in-scope regression: two historical substring tests freeze the
+whole push-path block and reject the approved attribute addition. Each failed job
+checked out a988dd87. The measure-reference job passed33 tests on synthetic
+9aaf48dc3c686fbdeea84fd4154c0751478747a2 (parents c52d121b/a988dd87); that is
+integration evidence, not feature-head evidence. Other jobs are still running.
+
+The141 successor permits only the exact two path additions while preserving all
+other event/header settings and prior jobs. An already accepted receipt-job
+extension is admitted only at main c52d's authenticated workflow blob, never as a
+blanket future exception.40 focused tests pass in0.378s, including17 negative
+cases. A broader local attempt hit an untouched M14F artifact's Windows byte
+check; that historical file was left unchanged. This is distinct from the actual
+hosted filter regression. No product/runtime/accepted payload changes are made.
+Independent successor review and all required hosted jobs remain pending.
+
+Successor review found a trailing-root-section gap in the test helper: a new job
+followed by root `permissions: contents: write` could escape comparison. This is
+corrected by rejecting unexpected top-level sections after jobs and duplicate
+job IDs.42 focused tests pass in0.398s, including24 negative cases and the exact
+actual-a988 appended-job/root-permission probe. The separate local byte limitation
+is now proved: the reviewed, a988, HEAD, index and current-generator M14F artifact
+bytes all match; only the Windows worktree has437 extra CRLF bytes. The artifact
+was not normalized or resealed. Final successor review remains required.
