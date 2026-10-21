@@ -1,0 +1,18 @@
+{
+  "scope": "Uncommitted application139 with fail-closed idempotent-path correction",
+  "commands": [
+    {
+      "command": "python -m unittest backend.tests.test_infrastructure_case_application139",
+      "exit_code": 0,
+      "tests": 6,
+      "test_seconds": 3.469
+    },
+    {
+      "command": "python -m scripts.validate_infrastructure_case_application139",
+      "exit_code": 0
+    }
+  ],
+  "independent_precommit_review": "Required; not yet cleared for this staged successor",
+  "publication_authorized": false,
+  "production_writes": false
+}
