@@ -90,3 +90,14 @@ source/packet preservation and no-write idempotency passed.8tests/24negative
 mutations passed6.727s;36SemanticIR/CIchecks passed0.889s; canonical validator
 passed. No meaning admitted; approval receipt and unaccepted candidates distinct.
 Next: exact staged independent review, then reviewed commit/push/draftPR delivery.
+
+## Delivered application checkpoint
+
+Independent review CLEAN at8ae55ffd5c8c2beeb847bdc4244f2fd184fb6626; reportSHA
+7fcf13b7323d12cb93a2eca2135f923e488cfb901f169cae72378e5e9d8fc915.
+Reviewed commit ede71408801f71e3cc68917fff11de148cd82b9c normally pushed; remote
+commit tree, application/proposed-record/approval bytes and draftPR232body/head
+readback passed. Counts258pending/124ineligible; no authored meaning accepted.
+Application run39681140048is inprogress at this checkpoint; separate verifier
+owns follow-through. New research stopped; unfinished144and the human-decision
+index are being preserved as an explicitly partial resumption checkpoint.
