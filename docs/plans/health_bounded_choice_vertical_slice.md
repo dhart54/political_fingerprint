@@ -334,3 +334,85 @@ Changed-file lint/format and builder `--check` pass. The ordinary registered SQL
 path, exact reverse rollback, retained immutable audit state and reapplication
 remain valid. An initial sandbox-only pytest temp-directory access failure was
 resolved by running with normal local access; no product failure was suppressed.
+
+## Dormant operator completion
+
+The release-preparation audit found an implementation gap within the approved
+bounded feature: exact registration was planned but only test fixture SQL could
+execute it. Complete the dormant operator using existing registration caps and
+V2 initial-publication/rollback contracts. A fixed empty operator-approval catalog
+will pin separately recorded actual approvals; preparation never creates them.
+This transports the already-required exact approvals without changing semantic,
+persistence, publication or role-grant policy.
+
+Sequence: implement target/approval/baseline guards and the operator entry point;
+add ordinary-default owned-PostgreSQL CLI rehearsals and failure/cap tests; bind
+the execution code in the runtime manifest and regenerate pending seals; review
+the exact successor and hosted checks. Expect roughly 6–9 code/test/workflow/docs
+files plus the seven generated runtime-bound JSON outputs, with unchanged subject
+content/PNG bytes. Use the release subset and owned ephemeral database, never a
+production DSN. Actual decisions/hashes remain pending and catalogs empty.
+
+Done means the actual operator performs separate one-row registrations, sequential
+per-member V2 publication, and reverse rollback in ordinary-default local tests;
+wrong target/baseline/authority/replay and unauthorized trigger effects fail
+without committed writes. No production registration, schema application, merge,
+acceptance, activation or manual deployment is included. Vercel403 is respected;
+Render-to-Green and Vercel alias bindings remain unresolved release gates. The
+target's inherited service_role access remains an explicit future migration
+approval item. Infrastructure worktrees/writer remain untouched.
+
+Resumed 2026-10-21 after explicit owner resume. Before changes, all22 archived
+files, their working copies and tracked.patch were byte-verified against the
+shutdown inventory (archive SHA256
+536da3a507d38b639140b51cf5107fb4af5842b7fa11febb3f95edefefc39773).
+No recovery/overwrite was needed. Local/origin Health head remains e5eb545f;
+main remains c52d121b; PR239 is draft, auto-merge off. Exactly11 tracked edits and
+6 new files were preserved, with owned services stopped. Green metadata still
+reports ACTIVE_HEALTHY and Render live c52d121b. No supported nonsecret metadata
+establishes Render's DB target, and Vercel403 remains respected. These release
+gates do not prevent finishing local engineering. Initial15 operator results are
+historical; complete successor validation follows code review/seal regeneration.
+
+
+## Dormant operator successor reconciliation
+
+The explicit operator now prepares exact read-only requests, registers each
+separately approved one-row owner decision, publishes Foushee then Massie under
+existing V2 authority, recovers lost reports read-only and rolls publications
+back in reverse order while retaining audit evidence. No startup/build/deploy
+hook invokes it. The fixed operator approval catalog is empty and production
+service-binding observations remain pending.
+
+Independent source review found and closed three issues: same-count incomplete
+report recovery, BEFORE INSERT rewrites escaping publication postconditions, and
+global observation refresh blocking durable rollback. The common verifier now
+checks strict canonical JSON for the full stored graph and proves removal of
+only that exact delta restores the complete approved baseline. A follow-up
+boolean/integer equality counterexample is covered by a JSON true rewrite test.
+
+Validation of final runtime bytes: 256 backend release-subset tests pass,
+including 31 actual CLI operator cases; 369 frontend units pass; all19 development
+and all19 production browser cases pass; production build, builder --check,
+changed-file Ruff lint/format and diff checks pass. Existing frontend hook
+warnings remain in unchanged files. All four normal-page PNGs were visually
+inspected and remain byte-identical; source/semantic/accounting/presentation and
+both raw SQL artifact bytes are unchanged. No baseline failure was hidden.
+
+Current shared pair subject: `ff647f5c6b19c2c6ecf673381f2b9eb9f67f7fc33ec5cf016ea1e39c3009390a`.
+F000477 rendering: `c6b94d3caea890c8bb5dd600c2bcfa9dadb800a09d99f07e1f1365079de43a5f`.
+M001184 rendering: `7da416fd832a114705995ec1f2370ce25ecc9bf01a5249223b2fcd0d4a95d27b`.
+These supersede earlier runtime-bound subjects; source meaning remains frozen.
+
+The target-specific pending release packet and operator guide are committed
+alongside empty catalogs/null decisions. Fresh read-only Green observation on
+2026-10-21 confirms unchanged11/167/173/4 editorial counts, no target Health rows
+and absent bounded schema. Render-to-Green and authenticated Vercel alias/config
+remain explicit gates. The403 boundary was respected. Inherited service_role
+access and exact migration/retained-audit compatibility recovery require separate
+approval. Exact successor commit, hosted checks and final independent head
+reconciliation are recorded on draft PR239; older green results do not certify it.
+
+No real owner acceptance, registration, schema application, access grant,
+activation/publication, merge/ready transition, production write or manual deploy
+was performed. Infrastructure and Immigration worktrees were not modified.

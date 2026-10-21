@@ -16,6 +16,7 @@ from psycopg.types.json import Jsonb
 
 from . import bounded_choice_review as review
 from .compiler import canonical_digest
+from .bounded_choice_mutations import require_transaction_delta, transaction_counts
 from .publication_activation_governance_v2 import (
     ACTIVATION_WRITE_SET_SCHEMA_VERSION_V2,
     PREFLIGHT_EVIDENCE_SCHEMA_VERSION_V2,
@@ -315,6 +316,178 @@ def observe_baseline(conn, value: dict) -> dict:
     }
 
 
+def verify_initial_state(conn, *, value, write_set, authority):
+    """Prove the exact stored delta and unchanged baseline, including recovery.
+
+    Generated IDs and transaction timestamps are observed; every other stored
+    field must equal the approved insertion. Removing only those exact rows must
+    reproduce the full baseline fingerprint, including retained owner evidence.
+    """
+    state = json.loads(
+        json.dumps(
+            {
+                name: conn.execute(
+                    f"SELECT * FROM public.{table} ORDER BY 1,2"
+                ).fetchall()
+                for name, table in TABLES.items()
+            },
+            default=str,
+        )
+    )
+    subject = write_set["subject"]
+    key = "bounded-choice-initial:" + write_set["write_set_subject_sha256"]
+    batches = [b for b in state["batches"] if b["deterministic_batch_key"] == key]
+    review.require(len(batches) == 1, "exact publication batch absent or changed")
+    batch = batches[0]
+    stamp = batch["created_at"]
+    source = authority["subject"]["stable_runtime_binding"]["reviewed_source_commit"]
+    review.require(
+        stamp is not None
+        and canonical_digest(batch)
+        == canonical_digest(
+            {
+                "batch_id": batch["batch_id"],
+                "deterministic_batch_key": key,
+                "source_commit_sha": source,
+                "manifest_sha256": write_set["write_set_subject_sha256"],
+                "status": "applied",
+                "artifact_count": 4,
+                "relationship_count": 3,
+                "created_at": stamp,
+                "applied_at": stamp,
+            }
+        ),
+        "stored publication batch differs",
+    )
+    artifacts = [a for a in state["artifacts"] if a["batch_id"] == batch["batch_id"]]
+    ids = {a["natural_key"]: a["artifact_id"] for a in artifacts}
+    review.require(
+        len(artifacts) == 4
+        and set(ids) == {a["natural_key"] for a in subject["artifacts"]},
+        "stored publication artifact set differs",
+    )
+    expected = {a["natural_key"]: a for a in subject["artifacts"]}
+    for artifact in artifacts:
+        item = expected[artifact["natural_key"]]
+        root = item["artifact_type"] == "issue_public_presentation"
+        review.require(
+            canonical_digest(artifact)
+            == canonical_digest(
+                {
+                    "artifact_id": artifact["artifact_id"],
+                    "artifact_type": item["artifact_type"],
+                    "natural_key": item["natural_key"],
+                    "schema_version": item["payload"]["schema_version"],
+                    "artifact_version": 1,
+                    "payload_jsonb": item["payload"],
+                    "content_sha256": item["content_sha256"],
+                    "source_manifest_sha256": review.FOUNDATION[
+                        "governed_sources.json"
+                    ],
+                    "source_commit_sha": source,
+                    "batch_id": batch["batch_id"],
+                    "supersedes_artifact_id": None,
+                    "member_bioguide_id": value["semantic"]["member_id"],
+                    "issue_id": review.ISSUE,
+                    "congress": 119,
+                    "chamber": "house",
+                    "canonical_roll_call_id": None,
+                    "canonical_action_id": review.ACTION,
+                    "episode_id": review.EPISODE,
+                    "policy_family_id": None,
+                    "editorial_status": "human_approved",
+                    "benchmark_status": "not_promoted",
+                    "production_eligible": root,
+                    "review_route": "human_exception",
+                    "created_at": stamp,
+                    "publication_basis": "bounded_choice_review"
+                    if root
+                    else "legacy_gold",
+                    "bounded_acceptance_artifact_id": ids[
+                        value["artifact_id"] + ":receipt"
+                    ]
+                    if root
+                    else None,
+                }
+            ),
+            "stored publication artifact fields differ",
+        )
+    owned_ids = set(ids.values())
+    edges = [
+        r
+        for r in state["relationships"]
+        if r["parent_artifact_id"] in owned_ids or r["child_artifact_id"] in owned_ids
+    ]
+    expected_edges = [
+        {
+            "parent_artifact_id": ids[r["parent"]],
+            "child_artifact_id": ids[r["child"]],
+            "relationship_type": r["type"],
+            "ordinal": 0,
+            "metadata_jsonb": {},
+        }
+        for r in subject["relationships"]
+    ]
+    review.require(
+        sorted(map(canonical_digest, edges))
+        == sorted(map(canonical_digest, expected_edges)),
+        "stored publication relationships differ",
+    )
+    registry = [
+        r for r in state["publication_registry"] if r["artifact_id"] in owned_ids
+    ]
+    review.require(
+        canonical_digest(registry)
+        == canonical_digest(
+            [
+                {
+                    "member_bioguide_id": value["semantic"]["member_id"],
+                    "issue_id": review.ISSUE,
+                    "artifact_id": ids[value["artifact_id"]],
+                    "publicly_active": True,
+                    "activated_at": stamp,
+                    "deactivated_at": None,
+                    "publication_metadata_jsonb": {
+                        "publication_basis": "bounded_choice_review",
+                        "presentation_natural_key": value["artifact_id"],
+                        "presentation_artifact_version": 1,
+                        "active_artifact_sha256": canonical_digest(value),
+                        "activation_authority_sha256": authority[
+                            "activation_authority_subject_sha256"
+                        ],
+                    },
+                }
+            ]
+        ),
+        "stored publication registry differs",
+    )
+    projected = copy.deepcopy(state)
+    projected["batches"].remove(batch)
+    for name, rows in [
+        ("artifacts", artifacts),
+        ("relationships", edges),
+        ("publication_registry", registry),
+    ]:
+        for row in rows:
+            projected[name].remove(row)
+    review.require(
+        canonical_digest(projected)
+        == subject["rollback_contract"]["restore_state_fingerprint_sha256"],
+        "publication changed the approved baseline",
+    )
+    counts = {name: len(rows) for name, rows in state.items()}
+    review.require(
+        counts == subject["expected_postconditions"]["counts"],
+        "publication counts differ",
+    )
+    return {
+        "batch_key": key,
+        "artifact_ids": ids,
+        "counts": counts,
+        "state_fingerprint_sha256": canonical_digest(state),
+    }
+
+
 def build_write_set(
     value: dict,
     *,
@@ -488,6 +661,7 @@ def apply_initial(
             observed == a["stable_production_baseline"],
             "baseline changed before initial mutation",
         )
+        mutations = transaction_counts(conn)
         batch_id = conn.execute(
             """INSERT INTO public.editorial_artifact_batches (deterministic_batch_key, source_commit_sha, manifest_sha256, status, artifact_count, relationship_count, applied_at) VALUES (%s,%s,%s,'applied',4,3,NOW()) RETURNING batch_id""",
             (
@@ -549,6 +723,19 @@ def apply_initial(
         )
         if fault_after == "registry":
             raise RuntimeError("injected failure after registry")
+        require_transaction_delta(
+            conn,
+            mutations,
+            {
+                TABLES["batches"]: (1, 0, 0),
+                TABLES["artifacts"]: (4, 0, 0),
+                TABLES["relationships"]: (3, 0, 0),
+                TABLES["publication_registry"]: (1, 0, 0),
+            },
+        )
+        verify_initial_state(
+            conn, value=value, write_set=write_set, authority=authority
+        )
         after = observe_baseline(conn, value)
         review.require(
             after["counts"] == subject["expected_postconditions"]["counts"]
@@ -582,7 +769,7 @@ def rollback_initial(conn, *, value: dict, write_set: dict, execution: dict) -> 
     review.require(execution["batch_key"] == expected, "rollback batch differs")
     with conn.transaction():
         conn.execute(
-            "LOCK TABLE public.editorial_artifact_batches, public.editorial_artifact_versions, public.editorial_artifact_relationships, public.editorial_publication_registry IN SHARE ROW EXCLUSIVE MODE"
+            "LOCK TABLE public.editorial_artifact_batches, public.editorial_artifact_versions, public.editorial_artifact_relationships, public.editorial_publication_registry, public.editorial_bounded_choice_owner_decisions IN SHARE ROW EXCLUSIVE MODE"
         )
         current = observe_baseline(conn, value)
         review.require(
@@ -590,6 +777,7 @@ def rollback_initial(conn, *, value: dict, write_set: dict, execution: dict) -> 
             == execution["state_fingerprint_sha256"],
             "rollback current state differs; reverse later member writes first",
         )
+        mutations = transaction_counts(conn)
         batch = conn.execute(
             "SELECT batch_id FROM public.editorial_artifact_batches WHERE deterministic_batch_key=%s",
             (expected,),
@@ -630,6 +818,16 @@ def rollback_initial(conn, *, value: dict, write_set: dict, execution: dict) -> 
         conn.execute(
             "DELETE FROM public.editorial_artifact_batches WHERE batch_id=%s",
             (batch["batch_id"],),
+        )
+        require_transaction_delta(
+            conn,
+            mutations,
+            {
+                TABLES["batches"]: (0, 0, 1),
+                TABLES["artifacts"]: (0, 0, 4),
+                TABLES["relationships"]: (0, 0, 3),
+                TABLES["publication_registry"]: (0, 0, 1),
+            },
         )
         restored = observe_baseline(conn, value)
         contract = write_set["subject"]["rollback_contract"]
