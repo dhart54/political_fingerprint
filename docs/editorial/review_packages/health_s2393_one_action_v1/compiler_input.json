@@ -1,0 +1,69 @@
+{
+  "case_scope": "full_record",
+  "members": [
+    {
+      "actions": [
+        {
+          "action_id": "house:119:2:180",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        }
+      ],
+      "member_id": "F000477",
+      "party": "D"
+    },
+    {
+      "actions": [
+        {
+          "action_id": "house:119:2:180",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Not Voting"
+        }
+      ],
+      "member_id": "M001184",
+      "party": "R"
+    }
+  ],
+  "review_state": "candidate_pending_external_semantic_review",
+  "shared_semantics": {
+    "actions": [
+      {
+        "action_id": "house:119:2:180",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:2:180:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "The exact unamended Senate-engrossed S2393 would permit the VA Secretary to carry out a fiscal2026 major medical-facility project in St. Louis: a new bed tower, clinical-building expansion, consolidated administrative building and warehouse, utility plant and parking garages. The maximum authorized project amount is $1,762,668,000. Section2(b) separately authorizes appropriations of that amount for fiscal2026 OR the year funds are appropriated to the Construction, Major Projects account. Neither clause is an actual appropriation or a completed construction/care delivery claim. The short title says Fiscal Year2025 while the operative project/appropriation clauses say fiscal2026; retain the printed distinction, not a silent title-based correction. Defined clinical infrastructure establishes proposed Health membership, within a mixed medical/admin/site project rather than wholly direct treatment spending. No general veteran benefit, patient admission rule, guaranteed construction schedule or medical outcome follows. The May20 House suspension-and-passage question passed405-5/20Not Voting. A Yea supported passing this exact authorization; a Nay opposed it. Not Voting is resolved nondirectional, not opposition. House passage is not enactment, obligation of funds, completed construction or delivered care.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:s2393:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:180",
+          "govinfo:s2393es"
+        ],
+        "structural_metadata": {
+          "stage_order": 20180
+        }
+      }
+    ],
+    "episodes": [
+      {
+        "action_ids": [
+          "house:119:2:180"
+        ],
+        "episode_id": "episode:s2393:119",
+        "method_boundary_types": [],
+        "policy_family_id": null
+      }
+    ],
+    "policy_families": [],
+    "policy_traits": [],
+    "shared_review_dependencies": [],
+    "source_render_constraints": [],
+    "trait_relationships": []
+  }
+}

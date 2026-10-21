@@ -1,0 +1,18 @@
+{
+  "kind": "trusted_forwarded_scope_clarification_not_fetched_or_signed_human_receipt",
+  "forwarding_thread": "01a15000-0ff6-73e2-95ac-fe6aee80201f",
+  "already_approved_compatibility_scope": "docs/review_packets/infrastructure_case_application139/owner_evidence.json",
+  "clarification_verbatim": "Finish application139 independent precommit clearance and deliver the reviewed commit/push first, as already authorized. Resolve the compatibility interpretation: the approval request's no-merge boundary means do not merge the PR into main or update main/production; it does not prohibit bringing the current main baseline into the existing feature branch as necessary for the specifically approved compatibility/conflict fix. A non-destructive local main-to-feature integration within the existing draft branch is covered by that fix scope, provided all main changes are preserved, no force push/history rewrite or main update occurs, and the combined successor is independently reviewed/tested. Verify checkout AGENTS and any actual contrary user instruction before proceeding; if one explicitly forbids branch integration/rebase, report it rather than override. No access-denial bypass is involved. Do not infer PR merge or release authority. Keep single-writer ownership; preserve accepted wording, historical evidence and guards. Report actual application delivery and compatibility progress.",
+  "checked_instructions": [
+    "AGENTS.md",
+    "docs/semantic_ir/AGENTS.md"
+  ],
+  "contrary_explicit_local_integration_prohibition_found": false,
+  "earlier_no_rebase_language_origin": "assistant-authored plans, superseded by forwarded scope clarification",
+  "local_feature_parent": "d94f178ef979c2c56a86cc33277b32c859bb2162",
+  "local_main_parent": "c52d121b64d814de3cf684980368bced40e5b4ea",
+  "PR_merge": false,
+  "main_update": false,
+  "force_push": false,
+  "production_authorized": false
+}

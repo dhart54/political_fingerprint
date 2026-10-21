@@ -7,6 +7,7 @@ on:
       - "scripts/**"
       - "docs/**"
       - ".github/workflows/backend-tests.yml"
+      - ".gitattributes"
   push:
     branches:
       - main
@@ -15,6 +16,7 @@ on:
       - "scripts/**"
       - "docs/**"
       - ".github/workflows/backend-tests.yml"
+      - ".gitattributes"
 
 jobs:
   measure-reference-integration:
@@ -95,7 +97,10 @@ jobs:
             backend/tests/test_m13n_education_workforce_ratification_candidate.py
 
       - name: Validate shared candidate preparation at exact head
-        run: python -m pytest -q backend/tests/test_shared_domain_candidate.py backend/tests/test_shared_legislative_corpus.py backend/tests/test_infrastructure_candidate_seed.py backend/tests/test_infrastructure_candidate_batch2.py backend/tests/test_infrastructure_candidate_batch3.py backend/tests/test_infrastructure_candidate_batch4.py backend/tests/test_infrastructure_candidate_batch5.py backend/tests/test_infrastructure_candidate_batch6.py backend/tests/test_infrastructure_candidate_batch7.py backend/tests/test_infrastructure_discovery_delta.py
+        run: python -m pytest -q backend/tests/test_shared_domain_candidate.py backend/tests/test_shared_legislative_corpus.py backend/tests/test_health_one_action_review.py
+
+      - name: Validate Infrastructure and Health compatibility at exact head
+        run: python -m pytest -q backend/tests/test_infrastructure_candidate_seed.py backend/tests/test_infrastructure_candidate_batch2.py backend/tests/test_infrastructure_candidate_batch3.py backend/tests/test_infrastructure_candidate_batch4.py backend/tests/test_infrastructure_candidate_batch5.py backend/tests/test_infrastructure_candidate_batch6.py backend/tests/test_infrastructure_candidate_batch7.py backend/tests/test_infrastructure_discovery_delta.py backend/tests/test_infrastructure_hr859_candidate138.py backend/tests/test_infrastructure_case_application139.py backend/tests/test_health_infrastructure_compatibility.py
 
       - name: Prove disposable M14H apply, idempotency, faults, rollback, and public selector
         run: |
