@@ -1,0 +1,42 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-21T14:15:14.780602+00:00",
+    "qualification": "Eight retained2024selectedunits read completely before marker,20166characters total; untimed preparatory reading. No newacquisition/wholeCode/remainingreferencedlaw/currentlaw or actualindividualclassification certificate."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-21T14:17:57.373678+00:00",
+    "end_utc": "2026-10-21T14:18:02.103945+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 132 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch132_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.393
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.337
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 162.593,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 4.73,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 9.594,
+    "process_wall_seconds": 9.812,
+    "result": "passed",
+    "scope": [
+      "Current132eightdatedunits/child-definitionandconviction/malice-jurisdiction/custodyandthresholds/serious-aggravatedoffense/2252scopeanddefense",
+      "Preserved131RH-and-selecteddefinitionsguard-on-beforeview",
+      "Preserved130placementcontext-on-original131preimage",
+      "Preserved129fullEHguard-on-original130preimage"
+    ]
+  },
+  "timing_qualification": "Successfulsource/semanticprocess4.730s excludesfocusedprocess9.812s and byteproof/deliveryoverhead. Source reading untimed; elapsedauthoringwindow is not activeworkduration. No focused/source/semantic gatefailure in132."
+}

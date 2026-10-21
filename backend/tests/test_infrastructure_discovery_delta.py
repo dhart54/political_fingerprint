@@ -1031,4 +1031,21 @@ class InfrastructureDiscoveryDeltaTests(unittest.TestCase):
         bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
         with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_committee_offense_context(a,bad,ss,r)
 
+    def test_hr4371_remaining_offense_context_keeps_child_threshold_jurisdiction_and_2252_scopes(self):
+        from scripts.validate_infrastructure_discovery_delta import validate_4371_remaining_offense_context
+        p=folder(132);r=read(p/'hr4371_remaining_offense_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);ss={x['source_id']:x for x in read(p/'sources.json')['sources']}
+        validate_4371_remaining_offense_context(a,u,ss,r);self.assertTrue(validate(132)['generated_replay'])
+        for field in ['whole_Code_or_all_notes_read','current_law_certified','all_floor_version_binding_cleared','distinct_child_definitions_flattened','conviction_gate_replaced_by_risk_alone','dated_custody_is_current_practice','all_felonies_are_aggravated','section2252A_or_all_chapter_imported','actual_person_or_criminal_outcome_determined','new_meaning_authored','membership_accepted']:
+            bad=copy.deepcopy(r);bad[field]=True
+            with self.assertRaisesRegex(ValueError,'cleared dated-unit/child/conviction/custody/definition/outcome/meaning gates'):validate_4371_remaining_offense_context(a,u,ss,bad)
+        for old,new in [('LESSER OF18OR','always18or21'),('EXCEPT IN SEXUAL-ABUSE CASES','without exceptions'),('RECENT ACT OR FAILURE TO ACT BY A PARENT OR CARETAKER','any person or historical allegation'),('CONVICTION FOR A CRIME gate','risk allegation alone gate'),('CARE/CONTROL OR AT LEAST SIX YEARS YOUNGER','any younger person'),('WITHOUT MALICE','with malice'),('SPECIAL MARITIME AND TERRITORIAL JURISDICTION','every country and State'),('ONLY THE DATED2024(c)(1)–(2)CUSTODY/RELEASE TEXT','complete currentcustodylaw'),('SENTENCE OF AT LEAST ONE YEAR','punishable by one year'),('INVOLVING PERSONAL INJURY TO ANOTHER','every DUI'),('loss EXCEEDING10000','any loss amount'),('AFFIRMATIVELY SHOWN ONLY SPOUSE/CHILD/PARENT AND NO OTHER INDIVIDUAL','every family-assistance case'),('COMPLETED WITHIN THE PREVIOUS15YEARS','any foreign sentence whenever imposed'),('NOT SILENTLY REPAIRED','automatically repaired'),('not2252Aorallchapter110','allchapter110including2252A'),('KNOWING conduct','any incidental conduct'),('BASELINE PENALTIES, NOT NEW4371CRIMINAL SENTENCES','new4371sentences'),('ONLY TO(a)(4)','every offense'),('LESS THAN THREE','three or fewer'),('destruction OR report-and-agency-access','any disposal action')]:
+            bad=copy.deepcopy(r);bad['new_rationale']=bad['new_rationale'].replace(old,new);aa=copy.deepcopy(a);aa['rationale']=bad['new_rationale'];uu=copy.deepcopy(u);uu.update(reason=aa['rationale'],rationale=aa['rationale']);uu['review_progress']['shared_review_record_sha256']=digest(aa)
+            with self.assertRaisesRegex(ValueError,'2252-scope boundary lost'):validate_4371_remaining_offense_context(aa,uu,ss,bad)
+        bad=copy.deepcopy(r);bad['source_contexts'][-1]['appended_claim']['locator']='wholechapter110/currentlaw'
+        with self.assertRaisesRegex(ValueError,'claim broadened selected scope'):validate_4371_remaining_offense_context(a,u,ss,bad)
+        bad=copy.deepcopy(a);bad['claim_source_map'][2]['passage']='altered complete EH'
+        with self.assertRaisesRegex(ValueError,'changed prior evidence/flags/meaning state'):validate_4371_remaining_offense_context(bad,u,ss,r)
+        bad=copy.deepcopy(u);bad['exact_action_source_binding']['complete']=True
+        with self.assertRaisesRegex(ValueError,'cleared version or changed universe gates'):validate_4371_remaining_offense_context(a,bad,ss,r)
+
 if __name__=='__main__':unittest.main()
