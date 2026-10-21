@@ -1,0 +1,153 @@
+{
+  "head": "638178a9752744a75586b25d0aefbdf0d67f1ade",
+  "base": "748519100b888bf17a0b8147eb1dd0e60a184e84",
+  "findings": [],
+  "recommendation": "Defensible case-specific unaccepted exclusion and passage-text binding proposal; acceptance and application remain separate",
+  "canonical_editorial_tree_unchanged": true,
+  "backend_app_unchanged": true,
+  "compatibility_workflow_and_shared_helper_unchanged": true,
+  "governed_counts": {
+    "records": 676,
+    "sources": 1621,
+    "meanings": 70,
+    "procedural_context": 199,
+    "exact_action_ineligible": 120,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 262,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "record_preimage_sha256": "259b7ad000bc0e76ea90396547a5f761508baa49bcc1d0ff0dc3c2f9d2529e78",
+  "row_preimage_sha256": "762ecdbd850ddf6ab88bcc3a3c7e98815ada26f8ea9b040e1a1f8e6936cef6ca",
+  "proposed_record_sha256": "9d1c04ac2119d9bb762fa578a10214f7184f257013a7b07cc2a19f1f58e8982d",
+  "source_witnesses": [
+    {
+      "source_id": "clerk:119:1:340",
+      "json_pointer": "/sources/977",
+      "source_object_sha256": "94fdb738d699f28fc3b2bfbbb24b038b0015a1132c4c9b173c6aacd4d87adf88",
+      "role": "Exact passage identity and member observations"
+    },
+    {
+      "source_id": "govinfo:hr4371eh",
+      "json_pointer": "/sources/978",
+      "source_object_sha256": "cc741182fee5da6d5f481345858a46cb1b48b2b12a40b2842bc3601cfab56d7d",
+      "role": "Complete authoritative House-passed text, including attestation",
+      "start": 0,
+      "end": 11304,
+      "total": 11304
+    },
+    {
+      "source_id": "govinfo:hr4371rh",
+      "json_pointer": "/sources/1608",
+      "source_object_sha256": "746c79b9d7bb2ccb95ee984360561bf8fabeec782295832721795cc28f344672",
+      "role": "Contextual committee substitute body, compared with EH541:10929",
+      "start": 1261,
+      "end": 11649,
+      "total": 12407
+    },
+    {
+      "source_id": "govinfo:hres951eh",
+      "json_pointer": "/sources/975",
+      "source_object_sha256": "8d42c759f312351596abdefb75adff14d85cd2b23af0faeb2418d68fbc22bad2",
+      "role": "Section6 substitute-adoption and final-passage rule",
+      "start": 6336,
+      "end": 7307,
+      "total": 7307
+    },
+    {
+      "source_id": "clerk:119:1:338",
+      "json_pointer": "/sources/974",
+      "source_object_sha256": "a0c6a1ce33a002f5e1cbc9037e1d143fd05935c193849fbe4d29df708affd31e",
+      "role": "Passed rule adoption"
+    },
+    {
+      "source_id": "clerk:119:1:339",
+      "json_pointer": "/sources/976",
+      "source_object_sha256": "c458a6665fe55938a29ba176cf7d2c13caf6f86dba5827af94b24eb72079fdef",
+      "role": "Failed recommittal; procedural, not directional policy evidence"
+    },
+    {
+      "source_id": "govinfo:8usc1232-2024-care-placement",
+      "json_pointer": "/sources/1607",
+      "source_object_sha256": "a94b2f489b30f3c27b16e6a4ea2d8e1ab13d7cf49d52cea2bf8991af8e36d2cf",
+      "role": "Dated contrasting DHS-to-HHS request/two-week information flow",
+      "start": 3987,
+      "end": 4303,
+      "total": 10450
+    }
+  ],
+  "retained_3507": {
+    "source_object_sha256": "e6726335c7c9d22cca72db7014636f3fcf4851c0cc0365801e733e935544fc72",
+    "origin": "748519100b888bf17a0b8147eb1dd0e60a184e84:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+    "pointer": "/sources/503",
+    "origin_blob": "72619a608fa1e73482d83cf8f803586932e6f746",
+    "characters": 13026,
+    "source_classes": [
+      {
+        "topic": "source_header",
+        "start": 0,
+        "end": 388,
+        "total": 13026
+      },
+      {
+        "topic": "operative_section",
+        "start": 388,
+        "end": 11423,
+        "total": 13026
+      },
+      {
+        "topic": "editorial_notes",
+        "start": 11423,
+        "end": 12375,
+        "total": 13026
+      },
+      {
+        "topic": "statutory_notes",
+        "start": 12375,
+        "end": 13026,
+        "total": 13026
+      }
+    ],
+    "canonical_corpus_not_extended": true
+  },
+  "authority_flags": {
+    "applied_to_governed_inventory": false,
+    "canonical_source_corpus_changed": false,
+    "compiled_graph_changed": false,
+    "semantic_acceptance": false,
+    "membership_accepted": false,
+    "publication_authorized": false,
+    "production_authorized": false,
+    "compatibility_implementation_authorized": false
+  },
+  "snapshot_files": 42,
+  "snapshot_bytes": 45112540,
+  "modified_existing_paths": [
+    "M\tdocs/plans/infrastructure_remaining_discovery_screening.md",
+    "M\tdocs/review_packets/infrastructure_remaining_discovery_candidate_screening.md"
+  ],
+  "total_changed_paths": 11,
+  "test": {
+    "head": "638178a9752744a75586b25d0aefbdf0d67f1ade",
+    "base": "748519100b888bf17a0b8147eb1dd0e60a184e84",
+    "validator": {
+      "action_id": "house:119:1:340",
+      "proposal": "unaccepted exclusion",
+      "route": "human_exception_required",
+      "governed_inventory_changed": false,
+      "source_count": 1621,
+      "governed_record_count": 676,
+      "source_acquisitions": 0,
+      "protected_retries": 0
+    },
+    "validator_seconds": 0.2086841000127606,
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 2.286381200014148,
+    "snapshot": "C:\\Users\\Dylan\\.codex\\visualizations\\2026\\10\\21\\01a15ebb-b550-7823-a734-9e1eefea290c\\infra-review-128-129\\snapshot135",
+    "provenance": "Sparse Git-authenticated exact135 snapshot; no LF serialization shim or assertion patch; package dependencies materialized from same commit",
+    "initial_setup_issue": "Sparse snapshot omitted semantic_ir.__init__ compiler dependency; imported dependency sources added unchanged before successful execution"
+  }
+}
