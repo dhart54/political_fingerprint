@@ -1,0 +1,1230 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 39,
+  "exact_committed_head": "d05a44461ae7550227169314a6b2504ea3bf9177",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact d05a44461ae7550227169314a6b2504ea3bf9177, never current batch42 working-tree bytes; zero source acquisition.",
+  "scope": "31 new identities across six batches plus only two prior roll150/207 follow-ups in batch36. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim. Whole CMS letter, BLM plans/maps, appropriations and other partial reviews remain incomplete as recorded. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch39_20260916/membership_review.json",
+      "git_blob": "31967ebe9d7ed24f3d22f370b95671889273111d",
+      "git_bytes_sha256": "87831ae2308530106fe54448212a205239c70ab8c537be8169fde8be205726e5"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch39_20260916/sources.json",
+      "git_blob": "3a11c174f8d3da47e817ccd596bc7881fc88d06a",
+      "git_bytes_sha256": "30dc655a63679baa0ab562b63b5842e1866bda3c37a3ce8a86622dbab6f9bebb"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch39_20260916/screening_receipt.json",
+      "git_blob": "c09f97437bf1dbd428a7cfce73e8b6c44c97c000",
+      "git_bytes_sha256": "65c700c1340dce1b767d195854f4b79238613ed2c6acb46be0eb43603d1e3bde"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch39_20260916/screening_units_receipt.json",
+      "git_blob": "4524bf81ff52bd9a37ab9e3d1c7ef1ec386713e4",
+      "git_bytes_sha256": "07c964504d73d69dd1b39ce70815d89a053ec12c2ebd5d26c9dbda2f2117bdb3"
+    }
+  },
+  "cumulative_membership_review_sha256": "867e211c7ac426fbd828fe1746a54ed8ee4c174d9c5d50b7d36396f063bd38b6",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/7901d05594b0e64f6f8c09e86df7207ef97a36fd2acb56a2ce8a5f52b25eb0cb.0000000.json",
+        "sha256": "10aa5fc18e3033487633e9d4f8f5314773995ec5261eedea78fe6874b6319257",
+        "start_character": 0,
+        "end_character": 25461
+      }
+    ],
+    "utf8_sha256": "7901d05594b0e64f6f8c09e86df7207ef97a36fd2acb56a2ce8a5f52b25eb0cb",
+    "total_characters": 25461,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/9d7562c171d599e0f6771f8c5dc084c4f8c382376d3cf3a581f853318993647a.0000000.json",
+        "sha256": "e454c1cb2ac530b55a5657812f999f6d8b4185af9afd6e9a2033415c97118b55",
+        "start_character": 0,
+        "end_character": 65947
+      }
+    ],
+    "utf8_sha256": "9d7562c171d599e0f6771f8c5dc084c4f8c382376d3cf3a581f853318993647a",
+    "total_characters": 65947,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:232",
+    "house:119:1:233",
+    "house:119:1:234",
+    "house:119:1:235",
+    "house:119:1:236"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "congressional-record:4553-amend28-roll232-choice148",
+      "scope": "Complete retained own offered instruction and resumed recorded rejection read; broader source page_extracts/debate are not a complete dailyRecord review"
+    },
+    {
+      "source_id": "congressional-record:4553-amend29-roll233-choice148",
+      "scope": "Complete retained own offered instruction and resumed recorded rejection read; broader source page_extracts/debate are not a complete dailyRecord review"
+    },
+    {
+      "source_id": "congressional-record:4553-amend30-roll234-choice148",
+      "scope": "Complete retained own offered instruction and resumed recorded rejection read; broader source page_extracts/debate are not a complete dailyRecord review"
+    },
+    {
+      "source_id": "congressional-record:4553-amend31-roll235-choice149",
+      "scope": "Complete retained own offered instruction and resumed recorded rejection read; broader source page_extracts/debate are not a complete dailyRecord review"
+    },
+    {
+      "source_id": "congressional-record:4553-amend32-roll236-choice149",
+      "scope": "Complete retained own offered instruction and resumed recorded rejection read; broader source page_extracts/debate are not a complete dailyRecord review"
+    },
+    {
+      "source_id": "govinfo:hr4553-rh-amend28-account-SRA148",
+      "scope": "Complete retained exact reported Commission heading and Spending Reduction Account read; whole parent bill not reviewed"
+    },
+    {
+      "source_id": "govinfo:hr4553-rh-amend29-account-SRA148",
+      "scope": "Complete retained exact reported Commission heading and Spending Reduction Account read; whole parent bill not reviewed"
+    },
+    {
+      "source_id": "govinfo:hr4553-rh-amend30-account-SRA148",
+      "scope": "Complete retained exact reported Commission heading and Spending Reduction Account read; whole parent bill not reviewed"
+    },
+    {
+      "source_id": "govinfo:hr4553-rh-amend31-account-SRA149",
+      "scope": "Complete retained exact reported Commission heading and Spending Reduction Account read; whole parent bill not reviewed"
+    },
+    {
+      "source_id": "govinfo:hr4553-rh-amend32-EERE-account149",
+      "scope": "Complete688character retained exact EEREtarget heading read; its223million is OF1.83billion"
+    },
+    {
+      "source_id": "govinfo:hr4553rh-eere-binding",
+      "scope": "Complete10076retained characters read: PDF26/49-54only. Complete301within selected pages; not all parent/program/report provisions, page54ends within305"
+    },
+    {
+      "source_id": "govinfo:40usc-subtitleV-2024",
+      "scope": "Partial0-2200,32219-37539and66800-70100of82620. Complete15501including notes/cost-share waiver and15751context within this scope, not whole subtitle/region/governance/application review; retained edition includes Jan2025amendment notes"
+    },
+    {
+      "source_id": "govinfo:pl118-272-regional-commissions",
+      "scope": "Partial0-2200of21884:2241and2242lead only; not a complete2025amendment integration"
+    },
+    {
+      "source_id": "govinfo:40usc15734-greatlakes-operative149",
+      "scope": "Complete470character retained watershed/county region section read, not all Authority governance/current applications"
+    },
+    {
+      "source_id": "clerk:119:1:232",
+      "scope": "Exact amendment/question/failure/date and original member labels read; printed numbering versus floor numbers kept distinct"
+    },
+    {
+      "source_id": "clerk:119:1:233",
+      "scope": "Exact amendment/question/failure/date and original member labels read; printed numbering versus floor numbers kept distinct"
+    },
+    {
+      "source_id": "clerk:119:1:234",
+      "scope": "Exact amendment/question/failure/date and original member labels read; printed numbering versus floor numbers kept distinct"
+    },
+    {
+      "source_id": "clerk:119:1:235",
+      "scope": "Exact amendment/question/failure/date and original member labels read; printed numbering versus floor numbers kept distinct"
+    },
+    {
+      "source_id": "clerk:119:1:236",
+      "scope": "Exact amendment/question/failure/date and original member labels read; printed numbering versus floor numbers kept distinct"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_child_instruction_and_recorded_choice_units": 5,
+    "complete_reported_target_heading_units": 5,
+    "partial_statutory_or_parent_provision_units": 3,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:232",
+        "evidence_unit": "complete_own_rejected_child_and_reported_target_with_scoped_material_baselines",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:1:233",
+        "evidence_unit": "complete_own_rejected_child_and_reported_target_with_scoped_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:234",
+        "evidence_unit": "complete_own_rejected_child_and_reported_target_with_scoped_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:235",
+        "evidence_unit": "complete_own_rejected_child_and_reported_target_with_scoped_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:236",
+        "evidence_unit": "complete_own_rejected_child_and_reported_target_with_scoped_material_baselines",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "dfb2ca08ba4c192a1ccbe34ded72fcb6733be601445784aaba61d6631705f76c",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:232",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete own Perry No.28 instruction/recorded rejection and reported Northern Border heading bind a13,319,727dollar reduction from33,319,727to20million, with the same increase to the0dollar Spending Reduction Account. Availability until expended and the printed administrative-expense override of15751(b) remain. Complete retained15501and15751context distinguishes mixed-purpose grants, conditional grant-contribution limits, NB COVID-related waiver, authorizations and actual appropriations. A direct infrastructure/technology mixed grant-governance proposal is unaccepted; the reduction is not assigned to a specific sector/project or to all Commission resources.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:232",
+            "url": "https://clerk.house.gov/evs/2025/roll232.xml",
+            "raw_sha256": "c05434173050cf16ba3de3db3c598fddb8bd6c62bf72f5527d5084c14799d556",
+            "governed_bytes_sha256": "90121f42c70d70003559b54a7f96205dfca90c55cf4fff7fd632d93b498beb4e"
+          },
+          {
+            "source_id": "congressional-record:4553-amend28-roll232-choice148",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+            "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+            "governed_bytes_sha256": "6dd280664c702f34fd27b9fa9f9080fc23715194a026ef381688ebe0ab490446"
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend28-account-SRA148",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+            "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+            "governed_bytes_sha256": "7b028a98f594cbf571c8b9f4f60024b93320f9a7be3cbe159cd033182bbb8aee"
+          },
+          {
+            "source_id": "govinfo:40usc-subtitleV-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+            "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+            "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+          },
+          {
+            "source_id": "govinfo:pl118-272-regional-commissions",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+            "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+            "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:4553-amend28-roll232-choice148",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 28 OFFERED BY MR . PERRY \nThe Acting CHAIR. It is now in order \nto consider amendment No. 28 printed \nin House Report 119–232. \nMr. PERRY. Madam Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 62, line 20, after the dollar amount, \ninsert ‘‘(reduced by $13,319,727)’’. \nPage 74, line 5, after the dollar amount, in-\nsert ‘‘(increased by $13,319,727)’’. \n\n\nAMENDMENT NO. 28 OFFERED BY MR . PERRY \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 28, printed in \nHouse Report 119–232, offered by the \ngentleman from Pennsylvania (Mr. \nP\nERRY), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 124, noes 303, \nnot voting 9, as follows: \n[Roll No. 232] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend28-account-SRA148",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "NORTHERN BORDER REGIONAL COMMISSION 17\nFor expenses necessary for the Northern Border Re-18\ngional Commission in carrying out activities authorized by 19\nsubtitle V of title 40, United States Code, $33,319,727, 20\nto remain available until expended: Provided, That such 21\namounts shall be available for administrative expenses, 22\nnotwithstanding section 15751(b) of title 40, United 23\nStates Code. 24\nVerDate Sep 11 2014 22:53 Jul 21, 2025 Jkt 059200 PO 00000 Frm 00062 Fmt 6652 Sfmt 6201 E:\\BILLS\\H4553.RH H4553kjohnson on DSK7ZCZBW3PROD with $$_JOB 63 \n• HR 4553 RH\n\n\nSPENDING REDUCTION ACCOUNT  4\nSEC. 512. $0. 5\n"
+          },
+          {
+            "source_id": "govinfo:40usc-subtitleV-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5.0000000.json",
+                  "sha256": "eb04dd2ae80a0941fb1870584441bacffa73ff6ba6496246c9ff0e47a7e7a0ba",
+                  "start_character": 0,
+                  "end_character": 82620
+                }
+              ],
+              "utf8_sha256": "8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5",
+              "total_characters": 82620,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:pl118-272-regional-commissions",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b.0000000.json",
+                  "sha256": "e4ba24ff902f3746eee4a619f65bafb4869d0e32104ed3c78253cc9ef63107bb",
+                  "start_character": 0,
+                  "end_character": 21884
+                }
+              ],
+              "utf8_sha256": "0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b",
+              "total_characters": 21884,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr4553:amend28:119"
+      }
+    },
+    {
+      "original_record_sha256": "7f9325e37ac78b48f96e8d583868be5b2ae0a7cf73912a0cca314a2b7532ad57",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:233",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Perry No.29 instruction and reported Southwest Border heading reduce4,063,381by2,063,381to2million and add2,063,381to the Spending Reduction Account. The remaining sum stays available until expended; this is not elimination of the Commission or every source of funding. Retained15501/15751grant/authorization context is partial-subtitle review, with conditional cost-share and other purposes. Complete material region/governance/current-law/accounting and mixed-purpose versus direct-infrastructure boundary review remain ordinary work before a whole-action meaning; recorded127–299rejection is not actual spending/savings.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:233",
+            "url": "https://clerk.house.gov/evs/2025/roll233.xml",
+            "raw_sha256": "6435d8b298c492b7ee0f30a94740dec839eb3344deefdf5cd706195e68c2117e",
+            "governed_bytes_sha256": "476929c9bf1350c98f340c823f30fe921186ba2c0e48aedc5a5e84da17585356"
+          },
+          {
+            "source_id": "congressional-record:4553-amend29-roll233-choice148",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+            "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+            "governed_bytes_sha256": "1693120d3001f508da076409063a56592a510db66c891280cc93fe7a31044a79"
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend29-account-SRA148",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+            "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+            "governed_bytes_sha256": "b016c98912c336cec698b1310ee5deb37ce11b41f313353934fdb6e412f5cfc8"
+          },
+          {
+            "source_id": "govinfo:40usc-subtitleV-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+            "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+            "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+          },
+          {
+            "source_id": "govinfo:pl118-272-regional-commissions",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+            "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+            "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:4553-amend29-roll233-choice148",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 29 OFFERED BY MR . PERRY \nThe Acting CHAIR. It is now in order \nto consider amendment No. 29 printed \nin House Report 119–232. \nMr. PERRY. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 63, line 9, after the dollar amount, in-\nsert ‘‘(reduced by $2,063,381)’’. \nPage 74, line 5, after the dollar amount, in-\nsert ‘‘(increased by $2,063,381)’’. \n\n\nAMENDMENT NO. 29 OFFERED BY MR . PERRY \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 29, printed in \nHouse Report 119–232, offered by the \ngentleman from Pennsylvania (Mr. \nP\nERRY), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 127, noes 299, \nnot voting 10, as follows: \n[Roll No. 233] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend29-account-SRA148",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SOUTHWEST BORDER REGIONAL COMMISSION 6\nFor expenses necessary for the Southwest Border Re-7\ngional Commission in carrying out activities authorized by 8\nsubtitle V of title 40, United States Code, $4,063,381, to 9\nremain available until expended. 10\n\n\nSPENDING REDUCTION ACCOUNT  4\nSEC. 512. $0. 5\n"
+          },
+          {
+            "source_id": "govinfo:40usc-subtitleV-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5.0000000.json",
+                  "sha256": "eb04dd2ae80a0941fb1870584441bacffa73ff6ba6496246c9ff0e47a7e7a0ba",
+                  "start_character": 0,
+                  "end_character": 82620
+                }
+              ],
+              "utf8_sha256": "8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5",
+              "total_characters": 82620,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:pl118-272-regional-commissions",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b.0000000.json",
+                  "sha256": "e4ba24ff902f3746eee4a619f65bafb4869d0e32104ed3c78253cc9ef63107bb",
+                  "start_character": 0,
+                  "end_character": 21884
+                }
+              ],
+              "utf8_sha256": "0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b",
+              "total_characters": 21884,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "732900f945795785cead310370cd9a0e29e074c3aae41ec700b472a8c455e72f",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:234",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Perry No.30 instruction and reported Southeast Crescent heading reduce16,253,526by16,003,526to250,000 and add16,003,526to the Spending Reduction Account. This differs from a zero appropriation or abolition. The same partial statutory grant/authorization context has multiple purposes and conditional contribution rules; it does not assign the reduction to transport or any actual beneficiary. Whole material Commission/region/governance/budget-baseline and mixed-purpose-domain review remain ordinary work. Recorded120–307rejection is not an enacted cut or an actual service/project outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:234",
+            "url": "https://clerk.house.gov/evs/2025/roll234.xml",
+            "raw_sha256": "cd1ea576de1dcef63f5f2b4cf0b86f169ead34e3443b6689a6849ff865917193",
+            "governed_bytes_sha256": "778cc4bc4e6911da3c981762477ad621775b6e6090f5d3ce44ccc49be707b619"
+          },
+          {
+            "source_id": "congressional-record:4553-amend30-roll234-choice148",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+            "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+            "governed_bytes_sha256": "7089ce46f017fb1da575253c9dfd15c6a106029edf610cb0d467dda6c3462ccc"
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend30-account-SRA148",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+            "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+            "governed_bytes_sha256": "7a5985a8b11fcf7f405c5443df66c08ab625276b13c08cb82f9ef2900e2ee69e"
+          },
+          {
+            "source_id": "govinfo:40usc-subtitleV-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+            "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+            "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+          },
+          {
+            "source_id": "govinfo:pl118-272-regional-commissions",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+            "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+            "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:4553-amend30-roll234-choice148",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 30 OFFERED BY MR . PERRY \nThe Acting CHAIR. It is now in order \nto consider amendment No. 30 printed \nin House Report 119–232. \nMr. PERRY. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 63, line 4, after the dollar amount, in-\nsert ‘‘(reduced by $16,003,526)’’. \nPage 74, line 5, after the dollar amount, in-\nsert ‘‘(increased by $16,003,526)’’. \n\n\nAMENDMENT NO. 30 OFFERED BY MR . PERRY \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 30, printed in \nHouse Report 119–232, offered by the \ngentleman from Pennsylvania (Mr. \nP\nERRY), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 120, noes 307, \nnot voting 9, as follows: \n[Roll No. 234] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend30-account-SRA148",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SOUTHEAST CRESCENT REGIONAL COMMISSION 1\nFor expenses necessary for the Southeast Crescent 2\nRegional Commission in carrying out activities authorized 3\nby subtitle V of title 40, United States Code, $16,253,526, 4\nto remain available until expended. 5\n\n\nSPENDING REDUCTION ACCOUNT  4\nSEC. 512. $0. 5\n"
+          },
+          {
+            "source_id": "govinfo:40usc-subtitleV-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5.0000000.json",
+                  "sha256": "eb04dd2ae80a0941fb1870584441bacffa73ff6ba6496246c9ff0e47a7e7a0ba",
+                  "start_character": 0,
+                  "end_character": 82620
+                }
+              ],
+              "utf8_sha256": "8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5",
+              "total_characters": 82620,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:pl118-272-regional-commissions",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b.0000000.json",
+                  "sha256": "e4ba24ff902f3746eee4a619f65bafb4869d0e32104ed3c78253cc9ef63107bb",
+                  "start_character": 0,
+                  "end_character": 21884
+                }
+              ],
+              "utf8_sha256": "0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b",
+              "total_characters": 21884,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "bf23b00e55fc926ab3635b028c110cd16bce481f4524ede4f6300844a7886fcf",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:235",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Perry No.31 instruction and reported Great Lakes heading reduce4,063,381by2,063,381to2million and add2,063,381to the Spending Reduction Account. Retained complete15734defines GreatLakeswatershed/Systemcounties in eight named States, not every county in each State. This legal geography does not determine any particular beneficiary or infrastructure allocation. Complete remaining material Authority/governance/finance/current-law and whole mixed-purpose membership review remain ordinary work; recorded120–302rejection is not abolition, enactment or actual grant reduction.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:235",
+            "url": "https://clerk.house.gov/evs/2025/roll235.xml",
+            "raw_sha256": "62b2ef2038e8fa4b930db1627b2f2ae391d1ef069e7e87a61a763aff0504fbe7",
+            "governed_bytes_sha256": "ba69a7489322495e76e6e26acfa01ee3f3dcb60e6f54d51aacba74b139fe6214"
+          },
+          {
+            "source_id": "congressional-record:4553-amend31-roll235-choice149",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+            "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+            "governed_bytes_sha256": "e911c4a8904f34ba286d1d20a623a3f71c03f1347c3ac2ef8513d0ca42565e6b"
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend31-account-SRA149",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+            "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+            "governed_bytes_sha256": "e5ba553fd43a4f45feaa94280783409d97074aa7caadfd95d494114949f53f97"
+          },
+          {
+            "source_id": "govinfo:40usc15734-greatlakes-operative149",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+            "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+            "governed_bytes_sha256": "79d2314b741bb57c33fcd5d3ddf98c210676ea635afb84433d54d723e0c8f069"
+          },
+          {
+            "source_id": "govinfo:40usc-subtitleV-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+            "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+            "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+          },
+          {
+            "source_id": "govinfo:pl118-272-regional-commissions",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+            "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+            "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:4553-amend31-roll235-choice149",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENTNO. 31OFFEREDBYMR. PERRY.\nThe Acting CHAIR. It is now in order\nto consider amendment No. 31 printed\nin House Report 119–232.\nMr. PERRY. Mr. Chair, I have an\namendment at the desk.\nThe Acting CHAIR. The Clerk will\ndesignate the amendment.\nThe text of the amendment is as fol-\nlows:\nPage 63, line 14, after the dollar amount,\ninsert ‘‘(reduced by $2,063,381)’’.\nPage 74, line 5, after the dollar amount, in-\nsert ‘‘(increased by $2,063,381)’’.\n\n\nAMENDMENTNO. 31OFFEREDBYMR. PERRY\nThe Acting CHAIR. The unfinished\nbusiness is the demand for a recorded\nvote on amendment No. 31, printed in\nHouse Report 119–232, offered by the\ngentleman from Pennsylvania (Mr.\nPERRY), on which further proceedings\nwere postponed and on which the ayes\nprevailed by voice vote.\nThe Clerk will redesignate the\namendment.\nThe Clerk redesignated the amend-\nment.\nRECORDEDVOTE\nThe Acting CHAIR. A recorded vote\nhas been demanded.\nA recorded vote was ordered.\nThe vote was taken by electronic de-\nvice, and there were—ayes 120, noes 302,\nnot voting 14, as follows:\n[Roll No. 235]\n\n\nSo the amendment was rejected.\nThe result of the vote was announced\nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend31-account-SRA149",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "GREAT LAKES AUTHORITY\n12 For expenses necessary for the Great Lakes Author-\n13 ity in carrying out activities authorized by subtitle V of\n14 title 40, United States Code, $4,063,381, to remain avail-\n15 able until expended.\n16 \n\nSPENDING REDUCTION ACCOUNT\n5 SEC. 512. $0.\n6 "
+          },
+          {
+            "source_id": "govinfo:40usc15734-greatlakes-operative149",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§15734. Great Lakes Authority The region of the Great Lakes Authority shall consist of the counties which contain, in part or in whole, the areas in the watershed of the Great Lakes and the Great Lakes System (as such terms are defined in section 118(a)(3) of the Federal Water Pollution Control Act (33 U.S.C. 1268(a)(3))), in each of the following States: (1) Illinois. (2) Indiana. (3) Michigan. (4) Minnesota. (5) New York. (6) Ohio. (7) Pennsylvania. (8) Wisconsin."
+          },
+          {
+            "source_id": "govinfo:40usc-subtitleV-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5.0000000.json",
+                  "sha256": "eb04dd2ae80a0941fb1870584441bacffa73ff6ba6496246c9ff0e47a7e7a0ba",
+                  "start_character": 0,
+                  "end_character": 82620
+                }
+              ],
+              "utf8_sha256": "8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5",
+              "total_characters": 82620,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:pl118-272-regional-commissions",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b.0000000.json",
+                  "sha256": "e4ba24ff902f3746eee4a619f65bafb4869d0e32104ed3c78253cc9ef63107bb",
+                  "start_character": 0,
+                  "end_character": 21884
+                }
+              ],
+              "utf8_sha256": "0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b",
+              "total_characters": 21884,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "944c44634222e200e786ad6ee3ba4fa0fba0f9f780cad159e3b9dc891c3ad7cf",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:236",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own No.32 offering identifies Perry as Roydesignee and binds two reductions:1.83billion from the EEREtopline and223million from program direction OF THAT SAME SUM. They would bring the two printed amounts to0; they are not a2.053billion additive cut and contain no Spending Reduction Account instruction. Complete reported EEREheading is bound; additional retained pages49-54include complete301funding/report-table/reprogramming/waiver/prior-balance provisions, with54ending in305. The report Bill-column allocations, prior available balances and material DOE/program/budget baselines require integration before a complete whole-action meaning; no all-EEREfunding/authority repeal, actual shutdown, emissions/jobs/energy outcome or parent-bill stance inferred. Recorded127–297rejection controls over the earlier voice question.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:236",
+            "url": "https://clerk.house.gov/evs/2025/roll236.xml",
+            "raw_sha256": "3cf5c8813c3031d9a5111cfeea56b614a4428f581888c75765ecc49ed09d68dd",
+            "governed_bytes_sha256": "8d3b5ffe99fc19b8c3f4e1004f4ed55faa692b2e4360195e40e24d87d1ff5bfa"
+          },
+          {
+            "source_id": "congressional-record:4553-amend32-roll236-choice149",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+            "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+            "governed_bytes_sha256": "a6a4875c27d9ccb5f2ced1c9ed1bd2bd64a1b194c3e61b6ea092ad9cbc26ac0c"
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend32-EERE-account149",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+            "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+            "governed_bytes_sha256": "454a88565a2e266e209a1c6d50529bfd08c4bcace4f6a1a1587079d8b635a941"
+          },
+          {
+            "source_id": "govinfo:hr4553rh-eere-binding",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+            "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+            "governed_bytes_sha256": "1da97862031d9a6b1bfc33f0e2af9480bb45a0d8dfb642fd732b8c1adcc000ca"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:4553-amend32-roll236-choice149",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENTNO. 32OFFEREDBYMR. PERRY\nThe Acting CHAIR. It is now in order\nto consider amendment No. 32 printed\nin House Report 119–232.\nMr. PERRY. Mr. Chair, as the des-\nignee of the gentleman from Texas (Mr.\nROY) I have an amendment at the desk.\n\nThe Acting CHAIR. The Clerk will\ndesignate the amendment.\nThe text of the amendment is as fol-\nlows:\nPage 26, line 13, after the dollar amount,\ninsert ‘‘(reduced by $1,830,000,000)’’.\nPage 26, line 14, after the dollar amount,\ninsert ‘‘(reduced by $223,000,000)’’.\n\n\nAMENDMENTNO. 32OFFEREDBYMR. PERRY\nThe Acting CHAIR (Mr.\nBAUMGARTNER). The unfinished busi-\nness is the demand for a recorded vote\non amendment No. 32, printed in House\nReport 119–232, offered by the gen-\ntleman from Pennsylvania (Mr.\nPERRY), on which further proceedings\nwere postponed and on which the noes\nprevailed by voice vote.\nThe Clerk will redesignate the\namendment.\nThe Clerk redesignated the amend-\nment.\nRECORDEDVOTE\nThe Acting CHAIR. A recorded vote\nhas been demanded.\nA recorded vote was ordered.\nThe Acting CHAIR. This will be a 2-\nminute vote.\nThe vote was taken by electronic de-\nvice, and there were—ayes 127, noes 297,\nnot voting 12, as follows:\n[Roll No. 236]\n\n\nSo the amendment was rejected.\nThe result of the vote was announced\nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr4553-rh-amend32-EERE-account149",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "ENERGY EFFICIENCY AND RENEWABLE ENERGY\n5 For Department of Energy expenses including the\n6 purchase, construction, and acquisition of plant and cap-\n7 ital equipment, and other expenses necessary for energy\n8 efficiency and renewable energy activities in carrying out\n9 the purposes of the Department of Energy Organization\n10 Act (42 U.S.C. 7101 et seq.), including the acquisition or\n11 condemnation of any real property or any facility or for\n12 plant or facility acquisition, construction, or expansion,\n13 $1,830,000,000, to remain available until expended: Pro-\n14 vided, That of such amount, $223,000,000 shall be avail-\n15 able until September 30, 2027, for program direction.\n16 "
+          },
+          {
+            "source_id": "govinfo:hr4553rh-eere-binding",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8cf15e1539c9eee1bf8d6efc348c98cae821812cc5e82ce112291f9b46fd8562.0000000.json",
+                  "sha256": "8782f7cea77d2cc00031377a55c3fcdd44143874d228c665a5566c52d8d3fd5c",
+                  "start_character": 0,
+                  "end_character": 10076
+                }
+              ],
+              "utf8_sha256": "8cf15e1539c9eee1bf8d6efc348c98cae821812cc5e82ce112291f9b46fd8562",
+              "total_characters": 10076,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "eaf83ce57ca9e033c479b882e31fac4dc03f92e78023f96e835376f10cfab5ca",
+      "source": {
+        "source_id": "clerk:119:1:232",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll232.xml",
+        "text_version": null,
+        "raw_sha256": "c05434173050cf16ba3de3db3c598fddb8bd6c62bf72f5527d5084c14799d556",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "232",
+          "legis-num": "H R 4553",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "9",
+          "amendment-author": "Perry of Pennsylvania Amendment No. 28",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "3-Sep-2025",
+          "action-time": "10:00 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "124",
+            "nay-total": "92",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "211",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "90121f42c70d70003559b54a7f96205dfca90c55cf4fff7fd632d93b498beb4e"
+      }
+    },
+    {
+      "original_source_object_sha256": "4355c6a25a4613b36d5e72d6aa8035305b7797d6fee82e6446d9541e6ba5abe0",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/132dd080554afd1d23693c08f83f6fc5ce4282bdb28ac25b94c475c75bf02ba5.0000000.json",
+            "sha256": "6c442f9fe2055f5fafdf9eabbf52d4ad20815517a985d35d08dc8ae6c0c6cdf1",
+            "start_character": 0,
+            "end_character": 7532
+          }
+        ],
+        "utf8_sha256": "132dd080554afd1d23693c08f83f6fc5ce4282bdb28ac25b94c475c75bf02ba5",
+        "total_characters": 7532,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "0ee8a5ab66766c23890803fcbac9ce98407dae2a28503c69df883f8662b329dc",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/98257e76c4879ee1e85eeb8dc0608642d98eda65a510f72f4bb67751b4abf968.0000000.json",
+            "sha256": "b178e079abc62ae05ba37542f4eca691dfd517bd242f8bf43b91741a98f82226",
+            "start_character": 0,
+            "end_character": 12453
+          }
+        ],
+        "utf8_sha256": "98257e76c4879ee1e85eeb8dc0608642d98eda65a510f72f4bb67751b4abf968",
+        "total_characters": 12453,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "bfef3b4c7047d235821822a4e38a079fc689a6688d16cd7e3e30059cdd99dad4",
+      "source": {
+        "source_id": "govinfo:40usc-subtitleV-2024",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+        "text_version": "2024 Code section",
+        "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5.0000000.json",
+              "sha256": "eb04dd2ae80a0941fb1870584441bacffa73ff6ba6496246c9ff0e47a7e7a0ba",
+              "start_character": 0,
+              "end_character": 82620
+            }
+          ],
+          "utf8_sha256": "8920a2abc22989e81f3023a4b4a1427395ceae243170f6a4fe9a87ac20db27a5",
+          "total_characters": 82620,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+      }
+    },
+    {
+      "original_source_object_sha256": "b667c4f2d491635de940fe4187c079a96ade1af396e7103e1dd125df370744fb",
+      "source": {
+        "source_id": "govinfo:pl118-272-regional-commissions",
+        "source_type": "official_public_law_text",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+        "text_version": "Public Law118-272; sections2241–2250 excerpt",
+        "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b.0000000.json",
+              "sha256": "e4ba24ff902f3746eee4a619f65bafb4869d0e32104ed3c78253cc9ef63107bb",
+              "start_character": 0,
+              "end_character": 21884
+            }
+          ],
+          "utf8_sha256": "0234780d3bb32394c929219fba15a09402a5ae1ca661e9b03db87332e94c4b5b",
+          "total_characters": 21884,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+      }
+    },
+    {
+      "original_source_object_sha256": "273c44dd6aa6aba64c43a66fc21c7df74878ac8e38509162d884f0ee4aa79ffe",
+      "source": {
+        "source_id": "clerk:119:1:233",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll233.xml",
+        "text_version": null,
+        "raw_sha256": "6435d8b298c492b7ee0f30a94740dec839eb3344deefdf5cd706195e68c2117e",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "233",
+          "legis-num": "H R 4553",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "10",
+          "amendment-author": "Perry of Pennsylvania Amendment No. 29",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "3-Sep-2025",
+          "action-time": "10:05 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "127",
+            "nay-total": "88",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "211",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "476929c9bf1350c98f340c823f30fe921186ba2c0e48aedc5a5e84da17585356"
+      }
+    },
+    {
+      "original_source_object_sha256": "082319f99061c92e88213e1adf9e7b8872a92c5f7d3fb66cdef279bbfb808da0",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/9f06ef2514c3a7d0c70ad88af7e1a799033497f294c7927f8d53fa52472ad985.0000000.json",
+            "sha256": "6b74c7e7296244c14b81edd8774aef47ce1e05f61b55a18c9f04bd3f3a9d5fe7",
+            "start_character": 0,
+            "end_character": 7529
+          }
+        ],
+        "utf8_sha256": "9f06ef2514c3a7d0c70ad88af7e1a799033497f294c7927f8d53fa52472ad985",
+        "total_characters": 7529,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "f02953a127efe2105ce3878ae23ad62701c6ce02ad5498e4abae7ec24cf3fbb0",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/6aa730e1d6a78d7e87e6214097618e1094d668b4fa2115e4f7145320624a85ec.0000000.json",
+            "sha256": "8919eb5e7492e4d1344fc9d0637762c6928a0feacf7123d70d18b4a7f5806151",
+            "start_character": 0,
+            "end_character": 12125
+          }
+        ],
+        "utf8_sha256": "6aa730e1d6a78d7e87e6214097618e1094d668b4fa2115e4f7145320624a85ec",
+        "total_characters": 12125,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "b68c4c5fcd4b6c9b15f1a8d63f2a1f9c4b0fc2f201594d32321c520157a3019a",
+      "source": {
+        "source_id": "clerk:119:1:234",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll234.xml",
+        "text_version": null,
+        "raw_sha256": "cd1ea576de1dcef63f5f2b4cf0b86f169ead34e3443b6689a6849ff865917193",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "234",
+          "legis-num": "H R 4553",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "11",
+          "amendment-author": "Perry of Pennsylvania Amendment No. 30",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "3-Sep-2025",
+          "action-time": "10:09 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "120",
+            "nay-total": "96",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "211",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "778cc4bc4e6911da3c981762477ad621775b6e6090f5d3ce44ccc49be707b619"
+      }
+    },
+    {
+      "original_source_object_sha256": "c0c98ebbee6a1301be442c7709ae3eafb0d4e1780c0baf5a961965511eee3612",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/ee666f8b2de935b40d5ca7e24f6b075774c5d52a0dd7cf3caf519536a3f8eaa0.0000000.json",
+            "sha256": "a707fdf30f8d02eeca81157bb08ebba8d337f892c2d8e701704a9b60a29fa7ea",
+            "start_character": 0,
+            "end_character": 7532
+          }
+        ],
+        "utf8_sha256": "ee666f8b2de935b40d5ca7e24f6b075774c5d52a0dd7cf3caf519536a3f8eaa0",
+        "total_characters": 7532,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "8c431c9686f04f1ec48cfe041ab73d835974d4c31abd5fbd9d1d77fb812437e3",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/c145fabe60fa76162999293188a120b3886e63827238722f35badd7cc1dbf430.0000000.json",
+            "sha256": "3568dda693b50bfffd4888ff889f187c8cf53a8258bfb2f49c566533b8b239c9",
+            "start_character": 0,
+            "end_character": 12128
+          }
+        ],
+        "utf8_sha256": "c145fabe60fa76162999293188a120b3886e63827238722f35badd7cc1dbf430",
+        "total_characters": 12128,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "a4503511bd4f3523fce68e910f5931aa418d0a08bb5a039ad3fcc5104404d66e",
+      "source": {
+        "source_id": "clerk:119:1:235",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll235.xml",
+        "text_version": null,
+        "raw_sha256": "62b2ef2038e8fa4b930db1627b2f2ae391d1ef069e7e87a61a763aff0504fbe7",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "235",
+          "legis-num": "H R 4553",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "12",
+          "amendment-author": "Perry of Pennsylvania Amendment No. 31",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "4-Sep-2025",
+          "action-time": "10:21 AM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "120",
+            "nay-total": "95",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "207",
+            "present-total": "0",
+            "not-voting-total": "8"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "ba69a7489322495e76e6e26acfa01ee3f3dcb60e6f54d51aacba74b139fe6214"
+      }
+    },
+    {
+      "original_source_object_sha256": "99a0bb436141e25713e2231410e26d9e30cc420188eec220bd1ab14e8f250d43",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/d89c7da45afb95dbb07d3ff4b141a5ee62e8249e76a687a6daf24f5a5f5cef3e.0000000.json",
+            "sha256": "d1e97ebea8ced9174f4b226eef951dd1761e65e8a82dca7d3f2f0f34635aee42",
+            "start_character": 0,
+            "end_character": 21075
+          }
+        ],
+        "utf8_sha256": "d89c7da45afb95dbb07d3ff4b141a5ee62e8249e76a687a6daf24f5a5f5cef3e",
+        "total_characters": 21075,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "7b50362255b6a3528dfe387b7d09eebabcbffe538ab2c8f9127e21d5c119361e",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/af346224c565a2bb6f51d72301c82908d24fee4b07ba74e6b902d58d53af967e.0000000.json",
+            "sha256": "dbb72d23777ddc1df48b129243488022245299881f3d8af0690fafd2f6d57737",
+            "start_character": 0,
+            "end_character": 90000
+          },
+          {
+            "path": "source_parts/af346224c565a2bb6f51d72301c82908d24fee4b07ba74e6b902d58d53af967e.0090000.json",
+            "sha256": "c335d98d10825405676dbce080a030a888b7017d5f480819b6d502584e8ca988",
+            "start_character": 90000,
+            "end_character": 111931
+          }
+        ],
+        "utf8_sha256": "af346224c565a2bb6f51d72301c82908d24fee4b07ba74e6b902d58d53af967e",
+        "total_characters": 111931,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "d93553e7f73a8dbb182ad696a23c957e51791cfd9ea14dc82c5fe27b1a06ace7",
+      "source": {
+        "source_id": "govinfo:40usc15734-greatlakes-operative149",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+        "text_version": "Complete15734geographicdefinition only;material26regionaloperatives reusedunchangedfrom148.",
+        "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+        "text": "§15734. Great Lakes Authority The region of the Great Lakes Authority shall consist of the counties which contain, in part or in whole, the areas in the watershed of the Great Lakes and the Great Lakes System (as such terms are defined in section 118(a)(3) of the Federal Water Pollution Control Act (33 U.S.C. 1268(a)(3))), in each of the following States: (1) Illinois. (2) Indiana. (3) Michigan. (4) Minnesota. (5) New York. (6) Ohio. (7) Pennsylvania. (8) Wisconsin.",
+        "governed_bytes_sha256": "79d2314b741bb57c33fcd5d3ddf98c210676ea635afb84433d54d723e0c8f069",
+        "captured_full_text_sha256": "709776170b7d81d80cc17bd1db930fa17ca0b2db0bcbfd10a8cff0f549115f48",
+        "source_text_extents": [
+          {
+            "start": 65650,
+            "end": 66120,
+            "total": 82620
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "c1c958f81f2a8c407ed16f2480cb0aa584f91b390219d7e5e368005a9ac22e40",
+      "source": {
+        "source_id": "clerk:119:1:236",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll236.xml",
+        "text_version": null,
+        "raw_sha256": "3cf5c8813c3031d9a5111cfeea56b614a4428f581888c75765ecc49ed09d68dd",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "236",
+          "legis-num": "H R 4553",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "13",
+          "amendment-author": "Perry of Pennsylvania Amendment No. 32",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "4-Sep-2025",
+          "action-time": "10:28 AM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "127",
+            "nay-total": "88",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "209",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "8d3b5ffe99fc19b8c3f4e1004f4ed55faa692b2e4360195e40e24d87d1ff5bfa"
+      }
+    },
+    {
+      "original_source_object_sha256": "10ae09f116d966c185832afd7c01e2e91713b5426e42d15ef3e4c0a2d765801a",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/08c81933fe228b8729d40a68daf0e6310ef3bcbd306ba26e239654b768c5d396.0000000.json",
+            "sha256": "32f467878f489221304af3cbca6e883c2b0390ae950f090d9ae7cdd5d1726f44",
+            "start_character": 0,
+            "end_character": 21210
+          }
+        ],
+        "utf8_sha256": "08c81933fe228b8729d40a68daf0e6310ef3bcbd306ba26e239654b768c5d396",
+        "total_characters": 21210,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "267e1255e0d07abb0aa3a859a134caa8c0f2548f39bcc97d876f40513b858fc8",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/30ad32226042121a5168480297c66defc20dd753c4acca2594ec1c807c23f87c.0000000.json",
+            "sha256": "009afc19000c4e60c1fde6be3a78f799d76cf0ba69766490a1ceab7f00583aed",
+            "start_character": 0,
+            "end_character": 90000
+          },
+          {
+            "path": "source_parts/30ad32226042121a5168480297c66defc20dd753c4acca2594ec1c807c23f87c.0090000.json",
+            "sha256": "ff00053b788ca6b9cf68c326e8605bb1750783215fc9496144cb9638317d5f4d",
+            "start_character": 90000,
+            "end_character": 112345
+          }
+        ],
+        "utf8_sha256": "30ad32226042121a5168480297c66defc20dd753c4acca2594ec1c807c23f87c",
+        "total_characters": 112345,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "c069d525fce1a4fdbf8e5699d3dcef41b3d8fc0cdc6cd7c239232e6eda207bc9",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/680f8ba1f89f71f1e4a37973d4ed722e685ed02dc02060d72314d19bab83e245.0000000.json",
+            "sha256": "0648df4b3bf5e5f86d98f0a64072d1967f2aed2cd09462c7e85f837890b317b4",
+            "start_character": 0,
+            "end_character": 11310
+          }
+        ],
+        "utf8_sha256": "680f8ba1f89f71f1e4a37973d4ed722e685ed02dc02060d72314d19bab83e245",
+        "total_characters": 11310,
+        "transport_only": true
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 19
+  }
+}

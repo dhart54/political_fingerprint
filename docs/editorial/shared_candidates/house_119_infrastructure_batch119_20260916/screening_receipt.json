@@ -1,0 +1,78 @@
+{
+  "starting_head": "efc0981a774fe92600cefa0118951b02b9100cbe",
+  "predecessor_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch118_20260916",
+  "new_screened_ids": [],
+  "prior_record_repair_ids": [
+    "house:119:1:352",
+    "house:119:1:356"
+  ],
+  "new_interpreted_ids": [],
+  "expected_counts": {
+    "procedural_context": 199,
+    "exact_action_ineligible": 120,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 262,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "prior_source_count": 1593,
+  "reused_sources": [
+    {
+      "source_id": "govinfo:hr4776rh",
+      "origin": "efc0981a774fe92600cefa0118951b02b9100cbe:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "bf508d922b347c1855c934e1089067428f7bb9a49e7d299100bb9bc86e5b7e3e",
+      "raw_sha256": "a6680bbb641c8642b358ea7b70080f47cf25446c8275af10c47dd720cdc2ec4a",
+      "governed_bytes_sha256": "e83ecfb812e478c9ec8f51e5604f4f8a801caedf029fc6fd883be0d4b2410dbc"
+    },
+    {
+      "source_id": "govinfo:5usc706-2024-operative",
+      "origin": "efc0981a774fe92600cefa0118951b02b9100cbe:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "d1d53b5535126f0d3730b5a7f19d6d19d8dad2ebfd60b0bec0b8496cfb990766",
+      "raw_sha256": "f4728d146a9408440e422e45d8217c698c7828abcc15242a07011a712ed8582d",
+      "governed_bytes_sha256": "a0484b034160557bd95c9c98455a0bb6af295fdb2051f73d7271b6cff2f26659"
+    }
+  ],
+  "new_sources": [],
+  "source_acquisitions": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hr4776rh",
+      "review_extent": {
+        "start": 22064,
+        "end": 27857,
+        "total": 28405
+      },
+      "qualification": "Named retained unit ONLY; no wholeRH/APA/currentlaw or narrowchild eligibility inference."
+    },
+    {
+      "source_id": "govinfo:5usc706-2024-operative",
+      "review_extent": {
+        "start": 0,
+        "end": 1287,
+        "total": 1287
+      },
+      "qualification": "Named retained unit ONLY; no wholeRH/APA/currentlaw or narrowchild eligibility inference."
+    },
+    {
+      "source_id": "congressional-record:4776-amend1-operative-voice165",
+      "review_extent": {
+        "start": 0,
+        "end": 901,
+        "total": 901
+      },
+      "qualification": "Own narrow-child initial operative/question or exact printed page reread only; no new recorded-vote/floor/version equivalence certificate."
+    },
+    {
+      "source_id": "govinfo:hr4776rh-page26-target165",
+      "review_extent": {
+        "start": 0,
+        "end": 1343,
+        "total": 1343
+      },
+      "qualification": "Own narrow-child initial operative/question or exact printed page reread only; no new recorded-vote/floor/version equivalence certificate."
+    }
+  ],
+  "protected_targets_retried": false,
+  "authority_conferred": false
+}

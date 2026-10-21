@@ -1,0 +1,75 @@
+{
+  "review_state": "candidate_pending_external_semantic_review",
+  "case_scope": "full_record",
+  "members": [
+    {
+      "member_id": "F000477",
+      "party": "D",
+      "actions": [
+        {
+          "action_id": "house:119:1:109",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        }
+      ]
+    },
+    {
+      "member_id": "M001184",
+      "party": "R",
+      "actions": [
+        {
+          "action_id": "house:119:1:109",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        }
+      ]
+    }
+  ],
+  "shared_semantics": {
+    "actions": [
+      {
+        "action_id": "house:119:1:109",
+        "action_meaning_ref": "hr859-literal-candidate-probe-20261021:house:119:1:109:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.R.859 would require the manufacturer of a covered device to disclose clearly and conspicuously, before purchase, whether the device contains a camera or microphone as a component. Its covered-device definition uses the printed consumer-product reference to section3(a) of the Consumer Product Safety Act and requires internet capability and a camera or microphone. It excludes telephones including mobile phones, laptops, tablets and devices a consumer would reasonably expect to have a camera or microphone; devices specifically marketed as a camera, telecommunications device or microphone; and devices or apparatus described in the named Communications Act provisions (47U.S.C.255,617,619and303(aa)/(bb)) and associated regulations. These are the bill's categories and literal incorporations, not classifications of actual products.\n\nA section2 violation would receive the bill's specified unfair-or-deceptive-rule treatment. The FTC would enforce the Act through the incorporated applicable FTC Act terms, with the stated penalties, privileges and immunities and a savings clause for its other authority. No particular penalty amount or additional unstated enforcement power is asserted.\n\nWithin180days after enactment, the FTC would issue guidance through outreach to relevant private entities. The guidance would address clear, conspicuous and age-appropriate disclosure as practicable, and best practices for pictorial representation. The referenced definition uses includes for pictures, photographs, video, illustrations and symbols; the bill does not independently require a particular icon. Manufacturers could petition for tailored guidance consistent with existing or successor rules of practice. Guidance would not confer rights on any person, State or locality, or bind the FTC or any person. An enforcement action must allege a specific statutory violation; inconsistency with guidance alone is insufficient unless the practices allegedly violate section2.\n\nThe bill would apply to covered devices manufactured after the date180days after the FTC issues section3(c) guidance. It would not apply to devices manufactured or sold before that date, or otherwise introduced into interstate commerce before it. The enactment-relative guidance deadline and the guidance-relative applicability date are distinct; no clock is found to have started from House passage.\n\nThe five dated statutory context readings explain the pictorial reference and named accessibility frameworks while preserving their printed conditions and reference notes. They do not add those baseline accessibility duties to H.R.859. Incorporated regulations and category definitions remain literal references; this candidate does not determine exhaustive current regulatory coverage, classify an actual device or certify current law.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr859:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:109",
+          "govinfo:hr859eh",
+          "govinfo:15usc2052-2024",
+          "govinfo:15usc45b-2024",
+          "govinfo:47usc617-2024",
+          "govinfo:47usc303-2024",
+          "govinfo:47usc619-2024",
+          "govinfo:47usc255-2024"
+        ],
+        "structural_metadata": {
+          "stage_order": 10109
+        }
+      }
+    ],
+    "episodes": [
+      {
+        "episode_id": "episode:hr859:119",
+        "action_ids": [
+          "house:119:1:109"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      }
+    ],
+    "policy_families": [],
+    "policy_traits": [],
+    "shared_review_dependencies": [],
+    "source_render_constraints": [],
+    "trait_relationships": []
+  }
+}

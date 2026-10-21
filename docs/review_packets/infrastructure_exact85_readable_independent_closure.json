@@ -1,0 +1,56 @@
+{
+  "kind": "controller_relayed_bounded_exact85_rendered_copy_closure",
+  "exact_reviewed_target": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "extraction_commit": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+  "extraction_path": "docs/review_packets/infrastructure_exact85_cable_catfish_readable_findings.json",
+  "extraction_git_blob": "47126ecf3021464ebbd5374683cbdeae2589118d",
+  "extraction_git_bytes_sha256": "5c206e3d2ce4835c2254f39d09af094bd230610f2edfca55737193d6ff0165cc",
+  "parent_file": {
+    "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/generated/readable_candidates.json",
+    "git_blob": "193467db59261f3a9119f19a87575a927847966b",
+    "git_bytes_sha256": "045c36255ea010f9f49156ff76cbfc86654d877ffa5ccf9ef3daf3f942a3013e",
+    "canonical_json_sha256": "a043a24f4cf6a04eb3be6d26897e9b010a116b80f7f92f12e5293dd32d32d5f5"
+  },
+  "verified_findings": [
+    {
+      "member_id": "F000477",
+      "action_ids": [
+        "house:119:2:67"
+      ],
+      "original_json_pointer": "/members/0/findings/50",
+      "finding_sha256": "087aa443f51544a4f80ceba69202c7a563cb57070424472f1b5b0f7e57a462ad"
+    },
+    {
+      "member_id": "F000477",
+      "action_ids": [
+        "house:119:2:88"
+      ],
+      "original_json_pointer": "/members/0/findings/53",
+      "finding_sha256": "4f9c79224e83013becbefdbbf5f28bc61913e7cee046504a98354bb84e33aac6"
+    },
+    {
+      "member_id": "M001184",
+      "action_ids": [
+        "house:119:2:67"
+      ],
+      "original_json_pointer": "/members/1/findings/45",
+      "finding_sha256": "c5cc6ffaa644fa995cd4f84295639eafd6224c90f89292b89dcdadb41e0fb843"
+    },
+    {
+      "member_id": "M001184",
+      "action_ids": [
+        "house:119:2:88"
+      ],
+      "original_json_pointer": "/members/1/findings/48",
+      "finding_sha256": "00655ba1e423d050c0212028e106a54227dc0e058a91de4a3c734670542b0713"
+    }
+  ],
+  "reviewer_report": "All four finding digests independently recomputed. Detailed text equals verified corrected67/88action meanings; member observations, qualifications, sources and result-versus-enactment distinctions pass.",
+  "pointer_placement_limit": "Placement comes from the committed extraction, not a newly downloaded full parent body.",
+  "rendered_copy_gap_closed_within_declared_scope": true,
+  "semantic_membership_acceptance": false,
+  "scope_transferred_to_later_research": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "no_test_rerun_solely_for_attribution": true
+}

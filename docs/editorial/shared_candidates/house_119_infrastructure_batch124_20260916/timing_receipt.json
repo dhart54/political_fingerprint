@@ -1,0 +1,40 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-20T00:34:42.338846+00:00",
+    "qualification": "Complete retained2331/2332/2333operative units31577characters and own7803character4922EH read before marker, untimed. Pre-voteDCCouncil8ed3snapshot; amendment-history notes excluded by existing source. No fullTitle16/otherexternalprivacy/crime definitions/currentlaw/actualrecords/floor certificate."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-20T00:35:54.100025+00:00",
+    "end_utc": "2026-10-20T00:35:59.121369+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 124 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch124_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.52
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.501
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 71.761,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 5.021,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 7.862,
+    "result": "passed",
+    "scope": [
+      "HR4922three record classes, private information/files, AGrecipient/websitepurpose, PIIbar, MAY/SHALL and distinct clocks/reference",
+      "PreservedHR275named definition/risk/procurement boundaries",
+      "Preserved1048direct-use precision",
+      "PreservedHR33tax/crew/project/agreement limits"
+    ]
+  }
+}

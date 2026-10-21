@@ -1,0 +1,158 @@
+{
+  "head": "f99c44443400722da216a1c8d0c77be4bb9c7ab6",
+  "base": "5f050bbda177c909a1971a6103ccfd1b7fe0af3d",
+  "findings": [],
+  "source_authentication": [
+    {
+      "source_id": "govinfo:42usc5101-2024-capta-definitions",
+      "pointer": "/sources/1052",
+      "canonical_sha256": "26c7e2c7c8fe173d68b42ef440ac923e19da3ecabb820bb3e2d8e3b375b57473",
+      "characters": 1939,
+      "export_bytes": 2481
+    },
+    {
+      "source_id": "govinfo:18usc1111-2024-operative",
+      "pointer": "/sources/1053",
+      "canonical_sha256": "3af89170e2bff39976e037041c80ac8bc967d20efb7e12739c8bb5f5bd28bcc1",
+      "characters": 2228,
+      "export_bytes": 2769
+    },
+    {
+      "source_id": "govinfo:18usc1112-2024-operative",
+      "pointer": "/sources/1054",
+      "canonical_sha256": "c90a51d35ae0b9389d975ddcc0e4ffeceaed5b40a316e476dd7c5329cebcb20d",
+      "characters": 984,
+      "export_bytes": 1505
+    },
+    {
+      "source_id": "govinfo:18usc1113-2024-operative",
+      "pointer": "/sources/1055",
+      "canonical_sha256": "e70db662715e5f5d1e3a84497c4cb211d09166eef304a3e575c9c21a1d94fb0a",
+      "characters": 709,
+      "export_bytes": 1225
+    },
+    {
+      "source_id": "govinfo:8usc1226-2024-custody-baseline",
+      "pointer": "/sources/1056",
+      "canonical_sha256": "1c8770200ea75167e5e6ef642aa1b5b81ea9193b5fcf63cb70a1427655688fa0",
+      "characters": 1672,
+      "export_bytes": 2195
+    },
+    {
+      "source_id": "govinfo:8usc1101-2024-aggravated-felony",
+      "pointer": "/sources/1047",
+      "canonical_sha256": "dd33548ce1c581241b09cb9fff13cc5783c1729ebc38e17f8ff3af9d57bf549a",
+      "characters": 5525,
+      "export_bytes": 6055
+    },
+    {
+      "source_id": "govinfo:8usc1101-2024-serious-offense",
+      "pointer": "/sources/1048",
+      "canonical_sha256": "49a10d407efe4612c836116b3a46e6845a2fda1255f3d61881a81e42f2ed1f41",
+      "characters": 363,
+      "export_bytes": 879
+    },
+    {
+      "source_id": "govinfo:18usc2252-2024-operative",
+      "pointer": "/sources/823",
+      "canonical_sha256": "4bebe759c5fb9640746b94b9ddddad6781aeac444ca5bdf774648a85e76a71f1",
+      "characters": 6746,
+      "export_bytes": 7327
+    }
+  ],
+  "preserved_other_records": 675,
+  "preserved_old_sources": 1612,
+  "total_sources": 1620,
+  "preserved_meanings": 70,
+  "counts": {
+    "procedural_context": 199,
+    "exact_action_ineligible": 120,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 262,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "generated_artifacts": {
+    "compiled_ir": {
+      "equal": true,
+      "differences": 0,
+      "leaf_fields": {}
+    },
+    "compiler_input": {
+      "equal": false,
+      "differences": 70,
+      "leaf_fields": {
+        "action_meaning_ref": 70
+      }
+    },
+    "shared_action_core": {
+      "equal": false,
+      "differences": 141,
+      "leaf_fields": {
+        "action_meaning_ref": 70,
+        "action_core_sha256": 70,
+        "corpus_sha256": 1
+      }
+    },
+    "shared_issue_mapping": {
+      "equal": false,
+      "differences": 3,
+      "leaf_fields": {
+        "artifact_id": 1,
+        "mapping_sha256": 1,
+        "0": 1
+      }
+    },
+    "member_projections": {
+      "equal": false,
+      "differences": 142,
+      "leaf_fields": {
+        "action_core_sha256": 140,
+        "projection_sha256": 2
+      }
+    },
+    "readable_candidates": {
+      "equal": false,
+      "differences": 134,
+      "leaf_fields": {
+        "boundary": 2,
+        "shared_meaning_sha256": 132
+      }
+    },
+    "reproducibility_proof": {
+      "equal": false,
+      "differences": 74,
+      "leaf_fields": {
+        "readable_sha256": 1,
+        "source_capture_sha256": 1,
+        "shared_sha256": 70,
+        "core_sha256": 1,
+        "input_sha256": 1
+      }
+    }
+  },
+  "prior_receipts_preserved": true,
+  "snapshot_files": 1087,
+  "snapshot_bytes": 372890650,
+  "preexisting_modified_paths": [
+    "M\tbackend/tests/test_infrastructure_discovery_delta.py",
+    "M\tdocs/plans/infrastructure_remaining_discovery_screening.md",
+    "M\tdocs/review_packets/infrastructure_remaining_discovery_candidate_screening.md",
+    "M\tscripts/validate_infrastructure_discovery_delta.py"
+  ],
+  "test": {
+    "head": "f99c44443400722da216a1c8d0c77be4bb9c7ab6",
+    "snapshot": "C:\\Users\\Dylan\\.codex\\visualizations\\2026\\10\\21\\01a15ebb-b550-7823-a734-9e1eefea290c\\infra-review-128-129\\snapshot132",
+    "shim": "os.linesep=LF on Windows; lazy pinned Git blob materialization only",
+    "tests": [
+      "test_hr4371_remaining_offense_context_keeps_child_threshold_jurisdiction_and_2252_scopes"
+    ],
+    "ran": 1,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 2.747392200049944,
+    "lazy_files": []
+  },
+  "owner_924_generated_and_10234_prior_index_counts_independently_reproduced": false
+}

@@ -1,0 +1,512 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 102,
+  "exact_committed_head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+  "export_anchor_head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+  "committed_provenance": {
+    "membership": {
+      "head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/membership_review.json",
+      "git_blob": "2c9e6b860cee15907bf7ce524b75b648644eb551",
+      "git_bytes_sha256": "6c36f29d2fa691c23f6c3cb3b92757ffd3ffead10a1be25269b708378aacc205"
+    },
+    "sources": {
+      "head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/sources.json",
+      "git_blob": "bb248a9cd3f6165c55116db983a3c3b1c23579aa",
+      "git_bytes_sha256": "6bcf738ef6279970388ce17d6fe8188dac650aebfb6ebdd6cf372097dc9c442c"
+    },
+    "screening": {
+      "head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/screening_receipt.json",
+      "git_blob": "da95d0172b4911e582e9510eafca3d0875066735",
+      "git_bytes_sha256": "665291c399672686a016ca97b221c754831a6a084459e8649903c5fc4f9833ea"
+    },
+    "screening_units": {
+      "head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/screening_units_receipt.json",
+      "git_blob": "d5164bdf13d5cc59fd5ae1534453b94fab519cb9",
+      "git_bytes_sha256": "dc5f026e533bb580753ab9e8674a53e1f1b30a81e2e76aa7f0cb5b0eca76cdc4"
+    },
+    "validation": {
+      "head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/validation_receipt.json",
+      "git_blob": "606e63301b8f57cd99f6aba783a0735dfaae7fad",
+      "git_bytes_sha256": "ec2ff3e9df6bc5a066a373e7b2bc4f0f0b679249e3f5b39b7e9e1d782fc9776c"
+    }
+  },
+  "original_membership_review_sha256": "5a0c357016c29ffb9475ebb24fa6c77a25ae8b30f31d15ecbb3db8c16e15aeeb",
+  "new_screened_ids": [
+    "house:119:2:277",
+    "house:119:2:278",
+    "house:119:2:279",
+    "house:119:2:280",
+    "house:119:2:281",
+    "house:119:2:282",
+    "house:119:2:283"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "ab176e1e6754b67b24a2f10d3b080a37aaa971b01b37e0f53dab7b8fcb883f95",
+      "record": {
+        "action_id": "house:119:2:277",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question is failed recommittal of8800. No substantive motion body or insertedinstructions are interpreted. Non-counting procedural context remains separate from wholepassage and supplies no component-specific policyposition or enactment.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:277",
+            "url": "https://clerk.house.gov/evs/2026/roll277.xml",
+            "raw_sha256": "71976392dd89f4dd3398991887a335e3e2f6ee6bdfa22158bcb9b0e1e8e666f0",
+            "governed_bytes_sha256": "e8065c0d3ccc3ecc9bb541066a589696dc6764c8dab75aa594b6b65c7283a516"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0ea27b2d78c6e633c4f32d221c3f5985c3a13076dfb1632f370917ac6866e75f",
+      "record": {
+        "action_id": "house:119:2:278",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Only complete retained2500characterprefix of the2978639character8800EHcapture read; whole adopteddefense/construction/energy/table/appendedSAVEpackage interior is unreviewed. Printed fourdivisions introduction followed by five-listeddivisions is preserved as sourcetext, not silently repaired or treated as completeassembly proof. Qualified Health/Immigrationwhole meanings identified for canonical reuse, not duplicated or reduced to reviewedmedical/housing/technicalprovisions.1438deemedRCP119–33andappendS1383 remain exactversion questions; failedchildren are not imported into finalpackage. Wholeversion/materialbaselines/domain review remains pending. No technicalprocurement, fundedproject, military/health/voteroutcome, appropriation-as-authorization or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:278",
+            "url": "https://clerk.house.gov/evs/2026/roll278.xml",
+            "raw_sha256": "541fa8d9340952b4674afdc74e54b5ace14bbb7b465d1250b8b898ea1407e094",
+            "governed_bytes_sha256": "0ec9bdbe6ad0d77fb06d3fa4ddfd3c28514477c49ae19e64f88b183d4f2b6d64"
+          },
+          {
+            "source_id": "govinfo:hr8800eh-prefix197",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8800eh/html/BILLS-119hr8800eh.htm",
+            "raw_sha256": "3c9b36205ce1156d102cae4ce3eddab3f4f3326821a9352ff2fd2877f1a32423",
+            "governed_bytes_sha256": "4ebfd5721b5b97a08a995003063a6cfb09b41153a73fd2d0195f90ede8db2b74"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr8800eh-prefix197",
+            "locator": "Only2500characterretainedprefixread; original2978639characterparent notwholereviewed or freshlyacquired",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 8800 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 8800 _______________________________________________________________________ AN ACT To authorize appropriations for fiscal year 2027 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``National Defense Authorization Act for Fiscal Year 2027''. SEC. 2. ORGANIZATION OF ACT INTO DIVISIONS; TABLE OF CONTENTS. (a) Divisions.--This Act is organized into four divisions as follows: (1) Division A--Department of Defense Authorizations. (2) Division B--Military Construction Authorizations. (3) Division C--Department of Energy National Security Authorizations and Other Authorizations. (4) Division D--Funding Tables. (5) Division E--SAVE America Act. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title. Sec. 2. Organization of Act into divisions; table of contents. Sec. 3. Congressional defense committees. DIVISION A--DEPARTMENT OF DEFENSE AUTHORIZATIONS TITLE I--PROCUREMENT Subtitle A--Authorization of Appropriations Sec. 101. Authorization of appropriations. Subtitle B--Army Programs Sec. 111. Standards for networked, autonomous, kinetic capabilities to protect against small unmanned aircraft systems. Sec. 112. Report on production of 155mm artillery ammunition. Sec. 113. Sense of Congress on domestic production of artillery projectiles. Sec. 114. Report on fielding of Link 16 tactical data link networking capabilities on UH-60M and CH-47F aircraft. Sec. 115. Minimum inventory requirement for Stryker A1 combat vehicles. Sec. 116. Multiyear procurement authority for armored multi-purpose vehicles. Subtitle C--Navy Programs Sec. 121. Temporary unavailability of amphibious warfare ships. Sec. 122. Authority to use incremental funding for long lead-time components for Virginia class submarines. Sec. 123. Multiyear procurement authority for Arleigh Burke Class Destroyers. Sec. 124. Multiyear procurement authority for John Lewis class Oilers. Sec. 125. Procurement authorities for certain amphibious shipbuilding programs. Sec. 126. Contract autho"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread; fullassembledpackage notcertified",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6727b133876d505e51b5f9bdbffd8c5194dfd4464669510a108768cc4e06b86e",
+      "record": {
+        "action_id": "house:119:2:279",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question is failed recommittal of7008. No substantive motion body or insertedinstructions are interpreted. Non-counting procedural context remains separate from wholepassage and supplies no component-specific policyposition or enactment.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:279",
+            "url": "https://clerk.house.gov/evs/2026/roll279.xml",
+            "raw_sha256": "7aa87acafa6ae7edcc1d8593418908362421a4532f6040b45bf2787ab67a91bc",
+            "governed_bytes_sha256": "244d69e89217ec9ce9ff52ff05b0ed5361d8cc4ec2e9f56f84ead281aeea4300"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2f4e2e4e4bd1b4ab49287cdddf841d8b0934b47ab50016b30fd6db1c689c531f",
+      "record": {
+        "action_id": "house:119:2:280",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete7008EHread. Wholechoice combines stockpurchase/salenotice/exception/enforcement package AND Federalphoto-ID/provisionalballot/non-in-person alternatives/exceptions/publicdigital-imagingaccess/registrationnotifications. It is not only a stockban or freeprinterclause. Preserve 7–14CALENDARdayintended-sale notice, occupational/dividendreinvestment/trust/fund exclusions, fee=max2000or10percentPLUSnetgain, distinct180dayinvestment versus90dayphoto-IDeffectivedates,3dayprovisionalcure/religiousaffidavit, three alternative non-in-personmethods and specifiedabsentservice/accessibilityexceptions. Publicimagingaccess is extentpracticable/free; no everybuildingunconditionalprinter guarantee or biometric mandate. Existing qualified Immigrationwholemeaning identified for canonical reuse; material13101/13104/78c/78l/HAVA/provisional/absentee/accessibility/sourceprint baselines and wholetechnology-versus-finance/election mapping remain pending. No actualtradingoffense, corruption/motive, individualvotereligibility, implementeddevice or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:280",
+            "url": "https://clerk.house.gov/evs/2026/roll280.xml",
+            "raw_sha256": "543f0e2c7d60bdadd88f0b0da9ef88d05f23502b9e3609b37ddcc2bc411e889a",
+            "governed_bytes_sha256": "df59ef6affe744c9b46f4e96e5cb8020d39bc00080ea6f3d95093791274a2742"
+          },
+          {
+            "source_id": "govinfo:hr7008eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7008eh/html/BILLS-119hr7008eh.htm",
+            "raw_sha256": "50404d0347d37f917aa50283cdbaf2f76a5ae700ee6f2207fa34251b404ab43e",
+            "governed_bytes_sha256": "6347366c628adfd9ee25107d263d57463bc5da1009af14521fbda182340a6751"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7008eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/79fb5326670f589aef9a42b4a28131334d0b381433409538c576c8ad76d050a2.0000000.json",
+                  "sha256": "eba3bf3eb5f9550b8c9f06972fd4c210d0e7be2c0cfe7f51dde5b5e7476bdcc0",
+                  "start_character": 0,
+                  "end_character": 14741
+                }
+              ],
+              "utf8_sha256": "79fb5326670f589aef9a42b4a28131334d0b381433409538c576c8ad76d050a2",
+              "total_characters": 14741,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "5264d63bdc0bb62070ed8662bea509e419e0f286194af9833d8fe4197406fd7c",
+      "record": {
+        "action_id": "house:119:2:281",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole113EHhas42115characters; onlyopening0:1800andclosing41315:42115read. Wholebudgetlevels/reconciliation/reservefund/enforcement/rulemaking resolution is not an appropriation, a nonbindingexpression with no institutional effect or an isolatedscientific/physicalinfrastructure investment. Completeinterior/as-amendedRCP119–37/mathematical-consistency/materialbudgetbaselines and domainreview remain pending. Closingconstitutionalrulemakingreservation does not establish everyallocationeffect; no actualprogramspending, fiscaloutcome or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:281",
+            "url": "https://clerk.house.gov/evs/2026/roll281.xml",
+            "raw_sha256": "41547348e64728b2fe1da765fdb6b6be7b6ce47d3ea86693a91c6c5ac5a05f80",
+            "governed_bytes_sha256": "cd84ee41252251404c0c6f441b1498d9281ba74ed49bb0f42adfda42cfe61c3c"
+          },
+          {
+            "source_id": "govinfo:hconres113eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres113eh/html/BILLS-119hconres113eh.htm",
+            "raw_sha256": "016b1869974a4a483717f2e6cca4431a89735792bff19a4b774948bc84e68f91",
+            "governed_bytes_sha256": "000e890b281364b6781c5e14fa3ff1df777ca765d2ccd88b6d13afff2d9a6a58"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hconres113eh",
+            "locator": "Onlyopening0:1800of42115read;wholeinteriorunreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 113 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. CON. RES. 113 _______________________________________________________________________ CONCURRENT RESOLUTION Resolved by the House of Representatives (the Senate concurring), SECTION 1. CONCURRENT RESOLUTION ON THE BUDGET FOR FISCAL YEAR 2027. (a) Declaration.--The Congress determines and declares that prior concurrent resolutions on the budget are replaced as of fiscal year 2027 and that this concurrent resolution establishes the budget for fiscal year 2027 and sets forth the appropriate budgetary levels for fiscal years 2028 through 2036. (b) Table of Contents.--The table of contents for this concurrent resolution is as follows: Sec. 1. Concurrent resolution on the budget for fiscal year 2027. TITLE I--RECOMMENDED LEVELS AND AMOUNTS Sec. 101. Recommended levels and amounts. Sec. 102. Major functional categories. TITLE II--RECONCILIATION Sec. 201. Reconciliation in the House of Representatives. TITLE III--RESERVE FUND Sec. 301. Reserve fund for reconciliation legislation in the House of Representatives. TITLE IV--OTHER MATTERS Sec. 401. Enforcement filing. Sec. 402. Budgetary treatment of administrative expenses. Sec. 403. Application and effect of changes in allocations and aggregates. Sec. 404. Adjustments to reflect changes in concepts and definitions in the House of Representatives. Sec. 405. Adjustment for changes in the baseline. Sec. 406. Emergency requirements. Sec. 407. Additional adjustments. Sec. 408. Exercise of rulemaking powers. TITLE I--RECOMMENDED LEVELS AND AMOUNTS SEC. 101. RECOMMENDED LEVELS AND AMOUNTS. The following budgetary levels are appropriate for each of fiscal years 2027 through 2036: "
+          },
+          {
+            "source_id": "govinfo:hconres113eh",
+            "locator": "Onlyclosing41315:42115read",
+            "passage": "y, and such rules shall supersede other rules only to the extent that they are inconsistent with such other rules; and (2) with full recognition of the constitutional right of either the Senate or the House of Representatives to change those rules (insofar as they relate to that House) at any time, in the same manner, and to the same extent as is the case of any other rule of the Senate or House of Representatives. Passed the House of Representatives July 22, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. CON. RES. 113 _______________________________________________________________________ CONCURRENT RESOLUTION Establishing the congressional budget for the United States Government for fiscal year 2027 and setting forth the appropriate budgetary levels for fiscal years 2028 through 2036."
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread;119-37deemedversion and latermathchanges notcertified",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "155629e4e6b75ccf9e98add5d79a2f2f4211f3e81ea6672e3f831c193d6f824b",
+      "record": {
+        "action_id": "house:119:2:282",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete89EHread. Whole substantive WarPowers direction removes Iranhostilities use unless war/specificAUMFauthorized, preserving imminentdefense/alliedstates, defensivepresence/nonhostileforces, qualifiedintelligenceactivities/sharing and no-force-authorization construction. Unlike other Iran/Lebanonresolutions, no invented7day/30dayremoval clock is supplied here. Collection/analysis/sharing language is not an exacttechnicalsystem program; proposed Infrastructure exclusion keeps the whole national-security/hostilities choice. Houseagreement is not actualwithdrawal, legalcompliance, militaryoutcome or enactment; no motive/causality finding.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:282",
+            "url": "https://clerk.house.gov/evs/2026/roll282.xml",
+            "raw_sha256": "3bc8e86e67a5e60b7e164f19b94e72d3f778e859342a029d59387e575feddba0",
+            "governed_bytes_sha256": "82d0031016e99fdf05f461126c95cb86c8ca95e82a2b19cda577458df7c6ed55"
+          },
+          {
+            "source_id": "govinfo:hconres89eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres89eh/html/BILLS-119hconres89eh.htm",
+            "raw_sha256": "5a22324853eff03930959c9ed1d4fc72fc887fdb6a8f945779bcc66c0a19bd3e",
+            "governed_bytes_sha256": "c7d5db83929758ace60e1ff4eaf92b4b933caafa8a748748dbf917695757dc33"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hconres89eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 89 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. CON. RES. 89 _______________________________________________________________________ CONCURRENT RESOLUTION Resolved by the House of Representatives (the Senate concurring), SECTION 1. TERMINATION OF USE OF FORCE. (a) Termination.--Pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress hereby directs the President to remove the use of United States Armed Forces from hostilities against the Islamic Republic of Iran or any part of its government or military, including potential ground forces in a combat role or used for occupation, unless explicitly authorized by a declaration of war or specific authorization for use of military force against Iran. (b) Rule of Construction.--Nothing in this section may be construed to-- (1) prevent the United States from defending itself, its Armed Forces, its diplomatic facilities, or allied states from imminent attack; (2) prevent the United States Armed Forces from maintaining a troop presence in the region for defensive purposes; or (3) force the removal of United States Armed Forces in the region who are not engaged in hostilities against Iran. SEC. 2. RULE OF CONSTRUCTION RELATING TO INTELLIGENCE SHARING. Nothing in this resolution may be construed to influence or disrupt any intelligence, counterintelligence, or investigative activities relating to threats in or emanating from Iran or surrounding countries conducted by, or in conjunction with, the United States Government involving-- (1) the collection of intelligence; (2) the analysis of intelligence; or (3) the sharing of intelligence between the United States and any coalition partner, if the President determines such sharing is appropriate and in the national security interests of the United States. SEC. 3. RULE OF CONSTRUCTION RELATING TO NONAUTHORIZATION OF THE USE OF MILITARY FORCE. Consistent with section 8(a)(1) of the War Powers Resolution (50 U.S.C. 1547(a)(1)), nothing in this concurrent resolution may be construed as authorizing the use of military force. Passed the House of Representatives July 23, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. CON. RES. 89 _______________________________________________________________________ CONCURRENT RESOLUTION Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "878160c72bc0b02c3ef0320b92a03e81f2028d7d311b410bea472f0960f006ab",
+      "record": {
+        "action_id": "house:119:2:283",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete8884EHread. Whole SocialSecuritydisabilitydemonstration reauthorization changes printeddates2021/2022to2030/2031, separatewaiverdate toDecember31,2030, specified90to120dayterm, evaluationmetrics, administrativefunds versus Commissioner-selectedOASI/DIbenefits funding, participation-relatedtotalincomeprotection and deletes434(f), effectiveJanuary1,2027. It is social-benefit/work-demonstration authority, not a newtechnical/scientificresearch/physical-infrastructure program merely because experiments/evaluation are mentioned; supports a proposed Infrastructure exclusion. Underlying434/401deletedcondition/waivernoticeanchor/currentindividualeligibility notfullyconformed; no automaticwaiver, allparticipantsincomeincrease, technicaldeployment, achievedworkoutcome or enactment is inferred. Qualified Health/Immigrationwholemeaning leads are not newly authored Infrastructurecores.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:283",
+            "url": "https://clerk.house.gov/evs/2026/roll283.xml",
+            "raw_sha256": "a01817dc8413dd3d8fe331600fbe1b9c7b9e44c7e26257e87760a1d10c932f81",
+            "governed_bytes_sha256": "f9939d8dddc151c37b6e19fd362468b5d3156c3dcc32b7eb48ff778146b2f9cc"
+          },
+          {
+            "source_id": "govinfo:hr8884eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8884eh/html/BILLS-119hr8884eh.htm",
+            "raw_sha256": "19b5a7e317a197dd4eb101c4a31847c958f135f158a20954d4dc807a63a72422",
+            "governed_bytes_sha256": "edea62c6729adc0cee029d86679926e0ce55297c9de12d6df23eb3622e55a147"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr8884eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 8884 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 8884 _______________________________________________________________________ AN ACT To amend title II of the Social Security Act to reauthorize demonstration authority for the disability insurance program. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Removing Barriers to Work for Disabled Americans Act''. SEC. 2. TEMPORARY REAUTHORIZATION OF DISABILITY INSURANCE DEMONSTRATION PROJECT AUTHORITY. (a) Termination Date.--Section 234(d)(2) of the Social Security Act (42 U.S.C. 434(d)(2)) is amended by striking ``December 31, 2021, and the authority to carry out such projects shall terminate on December 31, 2022'' and inserting ``December 31, 2030, and the authority to carry out such projects shall terminate on December 31, 2031''. (b) Authority to Waive Compliance With Benefits Requirements.-- Section 234(c) of such Act (42 U.S.C. 434(c)) is amended-- (1) by striking ``December 30, 2021'' and inserting ``December 31, 2030''; (2) by striking ``90 days'' and inserting ``120 days''; and (3) by inserting after ``the expected annual and total costs,'' the following: ``evaluation metrics to be used with respect to the experiment or demonstration project,''. (c) Expenditure.--Section 201(k) of such Act (42 U.S.C. 401(k)) is amended to read as follows: ``(k) Administrative expenditures for experiments and demonstration projects under section 234 shall be paid from funds made available for the administration of this title. Benefits payable to or on behalf of individuals by reason of participation in experiments and demonstration projects under section 234 shall be made from the Federal Old-Age and Survivors Insurance Trust Fund or the Federal Disability Insurance Trust Fund, as determined appropriate by the Commissioner of Social Security.''. (d) Limitation.--Section 234(e) of such Act (42 U.S.C. 434(e)) is amended-- (1) in paragraph (2), by striking the ``and'' at the end; (2) in paragraph (3), by striking the period at the end and inserting ``; and''; and (3) by adding at the end the following: ``(4) that the total income of an individual will not be reduced due to the individual's participation in an experiment or demonstration project.''. (e) Technical Amendments.--Section 234 of such Act (42 U.S.C. 434) is further amended-- (1) in subsection (d)(1), by striking ``subsection'' and inserting ``section''; and (2) by striking subsection (f). (f) Effective Date.--The amendments made by this section shall take effect on January 1, 2027. Passed the House of Representatives July 23, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 8884 _______________________________________________________________________ AN ACT To amend title II of the Social Security Act to reauthorize demonstration authority for the disability insurance program."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:277",
+      "original_source_object_sha256": "e507d6cb71787d8227135bcd6adba798b11627e6867a47e5d6d5ecb128c8ac91"
+    },
+    {
+      "source_id": "clerk:119:2:278",
+      "original_source_object_sha256": "8044123f018c5ab358c6e6439ddccf929893731fedf8fc046f5fbd10fe1fdc6a"
+    },
+    {
+      "source_id": "clerk:119:2:279",
+      "original_source_object_sha256": "593074627fca3d95075331f88f53ed6a73db7f18aefde784b8f2b8a9a34127cd"
+    },
+    {
+      "source_id": "clerk:119:2:280",
+      "original_source_object_sha256": "3506386ad0712faeffcafa2d98240f490cf1400d17ff638d311e557adae22d3a"
+    },
+    {
+      "source_id": "clerk:119:2:281",
+      "original_source_object_sha256": "0da8d80843cf341afc7b862ef66b07c4bbee83637382e2ea7bb07b99d38e3ee2"
+    },
+    {
+      "source_id": "clerk:119:2:282",
+      "original_source_object_sha256": "65bcd1e46d3ce7b94b51319248a5c4d6fed24efe553c4a702736aac537c15d29"
+    },
+    {
+      "source_id": "clerk:119:2:283",
+      "original_source_object_sha256": "025cdf436d9d6d1ae469a191727a8e30ebaf0e9c37151c6531138599d31a4ac3"
+    },
+    {
+      "source_id": "govinfo:hconres113eh",
+      "original_source_object_sha256": "1c6248daac484a45892c4ea8d2f499092f47a28bde84c8a994fb46d22c5951f8"
+    },
+    {
+      "source_id": "govinfo:hconres89eh",
+      "original_source_object_sha256": "12278f044cadb0ea3586e63e24c08d43e5c0ecb226d07d9eb6cef0db491a799d"
+    },
+    {
+      "source_id": "govinfo:hr7008eh",
+      "original_source_object_sha256": "44330fc7b82972327f9872194063321b4f4e4bc8105c312b6301769aec2eea75"
+    },
+    {
+      "source_id": "govinfo:hr8800eh-prefix197",
+      "original_source_object_sha256": "9cfd6e579949139ce9211fe594ba3dd2a936d84b212ac59e8ab28ca95891c202"
+    },
+    {
+      "source_id": "govinfo:hr8884eh",
+      "original_source_object_sha256": "7e33540b37582a6aa465167f890094e485708418405adc8c18b32fc8ce2dd1e9"
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "original_source_object_sha256": "94957804622c76e7efae6b9e37d6c0ce932d4cd8ad66793e44c4c15cc1fb0ea1"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr8800eh-prefix197",
+      "governed_length": 2500,
+      "review_extent": "Onlyretained2500characterprefixread; original2978639characterparent unreviewed"
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "governed_length": 10221,
+      "review_extent": "Complete retainedownbill/resolution or previouslyread governingrule; currentindividualapplication/remaininglegalbaselines notcertified"
+    },
+    {
+      "source_id": "govinfo:hr7008eh",
+      "governed_length": 14741,
+      "review_extent": "Complete retainedownbill/resolution or previouslyread governingrule; currentindividualapplication/remaininglegalbaselines notcertified"
+    },
+    {
+      "source_id": "govinfo:hconres113eh",
+      "governed_length": 42115,
+      "review_extent": "Onlyopening0:1800andclosinglast800read;wholeinteriorunreviewed"
+    },
+    {
+      "source_id": "govinfo:hconres89eh",
+      "governed_length": 2524,
+      "review_extent": "Complete retainedownbill/resolution or previouslyread governingrule; currentindividualapplication/remaininglegalbaselines notcertified"
+    },
+    {
+      "source_id": "govinfo:hr8884eh",
+      "governed_length": 3047,
+      "review_extent": "Complete retainedownbill/resolution or previouslyread governingrule; currentindividualapplication/remaininglegalbaselines notcertified"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 7,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:277",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:278",
+        "evidence_unit": "partial_whole_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:279",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:280",
+        "evidence_unit": "complete_ownbody_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:281",
+        "evidence_unit": "partial_whole_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:282",
+        "evidence_unit": "complete_ownbody_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:283",
+        "evidence_unit": "complete_ownbody_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": null,
+    "inherited_focused_test_count": 134,
+    "inherited_focused_suite_head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+    "semantic_checks": 7,
+    "compiled_sha256": "c76b94c7b6d6ac5c024ddd8e7d8942a75bca5e40fb79259e8c13a4cbcf6fdd6a"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/authoring.json",
+      "git_blob": "feb8306524f0f6e51df73f7530d92989e50b3dd9",
+      "git_bytes_sha256": "b73d97f200cc717dd85aa0a8519b582869df67f73d357207353aea6333ef78b7"
+    },
+    "actions": []
+  }
+}

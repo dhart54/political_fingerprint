@@ -1,0 +1,49 @@
+{
+  "role": "bounded_replay_compatibility_not_acceptance",
+  "historical_package_commit": "a0605e4e3e3a81751bf273155f1cf5e0cfa4d21a",
+  "historical_rule_base": "ac22199dff31bd2e271d95be82077c8e7de064c4",
+  "historical_preparer": {
+    "path": "scripts/prepare_health_one_action_review.py",
+    "git_blob": "df2ca221f8ca3676130a582d1b53efd8d33382f4",
+    "canonical_text_sha256": "a5620e9115156eb2d198505dd713eaf0f003dc97a28efe979a542a1126f67384"
+  },
+  "actual_replay_tools": {
+    "scripts/prepare_health_one_action_review.py": "5df5f13b06ebdfd28a8170c9c0ba419a2a337f54cb046d31f9984900cb29f9b3",
+    "scripts/health_infrastructure_compatibility.py": "64aac5f2673c4320a233f9b7a1e04467fd2f75a0b1ff431c8fa94f3f9ea5f533"
+  },
+  "shared_helper": {
+    "path": "scripts/prepare_shared_domain_candidate.py",
+    "historical_git_blob": "8eb95a54bb95b17009023e851cfdeb26cb9a4573",
+    "reviewed_successor_git_blob": "674ec45d22e8f890d654b499e438d4356e0b2227",
+    "actual_git_blob": "674ec45d22e8f890d654b499e438d4356e0b2227",
+    "executed_by_Health_preparer": false,
+    "reviewed_change": "Include substantive non-directional actions in exact authored/interpreted/proposed set equality"
+  },
+  "other_six_rule_canonical_string_sha256": {
+    "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
+    "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
+    "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
+    "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
+    "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
+  },
+  "frozen_package_file_sha256": {
+    "shared_action_core.json": "cf9dd618381d230c480bfcef271992ad33efabb7558365ee05a121aebdb0bd2b",
+    "shared_issue_mapping.json": "6b634595ad096ab782cb84e628b368b265688d1a7ed86f20c8469a33a42d1b28",
+    "member_projections.json": "8e2949a2bb70b674e2407c9a196681b9362ec8561d72b7ec21aa80baf7be8066",
+    "governed_sources.json": "833769acb7c57afe9f9404bb581955e9a12f6f98d4a00e462ef5b6fc8641efdf",
+    "claim_source_map.json": "f7e602de6ff73632cfe0c7cc63b395db50ea8d5e6e76ceb95714ba25493135ef",
+    "compiler_input.json": "e40781706fb9d0c7467376286c1b3e9221dbd81d96d6261c99e83b1e980f2a9f",
+    "compiled_ir.json": "efd83816e61ca2de516e734c0b2da87a81202d95dd2abcda411605f8f83e773c",
+    "presentation_payload.json": "a9d7c685f04b4d78e366559c32ca3354b774d2e92e5699028d3e51b93b4515ec",
+    "presentation_inputs.json": "c52e5773f6b0ad518c4b5f5697a98587308702588131060c17099358c022b7a2",
+    "review_source_contract.json": "e7304b1a97c8aee7b23b64baf87e7fc6c433c65a7d6a34def07488e312391a53",
+    "membership_evidence.json": "5061cfef3bbadceda0599f2199d3b6aeb745811391636283455b272ff3aa4b21",
+    "provenance.json": "030f8a2d6d1ba85a52696ca63ad00fc6827f6ef9453a7c119b34115c4b6ba4fa"
+  },
+  "historical_provenance_policy": "Retained byte-for-byte as historical evidence; actual replay identities are recorded only in this sidecar",
+  "new_editorial_acceptance": false,
+  "publication_authorized": false,
+  "persistence_authorized": false,
+  "production_writes": false
+}

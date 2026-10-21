@@ -1,0 +1,163 @@
+{
+  "kind": "exact_checkpoint132_hosted_Actions_blocker_diagnosis",
+  "observed_utc": "2026-10-21T14:30:52.004255+00:00",
+  "feature_head": "f99c44443400722da216a1c8d0c77be4bb9c7ab6",
+  "actual_remote_main": "c52d121b64d814de3cf684980368bced40e5b4ea",
+  "merge_base": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+  "fresh_PR232": {
+    "head": "f99c44443400722da216a1c8d0c77be4bb9c7ab6",
+    "reported_base_oid": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+    "mergeable": "CONFLICTING",
+    "merge_state": "DIRTY",
+    "state": "OPEN DRAFT"
+  },
+  "freshness_qualification": "Initial REST response lagged on131while actualremote was132; GraphQL/no-cacheREST subsequentlyreported132. PRreportedbaseOID remainsolderthanactualremotemain; conflictconclusionusesseparatenon-history-mutating exact132/c52dmerge-treesimulation.",
+  "simulation": {
+    "kind": "non-mutating-branch-index-worktree mergeability simulation",
+    "head": "f99c44443400722da216a1c8d0c77be4bb9c7ab6",
+    "base": "c52d121b64d814de3cf684980368bced40e5b4ea",
+    "returncode": 1,
+    "stdout": "13f3b9ec983932fdf359030bf2abbcd80d4ca440\n.github/workflows/backend-tests.yml\n",
+    "stderr": ""
+  },
+  "conflict_hunk": "Only backend-tests.yml exact-head candidate pytest command: feature adds eight Infrastructure suites; actualmain adds backend/tests/test_health_one_action_review.py, absent from132. No merge/rebase/conflictresolution applied.",
+  "Actions_enabled": true,
+  "allowed_actions": "all",
+  "backend_workflow_id": 299179850,
+  "backend_workflow_state": "active",
+  "backend_PR_paths": [
+    "backend/**",
+    "scripts/**",
+    "docs/**",
+    ".github/workflows/backend-tests.yml"
+  ],
+  "path_filters_match_this_work": true,
+  "push_trigger": "mainonly; existingfeaturepushisnotapushtrigger",
+  "workflows_at_exact_head": [
+    {
+      "path": ".github/workflows/backend-tests.yml",
+      "workflow_dispatch": false,
+      "repository_dispatch": false
+    },
+    {
+      "path": ".github/workflows/education79-locator-preparation.yml",
+      "workflow_dispatch": false,
+      "repository_dispatch": false
+    },
+    {
+      "path": ".github/workflows/frontend-tests.yml",
+      "workflow_dispatch": false,
+      "repository_dispatch": false
+    },
+    {
+      "path": ".github/workflows/render-backend-smoke.yml",
+      "workflow_dispatch": false,
+      "repository_dispatch": false
+    }
+  ],
+  "other_catalog_workflow": "Health bounded-choice catalog entry exists but its file is absent at132; it is not an applicable132manualvalidationpath and was not run.",
+  "exact_head_Actions_runs_found": [],
+  "hosted_checkout_logs_available": false,
+  "configured_exact_head_checkout": "m14h-exact-head uses github.event.pull_request.head.sha || github.sha and contains Infrastructure suite; integrationjobuses github.sha syntheticmerge tree. Neither actually ran at132.",
+  "cause": "Mergeconflict suppresses pull_request event workflows; path exclusion/disabledActions not the observed cause.",
+  "official_trigger_documentation": "https://docs.github.com/en/actions/how-tos/troubleshoot-workflows",
+  "manual_dispatch_status": "No supportedapplicableexistingworkflow_dispatch/repository_dispatch at132; no unsupporteddispatchattempted.",
+  "status": "BLOCKED_SHARED_HELPER_FREEZE_CONTRACT_AND_PR_WORKFLOW_CONFLICT; exact132ActionsNEVER_RUN",
+  "Vercel_is_Actions_validation": false,
+  "branches_index_worktree_unchanged_by_simulation": true,
+  "unreferenced_merge_tree_object_created": true,
+  "PR_reopened_or_toggled": false,
+  "triggers_or_checks_changed": false,
+  "permissions_bypassed": false,
+  "Health_files_or_worktree_changed": false,
+  "merge_rebase_history_rewrite": false,
+  "production_effects": false,
+  "next_step": "ContinueauthorizedretainedInfrastructurecandidate research/review. HostedActionsgate requiresseparateapplicablesafeintegration/validationpath; no fullsuite/checkoutsuccess inferred.",
+  "compatibility_observed_utc": "2026-10-21T14:49:58.564870+00:00",
+  "compatibility": {
+    "Health_helper_origin": "c52d121b64d814de3cf684980368bced40e5b4ea:scripts/prepare_health_one_action_review.py",
+    "Health_helper_equality_guard_line": 238,
+    "frozen_base": "ac22199dff31bd2e271d95be82077c8e7de064c4",
+    "frozen_rule_files": [
+      {
+        "path": "scripts/prepare_shared_domain_candidate.py",
+        "blobs": {
+          "ac22199dff31bd2e271d95be82077c8e7de064c4": "8eb95a54bb95b17009023e851cfdeb26cb9a4573",
+          "c52d121b64d814de3cf684980368bced40e5b4ea": "8eb95a54bb95b17009023e851cfdeb26cb9a4573",
+          "f99c44443400722da216a1c8d0c77be4bb9c7ab6": "674ec45d22e8f890d654b499e438d4356e0b2227"
+        }
+      },
+      {
+        "path": "backend/app/semantic_ir/shared_corpus.py",
+        "blobs": {
+          "ac22199dff31bd2e271d95be82077c8e7de064c4": "9be57b9b9528229fe8a8b1aeba99e3485d835cb8",
+          "c52d121b64d814de3cf684980368bced40e5b4ea": "9be57b9b9528229fe8a8b1aeba99e3485d835cb8",
+          "f99c44443400722da216a1c8d0c77be4bb9c7ab6": "9be57b9b9528229fe8a8b1aeba99e3485d835cb8"
+        }
+      },
+      {
+        "path": "backend/app/semantic_ir/compiler.py",
+        "blobs": {
+          "ac22199dff31bd2e271d95be82077c8e7de064c4": "db0900aef903278720536bd376455604c47593d2",
+          "c52d121b64d814de3cf684980368bced40e5b4ea": "db0900aef903278720536bd376455604c47593d2",
+          "f99c44443400722da216a1c8d0c77be4bb9c7ab6": "db0900aef903278720536bd376455604c47593d2"
+        }
+      },
+      {
+        "path": "backend/app/semantic_ir/pipeline.py",
+        "blobs": {
+          "ac22199dff31bd2e271d95be82077c8e7de064c4": "0857d81e797cf8eabe2751a38a655888c9ad03df",
+          "c52d121b64d814de3cf684980368bced40e5b4ea": "0857d81e797cf8eabe2751a38a655888c9ad03df",
+          "f99c44443400722da216a1c8d0c77be4bb9c7ab6": "0857d81e797cf8eabe2751a38a655888c9ad03df"
+        }
+      },
+      {
+        "path": "backend/app/semantic_ir/adapters.py",
+        "blobs": {
+          "ac22199dff31bd2e271d95be82077c8e7de064c4": "6eb887ba9ba1208d7187a225f37bfaa621e12fb1",
+          "c52d121b64d814de3cf684980368bced40e5b4ea": "6eb887ba9ba1208d7187a225f37bfaa621e12fb1",
+          "f99c44443400722da216a1c8d0c77be4bb9c7ab6": "6eb887ba9ba1208d7187a225f37bfaa621e12fb1"
+        }
+      },
+      {
+        "path": "backend/app/semantic_ir/validation.py",
+        "blobs": {
+          "ac22199dff31bd2e271d95be82077c8e7de064c4": "93909f42057ce3ee2a140c96d737afb257663c3e",
+          "c52d121b64d814de3cf684980368bced40e5b4ea": "93909f42057ce3ee2a140c96d737afb257663c3e",
+          "f99c44443400722da216a1c8d0c77be4bb9c7ab6": "93909f42057ce3ee2a140c96d737afb257663c3e"
+        }
+      },
+      {
+        "path": "docs/semantic_ir/shared_legislative_corpus_v1.schema.json",
+        "blobs": {
+          "ac22199dff31bd2e271d95be82077c8e7de064c4": "93b3d6eadb017916d7682aa4b57c20fbdbfc5550",
+          "c52d121b64d814de3cf684980368bced40e5b4ea": "93b3d6eadb017916d7682aa4b57c20fbdbfc5550",
+          "f99c44443400722da216a1c8d0c77be4bb9c7ab6": "93b3d6eadb017916d7682aa4b57c20fbdbfc5550"
+        }
+      }
+    ],
+    "conflicting_behavior": "Infrastructureincludesinterpreted_substantive_non_directional inauthoredinterpretationset; main/frozenhelperdoesnot. PreserveInfrastructurefixandHealthwhole-filefreeze; othersixrulesmatch.",
+    "inert_Health_closure_independent_assessment": "18executablefiles,19withREADME;133784bytesincludingREADME. Notcopiedorrunbythisowner.",
+    "prototype_preflight": "Localprepare.pyfailedexpectedpathcountassertbeforeanydependencycopy/workflowedit; initialbroaderselectionwasnotapplied.",
+    "branch_index_tracked_state_at_preflight": "Branchcodex/infrastructure-candidate-seed atf99c4444; tracked/indexclean, onlynewassessmentplanuntracked",
+    "copied_dependencies": 0,
+    "workflow_or_shared_helper_changed": false,
+    "frozen_Health_provenance_or_acceptance_changed": false,
+    "Health_current_worktree_or_branch_changed": false,
+    "smallest_decision": "SeparatelyreviewedHealthgeneration-rulecompatibilitybaseline/provenanceupdate toaccountforestablished674ec45dsharedhelperwhilepreservingimmutablepacketwording/historicalartifacts/candidateapprovalboundaries. Anyresultingfrozen-packagesubjectchangerequiresitsownscope; cannotbeimplementedasworkflow-onlyunion.",
+    "approval_status": "EXPLICIT_BOUNDED_COMPATIBILITY_APPROVAL_PENDING; noimplementationuntilgranted",
+    "forbidden_workarounds": [
+      "OverwriteInfrastructurehelperwithfrozenmain",
+      "SuppressHealthwhole-fileequalityguard",
+      "Regenerate/relabelHealthfrozenprovenancewithoutauthority",
+      "Runanothercodeversionunderexactsuccessorlabel",
+      "Stubs/conditionaltestskips",
+      "Trigger/permissionbypass"
+    ]
+  },
+  "partial_work_preserved": [
+    "docs/plans/infrastructure_ci_workflow_compatibility_20261021.md",
+    ".tmp/infra_ci_compat132/prepare.py"
+  ],
+  "research_lane": "Independent133retainedsourceworkcontinues; no compatibilityimplementation"
+}

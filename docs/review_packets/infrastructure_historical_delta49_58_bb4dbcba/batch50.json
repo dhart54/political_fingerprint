@@ -1,0 +1,760 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 50,
+  "exact_committed_head": "fc3b0ee2565ced0621e3238a2fdc5ec0d1481c34",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "fc3b0ee2565ced0621e3238a2fdc5ec0d1481c34",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch50_20260916/membership_review.json",
+      "git_blob": "a412e014550eb7c63ea68c6318ae0cdf3b30e842",
+      "git_bytes_sha256": "c03d82aa5624db9f0372828e01ec2ac7dddebccad191a23e5e8409ff08d876c9"
+    },
+    "sources": {
+      "head": "fc3b0ee2565ced0621e3238a2fdc5ec0d1481c34",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch50_20260916/sources.json",
+      "git_blob": "2c88e062f9376adf72ead2577570b0d0a46424de",
+      "git_bytes_sha256": "453b03601883bed14866690d00e90393d23f88514d25d560df98c423966ce02f"
+    },
+    "screening": {
+      "head": "fc3b0ee2565ced0621e3238a2fdc5ec0d1481c34",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch50_20260916/screening_receipt.json",
+      "git_blob": "c069b0bc29546809ff6e3dc159b2a58ccd46585e",
+      "git_bytes_sha256": "5d9da3158fb2b2a53d957b545d0d6dad51b26493691f5bfb3de06f6e11f6a50a"
+    },
+    "screening_units": {
+      "head": "fc3b0ee2565ced0621e3238a2fdc5ec0d1481c34",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch50_20260916/screening_units_receipt.json",
+      "git_blob": "cf98d526e0e7aa42673f3567b3c883ab02b8fac0",
+      "git_bytes_sha256": "fb3577fa0a8c21de1417804340a84606f03c36400d390b649db8b7b79a073da8"
+    }
+  },
+  "cumulative_membership_review_sha256": "9e717579ecfc796106532d6eb695f731ebd946860e3b4cabce4baad2edd81417",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/cc55ecea3364c85b88b38c82e7dce3733399bc4e18aec3e8a9ed991967cd4ffd.0000000.json",
+        "sha256": "be8e7c763e26309f946cbf160a399113176537d10dc06651edf37560dd971a3b",
+        "start_character": 0,
+        "end_character": 30246
+      }
+    ],
+    "utf8_sha256": "cc55ecea3364c85b88b38c82e7dce3733399bc4e18aec3e8a9ed991967cd4ffd",
+    "total_characters": 30246,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/17dc787388b4c022f044adeb592380d9ac3fabf61d56ed2ed786cd8cf1dc3d83.0000000.json",
+        "sha256": "cbba49fbf5b89be01107bc705385a2c94d796ccc75a14424414f0cbf1651de54",
+        "start_character": 0,
+        "end_character": 80617
+      }
+    ],
+    "utf8_sha256": "17dc787388b4c022f044adeb592380d9ac3fabf61d56ed2ed786cd8cf1dc3d83",
+    "total_characters": 80617,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:290",
+    "house:119:1:291",
+    "house:119:1:292",
+    "house:119:1:293",
+    "house:119:1:294"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hres879eh",
+      "governed_length": 6286,
+      "review_extent": "Complete retained own rule/resolution or selected801scope unit read; no full current-law/whole-target review implied"
+    },
+    {
+      "source_id": "govinfo:hres878eh",
+      "governed_length": 1206,
+      "review_extent": "Complete retained own rule/resolution or selected801scope unit read; no full current-law/whole-target review implied"
+    },
+    {
+      "source_id": "govinfo:hjres130eh",
+      "governed_length": 1687,
+      "review_extent": "Complete retained own rule/resolution or selected801scope unit read; no full current-law/whole-target review implied"
+    },
+    {
+      "source_id": "blm:buffalo-2024-coal-operative",
+      "governed_length": 12225,
+      "review_extent": "All retained12225characters/PDFpages7/8/13/19read; selected primary-authored mirrored pages, not wholeplan/maps/appendices/signature or fresh legal verification"
+    },
+    {
+      "source_id": "govinfo:5usc801-2024-disapproval-scope",
+      "governed_length": 980,
+      "review_extent": "Complete retained own rule/resolution or selected801scope unit read; no full current-law/whole-target review implied"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_rule_texts_read": 1,
+    "complete_resolution_bodies_read": 2,
+    "partial_primary_plan_source_units_read": 1,
+    "complete_selected_CRAstatutory_units_read": 1,
+    "exact_Clerk_procedural_questions_read": 2,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:290",
+        "evidence_unit": "complete_own_rule_or_resolution_with_explicit_target_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:291",
+        "evidence_unit": "complete_own_rule_or_resolution_with_explicit_target_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:292",
+        "evidence_unit": "complete_own_rule_or_resolution_with_explicit_target_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:293",
+        "evidence_unit": "exact_Clerk_question_only_noncounting_procedural_limit",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:294",
+        "evidence_unit": "complete_own_rule_or_resolution_with_explicit_target_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "451470f5a4ff2f01ae04e3dedd3aca138e1f5b1915518ff2fae0d3b4b44971dc",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:290",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Previous-question vote controls H.Res.879consideration and does not itself adopt the rule or any underlying CRA/energy/policing/expressive measure. Complete retained879contains actual deemed substitutes and a conditional tabling instruction addressed in the separate adoption291case. Non-counting procedural context; no underlying merits, allegation, funding/resource outcome or motive transferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:290",
+            "url": "https://clerk.house.gov/evs/2025/roll290.xml",
+            "raw_sha256": "8aa24ba0cc035d58cf1d3a65370342d19edb544055c788fb6efe7d15d477c0aa",
+            "governed_bytes_sha256": "d4a7f27517ee85affda47c5d5f3db42db25f5e9bcbc9dfe4ae095cb0b873de87"
+          },
+          {
+            "source_id": "govinfo:hres879eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm",
+            "raw_sha256": "923d471b2e72f6b4789c9253eeb8fe71a085d71d8ef1c39d9da42cf65c4ea145",
+            "governed_bytes_sha256": "8c0660cfd90e1cb881cfaf7441e05216133fcefc05436a054fd63afb91c115f5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres879eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/d232ef43fc7c48036507b1afdd13e4c9191347532e5888590e459215c80ffc97.0000000.json",
+                  "sha256": "b2927c773f804eb2df8fd92626e0d02d954643bdf4a9f31d69f2d560d88f2d72",
+                  "start_character": 0,
+                  "end_character": 6286
+                }
+              ],
+              "utf8_sha256": "d232ef43fc7c48036507b1afdd13e4c9191347532e5888590e459215c80ffc97",
+              "total_characters": 6286,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d47eee9a88a6ccdc9fc1ebf27cad8855ceb8d456e1afcbcee277cec83c8ebd01",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:291",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.Res.879sets consideration forCRA80/130/131, expression58andenergy1949/3109but also actually deems Oversightcommittee substitutes for5107/5214adopted. Section8requires581laid on the table upon transmission toSenateof a message that Housepassed4405; the condition and precise target remain, not an unconditional disapproval of disclosure. Those substitute versions/whole targets, actual transmission/581baseline and integrated whole-rule domain boundary remain ordinary pending review. No adoption/enactment of each scheduled bill, blanketpolicing/detentionsubstance, actual resource/project outcome or motive inferred from scheduling.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:291",
+            "url": "https://clerk.house.gov/evs/2025/roll291.xml",
+            "raw_sha256": "b9a6fedf8025a46706d4ece7ec4e69f32c9b2f7caaff6d705074c374e8d14c4b",
+            "governed_bytes_sha256": "839e53e921a2c24f1d85abdce915faf3a95517b510491e2d3cc6ef01cd88123c"
+          },
+          {
+            "source_id": "govinfo:hres879eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm",
+            "raw_sha256": "923d471b2e72f6b4789c9253eeb8fe71a085d71d8ef1c39d9da42cf65c4ea145",
+            "governed_bytes_sha256": "8c0660cfd90e1cb881cfaf7441e05216133fcefc05436a054fd63afb91c115f5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres879eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/d232ef43fc7c48036507b1afdd13e4c9191347532e5888590e459215c80ffc97.0000000.json",
+                  "sha256": "b2927c773f804eb2df8fd92626e0d02d954643bdf4a9f31d69f2d560d88f2d72",
+                  "start_character": 0,
+                  "end_character": 6286
+                }
+              ],
+              "utf8_sha256": "d232ef43fc7c48036507b1afdd13e4c9191347532e5888590e459215c80ffc97",
+              "total_characters": 6286,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ee28627af7dc6441d19da7edf0b3e20eaebbffd7634464891e10eb200d83fe62",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:292",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete November18H.Res.878ends with the House disapproving the named Representative's behavior. It contains no censure ceremony, committee removal, appropriation, enforcement directive or direct infrastructure/technology mechanism. Its preamble's allegations, evaluative descriptions and asserted intent remain statements of the resolution, not independent findings by this platform. Adoption is distinct from failed table288and does not prove motive, wrongdoing, corruption, electoral causation or the truth of every characterization; no voting recommendation or endorsement inference.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:292",
+            "url": "https://clerk.house.gov/evs/2025/roll292.xml",
+            "raw_sha256": "bfa2e2aeaf8d76725ee2d243b28b5f3da4262268539e873d6b54e28c79b47994",
+            "governed_bytes_sha256": "463bddfa0ccb63066113af20d50c285e35b77759713b7bd9a379d3c69eeaaccd"
+          },
+          {
+            "source_id": "govinfo:hres878eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres878eh/html/BILLS-119hres878eh.htm",
+            "raw_sha256": "6c6c0bbb9e218303c943e38c3ac59144de205cd88a636ca1004892dd37b35bfa",
+            "governed_bytes_sha256": "8d10278a682606f5386b6309a0d293a122edf07ed3c44d4206171246dd97c6e5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres878eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 878 Engrossed in House (EH)] <DOC> H. Res. 878 In the House of Representatives, U. S., November 18, 2025. Whereas, on October 27, 2025, Representative Chuy Garcia of Illinois filed nominating petitions to be on the Democratic primary ballot in March 2026; Whereas, on November 5, 2025, on the last day of filing, Representative Garcia's Chief of Staff, Patty Garcia, submitted her own paperwork to enter the Democratic primary; Whereas, on November 6, after the filing deadline, Representative Garcia confirmed that he would not be seeking another term in 2026 and would be withdrawing his nominating petitions; Whereas Representative Garcia's Chief of Staff was the only Democrat who filed to run in the primary at the direction of Representative Garcia, undermining the process of a free and fair election; and Whereas Representative Garcia's actions are beneath the dignity of his office and incompatible with the spirit of the United States Constitution: Now, therefore, be it Resolved, That the House of Representatives disapproves of the behavior of the Representative from Illinois Mr. Garcia. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "1a118f2c179e162e6ad488a153f20740a32537f8d460688977e898c347353b6d",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:293",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact retained Clerkquestion is a motion to referH.Res.888, which failed. Non-counting procedural disposition, distinct from later substantive resolution adoption297; this question does not itself censure/remove anyone, adopt the underlying accusations, establish guilt/motive/character or map an Infrastructurepolicy choice. The underlying allegations in the vote description are source descriptions only; no independent factual or reputational conclusion is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:293",
+            "url": "https://clerk.house.gov/evs/2025/roll293.xml",
+            "raw_sha256": "9ebde946efa56f4ae54796d2085af73ef2c4340c6939d23bc0f7c3a398052254",
+            "governed_bytes_sha256": "a9e8f3e6bc2d24ff89b9eb1dccbc567492032ede660f1aa5e94d10d23a9562a4"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "98ea1d3daaea7f1deb44392e83722ab45d2d5d525293380340111c0782af91f5",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:294",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.J.Res.130EHtargets the BuffaloFieldOfficeNovember20,2024ROD/approvedRMPamendment and states no force/effect if enacted. Retained BLM-authored mirrored PDFpages7/8/13/19are selected partial operative pages, not a whole plan/maps/appendix/signature review. They close BLM-administered federal coal within the specified2019CDPAto futureleasing, with existing leases able to develop through associated terms; the selected table lists48.12billion shorttons unavailable for furtherleasingconsideration, not actual output or immediate closure of all mines. The amendment changes only BLMcoalallocation decisions, leaving other2015resource decisions valid; implementation actions are not included and require furtherNEPA/conformance. BLM's market/climate rationale is attributed to the document, not independently adopted forecasts. Capture provenance records a primary-authored mirror and old officialportal404; no fresh download/retry/transport change or current signature/GAOlegal clearance is claimed. Whole exact dated plan/maps/appendices,2015/2019baseline, formalGAO/CRAapplicability and other material legal baselines remain pending. Retained801requires enactment for no-force/substantially-same-form effects and bars intent inference from nonenactment; this Housevote alone is not project approval, production, environmental result, coalbanrepeal nationwide or current-law determination.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:294",
+            "url": "https://clerk.house.gov/evs/2025/roll294.xml",
+            "raw_sha256": "f015bc588c1e16039af5efdd291fb4da27b19993f277319e4c4e69994030ca19",
+            "governed_bytes_sha256": "a6509700468c275bdc527c2f9016b9b2469c8c97f94e4896ee982bcfa3078c1d"
+          },
+          {
+            "source_id": "govinfo:hjres130eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres130eh/html/BILLS-119hjres130eh.htm",
+            "raw_sha256": "b59f05ee513e0c2529652730b0f3c1036c6a6e0456d2ec6d93070ef47450ecd1",
+            "governed_bytes_sha256": "9d60cd49d1cac240d80eed18360e3abeb47bb73ee450fc7c7af67e595c01d771"
+          },
+          {
+            "source_id": "blm:buffalo-2024-coal-operative",
+            "url": "https://dailymontanan.com/wp-content/uploads/2024/12/BFO-RODRMPA_508.pdf",
+            "raw_sha256": "738e53e8c3c9cdc1aa5cf406c0bf72a249a17c9a7c057c3c5becf730683b906c",
+            "governed_bytes_sha256": "98716d1ab9836e1a911f2619b70c282a4b09df7d279461d0da949dc984e9ad94"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres130eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 130 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 130 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment'' (issued November 20, 2024, as a record of decision and approved resource management plan amendment, and a letter of opinion from the Government Accountability Office dated September 18, 2025, printed in the Congressional Record on September 29, 2025, on pages S6825-S6826, concluding that such record of decision and approved resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives November 18, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 130 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment''."
+          },
+          {
+            "source_id": "blm:buffalo-2024-coal-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/7fefef4983d2fbaf291f8843d77f02a2e280b6fb04fb145de8ad4d62b79ecd55.0000000.json",
+                  "sha256": "b900cbbcc33771898bddb384f7c027b42dc134f6da49c2c59ed6e96bb7a5ded9",
+                  "start_character": 0,
+                  "end_character": 12225
+                }
+              ],
+              "utf8_sha256": "7fefef4983d2fbaf291f8843d77f02a2e280b6fb04fb145de8ad4d62b79ecd55",
+              "total_characters": 12225,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "3d1bd6d1aacd4a0562f132a857c9c3444c19564cd0880c17ea32ae1feddff073",
+      "source": {
+        "source_id": "govinfo:5usc801-2024-disapproval-scope",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+        "text_version": "2024 Code specified disapproval/withdrawal provisions",
+        "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+        "text": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval.",
+        "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+      }
+    },
+    {
+      "original_source_object_sha256": "4c1523937789b82373cd85ecadabed82b415d551d3161837f9d8678864498b0a",
+      "source": {
+        "source_id": "clerk:119:1:290",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll290.xml",
+        "text_version": null,
+        "raw_sha256": "8aa24ba0cc035d58cf1d3a65370342d19edb544055c788fb6efe7d15d477c0aa",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "290",
+          "legis-num": "H RES 879",
+          "vote-question": "On Ordering the Previous Question",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "18-Nov-2025",
+          "action-time": "2:52 PM",
+          "vote-desc": "Providing for consideration of the joint resolutions S.J. Res. 80, H.J. Res. 130, and H.J. Res. 131; providing for consideration of the concurrent resolution H. Con. Res. 58; providing for consideration of the bills H.R. 1949, H.R. 3109, H.R. 5107, and H.R. 5214; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "d4a7f27517ee85affda47c5d5f3db42db25f5e9bcbc9dfe4ae095cb0b873de87"
+      }
+    },
+    {
+      "original_source_object_sha256": "34c14ec25d6b9f098418cf9ccbe83d47ee0b17c48f13eb4a2d6ffed991d91d13",
+      "source": {
+        "source_id": "govinfo:hres879eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "923d471b2e72f6b4789c9253eeb8fe71a085d71d8ef1c39d9da42cf65c4ea145",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/d232ef43fc7c48036507b1afdd13e4c9191347532e5888590e459215c80ffc97.0000000.json",
+              "sha256": "b2927c773f804eb2df8fd92626e0d02d954643bdf4a9f31d69f2d560d88f2d72",
+              "start_character": 0,
+              "end_character": 6286
+            }
+          ],
+          "utf8_sha256": "d232ef43fc7c48036507b1afdd13e4c9191347532e5888590e459215c80ffc97",
+          "total_characters": 6286,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "8c0660cfd90e1cb881cfaf7441e05216133fcefc05436a054fd63afb91c115f5"
+      }
+    },
+    {
+      "original_source_object_sha256": "5e3ffa8199f55111bdd38a8ed0bf9f398883537afa674b44481a69d9ff22b956",
+      "source": {
+        "source_id": "clerk:119:1:291",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll291.xml",
+        "text_version": null,
+        "raw_sha256": "b9a6fedf8025a46706d4ece7ec4e69f32c9b2f7caaff6d705074c374e8d14c4b",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "291",
+          "legis-num": "H RES 879",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "18-Nov-2025",
+          "action-time": "3:04 PM",
+          "vote-desc": "Providing for consideration of the joint resolutions S.J. Res. 80, H.J. Res. 130, and H.J. Res. 131; providing for consideration of the concurrent resolution H. Con. Res. 58; providing for consideration of the bills H.R. 1949, H.R. 3109, H.R. 5107, and H.R. 5214; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "1",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "839e53e921a2c24f1d85abdce915faf3a95517b510491e2d3cc6ef01cd88123c"
+      }
+    },
+    {
+      "original_source_object_sha256": "3835b1e59451dfc67cbf1e4577251e4f21d753ec959c3555eecd659e3b8dfb6a",
+      "source": {
+        "source_id": "clerk:119:1:292",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll292.xml",
+        "text_version": null,
+        "raw_sha256": "bfa2e2aeaf8d76725ee2d243b28b5f3da4262268539e873d6b54e28c79b47994",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "292",
+          "legis-num": "H RES 878",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "18-Nov-2025",
+          "action-time": "3:11 PM",
+          "vote-desc": "Disapproving the behavior of Representative Jesus G. “Chuy” Garcia of Illinois"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "213",
+            "nay-total": "0",
+            "present-total": "1",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "23",
+            "nay-total": "183",
+            "present-total": "3",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "463bddfa0ccb63066113af20d50c285e35b77759713b7bd9a379d3c69eeaaccd"
+      }
+    },
+    {
+      "original_source_object_sha256": "6bbcf286f26589d5b1a98477f4d6859741ede3b4f89641486b4e141794be0f3a",
+      "source": {
+        "source_id": "govinfo:hres878eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres878eh/html/BILLS-119hres878eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "6c6c0bbb9e218303c943e38c3ac59144de205cd88a636ca1004892dd37b35bfa",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 878 Engrossed in House (EH)] <DOC> H. Res. 878 In the House of Representatives, U. S., November 18, 2025. Whereas, on October 27, 2025, Representative Chuy Garcia of Illinois filed nominating petitions to be on the Democratic primary ballot in March 2026; Whereas, on November 5, 2025, on the last day of filing, Representative Garcia's Chief of Staff, Patty Garcia, submitted her own paperwork to enter the Democratic primary; Whereas, on November 6, after the filing deadline, Representative Garcia confirmed that he would not be seeking another term in 2026 and would be withdrawing his nominating petitions; Whereas Representative Garcia's Chief of Staff was the only Democrat who filed to run in the primary at the direction of Representative Garcia, undermining the process of a free and fair election; and Whereas Representative Garcia's actions are beneath the dignity of his office and incompatible with the spirit of the United States Constitution: Now, therefore, be it Resolved, That the House of Representatives disapproves of the behavior of the Representative from Illinois Mr. Garcia. Attest: Clerk.",
+        "governed_bytes_sha256": "8d10278a682606f5386b6309a0d293a122edf07ed3c44d4206171246dd97c6e5"
+      }
+    },
+    {
+      "original_source_object_sha256": "6d7e0a3ab0d455e6f8d2e2e7810f51be8614d06676038113bc407952ecd77403",
+      "source": {
+        "source_id": "clerk:119:1:293",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll293.xml",
+        "text_version": null,
+        "raw_sha256": "9ebde946efa56f4ae54796d2085af73ef2c4340c6939d23bc0f7c3a398052254",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "293",
+          "legis-num": "H RES 888",
+          "vote-question": "On Motion to Refer",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "18-Nov-2025",
+          "action-time": "3:31 PM",
+          "vote-desc": "Censuring and condemning Delegate Stacey Plaskett and removing her from the House Permanent Select Committee on Intelligence for conduct that reflects discreditably on the House of Representatives for colluding with convicted felony sex offender Jeffrey Epstein during a congressional hearing"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "2",
+            "nay-total": "214",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "211",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "a9e8f3e6bc2d24ff89b9eb1dccbc567492032ede660f1aa5e94d10d23a9562a4"
+      }
+    },
+    {
+      "original_source_object_sha256": "36f24266b823bc93234b10741e4c039e90aefe2cea7e3ebb25b142e40a996c53",
+      "source": {
+        "source_id": "clerk:119:1:294",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll294.xml",
+        "text_version": "119:1",
+        "raw_sha256": "f015bc588c1e16039af5efdd291fb4da27b19993f277319e4c4e69994030ca19",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "294",
+          "legis-num": "H J RES 130",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "18-Nov-2025",
+          "action-time": "8:46 PM",
+          "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to “Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment”"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "214",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "211",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "a6509700468c275bdc527c2f9016b9b2469c8c97f94e4896ee982bcfa3078c1d"
+      }
+    },
+    {
+      "original_source_object_sha256": "728ab25b7812e73be445c7c31ee5654110b81655dc533f6555e5ade49e849269",
+      "source": {
+        "source_id": "govinfo:hjres130eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres130eh/html/BILLS-119hjres130eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "b59f05ee513e0c2529652730b0f3c1036c6a6e0456d2ec6d93070ef47450ecd1",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 130 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 130 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment'' (issued November 20, 2024, as a record of decision and approved resource management plan amendment, and a letter of opinion from the Government Accountability Office dated September 18, 2025, printed in the Congressional Record on September 29, 2025, on pages S6825-S6826, concluding that such record of decision and approved resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives November 18, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 130 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment''.",
+        "governed_bytes_sha256": "9d60cd49d1cac240d80eed18360e3abeb47bb73ee450fc7c7af67e595c01d771"
+      }
+    },
+    {
+      "original_source_object_sha256": "d8e85a1e81b381c4c05d28d1195feee2d162952b7317394e306bcd28283c2495",
+      "source": {
+        "source_id": "blm:buffalo-2024-coal-operative",
+        "source_type": "official_agency_record_of_decision",
+        "url": "https://dailymontanan.com/wp-content/uploads/2024/12/BFO-RODRMPA_508.pdf",
+        "raw_sha256": "738e53e8c3c9cdc1aa5cf406c0bf72a249a17c9a7c057c3c5becf730683b906c",
+        "text_version": "November2024 ROD/RMPA; completePDF7/8/13/19 only: operative no-new-leasing, existing leases, health context, screening and other-resources boundary; mirrored primary PDF, not full-plan review",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/7fefef4983d2fbaf291f8843d77f02a2e280b6fb04fb145de8ad4d62b79ecd55.0000000.json",
+              "sha256": "b900cbbcc33771898bddb384f7c027b42dc134f6da49c2c59ed6e96bb7a5ded9",
+              "start_character": 0,
+              "end_character": 12225
+            }
+          ],
+          "utf8_sha256": "7fefef4983d2fbaf291f8843d77f02a2e280b6fb04fb145de8ad4d62b79ecd55",
+          "total_characters": 12225,
+          "transport_only": true
+        },
+        "capture_provenance": "Primary BLM-authored November2024 record mirrored by Daily Montanan; raw hash identifies mirror bytes. Legacy official PDF links redirected to the migrated portal and anonymous download returned404. Publication identity/mechanism cross-checked against exact CRA body and official GAO decision; no newspaper narrative used as operative evidence.",
+        "governed_bytes_sha256": "98716d1ab9836e1a911f2619b70c282a4b09df7d279461d0da949dc984e9ad94"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 10
+  }
+}

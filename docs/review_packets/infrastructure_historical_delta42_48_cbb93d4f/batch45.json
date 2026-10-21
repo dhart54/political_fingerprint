@@ -1,0 +1,820 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 45,
+  "exact_committed_head": "cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea, never current batch50 working-tree bytes; zero source acquisition.",
+  "scope": "35 new identities across seven batches plus the prior roll226 correction/preimage binding in batch43. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim and batch43roll226correction source_extent/qualification. Whole CMS letter, BLM plans/maps, NDAA/CR and other partial reviews remain incomplete as recorded. Partial offsets are not full-body clearance. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch45_20260916/membership_review.json",
+      "git_blob": "01933a6cdf7423ed0831ebb52a536a3d67e08e29",
+      "git_bytes_sha256": "e9584685a25519ceac7ce95a8f88fef3fcb489dd1cc5475746077221a057f76b"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch45_20260916/sources.json",
+      "git_blob": "e01f7271f94c6e2506c452f32bdaf3bb95ee650d",
+      "git_bytes_sha256": "454ea63fc45e63125ce779740459a15b7cdd60732a49bc68e4faf6b060491e2a"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch45_20260916/screening_receipt.json",
+      "git_blob": "b325b9971b61e7cffc3e1017112053e9a2e0c26d",
+      "git_bytes_sha256": "bc1aa273d8644eb042ebe42c2d6bfabced13a6c8603d4045bfdea93a675ca195"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch45_20260916/screening_units_receipt.json",
+      "git_blob": "a8ea10ffb1d894dd3e9e308c7b13708a0d90aaad",
+      "git_bytes_sha256": "f44d0ff62c045a8f96ad276c6c7b29ca81da37b7d29dd8def0da4d071386dc1c"
+    }
+  },
+  "cumulative_membership_review_sha256": "b9e64599751286addad5c1c7bcb4ec2010225e542fb9a20c46bcfde8a11c7fc0",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/6df95660456ca854b7002bee91090de0d751f4a32570b2b1915a177241ceeb3a.0000000.json",
+        "sha256": "a5e63aa22bb40748cce3414564c4d148e6c8a6aa374b939414fd2268ef8db7c7",
+        "start_character": 0,
+        "end_character": 28071
+      }
+    ],
+    "utf8_sha256": "6df95660456ca854b7002bee91090de0d751f4a32570b2b1915a177241ceeb3a",
+    "total_characters": 28071,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/f2476296976ad1d41a4effcd527ffdd367655110211d1eea1486157129757fde.0000000.json",
+        "sha256": "f893db92b72b715348f2c60c8cbc81a9410e34601c8da5011329a4dbdd8781f3",
+        "start_character": 0,
+        "end_character": 75174
+      }
+    ],
+    "utf8_sha256": "f2476296976ad1d41a4effcd527ffdd367655110211d1eea1486157129757fde",
+    "total_characters": 75174,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:262",
+    "house:119:1:263",
+    "house:119:1:264",
+    "house:119:1:265",
+    "house:119:1:266"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hr3838eh-immigration-complete",
+      "governed_length": 2080487,
+      "review_extent": "Opening0:3600and ending1200only; no whole2,080,487character review"
+    },
+    {
+      "source_id": "congressional-record:3838-passage262-floor241",
+      "governed_length": 16507,
+      "review_extent": "Previously partial procedural context; own passage question10842:11297and outcome15669:15800nowread; other member lists/debate not fully reviewed"
+    },
+    {
+      "source_id": "govinfo:hr3486eh",
+      "governed_length": 5686,
+      "review_extent": "Complete retained source text read; statutory sources are selected2024units, not full current-law/entire-title review"
+    },
+    {
+      "source_id": "govinfo:8usc1325-2024-operative",
+      "governed_length": 1852,
+      "review_extent": "Complete retained source text read; statutory sources are selected2024units, not full current-law/entire-title review"
+    },
+    {
+      "source_id": "govinfo:8usc1326-2024-operative",
+      "governed_length": 3755,
+      "review_extent": "Complete retained source text read; statutory sources are selected2024units, not full current-law/entire-title review"
+    },
+    {
+      "source_id": "govinfo:hr3400eh",
+      "governed_length": 3775,
+      "review_extent": "Complete retained source text read; statutory sources are selected2024units, not full current-law/entire-title review"
+    },
+    {
+      "source_id": "govinfo:38usc5503d-2024-pension-cap",
+      "governed_length": 2119,
+      "review_extent": "Complete retained source text read; statutory sources are selected2024units, not full current-law/entire-title review"
+    },
+    {
+      "source_id": "govinfo:38usc7401-2024-operative",
+      "governed_length": 3023,
+      "review_extent": "Complete retained source text read; statutory sources are selected2024units, not full current-law/entire-title review"
+    },
+    {
+      "source_id": "govinfo:38usc7410-2024-operative",
+      "governed_length": 2292,
+      "review_extent": "Complete retained source text read; statutory sources are selected2024units, not full current-law/entire-title review"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "exact_Clerk_procedural_questions_read": 2,
+    "complete_final_bills_read": 2,
+    "partial_whole_package_opening_attestation_units": 1,
+    "complete_selected_statutory_units_read": 5,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:262",
+        "evidence_unit": "partial_whole_package_opening_attestation_and_own_passage",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:263",
+        "evidence_unit": "exact_Clerk_question_only_noncounting_procedural_limit",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:264",
+        "evidence_unit": "complete_final_bill_and_selected_dated_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:265",
+        "evidence_unit": "exact_Clerk_question_only_noncounting_procedural_limit",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:266",
+        "evidence_unit": "complete_final_bill_and_selected_dated_material_baselines",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "prior_record_correction": null,
+  "records": [
+    {
+      "original_record_sha256": "4cc021c58dab3bb3b28ac498d186cd9a2f9d261a32b197c02a73d3b6dfc9bd61",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:262",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Final passage is the whole September10H.R.3838EH, not any individual child amendment. Retained EHcontains2,080,487characters; only its opening/division organization and end attestation were read here, while earlier selected child/baseline units remain separate. Six divisions span DoDauthorizations, military construction, DOEnational-security/other authorizations, funding tables, other matters and CoastGuardauthorization. Those headings and partial procurement/technology leads do not establish the whole operative package, net funding, direct Infrastructure eligibility, support for every provision or an enacted appropriation. Whole amended-floor/deemed-substitute/EHreconciliation and material authorizations/appropriations/program baselines remain ordinary pending work. Recorded231–196passage with5NotVoting remains distinct from rejected recommittal261and earlier children.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:262",
+            "url": "https://clerk.house.gov/evs/2025/roll262.xml",
+            "raw_sha256": "7b68e677609922a00303c709551afa1477a5baf747b156382c4bae230585bb43",
+            "governed_bytes_sha256": "ee160c84ae798558e39ce615e9dd9eca8fcda6ec3ba1e5ae5ec1987b4b4ffa6c"
+          },
+          {
+            "source_id": "govinfo:hr3838eh-immigration-complete",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3838eh/html/BILLS-119hr3838eh.htm",
+            "raw_sha256": "7a5d6407fda4ddbe271ce5679a4fc8e8d7a6c0392f03802b6c33eb7accfe6658",
+            "governed_bytes_sha256": "a98dbc36ed7af95ed618a3e2a0dac3d30f3df1fbfe9b7444d050cc9301dfe349"
+          },
+          {
+            "source_id": "congressional-record:3838-passage262-floor241",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "1f9690529b31f5c0092dc78b1e46a8d231f62dc0566fb9c28d7b3767ce9d1e72"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3838eh-immigration-complete",
+            "locator": "Opening/division organization offsets0:3600 only",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3838 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3838 _______________________________________________________________________ AN ACT To authorize appropriations for fiscal year 2026 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. (a) In General.--This Act may be cited as the ``Streamlining Procurement for Effective Execution and Delivery and National Defense Authorization Act for Fiscal Year 2026''. (b) Reference.--Any reference in this or any other Act to the ``National Defense Authorization Act for Fiscal Year 2026'' shall be deemed to be a reference to the ``Streamlining Procurement for Effective Execution and Delivery and National Defense Authorization Act for Fiscal Year 2026''. SEC. 2. ORGANIZATION OF ACT INTO DIVISIONS; TABLE OF CONTENTS. (a) Divisions.--This Act is organized into six divisions as follows: (1) Division A--Department of Defense Authorizations. (2) Division B--Military Construction Authorizations. (3) Division C--Department of Energy National Security Authorizations and Other Authorizations. (4) Division D--Funding Tables. (5) Division E--Other Matters. (6) Division F--Coast Guard Authorization Act of 2025. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title. Sec. 2. Organization of Act into divisions; table of contents. Sec. 3. Congressional defense committees. DIVISION A--DEPARTMENT OF DEFENSE AUTHORIZATIONS TITLE I--PROCUREMENT Subtitle A--Authorization of Appropriations Sec. 101. Authorization of appropriations. Subtitle B--Army Programs Sec. 111. Multiyear procurement authority for UH-60 Blackhawk aircraft. Sec. 112. Authorization to initiate early production of future long- range assault aircraft. Sec. 113. Limitation on reductions to Army Prepositioned Stocks--Afloat program sealift capability. Sec. 114. Limitation on availability of funds for the Next Generation Command and Control (NGC2) of the Army. Sec. 115. Report on fielding of Link 16 military tactical data network. Subtitle C--Navy Programs Sec. 121. Contract authority for Ford class aircraft carrier program. Sec. 122. Contract authority for Columbia class submarine program. Sec. 123. Authority for advance procurement of certain components to support continuous production of Virginia class submarines. Sec. 124. Authority to use incremental funding to enter into a contract for the construction of a Guided Missile Destroyer (DDG). Sec. 125. Multiyear procurement authority for Yard, Repair, Berthing, and Messing Barges. Sec. 126. Vessel construction manager for follow-on ships of the Landing Ship Medium program. Sec. 127. Limitation on construction of Modular Attack Surface Craft. Sec. 128. Inclusion of amphibious warfare ship spares and repair parts as a separate line item in Navy budget justification materials. Sec. 129. Strategy for Navy investment in and support for the maritime industrial base. Sec. 130. Modification to requirements for recapitalization of tactical fighter aircraft of the Navy Reserve. Sec. 131. Report on procurement strategy for submarine cable laying and repair ships. Subtitle D--Air Force Programs Sec. 141. Modification of minimum inventory requirements for air refueling t"
+          },
+          {
+            "source_id": "govinfo:hr3838eh-immigration-complete",
+            "locator": "Ending1200characters/Houseattestation only",
+            "passage": "agraph (4) and inserting the following: ``(4) For retired pay, including the payment of obligations otherwise chargeable to lapsed appropriations for purposes of retired pay, payments under the Retired Serviceman's Family Protection and Survivor Benefits Plans, payment for career status bonuses, payment of continuation pay under section 356 of title 37, concurrent receipts, combat-related special compensation, and payments for medical care of retired personnel and their dependents under chapter 55 of title 10-- ``(A) $1,147,244,000 for fiscal year 2025; ``(B) $1,057,929,000 for fiscal year 2026; ``(C) $1,215,000,000 for fiscal year 2027; ``(D) $1,380,000,000 for fiscal year 2028; and ``(E) $1,650,000,000 for fiscal year 2029.''. Passed the House of Representatives September 10, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3838 _______________________________________________________________________ AN ACT To authorize appropriations for fiscal year 2026 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes."
+          },
+          {
+            "source_id": "congressional-record:3838-passage262-floor241",
+            "locator": "Own passage question/result offsets10842:11297",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nRECORDED VOTE \nMr. SMITH of Washington. Mr. \nSpeaker, I demand a recorded vote. \nA recorded vote was ordered. \nThe SPEAKER pro tempore. This \nwill be a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 231, noes 196, \nnot voting 5, as follows: \n[Roll No. 262]"
+          },
+          {
+            "source_id": "congressional-record:3838-passage262-floor241",
+            "locator": "Own final passage outcome offsets15669:15800",
+            "passage": "So the bill was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6ca7103c7884a192fa6e58bc3bb74767cf8336b471e3c2d5fe97fbbf8d2670cc",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:263",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact retained Clerk question is a motion to instruct H.R.3944conferees, which failed. This is a non-counting conference-process choice; the motion instruction text is not bound or substantively interpreted here. No particular construction/VAappropriation instruction, parent-passage support/opposition, enacted funding, commitment or motive is inferred from the parent title or this procedural vote. Exact instruction-body research remains a scope limit, not source-access denial.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:263",
+            "url": "https://clerk.house.gov/evs/2025/roll263.xml",
+            "raw_sha256": "5035b88262f2ae9c247b21a90f448ba2a950bceb453bc85039eb1645137400a8",
+            "governed_bytes_sha256": "8da89c9b602cd50c8890ce189d2d266958d9b407e48aecd55a5d2d4657dc0979"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4b842746e71f8c9ffcd2267a044bd70dd50867c4286d11128567b096a9376891",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:264",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete September11H.R.3486EHchanges illegal-entry/reentry criminal penalties, adds conviction-dependent mandatory-minimum categories, restructures1326subsections and updates references/official designation. Complete retained2024sections1325/1326preserve first/subsequent-entry distinction, express-consent/advance-consent exceptions, prior-conviction/removal categories, remaining-sentence and collateral-attack conditions; those baselines are dated, not a full current-law opinion. The House text does not make all first entry a5yearminimum or every reentry a10yearmandatorysentence: distinct maxima/minima and qualifying convictions remain. Whole mechanism concerns immigration offenses/sentencing, without direct infrastructure/technology construction, procurement, capacity or research mechanism. No crime, individual guilt, actual sentencing/deterrence result, motive, endorsement or current enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:264",
+            "url": "https://clerk.house.gov/evs/2025/roll264.xml",
+            "raw_sha256": "35aaab05bc51aa61412036a94991a4dd5490a9286c8cd5e300674a49c1dbff40",
+            "governed_bytes_sha256": "3f1bd2efc8b06709d0a82a27ec0595259134a91d930723d0377abe8a3c20c793"
+          },
+          {
+            "source_id": "govinfo:hr3486eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3486eh/html/BILLS-119hr3486eh.htm",
+            "raw_sha256": "4f672d796f88cb157ac13d5cf81ad9a1186ca3d210151a62b9f16d2ffede3303",
+            "governed_bytes_sha256": "1e0d8adc054ea4bb92431fd578bf065802c30db9619aab99e8bcecdead015143"
+          },
+          {
+            "source_id": "govinfo:8usc1325-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1325.htm",
+            "raw_sha256": "792459737f43cf4236baa362a31644d7d83d41d9295d9a82813e972243993170",
+            "governed_bytes_sha256": "e4f1d31f1aeecfc02812f65622bd81bc3f33dc17dcffe3a82e1cf01d74cc5ac4"
+          },
+          {
+            "source_id": "govinfo:8usc1326-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1326.htm",
+            "raw_sha256": "3a2d2a4b51a8c487e4e5656d18b56476cfc3ede94dd63e4627e0f39b5e4cd627",
+            "governed_bytes_sha256": "162715aa06228c4ec0447a251dc3b0d48443cb21f5e042756a76d2b4dff9438e"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3486eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3486 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3486 _______________________________________________________________________ AN ACT To amend the Immigration and Nationality Act to increase penalties for individuals who illegally enter and reenter the United States after being removed, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Stop Illegal Entry Act of 2025''. SEC. 2. COMMISSION OF CRIMES BY ALIENS UNLAWFULLY PRESENT IN THE UNITED STATES. Section 275 of the Immigration and Nationality Act (8 U.S.C. 1325) is amended-- (1) in subsection (a), by striking ``2 years'' and inserting ``5 years''; and (2) by adding at the end the following: ``(e) Any alien-- ``(1) who-- ``(A) enters or attempts to enter the United States at any time or place other than as designated by immigration officers, ``(B) eludes examination or inspection by immigration officers, or ``(C) attempts to enter or obtains entry to the United States by a willfully false or misleading representation or the willful concealment of a material fact, and ``(2) thereafter is convicted of any crime punishable by more than 1 year of imprisonment, may be fined under title 18, United States Code, and shall be imprisoned not less than 5 years and may be imprisoned for any term of years or for life.''. SEC. 3. INCREASED PENALTIES FOR REENTRY OF REMOVED ALIEN. Section 276 of the Immigration and Nationality Act (8 U.S.C. 1326) is amended-- (1) by redesignating subsections (c) and (d) as subsections (d) and (e), respectively; (2) by striking subsections (a) and (b) and inserting the following: ``(a) In General.--Subject to subsections (b) and (c), any alien who-- ``(1) has been denied admission, excluded, deported, removed, or has departed the United States while an order of exclusion, deportation, or removal is outstanding; and ``(2) thereafter enters, attempts to enter, or is at any time found in, the United States, unless-- ``(A) prior to the alien's reembarkation at a place outside the United States or the alien's application for admission from foreign contiguous territory, the Secretary of Homeland Security has expressly consented to such alien's reapplying for admission; or ``(B) with respect to an alien previously denied admission and removed, such alien establishes that the alien was not required to obtain such advance consent under this or any prior Act, shall be fined under title 18, United States Code, imprisoned not more than 10 years, or both. ``(b) Criminal Penalties for Reentry of Certain Removed Aliens.-- ``(1) In general.--Notwithstanding the penalty under subsection (a), and except as provided in subsection (c), an alien described in subsection (a)-- ``(A) who was convicted before such removal or departure of 3 or more misdemeanors involving drugs, crimes against the person, or both shall be fined under title 18, United States Code, imprisoned not more than 15 years, or both; ``(B) who has been excluded from the United States pursuant to section 235(c) because the alien was inadmissible under section 212(a)(3)(B) or who has been removed from the United States pursuant to the provisions of title V, and who thereafter, without the permission of the Secretary of Homeland Security, enters the United States, or attempts to do so, shall be fined under title 18, United States Code, and imprisoned for a period of 10 years, which sentence shall not run concurrently with any other sentence; ``(C) who was removed from the United States pursuant to section 241(a)(4)(B) who thereafter, without the permission of the Secretary of Homeland Security, enters, attempts to enter, or is at any time found in, the United States, shall be fined under title 18, United States Code, imprisoned for not more than 10 years, or both; and ``(D) who has been denied admission, excluded, deported, or removed 3 or more times and thereafter enters, attempts to enter, or is at any time found in the United States, shall be fined under title 18, United States Code, imprisoned not more than 10 years, or both. ``(2) Removal defined.--In this subsection and in subsection (c), the term `removal' includes any agreement in which an alien stipulates to removal during (or not during) a criminal trial under either Federal or State law. ``(c) Mandatory Minimum Criminal Penalty for Reentry of Certain Removed Aliens.--Notwithstanding the penalties provided in subsections (a) and (b), an alien described in subsection (a) who was convicted before such removal or departure of-- ``(1) any aggravated felony; ``(2) any crime defined as a felony by the relevant jurisdiction (Federal, State, Tribal, or local) of conviction; or ``(3) any crime punishable by more than 1 year of imprisonment, may be fined under title 18, United States Code, and shall be imprisoned not less than 10 years and may be imprisoned for any term of years or for life.''; and (3) in subsection (d), as redesignated by paragraph (1)-- (A) by striking ``section 242(h)(2)'' and inserting ``section 241(a)(4)''; and (B) by striking ``Attorney General'' and inserting ``Secretary of Homeland Security''. Passed the House of Representatives September 11, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3486 _______________________________________________________________________ AN ACT To amend the Immigration and Nationality Act to increase penalties for individuals who illegally enter and reenter the United States after being removed, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:8usc1325-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§1325. Improper entry by alien (a) Improper time or place; avoidance of examination or inspection; misrepresentation and concealment of facts Any alien who (1) enters or attempts to enter the United States at any time or place other than as designated by immigration officers, or (2) eludes examination or inspection by immigration officers, or (3) attempts to enter or obtains entry to the United States by a willfully false or misleading representation or the willful concealment of a material fact, shall, for the first commission of any such offense, be fined under title 18 or imprisoned not more than 6 months, or both, and, for a subsequent commission of any such offense, be fined under title 18, or imprisoned not more than 2 years, or both. (b) Improper time or place; civil penalties Any alien who is apprehended while entering (or attempting to enter) the United States at a time or place other than as designated by immigration officers shall be subject to a civil penalty of— (1) at least $50 and not more than $250 for each such entry (or attempted entry); or (2) twice the amount specified in paragraph (1) in the case of an alien who has been previously subject to a civil penalty under this subsection. Civil penalties under this subsection are in addition to, and not in lieu of, any criminal or other civil penalties that may be imposed. (c) Marriage fraud Any individual who knowingly enters into a marriage for the purpose of evading any provision of the immigration laws shall be imprisoned for not more than 5 years, or fined not more than $250,000, or both. (d) Immigration-related entrepreneurship fraud Any individual who knowingly establishes a commercial enterprise for the purpose of evad ing any provision of the immigration laws shall be imprisoned for not more than 5 years, fined in accordance with title 18, or both. "
+          },
+          {
+            "source_id": "govinfo:8usc1326-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§1326. Reentry of removed aliens (a) In general Subject to subsection (b), any alien who— (1) has been denied admission, excluded, deported, or removed or has departed the United States while an order of exclusion, deportation, or removal is outstanding, and thereafter (2) enters, attempts to enter, or is at any time found in, the United States, unless (A) prior to his reembarkation at a place outside the United States or his application for admission from foreign contiguous territory, the Attorney General has expressly consented to such alien's reapplying for admission; or (B) with respect to an alien previously denied admission and removed, unless such alien shall establish that he was not required to obtain such advance consent under this chapter or any prior Act, shall be fined under title 18, or imprisoned not more than 2 years, or both. (b) Criminal penalties for reentry of certain removed aliens Notwithstanding subsection (a), in the case of any alien described in such subsection— (1) whose removal was subsequent to a conviction for commission of three or more misdemeanors involving drugs, crimes against the person, or both, or a felony (other than an aggravated felony), such alien shall be fined under title 18, imprisoned not more than 10 years, or both; (2) whose removal was subsequent to a conviction for commission of an aggravated felony, such alien shall be fined under such title, imprisoned not more than 20 years, or both; (3) who has been excluded from the United States pursuant to section 1225(c) of this title because the alien was excludable under section 1182(a)(3)(B) of this title or who has been removed from the United States pursuant to the provisions of subchapter V, and who thereafter, without the permission of the Attorney General, enters the United States, or attempts to do so, shall be fined under title 18 and imprisoned for a period of 10 years, which sentence shall not run concurrently with any other sentence. 1 or (4) who was removed from the United States pursuant to section 1231(a)(4)(B) of this title who thereafter, without the permission of the Attorney General, enters, attempts to enter, or is at any time found in, the United States (unless the Attorney General has expressly consented to such alien's reentry) shall be fined under title 18, imprisoned for not more than 10 years, or both. For the purposes of this subsection, the term \"removal\" includes any agreement in which an alien stipulates to removal during (or not during) a criminal trial under either Federal or State law. (c) Reentry of alien deported prior to completion of term of imprisonment Any alien deported pursuant to section 1252(h)(2) 2 of this title who enters, attempts to enter, or is at any time found in, the United States (unless the Attorney General has expressly consented to such alien's reentry) shall be incarcerated for the remainder of the sentence of imprisonment which was pending at the time of deportation without any reduction for parole or supervised release. Such alien shall be subject to such other penalties relating to the reentry of deported aliens as may be available under this section or any other provision of law. (d) Limitation on collateral attack on underlying deportation order In a criminal proceeding under this section, an alien may not challenge the validity of the deportation order described in subsection (a)(1) or subsection (b) unless the alien demonstrates that— (1) the alien exhausted any administrative remedies that may have been available to seek relief against the order; (2) the deportation proceedings at which the order was issued improperly deprived the alien of the opportunity for judicial review; and (3) the entry of the order was fundamentally unfair. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f5a0c87ee5dce1da05e44027f358392275d6f740414535e0cf28a8e327e59462",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:265",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact retained Clerk question tables the motion to discharge committee concerning H.J.Res.117; it passed. This is a non-counting chamber-consideration disposition, not passage/rejection of the underlying emergency-termination measure or a direct tariff/infrastructure funding choice. The emergency subject in the vote description does not supply the unreviewed resolution's operative meaning. No policy outcome, current emergency status or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:265",
+            "url": "https://clerk.house.gov/evs/2025/roll265.xml",
+            "raw_sha256": "7264d874eae001415de490a87d03df4e923db4f9020bfc4fafac78e7e7c25ea1",
+            "governed_bytes_sha256": "4b541061d8cf72a2623f777b033c722ec2a1124958b94ca433da30c205930341"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "e6220e6f59aa65b3fb5f775e19f6b155ee55b8a9512f889d30cc023852acb2df",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:266",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.3400EHcontains discretionary assignment of VAphysicians for at most one year at a time to listed USterritories/possessions at VAor other approved facilities, practicable/necessary non-VAcare coordination and a required relocation/retention bonus for physicians assigned under that provision. It does not create a lifetime one-year cap or require every territory to receive a physician. It also makes pay terminology/clerical changes and extends5503(d)expiration from November30,2031toDecember31,2032. Complete retained5503(d)limits the90dollarpension provision to its specified Medicaid/nursing-facility/family circumstances and preserves the exception/benefit rules; this is not an across-the-board veteran pension change. Complete retained7401/7410are qualified2024appointment/pay contexts, not proof of the whole current legal regime. All operative mechanisms concern health workforce/pay and specified pension conditions; existing facilities or physician travel do not establish a direct infrastructure/technology project. No actual physician deployment, care-access result, savings, benefit reduction for an individual or current-law enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:266",
+            "url": "https://clerk.house.gov/evs/2025/roll266.xml",
+            "raw_sha256": "3a65370923598732ce0989b041c17bfdb3e57f18752428ec4e9957b5956098ba",
+            "governed_bytes_sha256": "fbb917b79d2b28759be158c4217793258cb948bafdbdf6ea5195229bc898f08c"
+          },
+          {
+            "source_id": "govinfo:hr3400eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3400eh/html/BILLS-119hr3400eh.htm",
+            "raw_sha256": "deab188538c65308f0fd969c787520a6a68b27cb6dba2afa03e2927b0c03c3ce",
+            "governed_bytes_sha256": "98ea4beb33aeb1ee9064ac0c3a88486b02dae8c25cd9b53e2c7dc99213fe14c0"
+          },
+          {
+            "source_id": "govinfo:38usc5503d-2024-pension-cap",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+            "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+            "governed_bytes_sha256": "19744f7f2b2100d95781fa5b7e3fa6747bf5f67c02029ee94dd5ce82f08881a9"
+          },
+          {
+            "source_id": "govinfo:38usc7401-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7401.htm",
+            "raw_sha256": "af390a128df8db0238d37714f7bf41bd0858939ab6778b59d58d50d22f33dc93",
+            "governed_bytes_sha256": "e6a54139d364133a66b348e5a9f041f07592717dc08a605051272d6ac0f697e6"
+          },
+          {
+            "source_id": "govinfo:38usc7410-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7410.htm",
+            "raw_sha256": "6653e743afc2102291f5348753ecbf986c39cb56c353baf2b6ce04fe732b3ed2",
+            "governed_bytes_sha256": "c30f5a3d4e6946ef915ff5807414c52780e4917acc8aa3582f1bc671ce33136c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3400eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3400 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3400 _______________________________________________________________________ AN ACT To amend title 38, United States Code, to authorize the Secretary of Veterans Affairs to assign physicians of the Department of Veterans Affairs to temporarily serve as traveling physicians in the territories and possessions of the United States, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Territorial Response and Access to Veterans' Essential Lifecare Act'' or the ``TRAVEL Act of 2025''. SEC. 2. DEPARTMENT OF VETERANS ASSIGNMENT OF TRAVELING PHYSICIANS TO SERVE TERRITORIES AND POSSESSIONS. (a) In General.--Subchapter I of chapter 74 of title 38, United States Code, is amended by adding at the end the following new section: ``Sec. 7415. Traveling physicians ``(a) In General.--(1) The Secretary may assign a physician appointed under section 7401 or section 7431 of this title to serve as a traveling physician for a period of not more than one year at a time. A physician assigned to serve as a traveling physician under this section may be assigned to provide health care to veterans residing in American Samoa, Guam, the Commonwealth of the Northern Mariana Islands, the Commonwealth of Puerto Rico, the Virgin Islands of the United States, or any other territory or possession of the United States at Department facilities or other approved facilities located in such territory or possession. ``(2) The Secretary may assign multiple physicians to serve as traveling physicians under this section and may assign each such physician to serve in a specific territory or possession. ``(b) Coordination of Care.--In providing care under this section, traveling physicians shall coordinate with non-Department medical providers to the extent practicable and necessary to ensure high quality and coordinated care for veterans receiving hospital care and medical services. ``(c) Pay.--In addition to pay under section 7431 of this title, the Secretary shall provide a relocation or retention bonus to traveling physicians under this section. Such relocation or retention bonus shall be substantially similar to a relocation or retention bonus offered under section 7410(a) of this title, as the Secretary considers appropriate.''. (b) Clerical Amendment.--The table of sections at the beginning of such chapter is amended by inserting after the item relating to section 7414 the following new item: ``7415. Traveling physicians.''. (c) Technical and Conforming Amendments.--Title 38, United States Code, is further amended as follows: (1) In section 7410(a)(1), by-- (A) by striking ``retention allowances'' and inserting ``retention bonuses''; and (B) by striking the second comma after ``section 7401(1) of this title''; and (2) In section 7431(e)(5)(B), by striking ``retention allowances'' and inserting ``retention bonuses''. SEC. 3. EXTENSION OF CERTAIN LIMITS ON PAYMENTS OF PENSION. Section 5503(d)(7) of title 38, United States Code, is amended by striking ``November 30, 2031'' and inserting ``December 31, 2032''. Passed the House of Representatives September 15, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3400 _______________________________________________________________________ AN ACT To amend title 38, United States Code, to authorize the Secretary of Veterans Affairs to assign physicians of the Department of Veterans Affairs to temporarily serve as traveling physicians in the territories and possessions of the United States, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:38usc5503d-2024-pension-cap",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(d)(1) For the purposes of this subsection— (A) the term \"Medicaid plan\" means a State plan for medical assistance referred to in section 1902(a) of the Social Security Act (42 U.S.C. 1396a(a)); and (B) the term \"nursing facility\" means a nursing facility described in section 1919 of such Act (42 U.S.C. 1396r), other than a facility that is a State home with respect to which the Secretary makes per diem payments for nursing home care pursuant to section 1741(a) of this title. (2) If a veteran having neither spouse nor child is covered by a Medicaid plan for services furnished such veteran by a nursing facility, no pension in excess of $90 per month shall be paid to or for the veteran for any period after the month of admission to such nursing facility. (3) Notwithstanding any provision of title XIX of the Social Security Act, the amount of the payment paid a nursing facility pursuant to a Medicaid plan for services furnished a veteran may not be reduced by any amount of pension permitted to be paid such veteran under paragraph (2) of this subsection. (4) A veteran is not liable to the United States for any payment of pension in excess of the amount permitted under this subsection that is paid to or for the veteran by reason of the inability or failure of the Secretary to reduce the veteran's pension under this subsection unless such inability or failure is the result of a willful concealment by the veteran of information necessary to make a reduction in pension under this subsection. (5)(A) The provisions of this subsection shall apply with respect to a surviving spouse having no child in the same manner as they apply to a veteran having neither spouse nor child. (B) The provisions of this subsection shall apply with respect to a child entitled to pension under section 1542 of this title in the same manner as they apply to a veteran having neither spouse nor child. (6) The costs of administering this subsection shall be paid for from amounts available to the Department of Veterans Affairs for the payment of compensation and pension. (7) This subsection expires on November 30, 2031. "
+          },
+          {
+            "source_id": "govinfo:38usc7401-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§7401. Appointments in Veterans Health Administration There may be appointed by the Secretary such personnel as the Secretary may find necessary for the health care of veterans (in addition to those in the Office of the Under Secretary for Health appointed under section 7306 of this title), as follows: (1) Physicians, dentists, podiatrists, chiropractors, optometrists, registered nurses, physician assistants, and expanded-function dental auxiliaries. (2) Scientific and professional personnel, such as microbiologists, chemists, and biostatisticians. (3) Audiologists, licensed hearing aid specialists, speech pathologists, and audiologist-speech pathologists, biomedical engineers, certified or registered respiratory therapists, dietitians, licensed physical therapists, licensed practical or vocational nurses, nurse assistants, medical instrument technicians, medical records administrators or specialists, medical records technicians, medical technologists, dental hygienists, dental assistants, nuclear medicine technologists, occupational therapists, occupational therapy assistants, kinesiotherapists, orthotist-prosthetists, pharmacists, pharmacy technicians, physical therapy assistants, prosthetic representatives, psychologists, diagnostic radiologic technologists, therapeutic radiologic technologists, social workers, marriage and family therapists, licensed professional mental health counselors, blind rehabilitation specialists, blind rehabilitation outpatient specialists, statisticians, economists, informaticists, data scientists, and and 1 such other classes of health care occupations as the Secretary considers necessary for the recruitment and retention needs of the Department subject to the following requirements: (A) Such other classes of health care occupations— (i) are not occupations relating to administrative, clerical, or physical plant maintenance and protective services; (ii) would otherwise receive basic pay in accordance with the General Schedule under section 5332 of title 5; (iii) provide, as determined by the Secretary, direct patient care services or services incident to direct patient services; and (iv) would not otherwise be available to provide medical care or treatment for veterans. (B) Not later than 45 days before the Secretary appoints any personnel for a class of health care occupations that is not specifically listed in this paragraph, the Secretary shall submit to the Committee on Veterans' Affairs of the Senate, the Committee on Veterans' Affairs of the House of Representatives, and the Office of Management and Budget notice of such appointment. (C) Before submitting notice under subparagraph (B), the Secretary shall solicit comments from any labor organization representing employees in such class and include such comments in such notice. (4) Directors of medical centers and directors of Veterans Integrated Service Networks with demonstrated ability in the medical profession, in health care administration, or in health care fiscal management. "
+          },
+          {
+            "source_id": "govinfo:38usc7410-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§7410. Additional pay authorities (a) In General .—(1) The Secretary may authorize the Under Secretary for Health to pay advance payments, recruitment or relocation bonuses, and retention allowances to personnel appointed under section 7306 of this title or section 7401(4) of this title, or personnel described in section 7401(1) of this title,, 1 or interview expenses to candidates for appointment as such personnel, in a manner consistent with the authority provided under sections 5524a, 5706b, 5753, and 5754 of title 5. (2) Payments under paragraph (1) shall not be considered in calculating the limitation under section 7431(e)(4) of this title. (b) Special Incentive Pay for Department Pharmacist Executives .—(1) In order to recruit and retain highly qualified Department pharmacist executives, the Secretary may authorize the Under Secretary for Health to pay special incentive pay of not more than $40,000 per year to an individual of the Veterans Health Administration who is a pharmacist executive. (2) In determining whether and how much special pay to provide to such individual, the Under Secretary shall consider the following: (A) The grade and step of the position of the individual. (B) The scope and complexity of the position of the individual. (C) The personal qualifications of the individual. (D) The characteristics of the labor market concerned. (E) Such other factors as the Secretary considers appropriate. (3) Special incentive pay under paragraph (1) for an individual is in addition to all other pay (including basic pay) and allowances to which the individual is entitled. (4) Except as provided in paragraph (5), special incentive pay under paragraph (1) for an individual shall be considered basic pay for all purposes, including retirement benefits under chapters 83 and 84 of title 5, and other benefits. (5) Special incentive pay under paragraph (1) for an individual shall not be considered basic pay for purposes of adverse actions under subchapter V of this chapter. (6) Special incentive pay under paragraph (1) may not be awarded to an individual in an amount that would result in an aggregate amount of pay (including bonuses and awards) received by such individual in a year under this title that is greater than the annual pay of the President. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "5a9b0f08386ec9df573c955c7277ed231e2eaa12497b1f92cd995e9d701a0ca4",
+      "source": {
+        "source_id": "congressional-record:3838-passage262-floor241",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/840b98f3c9ecda8054c36f83aba4881b700a156954179042bc11419f63a3ab9b.0000000.json",
+              "sha256": "42fbd0b8c55feeb20e231e61228a2f047830d1714a3e90f533353b5c87672e53",
+              "start_character": 0,
+              "end_character": 16507
+            }
+          ],
+          "utf8_sha256": "840b98f3c9ecda8054c36f83aba4881b700a156954179042bc11419f63a3ab9b",
+          "total_characters": 16507,
+          "transport_only": true
+        },
+        "text_version": "September10,2025RecordH4226–H4227, physical60–61: complete extracted selected pages actually read; en-gros adoption, engrossment, separate261recommittal and262passage. No whole74pagePDF/visual certificate.",
+        "physical_pages_1based": [
+          60,
+          61
+        ],
+        "raw_document_pages": 74,
+        "derived_parent_unit": "Concatenated pypdf extraction of physical pages60and61, exact unchanged whitespace",
+        "governed_bytes_sha256": "1f9690529b31f5c0092dc78b1e46a8d231f62dc0566fb9c28d7b3767ce9d1e72"
+      }
+    },
+    {
+      "original_source_object_sha256": "892f4b8dec8db46da6a542f953ed5b6619fda3b5432bf19e37e0bd60a62a956d",
+      "source": {
+        "source_id": "clerk:119:1:262",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll262.xml",
+        "text_version": "119:1",
+        "raw_sha256": "7b68e677609922a00303c709551afa1477a5baf747b156382c4bae230585bb43",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "262",
+          "legis-num": "H R 3838",
+          "vote-question": "On Passage",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:55 PM",
+          "vote-desc": "Streamlining Procurement for Effective Execution and Delivery and National Defense Authorization Act for Fiscal Year 2026"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "No",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "214",
+            "nay-total": "4",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "17",
+            "nay-total": "192",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "ee160c84ae798558e39ce615e9dd9eca8fcda6ec3ba1e5ae5ec1987b4b4ffa6c"
+      }
+    },
+    {
+      "original_source_object_sha256": "648a3679649b39526ac14fdb24176a3dc4c90a3b26b1f1b24576bf1f1f3ef22b",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/4546333efa1f7dafafd94747a089ab1bf2d69a2d123a51700aefe1195c44a2a1.0000000.json",
+            "sha256": "e1e0c01d2c79eb7559d301731d48cbe4b201e6f960228165d8bfaddd47ce83a7",
+            "start_character": 0,
+            "end_character": 6257
+          }
+        ],
+        "utf8_sha256": "4546333efa1f7dafafd94747a089ab1bf2d69a2d123a51700aefe1195c44a2a1",
+        "total_characters": 6257,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "767b3823e26760b3002312e0f57867c78333fd8077aba54aac5f2d2fffa7cfec",
+      "source": {
+        "source_id": "clerk:119:1:263",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll263.xml",
+        "text_version": null,
+        "raw_sha256": "5035b88262f2ae9c247b21a90f448ba2a950bceb453bc85039eb1645137400a8",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "263",
+          "legis-num": "H R 3944",
+          "vote-question": "On Motion to Instruct Conferees",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "11-Sep-2025",
+          "action-time": "10:39 AM",
+          "vote-desc": "Military Construction, Veterans Affairs, and Related Agencies Appropriations Act, 2026"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "8da89c9b602cd50c8890ce189d2d266958d9b407e48aecd55a5d2d4657dc0979"
+      }
+    },
+    {
+      "original_source_object_sha256": "2ed1a42cd715c15c88f03efe70a24919c4f5c46321b05873be496381b1495c28",
+      "source": {
+        "source_id": "clerk:119:1:264",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll264.xml",
+        "text_version": null,
+        "raw_sha256": "35aaab05bc51aa61412036a94991a4dd5490a9286c8cd5e300674a49c1dbff40",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "264",
+          "legis-num": "H R 3486",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "11-Sep-2025",
+          "action-time": "10:47 AM",
+          "vote-desc": "Stop Illegal Entry Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "11",
+            "nay-total": "197",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "3f1bd2efc8b06709d0a82a27ec0595259134a91d930723d0377abe8a3c20c793"
+      }
+    },
+    {
+      "original_source_object_sha256": "8300ca3d4a38f368b9db93c6763fccf135ea4c02d248a2fd88cec5e3a8017552",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/35700ccf3b5efa4aa6886bc1f5a2debd0bc7d2d572e1b7d42553e13e2e5e8c1c.0000000.json",
+            "sha256": "f3d03442d81fffa7d1f3dc3666210e538792d6808b4b69eded6329f42547295d",
+            "start_character": 0,
+            "end_character": 6056
+          }
+        ],
+        "utf8_sha256": "35700ccf3b5efa4aa6886bc1f5a2debd0bc7d2d572e1b7d42553e13e2e5e8c1c",
+        "total_characters": 6056,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "2bd0e754f1d3d68b5567a0ae28bcce510dcf04f1e82303ab0c6ab1d3e22eeffe",
+      "source": {
+        "source_id": "govinfo:8usc1325-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1325.htm",
+        "text_version": "2024 Code complete operative section",
+        "raw_sha256": "792459737f43cf4236baa362a31644d7d83d41d9295d9a82813e972243993170",
+        "text": "§1325. Improper entry by alien (a) Improper time or place; avoidance of examination or inspection; misrepresentation and concealment of facts Any alien who (1) enters or attempts to enter the United States at any time or place other than as designated by immigration officers, or (2) eludes examination or inspection by immigration officers, or (3) attempts to enter or obtains entry to the United States by a willfully false or misleading representation or the willful concealment of a material fact, shall, for the first commission of any such offense, be fined under title 18 or imprisoned not more than 6 months, or both, and, for a subsequent commission of any such offense, be fined under title 18, or imprisoned not more than 2 years, or both. (b) Improper time or place; civil penalties Any alien who is apprehended while entering (or attempting to enter) the United States at a time or place other than as designated by immigration officers shall be subject to a civil penalty of— (1) at least $50 and not more than $250 for each such entry (or attempted entry); or (2) twice the amount specified in paragraph (1) in the case of an alien who has been previously subject to a civil penalty under this subsection. Civil penalties under this subsection are in addition to, and not in lieu of, any criminal or other civil penalties that may be imposed. (c) Marriage fraud Any individual who knowingly enters into a marriage for the purpose of evading any provision of the immigration laws shall be imprisoned for not more than 5 years, or fined not more than $250,000, or both. (d) Immigration-related entrepreneurship fraud Any individual who knowingly establishes a commercial enterprise for the purpose of evad ing any provision of the immigration laws shall be imprisoned for not more than 5 years, fined in accordance with title 18, or both. ",
+        "governed_bytes_sha256": "e4f1d31f1aeecfc02812f65622bd81bc3f33dc17dcffe3a82e1cf01d74cc5ac4"
+      }
+    },
+    {
+      "original_source_object_sha256": "7df089bdd9c71b3db61add03e68b8029f7f8e9996f4383b2fdc7ceefe85c1907",
+      "source": {
+        "source_id": "govinfo:8usc1326-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1326.htm",
+        "text_version": "2024 Code complete operative section",
+        "raw_sha256": "3a2d2a4b51a8c487e4e5656d18b56476cfc3ede94dd63e4627e0f39b5e4cd627",
+        "text": "§1326. Reentry of removed aliens (a) In general Subject to subsection (b), any alien who— (1) has been denied admission, excluded, deported, or removed or has departed the United States while an order of exclusion, deportation, or removal is outstanding, and thereafter (2) enters, attempts to enter, or is at any time found in, the United States, unless (A) prior to his reembarkation at a place outside the United States or his application for admission from foreign contiguous territory, the Attorney General has expressly consented to such alien's reapplying for admission; or (B) with respect to an alien previously denied admission and removed, unless such alien shall establish that he was not required to obtain such advance consent under this chapter or any prior Act, shall be fined under title 18, or imprisoned not more than 2 years, or both. (b) Criminal penalties for reentry of certain removed aliens Notwithstanding subsection (a), in the case of any alien described in such subsection— (1) whose removal was subsequent to a conviction for commission of three or more misdemeanors involving drugs, crimes against the person, or both, or a felony (other than an aggravated felony), such alien shall be fined under title 18, imprisoned not more than 10 years, or both; (2) whose removal was subsequent to a conviction for commission of an aggravated felony, such alien shall be fined under such title, imprisoned not more than 20 years, or both; (3) who has been excluded from the United States pursuant to section 1225(c) of this title because the alien was excludable under section 1182(a)(3)(B) of this title or who has been removed from the United States pursuant to the provisions of subchapter V, and who thereafter, without the permission of the Attorney General, enters the United States, or attempts to do so, shall be fined under title 18 and imprisoned for a period of 10 years, which sentence shall not run concurrently with any other sentence. 1 or (4) who was removed from the United States pursuant to section 1231(a)(4)(B) of this title who thereafter, without the permission of the Attorney General, enters, attempts to enter, or is at any time found in, the United States (unless the Attorney General has expressly consented to such alien's reentry) shall be fined under title 18, imprisoned for not more than 10 years, or both. For the purposes of this subsection, the term \"removal\" includes any agreement in which an alien stipulates to removal during (or not during) a criminal trial under either Federal or State law. (c) Reentry of alien deported prior to completion of term of imprisonment Any alien deported pursuant to section 1252(h)(2) 2 of this title who enters, attempts to enter, or is at any time found in, the United States (unless the Attorney General has expressly consented to such alien's reentry) shall be incarcerated for the remainder of the sentence of imprisonment which was pending at the time of deportation without any reduction for parole or supervised release. Such alien shall be subject to such other penalties relating to the reentry of deported aliens as may be available under this section or any other provision of law. (d) Limitation on collateral attack on underlying deportation order In a criminal proceeding under this section, an alien may not challenge the validity of the deportation order described in subsection (a)(1) or subsection (b) unless the alien demonstrates that— (1) the alien exhausted any administrative remedies that may have been available to seek relief against the order; (2) the deportation proceedings at which the order was issued improperly deprived the alien of the opportunity for judicial review; and (3) the entry of the order was fundamentally unfair. ",
+        "governed_bytes_sha256": "162715aa06228c4ec0447a251dc3b0d48443cb21f5e042756a76d2b4dff9438e"
+      }
+    },
+    {
+      "original_source_object_sha256": "c6ab0dd794091116f28eab8c293ea4587f663b92dafa66b2c7e3ae902260a352",
+      "source": {
+        "source_id": "clerk:119:1:265",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll265.xml",
+        "text_version": null,
+        "raw_sha256": "7264d874eae001415de490a87d03df4e923db4f9020bfc4fafac78e7e7c25ea1",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "265",
+          "legis-num": "H J RES 117",
+          "vote-question": "On Motion to Table the Motion to Discharge Committee",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "15-Sep-2025",
+          "action-time": "6:56 PM",
+          "vote-desc": "Relating to a national emergency by the President on July 30, 2025"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "4b541061d8cf72a2623f777b033c722ec2a1124958b94ca433da30c205930341"
+      }
+    },
+    {
+      "original_source_object_sha256": "f88bfc63ffa2f9b574e3e81ec1d3cff34fbd78cf500666f1c3c83d3bbbb9137f",
+      "source": {
+        "source_id": "clerk:119:1:266",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll266.xml",
+        "text_version": null,
+        "raw_sha256": "3a65370923598732ce0989b041c17bfdb3e57f18752428ec4e9957b5956098ba",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "266",
+          "legis-num": "H R 3400",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "15-Sep-2025",
+          "action-time": "7:03 PM",
+          "vote-desc": "TRAVEL Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "176",
+            "nay-total": "21",
+            "present-total": "0",
+            "not-voting-total": "22"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "195",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "18"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "fbb917b79d2b28759be158c4217793258cb948bafdbdf6ea5195229bc898f08c"
+      }
+    },
+    {
+      "original_source_object_sha256": "8e53c3c517c54eab69903913567f647738c0e4e81c323f26f063f983a54ef0de",
+      "source": {
+        "source_id": "govinfo:hr3400eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3400eh/html/BILLS-119hr3400eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "deab188538c65308f0fd969c787520a6a68b27cb6dba2afa03e2927b0c03c3ce",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3400 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3400 _______________________________________________________________________ AN ACT To amend title 38, United States Code, to authorize the Secretary of Veterans Affairs to assign physicians of the Department of Veterans Affairs to temporarily serve as traveling physicians in the territories and possessions of the United States, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Territorial Response and Access to Veterans' Essential Lifecare Act'' or the ``TRAVEL Act of 2025''. SEC. 2. DEPARTMENT OF VETERANS ASSIGNMENT OF TRAVELING PHYSICIANS TO SERVE TERRITORIES AND POSSESSIONS. (a) In General.--Subchapter I of chapter 74 of title 38, United States Code, is amended by adding at the end the following new section: ``Sec. 7415. Traveling physicians ``(a) In General.--(1) The Secretary may assign a physician appointed under section 7401 or section 7431 of this title to serve as a traveling physician for a period of not more than one year at a time. A physician assigned to serve as a traveling physician under this section may be assigned to provide health care to veterans residing in American Samoa, Guam, the Commonwealth of the Northern Mariana Islands, the Commonwealth of Puerto Rico, the Virgin Islands of the United States, or any other territory or possession of the United States at Department facilities or other approved facilities located in such territory or possession. ``(2) The Secretary may assign multiple physicians to serve as traveling physicians under this section and may assign each such physician to serve in a specific territory or possession. ``(b) Coordination of Care.--In providing care under this section, traveling physicians shall coordinate with non-Department medical providers to the extent practicable and necessary to ensure high quality and coordinated care for veterans receiving hospital care and medical services. ``(c) Pay.--In addition to pay under section 7431 of this title, the Secretary shall provide a relocation or retention bonus to traveling physicians under this section. Such relocation or retention bonus shall be substantially similar to a relocation or retention bonus offered under section 7410(a) of this title, as the Secretary considers appropriate.''. (b) Clerical Amendment.--The table of sections at the beginning of such chapter is amended by inserting after the item relating to section 7414 the following new item: ``7415. Traveling physicians.''. (c) Technical and Conforming Amendments.--Title 38, United States Code, is further amended as follows: (1) In section 7410(a)(1), by-- (A) by striking ``retention allowances'' and inserting ``retention bonuses''; and (B) by striking the second comma after ``section 7401(1) of this title''; and (2) In section 7431(e)(5)(B), by striking ``retention allowances'' and inserting ``retention bonuses''. SEC. 3. EXTENSION OF CERTAIN LIMITS ON PAYMENTS OF PENSION. Section 5503(d)(7) of title 38, United States Code, is amended by striking ``November 30, 2031'' and inserting ``December 31, 2032''. Passed the House of Representatives September 15, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3400 _______________________________________________________________________ AN ACT To amend title 38, United States Code, to authorize the Secretary of Veterans Affairs to assign physicians of the Department of Veterans Affairs to temporarily serve as traveling physicians in the territories and possessions of the United States, and for other purposes.",
+        "governed_bytes_sha256": "98ea4beb33aeb1ee9064ac0c3a88486b02dae8c25cd9b53e2c7dc99213fe14c0"
+      }
+    },
+    {
+      "original_source_object_sha256": "3df15c885111aece3ce5f68ec5a4b426287f380ccdb80e5536737bb304441bc4",
+      "source": {
+        "source_id": "govinfo:38usc5503d-2024-pension-cap",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+        "text_version": "Complete 2024 section 5503(d)(1)-(7), retaining definitions, pension cap, Medicaid-payment saving, liability exception, survivor/child application, administration and expiration; other subsections and historical notes excluded",
+        "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+        "text": "(d)(1) For the purposes of this subsection— (A) the term \"Medicaid plan\" means a State plan for medical assistance referred to in section 1902(a) of the Social Security Act (42 U.S.C. 1396a(a)); and (B) the term \"nursing facility\" means a nursing facility described in section 1919 of such Act (42 U.S.C. 1396r), other than a facility that is a State home with respect to which the Secretary makes per diem payments for nursing home care pursuant to section 1741(a) of this title. (2) If a veteran having neither spouse nor child is covered by a Medicaid plan for services furnished such veteran by a nursing facility, no pension in excess of $90 per month shall be paid to or for the veteran for any period after the month of admission to such nursing facility. (3) Notwithstanding any provision of title XIX of the Social Security Act, the amount of the payment paid a nursing facility pursuant to a Medicaid plan for services furnished a veteran may not be reduced by any amount of pension permitted to be paid such veteran under paragraph (2) of this subsection. (4) A veteran is not liable to the United States for any payment of pension in excess of the amount permitted under this subsection that is paid to or for the veteran by reason of the inability or failure of the Secretary to reduce the veteran's pension under this subsection unless such inability or failure is the result of a willful concealment by the veteran of information necessary to make a reduction in pension under this subsection. (5)(A) The provisions of this subsection shall apply with respect to a surviving spouse having no child in the same manner as they apply to a veteran having neither spouse nor child. (B) The provisions of this subsection shall apply with respect to a child entitled to pension under section 1542 of this title in the same manner as they apply to a veteran having neither spouse nor child. (6) The costs of administering this subsection shall be paid for from amounts available to the Department of Veterans Affairs for the payment of compensation and pension. (7) This subsection expires on November 30, 2031. ",
+        "governed_bytes_sha256": "19744f7f2b2100d95781fa5b7e3fa6747bf5f67c02029ee94dd5ce82f08881a9",
+        "captured_full_text_sha256": "f5da8ffff8231a879a9a8382f5fc86e67652bca87b2421658e2227621de0e12d",
+        "source_text_extents": [
+          {
+            "start": 5193,
+            "end": 7312,
+            "total": 33125
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "ee9f1d87a48b529489f06dc0bb1395bcf6f5de21c01335c144a062aab8f4701b",
+      "source": {
+        "source_id": "govinfo:38usc7401-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7401.htm",
+        "text_version": "2024 Code complete operative section; separately referenced historical notes excluded",
+        "raw_sha256": "af390a128df8db0238d37714f7bf41bd0858939ab6778b59d58d50d22f33dc93",
+        "text": "§7401. Appointments in Veterans Health Administration There may be appointed by the Secretary such personnel as the Secretary may find necessary for the health care of veterans (in addition to those in the Office of the Under Secretary for Health appointed under section 7306 of this title), as follows: (1) Physicians, dentists, podiatrists, chiropractors, optometrists, registered nurses, physician assistants, and expanded-function dental auxiliaries. (2) Scientific and professional personnel, such as microbiologists, chemists, and biostatisticians. (3) Audiologists, licensed hearing aid specialists, speech pathologists, and audiologist-speech pathologists, biomedical engineers, certified or registered respiratory therapists, dietitians, licensed physical therapists, licensed practical or vocational nurses, nurse assistants, medical instrument technicians, medical records administrators or specialists, medical records technicians, medical technologists, dental hygienists, dental assistants, nuclear medicine technologists, occupational therapists, occupational therapy assistants, kinesiotherapists, orthotist-prosthetists, pharmacists, pharmacy technicians, physical therapy assistants, prosthetic representatives, psychologists, diagnostic radiologic technologists, therapeutic radiologic technologists, social workers, marriage and family therapists, licensed professional mental health counselors, blind rehabilitation specialists, blind rehabilitation outpatient specialists, statisticians, economists, informaticists, data scientists, and and 1 such other classes of health care occupations as the Secretary considers necessary for the recruitment and retention needs of the Department subject to the following requirements: (A) Such other classes of health care occupations— (i) are not occupations relating to administrative, clerical, or physical plant maintenance and protective services; (ii) would otherwise receive basic pay in accordance with the General Schedule under section 5332 of title 5; (iii) provide, as determined by the Secretary, direct patient care services or services incident to direct patient services; and (iv) would not otherwise be available to provide medical care or treatment for veterans. (B) Not later than 45 days before the Secretary appoints any personnel for a class of health care occupations that is not specifically listed in this paragraph, the Secretary shall submit to the Committee on Veterans' Affairs of the Senate, the Committee on Veterans' Affairs of the House of Representatives, and the Office of Management and Budget notice of such appointment. (C) Before submitting notice under subparagraph (B), the Secretary shall solicit comments from any labor organization representing employees in such class and include such comments in such notice. (4) Directors of medical centers and directors of Veterans Integrated Service Networks with demonstrated ability in the medical profession, in health care administration, or in health care fiscal management. ",
+        "governed_bytes_sha256": "e6a54139d364133a66b348e5a9f041f07592717dc08a605051272d6ac0f697e6"
+      }
+    },
+    {
+      "original_source_object_sha256": "768f226e2dc4324e10058d744d737ba952fe5418206d22ab1bccfde62d3ada15",
+      "source": {
+        "source_id": "govinfo:38usc7410-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7410.htm",
+        "text_version": "2024 Code complete operative section; separately referenced historical notes excluded",
+        "raw_sha256": "6653e743afc2102291f5348753ecbf986c39cb56c353baf2b6ce04fe732b3ed2",
+        "text": "§7410. Additional pay authorities (a) In General .—(1) The Secretary may authorize the Under Secretary for Health to pay advance payments, recruitment or relocation bonuses, and retention allowances to personnel appointed under section 7306 of this title or section 7401(4) of this title, or personnel described in section 7401(1) of this title,, 1 or interview expenses to candidates for appointment as such personnel, in a manner consistent with the authority provided under sections 5524a, 5706b, 5753, and 5754 of title 5. (2) Payments under paragraph (1) shall not be considered in calculating the limitation under section 7431(e)(4) of this title. (b) Special Incentive Pay for Department Pharmacist Executives .—(1) In order to recruit and retain highly qualified Department pharmacist executives, the Secretary may authorize the Under Secretary for Health to pay special incentive pay of not more than $40,000 per year to an individual of the Veterans Health Administration who is a pharmacist executive. (2) In determining whether and how much special pay to provide to such individual, the Under Secretary shall consider the following: (A) The grade and step of the position of the individual. (B) The scope and complexity of the position of the individual. (C) The personal qualifications of the individual. (D) The characteristics of the labor market concerned. (E) Such other factors as the Secretary considers appropriate. (3) Special incentive pay under paragraph (1) for an individual is in addition to all other pay (including basic pay) and allowances to which the individual is entitled. (4) Except as provided in paragraph (5), special incentive pay under paragraph (1) for an individual shall be considered basic pay for all purposes, including retirement benefits under chapters 83 and 84 of title 5, and other benefits. (5) Special incentive pay under paragraph (1) for an individual shall not be considered basic pay for purposes of adverse actions under subchapter V of this chapter. (6) Special incentive pay under paragraph (1) may not be awarded to an individual in an amount that would result in an aggregate amount of pay (including bonuses and awards) received by such individual in a year under this title that is greater than the annual pay of the President. ",
+        "governed_bytes_sha256": "c30f5a3d4e6946ef915ff5807414c52780e4917acc8aa3582f1bc671ce33136c"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 14
+  }
+}

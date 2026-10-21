@@ -1,0 +1,29 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T15:34:51.670998+00:00",
+    "qualification": "First specification-writing execution marker; earlier retained-source reading untimed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T15:34:56.575447+00:00",
+    "end_utc": "2026-10-19T15:35:00.596496+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 74 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch74_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.976
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.045
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 4.904,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 4.021,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0
+}

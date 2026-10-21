@@ -1,0 +1,48 @@
+{
+  "kind": "small_validator_maintenance_requires_parent_relay_attribution_addendum",
+  "base_head": "50140211a739bf0db2553bfcf8de7517078a2a20",
+  "canonical_candidate_batch": 109,
+  "required_addendum": "docs/review_packets/infrastructure_roll241_relay_attribution_clarification_20261019.json",
+  "required_for_batches": "103andlater",
+  "behavior": "Validation now requires the append-only parent-relay correction, exact original receipt/preimage/source digest, accurate actor attribution and no semantic/acceptance/production effect. Missing addendum fails closed; old103receipt remains unchanged.",
+  "changed_code": [
+    "scripts/validate_infrastructure_discovery_delta.py",
+    "backend/tests/test_infrastructure_discovery_delta.py"
+  ],
+  "current_validation": {
+    "focused_tests": 2,
+    "reported_unittest_seconds": 2.603,
+    "source_conservation_replay": "passed on current109artifacts with newguard",
+    "semantic_checks": 7,
+    "semantic_result": "passed",
+    "candidate_artifact_diff": "empty",
+    "negative_mutations": [
+      "wrong relay actor",
+      "rewritten original preimage",
+      "wrong retained digest",
+      "semantic/publishing effect",
+      "required addendum absent"
+    ]
+  },
+  "inherited_full_suite": {
+    "tests": 146,
+    "head": "50140211a739bf0db2553bfcf8de7517078a2a20",
+    "batch": 109,
+    "repeated": false
+  },
+  "repository_test_population": 147,
+  "qualification": "147tests exist after adding the guard; a full147suite is not claimed. Graph/source/meaning artifacts are unchanged. Initial new test had undefined module ROOT, corrected to validator.ROOT with assertions unchanged; initial2-test run had1error/1pass, then final2passed.",
+  "initial_test_failure": {
+    "kind": "test_harness_NameError_ROOT",
+    "reported_unittest_seconds": 0.248,
+    "assertions_weakened": false
+  },
+  "current_core_sha256": "00c0e75fdbaa33fc1d8d40510b85d4d0b18ce65eaf01ed68f140a888e15cb3ae",
+  "current_compiled_sha256": "025aff6a0e5ea88c6f0a47d301e238408720f928e1efffb88eaaa9f0b744023f",
+  "source_bytes_or_editorial_meaning_changed": false,
+  "source_acquisitions": 0,
+  "protected_retries": 0,
+  "accepted_membership": false,
+  "publication_authorized": false,
+  "production_writes": false
+}

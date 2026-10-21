@@ -1,0 +1,877 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 100,
+  "exact_committed_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "export_anchor_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "committed_provenance": {
+    "membership": {
+      "head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/membership_review.json",
+      "git_blob": "bdcf40cdc9f05c6d83198bdc517b009482ab5095",
+      "git_bytes_sha256": "29b263be345ff9d3ce8182eb5503122afc1ddf4ff0d6754b9b21f3065bb3b6b8"
+    },
+    "sources": {
+      "head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/sources.json",
+      "git_blob": "eee8dfa4657fa0b1d7c35b93d8982cf98c9a7c30",
+      "git_bytes_sha256": "b79790b1c6ed446c3e5d8bdf56eefca3714635d9da7fde5bd55a4309f69e6d92"
+    },
+    "screening": {
+      "head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/screening_receipt.json",
+      "git_blob": "90143b4b676bd5106e3673ba288ced557ad7be70",
+      "git_bytes_sha256": "155aefeb32e2f6ecf144cd354178503ec63109a12222f995a223b429530ced90"
+    },
+    "screening_units": {
+      "head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/screening_units_receipt.json",
+      "git_blob": "c7ab96b5563495c7febc36ae7f6a0c672b6795dc",
+      "git_bytes_sha256": "f1e9e055f20e4a135b21fb9fa4ecdf108e59f641655c7aa41485c7549d8cd40e"
+    },
+    "validation": {
+      "head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/validation_receipt.json",
+      "git_blob": "4187de76ef4e87e75e902550a050d4ac60ae8130",
+      "git_bytes_sha256": "87f871d672766a485e135f7f2e97dc0437f56b19f4895ca8a9534c29029e414a"
+    }
+  },
+  "original_membership_review_sha256": "0806fe268b5ce3dde8a1f1ab59325a39014bf923e7c38a17b8d7c11688076324",
+  "new_screened_ids": [
+    "house:119:2:262",
+    "house:119:2:263",
+    "house:119:2:264",
+    "house:119:2:265",
+    "house:119:2:266",
+    "house:119:2:267",
+    "house:119:2:268",
+    "house:119:2:269",
+    "house:119:2:270",
+    "house:119:2:271"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "bd502f14c854a028b0528b1864e0da1be817ebb57bb716fd004bca4254aa8fc3",
+      "record": {
+        "action_id": "house:119:2:262",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete ownPartA9operative unitread. It proposes identical-to-Federal-only State/local standards/interpretations for physical/mechanical scrap processing and defense-article disposition/recycling, notwithstanding42USC6929; chemical treatment/stabilization/fixation/neutralization of generatedwaste is expressly excluded from the scrap-processing limb. Titlecriticalmaterials language is not an extra operative unlimitedmaterials category. Material40CFR261.1(c)(6)/10USC301definitions/Federalstandards and whole industrial-processing-versus-environmentaljurisdiction mapping remain pending. Clerk failure did not preempt any law; no actualrecycling/recovery, environmentalharm or militarynecessity is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:262",
+            "url": "https://clerk.house.gov/evs/2026/roll262.xml",
+            "raw_sha256": "2b616f2a58ba8fb8f9a9921713b0fee757590d8189a746e6da09e6b74dcb39ad",
+            "governed_bytes_sha256": "874e314dd057268759789d444928a5d986af0c385b694e593f03eedd289955bf"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "locator": "CompleteownPartA9offering/operative41632:44227read; otherofferings notused",
+            "passage": "AMENDMENT NO. 9 OFFERED BY MR . CARTER OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 9 printed in \npart A of House Report 119–755. \nMr. CARTER of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle F of title XVIII, add \nthe following new section: \nSEC. 18ll. PROTECTION FROM STATE LAWS IM-\nPEDING DISPOSITION AND RECY-\nCLING OF DEFENSE ARTICLES OR \nRECOVERY AND REUSE OF SOURCES \nOF STRATEGIC AND CRITICAL MATE-\nRIALS. \nSubchapter V of chapter 385 of title 10, \nUnited States Code, is amended by adding at \nthe end the following new section: \n‘‘§ 4893. Protection from State laws impeding \ndisposition and recycling of defense arti-\ncles or recovery and reuse of sources of \nstrategic and critical materials \n‘‘(a) P\nROHIBITION.—(1) Notwithstanding sec-\ntion 6929 of title 42, no State or political sub-\ndivision thereof may adopt or enforce any \nlaw, regulation, standard, or requirement, or \napply any interpretation thereof, with re-\nspect to any matter described in subsection \n(b)(1) unless such law, regulation, standard, \nrequirement, or interpretation is identical to \nthe Federal law, regulation, standard, or re-\nquirement, or Federal interpretation thereof, \ngoverning such matter. \n‘‘(2) This subsection shall supersede and \npreempt any law, regulation, standard, re-\nquirement, or interpretation of a State or \npolitical subdivision thereof with respect to \nany matter described in subsection (b)(1) un-\nless such law, regulation, standard, require-\nment, or interpretation is identical to the \napplicable Federal law, regulation, standard, \nrequirement, or Federal interpretation gov-\nerning such matter. Any nonidentical State \nor local law, regulation, standard, require-\nment, or interpretation shall have no force \nor effect. \n‘‘(b) M\nATTERS DESCRIBED.—(1) The matters \ndescribed in this paragraph are the fol-\nlowing: \n‘‘(A) The physical or mechanical proc-\nessing of scrap metal (as such term is defined \nin section 261.1(c)(6) of title 40, Code of Fed-\neral Regulations). \n‘‘(B) The disposition or recycling of any de-\nfense article (as such term is defined in sec-\ntion 301 of this title), including any defense \nequipment, material, or munition subject to \ndemilitarization or disposal. \n‘‘(2) The physical or mechanical processing \nof scrap metal described in paragraph (1)(A) \ndoes not include the chemical treatment, \nstabilization, fixation, or neutralization of \nwaste generated by such processing.’’. \n\n\n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "b9f02dca3df76014f2a3643e801e25061ab43c0e2ffb41d2901693531ec47b69",
+      "record": {
+        "action_id": "house:119:2:263",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete ownPartA14operative read. Whole foreign-military-exercise cost restriction covers funds authorizedbyTHISACT ORotherwise availabletoDOD, including seven costcategories; it retains discretionary nationalsecurity waiver with writtenCongressionalnotice at least30daysBEFOREexerciseofwaiver, not a postapproval notice. This whole militarycooperation/exercise-finance choice is proposed outside Infrastructure; transportation/lodging costs are not an exact new technical/physicalprogram. Clerk rejection does not impose theban. No allforeigncooperationends, actualwaiver/payment/militarybenefit or motive claim.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:263",
+            "url": "https://clerk.house.gov/evs/2026/roll263.xml",
+            "raw_sha256": "24e51dcc6e6b96b4784993487ef392c0433efbc820b79ac7691f3a7d85666bd5",
+            "governed_bytes_sha256": "52e5d02570d32432876e3b10a9188e889ffa1e070e62cba4bfae3e6c77a55367"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "locator": "CompleteownPartA14offering/operative44227:46475read; otherofferings notused",
+            "passage": "AMENDMENT NO. 14 OFFERED BY MR . CRANE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 14 printed \nin part A of House Report 119–755. \nMr. CRANE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle G of title XII, insert \nthe following: \nSEC. 12 ll. PROHIBITION OF FUNDS TO COVER \nCOSTS OF FOREIGN MILITARY PER-\nSONNEL PARTICIPATING IN BILAT-\nERAL OR MULTILATERAL MILITARY \nEXERCISES WITH THE UNITED \nSTATES. \n(a) IN GENERAL.—None of the funds author-\nized to be appropriated by this Act or other-\nwise made available to the Department of \nDefense may be used to pay, reimburse, sub-\nsidize, or otherwise cover any costs associ-\nated with the participation of foreign mili-\ntary personnel in a bilateral or multilateral \nmilitary exercise conducted with the Armed \nForces of the United States. \n(b) A\nSSOCIATED COSTS.—The associated \ncosts described in subsection (a) include— \n(1) transportation; \n(2) lodging; \n(3) meals; \n(4) per diem expenses; \n(5) training expenses; \n(6) administrative expenses; and \n(7) any other expense incurred by the De-\npartment of Defense on behalf of foreign \nmilitary personnel in connection with par-\nticipation in a bilateral or multilateral mili-\ntary exercise. \n(c) W\nAIVER.— \n(1) IN GENERAL .—The Secretary of Defense \nmay waive the prohibition under subsection \n(a) if the Secretary determines that covering \nsuch costs is necessary to support a national \nsecurity interest of the United States. \n(2) N\nOTIFICATION.—Not later than 30 days \nbefore exercising the waiver authority under \nparagraph (1), the Secretary shall submit to \nthe Committee on Armed Services of the \nHouse of Representatives, the Committee on \nArmed Services of the Senate (or such suc-\ncessor committees) a written notification \nthat includes— \n(A) the foreign country or countries whose \npersonnel would receive such support; \n(B) the bilateral or multilateral military \nexercise involved; \n(C) the estimated costs to be covered by \nthe Department of Defense; and \n(D) a detailed justification describing why \nthe waiver is necessary to support a national \nsecurity interest of the United States. \n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "36d00301f8330cfdd5d78364500276fdad193a108ff1e14768f1ca22e19cc0a6",
+      "record": {
+        "action_id": "house:119:2:264",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete ownPartA15offering/operative read, followingdebate excluded. Whole restriction covers THISACTauthorized or otherwiseDODFY2027funds for Ukrainessecurityassistance EXCEPT UnitedStatesembassysecurityinUkraine. It is not allUkraineassistance/noexception or a specific reconstruction/technology target; supports a proposed Infrastructure exclusion. Clerk failure did not enact acut. Debaters military/corruption/causal/national-security claims are not findings bythiscandidate; no actualfundinguse/outcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:264",
+            "url": "https://clerk.house.gov/evs/2026/roll264.xml",
+            "raw_sha256": "55ba40cd41d63d8f64dd330a2a689ea241653034801f2f92a5c868b8280be021",
+            "governed_bytes_sha256": "334ff94d13ba04f6de61ca025ef7d09c74bd8b9692cad8a0d0fa9a51e43d087f"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-ukraine",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "ea7fc8017ace9d8ec82d5ef5be8fc9b4f7c50c983b593260a01364d029f9735d"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-ukraine",
+            "locator": "Completeownoffering/operative0:934read; followingattributeddebateunreviewed",
+            "passage": "AMENDMENT NO. 15 OFFERED BY MR . CRANE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 15 printed \nin part A of House Report 119–755. \nVerDate Sep 11 2014 09:38 Jul 22, 2026 Jkt 069060 PO 00000 Frm 00313 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\K21JY7.114 H21JYPT1mduett on DSK9DHNXB4PROD with HOUSE\n\nPDF page 314\nCONGRESSIONAL RECORD — HOUSEH4998 July 21, 2026 \nMr. CRANE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle A of title XVII, in-\nsert the following: \nSEC. 17ll. PROHIBITION ON USE OF FUNDS FOR \nUKRAINE SECURITY ASSISTANCE. \nNone of the funds authorized to be appro-\npriated by this Act or otherwise made avail-\nable for the Department of Defense for fiscal \nyear 2027 may be made available for Ukraine \nsecurity assistance other than for funding \nUnited States embassy security in Ukraine. \n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4ce4b2afde5bf5bbee02b7d2fdae6377fb656037977783cdfa242d68d138a982",
+      "record": {
+        "action_id": "house:119:2:265",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete ownPartA17operative read. Whole on-facilityfirearmpermission process covers assigned ArmedForcesmembers/DODcivilianemployees and designateddomesticfacilities; designatedcommanderbelowGeneral/Flagmaydenyonlyobjectiveclearlydescribedindividualreasons, withadditional-personauthority preserved. Requires implementation byDecember31,2027and repeals specified2016section526. This is firearmpermission/personnelsafety law, not a construction/technicalprogram because facilities are mentioned. Proposed Infrastructure exclusion does not claim automaticuniversalcarry, currentindividualpermission, improvedsafety or enactedrepeal; underlyinglegalapplication remainsunreviewed.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:265",
+            "url": "https://clerk.house.gov/evs/2026/roll265.xml",
+            "raw_sha256": "906f278e5dfd6d58a8b02c13bbb0b1be68761dec98c266c21c0b335354513657",
+            "governed_bytes_sha256": "a776910596377a7566a68a1b81d5006cbfb07db5cfba59555fe039332d566c3c"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "locator": "CompleteownPartA17offering/operative2135:5226read; otherofferings notused",
+            "passage": "AMENDMENT NO. 17 OFFERED BY MR . CRANK \nThe Acting CHAIR. It is now in order \nto consider amendment No. 17 printed \nin part A of House Report 119–755. \nMr. CRANK. Madam Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle F of title X, add the \nfollowing: \nSEC. 10 ll. CODIFICATION AND REVISION OF \nPROCESS BY WHICH CERTAIN DE-\nPARTMENT OF DEFENSE PER-\nSONNEL MAY BE PERMITTED TO \nCARRY FIREARMS ON A MILITARY \nINSTALLATION OR OTHER DEFENSE \nFACILITY. \n(a) I N GENERAL.—Chapter 53 of title 10, \nUnited States Code, is amended by adding at \nthe end the following new section: \n‘‘§ 1060d. Firearms on military installations \nand other Defense facilities: process by \nwhich personnel may be permitted to carry \n‘‘(a) A\nUTHORITY.—A member of the Armed \nForces or civilian employee of the Depart-\nment of Defense who is assigned to duty at a \nfacility specified in subsection (b) may carry \na firearm when on that facility if permitted \nto do so by the designated commander. Such \npermission constitutes an authorization for \npurposes of section 930(d)(2) of title 18. \n‘‘(b) D\nESIGNATED FACILITIES.—For purposes \nof subsection (a), a facility designated in this \nsubsection is any of the following located in \nthe United States: \n‘‘(1) A military installation. \n‘‘(2) A military reserve center. \n‘‘(3) An armed services recruiting center. \n‘‘(4) Any other facility under the jurisdic-\ntion, custody, or control of the Department \nof Defense that is designated by the Sec-\nretary of Defense for purposes of this sec-\ntion. \n‘‘(c) D\nESIGNATED COMMANDER.—For pur-\nposes of subsection (a), a designated com-\nmander, with respect to a facility specified \nin subsection (b), is an officer serving in a \ngrade below a General or Flag Officer grade \nwho is— \n‘‘(1) the commander of the facility; or \n‘‘(2) a military commander otherwise des-\nignated by the Secretary of Defense for the \nfacility for purposes of this section. \n‘‘(d) P\nRESUMPTION OF APPROVAL.—In con-\nsidering a request for permission to carry a \nfirearm on a designated facility, the des-\nignated commander with respect to that fa-\ncility may deny the request only for objec-\ntive, clearly-described, individualized rea-\nsons. \n‘‘(e) I\nMPLEMENTATION.—The Secretary of \nDefense shall establish a process for the im-\nplementation of this section. \n‘‘(f) R\nULE OF CONSTRUCTION.—Nothing in \nthis section shall be construed to limit the \nauthority of the Secretary of Defense to per-\nmit additional individuals from seeking, or \nbeing granted, permission to carry a firearm \non a facility designated in subsection (b) in \naccordance with procedures established by \nthe Secretary.’’. \n(b) D\nEADLINE.—The process required by \nsubsection (e) of section 1060d of title 10, \nUnited States Code, as added by subsection \n(a), shall be implemented not later than De-\ncember 31, 2027. \n(c) R\nEPEAL.—Section 526 of the National \nDefense Authorization Act for Fiscal Year \n2016 (Public Law 114-92; 10 U.S.C. 2672 note) is \nrepealed. \n\n\n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "59f5a8588e6682095dbf87d5254913ead1ac9c5b83a6131b0f0aa2907eeb2942",
+      "record": {
+        "action_id": "house:119:2:266",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete ownPartA18operative and datedEO14183read. Whole amendment gives that order force/effectoflaw, rather than a particular technical or physicalinfrastructure program. Orderaddresses militaryservice/standards/pronouns/facilityuse/implementation/revocation and contains extraordinaryoperationalnecessity, applicablelaw/appropriation and no-enforceable-right provisions.30/60dayorderdatedclocks and DHSafter-updates clock are not silently reset to amendmentenactment. ReferencedJan20definitions/DoDInstructions/laterlaw/currentapplication remainunreviewed. Stigmatizing character/medical/readiness assertions in order/debate are attributed sourceclaims, not adopted findings. Proposed Infrastructure exclusion preserves Clerk rejection; no actualseparation, individualeligibility, medicalconclusion, readinessoutcome or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:266",
+            "url": "https://clerk.house.gov/evs/2026/roll266.xml",
+            "raw_sha256": "d082857c0f4fed15d4162ea1d23f4b47c6ac658c5bbb1f71ff109869f8f26565",
+            "governed_bytes_sha256": "440b98fd78107f6257114f39e66bb652ceffd19126a2301945aea963fccdec0d"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-eo",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "e7f759630d0bcc158f85f02fddbdedd29f9a595c4972c49dc4d1e8e7d747c2f4"
+          },
+          {
+            "source_id": "govinfo:eo14183-military",
+            "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-03/html/2025-02178.htm",
+            "raw_sha256": "85335571ec6b1e900e04e57cf0a1bc8f7653e5273083e4ae137a623c7f6fefc0",
+            "governed_bytes_sha256": "8443975ee3f4e0c87a8071b626942be4e97c793d62ed076a9667ecec5e870a58"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-eo",
+            "locator": "Completeownoffering/operative0:607read; followingattributeddebateunreviewed",
+            "passage": "AMENDMENT NO. 18 OFFERED BY MS . BOEBERT \nThe Acting CHAIR (Ms. K ING-HINDS). \nIt is now in order to consider amend-\nment No. 18 printed in part A of House \nReport 119–755. \nMs. BOEBERT. Madam Chair, I have \nan amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title V, add the \nfollowing new section: \nSEC. 5ll. CODIFICATION OF EXECUTIVE ORDER \n14183. \nExecutive Order 14183 (90 Fed Reg. 8757; re-\nlating to Prioritizing Military Excellence \nand Readiness) shall have the force and ef-\nfect of law. \n"
+          },
+          {
+            "source_id": "govinfo:eo14183-military",
+            "locator": "Complete datedEOread; incorporateddefinitions/instructions/currentlaw unreviewed",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/070de95f1f7ab48e85dc2a45683e49dd2067003e6abfafb14dfd14de68872aff.0000000.json",
+                  "sha256": "3c93e973b9eded77a2738f5913b46011af949ca982321e301abb01957268db4b",
+                  "start_character": 0,
+                  "end_character": 7217
+                }
+              ],
+              "utf8_sha256": "070de95f1f7ab48e85dc2a45683e49dd2067003e6abfafb14dfd14de68872aff",
+              "total_characters": 7217,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4ec79e9936264759e5119838593e52047c9d110a526463996a998cac1dd095a1",
+      "record": {
+        "action_id": "house:119:2:267",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete ownPartA19offering/operative including conformingamendments read; followingdebateunreviewed. Whole TRICAREcoverage/furnishment restriction retains three specified treatment exceptions, bill-definedpurpose/sex/gender terms and no-new-entitlement construction; deletes the specified1079sterilizationphrase. Genetic/biochemicaltesting within a clinical exception does not create a scientificresearch/technicalinfrastructure program. Proposed Infrastructure exclusion treats source definitions as legaltext, not independent medical/identity facts. The exceptionwording referring to suchminor is retained without broadening it or adjudicating individualcare. Clerk agreement is not enactment or actual denial; no clinicalbenefit/harm, patienteligibility or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:267",
+            "url": "https://clerk.house.gov/evs/2026/roll267.xml",
+            "raw_sha256": "f0bb5bcc20aa2e2bfebe91f6eeefdcff527d66dbfefd083dab2e4150fa16bcdf",
+            "governed_bytes_sha256": "04aa3ec0fa1d4d034fb0699826d6a359589cad847bc07456f2f1e462c0394fe8"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-mace-care",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "4f42084ac3648298a1d59a33eaa0892b8c290e0240aaba0e082964121fdcd72f"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-mace-care",
+            "locator": "Completeownoffering/operative0:5193read; followingattributeddebateunreviewed",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/fb2f983db1ad8176fb4cba9f990cc1fdf6cabb634768f786e389aa42059b3ea3.0000000.json",
+                  "sha256": "1aa1113c686a1fdc484f4192bf52225bc0d3261a73dbc3ff37e3f78dd09d761c",
+                  "start_character": 0,
+                  "end_character": 5193
+                }
+              ],
+              "utf8_sha256": "fb2f983db1ad8176fb4cba9f990cc1fdf6cabb634768f786e389aa42059b3ea3",
+              "total_characters": 5193,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "80ab76c0527120fa81d107b579dea1325745acf7c3c364ed68b9c495885d4fe6",
+      "record": {
+        "action_id": "house:119:2:268",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete ownPartA20operative read. Whole DoDEAathletics eligibility rule retains training/practice exception IFnofemale loses roster/practice/competition/otherbenefit, definedathleticprograms and attributedbill-definedsexterms. It is not an absolute ban on all sharedtraining or construction/equipment/research program; supports a proposed Infrastructure exclusion. Clerk agreement does not establish enactment, individualeligibility, fairness/health/safety outcome or motive. No independent medical/identity assertion is made from legislative definitions.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:268",
+            "url": "https://clerk.house.gov/evs/2026/roll268.xml",
+            "raw_sha256": "95b8f94d910210d0cc7b645989eb81a0f641dfc702de0ed67f31e4cf8fc611e4",
+            "governed_bytes_sha256": "5aae6f0f2369fcaf6b83f3b9ff749cd8f88eb3f618a8cb071941aa7f32fc4667"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "locator": "CompleteownPartA20offering/operative5226:7205read; otherofferings notused",
+            "passage": "AMENDMENT NO. 20 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 20 printed \nin part A of House Report 119–755. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle H of title V, add the \nfollowing new section: \nSEC. 5 ll. PROHIBITION ON MALE PARTICIPA-\nTION IN FEMALE SPORTS AT DODEA \nSCHOOLS. \n(a) IN GENERAL.—The Secretary of Defense \nshall ensure that no school operated by the \nDepartment of Defense Education Activity \npermits a person enrolled at such school \nwhose sex is male to participate in an ath-\nletic program or activity that is designated \nfor females. \n(b) R\nULE OF CONSTRUCTION.—Nothing in \nthis section shall be construed to prohibit \nany school operated by the Department of \nDefense Education Activity from permitting \nmales to train or practice with an athletic \nprogram or activity that is designated for fe-\nmales so long as no female is deprived of a \nroster spot on a team or sport, opportunity \nto participate in a practice or competition, \nor any other benefit that accompanies par-\nticipating in the athletic program or activ-\nity. \n(c) D\nEFINITIONS.—In this section: \n(1) The term ‘‘athletic programs and ac-\ntivities’’ includes all programs or activities \nthat are provided conditional upon participa-\ntion with any athletic team. \n(2) The term ‘‘female’’ refers to an indi-\nvidual who naturally has, had, will have, or \nwould have, but for a developmental or ge-\nnetic anomaly or historical accident, the re-\nproductive system that at some point pro-\nduces, transports, and uses eggs for fertiliza-\ntion. \n(3) The term ‘‘male’’ refers to an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and uses sperm for fertilization. \n\n\n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6fdb75ffe7d1dacfcf4c5868329007b1250171ac7e89061617ec6d110542cefa",
+      "record": {
+        "action_id": "house:119:2:269",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete ownPartA26operative read. Whole educationalchoice pilot is discretionaryMAY, supports listedprivate/faith/charter/homeschool/otherSecretarydetermined costs for definedeligibledependents of fulltimeactive-dutyUSmembers, evaluatesdemand/feasibility/scalability/readiness and terminates authority AFTER2030–2031schoolyear. It is familyeducationalassistance, not a new technical/physical/scientificinfrastructure program due to trainingaids or evaluationlanguage. Proposed Infrastructure exclusion preserves Clerk failure, incorporateddefinition/currentapplication limits and no guaranteedassistance/achievedreadiness/actualoutcome/enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:269",
+            "url": "https://clerk.house.gov/evs/2026/roll269.xml",
+            "raw_sha256": "3490f1e3d961fb3b2e6d4d3ceddd09ef2a25576175169919aacb8ddc2d0bb69e",
+            "governed_bytes_sha256": "0f5d05afe3f041ef1b721da0ed72f58e7d9019f0ce54e704195f00bc13c81712"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "locator": "CompleteownPartA26offering/operative7205:9483read; otherofferings notused",
+            "passage": "AMENDMENT NO. 26 OFFERED BY MR . MCDOWELL \nThe Acting CHAIR. It is now in order \nto consider amendment No. 26 printed \nin part A of House Report 119–755. \nMr. M\nCDOWELL. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle H of title V, add the \nfollowing new section: \nSEC. 5ll. PILOT PROGRAM ON EXPANDED EDU-\nCATIONAL CHOICE FOR FAMILIES \nOF FULL-TIME, ACTIVE-DUTY MEM-\nBERS OF THE ARMED FORCES IN \nTHE UNITED STATES. \n(a) IN GENERAL.—The Secretary of Defense \nmay carry out a pilot program under which \nthe Secretary provides financial assistance \nto a full-time, active duty member of the \nArmed Forces in the United States to sup-\nport the choices of the member for the edu-\ncation of a dependent of the member, includ-\ning financial assistance for costs of the de-\npendent associated with— \n(1) attending a private elementary or sec-\nondary school, a faith-based school, or a pub-\nlic charter school; \n(2) providing educational training aids to a \nhome-schooled student; or \n(3) other costs as determined appropriate \nby the Secretary. \n(b) P\nURPOSES.—The purposes of the pilot \nprogram under this section are— \n(1) to evaluate the demand, feasibility, and \nscalability of expanded educational choice \nfor dependents of members of the Armed \nForces; and \n(2) to assess the impact of the pilot pro-\ngram on military and family readiness. \n(c) D\nURATION OF PROGRAM.—The authority \nof the Secretary of Defense to carry out the \npilot program under this section shall termi-\nnate after the 2030–2031 school year. \n(d) D\nEFINITIONS.—In this section: \n(1) The term ‘‘dependent’’ means a minor \nindividual— \n(A) who has not completed secondary \nschool; and \n(B) who is the child, stepchild, adopted \nchild, ward, or spouse of a sponsor, or who is \na resident in the household of a sponsor who \nstands in loco parentis to such individual \nand who receives one-half or more of their \nsupport from such sponsor. \n(2) The term ‘‘home-schooled student’’ has \nthe meaning given such term in section \n2164(l)(2) of title 10, United States Code. \n(3) The term ‘‘United States’’ has the \nmeaning given such term in section 101(a)(1) \nof title 10, United States Code. \n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f8f9f9c213928e8cd72a9a1cf5f2ffc4e87907da5178be3f07631bd5fc18d8bc",
+      "record": {
+        "action_id": "house:119:2:270",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question is a failed motion to recommit6955. No motion body or insertedinstructions are interpreted. Non-counting procedural context is separate from whole bankingpassage and creates no component-specific policyposition or enactment.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:270",
+            "url": "https://clerk.house.gov/evs/2026/roll270.xml",
+            "raw_sha256": "5bff3cec1e5ba76c938d048a0f5c03ddf67cf2809aab6f67edabda04fc5ef3b4",
+            "governed_bytes_sha256": "85c703c42be5eae658f286acb0f18d66ac36dcb603e54963590d72e5499d5c70"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "34e36779927c0d5f1ce3559efe578125a380a77e47de058adae27c7a3e54af34",
+      "record": {
+        "action_id": "house:119:2:271",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole6955EHhas151645characters; onlyopening0:1800andclosing150845:151645read. Wholebankformation/regulatorytailoring/supervision/discount-window/data/reporting/otherfinancepackage cannot be reduced to a technicalworkflow/table-of-contentslabel or generic assumedfinanceexclusion. Fullinterior/as-amendedRCP119–35/materialbanking/offset/definition baselines and domainmapping remain pending. Closing425msurplusreductioneffectiveSeptember1,2036is not a completepackagecost/authorization/effectivedate estimate. No actualbankapproval, liquidity/technicaloutcome, realizedsavings or enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:271",
+            "url": "https://clerk.house.gov/evs/2026/roll271.xml",
+            "raw_sha256": "90b42027b27ec42fd7412d5c661ed2fafeb9f1beccc658f2419e81cd70bfc442",
+            "governed_bytes_sha256": "f7ddd4301b8e472f432292b977a62a24cc7f88bfa76817aa8c7515f30dd7e64c"
+          },
+          {
+            "source_id": "govinfo:hr6955eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6955eh/html/BILLS-119hr6955eh.htm",
+            "raw_sha256": "9c0cbdc9ff91c813e94dbd0f77b738004226ae6261b2fcd3bf60b9ad51ae8a03",
+            "governed_bytes_sha256": "7461114a026a43166f194c53851f9fd0dd01158b59991aeb9642789cdc50ffd3"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6955eh",
+            "locator": "Onlyopening0:1800of151645read;wholeinteriorunreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6955 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 6955 _______________________________________________________________________ AN ACT To make improvements to the Federal banking laws, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE; TABLE OF CONTENTS. (a) Short Title.--This Act may be cited as the ``Main Street Capital Access Act'' or the ``Main Street Act''. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title; table of contents. TITLE I--NEW BANK FORMATION AND LOCAL COMMUNITY ACCESS Sec. 101. Promoting New Bank Formation. Sec. 102. New Bank Application Numbers Knowledge. Sec. 103. CDFI Fund Transparency. Sec. 104. CDFI Bond Guarantee Improvement. TITLE II--TAILORING BANK REGULATION Sec. 201. Taking Account of Institutions with Low Operation Risk. Sec. 202. Small Bank Holding Company Relief. Sec. 203. Tailoring and Indexing Enhanced Regulations. Sec. 204. Community Bank Regulatory Tailoring. TITLE III--FAIR AND TRANSPARENT BANK SUPERVISION Sec. 301. Halting Uncertain Methods and Practices in Supervision. Sec. 302. Fair Audits and Inspections for Regulators' Exams. Sec. 303. Supervisory Modifications for Appropriate Risk-based Testing. Sec. 304. Financial Integrity and Regulation Management. TITLE IV--REGULATORY ACCOUNTABILITY AND TRANSPARENCY Sec. 401. FDIC Board Accountability. Sec. 402. Stop Agency Fiat Enforcement of Guidance. Sec. 403. Regulatory Efficiency, Verification, Itemization, and Enhanced Workflow. TITLE V--STRENGTHENING LOCAL BANK FUNDING Sec. 501. Bringing the Discount Window into the 21st Century. Se"
+          },
+          {
+            "source_id": "govinfo:hr6955eh",
+            "locator": "Onlyclosing150845:151645read",
+            "passage": "sue a report to the Committee on Financial Services of the House of Representatives and the Committee on Banking, Housing, and Urban Affairs of the Senate containing all findings and determinations made in carrying out the study required under paragraph (1). SEC. 803. DISCRETIONARY SURPLUS FUND. (a) In General.--The dollar amount specified under section 7(a)(3)(A) of the Federal Reserve Act (12 U.S.C. 289(a)(3)(A)) is reduced by $425,000,000. (b) Effective Date.--The amendment made by subsection (a) shall take effect on September 1, 2036. Passed the House of Representatives July 21, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 6955 _______________________________________________________________________ AN ACT To make improvements to the Federal banking laws, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread; wholeprintnotreviewed",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:262",
+      "original_source_object_sha256": "bdfffc715997011dcfd55ffa602c7cfba805a98c39f758d4b55f60692e5c081a"
+    },
+    {
+      "source_id": "clerk:119:2:263",
+      "original_source_object_sha256": "b5072a3982f0589567321d04854b30db3e1780996c3a94da7c4a28b01792f0aa"
+    },
+    {
+      "source_id": "clerk:119:2:264",
+      "original_source_object_sha256": "fc4bdf67488dc6ee6febae0758725353cf8e2e63fab0a3fa53de37d182b2cc5a"
+    },
+    {
+      "source_id": "clerk:119:2:265",
+      "original_source_object_sha256": "2f44367285a912463a37c94209c8c33d73266b654787f7ad78d4d286549679c6"
+    },
+    {
+      "source_id": "clerk:119:2:266",
+      "original_source_object_sha256": "64a0d12d082bfebff868c1cd3238e0f35223f2165a7dc8c119ee513d41de90bf"
+    },
+    {
+      "source_id": "clerk:119:2:267",
+      "original_source_object_sha256": "95c349a7658ee964a76d8298bfb7b9b6cb8908b6af44d68bce97d0029f9525f7"
+    },
+    {
+      "source_id": "clerk:119:2:268",
+      "original_source_object_sha256": "dd9a9896b93c941227952abc4d65c9f4fe53ffdc2bb1b4191a23b804b1e8ce95"
+    },
+    {
+      "source_id": "clerk:119:2:269",
+      "original_source_object_sha256": "40cfc0a2fa9a30422af10667eafaeda54dbce72763b918badcac9a2b422dc019"
+    },
+    {
+      "source_id": "clerk:119:2:270",
+      "original_source_object_sha256": "5c185f9ca69573852573f80e85374a7f33d34f3ced7cdf8750b9d3c78dce6388"
+    },
+    {
+      "source_id": "clerk:119:2:271",
+      "original_source_object_sha256": "6054c44d9b7c3dc4f98098110dd1b6d5339e370aa2cda85eea7b622aa6d909e0"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-eo",
+      "original_source_object_sha256": "fabfa38f83d3bf1c3c93d209933b7ad6be5b2acaa8f4f1e65d975aa250cae052"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-mace-care",
+      "original_source_object_sha256": "4e79515215215b845de023897d93bd321d6ba6c0392abde5671371996831994e"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+      "original_source_object_sha256": "33c964ca0076fbc3f6c16a90201218a107aba1e06186d438f09fb0a786d192f1"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+      "original_source_object_sha256": "83d17ddf325125730884297642307f23f9cfc64d8aadf4d1bb6cb569b1398085"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-ukraine",
+      "original_source_object_sha256": "080ddf74a3ca25b1be6eb05cb6fcdba540af8c5d705768359a8da1a22abcc524"
+    },
+    {
+      "source_id": "govinfo:eo14183-military",
+      "original_source_object_sha256": "28784bcbdc3c66a56090c0ef6de36623ae58259e3342efbe0c89a44d3b380954"
+    },
+    {
+      "source_id": "govinfo:hr6955eh",
+      "original_source_object_sha256": "3416a048af609f8cd2a9edf506775958143c94f4cce0760ba74f8ffc4dc18673"
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "original_source_object_sha256": "94957804622c76e7efae6b9e37d6c0ce932d4cd8ad66793e44c4c15cc1fb0ea1"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+      "governed_length": 46475,
+      "review_extent": "Only explicitly mapped own offering/operative units read; followingdebate/otherparts unreviewed",
+      "claim_extents": [
+        "CompleteownPartA9offering/operative41632:44227read; otherofferings notused",
+        "CompleteownPartA14offering/operative44227:46475read; otherofferings notused"
+      ]
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "governed_length": 10221,
+      "review_extent": "Complete captured source previouslyread; incorporatedcurrentlaw/individualapplication notcertified",
+      "claim_extents": [
+        "Complete governingrule previouslyread",
+        "Complete governingrule previouslyread",
+        "Complete governingrule previouslyread",
+        "Complete governingrule previouslyread",
+        "Complete governingrule previouslyread",
+        "Complete governingrule previouslyread",
+        "Complete governingrule previouslyread",
+        "Complete governingrule previouslyread",
+        "Complete governingrule previouslyread; wholeprintnotreviewed"
+      ]
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-ukraine",
+      "governed_length": 12749,
+      "review_extent": "Only explicitly mapped own offering/operative units read; followingdebate/otherparts unreviewed",
+      "claim_extents": [
+        "Completeownoffering/operative0:934read; followingattributeddebateunreviewed"
+      ]
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+      "governed_length": 9483,
+      "review_extent": "Complete captured source previouslyread; incorporatedcurrentlaw/individualapplication notcertified",
+      "claim_extents": [
+        "CompleteownPartA17offering/operative2135:5226read; otherofferings notused",
+        "CompleteownPartA20offering/operative5226:7205read; otherofferings notused",
+        "CompleteownPartA26offering/operative7205:9483read; otherofferings notused"
+      ]
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-eo",
+      "governed_length": 12111,
+      "review_extent": "Only explicitly mapped own offering/operative units read; followingdebate/otherparts unreviewed",
+      "claim_extents": [
+        "Completeownoffering/operative0:607read; followingattributeddebateunreviewed"
+      ]
+    },
+    {
+      "source_id": "govinfo:eo14183-military",
+      "governed_length": 7217,
+      "review_extent": "Complete captured source previouslyread; incorporatedcurrentlaw/individualapplication notcertified",
+      "claim_extents": [
+        "Complete datedEOread; incorporateddefinitions/instructions/currentlaw unreviewed"
+      ]
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-mace-care",
+      "governed_length": 16836,
+      "review_extent": "Only explicitly mapped own offering/operative units read; followingdebate/otherparts unreviewed",
+      "claim_extents": [
+        "Completeownoffering/operative0:5193read; followingattributeddebateunreviewed"
+      ]
+    },
+    {
+      "source_id": "govinfo:hr6955eh",
+      "governed_length": 151645,
+      "review_extent": "Onlyopening0:1800andclosinglast800read;wholeinteriorunreviewed",
+      "claim_extents": [
+        "Onlyopening0:1800of151645read;wholeinteriorunreviewed",
+        "Onlyclosing150845:151645read"
+      ]
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:262",
+        "evidence_unit": "complete_own_child_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:263",
+        "evidence_unit": "complete_own_child_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:264",
+        "evidence_unit": "complete_own_child_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:265",
+        "evidence_unit": "complete_own_child_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:266",
+        "evidence_unit": "complete_own_child_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:267",
+        "evidence_unit": "complete_own_child_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:268",
+        "evidence_unit": "complete_own_child_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:269",
+        "evidence_unit": "complete_own_child_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:270",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:271",
+        "evidence_unit": "partial_whole_package",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": null,
+    "inherited_focused_test_count": 132,
+    "inherited_focused_suite_head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+    "semantic_checks": 7,
+    "compiled_sha256": "88c3ad8a3e263f091566104a30bbd3353bd28d71817188550c68282840350c28"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/authoring.json",
+      "git_blob": "5cf58947d5fdf9dcaf5acf16e85b279f6e069807",
+      "git_bytes_sha256": "c43960d09c69edca2e9edff241626ffc9f23d3767123ba7413a00bfc58b7b847"
+    },
+    "actions": []
+  }
+}

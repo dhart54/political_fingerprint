@@ -1,0 +1,385 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 82,
+  "exact_committed_head": "7f73b837521a6853a9ff3d5c4291e34c908f6d89",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "7f73b837521a6853a9ff3d5c4291e34c908f6d89",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch82_20260916/membership_review.json",
+      "git_blob": "6fffd88fbde05a89be7fd55099d02d2ded8afbfa",
+      "git_bytes_sha256": "b2a8ae9117d2da28656153c55102d1932ee366f0d995464e28198441e53c4a86"
+    },
+    "sources": {
+      "head": "7f73b837521a6853a9ff3d5c4291e34c908f6d89",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch82_20260916/sources.json",
+      "git_blob": "e08ffb031481781e2e5f332ab84875e5247f741d",
+      "git_bytes_sha256": "edb95eb391c5304eaa14b21fd07a824f3992cbeec1a372bdff26a6fe9a3ea738"
+    },
+    "screening": {
+      "head": "7f73b837521a6853a9ff3d5c4291e34c908f6d89",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch82_20260916/screening_receipt.json",
+      "git_blob": "3af084ab5756e76f4cd922c19c152df3f3a59f40",
+      "git_bytes_sha256": "ca583a2fac4fd25a49d91357391128a9531aaf93ea51f85bfde14a8dc548dee6"
+    },
+    "screening_units": {
+      "head": "7f73b837521a6853a9ff3d5c4291e34c908f6d89",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch82_20260916/screening_units_receipt.json",
+      "git_blob": "78512a20b562b4c18c6442bd0ffee0f5588a1a40",
+      "git_bytes_sha256": "d0801695198ddd2758de3be9e8fc8c0c073b1bf04d6e19202c71e3705616ba2a"
+    }
+  },
+  "original_membership_review_sha256": "ff4fb4ccb83b2e02f383529be7bf482cea4c93067ce4f763f1a6b5744f540a45",
+  "new_screened_ids": [
+    "house:119:2:98",
+    "house:119:2:99",
+    "house:119:2:100",
+    "house:119:2:101",
+    "house:119:2:102"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "33513019e1758b221d78a9741f1cdfd1cc4efba9788b22f9ab00118262bb7b0a",
+      "record": {
+        "action_id": "house:119:2:98",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the ordering of the previous question on H.Res.1131. No substantive motion body is interpreted. This remains non-counting procedural context, separate from the underlying whole rule or DCprogram/commission passage, without component support/opposition.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:98",
+            "url": "https://clerk.house.gov/evs/2026/roll098.xml",
+            "raw_sha256": "f30c10389e2e3d89a0911c889c404b6b285d71fcf3c5112456d916adf63cf23e",
+            "governed_bytes_sha256": "29711c094df50bd0bf37267967a1b5341eed26573ba54947443048ed279718a6"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ae1090727da7e9cc9ce01ea5ad9c741bfd65a4bd227c82b9beb8ba8e26d796e4",
+      "record": {
+        "action_id": "house:119:2:99",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1131EH schedules8029DHSfunding without a deemed substitute, deems report amendments to1128resolution/preamble, and deems committee substitutes for5103DCprogram/commission and7084vessel restrictions. It also changes the date in707section8to the remainder of the119thCongress; the retained707section8in turn changes354section5, whose exact text excludes days from the legislative-day count for clause7RuleXIII. Preserve that nested legislative-day operator without assuming a different statutory clock. Whole incorporated versions/report modifications, vessel/DCand underlying rule baselines remain pending; do not reduce this whole choice to scheduling, enact an underlying appropriation or claim immediate passage of the amended policy resolution. No security, enforcement, physical-project or legislative-processing outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:99",
+            "url": "https://clerk.house.gov/evs/2026/roll099.xml",
+            "raw_sha256": "b8aafc09baa4433e4c00ff15f2072e4b26872088fcac1a3204f4d2bc04116319",
+            "governed_bytes_sha256": "9e589a26be1a5c691fd3f9860df40700f93fc62a663b32e4db23a219fe2e9b98"
+          },
+          {
+            "source_id": "govinfo:hres1131eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1131eh/html/BILLS-119hres1131eh.htm",
+            "raw_sha256": "1a61e78e398c13784adb1ec2e06b540220227defd96c4d1667caa76cc4dfca8d",
+            "governed_bytes_sha256": "f1634cfbdfae95cdf268588b07453ded0778abd1fe228e6056414a4740c8fd5b"
+          },
+          {
+            "source_id": "govinfo:hres707eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+            "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+            "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
+          },
+          {
+            "source_id": "govinfo:hres354eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres354eh/html/BILLS-119hres354eh.htm",
+            "raw_sha256": "510a0706f495ed81b8b6a5dd23debce02d68c4be7f42abc7ea9ce84d1cb47975",
+            "governed_bytes_sha256": "f3a7e01da2e874da7c351f86ed7dd7d5965f8d4f2573555a1e621c19f2601397"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1131eh",
+            "locator": "Complete governing1131EH read",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/4eecfe51821d967e6487b04109322f08f5acaabce8b619cf9fb91d2d74d17fc9.0000000.json",
+                  "sha256": "afbe13c6151751262642f89ddc6756f8ee436ecc46e57618649f0aa66018942c",
+                  "start_character": 0,
+                  "end_character": 4036
+                }
+              ],
+              "utf8_sha256": "4eecfe51821d967e6487b04109322f08f5acaabce8b619cf9fb91d2d74d17fc9",
+              "total_characters": 4036,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres707eh",
+            "locator": "Only exact section8at6839:6988read; remaining7661character707body not reviewed here",
+            "passage": "Sec. 8. Section 5 of House Resolution 354, agreed to April 29, 2025, is amended by striking ``September 30, 2025'' and inserting ``March 31, 2026''. "
+          },
+          {
+            "source_id": "govinfo:hres354eh",
+            "locator": "Only exact section5at3663:3839read; remaining3839character354body not reviewed here",
+            "passage": "Sec. 5. Each day during the period from April 29, 2025, through September 30, 2025, shall not constitute a legislative day for purposes of clause 7 of rule XIII. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a217c72232829163a8de04e6a3cea32fa2b8ddda17fbfab1ef723faf247cf7d5",
+      "record": {
+        "action_id": "house:119:2:100",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.5103. No substantive motion body is interpreted. This remains non-counting procedural context, separate from the underlying whole rule or DCprogram/commission passage, without component support/opposition.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:100",
+            "url": "https://clerk.house.gov/evs/2026/roll100.xml",
+            "raw_sha256": "d3a4a1a393b3753a4e75310f404076ff0ade9869a7c0e7ce6223c578eafc329a",
+            "governed_bytes_sha256": "19a28e34d7ed796e765fdba507fae664648d6665dd15e67fff526c26b63d4c57"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "626767885c0bde5b7871f198106bae17b236dc0e615bd7a62ed30b604281906d",
+      "record": {
+        "action_id": "house:119:2:101",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete5103EH directs an Interior-led DCpublic-space/facility/roads/transit cleanliness and practicable monument-restoration program, consultation and annual reports, and establishes a separate multiagency Commission for recommendations/review of immigration enforcement, forensic-lab accreditation, police support, licensing, detention, transit crime and deployment subjects. Commission coordination/operational-assistance requests remain to the extent permitted by law; recommendations are not automatic deportation, detention, permit or laboratory-accreditation orders. Program30daydevelopment, member/chair45dayselection,7daychartertransmittal and reporting are distinct, with both sections endingJan2,2029. Direct public-space/transport-maintenance and technical-lab relationships support an Infrastructure review candidate, but the existing whole Immigration action meaning/digest must be reused and its full source/legal/domain qualifications reconciled. Do not author a duplicate narrower public-works meaning or infer reduced crime, actual removals, beautification, spending, accreditation or enacted authority from House passage. Whole reuse/baseline/taxonomy review remains pending.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:101",
+            "url": "https://clerk.house.gov/evs/2026/roll101.xml",
+            "raw_sha256": "2c9f29bbb79e9d6f144806678551c1b3723527c92cc89714ad93f688cedbea00",
+            "governed_bytes_sha256": "fece81f591e31aef71ae04e0965ae24998a8318ac5477b5c323655cfea511d76"
+          },
+          {
+            "source_id": "govinfo:hr5103eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5103eh/html/BILLS-119hr5103eh.htm",
+            "raw_sha256": "e6e12c8a8f624d6a57306b23df8c3b9a9085d11b52ec1d6e78eb84e467f57380",
+            "governed_bytes_sha256": "d045cb29fbe022e1f70709dffe1c52d3fccfeee5278333914ce5ad6a6e8cf287"
+          },
+          {
+            "source_id": "govinfo:hres1131eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1131eh/html/BILLS-119hres1131eh.htm",
+            "raw_sha256": "1a61e78e398c13784adb1ec2e06b540220227defd96c4d1667caa76cc4dfca8d",
+            "governed_bytes_sha256": "f1634cfbdfae95cdf268588b07453ded0778abd1fe228e6056414a4740c8fd5b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5103eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/8c37f7e438cd9fbab91909c202c643a869476cf3aa08f0ce66ed99cfcff31507.0000000.json",
+                  "sha256": "1f778b2e8a429f89ae491e9fadd66e6bb8ff2b20eacf8ecede157956391fdc81",
+                  "start_character": 0,
+                  "end_character": 8454
+                }
+              ],
+              "utf8_sha256": "8c37f7e438cd9fbab91909c202c643a869476cf3aa08f0ce66ed99cfcff31507",
+              "total_characters": 8454,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1131eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/4eecfe51821d967e6487b04109322f08f5acaabce8b619cf9fb91d2d74d17fc9.0000000.json",
+                  "sha256": "afbe13c6151751262642f89ddc6756f8ee436ecc46e57618649f0aa66018942c",
+                  "start_character": 0,
+                  "end_character": 4036
+                }
+              ],
+              "utf8_sha256": "4eecfe51821d967e6487b04109322f08f5acaabce8b619cf9fb91d2d74d17fc9",
+              "total_characters": 4036,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "09c8d809c0ddf71f114a6c8701bcf6323a2d5b95a57c69339e2eb585282d2f14",
+      "record": {
+        "action_id": "house:119:2:102",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete amended1128EH expresses House views on full DHSfunding/resources, coordination/risk during a funding lapse and gratitude to employees. It does not itself appropriate money, order an agency action or pass a technical-infrastructure program. Its workforce/pay/incident/cyberattack/threat and causal assertions remain attributed resolution statements, not independently verified facts or this candidate’s motive findings. Exact agreement as amended is non-counting expressive context; no actor’s individual intent, current readiness, funding, security or infrastructure outcome is inferred. This is separate from prior rule-deemed amendments and later8029passage.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:102",
+            "url": "https://clerk.house.gov/evs/2026/roll102.xml",
+            "raw_sha256": "65aaa51fb2731def88503a5b7bd0f02c3a801c7e45c080ce5d38e81d199b17f2",
+            "governed_bytes_sha256": "4830ae63c7aeb75789426bc732fd8742e9cbcb3f90b0a3be241aa40660a53d24"
+          },
+          {
+            "source_id": "govinfo:hres1128eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1128eh/html/BILLS-119hres1128eh.htm",
+            "raw_sha256": "5d0fd2a9738ef669f290ede6cbe89f33ca97ed7a2ca54d393254d9a8a3ee48d5",
+            "governed_bytes_sha256": "cbec9646197cb51a0cc842601c1d92b10608c65e52b24931231d21b983781d2f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1128eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/54afb9fe61c6ac96c3758da9029345f9f80718793cadca05d899122030156be5.0000000.json",
+                  "sha256": "5103f24fe3e39254513398e2e996a726e7cb121e90ed73659242aa67a62446df",
+                  "start_character": 0,
+                  "end_character": 5860
+                }
+              ],
+              "utf8_sha256": "54afb9fe61c6ac96c3758da9029345f9f80718793cadca05d899122030156be5",
+              "total_characters": 5860,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:100",
+      "original_source_object_sha256": "a9ae853693038586c9e1422150aefeb8259c756bf1bd54e22517ad238a4f204a"
+    },
+    {
+      "source_id": "clerk:119:2:101",
+      "original_source_object_sha256": "bbf76ef1e9bf32c414bd121ec6e5f949954731e319f930305405a92ab87d45a5"
+    },
+    {
+      "source_id": "clerk:119:2:102",
+      "original_source_object_sha256": "ad680d0420a305fbb0076a775a929238570ca0ee870fecdd92f70117352c0e10"
+    },
+    {
+      "source_id": "clerk:119:2:98",
+      "original_source_object_sha256": "67a5819c40fa39dfd3e1a351c00b6fe2314ebfc8018f14ac16d4f84fb40efc49"
+    },
+    {
+      "source_id": "clerk:119:2:99",
+      "original_source_object_sha256": "d411135de8ec3c9bcc373ad28fe18a9c94eaa4b1b5bf866b74fdbb19875ffabf"
+    },
+    {
+      "source_id": "govinfo:hr5103eh",
+      "original_source_object_sha256": "a956d04b64bc0af62d8d077e746d399a5aa875de8e28427101953271a9f6d1ad"
+    },
+    {
+      "source_id": "govinfo:hres1128eh",
+      "original_source_object_sha256": "e33d735d6284553d4a27d93042ee9a4b4a20c91c1c87a60f123cf1f986b683dc"
+    },
+    {
+      "source_id": "govinfo:hres1131eh",
+      "original_source_object_sha256": "49e1841725c7efd779893f7ab775c854bbb441c044a53d4d310aacfe3b43ce14"
+    },
+    {
+      "source_id": "govinfo:hres354eh",
+      "original_source_object_sha256": "41b75bfc210f88d54f8d70cca86980d5ae74ceee6792647f1ed17f8ad547a79a"
+    },
+    {
+      "source_id": "govinfo:hres707eh",
+      "original_source_object_sha256": "4547aaf1650dd150578194db4f7c0f13c4f7b54f78d25de894b4797dc28a83dd"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres1131eh",
+      "governed_length": 4036,
+      "review_extent": "Complete captured own rule/bill/expression read; incorporated versions/current authority and whole shared-meaning reuse not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:hr5103eh",
+      "governed_length": 8454,
+      "review_extent": "Complete captured own rule/bill/expression read; incorporated versions/current authority and whole shared-meaning reuse not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:hres1128eh",
+      "governed_length": 5860,
+      "review_extent": "Complete captured own rule/bill/expression read; incorporated versions/current authority and whole shared-meaning reuse not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:hres707eh",
+      "governed_length": 7661,
+      "review_extent": "Only section8at6839:6988read"
+    },
+    {
+      "source_id": "govinfo:hres354eh",
+      "governed_length": 3839,
+      "review_extent": "Only section5at3663:3839read"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "existing_shared_action_meaning_identified_for_later_reuse": 1,
+    "units": [
+      {
+        "action_id": "house:119:2:98",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:99",
+        "evidence_unit": "whole_rule_and_exact_nested_sections_with_unreviewed_versions",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:100",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:101",
+        "evidence_unit": "complete_DCbill_pending_existing_whole_shared_reuse",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:102",
+        "evidence_unit": "complete_amended_House_policy_expression",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}

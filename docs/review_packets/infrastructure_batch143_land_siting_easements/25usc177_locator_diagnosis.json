@@ -1,0 +1,24 @@
+{
+  "failed_key": "25usc177",
+  "failed_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title25/html/USCODE-2024-title25-chap4-sec177.htm",
+  "raw_sha256": "ab214ce9f7a706cc4ee93703502f950222090c2547e47fafd75a299545919743",
+  "classification": "publisher_soft_404_wrong_chapter_locator; not access denial",
+  "http_status": 200,
+  "body_saved_before_identity_check": true,
+  "identity_accepted": false,
+  "failed_URI_requested_again": false,
+  "request_access_marker": false,
+  "access_denied_marker": false,
+  "bounded_followup": "Publisher search identifies section177 in chapter5 (including publisher2010granule and2024titlePDF), rather than requestedchapter4. One corrected same-publisher2024chapter5section request is proposed; not a permission bypass or denied-route alternate.",
+  "publisher_locator_urls": [
+    "https://www.govinfo.gov/content/pkg/USCODE-2010-title25/pdf/USCODE-2010-title25-chap5-sec177.pdf",
+    "https://www.govinfo.gov/content/pkg/USCODE-2024-title25/pdf/USCODE-2024-title25.pdf"
+  ],
+  "protected_25US1603_route_used": false,
+  "canonical_state_changed": false,
+  "final_url": "https://www.govinfo.gov/error",
+  "redirect_observed": true,
+  "intermediate_redirect_status_and_hop_count_retained": false,
+  "capture_attempt_definition": "One high-level urllib request invocation per capture. Standard publisher redirect to/error was followed; final response is retained. The18capture count is not a claim of18total HTTP transactions.",
+  "original_failed_locator_response_retained": "Final redirected publisher error body only; intermediate redirect response bytes/status were not retained."
+}

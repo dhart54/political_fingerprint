@@ -1,0 +1,139 @@
+{
+  "head": "5f050bbda177c909a1971a6103ccfd1b7fe0af3d",
+  "base": "21142cef8702aca5e9ea4e90219fa2a5842ebc51",
+  "findings": [],
+  "source_authentication": [
+    {
+      "source_id": "govinfo:hr4371rh",
+      "pointer": "/sources/1042",
+      "canonical_sha256": "746c79b9d7bb2ccb95ee984360561bf8fabeec782295832721795cc28f344672",
+      "characters": 12407,
+      "export_bytes": 12794
+    },
+    {
+      "source_id": "govinfo:34usc20911-2024-offense-definitions",
+      "pointer": "/sources/1049",
+      "canonical_sha256": "28be82e39beedd6606edfdacd9011c91abdf5c926937caf5a90cde1686c0034e",
+      "characters": 2970,
+      "export_bytes": 3525
+    },
+    {
+      "source_id": "govinfo:22usc7102-2024-severe-trafficking",
+      "pointer": "/sources/1050",
+      "canonical_sha256": "e6db2f9ac539a90773e0e37d52ccaa208113a5206f1350f82d57aa657d5dc19d",
+      "characters": 523,
+      "export_bytes": 1036
+    },
+    {
+      "source_id": "govinfo:34usc12291-2024-domestic-violence",
+      "pointer": "/sources/1051",
+      "canonical_sha256": "181a41cae7c9fbadff94d877b7be8fa1a5abf02f2f5436d080ed05d236de3664",
+      "characters": 1030,
+      "export_bytes": 1566
+    }
+  ],
+  "operative_body": {
+    "RH_start": 1261,
+    "RH_end": 11649,
+    "RH_total": 12407,
+    "EH_start": 541,
+    "EH_end": 10929,
+    "EH_total": 11304,
+    "characters": 10388,
+    "exact_governed_body_equal": true
+  },
+  "preserved_other_records": 675,
+  "preserved_old_sources": 1608,
+  "total_sources": 1612,
+  "preserved_meanings": 70,
+  "counts": {
+    "procedural_context": 199,
+    "exact_action_ineligible": 120,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 262,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "generated_artifacts": {
+    "compiled_ir": {
+      "equal": true,
+      "differences": 0,
+      "leaf_fields": {}
+    },
+    "compiler_input": {
+      "equal": false,
+      "differences": 70,
+      "leaf_fields": {
+        "action_meaning_ref": 70
+      }
+    },
+    "shared_action_core": {
+      "equal": false,
+      "differences": 141,
+      "leaf_fields": {
+        "corpus_sha256": 1,
+        "action_meaning_ref": 70,
+        "action_core_sha256": 70
+      }
+    },
+    "shared_issue_mapping": {
+      "equal": false,
+      "differences": 3,
+      "leaf_fields": {
+        "artifact_id": 1,
+        "0": 1,
+        "mapping_sha256": 1
+      }
+    },
+    "member_projections": {
+      "equal": false,
+      "differences": 142,
+      "leaf_fields": {
+        "action_core_sha256": 140,
+        "projection_sha256": 2
+      }
+    },
+    "readable_candidates": {
+      "equal": false,
+      "differences": 134,
+      "leaf_fields": {
+        "boundary": 2,
+        "shared_meaning_sha256": 132
+      }
+    },
+    "reproducibility_proof": {
+      "equal": false,
+      "differences": 74,
+      "leaf_fields": {
+        "source_capture_sha256": 1,
+        "input_sha256": 1,
+        "core_sha256": 1,
+        "shared_sha256": 70,
+        "readable_sha256": 1
+      }
+    }
+  },
+  "prior_receipts_preserved": true,
+  "snapshot_files": 935,
+  "snapshot_bytes": 310730970,
+  "preexisting_modified_paths": [
+    "M\tbackend/tests/test_infrastructure_discovery_delta.py",
+    "M\tdocs/plans/infrastructure_remaining_discovery_screening.md",
+    "M\tdocs/review_packets/infrastructure_remaining_discovery_candidate_screening.md",
+    "M\tscripts/validate_infrastructure_discovery_delta.py"
+  ],
+  "test": {
+    "head": "5f050bbda177c909a1971a6103ccfd1b7fe0af3d",
+    "snapshot": "C:\\Users\\Dylan\\.codex\\visualizations\\2026\\10\\21\\01a15ebb-b550-7823-a734-9e1eefea290c\\infra-review-128-129\\snapshot131",
+    "shim": "os.linesep=LF on Windows; lazy pinned Git blob materialization only",
+    "tests": [
+      "test_hr4371_committee_and_offense_context_preserves_exceptions_age_and_conviction_scopes"
+    ],
+    "ran": 1,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 2.7319105000351556,
+    "lazy_files": []
+  }
+}

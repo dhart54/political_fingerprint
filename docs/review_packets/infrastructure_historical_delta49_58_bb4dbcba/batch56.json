@@ -1,0 +1,962 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 56,
+  "exact_committed_head": "4a0db2792262d78f23867100ab14876a33435bc2",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "4a0db2792262d78f23867100ab14876a33435bc2",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch56_20260916/membership_review.json",
+      "git_blob": "405c99fa94a0f25c915baa9663dd4b9e3fb22b54",
+      "git_bytes_sha256": "1f7021340371e4be41e54d0dd16ca170a9e2122a98d5e6c0539e6570ca71c472"
+    },
+    "sources": {
+      "head": "4a0db2792262d78f23867100ab14876a33435bc2",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch56_20260916/sources.json",
+      "git_blob": "887c5dc00955a5c515a053ab80af0fb2b539591e",
+      "git_bytes_sha256": "4cd207c95244de1b348f900b19c1d248e1a50bac882552f2df4824dde42778f5"
+    },
+    "screening": {
+      "head": "4a0db2792262d78f23867100ab14876a33435bc2",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch56_20260916/screening_receipt.json",
+      "git_blob": "c0f0b8bf6199a77d72546a894be28648b02b233e",
+      "git_bytes_sha256": "cb49eac01f6bcfefc91576643201fa9601ec57d9898bca8646317837c2a853fd"
+    },
+    "screening_units": {
+      "head": "4a0db2792262d78f23867100ab14876a33435bc2",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch56_20260916/screening_units_receipt.json",
+      "git_blob": "82d159de11faafdb08a9905a112601178186a49c",
+      "git_bytes_sha256": "a22445a8fcd7c5c0791b5c884a815079c6a0777ca83dec54ed6cc075ed5a0b64"
+    }
+  },
+  "cumulative_membership_review_sha256": "8b3c1400c0d4f64d5ad4596a023fdd238a83892fa404027c4f6b15035d112f0f",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/4c33f9177e97ce7d63de7de01564c88e72573ba1d7a16f9c723017a1469ab800.0000000.json",
+        "sha256": "93405aaf2927320c6fa92868b39b406a65616abbaa4f70d4cf0ccdf5432e0bfe",
+        "start_character": 0,
+        "end_character": 32856
+      }
+    ],
+    "utf8_sha256": "4c33f9177e97ce7d63de7de01564c88e72573ba1d7a16f9c723017a1469ab800",
+    "total_characters": 32856,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/4702a8266cfa0ab713b2caca00e49adcb129b497abc20c42837bb666f5157e70.0000000.json",
+        "sha256": "36d31e43f1cb12ab4421bce2f51a44af2d00f3fec3a00f97c33832822027fe54",
+        "start_character": 0,
+        "end_character": 87674
+      }
+    ],
+    "utf8_sha256": "4702a8266cfa0ab713b2caca00e49adcb129b497abc20c42837bb666f5157e70",
+    "total_characters": 87674,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:320",
+    "house:119:1:321",
+    "house:119:1:322",
+    "house:119:1:323",
+    "house:119:1:324"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:s1071eah-immigration-complete",
+      "governed_length": 3491744,
+      "review_extent": "Only0:2600andlast1000of3,491,744-character House EAH read"
+    },
+    {
+      "source_id": "govinfo:hres936eh",
+      "governed_length": 10473,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; not a whole current integrated-law or unreviewed external-definition certificate"
+    },
+    {
+      "source_id": "congressional-record:s1071-passage320-native243",
+      "governed_length": 35454,
+      "review_extent": "Previously partial floor context; own passage25506:25964 and outcome30552:30683 now read; other member lists and explanations not treated as whole review"
+    },
+    {
+      "source_id": "govinfo:hr3628eh",
+      "governed_length": 6556,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; not a whole current integrated-law or unreviewed external-definition certificate"
+    },
+    {
+      "source_id": "govinfo:16usc-2621abc-2024-195",
+      "governed_length": 3123,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; not a whole current integrated-law or unreviewed external-definition certificate"
+    },
+    {
+      "source_id": "govinfo:16usc2622-2024-operative",
+      "governed_length": 13607,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; not a whole current integrated-law or unreviewed external-definition certificate"
+    },
+    {
+      "source_id": "govinfo:16usc2634-2024-operative",
+      "governed_length": 2279,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; not a whole current integrated-law or unreviewed external-definition certificate"
+    },
+    {
+      "source_id": "govinfo:16usc2602-2024-operative",
+      "governed_length": 4959,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; not a whole current integrated-law or unreviewed external-definition certificate"
+    },
+    {
+      "source_id": "govinfo:hr3638eh",
+      "governed_length": 5795,
+      "review_extent": "Complete retained bill/rule or selected dated statutory unit read; not a whole current integrated-law or unreviewed external-definition certificate"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_final_bills_read": 2,
+    "partial_whole_package_sources": 1,
+    "complete_selected_material_statutory_units_read": 4,
+    "complete_rule_texts_read": 1,
+    "exact_Clerk_procedural_questions_read": 2,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:320",
+        "evidence_unit": "partial_whole_EAH_and_own_passage_with_remaining_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:321",
+        "evidence_unit": "complete_bill_or_exact_noncounting_question_with_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:322",
+        "evidence_unit": "complete_bill_or_exact_noncounting_question_with_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:323",
+        "evidence_unit": "complete_bill_or_exact_noncounting_question_with_material_baseline_limits",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:1:324",
+        "evidence_unit": "complete_bill_or_exact_noncounting_question_with_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "b296e2312df6f4b219d61528b3907066f1ce9fbe4370c7d19129759cff8eb410",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:320",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Exact passage is the House-amended S.1071 package. Retained December 10 EAH is a 3,491,744-character strike-all amendment organized into eight defense, military-construction, energy, funding-table, State, intelligence, Coast Guard and other-matters divisions. Only its opening 2,600 and last 1,000 characters were reviewed here. Section 8806 still addresses the cemetery matter, so its older title is neither the whole package nor proof that this matter disappeared. H.Res.936 deems RCP119-16 adopted; whole print/floor/EAH reconciliation, explanatory material and material program/legal/authorization baselines remain pending. Recorded passage 312–112 with nine Not Voting is distinct from commit motion 319 and September H.R.3838. No selected provision supplies the whole meaning, actual funding, enactment, project or service outcome, or motive.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:320",
+            "url": "https://clerk.house.gov/evs/2025/roll320.xml",
+            "raw_sha256": "899d6da1204573bd6c924a898841ec0baa316642f6e459013a3543ddba501d08",
+            "governed_bytes_sha256": "24631bd2f22181024a3922a389acd74f2349a6b2689d7f2e7e5d2e452206e12c"
+          },
+          {
+            "source_id": "govinfo:s1071eah-immigration-complete",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1071eah/html/BILLS-119s1071eah.htm",
+            "raw_sha256": "2d75c9445d4bae496abe7ffb9fb3bcafaed034008f9f7e8f4f7d2801029e9898",
+            "governed_bytes_sha256": "098381eb495526b276796c88fb64a96282a480e0229d76320e8f138a479e9607"
+          },
+          {
+            "source_id": "govinfo:hres936eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+            "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+            "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
+          },
+          {
+            "source_id": "congressional-record:s1071-passage320-native243",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-house.pdf",
+            "raw_sha256": "3c3387e5d97d8ffb1880958547f6d73279b5cec9e0d49f1ed1f60e3f1beb4a62",
+            "governed_bytes_sha256": "80012b600a8289f457f0925cd63242089234478924f0938618c6179a2056f96d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s1071eah-immigration-complete",
+            "locator": "Opening0:2600only; whole3,491,744-character EAH not reviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S. 1071 Engrossed Amendment House (EAH)] <DOC> In the House of Representatives, U. S., December 10, 2025. Resolved, That the bill from the Senate (S. 1071) entitled ``An Act to require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes.'', do pass with the following AMENDMENT: Strike out all after the enacting clause and insert: SECTION 1. SHORT TITLE. This Act may be cited as the ``National Defense Authorization Act for Fiscal Year 2026''. SEC. 2. ORGANIZATION OF ACT INTO DIVISIONS; TABLE OF CONTENTS. (a) Divisions.--This Act is organized into 8 divisions as follows: (1) Division A--Department of Defense Authorizations. (2) Division B--Military Construction Authorizations. (3) Division C--Department of Energy National Security Authorizations and Other Authorizations. (4) Division D--Funding Tables. (5) Division E--Department of State Authorization Act for Fiscal Year 2026. (6) Division F--Intelligence Authorization Act for Fiscal Year 2026. (7) Division G--Coast Guard Authorization Act of 2025. (8) Division H--Other Matters. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title. Sec. 2. Organization of Act into divisions; table of contents. Sec. 3. Definitions. Sec. 4. Budgetary effects of this Act. Sec. 5. Joint explanatory statement. DIVISION A--DEPARTMENT OF DEFENSE AUTHORIZATIONS TITLE I--PROCUREMENT Subtitle A--Authorization of Appropriations Sec. 101. Authorization of appropriations. Subtitle B--Army Programs Sec. 111. Strategy for Army tactical wheeled vehicle program. Sec. 112. Multiyear procurement authority for UH-60 Blackhawk aircraft. Sec. 113. Authorization to initiate early production of future long- range assault aircraft. Sec. 114. Limitation on availability of funds for the Next Generation Command and Control portfolio of capabilities of the Army. Subtitle C--Navy Programs Sec. 121. Modification to requirements for recapitalization of tactical fighter aircraft of the Navy Reserve. Sec. 122. Modification to limitations on Navy medium and large unmanned surface vessels. Sec. 123. Recapitalization of Navy waterborne security barriers; modification of prohibition on availability of funds for legacy waterborne security barriers. Sec. 124. Contract authority for Ford-class aircraft carrier program. Sec. 125. Contract authority for Columbia-class submarine program. Sec. 126. Authority for advance procurement of certain compone"
+          },
+          {
+            "source_id": "govinfo:s1071eah-immigration-complete",
+            "locator": "Last1000characters only, including retained8806",
+            "passage": "nings given those terms in section 1701 of title 38, United States Code. SEC. 8806. DISINTERMENT OF REMAINS OF FERNANDO V. COTA FROM FORT SAM HOUSTON NATIONAL CEMETERY, TEXAS. (a) Disinterment.--Not later than one year after the date of the enactment of this Act, the Secretary of Veterans Affairs shall disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas. (b) Notification.--The Secretary of Veterans Affairs may not carry out subsection (a) until after notifying the next of kin of Fernando V. Cota. (c) Disposition.--After carrying out subsection (a), the Secretary of Veterans Affairs shall-- (1) relinquish the remains to the next of kin described in subsection (b); or (2) if no such next of kin responds to the notification under subsection (b), arrange for disposition of the remains as the Secretary determines appropriate. Attest: Clerk. 119th CONGRESS 1st Session S. 1071 _______________________________________________________________________ AMENDMENT"
+          },
+          {
+            "source_id": "govinfo:hres936eh",
+            "locator": "Complete exact rule",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a.0000000.json",
+                  "sha256": "44d65bb7a0728ed9e3a2d8654ad87e239f27f4d1b29b3fcd1e8a0456c2a9f7ec",
+                  "start_character": 0,
+                  "end_character": 10473
+                }
+              ],
+              "utf8_sha256": "0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a",
+              "total_characters": 10473,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "congressional-record:s1071-passage320-native243",
+            "locator": "Own passage question25506:25964, before member lists",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMr. SMITH of Washington. Mr. \nSpeaker, on that I demand the yeas \nand nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. This \nwill be a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 312, nays \n112, not voting 9, as follows: \n[Roll No. 320]"
+          },
+          {
+            "source_id": "congressional-record:s1071-passage320-native243",
+            "locator": "Own final passage outcome30552:30683; personal explanations not substituted",
+            "passage": "So the bill was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c5c95adbb095e946f9e6632f56f29329b586f8673b77ca767b7b7cc393d41346",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:321",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The December 10 Clerk question discharges H.Res.432 from committee. It does not itself adopt that resolution, pass H.R.2550 or nullify an executive order. The retained H.Res.432 EH is dated December 11 and provides a later consideration and conditional transmission framework; it is not substituted as an operative December 10 adoption. This remains non-counting procedural context. No labor-policy support, service-status change, actual funding or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:321",
+            "url": "https://clerk.house.gov/evs/2025/roll321.xml",
+            "raw_sha256": "3567f4c5c54022c123cd3879fd9be9512d639fe88141c336fb9d1fdae6445142",
+            "governed_bytes_sha256": "15179efb4e6eac2303418b1102b969de47c9e3c5c2590abd445a81cd712bde55"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f2fd6526e02795acbccfd5940a2036afb80903d331eeaba45f8a795715aa688f",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:322",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question tables H.Res.939 and passed. This is a non-counting chamber disposition, not adoption of impeachment allegations, a finding of wrongdoing, removal from office or a direct Infrastructure policy choice. The underlying resolution has not been substantively interpreted here, and its descriptive title is not independent evidence of guilt, motive or character.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:322",
+            "url": "https://clerk.house.gov/evs/2025/roll322.xml",
+            "raw_sha256": "381e34c1aefd2bf4177c04c953d8534cd0c5f92633682cd9b471e50dfbfea7a6",
+            "governed_bytes_sha256": "c2b0f32ca13a941332ed71142ca31cccc45e6a8909c1bab48ebc25a49fb85b62"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f4831470de9ed9e720057633c36f807852c8ff8565fb1e77d5eef8fa4427312e",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:323",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete H.R.3628 EH and retained material consideration, timing, prior-proceeding and definition baselines support a whole electricity-infrastructure planning candidate. State consideration/determination is not automatic implementation; all capability prongs, contractual-supply alternative, deadlines, prior-action qualifications and preimplementation GAO report remain. No fuel, construction, appropriation or actual performance outcome is inferred. Membership remains an UNACCEPTED candidate proposal pending independent whole-mandate review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:323",
+            "url": "https://clerk.house.gov/evs/2025/roll323.xml",
+            "raw_sha256": "b6521066eefbbd248e5b547250033f520c34b3ae8cbb7eee0e471a98d46adeb0",
+            "governed_bytes_sha256": "9d6929cffb8b70e6f5a77ad179d707072a7a817ac1cf58d4d5618e241b5971c0"
+          },
+          {
+            "source_id": "govinfo:hr3628eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3628eh/html/BILLS-119hr3628eh.htm",
+            "raw_sha256": "420455f4807299aa1661ab2f2ac8ec0886ade9639602c9419ab81e3cae158048",
+            "governed_bytes_sha256": "2e3284f65f574ce10f7353ca3f089adb9fc42787a0641efc465e64cd74f47856"
+          },
+          {
+            "source_id": "govinfo:16usc-2621abc-2024-195",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46.htm",
+            "raw_sha256": "eb884b57cb95ef0f1243580ad369f5bee9a322a8f3d73ba484125b29f63c87f5",
+            "governed_bytes_sha256": "a9a58cb09faa6a9d35f1723f5cdbbe25f37ee45629b7b5130bc43eb684df1c55"
+          },
+          {
+            "source_id": "govinfo:16usc2622-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-subchapII-sec2622.htm",
+            "raw_sha256": "8912ffc5812c9c592848cc94b6676a039d9c938f017b6080cd7a204557bbd78b",
+            "governed_bytes_sha256": "2a1ea4452e19b307e8adb91d428f554e512fdeb9440eba304fdf0229d28c141d"
+          },
+          {
+            "source_id": "govinfo:16usc2634-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-subchapIII-sec2634.htm",
+            "raw_sha256": "1d0fdfa4ba5d5de6daefba8ff9331e40e365cc9373cf04abf237417830554540",
+            "governed_bytes_sha256": "e6323963d628427f4c2d00127dfd2a2509b163053669e65b0a3c0a431522ba54"
+          },
+          {
+            "source_id": "govinfo:16usc2602-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-sec2602.htm",
+            "raw_sha256": "cd40ebfd8f9bd6dfce559106c847303e0a399265c14aba971e0c7ac9f4592e64",
+            "governed_bytes_sha256": "263f067d0650f6f8c1f477cbdc02fd70c4af3920e2180a0a329d37dea504c221"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3628eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/4f5c9efb6c2e31d60c0df016ca43e2b20ef46f877f11e73ac36a25436a66166c.0000000.json",
+                  "sha256": "dd9ed7c1d5838e2fa62404007e515c214f9ef1460a646b8265213b987b84a017",
+                  "start_character": 0,
+                  "end_character": 6556
+                }
+              ],
+              "utf8_sha256": "4f5c9efb6c2e31d60c0df016ca43e2b20ef46f877f11e73ac36a25436a66166c",
+              "total_characters": 6556,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:16usc-2621abc-2024-195",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2621. Consideration and determination respecting certain ratemaking standards (a) Consideration and determination Each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated electric utility shall consider each standard established by subsection (d) and make a determination concerning whether or not it is appropriate to implement such standard to carry out the purposes of this chapter. For purposes of such consideration and determination in accordance with subsections (b) and (c), and for purposes of any review of such consideration and determination in any court in accordance with section 2633 of this title, the purposes of this chapter supple ment otherwise applicable State law. Nothing in this subsection prohibits any State regulatory authority or nonregulated electric utility from making any determination that it is not appropriate to implement any such standard, pursuant to its authority under otherwise applicable State law. (b) Procedural requirements for consideration and determination (1) The consideration referred to in subsection (a) shall be made after public notice and hearing. The determination referred to in subsection (a) shall be— (A) in writing, (B) based upon findings included in such determination and upon the evidence presented at the hearing, and (C) available to the public. (2) Except as otherwise provided in paragraph (1), in the second sentence of section 2622(a) of this title, and in sections 2631 and 2632 of this title, the procedures for the consideration and determination referred to in subsection (a) shall be those established by the State regulatory authority or the nonregulated electric utility. (c) Implementation (1) The State regulatory authority (with respect to each electric utility for which it has ratemaking authority) or nonregulated electric utility may, to the extent consistent with otherwise applicable State law— (A) implement any such standard determined under subsection (a) to be appropriate to carry out the purposes of this chapter, or (B) decline to implement any such standard. (2) If a State regulatory authority (with respect to each electric utility for which it has ratemaking authority) or nonregulated electric utility declines to implement any standard established by subsection (d) which is determined under subsection (a) to be appropriate to carry out the purposes of this chapter, such authority or nonregulated electric utility shall state in writing the reasons therefor. Such statement of reasons shall be available to the public. (3) If a State regulatory authority implements a standard established by subsection (d)(7) or (8), such authority shall— (A) consider the impact that implementation of such standard would have on small businesses engaged in the design, sale, supply, installation or servicing of energy conservation, energy efficiency or other demand side management measures, and (B) implement such standard so as to assure that utility actions would not provide such utilities with unfair competitive advantages over such small businesses. "
+          },
+          {
+            "source_id": "govinfo:16usc2622-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0c5b2e19d620277545dad9023d23b2673596a7c1adf65ce409c9c85074f4c0c8.0000000.json",
+                  "sha256": "8a46c062bca3d615f5d37b9a35cb2040e25bf3d0850811258275a8c66d023ab2",
+                  "start_character": 0,
+                  "end_character": 13607
+                }
+              ],
+              "utf8_sha256": "0c5b2e19d620277545dad9023d23b2673596a7c1adf65ce409c9c85074f4c0c8",
+              "total_characters": 13607,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:16usc2634-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2634. Prior and pending proceedings For purposes of subchapters I and II, and this subchapter, proceedings commenced by State regulatory authorities (with respect to electric utilities for which it has ratemaking authority) and nonregulated electric utilities before November 9, 1978, and actions taken before such date in such proceedings shall be treated as complying with the requirements of subchapters I and II, and this subchapter if such proceedings and actions substantially conform to such requirements. For purposes of subchapters I and II, and this subchapter, any such proceeding or action commenced before November 9, 1978, but not completed before such date, shall comply with the requirements of subchapters I and II, and this subchapter, to the maximum extent practicable, with respect to so much of such proceeding or action as takes place after such date, except as otherwise provided in section 2631(c) of this title. In the case of each standard established by paragraphs (11) through (13) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standard established by paragraph (14) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of each standard established by paragraph (15) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standard established by paragraph (20) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to November 15, 2021. In the case of the standard established by paragraph (21) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to November 15, 2021. (Pub. L. 95–617, title I, §124, Nov. 9, 1978, 92 Stat. 3131; Pub. L. 109–58, title XII, §§1251(b)(3)(B), 1252(i)(2), 1254(b)(3)(B), Aug. 8, 2005, 119 Stat. 963, 967, 971; Pub. L. 117–58, div. D, title I, §40104(a)(2)(C)(ii), title IV, §40431(b)(3)(B), Nov. 15, 2021, 135 Stat. 932, 1048.) "
+          },
+          {
+            "source_id": "govinfo:16usc2602-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/6375e3015495198b67016876cafdbfc4890fec955d5a0f9a39cd6f9fdc9119de.0000000.json",
+                  "sha256": "d436d0e83d7902aef4bebdd2ef6cd98dcb1cfd8a7517e8a88d20ce4f8cc6a4a7",
+                  "start_character": 0,
+                  "end_character": 4959
+                }
+              ],
+              "utf8_sha256": "6375e3015495198b67016876cafdbfc4890fec955d5a0f9a39cd6f9fdc9119de",
+              "total_characters": 4959,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr3628:119"
+      }
+    },
+    {
+      "original_record_sha256": "a91629ecf740bf59ed8f7141c927ce2f1ef20f2c6e55383f6a3a4bdba66d2c06",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:324",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.3638 EH requires periodic electricity generation/transmission supply-chain assessments in consultation with defined stakeholders, a report to the two specified committees within one year and periodically thereafter, and emerging-issue recommendations. It retains all topics, including advanced transmission, components/materials, workforce and veterans, foreign-entity considerations, artificial intelligence and possible employment-related vulnerabilities. These are assessment topics, not established threats caused by nationality or proved policy effects. It does not mandate a particular technology, procurement, output or annual frequency after the initial report. Its printed Electric Reliability Organization definition cites Federal Power Act section215(a) at42USC824o(a); no automatic change to a different Code title is made here. Whole external definitions and DOE baseline, the printed reference, remaining material legal/version questions and whole assessment scope remain pending. No actual vulnerability, individual wrongdoing, project completion, current-law status or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:324",
+            "url": "https://clerk.house.gov/evs/2025/roll324.xml",
+            "raw_sha256": "6d51ff0429b24f2155d1aff39ffaa6f48153de9e1b8d1fec839aa676c06988c9",
+            "governed_bytes_sha256": "27ce95944aa378ac030018abcba12b3946f53495cbd9d265fc87e1d2f3bda11a"
+          },
+          {
+            "source_id": "govinfo:hr3638eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3638eh/html/BILLS-119hr3638eh.htm",
+            "raw_sha256": "fae0de2e5e0a936358a135000c7679c2d78c2f30d62f7716909408797a8d8c75",
+            "governed_bytes_sha256": "8a38182a5ad10c5f43cbcb6228c89fde789e6bbf6039c01723a6286e4c161abc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3638eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/444208245e224c7c596770430daf395a20a8fe26d133df67251fc938147846d5.0000000.json",
+                  "sha256": "2b139e92c02248cac49b3d13644c30a89c0579281ac4718d80a367d3b8224caa",
+                  "start_character": 0,
+                  "end_character": 5795
+                }
+              ],
+              "utf8_sha256": "444208245e224c7c596770430daf395a20a8fe26d133df67251fc938147846d5",
+              "total_characters": 5795,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "b42780c293884aefc7d9a4d5051fc150988666214d764580692cdb99eddc4b7e",
+      "source": {
+        "source_id": "govinfo:16usc-2621abc-2024-195",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46.htm",
+        "raw_sha256": "eb884b57cb95ef0f1243580ad369f5bee9a322a8f3d73ba484125b29f63c87f5",
+        "text": "§2621. Consideration and determination respecting certain ratemaking standards (a) Consideration and determination Each State regulatory authority (with respect to each electric utility for which it has ratemaking authority) and each nonregulated electric utility shall consider each standard established by subsection (d) and make a determination concerning whether or not it is appropriate to implement such standard to carry out the purposes of this chapter. For purposes of such consideration and determination in accordance with subsections (b) and (c), and for purposes of any review of such consideration and determination in any court in accordance with section 2633 of this title, the purposes of this chapter supple ment otherwise applicable State law. Nothing in this subsection prohibits any State regulatory authority or nonregulated electric utility from making any determination that it is not appropriate to implement any such standard, pursuant to its authority under otherwise applicable State law. (b) Procedural requirements for consideration and determination (1) The consideration referred to in subsection (a) shall be made after public notice and hearing. The determination referred to in subsection (a) shall be— (A) in writing, (B) based upon findings included in such determination and upon the evidence presented at the hearing, and (C) available to the public. (2) Except as otherwise provided in paragraph (1), in the second sentence of section 2622(a) of this title, and in sections 2631 and 2632 of this title, the procedures for the consideration and determination referred to in subsection (a) shall be those established by the State regulatory authority or the nonregulated electric utility. (c) Implementation (1) The State regulatory authority (with respect to each electric utility for which it has ratemaking authority) or nonregulated electric utility may, to the extent consistent with otherwise applicable State law— (A) implement any such standard determined under subsection (a) to be appropriate to carry out the purposes of this chapter, or (B) decline to implement any such standard. (2) If a State regulatory authority (with respect to each electric utility for which it has ratemaking authority) or nonregulated electric utility declines to implement any standard established by subsection (d) which is determined under subsection (a) to be appropriate to carry out the purposes of this chapter, such authority or nonregulated electric utility shall state in writing the reasons therefor. Such statement of reasons shall be available to the public. (3) If a State regulatory authority implements a standard established by subsection (d)(7) or (8), such authority shall— (A) consider the impact that implementation of such standard would have on small businesses engaged in the design, sale, supply, installation or servicing of energy conservation, energy efficiency or other demand side management measures, and (B) implement such standard so as to assure that utility actions would not provide such utilities with unfair competitive advantages over such small businesses. ",
+        "text_version": "Literal historical2024 comparator: declared consideration/implementation, timing or prior-proceeding scope only; not whole chapter or current integrated-law certificate",
+        "captured_full_text_sha256": "73fbb21774f2209fa4c5a61f3ca680a3277352296c959b7db1c8aed588d8de48",
+        "source_text_extents": [
+          {
+            "start": 15982,
+            "end": 19105,
+            "total": 109553
+          }
+        ],
+        "text_extraction_method": "PC HTMLParser all data normalized by whitespace only; literal interval without repair",
+        "governed_bytes_sha256": "a9a58cb09faa6a9d35f1723f5cdbbe25f37ee45629b7b5130bc43eb684df1c55"
+      }
+    },
+    {
+      "original_source_object_sha256": "d08db6e255d62a3ad8f85401d3d2f56c23156f50632997795f25ab2b28039c49",
+      "source": {
+        "source_id": "govinfo:hres936eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a.0000000.json",
+              "sha256": "44d65bb7a0728ed9e3a2d8654ad87e239f27f4d1b29b3fcd1e8a0456c2a9f7ec",
+              "start_character": 0,
+              "end_character": 10473
+            }
+          ],
+          "utf8_sha256": "0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a",
+          "total_characters": 10473,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
+      }
+    },
+    {
+      "original_source_object_sha256": "62e26e2a62fbebd2ac242457d0e786ac1948207b368a70d218b01dab543550f0",
+      "source": {
+        "source_id": "congressional-record:s1071-passage320-native243",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-house.pdf",
+        "raw_sha256": "3c3387e5d97d8ffb1880958547f6d73279b5cec9e0d49f1ed1f60e3f1beb4a62",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/33274a687b163f272ddd7636af28f77844d97b69959498c22402533b71bd497b.0000000.json",
+              "sha256": "d6c286a16e4e559d53ddbec3ff708c8d05fa60c3974780f928c3ef7cdf4b247c",
+              "start_character": 0,
+              "end_character": 35454
+            }
+          ],
+          "utf8_sha256": "33274a687b163f272ddd7636af28f77844d97b69959498c22402533b71bd497b",
+          "total_characters": 35454,
+          "transport_only": true
+        },
+        "text_version": "December10Record nativephysical11/22/405/406(H5125/H5136/H5519/H5520) completeextractedselectedpages actuallyread; rule6/7,adoptedprint,distinctmotion319/ownpassage320,officialobservations. Notwhole455pagePDF/JES/visualcertificate.",
+        "physical_pages_1based": [
+          11,
+          22,
+          405,
+          406
+        ],
+        "raw_document_pages": 455,
+        "derived_parent_unit": "Concatenated pypdf extraction of four explicitly identified physical pages, exact retained whitespace",
+        "governed_bytes_sha256": "80012b600a8289f457f0925cd63242089234478924f0938618c6179a2056f96d"
+      }
+    },
+    {
+      "original_source_object_sha256": "f5c7dc972946309f3039bd775b5ee20bb1b964bb663ece948d2134b2b49f4aef",
+      "source": {
+        "source_id": "clerk:119:1:320",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll320.xml",
+        "text_version": "119:1",
+        "raw_sha256": "899d6da1204573bd6c924a898841ec0baa316642f6e459013a3543ddba501d08",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "320",
+          "legis-num": "S 1071",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "10-Dec-2025",
+          "action-time": "5:32 PM",
+          "vote-desc": "To require the Secretary of Veterans Affairs to disinter the remains of Fernando V. Cota from Fort Sam Houston National Cemetery, Texas, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "197",
+            "nay-total": "18",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "115",
+            "nay-total": "94",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "24631bd2f22181024a3922a389acd74f2349a6b2689d7f2e7e5d2e452206e12c"
+      }
+    },
+    {
+      "original_source_object_sha256": "4de07fc95a13acc0901b40cadac184d7ddd7c9423c189e824d310db3f83a142b",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/f3b134cb5073d63b5402ca24738a3f513ad2850c4bf821f4d43a6dbf0e8d063e.0000000.json",
+            "sha256": "c698c3c2c9982220ce5f7770acb928bf12ae5503c821d6f95bf67b16614ee78a",
+            "start_character": 0,
+            "end_character": 9798
+          }
+        ],
+        "utf8_sha256": "f3b134cb5073d63b5402ca24738a3f513ad2850c4bf821f4d43a6dbf0e8d063e",
+        "total_characters": 9798,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "2b6a39588281f5ad6571432b6781dd0663f264494d0e79fd8ca9b44697294a40",
+      "source": {
+        "source_id": "clerk:119:1:321",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll321.xml",
+        "text_version": null,
+        "raw_sha256": "3567f4c5c54022c123cd3879fd9be9512d639fe88141c336fb9d1fdae6445142",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "321",
+          "legis-num": "H RES 432",
+          "vote-question": "On Motion to Discharge",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "10-Dec-2025",
+          "action-time": "5:42 PM",
+          "vote-desc": "Providing for consideration of the bill (H.R. 2550) to nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "13",
+            "nay-total": "200",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "209",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "15179efb4e6eac2303418b1102b969de47c9e3c5c2590abd445a81cd712bde55"
+      }
+    },
+    {
+      "original_source_object_sha256": "33b2ac23943e7b59502729f6a378e7e5c6fb45b09ec96364be820a9d36d21c35",
+      "source": {
+        "source_id": "clerk:119:1:322",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll322.xml",
+        "text_version": null,
+        "raw_sha256": "381e34c1aefd2bf4177c04c953d8534cd0c5f92633682cd9b471e50dfbfea7a6",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "322",
+          "legis-num": "H RES 939",
+          "vote-question": "On Motion to Table",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:08 PM",
+          "vote-desc": "Impeaching Donald John Trump, President of the United States for high crimes and misdemeanors"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "c2b0f32ca13a941332ed71142ca31cccc45e6a8909c1bab48ebc25a49fb85b62"
+      }
+    },
+    {
+      "original_source_object_sha256": "563cdd8c91b0eba9c92ac9401831fd6558800639bcc41997ac9bbc360b651949",
+      "source": {
+        "source_id": "clerk:119:1:323",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll323.xml",
+        "text_version": null,
+        "raw_sha256": "b6521066eefbbd248e5b547250033f520c34b3ae8cbb7eee0e471a98d46adeb0",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "323",
+          "legis-num": "H R 3628",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:15 PM",
+          "vote-desc": "State Planning for Reliability and Affordability Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "214",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "4",
+            "nay-total": "206",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "9d6929cffb8b70e6f5a77ad179d707072a7a817ac1cf58d4d5618e241b5971c0"
+      }
+    },
+    {
+      "original_source_object_sha256": "68be3023603e11295be9d2408c98f770a6c774b82e21427c119c711001ca8852",
+      "source": {
+        "source_id": "govinfo:hr3628eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3628eh/html/BILLS-119hr3628eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "420455f4807299aa1661ab2f2ac8ec0886ade9639602c9419ab81e3cae158048",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/4f5c9efb6c2e31d60c0df016ca43e2b20ef46f877f11e73ac36a25436a66166c.0000000.json",
+              "sha256": "dd9ed7c1d5838e2fa62404007e515c214f9ef1460a646b8265213b987b84a017",
+              "start_character": 0,
+              "end_character": 6556
+            }
+          ],
+          "utf8_sha256": "4f5c9efb6c2e31d60c0df016ca43e2b20ef46f877f11e73ac36a25436a66166c",
+          "total_characters": 6556,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "2e3284f65f574ce10f7353ca3f089adb9fc42787a0641efc465e64cd74f47856"
+      }
+    },
+    {
+      "original_source_object_sha256": "ec3edfc1926336b1763260ee2e57d10752ab9f89fcbd19272173c328f7b312a0",
+      "source": {
+        "source_id": "govinfo:16usc2622-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-subchapII-sec2622.htm",
+        "text_version": "2024 Code operative section; editorial notes excluded",
+        "raw_sha256": "8912ffc5812c9c592848cc94b6676a039d9c938f017b6080cd7a204557bbd78b",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/0c5b2e19d620277545dad9023d23b2673596a7c1adf65ce409c9c85074f4c0c8.0000000.json",
+              "sha256": "8a46c062bca3d615f5d37b9a35cb2040e25bf3d0850811258275a8c66d023ab2",
+              "start_character": 0,
+              "end_character": 13607
+            }
+          ],
+          "utf8_sha256": "0c5b2e19d620277545dad9023d23b2673596a7c1adf65ce409c9c85074f4c0c8",
+          "total_characters": 13607,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "2a1ea4452e19b307e8adb91d428f554e512fdeb9440eba304fdf0229d28c141d"
+      }
+    },
+    {
+      "original_source_object_sha256": "8430bda4d0acb7e2d6eb5b173f08fdbb3a30fc3e5ca7b9c425fee61b4e2671ba",
+      "source": {
+        "source_id": "govinfo:16usc2634-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-subchapIII-sec2634.htm",
+        "text_version": "2024 Code operative section; editorial notes excluded",
+        "raw_sha256": "1d0fdfa4ba5d5de6daefba8ff9331e40e365cc9373cf04abf237417830554540",
+        "text": "§2634. Prior and pending proceedings For purposes of subchapters I and II, and this subchapter, proceedings commenced by State regulatory authorities (with respect to electric utilities for which it has ratemaking authority) and nonregulated electric utilities before November 9, 1978, and actions taken before such date in such proceedings shall be treated as complying with the requirements of subchapters I and II, and this subchapter if such proceedings and actions substantially conform to such requirements. For purposes of subchapters I and II, and this subchapter, any such proceeding or action commenced before November 9, 1978, but not completed before such date, shall comply with the requirements of subchapters I and II, and this subchapter, to the maximum extent practicable, with respect to so much of such proceeding or action as takes place after such date, except as otherwise provided in section 2631(c) of this title. In the case of each standard established by paragraphs (11) through (13) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standard established by paragraph (14) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of each standard established by paragraph (15) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to August 8, 2005. In the case of the standard established by paragraph (20) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to November 15, 2021. In the case of the standard established by paragraph (21) of section 2621(d) of this title, the reference contained in this section to November 9, 1978, shall be deemed to be a reference to November 15, 2021. (Pub. L. 95–617, title I, §124, Nov. 9, 1978, 92 Stat. 3131; Pub. L. 109–58, title XII, §§1251(b)(3)(B), 1252(i)(2), 1254(b)(3)(B), Aug. 8, 2005, 119 Stat. 963, 967, 971; Pub. L. 117–58, div. D, title I, §40104(a)(2)(C)(ii), title IV, §40431(b)(3)(B), Nov. 15, 2021, 135 Stat. 932, 1048.) ",
+        "governed_bytes_sha256": "e6323963d628427f4c2d00127dfd2a2509b163053669e65b0a3c0a431522ba54"
+      }
+    },
+    {
+      "original_source_object_sha256": "398eaf5682e0011e09f176c306d38b4ecc2b4fb3ce270c275e74245f2d8e7c39",
+      "source": {
+        "source_id": "govinfo:16usc2602-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-sec2602.htm",
+        "text_version": "2024 Code operative section; editorial notes excluded",
+        "raw_sha256": "cd40ebfd8f9bd6dfce559106c847303e0a399265c14aba971e0c7ac9f4592e64",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/6375e3015495198b67016876cafdbfc4890fec955d5a0f9a39cd6f9fdc9119de.0000000.json",
+              "sha256": "d436d0e83d7902aef4bebdd2ef6cd98dcb1cfd8a7517e8a88d20ce4f8cc6a4a7",
+              "start_character": 0,
+              "end_character": 4959
+            }
+          ],
+          "utf8_sha256": "6375e3015495198b67016876cafdbfc4890fec955d5a0f9a39cd6f9fdc9119de",
+          "total_characters": 4959,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "263f067d0650f6f8c1f477cbdc02fd70c4af3920e2180a0a329d37dea504c221"
+      }
+    },
+    {
+      "original_source_object_sha256": "7bdbfd5ea2a2d88e8ba81c65be1113a57638e638accd796aaabb834d73853681",
+      "source": {
+        "source_id": "clerk:119:1:324",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll324.xml",
+        "text_version": null,
+        "raw_sha256": "6d51ff0429b24f2155d1aff39ffaa6f48153de9e1b8d1fec839aa676c06988c9",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "324",
+          "legis-num": "H R 3638",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:22 PM",
+          "vote-desc": "Electric Supply Chain Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "51",
+            "nay-total": "159",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "27ce95944aa378ac030018abcba12b3946f53495cbd9d265fc87e1d2f3bda11a"
+      }
+    },
+    {
+      "original_source_object_sha256": "9c8e5be1c1c9cfa36fc14d1b8787344980dcc4323a9c96b571640fe03b14bcfd",
+      "source": {
+        "source_id": "govinfo:hr3638eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3638eh/html/BILLS-119hr3638eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "fae0de2e5e0a936358a135000c7679c2d78c2f30d62f7716909408797a8d8c75",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/444208245e224c7c596770430daf395a20a8fe26d133df67251fc938147846d5.0000000.json",
+              "sha256": "2b139e92c02248cac49b3d13644c30a89c0579281ac4718d80a367d3b8224caa",
+              "start_character": 0,
+              "end_character": 5795
+            }
+          ],
+          "utf8_sha256": "444208245e224c7c596770430daf395a20a8fe26d133df67251fc938147846d5",
+          "total_characters": 5795,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "8a38182a5ad10c5f43cbcb6228c89fde789e6bbf6039c01723a6286e4c161abc"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 14
+  }
+}

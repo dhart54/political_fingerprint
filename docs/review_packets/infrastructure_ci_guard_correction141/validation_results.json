@@ -1,0 +1,32 @@
+{
+  "base_head": "a988dd87b307ad9575201130b87105e3717013c1",
+  "command": "python -m unittest backend.tests.test_ci_workflow_preservation backend.tests.test_accepted_findings_synthesis.AcceptedFindingsSynthesisTests backend.tests.test_accepted_findings_public_wording.AcceptedFindingsPublicWordingTests",
+  "tests": 42,
+  "seconds": 0.398,
+  "exit_code": 0,
+  "meaningful_negative_cases": 24,
+  "coverage": [
+    "Only exact attribute-path addition in both existing event filters allowed",
+    "Actual workflow requires both attribute-only filters",
+    "Existing paths/event types/branches/header cannot drift",
+    "Prior job identifiers/runners/permissions/checkouts/commands or appended steps cannot drift",
+    "Existing main receipt-job extension allowed only at authenticated c52d workflow blob2cac1cb6178adf88fd412e63ad6fb48566e721fc, preserving all original bytes",
+    "Self-declared or mutated accepted baseline rejected",
+    "Actual a988 workflow plus a new job followed by root permissions/on/env/concurrency/defaults/jobs is rejected",
+    "Duplicate job definitions cannot hide a second job identity"
+  ],
+  "broader_local_attempt": {
+    "tests": 44,
+    "seconds": 0.46,
+    "result": "FAILED: one setUpClass error in unrelated M14F frozen package raw-byte identity on Windows checkout",
+    "qualification": "Untouched historical artifact; no byte normalization or acceptance change applied. All directly affected guard classes pass in the final focused run. Hosted Linux rerun remains required.",
+    "exact_command": "python -m unittest backend.tests.test_ci_workflow_preservation backend.tests.test_accepted_findings_synthesis backend.tests.test_accepted_findings_public_wording",
+    "byte_and_git_preservation_evidence": "local_windows_byte_check.json"
+  },
+  "independent_successor_review": "Required before commit/push",
+  "hosted_successor_validation": "Required on actual next commit; no success claimed",
+  "prior_Health_Infrastructure_source_contracts_changed": false,
+  "hr859_acceptance": false,
+  "production_writes": false,
+  "review_correction": "Independent successor probe found trailing root permissions after an added job escaped comparison. The helper now rejects unexpected top-level content after jobs and duplicate job IDs; exact actual-workflow probe and other root sections covered."
+}

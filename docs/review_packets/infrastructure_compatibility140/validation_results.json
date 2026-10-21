@@ -1,0 +1,63 @@
+{
+  "scope": "Uncommitted authorized main-to-feature integration and bounded Health/Infrastructure compatibility",
+  "feature_parent": "d94f178ef979c2c56a86cc33277b32c859bb2162",
+  "main_parent": "c52d121b64d814de3cf684980368bced40e5b4ea",
+  "results": [
+    {
+      "command": "python -m unittest backend.tests.test_health_one_action_review backend.tests.test_health_infrastructure_compatibility",
+      "phase": "AFTER strict-JSON correction",
+      "tests": 37,
+      "seconds": 29.881,
+      "exit_code": 0
+    },
+    {
+      "command": "python -m unittest backend.tests.test_shared_domain_candidate backend.tests.test_shared_legislative_corpus backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta backend.tests.test_infrastructure_hr859_candidate138 backend.tests.test_infrastructure_case_application139",
+      "phase": "Started before Health-only strict-JSON correction; its Infrastructure/shared-corpus dependency closure remained unchanged throughout. Not relabelled as a finalized-tree execution.",
+      "tests": 339,
+      "seconds": 312.06,
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/prepare_health_one_action_review.py --check",
+      "phase": "AFTER strict-JSON correction",
+      "exit_code": 0,
+      "frozen_products": 12
+    },
+    {
+      "command": "python scripts/prepare_health_one_action_decision_packet.py --check",
+      "phase": "AFTER strict-JSON correction",
+      "exit_code": 0,
+      "frozen_outputs": 2
+    },
+    {
+      "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+      "phase": "Before Health-only strict-JSON correction; semantic dependency closure unchanged",
+      "checks": 7,
+      "exit_code": 0
+    },
+    {
+      "command": "node --test frontend/lib/domainTransition.test.mjs frontend/lib/playwrightRunner.test.mjs",
+      "phase": "Imported-main tests; dependency closure unchanged by Health correction",
+      "tests": 38,
+      "exit_code": 0
+    }
+  ],
+  "historical_pre_fix_Health_run": {
+    "tests": 35,
+    "seconds": 16.724,
+    "exit_code": 0,
+    "qualification": "Superseded by the37-test post-fix run; not final-tree validation"
+  },
+  "review_findings_corrected": [
+    "Python false==0 equality at sidecar/frozen-product/check-only gates; now canonical JSON digests preserve strict types",
+    "Include .gitattributes in both existing workflow event path filters so attribute-only changes execute the identity guard"
+  ],
+  "negative_cases_added": "Numeric substitutions for each sidecar authority flag, helper-executed flag, shared-core authority and each frozen provenance authority flag",
+  "independent_final_staged_review": "Required; pending",
+  "hosted_exact_head_validation": "Required after independently reviewed merge commit and fast-forward push; not yet claimed",
+  "production_writes": false,
+  "PR_merge": false,
+  "editorial_acceptance": false,
+  "hr859_admission": false,
+  "workflow_validation": "Exact comparison with main after removing only the added compatibility step and two .gitattributes path-filter entries; all other workflow bytes preserved"
+}

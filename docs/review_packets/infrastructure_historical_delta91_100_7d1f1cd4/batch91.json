@@ -1,0 +1,804 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 91,
+  "exact_committed_head": "c100329dadbfb8e830d6af51e9dd7e6c1a6230e6",
+  "export_anchor_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "committed_provenance": {
+    "membership": {
+      "head": "c100329dadbfb8e830d6af51e9dd7e6c1a6230e6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/membership_review.json",
+      "git_blob": "4815e6a70092a9ada14a09ea1b8c4639c5259449",
+      "git_bytes_sha256": "1d2876006e0d107d9efc27fa73a49db9aa662fc48ad57d0f4277cb7c46e671c0"
+    },
+    "sources": {
+      "head": "c100329dadbfb8e830d6af51e9dd7e6c1a6230e6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/sources.json",
+      "git_blob": "738b958af0bc96bdaae3c9fd0a9ff7fc9585a2e6",
+      "git_bytes_sha256": "8b1d2cbaed6f7ffd19f6e182ff648510ab23d62d971b053a4744083d725e6b8d"
+    },
+    "screening": {
+      "head": "c100329dadbfb8e830d6af51e9dd7e6c1a6230e6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/screening_receipt.json",
+      "git_blob": "c7b33f8943c9e4225a365052775a06fb4ac344b1",
+      "git_bytes_sha256": "8dc72c710fbef33e27201560c665860cf287248bf459fbd6d940d9b1717986fe"
+    },
+    "screening_units": {
+      "head": "c100329dadbfb8e830d6af51e9dd7e6c1a6230e6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/screening_units_receipt.json",
+      "git_blob": "e6993fd3a7bc58318d79ed2929393989ad2f937c",
+      "git_bytes_sha256": "2e07a9cc687279613cba768437f3c9c0bd215a229cb42a8912bbf6db1bf87211"
+    },
+    "validation": {
+      "head": "c100329dadbfb8e830d6af51e9dd7e6c1a6230e6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/validation_receipt.json",
+      "git_blob": "8dbb36c6859356716c8fe1f96d7f1631cf41e4ea",
+      "git_bytes_sha256": "b1c76ec1a0de909c42bcc7ed4fc3d94847dcbeba8636f8755650153490069ff6"
+    }
+  },
+  "original_membership_review_sha256": "b3de825a320bb56ba57f658cbb0b334f30211b35bfcf27839df803002a5ebe1d",
+  "new_screened_ids": [
+    "house:119:2:166",
+    "house:119:2:167",
+    "house:119:2:168",
+    "house:119:2:169",
+    "house:119:2:170",
+    "house:119:2:171",
+    "house:119:2:172",
+    "house:119:2:173",
+    "house:119:2:174",
+    "house:119:2:175"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "e46cdbe2678ab00c6d44075af8d8638b04c92b1af29fcc2ac7b43ac8b98bcf95",
+      "record": {
+        "action_id": "house:119:2:166",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Own1251resolving clause and opening0:1800read; intervening historical/contribution preamble was not fully reviewed. The Housecalls for condemning/countering antisemitism and public education, honors servicemember contributions and expresses safety/religious-freedom commitments. It does not itself appropriate funds or establish enforceable equipment, data, scientific or physical-infrastructure duties. Preamble histories/contributions/current threat assertions remain attributed source statements rather than independently verified facts. Exact suspension/agreement is non-counting expressive context without a motive, actual security or enacted program finding.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:166",
+            "url": "https://clerk.house.gov/evs/2026/roll166.xml",
+            "raw_sha256": "64cd9466ca77f623d3172e8359635a44cc3a74fb7995a144990b380d96e461c4",
+            "governed_bytes_sha256": "a4a9db7d177b732d4cdef1c49903656e1a21ede6703090ee5bc62f5dbcfe63c0"
+          },
+          {
+            "source_id": "govinfo:hres1251eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1251eh/html/BILLS-119hres1251eh.htm",
+            "raw_sha256": "4c092a09e71e1e9558f75e37f5b253dac79e8ac38728c1dbcda7b2823eedff22",
+            "governed_bytes_sha256": "9f90763c10ca3d1aa7e26c80885727480aa24e7cb0d9fb05089dce7a01468833"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1251eh",
+            "locator": "Only opening0:1800read; intervening historical/contribution preamble not fully reviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1251 Engrossed in House (EH)] <DOC> H. Res. 1251 In the House of Representatives, U. S., May 13, 2026. Whereas ``Jewish American Heritage Month'' has its origins in 1980, when Congress enacted a joint resolution entitled ``Joint resolution to authorize and request the President to issue a proclamation designating April 21 through April 28, 1980, as `Jewish Heritage Week''', approved April 24, 1980 (Public Law 96-237; 94 Stat. 338); Whereas, on April 24, 1980, President Carter issued the proclamation for ``Jewish Heritage Week'', and in that proclamation, President Carter spoke about the bountiful contributions made by the Jewish people to the culture and history of the United States; Whereas Congress has played a central role in recognizing ``Jewish American Heritage Month'' since the House of Representatives and Senate passed resolutions in 2005 and 2006, respectively, urging the President to proclaim the national observation of a month recognizing the Jewish- American community; Whereas, since 2006, Presidents Bush, Obama, Trump, and Biden have all issued proclamations for ``Jewish American Heritage Month'', which celebrates Jewish Americans and encourages all people of the United States to learn more about Jewish heritage and the contributions of Jewish people throughout the history of the United States; Whereas several prominent Jewish Americans heroically supported the American Revolution, and Jewish community leaders advocated for freedom of religion for all Americans upon the founding of the Nation; Whereas, in 1790, President George Washington expressed his support for religious freedom for Jewish Americans in a letter to the Touro Synagogue in Newport, Rhode Island, affir"
+          },
+          {
+            "source_id": "govinfo:hres1251eh",
+            "locator": "Complete own resolving clause6780:7643read",
+            "passage": "Resolved, That the House of Representatives-- (1) calls on elected officials, faith leaders, and civil society leaders to condemn and counter all acts of antisemitism; (2) calls on the executive branch and State and local leaders to educate the public on the contributions of the Jewish-American community and uplift Jewish stories and voices; (3) takes all possible steps to ensure the safety, security, and dignity of Jewish Americans in all aspects of their lives, including the workplace, college and university campuses, synagogues, and at home; (4) honors the contributions of Jewish-American servicemembers who have gone above and beyond the call of duty to protect freedom; and (5) commits to protecting religious freedom in America by ensuring all Americans, including Jewish Americans, can worship without fear of violence or persecution. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "8550611814c92ad1f9498bc06d096d022347b4e7074350ebd3c6b15cb96d8ab9",
+      "record": {
+        "action_id": "house:119:2:167",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete1259EHcalls on the President to prioritize specified detainees on an engagement agenda, urges proof of life/legal/family/medical access and reaffirms political/religious freedom. Calls/urges/reaffirms are Houseexpressions, not a binding release/sanctions/medical-service/technical-platform appropriation or mandate. Arrest/health/charge/current-detention and motive descriptions remain resolution allegations/assertions, not independently verified diagnoses, offenses or intentions. Exact suspension/agreement is non-counting expressive context; no actual release, summit result, cyberactivity or enacted outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:167",
+            "url": "https://clerk.house.gov/evs/2026/roll167.xml",
+            "raw_sha256": "a379c07f13f31da04d6757c4a1475ac8ffd8409302313bda67c2db60ced83827",
+            "governed_bytes_sha256": "04983b6447ae6b42cff1f45d1923f1cbf795a05e99bbd4287c5e29af92ec846e"
+          },
+          {
+            "source_id": "govinfo:hres1259eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1259eh/html/BILLS-119hres1259eh.htm",
+            "raw_sha256": "c25e0395c12930911aded667a955bdd57d73ef496414b420589b89410775b450",
+            "governed_bytes_sha256": "881f1a129a86dabb5009c2d61bc8a8213d5f839202ebb1c7499b0284023e4584"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1259eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/5be1d4fe51441700c31990d65e03136895cf7ea3bffe2d3ce11be06ecd5d808d.0000000.json",
+                  "sha256": "db3e218c20f10e5e31ec490f0954c7edfe98e1ba2e2a182d40e2b20dab3e73df",
+                  "start_character": 0,
+                  "end_character": 4675
+                }
+              ],
+              "utf8_sha256": "5be1d4fe51441700c31990d65e03136895cf7ea3bffe2d3ce11be06ecd5d808d",
+              "total_characters": 4675,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ccd4be3b56b8bcb94a239c9d3208797a0014860ef9b4b99accc0959e2db3d754",
+      "record": {
+        "action_id": "house:119:2:168",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is failed recommittal of6260. No substantive motion body is interpreted. This non-counting procedural action is separate from the underlying criminal-definition or judicial-monitor bill; no component policy position, enacted duty or technical/physical result is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:168",
+            "url": "https://clerk.house.gov/evs/2026/roll168.xml",
+            "raw_sha256": "16685a1b9bea0ee527bf2081ca1d242ccb1b36f701a9906ba3b463acd540b092",
+            "governed_bytes_sha256": "ea659071c02bc3c216525f0e3da18293cb213887df04d8578f8d136353a77419"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "232a588c3239c484af4b2b2c8cf9eaaecd6f46532b1199714c63661eab3d1789",
+      "record": {
+        "action_id": "house:119:2:169",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete6260EHinserts monetary bail, criminal bail bonds and Federal immigration bail bonds into the referenced1033(f)(1)(A)definition wording. This is a substantive criminal/insurance-finance scope amendment without a scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. The title does not establish that every bail act becomes a Federaloffense: existing1033elements, covered business/commerce limits and individual liability were not independently adjudicated here. No automatic detention, blanket bail prohibition, actual fraud, conviction, sentence or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:169",
+            "url": "https://clerk.house.gov/evs/2026/roll169.xml",
+            "raw_sha256": "9e90aa30b9036c3e18c903129e6c6a35ab131a0b40b48666754f8d7f840bc14a",
+            "governed_bytes_sha256": "f9b9cdcca80c0c2876117d7052c740e0d4155edeea6ea7fb40bad3fc3b3f8306"
+          },
+          {
+            "source_id": "govinfo:hr6260eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6260eh/html/BILLS-119hr6260eh.htm",
+            "raw_sha256": "39aa145b210ffde1c17e64ddfe1a9b64792c45b7e628be2d03cb2df9fc853559",
+            "governed_bytes_sha256": "8b4efbbe33cc9bbef7cd4e74b8f227d40ca02d8563818e322b37d1d08acf3df9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6260eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6260 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 6260 _______________________________________________________________________ AN ACT To amend title 18, United States Code, to prohibit fraud in connection with posting bail. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Keeping Violent Offenders Off Our Streets Act of 2025''. SEC. 2. FRAUD IN CONNECTION WITH POSTING BAIL. Section 1033(f)(1)(A) of title 18, United States Code, is amended by inserting before the comma the following: ``(including the posting of monetary bail, criminal bail bonds, and Federal immigration bail bonds)''. Passed the House of Representatives May 14, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 6260 _______________________________________________________________________ AN ACT To amend title 18, United States Code, to prohibit fraud in connection with posting bail."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f7f53c43041c19eaacb620147259e7ec257785ef32316814684c97bef06c65fa",
+      "record": {
+        "action_id": "house:119:2:170",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete contemporary75floor text plus exact recorded-result opening/ending read. It would direct removal from Iranhostilities, including specified potential combat/occupation ground roles,30daysafterthedatein1(6)(Feb28,2026), unless declaration/specificIranAUMF. The clock is not30daysafterenactment. Defense against imminent attack, regional defensive troop presence and nonhostile forces remain; separate intelligence/activity/sharing and nonauthorization constructions remain. Broad findings about Iran, deaths, introduction of forces and legal authorization remain attributed, not independently verified current facts. Exact agreement failed212–212with6NotVoting, not a withdrawal order actually carried out. Whole war-powers/force-direction child establishes no technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion; no actor intent, current legal authority or intelligence operation is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:170",
+            "url": "https://clerk.house.gov/evs/2026/roll170.xml",
+            "raw_sha256": "5f2d57aec09fb7ca20a18cd77251b30852f4e21c998dfd0898f25c7e17018bdf",
+            "governed_bytes_sha256": "dcc28775107e2f387bacc29e7b9c95320c83700a3a201b01457788f8548cfe96"
+          },
+          {
+            "source_id": "congressional-record:2026-05-13-hconres75-exact",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-13/pdf/CREC-2026-05-13-house.pdf",
+            "raw_sha256": "f8eece54e6c0db127a6ee6d427c1068409fdea3ede71bc307a99f4a361fa96e1",
+            "governed_bytes_sha256": "566f98501e34ba36947206b705a54573c4073bc783b7e5a770df0dcdf87af12d"
+          },
+          {
+            "source_id": "congressional-record:2026-05-14-hconres75-outcome",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-14/pdf/CREC-2026-05-14-house.pdf",
+            "raw_sha256": "a27a8233caad07b1a00a7b14ff7257d1c0ed8f9fa0705463f6d834bfcbc08d85",
+            "governed_bytes_sha256": "d032a370f7a5c86bbefa87510c2ac07e905798ddb86e800ccf2e339fc46391f4"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-05-13-hconres75-exact",
+            "locator": "Complete contemporary own operative text and findings read",
+            "passage": "[PDF page43]\nMr. MAST. Mr. Speaker, pursuant to \nthe order of the House of April 27, 2026, \nI call up the concurrent resolution (H. \nCon. Res. 75) directing the President, \npursuant to section 5(c) of the War \nPowers Resolution, to remove the \nUnited States Armed Forces from hos-\ntilities against the Islamic Republic of \nIran, and ask for its immediate consid-\neration in the House. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore (Mr. \nM\nOORE of Utah). Pursuant to the order \nof the House of April 27, 2026, the con-\ncurrent resolution is considered as \nread. \nThe text of the concurrent resolution \nis as follows: \nH. CON. RES. 75 \nResolved by the House of Representatives (the \nSenate concurring), \nSECTION 1. FINDINGS. \nCongress finds the following: \n(1) The Islamic Republic of Iran is the lead-\ning state sponsor of terrorism and an adver-\nsary of the United States. \n(2) The Islamic Republic of Iran seeks to \npose a threat to the United States, its Armed \nForces, and allies through its ballistic mis-\nsile program, its sponsorship of terrorist \nproxy forces, and pursuit of a nuclear weap-\non. \n(3) The Islamic Republic of Iran engages in \na range of destabilizing activities across the \nMiddle East and the world which have re-\nsulted in scores of American deaths since \n1979. \n(4) Congress has the sole power to declare \nwar under article I, section 8 of the Constitu-\ntion. \n(5) Congress has not declared war with re-\nspect to, or provided any specific statutory \nauthorization for, hostilities involving \nUnited States Armed Forces against the Is-\nlamic Republic of Iran. \n(6) United States Armed Forces were intro-\nduced into hostilities against the Islamic Re-\npublic of Iran on February 28, 2026. \n(7) The President is mandated to brief Con-\ngress on the deployment of United States \nforces, included their estimated scope and \nduration of their continued use, under the \nWar Powers Resolution. \nSEC. 2. TERMINATION OF USE OF FORCE. \n(a) TERMINATION.—Pursuant to section 5(c) \nof the War Powers Resolution (50 U.S.C. \n1544(c)), Congress hereby directs the Presi-\ndent to remove the use of United States \nArmed Forces from hostilities against the Is-\nlamic Republic of Iran or any part of its gov-\nernment or military, including potential \nground forces in a combat role or used for oc-\ncupation, by not later than the date that is \n30 days after the date described in section \n1(6), unless explicitly authorized by a dec-\nlaration of war or specific authorization for \nuse of military force against Iran. \n(b) R\nULE OF CONSTRUCTION.—Nothing in \nthis section may be construed to— \n(1) prevent the United States from defend-\ning itself, its Armed Forces, its diplomatic \nfacilities, or allied states from imminent at-\ntack; \n(2) prevent the United States Armed \nForces from maintaining a troop presence in \nthe region for defensive purposes; or \n(3) force the removal of United States \nArmed Forces in the region who are not en-\ngaged in hostilities against Iran. \nSEC. 3. RULE OF CONSTRUCTION RELATING TO \nINTELLIGENCE SHARING. \nNothing in this resolution may be con-\nstrued to influence or disrupt any intel-\nligence, counterintelligence, or investigative \nactivities relating to threats in or ema-\nnating from Iran or surrounding countries \nconducted by, or in conjunction with, the \nUnited States Government involving— \n(1) the collection of intelligence; \n(2) the analysis of intelligence; or \n(3) the sharing of intelligence between the \nUnited States and any coalition partner, if \nthe President determines such sharing is ap-\npropriate and in the national security inter-\nests of the United States. \nSEC. 4. RULE OF CONSTRUCTION RELATING TO \nNONAUTHORIZATION OF THE USE \nOF MILITARY FORCE. \nConsistent with section 8(a)(1) of the War \nPowers Resolution (50 U.S.C. 1547(a)(1)), \nnothing in this concurrent resolution may be \nconstrued as authorizing the use of military \nforce. \n"
+          },
+          {
+            "source_id": "congressional-record:2026-05-14-hconres75-outcome",
+            "locator": "Only opening0:1100read for exact question/212–212recorded result; middle member lists not reviewed",
+            "passage": "[PDF page50]\nDIRECTING THE PRESIDENT, PUR-\nSUANT TO SECTION 5(C) OF THE \nWAR POWERS RESOLUTION, TO \nREMOVE THE UNITED STATES \nARMED FORCES FROM HOS-\nTILITIES AGAINST THE ISLAMIC \nREPUBLIC OF IRAN \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on adoption \nof the concurrent resolution (H. Con. \nRes. 75) directing the President, pursu-\nant to section 5(c) of the War Powers \nResolution, to remove the United \nStates Armed Forces from hostilities \nagainst the Islamic Republic of Iran, \non which the yeas and nays were or-\ndered. \nThe Clerk read the title of the con-\ncurrent resolution. \nThe SPEAKER pro tempore. The \nquestion is on adoption of the concur-\nrent resolution. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 212, nays \n212, not voting 6, as follows: \n[Roll No. 170] \nYEAS—212 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBalint \nBarraga´n \nBarrett \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCasar \nCase \nCasten \nC"
+          },
+          {
+            "source_id": "congressional-record:2026-05-14-hconres75-outcome",
+            "locator": "Only closing4677:5577read for explicit failed result",
+            "passage": "Patronis \nPerry \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nRulli \nRutherford \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Epps \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nWomack \nYakym \nZinke \nNOT VOTING—6 \nDunn (FL) \nGuest \nKean \nLeger Fernandez \nLetlow \nWilson (FL) \nb 1650 \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (during \nthe vote). There are 2 minutes remain-\ning. \nb 1652 \nSo the concurrent resolution was not \nagreed to. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \nf \n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f65897d054263fd0b87d4c9c4eff4619d92779ec46cbcc7ecd8843d1c4817129",
+      "record": {
+        "action_id": "house:119:2:171",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete5625EHrequires AGpublic list within1yearafterenactment and annually of jurisdictions permitting covered-offense defendants pretrial release on recognizance or unsecured appearance bond. Covered offense depends on AGclear-public-safety/order-threat determination, including listed examples, not an exhaustive automatic finding for every defendant/jurisdiction. This whole generic criminal-policy disclosure/list mandate establishes no specified technical database/platform, scientific or physical-infrastructure program, supporting a proposed Infrastructure exclusion. It neither prohibits cashless bail nor changes detention or grant funding itself; no current listed jurisdiction, actual crime/public-safety effect or enacted duty is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:171",
+            "url": "https://clerk.house.gov/evs/2026/roll171.xml",
+            "raw_sha256": "3ddf57d28b95c50c37a89f751224bab66d427a8b5507cf1a6ae957ba528006ce",
+            "governed_bytes_sha256": "8c3eaff28829656bd16920108855d1f3e439e03f35ce8debf1a43ee3e3a813f1"
+          },
+          {
+            "source_id": "govinfo:hr5625eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5625eh/html/BILLS-119hr5625eh.htm",
+            "raw_sha256": "a2458185215f76403d5e02ab83b1148f1f4141c428d6919155c660f5d8d4a78d",
+            "governed_bytes_sha256": "3c3557cc85191107c9d5bf057333421d25d803a2703c98022835c09d0f8c0214"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5625eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5625 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 5625 _______________________________________________________________________ AN ACT To direct the Attorney General to make publicly available a list of each State and unit of local government that permits cashless bail, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Cashless Bail Reporting Act''. SEC. 2. PUBLICATION OF CASHLESS BAIL JURISDICTIONS. (a) In General.--Not later than one year after the date of enactment of this Act, and annually thereafter, the Attorney General shall make publicly available a list of each State and unit of local government that permits the release pending trial of a person charged with a covered offense on personal recognizance or upon execution of an unsecured appearance bond. (b) Covered Offense Defined.--In this section, the term ``covered offense'' means a criminal offense that the Attorney General determines poses a clear threat to public safety and order, including-- (1) an offense involving a violent or sexual act, such as murder, rape, sexual assault, carjacking, robbery, burglary, and assault; and (2) an offense that promotes public disorder, such as looting, vandalism, destruction of property, rioting or inciting to riot, or fleeing from a law enforcement officer. Passed the House of Representatives May 14, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 5625 _______________________________________________________________________ AN ACT To direct the Attorney General to make publicly available a list of each State and unit of local government that permits cashless bail, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "119c4d96149800d71d0940aa763cf1a910074b9798c7a96b46afe07faff322f3",
+      "record": {
+        "action_id": "house:119:2:172",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is failed recommittal of8365. No substantive motion body is interpreted. This non-counting procedural action is separate from the underlying criminal-definition or judicial-monitor bill; no component policy position, enacted duty or technical/physical result is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:172",
+            "url": "https://clerk.house.gov/evs/2026/roll172.xml",
+            "raw_sha256": "8d0ddd7215fee94ba0a919ca14daceb56f8c0cd8d8acb4ec928297e641d69bc9",
+            "governed_bytes_sha256": "edb37d055b68a89d6b04f36503477856431c87c99963cdad11f2b6508115903f"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "decce207dd37935f301e2f3196f37113902cb02661777dc89b3a49df9d6475cb",
+      "record": {
+        "action_id": "house:119:2:173",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete8365EHsets judicial person-monitor conditions: JudicialConferencefee maxima/rulemaking within180daysaftersectioneffective date, optionalprobono/reducedrates, single concurrent appointment/max5yearterm/no same-orderreappointment, different employer for successor, prior publicnotice/comment, hearing/revision limited to requirements lacking substantial/sustained compliance,6yearjudge-transfer, annual public accounting and special existing6yearmonitorship180daynewmonitor/1yeartransfer rules. Probono is not compelled,5yearmonitor-term is not automatic termination of a court order, and6yeartransfer is distinct from5yearappointment. This whole judicial-administration/fees/public-accounting measure creates no digital-monitoring platform or physical/scientific/technical-infrastructure program, supporting a proposed Infrastructure exclusion. No actual compliance, case outcome, fee amount, court service saving or enactment is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:173",
+            "url": "https://clerk.house.gov/evs/2026/roll173.xml",
+            "raw_sha256": "04cd8295573b86294b6d943396aff59f042084c4a2831a2bfc8c718164a9a10c",
+            "governed_bytes_sha256": "dc322017d79ff2dd2a2621fb2b8bb9f1f7b8fdce77db447c268354d0511307c5"
+          },
+          {
+            "source_id": "govinfo:hr8365eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8365eh/html/BILLS-119hr8365eh.htm",
+            "raw_sha256": "ec111bd12335f1440272d2bc40d570da192210d1ed997cbb86f8be7ecdaa12f3",
+            "governed_bytes_sha256": "945d44eb9e9387a55b981ef45b58c83ba9a66cfbb71c59dff19347a9c84bdc49"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr8365eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 8365 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 8365 _______________________________________________________________________ AN ACT To provide for conditions on the appointment of monitors by courts, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Monitor Accountability Act''. SEC. 2. CONDITIONS ON THE APPOINTMENT OF MONITORS BY COURTS. (a) In General.--Not later than 180 days after the effective date of this section, the Judicial Conference of the United States shall by rule establish conditions on the appointment by a district court of the United States of any person charged, pursuant to a court order, with monitoring the conduct of a State or unit of local government. Such conditions shall include the following: (1) Fees.--Such person-- (A) may not assess a fee in excess of such maximum rates as the Judicial Conference of the United States may establish; and (B) shall be authorized to employ the use of pro bono time or reduced rates. (2) Exclusivity and term.--Such person may not be-- (A) appointed to more than one such monitorship at a time; (B) appointed for a term greater than 5 years; or (C) reappointed after the expiration of such term pursuant to the same court order. (3) Subsequent monitors.--A monitor who is appointed to a monitorship after the expiration of the term of a monitor who served pursuant to the same court order may not be employed by the same employer as the previous monitor. (4) Public comment.--Prior to the appointment of a monitor, the court shall provide notice of the person to be appointed and afford the public an opportunity for comment thereon. (5) Termination.-- (A) Revision.--In the case that a court, a party, or a monitor seeks to revise a monitorship imposed by a court order, the court shall conduct a hearing. (B) Scope of monitorship.--The court may only revise a requirement of a monitorship with respect to which the subject of the monitorship has not attained substantial and sustained compliance. (b) Transfer.--On the date that is 6 years after the court order imposing a monitorship, if such monitorship is in effect on such date, the case shall be transferred to another judge in the district in which the case is pending. (c) Accounting.-- (1) In general.--On an annual basis, a monitor shall submit to the court imposing the monitorship an accounting, which shall include-- (A) information on the services provided and the fee charged for such services; and (B) whether any such services were provided pro bono or at a reduced rate. (2) Publication.--The court shall make available to the public any accounting submitted to the court under paragraph (1). (d) Retroactivity.--In the case of a monitorship that is in effect on the date of enactment of this Act and has been in effect for 6 years-- (1) a new monitor shall be appointed not later than 180 days after such date of enactment in accordance with the limitations under this section; and (2) the case shall be transferred not later than 1 year after such date of enactment in accordance with this section. (e) Sense of Congress.--It is the sense of Congress that monitoring is a public service and monitorships should be structured to encourage the use of pro bono time or reduced rates. Passed the House of Representatives May 14, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 8365 _______________________________________________________________________ AN ACT To provide for conditions on the appointment of monitors by courts, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "3ee1edab77028615f64d1ba1cfeb01581d9d6482e7d063302fe9a9abf78a4e01",
+      "record": {
+        "action_id": "house:119:2:174",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete own floor choice/result, exactRHpages/two-heading terms and retained2806unit support an unaccepted whole equal-dollar construction-account-shift candidate. NATOSIP481832000to0/Defense-Wide3757301000to4239133000 with combined4239133000unchanged, differing account-life/purpose/transfer provisos and fixed study/table amounts retained. Failed amendment is not an executed transfer/enactment or whole-bill deficit effect. Separate2806authority/otherNATOfunding/current2805thresholds/individual projects remain uncertified; militarypublic-works versus broaderdefense/alliance taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:174",
+            "url": "https://clerk.house.gov/evs/2026/roll174.xml",
+            "raw_sha256": "bbf085a7f8077a69249e2447b5ff99a9cad4712ec08e0eba9ec9aec75bd2c693",
+            "governed_bytes_sha256": "c9d13358e4bd7a97cba5fc921732fe3b5391cc7641d3b6a690909bf1d81fb64b"
+          },
+          {
+            "source_id": "congressional-record:8469-amend50-roll174-choice160",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-15/pdf/CREC-2026-05-15-house.pdf",
+            "raw_sha256": "2155796c7c631e19deb2e80e02316e5e96be80eb9d13d576db617768986431a5",
+            "governed_bytes_sha256": "803323959ec3d72763826107645a6916147a514b543f2a64e84b8f27d8e6f34e"
+          },
+          {
+            "source_id": "govinfo:hr8469rh-exact-amendment-pages",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8469rh/pdf/BILLS-119hr8469rh.pdf",
+            "raw_sha256": "c36ab5a28b5e223b0847fd3f91cafd8e23389ae10f3ff74c3766171c41c28202",
+            "governed_bytes_sha256": "2f9bfcc7c6e84944af3319a620304d4158c85b625583085e54467cc6d0159a94"
+          },
+          {
+            "source_id": "house-bill:8469rh-Defensewide-NATO-complete160",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8469rh/pdf/BILLS-119hr8469rh.pdf",
+            "raw_sha256": "c36ab5a28b5e223b0847fd3f91cafd8e23389ae10f3ff74c3766171c41c28202",
+            "governed_bytes_sha256": "4acf8ef090ca63d70834f2689a3487a05af713fcb16d7a7bca4242e30a2a36f9"
+          },
+          {
+            "source_id": "govinfo:10usc2806-operative160",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2806.htm",
+            "raw_sha256": "fbad701c06f963b02890d6edef5e2caca3fc7d9b98e242884dda7e44e4de57c9",
+            "governed_bytes_sha256": "dfcf1477ec4a5839dd87d83eabfd5bd4d94690d41bbc934079d42c1f333ea320"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:8469-amend50-roll174-choice160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 50 OFFERED BY MR . STEUBE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 50 printed \nin part B of House Report 119–648. \nMr. STEUBE. Mr. Chairman, I have \nan amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 10, line 3, after the dollar amount, in-\nsert ‘‘(reduced by $481,832,000)’’. \nPage 5, line 8, after the dollar amount, in-\nsert ‘‘(increased by $481,832,000)’’. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Florida (Mr. S\nTEUBE). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nRECORDED VOTE \nMs. WASSERMAN SCHULTZ. Mr. \nChair, I demand a recorded vote. \nA recorded vote was ordered. \nThe vote was taken by electronic de-\nvice, and there were—ayes 80, noes 333, \nnot voting 22, as follows: \n[Roll No. 174] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr8469rh-exact-amendment-pages",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/4e1e6214307fb0b816c661fba0b8a6513a0e23ab8cc19aee650b3bcd49a4d347.0000000.json",
+                  "sha256": "548a3405a45ad2f4aea36c91ca57f6979a6277ed19b6535ccafff4df164c1c1f",
+                  "start_character": 0,
+                  "end_character": 4407
+                }
+              ],
+              "utf8_sha256": "4e1e6214307fb0b816c661fba0b8a6513a0e23ab8cc19aee650b3bcd49a4d347",
+              "total_characters": 4407,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "house-bill:8469rh-Defensewide-NATO-complete160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "MILITARY CONSTRUCTION, DEFENSE-WIDE 1\n(INCLUDING TRANSFER OF FUNDS)  2\nFor acquisition, construction, installation, and equip-3\nment of temporary or permanent public works, installa-4\ntions, facilities, and real property for activities and agen-5\ncies of the Department of Defense (other than the military 6\ndepartments), as currently authorized by law, 7\n$3,757,301,000, to remain available until September 30, 8\n2031: Provided, That such amounts of this appropriation 9\nas may be determined by the Secretary of Defense may 10\nbe transferred to such appropriations of the Department 11\nof Defense available for military construction or family 12\nhousing as the Secretary may designate, to be merged with 13\nand to be available for the same purposes, and for the 14\nsame time period, as the appropriation or fund to which 15\ntransferred: Provided further, That, of the amount, not to 16\nexceed $221,001,000 shall be available for study, plan-17\nning, design, and architect and engineer services, as au-18\nthorized by law, unless the Secretary of Defense deter-19\nmines that additional obligations are necessary for such 20\npurposes and notifies the Committees on Appropriations 21\nof both Houses of Congress of the determination and the 22\nreasons therefor: Provided further, That of the amount 23\nmade available under this heading, $55,000,000 shall be 24\nfor the projects and activities, and in the amounts, speci-25\n\n\nfied in the table under the heading ‘‘Military Construction, 1\nDefense-Wide’’ in the report accompanying this Act, in ad-2\ndition to amounts otherwise available for such purposes. 3\n\n\nNORTH ATLANTIC TREATY ORGANIZATION 19\nSECURITY INVESTMENT PROGRAM 20\nFor the United States share of the cost of the North 21\nAtlantic Treaty Organization Security Investment Pro-22\ngram for the acquisition and construction of military fa-23\ncilities and installations (including international military 24\nheadquarters) and for related expenses for the collective 25\n\n\ndefense of the North Atlantic Treaty Area as authorized 1\nby section 2806 of title 10, United States Code, and Mili-2\ntary Construction Authorization Acts, $481,832,000, to 3\nremain available until expended. 4\n"
+          },
+          {
+            "source_id": "govinfo:10usc2806-operative160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2806. Contributions for North Atlantic Treaty Organizations Security Investment (a) Within amounts authorized by law for such purpose, the Secretary of Defense may make contributions for the United States share of the cost of multilateral programs for the acquisition and construction of military facilities and installations (including international military headquarters) and for related expenses for the collective defense of the North Atlantic Treaty Area. (b)(1) Funds may not be obligated or expended in connection with the North Atlantic Treaty Organization Security Investment program in any year unless such funds have been authorized by law for such program. (2) If any funds authorized for the North Atlantic Treaty Organization Security Investment program for a fiscal year are available to be obligated or expended at the end of that fiscal year and no funds have been authorized for the following fiscal year, not more than 50 percent of the amount authorized for the North Atlantic Treaty Organization Security Investment program for that fiscal year shall be deemed to be authorized by law for purposes of paragraph (1) for the following fiscal year. (c)(1) The Secretary of Defense may make contributions in excess of the amount appropriated for contribution under subsection (a) if the amount of the contribution in excess of that amount does not exceed 200 percent of the amount specified by section 2805(a) of this title as the maximum amount for a minor military construction project. (2) If the Secretary determines that the amount appropriated for contribution under subsection (a) in any fiscal year must be exceeded by more than the amount authorized under paragraph (1), the Secretary may make contributions in excess of such amount, but not in excess of 125 percent of the amount appropriated, only after the end of the 14-day period beginning on the date on which the Secretary submits, in an electronic medium pursuant to section 480 of this title, to the appropriate committees of Congress notice of the increase, including the reasons for the increase and the source of the funds to be used for the increase. "
+          }
+        ],
+        "episode_candidate_id": "episode:hr8469:amend50:119"
+      }
+    },
+    {
+      "original_record_sha256": "3241cf3e4bf69a5caa76a65358ae45de49834184716c55b33174dcb8942e6045",
+      "record": {
+        "action_id": "house:119:2:175",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole8469EHhas114810characters; only opening0:1800andclosing114010:114810read. Publicworks/military-construction opening and VA/marijuana/clinic ending are partial components, not a complete military/VA/related-agency appropriations account/proviso/version review. Whole statutory/account/authorization/transfer/package and cross-domain shared-meaning work remain pending. Failed174must not be imported into the passed whole bill, nor may a selected construction, health-service or clinic fragment substitute for whole meaning. No actual appropriation, VAservice/closure, construction, medical recommendation, military/security or fiscal outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:175",
+            "url": "https://clerk.house.gov/evs/2026/roll175.xml",
+            "raw_sha256": "83b3498925048a9574acd008cbf0d745bd2c65d4a094316577a28cab7ab9b628",
+            "governed_bytes_sha256": "99d0efb04354dc310c08470863e37c687c0abec80552e5fda557eeda445de49b"
+          },
+          {
+            "source_id": "govinfo:hr8469eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8469eh/html/BILLS-119hr8469eh.htm",
+            "raw_sha256": "73fb2b64897888645b1870855a61311e7cde1f3bf53ec1cd45af8b2447ad3dd5",
+            "governed_bytes_sha256": "312bfdd79c366c2efb3fea49a6027615050df5207804b8c1c182073dea1207b3"
+          },
+          {
+            "source_id": "govinfo:hres1275eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1275eh/html/BILLS-119hres1275eh.htm",
+            "raw_sha256": "9889d55d7b3ff8c93c192f523ffd961103b36efcc74129b13c352bf78e1bebfa",
+            "governed_bytes_sha256": "033b17ac95eb53d5dcb8370fe98ac6c2884346bb0e116d1b0ef675bfe252dbcc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr8469eh",
+            "locator": "Only opening0:1800read; whole interior unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 8469 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 8469 _______________________________________________________________________ AN ACT Making appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, That the following sums are appropriated, out of any money in the Treasury not otherwise appropriated, for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes, namely: TITLE I DEPARTMENT OF DEFENSE Military Construction, Army For acquisition, construction, installation, and equipment of temporary or permanent public works, military installations, facilities, and real property for the Army as currently authorized by law, including personnel in the Army Corps of Engineers and other personal services necessary for the purposes of this appropriation, and for construction and operation of facilities in support of the functions of the Commander in Chief, $2,131,959,000 (increased by $12,000,000) (reduced by $12,000,000) (increased by $1,000,000) (reduced by $1,000,000), to remain available until September 30, 2031: Provided, That, of this amount, not to exceed $298,588,000 (reduced by $1,000,000) (increased by $1,000,000) shall be available for study, planning, design, architect and engineer services, and host nation support, as authorized by law, unless the Secretary of the Army determines that additional obligations are necessary for such purposes and notifie"
+          },
+          {
+            "source_id": "govinfo:hr8469eh",
+            "locator": "Only closing114010:114810read",
+            "passage": "ware of the following'' ``[t]he prohibition on recommending, making referrals to or completing forms and registering Veterans for participation in State-approved marijuana programs''. Sec. 421. None of the funds made available by this Act may be used to close the Port Charlotte VA Clinic in Port Charlotte, Florida. This division may be cited as the ``Military Construction, Veterans Affairs, and Related Agencies Appropriations Act, 2027''. Passed the House of Representatives May 15, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 8469 _______________________________________________________________________ AN ACT Making appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1275eh",
+            "locator": "Complete governing rule read; whole amended appropriations body not certified",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/7a05c86559210724a0107c483bfe5b9c6b0b314aa2000badb884d84de56b3c7d.0000000.json",
+                  "sha256": "5c239e378e0033c9759f92dfdcf7ad4f05a01b50f989bcb706315c3fe3806d5e",
+                  "start_character": 0,
+                  "end_character": 7141
+                }
+              ],
+              "utf8_sha256": "7a05c86559210724a0107c483bfe5b9c6b0b314aa2000badb884d84de56b3c7d",
+              "total_characters": 7141,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:166",
+      "original_source_object_sha256": "779fccb77709b451f4208c7a0a1ad488be5798fc7a894f19377a846db738aafc"
+    },
+    {
+      "source_id": "clerk:119:2:167",
+      "original_source_object_sha256": "578e2301059d5e9a0e5badf24a0ad6f974d82cf0e3304b04c66e08b26d311139"
+    },
+    {
+      "source_id": "clerk:119:2:168",
+      "original_source_object_sha256": "a21d9691a5eac9a539d5833daebb376cf8deac067fd386335aeb87cfdf8977e3"
+    },
+    {
+      "source_id": "clerk:119:2:169",
+      "original_source_object_sha256": "f5bac51350aadad7188cba42dee2f323f692f45c651748fdddbb9193adf2a7b1"
+    },
+    {
+      "source_id": "clerk:119:2:170",
+      "original_source_object_sha256": "b16c1245a4212ac71c74b7fadb41ec08162c2a1d6640afe7a78258ad6da2b471"
+    },
+    {
+      "source_id": "clerk:119:2:171",
+      "original_source_object_sha256": "73ff689f34331380f9c1bac5fa9d74edcebef0049a708412ddd384eb8fd2d9e3"
+    },
+    {
+      "source_id": "clerk:119:2:172",
+      "original_source_object_sha256": "3bc8304d0456f3c2080a17ef3b58131a8916386d47d8e8abfd572aecf3e6799e"
+    },
+    {
+      "source_id": "clerk:119:2:173",
+      "original_source_object_sha256": "039d7e76c2f8f4bff666490d4c293ce3eda432f41edf04c646e3f289c21e9dec"
+    },
+    {
+      "source_id": "clerk:119:2:174",
+      "original_source_object_sha256": "4b2f48aec539ffd5c0395c48d205298b41535fc6150677831c4ce67795e47b7f"
+    },
+    {
+      "source_id": "clerk:119:2:175",
+      "original_source_object_sha256": "1f8d31be09166c86d2f69d8a0f60e74af5a365b5640fc6f2843bbca8fc809059"
+    },
+    {
+      "source_id": "congressional-record:2026-05-13-hconres75-exact",
+      "original_source_object_sha256": "848d59ec3c9bd3f08817c5da8e34e603f0839c7347c1f5a2a074cbedeb877dd5"
+    },
+    {
+      "source_id": "congressional-record:2026-05-14-hconres75-outcome",
+      "original_source_object_sha256": "1a11ecb2976b163ae4cbb7b4e3f2af54b5de95da0967a3a2f8b2348e9394981a"
+    },
+    {
+      "source_id": "congressional-record:8469-amend50-roll174-choice160",
+      "original_source_object_sha256": "c63e78f9b061eada07a55efb46ee93107e02512b26c9e87da349654f7505a955"
+    },
+    {
+      "source_id": "govinfo:10usc2806-operative160",
+      "original_source_object_sha256": "7661b362b217ed35e6fbdf6bf19956749b5a1584fa6282953c5fa9ea5d34dd93"
+    },
+    {
+      "source_id": "govinfo:hr5625eh",
+      "original_source_object_sha256": "49d99f57fed4147de958f4963139cee1786d821ddd08e3bf8271aaf153d66ea3"
+    },
+    {
+      "source_id": "govinfo:hr6260eh",
+      "original_source_object_sha256": "739a77bb8cf13cb21a8a040abbeed33ce073859477b0ecb569d60e11dfee0ce8"
+    },
+    {
+      "source_id": "govinfo:hr8365eh",
+      "original_source_object_sha256": "9976d05e450069a235cc87a487e579699311c2c8e9481b4b8f1badb4f511b7c6"
+    },
+    {
+      "source_id": "govinfo:hr8469eh",
+      "original_source_object_sha256": "6b550c50c0b58038207518764c6cf68aafb5d83f15c46c5d1a31be7366159f3b"
+    },
+    {
+      "source_id": "govinfo:hr8469rh-exact-amendment-pages",
+      "original_source_object_sha256": "02ed99385460a5c97424b9527f6d935e415d7ae9958445e763bc23c675689978"
+    },
+    {
+      "source_id": "govinfo:hres1251eh",
+      "original_source_object_sha256": "7729bd4b19cc03570956fce0c746f93bde9c908abcbe72e0759b9a1d8f69ccb7"
+    },
+    {
+      "source_id": "govinfo:hres1259eh",
+      "original_source_object_sha256": "90ed9f046758f5c75a64160a13c8cfa4f0f860d715a898b59b9abbcbe6f80285"
+    },
+    {
+      "source_id": "govinfo:hres1275eh",
+      "original_source_object_sha256": "efe9672c0685762a381f939ec1a2becb5d72d3fd88938548af04c1dbecd8e7b1"
+    },
+    {
+      "source_id": "house-bill:8469rh-Defensewide-NATO-complete160",
+      "original_source_object_sha256": "340c7f49aadc559bb524be96a9449c42fd6fcfeaf6608ba6a337467c8907eef4"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres1259eh",
+      "governed_length": 4675,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "govinfo:hr6260eh",
+      "governed_length": 1085,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "congressional-record:2026-05-13-hconres75-exact",
+      "governed_length": 3937,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "govinfo:hr5625eh",
+      "governed_length": 1862,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "govinfo:hr8365eh",
+      "governed_length": 3742,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "congressional-record:8469-amend50-roll174-choice160",
+      "governed_length": 1009,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "govinfo:hr8469rh-exact-amendment-pages",
+      "governed_length": 4407,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "house-bill:8469rh-Defensewide-NATO-complete160",
+      "governed_length": 2183,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "govinfo:10usc2806-operative160",
+      "governed_length": 2141,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "govinfo:hres1275eh",
+      "governed_length": 7141,
+      "review_extent": "Complete captured own bill/floor/selectedRHpages/two-account or2806operative unit read; current individual authorities/table projects/thresholds not certified"
+    },
+    {
+      "source_id": "govinfo:hres1251eh",
+      "governed_length": 7643,
+      "review_extent": "Opening0:1800andcomplete resolvingclause6780:7643read; intervening preamble not fully reviewed"
+    },
+    {
+      "source_id": "congressional-record:2026-05-14-hconres75-outcome",
+      "governed_length": 5577,
+      "review_extent": "Opening0:1100andclosing4677:5577read; middle lists unreviewed"
+    },
+    {
+      "source_id": "govinfo:hr8469eh",
+      "governed_length": 114810,
+      "review_extent": "Only opening0:1800andclosing114010:114810read; whole interior unreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:166",
+        "evidence_unit": "bounded_own_expression",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:167",
+        "evidence_unit": "bounded_own_expression",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:168",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:169",
+        "evidence_unit": "complete_own_operating_bill_or_force_resolution",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:170",
+        "evidence_unit": "complete_own_operating_bill_or_force_resolution",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:171",
+        "evidence_unit": "complete_own_operating_bill_or_force_resolution",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:172",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:173",
+        "evidence_unit": "complete_own_operating_bill_or_force_resolution",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:174",
+        "evidence_unit": "complete_exact_funding_amendment_and_account_baselines",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:175",
+        "evidence_unit": "partial_whole_appropriations",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": 118,
+    "inherited_focused_test_count": null,
+    "inherited_focused_suite_head": null,
+    "semantic_checks": 7,
+    "compiled_sha256": "ce66399b9ea97b0f6e0942c15876932fdbaef0104466ca2c1b0f4a11ae5eb938"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "c100329dadbfb8e830d6af51e9dd7e6c1a6230e6",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/authoring.json",
+      "git_blob": "baa4f90030a5c820e920fcb131850296a085a4d8",
+      "git_bytes_sha256": "09bdbef9a2cd71f879a4b5083954785044110786933006c54c3b1b04ca290f23"
+    },
+    "actions": [
+      {
+        "original_action_sha256": "3331f0fbd4857dfa69b43fef1d826faa8dce8e2a0e4e0fdb93dfe3e2fe573bec",
+        "action": {
+          "source_id": "congressional-record:8469-amend50-roll174-choice160",
+          "bill_type": "hr",
+          "bill_number": 8469,
+          "stage": "amendment",
+          "episode_id": "episode:hr8469:amend50:119",
+          "short_description": "Shifting a proposed NATO construction line to Defense-Wide construction",
+          "compact_description": "The failed amendment would reduce the proposed NATO Security Investment Program line by$481.832milliontozero and add the same amount toDefense-WideMilitaryConstruction, preserving the stated account conditions. It would not end allNATOfunding. Whole-amendment Infrastructure membership is unaccepted.",
+          "compact_source_refs": [
+            "congressional-record:8469-amend50-roll174-choice160",
+            "house-bill:8469rh-Defensewide-NATO-complete160",
+            "govinfo:10usc2806-operative160"
+          ],
+          "additional_source_ids": [
+            "govinfo:hr8469rh-exact-amendment-pages",
+            "house-bill:8469rh-Defensewide-NATO-complete160",
+            "govinfo:10usc2806-operative160"
+          ],
+          "meaning": "The May15,2026 exact question is SteubePartBAmendmentNo50toH.R.8469, not passage of the whole MilitaryConstruction/VAappropriations package. The amendment was rejected80–333with22NotVoting. Its proposed change was not adopted or enacted, and neither a project award nor an actual fund transfer is established.\nThe offered text reduces the page10line3amount by$481,832,000and increases the page5line8amount by$481,832,000. The bound RHpages and complete two-heading excerpt identify those amounts as NATO Security Investment Program and MilitaryConstruction,Defense-Wide respectively. The proposal changes NATOSecurityInvestmentfrom$481,832,000to$0 and Defense-WideMilitaryConstructionfrom$3,757,301,000to$4,239,133,000. The two-heading combined proposed amount remains$4,239,133,000; this is not an increase or decrease in their combined amount, a measured whole-bill budget/outlay/deficit effect, or an executed transfer of existing money.\nThe NATOheading funds the UnitedStatesshare for acquisition/construction of military facilities/installations, including international headquarters, and related collective-defense expenses under2806and MilitaryConstructionAuthorizationActs; that proposed line is available until expended. The Defense-Wideheading funds authorized acquisition/construction/installation/equipment of public works, installations, facilities and real property for DoDactivities/agencies other than military departments, available untilSeptember30,2031. It is not an earmark to a named domestic project or a claim that all eligible facilities are located in the UnitedStates. The amendment changes those two dollar amounts, not their stated purposes/availability conditions.\nThe Defense-Wideheading retains Secretary-determined transfers to designated military-construction/family-housing appropriations, merged for the receiving appropriation's purposes/time. It retains the$221,001,000study/planning/design/architect-engineer limit with the stated additional-obligation determination and notification exception, and the fixed$55,000,000report-table project/activity direction. Neither fixed amount is automatically raised by the$481,832,000increment. Particular table projects, individual authorizations and resulting obligations were not independently inspected or certified.\nThe retained2806unit describes the specific NATOsecurity-investment contribution authority, authorization conditions and limited additional-contribution/notice provisions. The amendment does not repeal2806or end allNATOfunding, contributions or Allianceparticipation. Other accounts, available funds, current minor-project thresholds under2805and individual statutory contribution eligibility are not established here; zeroing this proposed line cannot be rendered as proving every UnitedStatesNATOpayment becomes zero.\nA Yea supports adopting this complete equal-dollar construction-account shift; a Nay opposes it without identifying a component-specific position, desired alternative or view on NATOmembership. Infrastructure/Technology membership is an UNACCEPTED candidate proposal based on the direct military-public-works/facility-construction appropriations affected by the whole amendment. A competing boundary treats the choice as general defense/alliance funding policy. Independent exact-version, whole-account and taxonomy review is required before acceptance/publication. No current funding cutoff, withdrawal, completed construction, security result, job/cost effect, motive or accepted domain expansion is inferred.",
+          "limitations": [
+            "Exact failed amendment, not whole appropriations passage/enactment or an actual transfer.",
+            "NATOSIP481832000to0 and Defense-Wide3757301000to4239133000; two-heading total4239133000 unchanged, no claimed whole-bill outlay/deficit effect.",
+            "Different until-expended versusSep30,2031availability, account purposes and receiving-transfer conditions remain.",
+            "Fixed221001000study/design cap with determination/notification exception and55000000report-table direction are not automatically increased; individual projects/table contents not certified.",
+            "Separate2806authority/limited additional-contribution provisions not repealed; other funds/current2805thresholds/currentNATOpayments/Allianceparticipation not established.",
+            "Military physical-construction versus broader defense/alliance funding taxonomy remains unaccepted; no domestic-project, security or realized outcome claim."
+          ],
+          "choice_meanings": {
+            "Yea": "supported adopting Steube PartBAmendmentNo50toH.R.8469 in this exact form",
+            "Nay": "opposed adopting Steube PartBAmendmentNo50toH.R.8469 in this exact form"
+          },
+          "action_id": "house:119:2:174",
+          "claim_source_map": [
+            {
+              "source_id": "congressional-record:8469-amend50-roll174-choice160",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "AMENDMENT NO. 50 OFFERED BY MR . STEUBE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 50 printed \nin part B of House Report 119–648. \nMr. STEUBE. Mr. Chairman, I have \nan amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 10, line 3, after the dollar amount, in-\nsert ‘‘(reduced by $481,832,000)’’. \nPage 5, line 8, after the dollar amount, in-\nsert ‘‘(increased by $481,832,000)’’. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Florida (Mr. S\nTEUBE). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nRECORDED VOTE \nMs. WASSERMAN SCHULTZ. Mr. \nChair, I demand a recorded vote. \nA recorded vote was ordered. \nThe vote was taken by electronic de-\nvice, and there were—ayes 80, noes 333, \nnot voting 22, as follows: \n[Roll No. 174] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+            },
+            {
+              "source_id": "govinfo:hr8469rh-exact-amendment-pages",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/4e1e6214307fb0b816c661fba0b8a6513a0e23ab8cc19aee650b3bcd49a4d347.0000000.json",
+                    "sha256": "548a3405a45ad2f4aea36c91ca57f6979a6277ed19b6535ccafff4df164c1c1f",
+                    "start_character": 0,
+                    "end_character": 4407
+                  }
+                ],
+                "utf8_sha256": "4e1e6214307fb0b816c661fba0b8a6513a0e23ab8cc19aee650b3bcd49a4d347",
+                "total_characters": 4407,
+                "transport_only": true
+              }
+            },
+            {
+              "source_id": "house-bill:8469rh-Defensewide-NATO-complete160",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "MILITARY CONSTRUCTION, DEFENSE-WIDE 1\n(INCLUDING TRANSFER OF FUNDS)  2\nFor acquisition, construction, installation, and equip-3\nment of temporary or permanent public works, installa-4\ntions, facilities, and real property for activities and agen-5\ncies of the Department of Defense (other than the military 6\ndepartments), as currently authorized by law, 7\n$3,757,301,000, to remain available until September 30, 8\n2031: Provided, That such amounts of this appropriation 9\nas may be determined by the Secretary of Defense may 10\nbe transferred to such appropriations of the Department 11\nof Defense available for military construction or family 12\nhousing as the Secretary may designate, to be merged with 13\nand to be available for the same purposes, and for the 14\nsame time period, as the appropriation or fund to which 15\ntransferred: Provided further, That, of the amount, not to 16\nexceed $221,001,000 shall be available for study, plan-17\nning, design, and architect and engineer services, as au-18\nthorized by law, unless the Secretary of Defense deter-19\nmines that additional obligations are necessary for such 20\npurposes and notifies the Committees on Appropriations 21\nof both Houses of Congress of the determination and the 22\nreasons therefor: Provided further, That of the amount 23\nmade available under this heading, $55,000,000 shall be 24\nfor the projects and activities, and in the amounts, speci-25\n\n\nfied in the table under the heading ‘‘Military Construction, 1\nDefense-Wide’’ in the report accompanying this Act, in ad-2\ndition to amounts otherwise available for such purposes. 3\n\n\nNORTH ATLANTIC TREATY ORGANIZATION 19\nSECURITY INVESTMENT PROGRAM 20\nFor the United States share of the cost of the North 21\nAtlantic Treaty Organization Security Investment Pro-22\ngram for the acquisition and construction of military fa-23\ncilities and installations (including international military 24\nheadquarters) and for related expenses for the collective 25\n\n\ndefense of the North Atlantic Treaty Area as authorized 1\nby section 2806 of title 10, United States Code, and Mili-2\ntary Construction Authorization Acts, $481,832,000, to 3\nremain available until expended. 4\n"
+            },
+            {
+              "source_id": "govinfo:10usc2806-operative160",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "§2806. Contributions for North Atlantic Treaty Organizations Security Investment (a) Within amounts authorized by law for such purpose, the Secretary of Defense may make contributions for the United States share of the cost of multilateral programs for the acquisition and construction of military facilities and installations (including international military headquarters) and for related expenses for the collective defense of the North Atlantic Treaty Area. (b)(1) Funds may not be obligated or expended in connection with the North Atlantic Treaty Organization Security Investment program in any year unless such funds have been authorized by law for such program. (2) If any funds authorized for the North Atlantic Treaty Organization Security Investment program for a fiscal year are available to be obligated or expended at the end of that fiscal year and no funds have been authorized for the following fiscal year, not more than 50 percent of the amount authorized for the North Atlantic Treaty Organization Security Investment program for that fiscal year shall be deemed to be authorized by law for purposes of paragraph (1) for the following fiscal year. (c)(1) The Secretary of Defense may make contributions in excess of the amount appropriated for contribution under subsection (a) if the amount of the contribution in excess of that amount does not exceed 200 percent of the amount specified by section 2805(a) of this title as the maximum amount for a minor military construction project. (2) If the Secretary determines that the amount appropriated for contribution under subsection (a) in any fiscal year must be exceeded by more than the amount authorized under paragraph (1), the Secretary may make contributions in excess of such amount, but not in excess of 125 percent of the amount appropriated, only after the end of the 14-day period beginning on the date on which the Secretary submits, in an electronic medium pursuant to section 480 of this title, to the appropriate committees of Congress notice of the increase, including the reasons for the increase and the source of the funds to be used for the increase. "
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

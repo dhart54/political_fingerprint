@@ -1,0 +1,54 @@
+{
+  "original_source_object_sha256": "3ca587ec653e8a8d4d071d02aab3407134c60d4758a6c1adf14f38892722283f",
+  "source": {
+    "source_id": "immigration:hr6938-roll7-whole-choice217",
+    "source_type": "official_congressional_record_excerpt",
+    "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+    "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+    "text_version": "Only finalengrossment/thirdreading,ownpassagequestion/orderedyeas/nays,electronic397/28/6Roll7table/finalvotechanges/passage/result/reconsideration. Two literal governed page-parent spans; no retention outcome substituted, laterMiccosukee vote excluded, no fresh fullPDF replay.",
+    "text": {
+      "$lossless_text_parts": [
+        {
+          "path": "source_parts/4f0e079bff6dcc4efb16aeac61c31437e07a07b1d16325844116eb771f7fb3d4.0000000.json",
+          "sha256": "2777837d32fcf45a1156e34c6e56e108c6aa9a63d052a2d42d2224392a8b845e",
+          "start_character": 0,
+          "end_character": 5166
+        }
+      ],
+      "utf8_sha256": "4f0e079bff6dcc4efb16aeac61c31437e07a07b1d16325844116eb771f7fb3d4",
+      "total_characters": 5166,
+      "transport_only": true
+    },
+    "governed_parent_spans": [
+      {
+        "parent_source_id": "congressional-record:2026-01-08-6938-retention",
+        "parent_source_identity": {
+          "source_id": "congressional-record:2026-01-08-6938-retention",
+          "source_type": "official_congressional_record_excerpt",
+          "text_version": "Official PDF pages 69,73,74",
+          "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+          "governed_bytes_sha256": "9d08027010aa921ae73896edbba045d4e725b2739b064886141fe82d1c716b6a"
+        },
+        "start": 23225,
+        "end": 23822,
+        "total": 23822
+      },
+      {
+        "parent_source_id": "congressional-record:2026-01-08-6938-passage-result",
+        "parent_source_identity": {
+          "source_id": "congressional-record:2026-01-08-6938-passage-result",
+          "source_type": "official_congressional_record_excerpt",
+          "text_version": "Official PDF pages 75",
+          "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+          "governed_bytes_sha256": "bc920de8f75266a3ff6d74186bd0497ec13e69467db1d122c8b9360f29a7e1c0"
+        },
+        "start": 0,
+        "end": 4567,
+        "total": 8093
+      }
+    ],
+    "governed_parent_artifact_ref": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+    "text_extraction_method": "Literal unchanged governed strings; two newlines join page-parent spans. No glyph/date/printed-case repair.",
+    "governed_bytes_sha256": "2bc4050007c63ff8e22d591d292ddc6bfdb7f73d043d7519dc96cd49fa03c4ec"
+  }
+}

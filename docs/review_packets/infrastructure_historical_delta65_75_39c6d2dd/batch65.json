@@ -1,0 +1,539 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 65,
+  "exact_committed_head": "aab999fd1abd19f1a7f95f8a1e9fab23c50b59f5",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "aab999fd1abd19f1a7f95f8a1e9fab23c50b59f5",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/membership_review.json",
+      "git_blob": "30f0094c51ea2b967efbd8525dba16472590423d",
+      "git_bytes_sha256": "c9012e4a0036b417b5b2981d7297d10b7f786037095d4725958dafca2a634db4"
+    },
+    "sources": {
+      "head": "aab999fd1abd19f1a7f95f8a1e9fab23c50b59f5",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/sources.json",
+      "git_blob": "d22cd95dca7eeaf39537745247ab438d584dd4d4",
+      "git_bytes_sha256": "a20f4b7f41c6010d3ea646d79b68c80c17c18770859416c7fa3854926be4232c"
+    },
+    "screening": {
+      "head": "aab999fd1abd19f1a7f95f8a1e9fab23c50b59f5",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/screening_receipt.json",
+      "git_blob": "4704fd2afb9c0376c2abdb5ba4c287d53bc18e0a",
+      "git_bytes_sha256": "bc532556df18e1174e75e9c7bc468123fa4b6cb0e9d1bb253e2475aa717f78bc"
+    },
+    "screening_units": {
+      "head": "aab999fd1abd19f1a7f95f8a1e9fab23c50b59f5",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/screening_units_receipt.json",
+      "git_blob": "2e68f734d5396761936ae1a17e7138460e37edda",
+      "git_bytes_sha256": "15887a36a027e21391b519947ffe3a655399422a8b0179403b4de58e7fff6ce8"
+    },
+    "validation": {
+      "head": "aab999fd1abd19f1a7f95f8a1e9fab23c50b59f5",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/validation_receipt.json",
+      "git_blob": "af78ba9eeb4cf1113375f92fbf5e8a243af79134",
+      "git_bytes_sha256": "96537c94b88c8762439fa7515a82d43c4a23e825d4847e30404412087dcdc923"
+    }
+  },
+  "original_membership_review_sha256": "204afa2ed3a0f5145e1562f5050cda1ac85a4755caefc35329015317d1667085",
+  "new_screened_ids": [
+    "house:119:2:6",
+    "house:119:2:7",
+    "house:119:2:8",
+    "house:119:2:9",
+    "house:119:2:10"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "3b0a6c20555b32a1d3c32fa92e7caacdc7b48cbc208640c5f8951fb222c31538",
+      "record": {
+        "action_id": "house:119:2:6",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The exact question retains DivisionsB andC together under H.Res.977, not only a Corps project or the whole bill. Of the 334,356-character retained IH B/C source, only the first 2,600 and last 1,000 were read. The opening concerns Corps civil-function accounts with purpose, work-plan and availability qualifications; the ending contains named explanatory-disclosure corrections, not new findings about recipients. Whole Energy/Water and Interior/Environment accounts, limitations, transfers, explanatory material and IH/floor/EH reconciliation remain pending. A selected construction account does not establish whole membership, net funding, actual expenditure or a project commitment. Retention is substantive and separate from final passage and enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:6",
+            "url": "https://clerk.house.gov/evs/2026/roll006.xml",
+            "raw_sha256": "ef542fa3e1f3b7239d41fa0b02b8db34d1ed7a96283934eb1342140eb5c72752",
+            "governed_bytes_sha256": "ec41e1f8e37916b950cffa0debc60b42528beeb7a30ebfd10e79b26cf5dc0b6c"
+          },
+          {
+            "source_id": "govinfo:hr6938ih-divisions-b-c",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm",
+            "raw_sha256": "608ea1b09e392979f172c69916afacf612ffe03b8b18038ad35a53b99d45c645",
+            "governed_bytes_sha256": "44771f2c5827363ea259b52f2863efe18f18b6a0465f612ae05eaf0fac4354e8"
+          },
+          {
+            "source_id": "govinfo:hres977eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm",
+            "raw_sha256": "7780f346b5f0b9c2020d2a2cc423cc35749209403b775554a0d974c4a301e1c1",
+            "governed_bytes_sha256": "5c61e60033d1ed0380c3be9dc936a0f2486e4db72cd5c04830167b2886010a06"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6938ih-divisions-b-c",
+            "locator": "Only first 2600 of 334356 characters in IH B/C source read",
+            "passage": "DIVISION B--ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 TITLE I CORPS OF ENGINEERS--CIVIL DEPARTMENT OF THE ARMY Corps of Engineers--Civil The following appropriations shall be expended under the direction of the Secretary of the Army and the supervision of the Chief of Engineers for authorized civil functions of the Department of the Army pertaining to river and harbor, flood and storm damage reduction, shore protection, aquatic ecosystem restoration, and related efforts. investigations For expenses necessary where authorized by law for the collection and study of basic information pertaining to river and harbor, flood and storm damage reduction, shore protection, aquatic ecosystem restoration, and related needs; for surveys and detailed studies, and plans and specifications of proposed river and harbor, flood and storm damage reduction, shore protection, and aquatic ecosystem restoration projects, and related efforts prior to construction; for restudy of authorized projects; and for miscellaneous investigations, and, when authorized by law, surveys and detailed studies, and plans and specifications of projects prior to construction, $150,384,000, to remain available until expended: Provided, That the Secretary shall not deviate from the work plan, once the plan has been submitted to the Committees on Appropriations of both Houses of Congress. construction For expenses necessary for the construction of river and harbor, flood and storm damage reduction, shore protection, aquatic ecosystem restoration, and related projects authorized by law; for conducting detailed studies, and plans and specifications, of such projects (including those involving participation by States, local governments, or private groups) authorized or made eligible for selection by law (but such detailed studies, and plans and specifications, shall not constitute a commitment of the Government to construction); $3,169,966,000, to remain available until expended; of which $217,983,000, to be derived from the Harbor Maintenance Trust Fund, shall be to cover the Federal share of construction costs for facilities under the Dredged Material Disposal Facilities program; and of which such sums as are necessary to cover 25 percent of the costs of construction, replacement, rehabilitation, and expansion of inland waterways projects shall be derived from the Inland Waterways Trust Fund, except as otherwise specifically provided for in law: Provided, That the Secretary shall not deviate from the work plan, once the plan has been submitted to the Committees on Appr"
+          },
+          {
+            "source_id": "govinfo:hr6938ih-divisions-b-c",
+            "locator": "Only last 1000 of 334356 characters read",
+            "passage": "e heading ``Disclosure of Earmarks and Congressionally Directed Spending Items'' in the explanatory statement for the Agriculture, Rural Development, Food and Drug Administration, and Related Agency Appropriations Act, 2026 (division B of Public Law 119-37) described in section 4 in the matter preceding division A of such Act are deemed to be amended-- (1) by inserting ``Schiff'' for the project identified as the ``Forest and Watershed Management Plan'' for the recipient ``McKinleyville Community Services District''; (2) by inserting ``Schatz'' for the project identified as ``Facility Improvements and Purchase of Equipment'' for the recipient ``The Queens Health System''; and (3) by inserting ``Cantwell'' for the project identified as the ``Chewelah Expansion and Regional Workforce Development Center'' for the recipient ``NEW Health Programs Association''. This division may be cited as the ``Department of the Interior, Environment, and Related Agencies Appropriations Act, 2026''. <all>"
+          },
+          {
+            "source_id": "govinfo:hres977eh",
+            "locator": "Complete governing rule; separate retention procedure",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 977 Engrossed in House (EH)] <DOC> H. Res. 977 In the House of Representatives, U. S., January 7, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4593) to amend the Energy Policy and Conservation Act to revise the definition of showerhead. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 5184) to prohibit the Secretary of Energy from enforcing energy efficiency standards applicable to manufactured housing, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Energy and Commerce now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 6938) making consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees; (2) proceedings under section 4 of this resolution; and (3) one motion to recommit. Sec. 4. The proceedings referred to in section 3 of this resolution are as follows: (a) after debate pursuant to section 3 of this resolution, the Chair shall, in the order specified by the Chair, put the question on (1) retaining Division A and (2) retaining Divisions B and C; (b) the yeas and nays shall be considered as ordered on each of the questions under subsection (a); and (c) after disposition of the questions under subsection (a), the Chair shall put the question on engrossment and third reading of the text comprising those portions of the bill retained pursuant to subsection (a). Sec. 5. In the engrossment of H.R. 6938, the Clerk shall conform division and section numbers and make related corrections to cross-references in the event a portion of the bill is not retained pursuant to section 4 of this resolution. Sec. 6. The chair of the Committee on Appropriations may insert in the Congressional Record not later than January 9, 2026, such material as he may deem explanatory of H.R. 6938. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f3bebb907e4ab261e08efafdf56e10957574eae679340f19b1d7c9c4d84cbd20",
+      "record": {
+        "action_id": "house:119:2:7",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The whole H.R.6938 passage choice follows separate retention votes and covers the retained A/B/C package. The two EH division sources were reviewed only in their first 1,800 and last 900 characters, plus the complete 1,870-character universal frontmatter and own passage question/outcome around member lists. Whole accounts, statutory riders, balances, availability, explanatory statement and IH/floor/EH reconciliation remain pending. Division-specific this Act references and explanatory-statement effect remain. The 397–28 passage with six Not Voting is distinct from division retention, later enactment or actual outlays. Changed-vote announcements do not establish ideological change or motive; final official Clerk statuses govern. No selected technical, water or energy account supplies the whole package’s Infrastructure meaning.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:7",
+            "url": "https://clerk.house.gov/evs/2026/roll007.xml",
+            "raw_sha256": "25964a5b8d8b39fed88673c69e89aa17a9f9c504369fe56ed32ef6d283016fe9",
+            "governed_bytes_sha256": "da79b2d622fc3f17fd4850262d4d003ea9ee57709870057abfc0bc8c31b3858c"
+          },
+          {
+            "source_id": "govinfo:hr6938eh-division-a",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+            "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+            "governed_bytes_sha256": "1085a34b729ea81e3e7ca81f4dfc8ccdcf5aa5c42abc86775e4e9ea3301ef256"
+          },
+          {
+            "source_id": "govinfo:hr6938eh-divisions-b-c",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+            "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+            "governed_bytes_sha256": "7fc197d01096814a5f04a6f54cec4693881c4be2473f10c9662b5ffee056b723"
+          },
+          {
+            "source_id": "govinfo:hr6938eh-universal-frontmatter216",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+            "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+            "governed_bytes_sha256": "89d8ddee2965ba58cfa92585156b2abcea48b5dc5a209080f4966dc96262816a"
+          },
+          {
+            "source_id": "immigration:hr6938-roll7-whole-choice217",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+            "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+            "governed_bytes_sha256": "2bc4050007c63ff8e22d591d292ddc6bfdb7f73d043d7519dc96cd49fa03c4ec"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6938eh-division-a",
+            "locator": "Only first 1800 characters of this EH division source read",
+            "passage": "SECTION 1. SHORT TITLE. This Act may be cited as the ``Commerce, Justice, Science; Energy and Water Development; and Interior and Environment Appropriations Act, 2026''. SEC. 2. TABLE OF CONTENTS. Sec. 1. Short title. Sec. 2. Table of contents. Sec. 3. References. Sec. 4. Explanatory statement. Sec. 5. Statement of appropriations. DIVISION A--COMMERCE, JUSTICE, SCIENCE, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Department of Commerce Title II--Department of Justice Title III--Science Title IV--Related Agencies Title V--General Provisions DIVISION B--ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Corps of Engineers--Civil Title II--Department of the Interior Title III--Department of Energy Title IV--Independent Agencies Title V--General Provisions DIVISION C--DEPARTMENT OF THE INTERIOR, ENVIRONMENT, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Department of the Interior Title II--Environmental Protection Agency Title III--Related Agencies Title IV--General Provisions SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in any division of this Act shall be treated as referring only to the provisions of that division. SEC. 4. EXPLANATORY STATEMENT. The explanatory statement regarding this Act, printed in the House section of the Congressional Record on or about January 7, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall have the same effect with respect to the allocation of funds and implementation of divisions A through C of this Act as if it were a joint explanatory statement of a committee of conference. SEC. 5. STATEMENT OF APPROPRIATIONS. The following sums in this Act are appropriated, out of any money in the Treasury not o"
+          },
+          {
+            "source_id": "govinfo:hr6938eh-division-a",
+            "locator": "Only last 900 characters of this EH division source read",
+            "passage": "unications and Information Administration'' in division J of the Infrastructure Investment and Jobs Act (Public Law 117-58) and repurposed or transferred for salaries and expenses, administration, and oversight of programs pursuant to section 542 of the Consolidated Appropriations Act, 2024 (Public Law 118-42): Provided, That amounts derived by transfer pursuant to this subsection shall continue to be treated as amounts specified in section 103(b) of division A of Public Law 118-5. (d) Of the amounts made available under the heading ``Department of Commerce--National Oceanic and Atmospheric Administration--Procurement, Acquisition and Construction'', $44,000,000 shall be derived by transfer from the unobligated balances of the Department of Commerce Nonrecurring Expenses Fund. This division may be cited as the ``Commerce, Justice, Science, and Related Agencies Appropriations Act, 2026''."
+          },
+          {
+            "source_id": "govinfo:hr6938eh-divisions-b-c",
+            "locator": "Only first 1800 characters of this EH division source read",
+            "passage": "DIVISION B--ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 TITLE I CORPS OF ENGINEERS--CIVIL DEPARTMENT OF THE ARMY Corps of Engineers--Civil The following appropriations shall be expended under the direction of the Secretary of the Army and the supervision of the Chief of Engineers for authorized civil functions of the Department of the Army pertaining to river and harbor, flood and storm damage reduction, shore protection, aquatic ecosystem restoration, and related efforts. investigations For expenses necessary where authorized by law for the collection and study of basic information pertaining to river and harbor, flood and storm damage reduction, shore protection, aquatic ecosystem restoration, and related needs; for surveys and detailed studies, and plans and specifications of proposed river and harbor, flood and storm damage reduction, shore protection, and aquatic ecosystem restoration projects, and related efforts prior to construction; for restudy of authorized projects; and for miscellaneous investigations, and, when authorized by law, surveys and detailed studies, and plans and specifications of projects prior to construction, $150,384,000, to remain available until expended: Provided, That the Secretary shall not deviate from the work plan, once the plan has been submitted to the Committees on Appropriations of both Houses of Congress. construction For expenses necessary for the construction of river and harbor, flood and storm damage reduction, shore protection, aquatic ecosystem restoration, and related projects authorized by law; for conducting detailed studies, and plans and specifications, of such projects (including those involving participation by States, local governments, or private groups) authorized or made eligible for"
+          },
+          {
+            "source_id": "govinfo:hr6938eh-divisions-b-c",
+            "locator": "Only last 900 characters of this EH division source read",
+            "passage": "atory statement for the Agriculture, Rural Development, Food and Drug Administration, and Related Agency Appropriations Act, 2026 (division B of Public Law 119-37) described in section 4 in the matter preceding division A of such Act are deemed to be amended-- (1) by inserting ``Schiff'' for the project identified as the ``Forest and Watershed Management Plan'' for the recipient ``McKinleyville Community Services District''; (2) by inserting ``Schatz'' for the project identified as ``Facility Improvements and Purchase of Equipment'' for the recipient ``The Queens Health System''; and (3) by inserting ``Cantwell'' for the project identified as the ``Chewelah Expansion and Regional Workforce Development Center'' for the recipient ``NEW Health Programs Association''. This division may be cited as the ``Department of the Interior, Environment, and Related Agencies Appropriations Act, 2026''."
+          },
+          {
+            "source_id": "govinfo:hr6938eh-universal-frontmatter216",
+            "locator": "Complete retained whole-act frontmatter",
+            "passage": "SECTION 1. SHORT TITLE. This Act may be cited as the ``Commerce, Justice, Science; Energy and Water Development; and Interior and Environment Appropriations Act, 2026''. SEC. 2. TABLE OF CONTENTS. Sec. 1. Short title. Sec. 2. Table of contents. Sec. 3. References. Sec. 4. Explanatory statement. Sec. 5. Statement of appropriations. DIVISION A--COMMERCE, JUSTICE, SCIENCE, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Department of Commerce Title II--Department of Justice Title III--Science Title IV--Related Agencies Title V--General Provisions DIVISION B--ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Corps of Engineers--Civil Title II--Department of the Interior Title III--Department of Energy Title IV--Independent Agencies Title V--General Provisions DIVISION C--DEPARTMENT OF THE INTERIOR, ENVIRONMENT, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Department of the Interior Title II--Environmental Protection Agency Title III--Related Agencies Title IV--General Provisions SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in any division of this Act shall be treated as referring only to the provisions of that division. SEC. 4. EXPLANATORY STATEMENT. The explanatory statement regarding this Act, printed in the House section of the Congressional Record on or about January 7, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall have the same effect with respect to the allocation of funds and implementation of divisions A through C of this Act as if it were a joint explanatory statement of a committee of conference. SEC. 5. STATEMENT OF APPROPRIATIONS. The following sums in this Act are appropriated, out of any money in the Treasury not otherwise appropriated, for the fiscal year ending September 30, 2026. "
+          },
+          {
+            "source_id": "immigration:hr6938-roll7-whole-choice217",
+            "locator": "Own passage question/result totals before member lists",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on the engrossment and \nthird reading of the bill. \nThe bill was ordered to be engrossed \nand read a third time, and was read the \nthird time. \nThe SPEAKER pro tempore. The \nquestion is on passage of the bill. \nPursuant to clause 10 of rule XX, the \nyeas and nays are ordered. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 397, nays 28, \nnot voting 6, as follows: \n[Roll No. 7] \n"
+          },
+          {
+            "source_id": "immigration:hr6938-roll7-whole-choice217",
+            "locator": "Own passage outcome after member lists; no changed-vote inference",
+            "passage": "So the bill was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c6c9e9f03d177e1e627d3007dc190f435cb9c5b0ba554fddc94f71aeae0aaa52",
+      "record": {
+        "action_id": "house:119:2:8",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.504 enrolled text would add the mapped Osceola Camp area to the Miccosukee Reserved Area and require appropriate structure-protection actions within two years, in consultation with the Tribe. The exact choice is a failed veto-override attempt, not ordinary passage or enactment. Whole original Reserved Area Act rights/eligibility/management context, the referenced July 2023 map and mixed tribal-area/flood-protection Infrastructure boundary remain pending. No acreage, map boundary, health-program eligibility, completed protection, expenditure, motive or global current-law result is inferred. The enrolled text’s An Act form is not proof of enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:8",
+            "url": "https://clerk.house.gov/evs/2026/roll008.xml",
+            "raw_sha256": "085f2f98dc036557400756f548c9d12d21527d295d650945252dc340b7909f7e",
+            "governed_bytes_sha256": "5cb39e492f4a2d032b876c1784977c9908c8af8d08cd23135ea185c2ad2d5239"
+          },
+          {
+            "source_id": "govinfo:hr504enr",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr504enr/html/BILLS-119hr504enr.htm",
+            "raw_sha256": "efe0299b735b31023476554d882cb7deb96761dc515b4aab1528ecf46b1fe7ee",
+            "governed_bytes_sha256": "4d062934e5fb8f4ee0f6624495348ea9f755d0f529bca41c441a421d5fd1abf5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr504enr",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 504 Enrolled Bill (ENR)] H.R.504 One Hundred Nineteenth Congress of the United States of America AT THE FIRST SESSION Begun and held at the City of Washington on Friday, the third day of January, two thousand and twenty-five An Act To amend the Miccosukee Reserved Area Act to authorize the expansion of the Miccosukee Reserved Area and to carry out activities to protect structures within the Osceola Camp from flooding, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Miccosukee Reserved Area Amendments Act''. SEC. 2. MICCOSUKEE RESERVED AREA ADDITION. Section 4(4) of the Miccosukee Reserved Area Act (16 U.S.C. 410 note; Public Law 105-313) is amended by adding at the end the following: ``(C) Additional area.--In addition to the land described in subparagraph (B), the term `Miccosukee Reserved Area' or `MRA' includes the portion of the Park that is known as `Osceola Camp' and is depicted on the map entitled `Everglades National Park, Proposed Expansion-Miccosukee Reserved Area, Osceola Camp', numbered 160/188443, and dated July 2023, copies of which shall-- ``(i) be kept available for public inspection in the offices of the National Park Service; and ``(ii) be filed with appropriate officers of Miami-Dade County and the Tribe.''. SEC. 3. PROTECTION OF THE OSCEOLA CAMP FROM FLOODING. Section 8 of the Miccosukee Reserved Area Act (16 U.S.C. 410 note; Public Law 105-313) is amended by adding at the end the following: ``(j) Protection of Osceola Camp From Flooding.--Not later than 2 years after the date of enactment of this subsection, the Secretary, in consultation with the Tribe, shall take appropriate actions to protect structures within the area described in section 4(4)(C) from flooding.''. Speaker of the House of Representatives. Vice President of the United States and President of the Senate."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "e11a6ac0b0ca3954a0f8a17f6d71f7972e2f2f94d30dce4dbdb449b9f4ba8bf5",
+      "record": {
+        "action_id": "house:119:2:9",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete H.R.131 enrolled text, the complete retained 2009 conduit amendment and selected 1962 repayment/rate clauses support an unaccepted whole water-infrastructure repayment candidate. The 35 percent cost obligation remains; construction funding is from any entity other than the Secretary, and favorable balance-repayment terms require Secretary-determined financial hardship. Up to 75 years and simple interest at 50 percent of the Treasury-determined reference are not automatic terms, zero interest or debt forgiveness. Care/operation/maintenance/replacement and the revenue-credit cross-reference remain. The failed veto override did not itself enact the bill; no actual project, payment, savings or service outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:9",
+            "url": "https://clerk.house.gov/evs/2026/roll009.xml",
+            "raw_sha256": "ed98db2b6c56f6623ffb9b42adeb406bd8aa9227cd98138e010069d5d3bdee05",
+            "governed_bytes_sha256": "3afbf222c146b9e01d934f7f804ef52b8e63a882dbe5abd1450a6e90b2368aad"
+          },
+          {
+            "source_id": "govinfo:hr131enr",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr131enr/html/BILLS-119hr131enr.htm",
+            "raw_sha256": "b09256d58254eeacb311e9f5eb8a47d4d8d43af93c9e4121d600d19302e2dee5",
+            "governed_bytes_sha256": "e2f6356f0a01086d8c85706c8e3e3439d8d22e2ed4decf329cac95122edb82ea"
+          },
+          {
+            "source_id": "govinfo:pl111-11-arkansas9115",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+            "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+            "governed_bytes_sha256": "ff6e222ca1f666f2a6a33a1f68d8256ce8e55779a002ef8dd29801cf37f6eda8"
+          },
+          {
+            "source_id": "govinfo:pl87-590-original",
+            "url": "https://www.govinfo.gov/content/pkg/STATUTE-76/pdf/STATUTE-76-Pg389.pdf",
+            "raw_sha256": "c1ddb9b4e8d5003e7cc0408119d54a3727e255e8fac55de75b645a314183a465",
+            "governed_bytes_sha256": "503870d758b38c182966b5d49a1177ba28fb2e87f4b107ac94ac0cc4e119a3fb"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr131enr",
+            "locator": "Complete enrolled bill; not an enacted Public Law",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 131 Enrolled Bill (ENR)] H.R.131 One Hundred Nineteenth Congress of the United States of America AT THE FIRST SESSION Begun and held at the City of Washington on Friday, the third day of January, two thousand and twenty-five An Act To make certain modifications to the repayment for the Arkansas Valley Conduit in the State of Colorado. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Finish the Arkansas Valley Conduit Act''. SEC. 2. ARKANSAS VALLEY CONDUIT, COLORADO. Public Law 87-590 (76 Stat. 389; 123 Stat. 1320) is amended-- (1) in the first section-- (A) in subsection (c), in the second sentence, by striking ``or in the case of the Arkansas Valley Conduit, payment in an amount equal to 35 percent of the cost of the conduit that is comprised of revenue generated by payments pursuant to a repayment contract and revenue that may be derived from contracts for the use of Fryingpan-Arkansas project excess capacity or exchange contracts using Fryingpan-Arkansas project facilities,''; and (B) by adding at the end the following: ``(d) Arkansas Valley Conduit.-- ``(1) Repayment contract.--To provide domestic water supplies to communities and households that do not have reliable access to domestic water supplies, the contract for the Arkansas Valley Conduit shall provide for payment in an amount equal to 35 percent of the cost of the conduit, notwithstanding the reclamation laws or any other provision of this Act. The contract payments shall consist of-- ``(A) funding provided during construction from any entity other than the Secretary; and ``(B) based on a demonstration of financial hardship, as determined by the Secretary, repayment of the balance not covered under subparagraph (A) for a period of not more than 75 years with simple interest at a rate that is equal to 50 percent of the interest rate determined by the Secretary of the Treasury under section 2(c), including revenue derived from contracts for the use of excess capacity or exchange contracts using Fryingpan-Arkansas project facilities. ``(2) Operations and maintenance.--The contract for the Arkansas Valley Conduit shall provide for the assumption by the contracting parties of the care, operation, maintenance, and replacement of the conduit.''; and (2) in section 2(b)(3)(A), by striking ``this section'' and inserting ``subsection (d) of the first section''. Speaker of the House of Representatives. Vice President of the United States and President of the Senate."
+          },
+          {
+            "source_id": "govinfo:pl111-11-arkansas9115",
+            "locator": "Complete retained 2009 section 9115 amendment",
+            "passage": "SEC. 9115. ARKANSAS VALLEY CONDUIT, COLORADO. (a) Cost Share.--The first section of Public Law 87-590 (76 Stat. 389) is <<NOTE: 43 USC 616.>> amended in the second sentence of subsection (c) by inserting after ``cost thereof,'' the following: ``or in the case of the Arkansas Valley Conduit, payment in an amount equal to 35 percent of the cost of the conduit that is comprised of revenue generated by payments pursuant to a repayment contract and revenue that may be derived from contracts for the use of Fryingpan-Arkansas project excess capacity or exchange contracts using Fryingpan-Arkansas project facilities,''. [[Page 123 STAT. 1321]] (b) <<NOTE: 43 USC 616a.>> Rates.--Section 2(b) of Public Law 87- 590 (76 Stat. 390) is amended-- (1) by striking ``(b) Rates'' and inserting the following: ``(b) Rates.-- ``(1) In general.--Rates''; and (2) by adding at the end the following: ``(2) Ruedi dam and reservoir, fountain valley pipeline, and south outlet works at pueblo dam and reservoir.-- ``(A) In general.--Notwithstanding the reclamation laws, until the date on which the payments for the Arkansas Valley Conduit under paragraph (3) begin, any revenue that may be derived from contracts for the use of Fryingpan-Arkansas project excess capacity or exchange contracts using Fryingpan-Arkansas project facilities shall be credited towards payment of the actual cost of Ruedi Dam and Reservoir, the Fountain Valley Pipeline, and the South Outlet Works at Pueblo Dam and Reservoir plus interest in an amount determined in accordance with this section. ``(B) Effect.--Nothing in the Federal reclamation law (the Act of June 17, 1902 (32 Stat. 388, chapter 1093), and Acts supplemental to and amendatory of that Act (43 U.S.C. 371 et seq.)) prohibits the concurrent crediting of revenue (with interest as provided under this section) towards payment of the Arkansas Valley Conduit as provided under this paragraph. ``(3) Arkansas valley conduit.-- ``(A) Use of revenue.--Notwithstanding the reclamation laws, any revenue derived from contracts for the use of Fryingpan-Arkansas project excess capacity or exchange contracts using Fryingpan-Arkansas project facilities shall be credited towards payment of the actual cost of the Arkansas Valley Conduit plus interest in an amount determined in accordance with this section. ``(B) Adjustment of rates.--Any rates charged under this section for water for municipal, domestic, or industrial use or for the use of facilities for the storage or delivery of water shall be adjusted to reflect the estimated revenue derived from contracts for the use of Fryingpan-Arkansas project excess capacity or exchange contracts using Fryingpan-Arkansas project facilities.''. (c) Authorization of Appropriations.--Section 7 of Public Law 87-590 (76 Stat. 393) is <<NOTE: 43 USC 616f.>> amended-- (1) by striking ``Sec. 7. There is hereby'' and inserting the following: ``SEC. 7. AUTHORIZATION OF APPROPRIATIONS. ``(a) In General.--There is''; and (2) by adding at the end the following: ``(b) Arkansas Valley Conduit.-- ``(1) In general.--Subject to annual appropriations and paragraph (2), there are authorized to be appropriated such sums as are necessary for the construction of the Arkansas Valley Conduit. ``(2) Limitation.--Amounts made available under paragraph (1) shall not be used for the operation or maintenance of the Arkansas Valley Conduit.''. [[Page 123 STAT. 1322]]"
+          },
+          {
+            "source_id": "govinfo:pl87-590-original",
+            "locator": "Only exact 1962 section 1(c)through 2(c)repayment/rate context; neighboring Mann Creek text and remaining law are not claim support",
+            "passage": "(c) No part of the single purpose municipal and industrial water \nsupply works involved in the Fryingpan-Arkansas project shall be con­\nstructed by the Secretary in the absence of evidence satisfactory to him \nthat it would be in feasible for the communities involved to construct \nthe works themselves, singly or jointly. In the event it is determined \nthat these works, or any of them, are to be constructed by the Secre­\ntary, a contract providing, among other things, for payment of the \nactual cost thereof, with interest as hereinafter provided, as rapidly \nas is consistent with the contracting parties' ability to pay, but in any \nevent, within fifty years from the time the works are first available \nfor the delivery of water, and for assumption by the contracting par­\nties of the care, operation, maintenance, and replacement of the works \nshall be a condition precedent to construction thereof. \nSEC. 2. (a) Contracts to repay the portion of the cost of the Frying-\ngan-Arkansas project allocated to irrigation and assigned to be repaid \ny irrigation water users (exclusive of such portion of said cost as \nmay be derived from temporary water supply contracts or from other \nsources) which are entered into pursuant to subsection (d), section 9, \nof the Reclamation Project Act of 1939 (53 Stat. 1187^, as amended, \nshall provide for a basic repayment period of not more tnan fifty years \nafter completion of construction and shall not provide for any de­\nvelopment period. Such contracts shall be entered into only with \norganizations which have the capacity to levy assessments upon all tax­\nable real property located within their boundaries. \n(b) Rates charged for commercial power and for water for mu­\nnicipal, domestic or industrial use or for the use of facilities for the \nstorage and/or delivery of such water shall be designed to return to the: \nUnited States, within not more than fifty years from the completion of \neach unit of the project which serves those purposes, those costs of \nconstructing, operating and maintaining that unit which are allocated  76 STAT. ] PUBLIC LAW 87-590-AUG. 16, 1962 391 \nto said purposes and interest on the unamortized balance of said con­\nstruction allocation and, in addition, within the period fixed by sub­\nsection (a) of this section, so much of the irrigation allocation as is \nl)eyond the ability of the water users and their Organizations to repay. \n(c) The interest rate on the unamortized balance of the commercial \npower and municipal, domestic, and industrial water supply alloca­\ntions shall be determined by the Secretary of the Treasury, as of the \nbeginning of the fiscal year in which construction is initiated, on the \nbasis of the computed average interest rate payable by the Treasury \nupon its outstanding marketable public obligations, which are neither \ndue nor callable for redemption for fifteen.years from the date of issue. \n"
+          }
+        ],
+        "episode_candidate_id": "episode:hr131:119"
+      }
+    },
+    {
+      "original_record_sha256": "4e177351fa517e7238d69f2221bbed2d0bbe3abdb49450fb99073bd3bd36566d",
+      "record": {
+        "action_id": "house:119:2:10",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.Res.780 EH deems adopted the last qualifying ranking-minority Rules substitute printed at least one day before consideration of 1834, with debate/recommittal, House-rule and one-calendar-day-after-passage transmission controls. The complete retained McGovern substitute is dated November 12,2025; the January 8 EH supplies a comparison, not proof that every qualifying later filing was checked. Those texts concern extension of enhanced premium tax-credit rules through 2028 and a 2026-onward effective date. The last-eligible-submission check, whole deemed-version reconciliation and material tax-credit baselines remain pending. This adoption is distinct from the preceding discharge and subsequent bill passage, not a scheduling-only question or proof of actual credits, premiums, coverage or enacted extension.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:10",
+            "url": "https://clerk.house.gov/evs/2026/roll010.xml",
+            "raw_sha256": "eb5b40bbbc755098632df33c0506bda171da2cfebe3649b959d76c0b2a7f4886",
+            "governed_bytes_sha256": "55e52d95dd0fc1e0ae5479abfa7e259e15259041bbdc8352d45b90e5daa616cc"
+          },
+          {
+            "source_id": "govinfo:hres780eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres780eh/html/BILLS-119hres780eh.htm",
+            "raw_sha256": "2f01db9ce85ebd8e5b7489348459552ed9846439d96f0a607678664ca4726a5f",
+            "governed_bytes_sha256": "3d92c09bbb4c9e7b6a075060846e0368036d248348364170dc0f1b644ed67fdd"
+          },
+          {
+            "source_id": "immigration:hr1834-McGovern-substitute179",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-12/pdf/CREC-2025-11-12-house.pdf",
+            "raw_sha256": "d2d4f9715ef27c644131a401048781fa24f0593773cef738f5df5aafe35428aa",
+            "governed_bytes_sha256": "9eafd49e62d294481d226dfb45a73c84a5bf3a8b1e33bce816d2df57a4e76976"
+          },
+          {
+            "source_id": "govinfo:hr1834eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1834eh/html/BILLS-119hr1834eh.htm",
+            "raw_sha256": "da963879f55fac3db10d22b720c34f1d19d60a9bd1272cac83c19717ca0a6d9b",
+            "governed_bytes_sha256": "d81a0271292ee51710f48160489e3e283431a43f01ec17c70902280a5de30788"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres780eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 780 Engrossed in House (EH)] <DOC> H. Res. 780 In the House of Representatives, U. S., January 8, 2026. Resolved, That immediately upon adoption of this resolution, the House shall proceed to the consideration in the House of the bill (H.R. 1834) to advance policy priorities that will break the gridlock. All points of order against consideration of the bill are waived. An amendment in the nature of a substitute received for printing in the portion of the Congressional Record designated for that purpose in clause 8 of rule XVIII dated at least one day before the day of consideration of H.R. 1834, if submitted by the ranking minority member of the Committee on Rules, shall be considered as adopted. If more than one such amendment is submitted, then only the last amendment submitted shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the majority leader and minority leader or their respective designees; and (2) one motion to recommit. Sec. 2. Clause 1(c) of rule XIX and clause 8 of rule XX shall not apply to the consideration of H.R. 1834. Sec. 3. The Clerk shall transmit to the Senate a message that the House has passed H.R. 1834 no later than one calendar day after passage. Attest: Clerk."
+          },
+          {
+            "source_id": "immigration:hr1834-McGovern-substitute179",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENTS \nUnder clause 8 of rule XVIII, pro-\nposed amendments were submitted as \nfollows: \nH.R. 1834 \nOFFERED BY: MR. MCGOVERN \nAMENDMENT NO. 1: Strike all after the en-\nacting clause and insert the following: \nSECTION 1. EXTENSION OF ENHANCED PREMIUM \nTAX CREDIT. \n(a) EXTENSION OF RULES TO INCREASE PRE-\nMIUM ASSISTANCE AMOUNTS.—Clause (iii) of \nsection 36B(b)(3)(A) of the Internal Revenue \nCode of 1986 is amended— \n(1) in the heading, by striking ‘‘\nTHROUGH \n2025’’ and inserting ‘‘THROUGH 2028’’, and \n(2) in the matter preceding subclause (I), \nby striking ‘‘before January 1, 2026’’ and in-\nserting ‘‘before January 1, 2029’’. \n(b) E\nXTENSION OF RULE TO ALLOW CREDIT \nTO TAXPAYERS WHOSE HOUSEHOLD INCOME EX-\nCEEDS 400 P ERCENT OF POVERTY LINE.—Sub-\nparagraph (E) of section 36B(c)(1) of such \nCode is amended— \n(1) in the heading, by striking ‘‘\nTHROUGH \n2025’’ and inserting ‘‘THROUGH 2028’’, and \n(2) by striking ‘‘before January 1, 2026’’ and \ninserting ‘‘before January 1, 2029’’. \n(c) E FFECTIVE DATE.—The amendments \nmade by this section shall apply to taxable \nyears beginning after December 31, 2025. \n"
+          },
+          {
+            "source_id": "govinfo:hr1834eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1834 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 1834 _______________________________________________________________________ AN ACT To advance policy priorities that will break the gridlock. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. EXTENSION OF ENHANCED PREMIUM TAX CREDIT. (a) Extension of Rules To Increase Premium Assistance Amounts.-- Clause (iii) of section 36B(b)(3)(A) of the Internal Revenue Code of 1986 is amended-- (1) in the heading, by striking ``through 2025'' and inserting ``through 2028'', and (2) in the matter preceding subclause (I), by striking ``before January 1, 2026'' and inserting ``before January 1, 2029''. (b) Extension of Rule To Allow Credit to Taxpayers Whose Household Income Exceeds 400 Percent of Poverty Line.--Subparagraph (E) of section 36B(c)(1) of such Code is amended-- (1) in the heading, by striking ``through 2025'' and inserting ``through 2028'', and (2) by striking ``before January 1, 2026'' and inserting ``before January 1, 2029''. (c) Effective Date.--The amendments made by this section shall apply to taxable years beginning after December 31, 2025. Passed the House of Representatives January 8, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 1834 _______________________________________________________________________ AN ACT To advance policy priorities that will break the gridlock."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:10",
+      "original_source_object_sha256": "d480773ad089c068f2db1b974a8bc6fddf4f984ff593d9f0794489531bc9ff6f",
+      "path": "source_objects/d480773ad089c068f2db1b974a8bc6fddf4f984ff593d9f0794489531bc9ff6f.json"
+    },
+    {
+      "source_id": "clerk:119:2:6",
+      "original_source_object_sha256": "e89406718085956ba5f109ce12abc6cd3a4ca8fddcfcd675497c1ac10d2e66ab",
+      "path": "source_objects/e89406718085956ba5f109ce12abc6cd3a4ca8fddcfcd675497c1ac10d2e66ab.json"
+    },
+    {
+      "source_id": "clerk:119:2:7",
+      "original_source_object_sha256": "49120207d4d2232eb8d671a5023129f6aac6240a86c40c8fff90bfbeb161e03e",
+      "path": "source_objects/49120207d4d2232eb8d671a5023129f6aac6240a86c40c8fff90bfbeb161e03e.json"
+    },
+    {
+      "source_id": "clerk:119:2:8",
+      "original_source_object_sha256": "0288ffec9cd881769706d867b9b25a16cf26d6f17ed4c4d671d999816dc5c560",
+      "path": "source_objects/0288ffec9cd881769706d867b9b25a16cf26d6f17ed4c4d671d999816dc5c560.json"
+    },
+    {
+      "source_id": "clerk:119:2:9",
+      "original_source_object_sha256": "933e0f9702007e7daea9e67eb0b98a1e0d3a938067473ba494f0b75332a97d25",
+      "path": "source_objects/933e0f9702007e7daea9e67eb0b98a1e0d3a938067473ba494f0b75332a97d25.json"
+    },
+    {
+      "source_id": "govinfo:hr131enr",
+      "original_source_object_sha256": "2deb41b801f8ec77b081e073c08f7d055a4e6b997b3095a30ea64b8791c84dff",
+      "path": "source_objects/2deb41b801f8ec77b081e073c08f7d055a4e6b997b3095a30ea64b8791c84dff.json"
+    },
+    {
+      "source_id": "govinfo:hr1834eh",
+      "original_source_object_sha256": "0ab6c09f523cbacb027dca3a9ed901d0d0770fb064162e5437fd88faf2f0052f",
+      "path": "source_objects/0ab6c09f523cbacb027dca3a9ed901d0d0770fb064162e5437fd88faf2f0052f.json"
+    },
+    {
+      "source_id": "govinfo:hr504enr",
+      "original_source_object_sha256": "5ef434ceaf43765963ed4d0652a52de6e90c23c980dd9ea78dd140f14f75e844",
+      "path": "source_objects/5ef434ceaf43765963ed4d0652a52de6e90c23c980dd9ea78dd140f14f75e844.json"
+    },
+    {
+      "source_id": "govinfo:hr6938eh-division-a",
+      "original_source_object_sha256": "f4e3aa4eabc5b4afeda368b6b60b1dd3f510e447e27ee0d96d47837ac6dd7bb1",
+      "path": "source_objects/f4e3aa4eabc5b4afeda368b6b60b1dd3f510e447e27ee0d96d47837ac6dd7bb1.json"
+    },
+    {
+      "source_id": "govinfo:hr6938eh-divisions-b-c",
+      "original_source_object_sha256": "f45d35c0147f6497784a9a831ef3b02e96e9ec5f1649cbdeef951f3f1d36fa80",
+      "path": "source_objects/f45d35c0147f6497784a9a831ef3b02e96e9ec5f1649cbdeef951f3f1d36fa80.json"
+    },
+    {
+      "source_id": "govinfo:hr6938eh-universal-frontmatter216",
+      "original_source_object_sha256": "7840034eb865cf538760bdf939b2d9e465dd1db6c97710f0d1ddfe4084931d6c",
+      "path": "source_objects/7840034eb865cf538760bdf939b2d9e465dd1db6c97710f0d1ddfe4084931d6c.json"
+    },
+    {
+      "source_id": "govinfo:hr6938ih-divisions-b-c",
+      "original_source_object_sha256": "7a1dcce0bcdf0d2af12fc795bc0516648fac9c424e48f0d06dca61cc4da1782b",
+      "path": "source_objects/7a1dcce0bcdf0d2af12fc795bc0516648fac9c424e48f0d06dca61cc4da1782b.json"
+    },
+    {
+      "source_id": "govinfo:hres780eh",
+      "original_source_object_sha256": "e885d6fada610a52dbd14cd1753de3ebf2421e59d763564b36eb2f52f019120b",
+      "path": "source_objects/e885d6fada610a52dbd14cd1753de3ebf2421e59d763564b36eb2f52f019120b.json"
+    },
+    {
+      "source_id": "govinfo:hres977eh",
+      "original_source_object_sha256": "75c06b8bd522f6cc0a10098157d521cc0afeee556af030f32e7e4a234c5b0e42",
+      "path": "source_objects/75c06b8bd522f6cc0a10098157d521cc0afeee556af030f32e7e4a234c5b0e42.json"
+    },
+    {
+      "source_id": "govinfo:pl111-11-arkansas9115",
+      "original_source_object_sha256": "c831b66795a02a6b4dba4df83fb87d57e75ad578997ef88e57f339eb161efe58",
+      "path": "source_objects/c831b66795a02a6b4dba4df83fb87d57e75ad578997ef88e57f339eb161efe58.json"
+    },
+    {
+      "source_id": "govinfo:pl87-590-original",
+      "original_source_object_sha256": "5e6796b25941f941219962187a82ba26a355d8b0d8267f6490b4755126387754",
+      "path": "source_objects/5e6796b25941f941219962187a82ba26a355d8b0d8267f6490b4755126387754.json"
+    },
+    {
+      "source_id": "immigration:hr1834-McGovern-substitute179",
+      "original_source_object_sha256": "a003ab86b2cec371aa8902de3f66b54ae1c9a6cefc9195797836932b8b3327b7",
+      "path": "source_objects/a003ab86b2cec371aa8902de3f66b54ae1c9a6cefc9195797836932b8b3327b7.json"
+    },
+    {
+      "source_id": "immigration:hr6938-roll7-whole-choice217",
+      "original_source_object_sha256": "3ca587ec653e8a8d4d071d02aab3407134c60d4758a6c1adf14f38892722283f",
+      "path": "source_objects/3ca587ec653e8a8d4d071d02aab3407134c60d4758a6c1adf14f38892722283f.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr6938ih-divisions-b-c",
+      "governed_length": 334356,
+      "review_extent": "Only first 2600 and last 1000 of 334356 characters read"
+    },
+    {
+      "source_id": "govinfo:hres977eh",
+      "governed_length": 3665,
+      "review_extent": "Complete governing rule previously read and reused; not whole accounts review"
+    },
+    {
+      "source_id": "govinfo:hr6938eh-division-a",
+      "governed_length": 174034,
+      "review_extent": "Only first 1800 and last 900 characters read; whole middle accounts/limitations unreviewed"
+    },
+    {
+      "source_id": "govinfo:hr6938eh-divisions-b-c",
+      "governed_length": 334350,
+      "review_extent": "Only first 1800 and last 900 characters read; whole middle accounts/limitations unreviewed"
+    },
+    {
+      "source_id": "govinfo:hr6938eh-universal-frontmatter216",
+      "governed_length": 1870,
+      "review_extent": "Complete 1870-character frontmatter read previously and reused"
+    },
+    {
+      "source_id": "immigration:hr6938-roll7-whole-choice217",
+      "governed_length": 5166,
+      "review_extent": "Only own passage question/totals before member lists and own outcome after lists reviewed; not a voting-pattern/motive review"
+    },
+    {
+      "source_id": "govinfo:hr504enr",
+      "governed_length": 2054,
+      "review_extent": "Complete retained own enrolled bill, rule, offered substitute or selected statutory amendment read; external law/map/last-filing checks are not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:hr131enr",
+      "governed_length": 2666,
+      "review_extent": "Complete retained own enrolled bill, rule, offered substitute or selected statutory amendment read; external law/map/last-filing checks are not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:pl111-11-arkansas9115",
+      "governed_length": 3420,
+      "review_extent": "Complete retained own enrolled bill, rule, offered substitute or selected statutory amendment read; external law/map/last-filing checks are not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:pl87-590-original",
+      "governed_length": 19977,
+      "review_extent": "Only 0:11000 of 19977 characters read; claim support restricted to 5966:8879 section 1(c)through 2(c). Captured source includes neighboring Mann Creek text, which supplies no conduit claim."
+    },
+    {
+      "source_id": "govinfo:hres780eh",
+      "governed_length": 1629,
+      "review_extent": "Complete retained own enrolled bill, rule, offered substitute or selected statutory amendment read; external law/map/last-filing checks are not implicitly cleared"
+    },
+    {
+      "source_id": "immigration:hr1834-McGovern-substitute179",
+      "governed_length": 1120,
+      "review_extent": "Complete retained own enrolled bill, rule, offered substitute or selected statutory amendment read; external law/map/last-filing checks are not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:hr1834eh",
+      "governed_length": 1534,
+      "review_extent": "Complete later EH comparison only; not proof of last qualifying submission"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_enrolled_bills_read": 2,
+    "partial_division_sources": 3,
+    "complete_whole_act_frontmatter_reused": 1,
+    "complete_own_passage_question_and_outcome_units": 1,
+    "complete_governing_or_deemed_rules_read_or_reused": 2,
+    "complete_offered_substitute_units_read": 1,
+    "complete_selected_statutory_amendments_read": 1,
+    "selected_historic_repayment_rate_extent_read": 1,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:6",
+        "evidence_unit": "whole_or_partial_record_with_explicit_version_map_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:7",
+        "evidence_unit": "whole_or_partial_record_with_explicit_version_map_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:8",
+        "evidence_unit": "whole_or_partial_record_with_explicit_version_map_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:9",
+        "evidence_unit": "whole_enrolled_bill_and_selected_material_repayment_baselines",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:10",
+        "evidence_unit": "whole_or_partial_record_with_explicit_version_map_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}

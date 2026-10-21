@@ -1,0 +1,22 @@
+{
+  "exact_failed_command": "python -m unittest backend.tests.test_ci_workflow_preservation backend.tests.test_accepted_findings_synthesis backend.tests.test_accepted_findings_public_wording",
+  "reported_tests": 44,
+  "reported_seconds": 0.46,
+  "reported_error": "M14FPublicWordingAcceptanceTests.setUpClass: raw candidate file differs byte-for-byte from exact reviewed head",
+  "artifact_path": "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/public_wording_candidate_package.json",
+  "reviewed_commit": "f8997db8f0a5612795d22b0747d7f63721f901cd",
+  "a988_baseline_commit": "a988dd87b307ad9575201130b87105e3717013c1",
+  "worktree_bytes": 28563,
+  "worktree_sha256": "f42bc66be9935f6f56c6770b88856a670e09c3f046ca9af3c472a4a482477271",
+  "worktree_CRLF_count": 437,
+  "reviewed_bytes": 28126,
+  "reviewed_sha256": "89f94a56f6ba36ba2a5846ead5da641ce25044918dc851d8e986431999c59976",
+  "reviewed_CRLF_count": 0,
+  "a988_HEAD_index_reviewed_and_current_generator_byte_identical": true,
+  "worktree_differs_only_by_CRLF": true,
+  "committed_git_blob": "4be6c0d6d61614470db21d9533fde1db2516f2bf",
+  "reviewed_git_blob": "4be6c0d6d61614470db21d9533fde1db2516f2bf",
+  "artifact_mutated_or_normalized": false,
+  "qualification": "This documents the specific local Windows checkout byte-check failure only; it does not excuse the in-scope hosted attribute-filter regression or waive successor hosted validation.",
+  "executed_phase": "Initial broad attempt before subsequent helper/negative-test corrections; not a current-tree execution claim"
+}

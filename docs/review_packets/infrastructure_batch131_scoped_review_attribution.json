@@ -1,0 +1,95 @@
+{
+  "kind": "append_only_independent_checkpoint131_scoped_review_attribution",
+  "reported_date": "2026-10-21",
+  "reviewer_thread": "01a15ebb-b550-7823-a734-9e1eefea290c",
+  "source": "Direct reviewer final and portable evidence read; controller relay confirms scope/outcome",
+  "exact_reviewed_head": "5f050bbda177c909a1971a6103ccfd1b7fe0af3d",
+  "exact_base": "21142cef8702aca5e9ea4e90219fa2a5842ebc51",
+  "reported_outcome": "CLEAN within bounded131scope; no actionable findings/narrow fixes",
+  "source_authentication": [
+    {
+      "source_id": "govinfo:hr4371rh",
+      "pointer": "/sources/1042",
+      "canonical_sha256": "746c79b9d7bb2ccb95ee984360561bf8fabeec782295832721795cc28f344672",
+      "characters": 12407,
+      "export_bytes": 12794
+    },
+    {
+      "source_id": "govinfo:34usc20911-2024-offense-definitions",
+      "pointer": "/sources/1049",
+      "canonical_sha256": "28be82e39beedd6606edfdacd9011c91abdf5c926937caf5a90cde1686c0034e",
+      "characters": 2970,
+      "export_bytes": 3525
+    },
+    {
+      "source_id": "govinfo:22usc7102-2024-severe-trafficking",
+      "pointer": "/sources/1050",
+      "canonical_sha256": "e6db2f9ac539a90773e0e37d52ccaa208113a5206f1350f82d57aa657d5dc19d",
+      "characters": 523,
+      "export_bytes": 1036
+    },
+    {
+      "source_id": "govinfo:34usc12291-2024-domestic-violence",
+      "pointer": "/sources/1051",
+      "canonical_sha256": "181a41cae7c9fbadff94d877b7be8fa1a5abf02f2f5436d080ed05d236de3664",
+      "characters": 1030,
+      "export_bytes": 1566
+    }
+  ],
+  "operative_body": {
+    "RH_start": 1261,
+    "RH_end": 11649,
+    "RH_total": 12407,
+    "EH_start": 541,
+    "EH_end": 10929,
+    "EH_total": 11304,
+    "characters": 10388,
+    "exact_governed_body_equal": true
+  },
+  "preservation": {
+    "other_records": 675,
+    "prior_sources": 1608,
+    "total_sources": 1612,
+    "meanings": 70,
+    "compiled_IR_byte_identical": true,
+    "prior_receipts_and_evidence_flags_preserved": true,
+    "counts": {
+      "procedural_context": 199,
+      "exact_action_ineligible": 120,
+      "interpreted_substantive_directional": 69,
+      "pending_interpretation": 262,
+      "source_unresolved": 6,
+      "expressive_nonbinding": 19,
+      "interpreted_substantive_non_directional": 1
+    }
+  },
+  "independent_test": {
+    "ran": 1,
+    "reported_seconds": 2.732,
+    "exact_evidence_seconds": 2.7319105000351556,
+    "name": "test_hr4371_committee_and_offense_context_preserves_exceptions_age_and_conviction_scopes",
+    "scope": "New131regression including negative mutations and current131generated replay; no earlier-head test rerun"
+  },
+  "authenticated_snapshot_files": 935,
+  "execution_provenance": "Git-authenticated isolated snapshot with LF serialization shim on Windows; NOT fresh clone",
+  "portable_reviewer_evidence": {
+    "path": "docs/review_packets/infrastructure_independent_review131_preservation_20261021.json",
+    "original_bytes": 4148,
+    "original_sha256": "15ed7c6c76a959559dd1060c292a69f7586d39971bf7a45071d65cd299b6b112",
+    "repository_lf_bytes": 4010,
+    "repository_lf_sha256": "0dff9a8274d90f0b1b4d2ca86a58957471a2299477c10288a6b9fc409d381667",
+    "only_CRLF_to_LF_normalized": true
+  },
+  "full176_suite_rerun": false,
+  "seven_semantic_checks_rerun": false,
+  "owner_917_generated_and_10083_prior_totals_independently_reproduced": false,
+  "hosted_CI": "No PR-triggered Actions run for exact131; Vercel succeeded; no Actions checkout logs/green established",
+  "inherited_full151_head": "3be714268666858130bb62d1f171af6a19362c4a",
+  "checkpoint132_or_later": "Outside this review",
+  "semantic_acceptance": false,
+  "promotion": false,
+  "publication_authorized": false,
+  "production_authorized": false,
+  "owner_files_Git_or_editorial_state_changed_by_reviewer": false,
+  "historical_attribution_rewritten": false
+}

@@ -140,6 +140,8 @@ def validate_presentation_inputs(inputs, compiled, source_contract, wording):
 
 
 def build_package(packet_raw):
+    from scripts.health_infrastructure_compatibility import validate_compatibility, validate_products
+    frozen = validate_compatibility(ROOT, git_bytes)
     wording = packet_wording(packet_raw)
     provenance = {}
     cache = {}
@@ -227,36 +229,10 @@ def build_package(packet_raw):
         "presentation_inputs.json": presentation, "review_source_contract.json": source_contract,
         "membership_evidence.json": membership,
     }
-    rule_paths = ["scripts/prepare_shared_domain_candidate.py", *[
-        f"backend/app/semantic_ir/{name}.py"
-        for name in ["shared_corpus", "compiler", "pipeline", "adapters", "validation"]
-    ], "docs/semantic_ir/shared_legislative_corpus_v1.schema.json"]
-    rule_hashes = {}
-    for path in rule_paths:
-        frozen_text = git_bytes(BASE, path).decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
-        current_text = (ROOT / path).read_text(encoding="utf-8")
-        require(frozen_text == current_text, "generation rule differs from reconciled base: " + path)
-        rule_hashes[path] = digest(current_text)
-    outputs["provenance.json"] = {
-        "artifact_role": "inert_review_package_provenance_not_storage_contract",
-        "review_state": CANDIDATE, "new_artifacts_accepted": False,
-        "production_eligible": False, "publication_authorized": False, "persistence_authorized": False,
-        "review_scope": "bounded_partial_record", "full_issue_claim": False,
-        "action_ids": [ACTION], "episode_ids": [EPISODE], "member_ids": ["F000477", "M001184"],
-        "packet_sha256": PACKET_SHA, "packet_route": "supported plaintext handoff; no Library download claimed",
-        "original_zip_verified": False, "original_zip_expected_sha256_only": "92e8e77beb8c25758da10bcbe9c744c5ed23079d105abaa1180b75c576f26fce",
-        "git_evidence_route": "independent local Git-object extraction, not original archive contents",
-        "dependency_commit": PIN, "earlier_comparison_commit": OLD, "reconciled_base": BASE,
-        "upstream_files": provenance, "owner_decision_receipt": RECEIPT,
-        "generation_rule_canonical_string_sha256": rule_hashes,
-        "preparation_tool_canonical_string_sha256": digest(Path(__file__).read_text(encoding="utf-8")),
-        "owner_decision_timestamp": "2026-10-19T16:57:50Z",
-        "message_reference": "messageSentinel_b43433d9493081918ba2101e97dac6e3",
-        "request_reference": "requestSentinel_94f29fc5c1f481919ff69134613a60a5",
-        "presentation_admission": "typed mapped review fragments only; candidate public compiler remains blocked",
-        "storage_admission": "none; no persistence proposal or importer",
-        "derived_file_sha256": {name: sha(encoded(value)) for name, value in outputs.items()},
-    }
+    validate_products(outputs, frozen)
+    # Reproduce the original proof as historical evidence. The separate sidecar
+    # identifies the actual current preparer/helper; no historical execution is claimed.
+    outputs["provenance.json"] = copy.deepcopy(frozen["provenance.json"])
     return outputs
 
 
@@ -269,7 +245,7 @@ def main(argv=None):
         path = PACKAGE / name
         if args.check:
             # Text checkout newline differences do not change JSON object identity.
-            require(json.loads(path.read_text(encoding="utf-8")) == value, "regeneration differs: " + name)
+            require(digest(json.loads(path.read_text(encoding="utf-8"))) == digest(value), "regeneration differs: " + name)
         else:
             path.write_bytes(encoded(value))
     print(json.dumps({"generated_json_files": len(outputs), "check_only": args.check, "candidate": True, "public_artifact_compiled": False, "database_accessed": False}))

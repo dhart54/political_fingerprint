@@ -1,0 +1,905 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 48,
+  "exact_committed_head": "cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea, never current batch50 working-tree bytes; zero source acquisition.",
+  "scope": "35 new identities across seven batches plus the prior roll226 correction/preimage binding in batch43. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim and batch43roll226correction source_extent/qualification. Whole CMS letter, BLM plans/maps, NDAA/CR and other partial reviews remain incomplete as recorded. Partial offsets are not full-body clearance. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch48_20260916/membership_review.json",
+      "git_blob": "4414d5b17611c462e6cb68138d88714016fce29c",
+      "git_bytes_sha256": "5059e50b13ada47bfeaf2fea337c88db37f466299d68ccac681617fccc6c2a1b"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch48_20260916/sources.json",
+      "git_blob": "6a0d55e0526291d46c8cf6e8429bc6a8ed30c376",
+      "git_bytes_sha256": "48b5cc0e7b226cae89826dd9d6fd8ecd28ecfd589ff9128d3341e4f8a66c9b12"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch48_20260916/screening_receipt.json",
+      "git_blob": "917847c5b5bd4a58ae0cdf6c073a1d016872d815",
+      "git_bytes_sha256": "b5877b9afb3d6481dd94a4b20ea2f52dfb8c561a6ed5d41a9a1484894aa60555"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch48_20260916/screening_units_receipt.json",
+      "git_blob": "b4d3efb16c01c1def76ae7b1cf390ccb0f7ff2b4",
+      "git_bytes_sha256": "df83fddf696d5fc18b6dc1d92ffadfeda09157cf156fb4f66561137f7d06255f"
+    }
+  },
+  "cumulative_membership_review_sha256": "33695b7d0c2114e2db6761da8f95d47616ea15e03fe6fde9bf246db6d7d50ca6",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/5cfdddf983b32d704041a650f44a0143ba16cda59c7fe5a544f095fbe141c911.0000000.json",
+        "sha256": "8bacf8bee339b7a16e03a08f30dd689ee642c47328375eff3154a3f827fb85be",
+        "start_character": 0,
+        "end_character": 29376
+      }
+    ],
+    "utf8_sha256": "5cfdddf983b32d704041a650f44a0143ba16cda59c7fe5a544f095fbe141c911",
+    "total_characters": 29376,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/316f3544ca14e1cd672c93c1e71b79c73819c2af32d65b26548bfe86e135eb16.0000000.json",
+        "sha256": "aa30d6e7485f374ad7913c4aebac8c59a2ec7e48154b96cdc4752228a7c29f10",
+        "start_character": 0,
+        "end_character": 79110
+      }
+    ],
+    "utf8_sha256": "316f3544ca14e1cd672c93c1e71b79c73819c2af32d65b26548bfe86e135eb16",
+    "total_characters": 79110,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:278",
+    "house:119:1:279",
+    "house:119:1:280",
+    "house:119:1:281",
+    "house:119:1:282"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hr3015eh",
+      "governed_length": 1716,
+      "review_extent": "Complete retained source text read; selected2024statutory units are dated, not complete current-law opinion"
+    },
+    {
+      "source_id": "govinfo:5usc1013-2024-operative",
+      "governed_length": 2354,
+      "review_extent": "Complete retained source text read; selected2024statutory units are dated, not complete current-law opinion"
+    },
+    {
+      "source_id": "govinfo:5usc552b-c-2024",
+      "governed_length": 3812,
+      "review_extent": "Complete retained source text read; selected2024statutory units are dated, not complete current-law opinion"
+    },
+    {
+      "source_id": "govinfo:hr1047eh",
+      "governed_length": 5511,
+      "review_extent": "Complete retained source text read; selected2024statutory units are dated, not complete current-law opinion"
+    },
+    {
+      "source_id": "govinfo:16usc824o-2024-definitions",
+      "governed_length": 2672,
+      "review_extent": "Complete retained source text read; selected2024statutory units are dated, not complete current-law opinion"
+    },
+    {
+      "source_id": "govinfo:16usc796-2024-organizations",
+      "governed_length": 928,
+      "review_extent": "Complete retained source text read; selected2024statutory units are dated, not complete current-law opinion"
+    },
+    {
+      "source_id": "govinfo:16usc824-e-2024",
+      "governed_length": 436,
+      "review_extent": "Complete retained source text read; selected2024statutory units are dated, not complete current-law opinion"
+    },
+    {
+      "source_id": "immigration:hr5371-roll281-whole-choice220",
+      "governed_length": 6697,
+      "review_extent": "Complete retained choice unit read including inserted material; scoped contiguous claims avoid member-list contamination"
+    },
+    {
+      "source_id": "govinfo:hr5371eh",
+      "governed_length": 94386,
+      "review_extent": "Only0:3000and ending1100read; whole EH/material appropriations baselines pending"
+    },
+    {
+      "source_id": "govinfo:hres719eh",
+      "governed_length": 4313,
+      "review_extent": "Complete retained source text read; selected2024statutory units are dated, not complete current-law opinion"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_final_bill_bodies_read": 2,
+    "complete_expression_bodies_read": 1,
+    "complete_own_choice_units_read": 1,
+    "partial_whole_package_sources": 1,
+    "complete_selected_material_statutory_units_read": 5,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:278",
+        "evidence_unit": "complete_own_choice_or_body_with_explicit_baseline_and_civic_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:279",
+        "evidence_unit": "complete_own_choice_or_body_with_explicit_baseline_and_civic_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:280",
+        "evidence_unit": "complete_own_choice_or_body_with_explicit_baseline_and_civic_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:281",
+        "evidence_unit": "partial_whole_package_with_exact_question_and_material_baselines_pending",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:282",
+        "evidence_unit": "complete_own_choice_or_body_with_explicit_baseline_and_civic_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "prior_record_correction": null,
+  "records": [
+    {
+      "original_record_sha256": "86f2f42c5a2dfc3be98431cd38488d8c666f12768c89b193628b4ab0b6dab6a2",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:278",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.3015EHrequires reestablishing the DOEcoal council in accordance with the charter in effectNovember19,2021and generally applies FACA/552b(c)while making all5USC1013inapplicable. Complete retained1013includes termination, renewal/charter and successive-period conditions; the choice is not merely an automatic2yeartermination exception or exemption from all FACA. Retained552b(c)contains qualified closure/disclosure exceptions, not guaranteed wholly open or wholly secret meetings. The exact2021charter, remaining FACA/charter/current-law baseline and whole council advisory/energy-infrastructure boundary remain ordinary pending review. No direct mine/plant approval, coal output, funding amount, existing council status, recommendation content or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:278",
+            "url": "https://clerk.house.gov/evs/2025/roll278.xml",
+            "raw_sha256": "2e4abe77007c7a6a3bf009efb9be51929adcc42e91f46e0c74b424f89447f22d",
+            "governed_bytes_sha256": "7349ee8ded4a1f9abb7750857ec49313698837a8a788df3318299b6da2af3bf8"
+          },
+          {
+            "source_id": "govinfo:hr3015eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3015eh/html/BILLS-119hr3015eh.htm",
+            "raw_sha256": "b1365310dbbd67966cfb271c22c87a294b6902551bd9e393033492895c658111",
+            "governed_bytes_sha256": "c54c0c5839ec08f044d0303d9d5839e0b0c13bc6973e5780dfc25a797b659509"
+          },
+          {
+            "source_id": "govinfo:5usc1013-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap10-sec1013.htm",
+            "raw_sha256": "6a404ff0a252a2595a4f4710c062ae251d17a8ca9509a585df2ad50c657710b2",
+            "governed_bytes_sha256": "35a554c42308a09052a076f495d27a23be007028ccb8750a632efe07b72b9de4"
+          },
+          {
+            "source_id": "govinfo:5usc552b-c-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552b.htm",
+            "raw_sha256": "3db0ee3828fbec9fbc908ca80878d8e8c9e100aae70af2c473d9b1493b65b293",
+            "governed_bytes_sha256": "0e5851b80e4286f32642bbcf193262053638cd2efa068943bc2963b746335e2b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3015eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3015 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3015 _______________________________________________________________________ AN ACT To reestablish the National Coal Council in the Department of Energy to provide advice and recommendations to the Secretary of Energy on matters related to coal and the coal industry, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``National Coal Council Reestablishment Act''. SEC. 2. NATIONAL COAL COUNCIL. (a) In General.--The Secretary of Energy shall reestablish in the Department of Energy the National Coal Council, in accordance with the charter for the National Coal Council that was in effect on November 19, 2021. (b) Applicability of the Federal Advisory Committee Act.-- (1) In general.--Subject to paragraph (2), chapter 10 of title 5, United States Code, (commonly referred to as the ``Federal Advisory Committee Act'') and section 552b(c) of title 5, United States Code, shall apply to the National Coal Council. (2) Termination.--Section 1013 of title 5, United States Code, shall not apply to the National Coal Council. Passed the House of Representatives September 18, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3015 _______________________________________________________________________ AN ACT To reestablish the National Coal Council in the Department of Energy to provide advice and recommendations to the Secretary of Energy on matters related to coal and the coal industry, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:5usc1013-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§1013. Termination of advisory committees (a) In General.— (1) Advisory committees in existence on january 5, 1973 .—Each advisory committee that is in existence on January 5, 1973, shall terminate not later than the expiration of the 2-year period following that date unless— (A) in the case of an advisory committee established by the President or an officer of the Federal Government, such advisory committee is renewed by the President or that officer by appropriate action prior to the expiration of such 2-year period; or (B) in the case of an advisory committee established by an Act of Congress, its duration is otherwise provided for by law. (2) Advisory committees established after january 5, 1973 .—Each advisory committee established after January 5, 1973, shall terminate not later than the expiration of the 2-year period beginning on the date of its establishment unless— (A) in the case of an advisory committee established by the President or an officer of the Federal Government 1 such advisory committee is renewed by the President or such officer by appropriate action prior to the end of such period; or (B) in the case of an advisory committee established by an Act of Congress, its duration is otherwise provided for by law. (b) Charters.— (1) Upon renewal .—Upon the renewal of an advisory committee, the advisory committee shall file a charter in accordance with section 1008(c) of this title. (2) Upon expiration of successive 2-year periods .—An advisory committee established by an Act of Congress shall file a charter in accordance with section 1008(c) of this title upon the expiration of each successive 2-year period following the date of enactment of the Act establishing the advisory committee. (3) Prohibition on action prior to filing charter .—An advisory committee required to file a charter under this subsection shall not take any action (other than preparation and filing of the charter) prior to the date on which the charter is filed. (c) Successive Two-Year Periods .—An advisory committee that is renewed by the President or an officer of the Federal Government may be continued only for successive 2-year periods by appropriate action taken by the President or the officer prior to the date on which the advisory committee would otherwise terminate. (Pub. L. 117–286, §3(a), Dec. 27, 2022, 136 Stat. 4204.) "
+          },
+          {
+            "source_id": "govinfo:5usc552b-c-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(c) Except in a case where the agency finds that the public interest requires otherwise, the second sentence of subsection (b) shall not apply to any portion of an agency meeting, and the requirements of subsections (d) and (e) shall not apply to any information pertaining to such meeting otherwise required by this section to be disclosed to the public, where the agency properly determines that such portion or portions of its meeting or the disclosure of such information is likely to— (1) disclose matters that are (A) specifically authorized under criteria established by an Executive order to be kept secret in the interests of national defense or foreign policy and (B) in fact properly classified pursuant to such Executive order; (2) relate solely to the internal personnel rules and practices of an agency; (3) disclose matters specifically exempted from disclosure by statute (other than section 552 of this title), provided that such statute (A) requires that the matters be withheld from the public in such a manner as to leave no discretion on the issue, or (B) establishes particular criteria for withholding or refers to particular types of matters to be withheld; (4) disclose trade secrets and commercial or financial information obtained from a person and privileged or confidential; (5) involve accusing any person of a crime, or formally censuring any person; (6) disclose information of a personal nature where disclosure would constitute a clearly unwarranted invasion of personal privacy; (7) disclose investigatory records compiled for law enforcement purposes, or information which if written would be contained in such records, but only to the extent that the production of such records or information would (A) interfere with enforcement proceedings, (B) deprive a person of a right to a fair trial or an impartial adjudication, (C) constitute an unwarranted invasion of personal privacy, (D) disclose the identity of a confidential source and, in the case of a record compiled by a criminal law enforcement authority in the course of a criminal investigation, or by an agency conducting a lawful national security intelligence investigation, confidential information furnished only by the confidential source, (E) disclose investigative techniques and procedures, or (F) endanger the life or physical safety of law enforcement personnel; (8) disclose information contained in or related to examination, operating, or condition reports prepared by, on behalf of, or for the use of an agency responsible for the regulation or supervision of financial institutions; (9) disclose information the premature disclosure of which would— (A) in the case of an agency which regulates currencies, securities, commodities, or financial institutions, be likely to (i) lead to significant financial speculation in currencies, securities, or commodities, or (ii) significantly endanger the stability of any financial institution; or (B) in the case of any agency, be likely to significantly frustrate implementation of a proposed agency action, except that subparagraph (B) shall not apply in any instance where the agency has already disclosed to the public the content or nature of its proposed action, or where the agency is required by law to make such disclosure on its own initiative prior to taking final agency action on such proposal; or (10) specifically concern the agency's issuance of a subpena, or the agency's participation in a civil action or proceeding, an action in a foreign court or international tribunal, or an arbitration, or the initiation, conduct, or disposition by the agency of a particular case of formal agency adjudication pursuant to the procedures in section 554 of this title or otherwise involving a determination on the record after opportunity for a hearing. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "42c84e12cb9cb45df3add4e4d747014e18cbf00696e268dc7ac82a3f0e5ccfe3",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:279",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.1047EHrequires FERCto initiate rulemaking within90days and finish within180days to enable proposed queue priority for qualifying new dispatchable projects. Proposals must demonstrate need and reliability/resilience improvement, undergo public comment/stakeholder engagement before submission, receive approval or denial within60days, and be accompanied by regular reliability/resilience reporting; regulations are reviewed at least every5years and updated if necessary. No automatic queue jump, guaranteed approval, fuel-specific definition, new generation authorization or proved faster/cheaper/reliable outcome is inferred. Retained824o(a)excludes local distribution from bulk-power-system definition;796RTO/ISOdefinitions preserve FERCapproval and nondiscriminatory access, and824(e)public-utility jurisdiction exceptions remain. Whole operative proformaLargeGeneratorInterconnectionProcedures/Agreement and18CFR35.28(f)baselines, dated definition applicability and exactRCP119-9/floor/EHreconciliation remain material ordinary review. Those missing baseline units do not justify a fresh source retry or parent-title meaning transfer.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:279",
+            "url": "https://clerk.house.gov/evs/2025/roll279.xml",
+            "raw_sha256": "f59a388dac175b349c78997f486fb2d9de708a871a16f1f17a006fced22c4f27",
+            "governed_bytes_sha256": "e2be0aaa33c056eabfa143924d68836949160b7161f0708209f1045b942e410a"
+          },
+          {
+            "source_id": "govinfo:hr1047eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1047eh/html/BILLS-119hr1047eh.htm",
+            "raw_sha256": "87b9c34e94e6b8923cd8964f52005679a547bda7ed076ca33436cc12377c4021",
+            "governed_bytes_sha256": "aa2d2690255547e69f90872b3f7374f35e71f5f5aaed92148006a3ab4955e022"
+          },
+          {
+            "source_id": "govinfo:16usc824o-2024-definitions",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap12-subchapII-sec824o.htm",
+            "raw_sha256": "b1f619535594112535e3937a52e3bac02e78dd4812780d262da6f8a6f3bd29b9",
+            "governed_bytes_sha256": "1700f4ca867c935563de3a486665075a28f150e5b9cf10b508c9f300565a34ba"
+          },
+          {
+            "source_id": "govinfo:16usc796-2024-organizations",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap12-subchapI-sec796.htm",
+            "raw_sha256": "b6fc370fe3aa26a89eb5025a2f2e28b947e986b577dd5745037c8d596f9181dc",
+            "governed_bytes_sha256": "ae8717663bc09065ae3b17d7d3e9c28e37eab1ae041e3c98579838278fb86ee7"
+          },
+          {
+            "source_id": "govinfo:16usc824-e-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap12-subchapII-sec824.htm",
+            "raw_sha256": "90d384e242099bc167f48951dc1b098554bb913d7f3d1f38cf0da2cf54ced535",
+            "governed_bytes_sha256": "bc1dbd942ea8954154b8ed5e6564a81df62ae701067181df49e398b1b8e44e8f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1047eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1047 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1047 _______________________________________________________________________ AN ACT To require the Federal Energy Regulatory Commission to reform the interconnection queue process for the prioritization and approval of certain projects, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Guaranteeing Reliability through the Interconnection of Dispatchable Power Act'' or the ``GRID Power Act''. SEC. 2. DEFINITIONS. In this Act: (1) Bulk-power system.--The term ``bulk-power system'' has the meaning given the term in section 215(a) of the Federal Power Act (16 U.S.C. 824o(a)). (2) Commission.--The term ``Commission'' means the Federal Energy Regulatory Commission. (3) Dispatchable power.--The term ``dispatchable power'' means an electric energy generation resource capable of providing known and forecastable electric supply in time intervals necessary to ensure grid reliability. (4) Grid reliability.--The term ``grid reliability'' means the ability of the electric grid to deliver an adequate, secure, and stable flow of electricity in the quantity and with the quality demanded by users, taking into account the ability of the bulk-power system to withstand sudden disturbances. (5) Grid resilience.--The term ``grid resilience'' means the ability of the electric grid to adapt to changing physical conditions and withstand and rapidly recover from significant disturbances, including natural disasters, cyber-attacks, and other unforeseen events. (6) Independent system operator.--The term ``Independent System Operator'' has the meaning given the term in section 3 of the Federal Power Act (16 U.S.C. 796). (7) Regional transmission organization.--The term ``Regional Transmission Organization'' has the meaning given the term in section 3 of the Federal Power Act (16 U.S.C. 796). (8) Resource adequacy.--The term ``resource adequacy'' means the ability of the electric system to meet the aggregate electrical demand and energy requirements of end-use customers at all times, accounting for scheduled and reasonably expected unscheduled outages of bulk-power system components. (9) Transmission provider.--The term ``transmission provider'' means-- (A) a public utility (as defined in section 201(e) of the Federal Power Act (16 U.S.C. 824(e))) that owns, operates, or controls 1 or more transmission facilities; (B) an Independent System Operator; and (C) a Regional Transmission Organization. SEC. 3. RULEMAKING TO IMPROVE INTERCONNECTION QUEUE FLEXIBILITY. (a) In General.--Not later than 90 days after the date of enactment of this Act, the Commission shall initiate a rulemaking-- (1) to address the inefficiencies and ineffectiveness of existing procedures for processing interconnection requests to ensure that new dispatchable power projects that improve grid reliability and resource adequacy can interconnect to the electric grid quickly, cost-effectively, and reliably; and (2) to amend the pro forma Large Generator Interconnection Procedures and, as appropriate, the pro forma Large Generator Interconnection Agreement, promulgated pursuant to section 35.28(f) of title 18, Code of Federal Regulations (or successor regulations)-- (A) to authorize transmission providers to submit proposals to the Commission to adjust the interconnection queue of the transmission provider to prioritize new dispatchable power projects that will improve grid reliability and resource adequacy by assigning those projects higher positions in the interconnection queue; and (B) to require transmission providers-- (i) to provide in any proposal described in subparagraph (A)-- (I) a demonstration of need for prioritization of the relevant projects; and (II) a description of how the prioritization of those projects will improve grid reliability or grid resilience; (ii) to provide a process for public comment and stakeholder engagement before a proposal described in subparagraph (A) is submitted to the Commission; and (iii) to provide regular reporting to the Commission on the state of grid reliability and grid resilience, including reporting on any actions taken pursuant to this Act. (b) Commission Approval.--To ensure timely responses to grid reliability concerns, not later than 60 days after a proposal is submitted pursuant to subsection (a)(2), the Commission shall-- (1) review the proposal; and (2) approve or deny the proposal. (c) Deadline for Final Rule.--Not later than 180 days after the date of enactment of this Act, the Commission shall promulgate final regulations to complete the rulemaking initiated under subsection (a). (d) Periodic Review.--Not less frequently than once every 5 years, the Commission shall review and, if necessary, update the regulations promulgated under this section to ensure that those regulations remain effective and relevant to evolving grid reliability and grid resilience challenges. Passed the House of Representatives September 18, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1047 _______________________________________________________________________ AN ACT To require the Federal Energy Regulatory Commission to reform the interconnection queue process for the prioritization and approval of certain projects, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:16usc824o-2024-definitions",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Definitions For purposes of this section: (1) The term \"bulk-power system\" means— (A) facilities and control systems necessary for operating an interconnected electric energy transmission network (or any portion thereof); and (B) electric energy from generation facilities needed to maintain transmission system reliability. The term does not include facilities used in the local distribution of electric energy. (2) The terms \"Electric Reliability Organization\" and \"ERO\" mean the organization cer tified by the Commission under subsection (c) the purpose of which is to establish and enforce reliability standards for the bulk-power system, subject to Commission review. (3) The term \"reliability standard\" means a requirement, approved by the Commission under this section, to provide for reliable operation of the bulk-power system. The term includes requirements for the operation of existing bulk-power system facilities, including cybersecurity protection, and the design of planned additions or modifications to such facilities to the extent necessary to provide for reliable operation of the bulk-power system, but the term does not include any requirement to enlarge such facilities or to construct new transmission capacity or generation capacity. (4) The term \"reliable operation\" means operating the elements of the bulk-power system within equipment and electric system thermal, voltage, and stability limits so that instability, uncontrolled separation, or cascading failures of such system will not occur as a result of a sudden disturbance, including a cybersecurity incident, or unanticipated failure of system elements. (5) The term \"Interconnection\" means a geographic area in which the operation of bulk-power system components is synchronized such that the failure of one or more of such components may adversely affect the ability of the operators of other components within the system to maintain reliable operation of the facilities within their control. (6) The term \"transmission organization\" means a Regional Transmission Organization, Independent System Operator, independent transmission provider, or other transmission organization finally approved by the Commission for the operation of transmission facilities. (7) The term \"regional entity\" means an entity having enforcement authority pursuant to subsection (e)(4). (8) The term \"cybersecurity incident\" means a malicious act or suspicious event that disrupts, or was an attempt to disrupt, the operation of those programmable electronic devices and communication networks including hardware, software and data that are essential to the reliable operation of the bulk power system. "
+          },
+          {
+            "source_id": "govinfo:16usc796-2024-organizations",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(27) RTO.—The term \"Regional Transmission Organization\" or \"RTO\" means an entity of sufficient regional scope approved by the Commission— (A) to exercise operational or functional control of facilities used for the transmission of electric energy in interstate commerce; and (B) to ensure nondiscriminatory access to the facilities. 1 (28) ISO.—The term \"Independent System Operator\" or \"ISO\" means an entity approved by the Commission— (A) to exercise operational or functional control of facilities used for the transmission of electric energy in interstate commerce; and (B) to ensure nondiscriminatory access to the facilities. 3 (29) Transmission organization .—The term \"Transmission Organization\" means a Regional Transmission Organization, Independent System Operator, independent transmission provider, or other transmission organization finally approved by the Commission for the operation of transmission facilities. "
+          },
+          {
+            "source_id": "govinfo:16usc824-e-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(e) \"Public utility\" defined The term \"public utility\" when used in this subchapter and subchapter III of this chapter means any person who owns or operates facilities subject to the jurisdiction of the Commission under this subchapter (other than facilities subject to such jurisdiction solely by reason of section 824e(e), 824e(f), 1 824i, 824j, 824j–1, 824k, 824o, 824o–1, 824p, 824q, 824r, 824s, 824t, 824u, or 824v of this title). "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "fbe6c031a88553cfc39883e59641c6ea2738bfd854eac75b6f591e534feb8970",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:280",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete retained floor unit reads a bare recommittal of5371toAppropriations and separately inserts previously referred-to material proposing the introducedSeptember18H.R.5450as a substitute. The distinction between the actually read motion and inserted material is preserved; no whole5450policy meaning is supplied without its body/version/baselines. Recorded210–218rejection with3NotVoting is a non-counting procedural choice, distinct from subsequent5371passage281. No appropriation/health/infrastructure support or opposition, motive or enacted outcome transferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:280",
+            "url": "https://clerk.house.gov/evs/2025/roll280.xml",
+            "raw_sha256": "0c1392b69904d793885945ba559ef2fae00f956035a95b3ce7671c0f86d788d8",
+            "governed_bytes_sha256": "1e52a305362dbcea5db61c9aade7959254a52f0bde042b18583ecac8a25a982a"
+          },
+          {
+            "source_id": "immigration:hr5371-roll281-whole-choice220",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-19/pdf/CREC-2025-09-19-house.pdf",
+            "raw_sha256": "72e405523e3b595289a1370b349f41fdf5961280cdca9f60e4fb3caf508c5d1e",
+            "governed_bytes_sha256": "4412cbc8b51d8c4504d9d438af3bfa27c457162fd3ed9037ea7a5f56a0a314d9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:hr5371-roll281-whole-choice220",
+            "locator": "Complete retained call-up/MTR/own questions before member lists offsets0:2758",
+            "passage": "Mr. COLE. Mr. Speaker, pursuant to House Resolution 722, I call up the bill (H.R. 5371) making continuing appro- priations and extensions for fiscal year 2026, and for other purposes, and ask for its immediate consideration in the House. The Clerk read the title of the bill. The SPEAKER pro tempore. Pursu- ant to House Resolution 722, the bill is considered read. \n\nThe SPEAKER pro tempore. All time for debate is expired. Pursuant to House Resolution 722, the previous question is ordered on the bill. The question is on the engrossment and third reading of the bill. The bill was ordered to be engrossed and read a third time, and was read the third time. \n\nMOTION TO RECOMMIT Ms. DELAURO. Mr. Speaker, I have a motion to recommit at the desk. The SPEAKER pro tempore. The Clerk will report the motion to recom- mit. The Clerk read as follows: Ms. DeLauro of Connecticut moves to re- commit the bill H.R. 5371 to the Committee on Appropriations. The material previously referred to by Ms. DELAURO is as follows: Ms. DeLauro moves to recommit the bill H.R. 5371 to the Committee on Appropria- tions with the following amendment: Strike all after the enacting clause and in- sert the provisions of H.R. 5450, as introduced in the House of Representatives on Sep- tember 18, 2025. The SPEAKER pro tempore. Pursu- ant to clause 2(b) of Rule XIX, the pre- vious question is ordered on the motion to recommit. The question is on the motion to re- commit. The question was taken; and the Speaker pro tempore announced that the noes appeared to have it. Ms. D ELAURO. Mr. Speaker, on that I demand the yeas and nays. The yeas and nays were ordered. The SPEAKER pro tempore. Pursu- ant to clause 9 of rule XX, this 15- minute vote on the motion to recom- mit will be followed by 5-minute votes on: Passage of the bill, if ordered; and Adoption of H. Res. 719. The vote was taken by electronic de- vice, and there were—yeas 210, nays 218, not voting 3, as follows: \n\nb 1036 Messrs. LUTTRELL, SCALISE, and NUNN of Iowa changed their vote from ‘‘yea’’ to ‘‘nay.’’ Mr. FROST, Mses. SHERRILL, OCASIO-CORTEZ, Mr. FIGURES, Ms. CLARK of Massachusetts, and Mr. DAVIS of North Carolina changed their vote from ‘‘nay’’ to ‘‘yea.’’ So the motion to recommit was re- jected. The result of the vote was announced as above recorded. The SPEAKER pro tempore (Mr. M URPHY). The question is on the pas- sage of the bill. The question was taken; and the Speaker pro tempore announced that the ayes appeared to have it. Ms. D ELAURO. Mr. Speaker, on that I demand the yeas and nays. The yeas and nays were ordered. The SPEAKER pro tempore. This is a 5-minute vote. The vote was taken by electronic de- vice, and there were—yeas 217, nays 212, not voting 3, as follows: [Roll No. 281]"
+          },
+          {
+            "source_id": "immigration:hr5371-roll281-whole-choice220",
+            "locator": "Own passage final outcome offsets6571:end",
+            "passage": "So the bill was passed. The result of the vote was announced as above recorded. A motion to reconsider was laid on the table. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ea464a4134b2e63669aa8b812278bd08ce38c9758635be433496701f715a3413",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:281",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The September19whole House5371EHhas94,386characters; only opening0:3000and last1100characters were read here, alongside the complete retained own choice/floor unit. Its divisions cover continuing appropriations, miscellaneous extensions, health extenders, VAextenders and miscellaneous provisions, with division-specific reference rules. Selected101opening refers to specified FY2025Acts and detailed exceptions; headings/that excerpt do not establish every program's amount, duration, anomaly or full exact funding effect. Whole operative appropriations/extension body, incorporated FY2025Acts/material baselines and version/floor reconciliation remain ordinary pending work. This217–212House passage with3NotVoting is distinct from recommittal280and the later Senate-amendment concurrence285; no SeptemberEHmeaning is transferred to that later version, and no actual shutdown/care/construction outcome or enacted funding inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:281",
+            "url": "https://clerk.house.gov/evs/2025/roll281.xml",
+            "raw_sha256": "d8f2f954aebe40cd255454f2b3487966cfec6836b9f0dcbff7f4e8278706e736",
+            "governed_bytes_sha256": "3dc8f9a9eb28c79d8141402da26b461156af9c249290bcff94504c1e2e81462d"
+          },
+          {
+            "source_id": "govinfo:hr5371eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5371eh/html/BILLS-119hr5371eh.htm",
+            "raw_sha256": "37891e031dced88678e3b9abd96efd6550d1af8e54fb463e7ea96462eed0cbc2",
+            "governed_bytes_sha256": "3c62a1ce317f3fe2e80f79e6e7a90cf982b0abd68d6077a653f077b65cbe4676"
+          },
+          {
+            "source_id": "immigration:hr5371-roll281-whole-choice220",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-19/pdf/CREC-2025-09-19-house.pdf",
+            "raw_sha256": "72e405523e3b595289a1370b349f41fdf5961280cdca9f60e4fb3caf508c5d1e",
+            "governed_bytes_sha256": "4412cbc8b51d8c4504d9d438af3bfa27c457162fd3ed9037ea7a5f56a0a314d9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5371eh",
+            "locator": "Opening0:3000only; whole94,386character bill not read",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5371 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5371 _______________________________________________________________________ AN ACT Making continuing appropriations and extensions for fiscal year 2026, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Continuing Appropriations and Extensions Act, 2026''. SEC. 2. TABLE OF CONTENTS. The table of contents for this Act is as follows: Sec. 1. SHORT TITLE. Sec. 2. TABLE OF CONTENTS. Sec. 3. REFERENCES. DIVISION A--CONTINUING APPROPRIATIONS ACT, 2026 DIVISION B--MISCELLANEOUS EXTENSIONS DIVISION C--HEALTH EXTENDERS Title I--Public Health Extenders Title II--Medicare Title III--Human Services Title IV--Medicaid Title V--Food and Drug Administration Title VI--No Surprises Act Implementation DIVISION D--DEPARTMENT OF VETERANS AFFAIRS EXTENDERS Title I--Health Care Matters Title II--Benefits Title III--Housing Title IV--Other Matters DIVISION E--MISCELLANEOUS SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in any division of this Act shall be treated as referring only to the provisions of that division. DIVISION A--CONTINUING APPROPRIATIONS ACT, 2026 The following sums are hereby appropriated, out of any money in the Treasury not otherwise appropriated, and out of applicable corporate or other revenues, receipts, and funds, for the several departments, agencies, corporations, and other organizational units of Government for fiscal year 2026, and for other purposes, namely: Sec. 101. Such amounts as may be necessary, at a rate for operations as provided in the applicable appropriations Acts for fiscal year 2025 and under the authority and conditions provided in such Acts, for continuing projects or activities (including the costs of direct loans and loan guarantees) that are not otherwise specifically provided for in this Act, that were conducted in fiscal year 2025, and for which appropriations, funds, or other authority were made available in the Full-Year Continuing Appropriations Act, 2025 (division A of Public Law 119-4), except sections 1110, 1113, 1114, and 1207; the proviso in paragraph (4) of section 1602; and sections 1708 and 1808; and except section 11104 shall be applied by substituting ``2020, and 2021'' for ``and 2020''; and except sections 774 and 778 of division B, section 540 of division C, and sections 110 and 112 of division D of Public Law 118-42 as continued in effect by section 1101 of division A of Public Law 119-4; and except section 7069(b) of division F of Public Law 118- 47, as continued in effect by section 1101 of division A of Public Law 119-4. Sec. 102. (a) No appropriation or funds made available or authority granted pursuant to section 101 for the Department of Defense shall be "
+          },
+          {
+            "source_id": "govinfo:hr5371eh",
+            "locator": "Ending1100characters/Houseattestation only",
+            "passage": "all not be entered on any PAYGO scorecard maintained for purposes of section 4106 of H. Con. Res. 71 (115th Congress). (c) Classification of Budgetary Effects.--Notwithstanding Rule 3 of the Budget Scorekeeping Guidelines set forth in the joint explanatory statement of the committee of conference accompanying Conference Report 105-217 and section 250(c)(8) of the Balanced Budget and Emergency Deficit Control Act of 1985, the budgetary effects of divisions B through D shall not be estimated-- (1) for purposes of section 251 of such Act; (2) for purposes of an allocation to the Committee on Appropriations pursuant to section 302(a) of the Congressional Budget Act of 1974; and (3) for purposes of paragraph (4)(C) of section 3 of the Statutory Pay-As-You-Go Act of 2010 as being included in an appropriation Act. Passed the House of Representatives September 19, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5371 _______________________________________________________________________ AN ACT Making continuing appropriations and extensions for fiscal year 2026, and for other purposes."
+          },
+          {
+            "source_id": "immigration:hr5371-roll281-whole-choice220",
+            "locator": "Complete retained call-up/MTR/own questions before member lists offsets0:2758",
+            "passage": "Mr. COLE. Mr. Speaker, pursuant to House Resolution 722, I call up the bill (H.R. 5371) making continuing appro- priations and extensions for fiscal year 2026, and for other purposes, and ask for its immediate consideration in the House. The Clerk read the title of the bill. The SPEAKER pro tempore. Pursu- ant to House Resolution 722, the bill is considered read. \n\nThe SPEAKER pro tempore. All time for debate is expired. Pursuant to House Resolution 722, the previous question is ordered on the bill. The question is on the engrossment and third reading of the bill. The bill was ordered to be engrossed and read a third time, and was read the third time. \n\nMOTION TO RECOMMIT Ms. DELAURO. Mr. Speaker, I have a motion to recommit at the desk. The SPEAKER pro tempore. The Clerk will report the motion to recom- mit. The Clerk read as follows: Ms. DeLauro of Connecticut moves to re- commit the bill H.R. 5371 to the Committee on Appropriations. The material previously referred to by Ms. DELAURO is as follows: Ms. DeLauro moves to recommit the bill H.R. 5371 to the Committee on Appropria- tions with the following amendment: Strike all after the enacting clause and in- sert the provisions of H.R. 5450, as introduced in the House of Representatives on Sep- tember 18, 2025. The SPEAKER pro tempore. Pursu- ant to clause 2(b) of Rule XIX, the pre- vious question is ordered on the motion to recommit. The question is on the motion to re- commit. The question was taken; and the Speaker pro tempore announced that the noes appeared to have it. Ms. D ELAURO. Mr. Speaker, on that I demand the yeas and nays. The yeas and nays were ordered. The SPEAKER pro tempore. Pursu- ant to clause 9 of rule XX, this 15- minute vote on the motion to recom- mit will be followed by 5-minute votes on: Passage of the bill, if ordered; and Adoption of H. Res. 719. The vote was taken by electronic de- vice, and there were—yeas 210, nays 218, not voting 3, as follows: \n\nb 1036 Messrs. LUTTRELL, SCALISE, and NUNN of Iowa changed their vote from ‘‘yea’’ to ‘‘nay.’’ Mr. FROST, Mses. SHERRILL, OCASIO-CORTEZ, Mr. FIGURES, Ms. CLARK of Massachusetts, and Mr. DAVIS of North Carolina changed their vote from ‘‘nay’’ to ‘‘yea.’’ So the motion to recommit was re- jected. The result of the vote was announced as above recorded. The SPEAKER pro tempore (Mr. M URPHY). The question is on the pas- sage of the bill. The question was taken; and the Speaker pro tempore announced that the ayes appeared to have it. Ms. D ELAURO. Mr. Speaker, on that I demand the yeas and nays. The yeas and nays were ordered. The SPEAKER pro tempore. This is a 5-minute vote. The vote was taken by electronic de- vice, and there were—yeas 217, nays 212, not voting 3, as follows: [Roll No. 281]"
+          },
+          {
+            "source_id": "immigration:hr5371-roll281-whole-choice220",
+            "locator": "Own passage final outcome offsets6571:end",
+            "passage": "So the bill was passed. The result of the vote was announced as above recorded. A motion to reconsider was laid on the table. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "29ddf5f22be667fb2be7a8e913d1f317a48ce1906012e2e7b367980bec7a573c",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:282",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete H.Res.719is an expressive memorial/condemnation resolution: it condemns the named killing and political violence, commends responders and urges justice, extends condolences, honors the named person and calls for rejecting violence/respectful debate. Its evaluative preamble and moral/character descriptions remain statements of the resolution, not independently established analytical findings. No appropriation, agency program, infrastructure/technology operating rule, enforcement mandate or direct resource change is created by these expressions. A member's vote is not evidence of motive, character, endorsement of every characterization or support for violence; no voting recommendation or enacted substantive policy inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:282",
+            "url": "https://clerk.house.gov/evs/2025/roll282.xml",
+            "raw_sha256": "e5fb5eaf0196125a9b115907d31e9dac58863c80ce011df09c527c3fc1befdcc",
+            "governed_bytes_sha256": "95f97280ac2a9b3aebbf964c0fd1d282a9161bc2d9f5a7555c5b9f837682250e"
+          },
+          {
+            "source_id": "govinfo:hres719eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres719eh/html/BILLS-119hres719eh.htm",
+            "raw_sha256": "99d14cc81528e7007c9eb2bbc2417365da89eceb58d041fb00bb2e3538a2b25e",
+            "governed_bytes_sha256": "f0ff71998f1113e298073fb0decdb5320818230fa6cec96d2c0815f136f5fee4"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres719eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 719 Engrossed in House (EH)] <DOC> H. Res. 719 In the House of Representatives, U. S., September 19, 2025. Whereas Charles ``Charlie'' James Kirk, born October 14, 1993, was a courageous American patriot, whose life was tragically and unjustly cut short in an act of political violence on September 10, 2025, at Utah Valley University; Whereas Charlie Kirk was a devoted Christian, who boldly lived out his faith with conviction, courage, and compassion; Whereas Charlie Kirk was a dedicated husband to his beloved wife, Erika Kirk, and a loving father to their daughter and son, exemplifying the virtues of faith, fidelity, and fatherhood; Whereas Charlie Kirk was a fierce defender of the American founding and its timeless principles of life, liberty, limited government, and individual responsibility; Whereas Charlie Kirk, at 18 years old, founded Turning Point USA in 2012, a student movement with the mission to ``identify, educate, train, and organize students to promote the principles of fiscal responsibility, free markets, and limited government''; Whereas Charlie Kirk became one of the most prominent voices in America, engaging in respectful, civil discourse across college campuses, media platforms, and national forums, always seeking to elevate truth, foster understanding, and strengthen the Republic; Whereas Charlie Kirk personified the values of the First Amendment, exercising his God-given right to speak freely, challenge prevailing narratives, and did so with honor, courage, and respect for his fellow Americans; Whereas Charlie Kirk's commitment to civil discussion and debate stood as a model for young Americans across the political spectrum, and he worked tirelessly to promote unity without compromising on conviction; Whereas the assassination of Charlie Kirk was not only a heinous act of violence, but a sobering reminder of the growing threat posed by political extremism and hatred in our society; Whereas such acts of politically motivated violence are antithetical to the principles of a free republic, in which differences of opinion are to be debated--not silenced--with civility, reason, and mutual respect; Whereas the rise in targeted violence against individuals for their political beliefs undermines the very fabric of our constitutional democracy and chills the free exchange of ideas essential to a healthy civic society; Whereas leaders at every level--government, education, media, and beyond--must stand united in unequivocal condemnation of political violence, regardless of their ideology; Whereas the tragic loss of Charlie Kirk must not be allowed to deepen the divides in our Nation, but instead serve as a turning point to recommit ourselves to better angels, and to the timeless American principles of liberty governed by truth and the virtues of peaceful dialogue; and Whereas Charlie Kirk would not have us respond to his death with despair, but rather with renewed purpose--to speak truth with courage, to stand firm in faith, to seek unity while standing firm in principle, and to serve as living reminders of the values he championed: faith, family, and freedom: Now, therefore, be it Resolved, That the House of Representatives-- (1) condemns in the strongest possible terms the assassination of Charles ``Charlie'' James Kirk, and all forms of political violence; (2) commends and honors the dedicated law enforcement and emergency personnel for their tireless efforts in finding the suspect responsible for the assassination of Charlie Kirk and urges the administration of swift justice to the suspect; (3) extends its deepest condolences and sympathies to Charlie Kirk's family, including his wife, Erika, and their two young children, and prays for comfort, peace, and healing in this time of unspeakable loss; (4) honors the life, leadership, and legacy of Charlie Kirk, whose steadfast dedication to the Constitution, civil discourse, and Biblical truth inspired a generation to cherish and defend the blessings of liberty; and (5) calls upon all Americans--regardless of race, party affiliation, or creed--to reject political violence, recommit to respectful debate, uphold American values, and respect one another as fellow Americans. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "b03e5a684b800bb3cb35b75416aa1eacbff541693df37d3af25f5347df39af59",
+      "source": {
+        "source_id": "govinfo:5usc1013-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap10-sec1013.htm",
+        "text_version": "2024 Code: complete operative section; later notes excluded",
+        "raw_sha256": "6a404ff0a252a2595a4f4710c062ae251d17a8ca9509a585df2ad50c657710b2",
+        "text": "§1013. Termination of advisory committees (a) In General.— (1) Advisory committees in existence on january 5, 1973 .—Each advisory committee that is in existence on January 5, 1973, shall terminate not later than the expiration of the 2-year period following that date unless— (A) in the case of an advisory committee established by the President or an officer of the Federal Government, such advisory committee is renewed by the President or that officer by appropriate action prior to the expiration of such 2-year period; or (B) in the case of an advisory committee established by an Act of Congress, its duration is otherwise provided for by law. (2) Advisory committees established after january 5, 1973 .—Each advisory committee established after January 5, 1973, shall terminate not later than the expiration of the 2-year period beginning on the date of its establishment unless— (A) in the case of an advisory committee established by the President or an officer of the Federal Government 1 such advisory committee is renewed by the President or such officer by appropriate action prior to the end of such period; or (B) in the case of an advisory committee established by an Act of Congress, its duration is otherwise provided for by law. (b) Charters.— (1) Upon renewal .—Upon the renewal of an advisory committee, the advisory committee shall file a charter in accordance with section 1008(c) of this title. (2) Upon expiration of successive 2-year periods .—An advisory committee established by an Act of Congress shall file a charter in accordance with section 1008(c) of this title upon the expiration of each successive 2-year period following the date of enactment of the Act establishing the advisory committee. (3) Prohibition on action prior to filing charter .—An advisory committee required to file a charter under this subsection shall not take any action (other than preparation and filing of the charter) prior to the date on which the charter is filed. (c) Successive Two-Year Periods .—An advisory committee that is renewed by the President or an officer of the Federal Government may be continued only for successive 2-year periods by appropriate action taken by the President or the officer prior to the date on which the advisory committee would otherwise terminate. (Pub. L. 117–286, §3(a), Dec. 27, 2022, 136 Stat. 4204.) ",
+        "governed_bytes_sha256": "35a554c42308a09052a076f495d27a23be007028ccb8750a632efe07b72b9de4"
+      }
+    },
+    {
+      "original_source_object_sha256": "a5b5b81d920ccfaf80d20cbd28b454a95882101b2e614839499627a2a8846fb8",
+      "source": {
+        "source_id": "govinfo:16usc824o-2024-definitions",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap12-subchapII-sec824o.htm",
+        "text_version": "2024 Code section215(a), complete definitions",
+        "raw_sha256": "b1f619535594112535e3937a52e3bac02e78dd4812780d262da6f8a6f3bd29b9",
+        "text": "(a) Definitions For purposes of this section: (1) The term \"bulk-power system\" means— (A) facilities and control systems necessary for operating an interconnected electric energy transmission network (or any portion thereof); and (B) electric energy from generation facilities needed to maintain transmission system reliability. The term does not include facilities used in the local distribution of electric energy. (2) The terms \"Electric Reliability Organization\" and \"ERO\" mean the organization cer tified by the Commission under subsection (c) the purpose of which is to establish and enforce reliability standards for the bulk-power system, subject to Commission review. (3) The term \"reliability standard\" means a requirement, approved by the Commission under this section, to provide for reliable operation of the bulk-power system. The term includes requirements for the operation of existing bulk-power system facilities, including cybersecurity protection, and the design of planned additions or modifications to such facilities to the extent necessary to provide for reliable operation of the bulk-power system, but the term does not include any requirement to enlarge such facilities or to construct new transmission capacity or generation capacity. (4) The term \"reliable operation\" means operating the elements of the bulk-power system within equipment and electric system thermal, voltage, and stability limits so that instability, uncontrolled separation, or cascading failures of such system will not occur as a result of a sudden disturbance, including a cybersecurity incident, or unanticipated failure of system elements. (5) The term \"Interconnection\" means a geographic area in which the operation of bulk-power system components is synchronized such that the failure of one or more of such components may adversely affect the ability of the operators of other components within the system to maintain reliable operation of the facilities within their control. (6) The term \"transmission organization\" means a Regional Transmission Organization, Independent System Operator, independent transmission provider, or other transmission organization finally approved by the Commission for the operation of transmission facilities. (7) The term \"regional entity\" means an entity having enforcement authority pursuant to subsection (e)(4). (8) The term \"cybersecurity incident\" means a malicious act or suspicious event that disrupts, or was an attempt to disrupt, the operation of those programmable electronic devices and communication networks including hardware, software and data that are essential to the reliable operation of the bulk power system. ",
+        "governed_bytes_sha256": "1700f4ca867c935563de3a486665075a28f150e5b9cf10b508c9f300565a34ba"
+      }
+    },
+    {
+      "original_source_object_sha256": "e954f28c08500c7ce322004d382f1177988ed863beacf2c20563eff891d025fd",
+      "source": {
+        "source_id": "govinfo:16usc796-2024-organizations",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap12-subchapI-sec796.htm",
+        "text_version": "2024 Code section3(27)-(29), complete transmission-organization definitions",
+        "raw_sha256": "b6fc370fe3aa26a89eb5025a2f2e28b947e986b577dd5745037c8d596f9181dc",
+        "text": "(27) RTO.—The term \"Regional Transmission Organization\" or \"RTO\" means an entity of sufficient regional scope approved by the Commission— (A) to exercise operational or functional control of facilities used for the transmission of electric energy in interstate commerce; and (B) to ensure nondiscriminatory access to the facilities. 1 (28) ISO.—The term \"Independent System Operator\" or \"ISO\" means an entity approved by the Commission— (A) to exercise operational or functional control of facilities used for the transmission of electric energy in interstate commerce; and (B) to ensure nondiscriminatory access to the facilities. 3 (29) Transmission organization .—The term \"Transmission Organization\" means a Regional Transmission Organization, Independent System Operator, independent transmission provider, or other transmission organization finally approved by the Commission for the operation of transmission facilities. ",
+        "governed_bytes_sha256": "ae8717663bc09065ae3b17d7d3e9c28e37eab1ae041e3c98579838278fb86ee7"
+      }
+    },
+    {
+      "original_source_object_sha256": "4f9cc5c8399e97f8f7d38361be18a6309d5614c4632fbe97c927dfc3458824ad",
+      "source": {
+        "source_id": "clerk:119:1:278",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll278.xml",
+        "text_version": null,
+        "raw_sha256": "2e4abe77007c7a6a3bf009efb9be51929adcc42e91f46e0c74b424f89447f22d",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "278",
+          "legis-num": "H R 3015",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "18-Sep-2025",
+          "action-time": "4:43 PM",
+          "vote-desc": "National Coal Council Reestablishment Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "213",
+            "nay-total": "3",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "4",
+            "nay-total": "206",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "7349ee8ded4a1f9abb7750857ec49313698837a8a788df3318299b6da2af3bf8"
+      }
+    },
+    {
+      "original_source_object_sha256": "2eb37f6a02dd80a6a379dec40463d1c6bc38822014066777c0eb6bb8eca445fe",
+      "source": {
+        "source_id": "govinfo:hr3015eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3015eh/html/BILLS-119hr3015eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "b1365310dbbd67966cfb271c22c87a294b6902551bd9e393033492895c658111",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3015 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3015 _______________________________________________________________________ AN ACT To reestablish the National Coal Council in the Department of Energy to provide advice and recommendations to the Secretary of Energy on matters related to coal and the coal industry, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``National Coal Council Reestablishment Act''. SEC. 2. NATIONAL COAL COUNCIL. (a) In General.--The Secretary of Energy shall reestablish in the Department of Energy the National Coal Council, in accordance with the charter for the National Coal Council that was in effect on November 19, 2021. (b) Applicability of the Federal Advisory Committee Act.-- (1) In general.--Subject to paragraph (2), chapter 10 of title 5, United States Code, (commonly referred to as the ``Federal Advisory Committee Act'') and section 552b(c) of title 5, United States Code, shall apply to the National Coal Council. (2) Termination.--Section 1013 of title 5, United States Code, shall not apply to the National Coal Council. Passed the House of Representatives September 18, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3015 _______________________________________________________________________ AN ACT To reestablish the National Coal Council in the Department of Energy to provide advice and recommendations to the Secretary of Energy on matters related to coal and the coal industry, and for other purposes.",
+        "governed_bytes_sha256": "c54c0c5839ec08f044d0303d9d5839e0b0c13bc6973e5780dfc25a797b659509"
+      }
+    },
+    {
+      "original_source_object_sha256": "60e05be67f8eed0ece7fa9139b2b7682a0c5b568fa16564792bc543345526ee2",
+      "source": {
+        "source_id": "govinfo:5usc552b-c-2024",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552b.htm",
+        "text_version": "2024 Code section552b(c), complete closed-meeting grounds",
+        "raw_sha256": "3db0ee3828fbec9fbc908ca80878d8e8c9e100aae70af2c473d9b1493b65b293",
+        "text": "(c) Except in a case where the agency finds that the public interest requires otherwise, the second sentence of subsection (b) shall not apply to any portion of an agency meeting, and the requirements of subsections (d) and (e) shall not apply to any information pertaining to such meeting otherwise required by this section to be disclosed to the public, where the agency properly determines that such portion or portions of its meeting or the disclosure of such information is likely to— (1) disclose matters that are (A) specifically authorized under criteria established by an Executive order to be kept secret in the interests of national defense or foreign policy and (B) in fact properly classified pursuant to such Executive order; (2) relate solely to the internal personnel rules and practices of an agency; (3) disclose matters specifically exempted from disclosure by statute (other than section 552 of this title), provided that such statute (A) requires that the matters be withheld from the public in such a manner as to leave no discretion on the issue, or (B) establishes particular criteria for withholding or refers to particular types of matters to be withheld; (4) disclose trade secrets and commercial or financial information obtained from a person and privileged or confidential; (5) involve accusing any person of a crime, or formally censuring any person; (6) disclose information of a personal nature where disclosure would constitute a clearly unwarranted invasion of personal privacy; (7) disclose investigatory records compiled for law enforcement purposes, or information which if written would be contained in such records, but only to the extent that the production of such records or information would (A) interfere with enforcement proceedings, (B) deprive a person of a right to a fair trial or an impartial adjudication, (C) constitute an unwarranted invasion of personal privacy, (D) disclose the identity of a confidential source and, in the case of a record compiled by a criminal law enforcement authority in the course of a criminal investigation, or by an agency conducting a lawful national security intelligence investigation, confidential information furnished only by the confidential source, (E) disclose investigative techniques and procedures, or (F) endanger the life or physical safety of law enforcement personnel; (8) disclose information contained in or related to examination, operating, or condition reports prepared by, on behalf of, or for the use of an agency responsible for the regulation or supervision of financial institutions; (9) disclose information the premature disclosure of which would— (A) in the case of an agency which regulates currencies, securities, commodities, or financial institutions, be likely to (i) lead to significant financial speculation in currencies, securities, or commodities, or (ii) significantly endanger the stability of any financial institution; or (B) in the case of any agency, be likely to significantly frustrate implementation of a proposed agency action, except that subparagraph (B) shall not apply in any instance where the agency has already disclosed to the public the content or nature of its proposed action, or where the agency is required by law to make such disclosure on its own initiative prior to taking final agency action on such proposal; or (10) specifically concern the agency's issuance of a subpena, or the agency's participation in a civil action or proceeding, an action in a foreign court or international tribunal, or an arbitration, or the initiation, conduct, or disposition by the agency of a particular case of formal agency adjudication pursuant to the procedures in section 554 of this title or otherwise involving a determination on the record after opportunity for a hearing. ",
+        "governed_bytes_sha256": "0e5851b80e4286f32642bbcf193262053638cd2efa068943bc2963b746335e2b"
+      }
+    },
+    {
+      "original_source_object_sha256": "44f4cd97a363fc0244def98e3a547bbc670927a3be41621e79d0d99ffcbb6bec",
+      "source": {
+        "source_id": "clerk:119:1:279",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll279.xml",
+        "text_version": null,
+        "raw_sha256": "f59a388dac175b349c78997f486fb2d9de708a871a16f1f17a006fced22c4f27",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "279",
+          "legis-num": "H R 1047",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "18-Sep-2025",
+          "action-time": "5:01 PM",
+          "vote-desc": "GRID Power Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "211",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "5",
+            "nay-total": "205",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "e2be0aaa33c056eabfa143924d68836949160b7161f0708209f1045b942e410a"
+      }
+    },
+    {
+      "original_source_object_sha256": "52fb699d1cf6321c17500ababea6b09d0ba90281ccdc0468847c752a7c6ffb20",
+      "source": {
+        "source_id": "govinfo:hr1047eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1047eh/html/BILLS-119hr1047eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "87b9c34e94e6b8923cd8964f52005679a547bda7ed076ca33436cc12377c4021",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1047 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1047 _______________________________________________________________________ AN ACT To require the Federal Energy Regulatory Commission to reform the interconnection queue process for the prioritization and approval of certain projects, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Guaranteeing Reliability through the Interconnection of Dispatchable Power Act'' or the ``GRID Power Act''. SEC. 2. DEFINITIONS. In this Act: (1) Bulk-power system.--The term ``bulk-power system'' has the meaning given the term in section 215(a) of the Federal Power Act (16 U.S.C. 824o(a)). (2) Commission.--The term ``Commission'' means the Federal Energy Regulatory Commission. (3) Dispatchable power.--The term ``dispatchable power'' means an electric energy generation resource capable of providing known and forecastable electric supply in time intervals necessary to ensure grid reliability. (4) Grid reliability.--The term ``grid reliability'' means the ability of the electric grid to deliver an adequate, secure, and stable flow of electricity in the quantity and with the quality demanded by users, taking into account the ability of the bulk-power system to withstand sudden disturbances. (5) Grid resilience.--The term ``grid resilience'' means the ability of the electric grid to adapt to changing physical conditions and withstand and rapidly recover from significant disturbances, including natural disasters, cyber-attacks, and other unforeseen events. (6) Independent system operator.--The term ``Independent System Operator'' has the meaning given the term in section 3 of the Federal Power Act (16 U.S.C. 796). (7) Regional transmission organization.--The term ``Regional Transmission Organization'' has the meaning given the term in section 3 of the Federal Power Act (16 U.S.C. 796). (8) Resource adequacy.--The term ``resource adequacy'' means the ability of the electric system to meet the aggregate electrical demand and energy requirements of end-use customers at all times, accounting for scheduled and reasonably expected unscheduled outages of bulk-power system components. (9) Transmission provider.--The term ``transmission provider'' means-- (A) a public utility (as defined in section 201(e) of the Federal Power Act (16 U.S.C. 824(e))) that owns, operates, or controls 1 or more transmission facilities; (B) an Independent System Operator; and (C) a Regional Transmission Organization. SEC. 3. RULEMAKING TO IMPROVE INTERCONNECTION QUEUE FLEXIBILITY. (a) In General.--Not later than 90 days after the date of enactment of this Act, the Commission shall initiate a rulemaking-- (1) to address the inefficiencies and ineffectiveness of existing procedures for processing interconnection requests to ensure that new dispatchable power projects that improve grid reliability and resource adequacy can interconnect to the electric grid quickly, cost-effectively, and reliably; and (2) to amend the pro forma Large Generator Interconnection Procedures and, as appropriate, the pro forma Large Generator Interconnection Agreement, promulgated pursuant to section 35.28(f) of title 18, Code of Federal Regulations (or successor regulations)-- (A) to authorize transmission providers to submit proposals to the Commission to adjust the interconnection queue of the transmission provider to prioritize new dispatchable power projects that will improve grid reliability and resource adequacy by assigning those projects higher positions in the interconnection queue; and (B) to require transmission providers-- (i) to provide in any proposal described in subparagraph (A)-- (I) a demonstration of need for prioritization of the relevant projects; and (II) a description of how the prioritization of those projects will improve grid reliability or grid resilience; (ii) to provide a process for public comment and stakeholder engagement before a proposal described in subparagraph (A) is submitted to the Commission; and (iii) to provide regular reporting to the Commission on the state of grid reliability and grid resilience, including reporting on any actions taken pursuant to this Act. (b) Commission Approval.--To ensure timely responses to grid reliability concerns, not later than 60 days after a proposal is submitted pursuant to subsection (a)(2), the Commission shall-- (1) review the proposal; and (2) approve or deny the proposal. (c) Deadline for Final Rule.--Not later than 180 days after the date of enactment of this Act, the Commission shall promulgate final regulations to complete the rulemaking initiated under subsection (a). (d) Periodic Review.--Not less frequently than once every 5 years, the Commission shall review and, if necessary, update the regulations promulgated under this section to ensure that those regulations remain effective and relevant to evolving grid reliability and grid resilience challenges. Passed the House of Representatives September 18, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1047 _______________________________________________________________________ AN ACT To require the Federal Energy Regulatory Commission to reform the interconnection queue process for the prioritization and approval of certain projects, and for other purposes.",
+        "governed_bytes_sha256": "aa2d2690255547e69f90872b3f7374f35e71f5f5aaed92148006a3ab4955e022"
+      }
+    },
+    {
+      "original_source_object_sha256": "0ef8d69679747c67d007d7cb2fbc2361596cf195587ae7c13fe88a8b6b892f3a",
+      "source": {
+        "source_id": "govinfo:16usc824-e-2024",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap12-subchapII-sec824.htm",
+        "text_version": "2024 Code section201(e), public-utility definition; not section206/824e",
+        "raw_sha256": "90d384e242099bc167f48951dc1b098554bb913d7f3d1f38cf0da2cf54ced535",
+        "text": "(e) \"Public utility\" defined The term \"public utility\" when used in this subchapter and subchapter III of this chapter means any person who owns or operates facilities subject to the jurisdiction of the Commission under this subchapter (other than facilities subject to such jurisdiction solely by reason of section 824e(e), 824e(f), 1 824i, 824j, 824j–1, 824k, 824o, 824o–1, 824p, 824q, 824r, 824s, 824t, 824u, or 824v of this title). ",
+        "governed_bytes_sha256": "bc1dbd942ea8954154b8ed5e6564a81df62ae701067181df49e398b1b8e44e8f"
+      }
+    },
+    {
+      "original_source_object_sha256": "6a5c003a95cf5095020d2f868d0bd204db5e2da4f6a96ef331a4e4a35befc4ec",
+      "source": {
+        "source_id": "clerk:119:1:280",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll280.xml",
+        "text_version": null,
+        "raw_sha256": "0c1392b69904d793885945ba559ef2fae00f956035a95b3ce7671c0f86d788d8",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "280",
+          "legis-num": "H R 5371",
+          "vote-question": "On Motion to Recommit",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "19-Sep-2025",
+          "action-time": "10:36 AM",
+          "vote-desc": "Continuing Appropriations and Extensions Act, 2026"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "1e52a305362dbcea5db61c9aade7959254a52f0bde042b18583ecac8a25a982a"
+      }
+    },
+    {
+      "original_source_object_sha256": "f251f18f4b4d9057373892cce1b937807afcd49fc2e6217fc534f5e48ac730f7",
+      "source": {
+        "source_id": "immigration:hr5371-roll281-whole-choice220",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-19/pdf/CREC-2025-09-19-house.pdf",
+        "raw_sha256": "72e405523e3b595289a1370b349f41fdf5961280cdca9f60e4fb3caf508c5d1e",
+        "text_version": "Own September19H4476-H4477 House5371callup/engrossment/rejectedrecommit/independentpassagevoicevote/recordeddemand/order/217-212-3electronic281/result/reconsideration. Stated-for declarations and subsequent719/282excluded.",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/969af035525535ef839f9f266d700eafb83d10899dd386ef42258421308a8f52.0000000.json",
+              "sha256": "ad2416edadf7cc186a5259b6c135e9f8115136ec9156a350b85659b61272ce02",
+              "start_character": 0,
+              "end_character": 6697
+            }
+          ],
+          "utf8_sha256": "969af035525535ef839f9f266d700eafb83d10899dd386ef42258421308a8f52",
+          "total_characters": 6697,
+          "transport_only": true
+        },
+        "captured_full_text_sha256": "0865e85f78d6cc89f45f417fa15dc81924ae47752248e8ac6f137dd84e150801",
+        "source_text_extents": [
+          {
+            "start": 19015,
+            "end": 19381,
+            "total": 282128
+          },
+          {
+            "start": 159383,
+            "end": 159675,
+            "total": 282128
+          },
+          {
+            "start": 159675,
+            "end": 160972,
+            "total": 282128
+          },
+          {
+            "start": 164987,
+            "end": 169723,
+            "total": 282128
+          }
+        ],
+        "text_extraction_method": "Literal saved pypdf-normalized wholeHouseRecord extents; two-newline join; no printed hyphen or name repair.",
+        "governed_bytes_sha256": "4412cbc8b51d8c4504d9d438af3bfa27c457162fd3ed9037ea7a5f56a0a314d9"
+      }
+    },
+    {
+      "original_source_object_sha256": "04c82e97aab825a6d36db2fd80b27f665aeb1d5445ed6c65645edb8f7dbf063b",
+      "source": {
+        "source_id": "clerk:119:1:281",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll281.xml",
+        "text_version": null,
+        "raw_sha256": "d8f2f954aebe40cd255454f2b3487966cfec6836b9f0dcbff7f4e8278706e736",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "281",
+          "legis-num": "H R 5371",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "19-Sep-2025",
+          "action-time": "10:44 AM",
+          "vote-desc": "Continuing Appropriations and Extensions Act, 2026"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "2",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "1",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "3dc8f9a9eb28c79d8141402da26b461156af9c249290bcff94504c1e2e81462d"
+      }
+    },
+    {
+      "original_source_object_sha256": "21da789a7dc7b8689f11ec3ba20be9f1b22130b6f19b2374866ad30a7cf06968",
+      "source": {
+        "source_id": "govinfo:hr5371eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5371eh/html/BILLS-119hr5371eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "37891e031dced88678e3b9abd96efd6550d1af8e54fb463e7ea96462eed0cbc2",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/1b1595cd0a9f5f620758a7c3cec447b7d3c62cd8ef87a4681b09c9dc5b486cc7.0000000.json",
+              "sha256": "3c03ba6973e0dacf03f3e6aba9d83264e79dfb8631155c3c26c556ebfdedbd08",
+              "start_character": 0,
+              "end_character": 90000
+            },
+            {
+              "path": "source_parts/1b1595cd0a9f5f620758a7c3cec447b7d3c62cd8ef87a4681b09c9dc5b486cc7.0090000.json",
+              "sha256": "c4753028f3636ced87bb254da1bfe86824387267462496278b6131a80746ce0d",
+              "start_character": 90000,
+              "end_character": 94386
+            }
+          ],
+          "utf8_sha256": "1b1595cd0a9f5f620758a7c3cec447b7d3c62cd8ef87a4681b09c9dc5b486cc7",
+          "total_characters": 94386,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "3c62a1ce317f3fe2e80f79e6e7a90cf982b0abd68d6077a653f077b65cbe4676"
+      }
+    },
+    {
+      "original_source_object_sha256": "4e20f19bb8b3ac1f262a8172e0131dd82cafea5aab591cc2f268c11c4ab2c5f1",
+      "source": {
+        "source_id": "clerk:119:1:282",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll282.xml",
+        "text_version": null,
+        "raw_sha256": "e5fb5eaf0196125a9b115907d31e9dac58863c80ce011df09c527c3fc1befdcc",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "282",
+          "legis-num": "H RES 719",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "19-Sep-2025",
+          "action-time": "10:53 AM",
+          "vote-desc": "Honoring the life and legacy of Charles “Charlie” James Kirk"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "95",
+            "nay-total": "58",
+            "present-total": "38",
+            "not-voting-total": "22"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "95f97280ac2a9b3aebbf964c0fd1d282a9161bc2d9f5a7555c5b9f837682250e"
+      }
+    },
+    {
+      "original_source_object_sha256": "63293c3cc672aae321557167911cfdc02254a3369a59a0274dcf3994e253fce6",
+      "source": {
+        "source_id": "govinfo:hres719eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres719eh/html/BILLS-119hres719eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "99d14cc81528e7007c9eb2bbc2417365da89eceb58d041fb00bb2e3538a2b25e",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 719 Engrossed in House (EH)] <DOC> H. Res. 719 In the House of Representatives, U. S., September 19, 2025. Whereas Charles ``Charlie'' James Kirk, born October 14, 1993, was a courageous American patriot, whose life was tragically and unjustly cut short in an act of political violence on September 10, 2025, at Utah Valley University; Whereas Charlie Kirk was a devoted Christian, who boldly lived out his faith with conviction, courage, and compassion; Whereas Charlie Kirk was a dedicated husband to his beloved wife, Erika Kirk, and a loving father to their daughter and son, exemplifying the virtues of faith, fidelity, and fatherhood; Whereas Charlie Kirk was a fierce defender of the American founding and its timeless principles of life, liberty, limited government, and individual responsibility; Whereas Charlie Kirk, at 18 years old, founded Turning Point USA in 2012, a student movement with the mission to ``identify, educate, train, and organize students to promote the principles of fiscal responsibility, free markets, and limited government''; Whereas Charlie Kirk became one of the most prominent voices in America, engaging in respectful, civil discourse across college campuses, media platforms, and national forums, always seeking to elevate truth, foster understanding, and strengthen the Republic; Whereas Charlie Kirk personified the values of the First Amendment, exercising his God-given right to speak freely, challenge prevailing narratives, and did so with honor, courage, and respect for his fellow Americans; Whereas Charlie Kirk's commitment to civil discussion and debate stood as a model for young Americans across the political spectrum, and he worked tirelessly to promote unity without compromising on conviction; Whereas the assassination of Charlie Kirk was not only a heinous act of violence, but a sobering reminder of the growing threat posed by political extremism and hatred in our society; Whereas such acts of politically motivated violence are antithetical to the principles of a free republic, in which differences of opinion are to be debated--not silenced--with civility, reason, and mutual respect; Whereas the rise in targeted violence against individuals for their political beliefs undermines the very fabric of our constitutional democracy and chills the free exchange of ideas essential to a healthy civic society; Whereas leaders at every level--government, education, media, and beyond--must stand united in unequivocal condemnation of political violence, regardless of their ideology; Whereas the tragic loss of Charlie Kirk must not be allowed to deepen the divides in our Nation, but instead serve as a turning point to recommit ourselves to better angels, and to the timeless American principles of liberty governed by truth and the virtues of peaceful dialogue; and Whereas Charlie Kirk would not have us respond to his death with despair, but rather with renewed purpose--to speak truth with courage, to stand firm in faith, to seek unity while standing firm in principle, and to serve as living reminders of the values he championed: faith, family, and freedom: Now, therefore, be it Resolved, That the House of Representatives-- (1) condemns in the strongest possible terms the assassination of Charles ``Charlie'' James Kirk, and all forms of political violence; (2) commends and honors the dedicated law enforcement and emergency personnel for their tireless efforts in finding the suspect responsible for the assassination of Charlie Kirk and urges the administration of swift justice to the suspect; (3) extends its deepest condolences and sympathies to Charlie Kirk's family, including his wife, Erika, and their two young children, and prays for comfort, peace, and healing in this time of unspeakable loss; (4) honors the life, leadership, and legacy of Charlie Kirk, whose steadfast dedication to the Constitution, civil discourse, and Biblical truth inspired a generation to cherish and defend the blessings of liberty; and (5) calls upon all Americans--regardless of race, party affiliation, or creed--to reject political violence, recommit to respectful debate, uphold American values, and respect one another as fellow Americans. Attest: Clerk.",
+        "governed_bytes_sha256": "f0ff71998f1113e298073fb0decdb5320818230fa6cec96d2c0815f136f5fee4"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 15
+  }
+}

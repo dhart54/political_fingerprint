@@ -1,0 +1,44 @@
+{
+  "scope": "Isolated partial candidate replay through existingprepare API/run_editorial_pipeline; not the governed universe CLI or a canonical update",
+  "function": "scripts.prepare_shared_domain_candidate.prepare",
+  "member_ids": [
+    "F000477",
+    "M001184"
+  ],
+  "input_sha256": "5b058b6317f68ede06338171ba6366e27655621fb539baba639117398debdb3a",
+  "capture_sha256": "468f3f95fa1e7ef956cb25f434ff7653db2d4bf704abb67ab313326b42f72163",
+  "output_sha256": {
+    "shared_action_core": "e73b3f1dbf941212e90bb958b49832c0f13e54bdb04612cee225b4750fa96887",
+    "shared_issue_mapping": "2e7b23d1b1fdd81199cec063e97e4a2ffac708e9c87052351abc59836a7d06b8",
+    "member_projections": "8ada834dac77ac3feabf2be4cfdcdf448752a3bca87bfd45a322381f3479c951",
+    "compiler_input": "716450655603aad065c6eb7ec3c33a269d8401ddafcafc7ac47d7e1088170481",
+    "compiled_ir": "f0b13112c85ddadc86fd0f70e684487d220fe7f63634916bcf984fb59daf1c4b",
+    "readable_candidates": "5b1dad5ab3265f133213d00d8959a54925fe3517e7e1b16c805f2f154bc724f2"
+  },
+  "identical_replay": true,
+  "shared_core_reused_by_both_members": true,
+  "proposed_eligibility": {
+    "decision": "proposed",
+    "parent_context_used": false
+  },
+  "pipeline_validation": {
+    "member_count": 2,
+    "proposition_count": 2,
+    "source_render_constraint_count": 0
+  },
+  "process_seconds": 0.015,
+  "serialization": "UTF8JSONwithLF; output objects unchanged, no assertion/semantic/model patch",
+  "rule_files_sha256": {
+    "scripts/prepare_shared_domain_candidate.py": "23d13a233adf01c2d6652a97e91f0fba45087c9ae46d385c9fdee40e8dd16eb4",
+    "backend/app/semantic_ir/shared_corpus.py": "bb746b7eb2e29ee39571815c817fa406939fb4a17ea9ef0821e035ad37c60a56",
+    "backend/app/semantic_ir/compiler.py": "dceacdc5f5c88e759e063be5dbfe73adddda8953a8419e2e2cf20428b04639f7",
+    "backend/app/semantic_ir/pipeline.py": "a8446422b53ceb244fb8a200fc14de9da3772a0f5807c64268cf908f0eb78f2b",
+    "backend/app/semantic_ir/adapters.py": "60c36267d625e8122d16319839cf30c8e9a51b5089e3b1f70562c04eafc22b7e",
+    "backend/app/semantic_ir/validation.py": "456f803480811c0a786d53740efc4fff0f978ce4e9ac81c1e0da260b525d2b94",
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "78751497eef8b4153e7b2bacefe07b882577db16ab2103656ea3088d55eccfdf"
+  },
+  "controlled_historical_update_tests_run": false,
+  "canonical_mutation": false,
+  "semantic_acceptance": false,
+  "publication_authorized": false
+}

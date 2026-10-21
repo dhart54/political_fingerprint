@@ -1,0 +1,38 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-18T19:08:28.657094+00:00",
+    "qualification": "Post-research specification-writing marker; retained-source reading/pre-command drafting untimed; elapsed window is application/generation only."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-18T19:12:00.150858+00:00",
+    "end_utc": "2026-10-18T19:14:18.361358+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 42 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch42_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 6.181
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 110.719
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 21.31
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 211.494,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 138.21,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "elapsed_window_limit": "Post-marker application/generation wall time only; prior source inspection/pre-command drafting untimed. Not a total research or active LLM-authoring duration.",
+  "failed_initial_neutrality_validation_seconds": 0.541,
+  "all_formal_attempt_process_seconds": 138.751,
+  "formal_validation_process_seconds_scope": "Successful current validator,77-test suite and semantic checks only; failed initial neutrality check separately preserved. Export construction/repackaging/byte delivery is later overhead."
+}

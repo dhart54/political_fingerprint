@@ -1,0 +1,404 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 78,
+  "exact_committed_head": "262c1f0ceb0dd4cad0897e77f86493e47dd3a2dc",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "262c1f0ceb0dd4cad0897e77f86493e47dd3a2dc",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch78_20260916/membership_review.json",
+      "git_blob": "b21e88cc53a2b20b88f6cabf4836efffa0613787",
+      "git_bytes_sha256": "621e53106b787f45f4e1739a9658e187de3ed69deab68aa7f7402193b39ee0fe"
+    },
+    "sources": {
+      "head": "262c1f0ceb0dd4cad0897e77f86493e47dd3a2dc",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch78_20260916/sources.json",
+      "git_blob": "946427576109759ae6f43dfe9bf37d1872058ac8",
+      "git_bytes_sha256": "862169627147a4ec78bb0fa6a7e06effd73cdd15e0702061345be97ff639b9ab"
+    },
+    "screening": {
+      "head": "262c1f0ceb0dd4cad0897e77f86493e47dd3a2dc",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch78_20260916/screening_receipt.json",
+      "git_blob": "013e1f82022eed5103483a70dc2c7baea7925365",
+      "git_bytes_sha256": "3ec9e1207f02db71cb9508a2a8f88f0efa0752a42929be8952ffc126dd0a4f2b"
+    },
+    "screening_units": {
+      "head": "262c1f0ceb0dd4cad0897e77f86493e47dd3a2dc",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch78_20260916/screening_units_receipt.json",
+      "git_blob": "6f05d0d37295c21839f0352049b252b007d3946e",
+      "git_bytes_sha256": "825673056907c2498fd1e3f83f4774419aeccab830cf2431414fbfc28c9fea5f"
+    }
+  },
+  "original_membership_review_sha256": "9e8f51bf10c77d8b822f71e3f5e9f00370bc8a9c0a0fd0eea237728d897497e2",
+  "new_screened_ids": [
+    "house:119:2:78",
+    "house:119:2:79",
+    "house:119:2:80",
+    "house:119:2:81",
+    "house:119:2:82"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "808e686d553b1886046218d00112c5082b0529d8e0354715d7d4acf934100af3",
+      "record": {
+        "action_id": "house:119:2:78",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete4758EH and complete retained50121/50122/50123/50131units show repeal of electrification rebates, contractor training and building-code assistance, but new rescission only of unobligated50122/50131balances.119-21section50402(b)already rescinded50123unobligatedbalance; do not count its original200million as a new rescission or sum old appropriations as present savings. HOMES50121is not repealed and its remaining same-upgrade noncombination prohibition survives deletion of the named50122reference. Code-assistance repeal is not repeal of every local code or revocation of already-obligated funds. Direct home-energy/building-system assistance supports an Infrastructure candidate relationship, but an existing whole Health action meaning/digest must be reused rather than replacing it with a narrower energy account. That full source-qualified shared meaning includes additional report/floor/eligibility and version qualifications not fully reconciled here; whole reuse/material-baseline/taxonomy review remains pending. No individual rebate, current balance, budget saving, energy bill, code compliance or enacted repeal is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:78",
+            "url": "https://clerk.house.gov/evs/2026/roll078.xml",
+            "raw_sha256": "3a3233788aaf58d65b77b0daa1d991f2b0fe3052787fd38e142232d0e81d86d8",
+            "governed_bytes_sha256": "3a58f0690842cf5347741917b7161df13b4b9a4676abf80124c09758998da660"
+          },
+          {
+            "source_id": "govinfo:hr4758eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4758eh/html/BILLS-119hr4758eh.htm",
+            "raw_sha256": "25c35f87d76424634be93693ddca5483edd163fefec4a469734d1cfb02818fdb",
+            "governed_bytes_sha256": "313ede9a3d987cb2a078231c2b716e2e3337bbe1334f148af698a5594beb8dda"
+          },
+          {
+            "source_id": "govinfo:pl117-169-home-rebates-training-codes",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ169/html/PLAW-117publ169.htm",
+            "raw_sha256": "434fc6a6ce14a952520b0ea027ca5be5837782c77d197e89efc91b6c5847fbac",
+            "governed_bytes_sha256": "d1d81b79bd6df6aafc2c172b3dc4a3aa018f8fad41d1e233a1680864dd20e825"
+          },
+          {
+            "source_id": "govinfo:pl119-21-50402-energy-rescissions",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+            "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+            "governed_bytes_sha256": "e7bf2884c0da3ad1e49960608a8d3f2d62ca9215d7c8f21522bc47139ddf9c95"
+          },
+          {
+            "source_id": "govinfo:hres1075eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1075eh/html/BILLS-119hres1075eh.htm",
+            "raw_sha256": "102aa880f31fb7f1e893b3be8cd7b2104d91961898535f0d9bff77a85d044723",
+            "governed_bytes_sha256": "4afc4964cf4c3256fc127becdddabad1bafc7c423fbaf484feacd6e88ba0c07d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4758eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4758 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 4758 _______________________________________________________________________ AN ACT To repeal provisions of Public Law 117-169 relating to taxpayer subsidies for home electrification, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Homeowner Energy Freedom Act''. SEC. 2. HOMEOWNER ENERGY FREEDOM. (a) In General.--The following are repealed: (1) Section 50122 of Public Law 117-169 (42 U.S.C. 18795a) (relating to a high-efficiency electric home rebate program). (2) Section 50123 of Public Law 117-169 (42 U.S.C. 18795b) (relating to State-based home energy efficiency contractor training grants). (3) Section 50131 of Public Law 117-169 (136 Stat. 2041) (relating to assistance for latest and zero building energy code adoption). (b) Rescissions.--The unobligated balances of any amounts made available under each of sections 50122 and 50131 of Public Law 117-169 (42 U.S.C. 18795a; 136 Stat. 2041) (as in effect on the day before the date of enactment of this Act) are rescinded. (c) Conforming Amendment.--Section 50121(c)(7) of Public Law 117- 169 (42 U.S.C. 18795(c)(7)) is amended by striking ``, including a rebate provided under a high-efficiency electric home rebate program (as defined in section 50122(d)),''. Passed the House of Representatives February 25, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 4758 _______________________________________________________________________ AN ACT To repeal provisions of Public Law 117-169 relating to taxpayer subsidies for home electrification, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:pl117-169-home-rebates-training-codes",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/310a80dc66b253d9c20e9e12ea14913c8a284e38bba0df06deb6fcaa957e3533.0000000.json",
+                  "sha256": "106fcae40d57190bbd694ac94fdc0ce1a7ee0dfddee147928e8f5cb450c95508",
+                  "start_character": 0,
+                  "end_character": 25579
+                }
+              ],
+              "utf8_sha256": "310a80dc66b253d9c20e9e12ea14913c8a284e38bba0df06deb6fcaa957e3533",
+              "total_characters": 25579,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:pl119-21-50402-energy-rescissions",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SEC. 50402. REPEALS; RESCISSIONS. (a) Repeal and Rescission.--Section 50142 of Public Law 117-169 (136 Stat. 2044) (commonly known as the ``Inflation Reduction Act of 2022'') is repealed and the unobligated balance of amounts made available under that section (as in effect on the day before the date of enactment of this Act) is rescinded. (b) Rescissions.-- (1) In general.--The unobligated balances of amounts made available under the sections described in paragraph (2) are rescinded. (2) Sections described.--The sections referred to in paragraph (1) are the following sections of Public Law 117-169 (commonly known as the ``Inflation Reduction Act of 2022''): (A) Section 50123 (42 U.S.C. 18795b). (B) Section 50141 (136 Stat. 2042). (C) Section 50144 (136 Stat. 2044). (D) Section 50145 (136 Stat. 2045). (E) Section 50151 (42 U.S.C. 18715). (F) Section 50152 (42 U.S.C. 18715a). (G) Section 50153 (42 U.S.C. 18715b). (H) Section 50161 (42 U.S.C. 17113b)."
+          },
+          {
+            "source_id": "govinfo:hres1075eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1075 Engrossed in House (EH)] <DOC> H. Res. 1075 In the House of Representatives, U. S., February 24, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4626) to amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes. All points of order against consideration of the bill are waived. In lieu of the amendment in the nature of a substitute recommended by the Committee on Energy and Commerce now printed in the bill, an amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-20 shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4758) to repeal provisions of Public Law 117-169 relating to taxpayer subsidies for home electrification, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ca6e4d7d987c8cdab3fb511f233bad8e2144b5f93bf74d1c17f5f3078fb30f23",
+      "record": {
+        "action_id": "house:119:2:79",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question orders the previous question on H.Res.1095. No substantive motion body is interpreted. It remains non-counting procedural context, separate from rule adoption and the subsequent whole7744DHSappropriations passage.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:79",
+            "url": "https://clerk.house.gov/evs/2026/roll079.xml",
+            "raw_sha256": "1d7bbe9d1afb88c3f4da551f42c5762f3a595f2f4c676fd729bff7a94b2c9ae4",
+            "governed_bytes_sha256": "b6990de253d2a0821728d461833b300322a1c95e21adfaf4f8cbabbb2ea14709"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "54d79756ddf99e90fdf3b7ba923a48877b7965468cd877a60985d0f68c9923e5",
+      "record": {
+        "action_id": "house:119:2:80",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete1095EH schedules7744DHSconsideration, waives points of order, considers the bill read, orders the previous question and permits debate/recommittal. It does not deem a substantive substitute or amendment adopted and does not pass an appropriation. This exact adoption remains non-counting procedural context; no component support/opposition, spending or security outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:80",
+            "url": "https://clerk.house.gov/evs/2026/roll080.xml",
+            "raw_sha256": "6fb0936dd9201eb1461d2c38d40833a91e01fe49bb22270a164e77efe20f6e42",
+            "governed_bytes_sha256": "b0ca3233a3d1ee3680d6766a0a936ea4c37350b3f8dff97a4d3b2f0bfbdb6582"
+          },
+          {
+            "source_id": "govinfo:hres1095eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1095eh/html/BILLS-119hres1095eh.htm",
+            "raw_sha256": "0ea9caa8329284134d7fa3acc2403b7d2212f0801fc7a901ef31aafa55601aca",
+            "governed_bytes_sha256": "c872834285380f262e2d4653b7e03c8f73ce6e69bb844d7857f7ec40280fb6c4"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1095eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1095 Engrossed in House (EH)] <DOC> H. Res. 1095 In the House of Representatives, U. S., March 4, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 7744) making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "fb5caaadcdf84c9ac7db7d5072e5f7d98cfdd363c512630581cb6f0caedf056c",
+      "record": {
+        "action_id": "house:119:2:81",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The retained own S723ES passed the SenateDec11,2025and is14211characters; only opening0:2400andclosing13211:14211were read. It concerns BIAprocessing of land/leasehold mortgage and right-of-way packages, named Indian-land definition and a complaints/intermediary function; not every listed residential or business purpose is an Infrastructure program. Whole deadlines/conditions/title-status/legal-effect provisions and incorporated trust/land/CFR/current-version baselines remain unreviewed. Do not infer automatic mortgage/ROWapproval, a universaldeadline, land-titlechange, newloans, homeconstruction, employment or network outcomes from a title or selected ROWfragment. Whole as-offered/version/domain review remains pending; combined suspension/passage is not enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:81",
+            "url": "https://clerk.house.gov/evs/2026/roll081.xml",
+            "raw_sha256": "c1de9bc1d358e4a7b8552bbc426bf2581cd5fca0b61da3ad3d6952370d01cf87",
+            "governed_bytes_sha256": "a9f85d0cd81254fb2b498276499672649f6c3b41c063c9eb4478ea783bf6a07f"
+          },
+          {
+            "source_id": "govinfo:s723es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s723es/html/BILLS-119s723es.htm",
+            "raw_sha256": "6861abe7a2f55ea383adcd85afe18286a4cf72b60e41d6ef1dccc0adf76e6d56",
+            "governed_bytes_sha256": "51ce6eeb91f447d4c617be97e6d00cfd4ad2715f4a9e244efcd30f0778b9f6ca"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s723es",
+            "locator": "Only ESopening0:2400read; complete14211character bill interior unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S. 723 Engrossed in Senate (ES)] <DOC> 119th CONGRESS 1st Session S. 723 _______________________________________________________________________ AN ACT To require the Bureau of Indian Affairs to process and complete all mortgage packages associated with residential and business mortgages on Indian land by certain deadlines, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Tribal Trust Land Homeownership Act of 2025''. SEC. 2. DEFINITIONS. In this Act: (1) Applicable bureau office.--The term ``applicable Bureau office'' means-- (A) a Regional office of the Bureau; (B) an Agency office of the Bureau; or (C) a Land Titles and Records Office of the Bureau. (2) Bureau.--The term ``Bureau'' means the Bureau of Indian Affairs. (3) Director.--The term ``Director'' means the Director of the Bureau. (4) First certified title status report.--The term ``first certified title status report'' means the title status report needed to verify title status on Indian land. (5) Indian land.--The term ``Indian land'' has the meaning given the term in section 162.003 of title 25, Code of Federal Regulations (as in effect on the date of enactment of this Act). (6) Land mortgage.--The term ``land mortgage'' means a mortgage obtained by an individual Indian who owns a tract of trust land for the purpose of-- (A) home acquisition; (B) home construction; (C) home improvements; or (D) economic development. (7) Leasehold mortgage.--The term ``leasehold mortgage'' means a mortgage, deed of trust, or other instrument that pledges the leasehold interest of a lessee as security for a debt or other obligation owed by the lessee to a lender or other mortgagee. (8) Mortgage package.--The term ``mortgage package'' means a proposed residential leasehold mortgage, business leasehold mortgage, land mortgage, or right-of-way document submitted to an applicable Bureau office under section 3(a)(1). (9) Relevant federal agency.--The term ``relevant Federal agency'' means any of the following Federal agencies that guarantee or make direct mortgage loans on Indian land: (A) The Department of Agriculture. (B) The Department of Housing and Urban Development. (C) The Department of Veter"
+          },
+          {
+            "source_id": "govinfo:s723es",
+            "locator": "Only ESclosing13211:14211read; no whole deadline/legal-effect review",
+            "passage": "e to all of the inquiries from the relevant Federal agencies; and (B) helping to facilitate communications between the relevant Federal agencies and the Bureau on matters relating to mortgages on Indian land; (4) receive inquiries, questions, and complaints directly from Indian Tribes, members of Indian Tribes, and lenders in regard to executed residential leasehold mortgages, business leasehold mortgages, land mortgages, or right-of-way documents; and (5) serve as the intermediary between the Indian Tribes, members of Indian Tribes, and lenders and the Bureau in responding to inquiries and questions and resolving complaints. Passed the Senate December 11, 2025. Attest: Secretary. 119th CONGRESS 1st Session S. 723 _______________________________________________________________________ AN ACT To require the Bureau of Indian Affairs to process and complete all mortgage packages associated with residential and business mortgages on Indian land by certain deadlines, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "867000804e5baa0c2b8511d6c7f8b291ab6fcda62f7780449597122238fd8846",
+      "record": {
+        "action_id": "house:119:2:82",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete6472EH sets a resident-State-rate ceiling on tuition/attendance fees charged by public higher-education institutions receiving assistance under the named Act to covered residents of Guam,CNMI,AmericanSamoaorUSVirginIslands who are USnationals. Retained1101(a)(22)includes citizens OR noncitizen persons owing permanent allegiance; do not narrow national to citizen or broaden the listed residence condition to everyone. The program-participation-agreement addition requires compliance as applicable. This is tuition/residence/national-status eligibility policy, not a dedicated infrastructure, technical-system or technical-research program merely because higher education is involved. Proposed whole-action exclusion does not guarantee admission, free tuition, aid receipt, immigration-status change or any person’s eligibility/current fee. As-amended suspension/passage is not enactment or an actual education/technical outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:82",
+            "url": "https://clerk.house.gov/evs/2026/roll082.xml",
+            "raw_sha256": "b0bc703e50bd8cc12e4f6eac2b511a9e8a617cf91f40bf166abb02c16f9905c1",
+            "governed_bytes_sha256": "57fe98fed4fe5b3271a164719d044d1e97d7dfd0abd969f2dfee42fdf27d50d6"
+          },
+          {
+            "source_id": "govinfo:hr6472eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6472eh/html/BILLS-119hr6472eh.htm",
+            "raw_sha256": "a45df704036c0c79cf4c1f3a1caf13df7cba6d7ba56c9add4ce2f29dcf1e9f51",
+            "governed_bytes_sha256": "d2ece247bd3be4962cfbbd6193df8d59914ae90ef3568a91ac0c682d333bfbb0"
+          },
+          {
+            "source_id": "govinfo:8usc1101a22-2024-electricity-status",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+            "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+            "governed_bytes_sha256": "838b7da161c346764fffe49b59b6af66b6e68a994cbedc09a794da31797874c2"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6472eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6472 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 6472 _______________________________________________________________________ AN ACT To amend the Higher Education Act of 1965 to provide for in-state tuition rates for certain residents of Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the United States Virgin Islands, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Territorial Student Access to Higher Education Act''. SEC. 2. IN-STATE TUITION FOR CERTAIN RESIDENTS OF GUAM, THE COMMONWEALTH OF THE NORTHERN MARIANA ISLANDS, AMERICAN SAMOA, AND THE UNITED STATES VIRGIN ISLANDS. (a) In-State Tuition Rates.--Part C of title I of the Higher Education Act of 1965 (20 U.S.C. 1015 et seq.) is amended by inserting after section 135 the following: ``SEC. 135A. IN-STATE TUITION RATES FOR CERTAIN RESIDENTS OF GUAM, THE COMMONWEALTH OF THE NORTHERN MARIANA ISLANDS, AMERICAN SAMOA, AND THE UNITED STATES VIRGIN ISLANDS. ``(a) In General.--A public institution of higher education that receives assistance under this Act shall not charge a covered individual tuition or fees for attendance at such institution at a rate that is greater than the rate charged for residents of the State in which such institution is located. ``(b) Covered Individual.--In this section, the term `covered individual' means an individual who-- ``(1) is a resident of Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, or the United States Virgin Islands; and ``(2) is a national of the United States (as such term is defined in section 101(a) of the Immigration and Nationality Act (8 U.S.C. 1101(a))).''. (b) Program Participation Agreement.--Section 487(a) of the Higher Education Act of 1965 (20 U.S.C. 1094(a)) is amended by adding at the end the following: ``(30) The institution will comply with the requirements of section 135A, as applicable.''. Passed the House of Representatives March 4, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 6472 _______________________________________________________________________ AN ACT To amend the Higher Education Act of 1965 to provide for in-state tuition rates for certain residents of Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the United States Virgin Islands, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:8usc1101a22-2024-electricity-status",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(22) The term \"national of the United States\" means (A) a citizen of the United States, or (B) a person who, though not a citizen of the United States, owes permanent allegiance to the United States. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:78",
+      "original_source_object_sha256": "ba21b63a324e70b78678e48bf10dfd49ae4dba6570c280c06227bf95c906e092"
+    },
+    {
+      "source_id": "clerk:119:2:79",
+      "original_source_object_sha256": "ba03f8d984379da0c0986645f4e70b10f2524f19849359c65ad51fc5cec2c73c"
+    },
+    {
+      "source_id": "clerk:119:2:80",
+      "original_source_object_sha256": "c2532b8903c1c6a7b9673b18b27f1a5638e84d1b5b4c1b39ea58b45edd5273f2"
+    },
+    {
+      "source_id": "clerk:119:2:81",
+      "original_source_object_sha256": "4c01bf9a40338ef6b3e2ea09bfc3cb8a85ea25e958b9e4f0c941053da4541b22"
+    },
+    {
+      "source_id": "clerk:119:2:82",
+      "original_source_object_sha256": "67ddc7310ce056cba6fc0a3ecc9e4f887ed641be249d40aed18ffadd4d088a56"
+    },
+    {
+      "source_id": "govinfo:8usc1101a22-2024-electricity-status",
+      "original_source_object_sha256": "533b06e73030f7487bfa03fe2c788074e3ee90d09a1f9a7dddf11472db2b1c73"
+    },
+    {
+      "source_id": "govinfo:hr4758eh",
+      "original_source_object_sha256": "f740f596a069c63809da841ad08291ed97806c508334070fe5596f99287dfd15"
+    },
+    {
+      "source_id": "govinfo:hr6472eh",
+      "original_source_object_sha256": "0c8172578e6372381679b1a68ca712f983046a781e3400119a788a326a6f2415"
+    },
+    {
+      "source_id": "govinfo:hres1075eh",
+      "original_source_object_sha256": "1aa1d6baff989d7c53af1e7a92466f9dc77ce8c7b0a95bceba77660f9b9011d7"
+    },
+    {
+      "source_id": "govinfo:hres1095eh",
+      "original_source_object_sha256": "2d884b80f14ae1e007b5e1c03473bc1eaa85f179fd9c8a209aa7e788b92a87f5"
+    },
+    {
+      "source_id": "govinfo:pl117-169-home-rebates-training-codes",
+      "original_source_object_sha256": "cf81ec014d41df85474324c57b958fab36d2d396f4051bf5d5e8e6ba5c6e9024"
+    },
+    {
+      "source_id": "govinfo:pl119-21-50402-energy-rescissions",
+      "original_source_object_sha256": "03b858f763edad8dbbd50db67292c56201af297a9f24673248e73d14abadb192"
+    },
+    {
+      "source_id": "govinfo:s723es",
+      "original_source_object_sha256": "923cfb15b5cea2eddc8d2ffd6a82d6972e82980a0189f3a5f9dbb9df2e322d41"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr4758eh",
+      "governed_length": 1831,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no current balance/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:pl117-169-home-rebates-training-codes",
+      "governed_length": 25579,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no current balance/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:pl119-21-50402-energy-rescissions",
+      "governed_length": 962,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no current balance/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:hres1075eh",
+      "governed_length": 2144,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no current balance/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:hres1095eh",
+      "governed_length": 963,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no current balance/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:s723es",
+      "governed_length": 14211,
+      "review_extent": "Only0:2400and13211:14211read; ESinterior and material land/deadline baselines unreviewed"
+    },
+    {
+      "source_id": "govinfo:hr6472eh",
+      "governed_length": 2549,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no current balance/individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:8usc1101a22-2024-electricity-status",
+      "governed_length": 200,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no current balance/individual eligibility certificate"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "existing_shared_action_meaning_identified_for_later_reuse": 1,
+    "units": [
+      {
+        "action_id": "house:119:2:78",
+        "evidence_unit": "complete_repeal_and_program_authorities_pending_full_existing_shared_reuse",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:79",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:80",
+        "evidence_unit": "complete_rule_without_deeming",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:81",
+        "evidence_unit": "partial_whole_ESland_processing_bill",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:82",
+        "evidence_unit": "complete_tuition_bill_and_national_definition",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}

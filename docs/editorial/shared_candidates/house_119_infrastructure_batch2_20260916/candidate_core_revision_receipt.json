@@ -1,0 +1,69 @@
+{
+  "authority": "Explicit candidate correction proposal only; not applied to Health, not accepted or canonical registry promotion",
+  "predecessor_commit": "13f73c97dfd25e95620233d4d6d645129d196c6d",
+  "predecessor_path": "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json",
+  "predecessor_corpus_sha256": "53ffcdae82a285a2165e723e7394323a7b8005270908b46cbc6c537af5a26806",
+  "proposed_batch_corpus_sha256": "ad45e4f769d7f5ea485ee02bad7254a1f264496d3a45a685705215e6f54d4c48",
+  "candidate_updates": [
+    {
+      "action_id": "house:119:1:104",
+      "predecessor_action_core_sha256": "63e684092f4d7571c3247950a34ac3c91ef556dd10c703b32b115e233a48532a",
+      "candidate_action_core_sha256": "97365789ee313df16bd06c78fd9265759f1bfa4500216022692565101fedac9b",
+      "predecessor_meaning_sha256": "3591dab6a62d63822f09c87240a0249bb78ef410373362c3bfa4a56e887950a0",
+      "candidate_meaning_sha256": "48cf283679da525ab2b1aad0c9bdefbe364a7a586da97e0b8711d691f1aa4669",
+      "reason": "Retained predecessor mixes issue membership with action truth; reconstruct proposed member-neutral and issue-neutral meaning from exact source/version with explicit qualifications.",
+      "review_transfer": false
+    },
+    {
+      "action_id": "house:119:1:136",
+      "predecessor_action_core_sha256": "a48c8798d5ded935ec4210af5d2576b1802838687f25a205c5c42275dc012cc8",
+      "candidate_action_core_sha256": "ab002b0d31b3d6088d720924c39a532aa366e634dbd66cb183942bc1a376ed42",
+      "predecessor_meaning_sha256": "5bccedef9e7cf05d3f9a84d368601ad3d4fdedcfb20c71a81a5f266c9f0c4d11",
+      "candidate_meaning_sha256": "164af9f59a06d95cd5b7969de2b87b46828f6083016928e3e0c5d568a41f5d45",
+      "reason": "Retained predecessor mixes issue membership with action truth; reconstruct proposed member-neutral and issue-neutral meaning from exact source/version with explicit qualifications.",
+      "review_transfer": false
+    }
+  ],
+  "dependency_impact": {
+    "changed_action_ids": [
+      "house:119:1:104",
+      "house:119:1:136"
+    ],
+    "affected_projections": [
+      {
+        "member_id": "F000477",
+        "action_ids": [
+          "house:119:1:104",
+          "house:119:1:136"
+        ]
+      },
+      {
+        "member_id": "M001184",
+        "action_ids": [
+          "house:119:1:104",
+          "house:119:1:136"
+        ]
+      }
+    ],
+    "affected_findings": [
+      {
+        "member_id": "F000477",
+        "proposition_ids": [
+          "prop:2cff1a0d9cf2ecd6",
+          "prop:5873b6ccd3efffe6"
+        ]
+      },
+      {
+        "member_id": "M001184",
+        "proposition_ids": [
+          "prop:fe3a6dd76ad7c921",
+          "prop:5873b6ccd3efffe6"
+        ]
+      }
+    ],
+    "acceptance_conferred": false
+  },
+  "health_meaning_mapping_projection_compiled_readable_unchanged": true,
+  "editorial_acceptance": false,
+  "publication_authorized": false
+}

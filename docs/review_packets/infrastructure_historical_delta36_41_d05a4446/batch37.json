@@ -1,0 +1,1039 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 37,
+  "exact_committed_head": "d05a44461ae7550227169314a6b2504ea3bf9177",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact d05a44461ae7550227169314a6b2504ea3bf9177, never current batch42 working-tree bytes; zero source acquisition.",
+  "scope": "31 new identities across six batches plus only two prior roll150/207 follow-ups in batch36. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim. Whole CMS letter, BLM plans/maps, appropriations and other partial reviews remain incomplete as recorded. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/membership_review.json",
+      "git_blob": "51de42738bd96b447c7cb2d002d53243bf561e43",
+      "git_bytes_sha256": "b696b475df65473ccd707152df47fdcd621012686a7460c3848e8eeac7402854"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/sources.json",
+      "git_blob": "8b9dcb78807154a5b2fd4965991350d5090f02ca",
+      "git_bytes_sha256": "f586084611aba99d1646f61eb554493e73cd1df3113e43f9773f0874a9f6f3fc"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/screening_receipt.json",
+      "git_blob": "3d4d790158df763f630cac53685d951d44adb9dd",
+      "git_bytes_sha256": "2edaa74a68c22c417cf50634d2b8d9de9d74373485185d0e37d30d134e093244"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/screening_units_receipt.json",
+      "git_blob": "7b2c6db5a5dff4a17859ef35933a60ca89e5c062",
+      "git_bytes_sha256": "e6b333cab91625bafe6661106ecad037c248ba616991ae7de4a64b8b7a8c99ec"
+    }
+  },
+  "cumulative_membership_review_sha256": "4c1b60fea1014aeae94cca93a4c6a9e912efb7f73d12da6b91ac76c23c8e2099",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/d6bb15eb26e2bd179263c33882d50c35ac7a1063eb38eb5d99e36f7099f66577.0000000.json",
+        "sha256": "089421da2a9152bb78b0a0b627fa88c2261eaecc9550129c92fba8e0c2862b3f",
+        "start_character": 0,
+        "end_character": 24591
+      }
+    ],
+    "utf8_sha256": "d6bb15eb26e2bd179263c33882d50c35ac7a1063eb38eb5d99e36f7099f66577",
+    "total_characters": 24591,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/5a64975260dd5a8269d8925bde81bccc9b868eb398b264c03a01162ab364e4a6.0000000.json",
+        "sha256": "e31e88df602ab5c80dffa98e593516245206e2d501e43908e15346b25e1da551",
+        "start_character": 0,
+        "end_character": 61970
+      }
+    ],
+    "utf8_sha256": "5a64975260dd5a8269d8925bde81bccc9b868eb398b264c03a01162ab364e4a6",
+    "total_characters": 61970,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:221",
+    "house:119:1:222",
+    "house:119:1:223",
+    "house:119:1:224",
+    "house:119:1:225",
+    "house:119:1:226"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hres672eh",
+      "scope": "Complete5295-character identified EH read; exact pre-adoption/floor correspondence not independently certified"
+    },
+    {
+      "source_id": "govinfo:hres668eh",
+      "scope": "Complete5877-character retained adopted-resolution body read, including withholding/redaction qualifications"
+    },
+    {
+      "source_id": "govinfo:hres605eh",
+      "scope": "Complete5335-character retained adopted-resolution body read, including authority/composition/deadlines and imported House-rule limits"
+    },
+    {
+      "source_id": "govinfo:hres598rh",
+      "scope": "Complete1503-character reported resolution read; tabling598 is not adoption of589"
+    },
+    {
+      "source_id": "govinfo:hjres104eh",
+      "scope": "Complete1678-character identified House EH read; no enactment/current-law certification"
+    },
+    {
+      "source_id": "govinfo:hjres106eh",
+      "scope": "Complete1598-character identified House EH read; no enactment/current-law certification"
+    },
+    {
+      "source_id": "govinfo:hjres105eh",
+      "scope": "Complete1651-character identified House EH read; no enactment/current-law certification"
+    },
+    {
+      "source_id": "blm:miles-city-2024-coal-operative",
+      "scope": "All8335 retained characters read: PDF pages7/10/19/21 only, mirrored primary BLM-authored decision; no new mirror acquisition, full-plan or raw/glyph certification"
+    },
+    {
+      "source_id": "blm:north-dakota-2025-reviewed-decision",
+      "scope": "All15063 retained characters read: PDF pages13-16 only of484-page plan. Full pages may end mid-section; no complete whole-plan/section6 review certified"
+    },
+    {
+      "source_id": "blm:central-yukon-2024-reviewed-decision",
+      "scope": "All22074 retained characters read: PDF pages13/14/20/45/74/75/326 only of362-page plan. Page20 starts in AlternativeD before approvedE; page75 allocation continues beyond capture. No complete plan/maps/full allocations claimed"
+    },
+    {
+      "source_id": "govinfo:5usc801-2024-disapproval-scope",
+      "scope": "Complete retained excerpts of801(b)(1)-(2),(f),(g), not complete chapter8 or current-law legal review"
+    },
+    {
+      "source_id": "clerk:119:1:221",
+      "scope": "Exact question/measure/result/date/original member labels inspected; no substantive component position inferred"
+    },
+    {
+      "source_id": "clerk:119:1:222",
+      "scope": "Exact question/measure/result/date/original member labels inspected; no substantive component position inferred"
+    },
+    {
+      "source_id": "clerk:119:1:223",
+      "scope": "Exact question/measure/result/date/original member labels inspected; no substantive component position inferred"
+    },
+    {
+      "source_id": "clerk:119:1:224",
+      "scope": "Exact question/measure/result/date/original member labels inspected; no substantive component position inferred"
+    },
+    {
+      "source_id": "clerk:119:1:225",
+      "scope": "Exact question/measure/result/date/original member labels inspected; no substantive component position inferred"
+    },
+    {
+      "source_id": "clerk:119:1:226",
+      "scope": "Exact question/measure/result/date/original member labels inspected; no substantive component position inferred"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 6,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "exact_question_units": 2,
+    "complete_identified_resolution_body_units": 4,
+    "partial_plan_review_units": 3,
+    "complete_incorporated_resolution_body_units": 3,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:221",
+        "evidence_unit": "exact_question_only_noncounting",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:222",
+        "evidence_unit": "complete_resolution_with_explicit_material_baseline_or_plan_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:223",
+        "evidence_unit": "exact_question_only_noncounting",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:224",
+        "evidence_unit": "complete_resolution_with_explicit_material_baseline_or_plan_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:225",
+        "evidence_unit": "complete_resolution_with_explicit_material_baseline_or_plan_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:226",
+        "evidence_unit": "complete_resolution_with_explicit_material_baseline_or_plan_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "fc1474adb6ccd917cd31caa2daf77409a28171579eefc099eb5f6274b9449137",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:221",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "This passed question orders the previous question on H.Res.672. It is a distinct debate-control choice, not adoption of the rule, its incorporated investigative resolutions, the energy/water bill or any BLM disapproval resolution. The Clerk question/result/member labels establish this noncounting procedural unit; no component position, motive or governing policy stance is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:221",
+            "url": "https://clerk.house.gov/evs/2025/roll221.xml",
+            "raw_sha256": "1250334fc88ba29c3322beb564a9a6cbfb825d9fc10810646a42d405a18d4f08",
+            "governed_bytes_sha256": "49828d4550f86be01d25c8740e91ba99408f5314f999a747fd28e297528bd0b5"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2cf809480fdb93f6b77a050c8ab8aa08b395c72eaa2cfbfab63d2a3bce64975c",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:222",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete identified H.Res.672 EH sets structured consideration of H.R.4553 and three named CRA resolutions, but sections8-9 also actually adopt H.Res.668 and H.Res.605; section10 tables H.Res.598. Complete retained668 requires an Oversight investigation/document release with listed privacy, investigation, abuse-image and classification exceptions plus written-justification requirements. Complete605 establishes a limited119th-Congress Judiciary investigative subcommittee with appointment/nonvoting-ex-officio rules, subpoena/deposition powers, no legislative markup, seven-day record transfer, December31,2026 final report and earlier-of termination.598would instead adopt589; tabling598 does not adopt589. These actual institutional effects are retained, not reduced to scheduling alone or used to infer guilt, concealment, endorsement or policy outcome. Exact pre-adoption/floor correspondence and material incorporated House-rule/procedure qualifications remain ordinary review; no Infrastructure behavioral meaning or automatic exclusion is authored.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:222",
+            "url": "https://clerk.house.gov/evs/2025/roll222.xml",
+            "raw_sha256": "7fef6dfc4b47c040967f38d0875c094cf73b503ce8c5ed684b097276c99f1916",
+            "governed_bytes_sha256": "c6754776237d6aa509c1a9dd0094bdd197e177a7b980f9128d2535f60c2ef909"
+          },
+          {
+            "source_id": "govinfo:hres672eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres672eh/html/BILLS-119hres672eh.htm",
+            "raw_sha256": "22c9a2bf27b4dec32d8e83063449ea3eec7955f343ce4921e739a332e4e8b7e1",
+            "governed_bytes_sha256": "5cbcfbfd4048e3c66bc1c3b1825b030a18d4a9c6715a99f95b52c3ade6c373d8"
+          },
+          {
+            "source_id": "govinfo:hres668eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres668eh/html/BILLS-119hres668eh.htm",
+            "raw_sha256": "8d70a1e0ebba45dc58e75ab25df1dd38c5a460c187e986d5f2b0609a2f797e76",
+            "governed_bytes_sha256": "51dd7b36fc27b6e8eb1d7c8f830b52b1a7372725d857866010ec69fdf3762050"
+          },
+          {
+            "source_id": "govinfo:hres605eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres605eh/html/BILLS-119hres605eh.htm",
+            "raw_sha256": "c36844d66dde87c81c221542fecd5953ce0267be482eeeb54ffa90766ee85878",
+            "governed_bytes_sha256": "9174ab7091aa624cd2b5e761f98ed0cd37b1f7a4b7aea12471cab479c9c113c3"
+          },
+          {
+            "source_id": "govinfo:hres598rh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres598rh/html/BILLS-119hres598rh.htm",
+            "raw_sha256": "47d6d88bf004ed603a96eb6317f0c9457cabdb5a25fee02517b006254341a127",
+            "governed_bytes_sha256": "f06217ea54f6fac9c15bdf58158c3fd0876437b2a1bb1cb4b54cbce94df3c4a7"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres672eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 672 Engrossed in House (EH)] <DOC> H. Res. 672 In the House of Representatives, U. S., September 3, 2025. Resolved, That at any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 4553) making appropriations for energy and water development and related agencies for the fiscal year ending September 30, 2026, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. The bill shall be considered as read. Points of order against provisions in the bill for failure to comply with clause 2 or clause 5(a) of rule XXI are waived. Sec. 2. (a) No amendment to H.R. 4553 shall be in order except those printed in the report of the Committee on Rules accompanying this resolution, amendments en bloc described in section 3 of this resolution, and pro forma amendments described in section 4 of this resolution. (b) Each amendment printed in the report of the Committee on Rules shall be considered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment except as provided by section 4 of this resolution, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. (c) All points of order against amendments printed in the report of the Committee on Rules or against amendments en bloc described in section 3 of this resolution are waived. Sec. 3. It shall be in order at any time for the chair of the Committee on Appropriations or his designee to offer amendments en bloc consisting of amendments printed in the report of the Committee on Rules accompanying this resolution not earlier disposed of. Amendments en bloc offered pursuant to this section shall be considered as read, shall be debatable for 20 minutes equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees, shall not be subject to amendment except as provided by section 4 of this resolution, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. Sec. 4. During consideration of H.R. 4553 for amendment, the chair and ranking minority member of the Committee on Appropriations or their respective designees may offer up to 10 pro forma amendments each at any point for the purpose of debate. Sec. 5. At the conclusion of consideration of H.R. 4553 for amendment the Committee shall rise and report the bill to the House with such amendments as may have been adopted. The previous question shall be considered as ordered on the bill and amendments thereto to final passage without intervening motion except one motion to recommit. Sec. 6. Upon adoption of this resolution it shall be in order to consider in the House any joint resolution specified in section 7 of this resolution. All points of order against consideration of each such joint resolution are waived. Each such joint resolution shall be considered as read. All points of order against provisions in each such joint resolution are waived. The previous question shall be considered as ordered on each such joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Natural Resources or their respective designees; and (2) one motion to recommit. Sec. 7. The joint resolutions referred to in section 6 of this resolution are as follows: (a) The joint resolution (H.J. Res. 104) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment''. (b) The joint resolution (H.J. Res. 105) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''. (c) The joint resolution (H.J. Res. 106) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Central Yukon Record of Decision and Approved Resource Management Plan''. Sec. 8. House Resolution 668 is hereby adopted. Sec. 9. House Resolution 605 is hereby adopted. Sec. 10. House Resolution 598 is laid on the table. Attest: Clerk."
+          },
+          {
+            "source_id": "govinfo:hres668eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 668 Engrossed in House (EH)] <DOC> H. Res. 668 In the House of Representatives, U. S., September 3, 2025. Resolved, SECTION 1. COMMITTEE ON OVERSIGHT AND GOVERNMENT REFORM EPSTEIN INVESTIGATION. The Committee on Oversight and Government Reform is directed to continue its ongoing investigation into the possible mismanagement of the Federal Government's investigation of Mr. Jeffrey Epstein and Ms. Ghislaine Maxwell, the circumstances and subsequent investigations of Mr. Epstein's death, the operation of sex-trafficking rings and ways for the Federal Government to effectively combat them, and potential violations of ethics rules related to elected officials in order to inform, among other things, legislative solutions to improve Federal efforts to combat sex trafficking and reform the use of non- prosecution agreements and plea agreements in sex-crime investigations. SEC. 2. INVESTIGATIVE PROCEEDINGS BY THE COMMITTEE ON OVERSIGHT AND GOVERNMENT REFORM. (a) In General.--The House of Representatives supports the subpoenas and investigatory actions authorized by the chair of the Committee on Oversight and Government Reform as of the date of the adoption of this resolution with respect to the investigation described in section 1 and encourages all recipients to fully comply with them in a timely manner. (b) Issuance of Investigative Reports.--The Committee on Oversight and Government Reform shall issue such investigative reports with respect to the investigation described in section 1 as it deems necessary. SEC. 3. RELEASE OF DOCUMENTS RELATING TO JEFFREY EPSTEIN. (a) In General.--The chair of the Committee on Oversight and Government Reform shall make publicly available all unclassified committee records received from the Attorney General, the Secretary of the Treasury, and the Epstein estate, and any other custodians related to the investigation described in this resolution, as well as any written declarations, or other evidence that relates to the investigation described in this resolution, including those referring or relating to any of the following: (1) Jeffrey Epstein, including all investigations, prosecutions, or custodial matters. (2) Ghislaine Maxwell. (3) Flight logs or travel records, including but not limited to manifests, itineraries, pilot records, and customs or immigration documentation for any aircraft, vessel, or vehicle owned, operated, or used by Jeffrey Epstein or any related entity. (4) Individuals, including government officials, named or referenced in connection with Epstein's criminal activities, civil settlements, immunity or plea agreements, or investigatory proceedings. (5) Entities (corporate, nonprofit, academic, or governmental) with known or alleged ties to Epstein's trafficking or financial networks. (6) Any immunity deals, non-prosecution agreements, plea bargains, or sealed settlements involving Epstein or his associates. (7) Internal DOJ communications, including emails, memos, and meeting notes, concerning decisions to charge, not charge, investigate, or decline to investigate Epstein or his associates. (8) All communications, memoranda, directives, logs, or metadata concerning the destruction, deletion, alteration, misplacement, or concealment of documents, recordings, or electronic data related to Epstein, his associates, his detention and death, or any investigative files. (9) Documentation of Epstein's detention or death, including incident reports, witness interviews, medical examiner files, autopsy reports, and written records detailing the circumstances and cause of death. (b) Withholding, Delay, or Redaction.-- (1) Prohibited grounds.--No committee record described in subsection (a) shall be withheld, delayed, or redacted on the basis of embarrassment, reputational harm, or political sensitivity, including with respect to any government official, public figure, or foreign dignitary. (2) Permitted withholdings or redactions.-- (A) In general.--The chair of the Committee on Oversight and Government Reform may withhold or redact the segregable portions of committee records described in subsection (a) that-- (i) contain personally identifiable information of victims or victims' personal and medical files and similar files the disclosure of which would constitute a clearly unwarranted invasion of personal privacy together with materials that could likely be used or reconstituted to unveil and identify a victim; (ii) depict or contain child pornography, other child sexual abuse materials, or similar materials; (iii) would jeopardize an active Federal investigation or ongoing prosecution, including whistleblower investigations, provided that such withholding is narrowly tailored and temporary; (iv) depict or contain images of death, physical abuse, or injury of any person; or (v) contain information specifically authorized under criteria established by law or executive order to be kept secret in the interest of national defense or foreign policy and are in fact properly classified pursuant to such law or executive order. (B) Written justification requirement.-- (i) In general.--All withholdings or redactions made by the chair under subparagraph (A) shall be accompanied by a written justification for such withholding or redaction accompanying the release. (ii) Record custodian written justification.--If the chair of the Committee on Oversight and Government Reform receives any records described in subsection (a) that already include redactions or if the chair knows any of the records described in such subsection are being withheld, the chair shall request the custodian of such records to provide written justifications for each redaction or withholding, and shall make each such justification publicly available promptly upon receipt. Attest: Clerk."
+          },
+          {
+            "source_id": "govinfo:hres605eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 605 Engrossed in House (EH)] <DOC> H. Res. 605 In the House of Representatives, U. S., September 3, 2025. Resolved, SECTION 1. SELECT SUBCOMMITTEE TO INVESTIGATE THE REMAINING QUESTIONS SURROUNDING JANUARY 6, 2021. (a) Establishment; Composition.-- (1) Establishment.--There is hereby established for the One Hundred Nineteenth Congress a select investigative subcommittee of the Committee on the Judiciary called the Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 (hereinafter referred to as the ``select subcommittee''). (2) Composition.-- (A) The select subcommittee shall be composed of not more than 8 Members, Delegates, or the Resident Commissioner appointed by the Speaker, of whom not more than 3 shall be appointed in consultation with the minority leader. The Speaker shall designate one member of the select subcommittee as its chair. Any vacancy in the select subcommittee shall be filled in the same manner as the original appointment. (B) Each member appointed to the select subcommittee shall be treated as though a member of the Committee on the Judiciary for purposes of the select subcommittee. (C) The chair and ranking minority member of the Committee on the Judiciary shall be ex officio members of the select subcommittee but shall have no vote in the select subcommittee and may not be counted for purposes of determining a quorum thereof. (3) Service.--Service on the select subcommittee shall not count against the limitations in clause 5(b)(2)(A) of rule X of the Rules of the House of Representatives. (b) Investigative Functions and Authority.--The select subcommittee is authorized and directed to conduct a full and complete investigation and study and issue a final report of the events surrounding January 6, 2021 regarding matters within the jurisdiction of the Committee on the Judiciary under clause 1(l) of rule X of the Rules of the House of Representatives. The select subcommittee may not hold a markup of legislation. (c) Procedure.-- (1) Rule XI of the Rules of the House of Representatives and the rules of the Committee on the Judiciary shall apply to the select subcommittee in the same manner as a subcommittee except as follows: (A) The chair of the select subcommittee may, after consultation with the ranking minority member, recognize-- (i) members of the select subcommittee to question a witness for periods longer than five minutes as though pursuant to clause 2(j)(2)(B) of such rule XI; and (ii) staff of the select subcommittee or staff of the Committee on the Judiciary to question a witness as though pursuant to clause 2(j)(2)(C) of such rule XI. (B) The chair of the select subcommittee may authorize and issue subpoenas pursuant to clause 2(m) of rule XI in the investigation, study, and report conducted pursuant to subsection (b), including for the purpose of taking depositions. (C) With regard to the full scope of investigative authority under subsection (b), the select subcommittee shall be authorized to receive information available to the Permanent Select Committee on Intelligence, consistent with congressional reporting requirements for intelligence and intelligence-related activities, and any such information received shall be subject to the terms and conditions applicable under clause 11 of rule X. (2) The chair of the select subcommittee is authorized to compel by subpoena the furnishing of information by interrogatory. (3)(A) The chair of the select subcommittee, upon consultation with the ranking minority member, may order the taking of depositions, including pursuant to subpoena, by a Member, counsel of the select subcommittee, or counsel of the Committee on the Judiciary, in the same manner as a standing committee pursuant to section 3(t) of House Resolution 5, One Hundred Nineteenth Congress. (B) Depositions taken under the authority prescribed in this paragraph shall be governed by the procedures submitted by the chair of the Committee on Rules for printing in the Congressional Record on January 14, 2025. (4) Subpoenas authorized pursuant to this resolution may be signed by the chair of the select subcommittee or a designee. (5) The provisions of this resolution shall govern the proceedings of the select subcommittee in the event of any conflict with the rules of the House or of the Committee on the Judiciary. (d) Transfer of Records.--The Committee on House Administration is directed to transfer any records in any form relating to the matters described in subsection (b) to the select subcommittee not later than seven days after adoption of the resolution by the House. Such records shall become the records of the select subcommittee. (e) Successor.--The Committee on the Judiciary is the ``successor in interest'' to the select subcommittee for purposes of clause 8(c) of rule II of the Rules of the House of Representatives. (f) Final Report.--The final report of the select subcommittee shall be submitted to the Committee on the Judiciary by December 31, 2026. (g) Termination.--The select subcommittee shall terminate-- (1) 30 days after filing the final report under subsection (f); or (2) on the last day of the One Hundred Nineteenth Congress, whichever occurs earlier. Attest: Clerk."
+          },
+          {
+            "source_id": "govinfo:hres598rh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 598 Reported in House (RH)] <DOC> House Calendar No. 39 119th CONGRESS 1st Session H. RES. 598 [Report No. 119-209] Providing for the adoption of the resolution (H. Res. 589) providing for the public release of certain documents, records, and communications related to the investigation of Jeffrey Epstein. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES July 21, 2025 Mr. Austin Scott of Georgia, from the Committee on Rules, reported the following resolution; which was referred to the House Calendar and ordered to be printed _______________________________________________________________________ RESOLUTION Providing for the adoption of the resolution (H. Res. 589) providing for the public release of certain documents, records, and communications related to the investigation of Jeffrey Epstein. Resolved, That House Resolution 589 is hereby adopted. House Calendar No. 39 119th CONGRESS 1st Session H. RES. 598 [Report No. 119-209] _______________________________________________________________________ RESOLUTION Providing for the adoption of the resolution (H. Res. 589) providing for the public release of certain documents, records, and communications related to the investigation of Jeffrey Epstein. _______________________________________________________________________ July 21, 2025 Referred to the House Calendar and ordered to be printed"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "be9d9994f69ca8d3d3b3c251e91fcba91e9c4e90050cefa8e52b924c6076ce98",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:223",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The passed motion tables H.Res.539. The Clerk description identifies the underlying censure/removal proposal, but this question is tabling, not adoption of censure or removal. It supplies a noncounting procedural observation without a finding about the allegations, the member, actual committee removal or Infrastructure policy.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:223",
+            "url": "https://clerk.house.gov/evs/2025/roll223.xml",
+            "raw_sha256": "a0ac57faedf31085159635606ed0bfff2e3566d4dc47e636a50f330c5ac38b77",
+            "governed_bytes_sha256": "cb5adc7a6be5733ded2318dbbc71c8210050d379d62a33b66636b18bb4798d7a"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "41b8c176c4a5741f5897b6f1515f4c3854a6a25b4e491efd9b11a74634397eb8",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:224",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete H.J.Res.104 EH disapproves the specifically dated November20,2024 Miles City ROD/RMP amendment and says it shall have no force or effect; House passage alone is not enactment. Retained BLM-authored mirrored PDF pages7/10/19/21 identify only plan-level federal-coal allocation MD MIN1, make1,745,040 acres unavailable for further leasing consideration, retain existing leases subject to terms, and exclude implementation actions/other resource-allocation changes. No direct transport or technology project is established by resource extraction or downstream economic effects. This is a strong narrower-scope exclusion lead, but complete exact CRA-target/legal-baseline and material screening/decision-identity review remain pending before a final domain proposal. The retained801(b)/(f)/(g) excerpts condition invalidation/reissuance effects on enactment, not this House vote; no present legal status, automatic mine approval, actual extraction or assumed reversal outcome is asserted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:224",
+            "url": "https://clerk.house.gov/evs/2025/roll224.xml",
+            "raw_sha256": "ca81b6c1537e42cdd499b12534049afb3cc1fa1304d486110dd1770e607ef0e5",
+            "governed_bytes_sha256": "5b197e2fed5fc48850c04f00b54a56f9c020050e8b3ee064c3b7f170598c3133"
+          },
+          {
+            "source_id": "govinfo:hjres104eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres104eh/html/BILLS-119hjres104eh.htm",
+            "raw_sha256": "c3a4293a451e3c0eddea0cb0933747b7041a311f2639ae79dbc3062626974cd4",
+            "governed_bytes_sha256": "82dd3da3b7e45c07501b168e4ca1427c77f8783323343459c1f824de63e0d33c"
+          },
+          {
+            "source_id": "blm:miles-city-2024-coal-operative",
+            "url": "https://dailymontanan.com/wp-content/uploads/2024/12/2024_MCFO-ROD_20241120_508.pdf",
+            "raw_sha256": "96792a70c54b6056ad74fbf1b11747e373307f22f8267ba6864a7fd585922d21",
+            "governed_bytes_sha256": "99a420c7e624255ad2b1721393e88d8f8ba544253df87819967fdca28c4b00e6"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres104eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 104 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 104 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment'' (issued November 20, 2024, as a record of decision and resource management plan amendment, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3552-S3554, concluding that such record of decision and resource management plan amendment is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 104 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment''."
+          },
+          {
+            "source_id": "blm:miles-city-2024-coal-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/255ed7866802dc9a3ed9f40ddcade9014109d35fe4f68a970d3ad5e2b0b5646d.0000000.json",
+                  "sha256": "e00901bd50e6ae4d728f6f87b111954e57b70a9a11dda0efaea670043b5e53b0",
+                  "start_character": 0,
+                  "end_character": 8335
+                }
+              ],
+              "utf8_sha256": "255ed7866802dc9a3ed9f40ddcade9014109d35fe4f68a970d3ad5e2b0b5646d",
+              "total_characters": 8335,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a877224f5b29f0fd401315289a082e65c945c89dec8d39c5cd9b0ed406535e9f",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:225",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete H.J.Res.106 EH targets the November12,2024 Central Yukon ROD/approved RMP, not simply one road or an allotment recommendation. Complete retained PDF pages13/14/20/45/74/75/326 are a partial362-page-plan review. Approved AlternativeE retains PLO5150, recommends only limited ANCSA withdrawal revocation for veterans, and contains direct ROW/road-maintenance/communication-site and colocation provisions. The retained body distinguishes a56million-acre planning boundary from about13.3million BLM-managed acres, other landowners/withdrawn military lands, ROW exclusions/avoidance, and later project-specific review. AlternativeD corridor language must not become the adopted AlternativeE. The whole-plan CRA consequence, precise operative corridor/allocation maps and missing sections, incorporated legal baselines and domain/action-accounting remain pending. No new road, corridor approval, blanket mining opening, actual allotment or current-law outcome follows from House passage.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:225",
+            "url": "https://clerk.house.gov/evs/2025/roll225.xml",
+            "raw_sha256": "a5ab40b7de91f68bb2e604a08ea456a5f45769328c6ee9ee7a26d155771ad5c3",
+            "governed_bytes_sha256": "4020dcc1f61b77fbe4175dafa11ebd7ff0f31bf99aa6a2a04160b1aa141a9360"
+          },
+          {
+            "source_id": "govinfo:hjres106eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres106eh/html/BILLS-119hjres106eh.htm",
+            "raw_sha256": "eb01f05e10c96a21a72589ee976fc7650c6b2ac57084cc1a44d0bc5bb2473d9e",
+            "governed_bytes_sha256": "98a4716d7633b8b1c5df98c8e6c0da3d3b0f5e9f3db71ec28c2759f471327b6a"
+          },
+          {
+            "source_id": "blm:central-yukon-2024-reviewed-decision",
+            "url": "https://eplanning.blm.gov/public_projects/35315/200040776/20123105/251023085/CYRMP_ROD.pdf",
+            "raw_sha256": "bf2d6698c6f3c42f504bb8d7cfe68ca9eeda16ceeb790611db18afe00ecd590c",
+            "governed_bytes_sha256": "ae2e5307da9153205cbc1e31b205abe887cf5d1c8eeaf064e1edd9f00601d2f2"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres106eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 106 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 106 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Central Yukon Record of Decision and Approved Resource Management Plan''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``Central Yukon Record of Decision and Approved Resource Management Plan'' (issued November 12, 2024, as a record of decision and resource management plan, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3554-S3556, concluding that such record of decision and resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 106 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Central Yukon Record of Decision and Approved Resource Management Plan''."
+          },
+          {
+            "source_id": "blm:central-yukon-2024-reviewed-decision",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/9f097f7e52fdd948eadd05559a1ac0ec68576755048c90f26be0f13abfaa0a8f.0000000.json",
+                  "sha256": "0a746cc769fa2c412be7bbea0c295a131d783cc5cb868638ef3daeed20d7ffdc",
+                  "start_character": 0,
+                  "end_character": 22074
+                }
+              ],
+              "utf8_sha256": "9f097f7e52fdd948eadd05559a1ac0ec68576755048c90f26be0f13abfaa0a8f",
+              "total_characters": 22074,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "55c6d1c7bf84803b17653fed9bac2a8080d5a29ed6dc8a8fd31e03bd3776c478",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:226",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete H.J.Res.105 EH targets the January14,2025 North Dakota ROD/approved RMP. Retained complete PDF pages13-16 are a partial484-page plan review, not a complete operative-plan analysis. The selected AlternativeD differs from alternativesA/B/B.1/C: low-potential/drinking-water leasing restrictions have stated drainage/new-data exceptions; coal outside the four-mile development area is unavailable; mineral/material allocations permit activity-level review, with other recreation/river/land decisions. Existing rights and their original stipulations persist, while renewals/unsigned projects may need modification and project authorizations must conform. Complete operative ROW/mineral/allocation maps, exact decision/signature/date identity and material CRA/other baselines remain pending. General plan resources do not alone prove Infrastructure membership; no repeal restricted to coal, automatic project approval, energy output, current legal status or actual environmental result is inferred from this House vote.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:226",
+            "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+            "raw_sha256": "0dcbe78e751a146bcfc83595a64beb79eb38712b2052c8a3be468019987328b1",
+            "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24"
+          },
+          {
+            "source_id": "govinfo:hjres105eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres105eh/html/BILLS-119hjres105eh.htm",
+            "raw_sha256": "1f8ee0c553a29f206cc911e6e04b734c3942db3ec9d7bcc1cfe9904baaabcde5",
+            "governed_bytes_sha256": "0091bc481304e8bde8b1ef5a191c6d2e8518c160e0a2496d1fa7933015add9e7"
+          },
+          {
+            "source_id": "blm:north-dakota-2025-reviewed-decision",
+            "url": "https://eplanning.blm.gov/public_projects/1505069/200366341/20126222/251026202/NDRMP_ROD_20250108_508.pdf",
+            "raw_sha256": "c6acd056db3ab36ea455436dc7f097647b4be7888cbfd7b36637b89b7de17678",
+            "governed_bytes_sha256": "6b062d7937cf22559a9cda78157778c0a15c0080ab0a8639484f8018982a5621"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres105eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 105 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan'' (issued January 14, 2025, as a record of decision and approved resource management plan, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3556-S3558, concluding that such record of decision and approved resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''."
+          },
+          {
+            "source_id": "blm:north-dakota-2025-reviewed-decision",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6.0000000.json",
+                  "sha256": "a8618ceec55a09d4c5dbe1ef14991d4ed9fc9eaef28a9c2c4cef23989c20137c",
+                  "start_character": 0,
+                  "end_character": 15063
+                }
+              ],
+              "utf8_sha256": "bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6",
+              "total_characters": 15063,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "3d1bd6d1aacd4a0562f132a857c9c3444c19564cd0880c17ea32ae1feddff073",
+      "source": {
+        "source_id": "govinfo:5usc801-2024-disapproval-scope",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+        "text_version": "2024 Code specified disapproval/withdrawal provisions",
+        "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+        "text": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval.",
+        "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+      }
+    },
+    {
+      "original_source_object_sha256": "0f0d0547662a848a8bd30fbfbbd08acdd865b42429fd3e55d5002fc767e5da19",
+      "source": {
+        "source_id": "clerk:119:1:221",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll221.xml",
+        "text_version": null,
+        "raw_sha256": "1250334fc88ba29c3322beb564a9a6cbfb825d9fc10810646a42d405a18d4f08",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "221",
+          "legis-num": "H RES 672",
+          "vote-question": "On Ordering the Previous Question",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Sep-2025",
+          "action-time": "1:57 PM",
+          "vote-desc": "Providing for consideration of the bill H.R. 4553 the Energy and Water Development and Related Agencies Appropriations Act, 2026; providing for consideration of the joint resolutions H.J. Res. 104, H.J. Res. 105, and H.J. Res. 106; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "49828d4550f86be01d25c8740e91ba99408f5314f999a747fd28e297528bd0b5"
+      }
+    },
+    {
+      "original_source_object_sha256": "d5dbbc342eff09d8205558d09c33cb5210ccfa1f3889abd06364b3a4d59b2a7d",
+      "source": {
+        "source_id": "clerk:119:1:222",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll222.xml",
+        "text_version": null,
+        "raw_sha256": "7fef6dfc4b47c040967f38d0875c094cf73b503ce8c5ed684b097276c99f1916",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "222",
+          "legis-num": "H RES 672",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "3-Sep-2025",
+          "action-time": "2:05 PM",
+          "vote-desc": "Providing for consideration of the bill H.R. 4553 the Energy and Water Development and Related Agencies Appropriations Act, 2026; providing for consideration of the joint resolutions H.J. Res. 104, H.J. Res. 105, and H.J. Res. 106; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "212",
+            "nay-total": "0",
+            "present-total": "1",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "208",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "c6754776237d6aa509c1a9dd0094bdd197e177a7b980f9128d2535f60c2ef909"
+      }
+    },
+    {
+      "original_source_object_sha256": "fd134def8ab52d4ae104e0f13e701e8b5cd06a3fdb2f0ec4a7978bad949e25ef",
+      "source": {
+        "source_id": "govinfo:hres672eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres672eh/html/BILLS-119hres672eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "22c9a2bf27b4dec32d8e83063449ea3eec7955f343ce4921e739a332e4e8b7e1",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 672 Engrossed in House (EH)] <DOC> H. Res. 672 In the House of Representatives, U. S., September 3, 2025. Resolved, That at any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 4553) making appropriations for energy and water development and related agencies for the fiscal year ending September 30, 2026, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. The bill shall be considered as read. Points of order against provisions in the bill for failure to comply with clause 2 or clause 5(a) of rule XXI are waived. Sec. 2. (a) No amendment to H.R. 4553 shall be in order except those printed in the report of the Committee on Rules accompanying this resolution, amendments en bloc described in section 3 of this resolution, and pro forma amendments described in section 4 of this resolution. (b) Each amendment printed in the report of the Committee on Rules shall be considered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment except as provided by section 4 of this resolution, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. (c) All points of order against amendments printed in the report of the Committee on Rules or against amendments en bloc described in section 3 of this resolution are waived. Sec. 3. It shall be in order at any time for the chair of the Committee on Appropriations or his designee to offer amendments en bloc consisting of amendments printed in the report of the Committee on Rules accompanying this resolution not earlier disposed of. Amendments en bloc offered pursuant to this section shall be considered as read, shall be debatable for 20 minutes equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees, shall not be subject to amendment except as provided by section 4 of this resolution, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. Sec. 4. During consideration of H.R. 4553 for amendment, the chair and ranking minority member of the Committee on Appropriations or their respective designees may offer up to 10 pro forma amendments each at any point for the purpose of debate. Sec. 5. At the conclusion of consideration of H.R. 4553 for amendment the Committee shall rise and report the bill to the House with such amendments as may have been adopted. The previous question shall be considered as ordered on the bill and amendments thereto to final passage without intervening motion except one motion to recommit. Sec. 6. Upon adoption of this resolution it shall be in order to consider in the House any joint resolution specified in section 7 of this resolution. All points of order against consideration of each such joint resolution are waived. Each such joint resolution shall be considered as read. All points of order against provisions in each such joint resolution are waived. The previous question shall be considered as ordered on each such joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Natural Resources or their respective designees; and (2) one motion to recommit. Sec. 7. The joint resolutions referred to in section 6 of this resolution are as follows: (a) The joint resolution (H.J. Res. 104) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment''. (b) The joint resolution (H.J. Res. 105) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''. (c) The joint resolution (H.J. Res. 106) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Central Yukon Record of Decision and Approved Resource Management Plan''. Sec. 8. House Resolution 668 is hereby adopted. Sec. 9. House Resolution 605 is hereby adopted. Sec. 10. House Resolution 598 is laid on the table. Attest: Clerk.",
+        "governed_bytes_sha256": "5cbcfbfd4048e3c66bc1c3b1825b030a18d4a9c6715a99f95b52c3ade6c373d8"
+      }
+    },
+    {
+      "original_source_object_sha256": "54aa8231b501647f71db55a8f12951bd53c56bcb41b021ec94b61da109a37df0",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/cb8b79d5c4f00483810bc3b97555efc49bbbda87682f39df5ba29c41b72e6125.0000000.json",
+            "sha256": "c1f010e40e44c9c1a19f05f0b9ac1d66bcb96e29544365a6f3c13f8eb8846c54",
+            "start_character": 0,
+            "end_character": 6250
+          }
+        ],
+        "utf8_sha256": "cb8b79d5c4f00483810bc3b97555efc49bbbda87682f39df5ba29c41b72e6125",
+        "total_characters": 6250,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "1c0bd267e73c0cd3a03017b7164819feb3be0e82a12cf88db64800930d990f8e",
+      "source": {
+        "source_id": "govinfo:hres605eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres605eh/html/BILLS-119hres605eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "c36844d66dde87c81c221542fecd5953ce0267be482eeeb54ffa90766ee85878",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 605 Engrossed in House (EH)] <DOC> H. Res. 605 In the House of Representatives, U. S., September 3, 2025. Resolved, SECTION 1. SELECT SUBCOMMITTEE TO INVESTIGATE THE REMAINING QUESTIONS SURROUNDING JANUARY 6, 2021. (a) Establishment; Composition.-- (1) Establishment.--There is hereby established for the One Hundred Nineteenth Congress a select investigative subcommittee of the Committee on the Judiciary called the Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 (hereinafter referred to as the ``select subcommittee''). (2) Composition.-- (A) The select subcommittee shall be composed of not more than 8 Members, Delegates, or the Resident Commissioner appointed by the Speaker, of whom not more than 3 shall be appointed in consultation with the minority leader. The Speaker shall designate one member of the select subcommittee as its chair. Any vacancy in the select subcommittee shall be filled in the same manner as the original appointment. (B) Each member appointed to the select subcommittee shall be treated as though a member of the Committee on the Judiciary for purposes of the select subcommittee. (C) The chair and ranking minority member of the Committee on the Judiciary shall be ex officio members of the select subcommittee but shall have no vote in the select subcommittee and may not be counted for purposes of determining a quorum thereof. (3) Service.--Service on the select subcommittee shall not count against the limitations in clause 5(b)(2)(A) of rule X of the Rules of the House of Representatives. (b) Investigative Functions and Authority.--The select subcommittee is authorized and directed to conduct a full and complete investigation and study and issue a final report of the events surrounding January 6, 2021 regarding matters within the jurisdiction of the Committee on the Judiciary under clause 1(l) of rule X of the Rules of the House of Representatives. The select subcommittee may not hold a markup of legislation. (c) Procedure.-- (1) Rule XI of the Rules of the House of Representatives and the rules of the Committee on the Judiciary shall apply to the select subcommittee in the same manner as a subcommittee except as follows: (A) The chair of the select subcommittee may, after consultation with the ranking minority member, recognize-- (i) members of the select subcommittee to question a witness for periods longer than five minutes as though pursuant to clause 2(j)(2)(B) of such rule XI; and (ii) staff of the select subcommittee or staff of the Committee on the Judiciary to question a witness as though pursuant to clause 2(j)(2)(C) of such rule XI. (B) The chair of the select subcommittee may authorize and issue subpoenas pursuant to clause 2(m) of rule XI in the investigation, study, and report conducted pursuant to subsection (b), including for the purpose of taking depositions. (C) With regard to the full scope of investigative authority under subsection (b), the select subcommittee shall be authorized to receive information available to the Permanent Select Committee on Intelligence, consistent with congressional reporting requirements for intelligence and intelligence-related activities, and any such information received shall be subject to the terms and conditions applicable under clause 11 of rule X. (2) The chair of the select subcommittee is authorized to compel by subpoena the furnishing of information by interrogatory. (3)(A) The chair of the select subcommittee, upon consultation with the ranking minority member, may order the taking of depositions, including pursuant to subpoena, by a Member, counsel of the select subcommittee, or counsel of the Committee on the Judiciary, in the same manner as a standing committee pursuant to section 3(t) of House Resolution 5, One Hundred Nineteenth Congress. (B) Depositions taken under the authority prescribed in this paragraph shall be governed by the procedures submitted by the chair of the Committee on Rules for printing in the Congressional Record on January 14, 2025. (4) Subpoenas authorized pursuant to this resolution may be signed by the chair of the select subcommittee or a designee. (5) The provisions of this resolution shall govern the proceedings of the select subcommittee in the event of any conflict with the rules of the House or of the Committee on the Judiciary. (d) Transfer of Records.--The Committee on House Administration is directed to transfer any records in any form relating to the matters described in subsection (b) to the select subcommittee not later than seven days after adoption of the resolution by the House. Such records shall become the records of the select subcommittee. (e) Successor.--The Committee on the Judiciary is the ``successor in interest'' to the select subcommittee for purposes of clause 8(c) of rule II of the Rules of the House of Representatives. (f) Final Report.--The final report of the select subcommittee shall be submitted to the Committee on the Judiciary by December 31, 2026. (g) Termination.--The select subcommittee shall terminate-- (1) 30 days after filing the final report under subsection (f); or (2) on the last day of the One Hundred Nineteenth Congress, whichever occurs earlier. Attest: Clerk.",
+        "governed_bytes_sha256": "9174ab7091aa624cd2b5e761f98ed0cd37b1f7a4b7aea12471cab479c9c113c3"
+      }
+    },
+    {
+      "original_source_object_sha256": "ab33ed5dfa8310242c4ea7be13059cf1f8394acfdce344285d0bc3def04f8753",
+      "source": {
+        "source_id": "govinfo:hres598rh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres598rh/html/BILLS-119hres598rh.htm",
+        "text_version": "RH",
+        "raw_sha256": "47d6d88bf004ed603a96eb6317f0c9457cabdb5a25fee02517b006254341a127",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 598 Reported in House (RH)] <DOC> House Calendar No. 39 119th CONGRESS 1st Session H. RES. 598 [Report No. 119-209] Providing for the adoption of the resolution (H. Res. 589) providing for the public release of certain documents, records, and communications related to the investigation of Jeffrey Epstein. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES July 21, 2025 Mr. Austin Scott of Georgia, from the Committee on Rules, reported the following resolution; which was referred to the House Calendar and ordered to be printed _______________________________________________________________________ RESOLUTION Providing for the adoption of the resolution (H. Res. 589) providing for the public release of certain documents, records, and communications related to the investigation of Jeffrey Epstein. Resolved, That House Resolution 589 is hereby adopted. House Calendar No. 39 119th CONGRESS 1st Session H. RES. 598 [Report No. 119-209] _______________________________________________________________________ RESOLUTION Providing for the adoption of the resolution (H. Res. 589) providing for the public release of certain documents, records, and communications related to the investigation of Jeffrey Epstein. _______________________________________________________________________ July 21, 2025 Referred to the House Calendar and ordered to be printed",
+        "governed_bytes_sha256": "f06217ea54f6fac9c15bdf58158c3fd0876437b2a1bb1cb4b54cbce94df3c4a7"
+      }
+    },
+    {
+      "original_source_object_sha256": "4f0b4f4c8dabd268e575eede67cd521867bd72b4d79ff32ccc4bb06b5f54da0a",
+      "source": {
+        "source_id": "clerk:119:1:223",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll223.xml",
+        "text_version": null,
+        "raw_sha256": "a0ac57faedf31085159635606ed0bfff2e3566d4dc47e636a50f330c5ac38b77",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "223",
+          "legis-num": "H RES 539",
+          "vote-question": "On Motion to Table",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Sep-2025",
+          "action-time": "2:18 PM",
+          "vote-desc": "Censuring Representative LaMonica McIver and removing her from the Committee on Homeland Security."
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "cb5adc7a6be5733ded2318dbbc71c8210050d379d62a33b66636b18bb4798d7a"
+      }
+    },
+    {
+      "original_source_object_sha256": "6f94dcbb9376eb3fcc4bdff2fed4080d3093f4d7b687e5ca2eb2352aadf6fcf1",
+      "source": {
+        "source_id": "clerk:119:1:224",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll224.xml",
+        "text_version": "119:1",
+        "raw_sha256": "ca81b6c1537e42cdd499b12534049afb3cc1fa1304d486110dd1770e607ef0e5",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "224",
+          "legis-num": "H J RES 104",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Sep-2025",
+          "action-time": "9:26 PM",
+          "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to “Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment”"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "211",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "207",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "5b197e2fed5fc48850c04f00b54a56f9c020050e8b3ee064c3b7f170598c3133"
+      }
+    },
+    {
+      "original_source_object_sha256": "7511b724cdda3bb0f6f142655650dcdff6732191056d4e7735d82a17602365a2",
+      "source": {
+        "source_id": "govinfo:hjres104eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres104eh/html/BILLS-119hjres104eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "c3a4293a451e3c0eddea0cb0933747b7041a311f2639ae79dbc3062626974cd4",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 104 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 104 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment'' (issued November 20, 2024, as a record of decision and resource management plan amendment, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3552-S3554, concluding that such record of decision and resource management plan amendment is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 104 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment''.",
+        "governed_bytes_sha256": "82dd3da3b7e45c07501b168e4ca1427c77f8783323343459c1f824de63e0d33c"
+      }
+    },
+    {
+      "original_source_object_sha256": "96a9813caf4ba2b1f6b51daa7fa0a7976955dacd68c94036e0b6c57327e39b85",
+      "source": {
+        "source_id": "blm:miles-city-2024-coal-operative",
+        "source_type": "official_agency_record_of_decision",
+        "url": "https://dailymontanan.com/wp-content/uploads/2024/12/2024_MCFO-ROD_20241120_508.pdf",
+        "raw_sha256": "96792a70c54b6056ad74fbf1b11747e373307f22f8267ba6864a7fd585922d21",
+        "text_version": "November2024 ROD/RMPA; completePDF7/10/19/21 only: court/public-health context, decision, screening table and sole coal-allocation boundary; mirrored primary PDF, not full-plan review",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/255ed7866802dc9a3ed9f40ddcade9014109d35fe4f68a970d3ad5e2b0b5646d.0000000.json",
+              "sha256": "e00901bd50e6ae4d728f6f87b111954e57b70a9a11dda0efaea670043b5e53b0",
+              "start_character": 0,
+              "end_character": 8335
+            }
+          ],
+          "utf8_sha256": "255ed7866802dc9a3ed9f40ddcade9014109d35fe4f68a970d3ad5e2b0b5646d",
+          "total_characters": 8335,
+          "transport_only": true
+        },
+        "capture_provenance": "Primary BLM-authored November2024 record mirrored by Daily Montanan; raw hash identifies mirror bytes. Legacy official PDF links redirected to the migrated portal and anonymous download returned404. Publication identity/mechanism cross-checked against exact CRA body and official GAO decision; no newspaper narrative used as operative evidence.",
+        "governed_bytes_sha256": "99a420c7e624255ad2b1721393e88d8f8ba544253df87819967fdca28c4b00e6"
+      }
+    },
+    {
+      "original_source_object_sha256": "dd685192e614c2ea5b429126a1d20348fed0d5cc1d37e3d7239ee1979e7b4ec5",
+      "source": {
+        "source_id": "clerk:119:1:225",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll225.xml",
+        "text_version": "119:1",
+        "raw_sha256": "a5ab40b7de91f68bb2e604a08ea456a5f45769328c6ee9ee7a26d155771ad5c3",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "225",
+          "legis-num": "H J RES 106",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Sep-2025",
+          "action-time": "9:32 PM",
+          "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to “Central Yukon Record of Decision and Approved Resource Management Plan”"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "209",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "4020dcc1f61b77fbe4175dafa11ebd7ff0f31bf99aa6a2a04160b1aa141a9360"
+      }
+    },
+    {
+      "original_source_object_sha256": "9138abb33ab658555bcead664d32dc4f0f6a434ad20b8f33e68d7c3ca9d0f1ed",
+      "source": {
+        "source_id": "govinfo:hjres106eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres106eh/html/BILLS-119hjres106eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "eb01f05e10c96a21a72589ee976fc7650c6b2ac57084cc1a44d0bc5bb2473d9e",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 106 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 106 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Central Yukon Record of Decision and Approved Resource Management Plan''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``Central Yukon Record of Decision and Approved Resource Management Plan'' (issued November 12, 2024, as a record of decision and resource management plan, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3554-S3556, concluding that such record of decision and resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 106 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``Central Yukon Record of Decision and Approved Resource Management Plan''.",
+        "governed_bytes_sha256": "98a4716d7633b8b1c5df98c8e6c0da3d3b0f5e9f3db71ec28c2759f471327b6a"
+      }
+    },
+    {
+      "original_source_object_sha256": "357026db2977e350b8d6aae69190efc052693d026129f35fa9d24bbef3ef160a",
+      "source": {
+        "source_id": "blm:central-yukon-2024-reviewed-decision",
+        "source_type": "official_agency_record_of_decision",
+        "url": "https://eplanning.blm.gov/public_projects/35315/200040776/20123105/251023085/CYRMP_ROD.pdf",
+        "raw_sha256": "bf2d6698c6f3c42f504bb8d7cfe68ca9eeda16ceeb790611db18afe00ecd590c",
+        "text_version": "November12,2024 ROD/RMP; completePDF13/14/20/45/74/75/326 only: management decision, approved AlternativeE, limited allotment recommendation and housing-use context; not full362page review",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/9f097f7e52fdd948eadd05559a1ac0ec68576755048c90f26be0f13abfaa0a8f.0000000.json",
+              "sha256": "0a746cc769fa2c412be7bbea0c295a131d783cc5cb868638ef3daeed20d7ffdc",
+              "start_character": 0,
+              "end_character": 22074
+            }
+          ],
+          "utf8_sha256": "9f097f7e52fdd948eadd05559a1ac0ec68576755048c90f26be0f13abfaa0a8f",
+          "total_characters": 22074,
+          "transport_only": true
+        },
+        "capture_provenance": "Primary BLM PDF captured through the public anonymous download route published by the migrated ePlanning document portal; declared URL is the legacy document identity, raw hash identifies downloaded PDF bytes.",
+        "governed_bytes_sha256": "ae2e5307da9153205cbc1e31b205abe887cf5d1c8eeaf064e1edd9f00601d2f2"
+      }
+    },
+    {
+      "original_source_object_sha256": "182c1c25a3ae210afc7fed60d73dc1b64e807dcbded398785090524197aa5c3b",
+      "source": {
+        "source_id": "clerk:119:1:226",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+        "text_version": "119:1",
+        "raw_sha256": "0dcbe78e751a146bcfc83595a64beb79eb38712b2052c8a3be468019987328b1",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "226",
+          "legis-num": "H J RES 105",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Sep-2025",
+          "action-time": "9:39 PM",
+          "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to “North Dakota Field Office Record of Decision and Approved Resource Management Plan”"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24"
+      }
+    },
+    {
+      "original_source_object_sha256": "b5f6ee3f786b7c500eecc4536e0a97f2d44d1eabc9d17aed6e2036a17f748d31",
+      "source": {
+        "source_id": "govinfo:hjres105eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres105eh/html/BILLS-119hjres105eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "1f8ee0c553a29f206cc911e6e04b734c3942db3ec9d7bcc1cfe9904baaabcde5",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 105 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan'' (issued January 14, 2025, as a record of decision and approved resource management plan, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3556-S3558, concluding that such record of decision and approved resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''.",
+        "governed_bytes_sha256": "0091bc481304e8bde8b1ef5a191c6d2e8518c160e0a2496d1fa7933015add9e7"
+      }
+    },
+    {
+      "original_source_object_sha256": "295dabaa5c8317f881987d25569972772ba17985f45d926de75db78eded63072",
+      "source": {
+        "source_id": "blm:north-dakota-2025-reviewed-decision",
+        "source_type": "official_agency_record_of_decision",
+        "url": "https://eplanning.blm.gov/public_projects/1505069/200366341/20126222/251026202/NDRMP_ROD_20250108_508.pdf",
+        "raw_sha256": "c6acd056db3ab36ea455436dc7f097647b4be7888cbfd7b36637b89b7de17678",
+        "text_version": "January2025 ROD/RMP; completePDF13-16 only: selected AlternativeD, mineral/water/land/recreation allocations, exceptions, valid existing rights and site-specific implementation; not full484page review",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6.0000000.json",
+              "sha256": "a8618ceec55a09d4c5dbe1ef14991d4ed9fc9eaef28a9c2c4cef23989c20137c",
+              "start_character": 0,
+              "end_character": 15063
+            }
+          ],
+          "utf8_sha256": "bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6",
+          "total_characters": 15063,
+          "transport_only": true
+        },
+        "capture_provenance": "Primary BLM PDF captured through the public anonymous download route published by the migrated ePlanning document portal; declared URL is the legacy document identity, raw hash identifies downloaded PDF bytes.",
+        "governed_bytes_sha256": "6b062d7937cf22559a9cda78157778c0a15c0080ab0a8639484f8018982a5621"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 6,
+    "prior_followup_records": 0,
+    "exported_source_objects": 17
+  }
+}

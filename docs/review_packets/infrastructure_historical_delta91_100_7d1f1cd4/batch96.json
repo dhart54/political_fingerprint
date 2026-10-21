@@ -1,0 +1,1422 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 96,
+  "exact_committed_head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+  "export_anchor_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "committed_provenance": {
+    "membership": {
+      "head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/membership_review.json",
+      "git_blob": "e2ed098d2ad46f920d93a9e3581aa7827786c1fa",
+      "git_bytes_sha256": "0b209b4fae4304f059e143032175f4a1a59ace4aefd00434d5b17b479744de82"
+    },
+    "sources": {
+      "head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/sources.json",
+      "git_blob": "24ef94d514613ba76f4643d36e728a619c427ab6",
+      "git_bytes_sha256": "1f57dffbe6493e81eb8b3eeec921e5d28df948d6bd0e39f0b732b0365f91a694"
+    },
+    "screening": {
+      "head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/screening_receipt.json",
+      "git_blob": "b0cfb8dd70515b47f172275c7626494336097999",
+      "git_bytes_sha256": "8eb92bed5b41f812d7226a6a0f77c0c55a7ab54ed53f70d0eceff259b34a9a61"
+    },
+    "screening_units": {
+      "head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/screening_units_receipt.json",
+      "git_blob": "5cf6aa782e2f485bce31b7fa62b78d5b80652717",
+      "git_bytes_sha256": "2115e8dbf21f0d6b4343e0ee2539e6d2a10048252089e04e810a458bf551534e"
+    },
+    "validation": {
+      "head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/validation_receipt.json",
+      "git_blob": "d0c150985f469827763eb74f73cd2247a89d7eaf",
+      "git_bytes_sha256": "acf65c19d248288557efd51425334664e1e022bf2acdfec6b4bec80c28dd7478"
+    }
+  },
+  "original_membership_review_sha256": "7a4eb2d76ccaf46f16f338dd88de9f5a3c93c66e6d039eb8e112e58d7ad453b1",
+  "new_screened_ids": [
+    "house:119:2:219",
+    "house:119:2:220",
+    "house:119:2:221",
+    "house:119:2:222",
+    "house:119:2:223",
+    "house:119:2:224",
+    "house:119:2:225",
+    "house:119:2:226",
+    "house:119:2:227",
+    "house:119:2:228"
+  ],
+  "prior_followup_ids": [
+    "house:119:2:136",
+    "house:119:2:138"
+  ],
+  "records": [
+    {
+      "original_record_sha256": "b7a410383396bf0c8458b1a106a981746337fbd8d43f1bda2774f3d656e9abd6",
+      "record": {
+        "action_id": "house:119:2:136",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete6387EH and complete retained7619unit support an unaccepted whole scientific monitoring/modeling/public-status candidate. Preserve other exceptional-event limbs, separate State-approved wildfire-mitigation definition, changed exclusion list and existing public-health/data duties, causal-or-reasonably-expected link, alternative regional triggers, distinct18monthproposal/1yearafterproposal-final/12monthwebsite-monthly clocks, expanded specified data-use petitions and exact interim-clause deletion. Referenced old guidance/appendices/current rules/Statepractices remain uninspected, not certified repealed or currently enforceable. Nonparticipation observations remain nondirectional in the separate member-projection layer. Whole environmental-policy versus scientific-data Infrastructure taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:136",
+            "url": "https://clerk.house.gov/evs/2026/roll136.xml",
+            "raw_sha256": "8b39431dccc319aef3bbe39d9e457fa5fbb69e750e3bc714d11274b78d0c588a",
+            "governed_bytes_sha256": "27256bb693d17d587e3ecaf14e213e0c2d89bf371f36394ea247bef50a297ab4"
+          },
+          {
+            "source_id": "govinfo:hr6387eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6387eh/html/BILLS-119hr6387eh.htm",
+            "raw_sha256": "a362056d6c4021e0b3d27353ccec22c4445005268710c6247705bc24f00d4ae7",
+            "governed_bytes_sha256": "1008d75be3fa011de346a9d2e94be0315df5afdeaab56dd60c9ce555495c11c2"
+          },
+          {
+            "source_id": "govinfo:42usc7619-2024-exceptional-events",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapIII-sec7619.htm",
+            "raw_sha256": "91ed1ea2b2ce2a24e819254efa2f780596773f16ba7c19ec9cbed212514db875",
+            "governed_bytes_sha256": "721297c45ec9f7878224aa9114f670a8ff691d9c5733ab2ef3f8866b9c11e349"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6387eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9.0000000.json",
+                  "sha256": "48d58e2270180f84174f21388a51a1677c0ec945e03e1b30ff1b918167ac4e42",
+                  "start_character": 0,
+                  "end_character": 5900
+                }
+              ],
+              "utf8_sha256": "74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9",
+              "total_characters": 5900,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc7619-2024-exceptional-events",
+            "locator": "ACTIVE PROVENANCE QUALIFICATION: Retained witness contains42USC7619(a) AND(b), through(b)(4), and NO Kari-law applicability note. Historical text_version metadata is preserved but its subsection(a)/Kari-note extent label is inaccurate. No current-law applicability or legislative meaning is changed. Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e.0000000.json",
+                  "sha256": "f903cf629752d5772e9a5e8e0de0ceaafa78fbdf90032c9d00f46a568689cd98",
+                  "start_character": 0,
+                  "end_character": 5357
+                }
+              ],
+              "utf8_sha256": "19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e",
+              "total_characters": 5357,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr6387:119"
+      }
+    },
+    {
+      "original_record_sha256": "43bbfc108b19c64f8f0d8d9b71c07466cded656d639055292ecdb9c95967173b",
+      "record": {
+        "action_id": "house:119:2:138",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete7959EHchanges IRSwhistleblower award TaxCourtreview(de novo with original record plus newly discovered/previously unavailable evidence), elective anonymity with court societal-interest-versus-harm exception, existing whistleblower report including at most10taxavoidance schemes, qualified interest and attorney-fee deduction reference. Interest requires missing preliminary-award notice past a12monthdate after both collected proceeds AND refund-period/finality conditions, stops accruing on notice, and has180dayeffective plus special transition/12month rule. Other petition/report/taxyear effective dates remain separate. This whole tax-award/judicial/privacy/reporting package establishes no scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Anonymity is not an unconditional guarantee, generic reporting is not a technology mandate, and no individual tax offense, award, interest amount, payment or corruption/motive finding is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:138",
+            "url": "https://clerk.house.gov/evs/2026/roll138.xml",
+            "raw_sha256": "5e2112a45af804131f748f043c4b8b1cab5ebbd0a7fe69345ef9e2cfd63fa260",
+            "governed_bytes_sha256": "d359b2450b867930ac5dd7cc6e1ce6d3c8a1a581bac1a365472b395eb28d813a"
+          },
+          {
+            "source_id": "govinfo:hr7959eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7959eh/html/BILLS-119hr7959eh.htm",
+            "raw_sha256": "e5120c7d265230349d78230ebc78e639b409ccf24665780d133925b62f7aa52a",
+            "governed_bytes_sha256": "0f4266845f0bf7c420ed6666df9e3d0d82da81ba027d04dc806739ca69084f2f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7959eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/500d0d04168ebdb574195f59cfcda36b013865c4d63a6056923221d4e6fcc579.0000000.json",
+                  "sha256": "e647b31412520eb584e675eb3bc054af68dc4989b4cd1d89adc1d68f1d1f9f16",
+                  "start_character": 0,
+                  "end_character": 6088
+                }
+              ],
+              "utf8_sha256": "500d0d04168ebdb574195f59cfcda36b013865c4d63a6056923221d4e6fcc579",
+              "total_characters": 6088,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c92e81b0d34e7789ea837d5591614ac5e2cc5c265f1ebe3a22728b51ce463e09",
+      "record": {
+        "action_id": "house:119:2:219",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact question is a failed motion to recommit H.R.8464. No motion body is interpreted. Non-counting procedural context does not establish component support, a payment pause, fraud or enactment.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:219",
+            "url": "https://clerk.house.gov/evs/2026/roll219.xml",
+            "raw_sha256": "4d4ee1ce8c39d2eeaeabe6145318380e34fd269f685dab17af4f172b82bebefe",
+            "governed_bytes_sha256": "8feed72206a6daca30ab400ef802f02b7b67258ea3671b62af17dc1ebf15748b"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "02abfd4a492cb87d477a2708fda4af3e9085267af69c8bce0f490cdf0faf7203",
+      "record": {
+        "action_id": "house:119:2:220",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete8464EH read. The whole package combines qualified agency/Treasury payment-pause duties, objective documented indicators, narrow portion/minimum-duration limits, payee notice/contest/release conditions, low-risk segmentation to maximum extent practicable, case-specific law-enforcement waiver, good-faith officer relief, program-law preservation, regulations/agency appeal and recurring results reports. An analytic signal is not a final determination of wrongdoing or eligibility. Two-day notices, conditional30day/7day release,180day regulations,18month report and1year effective-date clocks differ. Material3325/3352/3354/3527/3528 and program eligibility/payment/privacy baselines and whole technology-versus-financial-administration mapping remain pending. No actual fraud, automated denial, unconditional30day payment, savings or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:220",
+            "url": "https://clerk.house.gov/evs/2026/roll220.xml",
+            "raw_sha256": "7c30ad02bf146a77ffbe43fb66466ee18f5778b8f9e072299d72069575044428",
+            "governed_bytes_sha256": "738358ad6ae2e98c1a96b80a420b8f1c17c188cf4cd293f1e4b6f38aed440cd9"
+          },
+          {
+            "source_id": "govinfo:hr8464eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8464eh/html/BILLS-119hr8464eh.htm",
+            "raw_sha256": "1d332a194e02322335a818e607afa920b0bb7ca957147d85079abe39caec281a",
+            "governed_bytes_sha256": "ff3e0c77da0e4f8d7bced495c329087418e80b8f1f6d339a8a4937bad0fa56b5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr8464eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/724f14b14c466e0c95e8c92bc0ada213bf9239ad97478c83d8525980a3eaf0b4.0000000.json",
+                  "sha256": "3602fd24dcab959763649b8610690b13d1d58131954e8ff5cf2fcf00726289d3",
+                  "start_character": 0,
+                  "end_character": 13676
+                }
+              ],
+              "utf8_sha256": "724f14b14c466e0c95e8c92bc0ada213bf9239ad97478c83d8525980a3eaf0b4",
+              "total_characters": 13676,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2879c62efe598cfd7e869ac87136fa79699e6b309b54b6952df4fe177ecaaf34",
+      "record": {
+        "action_id": "house:119:2:221",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete retained own offered extension, initial motion and recorded rejection read alongside qualified9238bill text. It changes two introductory FISA sunset dates fromJune12toJuly2,2026, effective earlier of enactment orJune11; the recorded198–218with15NotVoting rejects suspension/passage despite the preliminary voice result. No EH or enacted extension is invented. Existing qualified Immigration whole meaning is identified for canonical reuse; complete material403(b)/1881note/2511note and intervening-law/version/domain review remain pending. No surveillance operation, individual rights result or technical-system deployment follows from this failed vote. Protected old PublicLaw/JuneClerk chains remain untouched.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:221",
+            "url": "https://clerk.house.gov/evs/2026/roll221.xml",
+            "raw_sha256": "96fc4098df1eac778be24a68de21dcece73cfef7d7c13bc8ecd671192bd560f9",
+            "governed_bytes_sha256": "21d62f8ab5152286bcc302a21929fad925a4a877b011ca0b27951345c74d0fdc"
+          },
+          {
+            "source_id": "govinfo:hr9238cdh-qualified182",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9238cdh/html/BILLS-119hr9238cdh.htm",
+            "raw_sha256": "08fb87e430aee94458a4da7edcfb06185a25af68aa17a994a43f5b6bab126d0e",
+            "governed_bytes_sha256": "299529bf9bfc585a6f8c7024487535a75e00235c6f714b9fae437d6036d28142"
+          },
+          {
+            "source_id": "immigration:roll221-operative182",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10-house.pdf",
+            "raw_sha256": "a5b906713d9c217a31068b01b8ced5dbb4dee2c3d32fb4a2c5b94fa1ee96fcd4",
+            "governed_bytes_sha256": "d3a943e4cde1fcab787733468c0cafeae23c23f7710268984e9163f5f2af3053"
+          },
+          {
+            "source_id": "immigration:roll221-initial182",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-10/pdf/CREC-2026-06-10-house.pdf",
+            "raw_sha256": "a5b906713d9c217a31068b01b8ced5dbb4dee2c3d32fb4a2c5b94fa1ee96fcd4",
+            "governed_bytes_sha256": "ace1591b499db07b3ddfce2a785b11c016358609543d58988548e94cefe18a1e"
+          },
+          {
+            "source_id": "immigration:roll221-recorded182",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-11/pdf/CREC-2026-06-11-house.pdf",
+            "raw_sha256": "4b6ac8a712b7c5582f27f18a9c3fe2c613ef88988ed3744a58636e972f689773",
+            "governed_bytes_sha256": "90a53806082cc4eff06b583c0f6d22d8f941c2cd60c8e63a34a33aa2e17bad75"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr9238cdh-qualified182",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 9238 Committee Discharged House (CDH)] <DOC> 119th CONGRESS 2d Session H. R. 9238 To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES June 10, 2026 Mr. Crawford introduced the following bill; which was referred to the Committee on the Judiciary, and in addition to the Permanent Select Committee on Intelligence, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned June 10, 2026 The Committees on the Judiciary and Intelligence (Permanent Select) discharged _______________________________________________________________________ A BILL To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. EXTENSION OF AUTHORITIES OF TITLE VII OF THE FOREIGN INTELLIGENCE SURVEILLANCE ACT OF 1978. (a) Extension of Repeal Date of Title VII.--Section 403(b) of the FISA Amendments Act of 2008 (Public Law 110-261), as most recently amended by Public Law 119-87, is further amended-- (1) in paragraph (1) (50 U.S.C. 1881 note), by striking ``June 12, 2026'' and inserting ``July 2, 2026''; and (2) in paragraph (2) (18 U.S.C. 2511 note) in the matter preceding subparagraph (A), by striking ``June 12, 2026'' and inserting ``July 2, 2026''. (b) Effective Date.--The amendments made by this section shall take effect on the earlier of the date of the enactment of this Act or June 11, 2026. <all>"
+          },
+          {
+            "source_id": "immigration:roll221-operative182",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "The Clerk read the title of the bill. \nThe text of the bill is as follows: \nH.R. 9238 \nBe it enacted by the Senate and House of Rep-\nresentatives of the United States of America in \nCongress assembled, \nSECTION 1. EXTENSION OF AUTHORITIES OF \nTITLE VII OF THE FOREIGN INTEL-\nLIGENCE SURVEILLANCE ACT OF \n1978. \n(a) E XTENSION OF REPEAL DATE OF TITLE \nVII.—Section 403(b) of the FISA Amend-\nments Act of 2008 (Public Law 110–261), as \nmost recently amended by Public Law 119-87, \nis further amended— \n(1) in paragraph (1) (50 U.S.C. 1881 note), by \nstriking ‘‘June 12, 2026’’ and inserting ‘‘July \n2, 2026’’; and \n(2) in paragraph (2) (18 U.S.C. 2511 note) in \nthe matter preceding subparagraph (A), by \nstriking ‘‘June 12, 2026’’ and inserting ‘‘July \n2, 2026’’. \n(b) E\nFFECTIVE DATE.—The amendments \nmade by this section shall take effect on the \nearlier of the date of the enactment of this \nAct or June 11, 2026. \nThe SPEAKER pro tempore. Pursu-\nant to the rule, the gentleman from \nOhio (Mr. J\nORDAN) and the gentleman \nfrom Maryland (Mr. R ASKIN) each will \ncontrol 20 minutes. \nThe Chair recognizes the gentleman \nfrom Ohio. \nGENERAL LEAVE \nMr. JORDAN. Mr. Speaker, I ask \nunanimous consent that all Members \nVerDate Sep 11 2014 04:46 Jun 11, 2026 Jkt 069060 PO 00000 Frm 00023 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\A10JN7.019 H10JNPT1DMWilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSEH4080 June 10, 2026 \nmay have 5 legislative days in which to \nrevise and extend their remarks and to \ninsert extraneous material on H.R. \n9238. \n"
+          },
+          {
+            "source_id": "immigration:roll221-initial182",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on the motion offered by \nthe gentleman from Ohio (Mr. J\nORDAN) \nthat the House suspend the rules and \npass the bill, H.R. 9238. \nThe question was taken. \nThe SPEAKER pro tempore. In the \nopinion of the Chair, two-thirds being \nin the affirmative, the ayes have it. \nMr. RASKIN. Mr. Speaker, on that I \ndemand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, further pro-\nceedings on this question will be post-\nponed."
+          },
+          {
+            "source_id": "immigration:roll221-recorded182",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "The SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on the mo-\ntion to suspend the rules and pass the \nbill (H.R. 9238) to amend the FISA \nAmendments Act of 2008 to extend the \nauthorities of title VII of the Foreign \nIntelligence Surveillance Act of 1978, \nand for other purposes, on which the \nyeas and nays were ordered. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. The \nquestion is on the motion offered by \nthe gentleman from Ohio (Mr. J\nORDAN) \nthat the House suspend the rules and \npass the bill. \nThis is a 15-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 198, nays \n218, not voting 15, as follows: \n[Roll No. 221]\n\nSo (two-thirds not being in the af-\nfirmative) the motion was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "eb2e4c0d23357e923d841292c8fbab26abccbf4fbffdcb495ec6a159f3c48645",
+      "record": {
+        "action_id": "house:119:2:222",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "The complete own resolving clause condemns fraud and expresses beliefs about governmentwide reforms and prepayment eligibility/spending verification. It creates no operative payment-pause power, data system, appropriation or binding reform. Preamble allegations, dollar estimates and claims about named officials/providers are resolution assertions, not independently verified factual or motive findings. Only the resolving clause and opening identity were reviewed; the full preamble was not independently checked.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:222",
+            "url": "https://clerk.house.gov/evs/2026/roll222.xml",
+            "raw_sha256": "b5651aa695afa22ced4de21fbc94ebaad39884b026958bb9eb89af68e9d6f32f",
+            "governed_bytes_sha256": "b705403e2d8cadd68860b015f6be752e24ccc678ac6b3abc58e56c11d71f55ff"
+          },
+          {
+            "source_id": "govinfo:hres1335eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1335eh/html/BILLS-119hres1335eh.htm",
+            "raw_sha256": "71ff52f4ea7d2f50f339f7fe2d36e16820837eaf1ae76428c0270806d083ec1a",
+            "governed_bytes_sha256": "d0e9e745d6fa4bd4dfe173e949529b2492fa017e3007ce29739e1e573adb2264"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1335eh",
+            "locator": "Opening identity only0:500; preamble allegations not verified",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1335 Engrossed in House (EH)] <DOC> H. Res. 1335 In the House of Representatives, U. S., June 11, 2026. Whereas fraud and improper payments in Federal agency programs is an unsustainable national fiscal emergency; Whereas the Comptroller General of the United States documented in 2025 that the Federal Government has improperly paid about $3,000,000,000,000 since 2003 where payments should not have been mad"
+          },
+          {
+            "source_id": "govinfo:hres1335eh",
+            "locator": "Complete own resolving clause9047:9560; not an operative statute",
+            "passage": "Now, therefore, be it Resolved, That the House of Representatives-- (1) condemns the fraudulent actions of those seeking to defraud the United States Government; (2) believes governmentwide fraud and improper payment prevention legislative and policy reforms will meaningfully improve the continued financial prosperity of the United States Government and the American taxpayer; and (3) believes Federal program eligibility and spending activities should be verified prior to payments being issued. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "35ecb9c47b97fe443942d3bf17f5551aba6494e432f607f8fade52a71d8b16e5",
+      "record": {
+        "action_id": "house:119:2:223",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete S629ES and retained2201/2206 operative units support an unaccepted whole physical rehabilitation/advance candidate. Preserve ECP75/50percent of COST rather than payment, exact percentages versus the separate forest advance cap,180day unspent predicates plus reasonable return timeframe, separate Federal-caused category versus nonnatural natural-spread condition, retained farmland/forest eligibility and total75percent forest assistance cap. No fixed appropriation, actual fault, individual payment or current-law clearance. Whole agricultural/forestry-versus-physical-rehabilitation taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:223",
+            "url": "https://clerk.house.gov/evs/2026/roll223.xml",
+            "raw_sha256": "a74c9df8923ddd7631e5196df6a49cec1fb34457c10053204e02d0fd3ec653e8",
+            "governed_bytes_sha256": "33fa3432329e81333e8897c33d6bab2b64d57c879688c0ed6a0fbad0e9f6cf3a"
+          },
+          {
+            "source_id": "govinfo:s629es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s629es/html/BILLS-119s629es.htm",
+            "raw_sha256": "e605f0e3ac5e12fc4a4209f3385857d5f854c0c68f7ffc71cae541926ac583c9",
+            "governed_bytes_sha256": "f87f484584e7a73b9dcd89aebc0b81ca7d6498488840c17fbe1012d86b3e5ccb"
+          },
+          {
+            "source_id": "govinfo:16usc2201-operative162",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap42-sec2201.htm",
+            "raw_sha256": "0a5bf89f0e130c475b667c89fd8b36b507d8641d0dae13ffce772d6968f2ad59",
+            "governed_bytes_sha256": "fbed9ec7f26bf140d6566bef92e4187c430801fb10db190e0dbce11077c76f5b"
+          },
+          {
+            "source_id": "govinfo:16usc2206-operative162",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap42-sec2206.htm",
+            "raw_sha256": "9765f1736c628b072edc59b6129bc3dfa80acc964ef0a5cfb5acae03edc4a19d",
+            "governed_bytes_sha256": "affc521ab3be02e14b587c7788eba9b018caec19193ef71d9e914ab23c77c771"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s629es",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S. 629 Engrossed in Senate (ES)] <DOC> 119th CONGRESS 2d Session S. 629 _______________________________________________________________________ AN ACT To amend the Agricultural Credit Act of 1978 to remove barriers to agricultural producers in accessing funds to carry out emergency measures under the emergency conservation program, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Emergency Conservation Program Improvement Act of 2025''. SEC. 2. IMPROVING THE EMERGENCY CONSERVATION PROGRAM. Section 401 of the Agricultural Credit Act of 1978 (16 U.S.C. 2201) is amended-- (1) in subsection (b)-- (A) in the subsection heading, by inserting ``and Other Emergency Conservation Measures'' after ``Fencing''; (B) in paragraph (1)-- (i) by inserting ``or for other emergency measures to replace or restore farmland or conservation structures requiring an immediate response (as determined by the Secretary),'' after ``replacement of fencing,''; and (ii) by striking ``option of receiving'' and all that follows through the period at the end and inserting the following: ``option of receiving, before the agricultural producer carries out the repair, replacement, or restoration-- ``(A) with respect to a payment to the agricultural producer for a replacement, 75 percent of the cost of the replacement, as determined by the Secretary; and ``(B) with respect to a payment to the agricultural producer for a repair or restoration, 50 percent of the cost of the repair or restoration, as determined by the Secretary.''; and (C) in paragraph (2), by striking ``60-day'' and inserting ``180-day''; and (2) by adding at the end the following: ``(c) Wildfire Determination.--A wildfire that causes damage eligible for a payment under subsection (a) includes-- ``(1) a wildfire that is not caused naturally, if the damage is caused by the spread of the wildfire due to natural causes; and ``(2) a wildfire that is caused by the Federal Government.''. SEC. 3. IMPROVING THE EMERGENCY FOREST RESTORATION PROGRAM. Section 407 of the Agricultural Credit Act of 1978 (16 U.S.C. 2206) is amended-- (1) in subsection (a)(2), by striking ``wildfires,'' and inserting ``wildfires (including a wildfire that is not caused naturally, if the damage is caused by the spread of the wildfire due to natural causes, and a wildfire that is caused by the Federal Government),''; (2) by redesignating subsection (e) as subsection (f); and (3) by inserting after subsection (d) the following: ``(e) Advance Payments.-- ``(1) In general.--The Secretary shall give an owner of nonindustrial private forest land the option of receiving, before the owner carries out emergency measures under this section, not more than 75 percent of the cost of the emergency measures, as determined by the Secretary. ``(2) Return of funds.--If the funds provided under paragraph (1) are not expended by the end of the 180-day period beginning on the date on which the owner of nonindustrial private forest land receives those funds, the funds shall be returned within a reasonable timeframe, as determined by the Secretary.''. Passed the Senate March 24, 2026. Attest: Secretary. 119th CONGRESS 2d Session S. 629 _______________________________________________________________________ AN ACT To amend the Agricultural Credit Act of 1978 to remove barriers to agricultural producers in accessing funds to carry out emergency measures under the emergency conservation program, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:16usc2201-operative162",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2201. Emergency conservation program (a) In general The Secretary of Agriculture (referred to in this chapter as the \"Secretary\") is authorized to make payments to agricultural producers who carry out emergency measures to control wind erosion on farmlands or to rehabilitate farmlands damaged by wind erosion, floods, hurricanes, wildfires, or other natural disasters when, as a result of the foregoing, new conservation problems have been created that (1) if not treated, will impair or endanger the land, (2) materially affect the productive capacity of the land, (3) represent damage that is unusual in character and, except for wind erosion, is not the type that would recur frequently in the same area, and (4) will be so costly to rehabilitate that Federal assistance is or will be required to return the land to productive agricultural use. (b) Repair or replacement of fencing (1) In general With respect to a payment to an agricultural producer under subsection (a) for the repair or replacement of fencing, the Secretary shall give the agricultural producer the option of receiving not more than 25 percent of the payment, determined by the Secretary based on the applicable percentage of the fair market value of the cost of the repair or replacement, before the agricultural producer carries out the repair or replacement. (2) Return of funds If the funds provided under paragraph (1) are not expended by the end of the 60-day period beginning on the date on which the agricultural producer receives those funds, the funds shall be returned within a reasonable timeframe, as determined by the Secretary. "
+          },
+          {
+            "source_id": "govinfo:16usc2206-operative162",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2206. Emergency forest restoration program (a) Definitions In this section: (1) Emergency measures The term \"emergency measures\" means those measures that— (A) are necessary to address damage caused by a natural disaster to natural resources on nonindustrial private forest land, and the damage, if not treated— (i) would impair or endanger the natural resources on the land; and (ii) would materially affect future use of the land; and (B) would restore forest health and forest-related resources on the land. (2) Natural disaster The term \"natural disaster\" includes wildfires, hurricanes or excessive winds, drought, ice storms or blizzards, floods, or other resource-impacting events, as determined by the Secretary. (3) Nonindustrial private forest land The term \"nonindustrial private forest land\" means rural land, as determined by the Secretary, that— (A) has existing tree cover (or had tree cover immediately before the natural disaster and is suitable for growing trees); and (B) is owned by any nonindustrial private individual, group, association, corporation, or other private legal entity, that has definitive decision-making authority over the land. (b) Availability of assistance The Secretary may make payments to an owner of nonindustrial private forest land who carries out emergency measures to restore the land after the land is damaged by a natural disaster. (c) Eligibility To be eligible to receive a payment under subsection (b), an owner must demonstrate to the satisfaction of the Secretary that the nonindustrial private forest land on which the emergency measures are carried out had tree cover immediately before the natural disaster. (d) Cost share requirement Payments made under subsection (b) shall not exceed 75 percent of the total cost of the emergency measures carried out by an owner of nonindustrial private forest land. (e) Authorization of appropriations There are authorized to be appropriated to the Secretary such funds as may be necessary to carry out this section. Amounts so appropriated shall remain available until expended. "
+          }
+        ],
+        "episode_candidate_id": "episode:s629:119"
+      }
+    },
+    {
+      "original_record_sha256": "b6a72699a1998da7e74c3f4595bdf57701f5cf6f5395c4de171d55ca23b12b16",
+      "record": {
+        "action_id": "house:119:2:224",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Exact Clerk question is suspension and concurrence in Senate amendment to House amendment to Senate amendment. The retained June22EAS2 is377081characters; onlyopening0:1800andclosing376281:377081read. This later nested housing/CBDC/severability/no-additional-funds package is distinct from old HouseEH and earlier housing candidates. Existing qualified Health whole meaning is identified for canonical reuse; full nested-version/material baselines and whole technology/housing mapping remain pending. No isolated land database, construction or digital-currency fragment establishes the whole meaning, and no old-version core is substituted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:224",
+            "url": "https://clerk.house.gov/evs/2026/roll224.xml",
+            "raw_sha256": "91f2fbd3220bc997b37600b56595aea7950468b8e6817f41dde89cb0824e2aa7",
+            "governed_bytes_sha256": "c0ac032252babbd56d526dab56ca48ec7f2fc54d9d72a72f91fd2816bba883fd"
+          },
+          {
+            "source_id": "govinfo:hr6644eas2",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6644eas2/html/BILLS-119hr6644eas2.htm",
+            "raw_sha256": "2e4c8c459ad22cc6dcb4a533d3794fdba23a83f4d93c558e12c0aefbaecda612",
+            "governed_bytes_sha256": "8b538a3302f11766f2e35050bbdaf8135146ae1dcc87dfe4de22b788a5a60587"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6644eas2",
+            "locator": "Onlyopening0:1800of377081read; wholeinteriorunreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6644 Engrossed Amendment Senate (EAS)] <DOC> In the Senate of the United States, June 22, 2026. Resolved, That the Senate agree to the amendment of the House of Representatives to the amendment of the Senate to the bill (H.R. 6644) entitled ``An Act to increase the supply of housing in America, and for other purposes.'', with the following SENATE AMENDMENT TO HOUSE AMENDMENT TO SENATE AMENDMENT: Strike all after the enacting clause and insert the following: SECTION 1. SHORT TITLE; TABLE OF CONTENTS. (a) Short Title.--This Act may be cited as the ``21st Century ROAD to Housing Act''. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title; table of contents. TITLE I--OPPORTUNITIES FOR HOUSING Sec. 101. Reforms to housing counseling and financial literacy programs. Sec. 102. Federal guidelines for point-access block buildings. Sec. 103. Exemption on construction or modification of residential housing located on an infill site. Sec. 104. Database of publicly owned land. Sec. 105. FHA Small-Dollar Mortgages. Sec. 106. Temperature Sensor Pilot Program. Sec. 107. Housing supply frameworks. TITLE II--BUILDING MORE IN AMERICA Sec. 201. Increasing housing in opportunity zones. Sec. 202. Whole-Home Repairs Act. Sec. 203. Community Investment and Prosperity Act. Sec. 204. Addition of affordable housing construction as an eligible activity. Sec. 205. Better Use of Intergovernmental and Local Development (BUILD) Housing Act. Sec. 206. Unlocking Housing Supply Through Streamlined and Modernized Reviews Act. Sec. 207. Grants for planning and implementation associated with affordable housing. Sec. 208. Innovation Fund. Sec. 209. Accelerating Home Building Act. S"
+          },
+          {
+            "source_id": "govinfo:hr6644eas2",
+            "locator": "Onlyclosing376281:377081read",
+            "passage": "y or any digital asset that is substantially similar to a central bank digital currency directly or indirectly absent authorization by an Act of Congress.''. TITLE XII--MISCELLANEOUS SEC. 1201. SEVERABILITY. If any provision of this Act, or the application thereof to any person or circumstance, is held invalid, the remainder of the Act, and the application of such provisions to other persons or circumstances, shall not be affected thereby. SEC. 1202. NO ADDITIONAL FUNDS AUTHORIZED. No additional funds are authorized to be appropriated to carry out the requirements of this Act or any amendment made by this Act. Attest: Secretary. 119th CONGRESS 2d Session H.R. 6644 _______________________________________________________________________ SENATE AMENDMENT TO HOUSE AMENDMENT TO SENATE AMENDMENT"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "9977832952ca366299e21439dc6ca7bc527ad6c885176c0ea118ed5392d3cf56",
+      "record": {
+        "action_id": "house:119:2:225",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete7401EHread: SBA employees personally/substantially involved in covered loan origination/review/approval must certify to their knowledge no prohibited208/2635.502conflict before participating, disclose/recuse on later discovery and acknowledge duties. Certification begins270daysafterenactment; regulations180daysafterenactment. This whole employee-ethics/lending-administration choice establishes no scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Underlying individual ethics applicability is unreviewed; no actual employee conflict, corruption, motive, loan eligibility or guaranteedapproval is asserted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:225",
+            "url": "https://clerk.house.gov/evs/2026/roll225.xml",
+            "raw_sha256": "de87503bc17f11bde31c2514d1ba927c4565f0d13d82d7cd9c152ad8515f5167",
+            "governed_bytes_sha256": "61951ec89e67214ee0d6bfcfb60d850a7e3eae9e07489fed64bc0660c11d51bd"
+          },
+          {
+            "source_id": "govinfo:hr7401eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7401eh/html/BILLS-119hr7401eh.htm",
+            "raw_sha256": "e36e93ed63bf0815e7e78916fcab4f817c2e78492125001bca3b922131b6424e",
+            "governed_bytes_sha256": "8900996efadc3cd7cb66243604b4330b122614827d221c8bd8cbcb72b3ca2f70"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7401eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 7401 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 7401 _______________________________________________________________________ AN ACT To require employees of the Small Business Administration to certify that the employee does not have any prohibited conflicts of interest with respect to loans in which the employee is involved, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Small Business Lending Fraud Prevention Act''. SEC. 2. SMALL BUSINESS ADMINISTRATION EMPLOYEE CONFLICT OF INTEREST CERTIFICATION. (a) In General.--Beginning on the date that is 270 days after the date of the enactment of this Act, an employee of the Administration that will personally and substantially participate in the origination, review, or approval of a loan administered by the Administration shall, prior to such participation in such loan, certify to the Administrator in writing that such employee-- (1) to their knowledge, does not have any conflict of interest prohibited under section 208 of title 18, United States Code, or section 2635.502 of title 5, Code of Federal Regulations, with respect to such participation in such loan; (2) upon learning of any such conflict of interest after submitting such certification, will immediately disclose such conflict of interest to the supervisor of such employee and recuse themselves from participating in such loan; and (3) understands the requirements applicable to such employee under Federal law and regulations of the Administration regarding conflicts of interest with respect to such participation in such loan. (b) Regulations.--Not later than 180 days after the date of enactment, the Administrator shall issue regulations implementing this Act. (c) Definitions.--In this Act: (1) Administration.--The term ``Administration'' means the Small Business Administration. (2) Administrator.--The term ``Administrator'' means the Administrator of the Administration. Passed the House of Representatives June 24, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 7401 _______________________________________________________________________ AN ACT To require employees of the Small Business Administration to certify that the employee does not have any prohibited conflicts of interest with respect to loans in which the employee is involved, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "bbf86e038be0e5876820e5ce6ce90fd69a07057900472e155af40a1d96d84711",
+      "record": {
+        "action_id": "house:119:2:226",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete915EH and retained636(a) opening support an unaccepted whole software/cloud/AI loan-use candidate. Preserve MAY and whole/part financing, all three construction limits, qualified-business/appropriation-dependent existing authority and unreviewed remaining7(a) restrictions. No prior prohibition, new R&D authority, narrowed working capital, disaster-loan predicate, automatic approval, fixed new appropriation or actual adoption is inferred. Whole technology access versus ordinary credit taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:226",
+            "url": "https://clerk.house.gov/evs/2026/roll226.xml",
+            "raw_sha256": "e2cb2e0af07ead810c0258866b261c01d3ef39dc5f37fbab65dc317e168799e2",
+            "governed_bytes_sha256": "285f7d57bb23991bf9e7fd9e04e7f97e6aa14c3e09c9d524166f3f4964f08a25"
+          },
+          {
+            "source_id": "govinfo:hr915eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr915eh/html/BILLS-119hr915eh.htm",
+            "raw_sha256": "1d5176e0a0c3f841b96d67d745e0e6b05e02ac901977ca7a28ab6315d6cb3c15",
+            "governed_bytes_sha256": "f91214cbea3bba320a2b45ff5cbe3303afa1e46c0c11e27de3eaa9c8bb4d5bfb"
+          },
+          {
+            "source_id": "govinfo:15usc636-2024-7a-authority",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec636.htm",
+            "raw_sha256": "1154f3dbc2aa2d9a75c79000efe8a3a436e73683b401c15b6c61f7b0ceb4852e",
+            "governed_bytes_sha256": "fa25914beba6f036bea74f8a981af5accaf00d5eb536ab5adc8b729db8d8966c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr915eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 915 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 915 _______________________________________________________________________ AN ACT To authorize small business loans to finance access to modern business software, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Small Business Technological Advancement Act''. SEC. 2. ADDITIONAL USES FOR SMALL BUSINESS ADMINISTRATION BUSINESS LOANS. (a) In General.--Section 7(a) of the Small Business Act (15 U.S.C. 636(a)) is amended by adding at the end the following: ``(38) Access to modern business software.--The Administration may provide loans under this subsection to finance, in whole or in part, business software or cloud computing services, or any such technology, that facilitates business operations, product or service delivery, the processing, payment, or tracking of payroll expenses, human resources, sales and billing functions, or accounting or tracking of supplies, inventory, records and expenses, including business tools that utilize artificial intelligence.''. (b) Rule of Construction.--Nothing in the amendment made by subsection (a) shall be construed to-- (1) provide that loans made under section 7(a) of the Small Business Act (15 U.S.C. 636(a)) before the date of enactment of this Act for the purposes described in paragraph (38) of such section 7(a), as added by subsection (a), were not permissible; (2) authorize the use of loans made under section 7(a) of the Small Business Act (15 U.S.C. 636(a)) for research and development purposes; or (3) limit the definition of working capital under the Small Business Act (15 U.S.C. 631 et seq.). Passed the House of Representatives June 24, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 915 _______________________________________________________________________ AN ACT To authorize small business loans to finance access to modern business software, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:15usc636-2024-7a-authority",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Loans to small business concerns; allowable purposes; qualified business; restrictions and limitations The Administration is empowered to the extent and in such amounts as provided in advance in appropriation Acts to make loans for plant acquisition, construction, conversion, or expansion, including the acquisition of land, material, supplies, equipment, and working capital, and to make loans to any qualified small business concern, including those owned by qualified Indian tribes, for purposes of this chapter. Such financings may be made either directly or in cooperation with banks or other financial institutions through agreements to participate on an immediate or deferred (guaranteed) basis. These powers shall be subject, however, to the following restrictions, limitations, and provisions: "
+          }
+        ],
+        "episode_candidate_id": "episode:hr915:119"
+      }
+    },
+    {
+      "original_record_sha256": "92861fc67bbe2f3b9070eaba4e1dadcb2b754d5684be8b417936ccf86be33df5",
+      "record": {
+        "action_id": "house:119:2:227",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete2478EHread. It creates an elective direct-at-fund account framework with adult-contact requests/disclosures and qualified postponement of redemption for reasonably suspected exploitation of specified adults. Preserve election gate, reasonable belief rather than proven offense,15businessdays plus conditional10businessdays or government extension, notification exception/reasonable effort, review/deposit/records/procedures/disclosures and SEC1year recommendations report. Written/electronic notifications and generic recordkeeping do not establish a technical/physical/scientific-infrastructure program; whole investor-protection/financial-administration package supports a proposed Infrastructure exclusion. No actual exploitation, incapacity, automatic freeze or realized recovery is asserted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:227",
+            "url": "https://clerk.house.gov/evs/2026/roll227.xml",
+            "raw_sha256": "7e81ace74f03b1150e004219db02fc44fac4dca5bdafd11411f9cef26a0a40ec",
+            "governed_bytes_sha256": "2cd22b5ed2b0220c80b25b70d8e186d9a2cd829b37adecb61850143fd1f48e9e"
+          },
+          {
+            "source_id": "govinfo:hr2478eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2478eh/html/BILLS-119hr2478eh.htm",
+            "raw_sha256": "cac69a7d120d8b7eceddb912a80dfc2ed06c59694c82e8609fd5a4bf46e226fd",
+            "governed_bytes_sha256": "e6e39640bcc4830b0d37bbd95de23a9e9f15e2aadbcd2f4ed5136e329b13b6ee"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2478eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/053b5ee21b77a9fab273c1abf10e56b073ab5827e0f8f654d6e725b8832b96d9.0000000.json",
+                  "sha256": "48c283b2ffe43472971f33aa2a07b4df132b370f6b265f41c5c2ffd459e5f0fa",
+                  "start_character": 0,
+                  "end_character": 9862
+                }
+              ],
+              "utf8_sha256": "053b5ee21b77a9fab273c1abf10e56b073ab5827e0f8f654d6e725b8832b96d9",
+              "total_characters": 9862,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "503556888053508c911b8525465a67445a66071f993e25356b6b03d5f4a181fd",
+      "record": {
+        "action_id": "house:119:2:228",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole7757EHhas112006characters; onlyopening0:1800andclosing111206:112006read. The whole online safety/verification/platform/gaming/AI/privacy/enforcement/preemption package cannot be reduced to the opening table-of-contents labels. Existing qualified Health whole meaning is identified for canonical reuse; full interior/version/material standards/rights/domain review remain pending. General1year effective date has except-as-provided qualification, not a universal deadline. Stopped KIDS/NIST/source chains remain untouched; no mandatory universal verification, proven harm reduction, deployment or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:228",
+            "url": "https://clerk.house.gov/evs/2026/roll228.xml",
+            "raw_sha256": "8ec5bd5969bb9ef0d8e79f6d8ff91d84ec7b33888f284fe8640107709cfd14a9",
+            "governed_bytes_sha256": "2cfcd2f168020057033565daaef87de2b4daeeb47264194523c90fc664bbe904"
+          },
+          {
+            "source_id": "govinfo:hr7757eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7757eh/html/BILLS-119hr7757eh.htm",
+            "raw_sha256": "d02fcf37ee7d229a9b654bfaa32f7d25dacfa08f88c300323daf7a4cda3962f7",
+            "governed_bytes_sha256": "e42cab2047146acf822cb60d30212c5e341630c9d7d1de2cd2fdd6e86eff3ebb"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7757eh",
+            "locator": "Onlyopening0:1800of112006read; wholeinteriorunreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 7757 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 7757 _______________________________________________________________________ AN ACT To protect children and teens online, empower parents and strengthen families, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE; TABLE OF CONTENTS. (a) Short Title.--This Act may be cited as the ``Kids Internet and Digital Safety Act'' or the ``KIDS Act''. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title; table of contents. Sec. 2. Definitions. TITLE I--SHIELDING MINORS FROM OBSCENITY Sec. 101. Short title. Sec. 102. Definitions. Sec. 103. Technology verification measures. Sec. 104. Consultation requirements. Sec. 105. GAO report. TITLE II--ONLINE PLATFORMS Sec. 201. Definitions. Subtitle A--Kids Online Safety Sec. 211. Short title. Sec. 212. Definitions. Sec. 213. Addressing harms to minors. Sec. 214. Safeguards for minors, parental tools, and teen messaging controls. Sec. 215. Reporting mechanism. Sec. 216. Disclosure. Sec. 217. Advertising and marketing information and labels. Sec. 218. Advertising of illegal products to minors. Sec. 219. Audit; report. Sec. 220. Rule of construction on age verification. Sec. 221. Rule of construction on encryption. Subtitle B--Stop Profiling Youth and Kids Sec. 231. Short title. Sec. 232. Know; knows defined. Sec. 233. Market research. Sec. 234. Effective date. TITLE III--SOCIAL GAMING PLATFORMS Sec. 301. Short title. Sec. 302. Definitions. Sec. 303. Safeguards requirements for online video game providers. TITLE IV--ARTIFICIAL INTELLIGENCE CHATB"
+          },
+          {
+            "source_id": "govinfo:hr7757eh",
+            "locator": "Onlyclosing111206:112006read",
+            "passage": "n to minors than the protection provided by the provisions of this title.''. SEC. 705. SEVERABILITY. If any provision of this Act or the application of this Act to any person or circumstance is held to be unconstitutional, the remaining provisions of this Act and the application of this Act to other persons or circumstances shall not be affected. SEC. 706. EFFECTIVE DATE. Except as otherwise provided in this Act, this Act shall take effect on the date that is 1 year after the date of the enactment of this Act. Passed the House of Representatives June 29, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 7757 _______________________________________________________________________ AN ACT To protect children and teens online, empower parents and strengthen families, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:136",
+      "original_source_object_sha256": "1a919f40c367152480483ac009f9c3e2024a8fe0bd73fbe914773eb923b63c4d"
+    },
+    {
+      "source_id": "clerk:119:2:138",
+      "original_source_object_sha256": "653a1b5ed520834877597feb3afa16e791efe5c1e73a51df8f1f7cae13f1e610"
+    },
+    {
+      "source_id": "clerk:119:2:219",
+      "original_source_object_sha256": "1912c387ffe70aaaf1e0b182b4ec9b0001cd53e68e42c186bd8daeba6179c1bd"
+    },
+    {
+      "source_id": "clerk:119:2:220",
+      "original_source_object_sha256": "5c1b4318f485572ddef8f46096b2d5986a4a728fee41c570adc9044f5c817693"
+    },
+    {
+      "source_id": "clerk:119:2:221",
+      "original_source_object_sha256": "f01b06edb0472926104c7f22064a2c8d2c8b49e168153a4f40944984616b8ee2"
+    },
+    {
+      "source_id": "clerk:119:2:222",
+      "original_source_object_sha256": "5e5ac68cf74d342bbe6fc53dd49623117b3a54c6ef475bc673af5bd42c19f261"
+    },
+    {
+      "source_id": "clerk:119:2:223",
+      "original_source_object_sha256": "cc8d6364c90fffcc1ae4e473999d0196e78a8017ca55785d95b5e4f7b98a731e"
+    },
+    {
+      "source_id": "clerk:119:2:224",
+      "original_source_object_sha256": "566d3cd70dda0fb7c55d485e60117846ee3cd600f45709819a3e1acff15bed57"
+    },
+    {
+      "source_id": "clerk:119:2:225",
+      "original_source_object_sha256": "24ff5f8e38573be60ee47b37d1e8ca531ccb0e1378b103043c096459842fb606"
+    },
+    {
+      "source_id": "clerk:119:2:226",
+      "original_source_object_sha256": "34642b3e61c223c711d47c65ca623051312728236da0f8b4402fb8ac4db2e10a"
+    },
+    {
+      "source_id": "clerk:119:2:227",
+      "original_source_object_sha256": "6f622f17450f21dce8f8e7db8b89f93441711af25468bb121ccbfb1b8a214ffc"
+    },
+    {
+      "source_id": "clerk:119:2:228",
+      "original_source_object_sha256": "ddfa74562a360628a350c1b5757c335e6c1ab7e257b95014df042b25093ce8d2"
+    },
+    {
+      "source_id": "govinfo:15usc636-2024-7a-authority",
+      "original_source_object_sha256": "612ca1e749578614c97aa5c75d1c96b96ab0567da6a71d04a9e0f293ef4f6465"
+    },
+    {
+      "source_id": "govinfo:16usc2201-operative162",
+      "original_source_object_sha256": "77ce235d1fb5909391d5a4dc61bf5b1400c2320edf602df7da52061211ece062"
+    },
+    {
+      "source_id": "govinfo:16usc2206-operative162",
+      "original_source_object_sha256": "c3c5ad48e82789217fecb2c5a19224d04ce824f195ad09126b3391c5a5a102b4"
+    },
+    {
+      "source_id": "govinfo:42usc7619-2024-exceptional-events",
+      "original_source_object_sha256": "82d6c8d5dd5975f489e8c7a5e456c8aa247b0f09637ee1ad306676934428affb"
+    },
+    {
+      "source_id": "govinfo:hr2478eh",
+      "original_source_object_sha256": "e7687f218e5b2207c9fa53d219d385a50ea0cfbca05f89143e9b1b4b1d041256"
+    },
+    {
+      "source_id": "govinfo:hr6387eh",
+      "original_source_object_sha256": "ea03c14da2da8b1749206905bca71e85506311de035332eff5d87c97351df6c7"
+    },
+    {
+      "source_id": "govinfo:hr6644eas2",
+      "original_source_object_sha256": "99debdbbfe81e4723c0dc3742f634ff5923090c04f629c609093ff73ebbb6b4b"
+    },
+    {
+      "source_id": "govinfo:hr7401eh",
+      "original_source_object_sha256": "423470d9f1b25daf6f01485eedfbb2394f6c14c5d41a895f2d80e24e29b00ee0"
+    },
+    {
+      "source_id": "govinfo:hr7757eh",
+      "original_source_object_sha256": "0d5727ebc8cefc2c5c685e03dfe03131bc9791764aa31a2248f9052668930a2b"
+    },
+    {
+      "source_id": "govinfo:hr7959eh",
+      "original_source_object_sha256": "2faca38e5e4c5f45f4fa7929f91ebdf0ff8781e1eaf44ac6e49fb61bc38997da"
+    },
+    {
+      "source_id": "govinfo:hr8464eh",
+      "original_source_object_sha256": "b0eb39b9acddef424695f3a60c32b35ed53a5efe905d3c0fc4b1a94675bb14d1"
+    },
+    {
+      "source_id": "govinfo:hr915eh",
+      "original_source_object_sha256": "4ecd365c90edee5b11c8caf5429c1c1e5ee6c3498560f25fd0887b6e0ff4bed9"
+    },
+    {
+      "source_id": "govinfo:hr9238cdh-qualified182",
+      "original_source_object_sha256": "6f2d284c76454611d53e3425162bba96cfac402656a30865bad2c540afdb9ff5"
+    },
+    {
+      "source_id": "govinfo:hres1335eh",
+      "original_source_object_sha256": "d30b76d57c40fe84832fdba9c32e02187285fe310b8b29ecffd395f1b06e5148"
+    },
+    {
+      "source_id": "govinfo:s629es",
+      "original_source_object_sha256": "b49682b292d99c27815fa1f4a9d0d9b21a66190a9b867615fdb8cbdd3b079812"
+    },
+    {
+      "source_id": "immigration:roll221-initial182",
+      "original_source_object_sha256": "4dc0797a1d2a5a641c14625d1c40ad369a065bba086f1febedcf90a1def8a251"
+    },
+    {
+      "source_id": "immigration:roll221-operative182",
+      "original_source_object_sha256": "cda8c086be5b9b9f374dd32a17b4e0d3ed84cb22e4d8cf1930fd7e2e22af18ed"
+    },
+    {
+      "source_id": "immigration:roll221-recorded182",
+      "original_source_object_sha256": "9ed8af1e1d2c6dc5feb4d05fb799f0417f7cf70d59585cd37acf3b51774691b7"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr8464eh",
+      "governed_length": 13676,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:hr9238cdh-qualified182",
+      "governed_length": 1919,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "immigration:roll221-operative182",
+      "governed_length": 1543,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "immigration:roll221-initial182",
+      "governed_length": 524,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "immigration:roll221-recorded182",
+      "governed_length": 850,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:s629es",
+      "governed_length": 3675,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:16usc2201-operative162",
+      "governed_length": 1618,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:16usc2206-operative162",
+      "governed_length": 2077,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:hr7401eh",
+      "governed_length": 2555,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:hr915eh",
+      "governed_length": 2144,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:15usc636-2024-7a-authority",
+      "governed_length": 808,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:hr2478eh",
+      "governed_length": 9862,
+      "review_extent": "Complete retained own bill/offering/choice or declared operative baseline unit read; remaining statute/current application not certified"
+    },
+    {
+      "source_id": "govinfo:hr6644eas2",
+      "governed_length": 377081,
+      "review_extent": "Onlyopening0:1800andclosinglast800read; wholeinteriorunreviewed"
+    },
+    {
+      "source_id": "govinfo:hr7757eh",
+      "governed_length": 112006,
+      "review_extent": "Onlyopening0:1800andclosinglast800read; wholeinteriorunreviewed"
+    },
+    {
+      "source_id": "govinfo:hres1335eh",
+      "governed_length": 9560,
+      "review_extent": "Owncomplete resolvingclause and opening identity only; preamble allegations not independently verified"
+    },
+    {
+      "source_id": "govinfo:42usc7619-2024-exceptional-events",
+      "governed_length": 5357,
+      "review_extent": "Complete retained(a/b)witness previouslyread; independently authenticated actualextent/noKarinote qualification, no newsource"
+    },
+    {
+      "source_id": "govinfo:hr7959eh",
+      "governed_length": 6088,
+      "review_extent": "Owncomplete section4rechecked for report amendment; underlying report cadence not retained"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 2,
+    "newly_screened_meanings_authored": 2,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:219",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:220",
+        "evidence_unit": "complete_own_whole_or_offering_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:221",
+        "evidence_unit": "complete_own_whole_or_offering_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:222",
+        "evidence_unit": "partial_whole_or_resolving_clause",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:223",
+        "evidence_unit": "complete_own_and_declared_baseline_units",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:224",
+        "evidence_unit": "partial_whole_or_resolving_clause",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:225",
+        "evidence_unit": "complete_own_whole_or_offering_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:226",
+        "evidence_unit": "complete_own_and_declared_baseline_units",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:227",
+        "evidence_unit": "complete_own_whole_or_offering_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:228",
+        "evidence_unit": "partial_whole_or_resolving_clause",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": 128,
+    "inherited_focused_test_count": null,
+    "inherited_focused_suite_head": null,
+    "semantic_checks": 7,
+    "compiled_sha256": "13e92b1674b214e49c56a6c370584798bda9a50d9131fc75eba879bf8941a4d7"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/authoring.json",
+      "git_blob": "5557b36ff9e8feedeea5663c8882ab2c5d498d70",
+      "git_bytes_sha256": "b0c8bfcb6d5b9176f4aee20a67efb21b71e24e2062532b4fa55a09f583d8a572"
+    },
+    "actions": [
+      {
+        "original_action_sha256": "87abbe72121fdea71d89ae6877ffc83cbc94949301687d2b8f0fb045c842e96d",
+        "action": {
+          "source_id": "govinfo:s629es",
+          "bill_type": "s",
+          "bill_number": 629,
+          "stage": "suspension_and_passage",
+          "episode_id": "episode:s629:119",
+          "short_description": "Changing conservation restoration advances and wildfire categories",
+          "compact_description": "S.629 would broaden qualified conservation advances:75percent of replacement cost and50percent of repair/restoration cost, with a180day unspent predicate. A separate forest advance is capped at75percent of cost; the existing total assistance cap remains. Federal-caused fire is separately listed. Whole-program Infrastructure membership remains unaccepted.",
+          "compact_source_refs": [
+            "govinfo:s629es",
+            "govinfo:16usc2201-operative162",
+            "govinfo:16usc2206-operative162"
+          ],
+          "additional_source_ids": [
+            "govinfo:16usc2201-operative162",
+            "govinfo:16usc2206-operative162"
+          ],
+          "meaning": "The House passed the motion to suspend the rules and pass S.629 in the retained Senate-engrossed version. That chamber action does not itself enact the bill or deliver assistance. The whole choice amends the existing emergency conservation and private-forest restoration programs, not a new general disaster entitlement.\nFor emergency conservation, the existing2201(a) predicates remain: qualifying emergency erosion control or disaster-damaged farmland rehabilitation, new conservation problems that threaten land, materially affect productive capacity, are unusual/nonfrequent subject to the wind-erosion distinction, and are sufficiently costly to require Federal assistance. The bill extends the existing fencing advance option to other emergency measures to replace or restore farmland or conservation structures requiring an immediate response as determined by the Secretary. Before the work, the Secretary shall give the producer the option of receiving75percent of replacement COST or50percent of repair/restoration COST, each as determined by the Secretary. These are the printed percentages of COST, not caps expressed as percentages of payment and not the earlier H.R.1011 wording. The existing unspent-funds predicate changes from60days to180days after receipt; return remains within a reasonable timeframe determined by the Secretary, not necessarily on day180 itself.\nNew2201(c) lists two wildfire categories: a nonnatural wildfire IF damage is caused by its spread due to natural causes, AND a separately listed Federal-caused wildfire. The natural-spread condition is printed in the first item, not imposed on the separate Federal-caused item. This does not establish actual Federal fault, automatically approve a claimant, or erase subsection(a)'s remaining predicates. The2206(a)(2) definition similarly includes nonnatural fire with the natural-spread damage condition and Federal-caused wildfire as distinct included categories, within the existing natural-disaster definition.\nFor emergency forest restoration, the Secretary shall give the eligible nonindustrial private forest owner an option before emergency measures of receiving NOT MORE THAN75percent of their COST, determined by the Secretary. This advance cap is separate from the retained75percent total-cost assistance cap in2206(d). Rural/private land and tree-cover predicates, Secretary determinations and the existing discretionary payment authority remain; the bill does not guarantee every owner assistance. Unspent advance funds after180days from receipt must be returned within a reasonable Secretary-determined timeframe. The existing such-sums authorization is redesignated, with no fixed new appropriation supplied by this bill. Individual eligibility, State technical standards, funding availability and current consolidated implementation are not certified.\nA Yea supports this whole suspension/passage choice; a Nay opposes it without identifying a preferred component or alternative. Infrastructure/Technology membership is an UNACCEPTED candidate proposal based on physical farmland/conservation-structure and forest rehabilitation, coupled with qualified advance assistance. A competing boundary treats the whole package as private agricultural/forestry disaster assistance. Independent whole-version, baseline and taxonomy review is required. No realized restoration, payment, environmental benefit, motive or enactment is inferred.",
+          "limitations": [
+            "Distinct S.629 wording: ECP exact75/50percent of COST, not H.R.1011 payment-base caps.",
+            "180day unspent predicate and reasonable Secretary return timeframe are distinct; remaining farmland eligibility persists.",
+            "Nonnatural natural-spread category and separately listed Federal-caused category are not collapsed; no actual fault or automatic approval.",
+            "Forest advance cap and existing75percent total-cost cap are separate; rural/private/tree-cover eligibility retained.",
+            "No fixed new appropriation, individual eligibility, technical-standard implementation or realized outcome certified.",
+            "Whole physical rehabilitation versus agricultural/forestry assistance taxonomy remains unaccepted."
+          ],
+          "choice_meanings": {
+            "Yea": "supported suspending the rules and passing S.629 in this exact form",
+            "Nay": "opposed suspending the rules and passing S.629 in this exact form"
+          },
+          "action_id": "house:119:2:223",
+          "claim_source_map": [
+            {
+              "source_id": "govinfo:s629es",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S. 629 Engrossed in Senate (ES)] <DOC> 119th CONGRESS 2d Session S. 629 _______________________________________________________________________ AN ACT To amend the Agricultural Credit Act of 1978 to remove barriers to agricultural producers in accessing funds to carry out emergency measures under the emergency conservation program, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Emergency Conservation Program Improvement Act of 2025''. SEC. 2. IMPROVING THE EMERGENCY CONSERVATION PROGRAM. Section 401 of the Agricultural Credit Act of 1978 (16 U.S.C. 2201) is amended-- (1) in subsection (b)-- (A) in the subsection heading, by inserting ``and Other Emergency Conservation Measures'' after ``Fencing''; (B) in paragraph (1)-- (i) by inserting ``or for other emergency measures to replace or restore farmland or conservation structures requiring an immediate response (as determined by the Secretary),'' after ``replacement of fencing,''; and (ii) by striking ``option of receiving'' and all that follows through the period at the end and inserting the following: ``option of receiving, before the agricultural producer carries out the repair, replacement, or restoration-- ``(A) with respect to a payment to the agricultural producer for a replacement, 75 percent of the cost of the replacement, as determined by the Secretary; and ``(B) with respect to a payment to the agricultural producer for a repair or restoration, 50 percent of the cost of the repair or restoration, as determined by the Secretary.''; and (C) in paragraph (2), by striking ``60-day'' and inserting ``180-day''; and (2) by adding at the end the following: ``(c) Wildfire Determination.--A wildfire that causes damage eligible for a payment under subsection (a) includes-- ``(1) a wildfire that is not caused naturally, if the damage is caused by the spread of the wildfire due to natural causes; and ``(2) a wildfire that is caused by the Federal Government.''. SEC. 3. IMPROVING THE EMERGENCY FOREST RESTORATION PROGRAM. Section 407 of the Agricultural Credit Act of 1978 (16 U.S.C. 2206) is amended-- (1) in subsection (a)(2), by striking ``wildfires,'' and inserting ``wildfires (including a wildfire that is not caused naturally, if the damage is caused by the spread of the wildfire due to natural causes, and a wildfire that is caused by the Federal Government),''; (2) by redesignating subsection (e) as subsection (f); and (3) by inserting after subsection (d) the following: ``(e) Advance Payments.-- ``(1) In general.--The Secretary shall give an owner of nonindustrial private forest land the option of receiving, before the owner carries out emergency measures under this section, not more than 75 percent of the cost of the emergency measures, as determined by the Secretary. ``(2) Return of funds.--If the funds provided under paragraph (1) are not expended by the end of the 180-day period beginning on the date on which the owner of nonindustrial private forest land receives those funds, the funds shall be returned within a reasonable timeframe, as determined by the Secretary.''. Passed the Senate March 24, 2026. Attest: Secretary. 119th CONGRESS 2d Session S. 629 _______________________________________________________________________ AN ACT To amend the Agricultural Credit Act of 1978 to remove barriers to agricultural producers in accessing funds to carry out emergency measures under the emergency conservation program, and for other purposes."
+            },
+            {
+              "source_id": "govinfo:16usc2201-operative162",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "§2201. Emergency conservation program (a) In general The Secretary of Agriculture (referred to in this chapter as the \"Secretary\") is authorized to make payments to agricultural producers who carry out emergency measures to control wind erosion on farmlands or to rehabilitate farmlands damaged by wind erosion, floods, hurricanes, wildfires, or other natural disasters when, as a result of the foregoing, new conservation problems have been created that (1) if not treated, will impair or endanger the land, (2) materially affect the productive capacity of the land, (3) represent damage that is unusual in character and, except for wind erosion, is not the type that would recur frequently in the same area, and (4) will be so costly to rehabilitate that Federal assistance is or will be required to return the land to productive agricultural use. (b) Repair or replacement of fencing (1) In general With respect to a payment to an agricultural producer under subsection (a) for the repair or replacement of fencing, the Secretary shall give the agricultural producer the option of receiving not more than 25 percent of the payment, determined by the Secretary based on the applicable percentage of the fair market value of the cost of the repair or replacement, before the agricultural producer carries out the repair or replacement. (2) Return of funds If the funds provided under paragraph (1) are not expended by the end of the 60-day period beginning on the date on which the agricultural producer receives those funds, the funds shall be returned within a reasonable timeframe, as determined by the Secretary. "
+            },
+            {
+              "source_id": "govinfo:16usc2206-operative162",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "§2206. Emergency forest restoration program (a) Definitions In this section: (1) Emergency measures The term \"emergency measures\" means those measures that— (A) are necessary to address damage caused by a natural disaster to natural resources on nonindustrial private forest land, and the damage, if not treated— (i) would impair or endanger the natural resources on the land; and (ii) would materially affect future use of the land; and (B) would restore forest health and forest-related resources on the land. (2) Natural disaster The term \"natural disaster\" includes wildfires, hurricanes or excessive winds, drought, ice storms or blizzards, floods, or other resource-impacting events, as determined by the Secretary. (3) Nonindustrial private forest land The term \"nonindustrial private forest land\" means rural land, as determined by the Secretary, that— (A) has existing tree cover (or had tree cover immediately before the natural disaster and is suitable for growing trees); and (B) is owned by any nonindustrial private individual, group, association, corporation, or other private legal entity, that has definitive decision-making authority over the land. (b) Availability of assistance The Secretary may make payments to an owner of nonindustrial private forest land who carries out emergency measures to restore the land after the land is damaged by a natural disaster. (c) Eligibility To be eligible to receive a payment under subsection (b), an owner must demonstrate to the satisfaction of the Secretary that the nonindustrial private forest land on which the emergency measures are carried out had tree cover immediately before the natural disaster. (d) Cost share requirement Payments made under subsection (b) shall not exceed 75 percent of the total cost of the emergency measures carried out by an owner of nonindustrial private forest land. (e) Authorization of appropriations There are authorized to be appropriated to the Secretary such funds as may be necessary to carry out this section. Amounts so appropriated shall remain available until expended. "
+            }
+          ]
+        }
+      },
+      {
+        "original_action_sha256": "472ac651d5cc67474edc6f4ac9ac2c47a246af1e8ddebe81ee8ee4ba3c6dab36",
+        "action": {
+          "source_id": "govinfo:hr915eh",
+          "bill_type": "hr",
+          "bill_number": 915,
+          "stage": "suspension_and_passage",
+          "episode_id": "episode:hr915:119",
+          "short_description": "Clarifying business loans for software, cloud services and AI tools",
+          "compact_description": "The bill would expressly permit discretionary7(a) loans for specified business software/cloud/technology uses, including AI tools. It does not imply earlier loans were forbidden, authorize R&D use or narrow working capital. It supplies no fixed appropriation or automatic loan approval. Whole credit-versus-technology membership remains unaccepted.",
+          "compact_source_refs": [
+            "govinfo:hr915eh",
+            "govinfo:15usc636-2024-7a-authority"
+          ],
+          "additional_source_ids": [
+            "govinfo:15usc636-2024-7a-authority"
+          ],
+          "meaning": "The House passed suspension and H.R.915 as amended in the retained House-engrossed version. That vote does not itself enact the bill, approve a loan or require software adoption. The whole bill adds paragraph38to the existing7(a) business-loan authority, with three express construction limits.\nThe Administration MAY provide loans under7(a), in whole or in part, for business software, cloud computing services or such technology facilitating business operations, product/service delivery, payroll processing/payment/tracking, human resources, sales/billing, or accounting/tracking supplies, inventory, records and expenses. Included business tools may utilize artificial intelligence. It is discretionary loan authority, not an AI grant, compulsory purchase or automatic approval for every business.\nThe bill expressly does NOT imply that pre-enactment7(a) loans for these purposes were impermissible. It does NOT authorize research-and-development use and does NOT limit the definition of working capital. Existing allowable uses are clarified; this is not proof that all listed software financing was previously prohibited. The retained636(a) opening already empowers loans for qualified small businesses, including working capital, to the extent and amounts provided in advance in appropriation Acts, directly or through participating financial institutions. That opening does not establish the remainder of7(a)'s restrictions, individual eligibility, current guarantee terms, rates or caps; none is newly invented here. The separately retained636(b) disaster-loan unit is not the operative7(a) baseline and is not used to impose disaster predicates on these loans. No fixed new appropriation or loan amount is supplied by H.R.915.\nA Yea supports this whole software/cloud/technology loan-use clarification with all three construction limits; a Nay opposes it without a component-specific position. Infrastructure/Technology membership is an UNACCEPTED candidate proposal based on explicit business software/cloud/AI access within the whole loan-use bill. A competing boundary treats the package as ordinary small-business credit policy. Independent baseline, whole-version and taxonomy review is required. No actual loan, adoption, improved productivity, AI safety result, motive or enactment is inferred.",
+          "limitations": [
+            "Discretionary7(a) loan-use clarification, not an AI grant, mandate or automatic approval.",
+            "Three construction limits preserve prior permissibility, do not authorize R&D and do not narrow working capital.",
+            "Only636(a) opening retained; remaining restrictions/current eligibility/guarantee terms/rates/caps not certified.",
+            "636(b) disaster predicates are not imported into7(a).",
+            "No fixed new appropriation, individual loan, adoption or realized benefit; whole credit-versus-technology taxonomy unaccepted."
+          ],
+          "choice_meanings": {
+            "Yea": "supported suspending the rules and passing H.R.915 as amended in this exact form",
+            "Nay": "opposed suspending the rules and passing H.R.915 as amended in this exact form"
+          },
+          "action_id": "house:119:2:226",
+          "claim_source_map": [
+            {
+              "source_id": "govinfo:hr915eh",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 915 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 915 _______________________________________________________________________ AN ACT To authorize small business loans to finance access to modern business software, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Small Business Technological Advancement Act''. SEC. 2. ADDITIONAL USES FOR SMALL BUSINESS ADMINISTRATION BUSINESS LOANS. (a) In General.--Section 7(a) of the Small Business Act (15 U.S.C. 636(a)) is amended by adding at the end the following: ``(38) Access to modern business software.--The Administration may provide loans under this subsection to finance, in whole or in part, business software or cloud computing services, or any such technology, that facilitates business operations, product or service delivery, the processing, payment, or tracking of payroll expenses, human resources, sales and billing functions, or accounting or tracking of supplies, inventory, records and expenses, including business tools that utilize artificial intelligence.''. (b) Rule of Construction.--Nothing in the amendment made by subsection (a) shall be construed to-- (1) provide that loans made under section 7(a) of the Small Business Act (15 U.S.C. 636(a)) before the date of enactment of this Act for the purposes described in paragraph (38) of such section 7(a), as added by subsection (a), were not permissible; (2) authorize the use of loans made under section 7(a) of the Small Business Act (15 U.S.C. 636(a)) for research and development purposes; or (3) limit the definition of working capital under the Small Business Act (15 U.S.C. 631 et seq.). Passed the House of Representatives June 24, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 915 _______________________________________________________________________ AN ACT To authorize small business loans to finance access to modern business software, and for other purposes."
+            },
+            {
+              "source_id": "govinfo:15usc636-2024-7a-authority",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "(a) Loans to small business concerns; allowable purposes; qualified business; restrictions and limitations The Administration is empowered to the extent and in such amounts as provided in advance in appropriation Acts to make loans for plant acquisition, construction, conversion, or expansion, including the acquisition of land, material, supplies, equipment, and working capital, and to make loans to any qualified small business concern, including those owned by qualified Indian tribes, for purposes of this chapter. Such financings may be made either directly or in cooperation with banks or other financial institutions through agreements to participate on an immediate or deferred (guaranteed) basis. These powers shall be subject, however, to the following restrictions, limitations, and provisions: "
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "original_bounded_correction_receipt": {
+    "original_receipt_sha256": "62268230886d2d24e36908246727b26d1985f7a298d1708144db8ebb4741105f",
+    "committed_provenance": {
+      "head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/historical86_90_disclosure_corrections_receipt.json",
+      "git_blob": "304bb380110be279fbac3b97caf18ae4d7647930",
+      "git_bytes_sha256": "590a31bfd100bff4713b73c9e7beddea45cee20f812c22c2195fc5a7adf0363e"
+    },
+    "receipt": {
+      "kind": "append_only_historical86_90_disclosure_corrections",
+      "base_head": "c1902529729df96fbd0095d6114f140909017d8d",
+      "reviewed_historical_head": "c83babd6dec4af0be87befa87d8b763816e85479",
+      "authority": "Controller-relayed bounded independent review; no acceptance or current-law clearance.",
+      "qualification": "ACTIVE PROVENANCE QUALIFICATION: Retained witness contains42USC7619(a) AND(b), through(b)(4), and NO Kari-law applicability note. Historical text_version metadata is preserved but its subsection(a)/Kari-note extent label is inaccurate. No current-law applicability or legislative meaning is changed.",
+      "source_objects": {
+        "govinfo:42usc7619-2024-exceptional-events": {
+          "source_object_sha256": "82d6c8d5dd5975f489e8c7a5e456c8aa247b0f09637ee1ad306676934428affb",
+          "raw_sha256": "91ed1ea2b2ce2a24e819254efa2f780596773f16ba7c19ec9cbed212514db875",
+          "governed_bytes_sha256": "721297c45ec9f7878224aa9114f670a8ff691d9c5733ab2ef3f8866b9c11e349",
+          "historical_text_version": "2024 Code; operative section or subsection(a), Kari law applicability note retained"
+        },
+        "govinfo:hr7959eh": {
+          "source_object_sha256": "2faca38e5e4c5f45f4fa7929f91ebdf0ff8781e1eaf44ac6e49fb61bc38997da",
+          "raw_sha256": "e5120c7d265230349d78230ebc78e639b409ccf24665780d133925b62f7aa52a",
+          "governed_bytes_sha256": "0f4266845f0bf7c420ed6666df9e3d0d82da81ba027d04dc806739ca69084f2f",
+          "historical_text_version": "EH"
+        }
+      },
+      "corrections": [
+        {
+          "action_id": "house:119:2:136",
+          "before_action": {
+            "source_id": "govinfo:hr6387eh",
+            "bill_type": "hr",
+            "bill_number": 6387,
+            "stage": "final_passage",
+            "episode_id": "episode:hr6387:119",
+            "short_description": "Changing air-quality data exceptions, modeling and petition reporting",
+            "compact_description": "The bill would change exceptional-event and wildfire-mitigation data rules, require regional modeling under alternative triggers, and add a public petition-status website. Distinct proposed-rule/final-rule/website clocks and retained public-health/data duties remain. Whole-measure Infrastructure membership is unaccepted.",
+            "compact_source_refs": [
+              "govinfo:hr6387eh",
+              "govinfo:42usc7619-2024-exceptional-events"
+            ],
+            "additional_source_ids": [
+              "govinfo:42usc7619-2024-exceptional-events"
+            ],
+            "meaning": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/84779700865329697b42319423289d23328894349e5d4c9991c44bf8e8b8c2eb.0000000.json",
+                  "sha256": "9595d76ab6c93ace07da4b85251326b0e88c8a2c75c8cceedaedff649a2cb0a6",
+                  "start_character": 0,
+                  "end_character": 4975
+                }
+              ],
+              "utf8_sha256": "84779700865329697b42319423289d23328894349e5d4c9991c44bf8e8b8c2eb",
+              "total_characters": 4975,
+              "transport_only": true
+            },
+            "limitations": [
+              "Whole bill includes changed definitions, regulatory data uses and interim-clause deletion; no automatic exceptional-event or petition finding.",
+              "Air-quality effect, not-reasonably-controllable/preventable and Administrator-determination limbs remain; wildfire-mitigation definition separately requires State-approved practices.",
+              "Proposed18month/final1yearafterproposal/website12monththenmonthly clocks and alternative regional triggers remain distinct.",
+              "Specified regulatory data-use exclusions do not erase the record or public-access/health-protection duties.",
+              "Underlying1986/1996guidance, CFRappendices, current implementation and individual Statepractices not inspected; no current-law/project certificate or measured result.",
+              "Scientific data/modeling/reporting versus broader environmental-policy taxonomy remains unaccepted; NotVoting is nondirectional."
+            ],
+            "choice_meanings": {
+              "Yea": "supported passing H.R.6387 in this exact form",
+              "Nay": "opposed passing H.R.6387 in this exact form"
+            },
+            "action_id": "house:119:2:136",
+            "claim_source_map": [
+              {
+                "source_id": "govinfo:hr6387eh",
+                "locator": "Exact identified governed version/operative extent; qualifications retained",
+                "passage": {
+                  "$lossless_text_parts": [
+                    {
+                      "path": "source_parts/74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9.0000000.json",
+                      "sha256": "48d58e2270180f84174f21388a51a1677c0ec945e03e1b30ff1b918167ac4e42",
+                      "start_character": 0,
+                      "end_character": 5900
+                    }
+                  ],
+                  "utf8_sha256": "74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9",
+                  "total_characters": 5900,
+                  "transport_only": true
+                }
+              },
+              {
+                "source_id": "govinfo:42usc7619-2024-exceptional-events",
+                "locator": "Exact identified governed version/operative extent; qualifications retained",
+                "passage": {
+                  "$lossless_text_parts": [
+                    {
+                      "path": "source_parts/19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e.0000000.json",
+                      "sha256": "f903cf629752d5772e9a5e8e0de0ceaafa78fbdf90032c9d00f46a568689cd98",
+                      "start_character": 0,
+                      "end_character": 5357
+                    }
+                  ],
+                  "utf8_sha256": "19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e",
+                  "total_characters": 5357,
+                  "transport_only": true
+                }
+              }
+            ]
+          },
+          "before_record": {
+            "action_id": "house:119:2:136",
+            "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+            "review_state": "candidate_pending_external_semantic_review",
+            "disposition": "interpreted_substantive_directional",
+            "rationale": "Complete6387EH and complete retained7619unit support an unaccepted whole scientific monitoring/modeling/public-status candidate. Preserve other exceptional-event limbs, separate State-approved wildfire-mitigation definition, changed exclusion list and existing public-health/data duties, causal-or-reasonably-expected link, alternative regional triggers, distinct18monthproposal/1yearafterproposal-final/12monthwebsite-monthly clocks, expanded specified data-use petitions and exact interim-clause deletion. Referenced old guidance/appendices/current rules/Statepractices remain uninspected, not certified repealed or currently enforceable. Nonparticipation observations remain nondirectional in the separate member-projection layer. Whole environmental-policy versus scientific-data Infrastructure taxonomy requires independent review.",
+            "substantive_review_performed": true,
+            "exact_action_binding_unresolved": false,
+            "required_evidence_unavailable": false,
+            "authoritative_source_conflict": false,
+            "sources": [
+              {
+                "source_id": "clerk:119:2:136",
+                "url": "https://clerk.house.gov/evs/2026/roll136.xml",
+                "raw_sha256": "8b39431dccc319aef3bbe39d9e457fa5fbb69e750e3bc714d11274b78d0c588a",
+                "governed_bytes_sha256": "27256bb693d17d587e3ecaf14e213e0c2d89bf371f36394ea247bef50a297ab4"
+              },
+              {
+                "source_id": "govinfo:hr6387eh",
+                "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6387eh/html/BILLS-119hr6387eh.htm",
+                "raw_sha256": "a362056d6c4021e0b3d27353ccec22c4445005268710c6247705bc24f00d4ae7",
+                "governed_bytes_sha256": "1008d75be3fa011de346a9d2e94be0315df5afdeaab56dd60c9ce555495c11c2"
+              },
+              {
+                "source_id": "govinfo:42usc7619-2024-exceptional-events",
+                "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapIII-sec7619.htm",
+                "raw_sha256": "91ed1ea2b2ce2a24e819254efa2f780596773f16ba7c19ec9cbed212514db875",
+                "governed_bytes_sha256": "721297c45ec9f7878224aa9114f670a8ff691d9c5733ab2ef3f8866b9c11e349"
+              }
+            ],
+            "claim_source_map": [
+              {
+                "source_id": "govinfo:hr6387eh",
+                "locator": "Exact identified governed version/operative extent; qualifications retained",
+                "passage": {
+                  "$lossless_text_parts": [
+                    {
+                      "path": "source_parts/74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9.0000000.json",
+                      "sha256": "48d58e2270180f84174f21388a51a1677c0ec945e03e1b30ff1b918167ac4e42",
+                      "start_character": 0,
+                      "end_character": 5900
+                    }
+                  ],
+                  "utf8_sha256": "74afb81dec0b96b7957fc146df0ff2f19f6d588a9d414d0d4541b86b6c0b31b9",
+                  "total_characters": 5900,
+                  "transport_only": true
+                }
+              },
+              {
+                "source_id": "govinfo:42usc7619-2024-exceptional-events",
+                "locator": "Exact identified governed version/operative extent; qualifications retained",
+                "passage": {
+                  "$lossless_text_parts": [
+                    {
+                      "path": "source_parts/19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e.0000000.json",
+                      "sha256": "f903cf629752d5772e9a5e8e0de0ceaafa78fbdf90032c9d00f46a568689cd98",
+                      "start_character": 0,
+                      "end_character": 5357
+                    }
+                  ],
+                  "utf8_sha256": "19f0aee4ccc520c119dc5a7dbbcaf4b66a4073e5fde20afb2eb29dd1b313824e",
+                  "total_characters": 5357,
+                  "transport_only": true
+                }
+              }
+            ],
+            "episode_candidate_id": "episode:hr6387:119"
+          },
+          "before_universe_row": {
+            "action_id": "house:119:2:136",
+            "session": 2,
+            "roll": 136,
+            "date": "2026-04-22",
+            "measure": "bill_119_hr_6387",
+            "question": "On Passage",
+            "disposition": "interpreted_substantive_directional",
+            "reason": "Complete6387EH and complete retained7619unit support an unaccepted whole scientific monitoring/modeling/public-status candidate. Preserve other exceptional-event limbs, separate State-approved wildfire-mitigation definition, changed exclusion list and existing public-health/data duties, causal-or-reasonably-expected link, alternative regional triggers, distinct18monthproposal/1yearafterproposal-final/12monthwebsite-monthly clocks, expanded specified data-use petitions and exact interim-clause deletion. Referenced old guidance/appendices/current rules/Statepractices remain uninspected, not certified repealed or currently enforceable. Nonparticipation observations remain nondirectional in the separate member-projection layer. Whole environmental-policy versus scientific-data Infrastructure taxonomy requires independent review.",
+            "source": {
+              "source_id": "clerk:119:2:136",
+              "url": "https://clerk.house.gov/evs/2026/roll136.xml",
+              "raw_sha256": "8b39431dccc319aef3bbe39d9e457fa5fbb69e750e3bc714d11274b78d0c588a",
+              "governed_bytes_sha256": "27256bb693d17d587e3ecaf14e213e0c2d89bf371f36394ea247bef50a297ab4",
+              "verification": "recaptured_official_source"
+            },
+            "episode_candidate_id": "episode:hr6387:119",
+            "after_historical_july23_boundary": false,
+            "bill_ref": "bill_119_hr_6387",
+            "member_action": "not_voting",
+            "house_action_stage": "On Passage",
+            "official_policy_area": null,
+            "recall_reasons": [
+              "complete_official_roll_discovery"
+            ],
+            "issue_boundary_status": "interpreted_substantive_directional",
+            "rationale": "Complete6387EH and complete retained7619unit support an unaccepted whole scientific monitoring/modeling/public-status candidate. Preserve other exceptional-event limbs, separate State-approved wildfire-mitigation definition, changed exclusion list and existing public-health/data duties, causal-or-reasonably-expected link, alternative regional triggers, distinct18monthproposal/1yearafterproposal-final/12monthwebsite-monthly clocks, expanded specified data-use petitions and exact interim-clause deletion. Referenced old guidance/appendices/current rules/Statepractices remain uninspected, not certified repealed or currently enforceable. Nonparticipation observations remain nondirectional in the separate member-projection layer. Whole environmental-policy versus scientific-data Infrastructure taxonomy requires independent review.",
+            "unresolved_reason": null,
+            "sources": [
+              {
+                "source_id": "clerk:119:2:136",
+                "url": "https://clerk.house.gov/evs/2026/roll136.xml",
+                "raw_sha256": "8b39431dccc319aef3bbe39d9e457fa5fbb69e750e3bc714d11274b78d0c588a",
+                "governed_bytes_sha256": "27256bb693d17d587e3ecaf14e213e0c2d89bf371f36394ea247bef50a297ab4"
+              },
+              {
+                "source_id": "govinfo:hr6387eh",
+                "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6387eh/html/BILLS-119hr6387eh.htm",
+                "raw_sha256": "a362056d6c4021e0b3d27353ccec22c4445005268710c6247705bc24f00d4ae7",
+                "governed_bytes_sha256": "1008d75be3fa011de346a9d2e94be0315df5afdeaab56dd60c9ce555495c11c2"
+              },
+              {
+                "source_id": "govinfo:42usc7619-2024-exceptional-events",
+                "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapIII-sec7619.htm",
+                "raw_sha256": "91ed1ea2b2ce2a24e819254efa2f780596773f16ba7c19ec9cbed212514db875",
+                "governed_bytes_sha256": "721297c45ec9f7878224aa9114f670a8ff691d9c5733ab2ef3f8866b9c11e349"
+              }
+            ],
+            "exact_action_source_binding": {
+              "action_id": "house:119:2:136",
+              "source_ids": [
+                "clerk:119:2:136",
+                "govinfo:hr6387eh",
+                "govinfo:42usc7619-2024-exceptional-events"
+              ],
+              "membership_review_ref": "membership_review.json#action_id=house:119:2:136",
+              "review_state": "candidate_pending_external_semantic_review",
+              "complete": true
+            },
+            "public_action_sha256": null,
+            "review_progress": {
+              "substantive_review_performed": true,
+              "exact_action_binding_unresolved": false,
+              "required_evidence_unavailable": false,
+              "authoritative_source_conflict": false,
+              "shared_review_record_sha256": "f8fcf14a02cfddfe43d5bca58cb7886f51b49438b25177a1b690891febabf68b"
+            },
+            "historical_clerk_source_identity": {
+              "source_id": "clerk:119:2:136",
+              "url": "https://clerk.house.gov/evs/2026/roll136.xml",
+              "raw_sha256": "49d74baf5f1eb60057c492f0d27666baed5799786113ea7676671e147a0e38b1",
+              "verification": "historical_source_identity_not_recaptured_this_increment"
+            }
+          },
+          "after_action_sha256": "b805231db55b78d516195be290c4ae25c37febc17cbbe329e0fa952f08af860f",
+          "after_record_sha256": "b7a410383396bf0c8458b1a106a981746337fbd8d43f1bda2774f3d656e9abd6",
+          "after_universe_row_sha256": "719fa81cc9c787223d582c1147f7f916d3d2c78833887715700a2504401654f9"
+        },
+        {
+          "action_id": "house:119:2:138",
+          "before_action": null,
+          "before_record": {
+            "action_id": "house:119:2:138",
+            "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+            "review_state": "candidate_pending_external_semantic_review",
+            "disposition": "exact_action_ineligible",
+            "rationale": "Complete7959EHchanges IRSwhistleblower award TaxCourtreview(de novo with original record plus newly discovered/previously unavailable evidence), elective anonymity with court societal-interest-versus-harm exception, annual report including at most10taxavoidance schemes, qualified interest and attorney-fee deduction reference. Interest requires missing preliminary-award notice past a12monthdate after both collected proceeds AND refund-period/finality conditions, stops accruing on notice, and has180dayeffective plus special transition/12month rule. Other petition/report/taxyear effective dates remain separate. This whole tax-award/judicial/privacy/reporting package establishes no scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Anonymity is not an unconditional guarantee, generic reporting is not a technology mandate, and no individual tax offense, award, interest amount, payment or corruption/motive finding is inferred.",
+            "substantive_review_performed": true,
+            "exact_action_binding_unresolved": false,
+            "required_evidence_unavailable": false,
+            "authoritative_source_conflict": false,
+            "sources": [
+              {
+                "source_id": "clerk:119:2:138",
+                "url": "https://clerk.house.gov/evs/2026/roll138.xml",
+                "raw_sha256": "5e2112a45af804131f748f043c4b8b1cab5ebbd0a7fe69345ef9e2cfd63fa260",
+                "governed_bytes_sha256": "d359b2450b867930ac5dd7cc6e1ce6d3c8a1a581bac1a365472b395eb28d813a"
+              },
+              {
+                "source_id": "govinfo:hr7959eh",
+                "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7959eh/html/BILLS-119hr7959eh.htm",
+                "raw_sha256": "e5120c7d265230349d78230ebc78e639b409ccf24665780d133925b62f7aa52a",
+                "governed_bytes_sha256": "0f4266845f0bf7c420ed6666df9e3d0d82da81ba027d04dc806739ca69084f2f"
+              }
+            ],
+            "claim_source_map": [
+              {
+                "source_id": "govinfo:hr7959eh",
+                "locator": "Exact identified governed version/operative extent; qualifications retained",
+                "passage": {
+                  "$lossless_text_parts": [
+                    {
+                      "path": "source_parts/500d0d04168ebdb574195f59cfcda36b013865c4d63a6056923221d4e6fcc579.0000000.json",
+                      "sha256": "e647b31412520eb584e675eb3bc054af68dc4989b4cd1d89adc1d68f1d1f9f16",
+                      "start_character": 0,
+                      "end_character": 6088
+                    }
+                  ],
+                  "utf8_sha256": "500d0d04168ebdb574195f59cfcda36b013865c4d63a6056923221d4e6fcc579",
+                  "total_characters": 6088,
+                  "transport_only": true
+                }
+              }
+            ],
+            "episode_candidate_id": null
+          },
+          "before_universe_row": {
+            "action_id": "house:119:2:138",
+            "session": 2,
+            "roll": 138,
+            "date": "2026-04-27",
+            "measure": "bill_119_hr_7959",
+            "question": "On Motion to Suspend the Rules and Pass, as Amended",
+            "disposition": "exact_action_ineligible",
+            "reason": "Complete7959EHchanges IRSwhistleblower award TaxCourtreview(de novo with original record plus newly discovered/previously unavailable evidence), elective anonymity with court societal-interest-versus-harm exception, annual report including at most10taxavoidance schemes, qualified interest and attorney-fee deduction reference. Interest requires missing preliminary-award notice past a12monthdate after both collected proceeds AND refund-period/finality conditions, stops accruing on notice, and has180dayeffective plus special transition/12month rule. Other petition/report/taxyear effective dates remain separate. This whole tax-award/judicial/privacy/reporting package establishes no scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Anonymity is not an unconditional guarantee, generic reporting is not a technology mandate, and no individual tax offense, award, interest amount, payment or corruption/motive finding is inferred.",
+            "source": {
+              "source_id": "clerk:119:2:138",
+              "url": "https://clerk.house.gov/evs/2026/roll138.xml",
+              "raw_sha256": "5e2112a45af804131f748f043c4b8b1cab5ebbd0a7fe69345ef9e2cfd63fa260",
+              "governed_bytes_sha256": "d359b2450b867930ac5dd7cc6e1ce6d3c8a1a581bac1a365472b395eb28d813a",
+              "verification": "recaptured_official_source"
+            },
+            "episode_candidate_id": null,
+            "after_historical_july23_boundary": false,
+            "bill_ref": "bill_119_hr_7959",
+            "member_action": "yea",
+            "house_action_stage": "On Motion to Suspend the Rules and Pass, as Amended",
+            "official_policy_area": null,
+            "recall_reasons": [
+              "complete_official_roll_discovery"
+            ],
+            "issue_boundary_status": "exact_action_ineligible",
+            "rationale": "Complete7959EHchanges IRSwhistleblower award TaxCourtreview(de novo with original record plus newly discovered/previously unavailable evidence), elective anonymity with court societal-interest-versus-harm exception, annual report including at most10taxavoidance schemes, qualified interest and attorney-fee deduction reference. Interest requires missing preliminary-award notice past a12monthdate after both collected proceeds AND refund-period/finality conditions, stops accruing on notice, and has180dayeffective plus special transition/12month rule. Other petition/report/taxyear effective dates remain separate. This whole tax-award/judicial/privacy/reporting package establishes no scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. Anonymity is not an unconditional guarantee, generic reporting is not a technology mandate, and no individual tax offense, award, interest amount, payment or corruption/motive finding is inferred.",
+            "unresolved_reason": null,
+            "sources": [
+              {
+                "source_id": "clerk:119:2:138",
+                "url": "https://clerk.house.gov/evs/2026/roll138.xml",
+                "raw_sha256": "5e2112a45af804131f748f043c4b8b1cab5ebbd0a7fe69345ef9e2cfd63fa260",
+                "governed_bytes_sha256": "d359b2450b867930ac5dd7cc6e1ce6d3c8a1a581bac1a365472b395eb28d813a"
+              },
+              {
+                "source_id": "govinfo:hr7959eh",
+                "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7959eh/html/BILLS-119hr7959eh.htm",
+                "raw_sha256": "e5120c7d265230349d78230ebc78e639b409ccf24665780d133925b62f7aa52a",
+                "governed_bytes_sha256": "0f4266845f0bf7c420ed6666df9e3d0d82da81ba027d04dc806739ca69084f2f"
+              }
+            ],
+            "exact_action_source_binding": {
+              "action_id": "house:119:2:138",
+              "source_ids": [
+                "clerk:119:2:138",
+                "govinfo:hr7959eh"
+              ],
+              "membership_review_ref": "membership_review.json#action_id=house:119:2:138",
+              "review_state": "candidate_pending_external_semantic_review",
+              "complete": true
+            },
+            "public_action_sha256": null,
+            "review_progress": {
+              "substantive_review_performed": true,
+              "exact_action_binding_unresolved": false,
+              "required_evidence_unavailable": false,
+              "authoritative_source_conflict": false,
+              "shared_review_record_sha256": "09e0ea831b0206ff70a472872abd8ecdfc401539dc8127a2215954950e128895"
+            },
+            "historical_clerk_source_identity": {
+              "source_id": "clerk:119:2:138",
+              "url": "https://clerk.house.gov/evs/2026/roll138.xml",
+              "raw_sha256": "6e71a57ec2c01f545e9752107c10ec1120437cb3877c93fde6f52dc6f2fc0aba",
+              "verification": "historical_source_identity_not_recaptured_this_increment"
+            }
+          },
+          "after_action_sha256": null,
+          "after_record_sha256": "43bbfc108b19c64f8f0d8d9b71c07466cded656d639055292ecdb9c95967173b",
+          "after_universe_row_sha256": "706e0101cb5de7080c66c31468360ee2e9c5487ec17d7b12bc1a00ad01d98967"
+        }
+      ],
+      "source_acquisitions": 0,
+      "protected_retries": 0,
+      "accepted_membership": false,
+      "publication_authorized": false,
+      "production_writes": false,
+      "cadence_qualification": "H.R.7959section4amends an existing report and applies to fiscal-year reports ending after enactment. The report-frequency baseline was not retained. Removing annual specificity does not find that the underlying report is nonannual.",
+      "report_amendment_passage": "SEC. 4. MODIFICATION OF IRS WHISTLEBLOWER REPORT. (a) In General.--Section 406(c) of division A of the Tax Relief and Health Care Act of 2006 is amended by striking ``such use,'' in paragraph (1) and inserting ``such use (which shall include a list and descriptions of the top tax avoidance schemes, not to exceed 10, disclosed by whistleblowers during such year),''. (b) Effective Date.-- The amendments made by this section shall apply to reports for fiscal years ending after the enactment of this Act. ",
+      "source_export_refs": {
+        "govinfo:42usc7619-2024-exceptional-events": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/82d6c8d5dd5975f489e8c7a5e456c8aa247b0f09637ee1ad306676934428affb.json",
+        "govinfo:hr7959eh": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/batch87.json#/records/2"
+      },
+      "before_recommendation": {
+        "action_id": "house:119:2:136",
+        "candidate_action_sha256": "849266cc1c85aa6cb108eb8f7208b6cb26c8c4840cd200c0c116b9626db41f1f",
+        "accepted_membership": false,
+        "required_independent_review": true,
+        "proposed_relationship": "Scientific monitoring-data channel, mandatory multistate modeling and public petition-status reporting within the whole exceptional-event/wildfire package.",
+        "competing_boundary": "Broader environmental air-quality/exception policy; no accepted domain expansion.",
+        "material_qualifications": [
+          "Retained air-quality-effect/noncontrol/Administrator-determination limbs and separate State-approved wildfire action definition",
+          "Causal relationship exists OR reasonably expected; reliable data/public process and retained public-health/database duties",
+          "Alternative regional triggers,18monthproposed/1yearafterproposal-final/12monthwebsite-monthly clocks",
+          "Specified data-use petition expansion and interim-clause deletion, not record erasure or all-standards repeal",
+          "Old guidance/CFRappendices/current rules/individualStatepractices uninspected; no automatic petition or measured outcome",
+          "FousheeNotVoting nondirectional; original seven authoredNotVoting observations preserved"
+        ],
+        "publication_authorized": false,
+        "production_writes": false
+      },
+      "observations_unchanged_except_core_hash_rebinding": true,
+      "source_objects_unchanged": true,
+      "meanings_choices_dispositions_unchanged": true,
+      "post_core_sha256": "67f8d59980526bf36a12dcf54ff82cf46264bf79fb6846e751a822edff174e8c",
+      "post_compiled_sha256": "13e92b1674b214e49c56a6c370584798bda9a50d9131fc75eba879bf8941a4d7"
+    }
+  }
+}

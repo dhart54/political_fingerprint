@@ -1,0 +1,744 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 53,
+  "exact_committed_head": "15008e5299afffe00c41ff1d3083d7f6e977d8f4",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "15008e5299afffe00c41ff1d3083d7f6e977d8f4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch53_20260916/membership_review.json",
+      "git_blob": "90fccf06688a31a76a51961238646f26340b3baf",
+      "git_bytes_sha256": "163c4bd01e5028971c5a928af733f28d4d30dd594e57a5207b0fd8e874f1ed6a"
+    },
+    "sources": {
+      "head": "15008e5299afffe00c41ff1d3083d7f6e977d8f4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch53_20260916/sources.json",
+      "git_blob": "997089209c4c74b49eb4f263be47a24af917b0df",
+      "git_bytes_sha256": "37435a60795b21af73dbbcb3e93cf58fe43246e5f249465ef3d15e73b565f324"
+    },
+    "screening": {
+      "head": "15008e5299afffe00c41ff1d3083d7f6e977d8f4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch53_20260916/screening_receipt.json",
+      "git_blob": "b3b534902aad1c97bb293324cf22d6a5fc18090e",
+      "git_bytes_sha256": "82ad46d7610c986c0caa6513df10a37c425579d34e64ae296feb5dc65c1a4441"
+    },
+    "screening_units": {
+      "head": "15008e5299afffe00c41ff1d3083d7f6e977d8f4",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch53_20260916/screening_units_receipt.json",
+      "git_blob": "3f1df7824556195912b53dc5b45a724a790e53ea",
+      "git_bytes_sha256": "228b74d94b983af836058e1b6ce218762e0dbb020cebc533c7b0f58e2f835bad"
+    }
+  },
+  "cumulative_membership_review_sha256": "104b913e4caaa13122f072c20865e6d670369985aa7804faf740e89d72c29a1e",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/f6c61a2fe95678df3421fa8c498fd9d5de423a4fa31834ad1369a9ab437d5398.0000000.json",
+        "sha256": "f15a76d00db207dfa1ea7162f27a3d287b2219f7246155b3f6877685811facb0",
+        "start_character": 0,
+        "end_character": 31551
+      }
+    ],
+    "utf8_sha256": "f6c61a2fe95678df3421fa8c498fd9d5de423a4fa31834ad1369a9ab437d5398",
+    "total_characters": 31551,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/fb8a2b7c2bdc9ce616ae16b4edba9c83829b733e0e04a75303cec0716c32aab0.0000000.json",
+        "sha256": "ef8dc5346482f63a8967a6bb3dd869de63254f241f35d13accc8a9a387563b94",
+        "start_character": 0,
+        "end_character": 83735
+      }
+    ],
+    "utf8_sha256": "fb8a2b7c2bdc9ce616ae16b4edba9c83829b733e0e04a75303cec0716c32aab0",
+    "total_characters": 83735,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:305",
+    "house:119:1:306",
+    "house:119:1:307",
+    "house:119:1:308",
+    "house:119:1:309"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hconres58eh",
+      "governed_length": 3233,
+      "review_extent": "Complete retained ownbill/rule/expression or selecteddatedclause(i)unit read; remaining materialbaselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:hr5348eh",
+      "governed_length": 2308,
+      "review_extent": "Complete retained ownbill/rule/expression or selecteddatedclause(i)unit read; remaining materialbaselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:42usc405c2Bi-2024-ssn-issuance",
+      "governed_length": 1850,
+      "review_extent": "Complete retained ownbill/rule/expression or selecteddatedclause(i)unit read; remaining materialbaselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:hr4423eh",
+      "governed_length": 1413,
+      "review_extent": "Complete retained ownbill/rule/expression or selecteddatedclause(i)unit read; remaining materialbaselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:hres916eh",
+      "governed_length": 5044,
+      "review_extent": "Complete retained ownbill/rule/expression or selecteddatedclause(i)unit read; remaining materialbaselines not implicitly reviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_final_bills_read": 2,
+    "complete_rule_texts_read": 1,
+    "complete_expression_bodies_read": 1,
+    "complete_selected_statutory_units_read": 1,
+    "mechanical_raw_bill_identity_bindings": 1,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:305",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:306",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:307",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:308",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:309",
+        "evidence_unit": "complete_own_body_or_exact_noncounting_question_with_explicit_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "da6a7489099829fbe935af65fcfdbff4c06a08a98cfc79de7de154779392a8db",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:305",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete H.Con.Res.58expresses denunciation/opposition to socialism and its implementation. Its historical quantities, causal/economic characterizations and ideological descriptions remain assertions of the resolution, not independent platformfindings. It contains no appropriation, enforcement/programmeasures or direct infrastructure/technology operating change. A member's vote does not establish ideology, motive, character, support for historical violence or every preambleclaim; NotVotingisresolvednondirectional and no votingrecommendation is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:305",
+            "url": "https://clerk.house.gov/evs/2025/roll305.xml",
+            "raw_sha256": "1f8d0d25e36409efbd078283b24042c145197444ed0e7e3d4e99e7f16521a3cc",
+            "governed_bytes_sha256": "1be3e8f1beab005a2270f18512be940cda1f1d5827b530a74ffc70122a68cf5b"
+          },
+          {
+            "source_id": "govinfo:hconres58eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres58eh/html/BILLS-119hconres58eh.htm",
+            "raw_sha256": "ebc0ae45c657ca3c79d52dbe178735b67f9eef969ea3a6b98384859df27c1e42",
+            "governed_bytes_sha256": "11b849716a72300e0b9ca520ad438d348fb9574bbf29daa1ce9b36e28634f37e"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hconres58eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 58 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. CON. RES. 58 _______________________________________________________________________ CONCURRENT RESOLUTION Whereas socialist ideology necessitates a concentration of power that has, time and time again, collapsed into communist regimes, totalitarian rule, and brutal dictatorships; Whereas socialism has repeatedly led to famine and mass murders, and the killing of over 100,000,000 people worldwide; Whereas many of the greatest crimes in history were committed by socialist ideologues, including Vladimir Lenin, Joseph Stalin, Mao Zedong, Fidel Castro, Pol Pot, Kim Jong Il, Kim Jong Un, Daniel Ortega, Hugo Chavez, and Nicolas Maduro; Whereas tens of millions died in the Bolshevik Revolution, at least 10,000,000 people were sent to the gulags in the Union of Soviet Socialist Republics, and millions more starved in the Terror-Famine (Holodomor) in Ukraine; Whereas between 15,000,000 and 55,000,000 people starved to death in the wake of famine and devastation caused by the Great Leap Forward in China; Whereas the socialist experiment in Cambodia led to the killing fields in which over a million people were gruesomely murdered; Whereas up to 3,500,000 people have starved in North Korea, dividing a land of freedom from a land of destitution; Whereas the Castro regime in Cuba expropriated the land of Cuban farmers and the businesses of Cuban entrepreneurs, stealing their possessions and their livelihoods, and exiling millions with nothing but the clothes on their backs; Whereas the implementation of socialism in Venezuela has turned a once- prosperous country into a failed State with the highest rate of inflation in the world; Whereas President Thomas Jefferson, the author of the Declaration of Independence, wrote, ``To take from one, because it is thought that his own industry and that of his fathers has acquired too much, in order to spare to others, who, or whose fathers have not exercised equal industry and skill, is to violate arbitrarily the first principle of association, the guarantee to every one of a free exercise of his industry, and the fruits acquired by it''; Whereas President James Madison, the ``Father of the Constitution'', wrote that it ``is not a just government, nor is property secure under it, where the property which a man has in his personal safety and personal liberty, is violated by arbitrary seizures of one class of citizens for the service of the rest''; and Whereas the United States was founded on the belief in the sanctity of the individual, to which the collectivistic system of socialism in all of its forms is fundamentally and necessarily opposed: Now, therefore, be it Resolved by the House of Representatives (the Senate concurring), That Congress denounces socialism in all its forms, and opposes the implementation of socialist policies in the United States. Passed the House of Representatives November 21, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. CON. RES. 58 _______________________________________________________________________ CONCURRENT RESOLUTION Denouncing the horrors of socialism."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2bb28a10643e79c2c4eccd206301db1483fa81f0291d5f3b94a934c990bae8a6",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:306",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Raw H R5348label is mechanically bound to the December1House5348EHthrough exactClerkcongress/roll/measure/question/date and its ownHouseattestation; rawuniverseidentity fields remain unchanged. Complete EHadds requiredSSNreissuance/note-taking for a child under14whose number was issued pursuant to405(c)(2)(B)(i)(IV)/(V), on specified Commissioner-determined evidence submitted under penaltyofperjury by parent/guardian that confidentiality was compromised by cardloss/theftduringtransmission. Complete retainedclause(i)preservesIVbelow-school-ageparentrequestandVfirst-school-enrollmentcontexts; this is not automaticreissuanceforallminors, any breach in any setting or proof of actualidentitytheft.180daysis effective-date delay, not individualprocessingdeadline. Whole identifieradministration/privacy-versus-technicalgovernance boundary, remainingclause(ii)/(iii)andmaterialcurrent-policy/version baselines remain ordinary pending. No newsoftware/hardware/securityoutcome, servicefailure, motive or current-law enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:306",
+            "url": "https://clerk.house.gov/evs/2025/roll306.xml",
+            "raw_sha256": "09ba51dd6a86bf541dae8127ebd4d1ddf13cc002790e55154c8ac145456671d1",
+            "governed_bytes_sha256": "26f7e5f34ab9f7c37d49ccc2a82f8e7ed2a2831c543a6dcd750fc794a2ca2b1c"
+          },
+          {
+            "source_id": "govinfo:hr5348eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5348eh/html/BILLS-119hr5348eh.htm",
+            "raw_sha256": "6bc65279fdbf7a5ee7dea5685161f4926f4522b851dd0a3e252db89d73fea0c8",
+            "governed_bytes_sha256": "cdac54888eb8605fded4f98a3c2dba674d9cdd07d88ed3375adec9ae06082dfd"
+          },
+          {
+            "source_id": "govinfo:42usc405c2Bi-2024-ssn-issuance",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec405.htm",
+            "raw_sha256": "04105905919624c53b2c0b898b3e0ef697e7bc2c88b65c511c2c5874bd29bdbb",
+            "governed_bytes_sha256": "c7492a4f6a175b78a834ae438b9a9821d6d7b09f62855f6aaecabdeb944e41c7"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5348eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5348 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5348 _______________________________________________________________________ AN ACT To amend title II of the Social Security Act to provide for the reissuance of social security account numbers to young children in cases where confidentiality has been compromised. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Social Security Child Protection Act of 2025''. SEC. 2. REISSUANCE OF SOCIAL SECURITY ACCOUNT NUMBERS TO YOUNG CHILDREN IN CASES WHERE CONFIDENTIALITY HAS BEEN COMPROMISED. (a) In General.--Section 205(c)(2)(B) of the Social Security Act (42 U.S.C. 405(c)(2)(B)) is amended-- (1) by redesignating clause (iii) as clause (iv); and (2) by inserting after clause (ii) the following new clause: ``(iii) In any case in which a social security account number has been issued to a child who has not attained the age of 14 pursuant to subclause (IV) or (V) of clause (i) and it is demonstrated by evidence, as determined by the Commissioner of Social Security, and submitted under penalty of perjury to the Commissioner by a parent or guardian of the child that in the course of transmission of a social security card to the child, the confidentiality of such number has been compromised by reason of loss or theft of such social security card, the Commissioner shall issue a new social security account number to such child and make note in the records maintained with respect to such child of the pertinent information received by the Commissioner regarding the loss or theft of the social security card.''. (b) Effective Date.--The amendments made by subsection (a) shall take effect on the date that is 180 days after the date of the enactment of this Act. Passed the House of Representatives December 1, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5348 _______________________________________________________________________ AN ACT To amend title II of the Social Security Act to provide for the reissuance of social security account numbers to young children in cases where confidentiality has been compromised."
+          },
+          {
+            "source_id": "govinfo:42usc405c2Bi-2024-ssn-issuance",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(B)(i) In carrying out the Commissioner's duties under subparagraph (A) and subparagraph (F), the Commissioner of Social Security shall take affirmative measures to assure that social security account numbers will, to the maximum extent practicable, be assigned to all members of appropriate groups or categories of individuals by assigning such numbers (or ascertaining that such numbers have already been assigned): (I) to aliens at the time of their lawful admission to the United States either for permanent residence or under other authority of law permitting them to engage in employment in the United States and to other aliens at such time as their status is so changed as to make it lawful for them to engage in such employment; (II) to any individual who is an applicant for or recipient of benefits under any program financed in whole or in part from Federal funds including any child on whose behalf such benefits are claimed by another person; and (III) to any other individual when it appears that he could have been but was not assigned an account number under the provisions of subclauses (I) or (II) but only after such investigation as is necessary to establish to the satisfaction of the Commissioner of Social Security, the identity of such individual, the fact that an account number has not already been assigned to such individual, and the fact that such individual is a citizen or a noncitizen who is not, because of his alien status, prohibited from engaging in employment; and, in carrying out such duties, the Commissioner of Social Security is authorized to take affirmative measures to assure the issuance of social security numbers: (IV) to or on behalf of children who are below school age at the request of their parents or guardians; and (V) to children of school age at the time of their first enrollment in school. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c25a96ad51f12f06b7f022dd169da015c55c378207d3a40d1c0c0e8e4dba3a6b",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:307",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.4423EHrequires TreasurySecretaryto direct the USIBRDExecutiveDirector to useUSvoiceandvote to continue the existingpause on Bankdisbursements/newfinancingcommitments to GovernmentofBurma, unless Secretarydeterminescontinuationnot in nationalinterest. It is neither unilateralUScontrolofallBankfunds, a permanentunconditionalban nor a blanketrestrictiononprivate/individual/non-governmentassistance. Wholeexistingpause/legal/institutional/recipient/programmebaselines and mixedforeign-financing-versus-directInfrastructureboundary remain ordinary review; parentBankdevelopmentpurposes cannot establish a specificproject/infrastructurecut. No actualfundingdecision, coup/individualfactfinding, causal/governanceoutcome, motive or current-law status inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:307",
+            "url": "https://clerk.house.gov/evs/2025/roll307.xml",
+            "raw_sha256": "b5edeb6fddcbfa7fb0a5f0b6fbbc29c110aa0231e72774a2ade44d155993cd5b",
+            "governed_bytes_sha256": "c4f15a6af0a9dd93c8960673e5c8b87b54635905eae8386f10235370a9642acc"
+          },
+          {
+            "source_id": "govinfo:hr4423eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4423eh/html/BILLS-119hr4423eh.htm",
+            "raw_sha256": "7606a6ddb2e44770bd64395b421ab0cdfcd74c24b689a97d31f3f69f6435a456",
+            "governed_bytes_sha256": "7237ad3b0d2cabf70b2b387daafadf0468db45253d7f6a4bf444b38615342b74"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4423eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4423 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 4423 _______________________________________________________________________ AN ACT To continue the pause on disbursements and new financing commitments to the Government of Burma. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``No New Burma Funds Act''. SEC. 2. CONTINUATION OF PAUSE ON WORLD BANK DISBURSEMENTS AND COMMITMENTS TO BURMA. The Secretary of the Treasury shall direct the United States Executive Director at the International Bank for Reconstruction and Development to use the voice and vote of the United States to continue the pause by the Bank on disbursements and the making of new financing commitments to the Government of Burma, that was initiated after a military coup overthrew the democratically elected Government of Burma in 2021, unless the Secretary of the Treasury determines that it is not in the national interest to do so. Passed the House of Representatives December 1, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 4423 _______________________________________________________________________ AN ACT To continue the pause on disbursements and new financing commitments to the Government of Burma."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d43e15874fe9b0c4389da09724397820ba06ed59eaebe91c75bfb312f54ef170",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:308",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact previous-question vote controls H.Res.916consideration rather than adopting the rule or its underlyingmeasures. Complete916contains actualdeemedsubstitutes considered separately at309. Non-counting proceduralcontext; no collegeathletics/education/SBA/technicalhotlinepolicy support or opposition, actualgrant/contractoutcome or motive transferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:308",
+            "url": "https://clerk.house.gov/evs/2025/roll308.xml",
+            "raw_sha256": "94fb7dcc2d8e18490011ba2a2f8c2b704dc7e4ece50590c437a9eaa4072d1feb",
+            "governed_bytes_sha256": "c2ad4b0af891ab2b3a7a6fa235cb4330bbe92d42c0f8e0f0a5f7f9ba75009046"
+          },
+          {
+            "source_id": "govinfo:hres916eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres916eh/html/BILLS-119hres916eh.htm",
+            "raw_sha256": "40ca0b29b604f9b6508a2a54a49b820abb966af4a08f1181c2826530f06ab9e1",
+            "governed_bytes_sha256": "6df6ba4081744405127bef385780c26e21ab921f50601ba667b62f7ea736a4c6"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres916eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/e38e093115e1d8448fbd899249b96e4a3d95faba7608c1fb90fb17ab97b04c60.0000000.json",
+                  "sha256": "6e705bc0dc61035fb94f72ae76df910463fe06a0c3c4f8d6a129749619b8dfa0",
+                  "start_character": 0,
+                  "end_character": 5044
+                }
+              ],
+              "utf8_sha256": "e38e093115e1d8448fbd899249b96e4a3d95faba7608c1fb90fb17ab97b04c60",
+              "total_characters": 5044,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f328ed681e352ec20fa373b6f40082dc8817e90ac4cf09f36a4a4202a5b88763",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:309",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.Res.916actuallydeemsRCP119-14for4312adoptedinlieuofspecifiedcommitteesubstitutes, Education/Workforcesubstitutesfor1005/1049/1069andSmallBusinesssubstitutesfor2965/4305, alongside debate/previous-question/recommittalrules. It is morethan simplyschedulingbutdoesnotpass/enacteverytargetbill. Whole exactincorporatedprints/committeeversion/floorbaselineandmixededucation/collegeathletics/regulatorybudget/hotlineboundary remain ordinary pending; a titlemention of school contracts or a hotline cannot provide whole Infrastructuremeaning. No broaderforeigninfluence finding, specificcontract/technicalsystem/fundingresult or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:309",
+            "url": "https://clerk.house.gov/evs/2025/roll309.xml",
+            "raw_sha256": "a44e1b00c5098c7f483eec820f0ede286404025a9612a5b8227a98266713c678",
+            "governed_bytes_sha256": "56dfcb6a6fb49386bd923ee71effb8b36940947dc51cd540ffdbf7ae3a6789cc"
+          },
+          {
+            "source_id": "govinfo:hres916eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres916eh/html/BILLS-119hres916eh.htm",
+            "raw_sha256": "40ca0b29b604f9b6508a2a54a49b820abb966af4a08f1181c2826530f06ab9e1",
+            "governed_bytes_sha256": "6df6ba4081744405127bef385780c26e21ab921f50601ba667b62f7ea736a4c6"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres916eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/e38e093115e1d8448fbd899249b96e4a3d95faba7608c1fb90fb17ab97b04c60.0000000.json",
+                  "sha256": "6e705bc0dc61035fb94f72ae76df910463fe06a0c3c4f8d6a129749619b8dfa0",
+                  "start_character": 0,
+                  "end_character": 5044
+                }
+              ],
+              "utf8_sha256": "e38e093115e1d8448fbd899249b96e4a3d95faba7608c1fb90fb17ab97b04c60",
+              "total_characters": 5044,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "444cc84b2441b02b5725d1c72f65ca86e6e57d1798dcd104421145dc9d1ea750",
+      "source": {
+        "source_id": "clerk:119:1:305",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll305.xml",
+        "text_version": null,
+        "raw_sha256": "1f8d0d25e36409efbd078283b24042c145197444ed0e7e3d4e99e7f16521a3cc",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "305",
+          "legis-num": "H CON RES 58",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "21-Nov-2025",
+          "action-time": "10:58 AM",
+          "vote-desc": "Denouncing the horrors of socialism"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Not Voting",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "199",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "20"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "86",
+            "nay-total": "98",
+            "present-total": "2",
+            "not-voting-total": "27"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "1be3e8f1beab005a2270f18512be940cda1f1d5827b530a74ffc70122a68cf5b"
+      }
+    },
+    {
+      "original_source_object_sha256": "cf0ebfe9a846b536f0f5b5ccb03d334442d18a2ef0db90cbc4f272edac116104",
+      "source": {
+        "source_id": "govinfo:hconres58eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres58eh/html/BILLS-119hconres58eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "ebc0ae45c657ca3c79d52dbe178735b67f9eef969ea3a6b98384859df27c1e42",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 58 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. CON. RES. 58 _______________________________________________________________________ CONCURRENT RESOLUTION Whereas socialist ideology necessitates a concentration of power that has, time and time again, collapsed into communist regimes, totalitarian rule, and brutal dictatorships; Whereas socialism has repeatedly led to famine and mass murders, and the killing of over 100,000,000 people worldwide; Whereas many of the greatest crimes in history were committed by socialist ideologues, including Vladimir Lenin, Joseph Stalin, Mao Zedong, Fidel Castro, Pol Pot, Kim Jong Il, Kim Jong Un, Daniel Ortega, Hugo Chavez, and Nicolas Maduro; Whereas tens of millions died in the Bolshevik Revolution, at least 10,000,000 people were sent to the gulags in the Union of Soviet Socialist Republics, and millions more starved in the Terror-Famine (Holodomor) in Ukraine; Whereas between 15,000,000 and 55,000,000 people starved to death in the wake of famine and devastation caused by the Great Leap Forward in China; Whereas the socialist experiment in Cambodia led to the killing fields in which over a million people were gruesomely murdered; Whereas up to 3,500,000 people have starved in North Korea, dividing a land of freedom from a land of destitution; Whereas the Castro regime in Cuba expropriated the land of Cuban farmers and the businesses of Cuban entrepreneurs, stealing their possessions and their livelihoods, and exiling millions with nothing but the clothes on their backs; Whereas the implementation of socialism in Venezuela has turned a once- prosperous country into a failed State with the highest rate of inflation in the world; Whereas President Thomas Jefferson, the author of the Declaration of Independence, wrote, ``To take from one, because it is thought that his own industry and that of his fathers has acquired too much, in order to spare to others, who, or whose fathers have not exercised equal industry and skill, is to violate arbitrarily the first principle of association, the guarantee to every one of a free exercise of his industry, and the fruits acquired by it''; Whereas President James Madison, the ``Father of the Constitution'', wrote that it ``is not a just government, nor is property secure under it, where the property which a man has in his personal safety and personal liberty, is violated by arbitrary seizures of one class of citizens for the service of the rest''; and Whereas the United States was founded on the belief in the sanctity of the individual, to which the collectivistic system of socialism in all of its forms is fundamentally and necessarily opposed: Now, therefore, be it Resolved by the House of Representatives (the Senate concurring), That Congress denounces socialism in all its forms, and opposes the implementation of socialist policies in the United States. Passed the House of Representatives November 21, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. CON. RES. 58 _______________________________________________________________________ CONCURRENT RESOLUTION Denouncing the horrors of socialism.",
+        "governed_bytes_sha256": "11b849716a72300e0b9ca520ad438d348fb9574bbf29daa1ce9b36e28634f37e"
+      }
+    },
+    {
+      "original_source_object_sha256": "487d8ef6879da2e2a2d5a129257a6d0fe63ea6b15974c98da820e311f98b9b3b",
+      "source": {
+        "source_id": "clerk:119:1:306",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll306.xml",
+        "text_version": null,
+        "raw_sha256": "09ba51dd6a86bf541dae8127ebd4d1ddf13cc002790e55154c8ac145456671d1",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "306",
+          "legis-num": "H R 5348",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "1-Dec-2025",
+          "action-time": "6:57 PM",
+          "vote-desc": "Social Security Child Protection Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Not Voting",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "195",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "23"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "191",
+            "nay-total": "0",
+            "present-total": "1",
+            "not-voting-total": "21"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "26f7e5f34ab9f7c37d49ccc2a82f8e7ed2a2831c543a6dcd750fc794a2ca2b1c"
+      }
+    },
+    {
+      "original_source_object_sha256": "71cb1799dcc017ea5dbc537f336086e2c849a2deef1c0cfa71db7a81a8303636",
+      "source": {
+        "source_id": "govinfo:hr5348eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5348eh/html/BILLS-119hr5348eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "6bc65279fdbf7a5ee7dea5685161f4926f4522b851dd0a3e252db89d73fea0c8",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5348 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5348 _______________________________________________________________________ AN ACT To amend title II of the Social Security Act to provide for the reissuance of social security account numbers to young children in cases where confidentiality has been compromised. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Social Security Child Protection Act of 2025''. SEC. 2. REISSUANCE OF SOCIAL SECURITY ACCOUNT NUMBERS TO YOUNG CHILDREN IN CASES WHERE CONFIDENTIALITY HAS BEEN COMPROMISED. (a) In General.--Section 205(c)(2)(B) of the Social Security Act (42 U.S.C. 405(c)(2)(B)) is amended-- (1) by redesignating clause (iii) as clause (iv); and (2) by inserting after clause (ii) the following new clause: ``(iii) In any case in which a social security account number has been issued to a child who has not attained the age of 14 pursuant to subclause (IV) or (V) of clause (i) and it is demonstrated by evidence, as determined by the Commissioner of Social Security, and submitted under penalty of perjury to the Commissioner by a parent or guardian of the child that in the course of transmission of a social security card to the child, the confidentiality of such number has been compromised by reason of loss or theft of such social security card, the Commissioner shall issue a new social security account number to such child and make note in the records maintained with respect to such child of the pertinent information received by the Commissioner regarding the loss or theft of the social security card.''. (b) Effective Date.--The amendments made by subsection (a) shall take effect on the date that is 180 days after the date of the enactment of this Act. Passed the House of Representatives December 1, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5348 _______________________________________________________________________ AN ACT To amend title II of the Social Security Act to provide for the reissuance of social security account numbers to young children in cases where confidentiality has been compromised.",
+        "governed_bytes_sha256": "cdac54888eb8605fded4f98a3c2dba674d9cdd07d88ed3375adec9ae06082dfd"
+      }
+    },
+    {
+      "original_source_object_sha256": "a3e6c10600b3bff671af9d979039a8efbbc855fb146f2c8436ea7b61e000c2b6",
+      "source": {
+        "source_id": "govinfo:42usc405c2Bi-2024-ssn-issuance",
+        "source_type": "official_statute_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec405.htm",
+        "text_version": "2024 Code complete SSA 205(c)(2)(B)(i) assignment categories, including lawful-admission/work-authorized aliens and relevant (III) portions. New House definition selects only the named (I)/portion (III), not every SSN or proof of citizenship/current status.",
+        "raw_sha256": "04105905919624c53b2c0b898b3e0ef697e7bc2c88b65c511c2c5874bd29bdbb",
+        "text": "(B)(i) In carrying out the Commissioner's duties under subparagraph (A) and subparagraph (F), the Commissioner of Social Security shall take affirmative measures to assure that social security account numbers will, to the maximum extent practicable, be assigned to all members of appropriate groups or categories of individuals by assigning such numbers (or ascertaining that such numbers have already been assigned): (I) to aliens at the time of their lawful admission to the United States either for permanent residence or under other authority of law permitting them to engage in employment in the United States and to other aliens at such time as their status is so changed as to make it lawful for them to engage in such employment; (II) to any individual who is an applicant for or recipient of benefits under any program financed in whole or in part from Federal funds including any child on whose behalf such benefits are claimed by another person; and (III) to any other individual when it appears that he could have been but was not assigned an account number under the provisions of subclauses (I) or (II) but only after such investigation as is necessary to establish to the satisfaction of the Commissioner of Social Security, the identity of such individual, the fact that an account number has not already been assigned to such individual, and the fact that such individual is a citizen or a noncitizen who is not, because of his alien status, prohibited from engaging in employment; and, in carrying out such duties, the Commissioner of Social Security is authorized to take affirmative measures to assure the issuance of social security numbers: (IV) to or on behalf of children who are below school age at the request of their parents or guardians; and (V) to children of school age at the time of their first enrollment in school. ",
+        "governed_bytes_sha256": "c7492a4f6a175b78a834ae438b9a9821d6d7b09f62855f6aaecabdeb944e41c7",
+        "captured_full_text_sha256": "89acf3656d75d1a1501104ab2ea2b70a94ceb7588778a7d71e10157b9ed85962",
+        "source_text_extents": [
+          {
+            "start": 8233,
+            "end": 10083,
+            "total": 225543
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "8d751a8f1925634ade4488dbaf62be4def5216e1a947d3a3dcaa5d04108945db",
+      "source": {
+        "source_id": "clerk:119:1:307",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll307.xml",
+        "text_version": null,
+        "raw_sha256": "b5edeb6fddcbfa7fb0a5f0b6fbbc29c110aa0231e72774a2ade44d155993cd5b",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "307",
+          "legis-num": "H R 4423",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "1-Dec-2025",
+          "action-time": "7:05 PM",
+          "vote-desc": "No New Burma Funds Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Not Voting",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "192",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "26"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "193",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "20"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "c4f15a6af0a9dd93c8960673e5c8b87b54635905eae8386f10235370a9642acc"
+      }
+    },
+    {
+      "original_source_object_sha256": "5a0ebf5b6a640b755e94d53bcc9cedde56712baf6939d4b9141643ab4c47f474",
+      "source": {
+        "source_id": "govinfo:hr4423eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4423eh/html/BILLS-119hr4423eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "7606a6ddb2e44770bd64395b421ab0cdfcd74c24b689a97d31f3f69f6435a456",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4423 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 4423 _______________________________________________________________________ AN ACT To continue the pause on disbursements and new financing commitments to the Government of Burma. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``No New Burma Funds Act''. SEC. 2. CONTINUATION OF PAUSE ON WORLD BANK DISBURSEMENTS AND COMMITMENTS TO BURMA. The Secretary of the Treasury shall direct the United States Executive Director at the International Bank for Reconstruction and Development to use the voice and vote of the United States to continue the pause by the Bank on disbursements and the making of new financing commitments to the Government of Burma, that was initiated after a military coup overthrew the democratically elected Government of Burma in 2021, unless the Secretary of the Treasury determines that it is not in the national interest to do so. Passed the House of Representatives December 1, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 4423 _______________________________________________________________________ AN ACT To continue the pause on disbursements and new financing commitments to the Government of Burma.",
+        "governed_bytes_sha256": "7237ad3b0d2cabf70b2b387daafadf0468db45253d7f6a4bf444b38615342b74"
+      }
+    },
+    {
+      "original_source_object_sha256": "9480a75c46908d9d9dcec1d546925423571c49b82350126efc91241e4044c3ec",
+      "source": {
+        "source_id": "clerk:119:1:308",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll308.xml",
+        "text_version": null,
+        "raw_sha256": "94fb7dcc2d8e18490011ba2a2f8c2b704dc7e4ece50590c437a9eaa4072d1feb",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "308",
+          "legis-num": "H RES 916",
+          "vote-question": "On Ordering the Previous Question",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "2-Dec-2025",
+          "action-time": "2:00 PM",
+          "vote-desc": "Providing for consideration of the bills (H.R. 4312) SCORE Act; (H.R. 1005) CLASS Act; (H.R. 1049) Transparency in Reporting of Adversarial Contributions to Education Act; (H.R. 1069) PROTECT Our Kids Act; (H.R. 2965) Small Business Regulatory Reduction Act; and (H.R. 4305) DUMP Red Tape Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "c2ad4b0af891ab2b3a7a6fa235cb4330bbe92d42c0f8e0f0a5f7f9ba75009046"
+      }
+    },
+    {
+      "original_source_object_sha256": "cc72a4cce06e141397df0730186e9179b5edbc804a3ac18b5c919d094e3a655b",
+      "source": {
+        "source_id": "govinfo:hres916eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres916eh/html/BILLS-119hres916eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "40ca0b29b604f9b6508a2a54a49b820abb966af4a08f1181c2826530f06ab9e1",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/e38e093115e1d8448fbd899249b96e4a3d95faba7608c1fb90fb17ab97b04c60.0000000.json",
+              "sha256": "6e705bc0dc61035fb94f72ae76df910463fe06a0c3c4f8d6a129749619b8dfa0",
+              "start_character": 0,
+              "end_character": 5044
+            }
+          ],
+          "utf8_sha256": "e38e093115e1d8448fbd899249b96e4a3d95faba7608c1fb90fb17ab97b04c60",
+          "total_characters": 5044,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "6df6ba4081744405127bef385780c26e21ab921f50601ba667b62f7ea736a4c6"
+      }
+    },
+    {
+      "original_source_object_sha256": "db5888c49fa58179ffe72dcbe36b15b42ddcf4c04fdf1155f1400a4ed19411d3",
+      "source": {
+        "source_id": "clerk:119:1:309",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll309.xml",
+        "text_version": null,
+        "raw_sha256": "a44e1b00c5098c7f483eec820f0ede286404025a9612a5b8227a98266713c678",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "309",
+          "legis-num": "H RES 916",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "2-Dec-2025",
+          "action-time": "3:01 PM",
+          "vote-desc": "Providing for consideration of the bills (H.R. 4312) SCORE Act; (H.R. 1005) CLASS Act; (H.R. 1049) Transparency in Reporting of Adversarial Contributions to Education Act; (H.R. 1069) PROTECT Our Kids Act; (H.R. 2965) Small Business Regulatory Reduction Act; and (H.R. 4305) DUMP Red Tape Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "210",
+            "nay-total": "3",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "206",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "56dfcb6a6fb49386bd923ee71effb8b36940947dc51cd540ffdbf7ae3a6789cc"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 10
+  }
+}

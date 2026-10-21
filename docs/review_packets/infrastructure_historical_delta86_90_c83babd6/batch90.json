@@ -1,0 +1,652 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 90,
+  "exact_committed_head": "c83babd6dec4af0be87befa87d8b763816e85479",
+  "export_anchor_head": "c83babd6dec4af0be87befa87d8b763816e85479",
+  "committed_provenance": {
+    "membership": {
+      "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/membership_review.json",
+      "git_blob": "d5f5d3baa4aa66b8cb28a5a194a181fdc1488d27",
+      "git_bytes_sha256": "ddad6a7986689cd06065a0496b65055daf958af1ece3ff2bfc607d269efce2d5"
+    },
+    "sources": {
+      "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+      "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+      "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+    },
+    "screening": {
+      "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/screening_receipt.json",
+      "git_blob": "fdc4862530e1bf050e43132f4d785ccc35947443",
+      "git_bytes_sha256": "21fa0290ed7edd1273674a85ec688675539cf8f35872843ac667be2508c34a53"
+    },
+    "screening_units": {
+      "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/screening_units_receipt.json",
+      "git_blob": "3d4a353d685da8b76e375e485bf3495a4b8f539a",
+      "git_bytes_sha256": "d987c476daa5005a362c27dbf1fb734104bb6b00e7f3589ca1550374f822fe2e"
+    },
+    "validation": {
+      "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/validation_receipt.json",
+      "git_blob": "a8c586f26c578bd3ae1cf6bc9761da892cb7d1fa",
+      "git_bytes_sha256": "524c63519b81cd53e45ae3573faf0326ebb46830b4c59ea0e362a961002c339e"
+    }
+  },
+  "original_membership_review_sha256": "61471465f3e09e986eb7b0d404a71a898d4a74987bd3b326a7dbdaed7711f8e5",
+  "new_screened_ids": [
+    "house:119:2:156",
+    "house:119:2:157",
+    "house:119:2:158",
+    "house:119:2:159",
+    "house:119:2:160",
+    "house:119:2:161",
+    "house:119:2:162",
+    "house:119:2:163",
+    "house:119:2:164",
+    "house:119:2:165"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "84accf731f4df117affb82d2c3eacd4b80ae079fd0d7b3fa10da71d9d614284e",
+      "record": {
+        "action_id": "house:119:2:156",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete2071EHdirects Treasury to instruct UnitedStatesExecutiveDirectors at the cross-referenced defined international financial institutions to use USvoice/vote against assistance for shrimp farming, processing or export projects in a borrowing country. Treasury may waive on national-interest notification to Congress; subsection(a)instruction expires after7yearsbeginningatenactment. This whole sector-specific international-finance position/waiver/sunset measure establishes no scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion. It does not itself bind the institutions to deny funds, prohibit every bank/private shrimp activity or certify any named institution/project, waiver, trade/food outcome or enactment. The unreviewed1701(c)(2)institution list is not expanded to all lenders.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:156",
+            "url": "https://clerk.house.gov/evs/2026/roll156.xml",
+            "raw_sha256": "530d0a77d380f34b402fc86dbec7fb4ccf9c76f496a3054b2141a3c59be48eeb",
+            "governed_bytes_sha256": "87b907f0bb4ad994f03f5f4103b69aacd8d5d532b4a9cffb03b0a5e8011b8f2c"
+          },
+          {
+            "source_id": "govinfo:hr2071eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2071eh/html/BILLS-119hr2071eh.htm",
+            "raw_sha256": "4e6a9ee8e3309fbf83f208c2f5d83cfe78f2ba9f01f67211fdd41e812618e463",
+            "governed_bytes_sha256": "7102700773c3069e709447d995faf06c75c60ba46ca02beef50d03e7e0a700c6"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2071eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2071 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 2071 _______________________________________________________________________ AN ACT To require the United States Executive Directors at the international financial institutions to oppose certain projects involving shrimp production. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Save Our Shrimpers Act''. SEC. 2. VOICE AND VOTE REQUIREMENT. (a) In General.--The Secretary of the Treasury shall instruct the United States Executive Director at each international financial institution (as defined in section 1701(c)(2) of the International Financial Institutions Act) to use the voice and vote of the United States to oppose any financial assistance by such institution for any project to support shrimp farming, shrimp processing, or the export of shrimp in a borrowing country. (b) Waiver Authority.--The Secretary of the Treasury may waive subsection (a) with respect to a project upon notifying the Congress that the waiver is in the national interest of the United States. (c) Expiration.--Subsection (a) shall have no force or effect after the end of the 7-year period beginning on the date of enactment of this Act. Passed the House of Representatives May 12, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 2071 _______________________________________________________________________ AN ACT To require the United States Executive Directors at the international financial institutions to oppose certain projects involving shrimp production."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "cbeb0cd6290cbeba3eec87aebbe4743fe13473d20b0ae167354697269195679e",
+      "record": {
+        "action_id": "house:119:2:157",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole2853EHhas18332characters; only opening0:1800andclosing17532:18332read. Partial organized-retail/supply-chain findings and coordination-center/training ending do not establish the whole criminal-authority, interagency, information/data/technical-assistance package. Findings/statistics remain attributed legislative assertions, not verified losses, offenders, violence trends or causes. Whole interior, material offense/coordination/agency baselines and broad policing-versus-technical/data-infrastructure domain mapping remain pending; no selected online-marketplace/data-center fragment, actual crime reduction, technology purchase, prosecution or enactment is authored.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:157",
+            "url": "https://clerk.house.gov/evs/2026/roll157.xml",
+            "raw_sha256": "2990efc2b789d33eb6f824f1f071e3ff602effd64fb01a276f9c11ee449d57de",
+            "governed_bytes_sha256": "fff5aef4b01e713304632423db46c2c6ddeff37cc3ecc168450eef7d8e06eda0"
+          },
+          {
+            "source_id": "govinfo:hr2853eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2853eh/html/BILLS-119hr2853eh.htm",
+            "raw_sha256": "be4237072730dd856cf4ceed57fa5c759b91f268c46f91f87a84b924f0876340",
+            "governed_bytes_sha256": "a8d0f50730f2e4647887217fa5332720d6874c2edd4dd41b7b26f57165a9d1d5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2853eh",
+            "locator": "Only opening0:1800read; whole interior unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2853 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 2853 _______________________________________________________________________ AN ACT To combat organized crime involving the illegal acquisition of retail goods and cargo for the purpose of selling those illegally obtained goods through physical and online retail marketplaces. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Combating Organized Retail Crime Act of 2025''. SEC. 2. FINDINGS. It is the sense of Congress that-- (1) organized theft groups, involving sophisticated and structured groups of individuals, continue to increase criminal activities carried out by the groups against the retail industry and the supply chain of the Nation, and these activities, at unprecedented levels, involve theft and fraud of both physical and digital goods, leading to escalating financial losses and violence in the workplace--all impacting the national economy and security of the United States; (2) retailers face mounting thefts and fraud because of organized retail crime in and around stores, online, and throughout the retail ecosystem, and, according to the National Retail Federation, larceny incidents increased by 93 percent in 2023 compared to 2019, with a 90 percent rise in average dollar loss; (3) these thefts are often orchestrated by organized theft groups reselling and redistributing the stolen goods back into the economy of the United States or overseas to gain illicit profit and to finance other criminal activity, and more than 84 percent of retailers report that violence and aggression from these crimi"
+          },
+          {
+            "source_id": "govinfo:hr2853eh",
+            "locator": "Only closing17532:18332read",
+            "passage": "priate, the prioritization of training and technical assistance designed to counter organized retail and supply chain crime.''. (b) Clerical Amendment.--The table of contents for the Trade Facilitation and Trade Enforcement Act of 2015 (Public Law 114-125; 130 Stat. 122) is amended by inserting after the item relating to section 305 the following: ``Sec. 305A. Organized Retail and Supply Chain Crime Coordination Center.''. Passed the House of Representatives May 12, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 2853 _______________________________________________________________________ AN ACT To combat organized crime involving the illegal acquisition of retail goods and cargo for the purpose of selling those illegally obtained goods through physical and online retail marketplaces."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "5024951782b899b0bbe4f8efddc48b76525b059ca00d5d695da2484fba4bf9e7",
+      "record": {
+        "action_id": "house:119:2:158",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is ordering the previous question on1275. No substantive motion body is interpreted. This non-counting procedural action is separate from whole-rule agreement, its deemed substitutes or underlying fuel-package passage; no component policy support/opposition or enacted/technical outcome is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:158",
+            "url": "https://clerk.house.gov/evs/2026/roll158.xml",
+            "raw_sha256": "5e3d7fd513694b05b9ab2ea8155909d485ce8f15c2ef6105c751a49aa6ac90bc",
+            "governed_bytes_sha256": "ef27e14ecbd51cd68dc40726fa4fb93a5041635e4ba84dffccf5e86ffe83bd27"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "2c0a224897a76f8c84063e9afaa768479c58aecbba0c7a4e09e7f955b47efb5f",
+      "record": {
+        "action_id": "house:119:2:159",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1275EH deems committee substitutes for5625cashless-bail disclosure and6260bail-fraud, and8365court-monitor substitute as modifiedPartA. It only makes96expression/militaryconstruction-VA8469appropriations and specified amendments/enbloc/proforma procedures in order; made-in-order amendments are not themselves adopted. Whole incorporated substitute/modification/agency/court and domain/baseline review remain pending. No selected public-list/monitor/physical-construction fragment, underlying appropriation/enactment, judicial outcome, equipment purchase or crime effect is authored.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:159",
+            "url": "https://clerk.house.gov/evs/2026/roll159.xml",
+            "raw_sha256": "2a7820b96cc53b23d6c568af6eabfd98491f3427ad35d219d19349bc1924f091",
+            "governed_bytes_sha256": "c7ba626e1d82565b6eff81ae74dbecc294843726d96d765484d936938b7cb10a"
+          },
+          {
+            "source_id": "govinfo:hres1275eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1275eh/html/BILLS-119hres1275eh.htm",
+            "raw_sha256": "9889d55d7b3ff8c93c192f523ffd961103b36efcc74129b13c352bf78e1bebfa",
+            "governed_bytes_sha256": "033b17ac95eb53d5dcb8370fe98ac6c2884346bb0e116d1b0ef675bfe252dbcc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1275eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/7a05c86559210724a0107c483bfe5b9c6b0b314aa2000badb884d84de56b3c7d.0000000.json",
+                  "sha256": "5c239e378e0033c9759f92dfdcf7ad4f05a01b50f989bcb706315c3fe3806d5e",
+                  "start_character": 0,
+                  "end_character": 7141
+                }
+              ],
+              "utf8_sha256": "7a05c86559210724a0107c483bfe5b9c6b0b314aa2000badb884d84de56b3c7d",
+              "total_characters": 7141,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "9e865f07f2f264d22aced9b5b4843194347568da149fbfcf6d8f64bbd278b0ea",
+      "record": {
+        "action_id": "house:119:2:160",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is ordering the previous question on1274. No substantive motion body is interpreted. This non-counting procedural action is separate from whole-rule agreement, its deemed substitutes or underlying fuel-package passage; no component policy support/opposition or enacted/technical outcome is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:160",
+            "url": "https://clerk.house.gov/evs/2026/roll160.xml",
+            "raw_sha256": "90c4af91fe2f89d3e0723192ffbd4f5315baffb93e72f70200ad0d8e11925c97",
+            "governed_bytes_sha256": "d8b672c6052401699c08d60d34ec5534e914e1855086d5760e360536ee13e12a"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "3f938c65c1ece0a9cba2370f42303694de045993a5f12d85ce391f85c82b4675",
+      "record": {
+        "action_id": "house:119:2:161",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete1274EH states1224section11has no force/effect. Exact previously read1224section11is the Houseengrossment direction to await1346disposition and append its passed text to7567with designations/cross-reference/technical corrections. This removes that Houseassembly instruction, not the substantive ethanol/farmbill text or an environmental standard. Exact agreement is non-counting procedural context, without a component fuel-policy position. LaterMay13rule does not retroactively replace what the originalApril29rule stated; the pending whole versions at141/154remain separately qualified. No actual final assembled-law identity, enactment or fuel outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:161",
+            "url": "https://clerk.house.gov/evs/2026/roll161.xml",
+            "raw_sha256": "b3fcc6162122591c0af190cd8349acfc0964ec3706cc25843e4d4e0e7d5835ed",
+            "governed_bytes_sha256": "2154dd3ee9d9eaa91899ec3aa0c1833c03524786df4870bdf12a2537a1eba5bb"
+          },
+          {
+            "source_id": "govinfo:hres1274eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1274eh/html/BILLS-119hres1274eh.htm",
+            "raw_sha256": "b7e2107416d3285fcbd626a7e67ac14605292079205e3ace2b3536819b6f1d15",
+            "governed_bytes_sha256": "45c7d19dc38e2e9844e83222d63dd286434c17e17d28d19e4ccd72fcd924a30f"
+          },
+          {
+            "source_id": "govinfo:hres1224eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+            "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+            "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1274eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1274 Engrossed in House (EH)] <DOC> H. Res. 1274 In the House of Representatives, U. S., May 13, 2026. Resolved, That section 11 of House Resolution 1224 shall have no force or effect. Attest: Clerk."
+          },
+          {
+            "source_id": "govinfo:hres1224eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/513204a55cc0b665a318b93734da2fe7a1b431e9b54ff18d8941560abf39ab08.0000000.json",
+                  "sha256": "3461235d7a2b79ac032a3225e65adf844c4ea02aee3f12e251211bc4ee15d4f2",
+                  "start_character": 0,
+                  "end_character": 9652
+                }
+              ],
+              "utf8_sha256": "513204a55cc0b665a318b93734da2fe7a1b431e9b54ff18d8941560abf39ab08",
+              "total_characters": 9652,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "219769c12479e4cd6c06ddc2c4a74c098275ec289620c60102a997755c996428",
+      "record": {
+        "action_id": "house:119:2:162",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete own resolving clause read with opening preamble0:1800; the intervening long name-list preamble was not substantively reviewed. The Houseacknowledges/honors officers, expresses support/condolences and recognizes equipment/training/resource needs. Those are expressions, not an appropriation, equipment/technology procurement order or enforceable operational mandate. Named losses, counts and valor/motive statements remain attributed source assertions, not independently verified facts. This exact suspension/agreement is non-counting expressive context, without a technical/physical program, enacted funding or achieved public-safety outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:162",
+            "url": "https://clerk.house.gov/evs/2026/roll162.xml",
+            "raw_sha256": "4c3b3f9a1970989b06a1ade3dfd734b0d30d9f5f289b24188ad9fe8a49de78a2",
+            "governed_bytes_sha256": "ed85f45fb4b1cd707859109b66e53335abb82cde97efa73a0561498052ee06cf"
+          },
+          {
+            "source_id": "govinfo:hres1252eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1252eh/html/BILLS-119hres1252eh.htm",
+            "raw_sha256": "98612388dd2cfee88d6d6d7612a6662713a638659d1921f3313443c941798a56",
+            "governed_bytes_sha256": "b30742212d9e6612e6a9eb3e497f426c19a4d4a984dce253d14fa3ba3f444f4a"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1252eh",
+            "locator": "Only opening0:1800read; intervening name-list preamble not substantively reviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1252 Engrossed in House (EH)] <DOC> H. Res. 1252 In the House of Representatives, U. S., May 13, 2026. Whereas Federal, State, local, and Tribal police officers, sheriffs, and other law enforcement officers across the United States serve with valor, dignity, and integrity; Whereas law enforcement officers are charged with-- (1) pursuing justice for all individuals; and (2) performing the duties of a law enforcement officer with fidelity to the constitutional and civil rights of the public the officers serve; Whereas law enforcement officers swear an oath to uphold the public trust even though, through the performance of the duties of a law enforcement officer, the officers may become targets for senseless acts of violence; Whereas, in 1962, President John Fitzgerald Kennedy signed Public Law 87-726 (36 U.S.C. 136) (referred to in this preamble as the ``Joint Resolution''), which authorizes the President to proclaim May 15 of every year as ``Peace Officers Memorial Day'' in honor of the Federal, State, and local officers who have been killed, disabled, or otherwise injured in the line of duty; Whereas the Joint Resolution also authorizes the President to designate the week in which Peace Officers Memorial Day falls as ``National Police Week''; Whereas the National Law Enforcement Officers Memorial, dedicated on October 15, 1991, is the national monument to honor those law enforcement officers who have died in the line of duty; and Whereas Peace Officers Memorial Day, 2026, honors the 363 law enforcement officers killed in the line of duty and whose stories were recovered during 2025, including-- (1) Shawn Nixon; (2) Joe Keith; (3) Mark A Meadows; (4) James Phillips; (5) Gabriel M F"
+          },
+          {
+            "source_id": "govinfo:hres1252eh",
+            "locator": "Complete own resolving clause10046:10897read; nonbinding recognition/resources expression",
+            "passage": "Resolved, That the House of Representatives-- (1) acknowledges that police officers and other law enforcement personnel, especially those who have made the ultimate sacrifice, should be remembered and honored; (2) expresses unwavering support for law enforcement officers across the United States in the pursuit of preserving safe and secure communities; (3) recognizes the need to ensure that law enforcement officers have the equipment, training, and resources that are necessary in order to protect the health and safety of the officers while the officers protect the public; (4) recognizes the law enforcement community for continual unseen acts of sacrifice and heroism; and (5) expresses condolences and solemn appreciation to the loved ones of each law enforcement officer who has made the ultimate sacrifice in the line of duty. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4436da9ba14d57900e78f7d5c4378d186b430e1a389102d5c6b00dc589f41474",
+      "record": {
+        "action_id": "house:119:2:163",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is failed recommittal of1346. No substantive motion body is interpreted. This non-counting procedural action is separate from whole-rule agreement, its deemed substitutes or underlying fuel-package passage; no component policy support/opposition or enacted/technical outcome is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:163",
+            "url": "https://clerk.house.gov/evs/2026/roll163.xml",
+            "raw_sha256": "6e34f65714a28f6f151729df85b500f7345a2cfe5f1e2318e07ce5d32bfc94d8",
+            "governed_bytes_sha256": "4ec8070a1ab707f816755a4e3917aebc42c4f9a080cc41f7fd0ecf53a47b92e2"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "db68214911f39878fe3da884a00bb761900e9b58c79880081e0190242929b04a",
+      "record": {
+        "action_id": "house:119:2:164",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1346EHread. Whole E15/RFSpackage includes conditional f(4)commerce/RVP terms,10to15percenth(4)/(5)State-notification transitions,75kbarrel affiliated-company2025definition and future-threshold permanent disqualification,2028small-refinerypetition termination/75percentcompanycompliance reduction, remedy savings, qualified2016–18credits, no-reallocation rule,18monthfuel-dispenser/USTcompatibility rulemaking, and separate at-risk qualifying-small-refinery annual petition/exemption. At-risk proof is solely-compliance-cost causation with unchanged ownership/attestation,30daypublic disclosure/90dayaction, necessity/year limits and an energy-equivalent volume cap, not an automatic grant or all-small-refinery exemption. Printed FarmFoodNationalSecurityActenactment references remain literal, not silently changed to thisAct. Whole7545/old-extension-credit/RVP/State/CAA-RCRAregulatory material baselines and1224/1274version-assembly review remain pending; do not author only the fuel-infrastructure clause or certify storage compatibility, Stateeligibility, cost/risk attribution, current law or actual sales/production/emissions.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:164",
+            "url": "https://clerk.house.gov/evs/2026/roll164.xml",
+            "raw_sha256": "784496f77a4e51ff763d7c44685c04a9af96fac1d227718fbcbbd164cf10d6aa",
+            "governed_bytes_sha256": "6264e6d8d963c8d61ef7f9f3f777e65d5adfbdaa9bf5781499f4bafb7d12eeac"
+          },
+          {
+            "source_id": "govinfo:hr1346eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1346eh/html/BILLS-119hr1346eh.htm",
+            "raw_sha256": "45b4600ac55d75a7e194ca0c423d4d3de5ca171174900df0583f1eb9d79c7287",
+            "governed_bytes_sha256": "1ebc3d7846984fdece9d8cab922211df39d8ddca2e735a1b7e939006a09609f7"
+          },
+          {
+            "source_id": "govinfo:hres1224eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+            "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+            "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+          },
+          {
+            "source_id": "govinfo:hres1274eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1274eh/html/BILLS-119hres1274eh.htm",
+            "raw_sha256": "b7e2107416d3285fcbd626a7e67ac14605292079205e3ace2b3536819b6f1d15",
+            "governed_bytes_sha256": "45c7d19dc38e2e9844e83222d63dd286434c17e17d28d19e4ccd72fcd924a30f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1346eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/5de91ec0884aa75dd0af1ad5f4453536e285782acfe2c557a54e7cc15a4d45d8.0000000.json",
+                  "sha256": "cc546cd2dd79b6fd4cff7026a7b914f2c5e62d4fbf3a067e04d73538c4887cde",
+                  "start_character": 0,
+                  "end_character": 14890
+                }
+              ],
+              "utf8_sha256": "5de91ec0884aa75dd0af1ad5f4453536e285782acfe2c557a54e7cc15a4d45d8",
+              "total_characters": 14890,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1224eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/513204a55cc0b665a318b93734da2fe7a1b431e9b54ff18d8941560abf39ab08.0000000.json",
+                  "sha256": "3461235d7a2b79ac032a3225e65adf844c4ea02aee3f12e251211bc4ee15d4f2",
+                  "start_character": 0,
+                  "end_character": 9652
+                }
+              ],
+              "utf8_sha256": "513204a55cc0b665a318b93734da2fe7a1b431e9b54ff18d8941560abf39ab08",
+              "total_characters": 9652,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1274eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1274 Engrossed in House (EH)] <DOC> H. Res. 1274 In the House of Representatives, U. S., May 13, 2026. Resolved, That section 11 of House Resolution 1224 shall have no force or effect. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "e98e9ffe5aa7cca71cde32b5a974674ba23f623bcfea16a483b6b49f6af49eeb",
+      "record": {
+        "action_id": "house:119:2:165",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete96EHappreciates officer contributions, recognizes sacrifice and expresses congressional support. Preambleclaims about ideology, immigration/sanctuary policy, crime/overdose trends and administration-attributed causes remain legislative assertions, not verified empirical findings or representative motives. No funds, operational policing order, immigration duty, monitoring platform or physical/technical infrastructure program is created by this expression. Exact agreement is non-counting expressive context; no inferred crime causality, personal intent, technology purchase or enacted substantive policy.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:165",
+            "url": "https://clerk.house.gov/evs/2026/roll165.xml",
+            "raw_sha256": "3f07e6e59c17baab04f0359d1110d7e10c4204a72b3344f0a6692920839536c2",
+            "governed_bytes_sha256": "1e763004d65cfac6b08ef183459048575d3a0c4494453af464bee46f35a25856"
+          },
+          {
+            "source_id": "govinfo:hconres96eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres96eh/html/BILLS-119hconres96eh.htm",
+            "raw_sha256": "a4fae2f66d404eccc62d8b7cf54bdd20e0d6a7d33ab2ec5eab6520fd1f62dc8c",
+            "governed_bytes_sha256": "c900879066f3a7937101eab066e9ed3935841c43687c2f55ceefdb5b2564e2a4"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hconres96eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 96 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. CON. RES. 96 _______________________________________________________________________ CONCURRENT RESOLUTION Whereas the brave men and women in law enforcement work tirelessly and relentlessly to safeguard the communities they are sworn to protect, serving as the backbone of public safety across our Nation; Whereas law enforcement officers bear the critical responsibility of upholding the rule of law and maintaining the safety, stability, and public order upon which our communities depend; Whereas law enforcement officers routinely and selflessly risk their own lives and safety to combat crime, remove dangerous and lethal drugs from our streets, and stand in defense of the most vulnerable among us; Whereas law enforcement officers strengthen our communities through outreach, mentorship, crisis response, and countless daily acts of service that frequently go unrecognized; Whereas, from resolving neighborhood disputes to checking in on elderly residents and guiding youth programs, officers provide a quiet and steady presence that extends far beyond traditional law enforcement duties; Whereas rhetoric and policies from leftist activists and progressive politicians seek to defund or dismantle local police departments undermine public safety and place both officers and the communities they serve at greater risk; Whereas sanctuary city policies that restrict cooperation with Federal immigration authorities can compel local law enforcement agencies to divert already limited resources and actively encourage resentment toward local law enforcement; Whereas the Trump administration's focus on restoring law and order has contributed to a notable decline in homicide rates, with levels reaching among the lowest recorded in over a century; Whereas drug overdose deaths in the United States have declined significantly, reaching their lowest levels since 2019; Whereas violent crime rates have declined significantly in major cities across the United States; and Whereas law enforcement officers deserve our deepest respect, unwavering support, and profound gratitude: Now, therefore, be it Resolved by the House of Representatives (the Senate concurring), That Congress-- (1) appreciates and values the indispensable contributions that law enforcement provides to our communities and our country each and every day; (2) recognizes the extraordinary sacrifice that law enforcement officers make to protect and serve their communities and their country; and (3) expresses its profound and wholehearted support for the men and women of law enforcement. Passed the House of Representatives May 13, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. CON. RES. 96 _______________________________________________________________________ CONCURRENT RESOLUTION Expressing support for law enforcement officers."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:156",
+      "original_source_object_sha256": "1710a2faff76dd46cbf0e998c656e70c0055d7c267760918894ea8113e9085da"
+    },
+    {
+      "source_id": "clerk:119:2:157",
+      "original_source_object_sha256": "b07824273dd7a5509aeb54b3adf96f55c3b879d2c8a48fd85ac9901d1e167bbf"
+    },
+    {
+      "source_id": "clerk:119:2:158",
+      "original_source_object_sha256": "a08935d0b1f30b6c2e4889e5982bec72d25bcd5f4df716017d1789ab93d0f673"
+    },
+    {
+      "source_id": "clerk:119:2:159",
+      "original_source_object_sha256": "afce5fd50e0f0bc2fb5215f1fd7b64d7cd70a7f90792a7bdb7ae8dda8395fe89"
+    },
+    {
+      "source_id": "clerk:119:2:160",
+      "original_source_object_sha256": "b4ff5c54303e87788420f337c4883685f6b084ea33bf4e0e3090984ec1bcf50b"
+    },
+    {
+      "source_id": "clerk:119:2:161",
+      "original_source_object_sha256": "55cbdb8351e5db3dabe6947e907c12ebc4110587ebfc51a479eda231d52f8f19"
+    },
+    {
+      "source_id": "clerk:119:2:162",
+      "original_source_object_sha256": "f220004ae0221895659603c5b0424b2fd838e5c5bb8c217c8a48a359789cf514"
+    },
+    {
+      "source_id": "clerk:119:2:163",
+      "original_source_object_sha256": "f89a38a3d800da0acbd07fde617963e1211b68e46c2535e933f07a24af06009e"
+    },
+    {
+      "source_id": "clerk:119:2:164",
+      "original_source_object_sha256": "2ee211b927c27cffd283a1e3b7099d564412cffd4dc18a93bcb6825d174fb035"
+    },
+    {
+      "source_id": "clerk:119:2:165",
+      "original_source_object_sha256": "716f327aa2f20e1dfc0e5d01ba68ddf7ad206394e4fc93c12220f483e325300f"
+    },
+    {
+      "source_id": "govinfo:hconres96eh",
+      "original_source_object_sha256": "60797f7c81cd7853b8674d4204e8a76f7f3b454da3f59e3783eea69b8f1865d5"
+    },
+    {
+      "source_id": "govinfo:hr1346eh",
+      "original_source_object_sha256": "51f5dca4c51a81253e24c66f0665f72c32079fab2847b8bdb3265f91def829ba"
+    },
+    {
+      "source_id": "govinfo:hr2071eh",
+      "original_source_object_sha256": "4f295fa1659b5b7b7e8ed74a6a1a9d66d59967ccb1b5237e69f50d396fd5b4d2"
+    },
+    {
+      "source_id": "govinfo:hr2853eh",
+      "original_source_object_sha256": "cbbe7cdc45459ade7366d7b427c504b878f4758ce7bff7669b00f8d6e123bb57"
+    },
+    {
+      "source_id": "govinfo:hres1224eh",
+      "original_source_object_sha256": "29d6f6ab60488094c43146415a92fe380e1646cdc568d2188bfbd1a4ddacaf31"
+    },
+    {
+      "source_id": "govinfo:hres1252eh",
+      "original_source_object_sha256": "1e8cfc775d3fcbb796e09e4b13e58ef3f8541f682c75224eb12f5f45def81c8f"
+    },
+    {
+      "source_id": "govinfo:hres1274eh",
+      "original_source_object_sha256": "d0ce76d33ffedc02489f59b743ff59c3fc977219d69c6fd7b714399de63c21d5"
+    },
+    {
+      "source_id": "govinfo:hres1275eh",
+      "original_source_object_sha256": "efe9672c0685762a381f939ec1a2becb5d72d3fd88938548af04c1dbecd8e7b1"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr2071eh",
+      "governed_length": 1728,
+      "review_extent": "Complete captured own short bill/rule/expression read; incorporated versions/cross-reference baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1275eh",
+      "governed_length": 7141,
+      "review_extent": "Complete captured own short bill/rule/expression read; incorporated versions/cross-reference baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1274eh",
+      "governed_length": 290,
+      "review_extent": "Complete captured own short bill/rule/expression read; incorporated versions/cross-reference baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1224eh",
+      "governed_length": 9652,
+      "review_extent": "Complete captured own short bill/rule/expression read; incorporated versions/cross-reference baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr1346eh",
+      "governed_length": 14890,
+      "review_extent": "Complete captured own short bill/rule/expression read; incorporated versions/cross-reference baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hconres96eh",
+      "governed_length": 2972,
+      "review_extent": "Complete captured own short bill/rule/expression read; incorporated versions/cross-reference baselines/current law not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr2853eh",
+      "governed_length": 18332,
+      "review_extent": "Only opening0:1800andclosing17532:18332read; whole interior unreviewed"
+    },
+    {
+      "source_id": "govinfo:hres1252eh",
+      "governed_length": 10897,
+      "review_extent": "Only opening0:1800andcomplete resolvingclause10046:10897read; intervening name-list preamble unreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:156",
+        "evidence_unit": "complete_own_bill_or_expression",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:157",
+        "evidence_unit": "partial_whole_crimepackage",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:158",
+        "evidence_unit": "exact_procedure_or_complete_assembly_rule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:159",
+        "evidence_unit": "complete_own_source_pending_whole_or_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:160",
+        "evidence_unit": "exact_procedure_or_complete_assembly_rule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:161",
+        "evidence_unit": "exact_procedure_or_complete_assembly_rule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:162",
+        "evidence_unit": "complete_operative_expression_partial_namelist_preamble",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:163",
+        "evidence_unit": "exact_procedure_or_complete_assembly_rule",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:164",
+        "evidence_unit": "complete_own_source_pending_whole_or_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:165",
+        "evidence_unit": "complete_own_bill_or_expression",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": null,
+    "inherited_focused_test_count": 116,
+    "inherited_focused_suite_head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+    "semantic_checks": 7,
+    "compiled_sha256": "815d5ef89273d85ca61641009b6a2fc64f192862c8a0d7dbf1a32ef45404fcce"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority."
+}

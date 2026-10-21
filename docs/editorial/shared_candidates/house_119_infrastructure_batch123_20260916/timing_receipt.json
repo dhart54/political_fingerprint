@@ -1,0 +1,41 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-20T00:27:51.112948+00:00",
+    "qualification": "Dated named definitions for pendingHR275. Complete86/209character retained units and2899character ownEH read before marker, untimed. No full1101/4872/model taxonomy, adopted-version chain or current-law acquisition/review."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-20T00:29:54.762441+00:00",
+    "end_utc": "2026-10-20T00:30:00.052966+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 123 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch123_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.777
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.513
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 123.649,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 5.29,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 5.308,
+    "result": "passed",
+    "scope": [
+      "HR275dated named citizen/national and list-only definitions without individual risk/procurement/current-law/version clearance",
+      "Preserved1048direct-use precision",
+      "PreservedHR33tax/crew/project/agreement limits",
+      "Unchanged member-neutrality rejection"
+    ]
+  },
+  "initial_failed_preparation": "docs/editorial/shared_candidates/house_119_infrastructure_batch123_20260916/country_name_prose_preparation_receipt.json"
+}

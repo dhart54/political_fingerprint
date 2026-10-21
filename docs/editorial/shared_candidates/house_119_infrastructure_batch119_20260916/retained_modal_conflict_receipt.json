@@ -1,0 +1,67 @@
+{
+  "origin": "676ae9e54ecd1192202567738b423ea42b5513c5:docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json",
+  "origin_git_bytes_sha256": "8bf01e2634ad8b7e93b14d8cb53245dad777528c97569f6a751ee456f2de9180",
+  "inherited_row": {
+    "action_id": "house:119:1:210",
+    "session": 1,
+    "roll": 210,
+    "date": "2025-07-18",
+    "measure": "bill_119_hr_4016",
+    "question": "On Agreeing to the Amendment",
+    "disposition": "source_unresolved",
+    "reason": "Report277 says may be used; actual July17 floor operative says be used without may. Preserve both literal texts and keep the inherited modal discrepancy unresolved. Broader material assistance/qualified authority and Immigration functional scope remain incomplete; no automatic ban interpretation or exclusion.",
+    "source": {
+      "source_id": "clerk:119:1:210",
+      "url": "https://clerk.house.gov/evs/2025/roll210.xml",
+      "raw_sha256": "f9785f154a6f14da671ff38a579b3c916f693dc650cc67b480cc091c4f6d0aba",
+      "governed_bytes_sha256": "3ad7f0ad95b79047d55cbe260aab84a3b9d812e12aafaa4ac5d3ec2d906a95c3",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_4016",
+    "member_action": "nay",
+    "house_action_stage": "On Agreeing to the Amendment",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Report277 says may be used; actual July17 floor operative says be used without may. Preserve both literal texts and keep the inherited modal discrepancy unresolved. Broader material assistance/qualified authority and Immigration functional scope remain incomplete; no automatic ban interpretation or exclusion.",
+    "unresolved_reason": "authoritative_operative_discrepancy",
+    "sources": [
+      {
+        "source_id": "clerk:119:1:210",
+        "url": "https://clerk.house.gov/evs/2025/roll210.xml",
+        "raw_sha256": "f9785f154a6f14da671ff38a579b3c916f693dc650cc67b480cc091c4f6d0aba",
+        "governed_bytes_sha256": "3ad7f0ad95b79047d55cbe260aab84a3b9d812e12aafaa4ac5d3ec2d906a95c3",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      {
+        "source_id": "immigration:roll210-report-modal-hold171",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+        "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+        "governed_bytes_sha256": "d18b2c50a3b5da8b888f3880b38df2a61d48cbe1cffb2a23a16cdb1b4b44d839"
+      },
+      {
+        "source_id": "immigration:roll210-floor-modal-hold171",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "f2821e4361239c837fcec5187d2d3115a470d3889ed23c746fe2654ec27fdb8b"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": true,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": true
+    },
+    "historical_raw_hash_matches": true
+  },
+  "hold_state_changed": false,
+  "operator_repair": false,
+  "new_acquisition": false,
+  "other_domain_eligibility_transferred": false
+}

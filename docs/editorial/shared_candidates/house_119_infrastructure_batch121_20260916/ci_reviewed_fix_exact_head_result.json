@@ -1,0 +1,97 @@
+{
+  "exact_head": "d0a3b2586f3128195ba7a1b889a6f0b406ac765e",
+  "scope": "Exact historical CI result; does not certify later research heads.",
+  "reviewed_fix": "eecbb43b4cb9e90d98c1b624a9d99b4909b3654f",
+  "picked_commit": "2ffeceaf4fa643ef9c6eb829a2ad57af57b5277e",
+  "plan_only_resolution": "d0a3b2586f3128195ba7a1b889a6f0b406ac765e",
+  "backend": {
+    "conclusion": "success",
+    "run_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39160820528",
+    "job_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39160820528/job/117773563239",
+    "shared_candidate_tests": 225,
+    "accepted_M14G_public_receipt": "success",
+    "real_cli_positive_and_negative": "success",
+    "node_contract_tests": 48,
+    "browser_tests": 2,
+    "release_checks": 9,
+    "evidence": {
+      "raw_log_sha256": "886e9113332fc5d5fce4229c7b193b6ba55f38668ee1409774443248557eb182",
+      "matches": [
+        {
+          "line": 685,
+          "text": "m14h-exact-head\tValidate shared candidate preparation at exact head\t2026-10-18T19:57:05.5073453Z 225 passed in 114.24s (0:01:54)"
+        },
+        {
+          "line": 908,
+          "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T19:57:14.2639407Z # Subtest: CI runner avoids optional PR diff capture and retains actual commit metadata"
+        },
+        {
+          "line": 909,
+          "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T19:57:14.2640423Z ok 21 - CI runner avoids optional PR diff capture and retains actual commit metadata"
+        },
+        {
+          "line": 913,
+          "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T19:57:14.2645934Z # Subtest: CI runner still reports assertion failures and exits nonzero without diff capture"
+        },
+        {
+          "line": 914,
+          "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T19:57:14.2647225Z ok 22 - CI runner still reports assertion failures and exits nonzero without diff capture"
+        },
+        {
+          "line": 1051,
+          "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T19:57:14.2797288Z # pass 48"
+        },
+        {
+          "line": 1271,
+          "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T19:57:48.2046284Z   2 passed (10.1s)"
+        },
+        {
+          "line": 1300,
+          "text": "m14h-exact-head\tRun release-tier editorial, frontend, and persistence validation\t2026-10-18T19:58:06.8395010Z Editorial pipeline release validation passed: 9 checks"
+        }
+      ]
+    }
+  },
+  "stdout_overflow_resolved_at_exact_head": true,
+  "old_failed_heads_remain_failed": true,
+  "frontend": {
+    "conclusion": "failure",
+    "run_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39160820403",
+    "job_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39160820403/job/117773562955",
+    "passed": 194,
+    "failed": 1,
+    "test": "released finding complete response keeps source identity, coverage and history",
+    "location": "frontend/tests/local-record-filter.spec.mjs:357:38",
+    "assertion": "Final cards differ from immediate initial snapshot: expected empty array, received six cards.",
+    "inference": "Potential initial-snapshot readiness race after page.goto; not reproduced locally.",
+    "same_frontend_tree_as_reviewed_main": true,
+    "comparison_main": "485e0319deacfd5badb493a04945c0873099dc71",
+    "classification": "Non-blocking follow-up for research and overflow fix integration; blocks a fully green merge claim.",
+    "retried": false,
+    "test_weakened": false,
+    "evidence": {
+      "raw_log_sha256": "a33267464cd2b2ecb8e74c8bdcce128441f047fbb0523a5f3d62b15a9734d066",
+      "matches": [
+        {
+          "line": 2456,
+          "text": "frontend-exact-head\tRun fixture-backed browser regressions against production build\t2026-10-18T19:55:47.1119714Z   1) [chromium] › tests/local-record-filter.spec.mjs:357:38 › released finding complete response keeps source identity, coverage and history "
+        },
+        {
+          "line": 2458,
+          "text": "frontend-exact-head\tRun fixture-backed browser regressions against production build\t2026-10-18T19:55:47.1124432Z     Error: expect(received).toEqual(expected) // deep equality"
+        },
+        {
+          "line": 2646,
+          "text": "frontend-exact-head\tRun fixture-backed browser regressions against production build\t2026-10-18T19:57:23.9315293Z   1 failed"
+        },
+        {
+          "line": 2648,
+          "text": "frontend-exact-head\tRun fixture-backed browser regressions against production build\t2026-10-18T19:57:23.9318233Z   194 passed (2.3m)"
+        }
+      ]
+    }
+  },
+  "overall_head_fully_green": false,
+  "source_acquisitions": 0,
+  "acceptance_or_publication_authority": false
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "prevalidation_authoring_schema_failure_and_safe_correction",
+  "command": "python .tmp/infra_delta_build.py 99",
+  "initial_exit_code": 1,
+  "diagnostic": "sharedActionCoreArtifact actions.62.choice_meanings rejected unexpected Aye/No keys",
+  "correction": "Use schema Yea/Nay choice keys; governed Clerk Aye/No observations remain unchanged and canonical projection normalizes them.",
+  "affected_actions": [
+    "house:119:2:258",
+    "house:119:2:261"
+  ],
+  "meaning_changes": false,
+  "source_changes": false,
+  "methodology_changes": false,
+  "preimage_basis": "Declared key substitution only; no separate initial file byte hash was captured.",
+  "final_build_exit_code": 0,
+  "initial_guard_failure_journal": {
+    "start_utc": "2026-10-19T18:15:21.290294+00:00",
+    "end_utc": "2026-10-19T18:15:23.479442+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 99 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch99_20260916\\validation_receipt.json",
+        "returncode": 1,
+        "process_wall_seconds": 2.189
+      }
+    ]
+  },
+  "guard_case_correction": "Initial exact-action validator failed because guard expected lowercase scope while unchanged authored sentence began Scope; validator/test literal corrected, no source/meaning change, final source/replay/full132/7passed."
+}

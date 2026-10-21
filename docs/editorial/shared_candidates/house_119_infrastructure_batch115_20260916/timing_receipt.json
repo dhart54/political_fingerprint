@@ -1,0 +1,62 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T22:36:08.169627+00:00",
+    "qualification": "Four-case dated NEPA framework specification start. Complete four retained operative units read before marker; no continuous active source-reading duration invented. Existing own-child/body reading is inherited; no fresh whole4776parent-body reading."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T22:39:17.700779+00:00",
+    "end_utc": "2026-10-19T22:39:25.493012+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 115 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch115_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 4.127
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 3.665
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 189.531,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 7.792,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 3,
+    "reported_test_seconds": 7.978,
+    "result": "passed",
+    "scope": [
+      "Dated NEPA framework conditional clocks/research/reliance/agency responsibility and pending body/version limits",
+      "Existing pipeline deadline is not automatic approval",
+      "Preserved land-baseline source/application limits"
+    ]
+  },
+  "initial_validation_processes": {
+    "start_utc": "2026-10-19T22:37:44.881080+00:00",
+    "end_utc": "2026-10-19T22:37:50.830246+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 115 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch115_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.97
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.979
+      }
+    ]
+  },
+  "initial_targeted_tests": {
+    "count": 3,
+    "reported_test_seconds": 7.58,
+    "result": "passed"
+  },
+  "initial_formal_validation_process_seconds": 5.949,
+  "qualification": "Formal initial/final gate durations and reported focused-test seconds remain separate. The marker-to-final-validation elapsed window includes the earlier gate and correction; not uninterrupted active authoring time."
+}

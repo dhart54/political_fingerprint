@@ -250,10 +250,11 @@ class AcceptedFindingsSynthesisTests(unittest.TestCase):
         workflow = ".github/workflows/backend-tests.yml"
         before = subprocess.check_output(["git", "show", f"{m.BASE}:{workflow}"], cwd=m.ROOT).decode().replace("\r\n", "\n")
         after = (m.ROOT / workflow).read_text(encoding="utf-8")
-        # Preserve prior jobs without preventing a later milestone from adding its own job.
-        starts = [match.start() for match in re.finditer(r"(?m)^  [a-z0-9-]+:\n", before)]
-        for start, end in zip(starts, [*starts[1:], len(before)], strict=True):
-            self.assertIn(before[start:end].rstrip(), after)
+        # Preserve prior jobs and all trigger settings except the reviewed
+        # attribute-only identity-guard path in both existing event filters.
+        from backend.tests.ci_workflow_preservation import APPROVED_MAIN, assert_prior_ci_preserved
+        accepted = subprocess.check_output(["git", "show", f"{APPROVED_MAIN}:{workflow}"], cwd=m.ROOT).decode()
+        assert_prior_ci_preserved(before, after, accepted_baseline=accepted)
         with patch.object(m.subprocess, "check_output", side_effect=[f"{m.SOURCE}/accepted_behavioral_findings.json\n", ""]):
             with self.assertRaisesRegex(s.DetachedSynthesisError, "scope violation"):
                 m.validate_scope()

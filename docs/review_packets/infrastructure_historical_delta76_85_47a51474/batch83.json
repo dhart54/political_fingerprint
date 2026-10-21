@@ -1,0 +1,541 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 83,
+  "exact_committed_head": "8c6232d25e4dc626f207c12692580c119a4397d9",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "8c6232d25e4dc626f207c12692580c119a4397d9",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch83_20260916/membership_review.json",
+      "git_blob": "9c181b3881d48b42eb8c2495d19d7e59b9a43218",
+      "git_bytes_sha256": "b0a7c933c56b997740fba8aeeb258223ca29f20262c31eb7983496c8d50bbc52"
+    },
+    "sources": {
+      "head": "8c6232d25e4dc626f207c12692580c119a4397d9",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch83_20260916/sources.json",
+      "git_blob": "6fdc9c326afe5c9b6d51e10d18c1848a9b586eeb",
+      "git_bytes_sha256": "117062bc75f89ea06dbedc184d41cb784e5ba9f744a431de5fd0a92462442f4e"
+    },
+    "screening": {
+      "head": "8c6232d25e4dc626f207c12692580c119a4397d9",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch83_20260916/screening_receipt.json",
+      "git_blob": "ebac62f532215721bd5c83ad13f4ee79a1b88f06",
+      "git_bytes_sha256": "4e95ac28e1d1602aa31afed68a147cf9d172e63da35823f90bc8867a9aa3633e"
+    },
+    "screening_units": {
+      "head": "8c6232d25e4dc626f207c12692580c119a4397d9",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch83_20260916/screening_units_receipt.json",
+      "git_blob": "1c609aac4e93d6bffe0cac8b4c295cc297973228",
+      "git_bytes_sha256": "c3a724dc474a0b7c0994c67b2ac6a46b98b13f6dfca3eea531484210a7165934"
+    }
+  },
+  "original_membership_review_sha256": "57fddd814edf02dd71805fc7602c88b159916b8725816b011622718d82bdd9ac",
+  "new_screened_ids": [
+    "house:119:2:103",
+    "house:119:2:104",
+    "house:119:2:107",
+    "house:119:2:108",
+    "house:119:2:109"
+  ],
+  "prior_followup_ids": [
+    "house:119:2:67",
+    "house:119:2:88"
+  ],
+  "records": [
+    {
+      "original_record_sha256": "005e1a74ea91b7f821cf473f405533196638028bf3635ed05dd7773c237c3371",
+      "record": {
+        "action_id": "house:119:2:67",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete261EH and retained1441permit/1434(d)cooperation units support an unaccepted communications-infrastructure candidate for the WHOLE cable/general-permit package. Preserve issued-and-effective Federal-or-State agency approval, FederalORState, listed activities, surviving consultation and distinct45dayclocks, general rather than cable-only term deletions, and retained compatibility/insurance/bond terms. No universal permit exemption, immunity, lifetime term, current project approval or actual network/environmental outcome. The broader sanctuary-permit scope requires independent taxonomy review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:67",
+            "url": "https://clerk.house.gov/evs/2026/roll067.xml",
+            "raw_sha256": "ff9aa29026c884e0b9e4ef37e02a5bc353c9eab2b8688041b21fbb9320a63453",
+            "governed_bytes_sha256": "2123218ea1d5f73d09815fc9ece0978ffca97d9e23641b04e154b88d3c38b9fd"
+          },
+          {
+            "source_id": "govinfo:hr261eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr261eh/html/BILLS-119hr261eh.htm",
+            "raw_sha256": "fbcffd18401c7fcdb608155de6e8270318b2998cc5f575e39c4c2f3aeec08606",
+            "governed_bytes_sha256": "db341dda742912e1482f18c9246f176b138d81c57b35b31677f4df802bb9e51f"
+          },
+          {
+            "source_id": "govinfo:16usc1441-permit-terms",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap32-sec1441.htm",
+            "raw_sha256": "b5a2825fd86226e71fc570e5c1ad1fcd89ad6c0abf2b88d2d8c319af9ca022c7",
+            "governed_bytes_sha256": "15f8245e2ef99975337f927d24b6c68528b3d69b79017f533a844a1fdd83ccd4"
+          },
+          {
+            "source_id": "govinfo:16usc1434-cooperation",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap32-sec1434.htm",
+            "raw_sha256": "5a6dca65586c39e001f285c01afd33431fae38497668b6f934fda838d8ac19fc",
+            "governed_bytes_sha256": "39ae3557618ea9cb21acb391c1bb9e0ffbf186629592ca871625da68f01a4a71"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr261eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 261 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 261 _______________________________________________________________________ AN ACT To amend the National Marine Sanctuaries Act to prohibit the Secretary of Commerce from prohibiting, or requiring any permit or other authorization for, the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary if such activities have been authorized by a Federal or State agency. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Undersea Cable Protection Act of 2025''. SEC. 2. PROHIBITION ON PROHIBITING, OR REQUIRING PERMITS OR OTHER AUTHORIZATIONS FOR, UNDERSEA FIBER OPTIC CABLES AUTHORIZED BY A FEDERAL OR STATE AGENCY. The National Marine Sanctuaries Act (16 U.S.C. 1431 et seq.) is amended by inserting after section 310 the following: ``SEC. 310A. PROHIBITION ON PROHIBITING, OR REQUIRING PERMITS OR OTHER AUTHORIZATIONS FOR, UNDERSEA FIBER OPTIC CABLES AUTHORIZED BY A FEDERAL OR STATE AGENCY. ``(a) In General.--Notwithstanding any other provision of this Act, the Secretary may not prohibit, or require any permit, including any special use permit, or other authorization for, the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary if a license, lease, or permit has been issued by a Federal or State agency, and is in effect, authorizing such installation, continued presence, operation, maintenance, repair, or recovery. ``(b) Interagency Cooperation.--Nothing in this section shall be construed as altering existing requirements regarding interagency cooperation under section 304(d) in any Federal agency action described in that section and involving the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary.''. SEC. 3. REMOVING RESTRICTIONS ON ACTIVITIES COVERED BY SANCTUARY SPECIAL USE PERMITS. Section 310(c) of National Marine Sanctuaries Act (16 U.S.C. 1441(c)) is amended-- (1) in paragraph (1), by adding ``and'' at the end; (2) by striking paragraphs (2) and (3); and (3) by redesignating paragraph (4) as paragraph (2). Passed the House of Representatives February 11, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 261 _______________________________________________________________________ AN ACT To amend the National Marine Sanctuaries Act to prohibit the Secretary of Commerce from prohibiting, or requiring any permit or other authorization for, the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary if such activities have been authorized by a Federal or State agency."
+          },
+          {
+            "source_id": "govinfo:16usc1441-permit-terms",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§1441. Special use permits (a) Issuance of permits The Secretary may issue special use permits which authorize the conduct of specific activities in a national marine sanctuary if the Secretary determines such authorization is necessary— (1) to establish conditions of access to and use of any sanctuary resource; or (2) to promote public use and understanding of a sanctuary resource. (b) Public notice required The Secretary shall provide appropriate public notice before identifying any category of activity subject to a special use permit under subsection (a). (c) Permit terms A permit issued under this section— (1) shall authorize the conduct of an activity only if that activity is compatible with the purposes for which the sanctuary is designated and with protection of sanctuary resources; (2) shall not authorize the conduct of any activity for a period of more than 5 years unless renewed by the Secretary; (3) shall require that activities carried out under the permit be conducted in a manner that does not destroy, cause the loss of, or injure sanctuary resources; and (4) shall require the permittee to purchase and maintain comprehensive general liability insurance, or post an equivalent bond, against claims arising out of activities conducted under the permit and to agree to hold the United States harmless against such claims. (d) Fees (1) Assessment and collection The Secretary may assess and collect fees for the conduct of any activity under a permit issued under this section. (2) Amount The amount of a fee under this subsection shall be equal to the sum of— (A) costs incurred, or expected to be incurred, by the Secretary in issuing the permit; (B) costs incurred, or expected to be incurred, by the Secretary as a direct result of the conduct of the activity for which the permit is issued, including costs of monitoring the conduct of the activity; and (C) an amount which represents the fair market value of the use of the sanctuary resource. (3) Use of fees Amounts collected by the Secretary in the form of fees under this section may be used by the Secretary— (A) for issuing and administering permits under this section; and (B) for expenses of managing national marine sanctuaries. (4) Waiver or reduction of fees The Secretary may accept in-kind contributions in lieu of a fee under paragraph (2)(C), or waive or reduce any fee assessed under this subsection for any activity that does not derive profit from the access to or use of sanctuary resources."
+          },
+          {
+            "source_id": "govinfo:16usc1434-cooperation",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(d) Interagency cooperation (1) Review of agency actions (A) In general Federal agency actions internal or external to a national marine sanctuary, including private activities authorized by licenses, leases, or permits, that are likely to destroy, cause the loss of, or injure any sanctuary resource are subject to consultation with the Secretary. (B) Agency statements required Subject to any regulations the Secretary may establish each Federal agency proposing an action described in subparagraph (A) shall provide the Secretary with a written statement describing the action and its potential effects on sanctuary resources at the earliest practicable time, but in no case later than 45 days before the final approval of the action unless such Federal agency and the Secretary agree to a different schedule. (2) Secretary's recommended alternatives If the Secretary finds that a Federal agency action is likely to destroy, cause the loss of, or injure a sanctuary resource, the Secretary shall (within 45 days of receipt of complete information on the proposed agency action) recommend reasonable and prudent alternatives, which may include conduct of the action elsewhere, which can be taken by the Federal agency in implementing the agency action that will protect sanctuary resources. (3) Response to recommendations The agency head who receives the Secretary's recommended alternatives under paragraph (2) shall promptly consult with the Secretary on the alternatives. If the agency head decides not to follow the alternatives, the agency head shall provide the Secretary with a written statement explaining the reasons for that decision. (4) Failure to follow alternative If the head of a Federal agency takes an action other than an alternative recommended by the Secretary and such action results in the destruction of, loss of, or injury to a sanctuary resource, the head of the agency shall promptly prevent and mitigate further damage and restore or replace the sanctuary resource in a manner approved by the Secretary."
+          }
+        ],
+        "episode_candidate_id": "episode:hr261:119"
+      }
+    },
+    {
+      "original_record_sha256": "629eec93f0446f1e30ff73c10cc12e2924b403d18e9bb1067c53078b3b993732",
+      "record": {
+        "action_id": "house:119:2:88",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete4294EH and complete retained1511d(b)unit support an unaccepted whole purchasing/scientific-assessment candidate. Preserve feed-covered entities versus watermen/processors/research partners, origin certification, Secretary-determined minimum price,15percent transport ceiling, seek-MOU versus assured agreement and the later-of-fiscal-year two-year start. Annual estimates through2032, guidance, quarterly briefings and post-termination report remain distinct. No new fixed appropriation, guaranteed sales, actual abundance/causality or ecological/economic outcome; direct scientific-data versus broader ecological/market taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:88",
+            "url": "https://clerk.house.gov/evs/2026/roll088.xml",
+            "raw_sha256": "0f927a6890a8acac09723f6bd0e637457d5d7287ab9cd3f66da79591dc4a40dd",
+            "governed_bytes_sha256": "35ed4cf1db46fcd69a9a02ef3365af806025df0ba9b699f91bd234080280ca0d"
+          },
+          {
+            "source_id": "govinfo:hr4294eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4294eh/html/BILLS-119hr4294eh.htm",
+            "raw_sha256": "389c9df22e93c54820aea072508c13c0e4e0fa22d9e9bb24d204a137c0f2498c",
+            "governed_bytes_sha256": "614eebf628a4852de365e019d60a9c5ed20277d3f308eb31734f1a759fa72dcc"
+          },
+          {
+            "source_id": "govinfo:15usc1511d-2024-marine",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap40-sec1511d.htm",
+            "raw_sha256": "180b6d2687335fad4ceca8171091fde872b7a1197a7acc0ee04f169e94d46d2a",
+            "governed_bytes_sha256": "8635e6481a796bc8bc24bee4e06f5dc9b5c844b5596e3bcc934655ae1244a5b6"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4294eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/b9c3e952f8c4fad8e32b762fb9618a4deee4164bf687d14afe69cf6f1c3a2bda.0000000.json",
+                  "sha256": "23b2875e540c2dff647b6643c794842ce1f34ff423beb0986ba49b19e019919e",
+                  "start_character": 0,
+                  "end_character": 11397
+                }
+              ],
+              "utf8_sha256": "b9c3e952f8c4fad8e32b762fb9618a4deee4164bf687d14afe69cf6f1c3a2bda",
+              "total_characters": 11397,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:15usc1511d-2024-marine",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b) Functions The Office, in consultation with the Chesapeake Executive Council, shall— (1) provide technical assistance to the Administrator, to other Federal departments and agencies, and to State and local government agencies in— (A) assessing the processes that shape the Chesapeake Bay system and affect its living resources; (B) identifying technical and management alternatives for the restoration and protection of living resources and the habitats they depend upon; and (C) monitoring the implementation and effectiveness of management plans; (2) develop and implement a strategy for the National Oceanic and Atmospheric Administration that integrates the science, research, monitoring, data collection, regulatory, and management responsibilities of the Secretary of Commerce in such a manner as to assist the cooperative, intergovernmental Chesapeake Bay Program to meet the commitments of the Chesapeake Bay Agreement; (3) coordinate the programs and activities of the various organizations within the National Oceanic and Atmospheric Administration, the Chesapeake Bay Regional Sea Grant Programs, and the Chesapeake Bay units of the National Estuarine Research Reserve System, including— (A) programs and activities in— (i) coastal and estuarine research, monitoring, and assessment; (ii) fisheries research and stock assessments; (iii) data management; (iv) remote sensing; (v) coastal management; (vi) habitat conservation and restoration; and (vii) atmospheric deposition; and (B) programs and activities of the Cooperative Oxford Laboratory of the National Ocean Service with respect to— (i) nonindigenous species; (ii) estuarine and marine species pathology; (iii) human pathogens in estuarine and marine environments; and (iv) ecosystem health; (4) coordinate the activities of the National Oceanic and Atmospheric Administration with the activities of the Environmental Protection Agency and other Federal, State, and local agencies; (5) establish an effective mechanism which shall ensure that projects have undergone appropriate peer review and provide other appropriate means to determine that projects have acceptable scientific and technical merit for the purpose of achieving maximum utilization of available funds and resources to benefit the Chesapeake Bay area; (6) remain cognizant of ongoing research, monitoring, and management projects and assist in the dissemination of the results and findings of those projects; and (7) submit a biennial report to the Congress and the Secretary of Commerce with respect to the activities of the Office and on the progress made in protecting and restoring the living resources and habitat of the Chesapeake Bay, which report shall include an action plan consisting of— (A) a list of recommended research, monitoring, and data collection activities necessary to continue implementation of the strategy described in paragraph (2); and (B) proposals for— (i) continuing any new National Oceanic and Atmospheric Administration activities in the Chesapeake Bay; and (ii) the integration of those activities with the activities of the partners in the Chesapeake Bay Program to meet the commitments of the Chesapeake 2000 agreement and subsequent agreements. "
+          }
+        ],
+        "episode_candidate_id": "episode:hr4294:119"
+      }
+    },
+    {
+      "original_record_sha256": "8c8b0f20914bded2f04a0c3053a8d59900236df6390fc553a56dda3a46612969",
+      "record": {
+        "action_id": "house:119:2:103",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.8029. No substantive motion body is interpreted. This remains non-counting procedural context, separate from whole appropriations passage or the rule’s deemed concurrence, without component support/opposition.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:103",
+            "url": "https://clerk.house.gov/evs/2026/roll103.xml",
+            "raw_sha256": "bae429942c124b78509640aaefd30b4a4315a988ef7e4ad3baac7a2c4767c8b4",
+            "governed_bytes_sha256": "547edd48296cd4be1e7e75425904a088c3c5d2517b4bbfdf6252f478f71271cf"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "781ee96b216ba34f64a5219754e5f3324ea8f465ed88a47c74384256266b7428",
+      "record": {
+        "action_id": "house:119:2:104",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole8029EH is124825characters; only opening0:2400andclosing123825:124825were read. Its PayOurHomelandDefenders title does not reduce the whole DHSappropriations/continuing-appropriations ABpackage to one pay item. The opening has a DivisionA-specific thisActreference and January22H.R.7147explanatory-statement effect; the ending contains payment direction and conditional ratification. These do not certify whole account conditions or identity with earlier7147/7744choices. Whole interior/CR/pay/baseline/version/shared-action/domain review remains pending; no component endorsement, current funding, actual payment, valid obligation, procurement, security or enacted outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:104",
+            "url": "https://clerk.house.gov/evs/2026/roll104.xml",
+            "raw_sha256": "e8b08442f23e34f0843e73afea911f18cab0aa3d0932a73ad051f22155af8b70",
+            "governed_bytes_sha256": "2bcbe12f5b3b0bae7c2bc56d25de652d2bf4fb51e7beb55ce8aa956b68e01584"
+          },
+          {
+            "source_id": "govinfo:hr8029eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8029eh/html/BILLS-119hr8029eh.htm",
+            "raw_sha256": "0ac59dd6578ff1e5e4cdcd63b29417e1dbc7aefdc34dd26a8d6ec26abb8878c5",
+            "governed_bytes_sha256": "f7599c275cd2de2d932a4a60b474fc1ee7bfbda597b63e565bfd010de228a2d2"
+          },
+          {
+            "source_id": "govinfo:hres1131eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1131eh/html/BILLS-119hres1131eh.htm",
+            "raw_sha256": "1a61e78e398c13784adb1ec2e06b540220227defd96c4d1667caa76cc4dfca8d",
+            "governed_bytes_sha256": "f1634cfbdfae95cdf268588b07453ded0778abd1fe228e6056414a4740c8fd5b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr8029eh",
+            "locator": "Only opening0:2400read;124825character whole interior unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 8029 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 8029 _______________________________________________________________________ AN ACT Making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Pay Our Homeland Defenders Act''. SEC. 2. TABLE OF CONTENTS. Sec. 1. Short title. Sec. 2. Table of contents. Sec. 3. References. Sec. 4. Explanatory statement. Sec. 5. Statement of appropriations. DIVISION A--DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS DIVISION B--FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026 SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in division A of this Act shall be treated as referring only to the provisions of that division. SEC. 4. EXPLANATORY STATEMENT. The explanatory statement regarding H.R. 7147 of the 119th Congress, printed in the House of Representatives section of the Congressional Record on January 22, 2026, and submitted by the chair of the Committee on Appropriations of the House of Representatives, shall have the same effect with respect to the allocation of funds and implementation of this Act as if it were a joint explanatory statement of a committee of conference. SEC. 5. STATEMENT OF APPROPRIATIONS. The following sums in this Act are appropriated, out of any money in the Treasury not otherwise appropriated, for the fiscal year ending September 30, 2026. DIVISION A--DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS TITLE I DEPARTMENTAL MANAGEMENT, INTELLIGENCE, SITUATIONAL AWARENESS, AND OVERSIGHT Office of the Secretary and Executive Management operations and support For necessary expenses of the Office of the Secretary and for executive management for operations and support, $316,295,000, which shall be for the purposes and in the amounts specified in the ``Final Bill'' column for Office of the Secretary and Executive Management, Operations and Support, in the ``Department of Homeland Security Appropriations Act, 2026'' table in the explanatory statement described in section 4 (in the matter preceding division A of this cons"
+          },
+          {
+            "source_id": "govinfo:hr8029eh",
+            "locator": "Only closing123825:124825read; no complete CR/pay/ratification review",
+            "passage": "(c) of section 1341 of title 31, United States Code and such payments shall be made. Sec. 1003. All obligations incurred and in anticipation of the appropriations made and authority granted by the Continuing Appropriations Act, 2026 (division A of Public Law 119-37) and by division A of this Act for the purposes of maintaining the essential level of activity to protect life and property and bringing about orderly termination of Government function, and for purposes as otherwise authorized by law, are hereby ratified and approved if otherwise in accord with the provisions of such Act. This division may be cited as the ``Further Additional Continuing Appropriations Act, 2026''. Passed the House of Representatives March 26, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 8029 _______________________________________________________________________ AN ACT Making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1131eh",
+            "locator": "Complete governing1131EH previously read",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/4eecfe51821d967e6487b04109322f08f5acaabce8b619cf9fb91d2d74d17fc9.0000000.json",
+                  "sha256": "afbe13c6151751262642f89ddc6756f8ee436ecc46e57618649f0aa66018942c",
+                  "start_character": 0,
+                  "end_character": 4036
+                }
+              ],
+              "utf8_sha256": "4eecfe51821d967e6487b04109322f08f5acaabce8b619cf9fb91d2d74d17fc9",
+              "total_characters": 4036,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "7a8b917a636184564266863214e81a4897c2d0e1c876d6b5424a4c63682dc405",
+      "record": {
+        "action_id": "house:119:2:107",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the ordering of the previous question on H.Res.1142. No substantive motion body is interpreted. This remains non-counting procedural context, separate from whole appropriations passage or the rule’s deemed concurrence, without component support/opposition.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:107",
+            "url": "https://clerk.house.gov/evs/2026/roll107.xml",
+            "raw_sha256": "99fc032ae6ec7eafffafc817d827caa7dd3ca1967f269a8f08cf82538ac39829",
+            "governed_bytes_sha256": "7a111efc987503d60d9ad8859323f32cf4f72706ac3e37ced7b44dcc7e7d179e"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f8ee3f697e5c73ca0a51be76bb76326b76bc33b87fa36d1275d0eb6270b238d6",
+      "record": {
+        "action_id": "house:119:2:108",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1142EH deems the House to have taken7147with its Senateamendment and concurred with a Houseamendment consisting of complete RCP119-21. That print replaces the Senateinserted matter with five clauses: a CRdate substitution toMay22,2026, inclusion of the lapse period on/aboutFeb14,2026, named pay/allowance/benefit availability/payment direction and conditional ratification. It is a self-executing House concurrence position, not mere scheduling or itself enactment. Whole referenced119-37/119-75appropriation/coverage/pay1341(c)and ratification conditions/domain review remain pending; no selected employee/account fragment, automatic validation of every obligation, actual payment or current funding outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:108",
+            "url": "https://clerk.house.gov/evs/2026/roll108.xml",
+            "raw_sha256": "54b39dd05fb293cc30df7b87f0e27d88e159ef04531a1e4210567d0ef4495e76",
+            "governed_bytes_sha256": "f27de4540ec182d00f521060c1fab8fb7fbc723e338e87e694b5fe9d8ae69243"
+          },
+          {
+            "source_id": "govinfo:hres1142eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1142eh/html/BILLS-119hres1142eh.htm",
+            "raw_sha256": "251388ac8df82a0c9ca0be3680f058ebce787f08a8dbcbcf82a5279042eef908",
+            "governed_bytes_sha256": "c23b15fa7343eb3b6ead62d52dbb189dc0a3a433615b2813fddd34a29baa8b25"
+          },
+          {
+            "source_id": "house:rcp119-21-complete",
+            "url": "https://docs.house.gov/billsthisweek/20260323/RCP_119-21_02_xml.pdf",
+            "raw_sha256": "25592736a363448aca4b814b403285a628ba2a98d71160479208253c26d938ec",
+            "governed_bytes_sha256": "33a4731072c07b9d88675cd2579a9f7d7ff9444290c03ece088e269dba029694"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1142eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1142 Engrossed in House (EH)] <DOC> H. Res. 1142 In the House of Representatives, U. S., March 27, 2026. Resolved, That upon adoption of this resolution, the House shall be considered to have taken from the Speaker's table the bill (H.R. 7147) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes, with the Senate amendment thereto, and to have concurred in the Senate amendment with an amendment consisting of the text of Rules Committee Print 119-21. Attest: Clerk."
+          },
+          {
+            "source_id": "house:rcp119-21-complete",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "PDF PAGE 1\nRULES COMMITTEE PRINT 119–21 \nTEXT OF THE HOUSE AMENDMENT TO THE  \nSENATE AMENDMENT TO H.R. 7147 \n[Showing the text of the Further Additional Continuing \nAppropriations Act, 2026] \nIn lieu of the matter proposed to be inserted by the \nSenate amendment, insert the following: \nSECTION 1. This Act may be cited as the ‘‘Further 1\nAdditional Continuing Appropriations Act, 2026’’. 2\nSEC. 2. The Continuing Appropriations Act, 2026 3\n(division A of Public Law 119–37) is amended by striking 4\nthe date specified in section 106(3) and inserting ‘‘May 5\n22, 2026’’. 6\nSEC. 3. For the purposes of the Continuing Appro-7\npriations Act, 2026 (division A of Public Law 119–37), 8\nthe time covered by such division shall be considered to 9\ninclude the period which began on or about February 14, 10\n2026, during which there occurred a lapse in appropria-11\ntions. 12\nSEC. 4. Amounts made available in the Continuing 13\nAppropriations Act, 2026 (division A of Public Law 119– 14\n37) and in division H of the Consolidated Appropriations 15\nAct, 2026 (Public Law 119–75) for personnel pay, allow-16\nVerDate Nov 24 2008 12:42 Mar 27, 2026 Jkt 000000 PO 00000 Frm 00001 Fmt 6652 Sfmt 6201 C:\\USERS\\TRCASSIDY\\APPDATA\\ROAMING\\SOFTQUAD\\X METAL\\11.0\\GEN\\C\\RCP_119-\nMarch 27, 2026 (12:42 p.m.)\nG:\\CMTE\\MISC\\RCP_119-21_02.XML\ng:\\V\\E\\032726\\E032726.019.xml           (1052471|3)\n\nPDF PAGE 2\n2 \nances, and benefits in each department and agency shall 1\nbe available for payments pursuant to subsection (c) of 2\nsection 1341 of title 31, United States Code and such pay-3\nments shall be made. 4\nSEC. 5. All obligations incurred and in anticipation 5\nof the appropriations made and authority granted by the 6\nContinuing Appropriations Act, 2026 (division A of Public 7\nLaw 119–37) and by division H of the Consolidated Ap-8\npropriations Act, 2026 (Public Law 119–75) for the pur-9\nposes of maintaining the essential level of activity to pro-10\ntect life and property and bringing about orderly termi-11\nnation of Government function, and for purposes as other-12\nwise authorized by law, are hereby ratified and approved 13\nif otherwise in accord with the provisions of such Act. 14\n◊ \nVerDate Nov 24 2008 12:42 Mar 27, 2026 Jkt 000000 PO 00000 Frm 00002 Fmt 6652 Sfmt 6301 C:\\USERS\\TRCASSIDY\\APPDATA\\ROAMING\\SOFTQUAD\\X METAL\\11.0\\GEN\\C\\RCP_119-\nMarch 27, 2026 (12:42 p.m.)\nG:\\CMTE\\MISC\\RCP_119-21_02.XML\ng:\\V\\E\\032726\\E032726.019.xml           (1052471|3)"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c7b58668353ea0c735322c78dac04de1d8cf1d461a3e64d69b5244e44e97ef54",
+      "record": {
+        "action_id": "house:119:2:109",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete1011EH and retained2201/2206units support an unaccepted whole emergency-conservation/forest-advance candidate. Preserve ECP75/50percent-of-payment versus EFR75percent-of-cost and retained overall75percentforest ceiling, mandatory option within existing eligibility, natural-cause-spread wildfire qualification, unchanged60dayECP versus new180dayEFRunspent-funds predicates/reasonable return time. StateFOTGvalues/current individual eligibility are uninspected. No additive grant, all-human-fire coverage, new fixed appropriation or actual physical/agricultural outcome; broader private conservation versus direct-physical-rehabilitation taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:109",
+            "url": "https://clerk.house.gov/evs/2026/roll109.xml",
+            "raw_sha256": "f60152f3c40ae074b1a1e73ec72d0c90a52f95b3394b82b24d108d1bc513b1d6",
+            "governed_bytes_sha256": "c546603a3cb5b74ec2b67b51025667b5ab287ed9295dc3a63a3f00744497d38f"
+          },
+          {
+            "source_id": "govinfo:hr1011eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1011eh/html/BILLS-119hr1011eh.htm",
+            "raw_sha256": "d33b8bf18611b6353401a946f433de290878c93501a35efd65c2ff58adb1dbc8",
+            "governed_bytes_sha256": "3198c42f758b5c3c50518a7f02d89e034943a237bf11fd785dc77583539c653e"
+          },
+          {
+            "source_id": "govinfo:16usc2201-operative162",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap42-sec2201.htm",
+            "raw_sha256": "0a5bf89f0e130c475b667c89fd8b36b507d8641d0dae13ffce772d6968f2ad59",
+            "governed_bytes_sha256": "fbed9ec7f26bf140d6566bef92e4187c430801fb10db190e0dbce11077c76f5b"
+          },
+          {
+            "source_id": "govinfo:16usc2206-operative162",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap42-sec2206.htm",
+            "raw_sha256": "9765f1736c628b072edc59b6129bc3dfa80acc964ef0a5cfb5acae03edc4a19d",
+            "governed_bytes_sha256": "affc521ab3be02e14b587c7788eba9b018caec19193ef71d9e914ab23c77c771"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1011eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1011 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 1011 _______________________________________________________________________ AN ACT To amend the Agricultural Credit Act of 1978 to remove barriers to agricultural producers in accessing funds to carry out emergency measures under the emergency conservation program, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Emergency Conservation Program Improvement Act of 2025''. SEC. 2. EMERGENCY CONSERVATION PROGRAM. Section 401 of the Agricultural Credit Act of 1978 (16 U.S.C. 2201) is amended-- (1) in subsection (b)-- (A) in the subsection heading, by inserting ``and Other Emergency Conservation Measures'' after ``Fencing''; and (B) by amending paragraph (1) to read as follows: ``(1) In general.--With respect to a payment to an agricultural producer under subsection (a) for the repair or replacement of fencing, or for other emergency measures to rehabilitate farmland or to repair or replace a farmland or conservation structure, the Secretary shall give the agricultural producer the option of receiving-- ``(A) before carrying out such replacement or rehabilitation, not more than 75 percent of the payment for such replacement or rehabilitation, which shall be based on the fair market value of the replacement or rehabilitation, as determined by the Secretary; and ``(B) before carrying out such repair, not more than 50 percent of the payment for such repair, which shall be based on the fair market value of the repair, as determined by the Secretary.''; and (2) by adding at the end the following: ``(c) Wildfires.--A wildfire that causes damage with respect to which a payment may be made under subsection (a) includes any wildfire that is not caused naturally, including a wildfire that is caused by the Federal Government, if the damage is caused by the spread of the fire due to natural causes.''. SEC. 3. IMPROVING THE EMERGENCY FOREST RESTORATION PROGRAM. Section 407 of the Agricultural Credit Act of 1978 (16 U.S.C. 2206) is amended-- (1) by redesignating subsection (e) as subsection (f); and (2) by inserting after subsection (d) the following: ``(e) Advance Payments.-- ``(1) In general.--The Secretary shall give an owner of nonindustrial private forest land the option of receiving, before the owner carries out emergency measures under this section, not more than 75 percent of the cost of the emergency measures, as determined by the Secretary based on the fair market value of the cost of the emergency measures using the estimated cost of the applicable practice published in the Field Office Technical Guide of each State by the Natural Resources Conservation Service. ``(2) Return of funds.--If the funds provided under paragraph (1) are not expended by the end of the 180-day period beginning on the date on which the owner of nonindustrial private forest land receives those funds, the funds shall be returned within a reasonable timeframe, as determined by the Secretary.''. Passed the House of Representatives April 14, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 1011 _______________________________________________________________________ AN ACT To amend the Agricultural Credit Act of 1978 to remove barriers to agricultural producers in accessing funds to carry out emergency measures under the emergency conservation program, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:16usc2201-operative162",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2201. Emergency conservation program (a) In general The Secretary of Agriculture (referred to in this chapter as the \"Secretary\") is authorized to make payments to agricultural producers who carry out emergency measures to control wind erosion on farmlands or to rehabilitate farmlands damaged by wind erosion, floods, hurricanes, wildfires, or other natural disasters when, as a result of the foregoing, new conservation problems have been created that (1) if not treated, will impair or endanger the land, (2) materially affect the productive capacity of the land, (3) represent damage that is unusual in character and, except for wind erosion, is not the type that would recur frequently in the same area, and (4) will be so costly to rehabilitate that Federal assistance is or will be required to return the land to productive agricultural use. (b) Repair or replacement of fencing (1) In general With respect to a payment to an agricultural producer under subsection (a) for the repair or replacement of fencing, the Secretary shall give the agricultural producer the option of receiving not more than 25 percent of the payment, determined by the Secretary based on the applicable percentage of the fair market value of the cost of the repair or replacement, before the agricultural producer carries out the repair or replacement. (2) Return of funds If the funds provided under paragraph (1) are not expended by the end of the 60-day period beginning on the date on which the agricultural producer receives those funds, the funds shall be returned within a reasonable timeframe, as determined by the Secretary. "
+          },
+          {
+            "source_id": "govinfo:16usc2206-operative162",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2206. Emergency forest restoration program (a) Definitions In this section: (1) Emergency measures The term \"emergency measures\" means those measures that— (A) are necessary to address damage caused by a natural disaster to natural resources on nonindustrial private forest land, and the damage, if not treated— (i) would impair or endanger the natural resources on the land; and (ii) would materially affect future use of the land; and (B) would restore forest health and forest-related resources on the land. (2) Natural disaster The term \"natural disaster\" includes wildfires, hurricanes or excessive winds, drought, ice storms or blizzards, floods, or other resource-impacting events, as determined by the Secretary. (3) Nonindustrial private forest land The term \"nonindustrial private forest land\" means rural land, as determined by the Secretary, that— (A) has existing tree cover (or had tree cover immediately before the natural disaster and is suitable for growing trees); and (B) is owned by any nonindustrial private individual, group, association, corporation, or other private legal entity, that has definitive decision-making authority over the land. (b) Availability of assistance The Secretary may make payments to an owner of nonindustrial private forest land who carries out emergency measures to restore the land after the land is damaged by a natural disaster. (c) Eligibility To be eligible to receive a payment under subsection (b), an owner must demonstrate to the satisfaction of the Secretary that the nonindustrial private forest land on which the emergency measures are carried out had tree cover immediately before the natural disaster. (d) Cost share requirement Payments made under subsection (b) shall not exceed 75 percent of the total cost of the emergency measures carried out by an owner of nonindustrial private forest land. (e) Authorization of appropriations There are authorized to be appropriated to the Secretary such funds as may be necessary to carry out this section. Amounts so appropriated shall remain available until expended. "
+          }
+        ],
+        "episode_candidate_id": "episode:hr1011:119"
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:103",
+      "original_source_object_sha256": "7b368249cb683b69f58b03aa3c48ea81f0bbfc7da80604c9bcd54011a5f69d81"
+    },
+    {
+      "source_id": "clerk:119:2:104",
+      "original_source_object_sha256": "2a37398aa111124ec6a8119e5345ba1e2bd68cf20b5ced57af7f99e646ff5098"
+    },
+    {
+      "source_id": "clerk:119:2:107",
+      "original_source_object_sha256": "dd8dbc0dd5955b7b815243801e194acd4dbb27ed45643a6623ce44c58c9f8bf0"
+    },
+    {
+      "source_id": "clerk:119:2:108",
+      "original_source_object_sha256": "df72af54ea7f974eb01198446a57c4db68187399c91b2597a2f45bc61d285dc8"
+    },
+    {
+      "source_id": "clerk:119:2:109",
+      "original_source_object_sha256": "542eaf3dddb6ed64315b00583adf051bd826504da80ad2a8262da60384ccaa60"
+    },
+    {
+      "source_id": "clerk:119:2:67",
+      "original_source_object_sha256": "9abdb1d19b0ee48dde70cda553630bf170056e81fcb6b5c7b503b14829e1e7e0"
+    },
+    {
+      "source_id": "clerk:119:2:88",
+      "original_source_object_sha256": "3596d17c4903227a6a4fe9531764adfa265afc8c49a58e66af545aa2be06c3df"
+    },
+    {
+      "source_id": "govinfo:15usc1511d-2024-marine",
+      "original_source_object_sha256": "30b2b3e4a1c09fac4ef6effca09c716dd6aad4a959db6fdc6f8a172ab28b48d8"
+    },
+    {
+      "source_id": "govinfo:16usc1434-cooperation",
+      "original_source_object_sha256": "7ae6a5d5779487f1141b159d41d016b4a2366fa1f25a85cc9e758ce07434d1d0"
+    },
+    {
+      "source_id": "govinfo:16usc1441-permit-terms",
+      "original_source_object_sha256": "fc46a42837f664d394b18ad2d7235ae99b8664244d570de7b7027a3e836b2326"
+    },
+    {
+      "source_id": "govinfo:16usc2201-operative162",
+      "original_source_object_sha256": "77ce235d1fb5909391d5a4dc61bf5b1400c2320edf602df7da52061211ece062"
+    },
+    {
+      "source_id": "govinfo:16usc2206-operative162",
+      "original_source_object_sha256": "c3c5ad48e82789217fecb2c5a19224d04ce824f195ad09126b3391c5a5a102b4"
+    },
+    {
+      "source_id": "govinfo:hr1011eh",
+      "original_source_object_sha256": "f4f127445d8929fea50027ea99847c063c4b9444fe6615405f65cd9530cd21d6"
+    },
+    {
+      "source_id": "govinfo:hr261eh",
+      "original_source_object_sha256": "9b1d418123d17141811c3260b7d8b6e9215a292828436c4a005d561c74070d01"
+    },
+    {
+      "source_id": "govinfo:hr4294eh",
+      "original_source_object_sha256": "14c25c7c0b29fcefd49880e959426d0614c99f346d3aa48ae78bba13d88263da"
+    },
+    {
+      "source_id": "govinfo:hr8029eh",
+      "original_source_object_sha256": "0e638b288b6770fbe5cd65dc5a0374c4c99176c23a6508c81ed69251ee6ceb41"
+    },
+    {
+      "source_id": "govinfo:hres1131eh",
+      "original_source_object_sha256": "49e1841725c7efd779893f7ab775c854bbb441c044a53d4d310aacfe3b43ce14"
+    },
+    {
+      "source_id": "govinfo:hres1142eh",
+      "original_source_object_sha256": "6b6e5ad5b580464c04e1dcf60fdf8670000846f497b1fc82c4164795efeae4df"
+    },
+    {
+      "source_id": "house:rcp119-21-complete",
+      "original_source_object_sha256": "6c134ba433988cebcf4e7414e1750d7ed94eb84e4310fd85dacc8d60c9ede71f"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr8029eh",
+      "governed_length": 124825,
+      "review_extent": "Only0:2400and123825:124825read; whole DHSpackage interior unreviewed"
+    },
+    {
+      "source_id": "govinfo:hres1131eh",
+      "governed_length": 4036,
+      "review_extent": "Complete captured own rule/print/bill or selected statutory unit read; current CR/pay and State technical-cost guides not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hres1142eh",
+      "governed_length": 618,
+      "review_extent": "Complete captured own rule/print/bill or selected statutory unit read; current CR/pay and State technical-cost guides not implicitly certified"
+    },
+    {
+      "source_id": "house:rcp119-21-complete",
+      "governed_length": 2440,
+      "review_extent": "Complete captured own rule/print/bill or selected statutory unit read; current CR/pay and State technical-cost guides not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr1011eh",
+      "governed_length": 3598,
+      "review_extent": "Complete captured own rule/print/bill or selected statutory unit read; current CR/pay and State technical-cost guides not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:16usc2201-operative162",
+      "governed_length": 1618,
+      "review_extent": "Complete captured own rule/print/bill or selected statutory unit read; current CR/pay and State technical-cost guides not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:16usc2206-operative162",
+      "governed_length": 2077,
+      "review_extent": "Complete captured own rule/print/bill or selected statutory unit read; current CR/pay and State technical-cost guides not implicitly certified"
+    },
+    {
+      "source_id": "govinfo:hr261eh",
+      "governed_length": 3016,
+      "review_extent": "Complete retained own source rechecked for the requested exact agency-category or including-examples correction; no fresh acquisition"
+    },
+    {
+      "source_id": "govinfo:hr4294eh",
+      "governed_length": 11397,
+      "review_extent": "Complete retained own source rechecked for the requested exact agency-category or including-examples correction; no fresh acquisition"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "prior_meanings_source_literal_corrected": 2,
+    "units": [
+      {
+        "action_id": "house:119:2:103",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:104",
+        "evidence_unit": "partial_whole_DHSpackage",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:107",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:108",
+        "evidence_unit": "whole_deemed_concurrence_and_complete_print_unreviewed_incorporated_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:109",
+        "evidence_unit": "complete_conservation_advance_bill_and_both_program_baselines",
+        "whole_action_meaning_authored": true
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "bounded_preparation_proof_correction",
+  "initial_failure": "Receipt preparation compared prior projection objects byte-for-byte, including core hashes that change with the snapshot meaning reference; assertion failed before writing new recommendations. The mistakenly continued source gate then failed on the absent recommendation file. No unit suite or semantic gate ran in that failed attempt.",
+  "initial_validation_journal": {
+    "start_utc": "2026-10-19T20:50:29.640910+00:00",
+    "end_utc": "2026-10-19T20:50:31.887040+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 108 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch108_20260916\\validation_receipt.json",
+        "returncode": 1,
+        "process_wall_seconds": 2.246
+      }
+    ]
+  },
+  "correction": "Compare all65prior core objects excluding only snapshot action_meaning_ref and its derived action_core_sha256; compare all130prior member observation fields excluding only that verified core hash, bound independently to the corresponding old/new core. All other prior semantic/evidence/observation fields are exact-equal.",
+  "boundaries_preserved": true,
+  "test_weakening": false,
+  "source_or_meaning_change_for_correction": false,
+  "full_focused_suite": "Runs after corrected receipt preparation, not claimed for failed initial attempt"
+}

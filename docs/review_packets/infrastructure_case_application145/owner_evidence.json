@@ -1,0 +1,41 @@
+{
+  "evidence_kind": "Trusted forwarded human conversation preserved as supplied; not a fetched or cryptographically signed approval receipt",
+  "forwarding_thread": "01a15000-0ff6-73e2-95ac-fe6aee80201f",
+  "receiving_owner": "01a1500b-5c4d-7661-b831-317690ecb322",
+  "approval_transcript": "Assistant, 2026-10-21 20:05:56 UTC, Sentinel_22bcc962bc54819180fc47a0e49f4e05: \"The five-case bundle is now independently reviewed: [review packet](https://github.com/dhart54/political_fingerprint/blob/e85b87c69c6191ab6e17bfbe71f4a29b1e41d08c/docs/review_packets/infrastructure_batch142_disaster_baselines/decision_bundle.json).\n\nMy recommendations:\n- H.R.153: eligible for its public disaster-data reporting service.\n- H.R.164: eligible for electric restoration and mitigation coordination.\n- H.R.804: exclude; its focus is SBA disaster-assistance outreach.\n- H.R.1491: exclude; its focus is tax-administration timing. The amended-text binding is now supported.\n- H.R.152: keep pending; its disaster studies, planning and reporting duties still need a scope judgment.\n\nApprove applying these exact candidate-record dispositions and H.R.1491’s reviewed text binding, after validation passes? This would not accept the authored meanings, merge or publish anything. Other research is continuing.\"\nUser, 2026-10-21 21:17 UTC, Sentinel_874b573a59a0819180d956bdbeca7efb: \"Approve all. Tell me what remains outstanding. Then get ready to checkpoint in 50 minutes\"",
+  "scope": {
+    "case_actions": [
+      "house:119:1:9",
+      "house:119:1:10",
+      "house:119:1:13",
+      "house:119:1:49",
+      "house:119:1:88"
+    ],
+    "reviewed_bundle_head": "e85b87c69c6191ab6e17bfbe71f4a29b1e41d08c",
+    "exact_bundle_sha256": "5ae115e381d009896db611688182d6c273bbcf293b05dbf1765bde8487ad6003",
+    "eligibility_approved": [
+      "house:119:1:10",
+      "house:119:1:13"
+    ],
+    "exclusions_approved": [
+      "house:119:1:49",
+      "house:119:1:88"
+    ],
+    "retention_pending_approved": [
+      "house:119:1:9"
+    ],
+    "binding_resolution_approved": [
+      "house:119:1:88"
+    ],
+    "require_exact_seal_match": true,
+    "independent_precommit_review": true,
+    "authored_meaning_acceptance": false,
+    "batch143_approval": false,
+    "HR859_or_HR28_decision": false,
+    "merge": false,
+    "publication": false,
+    "production": false,
+    "Health_activation": false
+  },
+  "checkpoint_target_utc": "2026-10-21T22:07:00Z"
+}

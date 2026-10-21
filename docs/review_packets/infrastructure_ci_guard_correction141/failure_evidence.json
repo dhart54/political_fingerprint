@@ -1,0 +1,65 @@
+{
+  "run_id": 39651713141,
+  "run_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39651713141",
+  "feature_head": "a988dd87b307ad9575201130b87105e3717013c1",
+  "classification": "blocking in-scope regression from the intended additive workflow path-filter change; not an unrelated hosted baseline failure",
+  "failed_jobs": [
+    {
+      "job_id": 119401466076,
+      "name": "m14e-exact-head",
+      "raw_log_sha256": "4401816d0615733db666910e25c365a2cc8954147e3fa16605c5658442635bfd",
+      "verified_checkout_sha": "a988dd87b307ad9575201130b87105e3717013c1",
+      "checkout_verification": "git log -1 --format=%H output in completed checkout log",
+      "failed": 1,
+      "passed": 21,
+      "subtests_passed": 55,
+      "failing_guards": [
+        "test_accepted_findings_synthesis.py::test_frozen_upstream_paths_and_existing_ci_jobs"
+      ],
+      "failure": "Historical push-filter substring rejects approved .gitattributes entry"
+    },
+    {
+      "job_id": 119401466127,
+      "name": "m14f-exact-head",
+      "raw_log_sha256": "5036832c9d02f26fc9c91372b289b715d3d3a4bcd71eee77b8168f38abe37565",
+      "verified_checkout_sha": "a988dd87b307ad9575201130b87105e3717013c1",
+      "checkout_verification": "git log -1 --format=%H output in completed checkout log",
+      "failed": 1,
+      "passed": 28,
+      "subtests_passed": 40,
+      "failing_guards": [
+        "test_accepted_findings_public_wording.py::test_upstream_historical_and_prior_ci_blocks_are_unchanged"
+      ],
+      "failure": "Historical push-filter substring rejects approved .gitattributes entry"
+    },
+    {
+      "job_id": 119401465580,
+      "name": "m14g-exact-head",
+      "raw_log_sha256": "a3faad552c22aa92eb6b31f836471997a6d8cd4d82b3f0274f302ca77cca9c55",
+      "verified_checkout_sha": "a988dd87b307ad9575201130b87105e3717013c1",
+      "checkout_verification": "git log -1 --format=%H output in completed checkout log",
+      "failed": 2,
+      "passed": 94,
+      "subtests_passed": null,
+      "failing_guards": [
+        "test_accepted_findings_synthesis.py::test_frozen_upstream_paths_and_existing_ci_jobs",
+        "test_accepted_findings_public_wording.py::test_upstream_historical_and_prior_ci_blocks_are_unchanged"
+      ],
+      "failure": "Historical push-filter substring rejects approved .gitattributes entry"
+    }
+  ],
+  "successful_integration_evidence": {
+    "job_id": 119401466317,
+    "checkout": "9aaf48dc3c686fbdeea84fd4154c0751478747a2",
+    "parents": [
+      "c52d121b64d814de3cf684980368bced40e5b4ea",
+      "a988dd87b307ad9575201130b87105e3717013c1"
+    ],
+    "passed": 33,
+    "seconds": 0.9,
+    "qualification": "Synthetic merge-tree evidence, not feature-head proof"
+  },
+  "whole_run_terminal_status": "Still running when this correction was prepared; final status must be read externally",
+  "product_artifacts_changed": false,
+  "production_writes": false
+}

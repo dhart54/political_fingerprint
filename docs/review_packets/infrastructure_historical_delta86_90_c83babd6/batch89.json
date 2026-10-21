@@ -1,0 +1,711 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 89,
+  "exact_committed_head": "21369b4031ee19f64af10b97365d57d45e645f10",
+  "export_anchor_head": "c83babd6dec4af0be87befa87d8b763816e85479",
+  "committed_provenance": {
+    "membership": {
+      "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/membership_review.json",
+      "git_blob": "b7d3c9cbdcde734d48e215e36ac953caa2d87d6a",
+      "git_bytes_sha256": "6ba489578003a879448ca060c8f00c9b32ade47e4ae2194264fae4fa62e9382a"
+    },
+    "sources": {
+      "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+      "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+      "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+    },
+    "screening": {
+      "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/screening_receipt.json",
+      "git_blob": "e6b4704271184bdcab455d126c6f9ee23be5c0b3",
+      "git_bytes_sha256": "46b4041e5605d361981bd1a0905a9d37dce8e61d2411b2053c469de16be76dc8"
+    },
+    "screening_units": {
+      "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/screening_units_receipt.json",
+      "git_blob": "013d1b19bd8417eee2e208b94b6c0fa538adafb2",
+      "git_bytes_sha256": "0989445d4daf0021a1ed2b40d929e9a2147b32c5de3565bd0b8d0c05c33a7ef5"
+    },
+    "validation": {
+      "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/validation_receipt.json",
+      "git_blob": "b9d43b6b171cea350ab1286a49b16fb8b451db36",
+      "git_bytes_sha256": "7c135b26c934140ae6ad5c28298ee79340e15cfe794c777e8eacee2a2de3af7f"
+    }
+  },
+  "original_membership_review_sha256": "2d8a48c3354827de5fb359e51dbb051ce6e18af41759f86e38db06ab082dcd3d",
+  "new_screened_ids": [
+    "house:119:2:146",
+    "house:119:2:147",
+    "house:119:2:148",
+    "house:119:2:149",
+    "house:119:2:150",
+    "house:119:2:151",
+    "house:119:2:152",
+    "house:119:2:153",
+    "house:119:2:154",
+    "house:119:2:155"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "c1152648f72eea0ddd250df474205f334388c2898d84c43b51badf184115d920",
+      "record": {
+        "action_id": "house:119:2:146",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete GrothmanPartB20offered text and recorded416–8with11NotVotingadoption read. It requires a congressional report on feasibility, implementation and effectiveness of food-definition demonstration projects, with legislative recommendations, no later than120daysafterconclusionofALLsuchprojects. It does not itself change eligible SNAPfoods, mandate a new technical experiment, appropriate money or set a120dayafterenactment deadline. Exact child is a general food-assistance policy-evaluation/report mandate without a scientific/technical/physical-infrastructure program, supporting a proposed Infrastructure exclusion based on its own body. No proved effectiveness, nutrition or benefit/retailer outcome is inferred, and child adoption is separate from whole farmbill passage/enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:146",
+            "url": "https://clerk.house.gov/evs/2026/roll146.xml",
+            "raw_sha256": "2bfc5aa8b892ba3084c335c148f247dffcc65f5878bd9242055efb592a953f75",
+            "governed_bytes_sha256": "9ac89d30c910558736a19d799086e42b2a46c738e1cf84299fa0a0cfcaf45046"
+          },
+          {
+            "source_id": "congressional-record:7567-partB20-operative-voice166",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf",
+            "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+            "governed_bytes_sha256": "726c91baa814b4ceda04c1ed72771ec80111b176836fad7274ea903b00d925f1"
+          },
+          {
+            "source_id": "congressional-record:7567-partB20-roll146-recorded166",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+            "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+            "governed_bytes_sha256": "8de4231eeb3a08468de9f1e249d7f7acb3307e38f7d3a95ca4c700334e0c86d2"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:7567-partB20-operative-voice166",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 20 OFFERED BY MR . GROTHMAN \nThe Acting CHAIR. It is now in order \nto consider amendment No. 20 printed \nin part B of House Report 119–628. \nMr. GROTHMAN. Mr. Chair, I have \nan amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle A, of title IV, add \nthe following: \nSEC. 4114. FOODS ELIGIBLE FOR PURCHASE \nWITH SNAP BENEFITS. \nNot later than 120 days after the conclu-\nsion of the all demonstration projects car-\nried out by the Secretary of Agriculture re-\ngarding the statutory definition of food eli-\ngible for purchase by recipients of supple-\nmental nutrition assistance program (SNAP) \nbenefits, the Secretary shall submit to the \nCommittee on Agriculture of the House of \nRepresentatives, and the Committee on Agri-\nculture, Nutrition, and Forestry of the Sen-\nate, a report on the feasibility, implementa-\ntion, and effectiveness of such projects, in-\ncluding recommendations to the Congress for \nlegislative changes to such definition. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Wisconsin (Mr. \nG\nROTHMAN). \nThe question was taken; and the Act-\ning Chair announced that the ayes ap-\npeared to have it. \nMr. THOMPSON of Pennsylvania. \nMr. Chair, I demand a recorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Wisconsin will be \npostponed."
+          },
+          {
+            "source_id": "congressional-record:7567-partB20-roll146-recorded166",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 20 OFFERED BY MR . GROTHMAN \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 20, printed in \npart B of House Report 119–628, offered \nby the gentleman from Wisconsin (Mr. \nG\nROTHMAN), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 416, noes 8, \nnot voting 11, as follows: \n[Roll No. 146] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "9ee68fbb1138f5297c91fb6e0418d43be5ae67f69d9c8f4e773d841684764fec",
+      "record": {
+        "action_id": "house:119:2:147",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete Grothman/designeePartB22offered and recorded69–355with11NotVotingrejection read. It would nullify the specific May9,2024electronic-cattle/bison-eartag final rule89FR39540and prohibit proposing/finalizing/implementing/administering/enforcing substantially similar rules. Material rule scope, covered animal/movement/identification requirements and technical/current baseline are not in the bounded reused pool and remain unreviewed; whole digital-identification versus general animal-agriculture taxonomy stays pending. Do not infer all RFID, all animals, every cattle movement, voluntary tags or all disease-tracing law prohibited, actual technology removal or enacted effect; recorded rejection, not merely preliminary voice noes, controls.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:147",
+            "url": "https://clerk.house.gov/evs/2026/roll147.xml",
+            "raw_sha256": "86560a3d0b4884e7a05d8e26fc645e59289c067aef979e0a899dc69defdae19b",
+            "governed_bytes_sha256": "f1745a45bc1e8e612907a5a1917045442ead8457962b7fa00ec5c75a76ec262e"
+          },
+          {
+            "source_id": "congressional-record:7567-partB22-operative-voice166",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf",
+            "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+            "governed_bytes_sha256": "1d8c81e983d0cb9dce98b510376eeb12c882d0e802be5ebf27c31f74ffe54b9f"
+          },
+          {
+            "source_id": "congressional-record:7567-partB22-roll147-recorded166",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+            "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+            "governed_bytes_sha256": "1bedbf46f95c4d4a3feea7228af3e4b9306595077f370366066c803f55a66494"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:7567-partB22-operative-voice166",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 22 OFFERED BY MR . GROTHMAN \nThe Acting CHAIR. It is now in order \nto consider amendment No. 22 printed \nin part B of House Report 119–628. \nMr. GROTHMAN. Mr. Chair, as the \ndesignee of Ms. H\nAGEMAN, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of part I of subtitle A of title \nXII, add the following: \nSEC. 12010 REPEAL OF FINAL RULE ON USE OF \nELECTRONIC IDENTIFICATION \nEARTAGS AS OFFICIAL IDENTIFICA-\nTION IN CATTLE AND BISON. \n(a) N ULLIFICATION.—The final rule of the \nDepartment titled ‘‘Use of Electronic Identi-\nfication Eartags as Official Identification in \nCattle and Bison’’ and issued on May 9, 2024 \n(89 Fed. Reg. 39540) shall have no force or ef-\nfect. \n(b) P\nROHIBITION.—The Secretary may not \ntake any action to propose, finalize, imple-\nment, administer, or enforce any rule sub-\nstantially similar to the rule described in \nsubsection (a). \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Wisconsin (Mr. \nG\nROTHMAN). \n\n\nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMr. GROTHMAN. Mr. Chair, I de-\nmand a recorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Wisconsin will be \npostponed."
+          },
+          {
+            "source_id": "congressional-record:7567-partB22-roll147-recorded166",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 22 OFFERED BY MR . GROTHMAN \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 22, printed in \npart B of House Report 119–628, offered \nby the gentleman from Wisconsin (Mr. \nG\nROTHMAN), on which further pro-\nceedings were postponed and on which \nthe noes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nVerDate Sep 11 2014 07:16 May 01, 2026 Jkt 069060 PO 00000 Frm 00009 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\A30AP7.023 H30APPT1DMWilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSEH3306 April 30, 2026 \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 69, noes 355, \nnot voting 11, as follows: \n[Roll No. 147] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4c7cd132e43e5c81082af9213329126a1ef74a28c0915f27eae1319d05d33d05",
+      "record": {
+        "action_id": "house:119:2:148",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete LunaPartB28offered/recorded280–142with13NotVotingadoption and exact selected RCP10205–10207target read. It strikes three distinct sections: conditional national-labeling/liability rules with material-violation qualification and retained State(a)/(c)authority; new local-regulation preemption; and label-consistent registered-pesticide use/application/discharge lawful-without-further-permit language. It does not itself repeal FIFRAregistration, every EPApermit or all Stateauthority. Material136v/136a/penalty baselines, governingPartAconformed target and whole scientific-product/technical-permitting versus general environmental/tort policy mapping remain pending. Preserve adoption over preliminary voice noes; no individual harm, liability, permit, approved use, physical-project or enacted outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:148",
+            "url": "https://clerk.house.gov/evs/2026/roll148.xml",
+            "raw_sha256": "d1d1ed6df4e7c72e43963dad5cca5ee628d43bbceffb106187261cd5d9d97cf0",
+            "governed_bytes_sha256": "ec308547ab6d5dc099b55a02d4844870b261d6cf560fbaa75f2211d28073234e"
+          },
+          {
+            "source_id": "congressional-record:7567-partB28-operative-voice166",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf",
+            "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+            "governed_bytes_sha256": "d3d7bab832d99e08cbfb4def59a728bf8d23a85e609725e56d81e7d6683e73f4"
+          },
+          {
+            "source_id": "congressional-record:7567-partB28-roll148-recorded166",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+            "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+            "governed_bytes_sha256": "17dd32acb6c55c0b71e3a769be65fb2c547e6f11892489823dfa525c2a0bd05f"
+          },
+          {
+            "source_id": "rules:hr7567-print119-22-material-amendment-pages",
+            "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h7567_xml.pdf",
+            "raw_sha256": "c58eb77bd880facc45e4a5e3b498d37dc5850c1f8d1a22ba02c3c5bd3593326f",
+            "governed_bytes_sha256": "08afde8f513662097e7d3d552cf428bd4204d19ea7e4dee7db2dd16ac89b2c99"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:7567-partB28-operative-voice166",
+            "locator": "Complete own child offered/recorded binding read",
+            "passage": "AMENDMENT NO. 28 OFFERED BY MRS . LUNA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 28 printed \nin part B of House Report 119–628. \nMrs. LUNA. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 10205 (relating to uniformity \nof pesticide labeling). \nStrike section 10206 (relating to authority \nof States). \nStrike section 10207 (relating to lawful use \nof authorized pesticides). \nVerDate Sep 11 2014 13:23 Apr 30, 2026 Jkt 069060 PO 00000 Frm 00146 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\K29AP7.114 H29APPT1dmwilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSE H3281 April 29, 2026 \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from Florida (Mrs. L\nUNA). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMrs. LUNA. Mr. Chair, I demand a re-\ncorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from Florida will be \npostponed."
+          },
+          {
+            "source_id": "congressional-record:7567-partB28-roll148-recorded166",
+            "locator": "Complete own child offered/recorded binding read",
+            "passage": "AMENDMENT NO. 28 OFFERED BY MRS . LUNA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 28, printed in \npart B of House Report 119–628, offered \nby the gentlewoman from Florida (Mrs. \nL\nUNA), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 280, noes 142, \nnot voting 13, as follows: \n[Roll No. 148] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "rules:hr7567-print119-22-material-amendment-pages",
+            "locator": "Only complete selected RCP10205–10207at5221:8117read; other material pages not certified",
+            "passage": "SEC. 10205. UNIFORMITY OF PESTICIDE LABELING RE-22\nQUIREMENTS. 23\n(a) I N GENERAL.—Section 24(b) of the Federal In-24\nsecticide, Fungicide, and Rodenticide Act (7 U.S.C. 25\nApril 16, 2026 (9:59 a.m.)\nG:\\CMTE\\RU\\19\\RCP\\RCP_H7567.XML\ng:\\VHLC\\041626\\041626.019.xml           (1055141|3)\n[PDF page733]\n733 \n136v(b)) shall be applied to require uniformity in pesticide 1\nlabeling nationally, and to prohibit any State, instrumen-2\ntality, or political subdivision thereof, or a court from di-3\nrectly or indirectly imposing or continuing in effect any 4\nrequirements for, or penalize or hold liable, any entity for 5\nfailing to comply with requirements that would require la-6\nbeling or packaging that is in addition to or different from 7\nthe labeling or packaging approved by the Administrator 8\nof the Environmental Protection Agency (referred to in 9\nthis section as the ‘‘Administrator’’) under such Act (7 10\nU.S.C. 136 et seq.), including any requirements relating 11\nto warnings on such labeling or packaging, provided that 12\nthe entity is not in material violation of subparagraph (M), 13\n(Q), or (R) of section 12(a)(2) of such Act (7 U.S.C. 14\n136j(a)(2)), for which the entity has been penalized pursu-15\nant to section 14 of such Act (7 U.S.C. 136l). 16\n(b) R ULE OF CONSTRUCTION.—Nothing in this sec-17\ntion shall be construed to alter or diminish the authority 18\nof States under subsections (a) and (c) of section 24 of 19\nthe Federal Insecticide, Fungicide, and Rodenticide Act 20\n(7 U.S.C. 136v). 21\nSEC. 10206. AUTHORITY OF STATES. 22\nSection 24 of the Federal Insecticide, Fungicide, and 23\nRodenticide Act (7 U.S.C. 136v) is amended— 24\nApril 16, 2026 (9:59 a.m.)\nG:\\CMTE\\RU\\19\\RCP\\RCP_H7567.XML\ng:\\VHLC\\041626\\041626.019.xml           (1055141|3)\n[PDF page734]\n734 \n(1) in the section heading, by inserting ‘‘ AND 1\nLOCALITIES’’ after ‘‘STATES’’; and 2\n(2) by adding at the end the following: 3\n‘‘(d) LOCAL REGULATION.—A political subdivision of 4\na State shall not impose, or continue in effect, any require-5\nment relating to the sale, distribution, labeling, applica-6\ntion, or use of any pesticide or device that is subject to 7\nregulation— 8\n‘‘(1) by a State pursuant to this section; or 9\n‘‘(2) by the Administrator under this Act.’’. 10\nSEC. 10207. LAWFUL USE OF AUTHORIZED PESTICIDES. 11\nSection 3(f) of the Federal Insecticide, Fungicide, 12\nand Rodenticide Act (7 U.S.C. 136a(f)) is amended by 13\nadding at the end the following: 14\n‘‘(6) L AWFUL USE OF REGISTERED PES -15\nTICIDES.—Notwithstanding any other provision of 16\nlaw, the use, application, or discharge of a registered 17\npesticide consistent with its labeling approved under 18\nthis Act shall be permitted and considered lawful, 19\nwithout further permitting or approval require-20\nments.’’. 21\nApril 16, 2026 (9:59 a.m.)\nG:\\CMTE\\RU\\19\\RCP\\RCP_H7567.XML\ng:\\VHLC\\041626\\041626.019.xml           (1055141|3)\n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "8d51cf2d6415c7d0ee7a33803311ab113cd3b7a6091911991e795fe266cb1937",
+      "record": {
+        "action_id": "house:119:2:149",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete printed MoorePartB36report proposal read and exact Clerkfailed vote identified. It adds a penalty exception conditioned on both WestVirginiaconduct and an active-at-enactment commercial greyhound racing track, targeting specified subsection(a)paragraphs. Full offered-floor/version and target prohibitions/penalty/definition/applicability body are not bound here; only incidental targetpage802lines were seen during source location, not substantively reviewed or used as a complete claim. Whole exact-action/domain review remains pending, rather than a title-based animal-policy exclusion or an asserted general exemption for WestVirginia/animal-cruelty law. No actual track eligibility, offense, immunity or enacted result is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:149",
+            "url": "https://clerk.house.gov/evs/2026/roll149.xml",
+            "raw_sha256": "098501f7064ddb2c0d4d096568bc3d20c8b8334da99c701fed130fb74501ffc2",
+            "governed_bytes_sha256": "f02dbbe67e88e982462eeb2dadc0e0cd31a067a2b5de35eb45f02a6c77c7c344"
+          },
+          {
+            "source_id": "house-rules:119628-partB36-operative167",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+            "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+            "governed_bytes_sha256": "c3c40343df60bf3db4c2ef869df44cef1bc288d994564718ba511bcbf6b553ab"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "house-rules:119628-partB36-operative167",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "36. An Amendment To Be Offered by Representative Moore of West Virginia or His Designee, Debatable for 10 Minutes Page 802, line 15, strike ```Any person''' and insert the following: ``(1) In general.--Except as specified in paragraph (2), any person''. Page 802, after line 20, add the following: ``(2) Exception.--The penalties specified in paragraph (1) shall not apply with respect to a violation of any of paragraphs (1) through (5) of subsection (a) that involves conduct occurring-- ``(A) in the State of West Virginia; and ``(B) at a commercial greyhound racing track that is active on the date of enactment of the Farm, Food, and National Security Act of 2026.''. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "dfa009d73ee3ec476633a6fae6f820a0725b285b64b8bf572c0b98fae35cbefc",
+      "record": {
+        "action_id": "house:119:2:150",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete printed Neguse-or-designeePartB39report proposal read. Clerk identifies ScholtenPartB39asModified, so this printed pre-modification body is not certified as the final offered text. It proposes precision-agriculture definition and agricultural advanced-R&D purposes/technological-barrier, resilience/soil-carbon/energy/voluntary precision-adoption changes at RCP430/431. Exact floor modification and full1473H/7USC3319kbaseline/material target remain unbound; whole technical-research meaning/domain stays pending. No automatic mandated technology, grant appropriation, actual adoption/yield/environmental result or substitution of an unmodified report for the modified choice is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:150",
+            "url": "https://clerk.house.gov/evs/2026/roll150.xml",
+            "raw_sha256": "68b864a45989148b4f810a6b52dd227554de577d6c60ce98792c405cea7a0634",
+            "governed_bytes_sha256": "a3b57c5273cb7001fa86ba62ecdf83e873d990d48ae611c9bff0927cff58eb8e"
+          },
+          {
+            "source_id": "house-rules:119628-partB39-operative167",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+            "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+            "governed_bytes_sha256": "3638006c7d6a3c02f9fc2d8044a636f701c374be92d61b41b84dd2c22759b63f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "house-rules:119628-partB39-operative167",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "39. An Amendment To Be Offered by Representative Neguse of Colorado or His Designee, Debatable for 10 Minutes Page 430, line 9, strike ``and'' at the end. Page 430, line 13, add ``and'' at the end. Page 430, after line 13, insert the following: (E) by adding at the end the following: ``(8) Precision agriculture.--The term `precision agriculture' means managing, tracking, or reducing crop or livestock production inputs (including seed, feed, fertilizer, chemicals, water, and time) at a heightened level of spatial and temporal granularity to improve efficiencies, reduce waste, and maintain environmental quality.''; Page 431, strike lines 15 through 25 and insert the following: (A) in paragraph (2)-- (i) by amending subparagraph (B) to read as follows: ``(B) to overcome the long-term and high-risk technological barriers in the development of agricultural technologies, research tools, and qualified products and projects that enhance export competitiveness, environmental sustainability, water conservation, and resilience to extreme weather, drought, infectious diseases, plant and animal pathogens, and plant and animal pests;''; (ii) in subparagraph (C), by striking ``and'' at the end; (iii) by redesignating subparagraph (D) as subparagraph (E); and (iv) by inserting after subparagraph (C) the following: ``(D) to enhance the role of sustainable agriculture (as defined in section 1404) in innovative voluntary resilience solutions in the United States through the development of agricultural technologies that may address-- ``(i) the impact of extreme weather on crop production; ``(ii) the effects of drought and the potential of building water holding capacity in soils on crop and rangelands; ``(iii) the expansion of the potential for long-term carbon storage through sustainable agriculture; ``(iv) increased economic and practical feasibility for sustainable energy, including conventional and advanced biofuels, on farms and in the agriculture industry; ``(v) increased voluntary adoption of conservation practices that sequester carbon and build on-farm climate resilience; and ``(vi) increased economic and practical feasibility for, and voluntary adoption of, precision agriculture technology; and''. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f09acbb9177b5fe0b106b6253295b32ee5fd32b37166d5a2b5b6e936f33ceb5a",
+      "record": {
+        "action_id": "house:119:2:151",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete printed SelfPartB47report proposal read and exact Clerkfailed vote identified. It would insert soda in SNAPfood exclusions, define soda using carbonated-beverage and more-than1gram-added-sugar/artificial-sweetener/flavoring wording, and take effect180daysafterenactment. Preserve that literal printed predicate rather than simplifying it to any sugar or all sweetened beverages. The report is not a captured offered-floor version; exact-floor binding and definition/baseline review remain pending before any final food-policy domain disposition. No current eligible product, benefit, tax, nutrition effect or enacted prohibition is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:151",
+            "url": "https://clerk.house.gov/evs/2026/roll151.xml",
+            "raw_sha256": "1e2cb6d0cbe14a1bc49e41ee47536c385217fb04eae79931233ef4a5bac7888d",
+            "governed_bytes_sha256": "08695333aa6a1e9484731aa2cba84d9eebd543f59e75df3ae8fb796a1cd2548f"
+          },
+          {
+            "source_id": "house-rules:119628-partB47-operative167",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+            "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+            "governed_bytes_sha256": "a394ffac4f766bf9329c8a063feef5cadc76bba03a192a157577d54c035feef8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "house-rules:119628-partB47-operative167",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "47. An Amendment To Be Offered by Representative Self of Texas or His Designee, Debatable for 10 Minutes At the end of subtitle A, of title IV, add the following: SEC. 4114. FUNDING IS ZERO FOR ZERO NUTRITION OPTIONS. (a) Amendments.--Section 3 of the Food and Nutrition Act of 2008 (7 U.S.C. 2012) is amended-- (1) in subsection (k) by inserting ``soda,'' after ``alcoholic beverages,'', and (2) by inserting after subsection (r) the following: ``(r-1) `Soda' means a carbonated beverage that contains more than 1 gram of added sugar, artificial sweetener, or flavoring per serving.''. (b) Effective Date.--This section shall take effect 180 days after the date of the enactment of this Act. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "db1768d767c13858a2e76186f62b21fac2ecc2a3d615d8f5abd266431bce4eae",
+      "record": {
+        "action_id": "house:119:2:152",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete printed SpartzPartB49report proposal read and exact Clerkadopted vote identified. It exempts new OR in-use agricultural tractors defined by29CFR1928.51and specified self-propelled spraying/fertilizing/harvesting equipment for defined covered commodities from standards UNDER213. It is not all farm equipment, allCleanAirActrequirements or a proved emissions change. Exact offered-floor/current target, complete7547nonroad-engine standard framework and incorporated tractor/commodity definitions remain pending; a physical-machinery/technical-standards relationship is a review lead, not an authored or accepted whole meaning. No individual compliance, equipment approval or enacted result is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:152",
+            "url": "https://clerk.house.gov/evs/2026/roll152.xml",
+            "raw_sha256": "d2559105b7c75b42c3fc7b2dccf102cd5cd0e64480131531d611ef881cf8fe3c",
+            "governed_bytes_sha256": "57ac0ed9f86e64a8828d3edc2fe71089573755278466c55ae5c568f36ea4e85e"
+          },
+          {
+            "source_id": "house-rules:119628-partB49-operative167",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+            "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+            "governed_bytes_sha256": "985eca96eccb130949e626fb5cb32ec6f3066a80468994a1e0b8ada06d15c438"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "house-rules:119628-partB49-operative167",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "49. An Amendment To Be Offered by Representative Spartz of Indiana or Her Designee, Debatable for 10 Minutes Add at the end of subtitle D of title XII the following: SEC. 12___. EXEMPTION OF FARM EQUIPMENT FROM CLEAN AIR ACT EMISSION STANDARDS. Section 213 of the Clean Air Act (42 U.S.C. 7547) is amended by adding at the end the following: ``(e) Exemption for Farm Equipment.--The standards under this section shall not apply to new or in-use-- ``(1) agricultural tractors, as such term is defined in section 1928.51 of title 29, Code of Federal Regulations; or ``(2) self-propelled agricultural equipment used to spray, fertilize, or harvest covered commodities, as such term is defined in section 1111(6) of the Agricultural Act of 2014 (7 U.S.C. 9011(6)).''. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6b708c201d82c378a7977b944a0fec2eb63bfe5ccae735bb4b0b492e263343f8",
+      "record": {
+        "action_id": "house:119:2:153",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit7567. No substantive motion body is interpreted. This is non-counting procedural context, separate from recorded child amendments and later whole bill passage; no component policy position, enacted mandate or technical/physical outcome is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:153",
+            "url": "https://clerk.house.gov/evs/2026/roll153.xml",
+            "raw_sha256": "c7dcf918d743545c7107fbc343aefb3fe600d8a91d0bd6466ef6cf34a6376b2d",
+            "governed_bytes_sha256": "b694931e871daa2d4b5a0833a09e8ea40a2efa968dd68e47ceada1d153b3b789"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "45a8aba88f23e65116e70da03da97f5c2960d384cc7144666063b34842148a4c",
+      "record": {
+        "action_id": "house:119:2:154",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole7567EHhas959629characters; only opening0:1800andclosing958829:959629read. Its whole commodity/conservation/nutrition/research/rural-development/energy/forestry/miscellaneous package and incorporated baseline/assembled-version mapping remain unreviewed.1224section11separately directs adding1346after its disposition during engrossment, so later EHcannot automatically stand in for pre-passage whole text. Individual adopted amendments and technical table-of-contents entries do not establish the whole action meaning or domain. No selected broadband/science/energy fragment, title-only exclusion, actual program funding, grant, health, agricultural or economic outcome is authored.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:154",
+            "url": "https://clerk.house.gov/evs/2026/roll154.xml",
+            "raw_sha256": "76642e459dd4f0759c68c08b018b1272cde006984922795c83cbe827cdbda1b0",
+            "governed_bytes_sha256": "a7dbc90ad2f1a15662a4ea5aec0fbb418855101dea1964f6a2554245f34fa6c6"
+          },
+          {
+            "source_id": "govinfo:hr7567eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7567eh/html/BILLS-119hr7567eh.htm",
+            "raw_sha256": "da1845f477d502c60d20a39d7114846850c80a61fbaf5355173829702df56813",
+            "governed_bytes_sha256": "67e61f67a34ee330c12fb0e053f935ed8fb2847b16248cd9dd6fdf26178bb7f4"
+          },
+          {
+            "source_id": "govinfo:hres1224eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+            "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+            "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7567eh",
+            "locator": "Only opening0:1800read;959629character whole interior not reviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 7567 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 7567 _______________________________________________________________________ AN ACT To provide for the reform and continuation of agricultural and other programs of the Department of Agriculture through fiscal year 2031, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE; TABLE OF CONTENTS. (a) Short Title.--This Act may be cited as the ``Farm, Food, and National Security Act of 2026''. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title; table of contents. Sec. 2. Definitions. TITLE I--COMMODITIES Sec. 1001. Suspension of permanent price support authority. Sec. 1002. Tree assistance program. Sec. 1003. Specialty crop emergency assistance framework. Sec. 1004. Assistance in the form of block grants. Sec. 1005. Dairy-related extensions. Sec. 1006. Mandatory reporting of dairy product processing costs. Sec. 1007. Dairy reports. Sec. 1008. Processing of certain loans. Sec. 1009. Storage facility loans. Sec. 1010. Strengthening domestic food production supply chains. Sec. 1011. Regulations. Sec. 1012. Restoration of tobacco as agricultural commodity in Commodity Credit Corporation Charter Act. Sec. 1013. Study on storage facility loans for on-farm fertilizer storage. Sec. 1014. Electronic forms for covered disaster assistance programs. Sec. 1015. Dairy business innovation initiatives. Sec. 1016. Revision of evidence standards for livestock indemnity payments for losses by Mexican wolves. TITLE II--CONSERVATION Subtitle A--Definitions Sec. 2001. Definitions. Sec. 2002. Mitig"
+          },
+          {
+            "source_id": "govinfo:hr7567eh",
+            "locator": "Only closing958829:959629read",
+            "passage": "andards Act (7 U.S.C. 87j) is amended-- (1) in subsection (a), by adding at the end the following: ``Notwithstanding the previous sentence, if the Secretary does not make a new appointment upon the completion of a term of an existing member (including such existing member's second successive term), then such existing member shall continue to serve until such appointment is made.''; and (2) in subsection (e), by striking ``2025'' and inserting ``2033''. Passed the House of Representatives April 30, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 7567 _______________________________________________________________________ AN ACT To provide for the reform and continuation of agricultural and other programs of the Department of Agriculture through fiscal year 2031, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1224eh",
+            "locator": "Complete governing rule previously read; whole amended pre-passage package not certified",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/513204a55cc0b665a318b93734da2fe7a1b431e9b54ff18d8941560abf39ab08.0000000.json",
+                  "sha256": "3461235d7a2b79ac032a3225e65adf844c4ea02aee3f12e251211bc4ee15d4f2",
+                  "start_character": 0,
+                  "end_character": 9652
+                }
+              ],
+              "utf8_sha256": "513204a55cc0b665a318b93734da2fe7a1b431e9b54ff18d8941560abf39ab08",
+              "total_characters": 9652,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "b6352ef718e83b7253e22ce57f4c7a6a81ba1ed45ad52253ce73de46c7f051f3",
+      "record": {
+        "action_id": "house:119:2:155",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "CompleteS4465ESread: both403(b)(1)titleVIIrepeal date and403(b)(2)introductory date change fromApril30toJune12,2026; effective date is earlier of enactment ORApril29,2026. Whole operative403(b)/FISAtitleVII/electronic-surveillance transition baselines remain unbound, so exact short extension/current coverage and technology-versus-general-security domain interpretation remain pending. Do not infer allsurveillancepowers extended without condition, permanent renewal, warrant/privacy effect, actual query authority, court approval or current enactment merely from this House suspension/pass record.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:155",
+            "url": "https://clerk.house.gov/evs/2026/roll155.xml",
+            "raw_sha256": "2b025b6c6ebca8f881e36fe1506a1ef70d7f5fc32dd771c09a49d60df1197c60",
+            "governed_bytes_sha256": "bdb0a8e26e98571cb2221afb912edd693d8e9e373ed5980b6cacaa2d611496bd"
+          },
+          {
+            "source_id": "govinfo:s4465es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s4465es/html/BILLS-119s4465es.htm",
+            "raw_sha256": "4fdbc85223356a1f0a86e28d87df53bd1d0345b3c4577f40b2607177431704fa",
+            "governed_bytes_sha256": "bd89961795495cb6e6dd6eda502feb15a5b9c7fe159cfc07503f5501f217479d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s4465es",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S. 4465 Engrossed in Senate (ES)] <DOC> 119th CONGRESS 2d Session S. 4465 _______________________________________________________________________ AN ACT To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. EXTENSION OF AUTHORITIES OF TITLE VII OF THE FOREIGN INTELLIGENCE SURVEILLANCE ACT OF 1978. (a) Extension of Repeal Date of Title VII.--Section 403(b) of the FISA Amendments Act of 2008 (Public Law 110-261) is amended-- (1) in paragraph (1) (50 U.S.C. 1881 note), by striking ``April 30, 2026'' and inserting ``June 12, 2026''; and (2) in paragraph (2) (18 U.S.C. 2511 note), in the matter preceding subparagraph (A), by striking ``April 30, 2026'' and inserting ``June 12, 2026''. (b) Effective Date.--The amendments made by this section shall take effect on the earlier of the date of the enactment of this Act or April 29, 2026. Passed the Senate April 30, 2026. Attest: Secretary. 119th CONGRESS 2d Session S. 4465 _______________________________________________________________________ AN ACT To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:146",
+      "original_source_object_sha256": "a6b00ef6990fc2ad256c305c3ea31e7dd73613ae0e56d1c417d94039b1b4b11c"
+    },
+    {
+      "source_id": "clerk:119:2:147",
+      "original_source_object_sha256": "37beda66a94ea9da99dc0cf8b68c98568dff2876d75126cd92fdb563531371c6"
+    },
+    {
+      "source_id": "clerk:119:2:148",
+      "original_source_object_sha256": "ed7a0e6ba68b6037c47c56625364318cf26edc617c9afd0a4c88144d37649c03"
+    },
+    {
+      "source_id": "clerk:119:2:149",
+      "original_source_object_sha256": "d38dc37aebef2b11c3eecbb451e00a398e6b5ab7c5325a94e01ace2ec538ba01"
+    },
+    {
+      "source_id": "clerk:119:2:150",
+      "original_source_object_sha256": "925a210ce0899ccb3d1903a3c02eb8db4124b32455fb5007719baebed9ab1147"
+    },
+    {
+      "source_id": "clerk:119:2:151",
+      "original_source_object_sha256": "94abeef9f9f2ca2196799e2033ef327c2bfa4b0d61093adb7682453aa5f2663f"
+    },
+    {
+      "source_id": "clerk:119:2:152",
+      "original_source_object_sha256": "6e3431d08e9b91ae9c84e6b6c151fcd6036d6cdf168417633129ecb9a5575146"
+    },
+    {
+      "source_id": "clerk:119:2:153",
+      "original_source_object_sha256": "8a9ad5812365164298fd19d0b44edebac1573e064cfde6b60d18a03b09e4a91c"
+    },
+    {
+      "source_id": "clerk:119:2:154",
+      "original_source_object_sha256": "af5b2b0f272e0e8d195ebe3a1ccd8b3d9f35e5af138c595832b346521d16f77b"
+    },
+    {
+      "source_id": "clerk:119:2:155",
+      "original_source_object_sha256": "ebf675528f2fd57d3ec45ba5d2e07b2bb7fd1d17a2e341f4566a606122ed0038"
+    },
+    {
+      "source_id": "congressional-record:7567-partB20-operative-voice166",
+      "original_source_object_sha256": "0cc33262c4f3709ef49cc0abe113fd523cb70281103bc046ead89a6d83ca6b8e"
+    },
+    {
+      "source_id": "congressional-record:7567-partB20-roll146-recorded166",
+      "original_source_object_sha256": "3798cc7a737deb1973f92977337aeee9e1bca8489365f8c3bef0f86538e8b18e"
+    },
+    {
+      "source_id": "congressional-record:7567-partB22-operative-voice166",
+      "original_source_object_sha256": "bd637e4c963d2f2bf7ddee050f552676f433f85f5f83d7c3dfe295a45262e897"
+    },
+    {
+      "source_id": "congressional-record:7567-partB22-roll147-recorded166",
+      "original_source_object_sha256": "5e5f3ac8c718ce9d7e77bdbdd8b019bd07ed3766682b645f2d427e0ee8f80ab0"
+    },
+    {
+      "source_id": "congressional-record:7567-partB28-operative-voice166",
+      "original_source_object_sha256": "796f2667672e056fdd9fbf4364a475297a19d5e7a633eea599b51e44acefae2d"
+    },
+    {
+      "source_id": "congressional-record:7567-partB28-roll148-recorded166",
+      "original_source_object_sha256": "9b461cef8c5169ca5ae768960309b635550fdfc8fef0f0cd1eb690faa6c52086"
+    },
+    {
+      "source_id": "govinfo:hr7567eh",
+      "original_source_object_sha256": "d48ff9f935d4e3df3d9f7b55463f91cef9e4e6be9c4cf30d1d26659192ba0022"
+    },
+    {
+      "source_id": "govinfo:hres1224eh",
+      "original_source_object_sha256": "29d6f6ab60488094c43146415a92fe380e1646cdc568d2188bfbd1a4ddacaf31"
+    },
+    {
+      "source_id": "govinfo:s4465es",
+      "original_source_object_sha256": "be0c37779e17cbc75137e939c8242d197cc7e253db05e6a74bf48513e5b310fd"
+    },
+    {
+      "source_id": "house-rules:119628-partB36-operative167",
+      "original_source_object_sha256": "04162adebf0950962208c956329393a782ba098e56b235ecf4cb8bdc0e8988cb"
+    },
+    {
+      "source_id": "house-rules:119628-partB39-operative167",
+      "original_source_object_sha256": "e48f622bd7b851865c4937f020b050b9efb0bee0777ba6981f797491fee61379"
+    },
+    {
+      "source_id": "house-rules:119628-partB47-operative167",
+      "original_source_object_sha256": "d58395b682a34032e4a897830c855cb1bbc13464fc4481a0c383bc89e4c657f8"
+    },
+    {
+      "source_id": "house-rules:119628-partB49-operative167",
+      "original_source_object_sha256": "91ecd490b8e8647e27f77c8e35c226c67f975291c0a9ea111ac4a028382aff99"
+    },
+    {
+      "source_id": "rules:hr7567-print119-22-material-amendment-pages",
+      "original_source_object_sha256": "062d8054ef7935852785668c19f5836272763540eb5c432065826808fe8b2824"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "congressional-record:7567-partB20-operative-voice166",
+      "governed_length": 1492,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "congressional-record:7567-partB20-roll146-recorded166",
+      "governed_length": 783,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "congressional-record:7567-partB22-operative-voice166",
+      "governed_length": 1401,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "congressional-record:7567-partB22-roll147-recorded166",
+      "governed_length": 988,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "congressional-record:7567-partB28-operative-voice166",
+      "governed_length": 1133,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "congressional-record:7567-partB28-roll148-recorded166",
+      "governed_length": 783,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "house-rules:119628-partB36-operative167",
+      "governed_length": 673,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "house-rules:119628-partB39-operative167",
+      "governed_length": 2227,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "house-rules:119628-partB47-operative167",
+      "governed_length": 693,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "house-rules:119628-partB49-operative167",
+      "governed_length": 764,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "govinfo:hres1224eh",
+      "governed_length": 9652,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "govinfo:s4465es",
+      "governed_length": 1472,
+      "review_extent": "Complete retained own offered/recorded child text, or printed report proposal/short bill only as qualified in record; modified/floor/material baseline gaps remain explicit"
+    },
+    {
+      "source_id": "rules:hr7567-print119-22-material-amendment-pages",
+      "governed_length": 18041,
+      "review_extent": "Complete selected10205–10207at5221:8117read; incidental4800:5221andtargetpage802location not full review of other sections"
+    },
+    {
+      "source_id": "govinfo:hr7567eh",
+      "governed_length": 959629,
+      "review_extent": "Only opening0:1800andclosing958829:959629read; whole interior unreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:146",
+        "evidence_unit": "complete_exact_SNAPpolicy_report_child",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:147",
+        "evidence_unit": "own_or_printed_child_pending_exact_floor_modified_version_or_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:148",
+        "evidence_unit": "own_or_printed_child_pending_exact_floor_modified_version_or_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:149",
+        "evidence_unit": "own_or_printed_child_pending_exact_floor_modified_version_or_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:150",
+        "evidence_unit": "own_or_printed_child_pending_exact_floor_modified_version_or_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:151",
+        "evidence_unit": "own_or_printed_child_pending_exact_floor_modified_version_or_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:152",
+        "evidence_unit": "own_or_printed_child_pending_exact_floor_modified_version_or_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:153",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:154",
+        "evidence_unit": "partial_whole_package",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:155",
+        "evidence_unit": "own_or_printed_child_pending_exact_floor_modified_version_or_material_baselines",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": null,
+    "inherited_focused_test_count": 116,
+    "inherited_focused_suite_head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+    "semantic_checks": 7,
+    "compiled_sha256": "815d5ef89273d85ca61641009b6a2fc64f192862c8a0d7dbf1a32ef45404fcce"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority."
+}

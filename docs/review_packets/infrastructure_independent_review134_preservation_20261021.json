@@ -1,0 +1,156 @@
+{
+  "head": "748519100b888bf17a0b8147eb1dd0e60a184e84",
+  "base": "e1adbdeeff2982eab5a43277f1cd76c660696412",
+  "findings": [],
+  "source_authentication": [
+    {
+      "source_id": "govinfo:44usc3506-2024",
+      "pointer": "/sources/502",
+      "canonical_sha256": "05f37966e78cf9eaa70dc1d2f78136f601d628f5f6dee761d7f59cb330a79a06",
+      "characters": 30087,
+      "export_bytes": 30789
+    }
+  ],
+  "preserved_other_records": 675,
+  "preserved_old_sources": 1620,
+  "total_sources": 1621,
+  "preserved_meanings": 70,
+  "counts": {
+    "procedural_context": 199,
+    "exact_action_ineligible": 120,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 262,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "generated_artifacts": {
+    "compiled_ir": {
+      "equal": true,
+      "differences": 0,
+      "leaf_fields": {}
+    },
+    "compiler_input": {
+      "equal": false,
+      "differences": 70,
+      "leaf_fields": {
+        "action_meaning_ref": 70
+      }
+    },
+    "shared_action_core": {
+      "equal": false,
+      "differences": 141,
+      "leaf_fields": {
+        "corpus_sha256": 1,
+        "action_meaning_ref": 70,
+        "action_core_sha256": 70
+      }
+    },
+    "shared_issue_mapping": {
+      "equal": false,
+      "differences": 3,
+      "leaf_fields": {
+        "0": 1,
+        "artifact_id": 1,
+        "mapping_sha256": 1
+      }
+    },
+    "member_projections": {
+      "equal": false,
+      "differences": 142,
+      "leaf_fields": {
+        "action_core_sha256": 140,
+        "projection_sha256": 2
+      }
+    },
+    "readable_candidates": {
+      "equal": false,
+      "differences": 134,
+      "leaf_fields": {
+        "boundary": 2,
+        "shared_meaning_sha256": 132
+      }
+    },
+    "reproducibility_proof": {
+      "equal": false,
+      "differences": 74,
+      "leaf_fields": {
+        "core_sha256": 1,
+        "shared_sha256": 70,
+        "readable_sha256": 1,
+        "source_capture_sha256": 1,
+        "input_sha256": 1
+      }
+    }
+  },
+  "prior_receipts_preserved": true,
+  "source_classes": [
+    {
+      "topic": "source_header",
+      "start": 0,
+      "end": 330,
+      "total": 30087
+    },
+    {
+      "topic": "operative_section",
+      "start": 330,
+      "end": 18010,
+      "total": 30087
+    },
+    {
+      "topic": "editorial_notes",
+      "start": 18010,
+      "end": 21516,
+      "total": 30087
+    },
+    {
+      "topic": "statutory_notes",
+      "start": 21516,
+      "end": 23247,
+      "total": 30087
+    },
+    {
+      "topic": "historical_executive_documents",
+      "start": 23247,
+      "end": 30087,
+      "total": 30087
+    }
+  ],
+  "source_read_slices": [
+    {
+      "start": 0,
+      "end": 10000
+    },
+    {
+      "start": 10000,
+      "end": 20000
+    },
+    {
+      "start": 20000,
+      "end": 30087
+    }
+  ],
+  "compatibility_workflow_helper_and_assessment_unchanged": true,
+  "snapshot_files": 1382,
+  "snapshot_bytes": 498266982,
+  "preexisting_modified_paths": [
+    "M\tbackend/tests/test_infrastructure_discovery_delta.py",
+    "M\tdocs/plans/infrastructure_remaining_discovery_screening.md",
+    "M\tdocs/review_packets/infrastructure_remaining_discovery_candidate_screening.md",
+    "M\tscripts/validate_infrastructure_discovery_delta.py"
+  ],
+  "test": {
+    "head": "748519100b888bf17a0b8147eb1dd0e60a184e84",
+    "snapshot": "C:\\Users\\Dylan\\.codex\\visualizations\\2026\\10\\21\\01a15ebb-b550-7823-a734-9e1eefea290c\\infra-review-128-129\\snapshot134",
+    "shim": "os.linesep=LF on Windows; lazy pinned Git blob materialization only",
+    "tests": [
+      "test_hr4371_3506_context_preserves_agency_assets_notice_privacy_and_historical_limits"
+    ],
+    "ran": 1,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 2.846251599956304,
+    "lazy_files": []
+  },
+  "owner_938_generated_and_10539_prior_index_counts_independently_reproduced": false
+}

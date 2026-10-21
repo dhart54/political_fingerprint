@@ -1,0 +1,108 @@
+{
+  "record_type": "BOUNDED_REVIEWED_FRONTEND_READINESS_FIX_INTEGRATION",
+  "recorded_utc": "2026-10-18T22:30:07.560923+00:00",
+  "authority": "Dylan-authorized additional25minute engineering window; research remains stopped; hard stop2026-10-18T22:45:00Z",
+  "baseline_research_checkpoint": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "reviewed_source_pr": "https://github.com/dhart54/political_fingerprint/pull/234",
+  "reviewed_commit": "0fcd6f3e852ea74472afd769e12e9e6176434f12",
+  "reviewed_main_merge": "36fb94f24f42e2c60954acaaaed559fcc872de89",
+  "integration": {
+    "reviewed_commit": "0fcd6f3e852ea74472afd769e12e9e6176434f12",
+    "applied_commit": "6735f03ddf61948947e12dd81c362b260d374710",
+    "stable_patch_id": "d38c1079c7365eb1a7998d791b69e32383b433b5",
+    "exact_reviewed_blobs": {
+      "docs/plans/ci_card_snapshot_readiness.md": "c527f77fc76a3afc77f51f020766656efd293bc2",
+      "frontend/tests/local-record-filter.spec.mjs": "1c9b3860e44599704be13573c035ff8fb5410e71"
+    },
+    "prior_tracked_blob_count": 5005,
+    "preserved_tracked_blob_count": 5004,
+    "preserved_candidate_blob_count": 3244,
+    "all_other_prior_paths_and_blobs_unchanged": true,
+    "full_main_merge_performed": false
+  },
+  "scope": "Exact reviewed two-file cherry-pick plus this integration/validation/stop receipt. No full-main merge, product or fixture change.",
+  "validation": {
+    "tested_fix_head": "6735f03ddf61948947e12dd81c362b260d374710",
+    "browser_command": "CI=1 node node_modules/@playwright/test/cli.js test tests/local-record-filter.spec.mjs --workers=2 --retries=0 --reporter=line,json",
+    "browser_workdir": "frontend",
+    "browser_report_stats": {
+      "startTime": "2026-10-18T22:28:52.688Z",
+      "duration": 37135.511,
+      "expected": 25,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "browser_report_sha256": "81352ee616fb776083de8682adc803f9eee18f37cd7b5e668d203afc59ad642e",
+    "passed_browser_test_names": [
+      "roll and literal title matching have truthful no-match, blank and Clear states",
+      "text intersects Vote and Type without changing nondirectional or procedural evidence",
+      "progressive reveal and text clearing preserve chronology and reveal budget",
+      "a selected unrevealed receipt stays expanded when clearing text",
+      "retained deep receipt commits the reveal budget before show more",
+      "retained deep receipt commits the reveal budget before collapse",
+      "matching text preserves an open contact disclosure when a related group shrinks to one",
+      "excluding a selected receipt invalidates pending contact and Clear restores only receipt selection",
+      "explicit receipt anchor clears an excluding query and reaches the exact receipt",
+      "new finding navigation clears text while filtering retains accepted linked accounting",
+      "empty scoped ledger stays explicit instead of claiming text or historical completeness",
+      "released card snapshot waits for a held editorial response",
+      "released card snapshot rejects unavailable findings instead of accepting an empty baseline",
+      "sourced H.Con.Res.89 finds the released Roll282 receipt at 320px without changing evidence or history",
+      "sourced H.Con.Res.89 finds the released Roll282 receipt at 390px without changing evidence or history",
+      "sourced H.Con.Res.89 finds the released Roll282 receipt at 768px without changing evidence or history",
+      "sourced H.Con.Res.89 finds the released Roll282 receipt at 1440px without changing evidence or history",
+      "amendment receipt keeps its exact action and meaning beside its associated measure",
+      "released finding complete response keeps source identity, coverage and history",
+      "released finding partial response keeps source identity, coverage and history",
+      "receipts-only and sparse members keep their existing evidence boundary",
+      "local text filter supports keyboard and readable layout at 320px",
+      "local text filter supports keyboard and readable layout at 390px",
+      "local text filter supports keyboard and readable layout at 1440px",
+      "local filter reaches an unrevealed exact identifier without remote search or history changes"
+    ],
+    "retries": 0,
+    "focused_eslint_command": "node node_modules/eslint/bin/eslint.js tests/local-record-filter.spec.mjs",
+    "focused_eslint_returncode": 0,
+    "diff_check": "passed",
+    "formal_semantic_or_candidate_suites": "Not repeated for test-only engineering integration; exact86focused and7semantic checks remain recorded at unchanged batch58 artifacts and bb4dbcbae612ed89ae469ec903bc20dad3db79d1"
+  },
+  "prior_exact_head_CI": {
+    "head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+    "observed_once_utc": "2026-10-18T22:30:07.561060+00:00",
+    "backend": {
+      "result": "success",
+      "run_id": 39171920982,
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39171920982"
+    },
+    "frontend": {
+      "result": "failure",
+      "run_id": 39171921000,
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39171921000"
+    },
+    "scope": "Status snapshot only; frontend exact empty-array-versus-six-card diagnosis was controller-relayed. No logs downloaded or retry performed."
+  },
+  "delivery": {
+    "branch": "codex/infrastructure-candidate-seed",
+    "draft_pr": "https://github.com/dhart54/political_fingerprint/pull/232",
+    "final_checkpoint_head": "The commit containing this receipt; actual final local/remote head is also written to ignored .tmp/infra_active_checkpoint.json after successful push.",
+    "hosted_CI": "Unassessed for integrated delivery head; do not wait or infer success from earlier heads.",
+    "test_attribution": "Browser suite and focused lint passed on the exact applied fix commit. This later receipt adds documentation only."
+  },
+  "stop_resume": {
+    "owner_state": "STOPPED_AFTER_BOUNDED_READINESS_FIX",
+    "next_research_identity": "house:119:1:335",
+    "next_batch": 59,
+    "no_new_batch_started": true,
+    "examined": 389,
+    "ordinary_unscreened": 287,
+    "unaccepted_meanings": 45,
+    "authored_not_voting": 7,
+    "holds": 6,
+    "running_or_failed_current_validation": null,
+    "source_restrictions": "All inherited denials, cancellations, access restrictions and modal/numeric conflict holds remain stopped. Zero new source acquisitions or protected retries; no authority/operator/amount selected.",
+    "uncommitted_preparation": "Ignored .tmp batch59triage and reading notes predate shutdown request; no batch59spec or tracked candidate artifacts.",
+    "production_editorial_boundaries": "No merge, deploy, publication, approval, promotion, registry or production write; no research continuation."
+  },
+  "rollback": "Revert the narrow applied test/plan commit if necessary; no data rollback required."
+}

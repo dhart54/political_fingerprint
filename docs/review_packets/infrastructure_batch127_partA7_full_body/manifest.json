@@ -1,0 +1,53 @@
+{
+  "kind": "one_current_pending_PartA7record_reusing_original_record_source_wrapper_and_part",
+  "current_record": {
+    "action_id": "house:119:2:260",
+    "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch127_20260916/membership_review.json",
+    "parent_git_blob": "d0c6276184eaabd72c2976f9b3801c1de8feacc7",
+    "parent_json_pointer": "/records/621",
+    "record_sha256": "42563030909163ccd7b86fba2c1e6b4e9f176e26bf13f49fe20bc90dd2fb5bf1",
+    "export_path": "docs/review_packets/infrastructure_batch127_partA7_full_body/house_119_2_260_pending_record.json",
+    "export_bytes": 35247,
+    "export_lf_sha256": "42a38bc08d2af3008d2bcbd0d6c344cb68bdf56185592944806f461df3b448ad"
+  },
+  "source": {
+    "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+    "source_object_sha256": "83d17ddf325125730884297642307f23f9cfc64d8aadf4d1bb6cb569b1398085",
+    "origin": "74356a8084e637491b86b0973f4fcbaa4136ab79:docs/editorial/shared_candidates/house_119_infrastructure_batch126_20260916/sources.json",
+    "origin_git_blob": "13ae9f118f84ee4128b07dbb1900c5b778507482",
+    "json_pointer": "/sources/1536",
+    "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+    "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b",
+    "export_path": "docs/review_packets/infrastructure_historical_delta91_100_7d1f1cd4/source_objects/83d17ddf325125730884297642307f23f9cfc64d8aadf4d1bb6cb569b1398085.json",
+    "export_json_pointer": "/source",
+    "export_bytes": 1132,
+    "export_lf_sha256": "ef036f7daadec4e08bed965265945fe732abc36c46f3751fbaf3b4e9c3611799",
+    "reused_existing_export": true,
+    "transport_parts": [
+      {
+        "path": "docs/review_packets/infrastructure_historical_delta91_100_7d1f1cd4/source_parts/de067fdf07e33ffe7c20ace11b255cd5735320be7f8eae127a8961c92abfd4e8.0000000.json",
+        "export_bytes": 48253,
+        "export_lf_sha256": "3c24b93ccde0940bdb6e2073e8dd4444c2236dbdc6298b591a8f60901d8a8c5f",
+        "start_character": 0,
+        "end_character": 46475
+      }
+    ],
+    "source_read_extent": {
+      "start": 26180,
+      "end": 39188,
+      "total": 46475
+    },
+    "own_unit_read_extent": {
+      "start": 0,
+      "end": 13008,
+      "total": 13008
+    },
+    "reconstruction": "Replace source.text descriptor with concatenated validated part.text, then verify canonical original object. Transport of46475chars is not whole-source reading; only ownPartA7source26180:39188was reviewed."
+  },
+  "scope": "Complete ownPartA7body only. Originalbookendpassages andruleclaim remain exact; two oldlocators now explicitly historical and one full-own-unitclaim appended. AdjacentA6/A8/referencedActs/actualproperty-title-compensation-license-operation/militaryneed/currentlaw/floorversion/wholemeaning andmembership are not cleared.",
+  "source_acquisitions": 0,
+  "protected_retries": 0,
+  "accepted_membership": false,
+  "publication_authorized": false,
+  "production_writes": false
+}

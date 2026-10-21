@@ -1,0 +1,36 @@
+{
+  "base_head": "e8c08aeab4751a87c659895da7bead2edff4f593",
+  "packet": "docs/review_packets/infrastructure_batch142_disaster_baselines",
+  "validation": [
+    {
+      "command": "python scripts/validate_infrastructure_disaster_candidates142.py",
+      "result": "PASS;48 frozen files,5 cores,10 observations,24 source objects,13 context units,12 response captures,0 issue propositions,canonical_state_changed=false"
+    },
+    {
+      "command": "python -m unittest backend.tests.test_infrastructure_disaster_candidates142",
+      "result": "PASS;7 tests;2.450s"
+    },
+    {
+      "command": "python scripts/validate_editorial_semantic_ir.py",
+      "result": "PASS;12 accepted references,4 accepted held-out references,4 held-out"
+    },
+    {
+      "command": "python -m unittest backend.tests.test_editorial_semantic_ir",
+      "result": "PASS;26 tests;0.276s"
+    },
+    {
+      "command": "python -m unittest backend.tests.test_ci_workflow_preservation",
+      "result": "PASS;8 tests;0.059s"
+    },
+    {
+      "command": "python -m unittest backend.tests.test_accepted_findings_synthesis.AcceptedFindingsSynthesisTests.test_frozen_upstream_paths_and_existing_ci_jobs backend.tests.test_accepted_findings_public_wording.AcceptedFindingsPublicWordingTests.test_upstream_historical_and_prior_ci_blocks_are_unchanged",
+      "result": "PASS;2 actual CI predicates;0.148s"
+    }
+  ],
+  "behavior_inspected": "Complete existing typed pipeline replay, official member labels, all-episode hold, zero issue propositions; raw response and selected PDF/HTML reconstruction, exact modified workflow diff. Three selected PDF pages visually reviewed as documented in packet.",
+  "canonical_application": false,
+  "semantic_acceptance": false,
+  "production_changes": false,
+  "independent_review": "Required at frozen staged target; no clearance claimed here.",
+  "prior_e8_hosted_checks": "Already terminal green; not rerun merely for resumption."
+}

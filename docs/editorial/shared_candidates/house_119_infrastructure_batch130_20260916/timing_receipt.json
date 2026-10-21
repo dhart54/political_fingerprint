@@ -1,0 +1,42 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-21T13:46:51.775279+00:00",
+    "qualification": "Both complete retained dated2024selectedunits read before marker:6US2798062characters(a)-(g)+publicationcitation;8US1232care-placement10450charactersONLY(c)(1)-(6)(F), notwhole1232/notes/alllaw/currentlaw. Untimed preparatory reading; no newacquisition."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-21T13:50:22.523436+00:00",
+    "end_utc": "2026-10-21T13:50:27.314354+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 130 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch130_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.415
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.375
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 210.748,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 4.79,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 7.749,
+    "process_wall_seconds": 7.975,
+    "result": "passed",
+    "scope": [
+      "Current130datedplacementbaselines/oldownrecognizanceban/childdefinition/selectedscope/reference-and-reviewlimits/oppositedataflow-clocks/retainedsafeguards",
+      "Preserved129completeEHguard onexactbeforeview",
+      "Preserved128PartA6certification/review/clocks/literalLACKSStatefloor/savings",
+      "Preserved128PartA7California-payee/separate-preemption-verbs"
+    ]
+  },
+  "timing_qualification": "Successful source/semantic process time4.790s excludes focusedprocess7.975s and byteproof/delivery overhead. Source reading before marker untimed; useful-authoring elapsedwindow is not active work duration. No gate failure/retry in130."
+}

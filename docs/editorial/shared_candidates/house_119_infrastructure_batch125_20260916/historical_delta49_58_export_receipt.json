@@ -1,0 +1,711 @@
+{
+  "head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "original_heads": {
+    "49": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+    "50": "fc3b0ee2565ced0621e3238a2fdc5ec0d1481c34",
+    "51": "8952e2c8cdcde0fa71123163b57c5efa449155d8",
+    "52": "a1df454348534dfa2abc5908166905e9a3aa7e93",
+    "53": "15008e5299afffe00c41ff1d3083d7f6e977d8f4",
+    "54": "58aea40f9bb48cfd8da6177daf877e6d663c1833",
+    "55": "2d16fa2eeca8f98e4ad4843827b1295e14cb3b47",
+    "56": "4a0db2792262d78f23867100ab14876a33435bc2",
+    "57": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+    "58": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1"
+  },
+  "new_identity_records": 50,
+  "prior_followup_records": 0,
+  "total_exported_membership_records": 50,
+  "primary_manifests": 10,
+  "source_object_occurrences": 130,
+  "unique_source_objects": 126,
+  "transport_parts": 110,
+  "total_files": 120,
+  "total_bytes": 6496677,
+  "max_file_bytes": 94024,
+  "bytes_cap": 190000,
+  "requested_bytes_cap": 200000,
+  "batches": [
+    {
+      "batch": 49,
+      "original_head": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+      "new_records": 5,
+      "sources": 8,
+      "manifest_bytes": 41714
+    },
+    {
+      "batch": 50,
+      "original_head": "fc3b0ee2565ced0621e3238a2fdc5ec0d1481c34",
+      "new_records": 5,
+      "sources": 10,
+      "manifest_bytes": 44505
+    },
+    {
+      "batch": 51,
+      "original_head": "8952e2c8cdcde0fa71123163b57c5efa449155d8",
+      "new_records": 5,
+      "sources": 14,
+      "manifest_bytes": 70256
+    },
+    {
+      "batch": 52,
+      "original_head": "a1df454348534dfa2abc5908166905e9a3aa7e93",
+      "new_records": 5,
+      "sources": 12,
+      "manifest_bytes": 54884
+    },
+    {
+      "batch": 53,
+      "original_head": "15008e5299afffe00c41ff1d3083d7f6e977d8f4",
+      "new_records": 5,
+      "sources": 10,
+      "manifest_bytes": 52672
+    },
+    {
+      "batch": 54,
+      "original_head": "58aea40f9bb48cfd8da6177daf877e6d663c1833",
+      "new_records": 5,
+      "sources": 17,
+      "manifest_bytes": 93490
+    },
+    {
+      "batch": 55,
+      "original_head": "2d16fa2eeca8f98e4ad4843827b1295e14cb3b47",
+      "new_records": 5,
+      "sources": 14,
+      "manifest_bytes": 63365
+    },
+    {
+      "batch": 56,
+      "original_head": "4a0db2792262d78f23867100ab14876a33435bc2",
+      "new_records": 5,
+      "sources": 14,
+      "manifest_bytes": 60736
+    },
+    {
+      "batch": 57,
+      "original_head": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+      "new_records": 5,
+      "sources": 14,
+      "manifest_bytes": 69637
+    },
+    {
+      "batch": 58,
+      "original_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+      "new_records": 5,
+      "sources": 17,
+      "manifest_bytes": 77217
+    }
+  ],
+  "all_lossless": true,
+  "source_acquisitions": 0,
+  "working_tree_candidate_substituted": false,
+  "tests_rerun_solely_for_export": false,
+  "export_root": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba",
+  "verification_scope": "Original50membership records and130referenced retained-source object occurrences restored and hash-checked against each exact original batch commit; every original blob equals the committed batch58 anchor. Cumulative maps contain hashes only; no current candidate bytes substituted.",
+  "expected_committed_files": [
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch49.json",
+      "committed_lf_bytes_sha256": "befde8d9572d4a427a94ba5c00cfad5f14b695c76968f0a6bd9dd6efd4c89b8a",
+      "bytes": 41714
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch50.json",
+      "committed_lf_bytes_sha256": "26b3bfae282321786c96afd3c220114293781b17d3e24f49519ec4aff1e73ba9",
+      "bytes": 44505
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch51.json",
+      "committed_lf_bytes_sha256": "cba33e756aa3133f602fa3b4ac61c1b727cb2fd2936845eadf01ae2effc634b1",
+      "bytes": 70256
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch52.json",
+      "committed_lf_bytes_sha256": "175b6dcaee1b875a73834c9ebf155bed6ecfa3abbdbf831073899fa893ed85cf",
+      "bytes": 54884
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch53.json",
+      "committed_lf_bytes_sha256": "c937ace4edcd31e907eba4e5f646b4d86e4f9ec3325f9efd2faf3afbe0391667",
+      "bytes": 52672
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch54.json",
+      "committed_lf_bytes_sha256": "bbd203a84487bac866a67f02c39fd7cae0b81e5268bc281aa8fa70925d4bc096",
+      "bytes": 93490
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch55.json",
+      "committed_lf_bytes_sha256": "ee144ec7203e6d4286fd38c3b74bec584dd97686829ad41d7029f3aa8f70001d",
+      "bytes": 63365
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch56.json",
+      "committed_lf_bytes_sha256": "d36bec40085afb23a325a85fca02a38fcc6b2cb2e464b3f97c377656ce599d75",
+      "bytes": 60736
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch57.json",
+      "committed_lf_bytes_sha256": "3598926501f94eec596cba7ed24eb7dafcf01f8251c4c935981ba1f18e6250f9",
+      "bytes": 69637
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/batch58.json",
+      "committed_lf_bytes_sha256": "951f93c662593cfebfbfb2d34359d3e3a1c2f8b740fff9705b30ba50ce5b7e2c",
+      "bytes": 77217
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/0c5b2e19d620277545dad9023d23b2673596a7c1adf65ce409c9c85074f4c0c8.0000000.json",
+      "committed_lf_bytes_sha256": "8a46c062bca3d615f5d37b9a35cb2040e25bf3d0850811258275a8c66d023ab2",
+      "bytes": 13833
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/0f11c46cd7152df1f69e8cb0eb00569c715498d0ee0ac12b419e3f95ee17536b.0000000.json",
+      "committed_lf_bytes_sha256": "9a90e0527caa653a05f8ec21e336ee883239eba48911425ba47c17adf43da0b5",
+      "bytes": 4703
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/0f823e9cd9469217e84ae7ad6508deef4ca2c9f744fb9f3b486fd6e9f12ce23a.0000000.json",
+      "committed_lf_bytes_sha256": "44d65bb7a0728ed9e3a2d8654ad87e239f27f4d1b29b3fcd1e8a0456c2a9f7ec",
+      "bytes": 10654
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/12fd6b26bb5d3668b4dfc946f9f3be12ee18431c2c780bf46e722a39243bbba1.0000000.json",
+      "committed_lf_bytes_sha256": "72a65def03add0142785bb9329c45e40319e2001e627ea41bbb78fd47e0cefc5",
+      "bytes": 32278
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/138d1fb6557b99121e085fa1002456e7018dbfff79fd330029cf0f5c2fc0b5b2.0000000.json",
+      "committed_lf_bytes_sha256": "4a87363a2f8e651229f56bf3422378719b3496357295b059032817d7188bee64",
+      "bytes": 15712
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/142fe891fe46451f05ff0a2c9f09c69d6ec1af088ff96df16426e0e225e74436.0000000.json",
+      "committed_lf_bytes_sha256": "dd79e41324a0608c6545014ae2156f20e9b25dc688ec8635178d755277e95614",
+      "bytes": 4864
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/176c174c83f86fb28056cbb11f025e3bce6f371a9cb079782a34bb6bb0ce991b.0000000.json",
+      "committed_lf_bytes_sha256": "127880f9e0b70d5b1dd419797c7ee1c8fc57728a07b8d8499a51ad7b8dccf33c",
+      "bytes": 5770
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/17dc787388b4c022f044adeb592380d9ac3fabf61d56ed2ed786cd8cf1dc3d83.0000000.json",
+      "committed_lf_bytes_sha256": "cbba49fbf5b89be01107bc705385a2c94d796ccc75a14424414f0cbf1651de54",
+      "bytes": 84242
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/1ea8344f5a2396db65afc76fec624b0b4090fa24eb1b96cda1d7ae18577dcd4a.0000000.json",
+      "committed_lf_bytes_sha256": "0feff7df13359a899e5b8a211c0f87a9e3cc2d32949eb4fc943cc5bbf17fee48",
+      "bytes": 11218
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/1f977fd1395920fa9395a1362e673cebf4ee3424382a84c9b02be8e057a3c8a9.0000000.json",
+      "committed_lf_bytes_sha256": "7182c1c2d09615838d4a6e745c6d1134f462a008839b78af915ff6375e13ae02",
+      "bytes": 94024
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/1f977fd1395920fa9395a1362e673cebf4ee3424382a84c9b02be8e057a3c8a9.0090000.json",
+      "committed_lf_bytes_sha256": "df36c21a9dcf02ba4f633c2136dcc120a25b43c07d5858533f0024aa9ad4658c",
+      "bytes": 756
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/259c39e72fa80c4eb19ecbbaf80ca7a7043aeb76711593d073d9f8c20102a37e.0000000.json",
+      "committed_lf_bytes_sha256": "7ade6d832e7c340247620a3d55d54379304a62d4da93c6a09f6f5fa4e1a16f87",
+      "bytes": 12109
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/28a974cb21fb11877f8751d8773ff0fd0b157157766f35216259502e55e816f3.0000000.json",
+      "committed_lf_bytes_sha256": "de0ab18b6491458cdf1235c745749c4aa29974cfab464c2027ee3f919ffbe354",
+      "bytes": 9072
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/33274a687b163f272ddd7636af28f77844d97b69959498c22402533b71bd497b.0000000.json",
+      "committed_lf_bytes_sha256": "d6c286a16e4e559d53ddbec3ff708c8d05fa60c3974780f928c3ef7cdf4b247c",
+      "bytes": 37603
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0000000.json",
+      "committed_lf_bytes_sha256": "b27660b7cd42c6d3a48d56ca31517339da089d8f822cf72249927893920190d7",
+      "bytes": 90183
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0090000.json",
+      "committed_lf_bytes_sha256": "aa44657eabf7b97faef36189c01338c1cf0255f69f854e47fc70f1c29ea877d6",
+      "bytes": 90188
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0180000.json",
+      "committed_lf_bytes_sha256": "bea3ee29375f28530e16eb4d0fcf8a48fd787bb8c94928d0218325712a0b29a0",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0270000.json",
+      "committed_lf_bytes_sha256": "f2e7ff6e7ada62317c91e5cc87ceb0734989c059e9b975b0a648301aa648e145",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0360000.json",
+      "committed_lf_bytes_sha256": "f9dedca16fe7a3a55c85643fcde217a491e7ffeacd9cf77f7908d07d7d485a78",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0450000.json",
+      "committed_lf_bytes_sha256": "0d72d832e7b8987780e135e917b51cbdbb4dd6b63a0139e57e53ce7819f53e9d",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0540000.json",
+      "committed_lf_bytes_sha256": "5a60d6953c61616e1743ba41ec5b01396f7574623902a82df639ff62af800adb",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0630000.json",
+      "committed_lf_bytes_sha256": "39c3d71671f8a1753c5018e1cdcbd6b4443ad47fcfc1705517c87c6912a1dd15",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0720000.json",
+      "committed_lf_bytes_sha256": "a0b0a43fff493d586b88216d34af190095d06510bd05935653a3369d05a701e6",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0810000.json",
+      "committed_lf_bytes_sha256": "723e2f2838021f67b44c12ecbb045feb6a2445cbbba0410a0cb86e02d16cb101",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0900000.json",
+      "committed_lf_bytes_sha256": "3c27de5db22be2486c442e43b65af2074e94629bbdd58c79645aafdad0be2646",
+      "bytes": 90189
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.0990000.json",
+      "committed_lf_bytes_sha256": "091a054d07407be666b0aaf40d130a99fb6b45bbbbefe38432ad6ff7b1ecb218",
+      "bytes": 90190
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1080000.json",
+      "committed_lf_bytes_sha256": "dae4ba86b1a77901c9f21dfde810713cf8f41d4cf6142f675efaab245f119e8c",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1170000.json",
+      "committed_lf_bytes_sha256": "217821303f23925d7d927c3ef035cc12df1811738202d61ee79ed3e11c1e88d2",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1260000.json",
+      "committed_lf_bytes_sha256": "3d6bd97c5e376726f12822e22cb034a3454c863121a1edbaf2018813707e0bb3",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1350000.json",
+      "committed_lf_bytes_sha256": "03e0b42fb9d9fe8171a1422a74c96ef7f891e92e4aa861db0174942b2b4509ad",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1440000.json",
+      "committed_lf_bytes_sha256": "7537103269291301c95b7e37ff1f08d67398dd7bb7aa53d91d8fbd4d949bea22",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1530000.json",
+      "committed_lf_bytes_sha256": "f0067d6129fde8ffa31a12466501fd0eb08caaa7cd0ba2abc079ab4012304fa6",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1620000.json",
+      "committed_lf_bytes_sha256": "bca0ab5beeb908c7e56aaac9992594a342b2ef19a5ec5a39d612bffb0b58d0d9",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1710000.json",
+      "committed_lf_bytes_sha256": "97df19386969fae28cca19b2d057a2681c812cd364d52f438561075d4aec0f5f",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1800000.json",
+      "committed_lf_bytes_sha256": "87061f9d1ce33b52a3f34016ce8508d2c938b29d5138bebe0ddccd0fddb11f96",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1890000.json",
+      "committed_lf_bytes_sha256": "27194ced6c0b8d62c4778ef43776e8cf72ee7077c8a4e2c6d6b428023844f20d",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.1980000.json",
+      "committed_lf_bytes_sha256": "3cdc80cabcaf9168c6d58920639669dc8420fd5fd0920dcc069a32b15c93f469",
+      "bytes": 90193
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2070000.json",
+      "committed_lf_bytes_sha256": "d738a3b4b7037aabdb59a5e73b5a5c898f51051c25835901648690217246a6ff",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2160000.json",
+      "committed_lf_bytes_sha256": "820ba1fd6d8a58022ea86ea2d73c55c92fd54304875e2f9cc9dedba3f79a3714",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2250000.json",
+      "committed_lf_bytes_sha256": "9cfeaaece151da3b1764e95f35218b4843a8b3a4fe8bb0bbdd66db6e05876214",
+      "bytes": 90195
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2340000.json",
+      "committed_lf_bytes_sha256": "0cb0f9a7043d1b798fb6316ae9e97b5939f599baa0dead117d959cd7fda6a8c9",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2430000.json",
+      "committed_lf_bytes_sha256": "ab3c9054c312953594e9c587eead4367302f108320c390172dc9e468689eda48",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2520000.json",
+      "committed_lf_bytes_sha256": "671b800a7046d73e6505d3234f539bfa86368e2736398a8495c3bf44d56bb202",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2610000.json",
+      "committed_lf_bytes_sha256": "c39b5b27f8acced7aeaf551edb5c7b2208eb989c0011ef9f3bf87f6bbf76edfb",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2700000.json",
+      "committed_lf_bytes_sha256": "290b5f44998f9fe9789502054e19226e124c3a8f01a4555761f5a4e3b4451186",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2790000.json",
+      "committed_lf_bytes_sha256": "b00f529f501d8f1623b1d3095c88c8a2cb8fad1a01573ecd843e408277e82a61",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2880000.json",
+      "committed_lf_bytes_sha256": "4d60bb2bcc6381a6337c96d04efd5293e128e710bda80da98362ba9fb7c6e30b",
+      "bytes": 90193
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.2970000.json",
+      "committed_lf_bytes_sha256": "c52d613c823514040c8e91309677358e9495a10919dff9d8253086373088dbd0",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.3060000.json",
+      "committed_lf_bytes_sha256": "530a177618130020dbd49499069af6f549deb1ffc6bba07816f2fad59aec4dcd",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.3150000.json",
+      "committed_lf_bytes_sha256": "8060b9ec7c15a6bd1f63d54c68efb9e1fc31c0776d58f001a8ec5333db0c1320",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.3240000.json",
+      "committed_lf_bytes_sha256": "a21e75e4ecc7c11389603d13285ab050ebabc67a67b8910250f4dad1483aa2a2",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.3330000.json",
+      "committed_lf_bytes_sha256": "7ac53b2c9863594dcf6eb20824fa209a72f5f9ae4125c4b57f08d5704222ae68",
+      "bytes": 90191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/367c5bb33442c5fb8942b50514eda0e33054332748deebf50303350737abb273.3420000.json",
+      "committed_lf_bytes_sha256": "1b7e44fd6f8200595ca739e82ac4fc439f9ef8a2c1960627ffb727b36d2e857f",
+      "bytes": 71935
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/3d37bdd88f5d2d7b7d8c8eb02ee870272640f0cc75443c35917b59cc24872947.0000000.json",
+      "committed_lf_bytes_sha256": "f9369521b92274019c1247c99231bec57761c4844898ff93928cc1d3be870749",
+      "bytes": 9320
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/444208245e224c7c596770430daf395a20a8fe26d133df67251fc938147846d5.0000000.json",
+      "committed_lf_bytes_sha256": "2b139e92c02248cac49b3d13644c30a89c0579281ac4718d80a367d3b8224caa",
+      "bytes": 5974
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/4702a8266cfa0ab713b2caca00e49adcb129b497abc20c42837bb666f5157e70.0000000.json",
+      "committed_lf_bytes_sha256": "36d31e43f1cb12ab4421bce2f51a44af2d00f3fec3a00f97c33832822027fe54",
+      "bytes": 91603
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/47347047a01e19feb0a1bd1c448023cd363a717b6e66b0d71a9e8c522db4256c.0000000.json",
+      "committed_lf_bytes_sha256": "80187ff75ea58172576ce6a8e14a6dcadcd7e44a3bab420a40d904227ba46f11",
+      "bytes": 9297
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/48612dbb4cdacc7b00b0f3510b4bf3de07c25e0d856ef9cd1c9b98f4243b8f48.0000000.json",
+      "committed_lf_bytes_sha256": "ac08425154e30d34615c5f1dd397917cb832eb85923b5c04a0de3695939aff41",
+      "bytes": 5667
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/4c33f9177e97ce7d63de7de01564c88e72573ba1d7a16f9c723017a1469ab800.0000000.json",
+      "committed_lf_bytes_sha256": "93405aaf2927320c6fa92868b39b406a65616abbaa4f70d4cf0ccdf5432e0bfe",
+      "bytes": 34553
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/4f5c9efb6c2e31d60c0df016ca43e2b20ef46f877f11e73ac36a25436a66166c.0000000.json",
+      "committed_lf_bytes_sha256": "dd9ed7c1d5838e2fa62404007e515c214f9ef1460a646b8265213b987b84a017",
+      "bytes": 6735
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/5834d73afdd7b5740fc859afc5fb640fd7c64177c57c24270ca4bca098230ca6.0000000.json",
+      "committed_lf_bytes_sha256": "562e136cf83d36af6ccadadce45b2035b844b55881afc478b1193f61a3263aae",
+      "bytes": 86555
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0000000.json",
+      "committed_lf_bytes_sha256": "04fe638671072c07d8f537417fe6a4f8179668c46db20877c9b182e4de50cf89",
+      "bytes": 90182
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0090000.json",
+      "committed_lf_bytes_sha256": "ca14a2fafe1e0953b038afd08005a135db26affd519b4ece7b8a10c1427970b2",
+      "bytes": 90187
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0180000.json",
+      "committed_lf_bytes_sha256": "d6b4b3470cd2960527531ddc78ef786aae7c4596559570019e3faf5c78a3dea3",
+      "bytes": 90188
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0270000.json",
+      "committed_lf_bytes_sha256": "4fa0e9b638a2373ceda05a2204f2db43880c0626785e9335437c7d360a647595",
+      "bytes": 90188
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0360000.json",
+      "committed_lf_bytes_sha256": "9e6a508d40ec4be6b6d82b130773405fe915205e2ded737793401191c1565ea8",
+      "bytes": 90188
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0450000.json",
+      "committed_lf_bytes_sha256": "7112c4be0c0fbfec88185663f93afe8cbdbe0c1e4df1e5302bf433e8f1df41f7",
+      "bytes": 22659
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/61ede4d759f83542bee22e7610d4909ebe44bfef9a2bcea2d037fee2c64df70f.0000000.json",
+      "committed_lf_bytes_sha256": "1dc04c4ab8dce845e053fd60c9e647e5d70ad4d3b34d40dee064d0844f7d11c6",
+      "bytes": 4214
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/6375e3015495198b67016876cafdbfc4890fec955d5a0f9a39cd6f9fdc9119de.0000000.json",
+      "committed_lf_bytes_sha256": "d436d0e83d7902aef4bebdd2ef6cd98dcb1cfd8a7517e8a88d20ce4f8cc6a4a7",
+      "bytes": 5191
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/63eb004e40f046f8a9b86dd102133fb2340311ba5d3e613bf5f0628926bd1be1.0000000.json",
+      "committed_lf_bytes_sha256": "2d69c58eb958eb82dc23a9774c56aa176068785f358187b17fde7c887724d69b",
+      "bytes": 9895
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/66a993573202fb8d7ad2e928b9c8dfe6c93962b2ea8838b4e31e543b60e4fb4c.0000000.json",
+      "committed_lf_bytes_sha256": "0b6b18818ce3045caa3a098c521f84fdc2c58ad0cb48213f26bd658ac515878d",
+      "bytes": 6084
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/679ccd8256b9496add33167c7f78cfbd9ea6a49629ef01239ff25e4e289fe8b2.0000000.json",
+      "committed_lf_bytes_sha256": "b5eac73bd4725eabf0119700d90adf5d93a09cbeaccb8915479ddbde5aced3f2",
+      "bytes": 66186
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/68993c37f888fd854f6cbd0cb6e6e4c39c1bea3443ce1786313a7b73bc12d4b9.0000000.json",
+      "committed_lf_bytes_sha256": "2dbc655f009061f0a32420c12f4e37abf959e664f37ce4d81092ef0ea754f4fc",
+      "bytes": 35463
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/68bc1e103870626783bf1dd0e32b9afb6ebb6ce51b627454b62f4ef2cfd1b0eb.0000000.json",
+      "committed_lf_bytes_sha256": "a7b6f353c872528c880e525afc3a2f205c9c2aca0f5d66226bd4a496161a7a0d",
+      "bytes": 5916
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/6f7c6c322d99bd31dde101038074f39b05c866e1f346a333da859ea994e03e97.0000000.json",
+      "committed_lf_bytes_sha256": "14ac6a21160fffe2a58f5721db658642c14a0e51230df7c3c7186cd6322214d9",
+      "bytes": 37485
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/7fefef4983d2fbaf291f8843d77f02a2e280b6fb04fb145de8ad4d62b79ecd55.0000000.json",
+      "committed_lf_bytes_sha256": "b900cbbcc33771898bddb384f7c027b42dc134f6da49c2c59ed6e96bb7a5ded9",
+      "bytes": 12608
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/868852c865f48e2fc0a0fa3fc8bb5a13a78b0f93838b82d52cd1a9ef8bd3651d.0000000.json",
+      "committed_lf_bytes_sha256": "f6db33bd20325d7dceb63b6522db43a1d451cd8ba4c2195d2542a6e65853a225",
+      "bytes": 10272
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/8c7015b5c019a8936a5b5c8b283ba36bf61e28a506e6c51f006e5b1c2825e3df.0000000.json",
+      "committed_lf_bytes_sha256": "97cb826cc45975e9301f5d2635bb90b573c5f1168b3977d73c19ee43f5cc5d26",
+      "bytes": 9597
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/8ddb2b28ca71b9d065cb8d3f21842859ff84fa5cfa55b910ac9ef9aa3dc2737a.0000000.json",
+      "committed_lf_bytes_sha256": "71f2c081b5e800f6ea7cefa7a36fce1da5f258349d9870e6aa6b36801ff80fe6",
+      "bytes": 83400
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/960ff9a494a1e079f8855f7c36dae2054d7a08ed427cc320049e1f154ca01256.0000000.json",
+      "committed_lf_bytes_sha256": "f4e0ab02296aff677f81bc415d243d4d72f08f0edd5434159ad7fd3a4253432d",
+      "bytes": 5920
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/96fd8570a4fdad2092b89a0444a1fabc8d8ca9b18b0d94b0144c4dcf61b12b67.0000000.json",
+      "committed_lf_bytes_sha256": "9a16f7d40950a4763acb27a476796837ca966b150cad7905e2479316009a6984",
+      "bytes": 8660
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/9a5dc45ab2042127f934f9f60d08d3515c22a065921d16f6acb9fbd888ec7f3c.0000000.json",
+      "committed_lf_bytes_sha256": "da30eb829ced8c5ddde7365926ec450c735b52bc8206c309a5f72a3f7d343276",
+      "bytes": 4397
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/9b429d33445af790ff55015bbdc9b431f78755dde1bfca47273f73bcbf75110d.0000000.json",
+      "committed_lf_bytes_sha256": "43137d4fe726813b12dd0605b4fa9d57c2c705ef93c30a34948c2a2db06628a2",
+      "bytes": 93104
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/9d55bc9a51cbfa4e6ae9193ffb3e073dbf9f7d8c94c345f4fa87a25f2f478196.0000000.json",
+      "committed_lf_bytes_sha256": "1eda2070fae91248f8b96b651255ce63719dcaf157e7e28c43ede6bdc5c65ece",
+      "bytes": 90541
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/9d55bc9a51cbfa4e6ae9193ffb3e073dbf9f7d8c94c345f4fa87a25f2f478196.0090000.json",
+      "committed_lf_bytes_sha256": "040a0508b6fa6006553cdaa72997d8671c58e7133415b9c43c884c0871e4bc91",
+      "bytes": 22373
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/a373c7e2b64f1a525f146d1c9bb17208c0025ba7b8577f783a53b5f637b80873.0000000.json",
+      "committed_lf_bytes_sha256": "45b26b4d00f3f28892a189be77689f773b9c3ea71a75b47a93ede9dd085de74b",
+      "bytes": 54438
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/ad2882ee1d3705ef0f073bbf59ae1fe0e39f4076a15f2c29d34de3f69bd72709.0000000.json",
+      "committed_lf_bytes_sha256": "d8110b3ff7b84686172cd6740c09f32bbb9ebbcced547e2e68f13c5a8c829ed2",
+      "bytes": 10437
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/bc25c36a826285d3be498c50cf5cc8738c1a8f78b5a9a2eedcc055661b0d7448.0000000.json",
+      "committed_lf_bytes_sha256": "4bdcba75100af3bfcd3f2e4d6fa1121eb969163e25cf6e1d758dc60fae21e382",
+      "bytes": 5207
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/bf3c3189c24ed0a657002571872f5c08c34fdaca3877664d3327220eb0c96cbf.0000000.json",
+      "committed_lf_bytes_sha256": "5658811953fbcc934b90ff8f3d7cd581f8144a1a23de86941d5285e3b8bd1f49",
+      "bytes": 8056
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/c45dbb5ead306a868413a480d2f7ab88ec7dd259b6a582b1c178142e520d7164.0000000.json",
+      "committed_lf_bytes_sha256": "29ff095fdc3f98d722e7e23a55dccf53ef803c46b132db0b68faa84475ebf49d",
+      "bytes": 89142
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/c64316b103f8c2da41caacc2521464b0e0b4432640368f205d8cb3f2a5183cb7.0000000.json",
+      "committed_lf_bytes_sha256": "1298afcb9ff951ea6f1c2a434c23f47cb3b0c07521a07732678804aadca1eaf9",
+      "bytes": 4852
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/c93f914fe421d677c4b8f0e4490ecf851db72398aff7702160fbca9396251e15.0000000.json",
+      "committed_lf_bytes_sha256": "87beb21e56264ef9923b36d2420e3a92c32616a37e92836571b6e64263bfea1c",
+      "bytes": 85517
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/cc55ecea3364c85b88b38c82e7dce3733399bc4e18aec3e8a9ed991967cd4ffd.0000000.json",
+      "committed_lf_bytes_sha256": "be8e7c763e26309f946cbf160a399113176537d10dc06651edf37560dd971a3b",
+      "bytes": 31823
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/d01609b1987d0812c3c178d5be0074eb392f9944acdffdfad905689a50bae826.0000000.json",
+      "committed_lf_bytes_sha256": "8748e69aa2dd038b2cd8b6b07fa4cae994d459c947b92dcaddd038f3195df0b2",
+      "bytes": 35008
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/d10be4a6947400d4ee67940ad2b3c93758c705d6ecf7c96a90d21621b5f509c7.0000000.json",
+      "committed_lf_bytes_sha256": "2ba0f8b9e216d93e3a80d2841143765c8f5fa38dc13c962f071205102c524145",
+      "bytes": 31773
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/d1aa3597027360091c0de7e01d916c3b213454aef6494598b9a408977ea8ad88.0000000.json",
+      "committed_lf_bytes_sha256": "8516af5869ac85bd844e1bcd90eaff93f00e1aa8146f6c64971624a8c7c99282",
+      "bytes": 42210
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/d232ef43fc7c48036507b1afdd13e4c9191347532e5888590e459215c80ffc97.0000000.json",
+      "committed_lf_bytes_sha256": "b2927c773f804eb2df8fd92626e0d02d954643bdf4a9f31d69f2d560d88f2d72",
+      "bytes": 6465
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/d8e529b86a0cba43d7fcbfd9c6c9c148a45df82f8de144d6258270c6280e0ce4.0000000.json",
+      "committed_lf_bytes_sha256": "fdf35f40dd30c3aa09b1275f4d8ff47dc1a22ff882afd8732941a77e178949f0",
+      "bytes": 9018
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/d9ea1ae99f686240dae213f123a4d9bddf6e10c73804a464bea82cdf3b7b6edf.0000000.json",
+      "committed_lf_bytes_sha256": "acfcac414073f1d86d37355a4deec1f535e3beabd57f9cadb4ccd3182b7bda02",
+      "bytes": 11852
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/e125c32fb5334eb4bff2ef063e07efd687ef951dc9f4d96bbd99f6c3006684a6.0000000.json",
+      "committed_lf_bytes_sha256": "76a503cd405d1c1a414e6cf633e14922a19edd861a3c58d3332a9c479213d691",
+      "bytes": 90527
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/e38e093115e1d8448fbd899249b96e4a3d95faba7608c1fb90fb17ab97b04c60.0000000.json",
+      "committed_lf_bytes_sha256": "6e705bc0dc61035fb94f72ae76df910463fe06a0c3c4f8d6a129749619b8dfa0",
+      "bytes": 5223
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/e47f603c63f0b3b3c9306652abc712138216f1f68676dcffca764f5e4278bf12.0000000.json",
+      "committed_lf_bytes_sha256": "85dbf5e92cf2eadad07f5be5bd5587b6eff58c5048e6a4fa6822098c8d78498c",
+      "bytes": 8676
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/e831853154c114bef9a1fff0660bbf307bbd89a7926bf567f4161731f4bb7ada.0000000.json",
+      "committed_lf_bytes_sha256": "ee39140ac6d9e94f11c022a99595554f897b57975bd50c7148ec1d6b32e3341a",
+      "bytes": 4359
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/eb46b3a2a246ee0cdc5a0be25808e85253c002b9623e99d8b2d264ffd1ba91e7.0000000.json",
+      "committed_lf_bytes_sha256": "9c8571f4bb3fcc98afd2f81a85f585857c58aa69d9db70143947a99de916ecb1",
+      "bytes": 34098
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/f3b134cb5073d63b5402ca24738a3f513ad2850c4bf821f4d43a6dbf0e8d063e.0000000.json",
+      "committed_lf_bytes_sha256": "c698c3c2c9982220ce5f7770acb928bf12ae5503c821d6f95bf67b16614ee78a",
+      "bytes": 10481
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/f6c61a2fe95678df3421fa8c498fd9d5de423a4fa31834ad1369a9ab437d5398.0000000.json",
+      "committed_lf_bytes_sha256": "f15a76d00db207dfa1ea7162f27a3d287b2219f7246155b3f6877685811facb0",
+      "bytes": 33188
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/fb122286262845104dcfc52adedf078efb9bd4a3ee5af19025668452944d990a.0000000.json",
+      "committed_lf_bytes_sha256": "73332c2b31c0404492eec061f6b19f645918ea5fe178780ddda38436bbfa5b28",
+      "bytes": 31368
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/fb8a2b7c2bdc9ce616ae16b4edba9c83829b733e0e04a75303cec0716c32aab0.0000000.json",
+      "committed_lf_bytes_sha256": "ef8dc5346482f63a8967a6bb3dd869de63254f241f35d13accc8a9a387563b94",
+      "bytes": 87496
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/fc61316e924c9d86ee17d5b1cd04848f9e4c000ed7c7780890f15539b2eabd62.0000000.json",
+      "committed_lf_bytes_sha256": "966f7207548687fdf0ece632884b21078f9fdd8e0e6fc3718d5ef62cbb2413d6",
+      "bytes": 33643
+    },
+    {
+      "path": "docs/review_packets/infrastructure_historical_delta49_58_bb4dbcba/source_parts/fcbf9a665af634027b34b4ba5709a1e226884c24d19050c5cef87519096a0ff0.0000000.json",
+      "committed_lf_bytes_sha256": "d0e91d04337f9521716b3bf818da84cfeb5c040fbc999b7efe3a51aabd535331",
+      "bytes": 32733
+    }
+  ],
+  "independent_original_object_clearance": false,
+  "parent_embedded_review_report": "No material defect relayed through58; full original-object clearance remains incomplete.",
+  "accepted_membership": false,
+  "publication_authorized": false
+}
