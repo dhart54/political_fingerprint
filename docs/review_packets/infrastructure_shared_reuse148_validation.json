@@ -1,0 +1,35 @@
+{
+  "state": "owner_validation_candidate_preparation_only",
+  "base_head": "323343335855b0b3729bb02111637e735a777eda",
+  "packet": "infrastructure_batch148_shared_reuse",
+  "standalone_validator": "PASS; 257 preserved files, 3 shared cores, 6 member observations, 1 Not Voting, 0 propositions, 17 human subjects",
+  "test_command": "python -m unittest backend.tests.test_infrastructure_shared_reuse148 backend.tests.test_editorial_semantic_ir backend.tests.test_ci_workflow_preservation",
+  "initial_combined_validation": {
+    "tests": 45,
+    "new_tests": 11,
+    "negative_mutations": 25,
+    "result": "PASS in 1.197s before independent pointer-binding finding"
+  },
+  "post_review_correction": {
+    "finding": "A resealed added147case could point to another action's meaning line, a different packet, or an incorrect JSON pointer while passing. Existing data was correct.",
+    "change": "Bind exact147authoring action, JSON pointer, action-specific meaning line and every immutable packet URL, without changing source/candidate/inventory data.",
+    "command": "python -m unittest backend.tests.test_infrastructure_shared_reuse148",
+    "tests": 12,
+    "negative_mutations": 31,
+    "result": "PASS in 0.976s; standalone replay/preservation/index validation also PASS",
+    "unchanged_IR_CI_gates_rerun": false
+  },
+  "canonical_ir_validation": "PASS; 12 accepted references, 4 accepted held-out references, 4 input-only held-out cases in 0.0392s",
+  "source_scope": "15 existing governed objects reused unchanged; no acquisition, new bill research, raw reconstruction or visual-review claim",
+  "historical_origins": "Health at immutable32334333; selected typed Immigration objects read from immutable676ae9e without restoring a deleted directory or generator",
+  "shared_successor_scope": "Minimal explicit unaccepted neutralization/version proposals; whole meanings/source qualifications preserved; dependency impact limited to two held member projections",
+  "inventory_scope": "Original twelve cases/history preserved exactly; only five completed147subjects added, with current145 preimages, immutable links and original review/CI attribution",
+  "current145_mutated": false,
+  "historical_Health_Immigration_mutated": false,
+  "meaning_acceptance": false,
+  "disposition_or_binding_application": false,
+  "source_registration": false,
+  "publication_authorized": false,
+  "production_authorized": false,
+  "independent_review_complete": false
+}

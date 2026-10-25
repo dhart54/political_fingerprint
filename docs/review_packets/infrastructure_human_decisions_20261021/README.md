@@ -2,7 +2,7 @@
 
 This packet separates **eligibility**, **exact text binding**, and **authored meaning**. It grants no approval or application authority. The approved batch 142 case application is delivered at `ede71408801f71e3cc68917fff11de148cd82b9c`; its [receipt](https://github.com/dhart54/political_fingerprint/blob/ede71408801f71e3cc68917fff11de148cd82b9c/docs/review_packets/infrastructure_case_application145/application_receipt.json) records the 21:17 approval, 258 pending / 124 ineligible, and no authored-meaning acceptance. Older candidate bundles retain their original unaccepted flags as historical evidence.
 
-Your open queue has six case-specific eligibility decisions (the five batch-143 cases and H.R. 859), two exact study-scope questions (H.R. 28/H.R. 152), and two already-eligible meanings to accept/revise/reject if you want admission (H.R. 153/H.R. 164). Other unfinished research is not being presented as a ready human decision.
+The original twelve subjects retain their exact decisions/history below: six case-specific eligibility decisions, two scope questions, two already-eligible meanings and two applied exclusions. Five completed batch-147 subjects are now added separately: four eligibility recommendations and one aviation-workforce scope question, each with independent binding and whole-meaning choices. Other unfinished research is not presented as ready for a human decision.
 
 ## Six ready eligibility/meaning cases
 
@@ -66,4 +66,50 @@ Not Voting is resolved non-directional evidence, excluded from support/oppositio
 
 Six source holds remain closed and unchanged: H.R. 27 exact child (403); H.J.Res. 87 / 88 FR 20688; H.R. 4016 amendment 277 modal/report conflict; H.R. 4553 amount conflict; H.R. 4690 CFR 433/435 rejected chain; H.R. 9497 WRDA cancelled six-artifact chain. No retry, workaround, acceptance, release or production authority is requested by this packet.
 
-VA cohort 144 research is unfinished and excluded from these requests. Health activation, merge, main update, publication and production remain outside the approved work.
+Source checkpoint 144 remains an immutable historical unfinished checkpoint. The completed five-case successor packet147 is now included below with its own delivery/review evidence; the checkpoint is not relabelled as completed authoring. The three-case shared-reuse148 packet has its own candidate/review lifecycle and is not added by this bounded inventory extension. Health activation, merge, main update, publication and production remain outside the approved work.
+
+## Five completed VA candidates (147): separate choices remain unapproved
+
+Delivered at `323343335855b0b3729bb02111637e735a777eda`. All five episodes
+remain held with zero propositions. Review each whole bill, including its pension
+extension; this table does not authorize a narrower component interpretation.
+
+| Exact amended suspension/passage and whole meaning | Recommendation | Strongest counterevidence |
+| --- | --- | --- |
+| [H.R. 586, house:119:1:89](https://github.com/dhart54/political_fingerprint/blob/323343335855b0b3729bb02111637e735a777eda/docs/review_packets/infrastructure_batch147_va_candidates/authoring.json#L19) | Include this research mechanism | The whole choice addresses veterans health evidence and Medicaid-linked pension administration, with no physical infrastructure project or technology deployment. Scientific subject matter alone would not establish Infrastructure eligibility. |
+| [H.R. 1039, house:119:1:90](https://github.com/dhart54/political_fingerprint/blob/323343335855b0b3729bb02111637e735a777eda/docs/review_packets/infrastructure_batch147_va_candidates/authoring.json#L87) | Exclude this administrative assessment | The FFRDC assessment, stakeholder consultation and mandatory lawful implementation are operative changes, and the assessment examines paper/cost feasibility. They are more than an honorary label or nonbinding aspiration. |
+| [H.R. 530, house:119:1:115](https://github.com/dhart54/political_fingerprint/blob/323343335855b0b3729bb02111637e735a777eda/docs/review_packets/infrastructure_batch147_va_candidates/authoring.json#L161) | Include this research mechanism | The choice is a veterans cancer-evidence and pension measure, with no aircraft procurement, airport construction or general aviation-workforce mandate. Naming the National Academies does not by itself confer membership. |
+| [H.R. 1286, house:119:1:133](https://github.com/dhart54/political_fingerprint/blob/323343335855b0b3729bb02111637e735a777eda/docs/review_packets/infrastructure_batch147_va_candidates/authoring.json#L223) | Exclude this administrative assessment | The bill requires a stakeholder-informed FFRDC assessment and subsequent implementation of lawful recommendations. This is a substantive administrative mechanism, even without H.R.1039 paper/cost criteria. |
+| [H.R. 980, house:119:2:49](https://github.com/dhart54/political_fingerprint/blob/323343335855b0b3729bb02111637e735a777eda/docs/review_packets/infrastructure_batch147_va_candidates/authoring.json#L297) | Retain pending exact aviation-workforce scope question | The discretionary non-degree flight-training program approval is a direct operative aviation-training change. It may connect to transportation workforce scope even though the vehicle is veterans rehabilitation. Contact-channel duties also change administration. |
+
+For each case, decide eligibility, the proposed exact amended-text binding, and
+the full shared successor meaning separately. All five current145 binding flags
+remain unresolved; no binding/disposition application or meaning acceptance is
+granted here. H.R.980 asks whether rehabilitation-specific non-degree flight
+approval independently fits established transportation-workforce scope. No new
+blanket VA, FFRDC, study, website or aviation rule is proposed.
+
+Foushee's five official observations are Yea. Massie is Yea on the first four and
+Not Voting on H.R.980; Not Voting is resolved non-directional and excluded from
+support/opposition. No component preference, actual entitlement or outcome follows.
+
+The index pins immutable whole meanings, core/bundle seals and current145
+record/row preimages. Original Health meanings remain unchanged. The successor
+comparison covers these two held member projections, not an exhaustive dependent
+inventory; any later replacement/migration needs separate authority and review.
+
+Independent review is CLEAN at the delivered tree
+`ba09e20b630b891ef295c2a8f283b0f9c9be40b2`; receipt SHA256
+`9086bf1f1609c7ac779faa7b0b1563d5eb74cd69ea49019ceb4c0067340db8d3`.
+The reviewer passed45tests and16additional probes, reconstructed retained source
+extents and newly checked5critical visual pages. The earlier20-page visual work
+keeps its historical attribution. No duplicate acquisition or old-gate rerun.
+
+[VA workflow40230733163](https://github.com/dhart54/political_fingerprint/actions/runs/40230733163)
+passed11tests and241file preservation at the exact feature head.
+[Backend40230733110](https://github.com/dhart54/political_fingerprint/actions/runs/40230733110)
+passed all10jobs; M14H proves that same feature checkout,176shared/Health and
+232Infrastructure/compatibility tests. Other integration checks used synthetic
+`9641faec7ece5e556ce663a1efd0ea27edd07763` where documented in the index;
+their results are not relabelled as feature-head execution. Deterministic or
+independent clearance does not accept editorial content or authorize publication.

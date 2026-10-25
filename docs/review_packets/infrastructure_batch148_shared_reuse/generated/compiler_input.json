@@ -1,0 +1,169 @@
+{
+  "review_state": "candidate_pending_external_semantic_review",
+  "case_scope": "full_record",
+  "members": [
+    {
+      "member_id": "F000477",
+      "party": "D",
+      "actions": [
+        {
+          "action_id": "house:119:2:180",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:78",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:101",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        }
+      ]
+    },
+    {
+      "member_id": "M001184",
+      "party": "R",
+      "actions": [
+        {
+          "action_id": "house:119:2:180",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Not Voting"
+        },
+        {
+          "action_id": "house:119:2:78",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:101",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        }
+      ]
+    }
+  ],
+  "shared_semantics": {
+    "actions": [
+      {
+        "action_id": "house:119:2:180",
+        "action_meaning_ref": "source-qualified-three-action-shared-successor-candidate-148-20261025:house:119:2:180:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "The exact unamended Senate-engrossed S2393 would permit the VA Secretary to carry out a fiscal2026 major medical-facility project in St. Louis: a new bed tower, clinical-building expansion, consolidated administrative building and warehouse, utility plant and parking garages. The maximum authorized project amount is $1,762,668,000. Section2(b) separately authorizes appropriations of that amount for fiscal2026 OR the year funds are appropriated to the Construction, Major Projects account. Neither clause is an actual appropriation or a completed construction/care delivery claim. The short title says Fiscal Year2025 while the operative project/appropriation clauses say fiscal2026; retain the printed distinction, not a silent title-based correction. This is a mixed medical/admin/site construction project rather than wholly direct treatment spending. No general veteran benefit, patient admission rule, guaranteed construction schedule or medical outcome follows. The May20 House suspension-and-passage question passed405-5/20Not Voting. A Yea supported passing this exact authorization; a Nay opposed it. Not Voting is resolved nondirectional, not opposition. House passage is not enactment, obligation of funds, completed construction or delivered care.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:s2393:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:180",
+          "govinfo:s2393es"
+        ],
+        "structural_metadata": {
+          "stage_order": 20180
+        }
+      },
+      {
+        "action_id": "house:119:2:78",
+        "action_meaning_ref": "source-qualified-three-action-shared-successor-candidate-148-20261025:house:119:2:78:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "The February 25 House question was passage of H.R.4758, the Homeowner Energy Freedom Act, as engrossed in the House. It repeals the high-efficiency electric home rebate program in section 50122 of Public Law 117-169, the state-based home energy efficiency contractor-training grants in section 50123, and the latest/zero building-energy-code assistance in section 50131. It rescinds only the unobligated balances under sections 50122 and 50131 as those sections existed the day before enactment. It also removes the named high-efficiency electric rebate reference from the separate HOMES program's noncombination clause. This is one vote on that whole repeal/rescission package, not three component votes.\n\nSection 50122 funds state and Tribal point-of-sale rebates for qualified household electrification projects. An eligible household has income less than 150 percent of area median income; demonstrated eligibility for another income-restricted federal program is specified as evidence. Eligible entities also include owners of multifamily buildings with at least 50 percent eligible-household residents, and governmental, commercial or nonprofit entities carrying out projects on an eligible household's behalf. Those third parties generally must discount the household's cost by the rebate. This is not a universal homeowner benefit or a medical treatment program.\n\nQualified projects include new construction, replacement of a nonelectric appliance and first-time purchase of the specified electric appliances. Energy Star certification applies where applicable. The maximum rebate is the lesser of the income-tier cost share and item limits, subject to a cumulative $14,000 cap for each eligible entity. Below 80 percent of area median income the cost share is up to 100 percent; the printed second cost tier is 80 through 150 percent and up to 50 percent, while the separate household eligibility definition says less than 150 percent. Preserve those two printed boundaries without inventing eligibility at exactly 150 percent. Item caps are $1,750 for a heat-pump water heater, $8,000 for a heat pump for space heating/cooling, $840 for an electric stove/cooktop/range/oven or heat-pump clothes dryer, $4,000 for an electric load service center, $1,600 for insulation/air sealing/ventilation, and $2,500 for wiring. These are ceilings, not guaranteed payments. A separate installation incentive of up to $500 for an entity acting on a household's behalf is tied to project scale and exempt from the household-discount rule. The program prohibits combining another federal grant or rebate for the same qualified project. Original appropriations were $4.275 billion for states and $225 million for Tribes through September 30, 2031; those original amounts are not the remaining unobligated balances. Administrative limits and the specific exemption from 10 CFR 420.18 expenditure limits remain part of the targeted program's conditions.\n\nThe other repeals broaden the choice. Section 50123 originally appropriated $200 million through September 30, 2031 for state contractor-training assistance, not clinical workforce training. Public Law 119-21 section 50402(b) had already rescinded its unobligated balance in July 2025. H.R.4758 repeals that program authority but does not include it in its new two-section balance rescission; it does not newly recover the entire original $200 million. Section 50131 originally provided $330 million for latest-code assistance and $670 million for zero-energy-code assistance through September 30, 2029. Grants assist authorized state/local jurisdictions with adoption and implementation, including training, enforcement and annual compliance measurement. That section waives the named state cost-share requirement and caps federal administration at 5 percent. Repealing assistance does not itself repeal state/local building codes or command households to replace appliances.\n\nSection 50121's distinct HOMES rebate program is not repealed. Removing the named section 50122 reference does not remove its remaining prohibition on combining another federal grant or rebate for the same upgrade. Nor does this vote repeal every Inflation Reduction Act energy program, recover obligated funds, or establish an individual household's benefit loss. The unamended consideration provision in H.Res.1075 and the EH delimit this version. A cost-certification amendment discussed/inserted in the Record is not in the passed EH; the failed recommittal is not incorporated as adopted text. Rule agreement is procedural context, not a second substantive choice.\n\nSupporters argued that repealing these subsidies and code grants would protect consumer choice and avoid regulatory costs; opponents described the rebates as optional assistance with upfront costs for low- and moderate-income households and defended the building-code funding. Those are attributed positions, not proven price, energy or health outcomes. The majority report and floor statements describe households over 150 percent of area median income, contrary to the targeted statute's less-than-150-percent definition; the operative definition governs this candidate and the rhetorical discrepancy is retained. The committee report's CBO estimate assumes enactment early in 2026 and estimates $300 million in unobligated rebate/code balances. It estimates a $300 million budget-authority reduction but no direct-spending effect over 2026-2035 relative to the January 2025 baseline because CBO did not expect those balances to be spent under current law. This is an attributed estimate under stated assumptions, not a measured balance or a claim of $5.5 billion in current savings.\n\nA Yea supported passing the entire repeal/rescission package; a Nay opposed passing it. Neither establishes a position on every component or a preferred alternative. The House passed it 210-199, with one Present and 22 Not Voting. House passage alone does not establish enactment, actual rescission, changed household participation or predicted outcomes.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr4758:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:78",
+          "govinfo:hr4758eh",
+          "govinfo:pl117-169-home-rebates-training-codes",
+          "govinfo:pl119-21-50402-energy-rescissions",
+          "govinfo:hrpt119-484-4758",
+          "govinfo:hres1075eh",
+          "govinfo:usc6294a-2024-sol-slice",
+          "govinfo:10cfr42018-2025-sol-slice",
+          "congressional-record:2026-02-25-4758"
+        ],
+        "structural_metadata": {
+          "stage_order": 20078
+        }
+      },
+      {
+        "action_id": "house:119:2:101",
+        "action_meaning_ref": "source-qualified-three-action-shared-successor-candidate-148-20261025:house:119:2:101:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "The complete H.R. 5103 EH establishes a statutory District of Columbia Safe and Beautiful Commission in the executive branch. Its section 3(d)(1) functions are to RECOMMEND ACTIONS and REVIEW THEIR EFFECTIVENESS with respect to the listed tasks, including developing and encouraging policies directing maximum Federal immigration-law enforcement within DC and encouraging redirection of available Federal, State or local law-enforcement resources to apprehend/deport the aliens described in the printed provision; and monitoring DC sanctuary-city status and Federal immigration-law enforcement compliance. These are express operative immigration-specific recommendation/monitoring functions, not only findings or the fact DHS is a member. The proposal does not itself order a named person removed, adjudicate unlawful status, redefine sanctuary city, create a new admission/removal ground, directly repeal DC sanctuary legislation or newly grant the Commission the underlying agencies arrest, detention or deportation powers. Its operational-assistance/coordination permission is expressly TO THE EXTENT PERMITTED BY LAW. Commission membership includes nine specified Federal departments/components or U.S. Attorney offices, the DC Executive Office of the Mayor AS DEFINED in 1-315.02(3), and additional Federal entities chosen by the chair. That DC definition covers specified managerial/budget/personnel/secretarial/planning/information/special-support offices and excludes the named Office of Personnel; it is not every DC agency or a requirement for the Mayor personally to serve. Heads designate representatives within 45 days, including 45 days after later chair designations for added Federal entities. The President designates a SENIOR EOP official as chair within 45 days, with meeting scheduling/entity selection and a consultatively developed charter submitted within 7 days of completion. The Commission reports its carried-out functions/authorities and appropriate legislative recommendations to the specified House Oversight and Senate Homeland Security committees, without an invented periodic reporting deadline. Its other tasks concern forensic-lab accreditation, police staffing/capabilities, concealed-carry-license processing, qualified pretrial policies, transit crime and law-enforcement presence; they remain parts of the same whole Commission/program choice, not separate component votes. The separate Interior program is developed within 30 days with specified Federal/DC consultation, coordinates cleanliness/graffiti, qualified monument restoration and private participation, and reports after 1 year and annually. Both statutory sections/program/Commission end January 2,2029. This is not the first related federal initiative: original EO 14252 of March 27,2025 independently established a RELATED Safe and Beautiful Task Force with immigration-enforcement coordination/monitoring, related agencies, executive reporting and Interior beautification directives. The bill establishes its own statutory Commission, chair/designation/charter/report/sunset framework, including the DC Executive Office representative, and recommendation/review wording. The earlier EO language expressly directs Task Force coordination on specified enforcement tasks in the Washington metropolitan area, whereas the bill immigration-policy clause specifies DC; do not equate their geographic wording or legal objects. Original EO 14252 is a dated baseline witness, not an exhaustive assertion about every later executive change or actual implementation. Its law/appropriation and no-private-enforceable-benefit limits are preserved. The bill does not say it repeals that Task Force, first creates all existing agency enforcement power or appropriates a specified new enforcement amount. The whole final-passage choice encompasses Commission and beautification work, not a separate vote on deportation, sanctuary status or a particular police operation. One H.R. 5103 episode. No actual deportation, safety improvement, compliance, spending or enactment follows from the House vote.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr5103:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:101",
+          "govinfo:hr5103eh",
+          "govinfo:eo14252-dc-safe-beautiful",
+          "dc-code:1-31502-mayor-executive-office"
+        ],
+        "structural_metadata": {
+          "stage_order": 20101
+        }
+      }
+    ],
+    "episodes": [
+      {
+        "episode_id": "episode:s2393:119",
+        "action_ids": [
+          "house:119:2:180"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr4758:119",
+        "action_ids": [
+          "house:119:2:78"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr5103:119",
+        "action_ids": [
+          "house:119:2:101"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      }
+    ],
+    "policy_families": [],
+    "policy_traits": [],
+    "shared_review_dependencies": [],
+    "source_render_constraints": [
+      {
+        "action_ids": [
+          "house:119:2:180",
+          "house:119:2:78",
+          "house:119:2:101"
+        ],
+        "constraint_id": "candidate-episode-hold",
+        "detail": "All three episodes held pending content-bound shared-meaning, version-binding and issue eligibility review. No canonical admission or analytical proposition is authorized.",
+        "semantic_effect": "blocks_behavioral_propositions"
+      }
+    ],
+    "trait_relationships": []
+  }
+}
