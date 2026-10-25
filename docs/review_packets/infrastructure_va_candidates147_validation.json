@@ -1,0 +1,33 @@
+{
+  "state": "owner_candidate_preparation_validation_only",
+  "base_head": "346e5b5322e5df2c0083cc35ec848d580a61e86c",
+  "packet": "infrastructure_batch147_va_candidates",
+  "new_candidate_tests": 11,
+  "negative_mutations": 25,
+  "combined_tests": 45,
+  "combined_modules": [
+    "backend.tests.test_infrastructure_va_candidates147",
+    "backend.tests.test_editorial_semantic_ir",
+    "backend.tests.test_ci_workflow_preservation"
+  ],
+  "combined_result": "PASS, 45 tests in 0.961s",
+  "canonical_semantic_ir_validation": "PASS, 12 accepted references and 4 accepted held-out references; owner run before adding the clock-only test",
+  "standalone_candidate_validator": "PASS in normal supported Python environment; 241 predecessor files preserved",
+  "isolated_python_I_probe": "Environment limitation: -I hides the user-site jsonschema dependency and fails import before validation. No product failure or pass is claimed for that probe. New CI explicitly installs jsonschema.",
+  "actual_typed_replay": {
+    "shared_cores": 5,
+    "member_observations": 10,
+    "not_voting": 1,
+    "held_episodes": 5,
+    "issue_propositions": 0,
+    "unchanged_checkpoint_sources_reused": 39,
+    "new_captures": 0
+  },
+  "historical_visual_review_rerun": false,
+  "historical_source_validation_relabelled_as_new": false,
+  "independent_review_complete": false,
+  "semantic_acceptance": false,
+  "canonical_mutation": false,
+  "publication_authorized": false,
+  "production_authorized": false
+}
