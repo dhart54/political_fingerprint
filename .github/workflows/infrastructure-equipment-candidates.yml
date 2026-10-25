@@ -1,0 +1,35 @@
+name: Infrastructure equipment candidates
+
+on:
+  pull_request:
+    paths:
+      - "backend/app/semantic_ir/**"
+      - "backend/app/editorial_presentations/**"
+      - "backend/tests/test_infrastructure_equipment_candidates150.py"
+      - "scripts/validate_infrastructure_equipment_candidates150.py"
+      - "scripts/prepare_shared_domain_candidate.py"
+      - "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/**"
+      - "docs/editorial/shared_candidates/**"
+      - "docs/semantic_ir/**"
+      - ".github/workflows/infrastructure-equipment-candidates.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  held-equipment-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install schema and source validation dependencies
+        run: python -m pip install 'jsonschema>=4.23,<5' 'pypdf>=5,<7'
+      - name: Verify held equipment choices, exact sources and preservation
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_equipment_candidates150.py
+          python -m unittest backend.tests.test_infrastructure_equipment_candidates150

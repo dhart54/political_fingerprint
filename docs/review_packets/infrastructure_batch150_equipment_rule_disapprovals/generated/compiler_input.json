@@ -1,0 +1,247 @@
+{
+  "review_state": "candidate_pending_external_semantic_review",
+  "case_scope": "full_record",
+  "members": [
+    {
+      "member_id": "F000477",
+      "party": "D",
+      "actions": [
+        {
+          "action_id": "house:119:1:53",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:59",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:77",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:78",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:58",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        }
+      ]
+    },
+    {
+      "member_id": "M001184",
+      "party": "R",
+      "actions": [
+        {
+          "action_id": "house:119:1:53",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:59",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:77",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:78",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:58",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        }
+      ]
+    }
+  ],
+  "shared_semantics": {
+    "actions": [
+      {
+        "action_id": "house:119:1:53",
+        "action_meaning_ref": "equipment-rule-disapproval-five-action-candidate-150-20261025:house:119:1:53:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.J.Res.20 would disapprove the whole 89 FR 105188 rule identified in its complete House EH and provide that the identified rule shall have no force or effect. The identified December 26, 2024 DOE rule would amend gas-fired instantaneous consumer water-heater standards. Its more-stringent branch covers effective storage volume below 2 gallons and input greater than 50,000 Btu/h; other specified gas-fired instantaneous classes receive EF-to-UEF metric translations rather than an across-the-board increase in stringency. The amendatory table sets distinct draw-pattern and volume/input classes for units manufactured on or after December 26, 2029, and adds paragraph-level severability. This is not a ban on all gas water heaters or gas appliances. The rule's baseline account distinguishes the prior rated-volume EF/UEF framework from the new effective-volume table; no literal coefficient or realized saving is inferred.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hjres20:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:53",
+          "govinfo:hjres20eh",
+          "govinfo:rule150:2024-30369"
+        ],
+        "structural_metadata": {
+          "stage_order": 10053
+        }
+      },
+      {
+        "action_id": "house:119:1:59",
+        "action_meaning_ref": "equipment-rule-disapproval-five-action-candidate-150-20261025:house:119:1:59:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.J.Res.42 would disapprove the whole 89 FR 81994 rule identified in its complete House EH and provide that the identified rule shall have no force or effect. The identified October 9, 2024 DOE rule revises certification, reporting, labeling and enforcement for the defined consumer-product and commercial-equipment groups. It aligns technical reporting with distinct existing or separately amended test procedures/standards, removes obsolete requirements and corrects sampling, rounding, terminology, certification templates and enforcement provisions. Its scope includes HVAC/heat pumps, dishwashers and clothes washers, pool and commercial water heaters, dehumidifiers, external power supplies/battery chargers, computer-room and outdoor-air systems, commercial ice makers, walk-ins, pumps/compressors/pool-pump motors, air cleaners, single-package vertical units, ceiling-fan light kits and general-service lamps; these groups do not all receive the same kind of change. It establishes reporting for defined previously uncovered categories, revises covered-equipment definitions, and changes permanent walk-in panel/door labels, including the different manufacture-date qualification for foam-insulated non-display doors. It does not itself impose one new efficiency threshold on all these products. Initial versus annual reports and product-specific standards-linked compliance dates differ; the original rule's headline reporting date is May 7, 2025. Walk-in enforcement compressor break-in is allowed only when reported and may not exceed 20 hours.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hjres42:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:59",
+          "govinfo:hjres42eh",
+          "govinfo:rule150:2024-21950"
+        ],
+        "structural_metadata": {
+          "stage_order": 10059
+        }
+      },
+      {
+        "action_id": "house:119:1:77",
+        "action_meaning_ref": "equipment-rule-disapproval-five-action-candidate-150-20261025:house:119:1:77:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.J.Res.24 would disapprove the whole 89 FR 104616 rule identified in its complete House EH and provide that the identified rule shall have no force or effect. The identified December 23, 2024 DOE rule amends performance standards for defined walk-in cooler/freezer components rather than complete walk-in systems. The definition concerns walkable refrigerated storage below 3,000 square feet and excludes products designed and marketed exclusively for medical, scientific or research purposes. New non-display-door maximum-daily-energy standards apply from December 23, 2027; refrigeration-system minimum AWEF2 standards apply from December 31, 2028, with the printed equipment/capacity classes and process-cooling exception. Door classes distinguish manual/motorized and temperature categories, with feature allowances. The prior refrigeration framework uses AWEF, while the new table uses AWEF2; these metrics are not interchangeable. Display-door and panel standards are expressly not amended, and existing prescriptive requirements are not erased by this rule's revision of431.306(d)/(e). No numerical formula grid, reduction percentage, equipment retrofit or realized saving is asserted.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hjres24:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:77",
+          "govinfo:hjres24eh",
+          "govinfo:rule150:2024-28474"
+        ],
+        "structural_metadata": {
+          "stage_order": 10077
+        }
+      },
+      {
+        "action_id": "house:119:1:78",
+        "action_meaning_ref": "equipment-rule-disapproval-five-action-candidate-150-20261025:house:119:1:78:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.J.Res.75 would disapprove the whole 90 FR 7464 rule identified in its complete House EH and provide that the identified rule shall have no force or effect. The identified January 21, 2025 DOE rule adopts new/amended maximum-daily-energy standards and definitions for commercial refrigerators, freezers and refrigerator-freezers. It distinguishes remote and self-contained equipment, equipment families, operating/rating temperatures, volume/display-area and qualifying-feature classes. It revises definitions including cold-wall/forced-air evaporators, drawer/door arrangements, rating temperature and the staged ice-cream-freezer temperature definition. The amendatory standards distinguish units manufactured before versus on/after January 22, 2029; hybrid/refrigerator-freezer compartment accounting and measurement rules remain explicit. Previously excluded chef bases are treated differently from the continuing exclusions for buffet/preparation tables, blast chillers/freezers and mobile refrigerated cabinets. The published synopsis also withholds amended standards for specified large-capacity ranges; this is not a blanket increase for all equipment. The joint resolution literally repeats 'Office of the Office'; that wording is preserved without inferred legal repair. No numerical coefficient grid, actual replacement or realized energy/cost outcome is asserted.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hjres75:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:78",
+          "govinfo:hjres75eh",
+          "govinfo:rule150:2024-31214"
+        ],
+        "structural_metadata": {
+          "stage_order": 10078
+        }
+      },
+      {
+        "action_id": "house:119:1:58",
+        "action_meaning_ref": "equipment-rule-disapproval-five-action-candidate-150-20261025:house:119:1:58:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.J.Res.61 would disapprove the whole 89 FR 94886 rule identified in its complete House EH and provide that the identified rule shall have no force or effect. The identified November 29, 2024 EPA rule adds standards for the previously unregulated rubber-processing subcategory of major-source rubber-tire manufacturing while making associated incorporation-by-reference, applicability, definitions, testing/monitoring, reporting/recordkeeping and conforming-table changes. The final rule uses one THC standard as an organic-HAP surrogate for both new/existing facilities rather than the proposal's separate silica/non-silica standards. It permits specified facility-wide averaging and sets fPM limits as a metal-HAP surrogate with an alternative metal-HAP limit. THC continuous emissions monitoring, initial/continuous compliance, capture/vent inspections and applicable fabric-filter bag-leak detection duties are part of the regime; this is more than a tire-sector label. Printed table 15 sets 64 grams of THC per Mg of mixed rubber on a 15-day rolling average, with fPM 3.0 grams/Mg OR metal-HAP 0.051 grams/Mg. Existing sources receive the qualified three-year compliance period; sources beginning construction/reconstruction after November 16, 2023 follow the effective-date-or-startup rule, whichever is later. The rule preserves different subcategory baselines and updates confidential-business-information submission procedures. It does not newly create all historic tire-production/cord/sealant limits or certify actual emissions, equipment installation or health effects.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hjres61:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:58",
+          "govinfo:hjres61eh",
+          "govinfo:rule150:2024-26895"
+        ],
+        "structural_metadata": {
+          "stage_order": 10058
+        }
+      }
+    ],
+    "episodes": [
+      {
+        "episode_id": "episode:hjres20:119",
+        "action_ids": [
+          "house:119:1:53"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hjres42:119",
+        "action_ids": [
+          "house:119:1:59"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hjres24:119",
+        "action_ids": [
+          "house:119:1:77"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hjres75:119",
+        "action_ids": [
+          "house:119:1:78"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hjres61:119",
+        "action_ids": [
+          "house:119:1:58"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      }
+    ],
+    "policy_families": [],
+    "policy_traits": [],
+    "shared_review_dependencies": [],
+    "source_render_constraints": [
+      {
+        "action_ids": [
+          "house:119:1:53",
+          "house:119:1:59",
+          "house:119:1:77",
+          "house:119:1:78",
+          "house:119:1:58"
+        ],
+        "constraint_id": "candidate-episode-hold",
+        "detail": "All five episodes held pending independent review and separate content-bound eligibility/meaning decisions. Zero propositions; no canonical registration/application.",
+        "semantic_effect": "blocks_behavioral_propositions"
+      }
+    ],
+    "trait_relationships": []
+  }
+}
