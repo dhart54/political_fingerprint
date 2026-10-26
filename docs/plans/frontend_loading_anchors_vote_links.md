@@ -175,3 +175,27 @@ Production writes: none. Rollback: revert the bounded frontend commit; no data
 rollback needed. Draft delivery and exact frozen identity are reported in the
 task response. Independent final review remains a separate readiness gate;
 no merge/deployment is authorized by this milestone.
+
+## Hosted CI follow-up
+
+Draft PR 240 was created and attached at `568d21e24db52abb7ea5672d581c59743fcba356`.
+Independent review found no remaining blocking issue at that exact head/tree;
+the reviewer could not independently launch tests after `spawn EPERM`. Its
+200% validation qualification is CSS zoom, not browser UI or text-only zoom.
+
+Frontend run `40385023631` then exposed one stale assertion outside the initial
+local subset: `record-card.spec.mjs` expected the **Official vote** link itself
+to remain XML. The full hosted result was 210 passed / 1 failed. The successor
+changes only that assertion to require both the readable page and the unchanged
+**Original vote source (XML)** link, across Environment rolls 112/114 and scopes
+119/all. Vote type, focus, Nay, and action-status assertions remain intact.
+Official pages `https://clerk.house.gov/Votes/2025112` and
+`https://clerk.house.gov/Votes/2025114` each returned 200 and linked to their exact
+`/evs/2025/roll112.xml` and `/evs/2025/roll114.xml` sources on October 26.
+
+The complete `record-card.spec.mjs` suite passed locally in production mode:
+12 passed / zero skipped. Runtime/build source is unchanged from the reviewed
+head, so no rebuild or repeat of already-passing unrelated local suites was
+needed. Successor CI and independent delta review remain required before any
+readiness declaration. Final hosted outcomes belong in the PR description and
+task response, preserving the frozen source target.
