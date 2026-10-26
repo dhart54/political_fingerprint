@@ -212,7 +212,7 @@ function SourcesSection({ sources }) {
             <a
               aria-describedby={source.accessNote ? `${sourceId}-${index}` : undefined}
               className="source-link inline-flex items-center gap-2 text-sm"
-              href={source.url}
+              href={source.readableUrl || source.url}
               rel="noreferrer"
               target="_blank"
             >
@@ -222,6 +222,11 @@ function SourcesSection({ sources }) {
               />
               <span>{source.label}</span>
             </a>
+            {source.readableUrl ? (
+              <a className="source-link mt-1 block text-sm" href={source.url} rel="noreferrer" target="_blank">
+                Original vote source (XML)
+              </a>
+            ) : null}
             {source.accessNote ? <p className="mt-1 text-sm leading-6 text-stone-600" id={`${sourceId}-${index}`}>{source.accessNote}</p> : null}
           </div>
         ))}

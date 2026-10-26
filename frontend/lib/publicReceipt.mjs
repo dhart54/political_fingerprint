@@ -1,3 +1,5 @@
+import { readableOfficialVoteUrl } from "./officialVoteLinks.mjs";
+
 // Temporary exact legacy compatibility until this mixed limitation's authored copy is accepted.
 // Explicit governed treatment remains authoritative and bypasses this pending-review set.
 const LEGACY_PENDING_LIMITATION_REVIEW = new Set([
@@ -151,9 +153,11 @@ function normalizeSource(source, kind) {
   if (typeof url !== "string" || !/^https?:\/\//.test(url)) {
     return null;
   }
+  const readableUrl = kind === "vote" ? readableOfficialVoteUrl(url) : null;
   return {
     label: kind === "vote" ? "Official vote" : publicActionSourceLabel(source, url),
     url,
+    ...(readableUrl ? { readableUrl } : {}),
     ...(congressApiUrl(url) ? { accessNote: "This Congress API link requires an API key and may not open directly in your browser." } : {}),
   };
 }

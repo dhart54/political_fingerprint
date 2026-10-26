@@ -17,7 +17,8 @@ test("reviewed Environment receipts label accepted passage types and retain exac
     await expect(button).toContainText(`Roll ${roll}`);
     await expect(button).toContainText("Final passage or suspension passage");
     await expect(button).not.toContainText(/Roll \d+.*Rule/);
-    await expect(receipt.getByRole("link", { name: "Official vote" })).toHaveAttribute("href", `https://clerk.house.gov/evs/2025/roll${roll}.xml`);
+    await expect(receipt.getByRole("link", { name: "Official vote", exact: true })).toHaveAttribute("href", `https://clerk.house.gov/Votes/2025${roll}`);
+    await expect(receipt.getByRole("link", { name: "Original vote source (XML)", exact: true })).toHaveAttribute("href", `https://clerk.house.gov/evs/2025/roll${roll}.xml`);
     await expect(receipt.locator(".vote-pill").first()).toHaveText("Nay");
     await expect(receipt.locator("[data-action-status]")).toHaveCount(0);
   }

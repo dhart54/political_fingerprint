@@ -117,6 +117,7 @@ export default function ChronologicalActionLedger({
 
   useEffect(() => {
     if (highlightedFinding) return;
+    let active = true;
     function honorReceiptAnchor() {
       const allowFocus = initialFocusAllowed.current;
       initialFocusAllowed.current = true;
@@ -131,6 +132,9 @@ export default function ChronologicalActionLedger({
       }
       if (!allowFocus) return;
       requestAnimationFrame(() => requestAnimationFrame(() => {
+        // A newer header/hash navigation owns the destination. A queued receipt
+        // scroll must not pull the reader back after they have moved elsewhere.
+        if (!active || window.location.hash.slice(1) !== id) return;
         const target = document.getElementById(id);
         target?.scrollIntoView({ behavior: "auto", block: "start" });
         if (id === "vote-record") headingRef.current?.focus({ preventScroll: true });
@@ -139,7 +143,10 @@ export default function ChronologicalActionLedger({
     }
     honorReceiptAnchor();
     window.addEventListener("hashchange", honorReceiptAnchor);
-    return () => window.removeEventListener("hashchange", honorReceiptAnchor);
+    return () => {
+      active = false;
+      window.removeEventListener("hashchange", honorReceiptAnchor);
+    };
   }, [ordered, highlightedFinding]);
 
   function clearPattern() {
