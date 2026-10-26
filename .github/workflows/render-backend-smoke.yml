@@ -62,17 +62,13 @@ jobs:
         run: |
           curl --fail --silent --show-error --max-time 30 -X POST "$RENDER_DEPLOY_HOOK_URL"
 
-      - name: Wait briefly for backend deployment
-        if: ${{ env.RENDER_DEPLOY_HOOK_URL != '' }}
-        run: sleep 90
-
       - name: Smoke check public backend contract
         env:
           API_BASE_URL: ${{ vars.RENDER_API_BASE_URL || 'https://political-fingerprint.onrender.com' }}
         run: |
           args=()
           if [[ -n "$RENDER_DEPLOY_HOOK_URL" ]]; then
-            args+=(--expected-commit "$GITHUB_SHA")
+            args+=(--expected-commit "$GITHUB_SHA" --readiness-timeout 600)
           fi
           python scripts/render_backend_smoke.py \
             --api-base-url "$API_BASE_URL" \

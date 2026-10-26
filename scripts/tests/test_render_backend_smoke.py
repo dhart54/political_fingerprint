@@ -4,12 +4,27 @@ import copy
 import io
 import json
 from pathlib import Path
+import subprocess
 import tempfile
+import time
 import unittest
 from unittest.mock import patch
 from urllib.error import HTTPError, URLError
 
 from scripts import render_backend_smoke as smoke
+
+
+class FakeClock:
+    def __init__(self):
+        self.now = 100.0
+        self.sleeps = []
+
+    def monotonic(self):
+        return self.now
+
+    def sleep(self, seconds):
+        self.sleeps.append(seconds)
+        self.now += seconds
 
 
 class SmokeContractTests(unittest.TestCase):
@@ -236,6 +251,195 @@ class SmokeContractTests(unittest.TestCase):
             self.assertEqual(len(report["checked_endpoints"]), 8)
             self.assertEqual(get.call_count, 8)
             self.assertEqual(json.loads((Path(directory) / "health-after.json").read_text()), self.responses["health"])
+
+
+    def test_readiness_then_all_eight_strict_checks_still_run(self):
+        values = [self.responses[name] for name in smoke.ENDPOINTS] + [self.responses["health"]]
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(smoke, "probe_health", return_value=self.responses["health"]) as probe, \
+                patch.object(smoke, "get_json", side_effect=values) as get:
+            report = smoke.run("https://example.test", Path(directory), "a" * 40, readiness_timeout=600)
+            self.assertEqual(report["status"], "passed")
+            self.assertEqual(report["readiness"]["status"], "ready")
+            self.assertEqual(probe.call_count, 1)
+            self.assertEqual([call.args[1] for call in get.call_args_list],
+                             list(smoke.ENDPOINTS.values()) + ["/health"])
+            self.assertTrue(all(call.args[2] == 30 for call in get.call_args_list))
+
+    def test_post_readiness_contract_failure_is_not_retried_or_masked(self):
+        self.issue()["provenance"] = {}
+        values = [self.responses[name] for name in smoke.ENDPOINTS] + [self.responses["health"]]
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(smoke, "probe_health", return_value=self.responses["health"]) as probe, \
+                patch.object(smoke, "get_json", side_effect=values) as get:
+            report = smoke.run("https://example.test", Path(directory), "a" * 40, readiness_timeout=600)
+            saved = json.loads((Path(directory) / "report.json").read_text())
+        self.assertEqual(saved, report)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["readiness"]["status"], "ready")
+        self.assertIn("provenance", report["failure"])
+        self.assertEqual(get.call_count, 8)
+        self.assertEqual(probe.call_count, 1)
+
+    def test_post_readiness_transport_failure_is_not_retried(self):
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(smoke, "probe_health", return_value=self.responses["health"]) as probe, \
+                patch.object(smoke, "get_json", side_effect=smoke.SmokeFailure("transport failure")) as get:
+            report = smoke.run("https://example.test", Path(directory), "a" * 40, readiness_timeout=600)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["readiness"]["status"], "ready")
+        self.assertEqual(get.call_count, 1)
+        self.assertEqual(probe.call_count, 1)
+
+    def test_default_read_only_mode_never_polls(self):
+        values = [self.responses[name] for name in smoke.ENDPOINTS] + [self.responses["health"]]
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(smoke, "probe_health") as probe, \
+                patch.object(smoke, "get_json", side_effect=values) as get:
+            report = smoke.run("https://example.test", Path(directory))
+            self.assertFalse((Path(directory) / "readiness.json").exists())
+        self.assertEqual(report["status"], "passed")
+        self.assertNotIn("readiness", report)
+        probe.assert_not_called()
+        self.assertEqual(get.call_count, 8)
+
+
+class ReadinessTests(unittest.TestCase):
+    def setUp(self):
+        self.clock = FakeClock()
+        self.health = {"status": "ok", "commit_sha": "a" * 40}
+        self.clock_patch = patch.object(smoke.time, "monotonic", self.clock.monotonic)
+        self.sleep_patch = patch.object(smoke.time, "sleep", self.clock.sleep)
+        self.clock_patch.start()
+        self.sleep_patch.start()
+        self.addCleanup(self.clock_patch.stop)
+        self.addCleanup(self.sleep_patch.stop)
+
+    def wait(self, directory, deadline=60):
+        return smoke.wait_for_readiness("https://example.test", "a" * 40, Path(directory), deadline)
+
+    def test_transient_timeout_then_expected_commit_records_attempts(self):
+        def probe(base, budget):
+            if self.clock.now == 100:
+                self.clock.now += budget
+                raise smoke.SmokeFailure("GET /health: readiness attempt timed out")
+            self.clock.now += 2
+            return self.health
+
+        with tempfile.TemporaryDirectory() as directory, patch.object(smoke, "probe_health", side_effect=probe) as get:
+            report = self.wait(directory)
+            saved = json.loads((Path(directory) / "readiness.json").read_text())
+        self.assertEqual(report, saved)
+        self.assertEqual(report["status"], "ready")
+        self.assertEqual(report["elapsed_seconds"], 42)
+        self.assertEqual([call.args[1] for call in get.call_args_list], [30, 20])
+        self.assertEqual([row["duration_seconds"] for row in report["attempts"]], [30, 2])
+        self.assertEqual(self.clock.sleeps, [10])
+        self.assertIn("timed out", report["attempts"][0]["failure"])
+
+    def test_wrong_commit_waits_for_exact_expected_commit(self):
+        wrong = {"status": "ok", "commit_sha": "b" * 40}
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(smoke, "probe_health", side_effect=[wrong, self.health]) as probe:
+            report = self.wait(directory)
+        self.assertEqual(report["status"], "ready")
+        self.assertEqual(probe.call_count, 2)
+        self.assertEqual(report["attempts"][0]["deployed_commit"], "b" * 40)
+        self.assertIn("Deployment differs", report["attempts"][0]["failure"])
+
+    def test_expiry_caps_sleep_and_starts_no_contract_requests(self):
+        with tempfile.TemporaryDirectory() as directory, \
+                patch.object(smoke, "probe_health", return_value={"status": "ok", "commit_sha": "b" * 40}) as probe, \
+                patch.object(smoke, "get_json") as strict:
+            report = smoke.run("https://example.test", Path(directory), "a" * 40, readiness_timeout=25)
+            readiness = json.loads((Path(directory) / "readiness.json").read_text())
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(readiness["status"], "failed")
+        self.assertEqual(readiness["elapsed_seconds"], 25)
+        self.assertEqual(self.clock.sleeps, [10, 10, 5])
+        self.assertEqual([call.args[1] for call in probe.call_args_list], [25, 15, 5])
+        self.assertEqual(report["checked_endpoints"], [])
+        strict.assert_not_called()
+
+    def test_continuous_timeouts_use_remaining_budget_then_stop(self):
+        def timeout(base, budget):
+            self.clock.now += budget
+            raise smoke.SmokeFailure("readiness attempt timed out")
+
+        with tempfile.TemporaryDirectory() as directory, patch.object(smoke, "probe_health", side_effect=timeout) as probe:
+            report = self.wait(directory, deadline=55)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["elapsed_seconds"], 55)
+        self.assertEqual([call.args[1] for call in probe.call_args_list], [30, 15])
+        self.assertEqual(self.clock.sleeps, [10])
+
+    def test_matching_response_at_deadline_is_not_readiness(self):
+        def late(base, budget):
+            self.clock.now += budget
+            return self.health
+
+        with tempfile.TemporaryDirectory() as directory, patch.object(smoke, "probe_health", side_effect=late):
+            report = self.wait(directory, deadline=5)
+        self.assertEqual(report["status"], "failed")
+        self.assertEqual(report["attempts"][0]["status"], "deadline_expired")
+        self.assertEqual(self.clock.sleeps, [])
+
+    def test_unhealthy_or_unidentified_commit_cannot_pass(self):
+        for health in ({"status": "error", "commit_sha": "a" * 40},
+                       {"status": "ok", "commit_sha": "unknown"}):
+            with self.subTest(health=health), tempfile.TemporaryDirectory() as directory, \
+                    patch.object(smoke, "probe_health", return_value=health):
+                report = self.wait(directory, deadline=1)
+                self.assertEqual(report["status"], "failed")
+                self.assertIn("Health", report["attempts"][0]["failure"])
+
+    def test_cli_rejects_unbounded_or_unidentified_polling_before_requests(self):
+        for flags in (["--readiness-timeout", "1"],
+                      ["--readiness-timeout", "nan"], ["--readiness-timeout", "inf"],
+                      ["--readiness-timeout", "-1"], ["--readiness-timeout", "1801"]):
+            with self.subTest(flags=flags), patch.object(smoke, "run") as run, patch("sys.stderr", io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    smoke.main(["--output-dir", "unused", *flags])
+                self.assertEqual(error.exception.code, 2)
+                run.assert_not_called()
+
+
+class ReadinessProbeTests(unittest.TestCase):
+    def test_actual_child_protocol_and_import_without_network(self):
+        setup = (
+            "from scripts import render_backend_smoke as smoke\n"
+            "smoke.get_json = lambda base, path, timeout: "
+            "{'status': 'ok', 'commit_sha': 'a' * 40}\n"
+        )
+        with patch.object(smoke, "HEALTH_PROBE_CODE", setup + smoke.HEALTH_PROBE_CODE):
+            self.assertEqual(smoke.probe_health("https://example.test", 5),
+                             {"status": "ok", "commit_sha": "a" * 40})
+
+    def test_probe_transport_timeout_is_bounded_and_not_retried(self):
+        with patch.object(smoke.subprocess, "run", side_effect=subprocess.TimeoutExpired("probe", 0.5)) as child:
+            with self.assertRaisesRegex(smoke.SmokeFailure, "timed out"):
+                smoke.probe_health("https://example.test", 0.5)
+        child.assert_called_once()
+        self.assertEqual(child.call_args.kwargs["timeout"], 0.5)
+        self.assertFalse(child.call_args.kwargs.get("shell", False))
+        self.assertEqual(child.call_args.args[0][-2:], ["https://example.test", "0.5"])
+
+    def test_actual_child_is_terminated_on_deadline_without_network(self):
+        started = time.monotonic()
+        with patch.object(smoke, "HEALTH_PROBE_CODE", "import time; time.sleep(10)"):
+            with self.assertRaisesRegex(smoke.SmokeFailure, "timed out"):
+                smoke.probe_health("https://example.test", 0.1)
+        self.assertLess(time.monotonic() - started, 5)
+
+    def test_probe_envelope_success_and_transport_failure(self):
+        health = {"status": "ok", "commit_sha": "a" * 40}
+        result = subprocess.CompletedProcess([], 0, json.dumps({"health": health}), "")
+        with patch.object(smoke.subprocess, "run", return_value=result):
+            self.assertEqual(smoke.probe_health("https://example.test", 30), health)
+        result.stdout = json.dumps({"failure": "GET /health: HTTP 503; no contract success"})
+        with patch.object(smoke.subprocess, "run", return_value=result):
+            with self.assertRaisesRegex(smoke.SmokeFailure, "HTTP 503"):
+                smoke.probe_health("https://example.test", 30)
 
 
 if __name__ == "__main__":

@@ -12,9 +12,12 @@ from datetime import datetime, timezone
 import gzip
 import hashlib
 import json
+import math
 from pathlib import Path
 import re
+import subprocess
 import sys
+import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
@@ -237,13 +240,115 @@ def get_json(base: str, path: str, timeout: float) -> dict:
     return payload
 
 
-def run(base: str, output_dir: Path, expected_commit: str | None = None, timeout: float = 30) -> dict:
+HEALTH_PROBE_CODE = """
+import json, sys
+from scripts.render_backend_smoke import get_json, SmokeFailure
+try:
+    result = {"health": get_json(sys.argv[1], "/health", float(sys.argv[2]))}
+except SmokeFailure as exc:
+    result = {"failure": str(exc)}
+print(json.dumps(result))
+"""
+
+
+def probe_health(base: str, timeout: float) -> dict:
+    """Bound the whole readiness GET, including DNS and response-body reads.
+
+    urllib's timeout is per socket operation, not a total request deadline. A
+    disposable child lets subprocess.run kill and reap an over-budget attempt.
+    The strict contract requests below retain their existing transport behavior.
+    """
+    try:
+        result = subprocess.run(
+            [sys.executable, "-c", HEALTH_PROBE_CODE, base, str(timeout)],
+            cwd=ROOT, capture_output=True, text=True, timeout=timeout, check=False,
+        )
+    except subprocess.TimeoutExpired:
+        raise SmokeFailure("GET /health: readiness attempt timed out") from None
+    except OSError as exc:
+        raise SmokeFailure(f"Readiness probe could not start ({type(exc).__name__})") from None
+    require(result.returncode == 0, "Readiness probe process failed")
+    try:
+        envelope = json.loads(result.stdout)
+    except ValueError:
+        raise SmokeFailure("Readiness probe returned invalid JSON") from None
+    require(isinstance(envelope, dict), "Readiness probe returned no object")
+    if "failure" in envelope:
+        raise SmokeFailure(envelope["failure"])
+    require(isinstance(envelope.get("health"), dict), "Readiness probe returned no health object")
+    return envelope["health"]
+
+
+def wait_for_readiness(base: str, expected_commit: str, output_dir: Path,
+                       deadline_seconds: float, request_timeout: float = 30,
+                       poll_interval: float = 10) -> dict:
+    """Poll only /health; readiness is not a serving-contract success."""
+    require(re.fullmatch(r"[0-9a-f]{40}", expected_commit or "") is not None,
+            "Readiness requires a full expected commit")
+    for value in (deadline_seconds, request_timeout, poll_interval):
+        require(math.isfinite(value) and value > 0, "Readiness timing must be finite and positive")
+    started = time.monotonic()
+    deadline = started + deadline_seconds
+    report = {"status": "waiting", "expected_commit": expected_commit,
+              "api_base_url": base, "deadline_seconds": deadline_seconds,
+              "request_timeout_seconds": request_timeout, "poll_interval_seconds": poll_interval,
+              "started_at_utc": datetime.now(timezone.utc).isoformat(), "attempts": []}
+
+    def save() -> None:
+        report["elapsed_seconds"] = round(time.monotonic() - started, 3)
+        (output_dir / "readiness.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+
+    save()
+    while time.monotonic() < deadline:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            break
+        attempt_started = time.monotonic()
+        budget = min(request_timeout, remaining)
+        attempt = {"attempt": len(report["attempts"]) + 1,
+                   "started_after_seconds": round(attempt_started - started, 3),
+                   "timeout_seconds": budget, "status": "not_ready"}
+        try:
+            payload = probe_health(base, budget)
+            attempt["deployed_commit"] = check_health(payload, None)
+            check_health(payload, expected_commit)
+            attempt["status"] = "ready"
+        except SmokeFailure as exc:
+            attempt["failure"] = str(exc)
+        finished = time.monotonic()
+        attempt["duration_seconds"] = round(finished - attempt_started, 3)
+        report["attempts"].append(attempt)
+        # A matching response arriving at/after the deadline must not pass.
+        if finished >= deadline:
+            attempt["status"] = "deadline_expired"
+        elif attempt["status"] == "ready":
+            report["status"] = "ready"
+            report["completed_at_utc"] = datetime.now(timezone.utc).isoformat()
+            save()
+            return report
+        save()
+        remaining = deadline - time.monotonic()
+        if remaining > 0:
+            time.sleep(min(poll_interval, remaining))
+    report["status"] = "failed"
+    report["failure"] = "Expected-commit readiness deadline expired; strict checks were not started"
+    report["completed_at_utc"] = datetime.now(timezone.utc).isoformat()
+    save()
+    return report
+
+
+def run(base: str, output_dir: Path, expected_commit: str | None = None, timeout: float = 30,
+        readiness_timeout: float = 0) -> dict:
     output_dir.mkdir(parents=True, exist_ok=True)
     report = {"status": "failed", "api_base_url": base,
               "captured_at_utc": datetime.now(timezone.utc).isoformat(),
               "authority_file": (AUTHORITY / AUTHORITY_FILE).relative_to(ROOT).as_posix(),
               "checked_endpoints": []}
     try:
+        if readiness_timeout:
+            report["readiness"] = wait_for_readiness(
+                base, expected_commit, output_dir, readiness_timeout, request_timeout=timeout)
+            require(report["readiness"]["status"] == "ready", report["readiness"].get("failure", "Readiness failed"))
         responses = {}
         for name, path in ENDPOINTS.items():
             responses[name] = get_json(base, path, timeout)
@@ -267,13 +372,20 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--api-base-url", default="https://political-fingerprint.onrender.com")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--expected-commit")
+    parser.add_argument("--readiness-timeout", type=float, default=0,
+                        help="Poll /health for the expected commit before strict checks (seconds, max 1800; default off)")
     args = parser.parse_args(argv)
     parsed = urlsplit(args.api_base_url)
     if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password or parsed.query or parsed.fragment:
         parser.error("API base must be an HTTPS URL without credentials, query or fragment")
     if args.expected_commit and re.fullmatch(r"[0-9a-f]{40}", args.expected_commit) is None:
         parser.error("Expected commit must be a full lowercase Git SHA")
-    report = run(args.api_base_url, args.output_dir, args.expected_commit)
+    if not math.isfinite(args.readiness_timeout) or not 0 <= args.readiness_timeout <= 1800:
+        parser.error("Readiness timeout must be finite and between 0 and 1800 seconds")
+    if args.readiness_timeout and not args.expected_commit:
+        parser.error("Readiness polling requires --expected-commit")
+    report = run(args.api_base_url, args.output_dir, args.expected_commit,
+                 readiness_timeout=args.readiness_timeout)
     print(json.dumps(report, indent=2))
     return 0 if report["status"] == "passed" else 1
 
