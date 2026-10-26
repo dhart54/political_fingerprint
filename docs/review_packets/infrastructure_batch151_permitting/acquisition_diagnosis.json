@@ -1,0 +1,64 @@
+{
+  "kind": "permitting151_failed_locator_diagnosis_and_scope",
+  "wrong_article_responses": [
+    {
+      "name": "3898-floor-H5768",
+      "status": 200,
+      "same_final_url": true,
+      "actual_title": "RECOGNIZING POLICE CHIEF DENTON CARLSON",
+      "expected": "H.R.3898 own floor consideration and amendments",
+      "permission_denial": false,
+      "exact_locator_closed": true
+    },
+    {
+      "name": "3898-floor-H5790",
+      "status": 200,
+      "same_final_url": true,
+      "actual_title": "INCREASING INVESTOR OPPORTUNITIES ACT",
+      "expected": "H.R.3898 own floor chain, rather than adjacent H.R.3383 proceedings",
+      "permission_denial": false,
+      "exact_locator_closed": true
+    }
+  ],
+  "redirected_purpose_baseline": {
+    "name": "42usc4321-2024",
+    "response_body_bytes": 0,
+    "redirect_not_followed": true,
+    "status_and_target_not_retained_by_initial_handler": true,
+    "exact_locator_closed": true,
+    "retry": false
+  },
+  "rules_page_discovery": {
+    "url": "https://rules.house.gov/bill/119/hr-3383",
+    "tool": "web open",
+    "status": 403,
+    "retry_or_access_workaround": false,
+    "closed": true
+  },
+  "governing_limit": "Plan step3: at most15locators,45seconds/response,4MiB/response,16MiBtotal; rejected/denied/wrong-identity/over-cap/uncertain exact routes stay closed. No retries, security bypass, six inherited holds or two150 over-cap PDF routes.",
+  "current_scope_clarification": "Latest controller instruction permits supported official-metadata discovery of a correct unattempted public witness after a successful wrong-article response; that response is not itself a permission denial. No reuse of a closed URL and no workaround around an actual access denial or cap. This clarifies the exact-route scope of the earlier no-alternate language; it does not reopen a closed source.",
+  "correct_primary_witness_discovery": [
+    {
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-pt1-PgH5768-2.pdf",
+      "basis": "Official GovInfo search result explicitly names H.R.3898/PERMIT consideration under936 on December11,2025, starting H5768. Not a guessed page suffix or repeat of the closed HTML article."
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-pt1-PgH5793.pdf",
+      "basis": "Official GovInfo search result explicitly identifies resumed H.R.3898 proceedings and329recommittal, distinct from the closed3383HTML article and from the original selected330unit."
+    }
+  ],
+  "accepted_binding_or_meaning": false,
+  "bounded_metadata_discovery": {
+    "raw_path": "docs/review_packets/infrastructure_batch151_permitting/raw/3898-Record-package-metadata.xml",
+    "raw_capture_accepted": false,
+    "whole_metadata_complete": false,
+    "cap_bytes": 4194304,
+    "route_closed": true,
+    "range_or_retry": false,
+    "complete_constituent_entry_start": 326018,
+    "complete_constituent_entry_end": 378446,
+    "entry_sha256": "563ebe5d23e89b614aa74804eea209883db3f4bb38f7410ad3d237224ce43361",
+    "identified_unattempted_article_url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/html/CREC-2025-12-11-pt1-PgH5768-3.htm",
+    "use": "Discovery lead only. Verify actual independent article title/date/body, not an authoritative semantic source or complete catalog claim. No repeat/range request or splitting of the oversized metadata resource."
+  }
+}

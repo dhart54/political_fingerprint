@@ -1,0 +1,124 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:permitting-five-whole-choice-candidates151-20261025",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five exact permitting candidates only, all held, with separate proposed case rationales; no full issue coverage or new eligibility/meaning/binding acceptance. Current149 and prior held evidence preserved."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:330",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3898:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10330
+      },
+      "mapping_sha256": "25a0827e84f8ce3e10f1b690e0ebefa6ee8b52256e2dfcf00d12905a61e2d531"
+    },
+    {
+      "action_id": "house:119:1:352",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4776:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10352
+      },
+      "mapping_sha256": "9007e475b9fefcb4a686854ebe7265cc0ad310a5ed7baca49a381c1154a8849e"
+    },
+    {
+      "action_id": "house:119:1:353",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4776:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10353
+      },
+      "mapping_sha256": "82eb5e9d598d3507497bf6fd4a222d0963d36b8e935f041bc10144bc1f11936c"
+    },
+    {
+      "action_id": "house:119:1:354",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4776:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10354
+      },
+      "mapping_sha256": "09f977448bd19d75a2dcc523ccfcddc62e33182b655417deec18edf8aa779b14"
+    },
+    {
+      "action_id": "house:119:1:356",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4776:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10356
+      },
+      "mapping_sha256": "dbba51c6d4e1b04d5c7b25d8052289a65c729215cb7f2332a26bf46428a257ca"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr3898:119",
+      "action_ids": [
+        "house:119:1:330"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr4776:119",
+      "action_ids": [
+        "house:119:1:352",
+        "house:119:1:353",
+        "house:119:1:354",
+        "house:119:1:356"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:330",
+        "house:119:1:352",
+        "house:119:1:353",
+        "house:119:1:354",
+        "house:119:1:356"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "All five actions held pending independent preparation review and separate content-bound eligibility/meaning decisions. Both whole-passage bindings remain unapproved; no canonical application or propositions.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "dd0c21d0c0646eca48d6855b7fac0014dab089f4065b40e21a0fdc971c8ef286"
+}
