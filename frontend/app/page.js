@@ -135,7 +135,7 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
   const compactOpening = Boolean(reviewCandidate);
 
   return (
-    <main className="min-h-screen bg-[#f7f3e9] text-stone-900">
+    <main className="representative-journey min-h-screen bg-[#f7f3e9] text-stone-900">
       <SiteHeader
         representativeName={legislator?.name_display}
         selectedIssue={route.issue}
@@ -235,9 +235,24 @@ function ReviewProfilePicker({ profiles, onSelect }) {
 }
 
 function SiteHeader({ representativeName, selectedIssue, voteRecordHref = "#vote-record" }) {
+  const header = useRef(null);
+  useEffect(() => {
+    const element = header.current;
+    const journey = element.parentElement;
+    // The navigation wraps on narrow screens and at increased text sizes.
+    // Use its actual CSS height for both native hashes and scrollIntoView.
+    const updateOffset = () => journey.style.setProperty("--journey-header-height", `${element.offsetHeight}px`);
+    updateOffset();
+    const observer = new ResizeObserver(updateOffset);
+    observer.observe(element);
+    return () => {
+      observer.disconnect();
+      journey.style.removeProperty("--journey-header-height");
+    };
+  }, []);
   const showSelectedIssueNavigation = Boolean(representativeName && selectedIssue);
   return (
-    <header className="sticky top-0 z-30 border-b border-stone-200/90 bg-[#fbf8f1]/95 backdrop-blur">
+    <header ref={header} className="sticky top-0 z-30 border-b border-stone-200/90 bg-[#fbf8f1]/95 backdrop-blur">
       <div className="mx-auto grid max-w-[90rem] grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 px-4 py-3 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:px-10">
         <Link className="font-serif text-xl font-semibold leading-none text-stone-950" href="/">
           Political Fingerprint

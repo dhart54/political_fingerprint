@@ -21,6 +21,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Includes heading, issue, finding, and receipt targets, whether reached by
+   native hash navigation, focus, or scrollIntoView. Overrides fixed utilities. */
+.representative-journey [id] {
+  scroll-margin-top: calc(var(--journey-header-height, 8rem) + 1rem);
+}
+
 a {
   color: inherit;
   text-decoration: none;
