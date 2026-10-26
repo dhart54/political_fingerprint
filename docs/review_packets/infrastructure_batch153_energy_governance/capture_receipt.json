@@ -1,0 +1,89 @@
+{
+  "kind": "bounded_energy153_source_version_captures",
+  "prospective_limits": {
+    "locators": 15,
+    "seconds_per_invocation": 45,
+    "bytes_per_response": 4194304,
+    "total_raw_bytes": 16777216
+  },
+  "prospective_locators": [
+    {
+      "name": "1047-RCP119-9",
+      "url": "https://docs.house.gov/billsthisweek/20250915/RCP_H1047_xml.pdf",
+      "basis": "RCP119-9 complete official text discovered in official House search result"
+    },
+    {
+      "name": "1047-House-2025-09-18",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-18/pdf/CREC-2025-09-18-house.pdf",
+      "basis": "GovInfo complete House daily record; own final passage chain only to be selected"
+    }
+  ],
+  "captures": [
+    {
+      "name": "1047-RCP119-9",
+      "requested_url": "https://docs.house.gov/billsthisweek/20250915/RCP_H1047_xml.pdf",
+      "discovery_basis": "RCP119-9 complete official text discovered in official House search result",
+      "utc_started": "2026-10-26T18:48:47.575322+00:00",
+      "redirects": [],
+      "attempt_count": 1,
+      "status": 200,
+      "final_url": "https://docs.house.gov/billsthisweek/20250915/RCP_H1047_xml.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "X-AspNet-Version": "4.0.30319",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Content-Length": "51969",
+        "Cache-Control": "public, max-age=1800",
+        "Date": "Mon, 26 Oct 2026 18:48:47 GMT",
+        "Connection": "close"
+      },
+      "PDF_pages": 5,
+      "PDF_text_utf8_sha256": "10906b844d5f5dc5a5c6d8c98ce529e1f8182783f04cda285c21e9ecc792f853",
+      "identity_accepted": true,
+      "raw_path": "docs/review_packets/infrastructure_batch153_energy_governance/raw/1047-RCP119-9.pdf",
+      "retained_bytes": 51969,
+      "raw_sha256": "dc999b578c2f5bbd16e54e49874d7502758b53d14480781ee9ccc10874e447b6",
+      "utc_completed": "2026-10-26T18:48:48.087207+00:00"
+    },
+    {
+      "name": "1047-House-2025-09-18",
+      "requested_url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-18/pdf/CREC-2025-09-18-house.pdf",
+      "discovery_basis": "GovInfo complete House daily record; own final passage chain only to be selected",
+      "utc_started": "2026-10-26T18:48:48.087465+00:00",
+      "redirects": [],
+      "attempt_count": 1,
+      "status": 200,
+      "final_url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-18/pdf/CREC-2025-09-18-house.pdf",
+      "headers": {
+        "Date": "Mon, 26 Oct 2026 18:48:47 GMT",
+        "Content-Type": "application/pdf",
+        "Content-Length": "636670",
+        "Connection": "close",
+        "Server": "cloudflare",
+        "Last-Modified": "Mon, 06 Oct 2025 12:36:46 GMT",
+        "Accept-Ranges": "bytes",
+        "Content-Disposition": "inline; filename=\"CREC-2025-09-18-house.pdf\"",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "no-referrer-when-downgrade",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+        "Content-Security-Policy": "default-src 'self'  https://analytics.govinfo.gov https://stackpath.bootstrapcdn.com https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self' *.videodelivery.net *.cloudflarestream.com  https://cdn.jsdelivr.net  https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; object-src 'unsafe-inline' 'self' ; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://maxcdn.bootstrapcdn.com https://api.data.gov  https://stackpath.bootstrapcdn.com https://fonts.googleapis.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha; img-src 'unsafe-inline' 'self' https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com  https://analytics.govinfo.gov data:; font-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net  https://stackpath.bootstrapcdn.com https://api.data.gov https://maxcdn.bootstrapcdn.com https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' *.videodelivery.net *.cloudflarestream.com https://cdn.jsdelivr.net  https://api.data.gov https://analytics.govinfo.gov; frame-src 'self'  https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://www.google.com/recaptcha https://recaptcha.google.com/recaptcha;",
+        "cf-cache-status": "DYNAMIC",
+        "CF-RAY": "a50ba3202bbbd6c5-IAD"
+      },
+      "PDF_pages": 46,
+      "PDF_text_utf8_sha256": "d3c6c6a92042007ce1cedd993e89bc1163c859e0612cc764581dc958fba795dc",
+      "identity_accepted": true,
+      "raw_path": "docs/review_packets/infrastructure_batch153_energy_governance/raw/1047-House-2025-09-18.pdf",
+      "retained_bytes": 636670,
+      "raw_sha256": "3e25a43e350fbf4d8a0f144d7485adfad5a84eccb4292a8bbd6a71bbe316af7e",
+      "utc_completed": "2026-10-26T18:48:48.869789+00:00"
+    }
+  ],
+  "retries": 0,
+  "canonical_registration": false,
+  "editorial_acceptance": false,
+  "closed_routes_policy": "Inherited six holds and150/151 closed routes remain closed. No retry, redirect follow, range/split or cap/identity workaround. New exact failed/uncertain routes close.",
+  "total_retained_raw_bytes": 688639
+}

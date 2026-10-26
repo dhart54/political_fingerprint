@@ -1,0 +1,131 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:energy-governance-five-exact-choice-candidates153-20261026",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five exact energy research/funding/interconnection choices only, all held. Literal proposed mechanisms and dated context remain qualified; eligibility and legal-application questions are separate and unapplied. No new domain rule, canonical changes, source registration, full-issue or publication authority."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:73",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1326:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10073
+      },
+      "mapping_sha256": "629d571f520453693ed7d4121b63a84976badf61a37750cfa1fb56d0e9cf2c36"
+    },
+    {
+      "action_id": "house:119:1:229",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10229
+      },
+      "mapping_sha256": "ada8bbbad56b4ad61457133eb9f72189143312add0c332fe1ed1dfceb3124fad"
+    },
+    {
+      "action_id": "house:119:1:231",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10231
+      },
+      "mapping_sha256": "13c291f2dc9fd654165986cc087f836646c8b4651b96669039b8f239134627b6"
+    },
+    {
+      "action_id": "house:119:1:236",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10236
+      },
+      "mapping_sha256": "c9f3cf80d3d0bbccfc789c32de8c3ce85e9e6bd7253c7b44effa32c09a4f3865"
+    },
+    {
+      "action_id": "house:119:1:279",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1047:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10279
+      },
+      "mapping_sha256": "333985601756be3771123f115b46c47e12482e93a54d6e112146cd9183b0c37b"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr1326:119",
+      "action_ids": [
+        "house:119:1:73"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr4553:119",
+      "action_ids": [
+        "house:119:1:229",
+        "house:119:1:231",
+        "house:119:1:236"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr1047:119",
+      "action_ids": [
+        "house:119:1:279"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:73",
+        "house:119:1:229",
+        "house:119:1:231",
+        "house:119:1:236",
+        "house:119:1:279"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "All five actions remain held pending preparation review and separate content-bound eligibility/meaning decisions, with legal-application/current-baseline limits explicit. No propositions or canonical application.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "f7fc6f03f0deb0aa1ac48c2743d2a73760697f923c82dde58e8d0cf6d2a89b18"
+}

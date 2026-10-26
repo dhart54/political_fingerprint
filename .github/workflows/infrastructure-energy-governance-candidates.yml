@@ -1,0 +1,37 @@
+name: Infrastructure energy governance candidates
+
+on:
+  pull_request:
+    paths:
+      - "backend/app/semantic_ir/**"
+      - "backend/app/editorial_presentations/**"
+      - "backend/tests/test_infrastructure_energy_governance_candidates153.py"
+      - "scripts/validate_infrastructure_energy_governance_candidates153.py"
+      - "scripts/prepare_shared_domain_candidate.py"
+      - "scripts/validate_infrastructure_water_resource_candidates152.py"
+      - "docs/review_packets/infrastructure_batch153_energy_governance/**"
+      - "docs/review_packets/infrastructure_prepared_held_decisions153.json"
+      - "docs/editorial/shared_candidates/**"
+      - "docs/semantic_ir/**"
+      - ".github/workflows/infrastructure-energy-governance-candidates.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  held-energy-governance-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install schema and pinned PDF extraction dependencies
+        run: python -m pip install 'jsonschema>=4.23,<5' 'pypdf==6.10.0'
+      - name: Verify held energy choices, source versions and prior decision inventory
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_energy_governance_candidates153.py
+          python -m unittest backend.tests.test_infrastructure_energy_governance_candidates153
