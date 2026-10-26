@@ -1,0 +1,546 @@
+{
+  "starting_head": "90cbbb3777fb61d6352926d1c1872a32683bcfab",
+  "immutable_reuse_commit": "676ae9e54ecd1192202567738b423ea42b5513c5",
+  "reused_sources": [
+    {
+      "source_id": "clerk:119:1:277",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "3fd0daaad0f963d424647e1d8a82faab0e7f8a2629f4c802582fcc2a9607a047",
+      "raw_sha256": "efdfdf62aac45ac7ce0578e1ee8b2c78b5ae07bb8e086d557d6524f739dd513e",
+      "governed_bytes_sha256": "6103ea54adbec18885466bdadcb19f9a393e16d68be5d51addd1eb77ca9ab2d2",
+      "text_version": null,
+      "text_length": 0
+    },
+    {
+      "source_id": "govinfo:hr3062eh",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "28b61330c7960382c532988786665b32c4411e2f9f8c15ec7c78e96545d18ac0",
+      "raw_sha256": "775f091f737da48b9d37ede800aeb29761fe3beb3741818466514d5d04b13f78",
+      "governed_bytes_sha256": "18a5560484cffc1f6d7bd3aba138af8cf9f46f2549ba1fd2ea9d325aa5570b87",
+      "text_version": "EH",
+      "text_length": 10395
+    },
+    {
+      "source_id": "govinfo:15usc717a-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "4a46d42cfe73b425d8292a217cc566d3bf828c7084da4f71384f221e6c79e5ee",
+      "raw_sha256": "72c7486eb86f356dfa5415db8995627c44dd3bb6fd257f4a86d1454d1c010c0e",
+      "governed_bytes_sha256": "27cdeea3519185c30df75bcbc06952f2efc752527bb986f97d2cf1751a0c7b7f",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 2358
+    },
+    {
+      "source_id": "govinfo:15usc717b-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "81d63d2f55318a7ef890c25f62d1971a2444330f1206cbdbace4bf1c7647dda4",
+      "raw_sha256": "ddd9fdc0d571c677ec58cfbb29634a763ecda3c14bdfaa2f3b6c48c85dad9176",
+      "governed_bytes_sha256": "b5a884b22a0edaecc644f31502e96b546a0873170bec9b7e6ef11457dd3f1825",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 5879
+    },
+    {
+      "source_id": "govinfo:15usc717f-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "c4fb32701c0cd34c5da1e59646fbf43a007c3f5c4b067c40f26cc1bd0dd6bc1a",
+      "raw_sha256": "9705ad8ddf9e34b1b3a8958e2f9a778492e4758bfa3de4188a8bd29b60aee1a1",
+      "governed_bytes_sha256": "75acbd1f42ba710bb9168d962d3155e6ead15714f23700fdd60cd8e4eaa4dbc2",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 8487
+    },
+    {
+      "source_id": "govinfo:16usc824a-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "600c8dd4d685dee2036bb399eefce0408ad7e98d2e41bc4ac7cdc6f289ae6fa5",
+      "raw_sha256": "2b148526b2f8b4f37dfdbc7cb40234d06cb99ca453988bcf82d33912da62a009",
+      "governed_bytes_sha256": "4bc16d21d90ed003396a92d7b99c82ac241992bde3f3ef4e97a14cf24b833217",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 10666
+    },
+    {
+      "source_id": "govinfo:16usc824a-4-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "6907b3c80a4458d7f88bdd2abe225609e72b00031732e2c4fd9fec4353b8203b",
+      "raw_sha256": "578131e87147ed8c5ce29b0324c22694eafd654f92e7871f1114a5224a0133a3",
+      "governed_bytes_sha256": "725ccacc3495b0a3bf43f577e9cffa72b42f59c3cd786ecc5249997416d10da9",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 4818
+    },
+    {
+      "source_id": "govinfo:49usc60502-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "3cad5130d140aff729717fcfe3f11f68c94473e1ee8dc6c2786bcfb100fc736c",
+      "raw_sha256": "aab65207d40c469cbf51b408c80ce11cccf71beb0624df32b0e1dccec7b7e8a0",
+      "governed_bytes_sha256": "c76f8ed7738a8de74fd7138904f438a050353491c0048ad0c8be382a8ebf68ea",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 434
+    },
+    {
+      "source_id": "govinfo:16usc824o-2024-definitions",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "a5b5b81d920ccfaf80d20cbd28b454a95882101b2e614839499627a2a8846fb8",
+      "raw_sha256": "b1f619535594112535e3937a52e3bac02e78dd4812780d262da6f8a6f3bd29b9",
+      "governed_bytes_sha256": "1700f4ca867c935563de3a486665075a28f150e5b9cf10b508c9f300565a34ba",
+      "text_version": "2024 Code section215(a), complete definitions",
+      "text_length": 2672
+    },
+    {
+      "source_id": "govinfo:16usc796-2024-organizations",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "e954f28c08500c7ce322004d382f1177988ed863beacf2c20563eff891d025fd",
+      "raw_sha256": "b6fc370fe3aa26a89eb5025a2f2e28b947e986b577dd5745037c8d596f9181dc",
+      "governed_bytes_sha256": "ae8717663bc09065ae3b17d7d3e9c28e37eab1ae041e3c98579838278fb86ee7",
+      "text_version": "2024 Code section3(27)-(29), complete transmission-organization definitions",
+      "text_length": 928
+    },
+    {
+      "source_id": "govinfo:eo10485-2024",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "8dc30e9bd823136c9590910890334889a68e633e6b291df2e84adca2289915ba",
+      "raw_sha256": "ddd9fdc0d571c677ec58cfbb29634a763ecda3c14bdfaa2f3b6c48c85dad9176",
+      "governed_bytes_sha256": "0f8d3c8374baf07122ad29b669a6eb156cda32c854574692903a0f423250be3d",
+      "text_version": "Executive Order10485 as amended, official2024 Code note",
+      "text_length": 2475
+    },
+    {
+      "source_id": "govinfo:eo12038-section2a",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "94a4d26e545fac37aabe938745e8caaff0b13f704353d075c63eb4e80eb5041a",
+      "raw_sha256": "7471bd7a070c58ce7d41da7b6d759d15eee2c514c815294882fc8e8099d1c364",
+      "governed_bytes_sha256": "940be517372862ea491d554d26c2d10199b6a072083530f18f4a32bf3a000df1",
+      "text_version": "Executive Order12038 section2(a), transfer of border-facility permit functions",
+      "text_length": 796
+    },
+    {
+      "source_id": "govinfo:eo11423-revocation-note",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "827f5b2e617220643e1cd9ed4c7faa68d197faf505709e9000e0ce8cf74ce234",
+      "raw_sha256": "80bf16a68dddab780bc8af732363b39d33ebe80c8c744fcb24567869fa988cc5",
+      "governed_bytes_sha256": "a9a1f097fdf6d9151694097ee83f8174cff7ba62fbbe4cc43caa422121cce4d8",
+      "text_version": "2024 Code note for Executive Order11423; revoked by13867, not current delegation",
+      "text_length": 465
+    },
+    {
+      "source_id": "govinfo:eo13337-revocation-note",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "c9009295567d0381ab6e95b67399c1cd28ded06c09f713c9400c454a820b010a",
+      "raw_sha256": "80bf16a68dddab780bc8af732363b39d33ebe80c8c744fcb24567869fa988cc5",
+      "governed_bytes_sha256": "05a6f1f6f2f3dc41c20377870f5095f87078c07f4c1cc39b02786b858fef6509",
+      "text_version": "2024 Code note for Executive Order13337; revoked by13867, not current delegation",
+      "text_length": 488
+    },
+    {
+      "source_id": "govinfo:eo13867-2024",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "13c00edcd45860cf3e88d8002d222790f972424037a9e52f15a6fdc7892e6a35",
+      "raw_sha256": "80bf16a68dddab780bc8af732363b39d33ebe80c8c744fcb24567869fa988cc5",
+      "governed_bytes_sha256": "bb2f52217387f8f25b3c4e5cde636213bc77ead51e00259469ec3f52e53b3b5e",
+      "text_version": "Executive Order13867 complete official2024 Code text, including preservation of existing permits",
+      "text_length": 7898
+    },
+    {
+      "source_id": "clerk:119:1:286",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "b08fa6823fba7c4389c1b7b7a31c0561accbd8689a67e7b63692aafedfea2fa1",
+      "raw_sha256": "290af7d1c2565ab5affdcca008b91d9971753906ab9cb56682398c7d77256bf7",
+      "governed_bytes_sha256": "68fdf781045d0639d8e1409583dfd3c641021034482b0bf2148a57099f909a30",
+      "text_version": null,
+      "text_length": 0
+    },
+    {
+      "source_id": "govinfo:hr1608eh",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "8f88c9ee703d1ea0475bdcddef014b04c06bfb06cd39462f7cd7fc2bb4dc86d3",
+      "raw_sha256": "9bfb2781360233ccd41362f0cfe98c2b421f18b6c91daa7768842bf2dfe5d4cf",
+      "governed_bytes_sha256": "ebb72db7235c56867c1ac4b811d6bfa225a6781b4cb6d05f75a10f2a82ccb77b",
+      "text_version": "EH",
+      "text_length": 9974
+    },
+    {
+      "source_id": "govinfo:6usc101-18-2024",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "391868d67194c04add9ed139cc9de32ca256dc4574801491742e1bd31fb9a0ef",
+      "raw_sha256": "65b87103d1abda4bd9aca8b417fe4d2459374831de2f7ad58796becaf1eb59ab",
+      "governed_bytes_sha256": "cbaa7ae2002190c55016f49b29450d746d2f4d225c8d05edac1e8de7539e9075",
+      "text_version": "2024 Code section101(18), complete terrorism definition",
+      "text_length": 560
+    },
+    {
+      "source_id": "clerk:119:1:287",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "cfc771f366fe2f622e4880b6d8d817a14f054659b89a859bca884f09fcdb72dd",
+      "raw_sha256": "19de8148f0f083619499ade28d4cbeda5cf2964390c720facc91693e1e439a23",
+      "governed_bytes_sha256": "fb52e679a39230cbdcf349fac7da37c37478ed6b7fcb11bbbcc59d0c3a8edac8",
+      "text_version": null,
+      "text_length": 0
+    },
+    {
+      "source_id": "govinfo:hr2659eh",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "e6347570d50d39d95bc617a882977b2439d7b20010eae700815c88f28ec7c71c",
+      "raw_sha256": "482e0db0a5b5ace3d54d680784d6cacdcd8f918ba93417497932d2ecc02800ca",
+      "governed_bytes_sha256": "e278f7d6ef1700c1dc7ab15474cef72a1b7972685d71fb30d29915fc9ff05b11",
+      "text_version": "EH",
+      "text_length": 13231
+    },
+    {
+      "source_id": "govinfo:6usc650-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "c52d78793a25f750754655c774411144ae8b783c90ef83b38049950d14ddd32c",
+      "raw_sha256": "89c61da71a03606b288dfd50c45e5ec99da91fed138bf74f0c2291038c6cf145",
+      "governed_bytes_sha256": "e1c2d70e1e36771507f5d8095afe956a3ec5b5e2a65af0621058476c52e68189",
+      "text_version": "2024 Code section650 complete operative definitions",
+      "text_length": 12478
+    },
+    {
+      "source_id": "govinfo:42usc5195c-e-2024",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "d6c3cf4b39255a05476153f2802752af51fe8283d2ff8f6e05ae8efcdb854173",
+      "raw_sha256": "1b439982da0ee873532f67aa6c253df8dc4fd3ae6289c66c4ec6e50fb6284c23",
+      "governed_bytes_sha256": "3f42ee29ec79e517dc8f124b564ffc3fd5110422f734abacc056b6b623595eff",
+      "text_version": "2024 Code section5195c(e), complete critical-infrastructure definition",
+      "text_length": 380
+    },
+    {
+      "source_id": "govinfo:5usc1001-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "ba4bd9a0aeeaa6ef1c455d99cbdbd9561c014fb01983c6ba4fb4e4d5b68e012c",
+      "raw_sha256": "bc0ca3b52e0ef810bdbd734202f11642e2bcbd9a182aba325cca055544b3c4ba",
+      "governed_bytes_sha256": "11065dbf26e0fa07bb167b98b85abd4bdf502ff2abf644612c254eeba20c7a99",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 1313
+    },
+    {
+      "source_id": "govinfo:5usc1002-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "3f65187f0b1b44abeedce3dacf0c35ee8c05fd67dfd8bfcec9b702f7bb88d58f",
+      "raw_sha256": "74c79005e7618b02faaba3a0601d2e75db1bc180a8856465e19c16f1294c9dbe",
+      "governed_bytes_sha256": "7953d65c8e07c62449176b5ca3931fd5748668952bbde0128cad77b368f6a151",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 1383
+    },
+    {
+      "source_id": "govinfo:5usc1008-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "e11243568b0dcbc3fb56747e079713191b2354cc1d56395dd3e4d0e134114d24",
+      "raw_sha256": "e2d72bc96a540542b09b45bd49a45ee709349c3c917f8e7ba6e7694623ae5fbf",
+      "governed_bytes_sha256": "8fb7df8161a178c9327fb5d1e7877afd68a40ffdad58005a60eeea7ea2cb738e",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 2443
+    },
+    {
+      "source_id": "govinfo:44usc3501-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "6cc64b2b0efedf19e37a6736f4ad5e1664b9c554ff31e421aaa2054ef38052bb",
+      "raw_sha256": "529e7e8c5d3d660305442f0f4d1cf193e24e0c7995e5afdf7be967e564da2352",
+      "governed_bytes_sha256": "49a23dcabe6d735396e4372b0f5c02afc3dfed473a9812b6dc1cf5edb6c81913",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 2864
+    },
+    {
+      "source_id": "govinfo:44usc3502-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "59924ed9143760be85008fee8c2a8d5dfd886fc9b61ba8622e2e239835d56b85",
+      "raw_sha256": "c1906a71e45e4870f9c09d914ada31aeacd3b763a577501de251248efaff3825",
+      "governed_bytes_sha256": "2ff7657c5a1579c7e3e98106502b8a79db89abe8f539b8aa65faeaff82e5cec0",
+      "text_version": "2024 Code: complete operative section; later notes excluded",
+      "text_length": 7849
+    },
+    {
+      "source_id": "govinfo:nsm22-srma-roles",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "0e809f06d49e65e03b54b0084cd21a1529e98b73340905ea67508cd23aad0d2d",
+      "raw_sha256": "fe9cc348aab59d2fa9c8e304a3a719f5328dccd58060ef14ce0de3ab980185ad",
+      "governed_bytes_sha256": "27d2ab5cc5a0aa078bbe9cf0ba9eb5b4aa1a50f5c622548058be5a95d7a45edd",
+      "text_version": "Official PDF pages 4,5,6,16,17",
+      "text_length": 15754
+    },
+    {
+      "source_id": "fbi:aa24-038a-identity",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "85b9b1f3fe1432ee8ef9b2570bbf2a0d3d0b73c291a4426ca5c5b21a1f68f844",
+      "raw_sha256": "cc52cb97e7623e4cec977858b36ac64014e2321c6fe6a56506249fca59ce7b61",
+      "governed_bytes_sha256": "b91db8eb370d81ab9b6e07c9d5c389281b1bb4b10334c1e49fde06bd1beb967d",
+      "text_version": "Official PDF pages 1,2",
+      "text_length": 3733
+    },
+    {
+      "source_id": "clerk:119:2:13",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "d6c9e44909c7e084de1f40c03a5069831474fc24deaac23c7e9ffe4f22210a88",
+      "raw_sha256": "baa8e074ea3ebc36258923da7fe1584f9c4db5e7d19a1c49f800a201136d5173",
+      "governed_bytes_sha256": "988bd9497aa2c691cd18534c49c795005138b47a836cd32f10c74e6df408e8ca",
+      "text_version": null,
+      "text_length": 0
+    },
+    {
+      "source_id": "govinfo:hr2683eh",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "f851ddf58987e4316d08efd328f4306704665e73b1cb94b398402cf864ed4add",
+      "raw_sha256": "1c5eca67b4d0dcda1a55731afa68effb345e27d91a1ab69eb883433693fc922a",
+      "governed_bytes_sha256": "5baab89750a7ccfde24d41cab1d3b7c492f47631ca42394b2067f9545b46ddfa",
+      "text_version": "EH",
+      "text_length": 8002
+    },
+    {
+      "source_id": "olrc:50usc4801-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "701d6d9a7bad2496dba6ee1957046726900d0ea44ae4421f42cbd5f0b0be1df1",
+      "raw_sha256": "7ec3a1600ab0a3d8f12aa16ff8ca07b985a9b4d1c48c137acd43f76226172a0a",
+      "governed_bytes_sha256": "26bb259f48c477a1edab799ec56219a5b215be84c35c8a821510260074e94d13",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 4635
+    },
+    {
+      "source_id": "olrc:50usc4811-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "08b3292a076b66ace6979adfdd4628843dd5e69ab6c90b40591f53ddc77a4ed0",
+      "raw_sha256": "6a48a238892e4d7de524449117ea77994007d83be5a931046e98c253baf2eee2",
+      "governed_bytes_sha256": "eacb50335689a0bcf7c3f20b7bee3e02cc324b431b65d43adbb7bd3a45d28f4d",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 5743
+    },
+    {
+      "source_id": "olrc:50usc4812-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "ad17db105c8a5a487d1403364e7938689ab094eaa1c2d8722e12ad040dce84f6",
+      "raw_sha256": "810ac3e9ebff887b8cf66c7871aa6f5d1e094e091d8e34f3dae103ea3e7c6707",
+      "governed_bytes_sha256": "edc1f4fa8b86b86ee56984f53fc20f7d8edc8ad96a63504dc00aa9845d2327bb",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 2916
+    },
+    {
+      "source_id": "olrc:50usc4813-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "52cc975501e57cc03c097d89374dd3c2f8a6055e8aa725923909de548fac9d0b",
+      "raw_sha256": "4cc33c30a6330b3d0fcfa289a7595510c09342d951ea10844a4a79e8c19ad427",
+      "governed_bytes_sha256": "7e9c5080fe05baef101faa2a5ea528b5b4fd609bf0dbd11bae99ee03d99e3be0",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 10057
+    },
+    {
+      "source_id": "olrc:50usc4814-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "32ad44f5070c3bd09f8faeac9d91cbf26c177ca731c343be6965b5580e7d9d9f",
+      "raw_sha256": "d9c75abffbd66a3ec23962851af9c94bf0cb59071bf7d4412605a2911b1ffa7b",
+      "governed_bytes_sha256": "9d58700e3e3951c41ad336fe5b58cdf888d481a1fd81a8c5066791c845281aa8",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 1828
+    },
+    {
+      "source_id": "olrc:50usc4815-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "23e7e85d60b33cd17388a16711a2f4a01d39e22ccfacf5693b01c47883513f0e",
+      "raw_sha256": "6a17da004a83442fbd9ea16a7603f3f6199bb8f71fed9dd1a0731edc978e6a50",
+      "governed_bytes_sha256": "a4aad570a96eb18c4683210a164d01fd0a618509cf2b89adc31a2ffce27a1dd6",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 3466
+    },
+    {
+      "source_id": "olrc:50usc4816-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "637644b052d4c590ef4bfabf2ff2ef0f0007adfcac9b1631a9dbf3faae14b31e",
+      "raw_sha256": "0b812b6adc32f1dbff51ad09478441137de4936b62b665ae948b3686077fe745",
+      "governed_bytes_sha256": "84fa7cdbc51b8e9f40f909ae1885df114d6fa917bd4b097c5f63acebb213dd2b",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 1498
+    },
+    {
+      "source_id": "olrc:50usc4819-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "9ce9e7a71445bf0703ce303d06054839fe84fe0de3ddd71e99ad131f30f28d01",
+      "raw_sha256": "a458c83e15220a268129a8f4711b91db904966587605e8678707f39877b43960",
+      "governed_bytes_sha256": "5a4d48574cee55cacfa6607ee86fb1c432f7c6c31a4eebfc165b08eaa3d76266",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 9188
+    },
+    {
+      "source_id": "olrc:50usc4820-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "cde5c36af87ac5f0b30e6c59ed39008e93718bc08341224b98c0edac228b5358",
+      "raw_sha256": "00b0716b00a9938c55521059534406c909d9486fe3ca27ba751293b2816ea3ab",
+      "governed_bytes_sha256": "3f031bec30a79f1bde1ec80252e34d5879653cd0c1b33ff6c911fcef7b537b60",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 11386
+    },
+    {
+      "source_id": "olrc:50usc4825-2024-operative",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "a67ed903b916ec27a660fc9dd6ef806db3863f77fec3a30db0adc8e97e29caed",
+      "raw_sha256": "a73502a8c8a5bb5e155b3fa935bc810670affac5fc62206108652aae87a1ab81",
+      "governed_bytes_sha256": "925719d76d04e2ba48548d6059ecaae25db9632de136393c3182794e8ab2df43",
+      "text_version": "2024 Code complete operative section, as of January6,2025; editorial notes excluded",
+      "text_length": 2092
+    },
+    {
+      "source_id": "govinfo:50usc1702-2024",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "bed9f9af94b244b6ab6171335a4af1e85ed60621c55c0aa6a8e5f176930e9d2b",
+      "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+      "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6",
+      "text_version": "2024 Code section",
+      "text_length": 13662
+    },
+    {
+      "source_id": "govinfo:8usc1324b-a3-protected-definition",
+      "origin": "immutable PR198 checkpoint259 676ae9e54ecd1192202567738b423ea42b5513c5",
+      "source_object_sha256": "cc2346b2db2a71b62319ce55533c063fad3350d6c796d3ad5d1b48142b917768",
+      "raw_sha256": "025b1a38de479b3cd3a8573816a12629f2dd80b872b1ec379ed638af3e05908f",
+      "governed_bytes_sha256": "bd5c1276affa5a35f7420032fe02af38ce32c950ea875c19d81f1d8b99a1f7aa",
+      "text_version": "2024Code; complete incorporated1324b(a)(3)protected-individual definition only",
+      "text_length": 1096
+    },
+    {
+      "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+      "origin": "immutable PR198 checkpoint259 676ae9e54ecd1192202567738b423ea42b5513c5",
+      "source_object_sha256": "656ed7e9436523300875541f5d74e048b98eb124c66411ed917a6ed97379b92a",
+      "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+      "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+      "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+      "text_length": 662
+    },
+    {
+      "source_id": "congressional-record:2026-01-12-suspension2683-6500-6504",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "fed9fd7e33b47d722fe7aa10255d0948380d33c2c74cc909cec695b844538286",
+      "raw_sha256": "88ede3919e5f8a3e34ab15a4ed1a51bdc8f64a73c5c170005d3dedf28eef1d9f",
+      "governed_bytes_sha256": "ed7f7a48dcda2dd382a1fe9503f0594a80f860f4325c25e86800a0f632019eba",
+      "text_version": "Official PDF pages 5,6,7,21,22,26,27,28,29,30,31",
+      "text_length": 94561
+    },
+    {
+      "source_id": "clerk:119:1:343",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "c006aa40a8b4b44240ec3e96a04cb3a55c4ea62ebc055101bf169af682d0f24a",
+      "raw_sha256": "b3e661dc99a88397101302531423e4277d30f67d140a93e7ea3e89aa13750607",
+      "governed_bytes_sha256": "ea1124e1794a749a63ecec98469d89cb75f869468e65a672310b520edcda1e72",
+      "text_version": null,
+      "text_length": 0
+    },
+    {
+      "source_id": "govinfo:hres953eh",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "1b6c068e58321e12825e55529b34ec332101e7f4f7ede369c5bfe2baaa620e95",
+      "raw_sha256": "e6270affef60077e192ff8c811e803cfc5218dbc05d477b50f5a4a4336d50f63",
+      "governed_bytes_sha256": "45cf2ae5f24d6266b0e695ab04243d01a17922b499d66001e6cc109c33377ab1",
+      "text_version": "EH",
+      "text_length": 4197
+    },
+    {
+      "source_id": "govinfo:hrpt119-411-roy",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "1a437b2dcd73d283f9c38f47888d802acf90fbf00c257066856568153d65496e",
+      "raw_sha256": "ef40be348aae209c9a0de77bb7fcbdd0900596327b9b905b33ae984b2a47cfc6",
+      "governed_bytes_sha256": "d25b0f30845c7818f23b1d79592fa1259b3a5a019fbf731d41ea6cfd52da3973",
+      "text_version": "Report119-411 complete Roy amendment made in order, not offered",
+      "text_length": 1220
+    },
+    {
+      "source_id": "clerk:119:1:344",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "eb7bd741b27e6084bbcb2ddaacf9458cfad0d4ea6be7000393d931265ba39cc8",
+      "raw_sha256": "cb7db62b9d0a960a6dae611a93c44d15dd0ea2b5c5a8c2c6d635dc3e2e014c94",
+      "governed_bytes_sha256": "5a423ee3ee3dc23d90c0052865486bee0ec7a0ce9747962bca5433c5607a6f28",
+      "text_version": null,
+      "text_length": 0
+    },
+    {
+      "source_id": "clerk:119:1:218",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "bbc649a16443b2d1c69a24d3e3359784be0714a811ac45fcf14380bcd513d4ec",
+      "raw_sha256": "40ae1d197decba854fc471c514294e634cd442e10705008d0bda20b48a31f57e",
+      "governed_bytes_sha256": "f98c83293b338c6cac8772ad372e9d67b2767a6184d5a78499bce80543f82c72",
+      "text_version": null,
+      "text_length": 0
+    },
+    {
+      "source_id": "govinfo:hr4275eh",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "9f4f8b5ae59ac213bd8fd5c77830ec3dfe106e6fd12f8ba02be9a95cb8c1bcc8",
+      "raw_sha256": "0c7580e53723cbef2b4a74bdaf8f517e51b45f1d76d1993336ed36100ccf1132",
+      "governed_bytes_sha256": "aef0e798d32835b5722055d648962e5096ff7031adc3c6a78b484b8df513898b",
+      "text_version": "EH",
+      "text_length": 444258
+    },
+    {
+      "source_id": "govinfo:14usc4902-2024",
+      "origin": "main-base Health source object",
+      "source_object_sha256": "f38021959e5dbaa85865b89cd020ccee8f9c0f7e2c9f33c18fa2edb7a8851301",
+      "raw_sha256": "75fd400cf34f7765cdac6339d24685f19337bcadd4353db5acc763c286fbc732",
+      "governed_bytes_sha256": "6ca983af5d226153153c29edfa49e47903003d1dab7afdff066af78aa2d132f8",
+      "text_version": "2024 Code section",
+      "text_length": 6823
+    }
+  ],
+  "inherited_batch2_sources_unchanged": true,
+  "new_raw_acquisitions": [
+    {
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-17/pdf/CREC-2025-11-17-house.pdf",
+      "raw_sha256": "0c6103e5ee129bbf0456278601ce09e80df5e0aeec79427ab67c63ed02634470",
+      "pdf_pages": 37,
+      "governed_selected_page_objects": 2,
+      "visual_sample": "physical page11 rendered/inspected; column order matches extracted body"
+    }
+  ],
+  "floor_version_checks": [
+    {
+      "bill": 1608,
+      "source_id": "govinfo:hr1608eh",
+      "floor_source_id": "record:2025-11-17-hr1608-infra3",
+      "pdf_pages": [
+        11,
+        12
+      ],
+      "normalized_body_sha256": "96fc2fdd89b5d608569db66897fd18fe7f20777358b0555892cf3a5aa9b79205",
+      "matched": true,
+      "extent": "Complete operative body under lowercase ASCII-alphanumeric comparison; retained punctuation is not certified legally equivalent."
+    },
+    {
+      "bill": 2659,
+      "source_id": "govinfo:hr2659eh",
+      "floor_source_id": "record:2025-11-17-hr2659-infra3",
+      "pdf_pages": [
+        12,
+        13,
+        14
+      ],
+      "normalized_body_sha256": "2ff0973a1eb43d5ebf273aa5b310b2405b26e7140eb88c9cb771057c4ed5551c",
+      "matched": true,
+      "extent": "Complete operative body under lowercase ASCII-alphanumeric comparison; retained punctuation is not certified legally equivalent."
+    },
+    {
+      "bill": 2683,
+      "source_id": "govinfo:hr2683eh",
+      "floor_source_id": "congressional-record:2026-01-12-suspension2683-6500-6504",
+      "pdf_pages": [
+        5,
+        6
+      ],
+      "normalized_body_sha256": "1061fc5074d8aa566d45ee26fab315a1b977c2f33c40b9e420a81a19f3ccd578",
+      "matched": true,
+      "extent": "Complete operative body under lowercase ASCII-alphanumeric comparison; retained punctuation is not certified legally equivalent."
+    }
+  ],
+  "hr3062_version_basis": "Clerk roll277 exact On Passage question plus EH complete body/wrapper Passed September18,2025; no independent floor-body comparison claimed.",
+  "hr1223_wrapper_discrepancy": {
+    "qualification": "Source metadata discrepancy: the H.R.1223 EH wrapper prints Passed the House of Representatives May19,2025, while Clerk roll136 and the resumed Congressional Record establish the recorded action on May20. The complete operative body matches the May19 floor proposal under the declared formatting comparison; that match supports version identity but does not reconcile the wrapper date. The official Clerk/May20 recorded-action evidence controls the action date.",
+    "controlling_action_sources": [
+      "clerk:119:1:136",
+      "record:2025-05-20-roll136-infra2"
+    ],
+    "operative_body_comparison": "Existing batch2 complete May19 floor-body comparison remains true; metadata discrepancy remains disclosed, not resolved."
+  },
+  "protected_denial": "88FR20688 Request Access chain not retried; all prior restriction records retained.",
+  "origin_capture_blobs": [
+    {
+      "commit": "90cbbb3777fb61d6352926d1c1872a32683bcfab",
+      "path": "docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "committed_lf_bytes_sha256": "2fc2b4e669131ef6068068e9e7823a699337cb45833a6f42c3704c825053db6d"
+    },
+    {
+      "commit": "676ae9e54ecd1192202567738b423ea42b5513c5",
+      "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+      "committed_lf_bytes_sha256": "51e8bccc703f08d902414145e75ace588629023afe1d9c7468c027e8e6c018f0"
+    }
+  ],
+  "all_52_new_retained_objects_equal_origin_objects": true
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:water-resource-five-whole-choice-candidates152-20261026",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five exact whole suspension choices only. All held. Proposed exact-case eligibility is separate from grounded candidate meaning; no new domain rule, canonical binding, acceptance, registration, full-issue coverage or publication."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:19",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr187:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10019
+      },
+      "mapping_sha256": "6d75fbef580f7d6abcb3af329c04af2cdf72d1aef870f82194686fdd6cef2c4b"
+    },
+    {
+      "action_id": "house:119:1:29",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr776:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10029
+      },
+      "mapping_sha256": "51613d54ce13eb34f27a9297f0aa8ae081812317f060a2bd7e64928bc05619ba"
+    },
+    {
+      "action_id": "house:119:1:125",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr2215:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10125
+      },
+      "mapping_sha256": "b8b2371dcee5ed98a92c32ee348a30f6aa71e9110ff227376af296a82d22f560"
+    },
+    {
+      "action_id": "house:119:1:216",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1917:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10216
+      },
+      "mapping_sha256": "686e164009f19af549350b4f3c5d1d99a44198658f6f71ed986a5ab5c3d003dd"
+    },
+    {
+      "action_id": "house:119:2:97",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr6422:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20097
+      },
+      "mapping_sha256": "655f440a23ce5433d8fe879a37c9184eb6c66d204a95b105f85cbadebe55da58"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr187:119",
+      "action_ids": [
+        "house:119:1:19"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr776:119",
+      "action_ids": [
+        "house:119:1:29"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr2215:119",
+      "action_ids": [
+        "house:119:1:125"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr1917:119",
+      "action_ids": [
+        "house:119:1:216"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr6422:119",
+      "action_ids": [
+        "house:119:2:97"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:19",
+        "house:119:1:29",
+        "house:119:1:125",
+        "house:119:1:216",
+        "house:119:2:97"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "All five whole choices held pending independent preparation review and separate content-bound eligibility/meaning decisions. Three new binding proposals unapproved. No canonical application or propositions.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "aba71c70be6ec4771315c7d891b5ca94c645be8e512de2bacd55a796306d980f"
+}

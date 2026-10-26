@@ -1,0 +1,48 @@
+{
+  "kind": "one_current_pending_parent_record_and_exact_retained_EHsource",
+  "action_id": "house:119:1:356",
+  "current_record": {
+    "parent_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch116_20260916/membership_review.json",
+    "parent_git_blob": "9d1912f0cbf1df473636711020759776d7e24c43",
+    "parent_json_pointer": "/records/355",
+    "record_sha256": "44f4c499014d6fe71084620c4802f0dbc7a9b3a452aa2ad97a0c347eb293edba",
+    "export_path": "docs/review_packets/infrastructure_batch116_4776_full_body/house_119_1_356_pending_record.json",
+    "export_bytes": 59628,
+    "export_lf_sha256": "f476f6912ee6d459f1a21cadc5e3f815e03f530ab20bf4dd3eedc20c6024030d"
+  },
+  "source": {
+    "source_id": "govinfo:hr4776eh",
+    "source_object_sha256": "d93e6a30572b6c281eb72ab84d20230703f3ef03b8a7bbd76fc4daa37e804fb3",
+    "origin": "e6e2b9df7c0d2f6964389aa81193611c27f4d70b:docs/editorial/shared_candidates/house_119_infrastructure_batch115_20260916/sources.json",
+    "origin_git_blob": "cd3931d914488cd7942d0e0cdb71e1d4505793f0",
+    "json_pointer": "/sources/1014",
+    "raw_sha256": "b69ec55d3cbe10af48454f00bdb65c4691f22d14913ea61c54d6364a913ba029",
+    "governed_bytes_sha256": "f0a6ef1d87ea585c3c1749292850c89f9321359f706acd18c31acee86fc05e8e",
+    "export_path": "docs/review_packets/infrastructure_historical_sources59_64_fc840393/source_objects/d93e6a30572b6c281eb72ab84d20230703f3ef03b8a7bbd76fc4daa37e804fb3.json",
+    "export_json_pointer": "/source",
+    "export_bytes": 1004,
+    "export_lf_sha256": "f3b6a3253926aed4a188a1fd60e2b5df3634daea2e2d927ee72ba12d5a370793",
+    "reused_existing_export": true,
+    "transport_parts": [
+      {
+        "path": "docs/review_packets/infrastructure_historical_sources59_64_fc840393/source_parts/c85243bbc1796fce681e71efd38988d10119920301f848151098396561fda446.0000000.json",
+        "export_bytes": 27923,
+        "export_lf_sha256": "1ed07ef97a145f93b25d7c8023bbb0a66ccb8b05296a88c542aced2c271fe600",
+        "start_character": 0,
+        "end_character": 27742
+      }
+    ],
+    "reconstruction": "For a historical lossless-parts source, read the export JSON pointer then replace its text descriptor with concatenated validated part.text. Canonical object equality verified against the exact origin.",
+    "read_extent": {
+      "start": 0,
+      "end": 27742,
+      "total": 27742
+    }
+  },
+  "scope": "Complete retained source-version body read only; exactfloor/version, printedreferences, currentlaw/wholeeffects/membership remainpending. Rejectedchildren remain separate; no new meaning/flag/disposition.",
+  "source_acquisitions": 0,
+  "protected_retries": 0,
+  "accepted_membership": false,
+  "publication_authorized": false,
+  "production_writes": false
+}

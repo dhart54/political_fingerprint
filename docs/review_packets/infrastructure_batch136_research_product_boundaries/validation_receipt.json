@@ -1,0 +1,105 @@
+{
+  "kind": "focused_unapplied_review_sidecars_validation",
+  "recorded_utc": "2026-10-21T15:57:45.691878+00:00",
+  "base_head": "d074290e9c9df1a87768b23d4779e8daef95fc78",
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "backend.tests.test_infrastructure_boundary_candidates136"
+  ],
+  "returncode": 0,
+  "test_count": 5,
+  "reported_test_seconds": 4.881,
+  "recorded_from": "Captured native unittest output after committed-LF byte-unit correction and new transport regression",
+  "governed_checkpoint134_files_unchanged": [
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/membership_review.json",
+      "git_blob": "836b70b563c8c6a1c421255eaf576f3c49a7427c",
+      "lf_sha256": "f2bf337a779760092006741192db5e8772d6db505fe42786818c86a160b81f07"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/sources.json",
+      "git_blob": "62c1120fd2f54c9aef2a7666b957e4e86ffe732a",
+      "lf_sha256": "60d0965f32dac135f8c949e6a540145ad4158ecda31ce1eac1123144538a67ec"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/authoring.json",
+      "git_blob": "7a7b61c22eb1820bd8f8774cde1998322f12bba0",
+      "lf_sha256": "4aa9c5582c1ffebbf1c8d11580ce40a21bb777d82adbe6492fa75671f93b38fc"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/universe_proposal.json",
+      "git_blob": "fcca0ccf82bfe601c2d44d5e466edaddce44949d",
+      "lf_sha256": "8a4496ed1b24a84719152db264e0709f07a7cfb97e8b3a7110acfc57f2ca2acf"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/generated/compiled_ir.json",
+      "git_blob": "5cf6b8307c78d00ae36197339d78a65ad8392037",
+      "lf_sha256": "b9bf106a912489d8905b0a5443375750976658a391d269b56a249b514f99ded7"
+    }
+  ],
+  "packet_files": [
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/decision_bundle.json",
+      "bytes": 6372,
+      "lf_sha256": "883ff3018a530a49dd85fe4a511d6f88b3279aa700334888c5a5c8f1c58203b3",
+      "worktree_bytes_at_capture": 6372
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr1442_recommendation.json",
+      "bytes": 20942,
+      "lf_sha256": "6a922cd6e645015fdcf00e68afc2de10eab6531a1143439ee7836108410d466f",
+      "worktree_bytes_at_capture": 20942
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr28_recommendation.json",
+      "bytes": 17041,
+      "lf_sha256": "19e10c21d02328df385e9d22010e4cac69a1c81423e412b55ff464c61e8bcb5b",
+      "worktree_bytes_at_capture": 17041
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/README.md",
+      "bytes": 2987,
+      "lf_sha256": "700000f647ca677d87d401499cfdd3d7295e84caa8166ac4d7901d8963b8b850",
+      "worktree_bytes_at_capture": 3027
+    }
+  ],
+  "validation_scope": "Exact official source/stage/fullbody, canonical preimages, proposed states/claim preservation, whole-choice review subjects, existing inclusion rule/counterargument and negative authority/qualification mutations",
+  "full_repository_suite_run": false,
+  "canonical_semantic_seven_rerun": false,
+  "historical_full151_head": "3be714268666858130bb62d1f171af6a19362c4a",
+  "hosted_Actions": "BLOCKED_NEVER_RUN",
+  "independent136_review": "Not yet conducted",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "test_start_utc": "2026-10-21T15:57:40.644433+00:00",
+  "candidate_subject_base_head": "638178a9752744a75586b25d0aefbdf0d67f1ade",
+  "process_wall_seconds": 5.047,
+  "stdout": "",
+  "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 4.881s\n\nOK\n",
+  "earlier_three_test_run_at_candidate_commit": {
+    "base_head": "638178a9752744a75586b25d0aefbdf0d67f1ade",
+    "test_count": 3,
+    "reported_test_seconds": 5.883,
+    "recorded_from": "Completed native command output, chunk3ce324; no rerun for receipt"
+  },
+  "packet_byte_units": "committed_LF_UTF8",
+  "independent_review_transport_correction": {
+    "reviewed_head": "d074290e9c9df1a87768b23d4779e8daef95fc78",
+    "json_pointer": "/packet_files/3/bytes",
+    "file": "README.md",
+    "previous_unspecified_worktree_bytes": 3027,
+    "corrected_committed_LF_bytes": 2987,
+    "sha256_unchanged": true,
+    "case_meanings_seals_index_and_canonical_state_unchanged": true,
+    "qualification": "The earlier4test gate did not check receipt byte units. Added a focused transport regression; prior artifact remains immutable in Git."
+  },
+  "earlier_index_four_test_run_at_d074": {
+    "base_head": "c7ef658faf786985c3a171962c056c53aa6e20c0",
+    "test_count": 4,
+    "reported_test_seconds": 4.708,
+    "recorded_from": "Captured native unittest output after adding the three-action index and index mutations"
+  }
+}

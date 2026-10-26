@@ -1,0 +1,46 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T19:07:42.078039+00:00",
+    "qualification": "Local report-deadline precision correction specification start; preceding retained source inspection untimed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T19:07:47.837569+00:00",
+    "end_utc": "2026-10-19T19:11:12.412281+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 105 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch105_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.388
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 155.738
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.165
+      },
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 105 --receipt docs/editorial/shared_candidates/house_119_infrastructure_batch105_20260916/validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.254,
+        "scope": "Final current-code check after AST-equivalent whitespace-only warning cleanup; not a second fullsuite"
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_investor_first_report_is_due_within_one_year_and_annually_thereafter",
+        "returncode": 0,
+        "process_wall_seconds": 0.391,
+        "scope": "Final current-code check after AST-equivalent whitespace-only warning cleanup; not a second fullsuite"
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 5.76,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 162.936,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0
+}

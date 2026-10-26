@@ -1,0 +1,584 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 66,
+  "exact_committed_head": "03d604e3c15e438dd47bff69fc2589daac771e10",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "03d604e3c15e438dd47bff69fc2589daac771e10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/membership_review.json",
+      "git_blob": "c07aeaec577fd9ac27c61ae0753588b80343235f",
+      "git_bytes_sha256": "719840aa76b43be2ffa2fa9be6d9eee6b789615528af5309e812afd274ef1005"
+    },
+    "sources": {
+      "head": "03d604e3c15e438dd47bff69fc2589daac771e10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/sources.json",
+      "git_blob": "99803efa35d88c658d2e7a10e8059fcda7631608",
+      "git_bytes_sha256": "b154f56251b1eae24c9b5c52834e71dc0149840548e95b68cdbfcb60bc167dc7"
+    },
+    "screening": {
+      "head": "03d604e3c15e438dd47bff69fc2589daac771e10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/screening_receipt.json",
+      "git_blob": "42e60f0d0d92aa59e61d57e9b6b0fa5218b62e54",
+      "git_bytes_sha256": "504e727f190ff6a851127af45093800ee57c26272b36569c9fed5ab3e2581943"
+    },
+    "screening_units": {
+      "head": "03d604e3c15e438dd47bff69fc2589daac771e10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/screening_units_receipt.json",
+      "git_blob": "cc2332399a2758d189fe514ca2eebaac7c591498",
+      "git_bytes_sha256": "95b71914fb6fdddb3a2a7a98c295434aa94aae7e19b693aebefd22a14d30c97c"
+    },
+    "validation": {
+      "head": "03d604e3c15e438dd47bff69fc2589daac771e10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/validation_receipt.json",
+      "git_blob": "fe0f793d24ea8e13a712f92618896debe46ad573",
+      "git_bytes_sha256": "2866dc206b60579d9d0c863e658b9483807f88d19468cdc377078ac000499e73"
+    }
+  },
+  "original_membership_review_sha256": "b1e3eb1ed34b8fd2022ae60db8f2be68096810746811209fd9de754c054ae0a0",
+  "new_screened_ids": [
+    "house:119:2:11",
+    "house:119:2:12",
+    "house:119:2:14",
+    "house:119:2:15",
+    "house:119:2:16"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "d60af55ea0a16374e112d2de3ec6f9202b92d7998c75635b2ff81db349679cd8",
+      "record": {
+        "action_id": "house:119:2:11",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.1834 EH changes the named enhanced premium-assistance and above-400-percent poverty-line credit provisions through 2028/before January 1, 2029, effective for taxable years after December 31, 2025. The retained dated formula unit supplies limited baseline context, not a complete current individual eligibility calculation. This exact whole bill is health-premium tax-credit policy without a direct infrastructure or technical-system mechanism. Its older gridlock title does not supply meaning. Proposed domain exclusion does not assert every person receives a credit, an actual premium/coverage change, enacted status or motive. The earlier rule/discharge choices remain separate.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:11",
+            "url": "https://clerk.house.gov/evs/2026/roll011.xml",
+            "raw_sha256": "a9b1e0ef7f18944b0b26b013ff442e57611cba9c59a57cdc3a1c3ceb7b5beb7b",
+            "governed_bytes_sha256": "4e6e78ebb83941c66d8fd5cae13d975e077406a3c1d1b34e1c3dafea2fdf034d"
+          },
+          {
+            "source_id": "govinfo:hr1834eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1834eh/html/BILLS-119hr1834eh.htm",
+            "raw_sha256": "da963879f55fac3db10d22b720c34f1d19d60a9bd1272cac83c19717ca0a6d9b",
+            "governed_bytes_sha256": "d81a0271292ee51710f48160489e3e283431a43f01ec17c70902280a5de30788"
+          },
+          {
+            "source_id": "immigration:36B-b3Aiii-dated-formula179",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm",
+            "raw_sha256": "1f653271e597bfa8716491651ee2a47d339d98e2f15f716412e94cc091bc191b",
+            "governed_bytes_sha256": "71302951725f0d6c37ea92e2ca40baac0116549154756cfb47510fd4ac77a9f4"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1834eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1834 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 1834 _______________________________________________________________________ AN ACT To advance policy priorities that will break the gridlock. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. EXTENSION OF ENHANCED PREMIUM TAX CREDIT. (a) Extension of Rules To Increase Premium Assistance Amounts.-- Clause (iii) of section 36B(b)(3)(A) of the Internal Revenue Code of 1986 is amended-- (1) in the heading, by striking ``through 2025'' and inserting ``through 2028'', and (2) in the matter preceding subclause (I), by striking ``before January 1, 2026'' and inserting ``before January 1, 2029''. (b) Extension of Rule To Allow Credit to Taxpayers Whose Household Income Exceeds 400 Percent of Poverty Line.--Subparagraph (E) of section 36B(c)(1) of such Code is amended-- (1) in the heading, by striking ``through 2025'' and inserting ``through 2028'', and (2) by striking ``before January 1, 2026'' and inserting ``before January 1, 2029''. (c) Effective Date.--The amendments made by this section shall apply to taxable years beginning after December 31, 2025. Passed the House of Representatives January 8, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 1834 _______________________________________________________________________ AN ACT To advance policy priorities that will break the gridlock."
+          },
+          {
+            "source_id": "immigration:36B-b3Aiii-dated-formula179",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(iii) Temporary percentages for 2021 through 2025 In the case of a taxable year beginning after December 31, 2020, and before January 1, 2026— (I) clause (ii) shall not apply for purposes of adjusting premium percentages under this subparagraph, and (II) the following table shall be applied in lieu of the table contained in clause (i): In the case of household income (expressed as a percent of poverty line) within the following income tier: The initial premium percentage is— The final premium percentage is— Up to 150.0 percent 0.0 0.0 150.0 percent up to 200.0 percent 0.0 2.0 200.0 percent up to 250.0 percent 2.0 4.0 250.0 percent up to 300.0 percent 4.0 6.0 300.0 percent up to 400.0 percent 6.0 8.5 400.0 percent and higher 8.5 8.5 "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "861074cad424ac70df4d3bd1e4ee82747ff03e7f3a4f23ae8b6edc4c2d0d1e0c",
+      "record": {
+        "action_id": "house:119:2:12",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete H.R.5184 EH, selected DOE/HUD statutory units, complete captured 2022 amendatory text and retained 2025 compliance amendment support an unaccepted manufactured-housing energy/construction candidate. It replaces DOE standard-setting with optional but criteria-bound recommendations, deletes the specific section413(c) penalty and gives the specified 2022 rule no force/effect. HUD’s separate standard duty remains; neither automatic adoption nor abolition of all standards is inferred. Original single/multi-section tiers and the later contingent compliance clocks are distinguished. Referenced graphics/manuals and current integrated-law/compliance conclusions remain uncleared; the housing-versus-Infrastructure boundary requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:12",
+            "url": "https://clerk.house.gov/evs/2026/roll012.xml",
+            "raw_sha256": "f5900df14df2651c2d3485e8b291fc5f777ea1c105028af2b5bac7193520069d",
+            "governed_bytes_sha256": "bb238bbc53ef030a7719bda7729731469eefb0587d63a20e3faccc131da7f3d3"
+          },
+          {
+            "source_id": "govinfo:hr5184eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5184eh/html/BILLS-119hr5184eh.htm",
+            "raw_sha256": "dc6fd4c5878ab8240c48d083c01e466d8132a73c44bdbe932475ac6f28f48acf",
+            "governed_bytes_sha256": "b7641109e6cbfe5527153c0b7ab3a9e533b951351af06feec262e9792f4d8cde"
+          },
+          {
+            "source_id": "olrc:42usc17071-2024-operative",
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section17071&num=0&edition=2024",
+            "raw_sha256": "4a058adf0a5a046eb86a00ff585cd756d36458939ee8a8d007df9d83c9b04a8e",
+            "governed_bytes_sha256": "2c1f089685d021b775255ec948cd247da80d73a14f437ed35b405e8c8c291561"
+          },
+          {
+            "source_id": "govinfo:42usc5403g-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap70-sec5403.htm",
+            "raw_sha256": "9d6327521493eddde3421931da52e1fe92897e94e21afcdc3d070f6c308003e0",
+            "governed_bytes_sha256": "a975bc1c408f76da86086100bf7bc81713abde75d25ebf5ea52490b41ae2afe9"
+          },
+          {
+            "source_id": "doe:manufactured-housing2022-operative",
+            "url": "https://www.govinfo.gov/content/pkg/FR-2022-05-31/html/2022-10926.htm",
+            "raw_sha256": "b2f03b69f9a42c5087f79bb49600c45ebcef637b60c3df02954ae5c5c9debdb3",
+            "governed_bytes_sha256": "a80fecf0e5558b8a721f16cdb353333c21c51ef8b5d5cd07f8090d0640dd9438"
+          },
+          {
+            "source_id": "doe:manufactured-housing2025-compliance",
+            "url": "https://www.govinfo.gov/content/pkg/FR-2025-07-02/html/2025-12328.htm",
+            "raw_sha256": "0066f65bb9d22efb741fb2315b8d3da6b544277d5852b270448437e4c278969e",
+            "governed_bytes_sha256": "bee93796920420e3871c52dfc60c71eefdef928214d9d0779256871a2f0b585d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5184eh",
+            "locator": "Complete retained own EH or selected statutory/amendatory unit; no current-law or individual-compliance certificate",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5184 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 5184 _______________________________________________________________________ AN ACT To authorize the Secretary of Energy to transmit to the Secretary of Housing and Urban Development recommendations for changes to preemptive energy conservation standards applicable to manufactured homes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Affordable Housing Over Mandating Efficiency Standards Act'' or the ``Affordable HOMES Act''. SEC. 2. RECOMMENDATIONS FOR REVISIONS TO STANDARDS FOR MANUFACTURED HOUSING. (a) Recommendations.--Section 413 of the Energy Independence and Security Act of 2007 (42 U.S.C. 17071) is amended-- (1) by amending subsection (a) to read as follows: ``(a) Recommendations for Revisions to Standards.--The Secretary may transmit to the Secretary of Housing and Urban Development recommendations for revisions to the preemptive energy conservation standards established under section 604(g) of the Housing and Community Development Act of 1974 (42 U.S.C. 5403(g)).''; (2) by amending subsection (b) to read as follows: ``(b) Criteria for Recommendations.--Any recommendations for revisions to a preemptive energy conservation standard transmitted under this section shall-- ``(1) be based on a determination of the cost-effectiveness of such standard as proposed to be revised, taking into consideration life cycle construction and operating costs; ``(2) include estimates of the impact of such standard as proposed to be revised on the initial purchase price of manufactured homes; and ``(3) be developed taking into consideration-- ``(A) factory construction techniques and limitations unique to manufactured homes; ``(B) climate zones established by the Secretary of Housing and Urban Development; ``(C) alternative methods that achieve equivalent or improved energy performance as compared to such standard as proposed to be revised; and ``(D) estimated payback periods for any added costs arising from such standard as proposed to be revised.''; and (3) by striking subsection (c). (b) No Force or Effect.--The final rule titled ``Energy Conservation Program: Energy Conservation Standards for Manufactured Housing'' published by the Department of Energy in the Federal Register on May 31, 2022 (87 Fed. Reg. 32728), shall have no force or effect. Passed the House of Representatives January 9, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 5184 _______________________________________________________________________ AN ACT To authorize the Secretary of Energy to transmit to the Secretary of Housing and Urban Development recommendations for changes to preemptive energy conservation standards applicable to manufactured homes."
+          },
+          {
+            "source_id": "olrc:42usc17071-2024-operative",
+            "locator": "Complete retained own EH or selected statutory/amendatory unit; no current-law or individual-compliance certificate",
+            "passage": "§17071. Energy Code improvements applicable to manufactured housing (a) Establishment of standards (1) In general Not later than 4 years after December 19, 2007, the Secretary shall by regulation estab lish standards for energy efficiency in manufactured housing. (2) Notice, comment, and consultation Standards described in paragraph (1) shall be established after- (A) notice and an opportunity for comment by manufacturers of manufactured housing and other interested parties; and (B) consultation with the Secretary of Housing and Urban Development, who may seek further counsel from the Manufactured Housing Consensus Committee. (b) Requirements (1) International Energy Conservation Code The energy conservation standards established under this section shall be based on the most recent version of the International Energy Conservation Code (including supplements), except in cases in which the Secretary finds that the code 1 is not cost-effective, or a more stringent standard would be more cost-effective, based on the impact of the code 1 on the purchase price of manufactured housing and on total life-cycle construction and operating costs. (2) Considerations The energy conservation standards established under this section may- (A) take into consideration the design and factory construction techniques of manufactured homes; (B) be based on the climate zones established by the Department of Housing and Urban Development rather than the climate zones under the International Energy Conservation Code; and (C) provide for alternative practices that result in net estimated energy consumption equal to or less than the specified standards. (3) Updating The energy conservation standards established under this section shall be updated not later than- (A) 1 year after December 19, 2007; and (B) 1 year after any revision to the International Energy Conservation Code. (c) Enforcement Any manufacturer of manufactured housing that violates a provision of the regulations under subsection (a) is liable to the United States for a civil penalty in an amount not exceeding 1 percent of the manufacturer's retail list price of the manufactured housing. ( Pub. L. 110–140, title IV, §413, Dec. 19, 2007, 121 Stat. 1601 .) "
+          },
+          {
+            "source_id": "govinfo:42usc5403g-2024-operative",
+            "locator": "Only section5403(g) energy-standard baseline; unamended siding subsection(h) not claim support",
+            "passage": "(g) Manufactured housing construction and safety standards (1) The Federal manufactured home construction and safety standards established by the Secretary under this section shall include preemptive energy conservation standards in accordance with this subsection. (2) The energy conservation standards established under this subsection shall be cost-effective energy conservation performance standards designed to ensure the lowest total of construction and operating costs. (3) The energy conservation standards established under this subsection shall take into consideration the design and factory construction techniques of manufactured homes and shall provide for alternative practices that result in net estimated energy consumption equal to or less than the specified standards. "
+          },
+          {
+            "source_id": "doe:manufactured-housing2022-operative",
+            "locator": "Complete captured2022amendatory text; omitted graphic and incorporated manuals not independently inspected",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/414c1ee11745bfea0d18cc715f670c7add3cf4359eef028a184fd9c527c2cecd.0000000.json",
+                  "sha256": "996816bdd13e3500ae2adb4954aacfa54162f4412c815071dc58ee5778ac8f8f",
+                  "start_character": 0,
+                  "end_character": 31596
+                }
+              ],
+              "utf8_sha256": "414c1ee11745bfea0d18cc715f670c7add3cf4359eef028a184fd9c527c2cecd",
+              "total_characters": 31596,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "doe:manufactured-housing2025-compliance",
+            "locator": "Complete retained own EH or selected statutory/amendatory unit; no current-law or individual-compliance certificate",
+            "passage": "For the reasons stated in the preamble, DOE is amending part 460 of Chapter II of Title 10, Code of Federal Regulations as set forth below: PART 460--ENERGY CONSERVATION STANDARDS FOR MANUFACTURED HOMES 0 1. The authority citation for part 460 continues to read as follows: Authority: 42 U.S.C. 17071; 42 U.S.C. 7101 et seq. 0 2. Revise Sec. 460.1 to read as follows: Sec. 460.1 Scope. This subpart establishes energy conservation standards for manufactured homes as manufactured at the factory, prior to distribution in commerce for sale or installation in the field. Manufacturers must apply the requirements of this part to a manufactured home subject to Sec. 460.4(b) that is manufactured on or after 60 days after publication of final enforcement procedures for this part. DOE will amend this section to include the specific compliance date, once known. Manufacturers must apply the requirements of this part to a manufactured home subject to Sec. 460.4(c) that is manufactured on or after 180 days after publication of final enforcement procedures for this part. DOE will amend this section to include the specific compliance date, once known. [FR Doc. 2025-12328 Filed 7-1-25; 8:45 am] BILLING CODE 6450-01-P"
+          }
+        ],
+        "episode_candidate_id": "episode:hr5184:119"
+      }
+    },
+    {
+      "original_record_sha256": "1e03c5ea343d726d05a3232ace3a857d410c99e73d051a62782cbb122561e3d9",
+      "record": {
+        "action_id": "house:119:2:14",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.6500 EH extends specified AGOA preference/apparel/fabric dates to December 31, 2028 and separately extends customs/processing-fee dates from September 30 to December 31, 2031. Its retroactivity concerns covered entries AFTER September 30, 2025 and before enactment, with country designation as of the day before enactment, a sufficient request within 180 days, and amounts owed paid without interest within 90 days after liquidation/reliquidation. These are not all-country eligibility or automatic refunds 90 days after enactment. The whole object is general trade preferences and customs fees without a direct infrastructure/technical-system requirement; cargo or economic effects alone do not establish one. The selected termination baseline is dated, not a full current importer/program entitlement certificate. No actual duty, refund, migration, trade, price, investment or enacted outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:14",
+            "url": "https://clerk.house.gov/evs/2026/roll014.xml",
+            "raw_sha256": "eeaa32aaeb56ae2838615bb43c67e84cfb082eb6cc0f64fde5ccff378ba93221",
+            "governed_bytes_sha256": "a793dd2997707a22d6a23e4f40f928195d8f0afcbb1f54418caeba85175c6015"
+          },
+          {
+            "source_id": "govinfo:hr6500eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eh/html/BILLS-119hr6500eh.htm",
+            "raw_sha256": "0c336ce6024ff16158e5eb774416d49366ca45feb785f7c25bf3a2d4169536aa",
+            "governed_bytes_sha256": "790a9bbf75920c650cd7ca19291ff96a40b1169fee321773b8495c56a526f8cb"
+          },
+          {
+            "source_id": "olrc:19usc2466b-2024-operative",
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section2466b&num=0&edition=2024",
+            "raw_sha256": "bc1c352fd7ec1f1c1df306c29bf1cdc806939a54439db2fc517912efd7f46958",
+            "governed_bytes_sha256": "cc818a888b53a39189195b7a40abdd92516580fddea97ef3b9303daabdc500ef"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6500eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/c93f3e16681db1e627c077d3fe1ebf5ff5a18206b419b5abfd4e0a2bdbf2f2de.0000000.json",
+                  "sha256": "556c97964f105e7295f2ee6c58c5ce6797557e7f61f718ba8435d4d9f6def65f",
+                  "start_character": 0,
+                  "end_character": 4667
+                }
+              ],
+              "utf8_sha256": "c93f3e16681db1e627c077d3fe1ebf5ff5a18206b419b5abfd4e0a2bdbf2f2de",
+              "total_characters": 4667,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "olrc:19usc2466b-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2466b. Termination of benefits for sub-Saharan African countries In the case of a beneficiary sub-Saharan African country, as defined in section 2466a(c) 1 of this title, duty-free treatment provided under this subchapter shall remain in effect through September 30, 2025."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c0a1f5b809964186261aaa925f3d9e94306c88254f7a65abc86fb747fb9191c6",
+      "record": {
+        "action_id": "house:119:2:15",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.6504 EH changes Haiti preference terms, the named applicable-percentage threshold and an apparel cap measured against aggregate U.S. apparel imports, extends treatment to December 31, 2028, and restores specified formerly eligible tariff-schedule articles by proclamation with a report and at least two-business-day delay. It also supplies retroactivity for entries ON OR AFTER September 30, 2025 and before enactment, a sufficient request within 180 days, and owed amounts without interest within 90 days after liquidation/reliquidation. This differs from H.R.6500’s after-September-30 boundary. Printed cross-reference wording is preserved; no paragraph repair or individual entitlement is decided. This whole trade-preference/implementation choice has no direct infrastructure or technology-governance mechanism. Proposed exclusion does not establish every Haiti-origin article’s eligibility, actual refunds, apparel output, employment, migration, enactment or motive.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:15",
+            "url": "https://clerk.house.gov/evs/2026/roll015.xml",
+            "raw_sha256": "c7e3a9adb5a7d8c7c0a584307b299e266fb9b6b9f45f4a2465065609fa0194dd",
+            "governed_bytes_sha256": "0cf788c58ffd5c2c80b1887f3bb0d3be4c4575b99ece52d6ceeaf20bca7f8447"
+          },
+          {
+            "source_id": "govinfo:hr6504eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6504eh/html/BILLS-119hr6504eh.htm",
+            "raw_sha256": "776ac015555250d632a2176b83360992be357f3f7f4b5236e6a61ee6270d63a6",
+            "governed_bytes_sha256": "03e32101c612cf8e0259c719cb3ebe130c8e92e9478e7942a1f259e171f64c7e"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6504eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/1e29941da77ff033e87207045ed742dfe26d48dfc8463bfa08ddd5d24b9f0089.0000000.json",
+                  "sha256": "26657be31bc3dc7bf2636b66ea4c880e7c77d0e761e1739be92dcefbe31e5bfc",
+                  "start_character": 0,
+                  "end_character": 4857
+                }
+              ],
+              "utf8_sha256": "1e29941da77ff033e87207045ed742dfe26d48dfc8463bfa08ddd5d24b9f0089",
+              "total_characters": 4857,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f342f6df84a14006557b7b28611d15b7e6748019cedccdc28e2c844e97df0599",
+      "record": {
+        "action_id": "house:119:2:16",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question orders the previous question on H.Res.988. It remains non-counting procedural context, distinct from adoption of the rule and subsequent underlying bill choices. It does not itself adopt any substantive substitute or establish support for a selected policy fragment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:16",
+            "url": "https://clerk.house.gov/evs/2026/roll016.xml",
+            "raw_sha256": "cc782b8edfcea45a1b096f0405c2727d643f7e4886af70b3ceb68a92adf05744",
+            "governed_bytes_sha256": "30ecfe8663cb3e82f7e9df0c78c9e836385750fe20cab6401cd69130a4e9d8f6"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:11",
+      "original_source_object_sha256": "158bf3f88b17b9acb6396e810a2b11b670eddafa3a2954915b63cd74588701f7",
+      "path": "source_objects/158bf3f88b17b9acb6396e810a2b11b670eddafa3a2954915b63cd74588701f7.json"
+    },
+    {
+      "source_id": "clerk:119:2:12",
+      "original_source_object_sha256": "2e79253360a3fe0e6188bc294f79c7d3dd2971f894a91d9e8d79c2290755785b",
+      "path": "source_objects/2e79253360a3fe0e6188bc294f79c7d3dd2971f894a91d9e8d79c2290755785b.json"
+    },
+    {
+      "source_id": "clerk:119:2:14",
+      "original_source_object_sha256": "9cdc507dea5fce405b408d1679c7190a38e15cdd34b5abf932dd22e0fb1cd3d6",
+      "path": "source_objects/9cdc507dea5fce405b408d1679c7190a38e15cdd34b5abf932dd22e0fb1cd3d6.json"
+    },
+    {
+      "source_id": "clerk:119:2:15",
+      "original_source_object_sha256": "18fbffe0f439327cfc0334ab279167579a80a85371e50226c8825eefe5b3482e",
+      "path": "source_objects/18fbffe0f439327cfc0334ab279167579a80a85371e50226c8825eefe5b3482e.json"
+    },
+    {
+      "source_id": "clerk:119:2:16",
+      "original_source_object_sha256": "00dcbf5f625cda78f50a42931a306c8727203307206ced625b863864942e81ba",
+      "path": "source_objects/00dcbf5f625cda78f50a42931a306c8727203307206ced625b863864942e81ba.json"
+    },
+    {
+      "source_id": "doe:manufactured-housing2022-operative",
+      "original_source_object_sha256": "a1f2f79abb5e69cd3b7e7bef72f9ed84d8369f8f99e48dd28ed606b23f676c1a",
+      "path": "source_objects/a1f2f79abb5e69cd3b7e7bef72f9ed84d8369f8f99e48dd28ed606b23f676c1a.json"
+    },
+    {
+      "source_id": "doe:manufactured-housing2025-compliance",
+      "original_source_object_sha256": "0345056f70eb8af6a53cf3702d672c9c4281720f0241cd545e9fa81cfd9446f0",
+      "path": "source_objects/0345056f70eb8af6a53cf3702d672c9c4281720f0241cd545e9fa81cfd9446f0.json"
+    },
+    {
+      "source_id": "govinfo:42usc5403g-2024-operative",
+      "original_source_object_sha256": "a64fd2df001edf56a0c538cc106862a826d9db1beeab2183aebd233aa0e3efc0",
+      "path": "source_objects/a64fd2df001edf56a0c538cc106862a826d9db1beeab2183aebd233aa0e3efc0.json"
+    },
+    {
+      "source_id": "govinfo:hr1834eh",
+      "original_source_object_sha256": "0ab6c09f523cbacb027dca3a9ed901d0d0770fb064162e5437fd88faf2f0052f",
+      "path": "source_objects/0ab6c09f523cbacb027dca3a9ed901d0d0770fb064162e5437fd88faf2f0052f.json"
+    },
+    {
+      "source_id": "govinfo:hr5184eh",
+      "original_source_object_sha256": "e5bef6c5441ac3e2cab588f9c5e99acef63bdaf2c295fb38f681cdcf2e1830a5",
+      "path": "source_objects/e5bef6c5441ac3e2cab588f9c5e99acef63bdaf2c295fb38f681cdcf2e1830a5.json"
+    },
+    {
+      "source_id": "govinfo:hr6500eh",
+      "original_source_object_sha256": "5282d9b8e6cf0d349ec249e0029d5c866a05590be7057be805e15146bf3653f1",
+      "path": "source_objects/5282d9b8e6cf0d349ec249e0029d5c866a05590be7057be805e15146bf3653f1.json"
+    },
+    {
+      "source_id": "govinfo:hr6504eh",
+      "original_source_object_sha256": "d299958d9db19a55ea30313c37b764722f7203d02b6ace6cd6aaaffe9873d660",
+      "path": "source_objects/d299958d9db19a55ea30313c37b764722f7203d02b6ace6cd6aaaffe9873d660.json"
+    },
+    {
+      "source_id": "immigration:36B-b3Aiii-dated-formula179",
+      "original_source_object_sha256": "d7540f403ad5d6d194615974752bbba7baecf29b084d072ca34e761030f7931e",
+      "path": "source_objects/d7540f403ad5d6d194615974752bbba7baecf29b084d072ca34e761030f7931e.json"
+    },
+    {
+      "source_id": "olrc:19usc2466b-2024-operative",
+      "original_source_object_sha256": "9aefa4ba3d9a147348c0ce4efde9c1728a7a26aa9fa28afd80164dfc8736a955",
+      "path": "source_objects/9aefa4ba3d9a147348c0ce4efde9c1728a7a26aa9fa28afd80164dfc8736a955.json"
+    },
+    {
+      "source_id": "olrc:42usc17071-2024-operative",
+      "original_source_object_sha256": "72db0c92eea0ee5c5b9f9656a61e9137508053aac015ec6fefe72e321bc69c54",
+      "path": "source_objects/72db0c92eea0ee5c5b9f9656a61e9137508053aac015ec6fefe72e321bc69c54.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr1834eh",
+      "governed_length": 1534,
+      "review_extent": "Complete retained own EH or selected dated statutory/formula unit read; no current integrated-law or individual eligibility certificate"
+    },
+    {
+      "source_id": "immigration:36B-b3Aiii-dated-formula179",
+      "governed_length": 742,
+      "review_extent": "Complete retained own EH or selected dated statutory/formula unit read; no current integrated-law or individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:hr5184eh",
+      "governed_length": 2940,
+      "review_extent": "Complete retained own EH or selected dated statutory/formula unit read; no current integrated-law or individual eligibility certificate"
+    },
+    {
+      "source_id": "olrc:42usc17071-2024-operative",
+      "governed_length": 2230,
+      "review_extent": "Complete retained own EH or selected dated statutory/formula unit read; no current integrated-law or individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:42usc5403g-2024-operative",
+      "governed_length": 1963,
+      "review_extent": "Complete retained1963-character(g)/(h)unit read; action claim support limited to(g), not unrelated siding(h)"
+    },
+    {
+      "source_id": "doe:manufactured-housing2022-operative",
+      "governed_length": 31596,
+      "review_extent": "All31596characters of retained amendatory text read. Captured graphic is omitted; incorporated manuals are not inspected. No individual property/compliance/zone determination."
+    },
+    {
+      "source_id": "doe:manufactured-housing2025-compliance",
+      "governed_length": 1215,
+      "review_extent": "Complete retained1215-character2025scope amendment read; contingent dates only, no later publication event verified"
+    },
+    {
+      "source_id": "govinfo:hr6500eh",
+      "governed_length": 4667,
+      "review_extent": "Complete retained own EH or selected dated statutory/formula unit read; no current integrated-law or individual eligibility certificate"
+    },
+    {
+      "source_id": "olrc:19usc2466b-2024-operative",
+      "governed_length": 273,
+      "review_extent": "Complete retained own EH or selected dated statutory/formula unit read; no current integrated-law or individual eligibility certificate"
+    },
+    {
+      "source_id": "govinfo:hr6504eh",
+      "governed_length": 4857,
+      "review_extent": "Complete retained own EH or selected dated statutory/formula unit read; no current integrated-law or individual eligibility certificate"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_final_bills_read": 4,
+    "complete_captured_amendatory_rule_texts_read": 1,
+    "complete_selected_statutory_or_formula_units_read": 4,
+    "complete_later_compliance_scope_amendment_read": 1,
+    "exact_Clerk_procedural_questions_read": 1,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:11",
+        "evidence_unit": "complete_own_bill_and_material_retained_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:12",
+        "evidence_unit": "complete_own_bill_and_material_retained_units",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:14",
+        "evidence_unit": "complete_own_bill_and_material_retained_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:15",
+        "evidence_unit": "complete_own_bill_and_material_retained_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:16",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority.",
+  "original_housing_qualification": {
+    "committed_provenance": {
+      "head": "03d604e3c15e438dd47bff69fc2589daac771e10",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/housing_comparator_qualification_receipt.json",
+      "git_blob": "8a65cdb5f6ad7d4b3d71b73d5df57987cbeb832d",
+      "git_bytes_sha256": "f49853012f48b50f12bd9a4d56dad07d46bfcd9c8927bd2130916c0887d57591"
+    },
+    "receipt": {
+      "preimage_action_sha256": "ad612a2e29fbf87a0ef6ca345d9d6e046c74041c7d53c8b67b4eae4d6317f3ac",
+      "preimage_meaning": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/f3dab73993629bff7a000cb7a0e3a891d4baa1c2776409c0b4d1b1d8eb6cbf1a.0000000.json",
+            "sha256": "b7246faf1e44c4d1c13658713674885c1bfe2f795453cc74803f9d4c5685263e",
+            "start_character": 0,
+            "end_character": 4126
+          }
+        ],
+        "utf8_sha256": "f3dab73993629bff7a000cb7a0e3a891d4baa1c2776409c0b4d1b1d8eb6cbf1a",
+        "total_characters": 4126,
+        "transport_only": true
+      },
+      "preimage_validation_processes": {
+        "start_utc": "2026-10-19T14:39:50.921800+00:00",
+        "end_utc": "2026-10-19T14:41:11.122179+00:00",
+        "processes": [
+          {
+            "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 66 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch66_20260916\\validation_receipt.json",
+            "returncode": 0,
+            "process_wall_seconds": 1.841
+          },
+          {
+            "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+            "returncode": 0,
+            "process_wall_seconds": 76.316
+          },
+          {
+            "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+            "returncode": 0,
+            "process_wall_seconds": 2.042
+          }
+        ]
+      },
+      "preimage_core_sha256": "b5dfca373741e52d0bdebc3dbf1a0012fc4bf18dc7d47b113e3ef423f65a5df6",
+      "preimage_compiled_sha256": "3b159e28cac30e0e6faf5d89b79931328710b3e765cff86baa6048b57e4bbee5",
+      "qualification": "Equivalent/improved alternative-method performance is relative to the standard as proposed to be revised; no assurance that every existing standard performance level is preserved.",
+      "source_id": "govinfo:hr5184eh",
+      "changed_authoring_fields": [
+        "meaning"
+      ],
+      "source_bytes_changed": false,
+      "dispositions_or_member_statuses_changed": false,
+      "postimage_action_sha256": "7fa6fc81586c4a8dbb06a6a37706bfa6af82256e3a9aaa6d628be5a53bf80eab",
+      "postimage_meaning": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/84ead6a215beb4daa6696f7c844f4c84b4378fc1c62fe03ca279bc2ad29b7c33.0000000.json",
+            "sha256": "697c8b37a6f04b30a409fbe33dd5a6fb25b391abd056af10f1d30a4b381852de",
+            "start_character": 0,
+            "end_character": 4178
+          }
+        ],
+        "utf8_sha256": "84ead6a215beb4daa6696f7c844f4c84b4378fc1c62fe03ca279bc2ad29b7c33",
+        "total_characters": 4178,
+        "transport_only": true
+      },
+      "source_passage": "alternative methods that achieve equivalent or improved energy performance as compared to such standard as proposed to be revised",
+      "all_other_action_fields_unchanged": true,
+      "formal_validation": "Initial95-test pass preserved as prequalification; final full95suite follows on qualified candidate and strengthened guard bytes.",
+      "final_validation_processes": {
+        "start_utc": "2026-10-19T14:48:10.556363+00:00",
+        "end_utc": "2026-10-19T14:49:30.460914+00:00",
+        "processes": [
+          {
+            "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 66 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch66_20260916\\validation_receipt.json",
+            "returncode": 0,
+            "process_wall_seconds": 1.857
+          },
+          {
+            "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+            "returncode": 0,
+            "process_wall_seconds": 76.033
+          },
+          {
+            "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+            "returncode": 0,
+            "process_wall_seconds": 2.014
+          }
+        ]
+      },
+      "final_core_sha256": "10f16608d4b309ab82596d59708545cf1aea194a13ba11252639a0b98675cea3",
+      "final_compiled_sha256": "3b159e28cac30e0e6faf5d89b79931328710b3e765cff86baa6048b57e4bbee5",
+      "canonical_compiled_graph_unchanged": true,
+      "final_formal_validation": "Full95focused tests and7semantic checks pass on qualified candidate and strengthened comparator guard bytes."
+    }
+  }
+}

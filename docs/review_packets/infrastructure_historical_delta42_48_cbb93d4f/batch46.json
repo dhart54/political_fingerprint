@@ -1,0 +1,999 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 46,
+  "exact_committed_head": "cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea, never current batch50 working-tree bytes; zero source acquisition.",
+  "scope": "35 new identities across seven batches plus the prior roll226 correction/preimage binding in batch43. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim and batch43roll226correction source_extent/qualification. Whole CMS letter, BLM plans/maps, NDAA/CR and other partial reviews remain incomplete as recorded. Partial offsets are not full-body clearance. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch46_20260916/membership_review.json",
+      "git_blob": "d2c15ec7ca330485cf11b66f207572e7f4c0dc22",
+      "git_bytes_sha256": "2197647066475023b316a7857afaa308178d86ffd5b15dbcce2b63b46464c742"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch46_20260916/sources.json",
+      "git_blob": "99df5b4a457752251aa4ad43a62cb773b31c2de4",
+      "git_bytes_sha256": "62d10a38505ece31a4bbafbecdf04f34f2a0732100513b575c5b67874234b28c"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch46_20260916/screening_receipt.json",
+      "git_blob": "ddf45c79f5336932af0c1e53ecdc687d35bcd743",
+      "git_bytes_sha256": "1c34b7c0d6d5c6e452f9f6f4c369dd8f4803d1f8db55bbced73ea976c4409fe4"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch46_20260916/screening_units_receipt.json",
+      "git_blob": "5e3382d0b163c6f31813412f70ffbeacc9edbbb9",
+      "git_bytes_sha256": "49cc7d878979525d42633b1cf8cb49692ce13b26637a1b0dff9f7091701cc0fd"
+    }
+  },
+  "cumulative_membership_review_sha256": "c5f1cbf5d08df65b0cc24a08da524a6dd1dc2db8dc422241331f03947e42455b",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/1b01db9b7adfe202f0c6c6d10522707cb070b51fc476ade5dde9c8b42f3637a9.0000000.json",
+        "sha256": "4c926c5a9b15b6c485d262a6e3bde010af817b03d8e486c011ff8c9ba1b128d8",
+        "start_character": 0,
+        "end_character": 28506
+      }
+    ],
+    "utf8_sha256": "1b01db9b7adfe202f0c6c6d10522707cb070b51fc476ade5dde9c8b42f3637a9",
+    "total_characters": 28506,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/27f536dc08095ad4e2d3ca822e734ca16aac5394ce57ad088e80322886d42814.0000000.json",
+        "sha256": "a26d07ee4b703c0dfe2951467123144cc5b0f7f034127b452c8b46679cf2c2cb",
+        "start_character": 0,
+        "end_character": 76689
+      }
+    ],
+    "utf8_sha256": "27f536dc08095ad4e2d3ca822e734ca16aac5394ce57ad088e80322886d42814",
+    "total_characters": 76689,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:267",
+    "house:119:1:268",
+    "house:119:1:269",
+    "house:119:1:270",
+    "house:119:1:271"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hres707eh",
+      "governed_length": 7661,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "govinfo:hres707-engrossment-instruction",
+      "governed_length": 1068,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "govinfo:hr2721eh",
+      "governed_length": 2132,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "govinfo:38usc2306-1990-date",
+      "governed_length": 222,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "govinfo:38usc5503d-2024-pension-cap",
+      "governed_length": 2119,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "govinfo:hr4922eh",
+      "governed_length": 7803,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "dc-council:code-24-901-20250916",
+      "governed_length": 841,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "dc-council:code-24-902-20250916",
+      "governed_length": 2205,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "dc-council:code-24-903-20250916",
+      "governed_length": 5763,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "govinfo:hr5140eh",
+      "governed_length": 1795,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    },
+    {
+      "source_id": "dc-council:code-16-2301-20250916",
+      "governed_length": 17203,
+      "review_extent": "Paragraph3only offsets462:1383, whole source not read"
+    },
+    {
+      "source_id": "dc-council:code-16-2307-20250916",
+      "governed_length": 7418,
+      "review_extent": "Complete retained source text read; dated/selected statutory units do not imply entire-title/current-law review"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_rule_texts_read": 1,
+    "complete_final_bill_bodies_read": 3,
+    "complete_selected_material_statutory_or_note_units": 7,
+    "partial_whole_code_sections": 1,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:267",
+        "evidence_unit": "exact_question_and_complete_rule_or_bill_with_explicit_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:268",
+        "evidence_unit": "exact_question_and_complete_rule_or_bill_with_explicit_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:269",
+        "evidence_unit": "exact_question_and_complete_rule_or_bill_with_explicit_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:270",
+        "evidence_unit": "exact_question_and_complete_rule_or_bill_with_explicit_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:271",
+        "evidence_unit": "exact_question_and_complete_rule_or_bill_with_explicit_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "prior_record_correction": null,
+  "records": [
+    {
+      "original_record_sha256": "2d90fbd96db104167ad68e319400522321e3fe08c1f7083d53ec334376dd9168",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:267",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact previous-question vote controls consideration of H.Res.707rather than adopting the rule or underlying bills. The complete retained resolution contains actual deemed substitutes/engrossment instructions and emergency-procedure limits, but this267question does not itself execute those provisions. Non-counting procedural context; no final-bill support/opposition, digital-asset/energy-policy meaning or motive transferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:267",
+            "url": "https://clerk.house.gov/evs/2025/roll267.xml",
+            "raw_sha256": "efc35a8711a61cf55391cf2d57a5b3d057366e8974a964f85499823b1fddb42e",
+            "governed_bytes_sha256": "8f720b09b2d00b7f8fdedc93fddd99ce5a2fd2e3fb7a78b25804b1fe1bb74d1c"
+          },
+          {
+            "source_id": "govinfo:hres707eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+            "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+            "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres707eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1.0000000.json",
+                  "sha256": "c7f7368648d6aa814c1fa71604bcbc0c17af4f275e9f6e6d64c522ce73459499",
+                  "start_character": 0,
+                  "end_character": 7661
+                }
+              ],
+              "utf8_sha256": "ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1",
+              "total_characters": 7661,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "21068ab83170217fe1b9746e4c638a9c8d32dab8d46776eb57057c52821ad723",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:268",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.Res.707does more than schedule debate: it deems RCP119-10/11/12/13substitutes adopted for4922/5143/5140/5125, RCP119-9for1047and committee substitutes for3015/3062. Section7directs addition of House-passed1919to3633engrossment with title/designation/technical conforming authority. Sections8–10extend specific earlier rule provisions, and11suspends the specified1622procedure throughMarch31,2026for the July30emergency resolution. These are exact rule effects, not enactment of every target bill, a new entire monetary policy, a completed energy project or general repeal of1622. Whole incorporated versions, earlier-rule/statutory baselines, actual engrossment reconciliation and mixed-domain Infrastructure boundary remain ordinary pending review; no digital/energy component selected as the whole.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:268",
+            "url": "https://clerk.house.gov/evs/2025/roll268.xml",
+            "raw_sha256": "2174c7966297b62f63946e6d3a00df4128e2df67a72c9f136c833c7da6df5005",
+            "governed_bytes_sha256": "0d2ab1687b010864a0067ca6af46895a21757639a754d468125a5b883ac24fbb"
+          },
+          {
+            "source_id": "govinfo:hres707eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+            "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+            "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
+          },
+          {
+            "source_id": "govinfo:hres707-engrossment-instruction",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+            "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+            "governed_bytes_sha256": "74b9c94c11a65a4cc0d963a2e809b6c285fcce6966a1997ac9d037ed7b026555"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres707eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1.0000000.json",
+                  "sha256": "c7f7368648d6aa814c1fa71604bcbc0c17af4f275e9f6e6d64c522ce73459499",
+                  "start_character": 0,
+                  "end_character": 7661
+                }
+              ],
+              "utf8_sha256": "ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1",
+              "total_characters": 7661,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres707-engrossment-instruction",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Sec. 7. In the engrossment of the bill (H.R. 3633) to provide for a system of regulation of the offer and sale of digital commodities by the Securities and Exchange Commission and the Commodity Futures Trading Commission, and for other purposes, the Clerk shall-- (a) add the text of the bill (H.R. 1919) to amend the Federal Reserve Act to prohibit the Federal reserve banks from offering certain products or services directly to an individual, to prohibit the use of central bank digital currency for monetary policy, and for other purposes, as passed by the House, as new matter at the end of H.R. 3633; (b) conform the title of H.R. 3633 to reflect the addition of H.R. 1919, as passed by the House, to the engrossment; (c) assign appropriate designations to provisions within the engrossment; (d) conform cross-references and provisions for short titles within the engrossment; and (e) be authorized to make technical corrections, to include corrections in spelling, punctuation, page and line numbering, section numbering, and insertion of appropriate headings. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d5ccce7c44983f2939ea0e341bc2567d04a2657d702e52666e08f85d90fec61e",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:269",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.2721EHrequires furnishing an appropriate headstone, burial marker or medallion for a seven-year period after enactment to veterans eligible for national-cemetery burial, deceased on/afterDecember7,1941and not previously provided one by VA. The title's on/beforeNovember1,1990phrase is not supplied as an upper death-date limit absent from the operative clause; the retained8041(b)note establishes the displaced1990amendment effective-date context. Website eligibility notice is delivery context, not a new technical data system. Section3extends5503(d)expiration fromNovember30,2031toFebruary29,2032; the retained complete(d)baseline keeps its specifiedMedicaid/nursing-facility/family90dollarpension conditions. Whole mechanisms are veteran burial benefits/eligibility notice and pension conditions, without direct facility construction/capacity, infrastructure/technology regulation or R&Dmechanism. No actual furnishing, burial entitlement for every veteran, universal pension cap, individual benefit outcome or current-law enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:269",
+            "url": "https://clerk.house.gov/evs/2025/roll269.xml",
+            "raw_sha256": "6aeb7b3e3adf8ad15cf6a00d78fe1417fc9a089a7e436553cabff0a964deeea7",
+            "governed_bytes_sha256": "f318c22cc894c309bdcae4d5b5aabc1632eaed9ab5bbadc52cf22ad6851d7344"
+          },
+          {
+            "source_id": "govinfo:hr2721eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2721eh/html/BILLS-119hr2721eh.htm",
+            "raw_sha256": "87ec2b89f89c9a8446318681d713c0d6671221d732dd5b69d9f5c45c2c0a05df",
+            "governed_bytes_sha256": "f9cb5945c5b64c78e803e0e3892341f4ed2c1883f870be531a88e703d894dc0e"
+          },
+          {
+            "source_id": "govinfo:38usc2306-1990-date",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm",
+            "raw_sha256": "8d4e2a747d1fa3eec85362a152f8ea4acb6815305087faff91d401c54865bf73",
+            "governed_bytes_sha256": "e00d0cc122236631347c3cb6501a5417d7e259707c146545c64865ac50670a1e"
+          },
+          {
+            "source_id": "govinfo:38usc5503d-2024-pension-cap",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+            "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+            "governed_bytes_sha256": "19744f7f2b2100d95781fa5b7e3fa6747bf5f67c02029ee94dd5ce82f08881a9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2721eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2721 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 2721 _______________________________________________________________________ AN ACT To direct the Secretary of Veterans Affairs to establish and carry out a pilot program to furnish a headstone or burial marker to veterans who died on or before November 1, 1990, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Honoring Our Heroes Act of 2025''. SEC. 2. TEMPORARY AUTHORITY TO FURNISH HEADSTONES AND BURIAL MARKERS TO CERTAIN VETERANS. (a) Authority.--During the period of seven years following the date of the enactment of this Act, the Secretary of Veterans Affairs shall furnish, pursuant to section 2306 of title 38, United States Code, and without regards to section 8041(b) of the Omnibus Budget Reconciliation Act of 1990 (Public Law 101-508), an appropriate headstone, burial marker, or medallion for a veteran-- (1) eligible for burial in a national cemetery; (2) who died on or after December 7, 1941; and (3) for whose grave the Secretary has not already provided a headstone, burial marker, or medallion. (b) Website.--During such period, the Secretary shall ensure that the website of the National Cemetery Administration indicates the effect of this Act on eligibility for a headstone, burial marker, or medallion under such section. SEC. 3. EXTENSION OF CERTAIN LIMITS ON PAYMENTS OF PENSION. Section 5503(d)(7) of title 38, United States Code, is amended by striking ``November 30, 2031'' and inserting ``February 29, 2032''. Passed the House of Representatives September 16, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 2721 _______________________________________________________________________ AN ACT To direct the Secretary of Veterans Affairs to establish and carry out a pilot program to furnish a headstone or burial marker to veterans who died on or before November 1, 1990, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:38usc2306-1990-date",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Effective Date of 1990 Amendment Pub. L. 101–508, title VIII, §8041(b), Nov. 5, 1990, 104 Stat. 1388–349, provided that: \"This section [amending this section] shall apply to deaths occurring on or after November 1, 1990.\" "
+          },
+          {
+            "source_id": "govinfo:38usc5503d-2024-pension-cap",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(d)(1) For the purposes of this subsection— (A) the term \"Medicaid plan\" means a State plan for medical assistance referred to in section 1902(a) of the Social Security Act (42 U.S.C. 1396a(a)); and (B) the term \"nursing facility\" means a nursing facility described in section 1919 of such Act (42 U.S.C. 1396r), other than a facility that is a State home with respect to which the Secretary makes per diem payments for nursing home care pursuant to section 1741(a) of this title. (2) If a veteran having neither spouse nor child is covered by a Medicaid plan for services furnished such veteran by a nursing facility, no pension in excess of $90 per month shall be paid to or for the veteran for any period after the month of admission to such nursing facility. (3) Notwithstanding any provision of title XIX of the Social Security Act, the amount of the payment paid a nursing facility pursuant to a Medicaid plan for services furnished a veteran may not be reduced by any amount of pension permitted to be paid such veteran under paragraph (2) of this subsection. (4) A veteran is not liable to the United States for any payment of pension in excess of the amount permitted under this subsection that is paid to or for the veteran by reason of the inability or failure of the Secretary to reduce the veteran's pension under this subsection unless such inability or failure is the result of a willful concealment by the veteran of information necessary to make a reduction in pension under this subsection. (5)(A) The provisions of this subsection shall apply with respect to a surviving spouse having no child in the same manner as they apply to a veteran having neither spouse nor child. (B) The provisions of this subsection shall apply with respect to a child entitled to pension under section 1542 of this title in the same manner as they apply to a veteran having neither spouse nor child. (6) The costs of administering this subsection shall be paid for from amounts available to the Department of Veterans Affairs for the payment of compensation and pension. (7) This subsection expires on November 30, 2031. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a788e41c34aca7341183b8ced585bd835d95847f1fb0ca2aecf64a039432eb92",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:270",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.4922EHcombines youth-status/sentencing changes with establishment/operation of a public juvenile-crime statistics website, monthly updates, indefinite historical archive and machine-readable bulk download, prohibiting juvenile personally identifiable information. All eleven data categories and three record-sharing amendments remain part of the whole choice. Operative901replacement is under18, not the title's18or-younger;903community-service range separately becomes15to18. Complete retained901/902/903baselines preserve crime exclusions, the narrower902(a-1)(3)consultation paragraph actually removed and903sentencing discretion/remainingconditions; this is not repeal of all youth facilities/services or a universal adult-sentencing command. The180dayclause prints16-2341although the new section is2340a; no executed cross-reference repair. Whole mixed criminal-law/public-data-system boundary,2331/2332/2333record-access and definition baselines, timing/reference implications and exact deemed-RCP/floor/EHreconciliation remain ordinary review. No actual crime, sentencing, privacy, website completion or public-safety effect inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:270",
+            "url": "https://clerk.house.gov/evs/2025/roll270.xml",
+            "raw_sha256": "66534bd5c2ce9e332babba2a593677bfe50473c4b34f8e5535fde16b5d0d81a4",
+            "governed_bytes_sha256": "f6d456ceae46d21d50c825f54b260b5096bab2335bd2fb1d547a48e731bd2377"
+          },
+          {
+            "source_id": "govinfo:hr4922eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4922eh/html/BILLS-119hr4922eh.htm",
+            "raw_sha256": "b7814730ca29e96942018e5828bafe5581af6e168852bbf143a05dce2a577467",
+            "governed_bytes_sha256": "081729d5890e26409c9d791ebe49020178e3769ef6d3444a1bced3b274f2f632"
+          },
+          {
+            "source_id": "dc-council:code-24-901-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-901.html",
+            "raw_sha256": "dd31db353d03562cee402962ecd4b02cb7edd9951cb991758da72065abd100e1",
+            "governed_bytes_sha256": "b72fada664fca923a19cf4dd939e9bc9cae9fabbae2e9832f9ce74b0c7f26180"
+          },
+          {
+            "source_id": "dc-council:code-24-902-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-902.html",
+            "raw_sha256": "ecc9ce30a272e4a45b94fff1ea8722bd2333904a99a7e7757c90011e6e07c73b",
+            "governed_bytes_sha256": "774cfe11e60f2894e25f8efac3376646f8979243860b4dca1431967bbc3eacfc"
+          },
+          {
+            "source_id": "dc-council:code-24-903-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-903.html",
+            "raw_sha256": "b90decd613270733a3d8eff7dee871d3bc41005e2e1b3d3c8a5a639910d641c0",
+            "governed_bytes_sha256": "2e9907e8b9c3c296f08cc51aa5908dca50b3a57397f51cc2f98940884847efcf"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4922eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/60eb502afa06084312bd2ab01352b5097f378f249f853597553a7c65f23df227.0000000.json",
+                  "sha256": "f9efbe394df57bb8561d13ff570b8e8330bdc8f51c7c6a2575678cc9d98e2bd4",
+                  "start_character": 0,
+                  "end_character": 7803
+                }
+              ],
+              "utf8_sha256": "60eb502afa06084312bd2ab01352b5097f378f249f853597553a7c65f23df227",
+              "total_characters": 7803,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "dc-council:code-24-901-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "For purposes of this subchapter, the term: (1) “Committed youth offender” means an individual sentenced pursuant to this subchapter. (2) “Conviction” means the judgment on a verdict or a finding of guilty, a plea of guilty, or a plea of no contest. (3) “Court” means the Superior Court of the District of Columbia. (4) “District” means the District of Columbia. (5) \"Treatment\" means guidance for youth offenders designed to improve public safety by facilitating rehabilitation and preventing recidivism. (6) \"Youth offender\" means a person 24 years of age or younger at the time that the person committed a crime other than murder, first degree murder that constitutes an act of terrorism, second degree murder that constitutes an act of terrorism, first degree sexual abuse, second degree sexual abuse, and first degree child sexual abuse."
+          },
+          {
+            "source_id": "dc-council:code-24-902-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) The Mayor shall provide facilities, treatment, and services for the developmentally appropriate care, custody, subsistence, education, workforce training, and protection of the following youth offenders: (1) Those pending trial on charges of having committed misdemeanor or felony offenses under District law; and (2) Those convicted of misdemeanor or felony offenses under District law and who are in the District's care or custody. (a-1) (1) By September 30, 2019, the Mayor shall develop and submit to the Council a strategic plan for providing the facilities, treatment, and services for youth offenders required by subsection (a) of this section. (2) The strategic plan shall include recommendations for adopting and implementing inter-agency programming by District agencies to address the following: (A) The educational, workforce development, behavioral and physical health care, housing, family, and reentry needs of youth offenders before commitment, while in District or federal care or custody, and upon reentry; (B) The availability of a continuum of developmentally appropriate, community-based services for youth offenders before commitment, while in District care or custody, and upon reentry; (C) Best practices in restorative justice for victims, youth offenders, including for youth offenders convicted of violent offenses, and persons at risk of becoming youth offenders; (D) The expansion of diversion programs for persons at risk of becoming youth offenders; and (E) Outreach by the District to committed youth offenders in District or federal care or custody to identify needs for services and plan for reentry. (3) In developing the strategic plan required by this subsection, the Mayor shall consult with community-based organizations with expertise in juvenile justice issues and justice system-involved young adults 18 through 24 years of age. (b) Repealed. (c) The federal Bureau of Prisons is authorized to provide facilities, treatment, and services for the developmentally appropriate care, custody, subsistence, education, workforce training, segregation, and protection of youth offenders convicted of felony offenses under District law and in federal care or custody."
+          },
+          {
+            "source_id": "dc-council:code-24-903-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) (1) If the court determines that a youth offender would be better served by probation instead of confinement, it may suspend the imposition or execution of sentence and place the youth offender on probation. (2) The court, as part of an order of probation of a youth offender 15 to 24 years of age, shall require the youth offender to perform not fewer than 90 hours of community service for a District government agency, a nonprofit, or a community service organization, unless the court determines that an order of community service would be unreasonable. (2A) A positive test for use of marijuana, or a violation of § 48-1201 , shall not be considered a violation of an order of probation unless the judicial officer expressly prohibits the use or possession of marijuana, as opposed to controlled substances generally, as a condition of probation. (3) By September 30, 2019, the Mayor shall develop and furnish to the court a youth offender community service plan. The plan shall include: (A) Procedures to certify a nonprofit or community service organization for participation in the program; (B) A list of agencies of the District government or non-profit or community service organizations to which a youth offender may be assigned for community service work; (C) A description of the community service work to be performed by a youth offender in each of the named agencies or organizations; (D) Procedures to monitor the attendance and performance of a youth offender assigned to community service work; (E) Procedures to report to the court a youth offender’s absence from a court-ordered community service work assignment; and (F) Procedures to notify the court that a youth offender has completed the community service ordered by the court. (4) If the court unconditionally discharges a youth offender from probation pursuant to § 24-906(b) , the court may discharge the youth offender from any uncompleted community service requirement in excess of 90 hours. The court shall not discharge the youth offender from completion of the minimum of 90 hours of community service. (b) (1) If the offense for which a youth offender is convicted is punishable by imprisonment under applicable provisions of law other than this subsection, the court may use its discretion in sentencing the youth offender pursuant to this subchapter , up to the maximum penalty of imprisonment otherwise provided by law. (2) Notwithstanding any other law, the court may, in its discretion, issue a sentence less than any mandatory-minimum term otherwise required by law. (3) The youth offender shall serve the court's sentence unless released sooner as provided in § 24-904 . (c) (1) If the court sentences a youth offender under this subchapter , the court shall make a written statement on the record of the reasons for its determination. Any statement concerning or related to the youth offender's contacts with the juvenile justice system or child welfare authorities, or medical and mental health records, shall be conducted at the bench and placed under seal. The youth offender shall be entitled to present to the court facts that would affect the court's sentencing decision. (2) In using its discretion in sentencing a youth offender under this subchapter , the court shall consider: (A) The youth offender's age at the time of the offense; (B) The nature of the offense, including the extent of the youth offender's role in the offense and whether and to what extent an adult was involved in the offense; (C) Whether the youth offender was previously sentenced under this subchapter ; (D) The youth offender's compliance with the rules of the facility to which the youth offender has been committed, and with supervision and pretrial release, if applicable; (E) The youth offender's current participation in rehabilitative District programs; (F) The youth offender's previous contacts with the juvenile and criminal justice systems; (G) The youth offender's family and community circumstances at the time of the offense, including any history of abuse, trauma, or involvement in the child welfare system; (H) The youth offender's ability to appreciate the risks and consequences of the youth offender's conduct; (I) Any reports of physical, mental, or psychiatric examinations of the youth offender conducted by licensed health care professionals; (J) The youth offender's use of controlled substances that are unlawful under District law; (K) The youth offender's capacity for rehabilitation; (L) Any oral or written statement provided pursuant to § 23-1904 or 18 U.S.C. § 3771 by a victim of the offense, or by a family member of the victim if the victim is deceased; and (M) Any other information the court deems relevant to its decision. (d) If the court does not sentence a youth offender under this subchapter , the court shall make a written statement on the record of the reasons for its determination and may sentence the youth offender under any other applicable penalty provision. Any statement concerning or related to the youth offender's contacts with the juvenile justice system or child welfare authorities, or medical and mental health records, shall be conducted at the bench and placed under seal. (e) If the court desires additional information as to whether a youth offender will benefit from sentencing under subsection (b) of this section, the court may order that the youth offender be committed for observation and study at an appropriate classification center or agency. Within 60 days from the date of the order or an additional period that the court may grant, the court shall receive the report. (f) Subsections (a) through (e) of this section provide sentencing alternatives in addition to the options already available to the court."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "de12f55fc8235a06d841c11c637853c94ed93db86d53f84710b135dd4858a564",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:271",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.5140EHchanges two2301(3)age references16to14and2307(a)(1)/(2)thresholds15/16to14, applying to offenses committed on/afterenactment. Retained complete2301(3)unit preserves specified charges/lesser-included/traffic categories and historical-offense conditions; complete2307preserves transfer motions, competency/hearing/security/rehabilitation findings and remaining categories, including its unchanged15through18presumption. This does not automatically send every14yearoldor every offense to adult court, lower the general age of majority or create a construction/digital-system mechanism. Whole mechanism is criminal/juvenile jurisdiction and transfer eligibility, without direct Infrastructure/Technology action. Selected retainedSeptember16,2025codeunits are dated baselines, not proof of current law; no actual prosecution, guilt, sentencing, safety result, motive or enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:271",
+            "url": "https://clerk.house.gov/evs/2025/roll271.xml",
+            "raw_sha256": "ea078629f8c5917060805a0199e5c139ca02037b397c1f024606781e457a165e",
+            "governed_bytes_sha256": "b90662c86c04e9729e2e893810a85d5a500be6f45d76408bf9f442987b532bf7"
+          },
+          {
+            "source_id": "govinfo:hr5140eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5140eh/html/BILLS-119hr5140eh.htm",
+            "raw_sha256": "d703d5e1662a2bca00cbf0ec6bdc5bc7fb44e9e355c594eb2dd6b684cbbd3ea1",
+            "governed_bytes_sha256": "14e415f35a4ac4e5d9056704b837463cd98c55f10e6fab02076f476a7ff67781"
+          },
+          {
+            "source_id": "dc-council:code-16-2301-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2301.html",
+            "raw_sha256": "388d3706a8f922860ec6f837bba47a38f7fff691fb860d322ff92b29178b1ecf",
+            "governed_bytes_sha256": "daf08716c70ad7c5574c88b9df4043a09da0695c678c2301715ce900e4f2fcdb"
+          },
+          {
+            "source_id": "dc-council:code-16-2307-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2307.html",
+            "raw_sha256": "a9c38db6e2cbc3d4bd836caf0a7817201b1bdfba82898113a2c23ef75af897d7",
+            "governed_bytes_sha256": "27d26aaae060d94d536506cc7d5b7efc14e1c8203d47970b6dac96e968a73a76"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5140eh",
+            "locator": "Complete retained House-engrossed bill",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5140 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5140 _______________________________________________________________________ AN ACT To lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. LOWERING AGE AT WHICH A MINOR MAY BE TRIED AS ADULT FOR CERTAIN CRIMINAL OFFENSES IN DISTRICT OF COLUMBIA. (a) Lowering Age at Which Minor May Be Excluded From Jurisdiction of Family Court.--Section 16-2301, District of Columbia Official Code, is amended-- (1) in paragraph (3), by striking ``sixteen years of age'' and inserting ``fourteen years of age''; and (2) in paragraph (3) in the matter following subparagraph (C), by striking ``the age of sixteen'' and inserting ``the age of fourteen''. (b) Lowering Age at Which Minor May Be Transferred to Criminal Proceeding.--Section 16-2307(a), District of Columbia Official Code, is amended-- (1) in paragraph (1), by striking ``fifteen'' and inserting ``fourteen''; and (2) in paragraph (2), by striking ``sixteen'' and inserting ``fourteen''. (c) Applicability.--This Act, and the amendments made by this Act, shall apply with respect to criminal offenses committed on and after the date of the enactment of this Act. Passed the House of Representatives September 16, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5140 _______________________________________________________________________ AN ACT To lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age."
+          },
+          {
+            "source_id": "dc-council:code-16-2301-20250916",
+            "locator": "Complete paragraph3unit offsets462:1383; other2301definitions not reviewed",
+            "passage": "(3) The term “child” means an individual who is under 18 years of age, except that the term “child” does not include an individual who is sixteen years of age or older and — (A) charged by the United States attorney with (i) murder, first degree sexual abuse, burglary in the first degree, robbery while armed, or assault with intent to commit any such offense, or (ii) an offense listed in clause (i) and any other offense properly joinable with such an offense; (B) charged with an offense referred to in subparagraph (A)(i) and convicted by plea or verdict of a lesser included offense; or (C) charged with a traffic offense. For purposes of this subchapter the term “child” also includes a person under the age of twenty-one who is charged with an offense referred to in subparagraph (A)(i) or (C) committed before he attained the age of sixteen, or a delinquent act committed before he attained the age of eighteen. "
+          },
+          {
+            "source_id": "dc-council:code-16-2307-20250916",
+            "locator": "Complete retained2307source",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0d4ddc6a493d11acc6c6c9f3855f680592b16e7abeb46d89d1974bed7ca89682.0000000.json",
+                  "sha256": "04c6c9bfa8e40663c7ccd1562d68de854437162087173e4f7c3697a1e8a9e963",
+                  "start_character": 0,
+                  "end_character": 7418
+                }
+              ],
+              "utf8_sha256": "0d4ddc6a493d11acc6c6c9f3855f680592b16e7abeb46d89d1974bed7ca89682",
+              "total_characters": 7418,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "3df15c885111aece3ce5f68ec5a4b426287f380ccdb80e5536737bb304441bc4",
+      "source": {
+        "source_id": "govinfo:38usc5503d-2024-pension-cap",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+        "text_version": "Complete 2024 section 5503(d)(1)-(7), retaining definitions, pension cap, Medicaid-payment saving, liability exception, survivor/child application, administration and expiration; other subsections and historical notes excluded",
+        "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+        "text": "(d)(1) For the purposes of this subsection— (A) the term \"Medicaid plan\" means a State plan for medical assistance referred to in section 1902(a) of the Social Security Act (42 U.S.C. 1396a(a)); and (B) the term \"nursing facility\" means a nursing facility described in section 1919 of such Act (42 U.S.C. 1396r), other than a facility that is a State home with respect to which the Secretary makes per diem payments for nursing home care pursuant to section 1741(a) of this title. (2) If a veteran having neither spouse nor child is covered by a Medicaid plan for services furnished such veteran by a nursing facility, no pension in excess of $90 per month shall be paid to or for the veteran for any period after the month of admission to such nursing facility. (3) Notwithstanding any provision of title XIX of the Social Security Act, the amount of the payment paid a nursing facility pursuant to a Medicaid plan for services furnished a veteran may not be reduced by any amount of pension permitted to be paid such veteran under paragraph (2) of this subsection. (4) A veteran is not liable to the United States for any payment of pension in excess of the amount permitted under this subsection that is paid to or for the veteran by reason of the inability or failure of the Secretary to reduce the veteran's pension under this subsection unless such inability or failure is the result of a willful concealment by the veteran of information necessary to make a reduction in pension under this subsection. (5)(A) The provisions of this subsection shall apply with respect to a surviving spouse having no child in the same manner as they apply to a veteran having neither spouse nor child. (B) The provisions of this subsection shall apply with respect to a child entitled to pension under section 1542 of this title in the same manner as they apply to a veteran having neither spouse nor child. (6) The costs of administering this subsection shall be paid for from amounts available to the Department of Veterans Affairs for the payment of compensation and pension. (7) This subsection expires on November 30, 2031. ",
+        "governed_bytes_sha256": "19744f7f2b2100d95781fa5b7e3fa6747bf5f67c02029ee94dd5ce82f08881a9",
+        "captured_full_text_sha256": "f5da8ffff8231a879a9a8382f5fc86e67652bca87b2421658e2227621de0e12d",
+        "source_text_extents": [
+          {
+            "start": 5193,
+            "end": 7312,
+            "total": 33125
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "83d56cc8e7a525b3c9d2b1bf323650c9bbf63d6fe3aab01f17ebe057e3833223",
+      "source": {
+        "source_id": "clerk:119:1:267",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll267.xml",
+        "text_version": null,
+        "raw_sha256": "efc35a8711a61cf55391cf2d57a5b3d057366e8974a964f85499823b1fddb42e",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "267",
+          "legis-num": "H RES 707",
+          "vote-question": "On Ordering the Previous Question",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "16-Sep-2025",
+          "action-time": "1:57 PM",
+          "vote-desc": "Providing for consideration of the bills H.R. 4922, H.R. 5143, H.R. 5140, H.R. 5125, H.R. 1047, H.R. 3015, and H.R. 3062; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "8f720b09b2d00b7f8fdedc93fddd99ce5a2fd2e3fb7a78b25804b1fe1bb74d1c"
+      }
+    },
+    {
+      "original_source_object_sha256": "4547aaf1650dd150578194db4f7c0f13c4f7b54f78d25de894b4797dc28a83dd",
+      "source": {
+        "source_id": "govinfo:hres707eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1.0000000.json",
+              "sha256": "c7f7368648d6aa814c1fa71604bcbc0c17af4f275e9f6e6d64c522ce73459499",
+              "start_character": 0,
+              "end_character": 7661
+            }
+          ],
+          "utf8_sha256": "ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1",
+          "total_characters": 7661,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
+      }
+    },
+    {
+      "original_source_object_sha256": "c2303f4b67c15a93a206be00e868a9f09f6e50e1b85aaf44a69c7f8c19a4fbf5",
+      "source": {
+        "source_id": "clerk:119:1:268",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll268.xml",
+        "text_version": null,
+        "raw_sha256": "2174c7966297b62f63946e6d3a00df4128e2df67a72c9f136c833c7da6df5005",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "268",
+          "legis-num": "H RES 707",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "16-Sep-2025",
+          "action-time": "2:43 PM",
+          "vote-desc": "Providing for consideration of the bills H.R. 4922, H.R. 5143, H.R. 5140, H.R. 5125, H.R. 1047, H.R. 3015, and H.R. 3062; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "No",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "213",
+            "nay-total": "3",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "208",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "0d2ab1687b010864a0067ca6af46895a21757639a754d468125a5b883ac24fbb"
+      }
+    },
+    {
+      "original_source_object_sha256": "da1d5bdedffd230de340bd47cacd6ebb462d9eadb4e88b2aaa9d438e16087834",
+      "source": {
+        "source_id": "govinfo:hres707-engrossment-instruction",
+        "source_type": "official_house_resolution_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+        "text_version": "September16,2025 H.Res.707 section7; later engrossment instruction, not July passage content",
+        "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+        "text": "Sec. 7. In the engrossment of the bill (H.R. 3633) to provide for a system of regulation of the offer and sale of digital commodities by the Securities and Exchange Commission and the Commodity Futures Trading Commission, and for other purposes, the Clerk shall-- (a) add the text of the bill (H.R. 1919) to amend the Federal Reserve Act to prohibit the Federal reserve banks from offering certain products or services directly to an individual, to prohibit the use of central bank digital currency for monetary policy, and for other purposes, as passed by the House, as new matter at the end of H.R. 3633; (b) conform the title of H.R. 3633 to reflect the addition of H.R. 1919, as passed by the House, to the engrossment; (c) assign appropriate designations to provisions within the engrossment; (d) conform cross-references and provisions for short titles within the engrossment; and (e) be authorized to make technical corrections, to include corrections in spelling, punctuation, page and line numbering, section numbering, and insertion of appropriate headings. ",
+        "governed_bytes_sha256": "74b9c94c11a65a4cc0d963a2e809b6c285fcce6966a1997ac9d037ed7b026555"
+      }
+    },
+    {
+      "original_source_object_sha256": "5717c67b7e9653beabca6b7802f25354bdb46df6b187b7b021a86db036af5d26",
+      "source": {
+        "source_id": "clerk:119:1:269",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll269.xml",
+        "text_version": null,
+        "raw_sha256": "6aeb7b3e3adf8ad15cf6a00d78fe1417fc9a089a7e436553cabff0a964deeea7",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "269",
+          "legis-num": "H R 2721",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "16-Sep-2025",
+          "action-time": "2:49 PM",
+          "vote-desc": "Honoring our Heroes Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "209",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "10"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "204",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "9"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "f318c22cc894c309bdcae4d5b5aabc1632eaed9ab5bbadc52cf22ad6851d7344"
+      }
+    },
+    {
+      "original_source_object_sha256": "c96f35df6fcbc08b58c119920a5ef942c94cafd0fe61e818aba78427500e5365",
+      "source": {
+        "source_id": "govinfo:hr2721eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2721eh/html/BILLS-119hr2721eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "87ec2b89f89c9a8446318681d713c0d6671221d732dd5b69d9f5c45c2c0a05df",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2721 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 2721 _______________________________________________________________________ AN ACT To direct the Secretary of Veterans Affairs to establish and carry out a pilot program to furnish a headstone or burial marker to veterans who died on or before November 1, 1990, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Honoring Our Heroes Act of 2025''. SEC. 2. TEMPORARY AUTHORITY TO FURNISH HEADSTONES AND BURIAL MARKERS TO CERTAIN VETERANS. (a) Authority.--During the period of seven years following the date of the enactment of this Act, the Secretary of Veterans Affairs shall furnish, pursuant to section 2306 of title 38, United States Code, and without regards to section 8041(b) of the Omnibus Budget Reconciliation Act of 1990 (Public Law 101-508), an appropriate headstone, burial marker, or medallion for a veteran-- (1) eligible for burial in a national cemetery; (2) who died on or after December 7, 1941; and (3) for whose grave the Secretary has not already provided a headstone, burial marker, or medallion. (b) Website.--During such period, the Secretary shall ensure that the website of the National Cemetery Administration indicates the effect of this Act on eligibility for a headstone, burial marker, or medallion under such section. SEC. 3. EXTENSION OF CERTAIN LIMITS ON PAYMENTS OF PENSION. Section 5503(d)(7) of title 38, United States Code, is amended by striking ``November 30, 2031'' and inserting ``February 29, 2032''. Passed the House of Representatives September 16, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 2721 _______________________________________________________________________ AN ACT To direct the Secretary of Veterans Affairs to establish and carry out a pilot program to furnish a headstone or burial marker to veterans who died on or before November 1, 1990, and for other purposes.",
+        "governed_bytes_sha256": "f9cb5945c5b64c78e803e0e3892341f4ed2c1883f870be531a88e703d894dc0e"
+      }
+    },
+    {
+      "original_source_object_sha256": "c2f9c842a6bc152c49404837a8dec3bfb2fd2b48329183f31b8a49edac85f03f",
+      "source": {
+        "source_id": "govinfo:38usc2306-1990-date",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm",
+        "text_version": "2024 Code note reproducing Public Law101-508 section8041(b) effective-date rule",
+        "raw_sha256": "8d4e2a747d1fa3eec85362a152f8ea4acb6815305087faff91d401c54865bf73",
+        "text": "Effective Date of 1990 Amendment Pub. L. 101–508, title VIII, §8041(b), Nov. 5, 1990, 104 Stat. 1388–349, provided that: \"This section [amending this section] shall apply to deaths occurring on or after November 1, 1990.\" ",
+        "governed_bytes_sha256": "e00d0cc122236631347c3cb6501a5417d7e259707c146545c64865ac50670a1e"
+      }
+    },
+    {
+      "original_source_object_sha256": "f08c984f89896912f73a3b16d21dc4b80db2500e15722a08e83c6b0d62d8100a",
+      "source": {
+        "source_id": "clerk:119:1:270",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll270.xml",
+        "text_version": null,
+        "raw_sha256": "66534bd5c2ce9e332babba2a593677bfe50473c4b34f8e5535fde16b5d0d81a4",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "270",
+          "legis-num": "H R 4922",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "16-Sep-2025",
+          "action-time": "5:01 PM",
+          "vote-desc": "DC CRIMES Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "209",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "9"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "31",
+            "nay-total": "178",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "f6d456ceae46d21d50c825f54b260b5096bab2335bd2fb1d547a48e731bd2377"
+      }
+    },
+    {
+      "original_source_object_sha256": "9675673e7e9ccbdef1206098a5c9c07cdb27bda26cce3db3905971141c91adea",
+      "source": {
+        "source_id": "govinfo:hr4922eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4922eh/html/BILLS-119hr4922eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "b7814730ca29e96942018e5828bafe5581af6e168852bbf143a05dce2a577467",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/60eb502afa06084312bd2ab01352b5097f378f249f853597553a7c65f23df227.0000000.json",
+              "sha256": "f9efbe394df57bb8561d13ff570b8e8330bdc8f51c7c6a2575678cc9d98e2bd4",
+              "start_character": 0,
+              "end_character": 7803
+            }
+          ],
+          "utf8_sha256": "60eb502afa06084312bd2ab01352b5097f378f249f853597553a7c65f23df227",
+          "total_characters": 7803,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "081729d5890e26409c9d791ebe49020178e3769ef6d3444a1bced3b274f2f632"
+      }
+    },
+    {
+      "original_source_object_sha256": "179a13ac13eddb64339487f45b5ec3ece8e68c5ed3a247e5d202d6534bb3fe5e",
+      "source": {
+        "source_id": "dc-council:code-24-901-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-901.html",
+        "text_version": "D.C. Council code, complete operative section 24-901; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "dd31db353d03562cee402962ecd4b02cb7edd9951cb991758da72065abd100e1",
+        "text": "For purposes of this subchapter, the term: (1) “Committed youth offender” means an individual sentenced pursuant to this subchapter. (2) “Conviction” means the judgment on a verdict or a finding of guilty, a plea of guilty, or a plea of no contest. (3) “Court” means the Superior Court of the District of Columbia. (4) “District” means the District of Columbia. (5) \"Treatment\" means guidance for youth offenders designed to improve public safety by facilitating rehabilitation and preventing recidivism. (6) \"Youth offender\" means a person 24 years of age or younger at the time that the person committed a crime other than murder, first degree murder that constitutes an act of terrorism, second degree murder that constitutes an act of terrorism, first degree sexual abuse, second degree sexual abuse, and first degree child sexual abuse.",
+        "governed_bytes_sha256": "b72fada664fca923a19cf4dd939e9bc9cae9fabbae2e9832f9ce74b0c7f26180"
+      }
+    },
+    {
+      "original_source_object_sha256": "de5aab1a8a48aa39f4c09155d2b7aa7060c3ed83f07a52fbda1f0f038d307577",
+      "source": {
+        "source_id": "dc-council:code-24-902-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-902.html",
+        "text_version": "D.C. Council code, complete operative section 24-902; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "ecc9ce30a272e4a45b94fff1ea8722bd2333904a99a7e7757c90011e6e07c73b",
+        "text": "(a) The Mayor shall provide facilities, treatment, and services for the developmentally appropriate care, custody, subsistence, education, workforce training, and protection of the following youth offenders: (1) Those pending trial on charges of having committed misdemeanor or felony offenses under District law; and (2) Those convicted of misdemeanor or felony offenses under District law and who are in the District's care or custody. (a-1) (1) By September 30, 2019, the Mayor shall develop and submit to the Council a strategic plan for providing the facilities, treatment, and services for youth offenders required by subsection (a) of this section. (2) The strategic plan shall include recommendations for adopting and implementing inter-agency programming by District agencies to address the following: (A) The educational, workforce development, behavioral and physical health care, housing, family, and reentry needs of youth offenders before commitment, while in District or federal care or custody, and upon reentry; (B) The availability of a continuum of developmentally appropriate, community-based services for youth offenders before commitment, while in District care or custody, and upon reentry; (C) Best practices in restorative justice for victims, youth offenders, including for youth offenders convicted of violent offenses, and persons at risk of becoming youth offenders; (D) The expansion of diversion programs for persons at risk of becoming youth offenders; and (E) Outreach by the District to committed youth offenders in District or federal care or custody to identify needs for services and plan for reentry. (3) In developing the strategic plan required by this subsection, the Mayor shall consult with community-based organizations with expertise in juvenile justice issues and justice system-involved young adults 18 through 24 years of age. (b) Repealed. (c) The federal Bureau of Prisons is authorized to provide facilities, treatment, and services for the developmentally appropriate care, custody, subsistence, education, workforce training, segregation, and protection of youth offenders convicted of felony offenses under District law and in federal care or custody.",
+        "governed_bytes_sha256": "774cfe11e60f2894e25f8efac3376646f8979243860b4dca1431967bbc3eacfc"
+      }
+    },
+    {
+      "original_source_object_sha256": "ff97f9225009e371938e54fb6f2d259c324a36d74f3ffc534618f9b39e0ca6d0",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/6688e09a313054b50a4e38afda9e973526913a7dc2ca1e97c981fb7026067e1c.0000000.json",
+            "sha256": "5dfdc7e72fb9ef5a20c1048873533597672fcc9e979c8dbc8a21b01d53575125",
+            "start_character": 0,
+            "end_character": 6401
+          }
+        ],
+        "utf8_sha256": "6688e09a313054b50a4e38afda9e973526913a7dc2ca1e97c981fb7026067e1c",
+        "total_characters": 6401,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "7614a9f8132c6c402922726f3982a74e7434cb0a9156493d6785b915289f56f7",
+      "source": {
+        "source_id": "clerk:119:1:271",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll271.xml",
+        "text_version": null,
+        "raw_sha256": "ea078629f8c5917060805a0199e5c139ca02037b397c1f024606781e457a165e",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "271",
+          "legis-num": "H R 5140",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "16-Sep-2025",
+          "action-time": "5:14 PM",
+          "vote-desc": "To lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "217",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "8",
+            "nay-total": "202",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "b90662c86c04e9729e2e893810a85d5a500be6f45d76408bf9f442987b532bf7"
+      }
+    },
+    {
+      "original_source_object_sha256": "489548ac138d6bae48441233397919af5fcf9fdb6d3942fdd3f444f422ef1477",
+      "source": {
+        "source_id": "govinfo:hr5140eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5140eh/html/BILLS-119hr5140eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "d703d5e1662a2bca00cbf0ec6bdc5bc7fb44e9e355c594eb2dd6b684cbbd3ea1",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5140 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5140 _______________________________________________________________________ AN ACT To lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. LOWERING AGE AT WHICH A MINOR MAY BE TRIED AS ADULT FOR CERTAIN CRIMINAL OFFENSES IN DISTRICT OF COLUMBIA. (a) Lowering Age at Which Minor May Be Excluded From Jurisdiction of Family Court.--Section 16-2301, District of Columbia Official Code, is amended-- (1) in paragraph (3), by striking ``sixteen years of age'' and inserting ``fourteen years of age''; and (2) in paragraph (3) in the matter following subparagraph (C), by striking ``the age of sixteen'' and inserting ``the age of fourteen''. (b) Lowering Age at Which Minor May Be Transferred to Criminal Proceeding.--Section 16-2307(a), District of Columbia Official Code, is amended-- (1) in paragraph (1), by striking ``fifteen'' and inserting ``fourteen''; and (2) in paragraph (2), by striking ``sixteen'' and inserting ``fourteen''. (c) Applicability.--This Act, and the amendments made by this Act, shall apply with respect to criminal offenses committed on and after the date of the enactment of this Act. Passed the House of Representatives September 16, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5140 _______________________________________________________________________ AN ACT To lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age.",
+        "governed_bytes_sha256": "14e415f35a4ac4e5d9056704b837463cd98c55f10e6fab02076f476a7ff67781"
+      }
+    },
+    {
+      "original_source_object_sha256": "49974d3b792b986b58a7440a61c35fff41a6226e3891e54d4d450c1fe88e4b24",
+      "source": {
+        "source_id": "dc-council:code-16-2301-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2301.html",
+        "text_version": "D.C. Council code, complete operative section 16-2301; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "388d3706a8f922860ec6f837bba47a38f7fff691fb860d322ff92b29178b1ecf",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/dcbece9761fa0a2cce4fb4ce5a535d9cf28d5cb26bb6ba275a601896c66fa515.0000000.json",
+              "sha256": "dcb6bc2a2d39abccc7c40670054eee2b52381f229bd0c3bd9333bae3c713db38",
+              "start_character": 0,
+              "end_character": 17203
+            }
+          ],
+          "utf8_sha256": "dcbece9761fa0a2cce4fb4ce5a535d9cf28d5cb26bb6ba275a601896c66fa515",
+          "total_characters": 17203,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "daf08716c70ad7c5574c88b9df4043a09da0695c678c2301715ce900e4f2fcdb"
+      }
+    },
+    {
+      "original_source_object_sha256": "6db59c111b567d747a427d8d6897162433e42ce9181e263cb8c9877f5ad4ef44",
+      "source": {
+        "source_id": "dc-council:code-16-2307-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2307.html",
+        "text_version": "D.C. Council code, complete operative section 16-2307; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "a9c38db6e2cbc3d4bd836caf0a7817201b1bdfba82898113a2c23ef75af897d7",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/0d4ddc6a493d11acc6c6c9f3855f680592b16e7abeb46d89d1974bed7ca89682.0000000.json",
+              "sha256": "04c6c9bfa8e40663c7ccd1562d68de854437162087173e4f7c3697a1e8a9e963",
+              "start_character": 0,
+              "end_character": 7418
+            }
+          ],
+          "utf8_sha256": "0d4ddc6a493d11acc6c6c9f3855f680592b16e7abeb46d89d1974bed7ca89682",
+          "total_characters": 7418,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "27d26aaae060d94d536506cc7d5b7efc14e1c8203d47970b6dac96e968a73a76"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 17
+  }
+}

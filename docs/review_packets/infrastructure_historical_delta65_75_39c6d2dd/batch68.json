@@ -1,0 +1,409 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 68,
+  "exact_committed_head": "fbedd7a0418d750cba3bd1477c456c78592c7aab",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "fbedd7a0418d750cba3bd1477c456c78592c7aab",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/membership_review.json",
+      "git_blob": "31b75cb6b6f9a661e1d0cc4010494ebaacc6d41a",
+      "git_bytes_sha256": "e7ac1e4caf463263c940a658578a4e8d7a29dc77fa8120e5f5c994191b5e6848"
+    },
+    "sources": {
+      "head": "fbedd7a0418d750cba3bd1477c456c78592c7aab",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/sources.json",
+      "git_blob": "0d645519986c4061e50bb0b901a4fa0bd857cf7d",
+      "git_bytes_sha256": "aea7c46cb6ed2cadd405070e3331e092366f47f2cc7e5de625410043ca32b141"
+    },
+    "screening": {
+      "head": "fbedd7a0418d750cba3bd1477c456c78592c7aab",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/screening_receipt.json",
+      "git_blob": "ec1f731a5742071771e969f81ffd22b19be8dcb5",
+      "git_bytes_sha256": "6f6e0e7fbd3bb74dcad708c96400690817c711a00ca6e4514e6fd42562dfb0ca"
+    },
+    "screening_units": {
+      "head": "fbedd7a0418d750cba3bd1477c456c78592c7aab",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/screening_units_receipt.json",
+      "git_blob": "06162f452c9359258e1e12bce251f9393fd8bf1a",
+      "git_bytes_sha256": "000c6d57a5d5f9363e4537378d250e3c2fd3c394a4ebd411afe764bd58fe5348"
+    },
+    "validation": {
+      "head": "fbedd7a0418d750cba3bd1477c456c78592c7aab",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/validation_receipt.json",
+      "git_blob": "440bdda707e5eb28cbf0d63c25ae8245458712c3",
+      "git_bytes_sha256": "6d839381b826f83708da1e6b30c82127eaefd2fd2ef4cbae3fa02748670cf6a0"
+    }
+  },
+  "original_membership_review_sha256": "d370a9e2350eced3408904d55a2e0faed8aa6a8b53ada770d07582cd205250da",
+  "new_screened_ids": [
+    "house:119:2:22",
+    "house:119:2:23",
+    "house:119:2:24",
+    "house:119:2:25",
+    "house:119:2:26"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "9d0074d8144e206dea26b27b20c1ebf265a5e9c32025139eefd5170c1935a5be",
+      "record": {
+        "action_id": "house:119:2:22",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.4593. It remains non-counting procedural context and does not establish support or opposition to any underlying water-product or appropriations mechanism. No substantive motion body is interpreted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:22",
+            "url": "https://clerk.house.gov/evs/2026/roll022.xml",
+            "raw_sha256": "525b029ca2107fd3987761e0cc9491512b3bc949f29c02fa6dc7513da12802c3",
+            "governed_bytes_sha256": "d5cd640febba1087ade4960b11601d949a96993b7b05e844f1bb3f42b00a3e14"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d825342ceecec9783720a179533e49cabbedb99a98964e0e755edef6c41cfc24",
+      "record": {
+        "action_id": "house:119:2:23",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.4593 EH changes the statutory showerhead definition to the meaning in ASME A112.18.1-2024, excludes safety shower showerheads and requires necessary conforming DOE regulations within 180 days after enactment. The incorporated ASME definition has not been inspected; retained consumer-product and conservation definitions alone cannot establish the technical change, multiple-nozzle treatment, flow allowance, savings or appliance/infrastructure taxonomy relationship. House passage is not enactment. Preserve this whole product-definition choice pending material incorporated-standard and domain review; no automatic water-use, cost or current-compliance outcome is asserted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:23",
+            "url": "https://clerk.house.gov/evs/2026/roll023.xml",
+            "raw_sha256": "229c8dc2ef42d4706e72568821eee288537a90dbbdb6280a2b00256d30fa3d18",
+            "governed_bytes_sha256": "e60b680904c7373c3aeac9d083deb437dbb967da02aa11d2dab973f6474198cb"
+          },
+          {
+            "source_id": "govinfo:hr4593eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4593eh/html/BILLS-119hr4593eh.htm",
+            "raw_sha256": "12e46bf723e77d029b584188a095720a1352bc55812f61ed4a55bc49ce25d59e",
+            "governed_bytes_sha256": "29b0df908f80e4f0387cd2a6832c73089152831f0bddab0f88e1080b85f1d741"
+          },
+          {
+            "source_id": "govinfo:42usc6291-material161",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6291.htm",
+            "raw_sha256": "5aba3334162384fa233dce94acde722ed325ce2a73d36958a85c60d746d6e587",
+            "governed_bytes_sha256": "93f114b6834828d18add27bf7db0b55ecf61afb6656860dac30c11370afece97"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4593eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4593 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 4593 _______________________________________________________________________ AN ACT To amend the Energy Policy and Conservation Act to revise the definition of showerhead. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Saving Homeowners from Overregulation With Exceptional Rinsing Act'' or the ``SHOWER Act''. SEC. 2. REVISED DEFINITION OF SHOWERHEAD. (a) In General.--Section 321(31)(D) of the Energy Policy and Conservation Act (42 U.S.C. 6291(31)(D)) is amended to read as follows: ``(D) The term `showerhead' has the meaning given such term in ASME A112.18.1-2024, except such term does not include safety shower showerheads.''. (b) Revisions to Regulations.--Not later than 180 days after the date of enactment of this Act, the Secretary of Energy shall promulgate such revisions to regulations as may be necessary to conform such regulations to the definition of showerhead in section 321(31)(D) of the Energy Policy and Conservation Act, as amended by subsection (a) of this section. Passed the House of Representatives January 13, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 4593 _______________________________________________________________________ AN ACT To amend the Energy Policy and Conservation Act to revise the definition of showerhead."
+          },
+          {
+            "source_id": "govinfo:42usc6291-material161",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(1) The term \"consumer product\" means any article (other than an automobile, as defined in section 32901(a)(3) of title 49) of a type— (A) which in operation consumes, or is designed to consume, energy or, with respect to showerheads, faucets, water closets, and urinals, water; and (B) which, to any significant extent, is distributed in commerce for personal use or consumption by individuals; without regard to whether such article of such type is in fact distributed in commerce for personal use or consumption by an individual, except that such term includes fluorescent lamp ballasts, general service fluorescent lamps, incandescent reflector lamps, showerheads, faucets, water closets, and urinals distributed in commerce for personal or commercial use or consumption. (2) The term \"covered product\" means a consumer product of a type specified in section 6292 of this title. (3) The term \"energy\" means electricity, or fossil fuels. The Secretary may, by rule, include other fuels within the meaning of the term \"energy\" if he determines that such inclusion is necessary or appropriate to carry out the purposes of this chapter. (4) The term \"energy use\" means the quantity of energy directly consumed by a consumer product at point of use, determined in accordance with test procedures under section 6293 of this title. (5) The term \"energy efficiency\" means the ratio of the useful output of services from a consumer product to the energy use of such product, determined in accordance with test procedures under section 6293 of this title. (6) The term \"energy conservation standard\" means— (A) a performance standard which prescribes a minimum level of energy efficiency or a maximum quantity of energy use, or, in the case of showerheads, faucets, water closets, and urinals, water use, for a covered product, determined in accordance with test procedures prescribed under section 6293 of this title; or (B) a design requirement for the products specified in paragraphs (6), (7), (8), (10), (15), (16), (17), and (20) of section 6292(a) of this title; and includes any other requirements which the Secretary may prescribe under section 6295(r) of this title. (7) The term \"estimated annual operating cost\" means the aggregate retail cost of the energy which is likely to be consumed annually, and in the case of showerheads, faucets, water closets, and urinals, the aggregate retail cost of water and wastewater treatment services likely to be incurred annually, in representative use of a consumer product, determined in accordance with section 6293 of this title. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "fbcde33cce751502affd098b7e9e4f39f17bccc0114cc5ede4d76f9fcbc9594e",
+      "record": {
+        "action_id": "house:119:2:24",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the ordering of the previous question on H.Res.992. It remains non-counting procedural context and does not establish support or opposition to any underlying water-product or appropriations mechanism. No substantive motion body is interpreted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:24",
+            "url": "https://clerk.house.gov/evs/2026/roll024.xml",
+            "raw_sha256": "bec4a8db4ab99caf29c915731d2c16d7d23f36d89948f8416f3404bb1c52bb69",
+            "governed_bytes_sha256": "754f9f033b274ba5d15ca1c84ef63c848585e624dbdb7aeadec07db6d48bd68e"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4c7f3e0f523ec01f4901c91c461430027fbfb17886c5b0fceee53745abad567a",
+      "record": {
+        "action_id": "house:119:2:25",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete H.Res.992 EH provides structured consideration of H.R.7006: debate, waivers, only separately offered printed amendments, reporting amendments actually adopted, previous-question/recommittal rules and permission for the Appropriations chair to insert explanatory material by January16. It does not itself deem a substitute or an offered amendment adopted, enact an appropriation or endorse a component. This exact adoption remains non-counting procedural context; the separate substantive amendment and final-passage questions require their own evidence.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:25",
+            "url": "https://clerk.house.gov/evs/2026/roll025.xml",
+            "raw_sha256": "9e9ea91f6ddbc389e870c8771f443ecd3b232a10a573e1aa01c1f9dd36816cfd",
+            "governed_bytes_sha256": "fefd8e619b9bf09e8e862d88ac49f5277a7a56754b34e6ea9afae9f3bf37bfa0"
+          },
+          {
+            "source_id": "govinfo:hres992eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres992eh/html/BILLS-119hres992eh.htm",
+            "raw_sha256": "584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e",
+            "governed_bytes_sha256": "0cde268b28deea2b8dd3d4b35e66b44a7defdbe8a32257be184a6cb4481c18cf"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres992eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 992 Engrossed in House (EH)] <DOC> H. Res. 992 In the House of Representatives, U. S., January 14, 2026. Resolved, That at any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 7006) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. The bill shall be considered as read. All points of order against provisions in the bill are waived. Clause 2(e) of rule XXI shall not apply during consideration of the bill. No amendment to the bill shall be in order except those printed in the report of the Committee on Rules accompanying this resolution. Each such amendment may be offered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. All points of order against such amendments are waived. At the conclusion of consideration of the bill for amendment the Committee shall rise and report the bill to the House with such amendments as may have been adopted. The previous question shall be considered as ordered on the bill and amendments thereto to final passage without intervening motion except one motion to recommit. Sec. 2. The chair of the Committee on Appropriations may insert in the Congressional Record not later than January 16, 2026, such material as he may deem explanatory of H.R. 7006. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6ab9885d61578cd8b20b54b5f437309b6f11090a36d250ed03ff8ace90794cca",
+      "record": {
+        "action_id": "house:119:2:26",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete Roy amendment1 imposes two separate fiscal2026 obligation/expenditure ceilings of $46,241,924 each, for the DC Circuit and DC District Court, and a distinct prohibition on this Act funds for salaries/expenses of the staff of Judges Boasberg and Boardman. The division-specific reference rule is retained. The bound Judiciary-title context includes general operations, limited space alteration/furnishings and security systems, but the exact amendment sets aggregate institutional ceilings and a named-staff funding prohibition; it does not identify or change a construction, transport, energy, communications or technical-research program. Proposed Infrastructure exclusion does not deny incidental facilities effects or certify a percentage cut, current account allocation, judges own salary cut, court closure, jurisdiction change or constitutional outcome. Recorded rejection163–257, one Present and16NotVoting controls over the earlier voice appearance; this failed amendment is not inserted into final passage. No motive or consequence of litigation is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:26",
+            "url": "https://clerk.house.gov/evs/2026/roll026.xml",
+            "raw_sha256": "75db2e6ff5d7403aa3754cf792efbfbf833994a9b3e63f8e3dd2e959b989d958",
+            "governed_bytes_sha256": "0231dfab7420319b55eacece206706113763801fa6124ce6878505531b2514f5"
+          },
+          {
+            "source_id": "immigration:session2-roll26-initial174",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+            "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+            "governed_bytes_sha256": "83c0448ee59a07fdbea085f642856823e4bd88c66b40e97dcda95a84cd061a19"
+          },
+          {
+            "source_id": "immigration:session2-roll26-recorded174",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+            "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+            "governed_bytes_sha256": "ca5baffae90c745269311ce0b20bfb4e972c994b942c061fb3c494af856fc2b1"
+          },
+          {
+            "source_id": "immigration:session2-roll26-report174",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt445/html/CRPT-119hrpt445.htm",
+            "raw_sha256": "c8df027547a47d3aeb8d3ad2006155d2597775c62b4f18ed0e4f2ec79715794f",
+            "governed_bytes_sha256": "63755f86cd1cad3a91381b65d3a211aa2b443cfea5c48c4e86e3d11176b67df8"
+          },
+          {
+            "source_id": "govinfo:hr7006ih-217-scope",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/html/BILLS-119hr7006ih.htm",
+            "raw_sha256": "1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65",
+            "governed_bytes_sha256": "b77079d96b68c41e1c61c01b8e034c1e5aacd6f9014da2cf6ec7d16a16f4d6d3"
+          },
+          {
+            "source_id": "govinfo:hres992eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres992eh/html/BILLS-119hres992eh.htm",
+            "raw_sha256": "584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e",
+            "governed_bytes_sha256": "0cde268b28deea2b8dd3d4b35e66b44a7defdbe8a32257be184a6cb4481c18cf"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:session2-roll26-initial174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MR . ROY \nThe Acting CHAIR. It is now in order \nto consider amendment No. 1 printed in \nHouse Report 119–445. \nMr. ROY. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of division A (before the short \ntitle), insert the following: \nSEC. ll. Not more than $46,241,924 of the \namounts made available to the U.S. Court of \nAppeals for the District of Columbia Circuit \nin this division may be obligated or expended \nin fiscal year 2026. Not more than $46,241,924 \nof the amounts made available to the U.S. \nDistrict Court for the District of Columbia \nin this division may be obligated or expended \nin fiscal year 2026. \nS\nEC. ll. None of the funds made available \nby this Act may be obligated or expended for \nthe salary and expenses for the staff of Judge \nJames E. Boasberg of the United States Dis-\ntrict Court of the District of Columbia or \nJudge Deborah L. Boardman of the United \nStates District Court for the District of \nMaryland. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Texas (Mr. R\nOY). \nThe question was taken; and the Act-\ning Chair announced that the ayes ap-\npeared to have it. \nMr. HOYER. Mr. Chair, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Texas will be post-\nponed."
+          },
+          {
+            "source_id": "immigration:session2-roll26-recorded174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MR . ROY \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 1, printed in \nHouse Report 119–445, offered by the \ngentleman from Texas (Mr. R\nOY), on \nwhich further proceedings were post-\nponed and on which the ayes prevailed \nby voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe vote was taken by electronic de-\nvice, and there were—ayes 163, noes 257, \nanswered ‘‘present’’ 1, not voting 16, as \nfollows: \n[Roll No. 26]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "immigration:session2-roll26-report174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "1. An Amendment To Be Offered by Representative Roy of Texas or His Designee, Debatable for 10 Minutes At the end of division A (before the short title), insert the following: Sec. __. Not more than $46,241,924 of the amounts made available to the U.S. Court of Appeals for the District of Columbia Circuit in this division may be obligated or expended in fiscal year 2026. Not more than $46,241,924 of the amounts made available to the U.S. District Court for the District of Columbia in this division may be obligated or expended in fiscal year 2026. Sec. __. None of the funds made available by this Act may be obligated or expended for the salary and expenses for the staff of Judge James E. Boasberg of the United States District Court of the District of Columbia or Judge Deborah L. Boardman of the United States District Court for the District of Maryland. "
+          },
+          {
+            "source_id": "govinfo:hr7006ih-217-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/655f50d8d3745f3cfeb6acac922aaf457548451546ce0675e748ba364ee62682.0000000.json",
+                  "sha256": "ee522582ac61490303e1d3e5c8d29cd2787a13048dd888df9cef4f29a3793ddb",
+                  "start_character": 0,
+                  "end_character": 10571
+                }
+              ],
+              "utf8_sha256": "655f50d8d3745f3cfeb6acac922aaf457548451546ce0675e748ba364ee62682",
+              "total_characters": 10571,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres992eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 992 Engrossed in House (EH)] <DOC> H. Res. 992 In the House of Representatives, U. S., January 14, 2026. Resolved, That at any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 7006) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. The bill shall be considered as read. All points of order against provisions in the bill are waived. Clause 2(e) of rule XXI shall not apply during consideration of the bill. No amendment to the bill shall be in order except those printed in the report of the Committee on Rules accompanying this resolution. Each such amendment may be offered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. All points of order against such amendments are waived. At the conclusion of consideration of the bill for amendment the Committee shall rise and report the bill to the House with such amendments as may have been adopted. The previous question shall be considered as ordered on the bill and amendments thereto to final passage without intervening motion except one motion to recommit. Sec. 2. The chair of the Committee on Appropriations may insert in the Congressional Record not later than January 16, 2026, such material as he may deem explanatory of H.R. 7006. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:22",
+      "original_source_object_sha256": "310cd9789246a0b7117edc5a1964747dcb55c94237332b3d372b4637366fd7ea",
+      "path": "source_objects/310cd9789246a0b7117edc5a1964747dcb55c94237332b3d372b4637366fd7ea.json"
+    },
+    {
+      "source_id": "clerk:119:2:23",
+      "original_source_object_sha256": "a9ec32937c719b337bf96bcf6644080dfd3c3dc780cd21289e48925b674a8907",
+      "path": "source_objects/a9ec32937c719b337bf96bcf6644080dfd3c3dc780cd21289e48925b674a8907.json"
+    },
+    {
+      "source_id": "clerk:119:2:24",
+      "original_source_object_sha256": "33662403fbf17b29e7bb48e9b0cc8153b78fb32b536831c3805f7c7f45842387",
+      "path": "source_objects/33662403fbf17b29e7bb48e9b0cc8153b78fb32b536831c3805f7c7f45842387.json"
+    },
+    {
+      "source_id": "clerk:119:2:25",
+      "original_source_object_sha256": "936973e37189c7cf9c78bc606cb8e65df851ef283e0a1fbfd8cc2df668ad4203",
+      "path": "source_objects/936973e37189c7cf9c78bc606cb8e65df851ef283e0a1fbfd8cc2df668ad4203.json"
+    },
+    {
+      "source_id": "clerk:119:2:26",
+      "original_source_object_sha256": "2f3804408b8fc26b237c56e34cf8be58b5d4dc6fa0f98495e49c6ac5c8cafa62",
+      "path": "source_objects/2f3804408b8fc26b237c56e34cf8be58b5d4dc6fa0f98495e49c6ac5c8cafa62.json"
+    },
+    {
+      "source_id": "govinfo:42usc6291-material161",
+      "original_source_object_sha256": "fa53b67499ff2ce20b378e74355b5165be48337fde6ed7603c60a4ede433598a",
+      "path": "source_objects/fa53b67499ff2ce20b378e74355b5165be48337fde6ed7603c60a4ede433598a.json"
+    },
+    {
+      "source_id": "govinfo:hr4593eh",
+      "original_source_object_sha256": "9a419a4811e56ffef26620a19d44a3fb2ec2924eecaf9840dcad434e66635792",
+      "path": "source_objects/9a419a4811e56ffef26620a19d44a3fb2ec2924eecaf9840dcad434e66635792.json"
+    },
+    {
+      "source_id": "govinfo:hr7006ih-217-scope",
+      "original_source_object_sha256": "77f924d0d7535b371dde1ce6acc8bda5b45976cd52927451ed42c29ce222a56f",
+      "path": "source_objects/77f924d0d7535b371dde1ce6acc8bda5b45976cd52927451ed42c29ce222a56f.json"
+    },
+    {
+      "source_id": "govinfo:hres992eh",
+      "original_source_object_sha256": "9e7cd1bb52c73bc002e95c641f9e7432336caf4a5802aceb5f37039b6ad75f78",
+      "path": "source_objects/9e7cd1bb52c73bc002e95c641f9e7432336caf4a5802aceb5f37039b6ad75f78.json"
+    },
+    {
+      "source_id": "immigration:session2-roll26-initial174",
+      "original_source_object_sha256": "62b3c43059f493e52744b89d49654c38699b50cc22fd7967e558788c57a96a92",
+      "path": "source_objects/62b3c43059f493e52744b89d49654c38699b50cc22fd7967e558788c57a96a92.json"
+    },
+    {
+      "source_id": "immigration:session2-roll26-recorded174",
+      "original_source_object_sha256": "2db766cd730adb213ad78cfe8eefe3d03903bd870e3e335740f835b9cd0c082b",
+      "path": "source_objects/2db766cd730adb213ad78cfe8eefe3d03903bd870e3e335740f835b9cd0c082b.json"
+    },
+    {
+      "source_id": "immigration:session2-roll26-report174",
+      "original_source_object_sha256": "0685acd4600072849a152ba9e2f04ba2c3e4f3f7b17b56440725ff164ffffa5d",
+      "path": "source_objects/0685acd4600072849a152ba9e2f04ba2c3e4f3f7b17b56440725ff164ffffa5d.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr4593eh",
+      "governed_length": 1540,
+      "review_extent": "Complete captured source text read; no incorporated ASME standard or full7006package clearance implied"
+    },
+    {
+      "source_id": "govinfo:42usc6291-material161",
+      "governed_length": 2578,
+      "review_extent": "Complete captured source text read; no incorporated ASME standard or full7006package clearance implied"
+    },
+    {
+      "source_id": "govinfo:hres992eh",
+      "governed_length": 2306,
+      "review_extent": "Complete captured source text read; no incorporated ASME standard or full7006package clearance implied"
+    },
+    {
+      "source_id": "immigration:session2-roll26-initial174",
+      "governed_length": 1480,
+      "review_extent": "Complete captured source text read; no incorporated ASME standard or full7006package clearance implied"
+    },
+    {
+      "source_id": "immigration:session2-roll26-recorded174",
+      "governed_length": 734,
+      "review_extent": "Complete captured source text read; no incorporated ASME standard or full7006package clearance implied"
+    },
+    {
+      "source_id": "immigration:session2-roll26-report174",
+      "governed_length": 864,
+      "review_extent": "Complete captured source text read; no incorporated ASME standard or full7006package clearance implied"
+    },
+    {
+      "source_id": "govinfo:hr7006ih-217-scope",
+      "governed_length": 10571,
+      "review_extent": "Complete captured source text read; no incorporated ASME standard or full7006package clearance implied"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_governing_rule_units_read": 1,
+    "complete_own_operative_amendments_read": 1,
+    "complete_referenced_Judiciary_title_contexts_read": 1,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:22",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:23",
+        "evidence_unit": "whole_definition_bill_with_unreviewed_external_standard",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:24",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:25",
+        "evidence_unit": "complete_rule_without_deemed_substantive_change",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:26",
+        "evidence_unit": "complete_amendment_and_recorded_rejection_with_title_context",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}

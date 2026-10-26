@@ -1,0 +1,35 @@
+{
+  "action_id": "house:119:2:260",
+  "kind": "literal_reference_anomaly_requires_content_bound_review_not_silent_correction",
+  "offering_source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+  "offering_source_object_sha256": "83d17ddf325125730884297642307f23f9cfc64d8aadf4d1bb6cb569b1398085",
+  "offering_extent": {
+    "start": 28497,
+    "end": 28559,
+    "total": 46475
+  },
+  "offering_passage": "subchapter III of \nchapter 31 of title 40, United States Code.",
+  "dated_code_capture": "40usc31_capture.json",
+  "dated_code_raw_sha256": "6072d065fd726af7daedaa0ea6c632feeaa295cc208e6220dbf00cfd751dd4bd",
+  "dated_code_extent": {
+    "start": 659,
+    "end": 1346,
+    "total": 79046
+  },
+  "dated_code_passage": "SUBCHAPTER II—ACQUIRING LAND 3111. Approval of sufficiency of title prior to acquisition. 3112. Federal jurisdiction. 3113. Acquisition by condemnation. 3114. Declaration of taking. 3115. Irrevocable commitment of Federal Government to pay ultimate award when fixed. 3116. Interest as part of just compensation. 3117. Exclusion of certain property by stipulation of Attorney General. 3118. Right of taking as addition to existing rights. SUBCHAPTER III—BONDS 3131. Bonds of contractors of public buildings or works. 3132. Alternatives to payment bonds provided by Federal Acquisition Regulation. 3133. Rights of persons furnishing labor or material. 3134. Waivers for certain contracts. ",
+  "finding": "The printed offering cites subchapterIIIof40chapter31, which the datedCode labelsBONDS. The specifically named3114declaration-of-taking provision lies in subchapterIIACQUIRINGLAND. These are not silently substituted for each other.",
+  "proposed_handling": "Preserve printedIIIand independent3114reference literally, state the anomaly, and hold any interpretation requiring resolution of the legal interaction or intended correction. Do not infer invalidity/enforceability or present property/legal outcomes.",
+  "preflight_scope_correction": "Stage2 intended_extent callingIIIcondemnation was an author locator-description error. Originalpreflight is retained as acquisition history; actual selected reading distinguishesIIfromIII. No source bytes altered.",
+  "source_is_changed": false,
+  "canonical_state_changed": false,
+  "resolved_intended_citation": false,
+  "semantic_acceptance": false,
+  "original_PDF_visual_confirmation": {
+    "capture": "crec20260721house_capture.json",
+    "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+    "one_based_pdf_page": 307,
+    "printed_page": "H4991",
+    "literal_III_confirmed": true,
+    "rendered_image_sha256": "3fa2f01531c45685083827b819505434e14dd8ab3440e41764383f83eb1f632f"
+  }
+}

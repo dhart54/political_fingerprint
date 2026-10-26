@@ -1,0 +1,45 @@
+{
+  "kind": "owner_case_application149_precommit_validation",
+  "base_commit": "3be2e4df9b7777a8c97b04c2938239b541f3fa17",
+  "application_tests": {
+    "passed": 15,
+    "negative_mutations": 38,
+    "seconds": 49.226
+  },
+  "semantic_and_reuse_tests": {
+    "passed": 38,
+    "seconds": 1.287
+  },
+  "ci_and_shared_contract_tests": {
+    "passed": 23,
+    "seconds": 0.334
+  },
+  "canonical_semantic_IR": "passed",
+  "standalone_application": "passed",
+  "preserved_files": 287,
+  "fixed_output_files": 21,
+  "output_manifest_object_sha256": "8df44a41ad694fd34e56d8a8f9d887dcba60bbd6b2b3769a10381c0670076785",
+  "preservation_manifest_object_sha256": "ca14b52f7a4c983b1ea3e5d16bb8f56cf488c4de4cf46002be5158aeaaa50260",
+  "accepted_meanings": 9,
+  "issue_admissions": 7,
+  "exclusions": 3,
+  "unchanged_other_records_and_rows": 666,
+  "source_objects": 1662,
+  "new_preserved_objects": 41,
+  "source_holds": 6,
+  "old70_and_VA147_148_accepted": false,
+  "fresh_and_no_write_json_type_strict": true,
+  "input_and_file_mtimes_preserved_by_replay": true,
+  "independent_final_review_pending": true,
+  "commit_and_push_pending": true,
+  "hosted_checks_pending": true,
+  "production_write": false,
+  "publication": false,
+  "review_attribution": "Owner checks above; provisional independent audit is not final exact-target clearance.",
+  "corrected_initial_local_failures": [
+    "Missing readable input fingerprint; corrected to all12 actual baseline files before materialization.",
+    "Test fixture sought integer in membership row; corrected to core.roll; final15 tests pass.",
+    "Guessed CI module unavailable; actual test_ci_workflow_preservation module passes."
+  ],
+  "record_sha256": "4897bb5c56856e80df57679cb4f44f5651b546661944ff2911deae223392715d"
+}

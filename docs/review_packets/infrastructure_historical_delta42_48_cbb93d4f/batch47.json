@@ -1,0 +1,887 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 47,
+  "exact_committed_head": "cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea, never current batch50 working-tree bytes; zero source acquisition.",
+  "scope": "35 new identities across seven batches plus the prior roll226 correction/preimage binding in batch43. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim and batch43roll226correction source_extent/qualification. Whole CMS letter, BLM plans/maps, NDAA/CR and other partial reviews remain incomplete as recorded. Partial offsets are not full-body clearance. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch47_20260916/membership_review.json",
+      "git_blob": "bc52008008e4841582c16f0f567755c57be4d85a",
+      "git_bytes_sha256": "fe2d2faf2cb47671a95fd9fdf6c5b68b98626625dfe7567d541d6b9c29d9b9cb"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch47_20260916/sources.json",
+      "git_blob": "ca1e02df988cfb4f1e8c12ea428d9e2327620d50",
+      "git_bytes_sha256": "7f6769da901684e35a329f4eeb956fc91e8c0fc6eaa3fb6e9f9c73a84fb33b5c"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch47_20260916/screening_receipt.json",
+      "git_blob": "059a1810e6ba11455570c27a7e2398e4eb40a4a5",
+      "git_bytes_sha256": "8746a569281d453dec84c36ad26f3831b7b6fa50aaa01e091bb8d549b7c57979"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch47_20260916/screening_units_receipt.json",
+      "git_blob": "5ccad2a6ea54079d6a08aa3c1848ce41176f0587",
+      "git_bytes_sha256": "05ce2a1ad83f246e6061c3972abccbf73489aa73d7495b22df3e520442a5dd04"
+    }
+  },
+  "cumulative_membership_review_sha256": "ad3366bdc88552988a26e994f76c46f6a80549ca8f6faaa738f5b485003558d9",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/505a1e099748d32de472266d0e2c8492432b1b5d4f13551aeafb86c67e687880.0000000.json",
+        "sha256": "b9205bd5d1db3abb8f971ab4e1be9165356e3f02777cb79a61b9f26fe6ae4d3d",
+        "start_character": 0,
+        "end_character": 28941
+      }
+    ],
+    "utf8_sha256": "505a1e099748d32de472266d0e2c8492432b1b5d4f13551aeafb86c67e687880",
+    "total_characters": 28941,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/15513665f3d77e89e11dd2e0297c7ccfd45fd7b00663a84fc13aab783c9d4cbb.0000000.json",
+        "sha256": "af7357c223f48c5fd9e9687fadf39fb10836f92790174daba5184e8d95da5a6a",
+        "start_character": 0,
+        "end_character": 78018
+      }
+    ],
+    "utf8_sha256": "15513665f3d77e89e11dd2e0297c7ccfd45fd7b00663a84fc13aab783c9d4cbb",
+    "total_characters": 78018,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:272",
+    "house:119:1:273",
+    "house:119:1:274",
+    "house:119:1:275",
+    "house:119:1:276"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hres722eh",
+      "governed_length": 1707,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "govinfo:hres707eh",
+      "governed_length": 7661,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "govinfo:hr5125eh",
+      "governed_length": 2644,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "dc-council:code-1-204.33-20250916",
+      "governed_length": 3507,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "dc-council:code-1-204.34-20250916",
+      "governed_length": 6502,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "dc-council:code-11-1528-20250916",
+      "governed_length": 1626,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "govinfo:hr5143eh",
+      "governed_length": 3525,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "dc-council:code-5-365.01-20250916",
+      "governed_length": 2977,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "dc-council:code-5-365.02-20250916",
+      "governed_length": 3584,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    },
+    {
+      "source_id": "dc-council:code-5-133.17-20250916",
+      "governed_length": 3606,
+      "review_extent": "Complete retained source read; datedSeptember16DCbaselines do not establish whole current legal regime"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_rule_bodies_read": 2,
+    "complete_final_bills_read": 2,
+    "complete_dated_material_DCstatutory_units_read": 6,
+    "exact_Clerk_procedural_questions_read": 3,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:272",
+        "evidence_unit": "complete_rule_or_bill_with_dated_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:273",
+        "evidence_unit": "complete_rule_or_bill_with_dated_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:274",
+        "evidence_unit": "complete_rule_or_bill_with_dated_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:275",
+        "evidence_unit": "complete_rule_or_bill_with_dated_material_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:276",
+        "evidence_unit": "exact_Clerk_question_only_noncounting_procedural_limit",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "prior_record_correction": null,
+  "records": [
+    {
+      "original_record_sha256": "222f972c80118914b6505328a315952386272a62969609ded80e1a432a75b470",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:272",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Previous-question vote controls H.Res.722consideration; it does not itself adopt the resolution, pass the continuing-appropriations bill, adopt a memorial resolution or change emergency procedures. Complete retained722and707remain separate sources for the later rule-adoption question. Non-counting procedural context; no underlying policy support/opposition or motive transferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:272",
+            "url": "https://clerk.house.gov/evs/2025/roll272.xml",
+            "raw_sha256": "80e481478e5fcf596cf7fb2356945128ff2d341e9f6f74a7053ae86913460081",
+            "governed_bytes_sha256": "bd40260e2487221cee49e5ee5c8e50b6af96427a3c43d7a6e3d076f543cd4336"
+          },
+          {
+            "source_id": "govinfo:hres722eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres722eh/html/BILLS-119hres722eh.htm",
+            "raw_sha256": "9137588a96f5b1172f5bbc375c2adae780d82ae5dfd7cbd6ec7bab1e6b1f10f4",
+            "governed_bytes_sha256": "50521ae9ef65890503614e964cb10a1dcd5524691c6b8a22f26f2adb50613298"
+          },
+          {
+            "source_id": "govinfo:hres707eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+            "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+            "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres722eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 722 Engrossed in House (EH)] <DOC> H. Res. 722 In the House of Representatives, U. S., September 17, 2025. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order without intervention of any point of order to consider in the House the resolution (H. Res. 719) honoring the life and legacy of Charles ``Charlie'' James Kirk. The resolution shall be considered as read. The previous question shall be considered as ordered on the resolution and preamble to adoption without intervening motion or demand for division of the question except one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees. Sec. 3. Sections 9, 10, and 11 of House Resolution 707, agreed to September 16, 2025, are each amended by striking ``March 31, 2026'' and inserting ``January 31, 2026''. Attest: Clerk."
+          },
+          {
+            "source_id": "govinfo:hres707eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1.0000000.json",
+                  "sha256": "c7f7368648d6aa814c1fa71604bcbc0c17af4f275e9f6e6d64c522ce73459499",
+                  "start_character": 0,
+                  "end_character": 7661
+                }
+              ],
+              "utf8_sha256": "ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1",
+              "total_characters": 7661,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "61cda96601e113d09e3b28b6cad68045f545f86eafa715153894b653794fb682",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:273",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete H.Res.722sets consideration/debate and recommittal rules for5371and consideration of719. Its section3actually replacesMarch31,2026withJanuary31,2026in707sections9/10/11, preserving that these govern specific earlier-rule periods and the specified national-emergency procedure rather than extending every707provision or adopting any target bill. These are non-counting chamber-process choices, not new appropriations, energy/digital-asset merits or enactment of719. The retained MassiePresentobservation is resolved nondirectional, not opposition, NotVoting or an unresolved vote; it contributes no authored directional meaning. No general emergency-status or motive inference.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:273",
+            "url": "https://clerk.house.gov/evs/2025/roll273.xml",
+            "raw_sha256": "8ff9472c975532f0c562edf6c6430e31b26b50a5254b864c3d214993156c7e8d",
+            "governed_bytes_sha256": "6c7a358639fd99b613d94d1d46949412daa55066f4d6495f37d81d924bc064b4"
+          },
+          {
+            "source_id": "govinfo:hres722eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres722eh/html/BILLS-119hres722eh.htm",
+            "raw_sha256": "9137588a96f5b1172f5bbc375c2adae780d82ae5dfd7cbd6ec7bab1e6b1f10f4",
+            "governed_bytes_sha256": "50521ae9ef65890503614e964cb10a1dcd5524691c6b8a22f26f2adb50613298"
+          },
+          {
+            "source_id": "govinfo:hres707eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+            "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+            "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres722eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 722 Engrossed in House (EH)] <DOC> H. Res. 722 In the House of Representatives, U. S., September 17, 2025. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order without intervention of any point of order to consider in the House the resolution (H. Res. 719) honoring the life and legacy of Charles ``Charlie'' James Kirk. The resolution shall be considered as read. The previous question shall be considered as ordered on the resolution and preamble to adoption without intervening motion or demand for division of the question except one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees. Sec. 3. Sections 9, 10, and 11 of House Resolution 707, agreed to September 16, 2025, are each amended by striking ``March 31, 2026'' and inserting ``January 31, 2026''. Attest: Clerk."
+          },
+          {
+            "source_id": "govinfo:hres707eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1.0000000.json",
+                  "sha256": "c7f7368648d6aa814c1fa71604bcbc0c17af4f275e9f6e6d64c522ce73459499",
+                  "start_character": 0,
+                  "end_character": 7661
+                }
+              ],
+              "utf8_sha256": "ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1",
+              "total_characters": 7661,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "7147bb612a19365cb20c6767b0ce260f3f646d5f899daf5c25704079e6f5d5e4",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:274",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R.5125EHterminates the JudicialNominationCommission by striking434, assigns chief-judge designation to the President, removes Commission-list/recommendation requirements from433, conforms the prior-membership qualification and deletes specified confidential-information sharing to that nomination body. Retained complete433/434and11-1528baselines preserve distinctions between the NominationCommission and judicialTenureCommission and between nomination and appointment; Senate advice/consent is not struck by the specified433(a)replacement. Remaining qualification/reappointment machinery is not described as wholly repealed. Changes apply to appointments on/afterenactment. Whole mechanism concerns judicial selection/governance without direct Infrastructure/Technology construction, procurement, technical-system, capacity or R&Daction. No actual appointment, court staffing/result, motive or current-law enactment inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:274",
+            "url": "https://clerk.house.gov/evs/2025/roll274.xml",
+            "raw_sha256": "d720654d7585239c2aeb99197c5acfdc00d3c5f78f2f86eeb6f407117edfce09",
+            "governed_bytes_sha256": "7038b3dcb97254b4bfc386f0d6167cd1ed5956d99d43e4c6e913164a3a99ed9a"
+          },
+          {
+            "source_id": "govinfo:hr5125eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5125eh/html/BILLS-119hr5125eh.htm",
+            "raw_sha256": "7fcfdfc8511520c71b6ca3762bf8b0af13f2fb8910545cd1b42fc80590a98eaf",
+            "governed_bytes_sha256": "d80795221d087e7297a9eb195b0ea151f20a31e3e2c140b06bcf39c5873ed94d"
+          },
+          {
+            "source_id": "dc-council:code-1-204.33-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/1-204.33.html",
+            "raw_sha256": "2e5de8e3b74475da5d5758a375a5bc9753bcc8775c026a3dc3ab7ea7a05a441c",
+            "governed_bytes_sha256": "02785cf4473be4ac13cbd2c96ca3b53909f76b85bff28aca9015284e2846ec8c"
+          },
+          {
+            "source_id": "dc-council:code-1-204.34-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/1-204.34.html",
+            "raw_sha256": "8c3364f835f0fd481325b6cfe12ea1eef6fa746a847ad5abaadcb968ae3c4726",
+            "governed_bytes_sha256": "f1c89e6e024c84334047a283fb6998e4521d66cbf7c4321c2f4a066a8202f979"
+          },
+          {
+            "source_id": "dc-council:code-11-1528-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1528.html",
+            "raw_sha256": "7b3da78949e0e29f8fa84a7f499b89db69a5f7508d43bb89409de84a6d126695",
+            "governed_bytes_sha256": "60ac94132374ebf0457221b6621757659645939a86c8df19910be1234da72c83"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5125eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5125 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5125 _______________________________________________________________________ AN ACT To amend the District of Columbia Home Rule Act to terminate the District of Columbia Judicial Nomination Commission, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``District of Columbia Judicial Nominations Reform Act of 2025''. SEC. 2. TERMINATION OF DISTRICT OF COLUMBIA JUDICIAL NOMINATION COMMISSION. (a) Termination.--The District of Columbia Home Rule Act is amended by striking section 434 (sec. 1-204.34, D.C. Official Code). (b) Conforming Amendments Relating to Appointment of Judges.-- (1) Designation of chief judges by president.--Section 431(b) of such Act (sec. 1-204.31(b), D.C. Official Code) is amended by striking ``the District of Columbia Judicial Nominating Commission established by section 434'' and inserting ``the President''. (2) Appointment by president.--Section 433(a) of such Act (sec. 1-204.33(a), D.C. Official Code) is amended by striking ``Except as provided in section 434(d)(1), the President shall nominate, from the list of persons recommended to him by the District of Columbia Judicial Nomination Commission established under section 434,'' and inserting ``The President shall nominate,''. (3) Qualifications of judges.--Section 433(b) of such Act (sec. 1-204.33(b), D.C. Official Code) is amended-- (A) by adding ``and'' at the end of paragraph (3); (B) by striking paragraph (4) and redesignating paragraph (5) as paragraph (4); and (C) in paragraph (4), as so redesignated, by striking ``or of the District of Columbia Judicial Nomination Commission''. (c) Other Conforming Amendment.--Section 11-1528(a)(2), District of Columbia Official Code, is amended by striking subparagraph (C). (d) Clerical Amendment.--The table of contents of the District of Columbia Home Rule Act is amended by striking the item relating to section 434. (e) Effective Date.--The amendments made by this section shall apply with respect to appointments made on or after the date of the enactment of this Act. Passed the House of Representatives September 17, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5125 _______________________________________________________________________ AN ACT To amend the District of Columbia Home Rule Act to terminate the District of Columbia Judicial Nomination Commission, and for other purposes."
+          },
+          {
+            "source_id": "dc-council:code-1-204.33-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Except as provided in § 1-204.34(d)(1) , the President shall nominate, from the list of persons recommended by the District of Columbia Judicial Nomination Commission established under § 1-204.34 , and, by and with the advice and consent of the Senate, appoint all judges of the District of Columbia courts. (b) No person may be nominated or appointed a judge of a District of Columbia court unless the person — (1) is a citizen of the United States; (2) is an active member of the unified District of Columbia Bar and has been engaged in the active practice of law in the District for the five years immediately preceding the nomination or for such five years has been on the faculty of a law school in the District, or has been employed as a lawyer by the United States or the District of Columbia government; (3) is a bona fide resident of the District of Columbia and has maintained an actual place of abode in the District for at least ninety days immediately prior to the nomination, and shall retain such residency while serving as such judge, except judges appointed prior to the effective date of this part who retain residency as required by § 11-1501(a) shall not be required to be residents of the District to be eligible for reappointment or to serve any term to which reappointed; (4) is recommended to the President, for such nomination and appointment, by the District of Columbia Judicial Nomination Commission; and (5) has not served, within a period of two years prior to the nomination, as a member of the Tenure Commission or of the District of Columbia Judicial Nomination Commission. (c) Not less than six months prior to the expiration of the judge’s term of office, any judge of the District of Columbia courts may file with the Tenure Commission a declaration of candidacy for reappointment. If a declaration is not so filed by any judge, a vacancy shall result from the expiration of the term of office and shall be filled by appointment as provided in subsections (a) and (b) of this section. If a declaration is so filed, the Tenure Commission shall, not less than sixty days prior to the expiration of the declaring candidate’s term of office, prepare and submit to the President a written evaluation of the declaring candidate’s performance during the present term of office and the candidate’s fitness for reappointment to another term. If the Tenure Commission determines the declaring candidate to be well qualified for reappointment to another term, then the term of such declaring candidate shall be automatically extended for another full term, subject to mandatory retirement, suspension, or removal. If the Tenure Commission determines the declaring candidate to be qualified for reappointment to another term, then the President may nominate such candidate, in which case the President shall submit to the Senate for advice and consent the renomination of the declaring candidate as judge. If the President determines not to so nominate such declaring candidate, the President shall nominate another candidate for such position only in accordance with the provisions of subsections (a) and (b) of this section. If the Tenure Commission determines the declaring candidate to be unqualified for reappointment to another term, then the President shall not submit to the Senate for advice and consent the renomination of the declaring candidate as judge and such judge shall not be eligible for reappointment or appointment as a judge of a District of Columbia court."
+          },
+          {
+            "source_id": "dc-council:code-1-204.34-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/7a0b5b5517346fb3fd1b29392ec547e8ed1a375a6caed4a42a651ff9b47f96f2.0000000.json",
+                  "sha256": "0d7efd218361e540e929ab9c465aa838b81d41022ce7dc9db7e5b67780845ce6",
+                  "start_character": 0,
+                  "end_character": 6502
+                }
+              ],
+              "utf8_sha256": "7a0b5b5517346fb3fd1b29392ec547e8ed1a375a6caed4a42a651ff9b47f96f2",
+              "total_characters": 6502,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "dc-council:code-11-1528-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) (1) Subject to paragraph (2), the filing of papers with, and the giving of testimony before, the Commission shall be privileged. Subject to paragraph (2), hearings before the Commission, the record thereof, and materials and papers filed in connection with such hearings shall be confidential. (2) (A) The judge whose conduct or health is the subject of any proceedings under this chapter may disclose or authorize the disclosure of any information under paragraph (1). (B) With respect to a prosecution of a witness for perjury or on review of a decision of the Commission, the record of hearings before the Commission and all papers filed in connection with such hearing shall be disclosed to the extent required for such prosecution or review. (C) Upon request, the Commission shall disclose, on a privileged and confidential basis, to the District of Columbia Judicial Nomination Commission any information under paragraph (1) concerning any judge being considered by such nomination commission for elevation to the District of Columbia Court of Appeals or for chief judge of a District of Columbia court. (b) If the Commission determines that no grounds for removal or involuntary retirement exist it shall notify the judge and inquire whether the judge desires the Commission to make available to the public information pertaining to the nature of its investigation, its hearings, findings, determinations, or any other fact related to its proceedings regarding the judge’s health or conduct. Upon receipt of such request in writing from the judge, the Commission shall make such information available to the public."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "02839ca08d60eb687c06e5d359fcce25b88feab1007e8b97a5e1b6d1d3d0df2f",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:275",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.5143EHcombines replacement of5-365.02(a)/(b)/(c)pursuit rules and removal/reorganization of defined tactics with a DOJcost-benefit evaluation of MPDadoptingPursuitAlertor similar immediate-vicinity public-alert technology, plus a published report to four committees within3years. This is a technology-adoption evaluation/report, not mandated purchase, installation or proof of product performance. Pursuit permission remains subject to reasonable belief by officer or supervising higher official concerning unacceptable risk to others/futility/more effective or expeditious alternative apprehension; it is not unconditional pursuit authority. Retained complete365.01/365.02and133.17baselines preserve removed safety/use-of-force/decision provisions and exclusion of sworn covered-federal-agency officers from the amended local definition. Existing baseline agency names are retained as printed, not modernized. Whole policing/technology-evaluation domain boundary, remaining external definitions/current-law and exact deemed-RCP/floor/EHreconciliation remain ordinary review. No safety, apprehension, procurement, crime, motive or enacted outcome inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:275",
+            "url": "https://clerk.house.gov/evs/2025/roll275.xml",
+            "raw_sha256": "0a94030431b84103984c55af4ea9c6229e75a288020e3169e8fa91b82949171f",
+            "governed_bytes_sha256": "50818f356adbb3620a08d19ec721275fe7ded4ec46c0ab84f5aa38c0a84a6207"
+          },
+          {
+            "source_id": "govinfo:hr5143eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5143eh/html/BILLS-119hr5143eh.htm",
+            "raw_sha256": "dc453a5e50959efe97c4b26cf4f78e1481f4e69923bb3af22dd96cdd717321bf",
+            "governed_bytes_sha256": "70b84e02758310ef140c5f21c0ef4758bfd8b54b60ee49c51dad5920b2713b8a"
+          },
+          {
+            "source_id": "dc-council:code-5-365.01-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-365.01.html",
+            "raw_sha256": "3d512830c5a558c5a130eb7adebc80fcedf04d9d5fcb52c6119085fbf055a601",
+            "governed_bytes_sha256": "b0241c9c33af16c0f30c0a023da9837a2a4bd83da5a978f919775076052a17e2"
+          },
+          {
+            "source_id": "dc-council:code-5-365.02-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-365.02.html",
+            "raw_sha256": "f32e311b3a5b38358464117d9682c4ce9974ef9a15d42e8357eae861afd1c75b",
+            "governed_bytes_sha256": "f4a40b2f370752d9d5a5ab6d80c7e05b490fa0876269b3a3d34fc852a4cd65f7"
+          },
+          {
+            "source_id": "dc-council:code-5-133.17-20250916",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-133.17.html",
+            "raw_sha256": "3bf248ee692332da697bbb514f7aac975a2e8de6b4cbee63b1f479269891ecac",
+            "governed_bytes_sha256": "cf72a3bb68601b0c3352a8f8e1b8cf294edbbb263ac072fd0c3ca69559ca54a5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5143eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5143 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5143 _______________________________________________________________________ AN ACT To establish standards for law enforcement officers in the District of Columbia to engage in vehicular pursuits of suspects, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``District of Columbia Policing Protection Act of 2025''. SEC. 2. VEHICULAR PURSUITS BY LAW ENFORCEMENT OFFICERS IN DISTRICT OF COLUMBIA. (a) Amendment.--The Comprehensive Policing and Justice Reform Amendment Act of 2022 (D.C. Law 24-345) is amended-- (1) in subtitle S of title I-- (A) in the heading, by striking ``LIMITATIONS ON THE''; (B) in section 127(a) (sec. 5-365.01(a), D.C. Official Code)-- (i) by striking paragraphs (1) through (5); (ii) in paragraph (6), by striking the period at the end and inserting the following: ``, except that such term does not include a sworn federal law enforcement officer of a covered federal law enforcement agency as defined in section 11712(d) of the National Capital Revitalization and Self-Government Improvement Act of 1997 (sec. 5-133.17(d), D.C. Official Code).''; (iii) by redesignating paragraphs (6) and (7) as paragraphs (1) and (2), respectively; (iv) by striking paragraphs (8) through (11); and (v) by redesignating paragraph (12) as paragraph (3); and (C) in section 128 (sec. 5-365.02, D.C. Official Code), by striking subsections (a), (b), and (c) and inserting the following: ``If a law enforcement officer encounters a suspect fleeing in a motor vehicle, the officer may engage in a vehicular pursuit of the suspect unless the officer, or a higher-ranking official with supervisory authority over the officer, reasonably believes that-- ``(1) vehicular pursuit would-- ``(A) entail an unacceptable risk of harm to a person other than the suspect; or ``(B) be futile; or ``(2) the suspect can be apprehended more effectively or expeditiously by a means other than vehicular pursuit.''; and (2) in the table of contents, by striking the item relating to subtitle S of title I and inserting the following: ``SUBTITLE S. USE OF VEHICULAR PURSUITS BY LAW ENFORCEMENT 33''. OFFICERS. (b) Department of Justice Report on PursuitAlert.--Not later than 3 years after the date of enactment of this Act, the Attorney General shall-- (1) evaluate the costs and benefits of the Metropolitan Police Department of the District of Columbia adopting PursuitAlert or another similar technology capable of alerting members of the public to the presence of a police pursuit in their immediate vicinity; and (2) publish a report on the evaluation conducted under paragraph (1) and submit the report to-- (A) the Committee on Homeland Security and Governmental Affairs of the Senate; (B) the Committee on the Judiciary of the Senate; (C) the Committee on Oversight and Government Reform of the House of Representatives; and (D) the Committee on the Judiciary of the House of Representatives. Passed the House of Representatives September 17, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5143 _______________________________________________________________________ AN ACT To establish standards for law enforcement officers in the District of Columbia to engage in vehicular pursuits of suspects, and for other purposes."
+          },
+          {
+            "source_id": "dc-council:code-5-365.01-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) For the purposes of this chapter , the term: (1) \"Boxing in\" means a practice or tactic in which law enforcement officers intentionally surround a suspect motor vehicle with pursuit vehicles and then reduce the traveling speed of the pursuit vehicles with the intent to stop or slow the suspect motor vehicle. (2) \"Caravanning\" means a practice or tactic in which a law enforcement officer operates a pursuit vehicle without maintaining a reasonable distance between another pursuit vehicle. (3) \"Crime of violence\" shall have the same meaning as provided in § 23-1331(4) . (4) \"Deploying a roadblock\" means a tactic or practice in which a law enforcement officer intentionally places a vehicle or object in the path of the suspect vehicle with the intent to stop the suspect motor vehicle. (5) (A) \"Deploying a tire deflation device\" means a tactic or practice in which a law enforcement officer intentionally places or activates a device that extends across the roadway with the intent to slow or stop a suspect vehicle. (B) The term \"deploying a tire deflation device\" does not include raising bollards or other barricades when: (i) The bollard or barricade is clearly visible to the operator of the suspect motor vehicle; and (ii) The bollard or barricade is raised in a manner that provides the operator of the suspect motor vehicle adequate time to safely avoid the bollard or barricade. (6) \"Law enforcement officer\" shall have the same meaning as provided in § 23-501(2) . (7) \"Motor vehicle\" means an automobile, all-terrain vehicle, a motorcycle, moped, or any other vehicle designed to be propelled only by an internal-combustion engine or electricity. (8) \"Paralleling\" means a practice or tactic in which a law enforcement officer operates a pursuit vehicle in the same direction and at approximately the same speed as the suspect motor vehicle using another street or highway parallel to the direction or route of the suspect motor vehicle. (9) \"Pursuit vehicle\" means any motor vehicle operated by a law enforcement officer during a vehicular pursuit of a fleeing suspect. (10) \"Ramming\" means a tactic in which a law enforcement officer intentionally causes a pursuit vehicle to come into physical contact with a suspect motor vehicle with the intent to damage, slow, or stop the suspect motor vehicle, regardless of the speed of the pursuit vehicle. (11) \"Serious bodily injury\" means extreme physical pain, illness, or impairment of physical condition, including physical injury that involves: (A) A substantial risk of death; (B) Protracted and obvious disfigurement; (C) Protracted loss or impairment of the function of a bodily member or organ; or (D) Protracted loss of consciousness. (12) \"Vehicular pursuit\" means the operation of a pursuit vehicle in a manner that is not consistent with the posted speed limit or other applicable traffic regulations in an attempt to apprehend a suspect who is eluding apprehension while operating a motor vehicle."
+          },
+          {
+            "source_id": "dc-council:code-5-365.02-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) A law enforcement officer shall not engage in a vehicular pursuit of a suspect motor vehicle unless the law enforcement officer actually and reasonably believes: (1) The fleeing suspect: (A) Has committed or attempted to commit a crime of violence; or (B) Poses an imminent threat of death or serious bodily injury to another person; (2) The vehicular pursuit is: (A) Immediately necessary to protect another person, other than the fleeing suspect or suspects, from the threat of serious bodily injury or death; and (B) Under the totality of circumstances, not likely to cause death or serious bodily injury to any person, other than to the fleeing suspect or suspects; and (3) All other options have been exhausted or do not reasonably lend themselves to the circumstances. (b) In any grand jury, criminal, delinquency, or civil proceeding where an officer's use of a vehicular pursuit is a material issue, the trier of fact shall consider: (1) The reasonableness of the law enforcement officer's belief and actions from the perspective of a reasonable law enforcement officer; and (2) The totality of the circumstances, which shall include: (A) Whether the identity of the suspect was known; (B) Whether the suspect could have been apprehended at a later time; (C) The likelihood of a person, including the suspect motor vehicle's occupants, being endangered by the vehicular pursuit, including the type of area, the time of day, the amount of vehicular and pedestrian traffic, and the speed of the vehicular pursuit; (D) The availability of other means to apprehend or track the fleeing suspect, such as helicopters; (E) Whether circumstances arose during the vehicular pursuit that rendered the pursuit futile or would have required the vehicular pursuit to continue for an unreasonable time or distance, including: (i) The distance between the pursuing law enforcement officers and the fleeing motor vehicle; and (ii) Whether visual contact with the suspect motor vehicle was lost, or the suspect motor vehicle's location was no longer known; (F) Whether the law enforcement officer's pursuit vehicle sustained damage or a mechanical failure that rendered it unsafe to operate; (G) Whether the law enforcement officer was directed to terminate the pursuit by the pursuit supervisor or a higher-ranking supervisor; (H) The law enforcement officer's training and experience; (I) Whether anyone in the suspect motor vehicle: (i) Appeared to possess, either on their person or in a location where it is readily available, a dangerous weapon; and (ii) Was afforded an opportunity to comply with an order to surrender any suspected dangerous weapons; (J) Whether the law enforcement officer, or another law enforcement officer in close proximity, engaged in reasonable de-escalation measures; (K) Whether any conduct by the law enforcement officer prior to the vehicular pursuit unreasonably increased the risk of a confrontation resulting in a vehicular pursuit; and (L) Whether the law enforcement officer made all reasonable efforts to prevent harm, including abandoning efforts to apprehend the suspect. (c) (1) The following practices or tactics employed by a law enforcement officer shall constitute a serious use of force: (A) Boxing in; (B) Caravanning; (C) Deploying a roadblock; (D) Deploying a tire deflation device; and (E) Paralleling. (2) Ramming shall constitute a use of deadly force. (3) Nothing in this subsection shall be construed to permit any of the above practices or tactics, to the extent they are prohibited by District law or by a law enforcement agency."
+          },
+          {
+            "source_id": "dc-council:code-5-133.17-20250916",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Agreements. — Each covered Federal law enforcement agency may enter into a cooperative agreement with the Metropolitan Police Department of the District of Columbia to assist the Department in carrying out crime prevention and law enforcement activities in the District of Columbia, including taking appropriate action to enforce subsection (e) of this section [ § 22-1323 ; see Editor’s note] (except that nothing in such an agreement may be construed to grant authority to the United States to prosecute violations of subsection (e) of this section). (b) Contents of agreement. — An agreement entered into between a covered Federal law enforcement agency and the Metropolitan Police Department pursuant to this section may include agreements relating to: (1) Sending personnel of the agency on patrol in areas of the District of Columbia which immediately surround the area of the agency’s jurisdiction, and granting personnel of the agency the power to arrest in such areas; (2) Sharing and donating equipment and supplies with the Metropolitan Police Department; (3) Operating on shared radio frequencies with the Metropolitan Police Department; (4) Permitting personnel of the agency to carry out processing and papering of suspects they arrest in the District of Columbia; and (5) Such other items as the agency and the Metropolitan Police Department may agree to include in the agreement. (c) Coordination with U.S. Attorney’s Office. — Agreements entered into pursuant to this section shall be coordinated in advance with the United States Attorney for the District of Columbia. (d) Covered federal law enforcement agencies described. — In this section, the term “covered federal law enforcement agency” means any of the following: (1) United States Capitol Police. (2) United States Marshals Service. (3) Library of Congress Police. (4) Bureau of Engraving and Printing Police Force. (5) Supreme Court Police. (6) Amtrak Police Department. (7) Department of Protective Services, United States Holocaust Museum. (8) Government Printing Office Police. (9) United States Park Police. (10) Bureau of Alcohol, Tobacco, and Firearms. (11) Drug Enforcement Administration. (12) Federal Bureau of Investigation. (13) Criminal Investigation Division, Internal Revenue Service. (14) Department of the Navy Police Division, Naval District Washington. (15) Naval Criminal Investigative Service. (16) 11th Security Police Squadron, Bolling Air Force Base. (17) United States Army Military District of Washington. (18) United States Customs Service. (19) Immigration and Naturalization Service. (20) Postal Inspection Service, United States Postal Service. (21) Uniformed Division, United States Secret Service. (22) United States Secret Service. (23) National Zoological Park Police. (24) Federal Protective Service, General Services Administration, National Capital Region. (25) Defense Protective Service, Department of Defense Washington Headquarters Services. (26) Office of Protective Services, Smithsonian Institution. (27) Office of Protective Services, National Gallery of Art. (28) United States Army Criminal Investigation Command, Department of the Army Washington District, 3rd Military Police Group. (29) Marine Corps Law Enforcement. (30) Department of State Diplomatic Security. (31) United States Coast Guard. (32) United States Postal Police. (33) Any other law enforcement agency of the Federal government that the Chief of the Metropolitan Police Department and the United States Attorney for the District of Columbia deem appropriate to enter into an agreement pursuant to this section."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "fa0e7544215a27174a13b2fa50dc736e151caa6c3927e487fae6337342185545",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:276",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question tables H.Res.713and passed. This is a non-counting chamber disposition, not adoption of the underlying censure/committee-removal resolution, acceptance of its allegations, an Infrastructure policy choice or evidence of any legislator's motive/character. The underlying resolution body has not been interpreted here; its description remains procedural context only.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:276",
+            "url": "https://clerk.house.gov/evs/2025/roll276.xml",
+            "raw_sha256": "fdc9d1cddf0aeefb0764a4af3808c6525cd76d168f3c48cea99a685f3d8488d8",
+            "governed_bytes_sha256": "bb4f934b6b8c1927fc0f6e84dad837ee67a7376084c65140a38326ae867ff482"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "4547aaf1650dd150578194db4f7c0f13c4f7b54f78d25de894b4797dc28a83dd",
+      "source": {
+        "source_id": "govinfo:hres707eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1.0000000.json",
+              "sha256": "c7f7368648d6aa814c1fa71604bcbc0c17af4f275e9f6e6d64c522ce73459499",
+              "start_character": 0,
+              "end_character": 7661
+            }
+          ],
+          "utf8_sha256": "ddfd1bdb9e72618e3fc6f5858282195eb9550dc7b79f97d476bfd3ab5debbcd1",
+          "total_characters": 7661,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
+      }
+    },
+    {
+      "original_source_object_sha256": "d30b6a285deadc2feaed70c7ae8dc7d5c2ea2ad75fbc3c43a38e0c879e86f3e7",
+      "source": {
+        "source_id": "clerk:119:1:272",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll272.xml",
+        "text_version": null,
+        "raw_sha256": "80e481478e5fcf596cf7fb2356945128ff2d341e9f6f74a7053ae86913460081",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "272",
+          "legis-num": "H RES 722",
+          "vote-question": "On Ordering the Previous Question",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "17-Sep-2025",
+          "action-time": "5:57 PM",
+          "vote-desc": "Providing for consideration of the bill (H.R. 5371) Continuing Appropriations and Extensions Act, 2026; providing for consideration of the resolution (H. Res. 719) honoring the life and legacy of Charles “Charlie” James Kirk; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "bd40260e2487221cee49e5ee5c8e50b6af96427a3c43d7a6e3d076f543cd4336"
+      }
+    },
+    {
+      "original_source_object_sha256": "b5372b76652af21f555c45689f4117efa2b8059b0eb0e4cc03be74e42070b2fb",
+      "source": {
+        "source_id": "govinfo:hres722eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres722eh/html/BILLS-119hres722eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "9137588a96f5b1172f5bbc375c2adae780d82ae5dfd7cbd6ec7bab1e6b1f10f4",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 722 Engrossed in House (EH)] <DOC> H. Res. 722 In the House of Representatives, U. S., September 17, 2025. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order without intervention of any point of order to consider in the House the resolution (H. Res. 719) honoring the life and legacy of Charles ``Charlie'' James Kirk. The resolution shall be considered as read. The previous question shall be considered as ordered on the resolution and preamble to adoption without intervening motion or demand for division of the question except one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees. Sec. 3. Sections 9, 10, and 11 of House Resolution 707, agreed to September 16, 2025, are each amended by striking ``March 31, 2026'' and inserting ``January 31, 2026''. Attest: Clerk.",
+        "governed_bytes_sha256": "50521ae9ef65890503614e964cb10a1dcd5524691c6b8a22f26f2adb50613298"
+      }
+    },
+    {
+      "original_source_object_sha256": "54363c82e46fc699720ab68234fbb1133ef1bba0b550f489fb16782d6fdb4496",
+      "source": {
+        "source_id": "clerk:119:1:273",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll273.xml",
+        "text_version": null,
+        "raw_sha256": "8ff9472c975532f0c562edf6c6430e31b26b50a5254b864c3d214993156c7e8d",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "273",
+          "legis-num": "H RES 722",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "17-Sep-2025",
+          "action-time": "6:04 PM",
+          "vote-desc": "Providing for consideration of the bill (H.R. 5371) Continuing Appropriations and Extensions Act, 2026; providing for consideration of the resolution (H. Res. 719) honoring the life and legacy of Charles “Charlie” James Kirk; and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Present",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "0",
+            "present-total": "1",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "6c7a358639fd99b613d94d1d46949412daa55066f4d6495f37d81d924bc064b4"
+      }
+    },
+    {
+      "original_source_object_sha256": "bd9235ecac4f7957f37879a0324331b1a52e8cb420fcec3b980ac07996662941",
+      "source": {
+        "source_id": "clerk:119:1:274",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll274.xml",
+        "text_version": null,
+        "raw_sha256": "d720654d7585239c2aeb99197c5acfdc00d3c5f78f2f86eeb6f407117edfce09",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "274",
+          "legis-num": "H R 5125",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "17-Sep-2025",
+          "action-time": "6:10 PM",
+          "vote-desc": "District of Columbia Judicial Nominations Reform Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "218",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "211",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "7038b3dcb97254b4bfc386f0d6167cd1ed5956d99d43e4c6e913164a3a99ed9a"
+      }
+    },
+    {
+      "original_source_object_sha256": "e446f3eb408090cd9b7e4b122f74bfaf46a1967238ef11a5ea5bc63e558a0c51",
+      "source": {
+        "source_id": "govinfo:hr5125eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5125eh/html/BILLS-119hr5125eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "7fcfdfc8511520c71b6ca3762bf8b0af13f2fb8910545cd1b42fc80590a98eaf",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5125 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5125 _______________________________________________________________________ AN ACT To amend the District of Columbia Home Rule Act to terminate the District of Columbia Judicial Nomination Commission, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``District of Columbia Judicial Nominations Reform Act of 2025''. SEC. 2. TERMINATION OF DISTRICT OF COLUMBIA JUDICIAL NOMINATION COMMISSION. (a) Termination.--The District of Columbia Home Rule Act is amended by striking section 434 (sec. 1-204.34, D.C. Official Code). (b) Conforming Amendments Relating to Appointment of Judges.-- (1) Designation of chief judges by president.--Section 431(b) of such Act (sec. 1-204.31(b), D.C. Official Code) is amended by striking ``the District of Columbia Judicial Nominating Commission established by section 434'' and inserting ``the President''. (2) Appointment by president.--Section 433(a) of such Act (sec. 1-204.33(a), D.C. Official Code) is amended by striking ``Except as provided in section 434(d)(1), the President shall nominate, from the list of persons recommended to him by the District of Columbia Judicial Nomination Commission established under section 434,'' and inserting ``The President shall nominate,''. (3) Qualifications of judges.--Section 433(b) of such Act (sec. 1-204.33(b), D.C. Official Code) is amended-- (A) by adding ``and'' at the end of paragraph (3); (B) by striking paragraph (4) and redesignating paragraph (5) as paragraph (4); and (C) in paragraph (4), as so redesignated, by striking ``or of the District of Columbia Judicial Nomination Commission''. (c) Other Conforming Amendment.--Section 11-1528(a)(2), District of Columbia Official Code, is amended by striking subparagraph (C). (d) Clerical Amendment.--The table of contents of the District of Columbia Home Rule Act is amended by striking the item relating to section 434. (e) Effective Date.--The amendments made by this section shall apply with respect to appointments made on or after the date of the enactment of this Act. Passed the House of Representatives September 17, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5125 _______________________________________________________________________ AN ACT To amend the District of Columbia Home Rule Act to terminate the District of Columbia Judicial Nomination Commission, and for other purposes.",
+        "governed_bytes_sha256": "d80795221d087e7297a9eb195b0ea151f20a31e3e2c140b06bcf39c5873ed94d"
+      }
+    },
+    {
+      "original_source_object_sha256": "40881e0c725e5d091110803912f463990779f1a2f635189be99786abf8070974",
+      "source": {
+        "source_id": "dc-council:code-1-204.33-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/1-204.33.html",
+        "text_version": "D.C. Council code, complete operative section 1-204.33; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "2e5de8e3b74475da5d5758a375a5bc9753bcc8775c026a3dc3ab7ea7a05a441c",
+        "text": "(a) Except as provided in § 1-204.34(d)(1) , the President shall nominate, from the list of persons recommended by the District of Columbia Judicial Nomination Commission established under § 1-204.34 , and, by and with the advice and consent of the Senate, appoint all judges of the District of Columbia courts. (b) No person may be nominated or appointed a judge of a District of Columbia court unless the person — (1) is a citizen of the United States; (2) is an active member of the unified District of Columbia Bar and has been engaged in the active practice of law in the District for the five years immediately preceding the nomination or for such five years has been on the faculty of a law school in the District, or has been employed as a lawyer by the United States or the District of Columbia government; (3) is a bona fide resident of the District of Columbia and has maintained an actual place of abode in the District for at least ninety days immediately prior to the nomination, and shall retain such residency while serving as such judge, except judges appointed prior to the effective date of this part who retain residency as required by § 11-1501(a) shall not be required to be residents of the District to be eligible for reappointment or to serve any term to which reappointed; (4) is recommended to the President, for such nomination and appointment, by the District of Columbia Judicial Nomination Commission; and (5) has not served, within a period of two years prior to the nomination, as a member of the Tenure Commission or of the District of Columbia Judicial Nomination Commission. (c) Not less than six months prior to the expiration of the judge’s term of office, any judge of the District of Columbia courts may file with the Tenure Commission a declaration of candidacy for reappointment. If a declaration is not so filed by any judge, a vacancy shall result from the expiration of the term of office and shall be filled by appointment as provided in subsections (a) and (b) of this section. If a declaration is so filed, the Tenure Commission shall, not less than sixty days prior to the expiration of the declaring candidate’s term of office, prepare and submit to the President a written evaluation of the declaring candidate’s performance during the present term of office and the candidate’s fitness for reappointment to another term. If the Tenure Commission determines the declaring candidate to be well qualified for reappointment to another term, then the term of such declaring candidate shall be automatically extended for another full term, subject to mandatory retirement, suspension, or removal. If the Tenure Commission determines the declaring candidate to be qualified for reappointment to another term, then the President may nominate such candidate, in which case the President shall submit to the Senate for advice and consent the renomination of the declaring candidate as judge. If the President determines not to so nominate such declaring candidate, the President shall nominate another candidate for such position only in accordance with the provisions of subsections (a) and (b) of this section. If the Tenure Commission determines the declaring candidate to be unqualified for reappointment to another term, then the President shall not submit to the Senate for advice and consent the renomination of the declaring candidate as judge and such judge shall not be eligible for reappointment or appointment as a judge of a District of Columbia court.",
+        "governed_bytes_sha256": "02785cf4473be4ac13cbd2c96ca3b53909f76b85bff28aca9015284e2846ec8c"
+      }
+    },
+    {
+      "original_source_object_sha256": "9c42959ebe99800ab1ce45dae1118cfb103f02379f02d7cfa0510f115c2808b0",
+      "source": {
+        "source_id": "dc-council:code-1-204.34-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/1-204.34.html",
+        "text_version": "D.C. Council code, complete operative section 1-204.34; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "8c3364f835f0fd481325b6cfe12ea1eef6fa746a847ad5abaadcb968ae3c4726",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/7a0b5b5517346fb3fd1b29392ec547e8ed1a375a6caed4a42a651ff9b47f96f2.0000000.json",
+              "sha256": "0d7efd218361e540e929ab9c465aa838b81d41022ce7dc9db7e5b67780845ce6",
+              "start_character": 0,
+              "end_character": 6502
+            }
+          ],
+          "utf8_sha256": "7a0b5b5517346fb3fd1b29392ec547e8ed1a375a6caed4a42a651ff9b47f96f2",
+          "total_characters": 6502,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "f1c89e6e024c84334047a283fb6998e4521d66cbf7c4321c2f4a066a8202f979"
+      }
+    },
+    {
+      "original_source_object_sha256": "f7bceb8e07d1dbe30abcff4ce02133786f7bea356deba518a8fb4233ab94442b",
+      "source": {
+        "source_id": "dc-council:code-11-1528-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1528.html",
+        "text_version": "D.C. Council code, complete operative section 11-1528; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "7b3da78949e0e29f8fa84a7f499b89db69a5f7508d43bb89409de84a6d126695",
+        "text": "(a) (1) Subject to paragraph (2), the filing of papers with, and the giving of testimony before, the Commission shall be privileged. Subject to paragraph (2), hearings before the Commission, the record thereof, and materials and papers filed in connection with such hearings shall be confidential. (2) (A) The judge whose conduct or health is the subject of any proceedings under this chapter may disclose or authorize the disclosure of any information under paragraph (1). (B) With respect to a prosecution of a witness for perjury or on review of a decision of the Commission, the record of hearings before the Commission and all papers filed in connection with such hearing shall be disclosed to the extent required for such prosecution or review. (C) Upon request, the Commission shall disclose, on a privileged and confidential basis, to the District of Columbia Judicial Nomination Commission any information under paragraph (1) concerning any judge being considered by such nomination commission for elevation to the District of Columbia Court of Appeals or for chief judge of a District of Columbia court. (b) If the Commission determines that no grounds for removal or involuntary retirement exist it shall notify the judge and inquire whether the judge desires the Commission to make available to the public information pertaining to the nature of its investigation, its hearings, findings, determinations, or any other fact related to its proceedings regarding the judge’s health or conduct. Upon receipt of such request in writing from the judge, the Commission shall make such information available to the public.",
+        "governed_bytes_sha256": "60ac94132374ebf0457221b6621757659645939a86c8df19910be1234da72c83"
+      }
+    },
+    {
+      "original_source_object_sha256": "34436dead5df1f0e6c5d374db08ed9dcb68db904d0e3d7e8e27bd560b8e41b4b",
+      "source": {
+        "source_id": "clerk:119:1:275",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll275.xml",
+        "text_version": null,
+        "raw_sha256": "0a94030431b84103984c55af4ea9c6229e75a288020e3169e8fa91b82949171f",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "275",
+          "legis-num": "H R 5143",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "17-Sep-2025",
+          "action-time": "6:16 PM",
+          "vote-desc": "District of Columbia Policing Protection Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "29",
+            "nay-total": "182",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "50818f356adbb3620a08d19ec721275fe7ded4ec46c0ab84f5aa38c0a84a6207"
+      }
+    },
+    {
+      "original_source_object_sha256": "56c2bfc7e112685a4579027360fc518055843bfd81da40bbbbaeccdbd1d1442f",
+      "source": {
+        "source_id": "govinfo:hr5143eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5143eh/html/BILLS-119hr5143eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "dc453a5e50959efe97c4b26cf4f78e1481f4e69923bb3af22dd96cdd717321bf",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5143 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 5143 _______________________________________________________________________ AN ACT To establish standards for law enforcement officers in the District of Columbia to engage in vehicular pursuits of suspects, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``District of Columbia Policing Protection Act of 2025''. SEC. 2. VEHICULAR PURSUITS BY LAW ENFORCEMENT OFFICERS IN DISTRICT OF COLUMBIA. (a) Amendment.--The Comprehensive Policing and Justice Reform Amendment Act of 2022 (D.C. Law 24-345) is amended-- (1) in subtitle S of title I-- (A) in the heading, by striking ``LIMITATIONS ON THE''; (B) in section 127(a) (sec. 5-365.01(a), D.C. Official Code)-- (i) by striking paragraphs (1) through (5); (ii) in paragraph (6), by striking the period at the end and inserting the following: ``, except that such term does not include a sworn federal law enforcement officer of a covered federal law enforcement agency as defined in section 11712(d) of the National Capital Revitalization and Self-Government Improvement Act of 1997 (sec. 5-133.17(d), D.C. Official Code).''; (iii) by redesignating paragraphs (6) and (7) as paragraphs (1) and (2), respectively; (iv) by striking paragraphs (8) through (11); and (v) by redesignating paragraph (12) as paragraph (3); and (C) in section 128 (sec. 5-365.02, D.C. Official Code), by striking subsections (a), (b), and (c) and inserting the following: ``If a law enforcement officer encounters a suspect fleeing in a motor vehicle, the officer may engage in a vehicular pursuit of the suspect unless the officer, or a higher-ranking official with supervisory authority over the officer, reasonably believes that-- ``(1) vehicular pursuit would-- ``(A) entail an unacceptable risk of harm to a person other than the suspect; or ``(B) be futile; or ``(2) the suspect can be apprehended more effectively or expeditiously by a means other than vehicular pursuit.''; and (2) in the table of contents, by striking the item relating to subtitle S of title I and inserting the following: ``SUBTITLE S. USE OF VEHICULAR PURSUITS BY LAW ENFORCEMENT 33''. OFFICERS. (b) Department of Justice Report on PursuitAlert.--Not later than 3 years after the date of enactment of this Act, the Attorney General shall-- (1) evaluate the costs and benefits of the Metropolitan Police Department of the District of Columbia adopting PursuitAlert or another similar technology capable of alerting members of the public to the presence of a police pursuit in their immediate vicinity; and (2) publish a report on the evaluation conducted under paragraph (1) and submit the report to-- (A) the Committee on Homeland Security and Governmental Affairs of the Senate; (B) the Committee on the Judiciary of the Senate; (C) the Committee on Oversight and Government Reform of the House of Representatives; and (D) the Committee on the Judiciary of the House of Representatives. Passed the House of Representatives September 17, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 5143 _______________________________________________________________________ AN ACT To establish standards for law enforcement officers in the District of Columbia to engage in vehicular pursuits of suspects, and for other purposes.",
+        "governed_bytes_sha256": "70b84e02758310ef140c5f21c0ef4758bfd8b54b60ee49c51dad5920b2713b8a"
+      }
+    },
+    {
+      "original_source_object_sha256": "bd931169015ad8fe9e0f055c9ae8b0db3911549a9f8fa1e678f77e01e49c8ee4",
+      "source": {
+        "source_id": "dc-council:code-5-365.01-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-365.01.html",
+        "text_version": "D.C. Council code, complete operative section 5-365.01; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "3d512830c5a558c5a130eb7adebc80fcedf04d9d5fcb52c6119085fbf055a601",
+        "text": "(a) For the purposes of this chapter , the term: (1) \"Boxing in\" means a practice or tactic in which law enforcement officers intentionally surround a suspect motor vehicle with pursuit vehicles and then reduce the traveling speed of the pursuit vehicles with the intent to stop or slow the suspect motor vehicle. (2) \"Caravanning\" means a practice or tactic in which a law enforcement officer operates a pursuit vehicle without maintaining a reasonable distance between another pursuit vehicle. (3) \"Crime of violence\" shall have the same meaning as provided in § 23-1331(4) . (4) \"Deploying a roadblock\" means a tactic or practice in which a law enforcement officer intentionally places a vehicle or object in the path of the suspect vehicle with the intent to stop the suspect motor vehicle. (5) (A) \"Deploying a tire deflation device\" means a tactic or practice in which a law enforcement officer intentionally places or activates a device that extends across the roadway with the intent to slow or stop a suspect vehicle. (B) The term \"deploying a tire deflation device\" does not include raising bollards or other barricades when: (i) The bollard or barricade is clearly visible to the operator of the suspect motor vehicle; and (ii) The bollard or barricade is raised in a manner that provides the operator of the suspect motor vehicle adequate time to safely avoid the bollard or barricade. (6) \"Law enforcement officer\" shall have the same meaning as provided in § 23-501(2) . (7) \"Motor vehicle\" means an automobile, all-terrain vehicle, a motorcycle, moped, or any other vehicle designed to be propelled only by an internal-combustion engine or electricity. (8) \"Paralleling\" means a practice or tactic in which a law enforcement officer operates a pursuit vehicle in the same direction and at approximately the same speed as the suspect motor vehicle using another street or highway parallel to the direction or route of the suspect motor vehicle. (9) \"Pursuit vehicle\" means any motor vehicle operated by a law enforcement officer during a vehicular pursuit of a fleeing suspect. (10) \"Ramming\" means a tactic in which a law enforcement officer intentionally causes a pursuit vehicle to come into physical contact with a suspect motor vehicle with the intent to damage, slow, or stop the suspect motor vehicle, regardless of the speed of the pursuit vehicle. (11) \"Serious bodily injury\" means extreme physical pain, illness, or impairment of physical condition, including physical injury that involves: (A) A substantial risk of death; (B) Protracted and obvious disfigurement; (C) Protracted loss or impairment of the function of a bodily member or organ; or (D) Protracted loss of consciousness. (12) \"Vehicular pursuit\" means the operation of a pursuit vehicle in a manner that is not consistent with the posted speed limit or other applicable traffic regulations in an attempt to apprehend a suspect who is eluding apprehension while operating a motor vehicle.",
+        "governed_bytes_sha256": "b0241c9c33af16c0f30c0a023da9837a2a4bd83da5a978f919775076052a17e2"
+      }
+    },
+    {
+      "original_source_object_sha256": "e1e71a8b75e283a601f219bfb5efe9d191b08b6aa97f7e9efea474d1a94fe5b9",
+      "source": {
+        "source_id": "dc-council:code-5-365.02-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-365.02.html",
+        "text_version": "D.C. Council code, complete operative section 5-365.02; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "f32e311b3a5b38358464117d9682c4ce9974ef9a15d42e8357eae861afd1c75b",
+        "text": "(a) A law enforcement officer shall not engage in a vehicular pursuit of a suspect motor vehicle unless the law enforcement officer actually and reasonably believes: (1) The fleeing suspect: (A) Has committed or attempted to commit a crime of violence; or (B) Poses an imminent threat of death or serious bodily injury to another person; (2) The vehicular pursuit is: (A) Immediately necessary to protect another person, other than the fleeing suspect or suspects, from the threat of serious bodily injury or death; and (B) Under the totality of circumstances, not likely to cause death or serious bodily injury to any person, other than to the fleeing suspect or suspects; and (3) All other options have been exhausted or do not reasonably lend themselves to the circumstances. (b) In any grand jury, criminal, delinquency, or civil proceeding where an officer's use of a vehicular pursuit is a material issue, the trier of fact shall consider: (1) The reasonableness of the law enforcement officer's belief and actions from the perspective of a reasonable law enforcement officer; and (2) The totality of the circumstances, which shall include: (A) Whether the identity of the suspect was known; (B) Whether the suspect could have been apprehended at a later time; (C) The likelihood of a person, including the suspect motor vehicle's occupants, being endangered by the vehicular pursuit, including the type of area, the time of day, the amount of vehicular and pedestrian traffic, and the speed of the vehicular pursuit; (D) The availability of other means to apprehend or track the fleeing suspect, such as helicopters; (E) Whether circumstances arose during the vehicular pursuit that rendered the pursuit futile or would have required the vehicular pursuit to continue for an unreasonable time or distance, including: (i) The distance between the pursuing law enforcement officers and the fleeing motor vehicle; and (ii) Whether visual contact with the suspect motor vehicle was lost, or the suspect motor vehicle's location was no longer known; (F) Whether the law enforcement officer's pursuit vehicle sustained damage or a mechanical failure that rendered it unsafe to operate; (G) Whether the law enforcement officer was directed to terminate the pursuit by the pursuit supervisor or a higher-ranking supervisor; (H) The law enforcement officer's training and experience; (I) Whether anyone in the suspect motor vehicle: (i) Appeared to possess, either on their person or in a location where it is readily available, a dangerous weapon; and (ii) Was afforded an opportunity to comply with an order to surrender any suspected dangerous weapons; (J) Whether the law enforcement officer, or another law enforcement officer in close proximity, engaged in reasonable de-escalation measures; (K) Whether any conduct by the law enforcement officer prior to the vehicular pursuit unreasonably increased the risk of a confrontation resulting in a vehicular pursuit; and (L) Whether the law enforcement officer made all reasonable efforts to prevent harm, including abandoning efforts to apprehend the suspect. (c) (1) The following practices or tactics employed by a law enforcement officer shall constitute a serious use of force: (A) Boxing in; (B) Caravanning; (C) Deploying a roadblock; (D) Deploying a tire deflation device; and (E) Paralleling. (2) Ramming shall constitute a use of deadly force. (3) Nothing in this subsection shall be construed to permit any of the above practices or tactics, to the extent they are prohibited by District law or by a law enforcement agency.",
+        "governed_bytes_sha256": "f4a40b2f370752d9d5a5ab6d80c7e05b490fa0876269b3a3d34fc852a4cd65f7"
+      }
+    },
+    {
+      "original_source_object_sha256": "55f5a030ab5c4e8c7ed2b9db9fa548058ff83ada1f5c6d8a29c9fdea9c8c4989",
+      "source": {
+        "source_id": "dc-council:code-5-133.17-20250916",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-133.17.html",
+        "text_version": "D.C. Council code, complete operative section 5-133.17; pre-vote repository snapshot 8ed3f5ccaac32256a14f10b86418a98c93ff8c8a (September16,2025 03:10:53 UTC); amendment-history notes excluded",
+        "raw_sha256": "3bf248ee692332da697bbb514f7aac975a2e8de6b4cbee63b1f479269891ecac",
+        "text": "(a) Agreements. — Each covered Federal law enforcement agency may enter into a cooperative agreement with the Metropolitan Police Department of the District of Columbia to assist the Department in carrying out crime prevention and law enforcement activities in the District of Columbia, including taking appropriate action to enforce subsection (e) of this section [ § 22-1323 ; see Editor’s note] (except that nothing in such an agreement may be construed to grant authority to the United States to prosecute violations of subsection (e) of this section). (b) Contents of agreement. — An agreement entered into between a covered Federal law enforcement agency and the Metropolitan Police Department pursuant to this section may include agreements relating to: (1) Sending personnel of the agency on patrol in areas of the District of Columbia which immediately surround the area of the agency’s jurisdiction, and granting personnel of the agency the power to arrest in such areas; (2) Sharing and donating equipment and supplies with the Metropolitan Police Department; (3) Operating on shared radio frequencies with the Metropolitan Police Department; (4) Permitting personnel of the agency to carry out processing and papering of suspects they arrest in the District of Columbia; and (5) Such other items as the agency and the Metropolitan Police Department may agree to include in the agreement. (c) Coordination with U.S. Attorney’s Office. — Agreements entered into pursuant to this section shall be coordinated in advance with the United States Attorney for the District of Columbia. (d) Covered federal law enforcement agencies described. — In this section, the term “covered federal law enforcement agency” means any of the following: (1) United States Capitol Police. (2) United States Marshals Service. (3) Library of Congress Police. (4) Bureau of Engraving and Printing Police Force. (5) Supreme Court Police. (6) Amtrak Police Department. (7) Department of Protective Services, United States Holocaust Museum. (8) Government Printing Office Police. (9) United States Park Police. (10) Bureau of Alcohol, Tobacco, and Firearms. (11) Drug Enforcement Administration. (12) Federal Bureau of Investigation. (13) Criminal Investigation Division, Internal Revenue Service. (14) Department of the Navy Police Division, Naval District Washington. (15) Naval Criminal Investigative Service. (16) 11th Security Police Squadron, Bolling Air Force Base. (17) United States Army Military District of Washington. (18) United States Customs Service. (19) Immigration and Naturalization Service. (20) Postal Inspection Service, United States Postal Service. (21) Uniformed Division, United States Secret Service. (22) United States Secret Service. (23) National Zoological Park Police. (24) Federal Protective Service, General Services Administration, National Capital Region. (25) Defense Protective Service, Department of Defense Washington Headquarters Services. (26) Office of Protective Services, Smithsonian Institution. (27) Office of Protective Services, National Gallery of Art. (28) United States Army Criminal Investigation Command, Department of the Army Washington District, 3rd Military Police Group. (29) Marine Corps Law Enforcement. (30) Department of State Diplomatic Security. (31) United States Coast Guard. (32) United States Postal Police. (33) Any other law enforcement agency of the Federal government that the Chief of the Metropolitan Police Department and the United States Attorney for the District of Columbia deem appropriate to enter into an agreement pursuant to this section.",
+        "governed_bytes_sha256": "cf72a3bb68601b0c3352a8f8e1b8cf294edbbb263ac072fd0c3ca69559ca54a5"
+      }
+    },
+    {
+      "original_source_object_sha256": "8dc01f08f9eaeb6e04c07866dd9e7ce256f5b1636ba6def9a65941cf063e4704",
+      "source": {
+        "source_id": "clerk:119:1:276",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll276.xml",
+        "text_version": null,
+        "raw_sha256": "fdc9d1cddf0aeefb0764a4af3808c6525cd76d168f3c48cea99a685f3d8488d8",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "276",
+          "legis-num": "H RES 713",
+          "vote-question": "On Motion to Table",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "17-Sep-2025",
+          "action-time": "6:28 PM",
+          "vote-desc": "Censuring Representative Ilhan Omar of Minnesota and removing her from the Committee on Education and Workforce and the Committee on the Budget"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "bb4f934b6b8c1927fc0f6e84dad837ee67a7376084c65140a38326ae867ff482"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 15
+  }
+}

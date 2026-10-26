@@ -1,0 +1,942 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 57,
+  "exact_committed_head": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch57_20260916/membership_review.json",
+      "git_blob": "2611dfd64ed333fb84df0ad707085409bbf4ebdf",
+      "git_bytes_sha256": "2138f9c21c5f6f47677e420d3819b2a8b4fe0939aebb911de1c22ca5d51b875c"
+    },
+    "sources": {
+      "head": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch57_20260916/sources.json",
+      "git_blob": "99a8eddc6ceb81dd625295833361411368f3e4ab",
+      "git_bytes_sha256": "285a2558baafb5a6253265d7c28a5cccb20b5cb950ab0734050e4259562eec50"
+    },
+    "screening": {
+      "head": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch57_20260916/screening_receipt.json",
+      "git_blob": "5726ed31bac7dfdf396d2ac32cfe11687d356c3e",
+      "git_bytes_sha256": "c13e179e610a46d6512bb8d5da6feb5554d33971e166e3511932ffbc6f2f7d7f"
+    },
+    "screening_units": {
+      "head": "cd3f5db71dc7f722f1554f5993e49fb906216800",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch57_20260916/screening_units_receipt.json",
+      "git_blob": "c9f4196d26bd5ccc91ed02879e0b47459b012ed9",
+      "git_bytes_sha256": "8b91ffd891535b462affe844d911447189193d3be628950196f5f41aab894b53"
+    }
+  },
+  "cumulative_membership_review_sha256": "04b5c2df7ab79a209e0dfd1a772a8ea3973771adadccba11f72d86a368456a95",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/d01609b1987d0812c3c178d5be0074eb392f9944acdffdfad905689a50bae826.0000000.json",
+        "sha256": "8748e69aa2dd038b2cd8b6b07fa4cae994d459c947b92dcaddd038f3195df0b2",
+        "start_character": 0,
+        "end_character": 33291
+      }
+    ],
+    "utf8_sha256": "d01609b1987d0812c3c178d5be0074eb392f9944acdffdfad905689a50bae826",
+    "total_characters": 33291,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/9b429d33445af790ff55015bbdc9b431f78755dde1bfca47273f73bcbf75110d.0000000.json",
+        "sha256": "43137d4fe726813b12dd0605b4fa9d57c2c705ef93c30a34948c2a2db06628a2",
+        "start_character": 0,
+        "end_character": 89119
+      }
+    ],
+    "utf8_sha256": "9b429d33445af790ff55015bbdc9b431f78755dde1bfca47273f73bcbf75110d",
+    "total_characters": 89119,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:325",
+    "house:119:1:326",
+    "house:119:1:327",
+    "house:119:1:328",
+    "house:119:1:329"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "congressional-record:3383-partB1-operative-voice164",
+      "governed_length": 739,
+      "review_extent": "Complete retained exact own offering or recorded-choice unit read; external baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "congressional-record:3383-partB1-roll325-recorded164",
+      "governed_length": 768,
+      "review_extent": "Complete retained exact own offering or recorded-choice unit read; external baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "rules:rcp119-15-20251202-section307",
+      "governed_length": 3639,
+      "review_extent": "Complete retained cover/selectedsection307 only, not whole RCP119-15"
+    },
+    {
+      "source_id": "immigration:roll326-initial171",
+      "governed_length": 1655,
+      "review_extent": "Complete retained exact own offering or recorded-choice unit read; external baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "immigration:roll326-recorded171",
+      "governed_length": 778,
+      "review_extent": "Complete retained exact own offering or recorded-choice unit read; external baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "congressional-record:3383-partB5-operative-voice164",
+      "governed_length": 35268,
+      "review_extent": "Only0:3500andlast1500of35,268-character added title read; middle provisions unreviewed"
+    },
+    {
+      "source_id": "congressional-record:3383-partB5-roll327-recorded164",
+      "governed_length": 780,
+      "review_extent": "Complete retained exact own offering or recorded-choice unit read; external baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:hr3383eh",
+      "governed_length": 66005,
+      "review_extent": "Only0:3500andlast1200of66,005-character whole package read"
+    },
+    {
+      "source_id": "congressional-record:3383-roll328-passage164",
+      "governed_length": 526,
+      "review_extent": "Complete retained exact own offering or recorded-choice unit read; external baselines not implicitly reviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_child_offering_units_read": 2,
+    "complete_recorded_choice_units_read": 4,
+    "complete_selected_material_RCP_target_units": 1,
+    "partial_added_title_or_whole_package_sources": 2,
+    "exact_Clerk_procedural_questions_read": 1,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:325",
+        "evidence_unit": "complete_own_child_and_target_or_exact_noncounting_question_with_remaining_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:326",
+        "evidence_unit": "complete_own_child_and_target_or_exact_noncounting_question_with_remaining_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:327",
+        "evidence_unit": "partial_added_title_or_whole_package_with_exact_recorded_choice",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:328",
+        "evidence_unit": "partial_added_title_or_whole_package_with_exact_recorded_choice",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:329",
+        "evidence_unit": "complete_own_child_and_target_or_exact_noncounting_question_with_remaining_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "a567f50beed608d4120cbc99875df2bd40841dde3766792b2cadc7155f312fee",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:325",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete Self Part B Amendment 1 deletes proposed section 307, not the whole H.R.3383 package. The retained December 2 RCP119-15 cover and complete section 307 bind the target: SEC rules requiring specified multi-class-share ownership and voting-power disclosures in proxy/consent material or another appropriate filing, covering directors, nominees, named executives and specified five-percent voting-power holders. It does not abolish multi-class shares, change voting rights or establish repeal of all existing Exchange Act disclosure rules. The whole exact child concerns securities governance and financial disclosure without a direct infrastructure or technology mechanism. Its 54–374 rejection with eleven Not Voting did not delete the section. No investor outcome, individual eligibility, voting recommendation, motive or current-law result is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:325",
+            "url": "https://clerk.house.gov/evs/2025/roll325.xml",
+            "raw_sha256": "fb3d6f2f520ade072206df3490d8939288b951584873492a193b48c93b161ecc",
+            "governed_bytes_sha256": "7c0b23c569176781ebe30508ff8846dc05b42895b8766afc865a79c1f2a7d860"
+          },
+          {
+            "source_id": "congressional-record:3383-partB1-operative-voice164",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+            "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+            "governed_bytes_sha256": "7f025c05dcfc8e75e18108d452153e039129d9d76f25de4d7c433b219253087f"
+          },
+          {
+            "source_id": "congressional-record:3383-partB1-roll325-recorded164",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+            "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+            "governed_bytes_sha256": "a4ad9dfe2bff6428357aaa4078cee9b8841f6189439b2738d599c2bd4df919b7"
+          },
+          {
+            "source_id": "rules:rcp119-15-20251202-section307",
+            "url": "https://rules.house.gov/sites/evo-subsites/rules.house.gov/files/documents/rcp_h3383_xml.pdf",
+            "raw_sha256": "197589fcab17b06be1c06daefdc09545c18c398f4343ec57f56e4650c16b095b",
+            "governed_bytes_sha256": "561a849b802ad8d808f583bfc70f86db9115bfb99840774ef47d0a3372c4e486"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3383-partB1-operative-voice164",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MR . SELF \nThe Acting CHAIR. It is now in order \nto consider amendment No. 1 printed in \npart B of House Report 119–399. \nMr. SELF. Mr. Chairman, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 307. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Texas (Mr. S\nELF). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMr. SELF. Mr. Chairman, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Texas will be post-\nponed. \n"
+          },
+          {
+            "source_id": "congressional-record:3383-partB1-roll325-recorded164",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MR . SELF \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 1, printed in \npart B of House Report 119–399, offered \nby the gentleman from Texas (Mr. \nS\nELF), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 54, noes 374, \nnot voting 11, as follows: \n[Roll No. 325] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "rules:rcp119-15-20251202-section307",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "DECEMBER 2, 2025 \nRULES COMMITTEE PRINT 119–15 \nTEXT OF H.R. 3383, THE INCREASING INVESTOR \nOPPORTUNITIES ACT [INVEST ACT] \n[Showing the text of H.R. 1013, H.R. 1190, H.R. 1469, H.R. \n2225, H.R. 2441, H.R. 3301, H.R. 3339, H.R. 3343, H.R. 3351, \nH.R. 3352, H.R. 3357, H.R. 3381, H.R. 3383, H.R. 3394, H.R. \n3395, H.R. 3645, H.R. 3673, H.R. 4429, H.R. 4430, H.R. 4431, \nand H.R. 4449 as reported by the Committee on Financial \nServices, and H.R. 3382 as reported by the Committee on Fi-\nnancial Services with modifications] \nSECTION 1. SHORT TITLE; TABLE OF CONTENTS. \n1\n(a) S HORT TITLE.—This Act may be cited as the 2\n‘‘Incentivizing New Ventures and Economic Strength 3\nThrough Capital Formation Act of 2025’’ or the ‘‘IN-4\nVEST Act of 2025’’. 5\n(b) TABLE OF CONTENTS.—The table of contents for 6\nthis Act is as follows: 7\nSec. 1. Short title; table of contents. \nTITLE I—EXPANDING ACCESS TO CAPITAL FOR SMALL \nBUSINESSES \nSec. 101. Expanding access to capital for rural job creators. \nSec. 102. Helping angels lead our startups. \nSec. 103. Amendment for crowdfunding capital enhancement and small-busi-\nness support. \nSec. 104. Small business investor capital access. \nSec. 105. Advocating for small business. \nSec. 106. Small entity update. \nSec. 107. Improving access to small business information. \nSec. 108. Improving capital allocation for newcomers. \nSec. 109. Developing and empowering our aspiring leaders. \nTITLE II—INCREASING OPPORTUNITIES FOR INVESTORS \nSec. 201. Fair investment opportunities for professional experts. \nDecember 2, 2025 (4:20 p.m.)\nG:\\CMTE\\FS\\19\\RCP\\RCP_H3383.XML\ng:\\VHLC\\120225\\120225.108.xml           (1034229|1) 63 \nSEC. 307. ENHANCING MULTI-CLASS SHARE DISCLOSURES. 1\nSection 14 of the Securities Exchange Act of 1934 2\n(15 U.S.C. 78n) is amended by adding at the end the fol-3\nlowing: 4\n‘‘(l) DISCLOSURE RELATING TO MULTI-CLASS SHARE 5\nSTRUCTURES.— 6\n‘‘(1) D ISCLOSURE.—The Commission shall, by 7\nrule, require each issuer with a multi-class share 8\nstructure to disclose the information described in 9\nparagraph (2) in any proxy or consent solicitation 10\nmaterial for an annual meeting of the shareholders 11\nof the issuer, or any other filing as the Commission 12\ndetermines appropriate. 13\n‘‘(2) C ONTENT OF DISCLOSURE .—A disclosure 14\nmade under paragraph (1) shall include, with re-15\nspect to each person who is a director, director 16\nnominee, or named executive officer of the issuer, or 17\nwho is the beneficial owner of securities with 5 per-18\ncent or more of the total combined voting power of 19\nall classes of securities entitled to vote in the elec-20\ntion of directors— 21\n‘‘(A) the number of shares of all classes of 22\nsecurities entitled to vote in the election of di-23\nrectors beneficially owned by such person, ex-24\npressed as a percentage of the total number of 25\nDecember 2, 2025 (4:20 p.m.)\nG:\\CMTE\\FS\\19\\RCP\\RCP_H3383.XML\ng:\\VHLC\\120225\\120225.108.xml           (1034229|1) 64 \nthe outstanding securities of the issuer entitled 1\nto vote in the election of directors; and 2\n‘‘(B) the amount of voting power held by 3\nsuch person, expressed as a percentage of the 4\ntotal combined voting power of all classes of the 5\nsecurities of the issuer entitled to vote in the 6\nelection of directors. 7\n‘‘(3) MULTI-CLASS SHARE STRUCTURE .—In this 8\nsubsection, the term ‘multi-class share structure’ 9\nmeans a capitalization structure that contains 2 or 10\nmore types of securities that have differing amounts 11\nof voting rights in the election of directors.’’. 12\n◊ \nDecember 2, 2025 (4:20 p.m.)\nG:\\CMTE\\FS\\19\\RCP\\RCP_H3383.XML\ng:\\VHLC\\120225\\120225.108.xml           (1034229|1)"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f4aa7b7ce8bf5fd6b0a9eb4984a72bc2cc5c11790f2386012a13e8fab1e1eb5c",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:326",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete Waters Part B Amendment 3, offered as Garcia of Texas’s designee, adds a Title IV Treasury-rule requirement for investment advisers and defined hedge funds to comply with know-your-customer and anti-money-laundering requirements for foreign clients to the same extent as financial institutions under the specified Bank Secrecy Act subchapter. It does not itself ban foreign clients, deem them unlawful or prove a particular entity’s misconduct. The hedge-fund definition uses the specified Investment Company Act exclusions. Whole material financial-institution, adviser, fund, client and recordkeeping/implementation baselines and the financial-compliance versus direct technical-governance boundary remain pending. Its 211–219 rejection with eight Not Voting is distinct from parent passage; no enacted compliance change, prevented crime, privacy outcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:326",
+            "url": "https://clerk.house.gov/evs/2025/roll326.xml",
+            "raw_sha256": "94ba199c90ddc18ac7487b2d021df1c36f2fda9c371a32bf1fe55d16b841b746",
+            "governed_bytes_sha256": "c07f84af9bca2c8e69574f504c5479f1ea489b97f8182e41d73cc088a0bea1af"
+          },
+          {
+            "source_id": "immigration:roll326-initial171",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+            "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+            "governed_bytes_sha256": "df3076979f45fa9512d4f17ecf831339053fe7724283e5bba98cab8b0f5f5cf8"
+          },
+          {
+            "source_id": "immigration:roll326-recorded171",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+            "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+            "governed_bytes_sha256": "b74434d003c78f09aed592457cc1770a9579ef49c5aab83ad0e60afc5d26329b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:roll326-initial171",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 3 OFFERED BY MS . WATERS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 3 printed in \npart B of House Report 119–399. \nMs. WATERS. Mr. Chair, as the des-\nignee of Ms. G\nARCIA of Texas, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as \nfollows: \nAdd at the end the following: \nTITLE IV—ACCOUNTABILITY AND TRANS-\nPARENCY BY FOREIGN HEDGE FUNDS \nSEC. 401. KNOW YOUR CUSTOMER AND ANTI- \nMONEY LAUNDERING REQUIRE-\nMENTS FOR FOREIGN CLIENTS. \n(a) I N GENERAL.—The Secretary of the \nTreasury shall issue rules to require each in-\nvestment adviser and hedge fund to comply \nwith know your customer and anti-money \nlaundering requirements under subchapter II \nof chapter 53 of title 31, United States Code, \nwith respect to the foreign clients of the in-\nvestment adviser or hedge fund, to the same \nextent as such requirements apply to finan-\ncial institutions under such subchapter. \n(b) H\nEDGE FUND DEFINED.—In this section, \nthe term ‘‘hedge fund’’ means an issuer that \nwould be an investment company, as defined \nin the Investment Company Act of 1940 (15 \nU.S.C. 80a-1 et seq.), but for section 3(c)(1) or \n3(c)(7) of that Act. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from California (Ms. \nW\nATERS). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMs. WATERS. Mr. Chair, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from California will \nbe postponed."
+          },
+          {
+            "source_id": "immigration:roll326-recorded171",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 3 OFFERED BY MS . WATERS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 3, printed in \npart B of House Report 119–399, offered \nby the gentlewoman from California \n(Ms. W\nATERS), on which further pro-\nceedings were postponed and on which \nthe noes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 211, noes 219, \nnot voting 8, as follows: \n[Roll No. 326]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "e0ac19d7a49840bdf1b09499e9f7e6a40711985fdae1e42cf46a126f26eab378",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:327",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Retained Waters Part B Amendment 5 adds Title IV “No Junk Fees” to the bill; it is not a strike-all substitute. The 35,268-character offering was reviewed only in its first 3,500 and last 1,500 characters. Those portions describe a fee definition, specified potential fee examples and multiple investment-company, broker/dealer, adviser, reporting and exchange/ATS provisions, including the final exchange/ATS fee restrictions. The middle operative provisions and material securities/fee baselines remain unreviewed here. No paper/electronic delivery or platform-fee fragment supplies the whole Infrastructure meaning. Recorded rejection 214–215 with nine Not Voting did not add the title; voice proceedings do not override it. No actual fee, investor benefit, system effect, current-law status or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:327",
+            "url": "https://clerk.house.gov/evs/2025/roll327.xml",
+            "raw_sha256": "61cc11b1028c815b5d4c421170d81b99dc855814f9e3f9e6b65e0d073898daa7",
+            "governed_bytes_sha256": "c3ea0997e857f707f095590270b128bb4ff6817702c2089ddcb05a88f3e04c0f"
+          },
+          {
+            "source_id": "congressional-record:3383-partB5-operative-voice164",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+            "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+            "governed_bytes_sha256": "9b1e2618500ddea8a6a064a7adf1d497578b87e4799f47bc7de093550e668200"
+          },
+          {
+            "source_id": "congressional-record:3383-partB5-roll327-recorded164",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+            "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+            "governed_bytes_sha256": "fdfdb341637a35851a715e418c8d4b9b6f73f37f80923c1e850bf7ff4875306c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3383-partB5-operative-voice164",
+            "locator": "Only0:3500of35,268-character offering read; middle operative body unreviewed",
+            "passage": "AMENDMENT NO. 5 OFFERED BY MS . WATERS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 5 printed in \npart B of House Report 119–399. \nMs. WATERS. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAdd at the end the following: \nTITLE IV—NO JUNK FEES \nSEC. 401. SHORT TITLE; TABLE OF CONTENTS. \n(a) S HORT TITLE.—This title may be cited \nas the ‘‘No Junk Fee Act of 2025’’. \n(b) TABLE OF CONTENTS.—The table of con-\ntents for this title is as follows: \nTITLE IV—NO JUNK FEES \nSec. 401. Short title; table of contents. \nSec. 402. Junk fee defined. \nSubtitle A—Investment Companies \nSec. 411. Fee disclosure requirements for in-\nvestment companies. \nSec. 412. Prohibition on certain fees by in-\nvestment funds. \nSubtitle B—Brokers and Dealers \nSec. 421. Fee disclosure requirements for \nbrokers and dealers. \nSec. 422. Prohibition on certain fees by bro-\nkers and dealers. \nSubtitle C—Investment Advisers \nSec. 431. Fee disclosure requirements for in-\nvestment advisers. \nSec. 432. Prohibition on certain fees by in-\nvestment advisers. \nSubtitle D—Transparency on Fees Collected \nFrom Individual Investors \nSec. 441. Reports by registered investment \ncompanies. \nSec. 442. Reports by brokers and dealers. \nSec. 443. Reports by registered investment \nadvisers. \nSubtitle E—Transparency and Prohibition of \nCertain Fees on Trading Venues \nSec. 451. Transparent fee structures for ex-\nchanges and ATSs. \nSec. 452. Prohibition of excessive fees by ex-\nchanges and ATSs. \nSEC. 402. JUNK FEE DEFINED. \n(a) IN GENERAL.—In this title, with respect \nto a service or a transaction, the term ‘‘junk \nfee’’ means any fee or charge imposed on an \ninvestor or consumer that is— \n(1) not clearly and conspicuously disclosed \nprior to the investor or consumer entering \ninto the agreement for the service or trans-\naction; or \n(2) excessive and not reasonably related to \nthe actual cost of the service or transaction. \n(b) I\nDENTIFICATION OF SPECIFIC JUNK \nFEES.—The Securities and Exchange Com-\nmission may issue a rule to identify specific \nfees or charges that are a junk fee under \nparagraph (1), which may include— \n(1) a sales load fee; \n(2) a variable performance-based fee; \n(3) a fee related to the paper or electronic \ndelivery of regulatory documents; \n(4) undisclosed or misleading trading com-\nmissions; \n(5) excessive or undisclosed markups or \nmarkdowns; \n(6) padded or mislabeled processing, han-\ndling, service, ticket, or platform fees; \n(7) mislabeled or marked-up regulatory, \nregistered national securities exchange, \n‘‘SEC’’, FINRA, or clearing fees; \n(8) excessive or unnecessary front-end, \nback-end, or level sales loads and contingent \ndeferred sales charges where lower-cost or \nno-load alternatives are available; \n(9) the use of higher-cost mutual fund or \nexchange-traded fund share classes when \nidentical or substantially similar lower-cost \nshare classes are reasonably available; \n(10) wrap fees marketed as ‘‘all-in’’ that ex-\nclude significant trading, product, or plat-\nform costs or are charged on largely inactive \naccounts (commonly referred to as ‘‘reverse \nchurning’’); \n(11) unreasonable or surprise account \nmaintenance, custodial, or inactivity fees \nthat are not tied to bona fide services; \n(12) unreasonable or punitive individual re-\ntirement account (‘‘IRA’’) or brokerage ac-\ncount termination, closure, or transfer fees \nthat impede switching; \n(13) "
+          },
+          {
+            "source_id": "congressional-record:3383-partB5-operative-voice164",
+            "locator": "Last1500characters, including final fee provision and initial question, only",
+            "passage": "SS. \nThe Securities Exchange Act of 1934 (15 \nU.S.C. 78a et seq.), as amended by section \n451, is further amended by inserting after \nsection 6A the following: \n‘‘SEC. 6B. PROHIBITION OF EXCESSIVE FEES BY \nEXCHANGES AND ATSS. \n‘‘An exchange or alternative trading sys-\ntem (as defined in section 6A) may not, di-\nrectly or indirectly, impose any of the fol-\nlowing fees: \n‘‘(1) Any fee or charge that is not reason-\nable and proportional to the cost of the prod-\nuct or service for which the fee is charged. \n‘‘(2) Any fee pursuant to a fee structure \nthat is designed in a way that unfairly dis-\nadvantages or advantages certain partici-\npants relative to others without a legitimate \nbusiness justification. \n‘‘(3) Any fee pursuant to a fee model that \nobscures or conceals the true cost of trading, \nmarket data, or access to the market. \n‘‘(4) Any junk fee (as defined in section 402 \nof the No Junk Fee Act of 2025) or other fee \nthat is excessive, unreasonable, or unjustly \ndiscriminatory, as the Commission deter-\nmines appropriate or necessary to protect in-\nvestors.’’. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from California (Ms. \nW\nATERS). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMs. WATERS. Mr. Chair, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from California will \nbe postponed."
+          },
+          {
+            "source_id": "congressional-record:3383-partB5-roll327-recorded164",
+            "locator": "Complete retained own recorded rejection",
+            "passage": "AMENDMENT NO. 5 OFFERED BY MS . WATERS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 5, printed in \npart B of House Report 119–399, offered \nby the gentlewoman from California \n(Ms. W\nATERS), on which further pro-\nceedings were postponed and on which \nthe noes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 214, noes 215, \nnot voting 9, as follows: \n[Roll No. 327] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4e8d97b7da41fb4b9dc205caa423480e4659e6b05ad11e91f95bafebaf08ae2a",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:328",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The whole December 11 H.R.3383 EH is the multi-title INVEST package, not only its older closed-end-investment title or any failed child. Of its 66,005 characters, only the first 3,500 and last 1,200 were read here, alongside the complete own passage question. The opening identifies multiple capital-access, investor and public-market provisions; the ending retains the multi-class disclosure section. Whole operative text, RCP119-15 and floor/EH reconciliation, and material securities, investor and technical-delivery baselines remain pending. The selected disclosure target or a general reference to rural capital does not establish the entire choice, project-specific infrastructure financing or technical eligibility. Recorded 302–123 passage with eight Not Voting is distinct from the three rejected amendments. No actual investment, fee, return, market outcome, current-law status or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:328",
+            "url": "https://clerk.house.gov/evs/2025/roll328.xml",
+            "raw_sha256": "1d92d8fec60bc02f91533da9bf3aeb6cfc3cce1a8c5267cc7c20f80d2319a1eb",
+            "governed_bytes_sha256": "60f5b5db3344bde753cfcc5c899bbab41a86bea8efd4ec3f8e335d2835cb8f72"
+          },
+          {
+            "source_id": "govinfo:hr3383eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3383eh/html/BILLS-119hr3383eh.htm",
+            "raw_sha256": "78e7cd144c0044bb9f9b5fb76a19dd6b9424fddb8dfbf80b18cb52b67f4bc05c",
+            "governed_bytes_sha256": "888155ce3945770e1b39689012c7797fb826e7af63cff4e0989fce044d14881c"
+          },
+          {
+            "source_id": "congressional-record:3383-roll328-passage164",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+            "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+            "governed_bytes_sha256": "b1df22f917301573362f3acdba329b26eca101257e36b9262297bae7f661198d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3383eh",
+            "locator": "Opening0:3500only; whole66,005-character package unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3383 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3383 _______________________________________________________________________ AN ACT To amend the Investment Company Act of 1940 with respect to the authority of closed-end companies to invest in private funds. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE; TABLE OF CONTENTS. (a) Short Title.--This Act may be cited as the ``Incentivizing New Ventures and Economic Strength Through Capital Formation Act of 2025'' or the ``INVEST Act of 2025''. (b) Table of Contents.--The table of contents for this Act is as follows: Sec. 1. Short title; table of contents. TITLE I--EXPANDING ACCESS TO CAPITAL FOR SMALL BUSINESSES Sec. 101. Expanding access to capital for rural job creators. Sec. 102. Helping angels lead our startups. Sec. 103. Amendment for crowdfunding capital enhancement and small- business support. Sec. 104. Small business investor capital access. Sec. 105. Advocating for small business. Sec. 106. Small entity update. Sec. 107. Improving access to small business information. Sec. 108. Improving capital allocation for newcomers. Sec. 109. Developing and empowering our aspiring leaders. TITLE II--INCREASING OPPORTUNITIES FOR INVESTORS Sec. 201. Fair investment opportunities for professional experts. Sec. 202. Retirement fairness for charities and educational institutions. Sec. 203. Equal opportunity for all investors. Sec. 204. Senior Security. Sec. 205. Improving disclosure for investors. Sec. 206. Increasing investor opportunities. TITLE III--STRENGTHENING PUBLIC MARKETS Sec. 301. Encouraging local emerging ventures and economic growth. Sec. 302. Access to small business investor capital. Sec. 303. Encouraging public offerings. Sec. 304. Greenlighting growth. Sec. 305. Middle market IPO cost. Sec. 306. Expanding WKSI eligibility. Sec. 307. Enhancing multi-class share disclosures. TITLE I--EXPANDING ACCESS TO CAPITAL FOR SMALL BUSINESSES SEC. 101. EXPANDING ACCESS TO CAPITAL FOR RURAL JOB CREATORS. Section 4(i) of the Securities Exchange Act of 1934 (15 U.S.C. 78d(i)) is amended-- (1) in paragraph (4)(C), by inserting ``, rural-area small businesses'' after ``women-owned small businesses''; and (2) in paragraph (6)(B)(iii), by inserting ``, rural-area small businesses'' after ``women-owned small businesses''. SEC. 102. HELPING ANGELS LEAD OUR STARTUPS. (a) Definitions.--For purposes of this section and the revision of rules required under this section: (1) Angel investor group.--The term ``angel investor group'' means any group that-- (A) is composed of accredited investors interested in investing personal capital in early-stage companies; (B) holds regular meetings and has defined processes and procedures for making investment decisions, either individually or among the membership of the group as a whole; and (C) is neither associated nor affiliated with brokers, dealers, or investment advisers. (2) Issuer.--The term ``issuer'' means an issuer that is a business, is not in bankruptcy or receivership, is not an investment company, and is not a blank check, blind pool, or shell company. (b) In General.--Not later than 6 months after the date of enactment of this Act, the Securities and Exchange Commission shall revise Regulation D (17 CFR 230.500 et seq.) to require that in carrying out the prohibi"
+          },
+          {
+            "source_id": "govinfo:hr3383eh",
+            "locator": "Last1200characters only, including section307tail and attestation",
+            "passage": "r of securities with 5 percent or more of the total combined voting power of all classes of securities entitled to vote in the election of directors-- ``(A) the number of shares of all classes of securities entitled to vote in the election of directors beneficially owned by such person, expressed as a percentage of the total number of the outstanding securities of the issuer entitled to vote in the election of directors; and ``(B) the amount of voting power held by such person, expressed as a percentage of the total combined voting power of all classes of the securities of the issuer entitled to vote in the election of directors. ``(3) Multi-class share structure.--In this subsection, the term `multi-class share structure' means a capitalization structure that contains 2 or more types of securities that have differing amounts of voting rights in the election of directors.''. Passed the House of Representatives December 11, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3383 _______________________________________________________________________ AN ACT To amend the Investment Company Act of 1940 with respect to the authority of closed-end companies to invest in private funds."
+          },
+          {
+            "source_id": "congressional-record:3383-roll328-passage164",
+            "locator": "Complete retained own recorded passage question and outcome",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nRECORDED VOTE \nMs. WATERS. Mr. Speaker, I demand \na recorded vote. \nA recorded vote was ordered. \nThe SPEAKER pro tempore. This is a \n5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 302, noes 123, \nnot voting 8, as follows: \n[Roll No. 328] \n\n\nSo the bill was passed. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "76a801d5418299baf1f69273657aebdf7f064e627b64abec90e58431d7274700",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:329",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.3898. It is non-counting procedural context, distinct from final passage at roll 330. The initial motion body or instructions are not interpreted here; the parent PERMIT title and water-policy subject cannot supply a substantive child meaning. No permit approval, environmental outcome, policy support or opposition, current-law result or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:329",
+            "url": "https://clerk.house.gov/evs/2025/roll329.xml",
+            "raw_sha256": "3b4d6bb501e8f7559c832e7afd3421587e533d0164639e0e6ade83a8b164c825",
+            "governed_bytes_sha256": "0a3c58f3fc2c30e307612785b245e4512bb31e0b4fcc0f7ffbfccbd2215ce261"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "93675c5efce7519a85f6af5271a8e29526a1859362e1e788aa14d27cc52c9457",
+      "source": {
+        "source_id": "clerk:119:1:325",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll325.xml",
+        "text_version": null,
+        "raw_sha256": "fb3d6f2f520ade072206df3490d8939288b951584873492a193b48c93b161ecc",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "325",
+          "legis-num": "H R 3383",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "1",
+          "amendment-author": "Self of Texas Part B Amendment No. 1",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:26 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "53",
+            "nay-total": "165",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "1",
+            "nay-total": "209",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "7c0b23c569176781ebe30508ff8846dc05b42895b8766afc865a79c1f2a7d860"
+      }
+    },
+    {
+      "original_source_object_sha256": "e0f4b05dcb0e488a397ebfc453178148410b6fa6534759e10a8f40d28b83c41d",
+      "source": {
+        "source_id": "congressional-record:3383-partB1-operative-voice164",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+        "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+        "text": "AMENDMENT NO. 1 OFFERED BY MR . SELF \nThe Acting CHAIR. It is now in order \nto consider amendment No. 1 printed in \npart B of House Report 119–399. \nMr. SELF. Mr. Chairman, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 307. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Texas (Mr. S\nELF). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMr. SELF. Mr. Chairman, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Texas will be post-\nponed. \n",
+        "text_version": "CompleteownPartB1operative andinitialvoice/postponement164; No1notSelf2FTE, No5completeTitleIV notonlyfirstpage, debate/adjacentmatter omitted.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named ownoperative/stages or materialscope reviewed164. Literal words/artifacts retained, no wholeparents/currentlaw/individualapplication certification.",
+        "governed_bytes_sha256": "7f025c05dcfc8e75e18108d452153e039129d9d76f25de4d7c433b219253087f",
+        "captured_full_text_sha256": "ca24613e3e31f7a9a8407bc8e1c5baa9da57496c9a23fd1aae075770e057aa8d",
+        "source_text_extents": [
+          {
+            "start": 290,
+            "end": 623,
+            "total": 64422
+          },
+          {
+            "start": 7643,
+            "end": 8047,
+            "total": 64422
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "fc8820c34a69a8e2ccaa62419b813d4d7b2d6a8399c024753ed88fecb61e6ec8",
+      "source": {
+        "source_id": "congressional-record:3383-partB1-roll325-recorded164",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+        "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+        "text": "AMENDMENT NO. 1 OFFERED BY MR . SELF \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 1, printed in \npart B of House Report 119–399, offered \nby the gentleman from Texas (Mr. \nS\nELF), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 54, noes 374, \nnot voting 11, as follows: \n[Roll No. 325] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "text_version": "Completeownpostponedquestion/totals/recordedrejection164; nototheramendment/passages/debate/personalstatedpositions.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named ownoperative/stages or materialscope reviewed164. Literal words/artifacts retained, no wholeparents/currentlaw/individualapplication certification.",
+        "governed_bytes_sha256": "a4ad9dfe2bff6428357aaa4078cee9b8841f6189439b2738d599c2bd4df919b7",
+        "captured_full_text_sha256": "d4040e368a06ef46abacc7df1d5391d93d4212c1dac564feb6f4a2afe965ebca",
+        "source_text_extents": [
+          {
+            "start": 5206,
+            "end": 5884,
+            "total": 32293
+          },
+          {
+            "start": 10509,
+            "end": 10597,
+            "total": 32293
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "09b62ef93197500a62dc2d6e74607b39ae3c6e875afa943122bf3775c86136cd",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/96fd8570a4fdad2092b89a0444a1fabc8d8ca9b18b0d94b0144c4dcf61b12b67.0000000.json",
+            "sha256": "9a16f7d40950a4763acb27a476796837ca966b150cad7905e2479316009a6984",
+            "start_character": 0,
+            "end_character": 8037
+          }
+        ],
+        "utf8_sha256": "96fd8570a4fdad2092b89a0444a1fabc8d8ca9b18b0d94b0144c4dcf61b12b67",
+        "total_characters": 8037,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "9ff2e019a2ee1019d1c2537be7769dac388ad9117baaa2881bfc5eb8ffa53d7f",
+      "source": {
+        "source_id": "clerk:119:1:326",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll326.xml",
+        "text_version": null,
+        "raw_sha256": "94ba199c90ddc18ac7487b2d021df1c36f2fda9c371a32bf1fe55d16b841b746",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "326",
+          "legis-num": "H R 3383",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "3",
+          "amendment-author": "Waters of California Part B Amendment No. 3",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:30 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Aye",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "No",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "4",
+            "nay-total": "213",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "207",
+            "nay-total": "6",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "c07f84af9bca2c8e69574f504c5479f1ea489b97f8182e41d73cc088a0bea1af"
+      }
+    },
+    {
+      "original_source_object_sha256": "b68db1b8863a91269096477fe7eb6af796763793e8cfd20f0a917a5e845b0f81",
+      "source": {
+        "source_id": "immigration:roll326-initial171",
+        "source_type": "official_primary_text",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+        "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+        "text": "AMENDMENT NO. 3 OFFERED BY MS . WATERS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 3 printed in \npart B of House Report 119–399. \nMs. WATERS. Mr. Chair, as the des-\nignee of Ms. G\nARCIA of Texas, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as \nfollows: \nAdd at the end the following: \nTITLE IV—ACCOUNTABILITY AND TRANS-\nPARENCY BY FOREIGN HEDGE FUNDS \nSEC. 401. KNOW YOUR CUSTOMER AND ANTI- \nMONEY LAUNDERING REQUIRE-\nMENTS FOR FOREIGN CLIENTS. \n(a) I N GENERAL.—The Secretary of the \nTreasury shall issue rules to require each in-\nvestment adviser and hedge fund to comply \nwith know your customer and anti-money \nlaundering requirements under subchapter II \nof chapter 53 of title 31, United States Code, \nwith respect to the foreign clients of the in-\nvestment adviser or hedge fund, to the same \nextent as such requirements apply to finan-\ncial institutions under such subchapter. \n(b) H\nEDGE FUND DEFINED.—In this section, \nthe term ‘‘hedge fund’’ means an issuer that \nwould be an investment company, as defined \nin the Investment Company Act of 1940 (15 \nU.S.C. 80a-1 et seq.), but for section 3(c)(1) or \n3(c)(7) of that Act. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntlewoman from California (Ms. \nW\nATERS). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMs. WATERS. Mr. Chair, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentlewoman from California will \nbe postponed.",
+        "text_version": "Complete own operative/designation and actual question, voice result, demand and postponement; debate not operative",
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair",
+        "governed_bytes_sha256": "df3076979f45fa9512d4f17ecf831339053fe7724283e5bba98cab8b0f5f5cf8",
+        "captured_full_text_sha256": "61822bbc170c663532ff984f9e881d305ddc6f3600043c95b358989cc756fa51",
+        "source_text_extents": [
+          {
+            "start": 140185,
+            "end": 141421,
+            "total": 209674
+          },
+          {
+            "start": 147440,
+            "end": 147857,
+            "total": 209674
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "4984091f4c345146278fea889ff8f6270d010fdf37144cbf802b8643fcecd1eb",
+      "source": {
+        "source_id": "immigration:roll326-recorded171",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+        "text_version": "Own resumed designation, recorded demand/order/totals and announced outcome; Clerk owns member labels; vote-name lists omitted",
+        "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+        "text": "AMENDMENT NO. 3 OFFERED BY MS . WATERS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 3, printed in \npart B of House Report 119–399, offered \nby the gentlewoman from California \n(Ms. W\nATERS), on which further pro-\nceedings were postponed and on which \nthe noes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 211, noes 219, \nnot voting 8, as follows: \n[Roll No. 326]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "b74434d003c78f09aed592457cc1770a9579ef49c5aab83ad0e60afc5d26329b",
+        "captured_full_text_sha256": "d26980fa3b05aa00e1476c0bb1c02084bb369769688b31c903112fa64fa21490",
+        "source_text_extents": [
+          {
+            "start": 10713,
+            "end": 11401,
+            "total": 24155
+          },
+          {
+            "start": 15812,
+            "end": 15900,
+            "total": 24155
+          }
+        ],
+        "text_extraction_method": "Exact declared character intervals joined doubleLF; no source wording, legal reference or printed numbering repair"
+      }
+    },
+    {
+      "original_source_object_sha256": "37d96fb928219c1ce38c6442d8909234f90ee1df47a54ebe035fbc24021d3ac5",
+      "source": {
+        "source_id": "clerk:119:1:327",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll327.xml",
+        "text_version": null,
+        "raw_sha256": "61cc11b1028c815b5d4c421170d81b99dc855814f9e3f9e6b65e0d073898daa7",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "327",
+          "legis-num": "H R 3383",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "5",
+          "amendment-author": "Waters of California Part B Amendment No. 5",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:34 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Aye",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "No",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "2",
+            "nay-total": "214",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "212",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "c3ea0997e857f707f095590270b128bb4ff6817702c2089ddcb05a88f3e04c0f"
+      }
+    },
+    {
+      "original_source_object_sha256": "05f06a4ae05181258b891b09aa5018c7e18671742a6b54288a433565cd7c4701",
+      "source": {
+        "source_id": "congressional-record:3383-partB5-operative-voice164",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+        "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/6f7c6c322d99bd31dde101038074f39b05c866e1f346a333da859ea994e03e97.0000000.json",
+              "sha256": "14ac6a21160fffe2a58f5721db658642c14a0e51230df7c3c7186cd6322214d9",
+              "start_character": 0,
+              "end_character": 35268
+            }
+          ],
+          "utf8_sha256": "6f7c6c322d99bd31dde101038074f39b05c866e1f346a333da859ea994e03e97",
+          "total_characters": 35268,
+          "transport_only": true
+        },
+        "text_version": "CompleteownPartB5operative andinitialvoice/postponement164; No1notSelf2FTE, No5completeTitleIV notonlyfirstpage, debate/adjacentmatter omitted.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named ownoperative/stages or materialscope reviewed164. Literal words/artifacts retained, no wholeparents/currentlaw/individualapplication certification.",
+        "governed_bytes_sha256": "9b1e2618500ddea8a6a064a7adf1d497578b87e4799f47bc7de093550e668200",
+        "captured_full_text_sha256": "ca24613e3e31f7a9a8407bc8e1c5baa9da57496c9a23fd1aae075770e057aa8d",
+        "source_text_extents": [
+          {
+            "start": 17137,
+            "end": 51986,
+            "total": 64422
+          },
+          {
+            "start": 59163,
+            "end": 59580,
+            "total": 64422
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "adad9a35859895785faec0099ff3b406a9af2f5bce1b3bafaf1358a84fde548e",
+      "source": {
+        "source_id": "congressional-record:3383-partB5-roll327-recorded164",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+        "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+        "text": "AMENDMENT NO. 5 OFFERED BY MS . WATERS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 5, printed in \npart B of House Report 119–399, offered \nby the gentlewoman from California \n(Ms. W\nATERS), on which further pro-\nceedings were postponed and on which \nthe noes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 214, noes 215, \nnot voting 9, as follows: \n[Roll No. 327] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "text_version": "Completeownpostponedquestion/totals/recordedrejection164; nototheramendment/passages/debate/personalstatedpositions.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named ownoperative/stages or materialscope reviewed164. Literal words/artifacts retained, no wholeparents/currentlaw/individualapplication certification.",
+        "governed_bytes_sha256": "fdfdb341637a35851a715e418c8d4b9b6f73f37f80923c1e850bf7ff4875306c",
+        "captured_full_text_sha256": "d4040e368a06ef46abacc7df1d5391d93d4212c1dac564feb6f4a2afe965ebca",
+        "source_text_extents": [
+          {
+            "start": 16111,
+            "end": 16801,
+            "total": 32293
+          },
+          {
+            "start": 21210,
+            "end": 21298,
+            "total": 32293
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "1ff5d1e5de8b834a74848c0c4069676966864051342bcf55b15bfdb2e2c4dbf6",
+      "source": {
+        "source_id": "clerk:119:1:328",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll328.xml",
+        "text_version": null,
+        "raw_sha256": "1d92d8fec60bc02f91533da9bf3aeb6cfc3cce1a8c5267cc7c20f80d2319a1eb",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "328",
+          "legis-num": "H R 3383",
+          "vote-question": "On Passage",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:41 PM",
+          "vote-desc": "Increasing Investor Opportunities Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "87",
+            "nay-total": "123",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "60f5b5db3344bde753cfcc5c899bbab41a86bea8efd4ec3f8e335d2835cb8f72"
+      }
+    },
+    {
+      "original_source_object_sha256": "5ed09af0b1e8eaa8ddab53886a394f9398ec3cfcd9c5fc0a4076b346f99189a5",
+      "source": {
+        "source_id": "govinfo:hr3383eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3383eh/html/BILLS-119hr3383eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "78e7cd144c0044bb9f9b5fb76a19dd6b9424fddb8dfbf80b18cb52b67f4bc05c",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/679ccd8256b9496add33167c7f78cfbd9ea6a49629ef01239ff25e4e289fe8b2.0000000.json",
+              "sha256": "b5eac73bd4725eabf0119700d90adf5d93a09cbeaccb8915479ddbde5aced3f2",
+              "start_character": 0,
+              "end_character": 66005
+            }
+          ],
+          "utf8_sha256": "679ccd8256b9496add33167c7f78cfbd9ea6a49629ef01239ff25e4e289fe8b2",
+          "total_characters": 66005,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "888155ce3945770e1b39689012c7797fb826e7af63cff4e0989fce044d14881c"
+      }
+    },
+    {
+      "original_source_object_sha256": "87d2ccb7045da221b52e8f3d9ce95e9348fd335fe4b74da2c27e2b89758a8a89",
+      "source": {
+        "source_id": "congressional-record:3383-roll328-passage164",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+        "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+        "text": "The SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nRECORDED VOTE \nMs. WATERS. Mr. Speaker, I demand \na recorded vote. \nA recorded vote was ordered. \nThe SPEAKER pro tempore. This is a \n5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 302, noes 123, \nnot voting 8, as follows: \n[Roll No. 328] \n\n\nSo the bill was passed. \nThe result of the vote was announced \nas above recorded.",
+        "text_version": "Completeownpassagequestion/voiceayes/recordedtotals/outcome164 includingmissingpage29; notprecedingbillpassage ornext3898recommit.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named ownoperative/stages or materialscope reviewed164. Literal words/artifacts retained, no wholeparents/currentlaw/individualapplication certification.",
+        "governed_bytes_sha256": "b1df22f917301573362f3acdba329b26eca101257e36b9262297bae7f661198d",
+        "captured_full_text_sha256": "d4040e368a06ef46abacc7df1d5391d93d4212c1dac564feb6f4a2afe965ebca",
+        "source_text_extents": [
+          {
+            "start": 22464,
+            "end": 22907,
+            "total": 32293
+          },
+          {
+            "start": 27551,
+            "end": 27632,
+            "total": 32293
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "fd6a8c7cf160eba1f8497de8f763c189769ea0bf4a5b2adc6376a19dfd02534f",
+      "source": {
+        "source_id": "clerk:119:1:329",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll329.xml",
+        "text_version": null,
+        "raw_sha256": "3b4d6bb501e8f7559c832e7afd3421587e533d0164639e0e6ade83a8b164c825",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "329",
+          "legis-num": "H R 3898",
+          "vote-question": "On Motion to Recommit",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "11-Dec-2025",
+          "action-time": "2:49 PM",
+          "vote-desc": "PERMIT Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "0a3c58f3fc2c30e307612785b245e4512bb31e0b4fcc0f7ffbfccbd2215ce261"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 14
+  }
+}

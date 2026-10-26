@@ -1,0 +1,1938 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "exact_committed_head": "c83babd6dec4af0be87befa87d8b763816e85479",
+  "original_heads": {
+    "86": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+    "87": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+    "88": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+    "89": "21369b4031ee19f64af10b97365d57d45e645f10",
+    "90": "c83babd6dec4af0be87befa87d8b763816e85479"
+  },
+  "batches": [
+    {
+      "batch": 86,
+      "original_head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+      "path": "batch86.json",
+      "committed_utf8_lf_bytes_sha256": "cf4bc212dd6bdd95b82551934621fd0e23ccdbc7ed7cc4f508bd82b41a92c156",
+      "new_records": 10,
+      "source_object_occurrences": 18
+    },
+    {
+      "batch": 87,
+      "original_head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+      "path": "batch87.json",
+      "committed_utf8_lf_bytes_sha256": "6acadf31618c0d6e3bc05d69486da513f3699e7d81404ac028ff600c838b51a5",
+      "new_records": 5,
+      "source_object_occurrences": 11
+    },
+    {
+      "batch": 88,
+      "original_head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+      "path": "batch88.json",
+      "committed_utf8_lf_bytes_sha256": "2cc6878f552ce002bf3482eee076f99568ce2b57658c0953c5808a2f383f033e",
+      "new_records": 5,
+      "source_object_occurrences": 16
+    },
+    {
+      "batch": 89,
+      "original_head": "21369b4031ee19f64af10b97365d57d45e645f10",
+      "path": "batch89.json",
+      "committed_utf8_lf_bytes_sha256": "bd898bbb1fdae12ca85f08b945e590d41c39b09c999239f15751767b483b4712",
+      "new_records": 10,
+      "source_object_occurrences": 24
+    },
+    {
+      "batch": 90,
+      "original_head": "c83babd6dec4af0be87befa87d8b763816e85479",
+      "path": "batch90.json",
+      "committed_utf8_lf_bytes_sha256": "62c4c7270e44d400b83e4e81ca24e0697f60ffc4b506d78dab9fb84646c3c98c",
+      "new_records": 10,
+      "source_object_occurrences": 18
+    }
+  ],
+  "source_objects": [
+    {
+      "source_id": "clerk:119:2:121",
+      "original_source_object_sha256": "d7ff504ce60c1eb8333a00706deca44c37bc0e0f16101d25c98c42d1f5b3b499",
+      "raw_sha256": "5eed5bd63fd971cdfafb5497d83c4ae119bd17e0733b1c80ae2aae48de4fa7bf",
+      "governed_bytes_sha256": "cb368df04971d66f860eeae4ecef96a7e9d63021ac619f9e8bb0c24bb88c0b41",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/d7ff504ce60c1eb8333a00706deca44c37bc0e0f16101d25c98c42d1f5b3b499.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "8a84c8e378d7a0e7583ec67714b7025d33122c247b44dd5df76280684a4f8f77",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:121:continuation-recapture",
+      "original_source_object_sha256": "3ff682c92ad600dbda6dc0c9d1de31c5277aa52a9268ac06ea356f9c08b9c23e",
+      "raw_sha256": "09a909f2e90aa7a907741bc1f6397e8f0ef6f5dac5e705075fd6738e7c9c50f6",
+      "governed_bytes_sha256": "186a0b53ac2a9a17713b7e643266d0b37e25a7fd5d2b98e0e8a0521d304ef5a7",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/3ff682c92ad600dbda6dc0c9d1de31c5277aa52a9268ac06ea356f9c08b9c23e.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "2feda3e6d7ae13d53a828213f1498eaf8a85f04e65d37a520848299c0b68a504",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:122",
+      "original_source_object_sha256": "82a26b842fdaf7ff531c0ef6203dd3eae84f46757da401d2ae865e09f17276ee",
+      "raw_sha256": "02e1c0ff1c816ddc169a12ccdb2485d06fb9051772aa1448911342acc70d38fc",
+      "governed_bytes_sha256": "74bd949721fba6f56151b976a533e823d0d74ea428dffcf9b4739b019f168589",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/82a26b842fdaf7ff531c0ef6203dd3eae84f46757da401d2ae865e09f17276ee.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "e8906e0726f492870ad8e41e02918a1b66d8f9209a2507bb6dd28da5fd1d39d8",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:123",
+      "original_source_object_sha256": "765ca7c7b92dcfcd50ea09f3c3cf18bf4b9837199089c780d31ee403c53f9629",
+      "raw_sha256": "25e006be70f81466e4692319e8aab5084c0044d9550d8852188e9cba1aa5ef21",
+      "governed_bytes_sha256": "909a17279ff27e193018c2fbd7dc134504a9eaf6d156bbfc80dfac2522d23919",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/765ca7c7b92dcfcd50ea09f3c3cf18bf4b9837199089c780d31ee403c53f9629.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "8379b5c1c37dbc543d0158b31f856cd9d582326f1f4d7378e452593adf18e7f7",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:124",
+      "original_source_object_sha256": "e036b7fc642cd3bded92afe21d89499fa793552f48ece9d1c726821b572bda00",
+      "raw_sha256": "c0f957fb016c8b8a84be3315dcb6fd3aaaf77771377474d69220c5a4de65695e",
+      "governed_bytes_sha256": "840ddcdcc1dd411e7b450f010feca24d888b741b1a1cee16897c3ce80965520b",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/e036b7fc642cd3bded92afe21d89499fa793552f48ece9d1c726821b572bda00.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "03c7371ec7aa67e022491cfe9dfee775578cfde776ab3a810d7d9f9e6e7768e4",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:128",
+      "original_source_object_sha256": "b077a789461c82c367ea393a2736642a0ceaa422d83663a9725637ff83e15b59",
+      "raw_sha256": "e08f4ea51eba559fe428e8f595a1daa99a277915d6c20bd5a7d5574027a7e4b5",
+      "governed_bytes_sha256": "42cad9e2a02afccbb6870e35932ea9b6e333490852941e5fe99b715ae6f23b36",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/b077a789461c82c367ea393a2736642a0ceaa422d83663a9725637ff83e15b59.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "674501b1505a5e2c68827edda2e619d128980d82de91836363444248cd0897bb",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:129",
+      "original_source_object_sha256": "adc2dd33899302f57d894af1a3711a5123057b70208d4ae441227c28e48d0fbc",
+      "raw_sha256": "e70f79358608c7ac624d31490aae82845247b920c532577c571fdcc984cd4cf9",
+      "governed_bytes_sha256": "18ed4ae56e760cb3c618e28a751e16203c942d5ae10e618b0ea131e962455fa7",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/adc2dd33899302f57d894af1a3711a5123057b70208d4ae441227c28e48d0fbc.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "0505dce7b6b57dfabf5a7b2cd05412393fc61a49684c15296bbdca9884811cf7",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:130",
+      "original_source_object_sha256": "2a7b7f012fce94c230c353d6d7c52f1918f33b0a58c2183f5c3f49d060306e2d",
+      "raw_sha256": "002e80f30892c618a1dd65b44b53117957f8f51428fd276294445da807cff073",
+      "governed_bytes_sha256": "dae3b0312a6ff43112c96fa5bc2f97a99c3da054b4a6fc8675c4a857e765ae4d",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/2a7b7f012fce94c230c353d6d7c52f1918f33b0a58c2183f5c3f49d060306e2d.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "bdafea26dbe2e23390f1926802b30aa008e2d4fe8a73fe01af4471c4668da8c9",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:131",
+      "original_source_object_sha256": "bb619e5d0b06052edf5c99bf2c37438d49bf83170b780c496b56d877ba0646f2",
+      "raw_sha256": "4a52bce28abcf26ddd3560fe0303852736c2578d6a0936ecd1aa80c09600b0ac",
+      "governed_bytes_sha256": "7117b1a579b37d0b4bd6f862e31abf23608e686b21c5820ece81621e722d7da1",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/bb619e5d0b06052edf5c99bf2c37438d49bf83170b780c496b56d877ba0646f2.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "c1b2ddf10340568455cd9dd5c0e7328017649a63b5629287da2960c77d993c53",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:132",
+      "original_source_object_sha256": "632719d7ff4ae9ae5eee42391f98a0040cd16b72a7fc5b7eefdba10db9aea26c",
+      "raw_sha256": "259d6a2bee396d09d745679b0f1fb4a16208c7710645e7bf7425eda34d7e82ca",
+      "governed_bytes_sha256": "a0bbb8bbc0b261755ef96ee2e6d21063621aa7b74f517cad52fe9b9c7423acb1",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/632719d7ff4ae9ae5eee42391f98a0040cd16b72a7fc5b7eefdba10db9aea26c.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "b87759d8185f34b73e9bfb91703ff3bc5a6b4766c9ef46c24ba155ef322f7c62",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:135",
+      "original_source_object_sha256": "1acd404959a4c4bde3eae3c02a953c1f8849082af4dc90d24620c8f9ede1bd0c",
+      "raw_sha256": "d8d9f243cf827e37a9c64f759557f009bbff1be2aa451efe205dc095e581f5e4",
+      "governed_bytes_sha256": "f08b1c438b5c263764b1a5a91cc7d7e3596b23e2c3992a95b6737ad4f2771244",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/1acd404959a4c4bde3eae3c02a953c1f8849082af4dc90d24620c8f9ede1bd0c.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "84e8639b1359c866178eca0bd1b033c145afe1c0ecf84a06270818e1bc19c3d4",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:136",
+      "original_source_object_sha256": "1a919f40c367152480483ac009f9c3e2024a8fe0bd73fbe914773eb923b63c4d",
+      "raw_sha256": "8b39431dccc319aef3bbe39d9e457fa5fbb69e750e3bc714d11274b78d0c588a",
+      "governed_bytes_sha256": "27256bb693d17d587e3ecaf14e213e0c2d89bf371f36394ea247bef50a297ab4",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/1a919f40c367152480483ac009f9c3e2024a8fe0bd73fbe914773eb923b63c4d.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "19aa832533717e5d09be913547ce9edc6914f032077b4cb720c307e4f56a3f1a",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:137",
+      "original_source_object_sha256": "991c1cd0d9d496077aab55742c1a7784ec01db96ffc6a14d65861a0e5351013c",
+      "raw_sha256": "c2c0806d427a081fd26a552d57dc5822dfee8b7b7fdccbd46a7e650415457305",
+      "governed_bytes_sha256": "e01f8f2cd271236a57aa0a7d125969142ba4803a7ecabfed49178b3684823f9f",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/991c1cd0d9d496077aab55742c1a7784ec01db96ffc6a14d65861a0e5351013c.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "c8f3436cd3527b9ef066c116563de4c76008e25c1b570c2e35e0f9c47f233945",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:138",
+      "original_source_object_sha256": "653a1b5ed520834877597feb3afa16e791efe5c1e73a51df8f1f7cae13f1e610",
+      "raw_sha256": "5e2112a45af804131f748f043c4b8b1cab5ebbd0a7fe69345ef9e2cfd63fa260",
+      "governed_bytes_sha256": "d359b2450b867930ac5dd7cc6e1ce6d3c8a1a581bac1a365472b395eb28d813a",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/653a1b5ed520834877597feb3afa16e791efe5c1e73a51df8f1f7cae13f1e610.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "64296b39274f47cdbc6e231a7bcd0346a13dcc8704a9550c785fdf517685d468",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:139",
+      "original_source_object_sha256": "65ae5aa58a865bf187539efc128b99e7175816a02129813f701896ba6a144a6e",
+      "raw_sha256": "26afc66d8af579aad1888b20e844a6d27c57c726c905e1cb45667d544a76188f",
+      "governed_bytes_sha256": "99a5baae5f213ca9c424b8ff6176790f5a802613c64cb58c8ca83546a12201e3",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/65ae5aa58a865bf187539efc128b99e7175816a02129813f701896ba6a144a6e.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "84bc855c068961c7bd349eae8192540585c3c4e5bfa75f2d7b426836e1d4e24f",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:140",
+      "original_source_object_sha256": "b19becf2a7485036beda642edb6e81b45788c0d0a4f3b509c0ec1013d7f88654",
+      "raw_sha256": "fa292b8724b8015de49c4603d7e1231e6aab665f79a969c3cbc4a50db090eb6d",
+      "governed_bytes_sha256": "e5d5d0a9773192485c137db677922064bfe6ebae14aa8c7a46218274effb6348",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/b19becf2a7485036beda642edb6e81b45788c0d0a4f3b509c0ec1013d7f88654.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "659c719a9e850d6507b6be1142960aca609e46f5693289ed607631b0dbd3ca2c",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:141",
+      "original_source_object_sha256": "7257df270c773eaa7833986eac6e0f687f83f792ab7f6e67286cfb154097a73f",
+      "raw_sha256": "e4cc0649261352b005025f7ad61f566a5fdbd2dacd26904bb3cc7f32e7b8b75c",
+      "governed_bytes_sha256": "e8d5f2cc08e69d4f45a10f3262b8df7c0d07d948123eeaf8ccbaed48a54c1af9",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/7257df270c773eaa7833986eac6e0f687f83f792ab7f6e67286cfb154097a73f.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "07125154d12081b0fbc5b82ab7046d467fca8b2831e42d45ef1b79bb546d6e2d",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:142",
+      "original_source_object_sha256": "de22b482abf04690f27fb6d748a4ea766145fb9e9ad77fb12a0b486801326874",
+      "raw_sha256": "039ece5b04253ee6ff0d7d7cb9e08096529e09daabe78f39d18de3ea3dbd11c7",
+      "governed_bytes_sha256": "78888854f7b640bf4625a19209f0c13695754c7a380b6d8f48de7128a57ed15f",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/de22b482abf04690f27fb6d748a4ea766145fb9e9ad77fb12a0b486801326874.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "607e0805e697166586411be561f768528c1d381a433a38019e319376ad208123",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:143",
+      "original_source_object_sha256": "ab416adc100f3ac40ca6e17f455583846c117acb5e819e52dfd80807c0986409",
+      "raw_sha256": "0dedef47be7b80342ccff1b1c44d743ef0d12d2d6499320a38235fa5c42020fb",
+      "governed_bytes_sha256": "c04c610b8cf76c4bfb56e96562128450af301767c6e800f713e81b1a58d1b962",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/ab416adc100f3ac40ca6e17f455583846c117acb5e819e52dfd80807c0986409.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "0c22a4bb0f4510f24ce8f58acd998cf7930688b0296be0bc5301abe808a91848",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:144",
+      "original_source_object_sha256": "8aa055baee02efb9f65e8946966b797d558182847b9f31cb2050859906e98e5f",
+      "raw_sha256": "cbd3442937b2d36052c249e135457c6db75e85d700feb30db6c03c24b0fa23ca",
+      "governed_bytes_sha256": "146a4d5bfdf42c0c42aa35b83113f9d4f9c2cd2ccb1ad358ba4622181583a487",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/8aa055baee02efb9f65e8946966b797d558182847b9f31cb2050859906e98e5f.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "522df68c86b8bcc624729720cab05178689d030eac0c3848293262f7a40bf4ae",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:145",
+      "original_source_object_sha256": "ffc1545f8c9012857d583024e5c02e8cd380892ab49571ac8b862aa469673f37",
+      "raw_sha256": "99b4b317dcf5f78b9d010f92a9cbeae83b8b7e30620dd951ed7998751bb7893a",
+      "governed_bytes_sha256": "3033e2fc7b7ce827d5a502743747c4b2088664bcb2bf283d02c7fbcae8d47b5b",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/ffc1545f8c9012857d583024e5c02e8cd380892ab49571ac8b862aa469673f37.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "7f38cd214a931ec239b769302b9cbfeafa27b75c1d1947ebad8925875a775908",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:146",
+      "original_source_object_sha256": "a6b00ef6990fc2ad256c305c3ea31e7dd73613ae0e56d1c417d94039b1b4b11c",
+      "raw_sha256": "2bfc5aa8b892ba3084c335c148f247dffcc65f5878bd9242055efb592a953f75",
+      "governed_bytes_sha256": "9ac89d30c910558736a19d799086e42b2a46c738e1cf84299fa0a0cfcaf45046",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/a6b00ef6990fc2ad256c305c3ea31e7dd73613ae0e56d1c417d94039b1b4b11c.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "095c71254b8bd8a75878c8890aa7514181ead37974f854f31d8a76f4bee9ed6e",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:147",
+      "original_source_object_sha256": "37beda66a94ea9da99dc0cf8b68c98568dff2876d75126cd92fdb563531371c6",
+      "raw_sha256": "86560a3d0b4884e7a05d8e26fc645e59289c067aef979e0a899dc69defdae19b",
+      "governed_bytes_sha256": "f1745a45bc1e8e612907a5a1917045442ead8457962b7fa00ec5c75a76ec262e",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/37beda66a94ea9da99dc0cf8b68c98568dff2876d75126cd92fdb563531371c6.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "1d80ad81e9a8911c7c56e7841d90cf0d21767838357781257dd8e27ab3730cad",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:148",
+      "original_source_object_sha256": "ed7a0e6ba68b6037c47c56625364318cf26edc617c9afd0a4c88144d37649c03",
+      "raw_sha256": "d1d1ed6df4e7c72e43963dad5cca5ee628d43bbceffb106187261cd5d9d97cf0",
+      "governed_bytes_sha256": "ec308547ab6d5dc099b55a02d4844870b261d6cf560fbaa75f2211d28073234e",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/ed7a0e6ba68b6037c47c56625364318cf26edc617c9afd0a4c88144d37649c03.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "e2d5ec4b1a98d9a0b4c0603804041d90cc63372dd5c8ce557b6eae4e26d8ab62",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:149",
+      "original_source_object_sha256": "d38dc37aebef2b11c3eecbb451e00a398e6b5ab7c5325a94e01ace2ec538ba01",
+      "raw_sha256": "098501f7064ddb2c0d4d096568bc3d20c8b8334da99c701fed130fb74501ffc2",
+      "governed_bytes_sha256": "f02dbbe67e88e982462eeb2dadc0e0cd31a067a2b5de35eb45f02a6c77c7c344",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/d38dc37aebef2b11c3eecbb451e00a398e6b5ab7c5325a94e01ace2ec538ba01.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "d56527785a99dcf6ebe856d1483b202b3c49c68e109ec4edb0130a5867438563",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:150",
+      "original_source_object_sha256": "925a210ce0899ccb3d1903a3c02eb8db4124b32455fb5007719baebed9ab1147",
+      "raw_sha256": "68b864a45989148b4f810a6b52dd227554de577d6c60ce98792c405cea7a0634",
+      "governed_bytes_sha256": "a3b57c5273cb7001fa86ba62ecdf83e873d990d48ae611c9bff0927cff58eb8e",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/925a210ce0899ccb3d1903a3c02eb8db4124b32455fb5007719baebed9ab1147.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "8f0e801af971884191bf3292ab9f9cedc4b15a35aea1b0e7e0e6d1f69dc4d7b3",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:151",
+      "original_source_object_sha256": "94abeef9f9f2ca2196799e2033ef327c2bfa4b0d61093adb7682453aa5f2663f",
+      "raw_sha256": "1e2cb6d0cbe14a1bc49e41ee47536c385217fb04eae79931233ef4a5bac7888d",
+      "governed_bytes_sha256": "08695333aa6a1e9484731aa2cba84d9eebd543f59e75df3ae8fb796a1cd2548f",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/94abeef9f9f2ca2196799e2033ef327c2bfa4b0d61093adb7682453aa5f2663f.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "d9bf82725b675bbdd04a85898acccd7f23e2db25f9528f05fbb0e5ccc0c61423",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:152",
+      "original_source_object_sha256": "6e3431d08e9b91ae9c84e6b6c151fcd6036d6cdf168417633129ecb9a5575146",
+      "raw_sha256": "d2559105b7c75b42c3fc7b2dccf102cd5cd0e64480131531d611ef881cf8fe3c",
+      "governed_bytes_sha256": "57ac0ed9f86e64a8828d3edc2fe71089573755278466c55ae5c568f36ea4e85e",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/6e3431d08e9b91ae9c84e6b6c151fcd6036d6cdf168417633129ecb9a5575146.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "c6e13c9f0716fd415417e2cb8d1e44c4d0b76933724bbef5f93f0e2f97cf7584",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:153",
+      "original_source_object_sha256": "8a9ad5812365164298fd19d0b44edebac1573e064cfde6b60d18a03b09e4a91c",
+      "raw_sha256": "c7dcf918d743545c7107fbc343aefb3fe600d8a91d0bd6466ef6cf34a6376b2d",
+      "governed_bytes_sha256": "b694931e871daa2d4b5a0833a09e8ea40a2efa968dd68e47ceada1d153b3b789",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/8a9ad5812365164298fd19d0b44edebac1573e064cfde6b60d18a03b09e4a91c.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "8676054670a20a738ca5e912224bc2d7d525fd2e5b209aeb11cc05318de7ddfd",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:154",
+      "original_source_object_sha256": "af5b2b0f272e0e8d195ebe3a1ccd8b3d9f35e5af138c595832b346521d16f77b",
+      "raw_sha256": "76642e459dd4f0759c68c08b018b1272cde006984922795c83cbe827cdbda1b0",
+      "governed_bytes_sha256": "a7dbc90ad2f1a15662a4ea5aec0fbb418855101dea1964f6a2554245f34fa6c6",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/af5b2b0f272e0e8d195ebe3a1ccd8b3d9f35e5af138c595832b346521d16f77b.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "ecb0606f1dea62808f00305068ab8555e11334fc9494acc22ad1141a847cecfc",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:155",
+      "original_source_object_sha256": "ebf675528f2fd57d3ec45ba5d2e07b2bb7fd1d17a2e341f4566a606122ed0038",
+      "raw_sha256": "2b025b6c6ebca8f881e36fe1506a1ef70d7f5fc32dd771c09a49d60df1197c60",
+      "governed_bytes_sha256": "bdb0a8e26e98571cb2221afb912edd693d8e9e373ed5980b6cacaa2d611496bd",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/ebf675528f2fd57d3ec45ba5d2e07b2bb7fd1d17a2e341f4566a606122ed0038.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "a0994e8ea6b8886a2407e0f16abd0d728ed436c559cca8dba9ab567e969c0bf2",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:156",
+      "original_source_object_sha256": "1710a2faff76dd46cbf0e998c656e70c0055d7c267760918894ea8113e9085da",
+      "raw_sha256": "530d0a77d380f34b402fc86dbec7fb4ccf9c76f496a3054b2141a3c59be48eeb",
+      "governed_bytes_sha256": "87b907f0bb4ad994f03f5f4103b69aacd8d5d532b4a9cffb03b0a5e8011b8f2c",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/1710a2faff76dd46cbf0e998c656e70c0055d7c267760918894ea8113e9085da.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "04c4cf2c713a79f0f43bba31124ee4379ae12789fd35df9d796ff7b365a9bb27",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:157",
+      "original_source_object_sha256": "b07824273dd7a5509aeb54b3adf96f55c3b879d2c8a48fd85ac9901d1e167bbf",
+      "raw_sha256": "2990efc2b789d33eb6f824f1f071e3ff602effd64fb01a276f9c11ee449d57de",
+      "governed_bytes_sha256": "fff5aef4b01e713304632423db46c2c6ddeff37cc3ecc168450eef7d8e06eda0",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/b07824273dd7a5509aeb54b3adf96f55c3b879d2c8a48fd85ac9901d1e167bbf.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "7e4b9a03b27cb9ba0a978d1de52bc500df01c2b68beb5baaaa545327cbae94e7",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:158",
+      "original_source_object_sha256": "a08935d0b1f30b6c2e4889e5982bec72d25bcd5f4df716017d1789ab93d0f673",
+      "raw_sha256": "5e3d7fd513694b05b9ab2ea8155909d485ce8f15c2ef6105c751a49aa6ac90bc",
+      "governed_bytes_sha256": "ef27e14ecbd51cd68dc40726fa4fb93a5041635e4ba84dffccf5e86ffe83bd27",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/a08935d0b1f30b6c2e4889e5982bec72d25bcd5f4df716017d1789ab93d0f673.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "799551715177a50439940a505c4dfd6843b4d8477ad7476120f8d3cd3d13851d",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:159",
+      "original_source_object_sha256": "afce5fd50e0f0bc2fb5215f1fd7b64d7cd70a7f90792a7bdb7ae8dda8395fe89",
+      "raw_sha256": "2a7820b96cc53b23d6c568af6eabfd98491f3427ad35d219d19349bc1924f091",
+      "governed_bytes_sha256": "c7ba626e1d82565b6eff81ae74dbecc294843726d96d765484d936938b7cb10a",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/afce5fd50e0f0bc2fb5215f1fd7b64d7cd70a7f90792a7bdb7ae8dda8395fe89.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "42eaef0df05ded112501bf2ecadbcd83c64800b4265c89b7fdec2a78920fee1c",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:160",
+      "original_source_object_sha256": "b4ff5c54303e87788420f337c4883685f6b084ea33bf4e0e3090984ec1bcf50b",
+      "raw_sha256": "90c4af91fe2f89d3e0723192ffbd4f5315baffb93e72f70200ad0d8e11925c97",
+      "governed_bytes_sha256": "d8b672c6052401699c08d60d34ec5534e914e1855086d5760e360536ee13e12a",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/b4ff5c54303e87788420f337c4883685f6b084ea33bf4e0e3090984ec1bcf50b.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "1e302fdd35497de760e1f44a1681505f91139f5ea8341642a4e9f7e272896f33",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:161",
+      "original_source_object_sha256": "55cbdb8351e5db3dabe6947e907c12ebc4110587ebfc51a479eda231d52f8f19",
+      "raw_sha256": "b3fcc6162122591c0af190cd8349acfc0964ec3706cc25843e4d4e0e7d5835ed",
+      "governed_bytes_sha256": "2154dd3ee9d9eaa91899ec3aa0c1833c03524786df4870bdf12a2537a1eba5bb",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/55cbdb8351e5db3dabe6947e907c12ebc4110587ebfc51a479eda231d52f8f19.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "8e911e8179c6a0cf275a5f38688bd2bd08efc0f5f6a43b05299c9d482d02e60e",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:162",
+      "original_source_object_sha256": "f220004ae0221895659603c5b0424b2fd838e5c5bb8c217c8a48a359789cf514",
+      "raw_sha256": "4c3b3f9a1970989b06a1ade3dfd734b0d30d9f5f289b24188ad9fe8a49de78a2",
+      "governed_bytes_sha256": "ed85f45fb4b1cd707859109b66e53335abb82cde97efa73a0561498052ee06cf",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/f220004ae0221895659603c5b0424b2fd838e5c5bb8c217c8a48a359789cf514.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "2287061f637a72cdce61e67cb3f96b64903f39b4227056db47996b0c5812d64d",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:163",
+      "original_source_object_sha256": "f89a38a3d800da0acbd07fde617963e1211b68e46c2535e933f07a24af06009e",
+      "raw_sha256": "6e34f65714a28f6f151729df85b500f7345a2cfe5f1e2318e07ce5d32bfc94d8",
+      "governed_bytes_sha256": "4ec8070a1ab707f816755a4e3917aebc42c4f9a080cc41f7fd0ecf53a47b92e2",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/f89a38a3d800da0acbd07fde617963e1211b68e46c2535e933f07a24af06009e.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "95865397617a3a4f1e946f39db16cb8d3a1a2b4cdca2fa03fbedfb8e96d9eac9",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:164",
+      "original_source_object_sha256": "2ee211b927c27cffd283a1e3b7099d564412cffd4dc18a93bcb6825d174fb035",
+      "raw_sha256": "784496f77a4e51ff763d7c44685c04a9af96fac1d227718fbcbbd164cf10d6aa",
+      "governed_bytes_sha256": "6264e6d8d963c8d61ef7f9f3f777e65d5adfbdaa9bf5781499f4bafb7d12eeac",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/2ee211b927c27cffd283a1e3b7099d564412cffd4dc18a93bcb6825d174fb035.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "a0377d52bdc1c2917bcc00a0cd52b3743a1914c18a7b3c899235e74bac1bd728",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "clerk:119:2:165",
+      "original_source_object_sha256": "716f327aa2f20e1dfc0e5d01ba68ddf7ad206394e4fc93c12220f483e325300f",
+      "raw_sha256": "3f07e6e59c17baab04f0359d1110d7e10c4204a72b3344f0a6692920839536c2",
+      "governed_bytes_sha256": "1e763004d65cfac6b08ef183459048575d3a0c4494453af464bee46f35a25856",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/716f327aa2f20e1dfc0e5d01ba68ddf7ad206394e4fc93c12220f483e325300f.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "644a5d4354a7a27cff02b5ae560ee9ff4e6286a509e2511bb40490790f490eda",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:2026-04-16-hres1175",
+      "original_source_object_sha256": "3277bfeaa370656d908ace638cd72f82824112105c5a1541b9aa9f8047df8450",
+      "raw_sha256": "9ff4f8654293ba98f7e65765798fc629b51951e295656ddfe79f69fbb7ed802a",
+      "governed_bytes_sha256": "3f1544b3f9040bb296ef65c3fa7caee95e001efa4b4dd539df44141dd0dca964",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/3277bfeaa370656d908ace638cd72f82824112105c5a1541b9aa9f8047df8450.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "4d81405e07b0da89a2feafa517e30afc1514ac179da793904df8fc68956028a4",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB2-operative-voice166",
+      "original_source_object_sha256": "d1760ae7b345565c455dc541f3b2f71b303eb50290842210d7ee55d288c6e39b",
+      "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+      "governed_bytes_sha256": "5505da2b63e517b9984b56e2ea457d8dda996a09795ce76a365dca825abffac5",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/d1760ae7b345565c455dc541f3b2f71b303eb50290842210d7ee55d288c6e39b.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "b1e259ab23badaf890f1521bd9cb9a498f9139f5691e9e56105847c544a4a946",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB2-roll144-recorded166",
+      "original_source_object_sha256": "d770c554994ff6116378533e355b3cf53287c80694aeb3bcfbb99a477b3bfb93",
+      "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+      "governed_bytes_sha256": "f38fbd17c45d7f1367b5ded81c04a5cb00b1ed9af53beb8e398582ee8becb86f",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/d770c554994ff6116378533e355b3cf53287c80694aeb3bcfbb99a477b3bfb93.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "f1291c79e40f74d39e5a71ee78b3e84ca5d8e956e6ee6413c34508ded2df35c0",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB20-operative-voice166",
+      "original_source_object_sha256": "0cc33262c4f3709ef49cc0abe113fd523cb70281103bc046ead89a6d83ca6b8e",
+      "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+      "governed_bytes_sha256": "726c91baa814b4ceda04c1ed72771ec80111b176836fad7274ea903b00d925f1",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/0cc33262c4f3709ef49cc0abe113fd523cb70281103bc046ead89a6d83ca6b8e.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "4f6c89582d1d4d39a60ac2e95335f5dec36007e59ae015af35d0047f02c92937",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB20-roll146-recorded166",
+      "original_source_object_sha256": "3798cc7a737deb1973f92977337aeee9e1bca8489365f8c3bef0f86538e8b18e",
+      "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+      "governed_bytes_sha256": "8de4231eeb3a08468de9f1e249d7f7acb3307e38f7d3a95ca4c700334e0c86d2",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/3798cc7a737deb1973f92977337aeee9e1bca8489365f8c3bef0f86538e8b18e.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "3083f8cbde3eb6834a77e7a59f29e7695bc3f2d63ca69bb2b104a92b5bce4f80",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB22-operative-voice166",
+      "original_source_object_sha256": "bd637e4c963d2f2bf7ddee050f552676f433f85f5f83d7c3dfe295a45262e897",
+      "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+      "governed_bytes_sha256": "1d8c81e983d0cb9dce98b510376eeb12c882d0e802be5ebf27c31f74ffe54b9f",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/bd637e4c963d2f2bf7ddee050f552676f433f85f5f83d7c3dfe295a45262e897.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "82aa7d24999031992fffe7e6f57b3aae52375c712b9ca2b9dc629c1cc27ab0bf",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB22-roll147-recorded166",
+      "original_source_object_sha256": "5e5f3ac8c718ce9d7e77bdbdd8b019bd07ed3766682b645f2d427e0ee8f80ab0",
+      "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+      "governed_bytes_sha256": "1bedbf46f95c4d4a3feea7228af3e4b9306595077f370366066c803f55a66494",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/5e5f3ac8c718ce9d7e77bdbdd8b019bd07ed3766682b645f2d427e0ee8f80ab0.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "9f89b23892637136792fa9649dc670ed72fbbedd406becf489f1a6c1d697b57e",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB28-operative-voice166",
+      "original_source_object_sha256": "796f2667672e056fdd9fbf4364a475297a19d5e7a633eea599b51e44acefae2d",
+      "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+      "governed_bytes_sha256": "d3d7bab832d99e08cbfb4def59a728bf8d23a85e609725e56d81e7d6683e73f4",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/796f2667672e056fdd9fbf4364a475297a19d5e7a633eea599b51e44acefae2d.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "805aef4c7e7117f1e3d3115739478ed3c41e9cf52284c4b341bc789194116518",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB28-roll148-recorded166",
+      "original_source_object_sha256": "9b461cef8c5169ca5ae768960309b635550fdfc8fef0f0cd1eb690faa6c52086",
+      "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+      "governed_bytes_sha256": "17dd32acb6c55c0b71e3a769be65fb2c547e6f11892489823dfa525c2a0bd05f",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/9b461cef8c5169ca5ae768960309b635550fdfc8fef0f0cd1eb690faa6c52086.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "7f72d31740a182477ff85eabbee4c3a8bd941425c979fb75d5cedbfb1e81e340",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB8-operative-voice166",
+      "original_source_object_sha256": "e2b817552268dcf5a46764a49a029af56a375415894c6f5cf65c49d3278c05fa",
+      "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+      "governed_bytes_sha256": "4dfa5edb254918293c6da4a07bb1383a3a31e0dfc67e430938fb944326e2e2ff",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/e2b817552268dcf5a46764a49a029af56a375415894c6f5cf65c49d3278c05fa.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "618b5e592564b9d3dfae9c5f75188f6b99833ec7673a92282b14998be1b23400",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "congressional-record:7567-partB8-roll145-recorded166",
+      "original_source_object_sha256": "3993dd778d3435a604d2b44c6c5a82f81f22cb063b15a9963a326cad880085b4",
+      "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+      "governed_bytes_sha256": "c2ca7e9d19015533389efc81e9a17967b02e682f1a0259c69897ccc7473cdd14",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/3993dd778d3435a604d2b44c6c5a82f81f22cb063b15a9963a326cad880085b4.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "70eb2a9a861d9299a4a9cba0ce8e834ace8e78306e8e05fcc118cb5b1fabacf6",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:16usc6512-heading166",
+      "original_source_object_sha256": "5b2ab27a3913e4209feebaee84e1be146692f89e6880db1211f3cc7bc43f87c6",
+      "raw_sha256": "b364ac96a0de949a622e9da33d689f6b6dfc2494b1d9e991293a0668575689f6",
+      "governed_bytes_sha256": "364f8781e87e27c8a285784f007b811600d47d2de8b63e68e66be4dbe1bbc720",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/5b2ab27a3913e4209feebaee84e1be146692f89e6880db1211f3cc7bc43f87c6.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "347ac65aaa1b93c013245c3f3f083afce3289409f718449e32b405543bfd0bc1",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:42usc7545-o1I-biomass166",
+      "original_source_object_sha256": "54293d26edf787f1b0f85253ac722d757393c8b271880e20ac9fc98b50e18b98",
+      "raw_sha256": "d3ba3a8212947881b4306e960bcf48e5d10a06fc7acec6ae2339c3c451bc857a",
+      "governed_bytes_sha256": "491b48ba365b0dcb940d5006c3c49b3838ece41eaa59472af6d057b9f25467ac",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/54293d26edf787f1b0f85253ac722d757393c8b271880e20ac9fc98b50e18b98.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "27b38055627960d672d6df58ce415606a68c32b334976a28d665dbe75da31be3",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:42usc7619-2024-exceptional-events",
+      "original_source_object_sha256": "82d6c8d5dd5975f489e8c7a5e456c8aa247b0f09637ee1ad306676934428affb",
+      "raw_sha256": "91ed1ea2b2ce2a24e819254efa2f780596773f16ba7c19ec9cbed212514db875",
+      "governed_bytes_sha256": "721297c45ec9f7878224aa9114f670a8ff691d9c5733ab2ef3f8866b9c11e349",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/82d6c8d5dd5975f489e8c7a5e456c8aa247b0f09637ee1ad306676934428affb.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "a7b91b7016b89a85e29851f8b5ffd254b2cc78f6c3cc51361c82767ed5cb06b5",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:43usc1702-publiclands",
+      "original_source_object_sha256": "32806d008925f7f546fab670d52b5ec2c09640e1d498d191dd9b387ec5a488f7",
+      "raw_sha256": "2f6f47b53c17ec212002efe56b9a2ddc93f5edcbafeaa41951701ed69d329248",
+      "governed_bytes_sha256": "884913326cd0f375e3de3630a710adc648a6d63d65c1b08ed85789edc9304ecf",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/32806d008925f7f546fab670d52b5ec2c09640e1d498d191dd9b387ec5a488f7.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "68db8f9a938bff024ae3ae56a9848a1a15da9594db7aca5c6be2e6c4729b1a4e",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:7usc2012-k1-food167",
+      "original_source_object_sha256": "3aa1a0faeda082528bf954983057af703a1aec7756d7189aa6758e37df7a4ceb",
+      "raw_sha256": "1fa4675438e9e1e90c22ff1cb1af0246686367fbc96edcb0eac64b80e407559c",
+      "governed_bytes_sha256": "8794e63e2dc77ca75a1ff1fe3d3759c1bc01f7bc66f80e600b05b0103864c400",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/3aa1a0faeda082528bf954983057af703a1aec7756d7189aa6758e37df7a4ceb.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "5ff64b0c47face94b229e6da3ff6283f9e5b8e7c47f26a24d544bc2edb478b87",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hconres96eh",
+      "original_source_object_sha256": "60797f7c81cd7853b8674d4204e8a76f7f3b454da3f59e3783eea69b8f1865d5",
+      "raw_sha256": "a4fae2f66d404eccc62d8b7cf54bdd20e0d6a7d33ab2ec5eab6520fd1f62dc8c",
+      "governed_bytes_sha256": "c900879066f3a7937101eab066e9ed3935841c43687c2f55ceefdb5b2564e2a4",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/60797f7c81cd7853b8674d4204e8a76f7f3b454da3f59e3783eea69b8f1865d5.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "659444bce51afc639e51eafbe5868f0f82b55407611bae5a0febaeeee4bed180",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr1346eh",
+      "original_source_object_sha256": "51f5dca4c51a81253e24c66f0665f72c32079fab2847b8bdb3265f91def829ba",
+      "raw_sha256": "45b4600ac55d75a7e194ca0c423d4d3de5ca171174900df0583f1eb9d79c7287",
+      "governed_bytes_sha256": "1ebc3d7846984fdece9d8cab922211df39d8ddca2e735a1b7e939006a09609f7",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/51f5dca4c51a81253e24c66f0665f72c32079fab2847b8bdb3265f91def829ba.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "da088e10aeddc2cc6e3a8b24f4747aefc7c402e8d8ae55d77ed59fd043a97c1a",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr2071eh",
+      "original_source_object_sha256": "4f295fa1659b5b7b7e8ed74a6a1a9d66d59967ccb1b5237e69f50d396fd5b4d2",
+      "raw_sha256": "4e6a9ee8e3309fbf83f208c2f5d83cfe78f2ba9f01f67211fdd41e812618e463",
+      "governed_bytes_sha256": "7102700773c3069e709447d995faf06c75c60ba46ca02beef50d03e7e0a700c6",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/4f295fa1659b5b7b7e8ed74a6a1a9d66d59967ccb1b5237e69f50d396fd5b4d2.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "655b1cfc65731a9cba521d8ec2e7e8a2a6a641e5f7add9ffadd93bd2b4bcb255",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr227eh",
+      "original_source_object_sha256": "6572719dc52fc5853eac74be8f493368c4fc8aaece7ad7189eb18aa030398fe2",
+      "raw_sha256": "95f12e8b5dea0d83debcbf94a566168e1f04c519f34cf532a93b86e19b037224",
+      "governed_bytes_sha256": "f3cdb041d4e6f7f9f0a732cb8fd0eb2f23ce769d00a77f3d61fde42186b95a4d",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/6572719dc52fc5853eac74be8f493368c4fc8aaece7ad7189eb18aa030398fe2.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "48c5022e5d81006a26e4620919a3de2f2be0c54ddf5791e51c0500adb728bc7e",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr2493eh",
+      "original_source_object_sha256": "015870093aa1bbf3f46f081b79831e7979f3a004b18e7c991bbecd39cacdc289",
+      "raw_sha256": "073f3603cc3864011dd0bd34f960806310bea4070783b5e8d06d6afef5c5e5f5",
+      "governed_bytes_sha256": "af85767b4707f3a6c83d209d85b844471b2a1d093ac44650f7568e8795cc2567",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/015870093aa1bbf3f46f081b79831e7979f3a004b18e7c991bbecd39cacdc289.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "b11efa5545ada98035c46728d305620c57480fab58a2987157eaf964214fbe02",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr2853eh",
+      "original_source_object_sha256": "cbbe7cdc45459ade7366d7b427c504b878f4758ce7bff7669b00f8d6e123bb57",
+      "raw_sha256": "be4237072730dd856cf4ceed57fa5c759b91f268c46f91f87a84b924f0876340",
+      "governed_bytes_sha256": "a8d0f50730f2e4647887217fa5332720d6874c2edd4dd41b7b26f57165a9d1d5",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/cbbe7cdc45459ade7366d7b427c504b878f4758ce7bff7669b00f8d6e123bb57.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "336766655165f84b87a95708786a92eeeed6b21d699e11e55eefe3a2d6598f68",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr5587eh",
+      "original_source_object_sha256": "940de39f1076c60e6154500fce4bc2cb93202d13af3ff74fff96e38cda1e69ca",
+      "raw_sha256": "6f21957d009969931cbf8c0c7503309eb0e40e4dd91e5054a1c84b0a0d341c0e",
+      "governed_bytes_sha256": "cd31bc16ef9ca3a75e857c2c0fcb6a0820c04f85e021e321283e2d2a18e4b3e1",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/940de39f1076c60e6154500fce4bc2cb93202d13af3ff74fff96e38cda1e69ca.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "5f853271991e47afd356e14e4e7c96c947afb48440cd0c7bd7e86d737c37455c",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr6387eh",
+      "original_source_object_sha256": "ea03c14da2da8b1749206905bca71e85506311de035332eff5d87c97351df6c7",
+      "raw_sha256": "a362056d6c4021e0b3d27353ccec22c4445005268710c6247705bc24f00d4ae7",
+      "governed_bytes_sha256": "1008d75be3fa011de346a9d2e94be0315df5afdeaab56dd60c9ce555495c11c2",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/ea03c14da2da8b1749206905bca71e85506311de035332eff5d87c97351df6c7.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "3f18fd26112e6654800ef7b8e8e8f5e30fa361c9c6197f8ae70c7bc23a37af1b",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr7567eh",
+      "original_source_object_sha256": "d48ff9f935d4e3df3d9f7b55463f91cef9e4e6be9c4cf30d1d26659192ba0022",
+      "raw_sha256": "da1845f477d502c60d20a39d7114846850c80a61fbaf5355173829702df56813",
+      "governed_bytes_sha256": "67e61f67a34ee330c12fb0e053f935ed8fb2847b16248cd9dd6fdf26178bb7f4",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/d48ff9f935d4e3df3d9f7b55463f91cef9e4e6be9c4cf30d1d26659192ba0022.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "4b2a0be01ee59aff42b3e81b394545c86a48b8fee15e2a37282f947d0b922ecb",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hr7959eh",
+      "original_source_object_sha256": "2faca38e5e4c5f45f4fa7929f91ebdf0ff8781e1eaf44ac6e49fb61bc38997da",
+      "raw_sha256": "e5120c7d265230349d78230ebc78e639b409ccf24665780d133925b62f7aa52a",
+      "governed_bytes_sha256": "0f4266845f0bf7c420ed6666df9e3d0d82da81ba027d04dc806739ca69084f2f",
+      "original_occurrences": [
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/2faca38e5e4c5f45f4fa7929f91ebdf0ff8781e1eaf44ac6e49fb61bc38997da.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "a0b3eb11acd6cf00c1aeca6d114a2ffa5af7ddb2c3c28303c6555654501347e2",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1156eh",
+      "original_source_object_sha256": "cc6d53450aa606bfe508926cf574da93170247b809ea807fa5ddff13edfe7f78",
+      "raw_sha256": "7e542ca509f53e9a8249f2f9c82b1f3600162f479237e14685d98bfbc64188c0",
+      "governed_bytes_sha256": "4591d7e25dd37e391d4c13d934079fc784f1e857bcc51f9366c5fc5c6c3c58da",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/cc6d53450aa606bfe508926cf574da93170247b809ea807fa5ddff13edfe7f78.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "8ac1aec82680002ee04ae7e6b702a4ea9fee9e75cc138df178c5ffce68a9bf68",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1175rh",
+      "original_source_object_sha256": "b33e758d8ae1fc43ea1cbd11d6b656e702d3e177998b474062d9bff962f0ff75",
+      "raw_sha256": "733fa8df1db7c0fa95258644cc7f9abbf6dfd501eee83139ee42d7cce9f31c83",
+      "governed_bytes_sha256": "5bcfbadb5d908409cc47ded3a989f7b6db51b60f467bb25976c6eb659d2ead6a",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/b33e758d8ae1fc43ea1cbd11d6b656e702d3e177998b474062d9bff962f0ff75.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "a179b642e3de7a0c6b0a04d0b0d4573d48bd8ec956fcb86050178e597894e903",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1182eh",
+      "original_source_object_sha256": "1fde54ea3d96973b19cba0d866454f00faa70022e9e798286737af7faf63fcf9",
+      "raw_sha256": "0e2d9dee1cd24e49acaf3c4f7531d517086893f01ca0bbf510598a7583d85d84",
+      "governed_bytes_sha256": "4deadbd3c672375f03051793fe91a77fabb516eec95b976668e47b775a654c52",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/1fde54ea3d96973b19cba0d866454f00faa70022e9e798286737af7faf63fcf9.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "ed6c547ead2a7cfbea51dab6e7acb17e03edf3d7388d0d730503ea0a8bca62af",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1189eh",
+      "original_source_object_sha256": "ce1bf6177484f4af8e322b1bd16be03361e7593893b8bbcdcddb47ac432fc4ad",
+      "raw_sha256": "27dbbaac8b6786fb55f62e353c4ff2b53dac78d216c65dd088b10ebc4053c317",
+      "governed_bytes_sha256": "6cd71733c1df2ea9a6084d107738c65feb6b8802be5f9ad29fd107200aca7f43",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        },
+        {
+          "batch": 87,
+          "committed_source_capture": {
+            "head": "28c572b636c8dee1f1ac277d1f590fc6b84e3342",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/sources.json",
+            "git_blob": "f884773b8ca9efde3843525069a169713006921d",
+            "git_bytes_sha256": "87648c42a14e10dd5abba7b63fbf4ac2c9e694ed09994e1837aa1f4b9f2395f7"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/ce1bf6177484f4af8e322b1bd16be03361e7593893b8bbcdcddb47ac432fc4ad.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "bb7fd566109189b01195c3611a96c71248378b144b0e179f337da26547f41c95",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1224eh",
+      "original_source_object_sha256": "29d6f6ab60488094c43146415a92fe380e1646cdc568d2188bfbd1a4ddacaf31",
+      "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+      "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        },
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        },
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/29d6f6ab60488094c43146415a92fe380e1646cdc568d2188bfbd1a4ddacaf31.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "1afabd742d7eb1cf75ac81df4917be0d13490acc47d16cb78eab76d6bb406016",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1252eh",
+      "original_source_object_sha256": "1e8cfc775d3fcbb796e09e4b13e58ef3f8541f682c75224eb12f5f45def81c8f",
+      "raw_sha256": "98612388dd2cfee88d6d6d7612a6662713a638659d1921f3313443c941798a56",
+      "governed_bytes_sha256": "b30742212d9e6612e6a9eb3e497f426c19a4d4a984dce253d14fa3ba3f444f4a",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/1e8cfc775d3fcbb796e09e4b13e58ef3f8541f682c75224eb12f5f45def81c8f.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "4d8d9efd967a65fb38700ad21c2f07d8f576e794ea14f78360e524601360f1e8",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1274eh",
+      "original_source_object_sha256": "d0ce76d33ffedc02489f59b743ff59c3fc977219d69c6fd7b714399de63c21d5",
+      "raw_sha256": "b7e2107416d3285fcbd626a7e67ac14605292079205e3ace2b3536819b6f1d15",
+      "governed_bytes_sha256": "45c7d19dc38e2e9844e83222d63dd286434c17e17d28d19e4ccd72fcd924a30f",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/d0ce76d33ffedc02489f59b743ff59c3fc977219d69c6fd7b714399de63c21d5.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "d094704778aff5624992d503f0ed6e2d29c58f559d0619e2c255abfb65908348",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:hres1275eh",
+      "original_source_object_sha256": "efe9672c0685762a381f939ec1a2becb5d72d3fd88938548af04c1dbecd8e7b1",
+      "raw_sha256": "9889d55d7b3ff8c93c192f523ffd961103b36efcc74129b13c352bf78e1bebfa",
+      "governed_bytes_sha256": "033b17ac95eb53d5dcb8370fe98ac6c2884346bb0e116d1b0ef675bfe252dbcc",
+      "original_occurrences": [
+        {
+          "batch": 90,
+          "committed_source_capture": {
+            "head": "c83babd6dec4af0be87befa87d8b763816e85479",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/sources.json",
+            "git_blob": "c238326836a7cef6e505fbf0dc3bc24582e47620",
+            "git_bytes_sha256": "d7e4c327aef21eed42c23e1557bb0f65db29f1a21810e0a78ede5583b23d918d"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/efe9672c0685762a381f939ec1a2becb5d72d3fd88938548af04c1dbecd8e7b1.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "e9e7a4eb2b4578303683688cb7a152e01067954da1436fbcd8b2bceacd851284",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:s1020es",
+      "original_source_object_sha256": "346bbaaa18f33f75634f810cd68867edd9d7c87c91efb14a047596fd1a4a1688",
+      "raw_sha256": "326d9f4e6b58d1c503d14e9a641c70b923d3763fc6e797d1fd0223c93a0732da",
+      "governed_bytes_sha256": "735c9940115e6354b35336855773aa3edce8af9f2d88e6f80f8377c1e8ba2a19",
+      "original_occurrences": [
+        {
+          "batch": 86,
+          "committed_source_capture": {
+            "head": "7eadf11e3a399ce9ffe6b0fc052a42e2eaa51656",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/sources.json",
+            "git_blob": "4f8ebebd816573a75cf4e0e91ee778a7be8fa102",
+            "git_bytes_sha256": "3b583ac34e2bfbe0ebdab9dffe931e66c4333f94407cdf3ac9d9b73ca75bef4c"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/346bbaaa18f33f75634f810cd68867edd9d7c87c91efb14a047596fd1a4a1688.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "33c86268ed79ab3a69f39a1d3b75dcba474d4b9753ee8d92b429e5783d083049",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:s1318eah",
+      "original_source_object_sha256": "679e8e68e3a0fd8567b2711dd8ff1e37f76554bd8e35ed990fc9977d04f2effe",
+      "raw_sha256": "25af1970b63fd63164a0244db77072865ffd67724b685cc6e3fe2a636cac2bbb",
+      "governed_bytes_sha256": "6138cd72e9f70ce842df2382f53fc1f0b0d9403a975656e80040cd03031ae20f",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/679e8e68e3a0fd8567b2711dd8ff1e37f76554bd8e35ed990fc9977d04f2effe.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "336d41afeb0d74ecc2f361b4e2e2f40a1dcaca2bc79528cc8b14985aefecb7f6",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:s4465es",
+      "original_source_object_sha256": "be0c37779e17cbc75137e939c8242d197cc7e253db05e6a74bf48513e5b310fd",
+      "raw_sha256": "4fdbc85223356a1f0a86e28d87df53bd1d0345b3c4577f40b2607177431704fa",
+      "governed_bytes_sha256": "bd89961795495cb6e6dd6eda502feb15a5b9c7fe159cfc07503f5501f217479d",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/be0c37779e17cbc75137e939c8242d197cc7e253db05e6a74bf48513e5b310fd.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "5b39b72eb8aac309fd0c07d5f0e59dd5d4cc996013b4da1edea98b3e4619facb",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "govinfo:sconres33es",
+      "original_source_object_sha256": "b89f68fef68ecbb83cfa9cd92a27500e9f9fa05f30d4bf8818e2ed20696e7361",
+      "raw_sha256": "b9c8732c69ac3937d142deba5e1cd33b123acc317dc486e97aedb75af01c8880",
+      "governed_bytes_sha256": "86ff373d0d696f8b55082074bce17c1f9a953434602da71b7106895b62db5f86",
+      "original_occurrences": [
+        {
+          "batch": 88,
+          "committed_source_capture": {
+            "head": "6aefd26fbf6b73f316c5ff1206f2a96505cfab02",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/sources.json",
+            "git_blob": "981bc5e31224d582c333e9155402e6046b488acc",
+            "git_bytes_sha256": "26f446fec21742465399a318069a320f14faa141ef7496063df938bd46023254"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/b89f68fef68ecbb83cfa9cd92a27500e9f9fa05f30d4bf8818e2ed20696e7361.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "242ded2c28762222d992201735c0ce4dc1544dc63e4bb8147293760830721da2",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "house-rules:119628-partB36-operative167",
+      "original_source_object_sha256": "04162adebf0950962208c956329393a782ba098e56b235ecf4cb8bdc0e8988cb",
+      "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+      "governed_bytes_sha256": "c3c40343df60bf3db4c2ef869df44cef1bc288d994564718ba511bcbf6b553ab",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/04162adebf0950962208c956329393a782ba098e56b235ecf4cb8bdc0e8988cb.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "35be74c208e11dfd7e73caf72ca2a323ab02257ec0d50a2205ea2f1e10079bea",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "house-rules:119628-partB39-operative167",
+      "original_source_object_sha256": "e48f622bd7b851865c4937f020b050b9efb0bee0777ba6981f797491fee61379",
+      "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+      "governed_bytes_sha256": "3638006c7d6a3c02f9fc2d8044a636f701c374be92d61b41b84dd2c22759b63f",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/e48f622bd7b851865c4937f020b050b9efb0bee0777ba6981f797491fee61379.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "eb4e14ef944bd38c7b7520ad0660c31c190317593d25c174d420eb7603757cfa",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "house-rules:119628-partB47-operative167",
+      "original_source_object_sha256": "d58395b682a34032e4a897830c855cb1bbc13464fc4481a0c383bc89e4c657f8",
+      "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+      "governed_bytes_sha256": "a394ffac4f766bf9329c8a063feef5cadc76bba03a192a157577d54c035feef8",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/d58395b682a34032e4a897830c855cb1bbc13464fc4481a0c383bc89e4c657f8.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "a4a153b0f8b52dda7e338ab4eaebd678934e3a4bf2864fef2c2d6a93d5f68a41",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "house-rules:119628-partB49-operative167",
+      "original_source_object_sha256": "91ecd490b8e8647e27f77c8e35c226c67f975291c0a9ea111ac4a028382aff99",
+      "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+      "governed_bytes_sha256": "985eca96eccb130949e626fb5cb32ec6f3066a80468994a1e0b8ada06d15c438",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/91ecd490b8e8647e27f77c8e35c226c67f975291c0a9ea111ac4a028382aff99.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "153d84cabbc2b1559be1478e55cb2abf421cebbe5e9036810c182466f8a6c634",
+      "reused_existing_export": false
+    },
+    {
+      "source_id": "rules:hr7567-print119-22-material-amendment-pages",
+      "original_source_object_sha256": "062d8054ef7935852785668c19f5836272763540eb5c432065826808fe8b2824",
+      "raw_sha256": "c58eb77bd880facc45e4a5e3b498d37dc5850c1f8d1a22ba02c3c5bd3593326f",
+      "governed_bytes_sha256": "08afde8f513662097e7d3d552cf428bd4204d19ea7e4dee7db2dd16ac89b2c99",
+      "original_occurrences": [
+        {
+          "batch": 89,
+          "committed_source_capture": {
+            "head": "21369b4031ee19f64af10b97365d57d45e645f10",
+            "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/sources.json",
+            "git_blob": "4af98cad96aca2db60990e261d52fc2210115490",
+            "git_bytes_sha256": "29017fde63608af7584180c64d0d918d75bfaf74f59156b7d80fde331fc2c7eb"
+          }
+        }
+      ],
+      "path": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6/source_objects/062d8054ef7935852785668c19f5836272763540eb5c432065826808fe8b2824.json",
+      "source_json_pointer": "/source",
+      "transport_base": "docs/review_packets/infrastructure_historical_delta86_90_c83babd6",
+      "committed_utf8_lf_bytes_sha256": "652bddb77cda876ba72a6fd9ac6fa1dd2ecc22ecd319fa5f7ce2415de48425ac",
+      "reused_existing_export": false
+    }
+  ],
+  "source_read_scope_only_ids": [],
+  "scope": "Exactly40original new membership records86–90 from five original heads and their referenced/read-scope retained sources. No cumulative authoring/membership or whole corpus copy. Original87precommit-neutrality receipt preserved with its reconstructed-preimage limitation and both local validation phases.",
+  "reconstruction": "Batch paths relative to this manifest directory. Source paths repository-relative; resolve source_json_pointer then recursively restore $lossless_text_parts using that entry transport_base. Verify container/part hashes and canonical original object digests. Same lossless text convention as earlier exports; original extents and qualifications remain.",
+  "review_limits": "Independent source review through85completed within declared extents; exact85four-readable extraction independently closed within its stated pointer-placement limit. This new86–90transport is not independently cleared or accepted, does not certify unreviewed interiors/current law or transfer earlier validation/CI. Original87new NotVoting observation is nondirectional; all six source holds unchanged.",
+  "source_acquisitions": 0,
+  "protected_retries": 0,
+  "working_tree_candidate_substituted": false,
+  "exact85_readable_independent_closure": "docs/review_packets/infrastructure_exact85_readable_independent_closure.json"
+}

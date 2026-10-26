@@ -1,0 +1,1461 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 43,
+  "exact_committed_head": "cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea, never current batch50 working-tree bytes; zero source acquisition.",
+  "scope": "35 new identities across seven batches plus the prior roll226 correction/preimage binding in batch43. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim and batch43roll226correction source_extent/qualification. Whole CMS letter, BLM plans/maps, NDAA/CR and other partial reviews remain incomplete as recorded. Partial offsets are not full-body clearance. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/membership_review.json",
+      "git_blob": "a63c65b5ad0d08d52adcdd4df7310cec8dabe3cb",
+      "git_bytes_sha256": "31409efeced6049fbef3ff251029542fdee69928cbd1965bb9f71b695936c456"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/sources.json",
+      "git_blob": "387818f630b13b08bca7c668404e7ddc77dda1ab",
+      "git_bytes_sha256": "e4cb0b7b2fb6c7e572628694409e01a946cb25d5510150dea74c8bf09c9c4637"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/screening_receipt.json",
+      "git_blob": "6bf7102d91da57242b0eb1cce90c6d06818728a8",
+      "git_bytes_sha256": "ba8a6c861c8bcee1c523207e4f7a0883a8a24d1a2fefdbcd68bdf9de46244bb7"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/screening_units_receipt.json",
+      "git_blob": "b11427925f6e71f436d075c69526b6a4e5a1517d",
+      "git_bytes_sha256": "0841ebba7a32f8d8186f3d2b7f65336077300a1c448f1b9a4dd27e3121680644"
+    }
+  },
+  "cumulative_membership_review_sha256": "4be4a336eb7fd778b868a98cf6bd20315041816144953162afa3e433ab2d517e",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/6a4b8ec283892491dfdd8e514a051c222f50b1ee10b39b6f7299b2bb9e9dd2c1.0000000.json",
+        "sha256": "87011cf02624c4608869d9c7ac5d9349ba96c8a227904ace61ec29cdc61c924c",
+        "start_character": 0,
+        "end_character": 27201
+      }
+    ],
+    "utf8_sha256": "6a4b8ec283892491dfdd8e514a051c222f50b1ee10b39b6f7299b2bb9e9dd2c1",
+    "total_characters": 27201,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/aa9608084d4504850dc2892b4638fc1f01dfd6ae94f46a2d410f7ea35a6689f5.0000000.json",
+        "sha256": "182ed7ff0183cdbf96240e7851f14448a503e0480fd8bac9b60a626bdcc159d2",
+        "start_character": 0,
+        "end_character": 71977
+      }
+    ],
+    "utf8_sha256": "aa9608084d4504850dc2892b4638fc1f01dfd6ae94f46a2d410f7ea35a6689f5",
+    "total_characters": 71977,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:252",
+    "house:119:1:253",
+    "house:119:1:254",
+    "house:119:1:255",
+    "house:119:1:256"
+  ],
+  "prior_record_followup_ids": [
+    "house:119:1:226"
+  ],
+  "source_read_scope": [
+    {
+      "source_id": "immigration:wilson252-offered-body223",
+      "scope": "Complete3175retained own operative-body characters read; not whole dailyRecord or personal/current-law application"
+    },
+    {
+      "source_id": "immigration:wilson252-initial-question223",
+      "scope": "Complete430retained own initial question/postponement characters read; preliminary voice result not final agreement"
+    },
+    {
+      "source_id": "immigration:wilson252-resumed-recorded223",
+      "scope": "Partial0-1100and4345-4945of4945retained characters; own question/totals/outcome only, not all member lists. Claim passages end at own roll header and use final agreement unit"
+    },
+    {
+      "source_id": "govinfo:18usc1382-2024",
+      "scope": "Complete3484retained section/notes characters read; qualified2024baseline, no comprehensive September2025or individual-case advice"
+    },
+    {
+      "source_id": "govinfo:50usc797-2024",
+      "scope": "Complete3238retained section/notes characters read including posting and separate NASA/willful misdemeanor scope"
+    },
+    {
+      "source_id": "congressional-record:3838-amend18-roll253-choice156",
+      "scope": "Complete1464retained own instruction/recorded question/agreement characters read; nested citation preserved literally"
+    },
+    {
+      "source_id": "govinfo:pl11831-section1052-flags156",
+      "scope": "Complete3014retained1052characters read including all approved categories/exclusions/construction rule; not entire PublicLaw or executed/current policy"
+    },
+    {
+      "source_id": "congressional-record:3838-amend20-roll254-choice157",
+      "scope": "Complete1608retained own offered funding/activities clause and recorded rejection characters read; not debate or biological/safety evidence"
+    },
+    {
+      "source_id": "house-rules:119255-partA-amend20-operative157",
+      "scope": "Complete496retained independent printed report clause read; Davidson/designee role and both funding descriptions preserved"
+    },
+    {
+      "source_id": "congressional-record:3838-amend22-roll255-choice157",
+      "scope": "Complete1331retained own funding prohibition/recorded rejection characters read; initialpart1/resumedpartAliterals not rewritten"
+    },
+    {
+      "source_id": "govinfo:rcp119-8-ukraine",
+      "scope": "Complete7504retained characters from selected786/787/1246only; not whole print. NeighboringNATOsustainment is not Ukraine-specific meaning; program and table amounts kept distinct"
+    },
+    {
+      "source_id": "congressional-record:3838-amend23-roll256-choice160",
+      "scope": "Complete1238retained own exact named table-item deletion/recorded rejection characters read"
+    },
+    {
+      "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+      "scope": "Complete8080retained characters from selected114/793/1203/1204/1247only. Complete301and4001within scope; units/columns/named010item preserved; no whole program/legal/parent review"
+    },
+    {
+      "source_id": "clerk:119:1:252",
+      "scope": "Exact own question/result/date/member labels and printed-vs-floor amendment numbers inspected; aggregatePresentin254belongs to neither authored member"
+    },
+    {
+      "source_id": "clerk:119:1:253",
+      "scope": "Exact own question/result/date/member labels and printed-vs-floor amendment numbers inspected; aggregatePresentin254belongs to neither authored member"
+    },
+    {
+      "source_id": "clerk:119:1:254",
+      "scope": "Exact own question/result/date/member labels and printed-vs-floor amendment numbers inspected; aggregatePresentin254belongs to neither authored member"
+    },
+    {
+      "source_id": "clerk:119:1:255",
+      "scope": "Exact own question/result/date/member labels and printed-vs-floor amendment numbers inspected; aggregatePresentin254belongs to neither authored member"
+    },
+    {
+      "source_id": "clerk:119:1:256",
+      "scope": "Exact own question/result/date/member labels and printed-vs-floor amendment numbers inspected; aggregatePresentin254belongs to neither authored member"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_child_instruction_and_recorded_choice_units": 5,
+    "partial_member_list_source_units": 1,
+    "complete_retained_material_statutory_units": 3,
+    "complete_selected_RCP_unit_groups": 2,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:252",
+        "evidence_unit": "complete_own_child_with_scoped_material_baseline_or_accounting_boundary",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:253",
+        "evidence_unit": "complete_own_child_with_scoped_material_baseline_or_accounting_boundary",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:254",
+        "evidence_unit": "complete_own_child_with_scoped_material_baseline_or_accounting_boundary",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:1:255",
+        "evidence_unit": "complete_own_child_with_scoped_material_baseline_or_accounting_boundary",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:256",
+        "evidence_unit": "complete_own_child_with_scoped_material_baseline_or_accounting_boundary",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "prior_record_correction": {
+    "original_object_sha256": "0a700dab256891c245abe1ee90b9f47dc55128aaaa97773ab9f43288369355d3",
+    "committed_provenance": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/north_dakota_exception_scope_correction.json",
+      "git_blob": "9e337e33559914a2ef7c924e468d1172b46abd3c",
+      "git_bytes_sha256": "2c92a750d95210fed00f1e1e61044d98c0e3ada4fe5a02fc633f3edfb02aa5a1"
+    },
+    "receipt": {
+      "action_id": "house:119:1:226",
+      "historical_head": "d05a44461ae7550227169314a6b2504ea3bf9177",
+      "preimage_membership": {
+        "action_id": "house:119:1:226",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete H.J.Res.105 EH targets the January14,2025 North Dakota ROD/approved RMP. Retained complete PDF pages13-16 are a partial484-page plan review, not a complete operative-plan analysis. The selected AlternativeD differs from alternativesA/B/B.1/C: low-potential/drinking-water leasing restrictions have stated drainage/new-data exceptions; coal outside the four-mile development area is unavailable; mineral/material allocations permit activity-level review, with other recreation/river/land decisions. Existing rights and their original stipulations persist, while renewals/unsigned projects may need modification and project authorizations must conform. Complete operative ROW/mineral/allocation maps, exact decision/signature/date identity and material CRA/other baselines remain pending. General plan resources do not alone prove Infrastructure membership; no repeal restricted to coal, automatic project approval, energy output, current legal status or actual environmental result is inferred from this House vote.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:226",
+            "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+            "raw_sha256": "0dcbe78e751a146bcfc83595a64beb79eb38712b2052c8a3be468019987328b1",
+            "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24"
+          },
+          {
+            "source_id": "govinfo:hjres105eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres105eh/html/BILLS-119hjres105eh.htm",
+            "raw_sha256": "1f8ee0c553a29f206cc911e6e04b734c3942db3ec9d7bcc1cfe9904baaabcde5",
+            "governed_bytes_sha256": "0091bc481304e8bde8b1ef5a191c6d2e8518c160e0a2496d1fa7933015add9e7"
+          },
+          {
+            "source_id": "blm:north-dakota-2025-reviewed-decision",
+            "url": "https://eplanning.blm.gov/public_projects/1505069/200366341/20126222/251026202/NDRMP_ROD_20250108_508.pdf",
+            "raw_sha256": "c6acd056db3ab36ea455436dc7f097647b4be7888cbfd7b36637b89b7de17678",
+            "governed_bytes_sha256": "6b062d7937cf22559a9cda78157778c0a15c0080ab0a8639484f8018982a5621"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres105eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 105 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan'' (issued January 14, 2025, as a record of decision and approved resource management plan, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3556-S3558, concluding that such record of decision and approved resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''."
+          },
+          {
+            "source_id": "blm:north-dakota-2025-reviewed-decision",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6.0000000.json",
+                  "sha256": "a8618ceec55a09d4c5dbe1ef14991d4ed9fc9eaef28a9c2c4cef23989c20137c",
+                  "start_character": 0,
+                  "end_character": 15063
+                }
+              ],
+              "utf8_sha256": "bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6",
+              "total_characters": 15063,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "preimage_membership_sha256": "55c6d1c7bf84803b17653fed9bac2a8080d5a29ed6dc8a8fd31e03bd3776c478",
+      "preimage_universe_row": {
+        "action_id": "house:119:1:226",
+        "session": 1,
+        "roll": 226,
+        "date": "2025-09-03",
+        "measure": "bill_119_hjres_105",
+        "question": "On Passage",
+        "disposition": "pending_interpretation",
+        "reason": "The complete H.J.Res.105 EH targets the January14,2025 North Dakota ROD/approved RMP. Retained complete PDF pages13-16 are a partial484-page plan review, not a complete operative-plan analysis. The selected AlternativeD differs from alternativesA/B/B.1/C: low-potential/drinking-water leasing restrictions have stated drainage/new-data exceptions; coal outside the four-mile development area is unavailable; mineral/material allocations permit activity-level review, with other recreation/river/land decisions. Existing rights and their original stipulations persist, while renewals/unsigned projects may need modification and project authorizations must conform. Complete operative ROW/mineral/allocation maps, exact decision/signature/date identity and material CRA/other baselines remain pending. General plan resources do not alone prove Infrastructure membership; no repeal restricted to coal, automatic project approval, energy output, current legal status or actual environmental result is inferred from this House vote.",
+        "source": {
+          "source_id": "clerk:119:1:226",
+          "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+          "raw_sha256": "0dcbe78e751a146bcfc83595a64beb79eb38712b2052c8a3be468019987328b1",
+          "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24",
+          "verification": "governed_source_reuse"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hjres_105",
+        "member_action": "nay",
+        "house_action_stage": "On Passage",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The complete H.J.Res.105 EH targets the January14,2025 North Dakota ROD/approved RMP. Retained complete PDF pages13-16 are a partial484-page plan review, not a complete operative-plan analysis. The selected AlternativeD differs from alternativesA/B/B.1/C: low-potential/drinking-water leasing restrictions have stated drainage/new-data exceptions; coal outside the four-mile development area is unavailable; mineral/material allocations permit activity-level review, with other recreation/river/land decisions. Existing rights and their original stipulations persist, while renewals/unsigned projects may need modification and project authorizations must conform. Complete operative ROW/mineral/allocation maps, exact decision/signature/date identity and material CRA/other baselines remain pending. General plan resources do not alone prove Infrastructure membership; no repeal restricted to coal, automatic project approval, energy output, current legal status or actual environmental result is inferred from this House vote.",
+        "unresolved_reason": "ordinary_105_full_plan_ROWs_maps_decision_date_CRA_baselines_and_domain_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:226",
+            "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+            "raw_sha256": "0dcbe78e751a146bcfc83595a64beb79eb38712b2052c8a3be468019987328b1",
+            "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24"
+          },
+          {
+            "source_id": "govinfo:hjres105eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres105eh/html/BILLS-119hjres105eh.htm",
+            "raw_sha256": "1f8ee0c553a29f206cc911e6e04b734c3942db3ec9d7bcc1cfe9904baaabcde5",
+            "governed_bytes_sha256": "0091bc481304e8bde8b1ef5a191c6d2e8518c160e0a2496d1fa7933015add9e7"
+          },
+          {
+            "source_id": "blm:north-dakota-2025-reviewed-decision",
+            "url": "https://eplanning.blm.gov/public_projects/1505069/200366341/20126222/251026202/NDRMP_ROD_20250108_508.pdf",
+            "raw_sha256": "c6acd056db3ab36ea455436dc7f097647b4be7888cbfd7b36637b89b7de17678",
+            "governed_bytes_sha256": "6b062d7937cf22559a9cda78157778c0a15c0080ab0a8639484f8018982a5621"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:226",
+          "source_ids": [
+            "clerk:119:1:226",
+            "govinfo:hjres105eh",
+            "blm:north-dakota-2025-reviewed-decision",
+            "govinfo:5usc801-2024-disapproval-scope"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:226",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": false
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": true,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "55c6d1c7bf84803b17653fed9bac2a8080d5a29ed6dc8a8fd31e03bd3776c478"
+        },
+        "historical_clerk_source_identity": {
+          "source_id": "clerk:119:1:226",
+          "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+          "raw_sha256": "4a5d3a42fac93169a79aeb05d574743462de7a58e5140d8a5463481865bd1dc4",
+          "verification": "historical_source_identity_not_recaptured_this_increment"
+        }
+      },
+      "source_id": "blm:north-dakota-2025-reviewed-decision",
+      "source_object_sha256": "295dabaa5c8317f881987d25569972772ba17985f45d926de75db78eded63072",
+      "source_extent": "Retained PDF pages13-16 only; partial484-page plan",
+      "operative_qualification": "Alternative D carries forward many of the same management directions and allocations as Alternative B. \nLike Alternative B, Alternative D close s areas with low oil and gas development potential and state -\ndesignated drinking water source protection areas to future federal oil and gas leasing . Alternative D,  \nhowever, also includes a provision that leasing in areas with low development potential may be allowed to \nprevent drainage of federal minerals or if the oil and gas development potential categories are revised based \non new data or information,  such as offset well production or geophysical surveys.  ",
+      "corrected_rationale": "The complete H.J.Res.105 EH targets the January14,2025 North Dakota ROD/approved RMP. Retained complete PDF pages13-16 are a partial484-page plan review, not a complete operative-plan analysis. The selected AlternativeD differs from alternativesA/B/B.1/C: low-development-potential areas and state-designated drinking-water source-protection areas are closed to future federal oil and gas leasing. The stated drainage/new-data exceptions apply only to low-development-potential leasing; they are not stated exceptions to the drinking-water source-protection closure; coal outside the four-mile development area is unavailable; mineral/material allocations permit activity-level review, with other recreation/river/land decisions. Existing rights and their original stipulations persist, while renewals/unsigned projects may need modification and project authorizations must conform. Complete operative ROW/mineral/allocation maps, exact decision/signature/date identity and material CRA/other baselines remain pending. General plan resources do not alone prove Infrastructure membership; no repeal restricted to coal, automatic project approval, energy output, current legal status or actual environmental result is inferred from this House vote.",
+      "shared_meaning_change": false,
+      "membership_decision_changed": false,
+      "action_stays_pending": true,
+      "source_acquisitions": 0,
+      "historical_snapshots_rewritten": false,
+      "review_scope": "Independent reconstruction36-41 passed; full independent source audit remains underway. This scoped correction does not imply full source clearance, acceptance or publication authority.",
+      "precommit_correction_gate": {
+        "failure": "Builder default changed exact_action_binding_unresolved from true to false; strengthened preservation gate rejected it.",
+        "correction": "Explicitly retained true in repair specification; pending binding and all other membership fields preserved.",
+        "gate_weakened": false
+      }
+    }
+  },
+  "records": [
+    {
+      "original_record_sha256": "10294b2be092c48c044e18108e4b55a426804dc5dc2051a4a0b1eddd27acaf13",
+      "new_discovery_identity": false,
+      "record": {
+        "action_id": "house:119:1:226",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete H.J.Res.105 EH targets the January14,2025 North Dakota ROD/approved RMP. Retained complete PDF pages13-16 are a partial484-page plan review, not a complete operative-plan analysis. The selected AlternativeD differs from alternativesA/B/B.1/C: low-development-potential areas and state-designated drinking-water source-protection areas are closed to future federal oil and gas leasing. The stated drainage/new-data exceptions apply only to low-development-potential leasing; they are not stated exceptions to the drinking-water source-protection closure; coal outside the four-mile development area is unavailable; mineral/material allocations permit activity-level review, with other recreation/river/land decisions. Existing rights and their original stipulations persist, while renewals/unsigned projects may need modification and project authorizations must conform. Complete operative ROW/mineral/allocation maps, exact decision/signature/date identity and material CRA/other baselines remain pending. General plan resources do not alone prove Infrastructure membership; no repeal restricted to coal, automatic project approval, energy output, current legal status or actual environmental result is inferred from this House vote.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:226",
+            "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+            "raw_sha256": "0dcbe78e751a146bcfc83595a64beb79eb38712b2052c8a3be468019987328b1",
+            "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24"
+          },
+          {
+            "source_id": "govinfo:hjres105eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres105eh/html/BILLS-119hjres105eh.htm",
+            "raw_sha256": "1f8ee0c553a29f206cc911e6e04b734c3942db3ec9d7bcc1cfe9904baaabcde5",
+            "governed_bytes_sha256": "0091bc481304e8bde8b1ef5a191c6d2e8518c160e0a2496d1fa7933015add9e7"
+          },
+          {
+            "source_id": "blm:north-dakota-2025-reviewed-decision",
+            "url": "https://eplanning.blm.gov/public_projects/1505069/200366341/20126222/251026202/NDRMP_ROD_20250108_508.pdf",
+            "raw_sha256": "c6acd056db3ab36ea455436dc7f097647b4be7888cbfd7b36637b89b7de17678",
+            "governed_bytes_sha256": "6b062d7937cf22559a9cda78157778c0a15c0080ab0a8639484f8018982a5621"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres105eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 105 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan'' (issued January 14, 2025, as a record of decision and approved resource management plan, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3556-S3558, concluding that such record of decision and approved resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''."
+          },
+          {
+            "source_id": "blm:north-dakota-2025-reviewed-decision",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6.0000000.json",
+                  "sha256": "a8618ceec55a09d4c5dbe1ef14991d4ed9fc9eaef28a9c2c4cef23989c20137c",
+                  "start_character": 0,
+                  "end_character": 15063
+                }
+              ],
+              "utf8_sha256": "bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6",
+              "total_characters": 15063,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d9169dbcc35498b90e6f8b890a7f0cbf4fbc5b4cdc497d6f1f9aa21df1ce8ed2",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:252",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Wilson PartA11body increases the1382maximum from6months to2years, adds property to both location lists and labels the offense general-intent; it also reorganizes797posting and adds a2yeargeneral-intent felony for lawfully issued security regulations on designated DoDnational-defense-area real property. Complete retained1382/797baselines preserve underlying purpose/re-entry conditions and the separate willful misdemeanor regime includingNASAproperty. New felony categories include entry, fire/lighting/machinery/guard/disrepair and ingress/security rules; this is not automatically every military/NASAviolation or mandatory2yearsentence. Whole compound criminal/property-operating-rule versus direct Infrastructure boundary and material designated-area/regulatory/current-law baselines remain ordinary review. Recorded228–205agreement is not actual enforcement, guilt, safety outcome or enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:252",
+            "url": "https://clerk.house.gov/evs/2025/roll252.xml",
+            "raw_sha256": "157e7e6e23459e9d5a10bb169cd5329d7d4334a13b66867e2b1637e20d6b97b4",
+            "governed_bytes_sha256": "dba4ff791c3e45aa5584e3b3910abfb601c8f43f1a01e8288950cd05e9fde390"
+          },
+          {
+            "source_id": "immigration:wilson252-offered-body223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "b0a20f86f3bb282e578befbf90eea53ec8db3ebc78e3cab2159a48defba1a69d"
+          },
+          {
+            "source_id": "immigration:wilson252-initial-question223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "25c87d14ead6cc57992d1f5f44fa2a23d85e0da90eba385132fded112fb37f62"
+          },
+          {
+            "source_id": "immigration:wilson252-resumed-recorded223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "bdc1431cf6c9d3e05de3d0f61b97bd870db1b5d298c6139b192f0c6c60802e67"
+          },
+          {
+            "source_id": "govinfo:18usc1382-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap67-sec1382.htm",
+            "raw_sha256": "3e08389c079ddf408637fa132878dccf36cd1b2072afcf199207b58e321e1de5",
+            "governed_bytes_sha256": "bccd38e1a12370b07e54b655c90ab1ca84815716347c49620eb91cbf2b8c02c1"
+          },
+          {
+            "source_id": "govinfo:50usc797-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap23-subchapI-sec797.htm",
+            "raw_sha256": "9aaf9b0989b88063798504996b1740ddd2ee0afec67828d27e543ca97adaf008",
+            "governed_bytes_sha256": "6ca5b089eea9175096f1effd316f74bef258f5176a3977c971e67ade5980a6a8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:wilson252-offered-body223",
+            "locator": "Complete retained own operative unit or scoped statutory baseline",
+            "passage": "At the end of subtitle B of title XVII, add the following: SEC. 17 ll. PENALTIES FOR UNLAWFUL ENTRY AND VIOLATION OF SECURITY REGU- LATIONS. (a) R EVISION TO PENALTY FOR ENTERING MILITARY, N AVAL, OR COAST GUARD PROP- ERTY UNLAWFULLY.—Section 1382 of title 18, United States Code, is amended— (1) by striking ‘‘or installation,’’ both places it appears and inserting ‘‘installation, or property,’’; (2) by striking ‘‘six months’’ and inserting ‘‘two years’’; and (3) by adding at the end the following new sentence: ‘‘This is a general intent crime.’’. (b) P ENALTY FOR VIOLATION OF SECURITY REGULATIONS AND ORDERS RELATING TO DES- IGNATED NATIONAL DEFENSE AREAS.— Section 21 of the Internal Security Act of 1950 (50 U.S.C. 797) is amended— (1) in subsection (a)— (A) by redesignating subsection (b) as para- graph (5) (and indenting that paragraph ac- cordingly); and (B) in such paragraph, as so redesignated, by striking ‘‘subsection (a)’’ and inserting ‘‘this subsection’’; and (2) by adding at the end the following new subsection: ‘‘(b) F ELONY VIOLATION OF NATIONAL DE- FENSE AREA SECURITY REGULATIONS.— ‘‘(1) F ELONY.—Whoever violates any na- tional defense area security regulation shall be fined under title 18, United States Code, or imprisoned not more than two years, or both. This is a general intent crime. ‘‘(2) N ATIONAL DEFENSE AREA SECURITY REG - ULATION DESCRIBED .—For purposes of para- graph (1), a national defense area security regulation is a property security regulation that, pursuant to lawful authority, has been promulgated or approved by the Secretary of Defense (or by a military commander des- ignated by the Secretary of Defense or by a military officer, or a civilian officer or em- ployee of the Department of Defense, holding a senior Department of Defense director po- sition designated by the Secretary of De- fense) for the protection, security, or admin- istration of Department of Defense real prop- erty that has been designated by the Sec- retary of Defense as a national defense area. ‘‘(3) P ROPERTY SECURITY REGULATION DE - SCRIBED.—For purposes of paragraph (2), a property security regulation, with respect to any designated national defense area, is a regulation— ‘‘(A) relating to unauthorized entry to or trespass on such property; ‘‘(B) relating to fire hazards, fire protec- tion, lighting, machinery, guard service, dis- repair, disuse, or other unsatisfactory condi- tions on such property; ‘‘(C) relating to the ingress to, or egress or removal of persons from, such property; or ‘‘(D) otherwise providing for safeguarding such property against destruction, loss, or injury by accident or by enemy or unauthor- ized action, sabotage, or other subversive ac- tions. ‘‘(4) D EFINITIONS.—In this subsection: ‘‘(A) D EPARTMENT OF DEFENSE REAL PROP - ERTY.—The term ‘Department of Defense real property’ means real property subject to the jurisdiction, administration, or in the cus- tody of the Department of Defense, any De- partment or agency of which that Depart- ment consists, or any officer or employee of that Department or agency. ‘‘(B) R EGULATION AS INCLUDING ORDER .—The term ‘regulation’ includes an order.’’. "
+          },
+          {
+            "source_id": "immigration:wilson252-initial-question223",
+            "locator": "Complete retained own operative unit or scoped statutory baseline",
+            "passage": "The Acting CHAIR. The question is on the amendment offered by the gen- tleman from South Carolina (Mr. W IL- SON). The question was taken; and the Act- ing Chair announced that the ayes ap- peared to have it. Mr. SMITH of Washington. Madam Chair, I demand a recorded vote. The Acting CHAIR. Pursuant to clause 6 of rule XVIII, further pro- ceedings on the amendment offered by the gentleman from South Carolina will be postponed. "
+          },
+          {
+            "source_id": "govinfo:18usc1382-2024",
+            "locator": "Complete retained own operative unit or scoped statutory baseline",
+            "passage": "U.S.C. Title 18 - CRIMES AND CRIMINAL PROCEDURE 18 U.S.C. United States Code, 2024 Edition Title 18 - CRIMES AND CRIMINAL PROCEDURE PART I - CRIMES CHAPTER 67 - MILITARY AND NAVY Sec. 1382 - Entering military, naval, or Coast Guard property From the U.S. Government Publishing Office, www.gpo.gov §1382. Entering military, naval, or Coast Guard property Whoever, within the jurisdiction of the United States, goes upon any military, naval, or Coast Guard reservation, post, fort, arsenal, yard, station, or installation, for any purpose prohibited by law or lawful regulation; or Whoever reenters or is found within any such reservation, post, fort, arsenal, yard, station, or installation, after having been removed therefrom or ordered not to reenter by any officer or person in command or charge thereof— Shall be fined under this title or imprisoned not more than six months, or both. (June 25, 1948, ch. 645, 62 Stat. 765; Pub. L. 103–322, title XXXIII, §330016(1)(G), Sept. 13, 1994, 108 Stat. 2147.) Historical and Revision Notes Based on title 18, U.S.C., 1940 ed., §97 (Mar. 4, 1909, ch. 321, §45, 35 Stat. 1097; Mar. 28, 1940, ch. 73, 54 Stat. 80). Reference to territory, Canal Zone, Puerto Rico and the Philippine Islands was omitted as covered by definition of United States in section 5 of this title. Words \"naval or Coast Guard\" were inserted before \"reservation\" and words \"yard, station, or installation\" were inserted after \"arsenal\" in two places, so as to extend section to naval or Coast Guard property. Minor changes were made in phraseology. Editorial Notes Amendments 1994 —Pub. L. 103–322 substituted \"fined under this title\" for \"fined not more than $500\" in last par. Statutory Notes and Related Subsidiaries Transfer of Functions For transfer of authorities, functions, personnel, and assets of the Coast Guard, including the authorities and functions of the Secretary of Transportation relating thereto, to the Department of Homeland Security, and for treatment of related references, see sections 468(b), 551(d), 552(d), and 557 of Title 6, Domestic Security, and the Department of Homeland Security Reorganization Plan of November 25, 2002, as modified, set out as a note under section 542 of Title 6. Coast Guard transferred to Department of Transportation and all functions, powers, and duties, relating to Coast Guard, of Secretary of the Treasury and of other offices and officers of Department of the Treasury transferred to Secretary of Transportation by Pub. L. 89–670, Oct. 15, 1966, 80 Stat. 931, which created the Department of Transportation. See section 108 of Title 49, Transportation. Executive Documents Transfer of Functions Functions of all officers of Department of the Treasury, and functions of all agencies and employees of such Department transferred, with certain exceptions, to Secretary of the Treasury, with power vested in him to authorize their performance or performance of any of his functions, by any of such officers, agencies, and employees, by Reorg. Plan No. 26 of 1950, §§1, 2, eff. July 31, 1950, 15 F.R. 4935, 64 Stat. 1280, 1281, set out in the Appendix to Title 5, Government Organization and Employees. Coast Guard, referred to in this section, was generally a service in Department of the Treasury, but such Plan excepted from transfer functions of Coast Guard and Commandant thereof when Coast Guard was operating as a part of the Navy under former sections 1 and 3 (now 101 and 103) of Title 14, Coast Guard."
+          },
+          {
+            "source_id": "govinfo:50usc797-2024",
+            "locator": "Complete retained own operative unit or scoped statutory baseline",
+            "passage": "U.S.C. Title 50 - WAR AND NATIONAL DEFENSE 50 U.S.C. United States Code, 2024 Edition Title 50 - WAR AND NATIONAL DEFENSE CHAPTER 23 - INTERNAL SECURITY SUBCHAPTER I - CONTROL OF SUBVERSIVE ACTIVITIES Sec. 797 - Penalty for violation of security regulations and orders From the U.S. Government Publishing Office, www.gpo.gov §797. Penalty for violation of security regulations and orders (a) Misdemeanor violation of defense property security regulations (1) Misdemeanor Whoever willfully violates any defense property security regulation shall be fined under title 18 or imprisoned not more than one year, or both. (2) Defense property security regulation described For purposes of paragraph (1), a defense property security regulation is a property security regulation that, pursuant to lawful authority— (A) shall be or has been promulgated or approved by the Secretary of Defense (or by a military commander designated by the Secretary of Defense or by a military officer, or a civilian officer or employee of the Department of Defense, holding a senior Department of Defense director position designated by the Secretary of Defense) for the protection or security of Department of Defense property; or (B) shall be or has been promulgated or approved by the Administrator of the National Aeronautics and Space Administration for the protection or security of NASA property. (3) Property security regulation described For purposes of paragraph (2), a property security regulation, with respect to any property, is a regulation— (A) relating to fire hazards, fire protection, lighting, machinery, guard service, disrepair, disuse, or other unsatisfactory conditions on such property, or the ingress thereto or egress or removal of persons therefrom; or (B) otherwise providing for safeguarding such property against destruction, loss, or injury by accident or by enemy action, sabotage, or other subversive actions. (4) Definitions In this subsection: (A) Department of Defense property The term \"Department of Defense property\" means covered property subject to the jurisdiction, administration, or in the custody of the Department of Defense, any Department or agency of which that Department consists, or any officer or employee of that Department or agency. (B) NASA property The term \"NASA property\" means covered property subject to the jurisdiction, admin istration, or in the custody of the National Aeronautics and Space Administration or any officer or employee thereof. (C) Covered property The term \"covered property\" means aircraft, airports, airport facilities, vessels, harbors, ports, piers, water-front facilities, bases, forts, posts, laboratories, stations, vehicles, equipment, explosives, or other property or places. (D) Regulation as including order The term \"regulation\" includes an order. (b) Posting Any regulation or order covered by subsection (a) shall be posted in conspicuous and appropriate places. (Sept. 23, 1950, ch. 1024, title I, §21, 64 Stat. 1005; Pub. L. 109–163, div. A, title X, §1053, Jan. 6, 2006, 119 Stat. 3435.) Editorial Notes Amendments 2006 —Pub. L. 109–163 amended section generally. Prior to amendment, section related to security regulations and orders and penalties for violations."
+          },
+          {
+            "source_id": "immigration:wilson252-resumed-recorded223",
+            "locator": "Own resumed question/totals through roll252, excluding member lists",
+            "passage": "AMENDMENT NO. 11 OFFERED BY MR . WILSON OF SOUTH CAROLINA The Acting CHAIR. The unfinished business is the demand for a recorded vote on amendment No. 11, printed in part A of House Report 119–255, offered by the gentleman from South Carolina (Mr. W ILSON), on which further pro- ceedings were postponed and on which the ayes prevailed by voice vote. The Clerk will redesignate the amendment. The Clerk redesignated the amend- ment. RECORDED VOTE The Acting CHAIR. A recorded vote has been demanded. A recorded vote was ordered. The Acting CHAIR. This will be a 2- minute vote. The vote was taken by electronic de- vice, and there were—ayes 228, noes 205, not voting 4, as follows: [Roll No. 252]"
+          },
+          {
+            "source_id": "immigration:wilson252-resumed-recorded223",
+            "locator": "Own recorded agreement outcome",
+            "passage": "So the amendment was agreed to. The result of the vote was announced as above recorded. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "84275a60fbe743ddc8e2b77cf0984102b48692b38acf04c028a3d7b0d93fa443",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:253",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete own Mills PartA18text calls for striking the discretionary approved-flag subparagraph in1052. Complete retained1052contains fourteen approved-flag categories, display exclusions for specified non-endorsing exhibits and residential areas, and a good-order/discipline savings rule. The redundant nested citation1052(d)(1)(N)...strike(N)is retained literally, not silently repaired or treated as proof of an executed legal deletion. This exact flag-display approval policy does not directly change construction/maintenance, transport, technical deployment or research governance. Covered buildings/ships/vehicles and a retail-contract flag exception in the unchanged parent list cannot supply narrower child membership. Proposed domain exclusion is not a universal all-flags ban, actual flag removal, identity endorsement, motive or enactment from222–210agreement.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:253",
+            "url": "https://clerk.house.gov/evs/2025/roll253.xml",
+            "raw_sha256": "001bb2be0c28ede062f9f72851913dfaff32a3e3b092c9c1125ce6d995b87bc5",
+            "governed_bytes_sha256": "9e9cb404aa1894100479602975c422f1111b047fe167978d8ca7f9107f43f9c0"
+          },
+          {
+            "source_id": "congressional-record:3838-amend18-roll253-choice156",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "e4c3c11ecde21477ccae18fc39c9df8bec1f659f33079f9c95fa33b15f8ee91b"
+          },
+          {
+            "source_id": "govinfo:pl11831-section1052-flags156",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm",
+            "raw_sha256": "58989df390e0b8777abc1b739768d1e8c40b6b14bf35e19c0714477530b84a84",
+            "governed_bytes_sha256": "53ca05e15b8a3621fb2891bfe2d02ec8ac32339d4da06d5291c747e27ed52b2e"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend18-roll253-choice156",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 18 OFFERED BY MR . MILLS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 18 printed \nin part A of House Report 119–255. \nMr. MILLS. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle D of title X, insert \nthe following: \nSEC. 10 ll. ELIMINATION OF DISCRETION OF \nMILITARY CHAIN OF COMMAND AND \nSENIOR CIVILIAN LEADERSHIP WITH \nRESPECT TO DISPLAY OF FLAGS. \nSection 1052(d)(1)(N) of the National De-\nfense Authorization Act for Fiscal Year 2024 \n(Public Law 118–31; 10 U.S.C. 2661 note) is \namended by striking subparagraph (N). \n\n\nAMENDMENT NO. 18 OFFERED BY MR . MILLS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 18, printed in \npart A of House Report 119–255, offered \nby the gentleman from Florida (Mr. \nM\nILLS), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 222, noes 210, \nnot voting 5, as follows: \n[Roll No. 253] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:pl11831-section1052-flags156",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SEC. 1052. <<NOTE: 10 USC 2661 note.>> PROHIBITION ON DISPLAY OF UNAPPROVED FLAGS. (a) Prohibition.--No flag other than an approved flag shall be displayed in any work place, common access area, or public area of the Department of Defense. (b) Exclusions.--The prohibition under subsection (a) shall not apply to-- (1) the public display or depiction of a flag other than an approved flag in a museum exhibit, State-issued license plate, grave site, memorial marker, monument, educational display, historical display, or work of art, if the nature of the display or depiction cannot reasonably be viewed as endorsement of the flag by the Department of Defense; or (2) a building or area that primarily serves as a place of residence, including a barracks, dormitory, bachelor quarters, government-operated housing, or public-private venture housing area. [[Page 137 STAT. 396]] (c) Rule of Construction.--Nothing in this section shall be construed to affect the authority of a military commander to enforce good order and discipline on a military installation. (d) Definitions.--In this section: (1) The term ``approved flag'' means any of the following: (A) The American flag. (B) The flag of a State or of the District of Columbia. (C) A military service flag. (D) A flag or general officer flag. (E) A Presidentially-appointed, Senate-confirmed civilian flag. (F) A Senior Executive Service or military department-specific flag. (G) The National League of Families POW/MIA flag. (H) The flag of another country that is an ally or partner of the United States or for official protocol purposes. (I) The flag of an organization of which the United States is a member. (J) A ceremonial, command, unit, or branch flag or guidon. (K) The flag of an athletic team, club, cadet-led organization, academic department, unit subdivision, or other entity approved to operate at a Service Academy (as such term is defined in section 347 of title 10, United States Code) or in conjunction with a Reserve Officer Training Corps activity. (L) A flag or banner displayed by a retail tenant or non-government entity operating in a building owned or controlled by the Department of Defense, for the purposes of advertising business products and services, if authorized by contract. (M) A religious flag or banner, including a holiday flag, if otherwise authorized. (N) A flag approved at the discretion of the military chain of command or senior civilian leadership, as appropriate. (2) The term ``work place, common access area, or public area of the Department of Defense'' includes the following: (A) An office building, facility, naval vessel, aircraft, governmental vehicle, hangar, garage, ready room, storage room, tool and equipment room, or workshop. (B) A sensitive compartmented information facility of other secure facility. (C) A schoolhouse or training facility. (D) The area in plain view of such a building that is not residential in nature, including the areas outside of buildings of the Department of Defense. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d8aac2c7e5954e9a28d0d11354f6208d577753903a0e8d11eb354cf25c6413f4",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:254",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete own Greene-as-Davidsondesignee PartA20offering, independent printed report clause and recorded rejection bind the whole obligation/expenditure restriction for research,development,procurementandpromotion of cell cultured meat. Preserve the two printed funding descriptions: funds authorized to be appropriated by this Act, or funds otherwise made available for FY2026forDoD. This is not only funds actually appropriated by the Act, a dollar rescission or general consumer/product ban. Direct technology/research-funding membership is an unaccepted whole-choice proposal, with no biological/safety claims, individual product eligibility or actual research/procurement outcome inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:254",
+            "url": "https://clerk.house.gov/evs/2025/roll254.xml",
+            "raw_sha256": "659e8295cdfb90173b6b8ae8bc80bed5f9f37a53ecd05fe837b1c6c4fb84a147",
+            "governed_bytes_sha256": "e1d1e898d3a3c9542859735dcd46d693fc0b8ff92f03abdc10337ca1259996af"
+          },
+          {
+            "source_id": "congressional-record:3838-amend20-roll254-choice157",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "8e049700a8fd657ec82636f0d708aeae4e65e7dda3cc93703b8e2e8b1257e1b0"
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend20-operative157",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+            "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+            "governed_bytes_sha256": "e6327da19f24246cac59eea5cad9c0e1e1bcf39eceeb856158d92d88b01dcc0c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend20-roll254-choice157",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 20 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 20 printed \nin part A of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, \nas the designee of Mr. D\nAVIDSON, I rise \nto speak in support of the amendment. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title II, add the \nfollowing new section: \nSEC. 2 ll. PROHIBITION ON AVAILABILITY OF \nFUNDS FOR CELL CULTURED MEAT. \nNone of the funds authorized to be appro-\npriated by this Act or otherwise made avail-\nable for fiscal year 2026 for the Department \nof Defense may be obligated or expended for \nthe research, development, procurement, or \npromotion of cell cultured meat. \n\n\nAMENDMENT NO. 20 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 20, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 194, noes 236, \nanswered ‘‘present’’ 1, not voting 6, as \nfollows: \n[Roll No. 254] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend20-operative157",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "20. An Amendment To Be Offered by Representative Davidson of Ohio or His Designee, Debatable for 10 Minutes At the end of subtitle B of title II, add the following new section: SEC. 2__. PROHIBITION ON AVAILABILITY OF FUNDS FOR CELL CULTURED MEAT. None of the funds authorized to be appropriated by this Act or otherwise made available for fiscal year 2026 for the Department of Defense may be obligated or expended for the research, development, procurement, or promotion of cell cultured meat. "
+          }
+        ],
+        "episode_candidate_id": "episode:hr3838:amend20:119"
+      }
+    },
+    {
+      "original_record_sha256": "d57a96e110b8bcde8dbf0631ddb4de8c8bfa84a6b928e4eb538851dcb5c5351e",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:255",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Greene PartA22instruction prohibits use of funds made available by this Act for assistance to Ukraine; it is not textually a ban on every funding source/year or a repeal of all assistance authorities. Retained complete selected RCPpages786/787/1246include1302authorizations300million for eachFY2026/2027and national-interest determination plus a separate400,000thousand program-table entry. These values are not automatically summed, substituted or treated as actual outlays. NeighboringNATOsustainment/cyber/transport definitions do not establish the narrower Ukraine-assistance universe. Whole Act-funding, authorized-versus-appropriated amounts, program/legal and direct Infrastructure membership/accounting remain ordinary review; recorded60–372rejection is not a whole-parent vote, foreign-policy motive or actual assistance outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:255",
+            "url": "https://clerk.house.gov/evs/2025/roll255.xml",
+            "raw_sha256": "acf637dc40597b42a7eeab00644d1a947c475bdb4833e66256a50991958edef8",
+            "governed_bytes_sha256": "d83c3d8587493cfa0152539db54f1bbf2e3dbffbaa7f72ed324cc12089cacd9a"
+          },
+          {
+            "source_id": "congressional-record:3838-amend22-roll255-choice157",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "51b4668fbc90f8664e11e29b7def6f95731c7e755f66de0933d14c25b4d856b7"
+          },
+          {
+            "source_id": "govinfo:rcp119-8-ukraine",
+            "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+            "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+            "governed_bytes_sha256": "2304c03367090e9a16e93ffc8df0b2fa6618b63ba6866c46f1b696a23e77f451"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend22-roll255-choice157",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 22 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 22 printed \nin part 1 of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as \nfollows: \nAt the end of subtitle A of title XIII, add \nthe following: \nSEC. 13 l. PROHIBITION ON ASSISTANCE TO \nUKRAINE. \nNone of the funds made available by this \nAct may be used for assistance to Ukraine. \n\n\nAMENDMENT NO. 22 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 22, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 60, noes 372, \nnot voting 5, as follows: \n[Roll No. 255] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:rcp119-8-ukraine",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/da04b9d0e2367c7489c662c07c2bc04984ec53f47b1f29ddced2f613d6507256.0000000.json",
+                  "sha256": "5b2e5c05f239445a2d6e526d8261596e79651e073a4baf1c3f77bdd71906f40f",
+                  "start_character": 0,
+                  "end_character": 7504
+                }
+              ],
+              "utf8_sha256": "da04b9d0e2367c7489c662c07c2bc04984ec53f47b1f29ddced2f613d6507256",
+              "total_characters": 7504,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "9b60fa2c1c0e34688542db3706fa2ac9b97878cf55007fdab0a9e2263c8b4f5b",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:256",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Greene PartA23instruction strikes4301line010and the corresponding named OverseasHumanitarianDisasterandCivicAiditem, not every line010in the table or all humanitarian law. Exact selected RCPtable has unitsInThousands:100,793request,115,317Houseauthorized including14,524programincrease. TargetHouseauthorization is115.317million, not115,317dollars or an additional129.841million. Complete301and4001within retainedpages authorize amounts subject to appropriations and preserve merit/other-law and transfer/reprogramming rules. Removing this authorization item is not automatically rescission of appropriated cash or repeal of other authorities. Complete material humanitarian/disaster/civic program/transport/construction baselines, whole table/legal effects and mixed-purpose-domain boundary remain ordinary review; recorded60–370rejection supplies no actual project/aid cut or motive.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:256",
+            "url": "https://clerk.house.gov/evs/2025/roll256.xml",
+            "raw_sha256": "70fddf8ad8884054c9564efb4b6c2020ac8ea3e2b6821b0240cfe0d2f1853652",
+            "governed_bytes_sha256": "3be734e824965b349c63099f3119930ac2c1fa0355572c888a66e2cd3d026733"
+          },
+          {
+            "source_id": "congressional-record:3838-amend23-roll256-choice160",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "149f8ea9140924a9a52732058a77de7c8fa63f7ef5869dbfe672eb3a74f1048b"
+          },
+          {
+            "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+            "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+            "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+            "governed_bytes_sha256": "1c1dbcdd9cb24aaa9f4ba873722f150de1c94d4b6a8f7d8496f3bd1dc549b511"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend23-roll256-choice160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 23 OFFERED BY MS . GREENE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 23 printed \nin part A of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nIn section 4301, strike line 010 and the cor-\nresponding item ‘‘Overseas Humanitarian, \nDisaster, and Civil Aid’’. \n\n\nAMENDMENT NO. 23 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 23, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 60, noes 370, \nnot voting 7, as follows: \n[Roll No. 256] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/1d0d9992cfbdc0f98670b10c34344a85c81f50b535e999e3d21d181da3f35b13.0000000.json",
+                  "sha256": "859b92c4de6b4310e73d2cfe031879035cab38fa3059d4c253b88cdc7aad81f8",
+                  "start_character": 0,
+                  "end_character": 8080
+                }
+              ],
+              "utf8_sha256": "1d0d9992cfbdc0f98670b10c34344a85c81f50b535e999e3d21d181da3f35b13",
+              "total_characters": 8080,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "3d1bd6d1aacd4a0562f132a857c9c3444c19564cd0880c17ea32ae1feddff073",
+      "source": {
+        "source_id": "govinfo:5usc801-2024-disapproval-scope",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+        "text_version": "2024 Code specified disapproval/withdrawal provisions",
+        "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+        "text": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval.",
+        "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+      }
+    },
+    {
+      "original_source_object_sha256": "182c1c25a3ae210afc7fed60d73dc1b64e807dcbded398785090524197aa5c3b",
+      "source": {
+        "source_id": "clerk:119:1:226",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll226.xml",
+        "text_version": "119:1",
+        "raw_sha256": "0dcbe78e751a146bcfc83595a64beb79eb38712b2052c8a3be468019987328b1",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "226",
+          "legis-num": "H J RES 105",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Sep-2025",
+          "action-time": "9:39 PM",
+          "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to “North Dakota Field Office Record of Decision and Approved Resource Management Plan”"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24"
+      }
+    },
+    {
+      "original_source_object_sha256": "b5f6ee3f786b7c500eecc4536e0a97f2d44d1eabc9d17aed6e2036a17f748d31",
+      "source": {
+        "source_id": "govinfo:hjres105eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres105eh/html/BILLS-119hjres105eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "1f8ee0c553a29f206cc911e6e04b734c3942db3ec9d7bcc1cfe9904baaabcde5",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 105 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan'' (issued January 14, 2025, as a record of decision and approved resource management plan, and a letter of opinion from the Government Accountability Office dated June 25, 2025, printed in the Congressional Record on June 26, 2025, on pages S3556-S3558, concluding that such record of decision and approved resource management plan is a rule under the Congressional Review Act), and such rule shall have no force or effect. Passed the House of Representatives September 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 105 _______________________________________________________________________ JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ``North Dakota Field Office Record of Decision and Approved Resource Management Plan''.",
+        "governed_bytes_sha256": "0091bc481304e8bde8b1ef5a191c6d2e8518c160e0a2496d1fa7933015add9e7"
+      }
+    },
+    {
+      "original_source_object_sha256": "295dabaa5c8317f881987d25569972772ba17985f45d926de75db78eded63072",
+      "source": {
+        "source_id": "blm:north-dakota-2025-reviewed-decision",
+        "source_type": "official_agency_record_of_decision",
+        "url": "https://eplanning.blm.gov/public_projects/1505069/200366341/20126222/251026202/NDRMP_ROD_20250108_508.pdf",
+        "raw_sha256": "c6acd056db3ab36ea455436dc7f097647b4be7888cbfd7b36637b89b7de17678",
+        "text_version": "January2025 ROD/RMP; completePDF13-16 only: selected AlternativeD, mineral/water/land/recreation allocations, exceptions, valid existing rights and site-specific implementation; not full484page review",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6.0000000.json",
+              "sha256": "a8618ceec55a09d4c5dbe1ef14991d4ed9fc9eaef28a9c2c4cef23989c20137c",
+              "start_character": 0,
+              "end_character": 15063
+            }
+          ],
+          "utf8_sha256": "bc4294e0cca4081385cad60957da8e868b53edc9288ec046504a54ea1c955da6",
+          "total_characters": 15063,
+          "transport_only": true
+        },
+        "capture_provenance": "Primary BLM PDF captured through the public anonymous download route published by the migrated ePlanning document portal; declared URL is the legacy document identity, raw hash identifies downloaded PDF bytes.",
+        "governed_bytes_sha256": "6b062d7937cf22559a9cda78157778c0a15c0080ab0a8639484f8018982a5621"
+      }
+    },
+    {
+      "original_source_object_sha256": "a842a45f9170c1f3ecafc3bd7af27e67edc45e51dbb38130cc792901a3d33577",
+      "source": {
+        "source_id": "clerk:119:1:252",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll252.xml",
+        "text_version": null,
+        "raw_sha256": "157e7e6e23459e9d5a10bb169cd5329d7d4334a13b66867e2b1637e20d6b97b4",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "252",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "5",
+          "amendment-author": "Wilson of South Carolina Part A Amendment No. 11",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:14 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "219",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "9",
+            "nay-total": "204",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "dba4ff791c3e45aa5584e3b3910abfb601c8f43f1a01e8288950cd05e9fde390"
+      }
+    },
+    {
+      "original_source_object_sha256": "a513e3fb833531ee302b2511df768c89d6c67ca4be8619b987ac13b9762e922b",
+      "source": {
+        "source_id": "immigration:wilson252-offered-body223",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+        "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+        "text_version": "OwnSeptember9offered PartA11statute only, separate from speeches, initialquestion and laterrecordedchoice.",
+        "text": "At the end of subtitle B of title XVII, add the following: SEC. 17 ll. PENALTIES FOR UNLAWFUL ENTRY AND VIOLATION OF SECURITY REGU- LATIONS. (a) R EVISION TO PENALTY FOR ENTERING MILITARY, N AVAL, OR COAST GUARD PROP- ERTY UNLAWFULLY.—Section 1382 of title 18, United States Code, is amended— (1) by striking ‘‘or installation,’’ both places it appears and inserting ‘‘installation, or property,’’; (2) by striking ‘‘six months’’ and inserting ‘‘two years’’; and (3) by adding at the end the following new sentence: ‘‘This is a general intent crime.’’. (b) P ENALTY FOR VIOLATION OF SECURITY REGULATIONS AND ORDERS RELATING TO DES- IGNATED NATIONAL DEFENSE AREAS.— Section 21 of the Internal Security Act of 1950 (50 U.S.C. 797) is amended— (1) in subsection (a)— (A) by redesignating subsection (b) as para- graph (5) (and indenting that paragraph ac- cordingly); and (B) in such paragraph, as so redesignated, by striking ‘‘subsection (a)’’ and inserting ‘‘this subsection’’; and (2) by adding at the end the following new subsection: ‘‘(b) F ELONY VIOLATION OF NATIONAL DE- FENSE AREA SECURITY REGULATIONS.— ‘‘(1) F ELONY.—Whoever violates any na- tional defense area security regulation shall be fined under title 18, United States Code, or imprisoned not more than two years, or both. This is a general intent crime. ‘‘(2) N ATIONAL DEFENSE AREA SECURITY REG - ULATION DESCRIBED .—For purposes of para- graph (1), a national defense area security regulation is a property security regulation that, pursuant to lawful authority, has been promulgated or approved by the Secretary of Defense (or by a military commander des- ignated by the Secretary of Defense or by a military officer, or a civilian officer or em- ployee of the Department of Defense, holding a senior Department of Defense director po- sition designated by the Secretary of De- fense) for the protection, security, or admin- istration of Department of Defense real prop- erty that has been designated by the Sec- retary of Defense as a national defense area. ‘‘(3) P ROPERTY SECURITY REGULATION DE - SCRIBED.—For purposes of paragraph (2), a property security regulation, with respect to any designated national defense area, is a regulation— ‘‘(A) relating to unauthorized entry to or trespass on such property; ‘‘(B) relating to fire hazards, fire protec- tion, lighting, machinery, guard service, dis- repair, disuse, or other unsatisfactory condi- tions on such property; ‘‘(C) relating to the ingress to, or egress or removal of persons from, such property; or ‘‘(D) otherwise providing for safeguarding such property against destruction, loss, or injury by accident or by enemy or unauthor- ized action, sabotage, or other subversive ac- tions. ‘‘(4) D EFINITIONS.—In this subsection: ‘‘(A) D EPARTMENT OF DEFENSE REAL PROP - ERTY.—The term ‘Department of Defense real property’ means real property subject to the jurisdiction, administration, or in the cus- tody of the Department of Defense, any De- partment or agency of which that Depart- ment consists, or any officer or employee of that Department or agency. ‘‘(B) R EGULATION AS INCLUDING ORDER .—The term ‘regulation’ includes an order.’’. ",
+        "captured_full_text_sha256": "507173f26b0bd3d134742b53c2e3fd3dc360f9324f674de567dc3d79003c1fc5",
+        "source_text_extents": [
+          {
+            "start": 2273153,
+            "end": 2276328,
+            "total": 2672129
+          }
+        ],
+        "text_extraction_method": "Literal native-extracted full capture extents, whitespace collapse and two-newline join; no historical/source repair.",
+        "governed_bytes_sha256": "b0a20f86f3bb282e578befbf90eea53ec8db3ebc78e3cab2159a48defba1a69d"
+      }
+    },
+    {
+      "original_source_object_sha256": "b40aa3a3ec4df505a0273e9b7ee35229aac79e3053fe54d9adf3d7a8639ddc30",
+      "source": {
+        "source_id": "immigration:wilson252-initial-question223",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+        "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+        "text_version": "OwnSeptember9question, apparentvoiceayes, recorded-demand and clause6postponement; no premature assertion initialvoteordered.",
+        "text": "The Acting CHAIR. The question is on the amendment offered by the gen- tleman from South Carolina (Mr. W IL- SON). The question was taken; and the Act- ing Chair announced that the ayes ap- peared to have it. Mr. SMITH of Washington. Madam Chair, I demand a recorded vote. The Acting CHAIR. Pursuant to clause 6 of rule XVIII, further pro- ceedings on the amendment offered by the gentleman from South Carolina will be postponed. ",
+        "captured_full_text_sha256": "507173f26b0bd3d134742b53c2e3fd3dc360f9324f674de567dc3d79003c1fc5",
+        "source_text_extents": [
+          {
+            "start": 2287506,
+            "end": 2287936,
+            "total": 2672129
+          }
+        ],
+        "text_extraction_method": "Literal native-extracted full capture extents, whitespace collapse and two-newline join; no historical/source repair.",
+        "governed_bytes_sha256": "25c87d14ead6cc57992d1f5f44fa2a23d85e0da90eba385132fded112fb37f62"
+      }
+    },
+    {
+      "original_source_object_sha256": "4e3e529dea11653e477892bc83a7b4dea6d3f5ff54ee1c108cb0ca95af19f5aa",
+      "source": {
+        "source_id": "immigration:wilson252-resumed-recorded223",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "OwnSeptember10ActingChairresumption/PartA11redesignation/recordeddemand/order/electronic252/228-205-4/finalresult. Prior251andnext253excluded.",
+        "text": "AMENDMENT NO. 11 OFFERED BY MR . WILSON OF SOUTH CAROLINA The Acting CHAIR. The unfinished business is the demand for a recorded vote on amendment No. 11, printed in part A of House Report 119–255, offered by the gentleman from South Carolina (Mr. W ILSON), on which further pro- ceedings were postponed and on which the ayes prevailed by voice vote. The Clerk will redesignate the amendment. The Clerk redesignated the amend- ment. RECORDED VOTE The Acting CHAIR. A recorded vote has been demanded. A recorded vote was ordered. The Acting CHAIR. This will be a 2- minute vote. The vote was taken by electronic de- vice, and there were—ayes 228, noes 205, not voting 4, as follows: [Roll No. 252] AYES—228 Aderholt Alford Allen Amodei (NV) Arrington Babin Bacon Baird Balderson Barr Barrett Baumgartner Bean (FL) Begich Bentz Bergman Bice Biggs (AZ) Biggs (SC) Bilirakis Boebert Bost Brecheen Bresnahan Buchanan Burchett Burlison Calvert Cammack Carey Carter (GA) Carter (TX) Ciscomani Cline Cloud Clyde Cole Collins Comer Crane Crank Crawford Crenshaw Cuellar Davids (KS) Davis (NC) De La Cruz DesJarlais Diaz-Balart Donalds Downing Dunn (FL) Edwards Ellzey Emmer Estes Evans (CO) Ezell Fallon Fedorchak Feenstra Fine Finstad Fischbach Fitzgerald Fitzpatrick Fleischmann Flood Fong Foxx Franklin, Scott Fry Fulcher Garbarino Gill (TX) Gillen Gimenez Golden (ME) Goldman (TX) Gonzales, Tony Gooden Gosar Graves Greene (GA) Griffith Grothman Guest Guthrie Hageman Hamadeh (AZ) Haridopolos Harrigan Harris (MD) Harris (NC) Harshbarger Hern (OK) Higgins (LA) Hill (AR) Hinson Houchin Hudson Huizenga Hunt Hurd (CO) Issa Jack Jackson (TX) James Johnson (SD) Jordan Joyce (OH) Joyce (PA) Kaptur Kean Kelly (MS) Kelly (PA) Kennedy (UT) Kiggans (VA) Kiley (CA) Kim King-Hinds Knott Kustoff LaLota LaMalfa Langworthy Latta Lawler Lee (FL) Letlow Loudermilk Lucas Luna Luttrell Mace Mackenzie Malliotakis Maloy Mann Massie Mast McCaul McClain McClintock McCormick McDowell McGuire Messmer Meuser Miller (IL) Miller (OH) Miller (WV) Miller-Meeks Mills Moolenaar Moore (AL) Moore (NC) Moore (UT) Moore (WV) Moran Moylan Murphy Nehls Newhouse Norman Nunn (IA) Obernolte Ogles Onder Owens Palmer Patronis Perez Perry Pfluger Radewagen Reschenthaler Rogers (AL) Rogers (KY) Rose Rouzer Roy Rulli Rutherford Salazar Scalise Schmidt Schweikert Scott, Austin Self Sessions Shreve Simpson Smith (MO) Smith (NE) Smith (NJ) Smucker Spartz Stauber Stefanik Steil Steube Strong Stutzman Suozzi Taylor Tenney Thompson (PA) Tiffany Timmons Turner (OH) Valadao Van Drew Van Duyne Van Orden Vindman Wagner Walberg Weber (TX) Webster (FL) Westerman Wied Williams (TX) Wilson (SC) Wittman Womack Yakym Zinke NOES—205 Adams Aguilar Amo Ansari Auchincloss Balint Barraga´n Beatty Bell Bera Beyer Bishop Bonamici Boyle (PA) Brown Brownley Budzinski Bynum Carbajal Carson Carter (LA) Casar Case Casten Castor (FL) Castro (TX) Cherfilus- McCormick Chu Cisneros Clark (MA) Clarke (NY) Cleaver Clyburn Cohen Conaway Correa Costa Courtney Craig Crockett Crow Davidson Davis (IL) Dean (PA) DeGette DeLauro DelBene Deluzio DeSaulnier Dexter Dingell Doggett Elfreth Escobar Espaillat Fields Figures Fletcher Foster Foushee Frankel, Lois Friedman Frost Garamendi Garcia (CA) Garcı´a (IL) Garcia (TX) Goldman (NY) Gomez Gonzalez, V. Goodlander Gottheimer Gray Green, Al (TX) Harder (CA) Hayes Herna´ndez Himes Horsford Houlahan Hoyer Hoyle (OR) Huffman Ivey Jackson (IL) Jacobs Jayapal Jeffries Johnson (GA) Johnson (TX) Kamlager-Dove Keating Kelly (IL) Kennedy (NY) Khanna Krishnamoorthi Landsman Larsen (WA) Larson (CT) Latimer Lee (NV) Lee (PA) Leger Fernandez Levin Liccardo Lieu Lofgren Lynch Magaziner Mannion Matsui McBath McBride McClain Delaney McClellan McCollum McDonald Rivet McGarvey McGovern McIver Meeks Menendez Meng Mfume Min Moore (WI) Morelle Morrison Moskowitz Moulton Mrvan Mullin Nadler Neal Neguse Norcross Norton Ocasio-Cortez Olszewski Omar Pallone Panetta Pappas Pelosi Peters Pettersen Pingree Plaskett Pocan Pou Pressley Quigley Ramirez Randall Raskin Riley (NY) Rivas Ross Ruiz Ryan Salinas Sa´nchez Scanlon Schakowsky Schneider Scholten Schrier Scott (VA) Scott, David Sewell Sherman Simon Smith (WA) Sorensen Soto Stansbury Stanton Stevens Strickland Subramanyam Swalwell Sykes Takano Thanedar Thompson (CA) Thompson (MS) Tlaib Tokuda Tonko Torres (CA) Torres (NY) Trahan Tran Underwood Vargas Vasquez Veasey Vela´zquez Walkinshaw Wasserman Schultz Waters Watson Coleman Whitesides Williams (GA) Wilson (FL) VerDate Sep 11 2014 08:28 Sep 11, 2025 Jkt 059060 PO 00000 Frm 00054 Fmt 7634 Sfmt 0634 E:\\CR\\FM\\A10SE7.043 H10SEPT1DMWilson on DSK7X7S144PROD with HOUSE CONGRESSIONAL RECORD — HOUSE H4221 September 10, 2025 NOT VOTING—4 Evans (PA) LaHood Sherrill Titus ANNOUNCEMENT BY THE ACTING CHAIR The Acting CHAIR (during the vote). There is 1 minute remaining. b 1714 So the amendment was agreed to. The result of the vote was announced as above recorded. ",
+        "captured_full_text_sha256": "f1c7555dc40b162d05fe08c052b79ae874940f529f4edc210f3ae232fbdca011",
+        "source_text_extents": [
+          {
+            "start": 450952,
+            "end": 455897,
+            "total": 617569
+          }
+        ],
+        "text_extraction_method": "Literal native-extracted full capture extents, whitespace collapse and two-newline join; no historical/source repair.",
+        "governed_bytes_sha256": "bdc1431cf6c9d3e05de3d0f61b97bd870db1b5d298c6139b192f0c6c60802e67"
+      }
+    },
+    {
+      "original_source_object_sha256": "a25effcf33d06a3e7b9523ec79f8b97820cbb29d1e9407991394f6bf9611f4ea",
+      "source": {
+        "source_id": "govinfo:18usc1382-2024",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap67-sec1382.htm",
+        "text_version": "2024 Code section",
+        "raw_sha256": "3e08389c079ddf408637fa132878dccf36cd1b2072afcf199207b58e321e1de5",
+        "text": "U.S.C. Title 18 - CRIMES AND CRIMINAL PROCEDURE 18 U.S.C. United States Code, 2024 Edition Title 18 - CRIMES AND CRIMINAL PROCEDURE PART I - CRIMES CHAPTER 67 - MILITARY AND NAVY Sec. 1382 - Entering military, naval, or Coast Guard property From the U.S. Government Publishing Office, www.gpo.gov §1382. Entering military, naval, or Coast Guard property Whoever, within the jurisdiction of the United States, goes upon any military, naval, or Coast Guard reservation, post, fort, arsenal, yard, station, or installation, for any purpose prohibited by law or lawful regulation; or Whoever reenters or is found within any such reservation, post, fort, arsenal, yard, station, or installation, after having been removed therefrom or ordered not to reenter by any officer or person in command or charge thereof— Shall be fined under this title or imprisoned not more than six months, or both. (June 25, 1948, ch. 645, 62 Stat. 765; Pub. L. 103–322, title XXXIII, §330016(1)(G), Sept. 13, 1994, 108 Stat. 2147.) Historical and Revision Notes Based on title 18, U.S.C., 1940 ed., §97 (Mar. 4, 1909, ch. 321, §45, 35 Stat. 1097; Mar. 28, 1940, ch. 73, 54 Stat. 80). Reference to territory, Canal Zone, Puerto Rico and the Philippine Islands was omitted as covered by definition of United States in section 5 of this title. Words \"naval or Coast Guard\" were inserted before \"reservation\" and words \"yard, station, or installation\" were inserted after \"arsenal\" in two places, so as to extend section to naval or Coast Guard property. Minor changes were made in phraseology. Editorial Notes Amendments 1994 —Pub. L. 103–322 substituted \"fined under this title\" for \"fined not more than $500\" in last par. Statutory Notes and Related Subsidiaries Transfer of Functions For transfer of authorities, functions, personnel, and assets of the Coast Guard, including the authorities and functions of the Secretary of Transportation relating thereto, to the Department of Homeland Security, and for treatment of related references, see sections 468(b), 551(d), 552(d), and 557 of Title 6, Domestic Security, and the Department of Homeland Security Reorganization Plan of November 25, 2002, as modified, set out as a note under section 542 of Title 6. Coast Guard transferred to Department of Transportation and all functions, powers, and duties, relating to Coast Guard, of Secretary of the Treasury and of other offices and officers of Department of the Treasury transferred to Secretary of Transportation by Pub. L. 89–670, Oct. 15, 1966, 80 Stat. 931, which created the Department of Transportation. See section 108 of Title 49, Transportation. Executive Documents Transfer of Functions Functions of all officers of Department of the Treasury, and functions of all agencies and employees of such Department transferred, with certain exceptions, to Secretary of the Treasury, with power vested in him to authorize their performance or performance of any of his functions, by any of such officers, agencies, and employees, by Reorg. Plan No. 26 of 1950, §§1, 2, eff. July 31, 1950, 15 F.R. 4935, 64 Stat. 1280, 1281, set out in the Appendix to Title 5, Government Organization and Employees. Coast Guard, referred to in this section, was generally a service in Department of the Treasury, but such Plan excepted from transfer functions of Coast Guard and Commandant thereof when Coast Guard was operating as a part of the Navy under former sections 1 and 3 (now 101 and 103) of Title 14, Coast Guard.",
+        "governed_bytes_sha256": "bccd38e1a12370b07e54b655c90ab1ca84815716347c49620eb91cbf2b8c02c1"
+      }
+    },
+    {
+      "original_source_object_sha256": "304ff404085302dc1bb803b5952ae5f66423b52e267f192820927a3e95f23ef5",
+      "source": {
+        "source_id": "govinfo:50usc797-2024",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap23-subchapI-sec797.htm",
+        "text_version": "2024 Code section",
+        "raw_sha256": "9aaf9b0989b88063798504996b1740ddd2ee0afec67828d27e543ca97adaf008",
+        "text": "U.S.C. Title 50 - WAR AND NATIONAL DEFENSE 50 U.S.C. United States Code, 2024 Edition Title 50 - WAR AND NATIONAL DEFENSE CHAPTER 23 - INTERNAL SECURITY SUBCHAPTER I - CONTROL OF SUBVERSIVE ACTIVITIES Sec. 797 - Penalty for violation of security regulations and orders From the U.S. Government Publishing Office, www.gpo.gov §797. Penalty for violation of security regulations and orders (a) Misdemeanor violation of defense property security regulations (1) Misdemeanor Whoever willfully violates any defense property security regulation shall be fined under title 18 or imprisoned not more than one year, or both. (2) Defense property security regulation described For purposes of paragraph (1), a defense property security regulation is a property security regulation that, pursuant to lawful authority— (A) shall be or has been promulgated or approved by the Secretary of Defense (or by a military commander designated by the Secretary of Defense or by a military officer, or a civilian officer or employee of the Department of Defense, holding a senior Department of Defense director position designated by the Secretary of Defense) for the protection or security of Department of Defense property; or (B) shall be or has been promulgated or approved by the Administrator of the National Aeronautics and Space Administration for the protection or security of NASA property. (3) Property security regulation described For purposes of paragraph (2), a property security regulation, with respect to any property, is a regulation— (A) relating to fire hazards, fire protection, lighting, machinery, guard service, disrepair, disuse, or other unsatisfactory conditions on such property, or the ingress thereto or egress or removal of persons therefrom; or (B) otherwise providing for safeguarding such property against destruction, loss, or injury by accident or by enemy action, sabotage, or other subversive actions. (4) Definitions In this subsection: (A) Department of Defense property The term \"Department of Defense property\" means covered property subject to the jurisdiction, administration, or in the custody of the Department of Defense, any Department or agency of which that Department consists, or any officer or employee of that Department or agency. (B) NASA property The term \"NASA property\" means covered property subject to the jurisdiction, admin istration, or in the custody of the National Aeronautics and Space Administration or any officer or employee thereof. (C) Covered property The term \"covered property\" means aircraft, airports, airport facilities, vessels, harbors, ports, piers, water-front facilities, bases, forts, posts, laboratories, stations, vehicles, equipment, explosives, or other property or places. (D) Regulation as including order The term \"regulation\" includes an order. (b) Posting Any regulation or order covered by subsection (a) shall be posted in conspicuous and appropriate places. (Sept. 23, 1950, ch. 1024, title I, §21, 64 Stat. 1005; Pub. L. 109–163, div. A, title X, §1053, Jan. 6, 2006, 119 Stat. 3435.) Editorial Notes Amendments 2006 —Pub. L. 109–163 amended section generally. Prior to amendment, section related to security regulations and orders and penalties for violations.",
+        "governed_bytes_sha256": "6ca5b089eea9175096f1effd316f74bef258f5176a3977c971e67ade5980a6a8"
+      }
+    },
+    {
+      "original_source_object_sha256": "4ff7f81600310c724d1ad33a90478c0cb4f1acd81974d3041c6f96f6646b7dd8",
+      "source": {
+        "source_id": "clerk:119:1:253",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll253.xml",
+        "text_version": null,
+        "raw_sha256": "001bb2be0c28ede062f9f72851913dfaff32a3e3b092c9c1125ce6d995b87bc5",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "253",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "14",
+          "amendment-author": "Mills of Florida Part A Amendment No. 18",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:17 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "217",
+            "nay-total": "2",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "5",
+            "nay-total": "208",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "9e9cb404aa1894100479602975c422f1111b047fe167978d8ca7f9107f43f9c0"
+      }
+    },
+    {
+      "original_source_object_sha256": "8b835531c997301296ddf2b8a15d9e2218ecb8903f1d12a4ecb1e946f0ede50c",
+      "source": {
+        "source_id": "congressional-record:3838-amend18-roll253-choice156",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA18 operative/question/totals/agreed outcome reviewed156, not intervening actions/debate/enactment.",
+        "text_extraction_method": "Exact slices of preserved source serialization; only this derivative's named own operative/question/outcome, numbered Report, or complete1052 flags provision reviewed at156. Original parent object and historical review scope are retained.",
+        "text": "AMENDMENT NO. 18 OFFERED BY MR . MILLS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 18 printed \nin part A of House Report 119–255. \nMr. MILLS. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle D of title X, insert \nthe following: \nSEC. 10 ll. ELIMINATION OF DISCRETION OF \nMILITARY CHAIN OF COMMAND AND \nSENIOR CIVILIAN LEADERSHIP WITH \nRESPECT TO DISPLAY OF FLAGS. \nSection 1052(d)(1)(N) of the National De-\nfense Authorization Act for Fiscal Year 2024 \n(Public Law 118–31; 10 U.S.C. 2661 note) is \namended by striking subparagraph (N). \n\n\nAMENDMENT NO. 18 OFFERED BY MR . MILLS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 18, printed in \npart A of House Report 119–255, offered \nby the gentleman from Florida (Mr. \nM\nILLS), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 222, noes 210, \nnot voting 5, as follows: \n[Roll No. 253] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "e4c3c11ecde21477ccae18fc39c9df8bec1f659f33079f9c95fa33b15f8ee91b",
+        "captured_full_text_sha256": "fcbfe752ba17e3a9613672485c87fdb0d3a9e8667c5d3d320fd71644e6ded16d",
+        "source_text_extents": [
+          {
+            "start": 15652,
+            "end": 16334,
+            "total": 41138
+          },
+          {
+            "start": 33499,
+            "end": 34188,
+            "total": 41138
+          },
+          {
+            "start": 38587,
+            "end": 38676,
+            "total": 41138
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "e442dbf9e8d3a5ee8cce98b028603d05c71a8eb04809d705124e11ca11c2b38f",
+      "source": {
+        "source_id": "govinfo:pl11831-section1052-flags156",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm",
+        "raw_sha256": "58989df390e0b8777abc1b739768d1e8c40b6b14bf35e19c0714477530b84a84",
+        "text": "SEC. 1052. <<NOTE: 10 USC 2661 note.>> PROHIBITION ON DISPLAY OF UNAPPROVED FLAGS. (a) Prohibition.--No flag other than an approved flag shall be displayed in any work place, common access area, or public area of the Department of Defense. (b) Exclusions.--The prohibition under subsection (a) shall not apply to-- (1) the public display or depiction of a flag other than an approved flag in a museum exhibit, State-issued license plate, grave site, memorial marker, monument, educational display, historical display, or work of art, if the nature of the display or depiction cannot reasonably be viewed as endorsement of the flag by the Department of Defense; or (2) a building or area that primarily serves as a place of residence, including a barracks, dormitory, bachelor quarters, government-operated housing, or public-private venture housing area. [[Page 137 STAT. 396]] (c) Rule of Construction.--Nothing in this section shall be construed to affect the authority of a military commander to enforce good order and discipline on a military installation. (d) Definitions.--In this section: (1) The term ``approved flag'' means any of the following: (A) The American flag. (B) The flag of a State or of the District of Columbia. (C) A military service flag. (D) A flag or general officer flag. (E) A Presidentially-appointed, Senate-confirmed civilian flag. (F) A Senior Executive Service or military department-specific flag. (G) The National League of Families POW/MIA flag. (H) The flag of another country that is an ally or partner of the United States or for official protocol purposes. (I) The flag of an organization of which the United States is a member. (J) A ceremonial, command, unit, or branch flag or guidon. (K) The flag of an athletic team, club, cadet-led organization, academic department, unit subdivision, or other entity approved to operate at a Service Academy (as such term is defined in section 347 of title 10, United States Code) or in conjunction with a Reserve Officer Training Corps activity. (L) A flag or banner displayed by a retail tenant or non-government entity operating in a building owned or controlled by the Department of Defense, for the purposes of advertising business products and services, if authorized by contract. (M) A religious flag or banner, including a holiday flag, if otherwise authorized. (N) A flag approved at the discretion of the military chain of command or senior civilian leadership, as appropriate. (2) The term ``work place, common access area, or public area of the Department of Defense'' includes the following: (A) An office building, facility, naval vessel, aircraft, governmental vehicle, hangar, garage, ready room, storage room, tool and equipment room, or workshop. (B) A sensitive compartmented information facility of other secure facility. (C) A schoolhouse or training facility. (D) The area in plain view of such a building that is not residential in nature, including the areas outside of buildings of the Department of Defense. ",
+        "text_version": "Complete original1052 flag provision including allA-M/N categories, exceptions, commander reservation and area definitions; not all Act/current legal application.",
+        "text_extraction_method": "Exact slices of preserved source serialization; only this derivative's named own operative/question/outcome, numbered Report, or complete1052 flags provision reviewed at156. Original parent object and historical review scope are retained.",
+        "governed_bytes_sha256": "53ca05e15b8a3621fb2891bfe2d02ec8ac32339d4da06d5291c747e27ed52b2e",
+        "captured_full_text_sha256": "203cb70b0cfcc0a4a2d6217b8962d6c63be463f165eebe53817d081cdadeb316",
+        "source_text_extents": [
+          {
+            "start": 764825,
+            "end": 767839,
+            "total": 2812423
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "43ab19e9a8f13011fd6dbe118a3c09c6ed0a0bb6d562258e19ecd1c8215260f6",
+      "source": {
+        "source_id": "clerk:119:1:254",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll254.xml",
+        "text_version": null,
+        "raw_sha256": "659e8295cdfb90173b6b8ae8bc80bed5f9f37a53ecd05fe837b1c6c4fb84a147",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "254",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "15",
+          "amendment-author": "Greene of Georgia Part A Amendment No. 20",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:21 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "189",
+            "nay-total": "28",
+            "present-total": "1",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "5",
+            "nay-total": "208",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "e1d1e898d3a3c9542859735dcd46d693fc0b8ff92f03abdc10337ca1259996af"
+      }
+    },
+    {
+      "original_source_object_sha256": "766417265e0f9f70eeeadfdcd8c643ae5c243acdf207fe849a646185af751ff7",
+      "source": {
+        "source_id": "congressional-record:3838-amend20-roll254-choice157",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA20 operative/question/totals/recorded failure reviewed157; voiceayes distinct, not debate/intervening actions/enactment.",
+        "text_extraction_method": "Exact slices of preserved serialization; only this derivative's own20 or22 operative/question/recorded failure or numberedReport operative reviewed157. Complete parent captured, not all parent meanings reviewed.",
+        "text": "AMENDMENT NO. 20 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 20 printed \nin part A of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, \nas the designee of Mr. D\nAVIDSON, I rise \nto speak in support of the amendment. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title II, add the \nfollowing new section: \nSEC. 2 ll. PROHIBITION ON AVAILABILITY OF \nFUNDS FOR CELL CULTURED MEAT. \nNone of the funds authorized to be appro-\npriated by this Act or otherwise made avail-\nable for fiscal year 2026 for the Department \nof Defense may be obligated or expended for \nthe research, development, procurement, or \npromotion of cell cultured meat. \n\n\nAMENDMENT NO. 20 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 20, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 194, noes 236, \nanswered ‘‘present’’ 1, not voting 6, as \nfollows: \n[Roll No. 254] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "8e049700a8fd657ec82636f0d708aeae4e65e7dda3cc93703b8e2e8b1257e1b0",
+        "captured_full_text_sha256": "9a650032b28c467c9d440a26061216d9f8ed156dc10c5808bbb4077dec8909a7",
+        "source_text_extents": [
+          {
+            "start": 2656,
+            "end": 3442,
+            "total": 40773
+          },
+          {
+            "start": 22221,
+            "end": 22951,
+            "total": 40773
+          },
+          {
+            "start": 27636,
+            "end": 27724,
+            "total": 40773
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "6151f997b78120c6bd91127ac7706d634b73a5f5874b71d386ee97cbd4420d6f",
+      "source": {
+        "source_id": "house-rules:119255-partA-amend20-operative157",
+        "source_type": "official_committee_report_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+        "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+        "text_version": "Complete exact whole-number PartA20 operative reviewed157; not substring120/220 or other Report meanings.",
+        "text_extraction_method": "Exact slices of preserved serialization; only this derivative's own20 or22 operative/question/recorded failure or numberedReport operative reviewed157. Complete parent captured, not all parent meanings reviewed.",
+        "text": "20. An Amendment To Be Offered by Representative Davidson of Ohio or His Designee, Debatable for 10 Minutes At the end of subtitle B of title II, add the following new section: SEC. 2__. PROHIBITION ON AVAILABILITY OF FUNDS FOR CELL CULTURED MEAT. None of the funds authorized to be appropriated by this Act or otherwise made available for fiscal year 2026 for the Department of Defense may be obligated or expended for the research, development, procurement, or promotion of cell cultured meat. ",
+        "governed_bytes_sha256": "e6327da19f24246cac59eea5cad9c0e1e1bcf39eceeb856158d92d88b01dcc0c",
+        "captured_full_text_sha256": "1a8c32a7213829357ad4746ea72ed630a162d788e8b642d79bb7853f85fe26d2",
+        "source_text_extents": [
+          {
+            "start": 140709,
+            "end": 141205,
+            "total": 697572
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "983416f03db9f43295422e224caf4d6c715f2801247131a51cc9a01d3c592f5d",
+      "source": {
+        "source_id": "clerk:119:1:255",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll255.xml",
+        "text_version": null,
+        "raw_sha256": "acf637dc40597b42a7eeab00644d1a947c475bdb4833e66256a50991958edef8",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "255",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "17",
+          "amendment-author": "Greene of Georgia Part A Amendment No. 22",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:25 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "60",
+            "nay-total": "159",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "213",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "d83c3d8587493cfa0152539db54f1bbf2e3dbffbaa7f72ed324cc12089cacd9a"
+      }
+    },
+    {
+      "original_source_object_sha256": "0909b46007899596261303647e34ef732df8e8f5a2253a943b81b43c86c86e18",
+      "source": {
+        "source_id": "congressional-record:3838-amend22-roll255-choice157",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA22 operative/question/totals/recorded failure reviewed157; voiceayes distinct, not debate/intervening actions/enactment.",
+        "text_extraction_method": "Exact slices of preserved serialization; only this derivative's own20 or22 operative/question/recorded failure or numberedReport operative reviewed157. Complete parent captured, not all parent meanings reviewed.",
+        "text": "AMENDMENT NO. 22 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 22 printed \nin part 1 of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as \nfollows: \nAt the end of subtitle A of title XIII, add \nthe following: \nSEC. 13 l. PROHIBITION ON ASSISTANCE TO \nUKRAINE. \nNone of the funds made available by this \nAct may be used for assistance to Ukraine. \n\n\nAMENDMENT NO. 22 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 22, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 60, noes 372, \nnot voting 5, as follows: \n[Roll No. 255] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "51b4668fbc90f8664e11e29b7def6f95731c7e755f66de0933d14c25b4d856b7",
+        "captured_full_text_sha256": "9a650032b28c467c9d440a26061216d9f8ed156dc10c5808bbb4077dec8909a7",
+        "source_text_extents": [
+          {
+            "start": 15840,
+            "end": 16375,
+            "total": 40773
+          },
+          {
+            "start": 27841,
+            "end": 28545,
+            "total": 40773
+          },
+          {
+            "start": 33236,
+            "end": 33324,
+            "total": 40773
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "db3d021a55cb98a146a17619c810974681977d730401d5b1a76b7378f838ddb3",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/9300de1bb95a6bcf7fe75d5921a7c41805f9f62daed83796ecdee4330aa2c40b.0000000.json",
+            "sha256": "a708d761e8eabe970266616a816dda956b3f6c4acadc5142133607884a18d8bf",
+            "start_character": 0,
+            "end_character": 8575
+          }
+        ],
+        "utf8_sha256": "9300de1bb95a6bcf7fe75d5921a7c41805f9f62daed83796ecdee4330aa2c40b",
+        "total_characters": 8575,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "0cd103519da1d7593d5fffa757a8852df0cef1d22be53394464d3778a1ecaf87",
+      "source": {
+        "source_id": "clerk:119:1:256",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll256.xml",
+        "text_version": null,
+        "raw_sha256": "70fddf8ad8884054c9564efb4b6c2020ac8ea3e2b6821b0240cfe0d2f1853652",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "256",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "18",
+          "amendment-author": "Greene of Georgia Part A Amendment No. 23",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:28 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "60",
+            "nay-total": "159",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "211",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "3be734e824965b349c63099f3119930ac2c1fa0355572c888a66e2cd3d026733"
+      }
+    },
+    {
+      "original_source_object_sha256": "46debf8e3e8081da152f27e96c4c9ca9d3d72daa8d21e18027cafed7882dedb4",
+      "source": {
+        "source_id": "congressional-record:3838-amend23-roll256-choice160",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA23 operative/question/totals/recorded outcome160; literalCivil label orretainedquotation andvoice/recorded distinctions, not debate/enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals joined doubleLF; only named own operative/stages or material pre-amendment/authority scope reviewed160. Literal source artifacts/label variation retained; no wholeparent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 23 OFFERED BY MS . GREENE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 23 printed \nin part A of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nIn section 4301, strike line 010 and the cor-\nresponding item ‘‘Overseas Humanitarian, \nDisaster, and Civil Aid’’. \n\n\nAMENDMENT NO. 23 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 23, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 60, noes 370, \nnot voting 7, as follows: \n[Roll No. 256] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "149f8ea9140924a9a52732058a77de7c8fa63f7ef5869dbfe672eb3a74f1048b",
+        "captured_full_text_sha256": "6b0a26acaba6e49656a742ae82795f9c8f0499c0da1ac1459bd92a8903af76d4",
+        "source_text_extents": [
+          {
+            "start": 3287,
+            "end": 3729,
+            "total": 49117
+          },
+          {
+            "start": 25556,
+            "end": 26260,
+            "total": 49117
+          },
+          {
+            "start": 30658,
+            "end": 30746,
+            "total": 49117
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "27dd4ad35710506ac30156ff3a1fd14319917f219125351cf5a28cd4a5ffadb7",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/4a93fbf1766210d1d6071d283967cfe84e5786d93c686be8e763ad0e0708f165.0000000.json",
+            "sha256": "0232664ff5e7ea313e68cef3b32ed5acdb60d054e25bdf2105bd425e60dd5599",
+            "start_character": 0,
+            "end_character": 9300
+          }
+        ],
+        "utf8_sha256": "4a93fbf1766210d1d6071d283967cfe84e5786d93c686be8e763ad0e0708f165",
+        "total_characters": 9300,
+        "transport_only": true
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 1,
+    "exported_source_objects": 22
+  }
+}

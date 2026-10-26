@@ -1,0 +1,706 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 49,
+  "exact_committed_head": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch49_20260916/membership_review.json",
+      "git_blob": "5d69d42be8ddaf65eab98b42b6f33c443efc06fc",
+      "git_bytes_sha256": "70086fa2e0f0ee4413f5e2ec5031ea1bd919469a7080a31e0e602e720f40df0d"
+    },
+    "sources": {
+      "head": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch49_20260916/sources.json",
+      "git_blob": "646536d72f1156b340b432b187f9fab59f95e358",
+      "git_bytes_sha256": "993cc190ac7bde8c532b3ee8ee89644c623ea3aeb86d686fb560909bbee43978"
+    },
+    "screening": {
+      "head": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch49_20260916/screening_receipt.json",
+      "git_blob": "4f07f147db146b1596c4bd221a5f6cd54ef23a4f",
+      "git_bytes_sha256": "e62904d9fa7cbb077aa9acac3b3343265e1f4244c5f033405fa656b0b03a7bba"
+    },
+    "screening_units": {
+      "head": "e2d9db19a438a92825fbe47271b3978f6b559aa3",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch49_20260916/screening_units_receipt.json",
+      "git_blob": "94a37695b1e107878f0aa726d5c8137817d5afd0",
+      "git_bytes_sha256": "bd9e58a96383d995b962011b8221837715d6cd798ab4456da6812e09767919e0"
+    }
+  },
+  "cumulative_membership_review_sha256": "fbd02e34f925d346d63467eeaaef76c1934e7ebe9fc83308c7dc58825892965d",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/fb122286262845104dcfc52adedf078efb9bd4a3ee5af19025668452944d990a.0000000.json",
+        "sha256": "73332c2b31c0404492eec061f6b19f645918ea5fe178780ddda38436bbfa5b28",
+        "start_character": 0,
+        "end_character": 29811
+      }
+    ],
+    "utf8_sha256": "fb122286262845104dcfc52adedf078efb9bd4a3ee5af19025668452944d990a",
+    "total_characters": 29811,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/8ddb2b28ca71b9d065cb8d3f21842859ff84fa5cfa55b910ac9ef9aa3dc2737a.0000000.json",
+        "sha256": "71f2c081b5e800f6ea7cefa7a36fce1da5f258349d9870e6aa6b36801ff80fe6",
+        "start_character": 0,
+        "end_character": 79811
+      }
+    ],
+    "utf8_sha256": "8ddb2b28ca71b9d065cb8d3f21842859ff84fa5cfa55b910ac9ef9aa3dc2737a",
+    "total_characters": 79811,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:283",
+    "house:119:1:284",
+    "house:119:1:285",
+    "house:119:1:288",
+    "house:119:1:289"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hres873eh",
+      "governed_length": 1022,
+      "review_extent": "Complete retained exact own rule/bill text read; external material baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:hr5371eas",
+      "governed_length": 472471,
+      "review_extent": "OnlyEAS0:3500and last1200read; whole November10replacement/explanatory statement not reviewed"
+    },
+    {
+      "source_id": "govinfo:hr4405eh",
+      "governed_length": 5591,
+      "review_extent": "Complete retained exact own rule/bill text read; external material baselines not implicitly reviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_rule_texts_read": 1,
+    "complete_final_bill_bodies_read": 1,
+    "partial_whole_Senate_replacement_sources": 1,
+    "exact_Clerk_procedural_questions_read": 3,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:283",
+        "evidence_unit": "complete_exact_rule_or_bill_with_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:284",
+        "evidence_unit": "complete_exact_rule_or_bill_with_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:285",
+        "evidence_unit": "partial_November_Senate_replacement_and_attestation",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:288",
+        "evidence_unit": "exact_Clerk_question_only_noncounting_procedural_limit",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:289",
+        "evidence_unit": "complete_exact_rule_or_bill_with_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "2bc82ce6ea136bb40ee429fe8bec878b0c9fb8aa32866268e7431a6a0a8b20d7",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:283",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Previous-question vote governs H.Res.873consideration, not adoption of that rule or concurrence in the Senate5371amendment. Complete873provides a later concurrence motion, read status, debate/point-of-order rules and previous-question treatment. Non-counting procedural context; no appropriation/extension/policy support or opposition, funding result or motive transfer.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:283",
+            "url": "https://clerk.house.gov/evs/2025/roll283.xml",
+            "raw_sha256": "0c09fc078a7cfea64d1e83d60162be43e3611628268de2685bc5eee45df92dcb",
+            "governed_bytes_sha256": "a684cf976ed5870492ad68cc00d0b028c71e1e08a44ef253385f3e749c2dbeda"
+          },
+          {
+            "source_id": "govinfo:hres873eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres873eh/html/BILLS-119hres873eh.htm",
+            "raw_sha256": "f574e9c8afc7cc18744c23ed9b5861f564ad941aaf24156e3761006521cd958a",
+            "governed_bytes_sha256": "b5a4e5992b574ee7952fe6d768462475d0e37fa32119c812e25073782f510648"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres873eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 873 Engrossed in House (EH)] <DOC> H. Res. 873 In the House of Representatives, U. S., November 12, 2025. Resolved, That upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes, with the Senate amendment thereto, and to consider in the House, without intervention of any point of order, a motion offered by the chair of the Committee on Appropriations or his designee that the House concur in the Senate amendment. The Senate amendment and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "c0effc7e376fb08ca40437d9010de09679d82e8a33ed15d6cfa7b8449a09662a",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:284",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Complete H.Res.873makes it in order to take5371with the Senateamendment from the Speaker's table and consider an Appropriations-chair/designee concurrence motion, considers amendment/motion read and sets debate/previous-question rules. It does not deem that concurrence or any substantive substitute adopted. This is non-counting chamber process, distinct from substantive concurrence285; no whole-package support/opposition, enactment, funding result or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:284",
+            "url": "https://clerk.house.gov/evs/2025/roll284.xml",
+            "raw_sha256": "5566d5ff3fa8179c24f92c1b449b758c646220b8fe7030d05ba96c8559b3fb25",
+            "governed_bytes_sha256": "6177026093dfeab8b101dcf2ec535f5e2b8bf0fd2af6aabd266fd60afc2c527a"
+          },
+          {
+            "source_id": "govinfo:hres873eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres873eh/html/BILLS-119hres873eh.htm",
+            "raw_sha256": "f574e9c8afc7cc18744c23ed9b5861f564ad941aaf24156e3761006521cd958a",
+            "governed_bytes_sha256": "b5a4e5992b574ee7952fe6d768462475d0e37fa32119c812e25073782f510648"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres873eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 873 Engrossed in House (EH)] <DOC> H. Res. 873 In the House of Representatives, U. S., November 12, 2025. Resolved, That upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes, with the Senate amendment thereto, and to consider in the House, without intervention of any point of order, a motion offered by the chair of the Committee on Appropriations or his designee that the House concur in the Senate amendment. The Senate amendment and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "b96b4044e1919ca853c89e3e72b25ed068b8c637ff6b58da887f62b568029577",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:285",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Exact November12question concurs in the Senateamendment, not September19HouseEHpassage. Retained November10EASis a strike-all replacement of472,471characters; only opening0:3500and last1200were reviewed here. It has eight divisions including full-year agriculture/rural-development/FDA, legislative-branch and military-construction/VAappropriations alongside continuing funding and extensions, and section4gives a specified SenateRecordexplanatory statement allocation/implementation effect forB–D. That statement, whole operative text, detailed incorporatedActs/baselines and actual floor/version reconciliation remain ordinary pending review. Neither earlier SeptemberEH nor headings establish the whole Novemberpackage, every account's amount/duration, a project-specific effect, shutdown/care/construction outcome or an enacted-law conclusion. No selected infrastructure/health component becomes the whole choice.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:285",
+            "url": "https://clerk.house.gov/evs/2025/roll285.xml",
+            "raw_sha256": "d50de5e78b811e8d929dd463c0c8b2cd3241ff947702f25d921b29f0c0a35813",
+            "governed_bytes_sha256": "bb30b36aa5b9a005dcb98cc392e6776afb48d512d7509bcfdde3a174ab48aa20"
+          },
+          {
+            "source_id": "govinfo:hr5371eas",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5371eas/html/BILLS-119hr5371eas.htm",
+            "raw_sha256": "654ef22d1ca2077e48dde2cf6f023a8c01364007999c57903bf24f37a77f343a",
+            "governed_bytes_sha256": "9a163f956a20469dc80a6d3f7f19666abc5bdebaf13dd7bb2c737228522d6cc8"
+          },
+          {
+            "source_id": "govinfo:hres873eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres873eh/html/BILLS-119hres873eh.htm",
+            "raw_sha256": "f574e9c8afc7cc18744c23ed9b5861f564ad941aaf24156e3761006521cd958a",
+            "governed_bytes_sha256": "b5a4e5992b574ee7952fe6d768462475d0e37fa32119c812e25073782f510648"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5371eas",
+            "locator": "November10EASopening0:3500only; no whole472,471character review",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 5371 Engrossed Amendment Senate (EAS)] <DOC> In the Senate of the United States, November 10, 2025. Resolved, That the bill from the House of Representatives (H.R. 5371) entitled ``An Act making continuing appropriations and extensions for fiscal year 2026, and for other purposes.'', do pass with the following AMENDMENT: Strike all after the enacting clause and insert the following: SECTION 1. SHORT TITLE. This Act may be cited as the ``Continuing Appropriations, Agriculture, Legislative Branch, Military Construction and Veterans Affairs, and Extensions Act, 2026''. SEC. 2. TABLE OF CONTENTS. Sec. 1. Short title. Sec. 2. Table of contents. Sec. 3. References. Sec. 4. Explanatory statement. Sec. 5. Statement of appropriations. DIVISION A--CONTINUING APPROPRIATONS ACT, 2026 DIVISION B--AGRICULTURE, RURAL DEVELOPMENT, FOOD AND DRUG ADMINISTRATION, AND RELATED AGENCY APPROPRIATIONS ACT, 2026 Title I--Agricultural Programs Title II--Farm Production and Conservation Programs Title III--Rural Development Programs Title IV--Domestic Food Programs Title V--Foreign Assistance and Related Programs Title VI--Related Agency and Food and Drug Administration Title VII--General Provisions DIVISION C--LEGISLATIVE BRANCH APPROPRIATIONS ACT, 2026 Title I--Legislative Branch Title II--General Provisions DIVISION D--MILITARY CONSTRUCTION, VETERANS AFFAIRS, AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 Title I--Department of Defense Title II--Department of Veterans Affairs Title III--Related Agencies Title IV--General Provisions DIVISION E--EXTENSION OF AGRICULTURAL PROGRAMS DIVISION F--HEALTH EXTENDERS Title I--Public Health Extenders Title II--Medicare Title III--Human Services Title IV--Medicaid Title V--Food and Drug Administration Title VI--No Surprises Act Implementation DIVISION G--DEPARTMENT OF VETERANS AFFAIRS EXTENDERS Title I--Health Care Matters Title II--Benefits Title III--Housing Title IV--Other Matters DIVISION H--MISCELLANEOUS SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in any division of this Act shall be treated as referring only to the provisions of that division. SEC. 4. EXPLANATORY STATEMENT. The explanatory statement regarding this Act, printed in the Senate section of the Congressional Record on or about November 9, 2025, and submitted by the chair of the Committee on Appropriations of the Senate, shall have the same effect with respect to the allocation of funds and implementation of divisions B through D of this Act as if it were a joint explanatory statement of a committee of conference. SEC. 5. STATEMENT OF APPROPRIATIONS. The following sums in this Act are appropriated, out of any money in the Treasury not otherwise appropriated, for the fiscal year ending September 30, 2026. DIVISION A--CONTINUING APPROPRIATIONS ACT, 2026 The following sums are hereby appropriated, out of any money in the Treasury not otherwise appropriated, and out of applicable corporate or other revenues, receipts, and funds, for the several departments, agencies, corporations, and other organizational units of Government for fiscal year 2026, and for other purposes, namely: Sec. 101. Such amounts as may be necessary, at a rate for operations as provided in the applicable appropriations Acts for fiscal year 2025 and under the authority and conditions provided in such Acts, for continuing projects or activities (includ"
+          },
+          {
+            "source_id": "govinfo:hr5371eas",
+            "locator": "Last1200characters/Senateattestation only",
+            "passage": "tement of the committee of conference accompanying Conference Report 105-217 and section 250(c)(8) of the Balanced Budget and Emergency Deficit Control Act of 1985, the budgetary effects of this division and divisions E through G shall not be estimated-- (1) for purposes of section 251 of such Act; (2) for purposes of an allocation to the Committee on Appropriations pursuant to section 302(a) of the Congressional Budget Act of 1974; and (3) for purposes of paragraph (4)(C) of section 3 of the Statutory Pay-As-You-Go Act of 2010 as being included in an appropriation Act. (d) Balances on the PAYGO Scorecards.--Effective on the date of the adjournment of the first session of the 119th Congress, and for the purposes of the annual report issued pursuant to section 5 of the Statutory Pay-As-You-Go Act of 2010 (2 U.S.C. 934) after such adjournment and for determining whether a sequestration order is necessary under such section, the balances on the PAYGO scorecards established pursuant to paragraphs (4) and (5) of section 4(d) of such Act shall be zero. Attest: Secretary. 119th CONGRESS 1st Session H.R. 5371 _______________________________________________________________________ AMENDMENT"
+          },
+          {
+            "source_id": "govinfo:hres873eh",
+            "locator": "Complete exact concurrence-consideration rule",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 873 Engrossed in House (EH)] <DOC> H. Res. 873 In the House of Representatives, U. S., November 12, 2025. Resolved, That upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes, with the Senate amendment thereto, and to consider in the House, without intervention of any point of order, a motion offered by the chair of the Committee on Appropriations or his designee that the House concur in the Senate amendment. The Senate amendment and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "8bbe7c3dd2f03d9c76205c481c4b0462495e14cd5be04354aa053f23979aa5a2",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:288",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact November17Clerkquestion is a motion to tableH.Res.878, which failed. It does not itself adopt the resolution, substantiate its allegations/disapproval, decide a nomination/election or establish any legislator's motive/character. The retained November18engrossed body is a later artifact and is not substituted as the exactNovember17operative preimage here; substantive adoption292is a separate identity. Non-counting procedural context, with no Infrastructurepolicy or underlying-allegation support/opposition transfer.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:288",
+            "url": "https://clerk.house.gov/evs/2025/roll288.xml",
+            "raw_sha256": "f22bc3ecc4dc99a6c2a481c6c6fbfe5a6ecfd640b181bdae5cf00c1ebe9b792e",
+            "governed_bytes_sha256": "9acc3e467ad2a0691049c8bef709c87688472daf1ac4ebdf6428a6613ad03cbe"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "1042078adf280b84876770e1632aa6e80a1e6df253625bc5a732cd9902e74fe2",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:289",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.4405EHrequires AGrelease within30days of specified DOJ/FBI/USAttorneys' unclassified record categories in searchable/downloadable format, bars embarrassment/reputational/political-sensitivity grounds and preserves segregable victim-privacy, CSAM, narrowly tailored temporary active-investigation/prosecution, specified disturbing-image and properly classified-information withholdings. All nine record categories, written-redaction justification inFederalRegister/toCongress, maximum-possible declassification/national-security-summary conditions, postJuly1,2025classification reporting and Judiciaryreport within15days after completion remain part of the whole choice. It is not unrestricted disclosure, a new database/algorithm mandate or proof any named/referenced person committed wrongdoing; document reference is not guilt, motive or corruption evidence. Printed(a)subject-to(b)andreportcross-reference wording is retained without repair; external CSAM/classification/record-law baselines and whole transparency-versus-direct-technical-system boundary remain ordinary review. No actual record release/redaction/compliance, current-law status or political/individual factual claim inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:289",
+            "url": "https://clerk.house.gov/evs/2025/roll289.xml",
+            "raw_sha256": "c053d5280ea8d5ad67cb6d13c0b6d5b0951c41c2a2e1afd0b82a61e9c6126ee2",
+            "governed_bytes_sha256": "4e6cad9717daa09c5ee70ce5a0263ad556712c76f634c217ccbaa2b211fb29d9"
+          },
+          {
+            "source_id": "govinfo:hr4405eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4405eh/html/BILLS-119hr4405eh.htm",
+            "raw_sha256": "25b1d2929ac247121a54438e24b4f478f01ae7684a78576a07f1aef438f3af8c",
+            "governed_bytes_sha256": "9fd06eeb497ac83471618feb4f60385b2b7607261482320bc2b1dfd78d8c635d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4405eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/176c174c83f86fb28056cbb11f025e3bce6f371a9cb079782a34bb6bb0ce991b.0000000.json",
+                  "sha256": "127880f9e0b70d5b1dd419797c7ee1c8fc57728a07b8d8499a51ad7b8dccf33c",
+                  "start_character": 0,
+                  "end_character": 5591
+                }
+              ],
+              "utf8_sha256": "176c174c83f86fb28056cbb11f025e3bce6f371a9cb079782a34bb6bb0ce991b",
+              "total_characters": 5591,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "0eb18d9fb6c504e800d5613f2f8c7425b468aa6cfa708f4d12e3bfaaceb0cfde",
+      "source": {
+        "source_id": "clerk:119:1:283",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll283.xml",
+        "text_version": null,
+        "raw_sha256": "0c09fc078a7cfea64d1e83d60162be43e3611628268de2685bc5eee45df92dcb",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "283",
+          "legis-num": "H RES 873",
+          "vote-question": "On Ordering the Previous Question",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "12-Nov-2025",
+          "action-time": "6:14 PM",
+          "vote-desc": "Providing for consideration of the Senate amendment to the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "a684cf976ed5870492ad68cc00d0b028c71e1e08a44ef253385f3e749c2dbeda"
+      }
+    },
+    {
+      "original_source_object_sha256": "dc3fcba7cfb40eff96b548f3d565ef27f0046957c59c78b26179eded2c2316aa",
+      "source": {
+        "source_id": "govinfo:hres873eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres873eh/html/BILLS-119hres873eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "f574e9c8afc7cc18744c23ed9b5861f564ad941aaf24156e3761006521cd958a",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 873 Engrossed in House (EH)] <DOC> H. Res. 873 In the House of Representatives, U. S., November 12, 2025. Resolved, That upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes, with the Senate amendment thereto, and to consider in the House, without intervention of any point of order, a motion offered by the chair of the Committee on Appropriations or his designee that the House concur in the Senate amendment. The Senate amendment and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion. Attest: Clerk.",
+        "governed_bytes_sha256": "b5a4e5992b574ee7952fe6d768462475d0e37fa32119c812e25073782f510648"
+      }
+    },
+    {
+      "original_source_object_sha256": "b3503d6ae9311f65d3e23862293e07edd338d039a0ed2d80c42d7a74cc15bd2b",
+      "source": {
+        "source_id": "clerk:119:1:284",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll284.xml",
+        "text_version": null,
+        "raw_sha256": "5566d5ff3fa8179c24f92c1b449b758c646220b8fe7030d05ba96c8559b3fb25",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "284",
+          "legis-num": "H RES 873",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "12-Nov-2025",
+          "action-time": "6:21 PM",
+          "vote-desc": "Providing for consideration of the Senate amendment to the bill (H.R. 5371) making continuing appropriations and extensions for fiscal year 2026, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "213",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "209",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "6177026093dfeab8b101dcf2ec535f5e2b8bf0fd2af6aabd266fd60afc2c527a"
+      }
+    },
+    {
+      "original_source_object_sha256": "2ca2ffc131125a571c1a0755353cb93ba4b6cc89b7253a7b0516d0a476544ed4",
+      "source": {
+        "source_id": "clerk:119:1:285",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll285.xml",
+        "text_version": null,
+        "raw_sha256": "d50de5e78b811e8d929dd463c0c8b2cd3241ff947702f25d921b29f0c0a35813",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "285",
+          "legis-num": "H R 5371",
+          "vote-question": "On Motion to Concur in the Senate Amendment",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "12-Nov-2025",
+          "action-time": "8:21 PM",
+          "vote-desc": "Continuing Appropriations and Extensions Act, 2026"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "2",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "6",
+            "nay-total": "207",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "bb30b36aa5b9a005dcb98cc392e6776afb48d512d7509bcfdde3a174ab48aa20"
+      }
+    },
+    {
+      "original_source_object_sha256": "219ec7c5696bbddc54bc108284b5e1129bf146abbc220d6b658e462df6c89b53",
+      "source": {
+        "source_id": "govinfo:hr5371eas",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5371eas/html/BILLS-119hr5371eas.htm",
+        "text_version": "EAS",
+        "raw_sha256": "654ef22d1ca2077e48dde2cf6f023a8c01364007999c57903bf24f37a77f343a",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0000000.json",
+              "sha256": "04fe638671072c07d8f537417fe6a4f8179668c46db20877c9b182e4de50cf89",
+              "start_character": 0,
+              "end_character": 90000
+            },
+            {
+              "path": "source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0090000.json",
+              "sha256": "ca14a2fafe1e0953b038afd08005a135db26affd519b4ece7b8a10c1427970b2",
+              "start_character": 90000,
+              "end_character": 180000
+            },
+            {
+              "path": "source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0180000.json",
+              "sha256": "d6b4b3470cd2960527531ddc78ef786aae7c4596559570019e3faf5c78a3dea3",
+              "start_character": 180000,
+              "end_character": 270000
+            },
+            {
+              "path": "source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0270000.json",
+              "sha256": "4fa0e9b638a2373ceda05a2204f2db43880c0626785e9335437c7d360a647595",
+              "start_character": 270000,
+              "end_character": 360000
+            },
+            {
+              "path": "source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0360000.json",
+              "sha256": "9e6a508d40ec4be6b6d82b130773405fe915205e2ded737793401191c1565ea8",
+              "start_character": 360000,
+              "end_character": 450000
+            },
+            {
+              "path": "source_parts/5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d.0450000.json",
+              "sha256": "7112c4be0c0fbfec88185663f93afe8cbdbe0c1e4df1e5302bf433e8f1df41f7",
+              "start_character": 450000,
+              "end_character": 472471
+            }
+          ],
+          "utf8_sha256": "5e284761bb1b485a9b97eff33d92fbdbbe10a01a6c5c6f9de7bad37f6a9a932d",
+          "total_characters": 472471,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "9a163f956a20469dc80a6d3f7f19666abc5bdebaf13dd7bb2c737228522d6cc8"
+      }
+    },
+    {
+      "original_source_object_sha256": "0f96d36636324f88af35b34b6bfe990f30dff14c6b3abdebdb67872553faa34b",
+      "source": {
+        "source_id": "clerk:119:1:288",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll288.xml",
+        "text_version": null,
+        "raw_sha256": "f22bc3ecc4dc99a6c2a481c6c6fbfe5a6ecfd640b181bdae5cf00c1ebe9b792e",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "288",
+          "legis-num": "H RES 878",
+          "vote-question": "On Motion to Table",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "17-Nov-2025",
+          "action-time": "7:15 PM",
+          "vote-desc": "Disapproving the behavior of Representative Jesus G. “Chuy” Garcia of Illinois"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "9acc3e467ad2a0691049c8bef709c87688472daf1ac4ebdf6428a6613ad03cbe"
+      }
+    },
+    {
+      "original_source_object_sha256": "9e31e17febf3503f8c2fe2317d0d7bfc416bc57d9cd9c3beca88486c09180113",
+      "source": {
+        "source_id": "clerk:119:1:289",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll289.xml",
+        "text_version": null,
+        "raw_sha256": "c053d5280ea8d5ad67cb6d13c0b6d5b0951c41c2a2e1afd0b82a61e9c6126ee2",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "289",
+          "legis-num": "H R 4405",
+          "vote-question": "On Motion to Suspend the Rules and Pass",
+          "vote-type": "2/3 RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "18-Nov-2025",
+          "action-time": "2:43 PM",
+          "vote-desc": "Epstein Files Transparency Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Aye",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "2"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "211",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "4e6cad9717daa09c5ee70ce5a0263ad556712c76f634c217ccbaa2b211fb29d9"
+      }
+    },
+    {
+      "original_source_object_sha256": "c0ccec1e9c2beda221745022549cee82962085c8a1a5baba1a3cd4972efc9899",
+      "source": {
+        "source_id": "govinfo:hr4405eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4405eh/html/BILLS-119hr4405eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "25b1d2929ac247121a54438e24b4f478f01ae7684a78576a07f1aef438f3af8c",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/176c174c83f86fb28056cbb11f025e3bce6f371a9cb079782a34bb6bb0ce991b.0000000.json",
+              "sha256": "127880f9e0b70d5b1dd419797c7ee1c8fc57728a07b8d8499a51ad7b8dccf33c",
+              "start_character": 0,
+              "end_character": 5591
+            }
+          ],
+          "utf8_sha256": "176c174c83f86fb28056cbb11f025e3bce6f371a9cb079782a34bb6bb0ce991b",
+          "total_characters": 5591,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "9fd06eeb497ac83471618feb4f60385b2b7607261482320bc2b1dfd78d8c635d"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 8
+  }
+}

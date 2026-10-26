@@ -1,0 +1,149 @@
+{
+  "recorded_utc": "2026-10-18T19:46:57.201531+00:00",
+  "stage": "Reviewed narrow fix integrated and locally validated; final pushed-head CI pending",
+  "authorization_source_thread": "01a15000-0ff6-73e2-95ac-fe6aee80201f",
+  "reviewed_PR": "https://github.com/dhart54/political_fingerprint/pull/233",
+  "independently_verified_PR_state": "MERGED",
+  "reviewed_PR_head": "a12f24afc5afad55653d3b78d28aa658935d61a2",
+  "reported_and_verified_merge_commit": "485e0319deacfd5badb493a04945c0873099dc71",
+  "base_research_head": "d0b2aa1f580d951834f3a0900bf256e94f2af934",
+  "reviewed_narrow_commit": "eecbb43b4cb9e90d98c1b624a9d99b4909b3654f",
+  "picked_commit": "2ffeceaf4fa643ef9c6eb829a2ad57af57b5277e",
+  "reviewed_and_picked_stable_patch_id": "cc303076035a3028c333ba447b24c2e41f2705db",
+  "identical_reviewed_patch": true,
+  "conflicts": false,
+  "full_main_integrated": false,
+  "changed_fix_files": [
+    ".github/workflows/backend-tests.yml",
+    "docs/plans/ci_playwright_output.md",
+    "frontend/lib/playwrightRunner.test.mjs",
+    "frontend/playwright.config.mjs"
+  ],
+  "behavior": "Disable optional unbounded PR-diff report capture; keep actual commit metadata. Add real CLI canaries to existing CI selection. No assertion, failure propagation, exact-head/proof gate, dependency or product behavior removed.",
+  "runtime": {
+    "os": "native Windows",
+    "node": "22.16.0",
+    "playwright_locked_and_installed": "1.61.1",
+    "dependency_setup": "Matching existing root dependencies reused through infra-only ignored node_modules junction; no install/lockfile/root-source edit"
+  },
+  "initial_local_validation": {
+    "base_research_head": "d0b2aa1f580d951834f3a0900bf256e94f2af934",
+    "reviewed_fix": "eecbb43b4cb9e90d98c1b624a9d99b4909b3654f",
+    "validated_head": "2ffeceaf4fa643ef9c6eb829a2ad57af57b5277e",
+    "start_utc": "2026-10-18T19:42:00.500871+00:00",
+    "end_utc": "2026-10-18T19:42:48.343745+00:00",
+    "processes": [
+      {
+        "name": "real_playwright_cli_canaries",
+        "command": [
+          "node",
+          "--test",
+          "lib/playwrightRunner.test.mjs"
+        ],
+        "workdir": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra\\frontend",
+        "returncode": 1,
+        "process_wall_seconds": 47.822
+      }
+    ],
+    "all_passed": false,
+    "full_77_suite_repeated": false
+  },
+  "followup_local_validation": {
+    "base_research_head": "d0b2aa1f580d951834f3a0900bf256e94f2af934",
+    "reviewed_fix": "eecbb43b4cb9e90d98c1b624a9d99b4909b3654f",
+    "validated_head": "2ffeceaf4fa643ef9c6eb829a2ad57af57b5277e",
+    "start_utc": "2026-10-18T19:44:54.488661+00:00",
+    "end_utc": "2026-10-18T19:44:58.802441+00:00",
+    "initial_combined_run_preserved": true,
+    "initial_positive_canary_passed": true,
+    "initial_negative_canary": "unchanged30second child process ETIMEDOUT; not counted passed",
+    "retry_scope": "Only failed negative canary, isolated, unchanged command/config/time limits; successful positive not repeated",
+    "processes": [
+      {
+        "name": "isolated_negative_cli_canary",
+        "command": [
+          "node",
+          "--test",
+          "--test-name-pattern=CI runner still reports assertion failures",
+          "lib/playwrightRunner.test.mjs"
+        ],
+        "workdir": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra\\frontend",
+        "returncode": 0,
+        "process_wall_seconds": 1.178
+      },
+      {
+        "name": "current_candidate42_source_conservation_replay",
+        "command": [
+          "python",
+          "scripts/validate_infrastructure_discovery_delta.py",
+          "--batch",
+          "42",
+          "--receipt",
+          "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra\\.tmp\\infra_ci_fix_integration\\candidate42_validation.json"
+        ],
+        "workdir": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra",
+        "returncode": 0,
+        "process_wall_seconds": 1.401
+      },
+      {
+        "name": "generated_and_prior_index_blobs",
+        "command": [
+          "python",
+          ".tmp/infra_check_staged.py",
+          "42"
+        ],
+        "workdir": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra",
+        "returncode": 0,
+        "process_wall_seconds": 1.435
+      },
+      {
+        "name": "historical_export_index_blobs",
+        "command": [
+          "python",
+          ".tmp/infra_batch42/check_staged_export.py"
+        ],
+        "workdir": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra",
+        "returncode": 0,
+        "process_wall_seconds": 0.258
+      },
+      {
+        "name": "research_artifacts_unchanged",
+        "command": [
+          "git",
+          "diff",
+          "--exit-code",
+          "d0b2aa1f580d951834f3a0900bf256e94f2af934",
+          "--",
+          "docs/editorial/shared_candidates",
+          "docs/review_packets"
+        ],
+        "workdir": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra",
+        "returncode": 0,
+        "process_wall_seconds": 0.023
+      }
+    ],
+    "local_gate_passed": true,
+    "full_77_suite_repeated": false,
+    "timeout_or_assertion_weakened": false
+  },
+  "initial_timeout_cause": "Not established. Positive CLI canary passed; negative child exceeded unchanged30second limit. Only negative retried in isolation and passed; no timeout/assertion weakening.",
+  "candidate_preservation": {
+    "current_batch42_source_conservation_replay": true,
+    "generated_blobs": 294,
+    "prior_blobs": 1081,
+    "historical_export_files": 118,
+    "all_research_artifacts_unchanged_from_base": true,
+    "full77_suite_repeated": false,
+    "full77_suite_head": "d0b2aa1f580d951834f3a0900bf256e94f2af934"
+  },
+  "historical_failed_heads_reclassified": false,
+  "exact_pushed_head_CI": "Pending separate immutable-head assessment after this integration record is committed/pushed; accepted M14G/public-receipt stage must be inspected",
+  "rollback": "Revert only the picked narrow fix if required, preserving research commits/artifacts.",
+  "candidate_PR_merged": false,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "manual_deployment": false,
+  "source_acquisitions": 0,
+  "protected_source_retries": 0
+}

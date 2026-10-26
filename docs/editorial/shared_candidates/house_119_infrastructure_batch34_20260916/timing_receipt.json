@@ -1,0 +1,30 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-18T18:03:36.448037+00:00",
+    "qualification": "Specification marker after complete retained own six rejected-child instruction/choice units were read; preparatory source reading not continuously timed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-18T18:03:52.309156+00:00",
+    "end_utc": "2026-10-18T18:03:55.510642+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 34 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch34_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.267
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 1.934
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 15.861,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 3.201,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "elapsed_window_limit": "Marker was recorded when the specification-writing command started, after untimed source research and pre-command drafting. The elapsed window measures post-marker application/generation only, not total research or LLM authoring time."
+}

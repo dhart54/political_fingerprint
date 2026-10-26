@@ -1,0 +1,87 @@
+{
+  "base_head": "e8c08aeab4751a87c659895da7bead2edff4f593",
+  "cohort": [
+    "house:119:1:9",
+    "house:119:1:10",
+    "house:119:1:13",
+    "house:119:1:49",
+    "house:119:1:88"
+  ],
+  "source_units": [
+    {
+      "key": "42usc5121",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap68-subchapI-sec5121.htm",
+      "intended_extent": "DRRA1223 and FEMA2017 named notes only"
+    },
+    {
+      "key": "31usc6101",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleV-chap61-sec6101.htm",
+      "intended_extent": "FFATA section2 named note only"
+    },
+    {
+      "key": "42usc5170b",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap68-subchapIV-sec5170b.htm",
+      "intended_extent": "Stafford403 operative section"
+    },
+    {
+      "key": "42usc5172",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap68-subchapIV-sec5172.htm",
+      "intended_extent": "Stafford406 operative section"
+    },
+    {
+      "key": "15usc636",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec636.htm",
+      "intended_extent": "New unread b16 rural/second16 units; retained b1-2 remains immutable"
+    },
+    {
+      "key": "26usc7508A",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap77-sec7508A.htm",
+      "intended_extent": "Dated operative7508A and directly material definitions only"
+    },
+    {
+      "key": "26usc6511",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap66-subchapB-sec6511.htm",
+      "intended_extent": "6511b2A lookback and necessary local clauses"
+    },
+    {
+      "key": "26usc6303",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap64-subchapA-sec6303.htm",
+      "intended_extent": "Dated6303 operative section"
+    },
+    {
+      "key": "plaw115254",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ254/html/PLAW-115publ254.htm",
+      "intended_extent": "Enacted2018 section1223 only; section1224 is delimiter, not entire FAA Act review"
+    },
+    {
+      "key": "42usc5122",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap68-subchapI-sec5122.htm",
+      "intended_extent": "Administrator/public-facility/private-nonprofit-facility definitions material to152/164 only"
+    },
+    {
+      "key": "crec20250331house",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-31/pdf/CREC-2025-03-31-house.pdf",
+      "intended_extent": "H1353-H1354 motion, exact printed1491text, debate and postponed proceedings only",
+      "format": "pdf"
+    }
+  ],
+  "prior_636_capture_state": "Canonical source retains only5683 selected b1-2 characters and raw-hash metadata; the new requested units lie outside that retained text. No prior full HTTP-body artifact found in the inspected tracked evidence; do not substitute b1-2 or a USDA rural definition for b16.",
+  "max_attempts_per_URI": 1,
+  "max_response_bytes": 4194304,
+  "max_total_response_bytes": 6291456,
+  "timeout_seconds": 45,
+  "persist_raw_before_content_validation": true,
+  "automatic_retry_or_alternate": false,
+  "known_six_hold_actions_untouched": [
+    "house:119:1:32",
+    "house:119:1:111",
+    "house:119:1:210",
+    "house:119:1:237",
+    "house:119:2:134",
+    "house:119:2:313"
+  ],
+  "canonical_state_changes_authorized_by_this_capture": false,
+  "current_law_or_actual_individual_eligibility_claim": false,
+  "stage2_reason": "Captured5121note contains complete FEMA2017 section2 but not the replaced DRRA1223. Its short-title citation authenticates the exact2018 public-law identity. One bounded enacted-law read resolves this named replacement dependency; no 2017-law re-fetch needed.",
+  "stage3_reason": "Finish shared statutory term definitions and the independently located GovInfoMarch31 floor text for1491. No Congress.gov retry or mirror request to a denied Congress.gov URL."
+}

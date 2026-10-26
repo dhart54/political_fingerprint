@@ -1,0 +1,76 @@
+{
+  "action_id": "house:119:1:237",
+  "frozen_origin": "676ae9e54ecd1192202567738b423ea42b5513c5:docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json",
+  "preimage": {
+    "action_id": "house:119:1:237",
+    "session": 1,
+    "roll": 237,
+    "date": "2025-09-04",
+    "measure": "bill_119_hr_4553",
+    "question": "On Agreeing to the Amendment",
+    "disposition": "source_unresolved",
+    "reason": "Report119-232 amendment33 lists the page40line6 reduction as $1,114,784,219.49; the floor Record gives $1,114,734,219.49, a $50,000 difference. Rules meeting image agrees with the floor number but has blank report/resolution identifiers and is not established as a formal correction. Preserve all versions; source authority and all material targets remain unresolved.",
+    "source": {
+      "source_id": "clerk:119:1:237",
+      "url": "https://clerk.house.gov/evs/2025/roll237.xml",
+      "raw_sha256": "8d4c0a844d5cfb544b751f4e6d46eb91356c969833bd4298a62d37a5a76c4eb4",
+      "governed_bytes_sha256": "26cb6732c91827e7cd9beab44246723608dff7aedc1e7291821b07f1e160d60e",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_4553",
+    "member_action": "nay",
+    "house_action_stage": "On Agreeing to the Amendment",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Report119-232 amendment33 lists the page40line6 reduction as $1,114,784,219.49; the floor Record gives $1,114,734,219.49, a $50,000 difference. Rules meeting image agrees with the floor number but has blank report/resolution identifiers and is not established as a formal correction. Preserve all versions; source authority and all material targets remain unresolved.",
+    "unresolved_reason": "authoritative_operative_discrepancy",
+    "sources": [
+      {
+        "source_id": "clerk:119:1:237",
+        "url": "https://clerk.house.gov/evs/2025/roll237.xml",
+        "raw_sha256": "8d4c0a844d5cfb544b751f4e6d46eb91356c969833bd4298a62d37a5a76c4eb4",
+        "governed_bytes_sha256": "26cb6732c91827e7cd9beab44246723608dff7aedc1e7291821b07f1e160d60e",
+        "verification": "unchanged_governed_source_reuse"
+      },
+      {
+        "source_id": "govinfo:hrpt119-232-amend33-conflict",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/pdf/CRPT-119hrpt232.pdf",
+        "raw_sha256": "83d3e47812f0239213a7172628f8aa56ef942bf2cdcc30f90ca1e682bdb6abf8",
+        "governed_bytes_sha256": "d0889830dc677ca7b18b44f3d04ce64eb43ec54e6afc55174eb1cbe60ab17adc"
+      },
+      {
+        "source_id": "congressional-record:2025-09-04-amend33",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+        "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+        "governed_bytes_sha256": "58be5e3465d4d13f9571e098972e426af2a538505ae5356712d52d1c4abc8849"
+      },
+      {
+        "source_id": "house-rules:4553-amend33-meeting-image",
+        "url": "https://docs.house.gov/meetings/RU/RU00/20250902/117805/HMTG-119-RU00-20250902-SD002.pdf",
+        "raw_sha256": "a7509ea3f125739cd5f8ef994ee4b698b06b0ee01bcd901988638d7bf15104b0",
+        "governed_bytes_sha256": "a554085310430c91658f99973ee8e723c85495172ac1e1bfcc356084748aa459"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": true,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": true
+    },
+    "historical_raw_hash_matches": true
+  },
+  "preimage_sha256": "e5cccdb3034611c70803125ff875985b4abc3ac67e90a1d7c1b6409068c7f8ea",
+  "previously_retained_conflict": true,
+  "meeting_transcription_reacquired": false,
+  "meeting_image_formal_correction_established": false,
+  "selected_operator_or_number": null,
+  "acceptance_conferred": false,
+  "publication_authorized": false
+}

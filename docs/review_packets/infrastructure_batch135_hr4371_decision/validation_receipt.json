@@ -1,0 +1,73 @@
+{
+  "kind": "focused_unapplied_review_sidecar_validation",
+  "base_head": "748519100b888bf17a0b8147eb1dd0e60a184e84",
+  "started_utc": "2026-10-21T15:35:18.734081+00:00",
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "backend.tests.test_infrastructure_hr4371_decision"
+  ],
+  "returncode": 0,
+  "test_count": 3,
+  "stdout": "",
+  "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 3.476s\n\nOK\n",
+  "process_wall_seconds": 3.637,
+  "governed_checkpoint134_files_unchanged": [
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/membership_review.json",
+      "git_blob": "836b70b563c8c6a1c421255eaf576f3c49a7427c",
+      "normalized_lf_sha256": "f2bf337a779760092006741192db5e8772d6db505fe42786818c86a160b81f07"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/sources.json",
+      "git_blob": "62c1120fd2f54c9aef2a7666b957e4e86ffe732a",
+      "normalized_lf_sha256": "60d0965f32dac135f8c949e6a540145ad4158ecda31ce1eac1123144538a67ec"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/authoring.json",
+      "git_blob": "7a7b61c22eb1820bd8f8774cde1998322f12bba0",
+      "normalized_lf_sha256": "4aa9c5582c1ffebbf1c8d11580ce40a21bb777d82adbe6492fa75671f93b38fc"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/universe_proposal.json",
+      "git_blob": "fcca0ccf82bfe601c2d44d5e466edaddce44949d",
+      "normalized_lf_sha256": "8a4496ed1b24a84719152db264e0709f07a7cfb97e8b3a7110acfc57f2ca2acf"
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/generated/compiled_ir.json",
+      "git_blob": "5cf6b8307c78d00ae36197339d78a65ad8392037",
+      "normalized_lf_sha256": "b9bf106a912489d8905b0a5443375750976658a391d269b56a249b514f99ded7"
+    }
+  ],
+  "packet_files": [
+    {
+      "path": "docs/review_packets/infrastructure_batch135_hr4371_decision/README.md",
+      "bytes": 2579,
+      "lf_sha256": "97865dc812509a8d091128b9a7a4ce85c2272a3a1022ccb908e08a31d48ba430"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch135_hr4371_decision/recommendation.json",
+      "bytes": 171129,
+      "lf_sha256": "03a74625488507102d3d102f1c7e0dbb076d09ec7507765235a6499728f810ca"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch135_hr4371_decision/retained_3507_research.json",
+      "bytes": 21646,
+      "lf_sha256": "701edbd4d118bf88ea1bf924cc9cb9d369d72a474a50a40243e5e77acad711e9"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch135_hr4371_decision/retained_3507_source.json",
+      "bytes": 13564,
+      "lf_sha256": "8d7ce2abf4b596a77112d5a786dabaf870ae03ef3461e6693def7f9e6b14bf33"
+    }
+  ],
+  "validation_scope": "Source binding, preimage preservation, stage reconciliation, review-subject hashes, whole-choice accounting and negative mutations; local sidecar checks only",
+  "full_repository_suite_run": false,
+  "canonical_semantic_seven_rerun": false,
+  "historical_full151_head": "3be714268666858130bb62d1f171af6a19362c4a",
+  "hosted_Actions": "BLOCKED_NEVER_RUN",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false
+}

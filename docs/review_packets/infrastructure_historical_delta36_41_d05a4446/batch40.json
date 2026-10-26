@@ -1,0 +1,1033 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 40,
+  "exact_committed_head": "d05a44461ae7550227169314a6b2504ea3bf9177",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact d05a44461ae7550227169314a6b2504ea3bf9177, never current batch42 working-tree bytes; zero source acquisition.",
+  "scope": "31 new identities across six batches plus only two prior roll150/207 follow-ups in batch36. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim. Whole CMS letter, BLM plans/maps, appropriations and other partial reviews remain incomplete as recorded. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch40_20260916/membership_review.json",
+      "git_blob": "303fe069c4f9e347e305ac5a76e9811038652347",
+      "git_bytes_sha256": "d7fd95ed82aa82dfe3f3019e963dd8f6fef9a0a1edb5647804692a017d358798"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch40_20260916/sources.json",
+      "git_blob": "705c37e59d0efb3bfcc041ae145be72bb65523f1",
+      "git_bytes_sha256": "9153069f140e7b32be264a00f265b0563712acd1a74770943184d6a75f4df36b"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch40_20260916/screening_receipt.json",
+      "git_blob": "f27a4777a5bc6a21d9baa95711bd93dac5692dd2",
+      "git_bytes_sha256": "24e0a921e21537212390a59f9bac4ae4108e651278f30b28202ef88e03da3a02"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch40_20260916/screening_units_receipt.json",
+      "git_blob": "ca0ebd2cd845f24e88687d6b3e08a7ac51037821",
+      "git_bytes_sha256": "f794aeaa88bf27f17dcf75f554f8212f855220bbc3b4bf67b12d099abea5726e"
+    }
+  },
+  "cumulative_membership_review_sha256": "424e2460a81b9a2a3717ba6d88cf93a7a05b522db924a2e55ac7ac49855f8e86",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/c0403ea4405f6295d026e90434e30b05a9aa6c9bdb06fe1d64e31b0d5c124c29.0000000.json",
+        "sha256": "10c99fb09992f70d585f22610a020275b8c6727db2301bb64ddd41ccc0725df5",
+        "start_character": 0,
+        "end_character": 25896
+      }
+    ],
+    "utf8_sha256": "c0403ea4405f6295d026e90434e30b05a9aa6c9bdb06fe1d64e31b0d5c124c29",
+    "total_characters": 25896,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/ffe0a7db6cc6953c1424d97ce3f9b3d3cfdc2e53008c7552971b143a44731d5d.0000000.json",
+        "sha256": "6a849f4609768a2b67ffcba7d1218389d4efd131733650af765a065165ff1f8c",
+        "start_character": 0,
+        "end_character": 67185
+      }
+    ],
+    "utf8_sha256": "ffe0a7db6cc6953c1424d97ce3f9b3d3cfdc2e53008c7552971b143a44731d5d",
+    "total_characters": 67185,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:237",
+    "house:119:1:238",
+    "house:119:1:239",
+    "house:119:1:240",
+    "house:119:1:241"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hrpt119-232-amend33-conflict",
+      "scope": "Partial3606-6306of7007retained characters, amount/target neighborhood only; no full amendment/account/glyph review"
+    },
+    {
+      "source_id": "congressional-record:2025-09-04-amend33",
+      "scope": "Partial9716-12416of42216retained characters, amount/target neighborhood only; no full amendment/account/glyph review"
+    },
+    {
+      "source_id": "house-rules:4553-amend33-meeting-image",
+      "scope": "Complete502retained transcription characters read; original image was not reacquired/replayed or newly certified, and no formal-correction authority transferred"
+    },
+    {
+      "source_id": "congressional-record:2025-09-04-4553-passage",
+      "scope": "Partial operative recommittal clause and result/passage transition within first10000characters, plus roll239question/result and final passage. Member lists and adjacent speeches are not substantive evidence; no complete16149character/dailyRecord review claimed"
+    },
+    {
+      "source_id": "govinfo:hr4553eh",
+      "scope": "Partial0-2200and88753-89253of89253header/final lead; no complete five-title appropriation/adopted-amendment ledger"
+    },
+    {
+      "source_id": "govinfo:hr3424eh",
+      "scope": "Complete2116character identified EHread; material WRDA2302baseline unbound and cancelled chain untouched"
+    },
+    {
+      "source_id": "govinfo:hr3425eh",
+      "scope": "Complete5260character identified EHread; material authority and amended floor-version comparison pending"
+    },
+    {
+      "source_id": "govinfo:40usc1315-2024",
+      "scope": "Partial0-3000of19769retained characters; no complete contractor/protection authority/notes/current-law review"
+    },
+    {
+      "source_id": "clerk:119:1:237",
+      "scope": "Exact question, result/date/member labels inspected; amendment237SchweikertNo.33/floorNo.14distinct from recommittal238and passage239"
+    },
+    {
+      "source_id": "clerk:119:1:238",
+      "scope": "Exact question, result/date/member labels inspected; amendment237SchweikertNo.33/floorNo.14distinct from recommittal238and passage239"
+    },
+    {
+      "source_id": "clerk:119:1:239",
+      "scope": "Exact question, result/date/member labels inspected; amendment237SchweikertNo.33/floorNo.14distinct from recommittal238and passage239"
+    },
+    {
+      "source_id": "clerk:119:1:240",
+      "scope": "Exact question, result/date/member labels inspected; amendment237SchweikertNo.33/floorNo.14distinct from recommittal238and passage239"
+    },
+    {
+      "source_id": "clerk:119:1:241",
+      "scope": "Exact question, result/date/member labels inspected; amendment237SchweikertNo.33/floorNo.14distinct from recommittal238and passage239"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "retained_authoritative_conflict_units": 1,
+    "exact_question_units": 1,
+    "partial_final_package_units": 1,
+    "complete_identified_bill_body_units": 2,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:237",
+        "evidence_unit": "retained_numeric_authority_conflict_no_selected_operator",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:238",
+        "evidence_unit": "exact_question_noncounting",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:239",
+        "evidence_unit": "partial_package_or_complete_body_with_material_baseline_gap",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:240",
+        "evidence_unit": "partial_package_or_complete_body_with_material_baseline_gap",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:241",
+        "evidence_unit": "partial_package_or_complete_body_with_material_baseline_gap",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "edc5420b064788072aae1b98ddbff9d614d33c381657a385a77354d6cf16d39c",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:237",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "source_unresolved",
+        "rationale": "Inherited exact Schweikert No.33 source conflict remains unresolved. Report119-232prints a page40line6 reduction of1,114,784,219.49dollars; the September4floorRecord prints1,114,734,219.49, a50,000difference. The retained Rules meeting image transcription agrees with the floor figure but has blank report/resolution identifiers and is not established as a formal correction. Preserve all three witnesses without operator/number selection or repair. This is not missing or denied evidence and not a procedural-only amendment; the rejected whole multi-account child has no safe authored meaning until authority and all material targets are resolved. Retained amount neighborhoods were read, not all report/floor pages or all targets. No acquisition, image/glyph replay, institutional-authority decision, parent substitution or actual savings claim.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": true,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:237",
+            "url": "https://clerk.house.gov/evs/2025/roll237.xml",
+            "raw_sha256": "8d4c0a844d5cfb544b751f4e6d46eb91356c969833bd4298a62d37a5a76c4eb4",
+            "governed_bytes_sha256": "26cb6732c91827e7cd9beab44246723608dff7aedc1e7291821b07f1e160d60e"
+          },
+          {
+            "source_id": "govinfo:hrpt119-232-amend33-conflict",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/pdf/CRPT-119hrpt232.pdf",
+            "raw_sha256": "83d3e47812f0239213a7172628f8aa56ef942bf2cdcc30f90ca1e682bdb6abf8",
+            "governed_bytes_sha256": "d0889830dc677ca7b18b44f3d04ce64eb43ec54e6afc55174eb1cbe60ab17adc"
+          },
+          {
+            "source_id": "congressional-record:2025-09-04-amend33",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+            "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+            "governed_bytes_sha256": "58be5e3465d4d13f9571e098972e426af2a538505ae5356712d52d1c4abc8849"
+          },
+          {
+            "source_id": "house-rules:4553-amend33-meeting-image",
+            "url": "https://docs.house.gov/meetings/RU/RU00/20250902/117805/HMTG-119-RU00-20250902-SD002.pdf",
+            "raw_sha256": "a7509ea3f125739cd5f8ef994ee4b698b06b0ee01bcd901988638d7bf15104b0",
+            "governed_bytes_sha256": "a554085310430c91658f99973ee8e723c85495172ac1e1bfcc356084748aa459"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hrpt119-232-amend33-conflict",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/b7d7144ddfcfb06d84b61dbed7fd45ea8f4c131805e4ad60c6191a04ddff0ff1.0000000.json",
+                  "sha256": "54b2f78b65422c2b923d8162c571bca18259fa4bdb05fdc00bd91615c2857a3f",
+                  "start_character": 0,
+                  "end_character": 7007
+                }
+              ],
+              "utf8_sha256": "b7d7144ddfcfb06d84b61dbed7fd45ea8f4c131805e4ad60c6191a04ddff0ff1",
+              "total_characters": 7007,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "congressional-record:2025-09-04-amend33",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/7f6fabe765b8fa44d4cb2e07c6083076d4190790cc15fe4b18f413e51b95b1f9.0000000.json",
+                  "sha256": "477ac768cf7da3abf17bcab2ac470fc4331fcb0e455a99c832f2da0a393bd9de",
+                  "start_character": 0,
+                  "end_character": 42216
+                }
+              ],
+              "utf8_sha256": "7f6fabe765b8fa44d4cb2e07c6083076d4190790cc15fe4b18f413e51b95b1f9",
+              "total_characters": 42216,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "house-rules:4553-amend33-meeting-image",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Manual transcription from visual inspection of image-only PDF page47 (printed amendment page5), Rules Committee September2,2025 meeting support document SD002, amendment33. Page40, line6, after the dollar amount, insert “(reduced by $1,114,734,219.49)”. This differs by $50,000 from printed Report119-232 page13 ($1,114,784,219.49) and agrees with the September4 Record H3838. The support document has blank report/resolution identifiers on its cover and is not treated as a formally issued correction."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "baddb03ddeb68510848baf68a96f3d8a04de19c82a46bc2beb2cd3414675839b",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:238",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The failed motion recommits H.R.4553 to the Committee on Appropriations. Its own retained floor clause contains no substantive amendment instructions. It is a noncounting procedural choice distinct from the immediately following final-passage question; a Yea/Nay here does not establish a whole-bill or component policy stance. The retained recorded209–218failure and Clerk labels are preserved without motive inference.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:238",
+            "url": "https://clerk.house.gov/evs/2025/roll238.xml",
+            "raw_sha256": "91155e5bd744b9b6708817cc3d46c8b9d12720ec0ccfb2d2234f3264ac423227",
+            "governed_bytes_sha256": "695e6e00d455af7be66dfd15e0a46496343a6a5feeb95056125b4f5a13c2df7b"
+          },
+          {
+            "source_id": "congressional-record:2025-09-04-4553-passage",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+            "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+            "governed_bytes_sha256": "4811d9e3e5e3450f46415665052f5fe22acbf0c1ff973f6baa0d282eeb324b88"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2025-09-04-4553-passage",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/3afbd0e0fe2a6437309eb57646b7799f5f79564314debe0797052c4170c2bc5e.0000000.json",
+                  "sha256": "0b5085446790cdabdcefa9c87fec6ff4e27ade9ff7d2953136b2abe9f321a2e3",
+                  "start_character": 0,
+                  "end_character": 16149
+                }
+              ],
+              "utf8_sha256": "3afbd0e0fe2a6437309eb57646b7799f5f79564314debe0797052c4170c2bc5e",
+              "total_characters": 16149,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "8ddb69954850f4a0d97da5f620dd04ddf03c1ce42742870f27fd311cdeae9fea",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:239",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Exact House final passage of H.R.4553 is bound to the September4recorded214–213result, distinct from failed recommittal and all rejected child amendments. Both members recordedNay on this whole package. The EHheader identifies fiscal2026civil Corps/energy/water appropriations; source review here is only0-2200and88753-89253of89253plus the scoped floor question/result. Prior account-specific/child-source reads do not establish a complete titleI–Vpackage, adopted-amendment ledger, incorporated report allocations, rescissions, statutory baselines or full-domain action accounting. Keep this direct-infrastructure lead unfinished; do not project a selected program or rejected-child stance as the meaning of the whole bill, infer enactment or actual project/funding outcomes.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:239",
+            "url": "https://clerk.house.gov/evs/2025/roll239.xml",
+            "raw_sha256": "5d0f334b7b5b1adcf4979bc7bee9276e02e21ccb7995a300e258f73e9475c03c",
+            "governed_bytes_sha256": "6d43a927d4ae1b04407b80480c1d0261003f5f8854d89ee96f9b09abb7cbd61b"
+          },
+          {
+            "source_id": "govinfo:hr4553eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm",
+            "raw_sha256": "d1992d7f333b69c9066024074bcca5ee41008fe39e63830b165d8aa7dedbc204",
+            "governed_bytes_sha256": "78b1bda19b231d6ae32c5909fe942b554b16d150016ca4f5efcc3a36cb4d0e09"
+          },
+          {
+            "source_id": "congressional-record:2025-09-04-4553-passage",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+            "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+            "governed_bytes_sha256": "4811d9e3e5e3450f46415665052f5fe22acbf0c1ff973f6baa0d282eeb324b88"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4553eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/e8e0ddcab859d3f57c03abe08a297cd14ec1d11a5610c519fc2264bfd0de9355.0000000.json",
+                  "sha256": "8e3d0b9218e2f43ec6c8465fb444d1e2ea0bafe38212dbc67e126343ed2225d7",
+                  "start_character": 0,
+                  "end_character": 89253
+                }
+              ],
+              "utf8_sha256": "e8e0ddcab859d3f57c03abe08a297cd14ec1d11a5610c519fc2264bfd0de9355",
+              "total_characters": 89253,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "congressional-record:2025-09-04-4553-passage",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/3afbd0e0fe2a6437309eb57646b7799f5f79564314debe0797052c4170c2bc5e.0000000.json",
+                  "sha256": "0b5085446790cdabdcefa9c87fec6ff4e27ade9ff7d2953136b2abe9f321a2e3",
+                  "start_character": 0,
+                  "end_character": 16149
+                }
+              ],
+              "utf8_sha256": "3afbd0e0fe2a6437309eb57646b7799f5f79564314debe0797052c4170c2bc5e",
+              "total_characters": 16149,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6eded162d46b17f4b91d0a842f81e67b06a2a3728453ee93728654f09428b832",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:240",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.3424EHrequires GSA collaboration with federally-leased-space tenants, development of space-sharing/collocation criteria, identification of special-use-space opportunities and measurable objectives in tenant consultation. A briefing to HouseTransportation/Infrastructure and SenateEnvironment/PublicWorks is due within6months of enactment. These duties operate in carrying out WRDA2024section2302(40USC584note), whose material baseline is not bound here. Direct federal-property-management versus operative infrastructure scope remains ordinary review, not automatic exclusion based on general administration. No mandatory building construction, lease termination, quantified savings, successful colocation or enactment is inferred. No cancelled WRDAversion/glyph/table chain was replayed or substituted for the missing baseline.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:240",
+            "url": "https://clerk.house.gov/evs/2025/roll240.xml",
+            "raw_sha256": "0297b0c76d3c14452a91daf9828943e5669c00dcc408c07bc80870b9d8223542",
+            "governed_bytes_sha256": "39131206ee109d98636cfc6460d864329fd7cf8b2238f75569f2e7aa35356df4"
+          },
+          {
+            "source_id": "govinfo:hr3424eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3424eh/html/BILLS-119hr3424eh.htm",
+            "raw_sha256": "2e9e0ee894a1ee5512e42889d8e046e78efb51a98d2fd7b520e78215b520639a",
+            "governed_bytes_sha256": "a2aa72663d884915c0ad95729366167c3711486bd5acccec017ba85f319f06ed"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3424eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3424 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3424 _______________________________________________________________________ AN ACT To require the Administrator of the General Services Administration to collaborate with Federal tenants with respect to shared-space arrangements, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Shared Property Agency Collaboration and Engagement Act of 2025'' or the ``SPACE Act of 2025''. SEC. 2. GSA COLLABORATION WITH FEDERAL TENANTS. (a) In General.--In carrying out section 2302 of the Thomas R. Carper Water Resources Development Act of 2024 (40 U.S.C. 584 note), the Administrator of the General Services Administration shall-- (1) collaborate with tenants of federally-leased space to better identify concerns among Federal agencies around shared- space arrangements; (2) work to develop a criteria that would facilitate the expanded use of space-sharing or collocating; (3) identify how special-use spaces can be used to improve space-sharing or collocating; and (4) establish measurable objectives, in consultation with the tenants of federally-leased space, to quantify the success of shared-space arrangements among Federal agencies. (b) Briefing.--Not later than 6 months after the date of enactment of this Act, the Administrator shall brief the Committee on Transportation and Infrastructure of the House of Representatives and the Committee on Environment and Public Works of the Senate on the implementation of the requirements described in subsection (a). Passed the House of Representatives September 8, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3424 _______________________________________________________________________ AN ACT To require the Administrator of the General Services Administration to collaborate with Federal tenants with respect to shared-space arrangements, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "1cf88d7dd912f6b53c7f022fd218348b765736797fcbae2cbaef2fd0589a3576",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:241",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete identified H.R.3425EHsets contract-security covert-test data standards, quarterly analysis, mandatory cause-specific corrective plans for failed tests and updated training guidance; section2reporting begins upon completion and annually thereafter. Section3requires180daypersonnel-tracking evaluation and a choice between replacement, including private solutions, and technical/operational/administrative fixes, plus a published implementation/tenant-communication plan. Its first report is due within1yearand annually thereafter for3years, not a universal indefinite cadence. The savings clause does not make contractor employees Federal employees. Material40USC1315protection/contractor authority is only partially read0-3000of19769, and amended-suspension floor/EHbinding remains unresolved. Direct tracking-system governance and physical-security scope are leads pending whole-action/baseline review, not guaranteed platform replacement, actual safer facilities, successful training, staffing levels or enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:241",
+            "url": "https://clerk.house.gov/evs/2025/roll241.xml",
+            "raw_sha256": "42e633e1196158bf0d35159d4add098749cfcc354cea2f4681e2145e17b63b37",
+            "governed_bytes_sha256": "861e257856fa7c79fdcacd9149b311fec1ad6e49da096462e1dc1dddea07c7e0"
+          },
+          {
+            "source_id": "govinfo:hr3425eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3425eh/html/BILLS-119hr3425eh.htm",
+            "raw_sha256": "7c98b89464c0b5cc22e80bd83578446de5a7dd0c1d0c0cbe2fec7fe255b90ef0",
+            "governed_bytes_sha256": "23749124dca691b44a36969f31fd1984c65574c52e043428fb1f1c90011eff4f"
+          },
+          {
+            "source_id": "govinfo:40usc1315-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleI-chap13-sec1315.htm",
+            "raw_sha256": "c13d370b714ae0d2de3ea4e4f920a3ba5fea2d35bc8104b97d12d3a1b1a3b925",
+            "governed_bytes_sha256": "a431a09ba09f39ab3dbe516432a617a6309ab3395a9273cd7d01dbcdf1495b94"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr3425eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3425 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3425 _______________________________________________________________________ AN ACT To direct the Director of the Federal Protective Service to establish processes to strengthen oversight, performance, and accountability of contract security personnel engaged in the protection of certain buildings and grounds, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Personnel Oversight and Shift Tracking Act of 2025'' or the ``POST Act of 2025''. SEC. 2. IMPROVED DATA COLLECTION AND PERFORMANCE ACCOUNTABILITY. (a) In General.--Not later than 1 year after the date of enactment of this Act, the Director of the Federal Protective Service shall establish processes to strengthen oversight, performance, and accountability of contract security personnel engaged in the protection of buildings and grounds that are owned, occupied, or secured by the General Services Administration Public Buildings Service. (b) Oversight of Contract Security Personnel.--In carrying out the activities described in subsection (a), the Director shall-- (1) establish standards for the collection, maintenance, and analysis of covert testing data, including the creation of a comprehensive and uniform method for documenting test outcomes, identifying root causes of failures, and categorizing types of vulnerabilities detected; (2) begin conducting quarterly analytical reviews of covert testing data to identify trends, recurring deficiencies, and opportunities for operational improvement across all covered facilities; (3) direct the security contractor who is providing security services to the Federal Protective Service to establish a mandatory, cause-specific corrective training and performance improvement plan for any contract security personnel who fail a covert test and review the security contractor's performance improvement plan to ensure that the security contractor has and will provide appropriate training and procedures to avoid any future covert testing failures; and (4) develop updated security training guidance for contract security personnel to reflect findings from covert testing data, emerging threats, and best practices. (c) Report to Congress.--Upon completion of the activities described in subsection (b), and annually thereafter, the Director shall submit to the Committee on Transportation and Infrastructure of the House of Representatives and the Committee on Homeland Security and Governmental Affairs of the Senate an report on the implementation of the requirements of this section, including any identified challenges and recommendations for additional legislative action. SEC. 3. PERSONNEL SHIFT MANAGEMENT AND SYSTEM MODERNIZATION. (a) Evaluation of the Personnel Tracking System.--Not later than 180 days after the date of enactment of this Act, the Director of the Federal Protective Service shall-- (1) conduct a comprehensive evaluation of the personnel tracking system used to manage and monitor the deployment availability of contract security personnel; (2) determine whether to replace the system described in paragraph (1) with a more reliable personnel tracking platform, including private sector solutions, or whether to implement corrective actions to improve the system described in paragraph (1), including technical, operational, or administrative fixes; and (3) develop and publish an implementation plan that includes-- (A) a timeline for completion of system replacement or corrective actions; and (B) procedures to ensure timely and accurate communication to building tenants regarding contract security personnel shortages or absences or security coverage gaps. (b) Report to Congress.--Not later than 1 year after the date of enactment of this Act, and annually thereafter for 3 years, the Director shall submit to the Committee on Transportation and Infrastructure of the House of Representatives and the Committee on Homeland Security and Governmental Affairs of the Senate a report that includes-- (1) the determination made under subsection (a)(2); (2) a detailed summary of any implementation actions undertaken pursuant to subsection (a); (3) an evaluation of the effectiveness of tenant communication protocols; and (4) any recommendations for additional legislative or administrative actions. SEC. 4. SAVINGS CLAUSE. Nothing in this Act shall be construed as designating an employee of a contractor of the Department of Homeland Security who is engaged in the protection of Federal property pursuant to section 1315 of title 40, United States Code, as a Federal employee. Passed the House of Representatives September 8, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3425 _______________________________________________________________________ AN ACT To direct the Director of the Federal Protective Service to establish processes to strengthen oversight, performance, and accountability of contract security personnel engaged in the protection of certain buildings and grounds, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:40usc1315-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/51179220754ef40323724dbebf0831fc87b51deaa3af350b7e4f410d479ee65c.0000000.json",
+                  "sha256": "8d361e758130c3c91c78ced0f4447bad23c918e4203c6e857551f062dc7aea33",
+                  "start_character": 0,
+                  "end_character": 19769
+                }
+              ],
+              "utf8_sha256": "51179220754ef40323724dbebf0831fc87b51deaa3af350b7e4f410d479ee65c",
+              "total_characters": 19769,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "0ca3d2514cdfe9f08c3839832dc2a0dbae59f58a65edeb8ec147924dbb9aaf7a",
+      "source": {
+        "source_id": "clerk:119:1:237",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll237.xml",
+        "text_version": null,
+        "raw_sha256": "8d4c0a844d5cfb544b751f4e6d46eb91356c969833bd4298a62d37a5a76c4eb4",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "237",
+          "legis-num": "H R 4553",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "14",
+          "amendment-author": "Schweikert of Arizona Amendment No. 33",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "4-Sep-2025",
+          "action-time": "10:33 AM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "76",
+            "nay-total": "141",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "210",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "26cb6732c91827e7cd9beab44246723608dff7aedc1e7291821b07f1e160d60e"
+      }
+    },
+    {
+      "original_source_object_sha256": "962e020d015b5dc71fa648c63866a84a72cea1bfed3cc8cce6b1ad6f5b72aa30",
+      "source_json": {
+        "$lossless_text_parts": [
+          {
+            "path": "source_parts/c4e7ec4a3fc417ecbdff99038cdee9dfdceeb8e5fe63b6acffc3a62e4ec8d737.0000000.json",
+            "sha256": "73f518d994744ee4e57826d910c92c412b53578a2681a406517616f3af4c3c1f",
+            "start_character": 0,
+            "end_character": 8090
+          }
+        ],
+        "utf8_sha256": "c4e7ec4a3fc417ecbdff99038cdee9dfdceeb8e5fe63b6acffc3a62e4ec8d737",
+        "total_characters": 8090,
+        "transport_only": true
+      }
+    },
+    {
+      "original_source_object_sha256": "04ec7a6d6518efeeeae73a8ae27bb9c10a01e832098a0903f17ccc1842fc607d",
+      "source": {
+        "source_id": "congressional-record:2025-09-04-amend33",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+        "text_version": "Official PDF pages 5,6,7,8,9",
+        "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+        "page_extracts": [
+          {
+            "pdf_page": 5,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/114d6cf52345772d6010e38ef879bc12fa068263e9c6a31730a9b628e6554661.0000000.json",
+                  "sha256": "66aa964658d5a15fea497ccbdd6da7d57aee8c09937d25ce07533b184985e492",
+                  "start_character": 0,
+                  "end_character": 8830
+                }
+              ],
+              "utf8_sha256": "114d6cf52345772d6010e38ef879bc12fa068263e9c6a31730a9b628e6554661",
+              "total_characters": 8830,
+              "transport_only": true
+            }
+          },
+          {
+            "pdf_page": 6,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/feec3980acbb8f08d07f4dde33a7c51962e974287f30f0f17479fe7682947809.0000000.json",
+                  "sha256": "b3ad145c04579f30cb7006a16bc68536e711ffdf2fba489e48a00fadeada5341",
+                  "start_character": 0,
+                  "end_character": 9212
+                }
+              ],
+              "utf8_sha256": "feec3980acbb8f08d07f4dde33a7c51962e974287f30f0f17479fe7682947809",
+              "total_characters": 9212,
+              "transport_only": true
+            }
+          },
+          {
+            "pdf_page": 7,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/4c82da3bf339c50bfaff5a3226f13cadc17e2b634ece56627bf55a67607c4d8d.0000000.json",
+                  "sha256": "12c737737bd52b45dab8d168f948e5c43c5450e67ddf49030b8b0f427e124602",
+                  "start_character": 0,
+                  "end_character": 7893
+                }
+              ],
+              "utf8_sha256": "4c82da3bf339c50bfaff5a3226f13cadc17e2b634ece56627bf55a67607c4d8d",
+              "total_characters": 7893,
+              "transport_only": true
+            }
+          },
+          {
+            "pdf_page": 8,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/66afb74ccdcacd78103ae3b821b843148a766be340b1d40b469d6809d973cb51.0000000.json",
+                  "sha256": "941aff58e7f66739ca619ad401e974762dd8df5027028de4f6f897bb2e4bcf06",
+                  "start_character": 0,
+                  "end_character": 8183
+                }
+              ],
+              "utf8_sha256": "66afb74ccdcacd78103ae3b821b843148a766be340b1d40b469d6809d973cb51",
+              "total_characters": 8183,
+              "transport_only": true
+            }
+          },
+          {
+            "pdf_page": 9,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/cbd95b2fa2cf50215444ffaac3d85aa2fa7331b41fd3ec61f5041124f004d0b8.0000000.json",
+                  "sha256": "a9c1bc42c1589fb8408543d64c60628f13a85a0ba81644c94e898a63781ddbc7",
+                  "start_character": 0,
+                  "end_character": 8094
+                }
+              ],
+              "utf8_sha256": "cbd95b2fa2cf50215444ffaac3d85aa2fa7331b41fd3ec61f5041124f004d0b8",
+              "total_characters": 8094,
+              "transport_only": true
+            }
+          }
+        ],
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/7f6fabe765b8fa44d4cb2e07c6083076d4190790cc15fe4b18f413e51b95b1f9.0000000.json",
+              "sha256": "477ac768cf7da3abf17bcab2ac470fc4331fcb0e455a99c832f2da0a393bd9de",
+              "start_character": 0,
+              "end_character": 42216
+            }
+          ],
+          "utf8_sha256": "7f6fabe765b8fa44d4cb2e07c6083076d4190790cc15fe4b18f413e51b95b1f9",
+          "total_characters": 42216,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "58be5e3465d4d13f9571e098972e426af2a538505ae5356712d52d1c4abc8849"
+      }
+    },
+    {
+      "original_source_object_sha256": "467753e55b72a311bc5ad3932e6ead322504ed663a773fc8271d074a8dd9ad18",
+      "source": {
+        "source_id": "house-rules:4553-amend33-meeting-image",
+        "source_type": "official_committee_meeting_document_excerpt",
+        "url": "https://docs.house.gov/meetings/RU/RU00/20250902/117805/HMTG-119-RU00-20250902-SD002.pdf",
+        "text_version": "September2,2025 meeting support SD002; PDF page47, selected image transcription",
+        "raw_sha256": "a7509ea3f125739cd5f8ef994ee4b698b06b0ee01bcd901988638d7bf15104b0",
+        "text": "Manual transcription from visual inspection of image-only PDF page47 (printed amendment page5), Rules Committee September2,2025 meeting support document SD002, amendment33. Page40, line6, after the dollar amount, insert “(reduced by $1,114,734,219.49)”. This differs by $50,000 from printed Report119-232 page13 ($1,114,784,219.49) and agrees with the September4 Record H3838. The support document has blank report/resolution identifiers on its cover and is not treated as a formally issued correction.",
+        "manual_transcription": "Manual transcription from visual inspection of image-only PDF page47 (printed amendment page5), Rules Committee September2,2025 meeting support document SD002, amendment33. Page40, line6, after the dollar amount, insert “(reduced by $1,114,734,219.49)”. This differs by $50,000 from printed Report119-232 page13 ($1,114,784,219.49) and agrees with the September4 Record H3838. The support document has blank report/resolution identifiers on its cover and is not treated as a formally issued correction.",
+        "governed_bytes_sha256": "a554085310430c91658f99973ee8e723c85495172ac1e1bfcc356084748aa459"
+      }
+    },
+    {
+      "original_source_object_sha256": "72113892dd73154b35e4f883402ed1f2543998bb407d43a6a410b97a48c95812",
+      "source": {
+        "source_id": "clerk:119:1:238",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll238.xml",
+        "text_version": null,
+        "raw_sha256": "91155e5bd744b9b6708817cc3d46c8b9d12720ec0ccfb2d2234f3264ac423227",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "238",
+          "legis-num": "H R 4553",
+          "vote-question": "On Motion to Recommit",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Failed",
+          "action-date": "4-Sep-2025",
+          "action-time": "10:43 AM",
+          "vote-desc": "Energy and Water Development and Related Agencies Appropriations Act, 2026"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "695e6e00d455af7be66dfd15e0a46496343a6a5feeb95056125b4f5a13c2df7b"
+      }
+    },
+    {
+      "original_source_object_sha256": "730aed522c5521220052bfc3879ffa1821d2fc03e73dcf239d2596d77ccc5232",
+      "source": {
+        "source_id": "congressional-record:2025-09-04-4553-passage",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+        "text_version": "Official PDF pages 9,10",
+        "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+        "page_extracts": [
+          {
+            "pdf_page": 9,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/cbd95b2fa2cf50215444ffaac3d85aa2fa7331b41fd3ec61f5041124f004d0b8.0000000.json",
+                  "sha256": "a9c1bc42c1589fb8408543d64c60628f13a85a0ba81644c94e898a63781ddbc7",
+                  "start_character": 0,
+                  "end_character": 8094
+                }
+              ],
+              "utf8_sha256": "cbd95b2fa2cf50215444ffaac3d85aa2fa7331b41fd3ec61f5041124f004d0b8",
+              "total_characters": 8094,
+              "transport_only": true
+            }
+          },
+          {
+            "pdf_page": 10,
+            "text": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/c134f5dbea8b84bae35eb4ca8846c7a2f771febc98d1af8e58a31c7d15f3a5a0.0000000.json",
+                  "sha256": "7ef757954e04aed1da0d12abc505f06d9a4cd4028c0d2b40a6e0665914960662",
+                  "start_character": 0,
+                  "end_character": 8054
+                }
+              ],
+              "utf8_sha256": "c134f5dbea8b84bae35eb4ca8846c7a2f771febc98d1af8e58a31c7d15f3a5a0",
+              "total_characters": 8054,
+              "transport_only": true
+            }
+          }
+        ],
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/3afbd0e0fe2a6437309eb57646b7799f5f79564314debe0797052c4170c2bc5e.0000000.json",
+              "sha256": "0b5085446790cdabdcefa9c87fec6ff4e27ade9ff7d2953136b2abe9f321a2e3",
+              "start_character": 0,
+              "end_character": 16149
+            }
+          ],
+          "utf8_sha256": "3afbd0e0fe2a6437309eb57646b7799f5f79564314debe0797052c4170c2bc5e",
+          "total_characters": 16149,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "4811d9e3e5e3450f46415665052f5fe22acbf0c1ff973f6baa0d282eeb324b88"
+      }
+    },
+    {
+      "original_source_object_sha256": "3d1c273e5607ab28841cc2952fe453b98444333c3ee40b939689a72ed96cfc34",
+      "source": {
+        "source_id": "clerk:119:1:239",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll239.xml",
+        "text_version": null,
+        "raw_sha256": "5d0f334b7b5b1adcf4979bc7bee9276e02e21ccb7995a300e258f73e9475c03c",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "239",
+          "legis-num": "H R 4553",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "4-Sep-2025",
+          "action-time": "11:00 AM",
+          "vote-desc": "Energy and Water Development and Related Agencies Appropriations Act, 2026"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Nay",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "214",
+            "nay-total": "4",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "209",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "6d43a927d4ae1b04407b80480c1d0261003f5f8854d89ee96f9b09abb7cbd61b"
+      }
+    },
+    {
+      "original_source_object_sha256": "857c762f525579d917e614b1666383a8c82141f2d2ee99de01cf62ecd6632b04",
+      "source": {
+        "source_id": "govinfo:hr4553eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "d1992d7f333b69c9066024074bcca5ee41008fe39e63830b165d8aa7dedbc204",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/e8e0ddcab859d3f57c03abe08a297cd14ec1d11a5610c519fc2264bfd0de9355.0000000.json",
+              "sha256": "8e3d0b9218e2f43ec6c8465fb444d1e2ea0bafe38212dbc67e126343ed2225d7",
+              "start_character": 0,
+              "end_character": 89253
+            }
+          ],
+          "utf8_sha256": "e8e0ddcab859d3f57c03abe08a297cd14ec1d11a5610c519fc2264bfd0de9355",
+          "total_characters": 89253,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "78b1bda19b231d6ae32c5909fe942b554b16d150016ca4f5efcc3a36cb4d0e09"
+      }
+    },
+    {
+      "original_source_object_sha256": "fd12d83be6ea1c8070cbe397c062b3647db17517defd6ef184f75b795d3d1025",
+      "source": {
+        "source_id": "clerk:119:1:240",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll240.xml",
+        "text_version": null,
+        "raw_sha256": "0297b0c76d3c14452a91daf9828943e5669c00dcc408c07bc80870b9d8223542",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "240",
+          "legis-num": "H R 3424",
+          "vote-question": "On Motion to Suspend the Rules and Pass",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "8-Sep-2025",
+          "action-time": "6:56 PM",
+          "vote-desc": "SPACE Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "202",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "16"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "195",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "16"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "39131206ee109d98636cfc6460d864329fd7cf8b2238f75569f2e7aa35356df4"
+      }
+    },
+    {
+      "original_source_object_sha256": "084a90a364ae4f3125121f1b9ac730a5801bbec562b4627e55477d689cf4a1bc",
+      "source": {
+        "source_id": "govinfo:hr3424eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3424eh/html/BILLS-119hr3424eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "2e9e0ee894a1ee5512e42889d8e046e78efb51a98d2fd7b520e78215b520639a",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3424 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3424 _______________________________________________________________________ AN ACT To require the Administrator of the General Services Administration to collaborate with Federal tenants with respect to shared-space arrangements, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Shared Property Agency Collaboration and Engagement Act of 2025'' or the ``SPACE Act of 2025''. SEC. 2. GSA COLLABORATION WITH FEDERAL TENANTS. (a) In General.--In carrying out section 2302 of the Thomas R. Carper Water Resources Development Act of 2024 (40 U.S.C. 584 note), the Administrator of the General Services Administration shall-- (1) collaborate with tenants of federally-leased space to better identify concerns among Federal agencies around shared- space arrangements; (2) work to develop a criteria that would facilitate the expanded use of space-sharing or collocating; (3) identify how special-use spaces can be used to improve space-sharing or collocating; and (4) establish measurable objectives, in consultation with the tenants of federally-leased space, to quantify the success of shared-space arrangements among Federal agencies. (b) Briefing.--Not later than 6 months after the date of enactment of this Act, the Administrator shall brief the Committee on Transportation and Infrastructure of the House of Representatives and the Committee on Environment and Public Works of the Senate on the implementation of the requirements described in subsection (a). Passed the House of Representatives September 8, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3424 _______________________________________________________________________ AN ACT To require the Administrator of the General Services Administration to collaborate with Federal tenants with respect to shared-space arrangements, and for other purposes.",
+        "governed_bytes_sha256": "a2aa72663d884915c0ad95729366167c3711486bd5acccec017ba85f319f06ed"
+      }
+    },
+    {
+      "original_source_object_sha256": "fb2794a9b6b0f99bdaa251a228e9bf1fd23850e70c425c628e9d7a602e0bdbeb",
+      "source": {
+        "source_id": "clerk:119:1:241",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll241.xml",
+        "text_version": null,
+        "raw_sha256": "42e633e1196158bf0d35159d4add098749cfcc354cea2f4681e2145e17b63b37",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "241",
+          "legis-num": "H R 3425",
+          "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+          "vote-type": "2/3 YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "8-Sep-2025",
+          "action-time": "7:02 PM",
+          "vote-desc": "POST Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Yea",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "206",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "12"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "196",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "16"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "861e257856fa7c79fdcacd9149b311fec1ad6e49da096462e1dc1dddea07c7e0"
+      }
+    },
+    {
+      "original_source_object_sha256": "07995932ae86e691965f39b24f64ecdfe9520ced84f574687270e6d10e5f5353",
+      "source": {
+        "source_id": "govinfo:hr3425eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3425eh/html/BILLS-119hr3425eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "7c98b89464c0b5cc22e80bd83578446de5a7dd0c1d0c0cbe2fec7fe255b90ef0",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 3425 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 3425 _______________________________________________________________________ AN ACT To direct the Director of the Federal Protective Service to establish processes to strengthen oversight, performance, and accountability of contract security personnel engaged in the protection of certain buildings and grounds, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Personnel Oversight and Shift Tracking Act of 2025'' or the ``POST Act of 2025''. SEC. 2. IMPROVED DATA COLLECTION AND PERFORMANCE ACCOUNTABILITY. (a) In General.--Not later than 1 year after the date of enactment of this Act, the Director of the Federal Protective Service shall establish processes to strengthen oversight, performance, and accountability of contract security personnel engaged in the protection of buildings and grounds that are owned, occupied, or secured by the General Services Administration Public Buildings Service. (b) Oversight of Contract Security Personnel.--In carrying out the activities described in subsection (a), the Director shall-- (1) establish standards for the collection, maintenance, and analysis of covert testing data, including the creation of a comprehensive and uniform method for documenting test outcomes, identifying root causes of failures, and categorizing types of vulnerabilities detected; (2) begin conducting quarterly analytical reviews of covert testing data to identify trends, recurring deficiencies, and opportunities for operational improvement across all covered facilities; (3) direct the security contractor who is providing security services to the Federal Protective Service to establish a mandatory, cause-specific corrective training and performance improvement plan for any contract security personnel who fail a covert test and review the security contractor's performance improvement plan to ensure that the security contractor has and will provide appropriate training and procedures to avoid any future covert testing failures; and (4) develop updated security training guidance for contract security personnel to reflect findings from covert testing data, emerging threats, and best practices. (c) Report to Congress.--Upon completion of the activities described in subsection (b), and annually thereafter, the Director shall submit to the Committee on Transportation and Infrastructure of the House of Representatives and the Committee on Homeland Security and Governmental Affairs of the Senate an report on the implementation of the requirements of this section, including any identified challenges and recommendations for additional legislative action. SEC. 3. PERSONNEL SHIFT MANAGEMENT AND SYSTEM MODERNIZATION. (a) Evaluation of the Personnel Tracking System.--Not later than 180 days after the date of enactment of this Act, the Director of the Federal Protective Service shall-- (1) conduct a comprehensive evaluation of the personnel tracking system used to manage and monitor the deployment availability of contract security personnel; (2) determine whether to replace the system described in paragraph (1) with a more reliable personnel tracking platform, including private sector solutions, or whether to implement corrective actions to improve the system described in paragraph (1), including technical, operational, or administrative fixes; and (3) develop and publish an implementation plan that includes-- (A) a timeline for completion of system replacement or corrective actions; and (B) procedures to ensure timely and accurate communication to building tenants regarding contract security personnel shortages or absences or security coverage gaps. (b) Report to Congress.--Not later than 1 year after the date of enactment of this Act, and annually thereafter for 3 years, the Director shall submit to the Committee on Transportation and Infrastructure of the House of Representatives and the Committee on Homeland Security and Governmental Affairs of the Senate a report that includes-- (1) the determination made under subsection (a)(2); (2) a detailed summary of any implementation actions undertaken pursuant to subsection (a); (3) an evaluation of the effectiveness of tenant communication protocols; and (4) any recommendations for additional legislative or administrative actions. SEC. 4. SAVINGS CLAUSE. Nothing in this Act shall be construed as designating an employee of a contractor of the Department of Homeland Security who is engaged in the protection of Federal property pursuant to section 1315 of title 40, United States Code, as a Federal employee. Passed the House of Representatives September 8, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 3425 _______________________________________________________________________ AN ACT To direct the Director of the Federal Protective Service to establish processes to strengthen oversight, performance, and accountability of contract security personnel engaged in the protection of certain buildings and grounds, and for other purposes.",
+        "governed_bytes_sha256": "23749124dca691b44a36969f31fd1984c65574c52e043428fb1f1c90011eff4f"
+      }
+    },
+    {
+      "original_source_object_sha256": "312d5d7dec50515c970d607227f084d1883ab72e5f981526efc824307bf75903",
+      "source": {
+        "source_id": "govinfo:40usc1315-2024",
+        "source_type": "official_statutory_text",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleI-chap13-sec1315.htm",
+        "text_version": "2024 Code section",
+        "raw_sha256": "c13d370b714ae0d2de3ea4e4f920a3ba5fea2d35bc8104b97d12d3a1b1a3b925",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/51179220754ef40323724dbebf0831fc87b51deaa3af350b7e4f410d479ee65c.0000000.json",
+              "sha256": "8d361e758130c3c91c78ced0f4447bad23c918e4203c6e857551f062dc7aea33",
+              "start_character": 0,
+              "end_character": 19769
+            }
+          ],
+          "utf8_sha256": "51179220754ef40323724dbebf0831fc87b51deaa3af350b7e4f410d479ee65c",
+          "total_characters": 19769,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "a431a09ba09f39ab3dbe516432a617a6309ab3395a9273cd7d01dbcdf1495b94"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 13
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-21T13:59:01.084804+00:00",
+    "qualification": "Complete retainedRH12407characters plus selected2024definitions2970/523/1030characters read before marker, untimed. Exact governedbodyRH1261:11649/EH541:10929comparison passed10388characters. No freshacquisition, broaderdefinitiondocument/floor/currentlaw/individualoutcome certificate."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-21T14:03:02.654560+00:00",
+    "end_utc": "2026-10-21T14:03:07.456477+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 131 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch131_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.47
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.332
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 241.57,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 4.802,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 10.023,
+    "process_wall_seconds": 10.227,
+    "result": "passed_after_receipt_filename_preparation_correction",
+    "scope": [
+      "Current131RH/EHbodyidentity/selectedoffenseexceptions/age-at-offense/traffickingalternatives/conviction-versusnoncriminalservice",
+      "Preserved130placementcontextguard-on-exactbeforeview",
+      "Preserved129completeEHguard-on-original130preimage",
+      "Preserved128PartA6certification/clocks/literalLACKSStatefloor/savings"
+    ]
+  },
+  "initial_failed_focused_attempt": {
+    "start_utc": "2026-10-21T14:01:32.804011+00:00",
+    "end_utc": "2026-10-21T14:01:40.512658+00:00",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_hr4371_committee_and_offense_context_preserves_exceptions_age_and_conviction_scopes",
+      "backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_partA6_full_own_body_preserves_certification_review_clocks_literal_discretion_and_savings",
+      "backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_hr4371_dated_placement_context_keeps_old_rules_selected_scope_and_opposite_dataflows",
+      "backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_hr4371_full_EH_keeps_age_sponsor_disclosure_and_conditional_implementation_scopes"
+    ],
+    "returncode": 1,
+    "process_wall_seconds": 7.709,
+    "test_count": 4,
+    "stdout": "",
+    "stderr": "E...\n======================================================================\nERROR: test_hr4371_committee_and_offense_context_preserves_exceptions_age_and_conviction_scopes (backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_hr4371_committee_and_offense_context_preserves_exceptions_age_and_conviction_scopes)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra\\backend\\tests\\test_infrastructure_discovery_delta.py\", line 1017, in test_hr4371_committee_and_offense_context_preserves_exceptions_age_and_conviction_scopes\n    p=folder(131);r=read(p/'hr4371_committee_offense_context_receipt.json');a=next(x for x in read(p/'membership_review.json')['records'] if x['action_id']==r['action_id']);u=next(x for x in read(p/'universe_proposal.json')['candidate_dispositions'] if x['action_id']==r['action_id']);ss={x['source_id']:x for x in read(p/'sources.json')['sources']}\n                    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\.w\\infra\\scripts\\validate_infrastructure_candidate_seed.py\", line 30, in read\n    return json.loads(path.read_text(encoding=\"utf-8\"))\n                      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_local.py\", line 546, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_abc.py\", line 632, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_local.py\", line 537, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\Dylan\\\\Documents\\\\Data Science\\\\political_fingerprint\\\\.w\\\\infra\\\\docs\\\\editorial\\\\shared_candidates\\\\house_119_infrastructure_batch131_20260916\\\\hr4371_committee_offense_context_receipt.json'\n\n----------------------------------------------------------------------\nRan 4 tests in 7.475s\n\nFAILED (errors=1)\n"
+  },
+  "receipt_filename_preparation_correction": "docs/editorial/shared_candidates/house_119_infrastructure_batch131_20260916/receipt_filename_preparation_receipt.json",
+  "timing_qualification": "Source/semantic successfulprocess4.802s excludes finalfocusedprocess10.227s, initialfailedfocusedprocess7.709s and byte/deliveryoverhead. Preparatorysource reading untimed; elapsedauthoringwindow is not activeworkduration."
+}

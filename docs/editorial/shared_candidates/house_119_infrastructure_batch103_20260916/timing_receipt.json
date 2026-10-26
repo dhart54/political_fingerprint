@@ -1,0 +1,35 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T18:38:27.313243+00:00",
+    "qualification": "Bounded disclosure-correction specification start; retained-source inspection already performed, not continuously timed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T18:39:00.314866+00:00",
+    "end_utc": "2026-10-19T18:39:05.285040+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 103 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch103_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.359
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.181
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_discovery_delta.InfrastructureDiscoveryDeltaTests.test_roll241_report_extent_correction_preserves_source_and_pending_state",
+        "returncode": 0,
+        "process_wall_seconds": 0.381,
+        "scope": "One focused correction regression, not the full135test suite"
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 33.002,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 4.921,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0
+}

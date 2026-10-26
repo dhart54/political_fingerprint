@@ -1,0 +1,227 @@
+{
+  "starting_head": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2",
+  "predecessor_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916",
+  "new_screened_ids": [
+    "house:119:1:76",
+    "house:119:1:77",
+    "house:119:1:78",
+    "house:119:1:79",
+    "house:119:1:80",
+    "house:119:1:81",
+    "house:119:1:82",
+    "house:119:1:83",
+    "house:119:1:84",
+    "house:119:1:85"
+  ],
+  "new_interpreted_ids": [],
+  "expected_counts": {
+    "procedural_context": 47,
+    "exact_action_ineligible": 24,
+    "interpreted_substantive_directional": 34,
+    "pending_interpretation": 45,
+    "source_unresolved": 524,
+    "interpreted_substantive_non_directional": 1,
+    "expressive_nonbinding": 1
+  },
+  "prior_source_count": 409,
+  "reused_sources": [
+    {
+      "source_id": "clerk:119:1:76",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "3479ec45f930b6e4bfc6ec58a11d2a6f18cf7a4e793a608027ba16f0e0a0dd20",
+      "raw_sha256": "8ca1c1408b380d526c98f744f86a5f1839b2944feeeca8b459152a5a937c8e08",
+      "governed_bytes_sha256": "5c2ea4eac161a33a2443c4e3d49f5d1ca7eab8ddf5bbe21070cbb6cd0073015f"
+    },
+    {
+      "source_id": "clerk:119:1:77",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "e27842d66bd13cf926aee30de0e6882085d552194b4ef5040be50551acfbfb4e",
+      "raw_sha256": "9ee7a64a06ff9b8eb195b75811db50b096b3819b6651f6e29aa6d0a6d7c22ffa",
+      "governed_bytes_sha256": "3d0f47db7c1b10cfd2db1c1025700fbab59e90ed9d0ee92cee260d5214ab4beb"
+    },
+    {
+      "source_id": "govinfo:hjres24eh",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "4f87f169e0bd954f78da8e250a04414bba06996d1e221d08cff7b13c10601a57",
+      "raw_sha256": "bfb8d19d4171fd0d639be5d5a7bd766dd83232c9f762e68df9227b374f3bb3db",
+      "governed_bytes_sha256": "cbba8d1eb9c47a8590dc960ec7033706c12ad334cceb5ef1ac71108873d7d9ca"
+    },
+    {
+      "source_id": "clerk:119:1:78",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "ba66255da084c56be0780feee8093644f47f6e0ba86721188821a35f6d8d6576",
+      "raw_sha256": "47562eb33a2ecaae536ad73c94faa9e4da84adbdcde319e259795fd93387783d",
+      "governed_bytes_sha256": "a9e4e04deb4eb7773f1d4afffabae89cdc13bf92e24a95a9d0a9cae39670aac1"
+    },
+    {
+      "source_id": "govinfo:hjres75eh",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "2c19760f81a42b7708ce9d96be7e32e59a8623d6bee61af257cfcb127f56decb",
+      "raw_sha256": "2d6ef399f0eddb2dd9db4bad6e7c31ee39c6c1d4beeced46fe877e4eca3e189d",
+      "governed_bytes_sha256": "8e3945ad21fedfde499d2478f5000f5a640ee9507326d717020240f47d3c3c63"
+    },
+    {
+      "source_id": "clerk:119:1:79",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "09e070ec5a75ca669d888e18d7b518a861c613f896fa06f3e25fadb018d926c4",
+      "raw_sha256": "66adc268d659363b5f0f76e27503ca1a4e11a7b0c1947ecf8d95348192c3b5ea",
+      "governed_bytes_sha256": "b8fc6eb1cd175c2453d0a9d9b303c9a0aa56d1d83063dabdd2a54c8313c16f66"
+    },
+    {
+      "source_id": "immigration:roll79-initial171",
+      "origin": "676ae9e54ecd1192202567738b423ea42b5513c5:docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+      "source_object_sha256": "508d2844d8869063db8644754af0a694996e4d7cdfec0e2bb4a14d1a8df2c96d",
+      "raw_sha256": "5dbac4769a73f79db325bede4b79fc4cfd36e05bb2180cd704d86cd87bea43fe",
+      "governed_bytes_sha256": "6301e883649b5b9bd73d46d08eb29d21c6ab9dfc161bc93efdf20da1f793a019"
+    },
+    {
+      "source_id": "immigration:roll79-recorded171",
+      "origin": "676ae9e54ecd1192202567738b423ea42b5513c5:docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+      "source_object_sha256": "9abccce48ada75f55300cbbca68d8d78d1d4902c053862ede70a22c89b51ba0b",
+      "raw_sha256": "3f25391effba5f01288409697788597dc8ec8909cf718bed19b639654c6c7e09",
+      "governed_bytes_sha256": "c8624cf67a702d4eca46f303037a686c61b5bd9809ec3ef3df8373bfd0a08103"
+    },
+    {
+      "source_id": "clerk:119:1:80",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "320e6b5d7386fd28c63742a1b967a36639d7ac070e599cf8fbace0e99e30abe2",
+      "raw_sha256": "0e76c0109c0a4afc9aecfe09707a904ffe6fad222423755f83c88530c0043eb2",
+      "governed_bytes_sha256": "c5b8c802168c3a54ddbfa1e4f5693c49849f75d414c018d3ae07cb0ae00cb6d2"
+    },
+    {
+      "source_id": "immigration:hr1048-package-initial175",
+      "origin": "676ae9e54ecd1192202567738b423ea42b5513c5:docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+      "source_object_sha256": "8b6ca68dc609f6ad8277bb3910e5e19e7a5672dd2ac781dfb1452d21e4e5147a",
+      "raw_sha256": "5dbac4769a73f79db325bede4b79fc4cfd36e05bb2180cd704d86cd87bea43fe",
+      "governed_bytes_sha256": "b33a0673b9fc7fe7d256107f922cb5a4139d0d658a3ba413af28d8c707671539"
+    },
+    {
+      "source_id": "immigration:hr1048-package-recorded175",
+      "origin": "676ae9e54ecd1192202567738b423ea42b5513c5:docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+      "source_object_sha256": "08df0ea872d917b83a3d0eca6e81c47a6f717488635c463422bbfb8aa81e5b75",
+      "raw_sha256": "3f25391effba5f01288409697788597dc8ec8909cf718bed19b639654c6c7e09",
+      "governed_bytes_sha256": "cf039956d23fd52fed2ed08ac292ac24c18fff3ff1aaebeb8bdb3f9d63d0c5b8"
+    },
+    {
+      "source_id": "house-rules:rcp119-1",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "40a0354e9c4d58534e80b7844250fb0cc9053b10e7d495e1c65ff861a7ee71ee",
+      "raw_sha256": "7f39ccff3de9ad5daf431e2dd65933e8b16b170e5e8609a130d8e466087903b0",
+      "governed_bytes_sha256": "f06d453fe07508a42e242fbea9dfab70d52affbff95ca1883d1e9927ca8c11a6"
+    },
+    {
+      "source_id": "clerk:119:1:81",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "e57c987f1fa709968546eec3ededa37fcd0bdeaa1d18ccbfb8e1e71c92ef341f",
+      "raw_sha256": "6a3e0b37322b72def4fcf51df457b209c510026cbda20f93c73dce3cca4c087a",
+      "governed_bytes_sha256": "3a8e7e671f0b39e7ac4c39179c88060ce19cd46b41b33afc9c8f6c27e337f1dc"
+    },
+    {
+      "source_id": "clerk:119:1:82",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "e3a4c2d12656148ec95f1085a789254be9c320ae3a52feb79bf925ae9be80e06",
+      "raw_sha256": "b31495466609b77462580f4e541137793d19abbec82c8cafd75545e30bd96f32",
+      "governed_bytes_sha256": "b1c0770ba42e4db37ea76e9ebfdeadb4881f4b45c20a1c5ad17222e3e2391866"
+    },
+    {
+      "source_id": "clerk:119:1:83",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "d790897b74cebeadb41230f41b73ec9e0deaf2c8e3b4bd1afe153771acc0183b",
+      "raw_sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a",
+      "governed_bytes_sha256": "2c54e588ef593dbed98cb9e9678db9112c13e017cbd633baea911c7a4d0d9ff3"
+    },
+    {
+      "source_id": "govinfo:hr1048eh",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "f8706a984b4dea09a97ce942e46e36e26dcdd31e24a5990cba31f5c792fc4152",
+      "raw_sha256": "ac1a332715b35d59dcf9c89eca1ef3c8cc48e86d1ff0c570ad8e1ec3edba0cdb",
+      "governed_bytes_sha256": "08f233c1c7a71e8a8956d09d870289208215dd42933d1a78d3a3f16bf89e6f42"
+    },
+    {
+      "source_id": "clerk:119:1:84",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "245d94a53c605889b606f29991aa5a440471eacb829a0fee08d11e3cf5936d49",
+      "raw_sha256": "391bf24c88c3f1e5b8b9c4d5fc187f20b844273137fb2724492a79443478ca07",
+      "governed_bytes_sha256": "0109e6fe903a766ffe02e6e3316077fd972b78170fec382b9a14fd5fec2ed656"
+    },
+    {
+      "source_id": "govinfo:hr517eh",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "e61b4522686b26cbfa650f4237fa3604127e87e48bb0876096d539b59d2c6b7c",
+      "raw_sha256": "e4cd9eeded6272e4d7d34d9e8b9f5ffb5e8a36f22ca803f722f7387ec01328dc",
+      "governed_bytes_sha256": "9031f3cf67b1789049017156ef1aa88030d023324c960ff99b5b85220656f1a6"
+    },
+    {
+      "source_id": "clerk:119:1:85",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "550ef6474a1097091e7d5d85dab393d6b50477360a8cae12d3b073c772ebead7",
+      "raw_sha256": "7011d3f791c5022a7e466d85f89f2e8908b8fab6d3a995b740642f6b793b4f86",
+      "governed_bytes_sha256": "abd309f4ac822d6e4430233659859753273e3635f2da717ed65631111efff43a"
+    },
+    {
+      "source_id": "govinfo:hr997eh",
+      "origin": "633e3c7e96b6dc9c34ab28be228a2b0f7a6e91d2:docs/editorial/shared_candidates/house_119_health_20260916/sources.json",
+      "source_object_sha256": "0f8a7c03e2bff78c479679109eed3765494eb20b0f0a2d2399e882d139069f09",
+      "raw_sha256": "e5cd0a050761c1bb7107d43330b3d6333cd7769b3164aa06e04a3a9eb5393143",
+      "governed_bytes_sha256": "44cce25eea2d3447d81c049a6a4f2dd795288b34b7e7543d1acff0f41b74103d"
+    }
+  ],
+  "new_sources": [],
+  "source_acquisitions": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hres242eh",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "govinfo:hjres24eh",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "govinfo:hjres75eh",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "govinfo:hr517eh",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "govinfo:hr997eh",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "immigration:roll79-initial171",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "immigration:roll79-recorded171",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "immigration:hr1048-package-initial175",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "immigration:hr1048-package-recorded175",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "house-rules:rcp119-1",
+      "scope": "Complete identified retained operative witness actually read"
+    },
+    {
+      "source_id": "house-rules:rcp119-1",
+      "scope": "Retained selectedPDFpages1,2,39,57,60only; not full60pageprint"
+    },
+    {
+      "source_id": "govinfo:hr1048eh",
+      "scope": "Only operative18388-24818,33184-39053and partial48000-54000read; full57840characterpackage unfinished"
+    },
+    {
+      "source_id": "clerk:119:1:82",
+      "scope": "Exact amendment6/author/result/date and both official No labels verified; another members Present does not transfer"
+    }
+  ],
+  "protected_targets_retried": false,
+  "authority_conferred": false
+}

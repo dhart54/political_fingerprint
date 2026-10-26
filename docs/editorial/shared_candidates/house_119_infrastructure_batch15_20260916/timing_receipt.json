@@ -1,0 +1,26 @@
+{
+  "recovery_start_utc": "2026-10-18T15:40:51.090918+00:00",
+  "formal_validation_start_utc": "2026-10-18T15:49:30.517789+00:00",
+  "useful_recovery_research_authoring_window_seconds": 519.427,
+  "window_qualification": "Elapsed window after recovery marker; includes source reading, baseline capture, authoring, regression edits and routine tool overhead. Not a continuously sampled active-time measurement. Earlier reconciliation and prior-day preparation not included.",
+  "formal_validation_process_seconds": 22.826,
+  "formal_validation_processes": [
+    {
+      "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 15 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch15_20260916\\validation_receipt.json",
+      "returncode": 0,
+      "process_wall_seconds": 0.945
+    },
+    {
+      "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+      "returncode": 0,
+      "process_wall_seconds": 16.942
+    },
+    {
+      "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+      "returncode": 0,
+      "process_wall_seconds": 4.939
+    }
+  ],
+  "interruption_between_days_excluded": true,
+  "byte_proof_and_delivery": "Separate later overhead; not included in useful window or formal validation process seconds."
+}

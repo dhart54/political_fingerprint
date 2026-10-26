@@ -1,0 +1,40 @@
+{
+  "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partI-sec255.htm",
+  "source_edition": "2024 United States Code",
+  "purpose": "H.R.859 named statutory device-exception scope",
+  "started_utc": "2026-10-21T16:15:39.543648+00:00",
+  "prior_tool_observation": {
+    "source_key": "47usc255",
+    "requested_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partI-sec255.htm",
+    "tool": "web.open",
+    "attempts": 1,
+    "result": "unclassified_tool_access_failure",
+    "error": "Internal Error: URL is not accessible via this tool",
+    "http_status": null,
+    "response_body_retained": false,
+    "raw_response_hash": null,
+    "source_registered": false,
+    "restriction": "No retry or alternate acquisition of this failed chain; do not infer denial status or source meaning",
+    "reading_scope": null
+  },
+  "diagnosis": "Original generic tool error supplied no HTTPstatus/body, authentication requirement, permission/security restriction or safety warning; no later raw attempt existed at preflight",
+  "prior_blanket_retry_restriction_superseded": "User updated the two unclassified255/619chains only; genuine denials and all other prior restrictions remain closed",
+  "raw_capture_attempts": 1,
+  "classified_failure_retry": false,
+  "bounded_followup_after_unclassified_tool_failure": true,
+  "maximum_raw_bytes": 2097152,
+  "source_registered": false,
+  "canonical_state_changed": false,
+  "http_status": 200,
+  "final_url": "https://www.govinfo.gov/error",
+  "response_headers": {
+    "Content-Type": "text/html",
+    "Last-Modified": "Tue, 22 Sep 2026 23:48:25 GMT"
+  },
+  "result": "bounded_followup_failed",
+  "error_type": "AssertionError",
+  "error": "",
+  "raw_response_retained": false,
+  "finished_utc": "2026-10-21T16:15:41.072697+00:00",
+  "next_state": "Stop on an actual denial/authentication/security warning; otherwise preserve the exact missing-evidence question without another automatic retry"
+}

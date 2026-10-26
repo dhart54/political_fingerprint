@@ -1,0 +1,176 @@
+{
+  "head": "3a09c19533dad27eb6bb768199d72e65f5d5b5e4",
+  "parent_reviewed_head": "0550157344f42a5ab100a1a7ee362615d0944776",
+  "base": "28437fb5f0c79f7aa3b63faa705c8bb58ac1d7d0",
+  "findings": [],
+  "corrected_finding": {
+    "file": "docs/review_packets/infrastructure_batch137_hr859_scope/source_questions.json",
+    "pointer": "/source_units/1/limits",
+    "status": "closed_at_exact_successor",
+    "corrected_limits": "This is a complete reading of the selected operative (a)\u2013(j) unit, not a current-law or actual-device classification. The 2010 rulemaking clock is historical. Section617 alone does not establish the separate255 and619 frameworks; their selected readings are separately captured in this packet. The relationship to H.R.859's phrase devices or apparatus described in and associated regulation scope remains unadjudicated.",
+    "earlier_PartI_missing_body_limit_unchanged": true
+  },
+  "exact_delta": [
+    "docs/plans/infrastructure_remaining_discovery_screening.md",
+    "docs/review_packets/infrastructure_batch137_hr859_scope/source_questions.json",
+    "docs/review_packets/infrastructure_batch137_hr859_scope/validation_receipt.json"
+  ],
+  "source_questions_only_limits_changed": true,
+  "all_five_captures_and_failed_capture_metadata_byte_identical": true,
+  "diagnosis_chronology_and_helper_snapshot_byte_identical": true,
+  "source_claims_passages_extents_hashes_other_limits_and_flags_unchanged": true,
+  "preserved_paths_authenticated": [
+    "docs/editorial",
+    "backend/app",
+    "frontend",
+    ".github",
+    "scripts/prepare_shared_domain_candidate.py",
+    "scripts/validate_infrastructure_hr859_scope137.py",
+    "backend/tests/test_infrastructure_hr859_scope137.py",
+    "docs/plans/infrastructure_ci_workflow_compatibility_20261021.md",
+    "docs/review_packets/infrastructure_checkpoint132_hosted_validation_blocker.json",
+    "docs/review_packets/infrastructure_batch135_hr4371_decision",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries",
+    "docs/review_packets/infrastructure_batch136_scoped_review_attribution.json",
+    "docs/review_packets/infrastructure_independent_review136_successor_preservation_20261021.json"
+  ],
+  "canonical_editorial_tree_unchanged_from136": true,
+  "compiled_ir_git_blob": "5cf6b8307c78d00ae36197339d78a65ad8392037",
+  "governed_counts": {
+    "records": 676,
+    "sources": 1621,
+    "meanings": 70,
+    "procedural_context": 199,
+    "exact_action_ineligible": 120,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 262,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "hr859_remains_pending_binding_resolved": true,
+  "pending_sealed_decisions": [
+    {
+      "action_id": "house:119:1:340",
+      "seal": "9d1c04ac2119d9bb762fa578a10214f7184f257013a7b07cc2a19f1f58e8982d",
+      "governed_disposition": "pending_interpretation",
+      "binding_unresolved": true
+    },
+    {
+      "action_id": "house:119:1:12",
+      "seal": "2d6d92a9ecdc50ee81fd9acaa4fa9a5134fa845c6bb5fff2462cadbd378c9338",
+      "governed_disposition": "pending_interpretation",
+      "binding_unresolved": false
+    },
+    {
+      "action_id": "house:119:1:108",
+      "seal": "b4dbe5d9617192fe971d8fa16702d48e75371d4828d41db65490f59b26789cdc",
+      "governed_disposition": "pending_interpretation",
+      "binding_unresolved": true
+    }
+  ],
+  "scoped136_attribution_unchanged": true,
+  "final_head_cli": {
+    "command": [
+      "python",
+      "-B",
+      "-m",
+      "scripts.validate_infrastructure_hr859_scope137"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.3985336000332609,
+    "stdout": {
+      "source_scope": {
+        "action_id": "house:119:1:109",
+        "selected_sources": 5,
+        "selected_primary_unit_characters": 13330,
+        "original_raw_bytes": 117656,
+        "canonical_source_objects_added": 0,
+        "whole_case_completed": false,
+        "actual_device_classified": false
+      },
+      "transport": {
+        "files": 10,
+        "byte_units": "committed_LF_UTF8"
+      }
+    },
+    "stderr": ""
+  },
+  "packet_manifest_entries": [
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/15usc45b_capture.json",
+      "committed_lf_bytes": 33280,
+      "sha256": "4abb840b9e9a0ea24cf674569507fa9645f4563aebd12a66583d72e3ed5fb64f"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc255_capture.json",
+      "committed_lf_bytes": 10874,
+      "sha256": "1dce5be9d69f91ec9e5b07076fca291c3e2aa4a0688f668ef25970ff20c5f5a7"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc255_failed_capture.json",
+      "committed_lf_bytes": 2052,
+      "sha256": "3d01d83d04d58578e1ee118a96612db0012a61b440fde822ce1a63f6a5c6a443"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc303_capture.json",
+      "committed_lf_bytes": 177195,
+      "sha256": "808d3b6690d9eaec7c4a393ea90ef216aa7bff8cf4633257044b6e7c2fd54c4a"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc617_capture.json",
+      "committed_lf_bytes": 24443,
+      "sha256": "17f3f0dcee708af32b37aa2c02db7af56ebf403b9f0ed632c19a3a34b4555f93"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/47usc619_capture.json",
+      "committed_lf_bytes": 10240,
+      "sha256": "0183f0416e0870646f9aab0412ed5e7ec8e67b6b0284b73151d34f92c2a4f39d"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/access_diagnosis_and_followup.json",
+      "committed_lf_bytes": 9008,
+      "sha256": "7213a7f714b1b3ffb0c4a63256631d57254dff49b70dec43f307deb26f8df0fc"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/acquisition_observations.json",
+      "committed_lf_bytes": 3364,
+      "sha256": "0fc1c28de048ab0518d0e1f7ce59f461b58bdb69f8c6505b34fd3b48b71c44a7"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/README.md",
+      "committed_lf_bytes": 3484,
+      "sha256": "535388a0b318f2b6f91ecf9c425a0b52719edc73134a97cb807cd453100204fc"
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch137_hr859_scope/source_questions.json",
+      "committed_lf_bytes": 30942,
+      "sha256": "8c44ef2125a36161fa04b6598bd2c6715ea5db528f918cbce37a1723ccd8cbed"
+    }
+  ],
+  "previous_head_independent_tests": {
+    "head": "0550157344f42a5ab100a1a7ee362615d0944776",
+    "tests": 5,
+    "reported_seconds": 1.39,
+    "negative_mutations": 29,
+    "validator_and_test_code_unchanged": true,
+    "rerun_at_successor": false,
+    "qualification": "Original five-test result retained at its actual head; fresh successor CLI checks changed data and ten-file transport"
+  },
+  "original_review_evidence_sha256": "a0fe95bb2ab8a486baad1912122246e1a866550bebec9150a8353ec187274cbe",
+  "source_authentication_evidence_sha256": "36f7fef57374e16c6e05df6666b25c8d50cf0d13931782807bd50268c77f0fc3",
+  "snapshot_files": 48,
+  "snapshot_bytes": 45216281,
+  "canonical_registration_or_application_authorized": false,
+  "semantic_acceptance": false,
+  "compatibility_and_health_changes": false,
+  "limits": [
+    "Read-only retained evidence; no source reacquisition or live services",
+    "Original acquisition HTTP metadata is retained capture provenance, not independently replayed network history",
+    "Selected dated statutory units only; no whole-page, current-law, exhaustive regulations or actual-device determination",
+    "No whole-case completion, shared-core authoring, semantic acceptance or canonical registration/application",
+    "No closed136/135/historical gates, full repository suite, canonical seven gate or hosted success claimed",
+    "No workflow/shared-helper/compatibility/Health changes; no owner or Git mutations",
+    "Final-head validation is the updated source/transport CLI; prior five tests are not relabelled as successor tests"
+  ]
+}

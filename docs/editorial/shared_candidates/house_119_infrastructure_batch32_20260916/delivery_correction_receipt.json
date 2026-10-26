@@ -1,0 +1,12 @@
+{
+  "stage": "delivery_after_successful_semantic_gates",
+  "initial_staging_failure": "Staging began while preservation proof writer was still running; git diff --cached --check caught incomplete validation receipt and stopped before commit.",
+  "incomplete_staged_sha256": "b6f3127df87f42caf7d5f08881e99238f7bd94c3eaf6acd2ebff288900ab80d0",
+  "incomplete_staged_byte_length": 967,
+  "failed_rule_output": "validation_receipt.json:29 trailing whitespace; new blank line at EOF",
+  "preimage_path": ".tmp/infra_batch32/incomplete_staged_validation_receipt.txt",
+  "safe_correction": "Awaited proof-writer completion; restage final files and verify index versus normalized working bytes before commit.",
+  "new_research_or_semantic_change": false,
+  "validation_tests_repeated": false,
+  "production_effects": false
+}

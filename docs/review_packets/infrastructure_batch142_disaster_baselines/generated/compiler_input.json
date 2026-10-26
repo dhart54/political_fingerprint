@@ -1,0 +1,256 @@
+{
+  "review_state": "candidate_pending_external_semantic_review",
+  "case_scope": "full_record",
+  "members": [
+    {
+      "member_id": "F000477",
+      "party": "D",
+      "actions": [
+        {
+          "action_id": "house:119:1:9",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:10",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:13",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:49",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:88",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        }
+      ]
+    },
+    {
+      "member_id": "M001184",
+      "party": "R",
+      "actions": [
+        {
+          "action_id": "house:119:1:9",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:10",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:13",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:49",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:88",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        }
+      ]
+    }
+  ],
+  "shared_semantics": {
+    "actions": [
+      {
+        "action_id": "house:119:1:9",
+        "action_meaning_ref": "disaster-five-action-candidate-142-20261021:house:119:1:9:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.R.152 would replace section1223 of the Disaster Recovery Reform Act of2018. Within two years after enactment of the section, the Administrator, coordinating with the named agencies, would study and plan improvements to disaster-applicant and grantee information collection and plan regular federal disaster-assistance reporting, including a public website. A regularly convened interagency working group would identify duplication in preliminary damage assessments, assess a single-agency approach and identify potential emerging technologies such as unmanned aircraft systems, consistent with the named2017 FEMA systems requirements.\nThe Administrator would submit one comprehensive report containing the plans and working-group findings, which may include recommendations, to the two named congressional committees. FEMA would publish pre-compressed easily downloadable versions in appropriate formats and machine-readable form if applicable. Available publications, databases and other information could be used. A requested briefing would be due within180days after report submission.\nThe dated2018 section being replaced required a study and plans within one year after its enactment; it did not contain this entire new working-group/report scheme. The separate2017 law concerns grant-system modernization with its own qualifications. This bill does not order deployment of drones or implementation of every recommendation. House passage starts no enactment-relative clock.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr152:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:9",
+          "govinfo:hr152eh",
+          "govinfo:context142:fema2017",
+          "govinfo:context142:drra1223",
+          "govinfo:context142:drra1202"
+        ],
+        "structural_metadata": {
+          "stage_order": 10009
+        }
+      },
+      {
+        "action_id": "house:119:1:10",
+        "action_meaning_ref": "disaster-five-action-candidate-142-20261021:house:119:1:10:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.R.153 would require OMB, consulting Treasury and covered agencies, to establish a subpage within the FFATA website for the bill's disaster-assistance information. Within30days after each calendar quarter, a covered agency that made assistance available to an eligible recipient would publish quarterly totals, expended or obligated amounts and a detailed project/activity list with the specified identifiers, location, completion status and collected reporting information, and ensure agency data assets are machine readable. Agencies would issue necessary guidance; OMB could use a private-entity agreement if necessary for transparency.\nCovered agencies are Stafford-assistance agencies, SBA and HUD. The bill defines disaster assistance as federal funds responding to a specified natural disaster, including the enumerated SBA, HUD and Stafford forms. Eligible recipients are direct federal recipient entities, including States, other than individuals; a grant, loan or contract can qualify. Its four-part natural-disaster definition is retained. These printed references describe the reporting scope without certifying every incorporated program's current rules or a particular recipient's eligibility.\nThe existing dated FFATA section already supplied public award reporting and machine-readable/open-data requirements with its own historical dates, thresholds and exceptions. The proposed subpage, quarterly disaster fields and bill-specific definitions are the exact change. Its reporting scope does not inherit an unstated $25,000 threshold from that baseline. It does not itself award disaster funding or build the projects being reported.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr153:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:10",
+          "govinfo:hr153eh",
+          "govinfo:context142:ffata2",
+          "govinfo:context142:sba7b"
+        ],
+        "structural_metadata": {
+          "stage_order": 10010
+        }
+      },
+      {
+        "action_id": "house:119:1:13",
+        "action_meaning_ref": "disaster-five-action-candidate-142-20261021:house:119:1:13:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.R.164 would add subsection(e) to Stafford Act section403. An electric utility could carry out cost-effective hazard mitigation jointly or otherwise in combination with power-restoration activities receiving section403 assistance. Receipt of section403 emergency power-restoration assistance would not render a facility ineligible for section406 hazard mitigation assistance for which it is otherwise eligible. The amendment would apply only to amounts appropriated on or after enactment.\nThe dated403 baseline provides essential assistance under its own conditions; the dated406 baseline covers qualifying public and private nonprofit facilities and preserves eligibility, cost-share and other restrictions. The definitions provide context for public and private nonprofit facilities, rather than proving that every utility qualifies. This bill changes the coordination and non-disqualification rules, not every baseline condition.\nIt does not appropriate a specified amount, guarantee funding, erase cost-effectiveness or otherwise-eligible limits, or make all electric utilities eligible. House passage alone does not establish enactment or applicability to an actual appropriation.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr164:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:13",
+          "govinfo:hr164eh",
+          "govinfo:context142:stafford403",
+          "govinfo:context142:stafford406",
+          "govinfo:context142:stafford_definitions"
+        ],
+        "structural_metadata": {
+          "stage_order": 10013
+        }
+      },
+      {
+        "action_id": "house:119:1:49",
+        "action_meaning_ref": "disaster-five-action-candidate-142-20261021:house:119:1:49:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "Within one year after enactment, H.R.804 would require the SBA Administrator to ensure that its Associate Administrator for Disaster Recovery and Resilience takes necessary actions so individuals in rural areas, as defined in section7(b)(16), for which a section7(b) disaster declaration has been made have full access to section7(b) assistance, including targeted outreach and marketing materials. The duty is broader than marketing alone, but the bill supplies no new loan amount or automatic individual entitlement.\nThe dated rural paragraph(16) defines rural areas through Census designation, not a substituted USDA or population test, and contains conditional discretionary declarations and reporting. The entire dated7(b) program includes physical repair and mitigation as well as economic-injury and other assistance; not every program provision concerns physical infrastructure. Historical time-limited terms are not revived by this candidate.\nSection3 redesignates only the SECOND printed paragraph(16), relating to the statute of limitations, as paragraph(17). It does not renumber or repeal the first rural-disaster paragraph(16). The two identical printed numbers are separate source units and have different subjects. House passage starts no one-year implementation clock.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr804:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:49",
+          "govinfo:hr804eh",
+          "govinfo:context142:sba7b"
+        ],
+        "structural_metadata": {
+          "stage_order": 10049
+        }
+      },
+      {
+        "action_id": "house:119:1:88",
+        "action_meaning_ref": "disaster-five-action-candidate-142-20261021:house:119:1:88:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+          "exact_action_basis": "H.R.1491 as amended would add section7508A(f): for section6511(b)(2)(A)'s limitation on credit or refund, a period disregarded under7508A for filing a tax return would be treated as an extension of the filing time. This concerns that refund-amount lookback and does not itself rewrite every claim-filing limit or section6511 special rule. It would apply to claims filed after enactment.\nThe bill would also amend6303(b) so that, for its paragraph(1), the last prescribed tax-payment date takes account of a period disregarded under7508A. It preserves the printed context concerning payment before the last date and the jeopardy exception; it is not a universal ban on collection activity. This amendment would apply to notices issued after enactment. Dated7508A supplies distinct discretionary and mandatory postponement frameworks and definitions, not an actual taxpayer deadline calculation.\nMarch31's floor text prints the amended1491 motion and its operative clauses; further proceedings on that motion were postponed after yeas and nays were ordered. April1 resumes the same unfinished amended motion, records roll88 and states passage as amended. That sequence, compared to both operative EH clauses and the Clerk question, supports a candidate exact-version binding independently of matching dates. It does not change the still-pending canonical binding flag or infer enactment.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr1491:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:88",
+          "govinfo:hr1491eh",
+          "govinfo:context142:tax7508A",
+          "govinfo:context142:tax6511ab",
+          "govinfo:context142:tax6303",
+          "govinfo:context142:floor_march31",
+          "govinfo:context142:floor_april1"
+        ],
+        "structural_metadata": {
+          "stage_order": 10088
+        }
+      }
+    ],
+    "episodes": [
+      {
+        "episode_id": "episode:hr152:119",
+        "action_ids": [
+          "house:119:1:9"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr153:119",
+        "action_ids": [
+          "house:119:1:10"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr164:119",
+        "action_ids": [
+          "house:119:1:13"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr804:119",
+        "action_ids": [
+          "house:119:1:49"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr1491:119",
+        "action_ids": [
+          "house:119:1:88"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      }
+    ],
+    "policy_families": [],
+    "policy_traits": [],
+    "shared_review_dependencies": [],
+    "source_render_constraints": [
+      {
+        "action_ids": [
+          "house:119:1:9",
+          "house:119:1:10",
+          "house:119:1:13",
+          "house:119:1:49",
+          "house:119:1:88"
+        ],
+        "constraint_id": "candidate-episode-hold",
+        "detail": "All five exact-case eligibility decisions remain pending and these literal-meaning candidates confer no issue proposition, canonical admission, acceptance or publication authority.",
+        "semantic_effect": "blocks_behavioral_propositions"
+      }
+    ],
+    "trait_relationships": []
+  }
+}

@@ -1,0 +1,590 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 69,
+  "exact_committed_head": "bb45bfcbc8aade4dfe16349293db86b315157b53",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "bb45bfcbc8aade4dfe16349293db86b315157b53",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/membership_review.json",
+      "git_blob": "9716e5a321a4a2f54c54ac5012e84b39356deca1",
+      "git_bytes_sha256": "c92928467d3d11be68a1f9c2707ca1a89466c0edb6ab6c11bedc79b4a9992fc2"
+    },
+    "sources": {
+      "head": "bb45bfcbc8aade4dfe16349293db86b315157b53",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/sources.json",
+      "git_blob": "115b5ccc24c569bea41d337130f424c7a68f4213",
+      "git_bytes_sha256": "1c2a7ffc95cd40745fb2956427f10bb4e93bb2dd37cd459cc20914c56ea72a70"
+    },
+    "screening": {
+      "head": "bb45bfcbc8aade4dfe16349293db86b315157b53",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/screening_receipt.json",
+      "git_blob": "ac68b20133c730aae56e02b618712475175d3244",
+      "git_bytes_sha256": "ccf69adb0f077dae4d160089b499160160cc00dd12bbfd858b2f4eec23a96921"
+    },
+    "screening_units": {
+      "head": "bb45bfcbc8aade4dfe16349293db86b315157b53",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/screening_units_receipt.json",
+      "git_blob": "14356e9c9d9d33349e7babd32bc720f124a09696",
+      "git_bytes_sha256": "4b2ed1582b03d16d4db542cfcab9a17d17582bf69ff52da125bee9021172cc15"
+    },
+    "validation": {
+      "head": "bb45bfcbc8aade4dfe16349293db86b315157b53",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/validation_receipt.json",
+      "git_blob": "d2a2f0b7ef6dd463cf1ab7dcdadefed35ca4d339",
+      "git_bytes_sha256": "5bd1758ccd26ea76afb0aba878a82ba17739c920c39ff1dc9d73b8871cac0bbe"
+    }
+  },
+  "original_membership_review_sha256": "3e0f723a92666352ec0afe58a13ed0ee74554545ff24566330c1cd0723d933e1",
+  "new_screened_ids": [
+    "house:119:2:27",
+    "house:119:2:28",
+    "house:119:2:29",
+    "house:119:2:30",
+    "house:119:2:31"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "850dc563756805832e5952eaec6b446f5f61aae6eb02b1a0b32060c6681f57bb",
+      "record": {
+        "action_id": "house:119:2:27",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete Crane amendment2 strikes page205line20–206line7 (the $315million NED allocation, its $210.316million/$104.684million split,7062(a)exception and60dayapportionment) and all7032 at318line11–320line21. Preserve the $2.175billion should formulation, separate notwithstanding authority, NED beneficiary selection, democracy definition, foreign-government approval/disclosure protections and activist/journalist support; this is not an unqualified permanent ban on every NED or democracy funding source. Dated NED private-group democracy-support purposes and grant-only framework are bound. The explanatory context also contains digital-freedom consultation and AI-surveillance assessment in human-rights reporting; these cannot be silently erased to force a simple foreign-aid exclusion or treated as a new technical-system appropriation. Exact Infrastructure relationship of the whole deleted program/rule bundle remains pending taxonomy/context review.127–291recorded rejection with18NotVoting overrides the earlier voice appearance; no adoption into passage, actual censorship finding, motive or realized rights/technology outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:27",
+            "url": "https://clerk.house.gov/evs/2026/roll027.xml",
+            "raw_sha256": "81e071847f5970b1c0967ae6ad80b5dccd1b1fc2276bf5748e1f17b3f0f67796",
+            "governed_bytes_sha256": "78327790113350f090e0277d044786413001d318babbc9a917396f31d281bfab"
+          },
+          {
+            "source_id": "govinfo:hr7006ih-crane2-strike-pages",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/pdf/BILLS-119hr7006ih.pdf",
+            "raw_sha256": "c3a1c89b769171bfade34a1681d3218b36b4f5dc0b7c2ca64fedc88d9c9d9816",
+            "governed_bytes_sha256": "95de47a00a0a49e8e21bdacbae893d0e7f3238ead331c13ae121298230131855"
+          },
+          {
+            "source_id": "govinfo:22usc4411-2024-ned",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap54-subchapII-sec4411.htm",
+            "raw_sha256": "fa1e0d543a5d5dff4c5ab059f1607fdd07e7d5c827f660fca917f9253df92d32",
+            "governed_bytes_sha256": "0b806cb214c32ecbe4a1dc2864ff994cb301f2cf031d37b2f029eb373df02386"
+          },
+          {
+            "source_id": "govinfo:22usc4413-2024-ned",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap54-subchapII-sec4413.htm",
+            "raw_sha256": "dc5b117fcdc8011cc64ba96364699e6feade50f43b0dc66cdf2334b46064cf71",
+            "governed_bytes_sha256": "f887a4bd2f595a2c6347e1e0d887e707d14b89b9474923d47fbb1754e263a5bc"
+          },
+          {
+            "source_id": "congressional-record:2026-01-14-crane2-offering-result",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+            "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+            "governed_bytes_sha256": "60704acc6361e0d7ae9bd28005dee3c298b9c1904f39510f8ac080758b1d2e3b"
+          },
+          {
+            "source_id": "congressional-record:2026-01-14-7006-democracy-230",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+            "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+            "governed_bytes_sha256": "0dc9265308058e645b683085af0030e70389553a485e706114108a6d460be778"
+          },
+          {
+            "source_id": "govinfo:hres992eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres992eh/html/BILLS-119hres992eh.htm",
+            "raw_sha256": "584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e",
+            "governed_bytes_sha256": "0cde268b28deea2b8dd3d4b35e66b44a7defdbe8a32257be184a6cb4481c18cf"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7006ih-crane2-strike-pages",
+            "locator": "Complete captured text read",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/947620adaceb977fa13cd288dfabe06159f3966f1536c07780ca545073da652e.0000000.json",
+                  "sha256": "94ad68172c1766fd31df6bc57ac618a168f87ade77b495e412bd55a763d30e0a",
+                  "start_character": 0,
+                  "end_character": 7121
+                }
+              ],
+              "utf8_sha256": "947620adaceb977fa13cd288dfabe06159f3966f1536c07780ca545073da652e",
+              "total_characters": 7121,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:22usc4411-2024-ned",
+            "locator": "Complete captured text read",
+            "passage": "U.S.C. Title 22 - FOREIGN RELATIONS AND INTERCOURSE 22 U.S.C. United States Code, 2024 Edition Title 22 - FOREIGN RELATIONS AND INTERCOURSE CHAPTER 54 - PRIVATE ORGANIZATION ASSISTANCE SUBCHAPTER II - NATIONAL ENDOWMENT FOR DEMOCRACY Sec. 4411 - Findings; statement of purposes From the U.S. Government Publishing Office, www.gpo.gov §4411. Findings; statement of purposes (a) The Congress finds that there has been established in the District of Columbia a private, nonprofit corporation known as the National Endowment for Democracy (hereafter in this subchapter referred to as the \"Endowment\") which is not an agency or establishment of the United States Government. (b) The purposes of the Endowment, as set forth in its articles of incorporation, are— (1) to encourage free and democratic institutions throughout the world through private sector initiatives, including activities which promote the individual rights and freedoms (including internationally recognized human rights) which are essential to the functioning of democratic institutions; (2) to facilitate exchanges between United States private sector groups (especially the two major American political parties, labor, and business) and democratic groups abroad; (3) to promote United States nongovernmental participation (especially through the two major American political parties, labor, business, and other private sector groups) in democratic training programs and democratic institution-building abroad; (4) to strengthen democratic electoral processes abroad through timely measures in cooperation with indigenous democratic forces; (5) to support the participation of the two major American political parties, labor, business, and other United States private sector groups in fostering cooperation with those abroad dedicated to the cultural values, institutions, and organizations of democratic pluralism; and (6) to encourage the establishment and growth of democratic development in a manner consistent both with the broad concerns of United States national interests and with the specific requirements of the democratic groups in other countries which are aided by programs funded by the Endowment. (Pub. L. 98–164, title V, §502, Nov. 22, 1983, 97 Stat. 1039.) "
+          },
+          {
+            "source_id": "congressional-record:2026-01-14-7006-democracy-230",
+            "locator": "Complete captured text read",
+            "passage": "NATIONAL ENDOWMENT FOR DEMOCRACY \nThe agreement includes $315,000,000 for Na-\ntional Endowment for Democracy, of which \n$210,316,000 shall be allocated in the tradi-\ntional and customary manner, including for \nthe core institutes, and $104,684,000 for de-\nmocracy programs. \n\n\nSection 7032. Democracy Programs (modified) \nAssistance.—Pursuant to subsection (a), the \nagreement includes funding for programs \nthat advance democracy in adversarial, anti- \nAmerican countries, countries whose malign \nactivities pose a national security threat to \nthe United States, or countries seeking to \nstrengthen democratic institutions and proc-\nesses. \nHuman Rights. —The Department of State \nshall include in its human rights reporting \nan assessment of forced organ harvesting and \ntrafficking in persons for purposes of the re-\nmoval of organs. In making such assess-\nments, the term ‘‘forced organ harvesting’’ \nmeans the removal of one or more organs \nfrom a person by means of coercion, abduc-\ntion, deception, fraud, or abuse of power or a \nposition of vulnerability. Reports should also \ninclude, as appropriate, an assessment of the \nmisuse of artificial intelligence to monitor \nand survey the actions of religious minori-\nties in each foreign country. \nPress and Digital Freedom. —Not later than \n60 days after the date of enactment of the \nAct, the Secretary of State shall consult \nwith the Committees on Appropriations on \nhow funds appropriated by the Act will be \nused to advance press freedom and digital \nfreedom, consistent with the prohibition on \ncensorship in section 7068 of the Act. \nPrioritization.—Funds made available pur-\nsuant to subsection (a) to strengthen min-\nistries and agencies should be prioritized in \ncountries that demonstrate a strong com-\nmitment to the separation of powers, checks \nand balances, the rule of law, and credible \nelectoral processes. \n"
+          },
+          {
+            "source_id": "govinfo:hres992eh",
+            "locator": "Complete captured text read",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 992 Engrossed in House (EH)] <DOC> H. Res. 992 In the House of Representatives, U. S., January 14, 2026. Resolved, That at any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 7006) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. The bill shall be considered as read. All points of order against provisions in the bill are waived. Clause 2(e) of rule XXI shall not apply during consideration of the bill. No amendment to the bill shall be in order except those printed in the report of the Committee on Rules accompanying this resolution. Each such amendment may be offered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. All points of order against such amendments are waived. At the conclusion of consideration of the bill for amendment the Committee shall rise and report the bill to the House with such amendments as may have been adopted. The previous question shall be considered as ordered on the bill and amendments thereto to final passage without intervening motion except one motion to recommit. Sec. 2. The chair of the Committee on Appropriations may insert in the Congressional Record not later than January 16, 2026, such material as he may deem explanatory of H.R. 7006. Attest: Clerk."
+          },
+          {
+            "source_id": "govinfo:22usc4413-2024-ned",
+            "locator": "Dated grant eligibility subsections(a)/(b) only; remaining audit/administrative provisions not relied on",
+            "passage": "U.S.C. Title 22 - FOREIGN RELATIONS AND INTERCOURSE 22 U.S.C. United States Code, 2024 Edition Title 22 - FOREIGN RELATIONS AND INTERCOURSE CHAPTER 54 - PRIVATE ORGANIZATION ASSISTANCE SUBCHAPTER II - NATIONAL ENDOWMENT FOR DEMOCRACY Sec. 4413 - Eligibility of the Endowment for grants From the U.S. Government Publishing Office, www.gpo.gov §4413. Eligibility of the Endowment for grants (a) Compliance with statutory requirements Grants may be made to the Endowment under this subchapter only if the Endowment agrees to comply with the requirements specified in this section and elsewhere in this subchapter. (b) Funding for private sector groups and covered programs only (1) The Endowment may only provide funding for programs of private sector groups and may not carry out programs directly. (2) The Endowment may provide funding only for programs which are consistent with the purposes set forth in section 4411(b) of this title. "
+          },
+          {
+            "source_id": "congressional-record:2026-01-14-crane2-offering-result",
+            "locator": "Complete own offered strike text0:465; debate excluded",
+            "passage": "PDF page77\nAMENDMENT NO. 2 OFFERED BY MR . CRANE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 2 printed in \nHouse Report 119–445. \nMr. CRANE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 205, strike line 20 and all that follows \nthrough line 7 on page 206. \nPage 318, strike line 11 and all that follows \nthrough line 21 on page 320. \n"
+          },
+          {
+            "source_id": "congressional-record:2026-01-14-crane2-offering-result",
+            "locator": "Own recorded vote/outcome13724:end; earlier debate/voice appearance not operative meaning",
+            "passage": "PDF page79\nAMENDMENT NO. 2 OFFERED BY MR . CRANE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 2, printed in \nHouse Report 119–445, offered by the \ngentleman from Arizona (Mr. C\nRANE), \non which further proceedings were \npostponed and on which the ayes pre-\nvailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 127, noes 291, \nnot voting 18, as follows: \n[Roll No. 27] \n\n\nPDF page80\nANNOUNCEMENT BY THE ACTING CHAIR  \nThe Acting CHAIR (during the vote). \nThere is 1 minute remaining. \nb 1719 \nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded. \n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "50d924e58b2dff4b87ef0097cfc7abc6eb4f9b0879bb7d42b00c96b5e6756991",
+      "record": {
+        "action_id": "house:119:2:28",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Exact341–79House passage with11NotVoting is the whole three-division7006financial-services/State/other-matters package, not a separate vote on selected facilities, technology, aid or health accounts. Only the complete captured EH opening0:1800 and closing575764:576664 plus own recorded-passage source and full governing rule were read for this record; package interiors, material account conditions and explanatory allocations are not cleared. Failed Roy/Crane amendments remain separate and are not inserted. Existing Health/Immigration shared passage truth is a reuse boundary, not permission to author a duplicate whole meaning from selected Infrastructure fragments. Whole package/version/domain review remains pending; no enacted appropriation, component endorsement, net outlay or delivery outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:28",
+            "url": "https://clerk.house.gov/evs/2026/roll028.xml",
+            "raw_sha256": "7b5d7aae15fa2f41ab447180190931c754fba70248462805ca07e6db78b683a8",
+            "governed_bytes_sha256": "cd7bd2bde475909810e26468e0ffc9621af8f63e22bb41e7c2ab7763b4bec7c4"
+          },
+          {
+            "source_id": "govinfo:hr7006eh-complete-ordinary228",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006eh/html/BILLS-119hr7006eh.htm",
+            "raw_sha256": "2bc164646e9fbc36aed4a8397317c46d883a8759985d1a2190640eb07cee694e",
+            "governed_bytes_sha256": "ff9f6d0a461610ba00178ec61b230f34575817b3278aeeed09948510f36d9fc0"
+          },
+          {
+            "source_id": "govinfo:hres992eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres992eh/html/BILLS-119hres992eh.htm",
+            "raw_sha256": "584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e",
+            "governed_bytes_sha256": "0cde268b28deea2b8dd3d4b35e66b44a7defdbe8a32257be184a6cb4481c18cf"
+          },
+          {
+            "source_id": "congressional-record:2026-01-14-7006-passage",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+            "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+            "governed_bytes_sha256": "b3c1ad3d4083749d87243101acda6b1995b51910911905ed2651f21f3fca3889"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7006eh-complete-ordinary228",
+            "locator": "Only opening0:1800read; whole576664character EH not reviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 7006 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 7006 _______________________________________________________________________ AN ACT Making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Financial Services and General Government and National Security, Department of State, and Related Programs Appropriations Act, 2026''. SEC. 2. TABLE OF CONTENTS. Sec. 1. Short title. Sec. 2. Table of contents. Sec. 3. References. Sec. 4. Explanatory statement. Sec. 5. Statement of appropriations. Sec. 6. Payment to widows and heirs of deceased Members of Congress. DIVISION A--FINANCIAL SERVICES AND GENERAL GOVERNMENT APPROPRIATIONS ACT, 2026 Title I--Department of the Treasury Title II--Executive Office of the President and Funds Appropriated to the President Title III--The Judiciary Title IV--District of Columbia Title V--Independent Agencies Title VI--General Provisions--This Act Title VII--General Provisions--Government-wide Title VIII--General Provisions--District of Columbia DIVISION B--NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED PROGRAMS APPROPRIATIONS ACT, 2026 Title I--Department of State and Related Programs Title II--Administration of Assistance Title III--Bilateral Economic Assistance Title IV--International Security Assistance Title V--Multilateral Assistance Title VI--Export and Investment Assistance Title VII--General Provisions DIVISION C--OTHER MATTERS SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this "
+          },
+          {
+            "source_id": "govinfo:hr7006eh-complete-ordinary228",
+            "locator": "Only closing575764:576664read; dated passage and final boundary",
+            "passage": "ated or otherwise made available by division B of this Act or other Acts making appropriations for the Department of State, foreign operations, and related programs, including provisions of Acts providing supplemental appropriations for the Department of State, foreign operations, and related programs, may not be used for a contribution, grant, or other payment to the United Nations Relief and Works Agency, notwithstanding any other provision of law-- (1) for any amounts provided in prior fiscal years or in fiscal year 2026; or (2) for amounts provided in fiscal year 2027, until March 25, 2027. Passed the House of Representatives January 14, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 7006 _______________________________________________________________________ AN ACT Making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres992eh",
+            "locator": "Complete captured text read",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 992 Engrossed in House (EH)] <DOC> H. Res. 992 In the House of Representatives, U. S., January 14, 2026. Resolved, That at any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 7006) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. The bill shall be considered as read. All points of order against provisions in the bill are waived. Clause 2(e) of rule XXI shall not apply during consideration of the bill. No amendment to the bill shall be in order except those printed in the report of the Committee on Rules accompanying this resolution. Each such amendment may be offered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. All points of order against such amendments are waived. At the conclusion of consideration of the bill for amendment the Committee shall rise and report the bill to the House with such amendments as may have been adopted. The previous question shall be considered as ordered on the bill and amendments thereto to final passage without intervening motion except one motion to recommit. Sec. 2. The chair of the Committee on Appropriations may insert in the Congressional Record not later than January 16, 2026, such material as he may deem explanatory of H.R. 7006. Attest: Clerk."
+          },
+          {
+            "source_id": "congressional-record:2026-01-14-7006-passage",
+            "locator": "Complete captured text read",
+            "passage": "PDF80\nThe Acting CHAIR. Under the rule, \nthe Committee rises. \nAccordingly, the Committee rose; \nand the Speaker pro tempore (Mr. \nM\nEUSER) having assumed the chair, Mr. \nWEBER of Texas, Acting Chair of the \nCommittee of the Whole House on the \nstate of the Union, reported that that \nCommittee, having had under consider-\nation the bill (H.R. 7006) making fur-\nther consolidated appropriations for \nthe fiscal year ending September 30, \n2026, and for other purposes, and, pur-\nsuant to House Resolution 992, he re-\nported the bill back to the House. \nThe SPEAKER pro tempore. Under \nthe rule, the previous question is or-\ndered. \nThe question is on the engrossment \nand third reading of the bill. \nThe bill was ordered to be engrossed \nand read a third time, and was read the \nthird time. \nThe SPEAKER pro tempore. The \nquestion is on passage of the bill. \nUnder clause 10 of rule XX, the yeas \nand nays are ordered. \nThis will be a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 341, nays 79, \nnot voting 11, as follows: \n[Roll No. 28] \n\n\nPDF81\nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (Mr. \nWEBER of Texas) (during the vote). \nThere are 2 minutes remaining. \nb 1727 \nMs. ANSARI changed her vote from \n‘‘yea’’ to ‘‘nay.’’ \nSo the bill was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0ff8ced87e2527416a3d3729adaf42a778f543be7c71c760a378938dd88c34ee",
+      "record": {
+        "action_id": "house:119:2:29",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete offered Huizenga amendment1 adds4003and a matching table-of-contents entry: GAO must report to Congress within2yearsafterenactment comparing returns of the three jointly specified pension investment arrangements with other plan options. The pre-amendment RH4002context retains brokerage-window notice/acknowledgment, hypothetical4/6/8percent graph, defined investment alternatives and its separate2027effective date; this child does not itself adopt the whole pension bill or guarantee returns. Preserve the printed section2(46)/29USC1002(46)reference without silently repairing it or certifying current ERISA application. General retirement-investment comparison is not physical infrastructure, technical-system governance or technical research merely because it requires a report/graph. Proposed exact-action exclusion;395–22adoptionwith14NotVoting adopts this amendment for House consideration, not enactment or a financial/technology outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:29",
+            "url": "https://clerk.house.gov/evs/2026/roll029.xml",
+            "raw_sha256": "f68c8bfe18d3a1a5b7ce2261757d77e0317cb422738f8a5d2117b038554ce1ae",
+            "governed_bytes_sha256": "a392157cf5009b5f2506400e4cc5bdb1b35d9f8d43c83d75a177054ca05c2de8"
+          },
+          {
+            "source_id": "congressional-record:2988-partA1-roll29-choice164",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-15/pdf/CREC-2026-01-15-house.pdf",
+            "raw_sha256": "8b960e6c9cabbd5f34c2cf0f7760e7a54dff197f6087e676b768841c84984bcd",
+            "governed_bytes_sha256": "b2417661da658dafa1292864c97e789771b6f96d7a09061ab52947ce39f5d7a5"
+          },
+          {
+            "source_id": "govinfo:hr2988rh-section4002-material164",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2988rh/html/BILLS-119hr2988rh.htm",
+            "raw_sha256": "267bed96b026dcc2ca71febb355cfa3dc300bf8b948cd8f63df02098cb436a94",
+            "governed_bytes_sha256": "b6e1ade9726f2fe80156bd6b5199d1aced6b09a3873c60cd9281fa113b34d139"
+          },
+          {
+            "source_id": "govinfo:hres988eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm",
+            "raw_sha256": "735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77",
+            "governed_bytes_sha256": "1a756a61822f43f09f756154e094cd663eaa955751bc7b12bb498db53177f50b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2988-partA1-roll29-choice164",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MR . HUIZENGA \nThe SPEAKER pro tempore. It is now \nin order to consider amendment No. 1 \nprinted in part A of House Report 119– \n440. \nMr. HUIZENGA. Mr. Speaker, I have \nan amendment at the desk. \nThe SPEAKER pro tempore. The \nClerk will designate the amendment. \nThe text of the amendment is as fol-\nlows: \nAdd at the end the following: \nSEC. 4003. GAO STUDY OF BROKERAGE AC-\nCOUNTS. \nNot later than 2 years after the date of en-\nactment of this Act, the Comptroller General \nshall submit a report to Congress comparing \nthe returns generated by any investment ar-\nrangement that— \n(1) is not a designated investment alter-\nnative (as defined in section 2(46) of the Em-\nployee Retirement Income Security Act of \n1974 (29 U.S.C. 1002(46)); \n(2) is subject to section 404(c)(7) of such Act \n(29 U.S.C 1104(c)(7)); and \n(3) is available in defined contribution \nplans (as defined in section 3(34) of such Act \n(29 U.S.C. 1002(34)) \nwith the returns generated by other invest-\nment options available in such plans. \nPage 3, line 7, insert after the item relat-\ning to section 4002 the following: \nSec. 4003. GAO study of brokerage accounts. \n\n\nThe question is on the amendment. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMr. WALBERG. Mr. Speaker, on that \nI demand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 9 of rule XX, this 15- \nminute vote on the amendment will be \nfollowed by 5-minute votes on: \nMotion to recommit H.R. 2988, if of-\nfered; and \nPassage of H.R. 2988, if ordered. \nThe vote was taken by electronic de-\nvice, and there were—yeas 395, nays 22, \nnot voting 14, as follows: \n[Roll No. 29] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr2988rh-section4002-material164",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SEC. 4002. BROKERAGE WINDOW DISCLOSURES. (a) In General.--Section 404(c) of the Employee Retirement Income Security Act of 1974 (29 U.S.C. 1104(c)) is amended by adding at the end the following new paragraph: ``(7) Notice requirements for brokerage windows.-- ``(A) In general.--In the case of a pension plan which provides for individual accounts and which provides a participant or beneficiary the opportunity to choose from designated investment alternatives, a participant or beneficiary shall not be treated as exercising control over assets in the account of the participant or beneficiary unless, with respect to any investment arrangement that is not a designated investment alternative, each time before such a participant or beneficiary directs an investment into, out of, or within such investment arrangement, such participant is notified of, and acknowledges, each element of the notice described under paragraph (B). ``(B) Notice.--The notice described under this paragraph is a four part information that is substantially similar to the following information: ``1. Your retirement plan offers designated investment alternatives prudently selected and monitored by fiduciaries for the purpose of enabling you to construct an appropriate retirement savings portfolio. In selecting and monitoring designated investment alternatives, your plan's fiduciary considers the risk of loss and the opportunity for gain (or other return) compared with reasonably available investment alternatives. 2. The investments available through this investment arrangement are not designated investment alternatives, and have not been prudently selected and are not monitored by a plan fiduciary. 3. Depending on the investments you select through this investment arrangement, you may experience diminished returns, higher fees, and higher risk than if you select from the plan's designated investment alternatives. 4. The following is a hypothetical illustration of the impact of return at 4 percent, 6 percent, and 8 percent on your account balance projected to age 67. ``(C) Illustration.--The notice described under paragraph (B) shall also include a graph displaying the projected retirement balances of such participant or beneficiary at age 67 if the account of such individual were to achieve an annual return equal to each of the following: ``(i) 4 percent. ``(ii) 6 percent. ``(iii) 8 percent.''. (b) Designated Investment Alternative Defined.--Section 3 of such Act (29 U.S.C. 1002) is amended by adding at the end the following new paragraph: ``(46) Designated investment alternative.-- ``(A) In general.--The term `designated investment alternative' means any investment alternative designated by a responsible fiduciary of an individual account plan described in subsection 404(c) into which participants and beneficiaries may direct the investment of assets held in, or contributed to, their individual accounts. ``(B) Exception.--The term `designated investment alternative' does not include brokerage windows, self- directed brokerage accounts, or similar plan arrangements that enable participants and beneficiaries to select investments beyond those designated by a responsible plan fiduciary.''. (c) Effective Date.--The amendment made by subsection (a) shall take effect on January 1, 2027. "
+          },
+          {
+            "source_id": "govinfo:hres988eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/29a1213cab6bd4b3d24fb40793b5cfa4356c3522317a0bf8a5a5f0fa762ddf30.0000000.json",
+                  "sha256": "72091e74eb4837a62ff89b3fc7c5f59f74af21287340ff491361fff5928d1f56",
+                  "start_character": 0,
+                  "end_character": 4230
+                }
+              ],
+              "utf8_sha256": "29a1213cab6bd4b3d24fb40793b5cfa4356c3522317a0bf8a5a5f0fa762ddf30",
+              "total_characters": 4230,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a5f04f7b5a3d4fac94394168cde71966422031b1e7e96aa88844f9d5e17d905a",
+      "record": {
+        "action_id": "house:119:2:30",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.2988. No substantive motion body is interpreted. It remains non-counting procedural context and cannot supply support/opposition to pension investment policy or its separate adopted amendment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:30",
+            "url": "https://clerk.house.gov/evs/2026/roll030.xml",
+            "raw_sha256": "a8b42f51b9a46e75b0ba3e6931e4c025a15f3c18d7b89451fde484b852aadb35",
+            "governed_bytes_sha256": "f0b79d6f9d63a2fa1cf1a82171bd661935e3f01e650ee33c70ae5cac270a2604"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "5ff0d7dbaf5ea4afe59b97550fdd88b70fc9e09a00477d86f24573cb4376e0e9",
+      "record": {
+        "action_id": "house:119:2:31",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete own H.R.2988EH includes all four divisions and the adopted4003GAOcomparison. It regulates pension fiduciary pecuniary factors with documented tie-break and participant-option/default distinctions, service-provider selection, proxy/shareholder-right duties with pass-through exception, monitoring/safe-harbor/material-economic-effect qualifications, and brokerage-window disclosure/acknowledgment/graph plus GAOstudy. These are general retirement-finance mechanisms, not a dedicated infrastructure investment, energy mandate, technical research or technical-system rule. Do not recast it as banning every nonpecuniary consideration or every proxy vote, compelling every share vote, guaranteeing returns or dictating investment in a named sector. Distinct printed effective dates (12monthsafterenactment for1002; January1,2026for3002; January1,2027for4002(a)) and the study2yearclock are not flattened into one present deadline; printed4003crossreference retained. Proposed whole-action Infrastructure exclusion does not certify current integrated ERISA or an individual plan outcome.213–205passagewith13NotVoting is distinct from395–22amendment adoption and is not enactment or component endorsement.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:31",
+            "url": "https://clerk.house.gov/evs/2026/roll031.xml",
+            "raw_sha256": "7de433d5a5c92dce860d55cc89fb8ae1443a50805296a2104733710f7603943d",
+            "governed_bytes_sha256": "5d13efb897f5c603eb344b176928db2cba369708cd21695b3a3ad190826097a1"
+          },
+          {
+            "source_id": "govinfo:hr2988eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2988eh/html/BILLS-119hr2988eh.htm",
+            "raw_sha256": "2265766dd0d821c398e7423cdb9af2ba96225f14b40ced0772cc9096b0f58bdd",
+            "governed_bytes_sha256": "1eeb41e7a5282ee343d7165b09631d982fd32c90aaca5a36ebac7c63d80d18c7"
+          },
+          {
+            "source_id": "congressional-record:2988-roll31-passage164",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-15/pdf/CREC-2026-01-15-house.pdf",
+            "raw_sha256": "8b960e6c9cabbd5f34c2cf0f7760e7a54dff197f6087e676b768841c84984bcd",
+            "governed_bytes_sha256": "8f3eca4632be7639bfc25446c1e6654a0775623ffb2281a55160590f068a7d34"
+          },
+          {
+            "source_id": "govinfo:hres988eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm",
+            "raw_sha256": "735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77",
+            "governed_bytes_sha256": "1a756a61822f43f09f756154e094cd663eaa955751bc7b12bb498db53177f50b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2988eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/944b8d80017b9e3297c1fdf4fdb867089704c9bd97f80b30f10aac5c32cbeab4.0000000.json",
+                  "sha256": "d8eb3ed4e2b9a8ba407a50cbf2f0577e322a83f7a1fec14fa359d7e0ac8d8f32",
+                  "start_character": 0,
+                  "end_character": 16148
+                }
+              ],
+              "utf8_sha256": "944b8d80017b9e3297c1fdf4fdb867089704c9bd97f80b30f10aac5c32cbeab4",
+              "total_characters": 16148,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "congressional-record:2988-roll31-passage164",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMr. WALBERG. Mr. Speaker, on that \nI demand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. This is a \n5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 213, nays \n205, not voting 13, as follows: \n[Roll No. 31] \n\n\nSo the bill was passed. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hres988eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/29a1213cab6bd4b3d24fb40793b5cfa4356c3522317a0bf8a5a5f0fa762ddf30.0000000.json",
+                  "sha256": "72091e74eb4837a62ff89b3fc7c5f59f74af21287340ff491361fff5928d1f56",
+                  "start_character": 0,
+                  "end_character": 4230
+                }
+              ],
+              "utf8_sha256": "29a1213cab6bd4b3d24fb40793b5cfa4356c3522317a0bf8a5a5f0fa762ddf30",
+              "total_characters": 4230,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:27",
+      "original_source_object_sha256": "22f122dc92dafa95df14ebab9af61ac73b222a269117be92030a35007c940181",
+      "path": "source_objects/22f122dc92dafa95df14ebab9af61ac73b222a269117be92030a35007c940181.json"
+    },
+    {
+      "source_id": "clerk:119:2:28",
+      "original_source_object_sha256": "de15cc634d1f533e6504192010c990b08e4809b8eae222763e6411bf7a2fa6a4",
+      "path": "source_objects/de15cc634d1f533e6504192010c990b08e4809b8eae222763e6411bf7a2fa6a4.json"
+    },
+    {
+      "source_id": "clerk:119:2:29",
+      "original_source_object_sha256": "99e6f65ff17549cfcfde9f421ace21fe6785090de32d5a66834239b1f85627d7",
+      "path": "source_objects/99e6f65ff17549cfcfde9f421ace21fe6785090de32d5a66834239b1f85627d7.json"
+    },
+    {
+      "source_id": "clerk:119:2:30",
+      "original_source_object_sha256": "0ca433a77f30eaa2ab77d9ec4f673feec18592b847dfaae9bb7499e804412822",
+      "path": "source_objects/0ca433a77f30eaa2ab77d9ec4f673feec18592b847dfaae9bb7499e804412822.json"
+    },
+    {
+      "source_id": "clerk:119:2:31",
+      "original_source_object_sha256": "7a2c44d32bffb973abafabbf9b52c615fe56d04e1677feb15c2f0f1fffa0e31e",
+      "path": "source_objects/7a2c44d32bffb973abafabbf9b52c615fe56d04e1677feb15c2f0f1fffa0e31e.json"
+    },
+    {
+      "source_id": "congressional-record:2026-01-14-7006-democracy-230",
+      "original_source_object_sha256": "d7a5371e93c05bf852d6cbba4d16d7eafd9c1970c9658c8d6afc98b98fe08780",
+      "path": "source_objects/d7a5371e93c05bf852d6cbba4d16d7eafd9c1970c9658c8d6afc98b98fe08780.json"
+    },
+    {
+      "source_id": "congressional-record:2026-01-14-7006-passage",
+      "original_source_object_sha256": "4a304c8256ee526299737d8d71db1edcf736076347ce712930ce42b84df35cea",
+      "path": "source_objects/4a304c8256ee526299737d8d71db1edcf736076347ce712930ce42b84df35cea.json"
+    },
+    {
+      "source_id": "congressional-record:2026-01-14-crane2-offering-result",
+      "original_source_object_sha256": "8504ba0374f64c63a05c1b6d5094cdfa543ec4d5616682e4378651bb8b7f5844",
+      "path": "source_objects/8504ba0374f64c63a05c1b6d5094cdfa543ec4d5616682e4378651bb8b7f5844.json"
+    },
+    {
+      "source_id": "congressional-record:2988-partA1-roll29-choice164",
+      "original_source_object_sha256": "dd92706ef4ff91e3cb392d687df15169b0363e32ec3d3137c55909d9b8b74958",
+      "path": "source_objects/dd92706ef4ff91e3cb392d687df15169b0363e32ec3d3137c55909d9b8b74958.json"
+    },
+    {
+      "source_id": "congressional-record:2988-roll31-passage164",
+      "original_source_object_sha256": "03a9f296ae874d749fa8a443f93163f1221a63201fab4f780258939908bbabfe",
+      "path": "source_objects/03a9f296ae874d749fa8a443f93163f1221a63201fab4f780258939908bbabfe.json"
+    },
+    {
+      "source_id": "govinfo:22usc4411-2024-ned",
+      "original_source_object_sha256": "b2ba02c9b1f7a565de4f11d15b99e589c3bbcbc02f6ad2cb2280fb331b999d5a",
+      "path": "source_objects/b2ba02c9b1f7a565de4f11d15b99e589c3bbcbc02f6ad2cb2280fb331b999d5a.json"
+    },
+    {
+      "source_id": "govinfo:22usc4413-2024-ned",
+      "original_source_object_sha256": "b46cdfaf5c23413ad72bb5682fccbe5892323afb836e270974912c6e646c023a",
+      "path": "source_objects/b46cdfaf5c23413ad72bb5682fccbe5892323afb836e270974912c6e646c023a.json"
+    },
+    {
+      "source_id": "govinfo:hr2988eh",
+      "original_source_object_sha256": "9f46c215e1bae24f2b2ad8e414504686eec14d5fdfb68298ae774b294369a92b",
+      "path": "source_objects/9f46c215e1bae24f2b2ad8e414504686eec14d5fdfb68298ae774b294369a92b.json"
+    },
+    {
+      "source_id": "govinfo:hr2988rh-section4002-material164",
+      "original_source_object_sha256": "b5b37019fec2fd79423f661b23269bb939d8fbad3753fe9f32f3474f75d0a995",
+      "path": "source_objects/b5b37019fec2fd79423f661b23269bb939d8fbad3753fe9f32f3474f75d0a995.json"
+    },
+    {
+      "source_id": "govinfo:hr7006eh-complete-ordinary228",
+      "original_source_object_sha256": "1b896c46092746db270006d5d79464c84d9dde0d77507a575a9669e7b3deece3",
+      "path": "source_objects/1b896c46092746db270006d5d79464c84d9dde0d77507a575a9669e7b3deece3.json"
+    },
+    {
+      "source_id": "govinfo:hr7006ih-crane2-strike-pages",
+      "original_source_object_sha256": "f4bf0d1cbbe28fb62c9ff2d25287bec1b288594e78550c609ba4c1ee4263a710",
+      "path": "source_objects/f4bf0d1cbbe28fb62c9ff2d25287bec1b288594e78550c609ba4c1ee4263a710.json"
+    },
+    {
+      "source_id": "govinfo:hres988eh",
+      "original_source_object_sha256": "7d0440e646eeed8c20e14cb3ff3d4659093bd970e5e1391fd0de44f8e86cea49",
+      "path": "source_objects/7d0440e646eeed8c20e14cb3ff3d4659093bd970e5e1391fd0de44f8e86cea49.json"
+    },
+    {
+      "source_id": "govinfo:hres992eh",
+      "original_source_object_sha256": "9e7cd1bb52c73bc002e95c641f9e7432336caf4a5802aceb5f37039b6ad75f78",
+      "path": "source_objects/9e7cd1bb52c73bc002e95c641f9e7432336caf4a5802aceb5f37039b6ad75f78.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr7006ih-crane2-strike-pages",
+      "governed_length": 7121,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "govinfo:22usc4411-2024-ned",
+      "governed_length": 2241,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "govinfo:22usc4413-2024-ned",
+      "governed_length": 7913,
+      "review_extent": "Only0:936subsections(a)/(b); no whole7913character source clearance"
+    },
+    {
+      "source_id": "congressional-record:2026-01-14-crane2-offering-result",
+      "governed_length": 14626,
+      "review_extent": "Only operative0:465, question11970:12530and recorded13724:14626 relied on; incidental debate context seen, not adopted"
+    },
+    {
+      "source_id": "congressional-record:2026-01-14-7006-democracy-230",
+      "governed_length": 1882,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "govinfo:hres992eh",
+      "governed_length": 2306,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "govinfo:hr7006eh-complete-ordinary228",
+      "governed_length": 576664,
+      "review_extent": "Only0:1800and575764:576664; package interiors unreviewed"
+    },
+    {
+      "source_id": "congressional-record:2026-01-14-7006-passage",
+      "governed_length": 1413,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "congressional-record:2988-partA1-roll29-choice164",
+      "governed_length": 1837,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "govinfo:hr2988rh-section4002-material164",
+      "governed_length": 3305,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "govinfo:hres988eh",
+      "governed_length": 4230,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "govinfo:hr2988eh",
+      "governed_length": 16148,
+      "review_extent": "Complete captured text read"
+    },
+    {
+      "source_id": "congressional-record:2988-roll31-passage164",
+      "governed_length": 525,
+      "review_extent": "Complete captured text read"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:27",
+        "evidence_unit": "complete_strike_and_targets_with_partial_dated_grant_context",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:28",
+        "evidence_unit": "whole_package_identity_and_partial_opening_closing",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:29",
+        "evidence_unit": "complete_own_pension_body_and_recorded_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:30",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:31",
+        "evidence_unit": "complete_own_pension_body_and_recorded_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}

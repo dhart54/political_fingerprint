@@ -1,0 +1,100 @@
+import copy
+import unittest
+
+from backend.app.semantic_ir.shared_corpus import digest
+from scripts.validate_infrastructure_boundary_candidates136 import PACKET, SUBJECTS, read, validate, validate_bundle, validate_transport
+
+
+class BoundaryCandidates136Tests(unittest.TestCase):
+    def test_packet_transport_counts_the_same_committed_lf_bytes_it_hashes(self):
+        self.assertEqual(validate_transport()['files'], 4)
+        v = read(PACKET / 'validation_receipt.json')
+        bad = copy.deepcopy(v)
+        next(f for f in bad['packet_files'] if f['path'].endswith('/README.md'))['bytes'] += 40
+        with self.assertRaisesRegex(ValueError, 'Committed LF byte count'):
+            validate_transport(bad)
+        bad = copy.deepcopy(v)
+        bad['packet_files'][0]['lf_sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'Committed LF byte count or hash'):
+            validate_transport(bad)
+        bad = copy.deepcopy(v)
+        bad['packet_byte_units'] = 'unspecified_worktree_bytes'
+        with self.assertRaisesRegex(ValueError, 'byte units'):
+            validate_transport(bad)
+
+    def test_three_case_bundle_keeps_seals_and_requested_decisions_separate_from_authority(self):
+        self.assertEqual(validate_bundle()['action_count'], 3)
+        v = read(PACKET / 'decision_bundle.json')
+        for edit in ['seal', 'current_state', 'authority', 'review', 'counterevidence']:
+            bad = copy.deepcopy(v)
+            if edit == 'seal':
+                bad['cases'][0]['proposed_record_sha256'] = '0' * 64
+            elif edit == 'current_state':
+                bad['cases'][2]['current_governed_binding_unresolved'] = False
+            elif edit == 'authority':
+                bad['exceptions_enacted'] = True
+            elif edit == 'review':
+                bad['cases'][1]['independent_packet_review_at_index_preparation'] = 'bounded_clean'
+            else:
+                bad['cases'][0]['strongest_counterevidence'] = ''
+            with self.subTest(edit=edit), self.assertRaises(ValueError):
+                validate_bundle(bad)
+
+    def test_exact_sources_stages_and_retained_governed_states(self):
+        for bill in SUBJECTS:
+            v = read(PACKET / f'hr{bill}_recommendation.json')
+            with self.subTest(bill=bill):
+                self.assertFalse(validate(bill)['governed_inventory_changed'])
+            for edit in ['omission', 'metadata', 'text', 'preimage', 'current_flag']:
+                bad = copy.deepcopy(v)
+                if edit == 'omission':
+                    bad['evidence'].pop()
+                elif edit == 'metadata':
+                    bad['evidence'][0]['source']['metadata']['vote-question'] = 'On Recommittal'
+                elif edit == 'text':
+                    bad['evidence'][1]['source']['text'] = 'Only a bill title'
+                elif edit == 'preimage':
+                    bad['before_record_sha256'] = '0' * 64
+                else:
+                    bad['current_governed_binding_unresolved'] = not bad['current_governed_binding_unresolved']
+                with self.subTest(bill=bill, edit=edit), self.assertRaises(ValueError):
+                    validate(bill, bad)
+
+    def test_unaccepted_proposals_cannot_acquire_authority_or_change_old_claims(self):
+        for bill in SUBJECTS:
+            v = read(PACKET / f'hr{bill}_recommendation.json')
+            for field in ['applied_to_governed_inventory', 'semantic_acceptance',
+                          'membership_accepted', 'publication_authorized',
+                          'production_authorized', 'compatibility_implementation_authorized']:
+                bad = copy.deepcopy(v)
+                bad[field] = True
+                with self.subTest(bill=bill, field=field), self.assertRaisesRegex(ValueError, 'authority'):
+                    validate(bill, bad)
+            bad = copy.deepcopy(v)
+            bad['proposed_record']['claim_source_map'][0]['passage'] = 'Altered evidence'
+            bad['proposed_record_sha256'] = digest(bad['proposed_record'])
+            with self.subTest(bill=bill), self.assertRaisesRegex(ValueError, 'Prior claims'):
+                validate(bill, bad)
+
+    def test_boundary_meaning_and_exact_qualifications_require_explicit_review(self):
+        for bill in SUBJECTS:
+            v = read(PACKET / f'hr{bill}_recommendation.json')
+            bad = copy.deepcopy(v)
+            bad['eligibility_analysis']['inclusion_rule'] = 'All studies and manufactured products qualify'
+            with self.subTest(bill=bill), self.assertRaisesRegex(ValueError, 'Existing rule'):
+                validate(bill, bad)
+            bad = copy.deepcopy(v)
+            bad['whole_choice_candidate']['meaning'] = (
+                'The GAO study proves adverse effects' if bill == 28 else
+                'All sodium nitrate products were banned90days after House passage')
+            with self.subTest(bill=bill), self.assertRaisesRegex(ValueError, 'Whole-choice'):
+                validate(bill, bad)
+            bad = copy.deepcopy(v)
+            bad['proposed_record']['rationale'] = 'Exclude all social research and all chemical technology'
+            bad['proposed_record_sha256'] = digest(bad['proposed_record'])
+            with self.subTest(bill=bill), self.assertRaisesRegex(ValueError, 'Candidate meaning'):
+                validate(bill, bad)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,0 +1,34 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-18T15:58:59.951947+00:00",
+    "qualification": "Marker records start of specification authoring after source reading; source-reading phase precedes this marker and is reported separately, not assigned fabricated active seconds."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-18T16:00:07.483920+00:00",
+    "end_utc": "2026-10-18T16:00:26.549432+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 16 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch16_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.013
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 16.147
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 1.906
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 67.532,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Complete retained bodies and material referenced witnesses read before marker; no continuously measured active source-reading duration is claimed.",
+  "formal_validation_process_seconds": 19.066,
+  "byte_proof_and_delivery_overhead": "Later and separate; not included in useful specification/authoring window or formal validation processes.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0
+}

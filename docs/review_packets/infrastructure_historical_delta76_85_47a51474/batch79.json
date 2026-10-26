@@ -1,0 +1,330 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 79,
+  "exact_committed_head": "3fa17a6a7236caed7731ff58eaf8b6c89ffda479",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "3fa17a6a7236caed7731ff58eaf8b6c89ffda479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch79_20260916/membership_review.json",
+      "git_blob": "a52bfa3f58cd465f3a179772b8e69d5896d2dc9c",
+      "git_bytes_sha256": "85bb3987a3832619b3abec0b9efa2f23ac9f7a923bb0182a09948642d341733b"
+    },
+    "sources": {
+      "head": "3fa17a6a7236caed7731ff58eaf8b6c89ffda479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch79_20260916/sources.json",
+      "git_blob": "35e00ccefe32885a4f87afdac3c7fcd52463da06",
+      "git_bytes_sha256": "a26c499b60d057bfd363d453cd703b9012760a15003f4fd0f4be5940d39e7bb1"
+    },
+    "screening": {
+      "head": "3fa17a6a7236caed7731ff58eaf8b6c89ffda479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch79_20260916/screening_receipt.json",
+      "git_blob": "79705aeb45940d888e9984820f288dde72f1fccb",
+      "git_bytes_sha256": "3c678e6a6b0f65df8963ce4cb8a8e059a20d837f100d34bf332328bde30683aa"
+    },
+    "screening_units": {
+      "head": "3fa17a6a7236caed7731ff58eaf8b6c89ffda479",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch79_20260916/screening_units_receipt.json",
+      "git_blob": "de4a803ee70bafed462ebe3bab34a3e62e78b268",
+      "git_bytes_sha256": "c833eef80f103f8ef1771d70faf15267992363c2cd88f0040b6a4690ca4d4a9d"
+    }
+  },
+  "original_membership_review_sha256": "2ec902f2b0f1be30775f088c61f87394cd241ac37eff17e9dde93143e85f11f5",
+  "new_screened_ids": [
+    "house:119:2:83",
+    "house:119:2:84",
+    "house:119:2:85",
+    "house:119:2:86",
+    "house:119:2:87"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "07afbf38b2e01290a227e9a954540c530b8fcd1dace3bd0d316ac21abc4c0058",
+      "record": {
+        "action_id": "house:119:2:83",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the passed motion to refer H.Res.1100. Its underlying substantive motion/resolution body is not interpreted here. This remains non-counting procedural context; referral is not adoption of allegations or relief and recommittal is not passage of an appropriations package.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:83",
+            "url": "https://clerk.house.gov/evs/2026/roll083.xml",
+            "raw_sha256": "657dde9214eb0265df6ee843462f34c991a06d83903cf16be03757e6833d690d",
+            "governed_bytes_sha256": "6d55fc681f43a0789ce44c1635938521db108c1042fda1f8c65b84c6e924a7b0"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "bda07d069d6683a29d6d7f25164ae996264a897edda1d355d513b02615be8719",
+      "record": {
+        "action_id": "house:119:2:84",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "expressive_nonbinding",
+        "rationale": "Complete1099EH ends with the House declaration of policy that Iran continues to be the largest state sponsor of terrorism. It is a simple House policy expression, without a printed appropriation, sanctions amendment, use-of-force authorization, agency designation change or technical-system mandate. Its whereas statements, attribution, death counts, nuclear/UNreferences and evaluative descriptions remain assertions in the resolution, not independently verified findings by this candidate. This combined suspension/agreement vote is non-counting expressive context; do not infer current intelligence, actual nuclear capability, foreign-policy outcome, military authority, motive or a politician’s character.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:84",
+            "url": "https://clerk.house.gov/evs/2026/roll084.xml",
+            "raw_sha256": "4dbb45cf8f2d8379e7f24e9a776793198a0d27e3ef7ba350e07025b52d3ba2b1",
+            "governed_bytes_sha256": "ebdd81986d7772161a77a5ab5d0c2273f80dd242235d380426da21a9593c1dd7"
+          },
+          {
+            "source_id": "govinfo:hres1099eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1099eh/html/BILLS-119hres1099eh.htm",
+            "raw_sha256": "ed320c7d4504889391336736182bd77dd490c4991200812d7eb70957a339b9dc",
+            "governed_bytes_sha256": "29951b61d3b4c513fd7133955ab34fa1e3805bfd602848d04a607c0796104704"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1099eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1099 Engrossed in House (EH)] <DOC> H. Res. 1099 In the House of Representatives, U. S., March 5, 2026. Whereas the Islamic Republic of Iran remains the world's largest state sponsor of terrorism and provides substantial financial and military support to groups including Hezbollah, Hamas, and the Houthis; Whereas the Islamic Republic of Iran poses a direct and persistent threat to the United States and is responsible for the deaths of hundreds of American citizens; Whereas, according to the Pentagon, Iranian backed proxy militias are responsible for the deaths of at least 603 United States servicemembers in Iraq, roughly 1 in every 6 American combat fatalities in Iraq from 2003 through 2011; Whereas the Iranian regime is responsible for executing dozens of assassination plots targeting American citizens and serving government officials on United States soil; Whereas Tehran continues to harbor a network of senior al-Qaeda leaders, providing them with sanctuary space to fundraise in support of its fighters; Whereas, in January 2024, United States servicemembers, Sergeant William Jerome Rivers, Specialist Kennedy Ladon Sanders, and Specialist Breonna Alexsondria Moffett were killed in an Iranian backed proxy attack on Tower 22 in Jordan; Whereas the regime's refusal to abandon its nuclear program and related missile and conventional weapons activities further resulted in the reimposition of 6 United Nations Security Council Resolutions targeting the Iranian regime in September 2025; and Whereas, according to the Director General of the International Atomic Energy Agency, Rafael Grossi, Iran has amassed a large stockpile of enriched uranium and continues to block access to undeclared sites in Iran affiliated with their ``big, ambitious nuclear program'': Now, therefore, be it Resolved, That the House of Representatives declares it is the policy of the United States that Iran continues to be the largest state sponsor of terrorism. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "433c6f5bb3bbbbba9645a17f1e7ac2ef5a915344ba40cd1893d715e97c996074",
+      "record": {
+        "action_id": "house:119:2:85",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete retained HConRes38IH is datedJune17,2025and contains war-powers findings, an Iran-hostilities termination direction with explicit-authorization/imminent-defense qualifications, intelligence-sharing and no-new-force-authorization construction clauses. Complete own March5,2026recorded question/outcome identifies that resolution and212–219failurewith1NotVoting, but the governing March5call-up/operative-body version was not found in retained objects. The old IHalone cannot certify that intervening or as-offered text was unchanged. Preserve candidate war-powers/functional-domain review pending that binding; do not count a simple title-based Infrastructure exclusion or infer current congressional authorization, hostilities, constitutional validity, withdrawal, intelligence restrictions or enactment. Printed IHjoint/concurrent self-references are not silently repaired.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:85",
+            "url": "https://clerk.house.gov/evs/2026/roll085.xml",
+            "raw_sha256": "430187a91c76de11bf63e6886aab14427e03ac8a0fdb018eadac81cbcec59b40",
+            "governed_bytes_sha256": "d42451b80d45695e2b836566b1c484db3270b93eaec4fc1d79977cbe2976c24a"
+          },
+          {
+            "source_id": "govinfo:hconres38ih",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres38ih/html/BILLS-119hconres38ih.htm",
+            "raw_sha256": "5d06b495e16e9b76c60e461ac04b5c718838491aff3dab550469b4254a96695f",
+            "governed_bytes_sha256": "73481088126f4ba511051662feda97242df091da64ab0c15304e9a9a57fa87fb"
+          },
+          {
+            "source_id": "congressional-record:hconres38-roll85-choice144",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-03-05/pdf/CREC-2026-03-05-house.pdf",
+            "raw_sha256": "6a2776236c5a6d024c6fd947cf46e753ddc62516593a5fdee099f8008b9d0593",
+            "governed_bytes_sha256": "dc765d5b0723511f0f168257144dcb58a9ea602a2be39879264d5ddb024b5c84"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hconres38ih",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 38 Introduced in House (IH)] <DOC> 119th CONGRESS 1st Session H. CON. RES. 38 Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from unauthorized hostilities in the Islamic Republic of Iran. _______________________________________________________________________ IN THE HOUSE OF REPRESENTATIVES June 17, 2025 Mr. Massie (for himself, Mr. Khanna, Ms. Ocasio-Cortez, Ms. Hoyle of Oregon, Ms. Tlaib, Ms. Jayapal, Mr. Beyer, Mr. Doggett, Mr. Casar, Ms. Pressley, Mrs. Ramirez, Ms. Lee of Pennsylvania, Ms. Omar, Mr. Garcia of Illinois, Ms. Velazquez, and Mr. McGovern) submitted the following concurrent resolution; which was referred to the Committee on Foreign Affairs _______________________________________________________________________ CONCURRENT RESOLUTION Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from unauthorized hostilities in the Islamic Republic of Iran. Resolved by the House of Representatives (the Senate concurring), SECTION 1. FINDINGS. Congress makes the following findings: (1) Congress has the sole power to declare war under article 1, section 8, clause 11 of the United States Constitution. (2) Congress has not declared war with respect to, or provided a specific statutory authorization for, hostilities involving United States Armed Forces against the Islamic Republic of Iran. (3) Section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)) states that ``at any time that United States Armed Forces are engaged in hostilities outside the territory of the United States, its possessions and territories without a declaration of war or specific statutory authorization, such forces shall be removed by the President if Congress so directs.'' SEC. 2. TERMINATION OF THE USE OF UNITED STATES FORCES FOR HOSTILITIES AGAINST THE ISLAMIC REPUBLIC OR IRAN. (a) Termination.--Pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress hereby directs the President to terminate the use of United States Armed Forces from hostilities against the Islamic Republic of Iran or any part of its government or military, unless explicitly authorized by a declaration of war or specific authorization for use of military force against Iran. (b) Rule of Construction.--Nothing in this section shall be construed to prevent the United States from defending itself from imminent attack. SEC. 3. RULE OF CONSTRUCTION REGARDING INTELLIGENCE SHARING. Nothing in this joint resolution may be construed to influence or disrupt any intelligence, counterintelligence, or investigative activities relating to threats in or emanating from Iran conducted by, or in conjunction with, the United States Government involving-- (1) the collection of intelligence; (2) the analysis of intelligence; or (3) the sharing of intelligence between the United States and any coalition partner if the President determines such sharing is appropriate and in the national security interests of the United States. SEC. 4. RULE OF CONSTRUCTION REGARDING NO AUTHORIZATION FOR USE OF MILITARY FORCE. Consistent with section 8(a)(1) of the War Powers Resolution (50 U.S.C. 1547(a)(1)), nothing in this concurrent resolution may be construed as authorizing the use of military force. <all>"
+          },
+          {
+            "source_id": "congressional-record:hconres38-roll85-choice144",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "DIRECTING THE PRESIDENT PUR-\nSUANT TO SECTION 5(c) OF THE\nWAR POWERS RESOLUTION TO\nREMOVE UNITED STATES ARMED\nFORCES FROM UNAUTHORIZED\nHOSTILITIES IN THE ISLAMIC\nREPUBLIC OF IRAN\nThe SPEAKER pro tempore (Mr.\nGOLDMAN of Texas). Pursuant to clause\n8 of rule XX, the unfinished business is\nthe vote on adoption of the concurrent\nresolution (H. Con. Res. 38) directing\nthe President pursuant to section 5(c)\nof the War Powers Resolution to re-\nmove United States Armed Forces from\nunauthorized hostilities in the Islamic\nRepublic of Iran, on which the yeas and\nnays were ordered.\nThe Clerk read the title of the con-\ncurrent resolution.\nThe SPEAKER pro tempore. The\nquestion is on the concurrent resolu-\ntion.\nESUOH\nhtiw\nDORP441S7X7KSD\nno\n\nThis is a 5-minute vote.\nThe vote was taken by electronic de-\nvice, and there were—yeas 212, nays\n219, not voting 1, as follows:\n[Roll No. 85]\n\n\nSo the concurrent resolution was not\nagreed to.\nThe result of the vote was announced\nas above recorded.\nA motion to reconsider was laid on\nthe table."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "dce2a27a0e42ea94f137e7a2b19545e4b9c97245fc41f63ab61562bc3dbe7232",
+      "record": {
+        "action_id": "house:119:2:86",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.7744. Its underlying substantive motion/resolution body is not interpreted here. This remains non-counting procedural context; referral is not adoption of allegations or relief and recommittal is not passage of an appropriations package.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:86",
+            "url": "https://clerk.house.gov/evs/2026/roll086.xml",
+            "raw_sha256": "4ff0d869135eb969c35747f7f9d12ffce0cb88fb3f61cda2c1c3ddc3c567069a",
+            "governed_bytes_sha256": "5c9732375a60cdeb568ef7ea494df96993f36cdb211c57e668a8fc1aa0c7ca5b"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "370225453db99710800068fd3bc0b8b09557e1c45479bf1c5618f57fe1d4f996",
+      "record": {
+        "action_id": "house:119:2:87",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole7744EH is124850characters; only opening0:2400andclosing123850:124850were read. The opening identifies DHSappropriations DivisionAand further continuing-appropriations DivisionB, an expressly DivisionA-specific thisActreference rule and the January22,2026H.R.7147explanatory-statement allocation/implementation effect. The ending includes personnel-payment direction and conditional obligation ratification. This is a separate March5whole-package passage, not a new vote on one selected CISA/CoastGuard/FEMA/health line or a certificate that it exactly equals January7147. Whole account/interior/continuing-resolution/pay/ratification and shared-action/version/domain review remain pending. No current balance, net spending, actual payment, validated obligation, procurement, security outcome or enacted funding follows merely from House passage.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:87",
+            "url": "https://clerk.house.gov/evs/2026/roll087.xml",
+            "raw_sha256": "40c938c462eb47d6abd29479770ba9fb01fcf64625ebdf2d7c0f4d63938c3a68",
+            "governed_bytes_sha256": "d9e37d484c67d148501b8c64693583ba5a7ac65efb763db1d537443015045f46"
+          },
+          {
+            "source_id": "govinfo:hr7744eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7744eh/html/BILLS-119hr7744eh.htm",
+            "raw_sha256": "ef9bba04ccddcbcfd9e5d262a5a91a8bbf44cec6b98fdbd539a0c4bb16cf64b7",
+            "governed_bytes_sha256": "5d72fe14f80665fdc64c66f06f177d75749ee86d59c40e38a9a8b8bee848b70a"
+          },
+          {
+            "source_id": "govinfo:hres1095eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1095eh/html/BILLS-119hres1095eh.htm",
+            "raw_sha256": "0ea9caa8329284134d7fa3acc2403b7d2212f0801fc7a901ef31aafa55601aca",
+            "governed_bytes_sha256": "c872834285380f262e2d4653b7e03c8f73ce6e69bb844d7857f7ec40280fb6c4"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7744eh",
+            "locator": "Only opening0:2400read;124850character whole package interior unreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 7744 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 7744 _______________________________________________________________________ AN ACT Making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Department of Homeland Security Appropriations Act, 2026''. SEC. 2. TABLE OF CONTENTS. Sec. 1. Short title. Sec. 2. Table of contents. Sec. 3. References. Sec. 4. Explanatory statement. Sec. 5. Statement of appropriations. DIVISION A--DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS DIVISION B--FURTHER ADDITIONAL CONTINUING APPROPRIATIONS ACT, 2026 SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in division A of this Act shall be treated as referring only to the provisions of that division. SEC. 4. EXPLANATORY STATEMENT. The explanatory statement regarding H.R. 7147 of the 119th Congress, printed in the House of Representatives section of the Congressional Record on January 22, 2026, and submitted by the chair of the Committee on Appropriations of the House of Representatives, shall have the same effect with respect to the allocation of funds and implementation of this Act as if it were a joint explanatory statement of a committee of conference. SEC. 5. STATEMENT OF APPROPRIATIONS. The following sums in this Act are appropriated, out of any money in the Treasury not otherwise appropriated, for the fiscal year ending September 30, 2026. DIVISION A--DEPARTMENT OF HOMELAND SECURITY APPROPRIATIONS TITLE I DEPARTMENTAL MANAGEMENT, INTELLIGENCE, SITUATIONAL AWARENESS, AND OVERSIGHT Office of the Secretary and Executive Management operations and support For necessary expenses of the Office of the Secretary and for executive management for operations and support, $316,295,000, which shall be for the purposes and in the amounts specified in the ``Final Bill'' column for Office of the Secretary and Executive Management, Operations and Support, in the ``Department of Homeland Security Appropriations Act, 2026'' table in the explanatory statement described in section 4 (in the matter precedi"
+          },
+          {
+            "source_id": "govinfo:hr7744eh",
+            "locator": "Only closing123850:124850read; no complete continuing/pay/ratification baseline review",
+            "passage": " (c) of section 1341 of title 31, United States Code and such payments shall be made. Sec. 1003. All obligations incurred and in anticipation of the appropriations made and authority granted by the Continuing Appropriations Act, 2026 (division A of Public Law 119-37) and by division A of this Act for the purposes of maintaining the essential level of activity to protect life and property and bringing about orderly termination of Government function, and for purposes as otherwise authorized by law, are hereby ratified and approved if otherwise in accord with the provisions of such Act. This division may be cited as the ``Further Additional Continuing Appropriations Act, 2026''. Passed the House of Representatives March 5, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 7744 _______________________________________________________________________ AN ACT Making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1095eh",
+            "locator": "Complete governing consideration rule read; no deemed substantive substitute",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1095 Engrossed in House (EH)] <DOC> H. Res. 1095 In the House of Representatives, U. S., March 4, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 7744) making appropriations for the Department of Homeland Security for the fiscal year ending September 30, 2026, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:83",
+      "original_source_object_sha256": "f0c9eefd787aaf5a76461c0321ae7a9c84f255631785aa76ed2c392e3acbe04b"
+    },
+    {
+      "source_id": "clerk:119:2:84",
+      "original_source_object_sha256": "b39fa340f66c53c42ea69a41491de03654b95a12fe9ef577877f9a734d169c0e"
+    },
+    {
+      "source_id": "clerk:119:2:85",
+      "original_source_object_sha256": "7f4dfd992eb0f0269663e51c84ecf2b7cc82a11c2f6e70aaeb23397bca274ee2"
+    },
+    {
+      "source_id": "clerk:119:2:86",
+      "original_source_object_sha256": "e97235b43b1803db4ea3fdd849f9ab3395ba43ec98ecace0c93e8127fabb99b9"
+    },
+    {
+      "source_id": "clerk:119:2:87",
+      "original_source_object_sha256": "a27a08897d0f9d9ac10468fe71a526361e130301b7391f2f04af7a596bf6d436"
+    },
+    {
+      "source_id": "congressional-record:hconres38-roll85-choice144",
+      "original_source_object_sha256": "5685b02e57bf50a9b30cbfe0528f1b6f15e43aa5c657c8790b03e3aa50840c0b"
+    },
+    {
+      "source_id": "govinfo:hconres38ih",
+      "original_source_object_sha256": "7214b2e2003fc714ef0c1b6f3ba8a477d1800889fa317315d385776d0dbece42"
+    },
+    {
+      "source_id": "govinfo:hr7744eh",
+      "original_source_object_sha256": "54b819cf8827c7ff17e258c7a39bb0e766e79dcabfb885b96c39abc7926ab715"
+    },
+    {
+      "source_id": "govinfo:hres1095eh",
+      "original_source_object_sha256": "2d884b80f14ae1e007b5e1c03473bc1eaa85f179fd9c8a209aa7e788b92a87f5"
+    },
+    {
+      "source_id": "govinfo:hres1099eh",
+      "original_source_object_sha256": "9c8f3f37e7ff2c84d8357716df329462a0e8b06a1509db2ff7a7774329c229b5"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres1099eh",
+      "governed_length": 2065,
+      "review_extent": "Complete captured unit read; old IHis not governing March5body certification and resolution assertions are not independently validated"
+    },
+    {
+      "source_id": "govinfo:hconres38ih",
+      "governed_length": 3422,
+      "review_extent": "Complete captured unit read; old IHis not governing March5body certification and resolution assertions are not independently validated"
+    },
+    {
+      "source_id": "congressional-record:hconres38-roll85-choice144",
+      "governed_length": 1030,
+      "review_extent": "Complete captured unit read; old IHis not governing March5body certification and resolution assertions are not independently validated"
+    },
+    {
+      "source_id": "govinfo:hr7744eh",
+      "governed_length": 124850,
+      "review_extent": "Only0:2400and123850:124850read; whole DHS/continuing-package interior unreviewed"
+    },
+    {
+      "source_id": "govinfo:hres1095eh",
+      "governed_length": 963,
+      "review_extent": "Complete captured unit read; old IHis not governing March5body certification and resolution assertions are not independently validated"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:83",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:84",
+        "evidence_unit": "complete_House_policy_expression",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:85",
+        "evidence_unit": "old_complete_IH_and_exact_later_question_without_governing_body",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:86",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:87",
+        "evidence_unit": "partial_whole_DHS_continuing_package",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}

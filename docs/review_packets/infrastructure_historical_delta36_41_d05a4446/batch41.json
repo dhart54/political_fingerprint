@@ -1,0 +1,881 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 41,
+  "exact_committed_head": "d05a44461ae7550227169314a6b2504ea3bf9177",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact d05a44461ae7550227169314a6b2504ea3bf9177, never current batch42 working-tree bytes; zero source acquisition.",
+  "scope": "31 new identities across six batches plus only two prior roll150/207 follow-ups in batch36. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim. Whole CMS letter, BLM plans/maps, appropriations and other partial reviews remain incomplete as recorded. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch41_20260916/membership_review.json",
+      "git_blob": "4853b9dd432a8568d2873262afad3f45cbb7bfb1",
+      "git_bytes_sha256": "eba1784c600b421e1eb76c8019123691185c2798cd8f29df543d0ae8223cc4ad"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch41_20260916/sources.json",
+      "git_blob": "015fbbf8364a24146ae3823d2cd33ee85375d156",
+      "git_bytes_sha256": "43dbbca227593cefe5e729c4c8aa320e4e83cdec0efa45d848b68dd680c5de45"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch41_20260916/screening_receipt.json",
+      "git_blob": "990da7bdf4ed184c3683a1cc0d1b9eee4918ada7",
+      "git_bytes_sha256": "990eee8da728b652e0151c349bf75419beaa574fa0d9bf6c93449c4a21d51a29"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch41_20260916/screening_units_receipt.json",
+      "git_blob": "879ae52dfabeccc9c3bcb3b01935addf45e8c9c7",
+      "git_bytes_sha256": "ee3ac6bbb1adc7daec21ef03f48f018a7c6663c90a0114a1367358c4f9b3b914"
+    }
+  },
+  "cumulative_membership_review_sha256": "21910a5769796eca88a7750c907b6fb67256c5eb562115f0ce3dd6f85d991779",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/3d0448905b51aa16d2cea4c9af0e255151edfbbacec5af15d8bfac4af2f5d3d5.0000000.json",
+        "sha256": "40fe48c67a3dd0c947f5582d6df59ad502f6500d27d33c7d000d5535c660f08a",
+        "start_character": 0,
+        "end_character": 26331
+      }
+    ],
+    "utf8_sha256": "3d0448905b51aa16d2cea4c9af0e255151edfbbacec5af15d8bfac4af2f5d3d5",
+    "total_characters": 26331,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/a7b12a36bf027bdf13acd4caf9431a05c04daf13e28b20b6188452fd2284400c.0000000.json",
+        "sha256": "705b6f31c00f25da9117d6d0c0d92de19c4ecfd8d0c4f0bd92bec856e70c5fbc",
+        "start_character": 0,
+        "end_character": 68385
+      }
+    ],
+    "utf8_sha256": "a7b12a36bf027bdf13acd4caf9431a05c04daf13e28b20b6188452fd2284400c",
+    "total_characters": 68385,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:242",
+    "house:119:1:243",
+    "house:119:1:244",
+    "house:119:1:245",
+    "house:119:1:246"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hres682eh",
+      "scope": "Complete4845character identified EHread; actual RCP119-8and3486substitute/PartBdeemed effects preserved, targets not wholly reviewed"
+    },
+    {
+      "source_id": "congressional-record:3838-amend34-roll244-choice158",
+      "scope": "Complete1532retained own offering/operative/resumed question/totals/agreement characters read; not full dailyRecord or new raw/glyph certification"
+    },
+    {
+      "source_id": "govinfo:pl102-1-operative158",
+      "scope": "Complete2179retained operative resolution characters read; OCRglyph artifacts preserved, not recertified; incorporatedUNresolutions/current legal application not reviewed"
+    },
+    {
+      "source_id": "govinfo:pl107-243-operative158",
+      "scope": "Complete4776retained operative resolution characters read; not full preamble/incorporatedUN/IraqLiberationAct/current-law review"
+    },
+    {
+      "source_id": "congressional-record:3838-amend13-roll245-choice155",
+      "scope": "Complete1980retained own child/choice characters read; initial199-255and resumed119-255literal distinction preserved"
+    },
+    {
+      "source_id": "govinfo:10usc1781c-2024-operative",
+      "scope": "Partial4225-8225of10325retained characters only: EFMPpolicy/program/coordination/database context. No whole statute/current application or parent-to-child meaning transfer"
+    },
+    {
+      "source_id": "congressional-record:3838-amend14-roll246-choice154",
+      "scope": "Complete6182retained own child/definitions/exceptions/conforming edits/choice characters read; not full Chapter55or personal clinical/legal application review"
+    },
+    {
+      "source_id": "clerk:119:1:242",
+      "scope": "Exact question/result/date/member labels and child author/printed-versus-floor numbers inspected; agreed child is not enacted parent"
+    },
+    {
+      "source_id": "clerk:119:1:243",
+      "scope": "Exact question/result/date/member labels and child author/printed-versus-floor numbers inspected; agreed child is not enacted parent"
+    },
+    {
+      "source_id": "clerk:119:1:244",
+      "scope": "Exact question/result/date/member labels and child author/printed-versus-floor numbers inspected; agreed child is not enacted parent"
+    },
+    {
+      "source_id": "clerk:119:1:245",
+      "scope": "Exact question/result/date/member labels and child author/printed-versus-floor numbers inspected; agreed child is not enacted parent"
+    },
+    {
+      "source_id": "clerk:119:1:246",
+      "scope": "Exact question/result/date/member labels and child author/printed-versus-floor numbers inspected; agreed child is not enacted parent"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "exact_question_units": 1,
+    "complete_identified_rule_body_with_unreviewed_substantive_targets": 1,
+    "complete_own_child_instruction_and_recorded_choice_units": 3,
+    "complete_retained_operative_AUMF_units": 2,
+    "partial_EFMP_baseline_units": 1,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:242",
+        "evidence_unit": "exact_question_noncounting",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:243",
+        "evidence_unit": "complete_rule_with_material_deemed_target_gaps",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:244",
+        "evidence_unit": "complete_exact_child_domain_exclusion_proposal_with_scoped_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:245",
+        "evidence_unit": "complete_exact_child_domain_exclusion_proposal_with_scoped_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:246",
+        "evidence_unit": "complete_exact_child_domain_exclusion_proposal_with_scoped_baselines",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "d957c3a11ca7e59d2f9111dad7e97a9deeeafd2258b353e8bc1a1c86b559f3a1",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:242",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The passed question orders the previous question on H.Res.682. This is a noncounting debate-control unit, distinct from rule adoption, its deemed substantive replacements, either underlying bill or a final policy vote. Preserve exact Clerkquestion/result/date/member labels without inferring a component stance, support for the rule or motive.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:242",
+            "url": "https://clerk.house.gov/evs/2025/roll242.xml",
+            "raw_sha256": "0e05f24679a967164e99d8f932c8b3240bcb589b5d780b69e2978c34a474f9f5",
+            "governed_bytes_sha256": "f85a24c0588fb2599a0c2c1f60fee0e435f940c0246005fd5aff3e48da847e8f"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "9daa9f2530f40e884eb9bc7a4efe6d2f300918dad57f4d0324c2231f5fa82c52",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:243",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.Res.682EHdoes more than schedule debate: it deems RulesCommitteePrint119-8adopted in place of the ArmedServices substitute to H.R.3838 and separately deems the H.R.3486Judiciary substitute adopted as modified by reportPartB. Amendment limits, en-bloc treatment, waivers and recommittal exceptions also remain. Complete exact RCP119-8and the other reported/modified operative target, pre-adoption/floor correspondence, package baselines and whole-action accounting are not bound here. Selected later NDAAchildren or the later3486EHcannot establish the whole deemed replacement. Keep ordinary unfinished, with no selected-component Infrastructure meaning, inferred enactment or automatic scheduling-only classification.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:243",
+            "url": "https://clerk.house.gov/evs/2025/roll243.xml",
+            "raw_sha256": "6be4a2198816ba7e832a2de3ac776969630346f83f8469baff143b14f9ddbfb9",
+            "governed_bytes_sha256": "1e25d5757a4d4ca5d1ab168d95dfe24a5adbc61c8351092e5ffb0e320e08ac22"
+          },
+          {
+            "source_id": "govinfo:hres682eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres682eh/html/BILLS-119hres682eh.htm",
+            "raw_sha256": "6f002d1b61a85ddb9fc63f0f28be31eb8c6bae97c5cffb9ba57f98caf9be7a59",
+            "governed_bytes_sha256": "39fb87bb3f4bdb99bbc80f0c205664406228cab1fb686411c4e92bd4ae3e40d8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres682eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 682 Engrossed in House (EH)] <DOC> H. Res. 682 In the House of Representatives, U. S., September 9, 2025. Resolved, That at any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 3838) to authorize appropriations for fiscal year 2026 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and amendments specified in this section and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Armed Services or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. In lieu of the amendment in the nature of a substitute recommended by the Committee on Armed Services now printed in the bill, an amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-8 shall be considered as adopted in the House and in the Committee of the Whole. The bill, as amended, shall be considered as the original bill for the purpose of further amendment under the five-minute rule and shall be considered as read. All points of order against provisions in the bill, as amended, are waived. Sec. 2. (a) No further amendment to H.R. 3838, as amended, shall be in order except those printed in part A of the report of the Committee on Rules accompanying this resolution and amendments en bloc described in section 3 of this resolution. (b) Each further amendment printed in part A of the report of the Committee on Rules shall be considered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. (c) All points of order against further amendments printed in part A of the report of the Committee on Rules or against amendments en bloc described in section 3 of this resolution are waived. Sec. 3. It shall be in order at any time for the chair of the Committee on Armed Services or his designee to offer amendments en bloc consisting of further amendments printed in part A of the report of the Committee on Rules accompanying this resolution not earlier disposed of. Amendments en bloc offered pursuant to this section shall be considered as read, shall be debatable for 40 minutes equally divided and controlled by the chair and ranking minority member of the Committee on Armed Services or their respective designees, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. Sec. 4. At the conclusion of consideration of H.R. 3838 for amendment the Committee shall rise and report the bill, as amended, to the House with such further amendments as may have been adopted. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto to final passage without intervening motion except one motion to recommit. Sec. 5. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 3486) to amend the Immigration and Nationality Act to increase penalties for individuals who illegally enter and reenter the United States after being removed, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on the Judiciary now printed in the bill, modified by the amendment printed in part B of the report of the Committee on Rules accompanying this resolution, shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "6416794faaf65501044f5d2e2713f46bfbd031ce0f880f532a523b91e8365ba0",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:244",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "The complete own Meeks PartA34instruction repeals two specified Iraq force-authorization resolutions, PublicLaws102-1and107-243. Complete retained operative resolutions establish use-of-force/diplomatic-determination/WarPowers/reporting mechanisms; their preambles, incorporated UNresolutions and comprehensive current authorities are not separately certified. This exact repeal does not directly establish transport/infrastructure governance, technology development/deployment or research rules; possible downstream procurement, rebuilding or conflict effects cannot supply membership. Both members recordedAye and the amendment was agreed261–167, but no actual troop withdrawal, elimination of all war powers/2001authority, reconstruction change, enactment or motive is inferred. Proposed domain exclusion concerns this child, not the NDAAparent or another domain conclusion.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:244",
+            "url": "https://clerk.house.gov/evs/2025/roll244.xml",
+            "raw_sha256": "46108b5f62559ed4e5e92011f377a45a09303e7abac675a13ffff38bbc28fb41",
+            "governed_bytes_sha256": "887c2e268c1bf59caf8c3ff7f523afc584c5cdedb02d39316bd28b73a73a964e"
+          },
+          {
+            "source_id": "congressional-record:3838-amend34-roll244-choice158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "0b21abe5005d6bd495931e00b17f3fd8b563bcdd1e103065333be1103119468f"
+          },
+          {
+            "source_id": "govinfo:pl102-1-operative158",
+            "url": "https://www.govinfo.gov/content/pkg/STATUTE-105/pdf/STATUTE-105-Pg3.pdf",
+            "raw_sha256": "b3242d264a1678ad0e9b1fd351cdb15f4db1341e8a0442396e79456432782d38",
+            "governed_bytes_sha256": "a73f0161eaab5c8a8b324df8040c96d452f15cf1ad395a5379b4cd40c503fb17"
+          },
+          {
+            "source_id": "govinfo:pl107-243-operative158",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-107publ243/pdf/PLAW-107publ243.pdf",
+            "raw_sha256": "16f448c91fb711f7c89f6ceeede61c39659bc57fadb11f474cf78e43bafd2e2f",
+            "governed_bytes_sha256": "208cd15117cccb9e340ba6bfe8cbd5cd7212a8050a484689eedfad0494b16dcd"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend34-roll244-choice158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 34 OFFERED BY MR . MEEKS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 34 printed \nin part A of House Report 119–255. \nMr. MEEKS. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title XVII, add \nthe following: \nSEC. 17l. REPEAL OF AUTHORIZATIONS FOR USE \nOF MILITARY FORCE RELATING TO \nIRAQ. \nThe following are hereby repealed: \n(1) Authorization for Use of Military Force \nAgainst Iraq Resolution (Public Law 102–1; \n105 Stat. 3; 50 U.S.C. 1541 note) is hereby re-\npealed. \n(2) The Authorization for Use of Military \nForce Against Iraq Resolution of 2002 (Public \nLaw 107–243; 116 Stat. 1498; 50 U.S.C. 1541 \nnote) is hereby repealed. \n\n\nAMENDMENT NO. 34 OFFERED BY MR . MEEKS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 34, printed in \npart A of House Report 119–255, offered \nby the gentleman from New York (Mr. \nM\nEEKS), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe vote was taken by electronic de-\nvice, and there were—ayes 261, noes 167, \nnot voting 9, as follows: \n[Roll No. 244] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:pl102-1-operative158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Resolved by the Senate and House of Representatives of the United \nStates of America in Congress assembled, \nSECTION 1. SHORT TITLE. \nThis joint resolution may be cited as the \"Authorization for Use of \nMilitary Force Against Iraq Resolution\", \nSEC. 2. AUTHORIZATION FOR USE OF UNITED STATES ARMED FORCES. \n(a) AUTHORIZATION.—The President is authorized, subject to \nsubsection QoX to use United States Armed Forces pursuant to \nUnited Nations Security Council Resolution 678 (1990) in order to \nachieve implementation of Security Council Resolutions 660, 661, \n662, 664, 665, 666, 667, 669, 670, 674, and 677. \n(b) REQUIREMENT FOR DETERMINATION THAT USE OF MILITARY \nFORCE Is NECESSARY.—Before exercising the authority granted in \nsubsection (a), the President shall make available to the Speaker of \nthe House of Representatives and the President pro tempore of the \nSenate his determination that— \n(1) the United States has used all appropriate diplomatic and \nother peaceful means to obtain compliance by Iraq with the \nJan. 14, 1991 \n[H.J. Res. 77] \n50 use 1541 \nnote. \nAuthorization \nfor Use of \nMilitary Force \nAgainst Iraq \nResolution. \nKuwait. \n50 use 1541 \nnote. \nPresident. \n50 use 1541 \nnote. \n\n105 STAT. 4 PUBLIC LAW 102-1—JAN. 14, 1991 \nUnited Nations Security Council resolutions cited in subsection \n(a); and \n(2) that those efforts have not been and would not be success­\nful in obtaining such compliance, \n(c) WAR POWERS RESOLUTION REQUIREMENTS.— \n(1) SPECIFIC STATUTORY AUTHORIZATION.—Consistent with sec­\ntion 8(a)(1) of the War Powers Resolution, the Congress declares \nthat this section is intended to constitute specific statutory \nauthorization within the meaning of section 5(b) of the War \nPowers Resolution. \n(2) APPLICABIUTY OF OTHER REQUIREMENTS.—Nothing in this \nresolution supersedes any requirement of the War Powers Reso­\nlution. \nPresident. SEC. 3. REPORTS TO CONGRESS. \nnote. At least once every 60 days, the President shall submit to the \nCongress a summary on the status of efforts to obtain compliance by \nIraq with the resolutions adopted by the United Nations Security \nCouncil in response to Iraq's aggression. \nApproved January 14, 1991."
+          },
+          {
+            "source_id": "govinfo:pl107-243-operative158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Resolved by the Senate and House of Representatives of the\nUnited States of America in Congress assembled,\nSECTION 1. SHORT TITLE.\nThis joint resolution may be cited as the ‘‘Authorization for\nUse of Military Force Against Iraq Resolution of 2002’’.\nAuthorization for\nUse of Military\nForce Against\nIraq Resolution\nof 2002.\n50 USC 1541\nnote.\nVerDate 11-MAY-2000 13:44 Oct 23, 2002 Jkt 019139 PO 00243 Frm 00004 Fmt 6580 Sfmt 6581 E:\\PUBLAW\\PUBL243.107 APPS06 PsN: PUBL243\n\n116 STAT. 1501PUBLIC LAW 107–243—OCT. 16, 2002\nSEC. 2. SUPPORT FOR UNITED STATES DIPLOMATIC EFFORTS.\nThe Congress of the United States supports the efforts by\nthe President to—\n(1) strictly enforce through the United Nations Security\nCouncil all relevant Security Council resolutions regarding Iraq\nand encourages him in those efforts; and\n(2) obtain prompt and decisive action by the Security\nCouncil to ensure that Iraq abandons its strategy of delay,\nevasion and noncompliance and promptly and strictly complies\nwith all relevant Security Council resolutions regarding Iraq.\nSEC. 3. AUTHORIZATION FOR USE OF UNITED STATES ARMED FORCES.\n(a) A UTHORIZATION.—The President is authorized to use the\nArmed Forces of the United States as he determines to be necessary\nand appropriate in order to—\n(1) defend the national security of the United States against\nthe continuing threat posed by Iraq; and\n(2) enforce all relevant United Nations Security Council\nresolutions regarding Iraq.\n(b) P\nRESIDENTIAL DETERMINATION.—In connection with the\nexercise of the authority granted in subsection (a) to use force\nthe President shall, prior to such exercise or as soon thereafter\nas may be feasible, but no later than 48 hours after exercising\nsuch authority, make available to the Speaker of the House of\nRepresentatives and the President pro tempore of the Senate his\ndetermination that—\n(1) reliance by the United States on further diplomatic\nor other peaceful means alone either (A) will not adequately\nprotect the national security of the United States against the\ncontinuing threat posed by Iraq or (B) is not likely to lead\nto enforcement of all relevant United Nations Security Council\nresolutions regarding Iraq; and\n(2) acting pursuant to this joint resolution is consistent\nwith the United States and other countries continuing to take\nthe necessary actions against international terrorist and ter-\nrorist organizations, including those nations, organizations, or\npersons who planned, authorized, committed or aided the ter-\nrorist attacks that occurred on September 11, 2001.\n(c) W\nAR POWERS RESOLUTION REQUIREMENTS.—\n(1) S PECIFIC STATUTORY AUTHORIZATION .—Consistent with\nsection 8(a)(1) of the War Powers Resolution, the Congress\ndeclares that this section is intended to constitute specific statu-\ntory authorization within the meaning of section 5(b) of the\nWar Powers Resolution.\n(2) A\nPPLICABILITY OF OTHER REQUIREMENTS .—Nothing in\nthis joint resolution supersedes any requirement of the War\nPowers Resolution.\nSEC. 4. REPORTS TO CONGRESS.\n(a) REPORTS.—The President shall, at least once every 60 days,\nsubmit to the Congress a report on matters relevant to this joint\nresolution, including actions taken pursuant to the exercise of\nauthority granted in section 3 and the status of planning for efforts\nthat are expected to be required after such actions are completed,\nincluding those actions described in section 7 of the Iraq Liberation\nAct of 1998 (Public Law 105–338).\nPresident.\nVerDate 11-MAY-2000 13:44 Oct 23, 2002 Jkt 019139 PO 00243 Frm 00005 Fmt 6580 Sfmt 6581 E:\\PUBLAW\\PUBL243.107 APPS06 PsN: PUBL243\n\n116 STAT. 1502 PUBLIC LAW 107 –243—OCT. 16, 2002\nLEGISLATIVE HISTORY—H.J. Res. 114 (S.J. Res. 45) (S.J. Res. 46):\nHOUSE REPORTS: No. 107 –721 (Comm. on International Relations).\nCONGRESSIONAL RECORD, Vol. 148 (2002):\nOct. 8, 9, considered in House.\nOct. 10, considered and passed House and Senate.\nWEEKLY COMPILATION OF PRESIDENTIAL DOCUMENTS, Vol. 38 (2002):\nOct. 16, Presidential remarks and statement.\nÆ\n(b) S INGLE CONSOLIDATED REPORT.—To the extent that the\nsubmission of any report described in subsection (a) coincides with\nthe submission of any other report on matters relevant to this\njoint resolution otherwise required to be submitted to Congress\npursuant to the reporting requirements of the War Powers Resolu-\ntion (Public Law 93 –148), all such reports may be submitted as\na single consolidated report to the Congress.\n(c) R\nULE OF CONSTRUCTION.—To the extent that the information\nrequired by section 3 of the Authorization for Use of Military\nForce Against Iraq Resolution (Public Law 102 –1) is included in\nthe report required by this section, such report shall be considered\nas meeting the requirements of section 3 of such resolution.\nApproved October 16, 2002."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "68c8188a1bf44683ad713a7a5f608a82f71146c32a8dfd59cdc2c98f30cb7634",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:245",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "The complete own Norman PartA13instruction prohibits specified gender-transition procedures, referrals and duty-station changes for a minor dependent child through the defined EFMP. These exact healthcare/family-assignment restrictions do not modify technology deployment, infrastructure construction or research governance. The parent EFMPpartial statutory context includes coordination/recordkeeping/databases, but those unchanged features cannot establish the narrower child membership. The first retained callup prints199–255where the resumed question prints119–255and the ClerkbindsPartA13/floorNo.9; the raw text is preserved, not repaired or used as an alternate-action witness. Recorded221–210agreement is not enacted/current clinical eligibility, a prohibition covering every person/program, identity endorsement or motive. Proposed exact-action exclusion requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:245",
+            "url": "https://clerk.house.gov/evs/2025/roll245.xml",
+            "raw_sha256": "442e3654488259e8642b5e8fee67216807501b0895d44b197151a0f9d887802b",
+            "governed_bytes_sha256": "05f72b1f718b3e0beca82ea743640a156d5594259d2b76f4545bec9ae0152d30"
+          },
+          {
+            "source_id": "congressional-record:3838-amend13-roll245-choice155",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "532242146c7ab00c52e7ca83f727ce36aa48eddac5e355ab4874d0899aaaa887"
+          },
+          {
+            "source_id": "govinfo:10usc1781c-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm",
+            "raw_sha256": "19288845b93443c5f1629a560e48a131aded1ddf6198ac59e15982a2b1bb5568",
+            "governed_bytes_sha256": "90dab046dc6d5ab8972bb9d30d0de439b3ab7155995974a3c59a0b2427267f83"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend13-roll245-choice155",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 13 OFFERED BY MR . NORMAN \nThe Acting CHAIR. It is now in order \nto consider amendment No. 13 printed \nin part A of House Report 199–255. \nMr. NORMAN. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle H of title V add the \nfollowing new section: \nSEC. 5 ll. PROHIBITIONS ON PROVISION OF \nGENDER TRANSITION SERVICES \nTHROUGH AN EXCEPTIONAL FAMILY \nMEMBER PROGRAM OF THE ARMED \nFORCES. \n(a) IN GENERAL.—No gender transition pro-\ncedures, including surgery or medication, \nmay be provided to a minor dependent child \nthrough an EFMP. \n(b) R\nEFERRALS.—No referral for procedures \ndescribed in subsection (a) may be provided \nto a minor dependent child through an \nEFMP. \n(c) R\nEASSIGNMENT.—No change of duty sta-\ntion may be approved through an EFMP for \nthe purpose of providing a minor dependent \nchild with access to procedures described in \nsubsection (a). \n(d) EFMP D\nEFINED.—In this section, the \nterm ‘‘EFMP’’ means the program referred \nto as the Exceptional Family Member Pro-\ngram under section 1781c(d)(4)(I) of title 10, \nUnited States Code. \n\n\nAMENDMENT NO. 13 OFFERED BY MR . NORMAN \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 13, printed in \npart A of House Report 119–255, offered \nby the gentleman from South Carolina \n(Mr. N\nORMAN), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 221, noes 210, \nnot voting 6, as follows: \n[Roll No. 245] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:10usc1781c-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/b6d773d941e4d392baeb267967e9797cd80a2faf5a93c2005b40ecd33915769b.0000000.json",
+                  "sha256": "0be4691f02d6bd95fc9ce8b7109ea0e5564f5105ff09565641f33025fda66ea3",
+                  "start_character": 0,
+                  "end_character": 10325
+                }
+              ],
+              "utf8_sha256": "b6d773d941e4d392baeb267967e9797cd80a2faf5a93c2005b40ecd33915769b",
+              "total_characters": 10325,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d97be607fbc5676b0e5040383d041304219b7f198d4df42a83c0a5d1dbfda39d",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:246",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "The complete own Mace PartA14instruction inserts a TRICAREcoverage/furnishment prohibition with printed treatment-purpose definitions, exceptions and no-new-entitlement construction, plus1077(b)and1079(a)(20)conforming edits. Its coverage provision addresses members/dependents while certain exception language refers to minors; those printed distinctions are not flattened into a universal age/coverage rule. The defined medical procedures/medications are not operative technology-development/deployment, infrastructure or research governance simply because care uses technology. Full baseline/clinical/current-law applications are not asserted by this domain screen. Recorded221–207agreement does not establish enactment, personal coverage, medical truth, identity endorsement, a whole-NDAAstance or motive. This proposed exclusion is source-grounded in the exact full child and its qualifications, not its title, parent policy area or another domain disposition.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:246",
+            "url": "https://clerk.house.gov/evs/2025/roll246.xml",
+            "raw_sha256": "fe287f371950a64e7f4b9eb060f65a5e8855d2de35b90a86454de273fff48c37",
+            "governed_bytes_sha256": "149140bf1596605f2ac2479282506dd2793db1684ac235f79771e74a336aa097"
+          },
+          {
+            "source_id": "congressional-record:3838-amend14-roll246-choice154",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "4e14d66e43aaee9fe2f152c32a879cd1fe88d2106539dda592750f4085c0ca2c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend14-roll246-choice154",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/d95c1d4943373113856c63d017963a6dafe33eafe380cc9c9d2eef43447b1b7f.0000000.json",
+                  "sha256": "03cc54b0e3274f8b177b092f36db9a45116e519ba7ceadbeca0dad958ff4ade2",
+                  "start_character": 0,
+                  "end_character": 6182
+                }
+              ],
+              "utf8_sha256": "d95c1d4943373113856c63d017963a6dafe33eafe380cc9c9d2eef43447b1b7f",
+              "total_characters": 6182,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "9d10ace0543f8f3ed0bcb7cca67411c0183101288d27a63221ab8ee8a02b0015",
+      "source": {
+        "source_id": "clerk:119:1:242",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll242.xml",
+        "text_version": null,
+        "raw_sha256": "0e05f24679a967164e99d8f932c8b3240bcb589b5d780b69e2978c34a474f9f5",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "242",
+          "legis-num": "H RES 682",
+          "vote-question": "On Ordering the Previous Question",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "9-Sep-2025",
+          "action-time": "2:01 PM",
+          "vote-desc": "Providing for consideration of the bill (H.R. 3838) Streamlining Procurement for Effective Execution and Delivery and National Defense Authorization Act for FY 2026, and providing for consideration of the bill (H.R. 3486) Stop Illegal Entry Act, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {},
+          {},
+          {}
+        ],
+        "governed_bytes_sha256": "f85a24c0588fb2599a0c2c1f60fee0e435f940c0246005fd5aff3e48da847e8f"
+      }
+    },
+    {
+      "original_source_object_sha256": "36691fda4e17b5d15043b82dc43229c6b69ee178710e464553d43c06138bae4b",
+      "source": {
+        "source_id": "clerk:119:1:243",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll243.xml",
+        "text_version": null,
+        "raw_sha256": "6be4a2198816ba7e832a2de3ac776969630346f83f8469baff143b14f9ddbfb9",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "243",
+          "legis-num": "H RES 682",
+          "vote-question": "On Agreeing to the Resolution",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Passed",
+          "action-date": "9-Sep-2025",
+          "action-time": "2:10 PM",
+          "vote-desc": "Providing for consideration of the bill (H.R. 3838) Streamlining Procurement for Effective Execution and Delivery and National Defense Authorization Act for FY 2026, and providing for consideration of the bill (H.R. 3486) Stop Illegal Entry Act, and for other purposes"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "210",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "8"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "0",
+            "nay-total": "206",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "1e25d5757a4d4ca5d1ab168d95dfe24a5adbc61c8351092e5ffb0e320e08ac22"
+      }
+    },
+    {
+      "original_source_object_sha256": "ea0318405497f3caf36e48b7a4a4e06b2c2c4cc9f82db05e4f1b946c13639f1a",
+      "source": {
+        "source_id": "govinfo:hres682eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres682eh/html/BILLS-119hres682eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "6f002d1b61a85ddb9fc63f0f28be31eb8c6bae97c5cffb9ba57f98caf9be7a59",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 682 Engrossed in House (EH)] <DOC> H. Res. 682 In the House of Representatives, U. S., September 9, 2025. Resolved, That at any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 3838) to authorize appropriations for fiscal year 2026 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe military personnel strengths for such fiscal year, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and amendments specified in this section and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Armed Services or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. In lieu of the amendment in the nature of a substitute recommended by the Committee on Armed Services now printed in the bill, an amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-8 shall be considered as adopted in the House and in the Committee of the Whole. The bill, as amended, shall be considered as the original bill for the purpose of further amendment under the five-minute rule and shall be considered as read. All points of order against provisions in the bill, as amended, are waived. Sec. 2. (a) No further amendment to H.R. 3838, as amended, shall be in order except those printed in part A of the report of the Committee on Rules accompanying this resolution and amendments en bloc described in section 3 of this resolution. (b) Each further amendment printed in part A of the report of the Committee on Rules shall be considered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. (c) All points of order against further amendments printed in part A of the report of the Committee on Rules or against amendments en bloc described in section 3 of this resolution are waived. Sec. 3. It shall be in order at any time for the chair of the Committee on Armed Services or his designee to offer amendments en bloc consisting of further amendments printed in part A of the report of the Committee on Rules accompanying this resolution not earlier disposed of. Amendments en bloc offered pursuant to this section shall be considered as read, shall be debatable for 40 minutes equally divided and controlled by the chair and ranking minority member of the Committee on Armed Services or their respective designees, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. Sec. 4. At the conclusion of consideration of H.R. 3838 for amendment the Committee shall rise and report the bill, as amended, to the House with such further amendments as may have been adopted. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto to final passage without intervening motion except one motion to recommit. Sec. 5. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 3486) to amend the Immigration and Nationality Act to increase penalties for individuals who illegally enter and reenter the United States after being removed, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on the Judiciary now printed in the bill, modified by the amendment printed in part B of the report of the Committee on Rules accompanying this resolution, shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. Attest: Clerk.",
+        "governed_bytes_sha256": "39fb87bb3f4bdb99bbc80f0c205664406228cab1fb686411c4e92bd4ae3e40d8"
+      }
+    },
+    {
+      "original_source_object_sha256": "74395938c87a2f91ff42d6725ad9be35f99fdf460bc8c41213c26cef571bf6a7",
+      "source": {
+        "source_id": "clerk:119:1:244",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll244.xml",
+        "text_version": null,
+        "raw_sha256": "46108b5f62559ed4e5e92011f377a45a09303e7abac675a13ffff38bbc28fb41",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "244",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "23",
+          "amendment-author": "Meeks of New York Part A Amendment No. 34",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "4:34 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Aye",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "49",
+            "nay-total": "167",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "212",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "887c2e268c1bf59caf8c3ff7f523afc584c5cdedb02d39316bd28b73a73a964e"
+      }
+    },
+    {
+      "original_source_object_sha256": "b723c59046a6d4fc6bfb6c66f9a06886cd76644e40a6fbc523f44aa356fa5909",
+      "source": {
+        "source_id": "congressional-record:3838-amend34-roll244-choice158",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA34 September10 offer/operative/question/totals/recorded outcome; exact cross-page pieces, not debate/other actions/enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 34 OFFERED BY MR . MEEKS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 34 printed \nin part A of House Report 119–255. \nMr. MEEKS. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title XVII, add \nthe following: \nSEC. 17l. REPEAL OF AUTHORIZATIONS FOR USE \nOF MILITARY FORCE RELATING TO \nIRAQ. \nThe following are hereby repealed: \n(1) Authorization for Use of Military Force \nAgainst Iraq Resolution (Public Law 102–1; \n105 Stat. 3; 50 U.S.C. 1541 note) is hereby re-\npealed. \n(2) The Authorization for Use of Military \nForce Against Iraq Resolution of 2002 (Public \nLaw 107–243; 116 Stat. 1498; 50 U.S.C. 1541 \nnote) is hereby repealed. \n\n\nAMENDMENT NO. 34 OFFERED BY MR . MEEKS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 34, printed in \npart A of House Report 119–255, offered \nby the gentleman from New York (Mr. \nM\nEEKS), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe vote was taken by electronic de-\nvice, and there were—ayes 261, noes 167, \nnot voting 9, as follows: \n[Roll No. 244] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "0b21abe5005d6bd495931e00b17f3fd8b563bcdd1e103065333be1103119468f",
+        "captured_full_text_sha256": "5b79f72e735a4ca28b976d84432574abff9fc37e4c8740b9f5419c9c229b6c9d",
+        "source_text_extents": [
+          {
+            "start": 23641,
+            "end": 24441,
+            "total": 100262
+          },
+          {
+            "start": 49743,
+            "end": 50382,
+            "total": 100262
+          },
+          {
+            "start": 55548,
+            "end": 55637,
+            "total": 100262
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "07e76dd379c66f7a147408dcf0c7e9d3b59eb01f5df98b564ee1e9a02a69e365",
+      "source": {
+        "source_id": "govinfo:pl102-1-operative158",
+        "source_type": "official_enacted_law",
+        "url": "https://www.govinfo.gov/content/pkg/STATUTE-105/pdf/STATUTE-105-Pg3.pdf",
+        "raw_sha256": "b3242d264a1678ad0e9b1fd351cdb15f4db1341e8a0442396e79456432782d38",
+        "text_version": "Named Iraq force authorization statutory body, including conditions/reporting; PDF extraction/layout artifacts retained, no recital fact/current force legality/personal Immigration judgment.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "Resolved by the Senate and House of Representatives of the United \nStates of America in Congress assembled, \nSECTION 1. SHORT TITLE. \nThis joint resolution may be cited as the \"Authorization for Use of \nMilitary Force Against Iraq Resolution\", \nSEC. 2. AUTHORIZATION FOR USE OF UNITED STATES ARMED FORCES. \n(a) AUTHORIZATION.—The President is authorized, subject to \nsubsection QoX to use United States Armed Forces pursuant to \nUnited Nations Security Council Resolution 678 (1990) in order to \nachieve implementation of Security Council Resolutions 660, 661, \n662, 664, 665, 666, 667, 669, 670, 674, and 677. \n(b) REQUIREMENT FOR DETERMINATION THAT USE OF MILITARY \nFORCE Is NECESSARY.—Before exercising the authority granted in \nsubsection (a), the President shall make available to the Speaker of \nthe House of Representatives and the President pro tempore of the \nSenate his determination that— \n(1) the United States has used all appropriate diplomatic and \nother peaceful means to obtain compliance by Iraq with the \nJan. 14, 1991 \n[H.J. Res. 77] \n50 use 1541 \nnote. \nAuthorization \nfor Use of \nMilitary Force \nAgainst Iraq \nResolution. \nKuwait. \n50 use 1541 \nnote. \nPresident. \n50 use 1541 \nnote. \n\n105 STAT. 4 PUBLIC LAW 102-1—JAN. 14, 1991 \nUnited Nations Security Council resolutions cited in subsection \n(a); and \n(2) that those efforts have not been and would not be success­\nful in obtaining such compliance, \n(c) WAR POWERS RESOLUTION REQUIREMENTS.— \n(1) SPECIFIC STATUTORY AUTHORIZATION.—Consistent with sec­\ntion 8(a)(1) of the War Powers Resolution, the Congress declares \nthat this section is intended to constitute specific statutory \nauthorization within the meaning of section 5(b) of the War \nPowers Resolution. \n(2) APPLICABIUTY OF OTHER REQUIREMENTS.—Nothing in this \nresolution supersedes any requirement of the War Powers Reso­\nlution. \nPresident. SEC. 3. REPORTS TO CONGRESS. \nnote. At least once every 60 days, the President shall submit to the \nCongress a summary on the status of efforts to obtain compliance by \nIraq with the resolutions adopted by the United Nations Security \nCouncil in response to Iraq's aggression. \nApproved January 14, 1991.",
+        "governed_bytes_sha256": "a73f0161eaab5c8a8b324df8040c96d452f15cf1ad395a5379b4cd40c503fb17",
+        "captured_full_text_sha256": "2271392d979b88990f024c8b1df9d49aeaaf5f58e105d62e8bd8081ccc043796",
+        "source_text_extents": [
+          {
+            "start": 1721,
+            "end": 3900,
+            "total": 4193
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "943f56ad961c8783cac0da3b4488f8e035fe2eb8b475f8d4afa6952acdc266f6",
+      "source": {
+        "source_id": "govinfo:pl107-243-operative158",
+        "source_type": "official_enacted_law",
+        "url": "https://www.govinfo.gov/content/pkg/PLAW-107publ243/pdf/PLAW-107publ243.pdf",
+        "raw_sha256": "16f448c91fb711f7c89f6ceeede61c39659bc57fadb11f474cf78e43bafd2e2f",
+        "text_version": "Named Iraq force authorization statutory body, including conditions/reporting; PDF extraction/layout artifacts retained, no recital fact/current force legality/personal Immigration judgment.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "Resolved by the Senate and House of Representatives of the\nUnited States of America in Congress assembled,\nSECTION 1. SHORT TITLE.\nThis joint resolution may be cited as the ‘‘Authorization for\nUse of Military Force Against Iraq Resolution of 2002’’.\nAuthorization for\nUse of Military\nForce Against\nIraq Resolution\nof 2002.\n50 USC 1541\nnote.\nVerDate 11-MAY-2000 13:44 Oct 23, 2002 Jkt 019139 PO 00243 Frm 00004 Fmt 6580 Sfmt 6581 E:\\PUBLAW\\PUBL243.107 APPS06 PsN: PUBL243\n\n116 STAT. 1501PUBLIC LAW 107–243—OCT. 16, 2002\nSEC. 2. SUPPORT FOR UNITED STATES DIPLOMATIC EFFORTS.\nThe Congress of the United States supports the efforts by\nthe President to—\n(1) strictly enforce through the United Nations Security\nCouncil all relevant Security Council resolutions regarding Iraq\nand encourages him in those efforts; and\n(2) obtain prompt and decisive action by the Security\nCouncil to ensure that Iraq abandons its strategy of delay,\nevasion and noncompliance and promptly and strictly complies\nwith all relevant Security Council resolutions regarding Iraq.\nSEC. 3. AUTHORIZATION FOR USE OF UNITED STATES ARMED FORCES.\n(a) A UTHORIZATION.—The President is authorized to use the\nArmed Forces of the United States as he determines to be necessary\nand appropriate in order to—\n(1) defend the national security of the United States against\nthe continuing threat posed by Iraq; and\n(2) enforce all relevant United Nations Security Council\nresolutions regarding Iraq.\n(b) P\nRESIDENTIAL DETERMINATION.—In connection with the\nexercise of the authority granted in subsection (a) to use force\nthe President shall, prior to such exercise or as soon thereafter\nas may be feasible, but no later than 48 hours after exercising\nsuch authority, make available to the Speaker of the House of\nRepresentatives and the President pro tempore of the Senate his\ndetermination that—\n(1) reliance by the United States on further diplomatic\nor other peaceful means alone either (A) will not adequately\nprotect the national security of the United States against the\ncontinuing threat posed by Iraq or (B) is not likely to lead\nto enforcement of all relevant United Nations Security Council\nresolutions regarding Iraq; and\n(2) acting pursuant to this joint resolution is consistent\nwith the United States and other countries continuing to take\nthe necessary actions against international terrorist and ter-\nrorist organizations, including those nations, organizations, or\npersons who planned, authorized, committed or aided the ter-\nrorist attacks that occurred on September 11, 2001.\n(c) W\nAR POWERS RESOLUTION REQUIREMENTS.—\n(1) S PECIFIC STATUTORY AUTHORIZATION .—Consistent with\nsection 8(a)(1) of the War Powers Resolution, the Congress\ndeclares that this section is intended to constitute specific statu-\ntory authorization within the meaning of section 5(b) of the\nWar Powers Resolution.\n(2) A\nPPLICABILITY OF OTHER REQUIREMENTS .—Nothing in\nthis joint resolution supersedes any requirement of the War\nPowers Resolution.\nSEC. 4. REPORTS TO CONGRESS.\n(a) REPORTS.—The President shall, at least once every 60 days,\nsubmit to the Congress a report on matters relevant to this joint\nresolution, including actions taken pursuant to the exercise of\nauthority granted in section 3 and the status of planning for efforts\nthat are expected to be required after such actions are completed,\nincluding those actions described in section 7 of the Iraq Liberation\nAct of 1998 (Public Law 105–338).\nPresident.\nVerDate 11-MAY-2000 13:44 Oct 23, 2002 Jkt 019139 PO 00243 Frm 00005 Fmt 6580 Sfmt 6581 E:\\PUBLAW\\PUBL243.107 APPS06 PsN: PUBL243\n\n116 STAT. 1502 PUBLIC LAW 107 –243—OCT. 16, 2002\nLEGISLATIVE HISTORY—H.J. Res. 114 (S.J. Res. 45) (S.J. Res. 46):\nHOUSE REPORTS: No. 107 –721 (Comm. on International Relations).\nCONGRESSIONAL RECORD, Vol. 148 (2002):\nOct. 8, 9, considered in House.\nOct. 10, considered and passed House and Senate.\nWEEKLY COMPILATION OF PRESIDENTIAL DOCUMENTS, Vol. 38 (2002):\nOct. 16, Presidential remarks and statement.\nÆ\n(b) S INGLE CONSOLIDATED REPORT.—To the extent that the\nsubmission of any report described in subsection (a) coincides with\nthe submission of any other report on matters relevant to this\njoint resolution otherwise required to be submitted to Congress\npursuant to the reporting requirements of the War Powers Resolu-\ntion (Public Law 93 –148), all such reports may be submitted as\na single consolidated report to the Congress.\n(c) R\nULE OF CONSTRUCTION.—To the extent that the information\nrequired by section 3 of the Authorization for Use of Military\nForce Against Iraq Resolution (Public Law 102 –1) is included in\nthe report required by this section, such report shall be considered\nas meeting the requirements of section 3 of such resolution.\nApproved October 16, 2002.",
+        "governed_bytes_sha256": "208cd15117cccb9e340ba6bfe8cbd5cd7212a8050a484689eedfad0494b16dcd",
+        "captured_full_text_sha256": "338149c74de4628c6a0c1fd4fc44ab05520231b4b9626302e540292729f4ab35",
+        "source_text_extents": [
+          {
+            "start": 9379,
+            "end": 14155,
+            "total": 14285
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "cf4e8360b595db473d9cc6a1d9e5b4b481dcd334fa5a1bd177d3140b66141002",
+      "source": {
+        "source_id": "clerk:119:1:245",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll245.xml",
+        "text_version": null,
+        "raw_sha256": "442e3654488259e8642b5e8fee67216807501b0895d44b197151a0f9d887802b",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "245",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "9",
+          "amendment-author": "Norman of South Carolina Part A Amendment No. 13",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "4:50 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "217",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "4",
+            "nay-total": "209",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "05f72b1f718b3e0beca82ea743640a156d5594259d2b76f4545bec9ae0152d30"
+      }
+    },
+    {
+      "original_source_object_sha256": "e7a99bdfc913a5fe3a0b6aa7ac1073edf39c560b1cc6d1ac9e1af5e9f5097111",
+      "source": {
+        "source_id": "congressional-record:3838-amend13-roll245-choice155",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "text_version": "Complete own PartA13 operative/question/totals/agreed outcome; not other amendments, debate or enactment.",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text": "AMENDMENT NO. 13 OFFERED BY MR . NORMAN \nThe Acting CHAIR. It is now in order \nto consider amendment No. 13 printed \nin part A of House Report 199–255. \nMr. NORMAN. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle H of title V add the \nfollowing new section: \nSEC. 5 ll. PROHIBITIONS ON PROVISION OF \nGENDER TRANSITION SERVICES \nTHROUGH AN EXCEPTIONAL FAMILY \nMEMBER PROGRAM OF THE ARMED \nFORCES. \n(a) IN GENERAL.—No gender transition pro-\ncedures, including surgery or medication, \nmay be provided to a minor dependent child \nthrough an EFMP. \n(b) R\nEFERRALS.—No referral for procedures \ndescribed in subsection (a) may be provided \nto a minor dependent child through an \nEFMP. \n(c) R\nEASSIGNMENT.—No change of duty sta-\ntion may be approved through an EFMP for \nthe purpose of providing a minor dependent \nchild with access to procedures described in \nsubsection (a). \n(d) EFMP D\nEFINED.—In this section, the \nterm ‘‘EFMP’’ means the program referred \nto as the Exceptional Family Member Pro-\ngram under section 1781c(d)(4)(I) of title 10, \nUnited States Code. \n\n\nAMENDMENT NO. 13 OFFERED BY MR . NORMAN \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 13, printed in \npart A of House Report 119–255, offered \nby the gentleman from South Carolina \n(Mr. N\nORMAN), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 221, noes 210, \nnot voting 6, as follows: \n[Roll No. 245] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "532242146c7ab00c52e7ca83f727ce36aa48eddac5e355ab4874d0899aaaa887",
+        "text_extraction_method": "Exact slices of preserved source serialization. Own amendment13 or16 operative/question/outcome or numbered Report reviewed at155; printed header199-255 on13 retained, not silently repaired.",
+        "captured_full_text_sha256": "ee13d256c1365a1eb7ed2538e78ba144c587462d1a5764467c4819ec11ca8d49",
+        "source_text_extents": [
+          {
+            "start": 102,
+            "end": 1290,
+            "total": 75004
+          },
+          {
+            "start": 56637,
+            "end": 57336,
+            "total": 75004
+          },
+          {
+            "start": 61853,
+            "end": 61942,
+            "total": 75004
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "3fc3813db560642b0339919c5b23b1550657f9fc322cc24cff27993bc0b7a746",
+      "source": {
+        "source_id": "govinfo:10usc1781c-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm",
+        "text_version": "2024 Code operative section only",
+        "raw_sha256": "19288845b93443c5f1629a560e48a131aded1ddf6198ac59e15982a2b1bb5568",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/b6d773d941e4d392baeb267967e9797cd80a2faf5a93c2005b40ecd33915769b.0000000.json",
+              "sha256": "0be4691f02d6bd95fc9ce8b7109ea0e5564f5105ff09565641f33025fda66ea3",
+              "start_character": 0,
+              "end_character": 10325
+            }
+          ],
+          "utf8_sha256": "b6d773d941e4d392baeb267967e9797cd80a2faf5a93c2005b40ecd33915769b",
+          "total_characters": 10325,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "90dab046dc6d5ab8972bb9d30d0de439b3ab7155995974a3c59a0b2427267f83"
+      }
+    },
+    {
+      "original_source_object_sha256": "71f956e91368be6fe87bba13b5aafc9ab3aa576b079b64d451e98ba85eb3e80e",
+      "source": {
+        "source_id": "clerk:119:1:246",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll246.xml",
+        "text_version": null,
+        "raw_sha256": "fe287f371950a64e7f4b9eb060f65a5e8855d2de35b90a86454de273fff48c37",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "246",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "10",
+          "amendment-author": "Mace of South Carolina Part A Amendment No. 14",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "4:54 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "215",
+            "nay-total": "2",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "6",
+            "nay-total": "205",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "149140bf1596605f2ac2479282506dd2793db1684ac235f79771e74a336aa097"
+      }
+    },
+    {
+      "original_source_object_sha256": "b20e3ba7832e91b24aee75557f9a0f4400ad14ef02dd70180bc0845633bd6dcf",
+      "source": {
+        "source_id": "congressional-record:3838-amend14-roll246-choice154",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "text_version": "Complete own PartA14 operative, own postponed/recorded question, totals and agreed outcome. Not debate, other amendments or enactment.",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/d95c1d4943373113856c63d017963a6dafe33eafe380cc9c9d2eef43447b1b7f.0000000.json",
+              "sha256": "03cc54b0e3274f8b177b092f36db9a45116e519ba7ceadbeca0dad958ff4ade2",
+              "start_character": 0,
+              "end_character": 6182
+            }
+          ],
+          "utf8_sha256": "d95c1d4943373113856c63d017963a6dafe33eafe380cc9c9d2eef43447b1b7f",
+          "total_characters": 6182,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "4e14d66e43aaee9fe2f152c32a879cd1fe88d2106539dda592750f4085c0ca2c",
+        "text_extraction_method": "Exact slices of the preserved source serialization; this derivative reviews its own amendment operative, question and outcome or numbered Report operative. Parent source/version remains distinct.",
+        "captured_full_text_sha256": "ee13d256c1365a1eb7ed2538e78ba144c587462d1a5764467c4819ec11ca8d49",
+        "source_text_extents": [
+          {
+            "start": 12848,
+            "end": 18239,
+            "total": 75004
+          },
+          {
+            "start": 61944,
+            "end": 62642,
+            "total": 75004
+          },
+          {
+            "start": 67250,
+            "end": 67339,
+            "total": 75004
+          }
+        ]
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 12
+  }
+}

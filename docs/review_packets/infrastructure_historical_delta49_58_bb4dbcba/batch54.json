@@ -1,0 +1,1030 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 54,
+  "exact_committed_head": "58aea40f9bb48cfd8da6177daf877e6d663c1833",
+  "export_anchor_head": "bb4dbcbae612ed89ae469ec903bc20dad3db79d1",
+  "status": "Historical candidate export. Parent-relayed embedded meaning review through58 found no material defect; original-object clearance remains incomplete. No membership acceptance, publication or production authority.",
+  "extraction": "git show at each exact original batch commit; all original blobs also equal the committed batch58 export anchor. Never current working-tree candidate bytes; zero acquisition.",
+  "scope": "Fifty new screening records across49–58 and only their referenced retained source objects, including sources explicitly listed in original source_read_scope. Cumulative maps contain hashes only. Content-addressed text parts deduplicate repeated passages; no whole corpus copy.",
+  "offsets": "Zero-based Unicode character offsets into exact transported strings: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope is preserved verbatim; its offsets remain relative to original governed text. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Partial whole-package/operative extents, exact-question-only reviews, selected statutory units and version/reference limits remain as originally recorded. Inclusion of a complete referenced source object does not convert a partial review into whole-source clearance. All six holds and unaccepted memberships remain unchanged.",
+  "committed_provenance": {
+    "membership": {
+      "head": "58aea40f9bb48cfd8da6177daf877e6d663c1833",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch54_20260916/membership_review.json",
+      "git_blob": "7bc5dff33f6846f6d6ca5bd16cfec6a44647820a",
+      "git_bytes_sha256": "4e0b7a1d43538f0c4b3836105d30cbb3d2d885c36ac7f272670fe905938fdb3c"
+    },
+    "sources": {
+      "head": "58aea40f9bb48cfd8da6177daf877e6d663c1833",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch54_20260916/sources.json",
+      "git_blob": "5d406cac5bf263a1db1bc7352aea4e5d7ccae92e",
+      "git_bytes_sha256": "f16576eabca68c38d05fa9a7af03cfb943062f6b7cfb779fc040e8e0780f7a7b"
+    },
+    "screening": {
+      "head": "58aea40f9bb48cfd8da6177daf877e6d663c1833",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch54_20260916/screening_receipt.json",
+      "git_blob": "f84cb76131cfd2264fea5ffd9934843a6c8097dc",
+      "git_bytes_sha256": "b38feca1a0b1e49fb640f72715d43ad9b5da3f269e946b9d83a29188de190489"
+    },
+    "screening_units": {
+      "head": "58aea40f9bb48cfd8da6177daf877e6d663c1833",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch54_20260916/screening_units_receipt.json",
+      "git_blob": "bd7be29231e0bc884ef10f978afe6fc018b6178d",
+      "git_bytes_sha256": "65b00b2392f41899655d2ba34a07f02bc92e36bc3575f118ee0b84704c6619d6"
+    }
+  },
+  "cumulative_membership_review_sha256": "b27819c71cc12cca6d3e9186abe7c6cc8152cda2933ba2c88e4bd75cfa1f1b90",
+  "cumulative_hash_maps_encoding": "Restore each *_json text then JSON-parse. These are exact original cumulative hash maps, not extra cumulative records or source bodies.",
+  "source_object_encoding": "Small objects use source. For source_json restore its text, JSON-parse, then recursively restore inner refs: restore(json.loads(restore(entry.source_json))). Original object digest must match.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/fc61316e924c9d86ee17d5b1cd04848f9e4c000ed7c7780890f15539b2eabd62.0000000.json",
+        "sha256": "966f7207548687fdf0ece632884b21078f9fdd8e0e6fc3718d5ef62cbb2413d6",
+        "start_character": 0,
+        "end_character": 31986
+      }
+    ],
+    "utf8_sha256": "fc61316e924c9d86ee17d5b1cd04848f9e4c000ed7c7780890f15539b2eabd62",
+    "total_characters": 31986,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/c45dbb5ead306a868413a480d2f7ab88ec7dd259b6a582b1c178142e520d7164.0000000.json",
+        "sha256": "29ff095fdc3f98d722e7e23a55dccf53ef803c46b132db0b68faa84475ebf49d",
+        "start_character": 0,
+        "end_character": 85313
+      }
+    ],
+    "utf8_sha256": "c45dbb5ead306a868413a480d2f7ab88ec7dd259b6a582b1c178142e520d7164",
+    "total_characters": 85313,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:310",
+    "house:119:1:311",
+    "house:119:1:312",
+    "house:119:1:313",
+    "house:119:1:314"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "govinfo:hr2965eh",
+      "governed_length": 3205,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:5usc551-2024-operative",
+      "governed_length": 4166,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:hr4305eh",
+      "governed_length": 3834,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:15usc634c-2024-operative",
+      "governed_length": 5713,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:5usc601-2024-operative",
+      "governed_length": 3446,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:hr1005eh",
+      "governed_length": 2518,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:20usc1011f-h-2024",
+      "governed_length": 2143,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:20usc1221-2024-operative",
+      "governed_length": 2243,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:31usc7501-a5-2024",
+      "governed_length": 418,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:hr1069eh",
+      "governed_length": 4035,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:hr1049eh",
+      "governed_length": 4673,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    },
+    {
+      "source_id": "govinfo:42usc19221-a-2024",
+      "governed_length": 1903,
+      "review_extent": "Complete retained bill or selected 2024 statutory definition/function unit read. Remaining external, program and implementation baselines are not implicitly cleared."
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_final_bill_bodies_read": 5,
+    "complete_selected_material_statutory_units_read": 7,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:310",
+        "evidence_unit": "complete_own_bill_with_material_definition_or_function_scope_and_explicit_remaining_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:311",
+        "evidence_unit": "complete_own_bill_with_material_definition_or_function_scope_and_explicit_remaining_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:312",
+        "evidence_unit": "complete_own_bill_with_material_definition_or_function_scope_and_explicit_remaining_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:313",
+        "evidence_unit": "complete_own_bill_with_material_definition_or_function_scope_and_explicit_remaining_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:314",
+        "evidence_unit": "complete_own_bill_with_material_definition_or_function_scope_and_explicit_remaining_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "records": [
+    {
+      "original_record_sha256": "3ccef40100dec4474529ecc30dc15aeb401f1c2ee192a48d2d7a86d504d18268",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:310",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R. 2965 EH sets a nonpositive fiscal 2026 and later small-business rulemaking-cost budget for SBA. Separate annual Advocacy reports to Congress cover other Federal agencies' rules and cost budgets, starting within 60 days after fiscal 2025 ends. The cap concerns SBA, not every agency; the defined budget measures regulatory costs to small businesses, not an SBA appropriation or guaranteed savings. No additional funds are authorized, which does not prohibit using existing funds. The retained section 551 definitions include amendment and repeal and preserve agency exclusions; the bill allows qualified alternative agency definitions of small business. This is general regulatory-cost administration and reporting across industries, without a designated infrastructure or technology project, standard or investment. No specific rule is automatically repealed. No actual deregulation, savings, individual eligibility, current-law status or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:310",
+            "url": "https://clerk.house.gov/evs/2025/roll310.xml",
+            "raw_sha256": "d53e1beb446c4df382a69a2ee3b794ed705592e86ed03a1a56234d70d2c535f0",
+            "governed_bytes_sha256": "1733d4cc9f50465a92bafcc860e0529ff096743e46c76f5e98559c758141434f"
+          },
+          {
+            "source_id": "govinfo:hr2965eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2965eh/html/BILLS-119hr2965eh.htm",
+            "raw_sha256": "2dcc250a64661f1fa98efd48c21475c409f4243d355ed36ae22e5b0ff1db9dea",
+            "governed_bytes_sha256": "60ea5fe14448cfb7e9092344d752942bede98c5ce0ff787f78dabe9dd707449c"
+          },
+          {
+            "source_id": "govinfo:5usc551-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec551.htm",
+            "raw_sha256": "89c053eb4d4ce537fba8f05c82d139c2ea4a75269c0e10e2e695b36b74b58c19",
+            "governed_bytes_sha256": "b18951ffc98aac9d86bf3a759c947eb2732a694f494d31168e0bd94f2bec4839"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2965eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2965 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 2965 _______________________________________________________________________ AN ACT To require the Administrator of the Small Business Administration to ensure that the small business regulatory budget for a small business concern in a fiscal year is not greater than zero, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Small Business Regulatory Reduction Act of 2025''. SEC. 2. SMALL BUSINESS ADMINISTRATION RULEMAKING COSTS TO SMALL BUSINESS CONCERNS. (a) Definitions.--In this section: (1) Administrator.--The term ``Administrator'' means the Administrator of the Small Business Administration. (2) Rule; rulemaking.--The terms ``rule'' and ``rulemaking'' have the meanings given those terms in section 551 of title 5, United States Code. (3) Small business.--The term ``small business'' has the same meaning as the term ``small business concern'' under section 3 of the Small Business Act (15 U.S.C. 632), unless an agency, after consultation with the Office of Advocacy of the Small Business Administration and after opportunity for public comment, establishes one or more definitions of such term which are appropriate to the activities of the agency and publishes any such definitions in the Federal Register. (4) Small business regulatory budget.--The term ``small business regulatory budget'' means the cost to a small business of a rulemaking conducted by a Federal agency, including the cost resulting from the issuance of any new rule and the cost resulting from the modification or repeal of an existing rule. (b) Requirement.--In fiscal year 2026 and each fiscal year thereafter, the Administrator shall ensure that the small business regulatory budget for the Small Business Administration for the applicable fiscal year is not greater than zero. (c) Advocacy Report.--Not later than 60 days after the end of fiscal year 2025, and annually thereafter, the Chief Counsel for the Office of Advocacy of the Small Business Administration shall submit to Congress a report regarding rules issued by Federal agencies other than the Administration during the preceding fiscal year that have an impact on small businesses, which shall-- (1) include the total small business regulatory budgets for the preceding fiscal year for each Federal agency; (2) include each such rule issued during the preceding fiscal year; and (3) be disaggregated by the Federal agency that issued each such rule. SEC. 3. NO ADDITIONAL FUNDS. No additional funds are authorized to be appropriated to carry out this Act. Passed the House of Representatives December 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 2965 _______________________________________________________________________ AN ACT To require the Administrator of the Small Business Administration to ensure that the small business regulatory budget for a small business concern in a fiscal year is not greater than zero, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:5usc551-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/9a5dc45ab2042127f934f9f60d08d3515c22a065921d16f6acb9fbd888ec7f3c.0000000.json",
+                  "sha256": "da30eb829ced8c5ddde7365926ec450c735b52bc8206c309a5f72a3f7d343276",
+                  "start_character": 0,
+                  "end_character": 4166
+                }
+              ],
+              "utf8_sha256": "9a5dc45ab2042127f934f9f60d08d3515c22a065921d16f6acb9fbd888ec7f3c",
+              "total_characters": 4166,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "361838cbb6bb43cca779a7699418b5e8f532ac2120fb9e2c04d52cb37516b37b",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:311",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R. 4305 EH requires a notification hotline to be established, operated and maintained within 180 days, with email, form, phone or another appropriate submission method and an accessible website providing that method. Annual reports to the SBA Administrator and Congress start within one year after enactment of the subsection and cover notification frequency, sectors, summaries, entities, geography, agencies, recommendations and Chief Counsel actions. It does not select a particular IT system or vendor, validate complaints automatically or repeal reported rules. The complete retained section 634c already provides complaint, counseling and proposal functions and separate trade outreach and reporting. Sections 551 and 601 preserve agency exclusions and the broader small-entity definition, including qualified nonprofits and governmental jurisdictions. The whole complaint-process versus technical-access boundary, remaining eligibility and practice baselines, and exact deemed-substitute/floor/EH reconciliation remain pending. Notifications are inputs, not independently established regulatory burdens. No response, resolution, savings, outcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:311",
+            "url": "https://clerk.house.gov/evs/2025/roll311.xml",
+            "raw_sha256": "3bbc3c5987160d60c7d77723661d7fe3655d783ee14fc9c81eb024d8eb6b1148",
+            "governed_bytes_sha256": "605b65af551f373301c64f5088e16b49d99d6530ca2893d7b22800e039ee5892"
+          },
+          {
+            "source_id": "govinfo:hr4305eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4305eh/html/BILLS-119hr4305eh.htm",
+            "raw_sha256": "1aed61acdeee4e56ee3ce28e0e0b16a487bc249377e8def2747bc73a73bb8e51",
+            "governed_bytes_sha256": "feaf9caa3615ad5fc41be2814d1645ffa298e1e58b14f364148e1ff9a2e85f9d"
+          },
+          {
+            "source_id": "govinfo:15usc634c-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec634c.htm",
+            "raw_sha256": "0b5e8e8c4e9f233c86026e8982914102a838eed183d25287a57d04f51eb41384",
+            "governed_bytes_sha256": "91c2fd70e4ecba4be0a55d4656dc20be713614d04840c680a39b9778265f5e75"
+          },
+          {
+            "source_id": "govinfo:5usc551-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec551.htm",
+            "raw_sha256": "89c053eb4d4ce537fba8f05c82d139c2ea4a75269c0e10e2e695b36b74b58c19",
+            "governed_bytes_sha256": "b18951ffc98aac9d86bf3a759c947eb2732a694f494d31168e0bd94f2bec4839"
+          },
+          {
+            "source_id": "govinfo:5usc601-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap6-sec601.htm",
+            "raw_sha256": "d2888aea952bfd037b041868657491ef49a7307b6fbd0872017f81e3581cf1e8",
+            "governed_bytes_sha256": "115c50f8fbd1073be3c5a815723a8ac4e9631895ee6760eb2dca1dd027ebf463"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4305eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4305 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 4305 _______________________________________________________________________ AN ACT To direct the Chief Counsel for Advocacy of the Small Business Administration to establish a Red Tape Hotline to receive notifications of burdensome agency rules, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Destroying Unnecessary, Misaligned, and Prohibitive Red Tape Act'' or the ``DUMP Red Tape Act''. SEC. 2. ESTABLISHMENT OF RED TAPE HOTLINE. Section 203 of Public Law 94-305 (15 U.S.C. 634c) is amended by adding at the end the following new subsection: ``(c) Red Tape Hotline.-- ``(1) Establishment.--Not later than 180 days after the date of the enactment of this Act, the Chief Counsel for Advocacy shall-- ``(A) establish, operate, and maintain a hotline, to be known as the `Red Tape Hotline' to receive a notification from a small entity relating to the burden of complying with a rule, guidance, policy statement, or other activity of an agency that is applicable to such concern; ``(B) establish an email address, submission form, phone number, or such other method as determined appropriate by the Chief Counsel for small entities to submit such notifications to such hotline; and ``(C) establish a website providing such email address, submission form, phone number, or other method in a manner that is easily accessible. ``(2) Report.--Not later than 1 year after the date of the enactment of this subsection, and annually thereafter, the Chief Counsel for Advocacy shall submit to the Administrator of the Small Business Administration and Congress a report on the Red Tape Hotline that includes-- ``(A) the rules, guidance, policy statements, and other activities for which notifications are most frequently received, including the affected industry sectors for such rules, guidance, policy statements, or other activities (as applicable); ``(B) a summary of the notifications received, including the type of small entity or other organization that submitted the notification and the geographic area and industry category from which the notification was sent; ``(C) an identification of the agency that issued each such rule, guidance, policy statement, or engaged in such other activity, including an identification of which such rule, guidance, or policy statement such agency issued or an explanation of which such other activity the agency engaged in, as applicable; ``(D) recommendations for each agency that issued such a rule, guidance, policy statement, or engaged in such other activity, for reducing the burden of such rule, guidance, policy statement, or other activity on small entities; and ``(E) a summary of actions taken by the Chief Counsel to address such rules, guidance, policy statements, and other activities, including any such rules, guidance, policy statements, or other activities (as applicable) for which the Chief Counsel submitted comments or analysis. ``(3) Definitions.--In this subsection-- ``(A) the term `agency' has the meaning given such term in section 551 of title 5, United States Code; and ``(B) the terms `rule' and `small entity' have the meanings given such terms, respectively, in section 601 of such title.''. Passed the House of Representatives December 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 4305 _______________________________________________________________________ AN ACT To direct the Chief Counsel for Advocacy of the Small Business Administration to establish a Red Tape Hotline to receive notifications of burdensome agency rules, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:15usc634c-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/68bc1e103870626783bf1dd0e32b9afb6ebb6ce51b627454b62f4ef2cfd1b0eb.0000000.json",
+                  "sha256": "a7b6f353c872528c880e525afc3a2f205c9c2aca0f5d66226bd4a496161a7a0d",
+                  "start_character": 0,
+                  "end_character": 5713
+                }
+              ],
+              "utf8_sha256": "68bc1e103870626783bf1dd0e32b9afb6ebb6ce51b627454b62f4ef2cfd1b0eb",
+              "total_characters": 5713,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:5usc551-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/9a5dc45ab2042127f934f9f60d08d3515c22a065921d16f6acb9fbd888ec7f3c.0000000.json",
+                  "sha256": "da30eb829ced8c5ddde7365926ec450c735b52bc8206c309a5f72a3f7d343276",
+                  "start_character": 0,
+                  "end_character": 4166
+                }
+              ],
+              "utf8_sha256": "9a5dc45ab2042127f934f9f60d08d3515c22a065921d16f6acb9fbd888ec7f3c",
+              "total_characters": 4166,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:5usc601-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§601. Definitions For purposes of this chapter— (1) the term \"agency\" means an agency as defined in section 551(1) of this title; (2) the term \"rule\" means any rule for which the agency publishes a general notice of proposed rulemaking pursuant to section 553(b) of this title, or any other law, including any rule of general applicability governing Federal grants to State and local governments for which the agency provides an opportunity for notice and public comment, except that the term \"rule\" does not include a rule of particular applicability relating to rates, wages, corporate or financial structures or reorganizations thereof, prices, facilities, appliances, services, or allowances therefor or to valuations, costs or accounting, or practices relating to such rates, wages, structures, prices, appliances, services, or allowances; (3) the term \"small business\" has the same meaning as the term \"small business concern\" under section 3 of the Small Business Act, unless an agency, after consultation with the Office of Advocacy of the Small Business Administration and after opportunity for public comment, establishes one or more definitions of such term which are appropriate to the activities of the agency and publishes such definition(s) in the Federal Register; (4) the term \"small organization\" means any not-for-profit enterprise which is independently owned and operated and is not dominant in its field, unless an agency establishes, after opportunity for public comment, one or more definitions of such term which are appropriate to the activities of the agency and publishes such definition(s) in the Federal Register; (5) the term \"small governmental jurisdiction\" means governments of cities, counties, towns, townships, villages, school districts, or special districts, with a population of less than fifty thousand, unless an agency establishes, after opportunity for public comment, one or more definitions of such term which are appropriate to the activities of the agency and which are based on such factors as location in rural or sparsely populated areas or limited revenues due to the population of such jurisdiction, and publishes such definition(s) in the Federal Register; (6) the term \"small entity\" shall have the same meaning as the terms \"small business\", \"small organization\" and \"small governmental jurisdiction\" defined in paragraphs (3), (4) and (5) of this section; and (7) the term \"collection of information\"— (A) means the obtaining, causing to be obtained, soliciting, or requiring the disclosure to third parties or the public, of facts or opinions by or for an agency, regardless of form or format, calling for either— (i) answers to identical questions posed to, or identical reporting or recordkeeping requirements imposed on, 10 or more persons, other than agencies, instrumentalities, or employees of the United States; or (ii) answers to questions posed to agencies, instrumentalities, or employees of the United States which are to be used for general statistical purposes; and (B) shall not include a collection of information described under section 3518(c)(1) of title 44, United States Code. (8) Recordkeeping requirement .—The term \"recordkeeping requirement\" means a requirement imposed by an agency on persons to maintain specified records. (Added Pub. L. 96–354, §3(a), Sept. 19, 1980, 94 Stat. 1165; amended Pub. L. 104–121, title II, §241(a)(2), Mar. 29, 1996, 110 Stat. 864.) "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4a4bd94d92d88e9a3accea1d36da53caa3b883e7447467e72c6cb28ebb3f4187",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:312",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete December 3 H.R. 1005 EH conditions covered Federal financial assistance on written disclosures by public elementary and secondary schools to the Education Secretary within 30 days of foreign-source funds exceeding $10,000 in aggregate or contracts exceeding $10,000 in aggregate. This is distinct from the earlier PRC contract-ban description in the rule; the threshold is strictly greater than $10,000, and the bill does not generally prohibit the funding. Source, country, amount and terms must be disclosed. The retained section 1011f(h) foreign-source definition includes specified foreign governments, entities, individuals and agents, rather than only PRC or adversarial governments. Only the incorporated definition applies; unrelated higher-education definitions and thresholds are not imported. Sections 1221 and 7501(a)(5) preserve covered-program and financial-assistance scope and exceptions. The whole mechanism is educational financial disclosure, without a direct infrastructure or technology construction, operating, investment or data-platform requirement. No actual foreign influence, violation, funding cut, cybersecurity or safety result, motive or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:312",
+            "url": "https://clerk.house.gov/evs/2025/roll312.xml",
+            "raw_sha256": "8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e",
+            "governed_bytes_sha256": "ef3f471938127b7f14f892b4a7223ce556b549c7819581e0f1027e04629cb60a"
+          },
+          {
+            "source_id": "govinfo:hr1005eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1005eh/html/BILLS-119hr1005eh.htm",
+            "raw_sha256": "749678c78c368ade759dc30d146e0847da811cd10b1e4cfca941000c672eca63",
+            "governed_bytes_sha256": "64dfcb92f2af21c4707679edf572d04b3e493be71a5eec780f87bcdf53fb0e2b"
+          },
+          {
+            "source_id": "govinfo:20usc1011f-h-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partB-sec1011f.htm",
+            "raw_sha256": "abc6f8a7a37ec393f5b5fc0b50e857047022c5ab4d1808cdc08396ce1dca4a24",
+            "governed_bytes_sha256": "950b4e90c3f55394daba32d6754d05e801122fc191025c137feda95006bf6fca"
+          },
+          {
+            "source_id": "govinfo:20usc1221-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm",
+            "raw_sha256": "eba1c07e456da5b9cb85926d66e2ec1f456479014e80ea78da29b3f798ab04b4",
+            "governed_bytes_sha256": "8befce9779a9bca094d25717d8a37f66bf4a9c4c256167c847f2ed3d3d695802"
+          },
+          {
+            "source_id": "govinfo:31usc7501-a5-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleV-chap75-sec7501.htm",
+            "raw_sha256": "90a337a1a7dd8c87fc8c86035d665fa10b4eca2a0ec3b8dc4aca5d1690b791ef",
+            "governed_bytes_sha256": "3a36a5b0baa91af8dc3032843e4624c4ccf75805bcb7d0d1af01a075dffadc0f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1005eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1005 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1005 _______________________________________________________________________ AN ACT To require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Combating the Lies of Authoritarians in School Systems Act'' or the ``CLASS Act''. SEC. 2. DISCLOSURE OF FOREIGN FUNDING AND CONTRACTS. (a) In General.--As a condition on receipt of Federal financial assistance under any applicable program by a public elementary school or a public secondary school, the school, not later than 30 days after receiving funds in excess of $10,000 in the aggregate from a foreign source, or entering into one or more contracts with an aggregate value in excess of $10,000 with a foreign source, shall submit to the Secretary of Education a written disclosure that identifies-- (1) the name and country of origin of the foreign source; (2) in a case in which a school receives funds from a foreign source-- (A) the amount of funds received from that source; and (B) any terms or conditions applicable to the receipt of such funds; and (3) in a case in which a school enters into a contract with a foreign source, the terms and conditions of such contract. (b) Definitions.--In this section: (1) The term ``applicable program'' has the meaning given that term in section 400 of the General Education Provisions Act (20 U.S.C. 1221). (2) The terms ``elementary school'' and ``secondary school'' have the meanings given those terms in section 8101 of the Elementary and Secondary Education Act of 1965 (20 U.S.C. 7801). (3) The term ``Federal financial assistance'' has the meaning given that term in section 7501(a)(5) of title 31, United States Code. (4) The term ``foreign source'' has the meaning given that term in section 117(h) of the Higher Education Act of 1965 (20 U.S.C. 1011f(h)). Passed the House of Representatives December 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1005 _______________________________________________________________________ AN ACT To require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:20usc1011f-h-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(h) Definitions For the purpose of this section— (1) the term \"contract\" means any agreement for the acquisition by purchase, lease, or barter of property or services by the foreign source, for the direct benefit or use of either of the parties; (2) the term \"foreign source\" means— (A) a foreign government, including an agency of a foreign government; (B) a legal entity, governmental or otherwise, created solely under the laws of a foreign state or states; (C) an individual who is not a citizen or a national of the United States or a trust territory or protectorate thereof; and (D) an agent, including a subsidiary or affiliate of a foreign legal entity, acting on behalf of a foreign source; (3) the term \"gift\" means any gift of money or property; (4) the term \"institution\" means any institution, public or private, or, if a multicampus institution, any single campus of such institution, in any State, that— (A) is legally authorized within such State to provide a program of education beyond secondary school; (B) provides a program for which the institution awards a bachelor's degree (or provides not less than a 2-year program which is acceptable for full credit toward such a degree) or more advanced degrees; and (C) is accredited by a nationally recognized accrediting agency or association and to which institution Federal financial assistance is extended (directly or indirectly through another entity or person), or which institution receives support from the extension of Federal financial assistance to any of the institution's subunits; and (5) the term \"restricted or conditional gift or contract\" means any endowment, gift, grant, contract, award, present, or property of any kind which includes provisions regarding— (A) the employment, assignment, or termination of faculty; (B) the establishment of departments, centers, research or lecture programs, or new faculty positions; (C) the selection or admission of students; or (D) the award of grants, loans, scholarships, fellowships, or other forms of financial aid restricted to students of a specified country, religion, sex, ethnic origin, or political opinion. "
+          },
+          {
+            "source_id": "govinfo:20usc1221-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§1221. Short title; applicability; definitions (a) Short title This chapter may be cited as the \"General Education Provisions Act\". (b) Applicability of chapter (1) Except as otherwise provided, this chapter applies to each applicable program of the Department of Education. (2) Except as otherwise provided, this chapter does not apply to any contract made by the Department of Education. (c) Definitions As used in this chapter, the following terms have the following meanings: (1) The term \"applicable program\" means any program for which the Secretary or the Department has administrative responsibility as provided by law or by delegation of authority pursuant to law. The term includes each program for which the Secretary or the Department has administrative responsibility under the Department of Education Organization Act [20 U.S.C. 3401 et seq.] or under Federal law effective after the effective date of that Act. (2) The term \"applicable statute\" means— (A) the Act or the title, part, section, or any other subdivision of an Act, as the case may be, that authorizes the appropriation for an applicable program; (B) this chapter; and (C) any other statute that by its terms expressly controls the administration of an applicable program. (3) The term \"Department\" means the Department of Education. (4) The term \"Secretary\" means the Secretary of Education. (d) Application of other laws unaffected Nothing in this chapter shall be construed to affect the applicability of title VI of the Civil Rights Act of 1964 [42 U.S.C. 2000d et seq.], title IX of the Education Amendments of 1972 [20 U.S.C. 1681 et seq.], title V of the Rehabilitation Act of 1973 [29 U.S.C. 790 et seq.], the Age Discrimination Act [42 U.S.C. 6101 et seq.], or other statutes prohibiting discrimination, to any applicable program. (Pub. L. 90–247, title IV, §400, formerly §401, Jan. 2, 1968, 81 Stat. 814; Pub. L. 90–576, title III, §301(a), Oct. 16, 1968, 82 Stat. 1094; Pub. L. 91–230, title IV, §401(a)(2), Apr. 13, 1970, 84 Stat. 164; renumbered §400, Pub. L. 92–318, title III, §301(a)(1), June 23, 1972, 86 Stat. 326; Pub. L. 93–380, title V, §505(a)(1), Aug. 21, 1974, 88 Stat. 561; Pub. L. 103–382, title II, §211, Oct. 20, 1994, 108 Stat. 3912.) "
+          },
+          {
+            "source_id": "govinfo:31usc7501-a5-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(5) \"Federal financial assistance\" means assistance that non-Federal entities receive or administer in the form of grants, loans, loan guarantees, property, cooperative agreements, interest subsidies, insurance, food commodities, direct appropriations, or other assistance, but does not include amounts received as reimbursement for services rendered to individuals in accordance with guidance issued by the Director; "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "ecfba835dd9937ff4cebe990868ff01f154c2de12fa3ac4ea0691e31e718c84d",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:313",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R. 1069 EH restricts covered education-program funds for specified direct or indirect PRC support through institutes, classrooms or persons acting on its behalf. The prohibition takes effect one year after enactment; the separate 90-day notice and guidance requirement is not that funding deadline. For qualifying pre-enactment contracts continuing after the effective date, schools must submit timely waiver requests with the unredacted contract, translation where needed, and the required mission, student and United States interest statement. The Secretary may issue a waiver until contract termination; grandfathering is not automatic. The retained section 1221 definition covers broad Education-administered programs. The affected programs, funding uses, institutional baselines and whole foreign-support versus direct-infrastructure boundary remain pending. The title does not establish any school's foreign influence, ideology or wrongdoing. No particular facility or technical-program cut, student outcome, actual waiver, current-law status or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:313",
+            "url": "https://clerk.house.gov/evs/2025/roll313.xml",
+            "raw_sha256": "3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4",
+            "governed_bytes_sha256": "3d0abb0d44d7aa36751e7fd10a5f05081c8b9129a716b265153dc9a7e756aa97"
+          },
+          {
+            "source_id": "govinfo:hr1069eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1069eh/html/BILLS-119hr1069eh.htm",
+            "raw_sha256": "33d943985b20a5a91d4de4964efa1a155844048dfe0c62f7222f65ae981fb47e",
+            "governed_bytes_sha256": "c9c7cf958ef7825d607431cc0a97e57e8c5e7bcc4c380225df5c38ebff609be1"
+          },
+          {
+            "source_id": "govinfo:20usc1221-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm",
+            "raw_sha256": "eba1c07e456da5b9cb85926d66e2ec1f456479014e80ea78da29b3f798ab04b4",
+            "governed_bytes_sha256": "8befce9779a9bca094d25717d8a37f66bf4a9c4c256167c847f2ed3d3d695802"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1069eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/61ede4d759f83542bee22e7610d4909ebe44bfef9a2bcea2d037fee2c64df70f.0000000.json",
+                  "sha256": "1dc04c4ab8dce845e053fd60c9e647e5d70ad4d3b34d40dee064d0844f7d11c6",
+                  "start_character": 0,
+                  "end_character": 4035
+                }
+              ],
+              "utf8_sha256": "61ede4d759f83542bee22e7610d4909ebe44bfef9a2bcea2d037fee2c64df70f",
+              "total_characters": 4035,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:20usc1221-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§1221. Short title; applicability; definitions (a) Short title This chapter may be cited as the \"General Education Provisions Act\". (b) Applicability of chapter (1) Except as otherwise provided, this chapter applies to each applicable program of the Department of Education. (2) Except as otherwise provided, this chapter does not apply to any contract made by the Department of Education. (c) Definitions As used in this chapter, the following terms have the following meanings: (1) The term \"applicable program\" means any program for which the Secretary or the Department has administrative responsibility as provided by law or by delegation of authority pursuant to law. The term includes each program for which the Secretary or the Department has administrative responsibility under the Department of Education Organization Act [20 U.S.C. 3401 et seq.] or under Federal law effective after the effective date of that Act. (2) The term \"applicable statute\" means— (A) the Act or the title, part, section, or any other subdivision of an Act, as the case may be, that authorizes the appropriation for an applicable program; (B) this chapter; and (C) any other statute that by its terms expressly controls the administration of an applicable program. (3) The term \"Department\" means the Department of Education. (4) The term \"Secretary\" means the Secretary of Education. (d) Application of other laws unaffected Nothing in this chapter shall be construed to affect the applicability of title VI of the Civil Rights Act of 1964 [42 U.S.C. 2000d et seq.], title IX of the Education Amendments of 1972 [20 U.S.C. 1681 et seq.], title V of the Rehabilitation Act of 1973 [29 U.S.C. 790 et seq.], the Age Discrimination Act [42 U.S.C. 6101 et seq.], or other statutes prohibiting discrimination, to any applicable program. (Pub. L. 90–247, title IV, §400, formerly §401, Jan. 2, 1968, 81 Stat. 814; Pub. L. 90–576, title III, §301(a), Oct. 16, 1968, 82 Stat. 1094; Pub. L. 91–230, title IV, §401(a)(2), Apr. 13, 1970, 84 Stat. 164; renumbered §400, Pub. L. 92–318, title III, §301(a)(1), June 23, 1972, 86 Stat. 326; Pub. L. 93–380, title V, §505(a)(1), Aug. 21, 1974, 88 Stat. 561; Pub. L. 103–382, title II, §211, Oct. 20, 1994, 108 Stat. 3912.) "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "aa1dada37443a928f0723b7241e0e3dd4d92e3f41880eec38adbb0ca0503cc2d",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:314",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete H.R. 1049 EH conditions ESEA funding on parent access to specified foreign-funded curricular and professional-development materials, personnel-compensation counts, and donation, agreement and transaction information. Copyright consistency, free copies, the four-week access language and 30-day written-request limits remain as printed. The annual rights notice may use a school website or broad public dissemination if no website exists; no new technical platform or unrestricted copyright distribution is required. The bill does not require full public release of all student or school records. Its foreign-country definition excludes outlying areas, and the incorporated section 19221(a) foreign-entity-of-concern definition retains all five prongs rather than becoming the country-of-concern definition or all foreign private persons. The whole mechanism is educational parent access, funding disclosure and notice, without direct infrastructure or technology investment, construction, operation or research. No actual foreign influence, designation, contract outcome, student privacy or cybersecurity result, motive or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:314",
+            "url": "https://clerk.house.gov/evs/2025/roll314.xml",
+            "raw_sha256": "19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536",
+            "governed_bytes_sha256": "6f106ef6d044d9590c53758c6cd168aebabe71e983b7dff56aafbe5266200592"
+          },
+          {
+            "source_id": "govinfo:hr1049eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1049eh/html/BILLS-119hr1049eh.htm",
+            "raw_sha256": "1b1b37228f12b7fd8bae26d5b8c2ec8c29c7e12f18141c119484f2daafeb2c83",
+            "governed_bytes_sha256": "0b03393b8e6ecbea848a8ef16021118fc823409c9d5ab5f578c91eae2b75e14b"
+          },
+          {
+            "source_id": "govinfo:42usc19221-a-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partB-sec19221.htm",
+            "raw_sha256": "9110c4c8cf8957124a98b621e563273ca97a824fe01b9dbd2f2c20ac70bbaa58",
+            "governed_bytes_sha256": "116cdadb96a2bfbbf57f6e5fdf5714612fc020fecc18a5412ee0486b20c54dc7"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1049eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/c64316b103f8c2da41caacc2521464b0e0b4432640368f205d8cb3f2a5183cb7.0000000.json",
+                  "sha256": "1298afcb9ff951ea6f1c2a434c23f47cb3b0c07521a07732678804aadca1eaf9",
+                  "start_character": 0,
+                  "end_character": 4673
+                }
+              ],
+              "utf8_sha256": "c64316b103f8c2da41caacc2521464b0e0b4432640368f205d8cb3f2a5183cb7",
+              "total_characters": 4673,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc19221-a-2024",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Definitions In this section: (1) Foreign country of concern The term \"foreign country of concern\" means the People's Republic of China, the Democratic People's Republic of Korea, the Russian Federation, the Islamic Republic of Iran, or any other country determined to be a country of concern by the Department of State. (2) Foreign entity of concern The term \"foreign entity of concern\" means a foreign entity that is— (A) designated as a foreign terrorist organization by the Secretary of State under section 1189(a) of title 8; (B) included on the list of specially designated nationals and blocked persons maintained by the Office of Foreign Assets Control of the Department of the Treasury (commonly known as the SDN list); (C) owned by, controlled by, or subject to the jurisdiction or direction of a government of a foreign country that is a covered nation (as such term is defined in section 4872 of title 10); (D) alleged by the Attorney General to have been involved in activities for which a conviction was obtained under— (i) chapter 37 of title 18 (commonly known as the Espionage Act); (ii) section 951 or 1030 of title 18; (iii) chapter 90 of title 18 (commonly known as the Economic Espionage Act of 1996); (iv) the Arms Export Control Act (22 U.S.C. 2751 et seq.); (v) section 2274, 2275, 2276, 2277, or 2284 of this title; (vi) the Export Control Reform Act of 2018 (50 U.S.C. 4801 et seq.); or (vii) the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.); or (E) determined by the Secretary of Commerce, in consultation with the Secretary of Defense and the Director of National Intelligence, to be engaged in unauthorized conduct that is detrimental to the national security or foreign policy of the United States. (3) National security strategy The term \"national security strategy\" means the national security strategy required under section 3043 of title 50. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "0e04c2d939de16855f4d1f35fd4e20169608ec26f6bd80802774aff79b120210",
+      "source": {
+        "source_id": "clerk:119:1:310",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll310.xml",
+        "text_version": null,
+        "raw_sha256": "d53e1beb446c4df382a69a2ee3b794ed705592e86ed03a1a56234d70d2c535f0",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "310",
+          "legis-num": "H R 2965",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Dec-2025",
+          "action-time": "4:32 PM",
+          "vote-desc": "Small Business Regulatory Reduction Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Not Voting",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "208",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "11"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "15",
+            "nay-total": "190",
+            "present-total": "0",
+            "not-voting-total": "8"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "1733d4cc9f50465a92bafcc860e0529ff096743e46c76f5e98559c758141434f"
+      }
+    },
+    {
+      "original_source_object_sha256": "901e32b282b7e3d97d89aa5bc68e7647b62171a932f215256db090a71461acf7",
+      "source": {
+        "source_id": "govinfo:hr2965eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2965eh/html/BILLS-119hr2965eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "2dcc250a64661f1fa98efd48c21475c409f4243d355ed36ae22e5b0ff1db9dea",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2965 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 2965 _______________________________________________________________________ AN ACT To require the Administrator of the Small Business Administration to ensure that the small business regulatory budget for a small business concern in a fiscal year is not greater than zero, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Small Business Regulatory Reduction Act of 2025''. SEC. 2. SMALL BUSINESS ADMINISTRATION RULEMAKING COSTS TO SMALL BUSINESS CONCERNS. (a) Definitions.--In this section: (1) Administrator.--The term ``Administrator'' means the Administrator of the Small Business Administration. (2) Rule; rulemaking.--The terms ``rule'' and ``rulemaking'' have the meanings given those terms in section 551 of title 5, United States Code. (3) Small business.--The term ``small business'' has the same meaning as the term ``small business concern'' under section 3 of the Small Business Act (15 U.S.C. 632), unless an agency, after consultation with the Office of Advocacy of the Small Business Administration and after opportunity for public comment, establishes one or more definitions of such term which are appropriate to the activities of the agency and publishes any such definitions in the Federal Register. (4) Small business regulatory budget.--The term ``small business regulatory budget'' means the cost to a small business of a rulemaking conducted by a Federal agency, including the cost resulting from the issuance of any new rule and the cost resulting from the modification or repeal of an existing rule. (b) Requirement.--In fiscal year 2026 and each fiscal year thereafter, the Administrator shall ensure that the small business regulatory budget for the Small Business Administration for the applicable fiscal year is not greater than zero. (c) Advocacy Report.--Not later than 60 days after the end of fiscal year 2025, and annually thereafter, the Chief Counsel for the Office of Advocacy of the Small Business Administration shall submit to Congress a report regarding rules issued by Federal agencies other than the Administration during the preceding fiscal year that have an impact on small businesses, which shall-- (1) include the total small business regulatory budgets for the preceding fiscal year for each Federal agency; (2) include each such rule issued during the preceding fiscal year; and (3) be disaggregated by the Federal agency that issued each such rule. SEC. 3. NO ADDITIONAL FUNDS. No additional funds are authorized to be appropriated to carry out this Act. Passed the House of Representatives December 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 2965 _______________________________________________________________________ AN ACT To require the Administrator of the Small Business Administration to ensure that the small business regulatory budget for a small business concern in a fiscal year is not greater than zero, and for other purposes.",
+        "governed_bytes_sha256": "60ea5fe14448cfb7e9092344d752942bede98c5ce0ff787f78dabe9dd707449c"
+      }
+    },
+    {
+      "original_source_object_sha256": "21f05e8063acf827ec382de94791746ec893ad7221bb584cf8a24cbdd78a331c",
+      "source": {
+        "source_id": "govinfo:5usc551-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec551.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "89c053eb4d4ce537fba8f05c82d139c2ea4a75269c0e10e2e695b36b74b58c19",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/9a5dc45ab2042127f934f9f60d08d3515c22a065921d16f6acb9fbd888ec7f3c.0000000.json",
+              "sha256": "da30eb829ced8c5ddde7365926ec450c735b52bc8206c309a5f72a3f7d343276",
+              "start_character": 0,
+              "end_character": 4166
+            }
+          ],
+          "utf8_sha256": "9a5dc45ab2042127f934f9f60d08d3515c22a065921d16f6acb9fbd888ec7f3c",
+          "total_characters": 4166,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "b18951ffc98aac9d86bf3a759c947eb2732a694f494d31168e0bd94f2bec4839"
+      }
+    },
+    {
+      "original_source_object_sha256": "38032ba2a848c3d7273b0e6fab1bc74b9a7b0fbe4966ffadaa98810ba4f0b8cf",
+      "source": {
+        "source_id": "clerk:119:1:311",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll311.xml",
+        "text_version": null,
+        "raw_sha256": "3bbc3c5987160d60c7d77723661d7fe3655d783ee14fc9c81eb024d8eb6b1148",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "311",
+          "legis-num": "H R 4305",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Dec-2025",
+          "action-time": "4:47 PM",
+          "vote-desc": "DUMP Red Tape Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Not Voting",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "210",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "9"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "59",
+            "nay-total": "146",
+            "present-total": "0",
+            "not-voting-total": "8"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "605b65af551f373301c64f5088e16b49d99d6530ca2893d7b22800e039ee5892"
+      }
+    },
+    {
+      "original_source_object_sha256": "8491b4cca681663de9422f2d2dec91c460d2d286e20a7f6f4ac9f7f3889c4e96",
+      "source": {
+        "source_id": "govinfo:hr4305eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4305eh/html/BILLS-119hr4305eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "1aed61acdeee4e56ee3ce28e0e0b16a487bc249377e8def2747bc73a73bb8e51",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4305 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 4305 _______________________________________________________________________ AN ACT To direct the Chief Counsel for Advocacy of the Small Business Administration to establish a Red Tape Hotline to receive notifications of burdensome agency rules, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Destroying Unnecessary, Misaligned, and Prohibitive Red Tape Act'' or the ``DUMP Red Tape Act''. SEC. 2. ESTABLISHMENT OF RED TAPE HOTLINE. Section 203 of Public Law 94-305 (15 U.S.C. 634c) is amended by adding at the end the following new subsection: ``(c) Red Tape Hotline.-- ``(1) Establishment.--Not later than 180 days after the date of the enactment of this Act, the Chief Counsel for Advocacy shall-- ``(A) establish, operate, and maintain a hotline, to be known as the `Red Tape Hotline' to receive a notification from a small entity relating to the burden of complying with a rule, guidance, policy statement, or other activity of an agency that is applicable to such concern; ``(B) establish an email address, submission form, phone number, or such other method as determined appropriate by the Chief Counsel for small entities to submit such notifications to such hotline; and ``(C) establish a website providing such email address, submission form, phone number, or other method in a manner that is easily accessible. ``(2) Report.--Not later than 1 year after the date of the enactment of this subsection, and annually thereafter, the Chief Counsel for Advocacy shall submit to the Administrator of the Small Business Administration and Congress a report on the Red Tape Hotline that includes-- ``(A) the rules, guidance, policy statements, and other activities for which notifications are most frequently received, including the affected industry sectors for such rules, guidance, policy statements, or other activities (as applicable); ``(B) a summary of the notifications received, including the type of small entity or other organization that submitted the notification and the geographic area and industry category from which the notification was sent; ``(C) an identification of the agency that issued each such rule, guidance, policy statement, or engaged in such other activity, including an identification of which such rule, guidance, or policy statement such agency issued or an explanation of which such other activity the agency engaged in, as applicable; ``(D) recommendations for each agency that issued such a rule, guidance, policy statement, or engaged in such other activity, for reducing the burden of such rule, guidance, policy statement, or other activity on small entities; and ``(E) a summary of actions taken by the Chief Counsel to address such rules, guidance, policy statements, and other activities, including any such rules, guidance, policy statements, or other activities (as applicable) for which the Chief Counsel submitted comments or analysis. ``(3) Definitions.--In this subsection-- ``(A) the term `agency' has the meaning given such term in section 551 of title 5, United States Code; and ``(B) the terms `rule' and `small entity' have the meanings given such terms, respectively, in section 601 of such title.''. Passed the House of Representatives December 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 4305 _______________________________________________________________________ AN ACT To direct the Chief Counsel for Advocacy of the Small Business Administration to establish a Red Tape Hotline to receive notifications of burdensome agency rules, and for other purposes.",
+        "governed_bytes_sha256": "feaf9caa3615ad5fc41be2814d1645ffa298e1e58b14f364148e1ff9a2e85f9d"
+      }
+    },
+    {
+      "original_source_object_sha256": "0793a96a9bba4563404ac8c0fe6fc4f61c387e06f083f8ebb4c81a4c050eda15",
+      "source": {
+        "source_id": "govinfo:15usc634c-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec634c.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "0b5e8e8c4e9f233c86026e8982914102a838eed183d25287a57d04f51eb41384",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/68bc1e103870626783bf1dd0e32b9afb6ebb6ce51b627454b62f4ef2cfd1b0eb.0000000.json",
+              "sha256": "a7b6f353c872528c880e525afc3a2f205c9c2aca0f5d66226bd4a496161a7a0d",
+              "start_character": 0,
+              "end_character": 5713
+            }
+          ],
+          "utf8_sha256": "68bc1e103870626783bf1dd0e32b9afb6ebb6ce51b627454b62f4ef2cfd1b0eb",
+          "total_characters": 5713,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "91c2fd70e4ecba4be0a55d4656dc20be713614d04840c680a39b9778265f5e75"
+      }
+    },
+    {
+      "original_source_object_sha256": "86bbdc9f49b738700b8f8efd397b514d567ec64bf9aaa103f43cb2c0e0a3740c",
+      "source": {
+        "source_id": "govinfo:5usc601-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap6-sec601.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "d2888aea952bfd037b041868657491ef49a7307b6fbd0872017f81e3581cf1e8",
+        "text": "§601. Definitions For purposes of this chapter— (1) the term \"agency\" means an agency as defined in section 551(1) of this title; (2) the term \"rule\" means any rule for which the agency publishes a general notice of proposed rulemaking pursuant to section 553(b) of this title, or any other law, including any rule of general applicability governing Federal grants to State and local governments for which the agency provides an opportunity for notice and public comment, except that the term \"rule\" does not include a rule of particular applicability relating to rates, wages, corporate or financial structures or reorganizations thereof, prices, facilities, appliances, services, or allowances therefor or to valuations, costs or accounting, or practices relating to such rates, wages, structures, prices, appliances, services, or allowances; (3) the term \"small business\" has the same meaning as the term \"small business concern\" under section 3 of the Small Business Act, unless an agency, after consultation with the Office of Advocacy of the Small Business Administration and after opportunity for public comment, establishes one or more definitions of such term which are appropriate to the activities of the agency and publishes such definition(s) in the Federal Register; (4) the term \"small organization\" means any not-for-profit enterprise which is independently owned and operated and is not dominant in its field, unless an agency establishes, after opportunity for public comment, one or more definitions of such term which are appropriate to the activities of the agency and publishes such definition(s) in the Federal Register; (5) the term \"small governmental jurisdiction\" means governments of cities, counties, towns, townships, villages, school districts, or special districts, with a population of less than fifty thousand, unless an agency establishes, after opportunity for public comment, one or more definitions of such term which are appropriate to the activities of the agency and which are based on such factors as location in rural or sparsely populated areas or limited revenues due to the population of such jurisdiction, and publishes such definition(s) in the Federal Register; (6) the term \"small entity\" shall have the same meaning as the terms \"small business\", \"small organization\" and \"small governmental jurisdiction\" defined in paragraphs (3), (4) and (5) of this section; and (7) the term \"collection of information\"— (A) means the obtaining, causing to be obtained, soliciting, or requiring the disclosure to third parties or the public, of facts or opinions by or for an agency, regardless of form or format, calling for either— (i) answers to identical questions posed to, or identical reporting or recordkeeping requirements imposed on, 10 or more persons, other than agencies, instrumentalities, or employees of the United States; or (ii) answers to questions posed to agencies, instrumentalities, or employees of the United States which are to be used for general statistical purposes; and (B) shall not include a collection of information described under section 3518(c)(1) of title 44, United States Code. (8) Recordkeeping requirement .—The term \"recordkeeping requirement\" means a requirement imposed by an agency on persons to maintain specified records. (Added Pub. L. 96–354, §3(a), Sept. 19, 1980, 94 Stat. 1165; amended Pub. L. 104–121, title II, §241(a)(2), Mar. 29, 1996, 110 Stat. 864.) ",
+        "governed_bytes_sha256": "115c50f8fbd1073be3c5a815723a8ac4e9631895ee6760eb2dca1dd027ebf463"
+      }
+    },
+    {
+      "original_source_object_sha256": "e459693709caf145974180948781d0f2da30f6482bbe9b1d31911c45d793be67",
+      "source": {
+        "source_id": "clerk:119:1:312",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll312.xml",
+        "text_version": null,
+        "raw_sha256": "8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "312",
+          "legis-num": "H R 1005",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "3-Dec-2025",
+          "action-time": "5:03 PM",
+          "vote-desc": "CLASS Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Not Voting",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "212",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "30",
+            "nay-total": "176",
+            "present-total": "0",
+            "not-voting-total": "7"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "ef3f471938127b7f14f892b4a7223ce556b549c7819581e0f1027e04629cb60a"
+      }
+    },
+    {
+      "original_source_object_sha256": "5ec59fed241d6f4d97c6a6d76f4074f60185ac74a65b1ffa8fef8a65521313f5",
+      "source": {
+        "source_id": "govinfo:hr1005eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1005eh/html/BILLS-119hr1005eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "749678c78c368ade759dc30d146e0847da811cd10b1e4cfca941000c672eca63",
+        "text": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1005 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1005 _______________________________________________________________________ AN ACT To require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Combating the Lies of Authoritarians in School Systems Act'' or the ``CLASS Act''. SEC. 2. DISCLOSURE OF FOREIGN FUNDING AND CONTRACTS. (a) In General.--As a condition on receipt of Federal financial assistance under any applicable program by a public elementary school or a public secondary school, the school, not later than 30 days after receiving funds in excess of $10,000 in the aggregate from a foreign source, or entering into one or more contracts with an aggregate value in excess of $10,000 with a foreign source, shall submit to the Secretary of Education a written disclosure that identifies-- (1) the name and country of origin of the foreign source; (2) in a case in which a school receives funds from a foreign source-- (A) the amount of funds received from that source; and (B) any terms or conditions applicable to the receipt of such funds; and (3) in a case in which a school enters into a contract with a foreign source, the terms and conditions of such contract. (b) Definitions.--In this section: (1) The term ``applicable program'' has the meaning given that term in section 400 of the General Education Provisions Act (20 U.S.C. 1221). (2) The terms ``elementary school'' and ``secondary school'' have the meanings given those terms in section 8101 of the Elementary and Secondary Education Act of 1965 (20 U.S.C. 7801). (3) The term ``Federal financial assistance'' has the meaning given that term in section 7501(a)(5) of title 31, United States Code. (4) The term ``foreign source'' has the meaning given that term in section 117(h) of the Higher Education Act of 1965 (20 U.S.C. 1011f(h)). Passed the House of Representatives December 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1005 _______________________________________________________________________ AN ACT To require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes.",
+        "governed_bytes_sha256": "64dfcb92f2af21c4707679edf572d04b3e493be71a5eec780f87bcdf53fb0e2b"
+      }
+    },
+    {
+      "original_source_object_sha256": "ad4e5b4f1bffff4a15a29fc16e887c9dba6216c65340f4478dfaf2377111fb00",
+      "source": {
+        "source_id": "govinfo:20usc1011f-h-2024",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partB-sec1011f.htm",
+        "text_version": "2024 Code section1011f(h), complete definitions",
+        "raw_sha256": "abc6f8a7a37ec393f5b5fc0b50e857047022c5ab4d1808cdc08396ce1dca4a24",
+        "text": "(h) Definitions For the purpose of this section— (1) the term \"contract\" means any agreement for the acquisition by purchase, lease, or barter of property or services by the foreign source, for the direct benefit or use of either of the parties; (2) the term \"foreign source\" means— (A) a foreign government, including an agency of a foreign government; (B) a legal entity, governmental or otherwise, created solely under the laws of a foreign state or states; (C) an individual who is not a citizen or a national of the United States or a trust territory or protectorate thereof; and (D) an agent, including a subsidiary or affiliate of a foreign legal entity, acting on behalf of a foreign source; (3) the term \"gift\" means any gift of money or property; (4) the term \"institution\" means any institution, public or private, or, if a multicampus institution, any single campus of such institution, in any State, that— (A) is legally authorized within such State to provide a program of education beyond secondary school; (B) provides a program for which the institution awards a bachelor's degree (or provides not less than a 2-year program which is acceptable for full credit toward such a degree) or more advanced degrees; and (C) is accredited by a nationally recognized accrediting agency or association and to which institution Federal financial assistance is extended (directly or indirectly through another entity or person), or which institution receives support from the extension of Federal financial assistance to any of the institution's subunits; and (5) the term \"restricted or conditional gift or contract\" means any endowment, gift, grant, contract, award, present, or property of any kind which includes provisions regarding— (A) the employment, assignment, or termination of faculty; (B) the establishment of departments, centers, research or lecture programs, or new faculty positions; (C) the selection or admission of students; or (D) the award of grants, loans, scholarships, fellowships, or other forms of financial aid restricted to students of a specified country, religion, sex, ethnic origin, or political opinion. ",
+        "governed_bytes_sha256": "950b4e90c3f55394daba32d6754d05e801122fc191025c137feda95006bf6fca"
+      }
+    },
+    {
+      "original_source_object_sha256": "815b8fe9b1d680c8fc88a7ca4af739e99f878e0e4200bcd0d02fe4a1c4257d10",
+      "source": {
+        "source_id": "govinfo:20usc1221-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm",
+        "text_version": "2024 Code complete operative section; later notes excluded",
+        "raw_sha256": "eba1c07e456da5b9cb85926d66e2ec1f456479014e80ea78da29b3f798ab04b4",
+        "text": "§1221. Short title; applicability; definitions (a) Short title This chapter may be cited as the \"General Education Provisions Act\". (b) Applicability of chapter (1) Except as otherwise provided, this chapter applies to each applicable program of the Department of Education. (2) Except as otherwise provided, this chapter does not apply to any contract made by the Department of Education. (c) Definitions As used in this chapter, the following terms have the following meanings: (1) The term \"applicable program\" means any program for which the Secretary or the Department has administrative responsibility as provided by law or by delegation of authority pursuant to law. The term includes each program for which the Secretary or the Department has administrative responsibility under the Department of Education Organization Act [20 U.S.C. 3401 et seq.] or under Federal law effective after the effective date of that Act. (2) The term \"applicable statute\" means— (A) the Act or the title, part, section, or any other subdivision of an Act, as the case may be, that authorizes the appropriation for an applicable program; (B) this chapter; and (C) any other statute that by its terms expressly controls the administration of an applicable program. (3) The term \"Department\" means the Department of Education. (4) The term \"Secretary\" means the Secretary of Education. (d) Application of other laws unaffected Nothing in this chapter shall be construed to affect the applicability of title VI of the Civil Rights Act of 1964 [42 U.S.C. 2000d et seq.], title IX of the Education Amendments of 1972 [20 U.S.C. 1681 et seq.], title V of the Rehabilitation Act of 1973 [29 U.S.C. 790 et seq.], the Age Discrimination Act [42 U.S.C. 6101 et seq.], or other statutes prohibiting discrimination, to any applicable program. (Pub. L. 90–247, title IV, §400, formerly §401, Jan. 2, 1968, 81 Stat. 814; Pub. L. 90–576, title III, §301(a), Oct. 16, 1968, 82 Stat. 1094; Pub. L. 91–230, title IV, §401(a)(2), Apr. 13, 1970, 84 Stat. 164; renumbered §400, Pub. L. 92–318, title III, §301(a)(1), June 23, 1972, 86 Stat. 326; Pub. L. 93–380, title V, §505(a)(1), Aug. 21, 1974, 88 Stat. 561; Pub. L. 103–382, title II, §211, Oct. 20, 1994, 108 Stat. 3912.) ",
+        "governed_bytes_sha256": "8befce9779a9bca094d25717d8a37f66bf4a9c4c256167c847f2ed3d3d695802"
+      }
+    },
+    {
+      "original_source_object_sha256": "8c7f650dc8bb8d2450af9e5ceae8437856f9305b48aea4f7014737b600c4e36a",
+      "source": {
+        "source_id": "govinfo:31usc7501-a5-2024",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleV-chap75-sec7501.htm",
+        "text_version": "2024 Code section7501(a)(5), financial-assistance definition and exclusion",
+        "raw_sha256": "90a337a1a7dd8c87fc8c86035d665fa10b4eca2a0ec3b8dc4aca5d1690b791ef",
+        "text": "(5) \"Federal financial assistance\" means assistance that non-Federal entities receive or administer in the form of grants, loans, loan guarantees, property, cooperative agreements, interest subsidies, insurance, food commodities, direct appropriations, or other assistance, but does not include amounts received as reimbursement for services rendered to individuals in accordance with guidance issued by the Director; ",
+        "governed_bytes_sha256": "3a36a5b0baa91af8dc3032843e4624c4ccf75805bcb7d0d1af01a075dffadc0f"
+      }
+    },
+    {
+      "original_source_object_sha256": "815859cc39fba6e75f6b062c4ad323608304062e48ade3af36b761be01968102",
+      "source": {
+        "source_id": "clerk:119:1:313",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll313.xml",
+        "text_version": null,
+        "raw_sha256": "3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "313",
+          "legis-num": "H R 1069",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "4-Dec-2025",
+          "action-time": "10:28 AM",
+          "vote-desc": "PROTECT Our Kids Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "214",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "33",
+            "nay-total": "164",
+            "present-total": "0",
+            "not-voting-total": "16"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "3d0abb0d44d7aa36751e7fd10a5f05081c8b9129a716b265153dc9a7e756aa97"
+      }
+    },
+    {
+      "original_source_object_sha256": "54a489ad3278aafe59a618ffbc86d7b6362e5174648ba1e6166bf8fdc600893f",
+      "source": {
+        "source_id": "govinfo:hr1069eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1069eh/html/BILLS-119hr1069eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "33d943985b20a5a91d4de4964efa1a155844048dfe0c62f7222f65ae981fb47e",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/61ede4d759f83542bee22e7610d4909ebe44bfef9a2bcea2d037fee2c64df70f.0000000.json",
+              "sha256": "1dc04c4ab8dce845e053fd60c9e647e5d70ad4d3b34d40dee064d0844f7d11c6",
+              "start_character": 0,
+              "end_character": 4035
+            }
+          ],
+          "utf8_sha256": "61ede4d759f83542bee22e7610d4909ebe44bfef9a2bcea2d037fee2c64df70f",
+          "total_characters": 4035,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "c9c7cf958ef7825d607431cc0a97e57e8c5e7bcc4c380225df5c38ebff609be1"
+      }
+    },
+    {
+      "original_source_object_sha256": "407d8f0a1230abb53900c839b233fe9e6f3860caa10200e7d1e39a6b321daecb",
+      "source": {
+        "source_id": "clerk:119:1:314",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll314.xml",
+        "text_version": null,
+        "raw_sha256": "19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "314",
+          "legis-num": "H R 1049",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "4-Dec-2025",
+          "action-time": "10:34 AM",
+          "vote-desc": "TRACE Act"
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "214",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "6"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "33",
+            "nay-total": "166",
+            "present-total": "0",
+            "not-voting-total": "14"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "6f106ef6d044d9590c53758c6cd168aebabe71e983b7dff56aafbe5266200592"
+      }
+    },
+    {
+      "original_source_object_sha256": "d9bd9480d2796cda247be2c3bf3a9251d41834f617085bed0d06ed1d50a08f68",
+      "source": {
+        "source_id": "govinfo:hr1049eh",
+        "source_type": "official_bill_text",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1049eh/html/BILLS-119hr1049eh.htm",
+        "text_version": "EH",
+        "raw_sha256": "1b1b37228f12b7fd8bae26d5b8c2ec8c29c7e12f18141c119484f2daafeb2c83",
+        "text": {
+          "$lossless_text_parts": [
+            {
+              "path": "source_parts/c64316b103f8c2da41caacc2521464b0e0b4432640368f205d8cb3f2a5183cb7.0000000.json",
+              "sha256": "1298afcb9ff951ea6f1c2a434c23f47cb3b0c07521a07732678804aadca1eaf9",
+              "start_character": 0,
+              "end_character": 4673
+            }
+          ],
+          "utf8_sha256": "c64316b103f8c2da41caacc2521464b0e0b4432640368f205d8cb3f2a5183cb7",
+          "total_characters": 4673,
+          "transport_only": true
+        },
+        "governed_bytes_sha256": "0b03393b8e6ecbea848a8ef16021118fc823409c9d5ab5f578c91eae2b75e14b"
+      }
+    },
+    {
+      "original_source_object_sha256": "333ae1c44310c391c36be693a4de3bce883b0a167d3944e7466bab3e97b02407",
+      "source": {
+        "source_id": "govinfo:42usc19221-a-2024",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partB-sec19221.htm",
+        "text_version": "2024 Code section19221(a), full definitions",
+        "raw_sha256": "9110c4c8cf8957124a98b621e563273ca97a824fe01b9dbd2f2c20ac70bbaa58",
+        "text": "(a) Definitions In this section: (1) Foreign country of concern The term \"foreign country of concern\" means the People's Republic of China, the Democratic People's Republic of Korea, the Russian Federation, the Islamic Republic of Iran, or any other country determined to be a country of concern by the Department of State. (2) Foreign entity of concern The term \"foreign entity of concern\" means a foreign entity that is— (A) designated as a foreign terrorist organization by the Secretary of State under section 1189(a) of title 8; (B) included on the list of specially designated nationals and blocked persons maintained by the Office of Foreign Assets Control of the Department of the Treasury (commonly known as the SDN list); (C) owned by, controlled by, or subject to the jurisdiction or direction of a government of a foreign country that is a covered nation (as such term is defined in section 4872 of title 10); (D) alleged by the Attorney General to have been involved in activities for which a conviction was obtained under— (i) chapter 37 of title 18 (commonly known as the Espionage Act); (ii) section 951 or 1030 of title 18; (iii) chapter 90 of title 18 (commonly known as the Economic Espionage Act of 1996); (iv) the Arms Export Control Act (22 U.S.C. 2751 et seq.); (v) section 2274, 2275, 2276, 2277, or 2284 of this title; (vi) the Export Control Reform Act of 2018 (50 U.S.C. 4801 et seq.); or (vii) the International Emergency Economic Powers Act (50 U.S.C. 1701 et seq.); or (E) determined by the Secretary of Commerce, in consultation with the Secretary of Defense and the Director of National Intelligence, to be engaged in unauthorized conduct that is detrimental to the national security or foreign policy of the United States. (3) National security strategy The term \"national security strategy\" means the national security strategy required under section 3043 of title 50. ",
+        "governed_bytes_sha256": "116cdadb96a2bfbbf57f6e5fdf5714612fc020fecc18a5412ee0486b20c54dc7"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 17
+  }
+}

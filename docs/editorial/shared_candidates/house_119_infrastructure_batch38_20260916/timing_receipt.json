@@ -1,0 +1,35 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-18T18:48:45.037940+00:00",
+    "qualification": "Post-research specification-writing marker; prior retained-source reading and pre-command drafting untimed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-18T18:49:25.804430+00:00",
+    "end_utc": "2026-10-18T18:50:06.298515+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 38 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch38_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.351
+      },
+      {
+        "command": "python -m unittest backend.tests.test_infrastructure_candidate_seed backend.tests.test_infrastructure_candidate_batch2 backend.tests.test_infrastructure_candidate_batch3 backend.tests.test_infrastructure_candidate_batch4 backend.tests.test_infrastructure_candidate_batch5 backend.tests.test_infrastructure_candidate_batch6 backend.tests.test_infrastructure_candidate_batch7 backend.tests.test_infrastructure_discovery_delta",
+        "returncode": 0,
+        "process_wall_seconds": 37.218
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 1.925
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 40.766,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 40.494,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "elapsed_window_limit": "Post-marker application/generation wall time only. Preparatory source inspection and pre-command drafting were untimed; no total research or active LLM-authoring duration is asserted."
+}

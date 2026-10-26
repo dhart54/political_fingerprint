@@ -1,0 +1,99 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:source-qualified-three-action-shared-successor-candidate-148-20261025",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Three isolated source-qualified shared reuse/successor proposals. Existing Health/Immigration artifacts and current145 stay unchanged; separate Infrastructure eligibility, exact binding and whole-meaning decisions remain unaccepted."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:2:180",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:s2393:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20180
+      },
+      "mapping_sha256": "5ac6e6b24ab126d19781245af2b2f4f8e80104585d2bab061fe9628097c423a3"
+    },
+    {
+      "action_id": "house:119:2:78",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4758:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20078
+      },
+      "mapping_sha256": "9ef82c5efbde2ec8841b1441fb046e2b46c1a226ad3fb8a92a55eb4768f19554"
+    },
+    {
+      "action_id": "house:119:2:101",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr5103:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20101
+      },
+      "mapping_sha256": "26a28cfcf7e89b9c12f52181da2b77d04f07fa8643b6ffa542907655d426a583"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:s2393:119",
+      "action_ids": [
+        "house:119:2:180"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr4758:119",
+      "action_ids": [
+        "house:119:2:78"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr5103:119",
+      "action_ids": [
+        "house:119:2:101"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:2:180",
+        "house:119:2:78",
+        "house:119:2:101"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "All three episodes held pending content-bound shared-meaning, version-binding and issue eligibility review. No canonical admission or analytical proposition is authorized.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "d73de2ea35c55786c4a6c16d254177ad02e0d67fbf1e87b856ef6265a9cb0848"
+}

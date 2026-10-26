@@ -1,0 +1,141 @@
+{
+  "review_state": "candidate_pending_external_semantic_review",
+  "members": [
+    {
+      "member_id": "F000477",
+      "party": "D",
+      "coverage": {
+        "eligible_substantive_actions": 5,
+        "context_only_control_actions": 0,
+        "in_service_eligible_actions": 5,
+        "resolved_eligible_actions": 5,
+        "directional_yes_no_positions": 5,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_evidence_actions": 0,
+        "unresolved_service_actions": 0,
+        "outside_service_actions": 0,
+        "complete_episodes": 3,
+        "partial_episodes": 0
+      },
+      "proposition_graph": {
+        "propositions": []
+      },
+      "composition": {
+        "conclusion_plan": {
+          "primary_proposition_ids": [],
+          "limiting_proposition_ids": []
+        },
+        "presentation_ownership": {},
+        "coverage_boundaries": [],
+        "method_boundaries": []
+      },
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [],
+        "non_proposition_reasons": [
+          {
+            "action_id": "house:119:1:229",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:231",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:236",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:279",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:73",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          }
+        ]
+      },
+      "review_route": "blocked"
+    },
+    {
+      "member_id": "M001184",
+      "party": "R",
+      "coverage": {
+        "eligible_substantive_actions": 5,
+        "context_only_control_actions": 0,
+        "in_service_eligible_actions": 5,
+        "resolved_eligible_actions": 5,
+        "directional_yes_no_positions": 5,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_evidence_actions": 0,
+        "unresolved_service_actions": 0,
+        "outside_service_actions": 0,
+        "complete_episodes": 3,
+        "partial_episodes": 0
+      },
+      "proposition_graph": {
+        "propositions": []
+      },
+      "composition": {
+        "conclusion_plan": {
+          "primary_proposition_ids": [],
+          "limiting_proposition_ids": []
+        },
+        "presentation_ownership": {},
+        "coverage_boundaries": [],
+        "method_boundaries": []
+      },
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [],
+        "non_proposition_reasons": [
+          {
+            "action_id": "house:119:1:229",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:231",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:236",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:279",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:73",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          }
+        ]
+      },
+      "review_route": "blocked"
+    }
+  ],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:73",
+        "house:119:1:229",
+        "house:119:1:231",
+        "house:119:1:236",
+        "house:119:1:279"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "All five actions remain held pending preparation review and separate content-bound eligibility/meaning decisions, with legal-application/current-baseline limits explicit. No propositions or canonical application.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ]
+}

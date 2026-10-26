@@ -1,0 +1,29 @@
+{
+  "evidence_kind": "Trusted forwarded human conversation, preserved as supplied; not a fetched/signed external approval receipt",
+  "forwarding_thread": "01a15000-0ff6-73e2-95ac-fe6aee80201f",
+  "receiving_owner": "01a1500b-5c4d-7661-b831-317690ecb322",
+  "three_case_transcript": "Assistant, 2026-10-21 16:05:09 UTC, Sentinel_0f12682636a481919d6c598a0cc425f4:\n\"Three Infrastructure cases are now independently reviewed in one [decision bundle](https://github.com/dhart54/political_fingerprint/blob/28437fb5f0c79f7aa3b63faa705c8bb58ac1d7d0/docs/review_packets/infrastructure_batch136_research_product_boundaries/decision_bundle.json).\n\nMy recommendation:\n- H.R.4371, roll 340: exclude from Infrastructure. Its focus is child-placement/sponsor screening, although fingerprint checks and information exchange are meaningful counterevidence.\n- H.R.1442, roll 108: exclude. Its sodium-nitrite consumer-product ban lacks an independently established Infrastructure connection.\n- H.R.28, roll 12: keep pending. Whether its mandatory GAO study qualifies as research governance needs a specific scope decision.\n\nApprove applying those exact case-specific dispositions and the reviewed text-version bindings to the candidate records? This would not create blanket exclusion rules, merge the PR or publish anything.\"\nUser, 2026-10-21 16:56:40 UTC, Sentinel_b2500e10df108191b9f7a79079b21030:\n\"Approve\"",
+  "compatibility_transcript": "Assistant, 2026-10-21 14:39:22 UTC, Sentinel_05740c6664248191b2a8e27509ce606c:\n\"The Infrastructure CI conflict is deeper than the workflow file: Health freezes the exact bytes of a shared helper, while Infrastructure legitimately changes that helper to preserve non-directional actions. A workflow-only fix would break one side’s safeguards.\n\nApprove a bounded compatibility fix that preserves both behaviors and accepted wording, updates the provenance checks, and includes tests, independent review, commits and draft-PR updates? This excludes merging, editorial acceptance and all production changes. Safe Infrastructure research can continue meanwhile.\"\nAssistant, 2026-10-21 16:56:46 UTC, Sentinel_eaa260e206e881919a8abe4818ce1162:\n\"Got it. I’ll apply the three-case Infrastructure decision bundle: exclude H.R.4371 and H.R.1442 with their reviewed text bindings, and keep H.R.28 pending. Does your approval also cover the separate Health–Infrastructure compatibility fix?\"\nUser, 2026-10-21 16:57:16 UTC, Sentinel_06e0d5d23e808191a9e2c1fdf8b7db94:\n\"yes everything\"",
+  "scope": {
+    "case_actions": [
+      "house:119:1:340",
+      "house:119:1:108",
+      "house:119:1:12"
+    ],
+    "reviewed_bundle_head": "28437fb5f0c79f7aa3b63faa705c8bb58ac1d7d0",
+    "require_exact_seal_match": true,
+    "case_independent_review_before_commit_push": true,
+    "compatibility": "Preserve both intended behaviors, accepted wording, security/validation safeguards; tests/independentreview/commits/draftPR/exactheadhostedvalidation",
+    "implementation_owner": ".w/infra only, Health non-writing",
+    "hr859_acceptance": false,
+    "merge": false,
+    "publication": false,
+    "production": false,
+    "persistent_access_change": false
+  },
+  "sequence": [
+    "Finish isolated138H859candidate unaccepted",
+    "Apply exact approved threecase unit with precommit review",
+    "Implement bounded compatibility as separate unit"
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "head": "28437fb5f0c79f7aa3b63faa705c8bb58ac1d7d0",
+  "previous_reviewed_head": "d074290e9c9df1a87768b23d4779e8daef95fc78",
+  "base": "638178a9752744a75586b25d0aefbdf0d67f1ade",
+  "findings": [],
+  "corrected_finding": {
+    "previous_file": "docs/review_packets/infrastructure_batch136_research_product_boundaries/validation_receipt.json",
+    "pointer": "/packet_files/3/bytes",
+    "status": "closed_at_exact_successor",
+    "prior_count": 3027,
+    "committed_lf_count": 2987,
+    "historical_worktree_count_explicit": true,
+    "independent_negative_tests": [
+      "inflated_byte_count",
+      "changed_hash",
+      "unspecified_byte_units"
+    ]
+  },
+  "exact_successor_delta": [
+    "backend/tests/test_infrastructure_boundary_candidates136.py",
+    "docs/plans/infrastructure_remaining_discovery_screening.md",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/validation_receipt.json",
+    "docs/review_packets/infrastructure_remaining_discovery_candidate_screening.md",
+    "scripts/validate_infrastructure_boundary_candidates136.py"
+  ],
+  "overall_delta_from135": [
+    "backend/tests/test_infrastructure_boundary_candidates136.py",
+    "docs/plans/infrastructure_remaining_discovery_screening.md",
+    "docs/review_packets/infrastructure_batch135_scoped_review_attribution.json",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/README.md",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/decision_bundle.json",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr1442_recommendation.json",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr28_recommendation.json",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/validation_receipt.json",
+    "docs/review_packets/infrastructure_independent_review135_preservation_20261021.json",
+    "docs/review_packets/infrastructure_remaining_discovery_candidate_screening.md",
+    "scripts/validate_infrastructure_boundary_candidates136.py"
+  ],
+  "unchanged_paths_authenticated": [
+    "docs/editorial",
+    "backend/app",
+    ".github/workflows/backend-tests.yml",
+    "scripts/prepare_shared_domain_candidate.py",
+    "docs/plans/infrastructure_ci_workflow_compatibility_20261021.md",
+    "docs/review_packets/infrastructure_checkpoint132_hosted_validation_blocker.json",
+    "docs/review_packets/infrastructure_batch135_hr4371_decision",
+    "docs/review_packets/infrastructure_batch135_scoped_review_attribution.json",
+    "docs/review_packets/infrastructure_independent_review135_preservation_20261021.json",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr28_recommendation.json",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr1442_recommendation.json",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/decision_bundle.json",
+    "docs/review_packets/infrastructure_batch136_research_product_boundaries/README.md"
+  ],
+  "subjects": [
+    {
+      "action_id": "house:119:1:340",
+      "path": "docs/review_packets/infrastructure_batch135_hr4371_decision/recommendation.json",
+      "blob_sha256": "03a74625488507102d3d102f1c7e0dbb076d09ec7507765235a6499728f810ca",
+      "proposed_record_sha256": "9d1c04ac2119d9bb762fa578a10214f7184f257013a7b07cc2a19f1f58e8982d",
+      "proposed_disposition": "exact_action_ineligible",
+      "current_binding_unresolved": true,
+      "proposed_binding_unresolved": false
+    },
+    {
+      "action_id": "house:119:1:12",
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr28_recommendation.json",
+      "blob_sha256": "19e10c21d02328df385e9d22010e4cac69a1c81423e412b55ff464c61e8bcb5b",
+      "proposed_record_sha256": "2d6d92a9ecdc50ee81fd9acaa4fa9a5134fa845c6bb5fff2462cadbd378c9338",
+      "proposed_disposition": "pending_interpretation",
+      "current_binding_unresolved": false,
+      "proposed_binding_unresolved": false
+    },
+    {
+      "action_id": "house:119:1:108",
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr1442_recommendation.json",
+      "blob_sha256": "6a922cd6e645015fdcf00e68afc2de10eab6531a1143439ee7836108410d466f",
+      "proposed_record_sha256": "b4dbe5d9617192fe971d8fa16702d48e75371d4828d41db65490f59b26789cdc",
+      "proposed_disposition": "exact_action_ineligible",
+      "current_binding_unresolved": true,
+      "proposed_binding_unresolved": false
+    }
+  ],
+  "index_sha256": "883ff3018a530a49dd85fe4a511d6f88b3279aa700334888c5a5c8f1c58203b3",
+  "packet_transport": [
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/decision_bundle.json",
+      "committed_lf_bytes": 6372,
+      "sha256": "883ff3018a530a49dd85fe4a511d6f88b3279aa700334888c5a5c8f1c58203b3",
+      "historical_worktree_bytes_at_capture": 6372
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr1442_recommendation.json",
+      "committed_lf_bytes": 20942,
+      "sha256": "6a922cd6e645015fdcf00e68afc2de10eab6531a1143439ee7836108410d466f",
+      "historical_worktree_bytes_at_capture": 20942
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/hr28_recommendation.json",
+      "committed_lf_bytes": 17041,
+      "sha256": "19e10c21d02328df385e9d22010e4cac69a1c81423e412b55ff464c61e8bcb5b",
+      "historical_worktree_bytes_at_capture": 17041
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch136_research_product_boundaries/README.md",
+      "committed_lf_bytes": 2987,
+      "sha256": "700000f647ca677d87d401499cfdd3d7295e84caa8166ac4d7901d8963b8b850",
+      "historical_worktree_bytes_at_capture": 3027
+    }
+  ],
+  "prior_review": {
+    "head": "d074290e9c9df1a87768b23d4779e8daef95fc78",
+    "evidence_sha256": "b0a9e8e319079a9fa4883cd77e5dbea4306cacfd93459e68334e84eaa423fa6c",
+    "substantive_conclusions_carried_only_after_blob_equality": true,
+    "earlier_four_test_results_not_relabelled": true
+  },
+  "governed_counts": {
+    "records": 676,
+    "sources": 1621,
+    "meanings": 70,
+    "procedural_context": 199,
+    "exact_action_ineligible": 120,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 262,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "canonical_editorial_tree_unchanged_from135": true,
+  "hr4371_packet_unchanged_from135": true,
+  "compatibility_and_health_changes": false,
+  "canonical_application": false,
+  "exceptions_enacted": false,
+  "independent_review_accepts_editorial_semantics": false,
+  "tests": {
+    "head": "28437fb5f0c79f7aa3b63faa705c8bb58ac1d7d0",
+    "previous_reviewed_head": "d074290e9c9df1a87768b23d4779e8daef95fc78",
+    "tests": 5,
+    "errors": 0,
+    "failures": 0,
+    "seconds": 3.0402439000317827,
+    "validator_results": {
+      "cases": [
+        {
+          "action_id": "house:119:1:12",
+          "proposed_disposition": "pending_interpretation",
+          "governed_inventory_changed": false,
+          "accepted": false
+        },
+        {
+          "action_id": "house:119:1:108",
+          "proposed_disposition": "exact_action_ineligible",
+          "governed_inventory_changed": false,
+          "accepted": false
+        }
+      ],
+      "bundle": {
+        "action_count": 3,
+        "exceptions_enacted": false,
+        "governed_pending": 262
+      },
+      "transport": {
+        "files": 4,
+        "byte_units": "committed_LF_UTF8"
+      }
+    },
+    "validator_seconds": 0.26196919998619705,
+    "snapshot_files": 49,
+    "snapshot_bytes": 45178997,
+    "provenance": "Sparse Git-authenticated successor snapshot; no LF shim or assertion patch; no closed135/historical-gate rerun"
+  },
+  "negative_mutations": 38,
+  "hosted_observation": {
+    "commit_sha": "28437fb5f0c79f7aa3b63faa705c8bb58ac1d7d0",
+    "repository": "dhart54/political_fingerprint",
+    "pull_request_triggered_first_page_workflow_runs": [],
+    "combined_statuses": [],
+    "all_event_workflow_runs_assessed": false,
+    "exact_head_hosted_success_established": false,
+    "qualification": "Connector workflow query is limited to PR-triggered runs, first page; empty results do not establish all-event absence or success"
+  },
+  "limits": [
+    "Sparse 49-file Git-authenticated snapshot",
+    "No LF shim or assertion patch",
+    "No closed135 or historical-gate rerun",
+    "No full repository suite or canonical seven-semantic gate run",
+    "No source acquisition, production, publication, compatibility, or Health changes"
+  ]
+}

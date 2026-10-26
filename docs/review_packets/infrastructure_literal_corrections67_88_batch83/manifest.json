@@ -1,0 +1,32 @@
+{
+  "transport_schema": "retained_source_literal_corrections_lossless_v1",
+  "base_head": "7f73b837521a6853a9ff3d5c4291e34c908f6d89",
+  "cases": [
+    {
+      "action_id": "house:119:2:67",
+      "original_head": "da6f30f9f5e2bf7d0c55e82de848e567bd6cda41",
+      "path": "roll67.json",
+      "committed_utf8_lf_bytes_sha256": "3a40a451c564515926e4b152f2c1dcf24939685cc8e1cb3ca453672782c1339e",
+      "source_id": "govinfo:hr261eh",
+      "original_source_object_sha256": "9b1d418123d17141811c3260b7d8b6e9215a292828436c4a005d561c74070d01"
+    },
+    {
+      "action_id": "house:119:2:88",
+      "original_head": "1b9b94c4f1a9d8f7875bb4face567193fcb9f64b",
+      "path": "roll88.json",
+      "committed_utf8_lf_bytes_sha256": "854b37628605abbd26f20e2d28270533a7391d4f09c8de8e16d44d8c83718de5",
+      "source_id": "govinfo:hr4294eh",
+      "original_source_object_sha256": "14c25c7c0b29fcefd49880e959426d0614c99f346d3aa48ae78bba13d88263da"
+    }
+  ],
+  "correction_receipt": {
+    "path": "correction_receipt.json",
+    "committed_utf8_lf_bytes_sha256": "e89f6cd7898d63b55609a23aa13c8b0b43bc450d607b5fee02a29e8c7ace9a68",
+    "original_object_sha256": "21aa2a1cc28cf20d0d7f1cb613fa9e4b0b71df4f1b6f7eb65d583543aec8a83f"
+  },
+  "scope": "Two original own-source objects, original actions/records from exact commits76 and80, their literal correction/preimage receipt and corrected actions/records only. References to other source objects are preserved but those objects are outside this targeted export.",
+  "reconstruction": "Recursively restore $lossless_text_parts, verify each UTF-8 part/file hash and original canonical object digest. Same lossless transport convention as earlier historical exports.",
+  "review_limits": "Full-object transport does not expand original source_read_scope, authenticate current integrated law, decide individual agency/institution authority or accept semantics/domain membership. Original snapshots and prior exports remain immutable.",
+  "source_acquisitions": 0,
+  "protected_retries": 0
+}

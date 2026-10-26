@@ -1,0 +1,990 @@
+{
+  "transport_schema": "historical_candidate_delta_lossless_parts_v1",
+  "batch": 42,
+  "exact_committed_head": "cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea",
+  "status": "Historical candidate export. Source-level independent review pending; no membership acceptance, publication or production authority.",
+  "extraction": "git show at exact cbb93d4fe2c04a1d4f5db1daf05700b92b0cdfea, never current batch50 working-tree bytes; zero source acquisition.",
+  "scope": "35 new identities across seven batches plus the prior roll226 correction/preimage binding in batch43. Referenced retained source objects and complete claim passages only; cumulative maps contain hashes only.",
+  "offsets": "Zero-based Unicode character offsets into the exact transported string: governed text for source.text/claim passages, JSON transport text for *_json fields. Original source_read_scope offsets remain relative to retained governed text. Parts do not certify full substantive review. Byte hashes refer to committed UTF-8 LF JSON.",
+  "historical_limits": "Carry original source_read_scope verbatim and batch43roll226correction source_extent/qualification. Whole CMS letter, BLM plans/maps, NDAA/CR and other partial reviews remain incomplete as recorded. Partial offsets are not full-body clearance. Roll210modal and237numeric conflicts remain unselected. Member votes/proposed meanings are not accepted or publishable.",
+  "committed_provenance": {
+    "membership": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch42_20260916/membership_review.json",
+      "git_blob": "2b5bbb0d55af75823b7a4e95a63631d0785625c1",
+      "git_bytes_sha256": "575dc9afd63d2e8a9e9f85655da9bc3adde0107e9904a4387f304dbdf0bca8e8"
+    },
+    "sources": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch42_20260916/sources.json",
+      "git_blob": "b15c4a55f47259673b211dffaf60b5e15b4f9fbb",
+      "git_bytes_sha256": "5c2827094c1ced23d0a20a1bdfafbbdf8c7722af0efebe5838c2f7fb37f83e9e"
+    },
+    "screening": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch42_20260916/screening_receipt.json",
+      "git_blob": "839930df322d4d26374542e5f485e6334ca59e58",
+      "git_bytes_sha256": "d197cf71abdfb6f2ea08f3f0e9a5f95c8af89afc230d9d83077781f810d1b9de"
+    },
+    "screening_units": {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch42_20260916/screening_units_receipt.json",
+      "git_blob": "7129427f84cd7c1611396c0bda1f1d354dfa1ed2",
+      "git_bytes_sha256": "51f0ca567c07765b5e5eedc331f6c62a824c2a7892a68c4f45a2ec408bbbe5ef"
+    }
+  },
+  "cumulative_membership_review_sha256": "0a4a1523d629ba044a66d4c36965aad33d7cf70a4b0c7aa37dc4c15fbb529aa0",
+  "cumulative_hash_maps_encoding": "The two *_json fields transport JSON strings via the same lossless text parts. Restore the text then JSON-parse to recover the exact hash maps. This keeps all files below the requested200KB cap.",
+  "source_object_encoding": "Small objects use source. Larger object metadata uses source_json: restore its text, JSON-parse, then recursively restore inner text-part refs. Pseudocode: restore(json.loads(restore(entry.source_json))). Original object digest must match; this only changes transport packaging.",
+  "cumulative_membership_record_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/cf4c16a6cf92aede9f11487c4a43f6e34a6bf492e04d218f4b0acbebb79343be.0000000.json",
+        "sha256": "ae77f67fe8dae13c9fc969732f7cd76352d54ba48da4b325e00ace562982e2d1",
+        "start_character": 0,
+        "end_character": 26766
+      }
+    ],
+    "utf8_sha256": "cf4c16a6cf92aede9f11487c4a43f6e34a6bf492e04d218f4b0acbebb79343be",
+    "total_characters": 26766,
+    "transport_only": true
+  },
+  "cumulative_source_governed_sha256_json": {
+    "$lossless_text_parts": [
+      {
+        "path": "source_parts/d07f7bfe66449b73b64d92165347168538a4bed8aac40520faefb9e7986b8164.0000000.json",
+        "sha256": "17d1fca30c0291783b899df06ba047f0f36efeaabdc70db15de9314b2dce4dc8",
+        "start_character": 0,
+        "end_character": 70099
+      }
+    ],
+    "utf8_sha256": "d07f7bfe66449b73b64d92165347168538a4bed8aac40520faefb9e7986b8164",
+    "total_characters": 70099,
+    "transport_only": true
+  },
+  "new_screened_ids": [
+    "house:119:1:247",
+    "house:119:1:248",
+    "house:119:1:249",
+    "house:119:1:250",
+    "house:119:1:251"
+  ],
+  "prior_record_followup_ids": [],
+  "source_read_scope": [
+    {
+      "source_id": "congressional-record:3838-amend15-roll247-choice154",
+      "scope": "Complete2223retained own instruction/definitions/recorded question/outcome characters read; not dailyRecord/new raw-glyph replay"
+    },
+    {
+      "source_id": "govinfo:10usc347-2024-amendment-binding",
+      "scope": "Complete213retained incorporated347(d)definition characters read, not whole section347or all academy law"
+    },
+    {
+      "source_id": "congressional-record:3838-amend16-roll248-choice155",
+      "scope": "Complete2725retained own form/survey prohibition/definitions/recorded outcome characters read; no full research/program-baseline review"
+    },
+    {
+      "source_id": "congressional-record:3838-amend17-roll249-choice156",
+      "scope": "Complete3075retained own access restriction/exceptions/waiver/definitions/outcome characters read"
+    },
+    {
+      "source_id": "govinfo:10usc2801-2024-amendment-binding",
+      "scope": "Complete2373retained operative definition/context characters read; construction scope does not automatically establish narrower access-rule membership"
+    },
+    {
+      "source_id": "congressional-record:3838-amend7-offer158",
+      "scope": "Complete3756retained own offered certification/study/audit/report instruction characters read; named2016report and material approval baselines unreviewed"
+    },
+    {
+      "source_id": "congressional-record:3838-amend7-roll250-choice158",
+      "scope": "Complete796retained own resumed recorded-rejection unit read; voice ayes not final adoption"
+    },
+    {
+      "source_id": "congressional-record:3838-amend9-offer158",
+      "scope": "Complete937retained own planning-deletions/whole2922grepeal instruction read"
+    },
+    {
+      "source_id": "congressional-record:3838-amend9-roll251-choice158",
+      "scope": "Complete810retained own recorded question/totals/agreement read; Presentdoes not belong to either authored member"
+    },
+    {
+      "source_id": "govinfo:10usc2911-2024-amendment-binding",
+      "scope": "Complete1904retained2911(e)special-considerations characters read; not whole2911/current-consolidated-law review"
+    },
+    {
+      "source_id": "govinfo:10usc2922g-2024-operative",
+      "scope": "Complete3668retained operative section characters read including time regimes/definitions/exceptions/waiver; external7USC8101definition not independently reviewed or expanded"
+    },
+    {
+      "source_id": "clerk:119:1:247",
+      "scope": "Exact question/result/date/member labels/author/printed and floor amendment numbers inspected; recorded outcomes and Presenttotal preserved"
+    },
+    {
+      "source_id": "clerk:119:1:248",
+      "scope": "Exact question/result/date/member labels/author/printed and floor amendment numbers inspected; recorded outcomes and Presenttotal preserved"
+    },
+    {
+      "source_id": "clerk:119:1:249",
+      "scope": "Exact question/result/date/member labels/author/printed and floor amendment numbers inspected; recorded outcomes and Presenttotal preserved"
+    },
+    {
+      "source_id": "clerk:119:1:250",
+      "scope": "Exact question/result/date/member labels/author/printed and floor amendment numbers inspected; recorded outcomes and Presenttotal preserved"
+    },
+    {
+      "source_id": "clerk:119:1:251",
+      "scope": "Exact question/result/date/member labels/author/printed and floor amendment numbers inspected; recorded outcomes and Presenttotal preserved"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "complete_own_child_instruction_and_recorded_choice_units": 5,
+    "complete_retained_material_definition_or_operative_units": 4,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:1:247",
+        "evidence_unit": "complete_own_child_with_explicit_material_baseline_boundary",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:248",
+        "evidence_unit": "complete_own_child_with_explicit_material_baseline_boundary",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:249",
+        "evidence_unit": "complete_own_child_with_explicit_material_baseline_boundary",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:250",
+        "evidence_unit": "complete_own_child_with_explicit_material_baseline_boundary",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:1:251",
+        "evidence_unit": "complete_own_child_with_explicit_material_baseline_boundary",
+        "whole_action_meaning_authored": true
+      }
+    ]
+  },
+  "prior_record_correction": null,
+  "records": [
+    {
+      "original_record_sha256": "b6b86f3bf065963ac9dd0ae915fa57f5d4c1cc478d6f04533be614239c1b826e",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:247",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete own Mace PartA15instruction restricts participation in exclusively designated ServiceAcademyathletic programs under its printed male/female definitions. Complete incorporated347(d)definition names Military/Naval/AirForceacademies, not every Federal academy or school. This is athletic participation/classification policy, not an operative construction/transport/technology-development/deployment/research mechanism; Academyproperty or defense research elsewhere does not establish this narrower child membership. Recorded227–201agreement is not enacted individual eligibility, a clinical fact, identity endorsement, an infrastructure outcome or a whole-NDAAstance. Proposed exact-action exclusion remains subject to independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:247",
+            "url": "https://clerk.house.gov/evs/2025/roll247.xml",
+            "raw_sha256": "9a25e3757192daa377ed5eeb1155a72ba15494d06dbbba45dbd8a5688ad5a3b1",
+            "governed_bytes_sha256": "6cb7c2b9ccaf6f59e4712a9fc18183cf82710d69eb8634e250911ab835bb956d"
+          },
+          {
+            "source_id": "congressional-record:3838-amend15-roll247-choice154",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "4258cc43be8819045307fe57a0621cb48cdc876a69ee8954c236210c1b0bb963"
+          },
+          {
+            "source_id": "govinfo:10usc347-2024-amendment-binding",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapV-sec347.htm",
+            "raw_sha256": "087b66c9f163081db86dada1594cbb255629d1d5eae7d55e326df1f6140278d9",
+            "governed_bytes_sha256": "8a9d8a944952d7c51295b16248bea5f08eb5157d2dc1d5f27bd039200e664526"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend15-roll247-choice154",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 15 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 15 printed \nin part A of House Report 119–255. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle E of title V, insert \nthe following new section: \nSEC. 5 ll. PROHIBITION OF PARTICIPATION BY \nMEN IN WOMEN’S SPORTS AT THE \nSERVICE ACADEMIES. \n(a) P ROHIBITION.—The Superintendent of a \nService Academy may not allow a cadet or \nmidshipman who is male to participate in an \nathletic program or activity at such Service \nAcademy that is designated exclusively for \ncadets or midshipmen who are female. \n(b) D\nEFINITIONS.—In this section: \n(1) The term ‘‘female’’ refers to an indi-\nvidual who naturally has, had, will have, or \nwould have, but for a developmental or ge-\nnetic anomaly or historical accident, the re-\nproductive system that at some point pro-\nduces, transports, and uses eggs for fertiliza-\ntion. \n(2) The term ‘‘male’’ refers to an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and uses sperm for fertilization. \n(3) The term ‘‘Service Academy’’ has the \nmeaning given such term in section 347 of \ntitle 10, United States Code. \n\n\nAMENDMENT NO. 15 OFFERED BY MS . MACE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 15, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from South Caro-\nlina (Ms. M\nACE), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 227, noes 201, \nnot voting 9, as follows: \n[Roll No. 247] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:10usc347-2024-amendment-binding",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(d) Service Academy Defined .—In this section, the term \"Service Academy\" means the following: (1) The United States Military Academy. (2) The United States Naval Academy. (3) The United States Air Force Academy. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "bf5f336dab1d6fadc95016892cfc692c14b85f719c7524cf1e1e72f5996b2f51",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:248",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Mace PartA16instruction bars obtaining gender-identity information through forms/surveys conducted by or for Defense, bars non-male/female response options and requires rejecting a different response to a required sex/gender question. Printed statutory definitions are attributed, not endorsed as scientific/clinical facts. This changes information-collection content, but does not itself require a new ITplatform or establish a named research program. Broad administrative forms versus direct research/data-governance boundary and material survey/research/program baselines need independent review before either a counted meaning or exclusion. No actual response deletion, implementation, individual harm/benefit or motive is inferred from221–210agreement.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:248",
+            "url": "https://clerk.house.gov/evs/2025/roll248.xml",
+            "raw_sha256": "da523c38f830fba3690e5165837833ce549c1ee1f85fe004de2d40f1089ed073",
+            "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5"
+          },
+          {
+            "source_id": "congressional-record:3838-amend16-roll248-choice155",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "d7076d030e3ca12bf879043e8e1497f22bbc5de79a43c86547335dd900e17b26"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend16-roll248-choice155",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 16 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 16 printed \nin part A of House Report 119–255. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle J of title V, insert \nthe following new section: \nSEC. 5 ll. PROHIBITIONS RELATING TO QUES-\nTIONS AND ANSWERS ABOUT SEX, \nGENDER, AND GENDER IDENTITY IN \nFORMS AND SURVEYS OF THE DE-\nPARTMENT OF DEFENSE. \n(a) P ROHIBITION.—With respect to the col-\nlection of information conducted by or for \nthe Secretary of Defense through a form or \nsurvey, the Secretary— \n(1) may not— \n(A) solicit or obtain any information re-\ngarding the gender identity of an individual; \nor \n(B) provide an option to indicate that the \nsex or gender of an individual is something \nother than male or female; and \n(2) shall reject a response other than male \nor female to a required question regarding \nsex or gender. \n(b) D\nEFINITIONS.—In this section: \n(1) The term ‘‘female’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that, at some point, pro-\nduces, transports, and utilizes eggs for fer-\ntilization. \n(2) The term ‘‘gender’’— \n(A) means male or female; and \n(B) does not mean gender identity, experi-\nenced gender, gender expression, or gender \nroles. \n(3) The term ‘‘gender identity’’ does not \nmean sex or gender. \n(4) The term ‘‘male’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that, at some point, pro-\nduces, transports, and utilizes sperm for fer-\ntilization. \n(5) The term ‘‘sex’’ means the biological \ndetermination as to whether an individual is \nmale or female. \n\n\nAMENDMENT NO. 16 OFFERED BY MS . MACE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 16, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from South Caro-\nlina (Ms. M\nACE), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 221, noes 210, \nnot voting 6, as follows: \n[Roll No. 248] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "3ca002906dd232fbe2515b45e85de74e8e69321e88ffa9f7c452fdd6c52e14a0",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:249",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Mace PartA17instruction sets military-installation single-sex-facility access/use restrictions with emergency-medical and active-law-enforcement exceptions and a case-by-case DefenseSecretarynational-security waiver. Complete retained2801definition bounds military installations; the child defines covered spaces including restrooms/locker/changing rooms. Printed identity/sex definitions remain bill attribution. Property-use/access rule versus direct operative infrastructure-governance membership and material applicable-law baselines remain ordinary review, not automatic membership from a construction-title placement or exclusion from a culture-policy label. No new facility construction, universal exceptionless ban, actual access enforcement, clinical determination or enactment inferred from219–209agreement.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:249",
+            "url": "https://clerk.house.gov/evs/2025/roll249.xml",
+            "raw_sha256": "ab0cf7467f44ef22d04a0778faa06dae43c03471176e21773075de44895585aa",
+            "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067"
+          },
+          {
+            "source_id": "congressional-record:3838-amend17-roll249-choice156",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "0e9d11696f06add1fdcadb34a84daded65f4387039a54018c840c5eb047d272c"
+          },
+          {
+            "source_id": "govinfo:10usc2801-2024-amendment-binding",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2801.htm",
+            "raw_sha256": "1dbddfeacdeaf23e2e326e759d9ffd85e250c44e1ce39b70fdac2d59a6059962",
+            "governed_bytes_sha256": "b520c35c817faf41f8e7c7e2ff5fd837ed571a37096e201c679b2f93bb1ac743"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend17-roll249-choice156",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 17 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 17 printed \nin part A of House Report 119–255. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle C of title XXVIII, in-\nsert the following: \nSEC. 28 ll. PROHIBITION ON THE USE OF SIN-\nGLE-SEX FACILITIES ON MILITARY \nINSTALLATIONS THAT DO NOT COR-\nRESPOND TO THE SEX OF AN INDI-\nVIDUAL. \n(a) I N GENERAL.—Notwithstanding any \nother provision of law, no person may, ex-\ncept as provided in subsection (b) or sub-\nsection (c), access or use a single-sex facility \non a military installation that does not cor-\nrespond to the sex of such person. \n(b) E\nXCEPTION.—The prohibition in sub-\nsection (a) shall not apply with respect to— \n(1) emergency medical personnel respond-\ning to a medical emergency; or \n(2) law enforcement officers in active pur-\nsuit of a suspect, or as part of an active in-\nvestigation. \n(c) N\nATIONAL SECURITY WAIVER.—The Sec-\nretary of Defense may, on a case-by-case \nbasis, waive the prohibition in subsection (a) \nif the Secretary determines the waiver is \nnecessary to advance the national security \ninterests of the United States. \n(d) D\nEFINITIONS.—In this section: \n(1) The term ‘‘female’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and utilizes eggs for fertilization. \n(2) The term ‘‘male’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and utilizes sperm for fertiliza-\ntion. \n(3) The term ‘‘military installation’’ has \nthe meaning given such term in section 2801 \nof title 10, United States Code. \n(4) The term ‘‘single-sex facility’’ means a \nspace intended for the use of one biological \nsex (male or female), including a— \n(A) restroom; \n(B) locker room; or \n(C) changing room. \n(5) The term ‘‘sex’’ means the biological \ndetermination as to whether an individual is \nmale or female. \n\n\nAMENDMENT NO. 17 OFFERED BY MS . MACE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 17, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from South Caro-\nlina (Ms. M\nACE), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 219, noes 209, \nnot voting 9, as follows: \n[Roll No. 249] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:10usc2801-2024-amendment-binding",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2801. Scope of chapter; definitions (a) The term \"military construction\" as used in this chapter or any other provision of law includes any construction, development, conversion, or extension of any kind carried out with respect to a military installation, whether to satisfy temporary or permanent requirements, or any acquisition of land or construction of a defense access road (as described in section 210 of title 23). (b) A military construction project includes all military construction work, or any contribution authorized by this chapter, necessary to produce a complete and usable facility or a complete and usable improvement to an existing facility (or to produce such portion of a complete and usable facility or improvement as is specifically authorized by law). (c) In this chapter and chapter 173 of this title: (1) The term \"appropriate committees of Congress\" means the congressional defense committees and, with respect to any project to be carried out by, or for the use of, an intelligence component of the Department of Defense, the Permanent Select Committee on Intelligence of the House of Representatives and the Select Committee on Intelligence of the Senate. (2) The term \"facility\" means a building, structure, or other improvement to real property. (3) The term \"life-cycle cost-effective\", with respect to a project, product, or measure, means that the sum of the present values of investment costs, capital costs, installation costs, energy costs, operating costs, maintenance costs, and replacement costs, as estimated for the lifetime of the project, product, or measure, does not exceed the base case (current or standard) for the practice, product, or measure. (4) The term \"military installation\" means a base, camp, post, station, yard, center, or other activity under the jurisdiction of the Secretary of a military department or, in the case of an activity in a foreign country, under the operational control of the Secretary of a military department or the Secretary of Defense, without regard to the duration of operational control. (5) The term \"Secretary concerned\" includes the Secretary of Defense with respect to matters concerning the Defense Agencies. (d) This chapter (other than sections 2830, 1 2835, and 2836 of this chapter) does not apply to the Coast Guard or to civil works projects of the Army Corps of Engineers. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "bb463af8bd488b37ea24902c346cc63938cb2e0d2a298a2e5b24c7af7fbcafca",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:250",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Smith PartA7offering and resumed recorded rejection bind a90dayDefenseSecretary/designee written certification about North/MidAtlanticoffshorewind impacts on radar/FAAairspace, plus a separate TransportationInspectorGeneralstudy/audit/report covering radar, air traffic, approvals/consultation, flight paths, sonar, CoastGuardoperations and mitigation strategies in the named2016report. The90dayclock applies to certification; no study/reportdeadline, project moratorium or actual wind/radar harm is printed. Direct infrastructure/technology/aviation-governance lead is strong, but exact2016report strategies and material siting/approval/agency baselines remain unreviewed before a whole-action candidate. Recorded209–224rejection, not initial voice ayes, controls; no failed certification, unsafe flight, project cancellation or technical outcome inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:250",
+            "url": "https://clerk.house.gov/evs/2025/roll250.xml",
+            "raw_sha256": "15bd3bbd5953dcaa15064f033b7b822fd454f333dae2c20ad80c98f3b4bc45cd",
+            "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92"
+          },
+          {
+            "source_id": "congressional-record:3838-amend7-offer158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "53ae70c67ffe5e7e5964435aa847c467a57714e7494d08aca970a9a00a31a2d7"
+          },
+          {
+            "source_id": "congressional-record:3838-amend7-roll250-choice158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "5fa31ec4e7480944cea34c78c05615cac5e4e2fe4cba60d11f22903703e8c79b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend7-offer158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 7 OFFERED BY MR . SMITH OF \nNEW JERSEY \nThe Acting CHAIR. It is now in order \nto consider amendment No. 7 printed in \npart A of House Report 119–255. \nMr. SMITH of New Jersey. Mr. Chair, \nI have an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title XVII, in-\nsert the following new section: \nSEC. 17 ll. CERTIFICATION AND REPORT BY IN-\nSPECTOR GENERAL RELATING TO \nRADAR IMPACTS AND OFFSHORE \nWIND DEVELOPMENT APPROVAL \nPROCESS. \n(a) CERTIFICATION.—Not later than 90 days \nafter the date of enactment of this Act, the \nSecretary of Defense, or his designee, shall \ncertify in writing that— \n(1) offshore wind projects in the North At-\nlantic and Mid-Atlantic Planning areas will \nnot weaken, degrade interfere with, or nul-\nlify the performance and capabilities of \nradar relied upon by commercial aviation, \nmilitary aviation, space launch vehicles, or \nother commercial space entities; and \n(2) the development of offshore wind \nprojects in the North Atlantic and Mid-At-\nlantic Planning Areas will not degrade the \ncapabilities of the Federal Aviation Admin-\nistration to monitor United States Airspace, \nor hinder commercial, private, or military \naviation activities. \n(b) A\nUDIT AND REPORT BY INSPECTOR GEN-\nERAL.— \n(1) I N GENERAL .—The inspector general of \nDepartment of Transportation shall conduct \na study on the effects of offshore wind indus-\ntrialization related to radar, impacts to com-\nmercial air and military traffic, and the suf-\nficiency of the review and approval process \nfor offshore wind projects in the North At-\nlantic and Mid-Atlantic Planning Areas. \n(2) C\nONTENTS.—In conducting the study re-\nquired under paragraph (1), the inspector \ngeneral shall— \n(A) investigate— \n(i) whether offshore wind projects will \nweaken, compromise, or interfere with, or \nnullify the usage of radar utilized by the \nFederal Aviation Administration, United \nStates Armed Forces, and National Aero-\nnautics and Space Administration, as well as \ncommercial space entities; and \n(ii) the sufficiency of the process for ap-\nproving offshore wind projects, and the im-\npact of such projects on radar, including the \nconsultation process between the Bureau of \nOcean Energy Management, the Federal \nAviation Administration, and the Military \nAviation and Installation Assurance Siting \nClearinghouse; \n(B) conduct an audit of the approval appli-\ncations by the Military Aviation and Instal-\nlation Assurance Siting Clearinghouse re-\ngarding concerns voiced over the impact to \nradar and ability to identify airborne \nthreats, freedom to navigate United States \nairspace, and ability to train within United \nStates airspace; \n(C) determine whether any offshore wind \nprojects will impact, alter, or disrupt com-\nmercial, private, or military aviation flight \npaths; \n(D) determine whether any offshore wind \nprojects will impact, compromise, inhibit, or \nnullify the usage of radar and sonar tech-\nnologies utilized by the Armed Forces and \nany agencies carrying out space launch pro-\ngrams; \n(E) determine whether any offshore wind \nprojects will impact, compromise, or inhibit \nthe ability of the United States Coast Guard \nto conduct maritime safety and lifesaving \noperations; \n(F) address how offshore wind energy \nprojects impact low-level military airspace \noff the Atlantic Coast; and \n(G) determine whether mitigation strate-\ngies laid out in the 2016 Report on the Impact \nof Wind Energy Developments on Military \nInstallations are sufficient, achievable and, \nrealistic. \n(3) R\nEPORT.—The inspector general shall \nsubmit to Congress a report containing the \nfindings of the study conducted under this \nsubsection. \n"
+          },
+          {
+            "source_id": "congressional-record:3838-amend7-roll250-choice158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 7 OFFERED BY MR . SMITH OF \nNEW JERSEY \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 7, printed in \npart A of House Report 119–255, offered \nby the gentleman from New Jersey \n(Mr. S\nMITH), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 209, noes 224, \nnot voting 4, as follows: \n[Roll No. 250] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a4ede2b8f16211d08661c774863cf1f81c34017c1ed60f35a99b290a69fff03c",
+      "new_discovery_identity": true,
+      "record": {
+        "action_id": "house:119:1:251",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete own Patronis PartA9offering and resumed recorded agreement bind deletion of2911(e)(4)/(10), renumbering, and repeal of whole2922g. Full retained2911(e)and2922goperative baselines preserve the distinct conditional pre2035preference, beginning2035qualified multi-technology nontactical-purchase requirement, exceptions and nondelegable waiver. This direct vehicle-procurement/energy-planning candidate is unaccepted; it does not ban EVprocurement, impose an opposite fossil-fuel mandate, repeal all2911or certify all current fuel/project eligibility.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:251",
+            "url": "https://clerk.house.gov/evs/2025/roll251.xml",
+            "raw_sha256": "39414b11212f9c62cbd619bb411e356bc720025f2e2270738c98be7a761868aa",
+            "governed_bytes_sha256": "fa8843f8a5cd854bf467bbe0d13c8751be652b3db6dce76cce66e62931a50cec"
+          },
+          {
+            "source_id": "congressional-record:3838-amend9-offer158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "f578b8480defb20d395d7cd1fd26ae7904f2644d7968be3f93ef53fb77d8834a"
+          },
+          {
+            "source_id": "congressional-record:3838-amend9-roll251-choice158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "d8ede397c3402ea13179711d9d1d67d3364a3679902dc270939bb48bc3b4e4c0"
+          },
+          {
+            "source_id": "govinfo:10usc2911-2024-amendment-binding",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap173-subchapI-sec2911.htm",
+            "raw_sha256": "71b6851f207263b2e3a0cfc84b19e79e60ca7ea55431a182e94a9279c4697b13",
+            "governed_bytes_sha256": "727e02ec58f2bd281658ad0c13cc378f3d67e6b2cca3cca860ee513f5f3642c5"
+          },
+          {
+            "source_id": "govinfo:10usc2922g-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap173-subchapII-sec2922g.htm",
+            "raw_sha256": "1b2a6f1c604cf309406a7237fe04d683277f1a45ebf7cbc8dc7161c182650a47",
+            "governed_bytes_sha256": "dcccb49fc099aea9f2fa7160beb8d003fb3065dbaf92a7800998f7f8b7dab6be"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend9-offer158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 9 OFFERED BY MR . PATRONIS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 9 printed in \npart A of House Report 119–255. \nMr. PATRONIS. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title III, insert \nthe following new section: \nSEC. 3 ll. ELIMINATION OF PREFERENCE FOR \nMOTOR VEHICLES USING ELECTRIC \nOR HYBRID PROPULSION SYSTEMS \nAND RELATED REQUIREMENTS OF \nTHE DEPARTMENT OF DEFENSE. \nChapter 173 of title 10, United States Code, \nis amended— \n(1) in section 2911(e)— \n(A) by striking paragraph (4); \n(B) by redesignating paragraphs (5) \nthrough (9) as paragraphs (4) through (8), re-\nspectively; \n(C) by striking paragraph (10); and \n(D) by redesignating paragraphs (11) \nthrough (15) as paragraphs (9) through (13), \nrespectively; and \n(2) by striking section 2922g. \n"
+          },
+          {
+            "source_id": "congressional-record:3838-amend9-roll251-choice158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 9 OFFERED BY MR . PATRONIS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 9, printed in \npart A of House Report 119–255, offered \nby the gentleman from Florida (Mr. \nP\nATRONIS), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 224, noes 208, \nanswered ‘‘present’’ 1, not voting 4, as \nfollows: \n[Roll No. 251] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:10usc2911-2024-amendment-binding",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(e) Special Considerations .—For the purpose of developing and implementing the energy performance goals and energy performance master plan, the Secretary of Defense shall consider at a minimum the following: (1) Opportunities to reduce the current rate of consumption of energy, the future demand for energy, and the requirement for the use of energy. (2) Opportunities to enhance energy resilience to ensure the Department of Defense has the ability to prepare for and recover from energy disruptions that affect mission assurance on military installations. (3) Opportunities to implement conservation measures to improve the efficient use of energy. (4) Opportunities to pursue alternative energy initiatives, including the use of alternative fuels and hybrid-electric drive in military vehicles and equipment. (5) Opportunities for the high-performance construction, lease, operation, and maintenance of buildings. (6) Cost effectiveness, cost savings, and net present value of alternatives. (7) The value of diversification of types and sources of energy used. (8) The value of economies-of-scale associated with fewer energy types used. (9) The value of the use of renewable energy sources. (10) The value of incorporating electric, hybrid-electric, and high efficiency vehicles into vehicle fleets. (11) The potential for an action to serve as an incentive for members of the armed forces and civilian personnel to reduce energy consumption or adopt an improved energy performance measure. (12) Opportunities for improving energy security for facility energy projects that will use renewable energy sources. (13) Opportunities to leverage financing provided by a non-Department entity to address installation energy needs. (14) The reliability and security of energy resources in the event of a military conflict. (15) The value of resourcing energy from partners and allies of the United States. "
+          },
+          {
+            "source_id": "govinfo:10usc2922g-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2922g. Preference for motor vehicles using electric or hybrid propulsion systems; purchase or lease of certain electric and other vehicles (a) Preference .—During the period preceding October 1, 2035, in leasing or procuring motor vehicles for use by a military department or Defense Agency, the Secretary of the military department or the head of the Defense Agency shall provide a preference for the lease or procurement of motor vehicles using electric or hybrid propulsion systems, including plug-in hybrid systems, if the electric or hybrid vehicles— (1) will meet the requirements or needs of the Department of Defense; and (2) are commercially available at a cost, including operating cost, reasonably comparable to motor vehicles containing only an internal combustion or heat engine using combustible fuel. (b) Exception .—Subsection (a) does not apply with respect to tactical vehicles designed for use in combat. (c) Relation to Other Vehicle Technologies That Reduce Consumption of Fossil Fuels .—The preference required by subsection (a) does not preclude the Secretary of Defense from authorizing, during the period specified in subsection (a), the Secretary of a military department or head of a Defense Agency to provide a preference for another vehicle technology that reduces the consumption of fossil fuels if the Secretary of Defense determines that the technology is consistent with the energy performance goals and plan of the Department required by section 2911 of this title. (d) Requirement .—Except as provided in subsection (e), beginning on October 1, 2035, each covered nontactical vehicle purchased or leased by or for the use of the Department of Defense shall be— (1) an electric or zero emission vehicle that uses a charging connector type (or other means to transmit electricity to the vehicle) that meets applicable industry accepted standards for interoperability and safety; (2) an advanced-biofuel-powered vehicle; or (3) a hydrogen-powered vehicle. (e) Relation to Other Vehicle Technologies That Reduce Consumption of Fossil Fuels .—Notwithstanding the requirement under subsection (d), beginning on October 1, 2035, the Secretary of Defense may authorize the purchase or lease of a covered nontactical vehicle that is not described in such subsection if the Secretary determines, on a case-by-case basis, that— (1) the technology used in the vehicle to be purchased or leased reduces the consumption of fossil fuels compared to vehicles that use conventional internal combustion technology; (2) the purchase or lease of such vehicle is consistent with the energy performance goals and plan of the Department of Defense required by section 2911 of this title; and (3) the purchase or lease of a vehicle described in subsection (d) is impracticable under the circumstances. (f) Waiver .—(1) The Secretary of Defense may waive the requirement under subsection (d). (2) The Secretary of Defense may not delegate the waiver authority under paragraph (1). (g) Definitions .—In this section: (1) The term \"advanced-biofuel-powered vehicle\" includes a vehicle that uses a fuel described in section 9001(3)(A) of the Farm Security and Rural Investment Act of 2002 (7 U.S.C. 8101(3)(A)). (2) The term \"covered nontactical vehicle\" means any vehicle— (A) that is not a tactical vehicle designed for use in combat; and (B) that is purchased or leased by the Department of Defense pursuant to a contract entered into, renewed, modified, or amended on or after October 1, 2035. (3) The term \"hydrogen-powered vehicle\" means a vehicle that uses hydrogen as the main source of motive power, either through a fuel cell or internal combustion. "
+          }
+        ],
+        "episode_candidate_id": "episode:hr3838:amend9:119"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "original_source_object_sha256": "d4b4db40fcb09084b253ab3a709e339716f8a69766038e6f8de37c3b3a45d6f9",
+      "source": {
+        "source_id": "clerk:119:1:247",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll247.xml",
+        "text_version": null,
+        "raw_sha256": "9a25e3757192daa377ed5eeb1155a72ba15494d06dbbba45dbd8a5688ad5a3b1",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "247",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "11",
+          "amendment-author": "Mace of South Carolina Part A Amendment No. 15",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "4:57 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "217",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "10",
+            "nay-total": "201",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "6cb7c2b9ccaf6f59e4712a9fc18183cf82710d69eb8634e250911ab835bb956d"
+      }
+    },
+    {
+      "original_source_object_sha256": "f91ce5c17e6fa317f59e304e29a6f5e4d050f09578630976f6c846370ba62e92",
+      "source": {
+        "source_id": "congressional-record:3838-amend15-roll247-choice154",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "text_version": "Complete own PartA15 operative, own postponed/recorded question, totals and agreed outcome. Not debate, other amendments or enactment.",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text": "AMENDMENT NO. 15 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 15 printed \nin part A of House Report 119–255. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle E of title V, insert \nthe following new section: \nSEC. 5 ll. PROHIBITION OF PARTICIPATION BY \nMEN IN WOMEN’S SPORTS AT THE \nSERVICE ACADEMIES. \n(a) P ROHIBITION.—The Superintendent of a \nService Academy may not allow a cadet or \nmidshipman who is male to participate in an \nathletic program or activity at such Service \nAcademy that is designated exclusively for \ncadets or midshipmen who are female. \n(b) D\nEFINITIONS.—In this section: \n(1) The term ‘‘female’’ refers to an indi-\nvidual who naturally has, had, will have, or \nwould have, but for a developmental or ge-\nnetic anomaly or historical accident, the re-\nproductive system that at some point pro-\nduces, transports, and uses eggs for fertiliza-\ntion. \n(2) The term ‘‘male’’ refers to an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and uses sperm for fertilization. \n(3) The term ‘‘Service Academy’’ has the \nmeaning given such term in section 347 of \ntitle 10, United States Code. \n\n\nAMENDMENT NO. 15 OFFERED BY MS . MACE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 15, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from South Caro-\nlina (Ms. M\nACE), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 227, noes 201, \nnot voting 9, as follows: \n[Roll No. 247] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "4258cc43be8819045307fe57a0621cb48cdc876a69ee8954c236210c1b0bb963",
+        "text_extraction_method": "Exact slices of the preserved source serialization; this derivative reviews its own amendment operative, question and outcome or numbered Report operative. Parent source/version remains distinct.",
+        "captured_full_text_sha256": "ee13d256c1365a1eb7ed2538e78ba144c587462d1a5764467c4819ec11ca8d49",
+        "source_text_extents": [
+          {
+            "start": 28845,
+            "end": 30277,
+            "total": 75004
+          },
+          {
+            "start": 67499,
+            "end": 68197,
+            "total": 75004
+          },
+          {
+            "start": 72596,
+            "end": 72685,
+            "total": 75004
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "64c826a84749e7867f9e4ecc24fa540aaa506f52eda77c354462d8fe64d2914f",
+      "source": {
+        "source_id": "govinfo:10usc347-2024-amendment-binding",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapV-sec347.htm",
+        "text_version": "2024 Code; exact incorporated definition/paragraph context",
+        "raw_sha256": "087b66c9f163081db86dada1594cbb255629d1d5eae7d55e326df1f6140278d9",
+        "text": "(d) Service Academy Defined .—In this section, the term \"Service Academy\" means the following: (1) The United States Military Academy. (2) The United States Naval Academy. (3) The United States Air Force Academy. ",
+        "governed_bytes_sha256": "8a9d8a944952d7c51295b16248bea5f08eb5157d2dc1d5f27bd039200e664526"
+      }
+    },
+    {
+      "original_source_object_sha256": "465c50484cfe6876e38460131112a0a6f9ea81a4a8ec3eb940d822ff4beb274f",
+      "source": {
+        "source_id": "clerk:119:1:248",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll248.xml",
+        "text_version": null,
+        "raw_sha256": "da523c38f830fba3690e5165837833ce549c1ee1f85fe004de2d40f1089ed073",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "248",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "12",
+          "amendment-author": "Mace of South Carolina Part A Amendment No. 16",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:00 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "217",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "4",
+            "nay-total": "209",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5"
+      }
+    },
+    {
+      "original_source_object_sha256": "da4dbd555bc4a75dd4759f94ba6713d8433fabd9e4ee381ec7e3ef9b3e260943",
+      "source": {
+        "source_id": "congressional-record:3838-amend16-roll248-choice155",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA16 operative/question/totals/agreed outcome; not other amendments, debate or enactment.",
+        "text_extraction_method": "Exact slices of preserved source serialization. Own amendment13 or16 operative/question/outcome or numbered Report reviewed at155; printed header199-255 on13 retained, not silently repaired.",
+        "text": "AMENDMENT NO. 16 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 16 printed \nin part A of House Report 119–255. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle J of title V, insert \nthe following new section: \nSEC. 5 ll. PROHIBITIONS RELATING TO QUES-\nTIONS AND ANSWERS ABOUT SEX, \nGENDER, AND GENDER IDENTITY IN \nFORMS AND SURVEYS OF THE DE-\nPARTMENT OF DEFENSE. \n(a) P ROHIBITION.—With respect to the col-\nlection of information conducted by or for \nthe Secretary of Defense through a form or \nsurvey, the Secretary— \n(1) may not— \n(A) solicit or obtain any information re-\ngarding the gender identity of an individual; \nor \n(B) provide an option to indicate that the \nsex or gender of an individual is something \nother than male or female; and \n(2) shall reject a response other than male \nor female to a required question regarding \nsex or gender. \n(b) D\nEFINITIONS.—In this section: \n(1) The term ‘‘female’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that, at some point, pro-\nduces, transports, and utilizes eggs for fer-\ntilization. \n(2) The term ‘‘gender’’— \n(A) means male or female; and \n(B) does not mean gender identity, experi-\nenced gender, gender expression, or gender \nroles. \n(3) The term ‘‘gender identity’’ does not \nmean sex or gender. \n(4) The term ‘‘male’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that, at some point, pro-\nduces, transports, and utilizes sperm for fer-\ntilization. \n(5) The term ‘‘sex’’ means the biological \ndetermination as to whether an individual is \nmale or female. \n\n\nAMENDMENT NO. 16 OFFERED BY MS . MACE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 16, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from South Caro-\nlina (Ms. M\nACE), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 221, noes 210, \nnot voting 6, as follows: \n[Roll No. 248] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "d7076d030e3ca12bf879043e8e1497f22bbc5de79a43c86547335dd900e17b26",
+        "captured_full_text_sha256": "74c6a929b5971a111ffd2180dabcff3165ee0c23c9763a0fdf2ca65e56dc3516",
+        "source_text_extents": [
+          {
+            "start": 6333,
+            "end": 8267,
+            "total": 24705
+          },
+          {
+            "start": 14248,
+            "end": 14946,
+            "total": 24705
+          },
+          {
+            "start": 19554,
+            "end": 19643,
+            "total": 24705
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "63ddd5a24c5c7bb45c72a18101f36fffddc90508e57ee3969e78b46032ce17e6",
+      "source": {
+        "source_id": "clerk:119:1:249",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll249.xml",
+        "text_version": null,
+        "raw_sha256": "ab0cf7467f44ef22d04a0778faa06dae43c03471176e21773075de44895585aa",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "249",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "13",
+          "amendment-author": "Mace of South Carolina Part A Amendment No. 17",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:03 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "216",
+            "nay-total": "1",
+            "present-total": "0",
+            "not-voting-total": "4"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "3",
+            "nay-total": "208",
+            "present-total": "0",
+            "not-voting-total": "5"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067"
+      }
+    },
+    {
+      "original_source_object_sha256": "f64966571bbcfd35f0b8f8c9912ed29575cf6597ff920f485e72e90495ce43cb",
+      "source": {
+        "source_id": "congressional-record:3838-amend17-roll249-choice156",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA17 operative/question/totals/agreed outcome reviewed156, not intervening actions/debate/enactment.",
+        "text_extraction_method": "Exact slices of preserved source serialization; only this derivative's named own operative/question/outcome, numbered Report, or complete1052 flags provision reviewed at156. Original parent object and historical review scope are retained.",
+        "text": "AMENDMENT NO. 17 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 17 printed \nin part A of House Report 119–255. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle C of title XXVIII, in-\nsert the following: \nSEC. 28 ll. PROHIBITION ON THE USE OF SIN-\nGLE-SEX FACILITIES ON MILITARY \nINSTALLATIONS THAT DO NOT COR-\nRESPOND TO THE SEX OF AN INDI-\nVIDUAL. \n(a) I N GENERAL.—Notwithstanding any \nother provision of law, no person may, ex-\ncept as provided in subsection (b) or sub-\nsection (c), access or use a single-sex facility \non a military installation that does not cor-\nrespond to the sex of such person. \n(b) E\nXCEPTION.—The prohibition in sub-\nsection (a) shall not apply with respect to— \n(1) emergency medical personnel respond-\ning to a medical emergency; or \n(2) law enforcement officers in active pur-\nsuit of a suspect, or as part of an active in-\nvestigation. \n(c) N\nATIONAL SECURITY WAIVER.—The Sec-\nretary of Defense may, on a case-by-case \nbasis, waive the prohibition in subsection (a) \nif the Secretary determines the waiver is \nnecessary to advance the national security \ninterests of the United States. \n(d) D\nEFINITIONS.—In this section: \n(1) The term ‘‘female’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and utilizes eggs for fertilization. \n(2) The term ‘‘male’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and utilizes sperm for fertiliza-\ntion. \n(3) The term ‘‘military installation’’ has \nthe meaning given such term in section 2801 \nof title 10, United States Code. \n(4) The term ‘‘single-sex facility’’ means a \nspace intended for the use of one biological \nsex (male or female), including a— \n(A) restroom; \n(B) locker room; or \n(C) changing room. \n(5) The term ‘‘sex’’ means the biological \ndetermination as to whether an individual is \nmale or female. \n\n\nAMENDMENT NO. 17 OFFERED BY MS . MACE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 17, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from South Caro-\nlina (Ms. M\nACE), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 219, noes 209, \nnot voting 9, as follows: \n[Roll No. 249] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "0e9d11696f06add1fdcadb34a84daded65f4387039a54018c840c5eb047d272c",
+        "captured_full_text_sha256": "fcbfe752ba17e3a9613672485c87fdb0d3a9e8667c5d3d320fd71644e6ded16d",
+        "source_text_extents": [
+          {
+            "start": 2507,
+            "end": 4791,
+            "total": 41138
+          },
+          {
+            "start": 20303,
+            "end": 21001,
+            "total": 41138
+          },
+          {
+            "start": 25610,
+            "end": 25699,
+            "total": 41138
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "adaf75bdf3d45105f57108910d24156f2c6082f4358801b0f4ea83cd85027b80",
+      "source": {
+        "source_id": "govinfo:10usc2801-2024-amendment-binding",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2801.htm",
+        "text_version": "2024 Code; exact incorporated definition/paragraph context",
+        "raw_sha256": "1dbddfeacdeaf23e2e326e759d9ffd85e250c44e1ce39b70fdac2d59a6059962",
+        "text": "§2801. Scope of chapter; definitions (a) The term \"military construction\" as used in this chapter or any other provision of law includes any construction, development, conversion, or extension of any kind carried out with respect to a military installation, whether to satisfy temporary or permanent requirements, or any acquisition of land or construction of a defense access road (as described in section 210 of title 23). (b) A military construction project includes all military construction work, or any contribution authorized by this chapter, necessary to produce a complete and usable facility or a complete and usable improvement to an existing facility (or to produce such portion of a complete and usable facility or improvement as is specifically authorized by law). (c) In this chapter and chapter 173 of this title: (1) The term \"appropriate committees of Congress\" means the congressional defense committees and, with respect to any project to be carried out by, or for the use of, an intelligence component of the Department of Defense, the Permanent Select Committee on Intelligence of the House of Representatives and the Select Committee on Intelligence of the Senate. (2) The term \"facility\" means a building, structure, or other improvement to real property. (3) The term \"life-cycle cost-effective\", with respect to a project, product, or measure, means that the sum of the present values of investment costs, capital costs, installation costs, energy costs, operating costs, maintenance costs, and replacement costs, as estimated for the lifetime of the project, product, or measure, does not exceed the base case (current or standard) for the practice, product, or measure. (4) The term \"military installation\" means a base, camp, post, station, yard, center, or other activity under the jurisdiction of the Secretary of a military department or, in the case of an activity in a foreign country, under the operational control of the Secretary of a military department or the Secretary of Defense, without regard to the duration of operational control. (5) The term \"Secretary concerned\" includes the Secretary of Defense with respect to matters concerning the Defense Agencies. (d) This chapter (other than sections 2830, 1 2835, and 2836 of this chapter) does not apply to the Coast Guard or to civil works projects of the Army Corps of Engineers. ",
+        "governed_bytes_sha256": "b520c35c817faf41f8e7c7e2ff5fd837ed571a37096e201c679b2f93bb1ac743"
+      }
+    },
+    {
+      "original_source_object_sha256": "4315f4bf72639831e56b81acf19eae8f8e60338bed02fef1b739b6302f2c9148",
+      "source": {
+        "source_id": "clerk:119:1:250",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll250.xml",
+        "text_version": null,
+        "raw_sha256": "15bd3bbd5953dcaa15064f033b7b822fd454f333dae2c20ad80c98f3b4bc45cd",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "250",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "2",
+          "amendment-author": "Smith of New Jersey Part A Amendment No. 7",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Failed",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:07 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "204",
+            "nay-total": "16",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "5",
+            "nay-total": "208",
+            "present-total": "0",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92"
+      }
+    },
+    {
+      "original_source_object_sha256": "42c9c035d4e037d5b8d2494f2c90c895e9e685aa2aea2a067d93c919aba428d2",
+      "source": {
+        "source_id": "congressional-record:3838-amend7-offer158",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+        "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+        "text_version": "Complete own PartA7 September9 offer/operative; not September10 recorded outcome, debate or enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 7 OFFERED BY MR . SMITH OF \nNEW JERSEY \nThe Acting CHAIR. It is now in order \nto consider amendment No. 7 printed in \npart A of House Report 119–255. \nMr. SMITH of New Jersey. Mr. Chair, \nI have an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title XVII, in-\nsert the following new section: \nSEC. 17 ll. CERTIFICATION AND REPORT BY IN-\nSPECTOR GENERAL RELATING TO \nRADAR IMPACTS AND OFFSHORE \nWIND DEVELOPMENT APPROVAL \nPROCESS. \n(a) CERTIFICATION.—Not later than 90 days \nafter the date of enactment of this Act, the \nSecretary of Defense, or his designee, shall \ncertify in writing that— \n(1) offshore wind projects in the North At-\nlantic and Mid-Atlantic Planning areas will \nnot weaken, degrade interfere with, or nul-\nlify the performance and capabilities of \nradar relied upon by commercial aviation, \nmilitary aviation, space launch vehicles, or \nother commercial space entities; and \n(2) the development of offshore wind \nprojects in the North Atlantic and Mid-At-\nlantic Planning Areas will not degrade the \ncapabilities of the Federal Aviation Admin-\nistration to monitor United States Airspace, \nor hinder commercial, private, or military \naviation activities. \n(b) A\nUDIT AND REPORT BY INSPECTOR GEN-\nERAL.— \n(1) I N GENERAL .—The inspector general of \nDepartment of Transportation shall conduct \na study on the effects of offshore wind indus-\ntrialization related to radar, impacts to com-\nmercial air and military traffic, and the suf-\nficiency of the review and approval process \nfor offshore wind projects in the North At-\nlantic and Mid-Atlantic Planning Areas. \n(2) C\nONTENTS.—In conducting the study re-\nquired under paragraph (1), the inspector \ngeneral shall— \n(A) investigate— \n(i) whether offshore wind projects will \nweaken, compromise, or interfere with, or \nnullify the usage of radar utilized by the \nFederal Aviation Administration, United \nStates Armed Forces, and National Aero-\nnautics and Space Administration, as well as \ncommercial space entities; and \n(ii) the sufficiency of the process for ap-\nproving offshore wind projects, and the im-\npact of such projects on radar, including the \nconsultation process between the Bureau of \nOcean Energy Management, the Federal \nAviation Administration, and the Military \nAviation and Installation Assurance Siting \nClearinghouse; \n(B) conduct an audit of the approval appli-\ncations by the Military Aviation and Instal-\nlation Assurance Siting Clearinghouse re-\ngarding concerns voiced over the impact to \nradar and ability to identify airborne \nthreats, freedom to navigate United States \nairspace, and ability to train within United \nStates airspace; \n(C) determine whether any offshore wind \nprojects will impact, alter, or disrupt com-\nmercial, private, or military aviation flight \npaths; \n(D) determine whether any offshore wind \nprojects will impact, compromise, inhibit, or \nnullify the usage of radar and sonar tech-\nnologies utilized by the Armed Forces and \nany agencies carrying out space launch pro-\ngrams; \n(E) determine whether any offshore wind \nprojects will impact, compromise, or inhibit \nthe ability of the United States Coast Guard \nto conduct maritime safety and lifesaving \noperations; \n(F) address how offshore wind energy \nprojects impact low-level military airspace \noff the Atlantic Coast; and \n(G) determine whether mitigation strate-\ngies laid out in the 2016 Report on the Impact \nof Wind Energy Developments on Military \nInstallations are sufficient, achievable and, \nrealistic. \n(3) R\nEPORT.—The inspector general shall \nsubmit to Congress a report containing the \nfindings of the study conducted under this \nsubsection. \n",
+        "governed_bytes_sha256": "53ae70c67ffe5e7e5964435aa847c467a57714e7494d08aca970a9a00a31a2d7",
+        "captured_full_text_sha256": "4e6291b57112f0224d3350752219325cc4db3a40241f330ebde6dfd4346f9a27",
+        "source_text_extents": [
+          {
+            "start": 735,
+            "end": 4491,
+            "total": 17546
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "8aed7b99a582e7d7c8bffd29225379cd7aea80b2d7710b01b000e37ff077beeb",
+      "source": {
+        "source_id": "congressional-record:3838-amend7-roll250-choice158",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA7 September10 question/totals/recorded outcome; voiceayes distinct from recorded result, not initial offer or enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 7 OFFERED BY MR . SMITH OF \nNEW JERSEY \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 7, printed in \npart A of House Report 119–255, offered \nby the gentleman from New Jersey \n(Mr. S\nMITH), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 209, noes 224, \nnot voting 4, as follows: \n[Roll No. 250] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "5fa31ec4e7480944cea34c78c05615cac5e4e2fe4cba60d11f22903703e8c79b",
+        "captured_full_text_sha256": "5b79f72e735a4ca28b976d84432574abff9fc37e4c8740b9f5419c9c229b6c9d",
+        "source_text_extents": [
+          {
+            "start": 60350,
+            "end": 61056,
+            "total": 100262
+          },
+          {
+            "start": 65454,
+            "end": 65542,
+            "total": 100262
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "01447b78c78592946f8e75e3810d712a577e82e131acad005df926be3efe411d",
+      "source": {
+        "source_id": "clerk:119:1:251",
+        "source_type": "house_clerk_roll_call",
+        "url": "https://clerk.house.gov/evs/2025/roll251.xml",
+        "text_version": null,
+        "raw_sha256": "39414b11212f9c62cbd619bb411e356bc720025f2e2270738c98be7a761868aa",
+        "metadata": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "committee": "U.S. House of Representatives",
+          "rollcall-num": "251",
+          "legis-num": "H R 3838",
+          "vote-question": "On Agreeing to the Amendment",
+          "amendment-num": "3",
+          "amendment-author": "Patronis of Florida Part A Amendment No. 9",
+          "vote-type": "RECORDED VOTE",
+          "vote-result": "Agreed to",
+          "action-date": "10-Sep-2025",
+          "action-time": "5:10 PM",
+          "vote-desc": null
+        },
+        "member_records": {
+          "F000477": {
+            "official_label": "No",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Aye",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "party_totals": [
+          {
+            "party": "Republican",
+            "yea-total": "218",
+            "nay-total": "2",
+            "present-total": "0",
+            "not-voting-total": "1"
+          },
+          {
+            "party": "Democratic",
+            "yea-total": "6",
+            "nay-total": "206",
+            "present-total": "1",
+            "not-voting-total": "3"
+          },
+          {
+            "party": "Independent",
+            "yea-total": "0",
+            "nay-total": "0",
+            "present-total": "0",
+            "not-voting-total": "0"
+          }
+        ],
+        "governed_bytes_sha256": "fa8843f8a5cd854bf467bbe0d13c8751be652b3db6dce76cce66e62931a50cec"
+      }
+    },
+    {
+      "original_source_object_sha256": "1d91aae288b9c26568a46e8d98c469ba3eabf2b59da2b46cf589712bf65aad1e",
+      "source": {
+        "source_id": "congressional-record:3838-amend9-offer158",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+        "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+        "text_version": "Complete own PartA9 September9 offer/operative; not September10 recorded outcome, debate or enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 9 OFFERED BY MR . PATRONIS \nThe Acting CHAIR. It is now in order \nto consider amendment No. 9 printed in \npart A of House Report 119–255. \nMr. PATRONIS. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title III, insert \nthe following new section: \nSEC. 3 ll. ELIMINATION OF PREFERENCE FOR \nMOTOR VEHICLES USING ELECTRIC \nOR HYBRID PROPULSION SYSTEMS \nAND RELATED REQUIREMENTS OF \nTHE DEPARTMENT OF DEFENSE. \nChapter 173 of title 10, United States Code, \nis amended— \n(1) in section 2911(e)— \n(A) by striking paragraph (4); \n(B) by redesignating paragraphs (5) \nthrough (9) as paragraphs (4) through (8), re-\nspectively; \n(C) by striking paragraph (10); and \n(D) by redesignating paragraphs (11) \nthrough (15) as paragraphs (9) through (13), \nrespectively; and \n(2) by striking section 2922g. \n",
+        "governed_bytes_sha256": "f578b8480defb20d395d7cd1fd26ae7904f2644d7968be3f93ef53fb77d8834a",
+        "captured_full_text_sha256": "4e6291b57112f0224d3350752219325cc4db3a40241f330ebde6dfd4346f9a27",
+        "source_text_extents": [
+          {
+            "start": 9626,
+            "end": 10563,
+            "total": 17546
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "961a0685cef25bf71ec725aa5d07c83df32d9497bc77d7c0e988261926bae47c",
+      "source": {
+        "source_id": "congressional-record:3838-amend9-roll251-choice158",
+        "source_type": "official_congressional_record_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+        "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+        "text_version": "Complete own PartA9 September10 question/totals/recorded outcome; voiceayes distinct from recorded result, not initial offer or enactment.",
+        "text_extraction_method": "Exact preserved serialization intervals; only named operative/own vote stages or incorporated authority reviewed158. Printed errors retained. No whole-parent/current-law/individual-application certification.",
+        "text": "AMENDMENT NO. 9 OFFERED BY MR . PATRONIS \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 9, printed in \npart A of House Report 119–255, offered \nby the gentleman from Florida (Mr. \nP\nATRONIS), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 224, noes 208, \nanswered ‘‘present’’ 1, not voting 4, as \nfollows: \n[Roll No. 251] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded.",
+        "governed_bytes_sha256": "d8ede397c3402ea13179711d9d1d67d3364a3679902dc270939bb48bc3b4e4c0",
+        "captured_full_text_sha256": "5b79f72e735a4ca28b976d84432574abff9fc37e4c8740b9f5419c9c229b6c9d",
+        "source_text_extents": [
+          {
+            "start": 65544,
+            "end": 66263,
+            "total": 100262
+          },
+          {
+            "start": 70894,
+            "end": 70983,
+            "total": 100262
+          }
+        ]
+      }
+    },
+    {
+      "original_source_object_sha256": "57cf492e8d75c2bbefad8d131db2c7618cbc90422bef52be6e110a43a694547f",
+      "source": {
+        "source_id": "govinfo:10usc2911-2024-amendment-binding",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap173-subchapI-sec2911.htm",
+        "text_version": "2024 Code; exact incorporated definition/paragraph context",
+        "raw_sha256": "71b6851f207263b2e3a0cfc84b19e79e60ca7ea55431a182e94a9279c4697b13",
+        "text": "(e) Special Considerations .—For the purpose of developing and implementing the energy performance goals and energy performance master plan, the Secretary of Defense shall consider at a minimum the following: (1) Opportunities to reduce the current rate of consumption of energy, the future demand for energy, and the requirement for the use of energy. (2) Opportunities to enhance energy resilience to ensure the Department of Defense has the ability to prepare for and recover from energy disruptions that affect mission assurance on military installations. (3) Opportunities to implement conservation measures to improve the efficient use of energy. (4) Opportunities to pursue alternative energy initiatives, including the use of alternative fuels and hybrid-electric drive in military vehicles and equipment. (5) Opportunities for the high-performance construction, lease, operation, and maintenance of buildings. (6) Cost effectiveness, cost savings, and net present value of alternatives. (7) The value of diversification of types and sources of energy used. (8) The value of economies-of-scale associated with fewer energy types used. (9) The value of the use of renewable energy sources. (10) The value of incorporating electric, hybrid-electric, and high efficiency vehicles into vehicle fleets. (11) The potential for an action to serve as an incentive for members of the armed forces and civilian personnel to reduce energy consumption or adopt an improved energy performance measure. (12) Opportunities for improving energy security for facility energy projects that will use renewable energy sources. (13) Opportunities to leverage financing provided by a non-Department entity to address installation energy needs. (14) The reliability and security of energy resources in the event of a military conflict. (15) The value of resourcing energy from partners and allies of the United States. ",
+        "governed_bytes_sha256": "727e02ec58f2bd281658ad0c13cc378f3d67e6b2cca3cca860ee513f5f3642c5"
+      }
+    },
+    {
+      "original_source_object_sha256": "293a53d1d066df4be0103eccaac8b3570751f437c624ccff826c7fe426913283",
+      "source": {
+        "source_id": "govinfo:10usc2922g-2024-operative",
+        "source_type": "official_statutory_text_excerpt",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap173-subchapII-sec2922g.htm",
+        "text_version": "2024 Code complete operative section proposed for repeal",
+        "raw_sha256": "1b2a6f1c604cf309406a7237fe04d683277f1a45ebf7cbc8dc7161c182650a47",
+        "text": "§2922g. Preference for motor vehicles using electric or hybrid propulsion systems; purchase or lease of certain electric and other vehicles (a) Preference .—During the period preceding October 1, 2035, in leasing or procuring motor vehicles for use by a military department or Defense Agency, the Secretary of the military department or the head of the Defense Agency shall provide a preference for the lease or procurement of motor vehicles using electric or hybrid propulsion systems, including plug-in hybrid systems, if the electric or hybrid vehicles— (1) will meet the requirements or needs of the Department of Defense; and (2) are commercially available at a cost, including operating cost, reasonably comparable to motor vehicles containing only an internal combustion or heat engine using combustible fuel. (b) Exception .—Subsection (a) does not apply with respect to tactical vehicles designed for use in combat. (c) Relation to Other Vehicle Technologies That Reduce Consumption of Fossil Fuels .—The preference required by subsection (a) does not preclude the Secretary of Defense from authorizing, during the period specified in subsection (a), the Secretary of a military department or head of a Defense Agency to provide a preference for another vehicle technology that reduces the consumption of fossil fuels if the Secretary of Defense determines that the technology is consistent with the energy performance goals and plan of the Department required by section 2911 of this title. (d) Requirement .—Except as provided in subsection (e), beginning on October 1, 2035, each covered nontactical vehicle purchased or leased by or for the use of the Department of Defense shall be— (1) an electric or zero emission vehicle that uses a charging connector type (or other means to transmit electricity to the vehicle) that meets applicable industry accepted standards for interoperability and safety; (2) an advanced-biofuel-powered vehicle; or (3) a hydrogen-powered vehicle. (e) Relation to Other Vehicle Technologies That Reduce Consumption of Fossil Fuels .—Notwithstanding the requirement under subsection (d), beginning on October 1, 2035, the Secretary of Defense may authorize the purchase or lease of a covered nontactical vehicle that is not described in such subsection if the Secretary determines, on a case-by-case basis, that— (1) the technology used in the vehicle to be purchased or leased reduces the consumption of fossil fuels compared to vehicles that use conventional internal combustion technology; (2) the purchase or lease of such vehicle is consistent with the energy performance goals and plan of the Department of Defense required by section 2911 of this title; and (3) the purchase or lease of a vehicle described in subsection (d) is impracticable under the circumstances. (f) Waiver .—(1) The Secretary of Defense may waive the requirement under subsection (d). (2) The Secretary of Defense may not delegate the waiver authority under paragraph (1). (g) Definitions .—In this section: (1) The term \"advanced-biofuel-powered vehicle\" includes a vehicle that uses a fuel described in section 9001(3)(A) of the Farm Security and Rural Investment Act of 2002 (7 U.S.C. 8101(3)(A)). (2) The term \"covered nontactical vehicle\" means any vehicle— (A) that is not a tactical vehicle designed for use in combat; and (B) that is purchased or leased by the Department of Defense pursuant to a contract entered into, renewed, modified, or amended on or after October 1, 2035. (3) The term \"hydrogen-powered vehicle\" means a vehicle that uses hydrogen as the main source of motive power, either through a fuel cell or internal combustion. ",
+        "governed_bytes_sha256": "dcccb49fc099aea9f2fa7160beb8d003fb3065dbaf92a7800998f7f8b7dab6be"
+      }
+    }
+  ],
+  "verification": {
+    "lossless_reconstruction": true,
+    "reference_hashes_match": true,
+    "manifest_and_parts_below_bytes": 190000,
+    "new_records": 5,
+    "prior_followup_records": 0,
+    "exported_source_objects": 16
+  }
+}

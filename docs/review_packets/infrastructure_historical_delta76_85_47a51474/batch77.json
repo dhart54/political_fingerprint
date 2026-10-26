@@ -1,0 +1,440 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 77,
+  "exact_committed_head": "0ae531b104a2bf8706161ab447d83e032b3b3b4a",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "0ae531b104a2bf8706161ab447d83e032b3b3b4a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch77_20260916/membership_review.json",
+      "git_blob": "8e4a62ef1dbdc9633535fa11204597865aaa32cf",
+      "git_bytes_sha256": "2e838fdabb7a755b2854152e91cc026a451dd94bd81965b13afefb8060b9b365"
+    },
+    "sources": {
+      "head": "0ae531b104a2bf8706161ab447d83e032b3b3b4a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch77_20260916/sources.json",
+      "git_blob": "a0671f211873a4e261a4f6230209fb6f6f843d3b",
+      "git_bytes_sha256": "26e9fe0c671441e202c026b67b8c8daabcbe9adeaaa63cf2a6d087b22334d23c"
+    },
+    "screening": {
+      "head": "0ae531b104a2bf8706161ab447d83e032b3b3b4a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch77_20260916/screening_receipt.json",
+      "git_blob": "464e3f4a05d1371ef4e2b66e38e36e6040656d30",
+      "git_bytes_sha256": "02e0c1f6b4ecb8723d7a6b97c1b7faa3f1cca6d56c7dd57dff06cc1c76db482e"
+    },
+    "screening_units": {
+      "head": "0ae531b104a2bf8706161ab447d83e032b3b3b4a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch77_20260916/screening_units_receipt.json",
+      "git_blob": "d8e6c6cad126883cefefcdbb7ddce4f2d6aa9ff6",
+      "git_bytes_sha256": "739a6622df4c18f34ac47790f930e251b263f68e82f58c8e5e22840f3640f67e"
+    }
+  },
+  "original_membership_review_sha256": "01ccd29e12113f11d62d22eeec8c35f6812b12d311161f9fec133182fb7ee0f4",
+  "new_screened_ids": [
+    "house:119:2:73",
+    "house:119:2:74",
+    "house:119:2:75",
+    "house:119:2:76",
+    "house:119:2:77"
+  ],
+  "prior_followup_ids": [
+    "house:119:2:43"
+  ],
+  "records": [
+    {
+      "original_record_sha256": "c52b9855f688de092b1318188612d608c56c5d5e2caef3f87b8a4f35eb5779af",
+      "record": {
+        "action_id": "house:119:2:43",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete own amendment/report, recorded rejection, dated24220/30111baseline and division-reference clause support an unaccepted vehicle-standard funding candidate. Preserve division-specific funds versus repeal/all-government scope, alternative detection paths, new-vehicle and practicability limits, separate compliance/extension/report clocks and no current-standard certification. Recorded failure controls; direct technical-system versus private-vehicle taxonomy requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:43",
+            "url": "https://clerk.house.gov/evs/2026/roll043.xml",
+            "raw_sha256": "711483c97207d4f3385a4e896e701bbaa887cd9b83ea7a2a8f02cf6007842d9b",
+            "governed_bytes_sha256": "f10fe01a3e0bc5f8f91cd31a23cde57490b527a60f7f6dc1148d3c9ac6d5c916"
+          },
+          {
+            "source_id": "immigration:session2-roll43-initial174",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "c2b1c53d5c676fab7c1085892effcdc4d46f770bf33b24cb1cdd9a2b25484da3"
+          },
+          {
+            "source_id": "immigration:session2-roll43-recorded174",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+            "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+            "governed_bytes_sha256": "47d8eaebbe91402c53ac189b67ab56c731da7e4ce73df6bb8d98b523278b10ce"
+          },
+          {
+            "source_id": "immigration:session2-roll43-report174",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+            "raw_sha256": "cef9f92f036e7f18416c7a87087c5d133b9a9f0b8af00fb254b65d4c27329ff8",
+            "governed_bytes_sha256": "22b846499c665adf030673c9333930b6d3cda8363233b1b9ab28a934ec82eb1f"
+          },
+          {
+            "source_id": "govinfo:49usc30111-24220-complete174",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVI-partA-chap301-subchapII-sec30111.htm",
+            "raw_sha256": "bb56951dc114d11666ec063b2d62271065c05907ad5eadf7b4eb55ece1e2fa9f",
+            "governed_bytes_sha256": "bb854de41777d9e96c13dc6da485f40953c7f1212b242e3e2211e3477632988b"
+          },
+          {
+            "source_id": "govinfo:hr7148ih-reference-scope",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm",
+            "raw_sha256": "0ca75b2f225d2679446bad81c0368b844c5545c9a3459a850f9b0c46a1811bd1",
+            "governed_bytes_sha256": "db93338f7ef6471d7d310296924166e6b155b22b47c74e26c75105112d5007ee"
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+            "raw_sha256": "5e3f2a713beda1ea584d8eb1d21dd09b69fb195d83714feb525d688d0b8c60b7",
+            "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de"
+          },
+          {
+            "source_id": "govinfo:hrpt119-462-operative-amendments",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+            "raw_sha256": "cef9f92f036e7f18416c7a87087c5d133b9a9f0b8af00fb254b65d4c27329ff8",
+            "governed_bytes_sha256": "efbf7c6f8c904db00ae540fb516f9fbaafde21882d15b40cc3e2d3d51cfc54e9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:session2-roll43-initial174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY \nMR. MASSIE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 1 printed \nthe part B of House Report 119–462. \nMr. MASSIE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of Title I of Division D, insert \nthe following: \nSEC. 195. None of the funds made available \nby this Act may be used to implement sec-\ntion 24220 of the Infrastructure Investment \nand Jobs Act (49 U.S.C. 30111 note). \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Kentucky (Mr. M\nASSIE). \nThe question was taken; and the Act-\ning Chair announced that the ayes ap-\npeared to have it. \nMr. MASSIE. Mr. Chair, I demand a \nrecorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Kentucky will be \npostponed."
+          },
+          {
+            "source_id": "immigration:session2-roll43-recorded174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MR . MASSIE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 1, printed in \npart B of House Report 119–462, offered \nby the gentleman from Kentucky (Mr. \nM\nASSIE), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 164, noes 268, \nnot voting 4, as follows: \n[Roll No. 43]\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "immigration:session2-roll43-report174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "1. An Amendment To Be Offered by Representative Massie of Kentucky or His Designee, Debatable for 10 Minutes At the end of Title I of Division D, insert the following: Sec. 195. None of the funds made available by this Act may be used to implement section 24220 of the Infrastructure Investment and Jobs Act (49 U.S.C. 30111 note). "
+          },
+          {
+            "source_id": "govinfo:49usc30111-24220-complete174",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/6a1b702c0ebc41e5b18d76cafbbcc06334a30bd15ae6e4fce0e0d9550d18bf08.0000000.json",
+                  "sha256": "94397c36424a4f7c1729de3f5be16e65657bbe7320012513f590ac670153bb4c",
+                  "start_character": 0,
+                  "end_character": 6482
+                }
+              ],
+              "utf8_sha256": "6a1b702c0ebc41e5b18d76cafbbcc06334a30bd15ae6e4fce0e0d9550d18bf08",
+              "total_characters": 6482,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hr7148ih-reference-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in any division of this Act shall be treated as referring only to the provisions of that division. SEC. 4. EXPLANATORY STATEMENT. The explanatory statement regarding this Act, printed in the House section of the Congressional Record on or about January 21, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall have the same effect with respect to the allocation of funds and implementation of divisions A through D of this Act as if it were a joint explanatory statement of a committee of conference. SEC. 5. STATEMENT OF APPROPRIATIONS. The following sums in this Act are appropriated, out of any money in the Treasury not otherwise appropriated, for the fiscal year ending September 30, 2026."
+          },
+          {
+            "source_id": "govinfo:hres1014eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c.0000000.json",
+                  "sha256": "4a3585e6ab3581e9b6f299f3c49165357ef15bc3b59e146f2b9a887c173d57d9",
+                  "start_character": 0,
+                  "end_character": 5061
+                }
+              ],
+              "utf8_sha256": "bf9affd86fafe4be64afda36bc97dadc4df3ef8306d02e23abefd956d505029c",
+              "total_characters": 5061,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hrpt119-462-operative-amendments",
+            "locator": "Complete PartA instructions0:1898, deemed adopted before PartB by1014section1. PartAamends section4, inserts aftersection5and edits listed later pages; it does not amend section3. IHsection3therefore remains the ordinary division-reference rule for the pending PartB1 insertion at TitleI/DivisionD. Explicit version-binding inference, not complete conformed-package/current-law clearance.",
+            "passage": "PART A--TEXT OF AMENDMENT TO H.R. 7148 CONSIDERED AS ADOPTED Section 4 in the matter preceding division A is amended by inserting the following new paragraphs: ``The explanatory statement regarding division A of H.R. 7006 of the 119th Congress, the explanatory statement regarding division B of H.R. 7006 of the 119th Congress, and the explanatory statement regarding division C of H.R. 7006 of the 119th Congress, printed in the House section of the Congressional Record on January 14, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall each have the same effect with respect to the allocation of funds and implementation of divisions E, F, and G, respectively, of this Act as if they were each a joint explanatory statement of a committee of conference.'' ``The explanatory statement regarding H.R. 7147 of the 119th Congress, printed in the House section of the Congressional Record on or about January 21, 2026, and submitted by the chair of the Committee on Appropriations of the House, shall have the same effect with respect to the allocation of funds and implementation of division H of this Act as if it were a joint explanatory statement of a committee of conference.'' Insert after section 5, in the matter preceding Division A, the following: SEC. __. PAYMENT TO WIDOWS AND HEIRS OF DECEASED MEMBERS OF CONGRESS. For payment to Jill Marie LaMalfa, widow of Douglas L. LaMalfa, late a Representative from the State of California, $174,000. Page 657, line 6, strike ``during'' and insert ``During''. Page 659, beginning on line 13, strike ``, section 112 of the African Growth and Opportunity Act (19 U.S.C. 3721),''. Page 659, line 19, after ``2466a)'', insert ``or section 112 of the African Grown and Opportunity Act (19 U.S.C. 3721)''. Page 813, line 23, strike ``AC'' and insert ``WTC''. Page 816, line 6, strike ``XXIII'' and insert ``XXXIII''. "
+          }
+        ],
+        "episode_candidate_id": "episode:hr7148:amend1:119"
+      }
+    },
+    {
+      "original_record_sha256": "d0ee20d94aaec8c6e77b242fc457be53ad7f50e1c5ca3bb475b2004ff2be9043",
+      "record": {
+        "action_id": "house:119:2:73",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the ordering of the previous question on H.Res.1075. No substantive motion body is interpreted. This remains non-counting procedural context, separate from underlying appliance-standard or home-energy-program passage, without support/opposition to an individual technical or energy mechanism.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:73",
+            "url": "https://clerk.house.gov/evs/2026/roll073.xml",
+            "raw_sha256": "18e968758ada79812e0ff8747c5d9fa40a855b59f9f4ad3ce96cdf8da67e12eb",
+            "governed_bytes_sha256": "bafd24bda54e0900ae5a8b8d31784baf4ee6ea4128121269076a6d3490fbcf03"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "8522ae668d7f02006745f487b582e6ba426d85f93ff0e9c9d128892c6f391388",
+      "record": {
+        "action_id": "house:119:2:74",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1075EH deems RulesCommitteePrint119-20adopted IN LIEU OF the4626committee substitute, while separately scheduling4758without a deemed substitute. Whole actual119-20version and appliance-standard statutory/domain baselines remain pending; the earlier RH cannot stand in for the designated print. Rule adoption does not itself pass4758or enact an energy-program repeal. Do not reduce this whole deemed-substitute choice to scheduling or use a selected product title as full technical meaning. No standard, cost, appliance availability, rebate or energy outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:74",
+            "url": "https://clerk.house.gov/evs/2026/roll074.xml",
+            "raw_sha256": "dcffcb7579a934a6d9532c3b08bf7407b6aa20d15b90b830b7cd6c0801d68568",
+            "governed_bytes_sha256": "e8804152b0a41bbb4529cf2c76d09fe69df9e13cf6c4e700b10bc9249e7e57c3"
+          },
+          {
+            "source_id": "govinfo:hres1075eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1075eh/html/BILLS-119hres1075eh.htm",
+            "raw_sha256": "102aa880f31fb7f1e893b3be8cd7b2104d91961898535f0d9bff77a85d044723",
+            "governed_bytes_sha256": "4afc4964cf4c3256fc127becdddabad1bafc7c423fbaf484feacd6e88ba0c07d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1075eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1075 Engrossed in House (EH)] <DOC> H. Res. 1075 In the House of Representatives, U. S., February 24, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4626) to amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes. All points of order against consideration of the bill are waived. In lieu of the amendment in the nature of a substitute recommended by the Committee on Energy and Commerce now printed in the bill, an amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-20 shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4758) to repeal provisions of Public Law 117-169 relating to taxpayer subsidies for home electrification, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "549140e44c7206393a333ad8cbb50a5a5e0a83435e7178c8ff223f93545f6b00",
+      "record": {
+        "action_id": "house:119:2:75",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.4626. No substantive motion body is interpreted. This remains non-counting procedural context, separate from underlying appliance-standard or home-energy-program passage, without support/opposition to an individual technical or energy mechanism.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:75",
+            "url": "https://clerk.house.gov/evs/2026/roll075.xml",
+            "raw_sha256": "68e716767c10e7160ff5f6a607bb7ab1dd999e7459b18e6b74b8ea3c9ad1bf2d",
+            "governed_bytes_sha256": "3950c91cd233ac44de8f1e6c096578f128d911d1fbf2ca12938d7730541541a2"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "28d87bb4cf4da7443d17e6db9e7cefdb3b264af54bd9429d9278e83e28c40afd",
+      "record": {
+        "action_id": "house:119:2:76",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole4626EH is20458characters; only0:2600and19458:20458were read. The opening changes standard-amendment/proposal, final-rule/manufacture clocks and petition wording; the closing contains dishwasher design/energy/water-standard options. These extents do not clear the intervening product/criteria/technical rules, exact RCP119-20reconciliation or material6295and other incorporated baselines. Do not replace the whole multi-product/standard/petition package with one appliance fragment, the title, a claim that all standards disappear or an assumed current affordability result. Exact passage remains pending whole version/baseline/domain review; no enacted rule, present deadline, specific product compliance, cost, energy or water outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:76",
+            "url": "https://clerk.house.gov/evs/2026/roll076.xml",
+            "raw_sha256": "b29d9d017d11ddb0f06d619f868071abd44b2e605016050cb37a00f157fe2cda",
+            "governed_bytes_sha256": "fa7c8fabfed727732c54814d08f3565c5c5378d29878f51711c7c08fe40b2cee"
+          },
+          {
+            "source_id": "govinfo:hr4626eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4626eh/html/BILLS-119hr4626eh.htm",
+            "raw_sha256": "aeffd129fe15c39a964775e40a6cf95004a441213810c12984845ed4616ea537",
+            "governed_bytes_sha256": "71d7720fc5d45c16a1f0367559122800b6e5dddf17410f1a53a7ad3b3688d467"
+          },
+          {
+            "source_id": "govinfo:hres1075eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1075eh/html/BILLS-119hres1075eh.htm",
+            "raw_sha256": "102aa880f31fb7f1e893b3be8cd7b2104d91961898535f0d9bff77a85d044723",
+            "governed_bytes_sha256": "4afc4964cf4c3256fc127becdddabad1bafc7c423fbaf484feacd6e88ba0c07d"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4626eh",
+            "locator": "Only opening0:2600read; complete20458character bill not reviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4626 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 4626 _______________________________________________________________________ AN ACT To amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Home Appliance Protection and Affordability Act''. SEC. 2. PRESCRIBING NEW OR AMENDED ENERGY CONSERVATION STANDARDS. (a) Amendment of Standards.-- (1) In general.--Section 325(m)(1) of the Energy Policy and Conservation Act (42 U.S.C. 6295(m)(1)) is amended to read as follows: ``(1) In general.--The Secretary may, for any product, publish a notice of proposed rulemaking including new proposed standards for such product based on the criteria established under subsection (o) and the procedures established under subsection (p).''. (2) Amendment of standard.--Section 325(m)(3) of the Energy Policy and Conservation Act (42 U.S.C. 6295(m)(3)) is amended to read as follows: ``(3) Amendment of standard.--Not later than 2 years after a notice is issued under paragraph (1), the Secretary shall publish a final rule amending the standard for the product.''. (3) Application to products.--Section 325(m)(4) of the Energy Policy and Conservation Act (42 U.S.C. 6295(m)(4)) is amended to read as follows: ``(4) Application to products.--An amendment prescribed under this subsection shall apply to a product that is manufactured after the date that is 5 years after publication of the final rule establishing an applicable standard.''. (b) Petition for Amended Standard.--Section 325(n) of the Energy Policy and Conservation Act (42 U.S.C. 6295(n)) is amended-- (1) in the subsection heading, by striking ``an Amended Standard'' and inserting ``Amendment or Revocation of Standard''; (2) in paragraph (1), by inserting ``or revoked'' after ``should be amended''; (3) by amending paragraph (2) to read as follows: ``(2) The Secretary shall grant a petition to determine if standards for a covered product should be amended or revoked if the Secretary finds that such petition contains evidence, assuming no other evidence were considered, that such standards-- ``(A) result in additional costs to consumers; ``(B) do not result in significant co"
+          },
+          {
+            "source_id": "govinfo:hr4626eh",
+            "locator": "Only closing19458:20458read; intervening product/criteria text unreviewed",
+            "passage": "etary may prescribe a new or amended energy conservation standard for dishwashers in accordance with this section, including-- ``(I) a design requirement; and ``(II) a performance standard which prescribes one of the following: ``(aa) A minimum level of energy efficiency. ``(bb) A maximum quantity of energy use. ``(cc) A minimum level of water efficiency. ``(dd) A maximum quantity of water use. ``(ee) A minimum level of energy efficiency and a minimum level of water efficiency. ``(ff) A maximum quantity of energy use and a maximum quantity of water use.''. Passed the House of Representatives February 24, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 4626 _______________________________________________________________________ AN ACT To amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1075eh",
+            "locator": "Complete governing rule read; RCP119-20in lieu of committee substitute",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1075 Engrossed in House (EH)] <DOC> H. Res. 1075 In the House of Representatives, U. S., February 24, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4626) to amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes. All points of order against consideration of the bill are waived. In lieu of the amendment in the nature of a substitute recommended by the Committee on Energy and Commerce now printed in the bill, an amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-20 shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4758) to repeal provisions of Public Law 117-169 relating to taxpayer subsidies for home electrification, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "56851070e3de8f37816768e99eadb6a6e2a06b034999d0e81b2147c73ac689e1",
+      "record": {
+        "action_id": "house:119:2:77",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.4758. No substantive motion body is interpreted. This remains non-counting procedural context, separate from underlying appliance-standard or home-energy-program passage, without support/opposition to an individual technical or energy mechanism.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:77",
+            "url": "https://clerk.house.gov/evs/2026/roll077.xml",
+            "raw_sha256": "047cb4e19abf6a468cc88dee27a07b20bf2f36d8b62acd61ffe61153ffde0260",
+            "governed_bytes_sha256": "045eebbe93fe7f59244e23c01a1525684ba15a047d40858b5927e5bba981e012"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:43",
+      "original_source_object_sha256": "c94636701e9964bc663a0c3dac2a5e22edae97c833d13714928e47a036aee13f"
+    },
+    {
+      "source_id": "clerk:119:2:73",
+      "original_source_object_sha256": "3678aa5cd0ccf5b6a3588998fa0464733dc71e36ed6d20dd59021ef13801554b"
+    },
+    {
+      "source_id": "clerk:119:2:74",
+      "original_source_object_sha256": "5923cc66f81b1955b1eac311146d557363e611749974cec1fc36f8f7005f62cd"
+    },
+    {
+      "source_id": "clerk:119:2:75",
+      "original_source_object_sha256": "5621f22c050afd18881b6207f259f7d2e7e6d3d631aa67e751341cea7dc5ed27"
+    },
+    {
+      "source_id": "clerk:119:2:76",
+      "original_source_object_sha256": "85e5952e615f3dd17aae19fa719ccf11e87af1ae028fd14936c6a35e764b6861"
+    },
+    {
+      "source_id": "clerk:119:2:77",
+      "original_source_object_sha256": "d28edc87082c7d2bd88c6de9c72e7802c7632923edf0d97d7c6e797d497e314e"
+    },
+    {
+      "source_id": "govinfo:49usc30111-24220-complete174",
+      "original_source_object_sha256": "90387d3c29fd93f81403e5e567bcd3a18507592a648aaee19fd4d394c6e0382c"
+    },
+    {
+      "source_id": "govinfo:hr4626eh",
+      "original_source_object_sha256": "470ca7a3e1660dbf836cd35fa81eebb6c28329ebd29049424543d09b801dac7a"
+    },
+    {
+      "source_id": "govinfo:hr7148ih-reference-scope",
+      "original_source_object_sha256": "5ccacee9fc5a351473e48f0f15b1671a8bd79979333e88f08b0f52e6f46c589f"
+    },
+    {
+      "source_id": "govinfo:hres1014eh",
+      "original_source_object_sha256": "d9814e3a0649391be7bb20bf2da6c01fef7f3ad7b8a15787845dde39823e7664"
+    },
+    {
+      "source_id": "govinfo:hres1075eh",
+      "original_source_object_sha256": "1aa1d6baff989d7c53af1e7a92466f9dc77ce8c7b0a95bceba77660f9b9011d7"
+    },
+    {
+      "source_id": "govinfo:hrpt119-462-operative-amendments",
+      "original_source_object_sha256": "085e53f8a9aba112e820489be6a713238d1651348e46d935b2f709bb729e4fe4"
+    },
+    {
+      "source_id": "immigration:session2-roll43-initial174",
+      "original_source_object_sha256": "ba0b9f3a6dfe5edd7c5da55857c1e7a78e6d3836901cc0f8314be7ba40bf9e15"
+    },
+    {
+      "source_id": "immigration:session2-roll43-recorded174",
+      "original_source_object_sha256": "94cc7e3e31cffbd47cacf573a634a6a447a9a0fabf56b25271a426636726e9c4"
+    },
+    {
+      "source_id": "immigration:session2-roll43-report174",
+      "original_source_object_sha256": "9d22c4d2ce73414bf33fa25463ff4233420aadcd1a4d770d86dd88098b7f7b34"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres1075eh",
+      "governed_length": 2144,
+      "review_extent": "Complete captured rule read; incorporated RCP119-20and product baselines not implicitly cleared"
+    },
+    {
+      "source_id": "govinfo:hr4626eh",
+      "governed_length": 20458,
+      "review_extent": "Only0:2600and19458:20458read; complete bill interior unreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:73",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:74",
+        "evidence_unit": "whole_rule_with_unreviewed_designated_print",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:75",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:76",
+        "evidence_unit": "partial_multi_product_bill",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:77",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}

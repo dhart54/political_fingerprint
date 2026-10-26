@@ -1,0 +1,601 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 101,
+  "exact_committed_head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+  "export_anchor_head": "9fd76739f8597aa0f57a47007c1bafb242a241e4",
+  "committed_provenance": {
+    "membership": {
+      "head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/membership_review.json",
+      "git_blob": "04545ca75a7d257208833895a781997dbdf14c9b",
+      "git_bytes_sha256": "22a25a1ab10e9927064f68caf9a4c1230267a8bfa7e19569d4bf74aeae056cbd"
+    },
+    "sources": {
+      "head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/sources.json",
+      "git_blob": "a88fbe76275a2923101c89902a5012685d729284",
+      "git_bytes_sha256": "e21e86a9a11f1c4844025707f1c71f089874778ae84430e6e8e51b938aa8a555"
+    },
+    "screening": {
+      "head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/screening_receipt.json",
+      "git_blob": "16d14d0e0e94409e921b67a1a9f2adc57d64d869",
+      "git_bytes_sha256": "cfa40f86c6f9c934800374d79c4e33802639964fed77d767f6e7693b4cdfe663"
+    },
+    "screening_units": {
+      "head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/screening_units_receipt.json",
+      "git_blob": "6dfdb991eaeec9cdd5912e31a8f00e2ead59544c",
+      "git_bytes_sha256": "abc2a9fd427c1ca51d5c5658a1455a14e3c355af876c333d05eaa8ee7bbaa746"
+    },
+    "validation": {
+      "head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/validation_receipt.json",
+      "git_blob": "fa00ba4db6bbfa81018bdfdc4b8736351e40cfc9",
+      "git_bytes_sha256": "0a72bee1e482c564d1b356bc2075e9923b520a08f977e4d19ee70b18ead8f4bd"
+    }
+  },
+  "original_membership_review_sha256": "4a316b811634b4ca8cf30851199c1d166125b105fd169a21cfa27859929b0a81",
+  "new_screened_ids": [
+    "house:119:2:272",
+    "house:119:2:273",
+    "house:119:2:274",
+    "house:119:2:275",
+    "house:119:2:276"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "e6c8b954b3b7517671b74ac66e6d2e3b97ef263df5d962d0cfb791545f791397",
+      "record": {
+        "action_id": "house:119:2:272",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole9770EHhas17863characters; onlyopening0:1800andclosing17063:17863read. Whole continuing-appropriations package incorporates multipleFY2026acts/conditions and laterexceptions/otherpayments, not an isolatedtechnical/construction appropriation or automatic full-year continuation. Completeinterior/materialappropriation/availability/version baselines and cross-domain mapping remain pending. Closingbereavementpayments/memberCOLArestriction do not establish the whole bill fiscal effect. No actualobligation, appropriatedprogramuse, shutdownoutcome, enactedfunding or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:272",
+            "url": "https://clerk.house.gov/evs/2026/roll272.xml",
+            "raw_sha256": "c1104ec5fd295cb5fe8f4c6166bdb7d6810924c146bbba209e6bf05dfd3fee8b",
+            "governed_bytes_sha256": "9841f339886da67df4cd6aeacbbf5535b5e803bcf4c67f8c6a28bc58662835a9"
+          },
+          {
+            "source_id": "govinfo:hr9770eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9770eh/html/BILLS-119hr9770eh.htm",
+            "raw_sha256": "eb469f38452dfa23b4f9dd469cfd136c2ec35c77d1dd0d52b12febb0f5fdc23d",
+            "governed_bytes_sha256": "f4059f8707e26b5b465662ca917eb82eb07f1162f5867dde38c74d263fd02fc3"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr9770eh",
+            "locator": "Onlyopening0:1800of17863read;wholeinteriorunreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 9770 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 9770 _______________________________________________________________________ AN ACT Making continuing appropriations for fiscal year 2027, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, That the following sums are hereby appropriated, out of any money in the Treasury not otherwise appropriated, and out of applicable corporate or other revenues, receipts, and funds, for the several departments, agencies, corporations, and other organizational units of Government for fiscal year 2027, and for other purposes, namely: Sec. 101. Such amounts as may be necessary, at a rate for operations as provided in the applicable appropriations Acts for fiscal year 2026 and under the authority and conditions provided in such Acts, for continuing projects or activities (including the costs of direct loans and loan guarantees) that are not otherwise specifically provided for in this Act, that were conducted in fiscal year 2026, and for which appropriations, funds, or other authority were made available in the following appropriations Acts: (1) The Agriculture, Rural Development, Food and Drug Administration, and Related Agencies Appropriations Act, 2026 (division B of Public Law 119-37). (2) The Commerce, Justice, Science, and Related Agencies Appropriations Act, 2026 (division A of Public Law 119-74). (3) The Department of Defense Appropriations Act, 2026 (division A of Public Law 119-75). (4) The Energy and Water Development and Related Agencies Appropriations Act, 2026 (division B of Public Law 119-74). (5) The Financial Services and General Gover"
+          },
+          {
+            "source_id": "govinfo:hr9770eh",
+            "locator": "Onlyclosing17063:17863read",
+            "passage": "a Scott, widow of David A. Scott, late a Representative from the State of Georgia, $174,000; and (2) for payment to the heirs at law of Lindsey O. Graham, late a Senator from South Carolina, $174,000. Sec. 128. Notwithstanding any other provision of law, no adjustment shall be made under section 601(a) of the Legislative Reorganization Act of 1946 (2 U.S.C. 4501) (relating to cost of living adjustments for Members of Congress) during the period covered by this Act. This Act may be cited as the ``Continuing Appropriations Act, 2027''. Passed the House of Representatives July 21, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 9770 _______________________________________________________________________ AN ACT Making continuing appropriations for fiscal year 2027, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread;9770onlymadeinorder",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "012833b191fac8c033adf6a9c075f049a946be4cb0ddc43c371486b155761298",
+      "record": {
+        "action_id": "house:119:2:273",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "ExactPartA28Chaplainssubtitle ownoperative unit has39577characterswithin47547capture; onlyopening0:1800andclosing38777:39577read, notwholeoperativeorfollowingdebate. Whole chaplainqualifications/endorsement/religiousduties/UCMJoffense/regulations/conformingdeletions and materialreligiousliberty/service-law baselines remain pending. Modernizationtitle is not a technicalsystem mandate. Clerkagreement doesnotestablish enactment, individualreligiousfitness, faith/character findings or actualprosecution. Historicalreligiousfindings/sourceassertions are not independently adoptedfacts.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:273",
+            "url": "https://clerk.house.gov/evs/2026/roll273.xml",
+            "raw_sha256": "d0129c5d8d2252f8a566d3b69416d6fb9c58451eca359ebb88ad7223b39be5e2",
+            "governed_bytes_sha256": "7c63a341532de0eb1b79bc7fdf5a8ef0b2a67ce3eb87dc0d178c1dc3de152f9f"
+          },
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-chaplains",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+            "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+            "governed_bytes_sha256": "012e59be548f9aa26bf8731b4d91adc56eca00cb7ac3f80a494335f749db29be"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-chaplains",
+            "locator": "Onlyownoperativeopening0:1800read;wholeinterior/debateunreviewed",
+            "passage": "AMENDMENT NO. 28 OFFERED BY MR . SELF \nThe Acting CHAIR. It is now in order \nto consider amendment No. 28 printed \nin part A of House Report 119–755. \nMr. SELF. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of title V, add the following new \nsubtitle: \nSubtitle ll—Military Chaplains \nModernization Act of 2026 \nSEC. 5ll. SHORT TITLE. \nThis subtitle may be cited as the ‘‘Military \nChaplains Modernization Act of 2026’’. \nSEC. 5ll. FINDINGS. \nCongress makes the following findings: \n(1) Religion and religious liberty have al-\nways served an essential role in society, cul-\nture, and military service, making them nec-\nessary for good democratic governance and a \nstrong military. \n(2) George Washington, as a young colonel, \nrecognized the importance of religious prac-\ntice for his soldiers, repeatedly requesting \nchaplains for his troops and periodically per-\nforming religious duties himself. \n(3) When the Second Continental Congress \nestablished the Continental Army in June \n1775, it recommended ‘‘all officers and sol-\ndiers diligently to attend Divine Service’’. \n(4) In 1775, at the behest of George Wash-\nington, then General of the Continental \nArmy, the Second Continental Congress es-\ntablished the Federal chaplaincy that is in \nexistence to this day, making it one of the \noldest military services provided for Amer-\nican troops. \n(5) From their earliest days, military chap-\nlains have existed to provide pastoral care, \nmeeting the religious needs of members of \nthe Armed Forces and their families. \n(6) In 1775, the Continental Congress, un-\nderstanding the significance of chaplaincy, \nsimilarly instructed its fledgling navy that, \n‘‘The commanders of the ships "
+          },
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-chaplains",
+            "locator": "Onlyownoperativeclosing38777:39577read",
+            "passage": "nd \n(2) revise the Manual for Courts-Martial to \ninclude such offenses. \nSEC. 5ll. REGULATIONS. \nThe Secretary of Defense shall prescribe \nsuch regulations as are necessary to carry \nout the amendments made by this subtitle. \nSEC. 5ll. CONFORMING AMENDMENTS. \n(a) E XISTING PROTECTIONS FOR CHAP-\nLAINS.—Section 533 of the National Defense \nAuthorization Act for Fiscal Year 2013 (Pub-\nlic Law 112–239; 10 U.S.C. 1030 note prec.) is \namended— \n(1) in the section heading, by striking ‘‘\nAND \nCHAPLAINS OF SUCH MEMBERS ’’; \n(2) by striking subsection (b); and \n(3) by redesignating subsection (c) as sub-\nsection (b). \n(b) P\nROFESSIONAL FUNCTIONS OF THE AIR \nFORCE.—Section 9063(h) of title 10, United \nStates Code, is amended by adding ‘‘in ac-\ncordance with section 9217(a)’’ after ‘‘Sec-\nretary’’. \n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "09923e8137b6bfc46fa9edad7af51ec35c839525e72cebc73d8fc587823d4a9f",
+      "record": {
+        "action_id": "house:119:2:274",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete ownPartA30operative and retained632(a)(1)generaldefinition support an unaccepted whole technology-investment clearancepilot candidate. Preserve mandatoryestablishment versus discretionaryparticipation, continuinginvestoreligibility/contractindependence, lawfulneedtoknow, facilityclearanceORapprovedalternative, FOCI/securitysuspension, purpose/personal-gain/foreignperson/awardpreference restrictions and1yearannualreport/5yearsunsetfromENACTMENT. Remainingsecurity/SBAsize/currentindividualeligibility and interpretation of profit remainunadjudicated. Clerkfailure is not enactment or actualclearance/innovation/securityresult. Wholetechnologyversusinvestment/securityadministration mapping requires independentreview.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:274",
+            "url": "https://clerk.house.gov/evs/2026/roll274.xml",
+            "raw_sha256": "92972207cf64edf26fe2c274d51be73f08ebe03604ea18d022da6aa138d7caa5",
+            "governed_bytes_sha256": "fc0c50268bf337a424b4781248a872e286ac539a4c0315df0fa75c15b230581d"
+          },
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-remaining-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+            "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+            "governed_bytes_sha256": "52c11e63712e94ca10beb464a3d2e52a17317ef93717f2a5b2cec0e0b7dda410"
+          },
+          {
+            "source_id": "govinfo:15usc632a1-business198",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec632.htm",
+            "raw_sha256": "9848ab1e7195316a297a32303a1d2de465e14a3191d0c411577ec10beab84de3",
+            "governed_bytes_sha256": "09c92c506ceac9aca043b593a8ab011dfbfdb568eaede8b5861f42770dbceccf"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-remaining-offerings",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/766b20a2002138c91c629adcbdb7356845ab2a1273edc4dec53a8a00c796e14f.0000000.json",
+                  "sha256": "7b6c0abe3b3053325f15cdc263cf7575280f4aeb80a92105c7f0173520fed9d2",
+                  "start_character": 0,
+                  "end_character": 6518
+                }
+              ],
+              "utf8_sha256": "766b20a2002138c91c629adcbdb7356845ab2a1273edc4dec53a8a00c796e14f",
+              "total_characters": 6518,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:15usc632a1-business198",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§632. Definitions (a) Small business concerns (1) In general For the purposes of this chapter, a small-business concern, including but not limited to enterprises that are engaged in the business of production of food and fiber, ranching and raising of livestock, aquaculture, and all other farming and agricultural related industries, shall be deemed to be one which is independently owned and operated and which is not dominant in its field of operation. "
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr8800:amend30:119"
+      }
+    },
+    {
+      "original_record_sha256": "9cd8a56c6f7e7ff6e1c8bee7ad7549e548ad873932c86428e5511a2bcce14e1f",
+      "record": {
+        "action_id": "house:119:2:275",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete exactPartA44speedcameraoperative and retained2801definitionunitread. It proposes a Federalfunds purchase/install/operate/maintain/contract prohibition and existing-system removal, while preserving other speed-enforcement means and security/access/force-protection/criminal-investigation cameras NOTprimarilyusedforspeed. Definition requires automatic speedrecording ANDanexcess-speedvehicle record; installationcrossreference includes qualifiedoverseasoperationalcontrol, not onlydomesticbases. Printed removal timing uses180daysafterenactmentofTHISsubsection but identifies operatinginventoryasofenactmentofTHISsection. Do not silently resolve those different references or certify an actualsystem/current2661legalapplication. Whole exactclock/inventory/legalbaseline review and Infrastructuremapping remain pending; Clerkagreement is not enactment/removal, allcameraban or privacy/safety outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:275",
+            "url": "https://clerk.house.gov/evs/2026/roll275.xml",
+            "raw_sha256": "07ab443206c49fe20084c474b12b6ab2d37bdea221d0e0a356c0013b5dce2265",
+            "governed_bytes_sha256": "db027ade1196693be98cf42b9ed66d88492a1c67b8b9fbfd4977a14efb1bd4e4"
+          },
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+            "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+            "governed_bytes_sha256": "200220eb1723bcd6c2d8082cab308527a47d1d4dbd2331223b643108589916c0"
+          },
+          {
+            "source_id": "govinfo:10usc2801-2024-amendment-binding",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2801.htm",
+            "raw_sha256": "1dbddfeacdeaf23e2e326e759d9ffd85e250c44e1ce39b70fdac2d59a6059962",
+            "governed_bytes_sha256": "b520c35c817faf41f8e7c7e2ff5fd837ed571a37096e201c679b2f93bb1ac743"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+            "locator": "Complete ownPartA44characters0:2210read; following316separate",
+            "passage": "AMENDMENT NO. 44 OFFERED BY MR . HARRIGAN \nThe Acting CHAIR. It is now in order \nto consider amendment No. 44 printed \nin part A of House Report 119–755. \nMr. HARRIGAN. Mr. Chairman, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle C of title XXVIII, \nadd the following new section: \nSEC. 28 ll. PROHIBITION ON USE OF AUTO-\nMATED SPEED ENFORCEMENT CAM-\nERAS ON MILITARY INSTALLATIONS. \nSection 2661 of title 10, United States Code, \nis amended by inserting at the end the fol-\nlowing new subsection: \n‘‘(e) P\nROHIBITION ON USE OF AUTOMATED \nSPEED ENFORCEMENT CAMERAS.—(1) Notwith-\nstanding any other provision of law, no Fed-\neral funds may be used by the Secretary of \nDefense to purchase, install, operate, main-\ntain, or contract for the operation of an \nautomated speed enforcement camera sys-\ntem on a military installation. \n‘‘(2) By not later than 180 days after the \ndate of the enactment of this subsection, the \nSecretary shall ensure that any automated \nspeed enforcement camera system in oper-\nation on a military installation as of the \ndate of the enactment of this section is de-\ncommissioned and removed. \n‘‘(3) Nothing in this subsection may be con-\nstrued to— \n‘‘(A) limit the authority of an installation \ncommander to enforce posted speed limits on \nthe military installation under the jurisdic-\ntion of the commander through means other \nthan automated speed enforcement cameras; \nor \n‘‘(B) affect the use of any camera or photo-\ngraphic device for purposes of security, ac-\ncess control, force protection, or criminal in-\nvestigation, so long as such camera or photo-\ngraphic device is not primarily used for \nspeed enforcement. \n‘‘(4) In this subsection: \n‘‘(A) The term ‘automated speed enforce-\nment camera system’ means any system that \nuses a photographic, video, or other elec-\ntronic device to— \n‘‘(i) automatically detect and record the \nspeed of a motor vehicle; and \n‘‘(ii) generate a record of any vehicle trav-\neling in excess of a posted speed limit. \n‘‘(B) The term ‘military installation’ has \nthe meaning given such term in section 2801 \nof this title.’’. \n\n\n"
+          },
+          {
+            "source_id": "govinfo:10usc2801-2024-amendment-binding",
+            "locator": "Complete retained2801unit; particularinstallations/currentscope notcertified",
+            "passage": "§2801. Scope of chapter; definitions (a) The term \"military construction\" as used in this chapter or any other provision of law includes any construction, development, conversion, or extension of any kind carried out with respect to a military installation, whether to satisfy temporary or permanent requirements, or any acquisition of land or construction of a defense access road (as described in section 210 of title 23). (b) A military construction project includes all military construction work, or any contribution authorized by this chapter, necessary to produce a complete and usable facility or a complete and usable improvement to an existing facility (or to produce such portion of a complete and usable facility or improvement as is specifically authorized by law). (c) In this chapter and chapter 173 of this title: (1) The term \"appropriate committees of Congress\" means the congressional defense committees and, with respect to any project to be carried out by, or for the use of, an intelligence component of the Department of Defense, the Permanent Select Committee on Intelligence of the House of Representatives and the Select Committee on Intelligence of the Senate. (2) The term \"facility\" means a building, structure, or other improvement to real property. (3) The term \"life-cycle cost-effective\", with respect to a project, product, or measure, means that the sum of the present values of investment costs, capital costs, installation costs, energy costs, operating costs, maintenance costs, and replacement costs, as estimated for the lifetime of the project, product, or measure, does not exceed the base case (current or standard) for the practice, product, or measure. (4) The term \"military installation\" means a base, camp, post, station, yard, center, or other activity under the jurisdiction of the Secretary of a military department or, in the case of an activity in a foreign country, under the operational control of the Secretary of a military department or the Secretary of Defense, without regard to the duration of operational control. (5) The term \"Secretary concerned\" includes the Secretary of Defense with respect to matters concerning the Defense Agencies. (d) This chapter (other than sections 2830, 1 2835, and 2836 of this chapter) does not apply to the Coast Guard or to civil works projects of the Army Corps of Engineers. "
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "5fe0dd9ec0e3921fd8dc9ee1f3cebe1ee387d3167110fed4c247909460da1d1c",
+      "record": {
+        "action_id": "house:119:2:276",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete ownPartA316operative read. Whole180dayfromENACTMENT report details options for reducingDODcivilianemploymentby200000, with baselinelevels/recommendations/readinessandnationalsecurity/costanalysis/neededlegalactions. It does not itself mandate layoffs or prove feasiblecuts/savings. This militarypersonnel-management study is proposed outside Infrastructure; no technical/physical/scientificprogram follows from generalanalysis/reporting. Clerkfailure did not impose areport or cutjobs; no individualemployment, actualreadiness/savings or motive finding.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:276",
+            "url": "https://clerk.house.gov/evs/2026/roll276.xml",
+            "raw_sha256": "58ba211fccbfc02fee506ea4894c4b2cbf6629b0ab0e3a6e7bd0698c55c272ac",
+            "governed_bytes_sha256": "c13285626c1d3f2feb60ec8a61b60eb40864ab0ac2de6b6228e692f10d8c8211"
+          },
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+            "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+            "governed_bytes_sha256": "200220eb1723bcd6c2d8082cab308527a47d1d4dbd2331223b643108589916c0"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+            "locator": "Complete ownPartA316characters2210:3681read",
+            "passage": "AMENDMENT NO. 316 OFFERED BY MR . GROTHMAN \nThe Acting CHAIR. It is now in order \nto consider amendment No. 316 printed \nin part A of House Report 119–755. \nMr. GROTHMAN. Mr. Chair, I have \nan amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle A of title XI, insert \nthe following new section: \nSEC.lll. REPORT ON REDUCING CIVILIAN EM-\nPLOYMENT. \n(a) Not later than 180 days after the date of \nenactment of this Act, the Secretary of De-\nfense shall submit to the Committee on \nVerDate Sep 11 2014 08:16 Jul 23, 2026 Jkt 069060 PO 00000 Frm 00097 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\A22JY7.045 H22JYPT1jwatson on DSKGBHNXB4PROD with HOUSE\n\nPDF page 98\nCONGRESSIONAL RECORD — HOUSEH5124 July 22, 2026 \nArmed Services of the House of Representa-\ntives and the Committee on Armed Services \nof the Senate a report detailing options for \nreducing the number of civilians employed \nby the Department of Defense by 200,000. The \nreport shall include— \n(1) an assessment of current non-uniformed \npersonnel levels across all components of the \nDepartment of Defense; \n(2) recommendations for achieving a reduc-\ntion of 200,000 positions while maintaining \nmission readiness and national security pri-\norities; (3) an analysis of the anticipated cost \nsavings associated with such reductions; and \n(4) any legislative or administrative actions \nneeded to implement such recommendations. \n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:272",
+      "original_source_object_sha256": "86d1c9924890dd1f1931ebd0198ef718a4e9959735a3d7fe0b7f2441ef7da187"
+    },
+    {
+      "source_id": "clerk:119:2:273",
+      "original_source_object_sha256": "197476f78b87e8076b4264688f820a867ab136fc20b6f25b72ce333facb645f5"
+    },
+    {
+      "source_id": "clerk:119:2:274",
+      "original_source_object_sha256": "bd1733f789232eec0ec17b6ee9a3c18d285930ceadad10ea97a7acf8e318dd20"
+    },
+    {
+      "source_id": "clerk:119:2:275",
+      "original_source_object_sha256": "d481be29a77ac6f0f76710e78400a12aa69d9152cd0958ec9f216f49783a514f"
+    },
+    {
+      "source_id": "clerk:119:2:276",
+      "original_source_object_sha256": "3c916a6d027ad9e4c63639f0cb310d5e5dd1ab6d1a23c1b33d98756d79d12641"
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-chaplains",
+      "original_source_object_sha256": "1507f050affffa13273db5a15b748d99b6a021ed5f7bd324e6de22a883782400"
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+      "original_source_object_sha256": "148f5ceeb4c7271dde51b87dd53772969def67c6b325cac0a9d55660458b61b4"
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-remaining-offerings",
+      "original_source_object_sha256": "ccbacbc500c6adcba32ac8ff3c7b1b0451e25e02442d5c24a11086a8687fbcd8"
+    },
+    {
+      "source_id": "govinfo:10usc2801-2024-amendment-binding",
+      "original_source_object_sha256": "adaf75bdf3d45105f57108910d24156f2c6082f4358801b0f4ea83cd85027b80"
+    },
+    {
+      "source_id": "govinfo:15usc632a1-business198",
+      "original_source_object_sha256": "0b9c1e0b9f6d0f47f0fd23727ab6462d62aea322fb2b2071bdc1bed87db6d4ee"
+    },
+    {
+      "source_id": "govinfo:hr9770eh",
+      "original_source_object_sha256": "68fe89853aeeb6febeb51ab7778025d0ddb7a8ec208e0954523ec46a63a7f485"
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "original_source_object_sha256": "94957804622c76e7efae6b9e37d6c0ce932d4cd8ad66793e44c4c15cc1fb0ea1"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr9770eh",
+      "governed_length": 17863,
+      "review_extent": "Only mappedopening/closingread; wholeinteriorunreviewed"
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "governed_length": 10221,
+      "review_extent": "Complete retained operative/definition/rule unit read; no currentimplementation/individualeligibility clearance"
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-chaplains",
+      "governed_length": 47547,
+      "review_extent": "Only mappedopening/closingread; wholeinteriorunreviewed"
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-remaining-offerings",
+      "governed_length": 6518,
+      "review_extent": "Complete retained operative/definition/rule unit read; no currentimplementation/individualeligibility clearance"
+    },
+    {
+      "source_id": "govinfo:15usc632a1-business198",
+      "governed_length": 456,
+      "review_extent": "Complete retained operative/definition/rule unit read; no currentimplementation/individualeligibility clearance"
+    },
+    {
+      "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+      "governed_length": 3681,
+      "review_extent": "Complete retained operative/definition/rule unit read; no currentimplementation/individualeligibility clearance"
+    },
+    {
+      "source_id": "govinfo:10usc2801-2024-amendment-binding",
+      "governed_length": 2373,
+      "review_extent": "Complete retained operative/definition/rule unit read; no currentimplementation/individualeligibility clearance"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:272",
+        "evidence_unit": "partial_whole_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:273",
+        "evidence_unit": "partial_whole_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:274",
+        "evidence_unit": "complete_whole_child_and_declared_definition",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:275",
+        "evidence_unit": "complete_ownoperative_with_material_qualification",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:276",
+        "evidence_unit": "complete_ownoperative_with_material_qualification",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": 134,
+    "inherited_focused_test_count": null,
+    "inherited_focused_suite_head": null,
+    "semantic_checks": 7,
+    "compiled_sha256": "c76b94c7b6d6ac5c024ddd8e7d8942a75bca5e40fb79259e8c13a4cbcf6fdd6a"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "45cb5fe3b9a6e2b8858cc1fc5b51399790bcf636",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/authoring.json",
+      "git_blob": "65cc921a05c4bba0571c5178c126bb0df3fe0d2f",
+      "git_bytes_sha256": "b268264d1fd7623e871d7fdaccf6fd7a84a639844b962a12ae533bfe7e4c156c"
+    },
+    "actions": [
+      {
+        "original_action_sha256": "989e0ca4294dd6ebecf293b041cabd868cb7e16fc86f3736c0b2cff9c92f2e53",
+        "action": {
+          "source_id": "congressional-record:2026-07-22-ndaa-remaining-offerings",
+          "bill_type": "hr",
+          "bill_number": 8800,
+          "stage": "amendment",
+          "episode_id": "episode:hr8800:amend30:119",
+          "short_description": "Creating a qualified investor security-clearance pilot for defense technology",
+          "compact_description": "The failed amendment would require a pilot but retain discretionary participation, lawful need-to-know, facility-or-alternative security and other safeguards. No foreign cleared professional, personal-gain use or preferred Federal award is authorized. Reports begin1yearfromenactment; authority sunsets5yearsfromenactment unless reauthorized. Whole technology-versus-investment/security membership remains unaccepted.",
+          "compact_source_refs": [
+            "congressional-record:2026-07-22-ndaa-remaining-offerings"
+          ],
+          "additional_source_ids": [
+            "govinfo:15usc632a1-business198",
+            "govinfo:hres1438eh"
+          ],
+          "meaning": "The House rejected exact PartA30to H.R.8800, the national-security investor personnel-clearance pilot. The whole proposed section would require the Secretary, acting through DCSA, to establish a pilot supporting investment in qualifying national-security technology companies. Rejection did not add this section to the bill, grant a clearance, prefer a particular investor or certify a company.\nEstablishment SHALL occur under the proposal, while participation approval and investor sponsorship are discretionary and subject to Secretary approval. A sponsored clearance could be maintained independently of a specific Federal contract only while the investor remains eligible. Access to classified information requires a LAWFUL NEED-TO-KNOW and applicable security procedures; the pilot is not unrestricted classified access or a waiver of all clearance requirements. Authorized uses are solely the listed diligence, development/scaling/commercialization, Federal engagement, company support and authorization-assistance purposes.\nAn eligible investor must be a UnitedStatesperson/entity providing the listed investment support, NOT owned, controlled or influenced by a foreign person, with the specified relevant technology history and additional Secretary-prescribed requirements. Covered companies are USsmallbusinessconcerns under the incorporated632definition or Secretary-designated medium businesses developing/producing/commercializing relevant technology/products/services. The retained632(a)(1)unit supplies only the general independently-owned/operated and not-dominant definition; other SBA size/program rules, foreign-person determinations and individual eligibility are not certified. Investor representatives qualify as cleared professionals only after being granted a clearance under the section. No foreign person may serve in that role.\nEach participating investor must maintain a FACILITY CLEARANCE OR Secretary-approved ALTERNATIVE SECURITY ARRANGEMENT, and comply with industrial-security, insider-threat and reporting requirements. The Secretary MAY suspend or revoke participation for security violations or foreign-ownership/control/influence concerns. Classified access may not be used for personal financial gain, securities trading, market manipulation or unrelated purposes. Those printed restrictions coexist with the listed investment-support purposes; this candidate does not adjudicate permissible profit or an individual transaction. Participation provides NO PREFERENCE in Federal contracts, grants or assistance. No numerical participation cap is imposed by this section; that is not automatic approval or guaranteed funding.\nThe first congressional-defense-committee report would be due one year AFTER ENACTMENT and annually thereafter, describing participation, clearances, supported companies, measured impacts, incidents/concerns and recommendations. Required impact reporting is not proof of actual innovation, manufacturing or security results. Authority under this section terminates five years AFTER ENACTMENT unless reauthorized by law; the text does not revoke every clearance authorized under other law. Current clearance regulations, security implementation and individual company/investor classifications remain uninspected.\nAn Aye would support this whole conditional pilot; a No opposes it without a component-specific position. Infrastructure/Technology membership is an UNACCEPTED candidate proposal based on expressly supporting national-security technology development and commercialization through qualified security-clearance sponsorship. A competing boundary treats the whole choice as investment/security-personnel administration. Independent whole-version, security/baseline and taxonomy review is required. No clearance award, unrestricted disclosure, preferred contract, actual investment/innovation/security result, wrongdoing, motive or enactment is inferred.",
+          "limitations": [
+            "Failed exactPartA30, not an enacted pilot, clearance award, funding guarantee or preferred contractor.",
+            "SHALLestablish versus discretionary approval; lawfulneed-to-know/securityrequirements remain.",
+            "Facilityclearance OR approvedalternative; FOCI/security suspension discretionary and no foreignclearedprofessional.",
+            "No personalfinancialgain/trading/manipulation/unrelateduse or Federalaward preference; no adjudication of permissible investment profit.",
+            "One-yearreport/annualrecurrence and five-yearauthoritysunset fromENACTMENT; no numericalcap doesnotguaranteeapproval.",
+            "Only632(a)(1)generaldefinition retained; otherSBA/security/foreignperson/currenteligibility rules uncertified; taxonomy unaccepted."
+          ],
+          "choice_meanings": {
+            "Yea": "supported adding the exact qualified investor security-clearance pilot",
+            "Nay": "opposed adding the exact qualified investor security-clearance pilot"
+          },
+          "action_id": "house:119:2:274",
+          "claim_source_map": [
+            {
+              "source_id": "congressional-record:2026-07-22-ndaa-remaining-offerings",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/766b20a2002138c91c629adcbdb7356845ab2a1273edc4dec53a8a00c796e14f.0000000.json",
+                    "sha256": "7b6c0abe3b3053325f15cdc263cf7575280f4aeb80a92105c7f0173520fed9d2",
+                    "start_character": 0,
+                    "end_character": 6518
+                  }
+                ],
+                "utf8_sha256": "766b20a2002138c91c629adcbdb7356845ab2a1273edc4dec53a8a00c796e14f",
+                "total_characters": 6518,
+                "transport_only": true
+              }
+            },
+            {
+              "source_id": "govinfo:15usc632a1-business198",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": "§632. Definitions (a) Small business concerns (1) In general For the purposes of this chapter, a small-business concern, including but not limited to enterprises that are engaged in the business of production of food and fiber, ranching and raising of livestock, aquaculture, and all other farming and agricultural related industries, shall be deemed to be one which is independently owned and operated and which is not dominant in its field of operation. "
+            },
+            {
+              "source_id": "govinfo:hres1438eh",
+              "locator": "Exact identified governed version/operative extent; qualifications retained",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                    "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                    "start_character": 0,
+                    "end_character": 10221
+                  }
+                ],
+                "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+                "total_characters": 10221,
+                "transport_only": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-19T15:16:12.577107+00:00",
+    "qualification": "First specification-writing execution marker; earlier retained-source reading untimed."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-19T15:16:53.615257+00:00",
+    "end_utc": "2026-10-19T15:16:57.636824+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 69 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch69_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.954
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.068
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 41.038,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 4.022,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "initial_precheck_failure": {
+    "start_utc": "2026-10-19T15:16:22.624303+00:00",
+    "end_utc": "2026-10-19T15:16:23.332106+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 69 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch69_20260916\\validation_receipt.json",
+        "returncode": 1,
+        "process_wall_seconds": 0.708
+      }
+    ]
+  },
+  "initial_precheck_correction": "Authored democracy-support wording replaced democratic-development because the conservative shared-prose party-name guard matches Democratic prefixes. Source quotations, gate, dispositions, sources and compiled graph unchanged; final gates passed. Initial failed process0.708seconds additional to final4.022seconds, total recorded gate processes4.730seconds; not active research duration."
+}

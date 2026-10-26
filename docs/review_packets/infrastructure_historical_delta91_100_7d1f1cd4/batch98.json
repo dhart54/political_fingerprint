@@ -1,0 +1,803 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 98,
+  "exact_committed_head": "82e2db78acfb35c91bf38707df7faf0d3164644a",
+  "export_anchor_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "committed_provenance": {
+    "membership": {
+      "head": "82e2db78acfb35c91bf38707df7faf0d3164644a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/membership_review.json",
+      "git_blob": "8c7bd25ba8d4df53d3c6cf828a3dfa6cc78106a8",
+      "git_bytes_sha256": "6c9d7e5aa11b2a6372f29734cf0833ab1a482c94ad3de45b979e5050a643f9aa"
+    },
+    "sources": {
+      "head": "82e2db78acfb35c91bf38707df7faf0d3164644a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/sources.json",
+      "git_blob": "8eea9120ce6dab8fbc8bd14332da6075bb70607a",
+      "git_bytes_sha256": "ed8052a0f857a54126b1019980a0e9bbde52c543a9cec85710ce8f7c26fde829"
+    },
+    "screening": {
+      "head": "82e2db78acfb35c91bf38707df7faf0d3164644a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/screening_receipt.json",
+      "git_blob": "7a7de6f99c5d0dee3b1b14f0687b50e106f48db8",
+      "git_bytes_sha256": "cace6f6fe0ab5a2f0e3723980f79444fa2b3c0e84468cec5f3d332719aae3c3a"
+    },
+    "screening_units": {
+      "head": "82e2db78acfb35c91bf38707df7faf0d3164644a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/screening_units_receipt.json",
+      "git_blob": "1a4553254d443c576709cc790e893b6535cacfd4",
+      "git_bytes_sha256": "b0672ef81d1964c21654bf29f1f41dba7194bbe308de35a903992d3da10c49a2"
+    },
+    "validation": {
+      "head": "82e2db78acfb35c91bf38707df7faf0d3164644a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/validation_receipt.json",
+      "git_blob": "d99aff0862117d72c992f91559846f5c9c47d7c7",
+      "git_bytes_sha256": "b2e309a971e5752fcd17b2be733d7294be23f772085cd61bf6be91eda1375347"
+    }
+  },
+  "original_membership_review_sha256": "972b4cf520541ae890efb9769fb43ebf234f6a50e833821e14f8e3a40b9a0dec",
+  "new_screened_ids": [
+    "house:119:2:242",
+    "house:119:2:243",
+    "house:119:2:244",
+    "house:119:2:245",
+    "house:119:2:246",
+    "house:119:2:247",
+    "house:119:2:248",
+    "house:119:2:249",
+    "house:119:2:250",
+    "house:119:2:251"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "22d03edfe5966445b190e3201270a1c35f14b8ede04ab428325e5b8da145550e",
+      "record": {
+        "action_id": "house:119:2:242",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own FinePartA6offering/result and exactRHpage42lines6–10read. Deletion targets the$139575000Treasury payment toIBRDasGlobalEnvironmentFacilitytrustee, availableuntilexpended; it is not allWorldBank funds or proof of a specific environmental/technical program cancellation. Recorded178–247with11NotVoting rejects the amendment despite preliminary voiceayes. Whole GEFpurpose/authority/program taxonomy and qualified funding implications remain pending, not inferred from a trustee or parent-title label. No realized cut, ecological/scientific outcome or motive is asserted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:242",
+            "url": "https://clerk.house.gov/evs/2026/roll242.xml",
+            "raw_sha256": "bd41016a6223691c7bb29a383d3f012c0c6055248e4fab559d1122f3976b3855",
+            "governed_bytes_sha256": "007c5838414c4fd98c8dc5551cdbba7af2e86fbdf1e9a5a8082cea5cae6cee99"
+          },
+          {
+            "source_id": "congressional-record:own242-operative-voice167",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "2017d0b452fcd796f585b7d0f51160f85f1100746cf707335fdf90a515c7c71b"
+          },
+          {
+            "source_id": "congressional-record:own242-recorded167",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "493482d2debda422d7783e9d6adbaf372c07a2c6cfe3ea70b46674957bb46ef2"
+          },
+          {
+            "source_id": "govinfo:hr8595rh-p42-GEF167",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595rh/pdf/BILLS-119hr8595rh.pdf",
+            "raw_sha256": "ae5910b42901d070333270a51850ace53e0ca3b2a20a4d1980b9cf00bb21d314",
+            "governed_bytes_sha256": "8c2120dd92a606a0c7cddd4e5b72e235d539194e43dfeba0a38594a449d2d189"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:own242-operative-voice167",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 6 OFFERED BY MR . FINE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 6 printed in \npart A of House Report 119–749. \nMr. FINE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 42, strike line 6 through line 10. \n\n\nThe Acting CHAIR (Ms. K\nING-HINDS). \nThe question is on the amendment of-\nfered by the gentleman from Florida \n(Mr. F\nINE). \nThe question was taken; and the Act-\ning Chair announced that the ayes ap-\npeared to have it. \nMs. LOIS FRANKEL of Florida. \nMadam Chair, I demand a recorded \nvote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Florida will be \npostponed."
+          },
+          {
+            "source_id": "congressional-record:own242-recorded167",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 6 OFFERED BY MR . FINE \nThe Acting CHAIR (Mrs. C AMMACK). \nThe unfinished business is the demand \nfor a recorded vote on amendment No. \n6, printed in part A of House Report \n119–749, offered by the gentleman from \nFlorida (Mr. F\nINE), on which further \nproceedings were postponed and on \nwhich the ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 178, noes 247, \nnot voting 11, as follows: \n[Roll No. 242] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:hr8595rh-p42-GEF167",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "GLOBAL ENVIRONMENT FACILITY  6\nFor payment to the International Bank for Recon-7\nstruction and Development as trustee for the Global Envi-8\nronment Facility by the Secretary of the Treasury, 9\n$139,575,000, to remain available until expended. 10\n"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "18c3bb6dcaf2f5aa82ab4e358a4dd3d436c0814821719a97138f0a4d651aebee",
+      "record": {
+        "action_id": "house:119:2:243",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Whole exactPartA8would prohibit obligation/expenditure of funds made available by THISACT for Israel AND reduce ForeignMilitaryFinancing by$3300000000. It is a countrywide foreign-assistance restriction, not an exact technical/physical/scientific-infrastructure target. Proposed Infrastructure exclusion preserves both clauses and this-Act scope, not allFederalfunds or a component-specific vote. Recorded104–314with10Present/9NotVoting rejects it; Present remains nondirectional, not opposition. Complete own offering/report/recorded units read; blank section placeholder retained without inventing a number. No enactment, motive or actual funding-use finding.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:243",
+            "url": "https://clerk.house.gov/evs/2026/roll243.xml",
+            "raw_sha256": "6fec3a6d0a347d5cfeae4e2c86d8db60fddbc854d248a41eadcd87c4669c4528",
+            "governed_bytes_sha256": "d274814539220a4904ce8259bafdee241ee606f95fea547ee4f5df183f3eba57"
+          },
+          {
+            "source_id": "state:roll243-initial169",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "8737b9d258313e5bc259239b9a0e857b39b021aa212e1d51191d8bef44a29c4f"
+          },
+          {
+            "source_id": "state:roll243-report169",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt749/html/CRPT-119hrpt749.htm",
+            "raw_sha256": "7d38f033da963fb4b583dafef140fff695fc7c0d2a15cf11c481f20b1b6a22c1",
+            "governed_bytes_sha256": "a1513a49cec46844533f29b13949faf24e99afc209fda93976bd7d16883b071a"
+          },
+          {
+            "source_id": "state:roll243-recorded169",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "98efa6af0b2cce209d002337bc1517bc67369b4e0ec5c4d5eb6565cf64973a6e"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "state:roll243-initial169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 8 OFFERED BY MR . MASSIE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 8 printed in \npart A of House Report 119–749. \nMr. MASSIE. Madam Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of the bill (before the short \ntitle), insert the following: \nNO FUNDS FOR ISRAEL  \nSEC. ll. (a) None of the funds made avail-\nable under this Act shall be obligated or ex-\npended for Israel. \n(b) The amount otherwise made available \nby this Act for ‘‘Foreign Military Financing \nProgram’’ is hereby reduced by $3,300,000,000. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Kentucky (Mr. M\nASSIE). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMr. MASSIE. Madam Chair, I demand \na recorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Kentucky will be \npostponed."
+          },
+          {
+            "source_id": "state:roll243-report169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "8. An Amendment To Be Offered by Representative Massie of Kentucky or a Designee, Debatable for 10 Minutes At the end of the bill (before the short title), insert the following: NO FUNDS FOR ISRAEL Sec. __. (a) None of the funds made available under this Act shall be obligated or expended for Israel. (b) The amount otherwise made available by this Act for ``Foreign Military Financing Program'' is hereby reduced by $3,300,000,000. "
+          },
+          {
+            "source_id": "state:roll243-recorded169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 8 OFFERED BY MR . MASSIE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 8, printed in \npart A of House Report 119–749, offered \nby the gentleman from Kentucky (Mr. \nM\nASSIE), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 104, noes 314, \nanswered ‘‘present’’ 10, not voting 9, as \nfollows: \n[Roll No. 243] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "da355ee48757853c6886fa5e1b28714e690df34d65e97be8fe2661471390fac3",
+      "record": {
+        "action_id": "house:119:2:244",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Whole exactPartA9would prohibit obligation/expenditure of THISACTfunds for Jordan AND reduce eight separately listed accounts by475m/500m/845.1m/50m/50m/29.9m/50m/100m in their printed order. Health/refugee/democracy/security account names are not an exact technical-infrastructure target; whole countrywide foreign-assistance restriction supports a proposed Infrastructure exclusion. Recorded6–421with10NotVoting rejects it. Do not turn the eight accounts into a single program, claim allFederalfunding ends or infer any recipient outcome. Complete own offering/report/recorded units read; blank section placeholder retained without inventing a number. No enactment, motive or actual funding-use finding.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:244",
+            "url": "https://clerk.house.gov/evs/2026/roll244.xml",
+            "raw_sha256": "226f898483fd7809ebeca38a305a92d1a98cf78a766d9e75c8e7b25a8f47a859",
+            "governed_bytes_sha256": "f9cc81dd1b2ced9a41a35016f740c98558585372a826a418a1d1caa1b7c1d9de"
+          },
+          {
+            "source_id": "state:roll244-initial169",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "ab003dec7b5ee78316c7660a1be6f7c213e7cea4d0b9bb05cf5c8a8f8f997d9e"
+          },
+          {
+            "source_id": "state:roll244-report169",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt749/html/CRPT-119hrpt749.htm",
+            "raw_sha256": "7d38f033da963fb4b583dafef140fff695fc7c0d2a15cf11c481f20b1b6a22c1",
+            "governed_bytes_sha256": "52e08d44ecf1027be93290119bced466d839edbc486825c972e297faac6f8e93"
+          },
+          {
+            "source_id": "state:roll244-recorded169",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "a8d1a807c8331cbfabe4973c0565c1ea92f92143cef76acef4a5e9400f19e6c8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "state:roll244-initial169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 9 OFFERED BY MR . MASSIE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 9 printed in \npart A of House Report 119–749. \nMr. MASSIE. Madam Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of the bill (before the short \ntitle), insert the following: \nSEC. ll. (a) None of the funds made avail-\nable under this Act shall be obligated or ex-\npended for Jordan. \n(b) The amounts otherwise made available \nby this Act for the following accounts are \nhereby reduced by the following amounts: \n(1) ‘‘Foreign Military Financing Program’’, \n$475,000,000. \n(2) ‘‘National Security Investment Pro-\ngrams’’, $500,000,000. \n(3) ‘‘Global Health Programs’’, $845,100,000. \n(4) ‘‘Security Sector Programs’’, $50,000,000. \n(5) ‘‘Funds Appropriated to the President \nInternational Military Education and Train-\ning’’, $50,000,000. \n(6) ‘‘Nonproliferation, anti-terrorism, \ndemining, and related programs’’, $29,900,000. \n(7) ‘‘United States Emergency Refugee and \nMigration Assistance Fund’’, $50,000,000. \n(8) ‘‘Democracy Fund’’, $100,000,000. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Kentucky (Mr. M\nASSIE). \nThe question was taken; and the Act-\ning Chair announced that the noes ap-\npeared to have it. \nMr. MASSIE. Madam Chair, I demand \na recorded vote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Kentucky will be \npostponed."
+          },
+          {
+            "source_id": "state:roll244-report169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "9. An Amendment To Be Offered by Representative Massie of Kentucky or a Designee, Debatable for 10 Minutes At the end of the bill (before the short title), insert the following: Sec. __. (a) None of the funds made available under this Act shall be obligated or expended for Jordan. (b) The amounts otherwise made available by this Act for the following accounts are hereby reduced by the following amounts: (1) ``Foreign Military Financing Program'', $475,000,000. (2) ``National Security Investment Programs'', $500,000,000. (3) ``Global Health Programs'', $845,100,000. (4) ``Security Sector Programs'', $50,000,000. (5) ``Funds Appropriated to the President International Military Education and Training'', $50,000,000. (6) ``Nonproliferation, anti-terrorism, demining, and related programs'', $29,900,000. (7) ``United States Emergency Refugee and Migration Assistance Fund'', $50,000,000. (8) ``Democracy Fund'', $100,000,000. "
+          },
+          {
+            "source_id": "state:roll244-recorded169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 9 OFFERED BY MR . MASSIE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 9, printed in \npart A of House Report 119–749, offered \nby the gentleman from Kentucky (Mr. \nM\nASSIE), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 6, noes 421, \nnot voting 10, as follows: \n[Roll No. 244] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "36a3b25850f3387685f4590df37cb133792fbaf560f930df8b7afaa17a4ed9c8",
+      "record": {
+        "action_id": "house:119:2:245",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Whole exactPartA20would bar THISACTfunds from being made available to the UnitedNations. This is a broad recipient-based foreign-assistance restriction, not an exact technical/physical/scientific program or allFederalfunding ban. Proposed Infrastructure exclusion preserves scope and recorded136–291with9NotVoting rejection overriding preliminary voiceayes. It is not an enactedcut or an actual UNprogram/health/security outcome; protected older UN/sourcechains remain untouched. Complete own offering/report/recorded units read; blank section placeholder retained without inventing a number. No enactment, motive or actual funding-use finding.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:245",
+            "url": "https://clerk.house.gov/evs/2026/roll245.xml",
+            "raw_sha256": "7e7f7bf2f2acca2aea057f07b580638dee2d310348d6e9d45d74edc6e817563c",
+            "governed_bytes_sha256": "38850d8fe30bca053a5a7ca54d864982a93ed5a0c3b9417e32ec1db16b188ac2"
+          },
+          {
+            "source_id": "state:roll245-initial169",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "8d8b01898fbbbcb6df9ef43444cb12dd8aeb0947e7e166efb968a515af36dd9a"
+          },
+          {
+            "source_id": "state:roll245-report169",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt749/html/CRPT-119hrpt749.htm",
+            "raw_sha256": "7d38f033da963fb4b583dafef140fff695fc7c0d2a15cf11c481f20b1b6a22c1",
+            "governed_bytes_sha256": "2e75a1f49f3d68d18805af5ef160d2b49caee27ea771a8784a26480de40b4bbd"
+          },
+          {
+            "source_id": "state:roll245-recorded169",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+            "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+            "governed_bytes_sha256": "a7b43e28808e12508ad5393fb5066e7f557cfc01559cbc9f6d3d8316d41f8884"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "state:roll245-initial169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 20 OFFERED BY MR . ROY \nThe Acting CHAIR. It is now in order \nto consider amendment No. 20 printed \nin part A of House Report 119–749. \nMr. ROY. Madam Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of the bill (before the short \ntitle), insert the following: \nSEC. ll. None of the funds appropriated \nor otherwise made available by this Act may \nbe made available to the United Nations. \n\n\nThe Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Texas (Mr. R\nOY). \nThe question was taken; and the Act-\ning Chair announced that the ayes ap-\npeared to have it. \nMs. LOIS FRANKEL of Florida. \nMadam Chair, I demand a recorded \nvote. \nThe Acting CHAIR. Pursuant to \nclause 6 of rule XVIII, further pro-\nceedings on the amendment offered by \nthe gentleman from Texas will be post-\nponed."
+          },
+          {
+            "source_id": "state:roll245-report169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "20. An Amendment To Be Offered by Representative Roy of Texas or a Designee, Debatable for 10 Minutes At the end of the bill (before the short title), insert the following: Sec. __. None of the funds appropriated or otherwise made available by this Act may be made available to the United Nations. "
+          },
+          {
+            "source_id": "state:roll245-recorded169",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 20 OFFERED BY MR . ROY \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 20, printed in \npart A of House Report 119–749, offered \nby the gentleman from Texas (Mr. \nR\nOY), on which further proceedings \nwere postponed and on which the ayes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This is a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 136, noes 291, \nnot voting 9, as follows: \n[Roll No. 245] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "fcecafaf46329e3c0a275e60360f6b5980f83cedb84b129a254010f15fec465f",
+      "record": {
+        "action_id": "house:119:2:246",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question is recommittal of8595. No substantive motion body is interpreted. Non-counting procedural context is separate from the whole package and gives no component-specific support/opposition, funding effect or enactment.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:246",
+            "url": "https://clerk.house.gov/evs/2026/roll246.xml",
+            "raw_sha256": "684a748cf84d52933b41150dba25387aaad2def17575817486e0ebbe187e204b",
+            "governed_bytes_sha256": "94d7aed4cf580484e0da05e6ad64b0b10a6d92cbee84131fc55623d547d3a7ea"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "cc3162a5c9fc31a00259d55bbc3e4e20616957eda27f80f960d39eb21d8d1350",
+      "record": {
+        "action_id": "house:119:2:247",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Whole8595EHhas333636characters; onlyopening0:1800andclosing332836:333636read. The whole final State/national-security appropriation plus appended election-law package is not an isolated construction/data/cyber/diplomacy grant. Existing qualified Health whole candidate identified for canonical reuse; whole interior, laterassembly/as-amended versions, materialfunding/election/other-law baselines and cross-domain mapping remain pending. Failed242–245children are not imported into the passed package. Closing voter-law enactment/application clause does not establish allpackageeffective dates or individualeligibility. No executedappropriation, diplomatic outcome, actualvoterclassification or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:247",
+            "url": "https://clerk.house.gov/evs/2026/roll247.xml",
+            "raw_sha256": "edf6dd86982bebc2283d43a3f41149789121160112327b939263ac82fd65e441",
+            "governed_bytes_sha256": "2dd04bb4fdaad0c40063c0390b27d5f8dbafa13c28f8b0bd6ea2e84677487843"
+          },
+          {
+            "source_id": "govinfo:hr8595eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595eh/html/BILLS-119hr8595eh.htm",
+            "raw_sha256": "8ed28e4638a79be043fe118e4e9a6dfa35feb3f6664e9a5876d6d83521d87e02",
+            "governed_bytes_sha256": "81a3a7ac3c83ab74e78497d700ceca1e79c417d11b50f03d3cbb3011cf031792"
+          },
+          {
+            "source_id": "govinfo:hres1423eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1423eh/html/BILLS-119hres1423eh.htm",
+            "raw_sha256": "7e136bbbf7ca4e58ca91bd3b4cdf2a303c3580ff62d4bc66b24d2dbc798d4e3e",
+            "governed_bytes_sha256": "6a1ad0235bd8aede4cd79a7748db956c2e94c4bfc9f8ca2ccf9819876113073c"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr8595eh",
+            "locator": "Onlyopening0:1800of333636read;wholeinteriorunreviewed",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 8595 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 8595 _______________________________________________________________________ AN ACT Making appropriations for national security, Department of State, and related programs for the fiscal year ending September 30, 2027, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, DIVISION A--NATIONAL SECURITY, DEPARTMENT OF STATE, AND RELATED PROGRAMS APPROPRIATIONS ACT, 2027 That the following sums are appropriated, out of any money in the Treasury not otherwise appropriated, for national security, Department of State, and related programs for the fiscal year ending September 30, 2027, and for other purposes, namely: TITLE I DEPARTMENT OF STATE AND RELATED PROGRAMS DEPARTMENT OF STATE Administration of Foreign Affairs diplomatic programs For necessary expenses of the Department of State and the Foreign Service not otherwise provided for, $9,761,523,000, of which $839,910,000 may remain available until September 30, 2028, and of which up to $4,162,123,000 may remain available until expended for Worldwide Security Protection: Provided, That funds made available under this heading shall be allocated in accordance with paragraphs (1) through (4), as follows: (1) Human resources.--For necessary expenses for training, human resources management, and salaries, including employment without regard to civil service and classification laws of persons on a temporary basis (not to exceed $700,000), as authorized by section 801 of the United States Information and Educational Exchange Act of 1948 (62 Stat. 11; Chapter 36), $4,001,579,000, of which up to $738"
+          },
+          {
+            "source_id": "govinfo:hr8595eh",
+            "locator": "Onlyclosing332836:333636read",
+            "passage": "t to section 303A, October 1, 2025.''. (c) Conforming Amendment Relating to Enforcement.--Section 401 of such Act (52 U.S.C. 21111) is amended by striking ``sections 301, 302, 303, and 304'' and inserting ``subtitle A of title III''. (d) Effective Date.--This section and the amendments made by this section shall take effect on the date of the enactment of this section, and shall apply with respect to elections for Federal office held on or after such date. Passed the House of Representatives July 15, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 8595 _______________________________________________________________________ AN ACT Making appropriations for national security, Department of State, and related programs for the fiscal year ending September 30, 2027, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:hres1423eh",
+            "locator": "Complete governingrule previouslyread; wholeappendedversions notcertified",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/61aeeda59cd85f461024f81d6322216ad0351295168272270802bd63f50c356c.0000000.json",
+                  "sha256": "ab808a1b25800aac207659f457057fdf9af7679220a5da3f51802e3e3b1ff117",
+                  "start_character": 0,
+                  "end_character": 6750
+                }
+              ],
+              "utf8_sha256": "61aeeda59cd85f461024f81d6322216ad0351295168272270802bd63f50c356c",
+              "total_characters": 6750,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "588d5c07ca25c5a9fec8aef55d808a515218c76699e7ff3a04dd664dcf899f0c",
+      "record": {
+        "action_id": "house:119:2:248",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete5362EHread. Whole bill renames an existing MariettamultispecialtyVAclinic and conforms Federal references; it supplies no construction, equipment, technicalservice or funding program. Proposed Infrastructure exclusion distinguishes commemorative naming from physical-capacity expansion. Biographical findings and praise are Congress assertions, not independent proof of character, service outcomes or causality. Housepassage does not itself change the clinic name under enacted law.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:248",
+            "url": "https://clerk.house.gov/evs/2026/roll248.xml",
+            "raw_sha256": "362b22a27ced50d9705e6864f0cebf22d00b0c1230822d10366bb97277a487ee",
+            "governed_bytes_sha256": "d003d906a66c56933dbcd5bd314a698b0e86892ff61d48b606f797dc9b82fdbc"
+          },
+          {
+            "source_id": "govinfo:hr5362eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5362eh/html/BILLS-119hr5362eh.htm",
+            "raw_sha256": "de34e4668477d6ce8119c9d0f94fc766752bac8da18c924aca2f1a81a13d9fd2",
+            "governed_bytes_sha256": "21e075644d6e4c8e3adab5ffd2bbd3938c6dea56e5835775e5bd7c3816841224"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr5362eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/6c465ee7534e86bec292fcda7fc212455075ef69629b442ad9d62c4fb8d2279b.0000000.json",
+                  "sha256": "6df2b3c2973d11a41ae16f4e3d4baa33f3dd7a0b18ea29f4c714859a98feaa59",
+                  "start_character": 0,
+                  "end_character": 4069
+                }
+              ],
+              "utf8_sha256": "6c465ee7534e86bec292fcda7fc212455075ef69629b442ad9d62c4fb8d2279b",
+              "total_characters": 4069,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "0fdc3953565ed110f120b31ed25dca34726c0182c8df12b9d4ea67a412ca0f0d",
+      "record": {
+        "action_id": "house:119:2:249",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question is recommittal of9237. No substantive motion body is interpreted. Non-counting procedural context is separate from the whole package and gives no component-specific support/opposition, funding effect or enactment.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:249",
+            "url": "https://clerk.house.gov/evs/2026/roll249.xml",
+            "raw_sha256": "4bc899b7b274ebff0cc4508f778204045eb0fb9748bfe5fdfba9f879ac677e73",
+            "governed_bytes_sha256": "f1cfc553284c1db36ea08d6ec0d5d730f0d398e24474963a7f963f742d24ffd5"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "125cfbe4434cd187ea66316f0812b042fc001e9b0de2e59e17073e69da23e087",
+      "record": {
+        "action_id": "house:119:2:250",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete4541EHread. The whole choice includes TitleIEARLYdate2026to2031 AND TitleIISCREENSchanges: prevention/screening/diagnostic/support-access duties, deletion of existing300k(d)/300m(d)and otherconditions, reporting2yearsafterSCREENSenactment thenevery5years with distinct reportingperiods,235.5mannualauthorizationFY2026–2030 and GAOSeptember30,2027study. This is not only a short EARLYreauthorization or automatic technology procurement. An existing373characterHealthcandidate is only an identified reuse lead, not proof of completeTitleIImeaning. Complete amendedprogram/deletedconditions/authorization/reporting baselines and whole clinical-service/scientific mapping remain pending. No actualscreening, outcome, appropriation, universaleligibility or enactment is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:250",
+            "url": "https://clerk.house.gov/evs/2026/roll250.xml",
+            "raw_sha256": "d9a6589ed874ef64763f312a402abdae4bb9077365646754385b0af716b687f7",
+            "governed_bytes_sha256": "fad3cd61790e6a6efb2c65e686f459ff41cee451fae64e174bb81c6990e4913b"
+          },
+          {
+            "source_id": "govinfo:hr4541eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4541eh/html/BILLS-119hr4541eh.htm",
+            "raw_sha256": "cf2d18ad5dbf24451acbcf32b6a2cf2c33b6e1d8c6a2a9f038f5054e8d3565ba",
+            "governed_bytes_sha256": "5cdb804c68679b58b8f036a55b4109d3ac90d0cee22012877a09bdad8fb1998a"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4541eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/81935666bbe75c7ea002bfd65cd4f9e26645ce7c438f52fed537b864b4b8eb06.0000000.json",
+                  "sha256": "d0708b874197483dacd091e90edb863bcba9a45915d410771a1adf7f288f847e",
+                  "start_character": 0,
+                  "end_character": 5363
+                }
+              ],
+              "utf8_sha256": "81935666bbe75c7ea002bfd65cd4f9e26645ce7c438f52fed537b864b4b8eb06",
+              "total_characters": 5363,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "434255d6f82d6d3e19d90446cc01f1599674691846337fec7d89e9f2b005ef1a",
+      "record": {
+        "action_id": "house:119:2:251",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete8823EHread. WholeFECAproviderpayment/voucher/certification package gives the Secretary MAYsuspend authority after a provider fraudCONVICTION in FECA, definedFederalhealthcare or specifiedsimilarStateprograms; it requires regulations and applies topayments180daysafterenactment. It is not a mandatorysuspectedfraudcutoff or finding that an individual provider committedfraud. Whole health-payment/provideraccountability choice establishes no technical/physical/scientific-infrastructure program, supporting a proposed Infrastructure exclusion despite services/appliances/supplies language. ExistingHealthmeaning identified but no new Infrastructurecore duplicated; individual underlyingdefinition/application/currentlaw and actualpayment effects notcertified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:251",
+            "url": "https://clerk.house.gov/evs/2026/roll251.xml",
+            "raw_sha256": "ef5f0e888a22dd002b69d3d060508d24ee060a9ea76a488e82b08223d1cfd492",
+            "governed_bytes_sha256": "df6c6e89298995ea0fec910e151aa0bd519f4ef3da11e3a96e509b4753ef842c"
+          },
+          {
+            "source_id": "govinfo:hr8823eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8823eh/html/BILLS-119hr8823eh.htm",
+            "raw_sha256": "21606075b0a95f8b4fedf515a16527dbda260a856bff221de3b45c8ba92e8c2a",
+            "governed_bytes_sha256": "dc8e994161db79bdc8696db0393da483a61337dc1d42587fc79eb61db18e642b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr8823eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 8823 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 8823 _______________________________________________________________________ AN ACT To amend the Federal Employees' Compensation Act to allow the Secretary of Labor to suspend payments to medical providers who have been convicted of fraud. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Putting Patients First by Strengthening Provider Accountability in FECA Act''. SEC. 2. FRAUD CONVICTIONS. (a) In General.--Section 8103 of title 5, United States Code, is amended-- (1) in subsection (a), by striking ``These expenses'' and inserting ``Subject to subsection (c), these expenses''; (2) in subsection (b), by striking ``The Secretary, under'' and inserting ``Subject to subsection (c), the Secretary, under''; and (3) by adding at the end the following: ``(c)(1) The Secretary of Labor may suspend payments to a provider of services, appliances, or supplies furnished pursuant to subsection (a), or vouchers or certifications described in subsection (b) for the expenses incurred by the employing agency with respect to such a provider, if the provider has been convicted of fraud with respect to-- ``(A) this subchapter; ``(B) any Federal health care benefit program (as defined in section 24 of title 18, United States Code); or ``(C) any State program for which payments are made to providers for services, appliances, or supplies similar to such services, appliances, or supplies provided pursuant to this subchapter. ``(2) The Secretary shall promulgate regulations to carry out this subsection.''. (b) Effective Date.--The amendments made by this Act shall apply with respect to payments made to a provider of services, appliances, or supplies on or after the date that is 180 days after the date of enactment of this Act. Passed the House of Representatives July 20, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 8823 _______________________________________________________________________ AN ACT To amend the Federal Employees' Compensation Act to allow the Secretary of Labor to suspend payments to medical providers who have been convicted of fraud."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:242",
+      "original_source_object_sha256": "57cd2271bb49a382c8003e2324448cfd03774a9674dca4ed84fee444ced49160"
+    },
+    {
+      "source_id": "clerk:119:2:243",
+      "original_source_object_sha256": "29246f9dacc151c99997d24ac92b3452b4410081cb12547bbf965970a00c4c09"
+    },
+    {
+      "source_id": "clerk:119:2:244",
+      "original_source_object_sha256": "52cd00b2de94f6c8423420f7c36a3043bd996ae2c374f6641200d0e570c6402f"
+    },
+    {
+      "source_id": "clerk:119:2:245",
+      "original_source_object_sha256": "d8ef7c5ac8f46ed126262d7871b0ac74498450b8e17c6c5fc4b0a0744eb3fef8"
+    },
+    {
+      "source_id": "clerk:119:2:246",
+      "original_source_object_sha256": "aab1bac12e1ffef6264e694cea98c92e558cd01ff1ab6082fa22261318ddb381"
+    },
+    {
+      "source_id": "clerk:119:2:247",
+      "original_source_object_sha256": "160fc4034c799b5746a8ff12e70e088aafa84b478c4acd19ff28797245025e6f"
+    },
+    {
+      "source_id": "clerk:119:2:248",
+      "original_source_object_sha256": "2665b16dc2d4a46bca29c54b8688a1ba56d4806b3abc5c00f9c0c0fe74685d7f"
+    },
+    {
+      "source_id": "clerk:119:2:249",
+      "original_source_object_sha256": "76a0de13cc2e01e2e6793708fd7553d6e10a795b58c3d9a0419f6b0c6338a029"
+    },
+    {
+      "source_id": "clerk:119:2:250",
+      "original_source_object_sha256": "6cccb814aa366dec117aef29edf02bcf99a79ba53d36070da55475e5d10f4c50"
+    },
+    {
+      "source_id": "clerk:119:2:251",
+      "original_source_object_sha256": "9ae08007fa6e2ce13bda00ffdf0f5c1b8bcabc5d378313975254cf8d420a38cc"
+    },
+    {
+      "source_id": "congressional-record:own242-operative-voice167",
+      "original_source_object_sha256": "2f2f3966a4d92162d14f2294aa441ea49255034a0a75706eed14488a2d7d94b3"
+    },
+    {
+      "source_id": "congressional-record:own242-recorded167",
+      "original_source_object_sha256": "93e1b8e919f90a884afe335502bc423bd7da9430a50d1e86d9efbc2fe2f5d2ee"
+    },
+    {
+      "source_id": "govinfo:hr4541eh",
+      "original_source_object_sha256": "801a4759ec684ab0613909e5ab3bdb9cc18018ab35379a4070f01374d9f0a660"
+    },
+    {
+      "source_id": "govinfo:hr5362eh",
+      "original_source_object_sha256": "9c7fd5bda5763c89a43746dd47c783132cfec301d9388435af39bd807c7fa3ad"
+    },
+    {
+      "source_id": "govinfo:hr8595eh",
+      "original_source_object_sha256": "a56ba571393565134b3ab64931c914f81e79d76eb582c31a18bcc5800273ec5f"
+    },
+    {
+      "source_id": "govinfo:hr8595rh-p42-GEF167",
+      "original_source_object_sha256": "1a9ccc359abe5da02feb325e7d51e04db94749610cf8fc010e2ed79e9a8c7b08"
+    },
+    {
+      "source_id": "govinfo:hr8823eh",
+      "original_source_object_sha256": "441542896733d68f180e85befe5368304dc012be438d5e2e0ea2cd45452b44c4"
+    },
+    {
+      "source_id": "govinfo:hres1423eh",
+      "original_source_object_sha256": "7a605de5671f76ff672a59ee31e57191f13f18d8e6f68fac73ad2a9d978bde2e"
+    },
+    {
+      "source_id": "state:roll243-initial169",
+      "original_source_object_sha256": "f3794428e32ee21ce764956dccaf51b961e502042bdc867efcabd05292f009dc"
+    },
+    {
+      "source_id": "state:roll243-recorded169",
+      "original_source_object_sha256": "f26c6c43b207efcb47acc88a03f3cc1e084481ff735f609900413cb925e2b34c"
+    },
+    {
+      "source_id": "state:roll243-report169",
+      "original_source_object_sha256": "e2722a121d782ffeaab3d6e15fd1857c2dd53354c58574c598511e05bf75901d"
+    },
+    {
+      "source_id": "state:roll244-initial169",
+      "original_source_object_sha256": "ba160e9ef265605d262f5b22c6a63bcef05b744779f7baa605ad25b01b267dad"
+    },
+    {
+      "source_id": "state:roll244-recorded169",
+      "original_source_object_sha256": "034ae96f0310e475c52e8aecafa943b56996f9001c39e0f6ece0329c283db2d0"
+    },
+    {
+      "source_id": "state:roll244-report169",
+      "original_source_object_sha256": "1132528712740f08381133cbc44ebf03011b4ec269d4f4e348353c2a35c0f5db"
+    },
+    {
+      "source_id": "state:roll245-initial169",
+      "original_source_object_sha256": "b3bd0c20cf92e074c69233b900b5c59d658b037ea551ff82c749411a9b61c712"
+    },
+    {
+      "source_id": "state:roll245-recorded169",
+      "original_source_object_sha256": "5cc205e55713bfad82c709e2b66e19437ce464447413c158f72177dbe9a4544a"
+    },
+    {
+      "source_id": "state:roll245-report169",
+      "original_source_object_sha256": "2ae8128afdcc7b1e4246ad54ba4c44893e394756dd5f1166d221adf18ccc8c1a"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "congressional-record:own242-operative-voice167",
+      "governed_length": 795,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "congressional-record:own242-recorded167",
+      "governed_length": 792,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "govinfo:hr8595rh-p42-GEF167",
+      "governed_length": 246,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll243-initial169",
+      "governed_length": 1066,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll243-report169",
+      "governed_length": 434,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll243-recorded169",
+      "governed_length": 801,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll244-initial169",
+      "governed_length": 1578,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll244-report169",
+      "governed_length": 932,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll244-recorded169",
+      "governed_length": 774,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll245-initial169",
+      "governed_length": 934,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll245-report169",
+      "governed_length": 298,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "state:roll245-recorded169",
+      "governed_length": 768,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "govinfo:hr8595eh",
+      "governed_length": 333636,
+      "review_extent": "Onlyopening0:1800andclosinglast800read; wholeinteriorunreviewed"
+    },
+    {
+      "source_id": "govinfo:hres1423eh",
+      "governed_length": 6750,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "govinfo:hr5362eh",
+      "governed_length": 4069,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "govinfo:hr4541eh",
+      "governed_length": 5363,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    },
+    {
+      "source_id": "govinfo:hr8823eh",
+      "governed_length": 2342,
+      "review_extent": "Complete retained ownbill/offering/report/recorded/selectedtarget or previouslyread governingrule; underlyingcurrentlaw notcertified"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:242",
+        "evidence_unit": "complete_own_units_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:243",
+        "evidence_unit": "complete_own_units_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:244",
+        "evidence_unit": "complete_own_units_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:245",
+        "evidence_unit": "complete_own_units_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:246",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:247",
+        "evidence_unit": "partial_whole_package",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:248",
+        "evidence_unit": "complete_own_units_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:249",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:250",
+        "evidence_unit": "complete_own_units_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:251",
+        "evidence_unit": "complete_own_units_with_declared_material_baseline_limits",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": null,
+    "inherited_focused_test_count": 128,
+    "inherited_focused_suite_head": "da1c9e17b1490950253f63abb9876c9e4883cd97",
+    "semantic_checks": 7,
+    "compiled_sha256": "13e92b1674b214e49c56a6c370584798bda9a50d9131fc75eba879bf8941a4d7"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "82e2db78acfb35c91bf38707df7faf0d3164644a",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/authoring.json",
+      "git_blob": "39dc83a8d57c8e39789399a7904e89900e063ba7",
+      "git_bytes_sha256": "edb76592108a70334855d63a7467f969e6ca082476613e1ae0e7242adb32bd7e"
+    },
+    "actions": []
+  }
+}

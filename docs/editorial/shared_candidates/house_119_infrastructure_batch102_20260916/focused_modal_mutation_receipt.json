@@ -1,0 +1,124 @@
+{
+  "mutation": "Erase authoritative_source_conflict while coherently resealing membership/proposal digests",
+  "expected": "rejected by retained modal-hold invariant",
+  "observed_error": "retained210modal conflict cleared or recast as missing/denied evidence",
+  "passed": true,
+  "process_wall_seconds": 0.919,
+  "mutated_record": {
+    "action_id": "house:119:1:210",
+    "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+    "review_state": "candidate_pending_external_semantic_review",
+    "disposition": "source_unresolved",
+    "rationale": "Exact failed Steube PartA277has an inherited unresolved authoritative operative discrepancy: the retained report says funds made available by this Act MAY BE USED for the proposed assistance restriction, while the actual retained July17floor clause prints BE USED without MAY. Preserve both literal versions and the pre-existing conflict/binding hold; do not silently supply the modal operator, infer automatic ban meaning or domain eligibility, or turn a source discrepancy into evidence-unavailable/denied access. Assistance scope and legal/version review remain incomplete. CivilJuly18Clerkdate is distinct from legislativeJuly17Record.",
+    "substantive_review_performed": false,
+    "exact_action_binding_unresolved": true,
+    "required_evidence_unavailable": false,
+    "authoritative_source_conflict": false,
+    "sources": [
+      {
+        "source_id": "clerk:119:1:210",
+        "url": "https://clerk.house.gov/evs/2025/roll210.xml",
+        "raw_sha256": "f9785f154a6f14da671ff38a579b3c916f693dc650cc67b480cc091c4f6d0aba",
+        "governed_bytes_sha256": "3ad7f0ad95b79047d55cbe260aab84a3b9d812e12aafaa4ac5d3ec2d906a95c3"
+      },
+      {
+        "source_id": "immigration:roll210-report-modal-hold171",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+        "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+        "governed_bytes_sha256": "d18b2c50a3b5da8b888f3880b38df2a61d48cbe1cffb2a23a16cdb1b4b44d839"
+      },
+      {
+        "source_id": "immigration:roll210-floor-modal-hold171",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "f2821e4361239c837fcec5187d2d3115a470d3889ed23c746fe2654ec27fdb8b"
+      }
+    ],
+    "claim_source_map": [
+      {
+        "source_id": "immigration:roll210-report-modal-hold171",
+        "locator": "Exact identified governed version/operative extent; qualifications retained",
+        "passage": "277. An Amendment To Be Offered by Representative Steube of Florida or His Designee, Debatable for 10 Minutes At the end of the bill (before the short title), insert the following: Sec. __. None of the funds made available by this Act may be used for assistance to the Lebanese Armed Forces. "
+      },
+      {
+        "source_id": "immigration:roll210-floor-modal-hold171",
+        "locator": "Exact identified governed version/operative extent; qualifications retained",
+        "passage": "AMENDMENT NO. 277 OFFERED BY MR . STEUBE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 277 printed \nin part A of House Report 119–199. \nMr. STEUBE. Madam Chair, I have \nan amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as \nfollows: \nAt the end of the bill (before the short \ntitle) insert the following: \nSEC. ll. None of the funds made available \nby this Act be used for assistance to the Leb-\nanese Armed Forces. \n"
+      }
+    ],
+    "episode_candidate_id": null
+  },
+  "mutated_universe_row": {
+    "action_id": "house:119:1:210",
+    "session": 1,
+    "roll": 210,
+    "date": "2025-07-18",
+    "measure": "bill_119_hr_4016",
+    "question": "On Agreeing to the Amendment",
+    "disposition": "source_unresolved",
+    "reason": "Exact failed Steube PartA277has an inherited unresolved authoritative operative discrepancy: the retained report says funds made available by this Act MAY BE USED for the proposed assistance restriction, while the actual retained July17floor clause prints BE USED without MAY. Preserve both literal versions and the pre-existing conflict/binding hold; do not silently supply the modal operator, infer automatic ban meaning or domain eligibility, or turn a source discrepancy into evidence-unavailable/denied access. Assistance scope and legal/version review remain incomplete. CivilJuly18Clerkdate is distinct from legislativeJuly17Record.",
+    "source": {
+      "source_id": "clerk:119:1:210",
+      "url": "https://clerk.house.gov/evs/2025/roll210.xml",
+      "raw_sha256": "f9785f154a6f14da671ff38a579b3c916f693dc650cc67b480cc091c4f6d0aba",
+      "governed_bytes_sha256": "3ad7f0ad95b79047d55cbe260aab84a3b9d812e12aafaa4ac5d3ec2d906a95c3",
+      "verification": "recaptured_official_source"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_4016",
+    "member_action": "nay",
+    "house_action_stage": "On Agreeing to the Amendment",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Exact failed Steube PartA277has an inherited unresolved authoritative operative discrepancy: the retained report says funds made available by this Act MAY BE USED for the proposed assistance restriction, while the actual retained July17floor clause prints BE USED without MAY. Preserve both literal versions and the pre-existing conflict/binding hold; do not silently supply the modal operator, infer automatic ban meaning or domain eligibility, or turn a source discrepancy into evidence-unavailable/denied access. Assistance scope and legal/version review remain incomplete. CivilJuly18Clerkdate is distinct from legislativeJuly17Record.",
+    "unresolved_reason": "inherited_4016_Steube277_authoritative_report_floor_modal_discrepancy_unresolved",
+    "sources": [
+      {
+        "source_id": "clerk:119:1:210",
+        "url": "https://clerk.house.gov/evs/2025/roll210.xml",
+        "raw_sha256": "f9785f154a6f14da671ff38a579b3c916f693dc650cc67b480cc091c4f6d0aba",
+        "governed_bytes_sha256": "3ad7f0ad95b79047d55cbe260aab84a3b9d812e12aafaa4ac5d3ec2d906a95c3"
+      },
+      {
+        "source_id": "immigration:roll210-report-modal-hold171",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+        "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+        "governed_bytes_sha256": "d18b2c50a3b5da8b888f3880b38df2a61d48cbe1cffb2a23a16cdb1b4b44d839"
+      },
+      {
+        "source_id": "immigration:roll210-floor-modal-hold171",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+        "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+        "governed_bytes_sha256": "f2821e4361239c837fcec5187d2d3115a470d3889ed23c746fe2654ec27fdb8b"
+      }
+    ],
+    "exact_action_source_binding": {
+      "action_id": "house:119:1:210",
+      "source_ids": [
+        "clerk:119:1:210",
+        "immigration:roll210-report-modal-hold171",
+        "immigration:roll210-floor-modal-hold171"
+      ],
+      "membership_review_ref": "membership_review.json#action_id=house:119:1:210",
+      "review_state": "candidate_pending_external_semantic_review",
+      "complete": false
+    },
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": true,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "shared_review_record_sha256": "f1d5e91137eefbbdaa6c030e626dd47bb2e112196da9b0470b4346188fd6d106"
+    },
+    "historical_raw_hash_matches": true
+  },
+  "artifact_files_modified": false,
+  "full_focused_suite_repeated": false,
+  "validated_batch": 35,
+  "source_snapshot": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916"
+}

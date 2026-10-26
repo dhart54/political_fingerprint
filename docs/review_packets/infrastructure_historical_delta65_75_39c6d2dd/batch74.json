@@ -1,0 +1,381 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 74,
+  "exact_committed_head": "273c5dfa013a787a5227ea9e620a204a2afec03f",
+  "export_anchor_head": "39c6d2dd0b4d55b15e2dc0f43e5ddbb7b91f4653",
+  "committed_provenance": {
+    "membership": {
+      "head": "273c5dfa013a787a5227ea9e620a204a2afec03f",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/membership_review.json",
+      "git_blob": "1b26e8f4a70d6603c671d2ee88c3c687c3c50d89",
+      "git_bytes_sha256": "d66db7d1939052b8b530ddd88361cd2ecf9bfd73158ec0a864aeb645977312d7"
+    },
+    "sources": {
+      "head": "273c5dfa013a787a5227ea9e620a204a2afec03f",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/sources.json",
+      "git_blob": "14830404b06b91109dd69d906dcf4117fc06bf54",
+      "git_bytes_sha256": "04554d596967df0bcdbbe6957cc259258471b9942139270580939547836868e8"
+    },
+    "screening": {
+      "head": "273c5dfa013a787a5227ea9e620a204a2afec03f",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/screening_receipt.json",
+      "git_blob": "d7c42b1b76b7feafe241fc1cb9b3c8a582bb1c72",
+      "git_bytes_sha256": "936eac0a8f5d1d0a69b9e75c86c3bf1f9b590c71f332e1eb77335a273d1ded87"
+    },
+    "screening_units": {
+      "head": "273c5dfa013a787a5227ea9e620a204a2afec03f",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/screening_units_receipt.json",
+      "git_blob": "be57deb3288d1695cce66487875f0cd12a21aadb",
+      "git_bytes_sha256": "18ee56623a3eed562e06b82053d21ff3274ec20545c311a716566ceaa11f653d"
+    },
+    "validation": {
+      "head": "273c5dfa013a787a5227ea9e620a204a2afec03f",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/validation_receipt.json",
+      "git_blob": "70e00c201bc532ef93cbbad6d67f23127b3c6a50",
+      "git_bytes_sha256": "e535eb69d4cba05a77e9eae800f47902fd5a9edca0b1d0dc38068120eebf49df"
+    }
+  },
+  "original_membership_review_sha256": "fca0032f7278d0fa375382da2346fe4661553a4ebca8010b90a69faeb8f3de67",
+  "new_screened_ids": [
+    "house:119:2:52",
+    "house:119:2:53",
+    "house:119:2:54",
+    "house:119:2:55",
+    "house:119:2:56"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "d6b0c824ce80dacfc10300a6e1dcfc1bdd764a8c7191f7b5b6970f0abf5002cc",
+      "record": {
+        "action_id": "house:119:2:52",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1032EH orders a single motion to concur in the7148Senateamendments, separately permits HJR142DCtaxdisapproval consideration, and deems the4090committee substitute adopted. It does not itself concur in the Senate package or pass the DCdisapproval. The deemed mining substitute has substantive mineral-project, regulatory-review and geologic-mapping content; whole incorporated substitute/version and domain baselines remain pending. Do not reduce this whole adoption to scheduling or import an underlying appropriation as enacted. No tax, mine approval, mineral output or funding outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:52",
+            "url": "https://clerk.house.gov/evs/2026/roll052.xml",
+            "raw_sha256": "fbdfe0f3c88cc234f1d12262c2caecae06825f13c747e469e667840f747ede1e",
+            "governed_bytes_sha256": "646ca36612ef0fab87d32df47f07f57aa856335ddc1a5b16b60f3752415f9511"
+          },
+          {
+            "source_id": "govinfo:hres1032eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1032eh/html/BILLS-119hres1032eh.htm",
+            "raw_sha256": "f2d4ba8063ef74a23a086aa0025772ef9d86f3eaa4cbe5e9dba5d56f036db62e",
+            "governed_bytes_sha256": "ae550b87fd36f1129c0e5c87def690cd959dbbd5942ce3900ac40f2ac5c5a3ee"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1032eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1032 Engrossed in House (EH)] <DOC> H. Res. 1032 In the House of Representatives, U. S., February 3, 2026. Resolved, That upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes, with the Senate amendments thereto, and to consider in the House, without intervention of any point of order, a single motion offered by the chair of the Committee on Appropriations or his designee that the House concur in the Senate amendments. The Senate amendments and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion or demand for division of the question. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 142) disapproving the action of the District of Columbia Council in approving the D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The joint resolution shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees. The previous question shall be considered as ordered on the joint resolution to final passage without intervening motion except one motion to recommit (if otherwise in order). Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4090) to codify certain provisions of certain Executive Orders relating to domestic mining and hardrock mineral resources, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Natural Resources now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Natural Resources or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "360ac52ab952a9bc4977060f6b694314b7d9ccb59a33a92aa3d122c5601e3c39",
+      "record": {
+        "action_id": "house:119:2:53",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own January30EAS2444character instruction unit and governing1032EH bind the February3motion to concur in Senateamendments, not another original House passage or only the retained DHSfragment. EAS changes the DivisionHdesignation, strikes page4lines15–22and a specified1132–1235range, and inserts a continuing-appropriations division with printedFeb13,2026date, lapse-period inclusion, pay availability/payment direction and conditional ratification. Preserve the source’s printed Sec105transition/next amendment instruction without inventing missing text. Whole House target pages, continuing-resolution/pay/ratification baselines, assembled retained divisions and existing whole Health/Immigration shared action reuse remain pending. Do not certify which full account totals or provisions survive from this instruction alone, actual backpay, validity of every obligation, current funding or enacted status merely from House concurrence.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:53",
+            "url": "https://clerk.house.gov/evs/2026/roll053.xml",
+            "raw_sha256": "9799ab129b9d2eba31ee0ed80318d0ae44fdf4bced349489bedf44b12dee8c9e",
+            "governed_bytes_sha256": "ebb4bc5817f33fe1e6b0632abb672f541611c488d07d80a160850b9cc92dbb2b"
+          },
+          {
+            "source_id": "govinfo:hr7148eas",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148eas/html/BILLS-119hr7148eas.htm",
+            "raw_sha256": "7c0a728f797c11888ffd5ee3602ed9efd359c7280fa75d40c53104196d2b7c01",
+            "governed_bytes_sha256": "36a861639598bfb21c8ce803e48e09a57834763978c7b28c83ca87f2f497f899"
+          },
+          {
+            "source_id": "govinfo:hres1032eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1032eh/html/BILLS-119hres1032eh.htm",
+            "raw_sha256": "f2d4ba8063ef74a23a086aa0025772ef9d86f3eaa4cbe5e9dba5d56f036db62e",
+            "governed_bytes_sha256": "ae550b87fd36f1129c0e5c87def690cd959dbbd5942ce3900ac40f2ac5c5a3ee"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr7148eas",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 7148 Engrossed Amendment Senate (EAS)] <DOC> In the Senate of the United States, January 30, 2026. Resolved, That the bill from the House of Representatives (H.R. 7148) entitled ``An Act making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes.'', do pass with the following AMENDMENTS: (1)In section 2 in the matter preceding division A, strike the matter relating to division H and insert: Division H--Further Continuing Appropriations Act, 2026 (2)On page 4, strike lines 15 through 22. (3)Beginning on page 1132, strike line 9 and all that follows through ``Sec. 554.'' on page 1235, line 16, and insert: DIVISION H--FURTHER CONTINUING APPROPRIATIONS ACT, 2026 Sec. 101. The Continuing Appropriations Act, 2026 (division A of Public Law 119-37) is amended by striking the date specified in section 106(3) and inserting ``February 13, 2026''. Sec. 102. For the purposes of the Continuing Appropriations Act, 2026 (division A of Public Law 119-37), the time covered by such division shall be considered to include the period which began on or about January 31, 2026, during which there occurred a lapse in appropriations. Sec. 103. Amounts made available in the Continuing Appropriations Act, 2026 (division A of Public Law 119-37) and the Consolidated Appropriations Act, 2026 for personnel pay, allowances, and benefits in each department and agency shall be available for payments pursuant to subsection (c) of section 1341 of title 31, United States Code and such payments shall be made. Sec. 104. All obligations incurred and in anticipation of the appropriations made and authority granted by the Continuing Appropriations Act, 2026 (division A of Public Law 119-37) and by the Consolidated Appropriations Act, 2026 for the purposes of maintaining the essential level of activity to protect life and property and bringing about orderly termination of Government function, and for purposes as otherwise authorized by law, are hereby ratified and approved if otherwise in accord with the provisions of such Act. Sec. 105. (4)On page 1235, strike lines 22 and 23 and insert: This division may be cited as the ``Further Continuing Appropriations Act, 2026''. Attest: Secretary. 119th CONGRESS 2d Session H.R. 7148 _______________________________________________________________________ AMENDMENTS"
+          },
+          {
+            "source_id": "govinfo:hres1032eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1032 Engrossed in House (EH)] <DOC> H. Res. 1032 In the House of Representatives, U. S., February 3, 2026. Resolved, That upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes, with the Senate amendments thereto, and to consider in the House, without intervention of any point of order, a single motion offered by the chair of the Committee on Appropriations or his designee that the House concur in the Senate amendments. The Senate amendments and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion or demand for division of the question. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 142) disapproving the action of the District of Columbia Council in approving the D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The joint resolution shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees. The previous question shall be considered as ordered on the joint resolution to final passage without intervening motion except one motion to recommit (if otherwise in order). Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4090) to codify certain provisions of certain Executive Orders relating to domestic mining and hardrock mineral resources, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Natural Resources now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Natural Resources or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "84e4581499d42e46144fc0452f590b40a9e8014352432e613036df8b6fe6f0c3",
+      "record": {
+        "action_id": "house:119:2:54",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.4090. No substantive motion body is interpreted. It remains non-counting procedural context, separate from final passage of the mining/reporting/mapping package and without support/opposition to its individual mechanisms.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:54",
+            "url": "https://clerk.house.gov/evs/2026/roll054.xml",
+            "raw_sha256": "e9e6bc3076db0f6d56544a3e37000f5233026146554ee2a181fd2bd21d6885a6",
+            "governed_bytes_sha256": "e768b8e779b20224e1627b17c3ac3c9813b9d5ef671c1a1a72a9fcd75818ab18"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f427768ea259fe6938931739fb4717ab29c101a538cea125f0fde6f65e568628",
+      "record": {
+        "action_id": "house:119:2:55",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete4090EH includes import-reliance reporting tied to USGSMineralCommoditySummaries2025Version1.2March2025, project and byproduct/tailings/coal-ash lists, identification and expedition of projects that can immediately be approved, eligible-land identification/prioritization, agency-action review/action plan and nationwide State/local-law review report, geologic mapping and progress reporting, plus broad Federal-land and hardrock definitions with named exclusions. Ten-day list/approval-identification clocks,90dayanalysis/review,180dayreport, annual and one-year duties remain distinct. State/local review is not itself repeal of those laws; prioritization is not automatic approval of every mine, reopening withdrawn lands or a guaranteed permit. Stated jobs/supply-chain/national-security goals are not established results. The external USGSversion, mapping-program/legal eligibility/regulatory baselines, exact substitute reconciliation and whole mining-versus-Infrastructure/technical-research taxonomy remain pending; do not author meaning only from the selected mapping provision. No current permit, location right, ore quantity, output, employment or environmental outcome is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:55",
+            "url": "https://clerk.house.gov/evs/2026/roll055.xml",
+            "raw_sha256": "bdbc0c6af3551403fc6386b4c256f40a4f7d54190bc7b9b89f03e6b92f93d0dc",
+            "governed_bytes_sha256": "757f07dba7f27ca104d8721ae976e0c47aebd1ce59946ffd171a112b49a3aaaa"
+          },
+          {
+            "source_id": "govinfo:hr4090eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090eh/html/BILLS-119hr4090eh.htm",
+            "raw_sha256": "375f05e834bbe45d64cae7b5dd75b318e63f6f568395cc827103eca168a106ba",
+            "governed_bytes_sha256": "3f9c126bdaf7bf2561300681bc11d34d7f9a6f57d45d946415ad2b5627f3beb6"
+          },
+          {
+            "source_id": "govinfo:hres1032eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1032eh/html/BILLS-119hres1032eh.htm",
+            "raw_sha256": "f2d4ba8063ef74a23a086aa0025772ef9d86f3eaa4cbe5e9dba5d56f036db62e",
+            "governed_bytes_sha256": "ae550b87fd36f1129c0e5c87def690cd959dbbd5942ce3900ac40f2ac5c5a3ee"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4090eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/1a089138bc32c906823ab619fa0e00dddab449e48c0eaa6466d56c2b0cc25582.0000000.json",
+                  "sha256": "e2e378b78902b5ccb20c4a4770b7f8398da03f4afcd5265b658b237fa945657b",
+                  "start_character": 0,
+                  "end_character": 9737
+                }
+              ],
+              "utf8_sha256": "1a089138bc32c906823ab619fa0e00dddab449e48c0eaa6466d56c2b0cc25582",
+              "total_characters": 9737,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1032eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1032 Engrossed in House (EH)] <DOC> H. Res. 1032 In the House of Representatives, U. S., February 3, 2026. Resolved, That upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 7148) making further consolidated appropriations for the fiscal year ending September 30, 2026, and for other purposes, with the Senate amendments thereto, and to consider in the House, without intervention of any point of order, a single motion offered by the chair of the Committee on Appropriations or his designee that the House concur in the Senate amendments. The Senate amendments and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion or demand for division of the question. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 142) disapproving the action of the District of Columbia Council in approving the D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The joint resolution shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Oversight and Government Reform or their respective designees. The previous question shall be considered as ordered on the joint resolution to final passage without intervening motion except one motion to recommit (if otherwise in order). Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4090) to codify certain provisions of certain Executive Orders relating to domestic mining and hardrock mineral resources, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Natural Resources now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Natural Resources or their respective designees; and (2) one motion to recommit. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "221c9000aea9c71eaa329deea7fc8631b197b3cea1b2b0c3e3cb19ec28606afd",
+      "record": {
+        "action_id": "house:119:2:56",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete HJR142EH disapproves the specified DCCouncilAct26-217, named as enactedDec20,2025and transmittedDec30under the HomeRuleAct. Only targetActopening0:3500andclosing30567:31567were read: they identify multiple income/franchise-tax conformity changes, applicability language and conditional effective-date/225dayexpiry provisions. The broad targetActinterior and material DC/federal tax and HomeRule review baselines remain unreviewed; selected standard-deduction or child-credit fragments cannot establish whole disapproval meaning or force an Infrastructure exclusion. Do not convert it into disapproval of every DCtax/federal tax provision, a current personal deduction calculation, automatic refund or enacted local-law invalidation merely from House passage. Whole operator/version/domain review remains pending.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:56",
+            "url": "https://clerk.house.gov/evs/2026/roll056.xml",
+            "raw_sha256": "880fe8002612736a48412a7f79586b999e58a3054196c2726b631417e7697054",
+            "governed_bytes_sha256": "189a891b67f118958183d902bfb5b18bde07fbc821f320603d80ff65962ed6cd"
+          },
+          {
+            "source_id": "govinfo:hjres142eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres142eh/html/BILLS-119hjres142eh.htm",
+            "raw_sha256": "01e7c3681864a785649a58b4e6fd5ae3c08af51927ad185abce789324b48c15f",
+            "governed_bytes_sha256": "d628a8546ea6359f6f29132f6d2b15a33a51735aed5ee0ccc5e83d2769fec7f1"
+          },
+          {
+            "source_id": "dc-council:act26-217-operative",
+            "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-89.xml",
+            "raw_sha256": "4adeaceeff68f3ab27eff2edb642bae71f1845bf7525097194f52b8d355ff502",
+            "governed_bytes_sha256": "763661148cd72ecab0ae05344342503c97666f23d0771594bd7db787f8846585"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres142eh",
+            "locator": "Complete own House-passed disapproval text read",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 142 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. J. RES. 142 _______________________________________________________________________ JOINT RESOLUTION Disapproving the action of the District of Columbia Council in approving the D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That the Congress disapproves of the action of the District of Columbia Council described as follows: The D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025 (D.C. Act 26- 217), enacted by the Council of the District of Columbia on December 20, 2025, and transmitted to Congress pursuant to section 602(c)(1) of the District of Columbia Home Rule Act on December 30, 2025. Passed the House of Representatives February 4, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. J. RES. 142 _______________________________________________________________________ JOINT RESOLUTION Disapproving the action of the District of Columbia Council in approving the D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025."
+          },
+          {
+            "source_id": "dc-council:act26-217-operative",
+            "locator": "Only Actopening0:3500read;31567character Actinterior unreviewed",
+            "passage": "26-89 26-217 26-458 D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025 To amend, on a temporary basis, certain provisions of Chapter 18 of Title 47 of the District of Columbia Official Code so that they no longer conform to corresponding provisions of the Internal Revenue Code of 1986 and to make other technical and conforming changes. BE IT ENACTED BY THE COUNCIL OF THE DISTRICT OF COLUMBIA, That this act may be cited as the \"D.C. Income and Franchise Tax Conformity and Revision Temporary Amendment Act of 2025\". 2 Chapter 18 of Title 47 of the District of Columbia Official Code is amended as follows: (a) The table of contents is amended as follows: (1) The section designation for section 47-1803.03 is amended to read as follows: 47-1803.03 Gross income — Corporation, financial institution, unincorporated business, and partnership deductions. . (2) A new section designation is added to read as follows: 47-1803.04 Gross income — Individual, estate, and trust deductions. . (3) The section designation for section 47-1806.02 is amended to read as follows: 47-1806.02 Tax on residents and nonresidents — Personal exemptions. [Repealed]. . (b) Section 47-1801.04 is amended as follows: (1) A new paragraph (3A) is added to read as follows: (3A) (A) \"Basic standard deduction\" means: (i) For the taxable year ending December 31, 2025: (I) In the case of a return filed by a single individual or married individual filing a separate return, $15,000; (II) In the case of a return filed by a head of household, $22,500; and (III) In the case of a return filed by married individuals filing a joint return, separate on a combined return, or a surviving spouse, $30,000; and (ii) For taxable years beginning after December 31, 2025: (I) In the case of a return filed by a single individual or married individual filing a separate return, $15,000, increased annually pursuant to the cost-of-living adjustment (if the adjustment does not result in a multiple of $50, rounded down to the next multiple of $50); (II) In the case of a return filed by a head of household, $22,500, increased annually pursuant to the cost-of-living adjustment (if the adjustment does not result in a multiple of $50, rounded down to the next multiple of $50); and (III) In the case of a return filed by married individuals filing a joint return, separate on a combined return, or a surviving spouse, $30,000 increased annually pursuant to the cost-of-living adjustment (if the adjustment does not result in a multiple of $50, rounded down to the next multiple of $50). (B) For purposes of this paragraph, the term \"cost-of-living adjustment\" shall have the same meaning as set forth in paragraph (11) of this section; except, that the term \"base year\" shall mean the calendar year beginning January 1, 2025, or the calendar year beginning one calendar year before the calendar year in which the new dollar amount of the basic standard deduction shall become effective, whichever is later. . (2) Paragraph (11)(A) is amended by striking the phrase \"of this section or §§ 47-1806.02(f)(1)(A) and (i)\" and inserting the phrase \"of this section\" in its place. (3) Paragraph (44) is amended as follows: (A) Subparagraph (A) is amended as follows: (i) Sub-subparagraph (iii) is amended by striking the phrase \"; or\" and inserting a semicolon in its place. (ii) Sub-subparagraph (iv) is amended to read as follows: (iv) For taxable years beginning after December 31, 2017, but before January"
+          },
+          {
+            "source_id": "dc-council:act26-217-operative",
+            "locator": "Only closing30567:31567read; no complete tax/baseline review",
+            "passage": "25 (D.C. Act 26-146; 72 DCR 9623), is repealed. (c) The Child Tax Credit Congressional Review Emergency Amendment Act of 2025, effective November 24, 2025 (D.C. Act 26-210; 72 DCR ____), is repealed. 4 Applicability. Except as otherwise provided, this act shall apply as of January 1, 2025. 5 Fiscal impact statement. The Council adopts the fiscal impact statement of the Chief Financial Officer as the fiscal impact statement required by section 4a of the General Legislative Procedures Act of 1975, approved October 16, 2006 (120 Stat. 2038; D.C. Code § 1-301.47a). 6 Effective date. (a) This act shall take effect following approval by the Mayor (or in the event of veto by the Mayor, action by the Council to override the veto) and a 30-day period of congressional review as provided in section 602(c)(1) of the District of Columbia Home Rule Act, approved December 24, 1973 (87 Stat. 813; D.C. Official Code § 1-206.02(c)(1)). (b) This act shall expire after 225 days of its having taken effect."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:52",
+      "original_source_object_sha256": "112520355016adf3f02a344c6c208082b4e85b6f2ef53e020a5ecec13d2a2705",
+      "path": "source_objects/112520355016adf3f02a344c6c208082b4e85b6f2ef53e020a5ecec13d2a2705.json"
+    },
+    {
+      "source_id": "clerk:119:2:53",
+      "original_source_object_sha256": "639cab2ca23a4ea065524b37542c4ac7dd3f8059f854d1d38d09c1f9805947ae",
+      "path": "source_objects/639cab2ca23a4ea065524b37542c4ac7dd3f8059f854d1d38d09c1f9805947ae.json"
+    },
+    {
+      "source_id": "clerk:119:2:54",
+      "original_source_object_sha256": "8c8c06be843484676e9103dd13fb525d2238fe133c1faf91f1b504de5b80c402",
+      "path": "source_objects/8c8c06be843484676e9103dd13fb525d2238fe133c1faf91f1b504de5b80c402.json"
+    },
+    {
+      "source_id": "clerk:119:2:55",
+      "original_source_object_sha256": "701c8719e39abc0702687b9adfee17543c9aaa2b4985c114ffd0ed01e95c5475",
+      "path": "source_objects/701c8719e39abc0702687b9adfee17543c9aaa2b4985c114ffd0ed01e95c5475.json"
+    },
+    {
+      "source_id": "clerk:119:2:56",
+      "original_source_object_sha256": "6771db3787b18d82ac95263c25aa379796faf383639034d2f87179c73b98dec8",
+      "path": "source_objects/6771db3787b18d82ac95263c25aa379796faf383639034d2f87179c73b98dec8.json"
+    },
+    {
+      "source_id": "dc-council:act26-217-operative",
+      "original_source_object_sha256": "eef149622b5b40513bf5b18b2844bb878f40704898ba40448d506470daabe73c",
+      "path": "source_objects/eef149622b5b40513bf5b18b2844bb878f40704898ba40448d506470daabe73c.json"
+    },
+    {
+      "source_id": "govinfo:hjres142eh",
+      "original_source_object_sha256": "fd13245543520d66a5615a23e6fdb45704a0473b8bcd22abb442838b56f66401",
+      "path": "source_objects/fd13245543520d66a5615a23e6fdb45704a0473b8bcd22abb442838b56f66401.json"
+    },
+    {
+      "source_id": "govinfo:hr4090eh",
+      "original_source_object_sha256": "0e246ec85f662d9d4a9105439514399cd977fdaeee3ddc20b792658fb4aae189",
+      "path": "source_objects/0e246ec85f662d9d4a9105439514399cd977fdaeee3ddc20b792658fb4aae189.json"
+    },
+    {
+      "source_id": "govinfo:hr7148eas",
+      "original_source_object_sha256": "d503cf2426958dda7a264b36034b0cc54130708be4a90e8387101ec6a0de95ff",
+      "path": "source_objects/d503cf2426958dda7a264b36034b0cc54130708be4a90e8387101ec6a0de95ff.json"
+    },
+    {
+      "source_id": "govinfo:hres1032eh",
+      "original_source_object_sha256": "20f89ca0da20f3d7f1c3225233b103de91a04307cde125a27e1fdd618dc30429",
+      "path": "source_objects/20f89ca0da20f3d7f1c3225233b103de91a04307cde125a27e1fdd618dc30429.json"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hres1032eh",
+      "governed_length": 2923,
+      "review_extent": "Complete captured own text/instruction unit read; named incorporated targets, program and statutory baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:hr7148eas",
+      "governed_length": 2444,
+      "review_extent": "Complete captured own text/instruction unit read; named incorporated targets, program and statutory baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:hr4090eh",
+      "governed_length": 9737,
+      "review_extent": "Complete captured own text/instruction unit read; named incorporated targets, program and statutory baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "govinfo:hjres142eh",
+      "governed_length": 1298,
+      "review_extent": "Complete captured own text/instruction unit read; named incorporated targets, program and statutory baselines not implicitly reviewed"
+    },
+    {
+      "source_id": "dc-council:act26-217-operative",
+      "governed_length": 31567,
+      "review_extent": "Only0:3500and30567:31567read;31567character targetActinterior unreviewed"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 0,
+    "newly_screened_meanings_authored": 0,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:52",
+        "evidence_unit": "complete_own_rule_or_body_with_incomplete_incorporated_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:53",
+        "evidence_unit": "complete_own_rule_or_body_with_incomplete_incorporated_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:54",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:55",
+        "evidence_unit": "complete_own_rule_or_body_with_incomplete_incorporated_baselines",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:56",
+        "evidence_unit": "complete_own_disapproval_partial_whole_targetAct",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Original candidate/pending dispositions, partial extents, version qualifications, six holds and unaccepted memberships are preserved. Full referenced-object transport does not expand the original reviewed extent. No acceptance, publication or production authority."
+}

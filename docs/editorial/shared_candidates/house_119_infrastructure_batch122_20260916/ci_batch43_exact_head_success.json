@@ -1,0 +1,177 @@
+{
+  "exact_head": "e3608e9ef07588e3f8a7e2b9451eade104d540f1",
+  "backend_run_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942",
+  "backend_conclusion": "success",
+  "jobs": [
+    {
+      "name": "m14f-exact-head",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778271798"
+    },
+    {
+      "name": "m14g-exact-head",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778271935"
+    },
+    {
+      "name": "m14d-exact-head",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778271943"
+    },
+    {
+      "name": "measure-reference-integration",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778271960"
+    },
+    {
+      "name": "amendment-evidence-contracts",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778271972"
+    },
+    {
+      "name": "receipt-evidence-repair-postgres",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778271974"
+    },
+    {
+      "name": "publication-activation-postgres",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778271977"
+    },
+    {
+      "name": "m14e-exact-head",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778272004"
+    },
+    {
+      "name": "m14h-exact-head",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778272045"
+    },
+    {
+      "name": "foushee-full-record-benchmark",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402942/job/117778272052"
+    }
+  ],
+  "m14h_steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Initialize containers",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-python@v5",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install M14H validation dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Prove exact M14H package and unchanged V2/migration contracts",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate shared candidate preparation at exact head",
+      "conclusion": "success"
+    },
+    {
+      "name": "Prove disposable M14H apply, idempotency, faults, rollback, and public selector",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run accepted M14G and public-receipt regressions",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run release-tier editorial, frontend, and persistence validation",
+      "conclusion": "success"
+    },
+    {
+      "name": "Verify Record at a Glance source bindings and both frontend routes",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate M15B comparison semantics and governed limitation rendering",
+      "conclusion": "success"
+    },
+    {
+      "name": "Prove reusable V2R exact-key replacement and offline M15B readiness",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-python@v5",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Stop containers",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "m14h_log_sha256": "3bce0986e7bf5b7b22a8ee2af92c2f2df6581415b749c40ebd558db472827862",
+  "m14h_log_matches": [
+    {
+      "line": 689,
+      "text": "m14h-exact-head\tValidate shared candidate preparation at exact head\t2026-10-18T20:18:40.7912467Z 228 passed in 142.37s (0:02:22)"
+    },
+    {
+      "line": 763,
+      "text": "m14h-exact-head\tProve disposable M14H apply, idempotency, faults, rollback, and public selector\t2026-10-18T20:18:45.9721473Z 1 passed in 3.64s"
+    },
+    {
+      "line": 913,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T20:18:51.2065451Z ok 21 - CI runner avoids optional PR diff capture and retains actual commit metadata"
+    },
+    {
+      "line": 918,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T20:18:51.2073881Z ok 22 - CI runner still reports assertion failures and exits nonzero without diff capture"
+    },
+    {
+      "line": 1055,
+      "text": "m14h-exact-head\tRun accepted M14G and public-receipt regressions\t2026-10-18T20:18:51.2273762Z # pass 48"
+    },
+    {
+      "line": 1304,
+      "text": "m14h-exact-head\tRun release-tier editorial, frontend, and persistence validation\t2026-10-18T20:19:58.9188208Z Editorial pipeline release validation passed: 9 checks"
+    },
+    {
+      "line": 1455,
+      "text": "m14h-exact-head\tValidate M15B comparison semantics and governed limitation rendering\t2026-10-18T20:20:42.0196074Z 15 passed in 0.20s"
+    },
+    {
+      "line": 1573,
+      "text": "m14h-exact-head\tProve reusable V2R exact-key replacement and offline M15B readiness\t2026-10-18T20:20:53.7408651Z 25 passed in 3.42s"
+    }
+  ],
+  "frontend_run_url": "https://github.com/dhart54/political_fingerprint/actions/runs/39162402858",
+  "frontend_conclusion": "success",
+  "normal_new_head_runs": true,
+  "manual_retry": false,
+  "test_or_timeout_weakened": false,
+  "scope": "Backend and frontend workflows success at exacte3608e9e only; no certification of later heads or all unrelated checks. Earlierd0a3frontend failure remains failed; readiness-race explanation remains inference.",
+  "acceptance_or_publication_authority": false
+}

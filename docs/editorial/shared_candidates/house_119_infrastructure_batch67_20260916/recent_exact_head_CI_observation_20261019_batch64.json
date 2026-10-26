@@ -1,0 +1,89 @@
+{
+  "observed_once_utc": "2026-10-19T14:03:23.987458+00:00",
+  "method": "Single bounded supported gh run list --branch codex/infrastructure-candidate-seed --limit10 at normal delivery boundary; no retry/wait/manual run",
+  "runs": [
+    {
+      "headSha": "2484ef052a32a655b3e80ae573e153789eefa0b7",
+      "workflowName": "Backend tests",
+      "databaseId": 39264692932,
+      "status": "in_progress",
+      "conclusion": "",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39264692932"
+    },
+    {
+      "headSha": "2484ef052a32a655b3e80ae573e153789eefa0b7",
+      "workflowName": "Frontend tests",
+      "databaseId": 39264692971,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39264692971"
+    },
+    {
+      "headSha": "a079011775539d782cd58dc91f69fab583997fc8",
+      "workflowName": "Backend tests",
+      "databaseId": 39264009064,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39264009064"
+    },
+    {
+      "headSha": "a079011775539d782cd58dc91f69fab583997fc8",
+      "workflowName": "Frontend tests",
+      "databaseId": 39264008871,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39264008871"
+    },
+    {
+      "headSha": "6ac711bc874399b07a46c6c4abe8e101c3c90bf4",
+      "workflowName": "Backend tests",
+      "databaseId": 39262968353,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39262968353"
+    },
+    {
+      "headSha": "6ac711bc874399b07a46c6c4abe8e101c3c90bf4",
+      "workflowName": "Frontend tests",
+      "databaseId": 39262968308,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39262968308"
+    },
+    {
+      "headSha": "bd09bec850f663a49c3e24cbd279da5e34a2e8a6",
+      "workflowName": "Backend tests",
+      "databaseId": 39262074668,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39262074668"
+    },
+    {
+      "headSha": "bd09bec850f663a49c3e24cbd279da5e34a2e8a6",
+      "workflowName": "Frontend tests",
+      "databaseId": 39262074468,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39262074468"
+    },
+    {
+      "headSha": "f0fb195f2a96e26a90daa98854298b4c31f2754c",
+      "workflowName": "Backend tests",
+      "databaseId": 39261136901,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39261136901"
+    },
+    {
+      "headSha": "f0fb195f2a96e26a90daa98854298b4c31f2754c",
+      "workflowName": "Frontend tests",
+      "databaseId": 39261136840,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/39261136840"
+    }
+  ],
+  "scope": "Exact listed heads only. Batch63backend was in progress, frontend passed; both workflows passed59–62. Later heads remain unassessed.",
+  "production_service_health": "No live Supabase/Render/Vercel health or production-write compatibility inference; no production writes performed.",
+  "manual_CI_retry": false
+}

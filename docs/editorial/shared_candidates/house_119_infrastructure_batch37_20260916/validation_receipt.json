@@ -1,0 +1,1092 @@
+{
+  "explicit_prior_record_repairs": [],
+  "batch": 37,
+  "identity_count": 676,
+  "new_screened": 6,
+  "new_meanings": 0,
+  "combined_meanings": 38,
+  "counts": {
+    "procedural_context": 93,
+    "exact_action_ineligible": 36,
+    "interpreted_substantive_directional": 37,
+    "pending_interpretation": 105,
+    "source_unresolved": 397,
+    "expressive_nonbinding": 7,
+    "interpreted_substantive_non_directional": 1
+  },
+  "ordinary_pending_screenings": 392,
+  "source_count": 675,
+  "core_sha256": "eb518b16c909018d61d65b0f5fb838e03c5d95e88d319afc38d475a886c768ee",
+  "compiled_sha256": "3a85093e61ba17aba9e79140fc7a021fee4e72219e7fbf9741a9586b3fec9d5b",
+  "member_neutral_authoring_and_generated": true,
+  "five_authored_not_voting_preserved": true,
+  "prior_boundaries_corrections_preserved": true,
+  "generated_replay": true,
+  "independent_review": "pending",
+  "full_record_claim": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "validation_processes": {
+    "start_utc": "2026-10-18T18:44:37.163004+00:00",
+    "end_utc": "2026-10-18T18:44:57.321048+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 37 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch37_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 1.348
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 1.977
+      }
+    ]
+  },
+  "focused_test_count": null,
+  "inherited_focused_test_count": 69,
+  "inherited_focused_suite_head": "82dad47ec1713681be59cda9801d186f2796b719",
+  "semantic_checks": 7,
+  "git_lf_replay": {
+    "generated_file_count": 259,
+    "basis": "All prior/current generated outputs replay through candidate tests; normalized committed LF hashes checked against actual staged blobs before commit.",
+    "blobs": [
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "a0b33ad96d3610289bd271edb2abc11b89a0bdff735ee3018b8033888ca91b42"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "6ab83fac8966f2992c27efb1f4462acad8faf970ce53fc20c91fb43ca9798b5b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "6c61e8b718db757092b4d7253aabc03c0158a3eb46979084cda57c6b1e0e80d5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "e0e0e2881f2337cb710281dda51da96bdb881a8d0608f257d2943d905702542a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "bb71705bac5530009b462f942e1eb94f157bdfd1c935cd108810757ab233b173"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "73283d464e6511ac002e989a48cce2114565691ca82df7ad2d536fdbea62b037"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "71d84e013585cb9a566ec4429b5ae6f3f482457ecfb8c97aff4e52f5b270ba4f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "5ce8b68df874ade5feda6cda95f5ce7356321334e36d5d13a711c11bfc691de1"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "67e6d3bfc7ffd3c24f3d13e4ce0bb00b9820a7dd888453699a11961b86dc986d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "28cfa4f1ba096ab383933b46d461679ae0f852394f532be494b6e431cc27caa5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "edccf74e462dd5c3cd206752750b0171273ff2ebad83e443bee87f87854ecf2e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "c5383d74c24e81496ba998558a34820b1459e924e4c05614b3924eccb3be11ac"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "259760f0ef8e28e606fd2e4ccd4bcfd0b942857904a99e8e324bb8d0c767b415"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "a36cc798aa54b13c234ab6b9d85070b2a40806b93f97a196a7dfb81a6eeb0c1c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "b9b6184c1cc2cf945f82e9975d36f5e97be69753f94f94a27531a8dbd14b3d3d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "6c01d06bd56647643589901c5e674947faf75e74c1e65a31a75972f4f8929cd3"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "0297cd7fadc279b587536117152ef48b75f893ae7d03d1ba9d38d1d422698623"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "865340371a6cfecb69b868e6e1753ff02b21891f3f2e2a1ee6efc4bd744060d5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "8b81e588ad3c2c11e19c0efc10a21736f869f72e41f198708ab5162dc0dbba0d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "c7454f9468102464f0a1efab2d09e8ee16a0e5be05f348bdcf71dfceb492ceac"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "a46c685b719d08789e044cb3c06da6cb67d18003e0d543903706204ff070c3b1"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "b9b6184c1cc2cf945f82e9975d36f5e97be69753f94f94a27531a8dbd14b3d3d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "bc94e804320cecd65e334ada0d61aead8cc7ef51db443f5635ccf0a89088fd1d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "9e3254f3b333f01a954e62a81ca5ebd33e0f5f5f460264bbfe398ae8eb28fafb"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "197d733cc35673da9f022cc7154ca0113bbc8d4e8d36c3f050309d283f892cf9"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "9e3402ec8e3880ede4db9d39791dccb60b5bb3cb1a888880d17b61cd1b02139e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "0c591b744a9785edee5e0a3bea1059c21f84ca974de517269c8d5a0f1452bc23"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "4173161db78ca8172a16394f83a6e71046282db58bea433a05860b6f9e253c1d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "b9b6184c1cc2cf945f82e9975d36f5e97be69753f94f94a27531a8dbd14b3d3d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "40a6b859600966a71bee5b1361801dff7224b4db54a60e9631e9f8e81a5df7b7"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "622005486eec244bb9c0c53dd926dff44ceb3e0df6963dfa5bf0dd48361ab252"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "dc64e88c13eae18a6360c5eaddff6940e309b28cb6766951a33c237133642d09"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "57fe9a8ab6b37499575e2be548f196a1fcce140fddd2ca84cfbacbbab08448d4"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "e7a883043cb69c9dbd983d999442949529c9693bdf3a5e4afe2f9e76c6aea73f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "00c9e419ff5a53ae0c033f347a5b51ab6ece2fcbdd48f9ffbe84dbc56832e561"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "a7bac23b84a815d301ae28c3fec4007b360405a82ae043eefe5d4849ba2148a8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "469ade7db284e805b08a309eea6baa23ea935965f4c6adccdb440a6f9dfeba74"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "ca02b11bf533cfd2237986db138cc32ca1353e4e0bb4bbaa5fc738fb95e0b30a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "0b508f8f161471a4a9238569f74044867989bab57d6a247e45456bc7b17c2b18"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "486b2730169c0c34b4b6770bdb8acf32535e6ab3fdefd80a347841f56de26a5e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "27d580d813cf160c79c6c909a5718c91c9a404bc15aaaef645cdf3033411c1b5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "8747d25d295714eca755af689bfc8bceca384f95b05125969817cb28439130ba"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "a7bac23b84a815d301ae28c3fec4007b360405a82ae043eefe5d4849ba2148a8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "000bfff1398d2823e37c223c3e087ca84d3614b0b233c53058662614d2c78015"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "ddc7bf3778244c16e97869ff96fbfafb6be03effa3b9498933d79801394d0418"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "b219751e13467c06f703de7f4dc758a33d485aaf5288113ee35c5e3640a214d9"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "e2aacb2955780e01abe65d5a2bda4bb53e419965a6f1adb73c506cecaba35659"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "9c62f592beef18ba0a850d69836345f3188404db02df80a0632d8ab6668001e0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "25ce496b2203090ed5cf9c4f68b1234717fa9fc90e0dcdf2a59e51881df19362"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "a3eab0adf57ddeb7c4e0a7716a2c90664914c730a0493e5d9d9eacd8d3e99373"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "3ce1436252ccb02be481cf02db1ebcb019c21298edc6e9fd0734a7efaf4d6d34"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "ad59eca6881b27113657ac8813b05560fd7b21128fd546213181e834750fb281"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "df3efc339d837e3050dff992d34b9f3acf192989c9a52ab55321103dfbdbf08e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "94d228b6e6300df76c586b8ae549ca3e68023bb46cbcf9cac0b1c2ab33a1332a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "9ac9dad1afbc755fdccd96ef78f4d8d19c6da60e827a7483b3b4476ac040073d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "1481b6331e19c149069e90d015d0517b2e97aa6e28d958b3d9bea41238c6ca21"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "0365ed631a9ff1c62df735d570b68e30e09275261b277b71510df2fe55f508c3"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "d7fb0f95fb30f6237edda36e660b898494257e1c6fe15e04e91e8e8ef92e36d5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "542694378e6c0330025eb0940f4228dcefa04ca61958b125f8bca5c5bdc07b9c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "08bcffaa9b094cfde82845cbb474e821fca5110b86e9832ff65a11d7be52d054"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "3bbf61f711817710024e0ae775be371d801183c6881a03ec1aaff05877b50b33"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "f731da05ca0ffcc36766d05bf4383b4ba3e39957035333276331398f2ace9b33"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "6cf8e4ff08b48293a0411b1f905903250d852c70f713ef2bd335010be2ccdd28"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "1e635d65e6b6cb1bd600b707f7fbbdd2c281b05c0015bc6e4342de35f885a3f0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "70656ad1dd45e843652c124313ce2e0af1e0fbab839552f37110bc5a2a4deb6e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "0e1e9fe6886e050f74d654f21776495d4d9df562c81688fd47e663c9cce246d5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "85e15172ca02485a5a987186d4c9df82656adf0357be615764856ccc1d30a7d8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "8df070f31ad62b8813f65d7951c8b38785ead951b5c363a5d4dadcfce698556c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "f1dfc5cc16bf3effae22b68cf713930d5249f0786cf934b13d32280807af3b97"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "b0b91d9acfb896ea87fc4b1403ac05e737aeb86d9af02732bcf90754172c4051"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "1e635d65e6b6cb1bd600b707f7fbbdd2c281b05c0015bc6e4342de35f885a3f0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "40bcc6589b3b46497cd23cb858d9e0856da1ab80bdb038c50a416a10a2e19ce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "dd6508ef1e32c4959c39fbb8dba86bf0f5d92ae9a8209732995358134f402a3e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "a4d85e9681214a43070f69d33865a786a1fdf7a81270d0ffa55204afd11fab6a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "f2d2e990cfa8c797e7713c84dac77a0abf59821837eed2a444a91c5370c25608"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "95c3210ed266b750c4572112078bcabc47c54f0dc46f1345687bf37d3a2715c8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "e89a8496ea5bb97f9b3566ece9308737961ad8ab245d5a49b8eec2ae01705f5b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "51504d3f5fa35d7993d35cc7fb7b7309674da26ff34dc4f27f88d718e1410f58"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "f5c5b39d24cba490e26f278061bb0c012a5726b49bb3bbd34e4def05a1e20cf8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "9b485fa3345c1ce7eae058cf4bd7bde5cd94220f78803803524eb96603465e99"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "2c938747881cfd4457c54333be5ee45d8dc69e461ff2642d270825045272c25f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "56db0d9615324e90cb6ca39b1b6ff59631a8621c390066b215192ba6dde6ee9b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "d555c8e82dd1f796e29207933b5401545932ad64ec0a8de90cc1ecd3fef4a339"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "fb09e476bf8064be68564cb74ae058d762d6bc381085c45f5794ba446d45e31e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "51504d3f5fa35d7993d35cc7fb7b7309674da26ff34dc4f27f88d718e1410f58"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "f6887efdcf61bd6e73a219585d175810e5e1057e78b4d88dc421f16c8ebbeb4f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "56594f4fc0a410ef09cb05d9f582395ebf7c780b9b3ba954507c05f1d4d0a84a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "ae622cdfd3a50f1f1e80fce24d7d9c9929b7adae675d5e49af4bb0fc1ef90136"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "71e192e8382a72596f8417fa04a1bc72dd63a4964ab89eaa6f4d79266c306485"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "e58a3b6f5430d62f0239607800ee4c98aa421e20151dcb2fb0d2bcf9dcc32235"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "a0e0437332ab6d0eb374d0ca69685919530a44e804cdb93e2e2861f55199416f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "51504d3f5fa35d7993d35cc7fb7b7309674da26ff34dc4f27f88d718e1410f58"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "59425db9ff530a867892a14b7134eb5907a87810f71c32140e80613a7c49e725"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "275edf692bb2b67e4bfc9028860d4602651ad91006dd41056dc506a83a55c722"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "60980cc061b82d090095cfb4b3260bd29ca981d1c36c0a75e73eff8856d0f24b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "fa840d91b7d2611411ed972efa9418a7d0919d5ceaeaaf79698810871d1012e0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "f8aa767b1bb52977e6eb9c3fb9323d12b6eb54b699e275be334b105b99c01f20"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "596ea069ad84f663b25a32d43e29d03d24a9aee98f8e6c9aef8d8236a60e6431"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "51504d3f5fa35d7993d35cc7fb7b7309674da26ff34dc4f27f88d718e1410f58"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "b18d92bbc12a616e9ca2c3b46a828df6a0415cc269793b3810439796fa192911"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "2b33dcc155dd1f914746c4ae4e534ad9a6363f59ca36a69a1386f5baef1d5072"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "fa3b44788f610ff39b72e48d03321f9049dd3e29396d6fc83a59a945c6a42377"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "01e9f34ec67c9b2120325c6a6751ee1340aa22e1295777235d8825a9b156e446"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "697b591b5e55b99a672abd307e432f3d06eca1538d9f7e5b036899c39bcb5cd6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "05564ebe4e175b342bd417629b3e3609b85d910626166f849ee12cf28a05a15a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "7a8581f8a1bb5b3f9a99305e7adae11705641f38575653f700528ec993798f63"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "0dbaa3d7b073033fee62f81bb42f0a1e6654873ca83c398f5dc87042e204dfbd"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "7eee7c1229fed7e0e6101884cd9c713d4417cf80d172c6464687040a4bd70299"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "357ab572bcd48b014248e2e9684087a24a275f4590fc383cbdfd11f5c4d21072"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "b594d8ee9837cd986ebc545d70521343d83b3b658a51eeb77bd26e1426d6d26b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "4398886ada2def56dbcc11b6f3f16dec7ef9bcfc143de5be2aac9973e41f1072"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "ab7cbfa32b30bb9520426aadb03858d132d8a2bf254fd184226a06b55330346f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "4126036ac7935505a859eb3d0b46948d3f860e79d4135a6a298d872be5b4cf80"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "48438f683094e6def3cd1ebb8e7a9650e9e53098280b668d859723b63268d995"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "0606cd3a1acfd1daf811f344a1fefb774665e4721b7a1d74776479be316a7144"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "446d6bca46556ac1e0161014f8bfeac0748b18b19efbf9fca3d0aa6e6a3eb586"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "c03972de3df19126b6340d9529ab040dc28e1693c03acced709523f92df0ba0f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "1b93ae0bcc761bcb7a92315779fdae83a5b032aa26548493c83dc4f31dd34b16"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "1abc07a514673068a4465d09c262880b6006fdeba99a955c0abc498da701bc1a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "1892ce2e6c29941186a384d6f05f9017e3aa7c088c47a8ecef9d2d4b8209636a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "a48b5269ce6ad2fb6f1d3c0700a52e0059454979cb607b00600afc29e9592b2e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "6fd54daf2a5e1ea9d33234386d9dbcabb0a2727160b9da25d8146e7e67b94af3"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "27e328929434615870abd5c9422c3205f2b0f60c68364d830b7de36c7c9bf2bd"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "abeebe8a8b9e8d97acfe68a0dbc46d85dda1d84bafe20b08f687855b0f52f6da"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "f7114e9828f8057296ef661e2870019b416269e575ef1bf2c11d23421a95fd3a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "9def9c662ce9f163840680ec05852ead2c182f834c6303c0cfa2a93f1dc65b7b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "0482130745f4efa12a524656d4cb3d980c4144a96cfeaeef446c9878166bb33f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "2fb20dc5e41bc55cf472fe3ccc725de29985f6795ff50bfb5137b5ff54fe3139"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "617a5fe8705101e3465127eb64d91bd8a8c1856e248177f55b40a11f2e718e5b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "f03ef4dcc95098cf23d1bb8062ac6b134a8b6f5f35825e719f423379fb40b0a2"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "d732cf44c35a87831681eeef1dda4ebde3b52c7ae48018b7787fa4c371c825cb"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "4a69c5f3c7046d37b1442b2dcc13565a6790042b2cab8b7683d079ad0a4199b0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "54060564918b316aba06bd9dee08659ef629ec8a5a15abeb421e6a12a9bf7de1"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "eb75e5ddfab358a175f136f9f0151428550ea1668a369fc05de40223c46645d3"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "5b9a49977b0822580807a6905c071489ed83d7cee36e72d3de04b24ca9d26199"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "65ae1bab3eaef55393a2a9449a86c4630043a78d7f2c8588897c6af17c9288a9"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "2886c1892d0acd38e198c808f20c0bae63d7bc4fab835c5e77df83e09d4b058a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "2b780e1f0a50584dcf72a5a16b0904e5f6b0bc0b311c4742ce52f5bdf7c2c1cb"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "2aece5bde29ee81bb381cc5ebdf415d930539b7db5ab942bb9d011e71f9b46ce"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "2fae76a90cb99cb50e0de5ee08ada8541ac0b7b9091df355df02f3017b52b672"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "9ac64ba208ffe97778cbfbf09daa3c44229eec7e93a4639a1441550e8b8bcf3f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "9bf7222897fbe001337caeca785d86778b5da77d3d4fd3ae1bd7df6a3de6f70c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "6b7971c4ab7f9597df0ba77213031f5bdef16ef49f80d87651408c624781aefe"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "72358370d318a1bfa1e4b512b9d214b90194d75c095bf12532b7cb9266f615d5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "118673f637401234de1395941a97c29cc90aae6c89b97405be19644021c11788"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "c50bf6a66019c18f2d4669c473be94e6ff447a68334a08ea90d2cb54e8c7316d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "2001732b42191fc730844f071a7eb8009089aa1babaacc5ecf4fc39943bbf71b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "5e67a487d24c0572bbdc1cbc129877b66e10e2264692e172d26c6b87b216fbb2"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "16e0258f93f4d793b6041e372df31480133dd3ac6c5efb85ff16d9d0c350fec6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "5a1399306382c0a0ce1d70ce0907ea0f929aec1ac1826d0d3b56c431e274dac6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "dc549f6582d0ddd19ef00ea59e6d28917149dd067b70964b6ae3a2a9ee420aef"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "b02d7ad7e71a1f7e18091758467ab8ea4e8a355358e0ee00d10e7f6a7c53f619"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "18b7c79a8fb4ae2c32c82d49e0072b3a86b517fcff6592647f44a4b3c0dd6208"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "4082cd8746e914e1341521cc49678c5e2ab8241d02399c1b57097e3e2fb87ae4"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "3503a41ba9ce1df06dedfb6897063049743cc958e94562173ecc44784d6a68fb"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "93f190a5ab30f2115c8aa768d3ad7680299322e22519f5f7371932311dfba3c4"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "85d073a1e65ae4002890842271dbc366e0d3b59efba61389dc0a4ea5f9d292d6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "0b2a7d1ca836bf402b3bb78a3e93264d8aee7aeb27cb973235a0980abb411ae7"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "4a82125366c2c089e783c39aae1e85e9be79e0dd530aae826c8cf53f8a076cdc"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "f8000eda1ba81e0c06b806a5ed655c98228649f9ee3a75a0d770d83d818b1b85"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "6afc751499a177a68af08a071821bf5561eccbc7f23cbb2c9cbcda4f942cf1ca"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "9c2ec11c968f06e2aebf12981f571403e95c23a7a2c2252588b0807b18e993f5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "a9c34463a821fafbdab7dbbbaa28a30330d98da52b6e5e0519a92a59d0c84076"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "59c3ccfcc1d1419b4d26747fab9c71f0b88c11db41ed8dd46a9ff949f47cba01"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "58b903234524ac394d53d2f458b0bd7b03d2bd4d42740103f14db8b620f1800a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "90a32338f145111884f5777765a1b97cee078d9c0f8e5f68e6290faade712699"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "c323dce4cda5c20b68f7ebb6d46b2384fe8de5cc7fac67c05d4c417e6c4ad61c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "7826cac05d837b1bbb672ad265c031b45e81efd161ade2c2fd44f3e8a9e3187f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "36cff12457bb04b14d7de383fd5a1d00669b2e0e5a3723798839e7a397e80a35"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "ec6cbfc9033ac1544b69e4a36f1c54e107c8247637bd91aeebd323236a1f33ad"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "7530b9da5e136665f98ea736820f9a1aaced6b42f46b45be6945bc5a11108a9a"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "9a6d39527edc8f79068fbd3c7860656d77359cf77a04ac57ac7c9ab04432d73e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "3570af3ef76d45d5dfad0daf7c127de9690ad94232bf9398f45cc704561ee826"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "ba0a721111a8d2efbcd0d560c22a36ce2f0c1379287dd4a0051119fd47cb7362"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "65b0d7168b7c2895f1776d0cdd9ae7344a871c9a5bf3de3c13f2b469db8171ce"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "9a2bdfbd22859a0c5373baf11286b218497194167820b925dfdfc3cf8c0b3a1b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "db2d1454a900eb218b4e1dfc555b30adf613779293da88562d741a5f4a53c04d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "bbd89504c62c3942414311caa9d0233a8355675373d44a91c3b6e8796ad045a1"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "7f89e0c5efa663857d2b76ecdd0b1990e8784a19d603b90fe93244e5ee0bcce8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "0d02ec370f289bf8d1a12e02a4f61b49e5db98ff7cda2b4bbc92d5aec5a1eda0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "0406246ede115b9b7a444140cd9a9231bdc5eb33577e3a103446ca75d93cab25"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "686c8cb34ac2a37c90228560c69c6aa508f311b5410886fcf7dc32563915c566"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "a28fa446680b94874f7138ada6edc9180d9b2f39748d7930e0eb8d84357d1908"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "efc41cf128da1a7ba85ee921c6f4c3a3aedffcb8dd159f7453bba2c62f7683b5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "72d2e1ac53232020e26cbe6a7a1ea517342166599e6d64b393c34d0719db3aa5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "4c65e85f529a501d976e3ef9cf408721245f83fe7a3041c7004383a964238293"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "344a99f4eed8b29a3331061f603646e8dc45688f25ca11320f48f55a9045de0c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "8f50c7a3c108979047b7aab854b89946488ef6fd9e9b12ea5bc5d893ddebad43"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "6c5121f73b24fed964833d26713847296ce4fca2ad2a90e34872aa758f04b021"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "572b4b88145748f39c6e3932705b2cae3448b6acfea942f67027b43f396eb25d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "492342a365d4b222c129dc025ec1931f13fb6de6e3aa109a61bfb3d3c3fec594"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "48fd7f5d8649dc651f36b651abb474a516326f11b16c191b0ff5a7c9d253147b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "4c65e85f529a501d976e3ef9cf408721245f83fe7a3041c7004383a964238293"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "180b57baf353aa0a63fa98485e15db4dbdc9caaea0711b48a0c4ed67d76e9573"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "3e3c6fdd31398653ce43e6722d5764af8e3a17b6de2a043c2269d5335ff68708"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "205a763f48e0edf7aaf1c89427b87db3047baa6039bebec8e6c76e972876b55d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "d9a6fe514b2176f87403062460b33ba2afbb9db93903bb019f7910be506a97c4"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "eed34c7416e5a9777e7881a3dbe4f0f7ce45125ef5d0c0a2bb765785daa8b20c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "3cfdc25ecce13c0d5c3780977538a832d2209a60a044f63b6332a5d56671119d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "9ee3340b124f191a82fc3171cadc34f3b9d56a2e0b70147419c164ed044c1d2d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "e542db72df41db94855d3c45e340feccaf778c4b1ed4f131e512f2aba68f5496"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "94a26a3d369da5c3d441cfe1c69d6f7fee48b8c11721abb97894de18ebdd41a8"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "a96ace766222b90f7cb7386fdfd5f3bc15bbbb323a89709fcd6849152828b21c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "a8a2eb72132312ead23acacf44bd99f27295728e780c13fbeba69196cdcc1112"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "3926411ac532a69f046137086a26fe3c94f7ce7d72db3bf4421db2568d9862a6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "8a397b100941ba039301e0a52c2aec6268452957b1cdf6200985139c35a302d6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "909715460ba915399e5b00a2891af2ff82a524e7ccf9bd0cad0fc569f1497f68"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "f35c3ae302385d48cd32cab820661734975eb50c2b34d5ad5d8849f985043620"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "f77b50afd54f78e2ea56b0e8c1964ce43532b1eac720eab0ac072f2501b48991"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "3430b350fe4ae77e4b1ea2696ebf40f6aafd60a526d72e4bf7b67998c0884090"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "c058712e5559e052981d29d1dda450b13a5bb78b680f8e7e4638098bd865d8c4"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "b0b4e4e69378a185e9f877c0e329e76df85b65225cbac06268d0de453dd999d2"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "98c19bbd83f7c9c16ccd405d81854ebc17a673b08c4d942c999204fcd3606b65"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "38e14728ed4b67d13ef2e1744d8950207b9f1cadd470ba65bc63c9e6fc9c0e48"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "b161bd57c4693ed39c8cb5e7e78508f5fcdba904c7f0a2bca9e0921463d0f461"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "d0b6805ce3c52458f2d1855ebbad3edc5687eee5bac9b1e8d9536d9ffc6dd3f9"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "5d683c6b3ef0bfbf82d23b0ff3354f529eec0dbbe1f0a1d11c3ce09f427e588b"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "6b29a9d1a074ef031d2eaa57e8e564b24d0c9adc11f091ee6c373974d4af4a66"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "4a631d078544ebb9661ab3bae2037ca0628e747051a717664e90c6504b97b02d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "73bea386dff94b35c51401513847e5cb341be7af8330cf5b4aecec8d85554967"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "83518b6d5100e0b8ae461ef3ce8e42aa44f31dcb18d0b53f871e92d797d73cf0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "4569a49b9c2794f8ea115763f4cfc354924d2d1bb32c2e602465930603260f85"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "5b5d93ebeb7fe86e1fdd2f656a63864ed8a552bc7606ef8aeedf297d8803b638"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "82dec839bdfe08bfc446031af6cffe47e264635d2770abbd99b09d88c9503d09"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "c0e54d51687ceab8239262d1774479f21ff8db3b761e390cfec0c88ae693d344"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "5303ebafc576dd66c601f8c282e4ad2d6d186a0305695c214ead2cfc6332a802"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "59f4f1c8c1a132d3d91e0a044ea16c47d29ab7dd54e0fba8efe26d8251e72017"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "83518b6d5100e0b8ae461ef3ce8e42aa44f31dcb18d0b53f871e92d797d73cf0"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "8b904c377ae714005418f6dd566d117196da22f967e2e808330a736494fb3d9f"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "baa4c56b08a5bb7a99965ba545fb156e05741648c53d6de94f762e0e8b4175ef"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "faf7fdf60d09250446864623f738084b3a64718d08742b3af9dd06c033129382"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "f1706a2e9e41c45c62f3637de26cda1f3aaadb2e5a14b1a7e03e792c5be3b271"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "2addcc0c5e71ab346a3761898b74f8dc704fe50d15ed2c0664b0d91998e76629"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "db130980d9b5251771ceb32311950593514fb58c0082a4107425dfa556b7fed9"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "019783e351dc22b042ed1e3fb74840d7f5c112eaf390242844227e8c06f7d9c7"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "4f2bacb72d126e4fa65029421de13c6f2c082f03d8adcaa01e48a5f81a716378"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "ee9b5b889fc51e250966713ead69959b1734a9fffac5826c986ff5e39b601471"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "cf497b8532f1ce396ad5687708c83a95825c6dca7b7971d0b272934bd3af39d3"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "7ff7e53fb7f5540ca805394bceef824f1da53158127a7a35bd096b99b4c8595d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "6f434ea90d24d45bf918f75ea23bc201360682c85c68113fe63585f05fdd20cc"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "acbb02c597f2d3a07aac5f4fed3b84d181168ced14fba28f2f29a9582dc98130"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/compiled_ir.json",
+        "committed_lf_bytes_sha256": "546452d1354ee8b778d974b0984c0ab1b7aeea6fe29fafb91fed449b2d3c6889"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/compiler_input.json",
+        "committed_lf_bytes_sha256": "86a74991d91cf9418b43e4abc68ec77e91fd45e9211af4b0cdb5548bb7737fce"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/member_projections.json",
+        "committed_lf_bytes_sha256": "2f1efad56b9613b20efc2f5773b84c9aba795e72e92aa5a6aa1cf3f8e9487b35"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/readable_candidates.json",
+        "committed_lf_bytes_sha256": "241cf1be3efbaa4dcc5f8726159610480fd8e4b50b44b393b5b701887f3b909e"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/reproducibility_proof.json",
+        "committed_lf_bytes_sha256": "c7e56fbdb079c9793be2050305833f39e574b326864fccf57ad01a6652a147f6"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/shared_action_core.json",
+        "committed_lf_bytes_sha256": "ffef729af93ffc7ed2b9109269aa89f0b8e5a453179607a930328d6c0a994bb2"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/shared_issue_mapping.json",
+        "committed_lf_bytes_sha256": "679a5f53c93c859c9fffa4efeb14babf6ed800059a8fa6e4c4da2755ba14e26a"
+      }
+    ]
+  },
+  "focused_suite_attribution": "Full suite passed at exact batch36head; no new full-action meanings or algorithm changes. Current-batch validator executes the affected conservation/source/replay contracts; prior exact Git blobs are preserved."
+}

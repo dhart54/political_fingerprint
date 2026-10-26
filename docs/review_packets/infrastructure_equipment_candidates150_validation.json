@@ -1,0 +1,55 @@
+{
+  "kind": "owner_held_equipment150_precommit_validation",
+  "base_commit": "5ab0233a449b2cda7db574584ee99c29783afd51",
+  "focused_tests": {
+    "passed": 13,
+    "seconds": 3.638,
+    "negative_input_mutations": 27,
+    "native_candidate_acceptance_guard": "passed",
+    "stale_member_rejections": 2
+  },
+  "semantic_IR_and_CI_tests": {
+    "passed": 34,
+    "seconds": 0.366
+  },
+  "canonical_semantic_IR": "passed",
+  "standalone150": "passed",
+  "preserved_files": 329,
+  "fixed_packet_files": 39,
+  "packet_manifest_object_sha256": "b180bbb1cb3667be6657229a5483c79c7564b36d5d41e053af2b4738a3a0d6e7",
+  "preservation_manifest_object_sha256": "0db391db56ea88f618fb577a6e3fee414524d101bb14af37da6289e2872df57b",
+  "shared_candidate_cores": 5,
+  "official_member_observations": 10,
+  "held_episodes": 5,
+  "issue_propositions": 0,
+  "source_objects": 15,
+  "unchanged_original_objects": 10,
+  "captures": {
+    "invocations": 9,
+    "retained_bodies": 7,
+    "raw_bytes": 5355713,
+    "closed_overcap_PDF_routes": 2,
+    "redirects": 0,
+    "retries": 0
+  },
+  "selected_original_PDF_visual_pages": 6,
+  "complete_rule_preamble_read_claimed": false,
+  "exhaustive_numerical_grid_claimed": false,
+  "canonical149_changed": false,
+  "meaning_or_eligibility_accepted": false,
+  "source_registered": false,
+  "source_holds_changed": false,
+  "production": false,
+  "publication": false,
+  "generic_behavioral_update_proof_exercised": false,
+  "actual_held_identical_replay": "passed",
+  "shared_guards_changed": false,
+  "independent_final_review_pending": true,
+  "commit_push_and_hosted_delivery_pending": true,
+  "provisional_independent_review_attribution": "Existing reviewer reproduced held artifacts,21 mapped extents and10 unchanged original objects; not final exact-target clearance.",
+  "implementation_corrections": [
+    "Generic update proof is inapplicable to all-held/no-finding graphs; retained guard and used truthful held replay.",
+    "PDF identity matching normalizes en-dash identifiers/line-wrap whitespace only, preserving all raw/text bytes."
+  ],
+  "record_sha256": "d8c2f4da990c2f8171282fe91bc97a15005e04c6b5ccd99a03b1c409d58b2185"
+}

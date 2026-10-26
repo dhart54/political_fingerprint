@@ -1,0 +1,342 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 76,
+  "exact_committed_head": "da6f30f9f5e2bf7d0c55e82de848e567bd6cda41",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "da6f30f9f5e2bf7d0c55e82de848e567bd6cda41",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch76_20260916/membership_review.json",
+      "git_blob": "cc8494f4d83758c77f91ddf123d3fb23e335d01c",
+      "git_bytes_sha256": "60c40b494238afb43e81a448bc05711ce618b98888e96381f3e91acd023c882a"
+    },
+    "sources": {
+      "head": "da6f30f9f5e2bf7d0c55e82de848e567bd6cda41",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch76_20260916/sources.json",
+      "git_blob": "1be6d203da78a3069090aa21861b813301ddee7e",
+      "git_bytes_sha256": "f55f178b86d3dd1f66fd83df3975e3e7a4073251c43edc2a4ecf4bc335f5edcd"
+    },
+    "screening": {
+      "head": "da6f30f9f5e2bf7d0c55e82de848e567bd6cda41",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch76_20260916/screening_receipt.json",
+      "git_blob": "8c011b1b20617b51a027ac2f3e330737e8fab75c",
+      "git_bytes_sha256": "6acc2fb50454163a38be4f370dcaf5d1dd266c6c660a9e0dc6d38db19205aa0b"
+    },
+    "screening_units": {
+      "head": "da6f30f9f5e2bf7d0c55e82de848e567bd6cda41",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch76_20260916/screening_units_receipt.json",
+      "git_blob": "c1efe929556e36f4478e19b445de10fc26085391",
+      "git_bytes_sha256": "3f559e78824492452ffb85a2d7f4358fb2904b3fff5b01eacc8eac62d600a5ab"
+    }
+  },
+  "original_membership_review_sha256": "384ee142271506757d79a5b2564a6e0748d3d0fed2255ef3be4f89b0a0d43618",
+  "new_screened_ids": [
+    "house:119:2:66",
+    "house:119:2:67",
+    "house:119:2:68",
+    "house:119:2:69",
+    "house:119:2:71"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "1080311855fe16668d556ff9308829cb0554d045e303a47cc7a279a91c2d4652",
+      "record": {
+        "action_id": "house:119:2:66",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to recommit H.R.261. No substantive motion body is interpreted. This remains non-counting procedural context, separate from the underlying passage and without a position on cable, permit, election or technical-system policy.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:66",
+            "url": "https://clerk.house.gov/evs/2026/roll066.xml",
+            "raw_sha256": "380234a13cad7a5b4257640886ddc2f4d40ce78a048e62c5a99c1d63055d3392",
+            "governed_bytes_sha256": "4e97d203ea980a184042ae040c7b2d56a5a7b7977ad217a33f99e048664b14d4"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "07b1ebcc2e390419b5781d8a42573bf6dceaa8308f43ca4c5a1bb2e5981d4a8c",
+      "record": {
+        "action_id": "house:119:2:67",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete261EH and retained1441permit/1434(d)cooperation units support an unaccepted communications-infrastructure candidate for the WHOLE cable/general-permit package. Preserve issued-and-effective other-agency approval, FederalORState, listed activities, surviving consultation and distinct45dayclocks, general rather than cable-only term deletions, and retained compatibility/insurance/bond terms. No universal permit exemption, immunity, lifetime term, current project approval or actual network/environmental outcome. The broader sanctuary-permit scope requires independent taxonomy review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:67",
+            "url": "https://clerk.house.gov/evs/2026/roll067.xml",
+            "raw_sha256": "ff9aa29026c884e0b9e4ef37e02a5bc353c9eab2b8688041b21fbb9320a63453",
+            "governed_bytes_sha256": "2123218ea1d5f73d09815fc9ece0978ffca97d9e23641b04e154b88d3c38b9fd"
+          },
+          {
+            "source_id": "govinfo:hr261eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr261eh/html/BILLS-119hr261eh.htm",
+            "raw_sha256": "fbcffd18401c7fcdb608155de6e8270318b2998cc5f575e39c4c2f3aeec08606",
+            "governed_bytes_sha256": "db341dda742912e1482f18c9246f176b138d81c57b35b31677f4df802bb9e51f"
+          },
+          {
+            "source_id": "govinfo:16usc1441-permit-terms",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap32-sec1441.htm",
+            "raw_sha256": "b5a2825fd86226e71fc570e5c1ad1fcd89ad6c0abf2b88d2d8c319af9ca022c7",
+            "governed_bytes_sha256": "15f8245e2ef99975337f927d24b6c68528b3d69b79017f533a844a1fdd83ccd4"
+          },
+          {
+            "source_id": "govinfo:16usc1434-cooperation",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap32-sec1434.htm",
+            "raw_sha256": "5a6dca65586c39e001f285c01afd33431fae38497668b6f934fda838d8ac19fc",
+            "governed_bytes_sha256": "39ae3557618ea9cb21acb391c1bb9e0ffbf186629592ca871625da68f01a4a71"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr261eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 261 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 261 _______________________________________________________________________ AN ACT To amend the National Marine Sanctuaries Act to prohibit the Secretary of Commerce from prohibiting, or requiring any permit or other authorization for, the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary if such activities have been authorized by a Federal or State agency. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Undersea Cable Protection Act of 2025''. SEC. 2. PROHIBITION ON PROHIBITING, OR REQUIRING PERMITS OR OTHER AUTHORIZATIONS FOR, UNDERSEA FIBER OPTIC CABLES AUTHORIZED BY A FEDERAL OR STATE AGENCY. The National Marine Sanctuaries Act (16 U.S.C. 1431 et seq.) is amended by inserting after section 310 the following: ``SEC. 310A. PROHIBITION ON PROHIBITING, OR REQUIRING PERMITS OR OTHER AUTHORIZATIONS FOR, UNDERSEA FIBER OPTIC CABLES AUTHORIZED BY A FEDERAL OR STATE AGENCY. ``(a) In General.--Notwithstanding any other provision of this Act, the Secretary may not prohibit, or require any permit, including any special use permit, or other authorization for, the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary if a license, lease, or permit has been issued by a Federal or State agency, and is in effect, authorizing such installation, continued presence, operation, maintenance, repair, or recovery. ``(b) Interagency Cooperation.--Nothing in this section shall be construed as altering existing requirements regarding interagency cooperation under section 304(d) in any Federal agency action described in that section and involving the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary.''. SEC. 3. REMOVING RESTRICTIONS ON ACTIVITIES COVERED BY SANCTUARY SPECIAL USE PERMITS. Section 310(c) of National Marine Sanctuaries Act (16 U.S.C. 1441(c)) is amended-- (1) in paragraph (1), by adding ``and'' at the end; (2) by striking paragraphs (2) and (3); and (3) by redesignating paragraph (4) as paragraph (2). Passed the House of Representatives February 11, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 261 _______________________________________________________________________ AN ACT To amend the National Marine Sanctuaries Act to prohibit the Secretary of Commerce from prohibiting, or requiring any permit or other authorization for, the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary if such activities have been authorized by a Federal or State agency."
+          },
+          {
+            "source_id": "govinfo:16usc1441-permit-terms",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§1441. Special use permits (a) Issuance of permits The Secretary may issue special use permits which authorize the conduct of specific activities in a national marine sanctuary if the Secretary determines such authorization is necessary— (1) to establish conditions of access to and use of any sanctuary resource; or (2) to promote public use and understanding of a sanctuary resource. (b) Public notice required The Secretary shall provide appropriate public notice before identifying any category of activity subject to a special use permit under subsection (a). (c) Permit terms A permit issued under this section— (1) shall authorize the conduct of an activity only if that activity is compatible with the purposes for which the sanctuary is designated and with protection of sanctuary resources; (2) shall not authorize the conduct of any activity for a period of more than 5 years unless renewed by the Secretary; (3) shall require that activities carried out under the permit be conducted in a manner that does not destroy, cause the loss of, or injure sanctuary resources; and (4) shall require the permittee to purchase and maintain comprehensive general liability insurance, or post an equivalent bond, against claims arising out of activities conducted under the permit and to agree to hold the United States harmless against such claims. (d) Fees (1) Assessment and collection The Secretary may assess and collect fees for the conduct of any activity under a permit issued under this section. (2) Amount The amount of a fee under this subsection shall be equal to the sum of— (A) costs incurred, or expected to be incurred, by the Secretary in issuing the permit; (B) costs incurred, or expected to be incurred, by the Secretary as a direct result of the conduct of the activity for which the permit is issued, including costs of monitoring the conduct of the activity; and (C) an amount which represents the fair market value of the use of the sanctuary resource. (3) Use of fees Amounts collected by the Secretary in the form of fees under this section may be used by the Secretary— (A) for issuing and administering permits under this section; and (B) for expenses of managing national marine sanctuaries. (4) Waiver or reduction of fees The Secretary may accept in-kind contributions in lieu of a fee under paragraph (2)(C), or waive or reduce any fee assessed under this subsection for any activity that does not derive profit from the access to or use of sanctuary resources."
+          },
+          {
+            "source_id": "govinfo:16usc1434-cooperation",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(d) Interagency cooperation (1) Review of agency actions (A) In general Federal agency actions internal or external to a national marine sanctuary, including private activities authorized by licenses, leases, or permits, that are likely to destroy, cause the loss of, or injure any sanctuary resource are subject to consultation with the Secretary. (B) Agency statements required Subject to any regulations the Secretary may establish each Federal agency proposing an action described in subparagraph (A) shall provide the Secretary with a written statement describing the action and its potential effects on sanctuary resources at the earliest practicable time, but in no case later than 45 days before the final approval of the action unless such Federal agency and the Secretary agree to a different schedule. (2) Secretary's recommended alternatives If the Secretary finds that a Federal agency action is likely to destroy, cause the loss of, or injure a sanctuary resource, the Secretary shall (within 45 days of receipt of complete information on the proposed agency action) recommend reasonable and prudent alternatives, which may include conduct of the action elsewhere, which can be taken by the Federal agency in implementing the agency action that will protect sanctuary resources. (3) Response to recommendations The agency head who receives the Secretary's recommended alternatives under paragraph (2) shall promptly consult with the Secretary on the alternatives. If the agency head decides not to follow the alternatives, the agency head shall provide the Secretary with a written statement explaining the reasons for that decision. (4) Failure to follow alternative If the head of a Federal agency takes an action other than an alternative recommended by the Secretary and such action results in the destruction of, loss of, or injury to a sanctuary resource, the head of the agency shall promptly prevent and mitigate further damage and restore or replace the sanctuary resource in a manner approved by the Secretary."
+          }
+        ],
+        "episode_candidate_id": "episode:hr261:119"
+      }
+    },
+    {
+      "original_record_sha256": "6b7af0f7b6ba847c1e86d22a75abfd6ec04b69a9623fff5fab5e8c5f4f39e452",
+      "record": {
+        "action_id": "house:119:2:68",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is the failed motion to commit S.1383. No substantive motion body is interpreted. This remains non-counting procedural context, separate from the underlying passage and without a position on cable, permit, election or technical-system policy.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:68",
+            "url": "https://clerk.house.gov/evs/2026/roll068.xml",
+            "raw_sha256": "7b8ee8a7146f9503ea75fa24a20afcf604cd794cebdf94c0a579b8c9358d0a19",
+            "governed_bytes_sha256": "8800e9ac5dd7f06b28e49be07597d7b578bdfb855044f3385cc6a7df8c626b4d"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "5adb7844595e2adbbd0b101ac9c2c5c2a52bef44c5ac50a50f8f9822e1cc71e8",
+      "record": {
+        "action_id": "house:119:2:69",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The own February11HouseEAH replaces all after the enacting clause with SAVEAmericaActtext, despite the old Senate veterans-advisory title in its header. Only opening0:2400andclosing31432:32432were read; the start includes documentary-citizenship registration requirements and the ending election-administration/enforcement/effective-date instructions. The whole replacement interior and incorporated registration, identification and election-administration baselines were not reviewed here. The existing Immigration shared action for this exact69choice must be reused rather than authoring an Infrastructure meaning from an old title or selected data-system fragment. Whole replacement/version/domain review remains pending. No current voter eligibility, universal identification rule, actual fraud finding, participation, election or technical outcome is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:69",
+            "url": "https://clerk.house.gov/evs/2026/roll069.xml",
+            "raw_sha256": "f403733f36c740f91be6c4673ad210c1d97e4128d5ed40f3fc753a0d1abc021d",
+            "governed_bytes_sha256": "c58759ffe8693c6d299bb106849c2bf78f2f16401f3c158e9ace8e5b46378636"
+          },
+          {
+            "source_id": "govinfo:s1383eah",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+            "raw_sha256": "cb9baa66719200cf225009b56ce566c37f9e788535e35fcbeb3c2c18ef24eb1f",
+            "governed_bytes_sha256": "24b2790d0fec3c22eb31d6281d7ff90465654ea8d511cfa9c8d153be6f861853"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:s1383eah",
+            "locator": "Only opening0:2400read; header replacement controls over historical title",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [S. 1383 Engrossed Amendment House (EAH)] <DOC> In the House of Representatives, U. S., February 11, 2026. Resolved, That the bill from the Senate (S. 1383) entitled ``An Act to establish the Veterans Advisory Committee on Equal Access, and for other purposes.'', do pass with the following AMENDMENT: Strike out all after the enacting clause and insert: SECTION 1. SHORT TITLE. This Act may be cited as the ``Safeguard American Voter Eligibility Act'' or the ``SAVE America Act''. SEC. 2. ENSURING ONLY CITIZENS ARE REGISTERED TO VOTE IN ELECTIONS FOR FEDERAL OFFICE. (a) Definition of Documentary Proof of United States Citizenship.-- Section 3 of the National Voter Registration Act of 1993 (52 U.S.C. 20502) is amended-- (1) by striking ``As used'' and inserting ``(a) In General.--As used''; and (2) by adding at the end the following: ``(b) Documentary Proof of United States Citizenship.--As used in this Act, the term `documentary proof of United States citizenship' means, with respect to an applicant for voter registration, any of the following: ``(1) A form of identification issued consistent with the requirements of the REAL ID Act of 2005 that indicates the applicant is a citizen of the United States. ``(2) A valid United States passport. ``(3) The applicant's official United States military identification card, together with a United States military record of service showing that the applicant's place of birth was in the United States. ``(4) A valid government-issued photo identification card issued by a Federal, State or Tribal government showing that the applicant's place of birth was in the United States. ``(5) A valid government-issued photo identification card issued by a Federal, State or Tribal government other than an identification described in paragraphs (1) through (4), but only if presented together with one or more of the following: ``(A) A certified birth certificate issued by a State, a unit of local government in a State, or a Tribal government which-- ``(i) was issued by the State, unit of local government, or Tribal government in which the applicant was born; ``(ii) was filed with the office responsible for keeping vital records in the State; ``(iii) includes the full name, date of birth, and place of birth of the applicant; ``(iv) lists the full names of one o"
+          },
+          {
+            "source_id": "govinfo:s1383eah",
+            "locator": "Only closing31432:32432read; complete32432character replacement not reviewed",
+            "passage": "irements.''. (b) Conforming Amendment Relating to Voluntary Guidance by Election Assistance Commission.--Section 311(b) of such Act (52 U.S.C. 21101(b)) is amended-- (1) by striking ``and'' at the end of paragraph (2); (2) by striking the period at the end of paragraph (3) and inserting ``; and''; and (3) by adding at the end the following new paragraph: ``(4) in the case of the recommendations with respect to section 303A, October 1, 2025.''. (c) Conforming Amendment Relating to Enforcement.--Section 401 of such Act (52 U.S.C. 21111) is amended by striking ``sections 301, 302, 303, and 304'' and inserting ``subtitle A of title III''. (d) Effective Date.--This section and the amendments made by this section shall take effect on the date of the enactment of this section, and shall apply with respect to elections for Federal office held on or after such date. Attest: Clerk. 119th CONGRESS 2d Session S. 1383 _______________________________________________________________________ AMENDMENT"
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "d9d45f283b8730671446ada7b632a6bf756db119bb887b2bae37f753ca6932c1",
+      "record": {
+        "action_id": "house:119:2:71",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete6329EH is the InformationQualityAssuranceAct, not a different aviation bill printed in the same broad floor source. It requires OMB/agency guideline updates, best-reasonably-available fit-for-purpose influential evidence, correction/report mechanisms, critical-factual-material/citation disclosure, comment/revision treatment, statutory/privacy/IP/cost exceptions, explanations/access/format alternatives and no additional authorized funds. Director1yearupdate/disclosure and agency1yearafterupdate clocks are distinct. The incorporated InformationQualityAct515, EvidenceAct/definitions, data-asset, privacy/IP and disclosure baselines remain unreviewed; whole information-governance versus generic administrative-methodology taxonomy is pending. Do not infer full public release of protected data, guaranteed information truth, invalidation of every existing rule, new appropriation or technical outcomes merely from a public-website/open-data reference. Combined suspension/passage is not enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:71",
+            "url": "https://clerk.house.gov/evs/2026/roll071.xml",
+            "raw_sha256": "f6da84545192aba6871ff97f9a925d8bb1de0a60e340f6803b7fbdf63b7d3858",
+            "governed_bytes_sha256": "47dbb7237dfba6f98693ab51abfa53ca2510085040226b37f8f770c6063fe7f1"
+          },
+          {
+            "source_id": "govinfo:hr6329eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6329eh/html/BILLS-119hr6329eh.htm",
+            "raw_sha256": "701fbd8ac6623dc3f4e888b41f5b394819ff0a835c222ca52967be873f934ac4",
+            "governed_bytes_sha256": "c32514f09e559bfc40c3f347e7afb3a3a5504ac2e321af2458f446c1fe563f54"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6329eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/a0a3c612f3bc9e3e0787d8c7317eb5ec6166cbff43bfe19e1772c4929f2b0cba.0000000.json",
+                  "sha256": "99e403132bf8cbbbfcdd920383c99096d4871be4a00841884aeccac17ed272ae",
+                  "start_character": 0,
+                  "end_character": 9322
+                }
+              ],
+              "utf8_sha256": "a0a3c612f3bc9e3e0787d8c7317eb5ec6166cbff43bfe19e1772c4929f2b0cba",
+              "total_characters": 9322,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:66",
+      "original_source_object_sha256": "412726aaaf98792f527680d7c2ce4460dfcddbb00d5297caacbf7821ceb891bf"
+    },
+    {
+      "source_id": "clerk:119:2:67",
+      "original_source_object_sha256": "9abdb1d19b0ee48dde70cda553630bf170056e81fcb6b5c7b503b14829e1e7e0"
+    },
+    {
+      "source_id": "clerk:119:2:68",
+      "original_source_object_sha256": "bdeafe4507002dc6aa7960106431f8cf81f47a92f12ce079833ca1a48144a233"
+    },
+    {
+      "source_id": "clerk:119:2:69",
+      "original_source_object_sha256": "9a1baf9badbe10b3dbd35e95ee4382db5fd067e9b12195b4fcbcbdf11a976e25"
+    },
+    {
+      "source_id": "clerk:119:2:71",
+      "original_source_object_sha256": "958e15a4eec83f16bd08e88f288d795bdd13b926258a729ee473b2f802eada51"
+    },
+    {
+      "source_id": "govinfo:16usc1434-cooperation",
+      "original_source_object_sha256": "7ae6a5d5779487f1141b159d41d016b4a2366fa1f25a85cc9e758ce07434d1d0"
+    },
+    {
+      "source_id": "govinfo:16usc1441-permit-terms",
+      "original_source_object_sha256": "fc46a42837f664d394b18ad2d7235ae99b8664244d570de7b7027a3e836b2326"
+    },
+    {
+      "source_id": "govinfo:hr261eh",
+      "original_source_object_sha256": "9b1d418123d17141811c3260b7d8b6e9215a292828436c4a005d561c74070d01"
+    },
+    {
+      "source_id": "govinfo:hr6329eh",
+      "original_source_object_sha256": "33a97aeaba04bf4dde0ea4b3d9265706fd633f61e19e92615037bdcc116dd527"
+    },
+    {
+      "source_id": "govinfo:s1383eah",
+      "original_source_object_sha256": "3807340ec55b517307f0958ab47552e259fd4f17e91193a7e307923ea6dea244"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr261eh",
+      "governed_length": 3016,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no complete current regulations or incorporated515/privacy/IP baseline clearance"
+    },
+    {
+      "source_id": "govinfo:16usc1441-permit-terms",
+      "governed_length": 2493,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no complete current regulations or incorporated515/privacy/IP baseline clearance"
+    },
+    {
+      "source_id": "govinfo:16usc1434-cooperation",
+      "governed_length": 2034,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no complete current regulations or incorporated515/privacy/IP baseline clearance"
+    },
+    {
+      "source_id": "govinfo:s1383eah",
+      "governed_length": 32432,
+      "review_extent": "Only0:2400and31432:32432read; whole House replacement interior unreviewed"
+    },
+    {
+      "source_id": "govinfo:hr6329eh",
+      "governed_length": 9322,
+      "review_extent": "Complete captured own or selected dated statutory unit read; no complete current regulations or incorporated515/privacy/IP baseline clearance"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:66",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:67",
+        "evidence_unit": "complete_cable_and_general_permit_bill_material_terms_and_cooperation",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:68",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:69",
+        "evidence_unit": "partial_whole_House_replacement",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:71",
+        "evidence_unit": "complete_information_governance_bill_incorporated_baselines_unreviewed",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}

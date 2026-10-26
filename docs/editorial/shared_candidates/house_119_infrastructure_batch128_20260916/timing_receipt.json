@@ -1,0 +1,70 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-20T01:20:51.012822+00:00",
+    "qualification": "Complete retained ownPartA6unit26180chars read in3contiguous slices0:9000/9000:18000/18000:26180before marker, untimed. SeparateA7/A8notimported; no newwhole46475source, externalAPA/Federal-Stateenvironment/Tribal/property/floor/currentlaw certificate."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-20T01:32:13.187937+00:00",
+    "end_utc": "2026-10-20T01:32:18.309283+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 128 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch128_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.719
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 2.403
+      }
+    ]
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 682.175,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 5.122,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 5,
+    "reported_test_seconds": 9.86,
+    "result": "passed",
+    "scope": [
+      "CompleteOWNPartA6certification/review/clocks/evidence/removal/literalLACKSStatefloor/savings",
+      "PartA7California-agency compensation payee and separate Defense/operator preemption verbs",
+      "Preserved127completeOWNPartA7guard on exact preimage",
+      "PreservedHR3638electricity definition/reference/whole-bill scope",
+      "Preserved4922pre-vote definition/jurisdiction/YRApopulation"
+    ]
+  },
+  "initial_128_pre_correction_gates": {
+    "targeted": {
+      "count": 4,
+      "reported_seconds": 10.0,
+      "result": "passed before the two PartA7precision corrections; not final128gates"
+    },
+    "source_replay_seven_semantic": {
+      "start_utc": "2026-10-20T01:26:01.875697+00:00",
+      "end_utc": "2026-10-20T01:26:06.807858+00:00",
+      "processes": [
+        {
+          "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 128 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch128_20260916\\validation_receipt.json",
+          "returncode": 0,
+          "process_wall_seconds": 2.558
+        },
+        {
+          "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+          "returncode": 0,
+          "process_wall_seconds": 2.374
+        }
+      ]
+    },
+    "full_suite": {
+      "count": 151,
+      "head": "3be714268666858130bb62d1f171af6a19362c4a",
+      "inherited": true,
+      "current_full_suite_run": false
+    }
+  }
+}

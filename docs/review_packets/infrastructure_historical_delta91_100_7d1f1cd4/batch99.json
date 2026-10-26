@@ -1,0 +1,1009 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 99,
+  "exact_committed_head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+  "export_anchor_head": "7d1f1cd4f99bb59a440347f17a49013678d16057",
+  "committed_provenance": {
+    "membership": {
+      "head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/membership_review.json",
+      "git_blob": "5ff20f35d2fe88d885be9dee362516c321f289a1",
+      "git_bytes_sha256": "966536dc9b62b11b9762ff122f1668b806958f9882820f0ac0be6396ea942fdd"
+    },
+    "sources": {
+      "head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/sources.json",
+      "git_blob": "c88a9d7e2df5a49810baa33539a837ea9cdf95bf",
+      "git_bytes_sha256": "edd4f3e9a26cb4b05563dd3b88498684f14b74fe7981565c99a12a020a4a3e60"
+    },
+    "screening": {
+      "head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/screening_receipt.json",
+      "git_blob": "c5fd71349d9b3e9e18c8bc93b099abe1274e5fda",
+      "git_bytes_sha256": "94e72d2f73646eb4d4561e9f420ace8e34fdbd0d153c3eca8b6950f18901969e"
+    },
+    "screening_units": {
+      "head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/screening_units_receipt.json",
+      "git_blob": "779cc02deb8da7feb410edb7f1e4c50a1d386e50",
+      "git_bytes_sha256": "827fe480ecf2a6e243d3c614e62715e32d2bb883d01213e9e4137ae3990e1acb"
+    },
+    "validation": {
+      "head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/validation_receipt.json",
+      "git_blob": "d22e7d63f1e7e2022d591b3aacf1edebdb77d9c3",
+      "git_bytes_sha256": "499b11829ed9267a9044c7e5f0e71ea7cc53f6157d74cfd8766550baeaf25818"
+    }
+  },
+  "original_membership_review_sha256": "7bd0394f59b9126150ca9bd5e761bdb01a2a6495a5c776f122f027a8c5f8eccf",
+  "new_screened_ids": [
+    "house:119:2:252",
+    "house:119:2:253",
+    "house:119:2:254",
+    "house:119:2:255",
+    "house:119:2:256",
+    "house:119:2:257",
+    "house:119:2:258",
+    "house:119:2:259",
+    "house:119:2:260",
+    "house:119:2:261"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "6702a342248ea8f53b909b9cc3d3166ed9d7be9efd20f54969d5dd2f7358f365",
+      "record": {
+        "action_id": "house:119:2:252",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete1118EHread. Whole bill replaces lowest overall cost alternative with best value in41USC152(3)(B)multiple-award-schedule procurement. It establishes no particular technical/physical/scientific program, targetpurchase or construction authority, supporting a proposed Infrastructure exclusion. Underlying procurement definitions/criteria/currentlaw and contract application remain unreviewed; do not infer automatic lowestprice abandonment in every procurement, preferredbidder, savings, technicalbenefit or enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:252",
+            "url": "https://clerk.house.gov/evs/2026/roll252.xml",
+            "raw_sha256": "44062beed42ae7d60754650c16620b8f628cfd508bdc445d4c13aa292bf7d6ab",
+            "governed_bytes_sha256": "641d5e6b40166e0c047d19f69773b915f907d4999eacff8e68ccbc3fd8cca6f9"
+          },
+          {
+            "source_id": "govinfo:hr1118eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1118eh/html/BILLS-119hr1118eh.htm",
+            "raw_sha256": "8e6d0e59be0e07fd8e77c963abd80ccb60f818d39e8994ff70bc4e6ca17d524c",
+            "governed_bytes_sha256": "8447ef3e8c273a068681ada198b1fee0bf460366b9918b208fa57b427f482eaf"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1118eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1118 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 1118 _______________________________________________________________________ AN ACT To amend title 41, United States Code, to provide best value through the multiple award schedule program, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Value Over Cost Act of 2026''. SEC. 2. PROVIDING BEST VALUE THROUGH THE MULTIPLE AWARD SCHEDULE PROGRAM. Section 152(3)(B) of title 41, United States Code, is amended by striking ``lowest overall cost alternative'' and inserting ``best value''. Passed the House of Representatives July 21, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 1118 _______________________________________________________________________ AN ACT To amend title 41, United States Code, to provide best value through the multiple award schedule program, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "9ee75e68bc7d897a02cef0959b6eae1c861554a306a26c327a71a68212da15b4",
+      "record": {
+        "action_id": "house:119:2:253",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "Exact Clerk question orders the previous question on1438. Non-counting procedural context, separate from the later whole deemed bundle. No component-specific policy position or enactment is inferred.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:253",
+            "url": "https://clerk.house.gov/evs/2026/roll253.xml",
+            "raw_sha256": "567cacc12089604fb263c4cc9f05b9aea99e7b8e2d17c47253a78c7f5de403c1",
+            "governed_bytes_sha256": "f55cdfdb814f9b354cc8cb2f99372423dbdfbb0bb26db0704ea7d9967f8e4a4f"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f8d8aff0d3e8bd1325bca99f1a04bc5fc84f776bfbfdf7e8ef7f67060ab62686",
+      "record": {
+        "action_id": "house:119:2:254",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete1438EHread. The whole adopted rule deems8800RCP119–33,8884RCP119–34,budget113RCP119–37,7008RCP119–38asmodifiedbyPartB,and6955RCP119–35 adopted;9770is only made in order and8800engrossment addsS1383. Whole incorporated defense/SSA/budget/stock/banking versions/material baselines and mapping remain pending. This is not simple scheduling, automatic9770passage or approval of all made-in-order PartAamendments. Do not substitute failed1398as governing adoptedversion or reduce the bundle to militarytechnology. No enactedfunds, conflict/motive finding or realized policy outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:254",
+            "url": "https://clerk.house.gov/evs/2026/roll254.xml",
+            "raw_sha256": "cc1b304ce0bbd79e1a456cbf8645d7ce9f321876f9670a545660d27d794dcba5",
+            "governed_bytes_sha256": "76a74e64e25bf44f0c714b174aaf1797586abd093408b2cc2988d440ff556b64"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "3cb87f9b14470ca2eac9a51709ea37fa1aee2549a4f890bef89195c29444662c",
+      "record": {
+        "action_id": "house:119:2:255",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "ExactPartA1strikes proposed1213, whose fullRCPtext changes the AfghanistanWarCommission final-report period3years to4years. It deletes a proposed deadline extension, not the Commission, a technicalsystem or every reporting duty. Clerk recorded failure means extension was not removed by this child; the underlying enacted deadline/currentCommission compliance is not certified. Whole militaryoversight/report timing supports a proposed Infrastructure exclusion. No enactedchange, actualcase, technicaloutcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:255",
+            "url": "https://clerk.house.gov/evs/2026/roll255.xml",
+            "raw_sha256": "711b7eae9168e5af2c407ef56319a863021411c153663e42c455f6e607ebce8b",
+            "governed_bytes_sha256": "3d881b5d9adf240854cef881df2b02b635a7fe67d08a0b977549b7b4d5798111"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
+          },
+          {
+            "source_id": "rules:rcp119-33-ndaa-struck-sections",
+            "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+            "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+            "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "locator": "Complete own PartA1offering/operative character0:441; other offerings not used",
+            "passage": "AMENDMENT NO. 1 OFFERED BY MS . BOEBERT \nThe Acting CHAIR. It is now in order \nto consider amendment No. 1 printed in \npart A of House Report 119–755. \nMs. BOEBERT. Mr. Chair, I rise as \nthe designee of the gentleman from \nTexas (Mr. R\nOY), and I have an amend-\nment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 1213 (and redesignate ac-\ncordingly). \n\n\n"
+          },
+          {
+            "source_id": "rules:rcp119-33-ndaa-struck-sections",
+            "locator": "Complete captured518/521/524/1213units read; only exact named target governs this child",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699.0000000.json",
+                  "sha256": "3b895498305c01423177f2b305efdab59d180afee90195684cf044e4f72eb2b7",
+                  "start_character": 0,
+                  "end_character": 4472
+                }
+              ],
+              "utf8_sha256": "344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699",
+              "total_characters": 4472,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule read;119-33deemedfloorbase",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "097f189f627345b660f7370c7326766ffcfb1f9f489b24ef99091f9d337852a8",
+      "record": {
+        "action_id": "house:119:2:256",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "ExactPartA2replaces proposed521with a complete347ban on instruction of persons fromforeigncountries at the three named ServiceAcademies, rather than the RCPaddition limited to definedcoverednations. Complete target521read; remaining347/4872/currenteligibility notconformed. Whole militaryeducation/admissions choice is proposed outside Infrastructure, not construction/technicalresearch simply because academies teachengineering. Clerk recorded failure does not change eligibility. No enactedchange, actualcase, technicaloutcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:256",
+            "url": "https://clerk.house.gov/evs/2026/roll256.xml",
+            "raw_sha256": "2c4b1e9203e940c3777ebe838f708239c5cc4b4bccbe0964bb3eae64902ea10b",
+            "governed_bytes_sha256": "ae3ffb3ef869c7f23efcf2849b4709bc936488eb1e6597b912281dab64f243f8"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
+          },
+          {
+            "source_id": "rules:rcp119-33-ndaa-struck-sections",
+            "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+            "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+            "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "locator": "Complete own PartA2offering/operative character441:1355; other offerings not used",
+            "passage": "AMENDMENT NO. 2 OFFERED BY MS . BOEBERT \nThe Acting CHAIR. It is now in order \nto consider amendment No. 2 printed in \npart A of House Report number 119–755. \nMs. BOEBERT. Mr. Chairman, I rise \nto offer amendment No. 2 as the des-\nignee for Mr. R\nOY. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 521 (page 305, lines 9 through \n25) and insert the following new section: \nSEC. 521. INELIGIBILITY OF FOREIGN NATIONALS \nTO ATTEND A SERVICE ACADEMY. \nSection 347 of title 10, United States Code, \nis amended to read as follows: \n‘‘§ 347. Ineligibility of foreign nationals to at-\ntend a service academy \n‘‘The Secretaries of the military depart-\nments may not permit persons from foreign \ncountries to receive instruction at the \nUnited States Military Academy, the United \nStates Naval Academy, or the United States \nAir Force Academy.’’. \n\n\n"
+          },
+          {
+            "source_id": "rules:rcp119-33-ndaa-struck-sections",
+            "locator": "Complete captured518/521/524/1213units read; only exact named target governs this child",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699.0000000.json",
+                  "sha256": "3b895498305c01423177f2b305efdab59d180afee90195684cf044e4f72eb2b7",
+                  "start_character": 0,
+                  "end_character": 4472
+                }
+              ],
+              "utf8_sha256": "344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699",
+              "total_characters": 4472,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule read;119-33deemedfloorbase",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f101ca6c6eeb61b033c6f1f0aaaaa73d870a77e7f428d06cf0fdd7904761482a",
+      "record": {
+        "action_id": "house:119:2:257",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "ExactPartA3strikes proposed524, which removes the printed not-more-than-five cadet/midshipman limits for alternative service obligations to become professionalathletes in three academyprovisions. It deletes proposedcapremovals, not academyathletics or all alternative service. FullRCP524read; actualindividual obligations/currentlaw notcertified. Whole militarypersonnel/athleticservice choice supports a proposed Infrastructure exclusion; Clerk recorded failure did not remove the parenttext. No enactedchange, actualcase, technicaloutcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:257",
+            "url": "https://clerk.house.gov/evs/2026/roll257.xml",
+            "raw_sha256": "12d94deb836cb614716981bc728fe70071abeef06793ecc5874d68e74e03bea3",
+            "governed_bytes_sha256": "abca6fd0fe7ac6e6f86e4131b7073e556ae0126e8dd78544a4a09a29de296b33"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
+          },
+          {
+            "source_id": "rules:rcp119-33-ndaa-struck-sections",
+            "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+            "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+            "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "locator": "Complete own PartA3offering/operative character1355:1727; other offerings not used",
+            "passage": "AMENDMENT NO. 3 OFFERED BY MS . BOEBERT \nThe Acting CHAIR. It is now in order \nto consider amendment No. 3 printed in \npart A of House Report 119–755. \nMs. BOEBERT. Mr. Chairman, I rise \nto offer amendment No. 3 as the des-\nignee for Mr. R\nOY. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 524. \n\n\n"
+          },
+          {
+            "source_id": "rules:rcp119-33-ndaa-struck-sections",
+            "locator": "Complete captured518/521/524/1213units read; only exact named target governs this child",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699.0000000.json",
+                  "sha256": "3b895498305c01423177f2b305efdab59d180afee90195684cf044e4f72eb2b7",
+                  "start_character": 0,
+                  "end_character": 4472
+                }
+              ],
+              "utf8_sha256": "344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699",
+              "total_characters": 4472,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule read;119-33deemedfloorbase",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "1a04280217446cdb29e7df6fea8c8ffc1367a287736d4d5ccdd61a28f29883bf",
+      "record": {
+        "action_id": "house:119:2:258",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete exactPartA4offering, fullcaptured518target and governing1438rule support an unaccepted whole automated-assessment-pilot removal candidate. Preserve optional establishment versus conditional mandatoryelements, punitive-or-other use ANDprivacy/compliance requirements,1yearreport/3yeartermination fromESTABLISHMENT and deletionofallproposed518ratherthanallmilitarytesting. Clerk agreement is not enactment/currentpilottermination or validatedaccuracy/savings. Whole technologyversusmilitarypersonnel/health mapping requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:258",
+            "url": "https://clerk.house.gov/evs/2026/roll258.xml",
+            "raw_sha256": "b4a3d127cef7f715d15ad086cafe2c2da5a3965e63f37b826ada5fdd94dc0272",
+            "governed_bytes_sha256": "8acedca14aa98c9b7c47a27ac8d4152f1c6e0200a3aec22c3c2779213580df71"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
+          },
+          {
+            "source_id": "rules:rcp119-33-ndaa-struck-sections",
+            "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+            "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+            "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+            "locator": "Complete own PartA4offering/operative character1727:2135; other offerings not used",
+            "passage": "AMENDMENT NO. 4 OFFERED BY MS . BOEBERT \nThe Acting CHAIR. It is now in order \nto consider amendment No. 4 printed in \npart A of House Report 119–755. \nMs. BOEBERT. Mr. Chair, I rise as \nthe designee of the gentleman from \nTexas (Mr. R\nOY), and I have an amend-\nment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 518. \n\n\n"
+          },
+          {
+            "source_id": "rules:rcp119-33-ndaa-struck-sections",
+            "locator": "Complete captured518/521/524/1213units read; complete518is exact strike target",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699.0000000.json",
+                  "sha256": "3b895498305c01423177f2b305efdab59d180afee90195684cf044e4f72eb2b7",
+                  "start_character": 0,
+                  "end_character": 4472
+                }
+              ],
+              "utf8_sha256": "344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699",
+              "total_characters": 4472,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule;119-33deemedbase not finalEH",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr8800:amend4:119"
+      }
+    },
+    {
+      "original_record_sha256": "b8552f5158ebde1ce4258dc5433d13f7d66ef9b939c55fa39234e66560da799e",
+      "record": {
+        "action_id": "house:119:2:259",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "ExactPartA6certification/judicial-protection energyinfrastructureoffering identified, but only declared opening2000andclosing1200ofits26180characterunitread; substantialwholeinterior and materiallegal/rights/definition baselines remain unreviewed. Clerkfailuredoes not establish enactedpreemption, automaticcertificate, landtitle/compensation, pipelineoperation or militarynecessity. Do not use an openingpipeline/infrastructure clause as the whole meaning or substitute postvoteEHforpreimage. Wholeversion, certification/judicial or condemnation/Tribal/State/permit qualifications and Infrastructuremapping remain pending.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:259",
+            "url": "https://clerk.house.gov/evs/2026/roll259.xml",
+            "raw_sha256": "3c2549f2a9d49cf201a07e58ba30f8fa37bfce4b821774e52b063ec2c41ae6ad",
+            "governed_bytes_sha256": "5a4ffe5161c0a71a88f5bcd8c7d8fd0fdb05aa997c9acb1b00ef7937a7df0302"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "locator": "OnlyownPartA6sourcecharacters0:2000read;interiorunreviewed",
+            "passage": "AMENDMENT NO. 6 OFFERED BY MR . HUNT \nThe Acting CHAIR. It is now in order \nto consider amendment No. 6 printed in \npart A of House Report 119–755. \nMr. HUNT. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title III, add the \nfollowing new section: \nSEC. 3 ll. JUDICIAL PROTECTIONS RELATING \nTO CERTIFIED ENERGY INFRA-\nSTRUCTURE SUPPORTING DEPART-\nMENT OF DEFENSE. \n(a) CERTIFICATION.— \n(1) IN GENERAL .—The Secretary of Defense \nmay certify for purpose of this section any \ncovered infrastructure if the Secretary sub-\nmits to the Committees on Armed Services \nof the Senate and the House of Representa-\ntives, and files with the clerk of each Federal \ndistrict court in the district in which the in-\nfrastructure is located, a written determina-\ntion (signed by the Secretary) that the fol-\nlowing criteria are met: \n(A) The infrastructure is necessary to en-\nsure military readiness, the continuity of \nfuel supply to the Department of Defense, or \nrelated logistical support for the Depart-\nment. \n(B) Interference with the construction or \noperation of the infrastructure would mate-\nrially impair military readiness, fuel supply \nchains for the Department of Defense, or the \nsustainment of military operations. \n(2) R\nECORD.—The Secretary shall maintain \na contemporaneous written record of the fac-\ntual basis supporting each certification \nissued under paragraph (1), which shall con-\nstitute the record for purposes of judicial re-\nview under subsection (f) and termination \nproceedings under subsection (d). \n(b) E\nFFECT.—A certification under sub-\nsection (a) shall take effect upon the date of \nfiling pursuant to such subsection and shall \nremain in effect unless terminated in accord-\nance with this section. \n(c) R\nEBUTTABLE PRESUMPTION.—There shall \nbe a rebuttable presumption that infrastruc-\nture previously certified under subsection (a) \ncontinues"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "locator": "OnlyownPartA6closing1200read; notwholeunit",
+            "passage": "herwise \ninterfere with the construction, operation, \nor Federal authorization of certified infra-\nstructure. \nVerDate Sep 11 2014 09:38 Jul 22, 2026 Jkt 069060 PO 00000 Frm 00305 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\A21JY7.039 H21JYPT1mduett on DSK9DHNXB4PROD with HOUSE\n\nPDF page 306\nCONGRESSIONAL RECORD — HOUSEH4990 July 21, 2026 \n(3) The term ‘‘covered infrastructure’’ \nmeans domestic energy infrastructure lo-\ncated within the United States that— \n(A) consists of crude oil or refined petro-\nleum product pipelines, natural gas pipe-\nlines, crude oil or natural gas production or \nprocessing facilities, or storage or transpor-\ntation infrastructure associated with any \nsuch matter; and \n(B) provides, or has the capacity to pro-\nvide, crude oil, natural gas, refined petro-\nleum products, or fuel to one or more mili-\ntary installations or operations of the De-\npartment of Defense, including through the \ndelivery to a refinery or processing facility \nfrom which fuel is supplied to such an instal-\nlation or operation. \n(4) The term ‘‘operator’’ means an entity \nholding operating authority over infrastruc-\nture under applicable Federal permits and \nauthorizations, and any successor operator. \n\n\n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "3643abd628e374c25a4dcd30a6818c18f30d82a49a188421f8d9d056f581125f",
+      "record": {
+        "action_id": "house:119:2:260",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "ExactPartA7SantaYnez/Gaviota/submergedland easement acquisition/licensingoffering identified, but only declared opening2000andclosing1200ofits13008characterunitread; substantialwholeinterior and materiallegal/rights/definition baselines remain unreviewed. Clerkagreementdoes not establish enactedpreemption, automaticcertificate, landtitle/compensation, pipelineoperation or militarynecessity. Do not use an openingpipeline/infrastructure clause as the whole meaning or substitute postvoteEHforpreimage. Wholeversion, certification/judicial or condemnation/Tribal/State/permit qualifications and Infrastructuremapping remain pending.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:260",
+            "url": "https://clerk.house.gov/evs/2026/roll260.xml",
+            "raw_sha256": "46102e93ffc0673815ab51f1efb699b50f66c0cee2f6680cc28a7a28a56f3960",
+            "governed_bytes_sha256": "9120275600d6d7d48d080db262bde20a4c52357a28cbec64c30edea510023006"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "locator": "OnlyownPartA7sourcecharacters26180:28180read;interiorunreviewed",
+            "passage": "AMENDMENT NO. 7 OFFERED BY MR . HUNT \nThe Acting CHAIR. It is now in order \nto consider amendment No. 7 printed in \npart A of House Report 119–755. \nMr. HUNT. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAdd at the end of subtitle D of title \nXXVIII, the following new section: \nSEC. 28 ll. ACQUISITION OF EASEMENTS FOR \nDEFENSE FUEL SUPPLY INFRA-\nSTRUCTURE. \n(a) AUTHORITY TO ACQUIRE.—The Secretary \nof Defense is authorized to acquire, by pur-\nchase, donation, exchange, or condemnation, \non behalf of the United States, such perma-\nnent easements over all lands along the \nroute of the Santa Ynez Pipeline System, in-\ncluding all lands owned or otherwise held by \nthe State of California or any agency, de-\npartment, or instrumentality thereof, as the \nSecretary of Defense determines necessary \nto ensure continuous pipeline transportation \nof crude oil from the Santa Ynez Unit to do-\nmestic refineries supplying Department of \nDefense installations in the State of Cali-\nfornia. The acquisition of such easements is \nan authorized purpose for which the Sec-\nretary of Defense or the Secretary of a mili-\ntary department may exercise the land ac-\nquisition authorities of section 2663 of title \n10, United States Code. Easements author-\nized to be acquired under this subsection in-\nclude— \n(1) a permanent easement over the Gaviota \nSegment sufficient for the operation, main-\ntenance, inspection, and repair of Lines CA- \n324 and CA-325; \n(2) a permanent easement over the State \nsubmerged lands traversed by the offshore \npipeline segments of the Santa Ynez Pipeline \nSystem, sufficient for the operation, mainte-\nnance, inspection, and repair of such seg-\nments; and \n(3) such additional permanent easements \nover any other lands along the route of the \nSanta Ynez Pipeline System as the Sec-\nretary of Defense determines necessary for \nthe continuous and unobstructed operation \nof suc"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "locator": "OnlyownPartA7closing1200read; notwholeunit",
+            "passage": "e Las Flores Canyon proc-\nessing facilities in Santa Barbara County, \nCalifornia, to Pentland Station in Kern \nCounty, California. \n(3) The term ‘‘Santa Ynez Pipeline Sys-\ntem’’ means the complete network of off-\nshore and onshore pipelines and associated \ninfrastructure used to transport crude oil \nand associated production from offshore \nplatforms Harmony, Heritage, and Hondo to \nPentland Station in Kern County, California, \nincluding— \n(A) the offshore pipeline segments extend-\ning from such platforms over the Outer Con-\ntinental Shelf and over State submerged \nlands to the Las Flores Canyon processing \nfacilities; and \n(B) the Las Flores Pipeline System. \n(4) The term ‘‘Santa Ynez Unit’’ means the \nFederal offshore oil and gas production unit \noperated pursuant to one or more leases \ngranted under the Outer Continental Shelf \nLands Act (43 U.S.C. 1331 et seq.) off the \ncoast of Santa Barbara County, California, \nincluding offshore platforms Harmony, Her-\nitage, and Hondo. \n(5) The term ‘‘State submerged lands’’ \nmeans the lands beneath navigable waters \nthe title to which was conveyed to the State \nof California under section 3 of the Sub-\nmerged Lands Act (43 U.S.C. 1311). \n\n\n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "f9285c1ed8161a09b904c0601421023009437569f962692e01977c6bc38da7b6",
+      "record": {
+        "action_id": "house:119:2:261",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete ownPartA8offering/operativeunit and Clerk rejection support an unaccepted whole refining-capacity legalmechanisms study candidate. Preserve30daystudy/120dayreport bothFROMENACTMENT, national scope/Californiacasestudy, at-least-three mechanism categories, GAO/EIAcoordination and namedcommittee recipients. It exercises no preemption/waiver, approves no refinery and establishes no actual State-caused harm or militarynecessity. Whole physicalcapacitystudy versus legal/militaryenergyoversight mapping requires independent review.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:261",
+            "url": "https://clerk.house.gov/evs/2026/roll261.xml",
+            "raw_sha256": "215bdf4f69a6c4185be13727d8b00a3cc6787093246bed2a4da9aabc2349d3b9",
+            "governed_bytes_sha256": "f22381f96bd9add954a2f5d95bb04149588cabbf64f652a2f3b3dfce8f8d5841"
+          },
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+            "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+            "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+            "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+            "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+            "locator": "Complete own PartA8offering/operative character39188:41632; other offerings not used",
+            "passage": "AMENDMENT NO. 8 OFFERED BY MR . GALLAGHER \nThe Acting CHAIR. It is now in order \nto consider amendment No. 8 printed in \nHouse Report 119–755. \nMr. GALLAGHER. Mr. Chair, I rise \nin strong support of amendment No. 8, \nand I urge its adoption. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title XVII, add \nthe following new section: \nSEC. 17ll. STUDY ON PREEMPTION OR MITIGA-\nTION OF STATE ACTIONS THAT UN-\nDERMINE CRITICAL DOMESTIC RE-\nFINING CAPACITY. \n(a) S TUDY.—Not later than 30 days after \nthe date of the enactment of this Act, Comp-\ntroller General of the United States, in co-\nordination with the Administrator of the \nUnited States Energy Information Adminis-\ntration, shall conduct a study on potential \nmechanisms by which the Federal govern-\nment may preempt, repeal, or otherwise \nmitigate actions taken, or proposed to be \ntaken, by a State or political subdivision \nthereof that have, or would have, the effect \nof undermining domestic refining capacity \ncritical to national security. \n(b) E\nLEMENTS.—The study under subsection \n(a) shall assess, at a minimum, the following \nmechanisms: \n(1) The regulatory preemption of State ac-\ntions specified in such subsection. \n(2) The issuance of national security waiv-\ners to preclude such actions. \n(3) The use of other appropriate Federal \nlegal authorities to ensure the stability and \nsufficiency of the domestic refining capacity \nspecified in such subsection. \n(c) S\nCOPE.—In carrying out the study under \nsubsection (a), the Comptroller General shall \nassess mechanisms available to the Federal \ngovernment on a national basis, but shall \ntake into consideration as a case study \nmechanisms available with respect to ac-\ntions taken by the State of California. \n(d) R\nEPORT.—Not later than 120 days after \nthe date of the enactment of this Act, Comp-\ntroller General shall submit to the appro-\npriate congressional committees a report \ncontaining the findings of the study under \nsubsection (a). \n(e) A\nPPROPRIATE CONGRESSIONAL COMMIT-\nTEES DEFINED.—In this section, the term \n‘‘appropriate congressional committees’’ \nmeans— \n(1) the Committee on Armed Services, the \nCommittee on Energy and Commerce, and \nthe Committee on Natural Resources of the \nHouse of Representatives; and \n(2) the Committee on Armed Services and \nthe Committee on Energy and Natural Re-\nsources of the Senate. \n\n\n"
+          },
+          {
+            "source_id": "govinfo:hres1438eh",
+            "locator": "Complete governingrule previouslyread",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                  "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                  "start_character": 0,
+                  "end_character": 10221
+                }
+              ],
+              "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+              "total_characters": 10221,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr8800:amend8:119"
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:252",
+      "original_source_object_sha256": "ea61cbd9950299f673b1ba3dfa49539d5b0257a4c4b04ee99c06e4e41140aaf2"
+    },
+    {
+      "source_id": "clerk:119:2:253",
+      "original_source_object_sha256": "07a2de5931c5aa4c62dd949493e8744e4beeedae10885b210b72e88c6f372138"
+    },
+    {
+      "source_id": "clerk:119:2:254",
+      "original_source_object_sha256": "d5ee94f90918a456674969ea92855bc157a35691ff104a045aa901e062635282"
+    },
+    {
+      "source_id": "clerk:119:2:255",
+      "original_source_object_sha256": "78d6c97ec5795ee05ba3b14f76528561378b3aae173ed6738b1c9d5fb480d7d6"
+    },
+    {
+      "source_id": "clerk:119:2:256",
+      "original_source_object_sha256": "deddefecf3d6328dd5acba7f52b61b28cbf476b5cc13d5a57f1149a9cffafe1f"
+    },
+    {
+      "source_id": "clerk:119:2:257",
+      "original_source_object_sha256": "119c6fb79c5b5e2412db5bb219bde12e23ca0e0e99df33fcd00ca431f75e82c4"
+    },
+    {
+      "source_id": "clerk:119:2:258",
+      "original_source_object_sha256": "7e4221bef1b10ec1fb694e1f9d4c90e7c5bdb492110d5db65335604051600519"
+    },
+    {
+      "source_id": "clerk:119:2:259",
+      "original_source_object_sha256": "d5d2c20dbeb3c4edcdc233c3b7fa2c20fe5c419917dcaabf6f2bc234d60be87f"
+    },
+    {
+      "source_id": "clerk:119:2:260",
+      "original_source_object_sha256": "9bb5d6f2d124e0fe1f94bbc5b43ee7c08b82a523119532340960d7c72b091f30"
+    },
+    {
+      "source_id": "clerk:119:2:261",
+      "original_source_object_sha256": "e682def157457be874d1243253baaddfed11a69482cbe61009d95711f601f1f3"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+      "original_source_object_sha256": "33c964ca0076fbc3f6c16a90201218a107aba1e06186d438f09fb0a786d192f1"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+      "original_source_object_sha256": "83d17ddf325125730884297642307f23f9cfc64d8aadf4d1bb6cb569b1398085"
+    },
+    {
+      "source_id": "govinfo:hr1118eh",
+      "original_source_object_sha256": "e2fdfb530f694762b095c8fd322254a5f4d294f292231d9bff22b39b5ea8fb60"
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "original_source_object_sha256": "94957804622c76e7efae6b9e37d6c0ce932d4cd8ad66793e44c4c15cc1fb0ea1"
+    },
+    {
+      "source_id": "rules:rcp119-33-ndaa-struck-sections",
+      "original_source_object_sha256": "9e32c9e99efb0d5a37f29f83da97eca391a5ec70dc0c25dc53bb50fc527d40ef"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr1118eh",
+      "governed_length": 1093,
+      "review_extent": "Complete ownbill read; procurementbaseline unreviewed"
+    },
+    {
+      "source_id": "govinfo:hres1438eh",
+      "governed_length": 10221,
+      "review_extent": "Complete ownrule read; incorporatedwholeprints unreviewed"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+      "governed_length": 9483,
+      "review_extent": "Complete captured offerings source read; only ownPartA1–4boundtoactions"
+    },
+    {
+      "source_id": "rules:rcp119-33-ndaa-struck-sections",
+      "governed_length": 4472,
+      "review_extent": "Complete captured518/521/524/1213unitsread; notwholeRCP"
+    },
+    {
+      "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+      "governed_length": 46475,
+      "review_extent": "Complete ownPartA8characters39188:41632read; forPartA6characters0:26180andPartA7characters26180:39188onlyfirst2000/last1200read, remaininginteriorsunreviewed. Truncated prior broad output not counted as whole read."
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 10,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 2,
+    "newly_screened_meanings_authored": 2,
+    "prior_review_case_meanings_authored": 0,
+    "units": [
+      {
+        "action_id": "house:119:2:252",
+        "evidence_unit": "exact_question_or_complete_own_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:253",
+        "evidence_unit": "exact_question_or_complete_own_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:254",
+        "evidence_unit": "exact_question_or_complete_own_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:255",
+        "evidence_unit": "exact_question_or_complete_own_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:256",
+        "evidence_unit": "exact_question_or_complete_own_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:257",
+        "evidence_unit": "exact_question_or_complete_own_units",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:258",
+        "evidence_unit": "complete_exact_child_and_declared_target",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:259",
+        "evidence_unit": "partial_whole_child",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:260",
+        "evidence_unit": "partial_whole_child",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:261",
+        "evidence_unit": "complete_exact_child_and_declared_target",
+        "whole_action_meaning_authored": true
+      }
+    ]
+  },
+  "original_validation_attribution": {
+    "focused_test_count": 132,
+    "inherited_focused_test_count": null,
+    "inherited_focused_suite_head": null,
+    "semantic_checks": 7,
+    "compiled_sha256": "88c3ad8a3e263f091566104a30bbd3353bd28d71817188550c68282840350c28"
+  },
+  "historical_limits": "Exact original candidate/disposition/member/evidence state and partial extents preserved. Transporting full referenced objects does not expand substantive reading/current-law or independent-review clearance. No accepted semantics/membership/publication/production authority.",
+  "original_new_action_objects": {
+    "committed_provenance": {
+      "head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/authoring.json",
+      "git_blob": "8483bdfe7d0b73e1397104d1fd101ddfed5866ff",
+      "git_bytes_sha256": "47139ca938f2e43cafe39c71c64588753945acb98ca69a18fab3eac7c933cc64"
+    },
+    "actions": [
+      {
+        "original_action_sha256": "0d11a0050a245440ef5ab343308627cfbe320b2efa2f2d715f5e200dbfc88842",
+        "action": {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "bill_type": "hr",
+          "bill_number": 8800,
+          "stage": "amendment",
+          "episode_id": "episode:hr8800:amend4:119",
+          "short_description": "Removing a proposed voice-assessment drug-testing pilot",
+          "compact_description": "The agreed amendment deletes an optional automated voice-assessment pilot, including conditional testing/privacy/punitive-use elements and report/sunset clocks measured from establishment. It does not end all military drug testing or establish technology accuracy. Whole technology-versus-personnel membership remains unaccepted.",
+          "compact_source_refs": [
+            "congressional-record:2026-07-21-ndaa-offerings",
+            "rules:rcp119-33-ndaa-struck-sections"
+          ],
+          "additional_source_ids": [
+            "rules:rcp119-33-ndaa-struck-sections",
+            "govinfo:hres1438eh"
+          ],
+          "meaning": "The House agreed to exact PartA4to H.R.8800, offered by the designated Member, striking proposed section518of the governing RCP119–33. That chamber amendment does not itself enact the whole defense package or stop an existing operating program. The exact target is the optional voice-based risk-assessment drug-testing pilot, not all Department of Defense drug testing.\nProposed518would permit, rather than require, the Secretary to establish a pilot evaluating automated voice-based risk assessment for targeted testing of ArmedForces members in place of universal urinalysis. IF the pilot were carried out, its elements would be mandatory: use the automated technology within the DrugDemandReductionProgram, align with deterrence/security/fitness/readiness/order/discipline goals, allow results to be used for punitive or other appropriate actions, AND protect individual privacy and comply with applicable law and Department policy. Evaluation language is not evidence that the technology detects drug use accurately or improves readiness, and privacy language is not proof of actual safeguards implementation.\nThe conditional report would be due one year AFTER ESTABLISHMENT of the pilot, assessing testing volume, cost savings, personnel time and readiness; the conditional pilot would terminate three years AFTER ESTABLISHMENT. Those clocks are not from enactment and apply only if the optional pilot is carried out. Striking518removes this proposed authorization/elements/report/sunset together. It neither prohibits every voice technology nor establishes that an existing pilot, general testing authority, privacy law or disciplinary baseline is repealed. Current program rules, actual testing practice, validated technology performance and individual disciplinary outcomes remain uninspected.\nAn Aye supports deleting this proposed optional pilot; a No opposes that deletion, not necessarily every testing policy or a component-specific position about punitive use. Infrastructure/Technology membership is an UNACCEPTED candidate proposal based on this exact automated assessment/testing-technology authorization and its removal. A competing boundary treats the whole choice as military personnel/health oversight. Independent baseline, exact-version and taxonomy review is required. No deployed surveillance, proven accuracy, privacy harm, savings, readiness improvement, motive or enactment is inferred.",
+          "limitations": [
+            "Exact deletion of proposed518, not repeal of all militarydrugtesting or an operatingpilot.",
+            "Pilot MAY; elements/report/sunset conditional if carriedout, including punitive-use and privacy/compliance requirements.",
+            "One-year report and three-year termination from ESTABLISHMENT, not enactment.",
+            "No validated accuracy, deployment, actualprivacyprotection/harm, savings or individualdisciplinary outcome certified.",
+            "Whole automatedassessment technology versus militarypersonnel/health taxonomy remains unaccepted."
+          ],
+          "choice_meanings": {
+            "Yea": "supported deleting proposed section518 voice-assessment drug-testing pilot",
+            "Nay": "opposed deleting proposed section518 voice-assessment drug-testing pilot"
+          },
+          "action_id": "house:119:2:258",
+          "claim_source_map": [
+            {
+              "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+              "locator": "Complete own PartA4offering/operative character1727:2135; other offerings not used",
+              "passage": "AMENDMENT NO. 4 OFFERED BY MS . BOEBERT \nThe Acting CHAIR. It is now in order \nto consider amendment No. 4 printed in \npart A of House Report 119–755. \nMs. BOEBERT. Mr. Chair, I rise as \nthe designee of the gentleman from \nTexas (Mr. R\nOY), and I have an amend-\nment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nStrike section 518. \n\n\n"
+            },
+            {
+              "source_id": "rules:rcp119-33-ndaa-struck-sections",
+              "locator": "Complete captured518/521/524/1213units read; complete518is exact strike target",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699.0000000.json",
+                    "sha256": "3b895498305c01423177f2b305efdab59d180afee90195684cf044e4f72eb2b7",
+                    "start_character": 0,
+                    "end_character": 4472
+                  }
+                ],
+                "utf8_sha256": "344adbd9f591444378a631d1a75c5a536b8277aad7df5bcacf347daafac38699",
+                "total_characters": 4472,
+                "transport_only": true
+              }
+            },
+            {
+              "source_id": "govinfo:hres1438eh",
+              "locator": "Complete governingrule;119-33deemedbase not finalEH",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                    "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                    "start_character": 0,
+                    "end_character": 10221
+                  }
+                ],
+                "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+                "total_characters": 10221,
+                "transport_only": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "original_action_sha256": "1801f1ad7608b9c058b34b3ab8d03cb2566ecb5ee31f91cc2038425b1c2c2c52",
+        "action": {
+          "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+          "bill_type": "hr",
+          "bill_number": 8800,
+          "stage": "amendment",
+          "episode_id": "episode:hr8800:amend8:119",
+          "short_description": "Studying Federal legal tools concerning domestic refining capacity",
+          "compact_description": "The failed amendment would require a national GAO/EIA study within30days and a report within120days, both from enactment, with California as a case study. It exercises no preemption or waiver and approves no refinery. Whole capacity-study versus legal-oversight membership remains unaccepted.",
+          "compact_source_refs": [
+            "congressional-record:2026-07-21-ndaa-remaining-offerings"
+          ],
+          "additional_source_ids": [
+            "govinfo:hres1438eh"
+          ],
+          "meaning": "The House rejected exact PartA8to H.R.8800. The whole amendment would require a GAO study, in coordination with the EnergyInformationAdministration, on potential Federal mechanisms to preempt, repeal or otherwise mitigate State/local actions affecting domestic refining capacity critical to national security. It does not itself preempt or repeal a State law, grant a waiver, approve a refinery or find that a particular State action actually undermines capacity.\nThe study duty is due not later than30days AFTER ENACTMENT. It must assess at least regulatory preemption, national-security waivers and other appropriate Federal legal authorities. Scope is NATIONAL, with California as a required case study, not a California-only authorization. The report to the named HouseArmedServices/EnergyCommerce/NaturalResources and SenateArmedServices/EnergyNaturalResources committees is separately due120days AFTER ENACTMENT, not120daysafter the study. Neither deadline is a fixed construction schedule or evidence of actual findings. No specific underlying preemption or waiver statute is newly selected or exercised by this amendment; legal availability and State-law effects are subjects for study, not established conclusions here.\nAn Aye would support this whole study/report; a No opposes the study/report, not necessarily a particular State policy or every Federal legal tool. Rejection means this child did not add those duties to the bill. Infrastructure/Technology membership is an UNACCEPTED candidate proposal based on an express national study of maintaining physical refining capacity. A competing boundary treats the whole measure as military-energy legal/jurisdictional oversight. Independent exact-version and taxonomy review remains required. No actual national-security harm, preemption, refinery operation, fuel-supply improvement, environmental result, motive or enactment is inferred.",
+          "limitations": [
+            "Failed exactPartA8study/report, not actualpreemption, waiver or refineryapproval.",
+            "30daystudy and120dayreport both measured from ENACTMENT, not sequential deadlines.",
+            "National scope with required California case study; at least three named mechanism types.",
+            "Stateaction effects and underlying legalavailability are study subjects, not factual/legal conclusions.",
+            "Whole physicalcapacitystudy versus military-energy/jurisdictional oversight taxonomy unaccepted."
+          ],
+          "choice_meanings": {
+            "Yea": "supported adding the exact national refining-capacity legal-mechanisms study and report",
+            "Nay": "opposed adding the exact national refining-capacity legal-mechanisms study and report"
+          },
+          "action_id": "house:119:2:261",
+          "claim_source_map": [
+            {
+              "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+              "locator": "Complete own PartA8offering/operative character39188:41632; other offerings not used",
+              "passage": "AMENDMENT NO. 8 OFFERED BY MR . GALLAGHER \nThe Acting CHAIR. It is now in order \nto consider amendment No. 8 printed in \nHouse Report 119–755. \nMr. GALLAGHER. Mr. Chair, I rise \nin strong support of amendment No. 8, \nand I urge its adoption. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title XVII, add \nthe following new section: \nSEC. 17ll. STUDY ON PREEMPTION OR MITIGA-\nTION OF STATE ACTIONS THAT UN-\nDERMINE CRITICAL DOMESTIC RE-\nFINING CAPACITY. \n(a) S TUDY.—Not later than 30 days after \nthe date of the enactment of this Act, Comp-\ntroller General of the United States, in co-\nordination with the Administrator of the \nUnited States Energy Information Adminis-\ntration, shall conduct a study on potential \nmechanisms by which the Federal govern-\nment may preempt, repeal, or otherwise \nmitigate actions taken, or proposed to be \ntaken, by a State or political subdivision \nthereof that have, or would have, the effect \nof undermining domestic refining capacity \ncritical to national security. \n(b) E\nLEMENTS.—The study under subsection \n(a) shall assess, at a minimum, the following \nmechanisms: \n(1) The regulatory preemption of State ac-\ntions specified in such subsection. \n(2) The issuance of national security waiv-\ners to preclude such actions. \n(3) The use of other appropriate Federal \nlegal authorities to ensure the stability and \nsufficiency of the domestic refining capacity \nspecified in such subsection. \n(c) S\nCOPE.—In carrying out the study under \nsubsection (a), the Comptroller General shall \nassess mechanisms available to the Federal \ngovernment on a national basis, but shall \ntake into consideration as a case study \nmechanisms available with respect to ac-\ntions taken by the State of California. \n(d) R\nEPORT.—Not later than 120 days after \nthe date of the enactment of this Act, Comp-\ntroller General shall submit to the appro-\npriate congressional committees a report \ncontaining the findings of the study under \nsubsection (a). \n(e) A\nPPROPRIATE CONGRESSIONAL COMMIT-\nTEES DEFINED.—In this section, the term \n‘‘appropriate congressional committees’’ \nmeans— \n(1) the Committee on Armed Services, the \nCommittee on Energy and Commerce, and \nthe Committee on Natural Resources of the \nHouse of Representatives; and \n(2) the Committee on Armed Services and \nthe Committee on Energy and Natural Re-\nsources of the Senate. \n\n\n"
+            },
+            {
+              "source_id": "govinfo:hres1438eh",
+              "locator": "Complete governingrule previouslyread",
+              "passage": {
+                "$lossless_text_parts": [
+                  {
+                    "path": "source_parts/0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126.0000000.json",
+                    "sha256": "5fa1cca13e4279f3bd9f47b276bc77e650e2a55172c266420f389442de660cfd",
+                    "start_character": 0,
+                    "end_character": 10221
+                  }
+                ],
+                "utf8_sha256": "0125c13fda655bd51ed82df711625ea0f79a8c9a659bde7c1cc9f6d3dcef8126",
+                "total_characters": 10221,
+                "transport_only": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "original_bounded_correction_receipt": {
+    "original_receipt_sha256": "74ffae03d38174150ec4f634df65b3783a665b6ac3b09122f2994156cac0ab9f",
+    "committed_provenance": {
+      "head": "444721df4eeea715a00ff45865f4bb87e9269e35",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/prevalidation_schema_alias_correction.json",
+      "git_blob": "430937c4d52798c8a361bb1d549e659e9b5843ab",
+      "git_bytes_sha256": "6f49e08a91e642f9f794534203d0b6352223a3f4d1ada9a7741bd95125ad8ed1"
+    },
+    "receipt": {
+      "kind": "prevalidation_authoring_schema_failure_and_safe_correction",
+      "command": "python .tmp/infra_delta_build.py 99",
+      "initial_exit_code": 1,
+      "diagnostic": "sharedActionCoreArtifact actions.62.choice_meanings rejected unexpected Aye/No keys",
+      "correction": "Use schema Yea/Nay choice keys; governed Clerk Aye/No observations remain unchanged and canonical projection normalizes them.",
+      "affected_actions": [
+        "house:119:2:258",
+        "house:119:2:261"
+      ],
+      "meaning_changes": false,
+      "source_changes": false,
+      "methodology_changes": false,
+      "preimage_basis": "Declared key substitution only; no separate initial file byte hash was captured.",
+      "final_build_exit_code": 0,
+      "initial_guard_failure_journal": {
+        "start_utc": "2026-10-19T18:15:21.290294+00:00",
+        "end_utc": "2026-10-19T18:15:23.479442+00:00",
+        "processes": [
+          {
+            "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 99 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch99_20260916\\validation_receipt.json",
+            "returncode": 1,
+            "process_wall_seconds": 2.189
+          }
+        ]
+      },
+      "guard_case_correction": "Initial exact-action validator failed because guard expected lowercase scope while unchanged authored sentence began Scope; validator/test literal corrected, no source/meaning change, final source/replay/full132/7passed."
+    }
+  }
+}

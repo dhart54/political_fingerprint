@@ -1,0 +1,60 @@
+{
+  "specification_marker": {
+    "marker_utc": "2026-10-21T13:33:50.505834+00:00",
+    "qualification": "Complete retained11304characterHR4371EH read in contiguous0:6500/6500:11304slices before marker, untimed. FullEH reading only, not committee/EH/floor reconciliation, incorporated-law/current-law/Infrastructure membership or actual child/sponsor findings."
+  },
+  "formal_validation_processes": {
+    "start_utc": "2026-10-21T13:36:36.153065+00:00",
+    "end_utc": "2026-10-21T13:37:04.726709+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 129 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch129_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.522
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 0,
+        "process_wall_seconds": 5.638,
+        "scope": "Only semantic gate retried outside sandbox after12temp-directory PermissionErrors; no product/test changes or source-gate retry"
+      }
+    ],
+    "initial_failed_attempt": "initial_sandbox_validation_processes.json; semantic runner failed12temporary-directory PermissionErrors; focused4/source-conservation-replay already passed, not product defects"
+  },
+  "useful_specification_authoring_elapsed_window_seconds": 165.647,
+  "source_reading_before_marker_seconds": null,
+  "source_reading_qualification": "Preparatory source reading was not continuously timed; no active duration is invented.",
+  "formal_validation_process_seconds": 8.16,
+  "byte_proof_and_delivery_overhead": "Separate later overhead; not included in useful specification/authoring window or formal gate-process seconds.",
+  "new_source_acquisitions": 0,
+  "protected_retries": 0,
+  "current_targeted_tests": {
+    "count": 4,
+    "reported_test_seconds": 8.411,
+    "process_wall_seconds": 8.646,
+    "result": "passed",
+    "scope": [
+      "Current129completeHR4371EH/age/placement/sponsor/household/disclosure/minimumchecks/conditionalPRA-APA/applicability and negative mutations",
+      "Preserved128PartA6source/clocks/literalLACKSStatefloor/savings",
+      "Preserved128PartA7California-payee/separate-preemption-verbs",
+      "Preserved127PartA7bodyguard-on-exactpreimage"
+    ]
+  },
+  "initial_sandbox_semantic_failure": {
+    "start_utc": "2026-10-21T13:36:36.153065+00:00",
+    "end_utc": "2026-10-21T13:36:40.629615+00:00",
+    "processes": [
+      {
+        "command": "python scripts/validate_infrastructure_discovery_delta.py --batch 129 --receipt docs\\editorial\\shared_candidates\\house_119_infrastructure_batch129_20260916\\validation_receipt.json",
+        "returncode": 0,
+        "process_wall_seconds": 2.522
+      },
+      {
+        "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+        "returncode": 1,
+        "process_wall_seconds": 1.954
+      }
+    ]
+  },
+  "timing_qualification": "Successful source/semantic process time8.160s excludes focusedprocess8.646s and initial sandbox failure/retry overhead. Useful-authoring elapsed window is not active work duration; preparatory source reading untimed."
+}

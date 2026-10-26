@@ -1,0 +1,402 @@
+{
+  "transport_schema": "historical_candidate_delta_deduplicated_lossless_parts_v1",
+  "batch": 85,
+  "exact_committed_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "export_anchor_head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+  "committed_provenance": {
+    "membership": {
+      "head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/membership_review.json",
+      "git_blob": "99d77c05cbec57f72ab0e35cf082a614a9f3894b",
+      "git_bytes_sha256": "f396ecac0c34696151fe67fd100da963f1040f73f35d78691f3a6b77401a099d"
+    },
+    "sources": {
+      "head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/sources.json",
+      "git_blob": "4bf7b9272264fca215f3ee2965572fe939e05849",
+      "git_bytes_sha256": "3934d4560ac94eb7592f191acb1569d5c96d19c02ce22b7cc7b065a37d1027cb"
+    },
+    "screening": {
+      "head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/screening_receipt.json",
+      "git_blob": "ed6e7ca7555be81a597f13657a9d916717662ad2",
+      "git_bytes_sha256": "d7b5d66d408ad1284f72608824c4df63d37a546ac1443131a63c78dbd8ad358a"
+    },
+    "screening_units": {
+      "head": "47a51474185295b8bc6c1f1d1563ed645aaccb06",
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/screening_units_receipt.json",
+      "git_blob": "cdab216877641b0d6fa9eb09d3573f51f20388e0",
+      "git_bytes_sha256": "01707fc54a616adf4cd57e0475f072f69e051ea2a2dceb047bef82648e368f46"
+    }
+  },
+  "original_membership_review_sha256": "dc7c22edcf085881fd4127b5d5935cdf0ac314d6277845603bbaf7db9b7078bf",
+  "new_screened_ids": [
+    "house:119:2:116",
+    "house:119:2:117",
+    "house:119:2:118",
+    "house:119:2:119",
+    "house:119:2:120"
+  ],
+  "prior_followup_ids": [],
+  "records": [
+    {
+      "original_record_sha256": "2d95e5b76a8a7225d2cfb72110a1acd946d77ddd8842732f31e6fbac0c3155de",
+      "record": {
+        "action_id": "house:119:2:116",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete6409EH and complete retained7509aunit read. The bill adds human-or-natural foreign-emissions language to179B, a new-designation but-for demonstration to Administrator satisfaction, and a separate179Csanction/fee exception for defined severe/extreme ozone or serious particulate areas. The latter reaches emissions outside the nonattainment area, not solely outside the United States; exceptional-event and qualified beyond-State-control mobile emissions have separate predicates, underlying attainment-measure duties remain, and continued exception requires renewal at least every5years. Existing7509a(a)retains all other applicable plan requirements and its own demonstration, and the dated(d)printed carbon-monoxide wording is not silently corrected. Whole classification/179/185sanction/fee/319exceptional-event baselines and technical-environmental versus general air-policy taxonomy remain pending, rather than accepting a selected foreign-emissions fragment. No automatic waiver, all-standards repeal, particular pollution attribution, achieved attainment, Statecompliance or actual fee consequence is certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:116",
+            "url": "https://clerk.house.gov/evs/2026/roll116.xml",
+            "raw_sha256": "c428203f5364fd7e041fe5a0af568336197f803f5922ad119d5e41c7003ec9db",
+            "governed_bytes_sha256": "e168a9560ff8233aac976368b495d0e233f9552e6e6c7a64d3891b322c6d6f75"
+          },
+          {
+            "source_id": "govinfo:hr6409eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6409eh/html/BILLS-119hr6409eh.htm",
+            "raw_sha256": "2f86fb969f9d607dd713b970031b5405c7ac2077b49600b4892fd76b15f4f6dd",
+            "governed_bytes_sha256": "9599d8bf17e53176a427dfc4f2bfcdd015216ba1fd17951a0c03d1074059b163"
+          },
+          {
+            "source_id": "govinfo:42usc7509a-2024-international-air",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapI-partD-subpart1-sec7509a.htm",
+            "raw_sha256": "6f0c9e77559fadb2be00889e944310eef840609d9b20f47aa9018c2967ad18c3",
+            "governed_bytes_sha256": "b29a84cb26f69ff58febc5a1f61eccfde243abe310ffea23f1dc303eb3e53ff2"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6409eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/6e2233c5d7a8666cf09e1c0640336e5dca1725a48e50580d83efe860c987cc7d.0000000.json",
+                  "sha256": "3e609ddf3b5697075af7a15fbdf54f1c43807385482b5cc2cd787629afa019e7",
+                  "start_character": 0,
+                  "end_character": 4184
+                }
+              ],
+              "utf8_sha256": "6e2233c5d7a8666cf09e1c0640336e5dca1725a48e50580d83efe860c987cc7d",
+              "total_characters": 4184,
+              "transport_only": true
+            }
+          },
+          {
+            "source_id": "govinfo:42usc7509a-2024-international-air",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Implementation plans and revisions Notwithstanding any other provision of law, an implementation plan or plan revision required under this chapter shall be approved by the Administrator if— (1) such plan or revision meets all the requirements applicable to it under the 1 chapter other than a requirement that such plan or revision demonstrate attainment and maintenance of the relevant national ambient air quality standards by the attainment date specified under the applicable provision of this chapter, or in a regulation promulgated under such provision, and (2) the submitting State establishes to the satisfaction of the Administrator that the implementation plan of such State would be adequate to attain and maintain the relevant national ambient air quality standards by the attainment date specified under the applicable provision of this chapter, or in a regulation promulgated under such provision, but for emissions emanating from outside of the United States. (b) Attainment of ozone levels Notwithstanding any other provision of law, any State that establishes to the satisfaction of the Administrator that, with respect to an ozone nonattainment area in such State, such State would have attained the national ambient air quality standard for ozone by the applicable attainment date, but for emissions emanating from outside of the United States, shall not be subject to the provisions of section 7511(a)(2) or (5) of this title or section 7511d of this title. (c) Attainment of carbon monoxide levels Notwithstanding any other provision of law, any State that establishes to the satisfaction of the Administrator, with respect to a carbon monoxide nonattainment area in such State, that such State has attained the national ambient air quality standard for carbon monoxide by the applicable attainment date, but for emissions emanating from outside of the United States, shall not be subject to the provisions of section 7512(b)(2) or (9) 2 of this title. (d) Attainment of PM–10 levels Notwithstanding any other provision of law, any State that establishes to the satisfaction of the Administrator that, with respect to a PM–10 nonattainment area in such State, such State would have attained the national ambient air quality standard for carbon monoxide by the applicable attainment date, but for emissions emanating from outside the United States, shall not be subject to the provisions of section 7513(b)(2) of this title. "
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "4c5afbfb0646f4c17175cca1c3040cb455bf629e526c4b7c3fc6048088761969",
+      "record": {
+        "action_id": "house:119:2:117",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "procedural_context",
+        "rationale": "The exact Clerk question is a failed motion to recommit H.R.6398. No substantive motion body is interpreted. This remains non-counting procedural context, separate from whole6398passage and without component policy support/opposition.",
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:117",
+            "url": "https://clerk.house.gov/evs/2026/roll117.xml",
+            "raw_sha256": "ad97e07a3eac5b92091dc32af670aad1e67eb1da31fc74fc1515ef8cac38faeb",
+            "governed_bytes_sha256": "05b8e122b218d5dd98a74a95baedc90b1bea149fde419537bf4753fe80effc6c"
+          }
+        ],
+        "claim_source_map": [],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "1005293dd60739df6ecbf9a78b478131bddebefa4dde9052ecd46c6da0614218",
+      "record": {
+        "action_id": "house:119:2:118",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "interpreted_substantive_directional",
+        "rationale": "Complete6398EH,7609and4332operative units support an unaccepted whole review-channel candidate. Specific Federal-construction/NEPA-linked-action and proposed-regulation categories are deleted; EPAreview/written public comment on proposed Federal legislation and conditional unsatisfactory-legislation CEQreferral remain. The separateNEPA4332text is not amended. Construction-review relationship versus broader environmental/interagency administration requires independent taxonomy review; no current-law certificate, all-review repeal, automatic project clearance, speed/cost/emissions or health effect.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:118",
+            "url": "https://clerk.house.gov/evs/2026/roll118.xml",
+            "raw_sha256": "a2375de6f755df128301127f03577ea647a4b4340d1c795a3c65dc14e63ca3ec",
+            "governed_bytes_sha256": "8b5aea9d89fd63197350511caeb14abab63398f704c54e976d5af00045b9564a"
+          },
+          {
+            "source_id": "govinfo:hr6398eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6398eh/html/BILLS-119hr6398eh.htm",
+            "raw_sha256": "7061c4b0ac2cf0782986f07c74f21f4f31dc6a1238b32d1a342169e0c079ed5e",
+            "governed_bytes_sha256": "f6b81e46bf329ac022b4cbf3bc1f7a46e79dbf59c9a71be9797e4d1cf48273d3"
+          },
+          {
+            "source_id": "govinfo:42usc7609-2024-policy-review",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapIII-sec7609.htm",
+            "raw_sha256": "583d03630c8ebc25bf5240e2a4ac9dce53f514d57bc71920dd62549da84df8c1",
+            "governed_bytes_sha256": "deff37c53384bab481322fb2a6a1a11eb09f9df43fbbef1ae9dd05e1a6fd2033"
+          },
+          {
+            "source_id": "govinfo:42usc4332-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4332.htm",
+            "raw_sha256": "1e488727268009a42447de310b94f13380ae907ba6c2b8c87d82b4c740c1bd47",
+            "governed_bytes_sha256": "753d8c2bdaaf9a4e06c199daf35ef43a099dddead6ff38a25ee34ced85d13e9a"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr6398eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6398 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 6398 _______________________________________________________________________ AN ACT To amend the Clean Air Act relating to review by the Environmental Protection Agency of proposed legislation. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Reducing and Eliminating Duplicative Environmental Regulations Act'' or the ``RED Tape Act''. SEC. 2. POLICY REVIEW. Section 309 of the Clean Air Act (42 U.S.C. 7609) is amended-- (1) in subsection (a)-- (A) by striking ``and comment in writing'' and inserting ``, and comment in writing,''; (B) by striking ``Administrator,'' and inserting ``Administrator''; (C) by striking ``(1)''; and (D) by striking ``, (2) newly authorized Federal projects for construction and any major Federal agency action (other than a project for construction) to which section 102(2)(C) of Public Law 91-190 applies, and (3) proposed regulations published by any department or agency of the Federal Government''; and (2) in subsection (b), by striking ``, action, or regulation''. Passed the House of Representatives April 16, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 6398 _______________________________________________________________________ AN ACT To amend the Clean Air Act relating to review by the Environmental Protection Agency of proposed legislation."
+          },
+          {
+            "source_id": "govinfo:42usc7609-2024-policy-review",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(a) Environmental impact The Administrator shall review and comment in writing on the environmental impact of any matter relating to duties and responsibilities granted pursuant to this chapter or other provisions of the authority of the Administrator, contained in any (1) legislation proposed by any Federal department or agency, (2) newly authorized Federal projects for construction and any major Federal agency action (other than a project for construction) to which section 4332(2)(C) of this title applies, and (3) proposed regulations published by any department or agency of the Federal Government. Such written comment shall be made public at the conclusion of any such review. (b) Unsatisfactory legislation, action, or regulation In the event the Administrator determines that any such legislation, action, or regulation is unsatisfactory from the standpoint of public health or welfare or environmental quality, he shall publish his determination and the matter shall be referred to the Council on Environmental Quality. "
+          },
+          {
+            "source_id": "govinfo:42usc4332-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": {
+              "$lossless_text_parts": [
+                {
+                  "path": "source_parts/960ff9a494a1e079f8855f7c36dae2054d7a08ed427cc320049e1f154ca01256.0000000.json",
+                  "sha256": "f4e0ab02296aff677f81bc415d243d4d72f08f0edd5434159ad7fd3a4253432d",
+                  "start_character": 0,
+                  "end_character": 5728
+                }
+              ],
+              "utf8_sha256": "960ff9a494a1e079f8855f7c36dae2054d7a08ed427cc320049e1f154ca01256",
+              "total_characters": 5728,
+              "transport_only": true
+            }
+          }
+        ],
+        "episode_candidate_id": "episode:hr6398:119"
+      }
+    },
+    {
+      "original_record_sha256": "06ba4cce46b39cbcd5a9b54c2b5f1e0c95b11393170694365143f35cd65e0421",
+      "record": {
+        "action_id": "house:119:2:119",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete965EH is not merely scheduling: it deems a full1689substitute requiring DHSdesignate HaitiTPSuntil3monthsafterJanuary20,2029, provides consideration/debate/recommittal, disapplies specified House rules and directs transmission no later than1weekafterpassage. Whole exact adoption is a proposed Infrastructure exclusion because the deemed temporary immigration-status designation establishes no physical-service, scientific, technical, border-technology or infrastructure program. This does not infer any individual eligibility, asylum/citizenship/permanent residence, benefit or actual designation; TPSlegalconsequences/current status are not certified. It is separate from prior discharge and later1689passage, with no automatic substantive adoption inferred from discharge.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:119",
+            "url": "https://clerk.house.gov/evs/2026/roll119.xml",
+            "raw_sha256": "fa507dee65733696cc14ab6f22f2ca22a88eb9b2f5d10e1ab049b6bf677ad66a",
+            "governed_bytes_sha256": "87fd417efbd21436152e1bf98d3ef7102e62fcc67ccfae8fb49a71a487f751f8"
+          },
+          {
+            "source_id": "govinfo:hres965eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres965eh/html/BILLS-119hres965eh.htm",
+            "raw_sha256": "39386ec9ebf4ab866573140382578ceb29723b65129382940c9b278eb3f80d99",
+            "governed_bytes_sha256": "6da458873fd35060ed402946c731fbf84f682e9129d9a234771e65bc02b75f92"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hres965eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 965 Engrossed in House (EH)] <DOC> H. Res. 965 In the House of Representatives, U. S., April 16, 2026. Resolved, That immediately upon adoption of this resolution, the House shall proceed to the consideration in the House of the bill (H.R. 1689) to require the Secretary of Homeland Security to designate Haiti for temporary protected status. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute specified in section 4 of this resolution shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the majority leader and minority leader or their respective designees; and (2) one motion to recommit. Sec. 2. Clause 1(c) of rule XIX and clause 8 of rule XX shall not apply to the consideration of H.R. 1689. Sec. 3. The Clerk shall transmit to the Senate a message that the House has passed H.R. 1689 no later than one week after passage. Sec. 4. The amendment in the nature of a substitute referred to in the first section of this resolution is as follows: Strike all after the enacting clause and insert the following: ``SECTION 1. DESIGNATION OF HAITI FOR TEMPORARY PROTECTED STATUS. ``Notwithstanding any other provision of law, the Secretary of Homeland Security shall designate Haiti for temporary protected status until the date that is 3 months after January 20, 2029.''. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    },
+    {
+      "original_record_sha256": "a164692240264c234403fd105dd39f9ff988657f09fea5fde2677d5c226cee64",
+      "record": {
+        "action_id": "house:119:2:120",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "exact_action_ineligible",
+        "rationale": "Complete1689EH matches the965deemed operative substitute: notwithstanding other law, DHSshall designate HaitiTPSuntil3monthsafterJanuary20,2029. This whole fixed-duration temporary immigration-status measure establishes no physical-service, scientific, technical, border-technology or infrastructure program, supporting a proposed Infrastructure exclusion. Existing Immigrationwholemeaning for this same action is identified and not duplicated or narrowed into an Infrastructure fragment. No individual eligibility, legal benefit, asylum/citizenship/permanent residence, actual designation, current TPScondition or enactment is certified; passage is separate from rule/discharge.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:120",
+            "url": "https://clerk.house.gov/evs/2026/roll120.xml",
+            "raw_sha256": "5f6fff2235b983525a1436479ce7c097a0c86d0b6cf55af06c33657faa974fee",
+            "governed_bytes_sha256": "a2a0c74e8fe7bc212f99d4e8b47c8ad7029275cbe9871a94d2be32947efb4c8e"
+          },
+          {
+            "source_id": "govinfo:hr1689eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1689eh/html/BILLS-119hr1689eh.htm",
+            "raw_sha256": "6b8cd2b2a28091ff107f9d041f71cb11d34b8efd26580d9935b1368fa899d565",
+            "governed_bytes_sha256": "3e2621ca655a2d1cf4cf1100601f1c2b3715632cb933f20d41bfa5cdba1134b7"
+          },
+          {
+            "source_id": "govinfo:hres965eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres965eh/html/BILLS-119hres965eh.htm",
+            "raw_sha256": "39386ec9ebf4ab866573140382578ceb29723b65129382940c9b278eb3f80d99",
+            "governed_bytes_sha256": "6da458873fd35060ed402946c731fbf84f682e9129d9a234771e65bc02b75f92"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1689eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1689 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 1689 _______________________________________________________________________ AN ACT To require the Secretary of Homeland Security to designate Haiti for temporary protected status. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. DESIGNATION OF HAITI FOR TEMPORARY PROTECTED STATUS. Notwithstanding any other provision of law, the Secretary of Homeland Security shall designate Haiti for temporary protected status until the date that is 3 months after January 20, 2029. Passed the House of Representatives April 16, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 1689 _______________________________________________________________________ AN ACT To require the Secretary of Homeland Security to designate Haiti for temporary protected status."
+          },
+          {
+            "source_id": "govinfo:hres965eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 965 Engrossed in House (EH)] <DOC> H. Res. 965 In the House of Representatives, U. S., April 16, 2026. Resolved, That immediately upon adoption of this resolution, the House shall proceed to the consideration in the House of the bill (H.R. 1689) to require the Secretary of Homeland Security to designate Haiti for temporary protected status. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute specified in section 4 of this resolution shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the majority leader and minority leader or their respective designees; and (2) one motion to recommit. Sec. 2. Clause 1(c) of rule XIX and clause 8 of rule XX shall not apply to the consideration of H.R. 1689. Sec. 3. The Clerk shall transmit to the Senate a message that the House has passed H.R. 1689 no later than one week after passage. Sec. 4. The amendment in the nature of a substitute referred to in the first section of this resolution is as follows: Strike all after the enacting clause and insert the following: ``SECTION 1. DESIGNATION OF HAITI FOR TEMPORARY PROTECTED STATUS. ``Notwithstanding any other provision of law, the Secretary of Homeland Security shall designate Haiti for temporary protected status until the date that is 3 months after January 20, 2029.''. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      }
+    }
+  ],
+  "referenced_source_objects": [
+    {
+      "source_id": "clerk:119:2:116",
+      "original_source_object_sha256": "952a7c7b9608c767617d0669858a998ed34d0fbde8d3c8b9f7d2b6567af30b58"
+    },
+    {
+      "source_id": "clerk:119:2:117",
+      "original_source_object_sha256": "99c7eee7f12a0c2eb6267f007e709748ec344332fe70bdfaa3a781185b4525cc"
+    },
+    {
+      "source_id": "clerk:119:2:118",
+      "original_source_object_sha256": "0d4e41d2f07c432c38df68a5c346dec45d2e7f49bf81cf5ee4de8096e17194f9"
+    },
+    {
+      "source_id": "clerk:119:2:119",
+      "original_source_object_sha256": "30de832a6ef70e9476078ee3e80fa4f3e8f5b7b79b727c2b7df9da59f9a24a9e"
+    },
+    {
+      "source_id": "clerk:119:2:120",
+      "original_source_object_sha256": "a91226cb1f393b68833b9612e5b081e94c7f84bb27b09916be4e79962b57e979"
+    },
+    {
+      "source_id": "govinfo:42usc4332-2024-operative",
+      "original_source_object_sha256": "358794d736acd9f762eaa1e0447902b0a7fca519ab3113ea9caa878fe4e71e79"
+    },
+    {
+      "source_id": "govinfo:42usc7509a-2024-international-air",
+      "original_source_object_sha256": "343cccda3389da1975f0f2d31c9dcf2b877cf7a2f09271768a8b175c4abd6154"
+    },
+    {
+      "source_id": "govinfo:42usc7609-2024-policy-review",
+      "original_source_object_sha256": "158b41cfc4f637862adf21933bb889e8ca35a5c92ad6df57a0ba0435dbeacb08"
+    },
+    {
+      "source_id": "govinfo:hr1689eh",
+      "original_source_object_sha256": "085e9f7d3ee4620d81cdbbdc7f0af7ea2a05f9ec7da3d5541fe6c23cd9ecfaaf"
+    },
+    {
+      "source_id": "govinfo:hr6398eh",
+      "original_source_object_sha256": "5b9a7f4439ab3ef4508a7d05577668c5dc0edfb99f092ad8da60dd2d8008f693"
+    },
+    {
+      "source_id": "govinfo:hr6409eh",
+      "original_source_object_sha256": "9bd65372efad3a5bd67997eb9a5c607d121700cba45293653cd85a48e2777b1d"
+    },
+    {
+      "source_id": "govinfo:hres965eh",
+      "original_source_object_sha256": "1c50b204debbf10a1a93f0e942cf36420a9d2f9f67bd5879c87f6a983ba42407"
+    }
+  ],
+  "original_source_read_scope": [
+    {
+      "source_id": "govinfo:hr6409eh",
+      "governed_length": 4184,
+      "review_extent": "Complete retained bill/rule or complete selected statutory operative unit read; current integrated law/individual compliance not certified"
+    },
+    {
+      "source_id": "govinfo:42usc7509a-2024-international-air",
+      "governed_length": 2449,
+      "review_extent": "Complete retained bill/rule or complete selected statutory operative unit read; current integrated law/individual compliance not certified"
+    },
+    {
+      "source_id": "govinfo:hr6398eh",
+      "governed_length": 1570,
+      "review_extent": "Complete retained bill/rule or complete selected statutory operative unit read; current integrated law/individual compliance not certified"
+    },
+    {
+      "source_id": "govinfo:42usc7609-2024-policy-review",
+      "governed_length": 1034,
+      "review_extent": "Complete retained bill/rule or complete selected statutory operative unit read; current integrated law/individual compliance not certified"
+    },
+    {
+      "source_id": "govinfo:42usc4332-2024-operative",
+      "governed_length": 5728,
+      "review_extent": "Complete retained bill/rule or complete selected statutory operative unit read; current integrated law/individual compliance not certified"
+    },
+    {
+      "source_id": "govinfo:hres965eh",
+      "governed_length": 1766,
+      "review_extent": "Complete retained bill/rule or complete selected statutory operative unit read; current integrated law/individual compliance not certified"
+    },
+    {
+      "source_id": "govinfo:hr1689eh",
+      "governed_length": 980,
+      "review_extent": "Complete retained bill/rule or complete selected statutory operative unit read; current integrated law/individual compliance not certified"
+    }
+  ],
+  "screening_units_receipt": {
+    "metadata_selected_count": 5,
+    "metadata_only_unexamined_dispositions_changed": 0,
+    "full_action_meanings_authored": 1,
+    "newly_screened_meanings_authored": 1,
+    "prior_review_case_meanings_authored": 0,
+    "existing_shared_meanings_identified_without_duplicate": 1,
+    "units": [
+      {
+        "action_id": "house:119:2:116",
+        "evidence_unit": "complete_emissions_bill_and_one_unit_others_pending",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:117",
+        "evidence_unit": "exact_noncounting_question",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:118",
+        "evidence_unit": "complete_EPAreview_bill_and_both_statutory_units",
+        "whole_action_meaning_authored": true
+      },
+      {
+        "action_id": "house:119:2:119",
+        "evidence_unit": "complete_TPSrule_or_bill",
+        "whole_action_meaning_authored": false
+      },
+      {
+        "action_id": "house:119:2:120",
+        "evidence_unit": "complete_TPSrule_or_bill",
+        "whole_action_meaning_authored": false
+      }
+    ]
+  },
+  "historical_limits": "Exact original candidate/pending states and partial extents preserved; later corrections do not replace preimages. Full source transport does not certify substantive reading/current law, accept membership or authorize publication."
+}

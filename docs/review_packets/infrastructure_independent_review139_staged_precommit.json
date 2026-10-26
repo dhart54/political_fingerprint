@@ -1,0 +1,142 @@
+{
+  "kind": "independent139_exact_staged_precommit_review",
+  "recorded_utc": "2026-10-21T17:59:14.905101+00:00",
+  "staged_tree": "baa76902edcb6d394da89f1dde40053d1c000371",
+  "base_head": "35c7ce373930f884e715dbbf01c900bb9c8c05fe",
+  "findings": [],
+  "precommit_result": "CLEAN",
+  "precommit_clearance": true,
+  "clearance_scope": "Owner may commit/push this exact staged139 unit within the already approved three-case application; no new editorial, compatibility, merge, publication or production authority",
+  "owner_HEAD_and_index_match_reviewed_target": true,
+  "changed_paths": [
+    "A\tbackend/tests/test_infrastructure_case_application139.py",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/authoring.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/compiled_ir.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/compiler_input.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/member_projections.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/readable_candidates.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/reproducibility_proof.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/shared_action_core.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/shared_issue_mapping.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/membership_review.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/resume_receipt.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/sources.json",
+    "A\tdocs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/universe_proposal.json",
+    "A\tdocs/plans/infrastructure_case_application_and_compatibility_20261021.md",
+    "A\tdocs/review_packets/infrastructure_case_application139/README.md",
+    "A\tdocs/review_packets/infrastructure_case_application139/application_receipt.json",
+    "A\tdocs/review_packets/infrastructure_case_application139/owner_evidence.json",
+    "A\tdocs/review_packets/infrastructure_case_application139/validation_results.json",
+    "A\tscripts/apply_infrastructure_case_decisions139.py",
+    "A\tscripts/validate_infrastructure_case_application139.py"
+  ],
+  "corrected_P2": {
+    "status": "closed_at_exact_staged_tree",
+    "script_sha256": "cbb610b55d67c09400ce4f0ac7586eb871dafd3ce86c7fcaf37fd18b372524d9",
+    "protection": "Whole fixed pre/post states, derived accounting and reserved authority validated before no-write return and after fresh construction",
+    "meaningful_regression_coverage": "4 already-applied authority cases; 8 accounting/derived-row/unrelated-row cases; 3 subject/proposal/partial cases; 2 approval-scope/before-authority cases",
+    "independent_positive_no_op_and_four_targeted_state_probes_passed": true
+  },
+  "authorized_case_outputs": [
+    {
+      "action_id": "house:119:1:12",
+      "before_record_sha256": "0d8d42953bf221030f0761bbe00acff16b76e281c97694137d649aaf2dd132e7",
+      "after_record_sha256": "2d6d92a9ecdc50ee81fd9acaa4fa9a5134fa845c6bb5fff2462cadbd378c9338",
+      "after_row_sha256": "046baa08b8ef7766a3c546a8cdce141efb7ee8d9556b5f3a40259a0cc07996dc",
+      "after_disposition": "pending_interpretation",
+      "after_binding_unresolved": false
+    },
+    {
+      "action_id": "house:119:1:108",
+      "before_record_sha256": "e5deaca10d13892f3c68d61fccbf923ecd6de0d7f2cb8a00d059bd96cc7c3311",
+      "after_record_sha256": "b4dbe5d9617192fe971d8fa16702d48e75371d4828d41db65490f59b26789cdc",
+      "after_row_sha256": "41c7e936e77afa36272d074dd667d3eb68655e345cc99c8e267dfb96550448c6",
+      "after_disposition": "exact_action_ineligible",
+      "after_binding_unresolved": false
+    },
+    {
+      "action_id": "house:119:1:340",
+      "before_record_sha256": "259b7ad000bc0e76ea90396547a5f761508baa49bcc1d0ff0dc3c2f9d2529e78",
+      "after_record_sha256": "9d1c04ac2119d9bb762fa578a10214f7184f257013a7b07cc2a19f1f58e8982d",
+      "after_row_sha256": "86d5dcd82a4ec201d9b2a114e01e7622db4d79120b981aa54be37b9318ed37ab",
+      "after_disposition": "exact_action_ineligible",
+      "after_binding_unresolved": false
+    }
+  ],
+  "other_records_and_rows_identical": 673,
+  "counts": {
+    "procedural_context": 199,
+    "exact_action_ineligible": 122,
+    "interpreted_substantive_directional": 69,
+    "pending_interpretation": 260,
+    "source_unresolved": 6,
+    "expressive_nonbinding": 19,
+    "interpreted_substantive_non_directional": 1
+  },
+  "sources_unchanged": 1621,
+  "authored_meanings_unchanged": 70,
+  "source_file_and_compiled_ir_byte_identical": true,
+  "compiled_ir_sha256": "b9bf106a912489d8905b0a5443375750976658a391d269b56a249b514f99ded7",
+  "member_votes_effects_sources_and_non_directional_treatment_unchanged": true,
+  "generated_changes_only_namespace_references_and_dependent_digests": true,
+  "all_six_holds_preserved": [
+    "house:119:1:32",
+    "house:119:1:111",
+    "house:119:1:210",
+    "house:119:1:237",
+    "house:119:2:134",
+    "house:119:2:313"
+  ],
+  "cutoffs_and_all_reserved_authority_preserved": true,
+  "hr859_governed_record_and_isolated138_candidate_unaccepted_and_unchanged": true,
+  "trusted_forwarded_approval_transcript_and_all_record_row_receipt_seals_authenticated": true,
+  "tests": {
+    "tree": "baa76902edcb6d394da89f1dde40053d1c000371",
+    "base": "35c7ce373930f884e715dbbf01c900bb9c8c05fe",
+    "tests": 6,
+    "reported_test_seconds": 3.473,
+    "negative_cases": 17,
+    "provenance": "65-file Git-authenticated sparse staged-tree snapshot; native Python -B unittest and CLI; no LF shim or assertion patch; no unrelated closed gates",
+    "process_results": [
+      {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "257afa",
+          "wall_time_seconds": 3.7411746,
+          "exit_code": 0,
+          "original_token_count": 28,
+          "output": "......\r\n----------------------------------------------------------------------\r\nRan 6 tests in 3.473s\r\n\r\nOK\r\n"
+        }
+      },
+      {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "2fdfba",
+          "wall_time_seconds": 2.6301598,
+          "exit_code": 0,
+          "original_token_count": 118,
+          "output": "{\r\n  \"cases\": 3,\r\n  \"other_records_unchanged\": 673,\r\n  \"sources_unchanged\": 1621,\r\n  \"authored_meanings_unchanged\": 70,\r\n  \"compiled_graph_unchanged\": true,\r\n  \"idempotent\": true,\r\n  \"counts\": {\r\n    \"procedural_context\": 199,\r\n    \"exact_action_ineligible\": 122,\r\n    \"interpreted_substantive_directional\": 69,\r\n    \"pending_interpretation\": 260,\r\n    \"source_unresolved\": 6,\r\n    \"expressive_nonbinding\": 19,\r\n    \"interpreted_substantive_non_directional\": 1\r\n  }\r\n}\r\n"
+        }
+      }
+    ]
+  },
+  "owner_recorded_validation": {
+    "path": "docs/review_packets/infrastructure_case_application139/validation_results.json",
+    "sha256": "7dfc34b798775e70e41518908eb339a5ffa6b40ed2364bfc442d8a8db7457619",
+    "tests": 6,
+    "reported_seconds": 3.469,
+    "cli_exit_code": 0
+  },
+  "snapshot_files": 65,
+  "snapshot_bytes": 99760222,
+  "staged_whitespace_check_passed": true,
+  "reviewer_owner_or_git_mutations": false,
+  "reviewer_commit_or_push": false,
+  "limitations": [
+    "Clearance binds staged tree baa76902edcb6d394da89f1dde40053d1c000371 against35c7ce373930f884e715dbbf01c900bb9c8c05fe; later changed bytes require reconciliation",
+    "Only new139 focused tests/validator and targeted correction probes executed; no unrelated closed source/historical/full-repository gates rerun",
+    "65-file Git-authenticated sparse snapshot, no LF shim or assertion patch",
+    "Compatibility140, hosted validation, merge, publication, deployment and production remain separate",
+    "No new H.R.859 acceptance or general eligibility/methodology rule"
+  ]
+}

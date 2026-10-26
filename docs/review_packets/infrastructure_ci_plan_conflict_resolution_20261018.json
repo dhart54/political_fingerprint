@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-10-18T19:53:32.746704+00:00",
+  "blocked_head": "c8bf509b50b5d42d0224d79b51af3bfc39632166",
+  "github_state": {
+    "mergeable": "CONFLICTING",
+    "mergeStateStatus": "DIRTY",
+    "backend_run_for_head_created": false
+  },
+  "current_main_verified": "485e0319deacfd5badb493a04945c0873099dc71",
+  "virtual_merge_conflict_paths": [
+    "docs/plans/ci_playwright_output.md"
+  ],
+  "scope": "The sole conflict is an add/add of the CI-owner plan: original narrow commit vs already reviewed final PR233 plan. No runtime conflict or research-semantic decision.",
+  "resolution": "Copy only the already reviewed plan artifact; do not cherry-pick the remaining commit or integrate full main.",
+  "reviewed_document_head": "a12f24afc5afad55653d3b78d28aa658935d61a2",
+  "reviewed_document_blob": "ef117ac50f048fa1af03a0a68ed9b134d6024751",
+  "preimage_document_blob": "3e68f7b262c5cb8a8adc324782308f1c29116fa2",
+  "document_matches_reviewed_bytes": true,
+  "runtime_code_changed": false,
+  "research_artifacts_changed": false,
+  "full_main_integrated": false,
+  "narrow_runtime_pick_unchanged": "2ffeceaf4fa643ef9c6eb829a2ad57af57b5277e",
+  "local_tests_repeated": false,
+  "validation_basis": "Documentation-only mergeability resolution. Prior CLI/candidate/export checks retained; runtime/data diff required empty and virtual merge required clean before push.",
+  "next_exact_head_CI": "Pending automatic PR run after conflict-free push; no old job rerun or historical status reclassification",
+  "candidate_PR_merged": false,
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "production_writes": false,
+  "manual_deployment": false
+}
