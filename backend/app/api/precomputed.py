@@ -8,6 +8,7 @@ from typing import Any
 from app.api.public_data import PublicDataUnavailable, fixture_fallback_enabled
 from app.api.name_search import filter_name_matches
 from app.db import get_connection
+from app.request_timing import timing_stage
 from app.etl.classify import run_classification
 from app.etl.compute import run_etl
 from app.etl.ingest import run_ingest
@@ -2477,10 +2478,13 @@ def _query_all_dicts(query: str, params: tuple[Any, ...] = ()) -> list[dict[str,
         connection = get_connection()
         try:
             cursor = connection.cursor()
-            cursor.execute(query, params)
-            rows = cursor.fetchall()
-            columns = [description[0] for description in cursor.description or []]
-            return [dict(zip(columns, row)) for row in rows]
+            with timing_stage("execute_ms"):
+                cursor.execute(query, params)
+            with timing_stage("fetch_ms"):
+                rows = cursor.fetchall()
+            with timing_stage("row_conversion_ms"):
+                columns = [description[0] for description in cursor.description or []]
+                return [dict(zip(columns, row)) for row in rows]
         finally:
             connection.close()
     except Exception:

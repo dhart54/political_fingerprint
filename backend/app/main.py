@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from app.editorial_presentations.reviewed_record import GovernedReceiptProjectionError
 from fastapi.middleware.cors import CORSMiddleware
+from app.request_timing import RequestTimingMiddleware
 
 from app.api.alignment import router as alignment_router
 from app.api.compare import router as compare_router
@@ -64,6 +65,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(RequestTimingMiddleware)
 
 app.include_router(fingerprint_router)
 app.include_router(positions_router)

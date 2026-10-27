@@ -1,6 +1,7 @@
 import os
 
 from fastapi import APIRouter, HTTPException, Query
+from app.request_timing import timed_composition
 
 from app.api.precomputed import (
     get_governed_position_evidence_rows,
@@ -222,6 +223,7 @@ def get_legislator_position_evidence(
     )
 
 
+@timed_composition
 def _compose_position_evidence(
     legislator_id: str,
     domain: str,
