@@ -3,6 +3,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Iterator
 from dotenv import load_dotenv
+from app.request_timing import timing_stage
 
 if TYPE_CHECKING:
     from psycopg import Connection
@@ -45,4 +46,5 @@ def get_connection() -> "Connection":
 def psycopg_connect(dsn: str) -> "Connection":
     from psycopg import connect
 
-    return connect(dsn)
+    with timing_stage("connection_ms"):
+        return connect(dsn)

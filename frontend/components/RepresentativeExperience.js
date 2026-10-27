@@ -210,8 +210,11 @@ export default function RepresentativeExperience({
   }, [directIssueLanding, selectedRow, state.status]);
 
   function selectIssue(issue) {
-    onSelectIssue(issue);
+    const navigationIsCurrent = onSelectIssue(issue);
+    const href = window.location.href;
+    const isCurrent = () => window.location.href === href && (navigationIsCurrent?.() ?? true);
     window.requestAnimationFrame(() => {
+      if (!isCurrent()) return;
       document.getElementById("issue-detail")?.scrollIntoView({
         behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
           ? "auto"
@@ -219,6 +222,7 @@ export default function RepresentativeExperience({
         block: "start",
       });
       window.requestAnimationFrame(() => {
+        if (!isCurrent()) return;
         document.getElementById("selected-issue-heading")?.focus({
           preventScroll: true,
         });
@@ -248,7 +252,7 @@ export default function RepresentativeExperience({
   return (
     <>
       {recordCardCandidate ? <RecordAtAGlance model={state.card || { status: "loading" }} legislatorId={legislator.id} scope={scope} onNavigate={navigateFinding} routePath={routePath} reviewMode={reviewMode} /> : null}
-      <section className="scroll-mt-24 border-t border-stone-200 py-8" id="issues">
+      <section className="scroll-mt-24 border-t border-stone-200 py-8" id="issues" tabIndex={-1} data-section-ready={state.status !== "loading"}>
         <p className="eyebrow">Issue discovery</p>
         <h2 className="mt-2 font-serif text-4xl leading-tight text-stone-950">
           Choose an issue

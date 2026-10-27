@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from typing import Any
+from app.request_timing import timing_stage
 
 
 class EditorialArtifactRepository:
@@ -182,8 +183,12 @@ class EditorialArtifactRepository:
         return self._row_to_dict(cursor, row) if row is not None else None
 
     def _all(self, query: str, params: tuple[Any, ...] = ()) -> list[dict[str, Any]]:
-        cursor = self.connection.execute(query, params)
-        return [self._row_to_dict(cursor, row) for row in cursor.fetchall()]
+        with timing_stage("execute_ms"):
+            cursor = self.connection.execute(query, params)
+        with timing_stage("fetch_ms"):
+            rows = cursor.fetchall()
+        with timing_stage("row_conversion_ms"):
+            return [self._row_to_dict(cursor, row) for row in rows]
 
     @staticmethod
     def _row_to_dict(cursor: Any, row: Any) -> dict[str, Any]:

@@ -42,6 +42,163 @@ test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
 });
 
+for (const reducedMotion of ["reduce", "no-preference"]) test(`history restores the representative anchor after cross-issue receipt settlement (${reducedMotion})`, async ({ page }) => {
+  await page.goto(selected);
+  await expectCoverage(page);
+  await page.locator("main > header").getByRole("link", { name: "Valerie P. Foushee", exact: true }).click();
+  await expectUnoccluded(page, "#representative-name");
+  await page.emulateMedia({ reducedMotion });
+  await page.getByRole("button", { name: "Explore Justice & Public Safety", exact: true }).click();
+  await expect(page).toHaveURL(/issue=JUSTICE_PUBLIC_SAFETY/);
+  await expect(page.locator("#selected-issue-heading")).toBeFocused();
+  await expect(page.locator("#vote-record")).toBeAttached();
+  await page.goBack();
+  await expect(page).toHaveURL(`${selected}#representative-name`);
+  await expectCoverage(page);
+  await expect(page.locator("#vote-record")).toContainText("25 recorded actions");
+  await expectUnoccluded(page, "#representative-name");
+});
+
+test("history waits for a delayed section target after a scope remount", async ({ page }) => {
+  await page.goto(selected);
+  await expectCoverage(page);
+  await page.locator("main > header").getByRole("link", { name: "Issue summary", exact: true }).click();
+  await expectUnoccluded(page, "#issue-summary");
+  await page.getByRole("button", { name: "118th Congress", exact: true }).click();
+  await expect(page.locator("#issue-summary")).toBeAttached();
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  await page.route("**/positions?scope=119", async route => { await gate; await route.fallback(); });
+  try {
+    await page.goBack();
+    await expect(page.locator("#issue-summary")).toHaveCount(0);
+    release();
+    await expectCoverage(page);
+    await expectUnoccluded(page, "#issue-summary");
+  } finally { release(); }
+});
+
+async function holdRequest(page, pattern) {
+  let release, arrived;
+  const gate = new Promise(resolve => { release = resolve; });
+  const pending = new Promise(resolve => { arrived = resolve; });
+  await page.route(pattern, async route => { arrived(); await gate; await route.fallback(); });
+  return { release, pending };
+}
+
+for (const width of [390, 1440]) for (const resource of ["profile", "positions", "editorial-presentations", "evidence"]) {
+  test(`explicit section anchor survives delayed ${resource} at ${width}px`, async ({ page }, testInfo) => {
+    await page.setViewportSize({ width, height: 900 });
+    const held = await holdRequest(page, `**/${resource}${resource === "profile" ? "" : "?*"}`);
+    const id = resource === "profile" ? "representative-name" : "issue-summary";
+    try {
+      await page.goto(`${selected}#${id}`);
+      await held.pending;
+      held.release();
+      await expectCoverage(page);
+      await expect(page.locator("#vote-record")).toContainText("25 recorded actions");
+      await expectUnoccluded(page, `#${id}`);
+      await expect(page.locator(id === "representative-name" ? "#representative-name" : "#selected-issue-heading")).toBeFocused();
+      if (resource === "positions") {
+        const screenshot = testInfo.outputPath(`restored-section-${width}.png`);
+        await page.screenshot({ path: screenshot });
+        await testInfo.attach(`restored-section-${width}`, { path: screenshot, contentType: "image/png" });
+      }
+    } finally { held.release(); }
+  });
+}
+
+for (const movement of ["keyboard", "wheel", "new section"]) test(`delayed restoration yields to ${movement}`, async ({ page }) => {
+  const held = await holdRequest(page, "**/positions?scope=119");
+  try {
+    await page.goto(`${selected}#issue-summary`);
+    await held.pending;
+    if (movement === "keyboard") {
+      await page.getByRole("button", { name: "119th Congress", exact: true }).focus();
+      await page.keyboard.press("Tab");
+    } else if (movement === "wheel") await page.mouse.wheel(0, 200);
+    else {
+      await page.locator("main > header").getByRole("link", { name: "Valerie P. Foushee", exact: true }).click();
+      await expectUnoccluded(page, "#representative-name");
+    }
+    const focus = await page.evaluate(() => document.activeElement.id);
+    held.release();
+    await expectCoverage(page);
+    await expect(page.locator("#vote-record")).toContainText("25 recorded actions");
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    expect(await page.evaluate(() => document.activeElement.id)).toBe(focus);
+    if (movement === "new section") await expectUnoccluded(page, "#representative-name");
+    else await expect(page.locator("#selected-issue-heading")).not.toBeFocused();
+  } finally { held.release(); }
+});
+
+test("clicking the current section hash reasserts intent while its target is loading", async ({ page }) => {
+  const held = await holdRequest(page, "**/positions?scope=119");
+  try {
+    await page.goto(`${selected}#issue-summary`);
+    await held.pending;
+    await expect(page.locator("#issue-summary")).toHaveCount(0);
+    await page.locator("main > header").getByRole("link", { name: "Issue summary", exact: true }).click();
+    held.release();
+    await expectCoverage(page);
+    await expect(page.locator("#vote-record")).toContainText("25 recorded actions");
+    await expectUnoccluded(page, "#issue-summary");
+    await expect(page.locator("#selected-issue-heading")).toBeFocused();
+  } finally { held.release(); }
+});
+
+test("rapid Back Forward across members discards an obsolete pending restoration", async ({ page }) => {
+  await page.route("**/legislators/search?*", route => route.fulfill({ json: { results: [budd.profile] } }));
+  await page.goto(`${selected}#representative-name`);
+  await expectCoverage(page);
+  await expectUnoccluded(page, "#representative-name");
+  await page.getByRole("button", { name: "Switch representative", exact: true }).click();
+  await page.getByLabel("Search by name", { exact: true }).fill("Budd");
+  await page.getByRole("button", { name: "Search names", exact: true }).click();
+  await page.getByRole("button", { name: /^Select Ted Budd,/ }).click();
+  await expect(page.locator("#representative-name")).toHaveText("Ted Budd");
+  const held = await holdRequest(page, "**/legislators/leg_valerie_p_foushee/profile");
+  try {
+    await page.goBack();
+    await held.pending;
+    await expect(page.locator("#representative-name")).toHaveCount(0);
+    await page.goForward();
+    await expect(page.locator("#representative-name")).toHaveText("Ted Budd");
+    held.release();
+    await expectUnoccluded(page, "#representative-name");
+    await page.goBack();
+    await expectCoverage(page);
+    await expect(page.locator("#representative-name")).toHaveText("Valerie P. Foushee");
+    await expectUnoccluded(page, "#representative-name");
+    await expect(page.locator("#representative-name")).toBeFocused();
+  } finally { held.release(); }
+});
+
+test("no-hash Back Forward retains native scroll policy and queues no section restoration", async ({ page }) => {
+  await page.addInitScript(() => {
+    window.sectionScrollCalls = [];
+    const original = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function(options) {
+      window.sectionScrollCalls.push(this.id);
+      return original.call(this, options);
+    };
+  });
+  await page.goto(selected);
+  await expectCoverage(page);
+  await expect(page.locator("#selected-issue-heading")).toBeFocused();
+  await page.getByRole("button", { name: "Explore Justice & Public Safety", exact: true }).click();
+  await expect(page.locator("#selected-issue-heading")).toBeFocused();
+  await expect(page.locator("#vote-record")).toBeAttached();
+  await page.evaluate(() => { window.sectionScrollCalls = []; });
+  await page.goBack();
+  await expectCoverage(page);
+  await page.goForward();
+  await expect(page.locator("#vote-record")).toBeAttached();
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  expect(await page.evaluate(() => ({ hash: location.hash, policy: history.scrollRestoration, calls: window.sectionScrollCalls })))
+    .toEqual({ hash: "", policy: "auto", calls: [] });
+});
+
 for (const width of [1440, 1024, 390, 320]) test(`sticky anchors and readable sources preserve Education coverage at ${width}px`, async ({ page }, testInfo) => {
   await page.setViewportSize({ width, height: width < 500 ? 844 : 1000 });
   await page.goto(selected);

@@ -10,6 +10,7 @@ import { followRecordLink } from "../components/RecordCardFinding";
 import ScopeControl from "../components/ScopeControl";
 import { fetchLegislatorProfile } from "../lib/api";
 import recordCardContent from "../lib/recordCardContent.json";
+import { createSectionNavigation, sectionRouteKey } from "../lib/sectionNavigation.mjs";
 import { recordCardUrl } from "../lib/recordCard.mjs";
 import {
   buildPassAUrl,
@@ -35,19 +36,32 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
   const [finderOpen, setFinderOpen] = useState(false);
   const switchTrigger = useRef(null);
   const [routePath, setRoutePath] = useState("/");
+  const journey = useRef(null);
+  const sectionNavigation = useRef(null);
 
   useEffect(() => {
+    const navigationController = createSectionNavigation(journey.current);
+    sectionNavigation.current = navigationController;
     function syncFromLocation(navigation = "history") {
-      setRoute(parsePassARouteState(window.location.search));
+      const next = parsePassARouteState(window.location.search);
+      setRoute(next);
       setRoutePath(window.location.pathname);
       setRouteNavigation(navigation);
       setFinderOpen(false);
       setRouteReady(true);
+      navigationController.begin(next, true);
     }
     syncFromLocation("initial");
     const handlePopState = () => syncFromLocation("history");
     window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
+    const handleHashChange = () => navigationController.begin(parsePassARouteState(window.location.search), true);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("hashchange", handleHashChange);
+      navigationController.dispose();
+      sectionNavigation.current = null;
+    };
   }, []);
 
   useEffect(() => {
@@ -101,6 +115,7 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
     window.history[replace ? "replaceState" : "pushState"]({}, "", url);
     setRoute(resolved);
     setRouteNavigation("user");
+    return sectionNavigation.current?.begin(resolved);
   }
 
   function closeFinder() {
@@ -115,11 +130,12 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
       error: null,
     });
     setFinderOpen(false);
-    navigate({
+    const navigationIsCurrent = navigate({
       legislatorId: legislator.id,
       issue: null,
     });
     window.requestAnimationFrame(() => {
+      if (navigationIsCurrent && !navigationIsCurrent()) return;
       document.getElementById("representative-name")?.focus?.();
       window.scrollTo({
         top: 0,
@@ -135,7 +151,7 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
   const compactOpening = Boolean(reviewCandidate);
 
   return (
-    <main className="representative-journey min-h-screen bg-[#f7f3e9] text-stone-900">
+    <main ref={journey} data-route-key={routeReady && legislator ? sectionRouteKey(route) : ""} className="representative-journey min-h-screen bg-[#f7f3e9] text-stone-900">
       <SiteHeader
         representativeName={legislator?.name_display}
         selectedIssue={route.issue}
