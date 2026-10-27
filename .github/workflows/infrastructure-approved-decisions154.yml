@@ -1,0 +1,32 @@
+name: Infrastructure approved decisions154
+
+on:
+  pull_request:
+    paths:
+      - "backend/tests/test_infrastructure_case_application154.py"
+      - "scripts/apply_infrastructure_case_decisions154.py"
+      - "scripts/validate_infrastructure_case_application154.py"
+      - "docs/review_packets/infrastructure_case_application154/**"
+      - "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/**"
+      - ".github/workflows/infrastructure-approved-decisions154.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  bounded-eight-action-application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install schema validation dependency
+        run: python -m pip install 'jsonschema>=4.23,<5'
+      - name: Verify approved eligibility and bindings without meaning acceptance
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_case_application154.py
+          python -m unittest backend.tests.test_infrastructure_case_application154
