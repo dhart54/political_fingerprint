@@ -106,3 +106,47 @@ directories. No cluster started; all three attempted directories had no PID file
 The next harness correction lets initdb create the new UUID directory itself,
 refusing any existing path or symlink. It uses PostgreSQL's normal creation path;
 no ACL edits, service changes, endpoint relaxation, or environment-guard changes.
+
+## Linux Python 3.14.3 continuation
+
+Baseline e25c0223b86037f653113acd1d344d1dddb1ccae completed independent review,
+12 Backend and two Education jobs; original receipts remain sealed in
+.tmp/positions-reuse/hosted-delivery-2026-10-29. Main remains d4342590.
+
+Trusted controller read-only Render evidence identifies live deploy
+dep-dbgd4s7avr4c73dmfgfg on srv-d84abkuq1p3s738qd1i0 at full main SHA
+d43425905207ef66e5268edbe0e36252f79ff4d8, Linux Python3.14.3 and psycopg/binary3.3.3.
+Endpoint/pooler mode, PostgreSQL version, timeouts, session/preparation behavior,
+capacity and effective app-role privileges remain unknown. This task does not
+repeat production inspection or treat a Python match as full production parity.
+
+Authorized outcome: add a Linux3.14.3 real-PostgreSQL readiness gate on draftPR244,
+preserving the Windows3.11/PG17 gate and all existing jobs. Five intended files:
+workflow, test-only platform adapter, three offline adapter cases, this plan, and
+a proposal-only sanitized runtime diagnostic. No production application edits.
+
+Use setup-python@v5 exact3.14.3 and ubuntu-24.04's preinstalled PostgreSQL16.
+No installation on the user's PC, sudo/service changes, binary downloads outside
+standard hosted Python provisioning, or credential/endpoint inputs. Linux fixture
+uses fixed binaries and disables Unix sockets; all existing loopback, environment,
+account, ownership and normal shutdown guards remain. The same six readiness
+files must yield146 cases without skips. Keep adapter tests separate from that
+count and retain Linux JUnit/cleanup receipts as bounded seven-day CI artifacts.
+
+Sequence: verify official guidance and baseline; implement small adapter/job;
+run focused local adapter and Windows harness checks; independently review delta;
+commit/push this branch; monitor all successor checks to terminal and retain exact
+head/failed-attempt evidence. Prepare the sanitized diagnostic proposal without
+executing it. Definition of done includes both platform gates, unchanged earlier
+jobs, independent source/hosted review, clean worktree and closed owned clusters.
+Rollback: revert this unmerged continuation; no production rollback is needed.
+Production writes/diagnostic execution: none authorized or performed.
+
+Primary provisioning references:
+- https://github.com/actions/setup-python/blob/v5/README.md
+- https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md
+- https://github.com/actions/python-versions/blob/main/versions-manifest.json
+- https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
+- https://github.com/actions/runner-images/blob/main/images/ubuntu/scripts/build/install-postgresql.sh
+- https://www.postgresql.org/docs/16/runtime-config-connection.html
+- https://www.postgresql.org/docs/17/app-initdb.html

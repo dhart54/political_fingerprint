@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import socket
 import subprocess
+import sys
 import uuid
 
 
@@ -14,7 +15,18 @@ class DisposablePostgres:
     def __init__(self, root):
         self.root = Path(root).resolve()
         self.directory = self.root / ('pg-' + uuid.uuid4().hex)
-        self.bin = Path('C:/Program Files/PostgreSQL/17/bin')
+        # Fixed, documented CI installations; never accept a caller's binary path.
+        if sys.platform == 'win32':
+            self.bin = Path('C:/Program Files/PostgreSQL/17/bin')
+            self.executable_suffix = '.exe'
+            self.socket_options = ''
+        elif sys.platform == 'linux':
+            self.bin = Path('/usr/lib/postgresql/16/bin')
+            self.executable_suffix = ''
+            # No shared/default Unix socket directory: explicit loopback only.
+            self.socket_options = ' -c unix_socket_directories='
+        else:
+            raise RuntimeError('Unsupported disposable PostgreSQL platform')
         self.started = False
         self.port = None
 
@@ -24,7 +36,7 @@ class DisposablePostgres:
         log_path = self.root / f'{self.directory.name}-{name}-command.log'
         with log_path.open('a', encoding='utf-8') as log:
             result = subprocess.run(
-                [str(self.bin / (name + '.exe')), *map(str, args)],
+                [str(self.bin / (name + self.executable_suffix)), *map(str, args)],
                 stdout=log, stderr=subprocess.STDOUT, timeout=35,
                 creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0),
                 env={k: v for k, v in os.environ.items() if not k.upper().startswith('PG') and k.upper() != 'DATABASE_URL'},
@@ -45,7 +57,7 @@ class DisposablePostgres:
         try:
             self.command('initdb', '-D', self.directory, '-U', 'experiment', '-A', 'trust', '--no-locale', '--encoding=UTF8')
             self.started = True  # Also stop a server that starts but misses -w.
-            self.command('pg_ctl', '-D', self.directory, '-l', self.directory / 'server.log', '-o', f'-h 127.0.0.1 -p {self.port}', '-w', '-t', '20', 'start')
+            self.command('pg_ctl', '-D', self.directory, '-l', self.directory / 'server.log', '-o', f'-h 127.0.0.1 -p {self.port}{self.socket_options}', '-w', '-t', '20', 'start')
             with self.connect() as connection:
                 actual = Path(connection.execute("SELECT current_setting('data_directory')").fetchone()[0]).resolve()
                 if actual != self.directory:

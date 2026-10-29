@@ -868,3 +868,83 @@ jobs:
             if ((Test-Path -LiteralPath $log) -and -not (Select-String -LiteralPath $log -SimpleMatch 'database system is shut down' -Quiet)) { throw 'Owned cluster shutdown evidence missing' }
           }
           Write-Output "Verified $($clusters.Count) owned cluster directories have no PID files"
+
+  positions-readiness-linux-python314:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    env:
+      RUN_POSITIONS_DISPOSABLE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Verify exact checkout
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14.3'
+          architecture: x64
+      - name: Check preinstalled test PostgreSQL 16
+        run: |
+          test -x /usr/lib/postgresql/16/bin/postgres
+          /usr/lib/postgresql/16/bin/postgres --version | grep -E 'PostgreSQL\) 16\.'
+          # Production PostgreSQL version is unknown; this is the CI test version.
+          test "$(id -u)" -ne 0
+      - name: Install existing project test dependencies
+        run: python -m pip install -r backend/requirements.txt httpx
+      - name: Verify Linux Python and pinned driver
+        run: |
+          python - <<'PY'
+          import sys, psycopg
+          assert sys.platform == 'linux' and sys.version_info[:3] == (3, 14, 3)
+          assert psycopg.__version__ == '3.3.3'
+          print('Verified Linux Python 3.14.3 and psycopg 3.3.3')
+          PY
+      - name: Verify test platform adapter
+        run: python -m pytest backend/tests/test_positions_postgres_platform.py -q -p no:cacheprovider
+      - name: Run identical focused and owned PostgreSQL gates
+        run: |
+          python - <<'PY'
+          import os
+          assert not any(k.upper().startswith('PG') for k in os.environ), 'Unexpected inherited libpq configuration forbidden'
+          PY
+          python -m pytest backend/tests/test_positions_read_scope.py backend/tests/test_positions_read_release.py backend/tests/test_positions_read_scope_http.py backend/tests/test_positions_read_scope_postgres.py backend/tests/test_positions_route_postgres.py backend/tests/test_positions_publication_postgres.py -q -p no:cacheprovider --junitxml=positions-linux-readiness.xml
+      - name: Require 146 cases without skips
+        if: always()
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          report = ET.parse('positions-linux-readiness.xml')
+          assert len(report.findall('.//testcase')) == 146, 'Expected exactly 146 readiness cases'
+          assert not any(report.findall('.//' + tag) for tag in ('skipped', 'failure', 'error')), 'Skipped/failed gates forbidden'
+          print('Verified 146 tests with no skips, failures or errors')
+          PY
+      - name: Verify owned disposable clusters stopped
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          roots = [Path('.tmp/positions-reuse'), Path('.tmp/positions-reuse/real-route-2026-10-29'), Path('.tmp/positions-reuse/publication-readiness-2026-10-29')]
+          clusters = [p for root in roots for p in root.glob('pg-*') if p.is_dir()]
+          assert len(clusters) == 3, 'Expected three owned fixture clusters'
+          assert all(not (p / 'postmaster.pid').exists() for p in clusters), 'Owned cluster PID file remains'
+          assert all((p / 'server.log').is_file() and 'database system is shut down' in (p / 'server.log').read_text() for p in clusters), 'Shutdown evidence missing'
+          Path('positions-linux-cleanup.json').write_text(json.dumps({'owned_clusters': 3, 'pid_files_absent': True, 'shutdown_verified': True}) + '\n')
+          print('Verified three owned clusters stopped with shutdown logs and no PID files')
+          PY
+      - name: Retain count and cleanup receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: positions-linux-readiness-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            positions-linux-readiness.xml
+            positions-linux-cleanup.json
+          if-no-files-found: error
+          retention-days: 7
