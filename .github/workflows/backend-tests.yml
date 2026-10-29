@@ -802,3 +802,149 @@ jobs:
             backend/tests/test_api_editorial_presentations.py \
             backend/tests/test_active_site_integration_dispatch.py \
             backend/tests/test_governed_receipt_projection.py
+
+  positions-readiness-exact-head:
+    runs-on: windows-2025
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    env:
+      RUN_POSITIONS_DISPOSABLE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Verify exact checkout
+        shell: pwsh
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if ((git rev-parse HEAD).Trim() -ne $env:EXPECTED_SHA) { throw 'Checkout identity mismatch' }
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check existing isolated PostgreSQL prerequisite
+        shell: pwsh
+        run: |
+          $pgExecutable = 'C:/Program Files/PostgreSQL/17/bin/postgres.exe'
+          if (-not (Test-Path -LiteralPath $pgExecutable)) { throw 'Preinstalled PostgreSQL17 required; no automatic installation' }
+          if ((& $pgExecutable --version) -notmatch 'PostgreSQL\) 17\.') { throw 'PostgreSQL17 required' }
+      - name: Install existing project test dependencies
+        shell: pwsh
+        run: python -m pip install -r backend/requirements.txt httpx
+      - name: Verify Python and pinned driver
+        shell: pwsh
+        run: python -c "import sys,psycopg; assert sys.version_info[:2] == (3,11); assert psycopg.__version__ == '3.3.3'"
+      - name: Run focused and disposable PostgreSQL gates
+        shell: pwsh
+        run: |
+          # The runner image defines these installation and built-in account defaults.
+          # Clear them only in this test process, without reading their values.
+          # The owned harness supplies its own loopback endpoint and account.
+          Remove-Item Env:PGBIN, Env:PGDATA, Env:PGROOT, Env:PGUSER, Env:PGPASSWORD -ErrorAction SilentlyContinue
+          if (Get-ChildItem Env: | Where-Object Name -Like 'PG*') { throw 'Unexpected inherited libpq configuration forbidden' }
+          python -m pytest backend/tests/test_positions_read_scope.py backend/tests/test_positions_read_release.py backend/tests/test_positions_read_scope_http.py backend/tests/test_positions_read_scope_postgres.py backend/tests/test_positions_route_postgres.py backend/tests/test_positions_publication_postgres.py -q -p no:cacheprovider --junitxml=positions-readiness.xml
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Require every gate with no skips
+        if: always()
+        shell: pwsh
+        run: |
+          if (-not (Test-Path -LiteralPath positions-readiness.xml)) { throw 'Required test report missing' }
+          [xml]$report = Get-Content -LiteralPath positions-readiness.xml -Raw
+          $cases = @($report.SelectNodes('//testcase'))
+          if ($cases.Count -ne 146) { throw 'Expected 146 tests; review count explicitly when suite changes' }
+          if ($report.SelectNodes('//skipped | //failure | //error').Count -ne 0) { throw 'Skipped/failed/missing integration gates are forbidden' }
+          Write-Output "Verified $($cases.Count) tests with no skips, failures or errors"
+      - name: Verify owned disposable clusters stopped
+        if: always()
+        shell: pwsh
+        run: |
+          $roots = '.tmp/positions-reuse', '.tmp/positions-reuse/real-route-2026-10-29', '.tmp/positions-reuse/publication-readiness-2026-10-29'
+          $clusters = @(Get-ChildItem -LiteralPath $roots -Directory -Filter 'pg-*' -ErrorAction SilentlyContinue)
+          foreach ($cluster in $clusters) {
+            if (Test-Path -LiteralPath (Join-Path $cluster.FullName 'postmaster.pid')) { throw 'Owned PostgreSQL cluster still has a PID file' }
+            $log = Join-Path $cluster.FullName 'server.log'
+            if ((Test-Path -LiteralPath $log) -and -not (Select-String -LiteralPath $log -SimpleMatch 'database system is shut down' -Quiet)) { throw 'Owned cluster shutdown evidence missing' }
+          }
+          Write-Output "Verified $($clusters.Count) owned cluster directories have no PID files"
+
+  positions-readiness-linux-python314:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    env:
+      RUN_POSITIONS_DISPOSABLE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Verify exact checkout
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14.3'
+          architecture: x64
+      - name: Check preinstalled test PostgreSQL 16
+        run: |
+          test -x /usr/lib/postgresql/16/bin/postgres
+          /usr/lib/postgresql/16/bin/postgres --version | grep -E 'PostgreSQL\) 16\.'
+          # Production PostgreSQL version is unknown; this is the CI test version.
+          test "$(id -u)" -ne 0
+      - name: Install existing project test dependencies
+        run: python -m pip install -r backend/requirements.txt httpx
+      - name: Verify Linux Python and pinned driver
+        run: |
+          python - <<'PY'
+          import sys, psycopg
+          assert sys.platform == 'linux' and sys.version_info[:3] == (3, 14, 3)
+          assert psycopg.__version__ == '3.3.3'
+          print('Verified Linux Python 3.14.3 and psycopg 3.3.3')
+          PY
+      - name: Verify test platform adapter
+        run: python -m pytest backend/tests/test_positions_postgres_platform.py -q -p no:cacheprovider
+      - name: Run identical focused and owned PostgreSQL gates
+        run: |
+          python - <<'PY'
+          import os
+          assert not any(k.upper().startswith('PG') for k in os.environ), 'Unexpected inherited libpq configuration forbidden'
+          PY
+          python -m pytest backend/tests/test_positions_read_scope.py backend/tests/test_positions_read_release.py backend/tests/test_positions_read_scope_http.py backend/tests/test_positions_read_scope_postgres.py backend/tests/test_positions_route_postgres.py backend/tests/test_positions_publication_postgres.py -q -p no:cacheprovider --junitxml=positions-linux-readiness.xml
+      - name: Require 146 cases without skips
+        if: always()
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          report = ET.parse('positions-linux-readiness.xml')
+          assert len(report.findall('.//testcase')) == 146, 'Expected exactly 146 readiness cases'
+          assert not any(report.findall('.//' + tag) for tag in ('skipped', 'failure', 'error')), 'Skipped/failed gates forbidden'
+          print('Verified 146 tests with no skips, failures or errors')
+          PY
+      - name: Verify owned disposable clusters stopped
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          roots = [Path('.tmp/positions-reuse'), Path('.tmp/positions-reuse/real-route-2026-10-29'), Path('.tmp/positions-reuse/publication-readiness-2026-10-29')]
+          clusters = [p for root in roots for p in root.glob('pg-*') if p.is_dir()]
+          assert len(clusters) == 3, 'Expected three owned fixture clusters'
+          assert all(not (p / 'postmaster.pid').exists() for p in clusters), 'Owned cluster PID file remains'
+          assert all((p / 'server.log').is_file() and 'database system is shut down' in (p / 'server.log').read_text() for p in clusters), 'Shutdown evidence missing'
+          Path('positions-linux-cleanup.json').write_text(json.dumps({'owned_clusters': 3, 'pid_files_absent': True, 'shutdown_verified': True}) + '\n')
+          print('Verified three owned clusters stopped with shutdown logs and no PID files')
+          PY
+      - name: Retain count and cleanup receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: positions-linux-readiness-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            positions-linux-readiness.xml
+            positions-linux-cleanup.json
+          if-no-files-found: error
+          retention-days: 7
