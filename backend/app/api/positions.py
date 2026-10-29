@@ -2,6 +2,7 @@ import os
 
 from fastapi import APIRouter, HTTPException, Query
 from app.request_timing import timed_composition
+from app.db import precomputed_read_scope, release_precomputed_read_connection, ReadScopeCleanupError
 
 from app.api.precomputed import (
     get_governed_position_evidence_rows,
@@ -177,6 +178,14 @@ def get_legislator_positions(
         pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce)$",
     ),
 ) -> dict[str, object]:
+    try:
+        with precomputed_read_scope():
+            return _get_legislator_positions(legislator_id, scope, candidate)
+    except ReadScopeCleanupError:
+        raise PublicDataUnavailable() from None
+
+
+def _get_legislator_positions(legislator_id, scope, candidate):
     response = get_position_response(legislator_id=legislator_id, scope=scope)
     if response is None:
         raise HTTPException(status_code=404, detail="Legislator not found")
@@ -184,6 +193,7 @@ def get_legislator_positions(
     if profile is None or not any(entry["member_id"] == str(profile["bioguide_id"]) for entry in public_review_state_entries()):
         return response
 
+    release_precomputed_read_connection()
     publication_rows = _load_publication_rows()
     for row in response["positions"]:
         issue_id = row["domain"]

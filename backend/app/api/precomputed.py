@@ -7,7 +7,7 @@ from typing import Any
 
 from app.api.public_data import PublicDataUnavailable, fixture_fallback_enabled
 from app.api.name_search import filter_name_matches
-from app.db import get_connection
+from app.db import get_connection, precomputed_read_connection
 from app.request_timing import timing_stage
 from app.etl.classify import run_classification
 from app.etl.compute import run_etl
@@ -2475,18 +2475,18 @@ def _comparison_statement(*, status: str, recent_pattern: str) -> str:
 
 def _query_all_dicts(query: str, params: tuple[Any, ...] = ()) -> list[dict[str, Any]] | None:
     try:
-        connection = get_connection()
-        try:
+        with precomputed_read_connection(get_connection) as connection:
             cursor = connection.cursor()
-            with timing_stage("execute_ms"):
-                cursor.execute(query, params)
-            with timing_stage("fetch_ms"):
-                rows = cursor.fetchall()
-            with timing_stage("row_conversion_ms"):
-                columns = [description[0] for description in cursor.description or []]
-                return [dict(zip(columns, row)) for row in rows]
-        finally:
-            connection.close()
+            try:
+                with timing_stage("execute_ms"):
+                    cursor.execute(query, params)
+                with timing_stage("fetch_ms"):
+                    rows = cursor.fetchall()
+                with timing_stage("row_conversion_ms"):
+                    columns = [description[0] for description in cursor.description or []]
+                    return [dict(zip(columns, row)) for row in rows]
+            finally:
+                cursor.close()
     except Exception:
         raise PublicDataUnavailable() from None
 

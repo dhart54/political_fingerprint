@@ -802,3 +802,55 @@ jobs:
             backend/tests/test_api_editorial_presentations.py \
             backend/tests/test_active_site_integration_dispatch.py \
             backend/tests/test_governed_receipt_projection.py
+
+  positions-readiness-exact-head:
+    runs-on: windows-2025
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    env:
+      RUN_POSITIONS_DISPOSABLE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Verify exact checkout
+        shell: pwsh
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          if ((git rev-parse HEAD).Trim() -ne $env:EXPECTED_SHA) { throw 'Checkout identity mismatch' }
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check existing isolated PostgreSQL prerequisite
+        shell: pwsh
+        run: |
+          $pgExecutable = 'C:/Program Files/PostgreSQL/17/bin/postgres.exe'
+          if (-not (Test-Path -LiteralPath $pgExecutable)) { throw 'Preinstalled PostgreSQL17 required; no automatic installation' }
+          if ((& $pgExecutable --version) -notmatch 'PostgreSQL\) 17\.') { throw 'PostgreSQL17 required' }
+      - name: Install existing project test dependencies
+        shell: pwsh
+        run: python -m pip install -r backend/requirements.txt httpx
+      - name: Verify Python and pinned driver
+        shell: pwsh
+        run: python -c "import sys,psycopg; assert sys.version_info[:2] == (3,11); assert psycopg.__version__ == '3.3.3'"
+      - name: Run focused and disposable PostgreSQL gates
+        shell: pwsh
+        run: |
+          # Official Windows2025 image supplies these nonsecret installation paths.
+          # Clear them only in this test process; do not touch the installed service.
+          Remove-Item Env:PGBIN, Env:PGDATA, Env:PGROOT -ErrorAction SilentlyContinue
+          if (Get-ChildItem Env: | Where-Object Name -Like 'PG*') { throw 'Unexpected inherited libpq configuration forbidden' }
+          python -m pytest backend/tests/test_positions_read_scope.py backend/tests/test_positions_read_release.py backend/tests/test_positions_read_scope_http.py backend/tests/test_positions_read_scope_postgres.py backend/tests/test_positions_route_postgres.py backend/tests/test_positions_publication_postgres.py -q -p no:cacheprovider --junitxml=positions-readiness.xml
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Require every gate with no skips
+        if: always()
+        shell: pwsh
+        run: |
+          if (-not (Test-Path -LiteralPath positions-readiness.xml)) { throw 'Required test report missing' }
+          [xml]$report = Get-Content -LiteralPath positions-readiness.xml -Raw
+          $cases = @($report.SelectNodes('//testcase'))
+          if ($cases.Count -ne 144) { throw 'Expected 144 tests; review count explicitly when suite changes' }
+          if ($report.SelectNodes('//skipped | //failure | //error').Count -ne 0) { throw 'Skipped/failed/missing integration gates are forbidden' }
