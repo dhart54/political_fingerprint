@@ -34,7 +34,11 @@ class DisposablePostgres:
 
     def __enter__(self):
         self.root.mkdir(parents=True, exist_ok=True)
-        self.directory.mkdir()
+        # Let initdb create the fresh directory with its own Windows token.
+        # Precreating it can leave initdb unable to set directory permissions.
+        # Never adopt an existing directory (including a dangling symlink).
+        if self.directory.exists() or self.directory.is_symlink():
+            raise FileExistsError('Disposable PostgreSQL directory already exists')
         with socket.socket() as reserved:
             reserved.bind(('127.0.0.1', 0))
             self.port = reserved.getsockname()[1]

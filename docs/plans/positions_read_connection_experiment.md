@@ -98,3 +98,11 @@ Focused correction validation: 73 tests passed, including six real PostgreSQL
 cases. Hosted successor checks and independent successor review remain pending.
 Completion requires terminal hosted outcomes tied to the reviewed successor;
 production compatibility and performance remain unproven by these fixtures.
+
+Second hosted head 0655ccad0275e70cab85a3e9490b920fef6dbb88 passed source review
+and the Education locator job (101 tests). Its Windows job reached pytest:
+51 passed and 95 setup errors, all from initdb failing to chmod precreated data
+directories. No cluster started; all three attempted directories had no PID file.
+The next harness correction lets initdb create the new UUID directory itself,
+refusing any existing path or symlink. It uses PostgreSQL's normal creation path;
+no ACL edits, service changes, endpoint relaxation, or environment-guard changes.
