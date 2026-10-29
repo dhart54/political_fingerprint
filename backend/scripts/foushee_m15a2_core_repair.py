@@ -294,6 +294,9 @@ class BorrowedConnection:
     def __init__(self,conn): self.conn=conn
     def __getattr__(self,key): return getattr(self.conn,key)
     def close(self): pass
+    # Public reads borrow the operator's uncommitted transaction. Only that
+    # operator may end it; scoped read cleanup must not roll back its writes.
+    def rollback(self): pass
     def cursor(self,*args,**kwargs):
         from psycopg.rows import tuple_row
         return self.conn.cursor(*args,**{**kwargs,'row_factory':tuple_row})

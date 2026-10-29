@@ -70,3 +70,31 @@ Intent: close local real-SQL route and connection-lifetime gaps without producti
 Definition of done: focused tests pass, owned cluster shutdown is verified, original index/checkpoint seals remain intact, exact new deltas/evidence are sealed, and independent review is complete. Any unavailable governed site fixture or deployed compatibility remains an explicit release gate. No commit/push/PR/merge or rollout is authorized.
 
 Progress: fixture and lifecycle implementation in progress; targeted validation and review pending. Rollback is the exact preserved index/source archive for tracked changes and preserved original HTTP source for that addition; no rollback action is being performed.
+
+## October 29 hosted validation (supersedes earlier delivery restrictions)
+
+The user approved applying the reviewed CI job, committing/pushing the existing
+experiment branch, and opening draft PR #244 for hosted testing only. No merge,
+deployment, production write, or editorial acceptance is authorized. Local
+lifecycle/publication evidence and independent source reviews are preserved in
+the ignored .tmp/positions-reuse evidence folders; the initial index is archived.
+
+First hosted head: 0067a79c57201f37b9876897343b84db7cd8d807. Backend run
+40954704773 and Education run 40954705016 exposed two blocking compatibility
+issues: Windows image PGUSER/PGPASSWORD defaults stopped the strict environment
+guard before pytest; scoped rollback reached the existing operator-owned borrowed
+transaction and invalidated public postcondition/idempotency checks.
+
+Correction: clear only the five documented image defaults in the test process,
+retaining rejection of all other PG-prefixed settings and the unchanged owned
+loopback harness. Make BorrowedConnection.rollback a no-op, matching its close
+ownership boundary, so only the operator ends its transaction. Add two real
+PostgreSQL regressions for retained writes and owner-controlled failed-read
+recovery, raising the new job's exact count from 144 to 146. Verify shutdown in
+the three known disposable fixture roots after hosted tests. No runtime SQL,
+publication guard, migration, or connection ownership policy is weakened.
+
+Focused correction validation: 73 tests passed, including six real PostgreSQL
+cases. Hosted successor checks and independent successor review remain pending.
+Completion requires terminal hosted outcomes tied to the reviewed successor;
+production compatibility and performance remain unproven by these fixtures.

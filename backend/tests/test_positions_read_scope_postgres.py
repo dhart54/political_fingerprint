@@ -78,3 +78,30 @@ def test_failed_query_discarded_and_later_read_works(postgres, monkeypatch):
         assert precomputed._query_all_dicts('SELECT 7 AS value') == [{'value': 7}]
         assert len(connections) == 2
     assert all(c.closed for c in connections)
+
+
+@pytest.mark.parametrize('fail_read', [False, True])
+def test_borrowed_operator_transaction_retains_writes_and_ownership(postgres, fail_read):
+    from scripts.foushee_m15a2_core_repair import public_reads_in_transaction
+
+    with postgres.connect() as owner:
+        owner.execute('CREATE TEMP TABLE borrowed_scope (value integer)')
+        owner.commit()
+        owner.execute('INSERT INTO borrowed_scope VALUES (7)')
+        with public_reads_in_transaction(owner):
+            with db.precomputed_read_scope():
+                assert precomputed._query_all_dicts('SELECT value FROM borrowed_scope') == [{'value': 7}]
+                assert owner.info.transaction_status == TransactionStatus.INTRANS
+                db.release_precomputed_read_connection()
+                assert not owner.closed
+                assert precomputed._query_all_dicts('SELECT value FROM borrowed_scope') == [{'value': 7}]
+                if fail_read:
+                    # The owner controls recovery even when a borrowed read fails.
+                    with pytest.raises(PublicDataUnavailable):
+                        precomputed._query_all_dicts('SELECT 1 / 0')
+                    assert owner.info.transaction_status == TransactionStatus.INERROR
+        assert not owner.closed
+        if not fail_read:
+            assert owner.execute('SELECT value FROM borrowed_scope').fetchall() == [(7,)]
+        owner.rollback()
+        assert owner.execute('SELECT count(*) FROM borrowed_scope').fetchone() == (0,)
