@@ -107,9 +107,15 @@ export function buildIssueOverviewRows({
       + nonNegativeNumber(row.interpreted_oppose_count)
     );
     const analysisAvailable = isPublicAnalysisAvailable(presentation);
+    const boundedChoiceAvailable = presentation?.presentation_branch === "bounded_choice_review"
+      && presentation?.bounded_choice?.display_role === "supporting_notable_choice";
+    const boundedAccountingAvailable = presentation?.presentation_branch === "bounded_choice_review"
+      && presentation?.bounded_choice?.display_role === "non_directional_accounting";
     return {
       ...row,
       analysisAvailable,
+      boundedChoiceAvailable,
+      boundedAccountingAvailable,
       claimRank: analysisAvailable
         ? CLAIM_RANK[presentation.review_state.public_claim_class] || 0
         : 0,

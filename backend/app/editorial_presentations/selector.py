@@ -305,6 +305,12 @@ def select_public_presentations(
     review_states = list(review_states)
     result = {issue_id: _fallback(issue_id, scope) for issue_id in SUPPORTED_ISSUES}
     for row in rows:
+        if row.get("publication_basis") == "bounded_choice_review":
+            from .bounded_choice_publication import select_bounded_publication
+            bounded = select_bounded_publication(row, member_id=member_bioguide_id, scope=scope)
+            if bounded is not None:
+                result[bounded["issue_id"]] = bounded
+            continue
         site_candidate = eligible_site_integration_candidate(
             row,
             member_bioguide_id=member_bioguide_id,

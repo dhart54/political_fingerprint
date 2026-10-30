@@ -1,0 +1,90 @@
+name: Bounded Health choice
+on:
+  pull_request:
+    paths: ['backend/**', 'frontend/**', 'scripts/**', 'docs/editorial/review_packages/health*/**', '.github/workflows/health-bounded-choice.yml']
+  push:
+    branches: [main]
+    paths: ['backend/**', 'frontend/**', 'scripts/**', 'docs/editorial/review_packages/health*/**', '.github/workflows/health-bounded-choice.yml']
+permissions:
+  contents: read
+jobs:
+  health-exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HEALTH_CHOICE_TEST_DATABASE_URL: postgresql://postgres@127.0.0.1:55438/pf_health_choice_test
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Prove exact head
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Start owned native loopback PostgreSQL
+        shell: bash
+        run: |
+          # Docker port forwarding makes inet_server_addr() a bridge address.
+          # Preserve the operator's actual-server loopback guard in hosted tests.
+          if ! command -v pg_config >/dev/null || ! test -x "$(pg_config --bindir)/initdb"; then
+            sudo apt-get update
+            sudo apt-get install -y postgresql
+          fi
+          PG_BIN="$(pg_config --bindir)"
+          test -x "$PG_BIN/initdb"
+          "$PG_BIN/initdb" -D "$RUNNER_TEMP/health-pg-data" -U postgres -A trust --no-locale --encoding=UTF8
+          if ! "$PG_BIN/pg_ctl" -D "$RUNNER_TEMP/health-pg-data" -l "$RUNNER_TEMP/health-pg.log" -o "-h 127.0.0.1 -p 55438 -k $RUNNER_TEMP" -w start; then
+            cat "$RUNNER_TEMP/health-pg.log"
+            exit 1
+          fi
+          "$PG_BIN/createdb" -h 127.0.0.1 -p 55438 -U postgres pf_health_choice_test
+          "$PG_BIN/psql" "$HEALTH_CHOICE_TEST_DATABASE_URL" -v ON_ERROR_STOP=1 -c "SELECT current_database(),host(inet_server_addr()),inet_server_port()"
+      - name: Install locked validation dependencies
+        run: |
+          python -m pip install -r backend/requirements.txt httpx
+          npm ci --prefix frontend --no-audit --no-fund
+      - name: Validate exact pending subjects and legacy boundaries
+        run: |
+          python -m scripts.build_health_bounded_choice --check
+          python -m pytest -q backend/tests/test_health_bounded_choice.py backend/tests/test_health_bounded_choice_postgres.py backend/tests/test_health_bounded_choice_operator.py backend/tests/test_health_one_action_review.py backend/tests/test_publication_activation_governance_v2.py backend/tests/test_api_editorial_presentations.py backend/tests/test_active_site_integration_dispatch.py
+      - name: Browser dependencies
+        working-directory: frontend
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Real API transport indexing and existing record-card parity
+        working-directory: frontend
+        run: node --test lib/healthChoicePresentation.test.mjs
+      - name: Local-only review at desktop, tablet and mobile
+        working-directory: frontend
+        run: npx --no-install playwright test tests/health-choice.spec.mjs --workers=1 --retries=0
+      - name: Production build and proof candidate route stays unavailable
+        working-directory: frontend
+        env:
+          PLAYWRIGHT_PRODUCTION_BUILD: '1'
+          ENABLE_HEALTH_CHOICE_REVIEW: '1'
+        run: |
+          npm run build
+          npx --no-install playwright test tests/health-choice.spec.mjs --workers=1 --retries=0
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: health-choice-diagnostics-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            frontend/test-results/
+            ${{ runner.temp }}/health-pg.log
+      - name: Stop owned PostgreSQL
+        if: always()
+        shell: bash
+        run: |
+          if test -f "$RUNNER_TEMP/health-pg-data/postmaster.pid"; then
+            "$(pg_config --bindir)/pg_ctl" -D "$RUNNER_TEMP/health-pg-data" -m fast -w stop
+          fi

@@ -26,8 +26,10 @@ async function component(name, dependencies = {}) {
   return compiledModule.exports;
 }
 const icon = await component("SemanticIcon");
+const boundedChoice = await component("BoundedChoiceReview");
 const analysis = await component("ReviewedAnalysisSection", {
   "./SemanticIcon": icon, "../lib/selectedIssueExperience.mjs": selectedIssue,
+  "./BoundedChoiceReview": boundedChoice,
 });
 
 test("pending NS candidate removes only its unsupported trajectory from actual rendered analysis", () => {

@@ -1,0 +1,271 @@
+# One bounded Health choice: content and rendering review
+
+This is the complete engineering review package. **Owner acceptance is pending.**
+All decision, reviewer, authority and decision-time fields in both detached
+receipts remain null. No artifact here authorizes publication, production
+eligibility, a database write, migration application or deployment.
+
+The original `health_s2393_one_action_v1` package is unchanged. Its accepted
+documentary selection/wording does not accept these new semantic, presentation
+or rendering subjects. The original Library ZIP remains unverified; these files
+do not claim to be its download or to verify its bytes.
+
+## Exact review subject
+
+Exactly `house:119:2:180`, `episode:s2393:119`, `HEALTH_SOCIAL`, Congress 119:
+
+| Member | Projection | Semantic subject | Presentation subject |
+| --- | --- | --- | --- |
+| F000477, Valerie Foushee | Yea; one supporting notable choice | `8d1fa7f75e9f4a982214aac2bc79ae1da8ac34b49eda0eacef5c60f4dfc8d4c4` | `9aee7b93d8f11700548f7280dfa22b181157b2ae309502d7d999ea25bef792c1` |
+| M001184, Thomas Massie | Not Voting; zero propositions, visible non-directional accounting | `5c3405cac0ff34273622320fff51c817c2ad2c62466855bb5b20ed59276182f2` | `9d69d66ecc97cd86a0030e022e64a12b998ebe6ae407efd7961696dc08544fdf` |
+
+Each member's `*-semantic.json` contains the exact frozen member graph, full
+mapped presentation inputs, source identities and existing-validator accounting.
+All seven original mapping objects survive intact. No primary/overall Health
+conclusion, full-record approval, benchmark label or relevance promotion is added.
+Both accounting records retain `semantic_tier: receipts_only`, candidate interpretations and `public_claim_class: vote_record_only`. The separate bounded display role carries the supporting choice; it does not change those axes. All five full-record external-authority references are null. The existing
+`validate_review` accepts both bounded accounting manifests without test authority.
+
+The authorization cap, clinical/nonclinical mix, FY2025 short-title/FY2026 operative
+distinction, House suspension/pass scope and all qualifications remain visible.
+The text does not infer appropriation, expenditure, enacted law, construction,
+delivered care, motive, benefit eligibility or a broader Health position.
+
+## Actual previews and decision
+
+- [Foushee desktop](previews/f000477-desktop.png), [Foushee mobile](previews/f000477-mobile.png)
+- [Massie desktop](previews/m001184-desktop.png), [Massie mobile](previews/m001184-mobile.png)
+
+The PNGs are actual local Chromium captures of the normal representative page, using unmodified responses built through the real API/selector under a test-only mock of the external trust seam. Desktop requests scope 119; mobile requests all. Both visibly identify the choice as 119th Congress. The House action is present in the ordinary ledger and the card receipts are expanded. The transport fixture contains no receipt or authority and cannot activate publication. Each
+`*-rendering.json` binds the presentation, current source manifest, PNG bytes,
+viewport, requested scope, representative path, visible-text digest and absence of page errors. All content fields and
+qualifications are retained; no screenshot substitutes for a source mapping.
+The executable validator requires both desktop 1280×900 and mobile 390×844
+captures. Tablet 768×1024 and keyboard expansion are tested separately.
+
+Reproduce with `python -m scripts.build_health_bounded_choice`, then from
+`frontend`, start local development with `ENABLE_HEALTH_CHOICE_REVIEW=1` and run
+`node scripts/capture-health-choice.mjs`. Rebuild pending receipts afterward and
+run the builder with `--check`. The normal route is `/?representative=<member-slug>&issue=HEALTH_SOCIAL&scope=119` (or `all`); the capture script installs the non-authorizing API transport fixture. The separate local component route is
+`/review/health-choice?member=F000477` or `M001184`. Production returns 404 even
+with the flag set. This route cannot become a public preview by deployment.
+
+The owner may accept the exact bounded content and rendering together, reject,
+or request revision. Acceptance requires a real named reviewer, the bounded
+review authority, truthful UTC decision time and all three exact subject hashes.
+Self-asserted reviewer metadata and a self-seal do not establish authority. `owner_decision_registry.json` is an empty, fixed repository trust store. A later separately authorized owner-decision recording must register the evidence file byte hash and canonical decision hash. The decision must bind all eleven identity/subject/decision fields (including the shared pair digest) and direct owner provenance; missing, stripped or unregistered evidence rejects. This evidence data stays outside the rendering manifest to avoid changing the subject being accepted. The SQL trust table is likewise empty, protected, append-only and outside initial-apply mutation caps. The shared `pair-subject.json` binds both complete member semantic/accounting/presentation/rendering closures. Every default acceptance and registration-preparation check revalidates both sets of pending receipt/preparation files and capture bytes. Each detached receipt and owner evidence decision binds the shared pair digest in addition to its three member hashes; missing or changed counterpart output blocks acceptance. Per-member activation transactions and fresh baselines remain separate. The receipt schema is closed; `validate_receipt` also checks frozen equality,
+canonical seals, member/scope/source/mapping bindings, runtime and PNG bytes.
+Schema success alone grants no authority. Pending receipts fail every
+acceptance-dependent constructor, write-set builder and selector boundary.
+
+The exact current rendering subject hashes are recorded in
+[`f000477-rendering.json`](f000477-rendering.json) and
+[`m001184-rendering.json`](m001184-rendering.json), and repeated in each pending
+receipt. Rendering manifests bind the reader/validator/write code and staged SQL
+as well as the frontend renderer. Any changed bound file invalidates acceptance.
+
+## Dormant initial publication and staged SQL
+
+`backend/migrations/staged/20261019231216_bounded_health_choice_publication.sql`
+was generated with pinned Supabase CLI 2.121.0 and developed only in an owned
+loopback PostgreSQL database. It is outside numbered automatic migration paths.
+It changes no current deployment or production database.
+
+The explicit `bounded_choice_review` basis admits only these two members, one
+Health action and episode, exact semantic/presentation subjects, actual accepted
+receipt evidence, current successful validation and complete source references.
+It stays `not_promoted`; legacy gold eligibility and selectors retain their
+meaning. The artifact rows remain immutable. The new view uses security-invoker
+semantics and grants no public role access. The touched activation function has
+a fixed search path. Supabase security advisors identify the unchanged 0016
+immutability function's mutable search path as a baseline warning; it is a
+follow-up outside this bounded change. No new advisor finding remains.
+
+`bounded_choice_publication.apply_initial` is an inert library function with no
+CLI, startup, deploy or scheduled execution hook. It reuses V2 initial-write
+governance, including separate positive activation authority and fresh actual
+read-only database/runtime evidence. It does not use the replacement-only V2R
+path. Publication apply still has exactly one batch, four artifacts, three relationships and one publication row per member, with zero owner-evidence registration writes. Before that baseline, owner-evidence registration is a separate operation capped at exactly one audit row per member and zero other mutations. `registration_plan` verifies the actual trusted evidence and pair closure and prepares the exact row/hash; it performs no write and grants no authority. The pending preparation records require separate positive approval for that exact registration, fresh target identity/baseline, absent decision ID, and verification that all other tables are unchanged. There is no production registration executor in this package.
+
+Both `*-initial-publication-preparation.json` files are explicitly pending, with
+accepted receipt, activation authority, exact write set, production baseline and
+runtime proof null. An executable write set cannot be finalized before actual
+acceptance and a fresh target baseline. Replaying an already applied initial
+write fails closed without writes. Each member is atomic; if a later member
+fails, the prior successful member remains separately identifiable. Roll back
+later member writes first, verifying exact row-state restoration. PostgreSQL
+sequence gaps after rolled-back inserts are expected and are not content state.
+The separate `staged-migration-rollback.sql` is an operational compatibility rollback. It requires bounded publication data to be rolled back first, restores legacy gold serving/eligibility, and removes the bounded serving view/helpers and added publication columns. It retains the exact append-only owner audit rows, envelope/hash CHECK helpers and immutability trigger. It revokes non-owner audit access, forces RLS, and leaves no serving policy or endpoint. Table-owner administration remains possible. Full audit erasure is not part of this rollback and would require separate authorized archival/removal. An explicitly authorized later reapplication may reuse the marked retained audit table without rewriting its rows. Ephemeral tests verify exact data rollback, retained row bytes and security state, legacy parity, and reapplication. Its restored CHECK
+has an explicit name; PostgreSQL's former generated CHECK name is not preserved.
+
+Before future activation, obtain separate migration, exact owner-evidence registration, and V2 activation authority,
+capture fresh per-member baselines, validate rollback, and verify the deployed
+runtime. Stable human decisions are distinct from expiring execution evidence.
+Database owner/service access is required; this staged migration adds no grants.
+The normal public API combines the unchanged legacy selector with the new view
+only if that view exists. Without separately authorized activation, responses
+remain identical. No pending candidate can be selected from disk.
+An existing legacy database reader without the new view/function privileges
+continues to receive its unchanged legacy rows; the new bounded read fails closed.
+
+## Validation and review status
+
+Local targeted admission, accounting, API/legacy dispatch, ephemeral apply,
+failure/partial-failure, stale baseline, replay, security and rollback tests pass.
+The corrected regression set includes typed bool/int/float seal substitutions, missing/forged owner evidence, default synthetic rejection, owned-test connection isolation, SQL synthetic exclusion even with the test flag, complete API-to-index transport for both members and all/119/118 scopes, preserved legacy domains, normal-page discovery and visible Congress markers. Exact successor results are recorded below and on the draft PR. Prior green checks and the initial clean review were insufficient and are superseded.
+The dedicated CI lane checks the exact PR head and uses its own PostgreSQL 16
+service; it cannot target Supabase. Hosted exact-head and independent review
+results are recorded in the active plan after the draft PR exists.
+
+The original packet byte SHA is
+`3b6b60a88bb7ca9ef42abe4fb80714910d490ea9dac4eb8b79a6cfc547960347`.
+The normalized sources retain their original seals. Three additional official
+raw objects have independently verified stored-byte hashes and executable parsed XML/JSON reconciliation against the normalized fields and full bill paragraphs (only explicit typography/whitespace normalization). Foundation validation replays the shared-corpus adapter and compiler pipeline and canonically compares input, compiled IR and presentation payload; those bytes are
+different captures from the normalized objects. Historical National Security
+acceptance/meaning does not transfer. Tests use conspicuously synthetic positive
+decisions only in memory and the owned disposable database through explicit test authority. The writer checks the actual loopback connection, exact database name and test superuser; its transaction-local SQL flag cannot enable public serving. The public SQL view always requires registered owner evidence, and the Python serving selector has no test override. No accepted owner record is exported. Positive API transport tests mock only the trusted-decision verification seam; this simulates admission without claiming real owner acceptance. Separate positive V2 activation authority is still required.
+
+
+The consolidated runtime checks also cover Render's backend working directory
+with no repository-root PYTHONPATH, unchanged four-domain/six-entry legacy record
+cards after adding bounded Health, and partially granted database readers missing
+the new owner-evidence function or table. The latter preserve legacy publication
+results and skip the optional bounded view. Existing card manifests are unchanged.
+
+
+Consolidated local validation: 198 backend release-subset tests passed, including
+actual PostgreSQL apply/replay/fault/rollback/security checks, backend-cwd runtime
+validation, and partial-reader preservation. All 369 frontend units passed;
+19 development and 19 production browser checks passed; production build and
+changed-file lint passed. The four refreshed normal-page PNGs are bound by
+rendering subjects F `56af1a84405b800a2b777dd4f0c28db22ffbe0f03b4466ecdfa5467a447ea7a3`
+and M `49edcd8f080058f0f8f137afc0c967df34ed9d43e593d511f0df095bd2f49576`.
+The builder `--check` passes. Supabase advisors report only the documented
+untouched legacy immutability-function search-path warning. Frozen original
+package diff is empty. Hosted checks and independent review must identify the
+successor head on draft PR239. Owner decisions remain null, both trusted stores
+remain empty, and there were no production effects.
+
+
+Residual verification adds an ordinary-defaults registered-evidence rehearsal:
+TEST ONLY evidence and registry data live in an owned temporary trust store;
+only its data location is redirected. The real verifier and SQL registration,
+apply, public view, Python selector and reverse data rollback run without a
+synthetic-mode flag or verifier mock. Each one-row registration delta is checked
+separately from publication writes. Compatibility rollback retains the two exact
+audit records while restoring legacy serving; real repository owner records
+remain empty and all actual receipts/preparations remain pending.
+
+Closed SQL evidence-envelope checks reject omitted, null, wrong-type and extra
+root/provenance fields. The ordinary path exposed and corrected a JSON operator
+precedence defect that synthetic mode had bypassed. The default two-member
+closure has missing/changed tests for all eight counterpart outputs through
+candidate acceptance, publication preparation, and registration preparation.
+
+All four PNGs are recaptured from normal page states after resetting scroll and
+allowing the page's own sticky observer to settle. No UI was hidden or restyled;
+accepted paragraphs and qualifications are unobscured. Prior capture/subject
+hashes and b027853 readiness results are superseded by this residual bundle.
+
+
+Final residual local validation: all 218 backend release-subset tests and all
+369 frontend units passed; 19 development browser checks and changed-file lint
+passed. The 50 API ingestion/card-parity cases remain part of those frontend
+units. Ordinary-defaults SQL registration/apply/public-selection and exact
+reverse data rollback passed for both members, followed by compatibility
+rollback retaining exact immutable audit rows while denying table, column-only,
+and delegated/grant-option reader access. Reapplication retained those rows.
+SQL omitted/null/wrong-type/extra-field negatives passed. Both members' eight
+counterpart outputs have missing/changed default acceptance/preparation tests.
+The full frontend runtime source is unchanged from b027853; hosted successor CI
+will independently rebuild and repeat production/browser exclusion checks.
+All four current normal-page captures were visually inspected and are unobscured.
+Real receipts and registry remain pending/empty; owned TEST ONLY database rows
+are rehearsal evidence and convey no authorization. Production effects: none.
+
+Previous shared pair subject (superseded below): `6a1f9c3d592eac80caec02a7914777b115c7d332fc238ecd7a6d3d51b47335ab`.
+F000477 rendering subject: `5682cb7c2e8359a88aaa32fa2836b68b8cee53470dcc9d2c9d58e48a9ccc712e`.
+M001184 rendering subject: `cb9cc57d2bc530b9cecf0a23f08c3bc8e47f5dd2ea3dbd150434bf20a884cdac`.
+The only Supabase advisor finding remains the unchanged legacy immutability-function mutable search-path warning. Full audit erasure remains excluded.
+
+## Outer member identity correction
+
+Independent retesting of a0e25ff5 reproduced a Python admission defect: a valid
+inner bundle could be duplicated or swapped under the other outer member key,
+then consistently resealed. The existing SQL semantic/presentation pins rejected
+that pair; this finding did not demonstrate a persistence or serving bypass.
+
+Pair construction now requires each outer key to equal the semantic, accounting,
+presentation and rendering member identities before nested validation. Pending
+preparation also binds its outer member to subject, presentation and receipt.
+Regressions cover both duplicate directions and swapped bundles through the
+default pair, receipt and candidate gates with actual TEST ONLY registered
+evidence, plus split nested identities and preparation substitution. The verifier
+is not mocked and no synthetic authority flag is used in these regressions.
+
+Semantic, accounting and presentation subjects, frozen source content and SQL
+pins are unchanged. All four fresh normal-page captures are byte-identical to
+the prior unobscured captures; their rendering subjects now bind the corrected
+Python runtime. Actual owner decisions remain pending and the registry empty.
+
+Current shared pair subject: `eba0d9856c124fca6ba231f1e5bf88d21a2045cf5ff92ef9f079ec946f0e500a`.
+F000477 rendering subject: `2e5284a80c249c916a7ef7a7396e360027ce9e5f229dbc6e5f1a6dd1fb96937c`.
+M001184 rendering subject: `fde3758b346d7757d75f286b976b9fb96f86e66a7e156bbe846902446bcdf489`.
+Successor validation and independent review are recorded on draft PR239 by exact
+commit. Earlier green checks/clean reviews do not close this admission finding.
+
+Correction validation: 225 backend release-subset tests passed, including the
+ordinary registered two-member SQL path and retained-audit rollback/reapplication;
+369 frontend units and 19 development browser checks passed. All seven new
+identity regressions pass, changed-file lint/format and builder `--check` pass.
+The initial sandbox test attempt could not access Windows' pytest temporary
+directory; rerunning with normal local access resolved that tooling limitation.
+
+
+## Dormant operator successor reconciliation
+
+The explicit operator now prepares exact read-only requests, registers each
+separately approved one-row owner decision, publishes Foushee then Massie under
+existing V2 authority, recovers lost reports read-only and rolls publications
+back in reverse order while retaining audit evidence. No startup/build/deploy
+hook invokes it. The fixed operator approval catalog is empty and production
+service-binding observations remain pending.
+
+Independent source review found and closed three issues: same-count incomplete
+report recovery, BEFORE INSERT rewrites escaping publication postconditions, and
+global observation refresh blocking durable rollback. The common verifier now
+checks strict canonical JSON for the full stored graph and proves removal of
+only that exact delta restores the complete approved baseline. A follow-up
+boolean/integer equality counterexample is covered by a JSON true rewrite test.
+
+Validation of final runtime bytes: 256 backend release-subset tests pass,
+including 31 actual CLI operator cases; 369 frontend units pass; all19 development
+and all19 production browser cases pass; production build, builder --check,
+changed-file Ruff lint/format and diff checks pass. Existing frontend hook
+warnings remain in unchanged files. All four normal-page PNGs were visually
+inspected and remain byte-identical; source/semantic/accounting/presentation and
+both raw SQL artifact bytes are unchanged. No baseline failure was hidden.
+
+Current shared pair subject: `ff647f5c6b19c2c6ecf673381f2b9eb9f67f7fc33ec5cf016ea1e39c3009390a`.
+F000477 rendering: `c6b94d3caea890c8bb5dd600c2bcfa9dadb800a09d99f07e1f1365079de43a5f`.
+M001184 rendering: `7da416fd832a114705995ec1f2370ce25ecc9bf01a5249223b2fcd0d4a95d27b`.
+These supersede earlier runtime-bound subjects; source meaning remains frozen.
+
+The target-specific pending release packet and operator guide are committed
+alongside empty catalogs/null decisions. Fresh read-only Green observation on
+2026-10-21 confirms unchanged11/167/173/4 editorial counts, no target Health rows
+and absent bounded schema. Render-to-Green and authenticated Vercel alias/config
+remain explicit gates. The403 boundary was respected. Inherited service_role
+access and exact migration/retained-audit compatibility recovery require separate
+approval. Exact successor commit, hosted checks and final independent head
+reconciliation are recorded on draft PR239; older green results do not certify it.
+
+No real owner acceptance, registration, schema application, access grant,
+activation/publication, merge/ready transition, production write or manual deploy
+was performed. Infrastructure and Immigration worktrees were not modified.
+
+Hosted 35e0de8a Health validation failed closed because the Docker service's
+server address was a bridge address despite client127.0.0.1. The workflow now
+starts an isolated native runner cluster on127.0.0.1:55438 and stops it with
+always cleanup. The actual-server guard, operator/runtime/SQL and all pending
+subject/capture bytes remain unchanged. Exact successor CI/review is required.

@@ -410,7 +410,24 @@ def test_m14g_preserves_protected_ui_historical_m13_and_m14a_through_m14f() -> N
         capture_output=True,
         text=True,
     )
-    assert result.stdout.strip() == ""
+    changed_paths = result.stdout.strip().splitlines()
+    renderer = "frontend/components/ReviewedAnalysisSection.js"
+    if renderer in changed_paths:
+        # The later bounded Health milestone adds a closed rendering branch.
+        # Keep the historical M14G renderer byte-for-byte protected after
+        # removing ONLY that explicit import/early return, not arbitrary edits.
+        old_renderer = subprocess.run(
+            ["git", "show", f"{BASELINE_MAIN_SHA}:{renderer}"],
+            cwd=ROOT, check=True, capture_output=True, text=True, encoding="utf-8",
+        ).stdout
+        current_renderer = (ROOT / renderer).read_text(encoding="utf-8")
+        bounded_import = 'import BoundedChoiceReview from "./BoundedChoiceReview";\n'
+        bounded_branch = '  if (presentation?.presentation_branch === "bounded_choice_review") {\n    return <BoundedChoiceReview presentation={presentation.bounded_choice} />;\n  }\n'
+        assert current_renderer.count(bounded_import) == 1
+        assert current_renderer.count(bounded_branch) == 1
+        assert current_renderer.replace(bounded_import, "").replace(bounded_branch, "") == old_renderer
+        changed_paths.remove(renderer)
+    assert changed_paths == []
 
 
 def test_m14g_has_no_downstream_authority() -> None:

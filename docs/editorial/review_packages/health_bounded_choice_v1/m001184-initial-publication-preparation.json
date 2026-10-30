@@ -1,0 +1,59 @@
+{
+  "accepted_receipt": null,
+  "authorizing": false,
+  "congress": 119,
+  "exact_write_set": null,
+  "fresh_database_baseline": null,
+  "fresh_runtime_proof": null,
+  "future_requirements": [
+    "separate staged-migration authorization",
+    "exact content and rendering acceptance",
+    "trusted repository evidence registration with exact file and decision hashes",
+    "separate positive approval for exactly one owner-evidence database row per member; no other writes",
+    "verify registration delta and retained immutable audit state before taking the publication baseline",
+    "separate positive V2 initial-publication authority",
+    "fresh per-member read-only baseline and runtime identity",
+    "validated exact rollback before writing"
+  ],
+  "initial_write_invariants": "publication_activation_governance_v2",
+  "issue_id": "HEALTH_SOCIAL",
+  "member_id": "M001184",
+  "mutation_caps": {
+    "deletes": 0,
+    "insert_artifacts": 4,
+    "insert_batches": 1,
+    "insert_registry_rows": 1,
+    "insert_relationships": 3,
+    "unauthorized_table_writes": 0,
+    "updates": 0
+  },
+  "owner_evidence_registration": {
+    "authorizing": false,
+    "exact_row": null,
+    "exact_row_sha256": null,
+    "fresh_database_baseline": null,
+    "mutation_caps": {
+      "deletes": 0,
+      "insert_artifacts": 0,
+      "insert_batches": 0,
+      "insert_owner_decision_rows": 1,
+      "insert_publication_registry_rows": 0,
+      "insert_relationships": 0,
+      "unauthorized_table_writes": 0,
+      "updates": 0
+    },
+    "registration_approval": null,
+    "rollback": "retain_append_only_audit_evidence; remove_serving_access",
+    "state": "pending_separate_exact_registration_approval",
+    "table": "editorial_bounded_choice_owner_decisions"
+  },
+  "pair_subject_sha256": "ff647f5c6b19c2c6ecf673381f2b9eb9f67f7fc33ec5cf016ea1e39c3009390a",
+  "pending_receipt_subject_sha256": "d811aa80b4583965e9370e408eb2d2355510f53b4406c5c407efc00f506ad8af",
+  "presentation_subject_sha256": "9d69d66ecc97cd86a0030e022e64a12b998ebe6ae407efd7961696dc08544fdf",
+  "rendering_subject_sha256": "7da416fd832a114705995ec1f2370ce25ecc9bf01a5249223b2fcd0d4a95d27b",
+  "replacement_path": false,
+  "schema_version": "bounded_choice_initial_publication_preparation_v1",
+  "semantic_subject_sha256": "5c3405cac0ff34273622320fff51c817c2ad2c62466855bb5b20ed59276182f2",
+  "stable_activation_authority": null,
+  "state": "pending_content_rendering_and_activation_authority"
+}

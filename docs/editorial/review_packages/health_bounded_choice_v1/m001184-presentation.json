@@ -1,0 +1,139 @@
+{
+  "action_ids": [
+    "house:119:2:180"
+  ],
+  "artifact_id": "bounded-choice:m001184:health:s2393:119:v1:presentation",
+  "authorizing": false,
+  "boundaries": [
+    {
+      "action_ids": [
+        "house:119:2:180"
+      ],
+      "boundary_id": "scope:s2393-review:m001184",
+      "boundary_type": "reviewed_congress_scope",
+      "episode_ids": [
+        "episode:s2393:119"
+      ],
+      "presentation_target": "scope_note"
+    },
+    {
+      "action_ids": [
+        "house:119:2:180"
+      ],
+      "boundary_id": "coverage:c9ecb27beef8637e",
+      "boundary_type": "not_voting",
+      "detail": "Resolved Not Voting actions are non-directional.",
+      "presentation_target": "coverage_note"
+    }
+  ],
+  "congress": 119,
+  "display_role": "non_directional_accounting",
+  "episode_ids": [
+    "episode:s2393:119"
+  ],
+  "issue_id": "HEALTH_SOCIAL",
+  "member_id": "M001184",
+  "official_member_action": "Not Voting",
+  "presentation_branch": "bounded_choice_review",
+  "presentation_subject_sha256": "9d69d66ecc97cd86a0030e022e64a12b998ebe6ae407efd7961696dc08544fdf",
+  "proposition_ids": [],
+  "publication_basis": "bounded_choice_review",
+  "receipt": {
+    "action_id": "house:119:2:180",
+    "bill": "S.2393",
+    "chamber": "House",
+    "date": "2026-05-20",
+    "question": "On Motion to Suspend the Rules and Pass",
+    "roll_number": 180
+  },
+  "records": {
+    "accounting": {
+      "mapping": {
+        "action_ids": [
+          "house:119:2:180"
+        ],
+        "boundary_ids": [
+          "coverage:c9ecb27beef8637e"
+        ],
+        "episode_ids": [],
+        "mapping_id": "mapping:s2393-review:M001184:accounting",
+        "presentation_target": "coverage_note",
+        "proposition_ids": [],
+        "receipt_refs": [
+          "docs/review_packets/health_one_action_owner_decision_receipt_draft.md"
+        ],
+        "source_refs": [
+          "clerk:119:2:180",
+          "govinfo:s2393es"
+        ]
+      },
+      "statement_id": "statement:s2393-review:M001184:accounting",
+      "text": "Thomas Massie was recorded as Not Voting on this question. That record does not establish support or opposition to the authorization."
+    },
+    "qualifications": {
+      "mapping": {
+        "action_ids": [
+          "house:119:2:180"
+        ],
+        "boundary_ids": [
+          "scope:s2393-review:m001184"
+        ],
+        "episode_ids": [
+          "episode:s2393:119"
+        ],
+        "mapping_id": "mapping:s2393-review:M001184:qualifications",
+        "presentation_target": "scope_note",
+        "proposition_ids": [],
+        "receipt_refs": [
+          "docs/review_packets/health_one_action_owner_decision_receipt_draft.md"
+        ],
+        "source_refs": [
+          "clerk:119:2:180",
+          "govinfo:s2393es"
+        ]
+      },
+      "statement_id": "statement:s2393-review:M001184:qualifications",
+      "text": "This interpretation concerns the House suspension-and-passage vote on the Senate-engrossed text, not a claim of enactment. The bill’s printed short title says fiscal year 2025, while its operative project and appropriation-authorization provisions say fiscal year 2026. The project combines clinical and nonclinical construction. The vote establishes no general veteran benefit, patient-admission rule, guaranteed construction date, or medical outcome. No motive or preferred alternative is inferred."
+    },
+    "scope_label": {
+      "mapping": {
+        "action_ids": [
+          "house:119:2:180"
+        ],
+        "boundary_ids": [
+          "scope:s2393-review:m001184"
+        ],
+        "episode_ids": [
+          "episode:s2393:119"
+        ],
+        "mapping_id": "mapping:s2393-review:M001184:scope",
+        "presentation_target": "scope_note",
+        "proposition_ids": [],
+        "receipt_refs": [
+          "docs/review_packets/health_one_action_owner_decision_receipt_draft.md"
+        ],
+        "source_refs": [
+          "clerk:119:2:180",
+          "govinfo:s2393es"
+        ]
+      },
+      "statement_id": "statement:s2393-review:M001184:scope",
+      "text": "One reviewed vote on a St. Louis VA facility authorization. This is a bounded sample, not an assessment of the member’s overall Health record."
+    }
+  },
+  "review_scope": "bounded_partial_record",
+  "schema_version": "bounded_choice_presentation_v1",
+  "semantic_subject_sha256": "5c3405cac0ff34273622320fff51c817c2ad2c62466855bb5b20ed59276182f2",
+  "sources": [
+    {
+      "governed_bytes_sha256": "eb88c63efbc5d13d03dcf1107601a087a1049e141679d10d89718e30331fd83f",
+      "source_id": "clerk:119:2:180",
+      "url": "https://clerk.house.gov/evs/2026/roll180.xml"
+    },
+    {
+      "governed_bytes_sha256": "144cf0e5cc200e45790954355bcd42e45a247eee3ef64faba0d5e01beccec203",
+      "source_id": "govinfo:s2393es",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2393es/html/BILLS-119s2393es.htm"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": "health_release_decision_proposal_not_authority_v1",
+  "authorizing": false,
+  "state": "PENDING",
+  "current_scope": "dormant_operator_engineering_and_pending_release_packet",
+  "pr": 239,
+  "reviewed_head": null,
+  "observed_main": "c52d121b64d814de3cf684980368bced40e5b4ea",
+  "pair_subject_sha256": "ff647f5c6b19c2c6ecf673381f2b9eb9f67f7fc33ec5cf016ea1e39c3009390a",
+  "reviewed_runtime_manifest_sha256": "5b34d14392289a4851c72fdac30326f1592149edf75a55121f688725209e056d",
+  "target": {
+    "supabase_project_ref": "yalpfkaxkxebwolhorha",
+    "name": "Political Fingerprint Green",
+    "database": "postgres",
+    "render_service_id": "srv-d84abkuq1p3s738qd1i0",
+    "render_workspace_id": "tea-d0t0r4qli9vc73a4f2i0",
+    "vercel_project_id": "prj_BK1ncrlDgqWLQjf8z0yw8GW8enLp",
+    "vercel_team_id": "team_A6IS68EmoruFWcEvMQysyFQM",
+    "render_to_database_binding_verified": false,
+    "vercel_live_alias_commit_verified": false
+  },
+  "migration": {
+    "path": "backend/migrations/staged/20261019231216_bounded_health_choice_publication.sql",
+    "raw_byte_sha256": "7c8552cb90124170a59d3a9c43b899335673e53422ee1c57e10ca010f184e469",
+    "actual_approval": null
+  },
+  "compatibility_rollback": {
+    "path": "docs/editorial/review_packages/health_bounded_choice_v1/staged-migration-rollback.sql",
+    "raw_byte_sha256": "91bdff746eb481b01e5338b3a28061d4189e91dfbd0280fe69c8ed2fc484ee31",
+    "retains_immutable_owner_audit": true,
+    "actual_approval": null
+  },
+  "pending_components": {
+    "pair_acceptance": null,
+    "integration_and_automatic_deployment": null,
+    "actual_decision_recording_and_evidence_integration": null,
+    "migration": null,
+    "exact_data_and_compatibility_recovery": null
+  },
+  "future_commits": {
+    "executor_reviewed_head": null,
+    "pr239_merge_commit": null,
+    "owner_evidence_commit": null,
+    "deployed_reviewed_source_commit": null
+  },
+  "per_member_registration_caps": {
+    "insert_owner_decision_rows": 1,
+    "insert_batches": 0,
+    "insert_artifacts": 0,
+    "insert_relationships": 0,
+    "insert_publication_registry_rows": 0,
+    "updates": 0,
+    "deletes": 0,
+    "unauthorized_table_writes": 0
+  },
+  "per_member_publication_caps": {
+    "insert_batches": 1,
+    "insert_artifacts": 4,
+    "insert_relationships": 3,
+    "insert_registry_rows": 1,
+    "insert_owner_decision_rows": 0,
+    "updates": 0,
+    "deletes": 0,
+    "unauthorized_table_writes": 0
+  },
+  "proposed_member_order": [
+    "F000477",
+    "M001184"
+  ],
+  "members": [
+    {
+      "member_id": "F000477",
+      "semantic_subject_sha256": "8d1fa7f75e9f4a982214aac2bc79ae1da8ac34b49eda0eacef5c60f4dfc8d4c4",
+      "presentation_subject_sha256": "9aee7b93d8f11700548f7280dfa22b181157b2ae309502d7d999ea25bef792c1",
+      "rendering_subject_sha256": "c6b94d3caea890c8bb5dd600c2bcfa9dadb800a09d99f07e1f1365079de43a5f",
+      "state": "PENDING",
+      "actual_decision_id": null,
+      "actual_decision": null,
+      "actual_reviewer": null,
+      "actual_reviewer_authority": null,
+      "actual_decided_at_utc": null,
+      "direct_decision_provenance": null,
+      "decision_sha256": null,
+      "file_sha256": null,
+      "accepted_receipt_sha256": null,
+      "candidate_sha256": null,
+      "registration_exact_row": null,
+      "registration_exact_row_sha256": null,
+      "registration_approval": null,
+      "preparation_authority": null,
+      "stable_production_baseline": null,
+      "exact_write_set_subject_sha256": null,
+      "activation_authority_subject_sha256": null,
+      "rollback_contract_sha256": null,
+      "expected_postconditions_sha256": null,
+      "fresh_runtime_proof": null,
+      "fresh_production_preflight": null
+    },
+    {
+      "member_id": "M001184",
+      "semantic_subject_sha256": "5c3405cac0ff34273622320fff51c817c2ad2c62466855bb5b20ed59276182f2",
+      "presentation_subject_sha256": "9d69d66ecc97cd86a0030e022e64a12b998ebe6ae407efd7961696dc08544fdf",
+      "rendering_subject_sha256": "7da416fd832a114705995ec1f2370ce25ecc9bf01a5249223b2fcd0d4a95d27b",
+      "state": "PENDING",
+      "actual_decision_id": null,
+      "actual_decision": null,
+      "actual_reviewer": null,
+      "actual_reviewer_authority": null,
+      "actual_decided_at_utc": null,
+      "direct_decision_provenance": null,
+      "decision_sha256": null,
+      "file_sha256": null,
+      "accepted_receipt_sha256": null,
+      "candidate_sha256": null,
+      "registration_exact_row": null,
+      "registration_exact_row_sha256": null,
+      "registration_approval": null,
+      "preparation_authority": null,
+      "stable_production_baseline": null,
+      "exact_write_set_subject_sha256": null,
+      "activation_authority_subject_sha256": null,
+      "rollback_contract_sha256": null,
+      "expected_postconditions_sha256": null,
+      "fresh_runtime_proof": null,
+      "fresh_production_preflight": null
+    }
+  ],
+  "blocking_execution_gates": [
+    "exact successor review and hosted validation must be reconciled on PR239",
+    "direct owner decisions absent",
+    "exact separate registration approvals absent",
+    "accepted preparation and exact per-member V2 authority absent",
+    "post-migration and post-registration stable baselines absent",
+    "fresh deployed-source/runtime and production-preflight proofs absent",
+    "sanitized Render-to-Green binding unverified",
+    "authenticated Vercel live-alias/config inspection unavailable",
+    "separate migration and inherited service_role persistent-access approval absent"
+  ],
+  "all_null_approval_fields_mean": "PENDING; never derive approval from the proposal, relay, green checks or synthetic fixtures",
+  "engineering_head_binding": "Exact successor commit, independent review and hosted checks are recorded on draft PR239; this proposal creates no approval.",
+  "previous_reviewed_head": "e5eb545fb2911da8cfda3abbbc09b1ae74c3f9a2",
+  "engineering_status": {
+    "operator_implemented": true,
+    "production_invoked": false,
+    "real_approval_catalog_records": 0,
+    "production_bindings": "pending"
+  }
+}

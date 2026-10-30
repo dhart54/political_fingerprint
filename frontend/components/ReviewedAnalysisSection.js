@@ -1,4 +1,5 @@
 import SemanticIcon from "./SemanticIcon";
+import BoundedChoiceReview from "./BoundedChoiceReview";
 import {
   buildFindingIndex,
   buildPatternIndex,
@@ -9,6 +10,9 @@ export default function ReviewedAnalysisSection({
   presentation,
   rows = [],
 }) {
+  if (presentation?.presentation_branch === "bounded_choice_review") {
+    return <BoundedChoiceReview presentation={presentation.bounded_choice} />;
+  }
   if (!presentation?.review_state || presentation.tier === "receipts_only") {
     return null;
   }
