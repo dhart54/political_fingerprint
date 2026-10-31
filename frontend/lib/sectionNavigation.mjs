@@ -45,8 +45,14 @@ export function createSectionNavigation(journey) {
           if (journey.querySelector("#issues")?.dataset.sectionReady !== "true") return;
           const target = document.getElementById(id);
           if (!target || !journey.contains(target)) return;
-          observer?.disconnect();
-          observer = undefined;
+          const desiredTop = target.getBoundingClientRect().top + window.scrollY
+            - (parseFloat(getComputedStyle(target).scrollMarginTop) || 0);
+          // Positions can now precede receipts. Keep observing if the short
+          // loading page cannot yet place this target below the sticky header.
+          if (desiredTop <= document.documentElement.scrollHeight - window.innerHeight + 1) {
+            observer?.disconnect();
+            observer = undefined;
+          }
           // History restoration is immediate, also cancelling a superseded
           // smooth issue-selection scroll. Explicit issue clicks retain motion.
           target.scrollIntoView({ behavior: "instant", block: "start" });
