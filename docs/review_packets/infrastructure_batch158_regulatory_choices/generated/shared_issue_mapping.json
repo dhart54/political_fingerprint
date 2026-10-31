@@ -1,0 +1,145 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:regulatory-five-held-choices158-20261031",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five distinct exact whole-passage choices with own held episodes; no general regulatory rule, current-law outcome, membership acceptance or propositions."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:35",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr26:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10035
+      },
+      "mapping_sha256": "b26c7997018c9cd6dcf47a11125c96965027bbbb419495a19247cd23530dffde"
+    },
+    {
+      "action_id": "house:119:1:52",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hjres35:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10052
+      },
+      "mapping_sha256": "c8d343132f50556f4451b9abf9c4f9077a6443532847866e771649b706d2f588"
+    },
+    {
+      "action_id": "house:119:1:71",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hjres25:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10071
+      },
+      "mapping_sha256": "135c038c511b6c58a9cc523414faed19ec98da3d21b07fe1bffb8d25ae6800fc"
+    },
+    {
+      "action_id": "house:119:1:110",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hjres60:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10110
+      },
+      "mapping_sha256": "ef9bb49c5d879803e9ff57ccc1de1b28932609eea7c772c8d2dd30829eb884ee"
+    },
+    {
+      "action_id": "house:119:1:113",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hjres78:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10113
+      },
+      "mapping_sha256": "469f2edf925b7a2820766f52c5785a78bb62b7b5c9c61e24c68c090ec5f326f9"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr26:119",
+      "action_ids": [
+        "house:119:1:35"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hjres35:119",
+      "action_ids": [
+        "house:119:1:52"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hjres25:119",
+      "action_ids": [
+        "house:119:1:71"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hjres60:119",
+      "action_ids": [
+        "house:119:1:110"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hjres78:119",
+      "action_ids": [
+        "house:119:1:113"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:35",
+        "house:119:1:52",
+        "house:119:1:71",
+        "house:119:1:110",
+        "house:119:1:113"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "Each exact meaning and Infrastructure directness suggestion remains held and unapplied; external law, prior baseline, current-effect and graphic limits remain. No propositions or trajectory.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "2bf40dd842b95d73a0b5ec060599211c163e7249b952f997c2c3842a7ea7a472"
+}
