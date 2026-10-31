@@ -178,3 +178,5 @@ otherwise preserve exact partial/review/hosted state, owned files/hashes and
 resume steps. No system-wide process inventory or PC shutdown; stop only known
 owned supported sessions. Existing253delivery is fully closed/all3workflows and
 13backend jobs authenticated, completion33c06c3e; do not rerun those gates.
+
+Independent exact-target correction: preserve original e317e411 as review evidence. H.R.4090 land identification covers land which may be leased or is open to location; an existing lease is not required. Regenerate compact/native/review products and their seals; retain source bytes, eligibility proposals and all unresolved canonical flags. No new acquisition or expanded scope.

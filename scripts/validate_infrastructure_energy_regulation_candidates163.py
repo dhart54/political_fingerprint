@@ -10,10 +10,10 @@ from scripts.prepare_shared_domain_candidate import prepare, readable_candidates
 P = ROOT / 'docs/review_packets/infrastructure_batch163_energy_regulation'
 B = ROOT / 'docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916'
 BASE = '65575bf9a045f23c99f07a0750e6560fbd937655'
-AUTHORING_SHA = 'b1d86ef06ce1ee6f0481b5d689c23765414ea1546d849cfdda411d74591c9d5f'
+AUTHORING_SHA = 'c78612826cbd6a69250493dcbadd94e14f45c0e49d42cf71b56fdb4bbda56b8c'
 PREFLIGHT_SHA = 'd754b48643ff80297b2c0106dd4b50ab7cfa8fce1a8c3cd4fe823fd9edbf363c'
-BUNDLE_SHA = 'e96e7a0675e7a94c571e1011754ed29fe2657172276abf0a981dbd0a70dc8d5e'
-MANIFEST_SHA = 'b88c17b40ef605c596b3361aa500bc7605016dff4beaab4a28ffa59a1656adb0'
+BUNDLE_SHA = '34b31d814680b08b1a2d1100fea1ca8ac47df9b0490fffdf015309cbc33834ad'
+MANIFEST_SHA = '695fd9195b24b676cd15cd94575ccd73c0814eda4cfb549e9152ed6dc4d079da'
 PRESERVATION_SHA = 'd1ce0f76fcc5f51e45e25079aae6a682ff209e2dd67463fec68c65bd983fa12f'
 SPECS = [(1,304,1949),(2,23,4593),(2,55,4090),(2,116,6409),(2,137,5587)]
 ACTIONS = [f'house:119:{session}:{roll}' for session,roll,bill in SPECS]

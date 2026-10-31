@@ -37,7 +37,7 @@ class HeldEnergyRegulation163(unittest.TestCase):
             with self.subTest(old=old):self.changed(1,old,new)
 
     def test_mining_whole_package_clocks_and_eligibility(self):
-        for old,new in [('within10days AFTERthat list','within10days BEFOREenactment'),('CANIMMEDIATELYapprove','must automatically approve'),('BOTHquick permitting/operation ANDgreatest','EITHERquick permitting/operation ORgreatest'),('not repeal of those State/local laws','repeal of those State/local laws'),('coal/oil/oilshale/gas/sodium/potassium/sulfur/MaterialsActmaterials are excluded','coal/oil/oilshale/gas/sodium/potassium/sulfur/MaterialsActmaterials are all included'),('not independent realized outcomes','independently established realized outcomes')]:
+        for old,new in [('land which may be leased or is open to location','land already leased or open to location'),('within10days AFTERthat list','within10days BEFOREenactment'),('CANIMMEDIATELYapprove','must automatically approve'),('BOTHquick permitting/operation ANDgreatest','EITHERquick permitting/operation ORgreatest'),('not repeal of those State/local laws','repeal of those State/local laws'),('coal/oil/oilshale/gas/sodium/potassium/sulfur/MaterialsActmaterials are excluded','coal/oil/oilshale/gas/sodium/potassium/sulfur/MaterialsActmaterials are all included'),('not independent realized outcomes','independently established realized outcomes')]:
             with self.subTest(old=old):self.changed(2,old,new)
 
     def test_air_distinct_geography_causes_mobile_and_renewal(self):
