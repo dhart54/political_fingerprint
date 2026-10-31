@@ -1,0 +1,145 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:transport-governance-five-held-choices155-20261031",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five exact transport-equipment/control-governance choices only; isolated held candidates, no new canonical decisions or present-law conclusions."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:103",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr973:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10103
+      },
+      "mapping_sha256": "390fc7fe304134ddc7af684b9bae9d1d6e0a1afb0777e53d501d17520b81bf5a"
+    },
+    {
+      "action_id": "house:119:1:112",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hjres89:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10112
+      },
+      "mapping_sha256": "5a5280519f3d496dd82e4c687ba3f2129f191151f3c6a959f33aa22aef63ccb8"
+    },
+    {
+      "action_id": "house:119:1:114",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hjres88:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10114
+      },
+      "mapping_sha256": "44fd69a7e85d10ebcd309b97d4b50273f143c8c635ca84867619922419a428c9"
+    },
+    {
+      "action_id": "house:119:2:306",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hjres210:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20306
+      },
+      "mapping_sha256": "a85c3781d75e88f6bfa19d31cf3d298c753b0fad68a241dd6d4979838d5756b8"
+    },
+    {
+      "action_id": "house:119:2:311",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hjres213:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20311
+      },
+      "mapping_sha256": "54bc4be18429346b75af479f7bfaf159ecf5039a09d03938a9eff38ed8a5bce3"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr973:119",
+      "action_ids": [
+        "house:119:1:103"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hjres89:119",
+      "action_ids": [
+        "house:119:1:112"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hjres88:119",
+      "action_ids": [
+        "house:119:1:114"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hjres210:119",
+      "action_ids": [
+        "house:119:2:306"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hjres213:119",
+      "action_ids": [
+        "house:119:2:311"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:103",
+        "house:119:1:112",
+        "house:119:1:114",
+        "house:119:2:306",
+        "house:119:2:311"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "All five episodes held for independent preparation review and separate meaning/eligibility decisions; CRA applicability and external technical/current-law baselines remain reserved. Zero propositions; no acceptance or application.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "a2a6b437d025bd29ab941bd4483b53ccc36968796232e8de308298b3556123fe"
+}

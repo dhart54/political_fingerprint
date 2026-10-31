@@ -1,0 +1,1485 @@
+{
+  "kind": "held_preparation_preflight155",
+  "base_commit": "63b8d982dbcdc9de03b433fab3928bf14ed364f2",
+  "canonical_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916",
+  "membership_sha256": "470813b66aac2d4f700fcb5b243e5c8a50c62153c2feacd07bc0b4c1ff18f6c2",
+  "universe_sha256": "f2f0c6f40c99568b584fa2be3906556e48ddf575bea5def64f7b7dbe8a44af1e",
+  "source_pool_sha256": "36f8796421afd246aed96ea6f311d13a1f80157beaad900fa4ea92c0a6270523",
+  "queue_before": {
+    "total_records": 676,
+    "pending": 246,
+    "prepared_pending": 26,
+    "not_prepared": 220,
+    "unresolved_among_not_prepared": 173
+  },
+  "all_existing_shared_core_checks": [
+    {
+      "path": "docs/editorial/review_packages/health_s2393_one_action_v1/shared_action_core.json",
+      "object_sha256": "202d6b30429e4b30b577d14beee9318045514ba2426f0870c621f4a4e923324f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json",
+      "object_sha256": "81f1634262030f67c5ab952d1a80f9ce5781528b68af7780b6d6056fc01eaba7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_action_core.json",
+      "object_sha256": "5bc4ec9bcf876869ed562051fd9c8b7f369a50b9b9b76c5b30bb37c02ff12bc7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/generated/shared_action_core.json",
+      "object_sha256": "10a16347059c7605df7cd3594919ae3fe2b958c6a010d4e2df90f4ebcf618b6d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/generated/shared_action_core.json",
+      "object_sha256": "7af18560df202e6312b48b5f4a82d567e02977660f63f72d3efce8a58350be27",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/generated/shared_action_core.json",
+      "object_sha256": "40c3bc458b749da9d107f9da90de8ddeee398c21252e4cd2543decf8d1c25ef3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch103_20260916/generated/shared_action_core.json",
+      "object_sha256": "f68982dbe841266e7891397e4f47fc684bed3e61270846e12708cd5282fcb7b3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch104_20260916/generated/shared_action_core.json",
+      "object_sha256": "ba1a78804a2636026f211ccbc5085dcce2c2f550cf366d119c5884205593d961",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch105_20260916/generated/shared_action_core.json",
+      "object_sha256": "6a0102e3e6490c09eabd3af09bf147c27e5a4ecf3fbad99353b7c64a64fed1d4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch106_20260916/generated/shared_action_core.json",
+      "object_sha256": "9e5dd288b4a9c7e55f475efefe8231859888021bb9164fc62f55147075aad7f4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch107_20260916/generated/shared_action_core.json",
+      "object_sha256": "0d5e4fd20a85d7bd9ede3dba49330f48a941c72b5d9bc6106b8f01bd40a6bf4b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch108_20260916/generated/shared_action_core.json",
+      "object_sha256": "4d3575645189e7b33e43ad348a61e045a4223d06e642256c64ac0edc0e844111",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch109_20260916/generated/shared_action_core.json",
+      "object_sha256": "a59a359c9d2c352e6b838ca7a2777b68dfffd021c56c701a00620e658412cfb7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/shared_action_core.json",
+      "object_sha256": "685dbd781301842a72ff8f198c30c82a51809f46a43901d8240975793b12c5ec",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch110_20260916/generated/shared_action_core.json",
+      "object_sha256": "14caee0d0001cc953d58b81b69d910c61fa5f852d3ada37f8785a2b64fae77c8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/generated/shared_action_core.json",
+      "object_sha256": "bc56276b01731dd7f538b7a124aac6f5dd0ddd5905a1cc387dfb2a8f9dd5e05b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch112_20260916/generated/shared_action_core.json",
+      "object_sha256": "62b9f2735dd1cc9c68e05cf151178498f037100c8061b7dea5ffe0aa505aa13a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch113_20260916/generated/shared_action_core.json",
+      "object_sha256": "dadbf1bf48c9e88fa1659b584e20d1acab82d7919e65ebe7a25531e07a51dd67",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch114_20260916/generated/shared_action_core.json",
+      "object_sha256": "2adbe873e43ea8a1534aefcd0176100736c4a3814a383737a087f217bc83ae93",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch115_20260916/generated/shared_action_core.json",
+      "object_sha256": "2ce04b2bf0faecb5a5f66baa8e437137c9a83b0d882df77bd2f6f3bff81bad52",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch116_20260916/generated/shared_action_core.json",
+      "object_sha256": "9933b506be0ef17910412e4586178a382d1b945822387c8fe7d5b228361aecab",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch117_20260916/generated/shared_action_core.json",
+      "object_sha256": "3daf9e1b6542b5a201e71eddf618baed688d52744bb467bacae77e24d0bfffcc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch118_20260916/generated/shared_action_core.json",
+      "object_sha256": "63b52c3049c456f09b5c0cdfdf387d783382c405cb7505e26d5fb790e48f9a69",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch119_20260916/generated/shared_action_core.json",
+      "object_sha256": "391a625ce0f0d2e238715583ae6ed2b1255682dcd7c34830b4d42f42628ceab9",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/shared_action_core.json",
+      "object_sha256": "b7bd85fd12c7b37d8021d6ac788b661f24b8db6a2eeb9da6a2a8328a759303b7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch120_20260916/generated/shared_action_core.json",
+      "object_sha256": "20661e39542f85c01734603fab44b0f819ea173f16c1aee0ab5ab3d6ba75362d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch121_20260916/generated/shared_action_core.json",
+      "object_sha256": "25a1238a54ebacec10e5828ff0bb94f12039320bfa0ee53e4385b72b2c5bc16c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch122_20260916/generated/shared_action_core.json",
+      "object_sha256": "9dfae0895c431b21c59cda69e872ff843b8becae57022ee6d8d8fda503650388",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch123_20260916/generated/shared_action_core.json",
+      "object_sha256": "be40b643b18f0901d47356197382ad4812de158efb1f4c66a682d8ac15d2d01c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch124_20260916/generated/shared_action_core.json",
+      "object_sha256": "f862464dc85f7c693554efae7759b489b37c11e8728d8a278fc5e7ef5f28816e",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch125_20260916/generated/shared_action_core.json",
+      "object_sha256": "184ec6a3a76ce83bce3b90143738cd5942a3190a23648755e157c147ce38782d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch126_20260916/generated/shared_action_core.json",
+      "object_sha256": "4b971d7f4a656a5ee38422584de812dc15c901416e0f226fa9b9700c4dc5e9d2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch127_20260916/generated/shared_action_core.json",
+      "object_sha256": "395d388e7c6f2641d8e9b034bed34af8864270dffc7577a1c958ca2153eb1f7a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch128_20260916/generated/shared_action_core.json",
+      "object_sha256": "350df4e68169aff236ddf636813a7199dc3439c37086ba3f6f74184c07095e02",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch129_20260916/generated/shared_action_core.json",
+      "object_sha256": "4531b83fe28638ca9aa3c063b0ca31006b2a92191d748f8e5a2e7ac9cd38e44a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/shared_action_core.json",
+      "object_sha256": "a5c1c8ed5a7b32890a3fdf037705448c0a01f9b17ae7420c575ad0a565195011",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch130_20260916/generated/shared_action_core.json",
+      "object_sha256": "8ebed90ea9cba0c3847e2c10d0f78e7f4aeffcfe46ffd80b23eee1ec67174014",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch131_20260916/generated/shared_action_core.json",
+      "object_sha256": "3626253fa720eb568702602c1949fc180df881662cfcf146c5b6ab4119154ab2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch132_20260916/generated/shared_action_core.json",
+      "object_sha256": "564406358efc2320d7246100d08b5934f52ded4555b82486107d66903b28040f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch133_20260916/generated/shared_action_core.json",
+      "object_sha256": "9297b6e344e9138d6ab6521d373c5dc3edab12a0bba51ca126606716220c9248",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/generated/shared_action_core.json",
+      "object_sha256": "274647e101dd3dfe48c94cb8444eefa8ebdcac6697956025d88b99218a9746a7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/shared_action_core.json",
+      "object_sha256": "f2cdc665cf5d4584be28d37361ae8641998b5077055bc23793bb5fab8987bcc9",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/shared_action_core.json",
+      "object_sha256": "878ef3d53b1ceb5fb3e22b9b95e531b538e6bb7089fa71b1726dc83e899c5d85",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/shared_action_core.json",
+      "object_sha256": "1410e38252d49d65ce16dd68c230798292bdd33f1c65f7f7d58f4ebe719ce5b4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/shared_action_core.json",
+      "object_sha256": "878ef3d53b1ceb5fb3e22b9b95e531b538e6bb7089fa71b1726dc83e899c5d85",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/shared_action_core.json",
+      "object_sha256": "efa97a878d0c75de201996ded2b0913f02b50e82b3fe8fd7ae92960b17dbcd2b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/shared_action_core.json",
+      "object_sha256": "663588bd1fddf097a0be390746cbf4a20f90d8335bc3582ffe8e7421918fe74a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/shared_action_core.json",
+      "object_sha256": "709a2b44232483b987040183f38c35d750025950cfccc602e8105492bad1f4ff",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/shared_action_core.json",
+      "object_sha256": "def51cbc01739a34b4d01fb04a889a471554a90f13fe08fa48c9d3576ecf8871",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/shared_action_core.json",
+      "object_sha256": "3605b1b3400d307ec48e8ce9b4a87d30e8040512be224a30ada27e420cf71b02",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/shared_action_core.json",
+      "object_sha256": "fb7b0eab915d65b379b63db6ac33ea52af4b5699b4b55c321d13f4c739b6bdb3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/shared_action_core.json",
+      "object_sha256": "dc674c9480c0c5bdf45115da8d510a56b4ec7413df5a7bae8d60957dae1b3650",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/shared_action_core.json",
+      "object_sha256": "107ecd6776b04b693105a4a2c7f14d914869ef29f4b1bc25be19795e6f575791",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/shared_action_core.json",
+      "object_sha256": "24bfb50151bf5c5d9d5bcfc33cbf2db106fa3e8fa001c05ed8f44d19db3da945",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/shared_action_core.json",
+      "object_sha256": "32b91d85f30855e1e332d38f26a46c817f30e9b8b5ed13f709a0f4eb582baa10",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/shared_action_core.json",
+      "object_sha256": "f3866035fa1bfafaa61633c16be7285257f75b1c04a65e4b71af6c23ddb29c23",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/shared_action_core.json",
+      "object_sha256": "93953b438c286f95a0aebd195e30d0f4683ad3cbf36edf03c1e5a08d0ac5fb1b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/shared_action_core.json",
+      "object_sha256": "e6910964fd9e8744cd4dae8f262bf7b8d80558e4664d1e91febb2e019a2de90b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/shared_action_core.json",
+      "object_sha256": "be7c513c3da4eec4f369671332d907f9f280c0a1e21003c67669cf937bdc5659",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/shared_action_core.json",
+      "object_sha256": "b487e121202b327a4a59f5866754d1e8ef189901499301fb646ccaa49b97ade6",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_action_core.json",
+      "object_sha256": "20d2dd31e6a9f23bf2e747aff536727a66cc011171c39c304e28f756452cd66b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/shared_action_core.json",
+      "object_sha256": "acc07df473611a71f670c58e85d924be380d0825634e2534ccd6493e368e84ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/shared_action_core.json",
+      "object_sha256": "2779f26f8744f03b8c41f6e995f59460f5647184e52ab4799de4da5e3164429c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/shared_action_core.json",
+      "object_sha256": "a598ed45404778a35bbfe498ac675ecbe65386e5cb2248649c0fb373cb2ace70",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/shared_action_core.json",
+      "object_sha256": "2922104496017a30e534f5414bff0d0b71e71895850a3705b15eae540f54f6db",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/shared_action_core.json",
+      "object_sha256": "c6a6ace59896837a1651b5408eb4b27c6b624f196561c61bea7a305039d17b67",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/shared_action_core.json",
+      "object_sha256": "2824f098942399ebed00f7de71941e2e63cecdbfe8cc4229a6c2bc409e74e826",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/shared_action_core.json",
+      "object_sha256": "5be76f2c4699e74d26456029816e7d691671c9c134c4d02efcf43fb37e7d5293",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/shared_action_core.json",
+      "object_sha256": "98c9d702cacd426520ad9c1e30339e9709831788d7bddef8ed4cbf03cd6c1acc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch38_20260916/generated/shared_action_core.json",
+      "object_sha256": "d81593dd80efa8e05e121a66ed71be534209dfacd0879ef16f021cfdf05598cf",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch39_20260916/generated/shared_action_core.json",
+      "object_sha256": "b2676423534f1f94cde9ddc45e769adc0ca569660840f87d428fbb4045b5c9e8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_action_core.json",
+      "object_sha256": "a90f804df5f583fc6baef7b864ef4649fa0abbff4b233f45fe97c6d4db5226fc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch40_20260916/generated/shared_action_core.json",
+      "object_sha256": "6791b1066dd1dc34832f0694ed2d7b105e935488170f5ddab905e989b90065d5",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch41_20260916/generated/shared_action_core.json",
+      "object_sha256": "e73cd06eb198be0bc85aea8b965a9e688e9f1c2f20ba105ce2fe4fc020692b41",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch42_20260916/generated/shared_action_core.json",
+      "object_sha256": "350213df3de5ee6b0fe56ab173dbb3d045cc13b8fececdebbfeebdfb338397cc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/generated/shared_action_core.json",
+      "object_sha256": "1139709b02e711c04ab303e36d4c98974b93849e3a98e37e6888740b57141fa8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch44_20260916/generated/shared_action_core.json",
+      "object_sha256": "67d6bc8c9fb6e52225f2092e511f970786a68141fff38efd5bac83b6d2ffa97b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch45_20260916/generated/shared_action_core.json",
+      "object_sha256": "c505bee24c3f9784ca8e6d3ee31fb4094b6afc93278fba6a329cec91726b0a7b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch46_20260916/generated/shared_action_core.json",
+      "object_sha256": "9d024cc6ee1fba6c5873f5b943df8a060e9508607b1d00ddf9f8cf47a85ff07a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch47_20260916/generated/shared_action_core.json",
+      "object_sha256": "0d6225de2e6417c6c7db2983c3f80597d3d8326d05c57cf0ca3f544b63d05ef0",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch48_20260916/generated/shared_action_core.json",
+      "object_sha256": "e22fd77068ac44e7a2e6752cebb7c44e2a9b70d88dee01b0118a2ce67bc3032d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch49_20260916/generated/shared_action_core.json",
+      "object_sha256": "26aed01c9ac0d09923b13f2af82583ab696f52ac4247a1bc597c1cb2cce0f615",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/shared_action_core.json",
+      "object_sha256": "2ca63c2c50784f2263c4cc130f307cd26bed908a9ea7a6482f4ff56a8643efed",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch50_20260916/generated/shared_action_core.json",
+      "object_sha256": "2a3e74f3889ebd49b1bce9704752ca9f398e553f03210b9ca50fe64bf16bfe16",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch51_20260916/generated/shared_action_core.json",
+      "object_sha256": "b2d7af577c388f3e1c161f9bf9dbde8ffc71af850311fc6eadc258a842c39b41",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch52_20260916/generated/shared_action_core.json",
+      "object_sha256": "02a738e3c83dcbc14c2de8b0e0f2d8ba72ca6b4034358a3c56ef54bc483784de",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch53_20260916/generated/shared_action_core.json",
+      "object_sha256": "eead867c0f61d797c232e205e983a5bb729549b9058fe8d5bcdadf0cc78db4f8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch54_20260916/generated/shared_action_core.json",
+      "object_sha256": "cd951cca976b7c95a56f73f610e2d91588e5a22567e3cfa97117e4e8b45b0dcf",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch55_20260916/generated/shared_action_core.json",
+      "object_sha256": "6c0aa24d14237d26fd00392b732ba5cd15cf4c1fc5b036b88afc90136afd3a1f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch56_20260916/generated/shared_action_core.json",
+      "object_sha256": "dc78a641f624974af0caa9218ff7a71dbc220d67c76c09951192d957c05d1bea",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch57_20260916/generated/shared_action_core.json",
+      "object_sha256": "19aac5047051477d503ece231a4aae06cbe132a7c16358f7cbb1bca7e6c8b5b6",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch58_20260916/generated/shared_action_core.json",
+      "object_sha256": "14e3492fe93aafa22d1a11c53742a548aec38da93bf842cb46e147b2bf17ae9b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch59_20260916/generated/shared_action_core.json",
+      "object_sha256": "27286ead59ac2bfd6c69dd26b671e6d4a48c44112f470407214d84c46063c27a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/shared_action_core.json",
+      "object_sha256": "06136c0d94b9ea6db8ada7c15969272ca0bc8b1018ddff7587a05fee41fbf55c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch60_20260916/generated/shared_action_core.json",
+      "object_sha256": "9afa7b6816e689517835eb678356dc4233e3ed1e6437f2befd82fadf4589cce3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch61_20260916/generated/shared_action_core.json",
+      "object_sha256": "1f7f6e188c9974a507ee18231acb613c9782ecea79f34462eeffa10fbdf09790",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch62_20260916/generated/shared_action_core.json",
+      "object_sha256": "84eec169753926483774af4161c8ed81aee4e0d898f49bb6edf370065c0475c7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch63_20260916/generated/shared_action_core.json",
+      "object_sha256": "a3ec19a1e17aac73d2fb23631ba0f04e79c4171e62d44f5864579c6ef6fe9208",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch64_20260916/generated/shared_action_core.json",
+      "object_sha256": "fa7e513f106da47c658d712e0450659e4d4e52318e7cf776dbebc09e250ed39a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/generated/shared_action_core.json",
+      "object_sha256": "02a99c9e61dbb179c3fafd7d246853a3ffbf1757f124c3041660742e76587b63",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/generated/shared_action_core.json",
+      "object_sha256": "aa843e357c610ca2fc5a9dfcb239f702461a6177e73a786a3c0dedb0737cb858",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/generated/shared_action_core.json",
+      "object_sha256": "a4f64631e303382ff49485049c5ebe85bd52866e4aac487a7ff3d42f40918b7f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/generated/shared_action_core.json",
+      "object_sha256": "eafeda36d2ceae668432f9de0588574b6c1087d967db76053ad72a94bd165f4c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/generated/shared_action_core.json",
+      "object_sha256": "35af785dee7ba6780e05cd34398e8dc5d7efd241d8373340170291c8f7b82025",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/shared_action_core.json",
+      "object_sha256": "77c9aa1f673cc4d7a70ebf3c39a0d0d930205f412286ace898367e982fbff180",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/generated/shared_action_core.json",
+      "object_sha256": "f67b4b2fff95621456f6edffba66cdf6dcf418287f9a671465969ed02f7927be",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch71_20260916/generated/shared_action_core.json",
+      "object_sha256": "7217de3c42ffd89085e296ba657a16b685f62373697feb79474480c5633df237",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/generated/shared_action_core.json",
+      "object_sha256": "83a81930a15ac883d8f74d265e646bc7d26bdf710ead5bcf943c4ed1941577ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/generated/shared_action_core.json",
+      "object_sha256": "f332e59d31f407b82b53ea67c8d2236c6dcca349e6182cd9964d1532761a5c96",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/generated/shared_action_core.json",
+      "object_sha256": "70107701225af53fd16ec7d7d6029805ae520267a2b73aa5874ee9ac19167021",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/generated/shared_action_core.json",
+      "object_sha256": "f485b65207f0f5ddb1b1d13943388cc07dbe686429ee35266767017515f894e4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch76_20260916/generated/shared_action_core.json",
+      "object_sha256": "14d658d4b1d4aa939110bc20cccce9c0a0206d67e9f304d3e5977eb0c00d8183",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch77_20260916/generated/shared_action_core.json",
+      "object_sha256": "4f9722ac52169718b507defe90bc2b479b77c80ee16132a6c36bdeda49fb48ad",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch78_20260916/generated/shared_action_core.json",
+      "object_sha256": "af494ee75be252e6bb47ee65d8321e66a9a0ff471a81e1cc443b60aa97614a63",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch79_20260916/generated/shared_action_core.json",
+      "object_sha256": "0381d362fe37eef9e39cbbdab1b37fdca9f419eb5aff8e41e0081999259a916e",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/shared_action_core.json",
+      "object_sha256": "ac01afc95a0af90bfe388d8571d524c31cb14829faef9f01e01c7cd1a0929770",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch80_20260916/generated/shared_action_core.json",
+      "object_sha256": "09b62a7b575e6c958e68d3b09477363326b0ea54c0864d64e4c5c5c980771996",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch81_20260916/generated/shared_action_core.json",
+      "object_sha256": "92d9416788f95b9395da01f7dda3739145192ad365a670fded87982c11fde4cc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch82_20260916/generated/shared_action_core.json",
+      "object_sha256": "0441de9790120f25920aace3306999a90e1f3768b2428d014a5bdad274747719",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch83_20260916/generated/shared_action_core.json",
+      "object_sha256": "de469aef31189d01004c16f2a111d6daa139a5544eaff3ebb9ff884ea32d7b3d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch84_20260916/generated/shared_action_core.json",
+      "object_sha256": "76a0d76de05ecbd4b11fd94aeef5e6a5db1ee6193c10a0bdf04f5456bb999096",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/generated/shared_action_core.json",
+      "object_sha256": "4bd7586ef9ae6e73c2af75d33454e769017f7cf03de5daa26e3d85d9cd11f128",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/generated/shared_action_core.json",
+      "object_sha256": "6f13e24652db593605832d44193891f700734bc9debfc3ee97d1070d56b95b98",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/generated/shared_action_core.json",
+      "object_sha256": "cbbd0b5e826affee1abeae20d2f2fc42fa96824599097793fe4dbf0012c2dcd1",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/generated/shared_action_core.json",
+      "object_sha256": "737efaa055b15c05fd7b9fb24f4c9515d73552f0138a8bc5f8c23ce0e7735aa8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/generated/shared_action_core.json",
+      "object_sha256": "c1d4d4debce5a0777a763ee3eee7df491c7c0e065f58bd7451ae1292673ffaf4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/shared_action_core.json",
+      "object_sha256": "11c1de2aeaf5bfe883b2cd48b6d49ade5f6488edf2895b03180f6d239d252568",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/generated/shared_action_core.json",
+      "object_sha256": "0fb41fb60c676957e60b4fb260c4c091a16e1ce72e0a295c715c9956955b2d9b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/generated/shared_action_core.json",
+      "object_sha256": "21f1c11eeed486ff38645b6650a7f450f4f6dd48472c66d2b97fa74e14d98fae",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/generated/shared_action_core.json",
+      "object_sha256": "f23cd64e83a64b1e7d28621c826bcb80c9de46dd8217d05bfbd2c6803ea06a6d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/generated/shared_action_core.json",
+      "object_sha256": "5ca3ecf8b8e682123cc4378a76e2350d3029d37156c7c141337f2b98363df7f3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch94_20260916/generated/shared_action_core.json",
+      "object_sha256": "9808fc4a27acebda2259b2c4a6aa919c520ee3acce93670e4d1ae53a9dfe0d32",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch95_20260916/generated/shared_action_core.json",
+      "object_sha256": "6026436c539a8b2bfa6f20c8e19b3cd584139e1da4c0df8a5722f7886dcb69f4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/generated/shared_action_core.json",
+      "object_sha256": "5610ec74b6e1cd7d252c5f9dfcbe49c950ae52102ed90c8064b54f3c68d84430",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/generated/shared_action_core.json",
+      "object_sha256": "4fdc1a4253fdd6b38b4954b0a882a77f6ba79a50659af93a90cfd09b0f4d58b3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/generated/shared_action_core.json",
+      "object_sha256": "091519a1b1c16933bf10fde74e803f1b3dbd2cd74b3cac5d9192c73353d94f95",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/generated/shared_action_core.json",
+      "object_sha256": "e2e41e655add652df8fe2a2cafd0bc07166d88f074eed38aa80daaf0ee93132a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/shared_action_core.json",
+      "object_sha256": "0e56a1dabfa72cbd0c141503588788ef3ddfa05fb3bafd48f680ff0703c7f5ce",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_corpora/house_119_v1/shared_action_core.json",
+      "object_sha256": "6b171e7f62c09b5a094fce9855449bacad2650f172d113fdc7f56f83040d3dbd",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json",
+      "object_sha256": "85ab40ae71be0350c6544fa905b538c7666979ef65bf8665dfe2f2a56b91e9ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch138_hr859_candidate/generated/shared_action_core.json",
+      "object_sha256": "e73b3f1dbf941212e90bb958b49832c0f13e54bdb04612cee225b4750fa96887",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/shared_action_core.json",
+      "object_sha256": "b01a9b08deabd9c2562e6c2e0e4005de8cd4709749a98f3d351b9a9a2fc26fd2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/shared_action_core.json",
+      "object_sha256": "468bdc319c975e50243238f36eb7a4dd47e9ed408539037e8790bb1085d9fe30",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch147_va_candidates/generated/shared_action_core.json",
+      "object_sha256": "d82c2e3589a111bfbc6e6d509ec59b0befc16f43d3c0d37244c131fedd3b4e21",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch148_shared_reuse/generated/shared_action_core.json",
+      "object_sha256": "671e618a5feed09910a8e6c86d7ffeee0d1b47c417396df86648fc46c1f64916",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/shared_action_core.json",
+      "object_sha256": "be8755f304d9a9aea55de8be9028a75c36c747ba86f45f1c873db123a6d7bdcb",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch151_permitting/generated/shared_action_core.json",
+      "object_sha256": "9772b999cd8fe5f4606ee02f670af25019eee5ab92bca4f278b233ad704964dc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch152_water_resources/generated/shared_action_core.json",
+      "object_sha256": "e15e8f64d98b470ea7e431268ad8b58c568778b2cbb1ad07f9e9426731d2e1e1",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch153_energy_governance/generated/shared_action_core.json",
+      "object_sha256": "cb9d42c204f8d12b22d2a41407720a1450de932b3fcdc0fdb58e185d4fd24424",
+      "matching_action_ids": []
+    }
+  ],
+  "prior_prepared_identities": [
+    "house:119:1:115",
+    "house:119:1:125",
+    "house:119:1:133",
+    "house:119:1:19",
+    "house:119:1:216",
+    "house:119:1:229",
+    "house:119:1:231",
+    "house:119:1:236",
+    "house:119:1:279",
+    "house:119:1:29",
+    "house:119:1:330",
+    "house:119:1:352",
+    "house:119:1:353",
+    "house:119:1:354",
+    "house:119:1:356",
+    "house:119:1:53",
+    "house:119:1:58",
+    "house:119:1:59",
+    "house:119:1:73",
+    "house:119:1:77",
+    "house:119:1:78",
+    "house:119:1:89",
+    "house:119:1:90",
+    "house:119:2:101",
+    "house:119:2:180",
+    "house:119:2:49",
+    "house:119:2:78",
+    "house:119:2:97"
+  ],
+  "cases": [
+    {
+      "action_id": "house:119:1:103",
+      "record": {
+        "action_id": "house:119:1:103",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The completeHR973EHwould requireCPSCwithin180days to promulgate the namedUL2271/2849/2272provisions AS IN EFFECT ON THE DATE OF ENACTMENT, limited to statutory consumer products, with revision-notice/retention/effective-date machinery and a five-year hazard report. The operative micromobility battery/system standard incorporation supports a direct technology/transport-safety lead. Complete named technical standards, rulemaking/enforcement and incorporated category baselines, and honest representation of the prospective version remain ordinary work. Subsection(a)'s printedANSI/CA/UL2272and laterANSI/CANwording are retained rather than silently repaired. The bill title does not establish every technical requirement, a ban on all batteries/eBikes, actual hazard prevalence or achieved safety. The retained 2024 section2052(a)(5) consumer-product definition is now linked as a LIMITED shared baseline. It covers articles or component parts produced or distributed for sale to consumers or for personal use, consumption or enjoyment in the specified household, school, recreation or other settings; it is not limited to household sale alone. The complete named exclusions, qualified movable-versus-permanently-fixed amusement-device text and regulatory-authority limits remain in the exact claim. Cross-referenced categories are not independently adjudicated. The source notes disclose the title49 paragraph redesignation and repeal of2079(d); printed operative references are preserved without silent repair or a current integrated-law conclusion. This definition link does not itself settle every bill-specific exception, technical requirement, enforcement power, current law or domain eligibility. All three cases remain pending, with no new shared meaning or accepted membership.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:103",
+            "url": "https://clerk.house.gov/evs/2025/roll103.xml",
+            "raw_sha256": "bf301471195a0b351e3d9cb4a1c326d4159a25e7feda26e020f9a9fa37823362",
+            "governed_bytes_sha256": "56f10799601ddde67cfc0bfad939dadd48e842c8272e61ada227719a809b9f8f"
+          },
+          {
+            "source_id": "govinfo:hr973eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr973eh/html/BILLS-119hr973eh.htm",
+            "raw_sha256": "bcf810b5d1120397d14f405c15b93dbe026ed9d8a8d5bbee90dd3fb0335eb36f",
+            "governed_bytes_sha256": "61923e288b74c686d81c4ea91eafaa1c8384c5611bbf93e3b606d0d6deb8da63"
+          },
+          {
+            "source_id": "govinfo:15usc2052-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap47-sec2052.htm",
+            "raw_sha256": "3a602d9fa522f465bfdd42586e0c78c15e2a0b824809fe219910f3d3470dbff4",
+            "governed_bytes_sha256": "0e6dae1d880d34f4b71f3ddb592696c3c356b618ea148e6df3da18a29186ae3a"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr973eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 973 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 973 _______________________________________________________________________ AN ACT To establish consumer standards for lithium-ion batteries. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Setting Consumer Standards for Lithium-Ion Batteries Act''. SEC. 2. CONSUMER PRODUCT SAFETY STANDARD FOR CERTAIN BATTERIES. (a) Consumer Product Safety Standard Required.--Not later than 180 days after the date of the enactment of this Act, the Consumer Product Safety Commission (referred to in this section as the ``Commission'') shall promulgate, under section 553 of title 5, United States Code, the provisions of ANSI/CAN/UL 2271-Standard for Batteries for Use in Light Electric Vehicle Applications, ANSI/CAN/UL 2849-Standard for Safety for Electrical Systems for eBikes, and ANSI/CA/UL 2272-Standard for Electrical Systems for Personal E-Mobility Devices, as in effect on the date of enactment of this Act, as final consumer product safety standards. (b) Consumer Product Safety Commission Determination of Scope.--In adopting the standards under subsection (a), the Commission shall limit the application of such standards to consumer products as defined in section 3(a)(5) of the Consumer Product Safety Act (15 U.S.C. 2052(a)(5)). (c) Revision of Voluntary Standards.-- (1) Notice to commission.--If the provisions of ANSI/CAN/UL 2271-Standard for Batteries for Use in Light Electric Vehicle Applications, ANSI/CAN/UL 2849-Standard for Safety for Electrical Systems for eBikes, or ANSI/CAN/UL 2272-Standard for Electrical Systems for Personal E-Mobility Devices, are revised following the enactment of this Act, the organization that revised the requirements of such standard shall notify the Commission after the final approval of the revision. (2) Treatment of revision.--The revised voluntary standard shall be considered to be a consumer product safety standard issued by the Commission under section 9 of the Consumer Product Safety Act (15 U.S.C. 2058), effective 180 days after the date on which the organization notifies the Commission (or such later date specified by the Commission in the Federal Register) unless, within 90 days after receiving that notice, the Commission notifies the organization that it has determined that the proposed revision, in whole or in part, does not improve the safety of the consumer product covered by the standard and that the Commission is retaining the existing consumer product safety standard. (d) Treatment of Standard.--A standard promulgated under this section, including a revision of such standard adopted by the Commission, shall be treated as a consumer product safety rule promulgated under section 9 of the Consumer Product Safety Act (15 U.S.C. 2058). (e) Report to Congress.-- (1) In general.--Not later than 5 years after the date of enactment of this Act, the Commission shall submit to the Committee on Commerce, Science, and Transportation of the Senate and the Committee on Energy and Commerce of the House of Representatives, a report regarding fires, explosions, and other hazards relating to lithium-ion batteries used in micromobility products during the period beginning on the date of enactment of this Act and ending on the report date. (2) Content.--The report required by paragraph (1) shall describe, at a minimum-- (A) the source of the information that was provided to the Commission regarding the fire, explosion, or other hazard; (B) the make and model of the lithium-ion battery and micromobility product that resulted in a fire, explosion, or other hazard, if known; (C) whether a lithium-ion battery involved in a fire, explosion, or other hazard complied with the standard required by this section, if known; and (D) if known, the manufacturer and country of manufacture of a lithium-ion battery that resulted in a fire, explosion, or other hazard. Passed the House of Representatives April 28, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 973 _______________________________________________________________________ AN ACT To establish consumer standards for lithium-ion batteries."
+          },
+          {
+            "source_id": "govinfo:15usc2052-2024",
+            "locator": "Complete dated2024 section2052(a)(5) definition ONLY, half-open1727:5438 of15897; LIMITED shared baseline, not all bill-specific exceptions/current law.",
+            "passage": "(5) Consumer product The term \"consumer product\" means any article, or component part thereof, produced or distributed (i) for sale to a consumer for use in or around a permanent or temporary household or residence, a school, in recreation, or otherwise, or (ii) for the personal use, consumption or enjoyment of a consumer in or around a permanent or temporary household or residence, a school, in recreation, or otherwise; but such term does not include— (A) any article which is not customarily produced or distributed for sale to, or use or consumption by, or enjoyment of, a consumer, (B) tobacco and tobacco products, (C) motor vehicles or motor vehicle equipment (as defined by section 30102(a)(6) and (7) of title 49 1 ), (D) pesticides (as defined by the Federal Insecticide, Fungicide, and Rodenticide Act [7 U.S.C. 136 et seq.]), (E) any article which, if sold by the manufacturer, producer, or importer, would be subject to the tax imposed by section 4181 of the Internal Revenue Code of 1986 [26 U.S.C. 4181] (determined without regard to any exemptions from such tax provided by section 4182 or 4221, or any other provision of such Code), or any component of any such article, (F) aircraft, aircraft engines, propellers, or appliances (as defined in section 40102(a) of title 49), (G) boats which could be subjected to safety regulation under chapter 43 of title 46; vessels, and appurtenances to vessels (other than such boats), which could be subjected to safety regulation under title 52 of the Revised Statutes or other marine safety statutes administered by the department in which the Coast Guard is operating; and equipment (including associated equipment, as defined in section 2101(1) of title 46) to the extent that a risk of injury associated with the use of such equipment on boats or vessels could be eliminated or reduced by actions taken under any statute referred to in this subparagraph, (H) drugs, devices, or cosmetics (as such terms are defined in sections 201(g), (h), and (i) of the Federal Food, Drug, and Cosmetic Act [21 U.S.C. 321(g), (h), and (i)]), or (I) food. The term \"food\", as used in this subparagraph means all \"food\", as defined in section 201(f) of the Federal Food, Drug, and Cosmetic Act [21 U.S.C. 321(f)], including poultry and poultry products (as defined in sections 4(e) and (f) of the Poultry Products Inspection Act [21 U.S.C. 453(e) and (f)]), meat, meat food products (as defined in section 1(j) of the Federal Meat Inspection Act [21 U.S.C. 601(j)]), and eggs and egg products (as defined in section 4 of the Egg Products Inspection Act [21 U.S.C. 1033]). Such term includes any mechanical device which carries or conveys passengers along, around, or over a fixed or restricted route or course or within a defined area for the purpose of giving its passengers amusement, which is customarily controlled or directed by an individual who is employed for that purpose and who is not a consumer with respect to such device, and which is not permanently fixed to a site. Such term does not include such a device which is permanently fixed to a site. Except for the regulation under this chapter or the Federal Hazardous Substances Act [15 U.S.C. 1261 et seq.] of fireworks devices or any substance intended for use as a component of any such device, the Commission shall have no authority under the functions transferred pursuant to section 2079 of this title to regulate any product or article described in subparagraph (E) of this paragraph or described, without regard to quantity, in section 845(a)(5) of title 18. See sections 2079(d) 1 and 2080 of this title, for other limitations on Commission's authority to regulate certain consumer products. "
+          },
+          {
+            "source_id": "govinfo:15usc2052-2024",
+            "locator": "References-in-Text notes ONLY, half-open8814:9180 of15897:2079(d) repeal and title49 paragraph redesignation; printed text retained, no silent correction.",
+            "passage": "Section 2079(d) of this title, referred to in subsec. (a)(5), was repealed by Pub. L. 110–314, title II, §237, Aug. 14, 2008, 122 Stat. 3076. Section 30102(a)(6) and (7) of title 49, referred to in subsec. (a)(5)(C), was redesignated section 30102(a)(7) and (8) of title 49 by section 24109(b)(2) of Pub. L. 114–94, div. B, title XXIV, Dec. 4, 2015, 129 Stat. 1706. "
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:103",
+        "session": 1,
+        "roll": 103,
+        "date": "2025-04-28",
+        "measure": "bill_119_hr_973",
+        "question": "On Motion to Suspend the Rules and Pass",
+        "disposition": "pending_interpretation",
+        "reason": "The completeHR973EHwould requireCPSCwithin180days to promulgate the namedUL2271/2849/2272provisions AS IN EFFECT ON THE DATE OF ENACTMENT, limited to statutory consumer products, with revision-notice/retention/effective-date machinery and a five-year hazard report. The operative micromobility battery/system standard incorporation supports a direct technology/transport-safety lead. Complete named technical standards, rulemaking/enforcement and incorporated category baselines, and honest representation of the prospective version remain ordinary work. Subsection(a)'s printedANSI/CA/UL2272and laterANSI/CANwording are retained rather than silently repaired. The bill title does not establish every technical requirement, a ban on all batteries/eBikes, actual hazard prevalence or achieved safety. The retained 2024 section2052(a)(5) consumer-product definition is now linked as a LIMITED shared baseline. It covers articles or component parts produced or distributed for sale to consumers or for personal use, consumption or enjoyment in the specified household, school, recreation or other settings; it is not limited to household sale alone. The complete named exclusions, qualified movable-versus-permanently-fixed amusement-device text and regulatory-authority limits remain in the exact claim. Cross-referenced categories are not independently adjudicated. The source notes disclose the title49 paragraph redesignation and repeal of2079(d); printed operative references are preserved without silent repair or a current integrated-law conclusion. This definition link does not itself settle every bill-specific exception, technical requirement, enforcement power, current law or domain eligibility. All three cases remain pending, with no new shared meaning or accepted membership.",
+        "source": {
+          "source_id": "clerk:119:1:103",
+          "url": "https://clerk.house.gov/evs/2025/roll103.xml",
+          "raw_sha256": "bf301471195a0b351e3d9cb4a1c326d4159a25e7feda26e020f9a9fa37823362",
+          "governed_bytes_sha256": "56f10799601ddde67cfc0bfad939dadd48e842c8272e61ada227719a809b9f8f",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_973",
+        "member_action": "yea",
+        "house_action_stage": "On Motion to Suspend the Rules and Pass",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The completeHR973EHwould requireCPSCwithin180days to promulgate the namedUL2271/2849/2272provisions AS IN EFFECT ON THE DATE OF ENACTMENT, limited to statutory consumer products, with revision-notice/retention/effective-date machinery and a five-year hazard report. The operative micromobility battery/system standard incorporation supports a direct technology/transport-safety lead. Complete named technical standards, rulemaking/enforcement and incorporated category baselines, and honest representation of the prospective version remain ordinary work. Subsection(a)'s printedANSI/CA/UL2272and laterANSI/CANwording are retained rather than silently repaired. The bill title does not establish every technical requirement, a ban on all batteries/eBikes, actual hazard prevalence or achieved safety. The retained 2024 section2052(a)(5) consumer-product definition is now linked as a LIMITED shared baseline. It covers articles or component parts produced or distributed for sale to consumers or for personal use, consumption or enjoyment in the specified household, school, recreation or other settings; it is not limited to household sale alone. The complete named exclusions, qualified movable-versus-permanently-fixed amusement-device text and regulatory-authority limits remain in the exact claim. Cross-referenced categories are not independently adjudicated. The source notes disclose the title49 paragraph redesignation and repeal of2079(d); printed operative references are preserved without silent repair or a current integrated-law conclusion. This definition link does not itself settle every bill-specific exception, technical requirement, enforcement power, current law or domain eligibility. All three cases remain pending, with no new shared meaning or accepted membership.",
+        "unresolved_reason": "consumer_definition_bound_973_standards_prospective_version_rulemaking_category_currentlaw_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:103",
+            "url": "https://clerk.house.gov/evs/2025/roll103.xml",
+            "raw_sha256": "bf301471195a0b351e3d9cb4a1c326d4159a25e7feda26e020f9a9fa37823362",
+            "governed_bytes_sha256": "56f10799601ddde67cfc0bfad939dadd48e842c8272e61ada227719a809b9f8f"
+          },
+          {
+            "source_id": "govinfo:hr973eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr973eh/html/BILLS-119hr973eh.htm",
+            "raw_sha256": "bcf810b5d1120397d14f405c15b93dbe026ed9d8a8d5bbee90dd3fb0335eb36f",
+            "governed_bytes_sha256": "61923e288b74c686d81c4ea91eafaa1c8384c5611bbf93e3b606d0d6deb8da63"
+          },
+          {
+            "source_id": "govinfo:15usc2052-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap47-sec2052.htm",
+            "raw_sha256": "3a602d9fa522f465bfdd42586e0c78c15e2a0b824809fe219910f3d3470dbff4",
+            "governed_bytes_sha256": "0e6dae1d880d34f4b71f3ddb592696c3c356b618ea148e6df3da18a29186ae3a"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:103",
+          "source_ids": [
+            "clerk:119:1:103",
+            "govinfo:hr973eh",
+            "govinfo:15usc2052-2024"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:103",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "4b53645f41ca49b0e478ca0bff4f7b79791e03421be367720fcbd343e085871a"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "4b53645f41ca49b0e478ca0bff4f7b79791e03421be367720fcbd343e085871a",
+      "row_sha256": "01a03d269ffd258f039eba5e71c46a149bff8630365f0377d0b32b91954cfba8"
+    },
+    {
+      "action_id": "house:119:1:112",
+      "record": {
+        "action_id": "house:119:1:112",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The completeHJRes89EHdisapproves exactly the California Omnibus LowNOXwaiver notice named at90FR643(January6,2025)and says the submitted action shall have no force or effect. The material notice, State-program/preemption baselines and CRAlegal classification remain ordinary work. This distinct citation does not reuse or retry the protected88FR20688chain forHJRes87; no legal consequence is transferred from that unresolved action or other notices. No universal repeal of State law, particular technology mandate or actual emissions/cost result.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:112",
+            "url": "https://clerk.house.gov/evs/2025/roll112.xml",
+            "raw_sha256": "b77b0812bbe15e744a55e6210237f47e9b50ee809e009c88b39336ea37ac11ec",
+            "governed_bytes_sha256": "270456ed83acaf835e470d7f94f7ab85d1194f87609071a4665e42b8b276600f"
+          },
+          {
+            "source_id": "govinfo:hjres89eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres89eh/html/BILLS-119hjres89eh.htm",
+            "raw_sha256": "1ce2abeea2b0d20a6933c20e41c59104cca80272dcdc64eaa12830ff22fba992",
+            "governed_bytes_sha256": "11450d490f2dc354e6ba5edf949be8db20c3abb13d98449fc096a9e0799a2cf9"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres89eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 89 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 89 _______________________________________________________________________ JOINT RESOLUTION Providing congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ``California State Motor Vehicle and Engine and Nonroad Engine Pollution Control Standards; The `Omnibus' Low NOX Regulation; Waiver of Preemption; Notice of Decision''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Environmental Protection Agency relating to ``California State Motor Vehicle and Engine and Nonroad Engine Pollution Control Standards; The `Omnibus' Low NOX Regulation; Waiver of Preemption; Notice of Decision'' (90 Fed. Reg. 643 (January 6, 2025)), and such rule shall have no force or effect. Passed the House of Representatives April 30, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 89 _______________________________________________________________________ JOINT RESOLUTION Providing congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ``California State Motor Vehicle and Engine and Nonroad Engine Pollution Control Standards; The `Omnibus' Low NOX Regulation; Waiver of Preemption; Notice of Decision''."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:112",
+        "session": 1,
+        "roll": 112,
+        "date": "2025-04-30",
+        "measure": "bill_119_hjres_89",
+        "question": "On Passage",
+        "disposition": "pending_interpretation",
+        "reason": "The completeHJRes89EHdisapproves exactly the California Omnibus LowNOXwaiver notice named at90FR643(January6,2025)and says the submitted action shall have no force or effect. The material notice, State-program/preemption baselines and CRAlegal classification remain ordinary work. This distinct citation does not reuse or retry the protected88FR20688chain forHJRes87; no legal consequence is transferred from that unresolved action or other notices. No universal repeal of State law, particular technology mandate or actual emissions/cost result.",
+        "source": {
+          "source_id": "clerk:119:1:112",
+          "url": "https://clerk.house.gov/evs/2025/roll112.xml",
+          "raw_sha256": "b77b0812bbe15e744a55e6210237f47e9b50ee809e009c88b39336ea37ac11ec",
+          "governed_bytes_sha256": "270456ed83acaf835e470d7f94f7ab85d1194f87609071a4665e42b8b276600f",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hjres_89",
+        "member_action": "nay",
+        "house_action_stage": "On Passage",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The completeHJRes89EHdisapproves exactly the California Omnibus LowNOXwaiver notice named at90FR643(January6,2025)and says the submitted action shall have no force or effect. The material notice, State-program/preemption baselines and CRAlegal classification remain ordinary work. This distinct citation does not reuse or retry the protected88FR20688chain forHJRes87; no legal consequence is transferred from that unresolved action or other notices. No universal repeal of State law, particular technology mandate or actual emissions/cost result.",
+        "unresolved_reason": "ordinary_90FR643_exact_waiver_state_preemption_baseline_and_CRA_classification_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:112",
+            "url": "https://clerk.house.gov/evs/2025/roll112.xml",
+            "raw_sha256": "b77b0812bbe15e744a55e6210237f47e9b50ee809e009c88b39336ea37ac11ec",
+            "governed_bytes_sha256": "270456ed83acaf835e470d7f94f7ab85d1194f87609071a4665e42b8b276600f"
+          },
+          {
+            "source_id": "govinfo:hjres89eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres89eh/html/BILLS-119hjres89eh.htm",
+            "raw_sha256": "1ce2abeea2b0d20a6933c20e41c59104cca80272dcdc64eaa12830ff22fba992",
+            "governed_bytes_sha256": "11450d490f2dc354e6ba5edf949be8db20c3abb13d98449fc096a9e0799a2cf9"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:112",
+          "source_ids": [
+            "clerk:119:1:112",
+            "govinfo:hjres89eh"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:112",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "58165c274a9bb6c2754e3d501c8888022c77841fc9ea3ec9f0f9c684fb028592"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "58165c274a9bb6c2754e3d501c8888022c77841fc9ea3ec9f0f9c684fb028592",
+      "row_sha256": "ef29133a0b7024e66d41bf7a5bb94e5aebe7ae66fdbd050bd66a943d2f056e02"
+    },
+    {
+      "action_id": "house:119:1:114",
+      "record": {
+        "action_id": "house:119:1:114",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The completeHJRes88EHdisapproves exactly California AdvancedCleanCarsIIwaiver notice at90FR642(January6,2025)and says the submitted action shall have no force or effect. Complete notice, State-program/preemption baselines and CRAlegal classification remain ordinary work. This citation differs from90FR643and protected88FR20688; neither other notice nor parent vehicle-policy context establishes this exact consequence. No protected acquisition retried, no blanket gasoline-vehicle ban/repeal, current enforceability or achieved cost/emissions claim.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:114",
+            "url": "https://clerk.house.gov/evs/2025/roll114.xml",
+            "raw_sha256": "d822a5b794a5bfd0296d28b74cc3847fa4767e90094f849d20aa88c0bc36bcbe",
+            "governed_bytes_sha256": "3cb21641e8d2ad23e9c1d94a59de150a1494fdb6d354e7472cda2d9918ff28be"
+          },
+          {
+            "source_id": "govinfo:hjres88eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres88eh/html/BILLS-119hjres88eh.htm",
+            "raw_sha256": "5c07329f913eeabcbf48a1c957652f8fa32ee0b7eb38c712e0a3918538d1eec6",
+            "governed_bytes_sha256": "d21943d1d38eae28e10abd74842645a1fb83660185514ca235c1b197cc7d1935"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hjres88eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.J. Res. 88 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. J. RES. 88 _______________________________________________________________________ JOINT RESOLUTION Providing congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ``California State Motor Vehicle and Engine Pollution Control Standards; Advanced Clean Cars II; Waiver of Preemption; Notice of Decision''. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Environmental Protection Agency relating to ``California State Motor Vehicle and Engine Pollution Control Standards; Advanced Clean Cars II; Waiver of Preemption; Notice of Decision'' (90 Fed. Reg. 642 (January 6, 2025)), and such rule shall have no force or effect. Passed the House of Representatives May 1, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. J. RES. 88 _______________________________________________________________________ JOINT RESOLUTION Providing congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ``California State Motor Vehicle and Engine Pollution Control Standards; Advanced Clean Cars II; Waiver of Preemption; Notice of Decision''."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:114",
+        "session": 1,
+        "roll": 114,
+        "date": "2025-05-01",
+        "measure": "bill_119_hjres_88",
+        "question": "On Passage",
+        "disposition": "pending_interpretation",
+        "reason": "The completeHJRes88EHdisapproves exactly California AdvancedCleanCarsIIwaiver notice at90FR642(January6,2025)and says the submitted action shall have no force or effect. Complete notice, State-program/preemption baselines and CRAlegal classification remain ordinary work. This citation differs from90FR643and protected88FR20688; neither other notice nor parent vehicle-policy context establishes this exact consequence. No protected acquisition retried, no blanket gasoline-vehicle ban/repeal, current enforceability or achieved cost/emissions claim.",
+        "source": {
+          "source_id": "clerk:119:1:114",
+          "url": "https://clerk.house.gov/evs/2025/roll114.xml",
+          "raw_sha256": "d822a5b794a5bfd0296d28b74cc3847fa4767e90094f849d20aa88c0bc36bcbe",
+          "governed_bytes_sha256": "3cb21641e8d2ad23e9c1d94a59de150a1494fdb6d354e7472cda2d9918ff28be",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hjres_88",
+        "member_action": "nay",
+        "house_action_stage": "On Passage",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The completeHJRes88EHdisapproves exactly California AdvancedCleanCarsIIwaiver notice at90FR642(January6,2025)and says the submitted action shall have no force or effect. Complete notice, State-program/preemption baselines and CRAlegal classification remain ordinary work. This citation differs from90FR643and protected88FR20688; neither other notice nor parent vehicle-policy context establishes this exact consequence. No protected acquisition retried, no blanket gasoline-vehicle ban/repeal, current enforceability or achieved cost/emissions claim.",
+        "unresolved_reason": "ordinary_90FR642_exact_waiver_state_preemption_baseline_and_CRA_classification_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:114",
+            "url": "https://clerk.house.gov/evs/2025/roll114.xml",
+            "raw_sha256": "d822a5b794a5bfd0296d28b74cc3847fa4767e90094f849d20aa88c0bc36bcbe",
+            "governed_bytes_sha256": "3cb21641e8d2ad23e9c1d94a59de150a1494fdb6d354e7472cda2d9918ff28be"
+          },
+          {
+            "source_id": "govinfo:hjres88eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres88eh/html/BILLS-119hjres88eh.htm",
+            "raw_sha256": "5c07329f913eeabcbf48a1c957652f8fa32ee0b7eb38c712e0a3918538d1eec6",
+            "governed_bytes_sha256": "d21943d1d38eae28e10abd74842645a1fb83660185514ca235c1b197cc7d1935"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:114",
+          "source_ids": [
+            "clerk:119:1:114",
+            "govinfo:hjres88eh"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:114",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "dbff11110fa0a545f654cf57a836df7a515854fa4c4e5ec8912c05a97044f6e1"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "dbff11110fa0a545f654cf57a836df7a515854fa4c4e5ec8912c05a97044f6e1",
+      "row_sha256": "ff38ccd58ae203c6c470ec545cbe751812bbb65603dc4a54161bc9db8da91a76"
+    },
+    {
+      "action_id": "house:119:2:306",
+      "record": {
+        "action_id": "house:119:2:306",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The exact EH proposesCRA-disapproval/no-force-or-effect treatment for the identifiedOctober20,2023EPAat-berth authorization notice, a direct vessel/port emissions-control governance lead. Retained notice summary/background/decision identify2020amendments, expanded vessel/port coverage, shore-power OR other approved control strategies and no EPA action on opacity requirements;7543(e)authorization and801scope witnesses are retained. The notice expressly states CRA does not apply because it is not a rule, while the proposed resolution invokesCRA. Its DATESDecember19,2023and judicial-review paragraphJune20,2023also differ. These retained legal/date boundaries require independent review, not silent correction or a categorical claim that State standards are repealed. No whole behavioral meaning/projection, enactment/current enforceability or source-access failure is asserted.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:306",
+            "url": "https://clerk.house.gov/evs/2026/roll306.xml",
+            "raw_sha256": "859a0001ab7de1072b65ed347c5990058d8e3ab78b32450435b2d6ba71653844",
+            "governed_bytes_sha256": "586e6b5e1cc9f8eabc23f42af2dad74eee16ce2e527d3ba51d7dcfd9a4a1aa8c"
+          },
+          {
+            "source_id": "primary:hjres210eh-full161",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres210eh/xhtml/BILLS-119hjres210eh.html",
+            "raw_sha256": "440bc0202058905e5f07ec1e01bdabd20de5c30ea9fbaa6bd65c67a1639d1a27",
+            "governed_bytes_sha256": "d46ed9fa17f4850d50ac0fbbe31993bfbd4f5f6268588f4b9ab6eb5a71354679"
+          },
+          {
+            "source_id": "epa:atberth2023-material161",
+            "url": "https://www.govinfo.gov/content/pkg/FR-2023-10-20/html/2023-23261.htm",
+            "raw_sha256": "757e95a0a803332e1c5aca5af27c01c03f327aca90c9a8784f7b31113e2ee0ac",
+            "governed_bytes_sha256": "cc6115cb3719610a7e248f692976d6872f0038f8c71655294a74b5f0ace5ef4b"
+          },
+          {
+            "source_id": "govinfo:42usc7543e-operative161",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7543.htm",
+            "raw_sha256": "12217975f8886d17b0cbbae9e27fd832f7801478b057b26ea24e75d7ae3c4b18",
+            "governed_bytes_sha256": "1bd56ddaf5af9817a7224a44288c9f458a25ccf8402ea65d72f7cb62cff3bc61"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          },
+          {
+            "source_id": "govinfo:hres1530eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1530eh/html/BILLS-119hres1530eh.htm",
+            "raw_sha256": "f11e341fd3ac62d4bcda2383b4e607d861f0647f3361ecff883d3dedd14dbe63",
+            "governed_bytes_sha256": "ae0d66c1c58f809c4dcde0e295ad6ec971bb449f76f7331c4588404bca108bd4"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "primary:hjres210eh-full161",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "H. J. RES. 210 (Engrossed-in-House) 119th CONGRESS 2d Session H. J. RES. 210 JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to “California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision”. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule submitted by the Environmental Protection Agency relating to “California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision” (88 Fed. Reg. 72461 (October 20, 2023)), and such rule shall have no force or effect. Passed the House of Representatives September 15, 2026. Clerk. 119th CONGRESS 2d Session H. J. RES. 210 JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to “California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision”."
+          },
+          {
+            "source_id": "epa:atberth2023-material161",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Federal Register, Volume 88 Issue 202 (Friday, October 20, 2023) [Federal Register Volume 88, Number 202 (Friday, October 20, 2023)] [Notices] [Pages 72461-72476] From the Federal Register Online via the Government Publishing Office [www.gpo.gov] [FR Doc No: 2023-23261] ======================================================================= ----------------------------------------------------------------------- ENVIRONMENTAL PROTECTION AGENCY [EPA-HQ-OAR-2023-012; FRL 10787-03-OAR] California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision AGENCY: Environmental Protection Agency (EPA). ACTION: Notice of decision. ----------------------------------------------------------------------- SUMMARY: The Environmental Protection Agency (``EPA'') is granting the California Air Resources Board's (``CARB'') request for authorization of [[Page 72462]] amendments to its Ocean-Going Vessels At-Berth regulation (``At-Berth Regulation''). CARB's At-Berth Regulation specifies auxiliary engine emission reduction requirements applicable to container, refrigerated, cargo, cruise, roll on-roll off (ro-ro), and tanker vessels (also emission reduction requirements to tanker vessel auxiliary boilers) while docked or ``berthed'' at specified marine terminals and ports in California. This decision is issued under the authority of the Clean Air Act (``CAA'' or ``Act''). DATES: Petitions for review must be filed by December 19, 2023. \n\nI. Background CARB adopted the initial At-Berth Regulation, the Airborne Toxic Control Measure for Auxiliary Diesel Engines Operated on Ocean-Going Vessels At-Berth in a California Port (2007 At-Berth Regulation), on October 16, 2008, and EPA granted California an authorization for that regulation in 2011.\\1\\ The 2007 At-Berth Regulation applied only to fleets of container, refrigerated cargo, and cruise vessels visiting six California ports. The 2007 At-Berth Regulation required affected vessels to reduce emissions at berth by either plugging into shore power or using an equally effective compliance strategy (such as a capture and control system). Specifically, the 2007 At-Berth Regulation required fleets of container and refrigerated cargo vessels making 25 or more visits or cruise vessels making 5 or more visits to any of the six identified ports to limit the operations and emissions of auxiliary diesel engines while docked, reducing nitrogen oxide (NOX) and diesel particulate matter (PM) emissions at berth.\\2\\ --------------------------------------------------------------------------- \\1\\ 76 FR 77515 (Dec. 13, 2011). \\2\\ CARB defines an ``auxiliary engine'' as ``an engine on an ocean-going vessel designed primarily to provide power for uses other than propulsion, except that all diesel-electric engines shall be considered ``auxiliary engines'' for purpose of this regulation. '' Cal. Code Regs. Tit. 17, section 93130.2(b)(9). --------------------------------------------------------------------------- On September 27, 2022, CARB submitted a new authorization request to EPA for its amendments to the 2007 At-Berth Regulation the CARB Board adopted on August 27, 2020 (2020 At-Berth Amendments).\\3\\ The 2020 At-Berth Amendments are designed to build upon the 2007 At-Berth Regulation by extending auxiliary engine emissions reductions requirements to additional categories of ocean-going vessels (OGVs), specifically roll on-roll off (ro-ro) and tanker vessels. The 2020 At- Berth Amendments also added emission reductions requirements for tanker vessel auxiliary boilers and expanded the applicability of the regulation to additional regulated terminals and ports within California.\\4\\ --------------------------------------------------------------------------- \\3\\ CARB At-Berth Authorization Request, EPA-HQ-OAR-2023-0152- 0031. \\4\\ A regulated California marine terminal is any terminal in California that receives 20 or more visits from container, reefer, cruise, ro-ro, or tanker vessels per calendar year the year emissions control requirements begin. Cal. Code Regs. Tit. 17, section 93.130.10(a)(2). --------------------------------------------------------------------------- The 2020 At-Berth Amendments establish, among other provisions, in- use emissions-related requirements that apply beginning January 1, 2023, with limited exceptions, to any person who owns, operates, charters, or leases any United States or foreign-flag OGV that visits a California port, terminal, or berth; any person who owns, operates, or leases a port, terminal, or berth located where OGVs visit; or any person who owns, operates, or leases a CARB approved emissions control strategy (CAECS) for OGV auxiliary engines or tanker auxiliary boilers.\\5\\ The 2020 At-Berth Amendments establish emission controls that phase in during three separate periods. The requirements are applicable to container, reefer, and cruise vessels on January 1, 2023, all ro-ro vessels and tankers visiting the ports of Los Angeles or Long Beach on January 1, 2025, and tankers visiting all ports other than Los Angeles and Long Beach on January 2, 2027.\\6\\ Compliance with the 2020 At-Berth Amendments must be achieved through the use of a CARB Approved Emission Control Strategy (CAECS).\\7\\ --------------------------------------------------------------------------- \\5\\ Compliance with the 2020 At-Berth Amendments must be achieved through the use of a CAECS that meets the minimum requirements of section 93130.5(d) of the Amendments. The strategy may include the use of shore power but may also include alternative CAECS such as barge or land-based capture and control technologies not controlled by the vessel or terminal operator. The owners of such alternative technologies are subject to CARB's regulations. \\6\\ CARB states that the tanker implementation dates are staggered due to fewer infrastructure upgrade challenges expected at the ports subject to a 2025 compliance date. CARB At-Berth Authorization Request at 8. \\7\\ A summary of CARB's At-Berth Regulation can be found at CARB's At-Berth Authorization Request at 6 to 18. CARB's At-Berth Authorization Request noted that the no ocean going vessel at berth or at anchor in California waters may emit visible emissions of any air pollutant for a period or periods aggregating three minutes in any hour of operation on the vessel that doesn't meet either of 2 different measurements. CARB also noted that ``The opacity requirements constitute in-use controls, or characteristics or measures that limit the use of nonroad engines and accordingly do not require EPA authorization action. CARB also addressed comments during its rulemaking, similar to comments EPA received during the authorization proceeding, that the opacity requirements are emission standards and that imposing such standards at anchorage infringes on Internation Maritime Organization and international engine standards to which the United States is a party. CARB noted in part that the opacity requirements are part of its general opacity standards under California's Health and Safety Code section 41701. See CARB FSOR at 208-209. Because CARB did not seek EPA approval or authorization of the opacity requirement EPA is not taking any action or position with regard to the requirement or its enforceability. EPA's decision to not act on CARB's opacity requirement only pertains to California's regulation and does not relate to EPA's regulatory authority to regulate opacity. In the event CARB submits the requirement along with its At-Berth regulation to EPA as part of a state implementation plan (SIP) revision request then it may be proper to evaluate its enforceability at that time. --------------------------------------------------------------------------- [[Page 72463]] \n\nIV. Decision After evaluating CARB's amendments to its At-Berth regulations described above, EPA is granting CARB's [[Page 72476]] authorization request for its 2020 At-Berth Amendments. Based on CARB's submissions, relevant adverse comment, and other comments in the record, EPA is granting an authorization under section 209(e)(2)(A) of the CAA for CARB's 2020 At-Berth Amendments. The opponents of the authorization request have not met their burden of proof to demonstrate or to adequately support an EPA finding that CARB and its 2020 At-Berth Amendments fail to meet the three authorization criteria in section 202(e)(2)(A)(i)-(iii) of the CAA. A. Judicial Review Section 307(b)(1) of the CAA governs judicial review of final actions by the EPA. This section provides, in part, that petitions for review must be filed in the United States Court of Appeals for the District of Columbia Circuit: (i) when the agency action consists of ``nationally applicable regulations promulgated, or final actions taken, by the Administrator,'' or (ii) when such action is locally or regionally applicable, but ``such action is based on a determination of nationwide scope or effect and if in taking such action the Administrator finds and publishes that such action is based on such a determination.'' For locally or regionally applicable final actions, the CAA reserves to the EPA complete discretion whether to invoke the exception in (ii). To the extent a court finds this final action to be locally or regionally applicable, the Administrator is exercising the complete discretion afforded to him under the CAA to make and publish a finding that this action is based on a determination of ``nationwide scope or effect'' within the meaning of CAA section 307(b)(1) for several reasons.\\142\\ This final action grants an authorization for amendments to California's At-Berth Regulations that were previously authorized by EPA. As such, this final action will affect any person who owns, operates, charters, or leases any United States or foreign-flag OGV that visits a California port, terminal, or berth; any person who owns, operates, or leases a port, terminal, or berth located where OGVs visit, or any person who owns, operates, or leases a CARB approved CAECS for OGV auxiliary engines or tanker auxiliary boilers. Furthermore, the At-Berth Regulations, and the amendments to those regulations that are the subject of today's action, the 2020 At-Berth Amendments, are part of California's nonroad emissions program that, together with its on-highway emissions program, are regulatory programs that EPA may waive under CAA section 209. As required by statute, in evaluating the authorization criteria in this action, EPA considers not only the 2020 At-Berth Amendments in isolation, but in the context of the entire California nonroad emission program. See CAA section 209(e)(2)(A) (requiring that the protectiveness finding be made for California's standards ``in the aggregate''). Moreover, EPA generally applies a consistent statutory interpretation and analytical framework in evaluating and deciding various authorization and waiver requests under CAA section 209. EPA also relies on the extensive body of D.C. Circuit case law developed by that Court since 1979 as it has reviewed and decided judicial challenges to these actions. As such, judicial review of any challenge to this action in the D.C. Circuit will centralize review of national issues in that Court and advance other Congressional principles underlying this CAA provision of avoiding piecemeal litigation, furthering judicial economy, and eliminating the risk of inconsistent judgments. For these reasons, the Administrator is exercising the complete discretion afforded to him by the CAA and hereby finds that this final action is based on a determination of nationwide scope or effect for purposes of CAA section 307(b)(1) and is hereby publishing that finding in the Federal Register. Under section 307(b)(1) of the CAA, petitions for judicial review of this action must be filed in the United States Court of Appeals for the District of Columbia Circuit by June 20, 2023. --------------------------------------------------------------------------- \\142\\ In deciding whether to invoke the exception by making and publishing a finding that this final action is based on a determination of nationwide scope or effect, the Administrator has also taken into account a number of policy considerations, including his judgment balancing the benefit of obtaining the D.C. Circuit's authoritative centralized review versus allowing development of the issue in other contexts and the best use of Agency resources. --------------------------------------------------------------------------- B. Statutory and Executive Order Reviews As with past authorization and waiver decisions, this action is not a rule as defined by Executive Order 12866. Therefore, it is exempt from review by the Office of Management and Budget as required for rules and regulations by Executive Order 12866. In addition, this action is not a rule as defined in the Regulatory Flexibility Act, 5 U.S.C. 601(2). Therefore, EPA has not prepared a supporting regulatory flexibility analysis addressing the impact of this action on small business entities. Further, the Congressional Review Act, 5 U.S.C. 801, et seq., as added by the Small Business Regulatory Enforcement Fairness Act of 1996, does not apply because this action is not a rule for purposes of 5 U.S.C. 804(3). Michael S. Regan, Administrator. [FR Doc. 2023-23261 Filed 10-19-23; 8:45 am] BILLING CODE 6560-50-P"
+          },
+          {
+            "source_id": "govinfo:42usc7543e-operative161",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(e) Nonroad engines or vehicles (1) Prohibition on certain State standards No State or any political subdivision thereof shall adopt or attempt to enforce any standard or other requirement relating to the control of emissions from either of the following new nonroad engines or nonroad vehicles subject to regulation under this chapter— (A) New engines which are used in construction equipment or vehicles or used in farm equipment or vehicles and which are smaller than 175 horsepower. (B) New locomotives or new engines used in locomotives. Subsection (b) shall not apply for purposes of this paragraph. (2) Other nonroad engines or vehicles (A) In the case of any nonroad vehicles or engines other than those referred to in subparagraph (A) or (B) of paragraph (1), the Administrator shall, after notice and opportunity for public hearing, authorize California to adopt and enforce standards and other requirements relating to the control of emissions from such vehicles or engines if California determines that California standards will be, in the aggregate, at least as protective of public health and welfare as applicable Federal standards. No such authorization shall be granted if the Administrator finds that— (i) the determination of California is arbitrary and capricious, (ii) California does not need such California standards to meet compelling and extraordinary conditions, or (iii) California standards and accompanying enforcement procedures are not consistent with this section. (B) Any State other than California which has plan provisions approved under part D of subchapter I may adopt and enforce, after notice to the Administrator, for any period, standards relating to control of emissions from nonroad vehicles or engines (other than those referred to in subparagraph (A) or (B) of paragraph (1)) and take such other actions as are referred to in subparagraph (A) of this paragraph respecting such vehicles or engines if— (i) such standards and implementation and enforcement are identical, for the period concerned, to the California standards authorized by the Administrator under subparagraph (A), and (ii) California and such State adopt such standards at least 2 years before commencement of the period for which the standards take effect. The Administrator shall issue regulations to implement this subsection. "
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          },
+          {
+            "source_id": "govinfo:hres1530eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1530 Engrossed in House (EH)] <DOC> H. Res. 1530 In the House of Representatives, U. S., September 15, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 9576) to establish the National Fraud Enforcement Division of the Department of Justice. All points of order against consideration of the bill are waived. An amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-41 shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 10326) to enhance information-sharing capabilities between Federal law enforcement and State agencies to detect, investigate, and prosecute fraud in certain Federal programs, and to protect individual privacy. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 210) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ``California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision''. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 4. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 213) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the ``California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision''. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 5. Upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 5334) to amend the Internal Revenue Code of 1986 to allow early childhood educators to take the educator expense deduction, and for other purposes, with the Senate amendments thereto, and to consider in the House, without intervention of any point of order, a single motion offered by the chair of the Committee on Foreign Affairs or his designee that the House concur in the Senate amendments. The Senate amendments and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Foreign Affairs or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion or demand for division of the question. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:2:306",
+        "session": 2,
+        "roll": 306,
+        "date": "2026-09-15",
+        "measure": "H J RES 210",
+        "question": "On Passage",
+        "disposition": "pending_interpretation",
+        "reason": "The exact EH proposesCRA-disapproval/no-force-or-effect treatment for the identifiedOctober20,2023EPAat-berth authorization notice, a direct vessel/port emissions-control governance lead. Retained notice summary/background/decision identify2020amendments, expanded vessel/port coverage, shore-power OR other approved control strategies and no EPA action on opacity requirements;7543(e)authorization and801scope witnesses are retained. The notice expressly states CRA does not apply because it is not a rule, while the proposed resolution invokesCRA. Its DATESDecember19,2023and judicial-review paragraphJune20,2023also differ. These retained legal/date boundaries require independent review, not silent correction or a categorical claim that State standards are repealed. No whole behavioral meaning/projection, enactment/current enforceability or source-access failure is asserted.",
+        "source": {
+          "source_id": "clerk:119:2:306",
+          "url": "https://clerk.house.gov/evs/2026/roll306.xml",
+          "raw_sha256": "859a0001ab7de1072b65ed347c5990058d8e3ab78b32450435b2d6ba71653844",
+          "governed_bytes_sha256": "586e6b5e1cc9f8eabc23f42af2dad74eee16ce2e527d3ba51d7dcfd9a4a1aa8c",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": true,
+        "bill_ref": "H J RES 210",
+        "member_action": "Nay",
+        "house_action_stage": "On Passage",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The exact EH proposesCRA-disapproval/no-force-or-effect treatment for the identifiedOctober20,2023EPAat-berth authorization notice, a direct vessel/port emissions-control governance lead. Retained notice summary/background/decision identify2020amendments, expanded vessel/port coverage, shore-power OR other approved control strategies and no EPA action on opacity requirements;7543(e)authorization and801scope witnesses are retained. The notice expressly states CRA does not apply because it is not a rule, while the proposed resolution invokesCRA. Its DATESDecember19,2023and judicial-review paragraphJune20,2023also differ. These retained legal/date boundaries require independent review, not silent correction or a categorical claim that State standards are repealed. No whole behavioral meaning/projection, enactment/current enforceability or source-access failure is asserted.",
+        "unresolved_reason": "retained_notice_CRA_classification_and_date_boundary_review_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:2:306",
+            "url": "https://clerk.house.gov/evs/2026/roll306.xml",
+            "raw_sha256": "859a0001ab7de1072b65ed347c5990058d8e3ab78b32450435b2d6ba71653844",
+            "governed_bytes_sha256": "586e6b5e1cc9f8eabc23f42af2dad74eee16ce2e527d3ba51d7dcfd9a4a1aa8c"
+          },
+          {
+            "source_id": "primary:hjres210eh-full161",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres210eh/xhtml/BILLS-119hjres210eh.html",
+            "raw_sha256": "440bc0202058905e5f07ec1e01bdabd20de5c30ea9fbaa6bd65c67a1639d1a27",
+            "governed_bytes_sha256": "d46ed9fa17f4850d50ac0fbbe31993bfbd4f5f6268588f4b9ab6eb5a71354679"
+          },
+          {
+            "source_id": "epa:atberth2023-material161",
+            "url": "https://www.govinfo.gov/content/pkg/FR-2023-10-20/html/2023-23261.htm",
+            "raw_sha256": "757e95a0a803332e1c5aca5af27c01c03f327aca90c9a8784f7b31113e2ee0ac",
+            "governed_bytes_sha256": "cc6115cb3719610a7e248f692976d6872f0038f8c71655294a74b5f0ace5ef4b"
+          },
+          {
+            "source_id": "govinfo:42usc7543e-operative161",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7543.htm",
+            "raw_sha256": "12217975f8886d17b0cbbae9e27fd832f7801478b057b26ea24e75d7ae3c4b18",
+            "governed_bytes_sha256": "1bd56ddaf5af9817a7224a44288c9f458a25ccf8402ea65d72f7cb62cff3bc61"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          },
+          {
+            "source_id": "govinfo:hres1530eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1530eh/html/BILLS-119hres1530eh.htm",
+            "raw_sha256": "f11e341fd3ac62d4bcda2383b4e607d861f0647f3361ecff883d3dedd14dbe63",
+            "governed_bytes_sha256": "ae0d66c1c58f809c4dcde0e295ad6ec971bb449f76f7331c4588404bca108bd4"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:2:306",
+          "source_ids": [
+            "clerk:119:2:306",
+            "primary:hjres210eh-full161",
+            "epa:atberth2023-material161",
+            "govinfo:42usc7543e-operative161",
+            "govinfo:5usc801-2024-disapproval-scope",
+            "govinfo:hres1530eh"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:2:306",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "historical_raw_hash_matches": true,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "a07262fd9bbbc939cb4592e27944ad2bb04716dc86bdd088b251b7cf4e9442ef"
+        }
+      },
+      "record_sha256": "a07262fd9bbbc939cb4592e27944ad2bb04716dc86bdd088b251b7cf4e9442ef",
+      "row_sha256": "a176ae422e74f510c85d83bb2009f45c569af76f7d587aaf2fa689cc684021e9"
+    },
+    {
+      "action_id": "house:119:2:311",
+      "record": {
+        "action_id": "house:119:2:311",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The exactEHproposesCRA-disapproval/no-force-or-effect treatment for the identifiedJanuary10,2025EPAcommercial-harbor-craft decision. The retained substantive notice covers a partial authorization and no-action boundaries for specified engine/control requirements, while its express non-rule/CRA classification requires independent legal-scope review alongside the proposed resolution. Direct vessel/port technology governance is a proposed membership lead, not a claim that everyCaliforniaharbor rule is removed or that a particular engine rule is presently enforceable. No newsourceacquisition, denied-chain retry, whole-action projection or legal resolution.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:311",
+            "url": "https://clerk.house.gov/evs/2026/roll311.xml",
+            "raw_sha256": "8ff22ab712bc010f30916a3448e5aa001b6d032d25b0b6e32b37d4721a0c3f55",
+            "governed_bytes_sha256": "6055540a32ed1d6d876007fbd608781526688511ba6b35d197f1769de61ca2d9"
+          },
+          {
+            "source_id": "primary:hjres213eh-full161",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres213eh/xhtml/BILLS-119hjres213eh.html",
+            "raw_sha256": "5011ff2cf42c21db7e598ea1517a7c762aee5d710fd862c7ea6dca984596d935",
+            "governed_bytes_sha256": "ce51fde2c3b2aee1d7941938253a5120f0a3e82a903e9cb94ef21c17f66d1966"
+          },
+          {
+            "source_id": "epa:harbor2025-material161",
+            "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/html/2025-00465.htm",
+            "raw_sha256": "411a32d355fcf2c2bb90c145907c165da58b80b11c12d0d09111921612072fe9",
+            "governed_bytes_sha256": "29b7ed29f1f3bc120c48d7d31ea83a6896ef4118fc43c13973dfad7948f60fc3"
+          },
+          {
+            "source_id": "govinfo:42usc7543e-operative161",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7543.htm",
+            "raw_sha256": "12217975f8886d17b0cbbae9e27fd832f7801478b057b26ea24e75d7ae3c4b18",
+            "governed_bytes_sha256": "1bd56ddaf5af9817a7224a44288c9f458a25ccf8402ea65d72f7cb62cff3bc61"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          },
+          {
+            "source_id": "govinfo:hres1530eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1530eh/html/BILLS-119hres1530eh.htm",
+            "raw_sha256": "f11e341fd3ac62d4bcda2383b4e607d861f0647f3361ecff883d3dedd14dbe63",
+            "governed_bytes_sha256": "ae0d66c1c58f809c4dcde0e295ad6ec971bb449f76f7331c4588404bca108bd4"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "primary:hjres213eh-full161",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "H. J. RES. 213 (Engrossed-in-House) 119th CONGRESS 2d Session H. J. RES. 213 JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the “California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision”. Resolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress disapproves the rule issued by the Environmental Protection Agency relating to the “California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision” (90 Fed. Reg. 1998 (January 10, 2025)), and such rule shall have no force or effect. Passed the House of Representatives September 16, 2026. Clerk. 119th CONGRESS 2d Session H. J. RES. 213 JOINT RESOLUTION Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the “California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision”."
+          },
+          {
+            "source_id": "epa:harbor2025-material161",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "Federal Register, Volume 90 Issue 6 (Friday, January 10, 2025) [Federal Register Volume 90, Number 6 (Friday, January 10, 2025)] [Notices] [Pages 1998-2000] From the Federal Register Online via the Government Publishing Office [www.gpo.gov] [FR Doc No: 2025-00465] ----------------------------------------------------------------------- ENVIRONMENTAL PROTECTION AGENCY [EPA-HQ-OAR-2023-0153; FRL-11541-01-OAR] California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision AGENCY: Environmental Protection Agency (EPA). ACTION: Notice of decision. ----------------------------------------------------------------------- SUMMARY: The Environmental Protection Agency (``EPA'') is providing notice of its decision to partially grant the California Air Resources Board's (``CARB's'') request for an authorization of amendments adopted in 2022 to its Commercial Harbor Craft (``CHC'') regulation (the ``2022 CHC Amendments''). EPA's decision was issued under the authority of section 209 of the Clean Air Act (``CAA'' or ``Act''). DATES: Petitions for review must be filed by March 11, 2025. \n\nSUPPLEMENTARY INFORMATION: On March 17, 2023, EPA published a Federal Register notice announcing its receipt of CARB's authorization request for the 2022 CHC Amendments. In that notice, EPA invited public comment on California's authorization request and an opportunity to present testimony at a public hearing.\\1\\ On April 27, 2023, EPA announced that a public hearing would be held.\\2\\ EPA held a public hearing on June 1, 2023, and the written comment period closed on July 1, 2023.\\3\\ EPA has considered all comments submitted to the public docket on this matter. --------------------------------------------------------------------------- \\1\\ 88 FR 16439 (March 17, 2023). \\2\\ 88 FR 25636 (April 27, 2023). \\3\\ A transcript of the public hearing is located at EPA-HQ-OAR- 2023-0153, and all written comments are also located at regulations.gov at EPA-HQ-OAR-2023-0153. --------------------------------------------------------------------------- On January 6, 2025, I signed a Decision Document granting California a partial authorization pursuant to section 209(e)(2)(A) of the CAA, as amended, 42 U.S.C. 7543(e)(2)(A), for CARB's 2022 CHC Amendments.\\4\\ --------------------------------------------------------------------------- \\4\\ The Decision Document can be found at EPA-HQ-OAR-2023-0153. EPA's authorization decision includes the entire 2022 amendment regulatory text that can be found in CARB's January 31, 2023, authorization request (the CHC Authorization Support Document) found at EPA-HQ-OAR-2023-0153-0004. (CARB's entire authorization to EPA is found at EPA-HQ-OAR-2023-0153). The specific regulatory provisions under EPA's authorization consideration and included in this decision can be found at footnote 1 to the CHC Authorization Support Document. --------------------------------------------------------------------------- The 2022 CHC Amendments apply to engines on most types of harbor craft that operate in California and add several categories that were not included in CARB's regulation (pilot boats, research vessels, workboats, commercial fishing, commercial passenger fishing, and certain tank [[Page 1999]] barges). The 2022 CHC Amendments create new emission standards and compliance dates that are different depending on vessel category and, for existing vessels, engine model year. Zero-Emission and Advanced Technology (``ZEAT'') requirements apply to new and in-use ferries and new excursion vessels and phase in beginning December 31, 2024.\\5\\ The owners of these boats are also subject to an infrastructure requirement.\\6\\ --------------------------------------------------------------------------- \\5\\ California Code of Regulations Section 93118.5(e)(10). \\6\\ California Code of Regulations Section 93118.5(i). --------------------------------------------------------------------------- For other harbor craft, both new and existing, the 2022 CHC Amendments set engine requirements that are equivalent in stringency to: (1) the most stringent Federal marine engine standard (Federal Tier 3 or Tier 4 marine standards) or California or Federal offroad engine standards (California or Federal Final Tier 4 off-road engine standards) that were in effect at the time any of the aforementioned actions occur and that are applicable to new engines with the same power ratings and displacements as the subject propulsion and auxiliary engines, and (2) reflect the addition of a level 3 Verified Diesel Emission Control Strategy (``VDECS''), such as a verified diesel particulate filter (``DPF''). The exception is for engines on existing commercial fishing vessels, which are subject to less stringent emission standards.\\7\\ The compliance dates for new vessels are a function of the date the vessel is built.\\8\\ For existing vessels, the compliance dates are a function of the engine model year; \\9\\ after that date a non-compliant vessel may no longer be operated in the regulated waters of California. The 2022 CHC Amendments also provide compliance extensions for qualified vessels. The length of the extensions depends on the vessel type. Some provisions can provide extensions for those situations where no certified engines and/or level 3 VDECS are available or they are not well suited for specific vessels. --------------------------------------------------------------------------- \\7\\ California Code of Regulations Section 93118.5(e)(13). \\8\\ California Code of Regulations Section 93118.5(e)(8, 9). \\9\\ California Code of Regulations Section 93118.5(e)(12). --------------------------------------------------------------------------- Section 209(e)(1) of the Act permanently preempts any State, or political subdivision thereof, from adopting or attempting to enforce any standard or other requirement relating to the control of emissions for certain new nonroad engines or vehicles.\\10\\ For all other nonroad engines (including ``non-new'' engines), States generally are preempted from adopting and enforcing standards and other requirements relating to the control of emissions, except that section 209(e)(2)(A) of the Act requires EPA, after notice and opportunity for public hearing, to authorize California to adopt and enforce such regulations unless EPA makes one of three enumerated findings. Specifically, EPA must deny authorization if the Administrator finds that (1) California's protectiveness determination (i.e., that California standards will be, in the aggregate, as protective of public health and welfare as applicable Federal standards) is arbitrary and capricious, (2) California does not need such standards to meet compelling and extraordinary conditions, or (3) the California standards and accompanying enforcement procedures are not consistent with section 209 of the Act. --------------------------------------------------------------------------- \\10\\ States are expressly preempted from adopting or attempting to enforce any standard or other requirement relating to the control of emissions from new nonroad engines which are used in construction equipment or vehicles or used in farm equipment or vehicles and which are smaller than 175 horsepower. Such express preemption under CAA section 209(e)(1) also applies to new locomotives or new engines used in locomotives. --------------------------------------------------------------------------- On July 20, 1994, EPA promulgated a rule (the 1994 rule) interpreting the three criteria set forth in section 209(e)(2)(A) that EPA must consider before granting any California authorization request for nonroad engine or vehicle emission standards.\\11\\ EPA revised these regulations in 1997.\\12\\ As stated in the preamble to the 1994 rule, EPA has interpreted the consistency inquiry under the third criterion, outlined above and set forth in section 209(e)(2)(A)(iii), to require, at minimum, that California standards and enforcement procedures be consistent with section 209(a), section 209(e)(1), and section 209(b)(1)(C) of the Act.\\13\\ In order to be consistent with section 209(a), California's nonroad standards and enforcement procedures must not apply to new motor vehicles or new motor vehicle engines. To be consistent with section 209(e)(1), California's nonroad standards and enforcement procedures must not attempt to regulate engine categories that are permanently preempted from State regulation. To determine consistency with section 209(b)(1)(C), EPA typically reviews nonroad authorization requests under the same ``consistency'' criteria that are applied to motor vehicle waiver requests under section 209(b)(1)(C). That section provides that the Administrator shall not grant California a motor vehicle waiver if the Administrator finds that California ``standards and accompanying enforcement procedures are not consistent with section 202(a)'' of the Act. --------------------------------------------------------------------------- \\11\\ See ``Air Pollution Control; Preemption of State Regulation for Nonroad Engine and Vehicle Standards,'' 59 FR 36969 (July 20, 1994). \\12\\ See ``Control of Air Pollution: Emission Standards for New Nonroad Compression-Ignition Engines at or Above 37 Kilowatts; Preemption of State Regulation for Nonroad Engine and Vehicle Standards; Amendments to Rules,'' 62 FR 67733 (December 30, 1997). The applicable regulations are now found in 40 CFR part 1074, subpart B, Part 1074. \\13\\ EPA has interpreted CAA section 209(b)(1)(C) in the context of section 209(b) motor vehicle waivers. --------------------------------------------------------------------------- CARB determined that the 2022 CHC Amendments and accompanying enforcement procedures do not cause California's standards, in the aggregate, to be less protective to public health and welfare than the applicable Federal standards. The administrative record, including information presented to me by parties opposing California's authorization request, did not demonstrate that California arbitrarily or capriciously reached this protectiveness determination. Therefore, based on the record, I cannot find California's determination to be arbitrary and capricious under section 209(e)(2)(A)(i). CARB has demonstrated the existence of compelling and extraordinary conditions justifying the need for such State standards. The administrative record, including information presented to me by parties opposing California's authorization request, did not demonstrate that California does not need such State standards to meet compelling and extraordinary conditions. Thus, based on the record, I cannot deny the authorization based on section 209(e)(2)(A)(ii). CARB has submitted information that its emission standards and test procedures are consistent with section 209(a), section 209(e)(1), and section 209(b)(1)(C) of the Act. The administrative record, including information presented to me by parties opposing California's authorization request, did not satisfy the burden of persuading EPA that the standards are not consistent with section 209. Thus, based on the record, I cannot deny the authorization based on section 209(e)(2)(A)(iii). As described in the Decision Document,\\14\\ EPA is granting California authorization for the 2022 CHC Amendments with the following exceptions: (a) at this time, EPA is not taking any action regarding the 2022 CHC Amendments as they pertain to the ZEAT standards for in- use short run [[Page 2000]] ferries; \\15\\ and (b) at this time, EPA is not taking any action regarding the 2022 CHC Amendments as they pertain to standards for in- use engines and vessels (excluding commercial fishing vessels) \\16\\ that would apply after the expiration of the feasibility extensions when an engine or DPF is not feasible and the owner cannot afford vessel replacement (``E3'').\\17\\ However, EPA's authorization does cover the provisions related to VDECS that are installed on an in-use vessel at any time.\\18\\ --------------------------------------------------------------------------- \\14\\ The Decision Document can be found at EPA-HQ-OAR-2023-0153. \\15\\ See provisions in CCR Title 13, Section 93118.5(e)(10) specific to in-use short-run ferries. \\16\\ CCR Title 13, Section 93118.5(e)(12)(A) through (e)(12)(D). \\17\\ CCR Title 13, Section 93118.5(e)(12)(E)(3). \\18\\ CCR Title 13, Section 93118.5(e)(12)(F). --------------------------------------------------------------------------- Accordingly, I hereby granted the authorization requested by California, with the exceptions noted above. Section 307(b)(1) of the CAA governs judicial review of final actions by the EPA. Petitions for review must be filed by March 11, 2025. As with past authorization decisions, this action is not a rule as defined by Executive Order 12866. Therefore, it is exempt from review by the Office of Management and Budget as required for rules and regulations by Executive Order 12866. In addition, this action is not a rule as defined in the Regulatory Flexibility Act, 5 U.S.C. 601(2). Therefore, EPA has not prepared a supporting regulatory flexibility analysis addressing the impact of this action on small business entities. The Congressional Review Act, 5 U.S.C. 801 et seq., as added by the Small Business Regulatory Enforcement Fairness Act of 1996, does not apply because this action is not a rule, for purposes of 5 U.S.C. 804(3). Jane Nishida, Acting Administrator. [FR Doc. 2025-00465 Filed 1-8-25; 8:45 am] BILLING CODE 6560-50-P"
+          },
+          {
+            "source_id": "govinfo:42usc7543e-operative161",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(e) Nonroad engines or vehicles (1) Prohibition on certain State standards No State or any political subdivision thereof shall adopt or attempt to enforce any standard or other requirement relating to the control of emissions from either of the following new nonroad engines or nonroad vehicles subject to regulation under this chapter— (A) New engines which are used in construction equipment or vehicles or used in farm equipment or vehicles and which are smaller than 175 horsepower. (B) New locomotives or new engines used in locomotives. Subsection (b) shall not apply for purposes of this paragraph. (2) Other nonroad engines or vehicles (A) In the case of any nonroad vehicles or engines other than those referred to in subparagraph (A) or (B) of paragraph (1), the Administrator shall, after notice and opportunity for public hearing, authorize California to adopt and enforce standards and other requirements relating to the control of emissions from such vehicles or engines if California determines that California standards will be, in the aggregate, at least as protective of public health and welfare as applicable Federal standards. No such authorization shall be granted if the Administrator finds that— (i) the determination of California is arbitrary and capricious, (ii) California does not need such California standards to meet compelling and extraordinary conditions, or (iii) California standards and accompanying enforcement procedures are not consistent with this section. (B) Any State other than California which has plan provisions approved under part D of subchapter I may adopt and enforce, after notice to the Administrator, for any period, standards relating to control of emissions from nonroad vehicles or engines (other than those referred to in subparagraph (A) or (B) of paragraph (1)) and take such other actions as are referred to in subparagraph (A) of this paragraph respecting such vehicles or engines if— (i) such standards and implementation and enforcement are identical, for the period concerned, to the California standards authorized by the Administrator under subparagraph (A), and (ii) California and such State adopt such standards at least 2 years before commencement of the period for which the standards take effect. The Administrator shall issue regulations to implement this subsection. "
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "(b)(1) A rule shall not take effect (or continue), if the Congress enacts a joint resolution of disapproval, described under section 802, of the rule. (2) A rule that does not take effect (or does not continue) under paragraph (1) may not be reissued in substantially the same form, and a new rule that is substantially the same as such a rule may not be issued, unless the reissued or new rule is specifically authorized by a law enacted after the date of the joint resolution disapproving the original rule.\n\n(f) Any rule that takes effect and later is made of no force or effect by enactment of a joint resolution under section 802 shall be treated as though such rule had never taken effect. (g) If the Congress does not enact a joint resolution of disapproval under section 802 respecting a rule, no court or agency may infer any intent of the Congress from any action or inaction of the Congress with regard to such rule, related statute, or joint resolution of disapproval."
+          },
+          {
+            "source_id": "govinfo:hres1530eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1530 Engrossed in House (EH)] <DOC> H. Res. 1530 In the House of Representatives, U. S., September 15, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 9576) to establish the National Fraud Enforcement Division of the Department of Justice. All points of order against consideration of the bill are waived. An amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-41 shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 10326) to enhance information-sharing capabilities between Federal law enforcement and State agencies to detect, investigate, and prosecute fraud in certain Federal programs, and to protect individual privacy. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 210) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ``California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision''. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 4. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 213) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the ``California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision''. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 5. Upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 5334) to amend the Internal Revenue Code of 1986 to allow early childhood educators to take the educator expense deduction, and for other purposes, with the Senate amendments thereto, and to consider in the House, without intervention of any point of order, a single motion offered by the chair of the Committee on Foreign Affairs or his designee that the House concur in the Senate amendments. The Senate amendments and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Foreign Affairs or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion or demand for division of the question. Attest: Clerk."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:2:311",
+        "session": 2,
+        "roll": 311,
+        "date": "2026-09-16",
+        "measure": "H J RES 213",
+        "question": "On Passage",
+        "disposition": "pending_interpretation",
+        "reason": "The exactEHproposesCRA-disapproval/no-force-or-effect treatment for the identifiedJanuary10,2025EPAcommercial-harbor-craft decision. The retained substantive notice covers a partial authorization and no-action boundaries for specified engine/control requirements, while its express non-rule/CRA classification requires independent legal-scope review alongside the proposed resolution. Direct vessel/port technology governance is a proposed membership lead, not a claim that everyCaliforniaharbor rule is removed or that a particular engine rule is presently enforceable. No newsourceacquisition, denied-chain retry, whole-action projection or legal resolution.",
+        "source": {
+          "source_id": "clerk:119:2:311",
+          "url": "https://clerk.house.gov/evs/2026/roll311.xml",
+          "raw_sha256": "8ff22ab712bc010f30916a3448e5aa001b6d032d25b0b6e32b37d4721a0c3f55",
+          "governed_bytes_sha256": "6055540a32ed1d6d876007fbd608781526688511ba6b35d197f1769de61ca2d9",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": true,
+        "bill_ref": "H J RES 213",
+        "member_action": "Nay",
+        "house_action_stage": "On Passage",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The exactEHproposesCRA-disapproval/no-force-or-effect treatment for the identifiedJanuary10,2025EPAcommercial-harbor-craft decision. The retained substantive notice covers a partial authorization and no-action boundaries for specified engine/control requirements, while its express non-rule/CRA classification requires independent legal-scope review alongside the proposed resolution. Direct vessel/port technology governance is a proposed membership lead, not a claim that everyCaliforniaharbor rule is removed or that a particular engine rule is presently enforceable. No newsourceacquisition, denied-chain retry, whole-action projection or legal resolution.",
+        "unresolved_reason": "retained_harbor_notice_partial_grant_and_CRA_classification_review_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:2:311",
+            "url": "https://clerk.house.gov/evs/2026/roll311.xml",
+            "raw_sha256": "8ff22ab712bc010f30916a3448e5aa001b6d032d25b0b6e32b37d4721a0c3f55",
+            "governed_bytes_sha256": "6055540a32ed1d6d876007fbd608781526688511ba6b35d197f1769de61ca2d9"
+          },
+          {
+            "source_id": "primary:hjres213eh-full161",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres213eh/xhtml/BILLS-119hjres213eh.html",
+            "raw_sha256": "5011ff2cf42c21db7e598ea1517a7c762aee5d710fd862c7ea6dca984596d935",
+            "governed_bytes_sha256": "ce51fde2c3b2aee1d7941938253a5120f0a3e82a903e9cb94ef21c17f66d1966"
+          },
+          {
+            "source_id": "epa:harbor2025-material161",
+            "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/html/2025-00465.htm",
+            "raw_sha256": "411a32d355fcf2c2bb90c145907c165da58b80b11c12d0d09111921612072fe9",
+            "governed_bytes_sha256": "29b7ed29f1f3bc120c48d7d31ea83a6896ef4118fc43c13973dfad7948f60fc3"
+          },
+          {
+            "source_id": "govinfo:42usc7543e-operative161",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7543.htm",
+            "raw_sha256": "12217975f8886d17b0cbbae9e27fd832f7801478b057b26ea24e75d7ae3c4b18",
+            "governed_bytes_sha256": "1bd56ddaf5af9817a7224a44288c9f458a25ccf8402ea65d72f7cb62cff3bc61"
+          },
+          {
+            "source_id": "govinfo:5usc801-2024-disapproval-scope",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+            "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+            "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
+          },
+          {
+            "source_id": "govinfo:hres1530eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1530eh/html/BILLS-119hres1530eh.htm",
+            "raw_sha256": "f11e341fd3ac62d4bcda2383b4e607d861f0647f3361ecff883d3dedd14dbe63",
+            "governed_bytes_sha256": "ae0d66c1c58f809c4dcde0e295ad6ec971bb449f76f7331c4588404bca108bd4"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:2:311",
+          "source_ids": [
+            "clerk:119:2:311",
+            "primary:hjres213eh-full161",
+            "epa:harbor2025-material161",
+            "govinfo:42usc7543e-operative161",
+            "govinfo:5usc801-2024-disapproval-scope",
+            "govinfo:hres1530eh"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:2:311",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "historical_raw_hash_matches": true,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "dfa9fb96cbba4a166655bf2f89eeaf50dcdb8f03e3854e327d6ce80c3b9ce620"
+        }
+      },
+      "record_sha256": "dfa9fb96cbba4a166655bf2f89eeaf50dcdb8f03e3854e327d6ce80c3b9ce620",
+      "row_sha256": "f68142983cdba32e6ec80542567d7c23ba3de0c0779e100bf196be56827f788c"
+    }
+  ],
+  "canonical_changes": false,
+  "source_holds_changed": false,
+  "accepted": false,
+  "preflight_sha256": "d331d70b5ec42085e6dcea8cce465a03c779aacba67d671608ee1e0bd4fff854"
+}
