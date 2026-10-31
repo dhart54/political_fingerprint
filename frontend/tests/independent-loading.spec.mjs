@@ -434,6 +434,8 @@ test("late presentation sizing yields after the reader chooses another control",
     await expect(next).toBeFocused();
     const readerTop = await next.evaluate(element => element.getBoundingClientRect().top);
     await growCard();
+    // Let a queued resize callback run before proving it cannot restore the old anchor.
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     await expect.poll(() => next.evaluate((element, top) => Math.abs(element.getBoundingClientRect().top - top - 32), readerTop)).toBeLessThanOrEqual(5);
     await expect(next).toBeFocused();
   } finally { analysis.release(); }
