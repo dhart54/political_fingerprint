@@ -1,0 +1,145 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:resource-habitat-five-held-choices159-20261031",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five distinct exact resource/habitat choices; two bounded amendment parent contexts, three whole passage choices; no whole appropriations/NDAA completion, accepted membership, propositions or current-law outcomes."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:227",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10227
+      },
+      "mapping_sha256": "4892a2aa56ad4b5e71a833a6b245f0cd5be496f8d9dadadf2ed32b909bd69c35"
+    },
+    {
+      "action_id": "house:119:1:259",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10259
+      },
+      "mapping_sha256": "6b14eda289c1ed1409689c29d3ff3c555de300c67abf7d64e81f9ddd88812ea7"
+    },
+    {
+      "action_id": "house:119:1:316",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1676:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10316
+      },
+      "mapping_sha256": "ad29a2ba3c4b2c24bd9339db6723b06986129c360fdf7d3eeba63c80928f8aee"
+    },
+    {
+      "action_id": "house:119:1:358",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1366:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10358
+      },
+      "mapping_sha256": "568fb34d5a6f3e7846e8b0a2ef9bf381202dcc24f9aa12d8cd9e44e9ee9923a5"
+    },
+    {
+      "action_id": "house:119:2:297",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3276:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20297
+      },
+      "mapping_sha256": "695098a4a26b21d0f28dce2985b6590f4fa863951e2bad4e4a7b46026040fb09"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr4553:119",
+      "action_ids": [
+        "house:119:1:227"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr3838:119",
+      "action_ids": [
+        "house:119:1:259"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr1676:119",
+      "action_ids": [
+        "house:119:1:316"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr1366:119",
+      "action_ids": [
+        "house:119:1:358"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr3276:119",
+      "action_ids": [
+        "house:119:2:297"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:227",
+        "house:119:1:259",
+        "house:119:1:316",
+        "house:119:1:358",
+        "house:119:2:297"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "All five exact meanings and separate Infrastructure directness suggestions remain held and unapplied; closed3709/EDGE/external/current-law and source-version limits remain. Zero propositions or trajectory.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "21e2f7e826e216972cb43415a191d327b3ba9b2f490cd3ec747b1ee22385abe2"
+}
