@@ -1,0 +1,145 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:digital-access-oversight-five-held-choices156-20261031",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five whole digital-access and program-oversight choices only, isolated and held. Exact proposals and source/program limits remain unaccepted; no directness rule or canonical changes."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:107",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1402:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10107
+      },
+      "mapping_sha256": "7b85394d67c8f8795e918ce5c8eb588e10c7c5ac267ef02d871178937b554df7"
+    },
+    {
+      "action_id": "house:119:1:147",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1804:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10147
+      },
+      "mapping_sha256": "7bf55f5c66197bcf53a1c6112f206763ef0c6766f21febbd3564a134b716481a"
+    },
+    {
+      "action_id": "house:119:1:300",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4058:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10300
+      },
+      "mapping_sha256": "d419c35efa148c1409afc1781540530f6f99582d471ea8dba53a2922107ab9f9"
+    },
+    {
+      "action_id": "house:119:1:311",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4305:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10311
+      },
+      "mapping_sha256": "293a1e747ba68b6c7bb33c3798943ebe650261f272b1dd3bbb6017121c13ed09"
+    },
+    {
+      "action_id": "house:119:2:301",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr2978:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20301
+      },
+      "mapping_sha256": "2f14345fb8efa3d7620749b83066c4c15d3e77b167f37ce158c0723a0241b75d"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr1402:119",
+      "action_ids": [
+        "house:119:1:107"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr1804:119",
+      "action_ids": [
+        "house:119:1:147"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr4058:119",
+      "action_ids": [
+        "house:119:1:300"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr4305:119",
+      "action_ids": [
+        "house:119:1:311"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr2978:119",
+      "action_ids": [
+        "house:119:2:301"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:107",
+        "house:119:1:147",
+        "house:119:1:300",
+        "house:119:1:311",
+        "house:119:2:301"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "Five held episodes pending independent preparation review and separate meaning/eligibility decisions. General reporting/outreach versus direct technology relationships and literal grant/program baselines stay qualified; zero propositions.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "a9fff2d42a19ccf9c0d4c67066ac8cc10d3927851708e896fdad373c493ed513"
+}
