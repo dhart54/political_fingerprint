@@ -24,6 +24,7 @@ export default function IssueDetail({
   cardFinding = null,
   cardFindingRequested = false,
   cardFindingView = null,
+  allowFindingArrivalFocus = true,
   presentationStatus = "ready",
   routePath = "/",
 }) {
@@ -39,6 +40,7 @@ export default function IssueDetail({
   const receiptStatus = useRef(null);
   const issueSection = useRef(null);
   const restoreRetryFocus = useRef(false);
+  const findingPending = cardFindingRequested && presentationStatus === "loading";
   const selectedIssue = useMemo(() => buildSelectedIssueModel({
     presentation,
     rows: state.rows,
@@ -109,13 +111,13 @@ export default function IssueDetail({
   }
 
   useEffect(() => {
-    if (!cardFinding || cardFindingView === "receipts") return;
+    if (!cardFinding || cardFindingView === "receipts" || !allowFindingArrivalFocus) return;
     const frame = requestAnimationFrame(() => {
       document.getElementById("finding-detail")?.scrollIntoView({ behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
       document.getElementById("finding-detail-heading")?.focus({ preventScroll: true });
     });
     return () => cancelAnimationFrame(frame);
-  }, [cardFinding, cardFindingView]);
+  }, [allowFindingArrivalFocus, cardFinding, cardFindingView]);
 
   const linkedFinding = useMemo(() => cardFinding && cardFindingView === "receipts" ? {
     actionIds: cardFinding.action_ids,
@@ -134,6 +136,13 @@ export default function IssueDetail({
       ...metadata,
       requestedAt: Date.now(),
     });
+  }
+
+  function showCompleteRecord(event) {
+    if (event && (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;
+    event?.preventDefault();
+    window.history.pushState({}, "", recordCardUrl(window.location.href, { legislatorId, scope, issue, hash: "vote-record" }));
+    window.dispatchEvent(new PopStateEvent("popstate"));
   }
 
   return (
@@ -173,7 +182,7 @@ export default function IssueDetail({
                   : "No vote receipts are available in this scope."}
               icon="summary"
               label="Issue summary covers"
-              value={selectedIssue.interpretation?.congressLabel || (presentationStatus === "ready" ? "No issue summary for this scope" : "Issue summary unavailable")}
+              value={selectedIssue.interpretation?.congressLabel || (presentationStatus === "loading" ? "Issue summary loading" : presentationStatus === "ready" ? "No issue summary for this scope" : "Issue summary unavailable")}
             />
           </dl>
         ) : null}
@@ -185,7 +194,11 @@ export default function IssueDetail({
       </header>
 
       {cardFinding ? <RecordCardFinding entry={cardFinding} legislatorId={legislatorId} scope={scope} receiptsVisible={cardFindingView === "receipts"} routePath={routePath} /> : null}
-      {cardFindingRequested && !cardFinding ? <p className="py-5 text-base leading-7 text-stone-700" role="status">This finding link does not match the available reviewed source. Browse the complete issue record below.</p> : null}
+      {cardFindingRequested ? <div className="py-5 text-base leading-7 text-stone-700">
+        {findingPending ? <p role="status">The linked reviewed finding is still loading.</p>
+          : !cardFinding ? <p role="status">This finding link does not match the available reviewed source. Browse the complete issue record below.</p> : null}
+        <a className="font-semibold text-teal-900 underline" href={recordCardUrl(routePath, { legislatorId, scope, issue, hash: "vote-record" })} onClick={showCompleteRecord}>Browse the complete issue record</a>
+      </div> : null}
       {!cardFinding ? <ReviewedAnalysisSection
         onSeeActions={showExactActions}
         presentation={presentation}
@@ -223,16 +236,14 @@ export default function IssueDetail({
           </button>
         </div>
       ) : null}
-      {state.status === "ready" && (!cardFinding || cardFindingView === "receipts") ? (
+      {state.status === "ready" && !findingPending && (!cardFinding || cardFindingView === "receipts") ? (
         <ChronologicalActionLedger
           focusOnArrival={state.focusOnArrival}
+          allowFindingArrivalFocus={allowFindingArrivalFocus}
           contactContext={routePath === "/" ? { legislatorId, identity: `${legislatorId}:${issue}:${scope}` } : null}
           key={linkedFinding?.requestedAt || "all"}
           highlightedFinding={linkedFinding || highlightedFinding}
-          onClearFinding={cardFinding ? () => {
-            window.history.pushState({}, "", recordCardUrl(window.location.href, { legislatorId, scope, issue, hash: "vote-record" }));
-            window.dispatchEvent(new PopStateEvent("popstate"));
-          } : undefined}
+          onClearFinding={cardFinding ? () => showCompleteRecord() : undefined}
           representativeName={representativeName}
           rows={state.rows}
         />

@@ -15,7 +15,9 @@ export default function IssueOverviewGrid({
   if (!rows.length) {
     return (
       <p className="mt-6 rounded-2xl border border-stone-200 bg-white p-5 text-base leading-7 text-stone-700">
-        {mode === "reviewed_analysis" && presentationStatus !== "ready"
+        {mode === "reviewed_analysis" && presentationStatus === "loading"
+          ? "Issue summaries are still loading. Browse recorded votes using the other views."
+          : mode === "reviewed_analysis" && presentationStatus !== "ready"
           ? "Issue summaries are unavailable. Browse recorded votes using the other views."
           : mode === "reviewed_analysis"
           ? "No plain-language issue summary is available in this representative and Congress scope. Vote receipts remain available under the other views."

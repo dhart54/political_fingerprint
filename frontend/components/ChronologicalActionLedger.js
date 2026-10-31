@@ -34,6 +34,7 @@ const TYPE_FILTERS = [
 export default function ChronologicalActionLedger({
   contactContext = null,
   focusOnArrival = true,
+  allowFindingArrivalFocus = true,
   highlightedFinding,
   representativeName,
   rows = [],
@@ -100,6 +101,7 @@ export default function ChronologicalActionLedger({
     setPatternActive(resolution.filter === "highlighted");
     setExpandedId(resolution.expandedId);
     setLinkedActionNotice(resolution.notice);
+    if (!allowFindingArrivalFocus) return;
     if (!initialFocusAllowed.current) {
       initialFocusAllowed.current = true;
       return;
@@ -113,12 +115,18 @@ export default function ChronologicalActionLedger({
       });
       headingRef.current?.focus({ preventScroll: true });
     });
-  }, [highlightedFinding?.requestedAt, ordered, requestedHighlightedIds]);
+  }, [allowFindingArrivalFocus, highlightedFinding?.requestedAt, ordered, requestedHighlightedIds]);
 
   useEffect(() => {
     if (highlightedFinding) return;
     let active = true;
-    function honorReceiptAnchor() {
+    let intent = 0;
+    const invalidate = () => { intent += 1; };
+    const controlFocus = event => {
+      if (event.target instanceof Element && event.target.closest('a[href], button, input, select, textarea, [contenteditable="true"]')) invalidate();
+    };
+    function honorReceiptAnchor(event) {
+      const currentIntent = ++intent;
       const allowFocus = initialFocusAllowed.current;
       initialFocusAllowed.current = true;
       const id = window.location.hash.slice(1);
@@ -130,11 +138,11 @@ export default function ChronologicalActionLedger({
         setVisibleCount(Math.max(INITIAL_BATCH, index + 1));
         setExpandedId(canonicalActionId(ordered[index]));
       }
-      if (!allowFocus) return;
+      if (!allowFocus || (!event && !allowFindingArrivalFocus)) return;
       requestAnimationFrame(() => requestAnimationFrame(() => {
         // A newer header/hash navigation owns the destination. A queued receipt
         // scroll must not pull the reader back after they have moved elsewhere.
-        if (!active || window.location.hash.slice(1) !== id) return;
+        if (!active || intent !== currentIntent || window.location.hash.slice(1) !== id) return;
         const target = document.getElementById(id);
         target?.scrollIntoView({ behavior: "auto", block: "start" });
         if (id === "vote-record") headingRef.current?.focus({ preventScroll: true });
@@ -143,11 +151,21 @@ export default function ChronologicalActionLedger({
     }
     honorReceiptAnchor();
     window.addEventListener("hashchange", honorReceiptAnchor);
+    window.addEventListener("wheel", invalidate, { passive: true });
+    window.addEventListener("touchmove", invalidate, { passive: true });
+    window.addEventListener("pointerdown", invalidate, { passive: true });
+    window.addEventListener("keydown", invalidate);
+    window.addEventListener("focusin", controlFocus);
     return () => {
       active = false;
       window.removeEventListener("hashchange", honorReceiptAnchor);
+      window.removeEventListener("wheel", invalidate);
+      window.removeEventListener("touchmove", invalidate);
+      window.removeEventListener("pointerdown", invalidate);
+      window.removeEventListener("keydown", invalidate);
+      window.removeEventListener("focusin", controlFocus);
     };
-  }, [ordered, highlightedFinding]);
+  }, [allowFindingArrivalFocus, ordered, highlightedFinding]);
 
   function clearPattern() {
     if (onClearFinding) { onClearFinding(); return; }
