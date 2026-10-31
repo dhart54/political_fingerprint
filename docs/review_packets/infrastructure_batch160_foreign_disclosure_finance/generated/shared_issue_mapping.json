@@ -1,0 +1,131 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:foreign-disclosure-finance-five-held-choices160-20261031",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five exact choices: three rejected1048children in one bounded held context plus two whole bills. No existing79/83reauthoring, full1048completion, current-law classification, accepted membership, propositions or trajectory."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:15",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr33:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10015
+      },
+      "mapping_sha256": "856726847b65173d525d6a84be946ff4614a7f9fbc42532dcdaa527482703ca8"
+    },
+    {
+      "action_id": "house:119:1:80",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1048:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10080
+      },
+      "mapping_sha256": "6004a552237894710054ae5f8a9251421b39f544fec6c592d564113031dfa6fb"
+    },
+    {
+      "action_id": "house:119:1:81",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1048:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10081
+      },
+      "mapping_sha256": "970eedce09c2861f7128c6e8246904e1872316a14c3e9c28d86f6d46ddb9fdba"
+    },
+    {
+      "action_id": "house:119:1:82",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1048:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10082
+      },
+      "mapping_sha256": "b552a84de1a29e080099b28464acc47a67114344ba9645c213a1fb87799861e8"
+    },
+    {
+      "action_id": "house:119:1:307",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4423:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10307
+      },
+      "mapping_sha256": "073385bbe4ddd9852475abc0e53d1b88da00aaa1e417334c60c43d1df4b1bd01"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr33:119",
+      "action_ids": [
+        "house:119:1:15"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr1048:119",
+      "action_ids": [
+        "house:119:1:80",
+        "house:119:1:81",
+        "house:119:1:82"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr4423:119",
+      "action_ids": [
+        "house:119:1:307"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:15",
+        "house:119:1:80",
+        "house:119:1:81",
+        "house:119:1:82",
+        "house:119:1:307"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "All exact meanings and Infrastructure directness suggestions remain held/unapplied; source-version, missing proposed units, court/financial/current-law limits remain. No propositions or trajectory.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "9fca1095aa87d8d99cf57ad718360f26ed4d2b8e52d28a4799ff9a0d426aa35a"
+}

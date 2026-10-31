@@ -1,0 +1,45 @@
+name: Infrastructure foreign disclosure and finance candidates
+
+on:
+  pull_request:
+    paths:
+      - 'docs/review_packets/infrastructure_batch160_foreign_disclosure_finance/**'
+      - 'scripts/validate_infrastructure_foreign_disclosure_finance_candidates160.py'
+      - 'backend/tests/test_infrastructure_foreign_disclosure_finance_candidates160.py'
+      - '.github/workflows/infrastructure-foreign-disclosure-finance-candidates.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  held-foreign-disclosure-finance-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install schema dependency
+        run: python -m pip install jsonschema
+      - name: Authenticate immutable prior identities without stacking or merit replay
+        run: |
+          git fetch --no-tags --depth=1 origin c6e6df3537ce464abcde22b13401cc7ae878aaf1 f684d89987498efb335db9c14fdf3da848734de1 328aaa56266ffd643a1eb74ed1ebbab95d19b428 b829ae75b37eff31fd30f44d669e05e434362091 f4914598425418361bdebf514937fbbfe5691afc
+          python - <<'PY'
+          import json,subprocess
+          from scripts.validate_infrastructure_foreign_disclosure_finance_candidates160 import P,read,validate_prior_branch
+          pins=read(P/'preparation_preflight.json')['prior_non_main_identity_pins']
+          total=0
+          for i,pin in enumerate(pins):
+              a=json.loads(subprocess.check_output(['git','show',pin['commit']+':'+pin['authoring']['path']]))
+              c=json.loads(subprocess.check_output(['git','show',pin['commit']+':'+pin['core']['path']]))
+              total+=validate_prior_branch(i,a,c)
+          assert total==25
+          print('Verified 25 immutable prior155-159 identities; no duplication, stacking or merit replay')
+          PY
+      - name: Verify exact foreign-source and finance choices, source extents and held replay
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_foreign_disclosure_finance_candidates160.py
+          python -m unittest backend.tests.test_infrastructure_foreign_disclosure_finance_candidates160
