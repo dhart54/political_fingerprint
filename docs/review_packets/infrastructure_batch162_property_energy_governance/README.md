@@ -83,3 +83,16 @@ Historical precommit pending language is preserved; later results belong in the
 PR/local evidence without reporting-only commits. No new acquisition, closed-route
 retry, source-hold/taxonomy alteration or canonical/application/publication/production
 operation occurred. All exact bindings and eligibility suggestions remain unapplied.
+
+Reviewer metadata correction: all five binding-approval requests are deferred.
+Exact-version evidence remains pending, binding review is not ready, and no
+approval is requested by this packet. The held meanings and all six native
+products remain unchanged from0231d8b6; the successor changes review metadata
+and its guard only, with matching documentation/manifests.
+
+The corrected successor passes16focused tests, including40direct readiness
+rejection cases across both metadata artifacts and all five actions, plus the
+standalone/preservation check. All six native products and authoring/source/
+preflight/extent inputs remain identical to0231d8b6. Binding approval stays
+deferred until exact-version evidence is sufficient; no acquisition is required
+merely to preserve the supported held source-version descriptions.

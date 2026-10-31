@@ -69,6 +69,15 @@ class HeldPropertyEnergy162(unittest.TestCase):
             data=copy.deepcopy(self.data);bundle=data['decision_bundle'];bundle[field]=True;bundle['bundle_sha256']=digest({k:v for k,v in bundle.items()if k!='bundle_sha256'})
             with self.subTest(field=field),self.assertRaisesRegex(ValueError,'held decision bundle'):V.validate(data)
 
+    def test_pending_binding_evidence_cannot_request_approval(self):
+        original=V.read(V.P/'proposed_bindings.json')
+        V.validate_binding_readiness(self.data['decision_bundle'],original)
+        for target in ['bundle','evidence']:
+            for index in range(5):
+                for field,value in [('binding_approval_requested',True),('binding_review_ready',True),('binding_evidence_state','ready_for_approval'),('binding_approval_requested',0)]:
+                    bundle=copy.deepcopy(self.data['decision_bundle']);evidence=copy.deepcopy(original);artifact=bundle if target=='bundle'else evidence;artifact['cases'][index][field]=value
+                    with self.subTest(target=target,index=index,field=field),self.assertRaisesRegex(ValueError,'binding approval prematurely requested'):V.validate_binding_readiness(bundle,evidence)
+
     def test_all_candidate_accepted_mappings_reject(self):
         core=V.read(V.P/'generated/shared_action_core.json');mapping=V.read(V.P/'generated/shared_issue_mapping.json')
         for aid in V.ACTIONS:

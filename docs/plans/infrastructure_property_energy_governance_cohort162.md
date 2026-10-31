@@ -121,3 +121,23 @@ final review and draft/hosted delivery are next; no permission is inferred from
 preliminary source review or passing tests. Every source-version/binding/eligibility
 hold stays intact. Delivered161/PR252now has all3workflows/all13backend jobs success
 with exact feature/integration provenance authenticated, independently of162.
+
+## Final-review metadata correction
+
+The reviewer found that0231d8b6requested binding approval while admitting exact
+version evidence was unfinished. Confirmed in both metadata bundles. Defer all
+five binding-approval requests, mark review not ready/evidence pending, and add
+a regression rejecting premature requests. Preserve0231d8b6as review evidence;
+all meanings, sources, six native products and canonical decisions stay unchanged.
+A successor commit/tree and necessary focused validation receive exact recheck
+before push. This is a review-state/guard correction, not a binding or methodology
+decision. No new acquisition or wider historical reconciliation.
+
+Correction result:16focused tests pass; the new direct metadata-contract test
+rejects premature request/readiness/ready-state and numeric-zero substitutions
+for both artifacts/all five cases(40rejections). All six generated products and
+authoring/sources/retained/preflight/extents match original0231d8b6bytes under
+declaredLFnormalization; native working bytes are exact. No factual or canonical
+decision changed. Authenticated finding receiptdd1827ab records the original
+15independent tests/76rejection probes for unaffected-result reuse; final successor
+clearance remains the existing reviewer gate.

@@ -12,8 +12,8 @@ B = ROOT / 'docs/editorial/shared_candidates/house_119_infrastructure_batch154_2
 BASE = '65575bf9a045f23c99f07a0750e6560fbd937655'
 AUTHORING_SHA = '5343c78865567acaf3b65a8562f99baeeb4c90cf448e4b27889c938c1b90671d'
 PREFLIGHT_SHA = '15597f7dcd21ef881190fb5eb9812cbc0053eb0b07dd5619b6949157cfbc1def'
-BUNDLE_SHA = 'c8aeace55a92886cb6d8741800e2d13771b416970a252cecdb3a9234efca0fdb'
-MANIFEST_SHA = 'c8cd359eea7824316f7922dbf20bcc13c19c8ad0765fd6ca6030a038ab1eb3ef'
+BUNDLE_SHA = '85f011fb18bf963ff97f6fcd7012cd4349ea2e6f2cee83b4c3d867f0d8dd9eb9'
+MANIFEST_SHA = 'b305213bf2aaa9d45029c5474edc9b86c88744ea89b03cf2b494ffe1308a1d3b'
 PRESERVATION_SHA = 'bf7672527cb5066832fa432e2d3a1764d33360aee81d3bc019622d8234ad872c'
 SPECS = [(215,3937),(240,3424),(278,3015),(324,3638),(336,3187)]
 ACTIONS = [f'house:119:1:{roll}' for roll, bill in SPECS]
@@ -118,6 +118,15 @@ def validate_prior_branch(index, authoring, core):
     require(len(ids)==5 and ids=={a['action_id']for a in core['actions']} and not ids.intersection(ACTIONS), 'prior/new identity overlap')
     return len(ids)
 
+def validate_binding_readiness(bundle, evidence=None):
+    """Source-version preparation cannot request approval of unfinished bindings."""
+    evidence=read(P/'proposed_bindings.json') if evidence is None else evidence
+    for artifact in [bundle,evidence]:
+        require([x['action_id'] for x in artifact['cases']]==ACTIONS, 'binding evidence subjects changed')
+        for case in artifact['cases']:
+            require(case['binding_approval_requested'] is False and case['binding_review_ready'] is False and case['binding_evidence_state']=='pending_exact_version_reconciliation' and case['binding_applied'] is False, 'binding approval prematurely requested')
+            require(bool(case['binding_approval_blocked_reason']), 'binding evidence gap omitted')
+
 def validate(data=None):
     data=inputs() if data is None else data
     a=data['authoring']; pre=data['preparation_preflight']; bundle=data['decision_bundle']
@@ -133,8 +142,9 @@ def validate(data=None):
     require(all(bundle[k] is False for k in ['accepted','canonical_application','publication','production']), 'decision authority changed')
     for i,case in enumerate(bundle['cases']):
         require(case['action_id']==ACTIONS[i] and case['proposed_eligibility']==DECISIONS[i], 'scope decision changed')
-        require(case['binding_approval_requested'] is True and case['canonical_binding_already_resolved'] is False, 'binding request changed')
+        require(case['binding_approval_requested'] is False and case['binding_review_ready'] is False and case['binding_evidence_state']=='pending_exact_version_reconciliation' and case['canonical_binding_already_resolved'] is False, 'binding request changed')
         require(all(case[k] is False for k in ['binding_applied','meaning_accepted','eligibility_applied','canonical_sources_registered','source_holds_changed']), 'case accepted/applied')
+    validate_binding_readiness(bundle)
     core,mapping,projections,compiler_input,result=prepare(a,data['sources'],['F000477','M001184'])
     require([x['action_id'] for x in bundle['cases']]==ACTIONS, 'missing or extra decision case')
     for i,case in enumerate(bundle['cases']):
