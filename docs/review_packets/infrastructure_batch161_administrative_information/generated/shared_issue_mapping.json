@@ -1,0 +1,145 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:administrative-information-five-held-choices161-20261031",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five distinct source-qualified whole choices in isolated held contexts. Proposed exact bindings and Infrastructure directness are separate review decisions; four canonical binding flags stay unresolved. No accepted membership, canonical source registration, propositions, publication or production."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:84",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr517:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10084
+      },
+      "mapping_sha256": "db9f61c7aaab033e92d21b04ba9025736e8c92916c6472ebd64594a72e0803c2"
+    },
+    {
+      "action_id": "house:119:1:85",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr997:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10085
+      },
+      "mapping_sha256": "9835625f335de17ad40d0121a100b36c36f3b6544acdeba7ba5f2cd8c37b8ce0"
+    },
+    {
+      "action_id": "house:119:1:213",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3095:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10213
+      },
+      "mapping_sha256": "671568bf5c2ec516dfe754f48202b6552f64ce53eedfaab4e31d010cbbc929c6"
+    },
+    {
+      "action_id": "house:119:1:214",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3351:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10214
+      },
+      "mapping_sha256": "003393e9b18459908e4d96bb1ba3890cd3c4b60394232e9e0ac8834c2291e124"
+    },
+    {
+      "action_id": "house:119:1:301",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr6019:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10301
+      },
+      "mapping_sha256": "2a792ff7c5df49a777d330452cea1b88a831488f71427a18012b621c6829af20"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr517:119",
+      "action_ids": [
+        "house:119:1:84"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr997:119",
+      "action_ids": [
+        "house:119:1:85"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr3095:119",
+      "action_ids": [
+        "house:119:1:213"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr3351:119",
+      "action_ids": [
+        "house:119:1:214"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr6019:119",
+      "action_ids": [
+        "house:119:1:301"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:84",
+        "house:119:1:85",
+        "house:119:1:213",
+        "house:119:1:214",
+        "house:119:1:301"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "Each proposed meaning, exact version binding and Infrastructure directness remains held for source-semantic and independent review.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "337f7da8e6a80b8ae7ad4eaffc1ac9a0a5111ed7b33afd0a46a40d64a744a10f"
+}
