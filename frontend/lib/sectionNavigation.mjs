@@ -69,6 +69,9 @@ export function createSectionNavigation(journey) {
     return isCurrent;
   }
 
+  const controlFocus = event => {
+    if (event.target instanceof Element && event.target.closest('a[href], button, input, select, textarea, [contenteditable="true"]')) invalidate();
+  };
   const keyboardMovement = event => {
     if (MOVEMENT_KEYS.has(event.key)) invalidate();
   };
@@ -86,6 +89,7 @@ export function createSectionNavigation(journey) {
   window.addEventListener("touchstart", invalidate, { passive: true });
   window.addEventListener("pointerdown", invalidate, { passive: true });
   window.addEventListener("keydown", keyboardMovement);
+  window.addEventListener("focusin", controlFocus);
 
   return {
     begin,
@@ -95,6 +99,7 @@ export function createSectionNavigation(journey) {
       window.removeEventListener("touchstart", invalidate);
       window.removeEventListener("pointerdown", invalidate);
       window.removeEventListener("keydown", keyboardMovement);
+      window.removeEventListener("focusin", controlFocus);
       journey.removeEventListener("click", reassertSection);
     },
   };

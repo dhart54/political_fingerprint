@@ -110,3 +110,44 @@ actual terminal outcomes in the draft PR and ignored evidence. This plan records
 the pre-commit checkpoint; final delivery status belongs to the PR evidence.
 No backend, editorial meaning, readiness, coverage, publication or production
 configuration changed. Merge/deployment remain outside this milestone.
+
+
+## Hosted correction after the first freeze
+
+PR247's first frontend run checked out `caecbb0c` exactly, passed units/lint/build
+and 262 browser cases, but failed the existing empty-scope keyboard navigation
+case. The downloaded trace archive matches hosted SHA-256
+`2223eff9bd5adb98ab62c9f32246995bb373777319b6f8cbb659561ad824729a`.
+The trace shows the URL still at `#issue-summary` after the attempted Vote record
+activation: an older queued section restoration reclaimed focus between focusing
+the new header link and pressing Enter. Five ordinary local repeats passed;
+a deterministic delayed-position regression reproduced the focus loss.
+
+The keyboard correction makes section restoration cancel on focus entering an
+interactive control, matching its existing pointer and keyboard cancellation.
+Programmatic section-heading focus remains non-interactive and does not cancel
+restoration. The new regression keeps the header link focused through settlement,
+then checks explicit Enter activation, the receipt hash and receipt-heading focus.
+A parallel development rerun also reproduced the eight-pixel discovery shift.
+Geometry capture established that the card can grow from 1112 to 1120 pixels
+after the fixed follow-up frame has finished. The successor replaces that timing
+assumption with a ResizeObserver limited to the current card/issue layout. It
+reconciles actual size changes and disconnects on reader interaction, invalid
+anchor/route, subsequent analysis settlement or unmount. No timing tolerance was
+relaxed. Both regressions passed all eight parallel repetitions after correction.
+
+The new suite now contains 37 loading/navigation cases. This successor changes
+only RepresentativeExperience, the existing helper, test suite and plan; all
+original scope boundaries hold.
+The first run's failure remains recorded; final exact-head results belong in PR247.
+
+
+Successor local validation: production build, lint (same eight existing warnings)
+and all 319 units passed. The complete hosted browser selection passed all 264
+cases locally (`production-browser-successor.log`). One additional focused
+production-mode cancellation test then passed (`reader-cancellation.log`), bringing
+the final selection to 265 cases. That test disables optional native anchoring
+on its isolated test page, confirms that later card growth is compensated, then
+moves keyboard focus and proves subsequent growth does not restore the old anchor.
+Final captures are retained under `screenshots-successor/`. No test assertions
+were relaxed; the two failed hosted/local regressions remain in the evidence.

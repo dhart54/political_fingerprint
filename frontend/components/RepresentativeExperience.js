@@ -134,28 +134,30 @@ export default function RepresentativeExperience({
     if (!anchor?.element.isConnected || window.location.href !== anchor.href) return;
     // Preserve the reader's place when the card/analysis changes height above it.
     // If native scroll anchoring already compensated, the measured delta is zero.
+    let observer;
     let cancelled = false;
+    const events = ["wheel", "touchmove", "pointerdown", "keydown", "focusin", "resize"];
+    const cancel = () => {
+      cancelled = true;
+      observer?.disconnect();
+      events.forEach(event => window.removeEventListener(event, cancel));
+    };
     const preserve = () => {
-      if (cancelled || !anchor.element.isConnected || window.location.href !== anchor.href) return;
+      if (cancelled) return;
+      if (!anchor.element.isConnected || window.location.href !== anchor.href) { cancel(); return; }
       const delta = anchor.element.getBoundingClientRect().top - anchor.top;
       if (Math.abs(delta) > 1) window.scrollBy({ top: delta, behavior: "instant" });
     };
     preserve();
-    // Reconcile the browser's settled layout once, without overriding any newer
-    // reader interaction between this commit and the following frame.
-    const cancel = () => { cancelled = true; };
-    const events = ["wheel", "touchmove", "pointerdown", "keydown", "focusin", "resize"];
+    // The card can finish sizing after the commit. Observe actual layout changes
+    // in this presentation, and release the anchor as soon as the reader acts.
+    observer = new ResizeObserver(preserve);
+    for (const id of ["record-at-a-glance", "issues", "issue-detail"]) {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    }
     events.forEach(event => window.addEventListener(event, cancel, { passive: true }));
-    let frame = requestAnimationFrame(() => {
-      frame = requestAnimationFrame(() => {
-        preserve();
-        events.forEach(event => window.removeEventListener(event, cancel));
-      });
-    });
-    return () => {
-      cancelAnimationFrame(frame);
-      events.forEach(event => window.removeEventListener(event, cancel));
-    };
+    return cancel;
   }, [state.presentationStatus]);
 
   useEffect(() => {

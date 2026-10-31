@@ -391,3 +391,50 @@ test("deliberate receipt navigation still focuses after a late finding preserved
     await expect(page.locator("#finding-detail-heading")).toBeFocused();
   } finally { analysis.release(); }
 });
+
+test("pending section restoration yields to a newly focused header control", async ({ page }) => {
+  await installSnapshot(page);
+  const positions = await hold(page, "positions");
+  try {
+    await page.goto(`${selected}#issue-summary`);
+    await positions.pending;
+    const voteLink = page.locator("main > header").getByRole("link", { name: "Vote record", exact: true });
+    await voteLink.focus();
+    positions.release();
+    await expect(page.locator("#vote-record")).toContainText("25 recorded actions");
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    await expect(voteLink).toBeFocused();
+    await page.keyboard.press("Enter");
+    await expect(page).toHaveURL(/#vote-record$/);
+    await expect(page.locator("#vote-record").getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+  } finally { positions.release(); }
+});
+
+test("late presentation sizing yields after the reader chooses another control", async ({ page }) => {
+  await installSnapshot(page);
+  await page.setViewportSize({ width: 1440, height: 1600 });
+  const analysis = await hold(page, "editorial-presentations");
+  try {
+    await page.goto("/?representative=leg_valerie_p_foushee&scope=119");
+    // Isolate application anchoring from the browser's optional native anchoring.
+    await page.evaluate(() => { document.documentElement.style.overflowAnchor = "none"; });
+    const original = page.getByRole("button", { name: "Issue summaries", exact: true });
+    await original.focus();
+    const initialTop = await original.evaluate(element => element.getBoundingClientRect().top);
+    analysis.release();
+    const card = page.getByTestId("record-card");
+    await expect(card).toBeVisible();
+    const growCard = () => card.evaluate(element => {
+      element.style.paddingBottom = `${parseFloat(getComputedStyle(element).paddingBottom) + 32}px`;
+    });
+    await growCard();
+    await expect.poll(() => original.evaluate((element, top) => Math.abs(element.getBoundingClientRect().top - top), initialTop)).toBeLessThanOrEqual(5);
+    await page.keyboard.press("Tab");
+    const next = page.getByRole("button", { name: "A–Z", exact: true });
+    await expect(next).toBeFocused();
+    const readerTop = await next.evaluate(element => element.getBoundingClientRect().top);
+    await growCard();
+    await expect.poll(() => next.evaluate((element, top) => Math.abs(element.getBoundingClientRect().top - top - 32), readerTop)).toBeLessThanOrEqual(5);
+    await expect(next).toBeFocused();
+  } finally { analysis.release(); }
+});
