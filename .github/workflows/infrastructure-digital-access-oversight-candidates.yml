@@ -1,0 +1,48 @@
+name: Infrastructure digital access and oversight candidates
+
+on:
+  pull_request:
+    paths:
+      - "backend/app/semantic_ir/**"
+      - "backend/app/editorial_presentations/**"
+      - "backend/tests/test_infrastructure_digital_access_oversight_candidates156.py"
+      - "scripts/validate_infrastructure_digital_access_oversight_candidates156.py"
+      - "scripts/prepare_shared_domain_candidate.py"
+      - "docs/review_packets/infrastructure_batch156_digital_access_oversight/**"
+      - "docs/editorial/shared_candidates/**"
+      - "docs/semantic_ir/**"
+      - ".github/workflows/infrastructure-digital-access-oversight-candidates.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  held-digital-access-oversight-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install schema dependency
+        run: python -m pip install 'jsonschema>=4.23,<5'
+      - name: Verify frozen prior155 identity boundary without stacking its files
+        run: |
+          git fetch --no-tags --depth=1 origin c6e6df3537ce464abcde22b13401cc7ae878aaf1
+          git show c6e6df3537ce464abcde22b13401cc7ae878aaf1:docs/review_packets/infrastructure_batch155_transport_governance/authoring.json > "$RUNNER_TEMP/prior155-authoring.json"
+          git show c6e6df3537ce464abcde22b13401cc7ae878aaf1:docs/review_packets/infrastructure_batch155_transport_governance/generated/shared_action_core.json > "$RUNNER_TEMP/prior155-core.json"
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from scripts.validate_infrastructure_digital_access_oversight_candidates156 import read, validate_prior_branch
+          p = Path(os.environ['RUNNER_TEMP'])
+          assert validate_prior_branch(read(p/'prior155-authoring.json'), read(p/'prior155-core.json')) == 5
+          print('Verified five immutable prior155 identities; none duplicated or stacked')
+          PY
+      - name: Verify held digital-access/oversight choices, sources and preservation
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_digital_access_oversight_candidates156.py
+          python -m unittest backend.tests.test_infrastructure_digital_access_oversight_candidates156
