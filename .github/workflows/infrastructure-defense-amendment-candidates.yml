@@ -1,0 +1,51 @@
+name: Infrastructure defense amendment candidates
+
+on:
+  pull_request:
+    paths:
+      - "backend/app/semantic_ir/**"
+      - "backend/app/editorial_presentations/**"
+      - "backend/tests/test_infrastructure_defense_amendment_candidates157.py"
+      - "scripts/validate_infrastructure_defense_amendment_candidates157.py"
+      - "scripts/prepare_shared_domain_candidate.py"
+      - "docs/review_packets/infrastructure_batch157_defense_amendments/**"
+      - "docs/editorial/shared_candidates/**"
+      - "docs/semantic_ir/**"
+      - ".github/workflows/infrastructure-defense-amendment-candidates.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  held-defense-amendment-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install schema dependency
+        run: python -m pip install 'jsonschema>=4.23,<5'
+      - name: Authenticate immutable155 and156 identity pins without stacking or merit replay
+        run: |
+          git fetch --no-tags --depth=1 origin c6e6df3537ce464abcde22b13401cc7ae878aaf1 f684d89987498efb335db9c14fdf3da848734de1
+          git show c6e6df3537ce464abcde22b13401cc7ae878aaf1:docs/review_packets/infrastructure_batch155_transport_governance/authoring.json > "$RUNNER_TEMP/prior0-authoring.json"
+          git show c6e6df3537ce464abcde22b13401cc7ae878aaf1:docs/review_packets/infrastructure_batch155_transport_governance/generated/shared_action_core.json > "$RUNNER_TEMP/prior0-core.json"
+          git show f684d89987498efb335db9c14fdf3da848734de1:docs/review_packets/infrastructure_batch156_digital_access_oversight/authoring.json > "$RUNNER_TEMP/prior1-authoring.json"
+          git show f684d89987498efb335db9c14fdf3da848734de1:docs/review_packets/infrastructure_batch156_digital_access_oversight/generated/shared_action_core.json > "$RUNNER_TEMP/prior1-core.json"
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from scripts.validate_infrastructure_defense_amendment_candidates157 import read, validate_prior_branch
+          p = Path(os.environ['RUNNER_TEMP'])
+          for index in [0, 1]:
+              assert validate_prior_branch(index, read(p/f'prior{index}-authoring.json'), read(p/f'prior{index}-core.json')) == 5
+          print('Verified ten immutable prior155/156 identities; no duplication, stacking or merit replay')
+          PY
+      - name: Verify exact amendments, retained source units and held replay
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_defense_amendment_candidates157.py
+          python -m unittest backend.tests.test_infrastructure_defense_amendment_candidates157
