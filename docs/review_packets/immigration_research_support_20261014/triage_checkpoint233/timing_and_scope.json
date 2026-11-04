@@ -1,0 +1,25 @@
+{
+  "first_tool_utc": "2026-10-15T14:25:44+00:00",
+  "triage_ready_utc": "2026-10-15T14:29:40.293748+00:00",
+  "gross_elapsed_seconds": 236.293748,
+  "per_action_research_time": "Not applicable: no new action researched/claimed; one shared26-row triage. No exclusive per-action time inferred.",
+  "observed_command_seconds": {
+    "ownership_reviews_and_main": 3.7039385,
+    "fetch_checkpoint_plan_config": 0.408427,
+    "pending_flags_and218_read": 0.1003142,
+    "reference_and_tool_field_search": 0.1721346
+  },
+  "settings": {
+    "local_config_verified": {
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "service_tier": "default"
+    },
+    "effective_request_overrides": "unexposed",
+    "native_settings_changed": false
+  },
+  "source_and_validation_scope": "Read committed snapshot/metadata and supported public progress only; no new primary acquisition, profiling, candidate suite or writer messages",
+  "overhead": "All reading, routing, authoring, checks and Git delivery stay in gross elapsed. Residual time is not model latency or idle time.",
+  "failures": "No product/source failure. Receipt-field search returned no matches in scripts/backend/app; not proof of repository-wide tool absence.",
+  "final_delivery": "Exact-head checks, commit/push/CI snapshot and final gross cutoff reported separately in GitHub handoff"
+}

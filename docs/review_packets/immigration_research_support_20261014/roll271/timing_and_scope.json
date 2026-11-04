@@ -1,0 +1,200 @@
+{
+  "action_id": "house:119:2:271",
+  "first_tool_utc": "2026-10-15T15:13:45+00:00",
+  "complete_captured_EH_read_acknowledged_utc": "2026-10-15T15:22:48.689590+00:00",
+  "inclusive_start_to_complete_read_seconds": 543.68959,
+  "packet_documentation_cutoff_utc": "2026-10-15T15:37:09.194489+00:00",
+  "single_action_inclusive_elapsed_seconds": 1404.194489,
+  "exclusive_reading_seconds": null,
+  "attribution": "Single-action gross interval includes ownership/claim, source reading, import checks, drafting, correction, interrupted-context recovery, tool overhead and initial validation preparation. It is not exclusive reading/model latency/idle time. Commit, exact-head validation, push, metadata update and handoff follow; final delivery elapsed is reported in PR198.",
+  "command_durations_observed_seconds": [
+    {
+      "command_stage": "initial ownership/PR checks",
+      "wall_seconds": 2.9972436
+    },
+    {
+      "command_stage": "fetch checkpoint234/source confirmation",
+      "wall_seconds": 0.6693119
+    },
+    {
+      "command_stage": "post research claim",
+      "wall_seconds": 1.5996995
+    },
+    {
+      "command_stage": "source outline",
+      "wall_seconds": 0.3691834
+    },
+    {
+      "command_stage": "read EH window1",
+      "wall_seconds": 0.3653749
+    },
+    {
+      "command_stage": "read EH window2",
+      "wall_seconds": 0.3864431
+    },
+    {
+      "command_stage": "read EH window3",
+      "wall_seconds": 0.3679709
+    },
+    {
+      "command_stage": "read EH window4",
+      "wall_seconds": 0.3751745
+    },
+    {
+      "command_stage": "read EH window5",
+      "wall_seconds": 0.3758948
+    },
+    {
+      "command_stage": "read EH window6",
+      "wall_seconds": 0.3623007
+    },
+    {
+      "command_stage": "reading notes/metadata inventory",
+      "wall_seconds": 0.3961149
+    },
+    {
+      "command_stage": "bounded statute witnesses",
+      "wall_seconds": 0.3417877
+    },
+    {
+      "command_stage": "broad metadata output truncated",
+      "wall_seconds": 0.3522856
+    },
+    {
+      "command_stage": "combined metadata output truncated",
+      "wall_seconds": 0.3308527
+    },
+    {
+      "command_stage": "post-compaction local status/inventory",
+      "wall_seconds": 0.1118517
+    },
+    {
+      "command_stage": "notes/local instructions read",
+      "wall_seconds": 0.0679968
+    },
+    {
+      "command_stage": "bounded identity and complete proposal908 read",
+      "wall_seconds": 0.3693812
+    },
+    {
+      "command_stage": "sandbox gh proxy failures plus local window records",
+      "wall_seconds": 0.307331
+    },
+    {
+      "command_stage": "native PR198/230 read",
+      "wall_seconds": 1.3963456
+    },
+    {
+      "command_stage": "header/nested/citation counts",
+      "wall_seconds": 0.0884589
+    },
+    {
+      "command_stage": "initial packet build",
+      "wall_seconds": 0.4127248
+    },
+    {
+      "command_stage": "flag inventory/failed capitalized Covered probe",
+      "wall_seconds": 0.0948497
+    },
+    {
+      "command_stage": "bounded204 and703 read",
+      "wall_seconds": 0.0753064
+    },
+    {
+      "command_stage": "703cross-reference and203covered-list inspection",
+      "wall_seconds": 0.0687622
+    },
+    {
+      "command_stage": "rebuilt corrected import ledger",
+      "wall_seconds": 0.457685
+    },
+    {
+      "command_stage": "stage witnesses/final flags read",
+      "wall_seconds": 0.0823992
+    },
+    {
+      "command_stage": "settings/scope/remote-main check",
+      "wall_seconds": 1.0668997
+    },
+    {
+      "command_stage": "bounded303condition recheck",
+      "wall_seconds": 0.0759835
+    },
+    {
+      "command_stage": "corrected303summary/rebuild",
+      "wall_seconds": 0.3880783
+    },
+    {
+      "command_stage": "write packet timing cutoff",
+      "wall_seconds": 0.0725542
+    },
+    {
+      "command_stage": "initial staging/hashes/working-file validation/diff",
+      "wall_seconds": 1.7848418
+    },
+    {
+      "command_stage": "explicit INDEX staged validation/diff after selector correction",
+      "wall_seconds": 1.962476
+    }
+  ],
+  "duration_limit": "Reported native command wall durations from tool receipts, not an exhaustive partition of elapsed time. One pre-compaction overlong combined-output inspection has no retained duration; not invented. tools.apply_patch/approval waits/model work and other overhead are included only in gross.",
+  "settings": {
+    "user_selection": "Sol High, unchanged",
+    "verified_read_only_config": {
+      "model": "gpt-6.1-sol",
+      "model_reasoning_effort": "high",
+      "service_tier": "default"
+    },
+    "observation": "Narrow read of local config.toml at final scope check; no edits",
+    "effective_request_overrides": "not exposed; config default does not prove effective service tier"
+  },
+  "conditions": {
+    "workspace": ".w/vhi",
+    "concurrent_load": "Writer checkpoint235 final gate observed running through supported read-only task progress; machine load not isolated or sampled",
+    "cache": "Existing Git/OS/Python cache uncontrolled; no cold-cache claim",
+    "fresh_primary_acquisition": false,
+    "profiling": false,
+    "background_monitor": false,
+    "candidate_suite": false,
+    "speedup_claim": false
+  },
+  "failed_attempts_and_corrections": [
+    {
+      "event": "Several wide source metadata/combined reads exceeded output budget",
+      "effect": "Output not treated as read or as legal qualification; bounded source-specific reads used. Missing output/duration left unknown."
+    },
+    {
+      "event": "Two gh PR reads failed under sandbox proxy 127.0.0.1:9",
+      "effect": "No remote result; authorized native escalated read succeeded once. Not an automatic-approval rejection or product failure."
+    },
+    {
+      "event": "Local capitalized Covered substring probe failed with ValueError; console encoding rendered some diagnostic symbols poorly",
+      "effect": "One bounded UTF-8 source recheck used. JSON source bytes unchanged."
+    },
+    {
+      "event": "Draft §204 dependency-name inventory was overbroad; two review-flag locators were generic; draft §303 summary incorrectly said quarters",
+      "effect": "Corrected against exact section text before delivery: fourteen literal authority entries, precise report-(a) and prohibition references, and two/three examination types. No candidate/source data touched."
+    },
+    {
+      "event": "Initial --ref empty-string validation selected working files rather than staged blobs",
+      "effect": "No false staged result retained: explicit INDEX selector added, helper receipt refreshed, and exact staged validation passed. Exact HEAD validation follows commit."
+    }
+  ],
+  "preservation": {
+    "prior_research_head": "f366acb95736102f75420237dac63c7b750ced92",
+    "base_main": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+    "candidate_source_snapshot": "72b55fef7063cf4a2cf9af5fc317216b43a12aa0",
+    "changed_scope": "Only new roll271 packet folder",
+    "restrictions": "All denied/cancelled sources, excluded batch2 binaries, Health prototype operations, reserved193, completed229, .w/ib and shared-source writes remain excluded."
+  },
+  "precommit_validation": {
+    "outer_sections": 28,
+    "inserted_locators": 7,
+    "bound_passages": 161,
+    "governed_source_identities": 8,
+    "complete_characters": 151645,
+    "negative_probes_rejected": 6,
+    "delivered_blob_hashes": 7,
+    "scope": "Eight new files only. Working-file and explicit INDEX validations passed. Reading/legal meaning is not mechanically certified."
+  }
+}

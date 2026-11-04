@@ -1,0 +1,41 @@
+{
+  "basis": "Final Git index blobs; validate exact committed delivery head. This receipt excludes itself.",
+  "previous_support_head": "196c68a8d431c4a3f789e47a5536be2a97a58425",
+  "candidate_snapshot": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+  "main_verified": "af6cd6d78d6944d64a68a92653066c4c1625f96b",
+  "files": {
+    "README.md": {
+      "git_blob_oid": "9c7f41d49e529c113febf7097092537b9b5b4981",
+      "sha256": "701d1af2ae71524ee94a80f097c6f23c51bab7ae3e678da83103f871cddf0830",
+      "bytes": 17572
+    },
+    "dependency_map.json": {
+      "git_blob_oid": "7e591c1f127dbf43318adf7d9fe44757c8091738",
+      "sha256": "3dfc009570530453a00c0933b3de7556d50c05e0c4f5d273723bc2363ba27fdc",
+      "bytes": 64677
+    },
+    "timing_and_scope.json": {
+      "git_blob_oid": "8b2fcd147b528ba794777a622f400b78c77e2b7d",
+      "sha256": "ea09652832114cde944bc1054eb04f47dd2907692b8e25e313070a8786e8827e",
+      "bytes": 1351
+    }
+  },
+  "source_and_link_validation": {
+    "basis": "index",
+    "new_files": 3,
+    "delivered_hashed_blobs": null,
+    "source_snapshot": "d3bef950fcd4e26e145909198288c3e1389ed50b",
+    "exact_pending_rows": 26,
+    "primary_routes": 8,
+    "required_evidence_unavailable_rows": 2,
+    "links": 36,
+    "prior_support_paths_changed": false,
+    "candidate_runtime_source_paths_changed": false,
+    "restricted_binary_contents_read": false,
+    "seconds": 0.8019669000059366
+  },
+  "required_exact_head_command": "python -X utf8 .local/verify_triage233.py HEAD; git diff --check; verify remote head/main and observe CI once",
+  "scope": "Read-only triage; no new research action, source acquisition, source-bank/candidate/runtime edit, old binary content replay or methodology decision",
+  "prior_preservation": "All47prior support artifacts unchanged by tree diff; existing timing reports retained",
+  "independent_review": "This new triage has not been independently reviewed at delivery; prior bounded batch4review does not automatically cover it"
+}
