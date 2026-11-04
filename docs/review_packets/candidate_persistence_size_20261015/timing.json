@@ -1,0 +1,244 @@
+{
+  "first_tool_utc": "2026-10-15T19:43:19+00:00",
+  "documentation_cutoff_utc": "2026-10-15T20:12:26.669804+00:00",
+  "gross_documentation_seconds": 1747.669804,
+  "scope": "One independent local storage assessment, not completed candidate research or a complete candidate-package capacity certificate",
+  "delivery_boundary": "Commit/exact-head/offline verification/push/PRcosts follow the sealed cutoff and are reported in draftPR; all remain in final gross elapsed.",
+  "production_baseline_freshness": "User/lead-supplied19:08:41UTC snapshot, not independently reconnected by this task",
+  "native_config_read_only": {
+    "model": "gpt-6.1-sol",
+    "model_reasoning_effort": "high",
+    "service_tier": "default"
+  },
+  "effective_model_effort_speed_overrides": "Not exposed; selectedSolHigh and native settings retained. No change/recommendation to models or speed tiers.",
+  "successful_subset_started_utc": "2026-10-15T20:00:23.957107+00:00",
+  "successful_subset_finished_utc": "2026-10-15T20:00:52.789832+00:00",
+  "successful_subset_seconds": 28.832725,
+  "successful_load_seconds": [
+    {
+      "case": "immigration",
+      "domain": "immigration",
+      "seconds": 3.91149760002736
+    },
+    {
+      "case": "health",
+      "domain": "health",
+      "seconds": 3.3020846999716014
+    },
+    {
+      "case": "combined",
+      "domain": "immigration",
+      "seconds": 4.642042099963874
+    },
+    {
+      "case": "combined",
+      "domain": "health",
+      "seconds": 3.281973699980881
+    }
+  ],
+  "retained_revision_seconds": [
+    {
+      "domain": "immigration",
+      "seconds": 3.773372199968435,
+      "insert": {
+        "batch_id": 5,
+        "artifacts_inserted": 86,
+        "artifacts_idempotent": 0,
+        "relationships_inserted": 85
+      }
+    },
+    {
+      "domain": "health",
+      "seconds": 2.682257700012997,
+      "insert": {
+        "batch_id": 6,
+        "artifacts_inserted": 121,
+        "artifacts_idempotent": 0,
+        "relationships_inserted": 120
+      }
+    }
+  ],
+  "native_success_commands": [
+    {
+      "label": "initdb",
+      "seconds": 4.028997300018091,
+      "exit_code": 0
+    },
+    {
+      "label": "start",
+      "seconds": 0.263068399974145,
+      "exit_code": 0
+    },
+    {
+      "label": "stop",
+      "seconds": 1.2511790999560617,
+      "exit_code": 0
+    }
+  ],
+  "failed_attempt_files": [
+    "failed_sandbox_attempt.json",
+    "failed_pipe_capture_attempt.json",
+    "failed_metadata_probe.json",
+    "failed_jsonb_unicode_attempt.json"
+  ],
+  "other_observed_command_seconds": [
+    {
+      "label": "initialrepo and skill inspection",
+      "seconds": 0.2228572
+    },
+    {
+      "label": "initialremote and tool discovery",
+      "seconds": 1.4922212
+    },
+    {
+      "label": "worktree metadata and contract",
+      "seconds": 0.5664199
+    },
+    {
+      "label": "Docker unavailable and PR187context",
+      "seconds": 1.3959907
+    },
+    {
+      "label": "contract importer and nativebinaries",
+      "seconds": 0.1846986
+    },
+    {
+      "label": "missingmodule and schema path inspection",
+      "seconds": 0.2217214
+    },
+    {
+      "label": "worktree creation",
+      "seconds": 2.1869614
+    },
+    {
+      "label": "adapter inspection",
+      "seconds": 0.1412795
+    },
+    {
+      "label": "audit and generated inventory",
+      "seconds": 0.2138328
+    },
+    {
+      "label": "currentimporter and candidate dimensions",
+      "seconds": 0.2006495
+    },
+    {
+      "label": "schema/index/Healthsnapshot inspection",
+      "seconds": 0.2168805
+    },
+    {
+      "label": "officialdoc capture and pushed238verification",
+      "seconds": 1.6692249
+    },
+    {
+      "label": "publicwriter snapshot and docsparse nativeportion",
+      "seconds": 0.0923694
+    },
+    {
+      "label": "quota/changelog and Healthancestry",
+      "seconds": 0.2540897
+    },
+    {
+      "label": "importer safety sourceinspection",
+      "seconds": 0.1109778
+    },
+    {
+      "label": "JSONshapeinspection",
+      "seconds": 0.7382896
+    },
+    {
+      "label": "sandboxfailedrehearsal",
+      "seconds": 5.1116614
+    },
+    {
+      "label": "sandboxfailure preservation",
+      "seconds": 0.0773076
+    },
+    {
+      "label": "pipeattempt initial yielded wait",
+      "seconds": 10.0095347
+    },
+    {
+      "label": "pipewait1",
+      "seconds": 5.0021279
+    },
+    {
+      "label": "pipewait2",
+      "seconds": 5.0051479
+    },
+    {
+      "label": "ownlog and deniedCIMinspection",
+      "seconds": 0.1890486
+    },
+    {
+      "label": "pipeinterruption",
+      "seconds": 0.007762
+    },
+    {
+      "label": "explicitownedrootrecovery",
+      "seconds": 0.2478079
+    },
+    {
+      "label": "metadataprobefailedrehearsal",
+      "seconds": 4.992186
+    },
+    {
+      "label": "cleanup metadata and localeprobe correctioninspection",
+      "seconds": 1.3229606
+    },
+    {
+      "label": "completeJSONBmirrorfailedrehearsal",
+      "seconds": 9.0746318
+    },
+    {
+      "label": "NULinventory",
+      "seconds": 2.2677889
+    },
+    {
+      "label": "subset initial yielded wait",
+      "seconds": 10.0074126
+    },
+    {
+      "label": "subset finalpoll",
+      "seconds": 7.7e-06
+    },
+    {
+      "label": "measuredpartssummary",
+      "seconds": 0.1033848
+    },
+    {
+      "label": "analysis arithmeticbuild",
+      "seconds": 0.0963648
+    },
+    {
+      "label": "nativeprocess/configread",
+      "seconds": 0.2177732
+    },
+    {
+      "label": "ownedprocessclosure/configcheck",
+      "seconds": 0.3285853
+    },
+    {
+      "label": "Healthgenerated equivalence and docsreceipt",
+      "seconds": 0.1307716
+    }
+  ],
+  "timing_limits": "Partial command ledger, not an exhaustive cost allocation; web calls, approval/tool transport and reading/drafting/analysis windows unisolated. Pipehang interruption window was not precisely timed; all retained in gross. No remainder called model latency or idle time.",
+  "failures_and_corrections": [
+    "Oversized bounded-stage output and guessed nonexistentpersistence.py/native-rg wildcard paths; corrected through actual module references.",
+    "Web tool could not renderSupabaseMarkdown/currentsize URL; onedirectofficialretrievalsucceeded. Relevantdatabasechangelogfollowed.",
+    "InstalledDockerCLIbutlocaldaemonunavailable; didnotstartDockerorpullanything. UsedexistingnativePG17.5.",
+    "SandboxnativePGrestricted-tokenerror87; preservedattempt. Oneread-onlyCIMinspectiondeniedinsandbox.",
+    "ElevatedPGstartedbutPIPEinheritanceblockedcommandcapture; ownsessioninterrupted. Explicitstopfailedbecausepostmasterwasalreadygone; finalnativeprocessqueryconfirmedonlypreexistingOct9services. StaleownPIDfileretained, not removed.",
+    "Localeprobeusedunavailablelc_collatesetting; replacedwithpg_database.datcollatecatalogquery. Serverstopped.",
+    "FullJSONBmirrorfailedonretainedU+0000. Transactioncontextrollsback; source/candidatebytesunchanged. Entire incompatibleartifactsenumeratedandexcludedonlyinexplicitINCOMPLETEsubsetsensitivity. No fullsizeclaim."
+  ],
+  "conditions": "Localhost-onlyfreshprivateclusters/native17.5/pglz/Ccollation/8192bytepages. Sequentialimports; localshared_buffers32MB/maxconnections10/parallelquery0/autovacuumoff toboundmeasurement; no productionconfigurationchange. LauncherrequestedBelowNormal/hidden, actualbackendprioritynotindependentlyverified. Concurrentnativewriteractivity/cache/loaduncontrolled, no cold-cachecomparison, CPUprofile, installs or backgroundmonitor.",
+  "cleanup": "Allcreatedpostmasterrootsabsent; finalsuccessfulandbothordinaryfailureclusterstopsexit0. Interruptedroot9300absent; all17observedotherpostgresprocessesstartedOct9andwereuntouched. No existingdatabase/data deletion; privatePGDATA/logsretainedignored.",
+  "helper_sha256_after_run": "5d71e62dd078df8e210a4888cfae05cdaa436798d3caa8f96564e0d63462b290",
+  "helper_binding_limit": "Currenthelperhashrecordedafterrun, not a separatelytimestampedpre-runseal. Helperunchangedsince successful subsetexecution; exactGitmanifestbindsfinaldelivery. Earlierintermediatehelperversionsuncommitted; exception/environmentreceiptsretained.",
+  "no_production_connections": true,
+  "no_candidate_edits": true,
+  "full_candidate_suite_run": false,
+  "full_package_measured": false
+}
