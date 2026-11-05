@@ -140,6 +140,26 @@ Presentation review concerns clarity, grammar, density, caveat placement,
 accessibility, and visual hierarchy. It must not silently reopen upstream
 semantic meaning.
 
+Before handing an authorized presentation draft to the human as ready for final
+experience or release review, complete the drafter -> independent reviewer ->
+accountable owner/product audit gate:
+
+- The drafter owns the source-grounded, conversational explanation and ordinary
+  in-scope corrections.
+- The independent reviewer checks source entailment, clear communication of the
+  established meaning, material limits, and relevant rendered examples.
+- The accountable owner inspects the actual copy and relevant rendered examples
+  for reader usefulness, including the internal comprehension readback in
+  [Rendered Review](product-and-rendered-validation.md#rendered-review). Status
+  reports and test summaries alone do not establish this gate.
+
+Correct routine wording failures within the authorized draft scope before
+handoff; do not require exhaustive item-by-item human approval of that wording.
+Preserve the novelty, exception, shared-dependency, and sampling rules above.
+Route genuinely unresolved or consequential decisions for human judgment when
+needed, including before final handoff. This gate does not grant canonical
+semantic acceptance, publication, or release authority.
+
 ## Generation order
 
 1. Ingest and canonicalize the legislative action.
