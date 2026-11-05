@@ -31,6 +31,11 @@ Review desktop, tablet, and mobile layouts when the visual hierarchy changes.
 Check:
 
 - first useful answer
+- internal main-copy readback against the existing
+  [Comprehension Contract](../design/legislative_interpretation_quality_contract_v1.md#comprehension-contract):
+  what Congress is deciding, what would change, who or what is affected, what
+  the member's whole recorded action means, and the practical stakes and
+  source-supported limits
 - information hierarchy
 - scroll length and density
 - duplicate content
@@ -39,6 +44,11 @@ Check:
 - accessibility controls obstructing content
 - empty states and limited-evidence states
 - evidence details, sources, caveats, and expanded proof
+
+The reviewer and accountable owner must inspect the actual copy and relevant
+rendered examples. A legal-label restatement or a fidelity/test-only PASS does
+not satisfy this readback. This is internal editorial/product validation, not
+evidence of external-user comprehension research.
 
 Use screenshots or reproducible rendered output when possible.
 
