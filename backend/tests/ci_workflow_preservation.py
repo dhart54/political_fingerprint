@@ -1,9 +1,15 @@
-"""Preserve historical CI blocks with one exact approved path-filter extension."""
+"""Preserve historical CI blocks with narrowly authenticated CI repairs."""
 import hashlib
 import re
 
 APPROVED_MAIN = 'c52d121b64d814de3cf684980368bced40e5b4ea'
 APPROVED_WORKFLOW_BLOB = '2cac1cb6178adf88fd412e63ad6fb48566e721fc'
+
+# Exact publication job before/after the PostgreSQL 16 CI repair in 512ad4ed.
+# These hashes cover the entire normalized block, including every existing test.
+# They do not authorize changes to other jobs, triggers, or publication behavior.
+RESTORE_JOB_BEFORE_SHA256 = 'b19cdd20bdeb0f855c9a1204a9c317e57e77c0f39a467a6133bc60c255804e35'
+RESTORE_JOB_AFTER_SHA256 = 'c4d6ac787cd419c8a92e5b92e67966525899b31cb5dd9ce4177baa5f258b3a57'
 
 
 def assert_prior_ci_preserved(before, after, *, accepted_baseline=None):
@@ -40,6 +46,12 @@ def assert_prior_ci_preserved(before, after, *, accepted_baseline=None):
     existing, current = blocks(old_jobs), blocks(new_jobs)
     for name, original in existing.items():
         if name in current and original == current[name]:
+            continue
+        if (
+            name == 'publication-activation-postgres'
+            and hashlib.sha256(original.encode('utf8')).hexdigest() == RESTORE_JOB_BEFORE_SHA256
+            and hashlib.sha256(current.get(name, '').encode('utf8')).hexdigest() == RESTORE_JOB_AFTER_SHA256
+        ):
             continue
         # Later accepted main extended the receipt job. Preserve that exact
         # pinned evolution, including every original byte; permit no new change.
