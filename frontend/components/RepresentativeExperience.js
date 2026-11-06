@@ -154,7 +154,8 @@ export default function RepresentativeExperience({
     observer = new ResizeObserver(preserve);
     for (const id of ["record-at-a-glance", "issues", "issue-detail"]) {
       const element = document.getElementById(id);
-      if (element) observer.observe(element);
+      // Padding and borders move the reader too, even when content size is unchanged.
+      if (element) observer.observe(element, { box: "border-box" });
     }
     events.forEach(event => window.addEventListener(event, cancel, { passive: true }));
     return cancel;
