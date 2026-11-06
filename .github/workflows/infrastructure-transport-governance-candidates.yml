@@ -1,0 +1,35 @@
+name: Infrastructure transport governance candidates
+
+on:
+  pull_request:
+    paths:
+      - "backend/app/semantic_ir/**"
+      - "backend/app/editorial_presentations/**"
+      - "backend/tests/test_infrastructure_transport_governance_candidates155.py"
+      - "scripts/validate_infrastructure_transport_governance_candidates155.py"
+      - "scripts/prepare_shared_domain_candidate.py"
+      - "docs/review_packets/infrastructure_batch155_transport_governance/**"
+      - "docs/editorial/shared_candidates/**"
+      - "docs/semantic_ir/**"
+      - ".github/workflows/infrastructure-transport-governance-candidates.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  held-transport-governance-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install schema dependency
+        run: python -m pip install 'jsonschema>=4.23,<5'
+      - name: Verify held transport choices, sources and preservation
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_transport_governance_candidates155.py
+          python -m unittest backend.tests.test_infrastructure_transport_governance_candidates155

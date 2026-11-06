@@ -1,0 +1,52 @@
+{
+  "kind": "precommit_owner_evidence155",
+  "base_commit": "63b8d982dbcdc9de03b433fab3928bf14ed364f2",
+  "status": "owner_validation_passed_independent_review_pending",
+  "validation": [
+    {
+      "command": "python scripts/validate_infrastructure_transport_governance_candidates155.py",
+      "result": "passed",
+      "preserved_files": 708,
+      "packet_files": 22,
+      "sources": 19,
+      "successful_raw_capture_bytes": 39380
+    },
+    {
+      "command": "python -m unittest backend.tests.test_infrastructure_transport_governance_candidates155",
+      "result": "passed",
+      "tests": 13
+    },
+    {
+      "command": "python scripts/validate_editorial_semantic_ir.py",
+      "result": "passed",
+      "accepted_references": 12,
+      "accepted_held_out_references": 4,
+      "held_out": 4
+    },
+    {
+      "command": "python -m unittest backend.tests.test_editorial_semantic_ir",
+      "result": "passed",
+      "tests": 26
+    },
+    {
+      "command": "python -m unittest backend.tests.test_ci_workflow_preservation",
+      "result": "passed",
+      "tests": 8
+    }
+  ],
+  "independent_review": "pending_exact_frozen_target",
+  "commit_push_and_draft_pr": "pending",
+  "canonical_changes": false,
+  "editorial_acceptance": false,
+  "publication": false,
+  "production": false,
+  "tooling_corrections": [
+    "Initial optional CI-preservation module name was incorrect; the correct tracked module was located and all8 tests passed. No product failure or prior gate rerun.",
+    "Initial overly broad preservation inventory encountered a Windows long-path limitation in unrelated source-readiness evidence. The inventory was narrowed to relevant existing preservation paths, current154, prior shared cores, semantic guards and existing CI;708 files are explicitly pinned."
+  ],
+  "limitations": [
+    "No PDF/visual/current-law/full-State-program/full-docket validation claimed.",
+    "All four CRA applicability conflicts remain held and unadjudicated.",
+    "The behavioral-update proof is not exercised because all episodes remain held with zero propositions."
+  ]
+}
