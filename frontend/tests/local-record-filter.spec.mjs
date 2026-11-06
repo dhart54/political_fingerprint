@@ -485,3 +485,61 @@ test("local filter reaches an unrevealed exact identifier without remote search 
   expect(requests).toEqual(beforeRequests); expect(page.url()).toBe(url);
   expect(await page.evaluate(() => history.length)).toBe(historyLength);
 });
+
+for (const width of [1440, 390]) test(`exact receipt permalink reopens a deep filtered vote at ${width}px`, async ({ page }, testInfo) => {
+  await page.setViewportSize({ width, height: 900 });
+  await page.goto(economyUrl);
+  await filter(page).fill("roll 400");
+  const target = receipt(page, 400);
+  await target.locator(":scope > button").click();
+  const semantics = await target.locator("div.grid").innerText();
+  const link = target.getByRole("link", { name: "Link to this vote", exact: true });
+  const href = await link.getAttribute("href");
+  const url = new URL(href, page.url());
+  expect(url.searchParams.get("representative")).toBe(foushee.id);
+  expect(url.searchParams.get("issue")).toBe("ECONOMY_TAXES");
+  expect(url.searchParams.get("scope")).toBe("119");
+  expect(url.hash).toBe("#action-receipt-house-119-1-400");
+  await link.focus();
+  await page.keyboard.press("Enter");
+  await expect(target.locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
+  await expect(filter(page)).toHaveValue("");
+  // Simulate reopening the saved link, not a no-op navigation to the same URL.
+  await page.goto("about:blank");
+  await page.goto(href);
+  await expect(target.locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
+  await expect(target.locator(":scope > button")).toBeFocused();
+  expect(await target.locator("div.grid").innerText()).toBe(semantics);
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await target.screenshot({ path: testInfo.outputPath(`receipt-link-${width}.png`) });
+  await page.reload();
+  await expect(target.locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
+});
+
+test("grouped receipts expose separate exact vote links", async ({ page }) => {
+  await installPassARoutes(page, { evidenceOverrides: { ECONOMY_TAXES: available.slice(0, 2).map(row => ({ ...row, bill_id: "hr27-119", bill_title: "H.R. 27" })) } });
+  await page.goto(economyUrl);
+  await expect(page.getByTestId("related-action-group")).toHaveCount(1);
+  for (const roll of [400, 401]) {
+    const target = receipt(page, roll);
+    await target.locator(":scope > button").click();
+    await expect(target.getByRole("link", { name: "Link to this vote", exact: true })).toHaveAttribute("href", new RegExp(`#action-receipt-house-119-1-${roll}$`));
+  }
+});
+
+test("a finding receipt link opens exact evidence without inheriting its finding filter", async ({ page }) => {
+  await releasedResponses(page);
+  await page.goto(`/?representative=${foushee.id}&scope=119`);
+  await page.locator(`#${warPowers.id}`).click();
+  await page.getByRole("navigation", { name: "Selected issue sections" }).getByRole("link", { name: "Vote record", exact: true }).click();
+  const target = page.locator('[data-canonical-action-id="house:119:2:282"]');
+  if (await target.locator(":scope > button").getAttribute("aria-expanded") !== "true") await target.locator(":scope > button").click();
+  const semantics = await target.locator("div.grid").innerText();
+  const href = await target.getByRole("link", { name: "Link to this vote", exact: true }).getAttribute("href");
+  const url = new URL(href, page.url());
+  for (const key of ["finding", "source", "view"]) expect(url.searchParams.has(key)).toBe(false);
+  await page.goto(href);
+  await expect(target.locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
+  expect(await target.locator("div.grid").innerText()).toBe(semantics);
+  await expect(page.locator(".pattern-strip")).toHaveCount(0);
+});

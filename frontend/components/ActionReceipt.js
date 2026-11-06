@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { buildReceiptLink } from "../lib/receiptLink.mjs";
 import {
   actionReceiptId,
   canonicalActionId,
@@ -19,6 +20,7 @@ import { measureReferenceLabel } from "../lib/measureReference.mjs";
 
 export default function ActionReceipt({
   contactContext = null,
+  receiptContext = null,
   expanded,
   highlighted,
   onToggle,
@@ -84,7 +86,7 @@ export default function ActionReceipt({
         </span>
       </button>
       {expanded ? (
-        <ExpandedReceipt contactContext={contactContext} representativeName={representativeName} row={row} />
+        <ExpandedReceipt receiptLink={buildReceiptLink(receiptContext, row)} contactContext={contactContext} representativeName={representativeName} row={row} />
       ) : null}
     </article>
   );
@@ -106,7 +108,7 @@ function ActionStatus({ label }) {
   );
 }
 
-function ExpandedReceipt({ contactContext, representativeName, row }) {
+function ExpandedReceipt({ receiptLink, contactContext, representativeName, row }) {
   const receipt = buildPublicReceipt(row);
   const limitations = receipt.limitations.length
     ? receipt.limitations
@@ -139,6 +141,9 @@ function ExpandedReceipt({ contactContext, representativeName, row }) {
         <ContextSection values={limitations} />
         <SourcesSection sources={sources} />
       </div>
+      {receiptLink ? <a className="source-link mt-4 inline-flex min-h-11 items-center text-sm" href={receiptLink}>
+        Link to this vote
+      </a> : null}
       {contactContext?.legislatorId ? <OfficialContactDisclosure
         key={contactContext.identity}
         legislatorId={contactContext.legislatorId}

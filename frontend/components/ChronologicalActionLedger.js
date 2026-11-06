@@ -33,6 +33,7 @@ const TYPE_FILTERS = [
 
 export default function ChronologicalActionLedger({
   contactContext = null,
+  receiptContext = null,
   focusOnArrival = true,
   allowFindingArrivalFocus = true,
   highlightedFinding,
@@ -282,6 +283,7 @@ export default function ChronologicalActionLedger({
           {ledgerItems.map((item) => item.type === "group" ? (
             <RelatedActionGroup
               contactContext={contactContext}
+              receiptContext={receiptContext}
               expandedId={expandedId}
               item={item}
               key={item.id}
@@ -291,6 +293,7 @@ export default function ChronologicalActionLedger({
           ) : (
             <ActionReceipt
               contactContext={contactContext}
+              receiptContext={receiptContext}
               expanded={expandedId === canonicalActionId(item.row)}
               highlighted={activeHighlightedIds.includes(canonicalActionId(item.row))}
               key={item.id || `${item.row.vote_date}-${item.row.rollcall_number}`}
@@ -382,6 +385,7 @@ function SelectedPatternStrip({ finding, matchCount, onClear, total }) {
 
 function RelatedActionGroup({
   contactContext,
+  receiptContext,
   expandedId,
   item,
   onToggle,
@@ -410,6 +414,7 @@ function RelatedActionGroup({
           return (
             <ActionReceipt
               contactContext={contactContext}
+              receiptContext={receiptContext}
               expanded={expandedId === actionId}
               highlighted={false}
               key={actionId || `${row.vote_date}-${row.rollcall_number}`}

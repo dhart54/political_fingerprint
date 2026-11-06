@@ -238,6 +238,7 @@ export default function IssueDetail({
       ) : null}
       {state.status === "ready" && !findingPending && (!cardFinding || cardFindingView === "receipts") ? (
         <ChronologicalActionLedger
+          receiptContext={{ routePath, legislatorId, issue, scope }}
           focusOnArrival={state.focusOnArrival}
           allowFindingArrivalFocus={allowFindingArrivalFocus}
           contactContext={routePath === "/" ? { legislatorId, identity: `${legislatorId}:${issue}:${scope}` } : null}
