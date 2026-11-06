@@ -436,20 +436,20 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
     if zip_record is None:
         return None
 
-    house_rep = next(
-        (
-            legislator
-            for legislator in FALLBACK_FIXTURE_DATA.legislators
-            if legislator["chamber"] == "house"
-            and legislator["state"] == zip_record["state"]
-            and legislator["district"] == zip_record["district"]
-        ),
-        None,
-    )
+    current_house_members = [
+        legislator
+        for legislator in FALLBACK_FIXTURE_DATA.legislators
+        if legislator["chamber"] == "house"
+        and legislator["state"] == zip_record["state"]
+        and legislator["district"] == zip_record["district"]
+        and legislator.get("in_office") is True
+    ]
+    house_rep = current_house_members[0] if len(current_house_members) == 1 else None
     senators = [
         legislator
         for legislator in FALLBACK_FIXTURE_DATA.legislators
         if legislator["chamber"] == "senate" and legislator["state"] == zip_record["state"]
+        and legislator.get("in_office") is True
     ]
 
     return {
@@ -492,20 +492,20 @@ def get_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
     if zip_record is None:
         return None
 
-    house_rep = next(
-        (
-            legislator
-            for legislator in FALLBACK_FIXTURE_DATA.legislators
-            if legislator["chamber"] == "house"
-            and legislator["state"] == zip_record["state"]
-            and legislator["district"] == zip_record["district"]
-        ),
-        None,
-    )
+    current_house_members = [
+        legislator
+        for legislator in FALLBACK_FIXTURE_DATA.legislators
+        if legislator["chamber"] == "house"
+        and legislator["state"] == zip_record["state"]
+        and legislator["district"] == zip_record["district"]
+        and legislator.get("in_office") is True
+    ]
+    house_rep = current_house_members[0] if len(current_house_members) == 1 else None
     senators = [
         legislator
         for legislator in FALLBACK_FIXTURE_DATA.legislators
         if legislator["chamber"] == "senate" and legislator["state"] == zip_record["state"]
+        and legislator.get("in_office") is True
     ]
 
     return _build_fixture_zip_races(
@@ -2168,16 +2168,20 @@ def _get_db_supported_zip_rows(*, limit: int) -> list[dict[str, Any]] | None:
 
 
 def _get_db_house_rep(*, state: str, district: str) -> dict[str, Any] | None:
-    return _query_one_dict(
+    rows = _query_all_dicts(
         """
         SELECT id, bioguide_id, name_display, chamber, state, district, party
         FROM legislators
         WHERE chamber = 'house' AND state = %s AND district = %s
+          AND in_office = TRUE
         ORDER BY id
-        LIMIT 1
+        LIMIT 2
         """,
         (state, district),
     )
+    # A stored predecessor must not win by insertion order. Conflicting current
+    # rows are unresolved, not evidence that either member holds the seat.
+    return rows[0] if rows is not None and len(rows) == 1 else None
 
 
 def _get_db_senators(*, state: str) -> list[dict[str, Any]] | None:
@@ -2185,7 +2189,7 @@ def _get_db_senators(*, state: str) -> list[dict[str, Any]] | None:
         """
         SELECT id, bioguide_id, name_display, chamber, state, district, party
         FROM legislators
-        WHERE chamber = 'senate' AND state = %s
+        WHERE chamber = 'senate' AND state = %s AND in_office = TRUE
         ORDER BY lower(name_display), id
         """,
         (state,),
