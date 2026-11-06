@@ -360,3 +360,60 @@ test("official ZIP handoff opens only on activation with literal URLs, no referr
   }
   expect(outbound).toHaveLength(2);
 });
+
+for (const width of [1440, 390]) {
+  test(`all returned name matches remain reachable by keyboard at ${width}px`, async ({ page }, testInfo) => {
+    const matches = Array.from({ length: 24 }, (_, index) => ({
+      ...foushee, id: `test_member_${index}`, name_display: `Test Member ${index + 1}`,
+    })).concat(bean);
+    let requests = 0;
+    await page.route("**/legislators/search?*", route => {
+      requests += 1;
+      return route.fulfill({ json: { results: matches } });
+    });
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/");
+    await submit(page, "name", "Member");
+    const results = finder(page).getByRole("list", { name: "Representative search results" });
+    await expect(results.getByRole("listitem")).toHaveCount(12);
+    await expect(finder(page).getByRole("status")).toHaveText("Found 25 matches. Showing 12 of 25.");
+    await finder(page).screenshot({ path: testInfo.outputPath(`name-matches-${width}.png`) });
+    const more = finder(page).getByRole("button", { name: "Show 12 more matches", exact: true });
+    await more.focus();
+    await page.keyboard.press("Enter");
+    await expect(results.getByRole("listitem")).toHaveCount(24);
+    await expect(choice(page, matches[12])).toBeFocused();
+    await finder(page).screenshot({ path: testInfo.outputPath(`name-matches-expanded-${width}.png`) });
+    await expect(finder(page).getByRole("status")).toHaveText("Found 25 matches. Showing 24 of 25.");
+    await finder(page).getByRole("button", { name: "Show 1 more match", exact: true }).focus();
+    await page.keyboard.press("Enter");
+    await expect(choice(page, bean)).toBeFocused();
+    await expect(results.getByRole("listitem")).toHaveCount(25);
+    await expect(finder(page).getByRole("status")).toHaveText("Found 25 matches.");
+    await expect(finder(page).getByRole("button", { name: /^Show .* more match/ })).toHaveCount(0);
+    expect(requests).toBe(1);
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await page.keyboard.press("Enter");
+    await expect(page.locator("#representative-name")).toHaveText(bean.name_display);
+    await expect(page.locator("#representative-name")).toBeFocused();
+  });
+}
+
+test("new searches reset expanded name matches and ZIP choices stay separate", async ({ page }) => {
+  const matches = Array.from({ length: 25 }, (_, index) => ({
+    ...foushee, id: `test_member_${index}`, name_display: `Test Member ${index + 1}`,
+  }));
+  await page.route("**/legislators/search?*", route => route.fulfill({ json: { results: matches } }));
+  await page.route("**/lookup/zip/27701", route => route.fulfill({ json: ready }));
+  await page.goto("/");
+  await submit(page, "name", "Member");
+  await finder(page).getByRole("button", { name: "Show 12 more matches" }).click();
+  await expect(finder(page).getByRole("listitem")).toHaveCount(24);
+  await submit(page, "name", "Another");
+  await expect(finder(page).getByRole("listitem")).toHaveCount(12);
+  await expect(finder(page).getByRole("status")).toHaveText("Found 25 matches. Showing 12 of 25.");
+  await submit(page, "zip", "27701");
+  await expect(finder(page).getByRole("listitem")).toHaveCount(2);
+  await expect(finder(page).getByRole("button", { name: /^Show .* more match/ })).toHaveCount(0);
+  await expect(handoff(page)).toBeVisible();
+});
