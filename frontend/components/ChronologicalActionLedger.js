@@ -49,6 +49,8 @@ export default function ChronologicalActionLedger({
   const [patternActive, setPatternActive] = useState(false);
   const [linkedActionNotice, setLinkedActionNotice] = useState("");
   const [textQuery, setTextQuery] = useState("");
+  const [missingReceipt, setMissingReceipt] = useState(false);
+  const missingReceiptRef = useRef(null);
   const filterRef = useRef(null);
   const headingRef = useRef(null);
   // A retry may finish after the reader moved to another control. Suppress only
@@ -90,6 +92,7 @@ export default function ChronologicalActionLedger({
     if (!highlightedFinding?.requestedAt) {
       return;
     }
+    setMissingReceipt(false);
     const resolution = resolveExactActionRequest(
       ordered,
       requestedHighlightedIds,
@@ -132,7 +135,10 @@ export default function ChronologicalActionLedger({
       initialFocusAllowed.current = true;
       const id = window.location.hash.slice(1);
       const index = ordered.findIndex((row) => actionReceiptId(row) === id);
-      if (index < 0 && id !== "vote-record") return;
+      const missing = index < 0 && id.startsWith("action-receipt-");
+      setMissingReceipt(missing);
+      if (missing) setExpandedId(null);
+      if (index < 0 && id !== "vote-record" && !missing) return;
       if (index >= 0) {
         setVoteFilter("all"); setTypeFilter("all");
         setTextQuery("");
@@ -144,9 +150,10 @@ export default function ChronologicalActionLedger({
         // A newer header/hash navigation owns the destination. A queued receipt
         // scroll must not pull the reader back after they have moved elsewhere.
         if (!active || intent !== currentIntent || window.location.hash.slice(1) !== id) return;
-        const target = document.getElementById(id);
+        const target = missing ? missingReceiptRef.current : document.getElementById(id);
         target?.scrollIntoView({ behavior: "auto", block: "start" });
-        if (id === "vote-record") headingRef.current?.focus({ preventScroll: true });
+        if (missing) target?.focus({ preventScroll: true });
+        else if (id === "vote-record") headingRef.current?.focus({ preventScroll: true });
         else target?.querySelector("button")?.focus({ preventScroll: true });
       }));
     }
@@ -220,6 +227,18 @@ export default function ChronologicalActionLedger({
           {ordered.length} recorded {ordered.length === 1 ? "action" : "actions"} · Newest first · Every vote remains individually expandable
         </p>
       </div>
+
+      {missingReceipt ? (
+        <div className="mt-5 scroll-mt-24 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-950" ref={missingReceiptRef} role="status" tabIndex="-1">
+          <p className="font-semibold">The linked vote receipt is unavailable in this loaded record.</p>
+          <p>This does not establish whether the representative voted. The receipts below cover only the selected issue and scope.</p>
+          <a className="source-link mt-2 inline-flex min-h-11 items-center" href="#vote-record" onClick={(event) => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            setVoteFilter("all"); setTypeFilter("all"); setTextQuery("");
+            setVisibleCount(INITIAL_BATCH);
+          }}>Browse loaded vote receipts</a>
+        </div>
+      ) : null}
 
       {linkedActionNotice ? (
         <p

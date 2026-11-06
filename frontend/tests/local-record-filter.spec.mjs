@@ -543,3 +543,51 @@ test("a finding receipt link opens exact evidence without inheriting its finding
   expect(await target.locator("div.grid").innerText()).toBe(semantics);
   await expect(page.locator(".pattern-strip")).toHaveCount(0);
 });
+
+const missingReceiptNotice = (page) => page.getByRole("status").filter({ hasText: "The linked vote receipt is unavailable in this loaded record." });
+for (const width of [1440, 390]) test(`unavailable vote link explains the limit and recovers at ${width}px`, async ({ page }, testInfo) => {
+  await page.setViewportSize({ width, height: 900 });
+  await page.goto(`${economyUrl}#action-receipt-house-118-1-999`);
+  const notice = missingReceiptNotice(page);
+  await expect(notice).toBeVisible();
+  await expect(notice).toBeFocused();
+  await expect(notice).toContainText("This does not establish whether the representative voted.");
+  await notice.screenshot({ path: testInfo.outputPath(`unavailable-vote-${width}.png`) });
+  await expect(page.locator('[data-canonical-action-id] > button[aria-expanded="true"]')).toHaveCount(0);
+  await filter(page).fill("unmatched");
+  await notice.getByRole("link", { name: "Browse loaded vote receipts" }).click();
+  await expect(notice).toHaveCount(0);
+  await expect(filter(page)).toHaveValue("");
+  await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(12);
+  await page.goBack();
+  await expect(notice).toBeVisible();
+  await expect(notice).toBeFocused();
+  await page.evaluate(() => { location.hash = "action-receipt-house-119-1-400"; });
+  await expect(notice).toHaveCount(0);
+  await expect(receipt(page, 400).locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
+  await expect(receipt(page, 400).locator(":scope > button")).toBeFocused();
+  await page.goBack();
+  await expect(notice).toBeFocused();
+  await expect(page.locator('[data-canonical-action-id] > button[aria-expanded="true"]')).toHaveCount(0);
+});
+
+test("unavailable receipt notice is limited to receipt anchors, including empty records", async ({ page }) => {
+  await installPassARoutes(page, { evidenceOverrides: { ECONOMY_TAXES: [] } });
+  await page.goto(`${economyUrl}#action-receipt-house-119-1-999`);
+  await expect(missingReceiptNotice(page)).toBeVisible();
+  await expect(page.getByText("No recorded actions are available for this issue in the selected scope.", { exact: true })).toBeVisible();
+  await page.evaluate(() => { location.hash = "issues"; });
+  await expect(missingReceiptNotice(page)).toHaveCount(0);
+  await page.evaluate(() => { location.hash = "unrecognized-anchor"; });
+  await expect(missingReceiptNotice(page)).toHaveCount(0);
+});
+
+test("a newer finding replaces unavailable receipt navigation", async ({ page }) => {
+  await page.goto(`/?representative=${foushee.id}&scope=119&issue=JUSTICE_PUBLIC_SAFETY#action-receipt-house-119-1-999`);
+  await expect(missingReceiptNotice(page)).toBeVisible();
+  await page.getByRole("button", { name: /View 3 votes for Certification, fentanyl research provisions/ }).click();
+  await expect(missingReceiptNotice(page)).toHaveCount(0);
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
+  await expect(page.locator(".pattern-strip")).toBeVisible();
+});
