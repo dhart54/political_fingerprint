@@ -20,6 +20,8 @@ export default function RepresentativeFinder({
   // The API need not support cancellation for obsolete responses to be ignored.
   const requestSequence = useRef(0);
   const nameInput = useRef(null);
+  const resultsList = useRef(null);
+  const revealFocus = useRef(null);
   useEffect(() => () => {
     requestSequence.current += 1;
   }, []);
@@ -29,6 +31,21 @@ export default function RepresentativeFinder({
     results: [],
     message: "Search by ZIP code or representative name.",
   });
+
+  useEffect(() => {
+    const pending = revealFocus.current;
+    revealFocus.current = null;
+    if (pending?.request === requestSequence.current) {
+      resultsList.current?.querySelectorAll("button")[pending.index]?.focus();
+    }
+  }, [state.visibleCount]);
+
+  function showMoreMatches() {
+    if (state.status !== "ready" || state.mode !== "name") return;
+    const visibleCount = Math.min(state.visibleCount + 12, state.results.length);
+    revealFocus.current = { request: requestSequence.current, index: state.visibleCount };
+    setState({ ...state, visibleCount, message: nameSearchMessage(state.query, state.results.length, visibleCount) });
+  }
 
   async function searchZip(event) {
     event.preventDefault();
@@ -107,14 +124,14 @@ export default function RepresentativeFinder({
     try {
       const payload = await fetchLegislatorSearch({ query });
       if (request !== requestSequence.current) return;
-      const results = (payload?.results || []).slice(0, 12);
+      const results = payload?.results || [];
       setState({
         status: "ready",
         mode: "name",
         results,
-        message: results.length
-          ? `Found ${results.length} ${results.length === 1 ? "match" : "matches"}.`
-          : `No representatives matched “${query}.”`,
+        query,
+        visibleCount: Math.min(12, results.length),
+        message: nameSearchMessage(query, results.length, Math.min(12, results.length)),
       });
     } catch {
       if (request !== requestSequence.current) return;
@@ -257,8 +274,9 @@ export default function RepresentativeFinder({
             aria-label="Representative search results"
             className="mt-3 grid max-h-[22rem] gap-2 overflow-y-auto pr-1 sm:grid-cols-2"
             role="list"
+            ref={resultsList}
           >
-            {state.results.map((representative) => (
+            {(state.mode === "name" ? state.results.slice(0, state.visibleCount) : state.results).map((representative) => (
               <div key={representative.id} role="listitem">
                 <button
                   aria-label={`Select ${representative.name_display}, ${formatOffice(representative)}`}
@@ -278,6 +296,11 @@ export default function RepresentativeFinder({
               </div>
             ))}
           </div>
+          {state.mode === "name" && state.visibleCount < state.results.length ? (
+            <button className="secondary-button mt-3" type="button" onClick={showMoreMatches}>
+              Show {Math.min(12, state.results.length - state.visibleCount)} more {state.results.length - state.visibleCount === 1 ? "match" : "matches"}
+            </button>
+          ) : null}
         </>
       ) : null}
     </section>
@@ -295,4 +318,10 @@ function formatOffice(representative) {
 function formatParty(party) {
   return { D: "Democratic", R: "Republican", I: "Independent" }[party]
     || String(party || "Party not listed");
+}
+
+function nameSearchMessage(query, count, visibleCount) {
+  if (!count) return `No representatives matched “${query}.”`;
+  const found = `Found ${count} ${count === 1 ? "match" : "matches"}.`;
+  return visibleCount < count ? `${found} Showing ${visibleCount} of ${count}.` : found;
 }
