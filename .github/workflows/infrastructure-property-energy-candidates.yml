@@ -1,0 +1,46 @@
+name: Infrastructure property and energy-governance candidates
+
+on:
+  pull_request:
+    paths:
+      - 'docs/review_packets/infrastructure_batch162_property_energy_governance/**'
+      - 'scripts/validate_infrastructure_property_energy_candidates162.py'
+      - 'backend/tests/test_infrastructure_property_energy_candidates162.py'
+      - '.github/workflows/infrastructure-property-energy-candidates.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  held-property-energy-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install schema dependency
+        run: python -m pip install jsonschema
+      - name: Authenticate prior155–161identities without stacking or merit replay
+        run: |
+          git fetch --no-tags --depth=1 origin c6e6df3537ce464abcde22b13401cc7ae878aaf1 f684d89987498efb335db9c14fdf3da848734de1 328aaa56266ffd643a1eb74ed1ebbab95d19b428 b829ae75b37eff31fd30f44d669e05e434362091 f4914598425418361bdebf514937fbbfe5691afc 57fbdf6d26333334df2d24d6cf2bea3d5547ac69 76cef82ff79824a1a742a281528c6c463ea16b7e
+          python - <<'PY'
+          import json,subprocess
+          from scripts.validate_infrastructure_property_energy_candidates162 import P,read,validate_prior_branch
+          total=0
+          for i,pin in enumerate(read(P/'preparation_preflight.json')['prior_non_main_identity_pins']):
+              tree=subprocess.check_output(['git','rev-parse',pin['commit']+'^{tree}'],text=True).strip()
+              assert tree==pin['tree']
+              a=json.loads(subprocess.check_output(['git','show',pin['commit']+':'+pin['authoring']['path']]))
+              c=json.loads(subprocess.check_output(['git','show',pin['commit']+':'+pin['core']['path']]))
+              total+=validate_prior_branch(i,a,c)
+          assert total==35
+          print('Verified 35 immutable prior155-161 identities; no duplication, stacking or merit replay')
+          PY
+      - name: Verify whole source-qualified choices and held native replay
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_property_energy_candidates162.py
+          python -m unittest backend.tests.test_infrastructure_property_energy_candidates162
