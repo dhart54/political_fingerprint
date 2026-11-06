@@ -1,0 +1,1452 @@
+{
+  "kind": "held_preparation_preflight156",
+  "base_commit": "63b8d982dbcdc9de03b433fab3928bf14ed364f2",
+  "canonical_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916",
+  "membership_sha256": "470813b66aac2d4f700fcb5b243e5c8a50c62153c2feacd07bc0b4c1ff18f6c2",
+  "universe_sha256": "f2f0c6f40c99568b584fa2be3906556e48ddf575bea5def64f7b7dbe8a44af1e",
+  "source_pool_sha256": "36f8796421afd246aed96ea6f311d13a1f80157beaad900fa4ea92c0a6270523",
+  "queue_before": {
+    "records": 676,
+    "pending": 246,
+    "operational_prepared_pending": 31,
+    "operational_not_prepared": 215,
+    "unresolved_among_not_prepared": 173
+  },
+  "all_existing_shared_core_checks": [
+    {
+      "path": "docs/editorial/review_packages/health_s2393_one_action_v1/shared_action_core.json",
+      "object_sha256": "202d6b30429e4b30b577d14beee9318045514ba2426f0870c621f4a4e923324f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json",
+      "object_sha256": "81f1634262030f67c5ab952d1a80f9ce5781528b68af7780b6d6056fc01eaba7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_action_core.json",
+      "object_sha256": "5bc4ec9bcf876869ed562051fd9c8b7f369a50b9b9b76c5b30bb37c02ff12bc7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/generated/shared_action_core.json",
+      "object_sha256": "10a16347059c7605df7cd3594919ae3fe2b958c6a010d4e2df90f4ebcf618b6d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/generated/shared_action_core.json",
+      "object_sha256": "7af18560df202e6312b48b5f4a82d567e02977660f63f72d3efce8a58350be27",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/generated/shared_action_core.json",
+      "object_sha256": "40c3bc458b749da9d107f9da90de8ddeee398c21252e4cd2543decf8d1c25ef3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch103_20260916/generated/shared_action_core.json",
+      "object_sha256": "f68982dbe841266e7891397e4f47fc684bed3e61270846e12708cd5282fcb7b3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch104_20260916/generated/shared_action_core.json",
+      "object_sha256": "ba1a78804a2636026f211ccbc5085dcce2c2f550cf366d119c5884205593d961",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch105_20260916/generated/shared_action_core.json",
+      "object_sha256": "6a0102e3e6490c09eabd3af09bf147c27e5a4ecf3fbad99353b7c64a64fed1d4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch106_20260916/generated/shared_action_core.json",
+      "object_sha256": "9e5dd288b4a9c7e55f475efefe8231859888021bb9164fc62f55147075aad7f4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch107_20260916/generated/shared_action_core.json",
+      "object_sha256": "0d5e4fd20a85d7bd9ede3dba49330f48a941c72b5d9bc6106b8f01bd40a6bf4b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch108_20260916/generated/shared_action_core.json",
+      "object_sha256": "4d3575645189e7b33e43ad348a61e045a4223d06e642256c64ac0edc0e844111",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch109_20260916/generated/shared_action_core.json",
+      "object_sha256": "a59a359c9d2c352e6b838ca7a2777b68dfffd021c56c701a00620e658412cfb7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/shared_action_core.json",
+      "object_sha256": "685dbd781301842a72ff8f198c30c82a51809f46a43901d8240975793b12c5ec",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch110_20260916/generated/shared_action_core.json",
+      "object_sha256": "14caee0d0001cc953d58b81b69d910c61fa5f852d3ada37f8785a2b64fae77c8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/generated/shared_action_core.json",
+      "object_sha256": "bc56276b01731dd7f538b7a124aac6f5dd0ddd5905a1cc387dfb2a8f9dd5e05b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch112_20260916/generated/shared_action_core.json",
+      "object_sha256": "62b9f2735dd1cc9c68e05cf151178498f037100c8061b7dea5ffe0aa505aa13a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch113_20260916/generated/shared_action_core.json",
+      "object_sha256": "dadbf1bf48c9e88fa1659b584e20d1acab82d7919e65ebe7a25531e07a51dd67",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch114_20260916/generated/shared_action_core.json",
+      "object_sha256": "2adbe873e43ea8a1534aefcd0176100736c4a3814a383737a087f217bc83ae93",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch115_20260916/generated/shared_action_core.json",
+      "object_sha256": "2ce04b2bf0faecb5a5f66baa8e437137c9a83b0d882df77bd2f6f3bff81bad52",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch116_20260916/generated/shared_action_core.json",
+      "object_sha256": "9933b506be0ef17910412e4586178a382d1b945822387c8fe7d5b228361aecab",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch117_20260916/generated/shared_action_core.json",
+      "object_sha256": "3daf9e1b6542b5a201e71eddf618baed688d52744bb467bacae77e24d0bfffcc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch118_20260916/generated/shared_action_core.json",
+      "object_sha256": "63b52c3049c456f09b5c0cdfdf387d783382c405cb7505e26d5fb790e48f9a69",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch119_20260916/generated/shared_action_core.json",
+      "object_sha256": "391a625ce0f0d2e238715583ae6ed2b1255682dcd7c34830b4d42f42628ceab9",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/shared_action_core.json",
+      "object_sha256": "b7bd85fd12c7b37d8021d6ac788b661f24b8db6a2eeb9da6a2a8328a759303b7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch120_20260916/generated/shared_action_core.json",
+      "object_sha256": "20661e39542f85c01734603fab44b0f819ea173f16c1aee0ab5ab3d6ba75362d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch121_20260916/generated/shared_action_core.json",
+      "object_sha256": "25a1238a54ebacec10e5828ff0bb94f12039320bfa0ee53e4385b72b2c5bc16c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch122_20260916/generated/shared_action_core.json",
+      "object_sha256": "9dfae0895c431b21c59cda69e872ff843b8becae57022ee6d8d8fda503650388",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch123_20260916/generated/shared_action_core.json",
+      "object_sha256": "be40b643b18f0901d47356197382ad4812de158efb1f4c66a682d8ac15d2d01c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch124_20260916/generated/shared_action_core.json",
+      "object_sha256": "f862464dc85f7c693554efae7759b489b37c11e8728d8a278fc5e7ef5f28816e",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch125_20260916/generated/shared_action_core.json",
+      "object_sha256": "184ec6a3a76ce83bce3b90143738cd5942a3190a23648755e157c147ce38782d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch126_20260916/generated/shared_action_core.json",
+      "object_sha256": "4b971d7f4a656a5ee38422584de812dc15c901416e0f226fa9b9700c4dc5e9d2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch127_20260916/generated/shared_action_core.json",
+      "object_sha256": "395d388e7c6f2641d8e9b034bed34af8864270dffc7577a1c958ca2153eb1f7a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch128_20260916/generated/shared_action_core.json",
+      "object_sha256": "350df4e68169aff236ddf636813a7199dc3439c37086ba3f6f74184c07095e02",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch129_20260916/generated/shared_action_core.json",
+      "object_sha256": "4531b83fe28638ca9aa3c063b0ca31006b2a92191d748f8e5a2e7ac9cd38e44a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/shared_action_core.json",
+      "object_sha256": "a5c1c8ed5a7b32890a3fdf037705448c0a01f9b17ae7420c575ad0a565195011",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch130_20260916/generated/shared_action_core.json",
+      "object_sha256": "8ebed90ea9cba0c3847e2c10d0f78e7f4aeffcfe46ffd80b23eee1ec67174014",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch131_20260916/generated/shared_action_core.json",
+      "object_sha256": "3626253fa720eb568702602c1949fc180df881662cfcf146c5b6ab4119154ab2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch132_20260916/generated/shared_action_core.json",
+      "object_sha256": "564406358efc2320d7246100d08b5934f52ded4555b82486107d66903b28040f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch133_20260916/generated/shared_action_core.json",
+      "object_sha256": "9297b6e344e9138d6ab6521d373c5dc3edab12a0bba51ca126606716220c9248",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/generated/shared_action_core.json",
+      "object_sha256": "274647e101dd3dfe48c94cb8444eefa8ebdcac6697956025d88b99218a9746a7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/shared_action_core.json",
+      "object_sha256": "f2cdc665cf5d4584be28d37361ae8641998b5077055bc23793bb5fab8987bcc9",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/shared_action_core.json",
+      "object_sha256": "878ef3d53b1ceb5fb3e22b9b95e531b538e6bb7089fa71b1726dc83e899c5d85",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/shared_action_core.json",
+      "object_sha256": "1410e38252d49d65ce16dd68c230798292bdd33f1c65f7f7d58f4ebe719ce5b4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/shared_action_core.json",
+      "object_sha256": "878ef3d53b1ceb5fb3e22b9b95e531b538e6bb7089fa71b1726dc83e899c5d85",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/shared_action_core.json",
+      "object_sha256": "efa97a878d0c75de201996ded2b0913f02b50e82b3fe8fd7ae92960b17dbcd2b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/shared_action_core.json",
+      "object_sha256": "663588bd1fddf097a0be390746cbf4a20f90d8335bc3582ffe8e7421918fe74a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/shared_action_core.json",
+      "object_sha256": "709a2b44232483b987040183f38c35d750025950cfccc602e8105492bad1f4ff",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/shared_action_core.json",
+      "object_sha256": "def51cbc01739a34b4d01fb04a889a471554a90f13fe08fa48c9d3576ecf8871",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/shared_action_core.json",
+      "object_sha256": "3605b1b3400d307ec48e8ce9b4a87d30e8040512be224a30ada27e420cf71b02",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/shared_action_core.json",
+      "object_sha256": "fb7b0eab915d65b379b63db6ac33ea52af4b5699b4b55c321d13f4c739b6bdb3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/shared_action_core.json",
+      "object_sha256": "dc674c9480c0c5bdf45115da8d510a56b4ec7413df5a7bae8d60957dae1b3650",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/shared_action_core.json",
+      "object_sha256": "107ecd6776b04b693105a4a2c7f14d914869ef29f4b1bc25be19795e6f575791",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/shared_action_core.json",
+      "object_sha256": "24bfb50151bf5c5d9d5bcfc33cbf2db106fa3e8fa001c05ed8f44d19db3da945",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/shared_action_core.json",
+      "object_sha256": "32b91d85f30855e1e332d38f26a46c817f30e9b8b5ed13f709a0f4eb582baa10",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/shared_action_core.json",
+      "object_sha256": "f3866035fa1bfafaa61633c16be7285257f75b1c04a65e4b71af6c23ddb29c23",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/shared_action_core.json",
+      "object_sha256": "93953b438c286f95a0aebd195e30d0f4683ad3cbf36edf03c1e5a08d0ac5fb1b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/shared_action_core.json",
+      "object_sha256": "e6910964fd9e8744cd4dae8f262bf7b8d80558e4664d1e91febb2e019a2de90b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/shared_action_core.json",
+      "object_sha256": "be7c513c3da4eec4f369671332d907f9f280c0a1e21003c67669cf937bdc5659",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/shared_action_core.json",
+      "object_sha256": "b487e121202b327a4a59f5866754d1e8ef189901499301fb646ccaa49b97ade6",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_action_core.json",
+      "object_sha256": "20d2dd31e6a9f23bf2e747aff536727a66cc011171c39c304e28f756452cd66b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/shared_action_core.json",
+      "object_sha256": "acc07df473611a71f670c58e85d924be380d0825634e2534ccd6493e368e84ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/shared_action_core.json",
+      "object_sha256": "2779f26f8744f03b8c41f6e995f59460f5647184e52ab4799de4da5e3164429c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/shared_action_core.json",
+      "object_sha256": "a598ed45404778a35bbfe498ac675ecbe65386e5cb2248649c0fb373cb2ace70",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/shared_action_core.json",
+      "object_sha256": "2922104496017a30e534f5414bff0d0b71e71895850a3705b15eae540f54f6db",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/shared_action_core.json",
+      "object_sha256": "c6a6ace59896837a1651b5408eb4b27c6b624f196561c61bea7a305039d17b67",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/shared_action_core.json",
+      "object_sha256": "2824f098942399ebed00f7de71941e2e63cecdbfe8cc4229a6c2bc409e74e826",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/shared_action_core.json",
+      "object_sha256": "5be76f2c4699e74d26456029816e7d691671c9c134c4d02efcf43fb37e7d5293",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/shared_action_core.json",
+      "object_sha256": "98c9d702cacd426520ad9c1e30339e9709831788d7bddef8ed4cbf03cd6c1acc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch38_20260916/generated/shared_action_core.json",
+      "object_sha256": "d81593dd80efa8e05e121a66ed71be534209dfacd0879ef16f021cfdf05598cf",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch39_20260916/generated/shared_action_core.json",
+      "object_sha256": "b2676423534f1f94cde9ddc45e769adc0ca569660840f87d428fbb4045b5c9e8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_action_core.json",
+      "object_sha256": "a90f804df5f583fc6baef7b864ef4649fa0abbff4b233f45fe97c6d4db5226fc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch40_20260916/generated/shared_action_core.json",
+      "object_sha256": "6791b1066dd1dc34832f0694ed2d7b105e935488170f5ddab905e989b90065d5",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch41_20260916/generated/shared_action_core.json",
+      "object_sha256": "e73cd06eb198be0bc85aea8b965a9e688e9f1c2f20ba105ce2fe4fc020692b41",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch42_20260916/generated/shared_action_core.json",
+      "object_sha256": "350213df3de5ee6b0fe56ab173dbb3d045cc13b8fececdebbfeebdfb338397cc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/generated/shared_action_core.json",
+      "object_sha256": "1139709b02e711c04ab303e36d4c98974b93849e3a98e37e6888740b57141fa8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch44_20260916/generated/shared_action_core.json",
+      "object_sha256": "67d6bc8c9fb6e52225f2092e511f970786a68141fff38efd5bac83b6d2ffa97b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch45_20260916/generated/shared_action_core.json",
+      "object_sha256": "c505bee24c3f9784ca8e6d3ee31fb4094b6afc93278fba6a329cec91726b0a7b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch46_20260916/generated/shared_action_core.json",
+      "object_sha256": "9d024cc6ee1fba6c5873f5b943df8a060e9508607b1d00ddf9f8cf47a85ff07a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch47_20260916/generated/shared_action_core.json",
+      "object_sha256": "0d6225de2e6417c6c7db2983c3f80597d3d8326d05c57cf0ca3f544b63d05ef0",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch48_20260916/generated/shared_action_core.json",
+      "object_sha256": "e22fd77068ac44e7a2e6752cebb7c44e2a9b70d88dee01b0118a2ce67bc3032d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch49_20260916/generated/shared_action_core.json",
+      "object_sha256": "26aed01c9ac0d09923b13f2af82583ab696f52ac4247a1bc597c1cb2cce0f615",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/shared_action_core.json",
+      "object_sha256": "2ca63c2c50784f2263c4cc130f307cd26bed908a9ea7a6482f4ff56a8643efed",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch50_20260916/generated/shared_action_core.json",
+      "object_sha256": "2a3e74f3889ebd49b1bce9704752ca9f398e553f03210b9ca50fe64bf16bfe16",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch51_20260916/generated/shared_action_core.json",
+      "object_sha256": "b2d7af577c388f3e1c161f9bf9dbde8ffc71af850311fc6eadc258a842c39b41",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch52_20260916/generated/shared_action_core.json",
+      "object_sha256": "02a738e3c83dcbc14c2de8b0e0f2d8ba72ca6b4034358a3c56ef54bc483784de",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch53_20260916/generated/shared_action_core.json",
+      "object_sha256": "eead867c0f61d797c232e205e983a5bb729549b9058fe8d5bcdadf0cc78db4f8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch54_20260916/generated/shared_action_core.json",
+      "object_sha256": "cd951cca976b7c95a56f73f610e2d91588e5a22567e3cfa97117e4e8b45b0dcf",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch55_20260916/generated/shared_action_core.json",
+      "object_sha256": "6c0aa24d14237d26fd00392b732ba5cd15cf4c1fc5b036b88afc90136afd3a1f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch56_20260916/generated/shared_action_core.json",
+      "object_sha256": "dc78a641f624974af0caa9218ff7a71dbc220d67c76c09951192d957c05d1bea",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch57_20260916/generated/shared_action_core.json",
+      "object_sha256": "19aac5047051477d503ece231a4aae06cbe132a7c16358f7cbb1bca7e6c8b5b6",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch58_20260916/generated/shared_action_core.json",
+      "object_sha256": "14e3492fe93aafa22d1a11c53742a548aec38da93bf842cb46e147b2bf17ae9b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch59_20260916/generated/shared_action_core.json",
+      "object_sha256": "27286ead59ac2bfd6c69dd26b671e6d4a48c44112f470407214d84c46063c27a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/shared_action_core.json",
+      "object_sha256": "06136c0d94b9ea6db8ada7c15969272ca0bc8b1018ddff7587a05fee41fbf55c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch60_20260916/generated/shared_action_core.json",
+      "object_sha256": "9afa7b6816e689517835eb678356dc4233e3ed1e6437f2befd82fadf4589cce3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch61_20260916/generated/shared_action_core.json",
+      "object_sha256": "1f7f6e188c9974a507ee18231acb613c9782ecea79f34462eeffa10fbdf09790",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch62_20260916/generated/shared_action_core.json",
+      "object_sha256": "84eec169753926483774af4161c8ed81aee4e0d898f49bb6edf370065c0475c7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch63_20260916/generated/shared_action_core.json",
+      "object_sha256": "a3ec19a1e17aac73d2fb23631ba0f04e79c4171e62d44f5864579c6ef6fe9208",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch64_20260916/generated/shared_action_core.json",
+      "object_sha256": "fa7e513f106da47c658d712e0450659e4d4e52318e7cf776dbebc09e250ed39a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/generated/shared_action_core.json",
+      "object_sha256": "02a99c9e61dbb179c3fafd7d246853a3ffbf1757f124c3041660742e76587b63",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/generated/shared_action_core.json",
+      "object_sha256": "aa843e357c610ca2fc5a9dfcb239f702461a6177e73a786a3c0dedb0737cb858",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/generated/shared_action_core.json",
+      "object_sha256": "a4f64631e303382ff49485049c5ebe85bd52866e4aac487a7ff3d42f40918b7f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/generated/shared_action_core.json",
+      "object_sha256": "eafeda36d2ceae668432f9de0588574b6c1087d967db76053ad72a94bd165f4c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/generated/shared_action_core.json",
+      "object_sha256": "35af785dee7ba6780e05cd34398e8dc5d7efd241d8373340170291c8f7b82025",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/shared_action_core.json",
+      "object_sha256": "77c9aa1f673cc4d7a70ebf3c39a0d0d930205f412286ace898367e982fbff180",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/generated/shared_action_core.json",
+      "object_sha256": "f67b4b2fff95621456f6edffba66cdf6dcf418287f9a671465969ed02f7927be",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch71_20260916/generated/shared_action_core.json",
+      "object_sha256": "7217de3c42ffd89085e296ba657a16b685f62373697feb79474480c5633df237",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/generated/shared_action_core.json",
+      "object_sha256": "83a81930a15ac883d8f74d265e646bc7d26bdf710ead5bcf943c4ed1941577ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/generated/shared_action_core.json",
+      "object_sha256": "f332e59d31f407b82b53ea67c8d2236c6dcca349e6182cd9964d1532761a5c96",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/generated/shared_action_core.json",
+      "object_sha256": "70107701225af53fd16ec7d7d6029805ae520267a2b73aa5874ee9ac19167021",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/generated/shared_action_core.json",
+      "object_sha256": "f485b65207f0f5ddb1b1d13943388cc07dbe686429ee35266767017515f894e4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch76_20260916/generated/shared_action_core.json",
+      "object_sha256": "14d658d4b1d4aa939110bc20cccce9c0a0206d67e9f304d3e5977eb0c00d8183",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch77_20260916/generated/shared_action_core.json",
+      "object_sha256": "4f9722ac52169718b507defe90bc2b479b77c80ee16132a6c36bdeda49fb48ad",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch78_20260916/generated/shared_action_core.json",
+      "object_sha256": "af494ee75be252e6bb47ee65d8321e66a9a0ff471a81e1cc443b60aa97614a63",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch79_20260916/generated/shared_action_core.json",
+      "object_sha256": "0381d362fe37eef9e39cbbdab1b37fdca9f419eb5aff8e41e0081999259a916e",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/shared_action_core.json",
+      "object_sha256": "ac01afc95a0af90bfe388d8571d524c31cb14829faef9f01e01c7cd1a0929770",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch80_20260916/generated/shared_action_core.json",
+      "object_sha256": "09b62a7b575e6c958e68d3b09477363326b0ea54c0864d64e4c5c5c980771996",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch81_20260916/generated/shared_action_core.json",
+      "object_sha256": "92d9416788f95b9395da01f7dda3739145192ad365a670fded87982c11fde4cc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch82_20260916/generated/shared_action_core.json",
+      "object_sha256": "0441de9790120f25920aace3306999a90e1f3768b2428d014a5bdad274747719",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch83_20260916/generated/shared_action_core.json",
+      "object_sha256": "de469aef31189d01004c16f2a111d6daa139a5544eaff3ebb9ff884ea32d7b3d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch84_20260916/generated/shared_action_core.json",
+      "object_sha256": "76a0d76de05ecbd4b11fd94aeef5e6a5db1ee6193c10a0bdf04f5456bb999096",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/generated/shared_action_core.json",
+      "object_sha256": "4bd7586ef9ae6e73c2af75d33454e769017f7cf03de5daa26e3d85d9cd11f128",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/generated/shared_action_core.json",
+      "object_sha256": "6f13e24652db593605832d44193891f700734bc9debfc3ee97d1070d56b95b98",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/generated/shared_action_core.json",
+      "object_sha256": "cbbd0b5e826affee1abeae20d2f2fc42fa96824599097793fe4dbf0012c2dcd1",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/generated/shared_action_core.json",
+      "object_sha256": "737efaa055b15c05fd7b9fb24f4c9515d73552f0138a8bc5f8c23ce0e7735aa8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/generated/shared_action_core.json",
+      "object_sha256": "c1d4d4debce5a0777a763ee3eee7df491c7c0e065f58bd7451ae1292673ffaf4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/shared_action_core.json",
+      "object_sha256": "11c1de2aeaf5bfe883b2cd48b6d49ade5f6488edf2895b03180f6d239d252568",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/generated/shared_action_core.json",
+      "object_sha256": "0fb41fb60c676957e60b4fb260c4c091a16e1ce72e0a295c715c9956955b2d9b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/generated/shared_action_core.json",
+      "object_sha256": "21f1c11eeed486ff38645b6650a7f450f4f6dd48472c66d2b97fa74e14d98fae",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/generated/shared_action_core.json",
+      "object_sha256": "f23cd64e83a64b1e7d28621c826bcb80c9de46dd8217d05bfbd2c6803ea06a6d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/generated/shared_action_core.json",
+      "object_sha256": "5ca3ecf8b8e682123cc4378a76e2350d3029d37156c7c141337f2b98363df7f3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch94_20260916/generated/shared_action_core.json",
+      "object_sha256": "9808fc4a27acebda2259b2c4a6aa919c520ee3acce93670e4d1ae53a9dfe0d32",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch95_20260916/generated/shared_action_core.json",
+      "object_sha256": "6026436c539a8b2bfa6f20c8e19b3cd584139e1da4c0df8a5722f7886dcb69f4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/generated/shared_action_core.json",
+      "object_sha256": "5610ec74b6e1cd7d252c5f9dfcbe49c950ae52102ed90c8064b54f3c68d84430",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/generated/shared_action_core.json",
+      "object_sha256": "4fdc1a4253fdd6b38b4954b0a882a77f6ba79a50659af93a90cfd09b0f4d58b3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/generated/shared_action_core.json",
+      "object_sha256": "091519a1b1c16933bf10fde74e803f1b3dbd2cd74b3cac5d9192c73353d94f95",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/generated/shared_action_core.json",
+      "object_sha256": "e2e41e655add652df8fe2a2cafd0bc07166d88f074eed38aa80daaf0ee93132a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/shared_action_core.json",
+      "object_sha256": "0e56a1dabfa72cbd0c141503588788ef3ddfa05fb3bafd48f680ff0703c7f5ce",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_corpora/house_119_v1/shared_action_core.json",
+      "object_sha256": "6b171e7f62c09b5a094fce9855449bacad2650f172d113fdc7f56f83040d3dbd",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json",
+      "object_sha256": "85ab40ae71be0350c6544fa905b538c7666979ef65bf8665dfe2f2a56b91e9ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch138_hr859_candidate/generated/shared_action_core.json",
+      "object_sha256": "e73b3f1dbf941212e90bb958b49832c0f13e54bdb04612cee225b4750fa96887",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/shared_action_core.json",
+      "object_sha256": "b01a9b08deabd9c2562e6c2e0e4005de8cd4709749a98f3d351b9a9a2fc26fd2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/shared_action_core.json",
+      "object_sha256": "468bdc319c975e50243238f36eb7a4dd47e9ed408539037e8790bb1085d9fe30",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch147_va_candidates/generated/shared_action_core.json",
+      "object_sha256": "d82c2e3589a111bfbc6e6d509ec59b0befc16f43d3c0d37244c131fedd3b4e21",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch148_shared_reuse/generated/shared_action_core.json",
+      "object_sha256": "671e618a5feed09910a8e6c86d7ffeee0d1b47c417396df86648fc46c1f64916",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/shared_action_core.json",
+      "object_sha256": "be8755f304d9a9aea55de8be9028a75c36c747ba86f45f1c873db123a6d7bdcb",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch151_permitting/generated/shared_action_core.json",
+      "object_sha256": "9772b999cd8fe5f4606ee02f670af25019eee5ab92bca4f278b233ad704964dc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch152_water_resources/generated/shared_action_core.json",
+      "object_sha256": "e15e8f64d98b470ea7e431268ad8b58c568778b2cbb1ad07f9e9426731d2e1e1",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch153_energy_governance/generated/shared_action_core.json",
+      "object_sha256": "cb9d42c204f8d12b22d2a41407720a1450de932b3fcdc0fdb58e185d4fd24424",
+      "matching_action_ids": []
+    }
+  ],
+  "prior_prepared_identities": [
+    "house:119:1:103",
+    "house:119:1:112",
+    "house:119:1:114",
+    "house:119:1:115",
+    "house:119:1:125",
+    "house:119:1:133",
+    "house:119:1:19",
+    "house:119:1:216",
+    "house:119:1:229",
+    "house:119:1:231",
+    "house:119:1:236",
+    "house:119:1:279",
+    "house:119:1:29",
+    "house:119:1:330",
+    "house:119:1:352",
+    "house:119:1:353",
+    "house:119:1:354",
+    "house:119:1:356",
+    "house:119:1:53",
+    "house:119:1:58",
+    "house:119:1:59",
+    "house:119:1:73",
+    "house:119:1:77",
+    "house:119:1:78",
+    "house:119:1:89",
+    "house:119:1:90",
+    "house:119:2:101",
+    "house:119:2:180",
+    "house:119:2:306",
+    "house:119:2:311",
+    "house:119:2:49",
+    "house:119:2:78",
+    "house:119:2:97"
+  ],
+  "prior_non_main_identity_pins": {
+    "commit": "c6e6df3537ce464abcde22b13401cc7ae878aaf1",
+    "tree": "c095133b5dbc148a59e135e00e5d3e851b4265e0",
+    "authoring": {
+      "path": "docs/review_packets/infrastructure_batch155_transport_governance/authoring.json",
+      "git_blob": "2ded4f0740900ca7a803f4f30e0642e364ff1008",
+      "object_sha256": "c0f228d3d2098d72f7067ed5cff1e0b3aa9d14338aa8f0bfa53da9564064ae04"
+    },
+    "core": {
+      "path": "docs/review_packets/infrastructure_batch155_transport_governance/generated/shared_action_core.json",
+      "git_blob": "6494d504e2466676ce4fc46ed25ba5f6aa83ad0c",
+      "object_sha256": "c579dd46dbc7cbbf3d22d66964b5a4487dc9d505899db67e8c62a53f82277b7a"
+    },
+    "action_ids": [
+      "house:119:1:103",
+      "house:119:1:112",
+      "house:119:1:114",
+      "house:119:2:306",
+      "house:119:2:311"
+    ]
+  },
+  "cases": [
+    {
+      "action_id": "house:119:1:107",
+      "record": {
+        "action_id": "house:119:1:107",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete10753characterHR1402EHwas read: all-in price/fee disclosures, speculative-ticket limits with a distinct-service exception, false-affiliation/domain-name conditions, qualified cancellation/postponement/refund rules, a six-monthBOTSActenforcement report, FTCenforcement and definitions including greater-than200personvenues. Its explicit URL/subdomain/platform and online-enforcement clauses support a digital-governance lead, with a competing general consumer-commerce interpretation. Complete material15USC45c/FTC/definition baselines and domain boundary remain ordinary work before whole interpretation. Refund exceptions, optional-fee exclusions and actual/constructive possession remain distinct; no actual seller fraud, blanket resale ban, guaranteed refund for every cause or economic outcome.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:107",
+            "url": "https://clerk.house.gov/evs/2025/roll107.xml",
+            "raw_sha256": "b4637b031e9b0df3e1db6a4ccbb304e49acbf84dfbec18eb5eff683c50d90be8",
+            "governed_bytes_sha256": "8ce6facc1c2aa6b2e1a0e464a127ddbeec54e388d15616f82d35da2576603fd0"
+          },
+          {
+            "source_id": "govinfo:hr1402eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1402eh/html/BILLS-119hr1402eh.htm",
+            "raw_sha256": "ae695f11a3c1f4b7baf143d6588c8cf7412c83c2979878cde624e9dfc3bbc431",
+            "governed_bytes_sha256": "a37deae9d33277422ed9dd022256ec23e7430794da42bc1a6d7c340a1963fe6f"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1402eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1402 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1402 _______________________________________________________________________ AN ACT To require sellers of event tickets to disclose comprehensive information to consumers about ticket prices and related fees, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Transparency In Charges for Key Events Ticketing Act'' or the ``TICKET Act''. SEC. 2. ALL INCLUSIVE TICKET PRICE DISCLOSURE. Beginning 180 days after the date of the enactment of this Act, it shall be unlawful for a ticket issuer, secondary market ticket issuer, or secondary market ticket exchange to offer for sale an event ticket unless the ticket issuer, secondary market ticket issuer, or secondary market ticket exchange-- (1) clearly and conspicuously displays the total event ticket price, if a price is displayed, in any advertisement, marketing, or price list wherever the ticket is offered for sale; (2) clearly and conspicuously discloses to any individual who seeks to purchase an event ticket the total event ticket price at the time the ticket is first displayed to the individual and anytime thereafter throughout the ticket purchasing process; and (3) provides an itemized list of the base event ticket price and each event ticket fee prior to the completion of the ticket purchasing process. SEC. 3. SPECULATIVE TICKETING BAN. (a) Prohibition.--Beginning 180 days after the date of the enactment of this Act, a ticket issuer, secondary market ticket issuer, or secondary market ticket exchange that does not have actual or constructive possession of an event ticket shall not sell, offer for sale, or advertise for sale such event ticket. (b) Services Permitted.--Notwithstanding subsection (a), a secondary market ticket issuer or secondary market ticket exchange may sell, offer for sale, or advertise for sale a service to an individual to obtain an event ticket on behalf of such individual if the secondary market ticket issuer or secondary market ticket exchange complies with the following: (1) Does not market or list the service as an event ticket. (2) Maintains a clear, distinct, and easily discernible separation between the service and event tickets that persists throughout the entire service selection and purchasing process. (3) Clearly and conspicuously discloses before selection of the service that the service is not an event ticket and that the purchase of the service does not guarantee an event ticket. SEC. 4. DISCLOSURES. A ticket issuer, secondary market ticket issuer, or secondary market ticket exchange-- (1) if offering an event ticket for resale, shall provide a clear and conspicuous statement, before a consumer purchases the event ticket from the ticket issuer, secondary market ticket issuer, or secondary market ticket exchange, that the issuer or exchange is engaged in the secondary sale of event tickets; (2) shall not state that the ticket issuer, secondary market ticket issuer, or secondary market ticket exchange is affiliated with or endorsed by a venue, team, or artist, as applicable, including by using words like ``official'' in promotional materials, social media promotions, or paid advertising, unless a partnership agreement has been executed or the issuer or exchange has the express written consent of the venue, team, or artist, as applicable; and (3) shall not include the name of the venue, including any misspelling of any such name, in a domain name, or any subdomain thereof, in the URL of the secondary market ticket issuer or secondary market ticket exchange unless authorized by the owner of the venue. SEC. 5. REFUND REQUIREMENTS. (a) Cancellation.--Beginning 180 days after the date of the enactment of this Act, if an event is canceled or postponed (except for a case in which an event is canceled or postponed due to a cause beyond the reasonable control of the issuer, including a natural disaster, civil disturbance, or otherwise unforeseeable impediment), a ticket issuer, secondary market ticket issuer, or secondary market ticket exchange shall provide the purchaser of an event ticket from the issuer or exchange for the canceled or postponed event, at a minimum-- (1) if the event is cancelled, a full refund for the total event ticket price; (2) subject to availability, if the event is postponed for not more than 6 months and the original event ticket is no longer valid for entry to the rescheduled event, a replacement event ticket for the rescheduled event in the same or a comparable location once the event has been rescheduled; or (3) if the event is postponed for more than 6 months, at the option of the purchaser-- (A) a full refund for the total event ticket price; or (B) if the original event ticket is no longer valid for entry to the rescheduled event, a replacement event ticket for the rescheduled event in the same or a comparable location once the event has been rescheduled. (b) Disclosure of Guarantee and Refund Policy Required.--Beginning 180 days after the date of the enactment of this Act, a ticket issuer, secondary market ticket issuer, or secondary market ticket exchange shall disclose clearly and conspicuously to a purchaser before the completion of an event ticket sale the guarantee or refund policy of such ticket issuer, secondary market ticket issuer, or secondary market ticket exchange, including under what circumstances any refund issued will include a refund of any event ticket fee. (c) Disclosure of How To Obtain a Refund Required.--Beginning 180 days after the date of the enactment of this Act, a ticket issuer, secondary market ticket issuer, or secondary market ticket exchange shall provide a clear and conspicuous explanation of how to obtain a refund of the total event ticket price. SEC. 6. REPORT BY THE FEDERAL TRADE COMMISSION ON BOTS ACT OF 2016 ENFORCEMENT. Not later than 6 months after the date of the enactment of this Act, the Commission shall submit to Congress a report on enforcement of the Better Online Ticket Sales Act of 2016 (Public Law 114-274; 15 U.S.C. 45c), including any enforcement action taken, challenges with enforcement and coordination with State Attorneys General, and recommendations on how to improve enforcement and industry compliance. SEC. 7. ENFORCEMENT. (a) Unfair or Deceptive Act or Practice.--A violation of this Act shall be treated as a violation of a rule defining an unfair or deceptive act or practice under section 18(a)(1)(B) of the Federal Trade Commission Act (15 U.S.C. 57a(a)(1)(B)). (b) Powers of Commission.-- (1) In general.--The Commission shall enforce this Act in the same manner, by the same means, and with the same jurisdiction, powers, and duties as though all applicable terms and provisions of the Federal Trade Commission Act (15 U.S.C. 41 et seq.) were incorporated into and made a part of this Act. (2) Privileges and immunities.--Any person who violates this Act shall be subject to the penalties and entitled to the privileges and immunities provided in the Federal Trade Commission Act (15 U.S.C. 41 et seq.). (3) Authority preserved.--Nothing in this Act shall be construed to limit the authority of the Commission under any other provision of law. SEC. 8. DEFINITIONS. In this Act: (1) Artist.--The term ``artist'' means any performer, musician, comedian, producer, ensemble or production entity of a theatrical production, sports team owner, or similar person. (2) Base event ticket price.--The term ``base event ticket price'' means, with respect to an event ticket, the price of the event ticket excluding the cost of any event ticket fees. (3) Commission.--The term ``Commission'' means the Federal Trade Commission. (4) Event.--The term ``event'' means any live concert, theatrical performance, sporting event, show, or similarly scheduled live activity, that is-- (A) taking place in a venue with a seating or attendance capacity exceeding 200 persons; (B) open to the general public; and (C) promoted, advertised, or marketed in interstate commerce, or for which event tickets are generally sold or distributed in interstate commerce. (5) Event ticket; ticket issuer.--The terms ``event ticket'' and ``ticket issuer'' have the meaning given those terms in the Better Online Ticket Sales Act of 2016 (Public Law 114-274). (6) Event ticket fee.--The term ``event ticket fee''-- (A) means a charge for an event ticket that must be paid in addition to the base event ticket price in order to obtain an event ticket from a ticket issuer, secondary market ticket issuer, or secondary market ticket exchange, including any service fee, charge and order processing fee, delivery fee, facility charge fee, tax, and any other charge; and (B) does not include any charge or fee for an optional product or service associated with the event that may be selected by a purchaser of an event ticket. (7) Optional product or service.--The term ``optional product or service'' means a product or service that an individual does not need to purchase to use or take possession of an event ticket. (8) Resale; secondary sale.--The terms ``resale'' and ``secondary sale'' mean any sale of an event ticket that occurs after the initial sale of the event ticket by a ticket issuer. (9) Secondary market ticket exchange.--The term ``secondary market ticket exchange'' means any person that in the regular course of trade or business of that person operates a platform or exchange for advertising, listing, or selling resale tickets, on behalf of itself, vendors, or a secondary market ticket issuer. (10) Secondary market ticket issuer.--The term ``secondary market ticket issuer'' means any person, including a ticket issuer, that resells or makes a secondary sale of an event ticket to the general public in the regular course of the trade or business of the person. (11) Total event ticket price.--The term ``total event ticket price'' means, with respect to an event ticket, the total cost of the event ticket, including the base event ticket price and any event ticket fee. (12) URL.--The term ``URL'' means the uniform resource locator associated with an internet website. (13) Venue.--The term ``venue'' means a physical space at which an event takes place. Passed the House of Representatives April 29, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1402 _______________________________________________________________________ AN ACT To require sellers of event tickets to disclose comprehensive information to consumers about ticket prices and related fees, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:107",
+        "session": 1,
+        "roll": 107,
+        "date": "2025-04-29",
+        "measure": "bill_119_hr_1402",
+        "question": "On Motion to Suspend the Rules and Pass",
+        "disposition": "pending_interpretation",
+        "reason": "The complete10753characterHR1402EHwas read: all-in price/fee disclosures, speculative-ticket limits with a distinct-service exception, false-affiliation/domain-name conditions, qualified cancellation/postponement/refund rules, a six-monthBOTSActenforcement report, FTCenforcement and definitions including greater-than200personvenues. Its explicit URL/subdomain/platform and online-enforcement clauses support a digital-governance lead, with a competing general consumer-commerce interpretation. Complete material15USC45c/FTC/definition baselines and domain boundary remain ordinary work before whole interpretation. Refund exceptions, optional-fee exclusions and actual/constructive possession remain distinct; no actual seller fraud, blanket resale ban, guaranteed refund for every cause or economic outcome.",
+        "source": {
+          "source_id": "clerk:119:1:107",
+          "url": "https://clerk.house.gov/evs/2025/roll107.xml",
+          "raw_sha256": "b4637b031e9b0df3e1db6a4ccbb304e49acbf84dfbec18eb5eff683c50d90be8",
+          "governed_bytes_sha256": "8ce6facc1c2aa6b2e1a0e464a127ddbeec54e388d15616f82d35da2576603fd0",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_1402",
+        "member_action": "yea",
+        "house_action_stage": "On Motion to Suspend the Rules and Pass",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The complete10753characterHR1402EHwas read: all-in price/fee disclosures, speculative-ticket limits with a distinct-service exception, false-affiliation/domain-name conditions, qualified cancellation/postponement/refund rules, a six-monthBOTSActenforcement report, FTCenforcement and definitions including greater-than200personvenues. Its explicit URL/subdomain/platform and online-enforcement clauses support a digital-governance lead, with a competing general consumer-commerce interpretation. Complete material15USC45c/FTC/definition baselines and domain boundary remain ordinary work before whole interpretation. Refund exceptions, optional-fee exclusions and actual/constructive possession remain distinct; no actual seller fraud, blanket resale ban, guaranteed refund for every cause or economic outcome.",
+        "unresolved_reason": "ordinary_1402_bots_FTC_definition_baselines_and_digital_consumer_boundary_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:107",
+            "url": "https://clerk.house.gov/evs/2025/roll107.xml",
+            "raw_sha256": "b4637b031e9b0df3e1db6a4ccbb304e49acbf84dfbec18eb5eff683c50d90be8",
+            "governed_bytes_sha256": "8ce6facc1c2aa6b2e1a0e464a127ddbeec54e388d15616f82d35da2576603fd0"
+          },
+          {
+            "source_id": "govinfo:hr1402eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1402eh/html/BILLS-119hr1402eh.htm",
+            "raw_sha256": "ae695f11a3c1f4b7baf143d6588c8cf7412c83c2979878cde624e9dfc3bbc431",
+            "governed_bytes_sha256": "a37deae9d33277422ed9dd022256ec23e7430794da42bc1a6d7c340a1963fe6f"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:107",
+          "source_ids": [
+            "clerk:119:1:107",
+            "govinfo:hr1402eh"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:107",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "5efdbb78aa0b3a828b586f5770f63b557c27ca820849f322b08df68fd4934e59"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "5efdbb78aa0b3a828b586f5770f63b557c27ca820849f322b08df68fd4934e59",
+      "row_sha256": "056b8dcbe73e7f55464628ad7055f4098cbbab24a205271691c250b804e4ef9e"
+    },
+    {
+      "action_id": "house:119:1:147",
+      "record": {
+        "action_id": "house:119:1:147",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.1804EH adds an annual Congress report on7(a)loan agents: agent counts/types, fraudulent loans, purchase rate, referral fees, anonymized consolidated risk for agents meeting the printed1percent loan-value AND loan-number thresholds, interest rates and agency communications. Covered services include application preparation and consulting/broker/referral services. These are general business-loan oversight provisions, not themselves construction, technology deployment or scientific research authorization. Complete15USC657t/636(a)program baselines and the general credit oversight versus direct infrastructure/technology governance boundary remain ordinary research. Clerk June3 suspension/pass and complete unamended June3EH match; no separate floor-body replay or enactment certified.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:147",
+            "url": "https://clerk.house.gov/evs/2025/roll147.xml",
+            "raw_sha256": "981f44c8bd461fb5c32c8caeb0aa3fbe6ac2d0e7ee2d824a452e62dc03a8b78c",
+            "governed_bytes_sha256": "12ef549a6e773d469f5ba29cc5af8e40aa50618a857e1bb5d2546bf3f3b081a0"
+          },
+          {
+            "source_id": "govinfo:hr1804eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1804eh/html/BILLS-119hr1804eh.htm",
+            "raw_sha256": "b082923f8caf21f6bb015a4d36b7ce9cab924fb624f6ef4914a7307d09c7e4fb",
+            "governed_bytes_sha256": "984eda3331350eef16e8eb6f1c78b46ca5407a568f09eac4f02d957a42cf3db5"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr1804eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 1804 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 1804 _______________________________________________________________________ AN ACT To amend the Small Business Act to require a report on 7(a) agents, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``7(a) Loan Agent Oversight Act''. SEC. 2. REPORT ON 7(A) AGENTS. Section 47 of the Small Business Act (15 U.S.C. 657t) is amended by adding at the end the following new subsection: ``(j) Annual Report.-- ``(1) In general.--The Director shall submit to Congress, in addition to the report required under subsection (h)(2), an annual report including, for the calendar year covered by the report-- ``(A) the number of 7(a) agents assisting applicants for loans under section 7(a), disaggregated by the type of 7(a) agents consistent with information reported on the Fee Disclosure and Compensation Agreement, or any subsequent agreement forms that collect such information; ``(B) the number of fraudulent loans made for which an applicant used services of a 7(a) agent; ``(C) the purchase rate by the Administrator of loans for which an applicant used services of a 7(a) agent; ``(D) the number and aggregate dollar value of referral fees paid to 7(a) agents, disaggregated by whether the applicant or 7(a) lender paid such fees; ``(E) without identifying individual 7(a) agents by name, a consolidated analysis of the risk created by the individual 7(a) agents responsible for not less than 1 percent of-- ``(i) the dollar value of loans made with the assistance of 7(a) agents; and ``(ii) the number of loans made with the assistance of 7(a) agents; ``(F) an analysis of interest rates on loans for which an applicant or 7(a) lender used services of an agent; and ``(G) a description of how the Administrator communicates with 7(a) agents. ``(2) Definitions.--In this subsection: ``(A) 7(a) agent.--The term `7(a) agent' means a person who provides covered services on behalf of a lender or applicant. ``(B) Covered services.--The term `covered services' means-- ``(i) assistance with completing an application for a loan under section 7(a) (including preparing a business plan, cash flow projections, financial statements, and related documents); or ``(ii) consulting, broker, or referral services with respect to a loan under section 7(a).''. Passed the House of Representatives June 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 1804 _______________________________________________________________________ AN ACT To amend the Small Business Act to require a report on 7(a) agents, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:147",
+        "session": 1,
+        "roll": 147,
+        "date": "2025-06-03",
+        "measure": "bill_119_hr_1804",
+        "question": "On Motion to Suspend the Rules and Pass",
+        "disposition": "pending_interpretation",
+        "reason": "Complete H.R.1804EH adds an annual Congress report on7(a)loan agents: agent counts/types, fraudulent loans, purchase rate, referral fees, anonymized consolidated risk for agents meeting the printed1percent loan-value AND loan-number thresholds, interest rates and agency communications. Covered services include application preparation and consulting/broker/referral services. These are general business-loan oversight provisions, not themselves construction, technology deployment or scientific research authorization. Complete15USC657t/636(a)program baselines and the general credit oversight versus direct infrastructure/technology governance boundary remain ordinary research. Clerk June3 suspension/pass and complete unamended June3EH match; no separate floor-body replay or enactment certified.",
+        "source": {
+          "source_id": "clerk:119:1:147",
+          "url": "https://clerk.house.gov/evs/2025/roll147.xml",
+          "raw_sha256": "981f44c8bd461fb5c32c8caeb0aa3fbe6ac2d0e7ee2d824a452e62dc03a8b78c",
+          "governed_bytes_sha256": "12ef549a6e773d469f5ba29cc5af8e40aa50618a857e1bb5d2546bf3f3b081a0",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_1804",
+        "member_action": "yea",
+        "house_action_stage": "On Motion to Suspend the Rules and Pass",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "Complete H.R.1804EH adds an annual Congress report on7(a)loan agents: agent counts/types, fraudulent loans, purchase rate, referral fees, anonymized consolidated risk for agents meeting the printed1percent loan-value AND loan-number thresholds, interest rates and agency communications. Covered services include application preparation and consulting/broker/referral services. These are general business-loan oversight provisions, not themselves construction, technology deployment or scientific research authorization. Complete15USC657t/636(a)program baselines and the general credit oversight versus direct infrastructure/technology governance boundary remain ordinary research. Clerk June3 suspension/pass and complete unamended June3EH match; no separate floor-body replay or enactment certified.",
+        "unresolved_reason": "ordinary_1804_loan_agent_reporting_program_baselines_and_infrastructure_boundary_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:147",
+            "url": "https://clerk.house.gov/evs/2025/roll147.xml",
+            "raw_sha256": "981f44c8bd461fb5c32c8caeb0aa3fbe6ac2d0e7ee2d824a452e62dc03a8b78c",
+            "governed_bytes_sha256": "12ef549a6e773d469f5ba29cc5af8e40aa50618a857e1bb5d2546bf3f3b081a0"
+          },
+          {
+            "source_id": "govinfo:hr1804eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1804eh/html/BILLS-119hr1804eh.htm",
+            "raw_sha256": "b082923f8caf21f6bb015a4d36b7ce9cab924fb624f6ef4914a7307d09c7e4fb",
+            "governed_bytes_sha256": "984eda3331350eef16e8eb6f1c78b46ca5407a568f09eac4f02d957a42cf3db5"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:147",
+          "source_ids": [
+            "clerk:119:1:147",
+            "govinfo:hr1804eh"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:147",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "c9ae5759cc85e7ddc40683cdc166a829b14b1ed108f3927030115925ffacd842"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "c9ae5759cc85e7ddc40683cdc166a829b14b1ed108f3927030115925ffacd842",
+      "row_sha256": "94e311083e036900c9d27feed7ee6908d5bef928e46849aae8cbf879f1a833b7"
+    },
+    {
+      "action_id": "house:119:1:300",
+      "record": {
+        "action_id": "house:119:1:300",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R.4058EHadds ongoing stakeholder outreach/engagement/education/technicalassistance before/during/after UrbanAreaSecurityInitiativeandStateHomelandSecuritygrants, annual feedback surveys and summaries/how incorporated into subsequent fundingnotices, plus GAOeffectivenessreport within2years and FEMAactionsreport within3years to specified recipients. Technicalassistance is not itself proof of an engineering/ITsystem or direct Infrastructuremechanism. Whole mixed-program604/605eligibility/609allowables and prior-outreach/reporting baselines, actor/source versions and domain boundary remain ordinary review; no grantamount/eligibilityexpansion, projectfunding, preparedness/security outcome or motive inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:300",
+            "url": "https://clerk.house.gov/evs/2025/roll300.xml",
+            "raw_sha256": "75efe5681c8d4d74a8c93a28d08d753b8a8f86b3ac81d553cbc978bfa974d60b",
+            "governed_bytes_sha256": "2acfa4b633f390c75c1ba0514f50ac8d07389d24cdfdded3f4a6462be5ebe610"
+          },
+          {
+            "source_id": "govinfo:hr4058eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4058eh/html/BILLS-119hr4058eh.htm",
+            "raw_sha256": "0a2bf3613c9ea058f7d4eec6329c7b2915ea2463c1303e73246564be630a3a23",
+            "governed_bytes_sha256": "0fb34f3d07428f81ac348c5b0ce397daed0e5eac173e843310fc5767b0c2dde8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4058eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4058 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 4058 _______________________________________________________________________ AN ACT To amend the Homeland Security Act of 2002 to enhance outreach for the Urban Area Security Initiative and the State Homeland Security Grant Program of the Department of Homeland Security, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Enhancing Stakeholder Support and Outreach for Preparedness Grants Act''. SEC. 2. DHS GRANT OUTREACH. (a) Urban Area Security Initiative.--Section 2003 of the Homeland Security Act of 2002 (6 U.S.C. 604) is amended by adding at the end the following new subsection: ``(f) Outreach and Technical Assistance.--The Administrator shall, on an ongoing basis, provide stakeholder outreach, engagement, education, technical assistance, and support, prior to, during, and after the awarding of grants under this section, including relating to the following: ``(1) Conducting annual surveys to collect feedback from State, local, Tribal, and territorial stakeholders on the awarding of such grants and the effectiveness of the Administrator's outreach efforts. ``(2) Summaries of the surveys conducted pursuant to paragraph (1) and other State, local, Tribal, and territorial feedback and how such feedback was incorporated into subsequent grant notices of funding opportunities. ``(3) Other feedback mechanisms that the Administrator determines appropriate.''. (b) State Homeland Security Grant Program.--Section 2004 of the Homeland Security Act of 2002 (6 U.S.C. 605) is amended by adding at the end the following new subsection: ``(g) Outreach and Technical Assistance.--The Administrator shall, on an ongoing basis, provide stakeholder outreach, engagement, education, technical assistance, and support, prior to, during, and after the awarding of grants under this section, including relating to the following: ``(1) Conducting annual surveys to collect feedback from State, local, Tribal, and territorial stakeholders on the awarding of such grants and the effectiveness of the Administrator's outreach efforts. ``(2) Summaries of the surveys conducted pursuant to paragraph (1) and other State, local, Tribal, and territorial feedback and how such feedback was incorporated into subsequent grant notices of funding opportunities. ``(3) Other feedback mechanisms that the Administrator determines appropriate.''. (c) Comptroller General Review.--Not later than two years after the date of the enactment of this Act, the Comptroller General of the United States shall submit to the Administrator of the Federal Emergency Management Agency and the Committee on Homeland Security of the House of Representatives and the Committee on Homeland Security and Governmental Affairs of the Senate a report on the effectiveness of the Federal Emergency Management Agency's stakeholder outreach, engagement, education, technical assistance, and support, prior to, during, and after the awarding of grants under the Urban Area Security Initiative and State Homeland Security Grant Program, in accordance with subsection (f) of section 2003 and subsection (g) of section 2004, respectively, of the Homeland Security Act of 2002, as added by subsections (a) and (b), respectively. (d) Report.--Not later than three years after the date of the enactment of this Act, the Administrator of the Federal Emergency Management Agency shall submit to the Committee on Homeland Security of the House of Representatives and the Committee on Homeland Security and Governmental Affairs of the Senate a report regarding the actions taken pursuant to subsection (f) of section 2003 and subsection (g) of section 2004 of the Homeland Security Act of 2002, as added by subsections (a) and (b), respectively, including with respect to the surveys and summaries required under paragraphs (1) and (2) of each of such subsections (f) and (g). Passed the House of Representatives November 19, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 4058 _______________________________________________________________________ AN ACT To amend the Homeland Security Act of 2002 to enhance outreach for the Urban Area Security Initiative and the State Homeland Security Grant Program of the Department of Homeland Security, and for other purposes."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:300",
+        "session": 1,
+        "roll": 300,
+        "date": "2025-11-19",
+        "measure": "bill_119_hr_4058",
+        "question": "On Motion to Suspend the Rules and Pass",
+        "disposition": "pending_interpretation",
+        "reason": "Complete H.R.4058EHadds ongoing stakeholder outreach/engagement/education/technicalassistance before/during/after UrbanAreaSecurityInitiativeandStateHomelandSecuritygrants, annual feedback surveys and summaries/how incorporated into subsequent fundingnotices, plus GAOeffectivenessreport within2years and FEMAactionsreport within3years to specified recipients. Technicalassistance is not itself proof of an engineering/ITsystem or direct Infrastructuremechanism. Whole mixed-program604/605eligibility/609allowables and prior-outreach/reporting baselines, actor/source versions and domain boundary remain ordinary review; no grantamount/eligibilityexpansion, projectfunding, preparedness/security outcome or motive inferred.",
+        "source": {
+          "source_id": "clerk:119:1:300",
+          "url": "https://clerk.house.gov/evs/2025/roll300.xml",
+          "raw_sha256": "75efe5681c8d4d74a8c93a28d08d753b8a8f86b3ac81d553cbc978bfa974d60b",
+          "governed_bytes_sha256": "2acfa4b633f390c75c1ba0514f50ac8d07389d24cdfdded3f4a6462be5ebe610",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_4058",
+        "member_action": "yea",
+        "house_action_stage": "On Motion to Suspend the Rules and Pass",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "Complete H.R.4058EHadds ongoing stakeholder outreach/engagement/education/technicalassistance before/during/after UrbanAreaSecurityInitiativeandStateHomelandSecuritygrants, annual feedback surveys and summaries/how incorporated into subsequent fundingnotices, plus GAOeffectivenessreport within2years and FEMAactionsreport within3years to specified recipients. Technicalassistance is not itself proof of an engineering/ITsystem or direct Infrastructuremechanism. Whole mixed-program604/605eligibility/609allowables and prior-outreach/reporting baselines, actor/source versions and domain boundary remain ordinary review; no grantamount/eligibilityexpansion, projectfunding, preparedness/security outcome or motive inferred.",
+        "unresolved_reason": "ordinary_4058_whole_mixed_preparedness_grant_outreach_and_material_program_baselines_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:300",
+            "url": "https://clerk.house.gov/evs/2025/roll300.xml",
+            "raw_sha256": "75efe5681c8d4d74a8c93a28d08d753b8a8f86b3ac81d553cbc978bfa974d60b",
+            "governed_bytes_sha256": "2acfa4b633f390c75c1ba0514f50ac8d07389d24cdfdded3f4a6462be5ebe610"
+          },
+          {
+            "source_id": "govinfo:hr4058eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4058eh/html/BILLS-119hr4058eh.htm",
+            "raw_sha256": "0a2bf3613c9ea058f7d4eec6329c7b2915ea2463c1303e73246564be630a3a23",
+            "governed_bytes_sha256": "0fb34f3d07428f81ac348c5b0ce397daed0e5eac173e843310fc5767b0c2dde8"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:300",
+          "source_ids": [
+            "clerk:119:1:300",
+            "govinfo:hr4058eh"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:300",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "42350d9d7f68029c9f30462eddcdb299dfd137aa37632ea3f96f9bdae99c028f"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "42350d9d7f68029c9f30462eddcdb299dfd137aa37632ea3f96f9bdae99c028f",
+      "row_sha256": "f5d548c59d770af4dc1f7ae464149ba6007bb9d3ce5323c5942fdafeef22914e"
+    },
+    {
+      "action_id": "house:119:1:311",
+      "record": {
+        "action_id": "house:119:1:311",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete H.R. 4305 EH requires a notification hotline to be established, operated and maintained within 180 days, with email, form, phone or another appropriate submission method and an accessible website providing that method. Annual reports to the SBA Administrator and Congress start within one year after enactment of the subsection and cover notification frequency, sectors, summaries, entities, geography, agencies, recommendations and Chief Counsel actions. It does not select a particular IT system or vendor, validate complaints automatically or repeal reported rules. The complete retained section 634c already provides complaint, counseling and proposal functions and separate trade outreach and reporting. Sections 551 and 601 preserve agency exclusions and the broader small-entity definition, including qualified nonprofits and governmental jurisdictions. The whole complaint-process versus technical-access boundary, remaining eligibility and practice baselines, and exact deemed-substitute/floor/EH reconciliation remain pending. Notifications are inputs, not independently established regulatory burdens. No response, resolution, savings, outcome or motive is inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:311",
+            "url": "https://clerk.house.gov/evs/2025/roll311.xml",
+            "raw_sha256": "3bbc3c5987160d60c7d77723661d7fe3655d783ee14fc9c81eb024d8eb6b1148",
+            "governed_bytes_sha256": "605b65af551f373301c64f5088e16b49d99d6530ca2893d7b22800e039ee5892"
+          },
+          {
+            "source_id": "govinfo:hr4305eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4305eh/html/BILLS-119hr4305eh.htm",
+            "raw_sha256": "1aed61acdeee4e56ee3ce28e0e0b16a487bc249377e8def2747bc73a73bb8e51",
+            "governed_bytes_sha256": "feaf9caa3615ad5fc41be2814d1645ffa298e1e58b14f364148e1ff9a2e85f9d"
+          },
+          {
+            "source_id": "govinfo:15usc634c-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec634c.htm",
+            "raw_sha256": "0b5e8e8c4e9f233c86026e8982914102a838eed183d25287a57d04f51eb41384",
+            "governed_bytes_sha256": "91c2fd70e4ecba4be0a55d4656dc20be713614d04840c680a39b9778265f5e75"
+          },
+          {
+            "source_id": "govinfo:5usc551-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec551.htm",
+            "raw_sha256": "89c053eb4d4ce537fba8f05c82d139c2ea4a75269c0e10e2e695b36b74b58c19",
+            "governed_bytes_sha256": "b18951ffc98aac9d86bf3a759c947eb2732a694f494d31168e0bd94f2bec4839"
+          },
+          {
+            "source_id": "govinfo:5usc601-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap6-sec601.htm",
+            "raw_sha256": "d2888aea952bfd037b041868657491ef49a7307b6fbd0872017f81e3581cf1e8",
+            "governed_bytes_sha256": "115c50f8fbd1073be3c5a815723a8ac4e9631895ee6760eb2dca1dd027ebf463"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr4305eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 4305 Engrossed in House (EH)] <DOC> 119th CONGRESS 1st Session H. R. 4305 _______________________________________________________________________ AN ACT To direct the Chief Counsel for Advocacy of the Small Business Administration to establish a Red Tape Hotline to receive notifications of burdensome agency rules, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Destroying Unnecessary, Misaligned, and Prohibitive Red Tape Act'' or the ``DUMP Red Tape Act''. SEC. 2. ESTABLISHMENT OF RED TAPE HOTLINE. Section 203 of Public Law 94-305 (15 U.S.C. 634c) is amended by adding at the end the following new subsection: ``(c) Red Tape Hotline.-- ``(1) Establishment.--Not later than 180 days after the date of the enactment of this Act, the Chief Counsel for Advocacy shall-- ``(A) establish, operate, and maintain a hotline, to be known as the `Red Tape Hotline' to receive a notification from a small entity relating to the burden of complying with a rule, guidance, policy statement, or other activity of an agency that is applicable to such concern; ``(B) establish an email address, submission form, phone number, or such other method as determined appropriate by the Chief Counsel for small entities to submit such notifications to such hotline; and ``(C) establish a website providing such email address, submission form, phone number, or other method in a manner that is easily accessible. ``(2) Report.--Not later than 1 year after the date of the enactment of this subsection, and annually thereafter, the Chief Counsel for Advocacy shall submit to the Administrator of the Small Business Administration and Congress a report on the Red Tape Hotline that includes-- ``(A) the rules, guidance, policy statements, and other activities for which notifications are most frequently received, including the affected industry sectors for such rules, guidance, policy statements, or other activities (as applicable); ``(B) a summary of the notifications received, including the type of small entity or other organization that submitted the notification and the geographic area and industry category from which the notification was sent; ``(C) an identification of the agency that issued each such rule, guidance, policy statement, or engaged in such other activity, including an identification of which such rule, guidance, or policy statement such agency issued or an explanation of which such other activity the agency engaged in, as applicable; ``(D) recommendations for each agency that issued such a rule, guidance, policy statement, or engaged in such other activity, for reducing the burden of such rule, guidance, policy statement, or other activity on small entities; and ``(E) a summary of actions taken by the Chief Counsel to address such rules, guidance, policy statements, and other activities, including any such rules, guidance, policy statements, or other activities (as applicable) for which the Chief Counsel submitted comments or analysis. ``(3) Definitions.--In this subsection-- ``(A) the term `agency' has the meaning given such term in section 551 of title 5, United States Code; and ``(B) the terms `rule' and `small entity' have the meanings given such terms, respectively, in section 601 of such title.''. Passed the House of Representatives December 3, 2025. Attest: Clerk. 119th CONGRESS 1st Session H. R. 4305 _______________________________________________________________________ AN ACT To direct the Chief Counsel for Advocacy of the Small Business Administration to establish a Red Tape Hotline to receive notifications of burdensome agency rules, and for other purposes."
+          },
+          {
+            "source_id": "govinfo:15usc634c-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§634c. Additional duties of Office of Advocacy (a) In general The Office of Advocacy shall also perform the following duties on a continuing basis: (1) serve as a focal point for the receipt of complaints, criticisms, and suggestions concerning the policies and activities of the Administration and any other Federal agency which affects small businesses; (2) counsel small businesses on how to resolve questions and problems concerning the relationship of the small business to the Federal Government; (3) develop proposals for changes in the policies and activities of any agency of the Federal Government which will better fulfill the purposes of the Small Business Act and communicate such proposals to the appropriate Federal agencies; (4) represent the views and interests of small businesses before other Federal agencies whose policies and activities may affect small business; (5) enlist the cooperation and assistance of public and private agencies, businesses, and other organizations in disseminating information about the programs and services provided by the Federal Government which are of benefit to small businesses, and information on how small businesses can participate in or make use of such programs and services; and (6) carry out the responsibilities of the Office of Advocacy under chapter 6 of title 5. (b) Outreach and input from small businesses on trade promotion authority (1) Definitions In this subsection— (A) the term \"agency\" has the meaning given the term in section 551 of title 5; (B) the term \"Chief Counsel for Advocacy\" means the Chief Counsel for Advocacy of the Small Business Administration; (C) the term \"covered trade agreement\" means a trade agreement being negotiated pursuant to section 4202(b) of title 19; and (D) the term \"Working Group\" means the Interagency Working Group convened under paragraph (2)(A). (2) Working group (A) In general Not later than 30 days after the date on which the President submits the notification required under section 4204(a) of title 19, the Chief Counsel for Advocacy shall convene an Interagency Working Group, which shall consist of an employee from each of the following agencies, as selected by the head of the agency or an official delegated by the head of the agency: (i) The Office of the United States Trade Representative. (ii) The Department of Commerce. (iii) The Department of Agriculture. (iv) Any other agency that the Chief Counsel for Advocacy, in consultation with the United States Trade Representative, determines to be relevant with respect to the subject of the covered trade agreement. (B) Views of small businesses Not later than 30 days after the date on which the Chief Counsel for Advocacy convenes the Working Group under subparagraph (A), the Chief Counsel for Advocacy shall identify a diverse group of small businesses, representatives of small businesses, or a combination thereof, to provide to the Working Group the views of small businesses in the manufacturing, services, and agriculture industries on the potential economic effects of the covered trade agreement. (3) Report (A) In general Not later than 180 days after the date on which the Chief Counsel for Advocacy convenes the Working Group under paragraph (2)(A), the Chief Counsel for Advocacy shall submit to the Committee on Small Business and Entrepreneurship and the Committee on Finance of the Senate and the Committee on Small Business and the Committee on Ways and Means of the House of Representatives a report on the economic impacts of the covered trade agreement on small businesses, which shall— (i) identify the most important priorities, opportunities, and challenges to various industries from the covered trade agreement; (ii) assess the impact for new small businesses to start exporting, or increase their exports, to markets in countries that are parties to the covered trade agreement; (iii) analyze the competitive position of industries likely to be significantly affected by the covered trade agreement; (iv) identify— (I) any State-owned enterprises in each country participating in negotiations for the covered trade agreement that could pose a threat to small businesses; and (II) any steps to take to create a level playing field for those small businesses; (v) identify any rule of an agency that should be modified to become compliant with the covered trade agreement; and (vi) include an overview of the methodology used to develop the report, including the number of small business participants by industry, how those small businesses were selected, and any other factors that the Chief Counsel for Advocacy may determine appropriate. (B) Delayed submission To ensure that negotiations for the covered trade agreement are not disrupted, the President may require that the Chief Counsel for Advocacy delay submission of the report under subparagraph (A) until after the negotiations for the covered trade agreement are concluded, provided that the delay allows the Chief Counsel for Advocacy to submit the report to Congress not later than 45 days before the Senate or the House of Representatives acts to approve or disapprove the covered trade agreement. (C) Avoidance of duplication The Chief Counsel for Advocacy shall, to the extent practicable, coordinate the submission of the report under this paragraph with the United States International Trade Commission, the United States Trade Representative, other agencies, and trade advisory committees to avoid unnecessary duplication of reporting requirements. (Pub. L. 94–305, title II, §203, June 4, 1976, 90 Stat. 669; Pub. L. 111–240, title I, §1602(a), Sept. 27, 2010, 124 Stat. 2551; Pub. L. 114–125, title V, §502, Feb. 24, 2016, 130 Stat. 172.) "
+          },
+          {
+            "source_id": "govinfo:5usc551-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§551. Definitions For the purpose of this subchapter— (1) \"agency\" means each authority of the Government of the United States, whether or not it is within or subject to review by another agency, but does not include— (A) the Congress; (B) the courts of the United States; (C) the governments of the territories or possessions of the United States; (D) the government of the District of Columbia; or except as to the requirements of section 552 of this title— (E) agencies composed of representatives of the parties or of representatives of organizations of the parties to the disputes determined by them; (F) courts martial and military commissions; (G) military authority exercised in the field in time of war or in occupied territory; or (H) functions conferred by sections 1738, 1739, 1743, and 1744 of title 12; subchapter II of chapter 471 of title 49; or sections 1884, 1891–1902, and former section 1641(b)(2), of title 50, appendix; 1 (2) \"person\" includes an individual, partnership, corporation, association, or public or private organization other than an agency; (3) \"party\" includes a person or agency named or admitted as a party, or properly seeking and entitled as of right to be admitted as a party, in an agency proceeding, and a person or agency admitted by an agency as a party for limited purposes; (4) \"rule\" means the whole or a part of an agency statement of general or particular applicability and future effect designed to implement, interpret, or prescribe law or policy or describing the organization, procedure, or practice requirements of an agency and includes the approval or prescription for the future of rates, wages, corporate or financial structures or reorganizations thereof, prices, facilities, appliances, services or allowances therefor or of valuations, costs, or accounting, or practices bearing on any of the foregoing; (5) \"rule making\" means agency process for formulating, amending, or repealing a rule; (6) \"order\" means the whole or a part of a final disposition, whether affirmative, negative, injunctive, or declaratory in form, of an agency in a matter other than rule making but including licensing; (7) \"adjudication\" means agency process for the formulation of an order; (8) \"license\" includes the whole or a part of an agency permit, certificate, approval, registration, charter, membership, statutory exemption or other form of permission; (9) \"licensing\" includes agency process respecting the grant, renewal, denial, revocation, suspension, annulment, withdrawal, limitation, amendment, modification, or conditioning of a license; (10) \"sanction\" includes the whole or a part of an agency— (A) prohibition, requirement, limitation, or other condition affecting the freedom of a person; (B) withholding of relief; (C) imposition of penalty or fine; (D) destruction, taking, seizure, or withholding of property; (E) assessment of damages, reimbursement, restitution, compensation, costs, charges, or fees; (F) requirement, revocation, or suspension of a license; or (G) taking other compulsory or restrictive action; (11) \"relief\" includes the whole or a part of an agency— (A) grant of money, assistance, license, authority, exemption, exception, privilege, or remedy; (B) recognition of a claim, right, immunity, privilege, exemption, or exception; or (C) taking of other action on the application or petition of, and beneficial to, a person; (12) \"agency proceeding\" means an agency process as defined by paragraphs (5), (7), and (9) of this section; (13) \"agency action\" includes the whole or a part of an agency rule, order, license, sanction, relief, or the equivalent or denial thereof, or failure to act; and (14) \"ex parte communication\" means an oral or written communication not on the public record with respect to which reasonable prior notice to all parties is not given, but it shall not include requests for status reports on any matter or proceeding covered by this subchapter. (Pub. L. 89–554, Sept. 6, 1966, 80 Stat. 381; Pub. L. 94–409, §4(b), Sept. 13, 1976, 90 Stat. 1247; Pub. L. 103–272, §5(a), July 5, 1994, 108 Stat. 1373; Pub. L. 111–350, §5(a)(2), Jan. 4, 2011, 124 Stat. 3841.) "
+          },
+          {
+            "source_id": "govinfo:5usc601-2024-operative",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§601. Definitions For purposes of this chapter— (1) the term \"agency\" means an agency as defined in section 551(1) of this title; (2) the term \"rule\" means any rule for which the agency publishes a general notice of proposed rulemaking pursuant to section 553(b) of this title, or any other law, including any rule of general applicability governing Federal grants to State and local governments for which the agency provides an opportunity for notice and public comment, except that the term \"rule\" does not include a rule of particular applicability relating to rates, wages, corporate or financial structures or reorganizations thereof, prices, facilities, appliances, services, or allowances therefor or to valuations, costs or accounting, or practices relating to such rates, wages, structures, prices, appliances, services, or allowances; (3) the term \"small business\" has the same meaning as the term \"small business concern\" under section 3 of the Small Business Act, unless an agency, after consultation with the Office of Advocacy of the Small Business Administration and after opportunity for public comment, establishes one or more definitions of such term which are appropriate to the activities of the agency and publishes such definition(s) in the Federal Register; (4) the term \"small organization\" means any not-for-profit enterprise which is independently owned and operated and is not dominant in its field, unless an agency establishes, after opportunity for public comment, one or more definitions of such term which are appropriate to the activities of the agency and publishes such definition(s) in the Federal Register; (5) the term \"small governmental jurisdiction\" means governments of cities, counties, towns, townships, villages, school districts, or special districts, with a population of less than fifty thousand, unless an agency establishes, after opportunity for public comment, one or more definitions of such term which are appropriate to the activities of the agency and which are based on such factors as location in rural or sparsely populated areas or limited revenues due to the population of such jurisdiction, and publishes such definition(s) in the Federal Register; (6) the term \"small entity\" shall have the same meaning as the terms \"small business\", \"small organization\" and \"small governmental jurisdiction\" defined in paragraphs (3), (4) and (5) of this section; and (7) the term \"collection of information\"— (A) means the obtaining, causing to be obtained, soliciting, or requiring the disclosure to third parties or the public, of facts or opinions by or for an agency, regardless of form or format, calling for either— (i) answers to identical questions posed to, or identical reporting or recordkeeping requirements imposed on, 10 or more persons, other than agencies, instrumentalities, or employees of the United States; or (ii) answers to questions posed to agencies, instrumentalities, or employees of the United States which are to be used for general statistical purposes; and (B) shall not include a collection of information described under section 3518(c)(1) of title 44, United States Code. (8) Recordkeeping requirement .—The term \"recordkeeping requirement\" means a requirement imposed by an agency on persons to maintain specified records. (Added Pub. L. 96–354, §3(a), Sept. 19, 1980, 94 Stat. 1165; amended Pub. L. 104–121, title II, §241(a)(2), Mar. 29, 1996, 110 Stat. 864.) "
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:311",
+        "session": 1,
+        "roll": 311,
+        "date": "2025-12-03",
+        "measure": "bill_119_hr_4305",
+        "question": "On Passage",
+        "disposition": "pending_interpretation",
+        "reason": "Complete H.R. 4305 EH requires a notification hotline to be established, operated and maintained within 180 days, with email, form, phone or another appropriate submission method and an accessible website providing that method. Annual reports to the SBA Administrator and Congress start within one year after enactment of the subsection and cover notification frequency, sectors, summaries, entities, geography, agencies, recommendations and Chief Counsel actions. It does not select a particular IT system or vendor, validate complaints automatically or repeal reported rules. The complete retained section 634c already provides complaint, counseling and proposal functions and separate trade outreach and reporting. Sections 551 and 601 preserve agency exclusions and the broader small-entity definition, including qualified nonprofits and governmental jurisdictions. The whole complaint-process versus technical-access boundary, remaining eligibility and practice baselines, and exact deemed-substitute/floor/EH reconciliation remain pending. Notifications are inputs, not independently established regulatory burdens. No response, resolution, savings, outcome or motive is inferred.",
+        "source": {
+          "source_id": "clerk:119:1:311",
+          "url": "https://clerk.house.gov/evs/2025/roll311.xml",
+          "raw_sha256": "3bbc3c5987160d60c7d77723661d7fe3655d783ee14fc9c81eb024d8eb6b1148",
+          "governed_bytes_sha256": "605b65af551f373301c64f5088e16b49d99d6530ca2893d7b22800e039ee5892",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_4305",
+        "member_action": "not_voting",
+        "house_action_stage": "On Passage",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "Complete H.R. 4305 EH requires a notification hotline to be established, operated and maintained within 180 days, with email, form, phone or another appropriate submission method and an accessible website providing that method. Annual reports to the SBA Administrator and Congress start within one year after enactment of the subsection and cover notification frequency, sectors, summaries, entities, geography, agencies, recommendations and Chief Counsel actions. It does not select a particular IT system or vendor, validate complaints automatically or repeal reported rules. The complete retained section 634c already provides complaint, counseling and proposal functions and separate trade outreach and reporting. Sections 551 and 601 preserve agency exclusions and the broader small-entity definition, including qualified nonprofits and governmental jurisdictions. The whole complaint-process versus technical-access boundary, remaining eligibility and practice baselines, and exact deemed-substitute/floor/EH reconciliation remain pending. Notifications are inputs, not independently established regulatory burdens. No response, resolution, savings, outcome or motive is inferred.",
+        "unresolved_reason": "ordinary_4305_whole_complaint_hotline_technical_access_boundary_and_material_baselines_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:311",
+            "url": "https://clerk.house.gov/evs/2025/roll311.xml",
+            "raw_sha256": "3bbc3c5987160d60c7d77723661d7fe3655d783ee14fc9c81eb024d8eb6b1148",
+            "governed_bytes_sha256": "605b65af551f373301c64f5088e16b49d99d6530ca2893d7b22800e039ee5892"
+          },
+          {
+            "source_id": "govinfo:hr4305eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4305eh/html/BILLS-119hr4305eh.htm",
+            "raw_sha256": "1aed61acdeee4e56ee3ce28e0e0b16a487bc249377e8def2747bc73a73bb8e51",
+            "governed_bytes_sha256": "feaf9caa3615ad5fc41be2814d1645ffa298e1e58b14f364148e1ff9a2e85f9d"
+          },
+          {
+            "source_id": "govinfo:15usc634c-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec634c.htm",
+            "raw_sha256": "0b5e8e8c4e9f233c86026e8982914102a838eed183d25287a57d04f51eb41384",
+            "governed_bytes_sha256": "91c2fd70e4ecba4be0a55d4656dc20be713614d04840c680a39b9778265f5e75"
+          },
+          {
+            "source_id": "govinfo:5usc551-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec551.htm",
+            "raw_sha256": "89c053eb4d4ce537fba8f05c82d139c2ea4a75269c0e10e2e695b36b74b58c19",
+            "governed_bytes_sha256": "b18951ffc98aac9d86bf3a759c947eb2732a694f494d31168e0bd94f2bec4839"
+          },
+          {
+            "source_id": "govinfo:5usc601-2024-operative",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap6-sec601.htm",
+            "raw_sha256": "d2888aea952bfd037b041868657491ef49a7307b6fbd0872017f81e3581cf1e8",
+            "governed_bytes_sha256": "115c50f8fbd1073be3c5a815723a8ac4e9631895ee6760eb2dca1dd027ebf463"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:311",
+          "source_ids": [
+            "clerk:119:1:311",
+            "govinfo:hr4305eh",
+            "govinfo:15usc634c-2024-operative",
+            "govinfo:5usc551-2024-operative",
+            "govinfo:5usc601-2024-operative"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:311",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "361838cbb6bb43cca779a7699418b5e8f532ac2120fb9e2c04d52cb37516b37b"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "361838cbb6bb43cca779a7699418b5e8f532ac2120fb9e2c04d52cb37516b37b",
+      "row_sha256": "fccbb749d59e899ee42f5e59ea14a56f3d99cd05d0ef9ef3accf7c392a364f7c"
+    },
+    {
+      "action_id": "house:119:2:301",
+      "record": {
+        "action_id": "house:119:2:301",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete bill permits existing eligible federal grant recipients to investigate specified fraud through personnel, blockchain/emerging-technology training, software/tools, data and coordination, and permits federal assistance with blockchain tracing. This is a proposed direct technology deployment lead. Whole-action interpretation still requires the four incorporated eligible-grant categories and February2024Critical/EmergingTechnologyList material extents; no new appropriation or unrestricted grant eligibility is established. The complete floor/EH bodies match only after explicitly removing retained internal page furniture; original source unchanged, no substantive conflict established.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:2:301",
+            "url": "https://clerk.house.gov/evs/2026/roll301.xml",
+            "raw_sha256": "6b0d84c7ea84064b6c5f75102d850408a3bdbd2a866c503b2af2368772a69954",
+            "governed_bytes_sha256": "40a64e54e5c6fa06f479c129b7ab6a4285b4ead4657d868c38bd96ff60b16caa"
+          },
+          {
+            "source_id": "govinfo:hr2978eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2978eh/html/BILLS-119hr2978eh.htm",
+            "raw_sha256": "5c0f55f54ab7af4326e192d66678a38a41059c6a03aee1d8d2a116c4aa07d02e",
+            "governed_bytes_sha256": "e603067e58d4279b7a0560653a7044a67cfb39bc9c971b77ade87f015f191206"
+          },
+          {
+            "source_id": "immigration:roll301-floor-complete195",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+            "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+            "governed_bytes_sha256": "3d46480dca5a71777e3a810fd1c34de565be7fcacad1398cf9ed329bb97d5b27"
+          },
+          {
+            "source_id": "immigration:roll301-initial195",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+            "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+            "governed_bytes_sha256": "b8063ff7a58692b1d66fcb4122fdc1b4b798c5db4832674058471325cb3556ce"
+          },
+          {
+            "source_id": "immigration:roll301-recorded195",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+            "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+            "governed_bytes_sha256": "157bfbf8335b41b3e6d878a08abe1490f7b02352c293b2aa7c9c302cb3de5b21"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "govinfo:hr2978eh",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 2978 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. R. 2978 _______________________________________________________________________ AN ACT To permit State, local, and Tribal law enforcement agencies that receive eligible Federal grant funds to use such funds for investigating elder financial fraud, pig butchering, and general financial fraud, and to clarify that Federal law enforcement agencies may assist State, local, and Tribal law enforcement agencies in the use of tracing tools for blockchain and related technology, and for other purposes. Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled, SECTION 1. SHORT TITLE. This Act may be cited as the ``Guarding Unprotected Aging Retirees from Deception Act of 2026'' or the ``GUARD Act of 2026''. SEC. 2. DEFINITIONS. In this Act: (1) Elder financial fraud.--The term ``elder financial fraud'' means the illegal or improper use of the money, property, or other resources of an elderly individual or adult with a disability for monetary or personal benefit, profit, or gain. (2) Eligible federal grant funds.--The term ``eligible Federal grant funds'' means funds received under any of the following: (A) Title IV of the Prioritizing Resources and Organization for Intellectual Property Act of 2008 (34 U.S.C. 30103 et seq.) (commonly known as the ``Economic, High-Technology, White Collar, and Internet Crime Prevention National Training and Technical Assistance Program''), including relating to the use of technology to solve crimes and to facilitate prosecutions (commonly known as the ``Internet of Things (IoT) National Training and Technical Assistance Program''). (B) Title 28, Code of Federal Regulations, part 23 (commonly known as ``Justice Information Sharing Training and Technical Assistance Program''). (C) Section 1401 of the Violence Against Women Act Reauthorization Act of 2022 (34 U.S.C. 30107) to a local law enforcement agency for enforcement of cybercrimes against individuals. (D) Section 1701 title I of the Omnibus Crime Control and Safe Streets Act of 1968 (34 U.S.C. 10381), relating to developing and acquiring effective equipment, technologies, and interoperable communications that assist in responding to and preventing crime (commonly known as the ``COPS Technology and Equipment Program''). (3) General financial fraud.--The term ``general financial fraud'' means, in order to obtain money or other things of value-- (A) intentional misrepresentation of information or identity to deceive an individual; (B) unlawful use of a credit card, debit card, or automated teller machine; or (C) use of electronic means to transmit deceptive information. (4) Pig butchering.--The term ``pig butchering'' means a confidence and investment fraud in which the victim is gradually lured into making increasing monetary contributions, generally in the form of cryptocurrency, to a seemingly sound investment before the scammer disappears with the contributed monies. (5) Scam.--The term ``scam'' means a financial crime undertaken through the use of social engineering that uses deceptive inducement to acquire-- (A) authorized access to funds; or (B) personal or sensitive information that can facilitate the theft of financial assets. (6) State.--The term ``State'' means each of the several States, the District of Columbia, and each territory of the United States. SEC. 3. FEDERAL GRANTS USED FOR INVESTIGATING ELDER FINANCIAL FRAUD, PIG BUTCHERING, AND GENERAL FINANCIAL FRAUD. (a) In General.--State, local, and Tribal law enforcement agencies and grantees that receive eligible Federal grant funds may use such funds for investigating elder financial fraud, pig butchering, and general financial fraud, including by-- (1) hiring and retaining analysts, agents, experts, and other personnel; (2) providing training specific to complex financial investigations, including training on-- (A) coordination and collaboration between State, local, Tribal, and Federal law enforcement agencies; (B) assisting victims of financial fraud and exploitation; (C) the use of blockchain intelligence tools and related capabilities relating to emerging technologies identified in the February 2024 ``Critical and Emerging Technology List Update'' of the Fast Track Action Subcommittee on Critical and Emerging Technologies of the National Science and Technology Council (the ``Critical and Emerging Technology List''); and (D) unique aspects of fraud investigations, including transnational financial investigations and emerging technologies identified in the Critical and Emerging Technology List; (3) obtaining software and technical tools to conduct financial fraud and exploitation investigations; (4) encouraging improved data collection and reporting; (5) supporting training and tabletop exercises to enhance coordination and communication between financial institutions and State, local, Tribal, and Federal law enforcement agencies for the purpose of stopping fraud and scams; and (6) designating a financial sector liaison to serve as a point of contact for financial institutions to share and exchange with State, local, Tribal, and Federal law enforcement agencies information relevant to the investigation of fraud and scams. (b) Report to Grant Provider.--Each law enforcement agency and grantee that makes use of eligible Federal grant funds for a purpose specified under subsection (a) shall, not later than 1 year after making such use of the funds, submit to the Federal agency that provided the eligible Federal grant funds, a report containing-- (1) an explanation of the amount of funds so used, and the specific purpose for which the funds were used; (2) statistics with respect to elder financial fraud, pig butchering, and general financial fraud in the jurisdiction of the law enforcement agency, along with an analysis of how the use of the funds for a purpose specified under subsection (a) affected such statistics; and (3) an assessment of the ability of the law enforcement agency to deter elder financial fraud, pig butchering, and general financial fraud. SEC. 4. REPORT ON GENERAL FINANCIAL FRAUD, PIG BUTCHERING, AND ELDER FINANCIAL FRAUD. No later than a year after the date of the enactment of this Act, the Secretary of the Treasury, acting through the Director of the Financial Crimes Enforcement Network, and in consultation with the Attorney General, the Secretary of Homeland Security, and the appropriate Federal banking agencies and Federal functional regulators, shall submit to Congress a report on efforts to combat general financial fraud, pig butchering, elder financial fraud, and scams, including an evaluation of, and any legislative recommendations to improve, the efficacy of the efforts. SEC. 5. REPORT ON THE STATE OF SCAMS IN THE UNITED STATES. Not later than 2 years after the date of enactment of this Act, and two years thereafter, the Secretary of the Treasury, acting through the Director of the Financial Crimes Enforcement Network, shall submit a report to Congress on the state of financial fraud, pig butchering, elder financial fraud, and scams, based on information available to the Financial Crimes Enforcement Network, that-- (1) relies on information reported to or otherwise available to the Financial Crimes Enforcement Network; (2) analyzes trends in suspected financial fraud, pig butchering, elder financial fraud, and scams, as reflected in reports filed under subchapter II of chapter 53 of title 31, United States Code (commonly referred to as the ``Bank Secrecy Act''), including-- (A) the volume of relevant reports; (B) the aggregate dollar amount associated with the reports; (C) typologies and methods identified through the reports; and (D) the role of digital assets in the reports; and (3) summarizes activities conducted in cooperation with law enforcement, including the Rapid Response Program, during the period covered by the report, including-- (A) the number of referrals received from law enforcement; (B) the aggregate dollar amount of funds for which interdiction was sought; (C) the aggregate dollar amount of funds successfully interdicted or recovered; and (D) any limitations affecting the activities, including limitations arising from reliance on law enforcement referrals. SEC. 6. REPORT TO CONGRESS. Each Federal agency that provides eligible Federal grant funds that are used for a purpose specified under section 3(a) shall issue an annual report to the Committee on Banking, Housing, and Urban Affairs of the Senate, the Committee on Financial Services of the House of Representatives, the Committee on the Judiciary of the Senate, and the Committee on the Judiciary of the House of Representatives containing the information received from law enforcement agencies under section 3(b). SEC. 7. FEDERAL LAW ENFORCEMENT AGENCIES ASSISTING STATE, LOCAL, AND TRIBAL LAW ENFORCEMENT AND FUSION CENTERS. Federal law enforcement agencies may assist State, local, and Tribal law enforcement agencies and fusion centers in the use of tracing tools for blockchain and related technology tools. Passed the House of Representatives September 15, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. R. 2978 _______________________________________________________________________ AN ACT To permit State, local, and Tribal law enforcement agencies that receive eligible Federal grant funds to use such funds for investigating elder financial fraud, pig butchering, and general financial fraud, and to clarify that Federal law enforcement agencies may assist State, local, and Tribal law enforcement agencies in the use of tracing tools for blockchain and related technology, and for other purposes."
+          },
+          {
+            "source_id": "immigration:roll301-floor-complete195",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "The text of the bill is as follows: \nH.R. 2978 \nBe it enacted by the Senate and House of Rep-\nresentatives of the United States of America in \nCongress assembled, \nSECTION 1. SHORT TITLE. \nThis Act may be cited as the ‘‘Guarding Un-\nprotected Aging Retirees from Deception Act of \n2026’’ or the ‘‘GUARD Act of 2026’’. \nSEC. 2. DEFINITIONS. \nIn this Act: \n(1) E\nLDER FINANCIAL FRAUD .—The term ‘‘elder \nfinancial fraud’’ means the illegal or improper \nuse of the money, property, or other resources of \nan elderly individual or adult with a disability \nfor monetary or personal benefit, profit, or gain. \n(2) E\nLIGIBLE FEDERAL GRANT FUNDS .—The \nterm ‘‘eligible Federal grant funds’’ means \nfunds received under any of the following: \n(A) Title IV of the Prioritizing Resources and \nOrganization for Intellectual Property Act of \n2008 (34 U.S.C. 30103 et seq.) (commonly known \nas the ‘‘Economic, High-Technology, White Col-\nlar, and Internet Crime Prevention National \nTraining and Technical Assistance Program’’), \nincluding relating to the use of technology to \nsolve crimes and to facilitate prosecutions (com-\nmonly known as the ‘‘Internet of Things (IoT) \nNational Training and Technical Assistance \nProgram’’). \n(B) Title 28, Code of Federal Regulations, part \n23 (commonly known as ‘‘Justice Information \nSharing Training and Technical Assistance Pro-\ngram’’). \n(C) Section 1401 of the Violence Against \nWomen Act Reauthorization Act of 2022 (34 \nU.S.C. 30107) to a local law enforcement agency \nfor enforcement of cybercrimes against individ-\nuals. \n(D) Section 1701 title I of the Omnibus Crime \nControl and Safe Streets Act of 1968 (34 U.S.C. \n10381), relating to developing and acquiring ef-\nfective equipment, technologies, and interoper-\nable communications that assist in responding \nto and preventing crime (commonly known as \nthe ‘‘COPS Technology and Equipment Pro-\ngram’’). \n(3) G\nENERAL FINANCIAL FRAUD .—The term \n‘‘general financial fraud’’ means, in order to ob-\ntain money or other things of value— \n(A) intentional misrepresentation of informa-\ntion or identity to deceive an individual; \n(B) unlawful use of a credit card, debit card, \nor automated teller machine; or \n(C) use of electronic means to transmit decep-\ntive information. \n(4) P\nIG BUTCHERING .—The term ‘‘pig butch-\nering’’ means a confidence and investment fraud \nin which the victim is gradually lured into mak-\ning increasing monetary contributions, gen-\nerally in the form of cryptocurrency, to a seem-\ningly sound investment before the scammer dis-\nappears with the contributed monies. \n(5) S\nCAM.—The term ‘‘scam’’ means a finan-\ncial crime undertaken through the use of social \nengineering that uses deceptive inducement to \nacquire— \n(A) authorized access to funds; or \n(B) personal or sensitive information that can \nfacilitate the theft of financial assets. \n(6) S\nTATE.—The term ‘‘State’’ means each of \nthe several States, the District of Columbia, and \neach territory of the United States. \nSEC. 3. FEDERAL GRANTS USED FOR INVES-\nTIGATING ELDER FINANCIAL FRAUD, \nPIG BUTCHERING, AND GENERAL FI-\nNANCIAL FRAUD. \n(a) IN GENERAL.—State, local, and Tribal law \nenforcement agencies and grantees that receive \neligible Federal grant funds may use such funds \nfor investigating elder financial fraud, pig \nbutchering, and general financial fraud, includ-\ning by— \n(1) hiring and retaining analysts, agents, ex-\nperts, and other personnel; \n(2) providing training specific to complex fi-\nnancial investigations, including training on— \n(A) coordination and collaboration between \nState, local, Tribal, and Federal law enforce-\nment agencies; \n(B) assisting victims of financial fraud and \nexploitation; \n(C) the use of blockchain intelligence tools \nand related capabilities relating to emerging \ntechnologies identified in the February 2024 \n‘‘Critical and Emerging Technology List Up-\ndate’’ of the Fast Track Action Subcommittee on \nCritical and Emerging Technologies of the Na-\ntional Science and Technology Council (the \n‘‘Critical and Emerging Technology List’’); and \n(D) unique aspects of fraud investigations, in-\ncluding transnational financial investigations \nand emerging technologies identified in the Crit-\nical and Emerging Technology List; \n(3) obtaining software and technical tools to \nconduct financial fraud and exploitation inves-\ntigations; \n(4) encouraging improved data collection and \nreporting; \nVerDate Sep 11 2014 14:44 Sep 15, 2026 Jkt 069060 PO 00000 Frm 00068 Fmt 4634 Sfmt 6333 E:\\CR\\FM\\K14SE7.096 H14SEPT1DMwilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSE H5603 September 14, 2026 \n(5) supporting training and tabletop exercises \nto enhance coordination and communication be-\ntween financial institutions and State, local, \nTribal, and Federal law enforcement agencies \nfor the purpose of stopping fraud and scams; \nand \n(6) designating a financial sector liaison to \nserve as a point of contact for financial institu-\ntions to share and exchange with State, local, \nTribal, and Federal law enforcement agencies \ninformation relevant to the investigation of \nfraud and scams. \n(b) R\nEPORT TO GRANT PROVIDER.—Each law \nenforcement agency and grantee that makes use \nof eligible Federal grant funds for a purpose \nspecified under subsection (a) shall, not later \nthan 1 year after making such use of the funds, \nsubmit to the Federal agency that provided the \neligible Federal grant funds, a report con-\ntaining— \n(1) an explanation of the amount of funds so \nused, and the specific purpose for which the \nfunds were used; \n(2) statistics with respect to elder financial \nfraud, pig butchering, and general financial \nfraud in the jurisdiction of the law enforcement \nagency, along with an analysis of how the use \nof the funds for a purpose specified under sub-\nsection (a) affected such statistics; and \n(3) an assessment of the ability of the law en-\nforcement agency to deter elder financial fraud, \npig butchering, and general financial fraud. \nSEC. 4. REPORT ON GENERAL FINANCIAL FRAUD, \nPIG BUTCHERING, AND ELDER FI-\nNANCIAL FRAUD. \nNo later than a year after the date of the en-\nactment of this Act, the Secretary of the Treas-\nury, acting through the Director of the Finan-\ncial Crimes Enforcement Network, and in con-\nsultation with the Attorney General, the Sec-\nretary of Homeland Security, and the appro-\npriate Federal banking agencies and Federal \nfunctional regulators, shall submit to Congress a \nreport on efforts to combat general financial \nfraud, pig butchering, elder financial fraud, \nand scams, including an evaluation of, and any \nlegislative recommendations to improve, the effi-\ncacy of the efforts. \nSEC. 5. REPORT ON THE STATE OF SCAMS IN THE \nUNITED STATES. \nNot later than 2 years after the date of enact-\nment of this Act, and two years thereafter, the \nSecretary of the Treasury, acting through the \nDirector of the Financial Crimes Enforcement \nNetwork, shall submit a report to Congress on \nthe state of financial fraud, pig butchering, \nelder financial fraud, and scams, based on in-\nformation available to the Financial Crimes En-\nforcement Network, that— \n(1) relies on information reported to or other-\nwise available to the Financial Crimes Enforce-\nment Network; \n(2) analyzes trends in suspected financial \nfraud, pig butchering, elder financial fraud, \nand scams, as reflected in reports filed under \nsubchapter II of chapter 53 of title 31, United \nStates Code (commonly referred to as the ‘‘Bank \nSecrecy Act’’), including— \n(A) the volume of relevant reports; \n(B) the aggregate dollar amount associated \nwith the reports; \n(C) typologies and methods identified through \nthe reports; and \n(D) the role of digital assets in the reports; \nand \n(3) summarizes activities conducted in co-\noperation with law enforcement, including the \nRapid Response Program, during the period cov-\nered by the report, including— \n(A) the number of referrals received from law \nenforcement; \n(B) the aggregate dollar amount of funds for \nwhich interdiction was sought; \n(C) the aggregate dollar amount of funds suc-\ncessfully interdicted or recovered; and \n(D) any limitations affecting the activities, in-\ncluding limitations arising from reliance on law \nenforcement referrals. \nSEC. 6. REPORT TO CONGRESS. \nEach Federal agency that provides eligible \nFederal grant funds that are used for a purpose \nspecified under section 3(a) shall issue an an-\nnual report to the Committee on Banking, Hous-\ning, and Urban Affairs of the Senate, the Com-\nmittee on Financial Services of the House of \nRepresentatives, the Committee on the Judiciary \nof the Senate, and the Committee on the Judici-\nary of the House of Representatives containing \nthe information received from law enforcement \nagencies under section 3(b). \nSEC. 7. FEDERAL LAW ENFORCEMENT AGENCIES \nASSISTING STATE, LOCAL, AND TRIB-\nAL LAW ENFORCEMENT AND FUSION \nCENTERS. \nFederal law enforcement agencies may assist \nState, local, and Tribal law enforcement agen-\ncies and fusion centers in the use of tracing \ntools for blockchain and related technology \ntools. \n"
+          },
+          {
+            "source_id": "immigration:roll301-initial195",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "The SPEAKER pro tempore. The \nquestion is on the motion offered by \nthe gentlewoman from Texas (Ms. D\nE \nLA CRUZ) that the House suspend the \nrules and pass the bill, H.R. 2978, as \namended. \nThe question was taken. \nThe SPEAKER pro tempore. In the \nopinion of the Chair, two-thirds being \nin the affirmative, the ayes have it. \nMs. DE LA CRUZ. Mr. Speaker, on \nthat I demand the yeas and nays. \nThe yeas and nays were ordered. \nVerDate Sep 11 2014 14:44 Sep 15, 2026 Jkt 069060 PO 00000 Frm 00070 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\K14SE7.099 H14SEPT1DMwilson on DSK7X7S144PROD with HOUSE\n\nCONGRESSIONAL RECORD — HOUSE H5605 September 14, 2026 \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, further pro-\nceedings on this motion will be post-\nponed."
+          },
+          {
+            "source_id": "immigration:roll301-recorded195",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "GUARDING UNPROTECTED AGING \nRETIREES FROM DECEPTION ACT \nOF 2026 \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on the mo-\ntion to suspend the rules and pass the \nbill (H.R. 2978) to permit State, local, \nand Tribal law enforcement agencies \nthat receive eligible Federal grant \nfunds to use such funds for inves-\ntigating elder financial fraud, pig \nbutchering, and general financial \nfraud, and to clarify that Federal law \nenforcement agencies may assist State, \nlocal, and Tribal law enforcement \nagencies in the use of tracing tools for \nblockchain and related technology, and \nfor other purposes, as amended, on \nwhich the yeas and nays were ordered. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. The \nquestion is on the motion offered by \nthe gentlewoman from Texas (Ms. D\nE \nLA CRUZ) that the House suspend the \nrules and pass the bill, as amended. \nThe vote was taken by electronic de-\nvice, and there were—yeas 414, nays 7, \nnot voting 12, as follows: \n[Roll No. 301] \nYEAS—414 \nAdams \nAderholt \nAguilar \nAlford \nAmo \nAmodei (NV) \nAnsari \nArrington \nAuchincloss \nBabin \nBacon \nBaird \nBalderson \nBalint \nBarr \nBarraga´n \nBarrett \nBaumgartner \nBean (FL) \nBeatty \nBegich \nBell \nBentz \nBera \nBergman \nBeyer \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBishop \nBlair \nBoebert \nBonamici \nBost \nBoyle (PA) \nBresnahan \nBrown \nBrownley \nBuchanan \nBudzinski \nBurchett \nBynum \nCalvert \nCammack \nCarbajal \nCarey \nCarson \nCarter (LA) \nCarter (TX) \nCasar \nCase \nCasten \nCastor (FL) \nCastro (TX) \nChu \nCiscomani \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nCline \nClyburn \nClyde \nCohen \nCole \nCollins \nComer \nConaway \nCorrea \nCosta \nCourtney \nCraig \nCrane \nCrank \nCrawford \nCrenshaw \nCrockett \nCrow \nCuellar \nDavids (KS) \nDavidson \nDavis (IL) \nDavis (NC) \nDe La Cruz \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDesJarlais \nDexter \nDiaz-Balart \nDingell \nDoggett \nDowning \nEdwards \nElfreth \nEllzey \nEmmer \nEscobar \nEspaillat \nEstes \nEvans (CO) \nEvans (PA) \nEzell \nFallon \nFedorchak \nFeenstra \nFields \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFletcher \nFlood \nFong \nFoster \nFoushee \nFoxx \nFrankel, Lois \nFranklin, Scott \nFriedman \nFrost \nFry \nFulcher \nFuller \nGallagher \nGarbarino \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGill (TX) \nGillen \nGimenez \nGolden (ME) \nGoldman (NY) \nGoldman (TX) \nGomez \nGonzalez, V. \nGooden \nGoodlander \nGosar \nGottheimer \nGraves \nGray \nGreen, Al (TX) \nGriffith \nGrijalva \nGrothman \nGuest \nGuthrie \nHageman \nHamadeh (AZ) \nHarder (CA) \nHaridopolos \nHarrigan \nHarris (NC) \nHarshbarger \nHayes \nHern (OK) \nHiggins (LA) \nHill (AR) \nHimes \nHinson \nHorsford \nHouchin \nHoulahan \nHoyer \nHoyle (OR) \nHudson \nHuffman \nHuizenga \nHunt \nHurd (CO) \nIssa \nIvey \nJack \nJackson (IL) \nJackson (TX) \nJacobs \nJames \nJayapal \nJeffries \nJohnson (GA) \nJohnson (LA) \nJohnson (SD) \nJohnson (TX) \nJordan \nJoyce (OH) \nJoyce (PA) \nKamlager-Dove \nKaptur \nKean \nKeating \nKelly (IL) \nKelly (MS) \nKelly (PA) \nKennedy (NY) \nKennedy (UT) \nKhanna \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKrishnamoorthi \nKustoff \nLaHood \nLaLota \nLandsman \nLangworthy \nLarsen (WA) \nLarson (CT) \nLatimer \nLatta \nLawler \nLee (FL) \nLee (NV) \nLee (PA) \nLeger Fernandez \nLetlow \nLevin \nLiccardo \nLieu \nLofgren \nLoudermilk \nLucas \nLuna \nLuttrell \nLynch \nMace \nMackenzie \nMagaziner \nMalliotakis \nMaloy \nMann \nMannion \nMassie \nMast \nMatsui \nMcBath \nMcBride \nMcCaul \nMcClain \nMcClain Delaney \nMcClellan \nMcClintock \nMcCollum \nMcCormick \nMcDonald Rivet \nMcDowell \nMcGarvey \nMcGovern \nMcGuire \nMcIver \nMeeks \nMejia \nMenefee \nMenendez \nMeng \nMessmer \nMeuser \nMfume \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMin \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WI) \nMoore (WV) \nMoran \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nMurphy \nNadler \nNeal \nNeguse \nNehls \nNewhouse \nNorcross \nNunn (IA) \nObernolte \nOcasio-Cortez \nOgles \nOlszewski \nOmar \nOnder \nOwens \nPallone \nPalmer \nPanetta \nPappas \nPatronis \nPerez \nPerry \nPeters \nPettersen \nPfluger \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nReschenthaler \nRiley (NY) \nRivas \nRogers (KY) \nRose \nRoss \nRouzer \nRuiz \nRulli \nRutherford \nRyan \nSalazar \nSalinas \nSa´nchez \nScalise \nScanlon \nSchakowsky \nSchmidt \nSchneider \nScholten \nSchrier \nSchweikert \nScott (VA) \nScott, Austin \nSessions \nSewell \nSherman \nShreve \nSimon \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmith (WA) \nSmucker \nSorensen \nSoto \nSpartz \nStansbury \nStanton \nStauber \nStefanik \nSteil \nSteube \nStevens \nStrickland \nStrong \nStutzman \nSubramanyam \nSuozzi \nSykes \nTakano \nTaylor \nTenney \nThanedar \nThompson (CA) \nThompson (MS) \nThompson (PA) \nTimmons \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nTurner (OH) \nUnderwood \nValadao \nVan Drew \nVan Duyne \nVan Epps \nVan Orden \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWagner \nWahab \nWalberg \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWeber (TX) \nWebster (FL) \nWesterman \nWhitesides \nWied \nWilliams (GA) \nWilliams (TX) \nWilson (SC) \nWittman \nYakym \nZinke \nNAYS—7 \nBrecheen \nBurlison \nCloud \nHarris (MD) \nNorman \nRoy \nSelf \nNOT VOTING—12 \nAllen \nCarter (GA) \nDonalds \nDunn (FL) \nFigures \nGaramendi \nMills \nPelosi \nRogers (AL) \nTiffany \nWilson (FL) \nWomack \nb 2157 \nMr. DAVIDSON changed his vote \nfrom ‘‘nay’’ to ‘‘yea.’’ \nSo (two-thirds being in the affirma-\ntive) the rules were suspended and the \nbill, as amended, was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:2:301",
+        "session": 2,
+        "roll": 301,
+        "date": "2026-09-15",
+        "measure": "H R 2978",
+        "question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "disposition": "pending_interpretation",
+        "reason": "The complete bill permits existing eligible federal grant recipients to investigate specified fraud through personnel, blockchain/emerging-technology training, software/tools, data and coordination, and permits federal assistance with blockchain tracing. This is a proposed direct technology deployment lead. Whole-action interpretation still requires the four incorporated eligible-grant categories and February2024Critical/EmergingTechnologyList material extents; no new appropriation or unrestricted grant eligibility is established. The complete floor/EH bodies match only after explicitly removing retained internal page furniture; original source unchanged, no substantive conflict established.",
+        "source": {
+          "source_id": "clerk:119:2:301",
+          "url": "https://clerk.house.gov/evs/2026/roll301.xml",
+          "raw_sha256": "6b0d84c7ea84064b6c5f75102d850408a3bdbd2a866c503b2af2368772a69954",
+          "governed_bytes_sha256": "40a64e54e5c6fa06f479c129b7ab6a4285b4ead4657d868c38bd96ff60b16caa",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": true,
+        "bill_ref": "H R 2978",
+        "member_action": "Yea",
+        "house_action_stage": "On Motion to Suspend the Rules and Pass, as Amended",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The complete bill permits existing eligible federal grant recipients to investigate specified fraud through personnel, blockchain/emerging-technology training, software/tools, data and coordination, and permits federal assistance with blockchain tracing. This is a proposed direct technology deployment lead. Whole-action interpretation still requires the four incorporated eligible-grant categories and February2024Critical/EmergingTechnologyList material extents; no new appropriation or unrestricted grant eligibility is established. The complete floor/EH bodies match only after explicitly removing retained internal page furniture; original source unchanged, no substantive conflict established.",
+        "unresolved_reason": "ordinary_eligible_grant_and_emerging_technology_list_baselines_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:2:301",
+            "url": "https://clerk.house.gov/evs/2026/roll301.xml",
+            "raw_sha256": "6b0d84c7ea84064b6c5f75102d850408a3bdbd2a866c503b2af2368772a69954",
+            "governed_bytes_sha256": "40a64e54e5c6fa06f479c129b7ab6a4285b4ead4657d868c38bd96ff60b16caa"
+          },
+          {
+            "source_id": "govinfo:hr2978eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2978eh/html/BILLS-119hr2978eh.htm",
+            "raw_sha256": "5c0f55f54ab7af4326e192d66678a38a41059c6a03aee1d8d2a116c4aa07d02e",
+            "governed_bytes_sha256": "e603067e58d4279b7a0560653a7044a67cfb39bc9c971b77ade87f015f191206"
+          },
+          {
+            "source_id": "immigration:roll301-floor-complete195",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+            "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+            "governed_bytes_sha256": "3d46480dca5a71777e3a810fd1c34de565be7fcacad1398cf9ed329bb97d5b27"
+          },
+          {
+            "source_id": "immigration:roll301-initial195",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-14/pdf/CREC-2026-09-14-house.pdf",
+            "raw_sha256": "fcffd9b5e3ecae7b040fd7d2ac4633d5dbe03fe7cf84b1d0fc21b8f0a8c56b98",
+            "governed_bytes_sha256": "b8063ff7a58692b1d66fcb4122fdc1b4b798c5db4832674058471325cb3556ce"
+          },
+          {
+            "source_id": "immigration:roll301-recorded195",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf",
+            "raw_sha256": "aa56b78947f6ce1f78d818c954e31c3236576145cf86d3d34e6d72e007465cdd",
+            "governed_bytes_sha256": "157bfbf8335b41b3e6d878a08abe1490f7b02352c293b2aa7c9c302cb3de5b21"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:2:301",
+          "source_ids": [
+            "clerk:119:2:301",
+            "govinfo:hr2978eh",
+            "immigration:roll301-floor-complete195",
+            "immigration:roll301-initial195",
+            "immigration:roll301-recorded195"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:2:301",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "historical_raw_hash_matches": true,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "ea6cd34aa4ca63d229fa7a4b0593fcd26e4783ad772be04603f54166fd65cfce"
+        }
+      },
+      "record_sha256": "ea6cd34aa4ca63d229fa7a4b0593fcd26e4783ad772be04603f54166fd65cfce",
+      "row_sha256": "c8b72a47739867893268b4b9300cb559a7d8e3cb7b6ae76b50fdb9ad54f67835"
+    }
+  ],
+  "canonical_changes": false,
+  "source_holds_changed": false,
+  "accepted": false,
+  "preflight_sha256": "961dd9fd95b7c52ebba92da63d65cb429575dd86330189c93b6fe253e8aa8f34"
+}
