@@ -1,0 +1,1549 @@
+{
+  "kind": "held_preparation_preflight157",
+  "base_commit": "63b8d982dbcdc9de03b433fab3928bf14ed364f2",
+  "canonical_path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916",
+  "membership_sha256": "470813b66aac2d4f700fcb5b243e5c8a50c62153c2feacd07bc0b4c1ff18f6c2",
+  "universe_sha256": "f2f0c6f40c99568b584fa2be3906556e48ddf575bea5def64f7b7dbe8a44af1e",
+  "source_pool_sha256": "36f8796421afd246aed96ea6f311d13a1f80157beaad900fa4ea92c0a6270523",
+  "queue_before": {
+    "records": 676,
+    "pending": 246,
+    "operational_prepared_pending": 36,
+    "operational_not_prepared": 210,
+    "unresolved_among_not_prepared": 173
+  },
+  "all_existing_shared_core_checks": [
+    {
+      "path": "docs/editorial/review_packages/health_s2393_one_action_v1/shared_action_core.json",
+      "object_sha256": "202d6b30429e4b30b577d14beee9318045514ba2426f0870c621f4a4e923324f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json",
+      "object_sha256": "81f1634262030f67c5ab952d1a80f9ce5781528b68af7780b6d6056fc01eaba7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_action_core.json",
+      "object_sha256": "5bc4ec9bcf876869ed562051fd9c8b7f369a50b9b9b76c5b30bb37c02ff12bc7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/generated/shared_action_core.json",
+      "object_sha256": "10a16347059c7605df7cd3594919ae3fe2b958c6a010d4e2df90f4ebcf618b6d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/generated/shared_action_core.json",
+      "object_sha256": "7af18560df202e6312b48b5f4a82d567e02977660f63f72d3efce8a58350be27",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/generated/shared_action_core.json",
+      "object_sha256": "40c3bc458b749da9d107f9da90de8ddeee398c21252e4cd2543decf8d1c25ef3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch103_20260916/generated/shared_action_core.json",
+      "object_sha256": "f68982dbe841266e7891397e4f47fc684bed3e61270846e12708cd5282fcb7b3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch104_20260916/generated/shared_action_core.json",
+      "object_sha256": "ba1a78804a2636026f211ccbc5085dcce2c2f550cf366d119c5884205593d961",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch105_20260916/generated/shared_action_core.json",
+      "object_sha256": "6a0102e3e6490c09eabd3af09bf147c27e5a4ecf3fbad99353b7c64a64fed1d4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch106_20260916/generated/shared_action_core.json",
+      "object_sha256": "9e5dd288b4a9c7e55f475efefe8231859888021bb9164fc62f55147075aad7f4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch107_20260916/generated/shared_action_core.json",
+      "object_sha256": "0d5e4fd20a85d7bd9ede3dba49330f48a941c72b5d9bc6106b8f01bd40a6bf4b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch108_20260916/generated/shared_action_core.json",
+      "object_sha256": "4d3575645189e7b33e43ad348a61e045a4223d06e642256c64ac0edc0e844111",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch109_20260916/generated/shared_action_core.json",
+      "object_sha256": "a59a359c9d2c352e6b838ca7a2777b68dfffd021c56c701a00620e658412cfb7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/shared_action_core.json",
+      "object_sha256": "685dbd781301842a72ff8f198c30c82a51809f46a43901d8240975793b12c5ec",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch110_20260916/generated/shared_action_core.json",
+      "object_sha256": "14caee0d0001cc953d58b81b69d910c61fa5f852d3ada37f8785a2b64fae77c8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/generated/shared_action_core.json",
+      "object_sha256": "bc56276b01731dd7f538b7a124aac6f5dd0ddd5905a1cc387dfb2a8f9dd5e05b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch112_20260916/generated/shared_action_core.json",
+      "object_sha256": "62b9f2735dd1cc9c68e05cf151178498f037100c8061b7dea5ffe0aa505aa13a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch113_20260916/generated/shared_action_core.json",
+      "object_sha256": "dadbf1bf48c9e88fa1659b584e20d1acab82d7919e65ebe7a25531e07a51dd67",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch114_20260916/generated/shared_action_core.json",
+      "object_sha256": "2adbe873e43ea8a1534aefcd0176100736c4a3814a383737a087f217bc83ae93",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch115_20260916/generated/shared_action_core.json",
+      "object_sha256": "2ce04b2bf0faecb5a5f66baa8e437137c9a83b0d882df77bd2f6f3bff81bad52",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch116_20260916/generated/shared_action_core.json",
+      "object_sha256": "9933b506be0ef17910412e4586178a382d1b945822387c8fe7d5b228361aecab",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch117_20260916/generated/shared_action_core.json",
+      "object_sha256": "3daf9e1b6542b5a201e71eddf618baed688d52744bb467bacae77e24d0bfffcc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch118_20260916/generated/shared_action_core.json",
+      "object_sha256": "63b52c3049c456f09b5c0cdfdf387d783382c405cb7505e26d5fb790e48f9a69",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch119_20260916/generated/shared_action_core.json",
+      "object_sha256": "391a625ce0f0d2e238715583ae6ed2b1255682dcd7c34830b4d42f42628ceab9",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/shared_action_core.json",
+      "object_sha256": "b7bd85fd12c7b37d8021d6ac788b661f24b8db6a2eeb9da6a2a8328a759303b7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch120_20260916/generated/shared_action_core.json",
+      "object_sha256": "20661e39542f85c01734603fab44b0f819ea173f16c1aee0ab5ab3d6ba75362d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch121_20260916/generated/shared_action_core.json",
+      "object_sha256": "25a1238a54ebacec10e5828ff0bb94f12039320bfa0ee53e4385b72b2c5bc16c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch122_20260916/generated/shared_action_core.json",
+      "object_sha256": "9dfae0895c431b21c59cda69e872ff843b8becae57022ee6d8d8fda503650388",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch123_20260916/generated/shared_action_core.json",
+      "object_sha256": "be40b643b18f0901d47356197382ad4812de158efb1f4c66a682d8ac15d2d01c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch124_20260916/generated/shared_action_core.json",
+      "object_sha256": "f862464dc85f7c693554efae7759b489b37c11e8728d8a278fc5e7ef5f28816e",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch125_20260916/generated/shared_action_core.json",
+      "object_sha256": "184ec6a3a76ce83bce3b90143738cd5942a3190a23648755e157c147ce38782d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch126_20260916/generated/shared_action_core.json",
+      "object_sha256": "4b971d7f4a656a5ee38422584de812dc15c901416e0f226fa9b9700c4dc5e9d2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch127_20260916/generated/shared_action_core.json",
+      "object_sha256": "395d388e7c6f2641d8e9b034bed34af8864270dffc7577a1c958ca2153eb1f7a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch128_20260916/generated/shared_action_core.json",
+      "object_sha256": "350df4e68169aff236ddf636813a7199dc3439c37086ba3f6f74184c07095e02",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch129_20260916/generated/shared_action_core.json",
+      "object_sha256": "4531b83fe28638ca9aa3c063b0ca31006b2a92191d748f8e5a2e7ac9cd38e44a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/shared_action_core.json",
+      "object_sha256": "a5c1c8ed5a7b32890a3fdf037705448c0a01f9b17ae7420c575ad0a565195011",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch130_20260916/generated/shared_action_core.json",
+      "object_sha256": "8ebed90ea9cba0c3847e2c10d0f78e7f4aeffcfe46ffd80b23eee1ec67174014",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch131_20260916/generated/shared_action_core.json",
+      "object_sha256": "3626253fa720eb568702602c1949fc180df881662cfcf146c5b6ab4119154ab2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch132_20260916/generated/shared_action_core.json",
+      "object_sha256": "564406358efc2320d7246100d08b5934f52ded4555b82486107d66903b28040f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch133_20260916/generated/shared_action_core.json",
+      "object_sha256": "9297b6e344e9138d6ab6521d373c5dc3edab12a0bba51ca126606716220c9248",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/generated/shared_action_core.json",
+      "object_sha256": "274647e101dd3dfe48c94cb8444eefa8ebdcac6697956025d88b99218a9746a7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/shared_action_core.json",
+      "object_sha256": "f2cdc665cf5d4584be28d37361ae8641998b5077055bc23793bb5fab8987bcc9",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/shared_action_core.json",
+      "object_sha256": "878ef3d53b1ceb5fb3e22b9b95e531b538e6bb7089fa71b1726dc83e899c5d85",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/shared_action_core.json",
+      "object_sha256": "1410e38252d49d65ce16dd68c230798292bdd33f1c65f7f7d58f4ebe719ce5b4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/shared_action_core.json",
+      "object_sha256": "878ef3d53b1ceb5fb3e22b9b95e531b538e6bb7089fa71b1726dc83e899c5d85",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/shared_action_core.json",
+      "object_sha256": "956eb10cec2c49625a5b68268852d90b4ea1b61263b7faca1c8e6f33764f7077",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/shared_action_core.json",
+      "object_sha256": "efa97a878d0c75de201996ded2b0913f02b50e82b3fe8fd7ae92960b17dbcd2b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/shared_action_core.json",
+      "object_sha256": "663588bd1fddf097a0be390746cbf4a20f90d8335bc3582ffe8e7421918fe74a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/shared_action_core.json",
+      "object_sha256": "709a2b44232483b987040183f38c35d750025950cfccc602e8105492bad1f4ff",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/shared_action_core.json",
+      "object_sha256": "def51cbc01739a34b4d01fb04a889a471554a90f13fe08fa48c9d3576ecf8871",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/shared_action_core.json",
+      "object_sha256": "3605b1b3400d307ec48e8ce9b4a87d30e8040512be224a30ada27e420cf71b02",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/shared_action_core.json",
+      "object_sha256": "fb7b0eab915d65b379b63db6ac33ea52af4b5699b4b55c321d13f4c739b6bdb3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/shared_action_core.json",
+      "object_sha256": "dc674c9480c0c5bdf45115da8d510a56b4ec7413df5a7bae8d60957dae1b3650",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/shared_action_core.json",
+      "object_sha256": "107ecd6776b04b693105a4a2c7f14d914869ef29f4b1bc25be19795e6f575791",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/shared_action_core.json",
+      "object_sha256": "24bfb50151bf5c5d9d5bcfc33cbf2db106fa3e8fa001c05ed8f44d19db3da945",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/shared_action_core.json",
+      "object_sha256": "32b91d85f30855e1e332d38f26a46c817f30e9b8b5ed13f709a0f4eb582baa10",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/shared_action_core.json",
+      "object_sha256": "f3866035fa1bfafaa61633c16be7285257f75b1c04a65e4b71af6c23ddb29c23",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/shared_action_core.json",
+      "object_sha256": "93953b438c286f95a0aebd195e30d0f4683ad3cbf36edf03c1e5a08d0ac5fb1b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/shared_action_core.json",
+      "object_sha256": "e6910964fd9e8744cd4dae8f262bf7b8d80558e4664d1e91febb2e019a2de90b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/shared_action_core.json",
+      "object_sha256": "be7c513c3da4eec4f369671332d907f9f280c0a1e21003c67669cf937bdc5659",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/shared_action_core.json",
+      "object_sha256": "b487e121202b327a4a59f5866754d1e8ef189901499301fb646ccaa49b97ade6",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_action_core.json",
+      "object_sha256": "20d2dd31e6a9f23bf2e747aff536727a66cc011171c39c304e28f756452cd66b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/shared_action_core.json",
+      "object_sha256": "acc07df473611a71f670c58e85d924be380d0825634e2534ccd6493e368e84ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/shared_action_core.json",
+      "object_sha256": "2779f26f8744f03b8c41f6e995f59460f5647184e52ab4799de4da5e3164429c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/shared_action_core.json",
+      "object_sha256": "a598ed45404778a35bbfe498ac675ecbe65386e5cb2248649c0fb373cb2ace70",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/shared_action_core.json",
+      "object_sha256": "2922104496017a30e534f5414bff0d0b71e71895850a3705b15eae540f54f6db",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/shared_action_core.json",
+      "object_sha256": "c6a6ace59896837a1651b5408eb4b27c6b624f196561c61bea7a305039d17b67",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/shared_action_core.json",
+      "object_sha256": "2824f098942399ebed00f7de71941e2e63cecdbfe8cc4229a6c2bc409e74e826",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/shared_action_core.json",
+      "object_sha256": "5be76f2c4699e74d26456029816e7d691671c9c134c4d02efcf43fb37e7d5293",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/shared_action_core.json",
+      "object_sha256": "98c9d702cacd426520ad9c1e30339e9709831788d7bddef8ed4cbf03cd6c1acc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch38_20260916/generated/shared_action_core.json",
+      "object_sha256": "d81593dd80efa8e05e121a66ed71be534209dfacd0879ef16f021cfdf05598cf",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch39_20260916/generated/shared_action_core.json",
+      "object_sha256": "b2676423534f1f94cde9ddc45e769adc0ca569660840f87d428fbb4045b5c9e8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_action_core.json",
+      "object_sha256": "a90f804df5f583fc6baef7b864ef4649fa0abbff4b233f45fe97c6d4db5226fc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch40_20260916/generated/shared_action_core.json",
+      "object_sha256": "6791b1066dd1dc34832f0694ed2d7b105e935488170f5ddab905e989b90065d5",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch41_20260916/generated/shared_action_core.json",
+      "object_sha256": "e73cd06eb198be0bc85aea8b965a9e688e9f1c2f20ba105ce2fe4fc020692b41",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch42_20260916/generated/shared_action_core.json",
+      "object_sha256": "350213df3de5ee6b0fe56ab173dbb3d045cc13b8fececdebbfeebdfb338397cc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/generated/shared_action_core.json",
+      "object_sha256": "1139709b02e711c04ab303e36d4c98974b93849e3a98e37e6888740b57141fa8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch44_20260916/generated/shared_action_core.json",
+      "object_sha256": "67d6bc8c9fb6e52225f2092e511f970786a68141fff38efd5bac83b6d2ffa97b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch45_20260916/generated/shared_action_core.json",
+      "object_sha256": "c505bee24c3f9784ca8e6d3ee31fb4094b6afc93278fba6a329cec91726b0a7b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch46_20260916/generated/shared_action_core.json",
+      "object_sha256": "9d024cc6ee1fba6c5873f5b943df8a060e9508607b1d00ddf9f8cf47a85ff07a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch47_20260916/generated/shared_action_core.json",
+      "object_sha256": "0d6225de2e6417c6c7db2983c3f80597d3d8326d05c57cf0ca3f544b63d05ef0",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch48_20260916/generated/shared_action_core.json",
+      "object_sha256": "e22fd77068ac44e7a2e6752cebb7c44e2a9b70d88dee01b0118a2ce67bc3032d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch49_20260916/generated/shared_action_core.json",
+      "object_sha256": "26aed01c9ac0d09923b13f2af82583ab696f52ac4247a1bc597c1cb2cce0f615",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/shared_action_core.json",
+      "object_sha256": "2ca63c2c50784f2263c4cc130f307cd26bed908a9ea7a6482f4ff56a8643efed",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch50_20260916/generated/shared_action_core.json",
+      "object_sha256": "2a3e74f3889ebd49b1bce9704752ca9f398e553f03210b9ca50fe64bf16bfe16",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch51_20260916/generated/shared_action_core.json",
+      "object_sha256": "b2d7af577c388f3e1c161f9bf9dbde8ffc71af850311fc6eadc258a842c39b41",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch52_20260916/generated/shared_action_core.json",
+      "object_sha256": "02a738e3c83dcbc14c2de8b0e0f2d8ba72ca6b4034358a3c56ef54bc483784de",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch53_20260916/generated/shared_action_core.json",
+      "object_sha256": "eead867c0f61d797c232e205e983a5bb729549b9058fe8d5bcdadf0cc78db4f8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch54_20260916/generated/shared_action_core.json",
+      "object_sha256": "cd951cca976b7c95a56f73f610e2d91588e5a22567e3cfa97117e4e8b45b0dcf",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch55_20260916/generated/shared_action_core.json",
+      "object_sha256": "6c0aa24d14237d26fd00392b732ba5cd15cf4c1fc5b036b88afc90136afd3a1f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch56_20260916/generated/shared_action_core.json",
+      "object_sha256": "dc78a641f624974af0caa9218ff7a71dbc220d67c76c09951192d957c05d1bea",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch57_20260916/generated/shared_action_core.json",
+      "object_sha256": "19aac5047051477d503ece231a4aae06cbe132a7c16358f7cbb1bca7e6c8b5b6",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch58_20260916/generated/shared_action_core.json",
+      "object_sha256": "14e3492fe93aafa22d1a11c53742a548aec38da93bf842cb46e147b2bf17ae9b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch59_20260916/generated/shared_action_core.json",
+      "object_sha256": "27286ead59ac2bfd6c69dd26b671e6d4a48c44112f470407214d84c46063c27a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/shared_action_core.json",
+      "object_sha256": "06136c0d94b9ea6db8ada7c15969272ca0bc8b1018ddff7587a05fee41fbf55c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch60_20260916/generated/shared_action_core.json",
+      "object_sha256": "9afa7b6816e689517835eb678356dc4233e3ed1e6437f2befd82fadf4589cce3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch61_20260916/generated/shared_action_core.json",
+      "object_sha256": "1f7f6e188c9974a507ee18231acb613c9782ecea79f34462eeffa10fbdf09790",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch62_20260916/generated/shared_action_core.json",
+      "object_sha256": "84eec169753926483774af4161c8ed81aee4e0d898f49bb6edf370065c0475c7",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch63_20260916/generated/shared_action_core.json",
+      "object_sha256": "a3ec19a1e17aac73d2fb23631ba0f04e79c4171e62d44f5864579c6ef6fe9208",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch64_20260916/generated/shared_action_core.json",
+      "object_sha256": "fa7e513f106da47c658d712e0450659e4d4e52318e7cf776dbebc09e250ed39a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/generated/shared_action_core.json",
+      "object_sha256": "02a99c9e61dbb179c3fafd7d246853a3ffbf1757f124c3041660742e76587b63",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/generated/shared_action_core.json",
+      "object_sha256": "aa843e357c610ca2fc5a9dfcb239f702461a6177e73a786a3c0dedb0737cb858",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/generated/shared_action_core.json",
+      "object_sha256": "a4f64631e303382ff49485049c5ebe85bd52866e4aac487a7ff3d42f40918b7f",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/generated/shared_action_core.json",
+      "object_sha256": "eafeda36d2ceae668432f9de0588574b6c1087d967db76053ad72a94bd165f4c",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/generated/shared_action_core.json",
+      "object_sha256": "35af785dee7ba6780e05cd34398e8dc5d7efd241d8373340170291c8f7b82025",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/shared_action_core.json",
+      "object_sha256": "77c9aa1f673cc4d7a70ebf3c39a0d0d930205f412286ace898367e982fbff180",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/generated/shared_action_core.json",
+      "object_sha256": "f67b4b2fff95621456f6edffba66cdf6dcf418287f9a671465969ed02f7927be",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch71_20260916/generated/shared_action_core.json",
+      "object_sha256": "7217de3c42ffd89085e296ba657a16b685f62373697feb79474480c5633df237",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/generated/shared_action_core.json",
+      "object_sha256": "83a81930a15ac883d8f74d265e646bc7d26bdf710ead5bcf943c4ed1941577ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/generated/shared_action_core.json",
+      "object_sha256": "f332e59d31f407b82b53ea67c8d2236c6dcca349e6182cd9964d1532761a5c96",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/generated/shared_action_core.json",
+      "object_sha256": "70107701225af53fd16ec7d7d6029805ae520267a2b73aa5874ee9ac19167021",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/generated/shared_action_core.json",
+      "object_sha256": "f485b65207f0f5ddb1b1d13943388cc07dbe686429ee35266767017515f894e4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch76_20260916/generated/shared_action_core.json",
+      "object_sha256": "14d658d4b1d4aa939110bc20cccce9c0a0206d67e9f304d3e5977eb0c00d8183",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch77_20260916/generated/shared_action_core.json",
+      "object_sha256": "4f9722ac52169718b507defe90bc2b479b77c80ee16132a6c36bdeda49fb48ad",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch78_20260916/generated/shared_action_core.json",
+      "object_sha256": "af494ee75be252e6bb47ee65d8321e66a9a0ff471a81e1cc443b60aa97614a63",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch79_20260916/generated/shared_action_core.json",
+      "object_sha256": "0381d362fe37eef9e39cbbdab1b37fdca9f419eb5aff8e41e0081999259a916e",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/shared_action_core.json",
+      "object_sha256": "ac01afc95a0af90bfe388d8571d524c31cb14829faef9f01e01c7cd1a0929770",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch80_20260916/generated/shared_action_core.json",
+      "object_sha256": "09b62a7b575e6c958e68d3b09477363326b0ea54c0864d64e4c5c5c980771996",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch81_20260916/generated/shared_action_core.json",
+      "object_sha256": "92d9416788f95b9395da01f7dda3739145192ad365a670fded87982c11fde4cc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch82_20260916/generated/shared_action_core.json",
+      "object_sha256": "0441de9790120f25920aace3306999a90e1f3768b2428d014a5bdad274747719",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch83_20260916/generated/shared_action_core.json",
+      "object_sha256": "de469aef31189d01004c16f2a111d6daa139a5544eaff3ebb9ff884ea32d7b3d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch84_20260916/generated/shared_action_core.json",
+      "object_sha256": "76a0d76de05ecbd4b11fd94aeef5e6a5db1ee6193c10a0bdf04f5456bb999096",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/generated/shared_action_core.json",
+      "object_sha256": "4bd7586ef9ae6e73c2af75d33454e769017f7cf03de5daa26e3d85d9cd11f128",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/generated/shared_action_core.json",
+      "object_sha256": "6f13e24652db593605832d44193891f700734bc9debfc3ee97d1070d56b95b98",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/generated/shared_action_core.json",
+      "object_sha256": "cbbd0b5e826affee1abeae20d2f2fc42fa96824599097793fe4dbf0012c2dcd1",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/generated/shared_action_core.json",
+      "object_sha256": "737efaa055b15c05fd7b9fb24f4c9515d73552f0138a8bc5f8c23ce0e7735aa8",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/generated/shared_action_core.json",
+      "object_sha256": "c1d4d4debce5a0777a763ee3eee7df491c7c0e065f58bd7451ae1292673ffaf4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/shared_action_core.json",
+      "object_sha256": "11c1de2aeaf5bfe883b2cd48b6d49ade5f6488edf2895b03180f6d239d252568",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/generated/shared_action_core.json",
+      "object_sha256": "0fb41fb60c676957e60b4fb260c4c091a16e1ce72e0a295c715c9956955b2d9b",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/generated/shared_action_core.json",
+      "object_sha256": "21f1c11eeed486ff38645b6650a7f450f4f6dd48472c66d2b97fa74e14d98fae",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/generated/shared_action_core.json",
+      "object_sha256": "f23cd64e83a64b1e7d28621c826bcb80c9de46dd8217d05bfbd2c6803ea06a6d",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/generated/shared_action_core.json",
+      "object_sha256": "5ca3ecf8b8e682123cc4378a76e2350d3029d37156c7c141337f2b98363df7f3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch94_20260916/generated/shared_action_core.json",
+      "object_sha256": "9808fc4a27acebda2259b2c4a6aa919c520ee3acce93670e4d1ae53a9dfe0d32",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch95_20260916/generated/shared_action_core.json",
+      "object_sha256": "6026436c539a8b2bfa6f20c8e19b3cd584139e1da4c0df8a5722f7886dcb69f4",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/generated/shared_action_core.json",
+      "object_sha256": "5610ec74b6e1cd7d252c5f9dfcbe49c950ae52102ed90c8064b54f3c68d84430",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/generated/shared_action_core.json",
+      "object_sha256": "4fdc1a4253fdd6b38b4954b0a882a77f6ba79a50659af93a90cfd09b0f4d58b3",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/generated/shared_action_core.json",
+      "object_sha256": "091519a1b1c16933bf10fde74e803f1b3dbd2cd74b3cac5d9192c73353d94f95",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/generated/shared_action_core.json",
+      "object_sha256": "e2e41e655add652df8fe2a2cafd0bc07166d88f074eed38aa80daaf0ee93132a",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/shared_action_core.json",
+      "object_sha256": "0e56a1dabfa72cbd0c141503588788ef3ddfa05fb3bafd48f680ff0703c7f5ce",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_corpora/house_119_v1/shared_action_core.json",
+      "object_sha256": "6b171e7f62c09b5a094fce9855449bacad2650f172d113fdc7f56f83040d3dbd",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json",
+      "object_sha256": "85ab40ae71be0350c6544fa905b538c7666979ef65bf8665dfe2f2a56b91e9ac",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch138_hr859_candidate/generated/shared_action_core.json",
+      "object_sha256": "e73b3f1dbf941212e90bb958b49832c0f13e54bdb04612cee225b4750fa96887",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/shared_action_core.json",
+      "object_sha256": "b01a9b08deabd9c2562e6c2e0e4005de8cd4709749a98f3d351b9a9a2fc26fd2",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/shared_action_core.json",
+      "object_sha256": "468bdc319c975e50243238f36eb7a4dd47e9ed408539037e8790bb1085d9fe30",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch147_va_candidates/generated/shared_action_core.json",
+      "object_sha256": "d82c2e3589a111bfbc6e6d509ec59b0befc16f43d3c0d37244c131fedd3b4e21",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch148_shared_reuse/generated/shared_action_core.json",
+      "object_sha256": "671e618a5feed09910a8e6c86d7ffeee0d1b47c417396df86648fc46c1f64916",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/shared_action_core.json",
+      "object_sha256": "be8755f304d9a9aea55de8be9028a75c36c747ba86f45f1c873db123a6d7bdcb",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch151_permitting/generated/shared_action_core.json",
+      "object_sha256": "9772b999cd8fe5f4606ee02f670af25019eee5ab92bca4f278b233ad704964dc",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch152_water_resources/generated/shared_action_core.json",
+      "object_sha256": "e15e8f64d98b470ea7e431268ad8b58c568778b2cbb1ad07f9e9426731d2e1e1",
+      "matching_action_ids": []
+    },
+    {
+      "path": "docs/review_packets/infrastructure_batch153_energy_governance/generated/shared_action_core.json",
+      "object_sha256": "cb9d42c204f8d12b22d2a41407720a1450de932b3fcdc0fdb58e185d4fd24424",
+      "matching_action_ids": []
+    }
+  ],
+  "prior_prepared_identities": [
+    "house:119:1:103",
+    "house:119:1:107",
+    "house:119:1:112",
+    "house:119:1:114",
+    "house:119:1:115",
+    "house:119:1:125",
+    "house:119:1:133",
+    "house:119:1:147",
+    "house:119:1:19",
+    "house:119:1:216",
+    "house:119:1:229",
+    "house:119:1:231",
+    "house:119:1:236",
+    "house:119:1:279",
+    "house:119:1:29",
+    "house:119:1:300",
+    "house:119:1:311",
+    "house:119:1:330",
+    "house:119:1:352",
+    "house:119:1:353",
+    "house:119:1:354",
+    "house:119:1:356",
+    "house:119:1:53",
+    "house:119:1:58",
+    "house:119:1:59",
+    "house:119:1:73",
+    "house:119:1:77",
+    "house:119:1:78",
+    "house:119:1:89",
+    "house:119:1:90",
+    "house:119:2:101",
+    "house:119:2:180",
+    "house:119:2:301",
+    "house:119:2:306",
+    "house:119:2:311",
+    "house:119:2:49",
+    "house:119:2:78",
+    "house:119:2:97"
+  ],
+  "prior_non_main_identity_pins": [
+    {
+      "commit": "c6e6df3537ce464abcde22b13401cc7ae878aaf1",
+      "tree": "c095133b5dbc148a59e135e00e5d3e851b4265e0",
+      "authoring": {
+        "path": "docs/review_packets/infrastructure_batch155_transport_governance/authoring.json",
+        "object_sha256": "c0f228d3d2098d72f7067ed5cff1e0b3aa9d14338aa8f0bfa53da9564064ae04",
+        "git_blob": "2ded4f0740900ca7a803f4f30e0642e364ff1008"
+      },
+      "core": {
+        "path": "docs/review_packets/infrastructure_batch155_transport_governance/generated/shared_action_core.json",
+        "object_sha256": "c579dd46dbc7cbbf3d22d66964b5a4487dc9d505899db67e8c62a53f82277b7a",
+        "git_blob": "6494d504e2466676ce4fc46ed25ba5f6aa83ad0c"
+      },
+      "action_ids": [
+        "house:119:1:103",
+        "house:119:1:112",
+        "house:119:1:114",
+        "house:119:2:306",
+        "house:119:2:311"
+      ]
+    },
+    {
+      "commit": "f684d89987498efb335db9c14fdf3da848734de1",
+      "tree": "30f154c235954ea9067b84b50e6432ec5eede618",
+      "authoring": {
+        "path": "docs/review_packets/infrastructure_batch156_digital_access_oversight/authoring.json",
+        "object_sha256": "05b7d97550d87b9e4741db604932a4f8b5182c5e3252aab490b6298ac3602232",
+        "git_blob": "d3d221c93fdbeffcde86ae841ca3462b8362dd12"
+      },
+      "core": {
+        "path": "docs/review_packets/infrastructure_batch156_digital_access_oversight/generated/shared_action_core.json",
+        "object_sha256": "d5ebd36e38a20c7a8a57a5a69e65b195dc72f7e339ce7f8382c482a0d36f4403",
+        "git_blob": "30d6e9677319e820e91211bb99e68716b410ad37"
+      },
+      "action_ids": [
+        "house:119:1:107",
+        "house:119:1:147",
+        "house:119:1:300",
+        "house:119:1:311",
+        "house:119:2:301"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "action_id": "house:119:1:248",
+      "amendment_number": 16,
+      "primary_source_id": "congressional-record:3838-amend16-roll248-choice155",
+      "record": {
+        "action_id": "house:119:1:248",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Mace PartA16instruction bars obtaining gender-identity information through forms/surveys conducted by or for Defense, bars non-male/female response options and requires rejecting a different response to a required sex/gender question. Printed statutory definitions are attributed, not endorsed as scientific/clinical facts. This changes information-collection content, but does not itself require a new ITplatform or establish a named research program. Broad administrative forms versus direct research/data-governance boundary and material survey/research/program baselines need independent review before either a counted meaning or exclusion. No actual response deletion, implementation, individual harm/benefit or motive is inferred from221–210agreement.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:248",
+            "url": "https://clerk.house.gov/evs/2025/roll248.xml",
+            "raw_sha256": "da523c38f830fba3690e5165837833ce549c1ee1f85fe004de2d40f1089ed073",
+            "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5"
+          },
+          {
+            "source_id": "congressional-record:3838-amend16-roll248-choice155",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "d7076d030e3ca12bf879043e8e1497f22bbc5de79a43c86547335dd900e17b26"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend16-roll248-choice155",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 16 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 16 printed \nin part A of House Report 119–255. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle J of title V, insert \nthe following new section: \nSEC. 5 ll. PROHIBITIONS RELATING TO QUES-\nTIONS AND ANSWERS ABOUT SEX, \nGENDER, AND GENDER IDENTITY IN \nFORMS AND SURVEYS OF THE DE-\nPARTMENT OF DEFENSE. \n(a) P ROHIBITION.—With respect to the col-\nlection of information conducted by or for \nthe Secretary of Defense through a form or \nsurvey, the Secretary— \n(1) may not— \n(A) solicit or obtain any information re-\ngarding the gender identity of an individual; \nor \n(B) provide an option to indicate that the \nsex or gender of an individual is something \nother than male or female; and \n(2) shall reject a response other than male \nor female to a required question regarding \nsex or gender. \n(b) D\nEFINITIONS.—In this section: \n(1) The term ‘‘female’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that, at some point, pro-\nduces, transports, and utilizes eggs for fer-\ntilization. \n(2) The term ‘‘gender’’— \n(A) means male or female; and \n(B) does not mean gender identity, experi-\nenced gender, gender expression, or gender \nroles. \n(3) The term ‘‘gender identity’’ does not \nmean sex or gender. \n(4) The term ‘‘male’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that, at some point, pro-\nduces, transports, and utilizes sperm for fer-\ntilization. \n(5) The term ‘‘sex’’ means the biological \ndetermination as to whether an individual is \nmale or female. \n\n\nAMENDMENT NO. 16 OFFERED BY MS . MACE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 16, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from South Caro-\nlina (Ms. M\nACE), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 221, noes 210, \nnot voting 6, as follows: \n[Roll No. 248] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:248",
+        "session": 1,
+        "roll": 248,
+        "date": "2025-09-10",
+        "measure": "bill_119_hr_3838",
+        "question": "On Agreeing to the Amendment",
+        "disposition": "pending_interpretation",
+        "reason": "Complete own Mace PartA16instruction bars obtaining gender-identity information through forms/surveys conducted by or for Defense, bars non-male/female response options and requires rejecting a different response to a required sex/gender question. Printed statutory definitions are attributed, not endorsed as scientific/clinical facts. This changes information-collection content, but does not itself require a new ITplatform or establish a named research program. Broad administrative forms versus direct research/data-governance boundary and material survey/research/program baselines need independent review before either a counted meaning or exclusion. No actual response deletion, implementation, individual harm/benefit or motive is inferred from221–210agreement.",
+        "source": {
+          "source_id": "clerk:119:1:248",
+          "url": "https://clerk.house.gov/evs/2025/roll248.xml",
+          "raw_sha256": "da523c38f830fba3690e5165837833ce549c1ee1f85fe004de2d40f1089ed073",
+          "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_3838",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Amendment",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "Complete own Mace PartA16instruction bars obtaining gender-identity information through forms/surveys conducted by or for Defense, bars non-male/female response options and requires rejecting a different response to a required sex/gender question. Printed statutory definitions are attributed, not endorsed as scientific/clinical facts. This changes information-collection content, but does not itself require a new ITplatform or establish a named research program. Broad administrative forms versus direct research/data-governance boundary and material survey/research/program baselines need independent review before either a counted meaning or exclusion. No actual response deletion, implementation, individual harm/benefit or motive is inferred from221–210agreement.",
+        "unresolved_reason": "ordinary_3838_amend16_forms_survey_content_vs_direct_research_data_governance_boundary_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:248",
+            "url": "https://clerk.house.gov/evs/2025/roll248.xml",
+            "raw_sha256": "da523c38f830fba3690e5165837833ce549c1ee1f85fe004de2d40f1089ed073",
+            "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5"
+          },
+          {
+            "source_id": "congressional-record:3838-amend16-roll248-choice155",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "d7076d030e3ca12bf879043e8e1497f22bbc5de79a43c86547335dd900e17b26"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:248",
+          "source_ids": [
+            "clerk:119:1:248",
+            "congressional-record:3838-amend16-roll248-choice155"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:248",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "bf5f336dab1d6fadc95016892cfc692c14b85f719c7524cf1e1e72f5996b2f51"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "bf5f336dab1d6fadc95016892cfc692c14b85f719c7524cf1e1e72f5996b2f51",
+      "row_sha256": "6f8a2532f2ff3dcf27ad5869fb5f4449e2b950e68d6ea205aa2d65b53389378d"
+    },
+    {
+      "action_id": "house:119:1:249",
+      "amendment_number": 17,
+      "primary_source_id": "congressional-record:3838-amend17-roll249-choice156",
+      "record": {
+        "action_id": "house:119:1:249",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Mace PartA17instruction sets military-installation single-sex-facility access/use restrictions with emergency-medical and active-law-enforcement exceptions and a case-by-case DefenseSecretarynational-security waiver. Complete retained2801definition bounds military installations; the child defines covered spaces including restrooms/locker/changing rooms. Printed identity/sex definitions remain bill attribution. Property-use/access rule versus direct operative infrastructure-governance membership and material applicable-law baselines remain ordinary review, not automatic membership from a construction-title placement or exclusion from a culture-policy label. No new facility construction, universal exceptionless ban, actual access enforcement, clinical determination or enactment inferred from219–209agreement.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:249",
+            "url": "https://clerk.house.gov/evs/2025/roll249.xml",
+            "raw_sha256": "ab0cf7467f44ef22d04a0778faa06dae43c03471176e21773075de44895585aa",
+            "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067"
+          },
+          {
+            "source_id": "congressional-record:3838-amend17-roll249-choice156",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "0e9d11696f06add1fdcadb34a84daded65f4387039a54018c840c5eb047d272c"
+          },
+          {
+            "source_id": "govinfo:10usc2801-2024-amendment-binding",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2801.htm",
+            "raw_sha256": "1dbddfeacdeaf23e2e326e759d9ffd85e250c44e1ce39b70fdac2d59a6059962",
+            "governed_bytes_sha256": "b520c35c817faf41f8e7c7e2ff5fd837ed571a37096e201c679b2f93bb1ac743"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend17-roll249-choice156",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 17 OFFERED BY MS . MACE \nThe Acting CHAIR. It is now in order \nto consider amendment No. 17 printed \nin part A of House Report 119–255. \nMs. MACE. Mr. Chair, I have an \namendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle C of title XXVIII, in-\nsert the following: \nSEC. 28 ll. PROHIBITION ON THE USE OF SIN-\nGLE-SEX FACILITIES ON MILITARY \nINSTALLATIONS THAT DO NOT COR-\nRESPOND TO THE SEX OF AN INDI-\nVIDUAL. \n(a) I N GENERAL.—Notwithstanding any \nother provision of law, no person may, ex-\ncept as provided in subsection (b) or sub-\nsection (c), access or use a single-sex facility \non a military installation that does not cor-\nrespond to the sex of such person. \n(b) E\nXCEPTION.—The prohibition in sub-\nsection (a) shall not apply with respect to— \n(1) emergency medical personnel respond-\ning to a medical emergency; or \n(2) law enforcement officers in active pur-\nsuit of a suspect, or as part of an active in-\nvestigation. \n(c) N\nATIONAL SECURITY WAIVER.—The Sec-\nretary of Defense may, on a case-by-case \nbasis, waive the prohibition in subsection (a) \nif the Secretary determines the waiver is \nnecessary to advance the national security \ninterests of the United States. \n(d) D\nEFINITIONS.—In this section: \n(1) The term ‘‘female’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and utilizes eggs for fertilization. \n(2) The term ‘‘male’’ means an individual \nwho naturally has, had, will have, or would \nhave, but for a developmental or genetic \nanomaly or historical accident, the repro-\nductive system that at some point produces, \ntransports, and utilizes sperm for fertiliza-\ntion. \n(3) The term ‘‘military installation’’ has \nthe meaning given such term in section 2801 \nof title 10, United States Code. \n(4) The term ‘‘single-sex facility’’ means a \nspace intended for the use of one biological \nsex (male or female), including a— \n(A) restroom; \n(B) locker room; or \n(C) changing room. \n(5) The term ‘‘sex’’ means the biological \ndetermination as to whether an individual is \nmale or female. \n\n\nAMENDMENT NO. 17 OFFERED BY MS . MACE \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 17, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from South Caro-\nlina (Ms. M\nACE), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 219, noes 209, \nnot voting 9, as follows: \n[Roll No. 249] \n\n\nSo the amendment was agreed to. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "govinfo:10usc2801-2024-amendment-binding",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "§2801. Scope of chapter; definitions (a) The term \"military construction\" as used in this chapter or any other provision of law includes any construction, development, conversion, or extension of any kind carried out with respect to a military installation, whether to satisfy temporary or permanent requirements, or any acquisition of land or construction of a defense access road (as described in section 210 of title 23). (b) A military construction project includes all military construction work, or any contribution authorized by this chapter, necessary to produce a complete and usable facility or a complete and usable improvement to an existing facility (or to produce such portion of a complete and usable facility or improvement as is specifically authorized by law). (c) In this chapter and chapter 173 of this title: (1) The term \"appropriate committees of Congress\" means the congressional defense committees and, with respect to any project to be carried out by, or for the use of, an intelligence component of the Department of Defense, the Permanent Select Committee on Intelligence of the House of Representatives and the Select Committee on Intelligence of the Senate. (2) The term \"facility\" means a building, structure, or other improvement to real property. (3) The term \"life-cycle cost-effective\", with respect to a project, product, or measure, means that the sum of the present values of investment costs, capital costs, installation costs, energy costs, operating costs, maintenance costs, and replacement costs, as estimated for the lifetime of the project, product, or measure, does not exceed the base case (current or standard) for the practice, product, or measure. (4) The term \"military installation\" means a base, camp, post, station, yard, center, or other activity under the jurisdiction of the Secretary of a military department or, in the case of an activity in a foreign country, under the operational control of the Secretary of a military department or the Secretary of Defense, without regard to the duration of operational control. (5) The term \"Secretary concerned\" includes the Secretary of Defense with respect to matters concerning the Defense Agencies. (d) This chapter (other than sections 2830, 1 2835, and 2836 of this chapter) does not apply to the Coast Guard or to civil works projects of the Army Corps of Engineers. "
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:249",
+        "session": 1,
+        "roll": 249,
+        "date": "2025-09-10",
+        "measure": "bill_119_hr_3838",
+        "question": "On Agreeing to the Amendment",
+        "disposition": "pending_interpretation",
+        "reason": "Complete own Mace PartA17instruction sets military-installation single-sex-facility access/use restrictions with emergency-medical and active-law-enforcement exceptions and a case-by-case DefenseSecretarynational-security waiver. Complete retained2801definition bounds military installations; the child defines covered spaces including restrooms/locker/changing rooms. Printed identity/sex definitions remain bill attribution. Property-use/access rule versus direct operative infrastructure-governance membership and material applicable-law baselines remain ordinary review, not automatic membership from a construction-title placement or exclusion from a culture-policy label. No new facility construction, universal exceptionless ban, actual access enforcement, clinical determination or enactment inferred from219–209agreement.",
+        "source": {
+          "source_id": "clerk:119:1:249",
+          "url": "https://clerk.house.gov/evs/2025/roll249.xml",
+          "raw_sha256": "ab0cf7467f44ef22d04a0778faa06dae43c03471176e21773075de44895585aa",
+          "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_3838",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Amendment",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "Complete own Mace PartA17instruction sets military-installation single-sex-facility access/use restrictions with emergency-medical and active-law-enforcement exceptions and a case-by-case DefenseSecretarynational-security waiver. Complete retained2801definition bounds military installations; the child defines covered spaces including restrooms/locker/changing rooms. Printed identity/sex definitions remain bill attribution. Property-use/access rule versus direct operative infrastructure-governance membership and material applicable-law baselines remain ordinary review, not automatic membership from a construction-title placement or exclusion from a culture-policy label. No new facility construction, universal exceptionless ban, actual access enforcement, clinical determination or enactment inferred from219–209agreement.",
+        "unresolved_reason": "ordinary_3838_amend17_qualified_facility_access_infrastructure_boundary_and_baselines_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:249",
+            "url": "https://clerk.house.gov/evs/2025/roll249.xml",
+            "raw_sha256": "ab0cf7467f44ef22d04a0778faa06dae43c03471176e21773075de44895585aa",
+            "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067"
+          },
+          {
+            "source_id": "congressional-record:3838-amend17-roll249-choice156",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "0e9d11696f06add1fdcadb34a84daded65f4387039a54018c840c5eb047d272c"
+          },
+          {
+            "source_id": "govinfo:10usc2801-2024-amendment-binding",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2801.htm",
+            "raw_sha256": "1dbddfeacdeaf23e2e326e759d9ffd85e250c44e1ce39b70fdac2d59a6059962",
+            "governed_bytes_sha256": "b520c35c817faf41f8e7c7e2ff5fd837ed571a37096e201c679b2f93bb1ac743"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:249",
+          "source_ids": [
+            "clerk:119:1:249",
+            "congressional-record:3838-amend17-roll249-choice156",
+            "govinfo:10usc2801-2024-amendment-binding"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:249",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "3ca002906dd232fbe2515b45e85de74e8e69321e88ffa9f7c452fdd6c52e14a0"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "3ca002906dd232fbe2515b45e85de74e8e69321e88ffa9f7c452fdd6c52e14a0",
+      "row_sha256": "9bda1f754cef3915a60d553ae9a360ce7109ed276dc5f9de997af9092bd9cb3e"
+    },
+    {
+      "action_id": "house:119:1:250",
+      "amendment_number": 7,
+      "primary_source_id": "congressional-record:3838-amend7-offer158",
+      "record": {
+        "action_id": "house:119:1:250",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Smith PartA7offering and resumed recorded rejection bind a90dayDefenseSecretary/designee written certification about North/MidAtlanticoffshorewind impacts on radar/FAAairspace, plus a separate TransportationInspectorGeneralstudy/audit/report covering radar, air traffic, approvals/consultation, flight paths, sonar, CoastGuardoperations and mitigation strategies in the named2016report. The90dayclock applies to certification; no study/reportdeadline, project moratorium or actual wind/radar harm is printed. Direct infrastructure/technology/aviation-governance lead is strong, but exact2016report strategies and material siting/approval/agency baselines remain unreviewed before a whole-action candidate. Recorded209–224rejection, not initial voice ayes, controls; no failed certification, unsafe flight, project cancellation or technical outcome inferred.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:250",
+            "url": "https://clerk.house.gov/evs/2025/roll250.xml",
+            "raw_sha256": "15bd3bbd5953dcaa15064f033b7b822fd454f333dae2c20ad80c98f3b4bc45cd",
+            "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92"
+          },
+          {
+            "source_id": "congressional-record:3838-amend7-offer158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "53ae70c67ffe5e7e5964435aa847c467a57714e7494d08aca970a9a00a31a2d7"
+          },
+          {
+            "source_id": "congressional-record:3838-amend7-roll250-choice158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "5fa31ec4e7480944cea34c78c05615cac5e4e2fe4cba60d11f22903703e8c79b"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend7-offer158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 7 OFFERED BY MR . SMITH OF \nNEW JERSEY \nThe Acting CHAIR. It is now in order \nto consider amendment No. 7 printed in \npart A of House Report 119–255. \nMr. SMITH of New Jersey. Mr. Chair, \nI have an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nAt the end of subtitle B of title XVII, in-\nsert the following new section: \nSEC. 17 ll. CERTIFICATION AND REPORT BY IN-\nSPECTOR GENERAL RELATING TO \nRADAR IMPACTS AND OFFSHORE \nWIND DEVELOPMENT APPROVAL \nPROCESS. \n(a) CERTIFICATION.—Not later than 90 days \nafter the date of enactment of this Act, the \nSecretary of Defense, or his designee, shall \ncertify in writing that— \n(1) offshore wind projects in the North At-\nlantic and Mid-Atlantic Planning areas will \nnot weaken, degrade interfere with, or nul-\nlify the performance and capabilities of \nradar relied upon by commercial aviation, \nmilitary aviation, space launch vehicles, or \nother commercial space entities; and \n(2) the development of offshore wind \nprojects in the North Atlantic and Mid-At-\nlantic Planning Areas will not degrade the \ncapabilities of the Federal Aviation Admin-\nistration to monitor United States Airspace, \nor hinder commercial, private, or military \naviation activities. \n(b) A\nUDIT AND REPORT BY INSPECTOR GEN-\nERAL.— \n(1) I N GENERAL .—The inspector general of \nDepartment of Transportation shall conduct \na study on the effects of offshore wind indus-\ntrialization related to radar, impacts to com-\nmercial air and military traffic, and the suf-\nficiency of the review and approval process \nfor offshore wind projects in the North At-\nlantic and Mid-Atlantic Planning Areas. \n(2) C\nONTENTS.—In conducting the study re-\nquired under paragraph (1), the inspector \ngeneral shall— \n(A) investigate— \n(i) whether offshore wind projects will \nweaken, compromise, or interfere with, or \nnullify the usage of radar utilized by the \nFederal Aviation Administration, United \nStates Armed Forces, and National Aero-\nnautics and Space Administration, as well as \ncommercial space entities; and \n(ii) the sufficiency of the process for ap-\nproving offshore wind projects, and the im-\npact of such projects on radar, including the \nconsultation process between the Bureau of \nOcean Energy Management, the Federal \nAviation Administration, and the Military \nAviation and Installation Assurance Siting \nClearinghouse; \n(B) conduct an audit of the approval appli-\ncations by the Military Aviation and Instal-\nlation Assurance Siting Clearinghouse re-\ngarding concerns voiced over the impact to \nradar and ability to identify airborne \nthreats, freedom to navigate United States \nairspace, and ability to train within United \nStates airspace; \n(C) determine whether any offshore wind \nprojects will impact, alter, or disrupt com-\nmercial, private, or military aviation flight \npaths; \n(D) determine whether any offshore wind \nprojects will impact, compromise, inhibit, or \nnullify the usage of radar and sonar tech-\nnologies utilized by the Armed Forces and \nany agencies carrying out space launch pro-\ngrams; \n(E) determine whether any offshore wind \nprojects will impact, compromise, or inhibit \nthe ability of the United States Coast Guard \nto conduct maritime safety and lifesaving \noperations; \n(F) address how offshore wind energy \nprojects impact low-level military airspace \noff the Atlantic Coast; and \n(G) determine whether mitigation strate-\ngies laid out in the 2016 Report on the Impact \nof Wind Energy Developments on Military \nInstallations are sufficient, achievable and, \nrealistic. \n(3) R\nEPORT.—The inspector general shall \nsubmit to Congress a report containing the \nfindings of the study conducted under this \nsubsection. \n"
+          },
+          {
+            "source_id": "congressional-record:3838-amend7-roll250-choice158",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 7 OFFERED BY MR . SMITH OF \nNEW JERSEY \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 7, printed in \npart A of House Report 119–255, offered \nby the gentleman from New Jersey \n(Mr. S\nMITH), on which further pro-\nceedings were postponed and on which \nthe ayes prevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 209, noes 224, \nnot voting 4, as follows: \n[Roll No. 250] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:250",
+        "session": 1,
+        "roll": 250,
+        "date": "2025-09-10",
+        "measure": "bill_119_hr_3838",
+        "question": "On Agreeing to the Amendment",
+        "disposition": "pending_interpretation",
+        "reason": "Complete own Smith PartA7offering and resumed recorded rejection bind a90dayDefenseSecretary/designee written certification about North/MidAtlanticoffshorewind impacts on radar/FAAairspace, plus a separate TransportationInspectorGeneralstudy/audit/report covering radar, air traffic, approvals/consultation, flight paths, sonar, CoastGuardoperations and mitigation strategies in the named2016report. The90dayclock applies to certification; no study/reportdeadline, project moratorium or actual wind/radar harm is printed. Direct infrastructure/technology/aviation-governance lead is strong, but exact2016report strategies and material siting/approval/agency baselines remain unreviewed before a whole-action candidate. Recorded209–224rejection, not initial voice ayes, controls; no failed certification, unsafe flight, project cancellation or technical outcome inferred.",
+        "source": {
+          "source_id": "clerk:119:1:250",
+          "url": "https://clerk.house.gov/evs/2025/roll250.xml",
+          "raw_sha256": "15bd3bbd5953dcaa15064f033b7b822fd454f333dae2c20ad80c98f3b4bc45cd",
+          "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_3838",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Amendment",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "Complete own Smith PartA7offering and resumed recorded rejection bind a90dayDefenseSecretary/designee written certification about North/MidAtlanticoffshorewind impacts on radar/FAAairspace, plus a separate TransportationInspectorGeneralstudy/audit/report covering radar, air traffic, approvals/consultation, flight paths, sonar, CoastGuardoperations and mitigation strategies in the named2016report. The90dayclock applies to certification; no study/reportdeadline, project moratorium or actual wind/radar harm is printed. Direct infrastructure/technology/aviation-governance lead is strong, but exact2016report strategies and material siting/approval/agency baselines remain unreviewed before a whole-action candidate. Recorded209–224rejection, not initial voice ayes, controls; no failed certification, unsafe flight, project cancellation or technical outcome inferred.",
+        "unresolved_reason": "ordinary_3838_amend7_radar_wind_2016_report_material_siting_approval_baselines_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:250",
+            "url": "https://clerk.house.gov/evs/2025/roll250.xml",
+            "raw_sha256": "15bd3bbd5953dcaa15064f033b7b822fd454f333dae2c20ad80c98f3b4bc45cd",
+            "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92"
+          },
+          {
+            "source_id": "congressional-record:3838-amend7-offer158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "53ae70c67ffe5e7e5964435aa847c467a57714e7494d08aca970a9a00a31a2d7"
+          },
+          {
+            "source_id": "congressional-record:3838-amend7-roll250-choice158",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "5fa31ec4e7480944cea34c78c05615cac5e4e2fe4cba60d11f22903703e8c79b"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:250",
+          "source_ids": [
+            "clerk:119:1:250",
+            "congressional-record:3838-amend7-offer158",
+            "congressional-record:3838-amend7-roll250-choice158"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:250",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "bb463af8bd488b37ea24902c346cc63938cb2e0d2a298a2e5b24c7af7fbcafca"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "bb463af8bd488b37ea24902c346cc63938cb2e0d2a298a2e5b24c7af7fbcafca",
+      "row_sha256": "8a32ba490dc813d48af32b0bad56a6a597a64c518cffd9b47e6b209905000fd1"
+    },
+    {
+      "action_id": "house:119:1:252",
+      "amendment_number": 11,
+      "primary_source_id": "immigration:wilson252-offered-body223",
+      "record": {
+        "action_id": "house:119:1:252",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "Complete own Wilson PartA11body increases the1382maximum from6months to2years, adds property to both location lists and labels the offense general-intent; it also reorganizes797posting and adds a2yeargeneral-intent felony for lawfully issued security regulations on designated DoDnational-defense-area real property. Complete retained1382/797baselines preserve underlying purpose/re-entry conditions and the separate willful misdemeanor regime includingNASAproperty. New felony categories include entry, fire/lighting/machinery/guard/disrepair and ingress/security rules; this is not automatically every military/NASAviolation or mandatory2yearsentence. Whole compound criminal/property-operating-rule versus direct Infrastructure boundary and material designated-area/regulatory/current-law baselines remain ordinary review. Recorded228–205agreement is not actual enforcement, guilt, safety outcome or enactment.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:252",
+            "url": "https://clerk.house.gov/evs/2025/roll252.xml",
+            "raw_sha256": "157e7e6e23459e9d5a10bb169cd5329d7d4334a13b66867e2b1637e20d6b97b4",
+            "governed_bytes_sha256": "dba4ff791c3e45aa5584e3b3910abfb601c8f43f1a01e8288950cd05e9fde390"
+          },
+          {
+            "source_id": "immigration:wilson252-offered-body223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "b0a20f86f3bb282e578befbf90eea53ec8db3ebc78e3cab2159a48defba1a69d"
+          },
+          {
+            "source_id": "immigration:wilson252-initial-question223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "25c87d14ead6cc57992d1f5f44fa2a23d85e0da90eba385132fded112fb37f62"
+          },
+          {
+            "source_id": "immigration:wilson252-resumed-recorded223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "bdc1431cf6c9d3e05de3d0f61b97bd870db1b5d298c6139b192f0c6c60802e67"
+          },
+          {
+            "source_id": "govinfo:18usc1382-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap67-sec1382.htm",
+            "raw_sha256": "3e08389c079ddf408637fa132878dccf36cd1b2072afcf199207b58e321e1de5",
+            "governed_bytes_sha256": "bccd38e1a12370b07e54b655c90ab1ca84815716347c49620eb91cbf2b8c02c1"
+          },
+          {
+            "source_id": "govinfo:50usc797-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap23-subchapI-sec797.htm",
+            "raw_sha256": "9aaf9b0989b88063798504996b1740ddd2ee0afec67828d27e543ca97adaf008",
+            "governed_bytes_sha256": "6ca5b089eea9175096f1effd316f74bef258f5176a3977c971e67ade5980a6a8"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "immigration:wilson252-offered-body223",
+            "locator": "Complete retained own operative unit or scoped statutory baseline",
+            "passage": "At the end of subtitle B of title XVII, add the following: SEC. 17 ll. PENALTIES FOR UNLAWFUL ENTRY AND VIOLATION OF SECURITY REGU- LATIONS. (a) R EVISION TO PENALTY FOR ENTERING MILITARY, N AVAL, OR COAST GUARD PROP- ERTY UNLAWFULLY.—Section 1382 of title 18, United States Code, is amended— (1) by striking ‘‘or installation,’’ both places it appears and inserting ‘‘installation, or property,’’; (2) by striking ‘‘six months’’ and inserting ‘‘two years’’; and (3) by adding at the end the following new sentence: ‘‘This is a general intent crime.’’. (b) P ENALTY FOR VIOLATION OF SECURITY REGULATIONS AND ORDERS RELATING TO DES- IGNATED NATIONAL DEFENSE AREAS.— Section 21 of the Internal Security Act of 1950 (50 U.S.C. 797) is amended— (1) in subsection (a)— (A) by redesignating subsection (b) as para- graph (5) (and indenting that paragraph ac- cordingly); and (B) in such paragraph, as so redesignated, by striking ‘‘subsection (a)’’ and inserting ‘‘this subsection’’; and (2) by adding at the end the following new subsection: ‘‘(b) F ELONY VIOLATION OF NATIONAL DE- FENSE AREA SECURITY REGULATIONS.— ‘‘(1) F ELONY.—Whoever violates any na- tional defense area security regulation shall be fined under title 18, United States Code, or imprisoned not more than two years, or both. This is a general intent crime. ‘‘(2) N ATIONAL DEFENSE AREA SECURITY REG - ULATION DESCRIBED .—For purposes of para- graph (1), a national defense area security regulation is a property security regulation that, pursuant to lawful authority, has been promulgated or approved by the Secretary of Defense (or by a military commander des- ignated by the Secretary of Defense or by a military officer, or a civilian officer or em- ployee of the Department of Defense, holding a senior Department of Defense director po- sition designated by the Secretary of De- fense) for the protection, security, or admin- istration of Department of Defense real prop- erty that has been designated by the Sec- retary of Defense as a national defense area. ‘‘(3) P ROPERTY SECURITY REGULATION DE - SCRIBED.—For purposes of paragraph (2), a property security regulation, with respect to any designated national defense area, is a regulation— ‘‘(A) relating to unauthorized entry to or trespass on such property; ‘‘(B) relating to fire hazards, fire protec- tion, lighting, machinery, guard service, dis- repair, disuse, or other unsatisfactory condi- tions on such property; ‘‘(C) relating to the ingress to, or egress or removal of persons from, such property; or ‘‘(D) otherwise providing for safeguarding such property against destruction, loss, or injury by accident or by enemy or unauthor- ized action, sabotage, or other subversive ac- tions. ‘‘(4) D EFINITIONS.—In this subsection: ‘‘(A) D EPARTMENT OF DEFENSE REAL PROP - ERTY.—The term ‘Department of Defense real property’ means real property subject to the jurisdiction, administration, or in the cus- tody of the Department of Defense, any De- partment or agency of which that Depart- ment consists, or any officer or employee of that Department or agency. ‘‘(B) R EGULATION AS INCLUDING ORDER .—The term ‘regulation’ includes an order.’’. "
+          },
+          {
+            "source_id": "immigration:wilson252-initial-question223",
+            "locator": "Complete retained own operative unit or scoped statutory baseline",
+            "passage": "The Acting CHAIR. The question is on the amendment offered by the gen- tleman from South Carolina (Mr. W IL- SON). The question was taken; and the Act- ing Chair announced that the ayes ap- peared to have it. Mr. SMITH of Washington. Madam Chair, I demand a recorded vote. The Acting CHAIR. Pursuant to clause 6 of rule XVIII, further pro- ceedings on the amendment offered by the gentleman from South Carolina will be postponed. "
+          },
+          {
+            "source_id": "govinfo:18usc1382-2024",
+            "locator": "Complete retained own operative unit or scoped statutory baseline",
+            "passage": "U.S.C. Title 18 - CRIMES AND CRIMINAL PROCEDURE 18 U.S.C. United States Code, 2024 Edition Title 18 - CRIMES AND CRIMINAL PROCEDURE PART I - CRIMES CHAPTER 67 - MILITARY AND NAVY Sec. 1382 - Entering military, naval, or Coast Guard property From the U.S. Government Publishing Office, www.gpo.gov §1382. Entering military, naval, or Coast Guard property Whoever, within the jurisdiction of the United States, goes upon any military, naval, or Coast Guard reservation, post, fort, arsenal, yard, station, or installation, for any purpose prohibited by law or lawful regulation; or Whoever reenters or is found within any such reservation, post, fort, arsenal, yard, station, or installation, after having been removed therefrom or ordered not to reenter by any officer or person in command or charge thereof— Shall be fined under this title or imprisoned not more than six months, or both. (June 25, 1948, ch. 645, 62 Stat. 765; Pub. L. 103–322, title XXXIII, §330016(1)(G), Sept. 13, 1994, 108 Stat. 2147.) Historical and Revision Notes Based on title 18, U.S.C., 1940 ed., §97 (Mar. 4, 1909, ch. 321, §45, 35 Stat. 1097; Mar. 28, 1940, ch. 73, 54 Stat. 80). Reference to territory, Canal Zone, Puerto Rico and the Philippine Islands was omitted as covered by definition of United States in section 5 of this title. Words \"naval or Coast Guard\" were inserted before \"reservation\" and words \"yard, station, or installation\" were inserted after \"arsenal\" in two places, so as to extend section to naval or Coast Guard property. Minor changes were made in phraseology. Editorial Notes Amendments 1994 —Pub. L. 103–322 substituted \"fined under this title\" for \"fined not more than $500\" in last par. Statutory Notes and Related Subsidiaries Transfer of Functions For transfer of authorities, functions, personnel, and assets of the Coast Guard, including the authorities and functions of the Secretary of Transportation relating thereto, to the Department of Homeland Security, and for treatment of related references, see sections 468(b), 551(d), 552(d), and 557 of Title 6, Domestic Security, and the Department of Homeland Security Reorganization Plan of November 25, 2002, as modified, set out as a note under section 542 of Title 6. Coast Guard transferred to Department of Transportation and all functions, powers, and duties, relating to Coast Guard, of Secretary of the Treasury and of other offices and officers of Department of the Treasury transferred to Secretary of Transportation by Pub. L. 89–670, Oct. 15, 1966, 80 Stat. 931, which created the Department of Transportation. See section 108 of Title 49, Transportation. Executive Documents Transfer of Functions Functions of all officers of Department of the Treasury, and functions of all agencies and employees of such Department transferred, with certain exceptions, to Secretary of the Treasury, with power vested in him to authorize their performance or performance of any of his functions, by any of such officers, agencies, and employees, by Reorg. Plan No. 26 of 1950, §§1, 2, eff. July 31, 1950, 15 F.R. 4935, 64 Stat. 1280, 1281, set out in the Appendix to Title 5, Government Organization and Employees. Coast Guard, referred to in this section, was generally a service in Department of the Treasury, but such Plan excepted from transfer functions of Coast Guard and Commandant thereof when Coast Guard was operating as a part of the Navy under former sections 1 and 3 (now 101 and 103) of Title 14, Coast Guard."
+          },
+          {
+            "source_id": "govinfo:50usc797-2024",
+            "locator": "Complete retained own operative unit or scoped statutory baseline",
+            "passage": "U.S.C. Title 50 - WAR AND NATIONAL DEFENSE 50 U.S.C. United States Code, 2024 Edition Title 50 - WAR AND NATIONAL DEFENSE CHAPTER 23 - INTERNAL SECURITY SUBCHAPTER I - CONTROL OF SUBVERSIVE ACTIVITIES Sec. 797 - Penalty for violation of security regulations and orders From the U.S. Government Publishing Office, www.gpo.gov §797. Penalty for violation of security regulations and orders (a) Misdemeanor violation of defense property security regulations (1) Misdemeanor Whoever willfully violates any defense property security regulation shall be fined under title 18 or imprisoned not more than one year, or both. (2) Defense property security regulation described For purposes of paragraph (1), a defense property security regulation is a property security regulation that, pursuant to lawful authority— (A) shall be or has been promulgated or approved by the Secretary of Defense (or by a military commander designated by the Secretary of Defense or by a military officer, or a civilian officer or employee of the Department of Defense, holding a senior Department of Defense director position designated by the Secretary of Defense) for the protection or security of Department of Defense property; or (B) shall be or has been promulgated or approved by the Administrator of the National Aeronautics and Space Administration for the protection or security of NASA property. (3) Property security regulation described For purposes of paragraph (2), a property security regulation, with respect to any property, is a regulation— (A) relating to fire hazards, fire protection, lighting, machinery, guard service, disrepair, disuse, or other unsatisfactory conditions on such property, or the ingress thereto or egress or removal of persons therefrom; or (B) otherwise providing for safeguarding such property against destruction, loss, or injury by accident or by enemy action, sabotage, or other subversive actions. (4) Definitions In this subsection: (A) Department of Defense property The term \"Department of Defense property\" means covered property subject to the jurisdiction, administration, or in the custody of the Department of Defense, any Department or agency of which that Department consists, or any officer or employee of that Department or agency. (B) NASA property The term \"NASA property\" means covered property subject to the jurisdiction, admin istration, or in the custody of the National Aeronautics and Space Administration or any officer or employee thereof. (C) Covered property The term \"covered property\" means aircraft, airports, airport facilities, vessels, harbors, ports, piers, water-front facilities, bases, forts, posts, laboratories, stations, vehicles, equipment, explosives, or other property or places. (D) Regulation as including order The term \"regulation\" includes an order. (b) Posting Any regulation or order covered by subsection (a) shall be posted in conspicuous and appropriate places. (Sept. 23, 1950, ch. 1024, title I, §21, 64 Stat. 1005; Pub. L. 109–163, div. A, title X, §1053, Jan. 6, 2006, 119 Stat. 3435.) Editorial Notes Amendments 2006 —Pub. L. 109–163 amended section generally. Prior to amendment, section related to security regulations and orders and penalties for violations."
+          },
+          {
+            "source_id": "immigration:wilson252-resumed-recorded223",
+            "locator": "Own resumed question/totals through roll252, excluding member lists",
+            "passage": "AMENDMENT NO. 11 OFFERED BY MR . WILSON OF SOUTH CAROLINA The Acting CHAIR. The unfinished business is the demand for a recorded vote on amendment No. 11, printed in part A of House Report 119–255, offered by the gentleman from South Carolina (Mr. W ILSON), on which further pro- ceedings were postponed and on which the ayes prevailed by voice vote. The Clerk will redesignate the amendment. The Clerk redesignated the amend- ment. RECORDED VOTE The Acting CHAIR. A recorded vote has been demanded. A recorded vote was ordered. The Acting CHAIR. This will be a 2- minute vote. The vote was taken by electronic de- vice, and there were—ayes 228, noes 205, not voting 4, as follows: [Roll No. 252]"
+          },
+          {
+            "source_id": "immigration:wilson252-resumed-recorded223",
+            "locator": "Own recorded agreement outcome",
+            "passage": "So the amendment was agreed to. The result of the vote was announced as above recorded. "
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:252",
+        "session": 1,
+        "roll": 252,
+        "date": "2025-09-10",
+        "measure": "bill_119_hr_3838",
+        "question": "On Agreeing to the Amendment",
+        "disposition": "pending_interpretation",
+        "reason": "Complete own Wilson PartA11body increases the1382maximum from6months to2years, adds property to both location lists and labels the offense general-intent; it also reorganizes797posting and adds a2yeargeneral-intent felony for lawfully issued security regulations on designated DoDnational-defense-area real property. Complete retained1382/797baselines preserve underlying purpose/re-entry conditions and the separate willful misdemeanor regime includingNASAproperty. New felony categories include entry, fire/lighting/machinery/guard/disrepair and ingress/security rules; this is not automatically every military/NASAviolation or mandatory2yearsentence. Whole compound criminal/property-operating-rule versus direct Infrastructure boundary and material designated-area/regulatory/current-law baselines remain ordinary review. Recorded228–205agreement is not actual enforcement, guilt, safety outcome or enactment.",
+        "source": {
+          "source_id": "clerk:119:1:252",
+          "url": "https://clerk.house.gov/evs/2025/roll252.xml",
+          "raw_sha256": "157e7e6e23459e9d5a10bb169cd5329d7d4334a13b66867e2b1637e20d6b97b4",
+          "governed_bytes_sha256": "dba4ff791c3e45aa5584e3b3910abfb601c8f43f1a01e8288950cd05e9fde390",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_3838",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Amendment",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "Complete own Wilson PartA11body increases the1382maximum from6months to2years, adds property to both location lists and labels the offense general-intent; it also reorganizes797posting and adds a2yeargeneral-intent felony for lawfully issued security regulations on designated DoDnational-defense-area real property. Complete retained1382/797baselines preserve underlying purpose/re-entry conditions and the separate willful misdemeanor regime includingNASAproperty. New felony categories include entry, fire/lighting/machinery/guard/disrepair and ingress/security rules; this is not automatically every military/NASAviolation or mandatory2yearsentence. Whole compound criminal/property-operating-rule versus direct Infrastructure boundary and material designated-area/regulatory/current-law baselines remain ordinary review. Recorded228–205agreement is not actual enforcement, guilt, safety outcome or enactment.",
+        "unresolved_reason": "ordinary_3838_amend11_whole_criminal_property_operating_rule_boundary_and_designated_area_baselines_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:252",
+            "url": "https://clerk.house.gov/evs/2025/roll252.xml",
+            "raw_sha256": "157e7e6e23459e9d5a10bb169cd5329d7d4334a13b66867e2b1637e20d6b97b4",
+            "governed_bytes_sha256": "dba4ff791c3e45aa5584e3b3910abfb601c8f43f1a01e8288950cd05e9fde390"
+          },
+          {
+            "source_id": "immigration:wilson252-offered-body223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "b0a20f86f3bb282e578befbf90eea53ec8db3ebc78e3cab2159a48defba1a69d"
+          },
+          {
+            "source_id": "immigration:wilson252-initial-question223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+            "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+            "governed_bytes_sha256": "25c87d14ead6cc57992d1f5f44fa2a23d85e0da90eba385132fded112fb37f62"
+          },
+          {
+            "source_id": "immigration:wilson252-resumed-recorded223",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "bdc1431cf6c9d3e05de3d0f61b97bd870db1b5d298c6139b192f0c6c60802e67"
+          },
+          {
+            "source_id": "govinfo:18usc1382-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap67-sec1382.htm",
+            "raw_sha256": "3e08389c079ddf408637fa132878dccf36cd1b2072afcf199207b58e321e1de5",
+            "governed_bytes_sha256": "bccd38e1a12370b07e54b655c90ab1ca84815716347c49620eb91cbf2b8c02c1"
+          },
+          {
+            "source_id": "govinfo:50usc797-2024",
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap23-subchapI-sec797.htm",
+            "raw_sha256": "9aaf9b0989b88063798504996b1740ddd2ee0afec67828d27e543ca97adaf008",
+            "governed_bytes_sha256": "6ca5b089eea9175096f1effd316f74bef258f5176a3977c971e67ade5980a6a8"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:252",
+          "source_ids": [
+            "clerk:119:1:252",
+            "immigration:wilson252-offered-body223",
+            "immigration:wilson252-initial-question223",
+            "immigration:wilson252-resumed-recorded223",
+            "govinfo:18usc1382-2024",
+            "govinfo:50usc797-2024"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:252",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "d9169dbcc35498b90e6f8b890a7f0cbf4fbc5b4cdc497d6f1f9aa21df1ce8ed2"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "d9169dbcc35498b90e6f8b890a7f0cbf4fbc5b4cdc497d6f1f9aa21df1ce8ed2",
+      "row_sha256": "dc986b4e61743653eea005ef0ffe708531fdaf36abfec9f2ecb21c1cf967a280"
+    },
+    {
+      "action_id": "house:119:1:257",
+      "amendment_number": 24,
+      "primary_source_id": "congressional-record:3838-amend24-roll257-choice160",
+      "record": {
+        "action_id": "house:119:1:257",
+        "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+        "review_state": "candidate_pending_external_semantic_review",
+        "disposition": "pending_interpretation",
+        "rationale": "The complete own Greene PartA24 instruction deletes whole RCP119-8section1313. The retained page793 target would add a not-more-than1billiondollar fiscal2026Taiwan security-cooperation funding authorization, leaving the original fiscal2025not-more-than300milliondollar paragraph intact rather than repealing all section1323. Complete retained PublicLaw118-159section1323preserves State concurrence, mixed equipment/technology/cyber/transport/training assistance, inventory/replenishment powers, notices, ArmsExportControlAct rule and December31,2029termination. This is not a1billiondollar appropriation, actual aid cut, ban on all Taiwan assistance or separately proven construction cut. Whole mixed security-assistance versus Infrastructure membership and full material temporal/program/accounting baseline remain ordinary review; no particular technological component is selected as the whole choice. The House rejected this exact child9–422with6NotVoting.",
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
+        "required_evidence_unavailable": false,
+        "authoritative_source_conflict": false,
+        "sources": [
+          {
+            "source_id": "clerk:119:1:257",
+            "url": "https://clerk.house.gov/evs/2025/roll257.xml",
+            "raw_sha256": "8afe709c233fa585f705a72a6ad0c4866aeda9f22ad3d610feeeb2541a0fcb6b",
+            "governed_bytes_sha256": "27749dcfc028167f7e1caf6ee01a2e40a7a072537255c7b7224f8c0208b71b83"
+          },
+          {
+            "source_id": "congressional-record:3838-amend24-roll257-choice160",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "6f1f5d557fac68d12841d68846e104b173a1c9d5dc7613ce733868fb6d38c68e"
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend24-operative160",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+            "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+            "governed_bytes_sha256": "2b5b8c719cba5592c3d826b2858484681ad29671ed18cddc7646d179456382ec"
+          },
+          {
+            "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+            "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+            "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+            "governed_bytes_sha256": "1c1dbcdd9cb24aaa9f4ba873722f150de1c94d4b6a8f7d8496f3bd1dc549b511"
+          },
+          {
+            "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+            "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+            "governed_bytes_sha256": "7481f585dd0d20103b0d37cb2beaf0a38c51d3ff91299d5954a9c3532265a1c3"
+          }
+        ],
+        "claim_source_map": [
+          {
+            "source_id": "congressional-record:3838-amend24-roll257-choice160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "AMENDMENT NO. 24 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. It is now in order \nto consider amendment No. 24 printed \nin part A of House Report 119–255. \nMs. GREENE of Georgia. Mr. Chair, I \nhave an amendment at the desk. \nThe Acting CHAIR. The Clerk will \ndesignate the amendment. \nThe text of the amendment is as fol-\nlows: \nPage 793, beginning line 8, strike section \n1313. \n\n\nAMENDMENT NO. 24 OFFERED BY MS . GREENE OF \nGEORGIA \nThe Acting CHAIR. The unfinished \nbusiness is the demand for a recorded \nvote on amendment No. 24, printed in \npart A of House Report 119–255, offered \nby the gentlewoman from Georgia (Ms. \nG\nREENE), on which further proceedings \nwere postponed and on which the noes \nprevailed by voice vote. \nThe Clerk will redesignate the \namendment. \nThe Clerk redesignated the amend-\nment. \nRECORDED VOTE \nThe Acting CHAIR. A recorded vote \nhas been demanded. \nA recorded vote was ordered. \nThe Acting CHAIR. This will be a 2- \nminute vote. \nThe vote was taken by electronic de-\nvice, and there were—ayes 9, noes 422, \nnot voting 6, as follows: \n[Roll No. 257] \n\n\nSo the amendment was rejected. \nThe result of the vote was announced \nas above recorded."
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend24-operative160",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "24. An Amendment To Be Offered by Representative Greene of Georgia or Her Designee, Debatable for 10 Minutes Page 793, beginning line 8, strike section 1313. "
+          },
+          {
+            "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "114 \nTITLE III—OPERATION AND 1\nMAINTENANCE 2\nSubtitle A—Authorization of 3\nAppropriations 4\nSEC. 301. AUTHORIZATION OF APPROPRIATIONS. 5\nFunds are hereby authorized to be appropriated for 6\nfiscal year 2026 for the use of the Armed Forces and other 7\nactivities and agencies of the Department of Defense for 8\nexpenses, not otherwise provided for, for operation and 9\nmaintenance, as specified in the funding table in section 10\n4301. 11\nSubtitle B—Energy and 12\nEnvironment 13\nSEC. 311. INCLUSION OF NUCLEAR ENERGY AND NUCLEAR 14\nTECHNOLOGIES IN ELIGIBLE INVESTMENTS 15\nMADE BY OFFICE OF STRATEGIC CAPITAL. 16\nSection 149(f)(2) of title 10, United States Code, is 17\namended— 18\n(1) by redesignating subparagraphs (U) 19\nthrough (GG) as subparagraphs (W) through (II), 20\nrespectively; and 21\n(2) by inserting after subparagraph (T) the fol-22\nlowing new subparagraphs: 23\n‘‘(U) Nuclear energy. 24\n‘‘(V) Nuclear technologies.’’. 25\nAugust 15, 2025 (12:17 p.m.)\nG:\\CMTE\\RU\\19\\RCP\\RCP_H3838.XML\ng:\\VHLD\\081525\\D081525.001.xml           (1011246|3) 793 \nSEC. 1312. EXTENSION OF AUTHORITY TO TRANSFER 1\nFUNDS FOR BIEN HOA DIOXIN CLEANUP. 2\nSection 1253(b) of the William M. (Mac) Thornberry 3\nNational Defense Authorization Act for Fiscal Year 2021 4\n(Public Law 116–283; 134 Stat. 3955) is amended by 5\nstriking ‘‘fiscal year 2025’’ and inserting ‘‘fiscal year 6\n2026’’. 7\nSEC. 1313. TAIWAN SECURITY COOPERATION INITIATIVE. 8\nSubsection (d) of section 1323 of the National De-9\nfense Authorization Act for Fiscal Year 2025 (Public Law 10\n118-159) is amended— 11\n(1) by striking ‘‘Of the amounts’’ and inserting 12\nthe following: 13\n‘‘(1) Of the amounts’’; and 14\n(2) by adding at the end the following: 15\n‘‘(2) Of the amounts authorized to be appro-16\npriated for fiscal year 2026 for the Department of 17\nDefense, not more than $1,000,000,000 may be 18\nmade available for the purposes of subsection (a).’’. 19\nSEC. 1314. EXTENSION OF DETERRENCE PILOT PROGRAM. 20\nSection 1314(c) of the National Defense Authoriza-21\ntion Act for Fiscal Year 2025 (Public Law 118–159; 10 22\nU.S.C. 311 note) is amended by striking ‘‘December 31, 23\n2027’’ and inserting ‘‘December 31, 2030’’. 24\nAugust 15, 2025 (12:17 p.m.)\nG:\\CMTE\\RU\\19\\RCP\\RCP_H3838.XML\ng:\\VHLD\\081525\\D081525.001.xml           (1011246|3) 1203 \ncy and may consult with the heads of other appropriate 1\nFederal agencies regarding the vessel referred to in sub-2\nsection (a) and activities associated with such vessel. 3\n(c) PROHIBITION ON USE OF FUNDS FOR USED VES-4\nSELS.—None of the funds authorized to be appropriated 5\nby this Act or otherwise made available to carry out this 6\nsection may be used for the procurement of any used ves-7\nsel. 8\n(d) MISSILE DEFENSE AGENCY TRANSFER AUTHOR-9\nITY.—The Director of the Missile Defense Agency may 10\ntransfer amounts authorized to be appropriated for the 11\nMissile Defense Agency for research, development, test, 12\nand evaluation to the Secretary of Transportation, to be 13\nused for the purposes authorized by this section. Any 14\namount transferred pursuant to this subsection shall re-15\ntain its original period of availability. 16\nDIVISION D—FUNDING TABLES 17\nSEC. 4001. AUTHORIZATION OF AMOUNTS IN FUNDING TA-18\nBLES. 19\n(a) IN GENERAL.—Whenever a funding table in this 20\ndivision specifies a dollar amount authorized for a project, 21\nprogram, or activity, the obligation and expenditure of the 22\nspecified dollar amount for the project, program, or activ-23\nity is hereby authorized, subject to the availability of ap-24\npropriations. 25\nAugust 15, 2025 (12:17 p.m.)\nG:\\CMTE\\RU\\19\\RCP\\RCP_H3838.XML\ng:\\VHLD\\081525\\D081525.001.xml           (1011246|3) 1204 \n(b) M ERIT-BASED DECISIONS.—A decision to com-1\nmit, obligate, or expend funds with or to a specific entity 2\non the basis of a dollar amount authorized pursuant to 3\nsubsection (a) shall— 4\n(1) be based on merit-based selection proce-5\ndures in accordance with the requirements of sec-6\ntions 2304(k) and 2374 of title 10, United States 7\nCode, or on competitive procedures; and 8\n(2) comply with other applicable provisions of 9\nlaw. 10\n(c) R ELATIONSHIP TO TRANSFER AND PROGRAM-11\nMING AUTHORITY.—An amount specified in the funding 12\ntables in this division may be transferred or repro-13\ngrammed under a transfer or reprogramming authority 14\nprovided by another provision of this Act or by other law. 15\nThe transfer or reprogramming of an amount specified in 16\nsuch funding tables shall not count against a ceiling on 17\nsuch transfers or reprogrammings under section 1001 of 18\nthis Act or any other provision of law, unless such transfer 19\nor reprogramming would move funds between appropria-20\ntion accounts. 21\n(d) A PPLICABILITY TO CLASSIFIED ANNEX.—This 22\nsection applies to any classified annex that accompanies 23\nthis Act. 24\nAugust 15, 2025 (12:17 p.m.)\nG:\\CMTE\\RU\\19\\RCP\\RCP_H3838.XML\ng:\\VHLD\\081525\\D081525.001.xml           (1011246|3) 1247 \nSEC. 4301. OPERATION AND MAINTENANCE \n(In Thousands of Dollars) \nLine Item FY 2026 \nRequest \nHouse \nAuthorized \nUNITED STATES COURT OF APPEALS FOR THE \nARMED FORCES \nADMINISTRATION AND ASSOCIATED ACTIVI-\nTIES \n010 US COURT OF APPEALS FOR THE ARMED FORCES, \nDEFENSE ................................................................................ 21,243 21,243 \nSUBTOTAL ADMINISTRATION AND ASSOCI-\nATED ACTIVITIES ..................................................... 21,243 21,243 \nTOTAL UNITED STATES COURT OF AP-\nPEALS FOR THE ARMED FORCES ................ 21,243 21,243 \nDEPARTMENT OF DEFENSE ACQUISITION \nWORKFORCE DEVELOPMENT FUND \nACQUISITION WORKFORCE DEVELOPMENT \n010 ACQ WORKFORCE DEV FD ..................................................... 45,346 45,346 \nSUBTOTAL ACQUISITION WORKFORCE DE-\nVELOPMENT ................................................................ 45,346 45,346 \nTOTAL DEPARTMENT OF DEFENSE ACQUI-\nSITION WORKFORCE DEVELOPMENT \nFUND ........................................................................... 45,346 45,346 \nOVERSEAS HUMANITARIAN, DISASTER, AND \nCIVIC AID \nHUMANITARIAN ASSISTANCE \n010 OVERSEAS HUMANITARIAN, DISASTER AND CIVIC AID 100,793 115,317 \nProgram increase ................................................................... [14,524 ] \nSUBTOTAL HUMANITARIAN ASSISTANCE ....... 100,793 115,317 \nTOTAL OVERSEAS HUMANITARIAN, DIS-\nASTER, AND CIVIC AID ...................................... 100,793 115,317 \nCOOPERATIVE THREAT REDUCTION ACCOUNT \nFSU THREAT REDUCTION \n010 COOPERATIVE THREAT REDUCTION ................................. 282,830 282,830 \nSUBTOTAL FSU THREAT REDUCTION ............... 282,830 282,830 \nTOTAL COOPERATIVE THREAT REDUC-\nTION ACCOUNT ...................................................... 282,830 282,830 \nENVIRONMENTAL RESTORATION, ARMY \nDEPARTMENT OF THE ARMY \n050 ENVIRONMENTAL RESTORATION, ARMY .......................... 148,070 148,070 \nSUBTOTAL DEPARTMENT OF THE ARMY ........ 148,070 148,070 \nTOTAL ENVIRONMENTAL RESTORATION, \nARMY ........................................................................... 148,070 148,070 \nENVIRONMENTAL RESTORATION, NAVY \nDEPARTMENT OF THE NAVY \n060 ENVIRONMENTAL RESTORATION, NAVY ........................... 357,949 357,949 \nSUBTOTAL DEPARTMENT OF THE NAVY ......... 357,949 357,949 \nTOTAL ENVIRONMENTAL RESTORATION, \nNAVY ........................................................................... 357,949 357,949 \nENVIRONMENTAL RESTORATION, AIR FORCE \nDEPARTMENT OF THE AIR FORCE \n070 ENVIRONMENTAL RESTORATION, AIR FORCE ................ 342,149 342,149 \nSUBTOTAL DEPARTMENT OF THE AIR \nFORCE ............................................................................ 342,149 342,149 \nTOTAL ENVIRONMENTAL RESTORATION, \nAIR FORCE ............................................................... 342,149 342,149 \nENVIRONMENTAL RESTORATION, DEFENSE \nDEFENSE-WIDE \n080 ENVIRONMENTAL RESTORATION, DEFENSE ................... 8,885 8,885 \nSUBTOTAL DEFENSE-WIDE ..................................... 8,885 8,885 \nAugust 15, 2025 (12:17 p.m.)\nG:\\CMTE\\RU\\19\\RCP\\RCP_H3838.XML\ng:\\VHLD\\081525\\D081525.001.xml           (1011246|3)"
+          },
+          {
+            "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+            "locator": "Exact identified governed version/operative extent; qualifications retained",
+            "passage": "SEC. 1323. <<NOTE: 22 USC 3302 note.>> TAIWAN SECURITY COOPERATION INITIATIVE. (a) Authority to Provide Assistance.-- (1) In general.--Consistent with the Taiwan Relations Act (22 U.S.C. 3301 et. seq.), the Secretary of Defense, with the concurrence of the Secretary of State, may provide, for the purpose described in paragraph (2), appropriate assistance as defined in subsection (b) to-- (A) the military, central government security forces, and central government security agencies of Taiwan; and (B) civilian central government entities of Taiwan that have among their functional responsibilities the support of military and central government security forces. (2) Purpose.--The purpose described in this paragraph is to enable Taiwan to maintain sufficient self-defense capabilities, including through one or more of the following: (A) The capabilities of the military, central government security forces, and central government security agencies of Taiwan to defend against coercion and aggression. (B) The ability of the civilian central governmental institutions of Taiwan to provide oversight and support, ensure accountability of, or manage, such forces. (b) Appropriate Assistance Defined.-- (1) For purposes of subparagraph (A) of subsection (a)(1), the term ``appropriate assistance'' includes the following: (A) Modifications to equipment provided by the United States for exportability or technology security. (B) Technology or services for effective end-use monitoring. (C) Intelligence, surveillance, and reconnaissance capabilities or support. (D) Anti-armor capabilities. (E) Radars. (F) Manned and unmanned aerial capabilities. (G) Defensive cyber capabilities. (H) Long-range precision fires. (I) Integrated air and missile defense systems. (J) Anti-ship missiles. (K) Electronic warfare and counter-electronic warfare capabilities or support. (L) Secure communications equipment and other electronic protection systems. (M) Undersea warfare capabilities. (N) Survivable swarming maritime assets. (O) Integrated air and missile defense systems or capabilities. (P) Mine and counter-mine capabilities. (Q) Littoral-zone and coastal defense vessels. (R) Coastal defense capabilities. (S) Transportation capabilities. (T) Command and control capabilities. (U) Munitions. [[Page 138 STAT. 2121]] (V) Training for critical operations and as required to maintain or employ systems and capabilities specified in subparagraphs (B) through (U). (2) For purposes of subparagraph (B) of subsection (a)(1), the term ``appropriate assistance'' includes the following: (A) Modifications to equipment provided by the United States for exportability or technology security. (B) Technology or services for effective end-use monitoring. (C) Intelligence, surveillance, and reconnaissance capabilities or support. (D) Radars. (E) Manned and unmanned aerial capabilities. (F) Defensive cyber capabilities or support. (G) Secure communications equipment and other electronic protection systems. (H) Transportation capabilities. (I) Command and control capabilities. (J) Training for critical operations and as required to maintain or employ systems and capabilities specified in subparagraphs (B) through (I). (c) Construction of Authorization.--Nothing in this section may be construed to constitute a specific statuary authorization for the introduction of United States Armed Forces into hostilities or into situations wherein hostilities are clearly indicated by the circumstances. (d) Funding.--Of the amounts authorized to be appropriated for fiscal year 2025 for the Department of Defense, not more than $300,000,000 may be made available for the purposes of subsection (a). (e) Additional Authority for Use of United States Inventory.--The Secretary of Defense, with the concurrence of the Secretary of State, may, in such quantity as the Secretary of Defense determines appropriate to achieve the purposes of subsection (a)(2)-- (1) make available to the military, central government security forces, and central government security agencies of Taiwan defense articles from the United States inventory and defense services, and to recover or dispose of such defense articles; or (2) make available to the foreign military and national security forces and ministries of defense (or security agencies serving a similar defense function) of foreign partners defense articles to replenish comparable stocks that such governments have provided to the military, central government security forces, and central government security agencies of Taiwan. (f) Notification to Congress.-- (1) <<NOTE: Deadline.>> In general.--Not later than 15 days before providing assistance or support under subsection (a)(1) or (e), the Secretary of Defense shall submit to the appropriate committees of Congress a notice containing a description of the defense articles or defense services that will be provided. (2) Assistance or support provided under subsection (a) <<NOTE: Reports.>> .--A report under paragraph (1) with respect to the provision of assistance or support under subsection (a)(1) shall include the following: [[Page 138 STAT. 2122]] (A) An identification of the specific recipient of the defense articles or defense services. (B) Objectives of providing the defense articles or defense services. (C) <<NOTE: Cost.>> The cost of providing the defense articles or defense services. (D) <<NOTE: Timeline.>> The anticipated timeline for delivery of the defense articles or defense services. (3) Assistance or support provided under subsection (e) <<NOTE: Reports.>> .--A report under paragraph (1) with respect to the provision of assistance or support under subsection (e) shall include the following: (A) An identification of the recipient foreign country. (B) A detailed description of the articles to be provided, including the dollar value, origin, and capabilities associated with the articles. (C) A detailed description of the articles provided to Taiwan to be replenished, including the dollar value, origin, and capabilities associated with the articles. (D) The impact on United States inventory and readiness of transferring the articles. (E) <<NOTE: Assessment.>> An assessment of any security, intellectual property, or end use monitoring issues associated with transferring the articles. (4) Appropriate committees of congress defined.--In this subsection, the term ``appropriate committees of Congress'' means-- (A) the Committee on Armed Services, the Committee on Appropriations, and the Committee on Foreign Relations of the Senate; and (B) the Committee on Armed Services, the Committee on Appropriations, and the Committee on Foreign Affairs of the House of Representatives. (g) Rule of Construction.--Nothing in this section may be construed as circumventing the applicable requirements of the Arms Export Control Act (22 U.S.C. 2751 et seq.). (h) Termination.--The authority provided by this section shall terminate on December 31, 2029. "
+          }
+        ],
+        "episode_candidate_id": null
+      },
+      "row": {
+        "action_id": "house:119:1:257",
+        "session": 1,
+        "roll": 257,
+        "date": "2025-09-10",
+        "measure": "bill_119_hr_3838",
+        "question": "On Agreeing to the Amendment",
+        "disposition": "pending_interpretation",
+        "reason": "The complete own Greene PartA24 instruction deletes whole RCP119-8section1313. The retained page793 target would add a not-more-than1billiondollar fiscal2026Taiwan security-cooperation funding authorization, leaving the original fiscal2025not-more-than300milliondollar paragraph intact rather than repealing all section1323. Complete retained PublicLaw118-159section1323preserves State concurrence, mixed equipment/technology/cyber/transport/training assistance, inventory/replenishment powers, notices, ArmsExportControlAct rule and December31,2029termination. This is not a1billiondollar appropriation, actual aid cut, ban on all Taiwan assistance or separately proven construction cut. Whole mixed security-assistance versus Infrastructure membership and full material temporal/program/accounting baseline remain ordinary review; no particular technological component is selected as the whole choice. The House rejected this exact child9–422with6NotVoting.",
+        "source": {
+          "source_id": "clerk:119:1:257",
+          "url": "https://clerk.house.gov/evs/2025/roll257.xml",
+          "raw_sha256": "8afe709c233fa585f705a72a6ad0c4866aeda9f22ad3d610feeeb2541a0fcb6b",
+          "governed_bytes_sha256": "27749dcfc028167f7e1caf6ee01a2e40a7a072537255c7b7224f8c0208b71b83",
+          "verification": "recaptured_official_source"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_3838",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Amendment",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "pending_interpretation",
+        "rationale": "The complete own Greene PartA24 instruction deletes whole RCP119-8section1313. The retained page793 target would add a not-more-than1billiondollar fiscal2026Taiwan security-cooperation funding authorization, leaving the original fiscal2025not-more-than300milliondollar paragraph intact rather than repealing all section1323. Complete retained PublicLaw118-159section1323preserves State concurrence, mixed equipment/technology/cyber/transport/training assistance, inventory/replenishment powers, notices, ArmsExportControlAct rule and December31,2029termination. This is not a1billiondollar appropriation, actual aid cut, ban on all Taiwan assistance or separately proven construction cut. Whole mixed security-assistance versus Infrastructure membership and full material temporal/program/accounting baseline remain ordinary review; no particular technological component is selected as the whole choice. The House rejected this exact child9–422with6NotVoting.",
+        "unresolved_reason": "ordinary_3838_amend24_whole_mixed_security_assistance_boundary_and_material_baselines_pending",
+        "sources": [
+          {
+            "source_id": "clerk:119:1:257",
+            "url": "https://clerk.house.gov/evs/2025/roll257.xml",
+            "raw_sha256": "8afe709c233fa585f705a72a6ad0c4866aeda9f22ad3d610feeeb2541a0fcb6b",
+            "governed_bytes_sha256": "27749dcfc028167f7e1caf6ee01a2e40a7a072537255c7b7224f8c0208b71b83"
+          },
+          {
+            "source_id": "congressional-record:3838-amend24-roll257-choice160",
+            "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+            "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+            "governed_bytes_sha256": "6f1f5d557fac68d12841d68846e104b173a1c9d5dc7613ce733868fb6d38c68e"
+          },
+          {
+            "source_id": "house-rules:119255-partA-amend24-operative160",
+            "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+            "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+            "governed_bytes_sha256": "2b5b8c719cba5592c3d826b2858484681ad29671ed18cddc7646d179456382ec"
+          },
+          {
+            "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+            "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+            "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+            "governed_bytes_sha256": "1c1dbcdd9cb24aaa9f4ba873722f150de1c94d4b6a8f7d8496f3bd1dc549b511"
+          },
+          {
+            "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+            "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+            "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+            "governed_bytes_sha256": "7481f585dd0d20103b0d37cb2beaf0a38c51d3ff91299d5954a9c3532265a1c3"
+          }
+        ],
+        "exact_action_source_binding": {
+          "action_id": "house:119:1:257",
+          "source_ids": [
+            "clerk:119:1:257",
+            "congressional-record:3838-amend24-roll257-choice160",
+            "house-rules:119255-partA-amend24-operative160",
+            "govinfo:rcp119-8-humanitarian-taiwan",
+            "govinfo:pl118159-sec1323-taiwan-operative151"
+          ],
+          "membership_review_ref": "membership_review.json#action_id=house:119:1:257",
+          "review_state": "candidate_pending_external_semantic_review",
+          "complete": true
+        },
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": true,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false,
+          "shared_review_record_sha256": "f33476b316ba6e276ae893d7c20b6cb48f75edd2b523e43215edef9c088bbba4"
+        },
+        "historical_raw_hash_matches": true
+      },
+      "record_sha256": "f33476b316ba6e276ae893d7c20b6cb48f75edd2b523e43215edef9c088bbba4",
+      "row_sha256": "439485924ef2711b097c76201c428d2ba83bb1c3f8e0a30bebf484cd8c6e1ee5"
+    }
+  ],
+  "canonical_changes": false,
+  "source_holds_changed": false,
+  "accepted": false,
+  "preflight_sha256": "abbc68a4816913135c3c6dbfafa62ec8ba533d972c0cbcac64e0596a4849c664"
+}
