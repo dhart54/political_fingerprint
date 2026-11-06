@@ -424,9 +424,14 @@ test("late presentation sizing yields after the reader chooses another control",
     analysis.release();
     const card = page.getByTestId("record-card");
     await expect(card).toBeVisible();
-    const growCard = () => card.evaluate(element => {
-      element.style.paddingBottom = `${parseFloat(getComputedStyle(element).paddingBottom) + 32}px`;
-    });
+    const growCard = async () => {
+      await card.evaluate(element => {
+        element.style.paddingBottom = `${parseFloat(getComputedStyle(element).paddingBottom) + 32}px`;
+      });
+      // Commit the deliberate resize and deliver ResizeObserver before a poll
+      // can pass on the old position and Tab cancels preservation prematurely.
+      await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    };
     await growCard();
     await expect.poll(() => original.evaluate((element, top) => Math.abs(element.getBoundingClientRect().top - top), initialTop)).toBeLessThanOrEqual(5);
     await page.keyboard.press("Tab");
