@@ -147,7 +147,18 @@ test("clicking the current section hash reasserts intent while its target is loa
   } finally { held.release(); }
 });
 
-test("rapid Back Forward across members discards an obsolete pending restoration", async ({ page }) => {
+for (const deferHeaderResize of [false, true]) test(`rapid Back Forward across members discards an obsolete pending restoration (deferred header observer: ${deferHeaderResize})`, async ({ page }) => {
+  if (deferHeaderResize) await page.addInitScript(() => {
+    const NativeResizeObserver = window.ResizeObserver;
+    window.ResizeObserver = class extends NativeResizeObserver {
+      constructor(callback) {
+        super((entries, observer) => {
+          const delivered = entries.filter(entry => !window.deferHeaderResize || !entry.target.matches("main > header"));
+          if (delivered.length) callback(delivered, observer);
+        });
+      }
+    };
+  });
   await page.route("**/legislators/search?*", route => route.fulfill({ json: { results: [budd.profile] } }));
   await page.goto(`${selected}#representative-name`);
   await expectCoverage(page);
@@ -166,6 +177,9 @@ test("rapid Back Forward across members discards an obsolete pending restoration
     await expect(page.locator("#representative-name")).toHaveText("Ted Budd");
     held.release();
     await expectUnoccluded(page, "#representative-name");
+    // The smaller no-issue header must not lend its stale offset to Foushee.
+    // Delaying observer delivery models its legal ordering after animation frames.
+    if (deferHeaderResize) await page.evaluate(() => { window.deferHeaderResize = true; });
     await page.goBack();
     await expectCoverage(page);
     await expect(page.locator("#representative-name")).toHaveText("Valerie P. Foushee");
