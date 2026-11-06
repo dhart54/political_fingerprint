@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 import RepresentativeExperience from "../components/RepresentativeExperience";
@@ -252,10 +252,12 @@ function ReviewProfilePicker({ profiles, onSelect }) {
 
 function SiteHeader({ representativeName, selectedIssue, voteRecordHref = "#vote-record" }) {
   const header = useRef(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const element = header.current;
     const journey = element.parentElement;
-    // The navigation wraps on narrow screens and at increased text sizes.
+    // Refresh before history restoration can use a previous member's header
+    // height. ResizeObserver delivery can follow the restoration animation frame.
+    // The navigation also wraps on narrow screens and at increased text sizes.
     // Use its actual CSS height for both native hashes and scrollIntoView.
     const updateOffset = () => journey.style.setProperty("--journey-header-height", `${element.offsetHeight}px`);
     updateOffset();
@@ -265,7 +267,7 @@ function SiteHeader({ representativeName, selectedIssue, voteRecordHref = "#vote
       observer.disconnect();
       journey.style.removeProperty("--journey-header-height");
     };
-  }, []);
+  }, [representativeName, selectedIssue]);
   const showSelectedIssueNavigation = Boolean(representativeName && selectedIssue);
   return (
     <header ref={header} className="sticky top-0 z-30 border-b border-stone-200/90 bg-[#fbf8f1]/95 backdrop-blur">
