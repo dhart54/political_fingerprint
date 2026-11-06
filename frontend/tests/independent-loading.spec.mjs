@@ -445,3 +445,123 @@ test("late presentation sizing yields after the reader chooses another control",
     await expect(next).toBeFocused();
   } finally { analysis.release(); }
 });
+
+for (const failure of ["503", "network", "identity"]) test(`retry issue summaries recovers ${failure} without reloading receipts`, async ({ page }) => {
+  const calls = await installSnapshot(page);
+  let attempts = 0;
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  await page.route("**/editorial-presentations?scope=119", async route => {
+    attempts += 1;
+    if (attempts === 1) {
+      if (failure === "network") return route.abort("failed");
+      if (failure === "503") return route.fulfill({ status: 503, body: "unavailable" });
+      const body = structuredClone(snapshot[`${foushee.id}:119:editorial`].body);
+      body.member_bioguide_id = "M001184";
+      return route.fulfill({ json: body });
+    }
+    await gate;
+    return route.fallback();
+  });
+  try {
+    await page.goto(selected);
+    await expect(page.locator("#vote-record")).toContainText("25 recorded actions");
+    const before = calls.filter(call => call.resource !== "editorial").length;
+    const retry = page.getByRole("button", { name: "Retry issue summaries", exact: true });
+    await retry.focus();
+    await page.keyboard.press("Enter");
+    await expect(retry).toHaveAttribute("aria-disabled", "true");
+    await page.keyboard.press("Enter");
+    expect(attempts).toBe(2);
+    await expect(page.locator("#vote-record")).toContainText("25 recorded actions");
+    release();
+    await expect(page.getByTestId("record-card")).toBeVisible();
+    await expect(page.locator("#issue-summary")).toContainText("17 recorded actions in scope");
+    await expect(page.getByText("Issue summaries loaded.", { exact: true })).toBeFocused();
+    expect(calls.filter(call => call.resource !== "editorial").length).toBe(before);
+    await expect(page).toHaveURL(new RegExp("issue=EDUCATION_WORKFORCE&scope=119$"));
+  } finally { release(); }
+});
+
+test("retry issue summaries respects a reader moving to another control", async ({ page }) => {
+  await installSnapshot(page);
+  let attempts = 0;
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  await page.route("**/editorial-presentations?scope=119", async route => {
+    if (++attempts === 1) return route.fulfill({ status: 503, body: "unavailable" });
+    await gate;
+    return route.fallback();
+  });
+  try {
+    await page.goto(selected);
+    const retry = page.getByRole("button", { name: "Retry issue summaries", exact: true });
+    await retry.click();
+    const next = page.getByRole("button", { name: "119th Congress", exact: true });
+    await next.focus();
+    release();
+    await expect(page.getByTestId("record-card")).toBeVisible();
+    await expect(next).toBeFocused();
+  } finally { release(); }
+});
+
+for (const navigation of ["scope", "member"]) test(`late issue-summary retry cannot replace a new ${navigation}`, async ({ page }) => {
+  await installSnapshot(page);
+  let attempts = 0;
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  await page.route(`**/legislators/${foushee.id}/editorial-presentations?scope=119`, async route => {
+    if (++attempts === 1) return route.fulfill({ status: 503, body: "unavailable" });
+    await gate;
+    return route.fallback();
+  });
+  try {
+    await page.goto(selected);
+    await page.getByRole("button", { name: "Retry issue summaries", exact: true }).click();
+    await expect.poll(() => attempts).toBe(2);
+    if (navigation === "scope") {
+      await page.getByRole("button", { name: "118th Congress", exact: true }).click();
+      await expect(page).toHaveURL(/scope=118/);
+    } else {
+      await page.getByRole("button", { name: "Switch representative", exact: true }).click();
+      await page.getByLabel("Search by name", { exact: true }).fill("Thomas Massie");
+      await page.getByRole("button", { name: "Search names", exact: true }).click();
+      await page.getByRole("button", { name: /^Select Thomas Massie,/ }).click();
+      await expect(page.locator("#representative-name")).toHaveText("Thomas Massie");
+    }
+    const settled = page.waitForResponse(response => response.url().includes(`/${foushee.id}/editorial-presentations?scope=119`));
+    release();
+    await settled;
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    await expect(page.getByText("Issue summaries loaded.", { exact: true })).toHaveCount(0);
+    if (navigation === "scope") await expect(page).toHaveURL(/scope=118/);
+    else await expect(page.locator("#representative-name")).toHaveText("Thomas Massie");
+  } finally { release(); }
+});
+
+for (const retryFailure of ["503", "identity"]) test(`failed issue-summary retry stays recoverable after ${retryFailure}`, async ({ page }) => {
+  await installSnapshot(page);
+  let attempts = 0;
+  await page.route("**/editorial-presentations?scope=119", async route => {
+    attempts += 1;
+    if (attempts === 1 || (attempts === 2 && retryFailure === "503")) return route.fulfill({ status: 503, body: "unavailable" });
+    if (attempts === 2) {
+      const body = structuredClone(snapshot[`${foushee.id}:119:editorial`].body);
+      body.scope = "118";
+      return route.fulfill({ json: body });
+    }
+    return route.fallback();
+  });
+  await page.goto(selected);
+  const retry = page.getByRole("button", { name: "Retry issue summaries", exact: true });
+  await retry.focus();
+  await page.keyboard.press("Enter");
+  await expect.poll(() => attempts).toBe(2);
+  await expect(retry).toHaveAttribute("aria-disabled", "false");
+  await expect(retry).toBeFocused();
+  await expect(page.getByTestId("reviewed-analysis")).toHaveCount(0);
+  await expect(page.locator("#vote-record")).toContainText("25 recorded actions");
+  await page.keyboard.press("Enter");
+  await expect(page.getByTestId("reviewed-analysis")).toBeVisible();
+  expect(attempts).toBe(3);
+});
