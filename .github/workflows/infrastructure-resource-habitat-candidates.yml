@@ -1,0 +1,45 @@
+name: Infrastructure resource and habitat candidates
+
+on:
+  pull_request:
+    paths:
+      - 'docs/review_packets/infrastructure_batch159_resource_habitat/**'
+      - 'scripts/validate_infrastructure_resource_habitat_candidates159.py'
+      - 'backend/tests/test_infrastructure_resource_habitat_candidates159.py'
+      - '.github/workflows/infrastructure-resource-habitat-candidates.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  held-resource-habitat-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install schema dependency
+        run: python -m pip install jsonschema
+      - name: Authenticate immutable prior identities without stacking or merit replay
+        run: |
+          git fetch --no-tags --depth=1 origin c6e6df3537ce464abcde22b13401cc7ae878aaf1 f684d89987498efb335db9c14fdf3da848734de1 328aaa56266ffd643a1eb74ed1ebbab95d19b428 b829ae75b37eff31fd30f44d669e05e434362091
+          python - <<'PY'
+          import json,subprocess
+          from scripts.validate_infrastructure_resource_habitat_candidates159 import P,read,validate_prior_branch
+          pins=read(P/'preparation_preflight.json')['prior_non_main_identity_pins']
+          total=0
+          for i,pin in enumerate(pins):
+              a=json.loads(subprocess.check_output(['git','show',pin['commit']+':'+pin['authoring']['path']]))
+              c=json.loads(subprocess.check_output(['git','show',pin['commit']+':'+pin['core']['path']]))
+              total+=validate_prior_branch(i,a,c)
+          assert total==20
+          print('Verified twenty immutable prior155/156/157/158 identities; no duplication, stacking or merit replay')
+          PY
+      - name: Verify exact resource choices, source extents and held replay
+        run: |
+          git rev-parse HEAD
+          python scripts/validate_infrastructure_resource_habitat_candidates159.py
+          python -m unittest backend.tests.test_infrastructure_resource_habitat_candidates159
