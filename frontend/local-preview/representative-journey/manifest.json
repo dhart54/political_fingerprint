@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "scope": "Immutable local candidate snapshot; not public runtime or editorial acceptance",
+  "artifact": {
+    "file": "preview.html",
+    "sha256": "afb47ec78a48ec6b8a9c1aa9ac6fed7e7130a335211cdf512423965321cb1de3",
+    "bytes": 360322
+  },
+  "downloads": {
+    "four-choice-data.json": "3d31914ad8b3c0f2bc48f3a8f23b052e0721338d7f9f7af27a5c0da2b0a4a69c",
+    "four-choice-sources.json": "f93285480a9e58ee4edb483a596f288883eedcd546b24ab83c42b4c318fffe69",
+    "four-choice-provenance.json": "385f7b74c0c3c53012b9f8707c3b48ee81d28d526cc792bf091e000cc5eaaf60"
+  },
+  "cases": [
+    {
+      "slug": "hr859",
+      "action": {
+        "action_core_sha256": "1532e73b379e4bb10c71406890b2d42b35367fead03631e3f10a3880459a7137",
+        "action_date": "2025-04-29",
+        "action_id": "house:119:1:109",
+        "chamber_outcome": "Passed",
+        "exact_question": "On Motion to Suspend the Rules and Pass",
+        "legislative_stage": "suspension_and_passage",
+        "roll": 109
+      },
+      "exact_version": "H.R.859 EH; April 29, 2025 suspension/pass roll 109",
+      "members": [
+        {
+          "member_id": "F000477",
+          "name": "Valerie Foushee",
+          "raw_label": "Yea",
+          "status": "Yea"
+        },
+        {
+          "member_id": "M001184",
+          "name": "Thomas Massie",
+          "raw_label": "Nay",
+          "status": "Nay"
+        }
+      ]
+    },
+    {
+      "slug": "hr1329",
+      "action": {
+        "action_core_sha256": "ab0f2c17e59f13165a7cd70376f1110c7fc59f22c133e49a6251e1a3d1e95a06",
+        "action_date": "2026-05-21",
+        "action_id": "house:119:2:188",
+        "chamber_outcome": "Failed",
+        "exact_question": "On Passage",
+        "legislative_stage": "final_passage",
+        "roll": 188
+      },
+      "exact_version": "H.R.1329 May 21 modified floor substitute under H.Res.1300 / Part B 119-653; failed passage 188",
+      "members": [
+        {
+          "member_id": "F000477",
+          "name": "Valerie Foushee",
+          "raw_label": "Nay",
+          "status": "Nay"
+        },
+        {
+          "member_id": "M001184",
+          "name": "Thomas Massie",
+          "raw_label": "Not Voting",
+          "status": "Not Voting"
+        }
+      ]
+    },
+    {
+      "slug": "hunt-a7",
+      "action": {
+        "action_core_sha256": "e32ecf69fe175d7502bc43e3a82f3a31ff68cc787f6b7339da96e24f10ecaf98",
+        "action_date": "2026-07-21",
+        "action_id": "house:119:2:260",
+        "chamber_outcome": "Agreed to",
+        "exact_question": "On Agreeing to the Amendment",
+        "legislative_stage": "amendment",
+        "roll": 260
+      },
+      "exact_version": "Hunt Part A amendment 7 to H.R.8800, own offered text and agreed roll 260",
+      "members": [
+        {
+          "member_id": "F000477",
+          "name": "Valerie Foushee",
+          "raw_label": "No",
+          "status": "Nay"
+        },
+        {
+          "member_id": "M001184",
+          "name": "Thomas Massie",
+          "raw_label": "No",
+          "status": "Nay"
+        }
+      ]
+    },
+    {
+      "slug": "hr164",
+      "action": {
+        "action_core_sha256": "41c8d2d8c86f508c892c4d5a952abd1d0d8d8fe10ae0044a86d5cfbb4e759b79",
+        "action_date": "2025-01-15",
+        "action_id": "house:119:1:13",
+        "chamber_outcome": "Passed",
+        "exact_question": "On Motion to Suspend the Rules and Pass",
+        "legislative_stage": "suspension_and_passage",
+        "roll": 13
+      },
+      "exact_version": "H.R.164 EH; own exact action house:119:1:13",
+      "members": [
+        {
+          "member_id": "F000477",
+          "name": "Valerie Foushee",
+          "raw_label": "Yea",
+          "status": "Yea"
+        },
+        {
+          "member_id": "M001184",
+          "name": "Thomas Massie",
+          "raw_label": "Nay",
+          "status": "Nay"
+        }
+      ]
+    }
+  ],
+  "browser_review": {
+    "file": "browser-review.json",
+    "sha256": "cf438fdd483538c4c7f7ae00ac255eb6c82cdf49551d4f0e7b3420104d57bc65",
+    "harness_sha256": "fcb102986c009d8f51c677198bc1af06d6ac77489e0442fa4f56e221216d9e75",
+    "date": "2026-11-06",
+    "kind": "Existing independent PC Chromium review; reused for identical bytes",
+    "covered_interactions": [
+      "representative selection",
+      "all four choices",
+      "evidence navigation",
+      "back/forward",
+      "disclosure restoration"
+    ],
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "journeys": 24
+  },
+  "provenance": {
+    "source_navigation_freeze_sha256": "bb5b896dc2089f57aede23c9adc2ecfce4122513897272bea8388dde11481cca",
+    "source_navigation_change_map_sha256": "98d8c4b7841def4233cb0dba90a7fda4da77fae827c0f43ca570eda0334abb73",
+    "static_checks_sha256": "e415e6c0a76a05c16916083084dd1ecba10a9181d3e1294085011c307bbfb8f4",
+    "canonical_or_editorial_acceptance": false
+  },
+  "gates": {
+    "independent_package_review": "pending",
+    "public_integration": "requires separately authorized IR-native presentation milestone and editorial review",
+    "artifact_delivery": "separate unresolved Library scope restriction"
+  }
+}

@@ -514,7 +514,7 @@ jobs:
           tests/test_api_alignment.py
 
   publication-activation-postgres:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     services:
       postgres:
         image: postgres:16
@@ -528,6 +528,7 @@ jobs:
           --health-timeout 5s
           --health-retries 10
     env:
+      POSTGRES_BIN: /usr/lib/postgresql/16/bin
       DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_activation
       EDITORIAL_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_activation
       M11N_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m11n_activation
@@ -544,6 +545,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      - name: Verify matching PostgreSQL 16 clients and test server
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Keep host backup/restore tools aligned with the disposable service.
+          for tool in pg_dump pg_restore psql createdb; do
+            test -x "$POSTGRES_BIN/$tool"
+            "$POSTGRES_BIN/$tool" --version | grep -E 'PostgreSQL\) 16\.'
+          done
+          echo "$POSTGRES_BIN" >> "$GITHUB_PATH"
+          server_version=$("$POSTGRES_BIN/psql" -h 127.0.0.1 -U postgres -d postgres -Atc 'SHOW server_version_num')
+          echo "Disposable PostgreSQL server_version_num=$server_version"
+          test "$server_version" -ge 160000
+          test "$server_version" -lt 170000
 
       - name: Install backend dependencies
         run: |

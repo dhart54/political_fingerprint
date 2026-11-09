@@ -89,6 +89,69 @@ class CIWorkflowPreservationTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, 'Prior CI job'):
             assert_prior_ci_preserved(accepted, changed, accepted_baseline=accepted)
 
+    def _restore_repair_workflows(self):
+        root = Path(__file__).resolve().parents[2]
+        before = subprocess.check_output([
+            'git', 'show', '65575bf9a045f23c99f07a0750e6560fbd937655:.github/workflows/backend-tests.yml',
+        ], cwd=root).decode().replace('\r\n', '\n')
+        # Self-contained expected repair; do not depend on a PR-only commit
+        # remaining reachable after squash/rebase merge and branch deletion.
+        match = re.search(r'(?ms)^  publication-activation-postgres:\n.*?(?=^  [a-zA-Z0-9_-]+:\n|\Z)', before)
+        job = match.group().replace('runs-on: ubuntu-latest', 'runs-on: ubuntu-24.04', 1)
+        job = job.replace('    env:\n      DATABASE_URL:',
+                          '    env:\n      POSTGRES_BIN: /usr/lib/postgresql/16/bin\n      DATABASE_URL:', 1)
+        preflight = (
+            '      - name: Verify matching PostgreSQL 16 clients and test server\n'
+            '        shell: bash\n'
+            '        run: |\n'
+            '          set -euo pipefail\n'
+            '          # Keep host backup/restore tools aligned with the disposable service.\n'
+            '          for tool in pg_dump pg_restore psql createdb; do\n'
+            '            test -x "$POSTGRES_BIN/$tool"\n'
+            '            "$POSTGRES_BIN/$tool" --version | grep -E \'PostgreSQL\\) 16\\.\'\n'
+            '          done\n'
+            '          echo "$POSTGRES_BIN" >> "$GITHUB_PATH"\n'
+            '          server_version=$("$POSTGRES_BIN/psql" -h 127.0.0.1 -U postgres -d postgres -Atc \'SHOW server_version_num\')\n'
+            '          echo "Disposable PostgreSQL server_version_num=$server_version"\n'
+            '          test "$server_version" -ge 160000\n'
+            '          test "$server_version" -lt 170000\n'
+            '\n'
+        )
+        job = job.replace('      - name: Install backend dependencies\n',
+                          preflight + '      - name: Install backend dependencies\n', 1)
+        return before, before[:match.start()] + job + before[match.end():]
+
+    def test_exact_postgres16_repair_preserves_historical_jobs(self):
+        before, after = self._restore_repair_workflows()
+        assert_prior_ci_preserved(before, after)
+        assert_prior_ci_preserved(before.replace('\n', '\r\n'), after)
+        assert_prior_ci_preserved(after, after)
+        with self.assertRaisesRegex(AssertionError, 'Prior CI job'):
+            assert_prior_ci_preserved(after, before)
+
+    def test_postgres16_repair_rejects_every_job_line_mutation(self):
+        before, after = self._restore_repair_workflows()
+        match = re.search(r'(?ms)^  publication-activation-postgres:\n.*?(?=^  [a-zA-Z0-9_-]+:\n|\Z)', after)
+        lines = match.group().splitlines(keepends=True)
+        for index, line in enumerate(lines):
+            if not line.strip():
+                continue
+            changed_lines = lines.copy()
+            changed_lines[index] = line.rstrip('\n') + ' # unreviewed change\n'
+            changed = after[:match.start()] + ''.join(changed_lines) + after[match.end():]
+            with self.subTest(line=index), self.assertRaises(AssertionError):
+                assert_prior_ci_preserved(before, changed)
+
+    def test_postgres16_repair_requires_exact_old_job_and_preserves_other_jobs(self):
+        before, after = self._restore_repair_workflows()
+        for original, changed in [
+            (before.replace('image: postgres:16', 'image: postgres:15'), after),
+            (before, after.replace('contents: read', 'contents: write')),
+            (before, after.replace('  m14f-exact-head:', '  unreviewed-job:')),
+        ]:
+            with self.subTest(original=original == before), self.assertRaises(AssertionError):
+                assert_prior_ci_preserved(original, changed)
+
     def test_actual_reviewed_workflow_rejects_appended_job_then_top_level_settings(self):
         before = subprocess.check_output(['git', 'show', 'a988dd87b307ad9575201130b87105e3717013c1:.github/workflows/backend-tests.yml'],
                                          cwd=Path(__file__).resolve().parents[2]).decode()

@@ -47,23 +47,31 @@ export default function RepresentativeExperience({
     findingArrivalIntent.current = { key: findingArrivalKey, moved: false };
   }
   const analysisViewport = useRef(null);
+  const retryAnalysis = useRef(null);
+  const analysisRetryButton = useRef(null);
+  const analysisStatus = useRef(null);
+  const restoreAnalysisRetryFocus = useRef(false);
   const [state, setState] = useState({
     status: "loading",
     positions: null,
     presentations: null,
     error: null,
     presentationStatus: "loading",
+    presentationRetried: false,
     card: { status: "loading", entries: [] },
   });
 
   useEffect(() => {
     let active = true;
+    let presentationPending = false;
+    restoreAnalysisRetryFocus.current = false;
     setState({
       status: "loading",
       positions: null,
       presentations: null,
       error: null,
       presentationStatus: "loading",
+      presentationRetried: false,
       card: { status: "loading", entries: [] },
     });
     async function loadPositions() {
@@ -91,7 +99,18 @@ export default function RepresentativeExperience({
         }
       }
     }
-    async function loadPresentations() {
+    async function loadPresentations(retry = false) {
+      if (presentationPending) return;
+      presentationPending = true;
+      if (retry) setState(current => ({ ...current, presentationStatus: "loading", presentationRetried: true, presentations: null, card: { status: "loading", entries: [] } }));
+      const captureArrival = () => {
+        restoreAnalysisRetryFocus.current = retry && document.activeElement === analysisRetryButton.current;
+        // The successful retry removes its button; preserve the adjacent status
+        // instead, so both keyboard focus and the reader's place survive.
+        analysisViewport.current = restoreAnalysisRetryFocus.current && analysisStatus.current
+          ? { element: analysisStatus.current, top: analysisStatus.current.getBoundingClientRect().top, href: window.location.href }
+          : captureAnalysisViewport(initialLandingHandled.current && !movedBeforeInitialLanding.current && !window.location.hash);
+      };
       try {
         const presentations = fixtureData
           ? fixtureData.presentations
@@ -99,7 +118,7 @@ export default function RepresentativeExperience({
         const presentationStatus = issuePresentationStatus(presentations, { legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id }, scope);
         const card = recordCardCandidate ? await projectRecordCard({ candidate: recordCardCandidate, payload: presentations, legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id, scope, requestStatus: presentationStatus }) : null;
         if (active) {
-          analysisViewport.current = captureAnalysisViewport(initialLandingHandled.current && !movedBeforeInitialLanding.current && !window.location.hash);
+          captureArrival();
           setState((current) => ({
             ...current,
             presentations: presentationStatus === "ready" ? presentations : null,
@@ -109,7 +128,7 @@ export default function RepresentativeExperience({
         }
       } catch {
         if (active) {
-          analysisViewport.current = captureAnalysisViewport(initialLandingHandled.current && !movedBeforeInitialLanding.current && !window.location.hash);
+          captureArrival();
           setState((current) => ({
             ...current,
             presentations: null,
@@ -117,16 +136,26 @@ export default function RepresentativeExperience({
             card: { status: "error", entries: [] },
           }));
         }
+      } finally {
+        presentationPending = false;
       }
     }
+    retryAnalysis.current = () => loadPresentations(true);
     // Each validated response can settle without waiting for the other endpoint.
     // The shared lifetime still rejects both late responses after navigation.
     loadPositions();
     loadPresentations();
     return () => {
       active = false;
+      retryAnalysis.current = null;
     };
   }, [dataClient.fetchPositions, dataClient.fetchEditorialPresentations, fixtureData, legislator.bioguide_id, legislator.id, scope, recordCardCandidate]);
+
+  useLayoutEffect(() => {
+    if (state.presentationStatus !== "ready" || !restoreAnalysisRetryFocus.current) return;
+    restoreAnalysisRetryFocus.current = false;
+    analysisStatus.current?.focus({ preventScroll: true });
+  }, [state.presentationStatus]);
 
   useLayoutEffect(() => {
     const anchor = analysisViewport.current;
@@ -154,7 +183,8 @@ export default function RepresentativeExperience({
     observer = new ResizeObserver(preserve);
     for (const id of ["record-at-a-glance", "issues", "issue-detail"]) {
       const element = document.getElementById(id);
-      if (element) observer.observe(element);
+      // Padding and borders move the reader too, even when content size is unchanged.
+      if (element) observer.observe(element, { box: "border-box" });
     }
     events.forEach(event => window.addEventListener(event, cancel, { passive: true }));
     return cancel;
@@ -354,7 +384,12 @@ export default function RepresentativeExperience({
         ) : null}
         {state.status === "ready" ? (
           <>
-          {state.presentationStatus !== "ready" ? <p className="mt-5 text-sm leading-6 text-stone-700" role="status">{state.presentationStatus === "loading" ? "Issue summaries are still loading. Recorded vote evidence is available." : "Issue summaries could not be verified. Recorded vote evidence remains available."}</p> : null}
+          {state.presentationStatus !== "ready" || state.presentationRetried ? <p className="mt-5 text-sm leading-6 text-stone-700" role="status" ref={analysisStatus} tabIndex={-1}>{state.presentationStatus === "ready" ? "Issue summaries loaded." : state.presentationStatus === "loading" ? "Issue summaries are still loading. Recorded vote evidence is available." : "Issue summaries could not be verified. Recorded vote evidence remains available."}</p> : null}
+          {state.presentationStatus !== "ready" && (state.presentationStatus !== "loading" || state.presentationRetried) ? (
+            <button className="secondary-button mt-3" type="button" ref={analysisRetryButton} aria-disabled={state.presentationStatus === "loading"} onClick={() => { if (state.presentationStatus !== "loading") retryAnalysis.current?.(); }}>
+              Retry issue summaries
+            </button>
+          ) : null}
           <IssueOverviewGrid
             compact={state.card?.status === "ready"}
             presentationStatus={state.presentationStatus}
