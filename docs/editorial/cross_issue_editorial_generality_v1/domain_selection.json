@@ -1,0 +1,480 @@
+{
+  "schema_version": "cross_issue_domain_selection_v1",
+  "milestone": "cross_issue_editorial_generality_v1",
+  "starting_commit": "88d6f3446f54b07735e084cbc958c1614b190fab",
+  "congress": 119,
+  "chamber": "house",
+  "excluded_domains": [
+    "JUSTICE_PUBLIC_SAFETY",
+    "ECONOMY_TAXES"
+  ],
+  "source_inventory": [
+    "docs/benchmarks/legislative_interpretation_quality_v1.json",
+    "docs/interpretation_batches/batch_002_valerie_national_security_packets.json",
+    "docs/interpretation_batches/batch_003_valerie_national_security_remaining_packets.json",
+    "docs/interpretation_batches/batch_006_valerie_economy_gold_packets_so_what.json",
+    "docs/interpretation_batches/batch_008_valerie_justice_packets_so_what.json",
+    "docs/interpretation_batches/batch_009_valerie_visible_domains_packets_so_what.json"
+  ],
+  "candidate_domains": [
+    {
+      "domain_id": "EDUCATION_WORKFORCE",
+      "display_name": "Education & Workforce",
+      "eligible": false,
+      "exclusion_reasons": [
+        "fewer_than_five_suitable_substantive_house_actions",
+        "no_multi_action_episode"
+      ],
+      "score_components": {
+        "official_source_completeness": 2,
+        "member_action_source_availability": 2,
+        "five_or_six_action_feasibility": 0,
+        "three_to_five_episode_feasibility": 2,
+        "multi_action_episode": 0,
+        "action_type_diversity": 0,
+        "structural_novelty": 1,
+        "trait_contrast_evidence": 0,
+        "bounded_research_cost": 1,
+        "complete_vector_feasibility": 0
+      },
+      "score_total": 8,
+      "native_substantive_house_action_count": 3,
+      "native_independent_episode_count": 3,
+      "action_types": [
+        "final_passage"
+      ],
+      "has_multi_action_episode": false,
+      "substantive_actions": [
+        {
+          "roll": 312,
+          "parent_measure": "hr1005",
+          "action_type": "final_passage"
+        },
+        {
+          "roll": 314,
+          "parent_measure": "hr1049",
+          "action_type": "final_passage"
+        },
+        {
+          "roll": 332,
+          "parent_measure": "hr2550",
+          "action_type": "final_passage"
+        }
+      ],
+      "episodes": [
+        "hr1005-class-act",
+        "hr1049-trace-act",
+        "hr2550-protect-americas-workforce"
+      ],
+      "excluded_context": [
+        {
+          "action_id": 276,
+          "reason": "motion_to_table_member_discipline_not_a_domain_policy_position"
+        },
+        {
+          "action_id": 308,
+          "reason": "rule_or_procedural_control"
+        },
+        {
+          "action_id": 309,
+          "reason": "rule_or_procedural_control"
+        },
+        {
+          "action_id": "senate-119-1-358",
+          "reason": "senate_action_out_of_scope"
+        }
+      ],
+      "source_note": "The benchmark contains only two House substantive Education rows; the stored packet inventory adds roll 332, still leaving three actions."
+    },
+    {
+      "domain_id": "ENVIRONMENT_ENERGY",
+      "display_name": "Environment & Energy",
+      "eligible": false,
+      "exclusion_reasons": [
+        "fewer_than_five_suitable_substantive_house_actions",
+        "fewer_than_three_independent_policy_episodes",
+        "no_multi_action_episode"
+      ],
+      "score_components": {
+        "official_source_completeness": 2,
+        "member_action_source_availability": 2,
+        "five_or_six_action_feasibility": 0,
+        "three_to_five_episode_feasibility": 0,
+        "multi_action_episode": 0,
+        "action_type_diversity": 0,
+        "structural_novelty": 1,
+        "trait_contrast_evidence": 0,
+        "bounded_research_cost": 1,
+        "complete_vector_feasibility": 0
+      },
+      "score_total": 6,
+      "native_substantive_house_action_count": 1,
+      "native_independent_episode_count": 1,
+      "action_types": [
+        "final_passage"
+      ],
+      "has_multi_action_episode": false,
+      "substantive_actions": [
+        {
+          "roll": 334,
+          "parent_measure": "hr3668",
+          "action_type": "final_passage"
+        }
+      ],
+      "episodes": [
+        "hr3668-pipeline-reviews"
+      ],
+      "excluded_context": [
+        {
+          "action_id": 46,
+          "reason": "rule_or_procedural_control"
+        },
+        {
+          "action_id": 47,
+          "reason": "rule_or_procedural_control"
+        }
+      ],
+      "source_note": "Only one stored substantive House action is native to this domain."
+    },
+    {
+      "domain_id": "HEALTH_SOCIAL",
+      "display_name": "Health & Social Policy",
+      "eligible": false,
+      "exclusion_reasons": [
+        "fewer_than_five_suitable_substantive_house_actions",
+        "fewer_than_three_independent_policy_episodes",
+        "no_multi_action_episode",
+        "benchmark_stratum_rows_cannot_replace_native_domain_identity"
+      ],
+      "score_components": {
+        "official_source_completeness": 2,
+        "member_action_source_availability": 2,
+        "five_or_six_action_feasibility": 0,
+        "three_to_five_episode_feasibility": 0,
+        "multi_action_episode": 0,
+        "action_type_diversity": 0,
+        "structural_novelty": 1,
+        "trait_contrast_evidence": 0,
+        "bounded_research_cost": 1,
+        "complete_vector_feasibility": 0
+      },
+      "score_total": 6,
+      "native_substantive_house_action_count": 2,
+      "native_independent_episode_count": 2,
+      "action_types": [
+        "final_passage"
+      ],
+      "has_multi_action_episode": false,
+      "substantive_actions": [
+        {
+          "roll": 349,
+          "parent_measure": "hr6703",
+          "action_type": "final_passage"
+        },
+        {
+          "roll": 362,
+          "parent_measure": "hr498",
+          "action_type": "final_passage"
+        }
+      ],
+      "episodes": [
+        "hr6703-health-care-premiums",
+        "hr498-medicaid-payment-restriction"
+      ],
+      "excluded_context": [
+        {
+          "action_id": 343,
+          "reason": "rule_or_procedural_control"
+        },
+        {
+          "action_id": 344,
+          "reason": "rule_or_procedural_control"
+        }
+      ],
+      "source_note": "Six benchmark rows carry a Health stratum label, but five belong to other stored primary domains and cannot be repurposed into a new Health ontology.",
+      "benchmark_cross_domain_rows": [
+        {
+          "roll": 131,
+          "stored_primary_domain": "JUSTICE_PUBLIC_SAFETY",
+          "parent_measure": "hr2240"
+        },
+        {
+          "roll": 182,
+          "stored_primary_domain": "ECONOMY_TAXES",
+          "parent_measure": "hr3944"
+        },
+        {
+          "roll": 262,
+          "stored_primary_domain": "NATIONAL_SECURITY_FOREIGN",
+          "parent_measure": "hr3838"
+        },
+        {
+          "roll": 281,
+          "stored_primary_domain": "ECONOMY_TAXES",
+          "parent_measure": "hr5371"
+        },
+        {
+          "roll": 285,
+          "stored_primary_domain": "ECONOMY_TAXES",
+          "parent_measure": "hr5371"
+        }
+      ]
+    },
+    {
+      "domain_id": "IMMIGRATION_BORDER",
+      "display_name": "Immigration & Border",
+      "eligible": false,
+      "exclusion_reasons": [
+        "fewer_than_five_suitable_substantive_house_actions",
+        "fewer_than_three_independent_policy_episodes",
+        "no_multi_action_episode"
+      ],
+      "score_components": {
+        "official_source_completeness": 2,
+        "member_action_source_availability": 2,
+        "five_or_six_action_feasibility": 0,
+        "three_to_five_episode_feasibility": 0,
+        "multi_action_episode": 0,
+        "action_type_diversity": 0,
+        "structural_novelty": 1,
+        "trait_contrast_evidence": 0,
+        "bounded_research_cost": 1,
+        "complete_vector_feasibility": 0
+      },
+      "score_total": 6,
+      "native_substantive_house_action_count": 1,
+      "native_independent_episode_count": 1,
+      "action_types": [
+        "final_passage"
+      ],
+      "has_multi_action_episode": false,
+      "substantive_actions": [
+        {
+          "roll": 171,
+          "parent_measure": "hr2056",
+          "action_type": "final_passage"
+        }
+      ],
+      "episodes": [
+        "hr2056-dc-immigration-compliance"
+      ],
+      "excluded_context": [],
+      "source_note": "Only one stored substantive House action is native to this domain."
+    },
+    {
+      "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+      "display_name": "Infrastructure, Technology & Transportation",
+      "eligible": false,
+      "exclusion_reasons": [
+        "fewer_than_five_suitable_substantive_house_actions",
+        "fewer_than_three_independent_policy_episodes",
+        "no_multi_action_episode",
+        "house_inventory_is_synthetic_or_procedural_only"
+      ],
+      "score_components": {
+        "official_source_completeness": 0,
+        "member_action_source_availability": 0,
+        "five_or_six_action_feasibility": 0,
+        "three_to_five_episode_feasibility": 0,
+        "multi_action_episode": 0,
+        "action_type_diversity": 0,
+        "structural_novelty": 0,
+        "trait_contrast_evidence": 0,
+        "bounded_research_cost": 0,
+        "complete_vector_feasibility": 0
+      },
+      "score_total": 0,
+      "native_substantive_house_action_count": 0,
+      "native_independent_episode_count": 0,
+      "action_types": [],
+      "has_multi_action_episode": false,
+      "substantive_actions": [],
+      "episodes": [],
+      "excluded_context": [
+        {
+          "action_id": "senate-119-1-266",
+          "reason": "senate_procedural_control"
+        },
+        {
+          "action_id": "senate-119-1-267",
+          "reason": "senate_procedural_control"
+        },
+        {
+          "action_id": "senate-119-1-268",
+          "reason": "senate_procedural_control"
+        },
+        {
+          "action_id": "senate-119-1-269",
+          "reason": "senate_procedural_control"
+        }
+      ],
+      "source_note": "The benchmark inventory is Senate-only and procedural-dominated for this domain."
+    },
+    {
+      "domain_id": "NATIONAL_SECURITY_FOREIGN",
+      "display_name": "National Security & Foreign Policy",
+      "eligible": false,
+      "exclusion_reasons": [
+        "fewer_than_three_independent_policy_episodes",
+        "five_or_six_action_subset_cannot_span_three_independent_episodes"
+      ],
+      "score_components": {
+        "official_source_completeness": 2,
+        "member_action_source_availability": 2,
+        "five_or_six_action_feasibility": 2,
+        "three_to_five_episode_feasibility": 0,
+        "multi_action_episode": 2,
+        "action_type_diversity": 2,
+        "structural_novelty": 2,
+        "trait_contrast_evidence": 0,
+        "bounded_research_cost": 1,
+        "complete_vector_feasibility": 0
+      },
+      "score_total": 13,
+      "native_substantive_house_action_count": 20,
+      "native_independent_episode_count": 2,
+      "action_types": [
+        "amendment",
+        "final_passage",
+        "motion_to_commit"
+      ],
+      "has_multi_action_episode": true,
+      "substantive_actions": [
+        {
+          "roll": 244,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 245,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 246,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 247,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 248,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 249,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 250,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 251,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 252,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 253,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 254,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 255,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 256,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 257,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 258,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 259,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 260,
+          "parent_measure": "hr3838",
+          "action_type": "amendment"
+        },
+        {
+          "roll": 262,
+          "parent_measure": "hr3838",
+          "action_type": "final_passage"
+        },
+        {
+          "roll": 319,
+          "parent_measure": "s1071",
+          "action_type": "motion_to_commit"
+        },
+        {
+          "roll": 320,
+          "parent_measure": "s1071",
+          "action_type": "final_passage"
+        }
+      ],
+      "episodes": [
+        "hr3838-ndaa-fy2026",
+        "s1071-cota-disinterment"
+      ],
+      "excluded_context": [
+        {
+          "action_id": 242,
+          "reason": "rule_or_procedural_control"
+        },
+        {
+          "action_id": 243,
+          "reason": "rule_or_procedural_control"
+        }
+      ],
+      "source_note": "The stored actions are numerous but collapse to two Congress-bounded parent-measure episodes; no five- or six-action subset can supply three independent episodes."
+    }
+  ],
+  "selected_domain": null,
+  "selection_state": "blocked_no_eligible_domain",
+  "stop_condition_triggered": true,
+  "selection_basis": {
+    "eligibility_precedes_score": true,
+    "score_order": "descending score_total",
+    "stable_tie_breaker": "canonical domain_id ascending"
+  },
+  "deterministic_selection_lock": {
+    "locked": true,
+    "sha256": "347613c853656edf8cd9218021bcff37fc6992127727edd3b6983ea1ca90655f"
+  },
+  "publication": {
+    "editorial_status": "human_approval_pending",
+    "benchmark_status": "not_promoted",
+    "productionEligible": false
+  },
+  "production_registry_entries": [],
+  "next_stage_authorized": false
+}
