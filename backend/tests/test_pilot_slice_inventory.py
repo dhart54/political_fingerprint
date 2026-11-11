@@ -81,10 +81,30 @@ class PilotSliceInventoryTests(unittest.TestCase):
         self.assertEqual(result["members"][0]["issues"][0]["positions_seen"], ["not_voting"])
         self.assertNotIn("support", json.dumps(result["members"][0]["issues"][0]))
 
-    def test_public_supporting_ids_take_precedence_over_private_lineage(self):
+    def test_semantic_lineage_is_not_treated_as_a_public_receipt_link(self):
         row = self.data[self.editorial_path]["presentations"][0]
-        row["syntheses"] = [{"action_ids": ["private"], "public_supporting_action_ids": []}]
+        row["syntheses"] = [{"semantic_lineage_action_ids": ["private"], "action_ids": [], "public_supporting_action_ids": []}]
         self.assertEqual(self.collect()["members"][0]["issues"][0]["linked_finding_actions"], 0)
+
+    def test_public_support_metadata_cannot_hide_rendered_action_links(self):
+        row = self.data[self.editorial_path]["presentations"][0]
+        row["syntheses"] = [{"action_ids": ["house:119:1:10"], "public_supporting_action_ids": []}]
+        result = self.collect()
+        self.assertEqual(result["status"], "incomplete")
+        self.assertEqual(result["members"][0]["issues"][0]["missing_linked_receipts"], ["house:119:1:10"])
+
+    def test_overview_missing_present_and_malformed_receipt_links(self):
+        row = self.data[self.editorial_path]["presentations"][0]
+        row["overview"] = {"action_ids": ["house:119:1:10"]}
+        result = self.collect()
+        self.assertEqual(result["status"], "incomplete")
+        self.assertEqual(result["members"][0]["issues"][0]["linked_finding_actions"], 1)
+        self.data[self.evidence_path]["evidence"] = [{"canonical_action_id": "house:119:1:10"}]
+        self.assertEqual(self.collect()["status"], "observed")
+        for overview in ([], {"action_ids": "house:119:1:10"}, {"public_supporting_action_ids": {}}):
+            with self.subTest(overview=overview):
+                row["overview"] = overview
+                self.assertEqual(self.collect()["status"], "incomplete")
 
     def test_count_mismatch_and_duplicate_ids_are_diagnostics_not_reinterpretation(self):
         self.data[self.evidence_path]["evidence"] = [{"canonical_action_id": "house:119:1:1"}] * 2

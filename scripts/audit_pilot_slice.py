@@ -65,16 +65,24 @@ def identity(payload: dict, member: str, scope: str | None = None) -> None:
 
 def findings(presentation: dict) -> set[str]:
     result = set()
+
+    def add(item, label):
+        require(isinstance(item, dict), f"Invalid {label} item")
+        # The frontend links action_ids directly. Explicit public-support IDs
+        # must resolve too; semantic_lineage_action_ids are not clickable links.
+        for field in ("action_ids", "public_supporting_action_ids"):
+            values = item.get(field, [])
+            require(isinstance(values, list) and all(isinstance(v, str) for v in values),
+                    f"Invalid {label} {field}")
+            result.update(values)
+
+    if presentation.get("overview") is not None:
+        add(presentation["overview"], "overview")
     for field in ("repeated_patterns", "policy_trajectories", "syntheses", "notable_choices"):
         rows = presentation.get(field, [])
         require(isinstance(rows, list), f"Invalid {field}")
         for row in rows:
-            require(isinstance(row, dict), f"Invalid {field} item")
-            # Public supporting IDs are the selector's explicit public boundary.
-            values = row.get("public_supporting_action_ids", row.get("action_ids", []))
-            require(isinstance(values, list) and all(isinstance(v, str) for v in values),
-                    f"Invalid {field} action IDs")
-            result.update(values)
+            add(row, field)
     return result
 
 
