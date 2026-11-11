@@ -591,3 +591,95 @@ test("a newer finding replaces unavailable receipt navigation", async ({ page })
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
   await expect(page.locator(".pattern-strip")).toBeVisible();
 });
+
+
+function revealRows(count) {
+  return Array.from({ length: count }, (_, index) => ({
+    ...available[0],
+    canonical_action_id: `house:119:1:${800 + index}`,
+    roll_call_id: `house:119:1:${800 + index}`,
+    rollcall_number: 800 + index,
+    bill_id: `hr${800 + index}-119`,
+    bill_title: `H.R. ${800 + index}`,
+    action_label: `Budget record ${800 + index}`,
+    vote_date: new Date(Date.UTC(2025, 0, index + 1)).toISOString().slice(0, 10),
+  }));
+}
+
+async function expectRevealedReceiptFocus(page, roll) {
+  const target = receipt(page, roll);
+  const toggle = target.locator(":scope > button");
+  await expect(toggle).toBeFocused();
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  await expect(toggle).toBeInViewport({ ratio: 1 });
+  expect(await target.evaluate(node => node.getBoundingClientRect().top
+    >= document.querySelector("header.sticky").getBoundingClientRect().bottom)).toBe(true);
+}
+
+for (const width of [1440, 390]) test(`show more votes keeps keyboard readers at newly revealed receipts at ${width}px`, async ({ page }, testInfo) => {
+  await page.setViewportSize({ width, height: 900 });
+  const rows = revealRows(25);
+  await installPassARoutes(page, { evidenceOverrides: { ECONOMY_TAXES: rows } });
+  const requests = [];
+  page.on("request", request => { if (request.url().startsWith("http://localhost:8000")) requests.push(request.url()); });
+  await page.goto(economyUrl);
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(12);
+  const url = page.url(), historyLength = await page.evaluate(() => history.length), initialRequests = [...requests];
+  const more = page.getByRole("button", { name: "Show more votes", exact: true });
+  await more.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(24);
+  await expectRevealedReceiptFocus(page, 812);
+  await page.screenshot({ path: testInfo.outputPath(`revealed-receipt-${width}.png`) });
+  await page.keyboard.press("Tab");
+  await expect(receipt(page, 811).locator(":scope > button")).toBeFocused();
+  await more.focus();
+  await page.keyboard.press("Space");
+  await expect(more).toHaveCount(0);
+  await expectRevealedReceiptFocus(page, 800);
+  await page.keyboard.press("Enter");
+  await expect(receipt(page, 800).locator(":scope > button")).toHaveAttribute("aria-expanded", "true");
+  expect(await receiptIds(page)).toEqual([...rows].reverse().map(row => row.canonical_action_id));
+  expect(page.url()).toBe(url);
+  expect(await page.evaluate(() => history.length)).toBe(historyLength);
+  expect(requests).toEqual(initialRequests);
+});
+
+test("show more votes focuses a new receipt rather than an already completed group", async ({ page }) => {
+  const rows = revealRows(28).map((row, index) => [27, 5].includes(index)
+    ? { ...row, bill_id: "hr999-119", bill_title: "H.R. 999" } : row);
+  await installPassARoutes(page, { evidenceOverrides: { ECONOMY_TAXES: rows } });
+  await page.goto(economyUrl);
+  // The older related vote is revealed with its newer sibling before the prefix grows.
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(13);
+  await expect(receipt(page, 805)).toBeVisible();
+  await filter(page).fill("Budget");
+  await receipt(page, 805).locator(":scope > button").click();
+  const existingDetails = await receipt(page, 805).locator("div.grid").innerHTML();
+  await page.getByRole("button", { name: "Show more votes", exact: true }).click();
+  await expectRevealedReceiptFocus(page, 815);
+  expect(await receipt(page, 805).locator("div.grid").innerHTML()).toBe(existingDetails);
+  await filter(page).fill("Budget unmatched");
+  await expect(filter(page)).toBeFocused();
+  await page.getByRole("button", { name: "Clear text filter", exact: true }).click();
+  await expect(filter(page)).toBeFocused();
+  await page.getByRole("button", { name: "Show more votes", exact: true }).click();
+  await expectRevealedReceiptFocus(page, 802);
+});
+
+
+test("show more votes does not reclaim focus from a newer control", async ({ page }) => {
+  await installPassARoutes(page, { evidenceOverrides: { ECONOMY_TAXES: revealRows(25) } });
+  await page.goto(economyUrl);
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(12);
+  await page.getByRole("button", { name: "Show more votes", exact: true }).evaluate(button => {
+    button.focus();
+    button.click();
+    document.getElementById("local-record-filter").focus();
+  });
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(24);
+  await expect(filter(page)).toBeFocused();
+  await filter(page).fill("roll 800");
+  await expect(filter(page)).toBeFocused();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(1);
+});

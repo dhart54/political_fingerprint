@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import ActionReceipt from "./ActionReceipt";
 import SemanticIcon from "./SemanticIcon";
@@ -51,6 +51,8 @@ export default function ChronologicalActionLedger({
   const [textQuery, setTextQuery] = useState("");
   const [missingReceipt, setMissingReceipt] = useState(false);
   const missingReceiptRef = useRef(null);
+  const ledgerRef = useRef(null);
+  const revealFocus = useRef(null);
   const filterRef = useRef(null);
   const headingRef = useRef(null);
   // A retry may finish after the reader moved to another control. Suppress only
@@ -87,6 +89,31 @@ export default function ChronologicalActionLedger({
     () => buildLedgerItems(visible, { groupRelated: !patternActive, retainedGroupIds }),
     [patternActive, retainedGroupIds, visible],
   );
+
+  useLayoutEffect(() => {
+    const pending = revealFocus.current;
+    revealFocus.current = null;
+    if (!pending || pending.filtered !== filtered) return;
+    // Respect a newer focus choice. The final batch removes the Show more button,
+    // in which case the browser returns focus to body before this layout effect.
+    if (document.activeElement !== pending.source
+        && (pending.source.isConnected || document.activeElement !== document.body)) return;
+    // Related groups can expose older rows ahead of the prefix. Find the first
+    // newly mounted receipt in rendered order rather than assuming a row index.
+    const target = [...(ledgerRef.current?.querySelectorAll("[data-canonical-action-id]") || [])]
+      .find(node => !pending.ids.has(node.dataset.canonicalActionId));
+    target?.scrollIntoView({ behavior: "instant", block: "start" });
+    target?.querySelector(":scope > button")?.focus({ preventScroll: true });
+  }, [filtered, visible]);
+
+  function showMoreVotes(event) {
+    revealFocus.current = {
+      filtered,
+      ids: new Set(visible.map(canonicalActionId)),
+      source: event.currentTarget,
+    };
+    setVisibleCount(count => Math.max(count, visible.length) + INITIAL_BATCH);
+  }
 
   useEffect(() => {
     if (!highlightedFinding?.requestedAt) {
@@ -214,7 +241,7 @@ export default function ChronologicalActionLedger({
   }
 
   return (
-    <section className="scroll-mt-24 border-t border-stone-200 py-8 sm:py-10" id="vote-record">
+    <section className="scroll-mt-24 border-t border-stone-200 py-8 sm:py-10" id="vote-record" ref={ledgerRef}>
       <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
         <h3
           className="font-serif text-3xl leading-tight text-stone-950"
@@ -335,7 +362,7 @@ export default function ChronologicalActionLedger({
       {visible.length < filtered.length ? (
         <button
           className="secondary-button mt-6"
-          onClick={() => setVisibleCount((count) => Math.max(count, visible.length) + INITIAL_BATCH)}
+          onClick={showMoreVotes}
           type="button"
         >
           Show more votes
