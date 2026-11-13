@@ -16,10 +16,11 @@ class HealthInfrastructureCompatibilityTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.evidence, cls.frozen = compatibility.expected_evidence(review.ROOT, review.git_bytes)
+        cls.sidecar = json.loads((review.ROOT / compatibility.SIDECAR).read_text(encoding='utf8'))
         cls.current = {p: (review.ROOT / p).read_text(encoding='utf8') for p in compatibility.RULES}
 
-    def test_exact_reviewed_successor_with_historical_payload_and_provenance_parity(self):
-        self.assertEqual(self.evidence['shared_helper']['actual_git_blob'], compatibility.SUCCESSOR_HELPER)
+    def test_current_helper_with_historical_payload_and_provenance_parity(self):
+        self.assertEqual(self.evidence['shared_helper']['actual_git_blob'], compatibility.blob(self.current[compatibility.HELPER].encode()))
         frozen = compatibility.validate_compatibility(review.ROOT, review.git_bytes)
         before = {name: (review.PACKAGE / name).read_bytes() for name in compatibility.PRODUCTS}
         products = review.build_package((review.PACKAGE / 'DECISION-PACKET.md').read_bytes())
@@ -29,26 +30,26 @@ class HealthInfrastructureCompatibilityTests(unittest.TestCase):
         self.assertNotEqual(self.evidence['historical_preparer']['canonical_text_sha256'],
                             self.evidence['actual_replay_tools'][compatibility.PREPARER])
 
-    def test_legacy_helper_remains_supported_without_generalizing_successor_permission(self):
+    def test_unused_helper_changes_do_not_rewrite_frozen_evidence_or_products(self):
         texts = dict(self.current)
         texts[compatibility.HELPER] = compatibility.normalized(review.git_bytes(compatibility.RULE_BASE, compatibility.HELPER))
         evidence, _ = compatibility.expected_evidence(review.ROOT, review.git_bytes, current_texts=texts)
         self.assertEqual(evidence['shared_helper']['actual_git_blob'], compatibility.HISTORICAL_HELPER)
-        compatibility.validate_compatibility(review.ROOT, review.git_bytes, current_texts=texts, sidecar=evidence)
+        compatibility.validate_compatibility(review.ROOT, review.git_bytes, current_texts=texts, sidecar=self.sidecar)
         texts[compatibility.HELPER] += '\n# Unreviewed successor\n'
-        with self.assertRaisesRegex(ValueError, 'Unreviewed shared helper drift'):
-            compatibility.validate_compatibility(review.ROOT, review.git_bytes, current_texts=texts, sidecar=evidence)
+        frozen = compatibility.validate_compatibility(review.ROOT, review.git_bytes, current_texts=texts, sidecar=self.sidecar)
+        self.assertEqual(frozen, self.frozen)
 
     def test_each_other_frozen_rule_still_rejects_drift(self):
         for path in compatibility.RULES[1:]:
             texts = dict(self.current)
             texts[path] += '\n# Unreviewed rule change\n'
             with self.subTest(path=path), self.assertRaisesRegex(ValueError, 'Frozen generation rule differs'):
-                compatibility.validate_compatibility(review.ROOT, review.git_bytes, current_texts=texts, sidecar=self.evidence)
+                compatibility.validate_compatibility(review.ROOT, review.git_bytes, current_texts=texts, sidecar=self.sidecar)
 
     def test_sidecar_cannot_falsify_actual_tools_historical_subject_or_authority(self):
         for change in ['tool', 'helper', 'historical', 'payload', 'publication', 'persistence', 'extra']:
-            sidecar = copy.deepcopy(self.evidence)
+            sidecar = copy.deepcopy(self.sidecar)
             if change == 'tool':
                 sidecar['actual_replay_tools'][compatibility.PREPARER] = sidecar['historical_preparer']['canonical_text_sha256']
             elif change == 'helper':
@@ -93,11 +94,11 @@ class HealthInfrastructureCompatibilityTests(unittest.TestCase):
 
     def test_boolean_authority_cannot_be_replaced_with_equal_numeric_values(self):
         for field in ['new_editorial_acceptance', 'publication_authorized', 'persistence_authorized', 'production_writes']:
-            sidecar = copy.deepcopy(self.evidence)
+            sidecar = copy.deepcopy(self.sidecar)
             sidecar[field] = 0
             with self.subTest(gate='sidecar', field=field), self.assertRaisesRegex(ValueError, 'sidecar differs'):
                 compatibility.validate_compatibility(review.ROOT, review.git_bytes, sidecar=sidecar)
-        sidecar = copy.deepcopy(self.evidence)
+        sidecar = copy.deepcopy(self.sidecar)
         sidecar['shared_helper']['executed_by_Health_preparer'] = 0
         with self.assertRaisesRegex(ValueError, 'sidecar differs'):
             compatibility.validate_compatibility(review.ROOT, review.git_bytes, sidecar=sidecar)

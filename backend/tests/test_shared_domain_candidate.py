@@ -776,6 +776,29 @@ class SharedDomainCandidateTests(unittest.TestCase):
         other = prepare(self.author, self.capture, ["M001184"])
         self.assertTrue(review_text(self.author, other[0], other[2], other[-1], self.capture).startswith("## Generated Massie candidate findings"))
 
+    def test_retired_code_pins_keep_live_evidence_and_frozen_manifest_checks(self):
+        from unittest.mock import patch
+        from scripts import validate_infrastructure_equipment_candidates150 as equipment
+        from scripts import validate_infrastructure_permitting_candidates151 as permitting
+        from scripts import validate_infrastructure_water_resource_candidates152 as water
+        from scripts import validate_infrastructure_energy_governance_candidates153 as energy
+
+        original = Path.read_bytes
+        for validator in [equipment, permitting, water, energy]:
+            with self.subTest(packet=validator.P.name):
+                self.assertGreater(validator.validate_preservation(), 300)
+                def changed_evidence(path):
+                    raw = original(path)
+                    return raw + b'changed' if path.suffix == '.json' and 'manifest' not in path.name else raw
+                with patch.object(Path, 'read_bytes', changed_evidence):
+                    with self.assertRaises(ValueError):
+                        validator.validate_preservation()
+                manifest = validator.read(validator.P / 'preservation_manifest.json')
+                manifest['base_commit'] = '0' * 40
+                with patch.object(validator, 'read', return_value=manifest):
+                    with self.assertRaises(ValueError):
+                        validator.validate_preservation()
+
     def test_review_appendix_includes_every_requested_member_without_new_meaning(self):
         core, _, projections, _, result = self.products
         before = digest([core, projections, result.compiled_ir])
