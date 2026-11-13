@@ -4,7 +4,7 @@ import json
 import unittest
 from pathlib import Path
 
-from scripts.prepare_shared_domain_candidate import prepare, readable_candidates, reproducibility_proof, review_text, validate_universe_proposal
+from scripts.prepare_shared_domain_candidate import archived_replay_value, prepare, readable_candidates, reproducibility_proof, review_text, validate_universe_proposal
 from backend.app.semantic_ir.shared_corpus import (
     adapt_to_semantic_ir_input, candidate_update_impact, choice_effect, digest,
     sealed_digest, validate_member_projection, validate_shared_action_core,
@@ -17,6 +17,25 @@ from backend.app.editorial_presentations.compiler import compile_public_issue_pr
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
+
+
+class ArchivedReplayIdentityTests(unittest.TestCase):
+    def test_only_review_helper_identity_is_historical(self):
+        helper = "scripts/prepare_shared_domain_candidate.py"
+        archived = {"rule_files_sha256": {helper: "old", "compiler": "same"},
+                    "compiled_sha256": "meaning", "real_member_reuse": ["Yea"]}
+        current = copy.deepcopy(archived)
+        current["rule_files_sha256"][helper] = "new"
+        self.assertEqual(archived_replay_value("reproducibility_proof", current, archived), archived)
+        self.assertEqual(current["rule_files_sha256"][helper], "new")
+        for field in ["compiled_sha256", "real_member_reuse"]:
+            changed = copy.deepcopy(current)
+            changed[field] = "drift"
+            self.assertNotEqual(archived_replay_value("reproducibility_proof", changed, archived), archived)
+        changed = copy.deepcopy(current)
+        changed["rule_files_sha256"]["compiler"] = "drift"
+        self.assertNotEqual(archived_replay_value("reproducibility_proof", changed, archived), archived)
+        self.assertIs(archived_replay_value("compiled_ir", current, archived), current)
 
 
 class SharedDomainCandidateTests(unittest.TestCase):

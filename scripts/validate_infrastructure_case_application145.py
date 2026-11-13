@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from backend.app.semantic_ir.shared_corpus import digest,sealed_digest
 from scripts.apply_infrastructure_case_decisions145 import apply_exact_decisions,SUBJECTS,require
+from scripts.prepare_shared_domain_candidate import archived_replay_value
 from scripts.prepare_shared_domain_candidate import prepare,readable_candidates,reproducibility_proof,validate_universe_proposal
 from scripts.validate_infrastructure_disaster_candidates142 import validate as validate_reviewed142
 B=ROOT/'docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916'
@@ -35,7 +36,9 @@ def validate():
     validate_universe_proposal(u,a,c,m)
     core,mapping,projections,ci,result=prepare(a,c,MEMBERS)
     outputs=dict(shared_action_core=core,shared_issue_mapping=mapping,member_projections=projections,compiler_input=ci,compiled_ir=result.compiled_ir,readable_candidates=readable_candidates(a,core,projections,result),reproducibility_proof=reproducibility_proof(a,c,MEMBERS))
-    for name,value in outputs.items():require(read(A/'generated'/(name+'.json'))==value,'Actual typed replay differs: '+name)
+    for name,value in outputs.items():
+        value = archived_replay_value(name, value, read(A / "generated" / (name + ".json")))
+        require(read(A/'generated'/(name+'.json'))==value,'Actual typed replay differs: '+name)
     require(result.compiled_ir==read(B/'generated/compiled_ir.json') and projections==read(B/'generated/member_projections.json'),'Member behavior changed')
     for aid in ['house:119:1:10','house:119:1:13']:
         r=next(r for r in m['records'] if r['action_id']==aid)

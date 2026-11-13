@@ -4,6 +4,7 @@ from pathlib import Path
 
 from backend.app.semantic_ir.shared_corpus import digest
 from scripts.apply_infrastructure_case_decisions139 import apply_exact_decisions, SUBJECTS, require
+from scripts.prepare_shared_domain_candidate import archived_replay_value
 from scripts.prepare_shared_domain_candidate import prepare, readable_candidates, reproducibility_proof, validate_universe_proposal
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,6 +49,7 @@ def validate():
                    readable_candidates=readable_candidates(a, core, projections, result),
                    reproducibility_proof=reproducibility_proof(a, capture, MEMBERS))
     for name, expected in outputs.items():
+        expected = archived_replay_value(name, expected, read(APPLIED / "generated" / (name + ".json")))
         require(read(APPLIED / 'generated' / (name + '.json')) == expected, f'Generated replay differs: {name}')
     require(result.compiled_ir == read(BASE / 'generated/compiled_ir.json'), 'Compiled meaning changed')
     old_projections = read(BASE / 'generated/member_projections.json')
