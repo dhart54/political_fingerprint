@@ -35,7 +35,8 @@ Missing, malformed, wrong-session, empty, duplicate-member, unknown-position,
 or unresolved-identity inputs prevent a clean result. Rolls without a supported
 bill reference are still audited. Present and Not Voting remain distinct.
 Published aggregate vote totals, when present, must match the parsed positions.
-Missing aggregate totals are recorded as null rather than synthesized.
+Missing aggregate totals, including empty Senate total elements, are recorded as
+null rather than synthesized. Other published numeric totals are still checked.
 
 For scattered or renamed captures, use `--source-manifest PATH` instead of
 `--source-dir`. The manifest contains the exact same `scope` object and a `files`
@@ -51,6 +52,27 @@ member records or copy source XML. Keep operational reports under ignored
 Exit codes: `0` exact match within supplied scope, `1` differences, `2` incomplete
 source coverage. A cached-source result does not claim current official coverage,
 source freshness, legislative eligibility, service status, or editorial readiness.
+
+## Optional one-command collection and audit
+
+Add `--fetch-missing` to a `--source-dir` command to fetch only absent official
+House Clerk or Senate roll XML within the explicit range, then reconcile using
+the existing reader. It reuses the existing source downloader and cache names.
+Choose the existing chamber/session cache, not a new copy per run. Existing files
+are never deliberately overwritten or refreshed, even if malformed; the audit
+will report them. Run one collector per cache to avoid competing downloads.
+
+Network access is opt-in. Without the flag the command remains offline for source
+loading. Collection stops at the first access/download failure, with no retry,
+alternate source or credential fallback; the resulting audit is incomplete.
+The JSON records downloaded versus reused files. Cached files are not evidence
+of live freshness. Senate LIS/Bioguide mapping still requires the explicit
+`--senate-member-file` when the XML lacks direct identities.
+
+This option writes local source files and the report only. It does not fetch
+Congress.gov metadata, use an API key, import facts, or change any production
+table. Database reads still require an already authorized connection. It is not
+a scheduler or permission to retry a previously denied source.
 
 Validation:
 
