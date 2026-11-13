@@ -1,0 +1,52 @@
+{
+  "limits": {
+    "locators": 8,
+    "timeout_seconds": 45,
+    "response_bytes": 4194304,
+    "total_bytes": 12582912,
+    "attempts_per_locator": 1,
+    "redirects_allowed": false
+  },
+  "attempts": [
+    {
+      "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bcitation%5D=90%20FR%20642&fields%5B%5D=document_number&fields%5B%5D=title&fields%5B%5D=html_url&fields%5B%5D=body_html_url",
+      "file": "captures/90fr642-locator.json",
+      "started_utc": "2026-10-31T15:31:54Z",
+      "result": "closed_failure",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-06/html/2024-31125.htm",
+      "file": "captures/90fr643.html",
+      "started_utc": "2026-10-31T15:32:34Z",
+      "status": 200,
+      "content_type": "text/html",
+      "final_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-06/html/2024-31125.htm",
+      "bytes": 16523,
+      "sha256": "27b8d70baae1dc59608884d8d1c0fc21218004e22276f198b6095733c262869f",
+      "result": "captured"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-06/html/2024-31128.htm",
+      "file": "captures/90fr642.html",
+      "started_utc": "2026-10-31T15:32:55Z",
+      "status": 200,
+      "content_type": "text/html",
+      "final_url": "https://www.govinfo.gov/content/pkg/FR-2025-01-06/html/2024-31128.htm",
+      "bytes": 10613,
+      "sha256": "c355abd0aee672a6761d6eb012832cf400a1c64451805849f4781556ae41b671",
+      "result": "captured"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7543.htm",
+      "file": "captures/42usc7543-2024.html",
+      "started_utc": "2026-10-31T15:33:19Z",
+      "status": 200,
+      "content_type": "text/html",
+      "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7543.htm",
+      "bytes": 12244,
+      "sha256": "12217975f8886d17b0cbbae9e27fd832f7801478b057b26ea24e75d7ae3c4b18",
+      "result": "captured"
+    }
+  ]
+}
