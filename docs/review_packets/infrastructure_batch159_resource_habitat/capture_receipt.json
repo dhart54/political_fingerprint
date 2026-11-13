@@ -1,0 +1,63 @@
+{
+  "limits": {
+    "locators": 8,
+    "timeout_seconds": 45,
+    "response_bytes": 4194304,
+    "total_bytes": 12582912,
+    "attempts_per_locator": 1,
+    "redirects_allowed": false
+  },
+  "attempts": [
+    {
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1538.htm",
+      "file": "captures/16usc1538.html",
+      "started_utc": "2026-10-31T17:49:47Z",
+      "status": 200,
+      "content_type": "text/html",
+      "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1538.htm",
+      "bytes": 24196,
+      "sha256": "82a4e3dbfa6c9df9eaa4f13b5e23d932dc85b7912e804f7992b0d0c4a79095fd",
+      "result": "captured"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1539.htm",
+      "file": "captures/16usc1539.html",
+      "started_utc": "2026-10-31T17:49:47Z",
+      "status": 200,
+      "content_type": "text/html",
+      "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1539.htm",
+      "bytes": 36511,
+      "sha256": "a34d795608b3cda84f76ebfa8bea426b3bd076756e15d34de0b2a99745e0fccd",
+      "result": "captured"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5C-subchapI-sec670a.htm",
+      "file": "captures/16usc670a.html",
+      "started_utc": "2026-10-31T17:49:47Z",
+      "status": 200,
+      "content_type": "text/html",
+      "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5C-subchapI-sec670a.htm",
+      "bytes": 31426,
+      "sha256": "8c96b2271aa9273e4f5963a59e5ecd80a702f8f18758988062b3a78188414d04",
+      "result": "captured"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap54-sec3709.htm",
+      "file": "captures/16usc3709.html",
+      "started_utc": "2026-10-31T17:49:47Z",
+      "result": "closed_failure",
+      "error": "HTTP Error 302: Found"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap25-subchapIV-sec1245.htm",
+      "file": "captures/30usc1245.html",
+      "started_utc": "2026-10-31T17:49:47Z",
+      "status": 200,
+      "content_type": "text/html",
+      "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap25-subchapIV-sec1245.htm",
+      "bytes": 87245,
+      "sha256": "ea4262650b507a3384fb8edfcb939f7dab59556d7d62d3664b1ccd8dd4ad8bf0",
+      "result": "captured"
+    }
+  ]
+}
