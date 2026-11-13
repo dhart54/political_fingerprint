@@ -1,0 +1,42 @@
+{
+  "kind": "two_exact_reported_bill_captures163",
+  "limits": {
+    "URLs": 2,
+    "attempts_per_exact_URL": 1,
+    "seconds_per_attempt": 45,
+    "response_bytes": 1048576,
+    "total_response_bytes": 2097152,
+    "redirects": false,
+    "PDFs": false,
+    "alternative_route_retries": false
+  },
+  "attempts": [
+    {
+      "bill": 4090,
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090rh/html/BILLS-119hr4090rh.htm",
+      "attempts": 1,
+      "status": 200,
+      "declared_bytes": null,
+      "raw_bytes": 13103,
+      "raw_sha256": "3d0918c87d8a8447bb9048518c14b090337d1c84e6e2f0d2ef22778e96ba335a",
+      "full_normalized_characters": 10704,
+      "full_normalized_sha256": "0b0c87211f63cd678a4d1debde3d793340a2d24f4104cad8159130724d5b1f47",
+      "retained": true,
+      "elapsed_seconds": 0.183
+    },
+    {
+      "bill": 5587,
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5587rh/html/BILLS-119hr5587rh.htm",
+      "attempts": 1,
+      "status": 200,
+      "declared_bytes": null,
+      "raw_bytes": 6159,
+      "raw_sha256": "9e45491c6ab25066866e7a219a5f42b53adb2c65d2036f3345569926e85b0401",
+      "full_normalized_characters": 5017,
+      "full_normalized_sha256": "98f53f22d9650ebd74b9cc93e7d8e4db3ea0fbf397c93bf2ee714bd281ec42d8",
+      "retained": true,
+      "elapsed_seconds": 0.15
+    }
+  ],
+  "total_successful_body_bytes": 19262
+}
