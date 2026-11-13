@@ -1,0 +1,117 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:INFRASTRUCTURE_TECH_TRANSPORT:defense-amendments-five-held-choices157-20261031",
+  "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+  "scope_boundaries": [
+    "Five exact H.R.3838amendments only in one bounded held episode; no full-NDAA or issue-completion/parent meaning. Statutory definitions and legal/program references stay attributed and qualified; all proposals unapplied."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:248",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10248
+      },
+      "mapping_sha256": "95bfef3181f269a348d0d3d9b6ea9348630cd095480275c56f0fb649aa5cc2ba"
+    },
+    {
+      "action_id": "house:119:1:249",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10249
+      },
+      "mapping_sha256": "b192ce8802ee09f563d2d842e39fc4a6fb9d4bf08f50423d229a6f84eda83460"
+    },
+    {
+      "action_id": "house:119:1:250",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10250
+      },
+      "mapping_sha256": "da4cd8f8b364e08c80dc2428d182911ad8e20bbd60a6b3ed92363f032d60796b"
+    },
+    {
+      "action_id": "house:119:1:252",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10252
+      },
+      "mapping_sha256": "c81129889a1861f32c18bacd06cc0163b494d8d3c72358a648276a0a5dc5c2b5"
+    },
+    {
+      "action_id": "house:119:1:257",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10257
+      },
+      "mapping_sha256": "e46632c4eca23a584588d064a5351374bcc66b5e5bc6c65d3d52be21e1bc877d"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr3838:119",
+      "action_ids": [
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:1:250",
+        "house:119:1:252",
+        "house:119:1:257"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:1:250",
+        "house:119:1:252",
+        "house:119:1:257"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "One bounded H.R.3838episode held: exact Infrastructure directness, current-law/reference limits and independent candidate review remain; no propositions, trajectory, whole-bill meaning or acceptance.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "mapping_sha256": "150f4a64c2277d7703466acec4600137e274332862526022273273f8e54a758a"
+}

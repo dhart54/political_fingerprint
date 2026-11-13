@@ -1,0 +1,50 @@
+{
+  "kind": "precommit_owner_evidence157",
+  "base_commit": "63b8d982dbcdc9de03b433fab3928bf14ed364f2",
+  "status": "owner_validation_passed_independent_review_pending",
+  "validation": [
+    {
+      "command": "python scripts/validate_infrastructure_defense_amendment_candidates157.py",
+      "result": "passed",
+      "preserved_files": 708,
+      "packet_files": 17,
+      "sources": 19,
+      "claim_passages": 15,
+      "held_episodes": 1,
+      "propositions": 0
+    },
+    {
+      "command": "python -m unittest backend.tests.test_infrastructure_defense_amendment_candidates157",
+      "result": "passed",
+      "tests": 14
+    },
+    {
+      "operation": "Read/authenticate immutable155 and156 authoring/core objects for deduplication only",
+      "result": "passed",
+      "prior_non_main_identities": 10,
+      "total_prior_prepared_identities": 38
+    }
+  ],
+  "independent_review": "pending_exact_frozen_target",
+  "commit_push_and_draft_pr": "pending",
+  "canonical_changes": false,
+  "editorial_acceptance": false,
+  "publication": false,
+  "production": false,
+  "inherited_validation": {
+    "base_commit": "63b8d982dbcdc9de03b433fab3928bf14ed364f2",
+    "canonical_IR_and_CI_preservation_tests": 34,
+    "last_executed_for": "cohort156",
+    "result": "valid at unchanged pinned compiler/schema/CI baseline; not rerun merely for continuation",
+    "source_of_completed_evidence": "f684d89987498efb335db9c14fdf3da848734de1:docs/review_packets/infrastructure_batch156_digital_access_oversight/owner_evidence.json"
+  },
+  "tooling_corrections": [
+    "Initial prior-core selection filtered only docs paths and missed tracked fixture cores. It was corrected to select only shared_action_core.json from the complete Git baseline tree;153cores were authenticated before authoring. No recursive filesystem test-directory scan.",
+    "Windows console could not render one retained roll-list glyph; source reading used Python UTF8 output and only relevant resumption/result extents. Source bytes/objects were not changed."
+  ],
+  "limits": [
+    "All19 retained source objects and declared extents remain unchanged; no new acquisition/extraction/PDF/visual or glyph certificate.",
+    "One bounded amendment-only episode, not whole-NDAA/full-issue completion.",
+    "Clinical/scientific validity, current applicable law, intent/penalty/area application,2016report contents and full temporal/program/accounting/other-law integration remain reserved."
+  ]
+}
