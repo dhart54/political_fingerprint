@@ -10,6 +10,8 @@ APPROVED_WORKFLOW_BLOB = '2cac1cb6178adf88fd412e63ad6fb48566e721fc'
 # They do not authorize changes to other jobs, triggers, or publication behavior.
 RESTORE_JOB_BEFORE_SHA256 = 'b19cdd20bdeb0f855c9a1204a9c317e57e77c0f39a467a6133bc60c255804e35'
 RESTORE_JOB_AFTER_SHA256 = 'c4d6ac787cd419c8a92e5b92e67966525899b31cb5dd9ce4177baa5f258b3a57'
+# Same job and checks, with the installed dump client updated to 16.16+.
+RESTORE_JOB_CLIENT_UPDATE_SHA256 = '88ca770bf85d59eba077b3d5347720f190025c392bcc6d11dc3605a038df7e29'
 
 
 def assert_prior_ci_preserved(before, after, *, accepted_baseline=None):
@@ -49,8 +51,12 @@ def assert_prior_ci_preserved(before, after, *, accepted_baseline=None):
             continue
         if (
             name == 'publication-activation-postgres'
-            and hashlib.sha256(original.encode('utf8')).hexdigest() == RESTORE_JOB_BEFORE_SHA256
-            and hashlib.sha256(current.get(name, '').encode('utf8')).hexdigest() == RESTORE_JOB_AFTER_SHA256
+            and (hashlib.sha256(original.encode('utf8')).hexdigest(),
+                 hashlib.sha256(current.get(name, '').encode('utf8')).hexdigest()) in {
+                (RESTORE_JOB_BEFORE_SHA256, RESTORE_JOB_AFTER_SHA256),
+                (RESTORE_JOB_BEFORE_SHA256, RESTORE_JOB_CLIENT_UPDATE_SHA256),
+                (RESTORE_JOB_AFTER_SHA256, RESTORE_JOB_CLIENT_UPDATE_SHA256),
+            }
         ):
             continue
         # Later accepted main extended the receipt job. Preserve that exact
