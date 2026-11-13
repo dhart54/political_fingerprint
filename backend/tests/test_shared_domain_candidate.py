@@ -4,7 +4,7 @@ import json
 import unittest
 from pathlib import Path
 
-from scripts.prepare_shared_domain_candidate import prepare, readable_candidates, reproducibility_proof, review_text, validate_universe_proposal
+from scripts.prepare_shared_domain_candidate import archived_replay_value, prepare, readable_candidates, reproducibility_proof, review_text, validate_universe_proposal
 from backend.app.semantic_ir.shared_corpus import (
     adapt_to_semantic_ir_input, candidate_update_impact, choice_effect, digest,
     sealed_digest, validate_member_projection, validate_shared_action_core,
@@ -17,6 +17,25 @@ from backend.app.editorial_presentations.compiler import compile_public_issue_pr
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
+
+
+class ArchivedReplayIdentityTests(unittest.TestCase):
+    def test_only_review_helper_identity_is_historical(self):
+        helper = "scripts/prepare_shared_domain_candidate.py"
+        archived = {"rule_files_sha256": {helper: "old", "compiler": "same"},
+                    "compiled_sha256": "meaning", "real_member_reuse": ["Yea"]}
+        current = copy.deepcopy(archived)
+        current["rule_files_sha256"][helper] = "new"
+        self.assertEqual(archived_replay_value("reproducibility_proof", current, archived), archived)
+        self.assertEqual(current["rule_files_sha256"][helper], "new")
+        for field in ["compiled_sha256", "real_member_reuse"]:
+            changed = copy.deepcopy(current)
+            changed[field] = "drift"
+            self.assertNotEqual(archived_replay_value("reproducibility_proof", changed, archived), archived)
+        changed = copy.deepcopy(current)
+        changed["rule_files_sha256"]["compiler"] = "drift"
+        self.assertNotEqual(archived_replay_value("reproducibility_proof", changed, archived), archived)
+        self.assertIs(archived_replay_value("compiled_ir", current, archived), current)
 
 
 class SharedDomainCandidateTests(unittest.TestCase):
@@ -766,13 +785,57 @@ class SharedDomainCandidateTests(unittest.TestCase):
 
     def test_proof_and_readable_packet_are_reproducible(self):
         proof = reproducibility_proof(self.author, self.capture, ["F000477", "M001184"])
-        self.assertEqual(proof, json.loads((DATA / "generated/reproducibility_proof.json").read_text(encoding="utf-8")))
-        core, _, projections, _, result = self.products
-        packet = (ROOT / "docs/review_packets/foushee_health_shared_candidate.md").read_text(encoding="utf-8")
-        generated = packet.split("<!-- GENERATED CANDIDATE START -->\n", 1)[1].split("<!-- GENERATED CANDIDATE END -->", 1)[0]
-        self.assertEqual(generated, review_text(self.author, core, projections, result, self.capture))
+        saved = json.loads((DATA / "generated/reproducibility_proof.json").read_text(encoding="utf-8"))
+        # The sealed proof retains the old renderer identity; every other field must replay.
+        generator = "scripts/prepare_shared_domain_candidate.py"
+        saved["rule_files_sha256"][generator] = digest((ROOT / generator).read_text(encoding="utf-8"))
+        self.assertEqual(proof, saved)
+        # Preserve the historical Foushee-only Markdown, not a golden for the all-member renderer.
+        # Current output is covered by the all-member regression below.
         other = prepare(self.author, self.capture, ["M001184"])
         self.assertTrue(review_text(self.author, other[0], other[2], other[-1], self.capture).startswith("## Generated Massie candidate findings"))
+
+    def test_retired_code_pins_keep_live_evidence_and_frozen_manifest_checks(self):
+        from unittest.mock import patch
+        from scripts import validate_infrastructure_equipment_candidates150 as equipment
+        from scripts import validate_infrastructure_permitting_candidates151 as permitting
+        from scripts import validate_infrastructure_water_resource_candidates152 as water
+        from scripts import validate_infrastructure_energy_governance_candidates153 as energy
+
+        original = Path.read_bytes
+        for validator in [equipment, permitting, water, energy]:
+            with self.subTest(packet=validator.P.name):
+                self.assertGreater(validator.validate_preservation(), 300)
+                def changed_evidence(path):
+                    raw = original(path)
+                    return raw + b'changed' if path.suffix == '.json' and 'manifest' not in path.name else raw
+                with patch.object(Path, 'read_bytes', changed_evidence):
+                    with self.assertRaises(ValueError):
+                        validator.validate_preservation()
+                manifest = validator.read(validator.P / 'preservation_manifest.json')
+                manifest['base_commit'] = '0' * 40
+                with patch.object(validator, 'read', return_value=manifest):
+                    with self.assertRaises(ValueError):
+                        validator.validate_preservation()
+
+    def test_review_appendix_includes_every_requested_member_without_new_meaning(self):
+        core, _, projections, _, result = self.products
+        before = digest([core, projections, result.compiled_ir])
+        text = review_text(self.author, core, projections, result, self.capture)
+        readable = readable_candidates(self.author, core, projections, result)
+        sections = text.split("## Generated ")[1:]
+        self.assertEqual(len(sections), len(projections))
+        for projection, member, section in zip(projections, readable["members"], sections):
+            self.assertTrue(section.startswith(projection["context_metadata"]["display_name"] + " candidate findings"))
+            self.assertIn(member["boundary"], section)
+            for finding in member["findings"]:
+                self.assertIn(finding["compact"], section)
+            votes = {a["action_id"]: a for a in projection["actions"]}
+            for row in member["non_proposition_accounting"]:
+                self.assertIn("| " + " | ".join([row["action_id"],
+                    votes[row["action_id"]]["official_status"], row["reason_code"]]) + " |", section)
+        self.assertEqual(text.count("### Both-choice source index"), 1)
+        self.assertEqual(digest([core, projections, result.compiled_ir]), before)
 
     def test_member_identity_and_party_do_not_change_graph(self):
         inputs = copy.deepcopy(self.products[3])

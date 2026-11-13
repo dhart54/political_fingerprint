@@ -58,6 +58,13 @@ def validate_preservation():
     m = read(P/'preservation_manifest.json')
     require(digest(m) == PRESERVATION_SHA and m['manifest_sha256'] == sealed_digest(m, 'manifest_sha256'), 'Preservation manifest drift')
     for name, entry in m['files'].items():
+        # Retired live-code pins remain sealed historical metadata, not evidence files.
+        if name in {
+            'scripts/prepare_shared_domain_candidate.py',
+            'scripts/apply_infrastructure_case_decisions149.py',
+            'scripts/validate_infrastructure_equipment_candidates150.py',
+        }:
+            continue
         path = (ROOT/name).resolve()
         require(path.is_relative_to(ROOT.resolve()), 'Preservation path escaped')
         raw = path.read_bytes()

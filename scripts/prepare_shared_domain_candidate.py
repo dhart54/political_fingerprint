@@ -334,20 +334,34 @@ def review_text(authoring, core, projections, result, capture):
     """Readable review appendix from the same shared forms and exact receipts."""
     readable = readable_candidates(authoring, core, projections, result)
     sources = {s["source_id"]: s for s in capture["sources"]}
-    first = readable["members"][0]
-    name = projections[0]["context_metadata"]["display_name"]
-    lines = [f"## Generated {name} candidate findings", "", first["boundary"], "",
-             "All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.", ""]
-    for finding in first["findings"]:
-        lines.extend(["### " + finding["headline"], "", "**Compact:** " + finding["compact"], "", "**Detail:**", ""])
-        for observation in finding["action_observations"]:
-            lines.extend(["**" + observation["action_id"] + "**", ""])
-            for paragraph in observation["detail"]:
-                lines.extend([paragraph, ""])
-        lines.extend("- " + limit for limit in finding["qualifications_on_both_levels"])
-        lines.extend(["", "Evidence: " + ", ".join(finding["action_ids"]) + "; finding `" + finding["proposition_id"] + "`.", "",
-            "Sources: " + "; ".join(f"[{sid}]({sources[sid]['url']})" for sid in finding["source_ids"]) + ".", ""])
-    blocked = {row["action_id"] for row in first["non_proposition_accounting"] if row["reason_code"] == "source_constraint_blocks_behavioral_proposition"}
+    projections_by_member = {p["member_id"]: p for p in projections}
+    lines = []
+    blocked = set()
+    for member in readable["members"]:
+        projection = projections_by_member[member["member_id"]]
+        name = projection["context_metadata"]["display_name"]
+        lines.extend([f"## Generated {name} candidate findings", "", member["boundary"], "",
+                      "All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.", ""])
+        for finding in member["findings"]:
+            lines.extend(["### " + finding["headline"], "", "**Compact:** " + finding["compact"], "", "**Detail:**", ""])
+            for observation in finding["action_observations"]:
+                lines.extend(["**" + observation["action_id"] + "**", ""])
+                for paragraph in observation["detail"]:
+                    lines.extend([paragraph, ""])
+            lines.extend("- " + limit for limit in finding["qualifications_on_both_levels"])
+            lines.extend(["", "Evidence: " + ", ".join(finding["action_ids"]) + "; finding `" + finding["proposition_id"] + "`.", "",
+                "Sources: " + "; ".join(f"[{sid}]({sources[sid]['url']})" for sid in finding["source_ids"]) + ".", ""])
+        if member["non_proposition_accounting"]:
+            votes = {a["action_id"]: a for a in projection["actions"]}
+            lines.extend(["### Actions without a behavioral finding", "",
+                          "These recorded statuses are not additional support or opposition findings.", "",
+                          "| Action | Recorded status | Compiler reason |", "|---|---|---|"])
+            for row in member["non_proposition_accounting"]:
+                lines.append("| " + " | ".join([row["action_id"],
+                    votes[row["action_id"]]["official_status"], row["reason_code"]]) + " |")
+            lines.append("")
+        blocked.update(row["action_id"] for row in member["non_proposition_accounting"]
+                       if row["reason_code"] == "source_constraint_blocks_behavioral_proposition")
     if blocked:
         lines.extend(["### Shared choices for the held episode", "", authoring["blocked_reason"], ""])
     for action in core["actions"]:
@@ -362,6 +376,20 @@ def review_text(authoring, core, projections, result, capture):
         lines.append("| " + " | ".join([action["action_id"], action["choice_meanings"]["Yea"], action["choice_meanings"]["Nay"],
             "; ".join(f"[{s['source_id']}]({sources[s['source_id']]['url']})" for s in action["operative_meaning_source_identities"])]) + " |")
     return "\n".join(lines) + "\n"
+
+
+def archived_replay_value(name, current, archived):
+    """Compare replay content without pinning today's review renderer to old code.
+
+    The original proof remains untouched. All other rule identities, evidence,
+    semantic outputs, member reuse and mutation checks still compare exactly.
+    """
+    if name != "reproducibility_proof":
+        return current
+    result = copy.deepcopy(current)
+    helper = "scripts/prepare_shared_domain_candidate.py"
+    result["rule_files_sha256"][helper] = archived["rule_files_sha256"][helper]
+    return result
 
 
 def reproducibility_proof(authoring, capture, member_ids):

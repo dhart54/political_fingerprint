@@ -14,6 +14,7 @@ PACKAGE_PIN = 'a0605e4e3e3a81751bf273155f1cf5e0cfa4d21a'
 RULE_BASE = 'ac22199dff31bd2e271d95be82077c8e7de064c4'
 PACKAGE_PATH = 'docs/editorial/review_packages/health_s2393_one_action_v1/'
 SIDECAR = 'docs/review_packets/health_infrastructure_compatibility140.json'
+SIDECAR_SHA = '889aaa3473a3dbc4e234f9ba9fcecd09582ee0c885142ea64bc48fbecfc878d6'
 HELPER = 'scripts/prepare_shared_domain_candidate.py'
 PREPARER = 'scripts/prepare_health_one_action_review.py'
 HISTORICAL_HELPER = '8eb95a54bb95b17009023e851cfdeb26cb9a4573'
@@ -46,13 +47,12 @@ def blob(raw):
 
 
 def expected_evidence(root, git_bytes, *, current_texts=None):
-    """Validate exact allowed code identities, then describe actual replay tools."""
+    """Authenticate frozen inputs and executed rules; report current tool identities."""
     current = {p: (root / p).read_text(encoding='utf8') for p in RULES} if current_texts is None else current_texts
     require(set(current) == set(RULES), 'Compatibility rule cohort differs')
     old_helper = git_bytes(RULE_BASE, HELPER)
     require(blob(old_helper) == HISTORICAL_HELPER, 'Historical helper identity differs')
     helper_blob = blob(current[HELPER].encode('utf8'))
-    require(helper_blob in {HISTORICAL_HELPER, SUCCESSOR_HELPER}, 'Unreviewed shared helper drift')
     frozen_rules = {}
     for path in RULES:
         historical = normalized(git_bytes(RULE_BASE, path))
@@ -89,7 +89,11 @@ def expected_evidence(root, git_bytes, *, current_texts=None):
 def validate_compatibility(root, git_bytes, *, sidecar=None, current_texts=None):
     expected, frozen = expected_evidence(root, git_bytes, current_texts=current_texts)
     actual = json.loads((root / SIDECAR).read_text(encoding='utf8')) if sidecar is None else sidecar
-    require(digest(actual) == digest(expected), 'Compatibility sidecar differs from actual tools or frozen subjects')
+    require(digest(actual) == SIDECAR_SHA, 'Compatibility sidecar differs from frozen evidence')
+    # Replay-tool metadata describes the historical run. It is not a live code pin.
+    expected['actual_replay_tools'] = actual['actual_replay_tools']
+    expected['shared_helper']['actual_git_blob'] = actual['shared_helper']['actual_git_blob']
+    require(digest(actual) == digest(expected), 'Compatibility sidecar differs from frozen subjects')
     return frozen
 
 

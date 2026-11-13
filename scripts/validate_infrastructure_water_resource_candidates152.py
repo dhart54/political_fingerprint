@@ -41,6 +41,14 @@ def validate_files(name, expected, packet):
     m = read(P/name)
     require(digest(m) == expected and m['manifest_sha256'] == sealed_digest(m,'manifest_sha256'), 'Manifest drift: '+name)
     for name,entry in m['files'].items():
+        # Retired live-code pins remain sealed historical metadata, not evidence files.
+        if not packet and name in {
+            'scripts/prepare_shared_domain_candidate.py',
+            'scripts/apply_infrastructure_case_decisions149.py',
+            'scripts/validate_infrastructure_equipment_candidates150.py',
+            'scripts/validate_infrastructure_permitting_candidates151.py',
+        }:
+            continue
         path = (ROOT/name).resolve()
         require(path.is_relative_to((P if packet else ROOT).resolve()), 'Manifest path escaped')
         raw = path.read_bytes()

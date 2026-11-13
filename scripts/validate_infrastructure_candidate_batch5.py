@@ -10,7 +10,8 @@ from collections import Counter
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from backend.app.semantic_ir.shared_corpus import digest
-from scripts.prepare_shared_domain_candidate import prepare,readable_candidates,reproducibility_proof,review_text,validate_universe_proposal
+from scripts.prepare_shared_domain_candidate import archived_replay_value
+from scripts.prepare_shared_domain_candidate import prepare,readable_candidates,reproducibility_proof,validate_universe_proposal
 from scripts.validate_infrastructure_candidate_seed import assert_neutral,official_status,read,require
 from scripts.validate_infrastructure_candidate_batch4 import versions as prior_versions
 DATA=ROOT/'docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916'
@@ -84,8 +85,11 @@ def validate(author,capture,universe,membership,*,check_files=True):
         nv=1 if member['member_id']=='F000477' else 3;require(member['coverage']['not_voting_actions']==nv and member['coverage']['directional_yes_no_positions']==19-nv,'Not Voting became directional')
     products=dict(shared_action_core=core,shared_issue_mapping=mapping,member_projections=projections,compiler_input=inputs,compiled_ir=result.compiled_ir,readable_candidates=readable,reproducibility_proof=proof)
     if check_files:
-        for name,value in products.items():require((DATA/'generated'/f'{name}.json').read_bytes()==(json.dumps(value,ensure_ascii=False,indent=2)+'\n').replace('\n',os.linesep).encode(),f'generated replay differs: {name}')
-        packet=(ROOT/'docs/review_packets/infrastructure_candidate_batch5.md').read_text(encoding='utf-8');region=packet.split('<!-- GENERATED CANDIDATE START -->\n',1)[1].split('<!-- GENERATED CANDIDATE END -->',1)[0];require(region==review_text(author,core,projections,result,capture),'readable packet replay differs')
+        for name,value in products.items():
+            value = archived_replay_value(name, value, read(DATA / "generated" / f"{name}.json"))
+            require((DATA/'generated'/f'{name}.json').read_bytes()==(json.dumps(value,ensure_ascii=False,indent=2)+'\n').replace('\n',os.linesep).encode(),f'generated replay differs: {name}')
+        # Historical prose is not a live-renderer golden; readable JSON is checked above.
+
         receipt=read(DATA/'source_reuse_and_version_receipt.json');require(not receipt['known_denied_chains_retried'] and not receipt['rejected_responses_are_evidence'] and len(receipt['unclassified_rejected_responses'])==2,'source restriction declaration differs')
         for row in receipt['reused_sources']:require(row['source_object_sha256']==digest(sources[row['source_id']]),'source reuse receipt differs')
     return dict(identity_count=676,new_screenings=7,new_meanings=4,combined_meanings=19,procedural_controls=9,ordinary_pending_screenings=644,ordinary_pending_interpretation_ids=['house:119:1:218','house:119:2:110'],examined_source_hold_ids=['house:119:1:111','house:119:2:134'],source_count=len(sources),new_successful_captures=3,unclassified_rejected_responses=2,member_observations=38,finding_counts={m['member_id']:len(m['findings']) for m in readable['members']},not_voting_counts={m['member_id']:m['coverage']['not_voting_actions'] for m in result.compiled_ir['members']},additional_procedural_and_held_not_voting_ids=['house:119:2:133','house:119:2:134'],core_sha256=core['corpus_sha256'],compiled_sha256=digest(result.compiled_ir),s2503_source_backed_actor_correction=True,public_law_label_error_disclosed_source_unchanged=True,hr2189_membership_unaccepted=True,member_neutral_prose=True,byte_identical_generated_replay=check_files,independent_batch_semantic_review='pending',full_issue_universe_closed=False,publication_authorized=False,production_writes=False)

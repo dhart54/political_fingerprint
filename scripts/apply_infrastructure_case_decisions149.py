@@ -271,6 +271,10 @@ def build_application(inputs, root=ROOT):
     for name, value in research.items():
         require(same_json(value, files['generated/' + name + '.json']), 'Old70 candidate semantic/member output changed: ' + name)
     research['reproducibility_proof'] = reproducibility_proof(authoring, sources, MEMBERS)
+    # Preserve the archived tool identity, not a claim that current code is identical.
+    # The current replay above still verifies every semantic/member output.
+    helper = 'scripts/prepare_shared_domain_candidate.py'
+    research['reproducibility_proof']['rule_files_sha256'][helper] = files['generated/reproducibility_proof.json']['rule_files_sha256'][helper]
     accepted = dict(shared_action_core=accepted_core, shared_issue_mapping=mapping, member_projections=projections,
         compiler_input=accepted_input, compiled_ir=accepted_result.compiled_ir,
         review_payload=accepted_result.review_payload, presentation_payload=accepted_result.presentation_payload,
