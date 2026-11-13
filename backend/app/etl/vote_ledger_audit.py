@@ -53,6 +53,33 @@ def _read_xml(path):
     return ET.fromstring(data), {"file": str(path), "sha256": hashlib.sha256(data).hexdigest()}
 
 
+def fetch_missing_sources(source_dir, scope):
+    """Opt-in official-source collection. Reuse cache; stop at the first failure."""
+    from app.etl.fetch_sources import fetch_house_clerk_roll_calls, fetch_senate_vote_files
+
+    receipts = []
+    for number in range(scope.first_roll, scope.last_roll + 1):
+        try:
+            if scope.chamber == "house":
+                results = fetch_house_clerk_roll_calls(
+                    year=1789 + 2 * (scope.congress - 1) + scope.session - 1,
+                    roll_numbers=[number], output_dir=source_dir, overwrite=False)
+            else:
+                results = fetch_senate_vote_files(
+                    congress=scope.congress, session=scope.session,
+                    roll_numbers=[number], output_dir=source_dir, overwrite=False)
+            result = results[0]
+            receipts.append({"roll_key": list(scope.key(number)), "url": result.source_url,
+                             "file": str(result.destination), "bytes": result.bytes_written,
+                             "status": "reused_cache" if result.skipped else "downloaded",
+                             "checked_at": datetime.now(timezone.utc).isoformat()})
+        except OSError as exc:
+            receipts.append({"roll_key": list(scope.key(number)), "status": "failed",
+                             "error": str(exc), "remaining_downloads_stopped": True})
+            break
+    return receipts
+
+
 def load_senate_member_map(path):
     """Use explicit LIS/Bioguide identifiers, never names, current seats or guesses."""
     root, provenance = _read_xml(path)
@@ -332,6 +359,8 @@ def main(argv=None):
     source_mode = parser.add_mutually_exclusive_group(required=True)
     source_mode.add_argument("--source-dir", type=Path)
     source_mode.add_argument("--source-manifest", type=Path)
+    parser.add_argument("--fetch-missing", action="store_true",
+                        help="Fetch missing official roll XML into --source-dir before auditing; never overwrite cache.")
     parser.add_argument("--senate-member-file", type=Path)
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--ledger-json", type=Path)
@@ -339,7 +368,10 @@ def main(argv=None):
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args(argv)
     scope = Scope(args.chamber, args.congress, args.session, args.first_roll, args.last_roll)
-    sources = load_sources(args.source_dir, scope, args.senate_member_file, source_manifest=args.source_manifest)
+    if args.fetch_missing and args.source_dir is None:
+        parser.error("--fetch-missing requires --source-dir, not --source-manifest")
+    if args.output.exists():
+        raise FileExistsError(args.output)
     if args.ledger_json:
         data = args.ledger_json.read_bytes()
         snapshot = json.loads(data)
@@ -347,8 +379,15 @@ def main(argv=None):
     else:
         snapshot = load_database_snapshot(scope)
         ledger_input = {"mode": "database_read_only"}
+    _ledger_index(snapshot, scope)  # Reject invalid replay input before making any network requests.
+    collection = fetch_missing_sources(args.source_dir, scope) if args.fetch_missing else None
+    sources = load_sources(args.source_dir, scope, args.senate_member_file, source_manifest=args.source_manifest)
+    if collection and collection[-1]["status"] == "failed":
+        sources["errors"].append({"reason": "source_collection_failed", **collection[-1]})
     report = reconcile(scope, sources, snapshot)
     report.update(generated_at=datetime.now(timezone.utc).isoformat(), ledger_input=ledger_input)
+    if collection is not None:
+        report["source_collection"] = collection
     # Exclusive creation prevents accidental overwrite of source files or prior receipts.
     with args.output.open("x", encoding="utf-8") as handle:
         json.dump(report, handle, indent=2, sort_keys=True)

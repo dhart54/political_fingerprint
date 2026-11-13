@@ -3,12 +3,13 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+from urllib.error import HTTPError
 from xml.etree import ElementTree as ET
 
 import pytest
 
 from app.etl.vote_ledger_audit import (
-    Scope, load_database_snapshot, load_sources, main, reconcile,
+    Scope, fetch_missing_sources, load_database_snapshot, load_sources, main, reconcile,
 )
 
 
@@ -315,3 +316,61 @@ def test_cli_replay_exits_nonzero_on_difference_and_never_overwrites(tmp_path, c
     with pytest.raises(FileExistsError):
         main(args)
     assert output.read_bytes() == before
+
+
+@pytest.mark.parametrize("scope,fetch_name,filename", [
+    (replace(HOUSE, session=2), "fetch_house_clerk_roll_calls", "roll001.xml"),
+    (SENATE, "fetch_senate_vote_files", "vote_001.xml"),
+])
+def test_opt_in_collection_reuses_existing_downloader_and_never_overwrites(tmp_path, monkeypatch, scope, fetch_name, filename):
+    from app.etl import fetch_sources
+    calls = []
+    def fetch(**kwargs):
+        calls.append(kwargs)
+        return [fetch_sources.DownloadResult("https://official.example/vote.xml", tmp_path / filename, 123, True)]
+    monkeypatch.setattr(fetch_sources, fetch_name, fetch)
+    result = fetch_missing_sources(tmp_path, scope)
+    assert calls[0]["roll_numbers"] == [1]
+    assert calls[0]["output_dir"] == tmp_path
+    assert calls[0]["overwrite"] is False
+    if scope.chamber == "house":
+        assert calls[0]["year"] == 2026
+    else:
+        assert (calls[0]["congress"], calls[0]["session"]) == (119, 1)
+    assert result[0]["status"] == "reused_cache"
+
+
+def test_collection_stops_on_access_failure_without_retry(tmp_path, monkeypatch):
+    from app.etl import fetch_sources
+    calls = []
+    def denied(**kwargs):
+        calls.append(kwargs)
+        raise HTTPError("https://official.example/roll001.xml", 403, "Forbidden", {}, None)
+    monkeypatch.setattr(fetch_sources, "fetch_house_clerk_roll_calls", denied)
+    result = fetch_missing_sources(tmp_path, replace(HOUSE, last_roll=3))
+    assert len(calls) == len(result) == 1
+    assert result[0]["status"] == "failed"
+    assert result[0]["remaining_downloads_stopped"]
+
+
+def test_fetch_and_audit_cli_uses_downloaded_bytes_and_retains_partial_roll_detection(tmp_path, monkeypatch):
+    from app.etl import fetch_sources
+    source_dir = tmp_path / "cache"
+    def fetch(**kwargs):
+        source_dir.mkdir()
+        destination = source_dir / "roll001.xml"
+        destination.write_bytes((FIXTURES / "house_clerk_sample" / "roll001.xml").read_bytes())
+        return [fetch_sources.DownloadResult("https://official.example/roll001.xml", destination, destination.stat().st_size, False)]
+    monkeypatch.setattr(fetch_sources, "fetch_house_clerk_roll_calls", fetch)
+    ledger = tmp_path / "ledger.json"
+    ledger.write_text(json.dumps(snapshot(votes={"M000001": "yea"})))
+    output = tmp_path / "audit.json"
+    args = ["--chamber", "house", "--congress", "119", "--session", "1", "--first-roll", "1", "--last-roll", "1",
+            "--source-dir", str(source_dir), "--fetch-missing", "--ledger-json", str(ledger), "--output", str(output)]
+    assert main(args) == 1
+    saved = json.loads(output.read_text())
+    assert saved["source_collection"][0]["status"] == "downloaded"
+    assert saved["summary"]["missing_pairs_on_existing_rolls"] == 2
+    assert saved["read_only"]
+    with pytest.raises(FileExistsError):
+        main(args)  # Fails before a second fetch could create the directory again.
