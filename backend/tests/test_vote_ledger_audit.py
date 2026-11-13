@@ -374,3 +374,29 @@ def test_fetch_and_audit_cli_uses_downloaded_bytes_and_retains_partial_roll_dete
     assert saved["read_only"]
     with pytest.raises(FileExistsError):
         main(args)  # Fails before a second fetch could create the directory again.
+
+
+@pytest.mark.parametrize("present", [None, ""])
+def test_unpublished_senate_tally_is_null_not_an_error_or_inferred_zero(tmp_path, present):
+    root = ET.Element("roll_call_vote")
+    for key,value in [("congress","119"),("session","1"),("vote_number","1")]:
+        ET.SubElement(root,key).text = value
+    members = ET.SubElement(root,"members")
+    for bio,position in [("M000001","Yea"),("P000012","Nay")]:
+        member = ET.SubElement(members,"member")
+        ET.SubElement(member,"lis_member_id").text = bio
+        ET.SubElement(member,"bioguide_id").text = bio
+        ET.SubElement(member,"vote_cast").text = position
+    totals = ET.SubElement(root,"count")
+    for key,value in [("yeas","1"),("nays","1"),("absent","0")]:
+        ET.SubElement(totals,key).text = value
+    if present is not None:
+        ET.SubElement(totals,"present").text = present
+    ET.ElementTree(root).write(tmp_path / "vote_001.xml")
+    sources = load_sources(tmp_path,SENATE)
+    assert sources["rolls"][1]["published_totals"]["present"] is None
+    result = reconcile(SENATE,sources,snapshot(SENATE,votes={"M000001":"yea","P000012":"nay"}))
+    assert result["status"] == "match"
+    totals.find("yeas").text = "2"
+    ET.ElementTree(root).write(tmp_path / "vote_001.xml")
+    assert reconcile(SENATE,load_sources(tmp_path,SENATE),snapshot(SENATE))["status"] == "incomplete"

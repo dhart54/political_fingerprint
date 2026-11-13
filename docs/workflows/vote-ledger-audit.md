@@ -35,7 +35,8 @@ Missing, malformed, wrong-session, empty, duplicate-member, unknown-position,
 or unresolved-identity inputs prevent a clean result. Rolls without a supported
 bill reference are still audited. Present and Not Voting remain distinct.
 Published aggregate vote totals, when present, must match the parsed positions.
-Missing aggregate totals are recorded as null rather than synthesized.
+Missing aggregate totals, including empty Senate total elements, are recorded as
+null rather than synthesized. Other published numeric totals are still checked.
 
 For scattered or renamed captures, use `--source-manifest PATH` instead of
 `--source-dir`. The manifest contains the exact same `scope` object and a `files`

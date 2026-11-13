@@ -167,13 +167,18 @@ def read_source_roll(path, scope, number, senate_members):
         fields = ({"yea": "yea-total", "nay": "nay-total", "present": "present-total", "not_voting": "not-voting-total"}
                   if scope.chamber == "house" else {"yea": "yeas", "nay": "nays", "present": "present", "not_voting": "absent"})
         try:
-            published_totals = {position: int(_text(totals, field)) for position, field in fields.items()}
-            if any(value < 0 for value in published_totals.values()):
+            # Official Senate XML commonly emits <present/> (and sometimes
+            # <absent/>) rather than a numeric zero. Preserve the unpublished
+            # value as null; do not synthesize a tally from member positions.
+            published_totals = {position: int(value) if (value := _text(totals, field)) else None
+                                for position, field in fields.items()}
+            if any(value is not None and value < 0 for value in published_totals.values()):
                 raise ValueError("Negative source tally")
         except ValueError:
             issues.append({"reason": "invalid_source_totals"})
         else:
-            if any(recorded_totals[position] != value for position, value in published_totals.items()):
+            if any(value is not None and recorded_totals[position] != value
+                   for position, value in published_totals.items()):
                 issues.append({"reason": "source_totals_mismatch"})
     return {**provenance, "votes": votes, "member_rows": len(members), "published_totals": published_totals,
             "issues": issues}
