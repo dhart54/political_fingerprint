@@ -134,7 +134,7 @@ class CIWorkflowPreservationTests(unittest.TestCase):
         anchor = '          # Keep host backup/restore tools aligned with the disposable service.\n'
         update = (
             "          # pg_dump 16.16 understands the source's internal pg_attver metadata.\n"
-            '          sudo apt-get update\n'
+            '          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y\n'
             '          sudo apt-get install --yes --only-upgrade postgresql-client-16\n'
             '          dump_version=$("$POSTGRES_BIN/pg_dump" --version | awk \'{print $3}\')\n'
             '          dpkg --compare-versions "$dump_version" ge 16.16\n'
