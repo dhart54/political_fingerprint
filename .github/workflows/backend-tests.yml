@@ -550,6 +550,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # pg_dump 16.16 understands the source's internal pg_attver metadata.
+          sudo apt-get update
+          sudo apt-get install --yes --only-upgrade postgresql-client-16
+          dump_version=$("$POSTGRES_BIN/pg_dump" --version | awk '{print $3}')
+          dpkg --compare-versions "$dump_version" ge 16.16
           # Keep host backup/restore tools aligned with the disposable service.
           for tool in pg_dump pg_restore psql createdb; do
             test -x "$POSTGRES_BIN/$tool"

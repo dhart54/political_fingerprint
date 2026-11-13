@@ -129,6 +129,28 @@ class CIWorkflowPreservationTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, 'Prior CI job'):
             assert_prior_ci_preserved(after, before)
 
+    def test_exact_client_update_preserves_tests_and_rejects_unrelated_changes(self):
+        original, before = self._restore_repair_workflows()
+        anchor = '          # Keep host backup/restore tools aligned with the disposable service.\n'
+        update = (
+            "          # pg_dump 16.16 understands the source's internal pg_attver metadata.\n"
+            '          sudo apt-get update\n'
+            '          sudo apt-get install --yes --only-upgrade postgresql-client-16\n'
+            '          dump_version=$("$POSTGRES_BIN/pg_dump" --version | awk \'{print $3}\')\n'
+            '          dpkg --compare-versions "$dump_version" ge 16.16\n'
+        )
+        after = before.replace(anchor, update + anchor, 1)
+        assert_prior_ci_preserved(original, after)
+        assert_prior_ci_preserved(before, after)
+        current = (Path(__file__).resolve().parents[2] / '.github/workflows/backend-tests.yml').read_text(encoding='utf8')
+        assert_prior_ci_preserved(after, current, accepted_baseline=subprocess.check_output(
+            ['git', 'show', APPROVED_MAIN + ':.github/workflows/backend-tests.yml'],
+            cwd=Path(__file__).resolve().parents[2]).decode())
+        for old, new in [('ge 16.16', 'ge 16.15'), ('--only-upgrade', '--allow-unauthenticated'),
+                         ('test_foushee_justice_publication_activation_postgres.py', 'test_other.py')]:
+            with self.subTest(old=old), self.assertRaisesRegex(AssertionError, 'Prior CI job'):
+                assert_prior_ci_preserved(before, after.replace(old, new))
+
     def test_postgres16_repair_rejects_every_job_line_mutation(self):
         before, after = self._restore_repair_workflows()
         match = re.search(r'(?ms)^  publication-activation-postgres:\n.*?(?=^  [a-zA-Z0-9_-]+:\n|\Z)', after)
