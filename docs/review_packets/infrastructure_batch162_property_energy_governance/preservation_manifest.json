@@ -1,0 +1,3583 @@
+{
+  "kind": "preservation_manifest162",
+  "base_commit": "65575bf9a045f23c99f07a0750e6560fbd937655",
+  "seed_commit": "76cef82ff79824a1a742a281528c6c463ea16b7e",
+  "files": {
+    ".gitattributes": {
+      "mode": "lf",
+      "bytes": 157,
+      "sha256": "55b5124c9e0d685b09071b4b11879a8005b4a32707b3916d25d8540a71a47471"
+    },
+    ".github/workflows/backend-tests.yml": {
+      "mode": "lf",
+      "bytes": 48415,
+      "sha256": "c0fb6d5ba5763c33cf23aee6e775cd43ad6ef5a72dd321c7e7b5ced7485dc567"
+    },
+    ".github/workflows/education79-locator-preparation.yml": {
+      "mode": "lf",
+      "bytes": 16155,
+      "sha256": "f2958dcaea58c0b97622bed0981c907f8c902a31d9f7e344edab2d2015963e77"
+    },
+    ".github/workflows/frontend-tests.yml": {
+      "bytes": 6369,
+      "sha256": "76ea5be0006160db848285e7d24d565a81fe5479187bbebb307f4817c57024ed",
+      "mode": "lf"
+    },
+    ".github/workflows/infrastructure-approved-decisions154.yml": {
+      "mode": "lf",
+      "bytes": 1184,
+      "sha256": "791cf30aa24585a694c74f6106aed40a98bdd0abe49a66b7e14d762bcc6c64df"
+    },
+    ".github/workflows/infrastructure-case-application.yml": {
+      "mode": "lf",
+      "bytes": 1248,
+      "sha256": "6ae21ea5aa24ef1495eb4cc505736f02dbc90f95865d688a880778c7ee385f20"
+    },
+    ".github/workflows/infrastructure-energy-governance-candidates.yml": {
+      "mode": "lf",
+      "bytes": 1509,
+      "sha256": "f65a5d8db02d86663d2bbfbe90a798c779e1424a29b46198d4a6b3660d739c62"
+    },
+    ".github/workflows/infrastructure-equipment-candidates.yml": {
+      "mode": "lf",
+      "bytes": 1295,
+      "sha256": "d1f96d9786fc06907b683238f96dc18cc882e23d40b329fe5f9dc7569b4d4b30"
+    },
+    ".github/workflows/infrastructure-permitting-candidates.yml": {
+      "mode": "lf",
+      "bytes": 1293,
+      "sha256": "b7ca29b6b9be55378b99d8aa2e15e1492b7e13fc573efb08d46f36a956b94edf"
+    },
+    ".github/workflows/infrastructure-shared-reuse.yml": {
+      "mode": "lf",
+      "bytes": 1342,
+      "sha256": "3992839670cc6e3e8aa27b7d728507d2253f907afd43313d56b7d930d1672fe0"
+    },
+    ".github/workflows/infrastructure-va-candidates.yml": {
+      "mode": "lf",
+      "bytes": 1286,
+      "sha256": "73f94c715accc6f92e08a8efb45d95ec942bbd9c714851bf8b2cfdd41e6addef"
+    },
+    ".github/workflows/infrastructure-water-resource-candidates.yml": {
+      "mode": "lf",
+      "bytes": 1331,
+      "sha256": "28d9d8faf96b798a2b4587f2e46fff7c2248be3398de982b6d52976e446319ab"
+    },
+    ".github/workflows/render-backend-smoke.yml": {
+      "mode": "lf",
+      "bytes": 2823,
+      "sha256": "7da5b254d891b646f53d7bc39c3a980516f82a4b7e230a742409e2be61a89d9d"
+    },
+    "backend/app/editorial_presentations/__init__.py": {
+      "mode": "lf",
+      "bytes": 769,
+      "sha256": "b8ac1411860e297bdb647ea55f256ad2ec5fde445371f77adf9f693f46c12d00"
+    },
+    "backend/app/editorial_presentations/compiler.py": {
+      "mode": "lf",
+      "bytes": 50391,
+      "sha256": "a72b7513c686ffe1b37dc3f7a5bc657e971716e323c0d8ad3d766112c3048377"
+    },
+    "backend/app/editorial_presentations/education_workforce_integration_candidate.py": {
+      "mode": "lf",
+      "bytes": 12376,
+      "sha256": "80fdeb8ba6f34c2f3089f207d26b5f391b1ce662bb57c2247eaeee0edc63a8f6"
+    },
+    "backend/app/editorial_presentations/education_workforce_m14g_integration_candidate.py": {
+      "mode": "lf",
+      "bytes": 25806,
+      "sha256": "33bd93aaaef2a5de9f7a9a413f319644cee950c5a5471cd8430628e06176890a"
+    },
+    "backend/app/editorial_presentations/environment_integration_candidate.py": {
+      "mode": "lf",
+      "bytes": 12136,
+      "sha256": "1d83a51ee12dbc6525900f6f561d48b41f1e69f08f96d7bca6a893149b85c1b5"
+    },
+    "backend/app/editorial_presentations/integration_candidate.py": {
+      "mode": "lf",
+      "bytes": 22409,
+      "sha256": "04c018bd05454e3fcf4a2e07601adba3ddaf75f2da2aff24837078a13dcfea32"
+    },
+    "backend/app/editorial_presentations/limitation_treatment.py": {
+      "mode": "lf",
+      "bytes": 1329,
+      "sha256": "27b5e0d0672862716ac7cd92998557341f2adc43bd09520d8c2cb77ccfd629fa"
+    },
+    "backend/app/editorial_presentations/public_review_state_catalog_v1.json": {
+      "mode": "lf",
+      "bytes": 132216,
+      "sha256": "622a83155a875870e07110f663dab14a27f2be9431a1c2cd121a8a48962edae3"
+    },
+    "backend/app/editorial_presentations/publication_activation_governance_v2.py": {
+      "mode": "lf",
+      "bytes": 25851,
+      "sha256": "e5a5ae28ebd0ce240a708200e9ccf12a01eb425df3aa736c023fc5f0e665637b"
+    },
+    "backend/app/editorial_presentations/publication_replacement_governance_v2.py": {
+      "mode": "lf",
+      "bytes": 30191,
+      "sha256": "321e7437132426696372eb8565c61864877fb27e4877cdf69e6059b1456e0ace"
+    },
+    "backend/app/editorial_presentations/publication_replacement_runtime_v2r.py": {
+      "mode": "lf",
+      "bytes": 12472,
+      "sha256": "563b651c8a349c1f742337a33f078f813c8f3058f03187dafc10f80aa90d3439"
+    },
+    "backend/app/editorial_presentations/publication_replacement_store_v2r.py": {
+      "mode": "lf",
+      "bytes": 12559,
+      "sha256": "1582cce11beb160d1c44617db5e4936e474abfe7d452c9b7b719d374b395eebe"
+    },
+    "backend/app/editorial_presentations/receipt_projection.py": {
+      "mode": "lf",
+      "bytes": 5356,
+      "sha256": "11d29bd08d9227e86f7ecfa93af9335cc3e895774e64e412a6a3d08884687ce7"
+    },
+    "backend/app/editorial_presentations/review_state_catalog.py": {
+      "mode": "lf",
+      "bytes": 14929,
+      "sha256": "7b05b561ab4f9561debf0c7928fd11c3599b20199e2360b4dee7a5a539f6bd6d"
+    },
+    "backend/app/editorial_presentations/reviewed_record.py": {
+      "mode": "lf",
+      "bytes": 6868,
+      "sha256": "ddb5e8ad3c8fb1a1ff31e482a47a81b7970bdf3e9912db233493544fcee9e466"
+    },
+    "backend/app/editorial_presentations/selector.py": {
+      "mode": "lf",
+      "bytes": 15129,
+      "sha256": "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20"
+    },
+    "backend/app/editorial_presentations/site_publication.py": {
+      "mode": "lf",
+      "bytes": 37749,
+      "sha256": "4d9a03963a9a99a4324e94f862c5d1699f32168d5fb896f9b86cadd8023c8e37"
+    },
+    "backend/app/editorial_presentations/validation.py": {
+      "mode": "lf",
+      "bytes": 8540,
+      "sha256": "f263c491a684a803a23af51853972d835934c19a6ae8a159cf83168db2cbcafa"
+    },
+    "backend/app/semantic_ir/__init__.py": {
+      "mode": "lf",
+      "bytes": 608,
+      "sha256": "d6132af8378ebdbe48e050d7e7123d93cfcb9f2f6b777d018457177eb0997d4c"
+    },
+    "backend/app/semantic_ir/accepted_findings_public_wording.py": {
+      "mode": "lf",
+      "bytes": 17815,
+      "sha256": "18b372077e1eef4f411c9bdaa5b5b26876d5d873cb0c1e05cff2d0171a61caa6"
+    },
+    "backend/app/semantic_ir/accepted_findings_synthesis.py": {
+      "mode": "lf",
+      "bytes": 13319,
+      "sha256": "ad69e8fda3bf3387b4b6f7f7809ded7933de2817c79ee83f0fabe02b479a541e"
+    },
+    "backend/app/semantic_ir/action_interpretability.py": {
+      "mode": "lf",
+      "bytes": 17110,
+      "sha256": "fd629f66a0bfdf0fe11b9f4bb5b450550dcee93aded7e6b05197755efed886f5"
+    },
+    "backend/app/semantic_ir/adapters.py": {
+      "mode": "lf",
+      "bytes": 8229,
+      "sha256": "60c36267d625e8122d16319839cf30c8e9a51b5089e3b1f70562c04eafc22b7e"
+    },
+    "backend/app/semantic_ir/compiler.py": {
+      "mode": "lf",
+      "bytes": 52520,
+      "sha256": "dceacdc5f5c88e759e063be5dbfe73adddda8953a8419e2e2cf20428b04639f7"
+    },
+    "backend/app/semantic_ir/m14c_source_hold_closure.py": {
+      "mode": "lf",
+      "bytes": 19148,
+      "sha256": "569c8b9bf3abf10d42f14b4a86b22a57598fcfc2702ecfb59b0c2a840876b4de"
+    },
+    "backend/app/semantic_ir/pipeline.py": {
+      "mode": "lf",
+      "bytes": 7931,
+      "sha256": "a8446422b53ceb244fb8a200fc14de9da3772a0f5807c64268cf908f0eb78f2b"
+    },
+    "backend/app/semantic_ir/shared_corpus.py": {
+      "mode": "lf",
+      "bytes": 19452,
+      "sha256": "bb746b7eb2e29ee39571815c817fa406939fb4a17ea9ef0821e035ad37c60a56"
+    },
+    "backend/app/semantic_ir/trajectory_comparability.py": {
+      "mode": "lf",
+      "bytes": 5010,
+      "sha256": "1b567850266a9a6df9aec1977d99c977c61e0ad9c4d10fc039c999222bfff9ec"
+    },
+    "backend/app/semantic_ir/validation.py": {
+      "mode": "lf",
+      "bytes": 5668,
+      "sha256": "456f803480811c0a786d53740efc4fff0f978ce4e9ac81c1e0da260b525d2b94"
+    },
+    "backend/tests/test_infrastructure_case_application149.py": {
+      "mode": "lf",
+      "bytes": 11404,
+      "sha256": "d9e64d083283fbbb2582140499d49e9b7a61fa076b5546c720a96e3516488c59"
+    },
+    "backend/tests/test_infrastructure_equipment_candidates150.py": {
+      "mode": "lf",
+      "bytes": 11723,
+      "sha256": "f04adfd683c680cef1ca4867ef79c013006b94105f929d2731a48526b69a1caf"
+    },
+    "backend/tests/test_infrastructure_permitting_candidates151.py": {
+      "mode": "lf",
+      "bytes": 8921,
+      "sha256": "f38b11717590f36ae053afb8cd047d84e3e6374e5a1a65f530253054a8584473"
+    },
+    "backend/tests/test_infrastructure_shared_reuse148.py": {
+      "mode": "lf",
+      "bytes": 7973,
+      "sha256": "319aa1fb5f21012261b7f9963e888bb955bab7b38924550611106192bb7f5976"
+    },
+    "backend/tests/test_infrastructure_water_resource_candidates152.py": {
+      "mode": "lf",
+      "bytes": 9876,
+      "sha256": "0d0e00cc085129d52367b74646fee56eb0e3cb129a14f7a5c8d2ec27ae251a25"
+    },
+    "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_environment_energy_119_v1/0cd876e1354f01a79d92e93220a62106b39aaed8d91a0fc387e9eedb808efd01_119_hr_6422_actions.json": {
+      "mode": "lf",
+      "bytes": 10325,
+      "sha256": "0cd876e1354f01a79d92e93220a62106b39aaed8d91a0fc387e9eedb808efd01"
+    },
+    "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_environment_energy_119_v1/2e51affd5057f1318053eaf75b7d06a5bff9498b6917497804d4f45a3f88e861_119_hr_2215_actions.json": {
+      "mode": "lf",
+      "bytes": 9923,
+      "sha256": "2e51affd5057f1318053eaf75b7d06a5bff9498b6917497804d4f45a3f88e861"
+    },
+    "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_environment_energy_119_v1/a9fd2a638641746c909d7de70d4d9ff7493d93f96b40bc940a8cae50548b2886_119_hr_187_actions.json": {
+      "mode": "lf",
+      "bytes": 10957,
+      "sha256": "a9fd2a638641746c909d7de70d4d9ff7493d93f96b40bc940a8cae50548b2886"
+    },
+    "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_environment_energy_119_v1/fcee64fc6f7ed78df20b425c6f3ad3b9949fce6387598269c43f484405853c65_119_hr_1917_actions.json": {
+      "mode": "lf",
+      "bytes": 10794,
+      "sha256": "fcee64fc6f7ed78df20b425c6f3ad3b9949fce6387598269c43f484405853c65"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/DECISION-PACKET.md": {
+      "mode": "lf",
+      "bytes": 10413,
+      "sha256": "3b6b60a88bb7ca9ef42abe4fb80714910d490ea9dac4eb8b79a6cfc547960347"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/README.md": {
+      "mode": "lf",
+      "bytes": 6672,
+      "sha256": "4217b4f1b1113ddca8c56df974335ef63baecd1e12b7dcf76d861856818b7a78"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/claim_source_map.json": {
+      "mode": "lf",
+      "bytes": 1823,
+      "sha256": "f7e602de6ff73632cfe0c7cc63b395db50ea8d5e6e76ceb95714ba25493135ef"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 3537,
+      "sha256": "efd83816e61ca2de516e734c0b2da87a81202d95dd2abcda411605f8f83e773c"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 3050,
+      "sha256": "e40781706fb9d0c7467376286c1b3e9221dbd81d96d6261c99e83b1e980f2a9f"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/governed_sources.json": {
+      "mode": "lf",
+      "bytes": 4403,
+      "sha256": "833769acb7c57afe9f9404bb581955e9a12f6f98d4a00e462ef5b6fc8641efdf"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/member_projections.json": {
+      "mode": "lf",
+      "bytes": 2790,
+      "sha256": "8e2949a2bb70b674e2407c9a196681b9362ec8561d72b7ec21aa80baf7be8066"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/membership_evidence.json": {
+      "mode": "lf",
+      "bytes": 1642,
+      "sha256": "5061cfef3bbadceda0599f2199d3b6aeb745811391636283455b272ff3aa4b21"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/presentation_inputs.json": {
+      "mode": "lf",
+      "bytes": 8725,
+      "sha256": "c52e5773f6b0ad518c4b5f5697a98587308702588131060c17099358c022b7a2"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/presentation_payload.json": {
+      "mode": "lf",
+      "bytes": 3246,
+      "sha256": "a9d7c685f04b4d78e366559c32ca3354b774d2e92e5699028d3e51b93b4515ec"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/provenance.json": {
+      "mode": "lf",
+      "bytes": 4999,
+      "sha256": "030f8a2d6d1ba85a52696ca63ad00fc6827f6ef9453a7c119b34115c4b6ba4fa"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/review_source_contract.json": {
+      "mode": "lf",
+      "bytes": 805,
+      "sha256": "e7304b1a97c8aee7b23b64baf87e7fc6c433c65a7d6a34def07488e312391a53"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 8372,
+      "sha256": "cf9dd618381d230c480bfcef271992ad33efabb7558365ee05a121aebdb0bd2b"
+    },
+    "docs/editorial/review_packages/health_s2393_one_action_v1/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 1402,
+      "sha256": "6b634595ad096ab782cb84e628b368b265688d1a7ed86f20c8469a33a42d1b28"
+    },
+    "docs/editorial/shared_candidates/house_119_health_20260916/authoring.json": {
+      "mode": "lf",
+      "bytes": 18065986,
+      "sha256": "e48d6e5e794cf787a4efbce99342ac7010d8e3d5b75ffdb625c049d2901abcbb"
+    },
+    "docs/editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 155690,
+      "sha256": "31f5f4fcb151a857dc24f24f7186a0d9b563baaedc4e6fa5dbdce3d2a920264a"
+    },
+    "docs/editorial/shared_candidates/house_119_health_20260916/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 199525,
+      "sha256": "71f624c86a0cbfc27b00d8e00b84c1e67313d934369af70f55611afaebfd7f93"
+    },
+    "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 19256768,
+      "sha256": "ca7859adbc775e0844bb17aadcf0b25a392b2ccfa1590c8f9ae86e92147880e3"
+    },
+    "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 64448,
+      "sha256": "43742f0c0b4dfc6d2a2cab9212c182f624a4abdb98e820fa8d3cfcf5ccaa9381"
+    },
+    "docs/editorial/shared_candidates/house_119_health_20260916/membership_review.json": {
+      "mode": "lf",
+      "bytes": 10793174,
+      "sha256": "50d624bcfed5c8e167cb48620bfbaad70c1aeb75320761712ab3a2ccf22b4f91"
+    },
+    "docs/editorial/shared_candidates/house_119_health_20260916/sources.json": {
+      "mode": "lf",
+      "bytes": 36967545,
+      "sha256": "2fc2b4e669131ef6068068e9e7823a699337cb45833a6f42c3704c825053db6d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 119390,
+      "sha256": "73283d464e6511ac002e989a48cce2114565691ca82df7ad2d536fdbea62b037"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/S2393_existing_shared_reuse_candidate.json": {
+      "mode": "lf",
+      "bytes": 2878,
+      "sha256": "41d3cc7bb7928942c2e4808b23e343a5046964eeb74fda7463493bbc6ae43ee5"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2792003,
+      "sha256": "ad6ff35385ff60a2cb8ac1b433ada930b7e8ae5d18fd64d8eb43ae92cbeee902"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/hr4758_existing_shared_reuse_candidate.json": {
+      "mode": "lf",
+      "bytes": 1103,
+      "sha256": "e35eeb5beacb44b6b8ea68753e87e19dec5ed11d70367a77e501101e55b79bd1"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch100_20260916/hr5103_existing_shared_reuse_candidate.json": {
+      "mode": "lf",
+      "bytes": 858,
+      "sha256": "cac3cd6246f6389cf9c33a46b85c4e0baf9eaeedaa2908c446453ba03cc67578"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch101_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2821408,
+      "sha256": "fa7b883eabf7f164bd818e4f4725ddef06405d356a421595552735c69ee78739"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch102_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2821408,
+      "sha256": "07008a2acea07ce08e543f23b5509014867eb0f1e28507de5f790f6417adcb06"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch103_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2821408,
+      "sha256": "411ebd9034f2584cd854d6436cb1963c14616bc1bd7fc10e59254b705aa51ae4"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch104_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2821408,
+      "sha256": "00904d077d68ced07dbabf5c5fc0616eceaf117e4f3074082cfb77f5a073a839"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch105_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2821567,
+      "sha256": "e9874d99c93b69b6efebfede6a2a4d84f2339315ea89ad4cd7f93c40e33f29fd"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch106_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2821567,
+      "sha256": "d4dfc585bcbd4bbbb7c5f1674f274bf72ef35606fc7a0f4974df3339df1781e2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch107_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2821567,
+      "sha256": "23e14daed1056a8c54208df54c802fe1a0618938c35c8be17b91668864fb07d6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch108_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3194709,
+      "sha256": "d29813f58671811cdf71f79981bb4bc4d4747113763cd43c32ef173d406ac907"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch109_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3327010,
+      "sha256": "1dab7e339fc9d29402391079cea27a1e26c05f8b79c05819a98e7d15b8f2ff6a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch10_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1795729,
+      "sha256": "259760f0ef8e28e606fd2e4ccd4bcfd0b942857904a99e8e324bb8d0c767b415"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch110_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3327010,
+      "sha256": "574de9a37159a2fb344aa704d4f8bd82e57dde3c256c2a832eb415e921e3256d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch111_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "4a1a170d3cd098159e067ec867ceb817dcc7aaa1b51016321dc1d0eb9ed3dc61"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch112_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "f79479909117b63df89e423c4801f0762b2af0f04d0844016fadaed002f1df4c"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch113_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "acfe1fa5d3ff004a5a868ee6a41dbc42a449a7498714eecb14813c34c404aa2b"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch114_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "6bf434b0a3829c82468c7973681a64afdc75ecb73c22ea90fda9d4b9d81334ee"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch115_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "1ff3baf8061b842269cc1776b810be04cdcd8fd641ee0c4c62523c417f5ad767"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch116_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "1a8183797493a69251343d94cb01e4d24208c079ba8bc9b12f6b56e704658e41"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch117_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "0559522949f9f46af1805cbe56e00dc34db1722ea749ea9234a6643a8233518a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch118_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "028bb30b2518ea2a3ccf8c55cc960dd62b9c04e68c7be7dafabddebefc596dfc"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch119_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "d64b7720dd907b4ac0e7d7f7d7345e506f56eec24ecc6bf952b718e7a669396a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch11_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1850167,
+      "sha256": "c7454f9468102464f0a1efab2d09e8ee16a0e5be05f348bdcf71dfceb492ceac"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch120_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "140496fb35a3fb86c9d2249ecfb63da0e8aa9ebd19667772a609a34eba049f72"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch121_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "2e94e05868d2437ad7c490e5391f15f13ecbd93e2584913c53c110054b7b73dd"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch122_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "dc9cd3729eeae0f2b05592b5c19232793bf42c409a22edcaafe590dce00787da"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch123_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "36bf78fb30a44ffc1d10bbc3ccfe6d3edbe1ba481e2348d837823510053c716e"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch124_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "bbadfdd5343303cc68e95d95d20fac4ad122274d9c653fe5b577987f1f9bf04d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch125_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "e536e62b37ecf415638df758726f4ae073733e7faf79f069bae9f61322d5ee47"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch126_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "9cac3a1a59d8df6eb3d21868350ff72501961c08707a68055f2b904afdae7480"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch127_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "f8397b6410e54f8626f22ea3c90ec5f4d8b2cf81c786bee487597ad2f3c0d9d0"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch128_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "511c82300870fc34e776f35a70c971a0d953bab9e4e31a2947a7e4e3bc20b03b"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch129_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "22a90737ec6786b07624df06d65b400c596ab94cb1b0d2b7f5bd35c659da4af2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch12_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1855175,
+      "sha256": "0c591b744a9785edee5e0a3bea1059c21f84ca974de517269c8d5a0f1452bc23"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch130_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "7085106168f2b946d48251e13d87f516633081582967df558ee7b86206460db3"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch131_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "1a4402d6cc521ab33409e93a558133f5396c89cffc70340469c6df3a15f7c025"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch132_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "5de4abe4da0079409a5450cbf6b8a64c9c5451b1fc6ac9c29e3be20219a6193e"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch133_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "ac50cd39c14fca2ee9e0dd40e6eef9d6f42cf8426134fe972dc4faa605ba2533"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch134_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "23f9adb52bd673142999dcc649482b3625760c130e0cea16f35566f74f425f7d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/authoring.json": {
+      "mode": "lf",
+      "bytes": 2920964,
+      "sha256": "b04d5545be45268d2ee5d3d29efee7e2325b11c123785fa415bce1cd3b612cfa"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 98875,
+      "sha256": "b9bf106a912489d8905b0a5443375750976658a391d269b56a249b514f99ded7"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 304100,
+      "sha256": "61eca3c41d5618313ee9879bc71102f45047f6f75204ec8a356b191c518f0c7a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 121867,
+      "sha256": "4ef316311bec7c337f7dd4361c2ae5f8d4ed1739db84871c13b53d4554ceba80"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 6246978,
+      "sha256": "eee9d26139d457b758c44def71ea8362adb9baa4f13339a2b4da4ac881f562fc"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/reproducibility_proof.json": {
+      "mode": "lf",
+      "bytes": 51383,
+      "sha256": "803e7fa3e336a51f75609dc4694478ef80b2e9c06e1e97d8c8cd319dd56bb3cf"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "83adccc2315303186e62eb995d210658818fa4b31113a7e6f0fb438a4ecb1509"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 42841,
+      "sha256": "b05fa99f26371c8922695f715a520be77726a482c99234a9e68526ff870ef1a2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/membership_review.json": {
+      "mode": "lf",
+      "bytes": 10956656,
+      "sha256": "a5c156a3a7d2688ee0afc3396d918d5fabd3483615dfcb93b02252b810f92077"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/resume_receipt.json": {
+      "mode": "lf",
+      "bytes": 85577,
+      "sha256": "bafefa41369ea6b2585bc24bbfaa69fea420f137497e7416b6560fe96116302d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/sources.json": {
+      "mode": "lf",
+      "bytes": 27113920,
+      "sha256": "60d0965f32dac135f8c949e6a540145ad4158ecda31ce1eac1123144538a67ec"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch139_20260916/universe_proposal.json": {
+      "mode": "lf",
+      "bytes": 3104302,
+      "sha256": "9d7f4ec5fc87f8c5939ca36590afcca28120171db6a0baedeaa71a7e89fbcbca"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch13_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1855175,
+      "sha256": "e7a883043cb69c9dbd983d999442949529c9693bdf3a5e4afe2f9e76c6aea73f"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/authoring.json": {
+      "mode": "lf",
+      "bytes": 2920964,
+      "sha256": "b04d5545be45268d2ee5d3d29efee7e2325b11c123785fa415bce1cd3b612cfa"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 98875,
+      "sha256": "b9bf106a912489d8905b0a5443375750976658a391d269b56a249b514f99ded7"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 304100,
+      "sha256": "61eca3c41d5618313ee9879bc71102f45047f6f75204ec8a356b191c518f0c7a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 121867,
+      "sha256": "4ef316311bec7c337f7dd4361c2ae5f8d4ed1739db84871c13b53d4554ceba80"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 6246978,
+      "sha256": "eee9d26139d457b758c44def71ea8362adb9baa4f13339a2b4da4ac881f562fc"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/reproducibility_proof.json": {
+      "mode": "lf",
+      "bytes": 51383,
+      "sha256": "803e7fa3e336a51f75609dc4694478ef80b2e9c06e1e97d8c8cd319dd56bb3cf"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "83adccc2315303186e62eb995d210658818fa4b31113a7e6f0fb438a4ecb1509"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 42841,
+      "sha256": "b05fa99f26371c8922695f715a520be77726a482c99234a9e68526ff870ef1a2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/membership_review.json": {
+      "mode": "lf",
+      "bytes": 10954643,
+      "sha256": "9e0c5e7f73d83d099011dada9524f8473c95a2b574a10fd7152beea7d31c2c66"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/resume_receipt.json": {
+      "mode": "lf",
+      "bytes": 86653,
+      "sha256": "52ce596e034c564115ab44e6a6cfb1e639c34b2a86444de22c1d7fb6f87ab8b6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/sources.json": {
+      "mode": "lf",
+      "bytes": 27113920,
+      "sha256": "60d0965f32dac135f8c949e6a540145ad4158ecda31ce1eac1123144538a67ec"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch145_20260916/universe_proposal.json": {
+      "mode": "lf",
+      "bytes": 3100211,
+      "sha256": "fea474f8ae0e33df7657bb27c0459bd64b4b96af781351a6cb03f9498c0ae628"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 12052,
+      "sha256": "09e631a61aca98fc61105184b2bedbd113efe654f988a0d5ad5b6dda663d3772"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 29222,
+      "sha256": "2dc353de6f6c036aa83fcfbf5c03c14a01247098e4b0a4051efc1270bcc2d53e"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/member_projections.json": {
+      "mode": "lf",
+      "bytes": 13131,
+      "sha256": "be623357e0e7e2a4c3f5af2035b7f483c846b46e1e6ca13025a0f6e30c964c78"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/presentation_payload.json": {
+      "mode": "lf",
+      "bytes": 11415,
+      "sha256": "1692d1e8a278a2689962b0be493ad517b88f93ab5cb5fc656239562da1b58c20"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/review_payload.json": {
+      "mode": "lf",
+      "bytes": 1445,
+      "sha256": "0895fc617d5bde7afdd7c78ce3545d9248a235135e56fdaac64a78ccccc660cd"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 282854,
+      "sha256": "daa1ca3091a3e147280b2495657b1c174c6b37a28d264fdad1631a370ccf2c12"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 5122,
+      "sha256": "d4b00573f781dffbc9c08e315c323af0064ea44e1abcccc26a1ce71b042a8379"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/accepted_cases/source_authoring.json": {
+      "mode": "lf",
+      "bytes": 210778,
+      "sha256": "45b4f4464238bbb43ce3e680aa32fef1ea12be865947bd7510d109e83accaac1"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/authoring.json": {
+      "mode": "lf",
+      "bytes": 2920964,
+      "sha256": "b04d5545be45268d2ee5d3d29efee7e2325b11c123785fa415bce1cd3b612cfa"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 98875,
+      "sha256": "b9bf106a912489d8905b0a5443375750976658a391d269b56a249b514f99ded7"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 304100,
+      "sha256": "61eca3c41d5618313ee9879bc71102f45047f6f75204ec8a356b191c518f0c7a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 121867,
+      "sha256": "4ef316311bec7c337f7dd4361c2ae5f8d4ed1739db84871c13b53d4554ceba80"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 6246978,
+      "sha256": "eee9d26139d457b758c44def71ea8362adb9baa4f13339a2b4da4ac881f562fc"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/reproducibility_proof.json": {
+      "mode": "lf",
+      "bytes": 51383,
+      "sha256": "c577c58067559c5e80db28bbf4c47baf7cae873e6d3656dbba8f0adc6ff7b5d7"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "83adccc2315303186e62eb995d210658818fa4b31113a7e6f0fb438a4ecb1509"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 42841,
+      "sha256": "b05fa99f26371c8922695f715a520be77726a482c99234a9e68526ff870ef1a2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/membership_review.json": {
+      "mode": "lf",
+      "bytes": 10881458,
+      "sha256": "87c68720598b90c0e15e613e1cbe917cc3c857deb978bc4d5c929c7bef534cf4"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/resume_receipt.json": {
+      "mode": "lf",
+      "bytes": 1674,
+      "sha256": "bc2fdfe4ef501ddcaf818028bb2f2004223f733a1694d11471ebfc6526d010a8"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/sources.json": {
+      "mode": "lf",
+      "bytes": 27393330,
+      "sha256": "6967eb8026fff5fce6097d671de75afe0782f106422b3c3cbe34bace96c42fb6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch149_20260916/universe_proposal.json": {
+      "mode": "lf",
+      "bytes": 3090345,
+      "sha256": "47cd22c06be2eaec58594805a49eef4f6d06ba3aea9558f7008388c61e2bef2a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch14_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1864402,
+      "sha256": "27d580d813cf160c79c6c909a5718c91c9a404bc15aaaef645cdf3033411c1b5"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 12052,
+      "sha256": "09e631a61aca98fc61105184b2bedbd113efe654f988a0d5ad5b6dda663d3772"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 29222,
+      "sha256": "2dc353de6f6c036aa83fcfbf5c03c14a01247098e4b0a4051efc1270bcc2d53e"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/member_projections.json": {
+      "mode": "lf",
+      "bytes": 13131,
+      "sha256": "be623357e0e7e2a4c3f5af2035b7f483c846b46e1e6ca13025a0f6e30c964c78"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/presentation_payload.json": {
+      "mode": "lf",
+      "bytes": 11415,
+      "sha256": "1692d1e8a278a2689962b0be493ad517b88f93ab5cb5fc656239562da1b58c20"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/review_payload.json": {
+      "mode": "lf",
+      "bytes": 1445,
+      "sha256": "0895fc617d5bde7afdd7c78ce3545d9248a235135e56fdaac64a78ccccc660cd"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 282854,
+      "sha256": "daa1ca3091a3e147280b2495657b1c174c6b37a28d264fdad1631a370ccf2c12"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 5122,
+      "sha256": "d4b00573f781dffbc9c08e315c323af0064ea44e1abcccc26a1ce71b042a8379"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/accepted_cases/source_authoring.json": {
+      "mode": "lf",
+      "bytes": 210778,
+      "sha256": "45b4f4464238bbb43ce3e680aa32fef1ea12be865947bd7510d109e83accaac1"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/authoring.json": {
+      "mode": "lf",
+      "bytes": 2920964,
+      "sha256": "b04d5545be45268d2ee5d3d29efee7e2325b11c123785fa415bce1cd3b612cfa"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 98875,
+      "sha256": "b9bf106a912489d8905b0a5443375750976658a391d269b56a249b514f99ded7"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 304100,
+      "sha256": "61eca3c41d5618313ee9879bc71102f45047f6f75204ec8a356b191c518f0c7a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 121867,
+      "sha256": "4ef316311bec7c337f7dd4361c2ae5f8d4ed1739db84871c13b53d4554ceba80"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 6246978,
+      "sha256": "eee9d26139d457b758c44def71ea8362adb9baa4f13339a2b4da4ac881f562fc"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/reproducibility_proof.json": {
+      "mode": "lf",
+      "bytes": 51383,
+      "sha256": "c577c58067559c5e80db28bbf4c47baf7cae873e6d3656dbba8f0adc6ff7b5d7"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 3365167,
+      "sha256": "83adccc2315303186e62eb995d210658818fa4b31113a7e6f0fb438a4ecb1509"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 42841,
+      "sha256": "b05fa99f26371c8922695f715a520be77726a482c99234a9e68526ff870ef1a2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/membership_review.json": {
+      "mode": "lf",
+      "bytes": 10884190,
+      "sha256": "4eda1913e358d18fa824870d16ffa3cf5dce15a8057070f46729ce9eecf75b23"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/resume_receipt.json": {
+      "mode": "lf",
+      "bytes": 1674,
+      "sha256": "bc2fdfe4ef501ddcaf818028bb2f2004223f733a1694d11471ebfc6526d010a8"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/sources.json": {
+      "mode": "lf",
+      "bytes": 27393330,
+      "sha256": "6967eb8026fff5fce6097d671de75afe0782f106422b3c3cbe34bace96c42fb6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch154_20260916/universe_proposal.json": {
+      "mode": "lf",
+      "bytes": 3095540,
+      "sha256": "14b1f1670a58c757eedf6d1b761a6e4acc91a0bb933e9e2f23d7b8b3027fa48e"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch15_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1864402,
+      "sha256": "9c62f592beef18ba0a850d69836345f3188404db02df80a0632d8ab6668001e0"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch16_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1901394,
+      "sha256": "9ac9dad1afbc755fdccd96ef78f4d8d19c6da60e827a7483b3b4476ac040073d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch17_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1928900,
+      "sha256": "f731da05ca0ffcc36766d05bf4383b4ba3e39957035333276331398f2ace9b33"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch18_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1946031,
+      "sha256": "f1dfc5cc16bf3effae22b68cf713930d5249f0786cf934b13d32280807af3b97"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch19_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1946031,
+      "sha256": "95c3210ed266b750c4572112078bcabc47c54f0dc46f1345687bf37d3a2715c8"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch20_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1962050,
+      "sha256": "d555c8e82dd1f796e29207933b5401545932ad64ec0a8de90cc1ecd3fef4a339"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch21_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1962050,
+      "sha256": "e58a3b6f5430d62f0239607800ee4c98aa421e20151dcb2fb0d2bcf9dcc32235"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch22_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1962050,
+      "sha256": "f8aa767b1bb52977e6eb9c3fb9323d12b6eb54b699e275be334b105b99c01f20"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch23_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1962050,
+      "sha256": "697b591b5e55b99a672abd307e432f3d06eca1538d9f7e5b036899c39bcb5cd6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch24_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "b594d8ee9837cd986ebc545d70521343d83b3b658a51eeb77bd26e1426d6d26b"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch25_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "446d6bca46556ac1e0161014f8bfeac0748b18b19efbf9fca3d0aa6e6a3eb586"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch26_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "6fd54daf2a5e1ea9d33234386d9dbcabb0a2727160b9da25d8146e7e67b94af3"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch27_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "2fb20dc5e41bc55cf472fe3ccc725de29985f6795ff50bfb5137b5ff54fe3139"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch28_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "eb75e5ddfab358a175f136f9f0151428550ea1668a369fc05de40223c46645d3"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch29_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "2fae76a90cb99cb50e0de5ee08ada8541ac0b7b9091df355df02f3017b52b672"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch2_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 588530,
+      "sha256": "2001732b42191fc730844f071a7eb8009089aa1babaacc5ecf4fc39943bbf71b"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch30_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "18b7c79a8fb4ae2c32c82d49e0072b3a86b517fcff6592647f44a4b3c0dd6208"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch31_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "4a82125366c2c089e783c39aae1e85e9be79e0dd530aae826c8cf53f8a076cdc"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch32_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "58b903234524ac394d53d2f458b0bd7b03d2bd4d42740103f14db8b620f1800a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch33_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "7530b9da5e136665f98ea736820f9a1aaced6b42f46b45be6945bc5a11108a9a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch34_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "db2d1454a900eb218b4e1dfc555b30adf613779293da88562d741a5f4a53c04d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch35_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1981321,
+      "sha256": "efc41cf128da1a7ba85ee921c6f4c3a3aedffcb8dd159f7453bba2c62f7683b5"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch36_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1997426,
+      "sha256": "492342a365d4b222c129dc025ec1931f13fb6de6e3aa109a61bfb3d3c3fec594"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch37_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1997426,
+      "sha256": "eed34c7416e5a9777e7881a3dbe4f0f7ce45125ef5d0c0a2bb765785daa8b20c"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch38_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2025384,
+      "sha256": "e808308d56b69aedc57511458fffbfd12b00ced78c6a20f118d7ab28bb3d4b85"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch39_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2146017,
+      "sha256": "920069d883e2d739881ccca8b55da3603d7cd5a0cd7fa7aa6081799b1f273d6b"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch3_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1081532,
+      "sha256": "3926411ac532a69f046137086a26fe3c94f7ce7d72db3bf4421db2568d9862a6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch40_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2146017,
+      "sha256": "aacae0d44ae2cb0026370878bb878d990b9a5533fc807d53be5e6d99fc367139"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch41_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2146017,
+      "sha256": "1e986bb6344beb72bfa36b4fcee5d30f91f9ef990d242d0637596e5cac893f3a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch42_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2166747,
+      "sha256": "d0047827fec4a4620dd30f0f6cc9a4ba6b494a7334c3f878013fe1d5bdd4a0a9"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch43_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "bed629bd5f030276adb33b60ff927221d06e03d45812f11e9d63a1f4cac172dd"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch44_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "0026667bb04fdbebe5f180231fa2631e80da0996e6905738e4ed1eaf21c701be"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch45_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "1d9d98131d7ab3d83e586173fa78219a581bc84406ca796d2a10f3d07273eef0"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch46_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "6f6ac7bf986ade84f67b937bd960371e4ae800f4abcef29a6a9bdcf4e27f8a75"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch47_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "6eb8614742e5fe46ebb335f24ed7e8809b77e54788377768499cd65419aa18e6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch48_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "60c51e05a1a94ef0731783f3b1828054c5e6b7ab1a8899d167e27574ff801ee3"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch49_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "a580efc4badf74027db903865b8493f9ac1d2534218edb0105ab0cbe986fec1c"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch4_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1364048,
+      "sha256": "b0b4e4e69378a185e9f877c0e329e76df85b65225cbac06268d0de453dd999d2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch50_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "44636f5e5daa445be4214d6fadc2bfbac3d302a5259fa2ef2f516df618b84fb2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch51_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2179434,
+      "sha256": "09022816eb8e2b2b112b1e02e6e4ff3cada321a1f48c6f13d0a23dd4f0a7c3cf"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch52_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2189436,
+      "sha256": "23b8bad5d5636df387071a66da64a2daa58cbe97c640346e2f5b55fafb2b857b"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch53_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2189436,
+      "sha256": "4a0da1b144e4642600a04210a4c163d6b697daee62149257598be1ebfd8c6248"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch54_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2189436,
+      "sha256": "05697d4aac3924b73c458ff5960784d9d9679d21294fe697cdb1091b35c60deb"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch55_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2189436,
+      "sha256": "beb42e8c7924abab218c0f1acfd360e882c4c2862c512ae64c175f642e5be9e2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch56_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2233936,
+      "sha256": "f1a3b5f9f590d08e30547c919f74ac04b43b9fcdffa04201767fdf232e283998"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch57_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2233936,
+      "sha256": "f033ac5e9786e13517938897fb0eb3ef85cedd0af4ef5e79cde2a3c564d45622"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch58_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2315282,
+      "sha256": "a2630751e4433d0348bf06df8f2e4331daa36838982eaba76bfceca84e33a8a2"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch59_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2315282,
+      "sha256": "6d21a95c7e69b24220f34d2dc5a1fb7dfdc617342b364f8f2e44aa876ff385d8"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch5_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1435479,
+      "sha256": "4a631d078544ebb9661ab3bae2037ca0628e747051a717664e90c6504b97b02d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch60_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2342266,
+      "sha256": "899334ec7881f0a9535ac68cfc48a068c5c816a84fafe5b3bf8f66f470c81c91"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch61_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2367609,
+      "sha256": "c8cf52809c7a2f2adeb029add20077c2dd4a1202bc50f43d68d4dff311ca7817"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch62_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2367609,
+      "sha256": "ed3bb5f5bd9fe8fbd6029c23169cdaa0541bdf19bc0071969e1795c8425ee94e"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch63_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2367609,
+      "sha256": "13c065c497d6dd41876cfe11baf86eaa04ffda1bab2921ccb35b403f44e70fac"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch64_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2367609,
+      "sha256": "ef70e18c76136ce5a8abb248f4233971a24fd14f88ec202f24bafe13c264dd21"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch65_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2387626,
+      "sha256": "0348a4217b7dbe8ef2a8fd2f5cc7038b518da4a2478711cf70d97527772e4041"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch66_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2440565,
+      "sha256": "68ed5ba23fa41648f08e5cc7d72cb2bb657fbbf5168588721a8d5f575ec8c0b7"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch67_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2440565,
+      "sha256": "92058dbcb8072e3019e1aefa3aa40f7d5efbc3a85a7a8b1d01c4db9d9b7a17cd"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch68_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2440565,
+      "sha256": "1a2608c0b33bdb92dbd452e220a25a67056457af2c65d73eb03c47ac8fd86a67"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch69_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2440565,
+      "sha256": "804edb1fd1db639fbec449e4ba209b6f722e8cccacd0580e78571020a08be397"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch6_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1584057,
+      "sha256": "5303ebafc576dd66c601f8c282e4ad2d6d186a0305695c214ead2cfc6332a802"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch70_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2470324,
+      "sha256": "4a50f78a74603ca3c00ddb670aadcd0b1660a1de347303eb960b89e5420be196"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch71_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2470324,
+      "sha256": "e68bc4b37358a4fca1e616eed7f925137c25019dcf7e581503548c2a93bf723d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch72_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2500059,
+      "sha256": "2719c88183fd2db61303af0cee40888459fb7beb09392b49d855e65d573460c9"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch73_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2500059,
+      "sha256": "5515744428fe211483617994c678a707787361310e7010ee9524abd50e157c8e"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch74_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2500059,
+      "sha256": "1067f40cc31805b519b1eb78c445005cc8f84411aebb8136d20e571fd64da198"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch75_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2527350,
+      "sha256": "9c6a80d2f7605d16105b3fd0b31fadbcc61fd32572684126451f20347e8ea3d0"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch76_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2546384,
+      "sha256": "64f89fe0fe2bb9b6ab1e65d8129dd9d82e48707b1c23ebcf21444485d372a7b8"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch77_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2549661,
+      "sha256": "527b941949eb3ba1530c06854b46234ac994def849cc81cafe1c0e59179f3b2a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch78_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2549661,
+      "sha256": "0fdd97a2bed6f8b03424736fec702a13028650d02c315ff17921485862e2233d"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch79_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2549661,
+      "sha256": "66dc2401f9524ede88d1404f2acb752105ed10581e6e0e8b7fb9be28361b2a0c"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch7_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1584057,
+      "sha256": "2addcc0c5e71ab346a3761898b74f8dc704fe50d15ed2c0664b0d91998e76629"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch80_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2575515,
+      "sha256": "ef53c4ae3f57e6362bf1c4b843ceab68a95f5899914dd1217875bf490d28b513"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch81_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2575515,
+      "sha256": "3dc9121bb02e1b5838bcb8948c6d79e0e569eb81a34297fedbfab5a912221adc"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch82_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2575515,
+      "sha256": "5bc0cd4902b1c23b54d13ebdac8be954cc443e80509b6ec94bf86b1dd117afef"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch83_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2594839,
+      "sha256": "a551d777cdede179c91da943e8cc31278cfc4bea46c2ee5cfa6a8eee6da35870"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch84_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2594839,
+      "sha256": "aacc65092fa9a8d34c57a95002446bdb3472b89f73db72712e6dc025dd9632e6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch85_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2613789,
+      "sha256": "9b321bb157112db15293422e6014c4e260843aff3b7d027cdfc69f1d27a454a6"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch86_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2613789,
+      "sha256": "7b725120a539b6645937264b45cc8973fe0dcd51e0c39652ece246057c3f77e0"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch87_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2636900,
+      "sha256": "4dce8a2d37deed0ef268fad61f5bce2142bdb1951c6de0c2be7b1da12fa85557"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch88_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2636900,
+      "sha256": "b79576faf74746e77601eeca454354c92e0d169ed7243a605e808775765dedeb"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch89_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2636900,
+      "sha256": "07831f9c637bb51e8a93faedbf59ac581f0ba6e86fa0381d979c019fc121bd7f"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch8_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1633725,
+      "sha256": "6f434ea90d24d45bf918f75ea23bc201360682c85c68113fe63585f05fdd20cc"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch90_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2636900,
+      "sha256": "f32e1ef53f0fa984cb6b947aa27c350ec9d62ada7b931c7dcb89acadc663ccf5"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch91_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2660489,
+      "sha256": "d7a6fb1ef8b9d1106a9a79b836203bb013d7a46288f42aca10e82bc64aafee85"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch92_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2660489,
+      "sha256": "a51aca1a664ebee92bb9b1f58bdde761a06670ff9574fdaa5bb1d938540cc505"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch93_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2715302,
+      "sha256": "d486b38906f2573804360e09d126edfaf6dbe5a4ccbcba1403971e647484ba52"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch94_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2715302,
+      "sha256": "763b8b968c771bceccf04fd5bbb11129df5bfe4f9ece17037a0e95fda6cb7d2f"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch95_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2715302,
+      "sha256": "bd571a3e27f05ce3c80169544cf8f05377be073eba9768644818408e8f50fe31"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch96_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2745953,
+      "sha256": "ae158c27f0849d301fe7311ddcc911e6e30fc0706daa04ed5e91a151218cb11a"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch97_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2745953,
+      "sha256": "d40b598cff8c83332c8a01f1632a579050b97f6feedee6b85373957619917be3"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch98_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2745953,
+      "sha256": "398b07e23b29b971fd3d56e7e995d13ede543ec7862bbdb579907fa5ca14c49e"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch99_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 2791939,
+      "sha256": "92bf0c4a88d98cdb2f643a7c74b2faa610a53744fcefad3e87a9609f77dca394"
+    },
+    "docs/editorial/shared_candidates/house_119_infrastructure_batch9_20260916/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 1735095,
+      "sha256": "ffef729af93ffc7ed2b9109269aa89f0b8e5a453179607a930328d6c0a994bb2"
+    },
+    "docs/editorial/shared_corpora/house_119_v1/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 128759,
+      "sha256": "331194e87a86764ac8282d67dc13e93df412cb57516bd1d256a9630fab4be0ab"
+    },
+    "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 199492,
+      "sha256": "5eb4ce6a7226918f1f43d76a06e92dce46088d79a5643aa0773c2eb1bcf81a93"
+    },
+    "docs/plans/infrastructure_case_application149.md": {
+      "mode": "lf",
+      "bytes": 8232,
+      "sha256": "5c3c090089072eec56b2467d95990fa06d099d521f0bdaed5a26cfb129926e90"
+    },
+    "docs/plans/infrastructure_equipment_rule_disapprovals150.md": {
+      "mode": "lf",
+      "bytes": 8327,
+      "sha256": "e17e09bc2fa1106ffdea983ca20524aca37af19151afcab52c2749bac8041b8d"
+    },
+    "docs/plans/infrastructure_permitting_cohort151.md": {
+      "mode": "lf",
+      "bytes": 8374,
+      "sha256": "e73b7c4f50c5878d83466f363e283299d8ef5a114eb53eaf4779f4289bd4e22a"
+    },
+    "docs/plans/infrastructure_shared_reuse148.md": {
+      "mode": "lf",
+      "bytes": 6943,
+      "sha256": "7ad4ad29a25e03304dd915d831cf3f0c1caed18c5b0d20c875430513f29cb43d"
+    },
+    "docs/plans/infrastructure_water_resource_cohort152.md": {
+      "mode": "lf",
+      "bytes": 6483,
+      "sha256": "aebc29abd0b56c2b16590e9b26403e73db7c3ce5ef69c362d3a68cb9f4e0cefb"
+    },
+    "docs/review_packets/infrastructure_batch138_hr859_candidate/authoring.json": {
+      "mode": "lf",
+      "bytes": 30957,
+      "sha256": "f435bd0beda209617923bbec462b71566b2b47f65b9b5530086d72b007d76c06"
+    },
+    "docs/review_packets/infrastructure_batch138_hr859_candidate/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 2779,
+      "sha256": "c136af2d39fd3dd15386e78926038c06322bbc2c193cc922f0da0e1fdd6b858e"
+    },
+    "docs/review_packets/infrastructure_batch138_hr859_candidate/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 38585,
+      "sha256": "0ee5326c015f71c13c16203281aecfc86ca7f822bc745bd2f25556882ee5f82a"
+    },
+    "docs/review_packets/infrastructure_batch138_hr859_candidate/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 1628,
+      "sha256": "61ac326341552e5a56f6c4666e1095cee8c12d456f70868ac1cd3b75ff825a2f"
+    },
+    "docs/review_packets/infrastructure_batch138_hr859_candidate/sources.json": {
+      "mode": "lf",
+      "bytes": 116916,
+      "sha256": "d5e8b0576c5d6aa12593fef694987351c7767ba623fa85b554f9fc00f0cd826e"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/15usc636_capture.json": {
+      "mode": "lf",
+      "bytes": 154107,
+      "sha256": "8ace46017198a4b938244b8ec2c0f482716d109e88dccb4021eba185dcbd4b42"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/26usc6303_capture.json": {
+      "mode": "lf",
+      "bytes": 6333,
+      "sha256": "19d418b11fbea9652e2d6be6509a8a3f2fae99ca703f4bdee87a75fdfdc4d079"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/26usc6511_capture.json": {
+      "mode": "lf",
+      "bytes": 131019,
+      "sha256": "d7c6310458f7dc88d0a063ee4ce3837737b4a89445654db30e14c4cd856721de"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/26usc7508A_capture.json": {
+      "mode": "lf",
+      "bytes": 52316,
+      "sha256": "eb648e81008439e875e8ea12ca8f8e927a40abe08cc3bfcc15c02c107f2346aa"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/31usc6101_capture.json": {
+      "mode": "lf",
+      "bytes": 169410,
+      "sha256": "84ebe60644bf2dddcccd184ea9d1d4af969b8e95cad06795244ff96bd7de4d12"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/42usc5121_capture.json": {
+      "mode": "lf",
+      "bytes": 59416,
+      "sha256": "acf4a8e6ea1c4c4ffef3a2466c2dfe3bc59beb47051f14694ddf79123c52f606"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/42usc5122_capture.json": {
+      "mode": "lf",
+      "bytes": 46014,
+      "sha256": "08ee2441d71ccebc8d52b6a5fe52c18581b5026e25f7bf46bc3a4b11292ff145"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/42usc5170b_capture.json": {
+      "mode": "lf",
+      "bytes": 34992,
+      "sha256": "998441a12159bd372062eceb3cd75e704de9308db51c9d8b0414c9a6b746c5ff"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/42usc5172_capture.json": {
+      "mode": "lf",
+      "bytes": 97531,
+      "sha256": "bb5c50858f69856010e2e296c960616b016b8c57378e64581fc480e9e6eb8750"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/README.md": {
+      "mode": "lf",
+      "bytes": 6086,
+      "sha256": "a84a16d8211ffb4a7721120133e3cfacdac383e73bd513a331adc171df908f5c"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/amended_binding_review.json": {
+      "mode": "lf",
+      "bytes": 4044,
+      "sha256": "341f3dace45cb3746af30169528db8e64484460aac8d5a46b6ed2e8d7b02ed9d"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/authoring.json": {
+      "mode": "lf",
+      "bytes": 89520,
+      "sha256": "cfdae6b729348ea622761ac665e815bc24c4dd00aac0b7c6105d48f860a98af7"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/capture_code_stage1.py": {
+      "mode": "lf",
+      "bytes": 3363,
+      "sha256": "05be503ce3c648635a3f79e5119c6a0815b3af585a1d3fcea039026ab150f8ca"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/capture_code_stage2.py": {
+      "mode": "lf",
+      "bytes": 3672,
+      "sha256": "ae7145cb77489b27800ce20c7b99f5120eaba0aa7ca362781c94a0247eacff1d"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/capture_code_stage3.py": {
+      "mode": "lf",
+      "bytes": 3946,
+      "sha256": "64183c171a6db693e4663ac8cdd24a2f72e477581099eaa3311e0261960c307b"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/capture_code_stage4.py": {
+      "mode": "lf",
+      "bytes": 3946,
+      "sha256": "64183c171a6db693e4663ac8cdd24a2f72e477581099eaa3311e0261960c307b"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/capture_preflight_stage1.json": {
+      "mode": "lf",
+      "bytes": 2917,
+      "sha256": "4d51a938c758ec6c72f8a8998142011c558d243645e5050b4fced14e52710990"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/capture_preflight_stage2.json": {
+      "mode": "lf",
+      "bytes": 3441,
+      "sha256": "38eaa248de3e04beb5fe5bf642f5e074a38793268d6d4393194cafd632e360dd"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/capture_preflight_stage3.json": {
+      "mode": "lf",
+      "bytes": 4199,
+      "sha256": "5d228adf2f111462c978b12fa7830dd3faad9b2326465945ccd3e4a9038d816e"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/capture_preflight_stage4.json": {
+      "mode": "lf",
+      "bytes": 4775,
+      "sha256": "44dce4d7335b97e2da579628675adf957f5da5a1eed4923fe1b35e962d6cead0"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250331house_capture.json": {
+      "mode": "lf",
+      "bytes": 2267,
+      "sha256": "1cc25e7a10bb74a016a98fe8a59b3d65b6fc38ed4d16295b9d937845554c5bdf"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250331house_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "c9977fc218bcac4c7339822a1dd2611f7608b6393686cc765167961c84dff42c"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250331house_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "2fe38b30b2e27a438ee7ea08ac89997f0549a58fef6d0fbd40fbc19518befb04"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250331house_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "cf35038105895901cfa4b805c6e71730832550846fcbee413f671c16086c89e4"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250331house_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "25cc15673290b479f221432b6b358ba59c192c076134275ff1573939ab658e3e"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250331house_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 66851,
+      "sha256": "71eb72f9312b2112fba37d9c0da047e0f8faf97eaa2b68cbaeb1098edeec0d42"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250401house_capture.json": {
+      "mode": "lf",
+      "bytes": 2013,
+      "sha256": "eb396e901bc2a742088de39e52743a353b2724bf3d14db0f5c419614197e17fb"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250401house_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "45a2243b85dfd4170871372769870eff347f84a90593e133f2482d367af4b9f7"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250401house_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "c41517c76ed3c0a7aa46bcdb2df6d6eff0129efea9b089ac2a53fd5222e46391"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250401house_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "522f066c5cf31a9c41800d101709bd0d9aa126a0a00d53d4c757eab8f3616fd3"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/crec20250401house_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 112596,
+      "sha256": "dedd6efe602f8cf1e7e9c246486af34e98ebc1b42605b779b015a4d4f3ba488e"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/decision_bundle.json": {
+      "mode": "lf",
+      "bytes": 10483,
+      "sha256": "41619475782974389c7bfca03b3d0970b0b948c8a73050058ca1a9ab6893404a"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 4970,
+      "sha256": "396cdf794c07b985d1e5cbfbbf207567344b93adc5d0caee9ce42ae21a66ebcc"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 14726,
+      "sha256": "0f08fb2e81f7bc7ebf1b866d7f39b3ff002c44205967fe1c93b04de44b109871"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 9659,
+      "sha256": "989fedb38881990a375a962fb5e9521139c0ebfad9a6b5c143575fc81a8603ef"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 3648,
+      "sha256": "6649cb62862d2fba8342be95c5e0423322db7cbd512555afb8f70c770fefbc53"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/replay_receipt.json": {
+      "mode": "lf",
+      "bytes": 856,
+      "sha256": "f4bfaf46153dce3429bac00fd7bdd0a6ad9f2a6d07b836e0db24ecf59c4ed7b5"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 115982,
+      "sha256": "2575c3066cb46406286b5184cde298d23457332c88ef3ccca825051e93950f0e"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 4447,
+      "sha256": "ce11c48a33ac4781af904763a03b245ec6bcd1b03a6a308c36f82f11a5bf9f5c"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/packet_manifest.json": {
+      "mode": "lf",
+      "bytes": 8598,
+      "sha256": "690dd437db45f39839cac4b394966d56f53bc902e4408ec4439bd657e7699135"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/pdf_page_review.json": {
+      "mode": "lf",
+      "bytes": 28967,
+      "sha256": "53e911b74ea652baee1f6b996fc032134e187ae49716ec220aad152648cb8b3a"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/plaw115254_capture.json": {
+      "mode": "lf",
+      "bytes": 2196,
+      "sha256": "98703d9257de28b20a2fb86dbf82b8d038a25f9bbb19cc86d5f04b0459043535"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/plaw115254_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "5b83ce61e0a7ddf70bd4c622c32a87cb7fd0a1f6fdc79ba1dd36000267af4510"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/plaw115254_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "204a23b78473cd85081113899ee749e40ef5ac8d8e18da78cd40ffc701f0ae80"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/plaw115254_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150176,
+      "sha256": "ae743d48301f7f24e48333d2fb6a39f016cb39839772a212a85234aadc7b860d"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/plaw115254_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 37995,
+      "sha256": "616f5cbc665f6fbf2ae04f543767f064a4dde5044c53a98814de343e3bf31c56"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/retained_input_manifest.json": {
+      "mode": "lf",
+      "bytes": 6742,
+      "sha256": "189c25da9c8b810bea64c113078c2aaf08861e8c02d62e53b7210ce025dda67e"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/source_units.json": {
+      "mode": "lf",
+      "bytes": 9289,
+      "sha256": "9b29bd292c830333c96820e8fb7079e82342990a745e2c3311f49ba6ad14871b"
+    },
+    "docs/review_packets/infrastructure_batch142_disaster_baselines/sources.json": {
+      "mode": "lf",
+      "bytes": 149383,
+      "sha256": "ed62eef145e074e3eba5a2b3a5df11e699c8d615f1b969bc72ad964db62de2b9"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/10usc2663_capture.json": {
+      "mode": "lf",
+      "bytes": 49779,
+      "sha256": "608f7f25f30b3f43990d2aaa2b393ffe1637e3d5040275531169f95d85055c15"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/18usc1151_capture.json": {
+      "mode": "lf",
+      "bytes": 12738,
+      "sha256": "de1e20576f55ec3a00430400fa3379de698e1c660596ca4ac888c535a666596c"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/20usc3_capture.json": {
+      "mode": "lf",
+      "bytes": 133303,
+      "sha256": "0722b2d96961fc11220b634d737c7f5ae3960e1e64e320e8d648793296f991f4"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/25usc177_capture.json": {
+      "mode": "lf",
+      "bytes": 78663,
+      "sha256": "3e711b6dd5a60228b376d2bc5b9efb2cf577237e9ea04e5b54098680ecbc86f4"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/25usc177_locator_diagnosis.json": {
+      "mode": "lf",
+      "bytes": 1630,
+      "sha256": "c82ce00e02a30ec3dc9b02f33ffd6ba16766fbaa939b5908322cb5bdfae756f1"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/25usc177_publisherlocated_capture.json": {
+      "mode": "lf",
+      "bytes": 5971,
+      "sha256": "14090cc7c5f7a908de7de178e878af14ff0948faccd87be66b7b2bb728f45712"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/40usc31_capture.json": {
+      "mode": "lf",
+      "bytes": 116153,
+      "sha256": "f3f1870804e367a92902e0c61a8a356793cbde2b665e91d3c10536fbacd47557"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/40usc89_capture.json": {
+      "mode": "lf",
+      "bytes": 152308,
+      "sha256": "e135128d944b2f0ee2c803608ecdd2f630de0aae230069b0d646ce0f1f34b634"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/43usc1311_capture.json": {
+      "mode": "lf",
+      "bytes": 17921,
+      "sha256": "c26c7c4dcadb8720aa683ee0cd4074f652fe9aac90bbc13ae831a321f348d0e0"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/43usc1314_capture.json": {
+      "mode": "lf",
+      "bytes": 6204,
+      "sha256": "c34dab549e735bd780c09aee646f29055f373cc0d84e932f67f3aa3ea60d60bb"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/43usc1331_capture.json": {
+      "mode": "lf",
+      "bytes": 118396,
+      "sha256": "4ffa34ad2e3b2be397331e43ac70219504db2a52e304a96f5c2819f1bbb2c526"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/43usc1602_capture.json": {
+      "mode": "lf",
+      "bytes": 22810,
+      "sha256": "89f19c11e7eed8e925e0dfa6b56274a01e4c1a5342bbad4356a7e4e4756d03df"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/43usc1613_capture.json": {
+      "mode": "lf",
+      "bytes": 91326,
+      "sha256": "6fc15fe3fc2f5e2c5b76657642f15d427284225ed9d8695c35ccd5053c2b3e77"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/49usc601_capture.json": {
+      "mode": "lf",
+      "bytes": 1632,
+      "sha256": "b20f7208fd3a39fc61f5f46a233ffe08e4d5cedf6971f5583b1950c64dd5d61e"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/49usc601_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "385c2da24d2884b75430060d4b0cc57e6cd0405f06f803ee61cb48a37813d4e9"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/49usc601_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 15942,
+      "sha256": "bb19458d0514e37be41ae78aaf88d7042df696b67702dbddbaad93ce0017e641"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/README.md": {
+      "mode": "lf",
+      "bytes": 7990,
+      "sha256": "f0946f1f4d9ce2160a9767a263b2fc28bdec9f2103d854bde926b0023f737e93"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/authoring.json": {
+      "mode": "lf",
+      "bytes": 138320,
+      "sha256": "2a074bfd6a912e0f0601cc085e139a44aec7131715b5d1a227752ccb8453da68"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_accounting_provisional.json": {
+      "mode": "lf",
+      "bytes": 5709,
+      "sha256": "814a8a2cecaabd90b11d4e7739d17e9849b6ea400dc3751505045514bed24c0b"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_code_stage1.py": {
+      "mode": "lf",
+      "bytes": 3947,
+      "sha256": "3131b99d5e495f7bd07f58b7f1086492c15994b6a97f2d22dae2397570a92bc5"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_code_stage2.py": {
+      "mode": "lf",
+      "bytes": 3947,
+      "sha256": "3131b99d5e495f7bd07f58b7f1086492c15994b6a97f2d22dae2397570a92bc5"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_code_stage3.py": {
+      "mode": "lf",
+      "bytes": 3947,
+      "sha256": "3131b99d5e495f7bd07f58b7f1086492c15994b6a97f2d22dae2397570a92bc5"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_code_stage4.py": {
+      "mode": "lf",
+      "bytes": 3947,
+      "sha256": "3131b99d5e495f7bd07f58b7f1086492c15994b6a97f2d22dae2397570a92bc5"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_preflight_stage1.json": {
+      "mode": "lf",
+      "bytes": 1820,
+      "sha256": "20c39ef9c5bb3804f8897eb6cff3e27046f9e9d8f0703b999afe81e3624b4411"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_preflight_stage2.json": {
+      "mode": "lf",
+      "bytes": 3429,
+      "sha256": "ccd9c2528e4fb1747a9d144f1c238c1f26a19ba304d0ba44a0b66173ad6ae163"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_preflight_stage3.json": {
+      "mode": "lf",
+      "bytes": 3741,
+      "sha256": "98eb39a7a4cf3f8da805636cb8bbaa57efc01a071a66444dd631d56968d80181"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/capture_preflight_stage4.json": {
+      "mode": "lf",
+      "bytes": 6085,
+      "sha256": "0e766a1016bde543cbd9a835aad55895240a17261d732e96d63f091a526dc799"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_capture.json": {
+      "mode": "lf",
+      "bytes": 3319,
+      "sha256": "030816bd488b8c650a93443c93c7c03d91fe591b094bddbb379efb743c35e531"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "c3554f0efd215ea5a46bf925b8c33d04fc440ad13e11e911fdd19beb488b91c5"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "358ffe3b41d135c4a88b6fda60bf876a5382fec6c22999b9d39deabb98f82ae8"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "c690c214ec768c773b6f42f063c415ec3acc2b9cd462a7d4f5b39cf89535ed6e"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "c6eaa40dc7807276e324f7a2b0ccd7b3070d62d9dc8157b7885e20335c198871"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "b640d8383bc79197e9f889a4263b0488abc80c21df10f3f2b2b0ebd9b27158f9"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part6.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "8fbe67d6a38a03d2dd9ac4c73ba646846d4a408c00e3482dc09124b7ba451091"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part7.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "ac24cc162396b91f840b3620cacc9bfc379c13452d6f8d3c36a0ff90c8e19ab3"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part8.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "584ca6d25212c6c54bdc95e25e11949c2433275b22e8794cc9cf024055312777"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant2022_raw_part9.json": {
+      "mode": "lf",
+      "bytes": 66910,
+      "sha256": "3ac00c307e61d539c66d2431a65b7564dbc1b8ffcbb533d0b84313665d077dc9"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/covenant_pdf_review.json": {
+      "mode": "lf",
+      "bytes": 2326,
+      "sha256": "263ad3c7f11ff6c948248831ddecd8eabd24147c57c73050b03e0739e1eca76d"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260521house_capture.json": {
+      "mode": "lf",
+      "bytes": 2540,
+      "sha256": "951246a0e17e90178ea16344dd390cca7b3599a0c960051b079a436d941b005c"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260521house_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "d3a6d5bd27649b25b2093f5e832820facbc3a89b324f1673e07ac848a90ed9be"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260521house_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "459244bd1f80974c9a9c25048583835cac93109ccb209f60954fd0ce49eb1002"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260521house_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "e19cb6fbbe17b5fadb0aa72238c3aef4831b50016655be76782bfbc5111d4da0"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260521house_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "81c803dbbf31a53b8e6d5171acf8151ded34ec459f4929645b6a0f6bbab1e607"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260521house_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "159191bbf105aa5cc55fadc9160803414e1e48e2d49f0ea13661c14cc5e8dd7a"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260521house_raw_part6.json": {
+      "mode": "lf",
+      "bytes": 40402,
+      "sha256": "c07d6b2ef7a647e17ea6a4ada09769fc1d7c1f97392138f855c5a87513e25228"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_capture.json": {
+      "mode": "lf",
+      "bytes": 6435,
+      "sha256": "57b5667ff64081274aca5fa6410d0c80625c83f4fe59fa249b0aa3a33f9ce0ca"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "e8cee9e8efc0833f8681f9b3fda10bf13c2b93d1c39464208adca4b19deac225"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part10.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "937526844523852d4cbf9f7284a338c369f629a5ddcad032a5ab2edd0ba9176b"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part11.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "49bbb654e2eb79f4fe0623c77a0908e5928adb9d8b7d477b1837dc6b440bc400"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part12.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "1557bb2d1697881e3d80217ab6186e998693b916b551b25a64f09d7cb1e778e2"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part13.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "cdd83b4c6684544bc238f5847667682757131279a921a8a471d8278424516752"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part14.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "f3a31e254742d03cd9b5e53bfa6b4b5ae3120db40c2bde6faa35b2e5113d82a4"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part15.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "fe1bcea0e4083c0e379c4bf98dca20e4ac613b5caab20bc7b0c9a18f167874a1"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part16.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "d639c04b14fdc792ec36e299bf663ffe1a8794851b833accf8f6ba9a85cdb8f4"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part17.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "656a607f20ba6f34bbfb1a3fcc2c589aeec06fb4aa8f3b86cfc33e873564cb9a"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part18.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "89b0ea88277ef0b75ab939e13c23635fb628882cde16c4cf7c5e2b27215f8b81"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part19.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "e795b639a0165507280524936306103c71db686ad92f1ee1b083118a30ffa8bb"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "5e37d37fdc2635c55cef773bbacb5e3081c6f828cc448caee46f3a8ede210255"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part20.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "72e02ac2dd646c35de4594e4dc12fd64f61f35f823c35749c1fd555e5d86ad99"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part21.json": {
+      "mode": "lf",
+      "bytes": 19859,
+      "sha256": "0d71a4dc054107fb6b25b7ff4b4e1cbfd78c6ff9b10c7152c97724b93361a0fd"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "4050730c05d0de8c8a75fc4bf049fc6c00a52519d9c9d7c4c5d3be269075f746"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "69a3d448e05d73d5d6c62ef49645b3cc0b3029817361d86d10e2923648670f35"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "c36ae6452b1f7513606ae2b2bc537b7da6e8e5aaf5fca7b4b3e1d65afa56aced"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part6.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "f37b6460f46990d5db03e808ad905fe913eaa5072d1df1c04cf858fc1b715e08"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part7.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "b327f9916e545703f02ee72392f1abebf89f1b61581f7a8e788332e7cc628791"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part8.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "29d1f4271665a353140071b4a735ccb173bdcd5e6ac03ef2b4f394d22ea3892b"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/crec20260721house_raw_part9.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "79625c72b1623367adcb25de9a9ccb0bbee63707a5e614507818f21974fd8706"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/decision_bundle.json": {
+      "mode": "lf",
+      "bytes": 9451,
+      "sha256": "0175f1613e88c78b735cea91e8d106984e379a8bfdd3c840cc9fee329f081b9b"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 5336,
+      "sha256": "6db57ae3a9c488a7add8d4511a5c691fbf7ff80331986ff2b8b7c2675c14e6e1"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 24695,
+      "sha256": "0e64dbc1de43a582961074efe4fa9d98a20d2969eab4bbab90766dab85778316"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 9685,
+      "sha256": "43e0f8f9e67007e7498e6c57588e79d76bf4441d78773efe0e12327112ef1a73"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 3522,
+      "sha256": "777ec80c8a0b18140bbe0ef5b9116a0a54323ff5aebcc650edab9063646b9667"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/replay_receipt.json": {
+      "mode": "lf",
+      "bytes": 856,
+      "sha256": "dfc043b078695bfb838187ead3d9cc140805b4198241a954e5c589823eded7f5"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 185713,
+      "sha256": "b0928b819bbc6767ad943204878ee74da400b8de059d172464877c185de9151a"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 4427,
+      "sha256": "d927f84c34da9ad927d5abb3fb94640ad9bd0c113a391e990c2a59ae41e0761b"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/hr1329_literal_qualifications.json": {
+      "mode": "lf",
+      "bytes": 1618,
+      "sha256": "7b91f0dafba3e5c0f77d603a7cc0ecc2e85c6b62d81fc52b93074ec76428fe6a"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/packet_manifest.json": {
+      "mode": "lf",
+      "bytes": 16609,
+      "sha256": "a0bd477131441f58ef7d41ba5d5710fc5c6f7ccb5015db0b888d13727f46b54f"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/pdf_pages_review.json": {
+      "mode": "lf",
+      "bytes": 95218,
+      "sha256": "4fddc983180f54a457c85291fbf3b8eb8d3806ead6e793c95f7e6dc2e665d842"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/plaw11780_capture.json": {
+      "mode": "lf",
+      "bytes": 10121,
+      "sha256": "75ad5672f3d02b2017f0ba5e6031c174712f8879401af772163b676607f0f4ec"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reference_anomalies.json": {
+      "mode": "lf",
+      "bytes": 2717,
+      "sha256": "e794d25ed45272dff5895bd6b8a7b2b32c93f69d861bbaabfdaa0eb3a8efbe56"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_capture.json": {
+      "mode": "lf",
+      "bytes": 4981,
+      "sha256": "217c2bf5f4703d92af4d679060c1ba4b83c08f4967021c42c6dc063d8e0a5c93"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "3e65fcf4fad011f83b8c9b53971f8f2aa59b66d06155a01f153dfe0e309b2a09"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part10.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "f67f0a9a9972e6ed061be4c9f076799f4fca2186f626e990945cf1411a10cbdd"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part11.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "e3a5d6ab5b3dcbb97dce60c4bc000c5c216cbedd6989a04fceffc7791f8bad2a"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part12.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "d988304db712dab6be9a367790dc63a578ee8b7472780561cb6916900e19c5e1"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part13.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "b862298922507f7dbf8cb618311219799814a91e10b7780e4179ef23bcb31dc7"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part14.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "863676e3b919c4dba838eb1081fdd8a03b76a2da1dfd3709b046018fd1c23ebe"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part15.json": {
+      "mode": "lf",
+      "bytes": 150136,
+      "sha256": "23a0dfce0c4f0438cb29baad8f5e49bf2fb0f893d4759f24292b1823ed8b7285"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part16.json": {
+      "mode": "lf",
+      "bytes": 61791,
+      "sha256": "510d10406dcbe0eea8c706c30ee16377e53c14810acffdeda9e68221b13e341b"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "a7b92d3830f088233c50b2afd06d953822488e049d58cd85259d9b6fdc501e91"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "45d4f0b0348e8e3ee6499fe611a08ccc8dc573862c8ddcd5526e89e4ed8dceba"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "450153d5ec58cca07b3d3c216c94551a91c280f972826d6f6d6ba8aca0609496"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "7ce83643f8d90aeba3c0dc9ceff1b1a00cb4a568830855dc5b1437c2a7191b72"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part6.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "29b63f41717fb533abfedf054b705fe0342ee54a75318c4d3ef4c1e44596f424"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part7.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "1e254eed2fa5d4460155e622dce1cc88b18e5ce9e4c2587e8955eb8cad4b92f1"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part8.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "bffb7d4b51ba8fa2a83b270c68b0e4cb344c743fad67ac871b215bea405497ab"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve2003_raw_part9.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "9b492dfbc22a1b32faa03fdbb5646c043b56b2a531d7b65cef3f2992d5a5feea"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/reserve_map_review.json": {
+      "mode": "lf",
+      "bytes": 1052,
+      "sha256": "efcd25d3ce7b9f6149470559546163cb5074154f45884bedc7bfe9c9ed134dea"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/retained_input_manifest.json": {
+      "mode": "lf",
+      "bytes": 6282,
+      "sha256": "5ba32212358d03b0ebafd01ccda4f60c0b72e11cb84946ac4cabeb3520583700"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/source_units.json": {
+      "mode": "lf",
+      "bytes": 18867,
+      "sha256": "0b14ea9948fe870627b6d6ceca781b8845147e83ad47eec887ed9d6aa413f90d"
+    },
+    "docs/review_packets/infrastructure_batch143_land_siting_easements/sources.json": {
+      "mode": "lf",
+      "bytes": 186116,
+      "sha256": "08cf566a3b0e416e80531b6986e306d778747679f73a15a1c502635a659e7f7d"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/38usc101_capture.json": {
+      "mode": "lf",
+      "bytes": 41611,
+      "sha256": "6bc0dfa117fb7dbcb7971e801ca25e1c81d82a286ad1fcf030ed36eb601e3c09"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/38usc5100_capture.json": {
+      "mode": "lf",
+      "bytes": 7026,
+      "sha256": "0c801e9e3132a59c0f08cd575841228855ae0cc3308a2f37ae0c82be80f96ad0"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/38usc5902_capture.json": {
+      "mode": "lf",
+      "bytes": 16271,
+      "sha256": "3bb66281ef0387b1be88339873d779ec7534f275e01e0f1e35a6d7a0495d29bd"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/README.md": {
+      "mode": "lf",
+      "bytes": 5102,
+      "sha256": "2edfdedbf1c2ca4cf45d2361304788ec2f556b5d0e9b98d427587b2b3cf65de2"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/capture_accounting_provisional.json": {
+      "mode": "lf",
+      "bytes": 2429,
+      "sha256": "d69220311c84e6f0b23261563d55d3dd3e626f2840b2e43d6c1fa88fcf9aee2d"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/capture_code_stage1.py": {
+      "mode": "lf",
+      "bytes": 3884,
+      "sha256": "f52d1e1f7eb5a0df56e4f283fc735bb8b25205a7948b0907ee4866a0f082f058"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/capture_preflight_stage1.json": {
+      "mode": "lf",
+      "bytes": 2812,
+      "sha256": "6035f5d991814bf5428628b848b936ae29cb4f333a5560a0351caec505da8cd2"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/checkpoint_manifest.json": {
+      "mode": "lf",
+      "bytes": 7209,
+      "sha256": "82d2ae07a1f8f6bf6ed9a9ff3ac350521ee3c17360994344c0fbea81e6494219"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/checkpoint_validation.json": {
+      "mode": "lf",
+      "bytes": 688,
+      "sha256": "3e260a5df8e6ae322a381af1973ead8d5b93dc46e8a3c1a37b1e8ab757c84917"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250407house_capture.json": {
+      "mode": "lf",
+      "bytes": 2308,
+      "sha256": "6db63bc9b0e367d092ae5d79fa12538059f44696c7427326c3f2143c95f8b15b"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250407house_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "9563f3c3115d2d2e61865035c69b5778de12d198d0965638ea4e270f053b3d67"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250407house_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "47b683b49e360a371467913959d56048adae930474facd0b49d657ed204bab9c"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250407house_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "c751da243db767e7e6ea54ab58e2b6d2653919fdc9605c4e1e622113532d1482"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250407house_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "332b1b23e7b483c459f1beee99846bb04e679668b0a06f80958da655dfaa89e6"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250407house_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 131583,
+      "sha256": "bffbae4332dc4c9254b3c5fbf34dac1194830b5b9213b55c30e9671ae6ac3911"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250505house_capture.json": {
+      "mode": "lf",
+      "bytes": 2308,
+      "sha256": "9e6148eac4318bed00b1768f90b8baf6893a364a16c6838d66f80e88e9f5400a"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250505house_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "f0043f063ad8152809eea24bd898c68054d0b621b52b9167ba91b11caab71438"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250505house_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "443fce1a4d27b6897231efc9af12423b86900aeb57d227987f64e1a2a7633250"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250505house_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "e69a3846dab3874aa005a4381c2c93e469627c26ecb6c7af901b11cdf05ca781"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250505house_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "c30fea3a50a6dc6fe056f04c824ba8f8ee5ef3a6bb95c3df081a53d80704c68c"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250505house_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 125335,
+      "sha256": "2a6531513e6276f23c6fcf5afcd720bc8fd3a11c069f67bb179770d10cb6e8b0"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250519house_capture.json": {
+      "mode": "lf",
+      "bytes": 2307,
+      "sha256": "7cb9ff8b7273741a368d181f1db18d79906fb3576b2729fbf3621389c4f0b208"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250519house_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "805937a9d6ff00bc84c07b659693e2b9f20443c8c3f5332dbcff325a77a067e2"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250519house_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "df21b66949e3e848b24a074db39efe9b9ddbd12182b0115f70e4e7fb556d843c"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250519house_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "b61616908989885f3cec123ca6f316be4f042ceb1966d198d3fce142767df09f"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250519house_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "47a6a9f6cbd6c4ac452b83fcaca1edaa1b575c2f04fcab97096201a43ebf6468"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20250519house_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 70898,
+      "sha256": "1b9b1e5a924b466e37e058a7bc48acb4c72cfce42d5a7afa20dd79a1e76fc66a"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20260202house_capture.json": {
+      "mode": "lf",
+      "bytes": 2307,
+      "sha256": "1fb1d203526d975326f03ae01e5ea3220ab78d997f7f160d113a1078484fe3c8"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20260202house_raw_part1.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "a04a8b25abb6d7ef706b678030267f22b0943824bf785e2015221ca568274868"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20260202house_raw_part2.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "414b00d683701e7f3616f28afaf18f1b9ba39525d2f774911d0c12b68812271c"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20260202house_raw_part3.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "2883a6465215992da458df9bc4330db043343e9baaa86936bfd45f425957c08f"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20260202house_raw_part4.json": {
+      "mode": "lf",
+      "bytes": 150135,
+      "sha256": "f9b5827957d294f82ec7f140b120a65145465bdbbb018063f782f07bf40b6044"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/crec20260202house_raw_part5.json": {
+      "mode": "lf",
+      "bytes": 13186,
+      "sha256": "8c358d043f0f7d3cefb206ef90211a600a08756e103142868d11e999b30480fc"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/historical_shared_house_119_1_115.json": {
+      "mode": "lf",
+      "bytes": 24749,
+      "sha256": "3deb62b13bd60af0fa0d7e0b6cb91205dee9e06b461a09ef74ec9cdac6804fcf"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/historical_shared_house_119_1_133.json": {
+      "mode": "lf",
+      "bytes": 20592,
+      "sha256": "d7c3faf10e2ef76952ba5fc6c2754fbb28d69d7bc975bb7ee60406092347210f"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/historical_shared_house_119_1_89.json": {
+      "mode": "lf",
+      "bytes": 22377,
+      "sha256": "e18aae9b7b13ed42742421a9e82450707ece5c3cb8a9c8a975b106c9b2f881c7"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/historical_shared_house_119_1_90.json": {
+      "mode": "lf",
+      "bytes": 21516,
+      "sha256": "0fa4fcf0d92c568f1383cfe5e3cd3288d73764d55cacb449521af5979766a679"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/historical_shared_house_119_2_49.json": {
+      "mode": "lf",
+      "bytes": 111729,
+      "sha256": "8c5b5fa5f837a3113b720647a092035738e359eeaf7562a282f531275924bb1d"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/operative_comparison.json": {
+      "mode": "lf",
+      "bytes": 1005,
+      "sha256": "2918a65e879f42963c53e6fab2291f0258ac0dbf33f1d59e3427a197ec69df01"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/pdf_pages_review.json": {
+      "mode": "lf",
+      "bytes": 187477,
+      "sha256": "8a9c40b90610c1733bc7488c81dcf054886836fbd70e8801b92500af6d481d23"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/research_tools/extract_floor_units_historical.py": {
+      "mode": "lf",
+      "bytes": 3744,
+      "sha256": "ad554146a270d897df4a376894db31eb35026477b4e935195cb498faadbbb673"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/research_tools/offline_validate.py": {
+      "mode": "lf",
+      "bytes": 5818,
+      "sha256": "8410763aaf3a9ebeb6f8fb73c6f3602f4412eb3ffcedbc2e068dede66178893c"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/research_tools/prepare_sources_historical.py": {
+      "mode": "lf",
+      "bytes": 7250,
+      "sha256": "62a68276b9e1525929262bd5e08a7a9d7c974da949df6980e259fd5b6f47850c"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/retained_input_manifest.json": {
+      "mode": "lf",
+      "bytes": 11294,
+      "sha256": "c55ba6e6d15ef3681cbf24ad6530f269aa02e87d4f1d1eff463fa4ab54b58b3e"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/source_units.json": {
+      "mode": "lf",
+      "bytes": 13837,
+      "sha256": "12024a929c848d8019f52310a254af128c0d0e3761ffab83f8eb8294ed568141"
+    },
+    "docs/review_packets/infrastructure_batch144_va_research_administration/sources.json": {
+      "mode": "lf",
+      "bytes": 96368,
+      "sha256": "d477a639e8702af0e2157e098dcb98071fa944339ff9038af9cfc5137c285372"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/README.md": {
+      "mode": "lf",
+      "bytes": 5548,
+      "sha256": "471f8a453b8449c8340ae257b4641de075ee0c1e3dd48bf86d32c392ed1acdc1"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/authoring.json": {
+      "mode": "lf",
+      "bytes": 114554,
+      "sha256": "7365b14e32291cb55fbbfbff8ae5328c3a80212917ffd7a3b310eea6b764389b"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/decision_bundle.json": {
+      "mode": "lf",
+      "bytes": 9810,
+      "sha256": "bdd75bdb0bf6862761f2e6f6e6196ee064c45d6121b7edb86df17741d92d07b9"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 5277,
+      "sha256": "725c675d4ce93cda245fe7c74afade75b6c9d871ffda165aa1d703852d5e5661"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 20369,
+      "sha256": "e3007c4df4d14a4f27b4262f92c10465f7b28809b3e100023f7726c4e4783012"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 9682,
+      "sha256": "ddca5f3c2c151cf88746ef8a2144511535791b0f9c7c90ea8c9a1b4b01ef8576"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 3528,
+      "sha256": "76762620d434e77cd5e341ddbd067da302d07629c0b7993f469cdd40f720e7be"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 163945,
+      "sha256": "ee5df93880dadf1e5ff69f813c5164949a3f39c147d328fbc174c6594ef77162"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 4373,
+      "sha256": "20491410ea5fc4df7eb4826cb789d5523f6a290276ae967cd222beec56084d08"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/packet_manifest.json": {
+      "mode": "lf",
+      "bytes": 1363,
+      "sha256": "abea733ae7df5bec0afda877d24a5c4a344b320b8105f57653eae4261d1b32fb"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/preservation_manifest.json": {
+      "mode": "lf",
+      "bytes": 41143,
+      "sha256": "472a38ac18050edfc18d95a2a05c9174c76953889ec92f2011a3f33652cb5e23"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/review.md": {
+      "mode": "lf",
+      "bytes": 22516,
+      "sha256": "d58675d568c139c5e9e0032b539b5506cc40b8f67b35399bd688a5433b88acd8"
+    },
+    "docs/review_packets/infrastructure_batch147_va_candidates/shared_successor_proposals.json": {
+      "mode": "lf",
+      "bytes": 23008,
+      "sha256": "bcf4b7fd15ff2b9c38d187688106f1f723e6b9acb8d1b4ba45eff48361a284e6"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/README.md": {
+      "mode": "lf",
+      "bytes": 6697,
+      "sha256": "8fcdf8d3ed55bca991355e322f8c361b983d66d555774dae75aca8c0bbae2bba"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/authoring.json": {
+      "mode": "lf",
+      "bytes": 181429,
+      "sha256": "bef55c2cb9ea87ed4d57d6d14a574462768dd69f4caf01928ddb9fd2d0a85e78"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/decision_bundle.json": {
+      "mode": "lf",
+      "bytes": 5913,
+      "sha256": "16d3cfec74cfa4ce928eb57229f2d2d5fb8e3c3d18435e2fab8686569b9159d1"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 4330,
+      "sha256": "ef16e6b2dfccbbfc1378f5bd8e7e13de2bb5e732f6b1bdb3d699bba4c82f56fb"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 16542,
+      "sha256": "706d71099e6caa32f79d5da017c67129a82093c1aaced2c4b9a50a2a40d3ab68"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 6236,
+      "sha256": "e5af70f0f3ae6b7efec3e37fddb4303c4096c5b83e073341e7e53fec346334bd"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 2650,
+      "sha256": "4894707d3e294d1a7bd0ba6aa22252966f1a501ae901ec3e1286429f5e482b3e"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 193827,
+      "sha256": "6e8f9df71acd688b40b53946adf9e94ba4c7a7c619e08e936610eefa33d0b8b9"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 3179,
+      "sha256": "ad5509eabd6bfd32b9fe4d374923c5dfa16cd6b0903b6943d8f0b01dcbdf7be1"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/historical_authoring.json": {
+      "mode": "lf",
+      "bytes": 180546,
+      "sha256": "541a3d28e99b05ca9cdc478dbb36110323b06eb65318355460bef8a44204aa65"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/historical_cores.json": {
+      "mode": "lf",
+      "bytes": 193325,
+      "sha256": "f09b6c600581683df57104cbe66fb9e45e24611df006efa1c3f51774d289f4a8"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/packet_manifest.json": {
+      "mode": "lf",
+      "bytes": 1856,
+      "sha256": "ef9d1f4ea9097e689466bc4b143a7d3c8b2f75a71ac20e7b37517c8287fcf960"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/preservation_manifest.json": {
+      "mode": "lf",
+      "bytes": 43882,
+      "sha256": "c3000841854ca0ac475b2a5e699ff2e3e259b68085dcd214df0e4466e6bc6b25"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/previous_human_decision_index.json": {
+      "mode": "lf",
+      "bytes": 26421,
+      "sha256": "a4716d0d2562d595b98eea2554c30f6fefaa390053749a5261091b98991c43ba"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/retained_origins.json": {
+      "mode": "lf",
+      "bytes": 6671,
+      "sha256": "fcfb4f1c0690e3750bb8fd73945e0314023882d24c7765b377b73c856d4e0495"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/review.md": {
+      "mode": "lf",
+      "bytes": 17543,
+      "sha256": "5d4d358d7a2fc427bfbe1dc58de494ac3cb1b1f672f2c0ace9778ae22baaa03c"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/shared_successor_proposals.json": {
+      "mode": "lf",
+      "bytes": 6267,
+      "sha256": "b3f1e73559d9663d3f56a49d571a26ebf0265c62fe0f86e78b191c26736e67ea"
+    },
+    "docs/review_packets/infrastructure_batch148_shared_reuse/sources.json": {
+      "mode": "lf",
+      "bytes": 171306,
+      "sha256": "27a18706bcfc8b7d303709e38070a950307c79c9db4ebb1775d401af4c2d15d3"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/.gitattributes": {
+      "mode": "lf",
+      "bytes": 27,
+      "sha256": "15ee214d11ef7860cdc34cd44b1b135e0fe03427acb0b88691f45f0942e098f7"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/README.md": {
+      "mode": "lf",
+      "bytes": 7583,
+      "sha256": "155b5ec1023c2fbd5c845a238c4ae629675ca044e84da8d7c72fbd1d5ffdf0e6"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/authoring.json": {
+      "mode": "lf",
+      "bytes": 116619,
+      "sha256": "7ed7169deb820b3a544af0c91c0dbe7eca1b13fc92d69beb0f929ce940d631e6"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/capture_receipt.json": {
+      "mode": "lf",
+      "bytes": 27085,
+      "sha256": "51e1897a8ef191e93dd796d1a953c3461b2fff126f8115d68f3c19bfc470fa28"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/case_recommendations.json": {
+      "mode": "lf",
+      "bytes": 5392,
+      "sha256": "00ef252167c1197bd7a858c29e678d994a0530749da71657f69960accae8b103"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/decision_bundle.json": {
+      "mode": "lf",
+      "bytes": 6984,
+      "sha256": "6bcce07714f797ad243f4a06e19347b9a5329245b9df6cf21ed066510d9620fc"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 4958,
+      "sha256": "018bbd492c25caf31dc26c5aad9a71e641d0ea230ed05fe9d97afbf406ecff9e"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 14031,
+      "sha256": "33d84dad50d0e4e38cb0dc624c889ec026a4e9e3194640cbcacbdfeff78ad6ba"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 9659,
+      "sha256": "6c96f189378385d0c3d56aa76afc78736e599bfd0f6c351ec674b89f6d2acc09"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 3492,
+      "sha256": "688e7fc6f7f821f3880d98b532729528945bac9bed90b337e4bdc5dc823e14e9"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 140235,
+      "sha256": "475e97aec3573a486cef8c2e59984263574000cb224f87e9a1b6438490e9644f"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 4392,
+      "sha256": "c9b73966655b419625a2829b0507be01b0c44577d28db56edbde496eef82145a"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/held_replay_proof.json": {
+      "mode": "lf",
+      "bytes": 1143,
+      "sha256": "d2aa115269cca2d795d7fbc15f40b8b0719a2f731e341a7ac3bd94d958339ada"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/packet_manifest.json": {
+      "mode": "lf",
+      "bytes": 11253,
+      "sha256": "e53fd6ef8115f708879546547f2ee4525b683bdc0808a54a90f6de276c7b4e20"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/preparation_preflight.json": {
+      "mode": "lf",
+      "bytes": 40859,
+      "sha256": "87159d97a34080250a26184df1ee6d57226058fd399f4b315ad99fb6a49ba2ce"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/preservation_manifest.json": {
+      "mode": "lf",
+      "bytes": 54867,
+      "sha256": "f906d7ab821e4b029b963830664cca9ee509029d814e9b1d57c41038df2d3c19"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/certification-pdf.pdf": {
+      "mode": "raw",
+      "bytes": 1305211,
+      "sha256": "47eb6356d493c979bd7993163393421a7b567b4cb32467b7328354338ad7d5d4"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/certification.html": {
+      "mode": "raw",
+      "bytes": 589116,
+      "sha256": "507a2e008e90d9d1b29f4a78291f9e1f998e2566d4fade09d61b71f4680318ea"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/certification.txt": {
+      "mode": "raw",
+      "bytes": 593553,
+      "sha256": "95236a4b77252096807d682a2cba0675694ab3468e3aa9280aa881eb34be8007"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/commercial-refrigeration-pdf.pdf": {
+      "mode": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/commercial-refrigeration.html": {
+      "mode": "raw",
+      "bytes": 905931,
+      "sha256": "0a5d3cfecdd7244a373e36ad402d567a8228a47fd495e4e064641647b021e559"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/commercial-refrigeration.txt": {
+      "mode": "raw",
+      "bytes": 906805,
+      "sha256": "c6263f3fc60a192481f07f500c6b7e3e1c4e9bbe469db51b310c7fc4e9da1e8d"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/rubber-tire-pdf.pdf": {
+      "mode": "raw",
+      "bytes": 676200,
+      "sha256": "4af1fd57e465efaecc90cf75d9a36d4547d910fbcc00e69569eceeea79486d11"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/rubber-tire.html": {
+      "mode": "raw",
+      "bytes": 288257,
+      "sha256": "4f8e17168122ce5a0546e602ab5801bebc707460b7aa5d0fd60a3c5aba2c6eac"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/rubber-tire.txt": {
+      "mode": "raw",
+      "bytes": 291053,
+      "sha256": "84c9642189f80250580c884922526d1163addd21912dbbf13a6c547289bb61f9"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/walk-in-pdf.pdf": {
+      "mode": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/walk-in.html": {
+      "mode": "raw",
+      "bytes": 816403,
+      "sha256": "04a107aadd63474ab1a4ce6e7a9bb42bfdaf4486344c61c7983c0140997571a2"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/walk-in.txt": {
+      "mode": "raw",
+      "bytes": 817880,
+      "sha256": "63692f057eec033e0323381eb402238620983f082573c0d543ca406c84a09500"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/water-heater.html": {
+      "mode": "raw",
+      "bytes": 774595,
+      "sha256": "cefae5e37f1a324825f45ca7914c697762e400c0a5b4f6d069a964ea349177da"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/raw/water-heater.txt": {
+      "mode": "raw",
+      "bytes": 773147,
+      "sha256": "a73fee1956f2fdce16938bcfa4358c116d4d9a2f1a4e3c240e098e07d0838e44"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/retained_sources.json": {
+      "mode": "lf",
+      "bytes": 19227,
+      "sha256": "0ebba134fb578b01a96ae1f4a1d426402562021d21f617f449fccbfa006501a8"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/source_questions.json": {
+      "mode": "lf",
+      "bytes": 3586,
+      "sha256": "2fd356f238c600142a659c408fd8bf4d48e06a3332b4026e30dbecdc7fd99d5c"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/sources.json": {
+      "mode": "lf",
+      "bytes": 3406886,
+      "sha256": "739f466e8af459a290654a4352f6bbc431bc9b0098d93354fe3f1d6cfdb35349"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/visual/certification-78.png": {
+      "mode": "raw",
+      "bytes": 422141,
+      "sha256": "7e6f53082454fbceba1713df6170b268f2277d9bcb898ef8190806f4c2261feb"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/visual/certification-scope-01.png": {
+      "mode": "raw",
+      "bytes": 884810,
+      "sha256": "896d4f3e402a537d903939328df05faf53a8ea0a368ffaa30ad43a0396b43452"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/visual/rubber-limits-31.png": {
+      "mode": "raw",
+      "bytes": 457802,
+      "sha256": "aa08066f0e9acf311c27ea01b7a07f96ce2d85c052c0ffe673810f2099c18e68"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/visual/rubber-operative-22.png": {
+      "mode": "raw",
+      "bytes": 844806,
+      "sha256": "3e812f0d49780f8fbcb5028b1193253c6fc4931b71e6658a7d4c405847ac2a94"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/visual/rubber-tables-29.png": {
+      "mode": "raw",
+      "bytes": 573171,
+      "sha256": "5bdcc459e012124212b47fb4b24d7deabf7e83396c807d550075d486087cad0f"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/visual/rubber-tables-30.png": {
+      "mode": "raw",
+      "bytes": 515775,
+      "sha256": "562086d20606b742ceb0b9f9aaddab3edecd2736ee949b7ab7fa3e0d036faacf"
+    },
+    "docs/review_packets/infrastructure_batch150_equipment_rule_disapprovals/visual_review.json": {
+      "mode": "lf",
+      "bytes": 3727,
+      "sha256": "9677eb84f7a9204ae8814f8ee27f6b64a0cc4599f2c04d347c55b05e62ad87a5"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/.gitattributes": {
+      "mode": "lf",
+      "bytes": 27,
+      "sha256": "15ee214d11ef7860cdc34cd44b1b135e0fe03427acb0b88691f45f0942e098f7"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/3898_floor_conformance.json": {
+      "mode": "lf",
+      "bytes": 7565,
+      "sha256": "9c25395f07ca197b3d5ce24fd8f9c5574d950109d6b514316981bde08a25ba69"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/README.md": {
+      "mode": "lf",
+      "bytes": 6902,
+      "sha256": "83bb91a664510a6556c3e6e78dfcdde836f47c9b202d7132d73272c383c2d6cc"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/acquisition_diagnosis.json": {
+      "mode": "lf",
+      "bytes": 3421,
+      "sha256": "2cbbbe076044b532c9e6dda4743dceccbb19f971c4f228b814a3e2ba01b5f473"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/additional_preserved_sources.json": {
+      "mode": "lf",
+      "bytes": 57447,
+      "sha256": "23408825c0abbc71840be011cf2df1a10f57b478ab09747f95cf3831b43ca6c1"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/authoring.json": {
+      "mode": "lf",
+      "bytes": 474664,
+      "sha256": "d4763ee2b3c8c96e14d2dbc2a6ea1d2199073ff5a78cfb354bba0beac743de40"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/capture_receipt.json": {
+      "mode": "lf",
+      "bytes": 41441,
+      "sha256": "bf4c1c2298bbd0bd9aecd7178baf1af2336b09417fa73bfa7e30aa655c8e404f"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/decision_bundle.json": {
+      "mode": "lf",
+      "bytes": 7328,
+      "sha256": "88c27f3421c2bd5e9388f4a1956f0dd4331703163edbebbfe1e2ca749ea12f91"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 5015,
+      "sha256": "979c7e701ff8844c1ae4db111f7cbd23756547457a7d7376abf1df09eaba836a"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 26008,
+      "sha256": "a7ee60ad8530d36f181b5860a3c0fb640db403b4524befb4ee7c0872f4c0ad76"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 9679,
+      "sha256": "0329eae7a780d7396e1d968b82e6e23ca9d2173499bde8f0aecf2b39d8646d73"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 3480,
+      "sha256": "19525ad4954b730745f841003ab0c318fdc9b18ffb8153c429f7991666d9d4bd"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 529681,
+      "sha256": "4f787dd5a02f39d82756f92a8018a5e835c9088b1672fd856fe5ebd2273a8e37"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 3965,
+      "sha256": "5fb74d1af30fa85da89eb61680edd9ea26ff6062beb2a5e0e86ffcd30a904758"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/held_replay_proof.json": {
+      "mode": "lf",
+      "bytes": 1150,
+      "sha256": "6247651480d7a022645346cf42817fa30481fcbbd31de84dbe31769b91479a85"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/packet_manifest.json": {
+      "mode": "lf",
+      "bytes": 11926,
+      "sha256": "8012bfe794c0347d6a0916292577312f53298b3c42614ea930b3d2caa4c2b7b3"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/preparation_preflight.json": {
+      "mode": "lf",
+      "bytes": 270235,
+      "sha256": "e7447457365a379050b44032e1d8fc43d2aae169ceb568228293a30a86949488"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/preservation_manifest.json": {
+      "mode": "lf",
+      "bytes": 87282,
+      "sha256": "aa8d41bd22a2f3564aab23c9baaafdaaf6b8f641ed710ce27fffa3a375f3736a"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/33usc1342-2024-full.html": {
+      "mode": "raw",
+      "bytes": 59086,
+      "sha256": "80f485f8b65b15811a42e4b18a98d53067c1dbe16e5ce85dddc36156b4506453"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/33usc1342-2024-full.txt": {
+      "mode": "raw",
+      "bytes": 48232,
+      "sha256": "5f926d7a5abe351345329bc3a409f94433e5e982cc9c5b234ba911f4af4c293b"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/33usc1344-2024-full.html": {
+      "mode": "raw",
+      "bytes": 42328,
+      "sha256": "ead247495fcce9c4030c876cde71670bf84eb1a3908d12371508e0172f061dbc"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/33usc1344-2024-full.txt": {
+      "mode": "raw",
+      "bytes": 36187,
+      "sha256": "4974ca27ce7e59ff54f0707f2a34dda84c59ba5941727cd5d360c91c18a77755"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/33usc1361-2024.html": {
+      "mode": "raw",
+      "bytes": 14903,
+      "sha256": "d27f5e2d0b1f97b1f2f8cee32aa9250957315ff794f24e8c095a35f31e24cd32"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/33usc1361-2024.txt": {
+      "mode": "raw",
+      "bytes": 10675,
+      "sha256": "10485b024625ad9bfb06be767a80eacf4e4e8c1ff68aa6f5388c3d5703ccd9cb"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/3898-PERMIT-article.html": {
+      "mode": "raw",
+      "bytes": 181079,
+      "sha256": "972fddfba3b6bcd446ec0404c60bbbc7b50d7b855e88cb602f350be4a376788f"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/3898-PERMIT-article.txt": {
+      "mode": "raw",
+      "bytes": 184207,
+      "sha256": "900965d6e5d968b6c80d72cb66004145c38e72bef8d2a3c3cdc41a620bbfe013"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/3898-Record-package-metadata.xml": {
+      "mode": "raw",
+      "bytes": 4194304,
+      "sha256": "b4a951a0f09d2c5ba1688b6af5d4d61feb830b4f8c2e46efa6610c89d2c3c4b1"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/3898-floor-H5768-2.pdf": {
+      "mode": "raw",
+      "bytes": 224869,
+      "sha256": "b2f46af7afb8c7296d6f96f7636785d7b3055cdd448e19ece7072176519cf586"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/3898-floor-H5768.html": {
+      "mode": "raw",
+      "bytes": 1525,
+      "sha256": "261baf1c3d300b4284f894d279cc51011428b04ac7c34a05f4d6eedc65795f03"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/3898-floor-H5790.html": {
+      "mode": "raw",
+      "bytes": 31640,
+      "sha256": "2a5ae0716852245541141b30b57b16c7d61e0faeff3a211a15502bb46302dcf4"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/3898-floor-H5793.pdf": {
+      "mode": "raw",
+      "bytes": 229243,
+      "sha256": "43fc8b932d57b699cff3db23f714d57d47a17139582f4cf45be2e92f5b1bb5e4"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/42usc19237-2024.html": {
+      "mode": "raw",
+      "bytes": 10999,
+      "sha256": "5f33e953e233ff5d30fa3e46149ec4fe2b8263259a405e7fd9108cb058fd3c46"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/42usc19237-2024.txt": {
+      "mode": "raw",
+      "bytes": 7735,
+      "sha256": "0a4a199ddfe4f8866bb494151e506b155193c99b39866c9938a20d5987a48eb1"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/42usc4321-2024.html": {
+      "mode": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/42usc4344-2024.html": {
+      "mode": "raw",
+      "bytes": 4993,
+      "sha256": "481b2c2f6552670b5e9c3e374bfd96d8b5c08bf903acf4cb8f173580e951a9c1"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/42usc4344-2024.txt": {
+      "mode": "raw",
+      "bytes": 2816,
+      "sha256": "9f8319079f342c1cb47b78313700be9420c1221b3b8451f34a716ad9b176f791"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/hr3898rh.html": {
+      "mode": "raw",
+      "bytes": 56102,
+      "sha256": "aa19a1e74daae14e9e443e49e918aacf04df54961ed8c32afced8f469d966a4f"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/raw/hr3898rh.txt": {
+      "mode": "raw",
+      "bytes": 40269,
+      "sha256": "d94da751adfd863fd9cf5cdb02417a2bfe88c94f7c346f53e482afb61fe20e39"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/reading_progress.json": {
+      "mode": "lf",
+      "bytes": 1068,
+      "sha256": "8c924e9fda9a92107de905c528fa3284ec156d74802d570fea96656830178ef0"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/retained_sources.json": {
+      "mode": "lf",
+      "bytes": 179717,
+      "sha256": "b0e6f8eff612322589bfa4b341286fc3e6051452be3ac489cde25b9d44f2731a"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/source_questions.json": {
+      "mode": "lf",
+      "bytes": 2632,
+      "sha256": "0682c41d9a57aaa271b6e95212c14eb760c63f86f3fa9924c40b7bf3d5af380e"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/sources.json": {
+      "mode": "lf",
+      "bytes": 488955,
+      "sha256": "a5192ef637df6fdc5a43a117ef1eaf7c412b8c45da14057bb8a91fe54af6bfe3"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/version_reconciliation.json": {
+      "mode": "lf",
+      "bytes": 2859,
+      "sha256": "53c9bfa168df9745ab7e199000614b9238cc16523c39a2e267b9cef271375999"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/visual/Record-H5768.png": {
+      "mode": "lf",
+      "bytes": 983817,
+      "sha256": "ea0646546de42ce1cf4acd70492369c264340d491de4a88d8c27288191e68e0b"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/visual/Record-H5793.png": {
+      "mode": "lf",
+      "bytes": 864483,
+      "sha256": "448f66fb6b082132a31f7a8e28ec750fa58b78f09c52206827b9ffe7a82e90a8"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/visual/Record-H5794.png": {
+      "mode": "lf",
+      "bytes": 819149,
+      "sha256": "42fc75326da6b559cc221feffb0130cb95515ebc31804d060773aac212574aad"
+    },
+    "docs/review_packets/infrastructure_batch151_permitting/whole_reading_receipt.json": {
+      "mode": "lf",
+      "bytes": 6449,
+      "sha256": "f924d5a07eef1a2ecba7f43f9f824b5903435257304e7c1db7de659edea69ffc"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/.gitattributes": {
+      "mode": "lf",
+      "bytes": 32,
+      "sha256": "47981fc5b7edf7390c654f8e00c6bd6e851b920cf58a7cbbc8e3cd7785688a3f"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/README.md": {
+      "mode": "lf",
+      "bytes": 3728,
+      "sha256": "502284d769bdf580e4a994acbd5114586925e2a09d2c46f05ff92467aac5f5d1"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/additional_preserved_sources.json": {
+      "mode": "lf",
+      "bytes": 12635,
+      "sha256": "2aed2bedd90f587550324562c1ce50c70a6d85ecfd66cbfc269fc2ace605932e"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/authoring.json": {
+      "mode": "lf",
+      "bytes": 149117,
+      "sha256": "3401435bcfd9cf5639c2c47cfa1939f38a3c7d8d5a1deeb7f26a913e882a80fc"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/candidate_review.md": {
+      "mode": "lf",
+      "bytes": 17036,
+      "sha256": "fbe5e32bd988088f23533741476c2be7681ef6d77470ea2a35a10f1cdbde272d"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/capture_receipt.json": {
+      "mode": "lf",
+      "bytes": 38071,
+      "sha256": "6a94c56f7ad6f3f71449d666837a6cfd385215002d4149abf702dd78b8ca4aa1"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/decision_bundle.json": {
+      "mode": "lf",
+      "bytes": 8092,
+      "sha256": "6f5619282b0434246ebafcf226ad1760059281d8ed5c8d607f3bd32244a081b8"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/extracted/187-House-2025-01-21.txt": {
+      "mode": "raw",
+      "bytes": 228386,
+      "sha256": "a673ecb510a31be8ad773bc27298aa784ab3811b6334492097a7372d2bf8e741"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/extracted/1917-House-2025-07-22.txt": {
+      "mode": "raw",
+      "bytes": 206251,
+      "sha256": "55f2f53d820507c98b6e41535493aaf524be18377588647d473fb801b3a8f156"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/extracted/6422-House-2026-03-24.txt": {
+      "mode": "raw",
+      "bytes": 377420,
+      "sha256": "98f524b9f8d8f34b61330a10dd0b529d3bcaedb36f6aeb1d36519d99c0df4cd5"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/floor_version_conformance.json": {
+      "mode": "lf",
+      "bytes": 34312,
+      "sha256": "14ce66dac6fe8a703ff0e15b8866608f5e4f17430f0e4b4fb9c587fcfa0c1b43"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 5005,
+      "sha256": "3608399e3e515d86b3caeaed47b174c2e391594d8321b51acfedef4d6c556746"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 15013,
+      "sha256": "441a637a7f8dbc0a163c955c32cd5ff0c2fb00b9ee0561a58b1e58ea79e208cf"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 9668,
+      "sha256": "f1aad6fcf320631ba2ab0c02cb460dd8afc8f203759c8b1caa2096523872c723"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 3524,
+      "sha256": "f953a2c99d2e431d76a25392635f20bda34cee8bd190afe1b94d8a74dbba6bd2"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 178190,
+      "sha256": "34e43c402a72a7ef7946eadaad2e18061ca4366a0071182c24e79f3b19056bd1"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 4433,
+      "sha256": "2bf75a8d4fead1b035dc68f9646f701ea7ce467f9a12cddc4128f6c450059590"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/held_replay_proof.json": {
+      "mode": "lf",
+      "bytes": 1187,
+      "sha256": "43fe38aed3b6559c725e6fafb4719563440464931025e0d9026bd0ce55a30479"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/packet_manifest.json": {
+      "mode": "lf",
+      "bytes": 11073,
+      "sha256": "ea4426d8d1f93f5548d10c3c2c589a9bc2c3d2b77f6aa1b41cec3a3ca9afd81c"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/preparation_preflight.json": {
+      "mode": "lf",
+      "bytes": 59318,
+      "sha256": "25b6d60f7baa4673ff5b0bfd70d1e3844637076a7668d21d787821436357f069"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/preservation_manifest.json": {
+      "mode": "lf",
+      "bytes": 99999,
+      "sha256": "7aa9abfec7ff4321b283a9badfa6936886d6bcd0660e911fda02ab2c0fb641d9"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/16usc8102-2024.html": {
+      "mode": "raw",
+      "bytes": 6405,
+      "sha256": "476d24347dc2a04b8956d40b23b9a6e1fc519ab01dd02bc6657727f8ceb6c87d"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/187-House-2025-01-21.pdf": {
+      "mode": "raw",
+      "bytes": 663698,
+      "sha256": "9cedf575a9d9e779573a681c42008a9b3181c01a1a59d0ee422eb6094b289272"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/1917-House-2025-07-22.pdf": {
+      "mode": "raw",
+      "bytes": 468072,
+      "sha256": "6f115ba792ecc0efe83d89d82bd32ba68156381d87eb9d2637947f0705d47701"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/33usc1268-2024.html": {
+      "mode": "raw",
+      "bytes": 73422,
+      "sha256": "e818c70152a574c8e10ddfc8644278058be5fb04c9541bedef1c6806b997a42d"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/33usc1269-2024.html": {
+      "mode": "raw",
+      "bytes": 45682,
+      "sha256": "94055ecec436d6372c79e53a8ca1f58663e828422b8a252d70d5bdaec37313c6"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/33usc1275-2024.html": {
+      "mode": "raw",
+      "bytes": 14939,
+      "sha256": "8987bb6f0067e0d1e7abdfca5dff442693d12496e28fde04e071ca6fa6cef686"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/33usc1276a-2024.html": {
+      "mode": "raw",
+      "bytes": 8813,
+      "sha256": "137321a098877d1252af043774d052621c9683d8a4e4f0262febc6d327617480"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/33usc1330-2024.html": {
+      "mode": "raw",
+      "bytes": 32462,
+      "sha256": "063881c10d9aaba1778ac1d8fe350984c80e3f27953f876faf29d4f85d9ca923"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/33usc1362-2024-full.html": {
+      "mode": "raw",
+      "bytes": 16935,
+      "sha256": "36022d58683ce79dd1db0726012c8176c6abe876b1edddab6796bc5d5ad65a61"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/6422-House-2026-03-24.pdf": {
+      "mode": "raw",
+      "bytes": 593869,
+      "sha256": "e7c19031d7cb5202f4752500e76a3102bdee289e7f063a72b41e7abda717c856"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/raw/PL106-284.html": {
+      "mode": "raw",
+      "bytes": 25840,
+      "sha256": "29cff0de58b891857fe8cdef69196bad3e02f036d8c736aa81a10738b1b26c1b"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/retained_action_history_inventory.json": {
+      "mode": "lf",
+      "bytes": 2382,
+      "sha256": "1f2122b887bbb921d552c4be8f1db4e63b5a8c191c526ecae3299bd01b3aa9fd"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/retained_sources.json": {
+      "mode": "lf",
+      "bytes": 38638,
+      "sha256": "651699c80e125f2d6f41c14345e7abfe331e591214c1247322a2f24a837764d6"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/semantic_review_corrections.json": {
+      "mode": "lf",
+      "bytes": 1203,
+      "sha256": "7592579dfee672c8270ef1a066d995f9fc1fe0ac0b691039399d79bc3c70650e"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/source_extraction_extents.json": {
+      "mode": "lf",
+      "bytes": 3262,
+      "sha256": "3f75f5152348289309c08c635d7217aaa8c484e95de708352749929d49450a20"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/source_questions.json": {
+      "mode": "lf",
+      "bytes": 1194,
+      "sha256": "be710d6aee31407feeabaebbac95d80c91e68709e61523edcaf31d0d9f85fa4a"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/sources.json": {
+      "mode": "lf",
+      "bytes": 134936,
+      "sha256": "e97878e41741dab01ba3768f4826fb3ef1be2fe57cbeba13640e2368ae8f59ce"
+    },
+    "docs/review_packets/infrastructure_batch152_water_resources/whole_reading_receipt.json": {
+      "mode": "lf",
+      "bytes": 1576,
+      "sha256": "026e63c68bfd5da6f6f53015791686047498564eadb4a47d7ec6fe7cdc3b3f8c"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/.gitattributes": {
+      "mode": "lf",
+      "bytes": 32,
+      "sha256": "47981fc5b7edf7390c654f8e00c6bd6e851b920cf58a7cbbc8e3cd7785688a3f"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/1047_version_conformance.json": {
+      "mode": "lf",
+      "bytes": 25339,
+      "sha256": "68d0f092e6a5506c590214b8376139047ddb63463cf0390927783f2709f31af7"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/README.md": {
+      "mode": "lf",
+      "bytes": 4668,
+      "sha256": "bf22cc4bb1da19fdc6636132df83a5ed3dea3229bfd64bc1982957a4ae053e38"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/additional_preserved_sources.json": {
+      "mode": "lf",
+      "bytes": 95075,
+      "sha256": "22e0d82d2123c0014abcaafc1734ac921da2c5081bb83272d383e59104ba57fd"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/authoring.json": {
+      "mode": "lf",
+      "bytes": 230186,
+      "sha256": "21dd44dc25d281989c40a8eb0271f314428f3a39712c2a90725d4711e208437c"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/candidate_review.md": {
+      "mode": "lf",
+      "bytes": 23056,
+      "sha256": "3978497d66bdf9abd7934bbfb734499cf9126c32fac439f56ce77cdd42ab7a78"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/capture_receipt.json": {
+      "mode": "lf",
+      "bytes": 5375,
+      "sha256": "1e01bfa5914ac2f04206dfb8c0a1ac90a802e1317c08ad505f939a47bd9f9a7f"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/decision_bundle.json": {
+      "mode": "lf",
+      "bytes": 7555,
+      "sha256": "305b75aa3f7509b00e037e6f0540dce914bbfdfb933353138e1983818c01e818"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/extracted/1047-House-2025-09-18.txt": {
+      "mode": "lf",
+      "bytes": 395035,
+      "sha256": "d3c6c6a92042007ce1cedd993e89bc1163c859e0612cc764581dc958fba795dc"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/extracted/1047-RCP119-9.txt": {
+      "mode": "lf",
+      "bytes": 5916,
+      "sha256": "10906b844d5f5dc5a5c6d8c98ce529e1f8182783f04cda285c21e9ecc792f853"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/generated/compiled_ir.json": {
+      "mode": "lf",
+      "bytes": 5017,
+      "sha256": "27a5833cf3c2f913ea68d10584f40c0d3dfe795c199b1d9ac190414c08c2c134"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/generated/compiler_input.json": {
+      "mode": "lf",
+      "bytes": 16746,
+      "sha256": "5aeb9a31d97cdd2bed38c065e3adcdc478533b50fab833bb16081b696552c9b1"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/generated/member_projections.json": {
+      "mode": "lf",
+      "bytes": 9675,
+      "sha256": "bba14dd6c55e4d279dbc5b1cb8f7e7f87c734dabe048607eae7ce05e1137f641"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/generated/readable_candidates.json": {
+      "mode": "lf",
+      "bytes": 3684,
+      "sha256": "fcb44caf671a938054756fc54316b46bc368225b01ceae20d1b6ed7ea7c4f424"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/generated/shared_action_core.json": {
+      "mode": "lf",
+      "bytes": 271652,
+      "sha256": "893c3fc71beaf986c868254009bb3268b003ea9bea904b7d4a4e2ac5cb249918"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/generated/shared_issue_mapping.json": {
+      "mode": "lf",
+      "bytes": 4228,
+      "sha256": "ce60cd99aa5b8e64a5c7a873b117b0c3ad17ea8a0dca4b73c22ebe1c16334e5c"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/held_replay_proof.json": {
+      "mode": "lf",
+      "bytes": 1157,
+      "sha256": "946d34c5e14f5507e3443491d59f62f5992334ad514a5960902568572de4088e"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/packet_manifest.json": {
+      "mode": "lf",
+      "bytes": 8233,
+      "sha256": "a14395414ed600ae78f27fdc6ca3ecf984c760e948757120d90f0482e393fd00"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/preparation_preflight.json": {
+      "mode": "lf",
+      "bytes": 187958,
+      "sha256": "3b4886a3d521a925bfbe23487973273ed9d5165aa97f6a9842b0dfad0d7a163c"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/preservation_manifest.json": {
+      "mode": "lf",
+      "bytes": 109932,
+      "sha256": "2ba68e4644091501617ec26cb113debaa26a50773616af69f57438ef88e1c025"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/raw/1047-House-2025-09-18.pdf": {
+      "mode": "raw",
+      "bytes": 636670,
+      "sha256": "3e25a43e350fbf4d8a0f144d7485adfad5a84eccb4292a8bbd6a71bbe316af7e"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/raw/1047-RCP119-9.pdf": {
+      "mode": "raw",
+      "bytes": 51969,
+      "sha256": "dc999b578c2f5bbd16e54e49874d7502758b53d14480781ee9ccc10874e447b6"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/retained_sources.json": {
+      "mode": "lf",
+      "bytes": 785059,
+      "sha256": "cc0251bfc8160236091363a24c02e4a1f69b1cfa81fa5dcd77acfefd7db595a0"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/reused_qualified236_core.json": {
+      "mode": "lf",
+      "bytes": 116623,
+      "sha256": "8136173fc66cf1fc5413d1e697c6ccde91cb8827ef61d01205160bff5dd7e194"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/source_questions.json": {
+      "mode": "lf",
+      "bytes": 1287,
+      "sha256": "d98b08d214367e8318eb3d9e6370896a4b04b6e7c16eab2536c9b9b1758c56aa"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/sources.json": {
+      "mode": "lf",
+      "bytes": 893946,
+      "sha256": "79c8f593a85a773ebbd85edd4c9774baee5767fb0b2d3dc6f774be9044a6b2e5"
+    },
+    "docs/review_packets/infrastructure_batch153_energy_governance/visual_review_receipt.json": {
+      "mode": "lf",
+      "bytes": 1712,
+      "sha256": "757f076b5b8c7b743790ea93e22bd04962c3d961d61837deb876eeeeb0874ab3"
+    },
+    "docs/review_packets/infrastructure_case_application149/README.md": {
+      "mode": "lf",
+      "bytes": 5791,
+      "sha256": "67f5d8a20d3fc12a2aa0f46a974bf2bc201e30b52dd4ab7b5cd73f9a66a0ad57"
+    },
+    "docs/review_packets/infrastructure_case_application149/application_receipt.json": {
+      "mode": "lf",
+      "bytes": 13983,
+      "sha256": "52407343d6d86e67799e41a3a42b1653068b27eabd9a757b7a3f4fa7003b0196"
+    },
+    "docs/review_packets/infrastructure_case_application149/approved_subjects.json": {
+      "mode": "lf",
+      "bytes": 31365,
+      "sha256": "40c0ae123bc90b727681e90a082b65c399ec8fdeb37782d3d8fd91c9d7f1babf"
+    },
+    "docs/review_packets/infrastructure_case_application149/before_state_manifest.json": {
+      "mode": "lf",
+      "bytes": 1630,
+      "sha256": "cabc8d225804ba5adcc8e43048f9e97b5239a091de1084f80e7544ffc8d32ca8"
+    },
+    "docs/review_packets/infrastructure_case_application149/output_manifest.json": {
+      "mode": "lf",
+      "bytes": 7009,
+      "sha256": "76ccadbdf73cd3cd6859732d9cab76439e91ba7f7c72768fbf4c73a7daa465c1"
+    },
+    "docs/review_packets/infrastructure_case_application149/owner_evidence.json": {
+      "mode": "lf",
+      "bytes": 3335,
+      "sha256": "fa5663680c2ea86ef11b3fa4fef06bec438ba92746c16464b8d16450d13af280"
+    },
+    "docs/review_packets/infrastructure_case_application149/preservation_manifest.json": {
+      "mode": "lf",
+      "bytes": 48315,
+      "sha256": "60c359ff4f231d79caaa4c60ed9929e0ed7baf83c65e4251c6b169a7517f1bba"
+    },
+    "docs/review_packets/infrastructure_case_application149/source_additions.json": {
+      "mode": "lf",
+      "bytes": 23157,
+      "sha256": "736ee4c002984b239c44f3ffc6ac936640d63c8786446256410624e3c690958b"
+    },
+    "docs/review_packets/infrastructure_case_application149_validation.json": {
+      "mode": "lf",
+      "bytes": 1759,
+      "sha256": "9653eeb2d6858e91f67ba337a6b8235f80c962a7cc14ae2d49e91b99be24fd82"
+    },
+    "docs/review_packets/infrastructure_case_application154/README.md": {
+      "mode": "lf",
+      "bytes": 1781,
+      "sha256": "38906898ec4f41ceec3877fb2f5516527479cc6a37c65c2ae96546151d37117c"
+    },
+    "docs/review_packets/infrastructure_case_application154/application_receipt.json": {
+      "mode": "lf",
+      "bytes": 224759,
+      "sha256": "0571778ad61a8d0709692137de6f97782a945431ec7dfa3e6748747fcd68730e"
+    },
+    "docs/review_packets/infrastructure_case_application154/governed_inputs.json": {
+      "mode": "lf",
+      "bytes": 378564,
+      "sha256": "c9e5c98f4bdff74cc74b6ee8272bbfe363f830ce292ba9adfb38ac856d87ad0b"
+    },
+    "docs/review_packets/infrastructure_case_application154/output_manifest.json": {
+      "mode": "lf",
+      "bytes": 5013,
+      "sha256": "a9868e4ac34cb89189c80e9b33d486c07bb82c9d7faacdd786c90ac0c9aae53d"
+    },
+    "docs/review_packets/infrastructure_case_application154/owner_evidence.json": {
+      "mode": "lf",
+      "bytes": 1803,
+      "sha256": "15332b3c31fc30c05ebd5949f229f4ffd5be176515dc23f4b1cfa8a38098d805"
+    },
+    "docs/review_packets/infrastructure_equipment_candidates150_validation.json": {
+      "mode": "lf",
+      "bytes": 2158,
+      "sha256": "6c4fe5f8a261d15e9a44ad6982afa55c6b8e203e6d79960313e4fbb24acea587"
+    },
+    "docs/review_packets/infrastructure_human_decisions_20261021/README.md": {
+      "mode": "lf",
+      "bytes": 16676,
+      "sha256": "4aadc9ea94e6320ada85b44e4c1e209ec8f6bc5c5a85b8e4b48d157d117ab9fc"
+    },
+    "docs/review_packets/infrastructure_human_decisions_20261021/decision_index.json": {
+      "mode": "lf",
+      "bytes": 46696,
+      "sha256": "71910c755b9ce88d6d6050b4e8cc4cb4559ae7bee175116c90a597ffd490af02"
+    },
+    "docs/review_packets/infrastructure_permitting_candidates151_validation.json": {
+      "mode": "lf",
+      "bytes": 3328,
+      "sha256": "ed6a6cc63755f74949c9cc0b3d0c03da1dba00a6a39fc1d6617a580e3b015bec"
+    },
+    "docs/review_packets/infrastructure_prepared_held_decisions153.json": {
+      "mode": "lf",
+      "bytes": 177603,
+      "sha256": "dc38b57cbc0bbb9eec8a5a2ac1404d8ba1938af9a94dab6f732a7d585c71122b"
+    },
+    "docs/review_packets/infrastructure_shared_reuse148_validation.json": {
+      "mode": "lf",
+      "bytes": 2459,
+      "sha256": "4c7f5c3298b2c049d342f65fcf37fad8ed2ef39d1285ba86729a00317a55bef7"
+    },
+    "docs/review_packets/infrastructure_water_resource_candidates152_validation.json": {
+      "mode": "lf",
+      "bytes": 3510,
+      "sha256": "09c68ad66330684b4ebf33fb1b7bf7a6b7c75dc07ddd34ea0502ca5af0423251"
+    },
+    "docs/semantic_ir/AGENTS.md": {
+      "mode": "lf",
+      "bytes": 4637,
+      "sha256": "1b2bf0420eff15cc18fb69202c9e0bf4bab9a4053e00f56d5492901856d2eb01"
+    },
+    "docs/semantic_ir/accepted/acceptance_receipt.json": {
+      "mode": "lf",
+      "bytes": 2027,
+      "sha256": "1c579f55774d677077fb155554676ffd95d2e45413e9fe2e6097a72d89d7db1e"
+    },
+    "docs/semantic_ir/accepted/acceptance_receipt.md": {
+      "mode": "lf",
+      "bytes": 2034,
+      "sha256": "30044a85ec8eded793ff349b76170d3a3248b631a64edb0f65719d0f2326d664"
+    },
+    "docs/semantic_ir/accepted/development_cases.json": {
+      "mode": "lf",
+      "bytes": 160617,
+      "sha256": "ad66b81ddbc17ba236df71d2290c326db81a71dd97e366b9ac5bd4d2bb5413da"
+    },
+    "docs/semantic_ir/accepted/held_out_acceptance_receipt.json": {
+      "mode": "lf",
+      "bytes": 1407,
+      "sha256": "1e5a496817043a977be9879ab15aef2930f4068b2c7eca08ed6d4bc835ba530f"
+    },
+    "docs/semantic_ir/accepted/held_out_acceptance_receipt.md": {
+      "mode": "lf",
+      "bytes": 1683,
+      "sha256": "e3284982d5213c9fe7a25a0806d2dcb1359ec390fef19617a0c25fe35cb25cd6"
+    },
+    "docs/semantic_ir/accepted/held_out_cases.json": {
+      "mode": "lf",
+      "bytes": 45771,
+      "sha256": "d6d09045ad83b0d1f1e9ff3b9ba1440531ad95840256ac2d601682ed285aa711"
+    },
+    "docs/semantic_ir/action_interpretability_v1.md": {
+      "mode": "lf",
+      "bytes": 4059,
+      "sha256": "38de7c3dd6db6ea3efe7e032857a6959d2b60de0134f42af762c85fdee760848"
+    },
+    "docs/semantic_ir/action_interpretability_v1.schema.json": {
+      "mode": "lf",
+      "bytes": 7412,
+      "sha256": "04f552210e3d234feec4d01839d520359e9b339cf684b1fa02159706dc516ce0"
+    },
+    "docs/semantic_ir/editorial_semantic_ir_v1.md": {
+      "mode": "lf",
+      "bytes": 16424,
+      "sha256": "84b47b4a8e8c552eefba0795afd2099854dfda83f042e42fea6f51c9b0064eb6"
+    },
+    "docs/semantic_ir/editorial_semantic_ir_v1.schema.json": {
+      "mode": "lf",
+      "bytes": 27473,
+      "sha256": "28ed98061a2d2ce11f9a31a4fae657051e7398de48caed54de6e1dd7e16c1591"
+    },
+    "docs/semantic_ir/held_out_inputs/held_out_cases.json": {
+      "mode": "lf",
+      "bytes": 8035,
+      "sha256": "9cbb1489994eca3686dabb1f6352ae90c3fb5ad03f5cbdf10f8602d423af2229"
+    },
+    "docs/semantic_ir/held_out_results/held_out_compiled_results.json": {
+      "mode": "lf",
+      "bytes": 21945,
+      "sha256": "0b02fb9d4d3f4d218cf23db22ccb9b6f5a979d27b259d6940157c0edfd8c7f71"
+    },
+    "docs/semantic_ir/held_out_results/held_out_semantic_inputs.json": {
+      "mode": "lf",
+      "bytes": 30523,
+      "sha256": "3b670363512baa56eb4957b940aa8b66063bd70d14dc7188a78eb52c2aa778f1"
+    },
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": {
+      "mode": "lf",
+      "bytes": 12755,
+      "sha256": "78751497eef8b4153e7b2bacefe07b882577db16ab2103656ea3088d55eccfdf"
+    },
+    "scripts/apply_infrastructure_case_decisions149.py": {
+      "mode": "lf",
+      "bytes": 25993,
+      "sha256": "9d73f0b0ab6e7f9747252d8fc1fbd852276750248b611b64cfbd6cdbf1cf677d"
+    },
+    "scripts/prepare_shared_domain_candidate.py": {
+      "mode": "lf",
+      "bytes": 30101,
+      "sha256": "23d13a233adf01c2d6652a97e91f0fba45087c9ae46d385c9fdee40e8dd16eb4"
+    },
+    "scripts/validate_infrastructure_case_application149.py": {
+      "mode": "lf",
+      "bytes": 13479,
+      "sha256": "7afe43beab96716ded6773bcd0c4aafca29533185137314f4e4ac91127d8d24e"
+    },
+    "scripts/validate_infrastructure_equipment_candidates150.py": {
+      "mode": "lf",
+      "bytes": 14405,
+      "sha256": "12e249058a991660c4c93bdacddbbfbfbdc93e563d5d1c3dfcce1f5610d043c0"
+    },
+    "scripts/validate_infrastructure_permitting_candidates151.py": {
+      "mode": "lf",
+      "bytes": 16931,
+      "sha256": "55f76414be243228725729ff5161893f8920a97bf760121834d363725c536c68"
+    },
+    "scripts/validate_infrastructure_shared_reuse148.py": {
+      "mode": "lf",
+      "bytes": 15795,
+      "sha256": "5ad3c870986e2ec539690dff8d67a3611136d87fcf9066014149b24e9656ca70"
+    },
+    "scripts/validate_infrastructure_water_resource_candidates152.py": {
+      "mode": "lf",
+      "bytes": 16014,
+      "sha256": "c741de1a953b86bcb54bab9bd38b823eb8a4b8244ad7da8971eb67a8fd7c185f"
+    },
+    "docs/plans/independent_vote_analysis_loading.md": {
+      "bytes": 9587,
+      "sha256": "a63b2069986595cf4c36079578b7eaf2fb586a81a766816ea0de20e4c353a4a7",
+      "mode": "lf"
+    },
+    "frontend/components/ChronologicalActionLedger.js": {
+      "bytes": 17259,
+      "sha256": "0d935086b4ca92c672daa339d7d56dd6aa045a810d280b2a5a0030e4f88c7240",
+      "mode": "lf"
+    },
+    "frontend/components/IssueDetail.js": {
+      "bytes": 12116,
+      "sha256": "f35b51c06c013678c117a413e2a2984a23085711e30463764bab50e6b0bd00b9",
+      "mode": "lf"
+    },
+    "frontend/components/IssueOverviewGrid.js": {
+      "bytes": 5356,
+      "sha256": "94a722c26ef88a4ec700be6bca47291f494faff13569f51f13f616417d6d8460",
+      "mode": "lf"
+    },
+    "frontend/components/RepresentativeExperience.js": {
+      "bytes": 17553,
+      "sha256": "44baf8bbe8e393001407d0d106b8be752f575003e88727a005bb72286c55e22d",
+      "mode": "lf"
+    },
+    "frontend/lib/sectionNavigation.mjs": {
+      "bytes": 4951,
+      "sha256": "fc38d4cb0e366cc18efad9e23d6f8dbaef5b2ed4ba397465b9c7d3c4a18b54b6",
+      "mode": "lf"
+    },
+    "frontend/tests/independent-loading.spec.mjs": {
+      "bytes": 25397,
+      "sha256": "821bbef12fa4848f7e7be154770df4e488fb4467d0bbff81b65c6218da1a186f",
+      "mode": "lf"
+    }
+  },
+  "manifest_sha256": "37cd3806a84a854fa8edd0a817e7d1c4bcf40e36503afa0909fe915ce2b4600d"
+}
