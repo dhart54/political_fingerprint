@@ -1,0 +1,1225 @@
+{
+  "optimization_implemented": false,
+  "optimized_timings": null,
+  "normalization": "Replace absolute checkout/library roots, retain top20/watched profile rows; raw receipts preserved in .local.",
+  "harness_sha256": "e062db3250259b442b3a349e48857233d2857989bdb9fb50f2ac918db985db60",
+  "test_files": {
+    "test_shared_domain_candidate.py": "5ba539957dd0590e0fd04bdc573dca573b62c08da0ce61187acec5e64704d9d2",
+    "test_shared_legislative_corpus.py": "74b4b4cfcde7788836371e396e28867bde8a7ff9fc4bf9cc20827fd7b47bbcac",
+    "test_shared_candidate_research.py": "f335fd3b07d4075862913ae8dc941114c27c1432bc4100188cd011e7409532a1",
+    "test_immigration_shared_candidate.py": "4bfe6ac66c55a2ca8bac72c269719cddd63c2295ebb2ad53a7542aa50e772cae"
+  },
+  "profiles": [
+    {
+      "head": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
+      "root": "$CHECKPOINT225_CHECKOUT",
+      "domain": "immigration",
+      "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "logical_cpus": 16,
+      "jsonschema": "4.26.0",
+      "pytest": "8.3.5",
+      "condition_limits": "Fresh process / warm call; OS file cache not cleared; single benchmark process.",
+      "input_files": {
+        "authoring.json": {
+          "sha256": "23f81558c6f9355897102b23d4f8b446922f8697da9c50e5ef7adf2690dfb26f",
+          "bytes": 17659610
+        },
+        "sources.json": {
+          "sha256": "7f7392a0f2b2ed74848c1251ca8bbad504f9d86254161a44d657f949df2fb156",
+          "bytes": 34111656
+        }
+      },
+      "rule_files": {
+        "scripts/prepare_shared_domain_candidate.py": "720b213d38e49d9826ad09930b123f5f06c2c733e4798d83f7d23e6bbc103fe8",
+        "backend/app/semantic_ir/shared_corpus.py": "717a948e084617c971c39af7e21b39c57266ffae8022fb0e3e1071838b5d0200",
+        "backend/app/semantic_ir/compiler.py": "ba3e2ff4e315521bb7b1b3248af646f80951330d6018c26ca3335b28dfdcadb9",
+        "backend/app/semantic_ir/pipeline.py": "5741ebfa4a099504a89e9c573fc0cac95ef317d1ab2cc9c8a35a2eb9b898ad79",
+        "backend/app/semantic_ir/adapters.py": "8c1a5fc164f9a04587b00dd3987348e28c4d0014df855196eeeb1ace8b8ffecf",
+        "backend/app/semantic_ir/validation.py": "a94e1d3791590d94b86babd7b961acef11ef432d54771193bc8dbc86afee1e3b",
+        "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "724636d0f7b5cb015e2c95e959d3b49c47a2282d878907a22ebc97315029ff94",
+        "scripts/prepare_immigration_shared_candidate.py": "1e4a4b908e17ac36ff35b7a37e46da0467edbf4acd371b82950d0439d719a1ba"
+      },
+      "authored_actions": 65,
+      "captured_sources": 2587,
+      "import_seconds": 0.17187049996573478,
+      "input_load_seconds": 0.2086544000194408,
+      "measurements": [
+        {
+          "condition": "fresh_process_first_call",
+          "wall_seconds": 10.54903519997606,
+          "cpu_seconds": 10.4375,
+          "product_digests": [
+            "e0712e0545cd3f6e29ef375e74448c09069ae4795e34ecd0e55fa13c03732b99",
+            "a8b38f1be16cb5f73196b2d4e315ca0a6b82d225e19cdfc467d62071eef1b317",
+            "a9ba7cd6456605da991e7c61514a1dff0b375a6f0c113bbd93b129e97a264502",
+            "03a6fc3c19276b1aaf39fdfee46a28cb214e5f0a021bdc2ca2596af4f4e9907b",
+            "780f143fe32a2e42a086e3d243717f0ec552015e7c4592ea73d28402b29153eb"
+          ]
+        },
+        {
+          "condition": "same_process_warm_call",
+          "wall_seconds": 10.119513999961782,
+          "cpu_seconds": 10.109375,
+          "product_digests": [
+            "e0712e0545cd3f6e29ef375e74448c09069ae4795e34ecd0e55fa13c03732b99",
+            "a8b38f1be16cb5f73196b2d4e315ca0a6b82d225e19cdfc467d62071eef1b317",
+            "a9ba7cd6456605da991e7c61514a1dff0b375a6f0c113bbd93b129e97a264502",
+            "03a6fc3c19276b1aaf39fdfee46a28cb214e5f0a021bdc2ca2596af4f4e9907b",
+            "780f143fe32a2e42a086e3d243717f0ec552015e7c4592ea73d28402b29153eb"
+          ]
+        }
+      ],
+      "profile": {
+        "wall_seconds": 15.546117599995341,
+        "cpu_seconds": 15.546875,
+        "total_calls": 26656680,
+        "functions": [
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
+            "line": 563,
+            "function": "prepare",
+            "primitive_calls": 1,
+            "total_calls": 1,
+            "exclusive_seconds": 0.007546000000000001,
+            "cumulative_seconds": 15.5440219
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
+            "line": 513,
+            "function": "_prepare_reused_action",
+            "primitive_calls": 16,
+            "total_calls": 16,
+            "exclusive_seconds": 0.035723700000000004,
+            "cumulative_seconds": 13.666446700000002
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
+            "line": 454,
+            "function": "_prepare_candidate_core_augmentation",
+            "primitive_calls": 11,
+            "total_calls": 11,
+            "exclusive_seconds": 0.0214878,
+            "cumulative_seconds": 11.4502807
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 123,
+            "function": "validate_shared_action_core",
+            "primitive_calls": 46,
+            "total_calls": 46,
+            "exclusive_seconds": 0.0201951,
+            "cumulative_seconds": 11.258055
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 87,
+            "function": "_validate_schema",
+            "primitive_calls": 100,
+            "total_calls": 100,
+            "exclusive_seconds": 0.0007707,
+            "cumulative_seconds": 8.604878900000001
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<built-in method builtins.sorted>",
+            "primitive_calls": 1520,
+            "total_calls": 2946,
+            "exclusive_seconds": 0.0025976000000000003,
+            "cumulative_seconds": 8.5832745
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/validators.py",
+            "line": 349,
+            "function": "iter_errors",
+            "primitive_calls": 100,
+            "total_calls": 3230,
+            "exclusive_seconds": 0.0032561,
+            "cumulative_seconds": 8.5796787
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 274,
+            "function": "ref",
+            "primitive_calls": 100,
+            "total_calls": 107706,
+            "exclusive_seconds": 0.0564889,
+            "cumulative_seconds": 8.5795533
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/validators.py",
+            "line": 396,
+            "function": "descend",
+            "primitive_calls": 100,
+            "total_calls": 546695,
+            "exclusive_seconds": 0.8953102000000001,
+            "cumulative_seconds": 8.5765297
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 290,
+            "function": "properties",
+            "primitive_calls": 166,
+            "total_calls": 63058,
+            "exclusive_seconds": 0.1500943,
+            "cumulative_seconds": 8.5727033
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 59,
+            "function": "items",
+            "primitive_calls": 226,
+            "total_calls": 11553,
+            "exclusive_seconds": 0.043306700000000004,
+            "cumulative_seconds": 8.5603659
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 63,
+            "function": "digest",
+            "primitive_calls": 49642,
+            "total_calls": 49642,
+            "exclusive_seconds": 0.0518525,
+            "cumulative_seconds": 4.820369
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 57,
+            "function": "canonical_bytes",
+            "primitive_calls": 83822,
+            "total_calls": 83822,
+            "exclusive_seconds": 0.0778394,
+            "cumulative_seconds": 4.3761487
+          },
+          {
+            "file": "$PYTHON_LIB/json/__init__.py",
+            "line": 183,
+            "function": "dumps",
+            "primitive_calls": 84126,
+            "total_calls": 84126,
+            "exclusive_seconds": 0.056212700000000004,
+            "cumulative_seconds": 3.8309360000000003
+          },
+          {
+            "file": "$PYTHON_LIB/json/encoder.py",
+            "line": 183,
+            "function": "encode",
+            "primitive_calls": 84126,
+            "total_calls": 84126,
+            "exclusive_seconds": 0.0516003,
+            "cumulative_seconds": 3.7631386000000004
+          },
+          {
+            "file": "$PYTHON_LIB/json/encoder.py",
+            "line": 205,
+            "function": "iterencode",
+            "primitive_calls": 82596,
+            "total_calls": 82596,
+            "exclusive_seconds": 3.6750711000000003,
+            "cumulative_seconds": 3.6750711000000003
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_shared_domain_candidate.py",
+            "line": 172,
+            "function": "prepare",
+            "primitive_calls": 17,
+            "total_calls": 17,
+            "exclusive_seconds": 0.0281015,
+            "cumulative_seconds": 3.1733834
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 67,
+            "function": "sealed_digest",
+            "primitive_calls": 45672,
+            "total_calls": 45672,
+            "exclusive_seconds": 0.042076600000000006,
+            "cumulative_seconds": 3.0992366000000002
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 351,
+            "function": "oneOf",
+            "primitive_calls": 1532,
+            "total_calls": 1532,
+            "exclusive_seconds": 0.0042588,
+            "cumulative_seconds": 2.1346256
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 337,
+            "function": "anyOf",
+            "primitive_calls": 35330,
+            "total_calls": 35330,
+            "exclusive_seconds": 1.0037941000000001,
+            "cumulative_seconds": 2.0843769
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_shared_domain_candidate.py",
+            "line": 32,
+            "function": "validate_sources",
+            "primitive_calls": 17,
+            "total_calls": 17,
+            "exclusive_seconds": 0.0108594,
+            "cumulative_seconds": 2.0363821
+          },
+          {
+            "file": "$PYTHON_LIB/pathlib/_local.py",
+            "line": 539,
+            "function": "read_text",
+            "primitive_calls": 130,
+            "total_calls": 130,
+            "exclusive_seconds": 0.0002968,
+            "cumulative_seconds": 0.5744274
+          },
+          {
+            "file": "$PYTHON_LIB/pathlib/_abc.py",
+            "line": 628,
+            "function": "read_text",
+            "primitive_calls": 130,
+            "total_calls": 130,
+            "exclusive_seconds": 0.0003242,
+            "cumulative_seconds": 0.5741038
+          },
+          {
+            "file": "$PYTHON_LIB/json/__init__.py",
+            "line": 299,
+            "function": "loads",
+            "primitive_calls": 130,
+            "total_calls": 130,
+            "exclusive_seconds": 0.0002178,
+            "cumulative_seconds": 0.43227230000000005
+          }
+        ],
+        "selection": "Top20 cumulative rows plus all watched functions; no timing value changed."
+      },
+      "raw_receipt_sha256": "f76feaca1c9ef201f4077cfe68e0f98f97697a1cf5ef0d9bfa4af1225640a9c3"
+    },
+    {
+      "started_at_utc": "2026-10-13T23:30:09.543630+00:00",
+      "head": "9337ed516621875709f6bb33ca4f9fb20c4ef2b7",
+      "root": "$MAIN_BASE_CHECKOUT",
+      "domain": "health",
+      "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "logical_cpus": 16,
+      "jsonschema": "4.26.0",
+      "pytest": "8.3.5",
+      "condition_limits": "Fresh process / warm call; OS file cache not cleared; single benchmark process.",
+      "input_files": {
+        "authoring.json": {
+          "sha256": "5ab97313fe69eae990dfb2372fc76befc9ec718ef270c479b1edaa6cf2863ade",
+          "bytes": 18079018
+        },
+        "sources.json": {
+          "sha256": "5cb606ba185607330841c7bf02820cc1f6a060051bb9178a49774202869890f5",
+          "bytes": 37019083
+        }
+      },
+      "rule_files": {
+        "scripts/prepare_shared_domain_candidate.py": "720b213d38e49d9826ad09930b123f5f06c2c733e4798d83f7d23e6bbc103fe8",
+        "backend/app/semantic_ir/shared_corpus.py": "717a948e084617c971c39af7e21b39c57266ffae8022fb0e3e1071838b5d0200",
+        "backend/app/semantic_ir/compiler.py": "ba3e2ff4e315521bb7b1b3248af646f80951330d6018c26ca3335b28dfdcadb9",
+        "backend/app/semantic_ir/pipeline.py": "5741ebfa4a099504a89e9c573fc0cac95ef317d1ab2cc9c8a35a2eb9b898ad79",
+        "backend/app/semantic_ir/adapters.py": "8c1a5fc164f9a04587b00dd3987348e28c4d0014df855196eeeb1ace8b8ffecf",
+        "backend/app/semantic_ir/validation.py": "a94e1d3791590d94b86babd7b961acef11ef432d54771193bc8dbc86afee1e3b",
+        "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "724636d0f7b5cb015e2c95e959d3b49c47a2282d878907a22ebc97315029ff94"
+      },
+      "provider_files": {},
+      "input_and_rule_bytes_unchanged": true,
+      "loaded_inputs_unchanged": true,
+      "authored_actions": 115,
+      "captured_sources": 2063,
+      "import_seconds": 0.1422891999827698,
+      "input_load_seconds": 0.2063085000263527,
+      "measurements": [
+        {
+          "condition": "fresh_process_first_call",
+          "wall_seconds": 0.8066100999712944,
+          "cpu_seconds": 0.796875,
+          "product_digests": [
+            "81f1634262030f67c5ab952d1a80f9ce5781528b68af7780b6d6056fc01eaba7",
+            "6b2bee17528f915fbfc7cea8f47fa88a199c4345a0818dceb784d1801b84f397",
+            "b95941b435fa4b5210759bb39f6e99e0586f9f9ec9aa753d4a01da8cec29d349",
+            "ac9828f939c384781df2478b7d5a450d6d665d8dbae248fba3cdc66670873552",
+            "b94cca28d54635276081fe944828f601c75a3b52ccb015bf9070d2cba81aaf1c"
+          ]
+        },
+        {
+          "condition": "same_process_warm_call",
+          "wall_seconds": 0.7961780999903567,
+          "cpu_seconds": 0.796875,
+          "product_digests": [
+            "81f1634262030f67c5ab952d1a80f9ce5781528b68af7780b6d6056fc01eaba7",
+            "6b2bee17528f915fbfc7cea8f47fa88a199c4345a0818dceb784d1801b84f397",
+            "b95941b435fa4b5210759bb39f6e99e0586f9f9ec9aa753d4a01da8cec29d349",
+            "ac9828f939c384781df2478b7d5a450d6d665d8dbae248fba3cdc66670873552",
+            "b94cca28d54635276081fe944828f601c75a3b52ccb015bf9070d2cba81aaf1c"
+          ]
+        }
+      ],
+      "profile": {
+        "wall_seconds": 1.2097156000090763,
+        "cpu_seconds": 1.21875,
+        "total_calls": 2125480,
+        "functions": [
+          {
+            "file": "$MAIN_BASE_CHECKOUT/scripts/prepare_shared_domain_candidate.py",
+            "line": 172,
+            "function": "prepare",
+            "primitive_calls": 1,
+            "total_calls": 1,
+            "exclusive_seconds": 0.026209200000000002,
+            "cumulative_seconds": 1.2092054
+          },
+          {
+            "file": "$MAIN_BASE_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 320,
+            "function": "adapt_to_semantic_ir_input",
+            "primitive_calls": 1,
+            "total_calls": 1,
+            "exclusive_seconds": 0.00026710000000000004,
+            "cumulative_seconds": 0.8661359000000001
+          },
+          {
+            "file": "$MAIN_BASE_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 123,
+            "function": "validate_shared_action_core",
+            "primitive_calls": 1,
+            "total_calls": 1,
+            "exclusive_seconds": 0.0010351000000000002,
+            "cumulative_seconds": 0.7661295
+          },
+          {
+            "file": "$MAIN_BASE_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 87,
+            "function": "_validate_schema",
+            "primitive_calls": 4,
+            "total_calls": 4,
+            "exclusive_seconds": 3.7500000000000003e-05,
+            "cumulative_seconds": 0.6621111000000001
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<built-in method builtins.sorted>",
+            "primitive_calls": 702,
+            "total_calls": 817,
+            "exclusive_seconds": 0.00036310000000000004,
+            "cumulative_seconds": 0.6613554
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/validators.py",
+            "line": 349,
+            "function": "iter_errors",
+            "primitive_calls": 4,
+            "total_calls": 236,
+            "exclusive_seconds": 0.00020510000000000003,
+            "cumulative_seconds": 0.6609006000000001
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 274,
+            "function": "ref",
+            "primitive_calls": 4,
+            "total_calls": 8923,
+            "exclusive_seconds": 0.0044656,
+            "cumulative_seconds": 0.6608959000000001
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/validators.py",
+            "line": 396,
+            "function": "descend",
+            "primitive_calls": 4,
+            "total_calls": 44622,
+            "exclusive_seconds": 0.0717796,
+            "cumulative_seconds": 0.6607594
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 290,
+            "function": "properties",
+            "primitive_calls": 6,
+            "total_calls": 5090,
+            "exclusive_seconds": 0.011951300000000002,
+            "cumulative_seconds": 0.6606047
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 59,
+            "function": "items",
+            "primitive_calls": 11,
+            "total_calls": 1447,
+            "exclusive_seconds": 0.003605,
+            "cumulative_seconds": 0.6601058000000001
+          },
+          {
+            "file": "$MAIN_BASE_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 63,
+            "function": "digest",
+            "primitive_calls": 3336,
+            "total_calls": 3336,
+            "exclusive_seconds": 0.004761700000000001,
+            "cumulative_seconds": 0.44278900000000004
+          },
+          {
+            "file": "$MAIN_BASE_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 57,
+            "function": "canonical_bytes",
+            "primitive_calls": 6088,
+            "total_calls": 6088,
+            "exclusive_seconds": 0.0072728,
+            "cumulative_seconds": 0.4012366
+          },
+          {
+            "file": "$PYTHON_LIB/json/__init__.py",
+            "line": 183,
+            "function": "dumps",
+            "primitive_calls": 6252,
+            "total_calls": 6252,
+            "exclusive_seconds": 0.0042216,
+            "cumulative_seconds": 0.3531541
+          },
+          {
+            "file": "$PYTHON_LIB/json/encoder.py",
+            "line": 183,
+            "function": "encode",
+            "primitive_calls": 6252,
+            "total_calls": 6252,
+            "exclusive_seconds": 0.0038068000000000004,
+            "cumulative_seconds": 0.3480493
+          },
+          {
+            "file": "$PYTHON_LIB/json/encoder.py",
+            "line": 205,
+            "function": "iterencode",
+            "primitive_calls": 6137,
+            "total_calls": 6137,
+            "exclusive_seconds": 0.341756,
+            "cumulative_seconds": 0.341756
+          },
+          {
+            "file": "$MAIN_BASE_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 67,
+            "function": "sealed_digest",
+            "primitive_calls": 2293,
+            "total_calls": 2293,
+            "exclusive_seconds": 0.0021122000000000003,
+            "cumulative_seconds": 0.1924596
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 337,
+            "function": "anyOf",
+            "primitive_calls": 2637,
+            "total_calls": 2637,
+            "exclusive_seconds": 0.0696485,
+            "cumulative_seconds": 0.1461885
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 351,
+            "function": "oneOf",
+            "primitive_calls": 115,
+            "total_calls": 115,
+            "exclusive_seconds": 0.00030070000000000004,
+            "cumulative_seconds": 0.14514670000000002
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 376,
+            "function": "not_",
+            "primitive_calls": 345,
+            "total_calls": 345,
+            "exclusive_seconds": 0.0688614,
+            "cumulative_seconds": 0.14115640000000002
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/validators.py",
+            "line": 459,
+            "function": "_validate_reference",
+            "primitive_calls": 8923,
+            "total_calls": 8923,
+            "exclusive_seconds": 0.0032334,
+            "cumulative_seconds": 0.1268117
+          },
+          {
+            "file": "$MAIN_BASE_CHECKOUT/scripts/prepare_shared_domain_candidate.py",
+            "line": 32,
+            "function": "validate_sources",
+            "primitive_calls": 1,
+            "total_calls": 1,
+            "exclusive_seconds": 0.0005173,
+            "cumulative_seconds": 0.123035
+          },
+          {
+            "file": "$PYTHON_LIB/pathlib/_local.py",
+            "line": 539,
+            "function": "read_text",
+            "primitive_calls": 4,
+            "total_calls": 4,
+            "exclusive_seconds": 1.0300000000000001e-05,
+            "cumulative_seconds": 0.000689
+          },
+          {
+            "file": "$PYTHON_LIB/pathlib/_abc.py",
+            "line": 628,
+            "function": "read_text",
+            "primitive_calls": 4,
+            "total_calls": 4,
+            "exclusive_seconds": 1.4200000000000001e-05,
+            "cumulative_seconds": 0.0006776
+          },
+          {
+            "file": "$PYTHON_LIB/json/__init__.py",
+            "line": 299,
+            "function": "loads",
+            "primitive_calls": 4,
+            "total_calls": 4,
+            "exclusive_seconds": 7.2000000000000005e-06,
+            "cumulative_seconds": 0.00028050000000000004
+          }
+        ],
+        "selection": "Top20 cumulative rows plus all watched functions; no timing value changed."
+      },
+      "raw_receipt_sha256": "2e1154c601f4d5a5c8b904fe946b2cf531ae42a0a17dbff35300747a9e88264b"
+    },
+    {
+      "started_at_utc": "2026-10-13T23:31:00.846499+00:00",
+      "head": "eb9d70ab3ca28ea3ee11eae572d2f2befd6f4aea",
+      "root": "$CHECKPOINT225_CHECKOUT",
+      "domain": "immigration",
+      "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+      "logical_cpus": 16,
+      "jsonschema": "4.26.0",
+      "pytest": "8.3.5",
+      "condition_limits": "Fresh process / warm call; OS file cache not cleared; single benchmark process.",
+      "input_files": {
+        "authoring.json": {
+          "sha256": "23f81558c6f9355897102b23d4f8b446922f8697da9c50e5ef7adf2690dfb26f",
+          "bytes": 17659610
+        },
+        "sources.json": {
+          "sha256": "7f7392a0f2b2ed74848c1251ca8bbad504f9d86254161a44d657f949df2fb156",
+          "bytes": 34111656
+        }
+      },
+      "rule_files": {
+        "scripts/prepare_shared_domain_candidate.py": "720b213d38e49d9826ad09930b123f5f06c2c733e4798d83f7d23e6bbc103fe8",
+        "backend/app/semantic_ir/shared_corpus.py": "717a948e084617c971c39af7e21b39c57266ffae8022fb0e3e1071838b5d0200",
+        "backend/app/semantic_ir/compiler.py": "ba3e2ff4e315521bb7b1b3248af646f80951330d6018c26ca3335b28dfdcadb9",
+        "backend/app/semantic_ir/pipeline.py": "5741ebfa4a099504a89e9c573fc0cac95ef317d1ab2cc9c8a35a2eb9b898ad79",
+        "backend/app/semantic_ir/adapters.py": "8c1a5fc164f9a04587b00dd3987348e28c4d0014df855196eeeb1ace8b8ffecf",
+        "backend/app/semantic_ir/validation.py": "a94e1d3791590d94b86babd7b961acef11ef432d54771193bc8dbc86afee1e3b",
+        "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "724636d0f7b5cb015e2c95e959d3b49c47a2282d878907a22ebc97315029ff94",
+        "scripts/prepare_immigration_shared_candidate.py": "1e4a4b908e17ac36ff35b7a37e46da0467edbf4acd371b82950d0439d719a1ba"
+      },
+      "provider_files": {
+        "docs/editorial/shared_candidates/house_119_ccdf_qualification_checkpoint210/shared_action_core_proposal.json": "fa88baa6bec3155bafd19ecd16f1a76f1a9e7d20d892ac4f635d52961ae9a096",
+        "docs/editorial/shared_candidates/house_119_energy_qualification_checkpoint218/shared_action_core_proposal.json": "b60cc68be3b6f36f182ed2c73518be28fe7dcdb99c3df84d58d1a860d1922325",
+        "docs/editorial/shared_candidates/house_119_firearm_precision_checkpoint219/shared_action_core_proposal.json": "eeabd83da9b44749e32ccf72f78d75e7ff86f96343ecf19305900a1390271eed",
+        "docs/editorial/shared_candidates/house_119_funding_qualification_checkpoint216/shared_action_core_proposal.json": "bbb99f7496bc8da8135fd11c52b477496398d4b6e1a7b2e1ec85c4e1d6364cfb",
+        "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json": "c96e625d66aeb4b1f15ca1631c909d036d4d43ef18ce2d09596f4c14b3d575ee",
+        "docs/editorial/shared_candidates/house_119_legacy_es_fisa_qualification_checkpoint208/shared_action_core_proposal.json": "43ea8b2033963fe61c9c655e779a412da98a712407918ffcd901073f2bd62e94",
+        "docs/editorial/shared_candidates/house_119_legacy_fisa_qualification_checkpoint206/shared_action_core_proposal.json": "bd751c74a2f076a3b009a532e008aa8c802851333707b848b8cfd2d5c540642f",
+        "docs/editorial/shared_candidates/house_119_programme_status_checkpoint221/shared_action_core_proposal.json": "642d4a273a5d308480c2bdc365913c2f2d59978a8003c9059ad211d162aa5aa7",
+        "docs/editorial/shared_candidates/house_119_programme_status_correction_checkpoint222/shared_action_core_proposal.json": "b7f228f0118a6f758efc11c4026bba5d030f13e8328e1d335641de62307fd137",
+        "docs/editorial/shared_candidates/house_119_review_corrections_checkpoint225/shared_action_core_proposal.json": "cd961afeef75855aedb5c971db29c716ae2f1c7d72b29bb71df2747a842936d6",
+        "docs/editorial/shared_candidates/house_119_source_review_checkpoint182/shared_action_core_proposal.json": "4a4598e6f362d47c6a28bb1cf63110cc26e74c9401d2990dce6709779770eddc",
+        "docs/editorial/shared_candidates/house_119_source_review_checkpoint204/shared_action_core_proposal.json": "45770001e0f254bb41a70d47f55df7d1ec6f29dc73cf0df07725c2877eaf1a0f",
+        "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json": "1bf8841525ed00fb71a6478d46c41b968167d4ba1b7ccd0fee7fcc34b80de897"
+      },
+      "input_and_rule_bytes_unchanged": true,
+      "loaded_inputs_unchanged": true,
+      "authored_actions": 65,
+      "captured_sources": 2587,
+      "import_seconds": 0.06863960000919178,
+      "input_load_seconds": 0.1915539000183344,
+      "measurements": [
+        {
+          "condition": "fresh_process_first_call",
+          "wall_seconds": 10.989765400008764,
+          "cpu_seconds": 10.890625,
+          "product_digests": [
+            "e0712e0545cd3f6e29ef375e74448c09069ae4795e34ecd0e55fa13c03732b99",
+            "a8b38f1be16cb5f73196b2d4e315ca0a6b82d225e19cdfc467d62071eef1b317",
+            "a9ba7cd6456605da991e7c61514a1dff0b375a6f0c113bbd93b129e97a264502",
+            "03a6fc3c19276b1aaf39fdfee46a28cb214e5f0a021bdc2ca2596af4f4e9907b",
+            "780f143fe32a2e42a086e3d243717f0ec552015e7c4592ea73d28402b29153eb"
+          ]
+        },
+        {
+          "condition": "same_process_warm_call",
+          "wall_seconds": 11.729670500033535,
+          "cpu_seconds": 11.359375,
+          "product_digests": [
+            "e0712e0545cd3f6e29ef375e74448c09069ae4795e34ecd0e55fa13c03732b99",
+            "a8b38f1be16cb5f73196b2d4e315ca0a6b82d225e19cdfc467d62071eef1b317",
+            "a9ba7cd6456605da991e7c61514a1dff0b375a6f0c113bbd93b129e97a264502",
+            "03a6fc3c19276b1aaf39fdfee46a28cb214e5f0a021bdc2ca2596af4f4e9907b",
+            "780f143fe32a2e42a086e3d243717f0ec552015e7c4592ea73d28402b29153eb"
+          ]
+        }
+      ],
+      "profile": {
+        "wall_seconds": 21.119538399972953,
+        "cpu_seconds": 19.21875,
+        "total_calls": 26656680,
+        "functions": [
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
+            "line": 563,
+            "function": "prepare",
+            "primitive_calls": 1,
+            "total_calls": 1,
+            "exclusive_seconds": 0.012233500000000001,
+            "cumulative_seconds": 21.117260400000003
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
+            "line": 513,
+            "function": "_prepare_reused_action",
+            "primitive_calls": 16,
+            "total_calls": 16,
+            "exclusive_seconds": 0.0462416,
+            "cumulative_seconds": 17.875317300000003
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 123,
+            "function": "validate_shared_action_core",
+            "primitive_calls": 46,
+            "total_calls": 46,
+            "exclusive_seconds": 0.029055800000000003,
+            "cumulative_seconds": 14.545676400000001
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_immigration_shared_candidate.py",
+            "line": 454,
+            "function": "_prepare_candidate_core_augmentation",
+            "primitive_calls": 11,
+            "total_calls": 11,
+            "exclusive_seconds": 0.0228515,
+            "cumulative_seconds": 13.786402500000001
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 87,
+            "function": "_validate_schema",
+            "primitive_calls": 100,
+            "total_calls": 100,
+            "exclusive_seconds": 0.0010108,
+            "cumulative_seconds": 11.3589303
+          },
+          {
+            "file": "~",
+            "line": 0,
+            "function": "<built-in method builtins.sorted>",
+            "primitive_calls": 1520,
+            "total_calls": 2946,
+            "exclusive_seconds": 0.0034111000000000002,
+            "cumulative_seconds": 11.322977100000001
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/validators.py",
+            "line": 349,
+            "function": "iter_errors",
+            "primitive_calls": 100,
+            "total_calls": 3230,
+            "exclusive_seconds": 0.0044431,
+            "cumulative_seconds": 11.3197741
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 274,
+            "function": "ref",
+            "primitive_calls": 100,
+            "total_calls": 107706,
+            "exclusive_seconds": 0.0750398,
+            "cumulative_seconds": 11.319625
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/validators.py",
+            "line": 396,
+            "function": "descend",
+            "primitive_calls": 100,
+            "total_calls": 546695,
+            "exclusive_seconds": 1.1578831,
+            "cumulative_seconds": 11.3157241
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 290,
+            "function": "properties",
+            "primitive_calls": 166,
+            "total_calls": 63058,
+            "exclusive_seconds": 0.20581770000000002,
+            "cumulative_seconds": 11.3106516
+          },
+          {
+            "file": "$SITE_PACKAGES/jsonschema/_keywords.py",
+            "line": 59,
+            "function": "items",
+            "primitive_calls": 226,
+            "total_calls": 11553,
+            "exclusive_seconds": 0.06280870000000001,
+            "cumulative_seconds": 11.293477000000001
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 63,
+            "function": "digest",
+            "primitive_calls": 49642,
+            "total_calls": 49642,
+            "exclusive_seconds": 0.06869420000000001,
+            "cumulative_seconds": 6.621099500000001
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 57,
+            "function": "canonical_bytes",
+            "primitive_calls": 83822,
+            "total_calls": 83822,
+            "exclusive_seconds": 0.1045316,
+            "cumulative_seconds": 6.077764500000001
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_shared_domain_candidate.py",
+            "line": 172,
+            "function": "prepare",
+            "primitive_calls": 17,
+            "total_calls": 17,
+            "exclusive_seconds": 0.0389479,
+            "cumulative_seconds": 5.440377600000001
+          },
+          {
+            "file": "$PYTHON_LIB/json/__init__.py",
+            "line": 183,
+            "function": "dumps",
+            "primitive_calls": 84126,
+            "total_calls": 84126,
+            "exclusive_seconds": 0.0887184,
+            "cumulative_seconds": 5.2912827
+          },
+          {
+            "file": "$PYTHON_LIB/json/encoder.py",
+            "line": 183,
+            "function": "encode",
+            "primitive_calls": 84126,
+            "total_calls": 84126,
+            "exclusive_seconds": 0.08863700000000001,
+            "cumulative_seconds": 5.1836979
+          },
+          {
+            "file": "$PYTHON_LIB/json/encoder.py",
+            "line": 205,
+            "function": "iterencode",
+            "primitive_calls": 82596,
+            "total_calls": 82596,
+            "exclusive_seconds": 5.037508600000001,
+            "cumulative_seconds": 5.037508600000001
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 67,
+            "function": "sealed_digest",
+            "primitive_calls": 45672,
+            "total_calls": 45672,
+            "exclusive_seconds": 0.07048410000000001,
+            "cumulative_seconds": 4.4137212
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/scripts/prepare_shared_domain_candidate.py",
+            "line": 32,
+            "function": "validate_sources",
+            "primitive_calls": 17,
+            "total_calls": 17,
+            "exclusive_seconds": 0.0198164,
+            "cumulative_seconds": 3.0916458
+          },
+          {
+            "file": "$CHECKPOINT225_CHECKOUT/backend/app/semantic_ir/shared_corpus.py",
+            "line": 320,
+            "function": "adapt_to_semantic_ir_input",
+            "primitive_calls": 18,
+            "total_calls": 18,
+            "exclusive_seconds": 0.002524,
+            "cumulative_seconds": 3.0418843
+          },
+          {
+            "file": "$PYTHON_LIB/pathlib/_local.py",
+            "line": 539,
+            "function": "read_text",
+            "primitive_calls": 130,
+            "total_calls": 130,
+            "exclusive_seconds": 0.00038990000000000004,
+            "cumulative_seconds": 0.8053723
+          },
+          {
+            "file": "$PYTHON_LIB/pathlib/_abc.py",
+            "line": 628,
+            "function": "read_text",
+            "primitive_calls": 130,
+            "total_calls": 130,
+            "exclusive_seconds": 0.00045860000000000003,
+            "cumulative_seconds": 0.8049499
+          },
+          {
+            "file": "$PYTHON_LIB/json/__init__.py",
+            "line": 299,
+            "function": "loads",
+            "primitive_calls": 130,
+            "total_calls": 130,
+            "exclusive_seconds": 0.0003211,
+            "cumulative_seconds": 0.6784189
+          }
+        ],
+        "selection": "Top20 cumulative rows plus all watched functions; no timing value changed."
+      },
+      "raw_receipt_sha256": "14421bb5bc5eb4c460e12f67e624599834481c019049532f5741beee2bdfe1aa"
+    }
+  ],
+  "test_runs": [
+    {
+      "summary": "363passed/1failed/3cache warnings/380.25s; native CP1252",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "1",
+        "skipped": "0",
+        "tests": "364",
+        "time": "380.209",
+        "timestamp": "2026-10-13T19:16:38.896185-04:00",
+        "hostname": "DESKTOP-1CQBHTJ"
+      },
+      "by_class": {
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests": {
+          "tests": 133,
+          "seconds": 32.276,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "backend.tests.test_shared_legislative_corpus.SharedLegislativeCorpusTests": {
+          "tests": 15,
+          "seconds": 0.274,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "backend.tests.test_shared_candidate_research.SharedCandidateResearchTests": {
+          "tests": 7,
+          "seconds": 0.001,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests": {
+          "tests": 209,
+          "seconds": 346.96,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "test_identity_sha256": "59c66c79d71bcd7de035f6d9e704df2e9e06b423eeb0a457f21ee04f102ccec7",
+      "raw_xml_sha256": "7b6bac239d9563df6f8b5fc8f028f5e3a5d8f0c581f60b8aab6f779b9a12e6d4",
+      "raw_log_sha256": "f29320c5edcb9d0574c96e6f84bbd69d7fa827b8938f1f0664b69532c9c6a4f8",
+      "slowest30": [
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_all_checked_in_generated_outputs_match_an_independent_replay",
+          "seconds": 42.015
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_replacement_print_wrong_bill_number_or_future_date_is_rejected",
+          "seconds": 39.076
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_replacement_concurrence_rejects_unbound_or_partial_print_claim",
+          "seconds": 29.257
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_wrong_amendment_version_or_future_date_is_rejected",
+          "seconds": 20.465
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_replacement_cannot_use_a_rule_episode_or_two_conflicting_witnesses",
+          "seconds": 19.613
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_question_binds_rule_section_and_normalizes_labels",
+          "seconds": 13.337
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_qualified_wrappers_reject_resealed_component_and_compiler_source_changes",
+          "seconds": 11.977
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_modern_candidate_qualification_rejects_fully_resealed_wrapper_and_basis_drift",
+          "seconds": 11.088
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_8132_requires_both_exact_incorporated_bodies_and_retains_dates_exceptions",
+          "seconds": 10.689
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_jordan_constraint_rejects_scope_leak_and_invalid_effect",
+          "seconds": 10.325
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_jordan_constraint_preserves_every_meaning_choice_and_behavior",
+          "seconds": 10.269
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_modern_candidate_qualification_rejects_missing_stale_or_changed_original_bindings",
+          "seconds": 10.253
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_wrong_direct_concurrence_clerk_question_is_rejected",
+          "seconds": 10.171
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_direct_concurrence_cannot_create_a_separate_rule_episode",
+          "seconds": 9.955
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_missing_clerk_time_cannot_establish_same_day_replacement",
+          "seconds": 9.927
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_direct_concurrence_requires_the_bound_senate_amendment",
+          "seconds": 9.81
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_consideration_rule_cannot_become_final_concurrence",
+          "seconds": 9.789
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_consideration_only_rule_cannot_adopt_replacement",
+          "seconds": 9.672
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_ES_candidate_rejects_fully_resealed_qualification_and_wrapper_drift",
+          "seconds": 9.075
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_fisa_qualification_rejects_changed_original_and_role_bindings",
+          "seconds": 7.832
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_ES_candidate_rejects_missing_conflict_or_separate_source_bindings",
+          "seconds": 7.227
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_reuse_rejects_stale_or_changed_candidate_input",
+          "seconds": 6.118
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_fisa_qualification_rejects_resealed_question_version_and_basis_changes",
+          "seconds": 5.414
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_preserved_wrapper_binding_rejects_missing_stale_or_self_reference",
+          "seconds": 5.166
+        },
+        {
+          "identity": "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests::test_proof_and_readable_packet_are_reproducible",
+          "seconds": 4.965
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_reuse_rejects_resealed_authority_source_and_question_changes",
+          "seconds": 4.94
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_question_rejects_coherently_resealed_wrong_whole_choice",
+          "seconds": 3.926
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_hr5107_immigration_reuses_one_corrected_cross_domain_core",
+          "seconds": 3.133
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_fisa_qualification_rejects_resealed_capture_operator_and_total_drift",
+          "seconds": 2.65
+        },
+        {
+          "identity": "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests::test_state_package_rejects_missing_material_authorities_and_unbound_claim",
+          "seconds": 1.834
+        }
+      ]
+    },
+    {
+      "summary": "364passed/0failed/0skipped/0warnings/374.24s; python -X utf8",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "364",
+        "time": "374.156",
+        "timestamp": "2026-10-13T19:23:48.505759-04:00",
+        "hostname": "DESKTOP-1CQBHTJ"
+      },
+      "by_class": {
+        "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests": {
+          "tests": 133,
+          "seconds": 31.831,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "backend.tests.test_shared_legislative_corpus.SharedLegislativeCorpusTests": {
+          "tests": 15,
+          "seconds": 0.241,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "backend.tests.test_shared_candidate_research.SharedCandidateResearchTests": {
+          "tests": 7,
+          "seconds": 0.0,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests": {
+          "tests": 209,
+          "seconds": 341.706,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "test_identity_sha256": "59c66c79d71bcd7de035f6d9e704df2e9e06b423eeb0a457f21ee04f102ccec7",
+      "raw_xml_sha256": "8e144a852f9444056ce20922358d48640aeb12f79f699816c1bfc12238c652cd",
+      "raw_log_sha256": "2dbf5cc5cd5a861200364063e351d555bc132d475c9e72876889acc2d4a50851",
+      "slowest30": [
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_all_checked_in_generated_outputs_match_an_independent_replay",
+          "seconds": 41.9
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_replacement_print_wrong_bill_number_or_future_date_is_rejected",
+          "seconds": 38.676
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_replacement_concurrence_rejects_unbound_or_partial_print_claim",
+          "seconds": 29.0
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_wrong_amendment_version_or_future_date_is_rejected",
+          "seconds": 19.283
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_replacement_cannot_use_a_rule_episode_or_two_conflicting_witnesses",
+          "seconds": 19.199
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_question_binds_rule_section_and_normalizes_labels",
+          "seconds": 12.75
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_qualified_wrappers_reject_resealed_component_and_compiler_source_changes",
+          "seconds": 11.856
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_modern_candidate_qualification_rejects_fully_resealed_wrapper_and_basis_drift",
+          "seconds": 10.822
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_8132_requires_both_exact_incorporated_bodies_and_retains_dates_exceptions",
+          "seconds": 10.466
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_jordan_constraint_preserves_every_meaning_choice_and_behavior",
+          "seconds": 10.232
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_jordan_constraint_rejects_scope_leak_and_invalid_effect",
+          "seconds": 10.221
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_direct_concurrence_requires_the_bound_senate_amendment",
+          "seconds": 10.127
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_modern_candidate_qualification_rejects_missing_stale_or_changed_original_bindings",
+          "seconds": 10.103
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_consideration_rule_cannot_become_final_concurrence",
+          "seconds": 9.735
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_direct_concurrence_cannot_create_a_separate_rule_episode",
+          "seconds": 9.664
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_wrong_direct_concurrence_clerk_question_is_rejected",
+          "seconds": 9.654
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_resealed_consideration_only_rule_cannot_adopt_replacement",
+          "seconds": 9.653
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_missing_clerk_time_cannot_establish_same_day_replacement",
+          "seconds": 9.599
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_ES_candidate_rejects_fully_resealed_qualification_and_wrapper_drift",
+          "seconds": 9.114
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_fisa_qualification_rejects_changed_original_and_role_bindings",
+          "seconds": 7.773
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_ES_candidate_rejects_missing_conflict_or_separate_source_bindings",
+          "seconds": 7.162
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_reuse_rejects_stale_or_changed_candidate_input",
+          "seconds": 5.872
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_fisa_qualification_rejects_resealed_question_version_and_basis_changes",
+          "seconds": 5.523
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_preserved_wrapper_binding_rejects_missing_stale_or_self_reference",
+          "seconds": 4.991
+        },
+        {
+          "identity": "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests::test_proof_and_readable_packet_are_reproducible",
+          "seconds": 4.889
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_reuse_rejects_resealed_authority_source_and_question_changes",
+          "seconds": 4.742
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_source_review_question_rejects_coherently_resealed_wrong_whole_choice",
+          "seconds": 3.788
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_hr5107_immigration_reuses_one_corrected_cross_domain_core",
+          "seconds": 3.116
+        },
+        {
+          "identity": "backend.tests.test_immigration_shared_candidate.ImmigrationCandidateIntegrityTests::test_legacy_fisa_qualification_rejects_resealed_capture_operator_and_total_drift",
+          "seconds": 2.95
+        },
+        {
+          "identity": "backend.tests.test_shared_domain_candidate.SharedDomainCandidateTests::test_state_package_rejects_missing_material_authorities_and_unbound_claim",
+          "seconds": 1.8
+        }
+      ]
+    }
+  ]
+}
