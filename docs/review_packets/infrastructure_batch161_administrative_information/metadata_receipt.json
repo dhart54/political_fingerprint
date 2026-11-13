@@ -1,0 +1,32 @@
+{
+  "kind": "prospective_floor_locator_capture",
+  "limits": {
+    "metadata_locators": 2,
+    "metadata_response_bytes": 2097152,
+    "later_HTML_locators": 4,
+    "HTML_response_bytes": 1048576,
+    "all_response_bytes": 8388608,
+    "seconds_per_attempt": 45,
+    "attempts_per_URL": 1,
+    "redirects": false,
+    "PDFs": false
+  },
+  "attempts": [
+    {
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-31/mods.xml",
+      "attempts": 1,
+      "retained": false,
+      "error": "HTTP Error 404: Not Found",
+      "route_closed": true,
+      "elapsed_seconds": 0.225
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-21/mods.xml",
+      "attempts": 1,
+      "retained": false,
+      "error": "HTTP Error 404: Not Found",
+      "route_closed": true,
+      "elapsed_seconds": 0.159
+    }
+  ]
+}
