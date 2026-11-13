@@ -1,0 +1,316 @@
+{
+  "action_id": "house:119:2:310",
+  "snapshot": "78b4728cc732488a2e1a0e1a0ef8132e36bcc537",
+  "source_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+  "source_artifact_raw_byte_sha256": "154363d41424d93f6df08231ea827c0ebe85548321309affb9a9039a06de2f30",
+  "prior_research_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/fraud_enforcement_screening_checkpoint192.json",
+  "prior_research_artifact_raw_byte_sha256": "79407107ace6140d083661fa4b34b66f0ad2f7eb978ab54dfa78773817f69319",
+  "role": "research_support_only",
+  "candidate_authorship": false,
+  "screening_credit_assigned": false,
+  "editorial_judgment_resolved": false,
+  "recorded_clerk_metadata": {
+    "majority": "R",
+    "congress": "119",
+    "session": "2nd",
+    "chamber": "U.S. House of Representatives",
+    "rollcall-num": "310",
+    "legis-num": "H R 10326",
+    "vote-question": "On Passage",
+    "vote-type": "YEA-AND-NAY",
+    "vote-result": "Passed",
+    "action-date": "16-Sep-2026",
+    "action-time": "6:43 PM",
+    "vote-desc": "PROOF Act"
+  },
+  "sources": {
+    "govinfo:hr10326eh": {
+      "source_id": "govinfo:hr10326eh",
+      "source_type": "official_engrossed_bill_text",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10326eh/html/BILLS-119hr10326eh.htm",
+      "text_version": "Complete exact House engrossed proposal, not enacted/current law",
+      "raw_sha256": "bda7c3fbdb9a34ddb4497064c7fb80232d5e9f4ad349e41ade2bba06bb17ebee",
+      "governed_bytes_sha256": "3ebcb55b8a4a075dbf588236cfe2c5ed2b9fa4f61f6ab69bcdab20193f0d9f44",
+      "row_index": 2133,
+      "text_characters": 6436,
+      "governed_seal_recomputed": true
+    },
+    "govinfo:hres1530eh": {
+      "source_id": "govinfo:hres1530eh",
+      "source_type": "official_bill_text",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1530eh/html/BILLS-119hres1530eh.htm",
+      "text_version": "EH",
+      "raw_sha256": "f11e341fd3ac62d4bcda2383b4e607d861f0647f3361ecff883d3dedd14dbe63",
+      "governed_bytes_sha256": "ae0d66c1c58f809c4dcde0e295ad6ec971bb449f76f7331c4588404bca108bd4",
+      "row_index": 1507,
+      "text_characters": 4741,
+      "governed_seal_recomputed": true
+    },
+    "immigration:roll310-identity192": {
+      "source_id": "immigration:roll310-identity192",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+      "text_version": "Literal own-action witness; initial and resumed recorded stages separate, adjacent choices and stated intentions excluded",
+      "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+      "governed_bytes_sha256": "515159d1fd254299a1b097436886dad10b1978d363ebd7ec61ec67536bf8e222",
+      "row_index": 2152,
+      "text_characters": 607,
+      "governed_seal_recomputed": true
+    },
+    "immigration:roll310-initial192": {
+      "source_id": "immigration:roll310-initial192",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+      "text_version": "Literal own-action witness; initial and resumed recorded stages separate, adjacent choices and stated intentions excluded",
+      "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+      "governed_bytes_sha256": "a859d802b4d123f7daab02b9ab6fbc539671376f72a7f54d38a6922b2684f1b5",
+      "row_index": 2154,
+      "text_characters": 706,
+      "governed_seal_recomputed": true
+    },
+    "immigration:roll310-recorded192": {
+      "source_id": "immigration:roll310-recorded192",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-16/pdf/CREC-2026-09-16-house.pdf",
+      "text_version": "Literal own-action witness; initial and resumed recorded stages separate, adjacent choices and stated intentions excluded",
+      "raw_sha256": "09e09e41559fe73683d0b1a9323552fc82fcacaeb6095e2a77167001404634a8",
+      "governed_bytes_sha256": "a60101db5ec635dba4b5da625f7449702a82fc6253b424b063f87859627a6a8e",
+      "row_index": 2155,
+      "text_characters": 5245,
+      "governed_seal_recomputed": true
+    },
+    "govinfo:5usc552a-2024-operative192": {
+      "source_id": "govinfo:5usc552a-2024-operative192",
+      "source_type": "official_statutory_text_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552a.htm",
+      "text_version": "Complete operative 2024 Code section body, historical comparator; subsequent law and individual application not certified",
+      "raw_sha256": "19223e13c8d0413721b379ffab44ea26f39fdb00101b7afe691dc8098a254df6",
+      "governed_bytes_sha256": "f4c28a3c37ba30ffd4cb7aaf83e8b12041993ba006396355245eb0f548268c75",
+      "row_index": 2140,
+      "text_characters": 46715,
+      "governed_seal_recomputed": true
+    },
+    "govinfo:5usc552a-note-judicial-redress192": {
+      "source_id": "govinfo:5usc552a-note-judicial-redress192",
+      "source_type": "official_statutory_note_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552a.htm",
+      "text_version": "Complete quoted Judicial Redress Act2015 note; qualified covered records/person/country/agencies, no designation/current-application certificate",
+      "raw_sha256": "19223e13c8d0413721b379ffab44ea26f39fdb00101b7afe691dc8098a254df6",
+      "governed_bytes_sha256": "8f5079103286f427d7167be7b935748b43776ee1116e13dd76f92cf981e52da1",
+      "row_index": 2143,
+      "text_characters": 7534,
+      "governed_seal_recomputed": true
+    },
+    "govinfo:45cfr160103-2024-HIPAA-definitions223": {
+      "source_id": "govinfo:45cfr160103-2024-HIPAA-definitions223",
+      "source_type": "official_regulatory_text_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title45-vol2/xml/CFR-2024-title45-vol2-sec160-103.xml",
+      "text_version": "Dated2024HIPAAdefinitions including coveredentity/healthplan/individual/PHI; not universal current agency/program applicability.",
+      "raw_sha256": "a23f31394fb485674bdd74b216bf5a5b948c74fd3dabe301e4c7d1eac691e556",
+      "governed_bytes_sha256": "de23f462964bf7a41345b4aa67d559aa96dac37f8d079d71213d031a58599e86",
+      "row_index": 2474,
+      "text_characters": 24604,
+      "governed_seal_recomputed": true
+    },
+    "govinfo:45cfr164512f-2024-law-enforcement223": {
+      "source_id": "govinfo:45cfr164512f-2024-law-enforcement223",
+      "source_type": "official_regulatory_text_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title45-vol2/xml/CFR-2024-title45-vol2-sec164-512.xml",
+      "text_version": "Dated2024whole164.512(f)law-enforcement disclosures, administrative scope/necessity and person/record/use conditions; no generic unrestricted disclosure.",
+      "raw_sha256": "f915e11d35abc060e5890dd9c899ea18ea3b273492ec1d88f8ce2dc03ae029cd",
+      "governed_bytes_sha256": "4b4191b4dba23f44a3bc148aaef726ea8f7fe91e40588eb494f078b024dbaf5f",
+      "row_index": 2475,
+      "text_characters": 5382,
+      "governed_seal_recomputed": true
+    },
+    "clerk:119:2:310": {
+      "source_id": "clerk:119:2:310",
+      "source_type": "house_clerk_roll_call",
+      "url": "https://clerk.house.gov/evs/2026/roll310.xml",
+      "text_version": null,
+      "raw_sha256": "fa7a4acc7ca7fa880d13f7935bb0a5ea80963c81baa23a37ab4e5a5084e130c4",
+      "governed_bytes_sha256": "d754c81dbbf06391948dc641452ca0e47fe989af50f251bbd37ffb91cd8db711",
+      "row_index": 671,
+      "text_characters": 0,
+      "governed_seal_recomputed": true
+    }
+  },
+  "passages": [
+    {
+      "label": "P2",
+      "source_id": "govinfo:hr10326eh",
+      "start": 693,
+      "end": 3830,
+      "passage": "SEC. 2. AUTHORIZATION FOR INFORMATION SHARING AND ACCESS. (a) In General.--The head of a State administering a program described in subsection (b) shall, upon receipt of a written request from the Attorney General, provide such information as the Attorney General may require for purposes of investigating or prosecuting alleged fraud committed with regard to such program. (b) Programs Described.--The programs described in this subsection are the following: (1) A State plan under title XIX of the Social Security Act (42 U.S.C. 1396 et seq.) (or waiver of such plan). (2) The supplemental nutrition assistance program established under the Food and Nutrition Act of 2008 (7 U.S.C. 2011 et seq.). (3) The Temporary Assistance for Needy Families program established under part A of title IV of the Social Security Act (42 U.S.C. 601 et seq.). (4) State unemployment compensation programs receiving funding under title III of the Social Security Act (42 U.S.C. 501 et seq.). (5) The Coronavirus Relief Fund established under section 601 of the Social Security Act (42 U.S.C. 801). (6) The Coronavirus State and Local Fiscal Recovery Funds established under sections 602 and 603 of the Social Security Act (42 U.S.C. 802, 803). (7) The Emergency Rental Assistance programs established under section 501 of subtitle A of title V of division N of the Consolidated Appropriations Act, 2021 (15 U.S.C. 9058a) and section 3201 of the American Rescue Plan Act of 2021 (15 U.S.C. 9058c). (8) Elementary and secondary school emergency relief grants under-- (A) section 18003 of the CARES Act (Public Law 116- 136; 20 U.S.C. 3401 note); (B) section 313 of the Coronavirus Response and Relief Supplemental Appropriations Act, 2021 (Public Law 116-260; 20 U.S.C. 3401 note); and (C) section 2001 of the American Rescue Plan Act of 2021 (Public Law 117-2; 20 U.S.C. 3401 note). (9) The Broadband Equity, Access, and Deployment Program established under section 60102(b)(1) of the Infrastructure Investment and Jobs Act (47 U.S.C. 1702(b)(1)). (10) The Community Development Block Grant program administered by the Department of Housing and Urban Development under title I of the Housing and Community Development Act of 1974 (42 U.S.C. 5301 et seq.). (11) Public Assistance and Hazard Mitigation grant programs administered by the Federal Emergency Management Agency under the Robert T. Stafford Disaster Relief and Emergency Assistance Act (42 U.S.C. 5121 et seq.). (12) The State Small Business Credit Initiative program established under the Small Business Jobs Act of 2010 (12 U.S.C. 5701 et seq.). (13) Any other program pursuant to which funds are made available to States identified by the Attorney General as vulnerable to fraud. (c) Scope of Information.--The requirement under subsection (a) applies to the following: (1) Identity verification records. (2) Benefit disbursement logs. (3) Provider billing statements. (4) Demographic information directly related to an active fraud investigation. (5) Any other information, as determined appropriate by the Attorney General for purposes of the investigation or prosecution of alleged fraud. ",
+      "passage_utf8_sha256": "0f86685399232f18146d3852db4b6c9d4958472c3b511a0eb1e3d649e914127d"
+    },
+    {
+      "label": "P3",
+      "source_id": "govinfo:hr10326eh",
+      "start": 3830,
+      "end": 4893,
+      "passage": "SEC. 3. INFORMATION PROTECTION AND PRIVACY SAFEGUARDS. (a) Compliance With Privacy Laws.--The Attorney General shall handle all information obtained under section 2 in accordance with section 552a of title 5, United States Code (commonly known as the ``Privacy Act of 1974''), and, where applicable, the regulations promulgated under section 264(c) of the Health Insurance Portability and Accountability Act of 1996 (42 U.S.C. 1320d-2 note). (b) Security Protocol.--The Attorney General shall establish information security protocols to ensure that information transferred from a State agency-- (1) is encrypted using industry-standard protocols; (2) may only be accessed by authorized personnel; and (3) is destroyed and permanently removed from any database upon the conclusion of the relevant legal proceedings or investigation. (c) Limitation on Use.--A Federal agency may only use information obtained under this Act for law enforcement purposes related to fraud, and may not disclose such information for any unrelated administrative or commercial purpose. ",
+      "passage_utf8_sha256": "096d93aeeab62f01154afe3baf28711775043a177946a2147f77bd300d714c15"
+    },
+    {
+      "label": "P4",
+      "source_id": "govinfo:hr10326eh",
+      "start": 4893,
+      "end": 5430,
+      "passage": "SEC. 4. REPORTING REQUIREMENTS. Not later than 1 year after the date of enactment of this Act, and annually thereafter, the Attorney General shall submit a report to the Committee on the Judiciary of the Senate and the Committee on the Judiciary of the House of Representatives detailing-- (1) the number of requests issued to State agencies pursuant to this Act; (2) the programs with respect to which such requests were made; and (3) the number of fraud investigations initiated and convictions secured using the information obtained. ",
+      "passage_utf8_sha256": "970e935584dd420abd125eae38fde401f1440d006d24c1ae407c32a855cb627e"
+    },
+    {
+      "label": "P5",
+      "source_id": "govinfo:hr10326eh",
+      "start": 5430,
+      "end": 5554,
+      "passage": "SEC. 5. EFFECTIVE DATE. This Act shall take effect on the date that is 60 days after the date of the enactment of this Act. ",
+      "passage_utf8_sha256": "a009e7f0f813837255309c9712cc9d977f2bc580fb2e27c80d8c48ce14a74d30"
+    },
+    {
+      "label": "P6",
+      "source_id": "govinfo:hr10326eh",
+      "start": 5554,
+      "end": 5841,
+      "passage": "SEC. 6. SEVERABILITY. If any provision of this Act, or the application of such provision to any person or circumstance, is held to be unconstitutional, the remainder of this Act, and the application of the provisions of such to any person or circumstance, shall not be affected thereby. ",
+      "passage_utf8_sha256": "de823e63f3ca93aa287990e413f1c1001c75b2f0defc195d62cbb8798f4a89bc"
+    },
+    {
+      "label": "P7",
+      "source_id": "govinfo:hr10326eh",
+      "start": 5841,
+      "end": 6046,
+      "passage": "SEC. 7. DEFINITION. In this Act, the term ``State'' means each of the several States, the District of Columbia, the Commonwealth of Puerto Rico, and any other territory or possession of the United States. ",
+      "passage_utf8_sha256": "4d1a0935bdf48cb7fb04f04f168e6f7dca4cba6068d3519833ac5d11dfc84315"
+    },
+    {
+      "label": "R2",
+      "source_id": "govinfo:hres1530eh",
+      "start": 1081,
+      "end": 1898,
+      "passage": "Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 10326) to enhance information-sharing capabilities between Federal law enforcement and State agencies to detect, investigate, and prosecute fraud in certain Federal programs, and to protect individual privacy. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. ",
+      "passage_utf8_sha256": "c961201a9023aab8f53ffe77c3f3d637c6ca2ca505d1b3fd915198a8d4477d64"
+    },
+    {
+      "label": "I1",
+      "source_id": "immigration:roll310-identity192",
+      "start": 0,
+      "end": 607,
+      "passage": "PREVENTING RIP-OFFS AND OB-\nTAINING OVERSIGHT OF FUNDS \nACT \nMr. VAN DREW. Madam Speaker, \npursuant to House Resolution 1530, I \ncall up the bill (H.R. 10326) to enhance \ninformation-sharing capabilities be-\ntween Federal law enforcement and \nState agencies to detect, investigate, \nand prosecute fraud in certain Federal \nprograms, and to protect individual \nprivacy, and ask for its immediate con-\nsideration in the House. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. Pursu-\nant to House Resolution 1530, the bill is \nconsidered read. \nThe text of the bill is as follows: \nH.R. 10326 \n",
+      "passage_utf8_sha256": "82e91654223eba10be6ee20a13095ec8b3854295347445863a984504a44d760f"
+    },
+    {
+      "label": "I2",
+      "source_id": "immigration:roll310-initial192",
+      "start": 0,
+      "end": 706,
+      "passage": "The SPEAKER pro tempore (Mr. \nN\nEWHOUSE). All time for debate has ex-\npired. \nPursuant to House Resolution 1530, \nthe previous question is ordered on the \nbill. \nThe question is on the engrossment \nand third reading of the bill. \nThe bill was ordered to be engrossed \nand read a third time, and was read the \nthird time. \nThe SPEAKER pro tempore. The \nquestion is on passage of the bill. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe ayes appeared to have it. \nMr. RASKIN. Mr. Speaker, on that I \ndemand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, further pro-\nceedings on this question will be post-\nponed. \n",
+      "passage_utf8_sha256": "94ac824b5c9ef7c7df42d1c20c1d5af8351d12d15cc5e928c80cc74454fefaf3"
+    },
+    {
+      "label": "I3",
+      "source_id": "immigration:roll310-recorded192",
+      "start": 0,
+      "end": 667,
+      "passage": "PREVENTING RIP-OFFS AND OB-\nTAINING OVERSIGHT OF FUNDS \nACT \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, the unfin-\nished business is the vote on passage of \nthe bill (H.R. 10326) to enhance infor-\nmation-sharing capabilities between \nFederal law enforcement and State \nagencies to detect, investigate, and \nprosecute fraud in certain Federal pro-\ngrams, and to protect individual pri-\nvacy, on which the yeas and nays were \nordered. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nThe vote was taken by electronic de-\nvice, and there were—yeas 217, nays \n207, not voting 9, as follows: \n",
+      "passage_utf8_sha256": "37127bbcf1afec20f09fb3f6e069b01ed3931aabac55e4e0d0f4508c39fd343a"
+    },
+    {
+      "label": "A1",
+      "source_id": "govinfo:5usc552a-2024-operative192",
+      "start": 527,
+      "end": 644,
+      "passage": "(2) the term \"individual\" means a citizen of the United States or an alien lawfully admitted for permanent residence;",
+      "passage_utf8_sha256": "a6e51c5a212977cfce308b5f4fc9d1a861148716aff7227faa4423ae3abd542c"
+    },
+    {
+      "label": "A2",
+      "source_id": "govinfo:5usc552a-2024-operative192",
+      "start": 6515,
+      "end": 9259,
+      "passage": "(b) Conditions of Disclosure .—No agency shall disclose any record which is contained in a system of records by any means of communication to any person, or to another agency, except pursuant to a written request by, or with the prior written consent of, the individual to whom the record pertains, unless disclosure of the record would be— (1) to those officers and employees of the agency which maintains the record who have a need for the record in the performance of their duties; (2) required under section 552 of this title; (3) for a routine use as defined in subsection (a)(7) of this section and described under subsection (e)(4)(D) of this section; (4) to the Bureau of the Census for purposes of planning or carrying out a census or survey or related activity pursuant to the provisions of title 13; (5) to a recipient who has provided the agency with advance adequate written assurance that the record will be used solely as a statistical research or reporting record, and the record is to be transferred in a form that is not individually identifiable; (6) to the National Archives and Records Administration as a record which has sufficient historical or other value to warrant its continued preservation by the United States Government, or for evaluation by the Archivist of the United States or the designee of the Archivist to determine whether the record has such value; (7) to another agency or to an instrumentality of any governmental jurisdiction within or under the control of the United States for a civil or criminal law enforcement activity if the activity is authorized by law, and if the head of the agency or instrumentality has made a written request to the agency which maintains the record specifying the particular portion desired and the law enforcement activity for which the record is sought; (8) to a person pursuant to a showing of compelling circumstances affecting the health or safety of an individual if upon such disclosure notification is transmitted to the last known address of such individual; (9) to either House of Congress, or, to the extent of matter within its jurisdiction, any committee or subcommittee thereof, any joint committee of Congress or subcommittee of any such joint committee; (10) to the Comptroller General, or any of his authorized representatives, in the course of the performance of the duties of the Government Accountability Office; (11) to the Director of the Congressional Budget Office, or any authorized representative of the Director, in the course of performance of the duties of the Congressional Budget Office; (12) pursuant to the order of a court of competent jurisdiction; or (13) to a consumer reporting agency in accordance with section 3711(e) of title 31. ",
+      "passage_utf8_sha256": "10b9967bb7d9dec8ed1d37f981afec55100076a0c79b622ee307446074d5515d"
+    },
+    {
+      "label": "A3",
+      "source_id": "govinfo:5usc552a-2024-operative192",
+      "start": 24867,
+      "end": 26560,
+      "passage": "(j) General Exemptions .—The head of any agency may promulgate rules, in accordance with the requirements (including general notice) of sections 553(b)(1), (2), and (3), (c), and (e) of this title, to exempt any system of records within the agency from any part of this section except subsections (b), (c)(1) and (2), (e)(4)(A) through (F), (e)(6), (7), (9), (10), and (11), and (i) if the system of records is— (1) maintained by the Central Intelligence Agency; or (2) maintained by an agency or component thereof which performs as its principal function any activity pertaining to the enforcement of criminal laws, including police efforts to prevent, control, or reduce crime or to apprehend criminals, and the activities of prosecutors, courts, correctional, probation, pardon, or parole authorities, and which consists of (A) information compiled for the purpose of identifying individual criminal offenders and alleged offenders and consisting only of identifying data and notations of arrests, the nature and disposition of criminal charges, sentencing, confinement, release, and parole and probation status; (B) information compiled for the purpose of a criminal investigation, including reports of informants and investigators, and associated with an identifiable individual; or (C) reports identifiable to an individual compiled at any stage of the process of enforcement of the criminal laws from arrest or indictment through release from supervision. At the time rules are adopted under this subsection, the agency shall include in the statement required under section 553(c) of this title, the reasons why the system of records is to be exempted from a provision of this section. ",
+      "passage_utf8_sha256": "e295cd44c09d601ddb12bd1906f14d303691da1bcedd3194c5a7e30b8d69ff49"
+    },
+    {
+      "label": "A4",
+      "source_id": "govinfo:5usc552a-2024-operative192",
+      "start": 26560,
+      "end": 29538,
+      "passage": "(k) Specific Exemptions .—The head of any agency may promulgate rules, in accordance with the requirements (including general notice) of sections 553(b)(1), (2), and (3), (c), and (e) of this title, to exempt any system of records within the agency from subsections (c)(3), (d), (e)(1), (e)(4)(G), (H), and (I) and (f) of this section if the system of records is— (1) subject to the provisions of section 552(b)(1) of this title; (2) investigatory material compiled for law enforcement purposes, other than material within the scope of subsection (j)(2) of this section: Provided, however , That if any individual is denied any right, privilege, or benefit that he would otherwise be entitled by Federal law, or for which he would otherwise be eligible, as a result of the maintenance of such material, such material shall be provided to such individual, except to the extent that the disclosure of such material would reveal the identity of a source who furnished information to the Government under an express promise that the identity of the source would be held in confidence, or, prior to the effective date of this section, under an implied promise that the identity of the source would be held in confidence; (3) maintained in connection with providing protective services to the President of the United States or other individuals pursuant to section 3056 of title 18; (4) required by statute to be maintained and used solely as statistical records; (5) investigatory material compiled solely for the purpose of determining suitability, eligibility, or qualifications for Federal civilian employment, military service, Federal contracts, or access to classified information, but only to the extent that the disclosure of such material would reveal the identity of a source who furnished information to the Government under an express promise that the identity of the source would be held in confidence, or, prior to the effective date of this section, under an implied promise that the identity of the source would be held in confidence; (6) testing or examination material used solely to determine individual qualifications for appointment or promotion in the Federal service the disclosure of which would compromise the objectivity or fairness of the testing or examination process; or (7) evaluation material used to determine potential for promotion in the armed services, but only to the extent that the disclosure of such material would reveal the identity of a source who furnished information to the Government under an express promise that the identity of the source would be held in confidence, or, prior to the effective date of this section, under an implied promise that the identity of the source would be held in confidence. At the time rules are adopted under this subsection, the agency shall include in the statement required under section 553(c) of this title, the reasons why the system of records is to be exempted from a provision of this section. ",
+      "passage_utf8_sha256": "32816be41adb17e70c7ee562e54d70721aaea78a2b429bd9f0f0545afe13c94c"
+    },
+    {
+      "label": "J1",
+      "source_id": "govinfo:5usc552a-note-judicial-redress192",
+      "start": 299,
+      "end": 1566,
+      "passage": "\"(a) Civil Action; Civil Remedies .—With respect to covered records, a covered person may bring a civil action against an agency and obtain civil remedies, in the same manner, to the same extent, and subject to the same limitations, including exemptions and exceptions, as an individual may bring and obtain with respect to records under— \"(1) section 552a(g)(1)(D) of title 5, United States Code, but only with respect to disclosures intentionally or willfully made in violation of section 552a(b) of such title; and \"(2) subparagraphs (A) and (B) of section 552a(g)(1) of title 5, United States Code, but such an action may only be brought against a designated Federal agency or component. \"(b) Exclusive Remedies .—The remedies set forth in subsection (a) are the exclusive remedies available to a covered person under this section. \"(c) Application of the Privacy Act With Respect to a Covered Person .—For purposes of a civil action described in subsection (a), a covered person shall have the same rights, and be subject to the same limitations, including exemptions and exceptions, as an individual has and is subject to under section 552a of title 5, United States Code, when pursuing the civil remedies described in paragraphs (1) and (2) of subsection (a). ",
+      "passage_utf8_sha256": "3aea29cbba6566d7fbbd58c5533fac123427b05dda6afd45d91cb29e8be69ed1"
+    },
+    {
+      "label": "J2",
+      "source_id": "govinfo:5usc552a-note-judicial-redress192",
+      "start": 5742,
+      "end": 7105,
+      "passage": "\"(h) Definitions .—In this Act: \"(1) Agency .—The term 'agency' has the meaning given that term in section 552(f) of title 5, United States Code. \"(2) Covered country .—The term 'covered country' means a country or regional economic integration organization, or member country of such organization, designated in accordance with subsection (d). \"(3) Covered person .—The term 'covered person' means a natural person (other than an individual) who is a citizen of a covered country. \"(4) Covered record .—The term 'covered record' has the same meaning for a covered person as a record has for an individual under section 552a of title 5, United States Code, once the covered record is transferred— \"(A) by a public authority of, or private entity within, a country or regional economic organization, or member country of such organization, which at the time the record is transferred is a covered country; and \"(B) to a designated Federal agency or component for purposes of preventing, investigating, detecting, or prosecuting criminal offenses. \"(5) Designated federal agency or component .—The term 'designated Federal agency or component' means a Federal agency or component of an agency designated in accordance with subsection (e). \"(6) Individual .—The term 'individual' has the meaning given that term in section 552a(a)(2) of title 5, United States Code. ",
+      "passage_utf8_sha256": "cf460d48b61b8862991f12ffa280a13d8db00a4020710accde4dd6eddf81724a"
+    },
+    {
+      "label": "H1",
+      "source_id": "govinfo:45cfr160103-2024-HIPAA-definitions223",
+      "start": 4306,
+      "end": 4524,
+      "passage": "Covered entity means: (1) A health plan. (2) A health care clearinghouse. (3) A health care provider who transmits any health information in electronic form in connection with a transaction covered by this subchapter. ",
+      "passage_utf8_sha256": "6071f1220fc23e91183dba6af2cf684032159819ace3253479945fd210e62b44"
+    },
+    {
+      "label": "H2",
+      "source_id": "govinfo:45cfr160103-2024-HIPAA-definitions223",
+      "start": 12637,
+      "end": 15341,
+      "passage": "Health plan means an individual or group plan that provides, or pays the cost of, medical care (as defined in section 2791(a)(2) of the PHS Act, 42 U.S.C. 300gg-91(a)(2)). (1) Health plan includes the following, singly or in combination: (i) A group health plan, as defined in this section. (ii) A health insurance issuer, as defined in this section. (iii) An HMO, as defined in this section. (iv) Part A or Part B of the Medicare program under title XVIII of the Act. (v) The Medicaid program under title XIX of the Act, 42 U.S.C. 1396, et seq. (vi) The Voluntary Prescription Drug Benefit Program under Part D of title XVIII of the Act, 42 U.S.C. 1395w-101 through 1395w-152. (vii) An issuer of a Medicare supplemental policy (as defined in section 1882(g)(1) of the Act, 42 U.S.C. 1395ss(g)(1)). (viii) An issuer of a long-term care policy, excluding a nursing home fixed indemnity policy. (ix) An employee welfare benefit plan or any other arrangement that is established or maintained for the purpose of offering or providing health benefits to the employees of two or more employers. (x) The health care program for uniformed services under title 10 of the United States Code. (xi) The veterans health care program under 38 U.S.C. chapter 17. (xii) The Indian Health Service program under the Indian Health Care Improvement Act, 25 U.S.C. 1601, et seq. (xiii) The Federal Employees Health Benefits Program under 5 U.S.C. 8902, et seq. (xiv) An approved State child health plan under title XXI of the Act, providing benefits for child health assistance that meet the requirements of section 2103 of the Act, 42 U.S.C. 1397, et seq. (xv) The Medicare Advantage program under Part C of title XVIII of the Act, 42 U.S.C. 1395w-21 through 1395w-28. (xvi) A high risk pool that is a mechanism established under State law to provide health insurance coverage or comparable coverage to eligible individuals. (xvii) Any other individual or group plan, or combination of individual or group plans, that provides or pays for the cost of medical care (as defined in section 2791(a)(2) of the PHS Act, 42 U.S.C. 300gg-91(a)(2)). (2) Health plan excludes: (i) Any policy, plan, or program to the extent that it provides, or pays for the cost of, excepted benefits that are listed in section 2791(c)(1) of the PHS Act, 42 U.S.C. 300gg-91(c)(1); and (ii) A government-funded program (other than one listed in paragraph (1)(i)-(xvi) of this definition): (A) Whose principal purpose is other than providing, or paying the cost of, health care; or (B) Whose principal activity is: (1) The direct provision of health care to persons; or (2) The making of grants to fund the direct provision of health care to persons. ",
+      "passage_utf8_sha256": "f9bd26aa6a7af965e7ac8970de090956af8ac301d4a7a8032975998112f5c4d1"
+    },
+    {
+      "label": "H3",
+      "source_id": "govinfo:45cfr160103-2024-HIPAA-definitions223",
+      "start": 15443,
+      "end": 15523,
+      "passage": "Individual means the person who is the subject of protected health information. ",
+      "passage_utf8_sha256": "721800eb56fef41263475c0cae4145adc6ad7516ac1bbf21f53afdea60b303e2"
+    },
+    {
+      "label": "H4",
+      "source_id": "govinfo:45cfr160103-2024-HIPAA-definitions223",
+      "start": 19102,
+      "end": 19801,
+      "passage": "Protected health information means individually identifiable health information: (1) Except as provided in paragraph (2) of this definition, that is: (i) Transmitted by electronic media; (ii) Maintained in electronic media; or (iii) Transmitted or maintained in any other form or medium. (2) Protected health information excludes individually identifiable health information: (i) In education records covered by the Family Educational Rights and Privacy Act, as amended, 20 U.S.C. 1232g; (ii) In records described at 20 U.S.C. 1232g(a)(4)(B)(iv); (iii) In employment records held by a covered entity in its role as employer; and (iv) Regarding a person who has been deceased for more than 50 years. ",
+      "passage_utf8_sha256": "1510066afba1cf94e223561bc64c9da7a10b534557bec01ea83ad24d87853ff5"
+    },
+    {
+      "label": "H5",
+      "source_id": "govinfo:45cfr164512f-2024-law-enforcement223",
+      "start": 0,
+      "end": 5382,
+      "passage": "(f) Standard: Disclosures for law enforcement purposes. A covered entity may disclose protected health information for a law enforcement purpose to a law enforcement official if the conditions in paragraphs (f)(1) through (f)(6) of this section are met, as applicable. (1) Permitted disclosures: Pursuant to process and as otherwise required by law. A covered entity may disclose protected health information: (i) As required by law including laws that require the reporting of certain types of wounds or other physical injuries, except for laws subject to paragraph (b)(1)(ii) or (c)(1)(i) of this section; or (ii) In compliance with and as limited by the relevant requirements of: (A) A court order or court-ordered warrant, or a subpoena or summons issued by a judicial officer; (B) A grand jury subpoena; or (C) An administrative request for which response is required by law, including an administrative subpoena or summons, a civil or an authorized investigative demand, or similar process authorized under law, provided that: ( 1 ) The information sought is relevant and material to a legitimate law enforcement inquiry; ( 2 ) The request is specific and limited in scope to the extent reasonably practicable in light of the purpose for which the information is sought; and ( 3 ) De-identified information could not reasonably be used. (2) Permitted disclosures: Limited information for identification and location purposes. Except for disclosures required by law as permitted by paragraph (f)(1) of this section, a covered entity may disclose protected health information in response to a law enforcement official's request for such information for the purpose of identifying or locating a suspect, fugitive, material witness, or missing person, provided that: (i) The covered entity may disclose only the following information: (A) Name and address; (B) Date and place of birth; (C) Social security number; (D) ABO blood type and rh factor; (E) Type of injury; (F) Date and time of treatment; (G) Date and time of death, if applicable; and (H) A description of distinguishing physical characteristics, including height, weight, gender, race, hair and eye color, presence or absence of facial hair (beard or moustache), scars, and tattoos. (ii) Except as permitted by paragraph (f)(2)(i) of this section, the covered entity may not disclose for the purposes of identification or location under paragraph (f)(2) of this section any protected health information related to the individual's DNA or DNA analysis, dental records, or typing, samples or analysis of body fluids or tissue. (3) Permitted disclosure: Victims of a crime. Except for disclosures required by law as permitted by paragraph (f)(1) of this section, a covered entity may disclose protected health information in response to a law enforcement official's request for such information about an individual who is or is suspected to be a victim of a crime, other than disclosures that are subject to paragraph (b) or (c) of this section, if: (i) The individual agrees to the disclosure; or (ii) The covered entity is unable to obtain the individual's agreement because of incapacity or other emergency circumstance, provided that: (A) The law enforcement official represents that such information is needed to determine whether a violation of law by a person other than the victim has occurred, and such information is not intended to be used against the victim; (B) The law enforcement official represents that immediate law enforcement activity that depends upon the disclosure would be materially and adversely affected by waiting until the individual is able to agree to the disclosure; and (C) The disclosure is in the best interests of the individual as determined by the covered entity, in the exercise of professional judgment. (4) Permitted disclosure: Decedents. A covered entity may disclose protected health information about an individual who has died to a law enforcement official for the purpose of alerting law enforcement of the death of the individual if the covered entity has a suspicion that such death may have resulted from criminal conduct. (5) Permitted disclosure: Crime on premises. A covered entity may disclose to a law enforcement official protected health information that the covered entity believes in good faith constitutes evidence of criminal conduct that occurred on the premises of the covered entity. (6) Permitted disclosure: Reporting crime in emergencies. (i) A covered health care provider providing emergency health care in response to a medical emergency, other than such emergency on the premises of the covered health care provider, may disclose protected health information to a law enforcement official if such disclosure appears necessary to alert law enforcement to: (A) The commission and nature of a crime; (B) The location of such crime or of the victim(s) of such crime; and (C) The identity, description, and location of the perpetrator of such crime. (ii) If a covered health care provider believes that the medical emergency described in paragraph (f)(6)(i) of this section is the result of abuse, neglect, or domestic violence of the individual in need of emergency health care, paragraph (f)(6)(i) of this section does not apply and any disclosure to a law enforcement official for law enforcement purposes is subject to paragraph (c) of this section. ",
+      "passage_utf8_sha256": "a246e3e47a370e084761da4b72edd5397e9a5042c7ce6b90100dfd51c2e256cc"
+    }
+  ],
+  "timing": {
+    "started_utc": "2026-10-15T03:02:38+00:00",
+    "packet_ready_utc": "2026-10-15T03:04:19.870556+00:00",
+    "elapsed_research_drafting_seconds": 101.870556,
+    "scope": "Focused research/drafting window; prior discovery/claim, shared preparation and final delivery overhead retained in total task timing. Not exclusive CPU/research time."
+  },
+  "raw_source_reacquired": false,
+  "source_extent": "Only cited passages independently inspected here; no whole-source/current-law/integration certification."
+}

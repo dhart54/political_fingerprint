@@ -1,0 +1,100 @@
+{
+  "first_tool_utc": "2026-10-15T14:46:44+00:00",
+  "packet_ready_utc": "2026-10-15T15:00:29.715004+00:00",
+  "gross_elapsed_seconds": 825.715004,
+  "action_id": "house:119:2:44",
+  "window": "Single inclusive research diagnostic, not completed candidate action or routine throughput; includes ownership/preread/claim, failed tools, reproduction,13page visual inspection, helper/test implementation and recovery, documentation and arithmetic. Final Git validation/delivery follows.",
+  "claim": "https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6194907777",
+  "command_seconds": {
+    "initial_ownership_read": 1.8952002,
+    "PRlist_claim_and_missing_command": 3.3439842,
+    "bundled_executable_failed": 0.3153662,
+    "pypdf_position_inspection": 0.4187185,
+    "legacy_vs_full_token_probe": 0.1118802,
+    "nine_page_rendering": 6.7523021,
+    "first_review_build_failed": 0.3703799,
+    "extra_numeric_punctuation_investigation": 0.1713618,
+    "corrected_review_build": 0.3482461,
+    "initial15_tests": 0.2856534,
+    "nested_alias_regression_failed": 0.2431805,
+    "final15_tests": 0.2805882,
+    "packet_documentation_syntax_failure": 0.0600697,
+    "packet_documentation_success": 0.161467
+  },
+  "render_timings": [
+    {
+      "pdf_page": 248,
+      "seconds": 0.8664898999850266,
+      "bytes": 791378
+    },
+    {
+      "pdf_page": 251,
+      "seconds": 0.747957099985797,
+      "bytes": 783765
+    },
+    {
+      "pdf_page": 252,
+      "seconds": 0.7423117000143975,
+      "bytes": 770490
+    },
+    {
+      "pdf_page": 254,
+      "seconds": 0.7251839999807999,
+      "bytes": 739699
+    },
+    {
+      "pdf_page": 255,
+      "seconds": 0.7548276000306942,
+      "bytes": 789011
+    },
+    {
+      "pdf_page": 258,
+      "seconds": 0.7361732000135817,
+      "bytes": 768495
+    },
+    {
+      "pdf_page": 259,
+      "seconds": 0.7306237999582663,
+      "bytes": 758798
+    },
+    {
+      "pdf_page": 263,
+      "seconds": 0.6965692999656312,
+      "bytes": 720144
+    },
+    {
+      "pdf_page": 268,
+      "seconds": 0.6903749000048265,
+      "bytes": 701584
+    }
+  ],
+  "failures_and_rework": [
+    "pdftotext not onPATH; attempted bundled sibling absent. No installation/repeated wrapper attempts; used existing pypdf and pdftoppm.",
+    "First maximal numeric-run probe also classified eight numeric-name trailing commas; failed packet-build assertion retained. Refined currency recognition to require a digit after a comma; explicit numeric-name regression added. No row or source text dropped.",
+    "Strengthened nested-mutation isolation regression failed because report dictionaries shared nested source/review objects. Deep-copied output records; final15test suite passed.",
+    "Packet-documentation helper had a local or0 spacing syntax error; failed before running, corrected to or 0. No source, code result or candidate changed."
+  ],
+  "test_scope": {
+    "final_tests": 15,
+    "final_passed": 15,
+    "final_failed": 0,
+    "subtests": "Nine rejection and15partial cases plus bindings/columns/ambiguity/duplicate/image-route/source mutation and nested isolation; subtests not counted as separate test methods",
+    "candidate_suite_run": false
+  },
+  "new_primary_acquisitions": 0,
+  "restricted_batch2_contents_read": false,
+  "upstream_source": "Independently reviewed batch4 at196c68a8; archive reverified/extracted locally and page views reused/rendered from exact same parent only.",
+  "visual_scope": {
+    "target_rows": 24,
+    "total_table_rows_mechanical": 989,
+    "pages_inspected": 13,
+    "new_page_renders": 9,
+    "reused_page_views": 4,
+    "all_rows_visually_reviewed": false
+  },
+  "concurrent_load": "Writer public progress:234WRDA with two CRs deferred; no exact44diagnostic claim. Writer may run its gate concurrently. No heavy profiling, background monitor, competing candidate gate or load-controlled benchmark.",
+  "cache": "Existing local Git/PDF/runtime objects; no cold-cache or speed-improvement claim.",
+  "settings": "Native settings unchanged. Prior read-only config verified gpt-6.1-sol/high/default service tier; effective request overrides unexposed.",
+  "overhead": "Retained in gross elapsed. No residual allocation to model latency/idle time.",
+  "final_delivery": "Exact-head CLI/unit/blob validation, commit/push, CI observation and final elapsed in GitHub handoff."
+}

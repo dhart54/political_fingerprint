@@ -1,0 +1,226 @@
+{
+  "action_id": "house:119:2:286",
+  "snapshot": "78b4728cc732488a2e1a0e1a0ef8132e36bcc537",
+  "source_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+  "source_artifact_raw_byte_sha256": "154363d41424d93f6df08231ea827c0ebe85548321309affb9a9039a06de2f30",
+  "prior_research_artifact": "docs/editorial/shared_candidates/house_119_immigration_20260916/july_september_screening_checkpoint196.json",
+  "prior_research_artifact_raw_byte_sha256": "e11befe97cbd91ce196e67ac201faaae661f6ed27b20ae32f542c277d08f0796",
+  "role": "research_support_only",
+  "candidate_authorship": false,
+  "screening_credit_assigned": false,
+  "editorial_judgment_resolved": false,
+  "recorded_clerk_metadata": {
+    "majority": "R",
+    "congress": "119",
+    "session": "2nd",
+    "chamber": "U.S. House of Representatives",
+    "rollcall-num": "286",
+    "legis-num": "H R 6500",
+    "vote-question": "On Motion to Suspend the Rules and Concur in the Senate Amendments",
+    "vote-type": "2/3 YEA-AND-NAY",
+    "vote-result": "Passed",
+    "action-date": "1-Sep-2026",
+    "action-time": "2:03 PM",
+    "vote-desc": "AGOA Extension Act"
+  },
+  "sources": {
+    "govinfo:hr6500eas": {
+      "source_id": "govinfo:hr6500eas",
+      "source_type": "official_bill_text",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eas/html/BILLS-119hr6500eas.htm",
+      "text_version": "EAS",
+      "raw_sha256": "828941bae852dc7b3e9fe362cb59be251a4483f42b5f42d2beba15e0a5abc149",
+      "governed_bytes_sha256": "fc5916bbc9b78b7dee3feac7b42bf325886b4b0dbb1d2c26e65b21b57ae3e3ca",
+      "row_index": 2218,
+      "text_characters": 64001,
+      "governed_seal_recomputed": true
+    },
+    "immigration:roll286-identity196": {
+      "source_id": "immigration:roll286-identity196",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+      "text_version": "Own literal action witness; source-specific automatic ruleXX10 budget order, postponed voice/demand or direct recorded stages distinguished; no adjacent choice/stated intention. Initial voice result and member demand precede order/postponement and later resumed recorded result.",
+      "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+      "governed_bytes_sha256": "de8bac59eee1cc3f50d1771cbda60eb616d83704760a26d214875358c0778153",
+      "row_index": 2235,
+      "text_characters": 660,
+      "governed_seal_recomputed": true
+    },
+    "immigration:roll286-initial196": {
+      "source_id": "immigration:roll286-initial196",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+      "text_version": "Own literal action witness; source-specific automatic ruleXX10 budget order, postponed voice/demand or direct recorded stages distinguished; no adjacent choice/stated intention. Initial voice result and member demand precede order/postponement and later resumed recorded result.",
+      "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+      "governed_bytes_sha256": "6791b9de65c38089ae8da118a27b2b8d89c7110e16c1ea35024a76a9a414bf88",
+      "row_index": 2237,
+      "text_characters": 554,
+      "governed_seal_recomputed": true
+    },
+    "immigration:roll286-recorded196": {
+      "source_id": "immigration:roll286-recorded196",
+      "source_type": "official_congressional_record_excerpt",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+      "text_version": "Own literal action witness; source-specific automatic ruleXX10 budget order, postponed voice/demand or direct recorded stages distinguished; no adjacent choice/stated intention. Initial voice result and member demand precede order/postponement and later resumed recorded result.",
+      "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+      "governed_bytes_sha256": "458ea81a58abe406536c022f01c8a89c247cd5166b6cac6e75075e8d5a0ebd65",
+      "row_index": 2238,
+      "text_characters": 5387,
+      "governed_seal_recomputed": true
+    },
+    "govinfo:22usc214-2024-178": {
+      "source_id": "govinfo:22usc214-2024-178",
+      "source_type": "official_us_code",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec214.htm",
+      "text_version": "Complete historical official capture; no current-law, implementation or factual-purpose certification",
+      "raw_sha256": "f507ab2d40dfad5013c056bc4c677e3fcec2d1adb620cfa36088f46ce68854e0",
+      "governed_bytes_sha256": "f52f02f41502986fdf75ac62695c0dcf3b285960d6742690343211cbc9afbd08",
+      "row_index": 1963,
+      "text_characters": 14171,
+      "governed_seal_recomputed": true
+    },
+    "clerk:119:2:286": {
+      "source_id": "clerk:119:2:286",
+      "source_type": "house_clerk_roll_call",
+      "url": "https://clerk.house.gov/evs/2026/roll286.xml",
+      "text_version": null,
+      "raw_sha256": "65aec5da8a8d26f236942d55358ddf798e6e0c5ead81bf9c31f723db86db651a",
+      "governed_bytes_sha256": "dd937bdc17f4cbb5753729496469e5dda26a566f5d557fa76a0c9d3448a146b6",
+      "row_index": 647,
+      "text_characters": 0,
+      "governed_seal_recomputed": true
+    }
+  },
+  "passages": [
+    {
+      "label": "V1",
+      "source_id": "govinfo:hr6500eas",
+      "start": 0,
+      "end": 1247,
+      "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H.R. 6500 Engrossed Amendment Senate (EAS)] <DOC> In the Senate of the United States, August 8 (legislative day, August 7), 2026. Resolved, That the bill from the House of Representatives (H.R. 6500) entitled ``An Act to extend duty-free treatment provided with respect to imports from certain countries in Africa under the African Growth and Opportunity Act, to extend customs user fees, and for other purposes.'', do pass with the following AMENDMENTS: Strike all after the enacting clause and insert the following: SECTION 1. SHORT TITLE. This Act may be cited as the ``Continuing Appropriations and Extensions Act, 2027''. SEC. 2. TABLE OF CONTENTS. The table of contents for this Act is as follows: Sec. 1. Short Title. Sec. 2. Table of Contents. Sec. 3. References. DIVISION A--CONTINUING APPROPRIATIONS ACT, 2027 DIVISION B--AUTHORIZING EXTENSIONS DIVISION C--SURFACE TRANSPORTATION EXTENSION ACT OF 2026 DIVISION D--DEPARTMENT OF VETERANS AFFAIRS EXTENDERS SEC. 3. REFERENCES. Except as expressly provided otherwise, any reference to ``this Act'' contained in any division of this Act shall be treated as referring only to the provisions of that division. ",
+      "passage_utf8_sha256": "7719bca98753e94ec0d251d2eaffb470c74aba467151cb5eae1902640b91b788"
+    },
+    {
+      "label": "V2",
+      "source_id": "govinfo:hr6500eas",
+      "start": 63727,
+      "end": 63864,
+      "passage": "Amend the title so as to read: ``An Act making continuing appropriations and extensions for fiscal year 2027, and for other purposes.''. ",
+      "passage_utf8_sha256": "174d625994d138e4c9e3dd75fc7729b651bc5ea93665ac44bba464a9f43ed2eb"
+    },
+    {
+      "label": "P101",
+      "source_id": "govinfo:hr6500eas",
+      "start": 1624,
+      "end": 3988,
+      "passage": "Sec. 101. Such amounts as may be necessary, at a rate for operations as provided in the applicable appropriations Acts for fiscal year 2026 and under the authority and conditions provided in such Acts, for continuing projects or activities (including the costs of direct loans and loan guarantees) that are not otherwise specifically provided for in this Act, that were conducted in fiscal year 2026, and for which appropriations, funds, or other authority were made available in the following appropriations Acts: (1) The Agriculture, Rural Development, Food and Drug Administration, and Related Agency Appropriations Act, 2026 (division B of Public Law 119-37). (2) The Commerce, Justice, Science, and Related Agencies Appropriations Act, 2026 (division A of Public Law 119-74), except sections 521(c)(2) and 544. (3) The Department of Defense Appropriations Act, 2026 (division A of Public Law 119-75). (4) The Energy and Water Development and Related Agencies Appropriations Act, 2026 (division B of Public Law 119-74). (5) The Financial Services and General Government Appropriations Act, 2026 (division E of Public Law 119-75), except the last proviso under the heading ``Election Assistance Commission--Election Security Grants'', and including section 143 of division A of Public Law 119-37. (6) The Homeland Security and Further Additional Continuing Appropriations Act, 2026 (Public Law 119-86), except division B, and including sections 5013 through 5016 of division I of Public Law 119-75. (7) The Department of the Interior, Environment, and Related Agencies Appropriations Act, 2026 (division C of Public Law 119-74), except section 444. (8) The Departments of Labor, Health and Human Services, and Education, and Related Agencies Appropriations Act, 2026 (division B of Public Law 119-75), except section 528. (9) The Legislative Branch Appropriations Act, 2026 (division C of Public Law 119-37). (10) The Military Construction, Veterans Affairs, and Related Agencies Appropriations Act, 2026 (division D of Public Law 119-37). (11) The National Security, Department of State, and Related Programs Appropriations Act, 2026 (division F of Public Law 119-75). (12) The Transportation, Housing and Urban Development, and Related Agencies Appropriations Act, 2026 (division D of Public Law 119-75), as amended by sections 153(b) and 156(a) of this Act. ",
+      "passage_utf8_sha256": "7be0e2093f64eee6ab5ccbf64d7624f5ce3b014cadd88325c6b3344affe8c3fb"
+    },
+    {
+      "label": "P104",
+      "source_id": "govinfo:hr6500eas",
+      "start": 5303,
+      "end": 5600,
+      "passage": "Sec. 104. Except as otherwise provided in section 102, no appropriation or funds made available or authority granted pursuant to section 101 shall be used to initiate or resume any project or activity for which appropriations, funds, or other authority were not available during fiscal year 2026. ",
+      "passage_utf8_sha256": "5c4bd5d1ebb1c8c8107f473bf69ac3fa54979667edbdbbdf091b8f463b9ac30c"
+    },
+    {
+      "label": "P106",
+      "source_id": "govinfo:hr6500eas",
+      "start": 5860,
+      "end": 6384,
+      "passage": "Sec. 106. Unless otherwise provided for in this Act or in the applicable appropriations Act for fiscal year 2027, appropriations and funds made available and authority granted pursuant to this Act shall be available until whichever of the following first occurs: (1) The enactment into law of an appropriation for any project or activity provided for in this Act. (2) The enactment into law of the applicable appropriations Act for fiscal year 2027 without any provision for such project or activity. (3) December 11, 2026. ",
+      "passage_utf8_sha256": "9689129c1c1bfea9a56c1a555b24fc35cf4dddc50246bb79ef033f005a84f1ac"
+    },
+    {
+      "label": "P111",
+      "source_id": "govinfo:hr6500eas",
+      "start": 7706,
+      "end": 8446,
+      "passage": "Sec. 111. (a) For entitlements and other mandatory payments whose budget authority was provided in appropriations Acts for fiscal year 2026, and for activities under the Food and Nutrition Act of 2008, activities shall be continued at the rate to maintain program levels under current law, under the authority and conditions provided in the applicable appropriations Act for fiscal year 2026, to be continued through the date specified in section 106(3). (b) Notwithstanding section 106, obligations for mandatory payments due on or about the first day of any month that begins after October 2026 but not later than 30 days after the date specified in section 106(3) may continue to be made, and funds shall be available for such payments. ",
+      "passage_utf8_sha256": "69f5322129109ea77eae06eed5a60dbf840d764b5dfcea40554098462c8b376c"
+    },
+    {
+      "label": "P2013",
+      "source_id": "govinfo:hr6500eas",
+      "start": 45389,
+      "end": 45580,
+      "passage": "SEC. 2013. JOINT TASK FORCES. Section 708(b)(13) of the Homeland Security Act of 2002 (6 U.S.C. 348(b)(13)) shall be applied by substituting ``December 11, 2026'' for ``September 30, 2026''. ",
+      "passage_utf8_sha256": "6c220902815d1ca3d189689907342b5d0283b2c2f094e21f8d0600fa2ee9ee82"
+    },
+    {
+      "label": "P2017",
+      "source_id": "govinfo:hr6500eas",
+      "start": 46410,
+      "end": 46630,
+      "passage": "SEC. 2017. WESTERN HEMISPHERE TRAVEL INITIATIVE PASSPORT FEES. Section 1(b)(2) of the Passport Act of June 4, 1920 (22 U.S.C. 214(b)(2)) is amended by striking ``September 30, 2010'' and inserting ``December 11, 2026''. ",
+      "passage_utf8_sha256": "76f3434aebd060d28451bd071f633921222a88ba1beeee8489c82908a1e80110"
+    },
+    {
+      "label": "I1",
+      "source_id": "immigration:roll286-identity196",
+      "start": 0,
+      "end": 660,
+      "passage": " later time. \nf \nAGOA EXTENSION ACT \nMr. COLE. Mr. Speaker, I move to \nsuspend the rules and concur in the \nSenate amendments to the bill (H.R. \n6500) to extend duty-free treatment \nprovided with respect to imports from \ncertain countries in Africa under the \nAfrican Growth and Opportunity Act, \nto extend customs user fees, and for \nother purposes. \nThe Clerk read the title of the bill. \nThe text of the Senate amendments \nis as follows: \nSenate amendments: \nStrike all after the enacting clause and \ninsert the following: \nSECTION 1. SHORT TITLE. \nThis Act may be cited as the ‘‘Continuing Ap-\npropriations and Extensions Act, 2027’’. \nSEC. 2. TABLE OF CON",
+      "passage_utf8_sha256": "39fd242a17e9a4473c0be4238b4c12c43e1216c67af5f01cc730cd78ba0c36f8"
+    },
+    {
+      "label": "I2",
+      "source_id": "immigration:roll286-initial196",
+      "start": 0,
+      "end": 554,
+      "passage": "The SPEAKER pro tempore. The \nquestion is on the motion offered by \nthe gentleman from Oklahoma (Mr. \nC\nOLE) that the House suspend the rules \nand concur in the Senate amendments \nto the bill, H.R. 6500. \nThe question was taken. \nThe SPEAKER pro tempore. In the \nopinion of the Chair, two-thirds being \nin the affirmative, the ayes have it. \nMr. COLE. Mr. Speaker, on that I de-\nmand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 8 of rule XX, further pro-\nceedings on this motion will be post-\nponed.",
+      "passage_utf8_sha256": "2dcd8ab8c81983d270cda384e45c4e6274f98e7f405cb9681cfc1489ef1a776f"
+    },
+    {
+      "label": "I3",
+      "source_id": "immigration:roll286-recorded196",
+      "start": 0,
+      "end": 752,
+      "passage": "AGOA EXTENSION ACT \nThe SPEAKER pro tempore. The un-\nfinished business is the vote on the mo-\ntion to suspend the rules and concur in \nthe Senate amendments to the bill \n(H.R. 6500) to extend duty-free treat-\nment provided with respect to imports \nfrom certain countries in Africa under \nthe African Growth and Opportunity \nAct, to extend customs user fees, and \nfor other purposes, on which the yeas \nand nays were ordered. \nThe Clerk read the title of the bill. \nThe SPEAKER pro tempore. The \nquestion is on the motion offered by \nthe gentleman from Oklahoma (Mr. \nC\nOLE) that the House suspend the rules \nand concur in the Senate amendments. \nThe vote was taken by electronic de-\nvice, and there were—yeas 370, nays 48, \nnot voting 14, as follows: \n",
+      "passage_utf8_sha256": "45d66b0cfce13c69873a96ceca1ea97c9dd28766fbf64c8b9c41ba91802feb93"
+    },
+    {
+      "label": "B1",
+      "source_id": "govinfo:22usc214-2024-178",
+      "start": 2532,
+      "end": 3630,
+      "passage": "(b)(1) The Secretary of State may by regulation establish and collect a surcharge on applicable fees for the filing of each application for a passport in order to cover the costs of meeting the increased demand for passports as a result of actions taken to comply with section 7209(b) of the Intelligence Reform and Terrorism Prevention Act of 2004 (Public Law 108–458; 8 U.S.C. 1185 note). Such surcharge shall be in addition to the fees provided for in subsection (a) and in addition to the surcharges or fees otherwise authorized by law and shall be deposited in the Consular and Border Security Programs account, to remain available until expended for the purposes of meeting such costs. 1 (2) The authority to collect the surcharge provided under paragraph (1) may not be exercised after September 30, 2010. 2 (3) The Secretary of State shall ensure that, to the extent practicable, the total cost of a passport application during fiscal years 2006 and 2007, including the surcharge authorized under paragraph (1), shall not exceed the cost of the passport application as of December 1, 2005. ",
+      "passage_utf8_sha256": "c7e2da41617664dae76f238a9e8e37fc4c56e060c2b20c58796465603f3fdc14"
+    },
+    {
+      "label": "B2",
+      "source_id": "govinfo:22usc214-2024-178",
+      "start": 11795,
+      "end": 12096,
+      "passage": "Extension of Authority To Collect Surcharge Pub. L. 117–263, div. I, title XCVIII, §9802(a), Dec. 23, 2022, 136 Stat. 3924, provided that: \"Section 1(b)(2) of the Passport Act of June 4, 1920 (22 U.S.C. 214(b)(2)) shall be applied by striking 'September 30, 2010' and inserting 'September 30, 2026'.\" ",
+      "passage_utf8_sha256": "b6225ad8497bc01ab38982558939aab24c462c87414b6d3b0e48902cf741ad8f"
+    },
+    {
+      "label": "B3",
+      "source_id": "govinfo:22usc214-2024-178",
+      "start": 10324,
+      "end": 11192,
+      "passage": "Deposit of Consular Fees in the Consular and Border Security Programs Account Pub. L. 117–103, div. K, title VII, §7069(e), Mar. 15, 2022, 136 Stat. 681, provided that: \"Beginning on October 1, 2021 and for each fiscal year thereafter, fees collected pursuant to subsection (a) of section 1 of the Passport Act of June 4, 1920 (22 U.S.C. 214(a)) shall, notwithstanding such subsection, be deposited in the Consular and Border Security Programs account as discretionary offsetting receipts: Provided , That amounts deposited in fiscal year 2022 shall remain available until expended for the purposes of such account: Provided further , That the Secretary of State may by regulation authorize State officials or the United States Postal Service to collect and retain the execution fee for each applica tion for a passport accepted by such officials or by that Service.\" ",
+      "passage_utf8_sha256": "4b963d10889e5a76fd02c8d9d0c26b168dd7cd3a058149c1bbd96629770fcfb4"
+    },
+    {
+      "label": "B4",
+      "source_id": "govinfo:22usc214-2024-178",
+      "start": 11192,
+      "end": 11504,
+      "passage": "Extension of Consular Fees Pub. L. 118–47, div. F, title VII, §7068(a), Mar. 23, 2024, 138 Stat. 848, provided that: \"Section 1(b)(1) of the Passport Act of June 4, 1920 (22 U.S.C. 214(b)(1)) shall be applied through fiscal year 2024 by substituting 'the costs of providing consular services' for 'such costs'.\" ",
+      "passage_utf8_sha256": "d45932b6d2403bd34138e95c6a7f7ce003ae7a52e3f8dbdfdbf0ab8dcf0b5141"
+    }
+  ],
+  "timing": {
+    "started_utc": "2026-10-15T03:01:20+00:00",
+    "packet_ready_utc": "2026-10-15T03:02:38.742589+00:00",
+    "elapsed_research_drafting_seconds": 78.742589,
+    "scope": "Focused research/drafting window; prior discovery/claim, shared preparation and final delivery overhead retained in total task timing. Not exclusive CPU/research time.",
+    "supplemental_baseline_verification_utc": "2026-10-15T03:05:16.683292+00:00",
+    "supplemental_timing_note": "Two surrounding passport notes inspected during shared final verification; included in gross task elapsed, not claimed within the initial focused interval."
+  },
+  "raw_source_reacquired": false,
+  "source_extent": "Only cited passages independently inspected here; no whole-source/current-law/integration certification."
+}

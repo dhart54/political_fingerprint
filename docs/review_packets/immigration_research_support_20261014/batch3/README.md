@@ -1,0 +1,29 @@
+# Third research-support handoff
+
+Three bounded supplements for the **sole** Immigration candidate writer, source/candidate snapshot `817e412f730ef5900b28a0cfb9bb07f232916f72` (checkpoint232 shutdown successor). Main verified `af6cd6d78d6944d64a68a92653066c4c1625f96b`; previous documentation head `8c4a7288c9f1158b337a48229ad4f1557e89efb2`. This child directory adds documentation only in the existing isolated `.w/vhi` branch/PR230. No candidate/shared-source registration, screening credit or legal/editorial disposition is supplied.
+
+| Action | Useful addition and remaining boundary |
+| --- | --- |
+| [1:199, H.R.3633](roll_1_199.md) | Reuse191's version/operator work; bind both July self-custody callers to the dated5312 baseline and retain personal-use/sanctions/enforcement conditions. Individual-access application remains held. |
+| [1:200, S.1582](roll_1_200.md) | Reuse191/corrected193 stage; map exact ES actor terms, AML caller to5318(l), INA219 organization-designation mechanism and all8/18 exception predicates. Applicable regulations and individual status remain unqualified. |
+| [2:44, Norman amendment](roll_2_44.md) | Reuse174 stage/report; locate seven table-linked Division B appropriation branches in later-captured complete IH228. Exact explanatory project tables and fiscal/domain application remain open. |
+
+## Ownership and review reconciliation
+
+[Research-only claim](https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6193311969) was posted before source research, after current queue/shutdown/latest review and supported read-only live-progress checks. The final boundary check still found PR198 at the declared snapshot, no conflicting claim, and writer progress on313/207. Reserved/completed308,292,283/272/286/310 and prior207/313/218/349 handoffs were excluded from new work. This is a targeted source supplement, not another queue audit. The writer was neither messaged nor interrupted; its private checkout was not read or written.
+
+Independent [PR198 review6184358584](https://github.com/dhart54/political_fingerprint/pull/198#issuecomment-6184358584) and [PR230 review6184361731](https://github.com/dhart54/political_fingerprint/pull/230#issuecomment-6184361731) were reconciled. The latter reviewed batch2 text/source scope and explicitly did not certify the source-parent ZIP and five page PNGs after a cancelled cloud acquisition. No new operation reads, downloads, replays or independently certifies those six restricted artifacts. The earlier author's verification remains attributed. Denied/cancelled source and operation restrictions, reserved PR193 ownership, completed finder work and excluded Health prototype work remain in force.
+
+## Reviewable evidence and validation
+
+Each companion JSON contains exact committed source-bank SHA256/Git object identity, row indices, governed source seals, dated/raw-source identity, character offsets, literal passages and passage hashes. There are **32 passage bindings and18 distinct governed source identities**. No new raw acquisition, source normalization, repaired legal reference or whole-parent-read certificate is claimed. Existing adequate research is linked instead of recreated.
+
+`delivered_blobs.json` records the final Git index bytes for the other eight files; it excludes itself to avoid recursive hashing. Authoritative delivery verification uses committed Git bytes, not Windows worktree/newline bytes. The focused local verifier checks source identity/seal, passage equality/digest, immutable GitHub source links, relative document links, final delivered blobs and path isolation. Reproduction does not require a candidate compiler: read each JSON, retrieve `git show <snapshot>:<source_bank_path>` as binary, compute its SHA256, locate each exact indexed row/source ID, compute canonical JSON seal excluding `governed_bytes_sha256` with UTF-8/ensure_ascii=False/sorted keys/compact separators, then compare the stated Unicode intervals and UTF-8 passage hashes. Compare receipt files with `git show <delivery-head>:<directory>/<file>`; use binary output, not shell text redirection.
+
+Commands: `python -X utf8 .local/verify_batch3.py index`, `python -X utf8 .local/verify_batch3.py HEAD`, `git diff --check` and `git diff --cached --check`. Helper implementations and detailed tool logs are local-only, not repository artifacts; the complete independent inputs and expected outputs are in the delivered JSON. No runtime/candidate paths changed. Earlier documentation paths are unchanged by tree diff; no old restricted binary was reopened for a preservation check. No full candidate suite ran because candidate data/runtime are untouched. CI status is reported for the exact delivery head in the handoff; no earlier green run is substituted.
+
+## Time and next action
+
+See [timing_and_scope.json](timing_and_scope.json). First tool was **2026-10-15 13:30:46UTC** (09:30:46EDT). Research-only claim at13:32:37UTC; each inclusive claim-to-packet window is approximately821seconds and overlaps the others. Exclusive per-action research time was not instrumented and is not guessed. Verification and delivery are shared additional work. Local configuration reads `gpt-6.1-sol`, `high`, tier `default`; user-selected Sol High is preserved, while effective request overrides are not exposed. No settings changed.
+
+The sole writer should independently validate the desired caller/baseline map, then obtain or identify only the still-missing permitted material. None of these source-location improvements resolves the reserved application judgment or warrants candidate completion credit. Snapshot counts649 reviewed/27 pending,74 cores/124 propositions are attributed to the writer and have **zero change** from this lane. No merge, deployment, editorial acceptance, publication or production effect is authorized or performed.
