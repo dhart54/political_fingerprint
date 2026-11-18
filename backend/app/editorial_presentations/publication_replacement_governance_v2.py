@@ -59,6 +59,22 @@ POSITIVE_AUTHORIZATIONS_V2R = {
     "execute_only_under_fresh_matching_evidence": True,
 }
 
+# Persisted-artifact activation may explicitly prohibit deployment. This variant
+# does not relax publication, rollback, exact-binding or fresh-evidence gates.
+PERSISTED_NO_DEPLOY_AUTHORIZATIONS_V2R = {
+    **POSITIVE_AUTHORIZATIONS_V2R, "deploy_exact_reviewed_runtime": False,
+}
+
+
+def _persisted_authorizations(value):
+    if (not isinstance(value, dict)
+            or set(value) != set(POSITIVE_AUTHORIZATIONS_V2R)
+            or any(type(v) is not bool for v in value.values())
+            or value not in (POSITIVE_AUTHORIZATIONS_V2R, PERSISTED_NO_DEPLOY_AUTHORIZATIONS_V2R)):
+        _fail("exact persisted replacement authorizations required")
+    return dict(value)
+
+
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 
@@ -204,7 +220,8 @@ def validate_persisted_authority(authority, *, write_set, candidate):
         "registry_key": s["registry_key"], "expected_old": s["expected_old"], "proposed_new": s["proposed_new"],
         "semantic_authority_binding": s["replacement_authority_binding"], "rollback_target": s["rollback_target"],
         "production_target_identity_sha256": s["production_target_identity_sha256"],
-        "exact_write_set_subject_sha256": write_set["write_set_subject_sha256"], "authorizations": POSITIVE_AUTHORIZATIONS_V2R,
+        "exact_write_set_subject_sha256": write_set["write_set_subject_sha256"],
+        "authorizations": _persisted_authorizations(subject.get("authorizations")),
     }
     if (subject != expected or authority.get("activation_authority_subject_sha256") != canonical_digest(subject)
             or canonical_digest(candidate) != s["proposed_new"]["content_sha256"]

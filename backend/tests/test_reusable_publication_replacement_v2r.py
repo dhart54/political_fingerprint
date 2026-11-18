@@ -217,3 +217,48 @@ def test_runtime_uses_exact_member_key_and_rejects_unbound_selection():
     assert eligible_persisted_replacement(row,member_bioguide_id='SYNTHETIC') is None
     row['artifact_id']+=1
     assert eligible_persisted_replacement(row,member_bioguide_id='SYNTHETIC',allow_test_authority=True) is None
+
+
+def test_persisted_no_deploy_authority_supported_without_other_relaxation():
+    from app.editorial_presentations.publication_replacement_governance_v2 import PERSISTED_NO_DEPLOY_AUTHORIZATIONS_V2R
+    payload,ws,authority,rt=sample()
+    authority['subject']['authorizations']=dict(PERSISTED_NO_DEPLOY_AUTHORIZATIONS_V2R)
+    authority['activation_authority_subject_sha256']=digest(authority['subject'])
+    validate_positive_authority(authority,write_set=ws,candidate=payload)
+    from app.editorial_presentations.publication_replacement_runtime_v2r import eligible_persisted_replacement
+    row={**ws['subject']['registry_key'],**ws['subject']['proposed_new'],
+        'payload_jsonb':payload,'publication_metadata_jsonb':publication_metadata(ws,authority),
+        'schema_version':PROJECTION_SCHEMA_V2R,'publicly_active':True,'deactivated_at':None,
+        'editorial_status':'human_approved','benchmark_status':'gold_benchmark','production_eligible':True}
+    assert eligible_persisted_replacement(row,member_bioguide_id='F000477',allow_test_authority=True)==payload
+    assert eligible_persisted_replacement(row,member_bioguide_id='F000477') is None
+
+
+@pytest.mark.parametrize('field', [k for k in POSITIVE_AUTHORIZATIONS_V2R if k!='deploy_exact_reviewed_runtime'])
+def test_no_deploy_variant_still_requires_every_other_authorization(field):
+    from app.editorial_presentations.publication_replacement_governance_v2 import PERSISTED_NO_DEPLOY_AUTHORIZATIONS_V2R
+    payload,ws,authority,_=sample()
+    authority['subject']['authorizations']={**PERSISTED_NO_DEPLOY_AUTHORIZATIONS_V2R,field:False}
+    authority['activation_authority_subject_sha256']=digest(authority['subject'])
+    with pytest.raises(PublicationReplacementGovernanceError):validate_positive_authority(authority,write_set=ws,candidate=payload)
+
+
+@pytest.mark.parametrize('value',[None,0,1,'false','true'])
+def test_no_deploy_flag_requires_actual_boolean(value):
+    payload,ws,authority,_=sample()
+    authority['subject']['authorizations']={**POSITIVE_AUTHORIZATIONS_V2R,'deploy_exact_reviewed_runtime':value}
+    authority['activation_authority_subject_sha256']=digest(authority['subject'])
+    with pytest.raises(PublicationReplacementGovernanceError):validate_positive_authority(authority,write_set=ws,candidate=payload)
+
+
+@pytest.mark.parametrize('mutation',['missing','extra','integer'])
+def test_no_deploy_variant_rejects_malformed_authorization_map(mutation):
+    from app.editorial_presentations.publication_replacement_governance_v2 import PERSISTED_NO_DEPLOY_AUTHORIZATIONS_V2R
+    payload,ws,authority,_=sample()
+    flags=dict(PERSISTED_NO_DEPLOY_AUTHORIZATIONS_V2R)
+    if mutation=='missing':flags.pop('production_database_write')
+    elif mutation=='extra':flags['unbounded_write']=True
+    else:flags['production_database_write']=1
+    authority['subject']['authorizations']=flags
+    authority['activation_authority_subject_sha256']=digest(authority['subject'])
+    with pytest.raises(PublicationReplacementGovernanceError):validate_positive_authority(authority,write_set=ws,candidate=payload)
